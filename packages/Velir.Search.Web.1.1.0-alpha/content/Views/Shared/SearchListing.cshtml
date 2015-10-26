@@ -1,0 +1,28 @@
+﻿@model dynamic
+
+<section class="search-results" ng-controller="searchResultsController as results">
+    <!-- start Media Object - Default (no width) -->
+    <div class="media-object" ng-repeat="doc in results.docs">
+        <a ng-href="{{ doc.url }}" class=" media-object__media l-pull-left">
+            <figure>
+                <img src="http://placehold.it/220x180" alt="16x9 Image">
+            </figure>
+        </a>
+        <div class="media-object__body">
+            <h4 class="media-object__heading">
+                <a ng-href="{{ doc.url }}" title="Page Title">
+                    {{ doc.name }}
+                </a>
+            </h4>
+            <ul class="media-object__meta">
+                <li class="media-object__meta-author">by {{ doc.updatedBy }}</li>
+                <li class="media-object__meta-pubdate">
+                    <time datetime="2015-01-15">{{doc.updated | date: 'longDate' }}</time>
+                </li>
+            </ul>
+            <p class="media-object__description">{{ doc.content }}</p>
+            <a ng-href="{{ doc.url }}" class=" media-object__link" title="Read More">Read More</a>
+        </div>
+    </div>
+    <!-- end Media Object - Default (no width) -->
+</section>

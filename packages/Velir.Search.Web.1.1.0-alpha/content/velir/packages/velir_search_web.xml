@@ -1,0 +1,212 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>velir_search_web</PackageName>
+      <Author>Kevin Mazzoni, Velir</Author>
+      <Version>1.1</Version>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher />
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xitems>
+      <Entries>
+        <x-item>/master/sitecore/templates/Velir/{A57789B3-7E76-4D15-8CB4-6DAAB4222632}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/{6ABF0DA4-796B-414B-B16B-4E503CB46A1C}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/{5CCD0FBB-5349-460F-91F1-F1E960CB0E90}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/Admin Configuration/{2C097C33-166C-45EB-806B-2EF5CEAFD482}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/Admin Configuration/Base Endpoint Url/{EBBB5CDB-A469-46AE-AB89-FE1F11D676F0}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/Admin Configuration/Index Name/{8538E64B-69B6-44C0-829B-0826F26231DC}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/List Configuration/{BD988ED4-F25B-4B49-B6FD-5D301F605387}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/List Configuration/Available Sort Options/{F66F3AAF-25FA-40AB-BBF7-2A3399CAF9ED}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/List Configuration/Default Sort Order/{040C0194-6C6E-43FD-AC5C-0AA3DAA35A87}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/List Configuration/Hidden Expression/{D02579DA-5DE5-43A8-86C7-934CBCFE1819}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Listing Configuration/List Configuration/Items Per Page/{9F76D8DF-EF1C-4B6D-AF33-B2655FD0CC74}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Refinement/{6C886C92-A367-4757-AE05-423FF9CF394A}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Refinement/Base Configuration/{1EAFF91D-9944-4911-AD4B-0E8ED8BEEBF6}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Refinement/Base Configuration/Facet Title/{3162CD52-3D1C-41F1-88A1-E5D7C4E89215}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Refinement/Base Configuration/Field Name/{605FCDD4-DB1F-43B1-A138-FC22F5C563F8}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Refinement/Base Configuration/Filter By Label/{0C554F2D-ABED-43C5-80BB-3236EDB7884A}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Refinement/Base Configuration/Is Hidden/{002CEFB3-C0F2-444A-8422-30854BDACA08}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/_Refinement/Base Configuration/Key/{D1C9128F-881B-4951-A9A3-96F7D60CF743}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Base/{7B97E5C6-AC12-4E10-B644-2CAD34A94D72}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/{22F399E8-A175-4326-8809-6FFB6F2DBB40}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Listing/__Standard Values/{622E0A7E-1D68-4B06-9340-5D2A8DC5F37D}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Listing/{9C7E6D73-F5AB-4C81-8FEB-AE3377612AF2}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Listing/Content/{EF970206-0244-40FB-8F5B-796AF455A9AC}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Listing/Content/Listing Title/{24DEDE84-4B6E-453F-9D84-2C7BEE6029C4}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Refinements/__Standard Values/{7D64F890-94DE-4227-90F8-94CD402C8016}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Refinements/{887C07B8-A6A7-4960-9B09-F78F69580E50}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Refinements/Content/{A0ABF8DC-6E04-410F-86D9-D826E620780C}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Refinements/Content/Refinements Title/{77F09046-0A92-4378-B160-965F9E78FD39}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Refinements/Refinement Configuration/{ABFCB77B-1D7B-4C8B-A0DD-494FEE551470}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Components/Search Refinements/Refinement Configuration/Refinements/{3DD8AA26-2B10-4305-831C-7FCC78A674BE}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Example/{3ED97E1A-225F-43C8-AB75-E9F28A3CD1A8}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Example/Example Search Page/__Standard Values/{3E55AA3E-105F-46F8-A232-926F45E2FD8D}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Example/Example Search Page/{DD15A131-7035-4180-A316-78D3F2B90C90}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/{54996497-6200-430B-9224-B6EC83A020CF}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Boolean Refinement/__Standard Values/{D924A064-B95B-4B83-82CB-BF99B4E9A949}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Boolean Refinement/{EC9F61D5-4B55-4E71-8DFA-20A38D7499C2}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Boolean Refinement/Boolean Configuration/{1BA9010B-49F2-43AB-927E-EA318EA08F6D}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Boolean Refinement/Boolean Configuration/Apply When False/{A6BC148A-B466-4C37-BAA4-581D96D5D06F}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Boolean Refinement/Boolean Configuration/Apply When True/{C1C73EBE-0E2B-470C-AB9B-9DA77182E7C5}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Date Range Refinement/{89A08D1F-18DC-432A-9CE3-AFCBA7845E4D}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Facet/__Standard Values/{5FC1F6F3-9369-411E-A0AE-5CBA62855C3B}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Facet/{2463DE7D-4C6E-4E02-AB46-45833E0408C3}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Facet/Facet Configuration/{7F7F05D3-15D1-4A16-842A-B56F38A2E3E1}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Facet/Facet Configuration/And Filter/{F0B316E1-2D87-4433-9634-40685172DD3C}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Facet/Facet Configuration/Is Multi Value/{524CF7F5-8ED0-4CD5-9AAC-FF92E5BD6FBD}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Hierarchical Facet/{981413B1-9651-4B49-B356-D7B7FB9DD8F6}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Hierarchical Facet/Sort Configuration/{EF0DCFB5-F9DF-425D-8466-C5ADC22F8091}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Hierarchical Facet/Sort Configuration/Root Item/{733222CF-B934-4DCC-A3B9-B608FFFBDABD}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Hierarchical Facet/Sort Configuration/Valid Templates/{3C02E5A7-BC18-4621-8AB6-2DAA34B1EA20}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Refinements Folder/__Standard Values/{7A33A4A0-FFBC-4A5A-A7C2-ABB072D87EC7}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Refinements Folder/{0056B1AB-7661-4271-96C5-153CC73D3C6F}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Text Refinement/{2CBB661F-2029-456E-9AE8-25194C3F425A}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Text Refinement/Text Configuration/{22DE3A0C-C88D-4657-BB31-A99D7814F554}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Text Refinement/Text Configuration/Exact Match/{0C131541-0D60-46F4-9248-138EF257A026}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Refinements/Year Refinement/{3E39F45D-DE43-410E-8E7E-F2F2B2BE07DB}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/{C11F6FBF-2B08-48B2-B0E7-2C11C16D8AEB}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sort/{A216F849-A384-46E8-AFAC-05860D8C69C1}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sort/Sort/{0A5C6DED-072B-42C6-8034-4F5A50469B5D}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sort/Sort/Field Name/{32E84EC7-0AC5-4DA0-A122-7E18C4C4812B}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sort/Sort/Is Default/{71080AEB-D9FD-4FFE-B4E7-69C8D933FBE0}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sort/Sort/Key/{1818AB02-885D-41D4-8B71-59DA29F81866}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sort/Sort/Sort Ascending/{F25E88DB-E274-4C5D-8841-0FA770141465}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sort/Sort/Sort Title/{F5FB1147-82F1-4C02-BFF8-CC133618781F}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sorts Folder/__Standard Values/{AAF31034-C2E5-4494-A2C4-E4B5A539F9C8}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Velir/Search/Sorts/Sorts Folder/{0941E9EB-06E9-415B-AAB1-6362DD21AFD5}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>templates</Name>
+    </xitems>
+    <xitems>
+      <Entries>
+        <x-item>/master/sitecore/layout/Layouts/Velir/{E8D2F34F-1A40-4EB7-9756-687288BD8DF8}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Layouts/Velir/Search/{2DB6B0A6-0125-4916-858F-0EB5EB54517A}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Layouts/Velir/Search/Example Search Layout/{8D1B6F28-C5F3-4758-A1A2-B59C8E3A8036}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Models/Velir/{077FC97F-85AB-481B-8A31-F48D0536B7A6}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Models/Velir/Search/{7D38B961-91AD-4E9E-BC4B-894975105022}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Models/Velir/Search/List Configuration/{1D772DFC-53D7-4A37-8A36-1FEA42E9AC06}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Models/Velir/Search/Sort/{A7AD8D50-DC07-471F-B65E-247877551D0E}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/{312F24BE-593F-4573-B0F0-7F396BBE6AF9}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/Search/{6F215139-1834-4DA3-9078-7EF588F1CB94}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/Search/Example/{321E1C3B-DB6A-4DF6-8333-83310CE72655}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Header/{97CB73EA-0C5F-4642-95B8-A22886980D79}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Main Column/{04B69208-9164-42D5-B404-10DB48A6CD79}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Right Column/{07451D3F-C854-42D8-A744-DEFC8AAB0C5E}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Sort Area/{C579FB1D-2DA1-431B-8CCA-51323336689E}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Placeholder Settings/Velir/Search/Example/Search Sort Options/{EF468EEE-3A15-4277-B581-9CD1D05720E1}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/{185DE17D-E44A-4369-BCF1-CF87B3047703}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/{52F6A089-26B6-477C-B120-9A2F9F162BB1}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Keyword Search/{955E6846-7192-4EDA-8EF6-B7276E1D0045}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Pagination/{D12DA1BC-613B-48A5-9CFE-95583548000A}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Search Facets/{D4AD67AC-AE56-4E34-AD69-A44A54EB3DA0}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Search Metadata/{5538B9B3-F4DE-4F03-B2C7-7828E112646D}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Search Results/{2B658736-0045-45FE-ADE4-34E696EBFDD4}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Search Scripts/{934410A3-F2C2-4F55-B6AA-FF15C317A1C7}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Sort Option/{0F31E8C5-BFEB-44AE-8377-53124646914D}/invariant/0</x-item>
+        <x-item>/master/sitecore/layout/Renderings/Velir/Search/Sort Options Area/{A137511F-6473-49D8-AA51-EDEE929F315F}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>layout</Name>
+    </xitems>
+    <xitems>
+      <Entries>
+        <x-item>/master/sitecore/system/Modules/Search/{B9C5D243-921D-45E3-833B-8C4EE3FCA798}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/Search/Refinements/{CB643BB4-F947-48F8-A112-0F80239E64C6}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/Search/Refinements/Author/{53FB3F1F-3E7A-4CC6-A24C-6C805F523823}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/Search/Refinements/Keywords/{315DC3DB-06B0-4EF9-BA15-8C07A339316A}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/Search/Refinements/Language/{9F677549-034A-4CF7-B844-EA64CACFA057}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/Search/Refinements/Template/{1193A929-0071-4625-8015-D500AD4D7B6E}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/Search/Sorts/{148D55C7-4490-4291-A7B1-2E84FC85179C}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/Search/Sorts/Updated Date/{34BDD660-3780-466E-8BED-E867DE0224C2}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>modules</Name>
+    </xitems>
+    <xitems>
+      <Entries>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/{FF9E4090-8695-4881-85DE-D8582D62BCBA}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Date Field/{59098FBF-2645-4FC7-9A97-2A339D917DFA}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Field/{C79ACCEB-3EE8-412F-9785-814824C8C0FC}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Item Id/{CE9F87CC-8BB3-4E5B-A32F-507D1BF04744}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Item Template/{12E6D7C3-56BD-444E-AAC9-E5262855ECBA}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Multilist Field/{F2FA0DE0-100C-493B-AC71-9A0155DB57CB}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Numerical Field/{18D81900-188C-4FA9-BE31-9E9D454C2988}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Tags/{3F01BE5A-5006-4618-B7EE-059EB80085CB}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Tags/Default/{0A18A713-2B97-4190-9FAD-1CAD0CA901A0}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Elements/Velir Search/Visibility/{64837676-4936-4BAB-A369-D15060D406F0}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Tags/Velir Search/{D6E83B30-4AFB-4223-95EF-7B49D576F8C8}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Definitions/Tags/Velir Search/Visibility/{90A56516-96B5-4EB0-98F1-00117326F44F}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Velir Search/{FD0CD549-1198-4814-88A8-77622B3C17A0}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Velir Search/Rules/{BB8F03B2-EED5-4837-94CA-451BAE1C66F5}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Velir Search/Tags/{978E017A-0010-42D1-BB9C-E8BED1B41C8A}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Rules/Velir Search/Tags/Default/{6BFB2AB6-5D75-4A5E-9CFB-142CE6013780}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>settings</Name>
+    </xitems>
+    <xitems>
+      <Entries>
+        <x-item>/core/sitecore/content/Applications/WebEdit/Custom Experience Buttons/Velir/{F3ED557C-FB98-415A-8599-82BC36B0EE0C}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/WebEdit/Custom Experience Buttons/Velir/Search/{F8CAB4E9-6B32-461D-AA10-2B71EB754B48}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/WebEdit/Custom Experience Buttons/Velir/Search/Edit Search Listing/{5AF24CD2-6F30-4098-941F-DF7F80A3B592}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/WebEdit/Custom Experience Buttons/Velir/Search/Edit Search Refinements/{7C2ACC58-90C5-4B03-8FCF-E60620A3E9D8}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/WebEdit/Custom Experience Buttons/Velir/Search/Edit Sort Option/{6FE97B67-A9EC-4B51-A64F-A27754C54EDF}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>core</Name>
+    </xitems>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>

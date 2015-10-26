@@ -1,0 +1,715 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>0707d4fe-c860-4127-bae4-463e673d4d69</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SourceWebPhysicalPath>..\..\web\Website</SourceWebPhysicalPath>
+    <SourceWebProject>{dc58e75c-68b7-4a74-afa7-269a5e47ba36}|web\Website\Informa.Website.csproj</SourceWebProject>
+    <SourceWebVirtualPath>/Informa.Website.csproj</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Informa.tds.master</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <Name>Informa.tds.master</Name>
+    <RootNamespace>Informa.tds.master</RootNamespace>
+    <EnableCodeGeneration>True</EnableCodeGeneration>
+    <ManageRoles>False</ManageRoles>
+    <SitecoreDatabase>master</SitecoreDatabase>
+    <AssemblyStatus>Exclude</AssemblyStatus>
+    <FieldsForCodeGen>Title,Blob,Shared,Unversioned,Default value,Validation,ValidationText,__Long description,__Short description,__Display name,__Hidden,__Read Only,__Sortorder</FieldsForCodeGen>
+    <CodeGenTargetProject>Informa.Models</CodeGenTargetProject>
+    <CodeGenFile>GlassModels.cs</CodeGenFile>
+    <BaseNamespace>Informa.Models</BaseNamespace>
+    <HeaderTransformFile>glassv3header.tt</HeaderTransformFile>
+    <BaseTransformFile>glassv3item.tt</BaseTransformFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Delete</RecursiveDeployAction>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\Informa.tds.master_Debug.xml</ValidationSettingsFilePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-NoTds' ">
+    <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>True</DisableFileDeployment>
+    <SitecoreDeployFolder>D:\Velir\Informa\web\Website</SitecoreDeployFolder>
+    <SitecoreWebUrl>http://hof.csmith.velir.com:9080</SitecoreWebUrl>
+    <OutputPath>bin\Debug-NoTds\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release-NoTds' ">
+    <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>True</DisableFileDeployment>
+    <SitecoreDeployFolder>D:\Velir\Informa\web\Website</SitecoreDeployFolder>
+    <SitecoreWebUrl>http://hof.csmith.velir.com:9080</SitecoreWebUrl>
+    <OutputPath>bin\Release-NoTds\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\web\Website\Informa.Website.csproj">
+      <Project>{dc58e75c-68b7-4a74-afa7-269a5e47ba36}</Project>
+      <Name>Informa.Website</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeGenTemplate Include="Code Generation Templates\generalextensions.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\glassv3header.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\glassv3item.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\helpers.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\inflector.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\itempaths.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\stringextensions.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <SitecoreItem Include="sitecore\content.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Layouts.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\media library.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\Search.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\Search\Refinements.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\Search\Sorts.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Buckets.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Buckets\Item Buckets Settings.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Bucketing.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Bucketing\Resolve Clean Item Name Based Path.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Date Field.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Field.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Item Id.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Item Template.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Multilist Field.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Numerical Field.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Tags.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Tags\Default.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Velir Search\Visibility.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Walton.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Walton\Content Type Field.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Walton\Tags.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Walton\Tags\Default.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Walton\Topics Field.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Elements\Walton\Visibility.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Tags.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Tags\Velir Search.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Definitions\Tags\Velir Search\Visibility.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Solr.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Solr\Rules.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Solr\Tags.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Settings\Rules\Solr\Tags\Default.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\Cacheable.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\CacheGETOnly.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\ClearOnIndexUpdate.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByCustom.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByCustomType.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByData.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByDevice.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByLogin.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByParm.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByQueryString.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Sections\Caching\Caching\VaryByUser.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\User Defined.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+      <CodeGenNamespace>Velir.Search.Models</CodeGenNamespace>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+      <CodeGenNamespace>Velir.Search.Models</CodeGenNamespace>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+      <CodeGenNamespace>Velir.Search.Models</CodeGenNamespace>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\Admin Configuration.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\Admin Configuration\Base Endpoint Url.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\Admin Configuration\Index Name.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\List Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\List Configuration\Available Sort Options.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <CodeGenData>generic=ISort&amp;ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\List Configuration\Default Sort Order.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=ISort&amp;ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\List Configuration\Hidden Expression.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\List Configuration\Items Per Page.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement\Base Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement\Base Configuration\Facet Title.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement\Base Configuration\Field Name.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement\Base Configuration\Filter By Label.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement\Base Configuration\Is Hidden.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement\Base Configuration\Key.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+      <CodeGenNamespace>Velir.Search.Models</CodeGenNamespace>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Listing.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Listing\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Listing\Content.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Listing\Content\Listing Title.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements\Content.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements\Content\Refinements Title.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements\Refinement Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements\Refinement Configuration\Refinements.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>generic=I_Refinement&amp;ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+      <CodeGenNamespace>Velir.Search.Models</CodeGenNamespace>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Boolean Refinement.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Boolean Refinement\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Boolean Refinement\Boolean Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Boolean Refinement\Boolean Configuration\Apply When False.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Boolean Refinement\Boolean Configuration\Apply When True.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Date Range Refinement.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Facet.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Facet\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Facet\Facet Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Facet\Facet Configuration\And Filter.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Facet\Facet Configuration\Is Multi Value.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Hierarchical Facet.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Hierarchical Facet\Sort Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Hierarchical Facet\Sort Configuration\Root Item.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=IGlassBase&amp;ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Hierarchical Facet\Sort Configuration\Valid Templates.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>generic=Guid&amp;ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Refinements Folder.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Refinements Folder\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Text Refinement.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Text Refinement\Text Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Text Refinement\Text Configuration\Exact Match.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Year Refinement.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <CodeGenData>ignore=true</CodeGenData>
+      <CodeGenNamespace>Velir.Search.Models</CodeGenNamespace>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort\Sort.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort\Sort\Field Name.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort\Sort\Is Default.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort\Sort\Key.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort\Sort\Sort Ascending.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort\Sort\Sort Title.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sorts Folder.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sorts Folder\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
+    </SitecoreItem>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+</Project>

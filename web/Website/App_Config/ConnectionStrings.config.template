@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings>
+  <!-- 
+    Sitecore connection strings.
+    All database connections for Sitecore are configured here.
+  -->
+  <add name="core" connectionString="${connstr.core}" />
+  <add name="master" connectionString="${connstr.master}" />
+  <add name="web" connectionString="${connstr.web}" />
+  <add name="analytics" connectionString="${connstr.analytics}" />
+  <add name="tracking.live" connectionString="${connstr.tracking.live}" />
+  <add name="tracking.history" connectionString="${connstr.tracking.history}" />
+  <add name="tracking.contact" connectionString="${connstr.tracking.contact}" />
+  <add name="reporting" connectionString="${connstr.reporting}" />
+</connectionStrings>

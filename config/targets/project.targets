@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project>
+
+	<target name="help" description="Shows a help message">
+		<echo>
+			This is the solution Nant file.			
+			Try: nant -projecthelp for a list of tasks you can run			
+		</echo>
+	</target>
+
+	<target name="init" description="Copies all templates and replaces tokens">
+		<loadtasks assembly="${dir.tools}/nant/VelirNantTasks/VelirNantTasks.NVelocity.dll"/>			
+		<nvelocity>
+			<fileset>
+				<exclude name="${dir.sitecore}/**/bin/**/*" />
+				<exclude name="${dir.src}/**/bin/**/*" />
+				<exclude name="${dir.sitecore}/**/Debug/**/*" />
+				<exclude name="${dir.src}/**/Debug/**/*" />
+				<exclude name="${dir.sitecore}/**/Release/**/*" />
+				<exclude name="${dir.src}/**/Release/**/*" />
+				<exclude name="${dir.web}/sitecore/**/*" />
+				<include name="${dir.web}/**/*.template" />
+				<include name="${dir.sitecore}/**/*.template" />				
+				<include name="${dir.src}/**/*.template" />				
+				<include name="${dir.test}/**/*.template" />	
+				<!-- <include name="${dir.tools}/vagrant/**/*.template" /> --> <!-- Added (for Vagrant)-->
+				<!-- <include name="${dir.tools}/copysauce/**/*.template" /> --> <!-- Added (for CopySauce)-->
+				<include name="*.template" /> <!-- root directory -->
+			</fileset>
+		</nvelocity>
+		<nvelocity>
+			<fileset>
+				<exclude name="${dir.web}/vendor/**/*" />
+				<exclude name="${dir.web}/sitecore/**/*" />					
+				<include name="${dir.src}/**/*.${env}" />
+				<include name="${dir.web}/**/*.${env}" />				
+			</fileset>
+		</nvelocity>		
+	</target>		
+	
+	
+	<target name="buildall" description="Builds the solution">
+		<loadtasks assembly="${dir.tools}/nant/nantcontrib-0.85/bin/NAnt.Contrib.Tasks.dll" />
+		<echo message="Building with configuration: ${build.configuration}" />
+
+		<property name="_target.arch" value="${ProjectFunctions::TargetArchitecture()}" />
+		<if test="${property::exists('target.architecture') and not(string::get-length('target.architecture') == 0)}">
+			<property name="_target.arch" value="${target.architecture}" />
+			<echo message="Targeting architecture: ${_target.arch}..." />
+		</if>
+
+		<msbuild project="Informa.sln" verbosity="minimal" >
+			<property name="Configuration" value="${build.configuration}" />
+			<property name="TargetArch" value="${_target.arch}" />
+		</msbuild>
+	</target>
+	
+	<target name="clean" description="Cleans all of the target build directories">
+		<delete>
+			<fileset>                                               
+				<include name="${dir.bin}\**\*" />
+                <include name="${dir.web}/Website/bin/**/*" />
+                <include name="${dir.sitecore}/**/bin/**/*" />
+                <exclude name="${dir.sitecore}/**/sitecore/**" />
+			</fileset>
+		</delete>
+	</target> 
+			
+</project>
