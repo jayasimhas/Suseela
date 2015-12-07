@@ -422,6 +422,17 @@
     <Content Include="layouts\system\VisitorIdentification.js" />
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
+    <Content Include="lib\tasks\bower.js" />
+    <Content Include="lib\tasks\browserSync.js" />
+    <Content Include="lib\tasks\copy.js" />
+    <Content Include="lib\tasks\css.js" />
+    <Content Include="lib\tasks\html.js" />
+    <Content Include="lib\tasks\images.js" />
+    <Content Include="lib\tasks\js.js" />
+    <Content Include="lib\local.js" />
+    <Content Include="lib\tasks\svg-sprite.js" />
+    <Content Include="lib\tasks\typings.js" />
+    <Content Include="lib\tasks\utils.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Config\Commands.config" />
@@ -634,10 +645,15 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="layouts\system\Social\Connector\SocialLogin.ashx" />
+    <Content Include=".bowerrc" />
+    <Content Include="lib\local.js.example" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <None Include="Views\Shared\_Footer.cshtml" />
+    <None Include="Views\Shared\_Header.cshtml" />
+    <None Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="webedit.css" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
@@ -713,6 +729,19 @@
     <Content Include="Views\Shared\MainLayout.cshtml" />
     <Content Include="Views\Shared\ExperienceExplorerView.cshtml" />
     <Content Include="Views\_Shared\AuthoredContent.cshtml" />
+    <Content Include="styles\index.scss" />
+    <Content Include="styles\patternlibrary\base\_colors.scss" />
+    <Content Include="styles\patternlibrary\base\_forms.scss" />
+    <Content Include="styles\patternlibrary\base\_general.scss" />
+    <Content Include="styles\patternlibrary\base\_icons.scss" />
+    <Content Include="styles\patternlibrary\base\_mixins.scss" />
+    <Content Include="styles\patternlibrary\base\_typography.scss" />
+    <Content Include="styles\patternlibrary\components\_media-object.scss" />
+    <Content Include="styles\patternlibrary\helpers\_class-helpers.scss" />
+    <Content Include="styles\patternlibrary\helpers\_grid-helpers.scss" />
+    <Content Include="styles\patternlibrary\helpers\_layout-helpers.scss" />
+    <Content Include="styles\vendors\_grid-settings.scss" />
+    <Content Include="styles\vendors\_normalize.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Config\Include\UserDefined\" />
