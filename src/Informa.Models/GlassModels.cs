@@ -29,6 +29,92 @@ using Sitecore.Data;
 
 
 
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
+{
+
+
+ 	/// <summary>
+	/// IAuthored_Content Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Authored Content</para>	
+	/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IAuthored_ContentConstants.TemplateIdString)]
+	public partial interface IAuthored_Content : IGlassBase 
+	{
+								/// <summary>
+					/// The Body field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 423ba8be-c356-44de-a608-361f09818330</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IAuthored_ContentConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Body  {get; set;}
+								/// <summary>
+					/// The Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b820f81e-734a-4ef5-b35e-210b406aee13</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IAuthored_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Title  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IAuthored_Content Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Authored Content</para>	
+		/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IAuthored_Content__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Body field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 423ba8be-c356-44de-a608-361f09818330</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IAuthored_ContentConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Body  {get; set;}
+										/// <summary>
+						/// The Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b820f81e-734a-4ef5-b35e-210b406aee13</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IAuthored_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Title  {get; set;}
+						}
+	
+	public static partial class IAuthored_ContentConstants{
+
+			public const string TemplateIdString = "bc9061e8-27c6-4dd4-b342-50547e4a25cc";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Authored Content";
+
+					
+			public static readonly ID BodyFieldId = new ID("423ba8be-c356-44de-a608-361f09818330");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("423ba8be-c356-44de-a608-361f09818330");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID TitleFieldId = new ID("b820f81e-734a-4ef5-b35e-210b406aee13");
+			public const string TitleFieldName = "Title";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.System.Layout.Sections
 {
 

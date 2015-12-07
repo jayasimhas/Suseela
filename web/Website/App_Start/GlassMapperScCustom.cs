@@ -7,24 +7,27 @@ using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
 namespace Informa.Web.App_Start
 {
-	public static class GlassMapperScCustom
-	{
-		public static IDependencyResolver CreateResolver()
-		{
+    public static  class GlassMapperScCustom
+    {
+		public static IDependencyResolver CreateResolver(){
 			var config = new Glass.Mapper.Sc.Config();
-			return new DependencyResolver(config);
+
+			var dependencyResolver = new DependencyResolver(config);
+			// add any changes to the standard resolver here
+			return dependencyResolver;
 		}
 
-		public static IConfigurationLoader[] GlassLoaders()
-		{
+        public static IConfigurationLoader[] GlassLoaders()
+        {
 
-			/* USE THIS AREA TO ADD FLUENT CONFIGURATION LOADERS
+
+            /* USE THIS AREA TO ADD FLUENT CONFIGURATION LOADERS
              * 
              * If you are using Attribute Configuration or automapping/on-demand mapping you don't need to do anything!
              * 
              */
 
-			return new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models") };
+            return new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models") };
 		}
 
 		public static void PostLoad()

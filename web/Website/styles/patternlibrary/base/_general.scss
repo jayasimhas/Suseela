@@ -1,0 +1,54 @@
+// general.scss
+// Define universal plain tag styles here
+// NOTE: No classes or IDs!
+
+body {
+
+}
+
+// flexible media
+img,
+object,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+// lists
+ol,
+ul {
+    padding: 0;
+    margin-top: 0;
+    margin-left: rem(60);
+    margin-bottom: rem(30);
+
+    li {
+        margin-bottom: rem(10);
+    }
+}
+
+// nested lists
+ul ul,
+ol ul,
+ol ol,
+ul ol {
+    margin-top: rem(10);
+}
+
+// links
+a,
+a:link,
+a:hover,
+a:focus {
+    color: color(wireframe, 700);
+}
+
+// hr
+hr {
+    border-bottom: 1px solid color(wireframe, 600);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: -1px 0 0 0;
+    box-sizing: content-box;
+}

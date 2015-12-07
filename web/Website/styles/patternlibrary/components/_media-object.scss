@@ -1,0 +1,57 @@
+// media-object.scss
+// Define media object styles here
+
+// base
+.media-object{
+    margin-bottom: rem(30);
+    border: 2px solid red;
+}
+
+// media object media
+.media-object__media{
+    display: inline-block;
+    margin-bottom: rem(10);
+    &.l-pull-left,
+    &.l-pull-right{
+        .media-object__body{
+            overflow: auto;
+        }
+    }
+}
+
+// media object heading
+.media-object__heading{
+    font-size: rem(18);
+}
+
+// media object meta
+.media-object__meta {
+    @include zero();
+    color: color(wireframe, 400);
+    @include font(helvetica, bold);
+    font-size: rem(13);
+    line-height: rem(18);
+    margin-bottom: rem(10);
+
+    li {
+        @include zero();
+        display: inline;
+        margin-left: rem(4);
+        margin-bottom: rem(4);
+
+        &:first-child {
+            margin-left: 0;
+
+            &:after {
+                content: '|';
+                padding-left: rem(6);
+            }
+        }
+
+        &.media-object__meta-pubdate,
+        &.media-object__meta-editor {
+            white-space: nowrap;
+        }
+
+    }
+}

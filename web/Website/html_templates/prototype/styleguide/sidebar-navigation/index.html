@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar navigation | Main Line Health</title>
+  <link rel="shortcut icon" href="/html_templates/prototype/assets/images/global/favicon.ico" type="image/x-icon" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+  <link href="/styles/css/prism.css" rel="stylesheet" type="text/css" />
+  <link href="/styles/css/styles.css" rel="stylesheet" type="text/css" />
+  <!--[if lte IE 8]>
+    <link href="/styles/css/styles-ie8.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+  <body>
+      <div class="container">
+    <header class="l-column styleguide-header">
+      <h1 class="styleguide-logo"><a title="Main Line Health" href="/html_templates/prototype/"><img src="/assets/images/svg/logo--large.svg" alt="Main Line Health –Well ahead."></a></h1>
+      <h5 class="styleguide-label">Living Styleguide</h5>
+    </header>
+  </div>
+  <div class="component-header">
+    <div class="container">
+      <main class="l-column styleguide-section-title">
+        <h2 class="styleguide-title--component">Sidebar navigation</h2>
+        <p>This is navigation that appears in the sidebar.</p>
+      </main>
+    </div>
+  </div>
+  <div class="styleguide-component">
+    <div class="container">
+  <aside class="l-sidebar" role="complementary">
+    <div class="l-styleguide-rail">
+      
+<nav class="sidebar__prox-nav sidebar--block">
+  <ul class="prox-nav__parent">
+    <li class="prox-nav__parent-title"><a href="#"><span>Imaging</span></a>
+      <ul class="prox-nav__level2">
+        <li class="has-children is-active"><a name="active-sub-nav"><span>About Main Line Health imaging</span></a>
+          <ul class="prox-nav__level3">
+            <li><a href="#"><span>Our staff</span></a></li>
+            <li><a href="#"><span>Our advantage</span></a></li>
+            <li><a href="#"><span>Our technology</span></a></li>
+            <li><a href="#"><span>Scheduling &amp; billing</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#"><span>Locations &amp; hours</span></a></li>
+        <li class="has-children"><a href="#"><span>Procedures available</span></a>
+          <ul class="prox-nav__level3">
+            <li><a href="#"><span>Scheduling &amp; billing</span></a></li>
+            <li><a href="#"><span>Forms &amp; paperwork</span></a></li>
+            <li><a href="#"><span>Preparing for your visit</span></a></li>
+            <li class="is-active"><a name="active-sub-nav"><span>Radiology glossary</span></a></li>
+            <li><a href="#"><span>Online resources</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#"><span>Patient information</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </div>
+  </aside>
+</div>
+
+<div class="container">
+<div class="view-code">
+<a class="view-code__link" href="javascript:void(0);"><i class="fa fa-caret-right"></i> View Markup</a>
+<pre><code class="language-markup"><script>
+
+<nav class="sidebar__prox-nav sidebar--block">
+  <ul class="prox-nav__parent">
+    <li class="prox-nav__parent-title"><a href="#"><span>Imaging</span></a>
+      <ul class="prox-nav__level2">
+        <li class="has-children"><a href="#"><span>About Main Line Health imaging</span></a>
+          <ul class="prox-nav__level3">
+            <li><a href="#"><span>Our staff</span></a></li>
+            <li><a href="#"><span>Our advantage</span></a></li>
+            <li><a href="#"><span>Our technology</span></a></li>
+            <li><a href="#"><span>Scheduling &amp; billing</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#"><span>Locations &amp; hours</span></a></li>
+        <li class="has-children"><a href="#"><span>Procedures available</span></a>
+          <ul class="prox-nav__level3">
+            <li><a href="#"><span>Scheduling &amp; billing</span></a></li>
+            <li><a href="#"><span>Forms &amp; paperwork</span></a></li>
+            <li><a href="#"><span>Preparing for your visit</span></a></li>
+            <li><a href="#"><span>Radiology glossary</span></a></li>
+            <li><a href="#"><span>Online resources</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#"><span>Patient information</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+</script></code></pre>
+</div>
+</div>  </div>
+    <div class="container">
+      <div class="l-column">
+        <p class="styleguide-copyright">&copy; 2015 <a href="https://www.palantir.net/" target="_blank">Palantir.net</a></p>
+      </div>
+    </div>
+    
+<div class="bg-overlay"></div>
+<div class="webfont-loader"><div class="webfont-loader__icon"></div></div>
+
+
+
+<script src="/dist/js/vendor.js"></script>
+<script src="/dist/js/index.js"></script>
+<script>
+  // Googel webfont loader
+  WebFontConfig = {
+    google: { families: [
+      'Montserrat:400,700:latin',
+      'Roboto:400,400italic,700,700italic,300italic,300:latin',
+      'Arvo::latin'
+    ]}
+  };
+
+  (function(d) {
+    var wf = d.createElement('script'), s = d.scripts[0];
+    wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+    s.parentNode.insertBefore(wf, s);
+  })(document);
+
+
+  // Swap svg for png
+  if(!Modernizr.svg) {
+    $('img[src*="svg"]').attr('src', function() {
+      return $(this).attr('src').replace('svg/', 'png/').replace('.svg', '.png');
+    });
+  }
+</script>
+
+  </body>
+</html>

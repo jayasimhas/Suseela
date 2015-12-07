@@ -1,0 +1,69 @@
+// grid-settings.scss
+// Grid Settings for Neat
+
+@import "../../vendor/bower_components/neat/app/assets/stylesheets/_neat-helpers";
+
+/// Neat visual grid settings
+/// @author Thoughbot
+/// @link http://thoughtbot.github.io/neat-docs/latest/#visual-grid
+///
+/// 1. Uncomment this to show the visual grid
+/// 2. Sets the visual grid color
+/// 3. Sets the `z-index` property of the visual grid. Can be `back` (behind content) or `front` (in front of content).
+/// 4. Sets the opacity property of the visual grid
+
+// $visual-grid: true !global; /* 1 */
+$visual-grid-color: #F44336 !global; /* 2 */
+$visual-grid-index: front !global; /* 3 */
+$visual-grid-opacity: .15 !global; /* 4 */
+
+/// Neat variable overrides
+/// @author Andrew Rodgers, Shelby Staab, Thoughtbot
+/// @link http://thoughtbot.github.io/neat-docs/latest/#column
+///
+/// 1. Sets the relative width of a single grid column. The unit used should be the same one used to define `$gutter`
+/// 2. Sets the relative width of a single grid gutter. The unit used should be the same one used to define `$column`
+/// 3. Sets the total number of columns in the grid. Its value can be overridden inside a media query using the media() mixin
+/// 4. Sets the max-width property of the element that includes outer-container(). This should be the total width edge-to-edge from the left-most column to the right-most column. This should not include margins/gutters on the sides.
+/// NOTE: adjust this to fit your grid-system.
+
+$column: 65px !global; /* 1 */
+$gutter: 20px !global; /* 2 */
+$grid-columns: 12 !global; /* 3 */
+$max-width: em(1000) !global; /* 4 */
+
+/// Neat breakpoints variables - to be used with new-breakpoint() below
+/// @author Andrew Rodgers, Shelby Staab
+/// @link http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint
+/// NOTE: This assumes "Desktop-first" design. To use "Mobile-first" design, consider using `min-width` breakpoints like so:
+///
+/// @example scss - usage
+///     // set your break-point variables - mobile first
+///     $small-screen-bp:  em(480);
+///     $medium-screen-bp: em(600);
+///     $large-screen-bp:  em(900);
+///
+///     // set your new-breakpoint() - mobile first
+///     $small-screen-up: new-breakpoint(min-width $small-screen-bp 3);
+///     $medium-screen-up: new-breakpoint(min-width $medium-screen-bp 6);
+///     $large-screen-up: new-breakpoint(min-width $large-screen-bp 12);
+///
+///     // use media() to create media-queries using the above.
+///     h1 {
+///         font-size: em(18); /* Default "mobile-first" styles */
+///         @include media($medium-screen-up){
+///            font-size: em(16); /* Decrease font-size 600px and up screens */
+///         }
+///     }
+/// TODO: Consider setting your own breakpoint values based on **content** rather than devices.
+$small-screen-bp:  em(480);
+$medium-screen-bp: em(600);
+$large-screen-bp:  em(900);
+
+/// Neat new-breakpoint() variables
+/// @author Andrew Rodgers, Shelby Staab, Thoughtbot
+/// @link http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint
+/// TODO: Be sure to match the variable names above and set the column number too (second value).
+$small: new-breakpoint(max-width $small-screen-bp 3);
+$medium: new-breakpoint(max-width $medium-screen-bp 6);
+$large: new-breakpoint(max-width $large-screen-bp 12);

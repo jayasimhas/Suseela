@@ -1,0 +1,43 @@
+<nav class="nav-bottom">
+	<ul>
+		<li><a href="#">
+			<svg class="icon icon--diamond">
+				<use xlink:href="/assets/images/icons/diamond.svg#diamond"></use>
+			</svg>
+			Diamonds
+		</a></li>
+		<li>
+			<a href="#">
+				<svg class="icon icon--ring">
+					<use xlink:href="/assets/images/sprites.svg#ring"></use>
+				</svg>
+				Jewelry
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<svg class="icon icon--heart">
+					<use xlink:href="/assets/images/sprites.svg#heart"></use>
+				</svg>
+				Favorites
+			</a>
+		</li>
+
+		<li>
+			<a href="#">
+				<svg class="icon icon--pin">
+					<use xlink:href="/assets/images/sprites.svg#pushpin"></use>
+				</svg>
+				Tasks
+			</a>
+		</li>
+		<li>
+			<a href="#" push-trigger>
+				<svg class="icon icon--ellipsis">
+					<use xlink:href="/assets/images/sprites.svg#dots-horiz"></use>
+				</svg>
+				More
+			</a>
+		</li>
+	</ul>
+</nav>

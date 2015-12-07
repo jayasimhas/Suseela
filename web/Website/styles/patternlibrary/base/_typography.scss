@@ -1,0 +1,94 @@
+// typography.scss
+// Define typography styles here
+
+// typographic variables
+
+/// '$helvetica' variable overrides bourbon's font-stack variable of the same name
+/// @author thoughtbot
+/// @link https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_font-stacks.scss
+$helvetica: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/// Font Stack Map to define wireframe font-stack
+/// @author Hmphry
+/// @link http://hmphry.com/useful-sass-mixins
+///
+/// @example scss - usage
+///     h1 {
+///         @include font(helvetica);
+///     }
+///
+///     p {
+///         @include font(helvetica, bold);
+///     }
+/// @example css - CSS output
+///    h1 {
+///        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+///        font-weight: 400;
+///        font-style: normal;
+///    }
+///
+///    p {
+///        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+///        font-weight: 600;
+///        font-style: normal;
+///    }
+///
+/// TODO: Update with your font-stack scheme and call the font() function too!
+/// NOTE: Needs a trailing semi-colon on the last declaration!
+$font-stack:
+    (group: 'helvetica', id: light, font: ($helvetica), weight: 300, style: normal),
+    (group: 'helvetica', id: regular, font: ($helvetica), weight: 400, style: normal),
+    (group: 'helvetica', id: medium, font: ($helvetica), weight: 500, style: normal),
+    (group: 'helvetica', id: bold, font: ($helvetica), weight: 600, style: normal);
+
+@mixin font($group, $id:regular) {
+    @each $font in $font-stack {
+        @if ($group == map-get($font, group) and $id == map-get($font, id)) {
+            font-family: map-get($font, font);
+            font-weight: map-get($font, weight);
+            font-style: map-get($font, style);
+        }
+    }
+}
+
+// base styles
+
+body {
+    @include font(helvetica);
+    font-size: 16px;
+    line-height: rem(20);
+    color: color(wireframe, 700);
+    -webkit-font-smoothing: antialiased;
+}
+
+// headings
+h1, h2, h3, h4, h5, h6 {
+    @include font(helvetica, bold);
+    @include zero;
+}
+
+h1, h2, h3 {
+    margin-bottom: rem(12);
+}
+
+h4, h5, h6 {
+    margin-bottom: rem(9);
+}
+
+// paragraphs
+p {
+    @include zero;
+    margin-bottom: rem(18);
+}
+
+// component headers
+.component-header {
+    @include zero;
+    margin-bottom: rem(20);
+    padding: rem(10) rem(20);
+    background-color: color(wireframe, 400);
+    border-top: 6px solid color(wireframe, 700);
+    color: color(wireframe, white);
+    font-size: rem(13);
+    text-transform: uppercase;
+}

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -25,6 +26,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,105 +47,117 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AspNet.ScriptManager.jQuery.2.1.4\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Extras.AggregateService, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Autofac.Extras.AggregateService.3.0.4\lib\net40\Autofac.Extras.AggregateService.dll</HintPath>
+    <Reference Include="Autofac.Extras.AggregateService">
+      <HintPath>..\..\packages\Autofac.Extras.AggregateService.4.0.0\lib\net45\Autofac.Extras.AggregateService.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Extras.Attributed, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Autofac.Extras.Attributed">
       <HintPath>..\..\packages\Autofac.Extras.Attributed.3.3.0\lib\net40\Autofac.Extras.Attributed.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Extras.CommonServiceLocator, Version=3.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Autofac.Extras.CommonServiceLocator">
       <HintPath>..\..\packages\Autofac.Extras.CommonServiceLocator.3.2.0\lib\net40\Autofac.Extras.CommonServiceLocator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Extras.DynamicProxy2, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Autofac.Extras.DynamicProxy2">
       <HintPath>..\..\packages\Autofac.Extras.DynamicProxy2.3.0.7\lib\net40\Autofac.Extras.DynamicProxy2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Integration.Mef, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Autofac.Integration.Mef">
       <HintPath>..\..\packages\Autofac.Mef.3.0.3\lib\net40\Autofac.Integration.Mef.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+    <Reference Include="Autofac.Integration.WebApi">
       <HintPath>..\..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.3.51, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.3.51\lib\net45\Glass.Mapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.0.3.51, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.3.51\lib\80\Glass.Mapper.Sc.dll</HintPath>
-    </Reference>
-    <Reference Include="Glass.Mapper.Sc.Mvc, Version=3.3.1.48, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.3.51\lib\Mvc5\Glass.Mapper.Sc.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    <Reference Include="Glass.Mapper">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\81\Glass.Mapper.Sc.dll</HintPath>
+    </Reference>
+    <Reference Include="Glass.Mapper.Sc.Mvc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jabberwocky.Autofac">
       <HintPath>..\..\packages\Jabberwocky.Autofac.1.0.0.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac.Extras.MiniProfiler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Jabberwocky.Autofac.Extras.MiniProfiler">
       <HintPath>..\..\packages\Jabberwocky.Autofac.Extras.MiniProfiler.1.0.0.0\lib\net45\Jabberwocky.Autofac.Extras.MiniProfiler.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Jabberwocky.Core">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Jabberwocky.Core.1.0.0.0\lib\net45\Jabberwocky.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Jabberwocky.Glass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Jabberwocky.Glass">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Jabberwocky.Glass.1.0.0.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
     </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Jabberwocky.Glass.Autofac">
       <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.0.0.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Jabberwocky.Glass.Autofac.Mvc">
       <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.0.0.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+    <Reference Include="MiniProfiler">
       <HintPath>..\..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MiniProfiler.Mvc, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+    <Reference Include="MiniProfiler.Mvc">
       <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NWebsec, Version=4.1.1.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NWebsec.4.1.1\lib\45\NWebsec.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NWebsec.Core, Version=1.4.1.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NWebsec.Core.1.4.1\lib\45\NWebsec.Core.dll</HintPath>
+    <Reference Include="NWebsec">
+      <HintPath>..\..\packages\NWebsec.4.2.0\lib\45\NWebsec.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NWebsec.Mvc, Version=4.1.1.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NWebsec.Mvc.4.1.1\lib\45\NWebsec.Mvc.dll</HintPath>
+    <Reference Include="NWebsec.Core">
+      <HintPath>..\..\packages\NWebsec.Core.1.5.0\lib\45\NWebsec.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NWebsec.Mvc">
+      <HintPath>..\..\packages\NWebsec.Mvc.4.2.0\lib\45\NWebsec.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -192,16 +207,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Cors">
       <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -209,22 +216,19 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Cors">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Web.Infrastructure">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
@@ -232,30 +236,30 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Helpers">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Mvc">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Razor">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Deployment">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Razor">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
@@ -279,35 +283,28 @@
       <HintPath>..\..\packages\Velir.Search.Mvc.1.0.0-alpha\lib\net45\Velir.Search.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Velir.Search.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Velir.Search.Web">
       <HintPath>..\..\packages\Velir.Search.Web.1.1.0-alpha\lib\net45\Velir.Search.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Velir.Search.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Velir.Search.WebApi">
       <HintPath>..\..\packages\Velir.Search.WebApi.1.0.0-alpha\lib\net45\Velir.Search.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebApi.OutputCache.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.6\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
+    <Reference Include="WebApi.OutputCache.Core">
+      <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebApi.OutputCache.V2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.6\lib\net45\WebApi.OutputCache.V2.dll</HintPath>
+    <Reference Include="WebApi.OutputCache.V2">
+      <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.V2.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -397,15 +394,13 @@
     <Content Include="App_Data\Informa.Sessions.mdf" />
     <Content Include="App_Data\Informa.Web.MDF" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="gulpfile.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
     <Content Include="layouts\Sample Datasource Sublayout.ascx" />
     <Content Include="layouts\Sample Inner Sublayout.ascx" />
@@ -468,8 +463,6 @@
     <Content Include="App_Config\Include\FXM\Sitecore.FXM.Solr.DomainsSearch.Index.Master.config.disabled" />
     <Content Include="App_Config\Include\FXM\Sitecore.FXM.Solr.DomainsSearch.Index.Web.config.disabled" />
     <Content Include="App_Config\Include\FXM\Sitecore.FXM.Speak.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\ja-JP.config.example" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
     <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Client.config" />
@@ -627,7 +620,9 @@
     <Content Include="App_Config\Prototypes.config" />
     <Content Include="App_Config\Security\Domains.config" />
     <Content Include="App_Config\Security\GlobalRoles.config" />
-    <Content Include="App_Config\Sitecore.config" />
+    <Content Include="App_Config\Sitecore.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Sitecore.config.template" />
     <Content Include="App_Config\Web\nwebsec.config" />
     <Content Include="App_Config\Web\nwebsec.config.template" />
@@ -639,6 +634,10 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="layouts\system\Social\Connector\SocialLogin.ashx" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="webedit.css" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
@@ -650,21 +649,11 @@
     <Content Include="Areas\Social\Views\Sharing\LinkedInShareButton.cshtml" />
     <Content Include="Areas\Social\Views\Sharing\TweetButton.cshtml" />
     <Content Include="Areas\Social\Views\Web.config" />
-    <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="bower.json" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="packages\velir_search_web-1.1.zip" />
-    <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="velir\dist\example.css" />
     <Content Include="velir\dist\patternlibrary.css" />
@@ -674,7 +663,9 @@
     <Content Include="velir\packages\velir_search_web.xml" />
     <Content Include="velir\vendor\bower_components\angular\angular.js" />
     <Content Include="velir\vendor\bower_components\lodash\lodash.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -719,20 +710,22 @@
     <Content Include="Views\Shared\SearchSortOptions.cshtml" />
     <Content Include="Views\Shared\SortOption.cshtml" />
     <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
+    <Content Include="Views\Shared\MainLayout.cshtml" />
+    <Content Include="Views\Shared\ExperienceExplorerView.cshtml" />
+    <Content Include="Views\_Shared\AuthoredContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Config\Include\UserDefined\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Partials\" />
-    <Folder Include="Views\_Shared\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+    <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
@@ -748,13 +741,19 @@
     <Analyzer Include="..\..\packages\Jabberwocky.Core.CodeAnalysis.1.0.0\analyzers\dotnet\cs\Jabberwocky.Core.CodeAnalysis.dll" />
     <Analyzer Include="..\..\packages\Jabberwocky.Glass.CodeAnalysis.1.0.0\analyzers\dotnet\cs\Jabberwocky.Glass.CodeAnalysis.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
   </Target>
@@ -780,13 +779,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
-  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

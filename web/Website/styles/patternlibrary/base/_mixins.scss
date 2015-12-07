@@ -1,0 +1,171 @@
+// mixins.scss
+// Define custom mixins here
+
+/// Adds an outline for debugging purposes
+/// @author Andrew Rodgers
+/// @param {color} $outline-color [color(wireframe, 500)] - Element’s `outline-color`
+/// @example scss - usage
+///     .foo{
+///         @include debug-bars();
+///     }
+///
+///     .bar{
+///         @include debug-bars(color(wireframe, 900));
+///     }
+///
+///     .foo-bar{
+///         @include debug-bars(#f5f5f5);
+///     }
+///
+/// @example css - CSS output
+///     .foo{
+///         outline: 1px solid #9e9e9e; /* default value */
+///     }
+///
+///     .bar{
+///         outline: 1px solid #212121;
+///     }
+///
+///     .foo-bar{
+///         outline: 1px solid #f5f5f5;
+///     }
+@mixin debug-bars($outline-color: color(wireframe, 500)) {
+    outline: 1px solid $outline-color;
+}
+
+/// fills background-color for layout debugging purposes
+/// @author Andrew Rodgers
+/// @param {color} $fill-color [color(wireframe, 300)] - Element’s `background-color`
+/// @example scss - usage
+///     .foo{
+///         @include layout-color();
+///     }
+///
+///     .bar{
+///         @include layout-color(color(wireframe, 900));
+///     }
+///
+///     .foo-bar{
+///         @include layout-color(#f5f5f5);
+///     }
+///
+/// @example css - CSS output
+///     .foo{
+///         background-color: 1px solid #e0e0e0; /* default value */
+///     }
+///
+///     .bar{
+///         background-color: 1px solid #212121;
+///     }
+///
+///     .foo-bar{
+///         background-color: 1px solid #f5f5f5;
+///     }
+@mixin layout-color($fill-color: color(wireframe, 300)) {
+    background-color: $fill-color;
+}
+
+//// adds outline, background-color, and min-height for testing layouts
+/// @author Andrew Rodgers
+/// @param {color | color | length} $outline-color [color(wireframe, 500)], $fill-color [color(wireframe, 300)], $layout-height [8] - Element’s `outline-color`, `background-color` and `min-height` in pixels
+/// @example scss - usage
+///     .foo{
+///         @include layout-show();
+///     }
+///
+///     .bar{
+///         @include layout-show(color(wireframe, 300), color(wireframe, 900), 10);
+///     }
+///
+/// @example css - CSS output
+///     .foo{
+///         outline-color: #9e9e9e; /* default value */
+///         background-color: 1px solid #e0e0e0; /* default value */
+///         min-height: 8px; /* default value */
+///     }
+///
+///     .bar{
+///         outline-color: #e0e0e0;
+///         background-color: 1px solid #212121;
+///         min-height: 10px;
+///     }
+@mixin layout-show($outline-color: color(wireframe, 900), $fill-color: color(wireframe, 300), $layout-height: 8) {
+    @include debug-bars($outline-color);
+    @include layout-color($fill-color);
+    min-height: $layout-height+px;
+}
+
+/// omega reset
+/// @author Josh Fry
+/// @link https://github.com/joshfry/omega-reset-for-bourbon-neat
+/// @param {expression} $nth
+/// 1. This should match the value of the previous `omega()` argument
+/// @example scss - usage
+///     .foo{
+///         @include span-columns(6);
+///         @include omega(2n); // 1
+///         @include media(max-width 600px){
+///             @include omega-reset(2n); // 1
+///             @include span-columns(4);
+///             @include omega(3n);
+///         }
+///     }
+@mixin omega-reset($nth) {
+    &:nth-child(#{$nth}) {
+        margin-right: flex-gutter();
+    }
+
+    &:nth-child(#{$nth}+1) {
+        clear: none;
+    }
+}
+
+// zero out padding and margins
+@mixin zero() {
+    margin: 0;
+    padding: 0;
+}
+
+// zero out list-style-type NOTE: Becareful with nested list styles
+@mixin zero-list() {
+    list-style-type: none;
+}
+
+// univeral panel styling
+@mixin panel() {
+    position: relative;
+    margin-top: rem(30);
+    margin-bottom: rem(30);
+    border-top: 6px solid color(wireframe, 700);
+    border-radius: 1px;
+    box-shadow: -1px 0 2px 0 color(wireframe, black, 0.12) , 1px 0 2px 0 color(wireframe, black, 0.12) , 0 1px 1px 0 color(wireframe, black, 0.24);
+}
+
+/// Helper to size an element
+/// @author Hugo Giraudel
+/// @link http://www.sitepoint.com/sass-mixins-kickstart-project/
+///
+/// @param {Length} $width
+/// @param {Length} $height
+/// @example scss - usage
+///     .foo {
+///         @include size(100%);
+///     }
+///
+///     .bar {
+///         @include size(100%, 1px);
+///     }
+/// @example css - CSS output
+///     .element {
+///         width: 100%;
+///         height: 100%;
+///     }
+///
+///     .other-element {
+///         width: 100%;
+///         height: 1px;
+///     }
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
