@@ -87,15 +87,15 @@
       <HintPath>..\..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper">
+    <Reference Include="Glass.Mapper, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc">
+    <Reference Include="Glass.Mapper.Sc, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc.Mvc">
+    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
@@ -647,11 +647,14 @@
     <Content Include="layouts\system\Social\Connector\SocialLogin.ashx" />
     <Content Include=".bowerrc" />
     <Content Include="lib\local.js.example" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <None Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header - Copy.cshtml" />
     <None Include="Views\Shared\_Header.cshtml" />
     <None Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="webedit.css" />
@@ -666,8 +669,6 @@
     <Content Include="Areas\Social\Views\Sharing\TweetButton.cshtml" />
     <Content Include="Areas\Social\Views\Web.config" />
     <Content Include="bower.json" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="packages\velir_search_web-1.1.zip" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
@@ -746,6 +747,7 @@
   <ItemGroup>
     <Folder Include="App_Config\Include\UserDefined\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
   <ItemGroup>
