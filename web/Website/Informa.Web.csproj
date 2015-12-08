@@ -18,7 +18,7 @@
     <AssemblyName>Informa.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -47,10 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime">
-      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="AspNet.ScriptManager.jQuery, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AspNet.ScriptManager.jQuery.2.1.4\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
       <Private>True</Private>
@@ -159,6 +155,10 @@
     <Reference Include="NWebsec.Mvc">
       <HintPath>..\..\packages\NWebsec.Mvc.4.2.0\lib\45\NWebsec.Mvc.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -373,16 +373,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
+    <Compile Include="Areas\Article\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Article\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Article\Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Areas\Article\Models\AccountViewModels.cs" />
+    <Compile Include="Areas\Article\Models\IdentityModels.cs" />
+    <Compile Include="Areas\Article\Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -393,6 +395,24 @@
     <Content Include="App_Data\Informa.Master.MDF" />
     <Content Include="App_Data\Informa.Sessions.mdf" />
     <Content Include="App_Data\Informa.Web.MDF" />
+    <Content Include="Areas\Article\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Areas\Article\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Areas\Article\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Areas\Article\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Areas\Article\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Areas\Article\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Article\Views\Account\Register.cshtml" />
+    <Content Include="Areas\Article\Views\Account\ResetPassword.cshtml" />
+    <Content Include="Areas\Article\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\Article\Views\Account\SendCode.cshtml" />
+    <Content Include="Areas\Article\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Areas\Article\Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Areas\Article\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Areas\Article\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas\Article\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\Article\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Areas\Article\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Areas\Article\Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
@@ -649,6 +669,15 @@
     <Content Include="lib\local.js.example" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
+    <Content Include="Areas\Article\Views\web.config" />
+    <Content Include="Areas\Article\Views\Index.cshtml" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config" />
+    <Content Include="Areas\Article\Views\Home\About.cshtml" />
+    <Content Include="Areas\Article\Views\Home\Contact.cshtml" />
+    <Content Include="Areas\Article\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Article\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Article\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -691,30 +720,9 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Article\Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\Article\Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="velir\dist\velir.search.angular.js.map" />
     <Content Include="Views\Shared\SearchFacets.cshtml" />
@@ -745,7 +753,7 @@
     <Content Include="styles\vendors\_normalize.scss" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Config\Include\UserDefined\" />
+    <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
@@ -796,7 +804,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58902</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55555/</IISUrl>
+          <IISUrl>http://informa.miked.velir.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
