@@ -14,8 +14,8 @@ utils.setTaskConfig("js", {
 
     default: {
 
-        src: config.root + "/js/index.js",
-        dest: config.dest + "/js",
+        src: config.root + "/js/**/*.js",
+        dest: config.dest,
 
         // js uglify options , to skip, set value to false or omit entirely
         // otherwise, pass options object (can be empty {})

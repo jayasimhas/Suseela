@@ -1,27 +1,32 @@
-@charset 'UTF-8';
-// yourclientname.scss
-// This is your main .scss file, only use "@imports" here.
+// http://sass-guidelin.es/#encoding
+@charset 'utf-8';
 
-// TODO: Don't forget to change the placholder, "yourclientname", in the imports below
-// and the "yourclientname" folder located in the "scss" folder.
+// http://sass-guidelin.es/#the-7-1-pattern
 
-// custom vendor overrides
+/* * * * UTILITIES / HELPERS * * * */
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
 
-// base imports
-@import "base/colors";
-@import "base/mixins";
-@import "base/icons";
-@import "base/typography";
-@import "base/general";
-@import "base/forms";
+/* * * * VENDORS * * * */
+@import 'vendor/normalize';
 
-// helper imports
-@import "helpers/class-helpers";
-@import "helpers/layout-helpers";
+/* * * * BASE * * * */
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/helpers';
 
-// component imports
-@import "components/media-object";
+/* * * * LAYOUT * * * */
+@import 'layout/header';
+@import 'layout/footer';
 
-// pages
+/* * * * COMPONENTS * * * */
+@import 'components/advertising';
+@import 'components/buttons';
 
-// print styles
+/* * * * PAGE-SPECIFIC STYLES * * * */
+@import 'pages/home';
+
+/* * * * SHAME 🔔 SHAME 🔔 SHAME 🔔 * * * */
+@import 'shame';
