@@ -2,7 +2,6 @@ var gulp        = require("gulp"),
     plumber     = require("gulp-plumber"),
     notify      = require("gulp-notify"),
     fs          = require("fs"),
-    path        = require("path"),
     runSequence = require("run-sequence"),
     color       = require("cli-color"),
     watch       = require("gulp-watch"),
@@ -133,7 +132,9 @@ module.exports.loadTaskConfig = function loadTaskConfig(task){
 module.exports.drano = function drano(){
     return plumber({
         errorHandler: function(err) {
-            if(config.notify){
+
+            // gulp notify is freezing jenkins builds, so we're only going to show this message if we're watching
+            if (config.watch){
                 notify.onError({ title: "<%= error.plugin %>", message: "<%= error.message %>", sound: "Beep" })(err);
             }
             this.emit("end");
@@ -159,15 +160,15 @@ module.exports.loadTasks = function loadTasks(tasks) {
 // load and start tasks
 module.exports.build = function build() {
     
-
     // if config.tasks isn't defined, use the loadedTasks
     if (!config.tasks){ config.tasks = config.loadedTasks; }
 
     // browserSync needs special treatment because it needs to be started AFTER the 
     // build directory has been created and filled (for livereload to work)
     if (config.watch) {
-	
-		gulp.src('').pipe(notify("Building for '" + config.env + "' environment")); // gulp.src('') is a hack
+
+        // gulp notify is freezing jenkins builds, so we're only going to show this message if we're watching
+        gulp.src('').pipe(notify("Building for '" + config.env + "' environment")); // gulp.src('') is a hack
 
         // load browserSync (not using loadTask so it doesn't get added to config.loadedTasks)
         require("./browserSync");

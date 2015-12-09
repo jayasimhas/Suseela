@@ -5,7 +5,6 @@ var gulp           = require("gulp"),
     uglify         = require("gulp-uglify"),
     sourcemaps     = require("gulp-sourcemaps"),
     browserify     = require("browserify"),
-    shim           = require("browserify-shim"),
     through2       = require("through2"),
     babelify       = require("babelify");
 
@@ -15,8 +14,8 @@ utils.setTaskConfig("js", {
 
     default: {
 
-        src: config.root + "/Scripts/index.js",
-        dest: config.dest + "/Scripts",
+        src: config.root + "/js/index.js",
+        dest: config.dest + "/js",
 
         // js uglify options , to skip, set value to false or omit entirely
         // otherwise, pass options object (can be empty {})
@@ -40,8 +39,8 @@ utils.setTaskConfig("js", {
 
 // register the watch
 utils.registerWatcher("js", [
-    config.root + "/Scripts/**/*.js",
-    config.root + "/Scripts/**/*.jsx"
+    config.root + "/js/**/*.js",
+    config.root + "/js/**/*.jsx"
 ]);
 
 
@@ -58,22 +57,7 @@ gulp.task("js", function(){
         // https://github.com/substack/node-browserify/issues/1044#issuecomment-72384131
         var b = browserify(js.browserify || {}) // pass options
             .add(file.path) // this file
-            .transform(babelify)
-            .transform(shim);
-
-        // externalize all bower components if defined
-        try {
-            var bowerComponents = config.taskConfig.bower.default.root + "/bower_components";
-            var packages = fs.readdirSync(bowerComponents);
-
-            packages.forEach(function(p){
-                b.external(p);
-            });
-
-            utils.logYellow("shimming", packages);
-
-        }
-        catch(e) { console.log("ERRR", e); /* do nothing */ }
+            .transform(babelify);
 
         b.bundle(function(err, res){
             if (err){
@@ -96,3 +80,5 @@ gulp.task("js", function(){
         .pipe(gulp.dest(js.dest));
 
 });
+
+

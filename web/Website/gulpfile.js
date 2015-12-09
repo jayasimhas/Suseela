@@ -1,4 +1,3 @@
-/// <binding BeforeBuild='devNoWatch' />
 /**
  *  Usage:
  *      Once per computer: 
@@ -20,65 +19,51 @@
 **/
 
 // Include gulp and plugins
-var gulp = require("gulp"),
-    utils = require("./lib/tasks/utils"),
-    notify = require("gulp-notify"),
-    path = require("path"),
-    config = utils.loadConfig(); // initialize the config
+var gulp    = require("gulp"),
+    utils   = require("./tasks/utils"),
+    notify  = require("gulp-notify"),
+    path    = require("path"),
+    config  = utils.loadConfig(); // initialize the config
 
 
 // set some defaults
 utils.setConfig({
-    root: path.resolve("./"),
-    dest: path.resolve("./"),
-    env: ""
+//    root  : path.resolve("../../web/Website"),
+//    dest  : path.resolve("../../web/Website/dist"),
+    root  : path.resolve("../Website"),
+    dest  : path.resolve("../Website/dist"),
+    env   : ""
 });
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "bower"]);
+utils.loadTasks(["js", "css", "copy", "bower"]);
 
 /**
  * dev task
  */
-gulp.task("dev", function () {
+gulp.task("dev", function(){
 
     // set the dev config (cache in utils.js)
     utils.setConfig({
-        env: "dev",
-        watch: true,
-        notify: true
+        env   : "dev",
+        watch : true
     });
 
     // build with this config 
-    utils.build();
-
-});
-
-gulp.task("dev-nowatch", function () {
-
-    // set the dev config (cache in utils.js)
-    utils.setConfig({
-        env: "dev",
-        watch: false,
-        notify: true
-    });
-
-    // build with this config 
-    utils.build();
+    utils.build(); 
 
 });
 
 /**
  * prod task
  */
-gulp.task("prod", function () {
+gulp.task("prod", function(){  
 
     // set the prod config (cache in utils.js)
     utils.setConfig({
-        env: "prod",
-        watch: false,
-        notify: false
+        env   : "prod",
+        watch : false
     });
 
     // build with this config
