@@ -188,3 +188,4 @@ web/Website/lib/bower_components
 *bower_components
 web/Website/data/logs
 web/Website/data/indexes
+.vscode
