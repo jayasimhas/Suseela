@@ -12,13 +12,13 @@
     @* <title>@Html.Sitecore().Field("title", new {DisableWebEdit = true})</title>*@
     @* @Html.Sitecore().VisitorIdentification() *@
 </head>
-    <body>
-        @Html.Partial("_LoginPartial")
+<body>
+
+    @Html.Partial("_LoginPartial")
+
     <div>
-        @Html.Sitecore().Placeholder("main_content")
+        @Html.Partial("_Shared/AuthoredContent")
     </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-    </body>
+</body>
 </html>

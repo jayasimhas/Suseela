@@ -35,12 +35,10 @@ utils.setTaskConfig("css", {
     }
 });
 
-
 // register the watch
 utils.registerWatcher("css", [
     config.root + "/styles/**/*.scss"
 ]);
-
 
 /* css task */
 gulp.task("css", function () {

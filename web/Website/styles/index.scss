@@ -5,29 +5,23 @@
 // TODO: Don't forget to change the placholder, "yourclientname", in the imports below
 // and the "yourclientname" folder located in the "scss" folder.
 
-// codekit and vendor imports
-@import "../vendor/bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "vendors/grid-settings";
-@import "../vendor/bower_components/neat/app/assets/stylesheets/_neat.scss";
-@import "vendors/normalize";
-
 // custom vendor overrides
 
 // base imports
-@import "patternlibrary/base/colors";
-@import "patternlibrary/base/mixins";
-@import "patternlibrary/base/icons";
-@import "patternlibrary/base/typography";
-@import "patternlibrary/base/general";
-@import "patternlibrary/base/forms";
+@import "base/colors";
+@import "base/mixins";
+@import "base/icons";
+@import "base/typography";
+@import "base/general";
+@import "base/forms";
 
 // helper imports
-@import "patternlibrary/helpers/class-helpers";
-@import "patternlibrary/helpers/grid-helpers";
-@import "patternlibrary/helpers/layout-helpers";
+@import "helpers/class-helpers";
+@import "helpers/grid-helpers";
+@import "helpers/layout-helpers";
 
 // component imports
-@import "patternlibrary/components/media-object";
+@import "components/media-object";
 
 // pages
 
