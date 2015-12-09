@@ -13,16 +13,12 @@
     @* @Html.Sitecore().VisitorIdentification() *@
 </head>
 <body>
-@Html.Partial("_Header")       
-<div>
-    @Html.Sitecore().Placeholder("main_content")
-    @Html.Partial("../_Shared/AuthoredContent")
-</div>
 
-@Html.Partial("_Footer")
-  
+    @Html.Partial("_LoginPartial")
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
+    <div>
+        @Html.Partial("../_Shared/AuthoredContent")
+    </div>
+
 </body>
 </html>
