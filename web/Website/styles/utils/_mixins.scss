@@ -36,7 +36,7 @@
 /// @param {String} $breakpoint - Breakpoint
 /// @requires $breakpoints
 /// @link http://sass-guidelin.es/#breakpoint-manager Sass Guidelines - Breakpoint Manager
-@mixin respond-to($breakpoint) {
+@mixin breakpoint($breakpoint) {
   $query: map-get($breakpoints, $breakpoint);
   
   @if not $query {

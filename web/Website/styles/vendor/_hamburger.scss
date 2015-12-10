@@ -1,0 +1,106 @@
+/*
+	CSS-only animated hamburger-to-X widget
+	http://callmenick.com/post/animating-css-only-hamburger-menu-icons
+*/
+
+// Override these as appropriate to modify the button styles
+$cham-button-width: 75px; // The width of the button area
+$cham-button-height: 75px; // The height of the button area
+$cham-bar-thickness: 4px; // The thickness of the button bars
+$cham-button-pad: 20px; // The l/r padding between button area and bars.
+$cham-button-bar-space: 12px; // The spacing between button bars
+$cham-button-transistion-duration: 250ms; // The transition duration
+
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: $cham-button-width;
+  height: $cham-button-height;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: $cham-button-pad;
+  right: $cham-button-pad;
+  height: $cham-bar-thickness;
+  background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: $cham-bar-thickness;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: $cham-button-bar-space;
+}
+
+.c-hamburger span::after {
+  bottom: $cham-button-bar-space;
+}
+
+.c-hamburger--htx span {
+  transition: background 0s 0.3s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: $cham-button-transistion-duration, $cham-button-transistion-duration;
+  transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+/*
+
+Need more precise selectors for this project, hiding this default code.
+
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+
+*/

@@ -1,0 +1,22 @@
+main {
+	display: flex;
+	margin-left: -200px;
+}
+
+.main__wrapper {
+	float: left;
+	height: 100%;
+	width: calc(100% - 200px);
+}
+
+.main__content {
+	max-width: 800px;
+	margin: 0px auto;
+
+	@include breakpoint('medium') {
+		width: 100%;
+		padding: 1rem;
+		margin: 0;
+	}
+
+}

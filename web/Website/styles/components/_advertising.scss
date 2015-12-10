@@ -6,4 +6,10 @@
 	width: 100%;
 	text-align: center;
 	padding: 2rem 0;
+
+	img {
+		@include breakpoint('small') {
+			width: 100%;
+		}
+	}
 }

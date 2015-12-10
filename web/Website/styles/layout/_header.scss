@@ -8,3 +8,42 @@
 	text-align: center;
 	padding: 0.5rem;
 }
+
+.header__wrapper {
+	border: 1px solid #ccc;
+	border-right: 0;
+	border-left: 0;
+	padding: 1.5rem;
+
+	@include breakpoint('medium') {
+		padding: 1rem;
+	}
+}
+
+.header__logo {
+	display: block;
+	float: left;
+}
+
+.header__search-wrapper {
+	float: left;
+	padding: 1.5rem;
+}
+
+.header__search-field {
+	padding: 0.25rem;
+
+	@include breakpoint('medium') {
+		display: none;
+	}
+}
+
+.header__user {
+	float: right;
+	line-height: 80px;
+}
+
+.header__user div {
+	float: left;
+	margin: 0 1rem;
+}

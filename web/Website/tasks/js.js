@@ -14,7 +14,7 @@ utils.setTaskConfig("js", {
 
     default: {
 
-        src: config.root + "/js/**/*.js",
+        src: config.root + "/js/**/informa.js",
         dest: config.dest,
 
         // js uglify options , to skip, set value to false or omit entirely

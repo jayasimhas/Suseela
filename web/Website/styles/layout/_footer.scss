@@ -1,3 +1,47 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+footer {
+	border-top: 1px solid #ccc;
+	background-color: #eee;
+}
+
+.footer__wrapper {
+	margin: 0 auto;
+	padding: 3rem 0;
+	max-width: 800px;
+
+	@include breakpoint('small') {
+		width: 100%;
+	}
+}
+
+.footer__corporate {
+	float: left;
+}
+.footer__logo {
+	display: block;
+	margin-bottom: 2rem;
+}
+
+.footer__link-stack {
+	float: left;
+	width: 25%;
+
+	@include breakpoint('medium') {
+		width: calc(100% / 3);
+	}
+}
+
+.footer__link-stack--social {
+	@include breakpoint('medium') {
+		display: none;
+	}
+}
+
+.footer__separator {
+	display: block;
+	width: 100%;
+	clear: both;
+}
