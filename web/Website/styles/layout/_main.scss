@@ -10,7 +10,7 @@ main {
 }
 
 .main__content {
-	max-width: 800px;
+	max-width: 1200px;
 	margin: 0px auto;
 
 	@include breakpoint('medium') {
