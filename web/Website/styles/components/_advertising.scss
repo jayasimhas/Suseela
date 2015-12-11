@@ -7,9 +7,13 @@
 	text-align: center;
 	padding: 2rem 0;
 
-	img {
-		@include breakpoint('small') {
+	@include breakpoint('small') {
+		
+		padding: 0;
+
+		img {
 			width: 100%;
+			display: block; /* Prevents unwanted space below img */
 		}
 	}
 }

@@ -47,28 +47,52 @@
 	}
 }
 
+
+/* Custom styles for hamburger menu animator */
+
 .c-hamburger {
 	background-color: inherit;
-}
-.c-hamburger span {
-	top: 34px;
+	
+	span {
+		top: 34px;
+
+		@include breakpoint('small') {
+			height: 3px;
+			left: 25px;
+			right: 25px;
+
+			&::before,
+			&::after {
+				height: 3px;
+			}
+
+			&::before {
+				top: 10px;
+			}
+
+			&::after {
+				bottom: 10px;
+			}
+		}
+	}
 }
 
-.main-menu.is-active .c-hamburger--htx span {
+.main-menu__toggler.is-active .c-hamburger span {
   background: none;
-}
 
-.main-menu.is-active .c-hamburger--htx span::before {
-  top: 0;
-  transform: rotate(45deg);
-}
+  &::before {
+  	top: 0;
+  	transform: rotate(45deg);
+	}
+	
+	&::after {
+	  bottom: 0;
+	  transform: rotate(-45deg);
+	}
 
-.main-menu.is-active .c-hamburger--htx span::after {
-  bottom: 0;
-  transform: rotate(-45deg);
-}
+	&::before,
+	&::after {
+		transition-delay: 0s, 0.3s;
+	}
 
-.main-menu.is-active .c-hamburger--htx span::before,
-.main-menu.is-active .c-hamburger--htx span::after {
-  transition-delay: 0s, 0.3s;
 }

@@ -23,11 +23,20 @@
 .header__logo {
 	display: block;
 	float: left;
+
+	@include breakpoint('small') {
+		height: 50px;
+	}
 }
 
 .header__search-wrapper {
 	float: left;
 	padding: 1.5rem;
+
+	@include breakpoint('small') {
+		float: right;
+		padding: 0.5rem;
+	}
 }
 
 .header__search-field {
@@ -41,9 +50,20 @@
 .header__user {
 	float: right;
 	line-height: 80px;
+
+	@include breakpoint('small') {
+		float: left;
+		line-height: 24px;
+	}
 }
 
 .header__user div {
 	float: left;
 	margin: 0 1rem;
+}
+
+@include breakpoint('small') {
+	.header__friendly-welcome {
+		display: none;
+	}
 }
