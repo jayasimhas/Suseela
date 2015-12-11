@@ -3,12 +3,6 @@
 	http://callmenick.com/post/animating-css-only-hamburger-menu-icons
 */
 
-// Override these as appropriate to modify the button styles
-$cham-bar-thickness: 4px; // The thickness of the button bars
-$cham-button-pad: 20px; // The l/r padding between button area and bars.
-$cham-button-bar-space: 12px; // The spacing between button bars
-$cham-button-transistion-duration: 250ms; // The transition duration
-
 .c-hamburger {
   display: block;
   position: relative;
@@ -56,12 +50,12 @@ $cham-button-transistion-duration: 250ms; // The transition duration
 		}
 		
 		&::before { /* c.hamburger span */
-		  top: $cham-button-bar-space;
+		  top: 12px;
 		  transition-property: top, transform;
 		}
 
 		&::after { /* c.hamburger span */
-  		bottom: $cham-button-bar-space;
+  		bottom: 12px;
   		transition-property: bottom, transform;
 		}
 	}
