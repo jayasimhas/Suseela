@@ -4,8 +4,6 @@
 */
 
 // Override these as appropriate to modify the button styles
-$cham-button-width: 75px; // The width of the button area
-$cham-button-height: 75px; // The height of the button area
 $cham-bar-thickness: 4px; // The thickness of the button bars
 $cham-button-pad: 20px; // The l/r padding between button area and bars.
 $cham-button-bar-space: 12px; // The spacing between button bars
@@ -17,8 +15,6 @@ $cham-button-transistion-duration: 250ms; // The transition duration
   overflow: hidden;
   margin: 0;
   padding: 0;
-  width: $cham-button-width;
-  height: $cham-button-height;
   font-size: 0;
   text-indent: -9999px;
   appearance: none;
@@ -26,58 +22,49 @@ $cham-button-transistion-duration: 250ms; // The transition duration
   border-radius: none;
   border: none;
   cursor: pointer;
+
+  height: 75px;
+  width: 75px;
   transition: background 0.3s;
-}
+	
+	&:focus {
+  	outline: none;
+  }
+	
+	span {
+	  display: block;
+	  position: absolute;
 
-.c-hamburger:focus {
-  outline: none;
-}
+	  left: 20px;
+	  right: 20px;
+	  height: 4px;
+	  background: white;
+	  transition: background 0s 0.3s;
+		
+		&::before, /* c.hamburger span */
+		&::after {
+		  position: absolute;
+		  display: block;
+		  left: 0;
+		  background-color: #fff;
+		  content: "";
 
-.c-hamburger span {
-  display: block;
-  position: absolute;
-  top: 44px;
-  left: $cham-button-pad;
-  right: $cham-button-pad;
-  height: $cham-bar-thickness;
-  background: white;
-}
+		  width: 100%;
+		  height: 4px;
+		  transition-duration: 300ms, 300ms;
+		  transition-delay: 300ms, 0s;
+		}
+		
+		&::before { /* c.hamburger span */
+		  top: $cham-button-bar-space;
+		  transition-property: top, transform;
+		}
 
-.c-hamburger span::before,
-.c-hamburger span::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: $cham-bar-thickness;
-  background-color: #fff;
-  content: "";
-}
-
-.c-hamburger span::before {
-  top: $cham-button-bar-space;
-}
-
-.c-hamburger span::after {
-  bottom: $cham-button-bar-space;
-}
-
-.c-hamburger--htx span {
-  transition: background 0s 0.3s;
-}
-
-.c-hamburger--htx span::before,
-.c-hamburger--htx span::after {
-  transition-duration: $cham-button-transistion-duration, $cham-button-transistion-duration;
-  transition-delay: 0.3s, 0s;
-}
-
-.c-hamburger--htx span::before {
-  transition-property: top, transform;
-}
-
-.c-hamburger--htx span::after {
-  transition-property: bottom, transform;
+		&::after { /* c.hamburger span */
+  		bottom: $cham-button-bar-space;
+  		transition-property: bottom, transform;
+		}
+	}
 }
 
 /*
