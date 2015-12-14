@@ -13,8 +13,9 @@ var settings = {
 
     // watch these files and reload the browser when they change
     files: [
-        config.dest + '/**',
-        config.root + '/html_templates/**'
+        config.root + '/html_templates/**',
+        config.root + '/Views',
+        config.dest + '/**'
     ]
 
 };

@@ -1,36 +1,32 @@
-@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
-{            
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-        @Html.AntiForgeryToken()
-        <header class="header--desktop">
-            <div class="header--desktop__wrapper">
-                <a href="/home" class="logo" style="background-image: url(/assets/images/logo.png)">
-                    Desktop Header
-                </a>             
-                <ul class="header--desktop__header-links">
-                    <li class="account-link">
-                        <!-- BE Dev Note: We cannot guarantee usage of this account-link class -->
-                        <i class="icon icon--tasks header-links__icon"></i>
-                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
-                    </li>
-                    <li>
-                        <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                    </li>
-                </ul>
-            </div>
-        </header>
-    }
-}
-else
-{
-    <ul class="header--desktop__header-links">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
-}
+<header>
 
-<header class="header--mobile">
-    <a href="/" class="logo--mobile" style="background-image: url(/assets/images/small-logo444x24.png)">Mobile Header</a>
+    <div class="header__informa-permabanner">
+        informa
+    </div>
+
+    <div class="ad__full"><img src="http://placehold.it/728x90"></div>
+
+    <div class="header__wrapper clearfix">
+
+        <div class="main-menu__toggler">
+            <button class="c-hamburger">
+            <span>Toggle Menu</span>
+            </button>
+            Menu
+        </div>
+
+        <img class="header__logo" src="http://placehold.it/240x80">
+        
+        <div class="header__search-wrapper">
+            <input class="header__search-field" type="text" placeholder="Search the site"> 🔍
+        </div>
+
+        <div class="header__user">
+            <div class="header__friendly-welcome">Hi, Name</div>
+            <div class="header__my-account">My Account</div>
+            <div class="header__sign-out">Sign Out</div>
+        </div>
+
+    </div>
+
 </header>
