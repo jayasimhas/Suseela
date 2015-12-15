@@ -1,34 +1,35 @@
-@charset 'UTF-8';
-// yourclientname.scss
-// This is your main .scss file, only use "@imports" here.
+// http://sass-guidelin.es/#encoding
+@charset 'utf-8';
 
-// TODO: Don't forget to change the placholder, "yourclientname", in the imports below
-// and the "yourclientname" folder located in the "scss" folder.
+// http://sass-guidelin.es/#the-7-1-pattern
 
-// codekit and vendor imports
-@import "../vendor/bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "vendors/grid-settings";
-@import "../vendor/bower_components/neat/app/assets/stylesheets/_neat.scss";
-@import "vendors/normalize";
+/* * * * UTILITIES / HELPERS * * * */
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
 
-// custom vendor overrides
+/* * * * VENDORS * * * */
+@import 'vendor/normalize';
+@import 'vendor/hamburger';
 
-// base imports
-@import "patternlibrary/base/colors";
-@import "patternlibrary/base/mixins";
-@import "patternlibrary/base/icons";
-@import "patternlibrary/base/typography";
-@import "patternlibrary/base/general";
-@import "patternlibrary/base/forms";
+/* * * * BASE * * * */
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/helpers';
 
-// helper imports
-@import "patternlibrary/helpers/class-helpers";
-@import "patternlibrary/helpers/grid-helpers";
-@import "patternlibrary/helpers/layout-helpers";
+/* * * * LAYOUT * * * */
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/main';
 
-// component imports
-@import "patternlibrary/components/media-object";
+/* * * * COMPONENTS * * * */
+@import 'components/advertising';
+@import 'components/buttons';
+@import 'components/main-menu';
 
-// pages
+/* * * * PAGE-SPECIFIC STYLES * * * */
+@import 'pages/home';
 
-// print styles
+/* * * * SHAME 🔔 SHAME 🔔 SHAME 🔔 * * * */
+@import 'shame';
