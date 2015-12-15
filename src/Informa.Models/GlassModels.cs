@@ -34,6 +34,82 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 
 
  	/// <summary>
+	/// IArticle Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Article</para>	
+	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
+	public partial interface IArticle : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IArticle Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Article</para>	
+		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IArticle__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IArticleConstants{
+
+			public const string TemplateIdString = "11380b5d-3531-4570-b213-efc5312266e4";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Article";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// IInfoComponent Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/InfoComponent</para>	
+	/// <para>ID: 1b4738c7-1fb1-4b24-a030-ac98171528a7</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IInfoComponentConstants.TemplateIdString)]
+	public partial interface IInfoComponent : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IInfoComponent Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/InfoComponent</para>	
+		/// <para>ID: 1b4738c7-1fb1-4b24-a030-ac98171528a7</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IInfoComponent__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IInfoComponentConstants{
+
+			public const string TemplateIdString = "1b4738c7-1fb1-4b24-a030-ac98171528a7";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "InfoComponent";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
+{
+
+
+ 	/// <summary>
 	/// IAuthored_Content Interface
 	/// <para></para>
 	/// <para>Path: /sitecore/templates/User Defined/Authored Content</para>	

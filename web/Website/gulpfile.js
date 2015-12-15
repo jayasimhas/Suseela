@@ -42,7 +42,7 @@ utils.loadTasks(["js", "css", "copy", "bower"]);
 /**
  * dev task
  */
-gulp.task("dev", function(){
+gulp.task("dev-watch", function(){
 
     // set the dev config (cache in utils.js)
     utils.setConfig({
@@ -52,6 +52,22 @@ gulp.task("dev", function(){
 
     // build with this config 
     utils.build(); 
+
+});
+
+/**
+ * dev task
+ */
+gulp.task("dev", function () {
+
+    // set the dev config (cache in utils.js)
+    utils.setConfig({
+        env: "dev",
+        watch: false
+    });
+
+    // build with this config 
+    utils.build();
 
 });
 

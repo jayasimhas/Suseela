@@ -30,7 +30,7 @@ namespace Informa.Web.App_Start
             var builder = new ContainerBuilder();
 
             // Auto-Wire
-            builder.AutowireDependencies(assemblyNames: new[] { LibraryDll, WebsiteDll });
+            builder.AutowireDependencies(assemblyNames: new[] { LibraryDll, WebsiteDll, });
 
             builder.RegisterGlassServices();
             builder.RegisterCacheServices();

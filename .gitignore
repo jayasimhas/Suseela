@@ -145,13 +145,6 @@ copysauce.bat
 
 # Sitecore
 web/Website/sitecore
-web/Website/**/*.config
-!web/Website/web.config
-!web/Website/packages.config
-!web/Website/**/Glass.*.config
-!web/Website/**/Jabberwocky.*.config
-!web/Website/Views/web.config
-!web/Website/Areas/**/web.config
 
 web/Data/indexes/*
 web/Data/packages/*

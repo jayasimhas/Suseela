@@ -390,11 +390,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Z.SwitchMasterToWeb\important.txt" />
-    <Content Include="App_Data\Informa.Analytics.mdf" />
-    <Content Include="App_Data\Informa.Core.MDF" />
-    <Content Include="App_Data\Informa.Master.MDF" />
-    <Content Include="App_Data\Informa.Sessions.mdf" />
-    <Content Include="App_Data\Informa.Web.MDF" />
     <Content Include="Areas\Article\Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Areas\Article\Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Areas\Article\Views\Account\ExternalLoginFailure.cshtml" />
@@ -442,17 +437,7 @@
     <Content Include="layouts\system\VisitorIdentification.js" />
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
-    <Content Include="lib\tasks\bower.js" />
-    <Content Include="lib\tasks\browserSync.js" />
-    <Content Include="lib\tasks\copy.js" />
-    <Content Include="lib\tasks\css.js" />
-    <Content Include="lib\tasks\html.js" />
-    <Content Include="lib\tasks\images.js" />
-    <Content Include="lib\tasks\js.js" />
-    <Content Include="lib\local.js" />
-    <Content Include="lib\tasks\svg-sprite.js" />
-    <Content Include="lib\tasks\typings.js" />
-    <Content Include="lib\tasks\utils.js" />
+    <Content Include="local.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Config\Commands.config" />
@@ -666,9 +651,6 @@
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="layouts\system\Social\Connector\SocialLogin.ashx" />
     <Content Include=".bowerrc" />
-    <Content Include="lib\local.js.example" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="Areas\Article\Views\web.config" />
     <Content Include="Areas\Article\Views\Index.cshtml" />
     <Content Include="App_Config\Include\UserDefined\CustomSitecore.config" />
@@ -678,14 +660,19 @@
     <Content Include="Areas\Article\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Article\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <None Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Shared\_Header - Copy.cshtml" />
-    <None Include="Views\Shared\_Header.cshtml" />
-    <None Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="tasks\bower.js" />
+    <Content Include="tasks\browserSync.js" />
+    <Content Include="tasks\copy.js" />
+    <Content Include="tasks\css.js" />
+    <Content Include="tasks\js.js" />
+    <Content Include="tasks\svg-sprite.js" />
+    <Content Include="tasks\utils.js" />
     <Content Include="webedit.css" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
@@ -721,22 +708,9 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Areas\Article\Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Article\Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="velir\dist\velir.search.angular.js.map" />
-    <Content Include="Views\Shared\SearchFacets.cshtml" />
-    <Content Include="Views\Shared\SearchKeywords.cshtml" />
-    <Content Include="Views\Shared\SearchListing.cshtml" />
-    <Content Include="Views\Shared\SearchMetadata.cshtml" />
-    <Content Include="Views\Shared\SearchPager.cshtml" />
-    <Content Include="Views\Shared\SearchPagination.cshtml" />
-    <Content Include="Views\Shared\SearchScripts.cshtml" />
-    <Content Include="Views\Shared\SearchSortOptions.cshtml" />
-    <Content Include="Views\Shared\SortOption.cshtml" />
     <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
-    <Content Include="Views\Shared\MainLayout.cshtml" />
-    <Content Include="Views\Shared\ExperienceExplorerView.cshtml" />
     <Content Include="Views\_Shared\AuthoredContent.cshtml" />
     <Content Include="styles\index.scss" />
     <Content Include="styles\patternlibrary\base\_colors.scss" />
@@ -751,8 +725,11 @@
     <Content Include="styles\patternlibrary\helpers\_layout-helpers.scss" />
     <Content Include="styles\vendors\_grid-settings.scss" />
     <Content Include="styles\vendors\_normalize.scss" />
+    <Content Include="Views\_Shared\DummyData\AuthoredContent.cshtml" />
+    <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Layouts\" />
