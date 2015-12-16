@@ -9,13 +9,13 @@ using Microsoft.Office.Tools.Word;
 
 namespace SitecoreTreeWalker
 {
-    public partial class ThisAddIn
+    public partial class SitecoreAddin
     {
-        private void ThisAddIn_Startup(object sender, System.EventArgs e)
+        private void SitecoreAddIn_Startup(object sender, System.EventArgs e)
         {
         }
 
-        private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
+        private void SitecoreAddIn_Shutdown(object sender, System.EventArgs e)
         {
         }
 
@@ -27,8 +27,8 @@ namespace SitecoreTreeWalker
         /// </summary>
         private void InternalStartup()
         {
-            this.Startup += new System.EventHandler(ThisAddIn_Startup);
-            this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
+            this.Startup += new System.EventHandler(SitecoreAddIn_Startup);
+            this.Shutdown += new System.EventHandler(SitecoreAddIn_Shutdown);
         }
         
         #endregion
