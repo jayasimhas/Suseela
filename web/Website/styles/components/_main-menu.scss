@@ -1,98 +1,226 @@
 .main-menu {
 	float: left;
-	width: 200px;
-	background-color: #ddd;
-	border-right: 70px solid #555;
-	padding: 2rem;
-	transform: translate3d(70px, 0, 0);
-	transition: all 300ms cubic-bezier(0.450, 0.520, 0.220, 1.585);
-
-	/* Flexbox */
-	flex: 0 0 200px;
+	flex: 0 0 auto;
 	align-items: stretch;
+	width: 330px;
+	border-right: 60px solid #555; 
+	background-color: #ddd;
 
+	@include textMix('Roboto', 14px, 500);
+
+	// Start off translated on-screen just enough to see the toggler
+	transform: translate3d(60px, 0, 0);
+
+	// Give the slide in/out a little bounce
+	transition: all 300ms cubic-bezier(0.450, 0.520, 0.220, 1.585);
+	
+	&.is-active {
+		// Slide the menu on-screen
+		transform: translate3d(330px, 0, 0);
+	}
+
+	// At smaller widths, we use the `--mini` toggler instead
+	// Remove the border, don't show permatoggler on the left
 	@include breakpoint('medium') {
-		border: 0;
+		border-right: 1px solid #bbb;
 		transform: translate3d(0, 0, 0);
 	}
-}
-
-.main-menu.is-active {
-	transform: translate3d(200px, 0, 0)
-}
-
-.main-menu__toggler {
-	float: right;
-	height: 100%;
-	background-color: #555;
-	color: #fff;
-	margin-right: calc(-70px - 2rem);
-	margin-top: -2rem;
-	text-align: center;
-	text-transform: uppercase;
-
-	@include breakpoint('medium') {
-		display: none;
-		margin-right: 0;
-	}
-}
-
-.header__wrapper .main-menu__toggler {
-	display: none;
-	float: left;
-	margin: -1rem 0 0 -1rem;
-
-	@include breakpoint('medium') {
-		display: block;
-	}
-}
-
-
-/* Custom styles for hamburger menu animator */
-
-.c-hamburger {
-	background-color: inherit;
 	
-	span {
-		top: 34px;
+	// .main-menu__togggler
+	// controls the menu visibility
+	&__toggler {
+		float: right;
+		height: 100%;
+		margin-right: -60px;
+		background-color: #555;
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: 1px;
 
-		@include breakpoint('small') {
-			height: 3px;
-			left: 25px;
-			right: 25px;
+		@include breakpoint('medium') {
+			display: none;
+		}
 
-			&::before,
-			&::after {
-				height: 3px;
+		&--mini {
+			display: none;
+			float: left;
+
+			@include breakpoint('medium') {
+				display: block;
 			}
 
-			&::before {
-				top: 10px;
-			}
+			@include breakpoint('small') {
 
-			&::after {
-				bottom: 10px;
+				width: 50px;
+				// Make menu sticky when scrolled on tablet/mobile
+				&.is-sticky {
+					position: fixed;
+					z-index: 999;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 40px;
+					margin: 0;
+					text-align: left;
+					line-height: 40px;
+				}
 			}
 		}
+	}
+
+	&__section {
+		border-bottom: 1px solid #bbb;
+		margin: 0;
+		padding: 0.5rem 0;
+		background-color: #eee;
+	}
+
+	&__section-title,
+	&__section-link {
+		line-height: 2rem;
+		position: relative;
+		margin: 0.125rem 0;
+	}
+
+	&__section-title {
+		padding: 0 0 0 1rem;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 1.2px;
+		
+		&:after {
+			content: "⌃";
+			right: 10px;
+			position: absolute;
+			font-weight: 400;
+		}
+	}
+
+	&__section-link {
+		padding: 0 0 0 2rem;
+		display: none;
+	}
+
+	&__footer-link {
+		padding: 0 0 0 1rem;
+		line-height: 1.5rem;
+		margin: 0;
+		font-size: 13px;
+
+		a:after {
+			// "\ao " is a non-breaking space
+			content: "\a0 ›";
+			display: inline;
+			font-size: 1.25em;
+		}
+	}
+}
+
+/*
+	CSS-only animated hamburger-to-X widget
+	Sass'ified and tweaked, based on:
+	http://callmenick.com/post/animating-css-only-hamburger-menu-icons
+*/
+
+.c-hamburger {
+  display: block;
+  position: relative;
+
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: none;
+
+  font-size: 0;
+  text-indent: -9999px;
+
+  appearance: none;
+  box-shadow: none; 
+  cursor: pointer;
+	background-color: inherit;
+
+	@include hamburger-helper('desktop');
+  
+	&:focus {
+  	outline: none;
+  }
+	
+	span {
+	display: block;
+    position: absolute;
+    top: 28px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: white;
+		
+		&::before, /* c.hamburger span */
+		&::after {
+		  position: absolute;
+		  display: block;
+
+		  left: 0;
+			height: $main-menu-hamburger-height;
+			width: 100%;
+
+		  background-color: #fff;
+		  content: "";
+
+		  transition-duration: 300ms, 300ms;
+		  transition-delay: 300ms, 0s;
+		}
+		
+		&::before { /* c.hamburger span */
+		  top: 8px;
+		  transition-property: top, transform;
+		}
+
+		&::after { /* c.hamburger span */
+  		bottom: 8px;
+  		transition-property: bottom, transform;
+		}
+	}
+
+	@include breakpoint('small') {
+		@include hamburger-helper('small');
 	}
 }
 
 .main-menu__toggler.is-active .c-hamburger span {
   background: none;
 
-  &::before {
+  &:before {
   	top: 0;
   	transform: rotate(45deg);
 	}
 	
-	&::after {
+	&:after {
 	  bottom: 0;
 	  transform: rotate(-45deg);
 	}
 
-	&::before,
-	&::after {
+	&:before,
+	&:after {
 		transition-delay: 0s, 0.3s;
 	}
 
+}
+
+// Toggle menu section link visibility on-click
+.main-menu__section-title.is-active ~ .main-menu__section-link {
+	display: block;
+}
+
+.main-menu__hoverable:hover:before {
+	display: block;
+	height: 100%;
+	content: "";
+	width: 6px;
+	background-color: orange;
+	position: absolute;
+	left: 0;
 }

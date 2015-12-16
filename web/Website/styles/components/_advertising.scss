@@ -1,19 +1,32 @@
 // -----------------------------------------------------------------------------
-// All styles related to advertising components.
+// COMPONENTS / ADVERTISING
+// Ref. IIPP-131
 // -----------------------------------------------------------------------------
 
-.ad__full {
-	width: 100%;
-	text-align: center;
-	padding: 2rem 0;
+.advertising {
 
-	@include breakpoint('small') {
-		
-		padding: 0;
+	&--leaderboard {
+		width: 100%;
+		text-align: center;
+		padding: 2rem 0;
 
-		img {
-			width: 100%;
-			display: block; /* Prevents unwanted space below img */
+		@include breakpoint('small') {
+			
+			padding: 0;
+	
+			img {
+				width: 100%;
+				display: block; /* Prevents unwanted space below img */
+			}
 		}
 	}
+
+	&--filmstrip {
+
+	}
+
+	&--rectangle {
+
+	}
+
 }

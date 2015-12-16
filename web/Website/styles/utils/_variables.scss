@@ -7,16 +7,16 @@
 
 
 /// Regular font family
-/// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+@mixin textMix($stack, $size, $weight) {
+	@if $stack == 'Roboto' {
+		font-family: "Roboto", Helvetica, Arial, sans-serif;
+	} @else if $stack == 'PT Serif' {
+		font-family: "PT Serif", Georgia, serif;
+	}
 
-/// Code (monospace) font family
-/// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-
-
-
+	font-size: $size;
+	font-weight: $weight;
+}
 
 /// Copy text color
 /// @type Color
@@ -48,9 +48,6 @@ $dark-grey: #444 !default;
 $max-width: 1200px !default;
 
 
-
-
-
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
@@ -62,12 +59,29 @@ $breakpoints: (
 ) !default;
 
 
-
-
-
-
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
+
+// Main Menu Hamburger Sizing Helper
+// (lol)
+@mixin hamburger-helper($breakpoint) {
+
+  @if $breakpoint == 'x-small' {
+
+  }
+  @else if $breakpoint == 'small' {
+    height: 40px;
+    width: 40px;
+    float: left;
+  }
+  @else {
+    height: 60px;
+    width: 60px;
+  }
+}
+$main-menu-width: 330px;
+$main-menu-toggler-width: 60px;
+$main-menu-hamburger-height: 2px;
