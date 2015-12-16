@@ -75,15 +75,13 @@
 
 .header__user {
 	float: right;
-	line-height: 70px;
+	padding: 25px 0;
 
 	@include breakpoint('small') {
-		border-top: 1px solid #ccc;
-		float: left;
-		line-height: 24px;
+		border-top: 1px solid #ccc;		
 		width: calc(100% - 88px);
 		margin: 12px 12px 0 74px;
-		line-height: 30px;
+		padding: 10px 0 0;
 	}
 }
 
@@ -96,22 +94,19 @@
 .header__sign-out {
 	margin-right: 0;
 
+	// Separator between sign-out and my-account
 	&:before {
 		content: "";
 		display: block;
 		float: left;
-		margin-top: 30px;
 		margin-left: -20px;
-		height: 20px;
+		height: 17px;
 		width: 1px;
 		background-color: #ccc;
-
-		@include breakpoint('small') {
-			margin-top: 6px;
-		}
 	}
 }
 
+// Don't show the friendly welcome at smartphone widths
 @include breakpoint('small') {
 	.header__friendly-welcome {
 		display: none;
