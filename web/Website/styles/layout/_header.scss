@@ -10,56 +10,106 @@
 }
 
 .header__wrapper {
+	height: 120px;
+	padding: 1.5rem;
+
 	border: 1px solid #ccc;
 	border-right: 0;
 	border-left: 0;
-	padding: 1.5rem;
+
+	@include textMix('Roboto', 13px, 400);
 
 	@include breakpoint('medium') {
-		padding: 1rem;
+		// Some elements are flush against container
+		// Handle padding/margins on a per-element basis
+		padding: 0;
+		height: 101px;
 	}
 }
 
 .header__logo {
 	display: block;
 	float: left;
+	height: 66px;
+	width: 184px;
 
 	@include breakpoint('small') {
-		height: 50px;
+		margin-top: 12px;
+		margin-left: 74px;
+		height: 39px;
+		width: 108px;
 	}
 }
 
 .header__search-wrapper {
 	float: left;
-	padding: 1.5rem;
+	padding: 1rem 0 1rem 36px;
 
 	@include breakpoint('small') {
 		float: right;
-		padding: 0.5rem;
+		padding: 28px 12px 0 0;
 	}
 }
 
 .header__search-field {
 	padding: 0.25rem;
+	width: 310px;
+	height: 36px;
 
 	@include breakpoint('medium') {
 		display: none;
 	}
 }
+.header__icons {
+	width: 14px;
+	height: 17px;
+	fill: #808285;
+	vertical-align: middle;
+    margin-right: 6px;
+}
+.icon-search {
+	height: 15px;
+	width: 15px;
+	margin-left: 8px;
+}
 
 .header__user {
 	float: right;
-	line-height: 80px;
+	line-height: 70px;
 
 	@include breakpoint('small') {
+		border-top: 1px solid #ccc;
 		float: left;
 		line-height: 24px;
+		width: calc(100% - 88px);
+		margin: 12px 12px 0 74px;
+		line-height: 30px;
 	}
 }
 
-.header__user div {
+.header__friendly-welcome,
+.header__my-account,
+.header__sign-out, {
 	float: left;
-	margin: 0 1rem;
+	margin: 0 40px 0 0;
+}
+.header__sign-out {
+	margin-right: 0;
+
+	&:before {
+		content: "";
+		display: block;
+		float: left;
+		margin-top: 30px;
+		margin-left: -20px;
+		height: 20px;
+		width: 1px;
+		background-color: #ccc;
+
+		@include breakpoint('small') {
+			margin-top: 6px;
+		}
+	}
 }
 
 @include breakpoint('small') {

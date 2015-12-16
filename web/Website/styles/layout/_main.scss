@@ -1,12 +1,12 @@
 main {
 	display: flex;
-	margin-left: -$main-menu-width;
+	margin-left: -330px;
 }
 
 .main__wrapper {
 	float: left;
 	height: 100%;
-	width: calc(100% - #{$main-menu-width});
+	width: calc(100% - 330px);
 }
 
 .main__content {

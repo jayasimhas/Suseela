@@ -18,9 +18,11 @@
 	font-weight: $weight;
 }
 
-/// Copy text color
-/// @type Color
+// Body text color
 $text-color: #222 !default;
+
+// Standard link color
+$link-color: #be1e2d !default;
 
 /// Main brand color
 /// @type Color
@@ -64,24 +66,3 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
-
-// Main Menu Hamburger Sizing Helper
-// (lol)
-@mixin hamburger-helper($breakpoint) {
-
-  @if $breakpoint == 'x-small' {
-
-  }
-  @else if $breakpoint == 'small' {
-    height: 40px;
-    width: 40px;
-    float: left;
-  }
-  @else {
-    height: 60px;
-    width: 60px;
-  }
-}
-$main-menu-width: 330px;
-$main-menu-toggler-width: 60px;
-$main-menu-hamburger-height: 2px;

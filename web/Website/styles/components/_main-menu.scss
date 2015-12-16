@@ -6,7 +6,7 @@
 	border-right: 60px solid #555; 
 	background-color: #ddd;
 
-	@include textMix('Roboto', 14px, 500);
+	@include textMix('Roboto', 14px, 400);
 
 	// Start off translated on-screen just enough to see the toggler
 	transform: translate3d(60px, 0, 0);
@@ -34,11 +34,11 @@
 		margin-right: -60px;
 		background-color: #555;
 		color: #fff;
+	
+		@include textMix('Roboto', 12px, 500);
+		letter-spacing: 1px;
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 12px;
-		font-weight: 500;
-		letter-spacing: 1px;
 
 		@include breakpoint('medium') {
 			display: none;
@@ -48,25 +48,47 @@
 			display: none;
 			float: left;
 
+			// Make menu sticky when scrolled on tablet/mobile
+			&.is-sticky {
+				position: fixed;
+				z-index: 999;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 40px;
+				margin: 0;
+				text-align: left;
+				line-height: 40px;
+
+				.c-hamburger {
+					height: 36px;
+					width: 36px;
+					float: left;
+
+					span {
+						top: 18px;
+						left: 11px;
+						right: 11px;
+					
+
+						&::before {
+							top: 6px;
+						}
+
+						&::after { 
+					  		bottom: 6px;
+						}
+					}
+				}
+			}
 			@include breakpoint('medium') {
 				display: block;
+				height: 100px;
+				width: 62px;
 			}
 
 			@include breakpoint('small') {
-
-				width: 50px;
-				// Make menu sticky when scrolled on tablet/mobile
-				&.is-sticky {
-					position: fixed;
-					z-index: 999;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 40px;
-					margin: 0;
-					text-align: left;
-					line-height: 40px;
-				}
+				width: 62px;
 			}
 		}
 	}
@@ -126,81 +148,93 @@
 */
 
 .c-hamburger {
-  display: block;
-  position: relative;
+	display: block;
+	position: relative;
 
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: none;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: none;
+	height: 60px;
+	width: 60px;
 
-  font-size: 0;
-  text-indent: -9999px;
+	font-size: 0;
+	text-indent: -9999px;
 
-  appearance: none;
-  box-shadow: none; 
-  cursor: pointer;
+	appearance: none;
+	box-shadow: none; 
+	cursor: pointer;
 	background-color: inherit;
-
-	@include hamburger-helper('desktop');
   
 	&:focus {
-  	outline: none;
-  }
+	  	outline: none;
+	}
 	
 	span {
-	display: block;
-    position: absolute;
-    top: 28px;
-    left: 12px;
-    right: 12px;
-    height: 2px;
-    background: white;
+		display: block;
+	    position: absolute;
+	    top: 28px;
+	    left: 12px;
+	    right: 12px;
+	    height: 2px;
+	    background: white;
 		
 		&::before, /* c.hamburger span */
 		&::after {
-		  position: absolute;
-		  display: block;
+			position: absolute;
+			display: block;
 
-		  left: 0;
-			height: $main-menu-hamburger-height;
+			left: 0;
+			height: 2px;
 			width: 100%;
 
-		  background-color: #fff;
-		  content: "";
+			background-color: #fff;
+			content: "";
 
-		  transition-duration: 300ms, 300ms;
-		  transition-delay: 300ms, 0s;
+			transition-duration: 300ms, 300ms;
+			transition-delay: 300ms, 0s;
 		}
 		
 		&::before { /* c.hamburger span */
-		  top: 8px;
-		  transition-property: top, transform;
+			top: 8px;
+			transition-property: top, transform;
 		}
 
 		&::after { /* c.hamburger span */
-  		bottom: 8px;
-  		transition-property: bottom, transform;
+	  		bottom: 8px;
+	  		transition-property: bottom, transform;
 		}
 	}
 
-	@include breakpoint('small') {
-		@include hamburger-helper('small');
+	@include breakpoint('medium') {
+		span {
+			top: 34px;
+			left: 20px;
+			right: 20px;
+		}
+
+		&::before {
+			top: 6px;
+		}
+
+		&::after { 
+	  		bottom: 6px;
+		}
 	}
 }
 
 .main-menu__toggler.is-active .c-hamburger span {
-  background: none;
+	background: none;
 
-  &:before {
-  	top: 0;
-  	transform: rotate(45deg);
+	&:before {
+  		top: 0;
+  		transform: rotate(45deg);
 	}
 	
 	&:after {
-	  bottom: 0;
-	  transform: rotate(-45deg);
+		bottom: 0;
+		transform: rotate(-45deg);
 	}
 
 	&:before,
