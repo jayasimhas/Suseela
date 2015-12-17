@@ -9,11 +9,9 @@ utils.setTaskConfig("copy", {
 
     default: {
         src: [ 
-            config.root + "/html/**/*.html", 
-            config.root + "/html/**/*.htm",
-            config.root + "/index.html"
+            config.root + '/assets/img/**/*.*',           
         ],
-        dest: config.dest
+        dest: config.dest + '/img'
     },
 
     prod: {
@@ -24,16 +22,16 @@ utils.setTaskConfig("copy", {
 
 // register the watch
 utils.registerWatcher("copy", [ 
-    config.root + "/html/**/*.html", 
-    config.root + "/html/**/*.htm",
-    config.root + "/index.html"
+    config.root + '/assets/img/**/*.*',            
 ]);
-
 
 /* copy files */
 gulp.task("copy", function(next) {
 
     var copy = utils.loadTaskConfig("copy");
+
+    // register the watch
+    utils.registerWatcher("copy", copy.src);
 
     return gulp.src(copy.src)
             .pipe(utils.drano())
