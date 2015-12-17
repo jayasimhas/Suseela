@@ -1,0 +1,19 @@
+.text-field {
+	padding: 8px;
+}
+
+// NOTE — Each of these need to be their own rule, cannot be combined.
+// An "invalid" selector inside a group will invalidate the entire group
+// http://stackoverflow.com/a/2610741
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-style: italic;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	font-style: italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */	
+	font-style: italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ 	font-style: italic;
+}

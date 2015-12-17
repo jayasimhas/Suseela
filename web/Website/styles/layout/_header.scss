@@ -10,8 +10,8 @@
 }
 
 .header__wrapper {
-	height: 120px;
-	padding: 1.5rem;
+	height: 80px;
+	padding: 20px;
 
 	border: 1px solid #ccc;
 	border-right: 0;
@@ -30,20 +30,19 @@
 .header__logo {
 	display: block;
 	float: left;
-	height: 66px;
-	width: 184px;
+	height: 40px;
+	
 
 	@include breakpoint('small') {
 		margin-top: 12px;
 		margin-left: 74px;
-		height: 39px;
-		width: 108px;
+		height: 40px;		
 	}
 }
 
 .header__search-wrapper {
 	float: left;
-	padding: 1rem 0 1rem 36px;
+	padding: 0 0 0 36px;
 
 	@include breakpoint('small') {
 		float: right;
@@ -52,9 +51,7 @@
 }
 
 .header__search-field {
-	padding: 0.25rem;
 	width: 310px;
-	height: 36px;
 
 	@include breakpoint('medium') {
 		display: none;
@@ -66,16 +63,23 @@
 	fill: #808285;
 	vertical-align: middle;
     margin-right: 6px;
-}
-.icon-search {
-	height: 15px;
-	width: 15px;
-	margin-left: 8px;
+
+    &--x {
+    	fill: #231f20;
+    	float: right;
+    	margin: 0;
+    }
+
+    &--search {
+		height: 15px;
+		width: 15px;
+		margin-left: 8px;
+	}
 }
 
 .header__user {
 	float: right;
-	padding: 25px 0;
+	padding: 12px 0;
 
 	@include breakpoint('small') {
 		border-top: 1px solid #ccc;		
@@ -87,14 +91,21 @@
 
 .header__friendly-welcome,
 .header__my-account,
-.header__sign-out, {
+.header__sign-in-out, {
 	float: left;
 	margin: 0 40px 0 0;
+
+	// Allows icons and links to display on "top" of hover boxes
+	svg,
+	a {
+		position: relative;
+		z-index: 10;
+	}
 }
-.header__sign-out {
+.header__sign-in-out {
 	margin-right: 0;
 
-	// Separator between sign-out and my-account
+	// Separator between sign-in-out and my-account
 	&:before {
 		content: "";
 		display: block;
@@ -102,8 +113,52 @@
 		margin-left: -20px;
 		height: 17px;
 		width: 1px;
-		background-color: #ccc;
+		background-color: #d1d3d4;
 	}
+}
+
+.header__hover {
+	display: none;
+	background-color: #f1f2f2;
+	position: absolute;
+	margin-top: 29px;
+	padding: 20px;
+	border: 1px solid #d1d3d4;
+	border-right: 0px;
+	width: 304px;
+	right: 0;
+
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: -60px;
+		background-color: #f1f2f2;
+		padding: 20px;
+		border: 1px solid #d1d3d4;
+		border-bottom: 0;
+		height: 60px;
+		width: 111px;
+		z-index: 9;
+	}
+
+	&--register:before {
+		right: 98px;
+	}
+
+	&--sign-in:before {
+		right: 0px;
+		width: 102px;
+	}
+
+	&-input {
+		width: 100%;
+	}
+}
+
+.header__my-account:hover .header__hover,
+.header__sign-in-out:hover .header__hover {
+	display: block;
 }
 
 // Don't show the friendly welcome at smartphone widths

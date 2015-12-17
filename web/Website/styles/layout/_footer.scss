@@ -48,6 +48,18 @@ footer li {
 
 	li {
 		line-height: 36px;
+
+		// Prevents <li> with lots of text from wrapping to the next column. 
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;
+
+		a {
+			// <li> line-height determines spacing between each <li>
+			// This allows links with lots of text to have better leading.
+			display: inline-block;
+			line-height: 20px;
+		}
 	}
 }
 .footer__section--header {

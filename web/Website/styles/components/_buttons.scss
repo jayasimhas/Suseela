@@ -1,3 +1,15 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+.button--pumpkin {
+	border: 0;
+	padding: 8px 12px;
+
+	background-color:  #fbb040;
+	color: #231f20;
+
+	@include textMix('Roboto', 12px, 700);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
