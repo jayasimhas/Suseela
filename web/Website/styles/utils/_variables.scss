@@ -2,22 +2,6 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
-
-
-
-/// Regular font family
-@mixin textMix($stack, $size, $weight) {
-	@if $stack == 'Roboto' {
-		font-family: "Roboto", Helvetica, Arial, sans-serif;
-	} @else if $stack == 'PT Serif' {
-		font-family: "PT Serif", Georgia, serif;
-	}
-
-	font-size: $size;
-	font-weight: $weight;
-}
-
 // Body text color
 $text-color: #222 !default;
 
