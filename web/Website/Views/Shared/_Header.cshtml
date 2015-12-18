@@ -1,5 +1,6 @@
-<header>
-
+@using Informa.Web.Areas.Account.Controllers
+@using Informa.Web.Areas.Account.Models
+<header>           
     <div class="header__informa-permabanner">
         informa
     </div>
@@ -20,6 +21,12 @@
         <div class="header__search-wrapper">
             <input class="header__search-field" type="text" placeholder="Search the site"> 🔍
         </div>
+
+
+        @{
+            Html.RenderPartial("_LoginPartial", new LoginViewModel());
+
+        }
 
         <div class="header__user">
             <div class="header__friendly-welcome">Hi, Name</div>

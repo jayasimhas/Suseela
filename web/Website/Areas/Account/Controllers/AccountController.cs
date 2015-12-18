@@ -6,20 +6,22 @@ using Informa.Web.Areas.Account.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Sitecore.Data;
+using Sitecore.Social.Client.Mvc.Areas.Social.Controllers;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : ConnectorController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public AccountController()
+        public AccountController() : base("Salesforce", ID.Parse("{78D8D914-51C8-41F3-8424-021262F148B8}"))
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager) : base("Salesforce", ID.Parse("{78D8D914-51C8-41F3-8424-021262F148B8}"))
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -37,6 +39,24 @@ namespace Informa.Web.Areas.Account.Controllers
             }
         }
 
+        [AllowAnonymous]
+        public ActionResult LoginHeader(string returnUrl = "")
+        {
+            ViewBag.ReturnUrl = returnUrl;
+
+            ViewBag.ReturnUrl = returnUrl;
+            return RedirectToLocal("/Login");
+            //var something = LoginHelper
+            //Sitecore.Web.Authentication.DI.RPCATokenRedirect;
+            return PartialView("Login", new LoginViewModel());
+            //{
+            //    Icon = this.GetLoginButtonImageUrl(this.networkIconItemID),
+            //    ToolTip = tooltip,
+            //    Parameters = str
+            //});
+            //return this.LoginPartialView();
+        }
+       
         public ApplicationUserManager UserManager
         {
             get
@@ -52,10 +72,10 @@ namespace Informa.Web.Areas.Account.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Index(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return View("Login", new LoginViewModel());
         }
 
         //
@@ -84,7 +104,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                    return Login(model.Parameters);
             }
         }
 
@@ -160,7 +180,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToLocal("~");
                 }
                 AddErrors(result);
             }
@@ -446,7 +466,7 @@ namespace Informa.Web.Areas.Account.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return Redirect("/");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

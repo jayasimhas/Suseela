@@ -1,5 +1,8 @@
 using System.Web.Mvc;
+using Informa.Web.Areas.Account.Models;
 using Sitecore.Data;
+using Sitecore.Social.Client.Api;
+using Sitecore.Social.Client.Common.Helpers;
 using Sitecore.Social.Client.Mvc.Areas.Social.Controllers;
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -13,8 +16,10 @@ namespace Informa.Web.Areas.Account.Controllers
 
         public ActionResult Index()
         {
+
+            //var something = LoginHelper
             //Sitecore.Web.Authentication.DI.RPCATokenRedirect;
-            return this.PartialView("~/Areas/Account/Views/Connector/Login.cshtml", LoginViewModel());
+            return this.PartialView("~/Areas/Account/Views/Connector/Login.cshtml");
             //{
             //    Icon = this.GetLoginButtonImageUrl(this.networkIconItemID),
             //    ToolTip = tooltip,
@@ -51,3 +56,4 @@ namespace Informa.Web.Areas.Account.Controllers
 
 
 }
+

@@ -65,7 +65,7 @@ namespace Informa.Web.Areas.Account.Models
 
         public string Icon { get; set; }
 
-        public string Parameters { get; set; }
+        public string Parameters { get; set; } = "";
     }
 
 

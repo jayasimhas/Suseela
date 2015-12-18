@@ -516,12 +516,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\ManageController.cs" />
+    <Compile Include="Areas\Account\Controllers\SalesforceConnectorController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountController.cs" />
-    <Compile Include="Controllers\TwitterConnectorController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
@@ -812,7 +812,8 @@
     <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.Salesforce.config" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
-    <Content Include="Areas\Account\Views\Shared\Login.cshtml" />
+    <Content Include="Areas\Account\Views\Connector\Login.cshtml" />
+    <Content Include="Areas\Account\Views\Account\Lockout.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
