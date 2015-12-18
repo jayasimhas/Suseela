@@ -55,8 +55,8 @@ gulp.task("svg-sprite", function(){
     
         // HACK * https://github.com/FWeinb/grunt-svgstore/issues/77
         // gulp-replace to include xmlns:xlink="http://www.w3.org/1999/xlink
-        .pipe(replace(/xmlns/, 'xmlns:xlink="http://www.w3.org/1999/xlink" xmlns'))
-    
+        //.pipe(replace(/xmlns/, 'xmlns:xlink="http://www.w3.org/1999/xlink" xmlns'))
+        
         .pipe(rename(svg.filename))
         .pipe(gulp.dest(svg.dest));
 

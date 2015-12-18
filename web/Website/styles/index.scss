@@ -18,15 +18,17 @@
 @import 'base/typography';
 @import 'base/helpers';
 
+/* * * * COMPONENTS * * * */
+@import 'components/advertising';
+@import 'components/banners';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/main-menu';
+
 /* * * * LAYOUT * * * */
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/main';
-
-/* * * * COMPONENTS * * * */
-@import 'components/advertising';
-@import 'components/buttons';
-@import 'components/main-menu';
 
 /* * * * PAGE-SPECIFIC STYLES * * * */
 @import 'pages/home';

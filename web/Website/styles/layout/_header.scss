@@ -6,62 +6,162 @@
 	background-color: #505050;
 	color: #fff;
 	text-align: center;
-	padding: 0.5rem;
+	line-height: 36px;
 }
 
 .header__wrapper {
+	height: 120px;
+	padding: 30px;
+
 	border: 1px solid #ccc;
 	border-right: 0;
 	border-left: 0;
-	padding: 1.5rem;
+
+	@include textMix('Roboto', 13px, 400);
 
 	@include breakpoint('medium') {
-		padding: 1rem;
+		// Some elements are flush against container
+		// Handle padding/margins on a per-element basis
+		padding: 0;
+		height: 101px;
 	}
 }
 
 .header__logo {
 	display: block;
 	float: left;
+	height: 60px;
+	
 
 	@include breakpoint('small') {
-		height: 50px;
+		margin-top: 12px;
+		margin-left: 74px;
+		height: 40px;		
 	}
 }
 
 .header__search-wrapper {
 	float: left;
-	padding: 1.5rem;
+	padding: 12px 0 0 36px;
 
 	@include breakpoint('small') {
 		float: right;
-		padding: 0.5rem;
+		padding: 28px 12px 0 0;
 	}
 }
 
 .header__search-field {
-	padding: 0.25rem;
+	width: 310px;
 
 	@include breakpoint('medium') {
 		display: none;
 	}
 }
+.header__icons {
+	width: 14px;
+	height: 17px;
+	fill: #808285;
+	vertical-align: middle;
+    margin-right: 6px;
 
-.header__user {
-	float: right;
-	line-height: 80px;
+    &--x {
+    	fill: #231f20;
+    	float: right;
+    	margin: 0;
+    }
 
-	@include breakpoint('small') {
-		float: left;
-		line-height: 24px;
+    &--search {
+		height: 15px;
+		width: 15px;
+		margin-left: 8px;
 	}
 }
 
-.header__user div {
-	float: left;
-	margin: 0 1rem;
+.header__user {
+	float: right;
+	padding: 24px 0;
+
+	@include breakpoint('small') {
+		border-top: 1px solid #ccc;		
+		width: calc(100% - 88px);
+		margin: 12px 12px 0 74px;
+		padding: 10px 0 0;
+	}
 }
 
+.header__friendly-welcome,
+.header__my-account,
+.header__sign-in-out, {
+	float: left;
+	margin: 0 40px 0 0;
+
+	// Allows icons and links to display on "top" of hover boxes
+	svg,
+	a {
+		position: relative;
+		z-index: 10;
+	}
+}
+.header__sign-in-out {
+	margin-right: 0;
+
+	// Separator between sign-in-out and my-account
+	&:before {
+		content: "";
+		display: block;
+		float: left;
+		margin-left: -20px;
+		height: 17px;
+		width: 1px;
+		background-color: #d1d3d4;
+	}
+}
+
+.header__hover {
+	display: none;
+	background-color: #f1f2f2;
+	position: absolute;
+	margin-top: 47px;
+	padding: 20px;
+	border: 1px solid #d1d3d4;
+	border-right: 0px;
+	width: 304px;
+	right: 0;
+
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: -80px;
+		background-color: #f1f2f2;
+		padding: 20px;
+		border: 1px solid #d1d3d4;
+		border-bottom: 0;
+		height: 80px;
+		width: 111px;
+		z-index: 9;
+	}
+
+	&--register:before {
+		right: 111px;
+	}
+
+	&--sign-in:before {
+		right: 0px;
+		width: 112px;
+	}
+
+	&-input {
+		width: 100%;
+	}
+}
+
+.header__my-account:hover .header__hover,
+.header__sign-in-out:hover .header__hover {
+	display: block;
+}
+
+// Don't show the friendly welcome at smartphone widths
 @include breakpoint('small') {
 	.header__friendly-welcome {
 		display: none;

@@ -37,7 +37,7 @@ utils.setConfig({
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "copy", "bower"]);
+utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite"]);
 
 /**
  * dev task

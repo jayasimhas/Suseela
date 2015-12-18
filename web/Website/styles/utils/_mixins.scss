@@ -32,6 +32,21 @@
   }
 }
 
+
+/// Regular font family
+@mixin textMix($stack, $size, $weight) {
+  @if $stack == 'Roboto' {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+  } @else if $stack == 'Roboto Condensed' {
+    font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+  } @else if $stack == 'PT Serif' {
+    font-family: "PT Serif", Georgia, serif;
+  }
+
+  font-size: $size;
+  font-weight: $weight;
+}
+
 /// Responsive manager
 /// @param {String} $breakpoint - Breakpoint
 /// @requires $breakpoints

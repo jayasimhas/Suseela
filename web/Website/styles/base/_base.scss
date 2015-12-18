@@ -23,11 +23,25 @@ html {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: $link-color;
   text-decoration: none;
 
   @include on-event {
     color: $text-color;
     text-decoration: underline;
   }
+}
+
+// List Resets
+ul, li, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Normalize SVG icons
+svg {
+  fill: black;
+  height: 16px;
+  width: 16px;
 }

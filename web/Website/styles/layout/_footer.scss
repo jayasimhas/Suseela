@@ -4,7 +4,9 @@
 
 footer {
 	border-top: 1px solid #ccc;
-	background-color: #eee;
+	background-color: #f1f2f2;
+
+	@include textMix('Roboto', 16px, 400);
 
 	@include breakpoint('small') {
 		text-align: center;
@@ -31,38 +33,76 @@ footer li {
 
 .footer__wrapper {
 	margin: 0 auto;
-	padding: 3rem 0;
+	padding: 38px 24px;
 	max-width: 1200px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-
-	@include breakpoint('small') {
-		width: 100%;
-	}
 }
 
 .footer__section {
 	float: left;
 	flex: 0 1 auto;
-	font-size: 13px;
+	font-size: 15px;
+	color: #6d6e71;
 
-	@include breakpoint('small') {
-		float: none;
+	li {
+		line-height: 36px;
+
+		// Prevents <li> with lots of text from wrapping to the next column. 
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;
+
+		a {
+			// <li> line-height determines spacing between each <li>
+			// This allows links with lots of text to have better leading.
+			display: inline-block;
+			line-height: 20px;
+		}
 	}
 }
 .footer__section--header {
-	font-weight: bold;
+	@include textMix('Roboto Condensed', 15px, 700);
+	color: #231f20;
 	text-transform: uppercase;
 }
+
+// Separators between footer sections vary depending on the page width
+// Desktop: one full-width separator between top and bottom halves (<hr>)
 .footer__separator {
 	display: block;
 	width: 100%;
 	clear: both;
+	margin: 28px 0;
+	border: 0;
+	height: 1px;
+	background-color: #d1d3d4;
+}
+// Tablet/smartphone: separators between each section (<ul> borders)
+// @mixin allows for single source of styling truth, and for easily setting
+// top or bottom border as needed, without duplicating code.
+@mixin footer__section--faux-separator($border-location) {
+	@if $border-location == 'top' {
+		border-top: 1px solid #d1d3d4;
+		padding-top: 28px;
+		margin-top: 28px;
+	} @else if $border-location == 'bottom' {
+		border-bottom: 1px solid #d1d3d4;
+		padding-bottom: 28px;
+		margin-bottom: 28px;
+	}
 }
 
 .footer__section--corporate {
 	width: 25%;
+	font-size: 12px;
+	color:  #808285;
+}
+.footer__logo {
+	display: block;
+	margin-bottom: 1rem;
+	height: 60px;
 }
 
 .footer__section--general {
@@ -72,11 +112,12 @@ footer li {
 
 .footer__section--social {
 	width: 25%;
-
-	@include breakpoint('medium') {
-		order: 99;
-		width: 100%;
-	}
+}
+.footer__share-icons {
+	fill: #939598;
+    height: 24px;
+    width: 24px;
+	margin-right: 20px;
 }
 
 .footer__section--insight-products {
@@ -88,33 +129,30 @@ footer li {
 	ul {
 		column-count: 3;
 	}
-
-	@include breakpoint('medium') {
-		ul {
-			column-count: 2;
-		}
-	}
 }
 
-.footer__section--corporate {
-	font-size: 12px;
-
-	@include breakpoint('small') {
-		float: none;
-	}
-
-	.footer__logo {
-		display: block;
-		margin-bottom: 1rem;
-
-		@include breakpoint('small') {
-			margin: 0 auto;
-		}
-	}
-}
 
 @include breakpoint('medium') {
 	
+
+	.footer__section--social {
+		order: 99;
+		width: 100%;
+		text-align: center;
+
+		@include footer__section--faux-separator('top');
+
+		li {
+			display: inline;
+			vertical-align: top;
+			line-height: 28px;
+		}
+
+		.footer__section--header {
+			margin-right: 22px;
+		}
+	}
+
 	.footer__section--corporate,
 	.footer__section--insight-products {
 		width: calc(100% / 3);
@@ -125,19 +163,47 @@ footer li {
 		width: calc(100% * 2/3);
 	}
 
+	.footer__section--other-products ul {
+		column-count: 2;
+	}
+
 }
 
-/* At smartphone sizes, everything drops to one full-width column. */
 @include breakpoint('small') {
 	
-	.footer__section--corporate,
-	.footer__section--general,
-	.footer__section--social,
-	.footer__section--insight-products,
-	.footer__section--other-products,
-	.footer__section--other-products ul {
+	.footer__wrapper {
 		width: 100%;
-		column-count: 1;
+		padding: 30px 12px;
 	}
+
+	// Everything drops to one full-width column
+	.footer__section {
+		float: none;
+
+		&--corporate,
+		&--general,
+		&--social,
+		&--insight-products,
+		&--other-products,
+		&--other-products ul {
+			width: 100%;
+			column-count: 1;
+		}
+	    
+	    &--corporate {
+			float: none;
+		}
+	}
+
+	.footer__logo {
+		margin: 0 auto;
+		height: 47px;
+	}
+
+	// Add separators (fake .footer__separator, basically)
+	.footer__section--insight-products {
+		@include footer__section--faux-separator('bottom');
+	}
+
 
 }

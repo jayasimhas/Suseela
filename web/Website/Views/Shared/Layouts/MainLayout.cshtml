@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- STATIC PLACEHOLDER -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/dist/index-generated.css">
 
     @* <title>@Html.Sitecore().Field("title", new {DisableWebEdit = true})</title>*@
@@ -29,10 +30,25 @@
     @Html.Partial("_Navigation")
 
     <div class="main__wrapper">
+    
+    <div class="banner banner--full banner--maintenance">
+        <div class="banner__dismiss">
+            Dismiss
+            <svg class="banner__dismiss-x">
+                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            </svg>
+        </div>
+        <svg class="banner__lead-icon">
+            <use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
+        </svg>
+        Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
+    </div>
 
         <div class="main__content">
 
-            @Html.Sitecore().Placeholder("main_content")
+        <div class="banner banner--highlights">
+            <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
+        </div>
             <!--
             Html.Partial("../_Shared/AuthoredContent")
 
