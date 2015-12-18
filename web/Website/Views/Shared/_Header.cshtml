@@ -26,74 +26,10 @@
         </div>
 
 
-        @{
-            Html.RenderPartial("_LoginPartial", new LoginViewModel());
-
-        }
 
         <div class="header__user">
-            <!-- IF SIGNED IN 
-
-            <div class="header__friendly-welcome">Hi, Name</div>
-            <div class="header__my-account">
-                <svg class="header__icons icon-my-account">
-                    <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                </svg>
-                <a href="#">My Account</a>
-            </div>
-            <div class="header__sign-out">
-                <svg class="header__icons icon-sign-out">
-                    <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
-                </svg>
-                <a href="#">Sign Out</a>
-            </div>
-
-            IF SIGNED IN !-->
-
-            <!-- IF SIGNED OUT !-->
-
-            <div class="header__my-account">
-                <svg class="header__icons icon-register">
-                    <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
-                </svg>
-                <a href="#">Register</a>
-
-                <div class="header__hover header__hover--register">
-                    <svg class="header__icons header__icons--x">
-                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                    </svg>
-                    <h2>Register</h2>
-                    <input class="text-field header__hover-input"
-                           type="text"
-                           placeholder="Email Address (User Name)">
-                    <button class="button--pumpkin">Register</button>
-                </div>
-
-            </div>
-            
-            <div class="header__sign-in-out">
-                <svg class="header__icons icon-sign-in">
-                    <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
-                </svg>
-                <a href="#">Sign In</a>
-
-                <div class="header__hover header__hover--sign-in">
-                    <svg class="header__icons header__icons--x">
-                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                    </svg>
-                    <h2>Sign In</h2>
-                    <input class="text-field header__hover-input"
-                           type="text" 
-                           placeholder="Email Address (User Name)">
-                    <input class="text-field header__hover-input"
-                           type="password"
-                           placeholder="Password">
-                    <a href="#">Forgot your password?</a>
-                    <button class="button--pumpkin">Sign In</button>
-                </div>
-            </div>
-
-            <!-- END IF SIGNED OUT !-->
+                
+            @Html.Partial("_LoginPartial", new LoginViewModel())
 
         </div>
 

@@ -96,7 +96,7 @@ namespace Informa.Web.Areas.Account.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return Login(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -104,7 +104,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return Login(model.Parameters);
+                    return View();
             }
         }
 

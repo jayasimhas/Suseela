@@ -522,6 +522,7 @@
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
@@ -891,6 +892,11 @@
     <Content Include="Views\Shared\SortOption.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\Frontend\Index.cshtml" />
+    <Content Include="Views\Frontend\Template.cshtml" />
+    <Content Include="Views\Layout.cshtml" />
+    <Content Include="Views\Frontend\Listing.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

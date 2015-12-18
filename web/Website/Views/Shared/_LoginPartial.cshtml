@@ -1,24 +1,78 @@
 ﻿@using Microsoft.AspNet.Identity
-@model Informa.Web.Areas.Account.Models.LoginViewModel
+@model Informa.Web.Areas.Account.Models.LoginViewModel   
+
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    <!-- IF SIGNED IN  !-->
+    using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm" }))
     {
         @Html.AntiForgeryToken()
-        
-
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
+        <div class="header__friendly-welcome">Hi, @User.Identity.Name</div>
+        <div class="header__my-account">
+            <svg class="header__icons icon-my-account">
+                <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+            </svg>
+            @Html.ActionLink("My Account", "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })
+        </div>
+        <div class="header__sign-out">
+            <svg class="header__icons icon-sign-out">
+                <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+            </svg>
+            <a href="javascript:document.getElementById('logoutForm').submit()">Sign Out</a>
+        </div>
     }
+     <!-- IF SIGNED IN !-->
 }
 else
 {
+      <!-- IF SIGNED OUT !-->
+
+    <div class="header__my-account">
+        <svg class="header__icons icon-register">
+            <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
+        </svg>
+        @Html.ActionLink("Register", "Register", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "registerLink" })
+        @*<a href="#">Register</a>*@
+
+        <div class="header__hover header__hover--register">
+            <svg class="header__icons header__icons--x">
+                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            </svg>
+            <h2>Register</h2>
+            <input class="text-field header__hover-input"
+                   type="text"
+                   placeholder="Email Address (User Name)">
+            <button class="button--pumpkin">Register</button>
+        </div>
+
+    </div>
+
+            <div class="header__sign-in-out">
+                <svg class="header__icons icon-sign-in">
+                    <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
+                </svg>
+                @Html.ActionLink("Sign In", "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })
+
+                <div class="header__hover header__hover--sign-in">
+                    <svg class="header__icons header__icons--x">
+                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    </svg>
+                    <h2>Sign In</h2>
+                    <input class="text-field header__hover-input"
+                           type="text"
+                           placeholder="Email Address (User Name)">
+                    <input class="text-field header__hover-input"
+                           type="password"
+                           placeholder="Password">
+                    <a href="#">Forgot your password?</a>
+                    <button class="button--pumpkin">Sign In</button>
+                </div>
+            </div>
+
+            <!-- END IF SIGNED OUT !-->
+
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: new {area = "Account"}, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })</li>
+        
+        <li></li>
     </ul>
 }

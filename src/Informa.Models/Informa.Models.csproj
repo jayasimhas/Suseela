@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="CoreGlassModels.cs" />
     <Compile Include="GlassModels.cs" />
+    <Compile Include="I___BaseItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
