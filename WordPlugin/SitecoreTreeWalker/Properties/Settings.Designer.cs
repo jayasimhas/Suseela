@@ -22,5 +22,25 @@ namespace SitecoreTreeWalker.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://supportinforma.velir.com/services/scserver.asmx")]
+        public string SitecoreTreeWalker_SitecoreServer_SCServer {
+            get {
+                return ((string)(this["SitecoreTreeWalker_SitecoreServer_SCServer"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://supportinforma.velir.com/services/sctree.asmx")]
+        public string SitecoreTreeWalker_SitecoreTree_SCTree {
+            get {
+                return ((string)(this["SitecoreTreeWalker_SitecoreTree_SCTree"]));
+            }
+        }
     }
 }

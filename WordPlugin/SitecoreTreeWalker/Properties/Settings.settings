@@ -1,7 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SitecoreTreeWalker.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SitecoreTreeWalker_SitecoreServer_SCServer" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://supportinforma.velir.com/services/scserver.asmx</Value>
+    </Setting>
+    <Setting Name="SitecoreTreeWalker_SitecoreTree_SCTree" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://supportinforma.velir.com/services/sctree.asmx</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

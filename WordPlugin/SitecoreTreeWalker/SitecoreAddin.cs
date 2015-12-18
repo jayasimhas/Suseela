@@ -1,11 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Xml.Linq;
+using System.Windows.Forms;
+using Microsoft.Office.Core;
+using Microsoft.Office.Interop.Word;
+using SitecoreTreeWalker.Config;
+using SitecoreTreeWalker.SitecoreTree;
+using SitecoreTreeWalker.document;
+using SitecoreTreeWalker.Sitecore;
+using SitecoreTreeWalker.SitecoreServer;
+using SitecoreTreeWalker.UI;
+using SitecoreTreeWalker.UI.ArticleDetailsForm;
+using SitecoreTreeWalker.UI.TreeBrowser;
+using SitecoreTreeWalker.User;
+using SitecoreTreeWalker.Util;
 using Word = Microsoft.Office.Interop.Word;
-using Office = Microsoft.Office.Core;
-using Microsoft.Office.Tools.Word;
+using StaffStruct = SitecoreTreeWalker.SitecoreTree.StaffStruct;
 
 namespace SitecoreTreeWalker
 {
@@ -205,10 +216,10 @@ namespace SitecoreTreeWalker
         private void InitializePlugin()
         {
             Log("Starting add in...");
-            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-            {
-                Log("Version: " + System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString());
-            }
+            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            //{
+            //    Log("Version: " + System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString());
+            //}
             _browser = new TreeBrowser(Application);
             _myCustomTaskPane = this.CustomTaskPanes.Add(_browser, "Sitecore References");
             _myCustomTaskPane.Visible = false;

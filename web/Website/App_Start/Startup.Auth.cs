@@ -1,5 +1,5 @@
 ﻿using System;
-using Informa.Web.Areas.Article.Models;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;

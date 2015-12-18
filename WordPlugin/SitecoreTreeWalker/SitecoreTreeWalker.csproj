@@ -106,15 +106,30 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -129,11 +144,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
@@ -166,154 +181,237 @@
     <Compile Include="SitecoreImageTransfer.cs" />
     <Compile Include="Sitecore\ControlContext.cs" />
     <Compile Include="Sitecore\SitecoreArticle.cs" />
+    <Compile Include="Sitecore\SitecoreGetterAsync.cs" />
     <Compile Include="Sitecore\SitecoreItemGetter.cs" />
-    <Compile Include="Sitecore\SitecoreMenuItemContext.cs" />
+    <Compile Include="Sitecore\SitecoreMenuItemContext.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Sitecore\SitecorePath.cs" />
     <Compile Include="Sitecore\SitecoreGetter.cs" />
     <Compile Include="Sitecore\UpdateNode.cs" />
-    <Compile Include="UI\AdvancedSettings.cs" />
+    <Compile Include="UI\AdvancedSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\AdvancedSettings.Designer.cs">
       <DependentUpon>AdvancedSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\ArticleDetailsPageSelector.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\ArticleDetailsPageSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\ArticleDetailsPageSelector.Designer.cs">
       <DependentUpon>ArticleDetailsPageSelector.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleInformationControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleInformationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleInformationControl.Designer.cs">
       <DependentUpon>ArticleInformationControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetail.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetail.Designer.cs">
       <DependentUpon>ArticleDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLinkUnlinkInfo.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLinkUnlinkInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLinkUnlinkInfo.Designer.cs">
       <DependentUpon>ArticleLinkUnlinkInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockConfirmation.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockConfirmation.Designer.cs">
       <DependentUpon>ArticleLockConfirmation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockInfo.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockInfo.Designer.cs">
       <DependentUpon>ArticleLockInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleStatusBar.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleStatusBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleStatusBar.Designer.cs">
       <DependentUpon>ArticleStatusBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.Designer.cs">
       <DependentUpon>ArticleVersionStateInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.Designer.cs">
       <DependentUpon>ArticleWorkflowInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\Interfaces\ArticleDetailsPageUserControl.cs" />
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\Interfaces\ArticleDetailsPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.Designer.cs">
       <DependentUpon>IndustriesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.Designer.cs">
       <DependentUpon>MarketSegmentsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.Designer.cs">
       <DependentUpon>MenuSelectorItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\RelatedArticlesControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\RelatedArticlesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\RelatedArticlesControl.Designer.cs">
       <DependentUpon>RelatedArticlesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.Designer.cs">
       <DependentUpon>SubjectsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.Designer.cs">
       <DependentUpon>NotesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.Designer.cs">
       <DependentUpon>TaxonomyControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.Designer.cs">
       <DependentUpon>TherapeuticCategoriesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.cs" />
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.Designer.cs">
       <DependentUpon>WorkflowControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controllers\GeneralTagTitleComparer.cs" />
-    <Compile Include="UI\DealPreviewControl.cs" />
+    <Compile Include="UI\DealPreviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\DialogFactory.cs" />
-    <Compile Include="UI\LoginWindow.cs" />
+    <Compile Include="UI\LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\NoFlickerListView.cs" />
+    <Compile Include="UI\NoFlickerListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Controllers\ExpandFlowPanel.cs" />
     <Compile Include="UI\Controllers\SummaryController.cs" />
     <Compile Include="UI\Controllers\ITabController.cs" />
-    <Compile Include="UI\EasyRemoveListView.cs" />
-    <Compile Include="UI\ArticlePreviewControl.cs" />
-    <Compile Include="UI\SaveDialog.cs" />
+    <Compile Include="UI\EasyRemoveListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ArticlePreviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\SaveDialog.Designer.cs">
       <DependentUpon>SaveDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\SelectedRelatedArticles.cs" />
-    <Compile Include="UI\TablessTabControl.cs" />
-    <Compile Include="UI\TreeBrowser\GraphicMetadataForm.cs" />
+    <Compile Include="UI\SelectedRelatedArticles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TablessTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\GraphicMetadataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\GraphicMetadataForm.Designer.cs">
       <DependentUpon>GraphicMetadataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowser.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowser.Designer.cs">
       <DependentUpon>TreeBrowser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ESRibbon.cs" />
+    <Compile Include="UI\ESRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\ESRibbon.Designer.cs">
       <DependentUpon>ESRibbon.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controllers\TaxonomyComparer.cs" />
     <Compile Include="UI\Controllers\TaxonomyTabController.cs" />
-    <Compile Include="UI\LoginControl.cs" />
+    <Compile Include="UI\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\ArticlesSidebarsControl.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\ArticlesSidebarsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\ArticlesSidebarsControl.Designer.cs">
       <DependentUpon>ArticlesSidebarsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.Designer.cs">
       <DependentUpon>CompanyTreeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.Designer.cs">
       <DependentUpon>MultimediaControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.Designer.cs">
       <DependentUpon>IFrameControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\DealsDrugsCompaniesControl.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\DealsDrugsCompaniesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\DealsDrugsCompaniesControl.Designer.cs">
       <DependentUpon>DealsDrugsCompaniesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\GraphicsControl.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\GraphicsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\GraphicsControl.Designer.cs">
       <DependentUpon>GraphicsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SuggestedURL.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SuggestedURL.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\SuggestedURL.Designer.cs">
       <DependentUpon>SuggestedURL.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.cs" />
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.Designer.cs">
       <DependentUpon>SupportingDocumentsControl.cs</DependentUpon>
     </Compile>
@@ -470,7 +568,9 @@
     <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.resx">
       <DependentUpon>SupportingDocumentsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -574,10 +674,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>SitecoreTreeWalker_SitecoreServer_SCServer</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://ibi.arron.velir.com/services/sctree.asmx">
+    <WebReferenceUrl Include="http://supportinforma.velir.com/services/sctree.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SitecoreTree\</RelPath>
-      <UpdateFromURL>http://ibi.arron.velir.com/services/sctree.asmx</UpdateFromURL>
+      <UpdateFromURL>http://supportinforma.velir.com/services/sctree.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
