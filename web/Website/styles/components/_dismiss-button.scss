@@ -1,0 +1,13 @@
+.dismiss-button {
+	@include textMix('Roboto', 0.75rem, 700);
+	float: right;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	&__icon {
+		width: 18px;
+		height: 18px;
+		vertical-align: middle;
+		margin-left: 12px;
+	}
+}

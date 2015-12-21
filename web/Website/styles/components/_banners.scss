@@ -1,33 +1,6 @@
-.banner {
+.banner { // "notify"? Try using two words, perhaps, for specificity
 	width: 100%;
 	padding: 22px;
-	
-	&--full {
-		margin-left: 70px;
-		width: calc(100% - 70px);
-	}
-
-	&__dismiss {
-		float: right;
-		@include textMix('Roboto', 12px, 700);
-		text-transform: uppercase;
-		letter-spacing: 1px;
-
-		&-x {
-			width: 18px;
-			height: 18px;
-			vertical-align: middle;
-			margin-left: 12px;
-		}
-	}
-
-	&__lead-icon {
-		width: 26px;
-		height: 22px;
-		display: block;
-		float: left;
-		margin-right: 12px;
-	}
 
 	&--maintenance {
 		background-color: #f1f2f2;
@@ -46,5 +19,13 @@
 			@include textMix('Roboto', 20px, 600);
 			margin-right: 8px;
 		}
+	}
+
+	&__lead-icon {
+		width: 26px;
+		height: 22px;
+		display: block;
+		float: left;
+		margin-right: 12px;
 	}
 }

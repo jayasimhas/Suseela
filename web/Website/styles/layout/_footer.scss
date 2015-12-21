@@ -38,6 +38,8 @@ footer li {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+
+	@extend .clearfix;
 }
 
 .footer__section {
@@ -62,10 +64,11 @@ footer li {
 		}
 	}
 }
-.footer__section--header {
+.footer__section-header {
 	@include textMix('Roboto Condensed', 15px, 700);
 	color: #231f20;
 	text-transform: uppercase;
+	line-height: 36px;
 }
 
 // Separators between footer sections vary depending on the page width
@@ -94,6 +97,29 @@ footer li {
 	}
 }
 
+// Three potential widths for footer sections
+.footer__section--single {
+	width: 25%;
+
+	ul {
+		column-count: 1;
+	}
+}
+.footer__section--double {
+	width: 50%;
+
+	ul {
+		column-count: 2;
+	}
+}
+.footer__section--triple {
+	width: 75%;
+
+	ul {
+		column-count: 3;
+	}
+}
+
 .footer__section--corporate {
 	width: 25%;
 	font-size: 12px;
@@ -103,11 +129,6 @@ footer li {
 	display: block;
 	margin-bottom: 1rem;
 	height: 60px;
-}
-
-.footer__section--general {
-	column-count: 2;
-	width: 50%;
 }
 
 .footer__section--social {
@@ -120,20 +141,8 @@ footer li {
 	margin-right: 20px;
 }
 
-.footer__section--insight-products {
-	width: 25%;
-}
-.footer__section--other-products {
-	width: 75%;
-
-	ul {
-		column-count: 3;
-	}
-}
-
 
 @include breakpoint('medium') {
-	
 
 	.footer__section--social {
 		order: 99;
@@ -148,22 +157,23 @@ footer li {
 			line-height: 28px;
 		}
 
-		.footer__section--header {
+		.footer__section-header {
 			margin-right: 22px;
 		}
 	}
 
+	// 4 columns -> 3 columns
 	.footer__section--corporate,
-	.footer__section--insight-products {
+	.footer__section--single {
 		width: calc(100% / 3);
 	}
 
-	.footer__section--general,
-	.footer__section--other-products {
+	.footer__section--double,
+	.footer__section--triple {
 		width: calc(100% * 2/3);
 	}
 
-	.footer__section--other-products ul {
+	.footer__section--triple ul {
 		column-count: 2;
 	}
 
@@ -176,22 +186,28 @@ footer li {
 		padding: 30px 12px;
 	}
 
-	// Everything drops to one full-width column
+	// 3 columns -> 1 column
+
 	.footer__section {
 		float: none;
 
 		&--corporate,
-		&--general,
 		&--social,
-		&--insight-products,
-		&--other-products,
-		&--other-products ul {
+		&--single,
+		&--double,
+		&--triple {
 			width: 100%;
+			float: none;
+		}
+
+		&--double ul,
+		&--triple ul {
 			column-count: 1;
 		}
-	    
-	    &--corporate {
-			float: none;
+
+		// Add separators (fake .footer__separator, basically)
+		&--single {
+			@include footer__section--faux-separator('bottom');
 		}
 	}
 
@@ -199,11 +215,4 @@ footer li {
 		margin: 0 auto;
 		height: 47px;
 	}
-
-	// Add separators (fake .footer__separator, basically)
-	.footer__section--insight-products {
-		@include footer__section--faux-separator('bottom');
-	}
-
-
 }

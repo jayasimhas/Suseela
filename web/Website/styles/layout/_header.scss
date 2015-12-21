@@ -32,6 +32,11 @@
 	float: left;
 	height: 60px;
 	
+	@include breakpoint('medium') {
+		margin-top: 24px;
+		margin-left: 92px;
+		height: 54px;
+	}
 
 	@include breakpoint('small') {
 		margin-top: 12px;
@@ -79,8 +84,12 @@
 
 .header__user {
 	float: right;
-	padding: 24px 0;
+	padding: 24px 0 0;
 
+	@include breakpoint('medium') {
+		padding: 40px 20px 0;
+		font-size: 15px;
+	}
 	@include breakpoint('small') {
 		border-top: 1px solid #ccc;		
 		width: calc(100% - 88px);

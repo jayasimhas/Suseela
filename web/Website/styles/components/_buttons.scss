@@ -1,15 +1,19 @@
-// -----------------------------------------------------------------------------
+/* -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
-// -----------------------------------------------------------------------------
+----------------------------------------------------------------------------- */
 
 .button--pumpkin {
-	border: 0;
-	padding: 8px 12px;
-
-	background-color:  #fbb040;
-	color: #231f20;
-
+	@include smooth-transition;
 	@include textMix('Roboto', 12px, 700);
-	text-transform: uppercase;
+
+	background-color: $informa-light-orange;
+	border: 0;
+	color: $informa-dark-gray;
 	letter-spacing: 1px;
+	padding: 8px 12px;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $informa-dark-orange;
+	}
 }

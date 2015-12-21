@@ -1,18 +1,18 @@
 .main-menu {
-	float: left;
-	flex: 0 0 auto;
+
+	@include textMix('Roboto', 14px, 400);
+
 	align-items: stretch;
+	background-color: $informa-light-gray-e;
+	border-right: 70px solid $informa-dark-gray;
+	flex: 0 0 auto;
+	float: left;
 	width: 330px;
-	border-right: 70px solid #555; 
-	background-color: #ddd;
 
 	// Start off translated on-screen just enough to see the toggler
 	transform: translate3d(70px, 0, 0);
-	// Give the slide in/out a little bounce
 	transition: all 300ms cubic-bezier(0.450, 0.520, 0.220, 1.085);
 
-	@include textMix('Roboto', 14px, 400);
-	
 	&.is-active {
 		transform: translate3d(330px, 0, 0);
 	}
@@ -20,95 +20,34 @@
 	// At smaller widths, we use the `--mini` toggler instead
 	// Remove the thick border, don't show permatoggler on the left when closed
 	@include breakpoint('medium') {
-		border-right: 1px solid #bbb;
+		border-right: 1px solid $informa-light-gray-d;
+		font-size: 16px;
+		margin-right: 70px;
 		transform: translate3d(0, 0, 0);
+		width: 260px;
 	}
-	
-	&__toggler {
-		float: right;
-		height: 100%;
-		margin-right: -70px;
-		background-color: #555;
-		color: #fff;
-	
-		@include textMix('Roboto', 12px, 500);
-		letter-spacing: 1px;
-		text-align: center;
-		text-transform: uppercase;
 
-		@include breakpoint('medium') {
-			display: none;
-		}
-
-		&--mini {
-			display: none;
-			float: left;
-
-			// Make menu sticky when scrolled on tablet/mobile
-			&.is-sticky {
-				position: fixed;
-				z-index: 999;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 40px;
-				margin: 0;
-				text-align: left;
-				line-height: 40px;
-
-				.c-hamburger {
-					height: 36px;
-					width: 36px;
-					float: left;
-
-					span {
-						top: 18px;
-						left: 11px;
-						right: 11px;
-					
-
-						&::before {
-							top: 6px;
-						}
-
-						&::after { 
-					  		bottom: 6px;
-						}
-					}
-				}
-			}
-			@include breakpoint('medium') {
-				display: block;
-				height: 100px;
-				width: 62px;
-			}
-
-			@include breakpoint('small') {
-				width: 62px;
-			}
-		}
-	}
+	// TODO break this out into component, similar to footer
 
 	&__section {
-		border-bottom: 1px solid #bbb;
+		border-bottom: 1px solid $informa-light-gray-d;
 		margin: 0;
-		padding: 0.5rem 0;
-		background-color: #eee;
+		padding: 16px 0;
+		background-color: $informa-light-gray-f;
 	}
 
 	&__section-title,
 	&__section-link {
-		line-height: 2rem;
+		line-height: 34px;
 		position: relative;
-		margin: 0.125rem 0;
 	}
 
 	&__section-title {
-		padding: 0 0 0 1rem;
+		padding: 0 0 0 30px;
 		text-transform: uppercase;
 		font-weight: 600;
 		letter-spacing: 1.2px;
-		
+
 		&:after {
 			content: "⌃";
 			right: 10px;
@@ -118,7 +57,8 @@
 	}
 
 	&__section-link {
-		padding: 0 0 0 2rem;
+		margin: 0;
+		padding: 0 0 0 42px;
 		display: none;
 	}
 
@@ -137,109 +77,6 @@
 	}
 }
 
-/*
-	CSS-only animated hamburger-to-X widget
-	Sass'ified and tweaked, based on:
-	http://callmenick.com/post/animating-css-only-hamburger-menu-icons
-*/
-
-.c-hamburger {
-	display: block;
-	position: relative;
-
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	border: none;
-	border-radius: none;
-	height: 60px;
-	width: 70px;
-
-	font-size: 0;
-	text-indent: -9999px;
-
-	appearance: none;
-	box-shadow: none; 
-	cursor: pointer;
-	background-color: inherit;
-  
-	&:focus {
-	  	outline: none;
-	}
-	
-	span {
-		display: block;
-	    position: absolute;
-	    top: 28px;
-	    left: 25px;
-	    right: 25px;
-	    height: 2px;
-	    background: white;
-		
-		&::before, /* c.hamburger span */
-		&::after {
-			position: absolute;
-			display: block;
-
-			left: 0;
-			height: 2px;
-			width: 100%;
-
-			background-color: #fff;
-			content: "";
-
-			transition-duration: 300ms, 300ms;
-			transition-delay: 300ms, 0s;
-		}
-		
-		&::before { /* c.hamburger span */
-			top: 8px;
-			transition-property: top, transform;
-		}
-
-		&::after { /* c.hamburger span */
-	  		bottom: 8px;
-	  		transition-property: bottom, transform;
-		}
-	}
-
-	@include breakpoint('medium') {
-		span {
-			top: 34px;
-			left: 20px;
-			right: 20px;
-		}
-
-		&::before {
-			top: 6px;
-		}
-
-		&::after { 
-	  		bottom: 6px;
-		}
-	}
-}
-
-.main-menu__toggler.is-active .c-hamburger span {
-	background: none;
-
-	&:before {
-  		top: 0;
-  		transform: rotate(45deg);
-	}
-	
-	&:after {
-		bottom: 0;
-		transform: rotate(-45deg);
-	}
-
-	&:before,
-	&:after {
-		transition-delay: 0s, 0.3s;
-	}
-
-}
-
 // Toggle menu section link visibility on-click
 .main-menu__section-title.is-active ~ .main-menu__section-link {
 	display: block;
@@ -252,5 +89,5 @@
 	display: block;
 	height: 100%;
 	width: 6px;
-	background-color: orange;
+	background-color: $informa-dark-orange;
 }
