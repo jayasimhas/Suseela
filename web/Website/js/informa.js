@@ -8,7 +8,7 @@ $('.js-toggle-menu').on('click', function toggleMenu() {
 });
 
 /* Toggle menu categories */
-$('.main-menu__section-title').on('click', function toggleMenuItems(e) {
+$('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
 	$(e.target).toggleClass('is-active');
 });
 
