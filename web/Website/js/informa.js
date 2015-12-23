@@ -12,6 +12,11 @@ $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
 	$(e.target).toggleClass('is-active');
 });
 
+/* Toggle header search box (tablets/smartphones) */
+$('.js-toggle-header-search').on('click', function toggleMenuItems(e) {
+	$('.header__search-field').toggleClass('is-active');
+});
+
 /* Attach / detach sticky menu */
 $(window).on('scroll', function windowScrolled() {
 	if ($(this).scrollTop() > 100) {

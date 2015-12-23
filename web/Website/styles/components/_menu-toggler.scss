@@ -115,6 +115,22 @@
 		  		bottom: 6px;
 			}
 		}
+
+		@include breakpoint('small') {
+			width: 62px;
+
+			span {
+				top: 34px;
+				left: 20px;
+				right: 20px;
+			}
+			&::before {
+				top: 6px;
+			}
+			&::after {
+		  		bottom: 6px;
+			}
+		}
 	}
 
 	&--mini {

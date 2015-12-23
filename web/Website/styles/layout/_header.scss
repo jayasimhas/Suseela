@@ -23,7 +23,7 @@
 		// Some elements are flush against container
 		// Handle padding/margins on a per-element basis
 		padding: 0;
-		height: 101px;
+		height: 104px;
 	}
 }
 
@@ -31,41 +31,21 @@
 	display: block;
 	float: left;
 	height: 60px;
+	margin-right: 32px;
 
 	@include breakpoint('medium') {
-		margin-top: 24px;
-		margin-left: 92px;
 		height: 54px;
+		margin-left: 92px;
+		margin-top: 24px;
 	}
 
 	@include breakpoint('small') {
-		margin-top: 12px;
-		margin-left: 74px;
 		height: 40px;
+		margin-left: 74px;
+		margin-top: 12px;
 	}
 }
 
-.header__search-wrapper {
-	float: left;
-	margin: 12px 0 0 36px;
-
-	@include breakpoint('medium') {
-		margin: 38px 12px 0 36px;
-	}
-
-	@include breakpoint('small') {
-		float: right;
-		padding: 28px 12px 0 0;
-	}
-}
-
-.header__search-field {
-	width: 310px;
-
-	@include breakpoint('medium') {
-		display: none;
-	}
-}
 .header__icons {
 	width: 14px;
 	height: 17px;
@@ -89,21 +69,29 @@
 		height: 20px;
 		width: 20px;
 	}
+
+	@include breakpoint('small') {
+		height: 16px;
+		width: 16px;
+		margin-right: 2px;
+	}
 }
 
 .header__user {
 	float: right;
+	margin-left: 24px;
 	padding: 24px 0 0;
 
 	@include breakpoint('medium') {
-		padding: 40px 20px 0;
 		font-size: 15px;
+		padding: 40px 20px 0;
 	}
 	@include breakpoint('small') {
 		border-top: 1px solid #ccc;
-		width: calc(100% - 88px);
+		font-size: 13px;
 		margin: 12px 12px 0 74px;
 		padding: 10px 0 0;
+		width: calc(100% - 88px);
 	}
 }
 
@@ -183,5 +171,37 @@
 @include breakpoint('small') {
 	.header__friendly-welcome {
 		display: none;
+	}
+}
+
+.header__search-wrapper {
+	margin: 12px 0 0;
+
+	@include breakpoint('medium') {
+		margin: 39px 0 0;
+		text-align: right;
+		position: relative;
+	}
+
+	@include breakpoint('small') {
+		margin-top: 24px;
+	}
+}
+
+.header__search-field {
+	width: 310px;
+
+	@include breakpoint('medium') {
+		display: none;
+
+		&.is-active {
+			display: block;
+			position: absolute;
+			left: 70px;
+			top: -24px;
+			border: 0;
+			font-size: 18px;
+			line-height: 48px;
+		}
 	}
 }
