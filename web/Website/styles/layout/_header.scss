@@ -31,7 +31,7 @@
 	display: block;
 	float: left;
 	height: 60px;
-	
+
 	@include breakpoint('medium') {
 		margin-top: 24px;
 		margin-left: 92px;
@@ -41,13 +41,17 @@
 	@include breakpoint('small') {
 		margin-top: 12px;
 		margin-left: 74px;
-		height: 40px;		
+		height: 40px;
 	}
 }
 
 .header__search-wrapper {
 	float: left;
-	padding: 12px 0 0 36px;
+	margin: 12px 0 0 36px;
+
+	@include breakpoint('medium') {
+		margin: 38px 12px 0 36px;
+	}
 
 	@include breakpoint('small') {
 		float: right;
@@ -80,6 +84,11 @@
 		width: 15px;
 		margin-left: 8px;
 	}
+
+	@include breakpoint('medium') {
+		height: 20px;
+		width: 20px;
+	}
 }
 
 .header__user {
@@ -91,7 +100,7 @@
 		font-size: 15px;
 	}
 	@include breakpoint('small') {
-		border-top: 1px solid #ccc;		
+		border-top: 1px solid #ccc;
 		width: calc(100% - 88px);
 		margin: 12px 12px 0 74px;
 		padding: 10px 0 0;

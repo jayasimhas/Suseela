@@ -7,7 +7,7 @@
 <head>
     @*@Styles.Render("~/Content/css")*@
     @*@Scripts.Render("~/bundles/modernizr")*@
-    
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Informa</title>
@@ -30,7 +30,7 @@
     @Html.Partial("_Navigation")
 
     <div class="main__wrapper">
-    
+
         <div class="banner banner--maintenance">
             <div class="dismiss-button">
                 Dismiss
@@ -50,19 +50,22 @@
             <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
         </div>
             <!--
-            
+
             Here is where the main content of the page goes. Everything else is WIP, but I'm confident enough that this page structure will hold no matter what. Anything inside here should show up properly, no matter what changes outside of this element.
 
             HAVE FUN ᕕ( ᐛ )ᕗ GO CRAZY
 
             !-->
-            
+
+            @Html.Partial("_ArticlePreview")
+
             @Html.Partial("../_Shared/AuthoredContent")
+
 
         </div>
 
     </div>
-        
+
 </main>
 
 @Html.Partial("_Footer")

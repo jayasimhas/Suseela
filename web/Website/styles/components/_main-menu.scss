@@ -58,8 +58,13 @@
 
 	&__section-link {
 		margin: 0;
-		padding: 0 0 0 42px;
-		display: none;
+	}
+
+	&__section-wrapper {
+		transition: all 150ms ease-out;
+		transform: scaleY(0);
+		transform-origin: top;
+		max-height: 0;
 	}
 
 	&__footer-link {
@@ -78,16 +83,24 @@
 }
 
 // Toggle menu section link visibility on-click
-.main-menu__section-title.is-active ~ .main-menu__section-link {
-	display: block;
+.main-menu__section-title.is-active ~ .main-menu__section-wrapper {
+	transform: scaleY(1);
+	max-height: 999px;
 }
 
-.main-menu__hoverable:hover:before {
-	content: "";
-	position: absolute;
-	left: 0;
-	display: block;
-	height: 100%;
-	width: 6px;
-	background-color: $informa-dark-orange;
+.main-menu__hoverable {
+	position: relative;
+
+	a {
+		padding: 0 0 0 42px;
+	}
+	&:hover:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		display: block;
+		height: 100%;
+		width: 6px;
+		background-color: $informa-dark-orange;
+	}
 }
