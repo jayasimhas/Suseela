@@ -1,17 +1,28 @@
 <footer>
     <div class="footer__wrapper">
 
+        @*
+            FOOTER — Logo + copyright notice
+            Replace: logo `src` with dynamic image URL
+            Replace: `2015` with [start year] - [current year] dynmically (JS or Sitecore?)
+            Optional: Allow for dynamic copyright notice?
+        *@
         <ul class="footer__section footer__section--corporate">
             <li>
                 <img class="footer__logo" src="/dist/img/informa-logo.png"> &copy; 2015 Informa plc. All rights reserved.
             </li>
         </ul>
 
+        @*
+            FOOTER — Double (two columns wide)
+        *@
         <div class="footer__section footer__section--double">
             <ul>
+            @* INDIVIDUAL LINK: START *@
                 <li>
                     <a href="#">1 Footer Link Placeholder</a>
                 </li>
+            @* INDIVIDUAL LINK: END *@
                 <li>
                     <a href="#">2 Footer Link Placeholder</a>
                 </li>
@@ -27,31 +38,46 @@
             </ul>
         </div>
 
+        @*
+            FOOTER — Social media links
+            Replace: link `href`s with dynamic social media links
+        *@
         <ul class="footer__section footer__section--social">
             <li class="footer__section-header">FOLLOW SCRIP</li>
             <li>
-                <svg class="footer__share-icons">
-                    <use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
-                </svg>
-                <svg class="footer__share-icons">
-                    <use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
-                </svg>
-                <svg class="footer__share-icons">
-                    <use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
-                </svg>
+                <a href="#">
+                    <svg class="footer__share-icons">
+                        <use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="footer__share-icons">
+                        <use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="footer__share-icons">
+                        <use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
+                    </svg>
+                </a>
             </li>
         </ul>
 
         <hr class="footer__separator">
 
+        @*
+            FOOTER — Single (one column wide)
+        *@
         <div class="footer__section footer__section--single">
             <span class="footer__section-header">
                 Insight Products
             </span>
             <ul>
+            @* INDIVIDUAL LINK: START *@
                 <li>
-                    <a href="#">Footer Link Placeholder</a>
+                    <a href="#">1 Footer Link Placeholder</a>
                 </li>
+            @* INDIVIDUAL LINK: END *@
                 <li>
                     <a href="#">Footer Link Placeholder</a>
                 </li>
@@ -61,14 +87,20 @@
             </ul>
         </div>
 
+        @*
+            FOOTER — Triple (three columns wide)
+            Shrinks to two-wide at tablet width
+        *@
         <div class="footer__section footer__section--triple">
             <span class="footer__section-header">
                 Other Pharma &amp; Healthcare Products
             </span>
             <ul>
+            @* INDIVIDUAL LINK: START *@
                 <li>
                     <a href="#">1 Footer Link Placeholder</a>
                 </li>
+            @* INDIVIDUAL LINK: END *@
                 <li>
                     <a href="#">2 Footer Link Placeholder</a>
                 </li>
