@@ -954,7 +954,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58902</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://informa.miked.velir.com</IISUrl>
+          <IISUrl>http://localhost:58902/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

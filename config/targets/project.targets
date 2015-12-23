@@ -19,10 +19,12 @@
 				<exclude name="${dir.sitecore}/**/Release/**/*" />
 				<exclude name="${dir.src}/**/Release/**/*" />
 				<exclude name="${dir.web}/sitecore/**/*" />
+				<exclude name="${dir.web}/**/node_modules/**/*" />
 				<include name="${dir.web}/**/*.template" />
 				<include name="${dir.sitecore}/**/*.template" />				
 				<include name="${dir.src}/**/*.template" />				
 				<include name="${dir.test}/**/*.template" />	
+				<include name="${dir.wordplugin}/**/*.template" />	
 				<!-- <include name="${dir.tools}/vagrant/**/*.template" /> --> <!-- Added (for Vagrant)-->
 				<!-- <include name="${dir.tools}/copysauce/**/*.template" /> --> <!-- Added (for CopySauce)-->
 				<include name="*.template" /> <!-- root directory -->
