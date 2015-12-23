@@ -122,10 +122,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				Authors = pageArticleInformationControl.GetSelectedAuthors().ToArray(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
                 Industries= null,
-				Subjects = pageSubjectsControl.TabController.GetSelected(),
+				//Subjects = pageSubjectsControl.TabController.GetSelected(),
                 Geography = pageTaxonomyControl.TabController.GetSelected(),					
-                NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-                NotesToProduction = pageArticleInformationControl.PageNotesControl.GetNotesToProduction(),
+                //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
+                //NotesToProduction = pageArticleInformationControl.PageNotesControl.GetNotesToProduction(),
 				IsTopStory = pageArticleInformationControl.uxTopStory.Checked,
 				IsFeaturedArticle = pageArticleInformationControl.uxNominate.Checked,
 				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToArray(),
@@ -150,10 +150,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				Authors = pageArticleInformationControl.GetSelectedAuthors().ToArray(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
                 Industries = null,
-				Subjects = pageSubjectsControl.TabController.GetSelected(),
+				//Subjects = pageSubjectsControl.TabController.GetSelected(),
                 Geography = pageTaxonomyControl.TabController.GetSelected(),					
-                NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-                NotesToProduction = pageArticleInformationControl.PageNotesControl.GetNotesToProduction(),
+                //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
+                //NotesToProduction = pageArticleInformationControl.PageNotesControl.GetNotesToProduction(),
 				IsTopStory = pageArticleInformationControl.uxTopStory.Checked,
 				IsFeaturedArticle = pageArticleInformationControl.uxNominate.Checked,
 				//although this technically requires document parsing, we want to retrieve it 
@@ -272,7 +272,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageWorkflowControl.Enabled = false;
 			pageSubjectsControl.Enabled = false;
             pageTaxonomyControl.Enabled = false;								
-            pageArticleInformationControl.PageNotesControl.PreLinkEnable();
+            //pageArticleInformationControl.PageNotesControl.PreLinkEnable();
 		}
 
 		/// <summary>
@@ -287,7 +287,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageWorkflowControl.Enabled = true;
 			pageSubjectsControl.Enabled = true;
             pageTaxonomyControl.Enabled = true;						
-            pageArticleInformationControl.PageNotesControl.PostLinkEnable();
+            //pageArticleInformationControl.PageNotesControl.PostLinkEnable();
 		}
 
 		public bool CurrentPublicationIsDaily()
@@ -313,9 +313,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 			pageArticleInformationControl.ResetFields();
 		    pageWorkflowControl.ResetNotificationList();
-			pageSubjectsControl.TabController.ResetFields();
+			//pageSubjectsControl.TabController.ResetFields();
             pageTaxonomyControl.TabController.ResetFields();					
-            pageArticleInformationControl.PageNotesControl.ResetFields();
+            //pageArticleInformationControl.PageNotesControl.ResetFields();
 			pageRelatedArticlesControl.ResetFields();			
 		}
 
@@ -328,7 +328,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageArticleInformationControl.UpdateFields(articleDetails);
 			pageRelatedArticlesControl.UpdateFields(articleDetails);
 			pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
-			pageSubjectsControl.UpdateFields(articleDetails);
+			//pageSubjectsControl.UpdateFields(articleDetails);
             pageTaxonomyControl.UpdateFields(articleDetails);			
 					
 			if(string.IsNullOrEmpty(articleDetails.ArticleNumber))
@@ -336,8 +336,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				return;
 			}
 
-            pageArticleInformationControl.PageNotesControl.UpdateFields(articleDetails);			
-			pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());
+            //pageArticleInformationControl.PageNotesControl.UpdateFields(articleDetails);			
+			//pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());
             pageTaxonomyControl.TabController.UpdateFields(articleDetails.Geography.ToList());					
 			pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
 		}

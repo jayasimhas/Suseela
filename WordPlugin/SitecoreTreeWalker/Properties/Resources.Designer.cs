@@ -303,6 +303,16 @@ namespace SitecoreTreeWalker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imformaVideoPlaceholder2 {
+            get {
+                object obj = ResourceManager.GetObject("imformaVideoPlaceholder2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap industries_tabheader {
             get {
                 object obj = ResourceManager.GetObject("industries_tabheader", resourceCulture);

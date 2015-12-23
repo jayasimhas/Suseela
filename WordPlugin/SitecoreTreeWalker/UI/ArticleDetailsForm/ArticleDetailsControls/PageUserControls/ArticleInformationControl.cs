@@ -144,7 +144,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 					return false;
 				}
 				ArticleNumber = _parent.ArticleDetails.ArticleNumber;
-				uxArticleNumberLabel.Text = ArticleNumber;
+                //uxArticleNumberLabel.Text = ArticleNumber;
                 
 
 				CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleGuid);
@@ -223,7 +223,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 					return false;
 				}
 				ArticleNumber = articleNumber;
-				uxArticleNumberLabel.Text = articleNumber;
+                //uxArticleNumberLabel.Text = articleNumber;
 
 				CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
 
@@ -297,13 +297,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 					{ //locked by other
 						IndicateCheckedOutByOther(checkedOut);
 					}
-					uxLockStatusLabel.Text = @"Locked";
+                    //uxLockStatusLabel.Text = @"Locked";
 				}
 				else
 				{ //unlocked
 					IndicateUnlocked();
 				}
-				uxRefreshStatus.Enabled = true;
+                //uxRefreshStatus.Enabled = true;
 			}
 			else
 			{ //document is not linked to an article
@@ -320,24 +320,24 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			_parent.PreLinkEnable();
 			IndicatedUnfavoredLink();
 
-			uxLockStatus.BackColor = DefaultBackColor;
-			uxLockUser.Text = @"N\A";
-			uxLockStatusLabel.Text = @"Unlocked";
+            //uxLockStatus.BackColor = DefaultBackColor;
+            //uxLockUser.Text = @"N\A";
+            //uxLockStatusLabel.Text = @"Unlocked";
 
 			IsCheckedOutByMe = false;
 			IsCheckedOut = false;
 
-			uxUnlockButton.Visible = false;
-			uxLockButton.Visible = true;
-			uxLockButton.Enabled = true;
+            //uxUnlockButton.Visible = false;
+            //uxLockButton.Visible = true;
+            //uxLockButton.Enabled = true;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
 		public void IndicatedUnfavoredLink()
 		{
             //uxLinkToDocumentPanel.Visible = false;
-            uxLockStatus.Visible = true;
-            uxVersionStatus.Visible = true;
+            //uxLockStatus.Visible = true;
+            //uxVersionStatus.Visible = true;
             uxPublication.Enabled = false;
             //_parent.EnablePreview();
             //_parent.HideCreationButtons();
@@ -356,16 +356,16 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			//uxLockStatus.BackColor = Color.FromArgb(255, 244, 204, 204);
 
-			uxLockUser.Text = FormatUserName(checkedOut.User);
+            //uxLockUser.Text = FormatUserName(checkedOut.User);
 
 			IsCheckedOutByMe = false;
 
 			_parent.PreLinkEnable();
 
 			IndicatedUnfavoredLink();
-			uxUnlockButton.Visible = true;
-			uxUnlockButton.Enabled = false;
-			uxLockButton.Visible = false;
+            //uxUnlockButton.Visible = true;
+            //uxUnlockButton.Enabled = false;
+            //uxLockButton.Visible = false;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
@@ -379,13 +379,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				return;
 			}
 			_parent.CloseOnSuccessfulLock = false;
-			uxLockStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
+            //uxLockStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
 
-			uxLockUser.Text = FormatUserName(checkedOut.User);
+            //uxLockUser.Text = FormatUserName(checkedOut.User);
 			_parent.PostLinkEnable();
-			uxUnlockButton.Visible = true;
-			uxLockButton.Visible = false;
-			uxUnlockButton.Enabled = true;
+            //uxUnlockButton.Visible = true;
+            //uxLockButton.Visible = false;
+            //uxUnlockButton.Enabled = true;
 		}
 
 		public void InitializePublications()
@@ -569,13 +569,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			}
 			else
 			{
-				uxVersionStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
-				uxVersionText.Text = @"Document Content is Up To Date";
-				uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Bold);
+				//uxVersionStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
+				//uxVersionText.Text = @"Document Content is Up To Date";
+				//uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Bold);
 			}
 
-			uxLastUpdateDate.Text = articleStruct.WordDocLastUpdateDate;
-			uxLastUpdatedBy.Text = FormatUserName(articleStruct.WordDocLastUpdatedBy);
+            //uxLastUpdateDate.Text = articleStruct.WordDocLastUpdateDate;
+            //uxLastUpdatedBy.Text = FormatUserName(articleStruct.WordDocLastUpdatedBy);
 		}
 
 		public void UpdateFields(ArticleStruct articleDetails)
@@ -627,7 +627,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 																			}).ToList()); 
 			}
 
-			uxArticleNumberLabel.Text = articleDetails.ArticleNumber;
+            //uxArticleNumberLabel.Text = articleDetails.ArticleNumber;
 			if (articleDetails.WebPublicationDate > DateTime.MinValue)
 			{
 				SetPublicationTime(articleDetails.WebPublicationDate, false);
@@ -779,7 +779,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void UpdateArticleNumber(string articleNumber)
 		{
-			uxArticleNumberLabel.Text = articleNumber;
+            //uxArticleNumberLabel.Text = articleNumber;
 		}
 
 		/// <summary>
@@ -870,7 +870,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void PostLinkEnable()
 		{
 			uxPublication.Enabled = false;
-			uxLinkDocument.Enabled = false;
+            //uxLinkDocument.Enabled = false;
 			if (_parent.ArticleDetails!=null && !_parent.ArticleDetails.HasBeenNominated)
 			{
 				uxNominate.Enabled = true; 
@@ -887,11 +887,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			uxSelectedAuthors.DisableEdit = false;
 			uxAddAuthor.Enabled = true;
 
-			uxLinkToDocumentPanel.Visible = false;
-			uxLockStatus.Visible = true;
-			uxVersionStatus.Visible = true;
+            //uxLinkToDocumentPanel.Visible = false;
+            //uxLockStatus.Visible = true;
+			//uxVersionStatus.Visible = true;
 
-			uxUnlinkDocument.Visible = true;
+            //uxUnlinkDocument.Visible = true;
 		}
 
 		/// <summary>
@@ -901,7 +901,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void PreLinkEnable()
 		{
 			uxPublication.Enabled = true;
-			uxLinkDocument.Enabled = true;
+            //uxLinkDocument.Enabled = true;
 			uxNominate.Enabled = false;
 			uxTopStory.Enabled = false;
 
@@ -910,13 +910,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			DisableAuthorControlsIfNoAuthors();
 			uxSelectedAuthors.Enabled = true;
 			uxSelectedAuthors.DisableEdit = false;
-			
 
-			uxLinkToDocumentPanel.Visible = true;
-			uxLockStatus.Visible = false;
-			uxVersionStatus.Visible = false;
 
-			uxUnlinkDocument.Visible = false;
+            //uxLinkToDocumentPanel.Visible = true;
+            //uxLockStatus.Visible = false;
+			//uxVersionStatus.Visible = false;
+
+            //uxUnlinkDocument.Visible = false;
 		}
 
 		public void ResetFields()
@@ -987,7 +987,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			_parent.SetArticleNumber(articleNumber);
 			ArticleNumber = articleNumber;
-			uxArticleNumberLabel.Text = articleNumber;
+            //uxArticleNumberLabel.Text = articleNumber;
 		}
 
 		public bool CurrentPublicationIsDaily()
@@ -1038,12 +1038,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
              * */
 		}
 
+        /*
 		private void uxUnlockButton_Click(object sender, EventArgs e)
 		{
 			if (!SitecoreArticle.DoesArticleExist(uxArticleNumberLabel.Text)) return;
 			SitecoreArticle.CheckInArticle(uxArticleNumberLabel.Text);
 			SetCheckedOutStatus();
 		}
+         * */
 
 		private void uxAddAuthor_Click(object sender, EventArgs e)
 		{
@@ -1052,6 +1054,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			IndicateChanged();
 		}
 
+        /*
 		private void uxLinkDocument_Click(object sender, EventArgs e)
 		{
 			if (CheckOut(uxArticleNumberToLink.Text, true))
@@ -1059,6 +1062,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				_parent.ResetChangedStatus();
 			}
 		}
+         * */
 
 		private void uxUnlinkDocument_Click(object sender, EventArgs e)
 		{
@@ -1066,7 +1070,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			{
 				CheckIn(false);
 			}
-			uxArticleNumberLabel.Text = @"Document Not Linked";
+            //uxArticleNumberLabel.Text = @"Document Not Linked";
 			DocumentPropertyEditor.Clear(SitecoreAddin.ActiveDocument);
 			_parent.PreLinkEnable();
 			_parent.SetArticleNumber(null);
@@ -1116,7 +1120,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				// "ComputeStatistics" dirties the document. We don't want that.
 				bool currentSavedState = SitecoreAddin.ActiveDocument.Saved;
 
-				uxWordCount.Text = wordApp.ActiveDocument.ComputeStatistics(Microsoft.Office.Interop.Word.WdStatistic.wdStatisticWords).ToString();
+				//uxWordCount.Text = wordApp.ActiveDocument.ComputeStatistics(Microsoft.Office.Interop.Word.WdStatistic.wdStatisticWords).ToString();
 
 				SitecoreAddin.ActiveDocument.Saved = currentSavedState;
 

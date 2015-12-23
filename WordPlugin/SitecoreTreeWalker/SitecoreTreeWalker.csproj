@@ -181,7 +181,6 @@
     <Compile Include="SitecoreImageTransfer.cs" />
     <Compile Include="Sitecore\ControlContext.cs" />
     <Compile Include="Sitecore\SitecoreArticle.cs" />
-    <Compile Include="Sitecore\SitecoreGetterAsync.cs" />
     <Compile Include="Sitecore\SitecoreItemGetter.cs" />
     <Compile Include="Sitecore\SitecoreMenuItemContext.cs">
       <SubType>Component</SubType>
@@ -251,6 +250,12 @@
     </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\Interfaces\ArticleDetailsPageUserControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\FeaturedImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\FeaturedImage.Designer.cs">
+      <DependentUpon>FeaturedImage.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.cs">
       <SubType>UserControl</SubType>
@@ -386,7 +391,7 @@
       <DependentUpon>MultimediaControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.Designer.cs">
       <DependentUpon>IFrameControl.cs</DependentUpon>
@@ -486,6 +491,9 @@
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.resx">
       <DependentUpon>ArticleWorkflowInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\FeaturedImage.resx">
+      <DependentUpon>FeaturedImage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.resx">
       <DependentUpon>TaxonomyControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -568,7 +576,9 @@
     <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.resx">
       <DependentUpon>SupportingDocumentsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -722,6 +732,7 @@
     <Content Include="img\icons\selected.png" />
     <Content Include="img\icons\sidearrow.png" />
     <Content Include="img\icons\tree.png" />
+    <None Include="img\imformaVideoPlaceholder2.JPG" />
     <Content Include="img\live.png" />
     <Content Include="img\loading.gif" />
     <Content Include="img\splashlogo.png" />

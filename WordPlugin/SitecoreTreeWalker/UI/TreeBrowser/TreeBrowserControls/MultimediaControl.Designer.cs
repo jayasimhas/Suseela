@@ -179,7 +179,7 @@
 			this.label2.Size = new System.Drawing.Size(310, 24);
 			this.label2.TabIndex = 33;
 			// 
-			// GraphicsControl
+            // MultimediaControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.AutoScroll = true;
@@ -195,7 +195,7 @@
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.uxBrowseImages);
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-			this.Name = "GraphicsControl";
+			this.Name = "MultimediaControl";
 			this.Size = new System.Drawing.Size(311, 501);
 			this.Load += new System.EventHandler(this.GraphicsControl_Load);
 			this.groupBox1.ResumeLayout(false);

@@ -59,7 +59,7 @@ namespace SitecoreTreeWalker.Sitecore
             MediaItemStruct mediaItem = null;
             try
             {
-                mediaItem = SitecoreGetterAsync.GetMediaLibraryItem(path);
+                mediaItem = SitecoreGetter.GetMediaLibraryItem(path);
             }
 			catch(WebException)
 			{
@@ -78,7 +78,7 @@ namespace SitecoreTreeWalker.Sitecore
 			MediaItemStruct mediaItem = null;
 			try
 			{
-				mediaItem = SitecoreGetterAsync.GetMediaStatistics(path);
+				mediaItem = SitecoreGetter.GetMediaStatistics(path);
 			}
 			catch (WebException)
 			{

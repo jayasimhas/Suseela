@@ -38,6 +38,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
             this.articlesSidebarsControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.ArticlesSidebarsControl();
             this.SupportingDocumentsTabPage = new System.Windows.Forms.TabControl();
             this.ImagesTabPage = new System.Windows.Forms.TabPage();
+            this.multimediaControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.IFrameControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.supportingDocumentsControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.SupportingDocumentsControl();
             this.GraphicsTabPage.SuspendLayout();
@@ -55,7 +56,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
             this.GraphicsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.GraphicsTabPage.Size = new System.Drawing.Size(277, 681);
             this.GraphicsTabPage.TabIndex = 5;
-            this.GraphicsTabPage.Text = "Multimedia";
+            this.GraphicsTabPage.Text = "Images";
             this.GraphicsTabPage.UseVisualStyleBackColor = true;
             // 
             // graphicsControl1
@@ -142,13 +143,27 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
             // 
             // ImagesTabPage
             // 
+            this.ImagesTabPage.Controls.Add(this.multimediaControl1);
             this.ImagesTabPage.Location = new System.Drawing.Point(4, 44);
             this.ImagesTabPage.Name = "ImagesTabPage";
             this.ImagesTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.ImagesTabPage.Size = new System.Drawing.Size(277, 681);
             this.ImagesTabPage.TabIndex = 7;
-            this.ImagesTabPage.Text = "Images";
+            this.ImagesTabPage.Text = "Multimedia";
             this.ImagesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // multimediaControl1
+            // 
+            this.multimediaControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.multimediaControl1.AutoScroll = true;
+            this.multimediaControl1.BackColor = System.Drawing.Color.White;
+            this.multimediaControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.multimediaControl1.Location = new System.Drawing.Point(3, 3);
+            this.multimediaControl1.Name = "multimediaControl1";
+            this.multimediaControl1.Size = new System.Drawing.Size(352, 1257);
+            this.multimediaControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -204,7 +219,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
 		private System.Windows.Forms.TabPage tabPage1;
 		private TreeBrowserControls.SupportingDocumentsControl supportingDocumentsControl1;
         private System.Windows.Forms.TabPage ImagesTabPage;
-		
+        public TreeBrowserControls.IFrameControl multimediaControl1;
 
 	}
 }

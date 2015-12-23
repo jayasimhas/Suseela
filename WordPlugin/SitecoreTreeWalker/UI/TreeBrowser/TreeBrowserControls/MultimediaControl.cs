@@ -238,7 +238,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxInsertMultimedia_Click(object sender, System.EventArgs e)
 		{
-			IFrameControl.Open();
+			//IFrameControl.Open();
 		}
 
 		private void label3_Click(object sender, System.EventArgs e)

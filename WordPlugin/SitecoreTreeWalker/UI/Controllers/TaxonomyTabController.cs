@@ -118,7 +118,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 		public TaxonomyStruct[] GetSelected()
 		{
 
-			return SelectedList.Select(t => new SitecoreTree.TaxonomyStruct { ID = t.ID, Name = t.Name }).ToArray();
+			return SelectedList.Select(t => new SitecoreTree.TaxonomyStruct { ID = t.ID, Name = t.Name ,Section = t.Section }).ToArray();
 		}
 
 		private void AddEventHandlers()
@@ -505,7 +505,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 			Selected.Items.Clear();
 			foreach(TaxonomyStruct selected in SelectedList)
 			{
-				var item = new ListViewItem(selected.Name, 0);
+				var item = new ListViewItem("section/"+selected.Name, 0);
 				item.SubItems.Add(selected.ID.ToString());
 				Selected.Items.Add(item);
 			}
@@ -691,7 +691,8 @@ namespace SitecoreTreeWalker.UI.Controllers
 				new TaxonomyStruct
 					{
 						ID = t.ID,
-						Name = t.Name
+						Name = t.Name,
+                        Section = t.Section
 					}).ToList();
 			SetSelected(temp);
 		}

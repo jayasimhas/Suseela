@@ -39,7 +39,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
             this.CurrentPagePanel = new System.Windows.Forms.Panel();
             this.pageArticleInformationControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.ArticleInformationControl();                                   
             this.pageTaxonomyControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.TaxonomyControl();
-            this.pageSubjectsControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.SubjectsControl();
+            this.pageSubjectsControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.FeaturedImage();
             this.pageWorkflowControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.WorkflowControl();
             this.pageRelatedArticlesControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.RelatedArticlesControl();
             this.FlowLayoutPanel = new System.Windows.Forms.Panel();
@@ -253,7 +253,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		public RelatedArticlesControl pageRelatedArticlesControl;
 		//public NotesControl PageNotesControl;						
 		public TaxonomyControl pageTaxonomyControl;
-		public SubjectsControl pageSubjectsControl;
+		public FeaturedImage pageSubjectsControl;
 		public WorkflowControl pageWorkflowControl;
         private System.Windows.Forms.Panel FlowLayoutPanel;
 	}

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Net;
 using System.Threading;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using Microsoft.Office.Interop.Word;
@@ -9,11 +10,13 @@ using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
+using TextBox = System.Windows.Forms.TextBox;
+using UserControl = System.Windows.Forms.UserControl;
 
 
 namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 {
-	public partial class IFrameControl : Form
+    public partial class IFrameControl : UserControl
 	{
 		protected SitecoreItemGetter _siteCoreItemGetter;
 		protected static IFrameControl _iframeForm;
@@ -101,8 +104,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			{
 				mobileEmbed.Text = mobileEmbed.Text.Trim().Equals(_mobilePHText) ? String.Empty : mobileEmbed.Text;//set mobile text to empty if it is the placeholder text
 				InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, desktopEmbed.Text,
-				             mobileEmbed.Text);
-				_iframeForm.Close();
+				             mobileEmbed.Text);				
 			}
 			else
 			{
@@ -368,17 +370,13 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
+        /*
 		public static void Open()
 		{
 			_iframeForm = new IFrameControl();
 			_iframeForm.ShowDialog(Globals.SitecoreAddin.Application.ActiveDocument as IWin32Window);
 			
-		}
-
-		private void uxCancelIFrame_Click(object sender, System.EventArgs e)
-		{
-			_iframeForm.Close();
-		}
+		}*/
 
 		private void uxMobilehttpsPreview_Click(object sender, EventArgs e)
 		{
@@ -436,6 +434,26 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 
 		}
+
+        private void header_TextChanged(object sender, EventArgs e)
+        {
+            headerLabel.Text = this.uxIFrameHeader.Text;            
+        }
+
+        private void title_TextChanged(object sender, EventArgs e)
+        {
+            titleLabel.Text = this.uxIFrameTitle.Text;
+        }
+
+        private void caption_TextChanged(object sender, EventArgs e)
+        {
+            captionLabel.Text = this.uxIFrameCaption.Text;
+        }
+
+        private void source_TextChanged(object sender, EventArgs e)
+        {
+            sourceLabel.Text = this.uxIFrameSource.Text;
+        }
 	}
 }
 

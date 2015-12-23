@@ -219,10 +219,10 @@ namespace SitecoreTreeWalker.UI
 		private void LoginControl_Load(object sender, EventArgs e)
 		{
             uxVersionNumber.Text = GetRunningVersion().ToString();
-			//if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-			//{
-			//	uxVersionNumber.Text = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-			//}
+			if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+			{
+				uxVersionNumber.Text = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+			}
 			PopulateFields();
 		}
 
@@ -232,14 +232,14 @@ namespace SitecoreTreeWalker.UI
         /// <returns></returns>
         private Version GetRunningVersion()
         {
-            //try
-            //{
-            //    return System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
-            //}
-            //catch
-            //{
+            try
+            {
+                return System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+            }
+            catch
+            {
                 return Assembly.GetExecutingAssembly().GetName().Version;
-            //}
+            }
         }
 
 		private void uxUsername_KeyDown(object sender, KeyEventArgs e)

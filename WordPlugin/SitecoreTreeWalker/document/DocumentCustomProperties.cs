@@ -38,10 +38,10 @@ namespace SitecoreTreeWalker.document
         public void UpdatePluginVersionNumber()
         {
             string versionNumber = "Development Version";
-            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-            //{
-            //    versionNumber = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-            //}
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            {
+                versionNumber = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            }
             SetCustomDocumentProperty(Constants.PluginVersionNumber, versionNumber);
         }
 

@@ -1,23 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
-using SitecoreTreeWalker.Util;
+using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using SitecoreTreeWalker.Util.Document;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
-    public partial class GraphicsControl : UserControl
+    public partial class FeaturedImage : ArticleDetailsPageUserControl
     {
         protected SitecoreItemGetter _siteCoreItemGetter;
-        public GraphicsControl()
+        public FeaturedImage()
         {
             InitializeComponent();
+            if (!DesignMode)
+            {
+                SetSitecoreItemGetter(new SitecoreItemGetter());
+                ReloadItems();
+            }
+
         }
 
         public void SetSitecoreItemGetter(SitecoreItemGetter siteCoreItemGetter)
@@ -62,8 +73,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
                     }
                     catch (System.Web.Services.Protocols.SoapException)
                     {
-                        Globals.SitecoreAddin.Alert("Window has gotten out of sync with Sitecore! " +
-                                                    "Please refresh tab.");
+                        Globals.SitecoreAddin.Alert("Window has gotten out of sync with Sitecore! Please refresh tab.");
                     }
                 });
                 thread.Start();
@@ -72,30 +82,31 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
         private void uxBrowseImages_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            uxPreview.Visible = true;
-            uxPreview.Image = Properties.Resources.loading;
+            pictureBox1.Visible = true;
+            pictureBox1.Image = Properties.Resources.loading;
             TreeNode node = e.Node;
             var sitecorePath = node.Tag as SitecorePath;
 
             if (sitecorePath == null)
             {
-                uxPreview.Visible = false;
+                pictureBox1.Visible = false;
                 return;
             }
             try
             {
-                SitecoreItemGetter.SitecoreMediaItem mediaItem =
-                    _siteCoreItemGetter.DownloadSiteCoreMediaItem(sitecorePath.Path);
+                SitecoreItemGetter.SitecoreMediaItem mediaItem = _siteCoreItemGetter.DownloadSiteCoreMediaItem(sitecorePath.Path);
                 if ((mediaItem == null) ||
                     !(mediaItem.Extension.ToLower().Contains("gif") ||
                       mediaItem.Extension.ToLower().Contains("jpg") ||
                       mediaItem.Extension.ToLower().Contains("png")))
                 {
-                    uxPreview.Visible = false;
+                    pictureBox1.Visible = false;
                     return;
                 }
 
-                uxPreview.ImageLocation = mediaItem.FileName;
+                pictureBox1.ImageLocation = mediaItem.FileName;
+                filenameLbl.Text = mediaItem.FileName;
+                alttextLbl.Text = mediaItem.Title;
             }
             catch (WebException)
             {
@@ -103,77 +114,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             }
         }
 
-        /// <summary>
-        /// Initializes the contents of the "Browse Images" and "Supporting Documents" views.
-        /// </summary>
-        public void InitializeItems()
-        {
-            var values = SitecoreGetter.GetGraphicsRootNode();
-            AddRootNode(uxBrowseImages, values[1], values[0]);
-        }
-
-        /// <summary>
-        /// Removes all items in the TreeBrowser
-        /// </summary>
-        public void ClearItems()
-        {
-            uxBrowseImages.Nodes.Clear();
-        }
-
-        /// <summary>
-        /// Removes the current items in the TreeBrowser and re-initializes them.
-        /// </summary>
-        public void ReloadItems()
-        {
-            ClearItems();
-            InitializeItems();
-        }
-
-        private void GraphicsControl_Load(object sender, System.EventArgs e)
-        {
-            if (!DesignMode)
-            {
-                SetSitecoreItemGetter(new SitecoreItemGetter());
-                ReloadItems();
-            }
-        }
-
-        private void uxInsertIntoArticle_Click(object sender, System.EventArgs e)
-        {
-            var sitecorePath = uxBrowseImages.SelectedNode.Tag as SitecorePath;
-            if (sitecorePath != null)
-            {
-                try
-                {
-                    SitecoreItemGetter.SitecoreMediaItem mediaItem = _siteCoreItemGetter.DownloadSiteCoreMediaItem(sitecorePath.Path);
-                    if ((mediaItem == null) ||
-                        !(mediaItem.Extension.ToLower().Contains("gif") ||
-                          mediaItem.Extension.ToLower().Contains("jpg") ||
-                          mediaItem.Extension.ToLower().Contains("png")))
-                    {
-                        return;
-                    }
-                    var form = new GraphicsMetadataForm(mediaItem.FileName);
-                    form.uxInsertImage.Click += new System.EventHandler(uxInsertImage_Click);
-                    form.ShowDialog();
-                }
-                catch (WebException)
-                {
-                    Globals.SitecoreAddin.AlertConnectionFailure();
-                }
-            }
-        }
-
         void uxInsertImage_Click(object sender, System.EventArgs e)
         {
             var button = sender as Control;
             if (button == null) return;
-            var form = button.Parent as GraphicsMetadataForm;
-            if (form == null) return;
-            var path = uxBrowseImages.SelectedNode.Tag as SitecorePath;
-			if(path == null) return;
-            InsertImage(form.uxHeader.Text, form.uxTitle.Text, path, form.uxCaption.Text, form.uxSource.Text);
-            form.Close();
+            var path = uxFeaturedImageTreeView.SelectedNode.Tag as SitecorePath;
+            if (path == null) return;
         }
 
         static void InsertImage(string header, string title, SitecorePath path, string caption, string source)
@@ -236,37 +182,44 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             }
         }
 
-        private void uxViewFullSize_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Initializes the contents of the "Browse Images" and "Supporting Documents" views.
+        /// </summary>
+        public void InitializeItems()
         {
-            var path = uxBrowseImages.SelectedNode.Tag as SitecorePath;
-            if (path == null) return;
-            try
-            {
-                Process.Start(SitecoreGetter.MediaPreviewUrl(path.Path));
-            }
-            catch (WebException)
-            {
-                Globals.SitecoreAddin.AlertConnectionFailure();
-            }
+            var values = SitecoreGetter.GetGraphicsRootNode();
+            AddRootNode(uxFeaturedImageTreeView, values[1], values[0]);
         }
 
-        private void uxRefresh_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Removes all items in the TreeBrowser
+        /// </summary>
+        public void ClearItems()
         {
-            ReloadItems();
+            uxFeaturedImageTreeView.Nodes.Clear();
         }
 
-        private void label3_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Removes the current items in the TreeBrowser and re-initializes them.
+        /// </summary>
+        public void ReloadItems()
         {
-            //open help page from sitecore
-
-            string domain = ApplicationConfig.GetPropertyValue("DomainName");
-
-
-            Process.Start(@"https://sites.google.com/site/ebi3materials/editorial-workflow/documentation");
-
-
+            ClearItems();
+            InitializeItems();
         }
-
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

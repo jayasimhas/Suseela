@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Office.Core;
 using Microsoft.Office.Tools.Ribbon;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.document;
@@ -22,6 +23,7 @@ namespace SitecoreTreeWalker.UI
         SitecoreUser _user = SitecoreUser.GetUser();
         public ArticleStruct ArticleDetails = new ArticleStruct();
         private DocumentCustomProperties _documentCustomProperties;
+        private Microsoft.Office.Tools.CustomTaskPane myCustomTaskPane;
 
         private void ESRibbon_Load(object sender, RibbonUIEventArgs e)
         {
@@ -114,27 +116,32 @@ namespace SitecoreTreeWalker.UI
 
         private void ArticlesBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            CheckLoginAndPerformAction(TodoMethod);
+            ArticlesSidebarsControl myUserControl = new ArticlesSidebarsControl();
+            CheckLoginAndPerformAction(myUserControl, "Reference Articles");
         }
 
         private void IntelligenceProductsBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            CheckLoginAndPerformAction(TodoMethod);
+            DealsDrugsCompaniesControl myUserControl = new DealsDrugsCompaniesControl();
+            CheckLoginAndPerformAction(myUserControl, "Deals and Companies");
         }
 
         private void Multimedia_Click(object sender, RibbonControlEventArgs e)
         {
-            CheckLoginAndPerformAction(TodoMethod);
+            IFrameControl myUserControl = new IFrameControl();
+            CheckLoginAndPerformAction(myUserControl, "Multimedia");
         }
 
         private void ImagesBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            CheckLoginAndPerformAction(TodoMethod);
+            GraphicsControl myUserControl = new GraphicsControl();
+            CheckLoginAndPerformAction(myUserControl, "Images");
         }
 
         private void SupportingDocsBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            CheckLoginAndPerformAction(TodoMethod);
+            SupportingDocumentsControl myUserControl = new SupportingDocumentsControl();
+            CheckLoginAndPerformAction(myUserControl, "Supporting Documents");
         }
 
 
@@ -168,6 +175,54 @@ namespace SitecoreTreeWalker.UI
                     };
                 login.ShowDialog();
             }
+        }
+
+        /// <summary>
+        /// This is a method which takes in a Function which would be required to be called once the use logs in.
+        /// It checks if the user is logged in or not. If not, then it open a Login Dailog box. If logged in then, runs the function.
+        /// </summary>
+        /// <param name="taskControl">the control which needs to be opened</param>
+        /// <param name="title">Title of the Task Pane</param>
+        private void CheckLoginAndPerformAction(UserControl taskControl, string title)
+        {
+            if (_user.IsLoggedIn)
+            {
+                Globals.SitecoreAddin.Log("User is logged in, opening the Plugin...");
+                OpenTaskPane(taskControl, title);
+            }
+            else
+            {
+                Globals.SitecoreAddin.Log("User is not logged in, prompting for password...");
+                var login = new LoginWindow();
+                login.loginControl1.uxLoginButton.Click +=
+                    delegate
+                    {
+                        if (_user.IsLoggedIn)
+                        {
+                            Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
+                            login.Close();
+                            LoginLogoutButtonChange();
+                            OpenTaskPane(taskControl, title);
+                        }
+                    };
+                login.ShowDialog();
+            }
+        }
+
+        public void OpenTaskPane(UserControl taskControl, string title)
+        {
+            if (Globals.SitecoreAddin.CustomTaskPanes.Count >= 1)
+            {
+                var paneCount = Globals.SitecoreAddin.CustomTaskPanes.Count();
+                for (var i = 0; i < paneCount; i++)
+                {
+                    Globals.SitecoreAddin.CustomTaskPanes.RemoveAt(i);
+                }
+            }
+            myCustomTaskPane = Globals.SitecoreAddin.CustomTaskPanes.Add(taskControl, title);
+            myCustomTaskPane.DockPosition = MsoCTPDockPosition.msoCTPDockPositionRight;
+            myCustomTaskPane.Width = 350;
+            myCustomTaskPane.Visible = true;
         }
 
         /// <summary>
@@ -269,6 +324,7 @@ namespace SitecoreTreeWalker.UI
             var doc = app.ActiveDocument;
             Globals.SitecoreAddin.ShowTree(doc);
         }
+
 
         private void LoginButton_Click(object sender, RibbonControlEventArgs e)
         {

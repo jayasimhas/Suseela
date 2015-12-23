@@ -944,10 +944,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
         private void ArticleDetail_Load(object sender, EventArgs e)
         {
-            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-            //{
-            //    uxVersionNumber.Text = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-            //}
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            {
+                uxVersionNumber.Text = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            }
         }
         #endregion
 

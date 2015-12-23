@@ -8,7 +8,7 @@ using SitecoreTreeWalker.Util;
 
 namespace SitecoreTreeWalker.Sitecore
 {
-	public class SitecoreGetter
+	class SitecoreGetter
 	{
 		private static List<SitecoreTree.StaffStruct> _authors;
 		private static ArticleStruct _articleDetails = new ArticleStruct();
@@ -290,15 +290,4 @@ namespace SitecoreTreeWalker.Sitecore
 			return tree.IsContinuousPublishingPublication(publication, _sitecoreUser.Username, _sitecoreUser.Password);
 		}
 	}
-
-    public class SitecoreGetterAsync : SitecoreGetter
-    {
-        SitecoreGetter _getter;
-
-        public SitecoreGetterAsync()
-        {
-            _getter = new SitecoreGetter();
-        }
-
-    }
 }
