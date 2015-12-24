@@ -216,11 +216,14 @@ namespace SitecoreTreeWalker
         private void InitializePlugin()
         {
             Log("Starting add in...");
-            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+			
+            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
-                Log("Version: " + System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString());
+                Log("Version: " + System.Windows.Forms.Application.ProductVersion);
+
             }
-            _browser = new TreeBrowser(Application);
+			
+			_browser = new TreeBrowser(Application);
             _myCustomTaskPane = this.CustomTaskPanes.Add(_browser, "Sitecore References");
             _myCustomTaskPane.Visible = false;
             _myCustomTaskPane.Width = 335;

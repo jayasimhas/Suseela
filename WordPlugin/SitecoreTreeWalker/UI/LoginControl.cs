@@ -219,9 +219,9 @@ namespace SitecoreTreeWalker.UI
 		private void LoginControl_Load(object sender, EventArgs e)
 		{
             uxVersionNumber.Text = GetRunningVersion().ToString();
-			if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-			{
-				uxVersionNumber.Text = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+			//if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+			{				
+				uxVersionNumber.Text = Application.ProductVersion;
 			}
 			PopulateFields();
 		}
@@ -230,15 +230,15 @@ namespace SitecoreTreeWalker.UI
         /// This method gets the current running version of the Plugin
         /// </summary>
         /// <returns></returns>
-        private Version GetRunningVersion()
+        private string GetRunningVersion()
         {
             try
             {
-                return System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+	            return Application.ProductVersion;
             }
             catch
             {
-                return Assembly.GetExecutingAssembly().GetName().Version;
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
             }
         }
 
