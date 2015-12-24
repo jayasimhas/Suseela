@@ -12,7 +12,7 @@
 		<loadtasks assembly="${dir.tools}/nant/VelirNantTasks/VelirNantTasks.NVelocity.dll"/>			
 		<nvelocity>
 			<fileset>
-				<exclude name="${dir.web}/node_modules/**/*" />	
+				<!--<exclude name="${dir.web}/node_modules/**/*" />	
 				<exclude name="${dir.web}/**/node_modules/**/*" />	
 				<exclude name="${dir.web}/vendor/**/*" />
 				<exclude name="${dir.web}/bower_components/**/*" />
@@ -23,8 +23,8 @@
 				<exclude name="${dir.sitecore}/**/Release/**/*" />
 				<exclude name="${dir.src}/**/Release/**/*" />
 				<exclude name="${dir.web}/sitecore/**/*" />
-				<exclude name="${dir.web}/**/node_modules/**/*" />
-				<include name="${dir.web}/**/*.template" />
+				<exclude name="${dir.web}/**/node_modules/**/*" />-->
+				<include name="${dir.web}/Website/App_Config/**/*.template" />
 				<include name="${dir.sitecore}/**/*.template" />				
 				<include name="${dir.src}/**/*.template" />				
 				<include name="${dir.test}/**/*.template" />							
@@ -36,12 +36,12 @@
 		</nvelocity>
 		<nvelocity>
 			<fileset>
-				<exclude name="${dir.web}/node_modules/**/*" />	
+				<!--<exclude name="${dir.web}/node_modules/**/*" />	
 				<exclude name="${dir.web}/**/node_modules/**/*" />
 				<exclude name="${dir.web}/vendor/**/*" />
-				<exclude name="${dir.web}/sitecore/**/*" />					
+				<exclude name="${dir.web}/sitecore/**/*" />-->					
 				<include name="${dir.src}/**/*.${env}" />
-				<include name="${dir.web}/**/*.${env}" />				
+				<include name="${dir.web}/Website/App_Config/**/*.${env}" />				
 			</fileset>
 		</nvelocity>		
 	</target>		
@@ -66,8 +66,8 @@
 	<target name="clean" description="Cleans all of the target build directories">
 		<delete>
 			<fileset>                                            
-				<exclude name="${dir.web}/node_modules/**/*" />	
-				<exclude name="${dir.web}/**/node_modules/**/*" />
+				<!--<exclude name="${dir.web}/node_modules/**/*" />	
+				<exclude name="${dir.web}/**/node_modules/**/*" />-->
 				<include name="${dir.bin}\**\*" />
                 <include name="${dir.web}/Website/bin/**/*" />
                 <include name="${dir.sitecore}/**/bin/**/*" />
