@@ -120,8 +120,287 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy
 	{
+								/// <summary>
+					/// The Sort Order field.
+					/// <para></para>
+					/// <para>Field Type: Number</para>		
+					/// <para>Field ID: 09caa578-881b-4252-b94f-59d68c19d7c7</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
+					float Sort_Order  {get; set;}
+								/// <summary>
+					/// The Actual Publish Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: 7c4fc796-1311-4daa-81ac-85eaa2c1c108</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime Actual_Publish_Date  {get; set;}
+								/// <summary>
+					/// The Article Number field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Number  {get; set;}
+								/// <summary>
+					/// The Content Type field.
+					/// <para></para>
+					/// <para>Field Type: Droplist</para>		
+					/// <para>Field ID: 2c985172-2b37-4cfe-aede-2a42ec833941</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Content_Type  {get; set;}
+								/// <summary>
+					/// The Created Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: bdf7c8e1-869e-49ff-b9f5-854b3081a45d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Created_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime Created_Date  {get; set;}
+								/// <summary>
+					/// The Editorial Notes field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 149a0036-822d-40ba-af0d-8defe9be614c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Editorial_NotesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Editorial_Notes  {get; set;}
+								/// <summary>
+					/// The Embargoed field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 3a074327-feb9-47d7-a985-4f0f7c4a66ae</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.EmbargoedFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Embargoed  {get; set;}
+								/// <summary>
+					/// The Free Article field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: b49f314e-d4d4-4e82-81e3-79ae30bb1e46</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Free_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Free_Article  {get; set;}
+								/// <summary>
+					/// The Is Sidebar Article field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 457eac4f-0113-491e-b931-6fe718b69f91</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Is_Sidebar_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Is_Sidebar_Article  {get; set;}
+								/// <summary>
+					/// The Label field.
+					/// <para></para>
+					/// <para>Field Type: Droplist</para>		
+					/// <para>Field ID: 9db174e4-039b-41da-b9d0-4a3e05144255</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.LabelFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Label  {get; set;}
+								/// <summary>
+					/// The Media Type field.
+					/// <para></para>
+					/// <para>Field Type: Droplist</para>		
+					/// <para>Field ID: d1046d68-5d77-40e8-955a-6726049c7e6d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Media_Type  {get; set;}
+								/// <summary>
+					/// The Modified Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: c926a72a-39da-446d-b78c-2a650f820a73</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Modified_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime Modified_Date  {get; set;}
+								/// <summary>
+					/// The Planned Publish Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: 8d6d4b6a-0aca-406a-abae-c6c8a02a7c0d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Planned_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime Planned_Publish_Date  {get; set;}
+								/// <summary>
+					/// The Word Document field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: df9dba82-206f-4442-826a-b766581336ae</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Word_DocumentFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Word_Document  {get; set;}
+								/// <summary>
+					/// The Article Category field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ae1bd751-d4e7-49cb-96c4-62e995a06b51</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Category  {get; set;}
+								/// <summary>
+					/// The Child Articles field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 45ed4864-a637-4eef-86b7-f5d62778eb70</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Child_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Child_Articles  {get; set;}
+								/// <summary>
+					/// The Escenic ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 5795ff15-0942-41ff-8a77-3b73185f5e1b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Escenic_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Escenic_ID  {get; set;}
+								/// <summary>
+					/// The Legacy Publication field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 0f6c8f42-01dc-4e05-b63e-aa25d8aa0e09</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
+								/// <summary>
+					/// The Featured Image 16 9 field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 7526a634-c0a2-4ffe-88f8-227c9274b610</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Featured_Image_16_9FieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Featured_Image_16_9  {get; set;}
+								/// <summary>
+					/// The Featured Image Caption field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b9fc8daa-7b05-4595-92f4-a9d10c045ca6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Featured_Image_CaptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Featured_Image_Caption  {get; set;}
+								/// <summary>
+					/// The Featured Image Source field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 9e1cc2eb-bab6-45ea-840a-a40a85a748ea</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Featured_Image_SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Featured_Image_Source  {get; set;}
+								/// <summary>
+					/// The Summary field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Summary  {get; set;}
+								/// <summary>
+					/// The Authors field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 5ad65e47-7554-4ce5-87b0-7fb65051c05a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Authors  {get; set;}
+								/// <summary>
+					/// The Section Review field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 28bb4813-f905-4b70-9a2b-109422cb2769</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Section_ReviewFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Section_Review  {get; set;}
+								/// <summary>
+					/// The Start Page field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Start_Page  {get; set;}
+								/// <summary>
+					/// The Word Count field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 31b4e77d-2b16-4901-96e4-6128cbb64d01</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Word_CountFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Word_Count  {get; set;}
+								/// <summary>
+					/// The Referenced Articles field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+								/// <summary>
+					/// The Referenced Companies field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 53288d3d-66d7-4ace-b3e4-d7d02b1f3672</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Referenced_CompaniesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Referenced_Companies  {get; set;}
+								/// <summary>
+					/// The Referenced Deals field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 23659093-8699-4f37-bcdd-5f827a300660</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Referenced_DealsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Referenced_Deals  {get; set;}
+								/// <summary>
+					/// The Related Articles field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Related_Articles  {get; set;}
+								/// <summary>
+					/// The Supporting Documents field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 14e38723-efb4-40b3-a47e-1f5d6e6a56b4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Supporting_DocumentsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Supporting_Documents  {get; set;}
 				}
 
 	
@@ -132,8 +411,287 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy__Raw
 		{
+										/// <summary>
+						/// The Sort Order field.
+						/// <para></para>
+						/// <para>Field Type: Number</para>		
+						/// <para>Field ID: 09caa578-881b-4252-b94f-59d68c19d7c7</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
+						float Sort_Order  {get; set;}
+										/// <summary>
+						/// The Actual Publish Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: 7c4fc796-1311-4daa-81ac-85eaa2c1c108</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime Actual_Publish_Date  {get; set;}
+										/// <summary>
+						/// The Article Number field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Number  {get; set;}
+										/// <summary>
+						/// The Content Type field.
+						/// <para></para>
+						/// <para>Field Type: Droplist</para>		
+						/// <para>Field ID: 2c985172-2b37-4cfe-aede-2a42ec833941</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Content_Type  {get; set;}
+										/// <summary>
+						/// The Created Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: bdf7c8e1-869e-49ff-b9f5-854b3081a45d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Created_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime Created_Date  {get; set;}
+										/// <summary>
+						/// The Editorial Notes field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 149a0036-822d-40ba-af0d-8defe9be614c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Editorial_NotesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Editorial_Notes  {get; set;}
+										/// <summary>
+						/// The Embargoed field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 3a074327-feb9-47d7-a985-4f0f7c4a66ae</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.EmbargoedFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Embargoed  {get; set;}
+										/// <summary>
+						/// The Free Article field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: b49f314e-d4d4-4e82-81e3-79ae30bb1e46</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Free_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Free_Article  {get; set;}
+										/// <summary>
+						/// The Is Sidebar Article field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 457eac4f-0113-491e-b931-6fe718b69f91</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Is_Sidebar_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Is_Sidebar_Article  {get; set;}
+										/// <summary>
+						/// The Label field.
+						/// <para></para>
+						/// <para>Field Type: Droplist</para>		
+						/// <para>Field ID: 9db174e4-039b-41da-b9d0-4a3e05144255</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.LabelFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Label  {get; set;}
+										/// <summary>
+						/// The Media Type field.
+						/// <para></para>
+						/// <para>Field Type: Droplist</para>		
+						/// <para>Field ID: d1046d68-5d77-40e8-955a-6726049c7e6d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Media_Type  {get; set;}
+										/// <summary>
+						/// The Modified Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: c926a72a-39da-446d-b78c-2a650f820a73</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Modified_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime Modified_Date  {get; set;}
+										/// <summary>
+						/// The Planned Publish Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: 8d6d4b6a-0aca-406a-abae-c6c8a02a7c0d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Planned_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime Planned_Publish_Date  {get; set;}
+										/// <summary>
+						/// The Word Document field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: df9dba82-206f-4442-826a-b766581336ae</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Word_DocumentFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Word_Document  {get; set;}
+										/// <summary>
+						/// The Article Category field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ae1bd751-d4e7-49cb-96c4-62e995a06b51</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Category  {get; set;}
+										/// <summary>
+						/// The Child Articles field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 45ed4864-a637-4eef-86b7-f5d62778eb70</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Child_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Child_Articles  {get; set;}
+										/// <summary>
+						/// The Escenic ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 5795ff15-0942-41ff-8a77-3b73185f5e1b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Escenic_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Escenic_ID  {get; set;}
+										/// <summary>
+						/// The Legacy Publication field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 0f6c8f42-01dc-4e05-b63e-aa25d8aa0e09</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
+										/// <summary>
+						/// The Featured Image 16 9 field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: 7526a634-c0a2-4ffe-88f8-227c9274b610</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Featured_Image_16_9FieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Featured_Image_16_9  {get; set;}
+										/// <summary>
+						/// The Featured Image Caption field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b9fc8daa-7b05-4595-92f4-a9d10c045ca6</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Featured_Image_CaptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Featured_Image_Caption  {get; set;}
+										/// <summary>
+						/// The Featured Image Source field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 9e1cc2eb-bab6-45ea-840a-a40a85a748ea</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Featured_Image_SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Featured_Image_Source  {get; set;}
+										/// <summary>
+						/// The Summary field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Summary  {get; set;}
+										/// <summary>
+						/// The Authors field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 5ad65e47-7554-4ce5-87b0-7fb65051c05a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Authors  {get; set;}
+										/// <summary>
+						/// The Section Review field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 28bb4813-f905-4b70-9a2b-109422cb2769</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Section_ReviewFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Section_Review  {get; set;}
+										/// <summary>
+						/// The Start Page field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Start_Page  {get; set;}
+										/// <summary>
+						/// The Word Count field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 31b4e77d-2b16-4901-96e4-6128cbb64d01</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Word_CountFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Word_Count  {get; set;}
+										/// <summary>
+						/// The Referenced Articles field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+										/// <summary>
+						/// The Referenced Companies field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 53288d3d-66d7-4ace-b3e4-d7d02b1f3672</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Referenced_CompaniesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Referenced_Companies  {get; set;}
+										/// <summary>
+						/// The Referenced Deals field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 23659093-8699-4f37-bcdd-5f827a300660</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Referenced_DealsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Referenced_Deals  {get; set;}
+										/// <summary>
+						/// The Related Articles field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Related_Articles  {get; set;}
+										/// <summary>
+						/// The Supporting Documents field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 14e38723-efb4-40b3-a47e-1f5d6e6a56b4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Supporting_DocumentsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Supporting_Documents  {get; set;}
 						}
 	
 	public static partial class IArticleConstants{
@@ -142,6 +700,165 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Article";
 
+					
+			public static readonly ID Sort_OrderFieldId = new ID("09caa578-881b-4252-b94f-59d68c19d7c7");
+			public const string Sort_OrderFieldName = "Sort Order";
+
+						
+					
+			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
+			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
+
+						
+					
+			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
+			public const string Article_NumberFieldName = "Article Number";
+
+						
+					
+			public static readonly ID Content_TypeFieldId = new ID("2c985172-2b37-4cfe-aede-2a42ec833941");
+			public const string Content_TypeFieldName = "Content Type";
+
+						
+					
+			public static readonly ID Created_DateFieldId = new ID("bdf7c8e1-869e-49ff-b9f5-854b3081a45d");
+			public const string Created_DateFieldName = "Created Date";
+
+						
+					
+			public static readonly ID Editorial_NotesFieldId = new ID("149a0036-822d-40ba-af0d-8defe9be614c");
+			public const string Editorial_NotesFieldName = "Editorial Notes";
+
+						
+					
+			public static readonly ID EmbargoedFieldId = new ID("3a074327-feb9-47d7-a985-4f0f7c4a66ae");
+			public const string EmbargoedFieldName = "Embargoed";
+
+						
+					
+			public static readonly ID Free_ArticleFieldId = new ID("b49f314e-d4d4-4e82-81e3-79ae30bb1e46");
+			public const string Free_ArticleFieldName = "Free Article";
+
+						
+					
+			public static readonly ID Is_Sidebar_ArticleFieldId = new ID("457eac4f-0113-491e-b931-6fe718b69f91");
+			public const string Is_Sidebar_ArticleFieldName = "Is Sidebar Article";
+
+						
+					
+			public static readonly ID LabelFieldId = new ID("9db174e4-039b-41da-b9d0-4a3e05144255");
+			public const string LabelFieldName = "Label";
+
+						
+					
+			public static readonly ID Media_TypeFieldId = new ID("d1046d68-5d77-40e8-955a-6726049c7e6d");
+			public const string Media_TypeFieldName = "Media Type";
+
+						
+					
+			public static readonly ID Modified_DateFieldId = new ID("c926a72a-39da-446d-b78c-2a650f820a73");
+			public const string Modified_DateFieldName = "Modified Date";
+
+						
+					
+			public static readonly ID Planned_Publish_DateFieldId = new ID("8d6d4b6a-0aca-406a-abae-c6c8a02a7c0d");
+			public const string Planned_Publish_DateFieldName = "Planned Publish Date";
+
+						
+					
+			public static readonly ID Word_DocumentFieldId = new ID("df9dba82-206f-4442-826a-b766581336ae");
+			public const string Word_DocumentFieldName = "Word Document";
+
+						
+					
+			public static readonly ID Article_CategoryFieldId = new ID("ae1bd751-d4e7-49cb-96c4-62e995a06b51");
+			public const string Article_CategoryFieldName = "Article Category";
+
+						
+					
+			public static readonly ID Child_ArticlesFieldId = new ID("45ed4864-a637-4eef-86b7-f5d62778eb70");
+			public const string Child_ArticlesFieldName = "Child Articles";
+
+						
+					
+			public static readonly ID Escenic_IDFieldId = new ID("5795ff15-0942-41ff-8a77-3b73185f5e1b");
+			public const string Escenic_IDFieldName = "Escenic ID";
+
+						
+					
+			public static readonly ID Legacy_PublicationsFieldId = new ID("0f6c8f42-01dc-4e05-b63e-aa25d8aa0e09");
+			public const string Legacy_PublicationsFieldName = "Legacy Publication";
+
+						
+					
+			public static readonly ID Featured_Image_16_9FieldId = new ID("7526a634-c0a2-4ffe-88f8-227c9274b610");
+			public const string Featured_Image_16_9FieldName = "Featured Image 16 9";
+
+						
+					
+			public static readonly ID Featured_Image_CaptionFieldId = new ID("b9fc8daa-7b05-4595-92f4-a9d10c045ca6");
+			public const string Featured_Image_CaptionFieldName = "Featured Image Caption";
+
+						
+					
+			public static readonly ID Featured_Image_SourceFieldId = new ID("9e1cc2eb-bab6-45ea-840a-a40a85a748ea");
+			public const string Featured_Image_SourceFieldName = "Featured Image Source";
+
+						
+					
+			public static readonly ID SummaryFieldId = new ID("5ba0578f-65b7-4c22-8233-1603d698d8a4");
+			public const string SummaryFieldName = "Summary";
+
+							public static readonly ID Summary__RawFieldId = new ID("5ba0578f-65b7-4c22-8233-1603d698d8a4");
+				public const string Summary__RawFieldName = "Summary";
+						
+					
+			public static readonly ID AuthorsFieldId = new ID("5ad65e47-7554-4ce5-87b0-7fb65051c05a");
+			public const string AuthorsFieldName = "Authors";
+
+						
+					
+			public static readonly ID Section_ReviewFieldId = new ID("28bb4813-f905-4b70-9a2b-109422cb2769");
+			public const string Section_ReviewFieldName = "Section Review";
+
+						
+					
+			public static readonly ID Start_PageFieldId = new ID("9c5c6c13-9448-43eb-b3dc-df9cc122b4ee");
+			public const string Start_PageFieldName = "Start Page";
+
+							public static readonly ID Start_Page__RawFieldId = new ID("9c5c6c13-9448-43eb-b3dc-df9cc122b4ee");
+				public const string Start_Page__RawFieldName = "Start Page";
+						
+					
+			public static readonly ID Word_CountFieldId = new ID("31b4e77d-2b16-4901-96e4-6128cbb64d01");
+			public const string Word_CountFieldName = "Word Count";
+
+						
+					
+			public static readonly ID Referenced_ArticlesFieldId = new ID("d4a6b8d1-46b4-4a19-8778-e5fd2844606d");
+			public const string Referenced_ArticlesFieldName = "Referenced Articles";
+
+						
+					
+			public static readonly ID Referenced_CompaniesFieldId = new ID("53288d3d-66d7-4ace-b3e4-d7d02b1f3672");
+			public const string Referenced_CompaniesFieldName = "Referenced Companies";
+
+						
+					
+			public static readonly ID Referenced_DealsFieldId = new ID("23659093-8699-4f37-bcdd-5f827a300660");
+			public const string Referenced_DealsFieldName = "Referenced Deals";
+
+						
+					
+			public static readonly ID Related_ArticlesFieldId = new ID("dc4c3a27-a361-4fa3-a534-5ccacc374377");
+			public const string Related_ArticlesFieldName = "Related Articles";
+
+						
+					
+			public static readonly ID Supporting_DocumentsFieldId = new ID("14e38723-efb4-40b3-a47e-1f5d6e6a56b4");
+			public const string Supporting_DocumentsFieldName = "Supporting Documents";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -182,6 +899,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
 			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
+			public const string TaxonomyFieldName = "Taxonomy";
 
 						
 			
@@ -240,6 +962,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	[SitecoreType(TemplateId=ITaxonomy_ItemConstants.TemplateIdString)]
 	public partial interface ITaxonomy_Item : IGlassBase 
 	{
+								/// <summary>
+					/// The Item Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ac58f381-3d7f-4d90-966d-41813dc66e87</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Item_Name  {get; set;}
 				}
 
 	
@@ -252,6 +983,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		[SitecoreType]
 		public partial interface ITaxonomy_Item__Raw : IGlassBase 
 		{
+										/// <summary>
+						/// The Item Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ac58f381-3d7f-4d90-966d-41813dc66e87</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Item_Name  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
@@ -260,6 +1000,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Taxonomy Item";
 
+					
+			public static readonly ID Item_NameFieldId = new ID("ac58f381-3d7f-4d90-966d-41813dc66e87");
+			public const string Item_NameFieldName = "Item Name";
+
+						
 			
 
 	}
@@ -601,6 +1346,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public const string TemplateIdString = "997a3064-65f5-45cd-b32f-9ec61e90a610";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Config";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Common
+{
+
+
+ 	/// <summary>
+	/// IFolder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Common/Folder</para>	
+	/// <para>ID: a87a00b1-e6db-45ab-8b54-636fec3b5523</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IFolderConstants.TemplateIdString)]
+	public partial interface IFolder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IFolder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Common/Folder</para>	
+		/// <para>ID: a87a00b1-e6db-45ab-8b54-636fec3b5523</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IFolder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IFolderConstants{
+
+			public const string TemplateIdString = "a87a00b1-e6db-45ab-8b54-636fec3b5523";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Folder";
 
 			
 
@@ -1053,6 +1836,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Layout.Section
 					
 			public static readonly ID VaryByUserFieldId = new ID("0e54a8dc-72ad-4372-a7c7-bb4773fad44d");
 			public const string VaryByUserFieldName = "VaryByUser";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// I_BaseTaxonomy Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+	/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=I_BaseTaxonomyConstants.TemplateIdString)]
+	public partial interface I_BaseTaxonomy : IGlassBase 
+	{
+								/// <summary>
+					/// The Taxonomy field.
+					/// <para></para>
+					/// <para>Field Type: tree list</para>		
+					/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					object /* UNKNOWN */ Taxonomy  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// I_BaseTaxonomy Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+		/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface I_BaseTaxonomy__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Taxonomy field.
+						/// <para></para>
+						/// <para>Field Type: tree list</para>		
+						/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						object /* UNKNOWN */ Taxonomy  {get; set;}
+						}
+	
+	public static partial class I_BaseTaxonomyConstants{
+
+			public const string TemplateIdString = "eed18b44-4005-4f15-9b18-d7c2d2cac0ec";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "_BaseTaxonomy";
+
+					
+			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
+			public const string TaxonomyFieldName = "Taxonomy";
 
 						
 			

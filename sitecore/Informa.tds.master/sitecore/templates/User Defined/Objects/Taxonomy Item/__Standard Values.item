@@ -1,40 +1,40 @@
 ----item----
 version: 1
-id: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+id: {09B81991-B075-44C0-9DAC-8CED9B1174BD}
 database: master
-path: /sitecore/templates/User Defined/Objects/Taxonomy Item
-parent: {4A820FDC-815D-46D8-9BB0-8F47475DBF97}
-name: Taxonomy Item
+path: /sitecore/templates/User Defined/Objects/Taxonomy Item/__Standard Values
+parent: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
-templatekey: Template
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
 
-----field----
-field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
-name: __Base template
-key: __base template
-content-length: 38
-
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}
-----field----
-field: {F7D48A55-2158-4F02-9356-756654404F73}
-name: __Standard values
-key: __standard values
-content-length: 38
-
-{09B81991-B075-44C0-9DAC-8CED9B1174BD}
 ----version----
 language: en
 version: 1
-revision: 7b1d8851-29a9-426f-95b0-393a49ad75d4
+revision: 2de54c4a-31d5-4955-a79f-55a1603bf590
 
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 5
+
+$name
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20151218T011815Z
+20151224T192208Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7b1d8851-29a9-426f-95b0-393a49ad75d4
+2de54c4a-31d5-4955-a79f-55a1603bf590
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151224T192208Z
+20151224T192214Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
