@@ -2,12 +2,12 @@
 version: 1
 id: {FE0B4566-CDDD-49A5-BF3D-40E154E83377}
 database: master
-path: /sitecore/content/Home/New Authored Content
+path: /sitecore/content/Home/Test Article
 parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
-name: New Authored Content
+name: Test Article
 master: {00000000-0000-0000-0000-000000000000}
-template: {BC9061E8-27C6-4DD4-B342-50547E4A25CC}
-templatekey: Authored Content
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
 
 ----field----
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
@@ -19,17 +19,17 @@ content-length: 272
 ----version----
 language: en
 version: 1
-revision: 346ec001-d95e-4808-91c8-3303829e215a
+revision: d6bb21ca-87af-4e34-a5c9-3a978b80c617
 
 ----field----
-field: {B820F81E-734A-4EF5-B35E-210B406AEE13}
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
 key: title
 content-length: 10
 
 Test Title
 ----field----
-field: {423BA8BE-C356-44DE-A608-361F09818330}
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
 name: Body
 key: body
 content-length: 12
@@ -62,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-346ec001-d95e-4808-91c8-3303829e215a
+d6bb21ca-87af-4e34-a5c9-3a978b80c617
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151207T081839Z
+20151224T181749Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
