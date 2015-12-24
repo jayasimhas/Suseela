@@ -31,7 +31,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.uxFeaturedImageTreeView = new System.Windows.Forms.TreeView();
-            this.label7 = new System.Windows.Forms.Label();
             this.sourceTxtBox = new System.Windows.Forms.TextBox();
             this.captionTxtBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,33 +39,30 @@
             this.alttextLblHeader = new System.Windows.Forms.Label();
             this.filenameLbl = new System.Windows.Forms.Label();
             this.filenameLblHeader = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 160);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(227, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.uxFeaturedImageTreeView);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.sourceTxtBox);
             this.groupBox1.Controls.Add(this.captionTxtBox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.alttextLbl);
-            this.groupBox1.Controls.Add(this.alttextLblHeader);
-            this.groupBox1.Controls.Add(this.filenameLbl);
-            this.groupBox1.Controls.Add(this.filenameLblHeader);
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(403, 347);
@@ -83,16 +79,6 @@
             this.uxFeaturedImageTreeView.TabIndex = 10;
             this.uxFeaturedImageTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.NodeExpanded);
             this.uxFeaturedImageTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.uxBrowseImages_AfterSelect);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Preview :";
             // 
             // sourceTxtBox
             // 
@@ -131,7 +117,7 @@
             // alttextLbl
             // 
             this.alttextLbl.AutoSize = true;
-            this.alttextLbl.Location = new System.Drawing.Point(250, 247);
+            this.alttextLbl.Location = new System.Drawing.Point(233, 87);
             this.alttextLbl.Name = "alttextLbl";
             this.alttextLbl.Size = new System.Drawing.Size(49, 13);
             this.alttextLbl.TabIndex = 4;
@@ -141,16 +127,16 @@
             // 
             this.alttextLblHeader.AutoSize = true;
             this.alttextLblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alttextLblHeader.Location = new System.Drawing.Point(250, 221);
+            this.alttextLblHeader.Location = new System.Drawing.Point(233, 60);
             this.alttextLblHeader.Name = "alttextLblHeader";
-            this.alttextLblHeader.Size = new System.Drawing.Size(59, 13);
+            this.alttextLblHeader.Size = new System.Drawing.Size(51, 13);
             this.alttextLblHeader.TabIndex = 3;
-            this.alttextLblHeader.Text = "Alt Text :";
+            this.alttextLblHeader.Text = "Alt Text";
             // 
             // filenameLbl
             // 
             this.filenameLbl.AutoSize = true;
-            this.filenameLbl.Location = new System.Drawing.Point(250, 194);
+            this.filenameLbl.Location = new System.Drawing.Point(233, 38);
             this.filenameLbl.Name = "filenameLbl";
             this.filenameLbl.Size = new System.Drawing.Size(60, 13);
             this.filenameLbl.TabIndex = 2;
@@ -160,11 +146,25 @@
             // 
             this.filenameLblHeader.AutoSize = true;
             this.filenameLblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filenameLblHeader.Location = new System.Drawing.Point(250, 171);
+            this.filenameLblHeader.Location = new System.Drawing.Point(233, 16);
             this.filenameLblHeader.Name = "filenameLblHeader";
-            this.filenameLblHeader.Size = new System.Drawing.Size(71, 13);
+            this.filenameLblHeader.Size = new System.Drawing.Size(63, 13);
             this.filenameLblHeader.TabIndex = 1;
-            this.filenameLblHeader.Text = "File Name :";
+            this.filenameLblHeader.Text = "File Name";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.filenameLblHeader);
+            this.groupBox2.Controls.Add(this.filenameLbl);
+            this.groupBox2.Controls.Add(this.alttextLblHeader);
+            this.groupBox2.Controls.Add(this.alttextLbl);
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Location = new System.Drawing.Point(17, 137);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(372, 147);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Preview";
             // 
             // FeaturedImage
             // 
@@ -177,6 +177,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -193,7 +195,7 @@
         private System.Windows.Forms.Label alttextLblHeader;
         private System.Windows.Forms.Label filenameLbl;
         private System.Windows.Forms.Label filenameLblHeader;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TreeView uxFeaturedImageTreeView;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
