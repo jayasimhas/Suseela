@@ -60,8 +60,8 @@
     }
 
     &--search {
-		height: 15px;
-		width: 15px;
+		height: 20px;
+		width: 20px;
 		margin-left: 8px;
 	}
 
@@ -100,13 +100,6 @@
 .header__sign-in-out, {
 	float: left;
 	margin: 0 40px 0 0;
-
-	// Allows icons and links to display on "top" of hover boxes
-	svg,
-	a {
-		position: relative;
-		z-index: 10;
-	}
 }
 .header__sign-in-out {
 	margin-right: 0;
@@ -121,50 +114,6 @@
 		width: 1px;
 		background-color: #d1d3d4;
 	}
-}
-
-.header__hover {
-	display: none;
-	background-color: #f1f2f2;
-	position: absolute;
-	margin-top: 47px;
-	padding: 20px;
-	border: 1px solid #d1d3d4;
-	border-right: 0px;
-	width: 304px;
-	right: 0;
-
-	&:before {
-		display: block;
-		content: "";
-		position: absolute;
-		top: -80px;
-		background-color: #f1f2f2;
-		padding: 20px;
-		border: 1px solid #d1d3d4;
-		border-bottom: 0;
-		height: 80px;
-		width: 111px;
-		z-index: 9;
-	}
-
-	&--register:before {
-		right: 111px;
-	}
-
-	&--sign-in:before {
-		right: 0px;
-		width: 112px;
-	}
-
-	&-input {
-		width: 100%;
-	}
-}
-
-.header__my-account:hover .header__hover,
-.header__sign-in-out:hover .header__hover {
-	display: block;
 }
 
 // Don't show the friendly welcome at smartphone widths
@@ -185,6 +134,7 @@
 
 	@include breakpoint('small') {
 		margin-top: 24px;
+		margin-right: 12px;
 	}
 }
 
@@ -202,6 +152,21 @@
 			border: 0;
 			font-size: 18px;
 			line-height: 48px;
+		}
+	}
+
+	@include breakpoint('medium') {
+		display: none;
+
+		&.is-active {
+			display: block;
+			position: absolute;
+			left: 70px;
+			top: -24px;
+			border: 0;
+			font-size: 18px;
+			line-height: 48px;
+			width: calc(100% - 120px);
 		}
 	}
 }

@@ -40,44 +40,50 @@
 
             <!-- IF SIGNED OUT !-->
 
-            <div class="header__my-account">
-                <svg class="header__icons icon-register">
-                    <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
-                </svg>
-                <a href="#">Register</a>
-
-                <div class="header__hover header__hover--register">
-                    <svg class="header__icons header__icons--x">
-                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            <div class="header__my-account pop-out__trigger">
+                <span class="pop-out__trigger-content">
+                    <svg class="header__icons icon-register">
+                        <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                     </svg>
-                    <h2>Register</h2>
-                    <input class="text-field header__hover-input"
-                           type="text"
-                           placeholder="Email Address (User Name)">
-                    <button class="button--pumpkin">Register</button>
+                    <a href="#">Register</a>
+                </span>
+                <div class="pop-out header__hover--register">
+                    <div class="pop-out__internal">
+                        <svg class="header__icons header__icons--x">
+                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                        </svg>
+                        <h2>Register</h2>
+                        <input class="text-field header__hover-input"
+                               type="text"
+                               placeholder="Email Address (User Name)">
+                        <button class="button--pumpkin">Register</button>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="header__sign-in-out">
-                <svg class="header__icons icon-sign-in">
-                    <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
-                </svg>
-                <a href="#">Sign In</a>
-
-                <div class="header__hover header__hover--sign-in">
-                    <svg class="header__icons header__icons--x">
-                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            <div class="header__sign-in-out pop-out__trigger">
+                <span class="pop-out__trigger-content">
+                    <svg class="header__icons icon-sign-in">
+                        <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                     </svg>
-                    <h2>Sign In</h2>
-                    <input class="text-field header__hover-input"
-                           type="text"
-                           placeholder="Email Address (User Name)">
-                    <input class="text-field header__hover-input"
-                           type="password"
-                           placeholder="Password">
-                    <a href="#">Forgot your password?</a>
-                    <button class="button--pumpkin">Sign In</button>
+                    <a href="#">Sign In</a>
+                </span>
+                <div class="pop-out">
+                    <div class="pop-out__internal pop-out__internal--flush-right">
+                        <svg class="header__icons header__icons--x">
+                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                        </svg>
+                        <h2>Sign In</h2>
+                        <input class="text-field header__hover-input"
+                               type="text"
+                               placeholder="Email Address (User Name)">
+                        <input class="text-field header__hover-input"
+                               type="password"
+                               placeholder="Password">
+                        <a href="#">Forgot your password?</a>
+                        <button class="button--pumpkin">Sign In</button>
+                    </div>
                 </div>
             </div>
 
@@ -87,7 +93,12 @@
 
         <div class="header__search-wrapper">
             <input class="text-field header__search-field" type="search" placeholder="Search the site">
-            <svg class="header__icons header__icons--search js-toggle-header-search"><use xlink:href="/dist/img/svg-sprite.svg#search"></use></svg>
+            <svg class="header__icons header__icons--search js-header-search-trigger">
+                <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
+            </svg>
+            <svg style="display: none;" class="header__icons header__icons--search js-header-search-trigger">
+                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            </svg>
         </div>
 
     </div>

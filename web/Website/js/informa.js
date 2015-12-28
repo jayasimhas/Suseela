@@ -13,8 +13,8 @@ $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
 });
 
 /* Toggle header search box (tablets/smartphones) */
-$('.js-toggle-header-search').on('click', function toggleMenuItems(e) {
-	$('.header__search-field').toggleClass('is-active');
+$('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
+	$('.header__search-field').toggleClass('is-active').focus();
 });
 
 /* Attach / detach sticky menu */

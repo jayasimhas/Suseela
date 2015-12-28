@@ -47,13 +47,13 @@
 		text-transform: uppercase;
 		font-weight: 600;
 		letter-spacing: 1.2px;
-
-		&:after {
-			content: "⌃";
-			right: 10px;
-			position: absolute;
-			font-weight: 400;
-		}
+	}
+	&__arrow-icon {
+		position: absolute;
+		right: 18px;
+		top: 8px;
+		fill: $informa-dark-gray;
+		transition: transform 250ms ease-out;
 	}
 
 	&__section-link {
@@ -83,9 +83,16 @@
 }
 
 // Toggle menu section link visibility on-click
-.main-menu__section-title.is-active ~ .main-menu__section-wrapper {
-	transform: scaleY(1);
-	max-height: 999px;
+.main-menu__section-title.is-active {
+
+	.main-menu__arrow-icon {
+		transform: rotateX(-180deg);
+	}
+
+	&~ .main-menu__section-wrapper {
+		transform: scaleY(1);
+		max-height: 999px;
+	}
 }
 
 .main-menu__hoverable {

@@ -139,6 +139,7 @@
 
 		@include breakpoint('medium') {
 			display: block;
+			height: 100%;
 		}
 
 		@include breakpoint('small') {

@@ -10,4 +10,10 @@
 		vertical-align: middle;
 		margin-left: 12px;
 	}
+
+	@include breakpoint('medium') {
+		label {
+			display: none;
+		}
+	}
 }
