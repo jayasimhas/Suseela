@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Net.Http;
 using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
+/// <summary>
 namespace SitecoreTreeWalker.Sitecore
 {
 	class SitecoreGetter
@@ -14,8 +16,18 @@ namespace SitecoreTreeWalker.Sitecore
 		private static ArticleStruct _articleDetails = new ArticleStruct();
 		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
 
+
 		public static List<TaxonomyStruct> SearchTaxonomy(Guid taxonomyGuid, string term)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/Taxonomy/{taxonomyGuid}").Result;
+
+				var taxonomy = response.Content.ReadAsAsync<List<TaxonomyStruct>>().Result;
+
+				return taxonomy;
+			}
+
 			var sctree = new SCTree();
 
 			return sctree.SearchTaxonomy(taxonomyGuid, "", _sitecoreUser.Username, _sitecoreUser.Password).ToList();
@@ -23,9 +35,13 @@ namespace SitecoreTreeWalker.Sitecore
 
 		public static HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid)
 		{
-			var sctree = new SCTree();
-
-			return sctree.GetHierarchyByGuid(taxonomyGuid, _sitecoreUser.Username, _sitecoreUser.Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetHierarchyByGuid?guid={taxonomyGuid}").Result;
+				JavaScriptSerializer jss = new JavaScriptSerializer();
+				var directoryList = JsonConvert.DeserializeObject<HDirectoryStruct>(response.Content.ReadAsStringAsync().Result);
+				return directoryList;
+			}
 		}
 
 		public static MediaItemStruct GetMediaStatistics(string path)
@@ -63,8 +79,12 @@ namespace SitecoreTreeWalker.Sitecore
 		/// <returns></returns>
 		public static string[] GetGraphicsRootNode()
 		{
-			var sctree = new SCTree();
-			return sctree.GetGraphicRootPath(_sitecoreUser.Username, _sitecoreUser.Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GraphicsNode").Result;
+				var mediaLibraryNode = response.Content.ReadAsAsync<string[]>().Result;
+				return mediaLibraryNode;
+			}
 		}
 
 		/// <summary>
@@ -110,13 +130,13 @@ namespace SitecoreTreeWalker.Sitecore
 			return sctree.GetArticleCategories(pubGuid, _sitecoreUser.Username, _sitecoreUser.Password).ToList();
 		}
 
-        public static List<ItemStruct> GetWebCategories(Guid pubGuid)
-        {
-            using (var sctree = new SCTree())
-            {
-                return sctree.GetWebCategories(pubGuid, _sitecoreUser.Username, _sitecoreUser.Password).ToList();
-            }
-        }
+		public static List<ItemStruct> GetWebCategories(Guid pubGuid)
+		{
+			using (var sctree = new SCTree())
+			{
+				return sctree.GetWebCategories(pubGuid, _sitecoreUser.Username, _sitecoreUser.Password).ToList();
+			}
+		}
 
 		public static string GetPublicationFrequency(Guid pubGuid)
 		{
@@ -175,14 +195,11 @@ namespace SitecoreTreeWalker.Sitecore
 
 		public static string GetDynamicUrl(string path)
 		{
-			var sctree = new SCTree();
-			return sctree.GetDynamicUrl(path, _sitecoreUser.Username, _sitecoreUser.Password);
-		}
-
-		public static List<GeneralTag> GetGeneralTags(Guid publication)
-		{
-			var sctree = new SCTree();
-			return sctree.GetGeneralTags(publication, _sitecoreUser.Username, _sitecoreUser.Password).ToList();
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetDynamicUrl?path={path}").Result;
+				return response.Content.ReadAsStringAsync().Result;
+			}
 		}
 
 		public static int GetMaxLengthShortSummary()
@@ -216,12 +233,6 @@ namespace SitecoreTreeWalker.Sitecore
 			var sctree = new SCTree();
 			return sctree.GetStaffAndGroups(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
 		}
-		
-		public static bool HasPrimaryIndustries(IEnumerable<Guid> industries)
-		{
-			var sctree = new SCTree();
-			return sctree.HasPrimaryIndustry(industries.ToArray(), _sitecoreUser.Username, _sitecoreUser.Password);
-		}
 
 		public static DealInfo GetDealInfo(string recordNumber)
 		{
@@ -242,12 +253,12 @@ namespace SitecoreTreeWalker.Sitecore
 			return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
 		}
 
-        public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
-        {
-            var sctree = new SCTree();
+		public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
+		{
+			var sctree = new SCTree();
 
-            return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
-        }
+			return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
+		}
 
 		public static List<WordStyleStruct> GetParagraphStyles()
 		{
@@ -263,25 +274,36 @@ namespace SitecoreTreeWalker.Sitecore
 
 		public static DirectoryStruct[] GetChildrenDirectories(string path)
 		{
-			var tree = new SCTree();
-			return tree.GetChildrenDirectories(path, _sitecoreUser.Username, _sitecoreUser.Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetChildrenDirectories?path={path}").Result;				
+				var directoryList = JsonConvert.DeserializeObject<DirectoryStruct[]>(response.Content.ReadAsStringAsync().Result);
+				return directoryList;
+			}
 		}
 
 		public static MediaItemStruct GetMediaLibraryItem(string path)
 		{
-			var tree = new SCTree();
-			return tree.GetMediaLibraryItem(path, _sitecoreUser.Username, _sitecoreUser.Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetMediaLibraryItem?path={path}").Result;
+				var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
+				return mediaItem;
+			}
 		}
 
 		public static byte[] GetMediaLibraryItemData(string path)
 		{
-			return SitecoreGetter.GetMediaLibraryItem(path).Data;
+			return GetMediaLibraryItem(path).Data;
 		}
 
 		public static string MediaPreviewUrl(string path)
 		{
-			var tree = new SCTree();
-			return tree.MediaPreviewUrl(path, _sitecoreUser.Username, _sitecoreUser.Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/MediaPreviewUrl?path={path}").Result;
+				return response.Content.ReadAsStringAsync().Result;
+			}
 		}
 
 		public static bool IsContinuousPublishingPublication(Guid publication)

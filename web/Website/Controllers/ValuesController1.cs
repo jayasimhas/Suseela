@@ -1,40 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Results;
+using Glass.Mapper.Sc;
+using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.Common;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Web.Areas.Account.Models;
+using Jabberwocky.Glass.Models;
+using Newtonsoft.Json;
 using Sitecore.Data;
-using Sitecore.Globalization;
-using Sitecore.Social.Client.Mvc.Areas.Social.Controllers;
-using Sitecore.Social.Client.MVC;
+using Sitecore.Data.Items;
+using Sitecore.Links;
+using Sitecore.Resources.Media;
+using Sitecore.Web;
 
 namespace Informa.Web.Controllers
 {
-    public partial class TaxonomyStruct : ITaxonomy
-    {     
-        public string Name { get; set; } 
-        /// <remarks/>
-        public System.Guid ID { get; set; }
-    }
+	[Route]
+	public class TaxonomyController : ApiController
+	{
+		private ISitecoreService _sitecoreService;
+		public TaxonomyController(ISitecoreService service)
+		{
+			_sitecoreService = service;
 
-    public interface ITaxonomy
-    {
-        string Name { get; set; }
-        Guid ID { get; set; }
-    }
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.TaxonomyStruct>> Get()
+		{
+			List<WordPluginModel.TaxonomyStruct> result = new List<WordPluginModel.TaxonomyStruct>();
 
-    [Route]
-    public class TaxonomyController : ApiController
-    {   
-        // GET api/<controller>
-        public async Task<JsonResult<List<TaxonomyStruct>>> Get()
-        {
-            List<TaxonomyStruct> result = new List<TaxonomyStruct>();
-
+			/*
             using (var client = new HttpClient())
             {
                  HttpResponseMessage response = await client.GetAsync($"http://informa.miked.velir.com/api/Taxonomy/{Guid.NewGuid()}");
@@ -44,48 +42,314 @@ namespace Informa.Web.Controllers
                     result = await response.Content.ReadAsAsync<List<TaxonomyStruct>>();
                 }          
             }
+			*/
 
-            return Json(result);
-        }
+			var baseFolder = _sitecoreService.GetItem<IFolder>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
+			result = baseFolder?._ChildrenWithInferType.OfType<ITaxonomy_Item>()
+				.Select(eachChild => new WordPluginModel.TaxonomyStruct() { Name = eachChild.Item_Name, ID = eachChild._Id }).ToList();
+			return Json(result);
+		}
 
-        // GET api/<controller>/5
-        public JsonResult<List<TaxonomyStruct>> Get(Guid id)
-        {
-            var taxonomy = Enumerable.Range(0, 30).Select(x => new TaxonomyStruct {ID = Guid.NewGuid(), Name = TestData.TestData.GetRandomEmployee()}).ToList();
-                //TestData.Employees.Select(x => new TaxonomyStruct {ID = Guid.NewGuid(), Name = x}).ToList();
+		// GET api/<controller>/5
+		public JsonResult<List<WordPluginModel.TaxonomyStruct>> Get(Guid id)
+		{
+			List<WordPluginModel.TaxonomyStruct> result = new List<WordPluginModel.TaxonomyStruct>();
 
-            return Json(taxonomy);
-        }
+			var baseFolder = _sitecoreService.GetItem<IGlassBase>(id);
+			result = baseFolder?._ChildrenWithInferType.OfType<ITaxonomy_Item>()
+				.Select(eachChild => new WordPluginModel.TaxonomyStruct() { Name = eachChild.Item_Name, ID = eachChild._Id }).ToList();
+			return Json(result);
+		}
 
-        // POST api/<controller>
-        public void Post([FromBody]Guid value)
-        {
-        }
+		// POST api/<controller>
+		public void Post([FromBody]Guid value)
+		{
+		}
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+		// PUT api/<controller>/5
+		public void Put(int id, [FromBody]string value)
+		{
+		}
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
-    }
+		// DELETE api/<controller>/5
+		public void Delete(int id)
+		{
+		}
+	}
+
+	[Route]
+	public class GraphicsNodeController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GraphicsNodeController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<string[]> Get()
+		{
+			List<string> result = new List<string>();
+			var baseFolder = _sitecoreService.GetItem<IGlassBase>("{3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}");
+			if (baseFolder != null)
+			{
+				result.Add(baseFolder._Name);
+				result.Add(baseFolder._Path);
+			}
+			return Json(result.ToArray());
+		}
+	}
+
+	[Route]
+	public class GetChildrenDirectoriesController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetChildrenDirectoriesController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<WordPluginModel.DirectoryStruct[]> Get()
+		{
+			var item = _sitecoreService.GetItem<Item>("{11111111-1111-1111-1111-111111111111}");
+			//db.GetItem(path);
+			var children = new List<WordPluginModel.DirectoryStruct>();
+
+			foreach (var child in item.Children.ToArray())
+			{
+				var dir = new WordPluginModel.DirectoryStruct
+				{
+					Name = child.Name,
+					ChildrenList = new List<string>()
+				};
+				var nestedChildren = child.Children.ToArray();
+				foreach (var name in nestedChildren)
+				{
+					dir.ChildrenList.Add(name.Name);
+				}
+
+				if (nestedChildren.Length == 0)
+				{
+					var media = MediaManager.GetMedia(child);
+					string ext = media.Extension.ToLower();
+
+					if (!(ext.Contains("gif") ||
+						  ext.Contains("jpg") ||
+						  ext.Contains("png"))) continue;
+				}
+
+				if (nestedChildren.Length == 0)
+				{
+					var media = MediaManager.GetMedia(child);
+					string ext = media.Extension.ToLower();
+
+					if (!(ext.Contains("doc") ||
+						  ext.Contains("docx") ||
+						  ext.Contains("xls") ||
+						  ext.Contains("xlsx") ||
+						  ext.Contains("ppt") ||
+						  ext.Contains("pptx") ||
+						  ext.Contains("pdf"))) continue;
+				}
+				dir.Children = dir.ChildrenList.ToArray();
+				children.Add(dir);
+			}
+
+			return Json(children.ToArray());
+		}
+
+		public JsonResult<WordPluginModel.DirectoryStruct[]> Get(string path)
+		{
+			bool picsOnly = path.ToLower().Contains("media library");
+			bool docsOnly = path.ToLower().Contains("supporting documents");
+			if (docsOnly) picsOnly = false;
+			var item = _sitecoreService.GetItem<Item>(path);
+			var children = new List<WordPluginModel.DirectoryStruct>();
+
+			foreach (var child in item.Children.ToArray())
+			{
+				var dir = new WordPluginModel.DirectoryStruct
+				{
+					Name = child.Name,
+					ChildrenList = new List<string>()
+				};
+				var nestedChildren = child.Children.ToArray();
+				foreach (var name in nestedChildren)
+				{
+					dir.ChildrenList.Add(name.Name);
+				}
+
+				if (nestedChildren.Length == 0 && picsOnly)
+				{
+					var media = MediaManager.GetMedia(child);
+					string ext = media.Extension.ToLower();
+
+					if (!(ext.Contains("gif") ||
+						  ext.Contains("jpg") ||
+						  ext.Contains("png"))) continue;
+				}
+
+				if (nestedChildren.Length == 0 && docsOnly)
+				{
+					var media = MediaManager.GetMedia(child);
+					string ext = media.Extension.ToLower();
+
+					if (!(ext.Contains("doc") ||
+						  ext.Contains("docx") ||
+						  ext.Contains("xls") ||
+						  ext.Contains("xlsx") ||
+						  ext.Contains("ppt") ||
+						  ext.Contains("pptx") ||
+						  ext.Contains("pdf"))) continue;
+				}
+				dir.Children = dir.ChildrenList.ToArray();
+				children.Add(dir);
+			}
+
+			return Json(children.ToArray());
+		}
+
+	}
+
+	public class GetMediaLibraryItemController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetMediaLibraryItemController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<WordPluginModel.MediaItemStruct> Get()
+		{
+			return Json(new WordPluginModel.MediaItemStruct());
+		}
+
+		public JsonResult<WordPluginModel.MediaItemStruct> Get(string path)
+		{
+			Item item = _sitecoreService.GetItem<Item>(path);
+			if (item == null) return Json(new WordPluginModel.MediaItemStruct());
+
+			var media = MediaManager.GetMedia(item);
+
+			var stream = media.GetStream();
+			if (stream == null)
+			{
+				return Json(new WordPluginModel.MediaItemStruct());
+			}
+			var data = new byte[stream.Stream.Length];
+			stream.Stream.Read(data, 0, (int)stream.Stream.Length);
+
+			var mediaItem = new WordPluginModel.MediaItemStruct
+			{
+				Data = data,
+				Extension = media.Extension,
+				Name = item.DisplayName,
+				Path = path,
+				Uploader = item.Statistics.CreatedBy,
+				UploadDate = item.Statistics.Created,
+				Url = "https://" + WebUtil.GetHostName() +
+										  MediaManager.GetMediaUrl(item)
+			};
+			return Json(mediaItem);
+		}
+
+	}
+
+	public class MediaPreviewUrlController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public MediaPreviewUrlController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<string> Get()
+		{
+			return Json(string.Empty);
+		}
+
+		public JsonResult<string> Get(string path)
+		{
+			Item media = _sitecoreService.GetItem<Item>(path);
+			string url = "https://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(media);
+			return Json(url);
+		}
+
+	}
+
+	public class GetDynamicUrlController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetDynamicUrlController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<string> Get()
+		{
+			return Json(string.Empty);
+		}
+
+		public JsonResult<string> Get(string path)
+		{
+			var options = new LinkUrlOptions();
+			var item = _sitecoreService.GetItem<Item>(path);
+			if (item == null)
+			{
+				return null;
+			}
+			string mediaUrl = LinkManager.GetDynamicUrl(item, options);
+			return Json(mediaUrl);
+		}
+
+	}
+
+	[Route]
+	public class GetHierarchyByGuidController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetHierarchyByGuidController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<string> Get()
+		{
+			return Json(string.Empty);
+		}
+
+		public JsonResult<WordPluginModel.HDirectoryStruct> Get(string guid)
+		{
+			var item = _sitecoreService.GetItem<Item>(guid);
+			var children = new List<WordPluginModel.HDirectoryStruct>();
+
+			foreach (Item child in item.Children.ToArray())
+			{
+				children.Add(GetHierarchy(child.Paths.Path));
+			}
+			var childNode = new WordPluginModel.HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
+			childNode.Children = childNode.ChildrenList.ToArray();
+			return Json(childNode);
+		}
+
+		public WordPluginModel.HDirectoryStruct GetHierarchy(string path)
+		{
+			var item = _sitecoreService.GetItem<Item>(path);
+			var children = new List<WordPluginModel.HDirectoryStruct>();
+			List<Item> searchField = item.Children.ToList();
+
+			foreach (Item child in searchField)
+			{
+				children.Add(GetHierarchy(child.Paths.Path));
+			}
+			var childNode = new WordPluginModel.HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
+			childNode.Children = childNode.ChildrenList.ToArray();
+			return childNode;
+		}
+
+	}
+
+
+
+
+
 }
-
-//namespace Sitecore.Social.Twitter.Client.Mvc.Areas.Social.Controllers
-//{
-//    public class TwitterConnectorController : ConnectorController
-//    {
-//        public TwitterConnectorController()
-//          : base("Twitter", ID.Parse("{78D8D914-51C8-41F3-8424-021262F148B8}"))
-//        {
-//        }
-
-//        public ActionResult Index()
-//        {
-//            return (ActionResult)this.LoginPartialView(Translate.Text(Context.User.IsAuthenticated ? "Attach Twitter account" : "Login with Twitter"));
-//        }
-//    }
-//}
