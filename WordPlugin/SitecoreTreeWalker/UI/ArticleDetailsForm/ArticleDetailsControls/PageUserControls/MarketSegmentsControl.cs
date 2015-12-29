@@ -25,7 +25,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			List<TaxonomyStruct> marketSegments =
-				SitecoreGetter.SearchTaxonomy(new Guid(Constants.MARKET_SEGMENT_GUID), "").ToList();
+				SitecoreGetter.SearchTaxonomy( "").ToList();
 			HDirectoryStruct marketSegmentsDirectory =
 				SitecoreGetter.GetHierarchyByGuid(new Guid(Constants.MARKET_SEGMENT_GUID));
 			TabController.InitializeSitecoreValues(marketSegments, marketSegmentsDirectory);

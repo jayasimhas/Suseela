@@ -33,7 +33,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void UpdateFields(ArticleStruct articleDetails)
 		{
-			List<TaxonomyStruct> industries = SitecoreGetter.SearchTaxonomy(new Guid(Constants.INDUSTRY_GUID), "").ToList();
+			List<TaxonomyStruct> industries = SitecoreGetter.SearchTaxonomy("").ToList();
 			HDirectoryStruct industryDirectory = SitecoreGetter.GetHierarchyByGuid(new Guid(Constants.INDUSTRY_GUID));
 
 			TabController.InitializeSitecoreValues(industries, industryDirectory);

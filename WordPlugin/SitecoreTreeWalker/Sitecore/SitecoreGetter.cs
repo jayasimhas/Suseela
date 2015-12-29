@@ -6,6 +6,7 @@ using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.User;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
+using SitecoreTreeWalker.Config;
 
 /// <summary>
 namespace SitecoreTreeWalker.Sitecore
@@ -15,30 +16,23 @@ namespace SitecoreTreeWalker.Sitecore
 		private static List<SitecoreTree.StaffStruct> _authors;
 		private static ArticleStruct _articleDetails = new ArticleStruct();
 		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
+		private static string webApiURL = "http://informa8.ashah.velir.com/api/";
 
-
-		public static List<TaxonomyStruct> SearchTaxonomy(Guid taxonomyGuid, string term)
+		public static List<TaxonomyStruct> SearchTaxonomy(string term)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/Taxonomy/{taxonomyGuid}").Result;
-
-				var taxonomy = response.Content.ReadAsAsync<List<TaxonomyStruct>>().Result;
-
+				var response = client.GetAsync($"{webApiURL}SearchTaxonomy?searchTerm={term}").Result;
+				var taxonomy = JsonConvert.DeserializeObject<List<TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
 				return taxonomy;
 			}
-
-			var sctree = new SCTree();
-
-			return sctree.SearchTaxonomy(taxonomyGuid, "", _sitecoreUser.Username, _sitecoreUser.Password).ToList();
 		}
 
 		public static HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetHierarchyByGuid?guid={taxonomyGuid}").Result;
-				JavaScriptSerializer jss = new JavaScriptSerializer();
+				var response = client.GetAsync($"{webApiURL}GetHierarchyByGuid?guid={taxonomyGuid}").Result;
 				var directoryList = JsonConvert.DeserializeObject<HDirectoryStruct>(response.Content.ReadAsStringAsync().Result);
 				return directoryList;
 			}
@@ -46,8 +40,12 @@ namespace SitecoreTreeWalker.Sitecore
 
 		public static MediaItemStruct GetMediaStatistics(string path)
 		{
-			var sctree = new SCTree();
-			return sctree.GetMediaStatistics(path, _sitecoreUser.Username, _sitecoreUser.Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}GetMediaStatistics?path={path}").Result;
+				var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
+				return mediaItem;
+			}
 		}
 
 		/// <summary>
@@ -81,7 +79,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GraphicsNode").Result;
+				var response = client.GetAsync($"{webApiURL}GraphicsNode").Result;
 				var mediaLibraryNode = response.Content.ReadAsAsync<string[]>().Result;
 				return mediaLibraryNode;
 			}
@@ -197,7 +195,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetDynamicUrl?path={path}").Result;
+				var response = client.GetAsync($"{webApiURL}GetDynamicUrl?path={path}").Result;
 				return response.Content.ReadAsStringAsync().Result;
 			}
 		}
@@ -276,7 +274,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetChildrenDirectories?path={path}").Result;				
+				var response = client.GetAsync($"{webApiURL}GetChildrenDirectories?path={path}").Result;
 				var directoryList = JsonConvert.DeserializeObject<DirectoryStruct[]>(response.Content.ReadAsStringAsync().Result);
 				return directoryList;
 			}
@@ -286,7 +284,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/GetMediaLibraryItem?path={path}").Result;
+				var response = client.GetAsync($"{webApiURL}GetMediaLibraryItem?path={path}").Result;
 				var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -301,7 +299,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"http://informa8.ashah.velir.com/api/MediaPreviewUrl?path={path}").Result;
+				var response = client.GetAsync($"{webApiURL}MediaPreviewUrl?path={path}").Result;
 				return response.Content.ReadAsStringAsync().Result;
 			}
 		}

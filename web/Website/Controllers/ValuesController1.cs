@@ -77,6 +77,58 @@ namespace Informa.Web.Controllers
 		}
 	}
 
+
+	public class SearchTaxonomyController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+
+		public SearchTaxonomyController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+
+		// GET api/<controller>
+		public JsonResult<WordPluginModel.MediaItemStruct> Get()
+		{
+			return Json(new WordPluginModel.MediaItemStruct());
+		}
+
+		public JsonResult<List<WordPluginModel.TaxonomyStruct>> Get(string searchTerm)
+		{
+			var taxonomyItem = _sitecoreService.GetItem<IFolder>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
+			if (taxonomyItem == null)
+			{
+				return null;
+			}
+			List<ITaxonomy_Item> children;
+			if (!string.IsNullOrEmpty(searchTerm))
+			{
+				children = taxonomyItem?._ChildrenWithInferType.OfType<ITaxonomy_Item>().Where(i => TaxonomyMatch(i.Item_Name, searchTerm)
+					).ToList();
+			}
+			else
+			{
+				children = taxonomyItem?._ChildrenWithInferType.OfType<ITaxonomy_Item>().ToList();
+			}
+			var matches = children.Select(child => new WordPluginModel.TaxonomyStruct { ID = child._Id, Name = child.Item_Name, Section = child._Parent._Name}).ToList();
+
+			return Json(matches);
+
+		}
+
+		public bool TaxonomyMatch(string itemName, string term)
+		{
+			string lcName = itemName.ToLower();
+			string lcTerm = term.ToLower();
+			return lcName.Contains(lcTerm);
+		}
+	}
+
+
+
+
+
+
 	[Route]
 	public class GraphicsNodeController : ApiController
 	{
@@ -252,6 +304,40 @@ namespace Informa.Web.Controllers
 			return Json(mediaItem);
 		}
 
+	}
+
+	[Route]
+	public class GetMediaStatisticsController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetMediaStatisticsController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<WordPluginModel.MediaItemStruct> Get()
+		{
+			return Json(new WordPluginModel.MediaItemStruct());
+		}
+
+		public JsonResult<WordPluginModel.MediaItemStruct> Get(string path)
+		{
+			Item item = _sitecoreService.GetItem<Item>(path);
+			if (item == null) return Json(new WordPluginModel.MediaItemStruct());
+
+			var media = MediaManager.GetMedia(item);
+			var mediaItem = new WordPluginModel.MediaItemStruct
+			{
+				Extension = media.Extension,
+				Name = item.DisplayName,
+				Path = path,
+				Uploader = item.Statistics.CreatedBy,
+				UploadDate = item.Statistics.Created,
+				Url = "https://" + WebUtil.GetHostName() +
+					  MediaManager.GetMediaUrl(item)
+			};			
+			return Json(mediaItem);
+		}
 	}
 
 	public class MediaPreviewUrlController : ApiController

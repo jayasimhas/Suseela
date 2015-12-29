@@ -24,7 +24,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			List<TaxonomyStruct> subjects =
-				SitecoreGetter.SearchTaxonomy(new Guid(Constants.SUBJECT_GUID), "").ToList();
+				SitecoreGetter.SearchTaxonomy("").ToList();
 			HDirectoryStruct subjectDirectory = SitecoreGetter.GetHierarchyByGuid(new Guid(Constants.SUBJECT_GUID));
 
 			TabController.InitializeSitecoreValues(subjects, subjectDirectory);
