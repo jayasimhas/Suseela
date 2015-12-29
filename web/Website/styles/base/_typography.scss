@@ -2,7 +2,7 @@
  * Basic typography style for copy text
  */
 body {
-  color: $text-color;
+  color: $informa-dark-gray;
   @include textMix('PT Serif', 400, 16px);
 }
 

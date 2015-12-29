@@ -1,53 +1,67 @@
 <div class="main-menu">
 
-	<div class="main-menu__toggler">
-	    <button class="c-hamburger">
+	<div class="menu-toggler js-toggle-menu">
+	    <button class="menu-toggler__button">
 	    <span>Toggle Menu</span>
 	    </button>
 	    Menu
 	</div>
 
-	<dl class="main-menu__section">
-		<dt class="main-menu__section-title main-menu__hoverable">
+	<ul class="main-menu__section">
+		<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
+			<svg class="main-menu__arrow-icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+			</svg>
 			Home
-		</dt>
-	</dl>
+		</li>
+	</ul>
 
-	<dl class="main-menu__section">
-		<dt class="main-menu__section-title main-menu__hoverable">
+	<ul class="main-menu__section">
+		<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
+			<svg class="main-menu__arrow-icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+			</svg>
 			Business
-		</dt>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Companies</a>
-			</dd>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Deals</a>
-			</dd>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Strategy</a>
-			</dd>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Markets</a>
-			</dd>
-	</dl>
+		</li>
+		<li class="main-menu__section-wrapper">
+			<ul>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Companies</a>
+				</li>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Deals</a>
+				</li>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Strategy</a>
+				</li>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Markets</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
 
-	<dl class="main-menu__section">
-		<dt class="main-menu__section-title main-menu__hoverable">
+	<ul class="main-menu__section">
+		<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
 			Policy &amp; Regulation
-		</dt>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Companies</a>
-			</dd>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Deals</a>
-			</dd>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Strategy</a>
-			</dd>
-			<dd class="main-menu__section-link main-menu__hoverable">
-				<a href="#">Markets</a>
-			</dd>
-	</dl>
+		</li>
+		<li class="main-menu__section-wrapper">
+			<ul>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Companies</a>
+				</li>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Deals</a>
+				</li>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Strategy</a>
+				</li>
+				<li class="main-menu__hoverable">
+					<a href="#" class="main-menu__section-link">Markets</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
 
 	<dl class="main-menu__footer">
 		<dd class="main-menu__footer-link">
