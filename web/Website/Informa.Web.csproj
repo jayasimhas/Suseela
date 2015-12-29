@@ -526,6 +526,7 @@
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
+    <Compile Include="GlassMaps\Class1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -924,6 +925,10 @@
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WordPlugin\SitecoreTreeWalker\SitecoreTreeWalker.csproj">
+      <Project>{3ed1f49b-d9fe-40ee-a4d4-672250632a8f}</Project>
+      <Name>SitecoreTreeWalker</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
