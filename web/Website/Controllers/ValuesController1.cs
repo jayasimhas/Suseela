@@ -6,7 +6,9 @@ using System.Web.Http.Results;
 using Glass.Mapper.Sc;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
 using Newtonsoft.Json;
@@ -110,7 +112,7 @@ namespace Informa.Web.Controllers
 			{
 				children = taxonomyItem?._ChildrenWithInferType.OfType<ITaxonomy_Item>().ToList();
 			}
-			var matches = children.Select(child => new WordPluginModel.TaxonomyStruct { ID = child._Id, Name = child.Item_Name, Section = child._Parent._Name}).ToList();
+			var matches = children.Select(child => new WordPluginModel.TaxonomyStruct { ID = child._Id, Name = child.Item_Name, Section = child._Parent._Name }).ToList();
 
 			return Json(matches);
 
@@ -147,6 +149,31 @@ namespace Informa.Web.Controllers
 				result.Add(baseFolder._Name);
 				result.Add(baseFolder._Path);
 			}
+			return Json(result.ToArray());
+		}
+	}
+
+
+	[Route]
+	public class SupportingDocumentsNodeController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public SupportingDocumentsNodeController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<string[]> Get()
+		{
+			List<string> result = new List<string>();
+			var siteConfigItem = _sitecoreService.GetItem<ISite_Config>("{BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}");
+			if (siteConfigItem == null) return Json(result.ToArray());
+			var supportingDocumentFieldValue = siteConfigItem.Supporting_Documents_Folder;
+			if (supportingDocumentFieldValue == new Guid()) return Json(result.ToArray());
+			var supportingDocumentFolder = _sitecoreService.GetItem<IGlassBase>(supportingDocumentFieldValue);
+			if (supportingDocumentFolder == null) return Json(result.ToArray());
+			result.Add(supportingDocumentFolder._Name);
+			result.Add(supportingDocumentFolder._Path);
 			return Json(result.ToArray());
 		}
 	}

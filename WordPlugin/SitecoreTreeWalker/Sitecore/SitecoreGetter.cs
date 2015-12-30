@@ -65,9 +65,16 @@ namespace SitecoreTreeWalker.Sitecore
 		/// <returns></returns>
 		public static string[] GetSupportingDocumentsRootNode()
 		{
-			var sctree = new SCTree();
-			//return sctree.GetSupportingDocumentsRootNodePath(_sitecoreUser.Username, _sitecoreUser.Password).ToArray();
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}SupportingDocumentsNode").Result;
+				var supportingDocumentsNode = response.Content.ReadAsAsync<string[]>().Result;
+				return supportingDocumentsNode;
+			}
+			/*
+			var sctree = new SCTree();			
 			return sctree.GetSDRootPath(_sitecoreUser.Username, _sitecoreUser.Password).ToArray();
+			*/
 		}
 
 		/// <summary>
