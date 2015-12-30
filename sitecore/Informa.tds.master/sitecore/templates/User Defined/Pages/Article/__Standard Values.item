@@ -9,11 +9,60 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {11380B5D-3531-4570-B213-EFC5312266E4}
 templatekey: Article
 
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+800
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 145
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}" /></r>
 ----version----
 language: en
 version: 1
-revision: f1fc8118-76a4-49ca-a974-cc600b0a07b6
+revision: 135303bd-075d-422c-aab9-60057c0d828e
 
+----field----
+field: {A92E4BFB-3010-4332-A7A0-C788348993CE}
+name: ListableTitle
+key: listabletitle
+content-length: 38
+
+{2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+----field----
+field: {629BDDB3-5E8E-49BB-A323-6E1C46BC7CB5}
+name: ListableTopics
+key: listabletopics
+content-length: 38
+
+{6B94B6FF-F78B-4D33-9173-FE87F3A0EA9D}
+----field----
+field: {73F216E4-C244-4A3B-95EE-07D9FFD2D4F7}
+name: ListableDate
+key: listabledate
+content-length: 38
+
+{8D6D4B6A-0ACA-406A-ABAE-C6C8A02A7C0D}
+----field----
+field: {5F51FA66-5326-4AA6-9671-57A48AEDEAA4}
+name: ListableAuthor
+key: listableauthor
+content-length: 38
+
+{5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+----field----
+field: {6D481D3A-7C71-488F-88FF-9C53DE9B4AC3}
+name: ListableImage
+key: listableimage
+content-length: 38
+
+{7526A634-C0A2-4FFE-88F8-227C9274B610}
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -27,14 +76,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f1fc8118-76a4-49ca-a974-cc600b0a07b6
+135303bd-075d-422c-aab9-60057c0d828e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151224T181644Z
+20151230T165304Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

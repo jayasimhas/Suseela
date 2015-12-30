@@ -525,6 +525,7 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\VelirController.cs" />
+    <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="GlassMaps\Class1.cs" />
     <Compile Include="Global.asax.cs">
@@ -664,7 +665,9 @@
     <Content Include="App_Config\Include\Sitecore.Analytics.Tracking.RobotDetection.config" />
     <Content Include="App_Config\Include\Sitecore.AntiCsrf.config" />
     <Content Include="App_Config\Include\Sitecore.Apps.TagInjection.config" />
-    <Content Include="App_Config\Include\Sitecore.Buckets.config" />
+    <Content Include="App_Config\Include\Sitecore.Buckets.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Sitecore.Buckets.WarmupQueries.config.example" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.Analytics.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
@@ -802,7 +805,9 @@
     <Content Include=".bowerrc" />
     <Content Include="Areas\Article\Views\web.config" />
     <Content Include="Areas\Article\Views\Index.cshtml" />
-    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Article\Views\Home\About.cshtml" />
     <Content Include="Areas\Article\Views\Home\Contact.cshtml" />
     <Content Include="Areas\Article\Views\Home\Index.cshtml" />
@@ -898,6 +903,9 @@
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\Frontend\Listing.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\Global\ContentListItem.cshtml" />
+    <Content Include="Views\Shared\_ArticlePreview.cshtml" />
+    <Content Include="Views\Article\_Article.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -907,7 +915,6 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
-    <Folder Include="Views\Shared\Global\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -925,10 +932,6 @@
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\WordPlugin\SitecoreTreeWalker\SitecoreTreeWalker.csproj">
-      <Project>{3ed1f49b-d9fe-40ee-a4d4-672250632a8f}</Project>
-      <Name>SitecoreTreeWalker</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

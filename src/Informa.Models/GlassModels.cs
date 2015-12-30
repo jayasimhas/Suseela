@@ -1904,3 +1904,41 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	}
 
 }
+namespace Informa.Models.Velir.Search.Models.FactoryInterface
+{
+
+
+ 	/// <summary>
+	/// IInterfaceTemplate Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/InterfaceTemplate</para>	
+	/// <para>ID: f4dbbc93-2591-4aa8-b71a-1dc4acd5c941</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IInterfaceTemplateConstants.TemplateIdString)]
+	public partial interface IInterfaceTemplate : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IInterfaceTemplate Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/InterfaceTemplate</para>	
+		/// <para>ID: f4dbbc93-2591-4aa8-b71a-1dc4acd5c941</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IInterfaceTemplate__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IInterfaceTemplateConstants{
+
+			public const string TemplateIdString = "f4dbbc93-2591-4aa8-b71a-1dc4acd5c941";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "InterfaceTemplate";
+
+			
+
+	}
+
+}

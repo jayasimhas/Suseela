@@ -1,10 +1,37 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using Informa.Web.Areas.Account.Models;
+using Sitecore.Mvc.Extensions;
 
 namespace Informa.Web.TestData
 {
     public static class TestData
     {
+        public static T TestModel<T>(this WebViewPage<T> page)
+        {   
+            return GetTestData<T>(page.Model);
+        }
+
+        private static T GetTestData<T>(T model) 
+        {
+            throw new NotImplementedException();
+        }
+
+        public static string TestRichText(this WebViewPage page)
+        {
+            return Employees.Aggregate((s, s1) => s.Append(s1, ','));
+        }
+
+        public static string TestSingleLineText(this WebViewPage page)
+        {
+            return GetRandomEmployee();
+        }
+
+
+        public static LoginViewModel LoginModel => new LoginViewModel();
+
         static Random rnd = new Random();
         public static List<string> Employees => new List<string>
         {

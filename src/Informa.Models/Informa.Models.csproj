@@ -73,6 +73,9 @@
       <HintPath>..\..\packages\Jabberwocky.Glass.1.0.0.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Buckets">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -86,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreGlassModels.cs" />
+    <Compile Include="FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
     <Compile Include="I___BaseItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

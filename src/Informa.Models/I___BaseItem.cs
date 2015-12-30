@@ -11,11 +11,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
     {
     }
 
-    [GlassFactoryInterface]            
-    public partial interface ITaxonomy
+    [GlassFactoryInterface]
+    public interface IListable
     {
-        
+        string ListTitle { get; }
+        string Url { get; }
+        string Topic { get; }
+        string DisplayDate { get; }
+        string Author { get; }
+        string ListImage { get; }
     }
-
-  
 }
