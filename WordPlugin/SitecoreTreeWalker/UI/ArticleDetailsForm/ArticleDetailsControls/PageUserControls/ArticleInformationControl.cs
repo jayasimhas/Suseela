@@ -423,50 +423,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		}
 
 
-		/// <summary>
-		/// Returns Guid of selected article category, or an empty Guid of none selected
-		/// </summary>
-		/// <returns></returns>
-		public Guid GetSelectedArticleCategoryGuid()
-		{
-			try
-			{
-				return new Guid(uxArticleCategory.SelectedValue.ToString());
-			}
-			catch
-			{
-				return Guid.Empty;
-			}
-		}
-
-		/// <summary>
-		/// Returns Guid of selected web category, or an empty Guid of none selected
-		/// </summary>
-		/// <returns></returns>
-		public Guid GetSelectedWebCategoryGuid()
-		{
-			try
-			{
-				return new Guid(cmbWebCategory.SelectedValue.ToString());
-			}
-			catch
-			{
-				return Guid.Empty;
-			}
-		}
-
-		public Guid GetSelectedIssue()
-		{
-			try
-			{
-				return new Guid(uxArticleInformationIssue.SelectedValue.ToString());
-			}
-			catch
-			{
-				return Guid.Empty;
-			}
-		}
-
 		public string GetDisplayName(ArticleSize articleSize, int wordCount)
 		{
 			string displayName = articleSize.Name;
@@ -581,41 +537,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			InitializePublications();
-			UpdateArticleCategories(articleDetails.Publication);
-			UpdateWebCategories(articleDetails.Publication);
-			UpdateIssues();
 			SetCheckedOutStatus();
 			if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
 			{
 				return;
 			}
-			uxPublication.SelectedValue = articleDetails.Publication;
-			if (!uxArticleCategory.ValueMember.IsNullOrEmpty())
-			{
-				if (articleDetails.ArticleCategory == Guid.Empty)
-				{
-					uxArticleCategory.SelectedIndex = 0;
-				}
-				else
-				{
-					uxArticleCategory.SelectedValue = articleDetails.ArticleCategory;
-				}
-			}
-			if (!cmbWebCategory.ValueMember.IsNullOrEmpty())
-			{
-				if (articleDetails.WebCategory == Guid.Empty)
-				{
-					cmbWebCategory.SelectedIndex = 0;
-				}
-				else
-				{
-					cmbWebCategory.SelectedValue = articleDetails.WebCategory;
-				}
-			}
-			if (!uxArticleInformationIssue.ValueMember.IsNullOrEmpty())
-			{
-				uxArticleInformationIssue.SelectedValue = articleDetails.Issue;
-			}
+			uxPublication.SelectedValue = articleDetails.Publication;			
 			if (articleDetails.Authors != null)
 			{
 				uxSelectedAuthors.PopulateRegular(articleDetails.Authors.Select(r =>
@@ -690,141 +617,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			}
 		}
 
-		/// <summary>
-		/// Updates the article categories according to the selected publication
-		/// </summary>
-		public void UpdateArticleCategories()
-		{
-			Guid pubID = GetSelectedPublicationGuid();
-			UpdateArticleCategories(pubID);
-			UpdateWebCategories(pubID);
-		}
-
-		private void UpdateArticleCategories(Guid pubID)
-		{
-			if (pubID == Guid.Empty)
-			{
-				uxArticleCategory.DataSource = new List<ItemStruct>
-												{new ItemStruct {Name = "Select a publication first", ID = Guid.Empty}};
-				uxArticleCategory.DisplayMember = "Name";
-				uxArticleCategory.ValueMember = "ID";
-				uxArticleCategory.Enabled = false;
-			}
-			else
-			{
-				List<ItemStruct> categories = SitecoreGetter.GetArticleCategories(pubID).ToList();
-				if (categories.Count > 0)
-				{
-					uxArticleCategory.Enabled = true;
-					categories.Insert(0, new ItemStruct {Name = "Select Category", ID = Guid.Empty});
-					uxArticleCategory.DataSource = categories;
-					uxArticleCategory.DisplayMember = "Name";
-					uxArticleCategory.ValueMember = "ID";
-				}
-				else
-				{
-					uxArticleCategory.DataSource = new List<ItemStruct>
-													{new ItemStruct {Name = "No categories available", ID = Guid.Empty}};
-					uxArticleCategory.DisplayMember = "Name";
-					uxArticleCategory.ValueMember = "ID";
-					uxArticleCategory.Enabled = false;
-				}
-			}
-		}
-
-		private void UpdateWebCategories(Guid pubID)
-		{
-			cmbWebCategory.DataSource = new List<ItemStruct> { new ItemStruct { Name = "Select a publication first", ID = Guid.Empty } };
-			if (pubID == Guid.Empty)
-			{
-				cmbWebCategory.DataSource = new List<ItemStruct> { new ItemStruct { Name = "Select a publication first", ID = Guid.Empty } };
-				cmbWebCategory.DisplayMember = "Name";
-				cmbWebCategory.ValueMember = "ID";
-				cmbWebCategory.Enabled = false;
-			}
-			else
-			{
-				if (!SitecoreGetter.IsContinuousPublishingPublication(pubID))
-				{
-					cmbWebCategory.Visible = false;
-					cmbWebCategory.SelectedIndex = -1;
-					lblWebCategory.Visible = false;
-				}
-				else
-				{
-					cmbWebCategory.Visible = true;
-					lblWebCategory.Visible = true;
-
-					List<ItemStruct> categories = SitecoreGetter.GetWebCategories(pubID).ToList();
-					if (categories.Count > 0)
-					{
-						cmbWebCategory.Enabled = true;
-						categories.Insert(0, new ItemStruct {Name = "Select Category", ID = Guid.Empty});
-						cmbWebCategory.DataSource = categories;
-						cmbWebCategory.DisplayMember = "Name";
-						cmbWebCategory.ValueMember = "ID";
-					}
-					else
-					{
-						cmbWebCategory.DataSource = new List<ItemStruct>
-							                            {new ItemStruct {Name = "No categories available", ID = Guid.Empty}};
-						cmbWebCategory.DisplayMember = "Name";
-						cmbWebCategory.ValueMember = "ID";
-						cmbWebCategory.Enabled = false;
-					}
-				}
-			}
-		}
-
-
 		public void UpdateArticleNumber(string articleNumber)
 		{
             //uxArticleNumberLabel.Text = articleNumber;
-		}
-
-		/// <summary>
-		/// Updates the issues according to the selected publication
-		/// </summary>
-		public void UpdateIssues()
-		{
-			Guid pubID = GetSelectedPublicationGuid();
-			if (pubID == Guid.Empty)
-			{
-				uxArticleInformationIssue.DataSource = new List<ItemStruct> { new ItemStruct { Name = "Select a publication first", ID = Guid.Empty } };
-				uxArticleInformationIssue.DisplayMember = "Name";
-				uxArticleInformationIssue.ValueMember = "ID";
-				//centralize logic of issue enablization
-				uxArticleInformationIssue.Enabled = false;
-			}
-			else
-			{
-				if (CurrentPublicationIsDaily())
-				{
-					uxArticleInformationIssue.DataSource = new List<ItemStruct> { new ItemStruct { Name = "Daily publication chosen", ID = Guid.Empty } };
-					uxArticleInformationIssue.DisplayMember = "Name";
-					uxArticleInformationIssue.ValueMember = "ID";
-					uxArticleInformationIssue.Enabled = false;
-				}
-				else
-				{
-					List<ItemStruct> issues = SitecoreGetter.GetIssues(pubID).ToList();
-					if (issues.Count > 0)
-					{
-						uxArticleInformationIssue.Enabled = true;
-						issues.Insert(0, new ItemStruct { Name = "Select Issue", ID = Guid.Empty });
-						uxArticleInformationIssue.DataSource = issues;
-						uxArticleInformationIssue.DisplayMember = "Name";
-						uxArticleInformationIssue.ValueMember = "ID";
-					}
-					else
-					{
-						uxArticleInformationIssue.DataSource = new List<ItemStruct> { new ItemStruct { Name = "No issues available", ID = Guid.Empty } };
-						uxArticleInformationIssue.DisplayMember = "Name";
-						uxArticleInformationIssue.ValueMember = "ID";
-						uxArticleInformationIssue.Enabled = false;
-					}
-				}
-			}
 		}
 
 		/// <summary>
@@ -922,9 +717,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void ResetFields()
 		{
 			uxPublication.SelectedIndex = 0;
-			uxArticleCategory.SelectedIndex = 0;
-			uxArticleInformationIssue.SelectedIndex = 0;
-			uxArticleCategory.SelectedIndex = 0;
 			uxSelectedAuthors.Reset();
 			uxNominate.Checked = false;
 			uxTopStory.Checked = false;
@@ -1079,24 +871,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			_parent.ResetChangedStatus(true); //hack-ish to reset all fields
 		}
 
-		private void uxArticleInformationIssue_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			IndicateChanged();
-			Guid issueGuid;
-			if(!Guid.TryParse(uxArticleInformationIssue.SelectedValue.ToString(), out issueGuid))
-			{
-				return;
-			}
-			if(issueGuid == Guid.Empty) return;
-			var issueDate = SitecoreGetter.GetIssueDate(issueGuid);
-			if (issueDate <= DateTime.MinValue || issueDate >= DateTime.MaxValue) return;
-			SetPublicationTime(issueDate, false);
-		}
-
 		private void uxPublication_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			UpdateArticleCategories();
-			UpdateIssues();
 			UpdateAuthorsList();
 			IndicateChanged();
 		}
