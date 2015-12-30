@@ -153,6 +153,31 @@ namespace Informa.Web.Controllers
 		}
 	}
 
+	[Route]
+	public class GetMediaTypesController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetMediaTypesController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.ItemStruct>> Get()
+		{
+			var publicationRootChildren = GetChildrenWithIDs("{C00E39E4-3566-4307-93AE-8471769D6B36}");
+			//var fitlerPublicationIds = FilterPublicationItem.GetAll().Select(fp => fp.InnerItem.ID.Guid).ToList();
+			//var regularPublications = publicationRootChildren.Where(pub => !fitlerPublicationIds.Contains(pub.Value));
+			return Json(publicationRootChildren.Select(c => new WordPluginModel.ItemStruct() { Name = c.Key, ID = c.Value }).ToList());		
+		}
+		public Dictionary<string, Guid> GetChildrenWithIDs(string pathOrId)
+		{			
+			Item item = _sitecoreService.GetItem<Item>(pathOrId);
+			return item?.Children.ToArray().ToDictionary(child => child.DisplayName, child => child.ID.Guid);
+		}
+	}
+
+
+
 
 	[Route]
 	public class SupportingDocumentsNodeController : ApiController

@@ -128,13 +128,16 @@ namespace SitecoreTreeWalker.Sitecore
 			return sctree.GetPublications(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
 		}
 
-		public static List<ItemStruct> GetArticleCategories(Guid pubGuid)
+		public static List<ItemStruct> GetMediaTypes()
 		{
-			var sctree = new SCTree();
-
-			return sctree.GetArticleCategories(pubGuid, _sitecoreUser.Username, _sitecoreUser.Password).ToList();
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}GetMediaTypes").Result;
+				var mediaItem = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+				return mediaItem;
+			}
 		}
-
+		
 		public static List<ItemStruct> GetWebCategories(Guid pubGuid)
 		{
 			using (var sctree = new SCTree())

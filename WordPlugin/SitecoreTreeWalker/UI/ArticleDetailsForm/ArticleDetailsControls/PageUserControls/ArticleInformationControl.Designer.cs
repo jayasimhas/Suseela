@@ -47,7 +47,7 @@
 			this.uxSelectedAuthors = new SitecoreTreeWalker.UI.EasyRemoveListView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.uxMediaTypes = new System.Windows.Forms.ComboBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -252,13 +252,13 @@
 			this.label2.TabIndex = 47;
 			this.label2.Text = "Media Type (Optional) :";
 			// 
-			// comboBox1
+			// uxMediaTypes
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(142, 142);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(443, 21);
-			this.comboBox1.TabIndex = 78;
+			this.uxMediaTypes.FormattingEnabled = true;
+			this.uxMediaTypes.Location = new System.Drawing.Point(142, 142);
+			this.uxMediaTypes.Name = "uxMediaTypes";
+			this.uxMediaTypes.Size = new System.Drawing.Size(443, 21);
+			this.uxMediaTypes.TabIndex = 78;
 			// 
 			// textBox1
 			// 
@@ -274,7 +274,7 @@
 			this.groupBox2.Controls.Add(this.uxWebPublishTime);
 			this.groupBox2.Controls.Add(this.label4);
 			this.groupBox2.Controls.Add(this.label2);
-			this.groupBox2.Controls.Add(this.comboBox1);
+			this.groupBox2.Controls.Add(this.uxMediaTypes);
 			this.groupBox2.Controls.Add(this.textBox2);
 			this.groupBox2.Controls.Add(this.uxWebPublishDate);
 			this.groupBox2.Controls.Add(this.label7);
@@ -308,7 +308,7 @@
 			this.Controls.Add(this.label1);
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "ArticleInformationControl";
-			this.Size = new System.Drawing.Size(610, 616);
+			this.Size = new System.Drawing.Size(610, 536);
 			this.Load += new System.EventHandler(this.ArticleInformationControl_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
@@ -338,7 +338,7 @@
 		private System.Windows.Forms.CheckBox uxEmbargoed;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox uxMediaTypes;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;

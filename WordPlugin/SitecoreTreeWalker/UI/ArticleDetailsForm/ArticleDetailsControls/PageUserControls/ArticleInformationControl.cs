@@ -397,6 +397,15 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			uxPublication.ValueMember = "ID";
 		}
 
+		public void InitializeMediaType()
+		{
+			List<ItemStruct> mediaTypes = SitecoreGetter.GetMediaTypes();
+			mediaTypes.Insert(0, new ItemStruct { ID = Guid.Empty, Name = "Select Media Type" });
+			uxMediaTypes.DataSource = mediaTypes;
+			uxMediaTypes.DisplayMember = "Name";
+			uxMediaTypes.ValueMember = "ID";
+		}
+
 		public void LinkToParent(ArticleDetail parent)
 		{
 			_parent = parent;
@@ -537,6 +546,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			InitializePublications();
+			InitializeMediaType();
 			SetCheckedOutStatus();
 			if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
 			{
