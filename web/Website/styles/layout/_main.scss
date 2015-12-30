@@ -15,8 +15,9 @@ main {
 }
 
 .main__content {
-	max-width: 1200px;
+	max-width: 1240px;
 	margin: 0px auto;
+	padding: 0 20px;
 
 	@include breakpoint('medium') {
 		width: 100%;

@@ -1,0 +1,122 @@
+.article-left-rail {
+    max-width: 960px;
+}
+.article-author {
+    @include textMix("Roboto", 18px, 500);
+    background-color: $informa-light-gray-f;
+    border-top: 2px solid $informa-light-gray-d;
+    padding: 18px 12px;
+
+    // MULTIPLE AUTHORS
+
+    &:before {
+        display: block;
+        content: "Written by";
+        font-style: italic;
+        font-size: 16px;
+        color: $informa-mid-gray;
+        margin-bottom: 18px;
+    }
+
+    &__list li {
+        border-bottom: 1px solid $informa-light-gray-d;
+        padding: 12px 0;
+
+        &:last-child {
+            border: 0;
+        }
+    }
+
+    &__name {
+        width: 30%;
+    }
+
+    &__contact {
+        font-size: 15px;
+        font-weight: 400;
+
+        a:first-child {
+            position: relative;
+            margin-right: 18px;
+            padding-right: 18px;
+
+            &:after {
+                position: absolute;
+                content: "";
+                border-right: 1px solid $informa-light-gray-d;
+                height: 120%;
+                top: -10%;
+                width: 2px;
+                right: 0px;
+            }
+        }
+    }
+
+    // SINGLE AUTHOR
+
+    &--solo {
+        &:before {
+            display: none;
+        }
+    }
+    &__photo {
+        width: 100px;
+        vertical-align: middle;
+        margin-right: 18px;
+    }
+
+    &__solo-wrapper {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &--solo .article-author__name {
+        display: block;
+        width: 100%;
+
+        &:before {
+            display: inline;
+            content: "by ";
+        }
+    }
+    &--solo .article-author__contact {
+    }
+}
+
+.article-table {
+    width: 100%;
+    border: 1px solid $informa-light-gray-e;
+
+    tbody:nth-child(odd) {
+        background-color: $informa-light-gray-f;
+    }
+    th,
+    td {
+        text-align: left;
+        padding: 12px;
+    }
+    th,
+    tr {
+        border-bottom: 1px solid $informa-light-gray-e;
+    }
+    th {
+        @include textMix('Roboto', 16px, 500);
+        background-color: $informa-light-gray-f;
+    }
+    thead th {
+        background-color: $informa-dark-gray;
+        color: $informa-light-gray-f;
+        border: 0;
+    }
+    td {
+        font-size: 14px;
+
+        &:first-child {
+            font-weight: 900;
+        }
+    }
+
+    &__rowspan {
+        border-right: 1px solid $informa-light-gray-e;
+    }
+
+}

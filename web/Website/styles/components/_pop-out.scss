@@ -35,12 +35,12 @@
         @include textMix('Roboto', 14px, 400);
         background-color: #f1f2f2;
         border: 1px solid #d1d3d4;
-        left: calc(50% - 150px);
-        padding: 20px;
+        left: calc(50% - 190px);
+        padding: 20px 24px 12px;
         position: absolute;
         text-transform: none;
         top: calc(100% + 46px);
-        width: 300px;
+        width: 380px;
         z-index: 8;
 
         &--wide {
@@ -58,14 +58,8 @@
             right: auto;
         }
 
-        h3 {
-            margin: 0;
-            display: inline;
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        input, textarea {
+        input:not([type="checkbox"]),
+        textarea {
             width: 100%;
             margin-bottom: 12px;
             border: 1px solid $informa-light-gray-d;
@@ -73,20 +67,56 @@
         textarea {
             min-height: 150px;
         }
-
-        .button--pumpkin {
-            float: right;
-        }
     }
 
     &__header {
         margin: 0 0 24px;
     }
 
+    &__run-in {
+        @include textMix('Roboto', 18px, 500);
+    }
+
+    &__form-error {
+        display: none;
+        font-style: italic;
+        color: $informa-red;
+        margin-bottom: 24px;
+    }
+
     &__details {
         color: $informa-mid-gray;
-        font-style: italic;
         line-height: 1.25rem;
         clear: both;
+
+        &--inset {
+            padding: 0 18px;
+        }
+    }
+
+    // Bottom section of pop-out form, below input fields
+    // Organizes common actions like "Forgot Password", "Remember Me", etc.
+    &__form-actions {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 12px;
+
+        &-wrapper {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        &--remember-me {
+            color: $informa-dark-gray;
+            margin-top: 12px;
+        }
+    }
+
+    &__forgot-password {
+        border-top: 1px solid $informa-light-gray-d;
+        margin-top: 24px;
+        padding-top: 24px;
     }
 }
