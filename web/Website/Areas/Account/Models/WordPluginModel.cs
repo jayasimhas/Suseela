@@ -224,5 +224,10 @@ namespace Informa.Web.Areas.Account.Models
 				}
 			}
 		}
+		public struct ItemStruct
+		{
+			public string Name { get; set; }
+			public Guid ID { get; set; }
+		}
 	}
 }
