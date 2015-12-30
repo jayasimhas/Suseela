@@ -25,11 +25,12 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.PrintPublicationDate = articleStruct.PrintPublicationDate;
 			articleDetails.NotesToEditorial = articleStruct.NotesToEditorial;
 			articleDetails.NotesToProduction = articleStruct.NotesToProduction;
-			articleDetails.Geography = articleStruct.Geography.Select(t =>
+			articleDetails.taxonomyField = articleStruct.Taxonomy.Select(t =>
 				new TaxonomyStruct
 				{
 					Name = t.Name,
-					ID = t.ID
+					ID = t.ID,
+					Section = t.Section
 				}).ToArray();
 
 			articleDetails.Title = articleStruct.Title;

@@ -120,7 +120,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
 								/// <summary>
 					/// The Sort Order field.
@@ -401,6 +401,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IArticleConstants.Supporting_DocumentsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Supporting_Documents  {get; set;}
+								/// <summary>
+					/// The Taxonomy field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 0212fc0f-953b-461c-b4d9-b7483a4d4f1b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.TaxonomiesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Taxonomies  {get; set;}
 				}
 
 	
@@ -411,7 +420,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
 										/// <summary>
 						/// The Sort Order field.
@@ -692,6 +701,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IArticleConstants.Supporting_DocumentsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Supporting_Documents  {get; set;}
+										/// <summary>
+						/// The Taxonomy field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 0212fc0f-953b-461c-b4d9-b7483a4d4f1b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.TaxonomiesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Taxonomies  {get; set;}
 						}
 	
 	public static partial class IArticleConstants{
@@ -860,6 +878,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -899,11 +922,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
 			public const string TitleFieldName = "Title";
-
-						
-					
-			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
-			public const string TaxonomyFieldName = "Taxonomy";
 
 						
 			
@@ -1309,6 +1327,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 			public const string TitleFieldName = "Title";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
+{
+
+
+ 	/// <summary>
+	/// ITaxonomy_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Folders/Taxonomy Folder</para>	
+	/// <para>ID: 93b32253-7548-4ae4-8be8-5f015bde124b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITaxonomy_FolderConstants.TemplateIdString)]
+	public partial interface ITaxonomy_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	{
+				}
+
+	
+		/// <summary>
+		/// ITaxonomy_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Folders/Taxonomy Folder</para>	
+		/// <para>ID: 93b32253-7548-4ae4-8be8-5f015bde124b</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ITaxonomy_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		{
+						}
+	
+	public static partial class ITaxonomy_FolderConstants{
+
+			public const string TemplateIdString = "93b32253-7548-4ae4-8be8-5f015bde124b";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Taxonomy Folder";
+
 			
 
 	}
@@ -1836,67 +1892,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Layout.Section
 					
 			public static readonly ID VaryByUserFieldId = new ID("0e54a8dc-72ad-4372-a7c7-bb4773fad44d");
 			public const string VaryByUserFieldName = "VaryByUser";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
-{
-
-
- 	/// <summary>
-	/// I_BaseTaxonomy Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
-	/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=I_BaseTaxonomyConstants.TemplateIdString)]
-	public partial interface I_BaseTaxonomy : IGlassBase 
-	{
-								/// <summary>
-					/// The Taxonomy field.
-					/// <para></para>
-					/// <para>Field Type: tree list</para>		
-					/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Taxonomy  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// I_BaseTaxonomy Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
-		/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface I_BaseTaxonomy__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Taxonomy field.
-						/// <para></para>
-						/// <para>Field Type: tree list</para>		
-						/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Taxonomy  {get; set;}
-						}
-	
-	public static partial class I_BaseTaxonomyConstants{
-
-			public const string TemplateIdString = "eed18b44-4005-4f15-9b18-d7c2d2cac0ec";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "_BaseTaxonomy";
-
-					
-			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
-			public const string TaxonomyFieldName = "Taxonomy";
 
 						
 			
