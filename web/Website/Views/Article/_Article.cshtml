@@ -1,97 +1,251 @@
-<div class="article-prologue">
-    <div class="article-prologue__share-bar">
-        <ul>
-            <li class="article-prologue__share-item pop-out__trigger is-active">
-                <span class="pop-out__trigger-content">
-                    Email
-                    <svg class="article-prologue__share-icon">
-        				<use xlink:href="/dist/img/svg-sprite.svg#email"></use>
-        			</svg>
-                </span>
-                <div class="pop-out">
-                    <div class="pop-out__internal pop-out__internal--flush-left pop-out__internal--wide">
+<div class="article-left-rail">
+    <div class="article-prologue">
+        <div class="article-prologue__share-bar">
+            <ul>
+                <li class="article-prologue__share-item pop-out__trigger">
+                    <span class="pop-out__trigger-content">
+                        Email
+                        <svg class="article-prologue__share-icon">
+            				<use xlink:href="/dist/img/svg-sprite.svg#email"></use>
+            			</svg>
+                    </span>
+                    <div class="pop-out">
+                        <div class="pop-out__internal pop-out__internal--flush-left pop-out__internal--wide">
 
-                        <div class="dismiss-button">
-                            <svg class="dismiss-button__icon">
+                            <div class="dismiss-button">
+                                <svg class="dismiss-button__icon">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                                </svg>
+                            </div>
+
+                            <h4 class="pop-out__header">
+                                Email Article
+                            </h4>
+
+                            <p class="pop-out__details">
+                                All fields are required. For multiple recipients, separate email addresses with a semicolon.
+                            </p>
+                            <input class="inf-standard-form-field"
+                                   type="text"
+                                   placeholder="Recipient Email Address">
+                            <input class="inf-standard-form-field"
+                                   type="text"
+                                   placeholder="Your Name">
+                            <input class="inf-standard-form-field"
+                                   type="text"
+                                   placeholder="Your Email">
+                            <p><span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches</p>
+                            <p><span class="pop-out__run-in">Add a personalized message to your email</span></p>
+                            <textarea class="text-field"></textarea>
+                            <div class="pop-out__form-actions-wrapper">
+                                <div>
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="sign-in__submit-wrapper">
+                                    <button class="button--pumpkin sign-in__submit">Send</button>
+                                </div>
+                            </div>
+                            <p class="pop-out__details u-italic">
+                                <b>Please Note:</b> Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="article-prologue__share-item">
+                    Print
+                    <svg class="article-prologue__share-icon">
+        				<use xlink:href="/dist/img/svg-sprite.svg#print"></use>
+        			</svg>
+                </li>
+                <li class="article-prologue__share-item pop-out__trigger">
+                    <span class="pop-out__trigger-content">
+                        Bookmark
+                        @* IF NOT BOOKMARKED
+                        <svg class="article-prologue__share-icon">
+            				<use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+            			</svg>
+
+                        * IF BOOKMARKED *@
+                        <svg class="article-prologue__share-icon">
+            				<use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+            			</svg>
+
+                    </span>
+                    <div class="pop-out">
+                        <div class="pop-out__internal">
+                            <svg class="header__icons header__icons--x">
                                 <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
                             </svg>
+                            <h4 class="pop-out__header">
+                                You must sign in to use this functionality
+                            </h4>
+                            @Html.Partial("_SignInForm")
                         </div>
-
-                        <h2 class="pop-out__header">
-                            Email Article
-                        </h2>
-
-                        <p class="pop-out__details">
-                            All fields are required. For multiple recipients, separate email addresses with a semicolon.
-                        </p>
-                        <input class="text-field header__hover-input"
-                               type="text"
-                               placeholder="Recipient Email Address">
-                        <input class="text-field header__hover-input"
-                               type="text"
-                               placeholder="Your Name">
-                        <input class="text-field header__hover-input"
-                               type="text"
-                               placeholder="Your Email">
-                        <p><h3>Subject:</h3> 1st U.S. Biosimilar Arrives: Zarxio Launches</p>
-                        <p><h3>Add a personalized message to your email</h3></p>
-                        <textarea class="text-field"></textarea>
-                        <button class="button--pumpkin">Send</button>
-                        <a href="#">Cancel</a>
-                        <p class="pop-out__details">
-                            Please Note: Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
-                        </p>
                     </div>
-                </div>
-            </li>
-            <li class="article-prologue__share-item">
-                Print
-                <svg class="article-prologue__share-icon">
-    				<use xlink:href="/dist/img/svg-sprite.svg#print"></use>
-    			</svg>
-            </li>
-            <li class="article-prologue__share-item pop-out__trigger">
-                <span class="pop-out__trigger-content">
-                    Bookmark
+                </li>
+                <li class="article-prologue__share-item">
+                    Share
                     <svg class="article-prologue__share-icon">
-        				<use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+        				<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
         			</svg>
+                    <svg class="article-prologue__share-icon">
+        				<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+        			</svg>
+                </li>
+            </ul>
+        </div>
+
+        <div class="article-prologue__tags-bar">
+            Tags:
+            <ul class="article-prologue__tags">
+                <li><a href="#">USA</a></li>
+                <li><a href="#">Sandoz</a></li>
+                <li><a href="#">Biosimilars</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="article-author">
+        <ul class="article-author__list">
+            <li>
+                <span class="article-author__name">Donna Young</span>
+                <span class="article-author__contact">
+                    <a href="#">&#64;DonnaYoung</a>
+                    <a href="#">donnayoung&#64;emaildomain.com</a>
                 </span>
-                <div class="pop-out">
-                    <div class="pop-out__internal pop-out__internal">
-                        <svg class="header__icons header__icons--x">
-                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                        </svg>
-                        <h2>Email Article</h2>
-                        <input class="text-field header__hover-input"
-                               type="text"
-                               placeholder="Email Address (User Name)">
-                        <input class="text-field header__hover-input"
-                               type="password"
-                               placeholder="Password">
-                        <a href="#">Forgot your password?</a>
-                        <button class="button--pumpkin">Sign In</button>
-                    </div>
-                </div>
             </li>
-            <li class="article-prologue__share-item">
-                Share
-                <svg class="article-prologue__share-icon">
-    				<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
-    			</svg>
-                <svg class="article-prologue__share-icon">
-    				<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
-    			</svg>
+            <li>
+                <span class="article-author__name">Donna Young</span>
+                <span class="article-author__contact">
+                    <a href="#">&#64;DonnaYoung</a>
+                    <a href="#">donnayoung&#64;emaildomain.com</a>
+                </span>
+            </li>
+            <li>
+                <span class="article-author__name">Donna Young</span>
+                <span class="article-author__contact">
+                    <a href="#">&#64;DonnaYoung</a>
+                    <a href="#">donnayoung&#64;emaildomain.com</a>
+                </span>
             </li>
         </ul>
     </div>
 
-    <div class="article-prologue__tags-bar">
-        Tags:
-        <ul class="article-prologue__tags">
-            <li><a href="#">USA</a></li>
-            <li><a href="#">Sandoz</a></li>
-            <li><a href="#">Biosimilars</a></li>
+    <table class="article-table">
+        <thead>
+            <tr>
+                <th>Column Header</th>
+                <th>Column Header</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="2">Row Section Header</th>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <th colspan="2">Row Section Header</th>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="article-table article-table--zebra">
+        <thead>
+            <tr>
+                <th>Column Header</th>
+                <th>Col Hdr</th>
+                <th>Col Hdr</th>
+                <th>Col Hdr</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="article-table__rowspan" rowspan="4">Lorem ipsum blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td class="article-table__rowspan" rowspan="4">Lorem ipsum blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td class="article-table__rowspan" rowspan="4">Lorem ipsum blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum blah blah blah</td>
+                <td>Blah blah blah blah</td>
+                <td>Blah blah blah blah</td>
+            </tr>
+        </tbody>
+    </table>
+
+    @* SINGLE AUTHOR
+    <div class="article-author article-author--solo">
+        <ul class="article-author__list article-author__list">
+            <li>
+                <img src="http://placehold.it/200x200" class="article-author__photo">
+                <div class="article-author__solo-wrapper">
+                    <span class="article-author__name">Donna Young</span>
+                    <span class="article-author__contact">
+                        <a href="#">&#64;DonnaYoung</a>
+                        <a href="#">donnayoung&#64;emaildomain.com</a>
+                    </span>
+                </div>
+            </li>
         </ul>
     </div>
+
+    @* END SINGLE AUTHOR *@
 </div>
