@@ -236,20 +236,6 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-		private void uxViewFullSize_Click(object sender, System.EventArgs e)
-		{
-			var path = uxBrowseImages.SelectedNode.Tag as SitecorePath;
-			if (path == null) return;
-			try
-			{
-				Process.Start(SitecoreGetter.MediaPreviewUrl(path.Path));
-			}
-			catch (WebException)
-			{
-				Globals.SitecoreAddin.AlertConnectionFailure();
-			}
-		}
-
 		private void uxRefresh_Click(object sender, System.EventArgs e)
 		{
 			ReloadItems();
