@@ -111,28 +111,16 @@
 
     <div class="article-author">
         <ul class="article-author__list">
-            @foreach(var author in TestData.)
-            <li>
-                <span class="article-author__name">Donna Young</span>
-                <span class="article-author__contact">
-                    <a href="#">&#64;DonnaYoung</a>
-                    <a href="#">donnayoung&#64;emaildomain.com</a>
-                </span>
-            </li>
-            <li>
-                <span class="article-author__name">Donna Young</span>
-                <span class="article-author__contact">
-                    <a href="#">&#64;DonnaYoung</a>
-                    <a href="#">donnayoung&#64;emaildomain.com</a>
-                </span>
-            </li>
-            <li>
-                <span class="article-author__name">Donna Young</span>
-                <span class="article-author__contact">
-                    <a href="#">&#64;DonnaYoung</a>
-                    <a href="#">donnayoung&#64;emaildomain.com</a>
-                </span>
-            </li>
+            @foreach (var author in Enumerable.Range(0, 3))
+            {
+                <li>
+                    <span class="article-author__name">Donna Young</span>
+                    <span class="article-author__contact">
+                        <a href="#">&#64;DonnaYoung</a>
+                        <a href="#">donnayoung&#64;emaildomain.com</a>
+                    </span>
+                </li>
+            } 
         </ul>
     </div>
 
