@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Glass.Mapper.Sc.Fields;
+using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface;
 using Informa.Web.Areas.Account.Models;
 using Sitecore.Mvc.Extensions;
 
@@ -21,19 +23,67 @@ namespace Informa.Web.TestData
 
         public static string TestRichText(this WebViewPage page)
         {
-            return Employees.Aggregate((s, s1) => s.Append(s1, ','));
+            return _employees.Aggregate((s, s1) => s.Append(s1, ','));
         }
 
         public static string TestSingleLineText(this WebViewPage page)
         {
             return GetRandomEmployee();
+        }                     
+
+        public static Guid GetRandomTopics()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static string GetRandomTitle()
+        {
+            int index = rnd.Next(_employees.Count);
+
+            return _employees[index];
+        }
+
+        public static string GetRandomEmployee()
+        {
+            int index = rnd.Next(_employees.Count);
+
+            return _employees[index];
+        }
+
+        public static string GetRandomSummary()
+        {
+            throw new NotImplementedException();
         }
 
 
-        public static LoginViewModel LoginModel => new LoginViewModel();
+        public static LoginViewModel LoginModel => new LoginViewModel();    
+
+        public static ListableModel Article => new ListableModel
+        {
+            ListableAuthor = null,
+            ListableDate = DateTime.Now,
+            ListableImage = new Image(),
+            ListableTitle = GetRandomTitle(),
+            ListableTopics = GetRandomTopics(),
+            ListableUrl = new Link { Anchor = "#", Text = "Text", Title = "Title" },
+            ListableSummary = GetRandomSummary()
+        };
+
+   
+
+        public static List<string> _articleTitles => new List<string>
+        {
+            "Stockwatch: Big Pharma And big Biotech Are The New Black",
+            "1st U.S. Biosimilar Arrives; Zarcio Launches"
+        };
+
+        public static List<string> _summaries => new List<string>
+        {
+            "Amgen fails to keep Novartis unit Sandoz from launching its biosimilar Zarxio. Novartis talks to SCRIP about pricing."
+        }; 
 
         static Random rnd = new Random();
-        public static List<string> Employees => new List<string>
+        public static List<string> _employees => new List<string>
         {
             "Aakash Shah",
             "Aaron Fredette",
@@ -182,13 +232,6 @@ namespace Informa.Web.TestData
             "Vlad Ivashin",
             "Yehia Ibrahim",
             "Yogi Shridhare"
-        };
-
-        public static string GetRandomEmployee()
-        {
-            int index = rnd.Next(Employees.Count);      
-
-            return Employees[index];
-        }
+        };     
     }
 }

@@ -1,5 +1,7 @@
 @using Informa.Web.TestData
-@* <div class="article-left-rail">
+@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
+ <div class="article-left-rail">
     <div class="article-prologue">
         <div class="article-prologue__share-bar">
             <ul>
@@ -7,8 +9,8 @@
                     <span class="pop-out__trigger-content">
                         Email
                         <svg class="article-prologue__share-icon">
-            				<use xlink:href="/dist/img/svg-sprite.svg#email"></use>
-            			</svg>
+                            <use xlink:href="/dist/img/svg-sprite.svg#email"></use>
+                        </svg>
                     </span>
                     <div class="pop-out">
                         <div class="pop-out__internal pop-out__internal--flush-left pop-out__internal--wide">
@@ -55,21 +57,21 @@
                 <li class="article-prologue__share-item">
                     Print
                     <svg class="article-prologue__share-icon">
-        				<use xlink:href="/dist/img/svg-sprite.svg#print"></use>
-        			</svg>
+                        <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
+                    </svg>
                 </li>
                 <li class="article-prologue__share-item pop-out__trigger">
                     <span class="pop-out__trigger-content">
                         Bookmark
-                        @* IF NOT BOOKMARKED
+                        @* IF NOT BOOKMARKED *@
                         <svg class="article-prologue__share-icon">
-            				<use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-            			</svg>
+                            <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                        </svg>
 
                         * IF BOOKMARKED *
                         <svg class="article-prologue__share-icon">
-            				<use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-            			</svg>
+                            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                        </svg>
 
                     </span>
                     <div class="pop-out">
@@ -87,11 +89,11 @@
                 <li class="article-prologue__share-item">
                     Share
                     <svg class="article-prologue__share-icon">
-        				<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
-        			</svg>
+                        <use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
+                    </svg>
                     <svg class="article-prologue__share-icon">
-        				<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
-        			</svg>
+                        <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+                    </svg>
                 </li>
             </ul>
         </div>
@@ -99,15 +101,17 @@
         <div class="article-prologue__tags-bar">
             Tags:
             <ul class="article-tags">
-            <li><a href="#">@TestData.GetRandomEmployee()</a></li>
-            <li><a href="#">@TestData.GetRandomEmployee()</a></li>
-            <li><a href="#">@TestData.GetRandomEmployee()</a></li>
+                @foreach (var i in Enumerable.Range(0, 2))
+                {
+                    <li><a href="#">@TestData.GetRandomEmployee()</a></li>
+                }
             </ul>
         </div>
     </div>
 
     <div class="article-author">
         <ul class="article-author__list">
+            @foreach(var author in TestData.)
             <li>
                 <span class="article-author__name">Donna Young</span>
                 <span class="article-author__contact">
@@ -232,7 +236,7 @@
         </tbody>
     </table>
 
-    @* SINGLE AUTHOR
+    @* SINGLE AUTHOR          *@
     <div class="article-author article-author--solo">
         <ul class="article-author__list article-author__list">
             <li>
@@ -248,5 +252,5 @@
         </ul>
     </div>
 
-    @* END SINGLE AUTHOR *
-</div> *@
+    @* END SINGLE AUTHOR *@
+</div> 

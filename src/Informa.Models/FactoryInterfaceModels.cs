@@ -202,6 +202,8 @@ namespace Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
 					/// </summary>
 					
 					public virtual Link ListableUrl  {get; set;}
+
+        public virtual string ListableSummary { get; set; }
 						
 	}
 
