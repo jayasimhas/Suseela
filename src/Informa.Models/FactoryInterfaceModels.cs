@@ -29,6 +29,7 @@ using System.Text;
 using Sitecore.Globalization;
 using Sitecore.Data;
 using Informa.Models.InterfaceFactory;
+using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 
 
@@ -94,43 +95,43 @@ namespace Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=IGlassBase</para>
 					/// </summary>
 					
-					Guid ListableAuthor  {get;}
+					IGlassBase ListableAuthor  {get;}
 								/// <summary>
 					/// The ListableDate field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=DateTime?</para>
 					/// </summary>
 					
-					Guid ListableDate  {get;}
+					DateTime? ListableDate  {get;}
 								/// <summary>
 					/// The ListableImage field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=Image</para>
 					/// </summary>
 					
-					Guid ListableImage  {get;}
+					Image ListableImage  {get;}
 								/// <summary>
 					/// The ListableTitle field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=string</para>
 					/// </summary>
 					
-					Guid ListableTitle  {get;}
+					string ListableTitle  {get;}
 								/// <summary>
 					/// The ListableTopics field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=ITaxonomy</para>
 					/// </summary>
 					
 					Guid ListableTopics  {get;}
@@ -139,10 +140,10 @@ namespace Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=Link</para>
 					/// </summary>
 					
-					Guid ListableUrl  {get;}
+					Link ListableUrl  {get;}
 				}
 						 
 	public partial class ListableModel : IListable{
@@ -152,43 +153,43 @@ namespace Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=IGlassBase</para>
 					/// </summary>
 					
-					public virtual Guid ListableAuthor  {get; set;}
+					public virtual IGlassBase ListableAuthor  {get; set;}
 								/// <summary>
 					/// The ListableDate field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=DateTime?</para>
 					/// </summary>
 					
-					public virtual Guid ListableDate  {get; set;}
+					public virtual DateTime? ListableDate  {get; set;}
 								/// <summary>
 					/// The ListableImage field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=Image</para>
 					/// </summary>
 					
-					public virtual Guid ListableImage  {get; set;}
+					public virtual Image ListableImage  {get; set;}
 								/// <summary>
 					/// The ListableTitle field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=string</para>
 					/// </summary>
 					
-					public virtual Guid ListableTitle  {get; set;}
+					public virtual string ListableTitle  {get; set;}
 								/// <summary>
 					/// The ListableTopics field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=ITaxonomy</para>
 					/// </summary>
 					
 					public virtual Guid ListableTopics  {get; set;}
@@ -197,10 +198,10 @@ namespace Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=Link</para>
 					/// </summary>
 					
-					public virtual Guid ListableUrl  {get; set;}
+					public virtual Link ListableUrl  {get; set;}
 						
 	}
 
@@ -211,17 +212,59 @@ namespace Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
             Map(
                 x => x.AutoMap()
 				,
-				x =>  x.Delegate(y =>  y.ListableAuthor).GetValue((context) => context.Item[context.Item.Fields["ListableAuthor"]?.Value])							                
+				x =>  x.Delegate(y =>  y.ListableAuthor).GetValue((context) => 
+				{
+					if(!string.IsNullOrEmpty(context.Item.Fields["ListableAuthor"].Value)){
+						return context.Item[context.Item.Fields["ListableAuthor"]?.Value];
+					}					                
+
+					return null;
+				})
 				,
-				x =>  x.Delegate(y =>  y.ListableDate).GetValue((context) => context.Item[context.Item.Fields["ListableDate"]?.Value])							                
+				x =>  x.Delegate(y =>  y.ListableDate).GetValue((context) => 
+				{
+					if(!string.IsNullOrEmpty(context.Item.Fields["ListableDate"].Value)){
+						return context.Item[context.Item.Fields["ListableDate"]?.Value];
+					}					                
+
+					return null;
+				})
 				,
-				x =>  x.Delegate(y =>  y.ListableImage).GetValue((context) => context.Item[context.Item.Fields["ListableImage"]?.Value])							                
+				x =>  x.Delegate(y =>  y.ListableImage).GetValue((context) => 
+				{
+					if(!string.IsNullOrEmpty(context.Item.Fields["ListableImage"].Value)){
+						return context.Item[context.Item.Fields["ListableImage"]?.Value];
+					}					                
+
+					return null;
+				})
 				,
-				x =>  x.Delegate(y =>  y.ListableTitle).GetValue((context) => context.Item[context.Item.Fields["ListableTitle"]?.Value])							                
+				x =>  x.Delegate(y =>  y.ListableTitle).GetValue((context) => 
+				{
+					if(!string.IsNullOrEmpty(context.Item.Fields["ListableTitle"].Value)){
+						return context.Item[context.Item.Fields["ListableTitle"]?.Value];
+					}					                
+
+					return null;
+				})
 				,
-				x =>  x.Delegate(y =>  y.ListableTopics).GetValue((context) => context.Item[context.Item.Fields["ListableTopics"]?.Value])							                
+				x =>  x.Delegate(y =>  y.ListableTopics).GetValue((context) => 
+				{
+					if(!string.IsNullOrEmpty(context.Item.Fields["ListableTopics"].Value)){
+						return context.Item[context.Item.Fields["ListableTopics"]?.Value];
+					}					                
+
+					return null;
+				})
 				,
-				x =>  x.Delegate(y =>  y.ListableUrl).GetValue((context) => context.Item[context.Item.Fields["ListableUrl"]?.Value])							                
+				x =>  x.Delegate(y =>  y.ListableUrl).GetValue((context) => 
+				{
+					if(!string.IsNullOrEmpty(context.Item.Fields["ListableUrl"].Value)){
+						return context.Item[context.Item.Fields["ListableUrl"]?.Value];
+					}					                
+
+					return null;
+				})
 				                );
         }
     }

@@ -100,7 +100,14 @@ namespace <#= GetNamespace(DefaultNamespace, template)#>
             Map(
                 x => x.AutoMap()
 				<#foreach(SitecoreField field in Distinct(GetFieldsForTemplate(template, false), (x, y) => GetPropertyName(x) == GetPropertyName(y))){#>,
-				x =>  x.Delegate(y =>  y.<#= GetPropertyName(field) #>).GetValue((context) => context.Item[context.Item.Fields["<#= GetPropertyName(field) #>"]?.Value])							                
+				x =>  x.Delegate(y =>  y.<#= GetPropertyName(field) #>).GetValue((context) => 
+				{
+					if(!string.IsNullOrEmpty(context.Item.Fields["<#= GetPropertyName(field) #>"].Value)){
+						return context.Item[context.Item.Fields["<#= GetPropertyName(field) #>"]?.Value];
+					}					                
+
+					return null;
+				})
 				<#}#>
                 );
         }

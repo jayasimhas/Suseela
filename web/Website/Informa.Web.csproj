@@ -906,6 +906,13 @@
     <Content Include="Views\Shared\Global\ContentListItem.cshtml" />
     <Content Include="Views\Shared\_ArticlePreview.cshtml" />
     <Content Include="Views\Article\_Article.cshtml" />
+    <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
+    <Content Include="Views\FrontendWrappers\ArticleWrapper - Copy.cshtml" />
+    <Content Include="Views\FrontendWrappers\HomeWrapper.cshtml" />
+    <Content Include="Views\Shared\_SignInForm.cshtml" />
+    <Content Include="Views\Structure\TwoColumnContent.cshtml" />
+    <Content Include="Views\Structure\SingleColumnContent.cshtml" />
+    <Content Include="Views\Structure\MainContentWrapper.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

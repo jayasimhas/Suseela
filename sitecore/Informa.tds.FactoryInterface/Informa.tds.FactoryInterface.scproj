@@ -101,26 +101,32 @@
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableAuthor.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=IGlassBase</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableDate.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=DateTime?</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableImage.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=Image</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableTitle.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=string</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableTopics.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>generic=ITaxonomy</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableUrl.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=Link</CodeGenData>
     </SitecoreItem>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />

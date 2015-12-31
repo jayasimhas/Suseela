@@ -40,6 +40,7 @@ using System.Text;
 using Sitecore.Globalization;
 using Sitecore.Data;
 using Informa.Models.InterfaceFactory;
+using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 
 <#
