@@ -1,25 +1,32 @@
 ----item----
 version: 1
-id: {BEA6CA75-B54B-40BB-9DAB-B130BD5C9645}
+id: {1460F117-C1C2-45EF-884A-9520FB3A7FDB}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Debug
-parent: {997A3064-65F5-45CD-B32F-9EC61E90A610}
-name: Debug
+path: /sitecore/layout/Renderings/UserDefined/Globals/Logout
+parent: {17FB15BC-6DD7-4D86-8A9F-6CA96F567BF0}
+name: Logout
 master: {00000000-0000-0000-0000-000000000000}
-template: {E269FBB5-3750-427A-9149-7AA950B49301}
-templatekey: Template section
+template: {2A3E91A0-7987-44B5-AB34-35C2D9DE83B9}
+templatekey: Controller rendering
 
 ----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 3
+field: {E64AD073-DFCC-4D20-8C0B-FE5AA6226CD7}
+name: Controller
+key: controller
+content-length: 7
 
-900
+Account
+----field----
+field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
+name: Controller Action
+key: controller action
+content-length: 6
+
+Logout
 ----version----
 language: en
 version: 1
-revision: d583a03f-af07-4c40-8c08-fea0a410d0c2
+revision: 52d16ac0-ad6b-415a-85eb-ecf6b81d95eb
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,28 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20151230T192310Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20151212T001611Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-d583a03f-af07-4c40-8c08-fea0a410d0c2
+52d16ac0-ad6b-415a-85eb-ecf6b81d95eb
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151230T192310Z
+20151230T194107Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
