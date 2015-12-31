@@ -1,5 +1,4 @@
 .article-preview {
-    margin: 0 auto;
     width: 787px;
     position: relative;
     padding-bottom: 48px;
@@ -15,10 +14,18 @@
 
     &__date,
     &__category,
-    &__graphicon {
+    &__icon {
         display: inline-block;
         position: relative;
         margin-right: 12px;
+    }
+
+    &__icon {
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        vertical-align: bottom;
+        fill: $informa-mid-gray;
     }
 
     &__bookmarker {
@@ -113,6 +120,7 @@
     // Makes this element the source for absolutely positioning children elms
     position: relative;
     width: 100%;
+    clear: both;
 
     .article-preview {
         margin: 0;
