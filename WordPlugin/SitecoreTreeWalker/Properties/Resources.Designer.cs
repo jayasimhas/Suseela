@@ -301,6 +301,34 @@ namespace SitecoreTreeWalker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input is invalid or not permitted.
+        ///Please make sure you have provided valid HTML with no script, style, or link tags..
+        /// </summary>
+        internal static string IFrameControl_uxInsertIFrame_Click_DesktopEmbedd {
+            get {
+                return ResourceManager.GetString("IFrameControl_uxInsertIFrame_Click_DesktopEmbedd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multimedia content used is not secure. Please click on the Suggest Secure URL button to fix..
+        /// </summary>
+        internal static string IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia {
+            get {
+                return ResourceManager.GetString("IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multimedia content is either missing, invalid or not secure. Please click &apos;OK&apos; to see instructions on how to correct this in red..
+        /// </summary>
+        internal static string IFrameControl_uxInsertIFrame_Click_Multimedia_Error {
+            get {
+                return ResourceManager.GetString("IFrameControl_uxInsertIFrame_Click_Multimedia_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap imformaVideoPlaceholder2 {

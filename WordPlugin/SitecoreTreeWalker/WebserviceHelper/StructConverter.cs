@@ -9,9 +9,6 @@ namespace SitecoreTreeWalker.WebserviceHelper
 		{
 			var articleDetails = new ArticleStruct();
 			articleDetails.Publication = articleStruct.Publication;
-			articleDetails.Issue = articleStruct.Issue;
-			articleDetails.ArticleCategory = articleStruct.ArticleCategory;
-		    articleDetails.WebCategory = articleStruct.WebCategory;
 			articleDetails.ArticleNumber = articleStruct.ArticleNumber;
 			articleDetails.Authors = articleStruct.Authors.Select(r =>
 					new StaffStruct
@@ -25,31 +22,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.PrintPublicationDate = articleStruct.PrintPublicationDate;
 			articleDetails.NotesToEditorial = articleStruct.NotesToEditorial;
 			articleDetails.NotesToProduction = articleStruct.NotesToProduction;
-			articleDetails.Geography = articleStruct.Geography.Select(t =>
-				new TaxonomyStruct
-				{
-					Name = t.Name,
-					ID = t.ID
-				}).ToArray();
-			articleDetails.Industries = articleStruct.Industries.Select(t =>
-				new TaxonomyStruct
-				{
-					Name = t.Name,
-					ID = t.ID
-				}).ToArray();
-			articleDetails.Subjects = articleStruct.Subjects.Select(t =>
-				new TaxonomyStruct
-				{
-					Name = t.Name,
-					ID = t.ID
-				}).ToArray();
-			articleDetails.MarketSegments = articleStruct.MarketSegments.Select(t =>
-				new TaxonomyStruct
-				{
-					Name = t.Name,
-					ID = t.ID
-				}).ToArray();
-
+			//articleDetails.taxonomyField = articleStruct.Taxonomy.Select(t => new TaxonomyStruct { Name = t.Name,ID = t.ID,Section = t.Section}).ToArray();
 			articleDetails.Title = articleStruct.Title;
 			articleDetails.Volume = articleStruct.Volume;
 			articleDetails.IsTopStory = articleStruct.IsTopStory;
@@ -63,8 +36,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.CommandID = articleStruct.CommandID;
 			articleDetails.WordCount = articleStruct.WordCount;
 			articleDetails.SupportingDocumentPaths = articleStruct.SupportingDocumentPaths;
-			//articleDetails.PotentialCompanyNames = articleStruct.PotentialCompanyNames;
-			articleDetails.ChildArticles = articleStruct.ChildArticles;		
+			articleDetails.ChildArticles = articleStruct.ChildArticles;
 
 			articleDetails.ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.Select
 				(

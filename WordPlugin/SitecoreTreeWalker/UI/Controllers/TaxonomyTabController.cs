@@ -33,7 +33,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 
 		public bool TreeFlag;
 		public bool HasChanged;
-		
+
 
 		public static int GrayPlusImageIndex = 1;
 		public static int PlusImageIndex; //=0
@@ -68,7 +68,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 			Results = results;
 			ResultsTree = resultsTree;
 			Selected = selected;
-			
+
 			Up = up;
 			Down = down;
 
@@ -118,12 +118,12 @@ namespace SitecoreTreeWalker.UI.Controllers
 		public TaxonomyStruct[] GetSelected()
 		{
 
-			return SelectedList.Select(t => new SitecoreTree.TaxonomyStruct { ID = t.ID, Name = t.Name ,Section = t.Section }).ToArray();
+			return SelectedList.Select(t => new SitecoreTree.TaxonomyStruct { ID = t.ID, Name = t.Name, Section = t.Section }).ToArray();
 		}
 
 		private void AddEventHandlers()
 		{
-			ViewTreeLink.LinkClicked += 
+			ViewTreeLink.LinkClicked +=
 				delegate
 					{
 						PopulateResultsTree();
@@ -131,13 +131,13 @@ namespace SitecoreTreeWalker.UI.Controllers
 					};
 			ViewSearchLink.LinkClicked += delegate { ViewSearchResults(); };
 			Results.MouseDown +=
-				delegate(object sender, MouseEventArgs e)
+				delegate (object sender, MouseEventArgs e)
 				{
 					ListViewItem item = Results.HitTest(e.X, e.Y).Item;
 					if (item != null)
 					{
-						if (Results.HitTest(e.X, e.Y).SubItem == item.SubItems[1]) 
-							//if mouse click on "view in tree"
+						if (Results.HitTest(e.X, e.Y).SubItem == item.SubItems[1])
+						//if mouse click on "view in tree"
 						{
 							TreeNode node;
 							GuidNodeDictionary.TryGetValue(new Guid(item.SubItems[2].Text), out node);
@@ -147,7 +147,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 					}
 				};
 			Results.ItemSelectionChanged +=
-				delegate(object sender, ListViewItemSelectionChangedEventArgs e)
+				delegate (object sender, ListViewItemSelectionChangedEventArgs e)
 					{
 						foreach (ListViewItem i in Results.Items)
 						{
@@ -165,15 +165,15 @@ namespace SitecoreTreeWalker.UI.Controllers
 						AddSelectedResultsItemToSelected();
 					};
 			Results.KeyDown +=
-				delegate(object sender, KeyEventArgs e)
+				delegate (object sender, KeyEventArgs e)
 					{
 						if (e.KeyCode == Keys.Enter)
 						{
 							AddSelectedResultsItemToSelected();
 						}
 					};
-			Results.MouseMove += 
-				delegate(object sender, MouseEventArgs e)
+			Results.MouseMove +=
+				delegate (object sender, MouseEventArgs e)
 					{
 						ListViewItem item = Results.HitTest(e.X, e.Y).Item;
 						Cursor.Current = item != null ? Cursors.Hand : Cursors.Default;
@@ -184,7 +184,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 					RemoveSelectedItemFromSelected();
 				};
 			Selected.KeyDown +=
-				delegate(object sender, KeyEventArgs e)
+				delegate (object sender, KeyEventArgs e)
 				{
 					//var clickPos = Selected.PointToClient(Control.MousePosition);
 					if (e.KeyCode == Keys.Enter && Selected.SelectedItems.Count > 0)
@@ -193,15 +193,15 @@ namespace SitecoreTreeWalker.UI.Controllers
 					}
 				};
 			Selected.MouseMove +=
-				delegate(object sender, MouseEventArgs e)
+				delegate (object sender, MouseEventArgs e)
 					{
 						ListViewItem item = Selected.HitTest(e.X, e.Y).Item;
 						Cursor.Current = item != null ? Cursors.Hand : Cursors.Default;
 					};
 			Keywords.KeyDown +=
-				delegate(object sender, KeyEventArgs e)
+				delegate (object sender, KeyEventArgs e)
 				{
-					if(e.KeyCode == Keys.Up)
+					if (e.KeyCode == Keys.Up)
 					{
 						if (Results.SelectedItems.Count != 0)
 						{
@@ -209,7 +209,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 							if (index > 0)
 							{
 								Results.BeginUpdate();
-								Results.Items[index-1].Selected = true;
+								Results.Items[index - 1].Selected = true;
 							}
 						}
 					}
@@ -254,7 +254,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 						{
 							PopulateResults();
 							ViewSearchResults();
-							if(Results.Items.Count > 0)
+							if (Results.Items.Count > 0)
 							{
 								Results.Items[0].BackColor = Color.Yellow;
 								Results.Items[0].Selected = true;
@@ -267,7 +267,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 						AddSelectedResultsTreeNodeToSelected();
 					};
 			ResultsTree.KeyDown +=
-				delegate(object sender, KeyEventArgs e)
+				delegate (object sender, KeyEventArgs e)
 				{
 					if (e.KeyCode == Keys.Enter)
 					{
@@ -276,38 +276,38 @@ namespace SitecoreTreeWalker.UI.Controllers
 					}
 				};
 			ResultsTree.MouseMove +=
-				delegate(object sender, MouseEventArgs e)
+				delegate (object sender, MouseEventArgs e)
 					{
 						if (ResultsTree.HitTest(e.X, e.Y).Location == TreeViewHitTestLocations.Label)
 						{
-							Cursor.Current = Cursors.Hand; 
+							Cursor.Current = Cursors.Hand;
 						}
 					};
-            
+
 			Down.Click +=
 				delegate
 					{
-                        var currentIndex = Selected.SelectedItems[0].Index;
-                        var item = Selected.Items[currentIndex];
-                        if (currentIndex > 0)
-                        {
-                            Selected.Items.RemoveAt(currentIndex);
-                            Selected.Items.Insert(currentIndex + 1, item);
-                        }
+						var currentIndex = Selected.SelectedItems[0].Index;
+						var item = Selected.Items[currentIndex];
+						if (currentIndex > 0)
+						{
+							Selected.Items.RemoveAt(currentIndex);
+							Selected.Items.Insert(currentIndex + 1, item);
+						}
 					};
 
 			Up.Click +=
 				delegate
 					{
-                        var currentIndex = Selected.SelectedItems[0].Index;
-                        var item = Selected.Items[currentIndex];
-                        if (currentIndex > 0)
-                        {
-                            Selected.Items.RemoveAt(currentIndex);
-                            Selected.Items.Insert(currentIndex - 1, item);
-                        }
+						var currentIndex = Selected.SelectedItems[0].Index;
+						var item = Selected.Items[currentIndex];
+						if (currentIndex > 0)
+						{
+							Selected.Items.RemoveAt(currentIndex);
+							Selected.Items.Insert(currentIndex - 1, item);
+						}
 					};
-            
+
 			Up.MouseMove +=
 				delegate
 				{
@@ -323,14 +323,16 @@ namespace SitecoreTreeWalker.UI.Controllers
 		public void AddSelectedResultsTreeNodeToSelected()
 		{
 			TreeNode node = ResultsTree.SelectedNode;
-			if (node != null)
+			if (node == null) return;
+			string name = node.Text;
+			Guid id;
+			NodeGuidDictionary.TryGetValue(node, out id);
+			var ts = new TaxonomyStruct { Name = name, ID = id };
+			if (ResultsTree.SelectedNode.Parent != null)
 			{
-				string name = node.Text;
-				Guid id;
-				NodeGuidDictionary.TryGetValue(node, out id);
-				var ts = new TaxonomyStruct { Name = name, ID = id };
-				AddToSelected(ts);
+				ts.Section = ResultsTree.SelectedNode.Parent.FullPath;
 			}
+			AddToSelected(ts);
 		}
 
 		public void AddSelectedResultsItemToSelected()
@@ -340,9 +342,9 @@ namespace SitecoreTreeWalker.UI.Controllers
 				ListViewItem item = Results.SelectedItems[0];
 				var id = new Guid(item.SubItems[2].Text);
 				var taxonomy = new TaxonomyStruct { Name = item.Text, ID = id };
-				AddToSelected(taxonomy); 
+				AddToSelected(taxonomy);
 			}
-			
+
 		}
 
 		public void RemoveSelectedItemFromSelected()
@@ -353,9 +355,9 @@ namespace SitecoreTreeWalker.UI.Controllers
 				string name = item.Text;
 				var id = new Guid(item.SubItems[1].Text);
 				var taxonomy = new TaxonomyStruct { Name = name, ID = id };
-				RemoveFromSelected(taxonomy); 
+				RemoveFromSelected(taxonomy);
 			}
-			
+
 		}
 
 		/// <summary>
@@ -375,7 +377,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 			Results.Columns.Add("Taxonomy", 400, HorizontalAlignment.Left);
 			Results.Columns.Add("View in tree", 70, HorizontalAlignment.Right);
 			Results.HeaderStyle = ColumnHeaderStyle.None;
-			
+
 			Selected.View = View.Details;
 			Selected.Columns.Add("Taxonomy", Results.Width);
 			Selected.HeaderStyle = ColumnHeaderStyle.None;
@@ -395,7 +397,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 			Results.Items.Clear();
 			ResultsList = GetResults(Keywords.Text);
 
-			if(ResultsList.Count == 0)
+			if (ResultsList.Count == 0)
 			{
 				var item = new ListViewItem("No matches for \'" + Keywords.Text + "\'");
 				item.Font = new Font(item.Font, FontStyle.Italic);
@@ -406,9 +408,9 @@ namespace SitecoreTreeWalker.UI.Controllers
 				return;
 			}
 
-			foreach(TaxonomyStruct result in ResultsList)
+			foreach (TaxonomyStruct result in ResultsList)
 			{
-				var item = new ListViewItem(result.Name, 0) {UseItemStyleForSubItems = false};
+				var item = new ListViewItem(result.Name, 0) { UseItemStyleForSubItems = false };
 				item.SubItems.Add("view in tree");
 				item.SubItems[1].Font = new Font(item.SubItems[1].Font, FontStyle.Underline);
 				item.SubItems[1].ForeColor = Color.Blue;
@@ -428,7 +430,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 				MenuItem.SetIndicatorIcon(SelectedList.Count == 0 ? Properties.Resources.blankred : Properties.Resources.blankgreen);
 				MenuItem.Refresh();
 				String iconStr = SelectedList.Count.ToString();
-				MenuItem.SetIndicatorNumber(iconStr); 
+				MenuItem.SetIndicatorNumber(iconStr);
 				MenuItem.HasChanged = (HasChanged);
 				MenuItem.UpdateBackground();
 			}
@@ -456,8 +458,8 @@ namespace SitecoreTreeWalker.UI.Controllers
 		{
 			ResultsTree.Nodes.Clear();
 			TreeNode node = RecursiveLoadHierarchy(Hierarchy);
-			
-			foreach(TreeNode child in node.Nodes)
+
+			foreach (TreeNode child in node.Nodes)
 			{
 				ResultsTree.Nodes.Add(child);
 			}
@@ -481,7 +483,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 		public void RefreshResultsTreeImages()
 		{
 			ResultsTree.BeginUpdate();
-			foreach(TreeNode node in AllNodes)
+			foreach (TreeNode node in AllNodes)
 			{
 				if (IsSelected(node))
 				{
@@ -503,9 +505,15 @@ namespace SitecoreTreeWalker.UI.Controllers
 		public void PopulateSelected()
 		{
 			Selected.Items.Clear();
-			foreach(TaxonomyStruct selected in SelectedList)
+			foreach (TaxonomyStruct selected in SelectedList)
 			{
-				var item = new ListViewItem("section/"+selected.Name, 0);
+				var item = new ListViewItem();
+				if (!string.IsNullOrEmpty(selected.Section) && selected.Section != "Taxonomy")
+				{
+					item.Text = selected.Section + "/";
+				}
+				item.Text = item.Text + selected.Name;
+				item.ImageIndex = 0;
 				item.SubItems.Add(selected.ID.ToString());
 				Selected.Items.Add(item);
 			}
@@ -520,9 +528,9 @@ namespace SitecoreTreeWalker.UI.Controllers
 		public void RemoveFromSelected(TaxonomyStruct taxonomy)
 		{
 			HasChanged = true;
-			foreach(TaxonomyStruct ts in SelectedList)
+			foreach (TaxonomyStruct ts in SelectedList)
 			{
-				if(ts.ID.Equals(taxonomy.ID))
+				if (ts.ID.Equals(taxonomy.ID))
 				{
 					SelectedList.Remove(ts);
 					break;
@@ -647,7 +655,7 @@ namespace SitecoreTreeWalker.UI.Controllers
 				while (current.Parent != null)
 				{
 					current = current.Parent;
-					if(current.Parent == null)
+					if (current.Parent == null)
 					{
 						return current;
 					}
@@ -689,11 +697,11 @@ namespace SitecoreTreeWalker.UI.Controllers
 		{
 			List<TaxonomyStruct> temp = selected.Select(t =>
 				new TaxonomyStruct
-					{
-						ID = t.ID,
-						Name = t.Name,
-                        Section = t.Section
-					}).ToList();
+				{
+					ID = t.ID,
+					Name = t.Name,
+					Section = t.Section
+				}).ToList();
 			SetSelected(temp);
 		}
 	}

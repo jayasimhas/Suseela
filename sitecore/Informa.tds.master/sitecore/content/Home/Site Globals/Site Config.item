@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {0E193CFD-D373-4854-9E82-65FADB39E594}
+id: {BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}
 database: master
-path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy/__Standard Values
-parent: {EED18B44-4005-4F15-9B18-D7C2D2CAC0EC}
-name: __Standard Values
+path: /sitecore/content/Home/Site Globals/Site Config
+parent: {311894E7-D9AF-4C5E-9DBE-BB0DCFDF4F33}
+name: Site Config
 master: {00000000-0000-0000-0000-000000000000}
-template: {EED18B44-4005-4F15-9B18-D7C2D2CAC0EC}
-templatekey: _BaseTaxonomy
+template: {997A3064-65F5-45CD-B32F-9EC61E90A610}
+templatekey: Site Config
 
 ----version----
 language: en
 version: 1
-revision: 9c3ec394-903e-4075-9fac-d1aa53f7f823
+revision: 7f713595-633a-490a-ab14-dadc1c34a5de
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -27,7 +27,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151224T214119Z
+20151230T191616Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9c3ec394-903e-4075-9fac-d1aa53f7f823
+7f713595-633a-490a-ab14-dadc1c34a5de
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151224T214119Z
+20151230T191624Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

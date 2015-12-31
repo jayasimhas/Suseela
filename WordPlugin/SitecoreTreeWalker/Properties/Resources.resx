@@ -286,4 +286,14 @@
   <data name="imformaVideoPlaceholder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\imformaVideoPlaceholder2.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+	<data name="IFrameControl_uxInsertIFrame_Click_DesktopEmbedd" xml:space="preserve">
+    <value>Input is invalid or not permitted.
+Please make sure you have provided valid HTML with no script, style, or link tags.</value>
+  </data>
+	<data name="IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia" xml:space="preserve">
+    <value>Multimedia content used is not secure. Please click on the Suggest Secure URL button to fix.</value>
+  </data>
+	<data name="IFrameControl_uxInsertIFrame_Click_Multimedia_Error" xml:space="preserve">
+    <value>Multimedia content is either missing, invalid or not secure. Please click 'OK' to see instructions on how to correct this in red.</value>
+  </data>
 </root>

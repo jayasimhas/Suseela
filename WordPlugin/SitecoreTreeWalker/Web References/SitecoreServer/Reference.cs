@@ -826,8 +826,8 @@ namespace SitecoreTreeWalker.SitecoreServer {
         private WorkflowState workflowStateField;
         
         private System.Guid commandIDField;
-        
-        private TaxonomyStruct[] industriesField;
+
+	    public TaxonomyStruct[] taxonomyField;
         
         private TaxonomyStruct[] subjectsField;
         
@@ -1087,10 +1087,10 @@ namespace SitecoreTreeWalker.SitecoreServer {
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public TaxonomyStruct[] Industries {
             get {
-                return this.industriesField;
+                return this.taxonomyField;
             }
             set {
-                this.industriesField = value;
+                this.taxonomyField = value;
             }
         }
         
@@ -1612,7 +1612,8 @@ namespace SitecoreTreeWalker.SitecoreServer {
         private string nameField;
         
         private System.Guid idField;
-        
+
+	    private string sectionField;
         /// <remarks/>
         public string Name {
             get {
@@ -1632,6 +1633,12 @@ namespace SitecoreTreeWalker.SitecoreServer {
                 this.idField = value;
             }
         }
+
+	    public string Section
+	    {
+			get { return this.sectionField; }
+			set { this.sectionField = value; }
+	    }
     }
     
     /// <remarks/>

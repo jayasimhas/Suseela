@@ -26,7 +26,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			List<TaxonomyStruct> therapeuticCategories =
-				SitecoreGetter.SearchTaxonomy(new Guid(Constants.THERAPEUTIC_CATEGORY_GUID), "").ToList();
+				SitecoreGetter.SearchTaxonomy("").ToList();
 			HDirectoryStruct therapeuticCategoriesDirectory =
 				SitecoreGetter.GetHierarchyByGuid(new Guid(Constants.THERAPEUTIC_CATEGORY_GUID));
 

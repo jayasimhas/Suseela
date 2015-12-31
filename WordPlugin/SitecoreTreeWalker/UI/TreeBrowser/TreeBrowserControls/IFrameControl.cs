@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Net;
-using System.Threading;
-using System.Windows.Controls;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using Microsoft.Office.Interop.Word;
+using SitecoreTreeWalker.Properties;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
-using TextBox = System.Windows.Forms.TextBox;
 using UserControl = System.Windows.Forms.UserControl;
 
 
@@ -18,12 +14,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 {
     public partial class IFrameControl : UserControl
 	{
-		protected SitecoreItemGetter _siteCoreItemGetter;
-		protected static IFrameControl _iframeForm;
-		protected static HtmlDocument _mobileIFrame;
-		protected static HtmlDocument _desktopIFrame;
-		protected string _insecureDesktopURL;
-		protected string _insecureMobileURL;
+		protected SitecoreItemGetter SiteCoreItemGetter;
+		protected static IFrameControl IframeForm;
+		protected static HtmlDocument MobileIFrame;
+		protected static HtmlDocument DesktopIFrame;
+		protected string InsecureDesktopURL;
+		protected string InsecureMobileURL;
 		private string _desktopPHText = "Copy and paste the code for your IFrame on desktop here, (required)";
 		private string _mobilePHText = "Copy and paste the code for your IFrame on mobile here, (optional)";
 		public IFrameControl()
@@ -33,16 +29,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		public void SetSitecoreItemGetter(SitecoreItemGetter siteCoreItemGetter)
 		{
-			_siteCoreItemGetter = siteCoreItemGetter;
+			SiteCoreItemGetter = siteCoreItemGetter;
 		}
-
 		
-
-
 		/// <summary>
 		/// Removes the current items in the TreeBrowser and re-initializes them.
 		/// </summary>
-
 		private void IFrameControl_Load(object sender, System.EventArgs e)
 		{
 			mobileEmbed.Text = _mobilePHText;
@@ -69,15 +61,15 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 			if (!desktopErrors && !ValidDesktopInput(desktopEmbed.Text) )
 			{
-				uxDesktopError.Text = "Input is invalid or not permitted.\nPlease make sure you have provided valid HTML with no script, style, or link tags.";
+				uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
 				uxDesktopError.Show();	
 				desktopErrors = true;
 			}
 
 			
-			if (_desktopIFrame != null && !desktopErrors && !IFramesIsSecure(_desktopIFrame.DocumentNode.SelectNodes("//iframe"),out _insecureDesktopURL))
+			if (DesktopIFrame != null && !desktopErrors && !IFramesIsSecure(DesktopIFrame.DocumentNode.SelectNodes("//iframe"),out InsecureDesktopURL))
 			{
-				uxDesktopError.Text = "Multimedia content used is not secure. Please click on the Suggest Secure URL button to fix.";
+				uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia;
 				uxDesktopError.Show();
 				uxDesktophttpsPreview.Visible = true;
 				desktopErrors = true;
@@ -86,15 +78,15 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			
 			if (!ValidMobileInput(mobileEmbed.Text))
 			{
-				uxMobileError.Text = "Input is invalid or not permitted.\nPlease make sure you have provided valid HTML with no script, style, or link tags.";
+				uxMobileError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
 				uxMobileError.Show();
 				mobileErrors = true;
 			}
 
-			if (_mobileIFrame != null && !mobileErrors && !IFramesIsSecure(_mobileIFrame.DocumentNode.SelectNodes("//iframe"), out _insecureMobileURL))
+			if (MobileIFrame != null && !mobileErrors && !IFramesIsSecure(MobileIFrame.DocumentNode.SelectNodes("//iframe"), out InsecureMobileURL))
 			{
 				uxMobileError.Text =
-					"Multimedia content used is not secure. Please click on the Suggest Secure URL button to fix.";
+					Resources.IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia;
 				uxMobileError.Show();
 				uxMobilehttpsPreview.Visible = true;
 				mobileErrors = true;
@@ -108,7 +100,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 			else
 			{
-				MessageBox.Show("Multimedia content is either missing, invalid or not secure. Please click 'OK' to see instructions on how to correct this in red.");
+				MessageBox.Show(Resources.IFrameControl_uxInsertIFrame_Click_Multimedia_Error);
 			}
 		}
 
@@ -127,7 +119,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				return true;
 			}
 
-			return ValidInput(input, out _mobileIFrame);
+			return ValidInput(input, out MobileIFrame);
 		}
 
 		private bool ValidDesktopInput(string input)
@@ -137,7 +129,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				return false;
 			}
 
-			return ValidInput(input, out _desktopIFrame);
+			return ValidInput(input, out DesktopIFrame);
 		}
 
 		private bool ValidInput(string input, out HtmlDocument document)
@@ -234,7 +226,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 			if (!string.IsNullOrEmpty(desktopEmbed))
 			{
-				var desktopBodyNode= _desktopIFrame.DocumentNode.SelectSingleNode("//body");
+				var desktopBodyNode= DesktopIFrame.DocumentNode.SelectSingleNode("//body");
 
 				selection.Text = desktopBodyNode.InnerHtml;// desktopEmbed;
 				selection.set_Style(DocumentAndParagraphStyles.IFrameCodeStyle);
@@ -246,7 +238,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 			if (!string.IsNullOrEmpty(mobileEmbed))
 			{
-				var mobileBodyNode = _mobileIFrame.DocumentNode.SelectSingleNode("//body");
+				var mobileBodyNode = MobileIFrame.DocumentNode.SelectSingleNode("//body");
 				selection.Text = mobileBodyNode.InnerHtml; //mobileEmbed;
 			}
 			else
@@ -370,29 +362,21 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-        /*
-		public static void Open()
-		{
-			_iframeForm = new IFrameControl();
-			_iframeForm.ShowDialog(Globals.SitecoreAddin.Application.ActiveDocument as IWin32Window);
-			
-		}*/
-
 		private void uxMobilehttpsPreview_Click(object sender, EventArgs e)
 		{
-			SuggestedURL.Open(_insecureMobileURL, this.InsertMobileUrl);
+			SuggestedURL.Open(InsecureMobileURL, this.InsertMobileUrl);
 		}
 
 		private void uxDesktophttpsPreview_Click(object sender, EventArgs e)
 		{
-			SuggestedURL.Open(_insecureDesktopURL,this.InsertDesktopUrl);
+			SuggestedURL.Open(InsecureDesktopURL,this.InsertDesktopUrl);
 		}
 
 		internal void InsertMobileUrl(string newUrl)
 		{
 			if (!String.IsNullOrEmpty(newUrl))
 			{
-				HtmlNode newIframeContent = ReplaceIFrameUrl(_mobileIFrame, newUrl);
+				HtmlNode newIframeContent = ReplaceIFrameUrl(MobileIFrame, newUrl);
 				if (newIframeContent != null)
 				{
 					mobileEmbed.Text = newIframeContent.OuterHtml;
@@ -406,7 +390,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (!String.IsNullOrEmpty(newUrl))
 			{
-				HtmlNode newIframeContent = ReplaceIFrameUrl(_desktopIFrame, newUrl);
+				HtmlNode newIframeContent = ReplaceIFrameUrl(DesktopIFrame, newUrl);
 				if (newIframeContent != null)
 				{
 					desktopEmbed.Text = newIframeContent.OuterHtml;
