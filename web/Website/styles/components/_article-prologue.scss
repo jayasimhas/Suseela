@@ -33,21 +33,13 @@
         padding: 12px;
         display: inline-block;
         width: auto;
-    }
-    &__tags {
-        @include textMix('Roboto', 13px, 400);
-        text-transform: none;
-        display: inline;
 
-        li {
-            border-right: 1px solid $informa-light-gray-d;
-            padding: 0 8px;
+        .article-tags li {
+            font-size: 13px;
 
-            &:last-child {
-                border: 0;
-                padding-right: 0;
+            &:first-child {
+                padding-left: 8px;
             }
         }
-
     }
 }
