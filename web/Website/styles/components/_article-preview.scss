@@ -1,15 +1,18 @@
 .article-preview {
     margin: 0 auto;
     width: 787px;
+    position: relative;
+    padding-bottom: 48px;
 
-    &__bookmarker {
-        float: right;
+    &__image {
+        width: 100%;
     }
 
     &__metadata {
         @include textMix('Roboto', 15px, 400);
         margin-top: 8px;
     }
+
     &__date,
     &__category,
     &__graphicon {
@@ -20,6 +23,7 @@
 
     &__bookmarker {
         text-transform: uppercase;
+        float: right;
         font-size: 11px;
         font-weight: 500;
         letter-spacing: 1px;
@@ -31,8 +35,7 @@
     }
 
     &__date:after,
-    &__category:not(:last-child):after,
-    &__tag:not(:last-child):after {
+    &__category:not(:last-child):after {
         position: absolute;
         content: "";
         border-right: 1px solid #ccc;
@@ -44,11 +47,33 @@
         @include textMix('Roboto Condensed', 30px, 700);
         color: $informa-black;
         line-height: 32px;
+        margin-top: 18px;
+        margin-bottom: 8px;
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
-        line-height: 26px;
+        line-height: 18px;
         color: $informa-dark-gray;
+    }
+
+    &__ad {
+        @include textMix('Roboto', 11px, 500);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $informa-light-gray-d;
+        margin: 12px auto 0;
+        width: 320px;
+
+        img {
+            width: 100%;
+            margin-top: 6px;
+        }
+    }
+
+    .article-tags {
+        position: absolute;
+        bottom: 24px;
+        left: 0;
     }
 
     p {
@@ -59,10 +84,6 @@
 
     &--small {
         width: 373px;
-        padding: 12px 0 0;
-    }
-    &--small &__image {
-        width: 100%;
     }
     &--small &__date,
     &--small &__category {
@@ -85,5 +106,59 @@
     &--boxed {
         border: 2px solid #ccc;
         padding: 12px;
+    }
+}
+
+.manually-curated-articles {
+    // Makes this element the source for absolutely positioning children elms
+    position: relative;
+    width: 100%;
+
+    .article-preview {
+        margin: 0;
+        float: left;
+    }
+
+    &__left {
+        float: left;
+        width: 768px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .article-preview--small {
+            border-top: 2px solid $informa-light-gray-d;
+            padding-top: 6px;
+        }
+    }
+    &__right,
+    &__ad-unit {
+        float: right;
+        width: 373px;
+    }
+
+    @include breakpoint('medium') {
+        &__left {
+            width: 100%;
+
+            .article-preview {
+                width: 460px;
+
+                &--small {
+                    width: 50%;
+                }
+            }
+        }
+        &__right {
+            // Bump this up to the top of the parent, flank main article preview
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 270px;
+
+            .article-preview--small {
+                width: 100%;
+            }
+        }
     }
 }
