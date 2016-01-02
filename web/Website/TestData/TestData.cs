@@ -23,7 +23,7 @@ namespace Informa.Web.TestData
         //}
 
         
-        public static ListableModel ListableModel(int numAuthors = 1, int numTaxonomy = 0, bool hasImage = true)
+        public static IListable ListableModel(int numAuthors = 1, int numTaxonomy = 0, bool hasImage = true)
         {
             var authors = GetRandomEmployees(numAuthors);
 
@@ -47,6 +47,15 @@ namespace Informa.Web.TestData
                 model.ListableImages = null;
 
             return model;
+        }
+
+        public static ILinkable LinkableModel(int numAuthors = 1, int numTaxonomy = 0, bool hasImage = true)
+        {   
+            return new LinkableModel
+            {
+                LinkableTexts = GetRandomEmployeeName(),
+                LinkableUrls = new Link { Anchor = "#" }
+            };        
         }
 
         public static string TestRichText(this WebViewPage page)
