@@ -64,6 +64,7 @@ namespace <#= GetNamespace(DefaultNamespace, template)#>
 	[GlassFactoryInterface]
 	public partial interface <#= AsInterfaceName(template.Name) #> : IInterfaceFactoryTemplate <#=GetObjectInheritanceDefinition(DefaultNamespace, template, true, (string s) => AsInterfaceName(s))#>
 	{
+	 Guid _Id { get; }
 			<#foreach(SitecoreField field in Distinct(GetFieldsForTemplate(template, false), (x, y) => GetPropertyName(x) == GetPropertyName(y))){#>
 					/// <summary>
 					/// The <#=field.Name#> field.
@@ -79,6 +80,8 @@ namespace <#= GetNamespace(DefaultNamespace, template)#>
 						 
 	public partial class <#= AsClassName(template.Name) #>Model : <#= AsInterfaceName(template.Name) #>{
 
+	  [SitecoreId]
+    public Guid _Id { get; set; }
 			<#foreach(SitecoreField field in Distinct(GetFieldsForTemplate(template, false), (x, y) => GetPropertyName(x) == GetPropertyName(y))){#>
 					/// <summary>
 					/// The <#=field.Name#> field.

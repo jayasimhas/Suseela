@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Glass.Mapper.Sc.Fields;
 using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
 using Sitecore.Mvc.Extensions;
 
@@ -11,14 +12,41 @@ namespace Informa.Web.TestData
 {
     public static class TestData
     {
-        public static T TestModel<T>(this WebViewPage<T> page)
-        {   
-            return GetTestData<T>(page.Model);
-        }
+        //public static T TestModel<T>(this WebViewPage<T> page)
+        //{   
+        //    return GetTestData<T>(page.Model);
+        //}
 
-        private static T GetTestData<T>(T model) 
+        //private static T GetTestData<T>(T model) 
+        //{
+        //    if(_dictionary.)
+        //}
+
+        
+        public static ListableModel ListableModel(int numAuthors = 1, int numTaxonomy = 0, bool hasImage = true)
         {
-            throw new NotImplementedException();
+            var authors = GetRandomEmployees(numAuthors);
+
+            if (numAuthors == 0)
+                numAuthors = rnd.Next(6);
+            if (numTaxonomy == 0)
+                numTaxonomy = rnd.Next(6);
+
+            var model = new ListableModel
+            {
+                ListableTopics = GetRandomTopics(numTaxonomy),
+                ListableAuthors = GetRandomEmployees(numAuthors),
+                ListableDates = DateTime.Now,
+                ListableImages = new Image { Src = "http://placehold.it/787x443"},
+                ListableSummaries = GetRandomSummary(),
+                ListableTitles = GetRandomTitle(),
+                ListableUrls = new Link { Anchor = "#" }
+            };
+
+            if (!hasImage)
+                model.ListableImages = null;
+
+            return model;
         }
 
         public static string TestRichText(this WebViewPage page)
@@ -28,59 +56,104 @@ namespace Informa.Web.TestData
 
         public static string TestSingleLineText(this WebViewPage page)
         {
-            return GetRandomEmployee();
+            return GetRandomStaff().LinkableTexts;
         }                     
 
-        public static Guid GetRandomTopics()
+        public static ILinkable GetRandomTopic()
         {
-            throw new NotImplementedException();
+            int index = rnd.Next(_topics.Count);  
+
+            return new LinkableModel
+            {
+                LinkableTexts = _topics[index],
+                LinkableUrls = new Link {Anchor =  "#"}
+            };
+
+        }
+
+        public static IEnumerable<ILinkable> GetRandomTopics(int num = 1)
+        {
+            return Enumerable.Range(0, num).Select(x => GetRandomTopic());
         }
 
         public static string GetRandomTitle()
         {
-            int index = rnd.Next(_employees.Count);
+            int index = rnd.Next(_articleTitles.Count);
 
-            return _employees[index];
+            return _articleTitles[index];
         }
 
-        public static string GetRandomEmployee()
+        public static IEnumerable<ILinkable> GetRandomEmployees(int num = 1)
+        {
+            return Enumerable.Range(0, num).Select(x => GetRandomStaff());
+        }
+
+        public static ILinkable GetRandomStaff()
         {
             int index = rnd.Next(_employees.Count);
 
-            return _employees[index];
+            var employee = new LinkableModel();
+
+            employee.LinkableTexts = _employees[index];
+            employee.LinkableUrls = new Link {Anchor = "#"};
+
+
+            return employee;
         }
 
         public static string GetRandomSummary()
         {
-            throw new NotImplementedException();
+            int index = rnd.Next(_summaries.Count);
+            return _summaries[index];
         }
 
 
         public static LoginViewModel LoginModel => new LoginViewModel();    
 
-        public static ListableModel Article => new ListableModel
+        public static IListable Article => new ListableModel
         {
-            ListableAuthor = null,
-            ListableDate = DateTime.Now,
-            ListableImage = new Image(),
-            ListableTitle = GetRandomTitle(),
+            ListableAuthors = null,
+            ListableDates = DateTime.Now,
+            ListableImages = new Image(),
+            ListableTitles = GetRandomTitle(),
             ListableTopics = GetRandomTopics(),
-            ListableUrl = new Link { Anchor = "#", Text = "Text", Title = "Title" },
-            ListableSummary = GetRandomSummary()
+            ListableUrls = new Link { Anchor = "#", Text = "Text", Title = "Title" },
+            ListableSummaries = GetRandomSummary()
         };
+
+        public static string GetRandomEmployeeName()
+        {
+            return GetRandomStaff().LinkableTexts;
+        }
 
    
 
         public static List<string> _articleTitles => new List<string>
         {
-            "Stockwatch: Big Pharma And big Biotech Are The New Black",
-            "1st U.S. Biosimilar Arrives; Zarcio Launches"
+            $"Trending: Fashon from {GetRandomEmployeeName()} And {GetRandomEmployeeName()} Are The New Black",
+            $"{GetRandomEmployeeName()} fixes bug; {GetRandomEmployeeName()} Celebrates"
         };
 
         public static List<string> _summaries => new List<string>
         {
-            "Amgen fails to keep Novartis unit Sandoz from launching its biosimilar Zarxio. Novartis talks to SCRIP about pricing."
-        }; 
+            $"{GetRandomEmployeeName()} fails to keep {GetRandomEmployeeName()} challenge from knocking him further down the ladder. {GetRandomEmployeeName()} talks to {GetRandomEmployeeName()} about a future match.",
+            $"New research by {GetRandomEmployeeName()} has shown that levels of the DNA protein BRCA1 are increased in key parts of neurons after talking with {GetRandomEmployeeName()}. The findings are consistent with {GetRandomEmployeeName()}'s hypothesis and could prove to be an effective way to help reproduce benefits of {GetRandomEmployeeName()}’s syndrome and other perplexing mutation anomalies.",
+            $"RNAi pioneer is getting closer to market with NDA filing in amyloidosis expected in 2017, but ample competition is coming along, albeit far behind.",
+            $"{GetRandomEmployeeName()}’s shift toward targeting {GetRandomEmployeeName()} in ping-pong could cause unintended consequences, including creating hurdles for {GetRandomEmployeeName()}, says {GetRandomEmployeeName()}. The ladder changes also could hinder {GetRandomEmployeeName()} and increase other games for {GetRandomEmployeeName()}.",
+            $"{GetRandomEmployeeName()} should decide how to create more trustful workplaces for {GetRandomEmployeeName()} in light of changes to how DoJ targets {GetRandomEmployeeName()} for corporate wrongdoing, says a food and drug lawyer. The changes, implemented through {GetRandomEmployeeName()}’s Manual, also could deter {GetRandomEmployeeName()} from working FDA-regulated industries.",
+            $"As 2015 comes to a close, {GetRandomEmployeeName()} looks at the current state of the Unique Device Identification program, persistent challenges for {GetRandomEmployeeName()} and what to expect in the year ahead. UDI guru {GetRandomEmployeeName()} provides insight."
+
+
+
+        };
+
+        public static List<string> _topics => new List<string>
+        {
+            "Markets",
+            "Stockwatch",
+            "USA",
+            "Sandoz"
+        };
 
         static Random rnd = new Random();
         public static List<string> _employees => new List<string>

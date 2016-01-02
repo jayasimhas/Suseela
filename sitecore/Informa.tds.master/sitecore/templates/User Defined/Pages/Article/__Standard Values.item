@@ -51,8 +51,8 @@ content-length: 38
 {8D6D4B6A-0ACA-406A-ABAE-C6C8A02A7C0D}
 ----field----
 field: {5F51FA66-5326-4AA6-9671-57A48AEDEAA4}
-name: ListableAuthor
-key: listableauthor
+name: ListableAuthors
+key: listableauthors
 content-length: 38
 
 {5AD65E47-7554-4CE5-87B0-7FB65051C05A}

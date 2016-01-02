@@ -917,7 +917,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\Global\ContentListItem.cshtml" />
     <Content Include="Views\Shared\_ArticlePreview.cshtml" />
-    <Content Include="Views\Article\_Article.cshtml" />
+    <Content Include="Views\Article\ArticlePrologue.cshtml" />
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
     <Content Include="Views\FrontendWrappers\ArticleWrapper - Copy.cshtml" />
     <Content Include="Views\FrontendWrappers\HomeWrapper.cshtml" />
@@ -927,7 +927,16 @@
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\ArticlePreview.cshtml" />
+    <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
+    <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
+    <Content Include="Views\Shared\Components\FeaturedCuratedContent.cshtml" />
+    <Content Include="Views\Shared\Components\ListableContentSmall.cshtml" />
+    <Content Include="Views\Shared\Components\_ListableContent.cshtml" />
+    <Content Include="Views\Shared\Components\TopicSubtopic.cshtml" />
+    <Content Include="Views\Article\ArticleRightRail.cshtml" />
+    <Content Include="Views\Article\ArticleLeftRail.cshtml" />
+    <Content Include="Views\Shared\Components\ListItemSimple.cshtml" />
+    <Content Include="Views\Shared\Components\ArticleRelatedList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

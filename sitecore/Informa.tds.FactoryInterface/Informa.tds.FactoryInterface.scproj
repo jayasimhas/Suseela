@@ -86,6 +86,28 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Linkable.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Linkable\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Linkable\Component Fields.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Linkable\Component Fields\LinkableText.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=string</CodeGenData>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Linkable\Component Fields\LinkableUrl.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=Link</CodeGenData>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -98,10 +120,10 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableAuthor.item">
+    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableAuthors.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <CodeGenData>type=IGlassBase</CodeGenData>
+      <CodeGenData>generic=ILinkable</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableDate.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -113,6 +135,11 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <CodeGenData>type=Image</CodeGenData>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableSummary.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>type=string</CodeGenData>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableTitle.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -121,7 +148,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableTopics.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <CodeGenData>generic=ITaxonomy</CodeGenData>
+      <CodeGenData>generic=ILinkable</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\FactoryInterface\Listable\Component Fields\ListableUrl.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>

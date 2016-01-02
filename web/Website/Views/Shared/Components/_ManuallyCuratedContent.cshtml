@@ -1,7 +1,12 @@
+@using Informa.Web.TestData
 <div class="manually-curated-articles">
-
     <div class="manually-curated-articles__left">
-        <section class="article-preview">
+
+    @{
+        Html.RenderPartial("Components/FeaturedCuratedContent", TestData.ListableModel(1, 3));
+    }
+
+        @*<section class="article-preview">
             <img class="article-preview__image" src="http://placehold.it/787x443">
             <div class="article-preview__metadata">
                 <div class="article-preview__bookmarker">
@@ -28,9 +33,15 @@
                     <a href="#">Biosimilars</a>
                 </li>
             </ul>
-        </section>
+        </section>*@
 
-        <section class="article-preview article-preview--small">
+        @foreach (var article in Enumerable.Range(0, 2))
+        {
+            Html.RenderPartial("Components/ListableContentSmall", TestData.ListableModel(1, 0, false));
+        }
+
+
+        @*<section class="article-preview article-preview--small">
             <div class="article-preview__metadata">
                 <div class="article-preview__bookmarker">
                     Bookmark
@@ -44,9 +55,9 @@
             <h1 class="article-preview__headline">Stockwatch: Big Pharma And big Biotech Are The New Black</h1>
             <span class="article-preview__byline">by Donna Young</span>
             <p>Amgen fails to keep Novartis unit Sandoz from launching its biosimilar Zarxio. Novartis talks to SCRIP about pricing.</p>
-        </section>
+        </section>*@
 
-        <section class="article-preview article-preview--small">
+        @*<section class="article-preview article-preview--small">
             <div class="article-preview__metadata">
                 <div class="article-preview__bookmarker">
                     Bookmark
@@ -71,11 +82,12 @@
                     <a href="#">Biosimilars</a>
                 </li>
             </ul>
-        </section>
+        </section>*@
     </div>
 
     <div class="manually-curated-articles__right">
-        <section class="article-preview article-preview--small">
+        @Html.Partial("Components/ListableContentSmall", TestData.ListableModel(1, 0))
+        @*<section class="article-preview article-preview--small">
             <img class="article-preview__image" src="http://placehold.it/787x443">
             <div class="article-preview__metadata">
                 <div class="article-preview__bookmarker">
@@ -98,7 +110,7 @@
                     <a href="#">Stockwatch</a>
                 </li>
             </ul>
-        </section>
+        </section>*@
     </div>
 
     <div class="manually-curated-articles__ad-unit">

@@ -1,5 +1,11 @@
 .article-left-rail {
     max-width: 960px;
+    float: left;
+}
+
+.article-right-rail {
+    max-width: 240px;
+    float: right;
 }
 .article-author {
     @include textMix("Roboto", 18px, 500);

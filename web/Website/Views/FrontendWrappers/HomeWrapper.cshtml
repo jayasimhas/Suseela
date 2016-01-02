@@ -1,7 +1,17 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Web.TestData
 
-@*@Html.Partial("../Article/_Article")*@
 
-@Html.Partial("_ArticlePreview")
+@* This is a test page for frontend.  These partials will get added via placeholders. *@
 
-@*@Html.Partial("../_Shared/AuthoredContent")*@
+@{
+    Html.RenderPartial("Components/_ManuallyCuratedContent");
+
+    Html.RenderPartial("Components/TopicSubtopic");
+
+    Html.RenderPartial("Components/TopicSubtopic");
+
+    Html.RenderPartial("Components/TopicSubtopic");
+
+    Html.RenderPartial("Components/_ManuallyCuratedContent");
+}
