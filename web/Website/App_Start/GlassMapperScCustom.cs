@@ -3,6 +3,7 @@ using Glass.Mapper.Configuration.Attributes;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
+using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
 namespace Informa.Web.App_Start
@@ -17,9 +18,7 @@ namespace Informa.Web.App_Start
 			return dependencyResolver;
 		}
 
-        public static IConfigurationLoader[] GlassLoaders()
-        {
-
+		public static IConfigurationLoader[] GlassLoaders(){
 
             /* USE THIS AREA TO ADD FLUENT CONFIGURATION LOADERS
              * 
@@ -28,10 +27,8 @@ namespace Informa.Web.App_Start
              */
 
             return new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models") };
-		}
-
-		public static void PostLoad()
-		{
+        }
+		public static void PostLoad(){
 			//Remove the comments to activate CodeFist
 			/* CODE FIRST START
             var dbs = Sitecore.Configuration.Factory.GetDatabases();
@@ -50,9 +47,9 @@ namespace Informa.Web.App_Start
              */
 		}
 		public static void AddMaps(IConfigFactory<IGlassMap> mapsConfigFactory)
-		{
+        {
 			// Add maps here
-			// mapsConfigFactory.Add(() => new SeoMap());
-		}
-	}
+            mapsConfigFactory.Add(() => new ListableConfig());
+        }
+    }
 }

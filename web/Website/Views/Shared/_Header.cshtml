@@ -1,5 +1,6 @@
-<header>
-
+@using Microsoft.AspNet.Identity
+@*@model Informa.Web.Areas.Account.Models.LoginViewModel*@
+<header>           
     <div class="header__informa-permabanner">
         informa
     </div>
@@ -20,69 +21,77 @@
         <img class="header__logo" src="/dist/img/scrip-logo.jpg">
 
         <div class="header__user">
-            <!-- IF SIGNED IN
 
-            <div class="header__friendly-welcome">Hi, Name</div>
-            <div class="header__my-account">
-                <svg class="header__icons icon-my-account">
-                    <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                </svg>
-                <a href="#">My Account</a>
-            </div>
-            <div class="header__sign-out">
-                <svg class="header__icons icon-sign-out">
-                    <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
-                </svg>
-                <a href="#">Sign Out</a>
-            </div>
-
-            IF SIGNED IN !-->
-
-            <!-- IF SIGNED OUT !-->
-
-            <div class="header__my-account pop-out__trigger">
-                <span class="pop-out__trigger-content">
-                    <svg class="header__icons icon-register">
-                        <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
-                    </svg>
-                    <a href="#">Register</a>
-                </span>
-                <div class="pop-out header__hover--register">
-                    <div class="pop-out__internal">
-                        <svg class="header__icons header__icons--x">
-                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            @if (Request.IsAuthenticated)
+            {
+    <!-- IF SIGNED IN  !-->
+                using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="header__friendly-welcome">Hi, @User.Identity.Name</div>
+                    <div class="header__my-account">
+                        <svg class="header__icons icon-my-account">
+                            <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
                         </svg>
-                        <h2>Register</h2>
-                        <input class="text-field header__hover-input"
-                               type="text"
-                               placeholder="Email Address (User Name)">
-                        <button class="button--pumpkin">Register</button>
+                        @Html.ActionLink("My Account", "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })
                     </div>
+                    <div class="header__sign-out">
+                        <svg class="header__icons icon-sign-out">
+                            <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                        </svg>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">Sign Out</a>
+                    </div>
+                }
+     <!-- IF SIGNED IN !-->
+            }
+            else
+            {
+      <!-- IF SIGNED OUT !-->
+                <div class="header__my-account pop-out__trigger">
+                    <span class="pop-out__trigger-content">
+                        <svg class="header__icons icon-register">
+                            <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
+                        </svg>
+                        @Html.ActionLink("Register", "Register", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "registerLink" })
+                        <a href="#">Register</a>
+                    </span>
+                    <div class="pop-out header__hover--register">
+                        <div class="pop-out__internal">
+                            <svg class="header__icons header__icons--x">
+                                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                            </svg>
+                            <h2>Register</h2>
+                            <input class="text-field header__hover-input"
+                                   type="text"
+                                   placeholder="Email Address (User Name)">
+                            <button class="button--pumpkin">Register</button>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="header__sign-in-out pop-out__trigger">
-                <span class="pop-out__trigger-content">
-                    <svg class="header__icons icon-sign-in">
-                        <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
-                    </svg>
-                    <a href="#">Sign In</a>
-                </span>
-                <div class="pop-out">
-                    <div class="pop-out__internal pop-out__internal--flush-right">
-                        <svg class="header__icons header__icons--x">
-                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                <div class="header__sign-in-out pop-out__trigger">
+                    <span class="pop-out__trigger-content">
+                        <svg class="header__icons icon-sign-in">
+                            <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                         </svg>
+                        @Html.ActionLink("Sign In", "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })
+                    </span>
+                    <div class="pop-out">
+                        <div class="pop-out__internal pop-out__internal--flush-right">
+                            <svg class="header__icons header__icons--x">
+                                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                            </svg>
                         <h2 class="pop-out__header">Sign In</h2>
 
                         @Html.Partial("_SignInForm")
                         
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- END IF SIGNED OUT !-->
+            }
+
 
         </div>
 

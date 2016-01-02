@@ -145,13 +145,6 @@ copysauce.bat
 
 # Sitecore
 web/Website/sitecore
-web/Website/**/*.config
-!web/Website/web.config
-!web/Website/packages.config
-!web/Website/**/Glass.*.config
-!web/Website/**/Jabberwocky.*.config
-!web/Website/Views/web.config
-!web/Website/Areas/**/web.config
 
 web/Data/indexes/*
 web/Data/packages/*
@@ -189,3 +182,12 @@ web/Website/lib/bower_components
 web/Website/data/logs
 web/Website/data/indexes
 .vscode
+web/Website/App_Config/ConnectionStrings.config
+web/Website/App_Config/Sitecore.config
+web/Website/App_Config/Web/nwebsec.config
+web/Website/App_Config/Web/system.webServer.handlers.config
+web/Website/App_Config/Web/system.webServer.modules.config
+web/Website/App_Config/Web/system.webServer.staticContent.config
+web/Website/Views/Shared/ExperienceExplorerView.cshtml
+WordPlugin/SitecoreTreeWalker/SitecoreTreeWalker_1_TemporaryKey.pfx
+WordPlugin/SitecoreTreeWalker/app.config

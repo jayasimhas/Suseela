@@ -1,8 +1,4 @@
-﻿@* @using Sitecore.Mvc.Analytics.Extensions *@
-@{
-    Layout = null;
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     @*@Styles.Render("~/Content/css")*@
@@ -20,13 +16,16 @@
 
     @* <title>@Html.Sitecore().Field("title", new {DisableWebEdit = true})</title>*@
     @* @Html.Sitecore().VisitorIdentification() *@
+    @Html.Sitecore().Placeholder("head")
 </head>
 <body>
 
 @Html.Partial("_Header")
+@*@Html.Sitecore().Placeholder("header")*@
 
 <main>
 
+    @*@Html.Glass().InvokeAction(mvc => Execute());*@
     @Html.Partial("_Navigation")
 
     <div class="main__wrapper">
@@ -48,29 +47,27 @@
 
         <div class="banner banner--highlights">
             <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
-        </div>
-            <!--
+            </div>
 
+
+            @Html.Sitecore().Placeholder("main-content")
+            
+            @*@Html.Partial("../_Shared/DummyData/AuthoredContent")*@
+            <!--
             Here is where the main content of the page goes. Everything else is WIP, but I'm confident enough that this page structure will hold no matter what. Anything inside here should show up properly, no matter what changes outside of this element.
 
             HAVE FUN ᕕ( ᐛ )ᕗ GO CRAZY
 
             !-->
-
-            @Html.Partial("../Article/_Article")
-
-            @Html.Partial("_ArticlePreview")
-
-            @Html.Partial("../_Shared/AuthoredContent")
-
-
+           
         </div>
 
     </div>
 
 </main>
 
-@Html.Partial("_Footer")
+    @Html.Partial("_Footer")
+    @Html.Sitecore().Placeholder("footer")
 
 <script src="/dist/js/concat.js"></script>
 <script type="text/javascript">

@@ -16,6 +16,7 @@ key: type
 content-length: 83
 
 Informa.Library.CustomSitecore.Rules.ResolvePathBasedOnCleanName, Informa.Library
+
 ----version----
 language: en
 version: 1

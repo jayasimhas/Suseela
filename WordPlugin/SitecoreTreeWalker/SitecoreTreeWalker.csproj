@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ED1F49B-D9FE-40EE-A4D4-672250632A8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>SitecoreTreeWalker</RootNamespace>
+    <AssemblyName>InsightPlatformSitecoreTreeWalker</AssemblyName>
+    <LoadBehavior>3</LoadBehavior>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>Word</OfficeApplication>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <Compile Include="Config\ApplicationConfig.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Custom Exceptions\InsecureIFrameException.cs" />
+    <Compile Include="Custom Exceptions\InvalidHtmlException.cs" />
+    <Compile Include="document\DocumentCustomProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="document\DocumentProtection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SitecoreImageTransfer.cs" />
+    <Compile Include="Sitecore\ControlContext.cs" />
+    <Compile Include="Sitecore\SitecoreArticle.cs" />
+    <Compile Include="Sitecore\SitecoreGetterAsync.cs" />
+    <Compile Include="Sitecore\SitecoreItemGetter.cs" />
+    <Compile Include="Sitecore\SitecoreMenuItemContext.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sitecore\SitecorePath.cs" />
+    <Compile Include="Sitecore\SitecoreGetter.cs" />
+    <Compile Include="Sitecore\UpdateNode.cs" />
+    <Compile Include="UI\AdvancedSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AdvancedSettings.Designer.cs">
+      <DependentUpon>AdvancedSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\ArticleDetailsPageSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\ArticleDetailsPageSelector.Designer.cs">
+      <DependentUpon>ArticleDetailsPageSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleInformationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleInformationControl.Designer.cs">
+      <DependentUpon>ArticleInformationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetail.Designer.cs">
+      <DependentUpon>ArticleDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLinkUnlinkInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLinkUnlinkInfo.Designer.cs">
+      <DependentUpon>ArticleLinkUnlinkInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockConfirmation.Designer.cs">
+      <DependentUpon>ArticleLockConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockInfo.Designer.cs">
+      <DependentUpon>ArticleLockInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleStatusBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleStatusBar.Designer.cs">
+      <DependentUpon>ArticleStatusBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.Designer.cs">
+      <DependentUpon>ArticleVersionStateInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.Designer.cs">
+      <DependentUpon>ArticleWorkflowInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\Interfaces\ArticleDetailsPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\FeaturedImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\FeaturedImage.Designer.cs">
+      <DependentUpon>FeaturedImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.Designer.cs">
+      <DependentUpon>IndustriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.Designer.cs">
+      <DependentUpon>MarketSegmentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.Designer.cs">
+      <DependentUpon>MenuSelectorItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\RelatedArticlesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\RelatedArticlesControl.Designer.cs">
+      <DependentUpon>RelatedArticlesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.Designer.cs">
+      <DependentUpon>SubjectsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.Designer.cs">
+      <DependentUpon>NotesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.Designer.cs">
+      <DependentUpon>TaxonomyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.Designer.cs">
+      <DependentUpon>TherapeuticCategoriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.Designer.cs">
+      <DependentUpon>WorkflowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\GeneralTagTitleComparer.cs" />
+    <Compile Include="UI\DealPreviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DialogFactory.cs" />
+    <Compile Include="UI\LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoginWindow.Designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NoFlickerListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controllers\ExpandFlowPanel.cs" />
+    <Compile Include="UI\Controllers\SummaryController.cs" />
+    <Compile Include="UI\Controllers\ITabController.cs" />
+    <Compile Include="UI\EasyRemoveListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ArticlePreviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SaveDialog.Designer.cs">
+      <DependentUpon>SaveDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SelectedRelatedArticles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TablessTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\GraphicMetadataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\GraphicMetadataForm.Designer.cs">
+      <DependentUpon>GraphicMetadataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowser.Designer.cs">
+      <DependentUpon>TreeBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ESRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ESRibbon.Designer.cs">
+      <DependentUpon>ESRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\TaxonomyComparer.cs" />
+    <Compile Include="UI\Controllers\TaxonomyTabController.cs" />
+    <Compile Include="UI\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\ArticlesSidebarsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\ArticlesSidebarsControl.Designer.cs">
+      <DependentUpon>ArticlesSidebarsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.Designer.cs">
+      <DependentUpon>CompanyTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.Designer.cs">
+      <DependentUpon>MultimediaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.Designer.cs">
+      <DependentUpon>IFrameControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\DealsDrugsCompaniesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\DealsDrugsCompaniesControl.Designer.cs">
+      <DependentUpon>DealsDrugsCompaniesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\GraphicsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\GraphicsControl.Designer.cs">
+      <DependentUpon>GraphicsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SuggestedURL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SuggestedURL.Designer.cs">
+      <DependentUpon>SuggestedURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.Designer.cs">
+      <DependentUpon>SupportingDocumentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\SitecoreUser.cs" />
+    <Compile Include="Util\BlockquoteTransformer.cs" />
+    <Compile Include="Util\CharacterStyles\BoldStyle.cs" />
+    <Compile Include="Util\CharacterStyles\CharacterStyle.cs" />
+    <Compile Include="Util\CharacterStyles\CharacterStyleFactory.cs" />
+    <Compile Include="Util\CharacterStyles\HyperlinkStyle.cs" />
+    <Compile Include="Util\CharacterStyles\ItalicStyle.cs" />
+    <Compile Include="Util\CharacterStyles\StrikethroughStyle.cs" />
+    <Compile Include="Util\CharacterStyles\SubscriptStyle.cs" />
+    <Compile Include="Util\CharacterStyles\SuperscriptStyle.cs" />
+    <Compile Include="Util\CharacterStyles\UnderlineStyle.cs" />
+    <Compile Include="Util\Document\ArticleDocumentMetadataParser.cs" />
+    <Compile Include="Util\Document\DocumentAndParagraphStyles.cs" />
+    <Compile Include="Util\Document\DocumentPropertyEditor.cs" />
+    <Compile Include="Util\Document\InlineReferenceParser.cs" />
+    <Compile Include="Util\Document\ReferencedDealParser.cs" />
+    <Compile Include="Util\Document\SidebarArticleParser.cs" />
+    <Compile Include="Util\HTMLTools.cs" />
+    <Compile Include="Util\IFrameEmbedBuilder.cs" />
+    <Compile Include="Util\ImageReferenceBuilder.cs" />
+    <Compile Include="Util\Document\InvalidStylesHighlighter.cs" />
+    <Compile Include="Util\ListBuilder.cs" />
+    <Compile Include="Util\OptimizedCharacterStyleTransformer.cs" />
+    <Compile Include="Util\ParagraphAlignmentParser.cs" />
+    <Compile Include="Util\PreviewLinkUpdater.cs" />
+    <Compile Include="Util\SideboxBuilder.cs" />
+    <Compile Include="Util\SupportingDocumentsReferenceBuilder.cs" />
+    <Compile Include="Util\Tables\TableAnalyzer.cs" />
+    <Compile Include="Util\Tables\TableBuilder.cs" />
+    <Compile Include="Util\Tables\TableCellParagraphsTransformer.cs" />
+    <Compile Include="Util\UserCredentialReader.cs" />
+    <Compile Include="Util\Utils.cs" />
+    <Compile Include="Util\WordUtils.cs" />
+    <Compile Include="Web References\SitecoreServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SitecoreTree\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebserviceHelper\StructConverter.cs" />
+    <EmbeddedResource Include="UI\AdvancedSettings.resx">
+      <DependentUpon>AdvancedSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\ArticleDetailsPageSelector.resx">
+      <DependentUpon>ArticleDetailsPageSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleInformationControl.resx">
+      <DependentUpon>ArticleInformationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLinkUnlinkInfo.resx">
+      <DependentUpon>ArticleLinkUnlinkInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockConfirmation.resx">
+      <DependentUpon>ArticleLockConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleLockInfo.resx">
+      <DependentUpon>ArticleLockInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleStatusBar.resx">
+      <DependentUpon>ArticleStatusBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.resx">
+      <DependentUpon>ArticleVersionStateInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.resx">
+      <DependentUpon>ArticleWorkflowInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\FeaturedImage.resx">
+      <DependentUpon>FeaturedImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.resx">
+      <DependentUpon>TaxonomyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.resx">
+      <DependentUpon>IndustriesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetail.resx">
+      <DependentUpon>ArticleDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.resx">
+      <DependentUpon>MarketSegmentsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.resx">
+      <DependentUpon>MenuSelectorItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\RelatedArticlesControl.resx">
+      <DependentUpon>RelatedArticlesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.resx">
+      <DependentUpon>SubjectsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.resx">
+      <DependentUpon>NotesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.resx">
+      <DependentUpon>TherapeuticCategoriesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.resx">
+      <DependentUpon>WorkflowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginWindow.resx">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaveDialog.resx">
+      <DependentUpon>SaveDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\GraphicMetadataForm.resx">
+      <DependentUpon>GraphicMetadataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\ArticlesSidebarsControl.resx">
+      <DependentUpon>ArticlesSidebarsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.resx">
+      <DependentUpon>CompanyTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.resx">
+      <DependentUpon>MultimediaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.resx">
+      <DependentUpon>IFrameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\DealsDrugsCompaniesControl.resx">
+      <DependentUpon>DealsDrugsCompaniesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\GraphicsControl.resx">
+      <DependentUpon>GraphicsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowser.resx">
+      <DependentUpon>TreeBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ESRibbon.resx">
+      <DependentUpon>ESRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\SuggestedURL.resx">
+      <DependentUpon>SuggestedURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.resx">
+      <DependentUpon>SupportingDocumentsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SitecoreAddin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="SitecoreTreeWalker_TemporaryKey.pfx" />
+    <None Include="SitecoreAddin.Designer.xml">
+      <DependentUpon>SitecoreAddin.cs</DependentUpon>
+    </None>
+    <Compile Include="SitecoreAddin.Designer.cs">
+      <DependentUpon>SitecoreAddin.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <None Include="Web References\SitecoreServer\ArticleStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreServer\CheckoutStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreServer\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SitecoreServer\scserver.wsdl" />
+    <None Include="Web References\SitecoreTree\ArticlePreviewInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\ArticleSize.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\ArticleStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\CompanyWrapper.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\DealInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\DirectoryStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\GeneralTag.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\HDirectoryStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\ItemStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\MediaItemStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SitecoreTree\sctree.wsdl" />
+    <None Include="Web References\SitecoreTree\StaffStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\TaxonomyStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\UserStatusStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\WordStyleStruct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SitecoreTree\WorkflowState.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadingImage.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ibi.arron.velir.com/services/scserver.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SitecoreServer\</RelPath>
+      <UpdateFromURL>http://ibi.arron.velir.com/services/scserver.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SitecoreTreeWalker_SitecoreServer_SCServer</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://supportinforma.velir.com/services/sctree.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SitecoreTree\</RelPath>
+      <UpdateFromURL>http://supportinforma.velir.com/services/sctree.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SitecoreTreeWalker_SitecoreTree_SCTree</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SitecoreServer\scserver.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SitecoreTree\sctree.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\icons\53-Lock-unlocked.png" />
+    <None Include="img\icons\1445989402_lock-24.png" />
+    <Content Include="img\icons\add.png" />
+    <None Include="Resources\multimedia_etc_tabheader.png" />
+    <None Include="Resources\cubes.png" />
+    <None Include="Resources\company.bmp" />
+    <None Include="img\icons\arrowdown.png" />
+    <None Include="img\icons\arrowup.png" />
+    <Content Include="img\icons\asterisk.png" />
+    <Content Include="img\icons\asteriskback.png" />
+    <Content Include="img\icons\blankgreen.png" />
+    <Content Include="img\icons\blankred.png" />
+    <None Include="img\icons\broken_link.png" />
+    <Content Include="img\icons\closedfolder.png" />
+    <None Include="img\icons\company.png" />
+    <Content Include="img\icons\downarrow.png" />
+    <Content Include="img\icons\favicon.ico" />
+    <Content Include="img\icons\favicon.png" />
+    <Content Include="img\icons\file.png" />
+    <Content Include="img\icons\greencheck.png" />
+    <None Include="img\icons\link-32.png" />
+    <Content Include="img\icons\openfolder.png" />
+    <Content Include="img\icons\orangebggradientasterisk.png" />
+    <Content Include="img\icons\orangebggradient.png" />
+    <Content Include="img\icons\redx.png" />
+    <Content Include="img\icons\remove.png" />
+    <Content Include="img\icons\selected.png" />
+    <Content Include="img\icons\sidearrow.png" />
+    <Content Include="img\icons\tree.png" />
+    <None Include="img\imformaVideoPlaceholder2.JPG" />
+    <Content Include="img\live.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\splashlogo.png" />
+    <Content Include="img\tab headers\articleinfo_tabheader.png" />
+    <Content Include="img\tab headers\articlessidebars_browser.png" />
+    <Content Include="img\tab headers\companies_tabheader.png" />
+    <Content Include="img\tab headers\dealsdrugscompanies_browser.png" />
+    <None Include="img\tab headers\ExampleEmbed.PNG" />
+    <Content Include="img\tab headers\generaltags_tabheader.png" />
+    <Content Include="img\tab headers\geography_tabheader.png" />
+    <None Include="img\tab headers\graphics_tabheader.png" />
+    <Content Include="img\tab headers\industries_tabheader.png" />
+    <Content Include="img\tab headers\marketsegments_tabheader.png" />
+    <None Include="img\tab headers\multimedia_etc_tabheader.png" />
+    <None Include="img\tab headers\multimedia_tabheader.png" />
+    <Content Include="img\tab headers\notes_tabheader.png" />
+    <Content Include="img\tab headers\relatedarticles_tabheader.png" />
+    <Content Include="img\tab headers\relateddeals_tabheader.png" />
+    <Content Include="img\tab headers\subjects_tabheader.png" />
+    <Content Include="img\tab headers\summary_tabheader.png" />
+    <Content Include="img\tab headers\supportingdocs_tabheader.png" />
+    <Content Include="img\tab headers\tree browser\supportingdocuments_browser.png" />
+    <Content Include="img\tab headers\therapeutic_tabheader.png" />
+    <Content Include="img\tab headers\tree browser\TabHeaders_companies.png" />
+    <Content Include="img\tab headers\tree browser\TabHeaders_deals.png" />
+    <Content Include="img\tab headers\tree browser\TabHeaders_drugs.png" />
+    <Content Include="img\tab headers\tree browser\TabHeaders_graphics.png" />
+    <Content Include="img\tab headers\tree browser\TabHeaders_related-articles.png" />
+    <Content Include="img\tab headers\tree browser\TabHeaders_sidebars.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <!-- Include the build rules for a C# project. -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SitecoreTreeWalker_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ED6E5532A97B06659E9076133FC22CC88F8C853C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <!-- Include the build rules for a C# project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\15.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="SitecoreTreeWalker" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="SitecoreAddin.cs" CanonicalName="AddIn" PublishedHash="C40DCE02A379733463807043040D3D11AAD841D1" CanActivate="false" IconIndex="1" Blueprint="SitecoreAddin.Designer.xml" GeneratedCode="SitecoreAddin.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

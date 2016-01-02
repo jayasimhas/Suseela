@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {26EA2A22-77A7-43E4-BD8C-E733DED2FAAD}
+database: master
+path: /sitecore/templates/User Defined/Pages/General Content Page/__Standard Values
+parent: {0933B8E2-67C4-4D83-A43D-A4C67B863F4D}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {0933B8E2-67C4-4D83-A43D-A4C67B863F4D}
+templatekey: General Content Page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 213
+
+<r><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" /></d></r>
+----version----
+language: en
+version: 1
+revision: cac1ba60-abc4-442e-965a-34e38c2a6893
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151224T181638Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cac1ba60-abc4-442e-965a-34e38c2a6893
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20151230T194557Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

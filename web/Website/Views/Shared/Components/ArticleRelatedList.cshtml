@@ -1,0 +1,13 @@
+﻿@using Informa.Web.TestData
+
+<div class="related-list">
+    <h1>
+        <a href="#">Related Content</a>
+    </h1>
+
+    @foreach (var article in Enumerable.Range(1, 3))
+    {
+        Html.RenderPartial("Components/ListItemSimple", TestData.ListableModel());
+    }
+</div>
+

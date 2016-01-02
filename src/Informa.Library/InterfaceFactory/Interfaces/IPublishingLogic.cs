@@ -9,4 +9,10 @@ namespace Informa.Library.InterfaceFactory.Interfaces
 	{
 		IEnumerable<Guid> GetItemPublishingCandidates();
 	}
+
+    [GlassFactoryInterface]
+    public interface IContent
+    {
+        
+    }
 }

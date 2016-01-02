@@ -1,3 +1,5 @@
+This project C#6 features and configured to use Node Tools for Visual Studio, it's recommended for back-end developers to use Visual Studio 2015 Update 1 or greater due to the improvements in that release.  However... the project also references the Roslyn compiler so you should be able to build the environment without these.
+
 The instructions for your local setup should be:
 
 1.	Clone/Extract the project
@@ -8,3 +10,5 @@ The instructions for your local setup should be:
     3b.  BACKEND:  Restore the dev databases and set your local conneection strings.
 4.	Get the license xml from \\vwfs01\Shares\Software\Sitecore\Developer License\ Put it in the web/Data folder, and re-name it to license.xml.  
 5.	Run 'nant.bat init' from the root folder.
+
+

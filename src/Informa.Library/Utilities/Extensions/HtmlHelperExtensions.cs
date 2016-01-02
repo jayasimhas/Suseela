@@ -35,6 +35,8 @@ namespace Informa.Library.Utilities.Extensions
 			return data;
 		}
 
+        //public static 
+
 		public static string CsrfTokenHeaderValue(this HtmlHelper htmlHelper)
 		{
 			string cookieToken, formToken;

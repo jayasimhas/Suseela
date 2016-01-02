@@ -53,4 +53,19 @@ and running. There are additional default properties from dev.properties that yo
 	<!-- Glass Interface Factory -->
 	<property name="GlassInterfaceFactory.DebuggingEnabled" value="true" />
 		
+	<!-- Word Plugin -->
+	<property name="domain" value="http://supportinforma.velir.com/" />
+
+	<!-- Added for configuration of the Editor Environment --> 
+	<property name="scserver" value="http://supportinforma.velir.com/services/scserver.asmx" />
+	<property name="sctree" value="http://supportinforma.velir.com/services/sctree.asmx" />	
+	<property name="Development"  value="http://supportinforma.velir.com/services/scserver.asmx"/>
+    <property name="Stage"  value="http://supportinforma.velir.com/services/scserver.asmx"/>
+    <property name="Production"  value="http://supportinforma.velir.com/services/scserver.asmx"/>
+    <property name="DevelopmentTree"  value="http://supportinforma.velir.com/services/sctree.asmx"/>
+    <property name="StageTree"  value="http://supportinforma.velir.com/services/sctree.asmx"/>
+    <property name="ProductionTree"  value="http://supportinforma.velir.com/services/sctree.asmx"/>
+	<property name="DevelopmentForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />
+	<property name="StageForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />
+	<property name="ProductionForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />	
 </project>

@@ -1,0 +1,8 @@
+﻿@model Informa.Web.Areas.Account.Models.LoginViewModel
+
+@using (Html.BeginForm("Login", "Account", new { area = "Account" }, FormMethod.Post, new { style = "display:inline" }))
+{
+  @Html.HiddenFor(model => model.Parameters)
+
+  <input type="image" title='@Model.ToolTip' style="margin:0 1px" src="@Url.Content(Model.Icon)" />
+}

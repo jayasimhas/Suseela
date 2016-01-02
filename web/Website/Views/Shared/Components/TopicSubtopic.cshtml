@@ -1,0 +1,27 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Web.TestData       
+
+
+<div class="latest-news">
+
+    <h1>
+        @TestData.GetRandomTopic().LinkableTexts
+        <a href="#">Explore this Topic</a>
+    </h1>
+
+   @Html.Sitecore().Placeholder("two-column-curated")
+
+    @{
+        Html.RenderPartial("Components/ListableContentWide", TestData.ListableModel());
+        Html.RenderPartial("Components/ListableContentWide", TestData.ListableModel());
+    }
+
+    <h4>
+        <span>Latest from @TestData.GetRandomTopic().LinkableTexts</span>
+    </h4>
+
+    @foreach (var listable in Enumerable.Range(1, 6))
+    {
+        Html.RenderPartial("Components/ListableContentSmall", TestData.ListableModel(1, 0, false));
+    }
+</div>
