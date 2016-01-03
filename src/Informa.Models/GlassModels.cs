@@ -120,7 +120,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
 								/// <summary>
 					/// The Sort Order field.
@@ -420,7 +420,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
 										/// <summary>
 						/// The Sort Order field.
@@ -924,6 +924,46 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TitleFieldName = "Title";
 
 						
+					
+			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
+			public const string TaxonomyFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
+
+						
 			
 
 	}
@@ -967,6 +1007,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 	}
 
 }
+namespace Informa.Models.Velir.Search.Models.FactoryInterface
+{
+
+
+ 	/// <summary>
+	/// ILinkable Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Linkable</para>	
+	/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ILinkableConstants.TemplateIdString)]
+	public partial interface ILinkable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
+	{
+								/// <summary>
+					/// The LinkableText field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 529c867f-2816-43a9-964a-3f16c014a4f7</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILinkableConstants.LinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> LinkableTexts  {get; set;}
+								/// <summary>
+					/// The LinkableUrl field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: d156cd07-71a4-4daa-b52a-5ce602d6d3bb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILinkableConstants.LinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> LinkableUrls  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ILinkable Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Linkable</para>	
+		/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ILinkable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
+		{
+										/// <summary>
+						/// The LinkableText field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 529c867f-2816-43a9-964a-3f16c014a4f7</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILinkableConstants.LinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> LinkableTexts  {get; set;}
+										/// <summary>
+						/// The LinkableUrl field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: d156cd07-71a4-4daa-b52a-5ce602d6d3bb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILinkableConstants.LinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> LinkableUrls  {get; set;}
+						}
+	
+	public static partial class ILinkableConstants{
+
+			public const string TemplateIdString = "3efeaf26-8572-417d-a8a8-6cb3a28eaf82";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Linkable";
+
+					
+			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string LinkableTextsFieldName = "LinkableText";
+
+						
+					
+			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string LinkableUrlsFieldName = "LinkableUrl";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 {
 
@@ -978,7 +1102,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ITaxonomy_ItemConstants.TemplateIdString)]
-	public partial interface ITaxonomy_Item : IGlassBase 
+	public partial interface ITaxonomy_Item : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable
 	{
 								/// <summary>
 					/// The Item Name field.
@@ -999,7 +1123,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ITaxonomy_Item__Raw : IGlassBase 
+		public partial interface ITaxonomy_Item__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable__Raw
 		{
 										/// <summary>
 						/// The Item Name field.
@@ -1023,6 +1147,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public const string Item_NameFieldName = "Item Name";
 
 						
+					
+			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string LinkableTextsFieldName = "LinkableText";
+
+						
+					
+			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string LinkableUrlsFieldName = "LinkableUrl";
+
+						
 			
 
 	}
@@ -1039,7 +1173,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IHome_PageConstants.TemplateIdString)]
-	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
 				}
 
@@ -1051,7 +1185,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
 						}
 	
@@ -1101,6 +1235,41 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
 			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
 
 						
 			
@@ -2062,6 +2231,205 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
+namespace Informa.Models.Velir.Search.Models.FactoryInterface
+{
+
+
+ 	/// <summary>
+	/// IListable Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Listable</para>	
+	/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IListableConstants.TemplateIdString)]
+	public partial interface IListable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
+	{
+								/// <summary>
+					/// The ListableAuthors field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableAuthors  {get; set;}
+								/// <summary>
+					/// The ListableDate field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableDates  {get; set;}
+								/// <summary>
+					/// The ListableImage field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableImages  {get; set;}
+								/// <summary>
+					/// The ListableSummary field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 241b01c9-b518-4182-9b94-c40db3fb9cb2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableSummaries  {get; set;}
+								/// <summary>
+					/// The ListableTitle field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableTitles  {get; set;}
+								/// <summary>
+					/// The ListableTopics field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableTopics  {get; set;}
+								/// <summary>
+					/// The ListableUrl field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableUrls  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IListable Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Listable</para>	
+		/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IListable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
+		{
+										/// <summary>
+						/// The ListableAuthors field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableAuthors  {get; set;}
+										/// <summary>
+						/// The ListableDate field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableDates  {get; set;}
+										/// <summary>
+						/// The ListableImage field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableImages  {get; set;}
+										/// <summary>
+						/// The ListableSummary field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 241b01c9-b518-4182-9b94-c40db3fb9cb2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableSummaries  {get; set;}
+										/// <summary>
+						/// The ListableTitle field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableTitles  {get; set;}
+										/// <summary>
+						/// The ListableTopics field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableTopics  {get; set;}
+										/// <summary>
+						/// The ListableUrl field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableUrls  {get; set;}
+						}
+	
+	public static partial class IListableConstants{
+
+			public const string TemplateIdString = "a3ec5da5-c37c-44a5-83f3-96d45b53389f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Listable";
+
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.Common
 {
 
@@ -2111,7 +2479,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 	/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IAuthored_ContentConstants.TemplateIdString)]
-	public partial interface IAuthored_Content : IGlassBase 
+	public partial interface IAuthored_Content : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
 								/// <summary>
 					/// The Body field.
@@ -2141,7 +2509,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 		/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IAuthored_Content__Raw : IGlassBase 
+		public partial interface IAuthored_Content__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
 										/// <summary>
 						/// The Body field.
@@ -2179,6 +2547,41 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 					
 			public static readonly ID TitleFieldId = new ID("b820f81e-734a-4ef5-b35e-210b406aee13");
 			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
 
 						
 			
@@ -2235,7 +2638,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IStaff_ItemConstants.TemplateIdString)]
-	public partial interface IStaff_Item : IGlassBase 
+	public partial interface IStaff_Item : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
 								/// <summary>
 					/// The First Name field.
@@ -2292,7 +2695,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IStaff_Item__Raw : IGlassBase 
+		public partial interface IStaff_Item__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
 										/// <summary>
 						/// The First Name field.
@@ -2370,6 +2773,51 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					
 			public static readonly ID TwitterFieldId = new ID("ea38cc14-799a-4fed-a58c-4bed8c57a81e");
 			public const string TwitterFieldName = "Twitter";
+
+						
+					
+			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string LinkableTextsFieldName = "LinkableText";
+
+						
+					
+			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string LinkableUrlsFieldName = "LinkableUrl";
+
+						
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
 
 						
 			
@@ -2661,6 +3109,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Layout.Section
 					
 			public static readonly ID VaryByUserFieldId = new ID("0e54a8dc-72ad-4372-a7c7-bb4773fad44d");
 			public const string VaryByUserFieldName = "VaryByUser";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// I_BaseTaxonomy Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+	/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=I_BaseTaxonomyConstants.TemplateIdString)]
+	public partial interface I_BaseTaxonomy : IGlassBase 
+	{
+								/// <summary>
+					/// The Taxonomy field.
+					/// <para></para>
+					/// <para>Field Type: tree list</para>		
+					/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					object /* UNKNOWN */ Taxonomy  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// I_BaseTaxonomy Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+		/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface I_BaseTaxonomy__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Taxonomy field.
+						/// <para></para>
+						/// <para>Field Type: tree list</para>		
+						/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						object /* UNKNOWN */ Taxonomy  {get; set;}
+						}
+	
+	public static partial class I_BaseTaxonomyConstants{
+
+			public const string TemplateIdString = "eed18b44-4005-4f15-9b18-d7c2d2cac0ec";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "_BaseTaxonomy";
+
+					
+			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
+			public const string TaxonomyFieldName = "Taxonomy";
 
 						
 			
