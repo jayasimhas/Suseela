@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {2098DEC7-F8DE-47EC-A937-5C9FEB49BD6D}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/Cross Publication Mappings/Mapping/Default Mapping/Sidebar Styles
+parent: {A57DC0C0-5F5F-4D9B-AD33-3FBB67FF03ED}
+name: Sidebar Styles
+master: {00000000-0000-0000-0000-000000000000}
+template: {2B42D650-46D3-41F0-AA12-D0657022D459}
+templatekey: Sidebar Styles
+
+----version----
+language: en
+version: 1
+revision: 9e49e943-b574-4218-8b7a-540ea0f4cfe9
+
+----field----
+field: {383F9E17-D40A-4756-9D59-CF2B1357DC89}
+name: Width
+key: width
+content-length: 3
+
+100
+----field----
+field: {351D4DB9-C539-45B4-BAD3-2B3696225320}
+name: Height
+key: height
+content-length: 3
+
+200
+----field----
+field: {01041903-9F91-44B1-B983-4183A1D74BAD}
+name: Object Style
+key: object style
+content-length: 13
+
+sidebar_frame
+----field----
+field: {73A76523-7281-41E4-BBA1-80F12FA8A1EB}
+name: Sidebar Title Style
+key: sidebar title style
+content-length: 6
+
+sideh1
+----field----
+field: {D8DBE59E-5802-47D8-9256-E8935F6C8BBA}
+name: Sidebar Text Style
+key: sidebar text style
+content-length: 6
+
+sidet1
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20110719T140500
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9e49e943-b574-4218-8b7a-540ea0f4cfe9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111103T121323:634559192037266673
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\smithj008
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

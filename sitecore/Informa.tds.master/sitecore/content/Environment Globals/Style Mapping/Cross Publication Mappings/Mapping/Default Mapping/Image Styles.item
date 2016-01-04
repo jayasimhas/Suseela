@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {0480FB9B-6DB1-45A2-9EE6-EA91E3BF1E36}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/Cross Publication Mappings/Mapping/Default Mapping/Image Styles
+parent: {A57DC0C0-5F5F-4D9B-AD33-3FBB67FF03ED}
+name: Image Styles
+master: {00000000-0000-0000-0000-000000000000}
+template: {A48216A8-1B0D-49CB-95B8-911F9194C393}
+templatekey: Image Styles
+
+----version----
+language: en
+version: 1
+revision: 01297331-d41b-41af-ae32-873d78f363cf
+
+----field----
+field: {3ED6217F-CD94-4164-880B-A6AA9D058E6E}
+name: Header MS Style
+key: header ms style
+content-length: 38
+
+{676066DB-F687-41D0-9A0C-0F1EBCD27882}
+----field----
+field: {5A9A2C1E-32C3-4730-B94F-D072C7DA884B}
+name: Header Paragraph Style
+key: header paragraph style
+content-length: 3
+
+ch1
+----field----
+field: {2DE9CE34-82FE-4125-9BB4-D2092FCA353C}
+name: Title MS Style
+key: title ms style
+content-length: 38
+
+{D2FF2071-7100-4817-B451-1DA4F45F3B26}
+----field----
+field: {D73EA160-ED7A-416F-BC69-E4E1AE99C83F}
+name: Title Paragraph Style
+key: title paragraph style
+content-length: 3
+
+ch2
+----field----
+field: {2CE15AF5-FCDB-40D8-8365-860DFE4DA339}
+name: Caption MS Style
+key: caption ms style
+content-length: 38
+
+{9389AEE7-0B91-416B-AE20-CFBD8FE04B8D}
+----field----
+field: {6B300F31-1806-454E-9DDB-BA875E0355B2}
+name: Caption Paragraph Style
+key: caption paragraph style
+content-length: 3
+
+ch3
+----field----
+field: {FDA8B577-852C-4C26-A85C-C7CBD46F4020}
+name: Source MS Style
+key: source ms style
+content-length: 38
+
+{BCF69878-F748-4CD5-A382-797761173EF3}
+----field----
+field: {E50F92E9-7DF5-46BD-9B17-3F7C70A1BB5A}
+name: Source Paragraph Style
+key: source paragraph style
+content-length: 3
+
+ch5
+----field----
+field: {F048A9F5-CC18-4C7E-851F-2BF7592B0641}
+name: Placeholder Paragraph Style
+key: placeholder paragraph style
+content-length: 3
+
+ch4
+----field----
+field: {383F9E17-D40A-4756-9D59-CF2B1357DC89}
+name: Width
+key: width
+content-length: 3
+
+121
+----field----
+field: {351D4DB9-C539-45B4-BAD3-2B3696225320}
+name: Height
+key: height
+content-length: 2
+
+80
+----field----
+field: {01041903-9F91-44B1-B983-4183A1D74BAD}
+name: Object Style
+key: object style
+content-length: 13
+
+exhibit_frame
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20110729T114900
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+01297331-d41b-41af-ae32-873d78f363cf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111130T140653:634582588132628351
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

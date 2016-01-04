@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {04F9960A-87AF-4FAE-9B09-93D5EF962555}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/Medtech Insight/Style Mapping Folder/Market and Industry Briefs
+parent: {2A65C763-680D-4365-A4D4-88175500336B}
+name: Market and Industry Briefs
+master: {00000000-0000-0000-0000-000000000000}
+template: {7C5AD0A2-41EB-47D8-8DAB-2EE522FE44F9}
+templatekey: Article Category Styles Map
+
+----version----
+language: en
+version: 1
+revision: 2cba6f52-b872-4bf3-a6db-8703c2be3c0f
+
+----field----
+field: {9A474805-F518-4349-9E26-4AE1DE4B41CC}
+name: Article Category
+key: article category
+content-length: 38
+
+{662BA680-A1D1-4AC0-911F-CBB1B7775CEC}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130129T152915
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2cba6f52-b872-4bf3-a6db-8703c2be3c0f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130129T152957:634950701975115549
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

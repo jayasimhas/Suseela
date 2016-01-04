@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {BEC5434F-3B4C-47CB-AC6F-52356F61F191}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/The Pink Sheet/InDesign Styles/Paragraph Style Folder/body_question
+parent: {FB55EDFF-AA2A-4096-BE08-BE0611DFC102}
+name: body_question
+master: {00000000-0000-0000-0000-000000000000}
+template: {5B85ED6F-C3D6-46D3-B1E3-24C12974CADD}
+templatekey: Paragraph Style
+
+----version----
+language: en
+version: 1
+revision: 895a2960-aab5-45bd-a8ff-dfe6a86eeed2
+
+----field----
+field: {70B6B16B-08DE-44F4-9B68-7FBABA6BDED0}
+name: Title
+key: title
+content-length: 13
+
+body_question
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 18
+
+sitecore\cspellman
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20111005T142148
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\cspellman
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+895a2960-aab5-45bd-a8ff-dfe6a86eeed2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111013T184535:634541283355243958
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\haniakj

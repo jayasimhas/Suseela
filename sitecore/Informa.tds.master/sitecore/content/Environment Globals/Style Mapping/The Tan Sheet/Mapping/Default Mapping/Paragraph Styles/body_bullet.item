@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {BFFDD2A8-B78D-4F2D-B84E-F3A7A1556C6E}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/The Tan Sheet/Mapping/Default Mapping/Paragraph Styles/body_bullet
+parent: {C4EBDA12-AA4C-498F-9916-B7144C962E51}
+name: body_bullet
+master: {00000000-0000-0000-0000-000000000000}
+template: {9F5BF3A8-74A5-464E-8A89-B14E881565D2}
+templatekey: Paragraph Style Mapping
+
+----version----
+language: en
+version: 1
+revision: 933b8738-ad92-43e9-9392-8a19d4b8ac82
+
+----field----
+field: {EC46F150-89B0-4469-950C-D8F9307D932F}
+name: MS Word Style
+key: ms word style
+content-length: 38
+
+{3E4ADD97-DAB4-406D-BD03-14AEA5443289}
+----field----
+field: {F87970DB-C5A1-44EB-BF03-AA5AC7BEC646}
+name: Paragraph Style
+key: paragraph style
+content-length: 38
+
+{7771D885-DAB4-4EDD-8865-7AFBAB2C2CB4}
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20111014T174146
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+933b8738-ad92-43e9-9392-8a19d4b8ac82
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111014T174156:634542109162155922
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

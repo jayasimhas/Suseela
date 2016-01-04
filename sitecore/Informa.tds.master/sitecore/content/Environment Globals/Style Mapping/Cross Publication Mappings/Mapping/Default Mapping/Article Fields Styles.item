@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {BA9EF193-DF20-4259-BE19-91E1386CF947}
+database: master
+path: /sitecore/content/Environment Globals/Style Mapping/Cross Publication Mappings/Mapping/Default Mapping/Article Fields Styles
+parent: {A57DC0C0-5F5F-4D9B-AD33-3FBB67FF03ED}
+name: Article Fields Styles
+master: {00000000-0000-0000-0000-000000000000}
+template: {FA18EB0E-39AD-4037-96C2-C55C277D61E7}
+templatekey: Article Fields Styles
+
+----version----
+language: en
+version: 1
+revision: 6f794a6e-cc98-41ca-af9f-fc6a5a71b693
+
+----field----
+field: {03845B01-8644-4A67-9D45-A4587E739FDC}
+name: Article Title Style
+key: article title style
+content-length: 38
+
+{5A1F02F7-2FD6-468D-8296-ADB27AA9E6B4}
+----field----
+field: {6F1649D1-37BC-4255-ABA1-F67D569F6BD3}
+name: Article Byline Style
+key: article byline style
+content-length: 38
+
+{1599AA6F-F43D-4980-9BF9-17D95D9CAAA0}
+----field----
+field: {6E8CEA57-CF17-4BB4-8DD3-DD3818077982}
+name: Article Deck Style
+key: article deck style
+content-length: 38
+
+{14E3BE7F-988C-4944-89EE-DC02379E53C1}
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20110719T141100
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6f794a6e-cc98-41ca-af9f-fc6a5a71b693
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20111018T174229:634545565495256376
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\haniakj
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />
