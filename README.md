@@ -7,7 +7,7 @@ The instructions for your local setup should be:
     (This is located on the G drive: G:\Software\Sitecore\Installers\8.1\Sitecore 81 rev 151003.zip)
 3.	Copy the local.properties example located at /config/env and change the Data-directory, hostname, and connection string items.
     3a.  FRONTEND: Copy the values from the dev environment's connection strings.
-    3b.  BACKEND:  Restore the dev databases and set your local conneection strings.
+    3b.  BACKEND:  Restore the dev databases from \\VWSQL2012\Backups and set your local conneection strings.  (informa_web, informa_master, etc...)
 4.	Get the license xml from \\vwfs01\Shares\Software\Sitecore\Developer License\ Put it in the web/Data folder, and re-name it to license.xml.  
 5.	Run 'nant.bat init' from the root folder.
 
