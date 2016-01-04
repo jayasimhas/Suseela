@@ -3,10 +3,8 @@
 @model Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface.IListable
 @if (Model.ListableImages != null)
 {
-    <img class="article-preview__image" src="@Model.ListableImages.Src">
+    <img class="article-related-content__img" src="@Model.ListableImages.Src">
 }
-<div class="article-preview__category">@TestData.GetRandomTopic().LinkableTexts</div>
-<h1 class="article-preview__headline">@Model.ListableTitles</h1>
-<div class="article-preview__metadata">
-    <time class="article-preview__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>
-</div>
+<span class="article-related-content__category">@TestData.GetRandomTopic().LinkableTexts</span>
+<h5>@Model.ListableTitles</h5>
+<time class="article-related-content__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>
