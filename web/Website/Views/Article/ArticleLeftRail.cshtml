@@ -2,9 +2,9 @@
 @using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
 
-<div class="article-left-rail">         
+<div class="article-left-rail">
     <div class="article-preview">
-        <span class="article-preview__byline">Publication Name</span>     
+        <span class="article-preview__byline">Publication Name</span>
         <h1 class="article-preview__headline">@Model.Title</h1>
         <h3 class="article-preview__subtitle">@Model.Sub_Title</h3>
         <div class="article-preview__metadata">
@@ -29,9 +29,11 @@
                         <a href="#">donnayoung&#64;emaildomain.com</a>
                     </span>
                 </li>
-            } 
+            }
         </ul>
     </div>
+
+@* STYLING MOCKUPS
 
     <table class="article-table">
         <thead>
@@ -133,7 +135,7 @@
         </tbody>
     </table>
 
-    @* SINGLE AUTHOR          *@
+    @* SINGLE AUTHOR
     <div class="article-author article-author--solo">
         <ul class="article-author__list article-author__list">
             <li>
@@ -150,4 +152,4 @@
     </div>
 
     @* END SINGLE AUTHOR *@
-</div> 
+</div>

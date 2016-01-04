@@ -4,8 +4,13 @@
 }
 
 .article-right-rail {
-    max-width: 290px;
     float: right;
+    max-width: 290px;
+
+    h2 {
+        color: $informa-black;
+        margin-bottom: 28px;
+    }
 }
 .article-author {
     @include textMix("Roboto", 18px, 500);

@@ -8,6 +8,7 @@
 	flex: 0 0 auto;
 	float: left;
 	width: 330px;
+	z-index: 999999;
 
 	// Start off translated on-screen just enough to see the toggler
 	transform: translate3d(70px, 0, 0);
