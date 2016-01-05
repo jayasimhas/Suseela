@@ -348,9 +348,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.Client.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Speak.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Bin\Sitecore.Speak.Web.dll</HintPath>
+    <Reference Include="Sitecore.Speak.Web">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
