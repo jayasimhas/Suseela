@@ -573,6 +573,13 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="dist\empty.txt" />
+    <Content Include="dist\img\informa-logo.png" />
+    <Content Include="dist\img\scrip-logo.jpg" />
+    <Content Include="dist\img\svg-sprite.svg" />
+    <Content Include="dist\index-generated.css" />
+    <Content Include="dist\js\concat.js" />
+    <Content Include="dist\js\vendor.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -599,8 +606,6 @@
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
     <Content Include="local.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Config\Commands.config" />
     <Content Include="App_Config\ConnectionStrings.config" />
     <Content Include="App_Config\ConnectionStrings.config.template" />
@@ -832,10 +837,6 @@
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="Areas\Account\Views\Connector\Login.cshtml" />
     <Content Include="Areas\Account\Views\Account\Lockout.cshtml" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -855,15 +856,11 @@
     <Content Include="Areas\Social\Views\Sharing\TweetButton.cshtml" />
     <Content Include="Areas\Social\Views\Web.config" />
     <Content Include="bower.json" />
-    <Content Include="packages\velir_search_web-1.1.zip" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="velir\dist\example.css" />
     <Content Include="velir\dist\patternlibrary.css" />
     <Content Include="velir\dist\velir.search.angular.js" />
     <Content Include="velir\images\svgdefs.svg" />
     <Content Include="velir\js\app.js" />
-    <Content Include="velir\packages\velir_search_web.xml" />
     <Content Include="velir\vendor\bower_components\angular\angular.js" />
     <Content Include="velir\vendor\bower_components\lodash\lodash.js" />
     <Content Include="Web.config">
@@ -882,18 +879,6 @@
     <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
     <Content Include="Views\_Shared\AuthoredContent.cshtml" />
     <Content Include="styles\index.scss" />
-    <Content Include="styles\patternlibrary\base\_colors.scss" />
-    <Content Include="styles\patternlibrary\base\_forms.scss" />
-    <Content Include="styles\patternlibrary\base\_general.scss" />
-    <Content Include="styles\patternlibrary\base\_icons.scss" />
-    <Content Include="styles\patternlibrary\base\_mixins.scss" />
-    <Content Include="styles\patternlibrary\base\_typography.scss" />
-    <Content Include="styles\patternlibrary\components\_media-object.scss" />
-    <Content Include="styles\patternlibrary\helpers\_class-helpers.scss" />
-    <Content Include="styles\patternlibrary\helpers\_grid-helpers.scss" />
-    <Content Include="styles\patternlibrary\helpers\_layout-helpers.scss" />
-    <Content Include="styles\vendors\_grid-settings.scss" />
-    <Content Include="styles\vendors\_normalize.scss" />
     <Content Include="Views\_Shared\DummyData\AuthoredContent.cshtml" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -942,17 +927,19 @@
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="Models\" />
+    <Folder Include="packages\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="dist\index-generated.css.map" />
+    <Content Include="dist\js\vendor.js.map" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

@@ -785,7 +785,7 @@
     <ManifestKeyFile>SitecoreTreeWalker_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ED6E5532A97B06659E9076133FC22CC88F8C853C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>73446AE1379743B1274DD2D697D66AA8D214CD75</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
