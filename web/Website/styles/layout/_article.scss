@@ -1,11 +1,16 @@
 .article-left-rail {
-    max-width: 960px;
+    max-width: 790px;
     float: left;
 }
 
 .article-right-rail {
-    max-width: 240px;
     float: right;
+    max-width: 290px;
+
+    h2 {
+        color: $informa-black;
+        margin-bottom: 28px;
+    }
 }
 .article-author {
     @include textMix("Roboto", 18px, 500);
@@ -125,4 +130,56 @@
         border-right: 1px solid $informa-light-gray-e;
     }
 
+}
+
+.article-pullquote {
+    @include textMix('Roboto', 22px, 500);
+    color: $informa-black;
+    line-height: 2rem;
+    border-top: 4px solid $informa-dark-orange;
+    border-bottom: 1px solid $informa-dark-orange;
+    padding: 1.75rem 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.article-inline-image {
+    @include textMix('Roboto', 13px, 400);
+    color: $informa-mid-gray;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    em {
+        float: right;
+    }
+
+    &__caption {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    &--pull-left,
+    &--pull-right {
+        float: left;
+        margin-right: 2rem;
+        width: 50%;
+
+        em {
+            float: none;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    &--pull-right {
+        float: right;
+        margin-left: 0;
+        margin-left: 2rem;
+        text-align: right;
+    }
 }

@@ -1,0 +1,39 @@
+.article-related-content {
+
+    &__img {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    &__category ,
+    &__date {
+        @include textMix('Roboto Condensed', 13px, 300);
+        color: $informa-mid-gray;
+    }
+    &__category {
+        display: inline-block;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    h5 {
+        margin-bottom: 8px;
+    }
+
+    &__date {
+        border-bottom: 1px solid $informa-light-gray-d;
+        display: inline-block;
+        font-weight: 400;
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        width: 100%;
+
+        &:last-child {
+            border: 0;
+        }
+    }
+
+
+
+}

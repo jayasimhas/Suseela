@@ -2,9 +2,9 @@
 @using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
 
-<div class="article-left-rail">         
+<div class="article-left-rail">
     <div class="article-preview">
-        <span class="article-preview__byline">Publication Name</span>     
+        <span class="article-preview__byline">Publication Name</span>
         <h1 class="article-preview__headline">@Model.Title</h1>
         <h3 class="article-preview__subtitle">@Model.Sub_Title</h3>
         <div class="article-preview__metadata">
@@ -18,6 +18,36 @@
         @Html.Raw(Model.Body)
     </div>
 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+
+    <aside class="article-inline-image">
+        <img src="http://placehold.it/1200x300">
+        <em>Image Source: Associated Press</em>
+        <span class="article-inline-image__caption">Image caption goes here</span>
+    </aside>
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+
+    <div class="article-inline-image article-inline-image--pull-left">
+        <img src="http://placehold.it/1200x300">
+        <em>Image Source: Associated Press</em>
+        <span class="article-inline-image__caption">Image caption goes here</span>
+    </div>
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+
+    <div class="article-inline-image article-inline-image--pull-right">
+        <img src="http://placehold.it/1200x300">
+        <em>Image Source: Associated Press</em>
+        <span class="article-inline-image__caption">Image caption goes here</span>
+    </div>
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+    
+    <blockquote class="article-pullquote">
+        Amgen also asserted that Sandoz failed to provide proper notice that the biosimilar maker planned to launch its product as soon as it won FDA approval of Zarxio.
+    </blockquote>
+
     <div class="article-author">
         <ul class="article-author__list">
             @foreach (var author in Enumerable.Range(0, 3))
@@ -29,9 +59,11 @@
                         <a href="#">donnayoung&#64;emaildomain.com</a>
                     </span>
                 </li>
-            } 
+            }
         </ul>
     </div>
+
+@* STYLING MOCKUPS
 
     <table class="article-table">
         <thead>
@@ -133,7 +165,7 @@
         </tbody>
     </table>
 
-    @* SINGLE AUTHOR          *@
+    @* SINGLE AUTHOR
     <div class="article-author article-author--solo">
         <ul class="article-author__list article-author__list">
             <li>
@@ -150,4 +182,4 @@
     </div>
 
     @* END SINGLE AUTHOR *@
-</div> 
+</div>
