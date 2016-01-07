@@ -1,0 +1,10 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Web.TestData
+@model Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface.IListable
+@if (Model.ListableImages != null)
+{
+    <img class="article-related-content__img" src="@Model.ListableImages.Src">
+}
+<span class="article-related-content__category">@TestData.GetRandomTopic().LinkableTexts</span>
+<h5>@Model.ListableTitles</h5>
+<time class="article-related-content__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>

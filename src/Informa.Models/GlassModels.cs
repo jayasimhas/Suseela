@@ -109,335 +109,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.Publication_Specific
-{
-
-
- 	/// <summary>
-	/// IIn_Vivo_Toc Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Publication Specific/In Vivo Toc</para>	
-	/// <para>ID: 09dcdd51-4a10-440b-a922-a8880c720f02</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IIn_Vivo_TocConstants.TemplateIdString)]
-	public partial interface IIn_Vivo_Toc : IGlassBase 
-	{
-								/// <summary>
-					/// The Around The Industry Article Category field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 7e01fdaa-828b-4c70-b729-5bc8d1bf62aa</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Around_The_Industry_Article_Category  {get; set;}
-								/// <summary>
-					/// The Around The Industry Author Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: e368503d-be72-4b21-9d63-42189600cec0</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Author_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Around_The_Industry_Author_Style  {get; set;}
-								/// <summary>
-					/// The Around The Industry Heading Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: f02bc395-eb39-42aa-9df7-1ffed1f44340</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Heading_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Around_The_Industry_Heading_Style  {get; set;}
-								/// <summary>
-					/// The Around The Industry Heading Text field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 6b2c33a4-d01b-4ab3-a474-09b7cb5610f5</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Heading_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Around_The_Industry_Heading_Text  {get; set;}
-								/// <summary>
-					/// The Around The Industry Title Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 6d5f4d6b-4720-40b2-bb83-4a51c5c73846</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Around_The_Industry_Title_Style  {get; set;}
-								/// <summary>
-					/// The Featured Story Article Category field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 60b4e829-5ef1-446c-ad02-8c6fb9080579</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Featured_Story_Article_Category  {get; set;}
-								/// <summary>
-					/// The Featured Story Author Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 1003c171-4cb6-4d0e-bd89-8bc623d40550</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Author_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Featured_Story_Author_Style  {get; set;}
-								/// <summary>
-					/// The Featured Story Deck Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 9112b734-89a0-42db-8876-69168a036a28</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Deck_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Featured_Story_Deck_Style  {get; set;}
-								/// <summary>
-					/// The Featured Story Title Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 51ccfff3-1b6f-4ca9-92ec-7f38d3b100fa</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Featured_Story_Title_Style  {get; set;}
-								/// <summary>
-					/// The After Around The Industry field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 998d7387-fb86-46f8-9413-196af90be68d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.After_Around_The_IndustryFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string After_Around_The_Industry  {get; set;}
-								/// <summary>
-					/// The After Features field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 37502344-c6fb-4676-ba76-2c5ae31c17b3</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IIn_Vivo_TocConstants.After_FeaturesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string After_Features  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IIn_Vivo_Toc Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Publication Specific/In Vivo Toc</para>	
-		/// <para>ID: 09dcdd51-4a10-440b-a922-a8880c720f02</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IIn_Vivo_Toc__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Around The Industry Article Category field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 7e01fdaa-828b-4c70-b729-5bc8d1bf62aa</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Around_The_Industry_Article_Category  {get; set;}
-										/// <summary>
-						/// The Around The Industry Author Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: e368503d-be72-4b21-9d63-42189600cec0</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Author_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Around_The_Industry_Author_Style  {get; set;}
-										/// <summary>
-						/// The Around The Industry Heading Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: f02bc395-eb39-42aa-9df7-1ffed1f44340</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Heading_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Around_The_Industry_Heading_Style  {get; set;}
-										/// <summary>
-						/// The Around The Industry Heading Text field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 6b2c33a4-d01b-4ab3-a474-09b7cb5610f5</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Heading_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Around_The_Industry_Heading_Text  {get; set;}
-										/// <summary>
-						/// The Around The Industry Title Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 6d5f4d6b-4720-40b2-bb83-4a51c5c73846</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Around_The_Industry_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Around_The_Industry_Title_Style  {get; set;}
-										/// <summary>
-						/// The Featured Story Article Category field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 60b4e829-5ef1-446c-ad02-8c6fb9080579</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Featured_Story_Article_Category  {get; set;}
-										/// <summary>
-						/// The Featured Story Author Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 1003c171-4cb6-4d0e-bd89-8bc623d40550</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Author_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Featured_Story_Author_Style  {get; set;}
-										/// <summary>
-						/// The Featured Story Deck Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 9112b734-89a0-42db-8876-69168a036a28</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Deck_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Featured_Story_Deck_Style  {get; set;}
-										/// <summary>
-						/// The Featured Story Title Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 51ccfff3-1b6f-4ca9-92ec-7f38d3b100fa</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.Featured_Story_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Featured_Story_Title_Style  {get; set;}
-										/// <summary>
-						/// The After Around The Industry field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 998d7387-fb86-46f8-9413-196af90be68d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.After_Around_The_IndustryFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string After_Around_The_Industry  {get; set;}
-										/// <summary>
-						/// The After Features field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 37502344-c6fb-4676-ba76-2c5ae31c17b3</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IIn_Vivo_TocConstants.After_FeaturesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string After_Features  {get; set;}
-						}
-	
-	public static partial class IIn_Vivo_TocConstants{
-
-			public const string TemplateIdString = "09dcdd51-4a10-440b-a922-a8880c720f02";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "In Vivo Toc";
-
-					
-			public static readonly ID Around_The_Industry_Article_CategoryFieldId = new ID("7e01fdaa-828b-4c70-b729-5bc8d1bf62aa");
-			public const string Around_The_Industry_Article_CategoryFieldName = "Around The Industry Article Category";
-
-						
-					
-			public static readonly ID Around_The_Industry_Author_StyleFieldId = new ID("e368503d-be72-4b21-9d63-42189600cec0");
-			public const string Around_The_Industry_Author_StyleFieldName = "Around The Industry Author Style";
-
-						
-					
-			public static readonly ID Around_The_Industry_Heading_StyleFieldId = new ID("f02bc395-eb39-42aa-9df7-1ffed1f44340");
-			public const string Around_The_Industry_Heading_StyleFieldName = "Around The Industry Heading Style";
-
-						
-					
-			public static readonly ID Around_The_Industry_Heading_TextFieldId = new ID("6b2c33a4-d01b-4ab3-a474-09b7cb5610f5");
-			public const string Around_The_Industry_Heading_TextFieldName = "Around The Industry Heading Text";
-
-						
-					
-			public static readonly ID Around_The_Industry_Title_StyleFieldId = new ID("6d5f4d6b-4720-40b2-bb83-4a51c5c73846");
-			public const string Around_The_Industry_Title_StyleFieldName = "Around The Industry Title Style";
-
-						
-					
-			public static readonly ID Featured_Story_Article_CategoryFieldId = new ID("60b4e829-5ef1-446c-ad02-8c6fb9080579");
-			public const string Featured_Story_Article_CategoryFieldName = "Featured Story Article Category";
-
-						
-					
-			public static readonly ID Featured_Story_Author_StyleFieldId = new ID("1003c171-4cb6-4d0e-bd89-8bc623d40550");
-			public const string Featured_Story_Author_StyleFieldName = "Featured Story Author Style";
-
-						
-					
-			public static readonly ID Featured_Story_Deck_StyleFieldId = new ID("9112b734-89a0-42db-8876-69168a036a28");
-			public const string Featured_Story_Deck_StyleFieldName = "Featured Story Deck Style";
-
-						
-					
-			public static readonly ID Featured_Story_Title_StyleFieldId = new ID("51ccfff3-1b6f-4ca9-92ec-7f38d3b100fa");
-			public const string Featured_Story_Title_StyleFieldName = "Featured Story Title Style";
-
-						
-					
-			public static readonly ID After_Around_The_IndustryFieldId = new ID("998d7387-fb86-46f8-9413-196af90be68d");
-			public const string After_Around_The_IndustryFieldName = "After Around The Industry";
-
-						
-					
-			public static readonly ID After_FeaturesFieldId = new ID("37502344-c6fb-4676-ba76-2c5ae31c17b3");
-			public const string After_FeaturesFieldName = "After Features";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
-{
-
-
- 	/// <summary>
-	/// IMedia_Type_Icons_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Folders/Media Type Icons Folder</para>	
-	/// <para>ID: 0b37efc7-8f16-4fc0-b886-404982b2396a</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IMedia_Type_Icons_FolderConstants.TemplateIdString)]
-	public partial interface IMedia_Type_Icons_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
-	{
-				}
-
-	
-		/// <summary>
-		/// IMedia_Type_Icons_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Folders/Media Type Icons Folder</para>	
-		/// <para>ID: 0b37efc7-8f16-4fc0-b886-404982b2396a</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IMedia_Type_Icons_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
-		{
-						}
-	
-	public static partial class IMedia_Type_Icons_FolderConstants{
-
-			public const string TemplateIdString = "0b37efc7-8f16-4fc0-b886-404982b2396a";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Media Type Icons Folder";
-
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
@@ -449,7 +120,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
 								/// <summary>
 					/// The Sort Order field.
@@ -749,7 +420,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
 										/// <summary>
 						/// The Sort Order field.
@@ -1253,6 +924,46 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TitleFieldName = "Title";
 
 						
+					
+			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
+			public const string TaxonomyFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
+
+						
 			
 
 	}
@@ -1296,810 +1007,85 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
+namespace Informa.Models.Velir.Search.Models.FactoryInterface
 {
 
 
  	/// <summary>
-	/// ISidebar_Styles Interface
+	/// ILinkable Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Sidebar Styles</para>	
-	/// <para>ID: 2b42d650-46d3-41f0-aa12-d0657022d459</para>	
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Linkable</para>	
+	/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ISidebar_StylesConstants.TemplateIdString)]
-	public partial interface ISidebar_Styles : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles
+	[SitecoreType(TemplateId=ILinkableConstants.TemplateIdString)]
+	public partial interface ILinkable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
 	{
 								/// <summary>
-					/// The Sidebar Text Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: d8dbe59e-5802-47d8-9256-e8935f6c8bba</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISidebar_StylesConstants.Sidebar_Text_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Sidebar_Text_Style  {get; set;}
-								/// <summary>
-					/// The Sidebar Title Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 73a76523-7281-41e4-bba1-80f12fa8a1eb</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISidebar_StylesConstants.Sidebar_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Sidebar_Title_Style  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// ISidebar_Styles Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Sidebar Styles</para>	
-		/// <para>ID: 2b42d650-46d3-41f0-aa12-d0657022d459</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ISidebar_Styles__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles__Raw
-		{
-										/// <summary>
-						/// The Sidebar Text Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: d8dbe59e-5802-47d8-9256-e8935f6c8bba</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISidebar_StylesConstants.Sidebar_Text_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Sidebar_Text_Style  {get; set;}
-										/// <summary>
-						/// The Sidebar Title Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 73a76523-7281-41e4-bba1-80f12fa8a1eb</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISidebar_StylesConstants.Sidebar_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Sidebar_Title_Style  {get; set;}
-						}
-	
-	public static partial class ISidebar_StylesConstants{
-
-			public const string TemplateIdString = "2b42d650-46d3-41f0-aa12-d0657022d459";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Sidebar Styles";
-
-					
-			public static readonly ID Sidebar_Text_StyleFieldId = new ID("d8dbe59e-5802-47d8-9256-e8935f6c8bba");
-			public const string Sidebar_Text_StyleFieldName = "Sidebar Text Style";
-
-						
-					
-			public static readonly ID Sidebar_Title_StyleFieldId = new ID("73a76523-7281-41e4-bba1-80f12fa8a1eb");
-			public const string Sidebar_Title_StyleFieldName = "Sidebar Title Style";
-
-						
-					
-			public static readonly ID HeightFieldId = new ID("351d4db9-c539-45b4-bad3-2b3696225320");
-			public const string HeightFieldName = "Height";
-
-						
-					
-			public static readonly ID Object_StyleFieldId = new ID("01041903-9f91-44b1-b983-4183a1d74bad");
-			public const string Object_StyleFieldName = "Object Style";
-
-						
-					
-			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
-			public const string WidthFieldName = "Width";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IInDesign_Style_Map Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/InDesign Style Map</para>	
-	/// <para>ID: 407b881c-fc08-4085-8f92-d601132cd59a</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IInDesign_Style_MapConstants.TemplateIdString)]
-	public partial interface IInDesign_Style_Map : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IInDesign_Style_Map Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/InDesign Style Map</para>	
-		/// <para>ID: 407b881c-fc08-4085-8f92-d601132cd59a</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IInDesign_Style_Map__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IInDesign_Style_MapConstants{
-
-			public const string TemplateIdString = "407b881c-fc08-4085-8f92-d601132cd59a";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "InDesign Style Map";
-
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IParagraph_Style_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style Folder</para>	
-	/// <para>ID: 426a98bc-a39a-4b41-b9df-be8bff922be7</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IParagraph_Style_FolderConstants.TemplateIdString)]
-	public partial interface IParagraph_Style_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IParagraph_Style_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style Folder</para>	
-		/// <para>ID: 426a98bc-a39a-4b41-b9df-be8bff922be7</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IParagraph_Style_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IParagraph_Style_FolderConstants{
-
-			public const string TemplateIdString = "426a98bc-a39a-4b41-b9df-be8bff922be7";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Paragraph Style Folder";
-
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// ICharacter_Style_Mapping_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style Mapping Folder</para>	
-	/// <para>ID: 43ce10a1-887d-47f8-835b-16ac2d225296</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ICharacter_Style_Mapping_FolderConstants.TemplateIdString)]
-	public partial interface ICharacter_Style_Mapping_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// ICharacter_Style_Mapping_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style Mapping Folder</para>	
-		/// <para>ID: 43ce10a1-887d-47f8-835b-16ac2d225296</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ICharacter_Style_Mapping_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class ICharacter_Style_Mapping_FolderConstants{
-
-			public const string TemplateIdString = "43ce10a1-887d-47f8-835b-16ac2d225296";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Character Style Mapping Folder";
-
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// ICharacter_Style_Mapping Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style Mapping</para>	
-	/// <para>ID: 4da3e397-6cf5-4621-a0e3-35f2d21cfde5</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ICharacter_Style_MappingConstants.TemplateIdString)]
-	public partial interface ICharacter_Style_Mapping : IGlassBase 
-	{
-								/// <summary>
-					/// The InDesign Styles field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 9351a035-7f91-438b-b0d9-6a909876289c</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ICharacter_Style_MappingConstants.InDesign_StylesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid InDesign_Styles  {get; set;}
-								/// <summary>
-					/// The MS Word Style field.
+					/// The LinkableText field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
-					/// <para>Field ID: b6c9ee62-92e2-401a-96fe-b0e99c5cb270</para>
+					/// <para>Field ID: 529c867f-2816-43a9-964a-3f16c014a4f7</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ICharacter_Style_MappingConstants.MS_Word_StylesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> MS_Word_Styles  {get; set;}
+					[SitecoreField(ILinkableConstants.LinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> LinkableTexts  {get; set;}
+								/// <summary>
+					/// The LinkableUrl field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: d156cd07-71a4-4daa-b52a-5ce602d6d3bb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILinkableConstants.LinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> LinkableUrls  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// ICharacter_Style_Mapping Interface
+		/// ILinkable Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style Mapping</para>	
-		/// <para>ID: 4da3e397-6cf5-4621-a0e3-35f2d21cfde5</para>	
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Linkable</para>	
+		/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ICharacter_Style_Mapping__Raw : IGlassBase 
+		public partial interface ILinkable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
 		{
 										/// <summary>
-						/// The InDesign Styles field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 9351a035-7f91-438b-b0d9-6a909876289c</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ICharacter_Style_MappingConstants.InDesign_StylesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid InDesign_Styles  {get; set;}
-										/// <summary>
-						/// The MS Word Style field.
+						/// The LinkableText field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
-						/// <para>Field ID: b6c9ee62-92e2-401a-96fe-b0e99c5cb270</para>
+						/// <para>Field ID: 529c867f-2816-43a9-964a-3f16c014a4f7</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ICharacter_Style_MappingConstants.MS_Word_StylesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> MS_Word_Styles  {get; set;}
+						[SitecoreField(ILinkableConstants.LinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> LinkableTexts  {get; set;}
+										/// <summary>
+						/// The LinkableUrl field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: d156cd07-71a4-4daa-b52a-5ce602d6d3bb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILinkableConstants.LinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> LinkableUrls  {get; set;}
 						}
 	
-	public static partial class ICharacter_Style_MappingConstants{
+	public static partial class ILinkableConstants{
 
-			public const string TemplateIdString = "4da3e397-6cf5-4621-a0e3-35f2d21cfde5";
+			public const string TemplateIdString = "3efeaf26-8572-417d-a8a8-6cb3a28eaf82";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Character Style Mapping";
+			public const string TemplateName = "Linkable";
 
 					
-			public static readonly ID InDesign_StylesFieldId = new ID("9351a035-7f91-438b-b0d9-6a909876289c");
-			public const string InDesign_StylesFieldName = "InDesign Styles";
+			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string LinkableTextsFieldName = "LinkableText";
 
 						
 					
-			public static readonly ID MS_Word_StylesFieldId = new ID("b6c9ee62-92e2-401a-96fe-b0e99c5cb270");
-			public const string MS_Word_StylesFieldName = "MS Word Style";
+			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string LinkableUrlsFieldName = "LinkableUrl";
 
 						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-{
-
-
- 	/// <summary>
-	/// IMedia_Icon_Types Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Objects/Media Icon Types</para>	
-	/// <para>ID: 59031044-d8e1-4fe2-8fd7-99bfa5d22ec5</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IMedia_Icon_TypesConstants.TemplateIdString)]
-	public partial interface IMedia_Icon_Types : IGlassBase 
-	{
-								/// <summary>
-					/// The Name field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 629d92c9-6373-4dbb-9a46-7872c829cec1</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMedia_Icon_TypesConstants.NameFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Name  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IMedia_Icon_Types Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Objects/Media Icon Types</para>	
-		/// <para>ID: 59031044-d8e1-4fe2-8fd7-99bfa5d22ec5</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IMedia_Icon_Types__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Name field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 629d92c9-6373-4dbb-9a46-7872c829cec1</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IMedia_Icon_TypesConstants.NameFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Name  {get; set;}
-						}
-	
-	public static partial class IMedia_Icon_TypesConstants{
-
-			public const string TemplateIdString = "59031044-d8e1-4fe2-8fd7-99bfa5d22ec5";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Media Icon Types";
-
-					
-			public static readonly ID NameFieldId = new ID("629d92c9-6373-4dbb-9a46-7872c829cec1");
-			public const string NameFieldName = "Name";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// ITable_And_Cell_Styles Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Table and Cell Styles</para>	
-	/// <para>ID: 5acb2361-96e5-4b3f-bf88-bc15444ff6ba</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ITable_And_Cell_StylesConstants.TemplateIdString)]
-	public partial interface ITable_And_Cell_Styles : IGlassBase 
-	{
-								/// <summary>
-					/// The Column Header Cell Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 9afb9d33-12bc-4adc-875d-6e1fc32a409f</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Column_Header_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Column_Header_Cell_Style  {get; set;}
-								/// <summary>
-					/// The Story Text Alternate Cell Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 5e3afe8b-e947-4ed8-b6d0-adbf1f32e3b4</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Alternate_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Story_Text_Alternate_Cell_Style  {get; set;}
-								/// <summary>
-					/// The Story Text Cell Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 9fe4c944-6d68-473f-be76-f08432c13347</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Story_Text_Cell_Style  {get; set;}
-								/// <summary>
-					/// The Subhead Alternate Cell Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 844dedf9-ae86-4963-89ec-b474f48851e9</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Alternate_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subhead_Alternate_Cell_Style  {get; set;}
-								/// <summary>
-					/// The Subhead Cell Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 87616682-4b07-4076-84fc-9083db8b9f32</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subhead_Cell_Style  {get; set;}
-								/// <summary>
-					/// The Title field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 4013df0b-c92f-4f37-a221-d30d055747eb</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Title  {get; set;}
-								/// <summary>
-					/// The Column Header Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 543c701f-ea8b-434c-94e9-574fc0d3c976</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Column_Header_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Column_Header_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Story Text Alternate Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 6753214b-4e18-442b-8c33-22e983a575d8</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Alternate_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Story_Text_Alternate_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Story Text Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 1e534e11-f78f-49a5-8bdf-7b142a62e610</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Story_Text_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Subhead Alternate Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 5e00ec8e-d9ad-424f-baa3-3698091e52de</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Alternate_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subhead_Alternate_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Subhead Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 647b98f5-279b-4227-b07f-4a3221e893a3</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subhead_Paragraph_Style  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// ITable_And_Cell_Styles Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Table and Cell Styles</para>	
-		/// <para>ID: 5acb2361-96e5-4b3f-bf88-bc15444ff6ba</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ITable_And_Cell_Styles__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Column Header Cell Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 9afb9d33-12bc-4adc-875d-6e1fc32a409f</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Column_Header_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Column_Header_Cell_Style  {get; set;}
-										/// <summary>
-						/// The Story Text Alternate Cell Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 5e3afe8b-e947-4ed8-b6d0-adbf1f32e3b4</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Alternate_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Story_Text_Alternate_Cell_Style  {get; set;}
-										/// <summary>
-						/// The Story Text Cell Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 9fe4c944-6d68-473f-be76-f08432c13347</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Story_Text_Cell_Style  {get; set;}
-										/// <summary>
-						/// The Subhead Alternate Cell Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 844dedf9-ae86-4963-89ec-b474f48851e9</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Alternate_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subhead_Alternate_Cell_Style  {get; set;}
-										/// <summary>
-						/// The Subhead Cell Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 87616682-4b07-4076-84fc-9083db8b9f32</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Cell_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subhead_Cell_Style  {get; set;}
-										/// <summary>
-						/// The Title field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 4013df0b-c92f-4f37-a221-d30d055747eb</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Title  {get; set;}
-										/// <summary>
-						/// The Column Header Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 543c701f-ea8b-434c-94e9-574fc0d3c976</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Column_Header_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Column_Header_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Story Text Alternate Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 6753214b-4e18-442b-8c33-22e983a575d8</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Alternate_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Story_Text_Alternate_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Story Text Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 1e534e11-f78f-49a5-8bdf-7b142a62e610</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Story_Text_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Story_Text_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Subhead Alternate Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 5e00ec8e-d9ad-424f-baa3-3698091e52de</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Alternate_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subhead_Alternate_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Subhead Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 647b98f5-279b-4227-b07f-4a3221e893a3</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_StylesConstants.Subhead_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subhead_Paragraph_Style  {get; set;}
-						}
-	
-	public static partial class ITable_And_Cell_StylesConstants{
-
-			public const string TemplateIdString = "5acb2361-96e5-4b3f-bf88-bc15444ff6ba";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Table and Cell Styles";
-
-					
-			public static readonly ID Column_Header_Cell_StyleFieldId = new ID("9afb9d33-12bc-4adc-875d-6e1fc32a409f");
-			public const string Column_Header_Cell_StyleFieldName = "Column Header Cell Style";
-
-						
-					
-			public static readonly ID Story_Text_Alternate_Cell_StyleFieldId = new ID("5e3afe8b-e947-4ed8-b6d0-adbf1f32e3b4");
-			public const string Story_Text_Alternate_Cell_StyleFieldName = "Story Text Alternate Cell Style";
-
-						
-					
-			public static readonly ID Story_Text_Cell_StyleFieldId = new ID("9fe4c944-6d68-473f-be76-f08432c13347");
-			public const string Story_Text_Cell_StyleFieldName = "Story Text Cell Style";
-
-						
-					
-			public static readonly ID Subhead_Alternate_Cell_StyleFieldId = new ID("844dedf9-ae86-4963-89ec-b474f48851e9");
-			public const string Subhead_Alternate_Cell_StyleFieldName = "Subhead Alternate Cell Style";
-
-						
-					
-			public static readonly ID Subhead_Cell_StyleFieldId = new ID("87616682-4b07-4076-84fc-9083db8b9f32");
-			public const string Subhead_Cell_StyleFieldName = "Subhead Cell Style";
-
-						
-					
-			public static readonly ID TitleFieldId = new ID("4013df0b-c92f-4f37-a221-d30d055747eb");
-			public const string TitleFieldName = "Title";
-
-						
-					
-			public static readonly ID Column_Header_Paragraph_StyleFieldId = new ID("543c701f-ea8b-434c-94e9-574fc0d3c976");
-			public const string Column_Header_Paragraph_StyleFieldName = "Column Header Paragraph Style";
-
-						
-					
-			public static readonly ID Story_Text_Alternate_Paragraph_StyleFieldId = new ID("6753214b-4e18-442b-8c33-22e983a575d8");
-			public const string Story_Text_Alternate_Paragraph_StyleFieldName = "Story Text Alternate Paragraph Style";
-
-						
-					
-			public static readonly ID Story_Text_Paragraph_StyleFieldId = new ID("1e534e11-f78f-49a5-8bdf-7b142a62e610");
-			public const string Story_Text_Paragraph_StyleFieldName = "Story Text Paragraph Style";
-
-						
-					
-			public static readonly ID Subhead_Alternate_Paragraph_StyleFieldId = new ID("5e00ec8e-d9ad-424f-baa3-3698091e52de");
-			public const string Subhead_Alternate_Paragraph_StyleFieldName = "Subhead Alternate Paragraph Style";
-
-						
-					
-			public static readonly ID Subhead_Paragraph_StyleFieldId = new ID("647b98f5-279b-4227-b07f-4a3221e893a3");
-			public const string Subhead_Paragraph_StyleFieldName = "Subhead Paragraph Style";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IParagraph_Style Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style</para>	
-	/// <para>ID: 5b85ed6f-c3d6-46d3-b1e3-24c12974cadd</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IParagraph_StyleConstants.TemplateIdString)]
-	public partial interface IParagraph_Style : IGlassBase 
-	{
-								/// <summary>
-					/// The Is Inline Element field.
-					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
-					/// <para>Field ID: 66f1f8a4-0ad9-48ba-a2f2-7dff7727b4a1</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IParagraph_StyleConstants.Is_Inline_ElementFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Is_Inline_Element  {get; set;}
-								/// <summary>
-					/// The Title field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 70b6b16b-08de-44f4-9b68-7fbaba6bded0</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IParagraph_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Title  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IParagraph_Style Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style</para>	
-		/// <para>ID: 5b85ed6f-c3d6-46d3-b1e3-24c12974cadd</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IParagraph_Style__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Is Inline Element field.
-						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
-						/// <para>Field ID: 66f1f8a4-0ad9-48ba-a2f2-7dff7727b4a1</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IParagraph_StyleConstants.Is_Inline_ElementFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Is_Inline_Element  {get; set;}
-										/// <summary>
-						/// The Title field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 70b6b16b-08de-44f4-9b68-7fbaba6bded0</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IParagraph_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Title  {get; set;}
-						}
-	
-	public static partial class IParagraph_StyleConstants{
-
-			public const string TemplateIdString = "5b85ed6f-c3d6-46d3-b1e3-24c12974cadd";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Paragraph Style";
-
-					
-			public static readonly ID Is_Inline_ElementFieldId = new ID("66f1f8a4-0ad9-48ba-a2f2-7dff7727b4a1");
-			public const string Is_Inline_ElementFieldName = "Is Inline Element";
-
-						
-					
-			public static readonly ID TitleFieldId = new ID("70b6b16b-08de-44f4-9b68-7fbaba6bded0");
-			public const string TitleFieldName = "Title";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IStyle_Mapping_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Style Mapping Folder</para>	
-	/// <para>ID: 5bcce3b6-7e1f-4d5f-8a69-807d80d9908e</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IStyle_Mapping_FolderConstants.TemplateIdString)]
-	public partial interface IStyle_Mapping_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IStyle_Mapping_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Style Mapping Folder</para>	
-		/// <para>ID: 5bcce3b6-7e1f-4d5f-8a69-807d80d9908e</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IStyle_Mapping_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IStyle_Mapping_FolderConstants{
-
-			public const string TemplateIdString = "5bcce3b6-7e1f-4d5f-8a69-807d80d9908e";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Style Mapping Folder";
-
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IParagraph_Style_Mapping_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style Mapping Folder</para>	
-	/// <para>ID: 650b7a34-7bd4-4920-9d55-b51419f01761</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IParagraph_Style_Mapping_FolderConstants.TemplateIdString)]
-	public partial interface IParagraph_Style_Mapping_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IParagraph_Style_Mapping_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style Mapping Folder</para>	
-		/// <para>ID: 650b7a34-7bd4-4920-9d55-b51419f01761</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IParagraph_Style_Mapping_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IParagraph_Style_Mapping_FolderConstants{
-
-			public const string TemplateIdString = "650b7a34-7bd4-4920-9d55-b51419f01761";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Paragraph Style Mapping Folder";
-
 			
 
 	}
@@ -2116,7 +1102,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ITaxonomy_ItemConstants.TemplateIdString)]
-	public partial interface ITaxonomy_Item : IGlassBase 
+	public partial interface ITaxonomy_Item : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable
 	{
 								/// <summary>
 					/// The Item Name field.
@@ -2137,7 +1123,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ITaxonomy_Item__Raw : IGlassBase 
+		public partial interface ITaxonomy_Item__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable__Raw
 		{
 										/// <summary>
 						/// The Item Name field.
@@ -2161,317 +1147,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public const string Item_NameFieldName = "Item Name";
 
 						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IArticle_Category_Styles_Map Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Article Category Styles Map</para>	
-	/// <para>ID: 7c5ad0a2-41eb-47d8-8dab-2ee522fe44f9</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IArticle_Category_Styles_MapConstants.TemplateIdString)]
-	public partial interface IArticle_Category_Styles_Map : IGlassBase 
-	{
-								/// <summary>
-					/// The Article Category field.
-					/// <para></para>
-					/// <para>Field Type: Droptree</para>		
-					/// <para>Field ID: 9a474805-f518-4349-9e26-4ae1de4b41cc</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticle_Category_Styles_MapConstants.Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Article_Category  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IArticle_Category_Styles_Map Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Article Category Styles Map</para>	
-		/// <para>ID: 7c5ad0a2-41eb-47d8-8dab-2ee522fe44f9</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IArticle_Category_Styles_Map__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Article Category field.
-						/// <para></para>
-						/// <para>Field Type: Droptree</para>		
-						/// <para>Field ID: 9a474805-f518-4349-9e26-4ae1de4b41cc</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticle_Category_Styles_MapConstants.Article_CategoryFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Article_Category  {get; set;}
-						}
-	
-	public static partial class IArticle_Category_Styles_MapConstants{
-
-			public const string TemplateIdString = "7c5ad0a2-41eb-47d8-8dab-2ee522fe44f9";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Article Category Styles Map";
-
 					
-			public static readonly ID Article_CategoryFieldId = new ID("9a474805-f518-4349-9e26-4ae1de4b41cc");
-			public const string Article_CategoryFieldName = "Article Category";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// ICharacter_Style_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style Folder</para>	
-	/// <para>ID: 7f7d5d80-18e5-43ee-8714-9b1110cb7319</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ICharacter_Style_FolderConstants.TemplateIdString)]
-	public partial interface ICharacter_Style_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// ICharacter_Style_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style Folder</para>	
-		/// <para>ID: 7f7d5d80-18e5-43ee-8714-9b1110cb7319</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ICharacter_Style_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class ICharacter_Style_FolderConstants{
-
-			public const string TemplateIdString = "7f7d5d80-18e5-43ee-8714-9b1110cb7319";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Character Style Folder";
-
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IInline_Object_Styles Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Inline Object Styles</para>	
-	/// <para>ID: 844bb74a-10e8-4de4-8c9d-2da820c7cef9</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IInline_Object_StylesConstants.TemplateIdString)]
-	public partial interface IInline_Object_Styles : IGlassBase 
-	{
-								/// <summary>
-					/// The Height field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 351d4db9-c539-45b4-bad3-2b3696225320</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IInline_Object_StylesConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Height  {get; set;}
-								/// <summary>
-					/// The Object Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 01041903-9f91-44b1-b983-4183a1d74bad</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IInline_Object_StylesConstants.Object_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Object_Style  {get; set;}
-								/// <summary>
-					/// The Width field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 383f9e17-d40a-4756-9d59-cf2b1357dc89</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IInline_Object_StylesConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Width  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IInline_Object_Styles Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Inline Object Styles</para>	
-		/// <para>ID: 844bb74a-10e8-4de4-8c9d-2da820c7cef9</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IInline_Object_Styles__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Height field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 351d4db9-c539-45b4-bad3-2b3696225320</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IInline_Object_StylesConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Height  {get; set;}
-										/// <summary>
-						/// The Object Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 01041903-9f91-44b1-b983-4183a1d74bad</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IInline_Object_StylesConstants.Object_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Object_Style  {get; set;}
-										/// <summary>
-						/// The Width field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 383f9e17-d40a-4756-9d59-cf2b1357dc89</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IInline_Object_StylesConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Width  {get; set;}
-						}
-	
-	public static partial class IInline_Object_StylesConstants{
-
-			public const string TemplateIdString = "844bb74a-10e8-4de4-8c9d-2da820c7cef9";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Inline Object Styles";
-
-					
-			public static readonly ID HeightFieldId = new ID("351d4db9-c539-45b4-bad3-2b3696225320");
-			public const string HeightFieldName = "Height";
+			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string LinkableTextsFieldName = "LinkableText";
 
 						
 					
-			public static readonly ID Object_StyleFieldId = new ID("01041903-9f91-44b1-b983-4183a1d74bad");
-			public const string Object_StyleFieldName = "Object Style";
-
-						
-					
-			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
-			public const string WidthFieldName = "Width";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IMS_Character_Style Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Character Style</para>	
-	/// <para>ID: 867fbf26-3854-4cb4-a988-e42278f5e2ea</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IMS_Character_StyleConstants.TemplateIdString)]
-	public partial interface IMS_Character_Style : IGlassBase 
-	{
-								/// <summary>
-					/// The CSS Class field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: cd32be63-6176-4abe-92af-80664d359c38</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMS_Character_StyleConstants.CSS_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string CSS_Class  {get; set;}
-								/// <summary>
-					/// The CSS Element field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: b51504d4-c56b-49c1-aac0-cdf0fc5a0d57</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMS_Character_StyleConstants.CSS_ElementFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string CSS_Element  {get; set;}
-								/// <summary>
-					/// The Title field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 98c87be5-b08f-4700-b827-9659d6287493</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMS_Character_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Title  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IMS_Character_Style Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Character Style</para>	
-		/// <para>ID: 867fbf26-3854-4cb4-a988-e42278f5e2ea</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IMS_Character_Style__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The CSS Class field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: cd32be63-6176-4abe-92af-80664d359c38</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IMS_Character_StyleConstants.CSS_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string CSS_Class  {get; set;}
-										/// <summary>
-						/// The CSS Element field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: b51504d4-c56b-49c1-aac0-cdf0fc5a0d57</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IMS_Character_StyleConstants.CSS_ElementFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string CSS_Element  {get; set;}
-										/// <summary>
-						/// The Title field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 98c87be5-b08f-4700-b827-9659d6287493</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IMS_Character_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Title  {get; set;}
-						}
-	
-	public static partial class IMS_Character_StyleConstants{
-
-			public const string TemplateIdString = "867fbf26-3854-4cb4-a988-e42278f5e2ea";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "MS Character Style";
-
-					
-			public static readonly ID CSS_ClassFieldId = new ID("cd32be63-6176-4abe-92af-80664d359c38");
-			public const string CSS_ClassFieldName = "CSS Class";
-
-						
-					
-			public static readonly ID CSS_ElementFieldId = new ID("b51504d4-c56b-49c1-aac0-cdf0fc5a0d57");
-			public const string CSS_ElementFieldName = "CSS Element";
-
-						
-					
-			public static readonly ID TitleFieldId = new ID("98c87be5-b08f-4700-b827-9659d6287493");
-			public const string TitleFieldName = "Title";
+			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string LinkableUrlsFieldName = "LinkableUrl";
 
 						
 			
@@ -2490,7 +1173,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IHome_PageConstants.TemplateIdString)]
-	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
 				}
 
@@ -2502,7 +1185,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
 						}
 	
@@ -2554,103 +1237,39 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TitleFieldName = "Title";
 
 						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IMS_Character_Style_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Character Style Folder</para>	
-	/// <para>ID: 8a22db44-dea3-443c-b170-7c7dd227b244</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IMS_Character_Style_FolderConstants.TemplateIdString)]
-	public partial interface IMS_Character_Style_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IMS_Character_Style_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Character Style Folder</para>	
-		/// <para>ID: 8a22db44-dea3-443c-b170-7c7dd227b244</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IMS_Character_Style_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IMS_Character_Style_FolderConstants{
-
-			public const string TemplateIdString = "8a22db44-dea3-443c-b170-7c7dd227b244";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "MS Character Style Folder";
-
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IPublication_Style_Map Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Publication Style Map</para>	
-	/// <para>ID: 8b8d6033-e410-45ef-b0ab-27d3ad3d4d52</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IPublication_Style_MapConstants.TemplateIdString)]
-	public partial interface IPublication_Style_Map : IGlassBase 
-	{
-								/// <summary>
-					/// The Publication field.
-					/// <para></para>
-					/// <para>Field Type: Droplist</para>		
-					/// <para>Field ID: 82fb567b-8537-4677-99d0-283e4e555d6f</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IPublication_Style_MapConstants.PublicationFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Publication  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IPublication_Style_Map Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Publication Style Map</para>	
-		/// <para>ID: 8b8d6033-e410-45ef-b0ab-27d3ad3d4d52</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IPublication_Style_Map__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Publication field.
-						/// <para></para>
-						/// <para>Field Type: Droplist</para>		
-						/// <para>Field ID: 82fb567b-8537-4677-99d0-283e4e555d6f</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IPublication_Style_MapConstants.PublicationFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Publication  {get; set;}
-						}
-	
-	public static partial class IPublication_Style_MapConstants{
-
-			public const string TemplateIdString = "8b8d6033-e410-45ef-b0ab-27d3ad3d4d52";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Publication Style Map";
-
 					
-			public static readonly ID PublicationFieldId = new ID("82fb567b-8537-4677-99d0-283e4e555d6f");
-			public const string PublicationFieldName = "Publication";
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
 
 						
 			
@@ -2920,166 +1539,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// ITable_Styles_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Table Styles Folder</para>	
-	/// <para>ID: 93e814a4-d606-4729-8aaa-656866e4f78d</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ITable_Styles_FolderConstants.TemplateIdString)]
-	public partial interface ITable_Styles_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// ITable_Styles_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Table Styles Folder</para>	
-		/// <para>ID: 93e814a4-d606-4729-8aaa-656866e4f78d</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ITable_Styles_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class ITable_Styles_FolderConstants{
-
-			public const string TemplateIdString = "93e814a4-d606-4729-8aaa-656866e4f78d";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Table Styles Folder";
-
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IRelated_Reading_Style Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Related Reading Style</para>	
-	/// <para>ID: 96899f84-20ea-4d2b-9e5e-c1fde2e69b3c</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IRelated_Reading_StyleConstants.TemplateIdString)]
-	public partial interface IRelated_Reading_Style : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles
-	{
-								/// <summary>
-					/// The Citation Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 4d69c248-0a55-49a3-a800-d2c59e73ec5d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IRelated_Reading_StyleConstants.Citation_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Citation_Style  {get; set;}
-								/// <summary>
-					/// The Footer Text field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 6aa0ccc3-0489-4472-bac1-7dfe2c39e913</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IRelated_Reading_StyleConstants.Footer_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Footer_Text  {get; set;}
-								/// <summary>
-					/// The Heading Text field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: a0a7fc9e-6d2d-4296-a6fa-6928a3ddae56</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IRelated_Reading_StyleConstants.Heading_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Heading_Text  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IRelated_Reading_Style Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Related Reading Style</para>	
-		/// <para>ID: 96899f84-20ea-4d2b-9e5e-c1fde2e69b3c</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IRelated_Reading_Style__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles__Raw
-		{
-										/// <summary>
-						/// The Citation Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 4d69c248-0a55-49a3-a800-d2c59e73ec5d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IRelated_Reading_StyleConstants.Citation_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Citation_Style  {get; set;}
-										/// <summary>
-						/// The Footer Text field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 6aa0ccc3-0489-4472-bac1-7dfe2c39e913</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IRelated_Reading_StyleConstants.Footer_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Footer_Text  {get; set;}
-										/// <summary>
-						/// The Heading Text field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: a0a7fc9e-6d2d-4296-a6fa-6928a3ddae56</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IRelated_Reading_StyleConstants.Heading_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Heading_Text  {get; set;}
-						}
-	
-	public static partial class IRelated_Reading_StyleConstants{
-
-			public const string TemplateIdString = "96899f84-20ea-4d2b-9e5e-c1fde2e69b3c";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Related Reading Style";
-
-					
-			public static readonly ID Citation_StyleFieldId = new ID("4d69c248-0a55-49a3-a800-d2c59e73ec5d");
-			public const string Citation_StyleFieldName = "Citation Style";
-
-						
-					
-			public static readonly ID Footer_TextFieldId = new ID("6aa0ccc3-0489-4472-bac1-7dfe2c39e913");
-			public const string Footer_TextFieldName = "Footer Text";
-
-						
-					
-			public static readonly ID Heading_TextFieldId = new ID("a0a7fc9e-6d2d-4296-a6fa-6928a3ddae56");
-			public const string Heading_TextFieldName = "Heading Text";
-
-						
-					
-			public static readonly ID HeightFieldId = new ID("351d4db9-c539-45b4-bad3-2b3696225320");
-			public const string HeightFieldName = "Height";
-
-						
-					
-			public static readonly ID Object_StyleFieldId = new ID("01041903-9f91-44b1-b983-4183a1d74bad");
-			public const string Object_StyleFieldName = "Object Style";
-
-						
-					
-			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
-			public const string WidthFieldName = "Width";
-
-						
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
 
@@ -3093,24 +1552,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	[SitecoreType(TemplateId=ISite_ConfigConstants.TemplateIdString)]
 	public partial interface ISite_Config : IGlassBase 
 	{
-								/// <summary>
-					/// The Debug Toolbar email access field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 09448bdd-0076-46b9-b0ba-1e5d75c19e42</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_Email_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Debug_Toolbar_Email_Access  {get; set;}
-								/// <summary>
-					/// The Debug Toolbar IP Access field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 64b4962f-7088-44ad-845f-9cb91e56348c</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_IP_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Debug_Toolbar_IP_Access  {get; set;}
 								/// <summary>
 					/// The Copyright Text field.
 					/// <para></para>
@@ -3376,24 +1817,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		public partial interface ISite_Config__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Debug Toolbar email access field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 09448bdd-0076-46b9-b0ba-1e5d75c19e42</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_Email_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Debug_Toolbar_Email_Access  {get; set;}
-										/// <summary>
-						/// The Debug Toolbar IP Access field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 64b4962f-7088-44ad-845f-9cb91e56348c</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_IP_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Debug_Toolbar_IP_Access  {get; set;}
-										/// <summary>
 						/// The Copyright Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -3654,16 +2077,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public const string TemplateName = "Site Config";
 
 					
-			public static readonly ID Debug_Toolbar_Email_AccessFieldId = new ID("09448bdd-0076-46b9-b0ba-1e5d75c19e42");
-			public const string Debug_Toolbar_Email_AccessFieldName = "Debug Toolbar email access";
-
-						
-					
-			public static readonly ID Debug_Toolbar_IP_AccessFieldId = new ID("64b4962f-7088-44ad-845f-9cb91e56348c");
-			public const string Debug_Toolbar_IP_AccessFieldName = "Debug Toolbar IP Access";
-
-						
-					
 			public static readonly ID Copyright_TextFieldId = new ID("a9aeef7b-7865-48a8-a024-d79ebc7c2c79");
 			public const string Copyright_TextFieldName = "Copyright Text";
 
@@ -3818,343 +2231,198 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
+namespace Informa.Models.Velir.Search.Models.FactoryInterface
 {
 
 
  	/// <summary>
-	/// IParagraph_Style_Mapping Interface
+	/// IListable Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style Mapping</para>	
-	/// <para>ID: 9f5bf3a8-74a5-464e-8a89-b14e881565d2</para>	
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Listable</para>	
+	/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IParagraph_Style_MappingConstants.TemplateIdString)]
-	public partial interface IParagraph_Style_Mapping : IGlassBase 
+	[SitecoreType(TemplateId=IListableConstants.TemplateIdString)]
+	public partial interface IListable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
 	{
 								/// <summary>
-					/// The MS Word Style field.
+					/// The ListableAuthors field.
 					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: ec46f150-89b0-4469-950c-d8f9307d932f</para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IParagraph_Style_MappingConstants.MS_Word_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid MS_Word_Style  {get; set;}
+					[SitecoreField(IListableConstants.ListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableAuthors  {get; set;}
 								/// <summary>
-					/// The Paragraph Style field.
+					/// The ListableDate field.
 					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: f87970db-c5a1-44eb-bf03-aa5ac7bec646</para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IParagraph_Style_MappingConstants.Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Paragraph_Style  {get; set;}
+					[SitecoreField(IListableConstants.ListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableDates  {get; set;}
+								/// <summary>
+					/// The ListableImage field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableImages  {get; set;}
+								/// <summary>
+					/// The ListableSummary field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 241b01c9-b518-4182-9b94-c40db3fb9cb2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableSummaries  {get; set;}
+								/// <summary>
+					/// The ListableTitle field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableTitles  {get; set;}
+								/// <summary>
+					/// The ListableTopics field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableTopics  {get; set;}
+								/// <summary>
+					/// The ListableUrl field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListableConstants.ListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> ListableUrls  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// IParagraph_Style_Mapping Interface
+		/// IListable Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Paragraph Style Mapping</para>	
-		/// <para>ID: 9f5bf3a8-74a5-464e-8a89-b14e881565d2</para>	
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Listable</para>	
+		/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IParagraph_Style_Mapping__Raw : IGlassBase 
+		public partial interface IListable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
 		{
 										/// <summary>
-						/// The MS Word Style field.
+						/// The ListableAuthors field.
 						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: ec46f150-89b0-4469-950c-d8f9307d932f</para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IParagraph_Style_MappingConstants.MS_Word_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid MS_Word_Style  {get; set;}
+						[SitecoreField(IListableConstants.ListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableAuthors  {get; set;}
 										/// <summary>
-						/// The Paragraph Style field.
+						/// The ListableDate field.
 						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: f87970db-c5a1-44eb-bf03-aa5ac7bec646</para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IParagraph_Style_MappingConstants.Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Paragraph_Style  {get; set;}
+						[SitecoreField(IListableConstants.ListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableDates  {get; set;}
+										/// <summary>
+						/// The ListableImage field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableImages  {get; set;}
+										/// <summary>
+						/// The ListableSummary field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 241b01c9-b518-4182-9b94-c40db3fb9cb2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableSummaries  {get; set;}
+										/// <summary>
+						/// The ListableTitle field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableTitles  {get; set;}
+										/// <summary>
+						/// The ListableTopics field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableTopics  {get; set;}
+										/// <summary>
+						/// The ListableUrl field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListableConstants.ListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> ListableUrls  {get; set;}
 						}
 	
-	public static partial class IParagraph_Style_MappingConstants{
+	public static partial class IListableConstants{
 
-			public const string TemplateIdString = "9f5bf3a8-74a5-464e-8a89-b14e881565d2";
+			public const string TemplateIdString = "a3ec5da5-c37c-44a5-83f3-96d45b53389f";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Paragraph Style Mapping";
+			public const string TemplateName = "Listable";
 
 					
-			public static readonly ID MS_Word_StyleFieldId = new ID("ec46f150-89b0-4469-950c-d8f9307d932f");
-			public const string MS_Word_StyleFieldName = "MS Word Style";
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
 
 						
 					
-			public static readonly ID Paragraph_StyleFieldId = new ID("f87970db-c5a1-44eb-bf03-aa5ac7bec646");
-			public const string Paragraph_StyleFieldName = "Paragraph Style";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IImage_Styles Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Image Styles</para>	
-	/// <para>ID: a48216a8-1b0d-49cb-95b8-911f9194c393</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IImage_StylesConstants.TemplateIdString)]
-	public partial interface IImage_Styles : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles
-	{
-								/// <summary>
-					/// The Caption MS Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 2ce15af5-fcdb-40d8-8365-860dfe4da339</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Caption_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Caption_MS_Style  {get; set;}
-								/// <summary>
-					/// The Caption Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 6b300f31-1806-454e-9ddb-ba875e0355b2</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Caption_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Caption_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Header MS Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 3ed6217f-cd94-4164-880b-a6aa9d058e6e</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Header_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Header_MS_Style  {get; set;}
-								/// <summary>
-					/// The Header Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 5a9a2c1e-32c3-4730-b94f-d072c7da884b</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Header_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Header_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Placeholder Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: f048a9f5-cc18-4c7e-851f-2bf7592b0641</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Placeholder_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Placeholder_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Source MS Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: fda8b577-852c-4c26-a85c-c7cbd46f4020</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Source_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Source_MS_Style  {get; set;}
-								/// <summary>
-					/// The Source Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: e50f92e9-7df5-46bd-9b17-3f7c70a1bb5a</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Source_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Source_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Title MS Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 2de9ce34-82fe-4125-9bb4-d2092fca353c</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Title_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Title_MS_Style  {get; set;}
-								/// <summary>
-					/// The Title Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: d73ea160-ed7a-416f-bc69-e4e1ae99c83f</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IImage_StylesConstants.Title_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Title_Paragraph_Style  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IImage_Styles Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Image Styles</para>	
-		/// <para>ID: a48216a8-1b0d-49cb-95b8-911f9194c393</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IImage_Styles__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles__Raw
-		{
-										/// <summary>
-						/// The Caption MS Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 2ce15af5-fcdb-40d8-8365-860dfe4da339</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Caption_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Caption_MS_Style  {get; set;}
-										/// <summary>
-						/// The Caption Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 6b300f31-1806-454e-9ddb-ba875e0355b2</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Caption_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Caption_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Header MS Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 3ed6217f-cd94-4164-880b-a6aa9d058e6e</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Header_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Header_MS_Style  {get; set;}
-										/// <summary>
-						/// The Header Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 5a9a2c1e-32c3-4730-b94f-d072c7da884b</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Header_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Header_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Placeholder Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: f048a9f5-cc18-4c7e-851f-2bf7592b0641</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Placeholder_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Placeholder_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Source MS Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: fda8b577-852c-4c26-a85c-c7cbd46f4020</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Source_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Source_MS_Style  {get; set;}
-										/// <summary>
-						/// The Source Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: e50f92e9-7df5-46bd-9b17-3f7c70a1bb5a</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Source_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Source_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Title MS Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 2de9ce34-82fe-4125-9bb4-d2092fca353c</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Title_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Title_MS_Style  {get; set;}
-										/// <summary>
-						/// The Title Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: d73ea160-ed7a-416f-bc69-e4e1ae99c83f</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IImage_StylesConstants.Title_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Title_Paragraph_Style  {get; set;}
-						}
-	
-	public static partial class IImage_StylesConstants{
-
-			public const string TemplateIdString = "a48216a8-1b0d-49cb-95b8-911f9194c393";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Image Styles";
-
-					
-			public static readonly ID Caption_MS_StyleFieldId = new ID("2ce15af5-fcdb-40d8-8365-860dfe4da339");
-			public const string Caption_MS_StyleFieldName = "Caption MS Style";
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
 
 						
 					
-			public static readonly ID Caption_Paragraph_StyleFieldId = new ID("6b300f31-1806-454e-9ddb-ba875e0355b2");
-			public const string Caption_Paragraph_StyleFieldName = "Caption Paragraph Style";
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
 
 						
 					
-			public static readonly ID Header_MS_StyleFieldId = new ID("3ed6217f-cd94-4164-880b-a6aa9d058e6e");
-			public const string Header_MS_StyleFieldName = "Header MS Style";
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
 
 						
 					
-			public static readonly ID Header_Paragraph_StyleFieldId = new ID("5a9a2c1e-32c3-4730-b94f-d072c7da884b");
-			public const string Header_Paragraph_StyleFieldName = "Header Paragraph Style";
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
 
 						
 					
-			public static readonly ID Placeholder_Paragraph_StyleFieldId = new ID("f048a9f5-cc18-4c7e-851f-2bf7592b0641");
-			public const string Placeholder_Paragraph_StyleFieldName = "Placeholder Paragraph Style";
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
 
 						
 					
-			public static readonly ID Source_MS_StyleFieldId = new ID("fda8b577-852c-4c26-a85c-c7cbd46f4020");
-			public const string Source_MS_StyleFieldName = "Source MS Style";
-
-						
-					
-			public static readonly ID Source_Paragraph_StyleFieldId = new ID("e50f92e9-7df5-46bd-9b17-3f7c70a1bb5a");
-			public const string Source_Paragraph_StyleFieldName = "Source Paragraph Style";
-
-						
-					
-			public static readonly ID Title_MS_StyleFieldId = new ID("2de9ce34-82fe-4125-9bb4-d2092fca353c");
-			public const string Title_MS_StyleFieldName = "Title MS Style";
-
-						
-					
-			public static readonly ID Title_Paragraph_StyleFieldId = new ID("d73ea160-ed7a-416f-bc69-e4e1ae99c83f");
-			public const string Title_Paragraph_StyleFieldName = "Title Paragraph Style";
-
-						
-					
-			public static readonly ID HeightFieldId = new ID("351d4db9-c539-45b4-bad3-2b3696225320");
-			public const string HeightFieldName = "Height";
-
-						
-					
-			public static readonly ID Object_StyleFieldId = new ID("01041903-9f91-44b1-b983-4183a1d74bad");
-			public const string Object_StyleFieldName = "Object Style";
-
-						
-					
-			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
-			public const string WidthFieldName = "Width";
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
 
 						
 			
@@ -4200,143 +2468,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Common
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IQuotebox_Styles Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Quotebox Styles</para>	
-	/// <para>ID: aede32c4-ea58-4cca-9619-85f1d3734fcb</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IQuotebox_StylesConstants.TemplateIdString)]
-	public partial interface IQuotebox_Styles : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles
-	{
-								/// <summary>
-					/// The MS Word Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 48a661d9-2d1a-4d8e-9759-01b306cc3d49</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuotebox_StylesConstants.MS_Word_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid MS_Word_Style  {get; set;}
-								/// <summary>
-					/// The Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 8c71a652-1508-4460-aa94-29e81dbac673</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuotebox_StylesConstants.Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Paragraph_Style  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IQuotebox_Styles Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Quotebox Styles</para>	
-		/// <para>ID: aede32c4-ea58-4cca-9619-85f1d3734fcb</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IQuotebox_Styles__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles__Raw
-		{
-										/// <summary>
-						/// The MS Word Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 48a661d9-2d1a-4d8e-9759-01b306cc3d49</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuotebox_StylesConstants.MS_Word_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid MS_Word_Style  {get; set;}
-										/// <summary>
-						/// The Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 8c71a652-1508-4460-aa94-29e81dbac673</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuotebox_StylesConstants.Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Paragraph_Style  {get; set;}
-						}
-	
-	public static partial class IQuotebox_StylesConstants{
-
-			public const string TemplateIdString = "aede32c4-ea58-4cca-9619-85f1d3734fcb";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Quotebox Styles";
-
-					
-			public static readonly ID MS_Word_StyleFieldId = new ID("48a661d9-2d1a-4d8e-9759-01b306cc3d49");
-			public const string MS_Word_StyleFieldName = "MS Word Style";
-
-						
-					
-			public static readonly ID Paragraph_StyleFieldId = new ID("8c71a652-1508-4460-aa94-29e81dbac673");
-			public const string Paragraph_StyleFieldName = "Paragraph Style";
-
-						
-					
-			public static readonly ID HeightFieldId = new ID("351d4db9-c539-45b4-bad3-2b3696225320");
-			public const string HeightFieldName = "Height";
-
-						
-					
-			public static readonly ID Object_StyleFieldId = new ID("01041903-9f91-44b1-b983-4183a1d74bad");
-			public const string Object_StyleFieldName = "Object Style";
-
-						
-					
-			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
-			public const string WidthFieldName = "Width";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IDefault_Article_Category_Style_Mapping Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Default Article Category Style Mapping</para>	
-	/// <para>ID: b97d8e9a-b7b4-4be9-82d0-d13784930199</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IDefault_Article_Category_Style_MappingConstants.TemplateIdString)]
-	public partial interface IDefault_Article_Category_Style_Mapping : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IDefault_Article_Category_Style_Mapping Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Default Article Category Style Mapping</para>	
-		/// <para>ID: b97d8e9a-b7b4-4be9-82d0-d13784930199</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IDefault_Article_Category_Style_Mapping__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IDefault_Article_Category_Style_MappingConstants{
-
-			public const string TemplateIdString = "b97d8e9a-b7b4-4be9-82d0-d13784930199";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Default Article Category Style Mapping";
-
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 {
 
@@ -4348,7 +2479,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 	/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IAuthored_ContentConstants.TemplateIdString)]
-	public partial interface IAuthored_Content : IGlassBase 
+	public partial interface IAuthored_Content : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
 								/// <summary>
 					/// The Body field.
@@ -4378,7 +2509,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 		/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IAuthored_Content__Raw : IGlassBase 
+		public partial interface IAuthored_Content__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
 										/// <summary>
 						/// The Body field.
@@ -4416,6 +2547,41 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 					
 			public static readonly ID TitleFieldId = new ID("b820f81e-734a-4ef5-b35e-210b406aee13");
 			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
 
 						
 			
@@ -4461,151 +2627,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IMS_Paragraph_Style Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Paragraph Style</para>	
-	/// <para>ID: c66ed4c9-4a73-41c3-be69-59ea045927f8</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IMS_Paragraph_StyleConstants.TemplateIdString)]
-	public partial interface IMS_Paragraph_Style : IGlassBase 
-	{
-								/// <summary>
-					/// The CSS Class field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: d8b1a6cb-7396-4d32-90ad-17eed882404d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMS_Paragraph_StyleConstants.CSS_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string CSS_Class  {get; set;}
-								/// <summary>
-					/// The CSS Element field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 6fa7501f-858e-42b1-bf9a-073e12b9afb1</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMS_Paragraph_StyleConstants.CSS_ElementFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string CSS_Element  {get; set;}
-								/// <summary>
-					/// The Title field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 03cc96c5-7903-41de-a057-2ddd1d7ea034</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMS_Paragraph_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Title  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IMS_Paragraph_Style Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Paragraph Style</para>	
-		/// <para>ID: c66ed4c9-4a73-41c3-be69-59ea045927f8</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IMS_Paragraph_Style__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The CSS Class field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: d8b1a6cb-7396-4d32-90ad-17eed882404d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IMS_Paragraph_StyleConstants.CSS_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string CSS_Class  {get; set;}
-										/// <summary>
-						/// The CSS Element field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 6fa7501f-858e-42b1-bf9a-073e12b9afb1</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IMS_Paragraph_StyleConstants.CSS_ElementFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string CSS_Element  {get; set;}
-										/// <summary>
-						/// The Title field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 03cc96c5-7903-41de-a057-2ddd1d7ea034</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IMS_Paragraph_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Title  {get; set;}
-						}
-	
-	public static partial class IMS_Paragraph_StyleConstants{
-
-			public const string TemplateIdString = "c66ed4c9-4a73-41c3-be69-59ea045927f8";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "MS Paragraph Style";
-
-					
-			public static readonly ID CSS_ClassFieldId = new ID("d8b1a6cb-7396-4d32-90ad-17eed882404d");
-			public const string CSS_ClassFieldName = "CSS Class";
-
-						
-					
-			public static readonly ID CSS_ElementFieldId = new ID("6fa7501f-858e-42b1-bf9a-073e12b9afb1");
-			public const string CSS_ElementFieldName = "CSS Element";
-
-						
-					
-			public static readonly ID TitleFieldId = new ID("03cc96c5-7903-41de-a057-2ddd1d7ea034");
-			public const string TitleFieldName = "Title";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IMS_Paragraph_Style_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Paragraph Style Folder</para>	
-	/// <para>ID: d8682bef-6dab-4a59-ac20-852739fc5b0a</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IMS_Paragraph_Style_FolderConstants.TemplateIdString)]
-	public partial interface IMS_Paragraph_Style_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IMS_Paragraph_Style_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/MS Paragraph Style Folder</para>	
-		/// <para>ID: d8682bef-6dab-4a59-ac20-852739fc5b0a</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IMS_Paragraph_Style_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IMS_Paragraph_Style_FolderConstants{
-
-			public const string TemplateIdString = "d8682bef-6dab-4a59-ac20-852739fc5b0a";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "MS Paragraph Style Folder";
-
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 {
 
@@ -4617,8 +2638,53 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IStaff_ItemConstants.TemplateIdString)]
-	public partial interface IStaff_Item : IGlassBase 
+	public partial interface IStaff_Item : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
 	{
+								/// <summary>
+					/// The First Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: da21e6fc-1584-4405-abd3-d7f7267ef00e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.First_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string First_Name  {get; set;}
+								/// <summary>
+					/// The Image field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 3e617952-e635-4b9d-9cf7-f7adfa549b6a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Image  {get; set;}
+								/// <summary>
+					/// The Inactive field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: b3e3f7b7-3e08-4cbf-abed-1932bb8639a7</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.InactiveFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Inactive  {get; set;}
+								/// <summary>
+					/// The Last Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: d77aba18-8797-49dc-8c91-e7dfb8cc089a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.Last_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Last_Name  {get; set;}
+								/// <summary>
+					/// The Twitter field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ea38cc14-799a-4fed-a58c-4bed8c57a81e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.TwitterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Twitter  {get; set;}
 				}
 
 	
@@ -4629,8 +2695,53 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IStaff_Item__Raw : IGlassBase 
+		public partial interface IStaff_Item__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
 		{
+										/// <summary>
+						/// The First Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: da21e6fc-1584-4405-abd3-d7f7267ef00e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.First_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string First_Name  {get; set;}
+										/// <summary>
+						/// The Image field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: 3e617952-e635-4b9d-9cf7-f7adfa549b6a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Image  {get; set;}
+										/// <summary>
+						/// The Inactive field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: b3e3f7b7-3e08-4cbf-abed-1932bb8639a7</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.InactiveFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Inactive  {get; set;}
+										/// <summary>
+						/// The Last Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: d77aba18-8797-49dc-8c91-e7dfb8cc089a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.Last_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Last_Name  {get; set;}
+										/// <summary>
+						/// The Twitter field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ea38cc14-799a-4fed-a58c-4bed8c57a81e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.TwitterFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Twitter  {get; set;}
 						}
 	
 	public static partial class IStaff_ItemConstants{
@@ -4639,65 +2750,74 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Staff Item";
 
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// ICharacter_Style Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style</para>	
-	/// <para>ID: db96ed30-8955-4faf-b886-65494b44670d</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ICharacter_StyleConstants.TemplateIdString)]
-	public partial interface ICharacter_Style : IGlassBase 
-	{
-								/// <summary>
-					/// The Title field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 515a1f09-3150-4e5d-9cf8-bddfd6b8b30d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ICharacter_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Title  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// ICharacter_Style Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Character Style</para>	
-		/// <para>ID: db96ed30-8955-4faf-b886-65494b44670d</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ICharacter_Style__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Title field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 515a1f09-3150-4e5d-9cf8-bddfd6b8b30d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ICharacter_StyleConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Title  {get; set;}
-						}
-	
-	public static partial class ICharacter_StyleConstants{
-
-			public const string TemplateIdString = "db96ed30-8955-4faf-b886-65494b44670d";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Character Style";
-
 					
-			public static readonly ID TitleFieldId = new ID("515a1f09-3150-4e5d-9cf8-bddfd6b8b30d");
-			public const string TitleFieldName = "Title";
+			public static readonly ID First_NameFieldId = new ID("da21e6fc-1584-4405-abd3-d7f7267ef00e");
+			public const string First_NameFieldName = "First Name";
+
+						
+					
+			public static readonly ID ImageFieldId = new ID("3e617952-e635-4b9d-9cf7-f7adfa549b6a");
+			public const string ImageFieldName = "Image";
+
+						
+					
+			public static readonly ID InactiveFieldId = new ID("b3e3f7b7-3e08-4cbf-abed-1932bb8639a7");
+			public const string InactiveFieldName = "Inactive";
+
+						
+					
+			public static readonly ID Last_NameFieldId = new ID("d77aba18-8797-49dc-8c91-e7dfb8cc089a");
+			public const string Last_NameFieldName = "Last Name";
+
+						
+					
+			public static readonly ID TwitterFieldId = new ID("ea38cc14-799a-4fed-a58c-4bed8c57a81e");
+			public const string TwitterFieldName = "Twitter";
+
+						
+					
+			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string LinkableTextsFieldName = "LinkableText";
+
+						
+					
+			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string LinkableUrlsFieldName = "LinkableUrl";
+
+						
+					
+			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string ListableAuthorsFieldName = "ListableAuthors";
+
+						
+					
+			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string ListableDatesFieldName = "ListableDate";
+
+						
+					
+			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string ListableImagesFieldName = "ListableImage";
+
+						
+					
+			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string ListableSummariesFieldName = "ListableSummary";
+
+						
+					
+			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string ListableTitlesFieldName = "ListableTitle";
+
+						
+					
+			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string ListableTopicsFieldName = "ListableTopics";
+
+						
+					
+			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string ListableUrlsFieldName = "ListableUrl";
 
 						
 			
@@ -4996,236 +3116,60 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Layout.Section
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 {
 
 
  	/// <summary>
-	/// IQuick_Facts_Styles Interface
+	/// I_BaseTaxonomy Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Quick Facts Styles</para>	
-	/// <para>ID: eaa58c11-41e0-4f73-95bb-efc88d8fea40</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+	/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IQuick_Facts_StylesConstants.TemplateIdString)]
-	public partial interface IQuick_Facts_Styles : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles
+	[SitecoreType(TemplateId=I_BaseTaxonomyConstants.TemplateIdString)]
+	public partial interface I_BaseTaxonomy : IGlassBase 
 	{
 								/// <summary>
-					/// The Bulleted List MS Style field.
+					/// The Taxonomy field.
 					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 5cede23a-4e28-447e-b217-e4999a6c675d</para>
+					/// <para>Field Type: tree list</para>		
+					/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Bulleted_List_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Bulleted_List_MS_Style  {get; set;}
-								/// <summary>
-					/// The Bulleted List Paragraph Stule field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 16218162-ae0a-4f47-8603-3348cf1eb66b</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Bulleted_List_Paragraph_StuleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Bulleted_List_Paragraph_Stule  {get; set;}
-								/// <summary>
-					/// The Numbered List MS Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: c0eb3c19-36ac-47d7-8b87-e77ae9a75ffd</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Numbered_List_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Numbered_List_MS_Style  {get; set;}
-								/// <summary>
-					/// The Numbered List Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: a3e89b0a-1ba9-44c8-9463-fc7b3d626093</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Numbered_List_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Numbered_List_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Text MS Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: f466b362-340e-476d-ad56-5eee0d241417</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Text_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Text_MS_Style  {get; set;}
-								/// <summary>
-					/// The Text Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: d677ec05-3ccc-4475-9a0a-789907d4a8a8</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Text_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Text_Paragraph_Style  {get; set;}
-								/// <summary>
-					/// The Title MS Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 93d299ce-02a3-4c6a-b258-b5c1990f86a9</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Title_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Title_MS_Style  {get; set;}
-								/// <summary>
-					/// The Title Paragraph Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 41ab4e26-9776-4030-b71e-f6552e7703bc</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IQuick_Facts_StylesConstants.Title_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Title_Paragraph_Style  {get; set;}
+					[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					object /* UNKNOWN */ Taxonomy  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// IQuick_Facts_Styles Interface
+		/// I_BaseTaxonomy Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Quick Facts Styles</para>	
-		/// <para>ID: eaa58c11-41e0-4f73-95bb-efc88d8fea40</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+		/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IQuick_Facts_Styles__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping.IInline_Object_Styles__Raw
+		public partial interface I_BaseTaxonomy__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Bulleted List MS Style field.
+						/// The Taxonomy field.
 						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 5cede23a-4e28-447e-b217-e4999a6c675d</para>
+						/// <para>Field Type: tree list</para>		
+						/// <para>Field ID: 6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Bulleted_List_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Bulleted_List_MS_Style  {get; set;}
-										/// <summary>
-						/// The Bulleted List Paragraph Stule field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 16218162-ae0a-4f47-8603-3348cf1eb66b</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Bulleted_List_Paragraph_StuleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Bulleted_List_Paragraph_Stule  {get; set;}
-										/// <summary>
-						/// The Numbered List MS Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: c0eb3c19-36ac-47d7-8b87-e77ae9a75ffd</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Numbered_List_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Numbered_List_MS_Style  {get; set;}
-										/// <summary>
-						/// The Numbered List Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: a3e89b0a-1ba9-44c8-9463-fc7b3d626093</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Numbered_List_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Numbered_List_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Text MS Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: f466b362-340e-476d-ad56-5eee0d241417</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Text_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Text_MS_Style  {get; set;}
-										/// <summary>
-						/// The Text Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: d677ec05-3ccc-4475-9a0a-789907d4a8a8</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Text_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Text_Paragraph_Style  {get; set;}
-										/// <summary>
-						/// The Title MS Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 93d299ce-02a3-4c6a-b258-b5c1990f86a9</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Title_MS_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Title_MS_Style  {get; set;}
-										/// <summary>
-						/// The Title Paragraph Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 41ab4e26-9776-4030-b71e-f6552e7703bc</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IQuick_Facts_StylesConstants.Title_Paragraph_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Title_Paragraph_Style  {get; set;}
+						[SitecoreField(I_BaseTaxonomyConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						object /* UNKNOWN */ Taxonomy  {get; set;}
 						}
 	
-	public static partial class IQuick_Facts_StylesConstants{
+	public static partial class I_BaseTaxonomyConstants{
 
-			public const string TemplateIdString = "eaa58c11-41e0-4f73-95bb-efc88d8fea40";
+			public const string TemplateIdString = "eed18b44-4005-4f15-9b18-d7c2d2cac0ec";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Quick Facts Styles";
+			public const string TemplateName = "_BaseTaxonomy";
 
 					
-			public static readonly ID Bulleted_List_MS_StyleFieldId = new ID("5cede23a-4e28-447e-b217-e4999a6c675d");
-			public const string Bulleted_List_MS_StyleFieldName = "Bulleted List MS Style";
-
-						
-					
-			public static readonly ID Bulleted_List_Paragraph_StuleFieldId = new ID("16218162-ae0a-4f47-8603-3348cf1eb66b");
-			public const string Bulleted_List_Paragraph_StuleFieldName = "Bulleted List Paragraph Stule";
-
-						
-					
-			public static readonly ID Numbered_List_MS_StyleFieldId = new ID("c0eb3c19-36ac-47d7-8b87-e77ae9a75ffd");
-			public const string Numbered_List_MS_StyleFieldName = "Numbered List MS Style";
-
-						
-					
-			public static readonly ID Numbered_List_Paragraph_StyleFieldId = new ID("a3e89b0a-1ba9-44c8-9463-fc7b3d626093");
-			public const string Numbered_List_Paragraph_StyleFieldName = "Numbered List Paragraph Style";
-
-						
-					
-			public static readonly ID Text_MS_StyleFieldId = new ID("f466b362-340e-476d-ad56-5eee0d241417");
-			public const string Text_MS_StyleFieldName = "Text MS Style";
-
-						
-					
-			public static readonly ID Text_Paragraph_StyleFieldId = new ID("d677ec05-3ccc-4475-9a0a-789907d4a8a8");
-			public const string Text_Paragraph_StyleFieldName = "Text Paragraph Style";
-
-						
-					
-			public static readonly ID Title_MS_StyleFieldId = new ID("93d299ce-02a3-4c6a-b258-b5c1990f86a9");
-			public const string Title_MS_StyleFieldName = "Title MS Style";
-
-						
-					
-			public static readonly ID Title_Paragraph_StyleFieldId = new ID("41ab4e26-9776-4030-b71e-f6552e7703bc");
-			public const string Title_Paragraph_StyleFieldName = "Title Paragraph Style";
-
-						
-					
-			public static readonly ID HeightFieldId = new ID("351d4db9-c539-45b4-bad3-2b3696225320");
-			public const string HeightFieldName = "Height";
-
-						
-					
-			public static readonly ID Object_StyleFieldId = new ID("01041903-9f91-44b1-b983-4183a1d74bad");
-			public const string Object_StyleFieldName = "Object Style";
-
-						
-					
-			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
-			public const string WidthFieldName = "Width";
+			public static readonly ID TaxonomyFieldId = new ID("6b94b6ff-f78b-4d33-9173-fe87f3a0ea9d");
+			public const string TaxonomyFieldName = "Taxonomy";
 
 						
 			
@@ -5233,169 +3177,39 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
+namespace Informa.Models.Velir.Search.Models.FactoryInterface
 {
 
 
  	/// <summary>
-	/// ITable_And_Cell_Styles_Reference Interface
+	/// IInterfaceTemplate Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Table and Cell Styles Reference</para>	
-	/// <para>ID: ee749883-c27e-4746-b8f9-c750b0c41a81</para>	
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/InterfaceTemplate</para>	
+	/// <para>ID: f4dbbc93-2591-4aa8-b71a-1dc4acd5c941</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ITable_And_Cell_Styles_ReferenceConstants.TemplateIdString)]
-	public partial interface ITable_And_Cell_Styles_Reference : IGlassBase 
+	[SitecoreType(TemplateId=IInterfaceTemplateConstants.TemplateIdString)]
+	public partial interface IInterfaceTemplate : IGlassBase 
 	{
-								/// <summary>
-					/// The InDesign Table Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: fd38236e-1a79-40c7-882a-776acfe4b563</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITable_And_Cell_Styles_ReferenceConstants.InDesign_Table_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid InDesign_Table_Style  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// ITable_And_Cell_Styles_Reference Interface
+		/// IInterfaceTemplate Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Table and Cell Styles Reference</para>	
-		/// <para>ID: ee749883-c27e-4746-b8f9-c750b0c41a81</para>	
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/InterfaceTemplate</para>	
+		/// <para>ID: f4dbbc93-2591-4aa8-b71a-1dc4acd5c941</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ITable_And_Cell_Styles_Reference__Raw : IGlassBase 
+		public partial interface IInterfaceTemplate__Raw : IGlassBase 
 		{
-										/// <summary>
-						/// The InDesign Table Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: fd38236e-1a79-40c7-882a-776acfe4b563</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITable_And_Cell_Styles_ReferenceConstants.InDesign_Table_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid InDesign_Table_Style  {get; set;}
 						}
 	
-	public static partial class ITable_And_Cell_Styles_ReferenceConstants{
+	public static partial class IInterfaceTemplateConstants{
 
-			public const string TemplateIdString = "ee749883-c27e-4746-b8f9-c750b0c41a81";
+			public const string TemplateIdString = "f4dbbc93-2591-4aa8-b71a-1dc4acd5c941";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Table and Cell Styles Reference";
+			public const string TemplateName = "InterfaceTemplate";
 
-					
-			public static readonly ID InDesign_Table_StyleFieldId = new ID("fd38236e-1a79-40c7-882a-776acfe4b563");
-			public const string InDesign_Table_StyleFieldName = "InDesign Table Style";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
-{
-
-
- 	/// <summary>
-	/// IArticle_Fields_Styles Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Article Fields Styles</para>	
-	/// <para>ID: fa18eb0e-39ad-4037-96c2-c55c277d61e7</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IArticle_Fields_StylesConstants.TemplateIdString)]
-	public partial interface IArticle_Fields_Styles : IGlassBase 
-	{
-								/// <summary>
-					/// The Article Byline Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 6f1649d1-37bc-4255-aba1-f67d569f6bd3</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticle_Fields_StylesConstants.Article_Byline_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Article_Byline_Style  {get; set;}
-								/// <summary>
-					/// The Article Deck Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 6e8cea57-cf17-4bb4-8dd3-dd3818077982</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticle_Fields_StylesConstants.Article_Deck_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Article_Deck_Style  {get; set;}
-								/// <summary>
-					/// The Article Title Style field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 03845b01-8644-4a67-9d45-a4587e739fdc</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticle_Fields_StylesConstants.Article_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Article_Title_Style  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IArticle_Fields_Styles Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Global/Style Mapping/Article Fields Styles</para>	
-		/// <para>ID: fa18eb0e-39ad-4037-96c2-c55c277d61e7</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IArticle_Fields_Styles__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Article Byline Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 6f1649d1-37bc-4255-aba1-f67d569f6bd3</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticle_Fields_StylesConstants.Article_Byline_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Article_Byline_Style  {get; set;}
-										/// <summary>
-						/// The Article Deck Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 6e8cea57-cf17-4bb4-8dd3-dd3818077982</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticle_Fields_StylesConstants.Article_Deck_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Article_Deck_Style  {get; set;}
-										/// <summary>
-						/// The Article Title Style field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 03845b01-8644-4a67-9d45-a4587e739fdc</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticle_Fields_StylesConstants.Article_Title_StyleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Article_Title_Style  {get; set;}
-						}
-	
-	public static partial class IArticle_Fields_StylesConstants{
-
-			public const string TemplateIdString = "fa18eb0e-39ad-4037-96c2-c55c277d61e7";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Article Fields Styles";
-
-					
-			public static readonly ID Article_Byline_StyleFieldId = new ID("6f1649d1-37bc-4255-aba1-f67d569f6bd3");
-			public const string Article_Byline_StyleFieldName = "Article Byline Style";
-
-						
-					
-			public static readonly ID Article_Deck_StyleFieldId = new ID("6e8cea57-cf17-4bb4-8dd3-dd3818077982");
-			public const string Article_Deck_StyleFieldName = "Article Deck Style";
-
-						
-					
-			public static readonly ID Article_Title_StyleFieldId = new ID("03845b01-8644-4a67-9d45-a4587e739fdc");
-			public const string Article_Title_StyleFieldName = "Article Title Style";
-
-						
 			
 
 	}

@@ -1,0 +1,122 @@
+.pop-out {
+    display: none;
+
+    &:before {
+		background-color: #f1f2f2;
+		border: 1px solid #d1d3d4;
+        border-bottom: 0;
+		content: "";
+		display: block;
+		height: 80px;
+        left: -20px;
+		padding: 20px;
+		position: absolute;
+		top: calc(-100% + 3px);
+        z-index: 9;
+        width: calc(100% + 41px);
+	}
+
+    &__trigger {
+        position: relative;
+        height: 18px;
+
+        &-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        &:hover .pop-out,
+        &.is-active .pop-out {
+            display: block;
+        }
+    }
+
+    &__internal {
+        @include textMix('Roboto', 14px, 400);
+        background-color: #f1f2f2;
+        border: 1px solid #d1d3d4;
+        left: calc(50% - 190px);
+        padding: 20px 24px 12px;
+        position: absolute;
+        text-transform: none;
+        top: calc(100% + 46px);
+        width: 380px;
+        z-index: 8;
+
+        &--wide {
+            width: 420px;
+            padding: 30px;
+        }
+
+        &--flush-right {
+            right: -21px; // Flush right, minus padding and border
+            left: auto;
+        }
+
+        &--flush-left {
+            left: -20px; // Flush right, minus padding and border
+            right: auto;
+        }
+
+        input:not([type="checkbox"]),
+        textarea {
+            width: 100%;
+            margin-bottom: 12px;
+            border: 1px solid $informa-light-gray-d;
+        }
+        textarea {
+            min-height: 150px;
+        }
+    }
+
+    &__header {
+        margin: 0 0 24px;
+    }
+
+    &__run-in {
+        @include textMix('Roboto', 18px, 500);
+    }
+
+    &__form-error {
+        display: none;
+        font-style: italic;
+        color: $informa-red;
+        margin-bottom: 24px;
+    }
+
+    &__details {
+        color: $informa-mid-gray;
+        line-height: 1.25rem;
+        clear: both;
+
+        &--inset {
+            padding: 0 18px;
+        }
+    }
+
+    // Bottom section of pop-out form, below input fields
+    // Organizes common actions like "Forgot Password", "Remember Me", etc.
+    &__form-actions {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 12px;
+
+        &-wrapper {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        &--remember-me {
+            color: $informa-dark-gray;
+            margin-top: 12px;
+        }
+    }
+
+    &__forgot-password {
+        border-top: 1px solid $informa-light-gray-d;
+        margin-top: 24px;
+        padding-top: 24px;
+    }
+}

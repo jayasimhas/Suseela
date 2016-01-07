@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {A6AF3C93-4A9A-4DDE-8267-14457AB2981F}
+database: master
+path: /sitecore/content/Home/Staff/Staff Item
+parent: {C5B9E97E-4784-44E6-8285-2A09322996F1}
+name: Staff Item
+master: {00000000-0000-0000-0000-000000000000}
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
+
+----version----
+language: en
+version: 1
+revision: 9f96a0e0-a9d3-4609-8cc1-09bae2e23b67
+
+----field----
+field: {DA21E6FC-1584-4405-ABD3-D7F7267EF00E}
+name: First Name
+key: first name
+content-length: 4
+
+Mike
+----field----
+field: {D77ABA18-8797-49DC-8C91-E7DFB8CC089A}
+name: Last Name
+key: last name
+content-length: 8
+
+DiStaula
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151231T190552Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9f96a0e0-a9d3-4609-8cc1-09bae2e23b67
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20151231T190608Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

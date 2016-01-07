@@ -3,6 +3,7 @@ var gulp           = require("gulp"),
     config         = utils.loadConfig(),
     gulpif         = require("gulp-if"),
     uglify         = require("gulp-uglify"),
+    concat         = require("gulp-concat"),
     sourcemaps     = require("gulp-sourcemaps"),
     browserify     = require("browserify"),
     through2       = require("through2"),
@@ -14,10 +15,10 @@ utils.setTaskConfig("js", {
 
     default: {
 
-        src: config.root + "/js/**/informa.js",
-        dest: config.dest,
+        src: config.root + '/js/**/*.js',
+        dest: config.dest + '/js',
 
-        // js uglify options , to skip, set value to false or omit entirely
+        // js uglify options, to skip, set value to false or omit entirely
         // otherwise, pass options object (can be empty {})
         uglify: false,
 
@@ -73,12 +74,12 @@ gulp.task("js", function(){
 
     return gulp.src(js.src)
         .pipe(utils.drano())
-        .pipe(browserifyIt)
-        .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
+        //.pipe(browserifyIt)
+        //.pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
         .pipe(gulpif((js.uglify), uglify(js.uglify)))
-        .pipe(sourcemaps.write("./"))
+        .pipe(concat('concat.js'))
+        //.pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(js.dest));
-
 });
 
 

@@ -1,0 +1,17 @@
+@using Informa.Web.TestData
+@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
+
+
+<div class="article-right-rail">
+    @Html.Sitecore().Placeholder("article-right-rail")
+
+    @{
+        Html.RenderPartial("Components/ArticleRelatedList");
+    }
+
+    @{
+        Html.RenderPartial("Components/ArticleRelatedTaxonomy");
+    }
+
+</div>

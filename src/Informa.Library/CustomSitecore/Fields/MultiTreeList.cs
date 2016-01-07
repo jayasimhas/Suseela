@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using Glass.Mapper.Sc.Configuration;
+using Glass.Mapper.Sc.Configuration.Fluent;
 using Sitecore;
+using Sitecore.Data;
+using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Shell.Applications.ContentEditor;
@@ -12,7 +16,16 @@ using Sitecore.Web.UI.Sheer;
 using Sitecore.Web.UI.WebControls;
 
 namespace Informa.Library.CustomSitecore.Fields
-{
+{            
+    public class FieldMap<T> : MultilistField where T : Field
+    { 
+        public FieldMap(Field innerField) : base(innerField)
+        {
+
+        }
+    }
+
+
 	// Exact copy of Sitecore's TreeList class except for a few
 	// minor changes in the OnLoad function (and constructor)
 	public class MultiTreeList : TreeList

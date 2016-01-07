@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Glass.Mapper.Sc;
 using Informa.Web.Areas.Account.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -16,15 +17,17 @@ namespace Informa.Web.Areas.Account.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ISitecoreService _service;
 
         public AccountController() : base("Salesforce", ID.Parse("{78D8D914-51C8-41F3-8424-021262F148B8}"))
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager) : base("Salesforce", ID.Parse("{78D8D914-51C8-41F3-8424-021262F148B8}"))
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ISitecoreService service) : base("Salesforce", ID.Parse("{78D8D914-51C8-41F3-8424-021262F148B8}"))
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            _service = service;
         }
 
         public ApplicationSignInManager SignInManager

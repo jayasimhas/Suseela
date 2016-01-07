@@ -348,9 +348,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.Client.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Speak.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Bin\Sitecore.Speak.Web.dll</HintPath>
+    <Reference Include="Sitecore.Speak.Web">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -537,7 +536,9 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\VelirController.cs" />
+    <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
+    <Compile Include="GlassMaps\Class1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -572,6 +573,13 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="dist\empty.txt" />
+    <Content Include="dist\img\informa-logo.png" />
+    <Content Include="dist\img\scrip-logo.jpg" />
+    <Content Include="dist\img\svg-sprite.svg" />
+    <Content Include="dist\index-generated.css" />
+    <Content Include="dist\js\concat.js" />
+    <Content Include="dist\js\vendor.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -598,8 +606,6 @@
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
     <Content Include="local.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Config\Commands.config" />
     <Content Include="App_Config\ConnectionStrings.config" />
     <Content Include="App_Config\ConnectionStrings.config.template" />
@@ -675,7 +681,9 @@
     <Content Include="App_Config\Include\Sitecore.Analytics.Tracking.RobotDetection.config" />
     <Content Include="App_Config\Include\Sitecore.AntiCsrf.config" />
     <Content Include="App_Config\Include\Sitecore.Apps.TagInjection.config" />
-    <Content Include="App_Config\Include\Sitecore.Buckets.config" />
+    <Content Include="App_Config\Include\Sitecore.Buckets.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Sitecore.Buckets.WarmupQueries.config.example" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.Analytics.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
@@ -813,7 +821,9 @@
     <Content Include=".bowerrc" />
     <Content Include="Areas\Article\Views\web.config" />
     <Content Include="Areas\Article\Views\Index.cshtml" />
-    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Article\Views\Home\About.cshtml" />
     <Content Include="Areas\Article\Views\Home\Contact.cshtml" />
     <Content Include="Areas\Article\Views\Home\Index.cshtml" />
@@ -827,10 +837,6 @@
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="Areas\Account\Views\Connector\Login.cshtml" />
     <Content Include="Areas\Account\Views\Account\Lockout.cshtml" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -850,15 +856,11 @@
     <Content Include="Areas\Social\Views\Sharing\TweetButton.cshtml" />
     <Content Include="Areas\Social\Views\Web.config" />
     <Content Include="bower.json" />
-    <Content Include="packages\velir_search_web-1.1.zip" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="velir\dist\example.css" />
     <Content Include="velir\dist\patternlibrary.css" />
     <Content Include="velir\dist\velir.search.angular.js" />
     <Content Include="velir\images\svgdefs.svg" />
     <Content Include="velir\js\app.js" />
-    <Content Include="velir\packages\velir_search_web.xml" />
     <Content Include="velir\vendor\bower_components\angular\angular.js" />
     <Content Include="velir\vendor\bower_components\lodash\lodash.js" />
     <Content Include="Web.config">
@@ -877,18 +879,6 @@
     <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
     <Content Include="Views\_Shared\AuthoredContent.cshtml" />
     <Content Include="styles\index.scss" />
-    <Content Include="styles\patternlibrary\base\_colors.scss" />
-    <Content Include="styles\patternlibrary\base\_forms.scss" />
-    <Content Include="styles\patternlibrary\base\_general.scss" />
-    <Content Include="styles\patternlibrary\base\_icons.scss" />
-    <Content Include="styles\patternlibrary\base\_mixins.scss" />
-    <Content Include="styles\patternlibrary\base\_typography.scss" />
-    <Content Include="styles\patternlibrary\components\_media-object.scss" />
-    <Content Include="styles\patternlibrary\helpers\_class-helpers.scss" />
-    <Content Include="styles\patternlibrary\helpers\_grid-helpers.scss" />
-    <Content Include="styles\patternlibrary\helpers\_layout-helpers.scss" />
-    <Content Include="styles\vendors\_grid-settings.scss" />
-    <Content Include="styles\vendors\_normalize.scss" />
     <Content Include="Views\_Shared\DummyData\AuthoredContent.cshtml" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -909,24 +899,50 @@
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\Frontend\Listing.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\Global\ContentListItem.cshtml" />
+    <Content Include="Views\Shared\_ArticlePreview.cshtml" />
+    <Content Include="Views\Article\ArticlePrologue.cshtml" />
+    <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
+    <Content Include="Views\FrontendWrappers\ArticleWrapper - Copy.cshtml" />
+    <Content Include="Views\FrontendWrappers\HomeWrapper.cshtml" />
+    <Content Include="Views\Shared\_SignInForm.cshtml" />
+    <Content Include="Views\Structure\TwoColumnContent.cshtml" />
+    <Content Include="Views\Structure\SingleColumnContent.cshtml" />
+    <Content Include="Views\Structure\MainContentWrapper.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
+    <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
+    <Content Include="Views\Shared\Components\FeaturedCuratedContent.cshtml" />
+    <Content Include="Views\Shared\Components\ListableContentSmall.cshtml" />
+    <Content Include="Views\Shared\Components\_ListableContent.cshtml" />
+    <Content Include="Views\Shared\Components\TopicSubtopic.cshtml" />
+    <Content Include="Views\Article\ArticleRightRail.cshtml" />
+    <Content Include="Views\Article\ArticleLeftRail.cshtml" />
+    <Content Include="Views\Shared\Components\ListItemSimple.cshtml" />
+    <Content Include="Views\Shared\Components\ArticleRelatedList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="Models\" />
+    <Folder Include="packages\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
-    <Folder Include="Views\Shared\Global\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="dist\index-generated.css.map" />
+    <Content Include="dist\js\vendor.js.map" />
+    <Content Include="App_Config\Include\UserDefined\Sites.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
@@ -962,16 +978,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58902</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58902/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

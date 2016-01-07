@@ -3,7 +3,7 @@
 <head>
     @*@Styles.Render("~/Content/css")*@
     @*@Scripts.Render("~/bundles/modernizr")*@
-    
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Informa</title>
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- STATIC PLACEHOLDER -->
-    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/dist/index-generated.css">
 
     @* <title>@Html.Sitecore().Field("title", new {DisableWebEdit = true})</title>*@
@@ -29,19 +29,19 @@
     @Html.Partial("_Navigation")
 
     <div class="main__wrapper">
-    
-    <div class="banner banner--full banner--maintenance">
-        <div class="banner__dismiss">
-            Dismiss
-            <svg class="banner__dismiss-x">
-                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+
+        <div class="banner banner--maintenance">
+            <div class="dismiss-button">
+                <label>Dismiss</label>
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+            <svg class="banner__lead-icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
             </svg>
+            Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
         </div>
-        <svg class="banner__lead-icon">
-            <use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
-        </svg>
-        Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
-    </div>
 
         <div class="main__content">
 
@@ -50,28 +50,31 @@
             </div>
 
 
-            @Html.Sitecore().Placeholder("main_content")
-            
-            @Html.Partial("../_Shared/DummyData/AuthoredContent")
+            @Html.Sitecore().Placeholder("main-content")
+
+            @*@Html.Partial("../_Shared/DummyData/AuthoredContent")*@
             <!--
             Here is where the main content of the page goes. Everything else is WIP, but I'm confident enough that this page structure will hold no matter what. Anything inside here should show up properly, no matter what changes outside of this element.
 
             HAVE FUN ᕕ( ᐛ )ᕗ GO CRAZY
 
             !-->
-            
-            
 
         </div>
 
     </div>
-        
+
 </main>
 
     @Html.Partial("_Footer")
     @Html.Sitecore().Placeholder("footer")
 
-<script src="/dist/informa.js"></script>
+<script src="/dist/js/concat.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    svg4everybody();
+});
+</script>
 
 </body>
 </html>

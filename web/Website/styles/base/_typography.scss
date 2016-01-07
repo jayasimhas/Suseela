@@ -2,7 +2,35 @@
  * Basic typography style for copy text
  */
 body {
-  color: $text-color;
+  color: $informa-dark-gray;
   @include textMix('PT Serif', 400, 16px);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+h1, h2, h6 {
+    @include textMix('Roboto Condensed', 47px, 700);
+}
+h3, h4, h5 {
+    @include textMix('Roboto', 24px, 700);
+}
+
+h2 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 18px;
+    font-weight: 500;
+}
+h6 {
+    text-transform: uppercase;
+    font-size: 15px;
+}

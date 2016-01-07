@@ -7,11 +7,17 @@ main {
 	float: left;
 	height: 100%;
 	width: calc(100% - 330px);
+	padding-left: 70px;
+
+	@include breakpoint('medium') {
+		padding: 0;
+	}
 }
 
 .main__content {
-	max-width: 1200px;
+	max-width: 1240px;
 	margin: 0px auto;
+	padding: 0 20px;
 
 	@include breakpoint('medium') {
 		width: 100%;

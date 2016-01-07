@@ -12,7 +12,7 @@ templatekey: Taxonomy Item
 ----version----
 language: en
 version: 1
-revision: 2de54c4a-31d5-4955-a79f-55a1603bf590
+revision: 0fe81bc7-1260-4fa0-b5b3-5d4b7d84289b
 
 ----field----
 field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
@@ -21,6 +21,13 @@ key: item name
 content-length: 5
 
 $name
+----field----
+field: {529C867F-2816-43A9-964A-3F16C014A4F7}
+name: LinkableText
+key: linkabletext
+content-length: 38
+
+{AC58F381-3D7F-4D90-966D-41813DC66E87}
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2de54c4a-31d5-4955-a79f-55a1603bf590
+0fe81bc7-1260-4fa0-b5b3-5d4b7d84289b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151224T192214Z
+20160102T191901Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

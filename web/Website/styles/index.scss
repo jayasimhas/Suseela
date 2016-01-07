@@ -7,27 +7,39 @@
 @import 'utils/variables';
 @import 'utils/functions';
 @import 'utils/mixins';
+@import 'utils/typography';
 
 /* * * * VENDORS * * * */
 @import 'vendor/normalize';
-@import 'vendor/hamburger';
 
 /* * * * BASE * * * */
+@import 'base/colors';
 @import 'base/base';
 @import 'base/fonts';
-@import 'base/typography';
 @import 'base/helpers';
+@import 'base/typography';
 
 /* * * * COMPONENTS * * * */
 @import 'components/advertising';
+@import 'components/article-body';
+@import 'components/article-preview';
+@import 'components/article-prologue';
+@import 'components/article-related-content';
+@import 'components/article-tags';
+@import 'components/article-topics';
 @import 'components/banners';
 @import 'components/buttons';
+@import 'components/dismiss-button';
 @import 'components/forms';
+@import 'components/latest-news';
 @import 'components/main-menu';
+@import 'components/menu-toggler';
+@import 'components/pop-out';
 
 /* * * * LAYOUT * * * */
-@import 'layout/header';
+@import 'layout/article';
 @import 'layout/footer';
+@import 'layout/header';
 @import 'layout/main';
 
 /* * * * PAGE-SPECIFIC STYLES * * * */

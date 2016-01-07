@@ -32,27 +32,29 @@ footer li {
 }
 
 .footer__wrapper {
-	margin: 0 auto;
-	padding: 38px 24px;
-	max-width: 1200px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 38px 24px;
+
+	@extend .clearfix;
 }
 
 .footer__section {
-	float: left;
-	flex: 0 1 auto;
-	font-size: 15px;
 	color: #6d6e71;
+	flex: 0 1 auto;
+	float: left;
+	font-size: 15px;
 
 	li {
 		line-height: 36px;
 
-		// Prevents <li> with lots of text from wrapping to the next column. 
+		// Prevents <li> with lots of text from wrapping to the next column.
 		-webkit-column-break-inside: avoid;
-		page-break-inside: avoid;
 		break-inside: avoid;
+		page-break-inside: avoid;
 
 		a {
 			// <li> line-height determines spacing between each <li>
@@ -62,22 +64,23 @@ footer li {
 		}
 	}
 }
-.footer__section--header {
+.footer__section-header {
 	@include textMix('Roboto Condensed', 15px, 700);
 	color: #231f20;
+	line-height: 36px;
 	text-transform: uppercase;
 }
 
 // Separators between footer sections vary depending on the page width
 // Desktop: one full-width separator between top and bottom halves (<hr>)
 .footer__separator {
-	display: block;
-	width: 100%;
-	clear: both;
-	margin: 28px 0;
-	border: 0;
-	height: 1px;
 	background-color: #d1d3d4;
+	border: 0;
+	clear: both;
+	display: block;
+	height: 1px;
+	margin: 28px 0;
+	width: 100%;
 }
 // Tablet/smartphone: separators between each section (<ul> borders)
 // @mixin allows for single source of styling truth, and for easily setting
@@ -85,45 +88,31 @@ footer li {
 @mixin footer__section--faux-separator($border-location) {
 	@if $border-location == 'top' {
 		border-top: 1px solid #d1d3d4;
-		padding-top: 28px;
 		margin-top: 28px;
+		padding-top: 28px;
 	} @else if $border-location == 'bottom' {
 		border-bottom: 1px solid #d1d3d4;
-		padding-bottom: 28px;
 		margin-bottom: 28px;
+		padding-bottom: 28px;
 	}
 }
 
-.footer__section--corporate {
+// Three potential widths for footer sections
+.footer__section--single {
 	width: 25%;
-	font-size: 12px;
-	color:  #808285;
-}
-.footer__logo {
-	display: block;
-	margin-bottom: 1rem;
-	height: 60px;
-}
 
-.footer__section--general {
-	column-count: 2;
+	ul {
+		column-count: 1;
+	}
+}
+.footer__section--double {
 	width: 50%;
-}
 
-.footer__section--social {
-	width: 25%;
+	ul {
+		column-count: 2;
+	}
 }
-.footer__share-icons {
-	fill: #939598;
-    height: 24px;
-    width: 24px;
-	margin-right: 20px;
-}
-
-.footer__section--insight-products {
-	width: 25%;
-}
-.footer__section--other-products {
+.footer__section--triple {
 	width: 75%;
 
 	ul {
@@ -131,67 +120,98 @@ footer li {
 	}
 }
 
+.footer__section--corporate {
+	color:  #808285;
+	font-size: 12px;
+	width: 25%;
+}
+.footer__logo {
+	display: block;
+	height: 60px;
+	margin-bottom: 1rem;
+}
+
+.footer__section--social {
+	width: 25%;
+}
+// `use>svg` allows for accurate targeting in Firefox
+// http://stackoverflow.com/questions/27866893/svg-fill-not-being-applied-in-firefox
+// (Based on a bug that's 10+ years old, jeez.)
+.footer__share-icons,
+.footer__share-icons use>svg {
+	fill: #939598;
+	margin-right: 20px;
+    height: 24px;
+    width: 24px;
+}
+
 
 @include breakpoint('medium') {
-	
 
 	.footer__section--social {
-		order: 99;
-		width: 100%;
+		order: 99; // Flex-order social block to "end" / bottom of page
 		text-align: center;
+		width: 100%;
 
 		@include footer__section--faux-separator('top');
 
 		li {
 			display: inline;
-			vertical-align: top;
 			line-height: 28px;
+			vertical-align: top;
 		}
 
-		.footer__section--header {
+		.footer__section-header {
 			margin-right: 22px;
 		}
 	}
 
+	// 4 columns -> 3 columns
 	.footer__section--corporate,
-	.footer__section--insight-products {
+	.footer__section--single {
 		width: calc(100% / 3);
 	}
 
-	.footer__section--general,
-	.footer__section--other-products {
+	.footer__section--double,
+	.footer__section--triple {
 		width: calc(100% * 2/3);
 	}
 
-	.footer__section--other-products ul {
+	.footer__section--triple ul {
 		column-count: 2;
 	}
 
 }
 
 @include breakpoint('small') {
-	
+
 	.footer__wrapper {
 		width: 100%;
 		padding: 30px 12px;
 	}
 
-	// Everything drops to one full-width column
+	// 3 columns -> 1 column
+
 	.footer__section {
 		float: none;
 
 		&--corporate,
-		&--general,
 		&--social,
-		&--insight-products,
-		&--other-products,
-		&--other-products ul {
+		&--single,
+		&--double,
+		&--triple {
 			width: 100%;
+			float: none;
+		}
+
+		&--double ul,
+		&--triple ul {
 			column-count: 1;
 		}
-	    
-	    &--corporate {
-			float: none;
+
+		// Add separators (fake .footer__separator, basically)
+		&--single {
+			@include footer__section--faux-separator('bottom');
 		}
 	}
 
@@ -199,11 +219,4 @@ footer li {
 		margin: 0 auto;
 		height: 47px;
 	}
-
-	// Add separators (fake .footer__separator, basically)
-	.footer__section--insight-products {
-		@include footer__section--faux-separator('bottom');
-	}
-
-
 }
