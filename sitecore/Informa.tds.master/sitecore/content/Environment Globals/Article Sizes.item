@@ -1,40 +1,40 @@
 ----item----
 version: 1
-id: {11380B5D-3531-4570-B213-EFC5312266E4}
+id: {F5C84045-7B2B-4725-8D9B-3680BEA0AFCE}
 database: master
-path: /sitecore/templates/User Defined/Pages/Article
-parent: {8D510CBE-EC0E-42E1-983B-748AD8332249}
-name: Article
+path: /sitecore/content/Environment Globals/Article Sizes
+parent: {BD7B681C-5854-420B-877A-26366EA73EC7}
+name: Article Sizes
 master: {00000000-0000-0000-0000-000000000000}
-template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
-templatekey: Template
+template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+templatekey: Folder
 
 ----field----
-field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
-name: __Base template
-key: __base template
-content-length: 116
-
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{8CB9B3DC-FB05-4F6C-A73B-19EADB3A6391}|{A3EC5DA5-C37C-44A5-83F3-96D45B53389F}
-----field----
-field: {F7D48A55-2158-4F02-9356-756654404F73}
-name: __Standard values
-key: __standard values
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
 content-length: 38
 
-{A74D95C2-0904-4C46-AE15-D29D7D1545B6}
+{E7F286D5-7F1E-454C-9A34-D7353BA7CA5F}
 ----version----
 language: en
 version: 1
-revision: 753083a4-1131-4ba2-b5e3-b44460b32f06
+revision: 26a2c1c3-2360-4c0d-86cf-3a684bc8ee50
 
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 15
 
-20151211T190917Z
+20110510T114504
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-753083a4-1131-4ba2-b5e3-b44460b32f06
+26a2c1c3-2360-4c0d-86cf-3a684bc8ee50
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160106T215049Z
+20160105T212230Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
