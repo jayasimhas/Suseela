@@ -1,12 +1,21 @@
 .banner { // "notify"? Try using two words, perhaps, for specificity
 	width: 100%;
-	padding: 22px;
-	transition: transform 150ms ease-out, height 150ms linear;
-	transition-delay: 0, 150ms;
+	overflow: hidden;
+
+	// To animate closing a banner nicely, need to define a `max-height`.
+	// Without an explicitly defined height, `transform` won't actually animate
+	// `max-height` lets us fake that by giving us an explicit value for the
+	// browser to start from when animating.
+	transition: max-height 250ms ease-out;
+	max-height: 300px;
 
 	&--maintenance {
 		background-color: #f1f2f2;
 		color: #58595b;
+
+		@include breakpoint('medium') {
+			display: none;
+		}
 	}
 
 	&--highlights {
@@ -31,10 +40,12 @@
 		margin-right: 12px;
 	}
 
+	&__wrapper {
+		padding: 22px;
+	}
+
 	&.is-hidden {
-		transform: scaleY(0);
-		transform-origin: top;
-		height: 0px;
-		overflow: hidden;
+		height: auto;
+		max-height: 0px;
 	}
 }

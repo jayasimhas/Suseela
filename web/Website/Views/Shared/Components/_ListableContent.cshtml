@@ -18,11 +18,9 @@
 <h1 class="article-preview__headline">@Model.ListableTitles</h1>
 <span class="article-preview__byline">by @string.Join(",", Model.ListableAuthors.Select(auth => auth.LinkableTexts))</span>
 <p>@Model.ListableSummaries</p>
-<ul class="article-tags">
+<div class="article-tags bar-separated-link-list">
     @foreach (var tag in Model.ListableTopics)
     {
-        <li class="article-preview__tag">
-            <a href="@tag.LinkableUrls">@tag.LinkableTexts</a>
-        </li>
+        <a href="@tag.LinkableUrls">@tag.LinkableTexts</a>
     }
-</ul>
+</div>

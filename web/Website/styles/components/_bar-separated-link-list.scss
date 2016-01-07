@@ -1,17 +1,9 @@
-.sub-topic-links {
-    margin-bottom: 1rem;
-    display: flex;
+.bar-separated-link-list {
+    display: inline-flex;
     align-items: flex-start;
-
-    span {
-        @include textMix('Roboto Condensed', 0.875rem, 700);
-        text-transform: uppercase;
-        color: $informa-black;
-    }
 
     a {
         @include textMix('Roboto', 0.875rem, 400);
-        color: $informa-dark-gray;
         border-right: 1px solid $informa-light-gray-d;
         display: inline-block;
         padding: 0 0.75rem;
@@ -19,6 +11,7 @@
 
         &:last-child {
             border: 0;
+            padding-right: 0;
         }
     }
 }

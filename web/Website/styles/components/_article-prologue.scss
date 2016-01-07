@@ -34,12 +34,8 @@
         display: inline-block;
         width: auto;
 
-        .article-tags li {
-            font-size: 14px;
-
-            &:first-child {
-                padding-left: 8px;
-            }
+        a {
+            text-transform: none;
         }
     }
 }
