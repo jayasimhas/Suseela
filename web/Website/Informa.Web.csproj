@@ -936,6 +936,9 @@
     <Content Include="packages.config" />
     <Content Include="dist\index-generated.css.map" />
     <Content Include="dist\js\vendor.js.map" />
+    <Content Include="App_Config\Include\UserDefined\Sites.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
