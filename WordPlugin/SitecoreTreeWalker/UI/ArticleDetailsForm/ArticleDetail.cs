@@ -542,12 +542,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 return null;
             }
 
-            if (!articleDetailsPageSelector.CurrentPublicationIsDaily() && issueGuid == Guid.Empty)
-            {
-                MessageBox.Show(@"Please select an issue.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
-            }
-
+            
             SuspendLayout();
 
             SitecoreServer.ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(

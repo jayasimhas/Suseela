@@ -2051,30 +2051,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
                         username,
                         password});
             return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void DoesArticleNameAlreadyExistInIssueAsync(ArticleStruct articleStruct, string username, string password) {
-            this.DoesArticleNameAlreadyExistInIssueAsync(articleStruct, username, password, null);
-        }
-        
-        /// <remarks/>
-        public void DoesArticleNameAlreadyExistInIssueAsync(ArticleStruct articleStruct, string username, string password, object userState) {
-            if ((this.DoesArticleNameAlreadyExistInIssueOperationCompleted == null)) {
-                this.DoesArticleNameAlreadyExistInIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDoesArticleNameAlreadyExistInIssueOperationCompleted);
-            }
-            this.InvokeAsync("DoesArticleNameAlreadyExistInIssue", new object[] {
-                        articleStruct,
-                        username,
-                        password}, this.DoesArticleNameAlreadyExistInIssueOperationCompleted, userState);
-        }
-        
-        private void OnDoesArticleNameAlreadyExistInIssueOperationCompleted(object arg) {
-            if ((this.DoesArticleNameAlreadyExistInIssueCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.DoesArticleNameAlreadyExistInIssueCompleted(this, new DoesArticleNameAlreadyExistInIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
+        }        
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/HasPrimaryIndustry", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]

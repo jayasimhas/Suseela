@@ -284,11 +284,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
             //pageArticleInformationControl.PageNotesControl.PostLinkEnable();
 		}
 
-		public bool CurrentPublicationIsDaily()
-		{
-			return pageArticleInformationControl.CurrentPublicationIsDaily();
-		}
-
 		#endregion
 
 		#region UI Updaters 

@@ -792,10 +792,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             //uxArticleNumberLabel.Text = articleNumber;
 		}
 
-		public bool CurrentPublicationIsDaily()
-		{
-			return SitecoreGetter.GetPublicationFrequency(GetSelectedPublicationGuid()) == "Daily";
-		}
 
 		public string FormatUserName(string userNameWithDomain)
 		{
