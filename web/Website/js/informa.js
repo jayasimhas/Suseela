@@ -25,3 +25,8 @@ $(window).on('scroll', function windowScrolled() {
 		$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 	}
 });
+
+/* Generic banner dismiss */
+$('.js-dismiss-banner').on('click', function dismissBanner(e) {
+	$(e.srcElement).parents('.banner').addClass('is-hidden');
+});

@@ -5,17 +5,38 @@
 <div class="article-left-rail">
     <div class="article-preview">
         <span class="article-preview__byline">Publication Name</span>
-        <h1 class="article-preview__headline">@Model.Title</h1>
+        <h1 class="article-preview__headline"></h1>
         <h3 class="article-preview__subtitle">@Model.Sub_Title</h3>
         <div class="article-preview__metadata">
-            <time class="article-preview__date">@Model.Actual_Publish_Date.ToString("dd MMM yyyy")</time>
+
             <div class="article-preview__category">@Model.Article_Category</div>
         </div>
     </div>
 
 
     <div class="article-body-content">
+
+        <h1>@Model.Title</h1>
+        <time class="article-preview__date">@Model.Actual_Publish_Date.ToString("dd MMM yyyy")</time>
         @Html.Raw(Model.Body)
+
+    </div>
+@*
+    <div class="article-interview">
+        <h2>Interviews and Q&amp;A</h2>
+
+        <div class="article-interview__question">
+            The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+        </div>
+        <div class="article-interview__answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </div>
+        <div class="article-interview__question">
+            The quick brown fox jumped over the lazy dog.
+        </div>
+        <div class="article-interview__answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </div>
     </div>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
@@ -43,10 +64,21 @@
     </div>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
-    
+
+    <aside class="article-sidebar">
+        <h3>Will Amgen, Sandoz Tango Across Old Ground?</h3>
+        <span class="article-sidebar__byline">by Donna Young</span>
+        <time class="article-sidebar__date">14 Sep 2015</time>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a class="article-sidebar__read-more" href="#">Read the full article here </a>
+    </aside>
+
     <blockquote class="article-pullquote">
         Amgen also asserted that Sandoz failed to provide proper notice that the biosimilar maker planned to launch its product as soon as it won FDA approval of Zarxio.
     </blockquote>
+
+
 
     <div class="article-author">
         <ul class="article-author__list">

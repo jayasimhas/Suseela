@@ -114,6 +114,12 @@
         border: 2px solid #ccc;
         padding: 12px;
     }
+
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
 }
 
 .manually-curated-articles {
@@ -140,7 +146,7 @@
         }
     }
     &__right,
-    &__ad-unit {
+    &__right--force-top {
         float: right;
         width: 373px;
     }
@@ -157,7 +163,7 @@
                 }
             }
         }
-        &__right {
+        &__right--force-top {
             // Bump this up to the top of the parent, flank main article preview
             position: absolute;
             top: 0;
