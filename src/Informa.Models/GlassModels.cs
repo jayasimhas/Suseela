@@ -3258,24 +3258,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	public partial interface ISite_Config : IGlassBase 
 	{
 								/// <summary>
-					/// The Debug Toolbar email access field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 09448bdd-0076-46b9-b0ba-1e5d75c19e42</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_Email_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Debug_Toolbar_Email_Access  {get; set;}
-								/// <summary>
-					/// The Debug Toolbar IP Access field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 64b4962f-7088-44ad-845f-9cb91e56348c</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_IP_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Debug_Toolbar_IP_Access  {get; set;}
-								/// <summary>
 					/// The Copyright Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -3519,6 +3501,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Twitter_HandleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Twitter_Handle  {get; set;}
 								/// <summary>
+					/// The System Maintenance End Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: d5994d34-8d3b-450f-8106-9924a82693ab</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.System_Maintenance_End_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime System_Maintenance_End_Date  {get; set;}
+								/// <summary>
+					/// The System Maintenance Start Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: 40908b72-40a2-412f-a64e-4e36cbce1bba</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.System_Maintenance_Start_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime System_Maintenance_Start_Date  {get; set;}
+								/// <summary>
+					/// The System Maintenance Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b1e96fe0-25a3-49a5-8941-927c708a93cf</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string System_Maintenance_Text  {get; set;}
+								/// <summary>
 					/// The Supporting Documents Folder field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
@@ -3539,24 +3548,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		[SitecoreType]
 		public partial interface ISite_Config__Raw : IGlassBase 
 		{
-										/// <summary>
-						/// The Debug Toolbar email access field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 09448bdd-0076-46b9-b0ba-1e5d75c19e42</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_Email_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Debug_Toolbar_Email_Access  {get; set;}
-										/// <summary>
-						/// The Debug Toolbar IP Access field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 64b4962f-7088-44ad-845f-9cb91e56348c</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Debug_Toolbar_IP_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Debug_Toolbar_IP_Access  {get; set;}
 										/// <summary>
 						/// The Copyright Text field.
 						/// <para></para>
@@ -3801,6 +3792,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Twitter_HandleFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Twitter_Handle  {get; set;}
 										/// <summary>
+						/// The System Maintenance End Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: d5994d34-8d3b-450f-8106-9924a82693ab</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.System_Maintenance_End_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime System_Maintenance_End_Date  {get; set;}
+										/// <summary>
+						/// The System Maintenance Start Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: 40908b72-40a2-412f-a64e-4e36cbce1bba</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.System_Maintenance_Start_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime System_Maintenance_Start_Date  {get; set;}
+										/// <summary>
+						/// The System Maintenance Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b1e96fe0-25a3-49a5-8941-927c708a93cf</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string System_Maintenance_Text  {get; set;}
+										/// <summary>
 						/// The Supporting Documents Folder field.
 						/// <para></para>
 						/// <para>Field Type: Droplink</para>		
@@ -3817,16 +3835,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Config";
 
-					
-			public static readonly ID Debug_Toolbar_Email_AccessFieldId = new ID("09448bdd-0076-46b9-b0ba-1e5d75c19e42");
-			public const string Debug_Toolbar_Email_AccessFieldName = "Debug Toolbar email access";
-
-						
-					
-			public static readonly ID Debug_Toolbar_IP_AccessFieldId = new ID("64b4962f-7088-44ad-845f-9cb91e56348c");
-			public const string Debug_Toolbar_IP_AccessFieldName = "Debug Toolbar IP Access";
-
-						
 					
 			public static readonly ID Copyright_TextFieldId = new ID("a9aeef7b-7865-48a8-a024-d79ebc7c2c79");
 			public const string Copyright_TextFieldName = "Copyright Text";
@@ -3970,6 +3978,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_HandleFieldId = new ID("457159c1-4590-4940-b6de-a3bd1a1faeb0");
 			public const string Twitter_HandleFieldName = "Twitter Handle";
+
+						
+					
+			public static readonly ID System_Maintenance_End_DateFieldId = new ID("d5994d34-8d3b-450f-8106-9924a82693ab");
+			public const string System_Maintenance_End_DateFieldName = "System Maintenance End Date";
+
+						
+					
+			public static readonly ID System_Maintenance_Start_DateFieldId = new ID("40908b72-40a2-412f-a64e-4e36cbce1bba");
+			public const string System_Maintenance_Start_DateFieldName = "System Maintenance Start Date";
+
+						
+					
+			public static readonly ID System_Maintenance_TextFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
+			public const string System_Maintenance_TextFieldName = "System Maintenance Text";
 
 						
 					
@@ -5340,6 +5363,209 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID TitleFieldId = new ID("515a1f09-3150-4e5d-9cf8-bddfd6b8b30d");
 			public const string TitleFieldName = "Title";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// ISite_Root Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Site Root</para>	
+	/// <para>ID: dd003f89-d57d-48cb-b428-ffb519aaca56</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISite_RootConstants.TemplateIdString)]
+	public partial interface ISite_Root : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.ISite_Config
+	{
+				}
+
+	
+		/// <summary>
+		/// ISite_Root Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Site Root</para>	
+		/// <para>ID: dd003f89-d57d-48cb-b428-ffb519aaca56</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISite_Root__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.ISite_Config__Raw
+		{
+						}
+	
+	public static partial class ISite_RootConstants{
+
+			public const string TemplateIdString = "dd003f89-d57d-48cb-b428-ffb519aaca56";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Site Root";
+
+					
+			public static readonly ID Copyright_TextFieldId = new ID("a9aeef7b-7865-48a8-a024-d79ebc7c2c79");
+			public const string Copyright_TextFieldName = "Copyright Text";
+
+						
+					
+			public static readonly ID Facebook_LinkFieldId = new ID("cf68ed35-f96d-4924-850c-e96f0a7f1e34");
+			public const string Facebook_LinkFieldName = "Facebook Link";
+
+						
+					
+			public static readonly ID Footer_LogoFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
+			public const string Footer_LogoFieldName = "Footer Logo";
+
+						
+					
+			public static readonly ID LinkedIn_LinkFieldId = new ID("31f9f75c-54a7-43a5-a248-66e1f19a5469");
+			public const string LinkedIn_LinkFieldName = "LinkedIn Link";
+
+						
+					
+			public static readonly ID Local_Footer_LinksFieldId = new ID("aca9d1ad-7c13-40bb-acb6-c584eb6623bd");
+			public const string Local_Footer_LinksFieldName = "Local Footer Links";
+
+						
+					
+			public static readonly ID Menu_One_HeaderFieldId = new ID("9c4caa71-e34e-4489-91c3-ed76ab9700bd");
+			public const string Menu_One_HeaderFieldName = "Menu One Header";
+
+						
+					
+			public static readonly ID Menu_One__LinksFieldId = new ID("abf9cd82-13d2-438a-af7e-02856b69e19a");
+			public const string Menu_One__LinksFieldName = "Menu One  Links";
+
+						
+					
+			public static readonly ID Menu_Two_HeaderFieldId = new ID("3d4e2020-4a15-4b8e-a581-440107e91144");
+			public const string Menu_Two_HeaderFieldName = "Menu Two Header";
+
+						
+					
+			public static readonly ID Menu_Two_LinksFieldId = new ID("575e0858-b583-4a04-b358-2afc3ea6ee9a");
+			public const string Menu_Two_LinksFieldName = "Menu Two Links";
+
+						
+					
+			public static readonly ID Twitter_LinkFieldId = new ID("7d78565c-ec7d-4d58-9e24-76ffc1505335");
+			public const string Twitter_LinkFieldName = "Twitter Link";
+
+						
+					
+			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
+			public const string Left_Column_TextFieldName = "Left Column Text";
+
+							public static readonly ID Left_Column_Text__RawFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
+				public const string Left_Column_Text__RawFieldName = "Left Column Text";
+						
+					
+			public static readonly ID Link_1FieldId = new ID("83f0d49f-e1f8-459e-b29e-a197293b1124");
+			public const string Link_1FieldName = "Link 1";
+
+						
+					
+			public static readonly ID Link_2FieldId = new ID("2c968250-f4e9-4f05-801d-98831904e7bd");
+			public const string Link_2FieldName = "Link 2";
+
+						
+					
+			public static readonly ID Link_3FieldId = new ID("1acd4259-7963-4b46-96f9-a615671eef10");
+			public const string Link_3FieldName = "Link 3";
+
+						
+					
+			public static readonly ID Link_4FieldId = new ID("ea88c3f8-ea23-4daa-82e5-ee081e98ea9a");
+			public const string Link_4FieldName = "Link 4";
+
+						
+					
+			public static readonly ID Right_Column_TextFieldId = new ID("64a5de57-bd99-4e81-991f-be82a1188780");
+			public const string Right_Column_TextFieldName = "Right Column Text";
+
+							public static readonly ID Right_Column_Text__RawFieldId = new ID("64a5de57-bd99-4e81-991f-be82a1188780");
+				public const string Right_Column_Text__RawFieldName = "Right Column Text";
+						
+					
+			public static readonly ID Customer_Support_TextFieldId = new ID("8a7f6685-c505-419f-9bb0-0769f24c9947");
+			public const string Customer_Support_TextFieldName = "Customer Support Text";
+
+							public static readonly ID Customer_Support_Text__RawFieldId = new ID("8a7f6685-c505-419f-9bb0-0769f24c9947");
+				public const string Customer_Support_Text__RawFieldName = "Customer Support Text";
+						
+					
+			public static readonly ID Forgot_Password_TextFieldId = new ID("2bda24fc-e3d6-4774-81a1-66c0c096c474");
+			public const string Forgot_Password_TextFieldName = "Forgot Password Text";
+
+							public static readonly ID Forgot_Password_Text__RawFieldId = new ID("2bda24fc-e3d6-4774-81a1-66c0c096c474");
+				public const string Forgot_Password_Text__RawFieldName = "Forgot Password Text";
+						
+					
+			public static readonly ID Other_LinksFieldId = new ID("51472ec7-6b82-4300-8dfb-f3e2668f7f89");
+			public const string Other_LinksFieldName = "Other Links";
+
+						
+					
+			public static readonly ID Taxonomy_ListingsFieldId = new ID("e4683c82-14a8-450d-880c-452d81981cae");
+			public const string Taxonomy_ListingsFieldName = "Taxonomy Listings";
+
+						
+					
+			public static readonly ID Email_LogoFieldId = new ID("223891e7-0345-450b-a858-a10fda0f718d");
+			public const string Email_LogoFieldName = "Email Logo";
+
+						
+					
+			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
+			public const string Site_LogoFieldName = "Site Logo";
+
+						
+					
+			public static readonly ID Publication_NameFieldId = new ID("9aee6c51-8392-4461-b24c-bf22acf5b07f");
+			public const string Publication_NameFieldName = "Publication Name";
+
+						
+					
+			public static readonly ID Search_Tips_TextFieldId = new ID("282eff16-dbcd-4adf-83bc-b1e6655cf354");
+			public const string Search_Tips_TextFieldName = "Search Tips Text";
+
+							public static readonly ID Search_Tips_Text__RawFieldId = new ID("282eff16-dbcd-4adf-83bc-b1e6655cf354");
+				public const string Search_Tips_Text__RawFieldName = "Search Tips Text";
+						
+					
+			public static readonly ID Search_Tips_TitleFieldId = new ID("3f8a2bb3-17bb-48a9-bb23-3e88c6b98b7b");
+			public const string Search_Tips_TitleFieldName = "Search Tips Title";
+
+						
+					
+			public static readonly ID LinkedIn_ProfileFieldId = new ID("539462bc-7297-4113-b33c-36111b5e8adc");
+			public const string LinkedIn_ProfileFieldName = "LinkedIn Profile";
+
+						
+					
+			public static readonly ID Twitter_HandleFieldId = new ID("457159c1-4590-4940-b6de-a3bd1a1faeb0");
+			public const string Twitter_HandleFieldName = "Twitter Handle";
+
+						
+					
+			public static readonly ID System_Maintenance_End_DateFieldId = new ID("d5994d34-8d3b-450f-8106-9924a82693ab");
+			public const string System_Maintenance_End_DateFieldName = "System Maintenance End Date";
+
+						
+					
+			public static readonly ID System_Maintenance_Start_DateFieldId = new ID("40908b72-40a2-412f-a64e-4e36cbce1bba");
+			public const string System_Maintenance_Start_DateFieldName = "System Maintenance Start Date";
+
+						
+					
+			public static readonly ID System_Maintenance_TextFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
+			public const string System_Maintenance_TextFieldName = "System Maintenance Text";
+
+						
+					
+			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
+			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
 
 						
 			
