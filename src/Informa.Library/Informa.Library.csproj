@@ -236,6 +236,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
+    <Compile Include="SIte\GlassSiteRootContext.cs" />
+    <Compile Include="SIte\ISiteRootContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
