@@ -1,34 +1,33 @@
 ﻿using Informa.Library.Globalization;
-using Informa.Library.SIte;
+using Informa.Library.Site;
 using Informa.Web.ViewModels;
-using System;
 using System.Web.Mvc;
 
 namespace Informa.Web.Controllers
 {
 	public class MaintenanceController : Controller
 	{
-		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly ISiteMaintenanceContext SiteMaintenanceContext;
 		protected readonly ITextTranslator TextTranslator;
 
 		public MaintenanceController(
-			ISiteRootContext siteRootContext,
+			ISiteMaintenanceContext siteMaintenanceContext,
 			ITextTranslator textTranslator)
 		{
-			SiteRootContext = siteRootContext;
+			SiteMaintenanceContext = siteMaintenanceContext;
 			TextTranslator = textTranslator;
 		}
 
 		public ViewResult MaintenanceMessage()
 		{
-			var siteRoot = SiteRootContext.Item;
+			var siteMaintenanceInfo = SiteMaintenanceContext.Info;
 
 			var model = new MaintenanceMessageViewModel
 			{
 				DismissText = TextTranslator.Translate("MaintenanceDismiss"),
-				DisplayFrom = siteRoot == null ? default(DateTime) : siteRoot.System_Maintenance_Start_Date,
-				DisplayTo = siteRoot == null ? default(DateTime) : siteRoot.System_Maintenance_End_Date,
-				Message = siteRoot == null ? TextTranslator.Translate("MaintenanceMessage") : siteRoot.System_Maintenance_Text
+				DisplayFrom = siteMaintenanceInfo.From,
+				DisplayTo = siteMaintenanceInfo.To,
+				Message = siteMaintenanceInfo.Message
 			};
 
 			return View(model);

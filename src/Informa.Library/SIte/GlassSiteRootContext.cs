@@ -3,7 +3,7 @@ using Glass.Mapper.Sc;
 using Sitecore;
 using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Library.SIte
+namespace Informa.Library.Site
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class GlassSiteRootContext : ISiteRootContext

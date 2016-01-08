@@ -1,5 +1,7 @@
 ﻿@model Informa.Web.ViewModels.IMaintenanceMessageViewModel
 <div class="banner banner--maintenance">
+	<!-- From: @Model.DisplayFrom -->
+	<!-- To: @Model.DisplayTo -->
 	<div class="dismiss-button">
 		<label>@Model.DismissText</label>
 		<svg class="dismiss-button__icon">
@@ -9,5 +11,5 @@
 	<svg class="banner__lead-icon">
 		<use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
 	</svg>
-	@Model.Message@*Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.*@
+	@Model.Message
 </div>
