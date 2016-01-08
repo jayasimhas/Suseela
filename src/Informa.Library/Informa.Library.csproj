@@ -230,6 +230,8 @@
     <Compile Include="CustomSitecore\Pipelines\RenderRenderings\ExecuteRenderer.cs" />
     <Compile Include="CustomSitecore\Providers\CustomLinkProvider.cs" />
     <Compile Include="CustomSitecore\Rules\ResolvePathBasedOnCleanName.cs" />
+    <Compile Include="Globalization\ITextTranslator.cs" />
+    <Compile Include="Globalization\SitecoreTextTranslator.cs" />
     <Compile Include="InterfaceFactory\Interfaces\IPublishingLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />

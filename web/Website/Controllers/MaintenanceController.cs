@@ -1,8 +1,8 @@
 ﻿using Glass.Mapper.Sc;
+using Informa.Library.Globalization;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Models;
-using Sitecore.Globalization;
 using System;
 using System.Web.Mvc;
 
@@ -12,11 +12,16 @@ namespace Informa.Web.Controllers
 	{
 		protected readonly ISitecoreService SitecoreService;
 		protected readonly ISitecoreContext SitecoreContext;
+		protected readonly ITextTranslator TextTranslator;
 
-		public MaintenanceController(ISitecoreService sitecoreService, ISitecoreContext sitecoreContext)
+		public MaintenanceController(
+			ISitecoreService sitecoreService,
+			ISitecoreContext sitecoreContext,
+			ITextTranslator textTranslator)
 		{
 			SitecoreService = sitecoreService;
 			SitecoreContext = sitecoreContext;
+			TextTranslator = textTranslator;
 		}
 
 		public ViewResult MaintenanceMessage()
@@ -26,7 +31,7 @@ namespace Informa.Web.Controllers
 
 			var model = new MaintenanceMessageViewModel
 			{
-				DismissText = Translate.Text("Dismiss"),
+				DismissText = TextTranslator.Translate("Dismiss"),
 				DisplayFrom = siteRoot == null ? DateTime.Now : siteRoot.System_Maintenance_Start_Date,
 				DisplayTo = siteRoot == null ? DateTime.Now.AddDays(1) : siteRoot.System_Maintenance_End_Date,
 				Message = siteRoot == null ? "Dismiss" : siteRoot.System_Maintenance_Text
