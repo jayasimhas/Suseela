@@ -34,7 +34,7 @@ namespace Informa.Web.Controllers
 				DismissText = TextTranslator.Translate("Dismiss"),
 				DisplayFrom = siteRoot == null ? DateTime.Now : siteRoot.System_Maintenance_Start_Date,
 				DisplayTo = siteRoot == null ? DateTime.Now.AddDays(1) : siteRoot.System_Maintenance_End_Date,
-				Message = siteRoot == null ? "Dismiss" : siteRoot.System_Maintenance_Text
+				Message = siteRoot == null ? string.Empty : siteRoot.System_Maintenance_Text
 			};
 
 			return View(model);
