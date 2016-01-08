@@ -1,6 +1,6 @@
 @using Microsoft.AspNet.Identity
 @*@model Informa.Web.Areas.Account.Models.LoginViewModel*@
-<header>           
+<header>
     <div class="header__informa-permabanner">
         informa
     </div>
@@ -47,7 +47,7 @@
             else
             {
       <!-- IF SIGNED OUT !-->
-                <div class="header__my-account pop-out__trigger">
+                <div class="header__my-account pop-out__trigger js-toggle-pop-out">
                     <span class="pop-out__trigger-content">
                         <svg class="header__icons icon-register">
                             <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
@@ -70,7 +70,7 @@
 
                 </div>
 
-                <div class="header__sign-in-out pop-out__trigger">
+                <div class="header__sign-in-out pop-out__trigger js-toggle-pop-out">
                     <span class="pop-out__trigger-content">
                         <svg class="header__icons icon-sign-in">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
@@ -85,7 +85,7 @@
                         <h2 class="pop-out__header">Sign In</h2>
 
                         @Html.Partial("_SignInForm")
-                        
+
                         </div>
                     </div>
                 </div>

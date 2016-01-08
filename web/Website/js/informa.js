@@ -30,3 +30,8 @@ $(window).on('scroll', function windowScrolled() {
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	$(e.srcElement).parents('.banner').addClass('is-hidden');
 });
+
+/* Generic toggle pop-out */
+$('.js-toggle-pop-out').on('click', function togglePopOut(e) {
+	$(e.target).parents('.pop-out__trigger').toggleClass('is-active');
+});

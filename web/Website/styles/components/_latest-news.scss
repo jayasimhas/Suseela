@@ -5,11 +5,29 @@
         color: $informa-black;
         border-left: 12px solid $informa-red;
         padding-left: 18px;
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
 
         a {
-            @include textMix('Roboto', 16px, 500);
-            margin-left: 24px;
+            @include textMix('Roboto', 1rem, 500);
+            margin-left: 1.5rem;
+        }
+
+        @include breakpoint('medium') {
+            margin-bottom: 3rem;
+
+            a {
+                margin-left: 0;
+                display: block;
+                position: absolute;
+            }
+        }
+
+        @include breakpoint('small') {
+            font-size: 2rem;
+
+            a {
+                margin-top: 0.5rem;
+            }
         }
     }
 
@@ -50,6 +68,27 @@
                 display: inline-block;
                 position: relative;
             }
+
+            .article-preview__metadata {
+                float: right;
+                width: calc(100% - 384px);
+                margin-bottom: 1rem;
+            }
+
+            .article-preview__content-wrapper {
+                margin-left: 384px;
+            }
+
+            @include breakpoint('medium') {
+                .article-preview__metadata {
+                    float: none;
+                    width: 100%;
+                }
+
+                .article-preview__content-wrapper {
+                    margin-left: 264px;
+                }
+            }
         }
 
         &--small {
@@ -70,7 +109,11 @@
                 left: 24px;
             }
 
-            @include breakpoint('medium') {
+            // These are a bit magic-number'ey, but given the contents of
+            // this component, need to collapse from 3 -> 2 and 2 -> 1 before
+            // the standard breakpoints.
+
+            @media ('max-width: 1000px') {
                 width: calc(50% - 12px);
                 margin-right: 24px;
                 margin-bottom: 24px;
@@ -83,7 +126,7 @@
                 }
             }
 
-            @include breakpoint('small') {
+            @media ('max-width: 600px') {
                 width: 100%;
                 margin-right: 0;
 
@@ -98,6 +141,10 @@
             float: left;
             margin-right: 24px;
             width: 360px;
+
+            @include breakpoint('medium') {
+                width: 240px;
+            }
         }
 
         // .latest-news previews need a wrapper for all content besides the image

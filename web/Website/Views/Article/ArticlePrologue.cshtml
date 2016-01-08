@@ -5,7 +5,7 @@
     <div class="article-prologue">
         <div class="article-prologue__share-bar">
             <ul>
-                <li class="article-prologue__share-item pop-out__trigger">
+                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
                     <span class="pop-out__trigger-content">
                         Email
                         <svg class="article-prologue__share-icon">
@@ -60,18 +60,19 @@
                         <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
                     </svg>
                 </li>
-                <li class="article-prologue__share-item pop-out__trigger">
+                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
                     <span class="pop-out__trigger-content">
-                        Bookmark
                         @* IF NOT BOOKMARKED *@
+                        Bookmark
                         <svg class="article-prologue__share-icon">
                             <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                         </svg>
 
-                       @*  * IF BOOKMARKED *      *@
-                            <svg class="article-prologue__share-icon">
-                                <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                            </svg>
+                        @* IF BOOKMARKED
+                        Bookmarked
+                        <svg class="article-prologue__share-icon">
+                            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                        </svg> *@
 
                         </span>
                         <div class="pop-out">
