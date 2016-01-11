@@ -1,10 +1,12 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @using Informa.Web.TestData
 @model Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface.IListable
+
 @if (Model.ListableImages != null)
 {
     <img class="article-preview__image" src="@Model.ListableImages.Src">
 }
+
 <div class="article-preview__metadata">
     <div class="article-preview__bookmarker">
         Bookmark
@@ -15,10 +17,18 @@
     <time class="article-preview__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>
     <div class="article-preview__category">@TestData.GetRandomTopic().LinkableTexts</div>
 </div>
-<h1 class="article-preview__headline">@Model.ListableTitles</h1>
-<span class="article-preview__byline">by @string.Join(",", Model.ListableAuthors.Select(auth => auth.LinkableTexts))</span>
+
+<h1 class="article-preview__headline">
+    @Model.ListableTitles
+</h1>
+
+<span class="article-preview__byline">
+    by @string.Join(",", Model.ListableAuthors.Select(auth => auth.LinkableTexts))
+</span>
+
 <p>@Model.ListableSummaries</p>
-<div class="article-tags bar-separated-link-list">
+
+<div class="article-preview__tags bar-separated-link-list">
     @foreach (var tag in Model.ListableTopics)
     {
         <a href="@tag.LinkableUrls">@tag.LinkableTexts</a>
