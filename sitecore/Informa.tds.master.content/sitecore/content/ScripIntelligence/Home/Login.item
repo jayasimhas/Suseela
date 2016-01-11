@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {CF48173B-0B5C-417F-952A-E82CDBC4D277}
+id: {EA088B7F-FC39-4695-9848-6BC63A16E85E}
 database: master
-path: /sitecore/content/Scrip/Logout
+path: /sitecore/content/ScripIntelligence/Home/Login
 parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
-name: Logout
+name: Login
 master: {00000000-0000-0000-0000-000000000000}
 template: {BC9061E8-27C6-4DD4-B342-50547E4A25CC}
 templatekey: Authored Content
@@ -13,13 +13,13 @@ templatekey: Authored Content
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
 name: __Renderings
 key: __renderings
-content-length: 272
+content-length: 259
 
-<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r ds="" id="{1460F117-C1C2-45EF-884A-9520FB3A7FDB}" par="" ph="main_content" uid="{D8617254-E50A-4483-A88D-0EA4D467DD77}" /></d></r>
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r id="{17DAA726-558D-4D82-B8BC-8F1FB523A938}" ph="main_content" uid="{AAD5CBAC-B4FF-467D-B523-4A4F8EC23418}" /></d></r>
 ----version----
 language: en
 version: 1
-revision: bd230aaa-df67-4809-be45-34ffdfef0db6
+revision: a1361f9b-3a39-4dfa-86c7-2167643b9ba9
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-bd230aaa-df67-4809-be45-34ffdfef0db6
+a1361f9b-3a39-4dfa-86c7-2167643b9ba9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151212T003618Z
+20151218T152738Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

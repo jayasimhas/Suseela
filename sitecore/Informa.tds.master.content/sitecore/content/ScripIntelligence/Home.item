@@ -76,9 +76,9 @@ content-length: 77
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
 name: __Renderings
 key: __renderings
-content-length: 272
+content-length: 383
 
-<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r ds="" id="{8A3D7E7D-7EA9-45E1-9FB5-B909320400E6}" par="" ph="main-content" uid="{7473F052-7AC0-4070-90C4-786E033C42C8}" /></d></r>
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" /><r uid="{8FA8AF74-CB9C-484A-9EE4-B4DCC8EC07F2}" ds="" id="{8746FCAC-0E6C-4DA2-8DDE-178A0310FA80}" par="" ph="main-content" /></d></r>
 ----field----
 field: {86FE4F77-4D9A-4EC3-9ED9-263D03BD1965}
 name: __Publish
@@ -295,7 +295,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: b1d87a34-590f-49a6-bf91-8de4dcb8ccd1
+revision: 837fe13d-dcec-420c-9ae9-9c6594bbf6f7
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -377,14 +377,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b1d87a34-590f-49a6-bf91-8de4dcb8ccd1
+837fe13d-dcec-420c-9ae9-9c6594bbf6f7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160107T122702Z
+20160111T204022Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
