@@ -1,12 +1,23 @@
-﻿using System;
+﻿using Informa.Library.Site;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Models;
+using System;
 
 namespace Informa.Web.ViewModels
 {
-	public class MaintenanceMessageViewModel : IMaintenanceMessageViewModel
+	public class MaintenanceMessageViewModel : GlassViewModel<IGlassBase>
 	{
-		public string Message { get; set; }
-		public string DismissText { get; set; }
-		public DateTime DisplayFrom { get; set; }
-		public DateTime DisplayTo { get; set; }
+		protected readonly ISiteMaintenanceContext SiteMaintenanceContext;
+
+		public MaintenanceMessageViewModel(
+			ISiteMaintenanceContext siteMaintenanceContext)
+		{
+			SiteMaintenanceContext = siteMaintenanceContext;
+		}
+
+		public string Message => "Message";
+		public string DismissText => "Dismiss Text";
+		public DateTime DisplayFrom => DateTime.Now;
+		public DateTime DisplayTo => DateTime.Now.AddDays(1);
 	}
 }

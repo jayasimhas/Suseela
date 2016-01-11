@@ -22,7 +22,7 @@ namespace Informa.Web.Controllers
 		{
 			var siteMaintenanceInfo = SiteMaintenanceContext.Info;
 
-			var model = new MaintenanceMessageViewModel
+			var model = new MaintenanceViewModel
 			{
 				DismissText = TextTranslator.Translate("MaintenanceDismiss"),
 				DisplayFrom = siteMaintenanceInfo.From,

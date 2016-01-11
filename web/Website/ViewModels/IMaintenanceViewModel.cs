@@ -2,7 +2,7 @@
 
 namespace Informa.Web.ViewModels
 {
-	public interface IMaintenanceMessageViewModel
+	public interface IMaintenanceViewModel
 	{
 		string Message { get; }
 		string DismissText { get; }
