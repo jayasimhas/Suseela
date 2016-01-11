@@ -6077,44 +6077,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Layout.Section
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
-{
-
-
- 	/// <summary>
-	/// IMonth_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Folders/Month Folder</para>	
-	/// <para>ID: ed8f2afd-9bcb-4eab-8c48-4759234ca91c</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IMonth_FolderConstants.TemplateIdString)]
-	public partial interface IMonth_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
-	{
-				}
-
-	
-		/// <summary>
-		/// IMonth_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Folders/Month Folder</para>	
-		/// <para>ID: ed8f2afd-9bcb-4eab-8c48-4759234ca91c</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IMonth_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
-		{
-						}
-	
-	public static partial class IMonth_FolderConstants{
-
-			public const string TemplateIdString = "ed8f2afd-9bcb-4eab-8c48-4759234ca91c";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Month Folder";
-
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -6347,6 +6309,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public const string WidthFieldName = "Width";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
+{
+
+
+ 	/// <summary>
+	/// IMonth_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Folders/Month Folder</para>	
+	/// <para>ID: ed8f2afd-9bcb-4eab-8c48-4759234ca91c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMonth_FolderConstants.TemplateIdString)]
+	public partial interface IMonth_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	{
+				}
+
+	
+		/// <summary>
+		/// IMonth_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Folders/Month Folder</para>	
+		/// <para>ID: ed8f2afd-9bcb-4eab-8c48-4759234ca91c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMonth_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		{
+						}
+	
+	public static partial class IMonth_FolderConstants{
+
+			public const string TemplateIdString = "ed8f2afd-9bcb-4eab-8c48-4759234ca91c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Month Folder";
+
 			
 
 	}

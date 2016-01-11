@@ -13,9 +13,9 @@ templatekey: Publication Style Map
 field: {82FB567B-8537-4677-99D0-283E4E555D6F}
 name: Publication
 key: publication
-content-length: 7
+content-length: 5
 
-IN VIVO
+Scrip
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: a8e71606-1ee4-4e23-a353-f50b3835d55b
+revision: f8d3e3f1-5be6-439e-8323-0c0b43e57b41
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,18 +41,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a8e71606-1ee4-4e23-a353-f50b3835d55b
+f8d3e3f1-5be6-439e-8323-0c0b43e57b41
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 16
 
-20110317T110213:634359565330484287
+20160111T170134Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 17
+content-length: 14
 
-sitecore\mbarnett
+sitecore\admin
