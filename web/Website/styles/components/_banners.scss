@@ -1,6 +1,9 @@
-.banner { // "notify"? Try using two words, perhaps, for specificity
-	width: 100%;
+.banner {
+	// By default, all banners are hidden.
+	// If banner not seen/dismissed, will be displayed when document ready.
+	display: none;
 	overflow: hidden;
+	width: 100%;
 
 	// To animate closing a banner nicely, need to define a `max-height`.
 	// Without an explicitly defined height, `transform` won't actually animate
