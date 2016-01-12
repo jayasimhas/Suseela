@@ -2,9 +2,9 @@
 version: 1
 id: {D0DFAF98-BB2A-4EB3-A931-13C335201D25}
 database: master
-path: /sitecore/templates/User Defined/Folders/Day Folder
+path: /sitecore/templates/User Defined/Folders/Article Date Folder
 parent: {522117D7-84FF-4583-99C6-E27BD68308B8}
-name: Day Folder
+name: Article Date Folder
 master: {00000000-0000-0000-0000-000000000000}
 template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
 templatekey: Template
@@ -33,7 +33,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: 03347b37-faf9-435b-ac25-18f034c3e98b
+revision: 6f26260d-63fe-4c8d-9dda-bc0fed3de26b
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-03347b37-faf9-435b-ac25-18f034c3e98b
+6f26260d-63fe-4c8d-9dda-bc0fed3de26b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160108T191515Z
+20160112T161350Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
