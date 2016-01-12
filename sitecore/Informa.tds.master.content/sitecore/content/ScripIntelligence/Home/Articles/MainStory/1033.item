@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {BA4D37A4-C443-41AA-8F8E-8F17914F702F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/MainStory/1033
+parent: {A61718FC-F04C-4C0F-A232-544018BC219E}
+name: 1033
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d329fac5-844f-45b5-aae1-d762d6c5c9f5
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Temporary GMP reprieve for Vietnam's drug producers
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 4
+
+1033
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1536
+
+<p>Pharmaceutical enterprises in Vietnam that do not yet have good manufacturing practice (GMP) certification to World Health Organizationstandards have been given more time to comply following appeals to the ministry of health.</p><p>Domestic producers will now be given until the end of 2010, after which any facilities not able to secure certification would have to stop producing synthetic drugs. In the meantime, the ministry is to assess each operation individually to determine appropriate provisional regulation, deputy health minister Cao Minh Quang said.</p><p>The ministry is looking to achieve compliance across the industry to upgrade quality and improve local manufacturers' international competitiveness. Vietnam is now heavily reliant on imports and is looking to raise in-country production to meet 60% of its drug market by 2010. The government already expects newly built facilities to meet WHO GMP standards, and those certified to regional ASEAN (association of Southeast Asian nations) requirements to upgrade when possible.</p><p>61 companies in the country have so far reached the WHO standards and 19 the ASEAN standards, while 16 do not have any form of GMP certification, the national VNS news service reported. A major hindrance has been the time and sometimes multimillion-dollar investments required to upgrade equipment and practices. This has led to calls from producers for more assistance from the ministry, which has directed certified facilities to help those without GMP status reach compliance.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 4
+
+1033
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 4
+
+News
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Temporary GMP reprieve for Vietnam's drug producers
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FBB8DE3C-84FD-4CD4-A9A0-465C40F734F0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 40
+
+<ecs_selection>News</ecs_selection>,News
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 4
+
+1033
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160111T213104Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d329fac5-844f-45b5-aae1-d762d6c5c9f5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160112T175220Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

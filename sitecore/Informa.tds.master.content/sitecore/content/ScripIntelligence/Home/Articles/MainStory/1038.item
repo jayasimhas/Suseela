@@ -1,0 +1,114 @@
+----item----
+version: 1
+id: {AB4C83FC-C3DB-487D-A73F-EAAADA27BCBA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/MainStory/1038
+parent: {A61718FC-F04C-4C0F-A232-544018BC219E}
+name: 1038
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 017ed4b9-74dd-468f-98bc-33ff3a2644ef
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 37
+
+Baxter reports another strong quarter
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 4
+
+1038
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3030
+
+<p>Stronger than expected second-quarter revenues, in particular for biologicals and vaccines, sawBaxter's share price rise to an all-time high of $69.66 on Thursday July 17th, and to close at $67.96, up by 3.2%.</p><p>Baxter's Bioscience business, which includes its recombinants, plasma proteins, antibody therapies, regenerative therapies and vaccines, reported a 16% increase in sales to $1.4 billion, although half of the increase was attributed to favourable currency exchange.</p><p>CFO Rob Davis said that double-digit growth across the portfolio more than offset the loss of BeneFIX (exclusive distribution rights for which were returned to Wyeth last year), sales of which last year amounted to $65 million.</p><p>Revenues during the quarter from its recombinant products rose by 18% (10% excluding foreign currency impacts) to $508 million &ndash; most of this was from international sales, which increased by 30%. US sales were up by 4% which Baxter attributed to the timing of shipments in the quarter and strong double-digit growth in the first quarter. Sales of Advate (octocog alfa) now represent 75% of Baxter's total recombinant sales, Mr Davis said, and he expects continued patient conversion to the product to drive this business.</p><p>International sales also accounted for the lion's share of growth for Baxter's plasma products in the quarter. Worldwide sales were $291 million, up by 20% including an 8% currency benefit; international sales increased by 32%, while US sales were up by 1%. The performance was helped by continued strong demand for plasma proteins and improved pricing, particularly for albumin, Baxter said.</p><p>The company's antibody therapies saw sales growth of 32% to $315 million, driven mainly by conversion to Gammagard Liquid and better pricing. Vaccine sales in the quarter were about $150 million up by roughly 20% (excluding foreign currency benefits) because of increased demand for the FSME encephalitis vaccine.</p><p>Overall Baxter reported a net income of $544 million in the second quarter, up by 26% on the same quarter last year, on worldwide sales of $3.2 billion (up by 13% including an 8% foreign currency impact). Earnings per diluted share were $0.85 &ndash; better than Baxter's previous guidance of $0.81-0.83 per diluted share, and also ahead of analysts' expectations. On an adjusted basis, net income and earnings per diluted share increased by 14% and 18% respectively, compared with the same period last year.</p><p>SG&A costs for the quarter were $703 million, up by 13% from $621 million but flat at 22% of sales. R&D expenses were $222 million (7% of sales) up from $177 million (6.3% of sales) for the same period last year.</p><h1>full-year guidance</h1><p>Based on the performance, Baxter has raised its full-year guidance and now expects sales growth for the year, excluding the impact of foreign currency exchange, of 5-6%, with earnings per diluted share of $3.28-3.32 before any special items. Its previous earnings guidance was $3.18-3.24.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 4
+
+1038
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 4
+
+News
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 37
+
+Baxter reports another strong quarter
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 21
+
+WYETH,LION,WYETH,LION
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B76E2A6B-56EA-4C7A-9288-E843C36DBFDD}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 40
+
+<ecs_selection>News</ecs_selection>,News
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 4
+
+1038
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160111T213104Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+017ed4b9-74dd-468f-98bc-33ff3a2644ef
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160112T175159Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

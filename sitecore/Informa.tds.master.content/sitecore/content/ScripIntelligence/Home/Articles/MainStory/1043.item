@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {37770706-7AAD-413E-8AF9-20E769F679B8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/MainStory/1043
+parent: {A61718FC-F04C-4C0F-A232-544018BC219E}
+name: 1043
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: efac99bc-fef1-4ef3-868b-639c819d29fb
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+SkyePharma refinancing stalls
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 4
+
+1043
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4136
+
+<p>SkyePharma has blamed market conditions for the failure of its attempts to refinance or renegotiate the terms of its convertible bonds.</p><p>In May, CEO Frank Condella announced that he would step down once the company had completed its financial restructuring, plans which were to be announced after the results of two Phase III trials (SKY2028-3-004 and SKY2028-3-001) for its combination asthma treatment Flutiform (fluticasone plus formoterol) were released. The second of these trials was reported last week, making it the third positive Phase III trial for the product, which is still on track for a US FDA filing early next year. Mr Condella is due to be succeeded by chief operating officer Dr Ken Cunningham.</p><p>In anticipation of these positive results, SkyePharma said it had held meetings with a number of existing and potential investors and with certain key bondholders regarding a specific proposal to refinance the convertible bonds, but despite significant support, these discussions are not now being pursued "in light of the current capital market conditions". The bond holders could demand nearly &pound;70 million next May, unless the terms are renegotiated (<i>Scrip</i>No 3357, p 23).</p><p>SkyePharma is now in further discussions with a small number of stakeholders to consider an alternative plan, and an update is to be given at its half year results announcement, scheduled for August 28th. Analysts suggest that its most likely option would appear to be equity or additional credit financing.</p><p>SkyePharma remains confident of a solution to its present financial woes, based on the strength of the clinical data coming out for Flutiform, top-line data for which show that it has met the primary endpoint in its third Phase III efficacy study.</p><p>In the 12-week placebo-controlled study of 475 adolescent and adult patients with mild to moderate asthma (SKY2028-3-001), Flutiform 100&mu;g/10&mu;g twice daily was more effective than either fluticasone 100&mu;g alone or formoterol 10&mu;g alone twice daily at improving FEV<Subscript>1</Subscript>.</p><p>Results of three of the four efficacy studies required for filing with the US FDA have now been announced. The first two efficacy studies were 12-week trials in a total of 914 adolescent and adult patients with mild to moderate asthma. The results of the first trial (SKY2028-3-002) were announced in April, and showed that Flutiform 10&mu;g/10&mu;g twice daily was more effective than either fluticasone 100&mu;g alone or formoterol 10&mu;g alone twice daily at improving FEV<Subscript>1</Subscript>.</p><p>The second trial (SKY2028-3-004), the results of which were announced last month, showed that Flutiform 100&mu;g/10&mu;g and Flutiform 2&mu;g/10&mu;g were both more effective than either fluticasone 250&mu;g alone or formoterol 10&mu;g alone. One further efficacy trial (SKY2028-3-005) is being conducted ahead of US filing after the FDA asked for additional efficacy data to support an approval filing for Flutiform (<i>Scrip</i> No 3284, p 18). Recruitment for this trial is on track to be completed by the end of the month. The study will be a 12-week trial involving 300-350 patients and will examine the change in FEV<Subscript>1</Subscript> from morning pre-dose at baseline to 2 hours post-dose at week 12 with Flutiform, compared with fluticasone 250&mu;g.</p><p>If approved, Flutiform would become the third combination product to reach the US market for asthma, after GlaxoSmithKline's Advair/Seretide (salmeterol plus fluticasone) and AstraZeneca's Symbicort (budesonide plus formoterol). Formoterol and fluticasone, which Flutiform combines, are the fastest-onset long-acting beta-agonist (LABA) and the most commonly prescribed steroid for asthma, respectively. Schering-Plough and Novartis are also developing a mometasone/formoterol combination product in Phase III.</p><p>Beyond asthma therapy, target indications for Flutiform include chronic obstructive pulmonary disease (COPD). Abbott, which holds the US rights to Flutiform, will be responsible for managing and funding trials for these indications.</p><p></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 4
+
+1043
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20081107T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20081107T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20081107T000000
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 4
+
+News
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+SkyePharma refinancing stalls
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 70
+
+SKYEPHARMA,SCHERING-PLOUGH,NOVARTIS,GLAXOSMITHKLINE,ASTRAZENECA,ABBOTT
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B76E2A6B-56EA-4C7A-9288-E843C36DBFDD}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 40
+
+<ecs_selection>News</ecs_selection>,News
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 4
+
+1043
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160111T213104Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+efac99bc-fef1-4ef3-868b-639c819d29fb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160112T175159Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

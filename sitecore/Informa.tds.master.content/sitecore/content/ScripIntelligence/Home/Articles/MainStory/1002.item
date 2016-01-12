@@ -1,0 +1,114 @@
+----item----
+version: 1
+id: {14FB4311-55FB-4A75-B389-4B598A495242}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/MainStory/1002
+parent: {A61718FC-F04C-4C0F-A232-544018BC219E}
+name: 1002
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 54e213d0-da5f-48f2-bb67-c3a5e2902160
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Alizyme's Colal-Pred stumbles in Phase III
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 4
+
+1002
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3607
+
+<p>Alizyme Therapeutics' investigational ulcerative colitis treatment Colal-Pred has failed to meet one of its primary endpoints in a pivotal Phase III trial. Colal-Pred, a colonic-release formulation of prednisolone, showed inferior efficacy to conventional prednisolone in the trial.</p><p>Shares in the UK-listed biotech company fell by 50% to 7.76p on the London Stock Exchange on July 24th, following the announcement of the trial's top-line results. Alizyme said that the outcome of the trial would delay filing in the EU, planned for this year with a view to launch in the second half of 2009, while the company discusses the findings with regulators and its partners.</p><p>Colal-Pred combines prednisolone metasulfobenzoate sodium with Alizyme's proprietary amylose-based colonic delivery system Colal. Prednisolone is the current standard of care for ulcerative colitis, a chronic, relapsing inflammatory disease of the colon. However, the drug has adverse effects which limit its clinical use and restrict the amount of time for which it can be safely administered, Alizyme said. Colal-Pred's formulation is designed to prevent it from being broken down until it reaches the colon, improving targeted delivery and reducing systemic side-effects.</p><p>The double-blind eight-week trial compared Colal-Pred capsules (40mg, 60mg or 80mg) with prednisolone (two weeks at 40mg, tapering to 0mg by week eight). Colal-Pred failed to show non-inferiority to conventional prednisolone (one of the trial's two co-primary endpoints). Non-inferiority was defined in terms of the proportion of patients achieving an efficacy response (achieving a reduction of at least three points in their score on the disease activity index after eight weeks or at time of withdrawal). 56% of patients in the Colal-Pred groups achieved such a response, compared with 74% in the prednisolone group, falling outside the trial's non-inferiority margin of 15% (assuming 70% efficacy on the control group).</p><p>The second co-primary endpoint examined safety, assessing superiority compared to prednisolone in terms of the proportion of patients whose early morning plasma cortisol was above 150nmol/l at week four and at week eight ("safety responders"). This endpoint was met for all doses of Colal-Pred.</p><p>In addition, Colal-Pred was associated with fewer adverse effects than conventional prednisolone. Proportions of reports of Cushingoid syndrome, insomnia and acne were all lower in the Colal-Pred groups than in those given conventional prednisolone (0.0%-1.0% versus 5.3%, 1.0%-1.5% versus 4.8% and 0.0%-1.5% versus 4.8%, respectively). Colal-Pred also showed superiority compared with prednisolone in terms of the proportion of patients who were both efficacy responders and safety responders.</p><p>Alizyme's chief executive Tim McCarthy said that the results of the trial showed that Colal-Pred was a safe steroid in the treatment of ulcerative colitis. The company would continue to analyse the results of the study, he said, and in conjunction with partners and regulatory advisors "establish the optimum way forward in commercialising this product".</p><p>Last month, Alizyme granted exclusive rights to Colal-Pred in Europe, South Africa, Australia and New Zealand to Norgine. Alizyme is developing Colal-Pred in North America in partnership with Prometheus Laboratories. A Phase II US trial of Colal-Pred began earlier this year. Late last year, Alizyme signed an agreement with TSD Japan, a development and contract research firm, for a partnership for early-stage development of Colal-Pred in Japan.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 4
+
+1002
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 4
+
+News
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Alizyme's Colal-Pred stumbles in Phase III
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 31
+
+NORGINE,ALIZYME,NORGINE,ALIZYME
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{791FE4A6-5AE9-47F3-90CB-A5982594993C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 40
+
+<ecs_selection>News</ecs_selection>,News
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 4
+
+1002
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160111T213103Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+54e213d0-da5f-48f2-bb67-c3a5e2902160
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160112T175312Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
