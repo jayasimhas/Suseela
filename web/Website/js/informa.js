@@ -28,12 +28,11 @@ $(window).on('scroll', function windowScrolled() {
 
 /* Generic banner dismiss */
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
-	"use strict";
 
-	let thisBanner = $(e.srcElement).parents('.banner');
+	var thisBanner = $(e.srcElement).parents('.banner');
 	thisBanner.addClass('is-hidden');
 
-	let dismissedBanners = Cookies.get('dismissedBanners') || {};
+	var dismissedBanners = Cookies.get('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
@@ -44,9 +43,8 @@ $('.js-toggle-pop-out').on('click', function togglePopOut(e) {
 });
 
 $(document).ready(function() {
-	"use strict";
 
-	let dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
+	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 	$('.banner').each(function() {
 		if($(this).data('banner-id') in dismissedBanners === false) {
 			$(this).css('display', 'block');
