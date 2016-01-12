@@ -88,23 +88,12 @@
 						<a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
 					</li>
 				}
-				@* INDIVIDUAL LINK: START *@
-				<li>
-					<a href="#">1 Footer Link Placeholder</a>
-				</li>
-				@* INDIVIDUAL LINK: END *@
-				<li>
-					<a href="#">2 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">3 Footer Link Placeholder, And This One Goes To A Page With A Very Long Name</a>
-				</li>
-				<li>
-					<a href="#">4 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">5 Footer Link Placeholder</a>
-				</li>
+				@foreach (var pageLink in Model.LocalLinks)
+				{
+					<li>
+						<a href="@pageLink.Url">@pageLink.Text</a>
+					</li>
+				}
 			</ul>
 		</div>
 

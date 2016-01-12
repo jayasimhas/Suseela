@@ -13,9 +13,16 @@ templatekey: Template field
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
 name: Type
 key: type
-content-length: 20
+content-length: 8
 
-Treelist with Search
+Treelist
+----field----
+field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
+name: Source
+key: source
+content-length: 38
+
+{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -26,7 +33,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: c9dac5f2-dc2e-439b-a82c-c616687a3e10
+revision: c0f05479-8636-463c-b42b-81221b38c4ff
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c9dac5f2-dc2e-439b-a82c-c616687a3e10
+c0f05479-8636-463c-b42b-81221b38c4ff
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151230T192309Z
+20160112T151646Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -3372,7 +3372,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 								/// <summary>
 					/// The Local Footer Links field.
 					/// <para></para>
-					/// <para>Field Type: Treelist with Search</para>		
+					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: aca9d1ad-7c13-40bb-acb6-c584eb6623bd</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -3690,7 +3690,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 										/// <summary>
 						/// The Local Footer Links field.
 						/// <para></para>
-						/// <para>Field Type: Treelist with Search</para>		
+						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: aca9d1ad-7c13-40bb-acb6-c584eb6623bd</para>
 						/// <para>Custom Data: </para>
 						/// </summary>

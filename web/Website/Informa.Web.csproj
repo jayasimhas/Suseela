@@ -545,6 +545,10 @@
     <Compile Include="Areas\Account\Models\AccountViewModels.cs" />
     <Compile Include="Areas\Account\Models\IdentityModels.cs" />
     <Compile Include="Areas\Account\Models\ManageViewModels.cs" />
+    <Compile Include="Models\IPageLink.cs" />
+    <Compile Include="Models\IPageLinksFactory.cs" />
+    <Compile Include="Models\PageLink.cs" />
+    <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
@@ -928,7 +932,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
-    <Folder Include="Models\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />

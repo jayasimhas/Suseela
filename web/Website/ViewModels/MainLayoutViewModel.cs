@@ -3,13 +3,17 @@ using Informa.Library.Authentication;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.Subscription;
+using Informa.Web.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Informa.Web.ViewModels
 {
 	public class MainLayoutViewModel : GlassViewModel<IGlassBase>
 	{
+		protected readonly IPageLinksFactory PageLinksFactory;
 		protected readonly IUserAuthenticationContext UserAuthenticationContext;
 		protected readonly IUserSubscriptionContext UserSubscriptionContext;
 		protected readonly ISiteRootContext SiteRootContext;
@@ -17,12 +21,14 @@ namespace Informa.Web.ViewModels
 		protected readonly ITextTranslator TextTranslator;
 
 		public MainLayoutViewModel(
+			IPageLinksFactory pageLinksFactory,
 			IUserAuthenticationContext userAuthenticationContext,
 			IUserSubscriptionContext userSubscriptionContext,
 			ISiteRootContext siteRootContext,
 			ISiteMaintenanceContext siteMaintenanceContext,
 			ITextTranslator textTranslator)
 		{
+			PageLinksFactory = pageLinksFactory;
 			UserAuthenticationContext = userAuthenticationContext;
 			UserSubscriptionContext = userSubscriptionContext;
 			SiteRootContext = siteRootContext;
@@ -76,6 +82,18 @@ namespace Informa.Web.ViewModels
 		}
 
 		// Local footer links
+		public IEnumerable<IPageLink> LocalLinks
+		{
+			get
+			{
+				if (SiteRootContext.Item == null)
+				{
+					return Enumerable.Empty<IPageLink>();
+				}
+
+				return PageLinksFactory.Create(SiteRootContext.Item.Local_Footer_Links);
+			}
+		}
 
 		public string FollowText => TextTranslator.Translate("FooterFollow");
 
