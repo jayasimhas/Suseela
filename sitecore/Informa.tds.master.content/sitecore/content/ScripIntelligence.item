@@ -26,7 +26,7 @@ content-length: 16
 ----version----
 language: en
 version: 1
-revision: e22e4739-2e20-42cc-9e58-acee3c3bda7c
+revision: a1bc95b9-0293-46ae-ba59-1b57a92a4305
 
 ----field----
 field: {B1E96FE0-25A3-49A5-8941-927C708A93CF}
@@ -78,6 +78,27 @@ content-length: 92
 
 <link text="Twitter" linktype="external" url="http://www.twitter.com" anchor="" target="" />
 ----field----
+field: {7704CDD8-3258-4A10-8D22-55998BF88976}
+name: Subscribe Link
+key: subscribe link
+content-length: 132
+
+<link text="Subscribe" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
+----field----
+field: {905EB945-783A-4385-B95E-E1A6FF63BCBA}
+name: Register Link
+key: register link
+content-length: 131
+
+<link text="Register" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
+----field----
+field: {4352F61D-BAB4-4CE4-888E-562FFC1C643C}
+name: Purchase Link
+key: purchase link
+content-length: 131
+
+<link text="Purchase" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -90,14 +111,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e22e4739-2e20-42cc-9e58-acee3c3bda7c
+a1bc95b9-0293-46ae-ba59-1b57a92a4305
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160112T102218Z
+20160112T143438Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

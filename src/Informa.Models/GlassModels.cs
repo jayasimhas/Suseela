@@ -3415,6 +3415,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Menu_Two_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Menu_Two_Links  {get; set;}
 								/// <summary>
+					/// The Purchase Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 4352f61d-bab4-4ce4-888e-562ffc1c643c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Purchase_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Purchase_Link  {get; set;}
+								/// <summary>
+					/// The Register Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 905eb945-783a-4385-b95e-e1a6ff63bcba</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Register_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Register_Link  {get; set;}
+								/// <summary>
+					/// The Subscribe Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 7704cdd8-3258-4a10-8d22-55998bf88976</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Subscribe_Link  {get; set;}
+								/// <summary>
 					/// The Twitter Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
@@ -3706,6 +3733,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Menu_Two_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Menu_Two_Links  {get; set;}
 										/// <summary>
+						/// The Purchase Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 4352f61d-bab4-4ce4-888e-562ffc1c643c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Purchase_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Purchase_Link  {get; set;}
+										/// <summary>
+						/// The Register Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 905eb945-783a-4385-b95e-e1a6ff63bcba</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Register_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Register_Link  {get; set;}
+										/// <summary>
+						/// The Subscribe Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 7704cdd8-3258-4a10-8d22-55998bf88976</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Subscribe_Link  {get; set;}
+										/// <summary>
 						/// The Twitter Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
@@ -3954,6 +4008,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Menu_Two_LinksFieldId = new ID("575e0858-b583-4a04-b358-2afc3ea6ee9a");
 			public const string Menu_Two_LinksFieldName = "Menu Two Links";
+
+						
+					
+			public static readonly ID Purchase_LinkFieldId = new ID("4352f61d-bab4-4ce4-888e-562ffc1c643c");
+			public const string Purchase_LinkFieldName = "Purchase Link";
+
+						
+					
+			public static readonly ID Register_LinkFieldId = new ID("905eb945-783a-4385-b95e-e1a6ff63bcba");
+			public const string Register_LinkFieldName = "Register Link";
+
+						
+					
+			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
+			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
 						
 					
@@ -5560,6 +5629,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Menu_Two_LinksFieldId = new ID("575e0858-b583-4a04-b358-2afc3ea6ee9a");
 			public const string Menu_Two_LinksFieldName = "Menu Two Links";
+
+						
+					
+			public static readonly ID Purchase_LinkFieldId = new ID("4352f61d-bab4-4ce4-888e-562ffc1c643c");
+			public const string Purchase_LinkFieldName = "Purchase Link";
+
+						
+					
+			public static readonly ID Register_LinkFieldId = new ID("905eb945-783a-4385-b95e-e1a6ff63bcba");
+			public const string Register_LinkFieldName = "Register Link";
+
+						
+					
+			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
+			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
 						
 					

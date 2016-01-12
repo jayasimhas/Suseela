@@ -219,6 +219,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\IUserAuthenticationContext.cs" />
+    <Compile Include="Authentication\MockUserAuthenticationContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
     <Compile Include="CustomSitecore\Mvc\AreaControllerFactory.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomSitecoreHelper.cs" />
@@ -242,6 +244,8 @@
     <Compile Include="Site\ISiteRootContext.cs" />
     <Compile Include="Site\SiteMaintenanceContext.cs" />
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
+    <Compile Include="Subscription\IUserSubscriptionContext.cs" />
+    <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />

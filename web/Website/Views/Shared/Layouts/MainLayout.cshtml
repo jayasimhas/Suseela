@@ -82,6 +82,12 @@
 		*@
 		<div class="footer__section footer__section--double">
 			<ul>
+				@if (Model.SubscribeLink != null)
+				{
+					<li>
+						<a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
+					</li>
+				}
 				@* INDIVIDUAL LINK: START *@
 				<li>
 					<a href="#">1 Footer Link Placeholder</a>
@@ -102,28 +108,33 @@
 			</ul>
 		</div>
 
-		@*
-			FOOTER — Social media links
-			Replace: link `href`s with dynamic social media links
-		*@
 		<ul class="footer__section footer__section--social">
 			<li class="footer__section-header">@Model.FollowText</li>
 			<li>
-				<a href="@Model.LinkedInLink.Url" title="@Model.LinkedInLink.Text">
-					<svg class="footer__share-icons">
-						<use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
-					</svg>
-				</a>
-				<a href="@Model.TwitterLink.Url" title="@Model.TwitterLink.Text">
-					<svg class="footer__share-icons">
-						<use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
-					</svg>
-				</a>
-				<a href="@Model.FacebookLink.Url" title="@Model.FacebookLink.Text">
-					<svg class="footer__share-icons">
-						<use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
-					</svg>
-				</a>
+				@if (Model.LinkedInLink != null)
+				{
+					<a href="@Model.LinkedInLink.Url" title="@Model.LinkedInLink.Text">
+						<svg class="footer__share-icons">
+							<use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
+						</svg>
+					</a>
+				}
+				@if (Model.TwitterLink != null)
+				{
+					<a href="@Model.TwitterLink.Url" title="@Model.TwitterLink.Text">
+						<svg class="footer__share-icons">
+							<use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
+						</svg>
+					</a>
+				}
+				@if (Model.FacebookLink != null)
+				{
+					<a href="@Model.FacebookLink.Url" title="@Model.FacebookLink.Text">
+						<svg class="footer__share-icons">
+							<use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
+						</svg>
+					</a>
+				}
 			</li>
 		</ul>
 
