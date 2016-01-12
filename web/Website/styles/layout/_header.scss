@@ -2,171 +2,200 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-.header__informa-permabanner {
-	background-color: #505050;
-	color: #fff;
-	text-align: center;
-	line-height: 36px;
-}
+$main-menu-desktop-width: 0px;
+$main-menu-tablet-width: 70px;
+$main-menu-smartphone-width: 62px;
 
-.header__wrapper {
-	height: 120px;
-	padding: 30px;
+.header {
 
-	border: 1px solid #ccc;
-	border-right: 0;
-	border-left: 0;
-
-	@include textMix('Roboto', 13px, 400);
-
-	@include breakpoint('medium') {
-		// Some elements are flush against container
-		// Handle padding/margins on a per-element basis
-		padding: 0;
-		height: 104px;
-	}
-}
-
-.header__logo {
-	display: block;
-	float: left;
-	height: 60px;
-	margin-right: 32px;
-
-	@include breakpoint('medium') {
-		height: 54px;
-		margin-left: 92px;
-		margin-top: 24px;
+	// This is just a placeholder. Will pull in actual banner from another
+	// existing project.
+	&__informa-permabanner {
+		background-color: #505050;
+		color: #fff;
+		line-height: 36px;
+		text-align: center;
 	}
 
-	@include breakpoint('small') {
-		height: 40px;
-		margin-left: 74px;
-		margin-top: 12px;
-	}
-}
+	// -------------------------------------------------------------------------
+	// Wraps main header content, below Informa banner and ad banner
+	// -------------------------------------------------------------------------
+	&__wrapper {
+		@include textMix('Roboto', 13px, 400);
+		border: 1px solid #ccc;
+		border-left: 0;
+		border-right: 0;
+		height: 120px;
+		padding: 2rem;
 
-.header__icons {
-	width: 14px;
-	height: 17px;
-	fill: #808285;
-	vertical-align: middle;
-    margin-right: 6px;
-
-    &--x {
-    	fill: #231f20;
-    	float: right;
-    	margin: 0;
-    }
-
-    &--search {
-		height: 20px;
-		width: 20px;
-		margin-left: 8px;
-	}
-
-	@include breakpoint('medium') {
-		height: 20px;
-		width: 20px;
-	}
-
-	@include breakpoint('small') {
-		height: 16px;
-		width: 16px;
-		margin-right: 2px;
-	}
-}
-
-.header__user {
-	float: right;
-	margin-left: 24px;
-	padding: 24px 0 0;
-
-	@include breakpoint('medium') {
-		font-size: 15px;
-		padding: 40px 20px 0;
-	}
-	@include breakpoint('small') {
-		border-top: 1px solid #ccc;
-		font-size: 13px;
-		margin: 12px 12px 0 74px;
-		padding: 10px 0 0;
-		width: calc(100% - 88px);
-	}
-}
-
-.header__friendly-welcome,
-.header__my-account,
-.header__sign-in-out, {
-	float: left;
-	margin: 0 40px 0 0;
-}
-.header__sign-in-out {
-	margin-right: 0;
-
-	// Separator between sign-in-out and my-account
-	&:before {
-		content: "";
-		display: block;
-		float: left;
-		margin-left: -20px;
-		height: 17px;
-		width: 1px;
-		background-color: #d1d3d4;
-	}
-}
-
-// Don't show the friendly welcome at smartphone widths
-@include breakpoint('small') {
-	.header__friendly-welcome {
-		display: none;
-	}
-}
-
-.header__search-wrapper {
-	margin: 12px 0 0;
-
-	@include breakpoint('medium') {
-		margin: 39px 0 0;
-		text-align: right;
-		position: relative;
-	}
-
-	@include breakpoint('small') {
-		margin-top: 24px;
-		margin-right: 12px;
-	}
-}
-
-.header__search-field {
-	width: 310px;
-
-	@include breakpoint('medium') {
-		display: none;
-
-		&.is-active {
-			display: block;
-			position: absolute;
-			left: 70px;
-			top: -24px;
-			border: 0;
-			font-size: 18px;
-			line-height: 48px;
+		@include breakpoint('medium') {
+			height: 104px;
+			padding: 0;
 		}
 	}
 
-	@include breakpoint('medium') {
-		display: none;
+	// -------------------------------------------------------------------------
+	// Header logo image
+	// -------------------------------------------------------------------------
+	&__logo {
+		display: block;
+		float: left;
+		height: 100%;
+		margin-right: 2rem;
 
-		&.is-active {
+		@include breakpoint('medium') {
+			height: calc(100% - 3rem);
+			margin-left: calc(#{$main-menu-tablet-width} + 1.5rem);
+			margin-top: 1.5rem;
+		}
+
+		@include breakpoint('small') {
+			height: calc(100% - 4rem);
+			margin-left: 4.5rem;
+			margin-top: 0.75rem;
+		}
+	}
+
+	// -------------------------------------------------------------------------
+	// General styling for header icons
+	// -------------------------------------------------------------------------
+	&__icons {
+		fill: #808285;
+		height: 1rem;
+		vertical-align: middle;
+		width: 14px;
+	    margin-right: 6px;
+
+	    &--search,
+		&--dismiss-search {
+			height: 20px;
+			width: 20px;
+			margin-left: 0.5rem;
+		}
+		&--dismiss-search { // Hide on larger screens, no need to dismiss
+			display: none;
+		}
+
+		@include breakpoint('medium') {
+			height: 20px;
+			width: 20px;
+
+			&--search,
+			&--dismiss-search {
+				margin: 2rem 0 2rem 0.5rem;
+			}
+		}
+
+		@include breakpoint('small') {
+			height: 1rem;
+			width: 1rem;
+			margin-right: 2px;
+
+			&--search,
+			&--dismiss-search {
+				margin: 1.5rem 0 1rem 0.5rem;
+			}
+		}
+	}
+
+	&__user-actions {
+		float: right;
+		font-size: 1rem;
+		height: 100%;
+		margin-left: 1.5rem;
+		padding: 1rem 0;
+
+		@include breakpoint('medium') {
+			font-size: 15px;
+			padding: 2.5rem 1rem;
+		}
+		@include breakpoint('small') {
+			border-top: 1px solid #ccc;
+			font-size: 13px;
+			margin: 12px 12px 0 74px;
+			padding: 10px 0 0;
+			width: calc(100% - 88px);
+		}
+	}
+
+	&__friendly-welcome,
+	&__my-account,
+	&__sign-in-out, {
+		float: left;
+		margin: 0 40px 0 0;
+	}
+
+	// Don't show the friendly welcome at smartphone widths
+	@include breakpoint('small') {
+		&__friendly-welcome {
+			display: none;
+		}
+	}
+
+	&__sign-in-out {
+		margin-right: 0;
+
+		// Separator between sign-in-out and my-account
+		&:before {
+			content: "";
 			display: block;
-			position: absolute;
-			left: 70px;
-			top: -24px;
-			border: 0;
-			font-size: 18px;
-			line-height: 48px;
-			width: calc(100% - 120px);
+			float: left;
+			margin-left: -20px;
+			height: 17px;
+			width: 1px;
+			background-color: #d1d3d4;
+		}
+	}
+
+	// HEADER SEARCH
+	&-search {
+
+		&__wrapper {
+			height: 100%;
+			vertical-align: middle;
+			padding: 0.5625rem 0;
+
+			@include breakpoint('medium') {
+				text-align: right;
+				position: relative;
+				margin-right: 250px;
+
+				&.is-active {
+					.header-search__field,
+					.header__icons--dismiss-search {
+						display: inline-block;
+					}
+					.header__icons--search {
+						display: none;
+					}
+				}
+			}
+
+			@include breakpoint('small') {
+				margin-top: 0;
+				margin-right: 12px;
+				padding: 0;
+			}
+		}
+
+
+		&__field {
+			width: 310px;
+
+			@include breakpoint('medium') {
+				border: 0;
+				display: none;
+				font-size: 18px;
+				left: 70px;
+				line-height: 48px;
+				margin: 0.5625rem 0;
+				position: absolute;
+				width: 60%;
+			}
+
+			@include breakpoint('small') {
+				margin: 0;
+			}
 		}
 	}
 }
