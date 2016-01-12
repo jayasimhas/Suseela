@@ -884,7 +884,6 @@
     <Content Include="styles\index.scss" />
     <Content Include="Views\_Shared\DummyData\AuthoredContent.cshtml" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
-    <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\SearchFacets.cshtml" />
     <Content Include="Views\Shared\SearchKeywords.cshtml" />

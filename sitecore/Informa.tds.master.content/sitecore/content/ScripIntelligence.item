@@ -9,11 +9,74 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {DD003F89-D57D-48CB-B428-FFB519AACA56}
 templatekey: Site Root
 
+----field----
+field: {40908B72-40A2-412F-A64E-4E36CBCE1BBA}
+name: System Maintenance Start Date
+key: system maintenance start date
+content-length: 16
+
+20160108T144400Z
+----field----
+field: {D5994D34-8D3B-450F-8106-9924A82693AB}
+name: System Maintenance End Date
+key: system maintenance end date
+content-length: 16
+
+20160504T140000Z
 ----version----
 language: en
 version: 1
-revision: 2faa0b90-8f8c-4a4e-8cda-97b89cf86120
+revision: e22e4739-2e20-42cc-9e58-acee3c3bda7c
 
+----field----
+field: {B1E96FE0-25A3-49A5-8941-927C708A93CF}
+name: System Maintenance Text
+key: system maintenance text
+content-length: 106
+
+Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
+----field----
+field: {EBE9A930-123D-4FD8-9A28-4662C389893B}
+name: Footer Logo
+key: footer logo
+content-length: 58
+
+<image mediaid="{DA1E2D4D-6174-452E-8182-2659B52F2FE8}" />
+----field----
+field: {9C4CAA71-E34E-4489-91C3-ED76AB9700BD}
+name: Menu One Header
+key: menu one header
+content-length: 15
+
+Menu One Header
+----field----
+field: {3D4E2020-4A15-4B8E-A581-440107E91144}
+name: Menu Two Header
+key: menu two header
+content-length: 15
+
+Menu Two Header
+----field----
+field: {31F9F75C-54A7-43A5-A248-66E1F19A5469}
+name: LinkedIn Link
+key: linkedin link
+content-length: 94
+
+<link text="LinkedIn" linktype="external" url="http://www.linkedin.com" anchor="" target="" />
+----field----
+field: {CF68ED35-F96D-4924-850C-E96F0A7F1E34}
+name: Facebook Link
+key: facebook link
+content-length: 94
+
+<link text="Facebook" linktype="external" url="http://www.facebook.com" anchor="" target="" />
+----field----
+field: {7D78565C-EC7D-4D58-9E24-76FFC1505335}
+name: Twitter Link
+key: twitter link
+content-length: 92
+
+<link text="Twitter" linktype="external" url="http://www.twitter.com" anchor="" target="" />
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -27,14 +90,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2faa0b90-8f8c-4a4e-8cda-97b89cf86120
+e22e4739-2e20-42cc-9e58-acee3c3bda7c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160107T122503Z
+20160112T102218Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

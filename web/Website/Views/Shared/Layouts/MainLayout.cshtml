@@ -69,8 +69,140 @@
 
 </main>
 
-    @Html.Partial("_Footer")
-    @Html.Sitecore().Placeholder("footer")
+<footer>
+	<div class="footer__wrapper">
+		@Html.Sitecore().Placeholder("footer")
+		<ul class="footer__section footer__section--corporate">
+			<li>
+				<img class="footer__logo" src="@Model.FooterLogoUrl">@Model.CopyrightText
+			</li>
+		</ul>
+		@*
+			FOOTER — Double (two columns wide)
+		*@
+		<div class="footer__section footer__section--double">
+			<ul>
+				@* INDIVIDUAL LINK: START *@
+				<li>
+					<a href="#">1 Footer Link Placeholder</a>
+				</li>
+				@* INDIVIDUAL LINK: END *@
+				<li>
+					<a href="#">2 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">3 Footer Link Placeholder, And This One Goes To A Page With A Very Long Name</a>
+				</li>
+				<li>
+					<a href="#">4 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">5 Footer Link Placeholder</a>
+				</li>
+			</ul>
+		</div>
+
+		@*
+			FOOTER — Social media links
+			Replace: link `href`s with dynamic social media links
+		*@
+		<ul class="footer__section footer__section--social">
+			<li class="footer__section-header">FOLLOW SCRIP</li>
+			<li>
+				<a href="@Model.LinkedInLink.Url" title="@Model.LinkedInLink.Title">
+					<svg class="footer__share-icons">
+						<use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
+					</svg>
+				</a>
+				<a href="@Model.TwitterLink.Url" title="@Model.TwitterLink.Title">
+					<svg class="footer__share-icons">
+						<use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
+					</svg>
+				</a>
+				<a href="@Model.FacebookLink.Url" title="@Model.FacebookLink.Title">
+					<svg class="footer__share-icons">
+						<use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
+					</svg>
+				</a>
+			</li>
+		</ul>
+
+		<hr class="footer__separator">
+
+		@*
+			FOOTER — Single (one column wide)
+		*@
+		<div class="footer__section footer__section--single">
+			<span class="footer__section-header">
+				@Model.MenuOneHeader
+			</span>
+			<ul>
+				@* INDIVIDUAL LINK: START *@
+				<li>
+					<a href="#">1 Footer Link Placeholder</a>
+				</li>
+				@* INDIVIDUAL LINK: END *@
+				<li>
+					<a href="#">Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">Footer Link Placeholder</a>
+				</li>
+			</ul>
+		</div>
+
+		@*
+			FOOTER — Triple (three columns wide)
+			Shrinks to two-wide at tablet width
+		*@
+		<div class="footer__section footer__section--triple">
+			<span class="footer__section-header">
+				@Model.MenuTwoHeader
+			</span>
+			<ul>
+				@* INDIVIDUAL LINK: START *@
+				<li>
+					<a href="#">1 Footer Link Placeholder</a>
+				</li>
+				@* INDIVIDUAL LINK: END *@
+				<li>
+					<a href="#">2 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">3 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">4 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">5 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">6 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">7 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">8 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">9 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">10 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">11 Footer Link Placeholder</a>
+				</li>
+				<li>
+					<a href="#">12 Footer Link Placeholder</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</footer>
 
 <script src="/dist/js/concat.js"></script>
 <script type="text/javascript">
