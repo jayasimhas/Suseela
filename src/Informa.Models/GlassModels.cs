@@ -3345,12 +3345,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 								/// <summary>
 					/// The Facebook Link field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: cf68ed35-f96d-4924-850c-e96f0a7f1e34</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Facebook_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Facebook_Link  {get; set;}
+					Link Facebook_Link  {get; set;}
 								/// <summary>
 					/// The Footer Logo field.
 					/// <para></para>
@@ -3363,12 +3363,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 								/// <summary>
 					/// The LinkedIn Link field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: 31f9f75c-54a7-43a5-a248-66e1f19a5469</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ LinkedIn_Link  {get; set;}
+					Link LinkedIn_Link  {get; set;}
 								/// <summary>
 					/// The Local Footer Links field.
 					/// <para></para>
@@ -3417,12 +3417,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 								/// <summary>
 					/// The Twitter Link field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: 7d78565c-ec7d-4d58-9e24-76ffc1505335</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Twitter_Link  {get; set;}
+					Link Twitter_Link  {get; set;}
 								/// <summary>
 					/// The Left Column Text field.
 					/// <para></para>
@@ -3435,39 +3435,39 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 								/// <summary>
 					/// The Link 1 field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: 83f0d49f-e1f8-459e-b29e-a197293b1124</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Link_1FieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Link_1  {get; set;}
+					Link Link_1  {get; set;}
 								/// <summary>
 					/// The Link 2 field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: 2c968250-f4e9-4f05-801d-98831904e7bd</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Link_2FieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Link_2  {get; set;}
+					Link Link_2  {get; set;}
 								/// <summary>
 					/// The Link 3 field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: 1acd4259-7963-4b46-96f9-a615671eef10</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Link_3FieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Link_3  {get; set;}
+					Link Link_3  {get; set;}
 								/// <summary>
 					/// The Link 4 field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: ea88c3f8-ea23-4daa-82e5-ee081e98ea9a</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Link_4FieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Link_4  {get; set;}
+					Link Link_4  {get; set;}
 								/// <summary>
 					/// The Right Column Text field.
 					/// <para></para>
@@ -3636,12 +3636,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 										/// <summary>
 						/// The Facebook Link field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: cf68ed35-f96d-4924-850c-e96f0a7f1e34</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Facebook_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Facebook_Link  {get; set;}
+						Link Facebook_Link  {get; set;}
 										/// <summary>
 						/// The Footer Logo field.
 						/// <para></para>
@@ -3654,12 +3654,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 										/// <summary>
 						/// The LinkedIn Link field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: 31f9f75c-54a7-43a5-a248-66e1f19a5469</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ LinkedIn_Link  {get; set;}
+						Link LinkedIn_Link  {get; set;}
 										/// <summary>
 						/// The Local Footer Links field.
 						/// <para></para>
@@ -3708,12 +3708,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 										/// <summary>
 						/// The Twitter Link field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: 7d78565c-ec7d-4d58-9e24-76ffc1505335</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Twitter_Link  {get; set;}
+						Link Twitter_Link  {get; set;}
 										/// <summary>
 						/// The Left Column Text field.
 						/// <para></para>
@@ -3726,39 +3726,39 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 										/// <summary>
 						/// The Link 1 field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: 83f0d49f-e1f8-459e-b29e-a197293b1124</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Link_1FieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Link_1  {get; set;}
+						Link Link_1  {get; set;}
 										/// <summary>
 						/// The Link 2 field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: 2c968250-f4e9-4f05-801d-98831904e7bd</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Link_2FieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Link_2  {get; set;}
+						Link Link_2  {get; set;}
 										/// <summary>
 						/// The Link 3 field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: 1acd4259-7963-4b46-96f9-a615671eef10</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Link_3FieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Link_3  {get; set;}
+						Link Link_3  {get; set;}
 										/// <summary>
 						/// The Link 4 field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: ea88c3f8-ea23-4daa-82e5-ee081e98ea9a</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Link_4FieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Link_4  {get; set;}
+						Link Link_4  {get; set;}
 										/// <summary>
 						/// The Right Column Text field.
 						/// <para></para>
