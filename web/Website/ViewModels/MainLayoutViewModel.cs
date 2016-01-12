@@ -81,19 +81,7 @@ namespace Informa.Web.ViewModels
 			}
 		}
 
-		// Local footer links
-		public IEnumerable<IPageLink> LocalLinks
-		{
-			get
-			{
-				if (SiteRootContext.Item == null)
-				{
-					return Enumerable.Empty<IPageLink>();
-				}
-
-				return PageLinksFactory.Create(SiteRootContext.Item.Local_Footer_Links);
-			}
-		}
+		public IEnumerable<IPageLink> LocalLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Local_Footer_Links);
 
 		public string FollowText => TextTranslator.Translate("FooterFollow");
 
@@ -105,10 +93,10 @@ namespace Informa.Web.ViewModels
 
 		public string MenuOneHeader => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Menu_One_Header;
 
-		// Menu one links
+		public IEnumerable<IPageLink> MenuOneLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Menu_One_Links);
 
 		public string MenuTwoHeader => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Menu_Two_Header;
 
-		// Menu two links
+		public IEnumerable<IPageLink> MenuTwoLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Menu_Two_Links);
 	}
 }

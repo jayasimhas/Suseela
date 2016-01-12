@@ -3388,14 +3388,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Menu_One_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Menu_One_Header  {get; set;}
 								/// <summary>
-					/// The Menu One  Links field.
+					/// The Menu One Links field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: abf9cd82-13d2-438a-af7e-02856b69e19a</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Menu_One__LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Menu_One__Links  {get; set;}
+					[SitecoreField(ISite_ConfigConstants.Menu_One_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Menu_One_Links  {get; set;}
 								/// <summary>
 					/// The Menu Two Header field.
 					/// <para></para>
@@ -3706,14 +3706,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Menu_One_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Menu_One_Header  {get; set;}
 										/// <summary>
-						/// The Menu One  Links field.
+						/// The Menu One Links field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: abf9cd82-13d2-438a-af7e-02856b69e19a</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Menu_One__LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Menu_One__Links  {get; set;}
+						[SitecoreField(ISite_ConfigConstants.Menu_One_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Menu_One_Links  {get; set;}
 										/// <summary>
 						/// The Menu Two Header field.
 						/// <para></para>
@@ -3996,8 +3996,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Menu_One__LinksFieldId = new ID("abf9cd82-13d2-438a-af7e-02856b69e19a");
-			public const string Menu_One__LinksFieldName = "Menu One  Links";
+			public static readonly ID Menu_One_LinksFieldId = new ID("abf9cd82-13d2-438a-af7e-02856b69e19a");
+			public const string Menu_One_LinksFieldName = "Menu One Links";
 
 						
 					
@@ -5617,8 +5617,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Menu_One__LinksFieldId = new ID("abf9cd82-13d2-438a-af7e-02856b69e19a");
-			public const string Menu_One__LinksFieldName = "Menu One  Links";
+			public static readonly ID Menu_One_LinksFieldId = new ID("abf9cd82-13d2-438a-af7e-02856b69e19a");
+			public const string Menu_One_LinksFieldName = "Menu One Links";
 
 						
 					

@@ -26,7 +26,7 @@ content-length: 16
 ----version----
 language: en
 version: 1
-revision: a1bc95b9-0293-46ae-ba59-1b57a92a4305
+revision: 9a9b690b-2ec1-4cf4-8405-ddadebe6cc43
 
 ----field----
 field: {B1E96FE0-25A3-49A5-8941-927C708A93CF}
@@ -43,6 +43,13 @@ content-length: 58
 
 <image mediaid="{DA1E2D4D-6174-452E-8182-2659B52F2FE8}" />
 ----field----
+field: {ACA9D1AD-7C13-40BB-ACB6-C584EB6623BD}
+name: Local Footer Links
+key: local footer links
+content-length: 155
+
+{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}|{FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}
+----field----
 field: {9C4CAA71-E34E-4489-91C3-ED76AB9700BD}
 name: Menu One Header
 key: menu one header
@@ -50,12 +57,26 @@ content-length: 15
 
 Menu One Header
 ----field----
+field: {ABF9CD82-13D2-438A-AF7E-02856B69E19A}
+name: Menu One  Links
+key: menu one  links
+content-length: 155
+
+{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}|{FE0B4566-CDDD-49A5-BF3D-40E154E83377}
+----field----
 field: {3D4E2020-4A15-4B8E-A581-440107E91144}
 name: Menu Two Header
 key: menu two header
 content-length: 15
 
 Menu Two Header
+----field----
+field: {575E0858-B583-4A04-B358-2AFC3EA6EE9A}
+name: Menu Two Links
+key: menu two links
+content-length: 155
+
+{FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}|{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
 ----field----
 field: {31F9F75C-54A7-43A5-A248-66E1F19A5469}
 name: LinkedIn Link
@@ -111,14 +132,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a1bc95b9-0293-46ae-ba59-1b57a92a4305
+9a9b690b-2ec1-4cf4-8405-ddadebe6cc43
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160112T143438Z
+20160112T154604Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

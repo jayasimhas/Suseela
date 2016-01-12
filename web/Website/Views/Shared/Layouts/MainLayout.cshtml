@@ -77,9 +77,7 @@
 				<img class="footer__logo" src="@Model.FooterLogoUrl">@Model.CopyrightText
 			</li>
 		</ul>
-		@*
-			FOOTER — Double (two columns wide)
-		*@
+
 		<div class="footer__section footer__section--double">
 			<ul>
 				@if (Model.SubscribeLink != null)
@@ -88,12 +86,7 @@
 						<a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
 					</li>
 				}
-				@foreach (var pageLink in Model.LocalLinks)
-				{
-					<li>
-						<a href="@pageLink.Url">@pageLink.Text</a>
-					</li>
-				}
+				@RenderLinks(Model.LocalLinks)
 			</ul>
 		</div>
 
@@ -102,7 +95,7 @@
 			<li>
 				@if (Model.LinkedInLink != null)
 				{
-					<a href="@Model.LinkedInLink.Url" title="@Model.LinkedInLink.Text">
+					<a href="@Model.LinkedInLink.Url" target="_blank" title="@Model.LinkedInLink.Text">
 						<svg class="footer__share-icons">
 							<use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
 						</svg>
@@ -110,7 +103,7 @@
 				}
 				@if (Model.TwitterLink != null)
 				{
-					<a href="@Model.TwitterLink.Url" title="@Model.TwitterLink.Text">
+					<a href="@Model.TwitterLink.Url" target="_blank" title="@Model.TwitterLink.Text">
 						<svg class="footer__share-icons">
 							<use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
 						</svg>
@@ -118,7 +111,7 @@
 				}
 				@if (Model.FacebookLink != null)
 				{
-					<a href="@Model.FacebookLink.Url" title="@Model.FacebookLink.Text">
+					<a href="@Model.FacebookLink.Url" target="_blank" title="@Model.FacebookLink.Text">
 						<svg class="footer__share-icons">
 							<use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
 						</svg>
@@ -129,75 +122,21 @@
 
 		<hr class="footer__separator">
 
-		@*
-			FOOTER — Single (one column wide)
-		*@
 		<div class="footer__section footer__section--single">
 			<span class="footer__section-header">
 				@Model.MenuOneHeader
 			</span>
 			<ul>
-				@* INDIVIDUAL LINK: START *@
-				<li>
-					<a href="#">1 Footer Link Placeholder</a>
-				</li>
-				@* INDIVIDUAL LINK: END *@
-				<li>
-					<a href="#">Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">Footer Link Placeholder</a>
-				</li>
+				@RenderLinks(Model.MenuOneLinks)
 			</ul>
 		</div>
 
-		@*
-			FOOTER — Triple (three columns wide)
-			Shrinks to two-wide at tablet width
-		*@
 		<div class="footer__section footer__section--triple">
 			<span class="footer__section-header">
 				@Model.MenuTwoHeader
 			</span>
 			<ul>
-				@* INDIVIDUAL LINK: START *@
-				<li>
-					<a href="#">1 Footer Link Placeholder</a>
-				</li>
-				@* INDIVIDUAL LINK: END *@
-				<li>
-					<a href="#">2 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">3 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">4 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">5 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">6 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">7 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">8 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">9 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">10 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">11 Footer Link Placeholder</a>
-				</li>
-				<li>
-					<a href="#">12 Footer Link Placeholder</a>
-				</li>
+				@RenderLinks(Model.MenuTwoLinks)
 			</ul>
 		</div>
 
@@ -213,3 +152,13 @@ $(document).ready(function() {
 
 </body>
 </html>
+
+@helper RenderLinks(IEnumerable<Informa.Web.Models.IPageLink> pageLinks)
+{
+	foreach (var pageLink in pageLinks)
+	{
+		<li>
+			<a href="@pageLink.Url">@pageLink.Text</a>
+		</li>
+	}
+}
