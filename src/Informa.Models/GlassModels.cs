@@ -5101,33 +5101,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 
 
  	/// <summary>
-	/// IArticle_Date_Folder Interface
+	/// IDay_Folder Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Folders/Article Date Folder</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Folders/Day Folder</para>	
 	/// <para>ID: d0dfaf98-bb2a-4eb3-a931-13c335201d25</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IArticle_Date_FolderConstants.TemplateIdString)]
-	public partial interface IArticle_Date_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	[SitecoreType(TemplateId=IDay_FolderConstants.TemplateIdString)]
+	public partial interface IDay_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
 	{
 				}
 
 	
 		/// <summary>
-		/// IArticle_Date_Folder Interface
+		/// IDay_Folder Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Folders/Article Date Folder</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Folders/Day Folder</para>	
 		/// <para>ID: d0dfaf98-bb2a-4eb3-a931-13c335201d25</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle_Date_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		public partial interface IDay_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
 		{
 						}
 	
-	public static partial class IArticle_Date_FolderConstants{
+	public static partial class IDay_FolderConstants{
 
 			public const string TemplateIdString = "d0dfaf98-bb2a-4eb3-a931-13c335201d25";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Article Date Folder";
+			public const string TemplateName = "Day Folder";
 
 			
 
@@ -6416,6 +6416,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public const string InDesign_Table_StyleFieldName = "InDesign Table Style";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// I_BaseTaxonomy Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+	/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=I_BaseTaxonomyConstants.TemplateIdString)]
+	public partial interface I_BaseTaxonomy : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// I_BaseTaxonomy Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+		/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface I_BaseTaxonomy__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class I_BaseTaxonomyConstants{
+
+			public const string TemplateIdString = "eed18b44-4005-4f15-9b18-d7c2d2cac0ec";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "_BaseTaxonomy";
+
 			
 
 	}
