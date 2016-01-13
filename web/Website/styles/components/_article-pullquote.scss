@@ -1,0 +1,17 @@
+.article-pullquote {
+    @include textMix('Roboto', 22px, 500);
+    border-bottom: 1px solid $informa-dark-orange;
+    border-top: 4px solid $informa-dark-orange;
+    clear: both;
+    color: $informa-black;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 1.75rem 0.75rem;
+
+    @include breakpoint('medium') {
+        font-size: 20px;
+        margin: 2rem 0px;
+        padding: 1rem 0.75rem;
+    }
+}
