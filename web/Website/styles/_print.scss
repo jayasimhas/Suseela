@@ -1,0 +1,30 @@
+@media print {
+
+    // Hide this stuff.
+    .main-menu,
+    .main-menu__toggler,
+    .header__user,
+    .header__search-wrapper,
+    .banner,
+    footer {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+    .main__wrapper {
+        padding-left: 0;
+        flex: 1 0 auto;
+    }
+    .main__content {
+        padding-left: 2rem;
+        margin: 0;
+    }
+
+    .header__wrapper {
+        border: 0;
+        padding-left: 2rem;
+    }
+
+}

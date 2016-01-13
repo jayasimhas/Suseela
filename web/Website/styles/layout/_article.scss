@@ -9,7 +9,7 @@
 
     h2 {
         color: $informa-black;
-        margin-bottom: 28px;
+        margin-bottom: 1.5rem;
     }
 }
 .article-author {
@@ -93,7 +93,8 @@
     }
 }
 
-.article-table {
+.article-table,
+.article-body-content table {
     width: 100%;
     border: 1px solid $informa-light-gray-e;
 
@@ -119,7 +120,7 @@
         border: 0;
     }
     td {
-        font-size: 14px;
+        font-size: 15px;
 
         &:first-child {
             font-weight: 900;
@@ -134,13 +135,14 @@
 
 .article-pullquote {
     @include textMix('Roboto', 22px, 500);
+    border-bottom: 1px solid $informa-dark-orange;
+    border-top: 4px solid $informa-dark-orange;
+    clear: both;
     color: $informa-black;
     line-height: 2rem;
-    border-top: 4px solid $informa-dark-orange;
-    border-bottom: 1px solid $informa-dark-orange;
-    padding: 1.75rem 0.75rem;
-    margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 1.75rem 0.75rem;
 }
 
 .article-inline-image {

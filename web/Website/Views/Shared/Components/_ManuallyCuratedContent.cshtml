@@ -85,7 +85,7 @@
         </section>*@
     </div>
 
-    <div class="manually-curated-articles__right">
+    <div class="manually-curated-articles__right--force-top">
         @Html.Partial("Components/ListableContentSmall", TestData.ListableModel(1, 0))
         @*<section class="article-preview article-preview--small">
             <img class="article-preview__image" src="http://placehold.it/787x443">
@@ -113,7 +113,18 @@
         </section>*@
     </div>
 
-    <div class="manually-curated-articles__ad-unit">
+    <div class="manually-curated-articles__right">
+        <div class="newsletter-signup">
+            <h3>Be informed first</h3>
+            Receive the SCRIP Intelligence newsletters.
+            <div class="form--single-row">
+                <input class="inf-standard-form-field">
+                <button class="button--pumpkin">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="manually-curated-articles__right">
         <section class="article-preview article-preview--small">
             <div class="article-preview__ad">
                 Advertisement

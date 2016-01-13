@@ -13,7 +13,7 @@
 @import 'vendor/normalize';
 
 /* * * * BASE * * * */
-@import 'base/colors';
+@import 'base/colors'; // first!
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
@@ -22,19 +22,25 @@
 /* * * * COMPONENTS * * * */
 @import 'components/advertising';
 @import 'components/article-body';
+@import 'components/article-interview';
+@import 'components/article-key-documents';
 @import 'components/article-preview';
 @import 'components/article-prologue';
 @import 'components/article-related-content';
+@import 'components/article-sidebar';
 @import 'components/article-tags';
 @import 'components/article-topics';
 @import 'components/banners';
+@import 'components/bar-separated-link-list';
 @import 'components/buttons';
 @import 'components/dismiss-button';
 @import 'components/forms';
 @import 'components/latest-news';
 @import 'components/main-menu';
 @import 'components/menu-toggler';
+@import 'components/newsletter-signup';
 @import 'components/pop-out';
+@import 'components/sub-topic-links';
 
 /* * * * LAYOUT * * * */
 @import 'layout/article';
@@ -44,6 +50,10 @@
 
 /* * * * PAGE-SPECIFIC STYLES * * * */
 @import 'pages/home';
+
+/* * * * PRINT STYLES * * * */
+@import 'print';
+
 
 /* * * * SHAME 🔔 SHAME 🔔 SHAME 🔔 * * * */
 @import 'shame';

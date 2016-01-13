@@ -1,0 +1,17 @@
+.bar-separated-link-list {
+    display: inline-flex;
+    align-items: flex-start;
+
+    a {
+        @include textMix('Roboto', 0.875rem, 400);
+        border-right: 1px solid $informa-light-gray-d;
+        display: inline-block;
+        padding: 0 0.75rem;
+        flex: 0 0 auto;
+
+        &:last-child {
+            border: 0;
+            padding-right: 0;
+        }
+    }
+}

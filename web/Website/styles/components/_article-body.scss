@@ -1,12 +1,12 @@
-.article-body-content root { // This appears to be the containing element for article bodies
-
-    h2 {
+.article-body-content { // This appears to be the containing element for article bodies
+    @include textMix('PTSerif', 18px, 400);
+    
+    h1 {
         @extend h1;
         color: $informa-black;
     }
 
     p {
-        @include textMix('PTSerif', 18px, 400);
         color: $informa-dark-gray;
         line-height: 30px;
     }

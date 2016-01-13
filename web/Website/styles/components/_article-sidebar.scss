@@ -1,0 +1,36 @@
+.article-sidebar {
+    background-color: $informa-light-gray-f;
+    border-top: 4px solid $informa-red;
+    float: right;
+    line-height: 1.5rem;
+    margin: 2rem 0 2rem 2rem;
+    padding: 1.75rem 2rem;
+    width: 50%;
+
+    h3 {
+        @include textMix('Roboto Condensed', 24px, 600);
+        color: $informa-black;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    &__byline,
+    &__date {
+        @include textMix('Roboto', 1rem, 400);
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    &__read-more {
+        @include textMix('Roboto', 1rem, 400);
+        float: right;
+
+        &:after {
+            content: "\276f";
+            display: inline-block;
+            font-size: 10px;
+            line-height: 1rem;
+            vertical-align: middle;
+        }
+    }
+}
