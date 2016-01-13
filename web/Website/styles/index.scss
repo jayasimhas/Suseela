@@ -24,8 +24,10 @@
 @import 'components/article-body';
 @import 'components/article-interview';
 @import 'components/article-key-documents';
+@import 'components/article-metadata';
 @import 'components/article-preview';
 @import 'components/article-prologue';
+@import 'components/article-pullquote';
 @import 'components/article-related-content';
 @import 'components/article-sidebar';
 @import 'components/article-tags';
@@ -45,6 +47,7 @@
 /* * * * LAYOUT * * * */
 @import 'layout/article';
 @import 'layout/footer';
+@import 'layout/general';
 @import 'layout/header';
 @import 'layout/main';
 

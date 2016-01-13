@@ -152,8 +152,9 @@
         margin-bottom: 1rem;
     }
 
-    em {
+    &__source {
         float: right;
+        font-style: italic;
     }
 
     &__caption {
@@ -167,7 +168,7 @@
         margin-right: 2rem;
         width: 50%;
 
-        em {
+        .article-inline-image__source {
             float: none;
             display: block;
             margin-bottom: 0.75rem;
@@ -179,5 +180,13 @@
         margin-left: 0;
         margin-left: 2rem;
         text-align: right;
+    }
+
+    @include breakpoint('medium') {
+        &__source {
+            display: block;
+            float: none;
+            margin-bottom: 0.5rem;
+        }
     }
 }
