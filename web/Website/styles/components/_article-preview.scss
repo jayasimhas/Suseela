@@ -1,7 +1,7 @@
 .article-preview {
-    width: 787px;
-    position: relative;
     padding-bottom: 48px;
+    position: relative;
+    width: 787px;
 
     &__image {
         width: 100%;
@@ -53,9 +53,9 @@
     &__headline {
         @include textMix('Roboto Condensed', 30px, 700);
         color: $informa-black;
-        line-height: 32px;
-        margin-top: 18px;
-        margin-bottom: 8px;
+        line-height: 2.175rem;
+        margin-top: 1.125rem;
+        margin-bottom: 0.5rem;
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
@@ -77,10 +77,14 @@
         }
     }
 
-    .article-tags {
+    &__tags {
         position: absolute;
         bottom: 24px;
         left: 0;
+
+        a:first-child {
+            padding-left: 0;
+        }
     }
 
     p {
@@ -114,6 +118,12 @@
         border: 2px solid #ccc;
         padding: 12px;
     }
+
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
 }
 
 .manually-curated-articles {
@@ -140,7 +150,7 @@
         }
     }
     &__right,
-    &__ad-unit {
+    &__right--force-top {
         float: right;
         width: 373px;
     }
@@ -150,14 +160,17 @@
             width: 100%;
 
             .article-preview {
-                width: 460px;
+                width: 450px;
 
                 &--small {
-                    width: 50%;
+                    width: 48%;
                 }
             }
         }
         &__right {
+            float: left;
+        }
+        &__right--force-top {
             // Bump this up to the top of the parent, flank main article preview
             position: absolute;
             top: 0;
@@ -167,6 +180,13 @@
             .article-preview--small {
                 width: 100%;
             }
+        }
+    }
+
+    @include breakpoint('small') {
+        &__left .article-preview,
+        &__left .article-preview--small {
+            width: 100%;
         }
     }
 }

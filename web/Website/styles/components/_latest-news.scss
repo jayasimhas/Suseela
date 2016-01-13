@@ -5,11 +5,29 @@
         color: $informa-black;
         border-left: 12px solid $informa-red;
         padding-left: 18px;
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
 
         a {
-            @include textMix('Roboto', 16px, 500);
-            margin-left: 24px;
+            @include textMix('Roboto', 1rem, 500);
+            margin-left: 1.5rem;
+        }
+
+        @include breakpoint('medium') {
+            margin-bottom: 3rem;
+
+            a {
+                margin-left: 0;
+                display: block;
+                position: absolute;
+            }
+        }
+
+        @include breakpoint('small') {
+            font-size: 2rem;
+
+            a {
+                margin-top: 0.5rem;
+            }
         }
     }
 
@@ -41,14 +59,59 @@
         &--wide {
             background-color: $informa-light-gray-f;
             border-top: 2px solid $informa-light-gray-d;
-            margin-bottom: 24px;
-            padding: 24px;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
             width: 100%;
 
-            .article-tags {
+            .article-preview__tags {
                 bottom: 0;
                 display: inline-block;
                 position: relative;
+            }
+
+            .article-preview__metadata {
+                float: right;
+                width: calc(100% - 384px);
+                margin-bottom: 1rem;
+            }
+
+            .article-preview__content-wrapper {
+                margin-left: 384px;
+                position: relative;
+            }
+
+            @include breakpoint('medium') {
+                .article-preview__metadata {
+                    position: absolute;
+                    width: calc(100% - 3rem);
+                }
+
+                .article-preview__image {
+                    width: 270px;
+                }
+
+                .article-preview__image,
+                .article-preview__headline, {
+                    margin-top: 3rem;
+                }
+
+                .article-preview__headline,
+                p,
+                .article-preview__tags {
+                    margin-left: calc(270px + 1.5rem);
+                }
+            }
+            @include breakpoint('small') {
+                padding: 1rem;
+
+                .article-preview__image {
+                    width: 100%;
+                }
+                .article-preview__headline,
+                p,
+                .article-preview__tags {
+                    margin-left: 0;
+                }
             }
         }
 
@@ -66,11 +129,15 @@
                 margin-right: 0;
             }
 
-            .article-tags {
+            .article-preview__tags {
                 left: 24px;
             }
 
-            @include breakpoint('medium') {
+            // These are a bit magic-number'ey, but given the contents of
+            // this component, need to collapse from 3 -> 2 and 2 -> 1 before
+            // the standard breakpoints.
+
+            @media ('max-width: 1000px') {
                 width: calc(50% - 12px);
                 margin-right: 24px;
                 margin-bottom: 24px;
@@ -83,7 +150,7 @@
                 }
             }
 
-            @include breakpoint('small') {
+            @media ('max-width: 600px') {
                 width: 100%;
                 margin-right: 0;
 
@@ -98,6 +165,10 @@
             float: left;
             margin-right: 24px;
             width: 360px;
+
+            @include breakpoint('medium') {
+                width: 240px;
+            }
         }
 
         // .latest-news previews need a wrapper for all content besides the image

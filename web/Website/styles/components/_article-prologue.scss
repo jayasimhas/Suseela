@@ -1,5 +1,5 @@
 .article-prologue {
-    @include textMix('Roboto Condensed', 13px, 700);
+    @include textMix('Roboto Condensed', 14px, 700);
     border-top: 2px solid $informa-light-gray-d;
     color: $informa-black;
     margin-bottom: 36px;
@@ -29,17 +29,13 @@
     }
 
     &__tags-bar {
-        background-color: $informa-light-gray-e;
+        background-color: $informa-light-gray-f;
         padding: 12px;
         display: inline-block;
         width: auto;
 
-        .article-tags li {
-            font-size: 13px;
-
-            &:first-child {
-                padding-left: 8px;
-            }
+        a {
+            text-transform: none;
         }
     }
 }

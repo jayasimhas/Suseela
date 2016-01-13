@@ -19,3 +19,20 @@
 	 	font-style: italic;
 	}
 }
+
+.form--single-row {
+	margin-top: 1rem;
+
+	.inf-standard-form-field {
+		float: left;
+	}
+	button {
+		float: right;
+	}
+
+	&:after {
+		clear: both;
+		display: block;
+		content: "";
+	}
+}

@@ -1,5 +1,6 @@
 .dismiss-button {
 	@include textMix('Roboto', 0.75rem, 700);
+	cursor: pointer;
 	float: right;
 	text-transform: uppercase;
 	letter-spacing: 1px;

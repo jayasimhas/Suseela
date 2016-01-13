@@ -1,10 +1,24 @@
-.banner { // "notify"? Try using two words, perhaps, for specificity
+.banner {
+	// By default, all banners are hidden.
+	// If banner not seen/dismissed, will be displayed when document ready.
+	display: none;
+	overflow: hidden;
 	width: 100%;
-	padding: 22px;
+
+	// To animate closing a banner nicely, need to define a `max-height`.
+	// Without an explicitly defined height, `transform` won't actually animate
+	// `max-height` lets us fake that by giving us an explicit value for the
+	// browser to start from when animating.
+	transition: max-height 250ms ease-out;
+	max-height: 300px;
 
 	&--maintenance {
 		background-color: #f1f2f2;
 		color: #58595b;
+
+		@include breakpoint('medium') {
+			display: none;
+		}
 	}
 
 	&--highlights {
@@ -27,5 +41,14 @@
 		display: block;
 		float: left;
 		margin-right: 12px;
+	}
+
+	&__wrapper {
+		padding: 22px;
+	}
+
+	&.is-hidden {
+		height: auto;
+		max-height: 0px;
 	}
 }
