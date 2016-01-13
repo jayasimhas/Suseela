@@ -1,0 +1,44 @@
+.general-header {
+    &__section-title {
+        @include textMix('Roboto', 1.25rem, 500);
+        background-color: $informa-black;
+        color: $informa-light-gray-f;
+        padding: 1rem 2rem;
+
+        @include breakpoint('medium') {
+            padding: 0.5rem;
+        }
+    }
+
+    &__navigation {
+        background-color: $informa-light-gray-f;
+        padding: 0 2rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+        a {
+            @include textMix('Roboto', 0.875rem, 600);
+            color: $informa-dark-gray;
+            display: inline-block;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-right: 3rem;
+            padding: 1rem 0 0.75rem;
+
+            &.is-active {
+                border-bottom: 4px solid $informa-dark-orange;
+            }
+        }
+
+        @include breakpoint('medium') {
+            padding: 0 1rem;
+
+            a {
+                font-size: 0.75rem;
+                margin-right: 1.5rem;
+                padding: 0.75rem 0 0.5rem;
+            }
+        }
+    }
+}
