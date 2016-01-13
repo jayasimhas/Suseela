@@ -16,7 +16,40 @@
     <div class="article-body-content">
 
         <h1>@Model.Title</h1>
-        <time class="article-preview__date">@Model.Actual_Publish_Date.ToString("dd MMM yyyy")</time>
+        <div class="article-metadata">
+            <ul>
+                <li>
+                    <time class="article-metadata__date">@Model.Actual_Publish_Date.ToString("dd MMM yyyy")</time>
+                </li>
+                <li>
+                    <h6>@TestData.GetRandomTopic().LinkableTexts</h6>
+                </li>
+                <li>
+                    @* * *  ARTICLE MEDIA TYPE
+                            IIPP-116
+
+                    * * * TEXT — Nothing. Remove this <li> entirely.
+
+                    * * * VIDEO
+                    <svg class="article-metadata__media-type">
+                        <use xlink:href="/dist/img/svg-sprite.svg#video"></use>
+                    </svg>
+
+                    * * * AUDIO
+                    <svg class="article-metadata__media-type">
+                        <use xlink:href="/dist/img/svg-sprite.svg#audio"></use>
+                    </svg>
+
+                    * * * DATA *@
+                    <svg class="article-metadata__media-type">
+                        <use xlink:href="/dist/img/svg-sprite.svg#chart"></use>
+                    </svg>
+
+                    @* * *  END ARTICLE MEDIA TYPE *@
+                </li>
+            </ul>
+        </div>
+
         @Html.Raw(Model.Body)
 
     </div>
@@ -82,7 +115,7 @@
     </blockquote>
 
     * * *   END ARTICLE PULLQUOTE
-    
+
 
     <div class="article-author">
         <ul class="article-author__list">
