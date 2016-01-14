@@ -173,6 +173,43 @@
         border-right: 1px solid $informa-light-gray-e;
     }
 
+    &--mobile-link {
+        display: none;
+    }
+
+    @include breakpoint('medium') {
+        display: none;
+
+        &--mobile-link {
+            display: table;
+
+            td {
+                @include textMix('Roboto', 14px, 400);
+
+                &:first-child {
+                    font-weight: inherit;
+                }
+
+                a:after {
+                    content: "\276f";
+                    display: inline-block;
+                    font-size: 10px;
+                    line-height: 1rem;
+                    vertical-align: middle;
+                    margin-left: 0.25rem;
+                }
+            }
+        }
+
+        &__expand-table {
+            float: right;
+            height: 20px;
+            width: 20px;
+            fill: $informa-mid-gray;
+        }
+
+    }
+
 }
 
 .article-inline-image {

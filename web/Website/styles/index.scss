@@ -9,8 +9,10 @@
 @import 'utils/mixins';
 @import 'utils/typography';
 
+
 /* * * * VENDORS * * * */
 @import 'vendor/normalize';
+
 
 /* * * * BASE * * * */
 @import 'base/colors'; // first!
@@ -19,19 +21,9 @@
 @import 'base/helpers';
 @import 'base/typography';
 
-/* * * * COMPONENTS * * * */
+
+/* * * * COMPONENTS — GLOBAL * * * */
 @import 'components/advertising';
-@import 'components/article-body';
-@import 'components/article-interview';
-@import 'components/article-key-documents';
-@import 'components/article-metadata';
-@import 'components/article-preview';
-@import 'components/article-prologue';
-@import 'components/article-pullquote';
-@import 'components/article-related-content';
-@import 'components/article-sidebar';
-@import 'components/article-tags';
-@import 'components/article-topics';
 @import 'components/banners';
 @import 'components/bar-separated-link-list';
 @import 'components/buttons';
@@ -44,6 +36,20 @@
 @import 'components/pop-out';
 @import 'components/sub-topic-links';
 
+/* * * * COMPONENTS — ARTICLE * * * */
+@import 'components/article/article-body';
+@import 'components/article/article-interview';
+@import 'components/article/article-key-documents';
+@import 'components/article/article-metadata';
+@import 'components/article/article-preview';
+@import 'components/article/article-prologue';
+@import 'components/article/article-pullquote';
+@import 'components/article/article-related-content';
+@import 'components/article/article-sidebar';
+@import 'components/article/article-tags';
+@import 'components/article/article-topics';
+
+
 /* * * * LAYOUT * * * */
 @import 'layout/article';
 @import 'layout/footer';
@@ -51,8 +57,10 @@
 @import 'layout/header';
 @import 'layout/main';
 
+
 /* * * * PAGE-SPECIFIC STYLES * * * */
 @import 'pages/home';
+
 
 /* * * * PRINT STYLES * * * */
 @import 'print';
