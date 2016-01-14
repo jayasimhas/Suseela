@@ -24,22 +24,23 @@
     @include textMix("Roboto", 18px, 500);
     background-color: $informa-light-gray-f;
     border-top: 2px solid $informa-light-gray-d;
-    padding: 18px 12px;
+    margin: 1rem 0;
+    padding: 1rem 0.75rem;
 
     // MULTIPLE AUTHORS
 
     &:before {
-        display: block;
-        content: "Written by";
-        font-style: italic;
-        font-size: 16px;
         color: $informa-mid-gray;
-        margin-bottom: 18px;
+        content: "Written by";
+        display: block;
+        font-size: 16px;
+        font-style: italic;
+        margin-bottom: 1rem;
     }
 
     &__list li {
         border-bottom: 1px solid $informa-light-gray-d;
-        padding: 12px 0;
+        padding: 0.75rem 0;
 
         &:last-child {
             border: 0;
@@ -55,18 +56,51 @@
         font-weight: 400;
 
         a:first-child {
-            position: relative;
             margin-right: 18px;
             padding-right: 18px;
+            position: relative;
 
             &:after {
-                position: absolute;
-                content: "";
                 border-right: 1px solid $informa-light-gray-d;
+                content: "";
                 height: 120%;
+                position: absolute;
+                right: 0px;
                 top: -10%;
                 width: 2px;
-                right: 0px;
+            }
+        }
+    }
+
+    @include breakpoint('small') {
+
+        &__list li:last-child {
+            padding-bottom: 0;
+        }
+
+        &__name {
+            display: block;
+            margin-bottom: 0.375rem;
+            width: 100%;
+        }
+        &__contact {
+            font-size: 15px;
+            font-weight: 400;
+
+            a {
+                display: block;
+                font-size: 0.9375rem;
+                margin-bottom: 0.375rem;
+                width: 100%;
+
+                &:first-child {
+                    margin-right: 0;
+                    padding-right: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
             }
         }
     }
