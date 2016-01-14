@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
@@ -545,8 +546,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             
             SuspendLayout();
 
-            SitecoreServer.ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(
-                title, webPublishDate, pubGuid, issueGuid);
+            SitecoreServer.ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
 
             //articleDetailsPageSelector.UpdateArticleNumber(astruct.ArticleNumber);
             articleDetails.ArticleNumber = astruct.ArticleNumber;

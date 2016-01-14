@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
+using System.Net.Http;
+using Informa.Web.Areas.Account.Models;
+using Informa.Web.Controllers;
 using Microsoft.Office.Interop.Word;
+using Newtonsoft.Json;
 using SitecoreTreeWalker.Custom_Exceptions;
 using SitecoreTreeWalker.document;
 using SitecoreTreeWalker.SitecoreServer;
@@ -15,16 +14,25 @@ using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 using SitecoreTreeWalker.WebserviceHelper;
-using Application = Microsoft.Office.Interop.Word.Application;
 using ArticleStruct = SitecoreTreeWalker.SitecoreServer.ArticleStruct;
-using StaffStruct = SitecoreTreeWalker.SitecoreServer.StaffStruct;
 using WorkflowState = SitecoreTreeWalker.SitecoreTree.WorkflowState;
-using SitecoreTreeWalker.Config;
 
 namespace SitecoreTreeWalker
 {
 	public class SitecoreArticle
 	{
+		private static string webApiURL = "http://informa8.ashah.velir.com/api/";
+
+		public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
+		{
+			using (var client = new HttpClient())
+			{
+				var gizmo = new WordPluginModel.CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
+				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/CreateArticle", gizmo).Result;
+				var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+				return articleItem;
+			}
+		}
 		public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID, Guid publicationIssue)
 		{
 			var server = new SitecoreServer.SCServer();
