@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
+using Sitecore.Data.Items;
+using Sitecore.Workflows;
 
 namespace Informa.Web.Areas.Account.Models
 {
 	public class WordPluginModel
 	{
+		public struct ArticleSize
+		{
+			public string Name { get; set; }
+			public int MinimumWordCount { get; set; }
+			public int MaximumWordCount { get; set; }
+			public Guid ID { get; set; }
+		}
+
 		public class DirectoryStruct
 		{
 			/// <remarks/>
@@ -224,10 +234,189 @@ namespace Informa.Web.Areas.Account.Models
 				}
 			}
 		}
+
 		public struct ItemStruct
 		{
 			public string Name { get; set; }
 			public Guid ID { get; set; }
+		}
+		public struct ArticleStruct
+		{
+			public Guid ArticleGuid { get; set; }
+			public string Title { get; set; }
+			public Guid Volume { get; set; }
+			public Guid Issue { get; set; }
+			public DateTime PrintPublicationDate { get; set; }
+			public DateTime WebPublicationDate { get; set; }
+			public string ArticleNumber { get; set; }
+			public Guid ArticleCategory { get; set; }
+			public Guid WebCategory { get; set; }
+			public string NotesToEditorial { get; set; }
+			public string NotesToProduction { get; set; }
+			public string Subtitle { get; set; }
+			public string LongSummary { get; set; }
+			public string ShortSummary { get; set; }
+			public string Deck { get; set; }
+
+			[Obsolete]
+			public Guid ArticleSize { get; set; }
+			public int WordCount { get; set; }
+
+			//indicates if article should be in the homepage list of
+			//featured articles
+			public bool IsFeaturedArticle { get; set; }
+			public bool HasBeenNominated { get; set; }
+			public bool IsTopStory { get; set; }
+			public WorkflowState WorkflowState { get; set; }
+			public Guid CommandID { get; set; }
+			public List<TaxonomyStruct> Taxonomoy { get; set; }
+
+			public List<Guid> RelatedInlineArticles { get; set; }
+			public List<Guid> RelatedArticles { get; set; }
+			public List<Guid> ChildArticles { get; set; }
+			public List<string> SupportingDocumentPaths { get; set; }
+			public List<TaxonomyStruct> GeneralTags { get; set; }
+			public List<ArticlePreviewInfo> ReferencedArticlesInfo { get; set; }
+			public List<ArticlePreviewInfo> RelatedArticlesInfo { get; set; }
+
+			[Obsolete]
+			public List<string> PotentialCompanyNames { get; set; }
+			public List<string> ReferencedDeals { get; set; }
+
+			public List<StaffStruct> Authors { get; set; }
+			public List<StaffStruct> Editors { get; set; }
+			public List<StaffStruct> ArticleSpecificNotifications { get; set; }
+			public List<StaffStruct> GlobalNotifications { get; set; }
+
+			public int WordDocVersionNumber { get; set; }
+			public string WordDocLastUpdateDate { get; set; }
+			public string WordDocLastUpdatedBy { get; set; }
+
+			public Guid Publication { get; set; }
+
+			public Boolean Embargoed { get; set; }
+			public bool IsPublished { get; set; }
+		}
+
+		public struct ArticlePreviewInfo
+		{
+			public string Title { get; set; }
+			public List<string> Authors { get; set; }
+			public string ArticleNumber { get; set; }
+			public string Publication { get; set; }
+			public DateTime Date { get; set; }
+			public string PreviewUrl { get; set; }
+			public Guid Guid { get; set; }
+		}
+
+		public struct StaffStruct
+		{
+			public string Name { get; set; }
+			public Guid[] Publications { get; set; }
+			public Guid ID { get; set; }
+		}
+		public struct DealInfo
+		{
+			public string Name { get; set; }
+			public string ID { get; set; }
+			public DateTime DealDate { get; set; }
+			public DateTime LastUpdated { get; set; }
+			public List<string> Companies { get; set; }
+			public string Url { get; set; }
+		}
+
+		public struct WordStyleStruct
+		{
+			public string WordStyle { get; set; }
+			public string CssElement { get; set; }
+			public string CssClass { get; set; }
+		}
+
+		public partial class CompanyWrapper
+		{
+
+			private int recordIDField;
+
+			private string recordNumberField;
+
+			private string titleField;
+
+			private CompanyWrapper[] relatedCompaniesField;
+
+			private System.Nullable<int> parentField;
+
+			/// <remarks/>
+			public int RecordID
+			{
+				get
+				{
+					return this.recordIDField;
+				}
+				set
+				{
+					this.recordIDField = value;
+				}
+			}
+
+			/// <remarks/>
+			public string RecordNumber
+			{
+				get
+				{
+					return this.recordNumberField;
+				}
+				set
+				{
+					this.recordNumberField = value;
+				}
+			}
+
+			/// <remarks/>
+			public string Title
+			{
+				get
+				{
+					return this.titleField;
+				}
+				set
+				{
+					this.titleField = value;
+				}
+			}
+
+			/// <remarks/>
+			public CompanyWrapper[] RelatedCompanies
+			{
+				get
+				{
+					return this.relatedCompaniesField;
+				}
+				set
+				{
+					this.relatedCompaniesField = value;
+				}
+			}
+
+			/// <remarks/>
+			[System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
+			public System.Nullable<int> Parent
+			{
+				get
+				{
+					return this.parentField;
+				}
+				set
+				{
+					this.parentField = value;
+				}
+			}
+		}
+
+		public class CreateArticleRequest
+		{
+			public string Name;
+			public Guid PublicationID;
+			public string PublicationDate;
 		}
 	}
 }
