@@ -46,6 +46,7 @@ namespace Informa.Web.Controllers
 			return publicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
 		}
 
+
 		public static WordPluginModel.ArticleStruct GetArticleStruct(IArticle articleItem)
 		{
 			var articleStruct = new WordPluginModel.ArticleStruct
@@ -217,5 +218,7 @@ namespace Informa.Web.Controllers
 
 			return articleStruct ;
 		}
+
+
 	}
 }

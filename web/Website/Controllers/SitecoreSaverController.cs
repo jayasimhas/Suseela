@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Http;
+using System.Xml;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -13,8 +14,13 @@ using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Links;
 using Sitecore.SecurityModel;
+using Sitecore.Web;
 using Sitecore.Workflows;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Informa.Web.Controllers
 {
@@ -55,11 +61,121 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-		public int SendDocumentToSitecore(string articleNumber, byte[] data, string extension, string username)
+		[HttpPost]
+		public int GetWordVersionNumByGuid([FromBody] Guid articleGuid)
 		{
-			//IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
-			
-			var articleFolder = _sitecoreMasterService.GetItem<IArticle_Folder>(new Guid());
+
+			IArticle article = _sitecoreMasterService.GetItem<IArticle>(articleGuid);
+			if (article == null)
+			{
+				return -1;
+			}
+			return GetWordVersionNumber(article);
+		}
+
+		[HttpPost]
+		public int GetWordVersionNumByGuid([FromBody] string articleNumber)
+		{
+			IArticle article = GetArticleByNumber(articleNumber);
+			if (article == null)
+			{
+				return -1;
+			}
+			return GetWordVersionNumber(article);
+		}
+
+
+		[HttpPost]
+		public WordPluginModel.ArticlePreviewInfo GetArtPreInfo([FromBody] string articleNumber)
+		{
+			IArticle article = GetArticleByNumber(articleNumber);
+			var preview = article != null
+									? GetPreviewInfo(article)
+									: new WordPluginModel.ArticlePreviewInfo();
+			return preview;
+		}
+
+		[HttpPost]
+		public List<WordPluginModel.ArticlePreviewInfo> GetArticlePreviewInfo([FromBody] List<Guid> guids)
+		{
+			var previews = new List<WordPluginModel.ArticlePreviewInfo>();
+			foreach (Guid guid in guids)
+			{
+				IArticle article = _sitecoreMasterService.GetItem<IArticle>(guid);
+				if (article != null)
+				{
+					previews.Add(GetPreviewInfo(article));
+				}
+			}
+			return previews;
+		}
+
+		public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
+		{
+			return new WordPluginModel.ArticlePreviewInfo
+			{
+				Title = article.Title,
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
+				//Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
+				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
+				ArticleNumber = article.Article_Number,
+				//Date = GetProperDate(), TODO
+				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
+				Guid = article._Id
+			};
+		}
+
+
+		[HttpPost]
+		public string GetArticleGuidByNum([FromBody] string articleNumber)
+		{
+			IArticle article = GetArticleByNumber(articleNumber);
+			return article == null ? Guid.Empty.ToString() : article._Id.ToString();
+		}
+
+		/// <summary>
+		/// Get the Article URL by its article number.
+		/// </summary>
+		/// <param name="articlenumber">The unique article number</param>
+		/// <returns>The article URL</returns>
+		[HttpPost]
+		public string GetArticleUrl([FromBody] string articleNumber)
+		{
+			Item article = GetArticleItemByNumber(articleNumber);
+			if (article == null) return null;
+			var url = LinkManager.GetItemUrl(article).ToLower();
+			return url;
+		}
+
+		[HttpPost]
+		public string GetArticleDynamicUrl([FromBody] string articlenumber)
+		{
+			var options = new LinkUrlOptions();
+			string mediaUrl = LinkManager.GetDynamicUrl(GetArticleItemByNumber(articlenumber), options);
+			return mediaUrl;
+		}
+
+		[HttpPost]
+		public string PreviewUrlArticle([FromBody] string articleNumber)
+		{
+			return PreviewArticleURL(articleNumber, WebUtil.GetHostName());
+		}
+
+		private string PreviewArticleURL(string articleNumber, string siteHost)
+		{
+			Guid guid = this.GetArticleByNumber(articleNumber)._Id;
+			if (guid.Equals(Guid.Empty))
+			{
+				return null;
+			}
+
+			return "http://" + siteHost + "/?sc_itemid={" +
+				guid + "}&sc_mode=preview&sc_lang=en";
+		}
+
+		public IArticle GetArticleByNumber(string articleNumber)
+		{
+			var articleFolder = _sitecoreMasterService.GetItem<IArticle_Folder>("{AF934D70-720B-47E8-B393-387A6F774CDF}");
 
 			IArticle article = articleFolder._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Year
 				.SelectMany(y => y._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Month
@@ -67,10 +183,22 @@ namespace Informa.Web.Controllers
 				.SelectMany(dayItem => dayItem._ChildrenWithInferType.OfType<IArticle>())
 				.FirstOrDefault(a => a.Article_Number == articleNumber);
 
-
-			return SendDocumentToSitecore(article, data, extension, username);
+			return article;
 		}
 
+		public Item GetArticleItemByNumber(string articleNumber)
+		{
+			IArticle articleItem = GetArticleByNumber(articleNumber);
+			var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
+			return article;
+		}
+
+
+		public int SendDocumentToSitecore(string articleNumber, byte[] data, string extension, string username)
+		{
+			IArticle article = GetArticleByNumber(articleNumber);
+			return SendDocumentToSitecore(article, data, extension, username);
+		}
 
 		private IArticle GetArticleFolders(IArticle_Date_Folder folder, string articleNumber)
 		{
@@ -95,7 +223,7 @@ namespace Informa.Web.Controllers
 
 		public int SendDocumentToSitecore(Guid articleGuid, byte[] data, string extension, string username)
 		{
-			IArticle article = _sitecoreMasterService.GetItem<IArticle>(articleGuid);			
+			IArticle article = _sitecoreMasterService.GetItem<IArticle>(articleGuid);
 			return SendDocumentToSitecore(article, data, extension, username);
 		}
 
@@ -251,5 +379,12 @@ namespace Informa.Web.Controllers
 			return dayFolder;
 		}
 
+		public int GetWordVersionNumber(IArticle article)
+		{
+			var wordDocURL = article.Word_Document.Url;
+			wordDocURL = wordDocURL.Replace("-", " ");
+			var wordDoc = _sitecoreMasterService.GetItem<Item>(wordDocURL);
+			return wordDoc?.Version.Number ?? -1;
+		}
 	}
 }
