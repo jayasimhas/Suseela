@@ -29,6 +29,11 @@
         font-weight: 500;
         letter-spacing: 1px;
     }
+    &__bookmarker-label {
+        @include breakpoint('medium') {
+            display: none;
+        }
+    }
 
     &__category {
         text-transform: uppercase;
