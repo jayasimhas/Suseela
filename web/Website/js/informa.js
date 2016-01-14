@@ -30,7 +30,8 @@ $(window).on('scroll', function windowScrolled() {
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 
 	var thisBanner = $(e.srcElement).parents('.banner');
-	thisBanner.addClass('is-hidden');
+	thisBanner.removeClass('is-visible');
+	console.log(thisBanner);
 
 	var dismissedBanners = Cookies.get('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
@@ -47,7 +48,7 @@ $(document).ready(function() {
 	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 	$('.banner').each(function() {
 		if($(this).data('banner-id') in dismissedBanners === false) {
-			$(this).css('display', 'block');
+			$(this).addClass('is-visible');
 		}
 	});
 
