@@ -536,7 +536,7 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreUtil.cs" />
-    <Compile Include="Controllers\ValuesController1.cs" />
+    <Compile Include="Controllers\SitecorGetterController.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />

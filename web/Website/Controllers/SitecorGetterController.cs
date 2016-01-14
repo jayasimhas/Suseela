@@ -4,15 +4,15 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Results;
 using Glass.Mapper.Sc;
-using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
+using Informa.Models.Informa.Models.sitecore.templates.System;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Article_Sizes;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
-using Newtonsoft.Json;
-using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
@@ -154,6 +154,142 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
+	public class GetParagraphStylesController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetParagraphStylesController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.WordStyleStruct>> Get()
+		{
+			var baseFolder = _sitecoreService.GetItem<IGlassBase>(new Guid("{0C51AAA3-70D9-408C-9130-852F32BF4BEE}"));
+			var styleItems = baseFolder?._ChildrenWithInferType.OfType<IMS_Paragraph_Style>()
+				.Select(eachChild => new WordPluginModel.WordStyleStruct() { CssClass = eachChild.CSS_Class, CssElement = eachChild.CSS_Element, WordStyle = eachChild.Title }).ToList();
+			return Json(styleItems);
+		}
+	}
+
+	[Route]
+	public class GetCharacterStylesController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetCharacterStylesController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.WordStyleStruct>> Get()
+		{
+			var baseFolder = _sitecoreService.GetItem<IGlassBase>("{18EE6A90-E8AE-4DEA-B475-274567126FC0}");
+			var styleItems = baseFolder?._ChildrenWithInferType.OfType<IMS_Character_Style>()
+				.Select(eachChild => new WordPluginModel.WordStyleStruct() { CssClass = eachChild.CSS_Class, CssElement = eachChild.CSS_Element, WordStyle = eachChild.Title }).ToList();
+			return Json(styleItems);
+		}
+	}
+
+
+	[Route]
+	public class GetAuthorsController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetAuthorsController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.StaffStruct>> Get()
+		{
+			var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid("{37E1CA4F-1B6F-46E2-85D1-123879EDA20E}"));
+			var members = staffFolder?._ChildrenWithInferType.OfType<IStaff_Item>().Where(c => !c.Inactive)
+				.Select(eachChild => new WordPluginModel.StaffStruct() { Name = eachChild.Last_Name + ", " + eachChild.First_Name, ID = eachChild._Id }).ToList();
+			return Json(members);
+		}
+	}
+
+	[Route]
+	public class GetPublicationsController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetPublicationsController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.ItemStruct>> Get()
+		{
+			var contentFolder = _sitecoreService.GetItem<IMain_Section>(new Guid("{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"));
+			var members = contentFolder?._ChildrenWithInferType.OfType<IHome_Page>().Select(eachChild => new WordPluginModel.ItemStruct()
+			{ Name = eachChild._Name, ID = eachChild._Id }).ToList();
+			return Json(members);
+		}
+	}
+
+	[Route]
+	public class IsAvailableController : ApiController
+	{
+		public IsAvailableController(){ }
+		// GET api/<controller>
+		public JsonResult<bool> Get(){return Json(true);}
+	}
+
+
+	[Route]
+	public class GetArticleSizeForPublicationController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetArticleSizeForPublicationController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.ArticleSize>> Get(Guid publicationID)
+		{
+			var articleSizesRootNode = Sitecore.Context.Database.GetItem("{F5C84045-7B2B-4725-8D9B-3680BEA0AFCE}");
+			if (articleSizesRootNode == null)
+			{
+				//_logger.Error("Root article size node not found!");
+				return null;
+			}
+
+			var publicationArticleSizeNodeList = articleSizesRootNode.Children.Where
+				(x =>
+					(((IArticle_Sizes_Folder)x).Publication != null && ((IArticle_Sizes_Folder)x).Publication == publicationID
+					)).ToList();
+
+			if (!publicationArticleSizeNodeList.Any())
+			{
+				//_logger.Warn("No matching article sizes for this publication: [" + publicationID.ToString() + "]");
+				return Json(new List<WordPluginModel.ArticleSize>());
+			}
+
+			List<WordPluginModel.ArticleSize> sizes = null;
+			try
+			{
+				var publicationArticleSizeNode = publicationArticleSizeNodeList.Single();
+
+				sizes = publicationArticleSizeNode.Children.ToList().Select
+					(x => new WordPluginModel.ArticleSize()
+					{
+						MaximumWordCount = Int32.Parse(((IArticle_Size)x).Maximum_Word_Count),
+						MinimumWordCount = Int32.Parse(((IArticle_Size)x).Minimum_Word_Count),
+						Name = x.Name,
+						ID = x.ID.ToGuid()
+					}).ToList();
+			}
+			catch (Exception ex)
+			{
+				//_logger.Error("Error getting the article sizes for this publication: [" + publicationID.ToString() + "]", ex);
+			}
+
+			return Json(sizes);
+		}
+	}
+
+
+
+	[Route]
 	public class GetMediaTypesController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreService;
@@ -165,17 +301,76 @@ namespace Informa.Web.Controllers
 		public JsonResult<List<WordPluginModel.ItemStruct>> Get()
 		{
 			var publicationRootChildren = GetChildrenWithIDs("{C00E39E4-3566-4307-93AE-8471769D6B36}");
-			//var fitlerPublicationIds = FilterPublicationItem.GetAll().Select(fp => fp.InnerItem.ID.Guid).ToList();
-			//var regularPublications = publicationRootChildren.Where(pub => !fitlerPublicationIds.Contains(pub.Value));
-			return Json(publicationRootChildren.Select(c => new WordPluginModel.ItemStruct() { Name = c.Key, ID = c.Value }).ToList());		
+			return Json(publicationRootChildren.Select(c => new WordPluginModel.ItemStruct() { Name = c.Key, ID = c.Value }).ToList());
 		}
 		public Dictionary<string, Guid> GetChildrenWithIDs(string pathOrId)
-		{			
+		{
 			Item item = _sitecoreService.GetItem<Item>(pathOrId);
 			return item?.Children.ToArray().ToDictionary(child => child.DisplayName, child => child.ID.Guid);
 		}
 	}
 
+	//TODO: This might have bugs, and would need to fix it.
+	[Route]
+	public class GetWidthHeightOfMediaItemController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetWidthHeightOfMediaItemController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<int[]> Get(string path)
+		{
+			ImageMedia mediaImage = _sitecoreService.GetItem<ImageMedia>(path);
+			var image = mediaImage.GetImage();
+			if (image == null)
+			{
+				return null;
+			}
+			var dimens = new int[2];
+			if (!Int32.TryParse(image.Width.ToString(), out dimens[0]) || !Int32.TryParse(image.Height.ToString(), out dimens[1]))
+			{
+				return null;
+			}
+			return Json(dimens);
+		}
+		public Dictionary<string, Guid> GetChildrenWithIDs(string pathOrId)
+		{
+			Item item = _sitecoreService.GetItem<Item>(pathOrId);
+			return item?.Children.ToArray().ToDictionary(child => child.DisplayName, child => child.ID.Guid);
+		}
+	}
+
+	[Route]
+	public class WordPluginController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public WordPluginController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+
+		[HttpGet]
+		[ActionName("GetMaxLengthShortSummary")]
+		public JsonResult<int> GetMaxLengthShortSummary()
+		{
+			string maxLengthShortSummary = "1000";
+			int length;
+			Int32.TryParse(maxLengthShortSummary, out length);
+			return Json(length);
+		}
+		[HttpGet]
+		[ActionName("GetMaxLengthLongSummary")]
+		public JsonResult<int> GetMaxLengthLongSummary()
+		{
+			string maxLengthLongSummary = "1500";
+			int length;
+			Int32.TryParse(maxLengthLongSummary, out length);
+			return Json(length);
+		}
+	}
 
 
 
@@ -214,8 +409,7 @@ namespace Informa.Web.Controllers
 		// GET api/<controller>
 		public JsonResult<WordPluginModel.DirectoryStruct[]> Get()
 		{
-			var item = _sitecoreService.GetItem<Item>("{11111111-1111-1111-1111-111111111111}");
-			//db.GetItem(path);
+			var item = _sitecoreService.GetItem<Item>("{11111111-1111-1111-1111-111111111111}");			
 			var children = new List<WordPluginModel.DirectoryStruct>();
 
 			foreach (var child in item.Children.ToArray())
@@ -355,7 +549,6 @@ namespace Informa.Web.Controllers
 			};
 			return Json(mediaItem);
 		}
-
 	}
 
 	[Route]
@@ -385,9 +578,8 @@ namespace Informa.Web.Controllers
 				Path = path,
 				Uploader = item.Statistics.CreatedBy,
 				UploadDate = item.Statistics.Created,
-				Url = "https://" + WebUtil.GetHostName() +
-					  MediaManager.GetMediaUrl(item)
-			};			
+				Url = "https://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(item)
+			};
 			return Json(mediaItem);
 		}
 	}
@@ -458,12 +650,8 @@ namespace Informa.Web.Controllers
 		public JsonResult<WordPluginModel.HDirectoryStruct> Get(string guid)
 		{
 			var item = _sitecoreService.GetItem<Item>(guid);
-			var children = new List<WordPluginModel.HDirectoryStruct>();
+			var children = item.Children.ToArray().Select(child => GetHierarchy(child.Paths.Path)).ToList();
 
-			foreach (Item child in item.Children.ToArray())
-			{
-				children.Add(GetHierarchy(child.Paths.Path));
-			}
 			var childNode = new WordPluginModel.HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
 			childNode.Children = childNode.ChildrenList.ToArray();
 			return Json(childNode);
@@ -486,8 +674,24 @@ namespace Informa.Web.Controllers
 
 	}
 
+	[Route]
+	public class GetArticleDetailsBGController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetArticleDetailsBGController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<WordPluginModel.ArticleStruct> Get()
+		{
+			return Json(new WordPluginModel.ArticleStruct());
+		}
 
-
-
-
+		public JsonResult<WordPluginModel.ArticleStruct> Get(string guid)
+		{
+			IArticle article = _sitecoreService.GetItem<IArticle>(guid);
+			return Json(article == null ? new WordPluginModel.ArticleStruct() : SitecoreUtil.GetArticleStruct(article));
+		}		
+	}
 }
