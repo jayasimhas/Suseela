@@ -1,6 +1,7 @@
 ﻿using Glass.Mapper.Sc.Fields;
 using Informa.Library.Authentication;
 using Informa.Library.Globalization;
+using Informa.Library.Navigation;
 using Informa.Library.Site;
 using Informa.Library.Subscription;
 using Informa.Web.Models;
@@ -13,6 +14,7 @@ namespace Informa.Web.ViewModels
 {
 	public class MainLayoutViewModel : GlassViewModel<IGlassBase>
 	{
+		protected readonly ISiteMainNavigationContext SiteMainNavigationContext;
 		protected readonly IPageLinksFactory PageLinksFactory;
 		protected readonly IUserAuthenticationContext UserAuthenticationContext;
 		protected readonly IUserSubscriptionContext UserSubscriptionContext;
@@ -21,6 +23,7 @@ namespace Informa.Web.ViewModels
 		protected readonly ITextTranslator TextTranslator;
 
 		public MainLayoutViewModel(
+			ISiteMainNavigationContext siteMainNavigationContext,
 			IPageLinksFactory pageLinksFactory,
 			IUserAuthenticationContext userAuthenticationContext,
 			IUserSubscriptionContext userSubscriptionContext,
@@ -28,6 +31,7 @@ namespace Informa.Web.ViewModels
 			ISiteMaintenanceContext siteMaintenanceContext,
 			ITextTranslator textTranslator)
 		{
+			SiteMainNavigationContext = siteMainNavigationContext;
 			PageLinksFactory = pageLinksFactory;
 			UserAuthenticationContext = userAuthenticationContext;
 			UserSubscriptionContext = userSubscriptionContext;
@@ -98,5 +102,11 @@ namespace Informa.Web.ViewModels
 		public string MenuTwoHeader => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Menu_Two_Header;
 
 		public IEnumerable<IPageLink> MenuTwoLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Menu_Two_Links);
+
+		public IEnumerable<INavigation> SideNavigationMenu => SiteMainNavigationContext.Navigation;
+
+		public string SideNavigationMenuText => TextTranslator.Translate("Menu");
+
+		public string SideNavigationMenuButtonText => TextTranslator.Translate("ToggleMenu");
 	}
 }

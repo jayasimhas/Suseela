@@ -27,7 +27,67 @@
 <main>
 
     @*@Html.Glass().InvokeAction(mvc => Execute());*@
-    @Html.Partial("_Navigation")
+	<div class="main-menu">
+
+		<div class="menu-toggler js-toggle-menu">
+			<button class="menu-toggler__button">
+				<span>@Model.SideNavigationMenuButtonText</span>
+			</button>
+			@Model.SideNavigationMenuText
+		</div>
+
+		@if (Model.SideNavigationMenu != null)
+		{
+			foreach (var navigation in Model.SideNavigationMenu)
+			{
+				if (navigation.Link == null && navigation.Text == null && navigation.Children.Any())
+				{
+					<dl class="main-menu__footer">
+						@foreach (var navigationChild in navigation.Children)
+						{
+							<dd class="main-menu__footer-link">
+								<a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target">@navigationChild.Text</a>
+							</dd>
+						}
+					</dl>
+				}
+				else
+				{
+					<ul class="main-menu__section">
+						<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
+							@if (navigation.Children.Any())
+							{
+								<svg class="main-menu__arrow-icon">
+									<use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+								</svg>
+							}
+							@if (navigation.Link == null)
+							{
+								@navigation.Text
+							}
+							else
+							{
+								<a href="@navigation.Link.Url" target="@navigation.Link.Target">@navigation.Text</a>
+							}
+						</li>
+						@if (navigation.Children.Any())
+						{
+							<li class="main-menu__section-wrapper">
+								<ul>
+									@foreach (var navigationChild in navigation.Children)
+									{
+										<li class="main-menu__hoverable">
+											<a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
+										</li>
+									}
+								</ul>
+							</li>
+						}
+					</ul>
+				}
+			}
+		}
+	</div>
 
     <div class="main__wrapper">
 

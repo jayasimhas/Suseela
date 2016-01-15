@@ -1468,6 +1468,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation
+{
+
+
+ 	/// <summary>
+	/// INavigation_Link Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Link</para>	
+	/// <para>ID: 354b0538-cb81-4b26-a25e-7b5dba03c2f5</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INavigation_LinkConstants.TemplateIdString)]
+	public partial interface INavigation_Link : IGlassBase 
+	{
+								/// <summary>
+					/// The Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 944fdc25-89f4-4127-8808-f136dda47ab3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INavigation_LinkConstants.LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Link  {get; set;}
+								/// <summary>
+					/// The Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ec1885ad-c358-4653-b1e5-55efd796b35c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INavigation_LinkConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// INavigation_Link Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Link</para>	
+		/// <para>ID: 354b0538-cb81-4b26-a25e-7b5dba03c2f5</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INavigation_Link__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 944fdc25-89f4-4127-8808-f136dda47ab3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INavigation_LinkConstants.LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Link  {get; set;}
+										/// <summary>
+						/// The Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ec1885ad-c358-4653-b1e5-55efd796b35c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INavigation_LinkConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Text  {get; set;}
+						}
+	
+	public static partial class INavigation_LinkConstants{
+
+			public const string TemplateIdString = "354b0538-cb81-4b26-a25e-7b5dba03c2f5";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Navigation Link";
+
+					
+			public static readonly ID LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
+			public const string LinkFieldName = "Link";
+
+						
+					
+			public static readonly ID TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
+			public const string TextFieldName = "Text";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Velir.Search.Models.FactoryInterface
 {
 
@@ -1743,6 +1827,54 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID MS_Word_StylesFieldId = new ID("b6c9ee62-92e2-401a-96fe-b0e99c5cb270");
 			public const string MS_Word_StylesFieldName = "MS Word Style";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation
+{
+
+
+ 	/// <summary>
+	/// INavigation_Header Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Header</para>	
+	/// <para>ID: 52109be5-b9e6-4fec-95ea-d257296e2f8d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INavigation_HeaderConstants.TemplateIdString)]
+	public partial interface INavigation_Header : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link
+	{
+				}
+
+	
+		/// <summary>
+		/// INavigation_Header Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Header</para>	
+		/// <para>ID: 52109be5-b9e6-4fec-95ea-d257296e2f8d</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INavigation_Header__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link__Raw
+		{
+						}
+	
+	public static partial class INavigation_HeaderConstants{
+
+			public const string TemplateIdString = "52109be5-b9e6-4fec-95ea-d257296e2f8d";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Navigation Header";
+
+					
+			public static readonly ID LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
+			public const string LinkFieldName = "Link";
+
+						
+					
+			public static readonly ID TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
+			public const string TextFieldName = "Text";
 
 						
 			
@@ -2860,6 +2992,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation
+{
+
+
+ 	/// <summary>
+	/// INavigation_Root Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Root</para>	
+	/// <para>ID: 8c125392-64e5-4e29-85d9-6b1591ae8e5b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INavigation_RootConstants.TemplateIdString)]
+	public partial interface INavigation_Root : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// INavigation_Root Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Root</para>	
+		/// <para>ID: 8c125392-64e5-4e29-85d9-6b1591ae8e5b</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INavigation_Root__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class INavigation_RootConstants{
+
+			public const string TemplateIdString = "8c125392-64e5-4e29-85d9-6b1591ae8e5b";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Navigation Root";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 {
 
@@ -3503,6 +3673,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Taxonomy_ListingsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Taxonomy_Listings  {get; set;}
 								/// <summary>
+					/// The Main Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 0727143b-4aa3-4853-bb84-b01abc4c2ad4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Main_Navigation  {get; set;}
+								/// <summary>
 					/// The Email Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -3821,6 +4000,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Taxonomy_ListingsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Taxonomy_Listings  {get; set;}
 										/// <summary>
+						/// The Main Navigation field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 0727143b-4aa3-4853-bb84-b01abc4c2ad4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Main_Navigation  {get; set;}
+										/// <summary>
 						/// The Email Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -4048,6 +4236,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Taxonomy_ListingsFieldId = new ID("e4683c82-14a8-450d-880c-452d81981cae");
 			public const string Taxonomy_ListingsFieldName = "Taxonomy Listings";
+
+						
+					
+			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
+			public const string Main_NavigationFieldName = "Main Navigation";
 
 						
 					
@@ -5134,6 +5327,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation
+{
+
+
+ 	/// <summary>
+	/// INavigation_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Folder</para>	
+	/// <para>ID: d3be4330-ffcf-42ca-8e64-d0184e1217a3</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INavigation_FolderConstants.TemplateIdString)]
+	public partial interface INavigation_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// INavigation_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Folder</para>	
+		/// <para>ID: d3be4330-ffcf-42ca-8e64-d0184e1217a3</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INavigation_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class INavigation_FolderConstants{
+
+			public const string TemplateIdString = "d3be4330-ffcf-42ca-8e64-d0184e1217a3";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Navigation Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Article_Sizes
 {
 
@@ -5669,6 +5900,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Taxonomy_ListingsFieldId = new ID("e4683c82-14a8-450d-880c-452d81981cae");
 			public const string Taxonomy_ListingsFieldName = "Taxonomy Listings";
+
+						
+					
+			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
+			public const string Main_NavigationFieldName = "Main Navigation";
 
 						
 					
