@@ -3754,6 +3754,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Advertise.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Business.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -3761,15 +3762,19 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Business\Companies.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Business\Deals.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Home.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Meet The Team.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Policy And Regulation.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -3777,12 +3782,15 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Policy And Regulation\Policy.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\Policy And Regulation\Regulation.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu\SCRIP Awards.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Taxonomy.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>

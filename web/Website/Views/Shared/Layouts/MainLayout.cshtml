@@ -1,4 +1,5 @@
-﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.MainLayoutViewModel>
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Web.ViewModels.MainLayoutViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,103 +28,20 @@
 <main>
 
     @*@Html.Glass().InvokeAction(mvc => Execute());*@
-	<div class="main-menu">
-
-		<div class="menu-toggler js-toggle-menu">
-			<button class="menu-toggler__button">
-				<span>@Model.SideNavigationMenuButtonText</span>
-			</button>
-			@Model.SideNavigationMenuText
-		</div>
-
-		@if (Model.SideNavigationMenu != null)
-		{
-			foreach (var navigation in Model.SideNavigationMenu)
-			{
-				if (navigation.Link == null && navigation.Text == null && navigation.Children.Any())
-				{
-					<dl class="main-menu__footer">
-						@foreach (var navigationChild in navigation.Children)
-						{
-							<dd class="main-menu__footer-link">
-								<a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target">@navigationChild.Text</a>
-							</dd>
-						}
-					</dl>
-				}
-				else
-				{
-					<ul class="main-menu__section">
-						<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
-							@if (navigation.Children.Any())
-							{
-								<svg class="main-menu__arrow-icon">
-									<use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-								</svg>
-							}
-							@if (navigation.Link == null)
-							{
-								@navigation.Text
-							}
-							else
-							{
-								<a href="@navigation.Link.Url" target="@navigation.Link.Target">@navigation.Text</a>
-							}
-						</li>
-						@if (navigation.Children.Any())
-						{
-							<li class="main-menu__section-wrapper">
-								<ul>
-									@foreach (var navigationChild in navigation.Children)
-									{
-										<li class="main-menu__hoverable">
-											<a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
-										</li>
-									}
-								</ul>
-							</li>
-						}
-					</ul>
-				}
-			}
-		}
-	</div>
+    @{ Html.RenderPartial("_Navigation");}
 
     <div class="main__wrapper">
 
-        <div class="banner banner--maintenance" data-banner-id="maint1234">
-            <div class="banner__wrapper">
-			<!-- From: @Model.MaintenanceMessage.DisplayFrom -->
-			<!-- To: @Model.MaintenanceMessage.DisplayTo -->
-                <div class="dismiss-button js-dismiss-banner">
-				<label>@Model.MaintenanceMessage.DismissText</label>
-                <svg class="dismiss-button__icon">
-                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                </svg>
-            </div>
-            <svg class="banner__lead-icon">
-                <use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
-            </svg>
-			@Model.MaintenanceMessage.Message
-            </div>
-		</div>
+        @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
 
         <div class="main__content">
 
-        <div class="banner banner--highlights">
-            <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
+            <div class="banner banner--highlights">
+                <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
             </div>
 
 
             @Html.Sitecore().Placeholder("main-content")
-
-            @*@Html.Partial("../_Shared/DummyData/AuthoredContent")*@
-            <!--
-            Here is where the main content of the page goes. Everything else is WIP, but I'm confident enough that this page structure will hold no matter what. Anything inside here should show up properly, no matter what changes outside of this element.
-
-            HAVE FUN ᕕ( ᐛ )ᕗ GO CRAZY
-
-            !-->
 
         </div>
 
@@ -132,77 +50,7 @@
 </main>
 
 <footer>
-	<div class="footer__wrapper">
-		@Html.Sitecore().Placeholder("footer")
-		<ul class="footer__section footer__section--corporate">
-			<li>
-				<img class="footer__logo" src="@Model.FooterLogoUrl">@Model.CopyrightText
-			</li>
-		</ul>
-
-		<div class="footer__section footer__section--double">
-			<ul>
-				@if (Model.SubscribeLink != null)
-				{
-					<li>
-						<a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
-					</li>
-				}
-				@RenderLinks(Model.LocalLinks)
-			</ul>
-		</div>
-
-		<ul class="footer__section footer__section--social">
-			<li class="footer__section-header">@Model.FollowText</li>
-			<li>
-				@if (Model.LinkedInLink != null)
-				{
-					<a href="@Model.LinkedInLink.Url" target="_blank" title="@Model.LinkedInLink.Text">
-						<svg class="footer__share-icons">
-							<use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
-						</svg>
-					</a>
-				}
-				@if (Model.TwitterLink != null)
-				{
-					<a href="@Model.TwitterLink.Url" target="_blank" title="@Model.TwitterLink.Text">
-						<svg class="footer__share-icons">
-							<use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
-						</svg>
-					</a>
-				}
-				@if (Model.FacebookLink != null)
-				{
-					<a href="@Model.FacebookLink.Url" target="_blank" title="@Model.FacebookLink.Text">
-						<svg class="footer__share-icons">
-							<use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
-						</svg>
-					</a>
-				}
-			</li>
-		</ul>
-
-		<hr class="footer__separator">
-
-		<div class="footer__section footer__section--single">
-			<span class="footer__section-header">
-				@Model.MenuOneHeader
-			</span>
-			<ul>
-				@RenderLinks(Model.MenuOneLinks)
-			</ul>
-		</div>
-
-		<div class="footer__section footer__section--triple">
-			<span class="footer__section-header">
-				@Model.MenuTwoHeader
-			</span>
-			<ul>
-				@RenderLinks(Model.MenuTwoLinks)
-			</ul>
-		</div>
-
-	</div>
+	@{ Html.RenderPartial("_Footer");}
 </footer>
 
 <script src="/dist/js/concat.js"></script>
@@ -213,14 +61,4 @@ $(document).ready(function() {
 </script>
 
 </body>
-</html>
-
-@helper RenderLinks(IEnumerable<Informa.Web.Models.IPageLink> pageLinks)
-{
-	foreach (var pageLink in pageLinks)
-	{
-		<li>
-			<a href="@pageLink.Url">@pageLink.Text</a>
-		</li>
-	}
-}
+</html>                       

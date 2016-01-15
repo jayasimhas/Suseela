@@ -1,4 +1,5 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 @using Informa.Web.TestData
 @using Sitecore.ExperienceAnalytics.Client
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
@@ -54,41 +55,49 @@
     </aside>
     @* * *  END ARTICLE - FEATURED IMAGE *@
 
+
     @* MULTIPLE AUTHORS *@
-    <div class="article-author">
-        <ul class="article-author__list">
-            @foreach (var author in Enumerable.Range(0, 3))
-            {
+    @if (Model.Authors.OfType<IAuthor>().Count() == 1)
+    {
+        var author = Model.Authors.OfType<IAuthor>().FirstOrDefault();
+        @* SINGLE AUTHOR*@
+        <div class="article-author article-author--solo">
+            <ul class="article-author__list">
                 <li>
-                    <span class="article-author__name">Donna Young</span>
-                    <span class="article-author__contact">
-                                <a href="#">&#64;DonnaYoung</a>
-                                <a href="#">donnayoung&#64;emaildomain.com</a>
-                            </span>
-                </li>
-            }
-        </ul>
-    </div>
-    @* END MULTIPLE AUTHORs *@
-
-    @* SINGLE AUTHOR*@
-    <div class="article-author article-author--solo">
-        <ul class="article-author__list">
-            <li>
-                <img src="http://placehold.it/200x200" class="article-author__photo">
-                <div class="article-author__solo-wrapper">
-                    <span class="article-author__name">Donna Young</span>
-                    <span class="article-author__contact">
-                            <a href="#">&#64;DonnaYoung</a>
-                            <a href="#">donnayoung&#64;emaildomain.com</a>
+                    <img src="http://placehold.it/200x200" class="article-author__photo">
+                    <div class="article-author__solo-wrapper">
+                        <span class="article-author__name">@author.First_Name @author.Last_Name</span>
+                        <span class="article-author__contact">
+                            <a href="#">&#64;@author.Twitter</a>
+                            <a href="#">@author.Email_Address</a>
                         </span>
-                </div>
-            </li>
-        </ul>
-    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-    @* END SINGLE AUTHOR *@
+        @* END SINGLE AUTHOR *@
 
+    }
+    else
+    {
+        <div class="article-author">
+            <ul class="article-author__list">
+                @foreach (var author in Model.Authors.OfType<IAuthor>())
+                {
+                    <li>
+                        <span class="article-author__name">@author.First_Name @author.Last_Name</span>
+                        <span class="article-author__contact">
+                                <a href="#">&#64;@author.Twitter</a>
+                                <a href="#">@author.Email_Address</a>
+                            </span>
+                    </li>
+                }
+            </ul>
+        </div>
+    @* END MULTIPLE AUTHORs *@
+    }
+  
 
     @Html.Raw(Model.Body)
 

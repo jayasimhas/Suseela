@@ -1,80 +1,56 @@
+@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.MainLayoutViewModel>
 <div class="main-menu">
-
-	<div class="menu-toggler js-toggle-menu">
-	    <button class="menu-toggler__button">
-	    <span>Toggle Menu</span>
-	    </button>
-	    Menu
-	</div>
-
-	<ul class="main-menu__section">
-		<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
-			<svg class="main-menu__arrow-icon">
-				<use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-			</svg>
-			Home
-		</li>
-	</ul>
-
-	<ul class="main-menu__section">
-		<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
-			<svg class="main-menu__arrow-icon">
-				<use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-			</svg>
-			Business
-		</li>
-		<li class="main-menu__section-wrapper">
-			<ul>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Companies</a>
-				</li>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Deals</a>
-				</li>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Strategy</a>
-				</li>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Markets</a>
-				</li>
-			</ul>
-		</li>
-	</ul>
-
-	<ul class="main-menu__section">
-		<li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
-			Policy &amp; Regulation
-		</li>
-		<li class="main-menu__section-wrapper">
-			<ul>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Companies</a>
-				</li>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Deals</a>
-				</li>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Strategy</a>
-				</li>
-				<li class="main-menu__hoverable">
-					<a href="#" class="main-menu__section-link">Markets</a>
-				</li>
-			</ul>
-		</li>
-	</ul>
-
-	<dl class="main-menu__footer">
-		<dd class="main-menu__footer-link">
-			<a href="#">Meet the Team</a>
-		</dd>
-		<dd class="main-menu__footer-link">
-			<a href="#">SCRIP Awards</a>
-		</dd>
-		<dd class="main-menu__footer-link">
-			<a href="#">Ask the Analyst</a>
-		</dd>
-		<dd class="main-menu__footer-link">
-			<a href="#">Advertise</a>
-		</dd>
-	</dl>
+    <div class="menu-toggler js-toggle-menu">
+        <button class="menu-toggler__button">
+            <span>@Model.SideNavigationMenuButtonText</span>
+        </button>
+        @Model.SideNavigationMenuText
+    </div>
+    @if (Model.SideNavigationMenu != null)
+    {
+        foreach (var navigation in Model.SideNavigationMenu)
+        {
+            if (navigation.Link == null && navigation.Text == null && navigation.Children.Any())
+            {
+                <dl class="main-menu__footer">
+                    @foreach (var navigationChild in navigation.Children)
+                    {
+                        <dd class="main-menu__footer-link">
+                            <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target">@navigationChild.Text</a>
+                        </dd>}
+                </dl>  }
+            else
+            {
+                <ul class="main-menu__section">
+                    <li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section">
+                        @if (navigation.Children.Any())
+                        {
+                            <svg class="main-menu__arrow-icon">
+                                <use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                            </svg>
+                        }
+                        @if (navigation.Link == null)
+                        {
+                            @navigation.Text
+                        }
+                        else
+                        {
+                            <a href="@navigation.Link.Url" target="@navigation.Link.Target">@navigation.Text</a>
+                        }
+                    </li>
+                    @if (navigation.Children.Any())
+                    {
+                        <li class="main-menu__section-wrapper">
+                            <ul>
+                                @foreach (var navigationChild in navigation.Children)
+                                {
+                                    <li class="main-menu__hoverable">
+                                        <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>}
+                </ul>  }
+        }
+    }
 </div>
