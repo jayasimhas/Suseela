@@ -94,6 +94,7 @@
     <Compile Include="GlassModels\IArticle.cs" />
     <Compile Include="I___BaseItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScripConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

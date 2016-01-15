@@ -3,6 +3,8 @@ using Glass.Mapper.Configuration.Attributes;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
+using Informa.Library.Site;
+using Informa.Models;
 using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
@@ -50,6 +52,7 @@ namespace Informa.Web.App_Start
         {
 			// Add maps here
             mapsConfigFactory.Add(() => new ListableConfig());
+            //mapsConfigFactory.Add(() => new ScripConfig());
         }
     }
 }

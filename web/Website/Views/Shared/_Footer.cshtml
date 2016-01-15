@@ -1,0 +1,82 @@
+﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.MainLayoutViewModel>
+<div class="footer__wrapper">
+    @Html.Sitecore().Placeholder("footer")
+    <ul class="footer__section footer__section--corporate">
+        <li>
+            <img class="footer__logo" src="@Model.FooterLogoUrl">@Model.CopyrightText
+        </li>
+    </ul>
+
+    <div class="footer__section footer__section--double">
+        <ul>
+            @if (Model.SubscribeLink != null)
+            {
+                <li>
+                    <a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
+                </li>
+            }
+            @RenderLinks(Model.LocalLinks)
+        </ul>
+    </div>
+
+    <ul class="footer__section footer__section--social">
+        <li class="footer__section-header">@Model.FollowText</li>
+        <li>
+            @if (Model.LinkedInLink != null)
+            {
+                <a href="@Model.LinkedInLink.Url" target="_blank" title="@Model.LinkedInLink.Text">
+                    <svg class="footer__share-icons">
+                        <use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
+                    </svg>
+                </a>
+            }
+            @if (Model.TwitterLink != null)
+            {
+                <a href="@Model.TwitterLink.Url" target="_blank" title="@Model.TwitterLink.Text">
+                    <svg class="footer__share-icons">
+                        <use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
+                    </svg>
+                </a>
+            }
+            @if (Model.FacebookLink != null)
+            {
+                <a href="@Model.FacebookLink.Url" target="_blank" title="@Model.FacebookLink.Text">
+                    <svg class="footer__share-icons">
+                        <use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
+                    </svg>
+                </a>
+            }
+        </li>
+    </ul>
+
+    <hr class="footer__separator">
+
+    <div class="footer__section footer__section--single">
+        <span class="footer__section-header">
+            @Model.MenuOneHeader
+        </span>
+        <ul>
+            @RenderLinks(Model.MenuOneLinks)
+        </ul>
+    </div>
+
+    <div class="footer__section footer__section--triple">
+        <span class="footer__section-header">
+            @Model.MenuTwoHeader
+        </span>
+        <ul>
+            @RenderLinks(Model.MenuTwoLinks)
+        </ul>
+    </div>
+
+</div>                        
+
+@helper RenderLinks(IEnumerable<Informa.Web.Models.IPageLink> pageLinks)
+{
+foreach (var pageLink in pageLinks)
+{
+        <li>
+            <a href="@pageLink.Url">@pageLink.Text</a>
+        </li>
+}
+}

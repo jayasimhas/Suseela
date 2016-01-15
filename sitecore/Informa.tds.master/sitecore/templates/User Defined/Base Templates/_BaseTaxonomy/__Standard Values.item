@@ -1,26 +1,33 @@
 ----item----
 version: 1
-id: {17FB15BC-6DD7-4D86-8A9F-6CA96F567BF0}
+id: {0E193CFD-D373-4854-9E82-65FADB39E594}
 database: master
-path: /sitecore/layout/Renderings/UserDefined/Globals
-parent: {97AE523B-BC10-4BA9-8F5B-6877D04E2AC1}
-name: Globals
+path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy/__Standard Values
+parent: {EED18B44-4005-4F15-9B18-D7C2D2CAC0EC}
+name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
-templatekey: Rendering Folder
+template: {EED18B44-4005-4F15-9B18-D7C2D2CAC0EC}
+templatekey: _BaseTaxonomy
 
 ----version----
 language: en
 version: 1
-revision: 3803fb63-c5e0-468a-b38d-02c0b5bf02b2
+revision: 9c3ec394-903e-4075-9fac-d1aa53f7f823
 
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20151230T194101Z
+20151224T214119Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3803fb63-c5e0-468a-b38d-02c0b5bf02b2
+9c3ec394-903e-4075-9fac-d1aa53f7f823
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160115T182153Z
+20151224T214119Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

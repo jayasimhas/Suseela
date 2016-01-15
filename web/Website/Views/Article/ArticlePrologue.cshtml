@@ -1,13 +1,12 @@
 @using Informa.Web.TestData
 @using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
-
     <div class="article-prologue">
         <div class="article-prologue__share-bar">
             <ul>
                 <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
                     <span class="pop-out__trigger-content">
-                        Email
+                        <span class="article-prologue__share-label">Email</span>
                         <svg class="article-prologue__share-icon">
                             <use xlink:href="/dist/img/svg-sprite.svg#email"></use>
                         </svg>
@@ -45,7 +44,7 @@
                                     <a href="#">Cancel</a>
                                 </div>
                                 <div class="sign-in__submit-wrapper">
-                                    <button class="button--pumpkin sign-in__submit">Send</button>
+                                    <button class="button--filled sign-in__submit">Send</button>
                                 </div>
                             </div>
                             <p class="pop-out__details u-italic">
@@ -55,7 +54,7 @@
                     </div>
                 </li>
                 <li class="article-prologue__share-item">
-                    Print
+                    <span class="article-prologue__share-label">Print</span>
                     <svg class="article-prologue__share-icon">
                         <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
                     </svg>
@@ -63,13 +62,13 @@
                 <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
                     <span class="pop-out__trigger-content">
                         @* IF NOT BOOKMARKED *@
-                        Bookmark
+                        <span class="article-prologue__share-label">Bookmark</span>
                         <svg class="article-prologue__share-icon">
                             <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                         </svg>
 
                         @* IF BOOKMARKED
-                        Bookmarked
+                        <span class="article-prologue__share-label">Bookmarked</span>
                         <svg class="article-prologue__share-icon">
                             <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
                         </svg> *@
@@ -88,7 +87,7 @@
                         </div>
                     </li>
                     <li class="article-prologue__share-item">
-                        Share
+                        <span class="article-prologue__share-label">Share</span>
                         <svg class="article-prologue__share-icon">
                             <use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
                         </svg>

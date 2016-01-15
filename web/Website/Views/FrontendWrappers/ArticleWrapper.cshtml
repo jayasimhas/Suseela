@@ -2,11 +2,13 @@
 @using Informa.Web.TestData
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
 
-
-    @{ Html.RenderPartial("../Article/ArticlePrologue");}
-
-
-    @{ Html.RenderPartial("../Article/ArticleLeftRail"); }
+<div class="article-left-rail">
+    @Html.Sitecore().Placeholder("article-left-content")
+</div>
 
 
-    @{ Html.RenderPartial("../Article/ArticleRightRail"); }
+<div class="article-right-rail">
+    @Html.Sitecore().Placeholder("article-right-content")
+</div>
+                   
+@*@{ Html.RenderPartial("../Article/ArticlePrologue");}*@

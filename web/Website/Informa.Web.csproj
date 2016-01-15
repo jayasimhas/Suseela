@@ -947,6 +947,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Project_Readme.html" />
+    <Content Include="Views\Shared\_MainContent.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_MaintainenceMessage.cshtml" />
+    <Content Include="Views\Article\ArticleBodyContent.cshtml" />
+    <Content Include="Views\Article\ArticleHeader.cshtml" />
+    <Content Include="Views\Article\ArticleKeyDocuments.cshtml" />
+    <Content Include="Views\Article\ArticleRelatedList.cshtml" />
+    <Content Include="Views\Article\ArticleRelatedTaxonomy.cshtml" />
+    <Content Include="Views\Shared\Components\ArticleKeyDocuments.cshtml" />
+    <Content Include="Views\Shared\Components\ArticleRelatedTaxonomy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

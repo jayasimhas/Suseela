@@ -1,18 +1,25 @@
 ----item----
 version: 1
-id: {17FB15BC-6DD7-4D86-8A9F-6CA96F567BF0}
+id: {5C303373-B4EA-4482-9D39-11261944F45A}
 database: master
-path: /sitecore/layout/Renderings/UserDefined/Globals
-parent: {97AE523B-BC10-4BA9-8F5B-6877D04E2AC1}
-name: Globals
+path: /sitecore/layout/Renderings/UserDefined/Article/ArticleRelatedTaxonomy
+parent: {0C163767-797D-4331-9537-DC26007C1B84}
+name: ArticleRelatedTaxonomy
 master: {00000000-0000-0000-0000-000000000000}
-template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
-templatekey: Rendering Folder
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
 
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 44
+
+/Views/Article/ArticleRelatedTaxonomy.cshtml
 ----version----
 language: en
 version: 1
-revision: 3803fb63-c5e0-468a-b38d-02c0b5bf02b2
+revision: 66e30228-9a41-455a-a93b-f98a90ade242
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -20,28 +27,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20151230T194101Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20151207T081656Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-3803fb63-c5e0-468a-b38d-02c0b5bf02b2
+66e30228-9a41-455a-a93b-f98a90ade242
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160115T182153Z
+20160115T051418Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
