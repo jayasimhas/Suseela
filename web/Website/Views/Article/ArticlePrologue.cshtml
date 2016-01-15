@@ -1,5 +1,7 @@
 @using Informa.Web.TestData
 @using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
+@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
     <div class="article-prologue">
         <div class="article-prologue__share-bar">
@@ -36,7 +38,8 @@
                             <input class="inf-standard-form-field"
                                    type="text"
                                    placeholder="Your Email">
-                            <p><span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches</p>
+                            <p><span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches
+                            </p>
                             <p><span class="pop-out__run-in">Add a personalized message to your email</span></p>
                             <textarea class="text-field"></textarea>
                             <div class="pop-out__form-actions-wrapper">
@@ -74,37 +77,39 @@
                         </svg> *@
 
                         </span>
-                        <div class="pop-out">
-                            <div class="pop-out__internal">
-                                <svg class="header__icons header__icons--x">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                                </svg>
-                                <h4 class="pop-out__header">
-                                    You must sign in to use this functionality
-                                </h4>
-                                @Html.Partial("_SignInForm")
-                            </div>
+                    <div class="pop-out">
+                        <div class="pop-out__internal">
+                            <svg class="header__icons header__icons--x">
+                                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                            </svg>
+                            <h4 class="pop-out__header">
+                                You must sign in to use this functionality
+                            </h4>
+                            @Html.Partial("_SignInForm")
                         </div>
-                    </li>
-                    <li class="article-prologue__share-item">
-                        <span class="article-prologue__share-label">Share</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
-                        </svg>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
-                        </svg>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                </li>
+                <li class="article-prologue__share-item">
+                    <span class="article-prologue__share-label">Share</span>
+                    <svg class="article-prologue__share-icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
+                    </svg>
+                    <svg class="article-prologue__share-icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+                    </svg>
+                </li>
+            </ul>
+        </div>
 
-            <div class="article-prologue__tags-bar">
-                Tags:
-                <div class="bar-separated-link-list">
-                    @foreach (var i in Enumerable.Range(0, 2))
-                    {
-                        <a href="#">@TestData.GetRandomEmployeeName()</a>
-                    }
-                </div>
+        
+    @* Taxonomy Tags *@
+        <div class="article-prologue__tags-bar">
+            Tags:
+            <div class="bar-separated-link-list">
+                @foreach (var tag in Model.Taxonomies.OfType<ITaxonomy_Item>().Take(3))
+                {
+                    <a href="/search?@tag._Id">@tag.Item_Name</a>
+                }
             </div>
-    </div>
+        </div>
+</div>

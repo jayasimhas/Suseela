@@ -926,7 +926,6 @@
     <Content Include="Views\Article\ArticleRightRail.cshtml" />
     <Content Include="Views\Article\ArticleLeftRail.cshtml" />
     <Content Include="Views\Shared\Components\ListItemSimple.cshtml" />
-    <Content Include="Views\Shared\Components\ArticleRelatedList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -956,7 +955,6 @@
     <Content Include="Views\Article\ArticleRelatedList.cshtml" />
     <Content Include="Views\Article\ArticleRelatedTaxonomy.cshtml" />
     <Content Include="Views\Shared\Components\ArticleKeyDocuments.cshtml" />
-    <Content Include="Views\Shared\Components\ArticleRelatedTaxonomy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
