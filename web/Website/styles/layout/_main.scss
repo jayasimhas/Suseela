@@ -1,6 +1,9 @@
 main {
 	display: flex;
 	margin-left: -330px;
+	@include breakpoint('small') {
+		width: 100%;
+	}
 }
 
 .main__wrapper {
@@ -11,6 +14,7 @@ main {
 
 	@include breakpoint('medium') {
 		padding: 0;
+		width: 100%;
 	}
 }
 

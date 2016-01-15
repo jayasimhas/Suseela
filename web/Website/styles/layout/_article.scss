@@ -1,12 +1,20 @@
 .article-left-rail {
     max-width: 790px;
     float: left;
+
+    @include breakpoint('medium') {
+        width: 100%;
+        clear: both;
+    }
 }
 
 .article-right-rail {
     float: right;
     max-width: 290px;
 
+    @include breakpoint('medium') {
+        width: 100%;
+    }
     h2 {
         color: $informa-black;
         margin-bottom: 1.5rem;
@@ -16,22 +24,23 @@
     @include textMix("Roboto", 18px, 500);
     background-color: $informa-light-gray-f;
     border-top: 2px solid $informa-light-gray-d;
-    padding: 18px 12px;
+    margin: 1rem 0;
+    padding: 1rem 0.75rem;
 
     // MULTIPLE AUTHORS
 
     &:before {
-        display: block;
-        content: "Written by";
-        font-style: italic;
-        font-size: 16px;
         color: $informa-mid-gray;
-        margin-bottom: 18px;
+        content: "Written by";
+        display: block;
+        font-size: 16px;
+        font-style: italic;
+        margin-bottom: 1rem;
     }
 
     &__list li {
         border-bottom: 1px solid $informa-light-gray-d;
-        padding: 12px 0;
+        padding: 0.75rem 0;
 
         &:last-child {
             border: 0;
@@ -47,18 +56,51 @@
         font-weight: 400;
 
         a:first-child {
-            position: relative;
             margin-right: 18px;
             padding-right: 18px;
+            position: relative;
 
             &:after {
-                position: absolute;
-                content: "";
                 border-right: 1px solid $informa-light-gray-d;
+                content: "";
                 height: 120%;
+                position: absolute;
+                right: 0px;
                 top: -10%;
                 width: 2px;
-                right: 0px;
+            }
+        }
+    }
+
+    @include breakpoint('small') {
+
+        &__list li:last-child {
+            padding-bottom: 0;
+        }
+
+        &__name {
+            display: block;
+            margin-bottom: 0.375rem;
+            width: 100%;
+        }
+        &__contact {
+            font-size: 15px;
+            font-weight: 400;
+
+            a {
+                display: block;
+                font-size: 0.9375rem;
+                margin-bottom: 0.375rem;
+                width: 100%;
+
+                &:first-child {
+                    margin-right: 0;
+                    padding-right: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -131,18 +173,43 @@
         border-right: 1px solid $informa-light-gray-e;
     }
 
-}
+    &--mobile-link {
+        display: none;
+    }
 
-.article-pullquote {
-    @include textMix('Roboto', 22px, 500);
-    border-bottom: 1px solid $informa-dark-orange;
-    border-top: 4px solid $informa-dark-orange;
-    clear: both;
-    color: $informa-black;
-    line-height: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    padding: 1.75rem 0.75rem;
+    @include breakpoint('medium') {
+        display: none;
+
+        &--mobile-link {
+            display: table;
+
+            td {
+                @include textMix('Roboto', 14px, 400);
+
+                &:first-child {
+                    font-weight: inherit;
+                }
+
+                a:after {
+                    content: "\276f";
+                    display: inline-block;
+                    font-size: 10px;
+                    line-height: 1rem;
+                    vertical-align: middle;
+                    margin-left: 0.25rem;
+                }
+            }
+        }
+
+        &__expand-table {
+            float: right;
+            height: 20px;
+            width: 20px;
+            fill: $informa-mid-gray;
+        }
+
+    }
+
 }
 
 .article-inline-image {
@@ -156,8 +223,9 @@
         margin-bottom: 1rem;
     }
 
-    em {
+    &__source {
         float: right;
+        font-style: italic;
     }
 
     &__caption {
@@ -171,7 +239,7 @@
         margin-right: 2rem;
         width: 50%;
 
-        em {
+        .article-inline-image__source {
             float: none;
             display: block;
             margin-bottom: 0.75rem;
@@ -183,5 +251,13 @@
         margin-left: 0;
         margin-left: 2rem;
         text-align: right;
+    }
+
+    @include breakpoint('medium') {
+        &__source {
+            display: block;
+            float: none;
+            margin-bottom: 0.5rem;
+        }
     }
 }

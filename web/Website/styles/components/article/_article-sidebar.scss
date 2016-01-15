@@ -4,6 +4,7 @@
     float: right;
     line-height: 1.5rem;
     margin: 2rem 0 2rem 2rem;
+    overflow: auto; // Sneaky way to force-`clear` any floating elements
     padding: 1.75rem 2rem;
     width: 50%;
 
@@ -32,5 +33,12 @@
             line-height: 1rem;
             vertical-align: middle;
         }
+    }
+
+    @include breakpoint('small') {
+        width: 100%;
+        float: none;
+        margin: 1rem 0;
+        padding: 1rem;
     }
 }

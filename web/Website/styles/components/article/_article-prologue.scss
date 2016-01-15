@@ -2,6 +2,8 @@
     @include textMix('Roboto Condensed', 14px, 700);
     border-top: 2px solid $informa-light-gray-d;
     color: $informa-black;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 36px;
     text-transform: uppercase;
 
@@ -10,12 +12,15 @@
     }
 
     &__share-bar {
-        float: right;
+        order: 2;
         margin-top: 14px;
     }
     &__share-item {
-        margin: 0 16px;
+        margin: 0 1rem;
 
+        &:first-child {
+            margin-left: 0;
+        }
         &:last-child {
             margin-right: 0;
         }
@@ -24,8 +29,14 @@
         height: 24px;
         width: 24px;
         vertical-align: middle;
-        margin-left: 4px;
         fill: $informa-mid-gray;
+
+        &:nth-child(n+3) {
+            margin-left: 1rem;
+        }
+    }
+    &__share-label {
+        margin-right: 0.5rem;
     }
 
     &__tags-bar {
@@ -37,5 +48,20 @@
         a {
             text-transform: none;
         }
+    }
+
+    @include breakpoint('small') {
+        flex-flow: column;
+
+        &__share-bar {
+            align-self: flex-end;
+        }
+        &__share-item {
+            margin: 0 0.5rem;
+        }
+        &__share-label {
+            display: none;
+        }
+
     }
 }

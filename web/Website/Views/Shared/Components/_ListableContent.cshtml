@@ -7,15 +7,44 @@
     <img class="article-preview__image" src="@Model.ListableImages.Src">
 }
 
-<div class="article-preview__metadata">
+<div class="article-metadata">
     <div class="article-preview__bookmarker">
-        Bookmark
+        <span class="article-preview__bookmarker-label">Bookmark</span>
         <svg class="article-prologue__share-icon">
             <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
         </svg>
     </div>
-    <time class="article-preview__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>
-    <div class="article-preview__category">@TestData.GetRandomTopic().LinkableTexts</div>
+    <ul>
+        <li>
+            <time class="article-metadata__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>
+        </li>
+        <li>
+            <h6>@TestData.GetRandomTopic().LinkableTexts</h6>
+        </li>
+        <li>
+            @* * *  ARTICLE MEDIA TYPE
+                    IIPP-116
+
+            * * * TEXT — Nothing. Remove this <li> entirely.
+
+            * * * VIDEO
+            <svg class="article-metadata__media-type">
+                <use xlink:href="/dist/img/svg-sprite.svg#video"></use>
+            </svg>
+
+            * * * AUDIO
+            <svg class="article-metadata__media-type">
+                <use xlink:href="/dist/img/svg-sprite.svg#audio"></use>
+            </svg>
+
+            * * * DATA *@
+            <svg class="article-metadata__media-type">
+                <use xlink:href="/dist/img/svg-sprite.svg#chart"></use>
+            </svg>
+
+            @* * *  END ARTICLE MEDIA TYPE *@
+        </li>
+    </ul>
 </div>
 
 <h1 class="article-preview__headline">
