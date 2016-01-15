@@ -160,6 +160,7 @@ $main-menu-smartphone-width: 62px;
 				text-align: right;
 				position: relative;
 				margin-right: 250px;
+				margin-left: 70px;
 
 				&.is-active {
 					.header-search__field,
@@ -187,7 +188,7 @@ $main-menu-smartphone-width: 62px;
 				border: 0;
 				display: none;
 				font-size: 18px;
-				left: 70px;
+				left: 0;
 				line-height: 48px;
 				margin: 0.5625rem 0;
 				position: absolute;

@@ -12,6 +12,13 @@ $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
 	$(e.target).toggleClass('is-active');
 });
 
+/* 	Elements with `position:absolute` don't bubble click events
+	`pointer-events: none` would fix, but isn't supported by IE 10.
+	Need to hoist the click event to the parent element to toggle menu items. */
+$('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
+	$(e.target).parents('.js-toggle-menu-section').trigger('click');
+});
+
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 	$('.header-search__wrapper').toggleClass('is-active').focus();
