@@ -10,6 +10,11 @@ namespace Informa.Web.Models
 	{
 		public IEnumerable<IPageLink> Create(IEnumerable<IGlassBase> items)
 		{
+			if (items == null)
+			{
+				return Enumerable.Empty<IPageLink>();
+			}
+
 			return items.Select(item => new PageLink
 			{
 				Text = item._Name,
