@@ -1,4 +1,4 @@
-@using Microsoft.AspNet.Identity
+@model Informa.Web.ViewModels.IHeaderViewModel
 @*@model Informa.Web.Areas.Account.Models.LoginViewModel*@
 <header>
     <div class="header__informa-permabanner">
@@ -18,7 +18,7 @@
             Menu
         </div>
 
-        <img class="header__logo" src="/dist/img/scrip-logo.jpg">
+        <img class="header__logo" src="@Model.LogoUrl">
 
         <div class="header__user-actions">
 

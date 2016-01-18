@@ -21,7 +21,7 @@
 </head>
 <body>
 
-@Html.Partial("_Header")
+@{ Html.RenderPartial("_Header", Model.Header); }
 @*@Html.Sitecore().Placeholder("header")*@
 
 <main>

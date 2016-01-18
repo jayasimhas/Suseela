@@ -14,11 +14,13 @@ namespace Informa.Web.ViewModels
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
 			ISideNavigationMenuViewModel sideNavigationMenuViewModel,
+			IHeaderViewModel headerViewModel,
 			IFooterViewModel footerViewModel)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
 			SideNavigationMenu = sideNavigationMenuViewModel;
+			Header = headerViewModel;
 			Footer = footerViewModel;
 		}
 
@@ -27,6 +29,8 @@ namespace Informa.Web.ViewModels
 		public ISideNavigationMenuViewModel SideNavigationMenu;
 
 		public IFooterViewModel Footer;
+
+		public IHeaderViewModel Header;
 
 		public string Title
 		{

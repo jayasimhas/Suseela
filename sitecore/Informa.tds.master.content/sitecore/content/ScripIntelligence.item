@@ -26,7 +26,7 @@ content-length: 16
 ----version----
 language: en
 version: 1
-revision: 9a9b690b-2ec1-4cf4-8405-ddadebe6cc43
+revision: a96b3aa1-7fb4-4ce1-bf05-42a86c46ea8f
 
 ----field----
 field: {B1E96FE0-25A3-49A5-8941-927C708A93CF}
@@ -35,6 +35,20 @@ key: system maintenance text
 content-length: 106
 
 Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
+----field----
+field: {D0EA1C84-68E4-4811-87C2-14FF280C8FC2}
+name: Site Logo
+key: site logo
+content-length: 58
+
+<image mediaid="{5F8207FA-F049-47C0-8FC5-8F6D7E808E19}" />
+----field----
+field: {9AEE6C51-8392-4461-B24C-BF22ACF5B07F}
+name: Publication Name
+key: publication name
+content-length: 18
+
+SCRIP Intelligence
 ----field----
 field: {EBE9A930-123D-4FD8-9A28-4662C389893B}
 name: Footer Logo
@@ -132,14 +146,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9a9b690b-2ec1-4cf4-8405-ddadebe6cc43
+a96b3aa1-7fb4-4ce1-bf05-42a86c46ea8f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160112T154604Z
+20160118T151736Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
