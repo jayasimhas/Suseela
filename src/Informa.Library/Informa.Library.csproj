@@ -254,6 +254,7 @@
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
