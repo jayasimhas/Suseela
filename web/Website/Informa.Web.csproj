@@ -555,9 +555,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\FooterViewModel.cs" />
+    <Compile Include="ViewModels\IFooterViewModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />
+    <Compile Include="ViewModels\ISideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceViewModel.cs" />
+    <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Z.SwitchMasterToWeb\important.txt" />

@@ -1,5 +1,4 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@model Informa.Web.ViewModels.MainLayoutViewModel
+﻿@model Informa.Web.ViewModels.MainLayoutViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Informa</title>
+    <title>@Model.Title</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,7 +27,7 @@
 <main>
 
     @*@Html.Glass().InvokeAction(mvc => Execute());*@
-    @{ Html.RenderPartial("_Navigation");}
+    @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
 
     <div class="main__wrapper">
 
@@ -68,7 +67,7 @@
 </main>
 
 <footer>
-	@{ Html.RenderPartial("_Footer");}
+	@{ Html.RenderPartial("_Footer", Model.Footer);}
 </footer>
 
 <script src="/dist/js/concat.js"></script>

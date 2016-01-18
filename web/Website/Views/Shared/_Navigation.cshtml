@@ -1,14 +1,14 @@
-@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.MainLayoutViewModel>
+@model Informa.Web.ViewModels.ISideNavigationMenuViewModel
 <div class="main-menu">
     <div class="menu-toggler js-toggle-menu">
         <button class="menu-toggler__button">
-            <span>@Model.SideNavigationMenuButtonText</span>
+            <span>@Model.MenuButtonText</span>
         </button>
-        @Model.SideNavigationMenuText
+        @Model.MenuText
     </div>
-    @if (Model.SideNavigationMenu != null)
+    @if (Model.Navigation != null)
     {
-        foreach (var navigation in Model.SideNavigationMenu)
+        foreach (var navigation in Model.Navigation)
         {
             if (navigation.Link == null && navigation.Text == null && navigation.Children.Any())
             {

@@ -1,4 +1,4 @@
-﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.MainLayoutViewModel>
+﻿@model Informa.Web.ViewModels.IFooterViewModel
 <div class="footer__wrapper">
     @Html.Sitecore().Placeholder("footer")
     <ul class="footer__section footer__section--corporate">
@@ -73,10 +73,10 @@
 
 @helper RenderLinks(IEnumerable<Informa.Web.Models.IPageLink> pageLinks)
 {
-foreach (var pageLink in pageLinks)
-{
-        <li>
-            <a href="@pageLink.Url">@pageLink.Text</a>
-        </li>
-}
+	foreach (var pageLink in pageLinks)
+	{
+		<li>
+			<a href="@pageLink.Url">@pageLink.Text</a>
+		</li>
+	}
 }
