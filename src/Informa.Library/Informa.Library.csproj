@@ -243,10 +243,12 @@
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
+    <Compile Include="Site\ISiteHomeContext.cs" />
     <Compile Include="Site\ISiteMainNavigationContext.cs" />
     <Compile Include="Site\ISiteMaintenanceContext.cs" />
     <Compile Include="Site\ISiteMaintenanceInfo.cs" />
     <Compile Include="Site\ISiteRootContext.cs" />
+    <Compile Include="Site\GlassSiteHomeContext.cs" />
     <Compile Include="Site\SiteMainNavigationContext.cs" />
     <Compile Include="Site\SiteMaintenanceContext.cs" />
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
