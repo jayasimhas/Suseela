@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {C7D52FEC-CBFB-447E-8677-D580A3B03143}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/MainStory/2008/01/09/SC00000012
+parent: {627EF3C6-48D2-4F67-895C-1264832B528D}
+name: SC00000012
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a2ee66d1-9567-4acf-8294-695379d5da9e
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Barr and Mylan launch Razadyne generics in US &ndash; update
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 10
+
+SC00000012
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4253
+
+<p>Barr Pharmaceuticalsand Mylanhave launched the first US generics of Johnson & Johnson's Razadyne (galantamine hydrobromide) tablets for Alzheimer's dementia following a federal court ruling invalidating the innovator's patent.</p><p>Razadyne generics entered the market almost four months before the patent (No 4,663,318) was due to expire on December 14th. J&J said it was disappointed by the ruling by the Delaware federal court and would appeal. The company continues to believe the '318 patent is valid and infringed by Razadyne generics.</p><p>Razadyne (formerly known as Reminyl) is indicated for the treatment of mild to moderate dementia in Alzheimer's patients. Razadyne tablets had annual sales of approximately $102 million for the 12 months ended in June, Barr said citing IMS data.</p><p>Barr announced on August 28th that it had received final ANDA approval for 4mg, 8mg and 12mg tablets, and planned to launch immediately. It is sharing 180-day exclusivity with Mylan's Alphapharm subsidiary. On August 29th Mylan announced the launch of its product in all three dosage strengths. The FDA's website lists 10 other companies that hold tentative approval for galantamine tablets.</p><p>J&J filed patent infringement lawsuits against six firms in July 2005: Barr, Teva Pharmaceutical Industries, Mylan, Dr Reddy's, Purepac (part of Alpharma) and Alphapharm (then part of Merck KGaA). The cases were later consolidated, and the 30-month stay of approval on the galantamine ANDAs was due to expire on August 28th, according to court filings.</p><p>On August 27th J&J requested a temporary restraining order seeking to prevent the generics firms from marketing galantamine before the court issued a decision on the merits of the litigation. US Judge Sue Robinson issued an opinion invalidating the '318 patent that same day and denied the request for a temporary restraining order.</p><h1>lack of enablement</h1><p>The generics firms conceded infringement, and a four-day bench trial was held in May 2007 on the invalidity defences of anticipation, obviousness and enablement.</p><p>While the judge found the defendants did not prove by clear and convincing evidence that the '318 patent was invalid as anticipated or obvious, she said there was clear evidence of invalidity for lack of enablement.</p><p>To satisfy the enablement standard, a specification must teach those skilled in the art how to make the full scope of the claimed invention without undue experimentation, the court said. In this case, it was not obvious that a person of ordinary skill in the art reading the '318 patent would have recognised that galantamine would be effective in treating Alzheimer's in the absence of experimental proof.</p><p>"Claim 1 of the '318 patent contains no parameters for the administration of galantamine to AD patients (aside from a 'therapeutically effective amount'); claim 4 further requires the method of administration to be oral and in the range of 10-2,000mg per day," the court said. Even if, as plaintiffs' experts testified, the standard clinical practice of dose titration could be used to find a therapeutically effective dose of galantamine, "this does not correct for the fact that the '318 patent only surmises how the claimed method could be used, rather than teach one of skill in the art how to use the claimed method".</p><p>The court's ruling could have ramifications for Razadyne ER (galantamine extended-release) patent litigation in which J&J has sued Barr, Sandoz and KV Pharma in New Jersey federal court.</p><p>Barr said the Delaware court's decision on the '318 patent will be given effect in the New Jersey litigation, but a second patent (No 7,160,559) is also at issue. Barr said the '559 patent was not listed at the time of its original ANDA filing, although the company amended the application to include a paragraph IV certification against the '559.</p><p>"Barr believes that because the '559 patent was not listed at the time Barr's original application was filed, the decision with respect to the '318 patent will end the 30-month stay with respect to the generic Razadyne ER product," the company said. Razadyne ER capsules had sales of approximately $112 million for the 12 months ended in June.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 10
+
+SC00000012
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20080109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20080109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20080109T000000
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Barr and Mylan launch Razadyne generics in US &ndash; update
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BEB9AD1B-80D8-412D-A31D-0DF065CAF165}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline news
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 3
+
+632
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160119T221708Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a2ee66d1-9567-4acf-8294-695379d5da9e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160119T221708Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

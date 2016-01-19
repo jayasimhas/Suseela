@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {25A1B7F8-0E41-4041-80B7-2F988766D4AD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/MainStory/2008/09/09/SC00000023
+parent: {02C6BAD3-7F0E-453D-A3BE-5E59FF763A47}
+name: SC00000023
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: cc8be464-8c24-4b29-ae14-ae175cea3485
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Lilly faces Zyprexa class action brought by third-party payers
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 10
+
+SC00000023
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4571
+
+<p>A federal judge in New York has granted class action status to a suit filed by insurers, labour unions and pension funds, alleging that Lillywithheld information on Zyprexa (olanzapine) adverse events and disseminated misinformation about its safety and efficacy, and marketed it for uses for which is was not indicated and for patients who would have been better served by less expensive medications.</p><p>The suit claims these actions - over an 11-year period since Zyprexa's US introduction - caused the product "to command a higher price than it would have had the truth been known to those who prescribed, bought or paid for the product". A number of documents related to the case have also been ordered to be unsealed.</p><p>The decision by Jack Weinstein of the US District Court for the Eastern District of New York comes two months after he floated a draft court order urging Lilly to settle (<i>Scrip</i> Online, July 9th, 2008). The court has determined the third-party payers are entitled to a jury trial of claims. Damages are still limited to four years before filing of the suit, ie, from June 2001 to June 2005 (since after that date all payers "should have been aware" of the alleged overpricing). Lilly says that it will appeal the judge's certification of a class action, but will not appeal the decision to make the documents public.</p><p>In his order, Judge Weinstein writes that there is "sufficient evidence of fraud under RICO, the Racketeer Influenced and Corrupt Organizations Act through mail fraud, predicated on overpricing supported by excessive claims of utility as well as disavowal of secondary effects of the drug, primarily weight gain and diabetes".</p><p>Originally, both third-party payers and individuals sued for overpayment on purchases of Zyprexa. In allowing the third-party payers as a class to sue, Judge Weinstein said that allocation of damages, predicated on written receipts and other reliable information, is practicable. But he denied class-action status to individuals suing Lilly, claiming it would be difficult to obtain the necessary payment data in most cases. He also wrote that individuals suing Lilly have a conflict of interest since "they are suing Lilly for personal injury and could potentially sacrifice the proposed overpayment class for a better recovery in their related individual suits".</p><p>In his ruling, Judge Weinstein said that the plaintiffs' motion permitting the publication of about 350 documents previously designated confidential is granted. (The papers had been placed under a protective court order soon after the suit was filed.) The judge claimed that unsealing records is in keeping with the country's general policy of public accessibility of court records, and that "Lilly's legitimate interest in confidentiality does not outweigh the public interest in disclosure at this stage of the litigation".</p><p>The judge wrote: "Public access is now desirable because this litigation involves issues of great public interest, the health of hundreds of thousands of people, fundamental questions about our system of approval and monitoring of pharmaceutical products, and the funding for many health and insurance benefit plans. Public and private agencies and organisations have a right to be informed ... Most [of the documents] are so old as to be unlikely to reveal current secrets."</p><p>Lilly has already fought a battle on some confidential Zyprexa documents, as a physician and expert witness, Dr David Egilman, last year admitted passing confidential Lilly documents to an attorney, James Gottstein, who then passed them onto a reporter at the New York Times. Lilly settled a lawsuit with the doctor last year. Mr Gottstein had been working on Zyprexa litigation in Alaska. Lilly claimed the leaked documents, including company e-mails, were taken out of context. Lilly faced a barrage of bad publicity from the New York Times front-page articles which claimed Lilly executives had kept important information about Zyprexa's links to weight gain and elevated blood sugar levels from doctors.</p><p>Earlier this year, Lilly settled with the state of Alaska on Zyprexa for $15 million &ndash; the first of several cases with US states claiming the withholding of data (<i>Scrip</i> Online, March 31st, 2008). The state's suit sought reimbursement for the medical costs of Alaska Medicaid patients who developed diabetes while taking the product; the state's claims to recover costs associated with Lilly's off-label promotion of Zyprexa was dismissed before trial.</p><p></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 10
+
+SC00000023
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20080909T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20080909T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20080909T000000
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Lilly faces Zyprexa class action brought by third-party payers
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{5E7670F6-58D7-431B-9E97-2E66425B4A56}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 3
+
+651
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160119T221709Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cc8be464-8c24-4b29-ae14-ae175cea3485
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160119T221709Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

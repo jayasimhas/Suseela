@@ -1,0 +1,121 @@
+----item----
+version: 1
+id: {D8165CF7-C852-4D78-BB1C-D1F835F82465}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/MainStory/SC00000009
+parent: {A61718FC-F04C-4C0F-A232-544018BC219E}
+name: SC00000009
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ebb89565-20b6-4245-8a82-0aa206c6e731
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Genzyme's strong second quarter offset by mipomersen payment
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 10
+
+SC00000009
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5037
+
+<p>Genzymehas followed on from its good start to the year with revenues of around $1.17 billion in the second quarter, up by 25% from the same period last year.</p><p>Though the company's net income was down from the second quarter of last year to $69.6 million (-17%), this was attributed to the payment of a $175 million licensing fee to Isis Pharmaceuticalsto secure the rights to mipomersen. Genzyme also used a portion of its cash to repurchase one million shares under its three-year stock buyback programme. Due to these expenses, it finished the quarter with about $1.3 billion in cash (-1%).</p><p>Foreign exchange rates, as with many other pharmaceutical and biotech companies, continued to play a role in Genzyme's fortunes, with a top-line increase in revenues of around $50 million attributable to the impact of favourable currency rates. On the bottom line, the increase was about $20 million.</p><p>Genzyme's lead treatment for Type 1 Gaucher's disease, Cerazyme (imiglucerase injection), was once again the company's highest earner with sales of $319 million (+13%). However, Myozyme (alglucosidase alfa) continued to show the highest rise in sales with an increase of 65% to $77 million. The company attributed the increase in sales to a faster than expected adoption by physicians and patients and consistent support from health authorities. Genzyme is currently hoping to secure approval for production of Myozyme at its 4,000 litre bioreactor manufacturing plant in Belgium, the use of which will be necessary to meet the anticipated global demand for the drug, the company believes. It expects to receive European approval early next year. Upon the approval, Genzyme will expand its Myozyme production capacity by about 250%.</p><p>Genzyme also anticipates a further five product developments, including the labelling expansion of Renvela (sevelamer carbonate) next year to include the treatment of chronic kidney disease patients with elevated phosphorus levels who are not on dialysis, as well as the launch of Mozobil (plerixafor) in the US and Europe next year. Mozobil is intended to enable patients with certain types of cancers to successfully receive a stem-cell transplantation.</p><p>Genzyme's costs look likely to continue to bite into its income as it recently signed an exclusive global agreement with PTC Therapeuticsto develop PTC124, an oral therapy currently in Phase IIb clinical trials for the treatment of genetic disorders due to nonsense mutations. Genzyme agreed in July to pay $100 million to PTC plus potential milestone and royalty payments of up to $337 million to develop and commercialise the product in all areas outside of the US and Canada (<i>Scrip</i> Online, July 18<sup>th</sup>, 2008).</p><p>Selling, general and administrative expenses were $347 million (+2%), while R&D expenses increased significantly by 92% to $382 million. The company's GAAP diluted earnings per share were $0.25 (-19%), and it expects GAAP earnings per share for this year to be $2.20.</p><p><i>Genzyme's 2Q and 1H 2008 Top Product Sales ($mill)</i></p><table class="articleViewTable"><tbody><tr><td width="22%"><p>Product</p>&nbsp;</td><td width="20%"><p>2nd quarter</p>&nbsp;</td><td width="20%"><p>% change</p>&nbsp;</td><td width="19%"><p>1st half</p>&nbsp;</td><td width="20%"><p>% change<sup>1</sup></p>&nbsp;</td></tr><tr><td width="22%"><p>Cerazyme</p>&nbsp;</td><td width="20%"><p>319</p>&nbsp;</td><td width="20%"><p>+13</p>&nbsp;</td><td width="19%"><p>624</p>&nbsp;</td><td width="20%"><p>+14</p>&nbsp;</td></tr><tr><td width="22%"><p>Renagel/ Renvela</p>&nbsp;</td><td width="20%"><p>169</p>&nbsp;</td><td width="20%"><p>+16</p>&nbsp;</td><td width="19%"><p>337</p>&nbsp;</td><td width="20%"><p>+19</p>&nbsp;</td></tr><tr><td width="22%"><p>Fabrazyme</p>&nbsp;</td><td width="20%"><p>127</p>&nbsp;</td><td width="20%"><p>+21</p>&nbsp;</td><td width="19%"><p>243</p>&nbsp;</td><td width="20%"><p>+19</p>&nbsp;</td></tr><tr><td width="22%"><p>Myozyme</p>&nbsp;</td><td width="20%"><p>77</p>&nbsp;</td><td width="20%"><p>+65</p>&nbsp;</td><td width="19%"><p>145</p>&nbsp;</td><td width="20%"><p>+71</p>&nbsp;</td></tr><tr><td width="22%"><p>Thymoglobulin/ Lymphoglobuline</p>&nbsp;</td><td width="20%"><p>46</p>&nbsp;</td><td width="20%"><p>+10</p>&nbsp;</td><td width="19%"><p>89</p>&nbsp;</td><td width="20%"><p>+10</p>&nbsp;</td></tr><tr><td width="22%"><p>Thyrogen</p>&nbsp;</td><td width="20%"><p>39</p>&nbsp;</td><td width="20%"><p>+34</p>&nbsp;</td><td width="19%"><p>73</p>&nbsp;</td><td width="20%"><p>+31</p>&nbsp;</td></tr><tr><td width="22%"><p>Aldurazyme</p>&nbsp;</td><td width="20%"><p>39</p>&nbsp;</td><td width="20%"><p>-</p>&nbsp;</td><td width="19%"><p>76</p>&nbsp;</td><td width="20%"><p>-</p>&nbsp;</td></tr><tr><td width="22%"><p>Sepra</p>&nbsp;</td><td width="20%"><p>35</p>&nbsp;</td><td width="20%"><p>+39</p>&nbsp;</td><td width="19%"><p>65</p>&nbsp;</td><td width="20%"><p>+36</p>&nbsp;</td></tr></tbody></table></p><p><sup>1</sup><i>estimated by Scrip.</i></p><p></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 10
+
+SC00000009
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Genzyme's strong second quarter offset by mipomersen payment
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200000909
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2AD2D79C-F126-4AAC-9114-86A3BCA197CA}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 3
+
+628
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160119T221707Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ebb89565-20b6-4245-8a82-0aa206c6e731
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160119T221708Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
