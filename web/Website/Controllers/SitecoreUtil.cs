@@ -67,16 +67,19 @@ namespace Informa.Web.Controllers
 					}).ToList();
 
 			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
-			
-			var wordDocURL = articleItem.Word_Document.Url;
-			wordDocURL = wordDocURL.Replace("-", " ");
-			var wordDoc = Sitecore.Context.Database.GetItem(wordDocURL);
 
-			if (wordDoc != null)
+			if (articleItem.Word_Document != null)
 			{
-				articleStruct.WordDocVersionNumber = wordDoc.Version.Number;
-				articleStruct.WordDocLastUpdateDate = wordDoc.Statistics.Updated.ToString();
-				articleStruct.WordDocLastUpdatedBy = wordDoc.Statistics.UpdatedBy;
+				var wordDocURL = articleItem.Word_Document.Url;
+				wordDocURL = wordDocURL.Replace("-", " ");
+				var wordDoc = Sitecore.Context.Database.GetItem(wordDocURL);
+
+				if (wordDoc != null)
+				{
+					articleStruct.WordDocVersionNumber = wordDoc.Version.Number;
+					articleStruct.WordDocLastUpdateDate = wordDoc.Statistics.Updated.ToString();
+					articleStruct.WordDocLastUpdatedBy = wordDoc.Statistics.UpdatedBy;
+				}
 			}
 
 			try
