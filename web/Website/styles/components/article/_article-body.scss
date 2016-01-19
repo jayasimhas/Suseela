@@ -1,13 +1,39 @@
 .article-body-content { // This appears to be the containing element for article bodies
     @include textMix('PTSerif', 18px, 400);
-    
+
+    &,
+    h1,
+    h3 {
+        margin-bottom: 1.5rem;
+    }
+
     h1 {
         @extend h1;
         color: $informa-black;
     }
 
+    h3 {
+        @include textMix('PT Serif', 1.5rem, 400);
+        font-style: italic;
+    }
+
     p {
         color: $informa-dark-gray;
-        line-height: 30px;
+        line-height: 2rem;
+    }
+
+    @include breakpoint('medium') {
+        font-size: 1rem;
+
+        p { line-height: 1.75rem; }
+
+        h1,
+        h3 {
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.25rem; }
+
+        h3 { font-size: 1.5rem; }
     }
 }
