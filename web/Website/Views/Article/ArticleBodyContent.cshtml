@@ -8,9 +8,6 @@
     <h6>Publication Name</h6>
     <h1>@Model.Title</h1>
     <h3>@Model.Sub_Title</h3>
-    @*<div class="article-preview__metadata">
-        <div class="article-preview__category">@Model.Article_Category</div>
-    </div>*@
 
     <div class="article-metadata">
         <ul>
@@ -44,17 +41,6 @@
             </li>
         </ul>
     </div>
-
-
-    @* * *  ARTICLE - FEATURED IMAGE
-        IIPP-117 *@
-    <aside class="article-inline-image">
-        <img src="http://lorempixel.com/800/450/technics">
-        <span class="article-inline-image__source">Image Source: Associated Press</span>
-        <span class="article-inline-image__caption">Image caption goes here</span>
-    </aside>
-    @* * *  END ARTICLE - FEATURED IMAGE *@
-
 
     @* MULTIPLE AUTHORS *@
     @if (Model.Authors.OfType<IAuthor>().Count() == 1)
@@ -97,8 +83,38 @@
         </div>
     @* END MULTIPLE AUTHORs *@
     }
-  
+
+    @* * *  ARTICLE - FEATURED IMAGE
+        IIPP-117 *@
+    <aside class="article-inline-image">
+        <img src="http://lorempixel.com/800/450/technics">
+        <span class="article-inline-image__source">Image Source: Associated Press</span>
+        <span class="article-inline-image__caption">Image caption goes here</span>
+    </aside>
+    @* * *  END ARTICLE - FEATURED IMAGE *@
 
     @Html.Raw(Model.Body)
+
+    @* * *  END ARTICLE - FEATURED IMAGE *@
+
+    <div class="article-interview">
+        <h2>Interviews and Q&amp;A</h2>
+
+        <div class="article-interview__question">
+            The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+        </div>
+        <div class="article-interview__answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </div>
+        <div class="article-interview__question">
+            The quick brown fox jumped over the lazy dog.
+        </div>
+        <div class="article-interview__answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </div>
+    </div>
+
+    @* * *  END ARTICLE - FEATURED IMAGE *@
+
 
 </div>

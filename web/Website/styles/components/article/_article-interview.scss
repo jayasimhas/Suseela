@@ -8,7 +8,7 @@
 
     &__question,
     &__answer {
-        line-height: 1.5rem;
+        line-height: 1.75rem;
         margin-bottom: 1.25rem;
     }
     &__question:before,
@@ -30,7 +30,6 @@
         color: $informa-black;
         padding-left: 2.5rem;
 
-
         &:before {
             background-color: #f0c3c5;
             border: 1px solid #cb8f9d;
@@ -48,5 +47,13 @@
             border: 1px solid #e9bf91;
             content: "A";
         }
+    }
+
+    @include breakpoint('small') {
+        &__answer {
+            margin-left: 0.75rem;
+            padding-left: 1.625rem;
+        }
+
     }
 }

@@ -21,6 +21,7 @@ using Sitecore.Workflows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Http.Results;
 
 namespace Informa.Web.Controllers
 {
@@ -50,18 +51,22 @@ namespace Informa.Web.Controllers
 				var publicationDate = DateTime.Parse(content.PublicationDate);
 				var parent = GenerateDailyFolder(content.PublicationID, publicationDate);
 				var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
-				var article = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
+				var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
+				var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
 				article.Title = content.Name;
 				article.Planned_Publish_Date = publicationDate;
 				article.Created_Date = DateTime.Now;
+				//_sitecoreMasterService.Save(article);
+				article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString(), content.PublicationID, publicationDate);
 				_sitecoreMasterService.Save(article);
-				article.Article_Number = SitecoreUtil.GetNextArticleNumber(article._Id.ToString(), content.PublicationID, publicationDate);
-				_sitecoreMasterService.Save(article);
-				return SitecoreUtil.GetArticleStruct(article);
+				var savedArticle = _sitecoreMasterService.GetItem<IArticle>(article._Id);
+				var articleStruct = SitecoreUtil.GetArticleStruct(savedArticle);
+				return articleStruct;
 			}
 		}
+		/*
 
-		[HttpPost]
+		//[HttpPost]
 		public int GetWordVersionNumByGuid([FromBody] Guid articleGuid)
 		{
 
@@ -73,8 +78,8 @@ namespace Informa.Web.Controllers
 			return GetWordVersionNumber(article);
 		}
 
-		[HttpPost]
-		public int GetWordVersionNumByGuid([FromBody] string articleNumber)
+		//[HttpPost]
+		public int GetWordVersionNumByNumber([FromBody] string articleNumber)
 		{
 			IArticle article = GetArticleByNumber(articleNumber);
 			if (article == null)
@@ -85,7 +90,7 @@ namespace Informa.Web.Controllers
 		}
 
 
-		[HttpPost]
+		//[HttpPost]
 		public WordPluginModel.ArticlePreviewInfo GetArtPreInfo([FromBody] string articleNumber)
 		{
 			IArticle article = GetArticleByNumber(articleNumber);
@@ -95,7 +100,7 @@ namespace Informa.Web.Controllers
 			return preview;
 		}
 
-		[HttpPost]
+		//[HttpPost]
 		public List<WordPluginModel.ArticlePreviewInfo> GetArticlePreviewInfo([FromBody] List<Guid> guids)
 		{
 			var previews = new List<WordPluginModel.ArticlePreviewInfo>();
@@ -126,7 +131,7 @@ namespace Informa.Web.Controllers
 		}
 
 
-		[HttpPost]
+		//[HttpPost]
 		public string GetArticleGuidByNum([FromBody] string articleNumber)
 		{
 			IArticle article = GetArticleByNumber(articleNumber);
@@ -138,7 +143,7 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="articlenumber">The unique article number</param>
 		/// <returns>The article URL</returns>
-		[HttpPost]
+		//[HttpPost]
 		public string GetArticleUrl([FromBody] string articleNumber)
 		{
 			Item article = GetArticleItemByNumber(articleNumber);
@@ -147,7 +152,7 @@ namespace Informa.Web.Controllers
 			return url;
 		}
 
-		[HttpPost]
+		//[HttpPost]
 		public string GetArticleDynamicUrl([FromBody] string articlenumber)
 		{
 			var options = new LinkUrlOptions();
@@ -155,7 +160,7 @@ namespace Informa.Web.Controllers
 			return mediaUrl;
 		}
 
-		[HttpPost]
+		//[HttpPost]
 		public string PreviewUrlArticle([FromBody] string articleNumber)
 		{
 			return PreviewArticleURL(articleNumber, WebUtil.GetHostName());
@@ -194,7 +199,7 @@ namespace Informa.Web.Controllers
 		}
 
 
-		public int SendDocumentToSitecore(string articleNumber, byte[] data, string extension, string username)
+		public int SendDocumentToSitecoreByArticleNumber(string articleNumber, byte[] data, string extension, string username)
 		{
 			IArticle article = GetArticleByNumber(articleNumber);
 			return SendDocumentToSitecore(article, data, extension, username);
@@ -221,7 +226,7 @@ namespace Informa.Web.Controllers
 
 		}
 
-		public int SendDocumentToSitecore(Guid articleGuid, byte[] data, string extension, string username)
+		public int SendDocumentToSitecoreByGuid(Guid articleGuid, byte[] data, string extension, string username)
 		{
 			IArticle article = _sitecoreMasterService.GetItem<IArticle>(articleGuid);
 			return SendDocumentToSitecore(article, data, extension, username);
@@ -313,7 +318,7 @@ namespace Informa.Web.Controllers
 			return false;
 
 		}
-
+		*/
 		/// <summary>
 		/// Generates the parent for a article
 		/// </summary>	
@@ -387,4 +392,5 @@ namespace Informa.Web.Controllers
 			return wordDoc?.Version.Number ?? -1;
 		}
 	}
+
 }
