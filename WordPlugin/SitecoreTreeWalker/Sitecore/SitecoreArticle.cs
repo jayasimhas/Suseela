@@ -29,7 +29,7 @@ namespace SitecoreTreeWalker
 			using (var client = new HttpClient())
 			{
 				var article = new WordPluginModel.CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/CreateArticle", article).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}SitecoreSaver/CreateArticle", article).Result;
 				var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
 				return articleItem;
 			}
