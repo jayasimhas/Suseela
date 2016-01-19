@@ -220,7 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authentication\IUserAuthenticationContext.cs" />
-    <Compile Include="Authentication\MockUserAuthenticationContext.cs" />
+    <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />
+    <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
+    <Compile Include="Corporate\MockCorporateAccountNameContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
     <Compile Include="CustomSitecore\Mvc\AreaControllerFactory.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomSitecoreHelper.cs" />
