@@ -30,7 +30,7 @@ namespace Informa.Web.ViewModels
 			SiteRootContext = siteRootContext;
 		}
 
-		public string LogoImageUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Site_Logo.Src;
+		public string LogoImageUrl => SiteRootContext.Item == null || SiteRootContext.Item.Site_Logo == null ? string.Empty : SiteRootContext.Item.Site_Logo.Src;
 
 		public string LogoUrl => SiteHomeContext.Item == null ? string.Empty : SiteHomeContext.Item._Url;
 
