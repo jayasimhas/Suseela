@@ -45,8 +45,7 @@
     <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-    <SitecoreDeployFolder>D:\Velir\Informa\web\Website</SitecoreDeployFolder>
-    <SitecoreWebUrl>http://hof.csmith.velir.com:9080</SitecoreWebUrl>
+    
     <OutputPath>.\bin\Debug-NoTds\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
   </PropertyGroup>
@@ -54,8 +53,7 @@
     <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-    <SitecoreDeployFolder>D:\Velir\Informa\web\Website</SitecoreDeployFolder>
-    <SitecoreWebUrl>http://hof.csmith.velir.com:9080</SitecoreWebUrl>
+    
     <OutputPath>bin\Release-NoTds\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
