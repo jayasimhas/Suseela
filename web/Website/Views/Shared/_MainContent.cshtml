@@ -1,22 +1,26 @@
 ﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.MainLayoutViewModel>
-    
+
 
 
     <div class="main__content">
 
+        @* * *  HIGHLIGHTS COMPONENT
+                IIPP-58 *@
+                
         <div class="banner banner--highlights">
+            @*
+            Per the ticket requirements, this should just be a rich-text field.
+            Don't worry too much about the tags in this placeholder copy.
+            Wipe out everything in this <div>, replace with single field.
+            *@
             <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
         </div>
+
+        @* * *  END HIGHLIGHTS COMPONENT *@
 
 
         @Html.Sitecore().Placeholder("main-content")
 
         @*@Html.Partial("../_Shared/DummyData/AuthoredContent")*@
-        <!--
-        Here is where the main content of the page goes. Everything else is WIP, but I'm confident enough that this page structure will hold no matter what. Anything inside here should show up properly, no matter what changes outside of this element.
-
-        HAVE FUN ᕕ( ᐛ )ᕗ GO CRAZY
-
-        !-->
 
     </div>

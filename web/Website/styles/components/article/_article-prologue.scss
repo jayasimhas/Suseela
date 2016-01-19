@@ -26,10 +26,10 @@
         }
     }
     &__share-icon {
-        height: 24px;
-        width: 24px;
-        vertical-align: middle;
         fill: $informa-mid-gray;
+        height: 24px;
+        vertical-align: middle;
+        width: 24px;
 
         &:nth-child(n+3) {
             margin-left: 1rem;
@@ -40,9 +40,10 @@
     }
 
     &__tags-bar {
+        align-self: flex-start;
         background-color: $informa-light-gray-f;
-        padding: 12px;
         display: inline-block;
+        padding: 12px;
         width: auto;
 
         a {
