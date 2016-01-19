@@ -28,10 +28,10 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\bin\Debug\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
-    <SitecoreWebUrl>http://informa8.ashah.velir.com</SitecoreWebUrl>
+
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>False</DisableFileDeployment>
-    <SitecoreDeployFolder>D:\Projects\Informa\web\Website</SitecoreDeployFolder>
+
     <SitecoreAccessGuid>e979f87e-c806-44f3-a59e-50c5fc4837be</SitecoreAccessGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
