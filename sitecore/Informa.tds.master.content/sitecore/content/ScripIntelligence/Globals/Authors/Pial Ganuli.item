@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {D4B9E378-75D6-42DE-86DF-A221A610D5A0}
+id: {5C1DBE5F-14DD-487D-9B42-BE5D8B4FD9CC}
 database: master
 path: /sitecore/content/ScripIntelligence/Globals/Authors/Pial Ganuli
 parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
 name: Pial Ganuli
 master: {00000000-0000-0000-0000-000000000000}
-template: {101B0388-7503-4BED-8F12-063F94C34D18}
-templatekey: Author
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
 
 ----version----
 language: en
 version: 1
-revision: f9e13441-56af-439c-a2d6-61b9297457de
+revision: f34b40b1-cad4-4915-b2ea-b7004fd98775
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,40 +29,26 @@ content-length: 6
 
 Ganuli
 ----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160111T160625Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20160114T214259Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-f9e13441-56af-439c-a2d6-61b9297457de
+f34b40b1-cad4-4915-b2ea-b7004fd98775
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160111T160625Z
+20160119T190920Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

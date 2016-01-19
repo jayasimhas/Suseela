@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {3F223C1A-C5BE-489E-A9CB-F55580A14454}
+id: {2AD2D79C-F126-4AAC-9114-86A3BCA197CA}
 database: master
 path: /sitecore/content/ScripIntelligence/Globals/Authors/Simon Varcoe
 parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
 name: Simon Varcoe
 master: {00000000-0000-0000-0000-000000000000}
-template: {101B0388-7503-4BED-8F12-063F94C34D18}
-templatekey: Author
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
 
 ----version----
 language: en
 version: 1
-revision: abb48860-0313-4b0a-a45e-49c27553e464
+revision: 344cc204-b734-4f03-94be-82eae8fa1a1a
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -36,40 +36,26 @@ content-length: 24
 
 simon.varcoe@informa.com
 ----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160111T160602Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20160114T214131Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-abb48860-0313-4b0a-a45e-49c27553e464
+344cc204-b734-4f03-94be-82eae8fa1a1a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160113T144822Z
+20160119T190932Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

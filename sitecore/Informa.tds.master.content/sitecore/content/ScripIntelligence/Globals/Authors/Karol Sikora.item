@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {A93DDC06-6940-4FC2-8546-3FFFBAB22B58}
+id: {840A0290-0F50-40B3-B0CD-F19EEFDC0C4D}
 database: master
 path: /sitecore/content/ScripIntelligence/Globals/Authors/Karol Sikora
 parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
 name: Karol Sikora
 master: {00000000-0000-0000-0000-000000000000}
-template: {101B0388-7503-4BED-8F12-063F94C34D18}
-templatekey: Author
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
 
 ----version----
 language: en
 version: 1
-revision: 170b84a2-f7da-400c-8121-cfeea9e95026
+revision: 4da6be78-1747-4177-90e5-737eaaf75100
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,40 +29,26 @@ content-length: 6
 
 Sikora
 ----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160111T160603Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20160114T214242Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-170b84a2-f7da-400c-8121-cfeea9e95026
+4da6be78-1747-4177-90e5-737eaaf75100
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160111T160603Z
+20160119T190855Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

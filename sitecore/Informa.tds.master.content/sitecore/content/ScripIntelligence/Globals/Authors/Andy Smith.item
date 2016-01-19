@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {2DB24666-4280-4712-A457-F00324133F50}
+id: {1D97FB85-B553-40BD-9378-6E2E6C2368C2}
 database: master
 path: /sitecore/content/ScripIntelligence/Globals/Authors/Andy Smith
 parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
 name: Andy Smith
 master: {00000000-0000-0000-0000-000000000000}
-template: {101B0388-7503-4BED-8F12-063F94C34D18}
-templatekey: Author
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
 
 ----version----
 language: en
 version: 1
-revision: 35b1464c-8c39-491d-ad43-1c60f32f5c31
+revision: d0f8e5d3-9356-4296-a546-1b27daeb28d6
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -36,40 +36,26 @@ content-length: 18
 
 owner@ndysmith.com
 ----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160111T160612Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20160114T214249Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-35b1464c-8c39-491d-ad43-1c60f32f5c31
+d0f8e5d3-9356-4296-a546-1b27daeb28d6
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160113T142646Z
+20160119T190924Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

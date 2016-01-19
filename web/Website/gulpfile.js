@@ -66,7 +66,7 @@ gulp.task("dev-nowatch", function(){
     utils.setConfig({
         env   : "dev",
         watch : false,
-        notify: false
+        notify: true
     });
 
     // build with this config

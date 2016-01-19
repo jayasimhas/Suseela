@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {2FB30CBC-83E5-4A52-9A85-9A219AC1F6A0}
+id: {9C45C4BF-C313-40A7-B2CE-C5A1179813E9}
 database: master
 path: /sitecore/content/ScripIntelligence/Globals/Authors/Sita Shah
 parent: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
 name: Sita Shah
 master: {00000000-0000-0000-0000-000000000000}
-template: {101B0388-7503-4BED-8F12-063F94C34D18}
-templatekey: Author
+template: {DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+templatekey: Staff Item
 
 ----version----
 language: en
 version: 1
-revision: c108b85d-eb79-4faf-bffd-87fba3652523
+revision: 4f15563e-83b6-4cac-96c2-b8239ccc5365
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -36,40 +36,26 @@ content-length: 21
 
 sita.shah@informa.com
 ----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
-----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160111T160602Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20160114T214131Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-c108b85d-eb79-4faf-bffd-87fba3652523
+4f15563e-83b6-4cac-96c2-b8239ccc5365
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160113T144822Z
+20160119T190858Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
