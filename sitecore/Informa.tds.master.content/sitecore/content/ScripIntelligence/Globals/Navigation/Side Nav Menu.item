@@ -7,7 +7,7 @@ parent: {625B5FAF-32E6-4651-A007-D4D78FA9E5AC}
 name: Side Nav Menu
 master: {00000000-0000-0000-0000-000000000000}
 template: {8C125392-64E5-4E29-85D9-6B1591AE8E5B}
-templatekey: Navigation
+templatekey: Navigation Root
 
 ----version----
 language: en
