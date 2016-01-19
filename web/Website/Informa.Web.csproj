@@ -601,7 +601,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="gulpfile.js" />
     <Content Include="js\aaa.zepto.min.js" />
-    <Content Include="js\bbb-vendor.js" />
     <Content Include="js\ccc-jscookie.js" />
     <Content Include="js\informa.js" />
     <Content Include="js\svg4everybody.js" />
