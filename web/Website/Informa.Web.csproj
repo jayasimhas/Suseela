@@ -650,7 +650,6 @@
     <Content Include="App_Config\Include\FXM\Sitecore.FXM.Lucene.DomainsSearch.Index.Master.config" />
     <Content Include="App_Config\Include\FXM\Sitecore.FXM.Lucene.DomainsSearch.Index.Web.config" />
     <Content Include="App_Config\Include\FXM\Sitecore.FXM.Speak.config" />
-    <Content Include="App_Config\Include\ja-JP.config.example" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
     <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Client.config" />
     <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.config" />
@@ -747,8 +746,6 @@
     <Content Include="App_Config\Include\Social\Sitecore.Social.SocialMarketer.config" />
     <Content Include="App_Config\Include\Social\Sitecore.Social.Twitter.config" />
     <Content Include="App_Config\Include\Velir.Search.Web.config" />
-    <Content Include="App_Config\Include\WebDeploy.config.example" />
-    <Content Include="App_Config\Include\XslExtension.config.example" />
     <Content Include="App_Config\Include\zz.Sitecore.HtmlCache.config" />
     <Content Include="App_Config\LanguageDefinitions.config" />
     <Content Include="App_Config\MimeTypes.config" />
