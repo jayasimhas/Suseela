@@ -21,39 +21,41 @@
         <a href="@Model.LogoUrl"><img class="header__logo" src="@Model.LogoImageUrl"></a>
 
         <div class="header__user-actions">
+			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+			{
+				<div class="header__friendly-welcome">@Model.WelcomeText</div>
+			}
 
-            @if (Request.IsAuthenticated)
+			@*@Request.IsAuthenticated*@
+            @if (Model.IsAuthenticated)
             {
-    <!-- IF SIGNED IN  !-->
+				@* Signed In *@
                 using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm" }))
                 {
                     @Html.AntiForgeryToken()
-                    <div class="header__friendly-welcome">Hi, @User.Identity.Name</div>
+                    @*<div class="header__friendly-welcome">Hi, @User.Identity.Name</div>*@
                     <div class="header__my-account">
                         <svg class="header__icons icon-my-account">
                             <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
                         </svg>
-                        @Html.ActionLink("My Account", "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })
+                        @Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })
                     </div>
                     <div class="header__sign-out">
                         <svg class="header__icons icon-sign-out">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                         </svg>
-                        <a href="javascript:document.getElementById('logoutForm').submit()">Sign Out</a>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">@Model.SignOutLinkText</a>
                     </div>
-                }
-     <!-- IF SIGNED IN !-->
-            }
-            else
-            {
-      <!-- IF SIGNED OUT !-->
+				}
+			}
+			else
+			{
                 <div class="header__my-account pop-out__trigger js-toggle-pop-out">
                     <span class="pop-out__trigger-content">
                         <svg class="header__icons icon-register">
                             <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                         </svg>
-                        @Html.ActionLink("Register", "Register", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "registerLink" })
-                        <a href="#">Register</a>
+                        @Html.ActionLink(Model.RegisterLinkText, "Register", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "registerLink" })
                     </span>
                     <div class="pop-out header__hover--register">
                         <div class="pop-out__internal">
@@ -62,14 +64,14 @@
                                     <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
                                 </svg>
                             </div>
-                            <h2>Register</h2>
+                            <h2>@Model.RegisterText</h2>
                             <input class="text-field header__hover-input"
                                    type="text"
-                                   placeholder="Email Address (User Name)">
-                            <button class="button--filled">Register</button>
+                                   placeholder="@Model.UsernamePlaceholderText">
+							<!-- @Model.UsernameInvalidText -->
+                            <button class="button--filled">@Model.RegisterButtonText</button>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="header__sign-in-out pop-out__trigger js-toggle-pop-out">
@@ -77,7 +79,7 @@
                         <svg class="header__icons icon-sign-in">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                         </svg>
-                        @Html.ActionLink("Sign In", "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })
+                        @Html.ActionLink(Model.SignInLinkText, "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })
                     </span>
                     <div class="pop-out">
                         <div class="pop-out__internal pop-out__internal--flush-right">
@@ -86,14 +88,11 @@
                                 <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
                             </svg>
                         </div>
-                        <h2 class="pop-out__header">Sign In</h2>
-
-                        @Html.Partial("_SignInForm")
-
+                        <h2 class="pop-out__header">@Model.SignInText</h2>
+						@{ Html.RenderPartial("_SignInForm"); }
                         </div>
                     </div>
                 </div>
-
             }
 
 
