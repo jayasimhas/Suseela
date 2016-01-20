@@ -22,8 +22,8 @@ namespace Informa.Web.ViewModels
 
 		public IEnumerable<INavigation> Navigation => SiteMainNavigationContext.Navigation;
 
-		public string MenuText => TextTranslator.Translate("Menu");
+		public string MenuText => TextTranslator.Translate("MainNavigation.Menu");
 
-		public string MenuButtonText => TextTranslator.Translate("ToggleMenu");
+		public string MenuButtonText => TextTranslator.Translate("MainNavigation.ToggleMenu");
 	}
 }

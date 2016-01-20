@@ -20,7 +20,7 @@ namespace Informa.Web.ViewModels
 		}
 
 		public string Message => SiteMaintenanceContext.Info.Message;
-		public string DismissText => TextTranslator.Translate("MaintenanceDismiss");
+		public string DismissText => TextTranslator.Translate("Maintenance.MaintenanceDismiss");
 		public DateTime DisplayFrom => SiteMaintenanceContext.Info.From;
 		public DateTime DisplayTo => SiteMaintenanceContext.Info.To;
 	}

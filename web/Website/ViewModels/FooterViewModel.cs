@@ -64,7 +64,7 @@ namespace Informa.Web.ViewModels
 
 		public IEnumerable<IPageLink> LocalLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Local_Footer_Links);
 
-		public string FollowText => TextTranslator.Translate("FooterFollow");
+		public string FollowText => TextTranslator.Translate("Footer.Follow");
 
 		public Link LinkedInLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.LinkedIn_Link;
 

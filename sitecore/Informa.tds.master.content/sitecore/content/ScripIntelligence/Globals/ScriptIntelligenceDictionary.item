@@ -2,9 +2,9 @@
 version: 1
 id: {988532EA-59F9-404C-9820-C78781678457}
 database: master
-path: /sitecore/content/ScripIntelligence/Globals/Dictionary
+path: /sitecore/content/ScripIntelligence/Globals/ScriptIntelligenceDictionary
 parent: {17234365-4D50-43AD-ABD2-37EA73DEF1F8}
-name: Dictionary
+name: ScriptIntelligenceDictionary
 master: {889767CC-D285-4612-8F29-2D61C5F5CBBF}
 template: {0A2847E6-9885-450B-B61E-F9E6528480EF}
 templatekey: Dictionary Domain
@@ -26,7 +26,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: 42ed5d1f-a7b3-4ad9-a9ef-f7949f4c69b1
+revision: 60c3806a-3a5b-44dc-84ca-4c4802639f55
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-42ed5d1f-a7b3-4ad9-a9ef-f7949f4c69b1
+60c3806a-3a5b-44dc-84ca-4c4802639f55
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160106T162637Z
+20160120T151552Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
