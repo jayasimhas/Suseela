@@ -108,7 +108,7 @@ $main-menu-handle-width: 70px;
 .main-menu__hoverable {
 	position: relative;
 
-	a {
+	.main-menu__section-link {
 		padding-left: 2.5rem;
 	}
 	&:hover:before {
