@@ -590,13 +590,6 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
-    <Content Include="dist\empty.txt" />
-    <Content Include="dist\img\informa-logo.png" />
-    <Content Include="dist\img\scrip-logo.jpg" />
-    <Content Include="dist\img\svg-sprite.svg" />
-    <Content Include="dist\index-generated.css" />
-    <Content Include="dist\js\concat.js" />
-    <Content Include="dist\js\vendor.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -894,8 +887,6 @@
     <Content Include="App_Config\Include\UserDefined\Sites.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="dist\index-generated.css.map" />
-    <Content Include="dist\js\vendor.js.map" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
