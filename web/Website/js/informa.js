@@ -46,7 +46,7 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 });
 
 /* Generic toggle pop-out */
-$('.js-toggle-pop-out').on('click', function togglePopOut(e) {
+$('.pop-out__trigger-content').on('click', function togglePopOut(e) {
 	$(e.target).parents('.pop-out__trigger').toggleClass('is-active');
 });
 
@@ -59,4 +59,21 @@ $(document).ready(function() {
 		}
 	});
 
+});
+
+// Pre-registration username validation
+$('.header__hover--register .js-register-submit').on('click', function validateUsername(e) {
+	var submitButton = $(e.target);
+	var username = submitButton.siblings('.js-register-username').val();
+
+	$.post('account/api/accountvalidation/username/', { username: username }, function (response) {
+		if (response.valid) {
+			var redirectUrl = submitButton.attr('data-register-redirect');
+			
+			window.location.href = redirectUrl + '?username=' + username;
+		}
+		else {
+			submitButton.siblings('.js-register-invalid').show();
+		}
+	});
 });

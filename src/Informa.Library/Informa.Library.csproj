@@ -242,6 +242,8 @@
     <Compile Include="Navigation\ItemNavigationTreeFactory.cs" />
     <Compile Include="Navigation\Navigation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration\IUsernameValidator.cs" />
+    <Compile Include="Registration\MockUsernameValidator.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />

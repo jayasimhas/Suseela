@@ -15,6 +15,7 @@ namespace Informa.Web.ViewModels
 		string RegisterText { get; }
 		string RegisterLinkText { get; }
 		string RegisterButtonText { get; }
+		string RegisterUrl { get; }
 		string UsernamePlaceholderText { get; }
 		string UsernameInvalidText { get; }
 		string SignInText { get; }

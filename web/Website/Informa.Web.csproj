@@ -526,6 +526,8 @@
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\ManageController.cs" />
     <Compile Include="Areas\Account\Controllers\SalesforceConnectorController.cs" />
+    <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
+    <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
     <Compile Include="Areas\Account\Models\WordPluginModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
@@ -588,6 +590,13 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="dist\empty.txt" />
+    <Content Include="dist\img\informa-logo.png" />
+    <Content Include="dist\img\scrip-logo.jpg" />
+    <Content Include="dist\img\svg-sprite.svg" />
+    <Content Include="dist\index-generated.css" />
+    <Content Include="dist\js\concat.js" />
+    <Content Include="dist\js\vendor.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -885,6 +894,8 @@
     <Content Include="App_Config\Include\UserDefined\Sites.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="dist\index-generated.css.map" />
+    <Content Include="dist\js\vendor.js.map" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

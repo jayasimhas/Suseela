@@ -49,6 +49,7 @@ namespace Informa.Web.ViewModels
 		public string RegisterText => TextTranslator.Translate("Register");
 		public string RegisterLinkText => TextTranslator.Translate("Register Link");
 		public string RegisterButtonText => TextTranslator.Translate("Register Button");
+		public string RegisterUrl => SiteRootContext.Item == null || SiteRootContext.Item.Register_Link == null ? string.Empty : SiteRootContext.Item.Register_Link.Url;
 		public string UsernamePlaceholderText => TextTranslator.Translate("Username Placeholder"); //"Email Address (User Name)"
 		public string UsernameInvalidText => TextTranslator.Translate("Username Invalid"); //"Invalid Email Address (User Name)"
 		public string SignInText => TextTranslator.Translate("Sign In");

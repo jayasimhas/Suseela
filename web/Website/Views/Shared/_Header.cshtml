@@ -55,7 +55,8 @@
                         <svg class="header__icons icon-register">
                             <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                         </svg>
-                        @Html.ActionLink(Model.RegisterLinkText, "Register", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "registerLink" })
+						@Model.RegisterLinkText
+                        @*@Html.ActionLink(Model.RegisterLinkText, "Register", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "registerLink" })*@
                     </span>
                     <div class="pop-out header__hover--register">
                         <div class="pop-out__internal">
@@ -65,11 +66,11 @@
                                 </svg>
                             </div>
                             <h2>@Model.RegisterText</h2>
-                            <input class="text-field header__hover-input"
+                            <input class="text-field header__hover-input js-register-username"
                                    type="text"
                                    placeholder="@Model.UsernamePlaceholderText">
-							<!-- @Model.UsernameInvalidText -->
-                            <button class="button--filled">@Model.RegisterButtonText</button>
+							<p class="js-register-invalid" style="display: none;">@Model.UsernameInvalidText</p>
+                            <button class="button--filled js-register-submit" data-register-redirect="@Model.RegisterUrl">@Model.RegisterButtonText</button>
                         </div>
                     </div>
                 </div>
@@ -79,7 +80,8 @@
                         <svg class="header__icons icon-sign-in">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                         </svg>
-                        @Html.ActionLink(Model.SignInLinkText, "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })
+						@Model.SignInLinkText
+                        @*@Html.ActionLink(Model.SignInLinkText, "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })*@
                     </span>
                     <div class="pop-out">
                         <div class="pop-out__internal pop-out__internal--flush-right">

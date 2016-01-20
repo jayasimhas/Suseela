@@ -45,7 +45,6 @@
     <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-    
     <OutputPath>.\bin\Debug-NoTds\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
   </PropertyGroup>
@@ -53,7 +52,6 @@
     <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-    
     <OutputPath>bin\Release-NoTds\</OutputPath>
   </PropertyGroup>
   <ItemGroup>

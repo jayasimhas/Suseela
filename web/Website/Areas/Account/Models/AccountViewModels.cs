@@ -89,7 +89,7 @@ namespace Informa.Web.Areas.Account.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class ResetPasswordViewModel
+	public class ResetPasswordViewModel
     {
         [Required]
         [EmailAddress]
