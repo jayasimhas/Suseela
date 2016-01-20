@@ -1,5 +1,6 @@
-// TODO include this file individually to prevent one giant file
-// TODO note that this is Zepto, not jQuery
+import Zepto from './zepto.min';
+import svg4everybody from './svg4everybody';
+import Cookies from './jscookie';
 
 /* Toggle menu visibility */
 $('.js-toggle-menu').on('click', function toggleMenu() {
@@ -50,16 +51,6 @@ $('.pop-out__trigger-content').on('click', function togglePopOut(e) {
 	$(e.target).parents('.pop-out__trigger').toggleClass('is-active');
 });
 
-$(document).ready(function() {
-
-	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
-	$('.banner').each(function() {
-		if($(this).data('banner-id') in dismissedBanners === false) {
-			$(this).addClass('is-visible');
-		}
-	});
-
-});
 
 // Pre-registration username validation
 $('.header__hover--register .js-register-submit').on('click', function validateUsername(e) {
@@ -69,11 +60,24 @@ $('.header__hover--register .js-register-submit').on('click', function validateU
 	$.post('account/api/accountvalidation/username/', { username: username }, function (response) {
 		if (response.valid) {
 			var redirectUrl = submitButton.attr('data-register-redirect');
-			
+
 			window.location.href = redirectUrl + '?username=' + username;
 		}
 		else {
 			submitButton.siblings('.js-register-invalid').show();
 		}
 	});
+});
+
+
+$(document).ready(function() {
+    svg4everybody();
+
+    var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
+	$('.banner').each(function() {
+		if($(this).data('banner-id') in dismissedBanners === false) {
+			$(this).addClass('is-visible');
+		}
+	});
+
 });

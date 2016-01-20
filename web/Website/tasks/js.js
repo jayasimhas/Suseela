@@ -2,21 +2,22 @@ var gulp           = require("gulp"),
     utils          = require("./utils"),
     config         = utils.loadConfig(),
     gulpif         = require("gulp-if"),
+    fs             = require("fs"),
     uglify         = require("gulp-uglify"),
-    concat         = require("gulp-concat"),
     sourcemaps     = require("gulp-sourcemaps"),
     browserify     = require("browserify"),
+    shim           = require("browserify-shim"),
     through2       = require("through2"),
     babelify       = require("babelify");
 
 
-// dev/default settings 
+// dev/default settings
 utils.setTaskConfig("js", {
 
     default: {
 
-        src: config.root + '/js/**/*.js',
-        dest: config.dest + '/js',
+        src: config.root + "/js/index.js",
+        dest: config.dest + "/js",
 
         // js uglify options, to skip, set value to false or omit entirely
         // otherwise, pass options object (can be empty {})
@@ -51,14 +52,16 @@ gulp.task("js", function(){
 
     var js = utils.loadTaskConfig("js");
 
-     // for browserify usage, see https://medium.com/@sogko/gulp-browserify-the-gulp-y-way-bb359b3f9623
-    // ^^ we can't use vinyl-transform anymore because it breaks when trying to use b.transform()  // https://github.com/sogko/gulp-recipes/tree/master/browserify-vanilla
+    // for browserify usage, see https://medium.com/@sogko/gulp-browserify-the-gulp-y-way-bb359b3f9623
+    // ^^ we can't use vinyl-transform anymore because it breaks when trying to use b.transform()
+    // https://github.com/sogko/gulp-recipes/tree/master/browserify-vanilla
     var browserifyIt = through2.obj(function (file, enc, callback){
 
         // https://github.com/substack/node-browserify/issues/1044#issuecomment-72384131
         var b = browserify(js.browserify || {}) // pass options
             .add(file.path) // this file
-            .transform(babelify);
+            .transform(babelify)
+            .transform(shim);
 
         b.bundle(function(err, res){
             if (err){
@@ -74,12 +77,9 @@ gulp.task("js", function(){
 
     return gulp.src(js.src)
         .pipe(utils.drano())
-        //.pipe(browserifyIt)
-        //.pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
+        .pipe(browserifyIt)
+        .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
         .pipe(gulpif((js.uglify), uglify(js.uglify)))
-        .pipe(concat('concat.js'))
-        //.pipe(sourcemaps.write("./"))
+        .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(js.dest));
 });
-
-
