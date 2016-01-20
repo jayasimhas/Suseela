@@ -80,4 +80,8 @@ $(document).ready(function() {
 		}
 	});
 
+	// For each article table, clone and append "view full table" markup
+	$('.article-body-content table').forEach(function(e) {
+		$(e).after($('.js-mobile-table-template .article-table').clone());
+	});
 });
