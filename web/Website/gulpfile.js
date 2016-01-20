@@ -1,3 +1,4 @@
+/// <binding Clean='dev-nowatch' />
 /**
  *  Usage:
  *      Once per computer:
