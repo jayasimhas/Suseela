@@ -14,6 +14,17 @@
         margin-right: 0.75rem;
         padding-right: 0.75rem;
 
+        @include breakpoint('small') {
+            max-width: 150px;
+        }
+        
+        h6 {
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         &:last-child {
             border: 0;
         }
