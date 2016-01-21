@@ -1,0 +1,41 @@
+.sidebox,
+.article-quick-facts {
+    float: right;
+    padding: 2rem 1.75rem 0;
+    margin: 2rem 0 2rem 2rem;
+    background-color: #ffeedd;
+    width: 50%;
+
+    p,
+    ul,
+    ol {
+        color: $informa-black;
+        margin-bottom: 2rem;
+    }
+}
+p.quickfactstitle,
+.article-quick-facts__title {
+    @include textMix('Roboto Condensed', 1.625rem, 700);
+    color: $informa-black;
+    margin: 0 0 1rem;
+}
+
+ul.quickfactsbulleted li,
+.article-quick-facts ul li {
+    color: $informa-black;
+
+    &:before { } // See shame.scss
+}
+ol.quickfactsnumbered li,
+.article-quick-facts ol li {
+    list-style-position: inside;
+    list-style-type: decimal;
+    color: $informa-black;
+}
+p.quickfactssource,
+.article-quick-facts__source {
+    @include textMix('Roboto', 0.9375rem, 400);
+    font-style: italic;
+    float: right;
+    color: $informa-dark-gray;
+}
