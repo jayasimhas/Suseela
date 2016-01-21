@@ -558,6 +558,7 @@
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\HighlightViewModel.cs" />
     <Compile Include="ViewModels\IFooterViewModel.cs" />
     <Compile Include="ViewModels\IHeaderViewModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />

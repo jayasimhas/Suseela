@@ -3728,6 +3728,10 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Highlights.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Highlights\ASCO.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -4939,6 +4943,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Legacy Images.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\scriplogo.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>

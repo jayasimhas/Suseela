@@ -1,3 +1,4 @@
-﻿<div class="banner banner--highlights">
-	<b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
+﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.HighlightViewModel>
+<div class="banner banner--highlights">
+	@Editable(Model.GlassModel, gm => gm.Highlight)
 </div>
