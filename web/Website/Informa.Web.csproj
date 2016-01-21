@@ -594,10 +594,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="gulpfile.js" />
-    <Content Include="js\aaa.zepto.min.js" />
-    <Content Include="js\ccc-jscookie.js" />
-    <Content Include="js\informa.js" />
+    <Content Include="js\index.js" />
+    <Content Include="js\jscookie.js" />
     <Content Include="js\svg4everybody.js" />
+    <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
     <Content Include="layouts\Sample Datasource Sublayout.ascx" />
     <Content Include="layouts\Sample Inner Sublayout.ascx" />
@@ -887,6 +887,7 @@
     <Content Include="App_Config\Include\UserDefined\Sites.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="js\package.json" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
