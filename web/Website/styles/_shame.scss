@@ -14,9 +14,9 @@
 	// This is ugly as hell, but the best way to use an SVG in a pseudo-element.
 	// Can use SVG as a `content` value, but not with a # for sprite targeting.
 	// Can't resize `content` SVGs image easily. Also, using a PNG loses the
-	// 	benfit of resolution independence.
+	// 	benefit of resolution independence.
 	// Could inline an <svg> tag for each <li> but that would be a LOT of
-	//  unncesessary code.
+	// 	unncesessary code.
 	// So: made a copy of right-arrow.svg and base64'd it for inline'ing.
 	// NOTE: SVG below is staticly colored with `fill: #f7941e`
 	// Will need to update string below to change color, not just `color` rule.
