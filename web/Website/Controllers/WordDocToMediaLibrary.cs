@@ -7,6 +7,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Models;
 using Sitecore.Resources.Media;
 
@@ -34,6 +35,18 @@ namespace Informa.Web.Controllers
 			var itemFolder = GetMediaFolder(publicationGuid, articleDate);
 			var path = itemFolder._Path;
 			return CreateMediaLibraryItemFromFile(fileName, docName, extension, username, path);
+		}
+
+		public static Item GetMSWordDocumentRootNode()
+		{
+			IItem_Pointer_Config pointer = SitecoreMasterService.GetItem<IItem_Pointer_Config>("{FDBFCAC8-03CA-4B0B-BEFE-2171050E19C6}");
+			if (pointer == null) return null;
+			return SitecoreMasterService.GetItem<Item>(pointer.Item_Pointer);
+		}
+		public static string GetMSWordDocumentRootNodePath()
+		{
+			var item = GetMSWordDocumentRootNode();
+			return item?.Paths.FullPath;
 		}
 
 		public static IMedia_Folder GetMediaFolder(Guid publicationGuid, DateTime date)

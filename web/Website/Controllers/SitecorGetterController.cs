@@ -7,8 +7,10 @@ using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.System;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Article_Sizes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
@@ -126,11 +128,6 @@ namespace Informa.Web.Controllers
 		}
 	}
 
-
-
-
-
-
 	[Route]
 	public class GraphicsNodeController : ApiController
 	{
@@ -189,7 +186,6 @@ namespace Informa.Web.Controllers
 		}
 	}
 
-
 	[Route]
 	public class GetAuthorsController : ApiController
 	{
@@ -229,11 +225,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class IsAvailableController : ApiController
 	{
-		public IsAvailableController(){ }
+		public IsAvailableController() { }
 		// GET api/<controller>
-		public JsonResult<bool> Get(){return Json(true);}
+		public JsonResult<bool> Get() { return Json(true); }
 	}
-
 
 	[Route]
 	public class GetArticleSizeForPublicationController : ApiController
@@ -286,8 +281,6 @@ namespace Informa.Web.Controllers
 			return Json(sizes);
 		}
 	}
-
-
 
 	[Route]
 	public class GetMediaTypesController : ApiController
@@ -343,6 +336,7 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
+	//TODO - need to fix this
 	public class WordPluginController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreService;
@@ -371,8 +365,6 @@ namespace Informa.Web.Controllers
 			return Json(length);
 		}
 	}
-
-
 
 	[Route]
 	public class SupportingDocumentsNodeController : ApiController
@@ -409,7 +401,7 @@ namespace Informa.Web.Controllers
 		// GET api/<controller>
 		public JsonResult<WordPluginModel.DirectoryStruct[]> Get()
 		{
-			var item = _sitecoreService.GetItem<Item>("{11111111-1111-1111-1111-111111111111}");			
+			var item = _sitecoreService.GetItem<Item>("{11111111-1111-1111-1111-111111111111}");
 			var children = new List<WordPluginModel.DirectoryStruct>();
 
 			foreach (var child in item.Children.ToArray())
@@ -507,7 +499,6 @@ namespace Informa.Web.Controllers
 		}
 
 	}
-
 	public class GetMediaLibraryItemController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreService;
@@ -583,7 +574,6 @@ namespace Informa.Web.Controllers
 			return Json(mediaItem);
 		}
 	}
-
 	public class MediaPreviewUrlController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreService;
@@ -633,6 +623,21 @@ namespace Informa.Web.Controllers
 
 	}
 
+	public class GetDocumentPasswordController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetDocumentPasswordController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<string> Get()
+		{
+			IText_Node pass = _sitecoreService.GetItem<IText_Node>("{990801B9-36A1-499C-91D4-D1562D4B93F4}");
+			return Json(pass.Text);			
+		}
+	}
+
 	[Route]
 	public class GetHierarchyByGuidController : ApiController
 	{
@@ -678,9 +683,11 @@ namespace Informa.Web.Controllers
 	public class GetArticleDetailsBGController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreService;
-		public GetArticleDetailsBGController(ISitecoreService service)
+		private readonly ArticleUtil _articleUtil;
+		public GetArticleDetailsBGController(ISitecoreService service, ArticleUtil articleUtil)
 		{
 			_sitecoreService = service;
+			_articleUtil = articleUtil;
 		}
 		// GET api/<controller>
 		public JsonResult<WordPluginModel.ArticleStruct> Get()
@@ -691,7 +698,46 @@ namespace Informa.Web.Controllers
 		public JsonResult<WordPluginModel.ArticleStruct> Get(string guid)
 		{
 			IArticle article = _sitecoreService.GetItem<IArticle>(guid);
-			return Json(article == null ? new WordPluginModel.ArticleStruct() : SitecoreUtil.GetArticleStruct(article));
+			return Json(article == null ? new WordPluginModel.ArticleStruct() : _articleUtil.GetArticleStruct(article));
+		}
+	}
+
+	[Route]
+	//TODO - wrtie a service that will check for duplicate article names
+	public class DoesArticleNameAlreadyExistInIssueController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public DoesArticleNameAlreadyExistInIssueController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<bool> Get()
+		{
+			return Json(false);
+		}
+	}
+
+
+	[Route]
+	public class GetArticleUrlController : ApiController
+	{
+		private readonly ArticleUtil _articleUtil;
+		public GetArticleUrlController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+		// GET api/<controller>
+		/// <summary>
+		/// Get the Article URL by its article number.
+		/// </summary>
+		/// <returns>The article URL</returns>
+		public JsonResult<string> Get(string articleNumber)
+		{
+			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+			if (article == null) return null;
+			var url = LinkManager.GetItemUrl(article).ToLower();
+			return Json(url);
 		}		
 	}
 }

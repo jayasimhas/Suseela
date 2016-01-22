@@ -231,6 +231,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
+				//TODO - This might change due to change in Staff and Authors
 				var response = client.GetAsync($"{webApiURL}GetAuthors").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;

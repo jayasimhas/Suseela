@@ -43,9 +43,12 @@ namespace SitecoreTreeWalker
 
 		public static bool DoesArticleNameAlreadyExistInIssue(SitecoreTree.ArticleStruct articleDetails)
 		{
-			var tree = new SCTree();
-			tree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return tree.DoesArticleNameAlreadyExistInIssue(articleDetails, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}DoesArticleNameAlreadyExistInIssue").Result;				
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
 		}
 
 		public static void SaveMetadataToSitecore(string articleID, ArticleStruct articleData)
@@ -55,11 +58,17 @@ namespace SitecoreTreeWalker
 			server.SaveArticleDetails(articleID, articleData, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
 		}
 
-		public static void SaveArticleDetailsByGuid(Guid articleGuid, ArticleStruct articleData)
+		public static void SaveArticleDetailsByGuid(Guid articleGuid, WordPluginModel.ArticleStruct articleData)
 		{
+			using (var client = new HttpClient())
+			{
+				var article = new WordPluginModel.SaveArticleDetailsByGuid() { ArticleGuid = articleGuid, ArticleData = articleData};
+				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleDetailsByGuid", article).Result;
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			server.SaveArticleDetailsByGuid(articleGuid, articleData, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			server.SaveArticleDetailsByGuid(articleGuid, articleData, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);*/
 		}
 
 		public static string GetArticleUrl(string articleNumber)
@@ -200,7 +209,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetArticlePreviewInfo", guids).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}/GetArticlePreviewInfo", guids).Result;
 				var articlePreviewCollection = JsonConvert.DeserializeObject<List<SitecoreTree.ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
 				return articlePreviewCollection;
 			}
@@ -279,9 +288,11 @@ namespace SitecoreTreeWalker
 
 		public static string GetDocumentPassword()
 		{
-			var sctree = new SitecoreTree.SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.GetDocumentPassword(SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}GetDocumentPassword").Result;
+				return response.Content.ReadAsStringAsync().Result;
+			}
 		}
 
 		public List<string> SaveArticle(Document activeDocument, SitecoreTree.ArticleStruct articleDetails,
@@ -317,7 +328,7 @@ namespace SitecoreTreeWalker
 				var documentCustomProperties = new DocumentCustomProperties(activeDocument);
 				articleDetails.ArticleSpecificNotifications = notifications;
 				articleDetails.WordCount = activeDocument.ComputeStatistics(0);
-				articleDetails.ChildArticles = _wordUtils.SidebarArticleParser.SidebarArticleGuids.ToArray();
+				//articleDetails.ChildArticles = _wordUtils.SidebarArticleParser.SidebarArticleGuids.ToArray();
 				articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToArray();
 				articleDetails.CommandID = workflowCommand;
 				articleDetails.SupportingDocumentPaths = _wordUtils.GetSupportingDocumentPaths().ToArray();
@@ -337,13 +348,11 @@ namespace SitecoreTreeWalker
 				}
 				if (articleDetails.ArticleGuid != Guid.Empty)
 				{
-					SitecoreArticle.SaveArticleText(articleDetails.ArticleGuid, text,
-													_structConverter.GetServerStruct(articleDetails));
+					SitecoreArticle.SaveArticleText(articleDetails.ArticleGuid, text,_structConverter.GetServerStruct(articleDetails));
 				}
 				else
 				{
-					SitecoreArticle.SaveArticleText(articleNumber, text,
-													_structConverter.GetServerStruct(articleDetails));
+					SitecoreArticle.SaveArticleText(articleNumber, text,_structConverter.GetServerStruct(articleDetails));
 				}
 
 				Globals.SitecoreAddin.Log("Local document version after check: " +

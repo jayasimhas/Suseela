@@ -534,8 +534,10 @@
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
+    <Compile Include="Controllers\SitecoreSaverUtil.cs" />
     <Compile Include="Controllers\SitecoreUtil.cs" />
     <Compile Include="Controllers\SitecorGetterController.cs" />
     <Compile Include="Controllers\VelirController.cs" />
