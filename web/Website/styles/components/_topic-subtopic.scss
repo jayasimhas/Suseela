@@ -1,0 +1,39 @@
+.topic-subtopic {
+    clear: both;
+
+    &__header {
+        color: $informa-black;
+        border-left: 12px solid $informa-red;
+        padding-left: 18px;
+        margin-bottom: 1.5rem;
+
+        .topic-subtopic__header-explore-link {
+            @include textMix('Roboto', 1rem, 500);
+            margin-left: 1.5rem;
+        }
+
+        @include breakpoint('medium') {
+            margin-bottom: 3rem;
+
+            .topic-subtopic__header-explore-link {
+                margin-left: 0;
+                display: block;
+                position: absolute;
+            }
+        }
+
+        @include breakpoint('small') {
+            font-size: 2rem;
+
+            .topic-subtopic__header-explore-link {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}

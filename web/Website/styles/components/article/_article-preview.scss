@@ -114,6 +114,116 @@
         content: "";
         display: block;
     }
+
+    // Featured Article — Full Width
+    // IIPP-69
+
+    $featured-article-wide-img-width: 384px;
+    $featured-article-wide-img-width--tablet: 294px;
+
+    &--wide {
+        background-color: $informa-light-gray-f;
+        border-top: 2px solid $informa-light-gray-d;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+        width: 100%;
+
+        .article-preview__tags {
+            bottom: 0;
+            display: inline-block;
+            position: relative;
+        }
+
+        .article-metadata {
+            width: calc(100% - 384px);
+            margin-bottom: 1rem;
+        }
+
+        .article-preview__content-wrapper {
+            margin-left: 384px;
+            position: relative;
+        }
+
+        .article-metadata,
+        .article-preview__headline,
+        .article-preview__tags,
+        p {
+            margin-left: $featured-article-wide-img-width;
+        }
+
+
+        @include breakpoint('medium') {
+            .article-metadata {
+                position: absolute;
+                width: calc(100% - 3rem);
+                margin-left: 0;
+            }
+
+            .article-preview__image {
+                width: 270px;
+            }
+
+            .article-preview__image,
+            .article-preview__headline, {
+                margin-top: 4rem;
+            }
+
+            .article-preview__headline,
+            .article-preview__tags,
+            p {
+                margin-left: $featured-article-wide-img-width--tablet;
+            }
+        }
+        @include breakpoint('small') {
+            padding: 1rem;
+
+            .article-preview__image {
+                margin-bottom: 1rem;
+            }
+
+            .article-metadata {
+                position: static;
+                width: 100%;
+            }
+
+            .article-preview__headline {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.75rem;
+            }
+
+            .article-preview__image,
+            .article-preview__headline {
+                width: 100%;
+                margin-top: 0;
+            }
+            .article-preview__headline,
+            .article-preview__tags,
+            p {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__image {
+        float: left;
+        margin-right: 24px;
+        width: 360px;
+
+        @include breakpoint('medium') {
+            width: 240px;
+        }
+    }
+
+    // .latest-news previews need a wrapper for all content besides the image
+    // Image floats left, but other content needs to stay within right "col"
+    &__wrapper {
+        margin-left: 388px;
+    }
 }
 
 .manually-curated-articles {

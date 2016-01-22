@@ -2,11 +2,11 @@
 @using Informa.Web.TestData
 
 
-<div class="latest-news">
+<div class="topic-subtopic">
 
-    <h1>
+    <h1 class="topic-subtopic__header">
         @TestData.GetRandomTopic().LinkableTexts
-        <a href="#">Explore this Topic</a>
+        <a class="topic-subtopic__header-explore-link" href="#">Explore this Topic</a>
     </h1>
 
    @Html.Sitecore().Placeholder("two-column-curated")
@@ -16,11 +16,11 @@
         Html.RenderPartial("Components/ListableContentWide", TestData.ListableModel());
     }
 
-    <h4>
+    <h4 class="latest-news__header">
         <span>Latest from @TestData.GetRandomTopic().LinkableTexts</span>
     </h4>
 
-    <div class="latest-news__preview-wrapper">
+    <div class="latest-news__articles">
         @foreach (var listable in Enumerable.Range(1, 6))
         {
             Html.RenderPartial("Components/ListableContentSmall", TestData.ListableModel(1, 0, false));
