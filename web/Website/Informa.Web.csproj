@@ -558,9 +558,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\ArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\ArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\ArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
+    <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
+    <Compile Include="ViewModels\GlassArticleModel.cs" />
+    <Compile Include="ViewModels\ArticleListItemModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\HierarchyLinks.cs" />
     <Compile Include="ViewModels\HighlightViewModel.cs" />
+    <Compile Include="ViewModels\IArticleModel.cs" />
+    <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\IArticlePrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\IArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\IPersonModel.cs" />
     <Compile Include="ViewModels\IFooterViewModel.cs" />
     <Compile Include="ViewModels\IHeaderViewModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />
@@ -834,9 +851,7 @@
     <Content Include="Areas\Article\Views\Shared\Lockout.cshtml" />
     <Content Include="velir\dist\velir.search.angular.js.map" />
     <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
-    <Content Include="Views\_Shared\AuthoredContent.cshtml" />
     <Content Include="styles\index.scss" />
-    <Content Include="Views\_Shared\DummyData\AuthoredContent.cshtml" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\SearchFacets.cshtml" />
@@ -899,12 +914,18 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_MaintainenceMessage.cshtml" />
     <Content Include="Views\Article\ArticleBodyContent.cshtml" />
-    <Content Include="Views\Article\ArticleHeader.cshtml" />
     <Content Include="Views\Article\ArticleKeyDocuments.cshtml" />
     <Content Include="Views\Article\ArticleRelatedList.cshtml" />
     <Content Include="Views\Article\ArticleRelatedTaxonomy.cshtml" />
     <Content Include="Views\Shared\Components\ArticleKeyDocuments.cshtml" />
+    <Content Include="Views\Article\ArticleTags.cshtml" />
     <Content Include="Views\Shared\Highlight.cshtml" />
+    <Content Include="Views\Article\ChildTaxonomy.cshtml" />
+    <Content Include="Views\Article\ArticleHeader.cshtml" />
+    <Content Include="Views\Article\ArticlePrologueBookmark.cshtml" />
+    <Content Include="Views\Article\ArticlePrologueEmail.cshtml" />
+    <Content Include="Views\Article\ArticleProloguePrint.cshtml" />
+    <Content Include="Views\Article\ArticlePrologueShare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

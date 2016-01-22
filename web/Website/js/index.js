@@ -47,7 +47,7 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 });
 
 /* Generic toggle pop-out */
-$('.pop-out__trigger-content').on('click', function togglePopOut(e) {
+$('.js-toggle-pop-out .pop-out__trigger-content').on('click', function togglePopOut(e) {
 	$(e.target).parents('.pop-out__trigger').toggleClass('is-active');
 });
 

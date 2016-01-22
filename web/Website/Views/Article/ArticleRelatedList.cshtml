@@ -1,10 +1,10 @@
-﻿@using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
-@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
+﻿@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+@model IArticle
 
 <div class="article-related-content">
     <h2>Related Content</h2>
 
-    @foreach (var article in Model.Related_Articles.OfType<IListable>())
+    @foreach (var article in Model.Related_Articles.OfType<IArticle>())
     {
         Html.RenderPartial("Components/ListItemSimple", article);
     }

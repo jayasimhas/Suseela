@@ -1,0 +1,11 @@
+﻿@model Informa.Web.ViewModels.IArticleTagsViewModel
+<div class="article-prologue__tags-bar">
+    Tags:
+    <div class="bar-separated-link-list">
+        @foreach (var tag in Model.Tags)
+		{
+            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+        }
+    </div>
+</div>
+

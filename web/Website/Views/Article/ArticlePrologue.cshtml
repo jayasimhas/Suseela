@@ -1,115 +1,13 @@
-@using Informa.Web.TestData
-@using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
-@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
-    <div class="article-prologue">
+@model Informa.Web.ViewModels.ArticlePrologueViewModel
+
+<div class="article-prologue">
         <div class="article-prologue__share-bar">
             <ul>
-                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        <span class="article-prologue__share-label">Email</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#email"></use>
-                        </svg>
-                    </span>
-                    <div class="pop-out">
-                        <div class="pop-out__internal pop-out__internal--flush-left pop-out__internal--wide">
-
-                            <div class="dismiss-button">
-                                <svg class="dismiss-button__icon">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                                </svg>
-                            </div>
-
-                            <h4 class="pop-out__header">
-                                Email Article
-                            </h4>
-
-                            <p class="pop-out__details">
-                                All fields are required. For multiple recipients, separate email addresses with a semicolon.
-                            </p>
-                            <input class="inf-standard-form-field"
-                                   type="text"
-                                   placeholder="Recipient Email Address">
-                            <input class="inf-standard-form-field"
-                                   type="text"
-                                   placeholder="Your Name">
-                            <input class="inf-standard-form-field"
-                                   type="text"
-                                   placeholder="Your Email">
-                            <p><span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches
-                            </p>
-                            <p><span class="pop-out__run-in">Add a personalized message to your email</span></p>
-                            <textarea class="text-field"></textarea>
-                            <div class="pop-out__form-actions-wrapper">
-                                <div>
-                                    <a href="#">Cancel</a>
-                                </div>
-                                <div class="sign-in__submit-wrapper">
-                                    <button class="button--filled sign-in__submit">Send</button>
-                                </div>
-                            </div>
-                            <p class="pop-out__details u-italic">
-                                <b>Please Note:</b> Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="article-prologue__share-item">
-                    <span class="article-prologue__share-label">Print</span>
-                    <svg class="article-prologue__share-icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
-                    </svg>
-                </li>
-                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        @* IF NOT BOOKMARKED *@
-                        <span class="article-prologue__share-label">Bookmark</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-                        </svg>
-
-                        @* IF BOOKMARKED
-                        <span class="article-prologue__share-label">Bookmarked</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                        </svg> *@
-
-                        </span>
-                    <div class="pop-out">
-                        <div class="pop-out__internal">
-                            <svg class="header__icons header__icons--x">
-                                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                            </svg>
-                            <h4 class="pop-out__header">
-                                You must sign in to use this functionality
-                            </h4>
-                            @* @Html.Partial("_SignInForm") *@
-                        </div>
-                    </div>
-                </li>
-                <li class="article-prologue__share-item">
-                    <span class="article-prologue__share-label">Share</span>
-                    <svg class="article-prologue__share-icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
-                    </svg>
-                    <svg class="article-prologue__share-icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
-                    </svg>
-                </li>
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueEmail.cshtml", Model.EmailViewModel); }
+                @{ Html.RenderPartial("/Views/Article/ArticleProloguePrint.cshtml", Model.PrintViewModel); }
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueBookmark.cshtml", Model.BookmarkViewModel); }
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueShare.cshtml", Model.ShareViewModel); }
             </ul>
         </div>
-
-
-    @* Taxonomy Tags *@
-        <div class="article-prologue__tags-bar">
-            Tags:
-            <div class="bar-separated-link-list">
-                @foreach (var tag in Model.Taxonomies.OfType<ITaxonomy_Item>().Take(3))
-                {
-                    <a href="/search?@tag._Id">@tag.Item_Name</a>
-                }
-            </div>
-        </div>
+        @{ Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.ArticleTagsViewModel); }
 </div>

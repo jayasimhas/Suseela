@@ -2,14 +2,50 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Glass.Mapper;
+using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
-using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface;
+using Glass.Mapper.Sc.Web.Mvc;
+using Informa.Models;
+using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
+using Informa.Web.ViewModels;
+using Jabberwocky.Glass.Factory;
+using Jabberwocky.Glass.Models;
+using Sitecore.ContentSearch.Linq.Extensions;
 using Sitecore.Mvc.Extensions;
 
 namespace Informa.Web.TestData
 {
+    public static class InterfaceFactoryExtension
+    {
+        //public static TType InterfaceFactory<TModel, TType>(this HtmlHelper<TModel> htmlHelper, TModel model) where TModel : class, Jabberwocky.Glass.Models.IGlassBase where TType : class
+        //{
+        //    ISitecoreContext context = htmlHelper.Glass().SitecoreContext;
+
+        //    return context.GetItem<TType>(model._Id);
+        //}
+
+        //public static TType InterfaceFactory<TModel, TType>(this HtmlHelper htmlHelper, TModel model) where TModel : class, Jabberwocky.Glass.Models.IGlassBase where TType : class
+        //{
+        //    ISitecoreContext context = htmlHelper.Glass().SitecoreContext;
+
+        //    return context.GetItem<TType>(model._Id);
+        //}
+
+        //public IListable GetIListable(IGlassInterfaceFactory factory,
+        //ISitecoreContext context)
+        //{
+
+
+        //    IListable listable = factory.GetItem<IListable>(contextItem);
+
+        //    return listable;
+        //}
+    }
+
     public static class TestData
     {
         //public static T TestModel<T>(this WebViewPage<T> page)
@@ -36,15 +72,15 @@ namespace Informa.Web.TestData
             {
                 ListableTopics = GetRandomTopics(numTaxonomy),
                 ListableAuthors = GetRandomEmployees(numAuthors),
-                ListableDates = DateTime.Now,
-                ListableImages = new Image { Src = "http://placehold.it/787x443"},
-                ListableSummaries = GetRandomSummary(),
-                ListableTitles = GetRandomTitle(),
-                ListableUrls = new Link { Anchor = "#" }
+                ListableDate = DateTime.Now,
+                ListableImage = "http://lorempixel.com/800/450/technics",
+                ListableSummary = GetRandomSummary(),
+                ListableTitle = GetRandomTitle(),
+                ListableUrl = new Link { Anchor = "#" }
             };
 
             if (!hasImage)
-                model.ListableImages = null;
+                model.ListableImage = null;
 
             return model;
         }
@@ -53,8 +89,8 @@ namespace Informa.Web.TestData
         {   
             return new LinkableModel
             {
-                LinkableTexts = GetRandomEmployeeName(),
-                LinkableUrls = new Link { Anchor = "#" }
+                LinkableText = GetRandomEmployeeName(),
+                LinkableUrl = "#"
             };        
         }
 
@@ -65,7 +101,7 @@ namespace Informa.Web.TestData
 
         public static string TestSingleLineText(this WebViewPage page)
         {
-            return GetRandomStaff().LinkableTexts;
+            return GetRandomStaff().LinkableText;
         }                     
 
         public static ILinkable GetRandomTopic()
@@ -74,8 +110,8 @@ namespace Informa.Web.TestData
 
             return new LinkableModel
             {
-                LinkableTexts = _topics[index],
-                LinkableUrls = new Link {Anchor =  "#"}
+                LinkableText = _topics[index],
+                LinkableUrl = "#"
             };
 
         }
@@ -103,8 +139,8 @@ namespace Informa.Web.TestData
 
             var employee = new LinkableModel();
 
-            employee.LinkableTexts = _employees[index];
-            employee.LinkableUrls = new Link {Anchor = "#"};
+            employee.LinkableText = _employees[index];
+            employee.LinkableUrl = "#";
 
 
             return employee;
@@ -122,17 +158,17 @@ namespace Informa.Web.TestData
         public static IListable Article => new ListableModel
         {
             ListableAuthors = null,
-            ListableDates = DateTime.Now,
-            ListableImages = new Image(),
-            ListableTitles = GetRandomTitle(),
+            ListableDate = DateTime.Now,
+            ListableImage = "http://lorempixel.com/800/450/technics",
+            ListableTitle = GetRandomTitle(),
             ListableTopics = GetRandomTopics(),
-            ListableUrls = new Link { Anchor = "#", Text = "Text", Title = "Title" },
-            ListableSummaries = GetRandomSummary()
+            ListableUrl = new Link { Anchor = "#", Text = "Text", Title = "Title" },
+            ListableSummary = GetRandomSummary()
         };
 
         public static string GetRandomEmployeeName()
         {
-            return GetRandomStaff().LinkableTexts;
+            return GetRandomStaff().LinkableText;
         }
 
    
