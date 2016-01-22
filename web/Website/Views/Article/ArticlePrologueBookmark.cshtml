@@ -1,0 +1,28 @@
+﻿@model Informa.Web.ViewModels.IArticlePrologueBookmarkViewModel
+<li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
+	<span class="pop-out__trigger-content">
+		@* IF NOT BOOKMARKED *@
+		<span class="article-prologue__share-label">Bookmark</span>
+		<svg class="article-prologue__share-icon">
+			<use xlink:href="/dist/img/svg-sprite.svg#@(Model.Bookmarked ? "bookmark" : "bookmarked")"></use>
+		</svg>
+
+		@* IF BOOKMARKED
+			<span class="article-prologue__share-label">Bookmarked</span>
+			<svg class="article-prologue__share-icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+			</svg> *@
+
+	</span>
+	<div class="pop-out">
+		<div class="pop-out__internal">
+			<svg class="header__icons header__icons--x">
+				<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+			</svg>
+			<h4 class="pop-out__header">
+				You must sign in to use this functionality
+			</h4>
+			@* @Html.Partial("_SignInForm") *@
+		</div>
+	</div>
+</li>

@@ -6130,41 +6130,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public const string FactoryLinkableUrlsFieldName = "FactoryLinkableUrl";
 
 						
-					
-			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
-			public const string ListableAuthorsFieldName = "ListableAuthors";
-
-						
-					
-			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
-			public const string ListableDatesFieldName = "ListableDate";
-
-						
-					
-			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
-			public const string ListableImagesFieldName = "ListableImage";
-
-						
-					
-			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
-			public const string ListableSummariesFieldName = "ListableSummary";
-
-						
-					
-			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
-			public const string ListableTitlesFieldName = "ListableTitle";
-
-						
-					
-			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
-			public const string ListableTopicsFieldName = "ListableTopics";
-
-						
-					
-			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
-			public const string ListableUrlsFieldName = "ListableUrl";
-
-						
 			
 
 	}

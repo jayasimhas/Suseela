@@ -20,7 +20,7 @@ namespace Informa.Web.ViewModels
         //IEnumerable<HierarchyLinks> IArticleModel.TaxonomyItems { get; }
         public DateTime Date => GlassModel.Actual_Publish_Date;
         public string Content_Type => GlassModel.Content_Type.Item_Name;
-        public string Media_Type => GlassModel.Media_Type.Item_Name;
+        public string Media_Type => GlassModel.Media_Type == null ? null : GlassModel.Media_Type.Item_Name;
 
         public IEnumerable<IAuthorModel> Authors => GlassModel.Authors.Select(x => new AuthorModel(x));
         public string Category => GlassModel.Article_Category;

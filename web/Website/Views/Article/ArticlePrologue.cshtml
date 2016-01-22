@@ -1,6 +1,5 @@
-@using Informa.Web.TestData
-@using Glass.Mapper.Sc.Web.Mvc
-@model Informa.Web.ViewModels.GlassArticleModel
+@model Informa.Web.ViewModels.ArticlePrologueViewModel
+@*@inherits CustomGlassView<Informa.Web.ViewModels.ArticlePrologueViewModel>*@
 
 <div class="article-prologue">
         <div class="article-prologue__share-bar">
@@ -61,33 +60,10 @@
                         <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
                     </svg>
                 </li>
-                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        @* IF NOT BOOKMARKED *@
-                        <span class="article-prologue__share-label">Bookmark</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-                        </svg>
 
-                        @* IF BOOKMARKED
-                        <span class="article-prologue__share-label">Bookmarked</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                        </svg> *@
+				@*Bookmark*@
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueBookmark.cshtml", Model.ArticlePrologueBookmark); }
 
-                        </span>
-                    <div class="pop-out">
-                        <div class="pop-out__internal">
-                            <svg class="header__icons header__icons--x">
-                                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                            </svg>
-                            <h4 class="pop-out__header">
-                                You must sign in to use this functionality
-                            </h4>
-                            @* @Html.Partial("_SignInForm") *@
-                        </div>
-                    </div>
-                </li>
                 <li class="article-prologue__share-item">
                     <span class="article-prologue__share-label">Share</span>
                     <svg class="article-prologue__share-icon">
@@ -100,6 +76,5 @@
             </ul>
         </div>
 
-        @{Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.TaxonomyItems);}          
-      
-    </div>
+        @{ Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.ArticleTags); }
+</div>
