@@ -20,7 +20,8 @@ namespace Informa.Models.FactoryInterface
         string ListableImage { get; }                    
         string ListableSummary { get; }                
         string ListableTitle { get; }                   
-        IEnumerable<ILinkable> ListableTopics { get; }   
+        IEnumerable<ILinkable> ListableTopics { get; }
+        string ListableType { get; }
     }
 
     public interface IFeaturedImage
@@ -59,6 +60,7 @@ namespace Informa.Models.FactoryInterface
         public string ListableSummary { get; set; }
         public string ListableTitle { get; set; }
         public IEnumerable<ILinkable> ListableTopics { get; set; }
+        public string ListableType { get; set; }
         public Link ListableUrl { get; set; }
 
         #endregion

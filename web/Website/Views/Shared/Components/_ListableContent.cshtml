@@ -22,29 +22,15 @@
         <li>
             <h6>@string.Join(", ", Model.LinkableText)</h6>
         </li>
-        <li>
-            @* * *  ARTICLE MEDIA TYPE
-                    IIPP-116
-
-            * * * TEXT — Nothing. Remove this <li> entirely.
-
-            * * * VIDEO
-            <svg class="article-metadata__media-type">
-                <use xlink:href="/dist/img/svg-sprite.svg#video"></use>
-            </svg>
-
-            * * * AUDIO
-            <svg class="article-metadata__media-type">
-                <use xlink:href="/dist/img/svg-sprite.svg#audio"></use>
-            </svg>
-
-            * * * DATA *@
-            <svg class="article-metadata__media-type">
-                <use xlink:href="/dist/img/svg-sprite.svg#chart"></use>
-            </svg>
-
-            @* * *  END ARTICLE MEDIA TYPE *@
-        </li>
+        @if (!string.IsNullOrEmpty(Model.ListableType))
+        {
+            <li>
+                <svg class="article-metadata__media-type">
+                    <use xlink:href="/dist/img/svg-sprite.svg#@Model.ListableType"></use>
+                </svg>
+                @* * *  END ARTICLE MEDIA TYPE *@
+            </li>
+        }
     </ul>
 </div>
 

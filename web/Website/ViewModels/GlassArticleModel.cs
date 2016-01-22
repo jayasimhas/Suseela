@@ -44,11 +44,20 @@ namespace Informa.Web.ViewModels
                 Authors.Select(
                     x => new LinkableModel {LinkableText = x.Name, LinkableUrl = $"mailto://{x.Email_Address}"});
 
-        public DateTime ListableDate => DateTime.MinValue;
+        public DateTime ListableDate => Date;
         public string ListableImage => Image.ImageUrl;
-        public string ListableSummary { get; }
-        public string ListableTitle { get; }
-        public IEnumerable<ILinkable> ListableTopics { get; }
+        //TODO: Get real summary
+        public string ListableSummary
+            => string.IsNullOrWhiteSpace(GlassModel.Summary) ? Body.Substring(0, 200) : GlassModel.Summary;
+
+        public string ListableTitle => Title;
+
+        public IEnumerable<ILinkable> ListableTopics
+            =>
+                GlassModel.Taxonomies?.Take(3)
+                    .Select(x => new LinkableModel {LinkableText = x.Item_Name, LinkableUrl = "/search?tag=" + x._Id});
+
+        public string ListableType => Media_Type;
 
         #endregion
     }

@@ -36,6 +36,7 @@ namespace Informa.Web.ViewModels
         public string ListableTitle => GlassModel.Title;
         
         public virtual IEnumerable<ILinkable> ListableTopics => GlassModel.Taxonomies.Select(x => new LinkableModel {LinkableText = x.Item_Name, LinkableUrl = "/Search?QueryParam"});
+        public string ListableType => GlassModel.Media_Type?.Item_Name == "Data" ? "chart" : GlassModel.Media_Type?.Item_Name?.ToLower() ?? "";
 
 
         public virtual Link ListableUrl => new Link {Url = GlassModel._Url, Text = GlassModel.Title};

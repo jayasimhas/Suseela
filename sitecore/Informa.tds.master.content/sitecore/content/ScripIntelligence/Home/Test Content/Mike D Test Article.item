@@ -12,7 +12,7 @@ templatekey: Article
 ----version----
 language: en
 version: 1
-revision: 17fea620-d96b-431a-b210-cabd75105893
+revision: 7ca2e417-1768-4f3d-a863-917700b49217
 
 ----field----
 field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
@@ -25,16 +25,16 @@ content-length: 77
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
 key: title
-content-length: 36
+content-length: 10
 
-Collaborations boost Ablynx revenues
+It's Ready
 ----field----
 field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
 name: Sub Title
 key: sub title
-content-length: 32
+content-length: 28
 
-Subtitle caption for the article
+That Summary was misleading.
 ----field----
 field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
 name: Body
@@ -205,30 +205,30 @@ content-length: 10263
 field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
 name: Summary
 key: summary
-content-length: 176
+content-length: 118
 
-<p>Ablynx can expect to gain greater value from future licensing deals, analysts predict, after its first half 2008 revenues grew significantly on the back of R&D revenues.</p>
+<p>Mike DiStaula has been working hard to get this article ready for you to read.  It's content will make you cry!</p>
 ----field----
 field: {7526A634-C0A2-4FFE-88F8-227C9274B610}
 name: Featured Image 16 9
 key: featured image 16 9
 content-length: 58
 
-<image mediaid="{9E1FAC0E-A471-4381-8180-2B12AB62DBFD}" />
+<image mediaid="{4CC7D2BA-D703-4EF9-A70E-60F2201FF94C}" />
 ----field----
 field: {B9FC8DAA-7B05-4595-92F4-A9D10C045CA6}
 name: Featured Image Caption
 key: featured image caption
-content-length: 17
+content-length: 27
 
-Caption for Image
+Hey Look, it's a Key Snake.
 ----field----
 field: {9E1CC2EB-BAB6-45EA-840A-A40A85A748EA}
 name: Featured Image Source
 key: featured image source
-content-length: 12
+content-length: 11
 
-Placehold.it
+Hannah Dean
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
 name: Navigation Title
@@ -347,14 +347,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-17fea620-d96b-431a-b210-cabd75105893
+7ca2e417-1768-4f3d-a863-917700b49217
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160122T193038Z
+20160122T195955Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
