@@ -32,7 +32,7 @@
     <div class="main__wrapper">
 
         @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
-                
+
 
 
         @* * *  END SYSTEM MAINTENANCE MESSAGES *@
@@ -53,11 +53,6 @@
 
         <div class="main__content">
 
-            <div class="banner banner--highlights">
-                <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
-            </div>
-
-
             @Html.Sitecore().Placeholder("main-content")
 
         </div>
@@ -70,12 +65,7 @@
 	@{ Html.RenderPartial("_Footer", Model.Footer);}
 </footer>
 
-<script src="/dist/js/concat.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    svg4everybody();
-});
-</script>
+<script src="/dist/js/index.js"></script>
 
 </body>
-</html>                       
+</html>

@@ -98,3 +98,28 @@
     @Html.Raw(Model.Body)
 
 </div>
+
+@*
+    This element is a template for viewing tables on narrow screens
+    On document ready, each article table gets one of these appended to it
+    On narrow screens, the elements are visible so users can click/tap to view
+*@
+<div class="hidden-mobile-table-template js-mobile-table-template">
+    <table class="article-table article-table--mobile-link">
+        <thead>
+            <tr>
+                <th>Table</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <svg class="article-table__expand-table">
+                        <use xlink:href="/dist/img/svg-sprite.svg#expand-table"></use>
+                    </svg>
+                    <a href="#">View full table</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

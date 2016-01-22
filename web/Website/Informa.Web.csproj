@@ -562,6 +562,7 @@
     <Compile Include="ViewModels\GlassArticleListModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinks.cs" />
+    <Compile Include="ViewModels\HighlightViewModel.cs" />
     <Compile Include="ViewModels\IArticleModel.cs" />
     <Compile Include="ViewModels\IAuthorModel.cs" />
     <Compile Include="ViewModels\IFooterViewModel.cs" />
@@ -600,10 +601,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="gulpfile.js" />
-    <Content Include="js\aaa.zepto.min.js" />
-    <Content Include="js\ccc-jscookie.js" />
-    <Content Include="js\informa.js" />
+    <Content Include="js\index.js" />
+    <Content Include="js\jscookie.js" />
     <Content Include="js\svg4everybody.js" />
+    <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
     <Content Include="layouts\Sample Datasource Sublayout.ascx" />
     <Content Include="layouts\Sample Inner Sublayout.ascx" />
@@ -891,6 +892,7 @@
     <Content Include="App_Config\Include\UserDefined\Sites.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="js\package.json" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -904,6 +906,7 @@
     <Content Include="Views\Article\ArticleRelatedTaxonomy.cshtml" />
     <Content Include="Views\Shared\Components\ArticleKeyDocuments.cshtml" />
     <Content Include="Views\Article\ArticleTags.cshtml" />
+    <Content Include="Views\Shared\Highlight.cshtml" />
     <Content Include="Views\Article\ChildTaxonomy.cshtml" />
     <Content Include="Views\Article\ArticleHeader.cshtml" />
   </ItemGroup>

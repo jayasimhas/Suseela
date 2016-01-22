@@ -295,15 +295,22 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 837fe13d-dcec-420c-9ae9-9c6594bbf6f7
+revision: 134c8ed3-ee24-4cb4-ae3e-308e4cb158eb
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
 key: title
-content-length: 28
+content-length: 4
 
-Sitecore Experience Platform
+Home
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 0
+
+
 ----field----
 field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
 name: Body
@@ -336,6 +343,13 @@ key: __short description
 content-length: 20
 
 Welcome to Sitecore.
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 312
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{5B5E93DD-1203-445C-AFB2-352731B44EFC}" p:before="r[@uid='{0F6A6227-C265-4521-8F6D-FA78653AE581}']" s:ds="{A17EE090-B388-4DFE-ACA5-125135E8F595}" s:id="{C7E595D3-9F0C-41E0-890F-6D8C54B8EF40}" s:ph="main-content" /></d></r>
 ----field----
 field: {C8F93AFE-BFD4-4E8F-9C61-152559854661}
 name: __Valid from
@@ -377,14 +391,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-837fe13d-dcec-420c-9ae9-9c6594bbf6f7
+134c8ed3-ee24-4cb4-ae3e-308e4cb158eb
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160111T204022Z
+20160121T134455Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -392,6 +406,13 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />
 ----version----
 language: ja-JP
 version: 1

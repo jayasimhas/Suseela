@@ -20,8 +20,10 @@
         <span>Latest from @TestData.GetRandomTopic().LinkableText</span>
     </h4>
 
-    @foreach (var listable in Enumerable.Range(1, 6))
-    {
-        Html.RenderPartial("Components/ListableContentSmall", TestData.ListableModel(1, 0, false));
-    }
+    <div class="latest-news__preview-wrapper">
+        @foreach (var listable in Enumerable.Range(1, 6))
+        {
+            Html.RenderPartial("Components/ListableContentSmall", TestData.ListableModel(1, 0, false));
+        }
+    </div>
 </div>

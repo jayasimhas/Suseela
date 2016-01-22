@@ -1,7 +1,7 @@
 .menu-toggler {
 	@include textMix('Roboto', 12px, 500);
 
-	background-color: #555;
+	background-color: $informa-dark-gray;
 	color: $informa-light-gray-d;
 	float: right;
 	height: 100%;
@@ -72,7 +72,7 @@
 
 		span {
 			display: block;
-		    background: $informa-light-gray-d;
+		    background: $informa-light-gray-f;
 		    height: 2px;
 		    left: 25px;
 		    position: absolute;
