@@ -1,80 +1,13 @@
 @model Informa.Web.ViewModels.ArticlePrologueViewModel
-@*@inherits CustomGlassView<Informa.Web.ViewModels.ArticlePrologueViewModel>*@
 
 <div class="article-prologue">
         <div class="article-prologue__share-bar">
             <ul>
-                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        <span class="article-prologue__share-label">Email</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#email"></use>
-                        </svg>
-                    </span>
-                    <div class="pop-out">
-                        <div class="pop-out__internal pop-out__internal--flush-left pop-out__internal--wide">
-
-                            <div class="dismiss-button">
-                                <svg class="dismiss-button__icon">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                                </svg>
-                            </div>
-
-                            <h4 class="pop-out__header">
-                                Email Article
-                            </h4>
-
-                            <p class="pop-out__details">
-                                All fields are required. For multiple recipients, separate email addresses with a semicolon.
-                            </p>
-                            <input class="inf-standard-form-field"
-                                   type="text"
-                                   placeholder="Recipient Email Address">
-                            <input class="inf-standard-form-field"
-                                   type="text"
-                                   placeholder="Your Name">
-                            <input class="inf-standard-form-field"
-                                   type="text"
-                                   placeholder="Your Email">
-                            <p><span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches
-                            </p>
-                            <p><span class="pop-out__run-in">Add a personalized message to your email</span></p>
-                            <textarea class="text-field"></textarea>
-                            <div class="pop-out__form-actions-wrapper">
-                                <div>
-                                    <a href="#">Cancel</a>
-                                </div>
-                                <div class="sign-in__submit-wrapper">
-                                    <button class="button--filled sign-in__submit">Send</button>
-                                </div>
-                            </div>
-                            <p class="pop-out__details u-italic">
-                                <b>Please Note:</b> Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="article-prologue__share-item">
-                    <span class="article-prologue__share-label">Print</span>
-                    <svg class="article-prologue__share-icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
-                    </svg>
-                </li>
-
-				@*Bookmark*@
-				@{ Html.RenderPartial("/Views/Article/ArticlePrologueBookmark.cshtml", Model.ArticlePrologueBookmark); }
-
-                <li class="article-prologue__share-item">
-                    <span class="article-prologue__share-label">Share</span>
-                    <svg class="article-prologue__share-icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
-                    </svg>
-                    <svg class="article-prologue__share-icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
-                    </svg>
-                </li>
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueEmail.cshtml", Model.EmailViewModel); }
+                @{ Html.RenderPartial("/Views/Article/ArticleProloguePrint.cshtml", Model.PrintViewModel); }
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueBookmark.cshtml", Model.BookmarkViewModel); }
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueShare.cshtml", Model.ShareViewModel); }
             </ul>
         </div>
-
-        @{ Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.ArticleTags); }
+        @{ Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.ArticleTagsViewModel); }
 </div>

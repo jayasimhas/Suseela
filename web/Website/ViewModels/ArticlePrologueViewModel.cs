@@ -6,15 +6,27 @@ namespace Informa.Web.ViewModels
 	public class ArticlePrologueViewModel : GlassViewModel<IGlassBase>
 	{
 		public ArticlePrologueViewModel(
+			IArticleProloguePrintViewModel articleProloguePrintViewModel,
+			IArticlePrologueEmailViewModel articlePrologueEmailViewModel,
 			IArticlePrologueBookmarkViewModel articlePrologueBookmarkViewModel,
+			IArticlePrologueShareViewModel articlePrologueShareViewModel,
 			IArticleTagsViewModel articleTagsViewModel)
 		{
-			ArticlePrologueBookmark = articlePrologueBookmarkViewModel;
-			ArticleTags = articleTagsViewModel;
+			PrintViewModel = articleProloguePrintViewModel;
+			EmailViewModel = articlePrologueEmailViewModel;
+			BookmarkViewModel = articlePrologueBookmarkViewModel;
+			ShareViewModel = articlePrologueShareViewModel;
+			ArticleTagsViewModel = articleTagsViewModel;
 		}
 
-		public IArticlePrologueBookmarkViewModel ArticlePrologueBookmark;
+		public IArticleProloguePrintViewModel PrintViewModel;
 
-		public IArticleTagsViewModel ArticleTags;
+		public IArticlePrologueEmailViewModel EmailViewModel;
+
+		public IArticlePrologueBookmarkViewModel BookmarkViewModel;
+
+		public IArticlePrologueShareViewModel ShareViewModel;
+
+		public IArticleTagsViewModel ArticleTagsViewModel;
 	}
 }

@@ -557,6 +557,9 @@
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="ViewModels\ArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\ArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\ArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
     <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\AuthorModel.cs" />
@@ -568,6 +571,9 @@
     <Compile Include="ViewModels\HighlightViewModel.cs" />
     <Compile Include="ViewModels\IArticleModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\IArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\IArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorModel.cs" />
     <Compile Include="ViewModels\IFooterViewModel.cs" />
@@ -915,6 +921,9 @@
     <Content Include="Views\Article\ChildTaxonomy.cshtml" />
     <Content Include="Views\Article\ArticleHeader.cshtml" />
     <Content Include="Views\Article\ArticlePrologueBookmark.cshtml" />
+    <Content Include="Views\Article\ArticlePrologueEmail.cshtml" />
+    <Content Include="Views\Article\ArticleProloguePrint.cshtml" />
+    <Content Include="Views\Article\ArticlePrologueShare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
