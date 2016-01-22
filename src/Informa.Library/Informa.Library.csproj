@@ -219,6 +219,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article\IUserArticleBookmarkedContext.cs" />
+    <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
     <Compile Include="Authentication\IUserAuthenticationContext.cs" />
     <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
