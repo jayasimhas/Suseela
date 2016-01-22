@@ -1,17 +1,17 @@
 .latest-news {
 
     &__header {
-        text-align: center;
         position: relative;
+        text-align: center;
 
         &:before {
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 4px;
             background-color: $informa-red;
             content: "";
+            display: block;
+            height: 4px;
+            position: absolute;
             top: calc(50% - 2px);
+            width: 100%;
             z-index: 1;
         }
         span {
@@ -23,9 +23,9 @@
         }
 
         @include breakpoint('small') {
-            text-align: left;
             border-bottom: 4px solid $informa-red;
             margin-bottom: 1.5rem;
+            text-align: left;
 
             span {
                 padding: 0 0 0.5rem 0;
@@ -44,14 +44,16 @@
         margin: 0 -1rem;
 
         .article-preview--small {
+            border: 1px solid $informa-light-gray-d;
             flex: 1 0 auto;
-            width: 300px;
             margin: 0 1rem 2.25rem;
             padding: 12px 24px 3rem;
-            border: 1px solid $informa-light-gray-d;
+            width: 300px;
 
             .article-preview__tags {
+                bottom: 24px;
                 left: 24px;
+                position: absolute;
             }
         }
     }

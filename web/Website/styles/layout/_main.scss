@@ -14,8 +14,11 @@ main {
 
 	@include breakpoint('medium') {
 		padding: 0;
-		width: 100%;
 		flex: 0 0 auto;
+	}
+
+	@include breakpoint('small') {
+		width: 100%;
 	}
 }
 
