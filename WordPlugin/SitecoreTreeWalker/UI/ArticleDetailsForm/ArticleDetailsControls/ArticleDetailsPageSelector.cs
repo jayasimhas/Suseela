@@ -111,20 +111,16 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				ArticleNumber = pageArticleInformationControl.GetArticleNumber(),
 				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
 				Title = metadataParser.Title.Trim(),
-				LongSummary = longSummary,
-				ShortSummary = shortSummary,
+				Summary = longSummary,
 				Subtitle = metadataParser.Subtitle,
-				Deck = metadataParser.Deck,
 				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
 				Authors = pageArticleInformationControl.GetSelectedAuthors().ToArray(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
+				//TODO - Add taxonomy
 				Taxonomy = null,
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),
-                Geography = pageTaxonomyControl.TabController.GetSelected(),					
+				//TODO - Editotrial Notes				
                 //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-                //NotesToProduction = pageArticleInformationControl.PageNotesControl.GetNotesToProduction(),
-				IsTopStory = pageArticleInformationControl.uxTopStory.Checked,
-				IsFeaturedArticle = pageArticleInformationControl.uxNominate.Checked,
 				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToArray(),
 				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToArray(),				
 				ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToArray(),
@@ -143,13 +139,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
 				Authors = pageArticleInformationControl.GetSelectedAuthors().ToArray(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
+				//TODO - Get Taxonmoy
                 Taxonomy = null,
-				//Subjects = pageSubjectsControl.TabController.GetSelected(),
-                Geography = pageTaxonomyControl.TabController.GetSelected(),					
+				//Subjects = pageSubjectsControl.TabController.GetSelected(),			
+				//TODO - Editorial Notes
                 //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-                //NotesToProduction = pageArticleInformationControl.PageNotesControl.GetNotesToProduction(),
-				IsTopStory = pageArticleInformationControl.uxTopStory.Checked,
-				IsFeaturedArticle = pageArticleInformationControl.uxNominate.Checked,
 				//although this technically requires document parsing, we want to retrieve it 
 				//as though it didn't
 				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToArray(),
@@ -317,7 +311,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageArticleInformationControl.UpdateFields(articleDetails);
 			pageRelatedArticlesControl.UpdateFields(articleDetails);
 			pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
-			//pageSubjectsControl.UpdateFields(articleDetails);
             pageTaxonomyControl.UpdateFields(articleDetails);			
 					
 			if(string.IsNullOrEmpty(articleDetails.ArticleNumber))
@@ -326,8 +319,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			}
 
             //pageArticleInformationControl.PageNotesControl.UpdateFields(articleDetails);			
-			//pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());
-            pageTaxonomyControl.TabController.UpdateFields(articleDetails.Geography.ToList());					
+			//pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());				
 			pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
 		}
 

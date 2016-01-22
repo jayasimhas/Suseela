@@ -569,19 +569,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			{
 				SetPublicationTime(articleDetails.WebPublicationDate, false);
 			}
-
-			if(articleDetails.HasBeenNominated)
-			{
-				uxNominate.Enabled = false;
-				uxNominate.Checked = true;
-			}
-			else
-			{
-				uxNominate.Enabled = true;
-			}
-
-			uxTopStory.Checked = articleDetails.IsTopStory;
-
+			
 			ArticleNumber = articleDetails.ArticleNumber;
 
 			uxEmbargoed.Checked = articleDetails.Embargoed;
@@ -676,16 +664,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			uxPublication.Enabled = false;
             //uxLinkDocument.Enabled = false;
-			if (_parent.ArticleDetails!=null && !_parent.ArticleDetails.HasBeenNominated)
-			{
-				uxNominate.Enabled = true; 
-			}
-			else
-			{
-				uxNominate.Enabled = false;
-			}
-			uxTopStory.Enabled = true;
-
 			uxSelectAuthor.Enabled = true;
 			uxSelectedAuthors.Enabled = true;
 			DisableAuthorControlsIfNoAuthors();

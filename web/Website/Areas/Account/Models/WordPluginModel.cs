@@ -244,29 +244,20 @@ namespace Informa.Web.Areas.Account.Models
 		{
 			public Guid ArticleGuid { get; set; }
 			public string Title { get; set; }
-			public Guid Volume { get; set; }
-			public Guid Issue { get; set; }
 			public DateTime PrintPublicationDate { get; set; }
 			public DateTime WebPublicationDate { get; set; }
 			public string ArticleNumber { get; set; }
 			public Guid ArticleCategory { get; set; }
 			public Guid WebCategory { get; set; }
-			public string NotesToEditorial { get; set; }
-			public string NotesToProduction { get; set; }
+			public string NotesToEditorial { get; set; }			
 			public string Subtitle { get; set; }
-			public string LongSummary { get; set; }
-			public string ShortSummary { get; set; }
-			public string Deck { get; set; }
+			public string Summary { get; set; }
 
-			[Obsolete]
-			public Guid ArticleSize { get; set; }
 			public int WordCount { get; set; }
 
 			//indicates if article should be in the homepage list of
 			//featured articles
 			public bool IsFeaturedArticle { get; set; }
-			public bool HasBeenNominated { get; set; }
-			public bool IsTopStory { get; set; }
 			public WorkflowState WorkflowState { get; set; }
 			public Guid CommandID { get; set; }
 			public List<TaxonomyStruct> Taxonomoy { get; set; }
@@ -284,7 +275,6 @@ namespace Informa.Web.Areas.Account.Models
 			public List<string> ReferencedDeals { get; set; }
 
 			public List<StaffStruct> Authors { get; set; }
-			public List<StaffStruct> Editors { get; set; }
 			public List<StaffStruct> ArticleSpecificNotifications { get; set; }
 			public List<StaffStruct> GlobalNotifications { get; set; }
 
@@ -418,5 +408,12 @@ namespace Informa.Web.Areas.Account.Models
 			public Guid PublicationID;
 			public string PublicationDate;
 		}
+
+		public class SaveArticleDetailsByGuid
+		{
+			public Guid ArticleGuid;
+			public ArticleStruct ArticleData;
+		}
+		
 	}
 }

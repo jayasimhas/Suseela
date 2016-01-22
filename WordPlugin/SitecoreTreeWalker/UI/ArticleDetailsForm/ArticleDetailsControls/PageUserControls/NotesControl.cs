@@ -43,9 +43,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void UpdateFields(SitecoreTree.ArticleStruct articleStruct)
 		{
-			uxProductionNotes.Text = articleStruct.NotesToProduction;
 			uxEditorNotes.Text = articleStruct.NotesToEditorial;
-
 			_isLive = articleStruct.IsPublished;
 			label1.Refresh();
 		}

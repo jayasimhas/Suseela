@@ -529,7 +529,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             string webPublishDate = articleDetails.WebPublicationDate.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
             Guid pubGuid = articleDetails.Publication;
-            Guid issueGuid = articleDetails.Issue;
 
             if (string.IsNullOrEmpty(title))
             {
@@ -590,7 +589,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             DocumentPropertyEditor.WritePublicationAndDate(
                 SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
-            ArticleDetails.HasBeenNominated = ArticleDetails.IsFeaturedArticle;
 
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                             ? SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleGuid)
@@ -642,26 +640,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             int maxLengthLongSummary = SitecoreGetter.GetMaxLengthLongSummary();
             if (metadataParser.LongSummary.Length > maxLengthLongSummary)
             {
-                if (!AskExceededCharacterLimit("Long Summary", maxLengthLongSummary))
+                if (!AskExceededCharacterLimit("Summary", maxLengthLongSummary))
                 {
                     return true;
                 }
             }
 
-            int maxLengthShortSummary = SitecoreGetter.GetMaxLengthShortSummary();
-            if (metadataParser.ShortSummary.Length > maxLengthShortSummary)
-            {
-                if (!AskExceededCharacterLimit("Short Summary", maxLengthShortSummary))
-                {
-                    return true;
-                }
-                ArticleDetails.ShortSummary = metadataParser.ShortSummary.Remove(maxLengthShortSummary);
-            }
-            /*
-            if (PromptAddIndustryToNominate())
-            {
-                return true;
-            }*/
             return false;
         }
 
@@ -800,7 +784,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 articleDetailsPageSelector.ResetChangedStatus();
                 DocumentPropertyEditor.WritePublicationAndDate(
                     SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
-                ArticleDetails.HasBeenNominated = ArticleDetails.IsFeaturedArticle;
                 MessageBox.Show(@"Metadata saved!", @"Elsevier");
             }
             catch (WebException wex)
