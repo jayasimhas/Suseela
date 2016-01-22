@@ -19,6 +19,7 @@ namespace Informa.Web.App_Start
     {
         private const string WebsiteDll = "Informa.Web";
         private const string LibraryDll = "Informa.Library";
+        private const string ModelsDll = "Informa.Models";
         private const string VelirSearchDll = "Velir.Search.Core";
 
         private const string GlassMapperDll = "Glass.Mapper";
@@ -36,7 +37,7 @@ namespace Informa.Web.App_Start
             builder.RegisterCacheServices();
             builder.RegisterProcessors(new[] { WebsiteDll, LibraryDll });
             builder.RegisterGlassMvcServices(WebsiteDll);
-            builder.RegisterGlassFactory(LibraryDll, VelirSearchDll);
+            builder.RegisterGlassFactory(LibraryDll, VelirSearchDll, ModelsDll);
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
             builder.RegisterControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
             builder.RegisterType<CustomSitecoreHelper>().AsSelf();

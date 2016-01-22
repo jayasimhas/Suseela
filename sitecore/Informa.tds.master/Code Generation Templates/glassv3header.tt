@@ -37,6 +37,7 @@ using Glass.Mapper.Sc.Fields;
 using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
 using Sitecore.Data;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 <#
 // Calculate the top leve namespace as configured in the target project and

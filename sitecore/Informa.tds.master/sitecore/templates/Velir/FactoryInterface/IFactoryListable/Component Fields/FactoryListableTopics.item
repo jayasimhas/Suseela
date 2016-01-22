@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {5083CA52-6DE6-4BE9-A1E6-30E9579E782D}
+id: {629BDDB3-5E8E-49BB-A323-6E1C46BC7CB5}
 database: master
-path: /sitecore/templates/Velir/FactoryInterface/Listable/Component Fields/ListableUrl
+path: /sitecore/templates/Velir/FactoryInterface/IFactoryListable/Component Fields/FactoryListableTopics
 parent: {F4B2ACCC-759F-449A-9E48-BB68DAB34E2F}
-name: ListableUrl
+name: FactoryListableTopics
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -29,11 +29,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-200
+300
 ----version----
 language: en
 version: 1
-revision: e69c10a7-218e-4189-97b4-0caf31abeba8
+revision: 24214b3d-2bdd-4274-bf74-37cc41b22f54
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e69c10a7-218e-4189-97b4-0caf31abeba8
+24214b3d-2bdd-4274-bf74-37cc41b22f54
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160102T191922Z
+20160121T230700Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

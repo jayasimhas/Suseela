@@ -1,10 +1,11 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 @using Informa.Web.TestData
-@model Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface.IListable
+@model Informa.Models.FactoryInterface.IListable
 
-@if (Model.ListableImages != null)
-{
-    <img class="article-preview__image" src="@Model.ListableImages.Src">
+@if (Model.ListableImage != null)
+{   
+    <img class="article-preview__image" src="@Model.ListableImage.Src">
 }
 
 <div class="article-metadata">
@@ -16,10 +17,10 @@
     </div>
     <ul>
         <li>
-            <time class="article-metadata__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>
+            <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
         </li>
         <li>
-            <h6>@TestData.GetRandomTopic().LinkableTexts</h6>
+            <h6>@string.Join(", ", Model.LinkableText)</h6>
         </li>
         <li>
             @* * *  ARTICLE MEDIA TYPE
@@ -48,18 +49,21 @@
 </div>
 
 <h1 class="article-preview__headline">
-    @Model.ListableTitles
+    @Model.ListableTitle
 </h1>
 
 <span class="article-preview__byline">
-    by @string.Join(",", Model.ListableAuthors.Select(auth => auth.LinkableTexts))
+    by @string.Join(",", Model.ListableAuthors?.Select(x => x.LinkableText))
 </span>
 
-<p>@Model.ListableSummaries</p>
+@Html.Raw(Model.ListableSummary)
 
 <div class="article-preview__tags bar-separated-link-list">
     @foreach (var tag in Model.ListableTopics)
     {
-        <a href="@tag.LinkableUrls">@tag.LinkableTexts</a>
+        if (tag.LinkableUrl != null)
+        {
+            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+        }
     }
 </div>

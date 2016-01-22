@@ -26,6 +26,7 @@ using Glass.Mapper.Sc.Fields;
 using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
 using Sitecore.Data;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 
 
@@ -506,6 +507,41 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public const string TwitterFieldName = "Twitter";
 
 						
+					
+			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
+
+						
+					
+			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string FactoryListableDatesFieldName = "FactoryListableDate";
+
+						
+					
+			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string FactoryListableImagesFieldName = "FactoryListableImage";
+
+						
+					
+			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
+
+						
+					
+			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
+
+						
+					
+			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
+
+						
+					
+			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
+
+						
 			
 
 	}
@@ -522,7 +558,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
 	{
 								/// <summary>
 					/// The Sort Order field.
@@ -554,12 +590,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 								/// <summary>
 					/// The Content Type field.
 					/// <para></para>
-					/// <para>Field Type: Droplist</para>		
+					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 2c985172-2b37-4cfe-aede-2a42ec833941</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=ITaxonomy_Item</para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Content_Type  {get; set;}
+					ITaxonomy_Item Content_Type  {get; set;}
 								/// <summary>
 					/// The Created Date field.
 					/// <para></para>
@@ -608,21 +644,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 								/// <summary>
 					/// The Label field.
 					/// <para></para>
-					/// <para>Field Type: Droplist</para>		
+					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 9db174e4-039b-41da-b9d0-4a3e05144255</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.LabelFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Label  {get; set;}
+					Guid Label  {get; set;}
 								/// <summary>
 					/// The Media Type field.
 					/// <para></para>
-					/// <para>Field Type: Droplist</para>		
+					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: d1046d68-5d77-40e8-955a-6726049c7e6d</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=ITaxonomy_Item</para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Media_Type  {get; set;}
+					ITaxonomy_Item Media_Type  {get; set;}
 								/// <summary>
 					/// The Modified Date field.
 					/// <para></para>
@@ -727,10 +763,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: 5ad65e47-7554-4ce5-87b0-7fb65051c05a</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=IAuthor</para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Authors  {get; set;}
+					IEnumerable<IAuthor> Authors  {get; set;}
 								/// <summary>
 					/// The Section Review field.
 					/// <para></para>
@@ -813,7 +849,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
 		{
 										/// <summary>
 						/// The Sort Order field.
@@ -845,12 +881,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 										/// <summary>
 						/// The Content Type field.
 						/// <para></para>
-						/// <para>Field Type: Droplist</para>		
+						/// <para>Field Type: Droplink</para>		
 						/// <para>Field ID: 2c985172-2b37-4cfe-aede-2a42ec833941</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: type=ITaxonomy_Item</para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Content_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Content_Type  {get; set;}
+						ITaxonomy_Item Content_Type  {get; set;}
 										/// <summary>
 						/// The Created Date field.
 						/// <para></para>
@@ -899,21 +935,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 										/// <summary>
 						/// The Label field.
 						/// <para></para>
-						/// <para>Field Type: Droplist</para>		
+						/// <para>Field Type: Droplink</para>		
 						/// <para>Field ID: 9db174e4-039b-41da-b9d0-4a3e05144255</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.LabelFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Label  {get; set;}
+						Guid Label  {get; set;}
 										/// <summary>
 						/// The Media Type field.
 						/// <para></para>
-						/// <para>Field Type: Droplist</para>		
+						/// <para>Field Type: Droplink</para>		
 						/// <para>Field ID: d1046d68-5d77-40e8-955a-6726049c7e6d</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: type=ITaxonomy_Item</para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Media_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Media_Type  {get; set;}
+						ITaxonomy_Item Media_Type  {get; set;}
 										/// <summary>
 						/// The Modified Date field.
 						/// <para></para>
@@ -1018,10 +1054,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: 5ad65e47-7554-4ce5-87b0-7fb65051c05a</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=IAuthor</para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Authors  {get; set;}
+						IEnumerable<IAuthor> Authors  {get; set;}
 										/// <summary>
 						/// The Section Review field.
 						/// <para></para>
@@ -1309,38 +1345,38 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
-			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
-			public const string ListableAuthorsFieldName = "ListableAuthors";
+			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
 
 						
 					
-			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
-			public const string ListableDatesFieldName = "ListableDate";
+			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string FactoryListableDatesFieldName = "FactoryListableDate";
 
 						
 					
-			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
-			public const string ListableImagesFieldName = "ListableImage";
+			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string FactoryListableImagesFieldName = "FactoryListableImage";
 
 						
 					
-			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
-			public const string ListableSummariesFieldName = "ListableSummary";
+			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
 
 						
 					
-			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
-			public const string ListableTitlesFieldName = "ListableTitle";
+			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
 
 						
 					
-			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
-			public const string ListableTopicsFieldName = "ListableTopics";
+			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
 
 						
 					
-			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
-			public const string ListableUrlsFieldName = "ListableUrl";
+			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
 
 						
 			
@@ -1612,78 +1648,78 @@ namespace Informa.Models.Velir.Search.Models.FactoryInterface
 
 
  	/// <summary>
-	/// ILinkable Interface
+	/// IFactoryLinkable Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Linkable</para>	
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/IFactoryLinkable</para>	
 	/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ILinkableConstants.TemplateIdString)]
-	public partial interface ILinkable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
+	[SitecoreType(TemplateId=IFactoryLinkableConstants.TemplateIdString)]
+	public partial interface IFactoryLinkable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
 	{
 								/// <summary>
-					/// The LinkableText field.
+					/// The FactoryLinkableText field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 529c867f-2816-43a9-964a-3f16c014a4f7</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ILinkableConstants.LinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> LinkableTexts  {get; set;}
+					[SitecoreField(IFactoryLinkableConstants.FactoryLinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryLinkableTexts  {get; set;}
 								/// <summary>
-					/// The LinkableUrl field.
+					/// The FactoryLinkableUrl field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: d156cd07-71a4-4daa-b52a-5ce602d6d3bb</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ILinkableConstants.LinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> LinkableUrls  {get; set;}
+					[SitecoreField(IFactoryLinkableConstants.FactoryLinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryLinkableUrls  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// ILinkable Interface
+		/// IFactoryLinkable Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Linkable</para>	
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/IFactoryLinkable</para>	
 		/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ILinkable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
+		public partial interface IFactoryLinkable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
 		{
 										/// <summary>
-						/// The LinkableText field.
+						/// The FactoryLinkableText field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 529c867f-2816-43a9-964a-3f16c014a4f7</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ILinkableConstants.LinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> LinkableTexts  {get; set;}
+						[SitecoreField(IFactoryLinkableConstants.FactoryLinkableTextsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryLinkableTexts  {get; set;}
 										/// <summary>
-						/// The LinkableUrl field.
+						/// The FactoryLinkableUrl field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: d156cd07-71a4-4daa-b52a-5ce602d6d3bb</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ILinkableConstants.LinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> LinkableUrls  {get; set;}
+						[SitecoreField(IFactoryLinkableConstants.FactoryLinkableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryLinkableUrls  {get; set;}
 						}
 	
-	public static partial class ILinkableConstants{
+	public static partial class IFactoryLinkableConstants{
 
 			public const string TemplateIdString = "3efeaf26-8572-417d-a8a8-6cb3a28eaf82";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Linkable";
+			public const string TemplateName = "IFactoryLinkable";
 
 					
-			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
-			public const string LinkableTextsFieldName = "LinkableText";
+			public static readonly ID FactoryLinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string FactoryLinkableTextsFieldName = "FactoryLinkableText";
 
 						
 					
-			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
-			public const string LinkableUrlsFieldName = "LinkableUrl";
+			public static readonly ID FactoryLinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string FactoryLinkableUrlsFieldName = "FactoryLinkableUrl";
 
 						
 			
@@ -2460,7 +2496,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ITaxonomy_ItemConstants.TemplateIdString)]
-	public partial interface ITaxonomy_Item : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable
+	public partial interface ITaxonomy_Item : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable
 	{
 								/// <summary>
 					/// The Item Name field.
@@ -2481,7 +2517,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ITaxonomy_Item__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable__Raw
+		public partial interface ITaxonomy_Item__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable__Raw
 		{
 										/// <summary>
 						/// The Item Name field.
@@ -2506,13 +2542,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 
 						
 					
-			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
-			public const string LinkableTextsFieldName = "LinkableText";
+			public static readonly ID FactoryLinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string FactoryLinkableTextsFieldName = "FactoryLinkableText";
 
 						
 					
-			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
-			public const string LinkableUrlsFieldName = "LinkableUrl";
+			public static readonly ID FactoryLinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string FactoryLinkableUrlsFieldName = "FactoryLinkableUrl";
 
 						
 			
@@ -2844,7 +2880,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IHome_PageConstants.TemplateIdString)]
-	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
+	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
 	{
 				}
 
@@ -2856,7 +2892,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
+		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
 		{
 						}
 	
@@ -2914,38 +2950,38 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
-			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
-			public const string ListableAuthorsFieldName = "ListableAuthors";
+			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
 
 						
 					
-			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
-			public const string ListableDatesFieldName = "ListableDate";
+			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string FactoryListableDatesFieldName = "FactoryListableDate";
 
 						
 					
-			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
-			public const string ListableImagesFieldName = "ListableImage";
+			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string FactoryListableImagesFieldName = "FactoryListableImage";
 
 						
 					
-			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
-			public const string ListableSummariesFieldName = "ListableSummary";
+			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
 
 						
 					
-			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
-			public const string ListableTitlesFieldName = "ListableTitle";
+			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
 
 						
 					
-			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
-			public const string ListableTopicsFieldName = "ListableTopics";
+			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
 
 						
 					
-			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
-			public const string ListableUrlsFieldName = "ListableUrl";
+			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
 
 						
 			
@@ -3101,7 +3137,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	/// <para>ID: 8cb9b3dc-fb05-4f6c-a73b-19eadb3a6391</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=I___BasePageConstants.TemplateIdString)]
-	public partial interface I___BasePage : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy
+	public partial interface I___BasePage : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy
 	{
 								/// <summary>
 					/// The Custom Meta Tags field.
@@ -3185,7 +3221,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 		/// <para>ID: 8cb9b3dc-fb05-4f6c-a73b-19eadb3a6391</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface I___BasePage__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I_BaseTaxonomy__Raw
+		public partial interface I___BasePage__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy__Raw
 		{
 										/// <summary>
 						/// The Custom Meta Tags field.
@@ -3406,7 +3442,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	/// <para>ID: 947b2243-b316-46b5-9de1-2814f000a037</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=I___PersonConstants.TemplateIdString)]
-	public partial interface I___Person : IGlassBase 
+	public partial interface I___Person : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
 	{
 								/// <summary>
 					/// The Email Address field.
@@ -3472,7 +3508,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 		/// <para>ID: 947b2243-b316-46b5-9de1-2814f000a037</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface I___Person__Raw : IGlassBase 
+		public partial interface I___Person__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
 		{
 										/// <summary>
 						/// The Email Address field.
@@ -3564,6 +3600,41 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					
 			public static readonly ID TwitterFieldId = new ID("ea38cc14-799a-4fed-a58c-4bed8c57a81e");
 			public const string TwitterFieldName = "Twitter";
+
+						
+					
+			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
+
+						
+					
+			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string FactoryListableDatesFieldName = "FactoryListableDate";
+
+						
+					
+			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string FactoryListableImagesFieldName = "FactoryListableImage";
+
+						
+					
+			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
+
+						
+					
+			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
+
+						
+					
+			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
+
+						
+					
+			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
 
 						
 			
@@ -4635,193 +4706,193 @@ namespace Informa.Models.Velir.Search.Models.FactoryInterface
 
 
  	/// <summary>
-	/// IListable Interface
+	/// IFactoryListable Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Listable</para>	
+	/// <para>Path: /sitecore/templates/Velir/FactoryInterface/IFactoryListable</para>	
 	/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IListableConstants.TemplateIdString)]
-	public partial interface IListable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
+	[SitecoreType(TemplateId=IFactoryListableConstants.TemplateIdString)]
+	public partial interface IFactoryListable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
 	{
 								/// <summary>
-					/// The ListableAuthors field.
+					/// The FactoryListableAuthors field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IListableConstants.ListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> ListableAuthors  {get; set;}
+					[SitecoreField(IFactoryListableConstants.FactoryListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryListableAuthors  {get; set;}
 								/// <summary>
-					/// The ListableDate field.
+					/// The FactoryListableDate field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IListableConstants.ListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> ListableDates  {get; set;}
+					[SitecoreField(IFactoryListableConstants.FactoryListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryListableDates  {get; set;}
 								/// <summary>
-					/// The ListableImage field.
+					/// The FactoryListableImage field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IListableConstants.ListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> ListableImages  {get; set;}
+					[SitecoreField(IFactoryListableConstants.FactoryListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryListableImages  {get; set;}
 								/// <summary>
-					/// The ListableSummary field.
+					/// The FactoryListableSummary field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 241b01c9-b518-4182-9b94-c40db3fb9cb2</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IListableConstants.ListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> ListableSummaries  {get; set;}
+					[SitecoreField(IFactoryListableConstants.FactoryListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryListableSummaries  {get; set;}
 								/// <summary>
-					/// The ListableTitle field.
+					/// The FactoryListableTitle field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IListableConstants.ListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> ListableTitles  {get; set;}
+					[SitecoreField(IFactoryListableConstants.FactoryListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryListableTitles  {get; set;}
 								/// <summary>
-					/// The ListableTopics field.
+					/// The FactoryListableTopics field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IListableConstants.ListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> ListableTopics  {get; set;}
+					[SitecoreField(IFactoryListableConstants.FactoryListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryListableTopics  {get; set;}
 								/// <summary>
-					/// The ListableUrl field.
+					/// The FactoryListableUrl field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IListableConstants.ListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> ListableUrls  {get; set;}
+					[SitecoreField(IFactoryListableConstants.FactoryListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> FactoryListableUrls  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// IListable Interface
+		/// IFactoryListable Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/Listable</para>	
+		/// <para>Path: /sitecore/templates/Velir/FactoryInterface/IFactoryListable</para>	
 		/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IListable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
+		public partial interface IFactoryListable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
 		{
 										/// <summary>
-						/// The ListableAuthors field.
+						/// The FactoryListableAuthors field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 5f51fa66-5326-4aa6-9671-57a48aedeaa4</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IListableConstants.ListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> ListableAuthors  {get; set;}
+						[SitecoreField(IFactoryListableConstants.FactoryListableAuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryListableAuthors  {get; set;}
 										/// <summary>
-						/// The ListableDate field.
+						/// The FactoryListableDate field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 73f216e4-c244-4a3b-95ee-07d9ffd2d4f7</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IListableConstants.ListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> ListableDates  {get; set;}
+						[SitecoreField(IFactoryListableConstants.FactoryListableDatesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryListableDates  {get; set;}
 										/// <summary>
-						/// The ListableImage field.
+						/// The FactoryListableImage field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 6d481d3a-7c71-488f-88ff-9c53de9b4ac3</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IListableConstants.ListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> ListableImages  {get; set;}
+						[SitecoreField(IFactoryListableConstants.FactoryListableImagesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryListableImages  {get; set;}
 										/// <summary>
-						/// The ListableSummary field.
+						/// The FactoryListableSummary field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 241b01c9-b518-4182-9b94-c40db3fb9cb2</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IListableConstants.ListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> ListableSummaries  {get; set;}
+						[SitecoreField(IFactoryListableConstants.FactoryListableSummariesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryListableSummaries  {get; set;}
 										/// <summary>
-						/// The ListableTitle field.
+						/// The FactoryListableTitle field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: a92e4bfb-3010-4332-a7a0-c788348993ce</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IListableConstants.ListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> ListableTitles  {get; set;}
+						[SitecoreField(IFactoryListableConstants.FactoryListableTitlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryListableTitles  {get; set;}
 										/// <summary>
-						/// The ListableTopics field.
+						/// The FactoryListableTopics field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 629bddb3-5e8e-49bb-a323-6e1c46bc7cb5</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IListableConstants.ListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> ListableTopics  {get; set;}
+						[SitecoreField(IFactoryListableConstants.FactoryListableTopicsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryListableTopics  {get; set;}
 										/// <summary>
-						/// The ListableUrl field.
+						/// The FactoryListableUrl field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 5083ca52-6de6-4be9-a1e6-30e9579e782d</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IListableConstants.ListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> ListableUrls  {get; set;}
+						[SitecoreField(IFactoryListableConstants.FactoryListableUrlsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> FactoryListableUrls  {get; set;}
 						}
 	
-	public static partial class IListableConstants{
+	public static partial class IFactoryListableConstants{
 
 			public const string TemplateIdString = "a3ec5da5-c37c-44a5-83f3-96d45b53389f";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Listable";
+			public const string TemplateName = "IFactoryListable";
 
 					
-			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
-			public const string ListableAuthorsFieldName = "ListableAuthors";
-
-						
-					
-			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
-			public const string ListableDatesFieldName = "ListableDate";
+			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
 
 						
 					
-			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
-			public const string ListableImagesFieldName = "ListableImage";
+			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string FactoryListableDatesFieldName = "FactoryListableDate";
 
 						
 					
-			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
-			public const string ListableSummariesFieldName = "ListableSummary";
+			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string FactoryListableImagesFieldName = "FactoryListableImage";
 
 						
 					
-			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
-			public const string ListableTitlesFieldName = "ListableTitle";
+			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
 
 						
 					
-			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
-			public const string ListableTopicsFieldName = "ListableTopics";
+			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
 
 						
 					
-			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
-			public const string ListableUrlsFieldName = "ListableUrl";
+			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
+
+						
+					
+			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
 
 						
 			
@@ -5275,7 +5346,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 	/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IAuthored_ContentConstants.TemplateIdString)]
-	public partial interface IAuthored_Content : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable
+	public partial interface IAuthored_Content : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
 	{
 								/// <summary>
 					/// The Body field.
@@ -5305,7 +5376,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 		/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IAuthored_Content__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IListable__Raw
+		public partial interface IAuthored_Content__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
 		{
 										/// <summary>
 						/// The Body field.
@@ -5346,38 +5417,38 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 
 						
 					
-			public static readonly ID ListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
-			public const string ListableAuthorsFieldName = "ListableAuthors";
+			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
 
 						
 					
-			public static readonly ID ListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
-			public const string ListableDatesFieldName = "ListableDate";
+			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string FactoryListableDatesFieldName = "FactoryListableDate";
 
 						
 					
-			public static readonly ID ListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
-			public const string ListableImagesFieldName = "ListableImage";
+			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string FactoryListableImagesFieldName = "FactoryListableImage";
 
 						
 					
-			public static readonly ID ListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
-			public const string ListableSummariesFieldName = "ListableSummary";
+			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
 
 						
 					
-			public static readonly ID ListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
-			public const string ListableTitlesFieldName = "ListableTitle";
+			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
 
 						
 					
-			public static readonly ID ListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
-			public const string ListableTopicsFieldName = "ListableTopics";
+			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
 
 						
 					
-			public static readonly ID ListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
-			public const string ListableUrlsFieldName = "ListableUrl";
+			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
 
 						
 			
@@ -5739,7 +5810,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IStaff_ItemConstants.TemplateIdString)]
-	public partial interface IStaff_Item : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person, global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable
+	public partial interface IStaff_Item : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
 	{
 				}
 
@@ -5751,7 +5822,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IStaff_Item__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.ILinkable__Raw
+		public partial interface IStaff_Item__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
 		{
 						}
 	
@@ -5792,13 +5863,48 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 
 						
 					
-			public static readonly ID LinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
-			public const string LinkableTextsFieldName = "LinkableText";
+			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
 
 						
 					
-			public static readonly ID LinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
-			public const string LinkableUrlsFieldName = "LinkableUrl";
+			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+			public const string FactoryListableDatesFieldName = "FactoryListableDate";
+
+						
+					
+			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+			public const string FactoryListableImagesFieldName = "FactoryListableImage";
+
+						
+					
+			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
+
+						
+					
+			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
+
+						
+					
+			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
+
+						
+					
+			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
+
+						
+					
+			public static readonly ID FactoryLinkableTextsFieldId = new ID("529c867f-2816-43a9-964a-3f16c014a4f7");
+			public const string FactoryLinkableTextsFieldName = "FactoryLinkableText";
+
+						
+					
+			public static readonly ID FactoryLinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
+			public const string FactoryLinkableUrlsFieldName = "FactoryLinkableUrl";
 
 						
 			
@@ -6783,51 +6889,51 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 
 
  	/// <summary>
-	/// I_BaseTaxonomy Interface
+	/// I___BaseTaxonomy Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/__BaseTaxonomy</para>	
 	/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=I_BaseTaxonomyConstants.TemplateIdString)]
-	public partial interface I_BaseTaxonomy : IGlassBase 
+	[SitecoreType(TemplateId=I___BaseTaxonomyConstants.TemplateIdString)]
+	public partial interface I___BaseTaxonomy : IGlassBase 
 	{
 								/// <summary>
 					/// The Taxonomy field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: 0212fc0f-953b-461c-b4d9-b7483a4d4f1b</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=ITaxonomy_Item</para>
 					/// </summary>
-					[SitecoreField(I_BaseTaxonomyConstants.TaxonomiesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Taxonomies  {get; set;}
+					[SitecoreField(I___BaseTaxonomyConstants.TaxonomiesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<ITaxonomy_Item> Taxonomies  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// I_BaseTaxonomy Interface
+		/// I___BaseTaxonomy Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Base Templates/_BaseTaxonomy</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/__BaseTaxonomy</para>	
 		/// <para>ID: eed18b44-4005-4f15-9b18-d7c2d2cac0ec</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface I_BaseTaxonomy__Raw : IGlassBase 
+		public partial interface I___BaseTaxonomy__Raw : IGlassBase 
 		{
 										/// <summary>
 						/// The Taxonomy field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: 0212fc0f-953b-461c-b4d9-b7483a4d4f1b</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=ITaxonomy_Item</para>
 						/// </summary>
-						[SitecoreField(I_BaseTaxonomyConstants.TaxonomiesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Taxonomies  {get; set;}
+						[SitecoreField(I___BaseTaxonomyConstants.TaxonomiesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<ITaxonomy_Item> Taxonomies  {get; set;}
 						}
 	
-	public static partial class I_BaseTaxonomyConstants{
+	public static partial class I___BaseTaxonomyConstants{
 
 			public const string TemplateIdString = "eed18b44-4005-4f15-9b18-d7c2d2cac0ec";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "_BaseTaxonomy";
+			public const string TemplateName = "__BaseTaxonomy";
 
 					
 			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");

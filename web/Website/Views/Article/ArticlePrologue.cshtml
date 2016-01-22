@@ -1,9 +1,8 @@
 @using Informa.Web.TestData
 @using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
-@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
-    <div class="article-prologue">
+@model Informa.Web.ViewModels.GlassArticleModel
+
+<div class="article-prologue">
         <div class="article-prologue__share-bar">
             <ul>
                 <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
@@ -101,15 +100,6 @@
             </ul>
         </div>
 
-
-    @* Taxonomy Tags *@
-        <div class="article-prologue__tags-bar">
-            Tags:
-            <div class="bar-separated-link-list">
-                @foreach (var tag in Model.Taxonomies.OfType<ITaxonomy_Item>().Take(3))
-                {
-                    <a href="/search?@tag._Id">@tag.Item_Name</a>
-                }
-            </div>
-        </div>
-</div>
+        @{Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.TaxonomyItems);}          
+      
+    </div>

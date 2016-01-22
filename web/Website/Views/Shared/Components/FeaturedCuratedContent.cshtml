@@ -1,6 +1,9 @@
-﻿@using Informa.Web.TestData
+﻿@using Glass.Mapper
+@using Glass.Mapper.Sc
 @using Glass.Mapper.Sc.Web.Mvc
-@model Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface.IListable
+@using Informa.Models.FactoryInterface        
+@using Jabberwocky.Glass.Factory
+@model Informa.Web.ViewModels.GlassArticleModel
 <section class="article-preview">
     @{
         Html.RenderPartial("Components/_ListableContent", Model);
