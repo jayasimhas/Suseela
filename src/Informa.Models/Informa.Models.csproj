@@ -89,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreGlassModels.cs" />
-    <Compile Include="FactoryInterfaceModels.cs" />
+    <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
     <Compile Include="GlassModels\IAuthor.cs" />
     <Compile Include="GlassModels\IArticle.cs" />

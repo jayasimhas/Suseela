@@ -3,9 +3,9 @@
 @using Informa.Web.TestData
 @model Informa.Models.FactoryInterface.IListable
 
-@if (Model.ListableImage != null)
-{   
-    <img class="article-preview__image" src="@Model.ListableImage.Src">
+@if (!string.IsNullOrEmpty(Model.ListableImage))
+{
+    <img class="article-preview__image" src="@Model.ListableImage">
 }
 
 <div class="article-metadata">

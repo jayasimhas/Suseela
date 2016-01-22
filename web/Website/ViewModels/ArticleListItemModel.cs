@@ -14,10 +14,10 @@ using Sitecore.Data.Items;
 
 namespace Informa.Web.ViewModels
 {
-    public class GlassArticleListModel : GlassViewModel<IArticle>, IListable
+    public class ArticleListItemModel : GlassViewModel<IArticle>, IListable
     {
         private IArticle _innerItem;
-        public GlassArticleListModel(IArticle innerItem)
+        public ArticleListItemModel(IArticle innerItem)
         {
             _innerItem = innerItem;
         }
@@ -28,7 +28,7 @@ namespace Informa.Web.ViewModels
         public DateTime ListableDate => GlassModel.Actual_Publish_Date;
 
 
-        public Image ListableImage => GlassModel.Featured_Image_16_9;
+        public string ListableImage => _innerItem.Featured_Image_16_9?.Src;
 
 
         public string ListableSummary => GlassModel.Summary;

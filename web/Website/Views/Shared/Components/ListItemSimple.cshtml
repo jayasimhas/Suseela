@@ -3,7 +3,7 @@
 @model Informa.Models.FactoryInterface.IListable
 @if (Model.ListableImage != null)
 {
-    <img class="article-related-content__img" src="@Model.ListableImage.Src">
+    <img class="article-related-content__img" src="@Model.ListableImage">
 }
 <span class="article-related-content__category">@TestData.GetRandomTopic().LinkableText</span>
 <h5>@Model.ListableTitle</h5>

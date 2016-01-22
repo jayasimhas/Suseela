@@ -17,13 +17,31 @@ namespace Informa.Models.FactoryInterface
     {                    
         IEnumerable<ILinkable> ListableAuthors { get; }  
         DateTime ListableDate { get; }                 
-        Image ListableImage { get; }                    
+        string ListableImage { get; }                    
         string ListableSummary { get; }                
         string ListableTitle { get; }                   
         IEnumerable<ILinkable> ListableTopics { get; }   
     }
-                                       
-   
+
+    public interface IFeaturedImage
+    {
+        string ImageUrl { get; }
+        string ImageCaption { get; }
+        string ImageSource { get; }
+    }
+
+    public class FeaturedImage : IFeaturedImage
+    {
+        #region Implementation of IFeaturedImage
+
+        public string ImageUrl { get; set; }
+        public string ImageCaption { get; set; }
+        public string ImageSource { get; set; }
+
+        #endregion
+    }
+
+
     public class ListableModel : IListable
     {
         #region Implementation of ILinkable
@@ -37,7 +55,7 @@ namespace Informa.Models.FactoryInterface
 
         public IEnumerable<ILinkable> ListableAuthors { get; set; }
         public DateTime ListableDate { get; set; }
-        public Image ListableImage { get; set; }
+        public string ListableImage { get; set; }
         public string ListableSummary { get; set; }
         public string ListableTitle { get; set; }
         public IEnumerable<ILinkable> ListableTopics { get; set; }

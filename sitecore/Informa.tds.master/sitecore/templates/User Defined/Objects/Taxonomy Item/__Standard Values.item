@@ -23,8 +23,8 @@ content-length: 5
 $name
 ----field----
 field: {529C867F-2816-43A9-964A-3F16C014A4F7}
-name: LinkableText
-key: linkabletext
+name: FactoryLinkableText
+key: factorylinkabletext
 content-length: 38
 
 {AC58F381-3D7F-4D90-966D-41813DC66E87}

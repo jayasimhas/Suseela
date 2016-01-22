@@ -11,6 +11,7 @@ using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
+using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Factory;
 using Jabberwocky.Glass.Models;
 using Sitecore.ContentSearch.Linq.Extensions;
@@ -72,7 +73,7 @@ namespace Informa.Web.TestData
                 ListableTopics = GetRandomTopics(numTaxonomy),
                 ListableAuthors = GetRandomEmployees(numAuthors),
                 ListableDate = DateTime.Now,
-                ListableImage = new Image { Src = "http://placehold.it/787x443"},
+                ListableImage = "http://lorempixel.com/800/450/technics",
                 ListableSummary = GetRandomSummary(),
                 ListableTitle = GetRandomTitle(),
                 ListableUrl = new Link { Anchor = "#" }
@@ -158,7 +159,7 @@ namespace Informa.Web.TestData
         {
             ListableAuthors = null,
             ListableDate = DateTime.Now,
-            ListableImage = new Image(),
+            ListableImage = "http://lorempixel.com/800/450/technics",
             ListableTitle = GetRandomTitle(),
             ListableTopics = GetRandomTopics(),
             ListableUrl = new Link { Anchor = "#", Text = "Text", Title = "Title" },

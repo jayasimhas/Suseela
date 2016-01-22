@@ -1,6 +1,8 @@
+using Informa.Models.FactoryInterface;
+
 namespace Informa.Web.ViewModels
 {
-    public interface IAuthorModel
+    public interface IPersonModel
     {
         string Name { get; }
         string Twitter { get; }

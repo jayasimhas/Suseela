@@ -17,6 +17,13 @@ content-length: 8
 
 Droplink
 ----field----
+field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
+name: Source
+key: source
+content-length: 64
+
+/sitecore/content/ScripIntelligence/Globals/Taxonomy/Media Types
+----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
@@ -26,7 +33,7 @@ content-length: 4
 ----version----
 language: en
 version: 1
-revision: d1d09e9b-daed-44ed-96e7-f8919b7b3ec9
+revision: 1de52be7-2f8b-40a6-b745-4be0749055cd
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d1d09e9b-daed-44ed-96e7-f8919b7b3ec9
+1de52be7-2f8b-40a6-b745-4be0749055cd
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160113T195316Z
+20160122T164323Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

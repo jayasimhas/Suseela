@@ -562,10 +562,10 @@
     <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
     <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
-    <Compile Include="ViewModels\AuthorModel.cs" />
+    <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\GlassArticleModel.cs" />
-    <Compile Include="ViewModels\GlassArticleListModel.cs" />
+    <Compile Include="ViewModels\ArticleListItemModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinks.cs" />
     <Compile Include="ViewModels\HighlightViewModel.cs" />
@@ -575,7 +575,7 @@
     <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\IArticleTagsViewModel.cs" />
-    <Compile Include="ViewModels\IAuthorModel.cs" />
+    <Compile Include="ViewModels\IPersonModel.cs" />
     <Compile Include="ViewModels\IFooterViewModel.cs" />
     <Compile Include="ViewModels\IHeaderViewModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />

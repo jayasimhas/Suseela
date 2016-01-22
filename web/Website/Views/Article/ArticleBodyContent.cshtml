@@ -18,7 +18,7 @@
                 <h6>@Model.Content_Type</h6>
             </li>
             @if (!string.IsNullOrEmpty(Model.Media_Type))
-            {
+            {   
                 <li>
                     <svg class="article-metadata__media-type">
                         <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
@@ -89,9 +89,9 @@
     @* * *  ARTICLE - FEATURED IMAGE
         IIPP-117 *@
     <aside class="article-inline-image">
-        <img src="http://lorempixel.com/800/450/technics">
-        <span class="article-inline-image__source">Image Source: Associated Press</span>
-        <span class="article-inline-image__caption">Image caption goes here</span>
+        <img src="@Model.Image.ImageUrl">
+        <span class="article-inline-image__source">@Model.Image.ImageSource</span>
+        <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
     </aside>
     @* * *  END ARTICLE - FEATURED IMAGE *@
 

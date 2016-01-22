@@ -4,7 +4,7 @@ using Informa.Models.FactoryInterface;
 
 namespace Informa.Web.ViewModels
 {
-    public interface IArticleModel
+    public interface IArticleModel : IListable
     {
         string Title { get; }
         string Sub_Title { get; }
@@ -14,7 +14,9 @@ namespace Informa.Web.ViewModels
         DateTime Date { get; }
         string Content_Type { get; }
         string Media_Type { get; }
-        IEnumerable<IAuthorModel> Authors { get; }
-        string Category { get; }          
+        IEnumerable<IPersonModel> Authors { get; }
+        string Category { get; }     
+        IEnumerable<IListable> RelatedArticles { get; }  
+        
     }
 }

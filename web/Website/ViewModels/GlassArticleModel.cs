@@ -6,7 +6,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels
-{
+{  
     public class GlassArticleModel : GlassViewModel<IArticle>, IArticleModel
     {   
         public IEnumerable<ILinkable> TaxonomyItems
@@ -19,12 +19,51 @@ namespace Informa.Web.ViewModels
         public string Body => GlassModel.Body;
         //IEnumerable<HierarchyLinks> IArticleModel.TaxonomyItems { get; }
         public DateTime Date => GlassModel.Actual_Publish_Date;
-        public string Content_Type => GlassModel.Content_Type.Item_Name;
-        public string Media_Type => GlassModel.Media_Type == null ? null : GlassModel.Media_Type.Item_Name;
+        //TODO: Extract to a dictionary.
+        public string Content_Type => GlassModel.Content_Type?.Item_Name;
+        public string Media_Type => GlassModel.Media_Type?.Item_Name == "Data" ? "chart" : GlassModel.Media_Type?.Item_Name?.ToLower() ?? "";
 
-        public IEnumerable<IAuthorModel> Authors => GlassModel.Authors.Select(x => new AuthorModel(x));
+        public IEnumerable<IPersonModel> Authors => GlassModel.Authors.Select(x => new PersonModel(x));
         public string Category => GlassModel.Article_Category;
+        public IEnumerable<IListable> RelatedArticles => GlassModel.Related_Articles.Select(x => new ArticleListItemModel(x));
+        public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
+
+        #endregion
+
+        #region Implementation of ILinkable
+
+        public string LinkableText => Title;
+        public string LinkableUrl => GlassModel._Url;
+
+        #endregion
+
+        #region Implementation of IListable
+
+        public IEnumerable<ILinkable> ListableAuthors
+            =>
+                Authors.Select(
+                    x => new LinkableModel {LinkableText = x.Name, LinkableUrl = $"mailto://{x.Email_Address}"});
+
+        public DateTime ListableDate => DateTime.MinValue;
+        public string ListableImage => Image.ImageUrl;
+        public string ListableSummary { get; }
+        public string ListableTitle { get; }
+        public IEnumerable<ILinkable> ListableTopics { get; }
 
         #endregion
     }
+
+    public class ArticleFeaturedImage : IFeaturedImage
+    {
+        private IArticle _glassModel;
+        public ArticleFeaturedImage(IArticle glassModel)
+        {
+            _glassModel = glassModel;
+        }
+
+        public string ImageUrl => _glassModel.Featured_Image_16_9.Src;
+        public string ImageCaption => _glassModel.Featured_Image_Caption;
+        public string ImageSource => _glassModel.Featured_Image_Source;
+    }
+    
 }
