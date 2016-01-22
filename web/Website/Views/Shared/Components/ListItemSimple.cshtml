@@ -5,6 +5,6 @@
 {
     <img class="article-related-content__img" src="@Model.ListableImage">
 }
-<span class="article-related-content__category">@TestData.GetRandomTopic().LinkableText</span>
+<span class="article-related-content__category">@Model.ListableType</span>
 <h5>@Model.ListableTitle</h5>
 <time class="article-related-content__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>

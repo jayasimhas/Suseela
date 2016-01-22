@@ -3,7 +3,7 @@
 <div class="article-topics">
     <h2>Topics</h2>
     <ul>
-        @foreach (var catagory in Model.Children)
+        @*@foreach (var catagory in Model.Children)
         {
             <li class="article-topics__section-header">catagory.Text</li>
             foreach (var tag in catagory.Children)
@@ -14,9 +14,9 @@
                      Html.RenderPartial("ChildTaxonomy", childTag);
                  }
             }
-        }
+        }*@
 
-            @*<li class="article-topics__li"><a href="#">Biosimilars</a></li>
+            <li class="article-topics__li"><a href="#">Biosimilars</a></li>
         <ul>
             <li class="article-topics__li article-topics__li--grandchild"><a href="#">Biosimilar Child Item</a></li>
             <ul>
@@ -32,6 +32,6 @@
                 <li class="article-topics__li article-topics__li--grandchild"><a href="#">Oncology Grandchild Item That Wraps</a></li>
             </ul>
         </ul>
-        <li class="article-topics__li"><a href="#">Respiratory</a></li>*@
+        <li class="article-topics__li"><a href="#">Respiratory</a></li>
     </ul>
 </div>
