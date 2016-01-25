@@ -52,12 +52,13 @@ namespace Informa.Web.App_Start
 		}
 		public static void AddMaps(IConfigFactory<IGlassMap> mapsConfigFactory)
         {
-            //// Add maps here
-            //mapsConfigFactory.Add(() => new ListableConfig());
-            //         mapsConfigFactory.Add(() => new LinkableConfig());
-            //         mapsConfigFactory.Add(() => new InterfaceTemplateConfig());
-        }
-    }
+			mapsConfigFactory.Add(() => new ArticleMap());
+			//// Add maps here
+			//mapsConfigFactory.Add(() => new ListableConfig());
+			//         mapsConfigFactory.Add(() => new LinkableConfig());
+			//         mapsConfigFactory.Add(() => new InterfaceTemplateConfig());
+		}
+	}
 
     //public class ListableConfig : SitecoreGlassMap<IArticle>
     //{
