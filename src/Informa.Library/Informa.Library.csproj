@@ -154,6 +154,9 @@
     <Reference Include="Sitecore.Services.Infrastructure.Sitecore">
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.SharedSource.PageEditor">
+      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
