@@ -6,14 +6,13 @@
     <div class="article-prologue">
         <div class="article-prologue__share-bar">
             <ul>
-                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        <span class="article-prologue__share-label">Email</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#email"></use>
-                        </svg>
-                    </span>
-                    <div class="pop-out">
+                <li class="article-prologue__share-item js-pop-out-trigger">
+                    <span class="article-prologue__share-label">Email</span>
+                    <svg class="article-prologue__share-icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#email"></use>
+                    </svg>
+
+                    @* <div class="pop-out">
                         <div class="pop-out__internal pop-out__internal--flush-left pop-out__internal--wide">
 
                             <div class="dismiss-button">
@@ -54,7 +53,7 @@
                                 <b>Please Note:</b> Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
                             </p>
                         </div>
-                    </div>
+                    </div> *@
                 </li>
                 <li class="article-prologue__share-item">
                     <span class="article-prologue__share-label">Print</span>
@@ -62,32 +61,18 @@
                         <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
                     </svg>
                 </li>
-                <li class="article-prologue__share-item pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        @* IF NOT BOOKMARKED *@
-                        <span class="article-prologue__share-label">Bookmark</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-                        </svg>
+                <li class="article-prologue__share-item js-pop-out-trigger" data-pop-out-align="right">
+                    @* IF NOT BOOKMARKED *@
+                    <span class="article-prologue__share-label">Bookmark</span>
+                    <svg class="article-prologue__share-icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                    </svg>
 
-                        @* IF BOOKMARKED
-                        <span class="article-prologue__share-label">Bookmarked</span>
-                        <svg class="article-prologue__share-icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                        </svg> *@
-
-                        </span>
-                    <div class="pop-out">
-                        <div class="pop-out__internal">
-                            <svg class="header__icons header__icons--x">
-                                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                            </svg>
-                            <h4 class="pop-out__header">
-                                You must sign in to use this functionality
-                            </h4>
-                            @* @Html.Partial("_SignInForm") *@
-                        </div>
-                    </div>
+                    @* IF BOOKMARKED
+                    <span class="article-prologue__share-label">Bookmarked</span>
+                    <svg class="article-prologue__share-icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                    </svg> *@
                 </li>
                 <li class="article-prologue__share-item">
                     <span class="article-prologue__share-label">Share</span>
