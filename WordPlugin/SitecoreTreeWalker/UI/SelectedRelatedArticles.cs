@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SitecoreTreeWalker.SitecoreTree;
+using Informa.Web.Areas.Account.Models;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
 using SitecoreTreeWalker.Util;
 
@@ -13,10 +13,10 @@ namespace SitecoreTreeWalker.UI
 {
 	class SelectedRelatedArticles : TableLayoutPanel
 	{
-		public List<ArticlePreviewInfo> LocalRelatedArticles = new List<ArticlePreviewInfo>();
-		public List<ArticlePreviewInfo> SitecoreRelatedArticles = new List<ArticlePreviewInfo>();
-		public List<ArticlePreviewInfo> LocalReferencedArticles = new List<ArticlePreviewInfo>();
-		public List<ArticlePreviewInfo> SitecoreReferencedArticles = new List<ArticlePreviewInfo>();
+		public List<WordPluginModel.ArticlePreviewInfo> LocalRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
+		public List<WordPluginModel.ArticlePreviewInfo> SitecoreRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
+		public List<WordPluginModel.ArticlePreviewInfo> LocalReferencedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
+		public List<WordPluginModel.ArticlePreviewInfo> SitecoreReferencedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
 		public MenuSelectorItem MenuItem;
 		public bool HasChanged;
 
@@ -25,7 +25,7 @@ namespace SitecoreTreeWalker.UI
 			Padding = new Padding(0,0,SystemInformation.VerticalScrollBarWidth,0);
 		}
 
-		public Label CreateRemoveImageLabel(ArticlePreviewInfo article)
+		public Label CreateRemoveImageLabel(WordPluginModel.ArticlePreviewInfo article)
 		{
 			var label = new Label
 			       	{
@@ -47,7 +47,7 @@ namespace SitecoreTreeWalker.UI
 			MenuItem.Refresh();
 		}
 
-		private void ConfigureRemoveLabel(Label label, ArticlePreviewInfo article)
+		private void ConfigureRemoveLabel(Label label, WordPluginModel.ArticlePreviewInfo article)
 		{
 			label.MouseMove += delegate
 			{
@@ -67,7 +67,7 @@ namespace SitecoreTreeWalker.UI
 			ConfigureLabel(label, article);
 		}
 
-		private void ConfigureViewLabel(Label label, ArticlePreviewInfo article)
+		private void ConfigureViewLabel(Label label, WordPluginModel.ArticlePreviewInfo article)
 		{
 			label.MouseMove += delegate
 			{
@@ -114,7 +114,7 @@ namespace SitecoreTreeWalker.UI
 			return header;
 		}
 
-		public Label CreateViewLabel(ArticlePreviewInfo article)
+		public Label CreateViewLabel(WordPluginModel.ArticlePreviewInfo article)
 		{
 			var view = new Label
 			           	{
@@ -129,14 +129,14 @@ namespace SitecoreTreeWalker.UI
 			return view;
 		}
 
-		public void ConfigureLabel(Label label, ArticlePreviewInfo article = null)
+		public void ConfigureLabel(Label label, WordPluginModel.ArticlePreviewInfo article = null)
 		{
 			//label.Tag = article.ArticleNumber;
 			label.Width = label.Parent.Width;
 			label.Height = 15;
 		}
 
-		public void AddToRelated(ArticlePreviewInfo preview)
+		public void AddToRelated(WordPluginModel.ArticlePreviewInfo preview)
 		{
 			
 			if(LocalRelatedArticles.Select(t => t.ArticleNumber).Contains(preview.ArticleNumber)
@@ -169,7 +169,7 @@ namespace SitecoreTreeWalker.UI
 		/// and be "Referenced Inline" instead.
 		/// </summary>
 		/// <returns></returns>
-		public IEnumerable<ArticlePreviewInfo> GetActiveSitecoreRelatedArticles()
+		public IEnumerable<WordPluginModel.ArticlePreviewInfo> GetActiveSitecoreRelatedArticles()
 		{
 			return SitecoreRelatedArticles.Where(sra => !HasArticle(LocalReferencedArticles, sra));
 		}
@@ -185,12 +185,12 @@ namespace SitecoreTreeWalker.UI
 				RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 				Controls.Add(ReferencedArticlesHeader);
 				ConfigureLabel(ReferencedArticlesHeader);
-				foreach (ArticlePreviewInfo article in LocalReferencedArticles)
+				foreach (WordPluginModel.ArticlePreviewInfo article in LocalReferencedArticles)
 				{
 					bool bold = !SitecoreReferencedArticles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber);
 					AddRow(article, false, bold, false);
 				}
-				foreach (ArticlePreviewInfo article in SitecoreReferencedArticles.Where(a => !LocalReferencedArticles.Select(b=>b.ArticleNumber).Contains(a.ArticleNumber)))
+				foreach (WordPluginModel.ArticlePreviewInfo article in SitecoreReferencedArticles.Where(a => !LocalReferencedArticles.Select(b=>b.ArticleNumber).Contains(a.ArticleNumber)))
 				{
 					bool italic = !LocalReferencedArticles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber);
 					AddRow(article, italic, false, false);
@@ -204,7 +204,7 @@ namespace SitecoreTreeWalker.UI
 				RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 				Controls.Add(RelatedArticlesHeader);
 			}
-			foreach (ArticlePreviewInfo article in SitecoreRelatedArticles)
+			foreach (WordPluginModel.ArticlePreviewInfo article in SitecoreRelatedArticles)
 			{
 				if(LocalReferencedArticles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber))
 				{ //sitecore related article already referenced inline locally, so strikeout
@@ -215,7 +215,7 @@ namespace SitecoreTreeWalker.UI
 					AddRow(article);
 				}
 			} 
-			foreach (ArticlePreviewInfo article in LocalRelatedArticles)
+			foreach (WordPluginModel.ArticlePreviewInfo article in LocalRelatedArticles)
 			{
 				if(!HasArticle(SitecoreRelatedArticles, article))
 				{
@@ -237,7 +237,7 @@ namespace SitecoreTreeWalker.UI
 			        || !HasSameMembers(LocalReferencedArticles, SitecoreReferencedArticles) || HasChanged);
 		}
 
-		private static bool HasSameMembers(List<ArticlePreviewInfo> articles1, List<ArticlePreviewInfo> articles2)
+		private static bool HasSameMembers(List<WordPluginModel.ArticlePreviewInfo> articles1, List<WordPluginModel.ArticlePreviewInfo> articles2)
 		{
 			if(articles1.Count != articles2.Count)
 			{
@@ -248,12 +248,12 @@ namespace SitecoreTreeWalker.UI
 			return numbers1.All(numbers2.Contains);
 		}
 
-		private static bool HasArticle(IEnumerable<ArticlePreviewInfo> articles, ArticlePreviewInfo article)
+		private static bool HasArticle(IEnumerable<WordPluginModel.ArticlePreviewInfo> articles, WordPluginModel.ArticlePreviewInfo article)
 		{
 			return articles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber);
 		}
 
-		public void AddRow(ArticlePreviewInfo article, bool italic = false, bool bold = false, bool removable = true)
+		public void AddRow(WordPluginModel.ArticlePreviewInfo article, bool italic = false, bool bold = false, bool removable = true)
 		{
 			//RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 			Label image;

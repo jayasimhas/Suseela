@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Informa.Web.Areas.Account.Models;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using SitecoreTreeWalker.Util.Document;
@@ -97,7 +98,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		/// Retrieve the relevant information from the UI
 		/// </summary>
 		/// <returns></returns>
-		public SitecoreTree.ArticleStruct GetArticleDetails(ArticleDocumentMetadataParser metadataParser = null)
+		public WordPluginModel.ArticleStruct GetArticleDetails(ArticleDocumentMetadataParser metadataParser = null)
 		{
 			if (metadataParser == null)
 			{
@@ -106,7 +107,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			}
 			string longSummary = metadataParser.LongSummary;
 			string shortSummary = metadataParser.ShortSummary;
-			var articleDetails = new SitecoreTree.ArticleStruct
+			var articleDetails = new WordPluginModel.ArticleStruct
 			{
 				ArticleNumber = pageArticleInformationControl.GetArticleNumber(),
 				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
@@ -114,40 +115,40 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				Summary = longSummary,
 				Subtitle = metadataParser.Subtitle,
 				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
-				Authors = pageArticleInformationControl.GetSelectedAuthors().ToArray(),
+				Authors = pageArticleInformationControl.GetSelectedAuthors().ToList(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
 				//TODO - Add taxonomy
-				Taxonomy = null,
+				Taxonomoy = null,
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),
 				//TODO - Editotrial Notes				
                 //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToArray(),
-				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToArray(),				
-				ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToArray(),
+				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
+				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),				
+				ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
 				Embargoed =  pageArticleInformationControl.GetEmbargoedState(),               
 			};
 
 			return articleDetails;
 		}
 
-		public SitecoreTree.ArticleStruct GetArticleDetailsWithoutDocumentParsing()
+		public WordPluginModel.ArticleStruct GetArticleDetailsWithoutDocumentParsing()
 		{
-			var articleDetails = new SitecoreTree.ArticleStruct
+			var articleDetails = new WordPluginModel.ArticleStruct
 			{
 				ArticleNumber = pageArticleInformationControl.GetArticleNumber(),
 				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
 				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
-				Authors = pageArticleInformationControl.GetSelectedAuthors().ToArray(),
+				Authors = pageArticleInformationControl.GetSelectedAuthors().ToList(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
 				//TODO - Get Taxonmoy
-                Taxonomy = null,
+                Taxonomoy = null,
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),			
 				//TODO - Editorial Notes
                 //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
 				//although this technically requires document parsing, we want to retrieve it 
 				//as though it didn't
-				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToArray(),
-				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToArray(),				
+				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
+				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),				
 				Embargoed =  pageArticleInformationControl.GetEmbargoedState(),
 			};
 
@@ -306,7 +307,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		/// Sets the fields in the UI based on the inputted ArticleStruct
 		/// </summary>
 		/// <param name="articleDetails"></param>
-		public void UpdateFields(SitecoreTree.ArticleStruct articleDetails)
+		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
 		{
 			pageArticleInformationControl.UpdateFields(articleDetails);
 			pageRelatedArticlesControl.UpdateFields(articleDetails);

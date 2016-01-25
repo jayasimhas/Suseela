@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SitecoreTreeWalker.SitecoreServer;
-using StaffStruct = SitecoreTreeWalker.SitecoreTree.StaffStruct;
+using Informa.Web.Areas.Account.Models;
+using StaffStruct = Informa.Web.Areas.Account.Models.WordPluginModel.StaffStruct;
 
 namespace SitecoreTreeWalker.UI
 {
@@ -15,11 +15,11 @@ namespace SitecoreTreeWalker.UI
 	/// </summary>
 	public class EasyRemoveListView : ListView
 	{
-		public List<SitecoreTree.StaffStruct> Selected = new List<SitecoreTree.StaffStruct>();
-		public List<SitecoreTree.StaffStruct> Unremovable = new List<SitecoreTree.StaffStruct>();
+		public List<StaffStruct> Selected = new List<StaffStruct>();
+		public List<StaffStruct> Unremovable = new List<StaffStruct>();
 		public bool DisableEdit;
-		private readonly Dictionary<ListViewItem, SitecoreTree.StaffStruct> _staffItemDictionary = new Dictionary<ListViewItem, SitecoreTree.StaffStruct>();
-		private readonly Dictionary<ListViewItem, SitecoreTree.StaffStruct> _unremovableStaffItemDictionary = new Dictionary<ListViewItem, SitecoreTree.StaffStruct>();
+		private readonly Dictionary<ListViewItem, StaffStruct> _staffItemDictionary = new Dictionary<ListViewItem, StaffStruct>();
+		private readonly Dictionary<ListViewItem, StaffStruct> _unremovableStaffItemDictionary = new Dictionary<ListViewItem, StaffStruct>();
 
 		public EasyRemoveListView()
 		{
@@ -87,11 +87,11 @@ namespace SitecoreTreeWalker.UI
 			}
 		}
 
-		public void PopulateRegular(List<SitecoreTree.StaffStruct> selected)
+		public void PopulateRegular(List<StaffStruct> selected)
 		{
 			Selected = selected;
 			RemoveAllRegular();
-			foreach (SitecoreTree.StaffStruct staff in Selected)
+			foreach (StaffStruct staff in Selected)
 			{
 				ListViewItem item;
 				if (SmallImageList.Images.Count > 0)
@@ -147,7 +147,7 @@ namespace SitecoreTreeWalker.UI
 			}
 		}
 
-		public void Add(SitecoreTree.StaffStruct selected)
+		public void Add(WordPluginModel.StaffStruct selected)
 		{
 			if (Selected.Any(r => r.ID == selected.ID) || Unremovable.Any(r => r.ID == selected.ID))
 			{

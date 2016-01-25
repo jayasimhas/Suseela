@@ -4,12 +4,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Core;
 using Microsoft.Office.Tools.Ribbon;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.document;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.UI.ArticleDetailsForm;
 using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
 using SitecoreTreeWalker.Util;
@@ -21,7 +21,7 @@ namespace SitecoreTreeWalker.UI
     public partial class ESRibbon
     {
         SitecoreUser _user = SitecoreUser.GetUser();
-        public ArticleStruct ArticleDetails = new ArticleStruct();
+        public WordPluginModel.ArticleStruct ArticleDetails = new WordPluginModel.ArticleStruct();
         private DocumentCustomProperties _documentCustomProperties;
         private Microsoft.Office.Tools.CustomTaskPane myCustomTaskPane;
 
@@ -292,11 +292,11 @@ namespace SitecoreTreeWalker.UI
         }
 
         /// <summary>
-        /// Sets the member SitecoreServer.ArticleStruct ArticleDetails to the inputted
-        /// SitecoreTree.ArticleStruct articleStruct
+        /// Sets the member ArticleStruct ArticleDetails to the inputted
+        /// ArticleStruct articleStruct
         /// </summary>
         /// <param name="articleStruct"></param>
-        public void SetArticleDetails(ArticleStruct articleStruct)
+        public void SetArticleDetails(WordPluginModel.ArticleStruct articleStruct)
         {
             ArticleDetails = articleStruct;
         }

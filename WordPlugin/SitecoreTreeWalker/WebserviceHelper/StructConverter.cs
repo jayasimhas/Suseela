@@ -1,23 +1,23 @@
 ﻿using System.Linq;
 using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.SitecoreServer;
 
 namespace SitecoreTreeWalker.WebserviceHelper
 {
 	public class StructConverter
 	{
 		
-		public ArticleStruct GetServerStruct(SitecoreTree.ArticleStruct articleStruct)
+		public WordPluginModel.ArticleStruct GetServerStruct(WordPluginModel.ArticleStruct articleStruct)
 		{
-			var articleDetails = new ArticleStruct();
+			var articleDetails = new WordPluginModel.ArticleStruct();
 			articleDetails.Publication = articleStruct.Publication;
 			articleDetails.ArticleNumber = articleStruct.ArticleNumber;
-			articleDetails.Authors = articleStruct.Authors.Select(r => new StaffStruct { ID = r.ID, Name = r.Name, Publications = r.Publications }).ToArray();
+			articleDetails.Authors = articleStruct.Authors.Select(r => new WordPluginModel.StaffStruct { ID = r.ID, Name = r.Name, Publications = r.Publications }).ToList();
 			articleDetails.RelatedInlineArticles = articleStruct.RelatedInlineArticles;
 			articleDetails.WebPublicationDate = articleStruct.WebPublicationDate;
 			articleDetails.PrintPublicationDate = articleStruct.PrintPublicationDate;
 			articleDetails.NotesToEditorial = articleStruct.NotesToEditorial;
-			articleDetails.Taxonomy = articleStruct.Taxonomy.Select(t => new TaxonomyStruct { Name = t.Name, ID = t.ID, Section = t.Section }).ToArray();
+			//TODO - add article taxonomy to the Struct.
+			//if (articleStruct.Taxonomoy.Any()){articleDetails.Taxonomoy = articleStruct.Taxonomoy.Select(t => new WordPluginModel.TaxonomyStruct {Name = t.Name, ID = t.ID, Section = t.Section }).ToList();}
 			articleDetails.Title = articleStruct.Title;
 			articleDetails.RelatedArticles = articleStruct.RelatedArticles;
 			articleDetails.ReferencedDeals = articleStruct.ReferencedDeals;

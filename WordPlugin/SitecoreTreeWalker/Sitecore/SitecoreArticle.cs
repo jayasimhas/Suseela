@@ -14,8 +14,9 @@ using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 using SitecoreTreeWalker.WebserviceHelper;
-using ArticleStruct = SitecoreTreeWalker.SitecoreServer.ArticleStruct;
-using WorkflowState = SitecoreTreeWalker.SitecoreTree.WorkflowState;
+using ArticlePreviewInfo = Informa.Web.Areas.Account.Models.WordPluginModel.ArticlePreviewInfo;
+using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
+using WorkflowState = Informa.Web.Areas.Account.Models.WordPluginModel.WorkflowState;
 
 namespace SitecoreTreeWalker
 {
@@ -29,7 +30,7 @@ namespace SitecoreTreeWalker
 			using (var client = new HttpClient())
 			{
 				var article = new WordPluginModel.CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
-				var response = client.PostAsJsonAsync($"{webApiURL}SitecoreSaver/CreateArticle", article).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}CreateArticle", article).Result;
 				var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
 				return articleItem;
 			}
@@ -41,7 +42,7 @@ namespace SitecoreTreeWalker
 			return server.CreatePubArtGet(articleName, publicationDate, publicationID, publicationIssue, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
 		}
 
-		public static bool DoesArticleNameAlreadyExistInIssue(SitecoreTree.ArticleStruct articleDetails)
+		public static bool DoesArticleNameAlreadyExistInIssue(WordPluginModel.ArticleStruct articleDetails)
 		{
 			using (var client = new HttpClient())
 			{
@@ -75,7 +76,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetArticleUrl", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}GetArticleUrl", articleNumber).Result;
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
@@ -144,14 +145,14 @@ namespace SitecoreTreeWalker
 			return sctree.DoesArticleGuidExist(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
 		}
 
-		public static CheckoutStatus GetLockedStatus(string articleNumber)
+		public static WordPluginModel.CheckoutStatus GetLockedStatus(string articleNumber)
 		{
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			return server.GetLockedStatus(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
 		}
 
-		public static CheckoutStatus GetLockedStatus(Guid articleGuid)
+		public static WordPluginModel.CheckoutStatus GetLockedStatus(Guid articleGuid)
 		{
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
@@ -195,22 +196,22 @@ namespace SitecoreTreeWalker
 			}
 		}
 
-		public static SitecoreTree.ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
+		public static WordPluginModel.ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetArtPreInfo", articleNumber).Result;
-				var versionNumber = JsonConvert.DeserializeObject<SitecoreTree.ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
+				var versionNumber = JsonConvert.DeserializeObject<WordPluginModel.ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
 				return versionNumber;
 			}
 		}
 
-		public static List<SitecoreTree.ArticlePreviewInfo> GetArticlePreviewInfo(List<Guid> guids)
+		public static List<ArticlePreviewInfo> GetArticlePreviewInfo(List<Guid> guids)
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.PostAsJsonAsync($"{webApiURL}/GetArticlePreviewInfo", guids).Result;
-				var articlePreviewCollection = JsonConvert.DeserializeObject<List<SitecoreTree.ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
+				var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
 				return articlePreviewCollection;
 			}
 		}
@@ -233,7 +234,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetWordVersionNum", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}GetWordVersionNum", articleNumber).Result;
 				var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return versionNumber;
 			}
@@ -243,7 +244,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetWordVersionNumByGuid", articleguid).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}GetWordVersionNumByGuid", articleguid).Result;
 				var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return versionNumber;
 			}
@@ -295,8 +296,7 @@ namespace SitecoreTreeWalker
 			}
 		}
 
-		public List<string> SaveArticle(Document activeDocument, SitecoreTree.ArticleStruct articleDetails,
-			Guid workflowCommand, SitecoreTree.StaffStruct[] notifications, string articleNumber, string body = null)
+		public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails,Guid workflowCommand, WordPluginModel.StaffStruct[] notifications, string articleNumber, string body = null)
 		{
 
 			string text;
@@ -326,12 +326,12 @@ namespace SitecoreTreeWalker
 			try
 			{
 				var documentCustomProperties = new DocumentCustomProperties(activeDocument);
-				articleDetails.ArticleSpecificNotifications = notifications;
+				articleDetails.ArticleSpecificNotifications = notifications.ToList();
 				articleDetails.WordCount = activeDocument.ComputeStatistics(0);
 				//articleDetails.ChildArticles = _wordUtils.SidebarArticleParser.SidebarArticleGuids.ToArray();
-				articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToArray();
+				articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToList();
 				articleDetails.CommandID = workflowCommand;
-				articleDetails.SupportingDocumentPaths = _wordUtils.GetSupportingDocumentPaths().ToArray();
+				articleDetails.SupportingDocumentPaths = _wordUtils.GetSupportingDocumentPaths().ToList();
 				Globals.SitecoreAddin.Log("Local document version before check: " +
 										  documentCustomProperties.WordSitecoreVersionNumber);
 				var currentVersion = articleDetails.ArticleGuid != Guid.Empty
@@ -384,7 +384,7 @@ namespace SitecoreTreeWalker
 			}
 		}
 
-		protected void SendWordDocumentToSitecore(Document activeDocument, DocumentCustomProperties documentCustomProperties, string articleNumber, SitecoreTree.ArticleStruct articleDetails)
+		protected void SendWordDocumentToSitecore(Document activeDocument, DocumentCustomProperties documentCustomProperties, string articleNumber, ArticleStruct articleDetails)
 		{
 			string extension = GetExtension(activeDocument);
 			DocumentProtection.Protect(documentCustomProperties);

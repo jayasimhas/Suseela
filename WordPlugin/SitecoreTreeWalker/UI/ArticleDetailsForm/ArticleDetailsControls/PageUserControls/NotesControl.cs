@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using Informa.Web.Areas.Account.Models;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
@@ -41,7 +42,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			uxProductionNotes.Enabled = true;
 		}
 
-		public void UpdateFields(SitecoreTree.ArticleStruct articleStruct)
+		public void UpdateFields(WordPluginModel.ArticleStruct articleStruct)
 		{
 			uxEditorNotes.Text = articleStruct.NotesToEditorial;
 			_isLive = articleStruct.IsPublished;

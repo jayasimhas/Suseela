@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using SitecoreTreeWalker.SitecoreTree;
 using System.Windows.Forms;
 
 namespace SitecoreTreeWalker.Sitecore

@@ -51,6 +51,7 @@ namespace Informa.Web.Controllers
 
 		public int GetWordVersionNumber(IArticle article)
 		{
+			if (article.Word_Document == null) return -1;
 			var wordDocURL = article.Word_Document.Url;
 			wordDocURL = wordDocURL.Replace("-", " ");
 			var wordDoc = _sitecoreMasterService.GetItem<Item>(wordDocURL);

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using HtmlAgilityPack;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Custom_Exceptions;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.Util.CharacterStyles;
 using SitecoreTreeWalker.Util.Document;
 using SitecoreTreeWalker.Util.Tables;
@@ -45,20 +45,20 @@ namespace SitecoreTreeWalker.Util
 
         //These properties are built so that the accessing of the sitecore webservices is deferred until after 
         //the user has actually logged on. 
-        protected Dictionary<string, WordStyleStruct> _paragraphStyles;
+        protected Dictionary<string, WordPluginModel.WordStyleStruct> _paragraphStyles;
 
-        protected Dictionary<string, WordStyleStruct> ParagraphStyles
+        protected Dictionary<string, WordPluginModel.WordStyleStruct> ParagraphStyles
         {
             get
             {
                 if (_paragraphStyles == null)
                 {
-                    _paragraphStyles = new Dictionary<string, WordStyleStruct>();
-                    List<WordStyleStruct> styles = SitecoreGetter.GetParagraphStyles().ToList();
-                    foreach (WordStyleStruct style in styles)
+                    _paragraphStyles = new Dictionary<string, WordPluginModel.WordStyleStruct>();
+                    List<WordPluginModel.WordStyleStruct> styles = SitecoreGetter.GetParagraphStyles().ToList();
+                    foreach (WordPluginModel.WordStyleStruct style in styles)
                     {
                         if (
-                            !_paragraphStyles.Contains(new KeyValuePair<string, WordStyleStruct>(style.WordStyle, style)))
+                            !_paragraphStyles.Contains(new KeyValuePair<string, WordPluginModel.WordStyleStruct>(style.WordStyle, style)))
                         {
                             _paragraphStyles.Add(style.WordStyle, style);
                         }
@@ -572,7 +572,7 @@ namespace SitecoreTreeWalker.Util
                 if (IFrameEmbedBuilder.IFrameStyles.Contains(style.NameLocal))
                 {
 
-                    WordStyleStruct w = new WordStyleStruct();
+					WordPluginModel.WordStyleStruct w = new WordPluginModel.WordStyleStruct();
                     //base styles are used becuase the parent level styles only exist in the plugin
                     var baseStyle = (Style) style.get_BaseStyle();
                     if (baseStyle != null)
@@ -665,7 +665,7 @@ namespace SitecoreTreeWalker.Util
 
                 imageTagCount = 0;
 
-                WordStyleStruct styleStruct;
+				WordPluginModel.WordStyleStruct styleStruct;
                 if (ParagraphStyles.TryGetValue(currentStyle.NameLocal, out styleStruct))
                 {
                     //if there is a special configuration for the paragraph style, have it configured properly
@@ -753,7 +753,7 @@ namespace SitecoreTreeWalker.Util
             }
             var currentListElement = new XElement(listType);
             XElement rootListElement = currentListElement;
-            WordStyleStruct wstyle;
+			WordPluginModel.WordStyleStruct wstyle;
             Style style = listItems[0].get_Style();
             if (style != null && ParagraphStyles.TryGetValue(style.NameLocal, out wstyle))
             {
