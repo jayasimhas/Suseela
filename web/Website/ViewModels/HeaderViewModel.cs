@@ -21,19 +21,19 @@ namespace Informa.Web.ViewModels
 			ICorporateAccountNameContext corporateAccountNameContext,
 			ITextTranslator textTranslator,
 			ISiteHomeContext siteHomeContext,
-			ISiteRootContext siteRootContext)
+			ISiteRootContext siteRootContext,
+			ISignInViewModel signInViewModel)
 		{
 			UserAuthenticationContext = userAuthenticationContext;
 			CorporateAccountNameContext = corporateAccountNameContext;
 			TextTranslator = textTranslator;
 			SiteHomeContext = siteHomeContext;
 			SiteRootContext = siteRootContext;
+			SignInViewModel = signInViewModel;
 		}
 
 		public string LogoImageUrl => SiteRootContext.Item == null || SiteRootContext.Item.Site_Logo == null ? string.Empty : SiteRootContext.Item.Site_Logo.Src;
-
 		public string LogoUrl => SiteHomeContext.Item == null ? string.Empty : SiteHomeContext.Item._Url;
-
 		public string WelcomeText
 		{
 			get
@@ -54,16 +54,6 @@ namespace Informa.Web.ViewModels
 		public string UsernameInvalidText => TextTranslator.Translate("Header.UsernameInvalid");
 		public string SignInText => TextTranslator.Translate("Header.SignIn");
 		public string SignInLinkText => TextTranslator.Translate("Header.SignInLink");
-		public string SignInButtonText => TextTranslator.Translate("Header.SignInLink");
-		public string SignInInvalidText => TextTranslator.Translate("Header.SignInInvalid");
-		public string PasswordPlaceholderText => TextTranslator.Translate("Header.PasswordPlaceholder");
-		public string RememberMeText => TextTranslator.Translate("Header.RememberMe");
-		public string ForgotPasswordText => TextTranslator.Translate("Header.ForgotPassword");
-		public string ForgotPasswordLinkText => TextTranslator.Translate("Header.ForgotPasswordLink");
-		public string ForgotPasswordHelpText => TextTranslator.Translate("Header.ForgotPasswordHelp");
-		public string ForgotPasswordButtonText => TextTranslator.Translate("Header.ForgotPasswordButton");
-		public string ForgotPasswordConfirmationText => TextTranslator.Translate("Header.ForgotPasswordConfirmation");
-		public IHtmlString ForgotPasswordContactText => new HtmlString("Need help? Contact us at <b>(800) 332-2181</b>, <b>+1 (908) 748-1221</b>, or <a href=\"#\">custcare@informa.com</a>");
-		public string EmailPlaceholderText => TextTranslator.Translate("Header.EmailPlaceholder");
+		public ISignInViewModel SignInViewModel { get; set; }
 	}
 }

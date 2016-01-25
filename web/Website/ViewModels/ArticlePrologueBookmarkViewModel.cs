@@ -16,11 +16,13 @@ namespace Informa.Web.ViewModels
 		public ArticlePrologueBookmarkViewModel(
 			ITextTranslator textTranslator,
 			IRenderingItemContext articleRenderingContext,
-			IUserArticleBookmarkedContext userArticleBookmarkedContext)
+			IUserArticleBookmarkedContext userArticleBookmarkedContext,
+			ISignInViewModel signInViewModel)
 		{
 			TextTranslator = textTranslator;
 			ArticleRenderingContext = articleRenderingContext;
 			UserArticleBookmarkedContext = userArticleBookmarkedContext;
+			SignInViewModel = signInViewModel;
 		}
 
 		public IArticle Article => ArticleRenderingContext.Get<IArticle>();
@@ -28,5 +30,6 @@ namespace Informa.Web.ViewModels
 		public bool IsArticleBookmarked => UserArticleBookmarkedContext.IsBookmarked(Article._Id);
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
+		public ISignInViewModel SignInViewModel { get; set; }
 	}
 }

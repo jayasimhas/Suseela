@@ -26,14 +26,12 @@
 				<div class="header__friendly-welcome">@Model.WelcomeText</div>
 			}
 
-			@*@Request.IsAuthenticated*@
             @if (Model.IsAuthenticated)
             {
 				@* Signed In *@
                 using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm" }))
                 {
                     @Html.AntiForgeryToken()
-                    @*<div class="header__friendly-welcome">Hi, @User.Identity.Name</div>*@
                     <div class="header__my-account">
                         <svg class="header__icons icon-my-account">
                             <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
@@ -56,7 +54,6 @@
                             <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                         </svg>
 						@Model.RegisterLinkText
-                        @*@Html.ActionLink(Model.RegisterLinkText, "Register", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "registerLink" })*@
                     </span>
                     <div class="pop-out header__hover--register">
                         <div class="pop-out__internal">
@@ -81,7 +78,6 @@
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                         </svg>
 						@Model.SignInLinkText
-                        @*@Html.ActionLink(Model.SignInLinkText, "LoginHeader", "Account", routeValues: new { area = "Account" }, htmlAttributes: new { id = "loginLink" })*@
                     </span>
                     <div class="pop-out">
                         <div class="pop-out__internal pop-out__internal--flush-right">
@@ -91,7 +87,7 @@
                             </svg>
                         </div>
                         <h2 class="pop-out__header">@Model.SignInText</h2>
-						@{ Html.RenderPartial("_SignInForm"); }
+						@{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
                         </div>
                     </div>
                 </div>
