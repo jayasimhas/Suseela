@@ -3,11 +3,9 @@ using Glass.Mapper.Configuration.Attributes;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
-using Glass.Mapper.Sc.Maps;
 using Informa.Library.Site;
 using Informa.Models;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Models.Velir.Search.Models.FactoryInterface;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
 namespace Informa.Web.App_Start
@@ -52,26 +50,10 @@ namespace Informa.Web.App_Start
 		}
 		public static void AddMaps(IConfigFactory<IGlassMap> mapsConfigFactory)
         {
-			mapsConfigFactory.Add(() => new ArticleMap());
-			//// Add maps here
-			//mapsConfigFactory.Add(() => new ListableConfig());
-			//         mapsConfigFactory.Add(() => new LinkableConfig());
-			//         mapsConfigFactory.Add(() => new InterfaceTemplateConfig());
-		}
-	}
-
-    //public class ListableConfig : SitecoreGlassMap<IArticle>
-    //{
-    //    #region Overrides of AbstractGlassMap<SitecoreType<IArticle>,IArticle>
-
-    //    /// <summary>
-    //    /// Configures the mapping
-    //    /// </summary>
-    //    public override void Configure()
-    //    {
-    //        Map(x => x.Delegate(y => y.LookAtMe).GetValue(z => "This is a fluent mapping."));
-    //    }
-
-    //    #endregion
-    //}
+			// Add maps here
+            //mapsConfigFactory.Add(() => new ListableConfig());
+			//mapsConfigFactory.Add(() => new ArticleMap());
+            //mapsConfigFactory.Add(() => new ScripConfig());
+        }
+    }
 }
