@@ -52,6 +52,54 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
+	public class SaveArticleTextByGuidController : ApiController
+	{
+		private ISitecoreService _sitecoreWebService;
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+		private readonly SitecoreSaverUtil _sitecoreSaverUtil;
+
+		public SaveArticleTextByGuidController(ISitecoreService sitecoreSevice, Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil articleUtil)
+		{
+			_sitecoreWebService = sitecoreSevice;
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreSaverUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public void Post([FromBody] WordPluginModel.SaveArticleTextByGuid content)
+		{
+			IArticle item = _sitecoreMasterService.GetItem<IArticle>(content.ArticleGuid);
+			_sitecoreSaverUtil.SaveArticleDetailsAndText(item, content.WordText, content.ArticleData);
+		}
+	}
+
+	[Route]
+	public class SaveArticleTextController : ApiController
+	{
+		private ISitecoreService _sitecoreWebService;
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+		private readonly SitecoreSaverUtil _sitecoreSaverUtil;
+		private readonly ArticleUtil _articleUtil;
+
+		public SaveArticleTextController(ISitecoreService sitecoreSevice, Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil sitecoreSaverUtil,ArticleUtil articleUtil)
+		{
+			_sitecoreWebService = sitecoreSevice;
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreSaverUtil = sitecoreSaverUtil;
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public void Post([FromBody] WordPluginModel.SaveArticleText content)
+		{
+			IArticle article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
+			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);			
+		}
+	}
+
+	[Route]
 	public class SaveArticleDetailsByGuidController : ApiController
 	{
 		private readonly SitecoreSaverUtil _sitecoreSaver;
@@ -156,6 +204,48 @@ namespace Informa.Web.Controllers
 				return -1;
 			}
 			return _articleUtil.GetWordVersionNumber(article);
+		}
+	}
+
+	[Route]
+	public class SendDocumentToSitecoreByGuidController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+		private readonly SitecoreSaverUtil _sitecoreSaverUtil;
+
+		public SendDocumentToSitecoreByGuidController(Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil sitecoreSaverUtil)
+		{
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreSaverUtil = sitecoreSaverUtil;
+		}
+
+		[HttpPost]
+		public int Post([FromBody] WordPluginModel.SendDocumentToSitecoreByGuid content)
+		{
+			IArticle article = _sitecoreMasterService.GetItem<IArticle>(content.ArticlGuid);
+			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
+		}
+	}
+
+	[Route]
+	public class SendDocumentToSitecoreController : ApiController
+	{
+		public const string MasterDb = "master";
+		private readonly SitecoreSaverUtil _sitecoreSaverUtil;
+		private readonly ArticleUtil _articleUtil;
+
+		public SendDocumentToSitecoreController(SitecoreSaverUtil sitecoreSaverUtil, ArticleUtil articleUtil)
+		{
+			_sitecoreSaverUtil = sitecoreSaverUtil;
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public int Post([FromBody] WordPluginModel.SendDocumentToSitecore content)
+		{
+			IArticle article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
+			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
 		}
 	}
 

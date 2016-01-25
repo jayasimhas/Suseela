@@ -28,13 +28,13 @@ namespace Informa.Web.Controllers
 
 		}
 
-		public static MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension, string username)
+		public static MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension)
 		{
 			Guid publicationGuid = article.Publication;
 			var articleDate = article.Planned_Publish_Date > DateTime.MinValue ? article.Planned_Publish_Date : article.Created_Date;
 			var itemFolder = GetMediaFolder(publicationGuid, articleDate);
 			var path = itemFolder._Path;
-			return CreateMediaLibraryItemFromFile(fileName, docName, extension, username, path);
+			return CreateMediaLibraryItemFromFile(fileName, docName, extension,path);
 		}
 
 		public static Item GetMSWordDocumentRootNode()
@@ -120,14 +120,10 @@ namespace Informa.Web.Controllers
 		/// <param name="domainUser">Username of uploader</param>
 		/// <param name="mediaLibraryPath">Path in sitecore to save the file</param>
 		/// <returns></returns>
-		public static MediaItem CreateMediaLibraryItemFromFile(string filePath, string itemName, string fileExtension, string domainUser, string mediaLibraryPath)
+		public static MediaItem CreateMediaLibraryItemFromFile(string filePath, string itemName, string fileExtension, string mediaLibraryPath)
 		{
-			if (!Sitecore.Security.Accounts.User.Exists(domainUser))
-			{
-				return null;
-			}
-			Sitecore.Security.Accounts.User user =
-						Sitecore.Security.Accounts.User.FromName(domainUser, false);
+			//Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.FromName(domainUser, false);
+			Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.Current;
 			MediaCreatorOptions mediaCreatorOptions = GetDefaultMediaCreatorOptions(MediaLibraryRoot + mediaLibraryPath, itemName);
 			using (new Sitecore.Security.Accounts.UserSwitcher(user))
 			{

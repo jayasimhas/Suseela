@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Xml;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -181,12 +182,9 @@ namespace Informa.Web.Controllers
 				*/
 				using (new SecurityDisabler())
 				{
-					
+
 					if (loggedIn)
 					{
-						//new version also automatically unlocks, so we re-lock 
-						//should we check to see if the previous version was locked
-						//my guess is no because an author shouldn't be calling this method unless the article was locked in their favor anyways
 						_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
 					}
 				}
@@ -194,10 +192,7 @@ namespace Informa.Web.Controllers
 
 			catch (Exception ex)
 			{
-				var ax = new ApplicationException("Workflow: Error with saving details while saving article [" + article.Article_Number + "]!", ex);
-
-				//_logger.Error("Workflow error:", ax);
-
+				var ax = new ApplicationException("Workflow: Error with saving details while saving article [" + article.Article_Number + "]!", ex);				
 				throw ax;
 			}
 			return newVersion;
@@ -223,10 +218,10 @@ namespace Informa.Web.Controllers
 				if (saveDocumentSpecificData)
 				{
 					//the following will now always be saved and not just on a save entire document	
-					newArticle.Supporting_Documents = articleStruct.SupportingDocumentPaths.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));					
+					newArticle.Supporting_Documents = articleStruct.SupportingDocumentPaths.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
 					newArticle.Referenced_Deals = Join(",", articleStruct.ReferencedDeals.ToArray());
 				}
-				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));				
+				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
 				newArticle.Word_Count = articleStruct.WordCount.ToString();
 
 				newArticle.Embargoed = articleStruct.Embargoed;
@@ -245,12 +240,13 @@ namespace Informa.Web.Controllers
 
 		protected void RenameArticleItem(IArticle article, WordPluginModel.ArticleStruct articleStruct)
 		{
-			var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
 			string title = articleStruct.Title;
 			if (title != null)
 			{
 				using (new SecurityDisabler())
 				{
+					var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
+					articleItem.Editing.BeginEdit();
 					articleItem[I___BasePageConstants.TitleFieldName] = title;
 					if (!article.IsPublished)
 					{
@@ -258,7 +254,8 @@ namespace Informa.Web.Controllers
 						articleItem["__Display name"] = trim;
 						articleItem.Name = ItemUtil.ProposeValidItemName(trim);
 					}
-					_sitecoreMasterService.Save(articleItem);
+					articleItem.Editing.EndEdit();
+					//_sitecoreMasterService.Save(articleItem);
 				}
 			}
 		}
@@ -279,23 +276,66 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-		public int SendDocumentToSitecore(string articleNumber, byte[] data, string extension, string username)
+		public void SaveArticleDetailsAndText(IArticle article, string articleText, WordPluginModel.ArticleStruct articleStruct)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
-
-			return SendDocumentToSitecore(article, data, extension, username);
+			using (new SecurityDisabler())
+			{
+				article = SaveArticleDetails(article, articleStruct, true, true);
+				string parsedText = ParseXmltoHtml(articleText);
+				SaveArticleText(article, parsedText);
+				_sitecoreMasterService.Save(article);
+			}
 		}
 
-		public int SendDocumentToSitecore(Guid articleGuid, byte[] data, string extension, string username)
+		protected string ParseXmltoHtml(string articleText)
 		{
-			IArticle article = _sitecoreMasterService.GetItem<IArticle>(articleGuid);
-			return SendDocumentToSitecore(article, data, extension, username);
+			try
+			{
+				var x = new XmlDocument();
+				x.LoadXml(articleText);
+
+				return x.InnerXml;
+			}
+			catch (Exception ex)
+			{
+				var ax = new ApplicationException("Workflow: Error parsing article text!", ex);
+				throw ax;
+			}
 		}
 
-		private int SendDocumentToSitecore(IArticle article, byte[] data, string extension, string username)
+		/// <summary>
+		/// Saves article text and fields that are dependent on the article text
+		/// </summary>
+		/// <param name="article"></param>
+		/// <param name="articleText"></param>
+		private void SaveArticleText(IArticle article, string articleText)
+		{
+			try
+			{
+				using (new SecurityDisabler())
+				{
+					article.Body = articleText;
+					//TODO - Replace the body text company names with company look ups and company references.
+					/*
+					string companyIdsCsv;
+						article.Body = _companyFinder.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
+						article.Referenced_Companies = companyIdsCsv;					
+					*/
+				}
+			}
+			catch (Exception ex)
+			{
+				var ax =
+					new ApplicationException("Workflow: Error saving article text while saving article [" + article._Id + "]!",
+											 ex);
+				throw ax;
+			}
+		}
+
+		public int SendDocumentToSitecore(IArticle article, byte[] data, string extension)
 		{
 
-			MediaItem doc = UploadWordDoc(article, ConvertBytesToWordDoc(data, article.Article_Number, extension), article._Id.ToString(), extension, username);
+			MediaItem doc = UploadWordDoc(article, ConvertBytesToWordDoc(data, article.Article_Number, extension), article._Id.ToString(), extension);
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
 				using (new SecurityDisabler())
@@ -319,9 +359,9 @@ namespace Informa.Web.Controllers
 		/// <param name="extension"></param>
 		/// <param name="username">Username (with domain) of uploader</param>
 		/// <returns></returns>
-		protected MediaItem UploadWordDoc(IArticle article, string fileName, string docName, string extension, string username)
+		protected MediaItem UploadWordDoc(IArticle article, string fileName, string docName, string extension)
 		{
-			return WordDocToMediaLibrary.SaveWordDocIntoMediaLibrary(article, fileName, docName, extension, username);
+			return WordDocToMediaLibrary.SaveWordDocIntoMediaLibrary(article, fileName, docName, extension);
 		}
 
 		protected string ConvertBytesToWordDoc(byte[] data, string articleID, string extension)
