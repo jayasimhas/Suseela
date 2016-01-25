@@ -1,5 +1,3 @@
-C:\inetpub\wwwroot\sc81rev151003solr\Website
-
 Run "Configure.bat" and pass in the website directory location.
 
 Example;

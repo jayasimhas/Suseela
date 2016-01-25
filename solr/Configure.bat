@@ -28,7 +28,7 @@ set filesToDisable[19]=Sitecore.ContentSearch.Lucene.DefaultIndexConfiguration.c
 
 echo Disabling Lucene configuration files
 
-for /l %%n in (0,1,11) do (
+for /l %%n in (0,1,19) do (
 echo Disabling file: %includeDirectory%\!filesToDisable[%%n]!
 move "%includeDirectory%\!filesToDisable[%%n]!" "%includeDirectory%\!filesToDisable[%%n]!.disabled"
 )
@@ -39,24 +39,24 @@ set fileToEnable[2]=Sitecore.ContentSearch.Solr.Index.Core.config
 set fileToEnable[3]=Sitecore.ContentSearch.Solr.Index.Master.config
 set fileToEnable[4]=Sitecore.ContentSearch.Solr.Index.Web.config
 set fileToEnable[5]=ContentTesting\Sitecore.ContentTesting.Solr.IndexConfiguration.config
-set fileToEnable[6]=FXM\Sitecore.FXM.Lucene.DomainsSearch.DefaultIndexConfiguration.config
+set fileToEnable[6]=FXM\Sitecore.FXM.Solr.DomainsSearch.DefaultIndexConfiguration.config
 set fileToEnable[7]=ListManagement\Sitecore.ListManagement.Solr.Index.List.config
 set fileToEnable[8]=ListManagement\Sitecore.ListManagement.Solr.IndexConfiguration.config
 set fileToEnable[9]=Social\Sitecore.Social.Solr.Index.Master.config
 set fileToEnable[10]=Social\Sitecore.Social.Solr.Index.Web.config
 set fileToEnable[11]=Social\Sitecore.Social.Solr.IndexConfiguration.config
-set fileToEnable[11]=Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.Index.Master.config
-set fileToEnable[12]=Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.Index.Web.config
-set fileToEnable[13]=Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.IndexConfiguration.config
-set fileToEnable[14]=Sitecore.Marketing.Solr.Index.Master.config
-set fileToEnable[15]=Sitecore.Marketing.Solr.Index.Web.config
-set fileToEnable[16]=Sitecore.Marketing.Solr.IndexConfiguration.config
-set fileToEnable[17]=FXM\Sitecore.FXM.Lucene.DomainsSearch.Index.Master.config
-set fileToEnable[18]=FXM\Sitecore.FXM.Lucene.DomainsSearch.Index.Web.config
+set fileToEnable[12]=Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.Index.Master.config
+set fileToEnable[13]=Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.Index.Web.config
+set fileToEnable[14]=Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.IndexConfiguration.config
+set fileToEnable[15]=Sitecore.Marketing.Solr.Index.Master.config
+set fileToEnable[16]=Sitecore.Marketing.Solr.Index.Web.config
+set fileToEnable[17]=Sitecore.Marketing.Solr.IndexConfiguration.config
+set fileToEnable[18]=FXM\Sitecore.FXM.Solr.DomainsSearch.Index.Master.config
+set fileToEnable[19]=FXM\Sitecore.FXM.Solr.DomainsSearch.Index.Web.config
 
 echo Enabling Solr configuration files
 
-for /l %%n in (0,1,11) do (
+for /l %%n in (0,1,19) do (
 echo Disabling file: %includeDirectory%\!fileToEnable[%%n]!
 move "%includeDirectory%\!fileToEnable[%%n]!.disabled" "%includeDirectory%\!fileToEnable[%%n]!"
 move "%includeDirectory%\!fileToEnable[%%n]!.example" "%includeDirectory%\!fileToEnable[%%n]!"
