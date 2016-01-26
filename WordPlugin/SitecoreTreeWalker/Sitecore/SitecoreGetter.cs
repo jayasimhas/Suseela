@@ -181,6 +181,7 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		//TODO - Implement this
 		public static int GetMaxLengthShortSummary()
 		{
 			return 1000;
@@ -193,7 +194,8 @@ namespace SitecoreTreeWalker.Sitecore
 				return length;
 			}
 		}
-
+		
+		//TODO - Implement this
 		public static int GetMaxLengthLongSummary()
 		{
 			return 1500;

@@ -343,6 +343,7 @@ namespace Informa.Web.Areas.Account.Models
 			public List<WorkflowCommand> Commands { get; set; }
 			public bool IsFinal { get; set; }
 		}
+
 		public struct UserStatusStruct
 		{
 			public string UserName { get; set; }
@@ -355,6 +356,12 @@ namespace Informa.Web.Areas.Account.Models
 			public string Name;
 			public Guid PublicationID;
 			public string PublicationDate;
+		}
+
+		public class SaveArticleDetails
+		{
+			public string ArticleNumber;
+			public ArticleStruct ArticleData;
 		}
 
 		public class SaveArticleDetailsByGuid

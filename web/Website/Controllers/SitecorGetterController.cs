@@ -717,27 +717,4 @@ namespace Informa.Web.Controllers
 			return Json(false);
 		}
 	}
-
-
-	[Route]
-	public class GetArticleUrlController : ApiController
-	{
-		private readonly ArticleUtil _articleUtil;
-		public GetArticleUrlController(ArticleUtil articleUtil)
-		{
-			_articleUtil = articleUtil;
-		}
-		// GET api/<controller>
-		/// <summary>
-		/// Get the Article URL by its article number.
-		/// </summary>
-		/// <returns>The article URL</returns>
-		public JsonResult<string> Get(string articleNumber)
-		{
-			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
-			if (article == null) return null;
-			var url = LinkManager.GetItemUrl(article).ToLower();
-			return Json(url);
-		}		
-	}
 }
