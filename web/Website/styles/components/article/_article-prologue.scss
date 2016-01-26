@@ -1,6 +1,7 @@
 .article-prologue {
     @include textMix('Roboto Condensed', 14px, 700);
     border-top: 2px solid $informa-light-gray-d;
+    clear: both;
     color: $informa-black;
     display: flex;
     justify-content: space-between;

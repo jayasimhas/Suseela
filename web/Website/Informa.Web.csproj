@@ -587,6 +587,7 @@
     <Compile Include="ViewModels\MaintenanceViewModel.cs" />
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
+    <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Z.SwitchMasterToWeb\important.txt" />
@@ -919,12 +920,13 @@
     <Content Include="Views\Shared\Components\ArticleKeyDocuments.cshtml" />
     <Content Include="Views\Article\ArticleTags.cshtml" />
     <Content Include="Views\Shared\Highlight.cshtml" />
-    <Content Include="Views\Article\ChildTaxonomy.cshtml" />
+    <Content Include="Views\Shared\ChildTaxonomy.cshtml" />
     <Content Include="Views\Article\ArticleHeader.cshtml" />
     <Content Include="Views\Article\ArticlePrologueBookmark.cshtml" />
     <Content Include="Views\Article\ArticlePrologueEmail.cshtml" />
     <Content Include="Views\Article\ArticleProloguePrint.cshtml" />
     <Content Include="Views\Article\ArticlePrologueShare.cshtml" />
+    <Content Include="Views\Shared\Components\FiftyFiftyComponent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

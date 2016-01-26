@@ -9,7 +9,7 @@ namespace Informa.Web.ViewModels
         string Title { get; }
         string Sub_Title { get; }
         string Body { get; }
-        //IEnumerable<HierarchyLinks> TaxonomyItems { get; }
+        IHierarchyLinks TaxonomyHierarchy { get; }
         IEnumerable<ILinkable> TaxonomyItems { get; }
         DateTime Date { get; }
         string Content_Type { get; }
