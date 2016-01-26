@@ -224,6 +224,15 @@
   <ItemGroup>
     <Compile Include="Article\IUserArticleBookmarkedContext.cs" />
     <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
+    <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
+    <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
+    <Compile Include="Presentation\IDefaultItemRenderingsFactory.cs" />
+    <Compile Include="Presentation\IDuplicateRenderingsFactory.cs" />
+    <Compile Include="Presentation\IItemRendering.cs" />
+    <Compile Include="Presentation\IRendering.cs" />
+    <Compile Include="Presentation\ItemRendering.cs" />
+    <Compile Include="Presentation\Rendering.cs" />
+    <Compile Include="Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="Authentication\IUserAuthenticationContext.cs" />
     <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
