@@ -46,10 +46,89 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
 
-/* Generic toggle pop-out */
-$('.js-toggle-pop-out .pop-out__trigger-content').on('click', function togglePopOut(e) {
+
+
+/* GLOBAL POP-OUT CONTROLLER  */
+$('.pop-out__trigger-content').on('click', function togglePopOut(e) {
+	$(e.target).parents('.pop-out').css('position', 'absolute');
 	$(e.target).parents('.pop-out__trigger').toggleClass('is-active');
 });
+
+function popOutController() {
+	var rem = 16; // Simulate CSS `rem` (16px)
+	var state = {
+		activeElm: null
+	};
+
+	this.getPopOutElement = function() {
+		return state.activeElm;
+	};
+
+	this.closePopOut = function() {
+		$('.pop-out-template').removeClass('is-active');
+		state.activeElm = null;
+	}
+
+	this.togglePopOut = function(e) {
+		// Check if clicked element is the toggle itself
+		// Otherwise, climb up DOM tree and find it
+		var poParent = e.hasClass('js-pop-out-trigger') ? e : e.closest('.js-pop-out-trigger');
+
+		// If the current pop-out is the same as the active pop-out...
+		if(poParent[0] === state.activeElm) {
+			// ...close it
+			this.closePopOut();
+		} else {
+			// ...update the controller state and open it
+			state.activeElm = poParent[0];
+			updatePosition();
+		}
+
+	};
+
+	var updatePosition = function() {
+		var t = { // The pop-out toggle element
+			elm: $(state.activeElm)
+		};
+		t.pos = t.elm.offset();
+
+		// Close all open pop-outs
+		$('.pop-out-template').removeClass('is-active');
+
+		if(t.elm.data('pop-out-align') === 'right') {
+			var boxOffsetTop = Math.floor(t.pos.top + t.pos.height + (rem - 1));
+			var boxOffsetLeft = Math.floor(t.pos.left + t.pos.width - 380 + (rem - 1));
+			var tabOffsetLeft = 'auto';
+			var tabOffsetRight = '0px';
+		} else {
+			var boxOffsetTop = Math.floor(t.pos.top + t.pos.height + (rem - 1));
+			var boxOffsetLeft = Math.floor(t.pos.left - ((380 - t.pos.width) / 2));
+			var tabOffsetLeft = 0;
+			var tabOffsetRight = 0;
+		}
+		$('.pop-out-template').css({
+			zIndex: t.elm.css('z-index') - 2,
+			transform: 'translate3d(' + boxOffsetLeft +'px, ' + boxOffsetTop + 'px, 0)',
+		}).toggleClass('is-active');
+
+		$('.pop-out-tab').css({
+			height: t.pos.height + (rem * 2) + "px",
+			width: t.pos.width + (rem * 2) + "px",
+			left: tabOffsetLeft,
+			right: tabOffsetRight,
+			top: '-' + (t.pos.height + (rem * 2) - 1) + "px",
+			zIndex: t.elm.css('z-index') - 1
+		});
+	};
+
+	// If there is an active pop-out, update its position
+	// Mostly useful for when the browser window resizes
+	this.updatePopOut = function() {
+		if(state.activeElm) {
+			updatePosition();
+		}
+	}
+};
 
 
 // Pre-registration username validation
@@ -71,6 +150,19 @@ $('.header__hover--register .js-register-submit').on('click', function validateU
 
 
 $(document).ready(function() {
+
+	var poc = new popOutController();
+
+	// Toggle pop-out when clicked
+	$('.js-pop-out-trigger').on('click', function togglePopOut2(event) {
+		poc.togglePopOut($(event.target));
+	});
+
+	// Reposition pop-out when browser window resizes
+	$(window).on('resize', function(event) {
+		poc.updatePopOut();
+	});
+
     svg4everybody();
 
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};

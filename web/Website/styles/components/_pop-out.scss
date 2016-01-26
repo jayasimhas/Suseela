@@ -1,34 +1,33 @@
 .pop-out {
     display: none;
 
-    &:before {
-		background-color: #f1f2f2;
-		border: 1px solid #d1d3d4;
-        border-bottom: 0;
-		content: "";
-		display: block;
-		height: 80px;
-        left: -20px;
-		padding: 20px;
-		position: absolute;
-		top: calc(-100% + 3px);
-        z-index: 9;
-        width: calc(100% + 41px);
-	}
-
     &__trigger {
-        cursor: pointer;
         position: relative;
-        height: 18px;
+        cursor: pointer;
+        display: block;
+        height: 1rem;
+        z-index: 10;
 
-        &-content {
-            position: relative;
-            z-index: 10;
-        }
+        &.is-active {
 
-        //&:hover .pop-out,
-        &.is-active .pop-out {
-            display: block;
+            &:before {
+                background-color: #f1f2f2;
+        		border: 1px solid #d1d3d4;
+                border-bottom: 0;
+        		content: "";
+        		display: block;
+        		height: 80px;
+                left: -20px;
+        		padding: 20px;
+        		position: absolute;
+        		top: calc(-100% + 3px);
+                z-index: 9;
+                width: calc(100% + 41px);
+            }
+
+            .pop-out {
+                display: block;
+            }
         }
     }
 
@@ -36,11 +35,8 @@
         @include textMix('Roboto', 14px, 400);
         background-color: #f1f2f2;
         border: 1px solid #d1d3d4;
-        left: calc(50% - 190px);
         padding: 20px 24px 12px;
-        position: absolute;
         text-transform: none;
-        top: calc(100% + 46px);
         width: 380px;
         z-index: 8;
 
@@ -67,6 +63,18 @@
         }
         textarea {
             min-height: 150px;
+        }
+
+        @include breakpoint('medium') {
+
+            &,
+            &--wide,
+            &--flush-right,
+            &--flush-left {
+                width: 100vw;
+                left: 0;
+                right: 0;
+            }
         }
     }
 
@@ -120,4 +128,56 @@
         margin-top: 24px;
         padding-top: 24px;
     }
+
+    @include breakpoint('small') {
+
+        left: 0;
+        position: fixed;
+
+        &__internal {
+            top: 1rem;
+        }
+
+        &__trigger.is-active:before {
+            height: 200%;
+            top: -50%;
+        }
+
+    }
+}
+
+.js-pop-out-trigger {
+    z-index: 93;
+    position: relative;
+    cursor: pointer;
+}
+.pop-out-template {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .pop-out__internal {
+        left: 0;
+        top: 0;
+    }
+
+    &.is-active {
+        display: block;
+    }
+}
+.pop-out-tab {
+    margin: auto;
+    left: 0;
+    right: 0;
+    background-color: #f1f2f2;
+    border: 1px solid #d1d3d4;
+    border-bottom: 0;
+    display: block;
+    padding: 20px;
+    position: absolute;
+}
+
+// Hide out-of-date old pop-out elements
+.pop-out--OLD {
+    display: none;
 }

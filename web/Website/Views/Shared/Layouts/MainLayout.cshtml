@@ -57,6 +57,22 @@
 
         </div>
 
+        <div class="pop-out pop-out-template">
+            <div class="pop-out-tab"></div>
+            <div class="pop-out__internal">
+                <div class="dismiss-button">
+                    <svg class="dismiss-button__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    </svg>
+                </div>
+
+                <h4 class="pop-out__header">
+                    You must sign in to use this functionality
+                </h4>
+                @* @Html.Partial("_SignInForm") *@
+            </div>
+        </div>
+
     </div>
 
 </main>
