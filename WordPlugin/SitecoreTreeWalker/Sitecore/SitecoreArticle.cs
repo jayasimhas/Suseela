@@ -46,7 +46,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}DoesArticleNameAlreadyExistInIssue").Result;				
+				var response = client.GetAsync($"{webApiURL}DoesArticleNameAlreadyExistInIssue").Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -63,13 +63,9 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var article = new WordPluginModel.SaveArticleDetailsByGuid() { ArticleGuid = articleGuid, ArticleData = articleData};
+				var article = new WordPluginModel.SaveArticleDetailsByGuid() { ArticleGuid = articleGuid, ArticleData = articleData };
 				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleDetailsByGuid", article).Result;
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			server.SaveArticleDetailsByGuid(articleGuid, articleData, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);*/
 		}
 
 		public static string GetArticleUrl(string articleNumber)
@@ -80,11 +76,6 @@ namespace SitecoreTreeWalker
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
-			/*
-			var sctree = new SitecoreTree.SCTree();
-            sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.GetArticleUrl(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static string GetArticlePreviewUrl(string articleNumber)
@@ -95,11 +86,6 @@ namespace SitecoreTreeWalker
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
-			/*
-			var sctree = new SitecoreTree.SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.PreviewUrlArticle(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static string GetArticleDynamicUrl(string articleNumber)
@@ -110,11 +96,6 @@ namespace SitecoreTreeWalker
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
-			/*
-			var sctree = new SitecoreTree.SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.GetArticleDynamicUrl(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool DoesArticleHaveText(string articleNumber)
@@ -218,16 +199,20 @@ namespace SitecoreTreeWalker
 
 		public static void SaveArticleText(string articleNumber, string text, ArticleStruct articleStruct)
 		{
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			server.SaveArticleText(articleNumber, text, articleStruct, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			using (var client = new HttpClient())
+			{
+				var article = new WordPluginModel.SaveArticleText() { ArticleNumber = articleNumber, ArticleData = articleStruct, WordText = text };
+				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleText", article).Result;
+			}
 		}
 
 		public static void SaveArticleText(Guid articleGuid, string text, ArticleStruct articleStruct)
 		{
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			server.SaveArticleTextByGuid(articleGuid, text, articleStruct, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			using (var client = new HttpClient())
+			{
+				var article = new WordPluginModel.SaveArticleTextByGuid() { ArticleGuid = articleGuid, ArticleData = articleStruct, WordText = text };
+				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleTextByGuid", article).Result;
+			}
 		}
 
 		public static int GetWordVersionNumber(string articleNumber)
@@ -252,12 +237,22 @@ namespace SitecoreTreeWalker
 
 		public int SendDocumentToSitecore(string articleNumber, byte[] data, string extension, string username)
 		{
-			return _server.SendDocumentToSitecore(articleNumber, data, extension, username, SitecoreUser.GetUser().Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}SendDocumentToSitecore", new WordPluginModel.SendDocumentToSitecore() {ArticleNumber = articleNumber,Data = data,Extension = extension}).Result;
+				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);				
+			}			
+			//return _server.SendDocumentToSitecore(articleNumber, data, extension, username, SitecoreUser.GetUser().Password);
 		}
 
-		public int SendDocumentToSitecore(Guid articleGuid, byte[] data, string extension, string username)
+		public int SendDocumentToSitecoreByGuid(Guid articleGuid, byte[] data, string extension, string username)
 		{
-			return _server.SendDocumentToSitecoreByGuid(articleGuid, data, extension, username, SitecoreUser.GetUser().Password);
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}SendDocumentToSitecoreByGuid", new WordPluginModel.SendDocumentToSitecoreByGuid() { ArticlGuid = articleGuid, Data = data, Extension = extension }).Result;
+				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+			}
+			//return _server.SendDocumentToSitecoreByGuid(articleGuid, data, extension, username, SitecoreUser.GetUser().Password);
 		}
 
 		public SitecoreArticle()
@@ -296,7 +291,7 @@ namespace SitecoreTreeWalker
 			}
 		}
 
-		public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails,Guid workflowCommand, WordPluginModel.StaffStruct[] notifications, string articleNumber, string body = null)
+		public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, WordPluginModel.StaffStruct[] notifications, string articleNumber, string body = null)
 		{
 
 			string text;
@@ -309,7 +304,7 @@ namespace SitecoreTreeWalker
 				string message = String.Empty;
 				foreach (string iframeURL in insecureIframe.InsecureIframes)
 				{
-					message += String.Format("\n{0}", iframeURL);
+					message += $"\n{iframeURL}";
 				}
 
 				return new List<string> { "The following multimedia content is not secure. Please correct and try to save again. " + message };
@@ -328,15 +323,14 @@ namespace SitecoreTreeWalker
 				var documentCustomProperties = new DocumentCustomProperties(activeDocument);
 				articleDetails.ArticleSpecificNotifications = notifications.ToList();
 				articleDetails.WordCount = activeDocument.ComputeStatistics(0);
-				//articleDetails.ChildArticles = _wordUtils.SidebarArticleParser.SidebarArticleGuids.ToArray();
 				articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToList();
 				articleDetails.CommandID = workflowCommand;
 				articleDetails.SupportingDocumentPaths = _wordUtils.GetSupportingDocumentPaths().ToList();
 				Globals.SitecoreAddin.Log("Local document version before check: " +
 										  documentCustomProperties.WordSitecoreVersionNumber);
 				var currentVersion = articleDetails.ArticleGuid != Guid.Empty
-										 ? SitecoreArticle.GetWordVersionNumber(articleDetails.ArticleGuid)
-										 : SitecoreArticle.GetWordVersionNumber(articleNumber);
+										 ? GetWordVersionNumber(articleDetails.ArticleGuid)
+										 : GetWordVersionNumber(articleNumber);
 				Globals.SitecoreAddin.Log("Sitecore document version before save: " + currentVersion);
 				if (currentVersion != -1)
 				{
@@ -348,22 +342,18 @@ namespace SitecoreTreeWalker
 				}
 				if (articleDetails.ArticleGuid != Guid.Empty)
 				{
-					SitecoreArticle.SaveArticleText(articleDetails.ArticleGuid, text,_structConverter.GetServerStruct(articleDetails));
+					SaveArticleText(articleDetails.ArticleGuid, text, _structConverter.GetServerStruct(articleDetails));
 				}
 				else
 				{
-					SitecoreArticle.SaveArticleText(articleNumber, text,_structConverter.GetServerStruct(articleDetails));
+					SaveArticleText(articleNumber, text, _structConverter.GetServerStruct(articleDetails));
 				}
 
 				Globals.SitecoreAddin.Log("Local document version after check: " +
 										  documentCustomProperties.WordSitecoreVersionNumber);
 
 				SendWordDocumentToSitecore(activeDocument, documentCustomProperties, articleNumber, articleDetails);
-				documentCustomProperties.WordSitecoreVersionNumber = articleDetails.ArticleGuid != Guid.Empty
-																		 ? SitecoreArticle.GetWordVersionNumber(
-																			 articleDetails.ArticleGuid)
-																		 : SitecoreArticle.GetWordVersionNumber(
-																			 articleNumber);
+				documentCustomProperties.WordSitecoreVersionNumber = articleDetails.ArticleGuid != Guid.Empty ? GetWordVersionNumber(articleDetails.ArticleGuid) : GetWordVersionNumber(articleNumber);
 
 				Globals.SitecoreAddin.Log("Local document version after cautionary update: " +
 										  documentCustomProperties.WordSitecoreVersionNumber);
@@ -398,10 +388,9 @@ namespace SitecoreTreeWalker
 			DocumentProtection.Unprotect(documentCustomProperties);
 			string uploader = SitecoreUser.GetUser().Username;
 			int wordSitecoreVersionNumber = articleDetails.ArticleGuid != Guid.Empty
-												? this.SendDocumentToSitecore(articleDetails.ArticleGuid, data, extension, uploader)
+												? this.SendDocumentToSitecoreByGuid(articleDetails.ArticleGuid, data, extension, uploader)
 												: this.SendDocumentToSitecore(articleNumber, data, extension, uploader);
 			documentCustomProperties.WordSitecoreVersionNumber = wordSitecoreVersionNumber;
-			//MessageBox.Show(@"recv w ver: " + _documentCustomProperties.WordSitecoreVersionNumber);
 		}
 
 		protected string GetExtension(Document activeDocument)

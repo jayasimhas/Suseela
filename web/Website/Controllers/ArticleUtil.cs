@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -122,7 +123,7 @@ namespace Informa.Web.Controllers
 
 			return dayFolder;
 		}
-
+		
 		public WordPluginModel.ArticleStruct GetArticleStruct(IArticle articleItem)
 		{
 			var articleStruct = new WordPluginModel.ArticleStruct

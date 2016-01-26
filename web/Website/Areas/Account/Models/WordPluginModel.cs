@@ -362,6 +362,33 @@ namespace Informa.Web.Areas.Account.Models
 			public Guid ArticleGuid;
 			public ArticleStruct ArticleData;
 		}
-		
+
+		public class SaveArticleTextByGuid
+		{
+			public Guid ArticleGuid;
+			public string WordText;
+			public ArticleStruct ArticleData;
+		}
+
+		public class SaveArticleText
+		{
+			public string ArticleNumber;
+			public string WordText;
+			public ArticleStruct ArticleData;
+		}
+
+		public class SendDocumentToSitecoreByGuid
+		{
+			public Guid ArticlGuid;
+			public byte[] Data;
+			public string Extension;
+		}
+		public class SendDocumentToSitecore
+		{
+			public string ArticleNumber;
+			public byte[] Data;
+			public string Extension;
+		}
+
 	}
 }
