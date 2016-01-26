@@ -28,6 +28,7 @@
         "gulp-svgstore": "^5.0.1",
         "gulp-uglify": "^1.2.0",
         "gulp-watch": "^4.3.4",
+        "gulp-preprocess": "^2.0.0",
         "main-bower-files": "^2.7.0",
         "run-sequence": "^1.1.0",
         "through2": "^0.6.5",

@@ -15,4 +15,6 @@ module.exports = {
     // what gulp task to run when you type "gulp"
     "defaultTask": "dev",
 
+    "env": "local.json"
+
 };

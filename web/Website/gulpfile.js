@@ -32,13 +32,13 @@ utils.setConfig({
 //    root  : path.resolve("../../web/Website"),
 //    dest  : path.resolve("../../web/Website/dist"),
     root  : path.resolve("../Website"),
-    dest  : path.resolve("../Website/dist"),
+    dest: path.resolve("../Website/dist"),
     env   : ""
 });
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite"]);
+utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite", "init"]);
 
 /**
  * dev task
