@@ -226,8 +226,10 @@
     <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
     <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
+    <Compile Include="Presentation\DuplicateRenderingsFactoryConfiguration.cs" />
     <Compile Include="Presentation\IDefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\IDuplicateRenderingsFactory.cs" />
+    <Compile Include="Presentation\IDuplicateRenderingsFactoryConfiguration.cs" />
     <Compile Include="Presentation\IItemRendering.cs" />
     <Compile Include="Presentation\IRendering.cs" />
     <Compile Include="Presentation\ItemRendering.cs" />

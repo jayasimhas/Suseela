@@ -805,6 +805,9 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\UserDefined\Presentation.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -756,7 +756,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -783,7 +783,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -3315,7 +3315,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.
@@ -5414,6 +5414,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
 			public const string WidthFieldName = "Width";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// IContent_Curation Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Content Curation</para>	
+	/// <para>ID: b925029e-0fa1-440d-8423-282b965be39a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IContent_CurationConstants.TemplateIdString)]
+	public partial interface IContent_Curation : IGlassBase 
+	{
+								/// <summary>
+					/// The Manually Curated Renderings field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 97377948-abef-49b6-9199-abd11c64fe20</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IContent_CurationConstants.Manually_Curated_RenderingsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Manually_Curated_Renderings  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IContent_Curation Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Content Curation</para>	
+		/// <para>ID: b925029e-0fa1-440d-8423-282b965be39a</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IContent_Curation__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Manually Curated Renderings field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 97377948-abef-49b6-9199-abd11c64fe20</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IContent_CurationConstants.Manually_Curated_RenderingsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Manually_Curated_Renderings  {get; set;}
+						}
+	
+	public static partial class IContent_CurationConstants{
+
+			public const string TemplateIdString = "b925029e-0fa1-440d-8423-282b965be39a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Content Curation";
+
+					
+			public static readonly ID Manually_Curated_RenderingsFieldId = new ID("97377948-abef-49b6-9199-abd11c64fe20");
+			public const string Manually_Curated_RenderingsFieldName = "Manually Curated Renderings";
 
 						
 			
