@@ -48,11 +48,11 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 
 
 
-/* GLOBAL POP-OUT CONTROLLER  */
+/* OLD POP-OUT CONTROLLER
 $('.pop-out__trigger-content').on('click', function togglePopOut(e) {
 	$(e.target).parents('.pop-out').css('position', 'absolute');
 	$(e.target).parents('.pop-out__trigger').toggleClass('is-active');
-});
+});*/
 
 function popOutController() {
 	var rem = 16; // Simulate CSS `rem` (16px)
@@ -65,7 +65,7 @@ function popOutController() {
 	};
 
 	this.closePopOut = function() {
-		$('.pop-out-template').removeClass('is-active');
+		$('.pop-out').removeClass('is-active');
 		state.activeElm = null;
 	}
 
@@ -93,8 +93,22 @@ function popOutController() {
 		t.pos = t.elm.offset();
 
 		// Close all open pop-outs
-		$('.pop-out-template').removeClass('is-active');
+		$('.pop-out').removeClass('is-active');
 
+		// Determine which pop-out template to use
+		var targetPopOut;
+		switch (t.elm.data('pop-out-type')) {
+			case 'sign-in':
+				targetPopOut = $('.js-pop-out__sign-in');
+				break;
+			case 'email-article':
+				targetPopOut = $('.js-pop-out__email-article');
+				break;
+			default:
+				console.warn('Attempting to fire unidentified pop-out.');
+				return;
+				break;
+		}
 		if(t.elm.data('pop-out-align') === 'right') {
 			var boxOffsetTop = Math.floor(t.pos.top + t.pos.height + (rem - 1));
 			var boxOffsetLeft = Math.floor(t.pos.left + t.pos.width - 380 + (rem - 1));
@@ -106,12 +120,12 @@ function popOutController() {
 			var tabOffsetLeft = 0;
 			var tabOffsetRight = 0;
 		}
-		$('.pop-out-template').css({
+		targetPopOut.css({
 			zIndex: t.elm.css('z-index') - 2,
 			transform: 'translate3d(' + boxOffsetLeft +'px, ' + boxOffsetTop + 'px, 0)',
 		}).toggleClass('is-active');
 
-		$('.pop-out-tab').css({
+		$('.pop-out__tab').css({
 			height: t.pos.height + (rem * 2) + "px",
 			width: t.pos.width + (rem * 2) + "px",
 			left: tabOffsetLeft,
