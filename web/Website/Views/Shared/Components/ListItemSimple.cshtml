@@ -5,6 +5,7 @@
 {
     <img class="article-related-content__img" src="@Model.ListableImage">
 }
-<span class="article-related-content__category">@Model.ListableType</span>
-<h5>@Model.ListableTitle</h5>
+@*<h6>@Model.ListableByline</h6>*@
+<span class="article-related-content__category">@Model.ListableByline</span>
+<h5><a href="@Model.LinkableUrl">@Model.ListableTitle</a></h5>
 <time class="article-related-content__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
