@@ -14,7 +14,7 @@ namespace Informa.Library.Presentation
 				{
 					new Rendering
 					{
-						RenderingItemId = new Guid("{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}")
+						RenderingItemId = new Guid("{C7E595D3-9F0C-41E0-890F-6D8C54B8EF40}")
 					}
 				}
 			};

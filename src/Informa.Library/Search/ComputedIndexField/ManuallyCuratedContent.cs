@@ -32,13 +32,32 @@ namespace Informa.Library.Search.ComputedIndexField
 
 			using (new DatabaseSwitcher(Database.GetDatabase("master")))
 			{
-				var dupeRenderings = DuplicateRenderingsFactory.Create();
+				var duplicateRenderings = DuplicateRenderingsFactory.Create();
 				var itemRenderings = ItemRenderingsFactory.Get(item);
-				var matchingDupeRenderings = itemRenderings.Where(ir => dupeRenderings.Any(dr => dr.RenderingItemId == ir.RenderingItemId));
-				var datasourceItems = matchingDupeRenderings.Select(r => Context.Database.GetItem(r.Datasource)).Where(i => i != null);
-				// Check data source to see if item is of a specific template (optional)
+				var matchingDuplicateRenderings = itemRenderings.Where(ir => !string.IsNullOrEmpty(ir.Datasource) && duplicateRenderings.Any(dr => dr.RenderingItemId == ir.RenderingItemId));
 
-				manuallyCuratedContent.AddRange(datasourceItems.Select(i => i.ID.Guid));
+				foreach (var rendering in matchingDuplicateRenderings)
+				{
+					// Check data source to see if item is of a specific template (optional)
+					Guid manuallyCuratedItemId;
+
+					if (!Guid.TryParse(rendering.Datasource, out manuallyCuratedItemId))
+					{
+						var manuallyCuratedItem = Context.Database.GetItem(rendering.Datasource);
+
+						if (manuallyCuratedItem == null)
+						{
+							continue;
+						}
+
+						manuallyCuratedItemId = manuallyCuratedItem.ID.Guid;
+					}
+
+					if (!manuallyCuratedContent.Contains(manuallyCuratedItemId))
+					{
+						manuallyCuratedContent.Add(manuallyCuratedItemId);
+					}
+				}
 			};
 
 			return manuallyCuratedContent;
