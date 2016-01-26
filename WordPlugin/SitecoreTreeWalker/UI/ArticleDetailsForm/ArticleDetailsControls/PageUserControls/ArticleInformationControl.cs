@@ -6,14 +6,12 @@ using System.Net;
 using System.Windows.Forms;
 using SitecoreTreeWalker.document;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreServer;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
-using ArticleStruct = SitecoreTreeWalker.SitecoreTree.ArticleStruct;
-using StaffStruct = SitecoreTreeWalker.SitecoreTree.StaffStruct;
+using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
+using StaffStruct = Informa.Web.Areas.Account.Models.WordPluginModel.StaffStruct;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
@@ -144,10 +142,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 					return false;
 				}
 				ArticleNumber = _parent.ArticleDetails.ArticleNumber;
-                //uxArticleNumberLabel.Text = ArticleNumber;
-                
+				//uxArticleNumberLabel.Text = ArticleNumber;
 
-				CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleGuid);
+
+				Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleGuid);
 
 				if (SitecoreArticle.DoesArticleHaveText(articleGuid) && prompt)
 				{
@@ -223,9 +221,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 					return false;
 				}
 				ArticleNumber = articleNumber;
-                //uxArticleNumberLabel.Text = articleNumber;
+				//uxArticleNumberLabel.Text = articleNumber;
 
-				CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
+				Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
 
 				if (!checkedOut.Locked)
 				{ //if unlocked, then lock it by current user
@@ -276,7 +274,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			if (!articleNum.IsNullOrEmpty())
 			{ //document is linked to an article
 				SetArticleNumber(articleNum);
-				CheckoutStatus checkedOut;
+				Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut;
 				if (_parent.ArticleDetails.ArticleGuid != Guid.Empty)
 				{
 					checkedOut = SitecoreArticle.GetLockedStatus(_parent.ArticleDetails.ArticleGuid); 
@@ -352,7 +350,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		/// Enables/disables some controls since it's so similar to a PreLinkEnable state
 		/// </summary>
 		/// <param name="checkedOut"></param>
-        public void IndicateCheckedOutByOther(CheckoutStatus checkedOut)
+        public void IndicateCheckedOutByOther(Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut)
 		{
 			//uxLockStatus.BackColor = Color.FromArgb(255, 244, 204, 204);
 
@@ -369,7 +367,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
-		public void IndicateCheckedOutByMe(CheckoutStatus checkedOut)
+		public void IndicateCheckedOutByMe(Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut)
 		{
 			DocumentProtection.Unprotect(_documentCustomProperties);
 			IsCheckedOutByMe = true;
@@ -390,8 +388,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void InitializePublications()
 		{
-			List<ItemStruct> publications = SitecoreGetter.GetPublications();
-			publications.Insert(0, new ItemStruct { ID = Guid.Empty, Name = "Select Publication" });
+			List<Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct> publications = SitecoreGetter.GetPublications();
+			publications.Insert(0, new Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct { ID = Guid.Empty, Name = "Select Publication" });
 			uxPublication.DataSource = publications;
 			uxPublication.DisplayMember = "Name";
 			uxPublication.ValueMember = "ID";
@@ -399,8 +397,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void InitializeMediaType()
 		{
-			List<ItemStruct> mediaTypes = SitecoreGetter.GetMediaTypes();
-			mediaTypes.Insert(0, new ItemStruct { ID = Guid.Empty, Name = "Select Media Type" });
+			List<Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct> mediaTypes = SitecoreGetter.GetMediaTypes();
+			mediaTypes.Insert(0, new Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct { ID = Guid.Empty, Name = "Select Media Type" });
 			uxMediaTypes.DataSource = mediaTypes;
 			uxMediaTypes.DisplayMember = "Name";
 			uxMediaTypes.ValueMember = "ID";
@@ -419,9 +417,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			try
 			{
-				if (uxPublication.SelectedValue.GetType() == typeof(ItemStruct))
+				if (uxPublication.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
 				{
-					return ((ItemStruct) uxPublication.SelectedValue).ID;
+					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct) uxPublication.SelectedValue).ID;
 				}
 				return (Guid) uxPublication.SelectedValue;
 			}
@@ -432,7 +430,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		}
 
 
-		public string GetDisplayName(ArticleSize articleSize, int wordCount)
+		public string GetDisplayName(Informa.Web.Areas.Account.Models.WordPluginModel.ArticleSize articleSize, int wordCount)
 		{
 			string displayName = articleSize.Name;
 			if (articleSize.MinimumWordCount < 0 && articleSize.MaximumWordCount > 0)
@@ -465,7 +463,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public string GetSelectedPublicationName()
 		{
-			return ((ItemStruct)uxPublication.SelectedItem).Name;
+			return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxPublication.SelectedItem).Name;
 		}
 
 		public List<StaffStruct> GetSelectedAuthors()

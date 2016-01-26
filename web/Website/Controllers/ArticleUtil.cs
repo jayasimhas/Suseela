@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -51,6 +52,7 @@ namespace Informa.Web.Controllers
 
 		public int GetWordVersionNumber(IArticle article)
 		{
+			if (article.Word_Document == null) return -1;
 			var wordDocURL = article.Word_Document.Url;
 			wordDocURL = wordDocURL.Replace("-", " ");
 			var wordDoc = _sitecoreMasterService.GetItem<Item>(wordDocURL);
@@ -121,7 +123,7 @@ namespace Informa.Web.Controllers
 
 			return dayFolder;
 		}
-
+		
 		public WordPluginModel.ArticleStruct GetArticleStruct(IArticle articleItem)
 		{
 			var articleStruct = new WordPluginModel.ArticleStruct

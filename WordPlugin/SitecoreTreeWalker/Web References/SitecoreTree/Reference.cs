@@ -13,6 +13,7 @@
 // 
 
 using System.Collections.Generic;
+using Informa.Web.Areas.Account.Models;
 
 #pragma warning disable 1591
 
@@ -401,11 +402,11 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetCharacterStyles", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public WordStyleStruct[] GetCharacterStyles(string username, string password) {
+        public WordPluginModel.WordStyleStruct[] GetCharacterStyles(string username, string password) {
             object[] results = this.Invoke("GetCharacterStyles", new object[] {
                         username,
                         password});
-            return ((WordStyleStruct[])(results[0]));
+            return ((WordPluginModel.WordStyleStruct[])(results[0]));
         }
         
         /// <remarks/>
@@ -433,11 +434,11 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetParagraphStyles", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public WordStyleStruct[] GetParagraphStyles(string username, string password) {
+        public WordPluginModel.WordStyleStruct[] GetParagraphStyles(string username, string password) {
             object[] results = this.Invoke("GetParagraphStyles", new object[] {
                         username,
                         password});
-            return ((WordStyleStruct[])(results[0]));
+            return ((WordPluginModel.WordStyleStruct[])(results[0]));
         }
         
         /// <remarks/>
@@ -558,12 +559,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetChildrenDirectories", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public DirectoryStruct[] GetChildrenDirectories(string path, string username, string password) {
+        public WordPluginModel.DirectoryStruct[] GetChildrenDirectories(string path, string username, string password) {
             object[] results = this.Invoke("GetChildrenDirectories", new object[] {
                         path,
                         username,
                         password});
-            return ((DirectoryStruct[])(results[0]));
+            return ((WordPluginModel.DirectoryStruct[])(results[0]));
         }
         
         /// <remarks/>
@@ -625,12 +626,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetHierarchy", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public HDirectoryStruct GetHierarchy(string path, string username, string password) {
+        public WordPluginModel.HDirectoryStruct GetHierarchy(string path, string username, string password) {
             object[] results = this.Invoke("GetHierarchy", new object[] {
                         path,
                         username,
                         password});
-            return ((HDirectoryStruct)(results[0]));
+            return ((WordPluginModel.HDirectoryStruct)(results[0]));
         }
         
         /// <remarks/>
@@ -658,12 +659,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetHierarchyByGuid", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public HDirectoryStruct GetHierarchyByGuid(System.Guid guid, string username, string password) {
+        public WordPluginModel.HDirectoryStruct GetHierarchyByGuid(System.Guid guid, string username, string password) {
             object[] results = this.Invoke("GetHierarchyByGuid", new object[] {
                         guid,
                         username,
                         password});
-            return ((HDirectoryStruct)(results[0]));
+            return ((WordPluginModel.HDirectoryStruct)(results[0]));
         }
         
         /// <remarks/>
@@ -691,12 +692,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetMediaLibraryItem", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public MediaItemStruct GetMediaLibraryItem(string path, string username, string password) {
+        public WordPluginModel.MediaItemStruct GetMediaLibraryItem(string path, string username, string password) {
             object[] results = this.Invoke("GetMediaLibraryItem", new object[] {
                         path,
                         username,
                         password});
-            return ((MediaItemStruct)(results[0]));
+            return ((WordPluginModel.MediaItemStruct)(results[0]));
         }
         
         /// <remarks/>
@@ -724,12 +725,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetMediaStatistics", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public MediaItemStruct GetMediaStatistics(string path, string username, string password) {
+        public WordPluginModel.MediaItemStruct GetMediaStatistics(string path, string username, string password) {
             object[] results = this.Invoke("GetMediaStatistics", new object[] {
                         path,
                         username,
                         password});
-            return ((MediaItemStruct)(results[0]));
+            return ((WordPluginModel.MediaItemStruct)(results[0]));
         }
         
         /// <remarks/>
@@ -993,12 +994,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/SearchIndustries", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public TaxonomyStruct[] SearchIndustries(string searchTerm, string username, string password) {
+        public WordPluginModel.TaxonomyStruct[] SearchIndustries(string searchTerm, string username, string password) {
             object[] results = this.Invoke("SearchIndustries", new object[] {
                         searchTerm,
                         username,
                         password});
-            return ((TaxonomyStruct[])(results[0]));
+            return ((WordPluginModel.TaxonomyStruct[])(results[0]));
         }
         
         /// <remarks/>
@@ -1026,12 +1027,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetArticleDetails", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ArticleStruct GetArticleDetails(string articleNumber, string username, string password) {
+        public Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct GetArticleDetails(string articleNumber, string username, string password) {
             object[] results = this.Invoke("GetArticleDetails", new object[] {
                         articleNumber,
                         username,
                         password});
-            return ((ArticleStruct)(results[0]));
+            return ((WordPluginModel.ArticleStruct)(results[0]));
         }
         
         /// <remarks/>
@@ -1059,12 +1060,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetArticleDetailsBG", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ArticleStruct GetArticleDetailsBG(System.Guid articleGuid, string username, string password) {
+        public WordPluginModel.ArticleStruct GetArticleDetailsBG(System.Guid articleGuid, string username, string password) {
             object[] results = this.Invoke("GetArticleDetailsBG", new object[] {
                         articleGuid,
                         username,
                         password});
-            return ((ArticleStruct)(results[0]));
+            return ((WordPluginModel.ArticleStruct)(results[0]));
         }
         
         /// <remarks/>
@@ -1159,13 +1160,13 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/SearchTaxonomy", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public TaxonomyStruct[] SearchTaxonomy(System.Guid taxonomy, string searchTerm, string username, string password) {
+        public WordPluginModel.TaxonomyStruct[] SearchTaxonomy(System.Guid taxonomy, string searchTerm, string username, string password) {
             object[] results = this.Invoke("SearchTaxonomy", new object[] {
                         taxonomy,
                         searchTerm,
                         username,
                         password});
-            return ((TaxonomyStruct[])(results[0]));
+            return ((WordPluginModel.TaxonomyStruct[])(results[0]));
         }
         
         /// <remarks/>
@@ -1452,11 +1453,11 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetAuthors", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public StaffStruct[] GetAuthors(string username, string password) {
+        public WordPluginModel.StaffStruct[] GetAuthors(string username, string password) {
             object[] results = this.Invoke("GetAuthors", new object[] {
                         username,
                         password});
-            return ((StaffStruct[])(results[0]));
+            return ((WordPluginModel.StaffStruct[])(results[0]));
         }
         
         /// <remarks/>
@@ -1484,11 +1485,11 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetStaffAndGroups", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public StaffStruct[] GetStaffAndGroups(string username, string password) {
+        public WordPluginModel.StaffStruct[] GetStaffAndGroups(string username, string password) {
             object[] results = this.Invoke("GetStaffAndGroups", new object[] {
                         username,
                         password});
-            return ((StaffStruct[])(results[0]));
+            return ((WordPluginModel.StaffStruct[])(results[0]));
         }
         
         /// <remarks/>
@@ -1775,12 +1776,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetArtPreInfo", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ArticlePreviewInfo GetArtPreInfo(string articleNumber, string username, string password) {
+        public WordPluginModel.ArticlePreviewInfo GetArtPreInfo(string articleNumber, string username, string password) {
             object[] results = this.Invoke("GetArtPreInfo", new object[] {
                         articleNumber,
                         username,
                         password});
-            return ((ArticlePreviewInfo)(results[0]));
+            return ((WordPluginModel.ArticlePreviewInfo)(results[0]));
         }
         
         /// <remarks/>
@@ -1809,12 +1810,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetArtPreInfos", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public ArticlePreviewInfo[] GetArtPreInfos(System.Guid[] guids, string username, string password) {
+        public WordPluginModel.ArticlePreviewInfo[] GetArtPreInfos(System.Guid[] guids, string username, string password) {
             object[] results = this.Invoke("GetArtPreInfos", new object[] {
                         guids,
                         username,
                         password});
-            return ((ArticlePreviewInfo[])(results[0]));
+            return ((WordPluginModel.ArticlePreviewInfo[])(results[0]));
         }
         
         /// <remarks/>
@@ -1842,12 +1843,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetWorkflowState", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public WorkflowState GetWorkflowState(string articleNumber, string username, string password) {
+        public WordPluginModel.WorkflowState GetWorkflowState(string articleNumber, string username, string password) {
             object[] results = this.Invoke("GetWorkflowState", new object[] {
                         articleNumber,
                         username,
                         password});
-            return ((WorkflowState)(results[0]));
+            return ((WordPluginModel.WorkflowState)(results[0]));
         }
         
         /// <remarks/>
@@ -1875,13 +1876,13 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/SetWorkflowState", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public WorkflowState SetWorkflowState(string articleNumber, string commandID, string username, string password) {
+        public WordPluginModel.WorkflowState SetWorkflowState(string articleNumber, string commandID, string username, string password) {
             object[] results = this.Invoke("SetWorkflowState", new object[] {
                         articleNumber,
                         commandID,
                         username,
                         password});
-            return ((WorkflowState)(results[0]));
+            return ((WordPluginModel.WorkflowState)(results[0]));
         }
         
         /// <remarks/>
@@ -1943,12 +1944,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/GetWorkflowStateByGuid", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public WorkflowState GetWorkflowStateByGuid(System.Guid articleGuid, string username, string password) {
+        public WordPluginModel.WorkflowState GetWorkflowStateByGuid(System.Guid articleGuid, string username, string password) {
             object[] results = this.Invoke("GetWorkflowStateByGuid", new object[] {
                         articleGuid,
                         username,
                         password});
-            return ((WorkflowState)(results[0]));
+            return ((WordPluginModel.WorkflowState)(results[0]));
         }
         
         /// <remarks/>
@@ -1976,13 +1977,13 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/SetWorkflowStateByGuid", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public WorkflowState SetWorkflowStateByGuid(System.Guid articleGuid, string commandID, string username, string password) {
+        public WordPluginModel.WorkflowState SetWorkflowStateByGuid(System.Guid articleGuid, string commandID, string username, string password) {
             object[] results = this.Invoke("SetWorkflowStateByGuid", new object[] {
                         articleGuid,
                         commandID,
                         username,
                         password});
-            return ((WorkflowState)(results[0]));
+            return ((WordPluginModel.WorkflowState)(results[0]));
         }
         
         /// <remarks/>
@@ -2045,7 +2046,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/DoesArticleNameAlreadyExistInIssue", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool DoesArticleNameAlreadyExistInIssue(ArticleStruct articleStruct, string username, string password) {
+        public bool DoesArticleNameAlreadyExistInIssue(WordPluginModel.ArticleStruct articleStruct, string username, string password) {
             object[] results = this.Invoke("DoesArticleNameAlreadyExistInIssue", new object[] {
                         articleStruct,
                         username,
@@ -2287,7 +2288,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             return false;
         }
     }
-    
+    /*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -2332,6 +2333,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
+	*/
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
@@ -2598,6 +2600,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
     }
     
+	/*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -2690,7 +2693,9 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
+	*/
     
+	/*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -2735,7 +2740,9 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
-    
+
+	*/
+    /*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -2748,7 +2755,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         private string stringIDField;
         
-        private StaffStruct[] globalNotifyListField;
+        private WordPluginModel.StaffStruct[] globalNotifyListField;
         
         private bool sendsToFinalField;
         
@@ -2774,7 +2781,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public StaffStruct[] GlobalNotifyList {
+        public WordPluginModel.StaffStruct[] GlobalNotifyList {
             get {
                 return this.globalNotifyListField;
             }
@@ -2793,7 +2800,8 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
-    
+	*/
+    /*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -2839,7 +2847,9 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
+	*/
     
+		/*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -2847,92 +2857,45 @@ namespace SitecoreTreeWalker.SitecoreTree {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://tempuri.org/")]
     public partial class ArticleStruct {
-        
-        private System.Guid articleGuidField;
-        
-        private string titleField;
-        
-        private System.Guid volumeField;
-        
-        private System.Guid issueField;
-        
-        private System.DateTime printPublicationDateField;
-        
-        private System.DateTime webPublicationDateField;
-        
-        private string articleNumberField;
-        
-        private System.Guid articleCategoryField;
-        
-        private System.Guid webCategoryField;
-        
-        private string notesToEditorialField;
-        
-        private string notesToProductionField;
-        
-        private string subtitleField;
-        
-        private string longSummaryField;
-        
-        private string shortSummaryField;
-        
-        private string deckField;
-        
-        private int wordCountField;
-        
-        private bool isFeaturedArticleField;
-        
-        private bool hasBeenNominatedField;
-        
-        private bool isTopStoryField;
-        
-        private WorkflowState workflowStateField;
-        
-        private System.Guid commandIDField;
-        
-        private TaxonomyStruct[] subjectsField;
-        
-        private TaxonomyStruct[] geographyField;                
-        
-        private TaxonomyStruct[] marketSegmentsField;
-        private TaxonomyStruct[] taxonomyField;       
-        
-        private System.Guid[] relatedInlineArticlesField;
-        
-        private System.Guid[] relatedArticlesField;
-        
-        private System.Guid[] childArticlesField;
-        
-        private string[] supportingDocumentPathsField;
-                       
-        private ArticlePreviewInfo[] referencedArticlesInfoField;
-        
-        private ArticlePreviewInfo[] relatedArticlesInfoField;
-        
-        private string[] referencedDealsField;
-        
-        private StaffStruct[] authorsField;
-        
-        private StaffStruct[] editorsField;
-        
-        private StaffStruct[] articleSpecificNotificationsField;
-        
-        private StaffStruct[] globalNotificationsField;
-        
-        private int wordDocVersionNumberField;
-        
-        private string wordDocLastUpdateDateField;
-        
-        private string wordDocLastUpdatedByField;
-        
-        private System.Guid publicationField;
-        
-        private bool embargoedField;
-        
-        private bool isPublishedField;
-        
-        /// <remarks/>
-        public System.Guid ArticleGuid {
+
+		private System.Guid articleGuidField;
+		private string titleField;
+		private System.DateTime printPublicationDateField;
+		private System.DateTime webPublicationDateField;
+		private string articleNumberField;
+		private System.Guid articleCategoryField;
+		private System.Guid webCategoryField;
+		private string notesToEditorialField;
+		private string subtitleField;
+		private string summaryField;
+		private int wordCountField;
+		private WordPluginModel.WorkflowState workflowStateField;
+		private System.Guid commandIDField;
+		private TaxonomyStruct[] taxonomyField;
+		private System.Guid[] relatedInlineArticlesField;
+		private System.Guid[] relatedArticlesField;
+		private string[] supportingDocumentPathsField;
+		private ArticlePreviewInfo[] referencedArticlesInfoField;
+		private ArticlePreviewInfo[] relatedArticlesInfoField;
+		private string[] referencedDealsField;
+		private WordPluginModel.StaffStruct[] authorsField;
+		private WordPluginModel.StaffStruct[] articleSpecificNotificationsField;
+		private WordPluginModel.StaffStruct[] globalNotificationsField;
+
+		private int wordDocVersionNumberField;
+
+		private string wordDocLastUpdateDateField;
+
+		private string wordDocLastUpdatedByField;
+
+		private System.Guid publicationField;
+
+		private bool embargoedField;
+
+		private bool isPublishedField;
+
+		/// <remarks/>
+		public System.Guid ArticleGuid {
             get {
                 return this.articleGuidField;
             }
@@ -2951,26 +2914,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
         
-        /// <remarks/>
-        public System.Guid Volume {
-            get {
-                return this.volumeField;
-            }
-            set {
-                this.volumeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.Guid Issue {
-            get {
-                return this.issueField;
-            }
-            set {
-                this.issueField = value;
-            }
-        }
-        
+       
         /// <remarks/>
         public System.DateTime PrintPublicationDate {
             get {
@@ -3031,15 +2975,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
         
-        /// <remarks/>
-        public string NotesToProduction {
-            get {
-                return this.notesToProductionField;
-            }
-            set {
-                this.notesToProductionField = value;
-            }
-        }
+       
         
         /// <remarks/>
         public string Subtitle {
@@ -3052,32 +2988,12 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public string LongSummary {
+        public string Summary {
             get {
-                return this.longSummaryField;
+                return this.summaryField;
             }
             set {
-                this.longSummaryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ShortSummary {
-            get {
-                return this.shortSummaryField;
-            }
-            set {
-                this.shortSummaryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Deck {
-            get {
-                return this.deckField;
-            }
-            set {
-                this.deckField = value;
+                this.summaryField = value;
             }
         }
         
@@ -3090,39 +3006,8 @@ namespace SitecoreTreeWalker.SitecoreTree {
                 this.wordCountField = value;
             }
         }
-        
         /// <remarks/>
-        public bool IsFeaturedArticle {
-            get {
-                return this.isFeaturedArticleField;
-            }
-            set {
-                this.isFeaturedArticleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool HasBeenNominated {
-            get {
-                return this.hasBeenNominatedField;
-            }
-            set {
-                this.hasBeenNominatedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool IsTopStory {
-            get {
-                return this.isTopStoryField;
-            }
-            set {
-                this.isTopStoryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public WorkflowState WorkflowState {
+        public WordPluginModel.WorkflowState WorkflowState {
             get {
                 return this.workflowStateField;
             }
@@ -3152,40 +3037,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
                 this.taxonomyField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public TaxonomyStruct[] Subjects {
-            get {
-                return this.subjectsField;
-            }
-            set {
-                this.subjectsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public TaxonomyStruct[] Geography {
-            get {
-                return this.geographyField;
-            }
-            set {
-                this.geographyField = value;
-            }
-        }
-              
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public TaxonomyStruct[] MarketSegments {
-            get {
-                return this.marketSegmentsField;
-            }
-            set {
-                this.marketSegmentsField = value;
-            }
-        }
-        
+
         /// <remarks/>
         public System.Guid[] RelatedInlineArticles {
             get {
@@ -3205,17 +3057,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
                 this.relatedArticlesField = value;
             }
         }
-        
-        /// <remarks/>
-        public System.Guid[] ChildArticles {
-            get {
-                return this.childArticlesField;
-            }
-            set {
-                this.childArticlesField = value;
-            }
-        }
-        
+
         /// <remarks/>
         public string[] SupportingDocumentPaths {
             get {
@@ -3260,7 +3102,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public StaffStruct[] Authors {
+        public WordPluginModel.StaffStruct[] Authors {
             get {
                 return this.authorsField;
             }
@@ -3271,18 +3113,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public StaffStruct[] Editors {
-            get {
-                return this.editorsField;
-            }
-            set {
-                this.editorsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public StaffStruct[] ArticleSpecificNotifications {
+        public WordPluginModel.StaffStruct[] ArticleSpecificNotifications {
             get {
                 return this.articleSpecificNotificationsField;
             }
@@ -3293,7 +3124,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
-        public StaffStruct[] GlobalNotifications {
+        public WordPluginModel.StaffStruct[] GlobalNotifications {
             get {
                 return this.globalNotificationsField;
             }
@@ -3362,7 +3193,8 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
-    
+    */
+	/*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -3410,6 +3242,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
+	*/
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
@@ -3443,7 +3276,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
-    
+    /*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -3561,7 +3394,8 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
-    
+	*/
+    /*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -3607,6 +3441,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
+	*/
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
@@ -3664,7 +3499,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
             }
         }
     }
-    
+    /*
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -3711,6 +3546,7 @@ namespace SitecoreTreeWalker.SitecoreTree {
 			}
 		}
 	}
+	*/
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.81.0")]
@@ -3756,10 +3592,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public WordStyleStruct[] Result {
+        public WordPluginModel.WordStyleStruct[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((WordStyleStruct[])(this.results[0]));
+                return ((WordPluginModel.WordStyleStruct[])(this.results[0]));
             }
         }
     }
@@ -3782,10 +3618,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public WordStyleStruct[] Result {
+        public WordPluginModel.WordStyleStruct[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((WordStyleStruct[])(this.results[0]));
+                return ((WordPluginModel.WordStyleStruct[])(this.results[0]));
             }
         }
     }
@@ -3886,10 +3722,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public DirectoryStruct[] Result {
+        public WordPluginModel.DirectoryStruct[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((DirectoryStruct[])(this.results[0]));
+                return ((WordPluginModel.DirectoryStruct[])(this.results[0]));
             }
         }
     }
@@ -3938,10 +3774,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public HDirectoryStruct Result {
+        public WordPluginModel.HDirectoryStruct Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((HDirectoryStruct)(this.results[0]));
+                return ((WordPluginModel.HDirectoryStruct)(this.results[0]));
             }
         }
     }
@@ -3964,10 +3800,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public HDirectoryStruct Result {
+        public WordPluginModel.HDirectoryStruct Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((HDirectoryStruct)(this.results[0]));
+                return ((WordPluginModel.HDirectoryStruct)(this.results[0]));
             }
         }
     }
@@ -3990,10 +3826,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public MediaItemStruct Result {
+        public WordPluginModel.MediaItemStruct Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((MediaItemStruct)(this.results[0]));
+                return ((WordPluginModel.MediaItemStruct)(this.results[0]));
             }
         }
     }
@@ -4016,10 +3852,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public MediaItemStruct Result {
+        public WordPluginModel.MediaItemStruct Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((MediaItemStruct)(this.results[0]));
+                return ((WordPluginModel.MediaItemStruct)(this.results[0]));
             }
         }
     }
@@ -4224,10 +4060,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public TaxonomyStruct[] Result {
+        public WordPluginModel.TaxonomyStruct[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((TaxonomyStruct[])(this.results[0]));
+                return ((WordPluginModel.TaxonomyStruct[])(this.results[0]));
             }
         }
     }
@@ -4250,10 +4086,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public ArticleStruct Result {
+        public WordPluginModel.ArticleStruct Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ArticleStruct)(this.results[0]));
+                return ((WordPluginModel.ArticleStruct)(this.results[0]));
             }
         }
     }
@@ -4276,10 +4112,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public ArticleStruct Result {
+        public WordPluginModel.ArticleStruct Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ArticleStruct)(this.results[0]));
+                return ((WordPluginModel.ArticleStruct)(this.results[0]));
             }
         }
     }
@@ -4354,10 +4190,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public TaxonomyStruct[] Result {
+        public WordPluginModel.TaxonomyStruct[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((TaxonomyStruct[])(this.results[0]));
+                return ((WordPluginModel.TaxonomyStruct[])(this.results[0]));
             }
         }
     }
@@ -4588,10 +4424,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public StaffStruct[] Result {
+        public WordPluginModel.StaffStruct[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((StaffStruct[])(this.results[0]));
+                return ((WordPluginModel.StaffStruct[])(this.results[0]));
             }
         }
     }
@@ -4614,10 +4450,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public StaffStruct[] Result {
+        public WordPluginModel.StaffStruct[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((StaffStruct[])(this.results[0]));
+                return ((WordPluginModel.StaffStruct[])(this.results[0]));
             }
         }
     }
@@ -4848,10 +4684,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public ArticlePreviewInfo Result {
+        public WordPluginModel.ArticlePreviewInfo Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ArticlePreviewInfo)(this.results[0]));
+                return ((WordPluginModel.ArticlePreviewInfo)(this.results[0]));
             }
         }
     }
@@ -4874,10 +4710,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public ArticlePreviewInfo[] Result {
+        public WordPluginModel.ArticlePreviewInfo[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ArticlePreviewInfo[])(this.results[0]));
+                return ((WordPluginModel.ArticlePreviewInfo[])(this.results[0]));
             }
         }
     }
@@ -4900,10 +4736,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public WorkflowState Result {
+        public WordPluginModel.WorkflowState Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((WorkflowState)(this.results[0]));
+                return ((WordPluginModel.WorkflowState)(this.results[0]));
             }
         }
     }
@@ -4926,10 +4762,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public WorkflowState Result {
+        public WordPluginModel.WorkflowState Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((WorkflowState)(this.results[0]));
+                return ((WordPluginModel.WorkflowState)(this.results[0]));
             }
         }
     }
@@ -4978,10 +4814,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public WorkflowState Result {
+        public WordPluginModel.WorkflowState Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((WorkflowState)(this.results[0]));
+                return ((WordPluginModel.WorkflowState)(this.results[0]));
             }
         }
     }
@@ -5004,10 +4840,10 @@ namespace SitecoreTreeWalker.SitecoreTree {
         }
         
         /// <remarks/>
-        public WorkflowState Result {
+        public WordPluginModel.WorkflowState Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((WorkflowState)(this.results[0]));
+                return ((WordPluginModel.WorkflowState)(this.results[0]));
             }
         }
     }

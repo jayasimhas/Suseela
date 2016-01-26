@@ -14,37 +14,37 @@ namespace SitecoreTreeWalker.Sitecore
 {
 	class SitecoreGetter
 	{
-		private static List<StaffStruct> _authors;
-		private static ArticleStruct _articleDetails = new ArticleStruct();
+		private static List<WordPluginModel.StaffStruct> _authors;
+		private static WordPluginModel.ArticleStruct _articleDetails = new WordPluginModel.ArticleStruct();
 		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
 		private static string webApiURL = "http://informa8.ashah.velir.com/api/";
 
-		public static List<TaxonomyStruct> SearchTaxonomy(string term)
+		public static List<WordPluginModel.TaxonomyStruct> SearchTaxonomy(string term)
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}SearchTaxonomy?searchTerm={term}").Result;
-				var taxonomy = JsonConvert.DeserializeObject<List<TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
+				var taxonomy = JsonConvert.DeserializeObject<List<WordPluginModel.TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
 				return taxonomy;
 			}
 		}
 
-		public static HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid)
+		public static WordPluginModel.HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid)
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetHierarchyByGuid?guid={taxonomyGuid}").Result;
-				var directoryList = JsonConvert.DeserializeObject<HDirectoryStruct>(response.Content.ReadAsStringAsync().Result);
+				var directoryList = JsonConvert.DeserializeObject<WordPluginModel.HDirectoryStruct>(response.Content.ReadAsStringAsync().Result);
 				return directoryList;
 			}
 		}
 
-		public static MediaItemStruct GetMediaStatistics(string path)
+		public static WordPluginModel.MediaItemStruct GetMediaStatistics(string path)
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetMediaStatistics?path={path}").Result;
-				var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
+				var mediaItem = JsonConvert.DeserializeObject<WordPluginModel.MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}
@@ -54,7 +54,7 @@ namespace SitecoreTreeWalker.Sitecore
 		/// set and return.
 		/// </summary>
 		/// <returns></returns>
-		public static List<StaffStruct> LazyReadAuthors()
+		public static List<WordPluginModel.StaffStruct> LazyReadAuthors()
 		{
 			return _authors ?? (_authors = GetAuthors());
 		}
@@ -94,12 +94,12 @@ namespace SitecoreTreeWalker.Sitecore
 		/// set and return.
 		/// </summary>
 		/// <returns></returns>
-		public static List<StaffStruct> ForceReadAuthors()
+		public static List<WordPluginModel.StaffStruct> ForceReadAuthors()
 		{
 			return _authors = GetAuthors();
 		}
 
-		public static ArticleStruct LazyReadArticleDetails(string articleNumber)
+		public static WordPluginModel.ArticleStruct LazyReadArticleDetails(string articleNumber)
 		{
 			if (_articleDetails != null && _articleDetails.ArticleNumber == articleNumber)
 			{
@@ -108,32 +108,32 @@ namespace SitecoreTreeWalker.Sitecore
 			return _articleDetails = GetArticleDetails(articleNumber);
 		}
 
-		public static ArticleStruct ForceReadArticleDetails(string articleNumber)
+		public static WordPluginModel.ArticleStruct ForceReadArticleDetails(string articleNumber)
 		{
 			return _articleDetails = GetArticleDetails(articleNumber);
 		}
 
-		public static ArticleStruct ForceReadArticleDetails(Guid articleGuid)
+		public static WordPluginModel.ArticleStruct ForceReadArticleDetails(Guid articleGuid)
 		{
 			return _articleDetails = GetArticleDetails(articleGuid);
 		}
 
-		public static List<ItemStruct> GetPublications()
+		public static List<WordPluginModel.ItemStruct> GetPublications()
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetPublications").Result;
-				var publicationsList = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+				var publicationsList = JsonConvert.DeserializeObject<List<WordPluginModel.ItemStruct>>(response.Content.ReadAsStringAsync().Result);
 				return publicationsList;
 			}
 		}
 
-		public static List<ItemStruct> GetMediaTypes()
+		public static List<WordPluginModel.ItemStruct> GetMediaTypes()
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetMediaTypes").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.ItemStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}
@@ -148,24 +148,24 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-		private static List<StaffStruct> GetAuthors()
+		private static List<WordPluginModel.StaffStruct> GetAuthors()
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetAuthors").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
+				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.StaffStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}
 
-		private static ArticleStruct GetArticleDetails(string articleNumber)
+		private static WordPluginModel.ArticleStruct GetArticleDetails(string articleNumber)
 		{
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
 			var sctree = new SCTree();
 			return sctree.GetArticleDetails(articleNumber, _sitecoreUser.Username, _sitecoreUser.Password);
 		}
 
-		private static ArticleStruct GetArticleDetails(Guid articleGuid)
+		private static WordPluginModel.ArticleStruct GetArticleDetails(Guid articleGuid)
 		{
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
 			var sctree = new SCTree();
@@ -227,13 +227,13 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-		public static List<StaffStruct> GetStaffAndGroups()
+		public static List<WordPluginModel.StaffStruct> GetStaffAndGroups()
 		{
 			using (var client = new HttpClient())
 			{
 				//TODO - This might change due to change in Staff and Authors
 				var response = client.GetAsync($"{webApiURL}GetAuthors").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
+				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.StaffStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}
@@ -269,42 +269,42 @@ namespace SitecoreTreeWalker.Sitecore
 			return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
 		}
 
-		public static List<WordStyleStruct> GetParagraphStyles()
+		public static List<WordPluginModel.WordStyleStruct> GetParagraphStyles()
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetParagraphStyles").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
+				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}
 
-		public static List<WordStyleStruct> GetCharacterStyles()
+		public static List<WordPluginModel.WordStyleStruct> GetCharacterStyles()
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetCharacterStyles").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
+				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}
 
-		public static DirectoryStruct[] GetChildrenDirectories(string path)
+		public static WordPluginModel.DirectoryStruct[] GetChildrenDirectories(string path)
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetChildrenDirectories?path={path}").Result;
-				var directoryList = JsonConvert.DeserializeObject<DirectoryStruct[]>(response.Content.ReadAsStringAsync().Result);
+				var directoryList = JsonConvert.DeserializeObject<WordPluginModel.DirectoryStruct[]>(response.Content.ReadAsStringAsync().Result);
 				return directoryList;
 			}
 		}
 
-		public static MediaItemStruct GetMediaLibraryItem(string path)
+		public static WordPluginModel.MediaItemStruct GetMediaLibraryItem(string path)
 		{
 			using (var client = new HttpClient())
 			{
 				var response = client.GetAsync($"{webApiURL}GetMediaLibraryItem?path={path}").Result;
-				var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
+				var mediaItem = JsonConvert.DeserializeObject<WordPluginModel.MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}

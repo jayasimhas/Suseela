@@ -12,6 +12,7 @@ using Jabberwocky.Glass.Autofac.Extensions;
 using Jabberwocky.Glass.Autofac.Mvc.Extensions;
 using log4net;
 using Informa.Library.CustomSitecore.Mvc;
+using Informa.Web.Controllers;
 
 namespace Informa.Web.App_Start
 {
@@ -41,9 +42,11 @@ namespace Informa.Web.App_Start
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
             builder.RegisterControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
             builder.RegisterType<CustomSitecoreHelper>().AsSelf();
+	        builder.RegisterType<ArticleUtil>().AsSelf();
+			builder.RegisterType<SitecoreSaverUtil>().AsSelf();
 
-            // Custom Modules
-            builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
+			// Custom Modules
+			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
 
 
             // Custom Registrations

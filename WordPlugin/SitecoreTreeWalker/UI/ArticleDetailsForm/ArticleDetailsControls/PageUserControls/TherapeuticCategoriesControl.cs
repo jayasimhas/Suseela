@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using Informa.Web.Areas.Account.Models;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using SitecoreTreeWalker.UI.Controllers;
 
@@ -23,11 +23,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 													  uxArrowUp, uxArrowDown);
 		}
 
-		public void UpdateFields(ArticleStruct articleDetails)
+		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
 		{
-			List<TaxonomyStruct> therapeuticCategories =
+			List<WordPluginModel.TaxonomyStruct> therapeuticCategories =
 				SitecoreGetter.SearchTaxonomy("").ToList();
-			HDirectoryStruct therapeuticCategoriesDirectory =
+			WordPluginModel.HDirectoryStruct therapeuticCategoriesDirectory =
 				SitecoreGetter.GetHierarchyByGuid(new Guid(Constants.THERAPEUTIC_CATEGORY_GUID));
 
 			TabController.InitializeSitecoreValues(therapeuticCategories, therapeuticCategoriesDirectory);

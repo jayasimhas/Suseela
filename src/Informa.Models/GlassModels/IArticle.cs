@@ -6,35 +6,33 @@ using System.Threading.Tasks;
 using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.Configuration;
 using Glass.Mapper.Sc.Configuration.Attributes;
-using Informa.Models.FactoryInterface;
+using Glass.Mapper.Sc.Maps;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Jabberwocky.Glass.Models;
-using Sitecore.Data.Items;
+using Sitecore.Buckets.Extensions;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
-    partial interface IArticle : IListable
-    {
-
-        [SitecoreQuery("./ancestor-or-self::*[@@templateid='{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}']", IsRelative = true
-            )]
-        Guid Publication { get; set; }
+	public partial interface IArticle
+	{                     
+		
+		[SitecoreQuery("./ancestor-or-self::*[@@templateid='{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}']", IsRelative = true)]
+		Guid Publication { get; set; }
 		
 		//TODO
 		bool IsPublished { get ; set; }
 
-		[SitecoreField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
-		IEnumerable<Guid> TaxonomyIDs { get; set; } 
+		/*[SitecoreField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
+		IEnumerable<Guid> TaxonomyIDs { get; set; } */
 	}
 
-	//public class ArticleMap : SitecoreGlassMap<IArticle>
-	//{
-	//	public override void Configure()
-	//	{
-	//		Map(x => x.Delegate(y => y.IsPublished).GetValue(z =>
-	//		{
-	//			return z.Item.IsPublished(z.Service.Database);
-	//		}));
-	//	}
- //   }
+	public class ArticleMap : SitecoreGlassMap<IArticle>
+	{
+		public override void Configure()
+		{
+			Map(x => x.AutoMap(), x => x.Delegate(y => y.IsPublished).GetValue(z =>
+			{
+				return z.Item.IsPublished(z.Service.Database);
+			}));
+		}
+	}
 }

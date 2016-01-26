@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 
