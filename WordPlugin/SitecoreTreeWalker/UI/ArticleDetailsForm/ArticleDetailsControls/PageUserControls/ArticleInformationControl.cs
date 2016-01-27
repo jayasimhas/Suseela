@@ -683,8 +683,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			uxPublication.Enabled = true;
             //uxLinkDocument.Enabled = true;
-			uxNominate.Enabled = false;
-			uxTopStory.Enabled = false;
 
 			uxSelectAuthor.Enabled = true;
 			uxAddAuthor.Enabled = true;
@@ -704,8 +702,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			uxPublication.SelectedIndex = 0;
 			uxSelectedAuthors.Reset();
-			uxNominate.Checked = false;
-			uxTopStory.Checked = false;
 			SetPublicationTime(DateTime.Today, true);
 			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
 		}
