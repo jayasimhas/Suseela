@@ -15,6 +15,6 @@ module.exports = {
     // what gulp task to run when you type "gulp"
     "defaultTask": "dev-nowatch",
 
-    "initEnv": "local.json"
+    "initEnv": "local"
 
 };
