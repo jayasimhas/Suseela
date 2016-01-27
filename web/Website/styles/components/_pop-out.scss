@@ -1,34 +1,39 @@
 .pop-out {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .pop-out__internal {
+        left: 0;
+        top: 0;
+    }
+
+    &.is-active {
+        display: block;
+    }
+
+    &__tab {
+        content: "";
+        margin: auto;
+        background-color: #f1f2f2;
+        border: 1px solid #d1d3d4;
+        border-bottom: 0;
+        display: block;
+        padding: 20px;
+        position: absolute;
+
+        @include breakpoint('small') {
+            margin: 0;
+        }
+    }
 
     &__trigger {
         position: relative;
         cursor: pointer;
         display: block;
         height: 1rem;
-        z-index: 10;
-
-        &.is-active {
-
-            &:before {
-                background-color: #f1f2f2;
-        		border: 1px solid #d1d3d4;
-                border-bottom: 0;
-        		content: "";
-        		display: block;
-        		height: 80px;
-                left: -20px;
-        		padding: 20px;
-        		position: absolute;
-        		top: calc(-100% + 3px);
-                z-index: 9;
-                width: calc(100% + 41px);
-            }
-
-            .pop-out {
-                display: block;
-            }
-        }
+        z-index: 933;
     }
 
     &__internal {
@@ -40,21 +45,6 @@
         width: 380px;
         z-index: 8;
 
-        &--wide {
-            width: 420px;
-            padding: 30px;
-        }
-
-        &--flush-right {
-            right: -21px; // Flush right, minus padding and border
-            left: auto;
-        }
-
-        &--flush-left {
-            left: -20px; // Flush right, minus padding and border
-            right: auto;
-        }
-
         input:not([type="checkbox"]),
         textarea {
             width: 100%;
@@ -65,16 +55,8 @@
             min-height: 150px;
         }
 
-        @include breakpoint('medium') {
-
-            &,
-            &--wide,
-            &--flush-right,
-            &--flush-left {
-                width: 100vw;
-                left: 0;
-                right: 0;
-            }
+        @include breakpoint('small') {
+            width: 100% !important;
         }
     }
 
@@ -128,56 +110,4 @@
         margin-top: 24px;
         padding-top: 24px;
     }
-
-    @include breakpoint('small') {
-
-        left: 0;
-        position: fixed;
-
-        &__internal {
-            top: 1rem;
-        }
-
-        &__trigger.is-active:before {
-            height: 200%;
-            top: -50%;
-        }
-
-    }
-}
-
-.js-pop-out-trigger {
-    z-index: 93;
-    position: relative;
-    cursor: pointer;
-}
-.pop-out-template {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    .pop-out__internal {
-        left: 0;
-        top: 0;
-    }
-
-    &.is-active {
-        display: block;
-    }
-}
-.pop-out-tab {
-    margin: auto;
-    left: 0;
-    right: 0;
-    background-color: #f1f2f2;
-    border: 1px solid #d1d3d4;
-    border-bottom: 0;
-    display: block;
-    padding: 20px;
-    position: absolute;
-}
-
-// Hide out-of-date old pop-out elements
-.pop-out--OLD {
-    display: none;
 }

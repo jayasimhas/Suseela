@@ -33,7 +33,7 @@ namespace Informa.Web.Controllers
 			var publicationPrefixDictionary =
 				new Dictionary<Guid, string>
 					{
-						{new Guid("{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}"), "SC"},
+						{new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}"), "SC"},
 					};
 
 			string value;
