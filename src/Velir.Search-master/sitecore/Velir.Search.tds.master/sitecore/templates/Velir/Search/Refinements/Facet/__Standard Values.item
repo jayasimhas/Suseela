@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {5FC1F6F3-9369-411E-A0AE-5CBA62855C3B}
+database: master
+path: /sitecore/templates/Velir/Search/Refinements/Facet/__Standard Values
+parent: {2463DE7D-4C6E-4E02-AB46-45833E0408C3}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {2463DE7D-4C6E-4E02-AB46-45833E0408C3}
+templatekey: Facet
+
+----version----
+language: en
+version: 1
+revision: 53ce1097-a8f6-451e-83a4-354e76425520
+
+----field----
+field: {F0B316E1-2D87-4433-9634-40685172DD3C}
+name: And Filter
+key: and filter
+content-length: 1
+
+1
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140815T113114
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+53ce1097-a8f6-451e-83a4-354e76425520
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140829T114636:635449095961665939
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
