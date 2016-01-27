@@ -909,6 +909,7 @@
     </Content>
     <Content Include="js\package.json" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
+    <None Include="App_Config\Sitecore.config.velirTemplate" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
