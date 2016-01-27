@@ -23,7 +23,8 @@
 var gulp    = require("gulp"),
     utils   = require("./tasks/utils"),
     notify  = require("gulp-notify"),
-    path    = require("path"),
+    path = require("path"),
+    msbuild = require("gulp-msbuild"),
     config  = utils.loadConfig(); // initialize the config
 
 
@@ -32,13 +33,13 @@ utils.setConfig({
 //    root  : path.resolve("../../web/Website"),
 //    dest  : path.resolve("../../web/Website/dist"),
     root  : path.resolve("../Website"),
-    dest  : path.resolve("../Website/dist"),
+    dest: path.resolve("../Website/dist"),
     env   : ""
 });
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite"]);
+utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite"]); //I added an 'init' task, disabled it at the moment.
 
 /**
  * dev task
@@ -67,7 +68,8 @@ gulp.task("dev-nowatch", function(){
     utils.setConfig({
         env   : "dev",
         watch : false,
-        notify: true
+        notify: true,
+        initEnv: "local.js"
     });
 
     // build with this config

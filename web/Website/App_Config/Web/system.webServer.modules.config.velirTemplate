@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modules runAllManagedModulesForAllRequests="true">
+	<remove name="WebDAVModule" />
+	<add type="Sitecore.Web.RewriteModule, Sitecore.Kernel" name="SitecoreRewriteModule" />
+	<add type="Sitecore.Nexus.Web.HttpModule,Sitecore.Nexus" name="SitecoreHttpModule" />
+	<!-- @if !Env.IsProduction -->
+	<add type="Sitecore.Resources.Media.UploadWatcher, Sitecore.Kernel" name="SitecoreUploadWatcher" />
+	<!-- @endif -->
+	<add type="Sitecore.IO.XslWatcher, Sitecore.Kernel" name="SitecoreXslWatcher" />
+	<add type="Sitecore.IO.LayoutWatcher, Sitecore.Kernel" name="SitecoreLayoutWatcher" />
+	<add type="Sitecore.Configuration.ConfigWatcher, Sitecore.Kernel" name="SitecoreConfigWatcher" />
+	<remove name="Session" />
+	<add name="Session" type="System.Web.SessionState.SessionStateModule" preCondition="" />
+	<add type="Sitecore.Analytics.RobotDetection.Media.MediaRequestSessionModule, Sitecore.Analytics.RobotDetection" name="MediaRequestSessionModule" />
+	<add type="Sitecore.Web.HttpModule,Sitecore.Kernel" name="SitecoreHttpModuleExtensions" />
+	<add name="SitecoreAntiCSRF" type="Sitecore.Security.AntiCsrf.SitecoreAntiCsrfModule, Sitecore.Security.AntiCsrf" />
+	<add name="NWebsecHttpHeaderSecurityModule" type="NWebsec.Modules.HttpHeaderSecurityModule, NWebsec, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1" />
+</modules>

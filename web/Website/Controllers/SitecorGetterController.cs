@@ -197,7 +197,7 @@ namespace Informa.Web.Controllers
 		// GET api/<controller>
 		public JsonResult<List<WordPluginModel.StaffStruct>> Get()
 		{
-			var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid("{37E1CA4F-1B6F-46E2-85D1-123879EDA20E}"));
+			var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid("{5C4D8806-C74E-465E-AB61-FC50F168BCBC}"));
 			var members = staffFolder?._ChildrenWithInferType.OfType<IStaff_Item>().Where(c => !c.Inactive)
 				.Select(eachChild => new WordPluginModel.StaffStruct() { Name = eachChild.Last_Name + ", " + eachChild.First_Name, ID = eachChild._Id }).ToList();
 			return Json(members);
@@ -216,8 +216,8 @@ namespace Informa.Web.Controllers
 		public JsonResult<List<WordPluginModel.ItemStruct>> Get()
 		{
 			var contentFolder = _sitecoreService.GetItem<IMain_Section>(new Guid("{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"));
-			var members = contentFolder?._ChildrenWithInferType.OfType<IHome_Page>().Select(eachChild => new WordPluginModel.ItemStruct()
-			{ Name = eachChild._Name, ID = eachChild._Id }).ToList();
+			var members = contentFolder?._ChildrenWithInferType.OfType<ISite_Root>().Select(eachChild => new WordPluginModel.ItemStruct()
+			{ Name = eachChild.Publication_Name, ID = eachChild._Id }).ToList();
 			return Json(members);
 		}
 	}

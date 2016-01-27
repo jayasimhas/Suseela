@@ -38,8 +38,6 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.uxPublication = new System.Windows.Forms.ComboBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.uxNominate = new System.Windows.Forms.CheckBox();
-			this.uxTopStory = new System.Windows.Forms.CheckBox();
 			this.label12 = new System.Windows.Forms.Label();
 			this.uxSelectAuthor = new System.Windows.Forms.ComboBox();
 			this.uxAddAuthor = new System.Windows.Forms.Button();
@@ -151,26 +149,6 @@
 			this.label7.TabIndex = 0;
 			this.label7.Text = "Publication:";
 			// 
-			// uxNominate
-			// 
-			this.uxNominate.AutoSize = true;
-			this.uxNominate.Location = new System.Drawing.Point(447, 39);
-			this.uxNominate.Name = "uxNominate";
-			this.uxNominate.Size = new System.Drawing.Size(153, 17);
-			this.uxNominate.TabIndex = 52;
-			this.uxNominate.Text = "Nominate for Homepage";
-			this.uxNominate.UseVisualStyleBackColor = true;
-			// 
-			// uxTopStory
-			// 
-			this.uxTopStory.AutoSize = true;
-			this.uxTopStory.Location = new System.Drawing.Point(447, 18);
-			this.uxTopStory.Name = "uxTopStory";
-			this.uxTopStory.Size = new System.Drawing.Size(149, 17);
-			this.uxTopStory.TabIndex = 51;
-			this.uxTopStory.Text = "Top Story on Newsletter";
-			this.uxTopStory.UseVisualStyleBackColor = true;
-			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
@@ -230,10 +208,8 @@
 			this.groupBox1.Controls.Add(this.label12);
 			this.groupBox1.Controls.Add(this.uxSelectAuthor);
 			this.groupBox1.Controls.Add(this.uxAddAuthor);
-			this.groupBox1.Controls.Add(this.uxNominate);
 			this.groupBox1.Controls.Add(this.label15);
 			this.groupBox1.Controls.Add(this.uxSelectedAuthors);
-			this.groupBox1.Controls.Add(this.uxTopStory);
 			this.groupBox1.Location = new System.Drawing.Point(5, 229);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(602, 171);
@@ -332,8 +308,6 @@
 		private System.Windows.Forms.Button uxAddAuthor;
 		public EasyRemoveListView uxSelectedAuthors;
 		private System.Windows.Forms.Label label15;
-		public System.Windows.Forms.CheckBox uxNominate;
-        public System.Windows.Forms.CheckBox uxTopStory;
 		private System.Windows.Forms.DateTimePicker uxWebPublishTime;
 		private System.Windows.Forms.CheckBox uxEmbargoed;
         private System.Windows.Forms.GroupBox groupBox1;
