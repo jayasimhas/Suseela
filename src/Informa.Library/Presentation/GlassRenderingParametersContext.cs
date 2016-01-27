@@ -1,27 +1,27 @@
-﻿using System.Linq;
-using Jabberwocky.Glass.Models;
+﻿using Jabberwocky.Glass.Models;
 using Glass.Mapper.Sc;
-using Sitecore.Mvc.Presentation;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Glass.Mapper.Sc.Web;
 
 namespace Informa.Library.Presentation
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerRequest)]
 	public class GlassRenderingParametersContext : IRenderingParametersContext
 	{
 		protected readonly ISitecoreContext SitecoreContext;
+		protected readonly IRenderingContext RenderingContext;
 
 		public GlassRenderingParametersContext(
-			ISitecoreContext sitecoreContext)
+			ISitecoreContext sitecoreContext,
+			IRenderingContext renderingContext)
 		{
 			SitecoreContext = sitecoreContext;
+			RenderingContext = renderingContext;
 		}
 
 		public T GetParameters<T>() where T : class, IGlassBase
 		{
-			return new GlassHtml(SitecoreContext).GetRenderingParameters<T>(Parameters);
+			return new GlassHtml(SitecoreContext).GetRenderingParameters<T>(RenderingContext.GetRenderingParameters());
 		}
-
-		public string Parameters => string.Join("&", RenderingContext.Current.Rendering.Parameters.Select(p => string.Format("{0}={1}", p.Key, p.Value)));
 	}
 }
