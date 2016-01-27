@@ -39,7 +39,7 @@ utils.setConfig({
 
 
 // load the tasks
-utils.loadTasks(["init", "js", "css", "copy", "bower", "svg-sprite"]);
+utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite"]); //I added an 'init' task, disabled it at the moment.
 
 /**
  * dev task
