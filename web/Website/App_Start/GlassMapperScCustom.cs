@@ -5,6 +5,9 @@ using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
 using Informa.Library.Site;
 using Informa.Models;
+using Informa.Models.GlassModels;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
@@ -51,6 +54,7 @@ namespace Informa.Web.App_Start
 		public static void AddMaps(IConfigFactory<IGlassMap> mapsConfigFactory)
         {
 			// Add maps here
+            mapsConfigFactory.Add(() => new TaxonomyMap());
             //mapsConfigFactory.Add(() => new ListableConfig());
 			//mapsConfigFactory.Add(() => new ArticleMap());
             //mapsConfigFactory.Add(() => new ScripConfig());

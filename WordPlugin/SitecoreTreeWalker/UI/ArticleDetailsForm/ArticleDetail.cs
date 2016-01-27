@@ -585,10 +585,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             DocumentPropertyEditor.WritePublicationAndDate(
                 SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
-
+			//TODO - Workflow UI Updates
+			/*
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                             ? SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleGuid)
                                             : SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleNumber));
+											*/
             articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
             UpdateFieldsAfterSave();
             articleDetailsPageSelector.ResetChangedStatus(true);
@@ -772,9 +774,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 {
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
                 }
+				//TODO - Update workflow UI
+				/*
                 articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                                 ? SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleGuid)
                                                 : SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleNumber));
+												*/
                 articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
                 articleDetailsPageSelector.UpdateFields();
                 articleDetailsPageSelector.ResetChangedStatus();

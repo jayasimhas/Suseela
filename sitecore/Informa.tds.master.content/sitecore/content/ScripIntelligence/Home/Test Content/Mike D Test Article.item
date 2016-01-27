@@ -12,7 +12,7 @@ templatekey: Article
 ----version----
 language: en
 version: 1
-revision: 7ca2e417-1768-4f3d-a863-917700b49217
+revision: e2157572-bc55-48ae-b1a4-4f2aebad6bbf
 
 ----field----
 field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
@@ -20,7 +20,7 @@ name: Taxonomy
 key: taxonomy
 content-length: 77
 
-{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{8FC6B008-2625-4EFD-8316-680828677C39}
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
@@ -282,9 +282,9 @@ Collaborations boost Ablynx revenues
 field: {DC4C3A27-A361-4FA3-A534-5CCACC374377}
 name: Related Articles
 key: related articles
-content-length: 77
+content-length: 116
 
-{C7D52FEC-CBFB-447E-8677-D580A3B03143}|{09D6196B-7390-4515-B428-78F0FAD7E01A}
+{C7D52FEC-CBFB-447E-8677-D580A3B03143}|{09D6196B-7390-4515-B428-78F0FAD7E01A}|{F3A6A2AA-FD63-473A-B558-E5BB0445DAAA}
 ----field----
 field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
 name: Referenced Companies
@@ -347,14 +347,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7ca2e417-1768-4f3d-a863-917700b49217
+e2157572-bc55-48ae-b1a4-4f2aebad6bbf
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160122T195955Z
+20160126T183425Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
