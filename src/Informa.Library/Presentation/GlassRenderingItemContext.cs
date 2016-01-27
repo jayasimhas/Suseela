@@ -5,7 +5,7 @@ using Jabberwocky.Glass.Models;
 
 namespace Informa.Library.Presentation
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerRequest)]
 	public class GlassRenderingItemContext : IRenderingItemContext
 	{
 		protected readonly ISitecoreContext SitecoreContext;
