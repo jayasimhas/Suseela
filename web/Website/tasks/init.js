@@ -4,21 +4,22 @@ var gulp = require("gulp"),
     preprocess = require("gulp-preprocess"),
     debug = require("gulp-debug"),
     rename = require("gulp-rename"),
-        msbuild = require("gulp-msbuild");
+    argv = require('yargs').argv,    
+    msbuild = require("gulp-msbuild");
 
 
 var path = require("path"),
     fs = require("fs");
 //init settings
 utils.setTaskConfig("init", {
-    default: {      
+    default: {
         envRoot: config.root + "../../../config/env",
         src: [
             config.root + "/../../**/*.velirTemplate",
             "!node_modules/**",
             "!bower_components/**"
-            ]
-        
+        ],
+        initFile: (argv.initEnv || config.local.initEnv) + ".json"
     },
     prod: {
         
@@ -28,9 +29,15 @@ utils.setTaskConfig("init", {
 /* css task */
 gulp.task("init", function () {
     var init = utils.loadTaskConfig("init");
-    //console.log(config);
-    //console.log(config.local);
-    var file = fs.readFileSync(path.resolve(init.envRoot + "/" + config.local.initEnv), { encoding: "utf8" });
+    
+    var filePath = path.resolve(init.envRoot + "/" + init.initFile);
+    console.warn("\nProperties file " + filePath + " targeted.\n");
+    
+    try {
+        //fs.accessSync(filePath, fs.F_OK);
+        // Do something
+
+        var file = fs.readFileSync(filePath, { encoding: "utf8" });
 
     var jsonProperties = JSON.parse(file);
 
@@ -41,14 +48,8 @@ gulp.task("init", function () {
             extname: ""
         }))
         .pipe(gulp.dest("."));
+    } catch (e) {
+        console.warn("\nProperties file " + path.resolve(init.envRoot + "/" + init.initFile) + " not found.\n");
+        return gulp;
+    }
 });
-
-gulp.task("msbuild", function () {
-    return gulp.src("../../Informa.sln")
-        .pipe(debug())
-        .pipe(msbuild({
-            toolsVersion: 14.0,
-            properties: {configuration: "Debug-NoTDS"}
-        }));
-});
-

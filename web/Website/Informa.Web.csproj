@@ -815,6 +815,7 @@
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
+    <Content Include="tasks\msbuild.js" />
     <Content Include="tasks\init.js" />
     <Content Include="tasks\css.js" />
     <Content Include="tasks\js.js" />
@@ -909,7 +910,9 @@
     </Content>
     <Content Include="js\package.json" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
-    <None Include="App_Config\Sitecore.config.velirTemplate" />
+    <None Include="App_Config\Sitecore.config.velirTemplate">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

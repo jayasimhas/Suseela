@@ -1,4 +1,4 @@
-/// <binding Clean='dev-nowatch' />
+/// <binding />
 /**
  *  Usage:
  *      Once per computer:
@@ -39,7 +39,7 @@ utils.setConfig({
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite"]); //I added an 'init' task, disabled it at the moment.
+utils.loadTasks(["init", "js", "css", "copy", "bower", "svg-sprite", "msbuild"]);
 
 /**
  * dev task
@@ -50,7 +50,8 @@ gulp.task("dev", function () {
     utils.setConfig({
         env: "dev",
         watch: true,
-        notify: true
+        notify: true,
+        tasks: ["js", "css", "copy", "bower", "svg-sprite"]
     });
 
     // build with this config
@@ -69,7 +70,25 @@ gulp.task("dev-nowatch", function(){
         env   : "dev",
         watch : false,
         notify: true,
-        initEnv: "local.js"
+        tasks: ["js", "css", "copy", "bower", "svg-sprite"]
+    });
+
+    // build with this config
+    utils.build();
+
+});
+
+/**
+ * dev task
+ */
+gulp.task("clean-build", function () {
+
+    // set the dev config (cache in utils.js)
+    utils.setConfig({
+        env: "dev",
+        watch: false,
+        notify: true,
+        tasks: ["init", "js", "css", "copy", "bower", "svg-sprite"]
     });
 
     // build with this config
