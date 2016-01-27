@@ -10,6 +10,8 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
+using Sitecore.Data.Locking;
+using Sitecore.Web;
 
 namespace Informa.Web.Controllers
 {
@@ -57,6 +59,132 @@ namespace Informa.Web.Controllers
 			wordDocURL = wordDocURL.Replace("-", " ");
 			var wordDoc = _sitecoreMasterService.GetItem<Item>(wordDocURL);
 			return wordDoc?.Version.Number ?? -1;
+		}
+
+		public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
+		{
+			return new WordPluginModel.ArticlePreviewInfo
+			{
+				Title = article.Title,
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
+				//Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
+				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
+				ArticleNumber = article.Article_Number,
+				//Date = GetProperDate(), TODO
+				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
+				Guid = article._Id
+			};
+		}
+
+		public string PreviewArticleURL(string articleNumber, string siteHost)
+		{
+			Guid guid = this.GetArticleByNumber(articleNumber)._Id;
+			if (guid.Equals(Guid.Empty))
+			{
+				return null;
+			}
+
+			return "http://" + siteHost + "/?sc_itemid={" +
+				guid + "}&sc_mode=preview&sc_lang=en";
+		}
+
+		public bool LockArticle(Item article)
+		{
+			if (article.Locking.IsLocked())
+			{
+				throw new ApplicationException("Trying to lock an already locked article!");
+			}
+			//TODO - Might need to work on the user and login
+			/*
+			if (userID.IsNullOrEmpty())
+			{
+				return false;
+			}
+			bool loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+			if (!loggedIn)
+			{
+				{ return false; }
+			}
+			*/
+			
+			using (new Sitecore.SecurityModel.SecurityDisabler())
+			{
+				using (new EditContext(article))
+				{
+					article.Locking.Lock();
+				}
+			}
+			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+			return true;
+		}
+
+		public bool UnlockArticle(Item article)
+		{
+			if (article == null)
+			{
+				return false;
+			}
+			string userID = article.Locking.GetOwner();
+			if (string.IsNullOrEmpty(userID)) return false;
+			//TODO: assuming domain is specified here.
+			bool loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+			if (!loggedIn)
+			{
+				return false;
+			}
+
+			//TODO: use real security
+			using (new Sitecore.SecurityModel.SecurityDisabler())
+			{
+				using (new EditContext(article))
+				{
+					article.Locking.Unlock();
+					//there is already a new version created before saving an article
+					//var item = article.Versions.AddVersion();
+				}
+			}
+
+			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+
+			return true;
+		}
+
+		public WordPluginModel.CheckoutStatus GetLockedStatus(Item article)
+		{
+			if (article == null)
+			{
+				var nex = new NullReferenceException("Article item provided was null!");				
+				throw nex;
+			}
+
+			var checkoutStatus = new WordPluginModel.CheckoutStatus();
+
+			ItemLocking itemLocking = article.Locking;
+			checkoutStatus.Locked = itemLocking.IsLocked();
+			checkoutStatus.User = itemLocking.GetOwner();
+
+			return checkoutStatus;
+		}
+
+		public bool DoesArticleHaveText(IArticle article)
+		{
+			if (string.IsNullOrEmpty(article.Body))
+			{
+				return false;
+			}
+
+			var x = new XmlDocument();
+
+			//using a try-catch here in case the body text isn't in XML format
+			try
+			{
+				x.LoadXml(article.Body);
+				return !string.IsNullOrEmpty(x.InnerText.Trim());
+			}
+			catch (Exception)
+			{
+				return !string.IsNullOrEmpty(article.Body.Trim());
+			}
 		}
 
 		/// <summary>

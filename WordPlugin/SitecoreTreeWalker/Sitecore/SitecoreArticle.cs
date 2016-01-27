@@ -35,14 +35,8 @@ namespace SitecoreTreeWalker
 				return articleItem;
 			}
 		}
-		public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID, Guid publicationIssue)
-		{
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			return server.CreatePubArtGet(articleName, publicationDate, publicationID, publicationIssue, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-		}
 
-		public static bool DoesArticleNameAlreadyExistInIssue(WordPluginModel.ArticleStruct articleDetails)
+		public static bool DoesArticleNameAlreadyExistInIssue(ArticleStruct articleDetails)
 		{
 			using (var client = new HttpClient())
 			{
@@ -54,12 +48,19 @@ namespace SitecoreTreeWalker
 
 		public static void SaveMetadataToSitecore(string articleID, ArticleStruct articleData)
 		{
+			using (var client = new HttpClient())
+			{
+				var article = new WordPluginModel.SaveArticleDetails() { ArticleNumber = articleID, ArticleData = articleData };
+				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleDetails", article).Result;
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			server.SaveArticleDetails(articleID, articleData, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
-		public static void SaveArticleDetailsByGuid(Guid articleGuid, WordPluginModel.ArticleStruct articleData)
+		public static void SaveArticleDetailsByGuid(Guid articleGuid, ArticleStruct articleData)
 		{
 			using (var client = new HttpClient())
 			{
@@ -82,7 +83,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/PreviewUrlArticle", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}PreviewUrlArticle", articleNumber).Result;
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
@@ -92,7 +93,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetArticleDynamicUrl", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}GetArticleDynamicUrl", articleNumber).Result;
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
@@ -100,90 +101,168 @@ namespace SitecoreTreeWalker
 
 		public static bool DoesArticleHaveText(string articleNumber)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleHaveText",articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var sctree = new SCTree();
 			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
 			return sctree.DoesArticleHaveText(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static bool DoesArticleHaveText(Guid articleGuid)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleGuidHaveText",articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var sctree = new SCTree();
 			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
 			return sctree.DoesArticleGuidHaveText(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static bool DoesArticleExist(string articleNumber)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleExist",articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var sctree = new SCTree();
 			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
 			return sctree.DoesArticleExist(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static bool DoesArticleExist(Guid articleGuid)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleGuidExist",articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var sctree = new SCTree();
 			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
 			return sctree.DoesArticleGuidExist(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static WordPluginModel.CheckoutStatus GetLockedStatus(string articleNumber)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}GetLockedStatus", articleNumber).Result;
+				return JsonConvert.DeserializeObject<WordPluginModel.CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			return server.GetLockedStatus(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static WordPluginModel.CheckoutStatus GetLockedStatus(Guid articleGuid)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}GetLockedStatusByGuid", articleGuid).Result;
+				return JsonConvert.DeserializeObject<WordPluginModel.CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			return server.GetLockedStatusByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static bool CheckOutArticle(string articleNumber, string username)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}CheckOutArticle",articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			return server.CheckOutArticle(articleNumber, username, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static bool CheckOutArticle(Guid articleGuid, string username)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}CheckOutArticleByGuid",articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			return server.CheckOutArticleGuid(articleGuid, username, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static bool CheckInArticle(string articleNumber)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}CheckInArticle", articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			return server.CheckInArticle(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static bool CheckInArticle(Guid articleGuid)
 		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}CheckInArticleByGuid", articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+			/*
 			var server = new SitecoreServer.SCServer();
 			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			return server.CheckInArticleGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			*/
 		}
 
 		public static string GetArticleGuidByArticleNumber(string articleNumber)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetArticleGuidByNum", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}GetArticleGuidByNum", articleNumber).Result;
 				var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return articleGuid;
 			}
 		}
 
-		public static WordPluginModel.ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
+		public static ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/SitecoreSaver/GetArtPreInfo", articleNumber).Result;
-				var versionNumber = JsonConvert.DeserializeObject<WordPluginModel.ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
-				return versionNumber;
+				var response = client.PostAsJsonAsync($"{webApiURL}GetArticlePreviewInfo", articleNumber).Result;
+				var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
+				return previewInfo;
 			}
 		}
 
@@ -191,7 +270,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}/GetArticlePreviewInfo", guids).Result;
+				var response = client.PostAsJsonAsync($"{webApiURL}GetArticlePreviewInfoByGuids", guids).Result;
 				var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
 				return articlePreviewCollection;
 			}

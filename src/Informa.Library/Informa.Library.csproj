@@ -246,6 +246,7 @@
     <Compile Include="Navigation\INavigation.cs" />
     <Compile Include="Navigation\ItemNavigationTreeFactory.cs" />
     <Compile Include="Navigation\Navigation.cs" />
+    <Compile Include="Navigation\TaxonomyItemTreeFactory.cs" />
     <Compile Include="Presentation\GlassRenderingContext.cs" />
     <Compile Include="Presentation\GlassRenderingItemContext.cs" />
     <Compile Include="Presentation\GlassRenderingItemContext`1.cs" />

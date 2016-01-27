@@ -19,7 +19,8 @@ namespace Informa.Models.FactoryInterface
         DateTime ListableDate { get; }                 
         string ListableImage { get; }                    
         string ListableSummary { get; }                
-        string ListableTitle { get; }                   
+        string ListableTitle { get; }   
+        string ListableByline { get; }                
         IEnumerable<ILinkable> ListableTopics { get; }
         string ListableType { get; }
     }
@@ -59,6 +60,7 @@ namespace Informa.Models.FactoryInterface
         public string ListableImage { get; set; }
         public string ListableSummary { get; set; }
         public string ListableTitle { get; set; }
+        public string ListableByline { get; set; }
         public IEnumerable<ILinkable> ListableTopics { get; set; }
         public string ListableType { get; set; }
         public Link ListableUrl { get; set; }

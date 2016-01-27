@@ -9,6 +9,9 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
+using Sitecore.Data;
+using Sitecore.Data.Items;
+using Sitecore.Links;
 using Sitecore.SecurityModel;
 using Sitecore.Web;
 
@@ -28,7 +31,7 @@ namespace Informa.Web.Controllers
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
 			_articleUtil = articleUtil;
 		}
-		
+
 		[HttpPost]
 		public WordPluginModel.ArticleStruct Post([FromBody] WordPluginModel.CreateArticleRequest content)
 		{
@@ -41,14 +44,14 @@ namespace Informa.Web.Controllers
 				var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
 				article.Title = content.Name;
 				article.Planned_Publish_Date = publicationDate;
-				article.Created_Date = DateTime.Now;				
+				article.Created_Date = DateTime.Now;
 				article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString(), content.PublicationID, publicationDate);
 				_sitecoreMasterService.Save(article);
 				var savedArticle = _sitecoreMasterService.GetItem<IArticle>(article._Id);
 				var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
 				return articleStruct;
 			}
-		}		
+		}
 	}
 
 	[Route]
@@ -83,7 +86,7 @@ namespace Informa.Web.Controllers
 		private readonly SitecoreSaverUtil _sitecoreSaverUtil;
 		private readonly ArticleUtil _articleUtil;
 
-		public SaveArticleTextController(ISitecoreService sitecoreSevice, Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil sitecoreSaverUtil,ArticleUtil articleUtil)
+		public SaveArticleTextController(ISitecoreService sitecoreSevice, Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil sitecoreSaverUtil, ArticleUtil articleUtil)
 		{
 			_sitecoreWebService = sitecoreSevice;
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
@@ -95,7 +98,7 @@ namespace Informa.Web.Controllers
 		public void Post([FromBody] WordPluginModel.SaveArticleText content)
 		{
 			IArticle article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
-			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);			
+			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);
 		}
 	}
 
@@ -117,16 +120,132 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
-	public class GetArticlePreviewInfoController : ApiController
+	public class GetLockedStatusController : ApiController
+	{
+		private readonly ArticleUtil _articleUtil;
+
+		public GetLockedStatusController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public WordPluginModel.CheckoutStatus Post([FromBody] string articleNumber)
+		{
+			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+			return _articleUtil.GetLockedStatus(article);
+		}
+	}
+
+
+	[Route]
+	public class GetLockedStatusByGuidController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreMasterService;
 		public const string MasterDb = "master";
-		
-		protected string TempFileLocation;
+		private readonly ArticleUtil _articleUtil;
 
-		public GetArticlePreviewInfoController(Func<string, ISitecoreService> sitecoreFactory)
+		public GetLockedStatusByGuidController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
 		{
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public WordPluginModel.CheckoutStatus Post([FromBody]Guid articleGuid)
+		{
+			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
+			return _articleUtil.GetLockedStatus(article);
+		}
+	}
+
+	[Route]
+	public class DoesArticleHaveTextController : ApiController
+	{
+		private readonly ArticleUtil _articleUtil;
+
+		public DoesArticleHaveTextController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public bool Post([FromBody] string articleNumber)
+		{
+			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+			return _articleUtil.DoesArticleHaveText(article);
+		}
+	}
+	
+	[Route]
+	public class DoesArticleGuidHaveTextController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+		private readonly ArticleUtil _articleUtil;
+
+		public DoesArticleGuidHaveTextController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		{
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public bool Post([FromBody]Guid articleGuid)
+		{
+			IArticle article = _sitecoreMasterService.GetItem<IArticle>(articleGuid);
+			return _articleUtil.DoesArticleHaveText(article);			
+		}
+	}
+
+	[Route]
+	public class DoesArticleExistController : ApiController
+	{
+		private readonly ArticleUtil _articleUtil;
+
+		public DoesArticleExistController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public bool Post([FromBody] string articleNumber)
+		{
+			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+			return article != null;
+		}
+	}
+
+	[Route]
+	public class DoesArticleGuidExistController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+
+		public DoesArticleGuidExistController(Func<string, ISitecoreService> sitecoreFactory)
+		{
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+		}
+
+		[HttpPost]
+		public bool Post([FromBody]Guid articleGuid)
+		{
+			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
+			return article != null;
+		}
+	}
+
+	[Route]
+	public class GetArticlePreviewInfoByGuidsController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+		private readonly ArticleUtil _articleUtil;
+		
+		public GetArticlePreviewInfoByGuidsController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		{
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_articleUtil = articleUtil;
 		}
 
 		[HttpPost]
@@ -138,27 +257,30 @@ namespace Informa.Web.Controllers
 				IArticle article = _sitecoreMasterService.GetItem<IArticle>(guid);
 				if (article != null)
 				{
-					previews.Add(GetPreviewInfo(article));
+					previews.Add(_articleUtil.GetPreviewInfo(article));
 				}
 			}
 			return previews;
 		}
+	}
 
-		public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
+	public class GetArticlePreviewInfoController : ApiController
+	{	private readonly ArticleUtil _articleUtil;
+
+		public GetArticlePreviewInfoController(ArticleUtil articleUtil)
 		{
-			return new WordPluginModel.ArticlePreviewInfo
-			{
-				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
-				//Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
-				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
-				ArticleNumber = article.Article_Number,
-				//Date = GetProperDate(), TODO
-				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
-				Guid = article._Id
-			};
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public WordPluginModel.ArticlePreviewInfo Post([FromBody] string articleNumber)
+		{
+			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+			var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new WordPluginModel.ArticlePreviewInfo();
+			return preview;
 		}
 	}
+
 
 	[Route]
 	public class GetWordVersionNumByNumberController : ApiController
@@ -207,6 +329,78 @@ namespace Informa.Web.Controllers
 		}
 	}
 
+	public class CheckOutArticleController : ApiController
+	{
+		private readonly ArticleUtil _articleUtil;
+
+		public CheckOutArticleController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public bool Post([FromBody] string articleNumber)
+		{
+			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+			return _articleUtil.LockArticle(article);
+		}
+	}
+	public class CheckOutArticleByGuidController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+		private readonly ArticleUtil _articleUtil;
+
+		public CheckOutArticleByGuidController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		{
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public bool Post([FromBody] Guid articleGuid)
+		{
+			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
+			return _articleUtil.LockArticle(article);
+		}
+	}
+
+	public class CheckInArticleController : ApiController
+	{
+		private readonly ArticleUtil _articleUtil;
+
+		public CheckInArticleController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public bool Post([FromBody] string articleNumber)
+		{
+			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+			return _articleUtil.UnlockArticle(article);
+		}
+	}
+	public class CheckInArticleByGuidController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreMasterService;
+		public const string MasterDb = "master";
+		private readonly ArticleUtil _articleUtil;
+
+		public CheckInArticleByGuidController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		{
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public bool Post([FromBody] Guid articleGuid)
+		{
+			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
+			return _articleUtil.UnlockArticle(article);
+		}
+	}
+
 	[Route]
 	public class SendDocumentToSitecoreByGuidController : ApiController
 	{
@@ -249,26 +443,58 @@ namespace Informa.Web.Controllers
 		}
 	}
 
-	/*
-
-	//[HttpPost]
-	public WordPluginModel.ArticlePreviewInfo GetArtPreInfo([FromBody] string articleNumber)
+	[Route]
+	public class GetArticleGuidByNumController : ApiController
 	{
-		IArticle article = GetArticleByNumber(articleNumber);
-		var preview = article != null
-								? GetPreviewInfo(article)
-								: new WordPluginModel.ArticlePreviewInfo();
-		return preview;
+		private readonly ArticleUtil _articleUtil;
+
+		public GetArticleGuidByNumController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public string Post([FromBody] string articleNumber)
+		{
+			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+			return article?._Id.ToString() ?? Guid.Empty.ToString();
+		}
 	}
 
-
-
-
-	//[HttpPost]
-	public string GetArticleGuidByNum([FromBody] string articleNumber)
+	[Route]
+	public class PreviewUrlArticleController : ApiController
 	{
-		IArticle article = GetArticleByNumber(articleNumber);
-		return article == null ? Guid.Empty.ToString() : article._Id.ToString();
+		private readonly ArticleUtil _articleUtil;
+
+		public PreviewUrlArticleController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public string Post([FromBody] string articleNumber)
+		{
+			return _articleUtil.PreviewArticleURL(articleNumber, WebUtil.GetHostName());
+		}
+	}
+
+	[Route]
+	public class GetArticleDynamicUrlController : ApiController
+	{
+		private readonly ArticleUtil _articleUtil;
+
+		public GetArticleDynamicUrlController(ArticleUtil articleUtil)
+		{
+			_articleUtil = articleUtil;
+		}
+
+		[HttpPost]
+		public string Post([FromBody] string articleNumber)
+		{
+			var options = new LinkUrlOptions();
+			string mediaUrl = LinkManager.GetDynamicUrl(_articleUtil.GetArticleItemByNumber(articleNumber), options);
+			return mediaUrl;
+		}
 	}
 
 	/// <summary>
@@ -276,61 +502,26 @@ namespace Informa.Web.Controllers
 	/// </summary>
 	/// <param name="articlenumber">The unique article number</param>
 	/// <returns>The article URL</returns>
-	//[HttpPost]
-	public string GetArticleUrl([FromBody] string articleNumber)
+	[Route]
+	public class GetArticleUrlController : ApiController
 	{
-		Item article = GetArticleItemByNumber(articleNumber);
-		if (article == null) return null;
-		var url = LinkManager.GetItemUrl(article).ToLower();
-		return url;
-	}
-
-	//[HttpPost]
-	public string GetArticleDynamicUrl([FromBody] string articlenumber)
-	{
-		var options = new LinkUrlOptions();
-		string mediaUrl = LinkManager.GetDynamicUrl(GetArticleItemByNumber(articlenumber), options);
-		return mediaUrl;
-	}
-
-	//[HttpPost]
-	public string PreviewUrlArticle([FromBody] string articleNumber)
-	{
-		return PreviewArticleURL(articleNumber, WebUtil.GetHostName());
-	}
-
-	private string PreviewArticleURL(string articleNumber, string siteHost)
-	{
-		Guid guid = this.GetArticleByNumber(articleNumber)._Id;
-		if (guid.Equals(Guid.Empty))
+		private readonly ArticleUtil _articleUtil;
+		public GetArticleUrlController(ArticleUtil articleUtil)
 		{
-			return null;
+			_articleUtil = articleUtil;
 		}
 
-		return "http://" + siteHost + "/?sc_itemid={" +
-			guid + "}&sc_mode=preview&sc_lang=en";
+		[HttpPost]
+		public string Post([FromBody] string articleNumber)
+		{
+			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+			if (article == null) return null;
+			var url = LinkManager.GetItemUrl(article).ToLower();
+			return url;
+		}
 	}
 
-	public IArticle GetArticleByNumber(string articleNumber)
-	{
-		var articleFolder = _sitecoreMasterService.GetItem<IArticle_Folder>("{AF934D70-720B-47E8-B393-387A6F774CDF}");
-
-		IArticle article = articleFolder._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Year
-			.SelectMany(y => y._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Month
-			.SelectMany(z => z._ChildrenWithInferType.OfType<IArticle_Date_Folder>())) //Day
-			.SelectMany(dayItem => dayItem._ChildrenWithInferType.OfType<IArticle>())
-			.FirstOrDefault(a => a.Article_Number == articleNumber);
-
-		return article;
-	}
-
-	public Item GetArticleItemByNumber(string articleNumber)
-	{
-		IArticle articleItem = GetArticleByNumber(articleNumber);
-		var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
-		return article;
-	}
-
+	/*
 
 	public int SendDocumentToSitecoreByArticleNumber(string articleNumber, byte[] data, string extension, string username)
 	{

@@ -12,7 +12,7 @@ templatekey: Article
 ----version----
 language: en
 version: 1
-revision: 53d6530a-ffb6-4064-914f-6c5dc941d1eb
+revision: c1968d68-4bbf-4e3d-aaaf-a041ef055462
 
 ----field----
 field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
@@ -32,9 +32,9 @@ Collaborations boost Ablynx revenues
 field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
 name: Sub Title
 key: sub title
-content-length: 10
+content-length: 32
 
-SC00000016
+Subtitle caption for the article
 ----field----
 field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
 name: Body
@@ -42,6 +42,34 @@ key: body
 content-length: 2404
 
 <p>Ablynx can expect to gain greater value from future licensing deals, analysts predict, after its first half 2008 revenues grew significantly on the back of R&D revenues.</p><p>The Belgian company reported a 36% rise in revenue to &euro;6.2 million. The increase was attributable to a &euro;1.6 million increase in R&D revenues, resulting mainly from agreements with Novartis, Wyeth, Boehringer Ingelheim and Proctor & Gamble using Ablynx's Nanobody platform.</p><p>Ablynx should expect to receive further milestones from collaborations before the end of the year, say Piper Jaffray analysts. For example, last month Ablynx and Boehringer Ingelheim extended their $265 million worldwide research and licensing agreement to develop new treatments for Alzheimer's disease for another year.</p><p>The company also plans to strengthen its own pipeline and hopes to start six to eight internal discovery programmes by the end of the year. Its lead programme ALX-0081 entered a Phase Ib study in patients undergoing percutaneous coronary infusion in May. It expects to complete the study by the end of the year and is preparing a Phase II trial. In addition, Ablynx plans to file an IND for a subcutaneous formulation of the compound, ALX-0681, by the end of 2008. Piper Jaffray says the subcutaneous delivery form is expected to be more commercially attractive.</p><p>Overall, Ablynx has the means to continue developing its activities in the second half, with reported cash of &euro;115.3 million, higher than Piper Jaffray's forecast of &euro;112.8 million.</p><p>Cash flow for the period rose from &euro;6.5 million to &euro;9.7 million because of a higher loss for the period and a decrease in trade payables and deferred incomes. However, it was lower than Piper Jaffray's estimate of &euro;12.1 million. And the company's net loss, up by 21% to &euro;7.5 million, was also lower than the analysts' forecast of &euro;8.5 million.</p><p>R&D expenses rose by 52% to &euro;12.9 million, mainly owing to an increase in R&D staff. General and administrative costs grew by &euro;800,000 to &euro;3.4 million, following an increase in consulting and general costs.</p><p>Piper Jaffray believes that the company is "a sweetspot" acquisition by big pharma, as it has platform technology, sufficient cash and links to big pharma while retaining exclusivity on several therapeutic areas and potential targets.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 176
+
+<p>Ablynx can expect to gain greater value from future licensing deals, analysts predict, after its first half 2008 revenues grew significantly on the back of R&D revenues.</p>
+----field----
+field: {7526A634-C0A2-4FFE-88F8-227C9274B610}
+name: Featured Image 16 9
+key: featured image 16 9
+content-length: 58
+
+<image mediaid="{9E1FAC0E-A471-4381-8180-2B12AB62DBFD}" />
+----field----
+field: {B9FC8DAA-7B05-4595-92F4-A9D10C045CA6}
+name: Featured Image Caption
+key: featured image caption
+content-length: 17
+
+Caption for Image
+----field----
+field: {9E1CC2EB-BAB6-45EA-840A-A40A85A748EA}
+name: Featured Image Source
+key: featured image source
+content-length: 12
+
+Placehold.it
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
 name: Navigation Title
@@ -85,6 +113,13 @@ content-length: 36
 
 Collaborations boost Ablynx revenues
 ----field----
+field: {DC4C3A27-A361-4FA3-A534-5CCACC374377}
+name: Related Articles
+key: related articles
+content-length: 77
+
+{C7D52FEC-CBFB-447E-8677-D580A3B03143}|{09D6196B-7390-4515-B428-78F0FAD7E01A}
+----field----
 field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
 name: Referenced Companies
 key: referenced companies
@@ -113,6 +148,27 @@ content-length: 3
 
 640
 ----field----
+field: {5083CA52-6DE6-4BE9-A1E6-30E9579E782D}
+name: FactoryListableUrl
+key: factorylistableurl
+content-length: 38
+
+{0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+----field----
+field: {73F216E4-C244-4A3B-95EE-07D9FFD2D4F7}
+name: FactoryListableDate
+key: factorylistabledate
+content-length: 38
+
+{7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+----field----
+field: {241B01C9-B518-4182-9B94-C40DB3FB9CB2}
+name: FactoryListableSummary
+key: factorylistablesummary
+content-length: 38
+
+{5BA0578F-65B7-4C22-8233-1603D698D8A4}
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -125,14 +181,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-53d6530a-ffb6-4064-914f-6c5dc941d1eb
+c1968d68-4bbf-4e3d-aaaf-a041ef055462
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T221708Z
+20160122T164158Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
