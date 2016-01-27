@@ -1559,6 +1559,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// INumber_Option Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Number Option</para>	
+	/// <para>ID: 2dd089e0-d857-4c95-87cc-c1d03497caf7</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INumber_OptionConstants.TemplateIdString)]
+	public partial interface INumber_Option : IGlassBase 
+	{
+								/// <summary>
+					/// The Value field.
+					/// <para></para>
+					/// <para>Field Type: Integer</para>		
+					/// <para>Field ID: 701f3013-9e04-427a-b841-db4f62e8d7e3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INumber_OptionConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+					int Value  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// INumber_Option Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Number Option</para>	
+		/// <para>ID: 2dd089e0-d857-4c95-87cc-c1d03497caf7</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INumber_Option__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Value field.
+						/// <para></para>
+						/// <para>Field Type: Integer</para>		
+						/// <para>Field ID: 701f3013-9e04-427a-b841-db4f62e8d7e3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INumber_OptionConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+						int Value  {get; set;}
+						}
+	
+	public static partial class INumber_OptionConstants{
+
+			public const string TemplateIdString = "2dd089e0-d857-4c95-87cc-c1d03497caf7";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Number Option";
+
+					
+			public static readonly ID ValueFieldId = new ID("701f3013-9e04-427a-b841-db4f62e8d7e3");
+			public const string ValueFieldName = "Value";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation
 {
 
@@ -1899,6 +1960,113 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Character Style Mapping Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// ILatest_News_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Latest News Options</para>	
+	/// <para>ID: 4616c89c-3e95-4064-ae28-bee2e6e18a59</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ILatest_News_OptionsConstants.TemplateIdString)]
+	public partial interface ILatest_News_Options : IGlassBase 
+	{
+								/// <summary>
+					/// The Display Title field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.Display_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Display_Title  {get; set;}
+								/// <summary>
+					/// The Number To Display field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 2a2d2353-f2e2-46cc-9c10-8900db007122</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Number_To_Display  {get; set;}
+								/// <summary>
+					/// The Subjects field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Subjects  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ILatest_News_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Latest News Options</para>	
+		/// <para>ID: 4616c89c-3e95-4064-ae28-bee2e6e18a59</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ILatest_News_Options__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Display Title field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: d5f01d55-fd1f-4ba5-8c6f-953242b9e399</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.Display_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Display_Title  {get; set;}
+										/// <summary>
+						/// The Number To Display field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 2a2d2353-f2e2-46cc-9c10-8900db007122</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Number_To_Display  {get; set;}
+										/// <summary>
+						/// The Subjects field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Subjects  {get; set;}
+						}
+	
+	public static partial class ILatest_News_OptionsConstants{
+
+			public const string TemplateIdString = "4616c89c-3e95-4064-ae28-bee2e6e18a59";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Latest News Options";
+
+					
+			public static readonly ID Display_TitleFieldId = new ID("d5f01d55-fd1f-4ba5-8c6f-953242b9e399");
+			public const string Display_TitleFieldName = "Display Title";
+
+						
+					
+			public static readonly ID Number_To_DisplayFieldId = new ID("2a2d2353-f2e2-46cc-9c10-8900db007122");
+			public const string Number_To_DisplayFieldName = "Number To Display";
+
+						
+					
+			public static readonly ID SubjectsFieldId = new ID("bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b");
+			public const string SubjectsFieldName = "Subjects";
+
+						
 			
 
 	}
@@ -5842,6 +6010,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public const string TitleFieldName = "Title";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// INumber_Option_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Number Option Folder</para>	
+	/// <para>ID: c8f7a9ae-6a28-4f38-8691-59a76e206a0a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INumber_Option_FolderConstants.TemplateIdString)]
+	public partial interface INumber_Option_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// INumber_Option_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Number Option Folder</para>	
+		/// <para>ID: c8f7a9ae-6a28-4f38-8691-59a76e206a0a</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INumber_Option_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class INumber_Option_FolderConstants{
+
+			public const string TemplateIdString = "c8f7a9ae-6a28-4f38-8691-59a76e206a0a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Number Option Folder";
+
 			
 
 	}

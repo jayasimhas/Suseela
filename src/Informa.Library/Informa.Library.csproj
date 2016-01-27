@@ -224,6 +224,13 @@
   <ItemGroup>
     <Compile Include="Article\IUserArticleBookmarkedContext.cs" />
     <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
+    <Compile Include="Article\Search\ArticleSearch.cs" />
+    <Compile Include="Article\Search\ArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
+    <Compile Include="Article\Search\ArticleSearchResults.cs" />
+    <Compile Include="Article\Search\IArticleSearch.cs" />
+    <Compile Include="Article\Search\IArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactoryConfiguration.cs" />
@@ -232,8 +239,12 @@
     <Compile Include="Presentation\IDuplicateRenderingsFactoryConfiguration.cs" />
     <Compile Include="Presentation\IItemRendering.cs" />
     <Compile Include="Presentation\IRendering.cs" />
+    <Compile Include="Presentation\IRenderingParametersContext.cs" />
+    <Compile Include="Presentation\IRenderingParametersContext`1.cs" />
     <Compile Include="Presentation\ItemRendering.cs" />
     <Compile Include="Presentation\Rendering.cs" />
+    <Compile Include="Presentation\GlassRenderingParametersContext.cs" />
+    <Compile Include="Presentation\GlassRenderingParametersContext`1.cs" />
     <Compile Include="Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="Authentication\IUserAuthenticationContext.cs" />
     <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />

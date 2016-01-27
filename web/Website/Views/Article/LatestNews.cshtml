@@ -1,0 +1,18 @@
+﻿@model Informa.Web.ViewModels.LatestNewsViewModel
+<h4 class="latest-news__header">
+	<span>Latest from
+	@foreach (var topic in Model.Topics)
+	{
+		@topic
+	}
+	</span>
+</h4>
+
+<div class="latest-news__articles">
+	<!-- @Model.DisplayTitle -->
+	<!-- @Model.ArticlesToDisplay -->
+	@foreach (var listable in Model.News)
+	{
+		Html.RenderPartial("Components/ListableContentSmall", listable);
+	}
+</div>

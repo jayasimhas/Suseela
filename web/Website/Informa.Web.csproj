@@ -582,6 +582,7 @@
     <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
     <Compile Include="ViewModels\ISignInViewModel.cs" />
+    <Compile Include="ViewModels\LatestNewsViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\GlassArticleModel.cs" />
@@ -832,6 +833,7 @@
     <Content Include="Views\Article\ArticleProloguePrint.cshtml" />
     <Content Include="Views\Article\ArticlePrologueShare.cshtml" />
     <Content Include="Views\Shared\Components\FiftyFiftyComponent.cshtml" />
+    <Content Include="Views\Article\LatestNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
