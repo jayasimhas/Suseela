@@ -23,7 +23,8 @@
 var gulp    = require("gulp"),
     utils   = require("./tasks/utils"),
     notify  = require("gulp-notify"),
-    path    = require("path"),
+    path = require("path"),
+    msbuild = require("gulp-msbuild"),
     config  = utils.loadConfig(); // initialize the config
 
 

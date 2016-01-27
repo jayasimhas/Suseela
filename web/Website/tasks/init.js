@@ -3,7 +3,8 @@ var gulp = require("gulp"),
     config = utils.loadConfig(),
     preprocess = require("gulp-preprocess"),
     debug = require("gulp-debug"),
-    rename = require("gulp-rename");
+    rename = require("gulp-rename"),
+        msbuild = require("gulp-msbuild");
 
 
 var path = require("path"),
@@ -40,5 +41,14 @@ gulp.task("init", function () {
             extname: ""
         }))
         .pipe(gulp.dest("."));
+});
+
+gulp.task("msbuild", function () {
+    return gulp.src("../../Informa.sln")
+        .pipe(debug())
+        .pipe(msbuild({
+            toolsVersion: 14.0,
+            properties: {configuration: "Debug-NoTDS"}
+        }));
 });
 
