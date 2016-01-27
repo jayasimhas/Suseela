@@ -10,8 +10,7 @@ var path = require("path"),
     fs = require("fs");
 //init settings
 utils.setTaskConfig("init", {
-    default: {
-
+    default: {      
         envRoot: config.root + "../../../config/env",
         src: [
             config.root + "/../../**/*.velirTemplate",
@@ -26,23 +25,20 @@ utils.setTaskConfig("init", {
 });
 
 /* css task */
-gulp.task("init", function() {
-    console.log(path.resolve("../../config/env"));          
-    console.log(config.env);
-    var properties = utils.loadTaskConfig("init");    
-    var file = fs.readFileSync(path.resolve(properties.envRoot + "/" + config.local.env), { encoding: "utf8" });
+gulp.task("init", function () {
+    var init = utils.loadTaskConfig("init");
+    //console.log(config);
+    //console.log(config.local);
+    var file = fs.readFileSync(path.resolve(init.envRoot + "/" + config.local.initEnv), { encoding: "utf8" });
 
     var jsonProperties = JSON.parse(file);
 
-    console.log(properties.src[1]);
-
-    console.log(jsonProperties);
-    return gulp.src(properties.src, {base: config.root})
+    return gulp.src(init.src, {base: config.root})
         .pipe(debug())
         .pipe(preprocess({ context: jsonProperties }))
         .pipe(rename({
             extname: ""
         }))
-    .pipe(gulp.dest("."));
+        .pipe(gulp.dest("."));
 });
 

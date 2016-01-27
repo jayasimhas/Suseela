@@ -38,6 +38,18 @@
     },
     "compilation": { "OptimizeCompilations": false },
     "Configuration": "Release",
+    "connstr": {
+        "core": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Core",
+        "master": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Master",
+        "web": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Web",
+        "reporting": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Analytics",
+        "analytics": "mongodb://localhost/Informa_analytics",
+        "tracking": {
+            "live": "mongodb://localhost/Informa_tracking_live",
+            "history": "mongodb://localhost/Informa_tracking_history",
+            "contact": "mongodb://localhost/Informa_tracking_contact"
+        }
+    },
     "debug": { "Mode": false },
     "DEBUG": true,
     "Env": { "IsProduction": false },
@@ -64,7 +76,7 @@
     "site": { "content": "master" },
     "Site": {
         "Protocol": "http",
-        "Domain": "localhost"
+        "Domain": "informa.miked.velir.com"
     },
     "Sitecore": {
         "MaxWorkerThreads": "48",

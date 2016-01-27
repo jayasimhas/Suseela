@@ -38,7 +38,7 @@ utils.setConfig({
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite", "init"]);
+utils.loadTasks(["init", "js", "css", "copy", "bower", "svg-sprite"]);
 
 /**
  * dev task
@@ -67,7 +67,8 @@ gulp.task("dev-nowatch", function(){
     utils.setConfig({
         env   : "dev",
         watch : false,
-        notify: true
+        notify: true,
+        initEnv: "local.js"
     });
 
     // build with this config
