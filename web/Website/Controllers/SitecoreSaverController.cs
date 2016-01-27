@@ -39,6 +39,7 @@ namespace Informa.Web.Controllers
 			{
 				var publicationDate = DateTime.Parse(content.PublicationDate);
 				var parent = _articleUtil.GenerateDailyFolder(content.PublicationID, publicationDate);
+				//TODO - Give proper name.  Remove unneeded characters like & etc
 				var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
 				var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
 				var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
