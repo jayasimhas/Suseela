@@ -70,6 +70,8 @@ function popOutController(triggerElm) {
 		$('.pop-out').removeClass('is-active');
 
 		// Determine which pop-out template to use
+		// TODO: Make this user-configurable
+		//			Let users assign a name to a template class
 		switch (trgr.e.data('pop-out-type')) {
 			// SIGN IN
 			// (Global sign-in, bookmarking when not signed in)
@@ -79,6 +81,10 @@ function popOutController(triggerElm) {
 			// EMAIL ARTICLE
 			case 'email-article':
 				var popOut = $('.js-pop-out__email-article');
+				break;
+			// GLOBAL HEADER REGISTRATION
+			case 'register':
+				var popOut = $('.js-pop-out__register');
 				break;
 			default:
 				console.warn('Attempting to fire unidentified pop-out.');

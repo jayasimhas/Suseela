@@ -121,7 +121,8 @@ $main-menu-smartphone-width: 62px;
 
 	&__friendly-welcome,
 	&__my-account,
-	&__sign-in-out, {
+	&__sign-in-out,
+	&__sign-out, {
 		float: left;
 		margin: 0 40px 0 0;
 	}
@@ -146,6 +147,10 @@ $main-menu-smartphone-width: 62px;
 			width: 1px;
 			background-color: #d1d3d4;
 		}
+	}
+
+	&__logout-form {
+		float: right;
 	}
 
 	// HEADER SEARCH
