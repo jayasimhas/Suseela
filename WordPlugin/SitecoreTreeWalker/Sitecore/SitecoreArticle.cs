@@ -53,11 +53,6 @@ namespace SitecoreTreeWalker
 				var article = new WordPluginModel.SaveArticleDetails() { ArticleNumber = articleID, ArticleData = articleData };
 				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleDetails", article).Result;
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			server.SaveArticleDetails(articleID, articleData, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static void SaveArticleDetailsByGuid(Guid articleGuid, ArticleStruct articleData)
@@ -107,11 +102,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var sctree = new SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.DoesArticleHaveText(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool DoesArticleHaveText(Guid articleGuid)
@@ -122,11 +112,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var sctree = new SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.DoesArticleGuidHaveText(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool DoesArticleExist(string articleNumber)
@@ -137,11 +122,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var sctree = new SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.DoesArticleExist(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool DoesArticleExist(Guid articleGuid)
@@ -152,11 +132,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var sctree = new SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.DoesArticleGuidExist(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static WordPluginModel.CheckoutStatus GetLockedStatus(string articleNumber)
@@ -166,11 +141,6 @@ namespace SitecoreTreeWalker
 				var response = client.PostAsJsonAsync($"{webApiURL}GetLockedStatus", articleNumber).Result;
 				return JsonConvert.DeserializeObject<WordPluginModel.CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			return server.GetLockedStatus(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static WordPluginModel.CheckoutStatus GetLockedStatus(Guid articleGuid)
@@ -180,11 +150,6 @@ namespace SitecoreTreeWalker
 				var response = client.PostAsJsonAsync($"{webApiURL}GetLockedStatusByGuid", articleGuid).Result;
 				return JsonConvert.DeserializeObject<WordPluginModel.CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			return server.GetLockedStatusByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool CheckOutArticle(string articleNumber, string username)
@@ -195,10 +160,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			return server.CheckOutArticle(articleNumber, username, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool CheckOutArticle(Guid articleGuid, string username)
@@ -209,11 +170,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			return server.CheckOutArticleGuid(articleGuid, username, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool CheckInArticle(string articleNumber)
@@ -224,11 +180,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			return server.CheckInArticle(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static bool CheckInArticle(Guid articleGuid)
@@ -239,11 +190,6 @@ namespace SitecoreTreeWalker
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
-			/*
-			var server = new SitecoreServer.SCServer();
-			server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			return server.CheckInArticleGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-			*/
 		}
 
 		public static string GetArticleGuidByArticleNumber(string articleNumber)
@@ -320,8 +266,7 @@ namespace SitecoreTreeWalker
 			{
 				var response = client.PostAsJsonAsync($"{webApiURL}SendDocumentToSitecore", new WordPluginModel.SendDocumentToSitecore() {ArticleNumber = articleNumber,Data = data,Extension = extension}).Result;
 				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);				
-			}			
-			//return _server.SendDocumentToSitecore(articleNumber, data, extension, username, SitecoreUser.GetUser().Password);
+			}
 		}
 
 		public int SendDocumentToSitecoreByGuid(Guid articleGuid, byte[] data, string extension, string username)
@@ -331,7 +276,6 @@ namespace SitecoreTreeWalker
 				var response = client.PostAsJsonAsync($"{webApiURL}SendDocumentToSitecoreByGuid", new WordPluginModel.SendDocumentToSitecoreByGuid() { ArticlGuid = articleGuid, Data = data, Extension = extension }).Result;
 				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 			}
-			//return _server.SendDocumentToSitecoreByGuid(articleGuid, data, extension, username, SitecoreUser.GetUser().Password);
 		}
 
 		public SitecoreArticle()

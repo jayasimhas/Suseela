@@ -1,4 +1,4 @@
-/// <binding Clean='dev-nowatch' />
+/// <binding />
 /**
  *  Usage:
  *      Once per computer:
@@ -23,7 +23,8 @@
 var gulp    = require("gulp"),
     utils   = require("./tasks/utils"),
     notify  = require("gulp-notify"),
-    path    = require("path"),
+    path = require("path"),
+    msbuild = require("gulp-msbuild"),
     config  = utils.loadConfig(); // initialize the config
 
 
@@ -32,13 +33,13 @@ utils.setConfig({
 //    root  : path.resolve("../../web/Website"),
 //    dest  : path.resolve("../../web/Website/dist"),
     root  : path.resolve("../Website"),
-    dest  : path.resolve("../Website/dist"),
+    dest: path.resolve("../Website/dist"),
     env   : ""
 });
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "copy", "bower", "svg-sprite"]);
+utils.loadTasks(["init", "js", "css", "copy", "bower", "svg-sprite", "msbuild"]);
 
 /**
  * dev task
@@ -49,7 +50,8 @@ gulp.task("dev", function () {
     utils.setConfig({
         env: "dev",
         watch: true,
-        notify: true
+        notify: true,
+        tasks: ["js", "css", "copy", "bower", "svg-sprite"]
     });
 
     // build with this config
@@ -67,7 +69,26 @@ gulp.task("dev-nowatch", function(){
     utils.setConfig({
         env   : "dev",
         watch : false,
-        notify: true
+        notify: true,
+        tasks: ["js", "css", "copy", "bower", "svg-sprite"]
+    });
+
+    // build with this config
+    utils.build();
+
+});
+
+/**
+ * dev task
+ */
+gulp.task("clean-build", function () {
+
+    // set the dev config (cache in utils.js)
+    utils.setConfig({
+        env: "dev",
+        watch: false,
+        notify: true,
+        tasks: ["init", "js", "css", "copy", "bower", "svg-sprite"]
     });
 
     // build with this config

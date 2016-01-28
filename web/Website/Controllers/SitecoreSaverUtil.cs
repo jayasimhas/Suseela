@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
 using System.Xml;
 using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Fields;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
-using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.SecurityModel;
 using Sitecore.Workflows;
@@ -254,8 +250,7 @@ namespace Informa.Web.Controllers
 						articleItem["__Display name"] = trim;
 						articleItem.Name = ItemUtil.ProposeValidItemName(trim);
 					}
-					articleItem.Editing.EndEdit();
-					//_sitecoreMasterService.Save(articleItem);
+					articleItem.Editing.EndEdit();					
 				}
 			}
 		}
@@ -315,6 +310,7 @@ namespace Informa.Web.Controllers
 				using (new SecurityDisabler())
 				{
 					article.Body = articleText;
+					_sitecoreMasterService.Save(article);
 					//TODO - Replace the body text company names with company look ups and company references.
 					/*
 					string companyIdsCsv;
@@ -325,16 +321,13 @@ namespace Informa.Web.Controllers
 			}
 			catch (Exception ex)
 			{
-				var ax =
-					new ApplicationException("Workflow: Error saving article text while saving article [" + article._Id + "]!",
-											 ex);
+				var ax = new ApplicationException("Workflow: Error saving article text while saving article [" + article._Id + "]!",ex);
 				throw ax;
 			}
 		}
 
 		public int SendDocumentToSitecore(IArticle article, byte[] data, string extension)
 		{
-
 			MediaItem doc = UploadWordDoc(article, ConvertBytesToWordDoc(data, article.Article_Number, extension), article._Id.ToString(), extension);
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
@@ -356,8 +349,7 @@ namespace Informa.Web.Controllers
 		/// <param name="article"></param>
 		/// <param name="fileName"></param>
 		/// <param name="docName"></param>
-		/// <param name="extension"></param>
-		/// <param name="username">Username (with domain) of uploader</param>
+		/// <param name="extension"></param>		
 		/// <returns></returns>
 		protected MediaItem UploadWordDoc(IArticle article, string fileName, string docName, string extension)
 		{
@@ -385,7 +377,6 @@ namespace Informa.Web.Controllers
 			catch (Exception ex)
 			{
 				var axe = new ApplicationException("Failed writing out the word document to path [" + fileName + "]!", ex);
-				//_logger.Error("Failed writing out the word document to path [" + fileName + "]!", axe);
 				throw axe;
 			}
 			finally

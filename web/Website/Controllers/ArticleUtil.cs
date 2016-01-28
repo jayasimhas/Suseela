@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Xml;
 using Glass.Mapper.Sc;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -24,12 +23,20 @@ namespace Informa.Web.Controllers
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="sitecoreFactory"></param>
 		public ArticleUtil(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreMasterService = sitecoreFactory(MasterDb);			
-
+			_sitecoreMasterService = sitecoreFactory(MasterDb);
 		}
 
+		/// <summary>
+		/// Returns the Article which has the corresonding Article Number. Return Type is Item
+		/// </summary>
+		/// <param name="articleNumber"></param>
+		/// <returns></returns>
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
 			ISitecoreService sitecoreMasterService = new SitecoreContentContext();
@@ -38,6 +45,11 @@ namespace Informa.Web.Controllers
 			return article;
 		}
 
+		/// <summary>
+		/// Returns the Article which has the corresonding Article Number. Return Type is IArticle
+		/// </summary>
+		/// <param name="articleNumber"></param>
+		/// <returns></returns>
 		public IArticle GetArticleByNumber(string articleNumber)
 		{
 			ISitecoreService sitecoreMasterService = new SitecoreContentContext();
@@ -52,6 +64,11 @@ namespace Informa.Web.Controllers
 			return article;
 		}
 
+		/// <summary>
+		/// Returns the Version Number of Article
+		/// </summary>
+		/// <param name="article"></param>
+		/// <returns></returns>
 		public int GetWordVersionNumber(IArticle article)
 		{
 			if (article.Word_Document == null) return -1;
@@ -78,16 +95,20 @@ namespace Informa.Web.Controllers
 
 		public string PreviewArticleURL(string articleNumber, string siteHost)
 		{
-			Guid guid = this.GetArticleByNumber(articleNumber)._Id;
+			Guid guid = GetArticleByNumber(articleNumber)._Id;
 			if (guid.Equals(Guid.Empty))
 			{
 				return null;
 			}
 
-			return "http://" + siteHost + "/?sc_itemid={" +
-				guid + "}&sc_mode=preview&sc_lang=en";
+			return "http://" + siteHost + "/?sc_itemid={" + guid + "}&sc_mode=preview&sc_lang=en";
 		}
 
+		/// <summary>
+		/// Locks with Article with a Default user
+		/// </summary>
+		/// <param name="article"></param>
+		/// <returns></returns>
 		public bool LockArticle(Item article)
 		{
 			if (article.Locking.IsLocked())
@@ -106,7 +127,7 @@ namespace Informa.Web.Controllers
 				{ return false; }
 			}
 			*/
-			
+
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
 				using (new EditContext(article))
@@ -118,6 +139,11 @@ namespace Informa.Web.Controllers
 			return true;
 		}
 
+		/// <summary>
+		/// Unlocks the Article
+		/// </summary>
+		/// <param name="article"></param>
+		/// <returns></returns>
 		public bool UnlockArticle(Item article)
 		{
 			if (article == null)
@@ -149,11 +175,16 @@ namespace Informa.Web.Controllers
 			return true;
 		}
 
+		/// <summary>
+		/// Returns the CheckedoutStatus of an Article
+		/// </summary>
+		/// <param name="article"></param>
+		/// <returns></returns>
 		public WordPluginModel.CheckoutStatus GetLockedStatus(Item article)
 		{
 			if (article == null)
 			{
-				var nex = new NullReferenceException("Article item provided was null!");				
+				var nex = new NullReferenceException("Article item provided was null!");
 				throw nex;
 			}
 
@@ -251,7 +282,7 @@ namespace Informa.Web.Controllers
 
 			return dayFolder;
 		}
-		
+
 		public WordPluginModel.ArticleStruct GetArticleStruct(IArticle articleItem)
 		{
 			var articleStruct = new WordPluginModel.ArticleStruct
@@ -259,7 +290,10 @@ namespace Informa.Web.Controllers
 				ArticleGuid = articleItem._Id,
 				Title = articleItem.Title,
 				WebPublicationDate = articleItem.Planned_Publish_Date,
-				ArticleNumber = articleItem.Article_Number
+				PrintPublicationDate = articleItem.Actual_Publish_Date,
+				ArticleNumber = articleItem.Article_Number,
+				NotesToEditorial = articleItem.Editorial_Notes,
+				Embargoed = articleItem.Embargoed
 			};
 
 			var authors = articleItem.Authors.Select(r => ((IStaff_Item)r)).ToList();
@@ -272,6 +306,8 @@ namespace Informa.Web.Controllers
 					}).ToList();
 
 			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
+			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
+			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
 
 			if (articleItem.Word_Document != null)
 			{
@@ -286,6 +322,13 @@ namespace Informa.Web.Controllers
 					articleStruct.WordDocLastUpdatedBy = wordDoc.Statistics.UpdatedBy;
 				}
 			}
+			//TODO - Get article Publication
+			articleStruct.Publication = articleItem.Publication;
+			//articleStruct.Publication  = new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");			
+			/*
+			/sitecore/content//*[@@id='{articleStruct.ArticleGuid}']/ancestor::*[@@templateid='{3B0461BF-9ABC-4AF1-B937-C8D225FC2313}']
+			Sitecore.Data.Items.Item[] items =  database.SelectItems("fast:/sitecore/content/Product Catalog/Industrial/Products//*[@@templateid='yourTemplateId']");
+			*/
 
 			try
 			{
@@ -298,134 +341,14 @@ namespace Informa.Web.Controllers
 				articleStruct.IsPublished = false;
 			}
 
-			articleStruct.Embargoed = articleItem.Embargoed;
-
-
-			return articleStruct;
-		}
-		public WordPluginModel.ArticleStruct GetArticleStructTest(IArticle articleItem)
-		{
-			var articleStruct = new WordPluginModel.ArticleStruct
-			{
-				ArticleGuid = articleItem._Id,
-				Title = articleItem.Title,
-				WebPublicationDate = articleItem.Planned_Publish_Date,
-				ArticleNumber = articleItem.Article_Number
-			};
-			/*
-			HomePageItem home = ItemReference.Home.InnerItem;
-			
-			articleStruct.IsFeaturedArticle = IsNominatedForHomepage();
-			articleStruct.HasBeenNominated = HasBeenNominated.Checked;
-			articleStruct.IsTopStory = this.TopStory.Checked;			
-
-			articleStruct.ArticleCategory = this.PrintCategory.Item != null ? this.PrintCategory.Item.ID.ToGuid() : Guid.Empty;
-			articleStruct.WebCategory = WebCategory.Item != null ? WebCategory.Item.ID.ToGuid() : Guid.Empty;
-
-			articleStruct.Geography = this.Geography.ListItems.Select(r => new SitecoreUtil.TaxonomyStruct() { Name = r.DisplayName, ID = r.ID.ToGuid() }).ToList();
-			articleStruct.Industries = this.Industries.ListItems.Select(r => new SitecoreUtil.TaxonomyStruct() { Name = r.DisplayName, ID = r.ID.ToGuid() }).ToList();
-			articleStruct.Subjects = this.Subjects.ListItems.Select(r => new SitecoreUtil.TaxonomyStruct() { Name = r.DisplayName, ID = r.ID.ToGuid() }).ToList();
-			articleStruct.TherapeuticCategories = this.TherapeuticCategories.ListItems.Select(r => new SitecoreUtil.TaxonomyStruct() { Name = r.DisplayName, ID = r.ID.ToGuid() }).ToList();
-			articleStruct.MarketSegments = this.MarketSegments.ListItems.Select(r => new SitecoreUtil.TaxonomyStruct() { Name = r.DisplayName, ID = r.ID.ToGuid() }).ToList();
-			articleStruct.GeneralTags = this.Tags.ListItems.Select(r => new SitecoreUtil.TaxonomyStruct() { ID = r.ID.ToGuid() }).ToList();
-
-			articleStruct.NotesToEditorial = this.NotestoEditorial.Raw;
-			articleStruct.NotesToProduction = this.NotestoProduction.Raw;
-
-
-
-			List<StaffMemberItem> editors = this.Editors.ListItems.Select(r => ((StaffMemberItem)r)).ToList();
-			articleStruct.Editors =
-				editors.Select(
-					r => new SitecoreUtil.StaffStruct()
-					{
-						ID = r.ID.ToGuid(),
-						Name = r.LastName.Text + ", " + r.FirstName.Text,
-						Publications = r.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray()
-					}).ToList();
-
-
-			//TODO: confirm: volume/issue only relevant for weekly/monthly pubs)
-			if (BaseTemplateReference.IsValidTemplate(InnerItem.Parent, IssueItem.TemplateId))
-			{
-				articleStruct.Issue = this.InnerItem.Parent.ID.ToGuid();
-				articleStruct.Volume =
-					this.InnerItem.Axes.GetAncestors().Where(a => BaseTemplateReference.IsValidTemplate(a, VolumeItem.TemplateId)).Single().ID.ToGuid();
-			}
-
-			//TODO: add dates back in (check with Joel/Paul/Charlie/Adam to see where dates go on items)
-			//article.PrintPublicationDate = DateTime.Parse(this.PrintPublicationDate.Text);
-			//article.WebPublicationDate = DateTime.Parse(this.WebPublicationDate.Text);
-
-			Item articleParent = this.InnerItem.Parent;
-
-			if (IsPublished())
-			{
-				articleStruct.WebPublicationDate = this.InnerItem.Publishing.PublishDate;
-			}
-			else if (BaseTemplateReference.IsValidTemplate(articleParent, IssueItem.TemplateId))
-			{
-				articleStruct.WebPublicationDate = this.ArticleDate.DateTime; //non-daily's webpubdate is ArticleDate field
-				articleStruct.PrintPublicationDate = ((IssueItem)articleParent).IssueDate.DateTime;
-				//printpubdate is the article's issue's date
-			}
-			else if (BaseTemplateReference.IsValidTemplate(articleParent, DayFolderItem.TemplateId))
-			{
-				articleStruct.WebPublicationDate = ((DayFolderItem)articleParent).Date;
-				articleStruct.WebPublicationDate = articleStruct.WebPublicationDate.Add(this.ArticleDate.DateTime.TimeOfDay);
-				//daily's webpubdate is determined by its ancestors
-
-				articleStruct.PrintPublicationDate = DateTime.MinValue;
-				//TODO: better way to signify daily article does not have a printpubdate?
-			}
-
-			articleStruct.ReferencedArticlesInfo =
-				this.RelatedInlineArticles.ListItems.Select(a => ((ArticleItem)a).GetPreviewInfo()).ToList();
-
-			articleStruct.RelatedArticlesInfo =
-				this.RelatedArticles.ListItems.Select(a => ((ArticleItem)a).GetPreviewInfo()).ToList();
-
-			articleStruct.Publication =
-				this.InnerItem.Axes.GetAncestors().Where(a => BaseTemplateReference.IsValidTemplate(a, PublicationItem.TemplateId)).Single().ID.ToGuid();
-
+			//TODO - Workflow - 
 			// In order to read the available commands for a given workflow state, we need to be in a secured environment.
-			try
-			{
-				articleStruct.WorkflowState = _workflowController.GetWorkflowState(this.ID.ToGuid());
-			}
-			catch (Exception ex)
-			{
-				_logger.Error("Could not fetch workflow state for article: [" + this.ID.ToString() + "]", ex);
-			}
-
-			var wordDocURL = this.WordDocument.Url;
-			wordDocURL = wordDocURL.Replace("-", " ");
-			var wordDoc = Sitecore.Context.Database.GetItem(wordDocURL);
-
-			if (wordDoc != null)
-			{
-				articleStruct.WordDocVersionNumber = wordDoc.Version.Number;
-				articleStruct.WordDocLastUpdateDate = wordDoc.Statistics.Updated.ToString();
-				articleStruct.WordDocLastUpdatedBy = wordDoc.Statistics.UpdatedBy;
-			}
-
-			articleStruct.ArticleSize = this.ArticleSize.Item != null ? this.ArticleSize.Item.ID.ToGuid() : Guid.Empty;
-
-			try
-			{
-				var webItem = SitecoreDatabases.Live.GetItem(this.ID);
-				articleStruct.IsPublished = webItem != null;
-			}
-			catch
-			{
-				articleStruct.IsPublished = false;
-			}
-
-			articleStruct.Embargoed = this.Embargoed.Checked;
-			*/
-
+			//try
+			//{
+			//	articleStruct.WorkflowState = _workflowController.GetWorkflowState(this.ID.ToGuid());
+			//}
+			
 			return articleStruct;
-		}
-
+		}		
 	}
 }

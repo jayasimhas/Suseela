@@ -161,15 +161,31 @@ namespace SitecoreTreeWalker.Sitecore
 		private static WordPluginModel.ArticleStruct GetArticleDetails(string articleNumber)
 		{
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}GetArticleDetails?articleNumber={articleNumber}").Result;
+				var articleStruct = JsonConvert.DeserializeObject<WordPluginModel.ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+				return articleStruct;
+			}
+			/*
 			var sctree = new SCTree();
 			return sctree.GetArticleDetails(articleNumber, _sitecoreUser.Username, _sitecoreUser.Password);
+			*/
 		}
 
 		private static WordPluginModel.ArticleStruct GetArticleDetails(Guid articleGuid)
 		{
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}GetArticleDetailsBg?articleGuid={articleGuid}").Result;
+				var articleStruct = JsonConvert.DeserializeObject<WordPluginModel.ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+				return articleStruct;
+			}
+			/*
 			var sctree = new SCTree();
 			return sctree.GetArticleDetailsBG(articleGuid, _sitecoreUser.Username, _sitecoreUser.Password);
+			*/
 		}
 
 		public static string GetDynamicUrl(string path)
