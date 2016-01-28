@@ -19,7 +19,7 @@ namespace Informa.Web.Controllers
 		{
 			string yymmdd = $"{articleDate:yyMMdd}";
 			string prefix = GetPublicationPrefix(publication) + yymmdd;
-			string number = article + prefix;
+			string number = prefix + article;
 			return number;
 		}
 
@@ -38,7 +38,6 @@ namespace Informa.Web.Controllers
 
 			string value;
 			return publicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
-		}
-		
+		}		
 	}
 }

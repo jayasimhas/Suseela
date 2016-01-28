@@ -25,7 +25,6 @@ namespace Informa.Web.Controllers
 			SitecoreMasterService = sitecoreFactory(MasterDb);
 			MediaLibraryRoot = "/sitecore/media library/";
 			MediaLibraryPath = "Documents/";
-
 		}
 
 		public static MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension)
@@ -116,13 +115,11 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="filePath"></param>
 		/// <param name="itemName"></param>
-		/// <param name="fileExtension"></param>
-		/// <param name="domainUser">Username of uploader</param>
+		/// <param name="fileExtension"></param>		
 		/// <param name="mediaLibraryPath">Path in sitecore to save the file</param>
 		/// <returns></returns>
 		public static MediaItem CreateMediaLibraryItemFromFile(string filePath, string itemName, string fileExtension, string mediaLibraryPath)
 		{
-			//Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.FromName(domainUser, false);
 			Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.Current;
 			MediaCreatorOptions mediaCreatorOptions = GetDefaultMediaCreatorOptions(MediaLibraryRoot + mediaLibraryPath, itemName);
 			using (new Sitecore.Security.Accounts.UserSwitcher(user))
@@ -136,7 +133,6 @@ namespace Informa.Web.Controllers
 					{
 						//new media item
 						MediaItem media = MediaManager.Creator.CreateFromFile(filePath, mediaCreatorOptions);
-
 						return media;
 					}
 					else
@@ -150,7 +146,7 @@ namespace Informa.Web.Controllers
 						{
 							newMedia = media.InnerItem.Versions.AddVersion();
 
-							Sitecore.Resources.Media.Media data = MediaManager.GetMedia(newMedia);
+							Media data = MediaManager.GetMedia(newMedia);
 							var mediaStream = new MediaStream(stream, fileExtension, mediaItem);
 							data.SetStream(mediaStream);
 						}
@@ -188,11 +184,7 @@ namespace Informa.Web.Controllers
 			}
 			catch (Exception exc)
 			{
-				//_logger.Error("Error getting default media creator options!", exc);
-				throw new Exception(
-					string.Format(
-						"Error creating media creator options when trying to create publication media library item: {0}",
-						exc.Message));
+				throw new Exception($"Error creating media creator options when trying to create publication media library item: {exc.Message}");
 			}
 
 			return mediaCreatorOptions;
