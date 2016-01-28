@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {12955502-9020-4D0F-A7B5-1167C75980AC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/AllStories/2015/01/30/CHMP shakes head at Qsiva and memantinedonepezil combo
+parent: {B0C5075B-DA36-45A7-91D1-3E8F996F327B}
+name: CHMP shakes head at Qsiva and memantinedonepezil combo
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f69d4d5e-5a3c-4e9f-94eb-b7985e186251
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+CHMP shakes head at Qsiva and memantine/donepezil combo
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+CHMP shakes head at Qsiva and memantinedonepezil combo
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4616
+
+<p>The European Medicines Agency (EMA)'s Committee for Medicinal Products for Human Use (CHMP) has adopted negative opinions for Vivus's weight loss drug Qsiva, and a combination pill of memantine and donepezil for Alzheimer's disease filed by Lundbeck and Merz Pharmaceuticals as Acrescent and Balaxur, respectively.</p><p>Vivus said it would appeal the decision on Qsiva (phentermine/topiramate), a process that is expected to take around six months. The company had foreseen the outcome following its meeting with the CHMP last month (<a href="http://www.scripintelligence.com/home/Phen-concerns-weigh-on-Qsivas-EU-approval-but-US-roll-out-unaffected-335318" target="_new">scripintelligence.com, 24 September 2012</a>). </p><p>While the drug was recently been approved by the US FDA (<a href="http://www.scripintelligence.com/home/US-FDA-embraces-Vivus-obesity-drug-but-moniker-switched-to-Qsymia-332932" target="_new">scripintelligence.com, 18 July 2012</a>), the CHMP was concerned about the drug's long-term effects on the heart and blood vessels, and in particular on the effects of phentermine, which is known to increase the heart rate although long-term effects are not clear. </p><p>The committee also raised concerns about the long-term psychiatric effects, noting that depression and anxiety were reported in studies of the product, as well as its cognitive effects (problems with memory and attention) related to the topiramate component of Qsiva. </p><p>It also noted that topiramate is known to be potentially harmful to the unborn baby if taken by pregnant women.</p><p>Furthermore, it said there was a high probability that, if approved, the medicine would not be used strictly for the intended patients (ie severely obese patients or those with obesity with weight-related health problems such as type 2 diabetes or high blood pressure).</p><p>It said therefore that the benefits did not outweigh its risks.</p><p>Analysts at Cowen said it was "very difficult to estimate what the chances for a successful appeal are". However, it would appear that they may be somewhat improved by the fact that the company expects to have a new rapporteur and co-rapporteur for the appeal process: the original rapporteurs were Sweden and France, the latter of which has had a difficult history with obesity drugs, with the deaths linked to Servier's Mediator (benfluorex) prior to its withdrawal from the market eventually leading to a thorough overhaul of the French regulatory agency. Cowen suggested the argument could therefore be "no country could be as negatively predisposed to obesity drugs as France".</p><h2>Memantine/Donepezil no go</h2><p>The CHMP also rejected two separate applications for a combination product containing 20mg of memantine and 10 mg of donepezil, under the names Acrescent (applicant, Lundbeck) and Balaxur (Merz). The intended use was to treat moderate to moderately severe Alzheimer's disease in patients already taking a daily dose of 20mg of memantine and 10mg donepezil.</p><p>The committee said that of seven main studies including patients receiving memantine and donepezil together presented with the application (no new studies were carried out in support of the application), all but one had negative results. That study (in 404 patients with moderate to severe Alzheimer's already taking donepezil) showed that patients performed better in cognitive tests and daily living activities when memantine was added to donepezil treatment. However, the study did not show a clear benefit for the combination treatment as it did not include a control arm for patients treated with memantine alone, and the CHMP rejected that the companies' additional analyses satisfied these concerns.</p><p>The CHMP also said that one published study showed that patients taking the combination treatment did not show a significant improvement compared with those on memantine alone.</p><p>While a combination of memantine and donepezil is used in some European countries to treat patients with moderate to moderately severe Alzheimer's disease, the CHMP said that the treatment guidelines were not consistent across European countries and the companies had not provided enough evidence to support the use of a combination tablet in those patients.</p><p>Lundbeck already markets memantine as Ebixa in Europe, but it faces erosion from generic competition to emerge within the next two years (it is marketed as Namenda in the US, by Forest Laboratories). Lundbeck licensed the drug from Merz in 2000. Eisai/Pfizer's Aricept (donepezil) lost patent protection in Europe in February.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 321
+
+<p>The European Medicines Agency (EMA)'s Committee for Medicinal Products for Human Use (CHMP) has adopted negative opinions for Vivus's weight loss drug Qsiva, and a combination pill of memantine and donepezil for Alzheimer's disease filed by Lundbeck and Merz Pharmaceuticals as Acrescent and Balaxur, respectively.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+CHMP shakes head at Qsiva and memantinedonepezil combo
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150130T171538
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150130T171538
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150130T171538
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 10
+
+SC00019189
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+CHMP shakes head at Qsiva and memantine/donepezil combo
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+336280
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160127T222120Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f69d4d5e-5a3c-4e9f-94eb-b7985e186251
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160127T222121Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
