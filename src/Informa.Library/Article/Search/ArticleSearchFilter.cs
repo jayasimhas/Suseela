@@ -3,6 +3,6 @@
 	public class ArticleSearchFilter : IArticleSearchFilter
 	{
 		public int Page { get; set; }
-		public int ResultsPerPage { get; set; }
+		public int PageSize { get; set; }
 	}
 }

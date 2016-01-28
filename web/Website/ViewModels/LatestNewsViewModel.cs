@@ -1,4 +1,5 @@
 ﻿using Glass.Mapper.Sc;
+using Informa.Library.Article.Search;
 using Informa.Library.Presentation;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -14,18 +15,37 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly IRenderingParametersContext RenderingParametersContext;
 		protected readonly ISitecoreContext SitecoreContext;
+		protected readonly IArticleSearch ArticleSearch;
+		protected readonly IArticleListItemModelFactory ArticleListableFactory;
 
 		public LatestNewsViewModel(
 			IRenderingParametersContext renderingParametersContext,
-			ISitecoreContext sitecoreContext)
+			ISitecoreContext sitecoreContext,
+			IArticleSearch articleSearch,
+			IArticleListItemModelFactory articleListableFactory)
 		{
 			RenderingParametersContext = renderingParametersContext;
 			SitecoreContext = sitecoreContext;
+			ArticleSearch = articleSearch;
+			ArticleListableFactory = articleListableFactory;
 		}
 
 		public IEnumerable<string> Topics => new List<string> { { TestData.TestData.GetRandomTopic().LinkableText }, { TestData.TestData.GetRandomTopic().LinkableText } };
 
-		public IEnumerable<IListable> News => Enumerable.Range(1, 6).Select(i => TestData.TestData.ListableModel(1, 0, false));
+		public IEnumerable<IListable> News
+		{
+			get
+			{
+				var filter = ArticleSearch.CreateFilter();
+
+				filter.Page = 1;
+				filter.PageSize = ArticlesToDisplay;
+
+				var results = ArticleSearch.Search(filter);
+
+				return results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.Create(a));
+			}
+		}
 
 		public int ArticlesToDisplay
 		{

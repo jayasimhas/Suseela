@@ -6,16 +6,20 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {  
     public class GlassArticleModel : GlassViewModel<IArticle>, IArticleModel
     {
         public ISiteRootContext SiterootContext { get; set; }
-        public GlassArticleModel(ISiteRootContext siterootContext)
+		protected readonly IArticleListItemModelFactory ArticleListableFactory;
+
+		public GlassArticleModel(
+			ISiteRootContext siterootContext,
+			IArticleListItemModelFactory articleListableFactory)
         {
             SiterootContext = siterootContext;
+			ArticleListableFactory = articleListableFactory;
         }                                                    
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -34,7 +38,7 @@ namespace Informa.Web.ViewModels
 
         public IEnumerable<IPersonModel> Authors => GlassModel.Authors.Select(x => new PersonModel(x));
         public string Category => GlassModel.Article_Category;
-        public IEnumerable<IListable> RelatedArticles => GlassModel.Related_Articles.Select(x => new ArticleListItemModel(x, SiterootContext));
+        public IEnumerable<IListable> RelatedArticles => GlassModel.Related_Articles.Select(x => ArticleListableFactory.Create(x));
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 
         #endregion

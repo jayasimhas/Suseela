@@ -3,6 +3,6 @@
 	public interface IArticleSearchFilter
 	{
 		int Page { get; set; }
-		int ResultsPerPage { get; set; }
+		int PageSize { get; set; }
 	}
 }
