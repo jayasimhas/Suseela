@@ -5,7 +5,7 @@ using Glass.Mapper.Sc.Web;
 
 namespace Informa.Library.Presentation
 {
-	[AutowireService(LifetimeScope.PerRequest)]
+	[AutowireService(LifetimeScope.SingleInstance)]
 	public class GlassRenderingParametersContext : IRenderingParametersContext
 	{
 		protected readonly ISitecoreContext SitecoreContext;

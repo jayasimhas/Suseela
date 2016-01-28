@@ -574,6 +574,8 @@
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="ViewModels\ArticleFeaturedImage.cs" />
+    <Compile Include="ViewModels\ArticleListItemModel.cs" />
+    <Compile Include="ViewModels\ArticleListItemModelFactory.cs" />
     <Compile Include="ViewModels\ArticlePrologueBookmarkViewModel.cs" />
     <Compile Include="ViewModels\ArticlePrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\ArticleProloguePrintViewModel.cs" />
@@ -581,12 +583,12 @@
     <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
     <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
+    <Compile Include="ViewModels\IArticleListItemModelFactory.cs" />
     <Compile Include="ViewModels\ISignInViewModel.cs" />
     <Compile Include="ViewModels\LatestNewsViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\GlassArticleModel.cs" />
-    <Compile Include="ViewModels\ArticleListItemModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinks.cs" />
     <Compile Include="ViewModels\HighlightViewModel.cs" />
