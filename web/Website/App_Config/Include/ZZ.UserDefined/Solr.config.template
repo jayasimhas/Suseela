@@ -60,7 +60,7 @@
 		</contentSearch>
 		<settings>
 			<setting name="ContentSearch.Solr.ServiceBaseAddress">
-				<patch:attribute name="value">http://localhost:8983/solr</patch:attribute>
+				<patch:attribute name="value">${Solr.ServiceBaseAddress}</patch:attribute>
 			</setting>
 		</settings>
 	</sitecore>
