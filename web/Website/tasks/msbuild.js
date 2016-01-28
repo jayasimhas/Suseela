@@ -2,7 +2,6 @@ var gulp = require("gulp"),
     utils = require("./utils"),
     config = utils.loadConfig(),
     preprocess = require("gulp-preprocess"),
-    debug = require("gulp-debug"),
     rename = require("gulp-rename"),
     argv = require('yargs').argv,    
     msbuild = require("gulp-msbuild");
@@ -29,7 +28,6 @@ gulp.task("msbuild", function () {
     var filePath = path.resolve(msbuildTask.envRoot + "/" + msbuildTask.src);
 
     return gulp.src(filePath)
-        .pipe(debug())
         .pipe(msbuild({
             toolsVersion: msbuildTask.toolsVersion,
             properties: { configuration: msbuildTask.configuration }
