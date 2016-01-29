@@ -193,3 +193,5 @@ WordPlugin/SitecoreTreeWalker/SitecoreTreeWalker_1_TemporaryKey.pfx
 WordPlugin/SitecoreTreeWalker/app.config
 web/Data/Submit Queue
 web/Website/App_Config/Include/ZZ.UserDefined/Solr.config
+
+config/env/local.json
