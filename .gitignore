@@ -197,3 +197,4 @@ web/Website/App_Config/Include/ZZ.UserDefined/Solr.config
 config/env/local.json
 
 logs/*
+web/Website/local.js
