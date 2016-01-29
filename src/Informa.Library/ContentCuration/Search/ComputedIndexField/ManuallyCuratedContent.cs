@@ -10,7 +10,7 @@ using Sitecore.Data.Items;
 using Sitecore.Data;
 using Sitecore;
 
-namespace Informa.Library.Search.ComputedIndexField
+namespace Informa.Library.ContentCuration.Search.ComputedIndexField
 {
 	public class ManuallyCuratedContent : IComputedIndexField
 	{
