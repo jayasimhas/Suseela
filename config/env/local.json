@@ -90,7 +90,7 @@
     },
     "TDS": {
         "SitecoreDeployFolder": "D:\\Projects\\informa-initial\\web\\Website",
-        "SitecoreWebUrl": "http:\/\/informa.miked.velir.com",
+        "SitecoreWebUrl": "http://informa.miked.velir.com",
         "SitecoreAccessGuid": "fd870d31-174c-43d9-a572-e82519cca6f5",
         "InstallSitecoreConnector": true,
         "DeployAction": "Ignore",

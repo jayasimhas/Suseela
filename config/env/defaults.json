@@ -1,0 +1,94 @@
+{
+        "Env": { "IsProduction": "false" },
+        "debug": { "Mode": "false" },      
+        "Configuration": "Release",        
+        "id": { "table": "master" },       
+        "site": { "content": "master" },   
+        "workflow": { "enabled": "true" }, 
+        "Sitecore": {
+            "MaxWorkerThreads": "48",      
+            "Counters": {
+                "Enabled": "false",        
+                "SpeakCompilation": { "Enabled": "true" }
+            },
+
+            "Site": {
+                "Protocol": "http",                      
+                "Domain": "localhost",                   
+                "Address": "FIXME"
+            },
+
+            "host": { "production": "FIXME" },           
+            "TDS": {
+                "SitecoreAccessGuid": "fd870d31-174c-43d9-a572-e82519cca6f5",
+                "InstallSitecoreConnector": "True",                          
+                "DeployAction": "Ignore",                                    
+                "Configuration": "Release"
+            },                                                               
+            "autoPublish": "0",                                              
+            "Mail": {
+                "MailServer": "smtp.velir.com",                              
+                "MailServerUserName": "",                                    
+                "MailServerPassword": "",                                    
+                "MailServerPort": "25",                                      
+                "MailServerFromAddress": "no-reply@velir.com"
+            },                                                               
+            "GlassInterfaceFactory": { "DebuggingEnabled": "false" },
+            "Cache": {
+                "Core": {
+                    "Data": "20MB",
+                    "Items": "10MB",
+                    "Paths": "500KB",
+                    "ItemPaths": "10MB",
+                    "StandardValues": "500KB"
+                },
+                "Master": {
+                    "Data": "20MB",
+                    "Items": "10MB",
+                    "Paths": "500KB",
+                    "ItemPaths": "10MB",
+                    "StandardValues": "500KB"
+                },
+                "Web": {
+                    "Data": "20MB",
+                    "Items": "10MB",
+                    "Paths": "500KB",
+                    "ItemPaths": "10MB",
+                    "StandardValues": "500KB"
+                },
+                "Prefetch": {
+                    "Common": { "ChildLimit": "100" },
+                    "Core": "10MB",
+                    "Master": "20MB",
+                    "Web": "10MB"
+                },
+                "MemoryMonitorHook": {
+                    "Threshold": "1200MB",
+                    "ClearCaches": false,
+                    "GarbageCollect": false,
+                    "AdjustLoadFactor": false
+                },
+                "Solr": {
+                    "Sitecore": { "CoreName": "Informa_itembuckets" },
+                    "CustomIndex": { "CoreName": "Informa_content" },
+                    "ServicePort": "8983"
+                },
+                "Errors": {
+                    "CustomErrors": { "Mode": "On" },
+                    "ShowErrorPage": false
+                },
+                "logging": {
+                    "root": { "priority": "INFO" },
+                    "exceptions": { "level": "INFO" }
+                },
+                "webfarm": {
+                    "enabled": true,
+                    "validationkey": "5545f5235f48ce25cbaaafa52b71f741b7233242b5e69ac0b30792b04d8d2ba9",
+                    "decryptionkey": "42515d29c8192d891a597ba37202a2ba840aea8487cca7f15f330fb5854b0c88"
+                },
+                "Http": { "MaxConcurrentConnections": "48" },
+                "Authentication": { "Cookies": { "RequireSSL": false } },
+                "compilation": { "OptimizeCompilations": false }
+            }
+        }
+    }

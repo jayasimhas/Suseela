@@ -2,7 +2,6 @@ var gulp = require("gulp"),
     utils = require("./utils"),
     config = utils.loadConfig(),
     preprocess = require("gulp-preprocess"),
-    debug = require("gulp-debug"),
     rename = require("gulp-rename"),
     argv = require('yargs').argv,    
     msbuild = require("gulp-msbuild");
@@ -42,7 +41,6 @@ gulp.task("init", function () {
     var jsonProperties = JSON.parse(file);
 
     return gulp.src(init.src, {base: config.root})
-        .pipe(debug())
         .pipe(preprocess({ context: jsonProperties }))
         .pipe(rename({
             extname: ""

@@ -29,7 +29,7 @@
             @if (Model.IsAuthenticated)
             {
 				@* Signed In *@
-                using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm" }))
+                using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "header__logout-form" }))
                 {
                     @Html.AntiForgeryToken()
                     <div class="header__my-account">
@@ -38,7 +38,7 @@
                         </svg>
                         @Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })
                     </div>
-                    <div class="header__sign-out">
+                    <div class="header__sign-in-out">
                         <svg class="header__icons icon-sign-out">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                         </svg>
@@ -48,48 +48,22 @@
 			}
 			else
 			{
-                <div class="header__my-account pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        <svg class="header__icons icon-register">
-                            <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
-                        </svg>
-						@Model.RegisterLinkText
-                    </span>
-                    <div class="pop-out header__hover--register">
-                        <div class="pop-out__internal">
-                            <div class="dismiss-button js-dismiss-pop-out">
-                                <svg class="dismiss-button__icon">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                                </svg>
-                            </div>
-                            <h2>@Model.RegisterText</h2>
-                            <input class="text-field header__hover-input js-register-username"
-                                   type="text"
-                                   placeholder="@Model.UsernamePlaceholderText">
-							<p class="js-register-invalid" style="display: none;">@Model.UsernameInvalidText</p>
-                            <button class="button--filled js-register-submit" data-register-redirect="@Model.RegisterUrl">@Model.RegisterButtonText</button>
-                        </div>
-                    </div>
+                <div class="header__my-account pop-out__trigger js-pop-out-trigger"
+                     data-pop-out-type="register">
+
+                    <svg class="header__icons icon-register">
+                        <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
+                    </svg>
+					@Model.RegisterLinkText
                 </div>
 
-                <div class="header__sign-in-out pop-out__trigger js-toggle-pop-out">
-                    <span class="pop-out__trigger-content">
-                        <svg class="header__icons icon-sign-in">
-                            <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
-                        </svg>
-						@Model.SignInLinkText
-                    </span>
-                    <div class="pop-out">
-                        <div class="pop-out__internal pop-out__internal--flush-right">
-                        <div class="dismiss-button js-dismiss-pop-out">
-                            <svg class="dismiss-button__icon">
-                                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                            </svg>
-                        </div>
-                        <h2 class="pop-out__header">@Model.SignInText</h2>
-						@{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
-                        </div>
-                    </div>
+                <div class="header__sign-in-out pop-out__trigger js-pop-out-trigger"
+                     data-pop-out-align="right"
+                     data-pop-out-type="sign-in">
+                    <svg class="header__icons icon-sign-in">
+                        <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
+                    </svg>
+					@Model.SignInLinkText
                 </div>
             }
 

@@ -1,0 +1,13 @@
+  { "dir": {
+            "src": "src",
+            "web": "web",
+            "lib": "lib",
+            "test": "test",
+            "tools": "tools",
+            "sitecore": "sitecore",
+            "wordplugin": "WordPlugin"
+        },
+        "env": "local",
+        "build": { "configuration": "Release" },
+        "nant": { "settings": { "currentframework": "net-4.0" } },
+        "autoPublish": "0"}
