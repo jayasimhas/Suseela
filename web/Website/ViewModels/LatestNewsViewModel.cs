@@ -51,6 +51,7 @@ namespace Informa.Web.ViewModels
 				filter.Page = 1;
 				filter.PageSize = ArticlesToDisplay;
 				filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
+				filter.TaxonomyIds.AddRange(Parameters.Subjects.Select(s => s._Id));
 				
 				var results = ArticleSearch.Search(filter);
 

@@ -12,7 +12,7 @@ namespace Informa.Library.ContentCuration.Search.Extensions
 		public static IQueryable<T> ExcludeManuallyCurated<T>(this IQueryable<T> source, IManuallyCuratedContentFilter filter)
 			where T : SearchResultItem
 		{
-			if (!filter.ExcludeManuallyCuratedItems.Any())
+			if (source == null || filter == null || !filter.ExcludeManuallyCuratedItems.Any())
 			{
 				return source;
 			}
