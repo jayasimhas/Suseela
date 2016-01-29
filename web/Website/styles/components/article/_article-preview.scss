@@ -63,6 +63,7 @@
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
+        display: block;
         line-height: 18px;
         color: $informa-dark-gray;
     }

@@ -39,7 +39,9 @@
     by @string.Join(",", Model.ListableAuthors?.Select(x => x.LinkableText))
 </span>
 
-@Html.Raw(Model.ListableSummary)
+<p>
+    @Html.Raw(Model.ListableSummary)
+</p>
 
 <div class="article-preview__tags bar-separated-link-list">
     @foreach (var tag in Model.ListableTopics)
