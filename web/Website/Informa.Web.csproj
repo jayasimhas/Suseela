@@ -813,9 +813,10 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\UserDefined\Presentation.config">    
+    <Content Include="App_Config\Include\UserDefined\Presentation.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>

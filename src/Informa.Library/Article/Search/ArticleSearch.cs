@@ -4,6 +4,9 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.ContentCuration.Search.Extensions;
+using System.Collections.Generic;
+using System;
 
 namespace Informa.Library.Article.Search
 {
@@ -20,7 +23,10 @@ namespace Informa.Library.Article.Search
 
 		public IArticleSearchFilter CreateFilter()
 		{
-			return new ArticleSearchFilter();
+			return new ArticleSearchFilter
+			{
+				ExcludeManuallyCuratedItems = new List<Guid>()
+			};
 		}
 
 		public IArticleSearchResults Search(IArticleSearchFilter filter)
@@ -31,8 +37,10 @@ namespace Informa.Library.Article.Search
 			{
 				var query = context.GetQueryable<ArticleSearchResultItem>().Filter(i => i.TemplateId == IArticleConstants.TemplateId);
 
-				// Filter by subjects
 				// Filter out manually curated content
+				query = query.ExcludeManuallyCurated(filter);
+
+				// Filter by subjects
 				// Order by Actual Publish Date
 
 				if (filter.PageSize > 0)

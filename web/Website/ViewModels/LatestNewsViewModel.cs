@@ -4,10 +4,12 @@ using Informa.Library.Presentation;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
+using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.ContentCuration;
 
 namespace Informa.Web.ViewModels
 {
@@ -16,17 +18,20 @@ namespace Informa.Web.ViewModels
 		protected readonly IRenderingParametersContext RenderingParametersContext;
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IArticleSearch ArticleSearch;
+		protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
 
 		public LatestNewsViewModel(
 			IRenderingParametersContext renderingParametersContext,
 			ISitecoreContext sitecoreContext,
 			IArticleSearch articleSearch,
+			IItemManuallyCuratedContent itemManuallyCuratedContent,
 			IArticleListItemModelFactory articleListableFactory)
 		{
 			RenderingParametersContext = renderingParametersContext;
 			SitecoreContext = sitecoreContext;
 			ArticleSearch = articleSearch;
+			ItemManuallyCuratedContent = itemManuallyCuratedContent;
 			ArticleListableFactory = articleListableFactory;
 		}
 
@@ -36,14 +41,16 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
+				var manuallyCuratedContent = ItemManuallyCuratedContent.Get(GlassModel._Id);
 				var filter = ArticleSearch.CreateFilter();
 
 				filter.Page = 1;
 				filter.PageSize = ArticlesToDisplay;
-
+				filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
+				
 				var results = ArticleSearch.Search(filter);
 
-				return results.Articles.Where(a => a != null).Select(a => ArticleListableFactory.Create(a));
+				return results.Articles.Select(a => ArticleListableFactory.Create(a));
 			}
 		}
 

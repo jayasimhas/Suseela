@@ -231,6 +231,9 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
+    <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
+    <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
     <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactoryConfiguration.cs" />
@@ -245,7 +248,7 @@
     <Compile Include="Presentation\Rendering.cs" />
     <Compile Include="Presentation\GlassRenderingParametersContext.cs" />
     <Compile Include="Presentation\GlassRenderingParametersContext`1.cs" />
-    <Compile Include="Search\ComputedIndexField\ManuallyCuratedContent.cs" />
+    <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="Authentication\IUserAuthenticationContext.cs" />
     <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
@@ -277,8 +280,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration\IUsernameValidator.cs" />
     <Compile Include="Registration\MockUsernameValidator.cs" />
-    <Compile Include="Search\Models\IManuallyCuratedContent.cs" />
-    <Compile Include="Search\Querying\QueryableExtensions.cs" />
+    <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
+    <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
@@ -295,6 +298,7 @@
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Utilities\Extensions\ListExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
