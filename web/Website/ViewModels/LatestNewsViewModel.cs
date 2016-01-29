@@ -1,7 +1,6 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Presentation;
-using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Informa.Library.Utilities.Extensions;
@@ -41,7 +40,7 @@ namespace Informa.Web.ViewModels
 
 		public IEnumerable<string> Topics => Parameters.Subjects.Select(s => s._Name);
 
-		public IEnumerable<IListable> News
+		public IEnumerable<IListableViewModel> News
 		{
 			get
 			{
@@ -54,8 +53,11 @@ namespace Informa.Web.ViewModels
 				filter.TaxonomyIds.AddRange(Parameters.Subjects.Select(s => s._Id));
 				
 				var results = ArticleSearch.Search(filter);
+				var articles = results.Articles.Select(a => ArticleListableFactory.Create(a)).ToList();
 
-				return results.Articles.Select(a => ArticleListableFactory.Create(a));
+				articles.ForEach(a => a.DisplayImage = false);
+
+				return articles;
 			}
 		}
 

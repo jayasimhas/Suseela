@@ -5,8 +5,10 @@ using Informa.Models.FactoryInterface;
 
 namespace Informa.Web.ViewModels
 {
-    public class ArticleListItemModel : IListable
-    {       
+    public class ArticleListItemModel : IListableViewModel
+	{       
+		public bool DisplayImage { get; set; }
+
         public IEnumerable<ILinkable> ListableAuthors { get; set; }
         public DateTime ListableDate { get; set; }
 		public string ListableImage { get; set; }
