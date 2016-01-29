@@ -282,6 +282,11 @@
     <Compile Include="Registration\MockUsernameValidator.cs" />
     <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
     <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Search\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Search\Filter\ITaxonomySearchFilter.cs" />
+    <Compile Include="Search\IProviderSearchContextFactory.cs" />
+    <Compile Include="Search\ProviderSearchContextFactory.cs" />
+    <Compile Include="Search\Results\ITaxonomySearchResults.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />

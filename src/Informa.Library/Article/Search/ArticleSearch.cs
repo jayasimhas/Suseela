@@ -1,23 +1,27 @@
 ﻿using System.Linq;
 using Glass.Mapper.Sc;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.ContentCuration.Search.Extensions;
+using Informa.Library.Search.Extensions;
 using System.Collections.Generic;
 using System;
+using Informa.Library.Search;
 
 namespace Informa.Library.Article.Search
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ArticleSearch : IArticleSearch
 	{
+		protected readonly IProviderSearchContextFactory SearchContextFactory;
 		protected readonly ISitecoreService SitecoreContext;
 
 		public ArticleSearch(
+			IProviderSearchContextFactory searchContextFactory,
 			ISitecoreService sitecoreContext)
 		{
+			SearchContextFactory = searchContextFactory;
 			SitecoreContext = sitecoreContext;
 		}
 
@@ -25,28 +29,26 @@ namespace Informa.Library.Article.Search
 		{
 			return new ArticleSearchFilter
 			{
-				ExcludeManuallyCuratedItems = new List<Guid>()
+				ExcludeManuallyCuratedItems = new List<Guid>(),
+				TaxonomyIds = new List<Guid>()
 			};
 		}
 
 		public IArticleSearchResults Search(IArticleSearchFilter filter)
 		{
-			var index = ContentSearchManager.GetIndex("sitecore_web_index");
-
-			using (var context = index.CreateSearchContext())
+			using (var context = SearchContextFactory.Create())
 			{
-				var query = context.GetQueryable<ArticleSearchResultItem>().Filter(i => i.TemplateId == IArticleConstants.TemplateId);
-
-				// Filter out manually curated content
-				query = query.ExcludeManuallyCurated(filter);
-
-				// Filter by subjects
-				// Order by Actual Publish Date
+				var query = context.GetQueryable<ArticleSearchResultItem>()
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+					.FilterTaxonomies(filter)
+					.ExcludeManuallyCurated(filter);
 
 				if (filter.PageSize > 0)
 				{
 					query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
 				}
+
+				query = query.OrderByDescending(i => i.ActualPublishDate);
 
 				var results = query.GetResults();
 

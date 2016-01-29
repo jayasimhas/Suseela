@@ -1,5 +1,5 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.ContentSearch;
+﻿using Informa.Library.Search;
+using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.Data;
 using System;
@@ -11,17 +11,17 @@ namespace Informa.Library.ContentCuration.Search
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ItemManuallyCuratedContentSearch : IItemManuallyCuratedContent
 	{
-		public ItemManuallyCuratedContentSearch(
-			)
-		{
+		protected readonly IProviderSearchContextFactory SearchContextFactory;
 
+		public ItemManuallyCuratedContentSearch(
+			IProviderSearchContextFactory searchContextFactory)
+		{
+			SearchContextFactory = searchContextFactory;
 		}
 
 		public IEnumerable<Guid> Get(Guid itemId)
 		{
-			var index = ContentSearchManager.GetIndex("sitecore_web_index");
-
-			using (var context = index.CreateSearchContext())
+			using (var context = SearchContextFactory.Create())
 			{
 				var query = context.GetQueryable<ManuallyCuratedContentSearchResult>().Filter(i => i.ItemId == ID.Parse(itemId));
 				var results = query.GetResults();
