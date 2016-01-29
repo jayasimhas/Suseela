@@ -199,29 +199,31 @@ namespace SitecoreTreeWalker.Sitecore
 
 		//TODO - Implement this
 		public static int GetMaxLengthShortSummary()
-		{
-			return 1000;
+		{			
 			using (var client = new HttpClient())
 			{
-				int length;
-				var response = client.GetAsync($"{webApiURL}WordPlugin/GetMaxLengthShortSummary").Result;
-				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+				var response = client.GetAsync($"{webApiURL}GetMaxLengthShortSummary").Result;
+				var length = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+				return length;
+				/*
 				Int32.TryParse(response.Content.ReadAsStringAsync().Result, out length);
 				return length;
+				*/
 			}
 		}
 		
 		//TODO - Implement this
 		public static int GetMaxLengthLongSummary()
 		{
-			return 1500;
 			using (var client = new HttpClient())
 			{
-				int length;
-				var response = client.GetAsync($"{webApiURL}WordPlugin/GetMaxLengthLongSummary").Result;
-				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+				var response = client.GetAsync($"{webApiURL}GetMaxLengthLongSummary").Result;
+				var length =  JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+				return length;
+				/*
 				Int32.TryParse(response.Content.ReadAsStringAsync().Result, out length);
 				return length;
+				*/
 			}
 			var sctree = new SCTree();
 			return sctree.GetMaxLengthLongSummary(_sitecoreUser.Username, _sitecoreUser.Password);
