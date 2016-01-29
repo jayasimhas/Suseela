@@ -39,10 +39,10 @@
     "compilation": { "OptimizeCompilations": false },
     "Configuration": "Release",
     "connstr": {
-        "core": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Core",
-        "master": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Master",
-        "web": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Web",
-        "reporting": "user id=sitecore;password=felixx;Data Source=localhost;Database=Informa_Analytics",
+        "core": "user id=sitecore;password=felixx;Data Source=vwsql2012;Database=Informa_Core",
+        "master": "user id=sitecore;password=felixx;Data Source=vwsql2012;Database=Informa_Master",
+        "web": "user id=sitecore;password=felixx;Data Source=vwsql2012;Database=Informa_Web",
+        "reporting": "user id=sitecore;password=felixx;Data Source=vwsql2012;Database=Informa_Analytics",
         "analytics": "mongodb://localhost/Informa_analytics",
         "tracking": {
             "live": "mongodb://localhost/Informa_tracking_live",
@@ -76,21 +76,22 @@
     "site": { "content": "master" },
     "Site": {
         "Protocol": "http",
-        "Domain": "informa.miked.velir.com"
+        "Domain": "informa.sfine.velir.com"
     },
     "Sitecore": {
         "MaxWorkerThreads": "48",
         "Counters": true,
-        "DataFolder": "D:\\Projects\\informa-initial\\web\\data"
+        "DataFolder": "C:\\Users\\samuel.fine\\Projects\\Informa\\web\\Data"
     },
     "Solr": {
         "Sitecore": { "CoreName": "Informa_itembuckets" },
         "CustomIndex": { "CoreName": "Informa_content" },
-        "ServicePort": "8983"
+        "ServicePort": "8983",
+        "ServiceBaseAddress": "http://172.26.10.140:8983/solr"
     },
     "TDS": {
-        "SitecoreDeployFolder": "D:\\Projects\\informa-initial\\web\\Website",
-        "SitecoreWebUrl": "http://informa.miked.velir.com",
+        "SitecoreDeployFolder": "C:\\Users\\samuel.fine\\Projects\\Informa\\web\\Website",
+        "SitecoreWebUrl": "http://informa.sfine.velir.com",
         "SitecoreAccessGuid": "fd870d31-174c-43d9-a572-e82519cca6f5",
         "InstallSitecoreConnector": true,
         "DeployAction": "Ignore",
