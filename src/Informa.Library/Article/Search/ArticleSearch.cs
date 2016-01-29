@@ -1,24 +1,27 @@
 ﻿using System.Linq;
 using Glass.Mapper.Sc;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.ContentCuration.Search.Extensions;
 using Informa.Library.Search.Extensions;
 using System.Collections.Generic;
 using System;
+using Informa.Library.Search;
 
 namespace Informa.Library.Article.Search
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ArticleSearch : IArticleSearch
 	{
+		protected readonly IProviderSearchContextFactory SearchContextFactory;
 		protected readonly ISitecoreService SitecoreContext;
 
 		public ArticleSearch(
+			IProviderSearchContextFactory searchContextFactory,
 			ISitecoreService sitecoreContext)
 		{
+			SearchContextFactory = searchContextFactory;
 			SitecoreContext = sitecoreContext;
 		}
 
@@ -33,9 +36,7 @@ namespace Informa.Library.Article.Search
 
 		public IArticleSearchResults Search(IArticleSearchFilter filter)
 		{
-			var index = ContentSearchManager.GetIndex("sitecore_web_index");
-
-			using (var context = index.CreateSearchContext())
+			using (var context = SearchContextFactory.Create())
 			{
 				var query = context.GetQueryable<ArticleSearchResultItem>()
 					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
