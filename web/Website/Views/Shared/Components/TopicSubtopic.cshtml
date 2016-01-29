@@ -9,21 +9,10 @@
         <a class="topic-subtopic__header-explore-link" href="#">Explore this Topic</a>
     </h1>
 
-   @Html.Sitecore().Placeholder("two-column-curated")
-
     @{
         Html.RenderPartial("Components/ListableContentWide", TestData.ListableModel());
         Html.RenderPartial("Components/ListableContentWide", TestData.ListableModel());
     }
 
-    <h4 class="latest-news__header">
-        <span>Latest from @TestData.GetRandomTopic().LinkableText</span>
-    </h4>
-
-    <div class="latest-news__articles">
-        @foreach (var listable in Enumerable.Range(1, 6))
-        {
-            Html.RenderPartial("Components/ListableContentSmall", TestData.ListableModel(1, 0, false));
-        }
-    </div>
+	@Html.Sitecore().Placeholder("two-column-curated")
 </div>

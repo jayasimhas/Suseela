@@ -39,9 +39,9 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
-			ISitecoreService sitecoreMasterService = new SitecoreContentContext();
+			
 			IArticle articleItem = GetArticleByNumber(articleNumber);
-			var article = sitecoreMasterService.GetItem<Item>(articleItem._Id);
+			var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
 			return article;
 		}
 
@@ -52,16 +52,17 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		public IArticle GetArticleByNumber(string articleNumber)
 		{
-			ISitecoreService sitecoreMasterService = new SitecoreContentContext();
-			var articleFolder = sitecoreMasterService.GetItem<IArticle_Folder>("{AF934D70-720B-47E8-B393-387A6F774CDF}");
+			var articleFolder = _sitecoreMasterService.GetItem<IArticle_Folder>("{9191621D-2FE9-47A9-B1DA-DA89F17796C6}");
 
 			IArticle article = articleFolder._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Year
 				.SelectMany(y => y._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Month
 				.SelectMany(z => z._ChildrenWithInferType.OfType<IArticle_Date_Folder>())) //Day
 				.SelectMany(dayItem => dayItem._ChildrenWithInferType.OfType<IArticle>())
 				.FirstOrDefault(a => a.Article_Number == articleNumber);
-
-			return article;
+			if (article == null)
+				return null;
+			return _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
+			
 		}
 
 		/// <summary>

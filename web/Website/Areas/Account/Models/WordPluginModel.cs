@@ -242,6 +242,7 @@ namespace Informa.Web.Areas.Account.Models
 		}
 		public class ArticleStruct
 		{
+			private Guid _publication;
 			public Guid ArticleGuid { get; set; }
 			public string Title { get; set; }
 			public DateTime PrintPublicationDate { get; set; }
@@ -282,7 +283,14 @@ namespace Informa.Web.Areas.Account.Models
 			public string WordDocLastUpdateDate { get; set; }
 			public string WordDocLastUpdatedBy { get; set; }
 
-			public Guid Publication { get; set; }
+			public Guid Publication
+			{
+				get
+				{
+					return _publication == Guid.Empty ? new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}") : _publication;
+				}
+				set { _publication = value; }
+			}
 
 			public Boolean Embargoed { get; set; }
 			public bool IsPublished { get; set; }

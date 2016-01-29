@@ -2,6 +2,7 @@ using Glass.Mapper.Configuration;
 using Glass.Mapper.Configuration.Attributes;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
+using Glass.Mapper.Sc.Configuration.Fluent;
 using Glass.Mapper.Sc.IoC;
 using Informa.Library.Site;
 using Informa.Models;
@@ -31,8 +32,12 @@ namespace Informa.Web.App_Start
              * 
              */
 
-            return new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models") };
-        }
+
+
+            var config = new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models"), new SitecoreFluentConfigurationLoader() };
+
+			return config;
+		}
 		public static void PostLoad(){
 			//Remove the comments to activate CodeFist
 			/* CODE FIRST START

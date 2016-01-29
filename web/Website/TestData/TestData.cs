@@ -59,7 +59,7 @@ namespace Informa.Web.TestData
         //}
 
         
-        public static IListable ListableModel(int numAuthors = 1, int numTaxonomy = 0, bool hasImage = true)
+        public static IListableViewModel ListableModel(int numAuthors = 1, int numTaxonomy = 0, bool hasImage = true)
         {
             var authors = GetRandomEmployees(numAuthors);
 
@@ -68,8 +68,9 @@ namespace Informa.Web.TestData
             if (numTaxonomy == 0)
                 numTaxonomy = rnd.Next(6);
 
-            var model = new ListableModel
+            var model = new TestListableViewModel
             {
+				DisplayImage = true,
                 ListableTopics = GetRandomTopics(numTaxonomy),
                 ListableAuthors = GetRandomEmployees(numAuthors),
                 ListableDate = DateTime.Now,
@@ -352,4 +353,9 @@ namespace Informa.Web.TestData
             "Yogi Shridhare"
         };     
     }
+
+	public class TestListableViewModel : ListableModel, IListableViewModel
+	{
+		public bool DisplayImage { get; set; }
+	}
 }

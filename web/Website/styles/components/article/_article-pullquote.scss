@@ -9,6 +9,15 @@
     margin-top: 2rem;
     padding: 1.75rem 0.75rem;
 
+    p {
+        color: $informa-black;
+
+        &:last-child,
+        &:only-child {
+            margin: 0;
+        }
+    }
+    
     @include breakpoint('medium') {
         font-size: 20px;
         margin: 2rem 0px;

@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using Glass.Mapper.Sc;
+using Glass.Mapper.Sc.Fields;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -27,18 +28,15 @@ namespace Informa.Web.Controllers
 		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
 		{
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
-			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)) ?
-				TempFolderFallover :
-				Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\temp.";
+			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)) ? TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\temp.";			
 			_articleUtil = articleUtil;
 
 		}
 		public void SaveArticleDetails(Guid articleGuid, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new Sitecore.SecurityModel.SecurityDisabler())
-			{//accounting for issue restriction
-
-				IArticle article = _sitecoreMasterService.GetItem<IArticle>(articleGuid);
+			using (new SecurityDisabler())
+			{
+				IArticle article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 				if (article == null)
 				{
 					throw new ApplicationException("Could not find article with Guid " + articleGuid);
@@ -51,7 +49,7 @@ namespace Informa.Web.Controllers
 
 		public void SaveArticleDetails(string articleNumber, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new Sitecore.SecurityModel.SecurityDisabler())
+			using (new SecurityDisabler())
 			{
 				IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
 				if (article == null)
@@ -77,64 +75,65 @@ namespace Informa.Web.Controllers
 		private IArticle SaveArticleDetails(IArticle article, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData, bool addVersion, bool shouldNotify = true)
 		{
 			var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
-			Item updatedVersion;
-			//IIPP-243
+
+			//IIPP-243 - Moving the location of the article if needed
 			if (!article.IsPublished && article.Planned_Publish_Date != articleStruct.WebPublicationDate)
 			{
 				MoveArticleIfNecessary(article, articleStruct);
 			}
-			IArticle newVersion;
 			string userID = articleItem.Locking.GetOwner();
 			bool loggedIn = false;
 			if (!IsNullOrEmpty(userID))
 			{
 				loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
 			}
+			
+			var newVersion = article;
 
-			var info = new WorkflowInfo(Guid.Empty.ToString(), Guid.Empty.ToString());
+			//TODO - Add version adn workflow informatiomn
+			//try
+			//{							Item updatedVersion;
+			// var info = new WorkflowInfo(Guid.Empty.ToString(), Guid.Empty.ToString());
+			//if (addVersion)
+			//{
+			//	using (new EditContext(articleItem))
+			//	{
+			//		ItemState itemState = articleItem.State;
+			//		if (itemState != null)
+			//		{
+			//			WorkflowState workflowState = itemState.GetWorkflowState();
+			//			if (workflowState != null)
+			//			{
+			//				IWorkflow workflow = itemState.GetWorkflow();
 
-
-			try
-			{
-				if (addVersion)
-				{
-					using (new EditContext(articleItem))
-					{
-						ItemState itemState = articleItem.State;
-						if (itemState != null)
-						{
-							WorkflowState workflowState = itemState.GetWorkflowState();
-							if (workflowState != null)
-							{
-								IWorkflow workflow = itemState.GetWorkflow();
-
-								string state = workflowState.StateID;
-								if (workflow != null && state != null)
-								{
-									info = new WorkflowInfo(workflow.WorkflowID, state);
-									// remove the old version from workflow and prevent from being published
-									// Note: to remove an item from workflow requires using the fields, rather than the SetWorkflowInfo
-									//  method, because the SetWorkflowInfo method does not allow empty strings 
-									articleItem.Fields[Sitecore.FieldIDs.WorkflowState].Value = null;
-									articleItem.Fields[Sitecore.FieldIDs.HideVersion].Value = "1";
-								}
-							}
-						}
-						//newVersion = article.InnerItem.Versions.AddVersion();
-						updatedVersion = articleItem.Versions.AddVersion();
-						newVersion = _sitecoreMasterService.GetItem<IArticle>(updatedVersion.ID.ToString());
-					}
-				}
-				else
-				{
-					newVersion = article;
-				}
-			}
-			catch (Exception ex)
-			{
-				var ax = new ApplicationException("Workflow: Error with versioning/workflow while saving article [" + article.Article_Number + "]!", ex);
-				throw ax;
-			}
+			//				string state = workflowState.StateID;
+			//				if (workflow != null && state != null)
+			//				{
+			//					info = new WorkflowInfo(workflow.WorkflowID, state);
+			//					// remove the old version from workflow and prevent from being published
+			//					// Note: to remove an item from workflow requires using the fields, rather than the SetWorkflowInfo
+			//					//  method, because the SetWorkflowInfo method does not allow empty strings 
+			//					articleItem.Fields[Sitecore.FieldIDs.WorkflowState].Value = null;
+			//					articleItem.Fields[Sitecore.FieldIDs.HideVersion].Value = "1";
+			//				}
+			//			}
+			//		}
+			//		//newVersion = article.InnerItem.Versions.AddVersion();
+			//		updatedVersion = articleItem.Versions.AddVersion();
+			//		newVersion = _sitecoreMasterService.GetItem<IArticle>(updatedVersion.ID.ToString());
+			//	}
+			//}
+			//else
+			//{
+			//	newVersion = article;
+			//}
+			//newVersion = article;
+			//}
+			//catch (Exception ex)
+			//{
+			//	var ax = new ApplicationException("Workflow: Error with versioning/workflow while saving article [" + article.Article_Number + "]!", ex);
+			//	throw ax;
+			//}
 
 			try
 			{
@@ -178,7 +177,6 @@ namespace Informa.Web.Controllers
 				*/
 				using (new SecurityDisabler())
 				{
-
 					if (loggedIn)
 					{
 						_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
@@ -209,7 +207,7 @@ namespace Informa.Web.Controllers
 				//TODO - Add Taxonomy items
 				//newArticle.Taxonomies = articleStruct.Taxonomoy.Select(x => _sitecoreMasterService.GetItem<ITaxonomy_Item>(x.ID));
 				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
-				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<ArticleItem>(x));
 
 				if (saveDocumentSpecificData)
 				{
@@ -237,21 +235,19 @@ namespace Informa.Web.Controllers
 		protected void RenameArticleItem(IArticle article, WordPluginModel.ArticleStruct articleStruct)
 		{
 			string title = articleStruct.Title;
-			if (title != null)
+			if (title == null) return;
+			using (new SecurityDisabler())
 			{
-				using (new SecurityDisabler())
+				var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
+				articleItem.Editing.BeginEdit();
+				articleItem[I___BasePageConstants.TitleFieldName] = title;
+				if (!article.IsPublished)
 				{
-					var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
-					articleItem.Editing.BeginEdit();
-					articleItem[I___BasePageConstants.TitleFieldName] = title;
-					if (!article.IsPublished)
-					{
-						string trim = title.Length > 100 ? title.Substring(0, 100).Trim() : title.Trim();
-						articleItem["__Display name"] = trim;
-						articleItem.Name = ItemUtil.ProposeValidItemName(trim);
-					}
-					articleItem.Editing.EndEdit();					
+					string trim = title.Length > 100 ? title.Substring(0, 100).Trim() : title.Trim();
+					articleItem["__Display name"] = trim;
+					articleItem.Name = ItemUtil.ProposeValidItemName(trim);
 				}
+				articleItem.Editing.EndEdit();					
 			}
 		}
 
@@ -271,74 +267,46 @@ namespace Informa.Web.Controllers
 			}
 		}
 
+		/// <summary>
+		/// Saves article text and fields that are dependent on the article text
+		/// </summary>
+		/// <param name="article"></param>
+		/// <param name="articleText"></param>
 		public void SaveArticleDetailsAndText(IArticle article, string articleText, WordPluginModel.ArticleStruct articleStruct)
 		{
 			using (new SecurityDisabler())
 			{
 				article = SaveArticleDetails(article, articleStruct, true, true);
 				string parsedText = ParseXmltoHtml(articleText);
-				SaveArticleText(article, parsedText);
+				article.Body = articleText;
+				if (articleText != parsedText)
+				{
+					article.Body = parsedText;
+				}
+				//TODO - Replace the body text company names with company look ups and company references.
+				/*
+				string companyIdsCsv;
+					article.Body = _companyFinder.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
+					article.Referenced_Companies = companyIdsCsv;					
+				*/				
 				_sitecoreMasterService.Save(article);
 			}
 		}
 
-		protected string ParseXmltoHtml(string articleText)
-		{
-			try
-			{
-				var x = new XmlDocument();
-				x.LoadXml(articleText);
-
-				return x.InnerXml;
-			}
-			catch (Exception ex)
-			{
-				var ax = new ApplicationException("Workflow: Error parsing article text!", ex);
-				throw ax;
-			}
-		}
-
-		/// <summary>
-		/// Saves article text and fields that are dependent on the article text
-		/// </summary>
-		/// <param name="article"></param>
-		/// <param name="articleText"></param>
-		private void SaveArticleText(IArticle article, string articleText)
-		{
-			try
-			{
-				using (new SecurityDisabler())
-				{
-					article.Body = articleText;
-					_sitecoreMasterService.Save(article);
-					//TODO - Replace the body text company names with company look ups and company references.
-					/*
-					string companyIdsCsv;
-						article.Body = _companyFinder.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
-						article.Referenced_Companies = companyIdsCsv;					
-					*/
-				}
-			}
-			catch (Exception ex)
-			{
-				var ax = new ApplicationException("Workflow: Error saving article text while saving article [" + article._Id + "]!",ex);
-				throw ax;
-			}
-		}
-
+		
 		public int SendDocumentToSitecore(IArticle article, byte[] data, string extension)
 		{
 			MediaItem doc = UploadWordDoc(article, ConvertBytesToWordDoc(data, article.Article_Number, extension), article._Id.ToString(), extension);
-			using (new Sitecore.SecurityModel.SecurityDisabler())
+			using (new SecurityDisabler())
 			{
-				using (new SecurityDisabler())
+				article.Word_Document = new Link
 				{
-					article.Word_Document.Url = doc.InnerItem.Paths.Path;
-					//TODO - Set this document to be internal
-					//article.Word_Document.Type = "internal";
-					article.Word_Document.TargetId = new Guid(doc.ID.ToString());
-					_sitecoreMasterService.Save(article);
-				}
+					Url = doc.InnerItem.Paths.Path,				
+					TargetId = new Guid(doc.ID.ToString())
+				};
+				//TODO - Set this document to be internal
+				//article.Word_Document.Type = "internal";
+				_sitecoreMasterService.Save(article);				
 			}
 			return doc.InnerItem.Version.Number;
 		}
@@ -353,7 +321,8 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		protected MediaItem UploadWordDoc(IArticle article, string fileName, string docName, string extension)
 		{
-			return WordDocToMediaLibrary.SaveWordDocIntoMediaLibrary(article, fileName, docName, extension);
+			var _wordDocLibrary = new WordDocToMediaLibrary(_sitecoreMasterService);
+			return _wordDocLibrary.SaveWordDocIntoMediaLibrary(article, fileName, docName, extension);
 		}
 
 		protected string ConvertBytesToWordDoc(byte[] data, string articleID, string extension)
@@ -422,6 +391,22 @@ namespace Informa.Web.Controllers
 			}
 			return false;
 
+		}
+
+		protected string ParseXmltoHtml(string articleText)
+		{
+			try
+			{
+				var x = new XmlDocument();
+				x.LoadXml(articleText);
+
+				return x.InnerXml;
+			}
+			catch (Exception ex)
+			{
+				var ax = new ApplicationException("Workflow: Error parsing article text!", ex);
+				throw ax;
+			}
 		}
 	}
 }

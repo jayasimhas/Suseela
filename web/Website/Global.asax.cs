@@ -1,55 +1,49 @@
 ﻿using System;
 using System.Web.Http;
-using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.UI;
-using Autofac;
 using Informa.Web.App_Start;
-using Sitecore.Speak;
 using Sitecore.Web;
-using StackExchange.Profiling;
+using Autofac;
 
 namespace Informa.Web
 {
-    public class InformaApplication : Application
-    {
-        protected void Application_Start(object sender, EventArgs args)
-        {
-            // Setup dependencies first
-            AutofacConfig.Start();
+	public class InformaApplication : Application //Sitecore.ContentSearch.SolrProvider.AutoFacIntegration.AutoFacApplication
+	{
+		protected void Application_Start(object sender, EventArgs args)
+		{
+			// Setup dependencies first
+			AutofacConfig.Start();
 
-            // Setup SOLR
-            //new CustomAutoFacSolrStartUp(new ContainerBuilder()).Initialize();
+			// Setup SOLR
+			new CustomAutoFacSolrStartUp(new ContainerBuilder()).Initialize();
 
-            // Code that runs on application startup
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+			// Code that runs on application startup
+			GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            // Setup custom MVC routing for Sitecore
-            RouteConfig.RegisterRoutes(RouteTable.Routes, areaNames: null); // Pass in MVC area names (if any, ex. 'Admin')
+			// Setup custom MVC routing for Sitecore
+			RouteConfig.RegisterRoutes(RouteTable.Routes, areaNames: null); // Pass in MVC area names (if any, ex. 'Admin')
 
-            EnableUnobtrusiveValidation();
+			EnableUnobtrusiveValidation();
 
+			//AreaRegistration.RegisterAllAreas();
+			//GlobalConfiguration.Configure(WebApiConfig.Register);
+			//FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+			//RouteConfig.RegisterRoutes(RouteTable.Routes);
+			BundleConfig.RegisterBundles(BundleTable.Bundles);
+		}
 
-
-        //AreaRegistration.RegisterAllAreas();
-        //GlobalConfiguration.Configure(WebApiConfig.Register);
-        //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-        //RouteConfig.RegisterRoutes(RouteTable.Routes);
-        BundleConfig.RegisterBundles(BundleTable.Bundles);
-    }
-
-
-        protected virtual void EnableUnobtrusiveValidation()
-        {
-            const string bundlePath = "~/js/jquery.js";
-            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
-            {
-                Path = bundlePath,
-                LoadSuccessExpression = "window.jQuery"
-            });
-        }
-    }
+		protected virtual void EnableUnobtrusiveValidation()
+		{
+			const string bundlePath = "~/js/jquery.js";
+			ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
+			{
+				Path = bundlePath,
+				LoadSuccessExpression = "window.jQuery"
+			});
+		}
+	}
 }
 
      /*

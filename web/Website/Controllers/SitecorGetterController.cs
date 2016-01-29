@@ -362,6 +362,39 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
+	public class GetMaxLengthShortSummaryController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetMaxLengthShortSummaryController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<int> Get()
+		{
+			var length = _sitecoreService.GetItem<IText_Node>("{5FF122A8-A7C6-4DAB-B135-9DD6E276EE08}");
+			return Json(!string.IsNullOrEmpty(length?.Text) ? Int32.Parse(length.Text) : 1000);
+		}
+	}
+
+	[Route]
+	public class GetMaxLengthLongSummaryController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetMaxLengthLongSummaryController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		public JsonResult<int> Get()
+		{
+			var length = _sitecoreService.GetItem<IText_Node>("{6759EBC6-101A-4187-9B3A-BE466C1C5DA0}");
+			return Json(!string.IsNullOrEmpty(length?.Text) ? Int32.Parse(length.Text) : 1500);
+		}
+	}
+
+
+
+	[Route]
 	public class SupportingDocumentsNodeController : ApiController
 	{
 		private string masterBD = "master";
@@ -724,7 +757,7 @@ namespace Informa.Web.Controllers
 
 		public JsonResult<WordPluginModel.ArticleStruct> Get(string articleGuid)
 		{
-			IArticle article = _sitecoreService.GetItem<IArticle>(articleGuid);
+			IArticle article = _sitecoreService.GetItem<ArticleItem>(articleGuid);
 			return Json(article == null ? new WordPluginModel.ArticleStruct() : _articleUtil.GetArticleStruct(article));
 		}
 	}
