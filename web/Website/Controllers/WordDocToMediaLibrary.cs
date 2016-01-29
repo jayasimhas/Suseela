@@ -18,16 +18,16 @@ namespace Informa.Web.Controllers
 		public const string MasterDb = "master";
 		protected static string MediaLibraryRoot;
 		protected static string MediaLibraryPath;
-		private static ISitecoreService SitecoreMasterService;
+		private static ISitecoreService _sitecoreMasterService;
 
-		public WordDocToMediaLibrary(Func<string, ISitecoreService> sitecoreFactory)
+		public WordDocToMediaLibrary(ISitecoreService sitecoreService)
 		{
-			SitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreMasterService = sitecoreService;
 			MediaLibraryRoot = "/sitecore/media library/";
 			MediaLibraryPath = "Documents/";
 		}
 
-		public static MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension)
+		public MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension)
 		{
 			Guid publicationGuid = article.Publication;
 			var articleDate = article.Planned_Publish_Date > DateTime.MinValue ? article.Planned_Publish_Date : article.Created_Date;
@@ -36,77 +36,80 @@ namespace Informa.Web.Controllers
 			return CreateMediaLibraryItemFromFile(fileName, docName, extension,path);
 		}
 
-		public static Item GetMSWordDocumentRootNode()
+		public Item GetMSWordDocumentRootNode()
 		{
-			IItem_Pointer_Config pointer = SitecoreMasterService.GetItem<IItem_Pointer_Config>("{FDBFCAC8-03CA-4B0B-BEFE-2171050E19C6}");
+			IItem_Pointer_Config pointer = _sitecoreMasterService.GetItem<IItem_Pointer_Config>("{FDBFCAC8-03CA-4B0B-BEFE-2171050E19C6}");
 			if (pointer == null) return null;
-			return SitecoreMasterService.GetItem<Item>(pointer.Item_Pointer);
+			return _sitecoreMasterService.GetItem<Item>(pointer.Item_Pointer);
 		}
-		public static string GetMSWordDocumentRootNodePath()
+		public string GetMSWordDocumentRootNodePath()
 		{
 			var item = GetMSWordDocumentRootNode();
 			return item?.Paths.FullPath;
 		}
 
-		public static IMedia_Folder GetMediaFolder(Guid publicationGuid, DateTime date)
+		public IMedia_Folder GetMediaFolder(Guid publicationGuid, DateTime date)
 		{
-			var mediaFolder = SitecoreMasterService.GetItem<IMedia_Folder>(MediaLibraryRoot + MediaLibraryPath);
-			var publication = SitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
-			string year = date.Year.ToString();
-			string month = date.Month.ToString();
-			string day = date.Day.ToString();
-			IMedia_Folder mediaPublicationFolder;
-			IMedia_Folder yearFolder;
-			IMedia_Folder monthFolder;
-			IMedia_Folder dayFolder;
-			if (mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == publication._Name))
+			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
-				mediaPublicationFolder = mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == publication._Name);
-			}
-			else
-			{
-				var newMediaFolder = SitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(mediaFolder, publication._Name);
-				SitecoreMasterService.Save(newMediaFolder);
-				mediaPublicationFolder = newMediaFolder;
-			}
+				var mediaFolder = _sitecoreMasterService.GetItem<IMedia_Folder>(MediaLibraryRoot + MediaLibraryPath);
+				var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
+				string year = date.Year.ToString();
+				string month = date.Month.ToString();
+				string day = date.Day.ToString();
+				IMedia_Folder mediaPublicationFolder;
+				IMedia_Folder yearFolder;
+				IMedia_Folder monthFolder;
+				IMedia_Folder dayFolder;
+				if (mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == publication._Name))
+				{
+					mediaPublicationFolder =
+						mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == publication._Name);
+				}
+				else
+				{
+					var newMediaFolder = _sitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(mediaFolder, publication._Name);
+					_sitecoreMasterService.Save(newMediaFolder);
+					mediaPublicationFolder = newMediaFolder;
+				}
 
-			// Year
-			if (mediaPublicationFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == year))
-			{
-				yearFolder = mediaPublicationFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == year);
-			}
-			else
-			{
-				var yearItem = SitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(mediaPublicationFolder, year);
-				SitecoreMasterService.Save(yearItem);
-				yearFolder = yearItem;
-			}
+				// Year
+				if (mediaPublicationFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == year))
+				{
+					yearFolder = mediaPublicationFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == year);
+				}
+				else
+				{
+					var yearItem = _sitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(mediaPublicationFolder, year);
+					_sitecoreMasterService.Save(yearItem);
+					yearFolder = yearItem;
+				}
 
-			// Month
-			if (yearFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == month))
-			{
-				monthFolder = yearFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == month);
-			}
-			else
-			{
-				var monthItem = SitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(yearFolder, month);
-				SitecoreMasterService.Save(monthItem);
-				monthFolder = monthItem;
-			}
+				// Month
+				if (yearFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == month))
+				{
+					monthFolder = yearFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == month);
+				}
+				else
+				{
+					var monthItem = _sitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(yearFolder, month);
+					_sitecoreMasterService.Save(monthItem);
+					monthFolder = monthItem;
+				}
 
-			// Day
-			if (monthFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == day))
-			{
-				dayFolder = monthFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == day);
+				// Day
+				if (monthFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == day))
+				{
+					dayFolder = monthFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == day);
+				}
+				else
+				{
+					var dayItem = _sitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(monthFolder, day);
+					_sitecoreMasterService.Save(dayItem);
+					dayFolder = dayItem;
+				}
+				return dayFolder;
 			}
-			else
-			{
-				var dayItem = SitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(monthFolder, day);
-				SitecoreMasterService.Save(dayItem);
-				dayFolder = dayItem;
-			}
-
-			return dayFolder;
 		}
 
 
@@ -118,17 +121,17 @@ namespace Informa.Web.Controllers
 		/// <param name="fileExtension"></param>		
 		/// <param name="mediaLibraryPath">Path in sitecore to save the file</param>
 		/// <returns></returns>
-		public static MediaItem CreateMediaLibraryItemFromFile(string filePath, string itemName, string fileExtension, string mediaLibraryPath)
+		public MediaItem CreateMediaLibraryItemFromFile(string filePath, string itemName, string fileExtension, string mediaLibraryPath)
 		{
 			Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.Current;
-			MediaCreatorOptions mediaCreatorOptions = GetDefaultMediaCreatorOptions(MediaLibraryRoot + mediaLibraryPath, itemName);
+			MediaCreatorOptions mediaCreatorOptions = GetDefaultMediaCreatorOptions(MediaLibraryRoot + mediaLibraryPath, itemName.Replace("-",""));
 			using (new Sitecore.Security.Accounts.UserSwitcher(user))
 			{
 				try
 				{
 					//first, find the item, if it exists already
 					string itempath = mediaCreatorOptions.Destination;
-					Item mediaItem = SitecoreMasterService.GetItem<Item>(itempath);
+					Item mediaItem = _sitecoreMasterService.GetItem<Item>(itempath);
 					if (mediaItem == null)
 					{
 						//new media item
@@ -162,11 +165,11 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-		protected static MediaCreatorOptions GetDefaultMediaCreatorOptions(string mediaLibraryPath, string itemName)
+		protected MediaCreatorOptions GetDefaultMediaCreatorOptions(string mediaLibraryPath, string itemName)
 		{
 			//Set up the options for creating the new media library options
 			MediaCreatorOptions mediaCreatorOptions;
-			Database masterDb = SitecoreMasterService.Database;
+			Database masterDb = _sitecoreMasterService.Database;
 			// SitecoreDatabases.AuthoringDatabase;
 			try
 			{

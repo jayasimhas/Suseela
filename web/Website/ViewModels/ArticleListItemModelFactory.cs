@@ -19,7 +19,7 @@ namespace Informa.Web.ViewModels
 			SiteRootContext = siteRootContext;
 		}
 
-		public IListable Create(IArticle article)
+		public IListableViewModel Create(IArticle article)
 		{
 			if (article == null)
 			{
@@ -27,12 +27,14 @@ namespace Informa.Web.ViewModels
 			}
 
 			var publication = SiteRootContext?.Item?.Publication_Name?.StripHtml();
+			var image = article.Featured_Image_16_9?.Src;
 
 			return new ArticleListItemModel
 			{
+				DisplayImage = !string.IsNullOrWhiteSpace(image),
 				ListableAuthors = article.Authors?.Select(x => new LinkableModel { LinkableText = x.First_Name + " " + x.Last_Name }),
 				ListableDate = article.Actual_Publish_Date,
-				ListableImage = article.Featured_Image_16_9?.Src,
+				ListableImage = image,
 				ListableSummary = article.Summary,
 				ListableTitle = article.Title,
 				ListableByline = publication,

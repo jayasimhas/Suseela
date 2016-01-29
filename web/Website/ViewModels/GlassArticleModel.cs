@@ -38,7 +38,7 @@ namespace Informa.Web.ViewModels
 
         public IEnumerable<IPersonModel> Authors => GlassModel.Authors.Select(x => new PersonModel(x));
         public string Category => GlassModel.Article_Category;
-        public IEnumerable<IListable> RelatedArticles => GlassModel.Related_Articles.Select(x => ArticleListableFactory.Create(x));
+        public IEnumerable<IListable> RelatedArticles => GlassModel.Related_Articles.Select(x => ArticleListableFactory.Create(x)).Cast<IListable>();
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 
         #endregion
