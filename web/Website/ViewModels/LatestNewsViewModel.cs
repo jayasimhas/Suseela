@@ -10,6 +10,7 @@ using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.ContentCuration;
+using Informa.Library.Globalization;
 
 namespace Informa.Web.ViewModels
 {
@@ -20,22 +21,25 @@ namespace Informa.Web.ViewModels
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
+		protected readonly ITextTranslator TextTranslator;
 
 		public LatestNewsViewModel(
 			IRenderingParametersContext renderingParametersContext,
 			ISitecoreContext sitecoreContext,
 			IArticleSearch articleSearch,
 			IItemManuallyCuratedContent itemManuallyCuratedContent,
-			IArticleListItemModelFactory articleListableFactory)
+			IArticleListItemModelFactory articleListableFactory,
+			ITextTranslator textTranslator)
 		{
 			RenderingParametersContext = renderingParametersContext;
 			SitecoreContext = sitecoreContext;
 			ArticleSearch = articleSearch;
 			ItemManuallyCuratedContent = itemManuallyCuratedContent;
 			ArticleListableFactory = articleListableFactory;
+			TextTranslator = textTranslator;
 		}
 
-		public IEnumerable<string> Topics => new List<string> { { TestData.TestData.GetRandomTopic().LinkableText }, { TestData.TestData.GetRandomTopic().LinkableText } };
+		public IEnumerable<string> Topics => Parameters.Subjects.Select(s => s._Name);
 
 		public IEnumerable<IListable> News
 		{
@@ -63,6 +67,8 @@ namespace Informa.Web.ViewModels
 				return optionItem == null ? 6 : optionItem.Value;
 			}
 		}
+
+		public string TitleText => TextTranslator.Translate("Article.LatestFrom");
 
 		public bool DisplayTitle => Parameters.Display_Title;
 
