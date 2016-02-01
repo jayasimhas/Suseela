@@ -268,7 +268,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetWidthHeightOfMediaItem/{path}").Result;
+				var response = client.GetAsync($"{webApiURL}GetWidthHeightOfMediaItem?path={path}").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<int>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem.ToArray();
 			}

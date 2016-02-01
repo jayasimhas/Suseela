@@ -62,7 +62,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			this.FlowLayoutMenu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.FlowLayoutMenu.Location = new System.Drawing.Point(0, 0);
 			this.FlowLayoutMenu.Name = "FlowLayoutMenu";
-			this.FlowLayoutMenu.Size = new System.Drawing.Size(180, 407);
+			this.FlowLayoutMenu.Size = new System.Drawing.Size(180, 268);
 			this.FlowLayoutMenu.TabIndex = 0;
 			// 
 			// ArticleInformationMenuItem
@@ -217,7 +217,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			this.FlowLayoutPanel.Controls.Add(this.FlowLayoutMenu);
 			this.FlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
 			this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-			this.FlowLayoutPanel.Size = new System.Drawing.Size(180, 407);
+			this.FlowLayoutPanel.Size = new System.Drawing.Size(180, 271);
 			this.FlowLayoutPanel.TabIndex = 2;
 			this.FlowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanel_Paint);
 			// 

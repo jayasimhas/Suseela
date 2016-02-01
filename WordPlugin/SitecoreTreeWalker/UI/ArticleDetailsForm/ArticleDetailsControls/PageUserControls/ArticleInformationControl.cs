@@ -286,7 +286,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				IsCheckedOut = checkedOut.Locked;
 				if (IsCheckedOut)
 				{
-					if (SitecoreUser.GetUser().Username == checkedOut.User)
+					//TODO - This is a hack. Security might be at risk
+					if (SitecoreUser.GetUser().Username == checkedOut.User || checkedOut.User == "extranet\\Anonymous")
 					{ //locked by me
 						
 						IndicateCheckedOutByMe(checkedOut);
