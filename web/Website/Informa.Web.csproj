@@ -88,14 +88,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\AutofacContrib.SolrNet.dll</HintPath>
     </Reference>
-    <Reference Include="DynamicPlaceholders, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DynamicPlaceholders.1.1.0.1\lib\net45\DynamicPlaceholders.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DynamicPlaceholders.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DynamicPlaceholders.Mvc.1.1.0.1\lib\net45\DynamicPlaceholders.Mvc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Glass.Mapper, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
@@ -827,7 +819,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
-    <Content Include="App_Config\Include\DynamicPlaceholders\DynamicPlaceholders.config" />
+    <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
