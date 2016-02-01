@@ -87,11 +87,13 @@ $(document).ready(function() {
 	var topicContainers = $('.topic-subtopic');
 
 	$('.sub-topic-links').forEach(function(e) {
+		var linkList = $(e).find('.bar-separated-link-list');
+
 		topicContainers.forEach(function(tc) {
 			var id = tc.id;
 			var text = $(tc).data('topic-link-text');
 
-			$(e).find('.bar-separated-link-list').append('<a href="#' + id + '">' + text + '</a>');
+			linkList.append('<a href="#' + id + '">' + text + '</a>');
 		});
 	});
 });
