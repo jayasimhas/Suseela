@@ -7,10 +7,12 @@
     .pop-out__internal {
         left: 0;
         top: 0;
+        padding: 2.175rem 1.625rem;
     }
 
     &.is-active {
         display: block;
+        z-index: 9999;
     }
 
     &__tab {
@@ -44,20 +46,6 @@
         text-transform: none;
         width: 380px;
         z-index: 8;
-
-        input:not([type="checkbox"]),
-        textarea {
-            width: 100%;
-            margin-bottom: 12px;
-            border: 1px solid $informa-light-gray-d;
-        }
-        textarea {
-            min-height: 150px;
-        }
-
-        @include breakpoint('small') {
-            width: 100% !important;
-        }
     }
 
     &__header {

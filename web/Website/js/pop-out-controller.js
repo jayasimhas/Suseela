@@ -33,7 +33,10 @@ function popOutController(triggerElm) {
 	// PUBLIC
 	// Closes the pop-out.
 	this.closePopOut = function() {
-		$('.pop-out').removeClass('is-active');
+		// Reset all z-indexes so new pop-outs are stacked on top properly
+		$('.pop-out').removeClass('is-active').css("z-index", "");
+		$('.js-pop-out-trigger').css("z-index", "");
+
 		state.activeElm = null;
 	}
 
@@ -49,8 +52,12 @@ function popOutController(triggerElm) {
 			// ...close it
 			this.closePopOut();
 		} else {
+			// Close all open pop-outs
+			this.closePopOut();
+
 			// ...update the controller state and open it
 			state.activeElm = poParent[0];
+
 			updatePosition();
 		}
 
@@ -65,9 +72,6 @@ function popOutController(triggerElm) {
 		};
 		// Get trigger height, width, offsetTop, offsetWidth
 		trgr.offset = trgr.e.offset();
-
-		// Close all open pop-outs
-		$('.pop-out').removeClass('is-active');
 
 		// Determine which pop-out template to use
 		// TODO: Make this user-configurable
@@ -136,25 +140,34 @@ function popOutController(triggerElm) {
 			res.offset.tab.left = isNarrow ? Math.floor(trgr.offset.left - rem) : 0;
 		}
 
+		// Blow up z-index to appear above other triggers
+		trgr.e.css('z-index', '9999');
+
 		// Box z-index set to 2 lower than trigger element
 		// Box should render below trigger, under tab, above everything else
 		res.css.box.zIndex = trgr.e.css('z-index') - 2;
 
-		// `transform` to quickly position box, relative to top left corner
-		res.css.box.transform = 'translate3d(' + res.offset.box.left +'px, ' + res.offset.box.top + 'px, 0)'
-
 		// Tab height equals trigger height plus padding (1rem top and bottom)
-		res.css.tab.height = trgr.offset.height + (rem * 2) + "px";
+		if(trgr.e.data('pop-out-tab-height')) {
+			res.css.tab.height = trgr.e.data('pop-out-tab-height');
+			res.offset.box.top += trgr.e.data('pop-out-tab-height') - trgr.offset.height - (rem * 2);
+			res.css.tab.top = '-' + (trgr.e.data('pop-out-tab-height') - 1) + 'px';
+		} else {
+			res.css.tab.height = trgr.offset.height + (rem * 2) + "px";
+
+			// Move the tab upwards, equal to the trigger height plus padding
+			// minus 1px to account for border and visually overlapping box
+			res.css.tab.top = '-' + (trgr.offset.height + (rem * 2) - 1) + "px";
+		}
 
 		// Tab width equals trigger width plus padding (1rem left and right)
 		res.css.tab.width = trgr.offset.width + (rem * 2) + "px";
 
-		// Move the tab upwards, equal to the trigger height plus padding
-		// minus 1px to account for border and visually overlapping box
-		res.css.tab.top = '-' + (trgr.offset.height + (rem * 2) - 1) + "px";
-
 		// Tab z-index is 1 less than trigger; above box, below trigger
 		res.css.tab.zIndex = trgr.e.css('z-index') - 1;
+
+		// `transform` to quickly position box, relative to top left corner
+		res.css.box.transform = 'translate3d(' + res.offset.box.left +'px, ' + res.offset.box.top + 'px, 0)'
 
 		// Apply that giant blob of CSS
 		popOut.css({
