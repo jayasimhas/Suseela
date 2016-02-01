@@ -20,7 +20,10 @@ function popOutController(triggerElm) {
 	// This is an object instead of a var because there might be more "global"
 	// state attributes to track in the future.
 	var state = {
-		activeElm: null
+		activeElm: null,
+		customized: {
+
+		}
 	};
 
 	// PUBLIC
@@ -63,6 +66,14 @@ function popOutController(triggerElm) {
 
 	};
 
+
+	// PUBLIC
+	// Stores pop-out customization details for reference when rendering
+	this.customize = function(obj) {
+		state.customized[obj.id] = obj;
+	};
+
+
 	// PRIVATE
 	// Update the visibility and position of the pop-out box and tab.
 	var updatePosition = function() {
@@ -72,6 +83,7 @@ function popOutController(triggerElm) {
 		};
 		// Get trigger height, width, offsetTop, offsetWidth
 		trgr.offset = trgr.e.offset();
+		trgr.hasStyles = state.customized[trgr.e.data('pop-out-id')];
 
 		// Determine which pop-out template to use
 		// TODO: Make this user-configurable
@@ -101,6 +113,11 @@ function popOutController(triggerElm) {
 
 		// Check if browser is less than or equal to `small` CSS breakpoint
 		var isNarrow = $(window).width() <= 480;
+		var isTablet = $(window).width() <= 800;
+
+		// Set separate vertical/horizontal padding on mobile vs. desktop
+		var vPad = isNarrow ? 10 : rem;
+		var hPad = isNarrow ? 14 : rem;
 
 		// Store output values after calculations, etc.
 		var res = {
@@ -116,16 +133,16 @@ function popOutController(triggerElm) {
 
 		// Box offset top is offsetTop of trigger, plus trigger height,
 		// plus padding, minus 1px for border positioning
-		res.offset.box.top = Math.floor(trgr.offset.top + trgr.offset.height + (rem - 1));
+		res.offset.box.top = Math.floor(trgr.offset.top + trgr.offset.height + (vPad - 1));
 
 		// Check for pop-out alignment
-		if(trgr.e.data('pop-out-align') === 'right') {
+		if(trgr.e.data('pop-out-align') === 'right' && !isNarrow) {
 			// Pop-out box is flush right with trigger element
 			// To flush right, first add trigger offset plus trigger width
 			// This positions left edge of pop-out with right edge of trigger
 			// Then subtract pop-out width and padding to align both right edges
 			// (Flush-left automatically if narrow window)
-			res.offset.box.left = isNarrow ? 0 : Math.floor(trgr.offset.left + trgr.offset.width - popOut.offset().width + (rem - 1));
+			res.offset.box.left = isNarrow ? 0 : Math.floor(trgr.offset.left + trgr.offset.width - popOut.offset().width + (hPad - 1));
 			// Tab left margin can be ignored, right margin 0 does what we need
 			res.offset.tab.left = 'auto';
 		} else {
@@ -137,7 +154,7 @@ function popOutController(triggerElm) {
 			res.offset.box.left = isNarrow ? 0 : Math.floor(trgr.offset.left - ((popOut.offset().width - trgr.offset.width) / 2));
 			// Pop-out tab is aligned with trigger left edge, adjusted for padding
 			// Tab width is set to trigger width below, so this centers the tab
-			res.offset.tab.left = isNarrow ? Math.floor(trgr.offset.left - rem) : 0;
+			res.offset.tab.left = isNarrow ? Math.floor(trgr.offset.left - hPad) : 0;
 		}
 
 		// Blow up z-index to appear above other triggers
@@ -148,20 +165,61 @@ function popOutController(triggerElm) {
 		res.css.box.zIndex = trgr.e.css('z-index') - 2;
 
 		// Tab height equals trigger height plus padding (1rem top and bottom)
-		if(trgr.e.data('pop-out-tab-height')) {
-			res.css.tab.height = trgr.e.data('pop-out-tab-height');
-			res.offset.box.top += trgr.e.data('pop-out-tab-height') - trgr.offset.height - (rem * 2);
-			res.css.tab.top = '-' + (trgr.e.data('pop-out-tab-height') - 1) + 'px';
+
+		// Check for custom tab styles
+		var tS = trgr.hasStyles ? trgr.hasStyles.tabStyles : undefined;
+
+		// If there are custom styles, and browser is desktop-width...
+		if(tS && !isNarrow && !isTablet) {
+
+			res.css.tab.height = tS.deskHeight || trgr.offset.height + (vPad * 2) + "px";
+
+			tS.deskHeight
+				? res.offset.box.top += tS.deskHeight - trgr.offset.height - (vPad * 2)
+				: null;
+
+			res.css.tab.top = tS.deskHeight
+				? '-' + (tS.deskHeight - 1) + 'px'
+				: '-' + (trgr.offset.height + (vPad * 2) - 1) + 'px';
+
+		// If there are custom styles, and browser is tablet-width...
+		} else if(tS && !isNarrow && isTablet) {
+
+			res.css.tab.height = tS.tabletHeight || trgr.offset.height + (vPad * 2) + "px";
+
+			tS.tabletHeight
+				? res.offset.box.top += tS.tabletHeight - trgr.offset.height - (vPad * 2)
+				: null;
+
+			res.css.tab.top = tS.tabletHeight
+				? '-' + (tS.tabletHeight - 1) + 'px'
+				: '-' + (trgr.offset.height + (vPad * 2) - 1) + 'px';
+
+		// If there are custom styles, and browser is phone-width...
+		} else if(tS && isNarrow) {
+
+			res.css.tab.height = tS.phoneHeight || trgr.offset.height + (vPad * 2) + "px";
+
+			tS.phoneHeight
+				? res.offset.box.top += tS.phoneHeight - trgr.offset.height - (vPad * 2)
+				: null;
+
+			res.css.tab.top = tS.phoneHeight
+				? '-' + (tS.phoneHeight - 1) + 'px'
+				: '-' + (trgr.offset.height + (vPad * 2) - 1) + 'px';
+
+		// Default padding/positioning
 		} else {
-			res.css.tab.height = trgr.offset.height + (rem * 2) + "px";
+
+			res.css.tab.height = trgr.offset.height + (vPad * 2) + "px";
 
 			// Move the tab upwards, equal to the trigger height plus padding
 			// minus 1px to account for border and visually overlapping box
-			res.css.tab.top = '-' + (trgr.offset.height + (rem * 2) - 1) + "px";
+			res.css.tab.top = '-' + (trgr.offset.height + (vPad * 2) - 1) + "px";
 		}
 
 		// Tab width equals trigger width plus padding (1rem left and right)
-		res.css.tab.width = trgr.offset.width + (rem * 2) + "px";
+		res.css.tab.width = trgr.offset.width + (hPad * 2) + "px";
 
 		// Tab z-index is 1 less than trigger; above box, below trigger
 		res.css.tab.zIndex = trgr.e.css('z-index') - 1;

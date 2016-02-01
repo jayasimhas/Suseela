@@ -114,8 +114,8 @@ $main-menu-smartphone-width: 62px;
 		@include breakpoint('small') {
 			border-top: 1px solid #ccc;
 			font-size: 13px;
-			margin: 12px 12px 0 74px;
-			padding: 10px 0 0;
+			margin: 1.0625rem 0.75rem 0 74px;
+			padding: .5625rem 0 0;
 			width: calc(100% - 88px);
 		}
 	}
@@ -126,6 +126,10 @@ $main-menu-smartphone-width: 62px;
 	&__sign-out, {
 		float: left;
 		margin: 0 2.0625rem 0 0;
+
+		@include breakpoint('small') {
+			margin-right: 1.75rem;
+		}
 	}
 
 	// Don't show the friendly welcome at smartphone widths
@@ -154,8 +158,9 @@ $main-menu-smartphone-width: 62px;
 			background-color: #d1d3d4;
 
 			@include breakpoint('small') {
-				height: 14px;
+				height: 0.875rem;
 				margin-top: 2px;
+				margin-left: -0.9375rem;
 			}
 		}
 	}

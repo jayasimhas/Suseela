@@ -70,6 +70,24 @@ $(document).ready(function() {
 
 	var poc = new PopOutController('.js-pop-out-trigger');
 
+	poc.customize({
+		id: 'header-register',
+		tabStyles: {
+			deskHeight: 87,
+			tabletHeight: 72,
+			phoneHeight: '' // Default
+		}
+	});
+
+	poc.customize({
+		id: 'header-signin',
+		tabStyles: {
+			deskHeight: 87,
+			tabletHeight: 72,
+			phoneHeight: '' // Default
+		}
+	});
+
     svg4everybody();
 
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};

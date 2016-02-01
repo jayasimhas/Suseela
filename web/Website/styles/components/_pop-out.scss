@@ -4,10 +4,15 @@
     top: 0;
     left: 0;
 
+    @include breakpoint('small') {
+        width: 100%;
+    }
+
     .pop-out__internal {
         left: 0;
         top: 0;
         padding: 2.175rem 1.625rem;
+        width: 100%;
     }
 
     &.is-active {
@@ -22,7 +27,6 @@
         border: 1px solid #d1d3d4;
         border-bottom: 0;
         display: block;
-        padding: 20px;
         position: absolute;
 
         @include breakpoint('small') {
@@ -34,7 +38,6 @@
         position: relative;
         cursor: pointer;
         display: block;
-        height: 1rem;
         z-index: 933;
     }
 
