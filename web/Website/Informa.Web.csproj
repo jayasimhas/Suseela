@@ -609,6 +609,7 @@
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
+    <Compile Include="ViewModels\TopicContainerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Account\Views\Account\ConfirmEmail.cshtml" />
@@ -843,6 +844,7 @@
     <Content Include="Views\Shared\Components\FiftyFiftyComponent.cshtml" />
     <Content Include="Views\Article\LatestNews.cshtml" />
     <Content Include="Views\Article\TopicContainer.cshtml" />
+    <Content Include="Views\Article\FeaturedArticleFull.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
