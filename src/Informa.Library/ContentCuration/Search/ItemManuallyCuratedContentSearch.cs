@@ -27,7 +27,7 @@ namespace Informa.Library.ContentCuration.Search
 				var results = query.GetResults();
 				var result = results.Hits.FirstOrDefault();
 
-				if (result == null)
+				if (result == null || result.Document.ManuallyCuratedContent == null)
 				{
 					return Enumerable.Empty<Guid>();
 				}
