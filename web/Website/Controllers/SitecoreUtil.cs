@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Security;
 using Informa.Web.Areas.Account.Models;   
 using Informa.Models.FactoryInterface;
+using Sitecore.Security.Authentication;
 
 namespace Informa.Web.Controllers
 {
@@ -38,6 +40,69 @@ namespace Informa.Web.Controllers
 
 			string value;
 			return publicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
-		}		
+		}
+
+		public static WordPluginModel.UserStatusStruct GetUserStatus(string username, string password)
+		{
+			var userStatus = new WordPluginModel.UserStatusStruct { UserName = username };
+
+			MembershipUser user = Membership.GetUser(username);
+			if (user == null)
+			{
+				var domainAndUser = Sitecore.Context.Domain + "\\" + username;
+				user = Membership.GetUser(domainAndUser);
+				if (user == null)
+				{
+					userStatus.LoginSuccessful = false;
+					return userStatus;
+				}
+			}
+
+			userStatus.LoginAttemptsRemaining = 1;
+			//TODO
+			//userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
+			userStatus.LockedOut = user.IsLockedOut;
+			bool wasUserLockedOut = user.IsLockedOut;
+
+			try
+			{
+				userStatus.LoginSuccessful = AuthenticationManager.Login(username, password);
+			}
+			catch (Exception e)
+			{ //regardless of exception, if the above code fails, the user is not authenticated
+				userStatus.LoginSuccessful = false;
+			}
+
+			user = Membership.GetUser(user.UserName);
+			if (user != null)
+			{
+				// TODO - if the user became locked out because of this attempt, send an email to the admins.
+				if (user.IsLockedOut && !wasUserLockedOut)
+				{
+					//_lockedOutUserEmailer.UserBecameLockedOut(user);
+				}
+			}
+
+			userStatus.LoginAttemptsRemaining = 1;
+			//TODO
+			//userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
+			userStatus.LockedOut = user.IsLockedOut;
+
+			return userStatus;
+		}
+
+		//TODO _ add a check to get the attempts left
+		/*
+		public static int AttemptedPasswordAttemptsRemaining(MembershipUser user)
+		{
+			var membershipProvider = (CustomSqlMembershipProvider)Membership.Providers["sql"];
+			if (membershipProvider == null)
+			{
+				return 0;
+			}
+
+			return membershipProvider.GetRemainingPasswordAttempts((Guid)user.ProviderUserKey);
+		}
+		*/
 	}
 }

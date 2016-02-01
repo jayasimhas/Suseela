@@ -278,6 +278,17 @@ namespace SitecoreTreeWalker
 			}
 		}
 
+		public static UserStatusStruct AuthenticateUser(string username,string password)
+		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}AuthenticateUser", new WordPluginModel.LoginModel() {Username= username,Password = password}).Result;
+				var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
+				return userStatus;
+			}
+		}
+
+
 		public SitecoreArticle()
 			: this(new SCServer(), new SCTree(), new WordUtils())
 		{ }
