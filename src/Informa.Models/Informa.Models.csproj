@@ -102,9 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
