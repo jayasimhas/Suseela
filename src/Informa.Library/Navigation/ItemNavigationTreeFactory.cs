@@ -26,13 +26,13 @@ namespace Informa.Library.Navigation
 
 				if (navigationLinkItem is INavigation_Header)
 				{
-					var headerChildItems = GetChildLinkItems(navigationLinkItem).Where(cli => cli.Link != null);
+					var headerChildItems = GetChildLinkItems(navigationLinkItem).Where(cli => cli.Navigation_Link != null);
 
 					navigationChild.Children = headerChildItems.Select(hci => CreateNavigation(hci)).ToList();
 
 					navigation.Add(navigationChild);
 				}
-				else if (navigationLinkItem.Link != null)
+				else if (navigationLinkItem.Navigation_Link != null)
 				{
 					looseNavigation.Add(navigationChild);
 				}
@@ -53,8 +53,8 @@ namespace Informa.Library.Navigation
 		{
 			return new Navigation
 			{
-				Link = navigationLinkItem.Link,
-				Text = string.IsNullOrWhiteSpace(navigationLinkItem.Text) ? (navigationLinkItem.Link == null ? navigationLinkItem._Name : navigationLinkItem.Link.Text) : navigationLinkItem.Text
+				Link = navigationLinkItem.Navigation_Link,
+				Text = string.IsNullOrWhiteSpace(navigationLinkItem.Navigation_Text) ? (navigationLinkItem.Navigation_Link == null ? navigationLinkItem._Name : navigationLinkItem.Navigation_Link.Text) : navigationLinkItem.Navigation_Text
 			};
 		}
 

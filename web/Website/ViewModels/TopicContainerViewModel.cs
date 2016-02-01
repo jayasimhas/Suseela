@@ -1,26 +1,25 @@
-﻿using Informa.Models.FactoryInterface;
+﻿using Informa.Library.Globalization;
+using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Jabberwocky.Glass.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Informa.Web.ViewModels
 {
-	public class TopicContainerViewModel : GlassViewModel<IGlassBase>
+	public class TopicContainerViewModel : GlassViewModel<ITopic>
 	{
-		public TopicContainerViewModel(
-			)
-		{
+		protected readonly ITextTranslator TextTranslator;
 
+		public TopicContainerViewModel(
+			ITextTranslator textTranslator)
+		{
+			TextTranslator = textTranslator;
 		}
 
-		public string Title => TestData.TestData.GetRandomTopic().LinkableText;
+		public string Title => GlassModel?.Title;
 		public ILinkable Link => new LinkableModel
 		{
-			LinkableText = "Explore this Topic",
-			LinkableUrl = "#"
+			LinkableText = TextTranslator.Translate("Topic.Explore"),
+			LinkableUrl = GlassModel?.Navigation_Link?.Url
 		};
 	}
 }

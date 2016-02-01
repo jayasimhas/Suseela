@@ -2,9 +2,9 @@
 version: 1
 id: {944FDC25-89F4-4127-8808-F136DDA47AB3}
 database: master
-path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Link/Navigation/Link
+path: /sitecore/templates/User Defined/Objects/Navigation/Navigation Link/Navigation/Navigation Link
 parent: {0DB45AA8-6405-467B-8A19-375C6C59C934}
-name: Link
+name: Navigation Link
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 5d8a316f-34ee-44e2-97a2-9c9f89fdb348
+revision: b9ee0056-f8db-45ef-b60f-9e0f496b8fbf
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5d8a316f-34ee-44e2-97a2-9c9f89fdb348
+b9ee0056-f8db-45ef-b60f-9e0f496b8fbf
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160115T114542Z
+20160201T132250Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
