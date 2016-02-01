@@ -662,7 +662,6 @@
     <Content Include="layouts\system\VisitorIdentification.js" />
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
-    <Content Include="local.js" />
     <Content Include="App_Config\Commands.config" />
     <Content Include="App_Config\ConnectionStrings.config" />
     <Content Include="App_Config\ConnectionStrings.config.template" />
@@ -843,6 +842,7 @@
     <Content Include="Views\Article\ArticlePrologueShare.cshtml" />
     <Content Include="Views\Shared\Components\FiftyFiftyComponent.cshtml" />
     <Content Include="Views\Article\LatestNews.cshtml" />
+    <Content Include="Views\Article\TopicContainer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
