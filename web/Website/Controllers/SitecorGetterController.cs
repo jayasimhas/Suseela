@@ -190,7 +190,7 @@ namespace Informa.Web.Controllers
 		public JsonResult<List<WordPluginModel.StaffStruct>> Get()
 		{
 			var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid("{5C4D8806-C74E-465E-AB61-FC50F168BCBC}"));
-			var members = staffFolder?._ChildrenWithInferType.OfType<IStaff_Item>().Where(c => !c.Inactive)
+			var members = staffFolder?._ChildrenWithInferType.OfType<IAuthor>().Where(c => !c.Inactive)
 				.Select(eachChild => new WordPluginModel.StaffStruct() { Name = eachChild.Last_Name + ", " + eachChild.First_Name, ID = eachChild._Id }).ToList();
 			return Json(members);
 		}
