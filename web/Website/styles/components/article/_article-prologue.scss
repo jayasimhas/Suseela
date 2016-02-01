@@ -71,6 +71,12 @@
         }
     }
 
+    @include breakpoint('medium') {
+        &__share-label {
+            display: none;
+        }
+    }
+
     @include breakpoint('small') {
         flex-flow: column;
 
@@ -80,9 +86,5 @@
         &__share-item {
             margin: 0 0.5rem;
         }
-        &__share-label {
-            display: none;
-        }
-
     }
 }
