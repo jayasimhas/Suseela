@@ -1,0 +1,20 @@
+.pop-out__register {
+    overflow: auto;
+
+    &-header {
+        margin-top: -5px; // Boo magic number. Center with dismiss X
+        margin-bottom: 1.5rem;
+    }
+
+    &-input {
+        @extend .inf-standard-form-field;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    &-submit {
+        @extend .button--filled;
+        clear: both;
+        float: right;
+    }
+}

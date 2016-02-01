@@ -53,7 +53,7 @@
 /// @link http://sass-guidelin.es/#breakpoint-manager Sass Guidelines - Breakpoint Manager
 @mixin breakpoint($breakpoint) {
   $query: map-get($breakpoints, $breakpoint);
-  
+
   @if not $query {
     @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
   }
@@ -61,4 +61,16 @@
   @media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
     @content;
   }
+}
+
+/// SVG fill
+/// @param {String} $hex - Hex color for filling SVG
+/// `use>svg` allows for accurate targeting in Firefox
+/// http://stackoverflow.com/questions/27866893/svg-fill-not-being-applied-in-firefox
+/// (Based on a bug that's 10+ years old, jeez.)
+@mixin svg-fill($hex) {
+    fill: $hex;
+    & use>svg {
+        fill: $hex;
+    }
 }

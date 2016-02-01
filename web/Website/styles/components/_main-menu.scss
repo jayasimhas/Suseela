@@ -51,10 +51,10 @@ $main-menu-handle-width: 70px;
 		width: 100%;
 	}
 	&__arrow-icon {
+		@include svg-fill($informa-dark-gray);
 		position: absolute;
 		right: 1rem;
 		top: 0.5rem;
-		fill: $informa-dark-gray;
 		transition: transform 250ms ease-out;
 	}
 

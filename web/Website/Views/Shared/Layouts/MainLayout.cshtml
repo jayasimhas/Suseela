@@ -58,16 +58,18 @@
         <div class="pop-out js-pop-out__sign-in">
             <div class="pop-out__tab"></div>
             <div class="pop-out__internal">
-                <div class="dismiss-button">
-                    <svg class="dismiss-button__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                    </svg>
-                </div>
+                <form class="pop-out__sign-in">
+                    <div class="dismiss-button">
+                        <svg class="dismiss-button__icon">
+                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                        </svg>
+                    </div>
 
-                <h4 class="pop-out__header">
-                    You must sign in to use this functionality
-                </h4>
-                @* { Html.RenderPartial("_SignInForm", Model.SignInViewModel); } *@
+                    <h4 class="pop-out__header">
+                        You must sign in to use this functionality
+                    </h4>
+                    @* { Html.RenderPartial("_SignInForm", Model.SignInViewModel); } *@
+                </form>
             </div>
         </div>
 
@@ -76,19 +78,23 @@
             <div class="pop-out__tab"></div>
             <div class="pop-out__internal">
 
-                <div class="dismiss-button">
-                    <svg class="dismiss-button__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                    </svg>
-                </div>
+                <form class="pop-out__register">
 
-                <h2>Register</h2>
-                <input class="text-field header__hover-input js-register-username"
-                       type="text"
-                       placeholder="Username">
-                <p class="js-register-invalid" style="display: none;">Invalid Text</p>
-                <button class="button--filled js-register-submit" data-register-redirect="">Sign Up</button>
+                    <div class="dismiss-button">
+                        <svg class="dismiss-button__icon">
+                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                        </svg>
+                    </div>
 
+                    <h3 class="pop-out__register-header">Register</h3>
+                    <input class="pop-out__register-input header__hover-input js-register-username"
+                           type="text"
+                           placeholder="Email Address (User Name)">
+                    <p class="js-register-invalid" style="display: none;">Invalid Text</p>
+                    <button class="pop-out__register-submit js-register-submit" data-register-redirect="">
+                        Register
+                    </button>
+                </form>
             </div>
         </div>
 

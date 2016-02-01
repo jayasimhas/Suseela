@@ -210,10 +210,10 @@
         }
 
         &__expand-table {
+            @include svg-fill($informa-mid-gray);
             float: right;
             height: 20px;
             width: 20px;
-            fill: $informa-mid-gray;
         }
 
     }

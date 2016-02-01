@@ -17,7 +17,7 @@ html {
  */
 *, *::before, *::after {
   box-sizing: inherit;
-} 
+}
 
 /**
  * Basic styles for links
@@ -41,7 +41,7 @@ ul, li, ol {
 
 // Normalize SVG icons
 svg {
-  fill: black;
+  @include svg-fill(black);
   height: 16px;
   width: 16px;
 }

@@ -134,12 +134,9 @@ footer li {
 .footer__section--social {
 	width: 25%;
 }
-// `use>svg` allows for accurate targeting in Firefox
-// http://stackoverflow.com/questions/27866893/svg-fill-not-being-applied-in-firefox
-// (Based on a bug that's 10+ years old, jeez.)
-.footer__share-icons,
-.footer__share-icons use>svg {
-	fill: #939598;
+
+.footer__share-icons {
+	@include svg-fill($informa-mid-gray);
 	margin-right: 20px;
     height: 24px;
     width: 24px;
