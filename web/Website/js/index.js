@@ -65,7 +65,6 @@ $('.header__hover--register .js-register-submit').on('click', function validateU
 	});
 });
 
-
 $(document).ready(function() {
 
 	var poc = new PopOutController('.js-pop-out-trigger');
@@ -82,5 +81,17 @@ $(document).ready(function() {
 	// For each article table, clone and append "view full table" markup
 	$('.article-body-content table').forEach(function(e) {
 		$(e).after($('.js-mobile-table-template .article-table').clone());
+	});
+
+	// Topic links
+	var topicContainers = $('.topic-subtopic');
+
+	$('.sub-topic-links').forEach(function(e) {
+		topicContainers.forEach(function(tc) {
+			var id = tc.id;
+			var text = $(tc).data('topic-link-text');
+
+			$(e).find('.bar-separated-link-list').append('<a href="#' + id + '">' + text + '</a>');
+		});
 	});
 });

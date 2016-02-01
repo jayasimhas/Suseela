@@ -618,6 +618,7 @@
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
+    <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Account\Views\Account\ConfirmEmail.cshtml" />
