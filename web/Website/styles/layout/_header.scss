@@ -60,7 +60,7 @@ $main-menu-smartphone-width: 62px;
 	// General styling for header icons
 	// -------------------------------------------------------------------------
 	&__icons {
-		fill: #808285;
+		@include svg-fill($informa-mid-gray);
 		height: 1.375rem;
 		width: 1.375rem;
 		vertical-align: middle;

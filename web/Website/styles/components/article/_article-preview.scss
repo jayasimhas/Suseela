@@ -29,11 +29,11 @@
     }
 
     &__icon {
+        @include svg-fill($informa-mid-gray);
         height: 24px;
         width: 24px;
         display: inline-block;
         vertical-align: bottom;
-        fill: $informa-mid-gray;
     }
 
     &__bookmarker {

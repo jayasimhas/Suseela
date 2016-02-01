@@ -24,7 +24,7 @@
         }
     }
     &__share-icon {
-        fill: $informa-mid-gray;
+        @include svg-fill($informa-mid-gray);
         height: 22px;
         vertical-align: middle;
         width: 22px;
@@ -43,6 +43,16 @@
 
         &--bookmark {
             margin-top: -1px;
+        }
+
+        &--linkedin {
+            margin-top: -4px;
+        }
+
+        &--twitter {
+            margin-top: -3px;
+            width: 23px;
+            height: 23px;
         }
     }
     &__share-label {
