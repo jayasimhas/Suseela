@@ -4,7 +4,7 @@
 	<span class="article-prologue__share-label">
 		@( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
 	</span>
-	<svg class="article-prologue__share-icon">
+	<svg class="article-prologue__share-icon article-prologue__share-icon--bookmark">
 		<use xlink:href="/dist/img/svg-sprite.svg#@( Model.IsArticleBookmarked ? "bookmarked" : "bookmark" )"></use>
 	</svg>
 	@* if (!Model.IsUserAuthenticated)
