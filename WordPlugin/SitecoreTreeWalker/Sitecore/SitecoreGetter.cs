@@ -17,7 +17,7 @@ namespace SitecoreTreeWalker.Sitecore
 		private static List<WordPluginModel.StaffStruct> _authors;
 		private static WordPluginModel.ArticleStruct _articleDetails = new WordPluginModel.ArticleStruct();
 		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
-		private static string webApiURL = "http://informa8.ashah.velir.com/api/";
+		private static string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/";
 
 		public static List<WordPluginModel.TaxonomyStruct> SearchTaxonomy(string term)
 		{

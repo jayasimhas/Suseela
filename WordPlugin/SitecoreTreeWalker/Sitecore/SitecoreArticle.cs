@@ -23,7 +23,7 @@ namespace SitecoreTreeWalker
 	public class SitecoreArticle
 	{
 		//TODO - Add env variable
-		private static string webApiURL = "http://informa8.ashah.velir.com/api/";
+		private static string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/";
 
 		public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
 		{
