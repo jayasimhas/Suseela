@@ -1,5 +1,4 @@
 ﻿using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Web;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 

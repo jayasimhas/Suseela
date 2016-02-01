@@ -1,7 +1,6 @@
 ﻿using Jabberwocky.Glass.Models;
 using Glass.Mapper.Sc;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Glass.Mapper.Sc.Web;
 
 namespace Informa.Library.Presentation
 {

@@ -242,6 +242,7 @@
     <Compile Include="Presentation\IDuplicateRenderingsFactoryConfiguration.cs" />
     <Compile Include="Presentation\IItemRendering.cs" />
     <Compile Include="Presentation\IRendering.cs" />
+    <Compile Include="Presentation\IRenderingContext.cs" />
     <Compile Include="Presentation\IRenderingParametersContext.cs" />
     <Compile Include="Presentation\IRenderingParametersContext`1.cs" />
     <Compile Include="Presentation\ItemRendering.cs" />

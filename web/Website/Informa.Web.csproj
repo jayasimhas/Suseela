@@ -854,6 +854,7 @@
     <Content Include="Views\Article\LatestNews.cshtml" />
     <Content Include="Views\Article\TopicContainer.cshtml" />
     <Content Include="Views\Article\FeaturedArticleFull.cshtml" />
+    <Content Include="Views\Article\TopicJumpTo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
