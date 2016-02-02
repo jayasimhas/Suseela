@@ -13,7 +13,8 @@
     max-width: 290px;
 
     @include breakpoint('medium') {
-        width: 100%;
+        max-width: 100%;
+        float: none;
     }
     h2 {
         color: $informa-black;
@@ -135,6 +136,10 @@
     }
 }
 
+.hidden-mobile-table-template {
+    display: none;
+}
+
 .article-table,
 .article-body-content table {
     width: 100%;
@@ -178,7 +183,10 @@
     }
 
     @include breakpoint('medium') {
-        display: none;
+
+        &:not(.article-table--mobile-link) {
+            display: none;
+        }
 
         &--mobile-link {
             display: table;
@@ -202,10 +210,10 @@
         }
 
         &__expand-table {
+            @include svg-fill($informa-mid-gray);
             float: right;
             height: 20px;
             width: 20px;
-            fill: $informa-mid-gray;
         }
 
     }

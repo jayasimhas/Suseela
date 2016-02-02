@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velir.Search.Core", "src\Velir.Search.Core\Velir.Search.Core.csproj", "{4E15A897-7049-4B1E-B653-52FD324AAD13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velir.Search.Models", "src\Velir.Search.Models\Velir.Search.Models.csproj", "{4CA7AA87-9A83-4120-9D6D-586E0C837338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velir.Search.Web", "src\Velir.Search.Web\Velir.Search.Web.csproj", "{B85D2208-CFF0-4B08-997F-215AB88C3292}"
+EndProject
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Velir.Search.tds.master", "sitecore\Velir.Search.tds.master\Velir.Search.tds.master.scproj", "{38DD7038-8337-4576-AC3C-520E19E0B83A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velir.Search.Mvc", "src\Velir.Search.Mvc\Velir.Search.Mvc.csproj", "{390955E0-21C2-490B-A616-80D575008F6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velir.Search.WebApi", "src\Velir.Search.WebApi\Velir.Search.WebApi.csproj", "{F059BB3D-9987-45E6-AC9B-314F6954FC63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velir.Search.OData", "src\Velir.Search.OData\Velir.Search.OData.csproj", "{291C938F-B629-4686-9CDE-3661BC569661}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E15A897-7049-4B1E-B653-52FD324AAD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E15A897-7049-4B1E-B653-52FD324AAD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E15A897-7049-4B1E-B653-52FD324AAD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E15A897-7049-4B1E-B653-52FD324AAD13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA7AA87-9A83-4120-9D6D-586E0C837338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA7AA87-9A83-4120-9D6D-586E0C837338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA7AA87-9A83-4120-9D6D-586E0C837338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA7AA87-9A83-4120-9D6D-586E0C837338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B85D2208-CFF0-4B08-997F-215AB88C3292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B85D2208-CFF0-4B08-997F-215AB88C3292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B85D2208-CFF0-4B08-997F-215AB88C3292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B85D2208-CFF0-4B08-997F-215AB88C3292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38DD7038-8337-4576-AC3C-520E19E0B83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DD7038-8337-4576-AC3C-520E19E0B83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38DD7038-8337-4576-AC3C-520E19E0B83A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{38DD7038-8337-4576-AC3C-520E19E0B83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DD7038-8337-4576-AC3C-520E19E0B83A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38DD7038-8337-4576-AC3C-520E19E0B83A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{390955E0-21C2-490B-A616-80D575008F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390955E0-21C2-490B-A616-80D575008F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390955E0-21C2-490B-A616-80D575008F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390955E0-21C2-490B-A616-80D575008F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F059BB3D-9987-45E6-AC9B-314F6954FC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F059BB3D-9987-45E6-AC9B-314F6954FC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F059BB3D-9987-45E6-AC9B-314F6954FC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F059BB3D-9987-45E6-AC9B-314F6954FC63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{291C938F-B629-4686-9CDE-3661BC569661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291C938F-B629-4686-9CDE-3661BC569661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291C938F-B629-4686-9CDE-3661BC569661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291C938F-B629-4686-9CDE-3661BC569661}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

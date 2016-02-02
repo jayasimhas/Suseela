@@ -88,19 +88,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoreGlassModels.cs" />
-    <Compile Include="FactoryInterfaceModels.cs" />
+    <Compile Include="AncestorDataMapper.cs" />
+    <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
+    <Compile Include="GlassModels\ITaxonomyHierarchy.cs" />
+    <Compile Include="GlassModels\IAuthor.cs" />
     <Compile Include="GlassModels\IArticle.cs" />
+    <Compile Include="GlassModels\I___BaseTaxonomy.cs" />
+    <Compile Include="GlassModels\TaxonomyMap.cs" />
     <Compile Include="I___BaseItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScripConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

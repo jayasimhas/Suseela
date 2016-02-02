@@ -1,11 +1,14 @@
-﻿@using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface
-@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticle
+﻿@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+@model Informa.Web.ViewModels.GlassArticleModel
 
-<div class="article-related-content">
-    <h2>Related Content</h2>
+@if (Model.RelatedArticles.Any())
+{
+    <div class="article-related-content">
+        <h2>Related Content</h2>
 
-    @foreach (var article in Model.Related_Articles.OfType<IListable>())
-    {
-        Html.RenderPartial("Components/ListItemSimple", article);
-    }
-</div>
+        @foreach (var article in Model.RelatedArticles)
+        {
+            Html.RenderPartial("Components/ListItemSimple", article);
+        }
+    </div>
+}

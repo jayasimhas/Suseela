@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.SitecoreServer;
 using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 

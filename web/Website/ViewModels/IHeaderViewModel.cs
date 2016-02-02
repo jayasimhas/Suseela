@@ -1,6 +1,4 @@
-﻿using System.Web;
-
-namespace Informa.Web.ViewModels
+﻿namespace Informa.Web.ViewModels
 {
 	public interface IHeaderViewModel
 	{
@@ -12,24 +10,7 @@ namespace Informa.Web.ViewModels
 		bool IsAuthenticated { get; }
 		string MyAccountLinkText { get; }
 		string SignOutLinkText { get; }
-		string RegisterText { get; }
 		string RegisterLinkText { get; }
-		string RegisterButtonText { get; }
-		string RegisterUrl { get; }
-		string UsernamePlaceholderText { get; }
-		string UsernameInvalidText { get; }
-		string SignInText { get; }
 		string SignInLinkText { get; }
-		string SignInButtonText { get; }
-		string SignInInvalidText { get; }
-		string PasswordPlaceholderText { get; }
-		string RememberMeText { get; }
-		string ForgotPasswordText { get; }
-		string ForgotPasswordLinkText { get; }
-		string ForgotPasswordHelpText { get; }
-		string ForgotPasswordButtonText { get; }
-		string ForgotPasswordConfirmationText { get; }
-		IHtmlString ForgotPasswordContactText { get; }
-		string EmailPlaceholderText { get; }
 	}
 }

@@ -1,7 +1,21 @@
 .article-preview {
     padding-bottom: 48px;
     position: relative;
-    width: 787px;
+    width: 100%;
+
+    &__two-column {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% + 2rem);
+        flex-wrap: wrap;
+        margin: 0 -1rem;
+
+        .article-preview {
+            width: 300px;
+            flex: 1 0 auto;
+            margin: 0 1rem;
+        }
+    }
 
     &__image {
         width: 100%;
@@ -15,24 +29,24 @@
     }
 
     &__icon {
+        @include svg-fill($informa-mid-gray);
         height: 24px;
         width: 24px;
         display: inline-block;
         vertical-align: bottom;
-        fill: $informa-mid-gray;
     }
 
     &__bookmarker {
-        text-transform: uppercase;
         float: right;
         font-size: 11px;
         font-weight: 500;
         letter-spacing: 1px;
+        text-transform: uppercase;
     }
     &__bookmarker-label {
-        @include breakpoint('medium') {
+        // @include breakpoint('medium') {
             display: none;
-        }
+        // }
     }
 
     &__category {
@@ -49,6 +63,7 @@
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
+        display: block;
         line-height: 18px;
         color: $informa-dark-gray;
     }
@@ -59,7 +74,7 @@
         text-transform: uppercase;
         color: $informa-light-gray-d;
         margin: 12px auto 0;
-        width: 320px;
+        width: 100%;
 
         img {
             width: 100%;
@@ -68,9 +83,6 @@
     }
 
     &__tags {
-        position: absolute;
-        bottom: 24px;
-        left: 0;
 
         a:first-child {
             padding-left: 0;
@@ -83,9 +95,7 @@
         color: $informa-dark-gray;
     }
 
-    &--small {
-        width: 373px;
-    }
+
     &--small &__date,
     &--small &__category {
         font-size: 14px;
@@ -114,6 +124,133 @@
         content: "";
         display: block;
     }
+
+    // * * * * *
+    // Featured Article (2/3, manually curated container)
+    // IIPP-72
+
+    &--featured {
+        .article-preview__image {
+            width: 100%;
+            float: none;
+        }
+
+        @include breakpoint('medium') {
+            width: calc(60% - 1rem);
+        }
+    }
+
+
+    // * * * * *
+    // Featured Article — Full Width
+    // IIPP-69
+
+    $featured-article-wide-img-width: 384px;
+    $featured-article-wide-img-width--tablet: 294px;
+
+    &--wide {
+        background-color: $informa-light-gray-f;
+        border-top: 2px solid $informa-light-gray-d;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+        width: 100%;
+
+        .article-preview__image {
+            float: left;
+            margin-right: 24px;
+            width: 360px;
+
+            @include breakpoint('medium') {
+                width: 240px;
+            }
+        }
+
+        .article-preview__tags {
+            bottom: 0;
+            display: block;
+            position: relative;
+        }
+
+        .article-metadata {
+            width: calc(100% - 384px);
+            margin-bottom: 1rem;
+        }
+
+        .article-preview__content-wrapper {
+            margin-left: 384px;
+            position: relative;
+        }
+
+        .article-metadata,
+        .article-preview__headline,
+        .article-preview__tags,
+        p {
+            margin-left: $featured-article-wide-img-width;
+        }
+
+
+        @include breakpoint('medium') {
+            .article-metadata {
+                position: absolute;
+                width: calc(100% - 3rem);
+                margin-left: 0;
+            }
+
+            .article-preview__image {
+                width: 270px;
+            }
+
+            .article-preview__image,
+            .article-preview__headline, {
+                margin-top: 4rem;
+            }
+
+            .article-preview__headline,
+            .article-preview__tags,
+            p {
+                margin-left: $featured-article-wide-img-width--tablet;
+            }
+        }
+        @include breakpoint('small') {
+            padding: 1rem;
+
+            .article-preview__image {
+                margin-bottom: 1rem;
+            }
+
+            .article-metadata {
+                position: static;
+                width: 100%;
+            }
+
+            .article-preview__headline {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.75rem;
+            }
+
+            .article-preview__image,
+            .article-preview__headline {
+                width: 100%;
+                margin-top: 0;
+            }
+            .article-preview__headline,
+            .article-preview__tags,
+            p {
+                margin-left: 0;
+            }
+        }
+    }
+
+    // .latest-news previews need a wrapper for all content besides the image
+    // Image floats left, but other content needs to stay within right "col"
+    &__wrapper {
+        margin-left: 388px;
+    }
 }
 
 .manually-curated-articles {
@@ -122,14 +259,9 @@
     width: 100%;
     clear: both;
 
-    .article-preview {
-        margin: 0;
+    &__main-well {
         float: left;
-    }
-
-    &__left {
-        float: left;
-        width: 768px;
+        width: calc(66.666% - 1rem);
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -138,26 +270,22 @@
             border-top: 2px solid $informa-light-gray-d;
             padding-top: 6px;
         }
+
+        @include breakpoint('medium') {
+            width: 100%;
+        }
     }
     &__right,
     &__right--force-top {
         float: right;
-        width: 373px;
+        width: calc(33.333% - 1rem);
     }
 
     @include breakpoint('medium') {
-        &__left {
-            width: 100%;
 
-            .article-preview {
-                width: 450px;
-
-                &--small {
-                    width: 48%;
-                }
-            }
-        }
         &__right {
+            clear: both;
+            width: 50%;
             float: left;
         }
         &__right--force-top {
@@ -165,7 +293,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 270px;
+            width: calc(40% - 1rem);
 
             .article-preview--small {
                 width: 100%;
@@ -174,9 +302,15 @@
     }
 
     @include breakpoint('small') {
-        &__left .article-preview,
-        &__left .article-preview--small {
+        &__main-well .article-preview,
+        &__main-well .article-preview--small,
+        &__right--force-top,
+        &__right {
             width: 100%;
+        }
+
+        &__right--force-top {
+            position: relative;
         }
     }
 }

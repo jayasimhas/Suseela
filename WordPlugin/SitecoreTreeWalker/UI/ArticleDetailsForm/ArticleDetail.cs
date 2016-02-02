@@ -10,7 +10,6 @@ using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Custom_Exceptions;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 using SitecoreTreeWalker.document;
 using SitecoreTreeWalker.Sitecore;
@@ -19,7 +18,7 @@ using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 using SitecoreTreeWalker.WebserviceHelper;
 using Application = Microsoft.Office.Interop.Word.Application;
-using ArticleStruct = SitecoreTreeWalker.SitecoreTree.ArticleStruct;
+using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 {
@@ -302,8 +301,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
         }
 
         /// <summary>
-        /// Sets the member SitecoreServer.ArticleStruct ArticleDetails to the inputted
-        /// SitecoreTree.ArticleStruct articleStruct
+        /// Sets the member ArticleStruct ArticleDetails to the inputted
+        /// ArticleStruct articleStruct
         /// </summary>
         /// <param name="articleStruct"></param>
         public void SetArticleDetails(ArticleStruct articleStruct)
@@ -345,12 +344,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = articleDetailsPageSelector.GetArticleDetails(metadataParser);
                     ArticleDetails.ArticleGuid = copy;
-                    List<string> errors = _sitecoreArticle.SaveArticle
-                        (SitecoreAddin.ActiveDocument,
-                         ArticleDetails,
-                         articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),
-                         articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),
-                         GetArticleNumber(), body);
+					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new WordPluginModel.StaffStruct[0], GetArticleNumber(), body);
+					//TODO - Add workflow commands and Notification List
+					//List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body);
 
                     if (errors != null && errors.Any())
                     {
@@ -529,7 +525,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             string webPublishDate = articleDetails.WebPublicationDate.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
             Guid pubGuid = articleDetails.Publication;
-            Guid issueGuid = articleDetails.Issue;
 
             if (string.IsNullOrEmpty(title))
             {
@@ -546,7 +541,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             
             SuspendLayout();
 
-            SitecoreServer.ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
+			WordPluginModel.ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
 
             //articleDetailsPageSelector.UpdateArticleNumber(astruct.ArticleNumber);
             articleDetails.ArticleNumber = astruct.ArticleNumber;
@@ -590,11 +585,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             DocumentPropertyEditor.WritePublicationAndDate(
                 SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
-            ArticleDetails.HasBeenNominated = ArticleDetails.IsFeaturedArticle;
-
+			//TODO - Workflow UI Updates
+			/*
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                             ? SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleGuid)
                                             : SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleNumber));
+											*/
             articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
             UpdateFieldsAfterSave();
             articleDetailsPageSelector.ResetChangedStatus(true);
@@ -642,26 +638,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             int maxLengthLongSummary = SitecoreGetter.GetMaxLengthLongSummary();
             if (metadataParser.LongSummary.Length > maxLengthLongSummary)
             {
-                if (!AskExceededCharacterLimit("Long Summary", maxLengthLongSummary))
+                if (!AskExceededCharacterLimit("Summary", maxLengthLongSummary))
                 {
                     return true;
                 }
             }
 
-            int maxLengthShortSummary = SitecoreGetter.GetMaxLengthShortSummary();
-            if (metadataParser.ShortSummary.Length > maxLengthShortSummary)
-            {
-                if (!AskExceededCharacterLimit("Short Summary", maxLengthShortSummary))
-                {
-                    return true;
-                }
-                ArticleDetails.ShortSummary = metadataParser.ShortSummary.Remove(maxLengthShortSummary);
-            }
-            /*
-            if (PromptAddIndustryToNominate())
-            {
-                return true;
-            }*/
             return false;
         }
 
@@ -742,7 +724,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             }
         }
 
-        private DialogResult WantsToSetArticleDateToNow(WorkflowCommand command)
+        private DialogResult WantsToSetArticleDateToNow(WordPluginModel.WorkflowCommand command)
         {
             if (command != null && command.SendsToFinal)
             {
@@ -783,7 +765,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 Guid guidCopy = ArticleDetails.ArticleGuid;
                 ArticleDetails = articleDetailsPageSelector.GetArticleDetailsWithoutDocumentParsing();
                 ArticleDetails.ArticleGuid = guidCopy;
-                ArticleDetails.ArticleSpecificNotifications = articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray();
+                ArticleDetails.ArticleSpecificNotifications = articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToList();
 
                 ArticleDetails.WordCount = SitecoreAddin.ActiveDocument.ComputeStatistics(0);
                 ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
@@ -792,15 +774,17 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 {
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
                 }
+				//TODO - Update workflow UI
+				/*
                 articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                                 ? SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleGuid)
                                                 : SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleNumber));
+												*/
                 articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
                 articleDetailsPageSelector.UpdateFields();
                 articleDetailsPageSelector.ResetChangedStatus();
                 DocumentPropertyEditor.WritePublicationAndDate(
                     SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
-                ArticleDetails.HasBeenNominated = ArticleDetails.IsFeaturedArticle;
                 MessageBox.Show(@"Metadata saved!", @"Elsevier");
             }
             catch (WebException wex)

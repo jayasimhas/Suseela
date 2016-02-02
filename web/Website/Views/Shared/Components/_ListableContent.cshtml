@@ -1,10 +1,8 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Web.TestData
-@model Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface.IListable
+﻿@model Informa.Web.ViewModels.IListableViewModel
 
-@if (Model.ListableImages != null)
+@if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
-    <img class="article-preview__image" src="@Model.ListableImages.Src">
+    <img class="article-preview__image" src="@Model.ListableImage">
 }
 
 <div class="article-metadata">
@@ -16,50 +14,41 @@
     </div>
     <ul>
         <li>
-            <time class="article-metadata__date">@Model.ListableDates.GetValueOrDefault().ToString("dd MMM yyyy")</time>
+            <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
         </li>
         <li>
-            <h6>@TestData.GetRandomTopic().LinkableTexts</h6>
+            <h6>@string.Join(", ", Model.LinkableText)</h6>
         </li>
-        <li>
-            @* * *  ARTICLE MEDIA TYPE
-                    IIPP-116
-
-            * * * TEXT — Nothing. Remove this <li> entirely.
-
-            * * * VIDEO
-            <svg class="article-metadata__media-type">
-                <use xlink:href="/dist/img/svg-sprite.svg#video"></use>
-            </svg>
-
-            * * * AUDIO
-            <svg class="article-metadata__media-type">
-                <use xlink:href="/dist/img/svg-sprite.svg#audio"></use>
-            </svg>
-
-            * * * DATA *@
-            <svg class="article-metadata__media-type">
-                <use xlink:href="/dist/img/svg-sprite.svg#chart"></use>
-            </svg>
-
-            @* * *  END ARTICLE MEDIA TYPE *@
-        </li>
+        @if (!string.IsNullOrEmpty(Model.ListableType))
+        {
+            <li>
+                <svg class="article-metadata__media-type">
+                    <use xlink:href="/dist/img/svg-sprite.svg#@Model.ListableType"></use>
+                </svg>
+                @* * *  END ARTICLE MEDIA TYPE *@
+            </li>
+        }
     </ul>
 </div>
 
 <h1 class="article-preview__headline">
-    @Model.ListableTitles
+    <a href="@Model.LinkableUrl">@Model.ListableTitle</a>
 </h1>
 
 <span class="article-preview__byline">
-    by @string.Join(",", Model.ListableAuthors.Select(auth => auth.LinkableTexts))
+    by @string.Join(",", Model.ListableAuthors?.Select(x => x.LinkableText))
 </span>
 
-<p>@Model.ListableSummaries</p>
+<p>
+    @Html.Raw(Model.ListableSummary)
+</p>
 
 <div class="article-preview__tags bar-separated-link-list">
     @foreach (var tag in Model.ListableTopics)
     {
-        <a href="@tag.LinkableUrls">@tag.LinkableTexts</a>
+        if (tag.LinkableUrl != null)
+        {
+            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+        }
     }
 </div>

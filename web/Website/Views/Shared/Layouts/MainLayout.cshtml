@@ -32,10 +32,6 @@
     <div class="main__wrapper">
 
         @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
-                
-
-
-        @* * *  END SYSTEM MAINTENANCE MESSAGES *@
 
         @*
         <div class="general-header">
@@ -53,14 +49,17 @@
 
         <div class="main__content">
 
-            <div class="banner banner--highlights">
-                <b>Highlights:</b> ASCO is onlu 2 weeks away! <a href="#">See our round up of ASCO 2015 &gt;</a>
-            </div>
-
-
             @Html.Sitecore().Placeholder("main-content")
 
         </div>
+
+        @* * *  POP-OUT TEMPLATE MARKUP *@
+
+		@{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
+		@{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
+		@{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
+
+        @* * *  END POP-OUT TEMPLATE MARKUP *@
 
     </div>
 
@@ -70,12 +69,7 @@
 	@{ Html.RenderPartial("_Footer", Model.Footer);}
 </footer>
 
-<script src="/dist/js/concat.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    svg4everybody();
-});
-</script>
+<script src="/dist/js/index.js"></script>
 
 </body>
-</html>                       
+</html>

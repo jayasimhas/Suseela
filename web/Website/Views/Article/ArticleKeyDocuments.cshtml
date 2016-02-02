@@ -1,9 +1,34 @@
 ﻿@using Informa.Web.TestData
 
+@* * *  ARTICLE - KEY DOCUMENTS
+        IIPP-158 *@
+
 <div class="article-key-documents">
     <h2>Key Documents</h2>
     <ul>
-        <li><a href="#">Document Title Goes Here</a></li>
-        <li><a href="#">Document Title Goes Here</a></li>
+        <li class="article-key-document">
+            @*  Per the ticket, these 4 document types should have icons:
+                - Word docs (.doc, .docx)
+                - Excel docs (.xls, .xlsx)
+                - PDF docs (.pdf)
+                - Other
+                NOTE: "Icons will be sourced from /sitecore/environment
+                    globals/supporting document icons/ based on the "Extensions
+                    Supported" field on the Sitecore item"
+                This img `src` is a placeholder, please replace with images
+                sourced from Sitecore. *@
+            <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
+            <a href="#">Document Title Goes Here</a>
+        </li>
+        <li class="article-key-document">
+            <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
+            <a href="#">Document Title Goes Here</a>
+        </li>
+        <li class="article-key-document">
+            <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
+            <a href="#">Document Title Goes Here</a>
+        </li>
     </ul>
 </div>
+
+@* * *  END ARTICLE - KEY DOCUMENTS *@

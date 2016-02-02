@@ -240,33 +240,25 @@ namespace Informa.Web.Areas.Account.Models
 			public string Name { get; set; }
 			public Guid ID { get; set; }
 		}
-		public struct ArticleStruct
+		public class ArticleStruct
 		{
+			private Guid _publication;
 			public Guid ArticleGuid { get; set; }
 			public string Title { get; set; }
-			public Guid Volume { get; set; }
-			public Guid Issue { get; set; }
 			public DateTime PrintPublicationDate { get; set; }
 			public DateTime WebPublicationDate { get; set; }
 			public string ArticleNumber { get; set; }
 			public Guid ArticleCategory { get; set; }
 			public Guid WebCategory { get; set; }
-			public string NotesToEditorial { get; set; }
-			public string NotesToProduction { get; set; }
+			public string NotesToEditorial { get; set; }			
 			public string Subtitle { get; set; }
-			public string LongSummary { get; set; }
-			public string ShortSummary { get; set; }
-			public string Deck { get; set; }
+			public string Summary { get; set; }
 
-			[Obsolete]
-			public Guid ArticleSize { get; set; }
 			public int WordCount { get; set; }
 
 			//indicates if article should be in the homepage list of
 			//featured articles
 			public bool IsFeaturedArticle { get; set; }
-			public bool HasBeenNominated { get; set; }
-			public bool IsTopStory { get; set; }
 			public WorkflowState WorkflowState { get; set; }
 			public Guid CommandID { get; set; }
 			public List<TaxonomyStruct> Taxonomoy { get; set; }
@@ -284,7 +276,6 @@ namespace Informa.Web.Areas.Account.Models
 			public List<string> ReferencedDeals { get; set; }
 
 			public List<StaffStruct> Authors { get; set; }
-			public List<StaffStruct> Editors { get; set; }
 			public List<StaffStruct> ArticleSpecificNotifications { get; set; }
 			public List<StaffStruct> GlobalNotifications { get; set; }
 
@@ -292,13 +283,20 @@ namespace Informa.Web.Areas.Account.Models
 			public string WordDocLastUpdateDate { get; set; }
 			public string WordDocLastUpdatedBy { get; set; }
 
-			public Guid Publication { get; set; }
+			public Guid Publication
+			{
+				get
+				{
+					return _publication == Guid.Empty ? new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}") : _publication;
+				}
+				set { _publication = value; }
+			}
 
 			public Boolean Embargoed { get; set; }
 			public bool IsPublished { get; set; }
 		}
 
-		public struct ArticlePreviewInfo
+		public class ArticlePreviewInfo
 		{
 			public string Title { get; set; }
 			public List<string> Authors { get; set; }
@@ -309,7 +307,7 @@ namespace Informa.Web.Areas.Account.Models
 			public Guid Guid { get; set; }
 		}
 
-		public struct StaffStruct
+		public class StaffStruct
 		{
 			public string Name { get; set; }
 			public Guid[] Publications { get; set; }
@@ -325,98 +323,93 @@ namespace Informa.Web.Areas.Account.Models
 			public string Url { get; set; }
 		}
 
-		public struct WordStyleStruct
+		public class WordStyleStruct
 		{
 			public string WordStyle { get; set; }
 			public string CssElement { get; set; }
 			public string CssClass { get; set; }
 		}
-
-		public partial class CompanyWrapper
+		
+		public struct CheckoutStatus
 		{
+			public string User;
+			public bool Locked;
 
-			private int recordIDField;
-
-			private string recordNumberField;
-
-			private string titleField;
-
-			private CompanyWrapper[] relatedCompaniesField;
-
-			private System.Nullable<int> parentField;
-
-			/// <remarks/>
-			public int RecordID
-			{
-				get
-				{
-					return this.recordIDField;
-				}
-				set
-				{
-					this.recordIDField = value;
-				}
-			}
-
-			/// <remarks/>
-			public string RecordNumber
-			{
-				get
-				{
-					return this.recordNumberField;
-				}
-				set
-				{
-					this.recordNumberField = value;
-				}
-			}
-
-			/// <remarks/>
-			public string Title
-			{
-				get
-				{
-					return this.titleField;
-				}
-				set
-				{
-					this.titleField = value;
-				}
-			}
-
-			/// <remarks/>
-			public CompanyWrapper[] RelatedCompanies
-			{
-				get
-				{
-					return this.relatedCompaniesField;
-				}
-				set
-				{
-					this.relatedCompaniesField = value;
-				}
-			}
-
-			/// <remarks/>
-			[System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
-			public System.Nullable<int> Parent
-			{
-				get
-				{
-					return this.parentField;
-				}
-				set
-				{
-					this.parentField = value;
-				}
-			}
 		}
 
+		public class WorkflowCommand
+		{
+			public string DisplayName { get; set; }
+			public string StringID { get; set; }
+			public List<StaffStruct> GlobalNotifyList { get; set; }
+			public bool SendsToFinal { get; set; }
+		}
+
+		public class WorkflowState
+		{
+			public string DisplayName { get; set; }
+			public List<WorkflowCommand> Commands { get; set; }
+			public bool IsFinal { get; set; }
+		}
+
+		public struct UserStatusStruct
+		{
+			public string UserName { get; set; }
+			public int LoginAttemptsRemaining { get; set; }
+			public bool LockedOut { get; set; }
+			public bool LoginSuccessful { get; set; }
+		}
 		public class CreateArticleRequest
 		{
 			public string Name;
 			public Guid PublicationID;
 			public string PublicationDate;
 		}
+
+		public class SaveArticleDetails
+		{
+			public string ArticleNumber;
+			public ArticleStruct ArticleData;
+		}
+
+		public class SaveArticleDetailsByGuid
+		{
+			public Guid ArticleGuid;
+			public ArticleStruct ArticleData;
+		}
+
+		public class SaveArticleTextByGuid
+		{
+			public Guid ArticleGuid;
+			public string WordText;
+			public ArticleStruct ArticleData;
+		}
+
+		public class SaveArticleText
+		{
+			public string ArticleNumber;
+			public string WordText;
+			public ArticleStruct ArticleData;
+		}
+
+		public class SendDocumentToSitecoreByGuid
+		{
+			public Guid ArticlGuid;
+			public byte[] Data;
+			public string Extension;
+		}
+		public class SendDocumentToSitecore
+		{
+			public string ArticleNumber;
+			public byte[] Data;
+			public string Extension;
+		}
+
+		public class LoginModel
+		{
+			public string Username { get; set; }
+			public string Password { get; set; }
+		}
+
 	}
 }

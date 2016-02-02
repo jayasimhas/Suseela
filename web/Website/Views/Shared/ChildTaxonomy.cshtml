@@ -1,0 +1,10 @@
+﻿@model Informa.Web.ViewModels.HierarchyLinks
+<ul>
+    <li class="article-topics__li article-topics__li--grandchild"><a href="@Model.Url">@Model.Text</a></li>
+    @foreach (var tag in Model.Children)
+    {
+        <ul>
+            @{ Html.RenderPartial("ChildTaxonomy", tag); }
+        </ul>
+                }
+</ul>

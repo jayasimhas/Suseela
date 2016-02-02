@@ -16,8 +16,8 @@ revision: ade448b5-d8b1-4951-97a7-f44cf1e18973
 
 ----field----
 field: {A92E4BFB-3010-4332-A7A0-C788348993CE}
-name: ListableTitle
-key: listabletitle
+name: FactoryListableTitle
+key: factorylistabletitle
 content-length: 38
 
 {B820F81E-734A-4EF5-B35E-210B406AEE13}

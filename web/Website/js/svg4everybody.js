@@ -131,3 +131,5 @@ function svg4everybody(opts) {
 		oninterval();
 	}
 }
+
+export default svg4everybody;

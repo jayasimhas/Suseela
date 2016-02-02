@@ -191,3 +191,10 @@ web/Website/App_Config/Web/system.webServer.staticContent.config
 web/Website/Views/Shared/ExperienceExplorerView.cshtml
 WordPlugin/SitecoreTreeWalker/SitecoreTreeWalker_1_TemporaryKey.pfx
 WordPlugin/SitecoreTreeWalker/app.config
+web/Data/Submit Queue
+web/Website/App_Config/Include/ZZ.UserDefined/Solr.config
+
+config/env/local.json
+
+logs/*
+web/Website/local.js

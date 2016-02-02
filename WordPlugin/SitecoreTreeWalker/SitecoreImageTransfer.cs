@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
 using System.IO;
 
 namespace SitecoreTreeWalker

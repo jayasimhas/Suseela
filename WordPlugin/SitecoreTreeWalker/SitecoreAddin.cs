@@ -3,20 +3,20 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.document;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreServer;
 using SitecoreTreeWalker.UI;
 using SitecoreTreeWalker.UI.ArticleDetailsForm;
 using SitecoreTreeWalker.UI.TreeBrowser;
 using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using Word = Microsoft.Office.Interop.Word;
-using StaffStruct = SitecoreTreeWalker.SitecoreTree.StaffStruct;
+using StaffStruct = Informa.Web.Areas.Account.Models.WordPluginModel.StaffStruct;
 
 namespace SitecoreTreeWalker
 {
@@ -192,7 +192,7 @@ namespace SitecoreTreeWalker
                 }
                 else
                 {
-                    CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
+					WordPluginModel.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
                     if (checkedOut.User == SitecoreUser.GetUser().Username)
                     {
                         DocumentProtection.Unprotect(props);

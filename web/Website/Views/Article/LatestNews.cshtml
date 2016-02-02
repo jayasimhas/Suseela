@@ -1,0 +1,23 @@
+﻿@model Informa.Web.ViewModels.LatestNewsViewModel
+@if (Model.DisplayTitle && Model.Topics.Any())
+{
+	<h4 class="latest-news__header">
+		<span>@Model.TitleText
+		@{ 
+			var take = Model.Topics.Count() - 1;
+		}
+		@string.Join(", ", Model.Topics.Take(take > 0 ? take : 1))
+		@if (take > 0)
+		{
+			@:&amp;&nbsp;@Model.Topics.Last()
+		}
+		</span>
+	</h4>
+}
+
+<div class="latest-news__articles">
+	@foreach (var listable in Model.News)
+	{
+		Html.RenderPartial("Components/ListableContentSmall", listable);
+	}
+</div>

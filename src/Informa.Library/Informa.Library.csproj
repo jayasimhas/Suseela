@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -77,17 +78,17 @@
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="Glass.Mapper, Version=4.0.7.56, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.7.56\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc, Version=4.0.7.56, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\81\Glass.Mapper.Sc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.7.56\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.0.7.56, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.7.56\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -154,6 +155,9 @@
     <Reference Include="Sitecore.Services.Infrastructure.Sitecore">
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.SharedSource.PageEditor">
+      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -219,6 +223,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article\IUserArticleBookmarkedContext.cs" />
+    <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
+    <Compile Include="Article\Search\ArticleSearch.cs" />
+    <Compile Include="Article\Search\ArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
+    <Compile Include="Article\Search\ArticleSearchResults.cs" />
+    <Compile Include="Article\Search\IArticleSearch.cs" />
+    <Compile Include="Article\Search\IArticleSearchFilter.cs" />
+    <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
+    <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
+    <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
+    <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
+    <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
+    <Compile Include="Presentation\DuplicateRenderingsFactoryConfiguration.cs" />
+    <Compile Include="Presentation\IDefaultItemRenderingsFactory.cs" />
+    <Compile Include="Presentation\IDuplicateRenderingsFactory.cs" />
+    <Compile Include="Presentation\IDuplicateRenderingsFactoryConfiguration.cs" />
+    <Compile Include="Presentation\IItemRendering.cs" />
+    <Compile Include="Presentation\IRendering.cs" />
+    <Compile Include="Presentation\IRenderingContext.cs" />
+    <Compile Include="Presentation\IRenderingParametersContext.cs" />
+    <Compile Include="Presentation\IRenderingParametersContext`1.cs" />
+    <Compile Include="Presentation\ItemRendering.cs" />
+    <Compile Include="Presentation\Rendering.cs" />
+    <Compile Include="Presentation\GlassRenderingParametersContext.cs" />
+    <Compile Include="Presentation\GlassRenderingParametersContext`1.cs" />
+    <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="Authentication\IUserAuthenticationContext.cs" />
     <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
@@ -241,9 +273,22 @@
     <Compile Include="Navigation\INavigation.cs" />
     <Compile Include="Navigation\ItemNavigationTreeFactory.cs" />
     <Compile Include="Navigation\Navigation.cs" />
+    <Compile Include="Navigation\TaxonomyItemTreeFactory.cs" />
+    <Compile Include="Presentation\GlassRenderingContext.cs" />
+    <Compile Include="Presentation\GlassRenderingItemContext.cs" />
+    <Compile Include="Presentation\GlassRenderingItemContext`1.cs" />
+    <Compile Include="Presentation\IRenderingItemContext.cs" />
+    <Compile Include="Presentation\IRenderingItemContext`1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration\IUsernameValidator.cs" />
     <Compile Include="Registration\MockUsernameValidator.cs" />
+    <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
+    <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Search\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Search\Filter\ITaxonomySearchFilter.cs" />
+    <Compile Include="Search\IProviderSearchContextFactory.cs" />
+    <Compile Include="Search\ProviderSearchContextFactory.cs" />
+    <Compile Include="Search\Results\ITaxonomySearchResults.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
@@ -260,6 +305,7 @@
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Utilities\Extensions\ListExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
@@ -273,9 +319,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +341,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

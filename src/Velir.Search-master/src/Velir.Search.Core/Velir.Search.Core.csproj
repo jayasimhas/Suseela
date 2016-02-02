@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E15A897-7049-4B1E-B653-52FD324AAD13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Velir.Search.Core</RootNamespace>
+    <AssemblyName>Velir.Search.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Projects\WFF-Redesign\lib\Velir\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.AggregateService">
+      <HintPath>..\..\packages\Autofac.Extras.AggregateService.3.0.4\lib\net40\Autofac.Extras.AggregateService.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy2">
+      <HintPath>..\..\packages\Autofac.Extras.DynamicProxy2.3.0.5\lib\net40\Autofac.Extras.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glass.Mapper">
+      <HintPath>..\..\packages\Glass.Mapper.3.0.14.27\lib\net45\Glass.Mapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Glass.Mapper.Sc">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.3.2.3.49\lib\net45\Glass.Mapper.Sc.dll</HintPath>
+    </Reference>
+    <Reference Include="Jabberwocky.Core">
+      <HintPath>..\..\packages\Jabberwocky.Core.0.9-alpha\lib\net45\Jabberwocky.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jabberwocky.Glass">
+      <HintPath>..\..\packages\Jabberwocky.Glass.0.9-alpha\lib\net45\Jabberwocky.Glass.dll</HintPath>
+    </Reference>
+    <Reference Include="Jabberwocky.Glass.Autofac">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.0.9-alpha\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq">
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomGlass\Models\IBooleanRefinementModel.cs" />
+    <Compile Include="CustomGlass\Models\IDateRangeRefinementModel.cs" />
+    <Compile Include="CustomGlass\Models\IFacetModel.cs" />
+    <Compile Include="CustomGlass\Models\IHierarchicalFacetModel.cs" />
+    <Compile Include="CustomGlass\Models\IRefinementModel.cs" />
+    <Compile Include="CustomGlass\Models\ITextRefinementModel.cs" />
+    <Compile Include="CustomGlass\Models\IYearRefinementModel.cs" />
+    <Compile Include="Extensions\KeyValuePairExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Models\ISearchRequest.cs" />
+    <Compile Include="Models\SearchRequest.cs" />
+    <Compile Include="Page\ISearchPageParser.cs" />
+    <Compile Include="Page\SearchPageParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reference\Constants.cs" />
+    <Compile Include="Reference\SiteSettings.cs" />
+    <Compile Include="Refinements\ISearchRefinement.cs" />
+    <Compile Include="Rules\ConditionContext.cs" />
+    <Compile Include="Rules\Conditions\AndConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\ConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\DateFieldCondition.cs" />
+    <Compile Include="Rules\Conditions\FieldEqualsCondition.cs" />
+    <Compile Include="Rules\Conditions\FieldOperatorCondition.cs" />
+    <Compile Include="Rules\Conditions\ItemIdConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\ItemPropertyConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\MultilistFieldContainsCondition.cs" />
+    <Compile Include="Rules\Conditions\NotConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\NotSupportedConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\NumericalFieldCondition.cs" />
+    <Compile Include="Rules\Conditions\OrConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\StringConditionWrapper.cs" />
+    <Compile Include="Rules\Conditions\WhenFieldWrapper.cs" />
+    <Compile Include="Rules\Conditions\WhenTemplateIsWrapper.cs" />
+    <Compile Include="Rules\ErrorReport.cs" />
+    <Compile Include="Rules\ISearchCondition.cs" />
+    <Compile Include="Rules\Parser\ISearchRuleParser.cs" />
+    <Compile Include="Rules\Parser\SearchRuleParser.cs" />
+    <Compile Include="Rules\SearchConditionFactory.cs" />
+    <Compile Include="Rules\SearchRule.cs" />
+    <Compile Include="Rules\SearchRuleFactory.cs" />
+    <Compile Include="Search\ComputedFields\BaseContentComputedField.cs" />
+    <Compile Include="Search\Facets\IFacetBuilder.cs" />
+    <Compile Include="Search\Facets\SearchFacetBuilder.cs" />
+    <Compile Include="Search\Factory\ISearchManagerFactory.cs" />
+    <Compile Include="Search\Factory\SearchManagerFactory.cs" />
+    <Compile Include="Search\Managers\AbstractSearchManager.cs" />
+    <Compile Include="Search\Managers\ISearchManager.cs" />
+    <Compile Include="Search\Managers\SearchManager.cs" />
+    <Compile Include="Search\PredicateBuilders\AbstractPredicateBuilder.cs" />
+    <Compile Include="Search\PredicateBuilders\IPredicateBuilder.cs" />
+    <Compile Include="Search\PredicateBuilders\SearchPredicateBuilder.cs" />
+    <Compile Include="Search\Queries\ISearchQueryable.cs" />
+    <Compile Include="Search\Queries\AbstractSearchQuery.cs" />
+    <Compile Include="Search\Queries\SearchQuery.cs" />
+    <Compile Include="Search\Results\Facets\FacetGroup.cs" />
+    <Compile Include="Search\Results\Facets\FacetResultValue.cs" />
+    <Compile Include="Search\Results\IQueryResults.cs" />
+    <Compile Include="Search\Results\QueryResults.cs" />
+    <Compile Include="Search\Sorts\AbstractSortBuilder.cs" />
+    <Compile Include="Search\Sorts\ISortBuilder.cs" />
+    <Compile Include="Search\Sorts\SearchSortBuilder.cs" />
+    <Compile Include="Search\Sorts\SortOption.cs" />
+    <Compile Include="Util\SearchEncoder.cs" />
+    <Compile Include="Util\SearchResultItemExtensions.cs" />
+    <Compile Include="Util\SearchResultItemUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Velir.Search.Models\Velir.Search.Models.csproj">
+      <Project>{4ca7aa87-9a83-4120-9d6d-586e0c837338}</Project>
+      <Name>Velir.Search.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

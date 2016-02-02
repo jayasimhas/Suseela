@@ -16,15 +16,15 @@ revision: 7549dbb0-8f59-4cbe-9c13-0ae17d6ffa74
 
 ----field----
 field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
-name: Link
-key: link
+name: Navigation Link
+key: navigation link
 content-length: 132
 
 <link text="Companies" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
 ----field----
 field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
-name: Text
-key: text
+name: Navigation Text
+key: navigation text
 content-length: 9
 
 Companies

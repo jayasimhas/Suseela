@@ -8,5 +8,7 @@ namespace Informa.Library.Utilities.References
 		
 		// Templates
 		Guid FolderTemplate { get; }
+
+        Guid TaxonomyRoot { get; }
     }
 }

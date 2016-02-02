@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.Util;
 using Word = Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
@@ -16,7 +16,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			InitializeComponent();
 		}
 
-		private void InsertRelatedArticle(ArticlePreviewInfo article)
+		private void InsertRelatedArticle(WordPluginModel.ArticlePreviewInfo article)
 		{
 			if(string.IsNullOrEmpty(uxRelatedArticleNumber.Text))
 			{
@@ -57,7 +57,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (uxInsertIntoArticle.Visible)
 			{
-				InsertRelatedArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
+				InsertRelatedArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
 				SetToRetriveArticleMode();
 				uxRelatedArticleNumber.Clear();
 			}
@@ -72,7 +72,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if(uxInsertIntoArticle.Visible)
 			{
-				InsertSidebarArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
+				InsertSidebarArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
 				SetToRetriveArticleMode();
 				uxSidebarArticleNumber.Clear();
 			}
@@ -83,7 +83,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-		private void InsertSidebarArticle(ArticlePreviewInfo article)
+		private void InsertSidebarArticle(WordPluginModel.ArticlePreviewInfo article)
 		{
 			if (string.IsNullOrEmpty(uxSidebarArticleNumber.Text))
 			{
@@ -120,9 +120,9 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				MessageBox.Show(@"Please enter an article number!", @"Elsevier");
 				return;
 			}
-			ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(articleNumber)
+			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(articleNumber)
 										? SitecoreArticle.GetArticlePreviewInfo(articleNumber)
-										: new ArticlePreviewInfo();
+										: new WordPluginModel.ArticlePreviewInfo();
 			uxArticlePreviewTable.UpdatePreview(info);
 			uxArticlePreviewTable.Tag = info;
 		}
@@ -138,7 +138,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void TryToSetToInsertArticleMode()
 		{
-			var info = uxArticlePreviewTable.Tag as ArticlePreviewInfo;
+			var info = uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
 			if(info != null && !string.IsNullOrEmpty(info.ArticleNumber))
 			{
 				uxRetrieveArticle.Visible = false;
@@ -171,13 +171,13 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (!string.IsNullOrEmpty(uxSidebarArticleNumber.Text))
 			{
-				InsertSidebarArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
+				InsertSidebarArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
 				uxSidebarArticleNumber.Clear();
 			}
 
 			if (!string.IsNullOrEmpty(uxRelatedArticleNumber.Text))
 			{
-				InsertRelatedArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
+				InsertRelatedArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
 				uxRelatedArticleNumber.Clear();
 			}
 			SetToRetriveArticleMode();
@@ -185,7 +185,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxPreviewArticle_Click(object sender, EventArgs e)
 		{
-			var article = uxArticlePreviewTable.Tag as ArticlePreviewInfo;
+			var article = uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
 			if (article != null)
 				Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
 		}

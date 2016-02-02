@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Core;
 using Microsoft.VisualBasic;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
 using Microsoft.Office.Interop.Word;
 
 namespace SitecoreTreeWalker.Util.Document
@@ -17,7 +17,7 @@ namespace SitecoreTreeWalker.Util.Document
 		private InvalidStylesHighlighter()
 		{
 			var styles = SitecoreGetter.GetParagraphStyles();
-			foreach (WordStyleStruct style in styles)
+			foreach (WordPluginModel.WordStyleStruct style in styles)
 			{
 				_validParagraphStyles.Add(style.WordStyle);
 			}

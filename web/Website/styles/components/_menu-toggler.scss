@@ -1,19 +1,20 @@
 .menu-toggler {
 	@include textMix('Roboto', 12px, 500);
 
-	background-color: #555;
+	background-color: $informa-dark-gray;
 	color: $informa-light-gray-d;
 	float: right;
 	height: 100%;
 	letter-spacing: 1px;
 	margin-right: -70px;
+	overflow: hidden;
 	text-align: center;
 	text-transform: uppercase;
+	width: $main-menu-handle-width;
 
 	@include breakpoint('medium') {
 		display: none; // hide main toggler, show mini (see below)
 		height: 100px;
-		width: 70px;
 
 		// Make mini-toggler sticky when scrolled on tablet/mobile
 		&.is-sticky {
@@ -72,7 +73,7 @@
 
 		span {
 			display: block;
-		    background: $informa-light-gray-d;
+		    background: $informa-light-gray-f;
 		    height: 2px;
 		    left: 25px;
 		    position: absolute;

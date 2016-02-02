@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {FC737E21-9B03-4A8B-83AE-0920BC4AAA7C}
+database: master
+path: /sitecore/layout/Renderings/User Defined/Article/ArticleKeyDocuments
+parent: {0C163767-797D-4331-9537-DC26007C1B84}
+name: ArticleKeyDocuments
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 41
+
+/Views/Article/ArticleKeyDocuments.cshtml
+----version----
+language: en
+version: 1
+revision: aaf141b7-9729-497f-a0dc-f9917567364f
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160115T182252Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+aaf141b7-9729-497f-a0dc-f9917567364f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160115T182715Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

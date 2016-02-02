@@ -16,8 +16,8 @@ revision: 67b1d2f2-e44a-41ce-a639-e50e139473c6
 
 ----field----
 field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
-name: Link
-key: link
+name: Navigation Link
+key: navigation link
 content-length: 128
 
 <link text="Deals" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />

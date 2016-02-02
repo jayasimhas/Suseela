@@ -2,10 +2,14 @@ using Glass.Mapper.Configuration;
 using Glass.Mapper.Configuration.Attributes;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
+using Glass.Mapper.Sc.Configuration.Fluent;
 using Glass.Mapper.Sc.IoC;
 using Informa.Library.Site;
 using Informa.Models;
-using Informa.Models.Glass.Models.sitecore.templates.Velir.FactoryInterface;
+using Informa.Models.GlassModels;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
 namespace Informa.Web.App_Start
@@ -28,8 +32,12 @@ namespace Informa.Web.App_Start
              * 
              */
 
-            return new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models") };
-        }
+
+
+            var config = new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models"), new SitecoreFluentConfigurationLoader() };
+
+			return config;
+		}
 		public static void PostLoad(){
 			//Remove the comments to activate CodeFist
 			/* CODE FIRST START
@@ -51,7 +59,9 @@ namespace Informa.Web.App_Start
 		public static void AddMaps(IConfigFactory<IGlassMap> mapsConfigFactory)
         {
 			// Add maps here
-            mapsConfigFactory.Add(() => new ListableConfig());
+            mapsConfigFactory.Add(() => new TaxonomyMap());
+            //mapsConfigFactory.Add(() => new ListableConfig());
+			mapsConfigFactory.Add(() => new ArticleMap());
             //mapsConfigFactory.Add(() => new ScripConfig());
         }
     }
