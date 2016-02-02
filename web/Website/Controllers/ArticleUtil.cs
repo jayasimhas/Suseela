@@ -265,23 +265,36 @@ namespace Informa.Web.Controllers
 		{
 			var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
 			string year = date.Year.ToString();
-			string month = date.Month.ToString();
-			string day = date.Day.ToString();
+			var month = date.Month < 10 ? "0" + date.Month : date.Month.ToString();			
+			string day = date.Day < 10 ? "0" + date.Day : date.Day.ToString();
+			IHome_Page homeFolder;
 			IArticle_Folder articlesFolder;
 			IArticle_Date_Folder yearFolder;
 			IArticle_Date_Folder monthFolder;
 			IArticle_Date_Folder dayFolder;
 
-			// Articles Folder
-			if (!publication._ChildrenWithInferType.OfType<IArticle_Folder>().Any())
+			// Home Folder
+			if (!publication._ChildrenWithInferType.OfType<IHome_Page>().Any())
 			{
-				var article = _sitecoreMasterService.Create<IArticle_Folder, IGlassBase>(publication, "Articles");
+				var home = _sitecoreMasterService.Create<IHome_Page, IGlassBase>(publication, "Home");
+				_sitecoreMasterService.Save(home);
+				homeFolder = home;
+			}
+			else
+			{
+				homeFolder = publication._ChildrenWithInferType.OfType<IHome_Page>().First();
+			}
+
+			// Articles Folder
+			if (!homeFolder._ChildrenWithInferType.OfType<IArticle_Folder>().Any())
+			{
+				var article = _sitecoreMasterService.Create<IArticle_Folder, IGlassBase>(homeFolder, "Articles");
 				_sitecoreMasterService.Save(article);
 				articlesFolder = article;
 			}
 			else
 			{
-				articlesFolder = publication._ChildrenWithInferType.OfType<IArticle_Folder>().First();
+				articlesFolder = homeFolder._ChildrenWithInferType.OfType<IArticle_Folder>().First();
 			}
 
 			// Year
