@@ -21,19 +21,17 @@ namespace Informa.Web.ViewModels
 			ICorporateAccountNameContext corporateAccountNameContext,
 			ITextTranslator textTranslator,
 			ISiteHomeContext siteHomeContext,
-			ISiteRootContext siteRootContext,
-			ISignInViewModel signInViewModel)
+			ISiteRootContext siteRootContext)
 		{
 			UserAuthenticationContext = userAuthenticationContext;
 			CorporateAccountNameContext = corporateAccountNameContext;
 			TextTranslator = textTranslator;
 			SiteHomeContext = siteHomeContext;
 			SiteRootContext = siteRootContext;
-			SignInViewModel = signInViewModel;
 		}
 
-		public string LogoImageUrl => SiteRootContext.Item == null || SiteRootContext.Item.Site_Logo == null ? string.Empty : SiteRootContext.Item.Site_Logo.Src;
-		public string LogoUrl => SiteHomeContext.Item == null ? string.Empty : SiteHomeContext.Item._Url;
+		public string LogoImageUrl => SiteRootContext.Item?.Site_Logo?.Src ?? string.Empty;
+		public string LogoUrl => SiteHomeContext.Item?._Url ?? string.Empty;
 		public string WelcomeText
 		{
 			get
@@ -46,14 +44,8 @@ namespace Informa.Web.ViewModels
 		public bool IsAuthenticated => UserAuthenticationContext.IsAuthenticated;
 		public string MyAccountLinkText => TextTranslator.Translate("Header.MyAccount");
 		public string SignOutLinkText => TextTranslator.Translate("Header.SignOut");
-		public string RegisterText => TextTranslator.Translate("Header.Register");
 		public string RegisterLinkText => TextTranslator.Translate("Header.RegisterLink");
-		public string RegisterButtonText => TextTranslator.Translate("Header.RegisterButton");
-		public string RegisterUrl => SiteRootContext.Item == null || SiteRootContext.Item.Register_Link == null ? string.Empty : SiteRootContext.Item.Register_Link.Url;
-		public string UsernamePlaceholderText => TextTranslator.Translate("Header.UsernamePlaceholder");
-		public string UsernameInvalidText => TextTranslator.Translate("Header.UsernameInvalid");
 		public string SignInText => TextTranslator.Translate("Header.SignIn");
 		public string SignInLinkText => TextTranslator.Translate("Header.SignInLink");
-		public ISignInViewModel SignInViewModel { get; set; }
 	}
 }

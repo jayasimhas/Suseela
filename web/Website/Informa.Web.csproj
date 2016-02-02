@@ -607,6 +607,12 @@
     <Compile Include="ViewModels\ISideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\EmailArticlePopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailArticlePopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IRegisterPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\ISignInPopOutVIewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\RegisterPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\SignInPopOutViewModel.cs" />
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
@@ -849,6 +855,9 @@
     <Content Include="Views\Article\TopicContainer.cshtml" />
     <Content Include="Views\Article\FeaturedArticleFull.cshtml" />
     <Content Include="Views\Article\TopicJumpTo.cshtml" />
+    <Content Include="Views\Shared\PopOuts\SignIn.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailArticle.cshtml" />
+    <Content Include="Views\Shared\PopOuts\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

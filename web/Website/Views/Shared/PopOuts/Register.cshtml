@@ -1,0 +1,24 @@
+﻿@model Informa.Web.ViewModels.PopOuts.IRegisterPopOutViewModel
+<div class="pop-out js-pop-out__register">
+	<div class="pop-out__tab"></div>
+	<div class="pop-out__internal">
+
+		<form class="pop-out__register">
+
+			<div class="dismiss-button">
+				<svg class="dismiss-button__icon">
+					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+				</svg>
+			</div>
+
+			<h3 class="pop-out__register-header">@Model.RegisterText</h3>
+			<input class="pop-out__register-input header__hover-input js-register-username"
+				   type="text"
+				   placeholder="@Model.UsernamePlaceholderText">
+			<p class="js-register-invalid" style="display: none;">@Model.UsernameInvalidText</p>
+			<button class="pop-out__register-submit js-register-submit" data-register-redirect="@Model.RegisterUrl">
+				@Model.RegisterButtonText
+			</button>
+		</form>
+	</div>
+</div>

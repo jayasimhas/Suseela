@@ -55,93 +55,9 @@
 
         @* * *  POP-OUT TEMPLATE MARKUP *@
 
-        <div class="pop-out js-pop-out__sign-in">
-            <div class="pop-out__tab"></div>
-            <div class="pop-out__internal">
-                <form class="pop-out__sign-in">
-                    <div class="dismiss-button">
-                        <svg class="dismiss-button__icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                        </svg>
-                    </div>
-
-                    <h4 class="pop-out__header">
-                        You must sign in to use this functionality
-                    </h4>
-                    @* { Html.RenderPartial("_SignInForm", Model.SignInViewModel); } *@
-                </form>
-            </div>
-        </div>
-
-
-        <div class="pop-out js-pop-out__register">
-            <div class="pop-out__tab"></div>
-            <div class="pop-out__internal">
-
-                <form class="pop-out__register">
-
-                    <div class="dismiss-button">
-                        <svg class="dismiss-button__icon">
-                            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                        </svg>
-                    </div>
-
-                    <h3 class="pop-out__register-header">Register</h3>
-                    <input class="pop-out__register-input header__hover-input js-register-username"
-                           type="text"
-                           placeholder="Email Address (User Name)">
-                    <p class="js-register-invalid" style="display: none;">Invalid Text</p>
-                    <button class="pop-out__register-submit js-register-submit" data-register-redirect="">
-                        Register
-                    </button>
-                </form>
-            </div>
-        </div>
-
-
-        <div class="pop-out js-pop-out__email-article">
-            <div class="pop-out__tab"></div>
-            <div class="pop-out__internal">
-                <div class="dismiss-button">
-                    <svg class="dismiss-button__icon">
-                        <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                    </svg>
-                </div>
-
-                <h4 class="pop-out__header">
-    				Email Article
-    			</h4>
-
-    			<p class="pop-out__details">
-    				All fields are required. For multiple recipients, separate email addresses with a semicolon.
-    			</p>
-    			<input class="inf-standard-form-field"
-    				   type="text"
-    				   placeholder="Recipient Email Address">
-    			<input class="inf-standard-form-field"
-    				   type="text"
-    				   placeholder="Your Name">
-    			<input class="inf-standard-form-field"
-    				   type="text"
-    				   placeholder="Your Email">
-    			<p>
-    				<span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches
-    			</p>
-    			<p><span class="pop-out__run-in">Add a personalized message to your email</span></p>
-    			<textarea class="text-field"></textarea>
-    			<div class="pop-out__form-actions-wrapper">
-    				<div>
-    					<a href="#">Cancel</a>
-    				</div>
-    				<div class="sign-in__submit-wrapper">
-    					<button class="button--filled sign-in__submit">Send</button>
-    				</div>
-    			</div>
-    			<p class="pop-out__details u-italic">
-    				<b>Please Note:</b> Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
-    			</p>
-            </div>
-        </div>
+		@{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
+		@{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
+		@{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
 
         @* * *  END POP-OUT TEMPLATE MARKUP *@
 
