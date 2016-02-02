@@ -23,7 +23,13 @@ namespace Informa.Library.CustomSitecore.Pipelines
 				id = RouteParameter.Optional
 			});
 
-			var jsonFormatter = new JsonMediaTypeFormatter
+            routes.MapHttpRoute("articleApi", "{year}/{month}/{day}/SC{articleNumber}/{title}",
+                new
+                {
+                    controller = "Article", action ="Get", title = RouteParameter.Optional
+                });
+
+            var jsonFormatter = new JsonMediaTypeFormatter
 			{
 				SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver()},
 			};

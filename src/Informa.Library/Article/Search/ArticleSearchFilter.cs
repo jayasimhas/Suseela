@@ -10,5 +10,6 @@ namespace Informa.Library.Article.Search
 		public int Page { get; set; }
 		public int PageSize { get; set; }
 		public IList<Guid> TaxonomyIds { get; set; }
+        public string ArticleNumber { get; set; }
 	}
 }

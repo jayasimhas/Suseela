@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
 using System.Xml;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -11,10 +15,45 @@ using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
+using Informa.Library.Article.Search;
+using Sitecore.ContentSearch;
+using Sitecore.Data;
+using Sitecore.Links;
+using Sitecore.Mvc.Controllers;
 
 namespace Informa.Web.Controllers
 {
-	public class ArticleUtil
+    [System.Web.Mvc.Route]
+    public class ArticleController : ApiController
+    {
+        protected readonly IArticleSearch ArticleSearcher;
+        protected readonly ISitecoreContext SitecoreContext;
+        
+        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+        {
+            ArticleSearcher = searcher;
+            SitecoreContext = context;
+        }
+
+        public void Get(int year, int month, int day, string articleNumber)
+        {
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.ArticleNumber = $"SC{articleNumber}";
+
+            var results = ArticleSearcher.Search(filter);
+            if (!results.Articles.Any())
+                return;
+
+            //redirect 
+            IArticle a = results.Articles.First();
+            HttpContext.Current.Response.Redirect(a._Url);
+        }
+    }
+
+    public class ArticleUtil
 	{
 
 		static string WebDb = "web";

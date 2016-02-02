@@ -3,8 +3,8 @@ using Informa.Library.Search.Filter;
 
 namespace Informa.Library.Article.Search
 {
-	public interface IArticleSearchFilter : IManuallyCuratedContentFilter, ITaxonomySearchFilter
-	{
+	public interface IArticleSearchFilter : IManuallyCuratedContentFilter, ITaxonomySearchFilter, IArticleNumberFilter
+    {
 		int Page { get; set; }
 		int PageSize { get; set; }
 	}
