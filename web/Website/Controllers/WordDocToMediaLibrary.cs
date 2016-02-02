@@ -125,7 +125,8 @@ namespace Informa.Web.Controllers
 		{
 			Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.Current;
 			MediaCreatorOptions mediaCreatorOptions = GetDefaultMediaCreatorOptions(MediaLibraryRoot + mediaLibraryPath, itemName.Replace("-",""));
-			using (new Sitecore.Security.Accounts.UserSwitcher(user))
+			//using (new Sitecore.Security.Accounts.UserSwitcher(user))
+			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
 				try
 				{

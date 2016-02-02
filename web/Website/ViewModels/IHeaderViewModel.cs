@@ -10,14 +10,7 @@
 		bool IsAuthenticated { get; }
 		string MyAccountLinkText { get; }
 		string SignOutLinkText { get; }
-		string RegisterText { get; }
 		string RegisterLinkText { get; }
-		string RegisterButtonText { get; }
-		string RegisterUrl { get; }
-		string UsernamePlaceholderText { get; }
-		string UsernameInvalidText { get; }
-		string SignInText { get; }
 		string SignInLinkText { get; }
-		ISignInViewModel SignInViewModel { get; }
 	}
 }

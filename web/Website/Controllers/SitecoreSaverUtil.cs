@@ -302,8 +302,10 @@ namespace Informa.Web.Controllers
 				article.Word_Document = new Link
 				{
 					Url = doc.InnerItem.Paths.Path,				
-					TargetId = new Guid(doc.ID.ToString())
-				};
+					TargetId = new Guid(doc.ID.ToString()),
+					Type = LinkType.Internal
+			};
+				
 				//TODO - Set this document to be internal
 				//article.Word_Document.Type = "internal";
 				_sitecoreMasterService.Save(article);				

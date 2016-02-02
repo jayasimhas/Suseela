@@ -1,6 +1,8 @@
 main {
 	display: flex;
 	margin-left: -330px;
+	width: calc(100% + 330px);
+	
 	@include breakpoint('small') {
 		width: 100%;
 	}

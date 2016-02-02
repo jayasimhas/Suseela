@@ -6,6 +6,7 @@ using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
+using Informa.Web.Controllers;
 using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.SecurityModel;
@@ -108,6 +109,24 @@ namespace Informa.Web.Controllers
 			_sitecoreSaver.SaveArticleDetails(content.ArticleGuid, content.ArticleData, false, false);
 		}
 	}
+
+	[Route]
+	public class AuthenticateUserController : ApiController
+	{
+		private readonly SitecoreSaverUtil _sitecoreSaver;
+
+		public AuthenticateUserController(SitecoreSaverUtil sitecoreSaver)
+		{
+			_sitecoreSaver = sitecoreSaver;
+		}
+
+		[HttpPost]
+		public WordPluginModel.UserStatusStruct Post([FromBody] WordPluginModel.LoginModel content)
+		{
+			return SitecoreUtil.GetUserStatus(content.Username, content.Password);
+		}
+	}
+
 
 	[Route]
 	public class GetLockedStatusController : ApiController

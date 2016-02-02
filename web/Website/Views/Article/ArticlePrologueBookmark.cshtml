@@ -1,4 +1,4 @@
-﻿@model Informa.Web.ViewModels.IArticlePrologueBookmarkViewModel
+﻿@model IArticlePrologueBookmarkViewModel
 <li	class="article-prologue__share-item pop-out__trigger @( Model.IsUserAuthenticated ? "" : "js-pop-out-trigger" )"
 	data-pop-out-type="sign-in">
 	<span class="article-prologue__share-label">
@@ -7,18 +7,4 @@
 	<svg class="article-prologue__share-icon article-prologue__share-icon--bookmark">
 		<use xlink:href="/dist/img/svg-sprite.svg#@( Model.IsArticleBookmarked ? "bookmarked" : "bookmark" )"></use>
 	</svg>
-	@* if (!Model.IsUserAuthenticated)
-	{
-		<div class="pop-out--OLD">
-			<div class="pop-out__internal">
-				<svg class="header__icons header__icons--x">
-					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-				</svg>
-				<h4 class="pop-out__header">
-					You must sign in to use this functionality
-				</h4>
-				@{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
-			</div>
-		</div>
-	} *@
 </li>

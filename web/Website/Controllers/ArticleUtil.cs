@@ -86,7 +86,7 @@ namespace Informa.Web.Controllers
 				Title = article.Title,
 				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
 				//Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
-				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
+				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				//Date = GetProperDate(), TODO
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
@@ -297,7 +297,7 @@ namespace Informa.Web.Controllers
 				Embargoed = articleItem.Embargoed
 			};
 
-			var authors = articleItem.Authors.Select(r => ((IStaff_Item)r)).ToList();
+			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
 			articleStruct.Authors =
 				authors.Select(
 					r => new WordPluginModel.StaffStruct()
