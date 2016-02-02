@@ -4,7 +4,7 @@ using Informa.Models.FactoryInterface;
 
 namespace Informa.Web.ViewModels
 {
-    public interface IArticleModel : IListable
+    public interface IArticleModel : IListableViewModel
     {
         string Title { get; }
         string Sub_Title { get; }

@@ -102,6 +102,20 @@ $(document).ready(function() {
 		$(e).after($('.js-mobile-table-template .article-table').clone());
 	});
 
+	// Topic links
+	var topicContainers = $('.topic-subtopic');
+
+	$('.sub-topic-links').forEach(function(e) {
+		var linkList = $(e).find('.bar-separated-link-list');
+
+		topicContainers.forEach(function(tc) {
+			var id = tc.id;
+			var text = $(tc).data('topic-link-text');
+
+			linkList.append('<a href="#' + id + '">' + text + '</a>');
+		});
+	});
+
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
 

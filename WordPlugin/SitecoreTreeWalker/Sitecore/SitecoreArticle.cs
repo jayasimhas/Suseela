@@ -23,7 +23,7 @@ namespace SitecoreTreeWalker
 	public class SitecoreArticle
 	{
 		//TODO - Add env variable
-		private static string webApiURL = "http://informa8.ashah.velir.com/api/";
+		private static string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/";
 
 		public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
 		{
@@ -277,6 +277,17 @@ namespace SitecoreTreeWalker
 				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 			}
 		}
+
+		public static UserStatusStruct AuthenticateUser(string username,string password)
+		{
+			using (var client = new HttpClient())
+			{
+				var response = client.PostAsJsonAsync($"{webApiURL}AuthenticateUser", new WordPluginModel.LoginModel() {Username= username,Password = password}).Result;
+				var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
+				return userStatus;
+			}
+		}
+
 
 		public SitecoreArticle()
 			: this(new SCServer(), new SCTree(), new WordUtils())

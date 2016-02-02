@@ -71,7 +71,7 @@ namespace SitecoreTreeWalker.User
 			try
 			{
                 _scTree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-				var userStatus = _scTree.AuthenticateUser(domainAndUsername, password);
+				var userStatus = SitecoreArticle.AuthenticateUser(domainAndUsername, password);
 				if (userStatus.LoginSuccessful)
 				{
 					Globals.SitecoreAddin.Log("SitecoreUser.Authenticate: Authentication succeeded.");

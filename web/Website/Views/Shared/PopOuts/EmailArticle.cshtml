@@ -1,0 +1,44 @@
+﻿@model Informa.Web.ViewModels.PopOuts.IEmailArticlePopOutViewModel
+<div class="pop-out js-pop-out__email-article">
+	<div class="pop-out__tab"></div>
+	<div class="pop-out__internal">
+		<div class="dismiss-button">
+			<svg class="dismiss-button__icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+			</svg>
+		</div>
+
+		<h4 class="pop-out__header">
+			Email Article
+		</h4>
+
+		<p class="pop-out__details">
+			All fields are required. For multiple recipients, separate email addresses with a semicolon.
+		</p>
+		<input class="inf-standard-form-field"
+			   type="text"
+			   placeholder="Recipient Email Address">
+		<input class="inf-standard-form-field"
+			   type="text"
+			   placeholder="Your Name">
+		<input class="inf-standard-form-field"
+			   type="text"
+			   placeholder="Your Email">
+		<p>
+			<span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches
+		</p>
+		<p><span class="pop-out__run-in">Add a personalized message to your email</span></p>
+		<textarea class="text-field"></textarea>
+		<div class="pop-out__form-actions-wrapper">
+			<div>
+				<a href="#">Cancel</a>
+			</div>
+			<div class="sign-in__submit-wrapper">
+				<button class="button--filled sign-in__submit">Send</button>
+			</div>
+		</div>
+		<p class="pop-out__details u-italic">
+			<b>Please Note:</b> Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
+		</p>
+	</div>
+</div>

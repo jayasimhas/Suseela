@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 
@@ -15,22 +16,28 @@ namespace Informa.Web.ViewModels
 			IMaintenanceViewModel maintenanceViewModel,
 			ISideNavigationMenuViewModel sideNavigationMenuViewModel,
 			IHeaderViewModel headerViewModel,
-			IFooterViewModel footerViewModel)
+			IFooterViewModel footerViewModel,
+			ISignInPopOutViewModel signInPopOutViewModel,
+			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
+			IRegisterPopOutViewModel registerPopOutViewModel)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
 			SideNavigationMenu = sideNavigationMenuViewModel;
 			Header = headerViewModel;
 			Footer = footerViewModel;
+			SignInPopOutViewModel = signInPopOutViewModel;
+			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
+			RegisterPopOutViewModel = registerPopOutViewModel;
 		}
 
 		public IMaintenanceViewModel MaintenanceMessage;
-
 		public ISideNavigationMenuViewModel SideNavigationMenu;
-
 		public IFooterViewModel Footer;
-
 		public IHeaderViewModel Header;
+		public ISignInPopOutViewModel SignInPopOutViewModel;
+		public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
+		public IRegisterPopOutViewModel RegisterPopOutViewModel;
 
 		public string Title
 		{

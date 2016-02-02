@@ -145,7 +145,7 @@
       <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -550,6 +550,7 @@
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
+    <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
@@ -606,9 +607,17 @@
     <Compile Include="ViewModels\ISideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\EmailArticlePopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailArticlePopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IRegisterPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\ISignInPopOutVIewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\RegisterPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\SignInPopOutViewModel.cs" />
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
+    <Compile Include="ViewModels\TopicContainerViewModel.cs" />
+    <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Account\Views\Account\ConfirmEmail.cshtml" />
@@ -662,7 +671,6 @@
     <Content Include="layouts\system\VisitorIdentification.js" />
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
-    <Content Include="local.js" />
     <Content Include="App_Config\Commands.config" />
     <Content Include="App_Config\ConnectionStrings.config" />
     <Content Include="App_Config\ConnectionStrings.config.template" />
@@ -818,6 +826,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
+    <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -843,6 +852,12 @@
     <Content Include="Views\Article\ArticlePrologueShare.cshtml" />
     <Content Include="Views\Shared\Components\FiftyFiftyComponent.cshtml" />
     <Content Include="Views\Article\LatestNews.cshtml" />
+    <Content Include="Views\Article\TopicContainer.cshtml" />
+    <Content Include="Views\Article\FeaturedArticleFull.cshtml" />
+    <Content Include="Views\Article\TopicJumpTo.cshtml" />
+    <Content Include="Views\Shared\PopOuts\SignIn.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailArticle.cshtml" />
+    <Content Include="Views\Shared\PopOuts\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

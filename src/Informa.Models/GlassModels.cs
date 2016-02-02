@@ -756,7 +756,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -783,7 +783,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -1634,23 +1634,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 	public partial interface INavigation_Link : IGlassBase 
 	{
 								/// <summary>
-					/// The Link field.
+					/// The Navigation Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: 944fdc25-89f4-4127-8808-f136dda47ab3</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(INavigation_LinkConstants.LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Link Link  {get; set;}
+					[SitecoreField(INavigation_LinkConstants.Navigation_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Navigation_Link  {get; set;}
 								/// <summary>
-					/// The Text field.
+					/// The Navigation Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: ec1885ad-c358-4653-b1e5-55efd796b35c</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(INavigation_LinkConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Text  {get; set;}
+					[SitecoreField(INavigation_LinkConstants.Navigation_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Navigation_Text  {get; set;}
 				}
 
 	
@@ -1664,23 +1664,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 		public partial interface INavigation_Link__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Link field.
+						/// The Navigation Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: 944fdc25-89f4-4127-8808-f136dda47ab3</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(INavigation_LinkConstants.LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Link Link  {get; set;}
+						[SitecoreField(INavigation_LinkConstants.Navigation_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Navigation_Link  {get; set;}
 										/// <summary>
-						/// The Text field.
+						/// The Navigation Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: ec1885ad-c358-4653-b1e5-55efd796b35c</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(INavigation_LinkConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Text  {get; set;}
+						[SitecoreField(INavigation_LinkConstants.Navigation_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Navigation_Text  {get; set;}
 						}
 	
 	public static partial class INavigation_LinkConstants{
@@ -1690,13 +1690,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 			public const string TemplateName = "Navigation Link";
 
 					
-			public static readonly ID LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
-			public const string LinkFieldName = "Link";
+			public static readonly ID Navigation_LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
+			public const string Navigation_LinkFieldName = "Navigation Link";
 
 						
 					
-			public static readonly ID TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
-			public const string TextFieldName = "Text";
+			public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
+			public const string Navigation_TextFieldName = "Navigation Text";
 
 						
 			
@@ -2190,13 +2190,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 			public const string TemplateName = "Navigation Header";
 
 					
-			public static readonly ID LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
-			public const string LinkFieldName = "Link";
+			public static readonly ID Navigation_LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
+			public const string Navigation_LinkFieldName = "Navigation Link";
 
 						
 					
-			public static readonly ID TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
-			public const string TextFieldName = "Text";
+			public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
+			public const string Navigation_TextFieldName = "Navigation Text";
 
 						
 			
@@ -2710,6 +2710,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public const string TemplateIdString = "650b7a34-7bd4-4920-9d55-b51419f01761";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Paragraph Style Mapping Folder";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics
+{
+
+
+ 	/// <summary>
+	/// ITopic_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Topics/Topic Folder</para>	
+	/// <para>ID: 6a56f66a-4ce8-4a4d-b2fa-989cd0d19ab4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITopic_FolderConstants.TemplateIdString)]
+	public partial interface ITopic_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ITopic_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Topics/Topic Folder</para>	
+		/// <para>ID: 6a56f66a-4ce8-4a4d-b2fa-989cd0d19ab4</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ITopic_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ITopic_FolderConstants{
+
+			public const string TemplateIdString = "6a56f66a-4ce8-4a4d-b2fa-989cd0d19ab4";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Topic Folder";
 
 			
 
@@ -3483,7 +3521,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.
@@ -5485,6 +5523,77 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Common
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics
+{
+
+
+ 	/// <summary>
+	/// ITopic Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Topics/Topic</para>	
+	/// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITopicConstants.TemplateIdString)]
+	public partial interface ITopic : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link
+	{
+								/// <summary>
+					/// The Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 29b124f3-71e1-4c53-b442-d6fb6f2fe21f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITopicConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Title  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ITopic Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Topics/Topic</para>	
+		/// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ITopic__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link__Raw
+		{
+										/// <summary>
+						/// The Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 29b124f3-71e1-4c53-b442-d6fb6f2fe21f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITopicConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Title  {get; set;}
+						}
+	
+	public static partial class ITopicConstants{
+
+			public const string TemplateIdString = "abc8aabb-3e85-4f91-b7cb-ab2156de7a74";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Topic";
+
+					
+			public static readonly ID TitleFieldId = new ID("29b124f3-71e1-4c53-b442-d6fb6f2fe21f");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Navigation_LinkFieldId = new ID("944fdc25-89f4-4127-8808-f136dda47ab3");
+			public const string Navigation_LinkFieldName = "Navigation Link";
+
+						
+					
+			public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
+			public const string Navigation_TextFieldName = "Navigation Text";
+
+						
 			
 
 	}

@@ -23,8 +23,8 @@ revision: 048aafea-b25e-40dd-88fe-282d0ebd3ab0
 
 ----field----
 field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
-name: Text
-key: text
+name: Navigation Text
+key: navigation text
 content-length: 8
 
 Business
