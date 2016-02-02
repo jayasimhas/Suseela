@@ -30,6 +30,13 @@ a {
     color: $informa-red;
     text-decoration: underline;
   }
+
+  &.link__no-hover {
+      @include on-event {
+          color: inherit;
+          text-decoration: none;
+      }
+  }
 }
 
 // List Resets
