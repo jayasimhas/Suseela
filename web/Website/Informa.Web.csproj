@@ -613,6 +613,7 @@
     <Compile Include="ViewModels\PopOuts\ISignInPopOutVIewModel.cs" />
     <Compile Include="ViewModels\PopOuts\RegisterPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SignInPopOutViewModel.cs" />
+    <Compile Include="ViewModels\ScheduledPublishTestViewModel.cs" />
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
@@ -859,6 +860,7 @@
     <Content Include="Views\Shared\PopOuts\SignIn.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailArticle.cshtml" />
     <Content Include="Views\Shared\PopOuts\Register.cshtml" />
+    <Content Include="Views\Shared\ScheduledPublishTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
