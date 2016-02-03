@@ -23,11 +23,19 @@ namespace Informa.Library.CustomSitecore.Pipelines
 				id = RouteParameter.Optional
 			});
 
-            routes.MapHttpRoute("articleApi", "{year}/{month}/{day}/SC{articleNumber}/{title}",
-                new
-                {
-                    controller = "Article", action ="Get", title = RouteParameter.Optional
-                });
+            routes.MapHttpRoute(
+                "articleNumberApi", 
+                "SC{articleNumber}/{suffix}",
+                new { controller = "Article", action ="Get", suffix = RouteParameter.Optional },
+                new { articleNumber = @"\d+" }
+            );
+
+            routes.MapHttpRoute(
+                "articleEScenicApi", 
+                "{title}-{escenicID}",
+                new { controller = "Article", action = "Get" },
+                new { escenicID = @"\d+" }
+            );
 
             var jsonFormatter = new JsonMediaTypeFormatter
 			{

@@ -37,5 +37,19 @@ namespace Informa.Library.Search.Extensions
 
             return source.Filter(predicate);
         }
+
+        public static IQueryable<T> FilteryByEScenicID<T>(this IQueryable<T> source, IArticleEScenicIDFilter filter)
+            where T : IArticleEScenicID
+        {
+            if (source == null || filter == null || !string.IsNullOrEmpty(filter.EScenicID))
+            {
+                return source;
+            }
+
+            var predicate = PredicateBuilder.True<T>();
+            predicate = predicate.Or(i => i.EScenicID == filter.EScenicID);
+
+            return source.Filter(predicate);
+        }
     }
 }

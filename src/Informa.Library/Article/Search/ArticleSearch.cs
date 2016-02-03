@@ -43,7 +43,8 @@ namespace Informa.Library.Article.Search
 					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
 					.FilterTaxonomies(filter)
 					.ExcludeManuallyCurated(filter)
-                    .FilteryByArticleNumber(filter);
+                    .FilteryByArticleNumber(filter)
+                    .FilteryByEScenicID(filter);
 
 				if (filter.PageSize > 0)
 				{

@@ -35,13 +35,34 @@ namespace Informa.Web.Controllers
             SitecoreContext = context;
         }
 
-        public void Get(int year, int month, int day, string articleNumber)
+        public void Get(int articleNumber, string suffix = "")
         {
             //find the new article page
             IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
             filter.PageSize = 1;
             filter.Page = 1;
             filter.ArticleNumber = $"SC{articleNumber}";
+
+            var results = ArticleSearcher.Search(filter);
+            if (!results.Articles.Any())
+                return;
+
+            //redirect 
+            IArticle a = results.Articles.First();
+            HttpContext.Current.Response.Redirect(a._Url);
+        }
+
+        public void Get(string title, int escenicID)
+        {
+            string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
+            //if (!uRef.Contains("scripintelligence.com"))
+            //    return;
+
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.EScenicID = escenicID.ToString();
 
             var results = ArticleSearcher.Search(filter);
             if (!results.Articles.Any())
