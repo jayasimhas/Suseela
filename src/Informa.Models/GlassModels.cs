@@ -1460,6 +1460,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.MainContent
+{
+
+
+ 	/// <summary>
+	/// IIFrame_Embed Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Components/MainContent/iFrame Embed</para>	
+	/// <para>ID: 264ec5e6-0d1d-42f1-b4a1-824b87f8eb42</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IIFrame_EmbedConstants.TemplateIdString)]
+	public partial interface IIFrame_Embed : IGlassBase 
+	{
+								/// <summary>
+					/// The Desktop Embed Code field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IIFrame_EmbedConstants.Desktop_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Desktop_Embed_Code  {get; set;}
+								/// <summary>
+					/// The Mobile Embed Code field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IIFrame_EmbedConstants.Mobile_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Mobile_Embed_Code  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IIFrame_Embed Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Components/MainContent/iFrame Embed</para>	
+		/// <para>ID: 264ec5e6-0d1d-42f1-b4a1-824b87f8eb42</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IIFrame_Embed__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Desktop Embed Code field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IIFrame_EmbedConstants.Desktop_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Desktop_Embed_Code  {get; set;}
+										/// <summary>
+						/// The Mobile Embed Code field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IIFrame_EmbedConstants.Mobile_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Mobile_Embed_Code  {get; set;}
+						}
+	
+	public static partial class IIFrame_EmbedConstants{
+
+			public const string TemplateIdString = "264ec5e6-0d1d-42f1-b4a1-824b87f8eb42";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "iFrame Embed";
+
+					
+			public static readonly ID Desktop_Embed_CodeFieldId = new ID("14420b8a-12ee-4715-833e-eda3fc07b7c1");
+			public const string Desktop_Embed_CodeFieldName = "Desktop Embed Code";
+
+						
+					
+			public static readonly ID Mobile_Embed_CodeFieldId = new ID("b7d4e7c2-5367-4008-960c-cfe1d1a39fa0");
+			public const string Mobile_Embed_CodeFieldName = "Mobile Embed Code";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
