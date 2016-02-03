@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Jabberwocky.Glass.Autofac.Attributes;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Informa.Library.Publishing.Scheduled
 {
+	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ProcessScheduledPublishes : IProcessScheduledPublishes
 	{
 		protected readonly IProcessScheduledPublish ProcessScheduledPublish;

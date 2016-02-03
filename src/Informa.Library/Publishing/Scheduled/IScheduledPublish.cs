@@ -4,10 +4,10 @@ namespace Informa.Library.Publishing.Scheduled
 {
 	public interface IScheduledPublish
 	{
-		Guid ItemId { get; }
-		string Language { get; }
-		string Version { get; }
-		DateTime PublishOn { get; }
-		bool Published { get; }
+		Guid ItemId { get; set; }
+		string Language { get; set; }
+		string Version { get; set; }
+		DateTime PublishOn { get; set; }
+		bool Published { get; set; }
 	}
 }

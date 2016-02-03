@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Data.Items;
+using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Publishing.Scheduled
 {
+	[AutowireService(LifetimeScope.SingleInstance)]
 	public class UpdateItemScheduledPublishing : IUpdateItemScheduledPublishing
 	{
 		protected readonly IItemScheduledPublishFactory ItemScheduledPublishingFactory;
-		protected readonly IUpdateScheduledPublishes UpdateScheduledPublishes;
+		protected readonly IUpsertScheduledPublishes UpdateScheduledPublishes;
 
 		public UpdateItemScheduledPublishing(
 			IItemScheduledPublishFactory itemScheduledPublishingFactory,
-			IUpdateScheduledPublishes updateScheduledPublishes)
+			IUpsertScheduledPublishes updateScheduledPublishes)
 		{
 			ItemScheduledPublishingFactory = itemScheduledPublishingFactory;
 		}
@@ -19,7 +21,7 @@ namespace Informa.Library.Publishing.Scheduled
 		{
 			var scheduledPublish = ItemScheduledPublishingFactory.Create(item);
 
-			UpdateScheduledPublishes.Update(new List<IScheduledPublish> { { scheduledPublish } });
+			UpdateScheduledPublishes.Upsert(new List<IScheduledPublish> { { scheduledPublish } });
 		}
 	}
 }

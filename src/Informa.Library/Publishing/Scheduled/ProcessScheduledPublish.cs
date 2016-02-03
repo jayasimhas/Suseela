@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Jabberwocky.Glass.Autofac.Attributes;
+using System;
 
 namespace Informa.Library.Publishing.Scheduled
 {
+	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ProcessScheduledPublish : IProcessScheduledPublish
 	{
 		public void Process(IScheduledPublish scheduledPublish)
 		{
-			// Sitecore publish
+			// TODO: Sitecore publish
 
 			throw new NotImplementedException();
 		}
