@@ -828,6 +828,9 @@
     </Content>
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
+    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>

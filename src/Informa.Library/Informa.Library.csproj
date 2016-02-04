@@ -246,6 +246,7 @@
     <Compile Include="Publishing\IPublishingStatusCheck.cs" />
     <Compile Include="Publishing\PublishStatus.cs" />
     <Compile Include="Publishing\PublishingStatusCheck.cs" />
+    <Compile Include="Publishing\Scheduled\Events\ScheduledPublishItemSave.cs" />
     <Compile Include="Publishing\Scheduled\IProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishResult.cs" />
