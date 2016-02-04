@@ -1,4 +1,5 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
+using System.Linq;
 
 namespace Informa.Library.Publishing.Scheduled
 {
@@ -7,21 +8,32 @@ namespace Informa.Library.Publishing.Scheduled
 	{
 		protected readonly IReadyScheduledPublishes ReadyScheduledPublishes;
 		protected readonly IPublishScheduledPublishes PublishScheduledPublishes;
+		protected readonly IUpsertScheduledPublishes UpsertScheduledPublishes;
 
 		public ProcessScheduledPublishing(
 			IReadyScheduledPublishes readyScheduledPublishes,
-			IPublishScheduledPublishes publishScheduledPublishes)
+			IPublishScheduledPublishes publishScheduledPublishes,
+			IUpsertScheduledPublishes upsertScheduledPublishes)
 		{
 			ReadyScheduledPublishes = readyScheduledPublishes;
 			PublishScheduledPublishes = publishScheduledPublishes;
+			UpsertScheduledPublishes = upsertScheduledPublishes;
 		}
 
 		public void Process()
 		{
 			var scheduledPublishes = ReadyScheduledPublishes.ScheduledPublishes;
-			var result = PublishScheduledPublishes.Publish(scheduledPublishes);
+			var scheduledPublishesResult = PublishScheduledPublishes.Publish(scheduledPublishes);
+			var groupedResults = scheduledPublishesResult.ScheduledPublishes.GroupBy(sp => sp.PublishingStatus.Status);
 
-			// TODO: Update scheduled publish repository depending on status returned
+			var doneScheduledPublishes = groupedResults.FirstOrDefault(gr => gr.Key == PublishStatus.Done)?.Select(sp => sp.ScheduledPublish).ToList();
+
+			if (doneScheduledPublishes != null)
+			{
+				doneScheduledPublishes.ForEach(dsp => dsp.Published = true);
+
+				UpsertScheduledPublishes.Upsert(doneScheduledPublishes);
+			}
 		}
 	}
 }
