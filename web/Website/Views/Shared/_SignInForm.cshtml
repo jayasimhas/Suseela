@@ -1,31 +1,34 @@
 @model Informa.Web.ViewModels.ISignInViewModel
+
 <div class="pop-out__form-error">
     @Model.SignInInvalidText
 </div>
-<input class="inf-standard-form-field header__hover-input"
+
+<input class="pop-out__input header__hover-input"
        placeholder="@Model.UsernamePlaceholderText"
        type="text">
-<input class="inf-standard-form-field header__hover-input"
+<input class="pop-out__input header__hover-input"
        placeholder="@Model.PasswordPlaceholderText"
        type="password">
 
 <div class="pop-out__form-actions-wrapper">
     <div>
         <a class="pop-out__form-actions" href="#">@Model.ForgotPasswordLinkText</a>
-        @*<a class="pop-out__form-actions" href="#">Register now</a>*@
-        <div class="pop-out__form-actions--remember-me"><input type="checkbox">@Model.RememberMeText</div>
+        <div class="pop-out__sign-in-remember-me">
+            <input type="checkbox"> @Model.RememberMeText
+        </div>
     </div>
     <div class="sign-in__submit-wrapper">
         <button class="button--filled sign-in__submit">@Model.SignInButtonText</button>
     </div>
 </div>
 
-<div class="pop-out__forgot-password">
-    <h5>Forgot your password?</h5>
+<div class="pop-out__sign-in-forgot-password">
+    <h4 class="pop-out__sign-in-forgot-password-header">Forgot your password?</h4>
     <p class="pop-out__details">
         @Model.ForgotPasswordHelpText
     </p>
-    <input  class="inf-standard-form-field"
+    <input  class="pop-out__input"
             type="text"
             placeholder="@Model.EmailPlaceholderText">
     <div class="pop-out__form-actions-wrapper">
