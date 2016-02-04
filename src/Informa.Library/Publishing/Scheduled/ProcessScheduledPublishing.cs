@@ -19,8 +19,9 @@ namespace Informa.Library.Publishing.Scheduled
 		public void Process()
 		{
 			var scheduledPublishes = ReadyScheduledPublishes.ScheduledPublishes;
+			var result = PublishScheduledPublishes.Publish(scheduledPublishes);
 
-			PublishScheduledPublishes.Publish(scheduledPublishes);
+			// TODO: Update scheduled publish repository depending on status returned
 		}
 	}
 }
