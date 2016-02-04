@@ -295,7 +295,7 @@
     <Compile Include="Publishing\Scheduled\IDeleteScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\IItemScheduledPublishFactory.cs" />
     <Compile Include="Publishing\Scheduled\IRetrieveItemToPublish.cs" />
-    <Compile Include="Publishing\Scheduled\IProcessScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\IPublishScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\IProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\IReadyScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\IAllScheduledPublishes.cs" />
@@ -319,7 +319,7 @@
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbUpsertScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocument.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocumentFactory.cs" />
-    <Compile Include="Publishing\Scheduled\ProcessScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\PublishScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\ProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\ReadyScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublish.cs" />

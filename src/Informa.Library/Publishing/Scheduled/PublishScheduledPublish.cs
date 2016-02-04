@@ -7,13 +7,13 @@ using System.Linq;
 namespace Informa.Library.Publishing.Scheduled
 {
 	[AutowireService(LifetimeScope.Default)]
-	public class ProcessScheduledPublish : IProcessScheduledPublish
+	public class PublishScheduledPublish : IPublishScheduledPublish
 	{
 		protected readonly IRetrieveItemToPublish RetrieveItemToPublish;
 		protected readonly IScheduledPublishingDatabaseContext DatabaseContext;
 		protected readonly IScheduledPublishingTargetsContext PublishingTargetsContext;
 
-		public ProcessScheduledPublish(
+		public PublishScheduledPublish(
 			IRetrieveItemToPublish retrieveItemToPublish,
 			IScheduledPublishingDatabaseContext databaseContext,
 			IScheduledPublishingTargetsContext publishingTargetsContext)

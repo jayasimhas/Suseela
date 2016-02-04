@@ -7,11 +7,11 @@ namespace Informa.Library.Publishing.Scheduled
 	[AutowireService(LifetimeScope.Default)]
 	public class ProcessScheduledPublishing : IProcessScheduledPublishing
 	{
-		protected readonly IProcessScheduledPublish ProcessScheduledPublish;
+		protected readonly IPublishScheduledPublish ProcessScheduledPublish;
 		protected readonly IPublishProcessStatusCheck PublishProcessStatusCheck;
 
 		public ProcessScheduledPublishing(
-			IProcessScheduledPublish processScheduledPublish,
+			IPublishScheduledPublish processScheduledPublish,
 			IPublishProcessStatusCheck publishProcessStatusCheck)
 		{
 			ProcessScheduledPublish = processScheduledPublish;

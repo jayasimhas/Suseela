@@ -1,6 +1,6 @@
 ﻿namespace Informa.Library.Publishing.Scheduled
 {
-	public interface IProcessScheduledPublish
+	public interface IPublishScheduledPublish
 	{
 		IPublishProcessStatus Process(IScheduledPublish scheduledPublish);
 	}
