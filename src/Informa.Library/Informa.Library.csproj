@@ -241,11 +241,15 @@
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
-    <Compile Include="Publishing\IPublishProcessStatus.cs" />
-    <Compile Include="Publishing\PublishProcessStatus.cs" />
-    <Compile Include="Publishing\IPublishProcessStatusCheck.cs" />
+    <Compile Include="Publishing\IPublishingStatus.cs" />
+    <Compile Include="Publishing\PublishingStatus.cs" />
+    <Compile Include="Publishing\IPublishingStatusCheck.cs" />
     <Compile Include="Publishing\PublishStatus.cs" />
-    <Compile Include="Publishing\PublishProcessStatusCheck.cs" />
+    <Compile Include="Publishing\PublishingStatusCheck.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublishesResult.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublishResult.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />
     <Compile Include="Threading\ThreadSafe`1.cs" />
     <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
@@ -296,7 +300,7 @@
     <Compile Include="Publishing\Scheduled\IItemScheduledPublishFactory.cs" />
     <Compile Include="Publishing\Scheduled\IRetrieveItemToPublish.cs" />
     <Compile Include="Publishing\Scheduled\IPublishScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\IProcessScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\IPublishScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\IReadyScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\IAllScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublish.cs" />
@@ -320,7 +324,7 @@
     <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocument.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocumentFactory.cs" />
     <Compile Include="Publishing\Scheduled\PublishScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\ProcessScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\PublishScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\ReadyScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDatabaseContext.cs" />

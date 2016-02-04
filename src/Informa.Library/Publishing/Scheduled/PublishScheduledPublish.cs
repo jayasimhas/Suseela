@@ -23,7 +23,7 @@ namespace Informa.Library.Publishing.Scheduled
 			PublishingTargetsContext = publishingTargetsContext;
 		}
 
-		public IPublishProcessStatus Process(IScheduledPublish scheduledPublish)
+		public IPublishingStatus Publish(IScheduledPublish scheduledPublish)
 		{
 			using (new DatabaseSwitcher(DatabaseContext.Database))
 			{
@@ -31,7 +31,7 @@ namespace Informa.Library.Publishing.Scheduled
 
 				if (item == null)
 				{
-					return new PublishProcessStatus
+					return new PublishingStatus
 					{
 						Status = PublishStatus.Failed
 					};
@@ -41,7 +41,7 @@ namespace Informa.Library.Publishing.Scheduled
 				var publishingTargetDatabases = PublishingTargetsContext.Databases.ToArray();
 				var handle = PublishManager.PublishItem(item, publishingTargetDatabases, languages, false, false, true);
 
-				return new PublishProcessStatus
+				return new PublishingStatus
 				{
 					PublishHandle = handle,
 					Status = PublishStatus.Processing

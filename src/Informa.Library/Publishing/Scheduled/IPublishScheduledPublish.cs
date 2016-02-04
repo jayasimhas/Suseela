@@ -2,6 +2,6 @@
 {
 	public interface IPublishScheduledPublish
 	{
-		IPublishProcessStatus Process(IScheduledPublish scheduledPublish);
+		IPublishingStatus Publish(IScheduledPublish scheduledPublish);
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Publishing
 {
-	public interface IPublishProcessStatus
+	public interface IPublishingStatus
 	{
 		Handle PublishHandle { get; }
 		PublishStatus Status { get; set; }
