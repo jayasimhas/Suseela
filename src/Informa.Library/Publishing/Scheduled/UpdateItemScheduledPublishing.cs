@@ -27,9 +27,9 @@ namespace Informa.Library.Publishing.Scheduled
 				return;
 			}
 
-			var scheduledPublish = ItemScheduledPublishingFactory.Create(item);
+			//var scheduledPublish = ItemScheduledPublishingFactory.Create(item);
 
-			UpdateScheduledPublishes.Upsert(new List<IScheduledPublish> { { scheduledPublish } });
+			//UpdateScheduledPublishes.Upsert(new List<IScheduledPublish> { { scheduledPublish } });
 		}
 
 		public bool Ignore(Item item)
