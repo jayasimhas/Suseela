@@ -25,9 +25,9 @@ namespace Informa.Library.Publishing.Scheduled
 
 			while (processingPublishes != null)
 			{
-				processingPublishes.ForEach(i => i.PublishingStatus = PublishProcessStatusCheck.Update(i.PublishingStatus));
+				processingPublishes.ForEach(pp => pp.PublishingStatus = PublishProcessStatusCheck.Update(pp.PublishingStatus));
 
-				var groupedStatuses = processingPublishes.GroupBy(i => i.PublishingStatus.Status);
+				var groupedStatuses = processingPublishes.GroupBy(pp => pp.PublishingStatus.Status);
 
 				processingPublishes = groupedStatuses.FirstOrDefault(gs => gs.Key == PublishStatus.Processing)?.ToList();
 			}
