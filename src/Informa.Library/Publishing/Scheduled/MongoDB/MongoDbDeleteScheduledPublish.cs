@@ -16,11 +16,12 @@ namespace Informa.Library.Publishing.Scheduled.MongoDB
 
 		public void Delete(IScheduledPublish scheduledPublish)
 		{
-			ScheduledPublishContext.ScheduledPublishes.Remove(Query<ScheduledPublishDocument>.Where(scd =>
-				scd.ItemId == scheduledPublish.ItemId &&
-				scd.Language == scheduledPublish.Language &&
-				scd.Version == scheduledPublish.Version
-			));
+			var query = Query<ScheduledPublishDocument>.Where(spd =>
+				spd.ItemId == scheduledPublish.ItemId &&
+				spd.Language == (scheduledPublish.Language ?? string.Empty) &&
+				spd.Version == (scheduledPublish.Version ?? string.Empty));
+
+			ScheduledPublishContext.ScheduledPublishes.Remove(query);
 		}
 	}
 }

@@ -14,10 +14,10 @@ namespace Informa.Library.Publishing.Scheduled.MongoDB
 			{
 				Added = now,
 				ItemId = scheduledPublish.ItemId,
-				Language = scheduledPublish.Language,
+				Language = scheduledPublish.Language ?? string.Empty,
 				Published = scheduledPublish.Published,
 				PublishOn = scheduledPublish.PublishOn,
-				Version = scheduledPublish.Version,
+				Version = scheduledPublish.Version ?? string.Empty,
 				LastUpdated = now
 			};
 		}

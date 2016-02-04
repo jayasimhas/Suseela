@@ -2,6 +2,7 @@
 using Sitecore.Data.Items;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Data.Fields;
+using System.Linq;
 
 namespace Informa.Library.Publishing.Scheduled
 {
@@ -10,14 +11,18 @@ namespace Informa.Library.Publishing.Scheduled
 	{
 		private const string ScheduledPublishingEnabledFieldName = "Scheduled Publishing Enabled";
 
-		protected readonly IItemScheduledPublishFactory ItemScheduledPublishingFactory;
-		protected readonly IUpsertScheduledPublishes UpdateScheduledPublishes;
+		protected readonly IItemScheduledPublishesFactory ItemScheduledPublishesFactory;
+		protected readonly IUpsertScheduledPublishes UpsertScheduledPublishes;
+		protected readonly IDeleteScheduledPublish DeleteScheduledPublishes;
 
 		public UpdateItemScheduledPublishing(
-			IItemScheduledPublishFactory itemScheduledPublishingFactory,
-			IUpsertScheduledPublishes updateScheduledPublishes)
+			IItemScheduledPublishesFactory itemScheduledPublishesFactory,
+			IUpsertScheduledPublishes upsertScheduledPublishes,
+			IDeleteScheduledPublish deleteScheduledPublishes)
 		{
-			ItemScheduledPublishingFactory = itemScheduledPublishingFactory;
+			ItemScheduledPublishesFactory = itemScheduledPublishesFactory;
+			UpsertScheduledPublishes = upsertScheduledPublishes;
+			DeleteScheduledPublishes = deleteScheduledPublishes;
 		}
 
 		public void Update(Item item)
@@ -27,9 +32,16 @@ namespace Informa.Library.Publishing.Scheduled
 				return;
 			}
 
-			//var scheduledPublish = ItemScheduledPublishingFactory.Create(item);
+			var scheduledPublishes = ItemScheduledPublishesFactory.Create(item);
 
-			//UpdateScheduledPublishes.Upsert(new List<IScheduledPublish> { { scheduledPublish } });
+			// -- Clean up existing publishes --
+			// 1) Get existing scheduled shared (ID) and language (Language) publishes
+			// 2) Compare existing against new to create list of scheduled publishes to be deleted
+			var oldScheduledPublishes = Enumerable.Empty<IScheduledPublish>().ToList();
+			// 3) Delete any publishes found not to exist any more
+			oldScheduledPublishes.ForEach(osp => DeleteScheduledPublishes.Delete(osp));
+			
+			UpsertScheduledPublishes.Upsert(scheduledPublishes);
 		}
 
 		public bool Ignore(Item item)
