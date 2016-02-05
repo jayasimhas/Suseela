@@ -4,7 +4,7 @@ using System;
 
 namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.Default)]
 	public class MongoDbDeleteItemScheduledPublishes : IDeleteItemScheduledPublishes
 	{
 		protected readonly IMongoDbScheduledPublishContext ScheduledPublishContext;
