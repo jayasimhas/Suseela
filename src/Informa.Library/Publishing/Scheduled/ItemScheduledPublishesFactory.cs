@@ -16,50 +16,17 @@ namespace Informa.Library.Publishing.Scheduled
 			var language = item.Language.Name;
 			var version = item.Version.Number.ToString();
 
-			// Planned Publish Date -> ID, Language, Version
 			var plannedPublishDateField = (DateField)item.Fields["Planned Publish Date"];
 
 			if (plannedPublishDateField != null)
 			{
-				var plannedPublishhDate = plannedPublishDateField.DateTime;
-
-				if (HasValidValue(plannedPublishhDate))
-				{
-					scheduledPublishes.Add(CreateScheduledPublish(itemId, string.Empty, string.Empty, plannedPublishhDate));
-				}
+				AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, plannedPublishDateField.DateTime, ScheduledPublishType.Planned);
 			}
 
-			// Publishing Restrictions
-			// Item -> ID
-			// From
-			var publishDate = item.Publishing.PublishDate;
-
-			if (HasValidValue(publishDate))
-			{
-				scheduledPublishes.Add(CreateScheduledPublish(itemId, string.Empty, string.Empty, publishDate));
-			}
-			// To
-			var unpublishDate = item.Publishing.UnpublishDate;
-
-			if (HasValidValue(unpublishDate))
-			{
-				scheduledPublishes.Add(CreateScheduledPublish(itemId, string.Empty, string.Empty, unpublishDate));
-			}
-			// Version -> ID, Language, Version
-			// From
-			var validFrom = item.Publishing.ValidFrom;
-
-			if (HasValidValue(validFrom))
-			{
-				scheduledPublishes.Add(CreateScheduledPublish(itemId, language, version, validFrom));
-			}
-			// To
-			var validTo = item.Publishing.ValidTo;
-
-			if (HasValidValue(validTo))
-			{
-				scheduledPublishes.Add(CreateScheduledPublish(itemId, language, version, validTo));
-			}
+			AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.PublishDate, ScheduledPublishType.From);
+			AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.UnpublishDate, ScheduledPublishType.To);
+			AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidFrom, ScheduledPublishType.From);
+			AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidTo, ScheduledPublishType.To);
 
 			return scheduledPublishes;
 		}
@@ -69,16 +36,20 @@ namespace Informa.Library.Publishing.Scheduled
 			return value != DateTime.MinValue && value != DateTime.MaxValue && value > DateTime.Now;
 		}
 
-		public ScheduledPublish CreateScheduledPublish(Guid itemId, string language, string version, DateTime publishOn)
+		public void AddScheduledPublish(List<ScheduledPublish> scheduledPublishes, Guid itemId, string language, string version, DateTime publishOn, ScheduledPublishType type)
 		{
-			return new ScheduledPublish
+			if (HasValidValue(publishOn))
 			{
-				ItemId = itemId,
-				Language = language,
-				Published = false,
-				PublishOn = publishOn,
-				Version = version
-			};
+				scheduledPublishes.Add(new ScheduledPublish
+				{
+					ItemId = itemId,
+					Language = language,
+					Published = false,
+					PublishOn = publishOn,
+					Version = version,
+					Type = type
+				});
+			}
 		}
 	}
 }

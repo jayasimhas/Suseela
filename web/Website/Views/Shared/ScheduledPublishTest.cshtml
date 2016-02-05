@@ -3,6 +3,6 @@
 <ul>
 	@foreach (var scheduledPublish in Model.ScheduledPublishes)
 	{
-		<li>ID: @scheduledPublish.ItemId | Language: @scheduledPublish.Language | Version: @scheduledPublish.Version</li>
+		<li>ID: @scheduledPublish.ItemId | Language: @scheduledPublish.Language | Version: @scheduledPublish.Version | Date/Time: @scheduledPublish.PublishOn | Type: @scheduledPublish.Type | Published: @scheduledPublish.Published</li>
 	}
 </ul>

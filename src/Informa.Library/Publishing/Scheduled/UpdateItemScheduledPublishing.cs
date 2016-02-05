@@ -12,15 +12,18 @@ namespace Informa.Library.Publishing.Scheduled
 		private const string ScheduledPublishingEnabledFieldName = "Scheduled Publishing Enabled";
 
 		protected readonly IItemScheduledPublishesFactory ItemScheduledPublishesFactory;
+		protected readonly IFindScheduledPublishes FindScheduledPublishes;
 		protected readonly IUpsertScheduledPublishes UpsertScheduledPublishes;
 		protected readonly IDeleteScheduledPublish DeleteScheduledPublishes;
 
 		public UpdateItemScheduledPublishing(
 			IItemScheduledPublishesFactory itemScheduledPublishesFactory,
+			IFindScheduledPublishes findScheduledPublishes,
 			IUpsertScheduledPublishes upsertScheduledPublishes,
 			IDeleteScheduledPublish deleteScheduledPublishes)
 		{
 			ItemScheduledPublishesFactory = itemScheduledPublishesFactory;
+			FindScheduledPublishes = findScheduledPublishes;
 			UpsertScheduledPublishes = upsertScheduledPublishes;
 			DeleteScheduledPublishes = deleteScheduledPublishes;
 		}
@@ -33,14 +36,18 @@ namespace Informa.Library.Publishing.Scheduled
 			}
 
 			var scheduledPublishes = ItemScheduledPublishesFactory.Create(item);
+			var existingScheduledPublishes = new List<IScheduledPublish>();
 
-			// -- Clean up existing publishes --
-			// 1) Get existing scheduled shared (ID) and language (Language) publishes
-			// 2) Compare existing against new to create list of scheduled publishes to be deleted
-			var oldScheduledPublishes = Enumerable.Empty<IScheduledPublish>().ToList();
-			// 3) Delete any publishes found not to exist any more
-			oldScheduledPublishes.ForEach(osp => DeleteScheduledPublishes.Delete(osp));
-			
+			existingScheduledPublishes.AddRange(FindScheduledPublishes.Find(item.ID.Guid, string.Empty, string.Empty));
+			existingScheduledPublishes.AddRange(FindScheduledPublishes.Find(item.ID.Guid, item.Language.Name, item.Version.Number.ToString()));
+			existingScheduledPublishes
+				.Where(esp => !scheduledPublishes.Any(sp =>
+					sp.Language == esp.Language &&
+					sp.Version == esp.Version &&
+					sp.Type == esp.Type))
+				.ToList()
+				.ForEach(osp => DeleteScheduledPublishes.Delete(osp));
+
 			UpsertScheduledPublishes.Upsert(scheduledPublishes);
 		}
 

@@ -16,10 +16,11 @@ namespace Informa.Library.Publishing.Scheduled.MongoDB
 
 		public ScheduledPublishDocument Find(IScheduledPublish scheduledPublish)
 		{
-			var query = Query<ScheduledPublishDocument>.Where(scd =>
-				scd.ItemId == scheduledPublish.ItemId &&
-				scd.Language == scheduledPublish.Language &&
-				scd.Version == scheduledPublish.Version
+			var query = Query<ScheduledPublishDocument>.Where(spd =>
+				spd.ItemId == scheduledPublish.ItemId &&
+				spd.Language == (scheduledPublish.Language ?? string.Empty) &&
+				spd.Version == (scheduledPublish.Version ?? string.Empty) &&
+				spd.Type == scheduledPublish.Type
 			);
 
 			return ScheduledPublishContext.ScheduledPublishes.FindOne(query);

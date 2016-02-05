@@ -253,12 +253,15 @@
     <Compile Include="Publishing\PublishStatus.cs" />
     <Compile Include="Publishing\PublishingStatusCheck.cs" />
     <Compile Include="Publishing\Scheduled\Events\ScheduledPublishItemSave.cs" />
+    <Compile Include="Publishing\Scheduled\IFindScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\IProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishResult.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\ProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishType.cs" />
     <Compile Include="Threading\ThreadSafe`1.cs" />
     <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
