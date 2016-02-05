@@ -10,13 +10,16 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly IAllScheduledPublishes AllScheduledPublishes;
 		protected readonly IUpsertScheduledPublish UpsertScheduledPublish;
+		protected readonly IProcessScheduledPublishing ProcessScheduledPublishing;
 
 		public ScheduledPublishTestViewModel(
 			IAllScheduledPublishes allScheduledPublishes,
-			IUpsertScheduledPublish upsertScheduledPublish)
+			IUpsertScheduledPublish upsertScheduledPublish,
+			IProcessScheduledPublishing processScheduledPublishing)
 		{
 			AllScheduledPublishes = allScheduledPublishes;
 			UpsertScheduledPublish = upsertScheduledPublish;
+			ProcessScheduledPublishing = processScheduledPublishing;
 		}
 
 		public IEnumerable<IScheduledPublish> ScheduledPublishes => AllScheduledPublishes.ScheduledPublishes;

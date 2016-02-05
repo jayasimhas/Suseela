@@ -873,6 +873,7 @@
     <Content Include="Views\Shared\PopOuts\Register.cshtml" />
     <Content Include="Views\Shared\ScheduledPublishTest.cshtml" />
     <Content Include="Views\Shared\Components\MainContent\iFrameEmbed.cshtml" />
+    <Content Include="Views\Shared\Components\PageTitle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

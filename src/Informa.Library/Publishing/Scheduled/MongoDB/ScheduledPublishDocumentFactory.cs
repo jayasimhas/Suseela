@@ -18,7 +18,8 @@ namespace Informa.Library.Publishing.Scheduled.MongoDB
 				Published = scheduledPublish.Published,
 				PublishOn = scheduledPublish.PublishOn,
 				Version = scheduledPublish.Version ?? string.Empty,
-				LastUpdated = now
+				LastUpdated = now,
+				Type = scheduledPublish.Type
 			};
 		}
 	}

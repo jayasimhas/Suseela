@@ -19,7 +19,8 @@ namespace Informa.Library.Publishing.Scheduled.MongoDB
 			var query = Query<ScheduledPublishDocument>.Where(spd =>
 				spd.ItemId == scheduledPublish.ItemId &&
 				spd.Language == (scheduledPublish.Language ?? string.Empty) &&
-				spd.Version == (scheduledPublish.Version ?? string.Empty));
+				spd.Version == (scheduledPublish.Version ?? string.Empty) &&
+				spd.Type == scheduledPublish.Type);
 
 			ScheduledPublishContext.ScheduledPublishes.Remove(query);
 		}

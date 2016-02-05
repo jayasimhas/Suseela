@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {8D6D4B6A-0ACA-406A-ABAE-C6C8A02A7C0D}
+id: {D8005A13-DCF5-431C-89A7-4247C18DACAA}
 database: master
-path: /sitecore/templates/User Defined/Pages/Article/Item Information/Planned Publish Date
-parent: {C33D0569-BCB4-4B3A-8FE1-23013A855E99}
-name: Planned Publish Date
+path: /sitecore/templates/User Defined/Scheduled Publishing/Scheduled Publishing/Scheduled Publishing/Scheduled Publishing Enabled
+parent: {486C9747-7D64-4D0E-9B4B-3B6CCD77AC46}
+name: Scheduled Publishing Enabled
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -15,7 +15,7 @@ name: Type
 key: type
 content-length: 8
 
-Datetime
+Checkbox
 ----field----
 field: {BE351A73-FCB0-4213-93FA-C302D8AB4F51}
 name: Shared
@@ -29,11 +29,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-200
+100
 ----version----
 language: en
 version: 1
-revision: 494d6e32-6805-406c-b30b-3da5a12eda43
+revision: d51d815a-1e3c-43ac-bcd6-f76e8ff6bdf0
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,21 +41,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20151224T214647Z
+20160204T144446Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-494d6e32-6805-406c-b30b-3da5a12eda43
+d51d815a-1e3c-43ac-bcd6-f76e8ff6bdf0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160205T094628Z
+20160204T144446Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
