@@ -558,7 +558,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing
 	{
 								/// <summary>
 					/// The Sort Order field.
@@ -849,7 +849,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing__Raw
 		{
 										/// <summary>
 						/// The Sort Order field.
@@ -1377,6 +1377,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
 			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
+
+						
+					
+			public static readonly ID Scheduled_Publishing_EnabledFieldId = new ID("d8005a13-dcf5-431c-89a7-4247c18dacaa");
+			public const string Scheduled_Publishing_EnabledFieldName = "Scheduled Publishing Enabled";
 
 						
 			
@@ -2902,6 +2907,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					
 			public static readonly ID FactoryLinkableUrlsFieldId = new ID("d156cd07-71a4-4daa-b52a-5ce602d6d3bb");
 			public const string FactoryLinkableUrlsFieldName = "FactoryLinkableUrl";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing
+{
+
+
+ 	/// <summary>
+	/// IScheduled_Publishing Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Scheduled Publishing/Scheduled Publishing</para>	
+	/// <para>ID: 724befc5-918b-43d6-8c26-83cd4eef6848</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IScheduled_PublishingConstants.TemplateIdString)]
+	public partial interface IScheduled_Publishing : IGlassBase 
+	{
+								/// <summary>
+					/// The Scheduled Publishing Enabled field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: d8005a13-dcf5-431c-89a7-4247c18dacaa</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IScheduled_PublishingConstants.Scheduled_Publishing_EnabledFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Scheduled_Publishing_Enabled  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IScheduled_Publishing Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Scheduled Publishing/Scheduled Publishing</para>	
+		/// <para>ID: 724befc5-918b-43d6-8c26-83cd4eef6848</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IScheduled_Publishing__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Scheduled Publishing Enabled field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: d8005a13-dcf5-431c-89a7-4247c18dacaa</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IScheduled_PublishingConstants.Scheduled_Publishing_EnabledFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Scheduled_Publishing_Enabled  {get; set;}
+						}
+	
+	public static partial class IScheduled_PublishingConstants{
+
+			public const string TemplateIdString = "724befc5-918b-43d6-8c26-83cd4eef6848";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Scheduled Publishing";
+
+					
+			public static readonly ID Scheduled_Publishing_EnabledFieldId = new ID("d8005a13-dcf5-431c-89a7-4247c18dacaa");
+			public const string Scheduled_Publishing_EnabledFieldName = "Scheduled Publishing Enabled";
 
 						
 			
