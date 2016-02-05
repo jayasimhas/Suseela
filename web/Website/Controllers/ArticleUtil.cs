@@ -35,13 +35,13 @@ namespace Informa.Web.Controllers
             SitecoreContext = context;
         }
 
-        public void Get(int articleNumber, string suffix = "")
+        public void Get(string prefix, int articleNumber, string suffix = "")
         {
             //find the new article page
             IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
             filter.PageSize = 1;
             filter.Page = 1;
-            filter.ArticleNumber = $"SC{articleNumber}";
+            filter.ArticleNumber = $"{prefix}{articleNumber}";
 
             var results = ArticleSearcher.Search(filter);
             if (!results.Articles.Any())
