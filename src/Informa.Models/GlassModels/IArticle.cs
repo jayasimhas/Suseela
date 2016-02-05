@@ -133,6 +133,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Referenced_Deals { get; set; }
 		public IEnumerable<IArticle> Related_Articles { get; set; }
 		public IEnumerable<IGlassBase> Supporting_Documents { get; set; }
+		public bool Scheduled_Publishing_Enabled { get; set; }
 	}
 
 	public interface IPublicationChild
