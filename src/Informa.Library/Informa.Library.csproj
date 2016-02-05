@@ -252,11 +252,16 @@
     <Compile Include="Publishing\IPublishingStatusCheck.cs" />
     <Compile Include="Publishing\PublishStatus.cs" />
     <Compile Include="Publishing\PublishingStatusCheck.cs" />
+    <Compile Include="Publishing\Scheduled\Events\ScheduledPublishItemDeleted.cs" />
     <Compile Include="Publishing\Scheduled\Events\ScheduledPublishItemSave.cs" />
+    <Compile Include="Publishing\Scheduled\IDeleteItemScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\IFindScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IItemDeleteScheduledPublises.cs" />
     <Compile Include="Publishing\Scheduled\IProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishResult.cs" />
+    <Compile Include="Publishing\Scheduled\ItemDeleteScheduledPublises.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteItemScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\ProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
