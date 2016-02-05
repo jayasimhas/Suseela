@@ -1,0 +1,1 @@
+nant send -D:build.configuration=${build.configuration} -D:project.folder=${project.folder}
