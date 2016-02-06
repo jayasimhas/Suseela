@@ -85,6 +85,9 @@
 	<property name="version.minor" value="0" />
 	<property name="version.build" value="0" />
   
+  <loadtasks assembly="${dir.tools}\office\Microsoft.VisualStudio.Tools.Applications.BuildTasks.dll" />
+  <loadtasks assembly="${dir.tools}\office\Microsoft.VisualStudio.Tools.Office.BuildTasks.dll" />
+  
 	<target name="send" >
 		<call target="publish" />
 		<call target="pushtolatest" />
