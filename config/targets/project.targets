@@ -116,6 +116,8 @@
 	</target>
   
     <target name="pushtolatest">
+	<echo message="Copying From:${publish.base.vsto.dir}" />
+	<echo message="Copying To:${publish.dir}" />
 		<copy todir="${publish.dir}" verbose="true">
 			<fileset basedir="${publish.base.vsto.dir}">
 				<include name="**/*" />
