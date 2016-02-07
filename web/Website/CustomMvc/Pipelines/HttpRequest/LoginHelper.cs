@@ -22,15 +22,12 @@ namespace Informa.Web.CustomMvc.Pipelines.HttpRequest
         /// Logins the specified user.
         /// </summary>
         /// <param name="user">The user.</param>
-        public void Login(IPrincipal principal)
+        public void Login(IIdentity identity)
         {
-            if (principal == null)
-                return;
-            
-            var identity = principal.Identity;
+        
             var allowLoginToShell = false;
 #if DEBUG
-            WriteClaimsInfo(principal.Identity as ClaimsIdentity);
+            WriteClaimsInfo(identity as ClaimsIdentity);
 #endif
             if (!identity.IsAuthenticated)
                 return;
@@ -42,7 +39,7 @@ namespace Informa.Web.CustomMvc.Pipelines.HttpRequest
                 var roles = Context.Domain.GetRoles();
                 if (roles != null)
                 {
-                    var groups = GetGroups(principal.Identity as ClaimsIdentity);
+                    var groups = GetGroups(identity as ClaimsIdentity);
                     foreach (var role in from role in roles
                                          let roleName = GetRoleName(role.Name)
                                          where groups.Contains(roleName.ToLower()) && !virtualUser.Roles.Contains(role)
