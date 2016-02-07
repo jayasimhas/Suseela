@@ -37,9 +37,8 @@ namespace Informa.Web.Controllers
 
         public ApplicationSignInManager SignInManager
         {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            get {
+                return _signInManager ?? (_signInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>());
             }
             private set 
             { 
@@ -51,7 +50,7 @@ namespace Informa.Web.Controllers
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? (_userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>());
             }
             private set
             {
@@ -97,17 +96,21 @@ namespace Informa.Web.Controllers
             {
                 return View(model);
             }
+                              
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
+           
+                                                                                                    
+                                                                              
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            
-            LoginHelper loginHelper = new LoginHelper();
-            loginHelper.Login(User.Identity);
 
             switch (result)
             {
-                case SignInStatus.Success:   
+                case SignInStatus.Success:
+                    ApplicationUser user = await UserManager.FindByEmailAsync(model.Email);
+
+                    
+                    LoginHelper loginHelper = new LoginHelper();
+                    loginHelper.Login(AuthenticationManager.User.Identity);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                 //    return View("Lockout");
@@ -140,7 +143,7 @@ namespace Informa.Web.Controllers
 
 
             LoginHelper loginHelper = new LoginHelper();
-            loginHelper.Login(User.Identity);
+            loginHelper.Login(principal.Identity);
 
             switch (result)
             {

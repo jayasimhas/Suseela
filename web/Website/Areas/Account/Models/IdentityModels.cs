@@ -20,7 +20,7 @@ namespace Informa.Web.Areas.Account.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("user", throwIfV1Schema: false)
         {
         }
 

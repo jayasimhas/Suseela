@@ -31,7 +31,7 @@ namespace Informa.Web.Authenticator
 
     public class SQLAuthSessionStoreContext : DbContext
     {
-        public SQLAuthSessionStoreContext(string init = "AuthSessionStoreContext")
+        public SQLAuthSessionStoreContext(string init = "auth")
             : base(init)
         { }
         public DbSet<AuthSessionEntry> Entries { get; set; }
@@ -53,7 +53,7 @@ namespace Informa.Web.Authenticator
         private string _connectionString;
         private TicketDataFormat _formatter;
         private Timer _gcTimer;
-        public SqlAuthSessionStore(TicketDataFormat tdf, string cns = "AuthSessionStoreContext")
+        public SqlAuthSessionStore(TicketDataFormat tdf, string cns = "auth")
         {
             _connectionString = cns;
             _formatter = tdf;

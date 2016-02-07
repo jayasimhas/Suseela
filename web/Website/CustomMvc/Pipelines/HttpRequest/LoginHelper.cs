@@ -65,8 +65,8 @@ namespace Informa.Web.CustomMvc.Pipelines.HttpRequest
                     if (virtualUser.RuntimeSettings.IsAdministrator)
                         allowLoginToShell = true;
                 }
-                virtualUser.Profile.Email = "aap@app.com";
-                AuthenticationManager.Login(virtualUser);
+                virtualUser.Profile.Email = identity.Name;
+                AuthenticationManager.LoginVirtualUser(virtualUser);
                 var tracker = Tracker.Current;
                 if (tracker != null)
                     tracker.Session.Identify(virtualUser.Identity.Name);
@@ -120,6 +120,8 @@ namespace Informa.Web.CustomMvc.Pipelines.HttpRequest
         private void WriteClaimsInfo(ClaimsIdentity claimsIdentity)
         {
             Log.Info("Writing Claims Info", this);
+            if (claimsIdentity == null)
+                return;
             foreach (var claim in claimsIdentity.Claims)
                 Log.Info(string.Format("Claim : {0} , {1}", claim.Type, claim.Value), this);
         }
