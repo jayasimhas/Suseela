@@ -1,63 +1,75 @@
-﻿@using Informa.Web.Areas.Account.Models
-@model LoginViewModel
-@{
-    ViewBag.Title = "Log in";
-}
+﻿@using System.Web.Mvc.Html
+@model Informa.Web.ViewModels.SignInViewModel
+<div class="pop-out js-pop-out__sign-in">
+    <div class="pop-out__tab"></div>
+    <div class="pop-out__internal">
+        <div class="pop-out__sign-in">
+            <div class="dismiss-button">
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+            <h4 class="pop-out__header">
+                @Model.SignInButtonText
+            </h4>
+            <div class="pop-out__form-error">
+                @Model.SignInInvalidText
+            </div>
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm(new { id = "signInForm", @class = "header__logout-form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                <input type="hidden" name="fhController" value="Account" />
+                <input type="hidden" name="fhAction" value="Login" />
+
+                @Html.TextBoxFor(m => m.Email, new { @class = "inf-standard-form-field header__hover-input", placeholder = @Model.EmailPlaceholderText })
+                @Html.PasswordFor(m => m.Password, new { @class = "inf-standard-form-field header__hover-input", placeholder = @Model.PasswordPlaceholderText })
+
+                <div class="pop-out__form-actions-wrapper">
+                    <div>
+                        <a class="pop-out__form-actions" href="#">@Model.ForgotPasswordLinkText</a>
+                        @*<a class="pop-out__form-actions" href="#">Register now</a>*@
+                        <div class="pop-out__form-actions--remember-me">@Html.CheckBoxFor(m => m.RememberMe)@Model.RememberMeText</div>
+                    </div>
+                    <div class="sign-in__submit-wrapper">
+                        <input class="button--filled sign-in__submit" value="@Model.SignInButtonText" type="submit" id="signInForm">
                     </div>
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+                @*<div class="header__my-account">
+                        <svg class="header__icons icon-my-account">
+                            <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+                        </svg>
+                        @Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new {area = "Account"}, htmlAttributes: new {title = "Manage"})
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
+                    <div class="header__sign-in-out">
+                        <svg class="header__icons icon-sign-out">
+                            <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                        </svg>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">@Model.SignOutLinkText</a>
+                    </div>*@
             }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
+
+
+            <div class="pop-out__forgot-password">
+                <h5>Forgot your password?</h5>
+                <p class="pop-out__details">
+                    @Model.ForgotPasswordHelpText
+                </p>
+                <input class="inf-standard-form-field"
+                       type="text"
+                       placeholder="@Model.EmailPlaceholderText">
+                <div class="pop-out__form-actions-wrapper">
+                    <div></div>
+                    <div class="sign-in__submit-wrapper">
+                        <button class="button--filled sign-in__submit">@Model.ForgotPasswordButtonText</button>
+                    </div>
+                </div>
+                <p class="pop-out__details pop-out__details--inset u-italic u-centered">
+                    @Model.ForgotPasswordContactText
+                </p>
+
+            </div>
+        </div>
     </div>
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

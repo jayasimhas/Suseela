@@ -247,6 +247,8 @@
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
+    <Compile Include="CustomSitecore\Mvc\CustomValidateFormHandlerAttribute.cs" />
+    <Compile Include="CustomSitecore\Mvc\CustomValidHttpPostAttribute.cs" />
     <Compile Include="Publishing\IPublishingStatus.cs" />
     <Compile Include="Publishing\PublishingStatus.cs" />
     <Compile Include="Publishing\IPublishingStatusCheck.cs" />
