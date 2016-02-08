@@ -202,6 +202,34 @@
     <Reference Include="Sitecore.ContentSearch.SolrProvider.AutoFacIntegration">
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.AutoFacIntegration.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentTesting, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting.Intelligence, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Intelligence.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor.Speak, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor.Speak.Ribbon, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -566,6 +594,7 @@
     <Compile Include="Controllers\SitecorGetterController.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
+    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="GlassMaps\Class1.cs" />
