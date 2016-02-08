@@ -41,10 +41,11 @@
 
     &__list li {
         border-bottom: 1px solid $informa-light-gray-d;
-        padding: 0.75rem 0;
+        margin-bottom: 1rem;
 
         &:last-child {
             border: 0;
+            margin-bottom: 0;
         }
     }
 
@@ -114,9 +115,9 @@
         }
     }
     &__photo {
-        width: 100px;
+        width: 7.5rem;
         vertical-align: middle;
-        margin-right: 18px;
+        margin-right: 1.125rem;
     }
 
     &__solo-wrapper {
@@ -125,6 +126,7 @@
     }
     &--solo .article-author__name {
         display: block;
+        margin-bottom: 0.75rem;
         width: 100%;
 
         &:before {

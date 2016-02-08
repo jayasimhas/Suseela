@@ -2,8 +2,7 @@
     @include textMix('PTSerif', 18px, 400);
 
     &,
-    h1,
-    h3 {
+    h1 {
         margin-bottom: 1.5rem;
     }
 
@@ -14,7 +13,7 @@
 
     h3 {
         @include textMix('PT Serif', 1.5rem, 400);
-        font-style: italic;
+        margin-bottom: 2rem;
     }
 
     p {

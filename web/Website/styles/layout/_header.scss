@@ -27,10 +27,16 @@ $main-menu-smartphone-width: 62px;
 		border-right: 0;
 		height: 120px;
 		padding: 2rem;
+		display: flex;
+		justify-content: space-between;
 
 		@include breakpoint('medium') {
 			height: 97px;
 			padding: 0;
+		}
+
+		@include breakpoint('small') {
+			flex-wrap: wrap;
 		}
 	}
 
@@ -38,21 +44,24 @@ $main-menu-smartphone-width: 62px;
 	// Header logo image
 	// -------------------------------------------------------------------------
 	&__logo {
-		display: block;
-		float: left;
 		height: 100%;
-		margin-right: 2rem;
+		flex: 0 0 auto;
+		align-self: center;
 
-		@include breakpoint('medium') {
-			height: calc(100% - 3rem);
-			margin-left: calc(#{$main-menu-tablet-width} + 1.5rem);
-			margin-top: 1.5rem;
-		}
+		img {
+			display: block;
+			height: 100%;
+			margin-right: 2rem;
 
-		@include breakpoint('small') {
-			height: calc(100% - 4rem);
-			margin-left: 4.5rem;
-			margin-top: 0.75rem;
+			@include breakpoint('medium') {
+				margin-left: calc(#{$main-menu-tablet-width} + 1.5rem);
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+			}
+
+			@include breakpoint('small') {
+				margin-left: 4.5rem;
+			}
 		}
 	}
 
@@ -105,6 +114,7 @@ $main-menu-smartphone-width: 62px;
 		height: 100%;
 		margin-left: 1.5rem;
 		padding: 1rem 0;
+		flex: 0 0 auto;
 
 		@include breakpoint('medium') {
 			font-size: 15px;
@@ -177,6 +187,7 @@ $main-menu-smartphone-width: 62px;
 	&-search {
 
 		&__wrapper {
+			flex: 1 0 auto;
 			height: 100%;
 			vertical-align: middle;
 			padding: 0.5625rem 0;
@@ -184,8 +195,6 @@ $main-menu-smartphone-width: 62px;
 			@include breakpoint('medium') {
 				text-align: right;
 				position: relative;
-				margin-right: 250px;
-				margin-left: 70px;
 
 				&.is-active {
 					.header-search__field,
@@ -207,7 +216,8 @@ $main-menu-smartphone-width: 62px;
 
 
 		&__field {
-			width: 310px;
+			max-width: 310px;
+			width: calc(100% - 60px);
 
 			@include breakpoint('medium') {
 				border: 0;
