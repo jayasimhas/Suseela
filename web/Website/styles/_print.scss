@@ -2,12 +2,19 @@
 
     // Hide this stuff.
     .main-menu,
-    .main-menu__toggler,
-    .header__user,
-    .header__search-wrapper,
+    .menu-toggler,
+    .header__user-actions,
+    .header-search__wrapper,
     .banner,
+    .article-prologue__share-bar,
+    .advertising--leaderboard,
+    .header__informa-permabanner,
     footer {
         display: none;
+    }
+
+    .boxout-print-info {
+        display: block;
     }
 
     main {
@@ -19,12 +26,21 @@
     }
     .main__content {
         padding-left: 2rem;
+        padding-right: 0;
         margin: 0;
     }
 
     .header__wrapper {
         border: 0;
         padding-left: 2rem;
+        display: flex;
+    }
+    .header__logo {
+        margin-left: 0;
     }
 
+    .article-prologue__tags-bar {
+        background: none;
+        padding-left: 0;
+    }
 }
