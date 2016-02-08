@@ -596,6 +596,7 @@
     <Compile Include="ViewModels\IListableVIewModel.cs" />
     <Compile Include="ViewModels\ISignInViewModel.cs" />
     <Compile Include="ViewModels\LatestNewsViewModel.cs" />
+    <Compile Include="ViewModels\ManuallyCuratedContentViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\GlassArticleModel.cs" />
@@ -874,6 +875,9 @@
     <Content Include="Views\Shared\ScheduledPublishTest.cshtml" />
     <Content Include="Views\Shared\Components\MainContent\iFrameEmbed.cshtml" />
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
+    <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
+    <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
+    <Content Include="Views\Shared\Components\FeaturedCuratedContentSmall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
