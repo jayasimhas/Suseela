@@ -1,4 +1,4 @@
-exports.hide = function () {
+﻿exports.hide = function () {
   var webEditRibbonEl = document.getElementById('scWebEditRibbon');
   if (typeof (webEditRibbonEl) != 'undefined' && webEditRibbonEl != null) {
     webEditRibbonEl.parentNode.removeChild(webEditRibbonEl);
