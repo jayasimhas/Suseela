@@ -49,7 +49,7 @@ namespace Informa.Web.Controllers
 
             //redirect 
             IArticle a = results.Articles.First();
-            HttpContext.Current.Response.Redirect(a._Url);
+            HttpContext.Current.Response.RedirectPermanent(a._Url);
         }
 
         public void Get(string title, int escenicID)
@@ -70,7 +70,7 @@ namespace Informa.Web.Controllers
 
             //redirect 
             IArticle a = results.Articles.First();
-            HttpContext.Current.Response.Redirect(a._Url);
+            HttpContext.Current.Response.RedirectPermanent(a._Url);
         }
     }
 
