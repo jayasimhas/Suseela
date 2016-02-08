@@ -1,0 +1,40 @@
+.pop-out__sign-in {
+    overflow: auto;
+
+    &-header {
+        margin-top: -5px; // Boo magic number. Center with dismiss X
+        margin-bottom: 1.5rem;
+    }
+
+    &-submit {
+        @extend .button--filled;
+        clear: both;
+        float: right;
+    }
+
+    &-remember-me {
+        color: $informa-dark-gray;
+        font-size: 0.9375rem;
+
+        & input[type=checkbox] {
+            height: 1.5rem;
+            width: 1.625rem;
+            vertical-align: middle;
+        }
+    }
+
+    &-forgot-password {
+        border-top: 1px solid $informa-light-gray-d;
+        margin-top: 1.5rem;
+        padding-top: 1.625rem;
+
+        &-header {
+            margin-bottom: 0.75rem;
+        }
+
+        & p:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+}

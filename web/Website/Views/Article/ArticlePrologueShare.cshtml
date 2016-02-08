@@ -1,10 +1,39 @@
 ﻿@model Informa.Web.ViewModels.IArticlePrologueShareViewModel
 <li class="article-prologue__share-item">
 	<span class="article-prologue__share-label">Share</span>
-	<svg class="article-prologue__share-icon article-prologue__share-icon--linkedin">
-		<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
-	</svg>
-	<svg class="article-prologue__share-icon article-prologue__share-icon--twitter">
-		<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
-	</svg>
+
+	@*
+		LAST UPDATED — FEBRAURY 02 2016
+		https://developer.linkedin.com/docs/share-on-linkedin
+
+		url — The url-encoded URL of the page that you wish to share
+		mini — Required, and must be 'true'
+		title — OPTIONAL URL-encoded title, max length of 200 characters
+		summary — OPTIONAL URL-encoded description, max length of 256 characters
+		source — OPTIONAL URL-encoded source of the content (e.g. your website or application name)
+	*@
+	<a
+		href="https://www.linkedin.com/shareArticle?mini=true&url=http://developer.linkedin.com&title=LinkedIn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn"
+		target="_blank"
+		class="link__no-hover">
+		<svg class="article-prologue__share-icon article-prologue__share-icon--linkedin">
+			<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
+		</svg>
+	</a>
+
+	@*
+		LAST UPDATED — FEBRAURY 02 2016
+		https://dev.twitter.com/web/tweet-button/web-intent
+
+		text — UTF-8 and URL-encoded Tweet text
+		url — fully-qualified URL with a HTTP or HTTPS scheme, URL-encoded
+	*@
+	<a
+		href="https://twitter.com/intent/tweet?text=TEXT-HERE&url=URL-HERE"
+		class="link__no-hover">
+		<svg class="article-prologue__share-icon article-prologue__share-icon--twitter">
+			<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+		</svg>
+	</a>
+
 </li>

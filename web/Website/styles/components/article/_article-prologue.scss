@@ -29,9 +29,24 @@
         vertical-align: middle;
         width: 22px;
 
-        // Targets any share icons that beyond the first icon
-        // First icon is technically the second child element
-        &:nth-child(n+3) {
+        &--email {
+            width: 21px;
+            height: 21px;
+            margin-top: -3px;
+        }
+
+        &--bookmark {
+            margin-top: -1px;
+        }
+
+        &--linkedin {
+            margin-top: -4px;
+        }
+
+        &--twitter {
+            margin-top: -3px;
+            width: 23px;
+            height: 23px;
             margin-left: 1rem;
         }
 
