@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Informa.Web.Areas.Account.Models;
+using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 
 namespace SitecoreTreeWalker.WebserviceHelper
 {
@@ -17,7 +19,10 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.PrintPublicationDate = articleStruct.PrintPublicationDate;
 			articleDetails.NotesToEditorial = articleStruct.NotesToEditorial;
 			//TODO - add article taxonomy to the Struct.
-			//if (articleStruct.Taxonomoy.Any()){articleDetails.Taxonomoy = articleStruct.Taxonomoy.Select(t => new WordPluginModel.TaxonomyStruct {Name = t.Name, ID = t.ID, Section = t.Section }).ToList();}
+			if (articleStruct.Taxonomoy.Any())
+			{
+				articleDetails.Taxonomoy = articleStruct.Taxonomoy.Select(t => new WordPluginModel.TaxonomyStruct {Name = t.Name, ID = t.ID}).ToList();
+			}
 			articleDetails.Title = articleStruct.Title;
 			articleDetails.RelatedArticles = articleStruct.RelatedArticles;
 			articleDetails.ReferencedDeals = articleStruct.ReferencedDeals;
@@ -29,6 +34,12 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			//articleDetails.ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.Select(n => new StaffStruct{Name = n.Name,ID = n.ID,Publications = n.Publications,}).ToArray();
 
 			articleDetails.Embargoed = articleStruct.Embargoed;
+
+			articleDetails.Label = articleStruct.Label;
+			articleDetails.MediaType = articleStruct.MediaType;
+			articleDetails.FeaturedImage = articleStruct.FeaturedImage;
+			articleDetails.FeaturedImageCaption = articleStruct.FeaturedImageCaption;
+			articleDetails.FeaturedImageSource = articleStruct.FeaturedImageSource;
 
 			return articleDetails;
 		}
