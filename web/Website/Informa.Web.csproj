@@ -104,28 +104,32 @@
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac">
-      <HintPath>..\..\packages\Jabberwocky.Autofac.1.0.0.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Autofac.1.0.1.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac.Extras.MiniProfiler">
-      <HintPath>..\..\packages\Jabberwocky.Autofac.Extras.MiniProfiler.1.0.0.0\lib\net45\Jabberwocky.Autofac.Extras.MiniProfiler.dll</HintPath>
+    <Reference Include="Jabberwocky.Autofac.Extras.MiniProfiler, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Autofac.Extras.MiniProfiler.1.0.1.0\lib\net45\Jabberwocky.Autofac.Extras.MiniProfiler.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Core">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Jabberwocky.Core.1.0.0.0\lib\net45\Jabberwocky.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Jabberwocky.Glass">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Jabberwocky.Glass.1.0.0.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
-    </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac">
-      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.0.0.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Core, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Core.1.0.1.0\lib\net45\Jabberwocky.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac.Mvc">
-      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.0.0.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
+    <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jabberwocky.Glass.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.0.1.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jabberwocky.Glass.Autofac.Mvc, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.0.2.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jabberwocky.WebApi, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.WebApi.1.0.1.0\lib\net45\Jabberwocky.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -433,27 +437,27 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Autofac.1.0.1-alpha\lib\net45\Velir.Search.Autofac.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Autofac.1.1.2\lib\net45\Velir.Search.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Core.1.0.1-alpha\lib\net45\Velir.Search.Core.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Core.1.2.3\lib\net45\Velir.Search.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Models.1.1.0-alpha\lib\net45\Velir.Search.Models.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Models.1.2.0\lib\net45\Velir.Search.Models.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Mvc.1.0.0-alpha\lib\net45\Velir.Search.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Mvc.1.0.2\lib\net45\Velir.Search.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Web">
       <HintPath>..\..\packages\Velir.Search.Web.1.1.0-alpha\lib\net45\Velir.Search.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Velir.Search.WebApi">
-      <HintPath>..\..\packages\Velir.Search.WebApi.1.0.0-alpha\lib\net45\Velir.Search.WebApi.dll</HintPath>
+    <Reference Include="Velir.Search.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Velir.Search.WebApi.1.0.3\lib\net45\Velir.Search.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebApi.OutputCache.Core">
@@ -733,8 +737,6 @@
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
     <Content Include="webedit.css" />
-    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
-    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\XamlPage.browser" />
     <Content Include="Areas\Social\Views\Connector\Login.cshtml" />
@@ -828,6 +830,8 @@
     </Content>
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
+    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
+    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <None Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
@@ -873,14 +877,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\packages\Jabberwocky.Core.CodeAnalysis.1.0.0\analyzers\dotnet\cs\Jabberwocky.Core.CodeAnalysis.dll" />
-    <Analyzer Include="..\..\packages\Jabberwocky.Glass.CodeAnalysis.1.0.0\analyzers\dotnet\cs\Jabberwocky.Glass.CodeAnalysis.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Jabberwocky.Core.CodeAnalysis.1.0.1\analyzers\dotnet\cs\Jabberwocky.Core.CodeAnalysis.dll" />
+    <Analyzer Include="..\..\packages\Jabberwocky.Glass.CodeAnalysis.1.0.1\analyzers\dotnet\cs\Jabberwocky.Glass.CodeAnalysis.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
