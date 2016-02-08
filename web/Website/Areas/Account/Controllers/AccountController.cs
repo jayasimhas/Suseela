@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +14,8 @@ using Informa.Web.ViewModels.PopOuts;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using SFRestClient;
+using Sitecore.Analytics;
 
 namespace Informa.Web.Controllers
 {
@@ -45,6 +48,11 @@ namespace Informa.Web.Controllers
                 _signInManager = value; 
             }
         }
+        //[Authorize]
+        //public ActionResult Auth()
+        //{
+            
+        //}
 
         public ApplicationUserManager UserManager
         {
@@ -58,12 +66,23 @@ namespace Informa.Web.Controllers
             }
         }
 
-        //
-        // GET: /Account/Index
-        [AllowAnonymous]
-        public ActionResult Index(string returnUrl)
-        {     
-            return View((SignInViewModel)SignInViewModel);
+
+        // GET: Auth
+        [Authorize]
+        public override ActionResult Index()
+        {
+            // Get ID ticket from .ASP.Net cookie. This ticket doesnt contain an identity, 
+            // but a reference to the identity in the Session Store                          
+            var principal = IdentityHelper.GetCurrentClaimsPrincipal();
+
+            var ctx = Tracker.Current.Session;
+            // Login the sitecore user with the claims identity that was provided by identity ticket
+            LoginHelper loginHelper = new LoginHelper();
+            loginHelper.Login(principal.Identity);
+
+            ctx = Tracker.Current.Session;
+            
+            return base.Index();
         }
 
         //
@@ -106,12 +125,7 @@ namespace Informa.Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    ApplicationUser user = await UserManager.FindByEmailAsync(model.Email);
-
-                    
-                    LoginHelper loginHelper = new LoginHelper();
-                    loginHelper.Login(AuthenticationManager.User.Identity);
-                    return RedirectToLocal(returnUrl);
+                    return Index();
                 case SignInStatus.LockedOut:
                 //    return View("Lockout");
                 //case SignInStatus.RequiresVerification:
@@ -119,7 +133,7 @@ namespace Informa.Web.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return base.Index();
+                    return SignIn(returnUrl);
             }
         }
 
@@ -128,7 +142,7 @@ namespace Informa.Web.Controllers
         [CustomValidHttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SignIn(SignInViewModel model, string returnUrl)
+        public ActionResult SignIn(SignInViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -137,13 +151,17 @@ namespace Informa.Web.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = SignInManager.PasswordSignIn(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+            //ApiWebClient restClient = new SFConnector(new OAuth);
+
+
 
             var principal = IdentityHelper.GetCurrentClaimsPrincipal();
 
 
-            LoginHelper loginHelper = new LoginHelper();
-            loginHelper.Login(principal.Identity);
+            //LoginHelper loginHelper = new LoginHelper();
+            //loginHelper.Login(principal.Identity);
 
             switch (result)
             {
@@ -543,7 +561,7 @@ namespace Informa.Web.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return base.Index();
+            return Redirect("/");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
@@ -573,6 +591,11 @@ namespace Informa.Web.Controllers
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
+        }
+
+        internal class SalesforceConnector
+        {
+            
         }
         #endregion
     }

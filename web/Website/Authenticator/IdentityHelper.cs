@@ -71,8 +71,8 @@ namespace Informa.Web.Authenticator
         {
             AuthenticationTicket ticket = null;
 
-            var ctx = HttpContext.Current.Request;
-            if (ctx.Cookies != null && ctx.Cookies[".AspNet.ApplicationCookie"] != null)
+            var ctx = HttpContext.Current?.Request;
+            if (ctx?.Cookies[".AspNet.ApplicationCookie"] != null)
             {
                 var cookie = ctx.Cookies[".AspNet.ApplicationCookie"];
                 var secureDataFormat = new TicketDataFormat(new MachineKeyProtector());

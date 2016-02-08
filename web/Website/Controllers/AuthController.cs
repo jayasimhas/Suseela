@@ -14,27 +14,27 @@ using Sitecore.Security.Authentication;
 
 namespace Informa.Web.Controllers
 {
-    public class AuthController : Controller
+    public class Auth2Controller : Controller
     {
         public ISignInViewModel SignInViewModel { get; set; }
-        public AuthController(ISignInViewModel signInViewModel)
+        public Auth2Controller(ISignInViewModel signInViewModel)
         {
             SignInViewModel = signInViewModel;
         }
 
-        [Authorize]                                  
+                                          
         public ActionResult Index()
         {
             // Get ID ticket from .ASP.Net cookie. This ticket doesnt contain an identity, 
             // but a reference to the identity in the Session Store                          
             var principal = IdentityHelper.GetCurrentClaimsPrincipal();
 
-            //var ctx = Tracker.Current.Session;
+            var ctx = Tracker.Current.Session;
             // Login the sitecore user with the claims identity that was provided by identity ticket
             LoginHelper loginHelper = new LoginHelper();
             loginHelper.Login(principal.Identity);
 
-            //ctx = Tracker.Current.Session;
+            ctx = Tracker.Current.Session;
 
             return View();
 
@@ -42,7 +42,7 @@ namespace Informa.Web.Controllers
         // GET: Auth
         //public ActionResult Index()
         //{
-            var domain = Sitecore.Context.Domain;
+            //var domain = Sitecore.Context.Domain;
 
             //var properties = new AuthenticationProperties();
             //System.Web.HttpContext.Current.GetOwinContext().Authentication.Challenge();

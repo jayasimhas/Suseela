@@ -42,7 +42,7 @@ namespace Informa.Web
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager)),
-                    OnResponseSignIn = context => LoginSitecoreUser(context),
+                    //OnResponseSignIn = context => LoginSitecoreUser(context),
                     OnException = exception => HandleException(exception)
                 }
             });            

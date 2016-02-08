@@ -169,6 +169,10 @@
       <HintPath>..\..\packages\NWebsec.Mvc.4.2.0\lib\45\NWebsec.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SFRestClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SFRestClient.1.0.0.0\lib\net45\SFRestClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
@@ -561,6 +565,8 @@
     <Compile Include="Authenticator\IdentityHelper.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
+    <Compile Include="Areas\Account\Controllers\AuthController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
@@ -686,7 +692,9 @@
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
     <Content Include="App_Config\Commands.config" />
-    <Content Include="App_Config\ConnectionStrings.config" />
+    <Content Include="App_Config\ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\ConnectionStrings.config.template" />
     <Content Include="App_Config\ConnectionStringsOracle.config" />
     <Content Include="App_Config\FieldTypes.config" />
@@ -702,7 +710,9 @@
     <Content Include="App_Config\Prefetch\Master.config" />
     <Content Include="App_Config\Prefetch\Webdb.config" />
     <Content Include="App_Config\Prototypes.config" />
-    <Content Include="App_Config\Security\Domains.config" />
+    <Content Include="App_Config\Security\Domains.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Security\GlobalRoles.config" />
     <Content Include="App_Config\Sitecore.config">
       <SubType>Designer</SubType>
@@ -849,6 +859,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Areas\Account\Views\Account\SignIn.cshtml" />
+    <None Include="Areas\Account\Views\Auth\Index.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -880,6 +891,7 @@
     <Content Include="Views\Shared\ScheduledPublishTest.cshtml" />
     <Content Include="Views\Shared\Components\MainContent\iFrameEmbed.cshtml" />
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
+    <None Include="Views\Auth2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
