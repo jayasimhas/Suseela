@@ -3036,6 +3036,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.T
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// IShow_Image_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Show Image Options</para>	
+	/// <para>ID: 7c3d457e-2c3a-4423-a193-d452d3af0eb7</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IShow_Image_OptionsConstants.TemplateIdString)]
+	public partial interface IShow_Image_Options : IGlassBase 
+	{
+								/// <summary>
+					/// The Show Image field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 6914c8da-e0dc-49ae-9571-14fddb6d9011</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IShow_Image_OptionsConstants.Show_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Show_Image  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IShow_Image_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Show Image Options</para>	
+		/// <para>ID: 7c3d457e-2c3a-4423-a193-d452d3af0eb7</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IShow_Image_Options__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Show Image field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 6914c8da-e0dc-49ae-9571-14fddb6d9011</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IShow_Image_OptionsConstants.Show_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Show_Image  {get; set;}
+						}
+	
+	public static partial class IShow_Image_OptionsConstants{
+
+			public const string TemplateIdString = "7c3d457e-2c3a-4423-a193-d452d3af0eb7";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Show Image Options";
+
+					
+			public static readonly ID Show_ImageFieldId = new ID("6914c8da-e0dc-49ae-9571-14fddb6d9011");
+			public const string Show_ImageFieldName = "Show Image";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -5633,6 +5694,49 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
 			public const string WidthFieldName = "Width";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// IFeatured_Article_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Featured Article Options</para>	
+	/// <para>ID: a793ffbe-da44-4966-873f-627fa049a036</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IFeatured_Article_OptionsConstants.TemplateIdString)]
+	public partial interface IFeatured_Article_Options : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options
+	{
+				}
+
+	
+		/// <summary>
+		/// IFeatured_Article_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Featured Article Options</para>	
+		/// <para>ID: a793ffbe-da44-4966-873f-627fa049a036</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IFeatured_Article_Options__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options__Raw
+		{
+						}
+	
+	public static partial class IFeatured_Article_OptionsConstants{
+
+			public const string TemplateIdString = "a793ffbe-da44-4966-873f-627fa049a036";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Featured Article Options";
+
+					
+			public static readonly ID Show_ImageFieldId = new ID("6914c8da-e0dc-49ae-9571-14fddb6d9011");
+			public const string Show_ImageFieldName = "Show Image";
 
 						
 			

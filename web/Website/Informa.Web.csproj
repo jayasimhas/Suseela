@@ -805,7 +805,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
-    <Content Include="Views\Shared\Components\FeaturedCuratedContent.cshtml" />
+    <Content Include="Views\Article\FeaturedArticle.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ListableContent.cshtml" />
     <Content Include="Views\Shared\Components\TopicSubtopic.cshtml" />
@@ -877,7 +877,7 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
-    <Content Include="Views\Shared\Components\FeaturedCuratedContentSmall.cshtml" />
+    <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {A94F54D2-AD2B-4921-82B3-5093C020674C}
+id: {B835C69E-153A-49E1-96C4-F073E1B6A8E3}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Shared Components/Featured Content
-parent: {C89B6A9F-E766-4320-BCB2-A9ECD153E4E6}
-name: Featured Content
+path: /sitecore/layout/Renderings/User Defined/Article/Featured Article Small
+parent: {0C163767-797D-4331-9537-DC26007C1B84}
+name: Featured Article Small
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
 templatekey: View rendering
@@ -13,20 +13,34 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 54
+content-length: 42
 
-/Views/Shared/Components/FeaturedCuratedContent.cshtml
+/Views/Article/FeaturedArticleSmall.cshtml
+----field----
+field: {7D24E54F-5C16-4314-90C9-6051AA1A7DA1}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{A793FFBE-DA44-4966-873F-627FA049A036}
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 17
+
+/sitecore/content
 ----field----
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
 key: datasource template
-content-length: 59
+content-length: 46
 
-/sitecore/templates/Velir/FactoryInterface/IFactoryListable
+/sitecore/templates/User Defined/Pages/Article
 ----version----
 language: en
 version: 1
-revision: 8393dc46-a764-4177-b687-6e1b6ac74b96
+revision: 6b0adce3-3102-48c6-957e-60cd57d7c0be
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-8393dc46-a764-4177-b687-6e1b6ac74b96
+6b0adce3-3102-48c6-957e-60cd57d7c0be
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160121T230601Z
+20160208T151931Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
