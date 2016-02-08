@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
 using System.Xml;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -11,10 +15,66 @@ using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
+using Informa.Library.Article.Search;
+using Sitecore.ContentSearch;
+using Sitecore.Data;
+using Sitecore.Links;
+using Sitecore.Mvc.Controllers;
 
 namespace Informa.Web.Controllers
 {
-	public class ArticleUtil
+    [System.Web.Mvc.Route]
+    public class ArticleController : ApiController
+    {
+        protected readonly IArticleSearch ArticleSearcher;
+        protected readonly ISitecoreContext SitecoreContext;
+        
+        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+        {
+            ArticleSearcher = searcher;
+            SitecoreContext = context;
+        }
+
+        public void Get(string prefix, int articleNumber, string suffix = "")
+        {
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.ArticleNumber = $"{prefix}{articleNumber}";
+
+            var results = ArticleSearcher.Search(filter);
+            if (!results.Articles.Any())
+                return;
+
+            //redirect 
+            IArticle a = results.Articles.First();
+            HttpContext.Current.Response.RedirectPermanent(a._Url);
+        }
+
+        public void Get(string title, int escenicID)
+        {
+            string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
+            //if (!uRef.Contains("scripintelligence.com"))
+            //    return;
+
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.EScenicID = escenicID.ToString();
+
+            var results = ArticleSearcher.Search(filter);
+            if (!results.Articles.Any())
+                return;
+
+            //redirect 
+            IArticle a = results.Articles.First();
+            HttpContext.Current.Response.RedirectPermanent(a._Url);
+        }
+    }
+
+    public class ArticleUtil
 	{
 
 		static string WebDb = "web";
@@ -226,23 +286,36 @@ namespace Informa.Web.Controllers
 		{
 			var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
 			string year = date.Year.ToString();
-			string month = date.Month.ToString();
-			string day = date.Day.ToString();
+			var month = date.Month < 10 ? "0" + date.Month : date.Month.ToString();			
+			string day = date.Day < 10 ? "0" + date.Day : date.Day.ToString();
+			IHome_Page homeFolder;
 			IArticle_Folder articlesFolder;
 			IArticle_Date_Folder yearFolder;
 			IArticle_Date_Folder monthFolder;
 			IArticle_Date_Folder dayFolder;
 
-			// Articles Folder
-			if (!publication._ChildrenWithInferType.OfType<IArticle_Folder>().Any())
+			// Home Folder
+			if (!publication._ChildrenWithInferType.OfType<IHome_Page>().Any())
 			{
-				var article = _sitecoreMasterService.Create<IArticle_Folder, IGlassBase>(publication, "Articles");
+				var home = _sitecoreMasterService.Create<IHome_Page, IGlassBase>(publication, "Home");
+				_sitecoreMasterService.Save(home);
+				homeFolder = home;
+			}
+			else
+			{
+				homeFolder = publication._ChildrenWithInferType.OfType<IHome_Page>().First();
+			}
+
+			// Articles Folder
+			if (!homeFolder._ChildrenWithInferType.OfType<IArticle_Folder>().Any())
+			{
+				var article = _sitecoreMasterService.Create<IArticle_Folder, IGlassBase>(homeFolder, "Articles");
 				_sitecoreMasterService.Save(article);
 				articlesFolder = article;
 			}
 			else
 			{
-				articlesFolder = publication._ChildrenWithInferType.OfType<IArticle_Folder>().First();
+				articlesFolder = homeFolder._ChildrenWithInferType.OfType<IArticle_Folder>().First();
 			}
 
 			// Year

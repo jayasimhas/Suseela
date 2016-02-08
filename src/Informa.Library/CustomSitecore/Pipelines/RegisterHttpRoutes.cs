@@ -23,7 +23,21 @@ namespace Informa.Library.CustomSitecore.Pipelines
 				id = RouteParameter.Optional
 			});
 
-			var jsonFormatter = new JsonMediaTypeFormatter
+            routes.MapHttpRoute(
+                "articleNumberApi", 
+                "SC{articleNumber}/{suffix}",
+                new { controller = "Article", action ="Get", suffix = RouteParameter.Optional, prefix = "SC" },
+                new { articleNumber = @"\d+" }
+            );
+
+            routes.MapHttpRoute(
+                "articleEScenicApi", 
+                "{title}-{escenicID}",
+                new { controller = "Article", action = "Get" },
+                new { escenicID = @"\d+" }
+            );
+
+            var jsonFormatter = new JsonMediaTypeFormatter
 			{
 				SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver()},
 			};

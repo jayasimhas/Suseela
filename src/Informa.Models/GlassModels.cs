@@ -558,7 +558,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing
 	{
 								/// <summary>
 					/// The Sort Order field.
@@ -756,7 +756,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -783,7 +783,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -849,7 +849,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing__Raw
 		{
 										/// <summary>
 						/// The Sort Order field.
@@ -1379,6 +1379,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
 
 						
+					
+			public static readonly ID Scheduled_Publishing_EnabledFieldId = new ID("d8005a13-dcf5-431c-89a7-4247c18dacaa");
+			public const string Scheduled_Publishing_EnabledFieldName = "Scheduled Publishing Enabled";
+
+						
 			
 
 	}
@@ -1455,6 +1460,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Article Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.MainContent
+{
+
+
+ 	/// <summary>
+	/// IIFrame_Embed Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Components/MainContent/iFrame Embed</para>	
+	/// <para>ID: 264ec5e6-0d1d-42f1-b4a1-824b87f8eb42</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IIFrame_EmbedConstants.TemplateIdString)]
+	public partial interface IIFrame_Embed : IGlassBase 
+	{
+								/// <summary>
+					/// The Desktop Embed Code field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IIFrame_EmbedConstants.Desktop_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Desktop_Embed_Code  {get; set;}
+								/// <summary>
+					/// The Mobile Embed Code field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IIFrame_EmbedConstants.Mobile_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Mobile_Embed_Code  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IIFrame_Embed Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Components/MainContent/iFrame Embed</para>	
+		/// <para>ID: 264ec5e6-0d1d-42f1-b4a1-824b87f8eb42</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IIFrame_Embed__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Desktop Embed Code field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IIFrame_EmbedConstants.Desktop_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Desktop_Embed_Code  {get; set;}
+										/// <summary>
+						/// The Mobile Embed Code field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IIFrame_EmbedConstants.Mobile_Embed_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Mobile_Embed_Code  {get; set;}
+						}
+	
+	public static partial class IIFrame_EmbedConstants{
+
+			public const string TemplateIdString = "264ec5e6-0d1d-42f1-b4a1-824b87f8eb42";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "iFrame Embed";
+
+					
+			public static readonly ID Desktop_Embed_CodeFieldId = new ID("14420b8a-12ee-4715-833e-eda3fc07b7c1");
+			public const string Desktop_Embed_CodeFieldName = "Desktop Embed Code";
+
+						
+					
+			public static readonly ID Mobile_Embed_CodeFieldId = new ID("b7d4e7c2-5367-4008-960c-cfe1d1a39fa0");
+			public const string Mobile_Embed_CodeFieldName = "Mobile Embed Code";
+
+						
 			
 
 	}
@@ -2825,6 +2914,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing
+{
+
+
+ 	/// <summary>
+	/// IScheduled_Publishing Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Scheduled Publishing/Scheduled Publishing</para>	
+	/// <para>ID: 724befc5-918b-43d6-8c26-83cd4eef6848</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IScheduled_PublishingConstants.TemplateIdString)]
+	public partial interface IScheduled_Publishing : IGlassBase 
+	{
+								/// <summary>
+					/// The Scheduled Publishing Enabled field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: d8005a13-dcf5-431c-89a7-4247c18dacaa</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IScheduled_PublishingConstants.Scheduled_Publishing_EnabledFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Scheduled_Publishing_Enabled  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IScheduled_Publishing Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Scheduled Publishing/Scheduled Publishing</para>	
+		/// <para>ID: 724befc5-918b-43d6-8c26-83cd4eef6848</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IScheduled_Publishing__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Scheduled Publishing Enabled field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: d8005a13-dcf5-431c-89a7-4247c18dacaa</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IScheduled_PublishingConstants.Scheduled_Publishing_EnabledFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Scheduled_Publishing_Enabled  {get; set;}
+						}
+	
+	public static partial class IScheduled_PublishingConstants{
+
+			public const string TemplateIdString = "724befc5-918b-43d6-8c26-83cd4eef6848";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Scheduled Publishing";
+
+					
+			public static readonly ID Scheduled_Publishing_EnabledFieldId = new ID("d8005a13-dcf5-431c-89a7-4247c18dacaa");
+			public const string Scheduled_Publishing_EnabledFieldName = "Scheduled Publishing Enabled";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes
 {
 
@@ -2879,6 +3029,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.T
 					
 			public static readonly ID TextFieldId = new ID("056e7b2c-28dc-441d-bf93-bd74d8b6763a");
 			public const string TextFieldName = "Text";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// IShow_Image_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Show Image Options</para>	
+	/// <para>ID: 7c3d457e-2c3a-4423-a193-d452d3af0eb7</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IShow_Image_OptionsConstants.TemplateIdString)]
+	public partial interface IShow_Image_Options : IGlassBase 
+	{
+								/// <summary>
+					/// The Show Image field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 6914c8da-e0dc-49ae-9571-14fddb6d9011</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IShow_Image_OptionsConstants.Show_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Show_Image  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IShow_Image_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Show Image Options</para>	
+		/// <para>ID: 7c3d457e-2c3a-4423-a193-d452d3af0eb7</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IShow_Image_Options__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Show Image field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 6914c8da-e0dc-49ae-9571-14fddb6d9011</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IShow_Image_OptionsConstants.Show_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Show_Image  {get; set;}
+						}
+	
+	public static partial class IShow_Image_OptionsConstants{
+
+			public const string TemplateIdString = "7c3d457e-2c3a-4423-a193-d452d3af0eb7";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Show Image Options";
+
+					
+			public static readonly ID Show_ImageFieldId = new ID("6914c8da-e0dc-49ae-9571-14fddb6d9011");
+			public const string Show_ImageFieldName = "Show Image";
 
 						
 			
@@ -3521,7 +3732,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.
@@ -5483,6 +5694,49 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
 			public const string WidthFieldName = "Width";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// IFeatured_Article_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Featured Article Options</para>	
+	/// <para>ID: a793ffbe-da44-4966-873f-627fa049a036</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IFeatured_Article_OptionsConstants.TemplateIdString)]
+	public partial interface IFeatured_Article_Options : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options
+	{
+				}
+
+	
+		/// <summary>
+		/// IFeatured_Article_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Featured Article Options</para>	
+		/// <para>ID: a793ffbe-da44-4966-873f-627fa049a036</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IFeatured_Article_Options__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options__Raw
+		{
+						}
+	
+	public static partial class IFeatured_Article_OptionsConstants{
+
+			public const string TemplateIdString = "a793ffbe-da44-4966-873f-627fa049a036";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Featured Article Options";
+
+					
+			public static readonly ID Show_ImageFieldId = new ID("6914c8da-e0dc-49ae-9571-14fddb6d9011");
+			public const string Show_ImageFieldName = "Show Image";
 
 						
 			

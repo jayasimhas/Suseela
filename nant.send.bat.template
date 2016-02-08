@@ -1,0 +1,1 @@
+nant send -D:build.configuration=${build.configuration} -D:TDS.SitecoreDeployFolder=${TDS.SitecoreDeployFolder} -D:project.folder=${project.folder} -D:env=${env}

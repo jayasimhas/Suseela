@@ -193,8 +193,9 @@ WordPlugin/SitecoreTreeWalker/SitecoreTreeWalker_1_TemporaryKey.pfx
 WordPlugin/SitecoreTreeWalker/app.config
 web/Data/Submit Queue
 web/Website/App_Config/Include/ZZ.UserDefined/Solr.config
-
+web/Website/wordinstaller
 config/env/local.json
 
 logs/*
 web/Website/local.js
+nant.send.bat

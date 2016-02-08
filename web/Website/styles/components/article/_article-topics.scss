@@ -1,5 +1,6 @@
 .article-topics {
     @include textMix('Roboto', 15px, 400);
+    margin-bottom: 3.5rem;
 
     &__li {
         padding: 6px 0 12px;

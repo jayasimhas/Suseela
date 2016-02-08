@@ -30,7 +30,8 @@ namespace Informa.Library.Article.Search
 			return new ArticleSearchFilter
 			{
 				ExcludeManuallyCuratedItems = new List<Guid>(),
-				TaxonomyIds = new List<Guid>()
+				TaxonomyIds = new List<Guid>(),
+                ArticleNumber = string.Empty
 			};
 		}
 
@@ -41,7 +42,9 @@ namespace Informa.Library.Article.Search
 				var query = context.GetQueryable<ArticleSearchResultItem>()
 					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
 					.FilterTaxonomies(filter)
-					.ExcludeManuallyCurated(filter);
+					.ExcludeManuallyCurated(filter)
+                    .FilteryByArticleNumber(filter)
+                    .FilteryByEScenicID(filter);
 
 				if (filter.PageSize > 0)
 				{

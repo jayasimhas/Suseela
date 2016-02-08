@@ -1,48 +1,14 @@
-@using Informa.Web.TestData
+@model ManuallyCuratedContentViewModel
 <div class="manually-curated-articles">
     <div class="manually-curated-articles__main-well">
-        
-        @Html.Sitecore().Placeholder("left-curated-content")
-
-
-        @*@{
-            Html.RenderPartial("Components/FeaturedCuratedContent", Model);
-        }*@
-
-        <div class="article-preview__two-column">
-            @foreach (var article in Enumerable.Range(0, 2))
-            {
-                Html.RenderPartial("Components/ListableContentSmall", TestData.ListableModel(1, 0, false));
-            }
-        </div>
-
+        @Html.Sitecore().DynamicPlaceholder("left-curated-content")
     </div>
 
     <div class="manually-curated-articles__right--force-top">
         @Html.Sitecore().DynamicPlaceholder("right-curated-content")
-
-
-        @*@Html.Partial("Components/ListableContentSmall", Model)*@
     </div>
 
-    <div class="manually-curated-articles__right">
-        <div class="newsletter-signup">
-            <h3>Be informed first</h3>
-            Receive the SCRIP Intelligence newsletters.
-            <div class="form--single-row">
-                <input class="inf-standard-form-field">
-                <button class="button--filled">Sign Up</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="manually-curated-articles__right">
-        <section class="article-preview article-preview--small">
-            <div class="article-preview__ad">
-                Advertisement
-                <img src="http://placehold.it/787x443">
-            </div>
-        </section>
-    </div>
+	@{ Html.RenderPartial("Components/_ManuallyCuratedNewsletterSignUp"); }
+	@{ Html.RenderPartial("Components/_ManuallyCuratedAdvert"); }
 
 </div>

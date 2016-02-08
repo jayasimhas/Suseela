@@ -39,6 +39,8 @@ namespace Informa.Web.Controllers
 				//TODO - Give proper name.  Remove unneeded characters like & etc
 				var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
 				var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
+				//var baseItem = new GlassBase {_Name = rinsedName, _TemplateId = new Guid(IArticleConstants.TemplateIdString)};
+				//var articleCreate = _sitecoreMasterService.Create(parent, baseItem);
 				var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
 				article.Title = content.Name;
 				article.Planned_Publish_Date = publicationDate;

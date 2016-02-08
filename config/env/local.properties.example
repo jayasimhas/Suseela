@@ -68,4 +68,9 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="DevelopmentForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />
 	<property name="StageForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />
 	<property name="ProductionForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />	
+	<property name="publish.dir" value="${project.folder}Web\Website\wordinstaller\" />
+	
+	<!-- For web deployments, the URL end-users visit for the application -->
+	<property name="installpath" value="http://informa8.ashah.velir.com/wordinstaller/" />
+	<property name="updatepath" value="http://informa8.ashah.velir.com/wordinstaller/" />
 </project>

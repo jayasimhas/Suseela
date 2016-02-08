@@ -88,17 +88,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\AutofacContrib.SolrNet.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\81\Glass.Mapper.Sc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.0.5.54, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.5.54\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -143,6 +143,14 @@
     </Reference>
     <Reference Include="MiniProfiler.Mvc">
       <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Driver.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -588,6 +596,7 @@
     <Compile Include="ViewModels\IListableVIewModel.cs" />
     <Compile Include="ViewModels\ISignInViewModel.cs" />
     <Compile Include="ViewModels\LatestNewsViewModel.cs" />
+    <Compile Include="ViewModels\ManuallyCuratedContentViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\GlassArticleModel.cs" />
@@ -613,6 +622,7 @@
     <Compile Include="ViewModels\PopOuts\ISignInPopOutVIewModel.cs" />
     <Compile Include="ViewModels\PopOuts\RegisterPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SignInPopOutViewModel.cs" />
+    <Compile Include="ViewModels\ScheduledPublishTestViewModel.cs" />
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
@@ -716,8 +726,6 @@
     <Content Include="Areas\Account\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Article\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="Areas\Account\Views\Connector\Login.cshtml" />
@@ -797,7 +805,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
-    <Content Include="Views\Shared\Components\FeaturedCuratedContent.cshtml" />
+    <Content Include="Views\Article\FeaturedArticle.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ListableContent.cshtml" />
     <Content Include="Views\Shared\Components\TopicSubtopic.cshtml" />
@@ -827,7 +835,12 @@
     </Content>
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
-    <None Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
+    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -859,6 +872,12 @@
     <Content Include="Views\Shared\PopOuts\SignIn.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailArticle.cshtml" />
     <Content Include="Views\Shared\PopOuts\Register.cshtml" />
+    <Content Include="Views\Shared\ScheduledPublishTest.cshtml" />
+    <Content Include="Views\Shared\Components\MainContent\iFrameEmbed.cshtml" />
+    <Content Include="Views\Shared\Components\PageTitle.cshtml" />
+    <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
+    <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
+    <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

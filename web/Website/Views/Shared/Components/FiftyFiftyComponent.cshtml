@@ -1,7 +1,3 @@
-﻿@using Informa.Library.Utilities.References
-@using Glass.Mapper.Sc.Web.Mvc
-
-<div class="article-preview__two-column">
-   @Html.Sitecore().Rendering(RenderingReferences.Instance.ListableContentSmall.ToString())
-    @Html.Sitecore().Rendering(RenderingReferences.Instance.ListableContentSmall.ToString())
+﻿<div class="article-preview__two-column">
+	@Html.Sitecore().DynamicPlaceholder("left-curated-content-articles")
 </div>

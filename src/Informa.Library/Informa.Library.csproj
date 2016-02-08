@@ -121,6 +121,18 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -235,6 +247,33 @@
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
+    <Compile Include="Publishing\IPublishingStatus.cs" />
+    <Compile Include="Publishing\PublishingStatus.cs" />
+    <Compile Include="Publishing\IPublishingStatusCheck.cs" />
+    <Compile Include="Publishing\PublishStatus.cs" />
+    <Compile Include="Publishing\PublishingStatusCheck.cs" />
+    <Compile Include="Publishing\Scheduled\Events\ScheduledPublishItemVersionRemoved.cs" />
+    <Compile Include="Publishing\Scheduled\Events\ScheduledPublishItemDeleted.cs" />
+    <Compile Include="Publishing\Scheduled\Events\ScheduledPublishItemSave.cs" />
+    <Compile Include="Publishing\Scheduled\IDeleteVersionScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IDeleteItemScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IFindScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IItemDeleteScheduledPublises.cs" />
+    <Compile Include="Publishing\Scheduled\IItemVersionDeleteScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IProcessScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublishesResult.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublishResult.cs" />
+    <Compile Include="Publishing\Scheduled\ItemDeleteScheduledPublises.cs" />
+    <Compile Include="Publishing\Scheduled\ItemVersionDeleteScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteVersionScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteItemScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\ProcessScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishType.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\ProcessScheduledPublishing.cs" />
+    <Compile Include="Threading\ThreadSafe`1.cs" />
     <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactoryConfiguration.cs" />
@@ -280,14 +319,53 @@
     <Compile Include="Presentation\IRenderingItemContext.cs" />
     <Compile Include="Presentation\IRenderingItemContext`1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishing\Scheduled\IDeleteScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\IItemScheduledPublishesFactory.cs" />
+    <Compile Include="Publishing\Scheduled\IRetrieveItemToPublish.cs" />
+    <Compile Include="Publishing\Scheduled\IPublishScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\IPublishScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IReadyScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IAllScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublishingDatabaseContext.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublishingTargetsContext.cs" />
+    <Compile Include="Publishing\Scheduled\ItemScheduledPublishesFactory.cs" />
+    <Compile Include="Publishing\Scheduled\RetrieveItemToPublish.cs" />
+    <Compile Include="Publishing\Scheduled\IUpdateItemScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\IUpsertScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\IUpsertScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbFindOneScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbInsertScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbScheduledPublishContext.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\IScheduledPublishDocumentFactory.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindOneSchuledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbInsertScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbScheduledPublishContext.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbAllScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbUpsertScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocument.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocumentFactory.cs" />
+    <Compile Include="Publishing\Scheduled\PublishScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\PublishScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\ReadyScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishingDatabaseContext.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishingTargetsContext.cs" />
+    <Compile Include="Publishing\Scheduled\UpdateItemScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\UpsertScheduledPublishes.cs" />
     <Compile Include="Registration\IUsernameValidator.cs" />
     <Compile Include="Registration\MockUsernameValidator.cs" />
     <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
     <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Search\Filter\IArticleEScenicIDFilter.cs" />
+    <Compile Include="Search\Filter\IArticleNumberFilter.cs" />
     <Compile Include="Search\Filter\ITaxonomySearchFilter.cs" />
     <Compile Include="Search\IProviderSearchContextFactory.cs" />
     <Compile Include="Search\ProviderSearchContextFactory.cs" />
+    <Compile Include="Search\Results\IArticleEScenicID.cs" />
+    <Compile Include="Search\Results\IArticleNumber.cs" />
     <Compile Include="Search\Results\ITaxonomySearchResults.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />

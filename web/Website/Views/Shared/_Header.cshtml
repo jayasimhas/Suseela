@@ -18,7 +18,19 @@
             Menu
         </div>
 
-        <a href="@Model.LogoUrl"><img class="header__logo" src="@Model.LogoImageUrl"></a>
+        <div class="header__logo">
+            <a href="@Model.LogoUrl"><img src="@Model.LogoImageUrl"></a>
+        </div>
+
+        <div class="header-search__wrapper">
+            <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
+            <svg class="header__icons header__icons--search js-header-search-trigger">
+                <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
+            </svg>
+            <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
+                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            </svg>
+        </div>
 
         <div class="header__user-actions">
 			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
@@ -73,15 +85,14 @@
 
         </div>
 
-        <div class="header-search__wrapper">
-            <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
-            <svg class="header__icons header__icons--search js-header-search-trigger">
-                <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
-            </svg>
-            <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
-                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-            </svg>
+        @* If this is an Article page... *@
+
+        <div class="boxout-print-info">
+            <p>This copy is for your personal non-commercial use. For high-quality copies or electronic reprints for distribution to colleagues or customers, click <a href="#">here</a> or call +1 (908) 748-1221.</p>
+            <p>Printed by <b>Ms. First M. Last, Company</b></p>
         </div>
+
+        @* end pseudo-if *@
 
     </div>
 
