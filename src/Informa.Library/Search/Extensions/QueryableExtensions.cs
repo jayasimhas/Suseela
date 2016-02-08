@@ -27,7 +27,7 @@ namespace Informa.Library.Search.Extensions
         public static IQueryable<T> FilteryByArticleNumber<T>(this IQueryable<T> source, IArticleNumberFilter filter)
             where T : IArticleNumber
         {
-            if (source == null || filter == null || !string.IsNullOrEmpty(filter.ArticleNumber))
+            if (source == null || filter == null || string.IsNullOrEmpty(filter.ArticleNumber))
             {
                 return source;
             }
@@ -41,7 +41,7 @@ namespace Informa.Library.Search.Extensions
         public static IQueryable<T> FilteryByEScenicID<T>(this IQueryable<T> source, IArticleEScenicIDFilter filter)
             where T : IArticleEScenicID
         {
-            if (source == null || filter == null || !string.IsNullOrEmpty(filter.EScenicID))
+            if (source == null || filter == null || string.IsNullOrEmpty(filter.EScenicID))
             {
                 return source;
             }

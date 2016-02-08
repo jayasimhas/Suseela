@@ -41,7 +41,7 @@ namespace Informa.Web.Controllers
             IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
             filter.PageSize = 1;
             filter.Page = 1;
-            filter.ArticleNumber = $"{prefix}{articleNumber}";
+            filter.ArticleNumber = $"{prefix}{articleNumber:D6}";
 
             var results = ArticleSearcher.Search(filter);
             if (!results.Articles.Any())
