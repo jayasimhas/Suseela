@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Glass.Mapper.Sc.Fields;
 using Newtonsoft.Json;
 using Sitecore.Data.Items;
 using Sitecore.Workflows;
@@ -294,6 +295,12 @@ namespace Informa.Web.Areas.Account.Models
 
 			public Boolean Embargoed { get; set; }
 			public bool IsPublished { get; set; }
+
+			public string Label { get; set; }
+			public Guid MediaType { get; set; }
+			public Image FeaturedImage { get; set; }
+			public string FeaturedImageCaption { get; set; }
+			public string FeaturedImageSource { get; set; }
 		}
 
 		public class ArticlePreviewInfo

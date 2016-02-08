@@ -19,6 +19,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 {
     public partial class FeaturedImage : ArticleDetailsPageUserControl
     {
+		public string imageSelected { get; set; }
         protected SitecoreItemGetter _siteCoreItemGetter;
         public FeaturedImage()
         {
@@ -31,7 +32,28 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
         }
 
-        public void SetSitecoreItemGetter(SitecoreItemGetter siteCoreItemGetter)
+	    public Glass.Mapper.Sc.Fields.Image GetFeaturedImage()
+	    {
+			if(imageSelected == null) { return null;}
+		    var image = new Glass.Mapper.Sc.Fields.Image
+		    {
+			    MediaId = SitecoreGetter.GetItemGuidByPath(imageSelected),
+			    Alt = alttextLbl.Text
+		    };
+
+		    return image;			
+		}
+
+	    public string GetFeaturedImageCaption()
+	    {
+		    return captionTxtBox.Text;
+	    }
+		public string GetFeaturedImageSource()
+		{
+			return sourceTxtBox.Text;
+		}
+
+		public void SetSitecoreItemGetter(SitecoreItemGetter siteCoreItemGetter)
         {
             _siteCoreItemGetter = siteCoreItemGetter;
         }
@@ -116,7 +138,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
                     return;
                 }
 
-                pictureBox1.ImageLocation = mediaItem.FileName;
+	            imageSelected = sitecorePath.Path;
+				pictureBox1.ImageLocation = mediaItem.FileName;
                 filenameLbl.Text = mediaItem.Title;
                 alttextLbl.Text = mediaItem.Title;
             }

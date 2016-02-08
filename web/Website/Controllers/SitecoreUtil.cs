@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Security;
+using Informa.Library.Article.Search;
 using Informa.Web.Areas.Account.Models;   
 using Informa.Models.FactoryInterface;
 using Sitecore.Security.Authentication;
@@ -13,15 +15,12 @@ namespace Informa.Web.Controllers
 		/// <summary>
 		/// This method Generates the Article Number
 		/// </summary>
-		/// <param name="article"></param>
-		/// <param name="publication"></param>
-		/// <param name="articleDate"></param>
+		/// <param name="lastArticleNumber"></param>
+		/// <param name="publication"></param>		
 		/// <returns></returns>
-		public static string GetNextArticleNumber(string article, Guid publication, DateTime articleDate)
-		{
-			string yymmdd = $"{articleDate:yyMMdd}";
-			string prefix = GetPublicationPrefix(publication) + yymmdd;
-			string number = prefix + article;
+		public static string GetNextArticleNumber(string lastArticleNumber, Guid publication)
+		{			
+			string number = GetPublicationPrefix(publication) + lastArticleNumber;
 			return number;
 		}
 

@@ -768,7 +768,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 ArticleDetails.ArticleSpecificNotifications = articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToList();
 
                 ArticleDetails.WordCount = SitecoreAddin.ActiveDocument.ComputeStatistics(0);
-                ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
+                //TODO - Workflow commandId
+				//ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
                 SitecoreArticle.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked)
                 {
