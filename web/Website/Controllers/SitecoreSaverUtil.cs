@@ -32,8 +32,8 @@ namespace Informa.Web.Controllers
 		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher)
 		{
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
-			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)) ? 
-				TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\temp.";
+			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)) ? 
+				TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\temp.";
 			_articleUtil = articleUtil;
 			_articleSearcher = searcher;
 
