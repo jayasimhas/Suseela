@@ -1,4 +1,4 @@
-﻿@model Informa.Web.ViewModels.MainLayoutViewModel
+﻿@model MainLayoutViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +11,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+	@if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
+	{
+		<link rel="canonical" href="@Model.CanonicalUrl" />
+	}
+
     <!-- STATIC PLACEHOLDER -->
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/dist/index-generated.css">
 
-    @* <title>@Html.Sitecore().Field("title", new {DisableWebEdit = true})</title>*@
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
 </head>

@@ -3,11 +3,10 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
-	public class MainLayoutViewModel : GlassViewModel<IGlassBase>
+	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 
@@ -67,5 +66,7 @@ namespace Informa.Web.ViewModels
 				return string.Concat(pageTitle, publicationName);
 			}
 		}
+
+		public string CanonicalUrl => GlassModel.Canonical_Link.GetLink();
 	}
 }
