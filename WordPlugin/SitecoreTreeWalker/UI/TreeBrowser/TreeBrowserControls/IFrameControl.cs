@@ -12,7 +12,7 @@ using UserControl = System.Windows.Forms.UserControl;
 
 namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 {
-    public partial class IFrameControl : UserControl
+	public partial class IFrameControl : UserControl
 	{
 		protected SitecoreItemGetter SiteCoreItemGetter;
 		protected static IFrameControl IframeForm;
@@ -31,7 +31,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			SiteCoreItemGetter = siteCoreItemGetter;
 		}
-		
+
 		/// <summary>
 		/// Removes the current items in the TreeBrowser and re-initializes them.
 		/// </summary>
@@ -39,11 +39,11 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			mobileEmbed.Text = _mobilePHText;
 			desktopEmbed.Text = _desktopPHText;
-			
+
 			if (!DesignMode)
 			{
 				SetSitecoreItemGetter(new SitecoreItemGetter());
-				
+
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				desktopErrors = true;
 			}
 
-			if (!desktopErrors && !ValidDesktopInput(desktopEmbed.Text) )
+			if (!desktopErrors && !ValidDesktopInput(desktopEmbed.Text))
 			{
 				uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
-				uxDesktopError.Show();	
+				uxDesktopError.Show();
 				desktopErrors = true;
 			}
 
-			
-			if (DesktopIFrame != null && !desktopErrors && !IFramesIsSecure(DesktopIFrame.DocumentNode.SelectNodes("//iframe"),out InsecureDesktopURL))
+
+			if (DesktopIFrame != null && !desktopErrors && !IFramesIsSecure(DesktopIFrame.DocumentNode.SelectNodes("//iframe"), out InsecureDesktopURL))
 			{
 				uxDesktopError.Text = Resources.IFrameControl_uxInsertIFrame_Click_Insecure_Multimedia;
 				uxDesktopError.Show();
@@ -75,7 +75,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				desktopErrors = true;
 			}
 
-			
+
 			if (!ValidMobileInput(mobileEmbed.Text))
 			{
 				uxMobileError.Text = Resources.IFrameControl_uxInsertIFrame_Click_DesktopEmbedd;
@@ -95,8 +95,8 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			if (!mobileErrors && !desktopErrors)
 			{
 				mobileEmbed.Text = mobileEmbed.Text.Trim().Equals(_mobilePHText) ? String.Empty : mobileEmbed.Text;//set mobile text to empty if it is the placeholder text
-				InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, desktopEmbed.Text,
-				             mobileEmbed.Text);				
+				InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, SuggestedURL.GetSuggestedUrl(desktopEmbed.Text),
+							 SuggestedURL.GetSuggestedUrl(mobileEmbed.Text));
 			}
 			else
 			{
@@ -139,10 +139,10 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				document = null;
 				return true;
 			}
-			
+
 			HtmlNode.ElementsFlags.Remove("form"); //forces froms to have opening and closing tag
 			string html = string.Format("<html><head></head><body>{0}</body></html>", input);
-			document = new  HtmlDocument();
+			document = new HtmlDocument();
 			document.LoadHtml(html);
 			var scriptNodes = document.DocumentNode.SelectNodes("//script");
 			var linkNodes = document.DocumentNode.SelectNodes("//link");
@@ -150,9 +150,9 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			var styleNodes = document.DocumentNode.SelectNodes("//style");
 
 			return (formNodes == null || formNodes.Count == 0)
-			       && (scriptNodes == null || scriptNodes.Count == 0)
-			       && (linkNodes == null || linkNodes.Count == 0)
-			       && (styleNodes == null || styleNodes.Count == 0);
+				   && (scriptNodes == null || scriptNodes.Count == 0)
+				   && (linkNodes == null || linkNodes.Count == 0)
+				   && (styleNodes == null || styleNodes.Count == 0);
 		}
 
 
@@ -167,7 +167,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 			foreach (HtmlNode node in htmlNodeCollection)
 			{
-				if (node.Attributes["src"] !=null && !string.IsNullOrEmpty(node.Attributes["src"].Value))
+				if (node.Attributes["src"] != null && !string.IsNullOrEmpty(node.Attributes["src"].Value))
 				{
 					string source = node.Attributes["src"].Value;
 					if (!source.StartsWith("https") && !source.StartsWith("//"))
@@ -180,10 +180,10 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			return true;
 		}
 
-		#endregion  
+		#endregion
 
 		private static void InsertIFrame(string header, string title, string caption, string source, string desktopEmbed,
-		                                 string mobileEmbed)
+										 string mobileEmbed)
 		{
 			var app = Globals.SitecoreAddin.Application;
 			int numParagraph = 2;
@@ -203,11 +203,11 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			app.Options.AutoFormatAsYouTypeReplaceQuotes = false;
 			Range selection = app.Selection.Previous(WdUnits.wdParagraph, numParagraph);
 
-			
+
 			if (!string.IsNullOrWhiteSpace(header))
 			{
 				selection.Text = header;
-				CreateCustomStyleFromBase(app, DocumentAndParagraphStyles.ExhibitNumberStyle,DocumentAndParagraphStyles.IFrameHeaderStyle);
+				CreateCustomStyleFromBase(app, DocumentAndParagraphStyles.ExhibitNumberStyle, DocumentAndParagraphStyles.IFrameHeaderStyle);
 				selection.set_Style(DocumentAndParagraphStyles.IFrameHeaderStyle);
 				selection = selection.Next(WdUnits.wdParagraph);
 			}
@@ -226,12 +226,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 			if (!string.IsNullOrEmpty(desktopEmbed))
 			{
-				var desktopBodyNode= DesktopIFrame.DocumentNode.SelectSingleNode("//body");
+				var desktopBodyNode = DesktopIFrame.DocumentNode.SelectSingleNode("//body");
 
 				selection.Text = desktopBodyNode.InnerHtml;// desktopEmbed;
 				selection.set_Style(DocumentAndParagraphStyles.IFrameCodeStyle);
-				
-				
+
+
 				selection = selection.Next(WdUnits.wdParagraph);
 			}
 
@@ -245,7 +245,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			{
 				selection.Text = IFrameEmbedBuilder.MobileMessage;
 			}
-			
+
 			selection.set_Style(DocumentAndParagraphStyles.IFrameMobileCodeStyle);
 			selection = selection.Next(WdUnits.wdParagraph);
 
@@ -255,14 +255,14 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				selection.Text = caption;
 				CreateCustomStyleFromBase(app, DocumentAndParagraphStyles.ExhibitCaptionStyle52, DocumentAndParagraphStyles.IFrameCaptionStyle);
 				selection.set_Style(DocumentAndParagraphStyles.IFrameCaptionStyle);
-				
+
 				selection = selection.Next(WdUnits.wdParagraph);
 			}
 
 			if (!string.IsNullOrWhiteSpace(source))
 			{
 				selection.Text = source;
-				
+
 				CreateCustomStyleFromBase(app, DocumentAndParagraphStyles.SourceStyle, DocumentAndParagraphStyles.IFrameSourceStyle);
 				selection.set_Style(DocumentAndParagraphStyles.IFrameSourceStyle);
 				selection.Next(WdUnits.wdParagraph).Select();
@@ -276,7 +276,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			 my apologies
 			 * */
 		private static void CreateCustomStyleFromBase(Microsoft.Office.Interop.Word.Application app, string baseStyle,
-		                                               string newStyleName)
+													   string newStyleName)
 		{
 			using (new AlertDisabler(app))
 			{
@@ -284,15 +284,15 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				{
 					var style = app.ActiveDocument.Styles.Add(newStyleName);
 					style.set_BaseStyle(baseStyle);
-					
+
 				}
 				catch
 				{
 				}
 			}
-			
+
 		}
-		private static void CreateIFrameCodeStyle(Microsoft.Office.Interop.Word.Application app )
+		private static void CreateIFrameCodeStyle(Microsoft.Office.Interop.Word.Application app)
 		{
 
 			using (new AlertDisabler(app))
@@ -303,7 +303,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 					var style = app.ActiveDocument.Styles.Add(DocumentAndParagraphStyles.IFrameCodeStyle);
 					style.set_BaseStyle(DocumentAndParagraphStyles.ExhibitNumberStyle);
 					style.set_NextParagraphStyle(DocumentAndParagraphStyles.StoryText22);
-					style.Font.Size = (float) 10.5;
+					style.Font.Size = (float)10.5;
 					style.Font.Name = "Consolas";
 				}
 				catch
@@ -316,7 +316,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 					style.set_BaseStyle(DocumentAndParagraphStyles.ExhibitNumberStyle);
 					style.set_NextParagraphStyle(DocumentAndParagraphStyles.StoryText22);
-					style.Font.Size = (float) 10.5;
+					style.Font.Size = (float)10.5;
 					style.Font.Name = "Consolas";
 
 				}
@@ -355,7 +355,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		}
 		internal void uxDesktopEmbed_Focus(object sender, EventArgs e)
 		{
-			
+
 			if (desktopEmbed.Text.Trim().Equals(_desktopPHText))
 			{
 				desktopEmbed.Text = String.Empty;
@@ -369,7 +369,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxDesktophttpsPreview_Click(object sender, EventArgs e)
 		{
-			SuggestedURL.Open(InsecureDesktopURL,this.InsertDesktopUrl);
+			SuggestedURL.Open(InsecureDesktopURL, this.InsertDesktopUrl);
 		}
 
 		internal void InsertMobileUrl(string newUrl)
@@ -409,7 +409,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				{
 					node.Attributes["src"].Value = newUrl;
 					return node;
-				} 
+				}
 			}
 			return null;
 		}
@@ -419,25 +419,25 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		}
 
-        private void header_TextChanged(object sender, EventArgs e)
-        {
-            headerLabel.Text = this.uxIFrameHeader.Text;            
-        }
+		private void header_TextChanged(object sender, EventArgs e)
+		{
+			headerLabel.Text = this.uxIFrameHeader.Text;
+		}
 
-        private void title_TextChanged(object sender, EventArgs e)
-        {
-            titleLabel.Text = this.uxIFrameTitle.Text;
-        }
+		private void title_TextChanged(object sender, EventArgs e)
+		{
+			titleLabel.Text = this.uxIFrameTitle.Text;
+		}
 
-        private void caption_TextChanged(object sender, EventArgs e)
-        {
-            captionLabel.Text = this.uxIFrameCaption.Text;
-        }
+		private void caption_TextChanged(object sender, EventArgs e)
+		{
+			captionLabel.Text = this.uxIFrameCaption.Text;
+		}
 
-        private void source_TextChanged(object sender, EventArgs e)
-        {
-            sourceLabel.Text = this.uxIFrameSource.Text;
-        }
+		private void source_TextChanged(object sender, EventArgs e)
+		{
+			sourceLabel.Text = this.uxIFrameSource.Text;
+		}
 	}
 }
 
