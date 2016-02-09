@@ -19,7 +19,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.PrintPublicationDate = articleStruct.PrintPublicationDate;
 			articleDetails.NotesToEditorial = articleStruct.NotesToEditorial;
 			//TODO - add article taxonomy to the Struct.
-			if (articleStruct.Taxonomoy.Any())
+			//if (articleStruct.Taxonomoy.Any())
 			{
 				//articleDetails.Taxonomoy = articleStruct.Taxonomoy.Select(t => new WordPluginModel.TaxonomyStruct {Name = t.Name, ID = t.ID}).ToList();
 			}
