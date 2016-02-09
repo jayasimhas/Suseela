@@ -12,5 +12,8 @@ namespace Informa.Library.Search.Results
     {
         [IndexField("c_searchable")]
         public bool IsSearchable { get; set; }
+
+        [IndexField("_latestversion")]
+        public bool IsLatestVersion { get; set; }
     }
 }

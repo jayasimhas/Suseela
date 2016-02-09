@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Glass.Mapper.Sc;
+﻿using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Velir.Search.Core.ComputedFields;
 
-namespace Informa.Library.Search.ComputedFields
+namespace Informa.Library.Search.ComputedFields.Base
 {
     public class IsSearchableField : BaseContentComputedField
     {
