@@ -421,6 +421,8 @@
       <processor type="Sitecore.Pipelines.RenderField.GetMemoFieldValue, Sitecore.Kernel" />
       <processor type="Sitecore.Pipelines.RenderField.GetDateFieldValue, Sitecore.Kernel" />
       <processor type="Sitecore.Pipelines.RenderField.GetDocxFieldValue, Sitecore.Kernel" />
+      <processor type="Sitecore.Pipelines.RenderField.GetIntegerFieldValue, Sitecore.Kernel" />
+      <processor type="Sitecore.Pipelines.RenderField.GetNumberFieldValue, Sitecore.Kernel" />
       <processor type="Sitecore.Pipelines.RenderField.AddBeforeAndAfterValues, Sitecore.Kernel" />
       <processor type="Sitecore.Pipelines.RenderField.RenderWebEditing, Sitecore.Kernel" />
     </renderField>
@@ -475,10 +477,11 @@
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.CheckVirtualItem, Sitecore.Kernel" />
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.CheckSecurity, Sitecore.Kernel" />
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.DetermineAction, Sitecore.Kernel" />
+      <processor type="Sitecore.Publishing.Pipelines.PublishItem.MoveItems, Sitecore.Kernel" />
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.PerformAction, Sitecore.Kernel" />
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.AddItemReferences, Sitecore.Kernel" />
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.RemoveUnknownChildren, Sitecore.Kernel" />
-      <processor type="Sitecore.Publishing.Pipelines.PublishItem.MoveItems, Sitecore.Kernel" />
+
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.RaiseProcessedEvent, Sitecore.Kernel" runIfAborted="true" />
       <processor type="Sitecore.Publishing.Pipelines.PublishItem.UpdateStatistics, Sitecore.Kernel" runIfAborted="true">
         <traceToLog>false</traceToLog>
@@ -509,6 +512,15 @@
       <processor type="Sitecore.Pipelines.HealthMonitor.HealthMonitor, Sitecore.Kernel" method="LogMemoryStatus" />
       <processor type="Sitecore.Pipelines.HealthMonitor.HealthMonitor, Sitecore.Kernel" method="LogCacheStatus" />
       <processor type="Sitecore.Pipelines.HealthMonitor.HealthMonitor, Sitecore.Kernel" method="LogCounterStatus">
+        <!-- 
+          List of the system counters whose values should be written to the Sitecore log file by the Sitecore health monitor
+          
+          Supported attributes:
+              category: The name of the performance counter category that this performance counter is associated with.
+              name: The name of the performance counter that has an entry in the performance monitor.
+              instanceType: The name of the performance counter category. 
+              valueType: [raw|calculated]. This attribute is optional. If set to 'raw', the counter outputs the raw value from the performance counter. If set to 'calculated', the counter outputs the calculated value. If no attribute is set, the counter outputs the raw value from the performance counter.
+        -->
         <counters hint="raw:AddCounter">
           <counter category="Process" name="Private Bytes" instanceType="Windows" />
           <counter category="Process" name="Virtual Bytes" instanceType="Windows" />
@@ -527,9 +539,11 @@
     <postSessionEnd>
     </postSessionEnd>
     <getMediaStream>
+      <processor type="Sitecore.Resources.Media.SaveColorProfileProcessor, Sitecore.Kernel" />
       <processor type="Sitecore.Resources.Media.ThumbnailProcessor, Sitecore.Kernel" />
       <processor type="Sitecore.Resources.Media.ResizeProcessor, Sitecore.Kernel" />
       <processor type="Sitecore.Resources.Media.GrayscaleProcessor, Sitecore.Kernel" />
+      <processor type="Sitecore.Resources.Media.RestoreColorProfileProcessor, Sitecore.Kernel" />
     </getMediaStream>
     <!--  Obsolete: use the getChromeData pipeline instead. -->
     <setupEditFrame>
@@ -2837,6 +2851,21 @@
             Default value: ""
       -->
     <setting name="ItemCloning.NonInheritedFields" value="" />
+    <!--  ITEM CLONING - INHERIT WORKFLOW DATA
+            Specify whether you want the workflow and workflow state fields to be inherited by clones from their source item.
+            Note: When you change the setting value, clones move in or out the workflow, which may affect their behavior, for example, on publishing.
+            Default value: false
+      -->
+    <setting name="ItemCloning.InheritWorkflowData" value="false" />
+    <!--  ITEM CLONING - FORCE UPDATE
+            Specify whether clones should be updated automatically when:
+              - a new version is added to the original item.
+              - a new language is added to the original item.
+              - a new sub-item is added to the original item.
+              Note: If true, all the clones of the original item are updated automatically.
+            Default value: false
+      -->
+    <setting name="ItemCloning.ForceUpdate" value="false" />
     <!--  HEALTH MONITOR INTERVAL
             Specifies the interval between running the healthMonitor pipeline.
             Default value: 00:10:00 (10 minutes)
@@ -3026,6 +3055,15 @@
             Can be site path (ex. /folder/...) or absolute (ex. c:\folder\...)
       -->
     <setting name="LicenseFile" value="$(dataFolder)/license.xml" />
+    <!--  LINK DATABASE - MAXIMUM BATCH SIZE
+            This setting specifies the maximum number of records that Compact method can process in a single iteration.
+            If you set this value too low, it can cause excessive amounts of network traffic and may have a significant impact 
+            on system throughput.
+            If you set this value too high, it may affect tasks that require communication with SQL Server. For example, it may affect the size of transactions
+            sent to SQL Server and this might require you to set higher 'lock timeout' values as it takes longer to process large batches.
+            Default: 1000
+      -->
+    <setting name="LinkDatabase.MaximumBatchSize" value="1000" />
     <!--  LINK DATABASE - UPDATE DURING PUBLISH
             If true, the system performs incremental updates to the link database during publishing operations.
             If false, the system does not perform updates to the link database for item operations that occur in the context of
@@ -3188,6 +3226,16 @@
             It should be different from MediaFolder setting
       -->
     <setting name="Media.FileFolder" value="/App_Data/MediaFiles" />
+    <!--  MEDIA - FILE SYSTEM WATCHER - BUFFER SIZE
+            The size (in bytes) of the internal buffer used by the file system watchers that monitor the file system change 
+            notifications and raise events when a directory, or file in a directory, changes.
+            If you get log entries about internal buffer overflow, increasing the value of this setting may solve this problem. 
+            The minimum size is 4096 (4 KB).
+            The maximum size is 65536 (64 KB).
+            Be aware that increasing this value could hurt performance. See http://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher.internalbuffersize%28v=vs.110%29.aspx.
+            Default value: 8192
+      -->
+    <setting name="Media.FileSystemWatcher.BufferSize" value="8192" />
     <!--  MEDIA - USE FILE EXTENSION IN ITEM NAMES
             Indicating whether to include a file extension when generating an item name from a file name.
             Default value: "false"
@@ -3334,6 +3382,13 @@
             Default value: A single space character.
       -->
     <setting name="Media.WhitespaceReplacement" value=" " />
+    <!--  REMOVE UNUSED BLOBS ON SAVE
+            Specifies whether unused blobs should be deleted from an item when it is saved. This setting only checks items that contain blob fields.
+            To improve performance during a bulk upload of media files, set this setting to "false".
+            When this setting is set to "false", you must run the CleanupDatabase task periodically.
+            Default value: true.
+      -->
+    <setting name="RemoveUnusedBlobsOnSave" value="true" />
     <!--  MEDIA RESPONSE - CACHEABILITY
             The <see cref="HttpCacheability">cacheability</see> to use in media response headers.
             Possible values: NoCache, Private, Public, Server, ServerAndNoCache, ServerAndPrivate
@@ -3357,6 +3412,12 @@
             Default value: ""
       -->
     <setting name="MediaResponse.SlidingExpiration" value="" />
+    <!--  MEDIA RESPONSE - VARY HEADER
+            Specifies the value for the Vary HTTP header to use in media response headers.
+            Set it to "" to omit this header.
+            Default value: ""
+      -->
+    <setting name="MediaResponse.VaryHeader" value="" />
     <!--  ACCESS DENIED HANDLER
             Url of page handling 'Acess denied' errors
       -->
@@ -3731,6 +3792,11 @@
           Default value: Sitecore.Web.UI.Sheer.FileViewStateStore,Sitecore.Kernel
     -->
     <setting name="ViewStateStore" value="Sitecore.Web.UI.Sheer.FileViewStateStore,Sitecore.Kernel" />
+    <!--  WEB EDIT JQuery UI STYLESHEET
+            The stylesheet to include in the page editor in WebEdit mode.
+            Default value: /sitecore/shell/Controls/Lib/jQuery/jQueryUI/1.10.3/smoothness/jquery-ui-1.10.3.min.css
+      -->
+    <setting name="WebEdit.JQueryUIStylesheet" value="/sitecore/shell/Controls/Lib/jQuery/jQueryUI/1.10.3/smoothness/jquery-ui-1.10.3.min.css" />
     <!--  WEB SITE STYLESHEET
             CSS file for HTML content of Sitecore database.
             The file pointed to by WebStylesheet setting is automatically included in Html and Rich Text fields.
@@ -3813,6 +3879,10 @@
             Default: ^[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$
       -->
     <setting name="EmailValidation" value="^[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" />
+    <!--  HOST NAME VALIDATION
+            Regular expression for validating Host Name
+      -->
+    <setting name="HostNameValidationPattern" value="^([a-zA-Z0-9]+)([a-zA-Z0-9-.]*)([a-zA-Z0-9]+)$" />
   </settings>
  
 </sitecore>
