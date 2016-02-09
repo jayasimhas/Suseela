@@ -247,6 +247,7 @@
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver.cs" />
     <Compile Include="Publishing\IPublishingStatus.cs" />
     <Compile Include="Publishing\PublishingStatus.cs" />
     <Compile Include="Publishing\IPublishingStatusCheck.cs" />

@@ -25,11 +25,17 @@ namespace Informa.Library.CustomSitecore.Pipelines
 
             routes.MapHttpRoute(
                 "articleNumberApi", 
-                "SC{articleNumber}/{suffix}",
-                new { controller = "Article", action ="Get", suffix = RouteParameter.Optional, prefix = "SC" },
+                "SC{articleNumber}",
+                new { controller = "Article", action ="Get", prefix = "SC" },
                 new { articleNumber = @"\d+" }
             );
 
+            routes.MapHttpRoute(
+                "articlePathApi",
+                "articles/{year}/{month}/{day}/{title}",
+                new { controller = "Article", action = "Get" }
+            );
+            
             routes.MapHttpRoute(
                 "articleEScenicApi", 
                 "{title}-{escenicID}",

@@ -61,5 +61,11 @@ namespace Informa.Library.Article.Search
 				};
 			}
 		}
-	}
+        
+        public static string GetArticleCustomPath(IArticle a)
+        {
+            string procName = a._Name.Replace(" ", "-");
+            return $"/{a.Article_Number}/{procName}";
+        }
+    }
 }
