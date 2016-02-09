@@ -5,6 +5,11 @@
 				<defaultSolrIndexConfiguration>
 					<fields hint="raw:AddComputedIndexField">
 						<field fieldName="ManuallyCuratedContent" returnType="guidCollection">Informa.Library.ContentCuration.Search.ComputedIndexField.ManuallyCuratedContent, Informa.Library</field>
+						<field fieldName="FacetContentType" returnType="string">Informa.Library.Search.ComputedFields.Facets.ContentTypeField, Informa.Library</field>
+						<field fieldName="FacetMediaType" returnType="string">Informa.Library.Search.ComputedFields.Facets.MediaTypeField, Informa.Library</field>
+						<field fieldName="FacetAreas" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.AreasField, Informa.Library</field>
+						<field fieldName="FacetRegions" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.RegionsField, Informa.Library</field>
+						<field fieldName="FacetSubjects" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.SubjectsField, Informa.Library</field>
 					</fields>
 				</defaultSolrIndexConfiguration>
 			</indexConfigurations>

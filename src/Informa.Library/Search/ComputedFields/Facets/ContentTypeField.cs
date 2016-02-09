@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data.Items;
 using Velir.Search.Core.ComputedFields;
 
@@ -14,19 +15,20 @@ namespace Informa.Library.Search.ComputedFields.Facets
     {
         public override object GetFieldValue(Item indexItem)
         {
-            I___BaseTaxonomy taxonomItem = indexItem.GlassCast<I___BaseTaxonomy>(inferType: true);
-
-            if (taxonomItem?.Taxonomies != null)
+            if (indexItem.TemplateID != IArticleConstants.TemplateId)
             {
-                var subjectTaxonomyItems =
-                    taxonomItem.Taxonomies.Where(
-                        x =>
-                            x._Path.ToLower()
-                                .StartsWith("/sitecore/content/scripintelligence/globals/taxonomy/content types"));
-
-                return subjectTaxonomyItems.Select(x => x.Item_Name).ToList();
+                return string.Empty;
             }
-            return new List<string>();
+
+            IArticle article = indexItem.GlassCast<IArticle>(inferType: true);
+
+            if (article.Content_Type == null)
+            {
+                return string.Empty;
+            }
+
+            return article.Content_Type.Item_Name;
+            
         }
     }
 }
