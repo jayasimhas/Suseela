@@ -5,7 +5,6 @@
 @model Informa.Web.ViewModels.GlassArticleModel
 
 <div class="article-body-content">
-    <h6>@Model.Publication</h6>
     <h1>@Model.Title</h1>
     <h3>@Model.Sub_Title</h3>
 
@@ -18,7 +17,7 @@
                 <h6>@Model.Content_Type</h6>
             </li>
             @if (!string.IsNullOrEmpty(Model.Media_Type))
-            {   
+            {
                 <li>
                     <svg class="article-metadata__media-type">
                         <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
@@ -33,7 +32,7 @@
     @if (Model.Authors.Count() == 1)
     {
         var author = Model.Authors.FirstOrDefault();
-        @* SINGLE AUTHOR*@        
+        @* SINGLE AUTHOR*@
         <div class="article-author article-author--solo">
             <ul class="article-author__list">
                 <li>
@@ -43,7 +42,7 @@
                     }
                     <div class="article-author__solo-wrapper">
                         <span class="article-author__name">@author.Name</span>
-                        <span class="article-author__contact">             
+                        <span class="article-author__contact">
                             @if (!string.IsNullOrEmpty(author.Twitter))
                             {
                                 <a href="http://www.twitter.com/@author.Twitter" target="_blank">&#64;@author.Twitter</a>

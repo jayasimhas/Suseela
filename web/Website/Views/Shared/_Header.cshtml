@@ -11,6 +11,7 @@
 
     <div class="header__wrapper clearfix">
 
+        @* MENU MINI-TOGGLER (SMALLER-THAN-DESKTOP SIZES) *@
         <div class="menu-toggler menu-toggler--mini js-toggle-menu">
             <button class="menu-toggler__button">
                 <span>Toggle Menu</span>
@@ -32,45 +33,45 @@
             </svg>
         </div>
 
-        <div class="header__user-actions">
+
+        <div class="header-account-access">
+
 			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
 			{
-				<div class="header__friendly-welcome">@Model.WelcomeText</div>
+				<div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
 			}
 
             @if (Model.IsAuthenticated)
             {
 				@* Signed In *@
-                using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "header__logout-form" }))
+                using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "header-account-access__logout-form" }))
                 {
                     @Html.AntiForgeryToken()
-                    <div class="header__my-account">
+                    <div class="header-account-access__my-account">
                         <svg class="header__icons icon-my-account">
                             <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
                         </svg>
-                        @Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })
+                        <span class="header-account-access__label">@Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })</span>
                     </div>
-                    <div class="header__sign-in-out">
+                    <div class="header-account-access__sign-in-out">
                         <svg class="header__icons icon-sign-out">
                             <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                         </svg>
-                        <a href="javascript:document.getElementById('logoutForm').submit()">@Model.SignOutLinkText</a>
+                        <a href="javascript:document.getElementById('logoutForm').submit()"><span class="header-account-access__label">@Model.SignOutLinkText</span></a>
                     </div>
 				}
-			}
-			else
-			{
-                <div class="header__my-account pop-out__trigger js-pop-out-trigger"
+			} else {
+                <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
                      data-pop-out-id="header-register"
                      data-pop-out-type="register">
 
                     <svg class="header__icons icon-register">
                         <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                     </svg>
-					@Model.RegisterLinkText
+					<span class="header-account-access__label">@Model.RegisterLinkText</span>
                 </div>
 
-                <div class="header__sign-in-out pop-out__trigger js-pop-out-trigger"
+                <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
                      data-pop-out-id="header-signin"
                      data-pop-out-align="right"
                      data-pop-out-type="sign-in"
@@ -78,20 +79,17 @@
                     <svg class="header__icons icon-sign-in">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                     </svg>
-					@Model.SignInLinkText
+					<span class="header-account-access__label">@Model.SignInLinkText</span>
                 </div>
             }
-
-
         </div>
 
-        @* If this is an Article page... *@
 
+        @* If this is an Article page... *@
         <div class="boxout-print-info">
             <p>This copy is for your personal non-commercial use. For high-quality copies or electronic reprints for distribution to colleagues or customers, click <a href="#">here</a> or call +1 (908) 748-1221.</p>
             <p>Printed by <b>Ms. First M. Last, Company</b></p>
         </div>
-
         @* end pseudo-if *@
 
     </div>

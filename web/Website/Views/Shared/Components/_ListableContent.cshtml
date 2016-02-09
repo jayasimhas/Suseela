@@ -31,17 +31,19 @@
     </ul>
 </div>
 
-<h1 class="article-preview__headline">
-    <a href="@Model.LinkableUrl">@Model.ListableTitle</a>
-</h1>
+<div class="article-preview__inner-wrapper">
+    <h1 class="article-preview__headline">
+        <a href="@Model.LinkableUrl">@Model.ListableTitle</a>
+    </h1>
 
-<span class="article-preview__byline">
-    by @string.Join(",", Model.ListableAuthors?.Select(x => x.LinkableText))
-</span>
+    <span class="article-preview__byline">
+        by @string.Join(",", Model.ListableAuthors?.Select(x => x.LinkableText))
+    </span>
 
-<p>
-    @Html.Raw(Model.ListableSummary)
-</p>
+    <div class="article-summary">
+        @Html.Raw(Model.ListableSummary)
+    </div>
+</div>
 
 <div class="article-preview__tags bar-separated-link-list">
     @foreach (var tag in Model.ListableTopics)

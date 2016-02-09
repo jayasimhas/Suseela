@@ -63,9 +63,10 @@
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
+        color: $informa-dark-gray;
         display: block;
         line-height: 18px;
-        color: $informa-dark-gray;
+        margin-bottom: 1rem;
     }
 
     &__ad {
