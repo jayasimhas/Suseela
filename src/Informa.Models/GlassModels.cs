@@ -3046,6 +3046,69 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.T
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+ 	/// <summary>
+	/// IGeneralRTEComponent Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Components/GeneralRTEComponent</para>	
+	/// <para>ID: 7b44925f-dd3b-4d01-988c-94a2d4bdc71f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IGeneralRTEComponentConstants.TemplateIdString)]
+	public partial interface IGeneralRTEComponent : IGlassBase 
+	{
+								/// <summary>
+					/// The Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 789adc78-20ba-4599-8c29-ed74bc4c7122</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneralRTEComponentConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IGeneralRTEComponent Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Components/GeneralRTEComponent</para>	
+		/// <para>ID: 7b44925f-dd3b-4d01-988c-94a2d4bdc71f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IGeneralRTEComponent__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 789adc78-20ba-4599-8c29-ed74bc4c7122</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneralRTEComponentConstants.TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Text  {get; set;}
+						}
+	
+	public static partial class IGeneralRTEComponentConstants{
+
+			public const string TemplateIdString = "7b44925f-dd3b-4d01-988c-94a2d4bdc71f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "GeneralRTEComponent";
+
+					
+			public static readonly ID TextFieldId = new ID("789adc78-20ba-4599-8c29-ed74bc4c7122");
+			public const string TextFieldName = "Text";
+
+							public static readonly ID Text__RawFieldId = new ID("789adc78-20ba-4599-8c29-ed74bc4c7122");
+				public const string Text__RawFieldName = "Text";
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
 {
 
