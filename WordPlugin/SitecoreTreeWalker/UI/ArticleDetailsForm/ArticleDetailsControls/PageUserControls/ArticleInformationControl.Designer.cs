@@ -46,7 +46,7 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.uxMediaTypes = new System.Windows.Forms.ComboBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.uxNotes = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox1.SuspendLayout();
@@ -236,13 +236,13 @@
 			this.uxMediaTypes.Size = new System.Drawing.Size(443, 21);
 			this.uxMediaTypes.TabIndex = 78;
 			// 
-			// textBox1
+			// uxNotes
 			// 
-			this.textBox1.Location = new System.Drawing.Point(6, 21);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(579, 90);
-			this.textBox1.TabIndex = 80;
+			this.uxNotes.Location = new System.Drawing.Point(6, 21);
+			this.uxNotes.Multiline = true;
+			this.uxNotes.Name = "uxNotes";
+			this.uxNotes.Size = new System.Drawing.Size(579, 90);
+			this.uxNotes.TabIndex = 80;
 			// 
 			// groupBox2
 			// 
@@ -265,7 +265,7 @@
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.textBox1);
+			this.groupBox3.Controls.Add(this.uxNotes);
 			this.groupBox3.Location = new System.Drawing.Point(7, 409);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(598, 117);
@@ -313,7 +313,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox uxMediaTypes;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox uxNotes;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
