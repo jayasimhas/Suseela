@@ -41,7 +41,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 0175c257-55f5-47d3-b34d-45022f16f1b0</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ISearchConstants.TemplateIdString)]
-	public partial interface ISearch : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	public partial interface ISearch : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Velir.Search.Models.ISearch_Listing, global::Velir.Search.Models.ISearch_Refinements
 	{
 				}
 
@@ -53,7 +53,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 0175c257-55f5-47d3-b34d-45022f16f1b0</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ISearch__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface ISearch__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Velir.Search.Models.ISearch_Listing__Raw, global::Velir.Search.Models.ISearch_Refinements__Raw
 		{
 						}
 	

@@ -12,8 +12,22 @@ templatekey: Search
 ----version----
 language: en
 version: 1
-revision: b8399c56-6caa-464d-8473-fffd32189638
+revision: 74a81cbb-47b4-4845-89b7-aa23a8d18090
 
+----field----
+field: {040C0194-6C6E-43FD-AC5C-0AA3DAA35A87}
+name: Default Sort Order
+key: default sort order
+content-length: 38
+
+{521208F3-4B07-41C8-A07E-18EDF0E5CD7A}
+----field----
+field: {F66F3AAF-25FA-40AB-BBF7-2A3399CAF9ED}
+name: Available Sort Options
+key: available sort options
+content-length: 38
+
+{521208F3-4B07-41C8-A07E-18EDF0E5CD7A}
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
@@ -28,6 +42,20 @@ key: sub title
 content-length: 0
 
 
+----field----
+field: {EBBB5CDB-A469-46AE-AB89-FE1F11D676F0}
+name: Base Endpoint Url
+key: base endpoint url
+content-length: 18
+
+/api/informasearch
+----field----
+field: {8538E64B-69B6-44C0-829B-0826F26231DC}
+name: Index Name
+key: index name
+content-length: 25
+
+informa_content_{0}_index
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -55,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b8399c56-6caa-464d-8473-fffd32189638
+74a81cbb-47b4-4845-89b7-aa23a8d18090
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160209T155032Z
+20160209T181124Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
