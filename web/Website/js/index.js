@@ -66,6 +66,20 @@ $('.header__hover--register .js-register-submit').on('click', function validateU
 });
 
 
+// When a user submits a Forgot Password request, this will display the proper
+// success message and hide the form to prevent re-sending.
+var showForgotPassSuccess = function() {
+	$('.pop-out__sign-in-forgot-password-nested').toggleClass('is-hidden');
+	$('.pop-out__sign-in-forgot-password')
+		.find('.alert-success')
+		.toggleClass('is-active');
+};
+
+// Toggle the sign-in error message displayed to a user
+var toggleSignInError = function() {
+	$('.pop-out__form-error').toggleClass('is-active');
+};
+
 $(document).ready(function() {
 
 	var poc = new PopOutController('.js-pop-out-trigger');
@@ -115,6 +129,12 @@ $(document).ready(function() {
 			linkList.append('<a href="#' + id + '">' + text + '</a>');
 		});
 	});
+
+	// Display the Forgot Password block when "forgot your password" is clicked
+	$('.js-show-forgot-password').on('click', function toggleForgotPass() {
+		$('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+	});
+
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

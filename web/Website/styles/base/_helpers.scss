@@ -2,6 +2,13 @@
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 
-@mixin smooth-transition($target: all, $timing: 200ms, $easing: ease-in-out) {
-  transition: $target $timing $easing;
+// hide from screenreaders and browsers: h5bp.com/u
+.is-hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.is-active {
+    display: block !important;
+    visibility: visible;
 }
