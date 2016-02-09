@@ -762,7 +762,6 @@
     <Content Include="Areas\Article\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Article\Views\Shared\Lockout.cshtml" />
     <Content Include="velir\dist\velir.search.angular.js.map" />
-    <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
     <Content Include="styles\index.scss" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />

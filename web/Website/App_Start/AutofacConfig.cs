@@ -13,6 +13,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Extensions;
 using log4net;
 using Informa.Library.CustomSitecore.Mvc;
 using Informa.Web.Controllers;
+using Velir.Search.Autofac.Modules;
 
 namespace Informa.Web.App_Start
 {
@@ -45,8 +46,13 @@ namespace Informa.Web.App_Start
 	        builder.RegisterType<ArticleUtil>().AsSelf();
 			builder.RegisterType<SitecoreSaverUtil>().AsSelf();
 
-			// Custom Modules
-			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
+            //Velir Search Library
+            builder.RegisterModule<SearchDependenciesModule>();
+            builder.RegisterModule<SearchModule>();
+            builder.RegisterModule<SolrSearchModule>();
+
+            // Custom Modules
+            builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
 
 
             // Custom Registrations
