@@ -51,17 +51,29 @@
             padding: 1rem 1.25rem 3rem;
             width: 300px;
             line-height: 1.5rem;
+            overflow: hidden;
+
+            &:after {
+                position: absolute;
+                width: 100%;
+                height: 7rem;
+                bottom: 0;
+                left: 0;
+                // Permalink - use to edit and share this gradient:
+                // http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+46,ffffff+100&0+0,1+46,1+100
+                background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 45%, rgba(255,255,255,1) 100%); // FF3.6-15
+                background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 45%,rgba(255,255,255,1) 100%);
+                // Chrome10-25,Safari5.1-6
+                background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 45%,rgba(255,255,255,1) 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+                z-index: 227;
+            }
 
             .article-preview__tags {
-                bottom: 24px;
-                left: 24px;
+                bottom: 1.5rem;
+                left: 1.25rem;
                 position: absolute;
+                z-index: 228;
             }
         }
     }
-}
-
-.article-preview__inner-wrapper {
-    line-height: 1.2rem;
-    height: 240px;
 }

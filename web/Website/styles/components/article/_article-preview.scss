@@ -84,9 +84,17 @@
     }
 
     &__tags {
+        width: 100%;
 
-        a:first-child {
-            padding-left: 0;
+        a {
+            max-width: 30%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            &:first-child {
+                padding-left: 0;
+            }
         }
     }
 
