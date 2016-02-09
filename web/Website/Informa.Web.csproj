@@ -452,10 +452,6 @@
       <HintPath>..\..\packages\Velir.Search.Mvc.1.0.2\lib\net45\Velir.Search.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Velir.Search.Web">
-      <HintPath>..\..\packages\Velir.Search.Web.1.1.0-alpha\lib\net45\Velir.Search.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Velir.Search.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Search.WebApi.1.0.3\lib\net45\Velir.Search.WebApi.dll</HintPath>
       <Private>True</Private>
@@ -770,15 +766,6 @@
     <Content Include="styles\index.scss" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Shared\SearchFacets.cshtml" />
-    <Content Include="Views\Shared\SearchKeywords.cshtml" />
-    <Content Include="Views\Shared\SearchListing.cshtml" />
-    <Content Include="Views\Shared\SearchMetadata.cshtml" />
-    <Content Include="Views\Shared\SearchPager.cshtml" />
-    <Content Include="Views\Shared\SearchPagination.cshtml" />
-    <Content Include="Views\Shared\SearchScripts.cshtml" />
-    <Content Include="Views\Shared\SearchSortOptions.cshtml" />
-    <Content Include="Views\Shared\SortOption.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Frontend\Index.cshtml" />
@@ -865,6 +852,14 @@
     <Content Include="Views\Shared\PopOuts\EmailArticle.cshtml" />
     <Content Include="Views\Shared\PopOuts\Register.cshtml" />
     <Content Include="Views\Shared\ScheduledPublishTest.cshtml" />
+    <Content Include="Views\Search\SearchFacets.cshtml" />
+    <Content Include="Views\Search\SearchKeywords.cshtml" />
+    <Content Include="Views\Search\SearchListing.cshtml" />
+    <Content Include="Views\Search\SearchMetadata.cshtml" />
+    <Content Include="Views\Search\SearchPagination.cshtml" />
+    <Content Include="Views\Search\SearchScripts.cshtml" />
+    <Content Include="Views\Search\SearchSortOptions.cshtml" />
+    <Content Include="Views\Search\SortOption.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
