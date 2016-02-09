@@ -298,7 +298,7 @@ namespace Informa.Web.Areas.Account.Models
 
 			public string Label { get; set; }
 			public Guid MediaType { get; set; }
-			public Image FeaturedImage { get; set; }
+			//public Image FeaturedImage { get; set; }
 			public string FeaturedImageCaption { get; set; }
 			public string FeaturedImageSource { get; set; }
 		}

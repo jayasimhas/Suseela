@@ -21,7 +21,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			//TODO - add article taxonomy to the Struct.
 			if (articleStruct.Taxonomoy.Any())
 			{
-				articleDetails.Taxonomoy = articleStruct.Taxonomoy.Select(t => new WordPluginModel.TaxonomyStruct {Name = t.Name, ID = t.ID}).ToList();
+				//articleDetails.Taxonomoy = articleStruct.Taxonomoy.Select(t => new WordPluginModel.TaxonomyStruct {Name = t.Name, ID = t.ID}).ToList();
 			}
 			articleDetails.Title = articleStruct.Title;
 			articleDetails.RelatedArticles = articleStruct.RelatedArticles;
@@ -37,7 +37,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 
 			articleDetails.Label = articleStruct.Label;
 			articleDetails.MediaType = articleStruct.MediaType;
-			articleDetails.FeaturedImage = articleStruct.FeaturedImage;
+			//articleDetails.FeaturedImage = articleStruct.FeaturedImage;
 			articleDetails.FeaturedImageCaption = articleStruct.FeaturedImageCaption;
 			articleDetails.FeaturedImageSource = articleStruct.FeaturedImageSource;
 

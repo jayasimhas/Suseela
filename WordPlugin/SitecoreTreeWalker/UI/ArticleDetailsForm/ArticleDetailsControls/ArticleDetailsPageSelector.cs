@@ -153,10 +153,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),				
 				Embargoed =  pageArticleInformationControl.GetEmbargoedState(),
 			};
+			/*
 			if (pageFeaturedImageControl.GetFeaturedImage() != null)
 			{
 				articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage();
-			}
+			}*/
 
 			return articleDetails;
 		}

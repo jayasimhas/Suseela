@@ -226,7 +226,7 @@ namespace Informa.Web.Controllers
 				}
 
 				//TODO - Add Taxonomy items
-				newArticle.Taxonomies = articleStruct.Taxonomoy.Select(x => _sitecoreMasterService.GetItem<ITaxonomy_Item>(x.ID));
+				//newArticle.Taxonomies = articleStruct.Taxonomoy.Select(x => _sitecoreMasterService.GetItem<ITaxonomy_Item>(x.ID));
 				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
 				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<ArticleItem>(x));
 
@@ -253,7 +253,7 @@ namespace Informa.Web.Controllers
 				//TODO - Convert Label to dropdown or Single line text
 				//newArticle.Label = articleStruct.Label;
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
-				newArticle.Featured_Image_16_9 = new Image() {MediaId = articleStruct.FeaturedImage.MediaId,Alt = articleStruct.FeaturedImage.Alt};
+				//newArticle.Featured_Image_16_9 = new Image() {MediaId = articleStruct.FeaturedImage.MediaId,Alt = articleStruct.FeaturedImage.Alt};
 				newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;
 				newArticle.Featured_Image_Source = articleStruct.FeaturedImageSource;
 
