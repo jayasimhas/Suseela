@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.SearchTypes;
+
+namespace Informa.Library.Search.Results
+{
+    public class InformaSearchResultItem : SearchResultItem
+    {
+        [IndexField("c_searchable")]
+        public bool IsSearchable { get; set; }
+    }
+}

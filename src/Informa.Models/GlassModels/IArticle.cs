@@ -58,7 +58,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 	public class ArticleItem : IArticle
 	{
-		public Guid Publication => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");
+	    public Guid Publication => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");
 		public Guid _Id { get; set; }
 		public Language _Language { get; set; }
 		public int _Version { get; set; }
@@ -133,9 +133,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Referenced_Deals { get; set; }
 		public IEnumerable<IArticle> Related_Articles { get; set; }
 		public IEnumerable<IGlassBase> Supporting_Documents { get; set; }
-	}
+        public bool Include_In_Search { get; set; }
+    }
 
-	public interface IPublicationChild
+    public interface IPublicationChild
 	{
 		Guid Publication { get; }
 	}
