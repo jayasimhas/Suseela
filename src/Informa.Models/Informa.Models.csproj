@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AncestorDataMapper.cs" />
+    <Compile Include="CoreGlassModels.cs" />
     <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
     <Compile Include="GlassModels\ITaxonomyHierarchy.cs" />

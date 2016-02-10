@@ -4794,6 +4794,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Topics.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Word Plug In.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -4881,9 +4882,11 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Documents\Scrip Intelligence.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Documents\ScripIntelligence.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Images.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
