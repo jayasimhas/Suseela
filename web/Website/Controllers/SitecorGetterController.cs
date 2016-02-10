@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Results;
 using Glass.Mapper.Sc;
-using Informa.Library.CustomSitecore.Pipelines;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.System;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Article_Sizes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes;
@@ -178,6 +177,27 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
+	public class GetItemGuidByPathController : ApiController
+	{
+		private string masterBD = "master";
+		private ISitecoreService _sitecoreService;
+		public GetItemGuidByPathController(Func<string, ISitecoreService> sitecoreFactory)
+		{
+			_sitecoreService = sitecoreFactory(masterBD);
+		}
+		// GET api/<controller>
+		public JsonResult<Guid> Get(string path)
+		{
+			if (!string.IsNullOrEmpty(path))
+			{
+				var item = _sitecoreService.GetItem<Item>(path);
+				return Json(item?.ID.Guid ?? new Guid());
+			}
+			return Json(new Guid());
+		}
+	}
+
+	[Route]
 	public class GetAuthorsController : ApiController
 	{
 		private string masterBD = "master";
@@ -190,7 +210,7 @@ namespace Informa.Web.Controllers
 		public JsonResult<List<WordPluginModel.StaffStruct>> Get()
 		{
 			var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid("{5C4D8806-C74E-465E-AB61-FC50F168BCBC}"));
-			var members = staffFolder?._ChildrenWithInferType.OfType<IAuthor>().Where(c => !c.Inactive)
+			var members = staffFolder?._ChildrenWithInferType.OfType<I___Person>().Where(c => !c.Inactive)
 				.Select(eachChild => new WordPluginModel.StaffStruct() { Name = eachChild.Last_Name + ", " + eachChild.First_Name, ID = eachChild._Id }).ToList();
 			return Json(members);
 		}

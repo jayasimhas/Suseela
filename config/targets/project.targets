@@ -75,5 +75,62 @@
 			</fileset>
 		</delete>
 	</target> 
-			
+    
+	<property name="output.dir" value="Web\Website\wordinstaller" />
+	<property name="publish.dir" value="${TDS.SitecoreDeployFolder}\wordinstaller\" />
+	<property name="publish.base.vsto.dir" value="E:\slave\workspace\Informa Dev\WordPlugin\SitecoreTreeWalker\bin\${build.configuration}\app.publish\" />	
+	<property name="publish.base.dir" value="${publish.dir}" />
+	<property name="revision.file" value="revision.number" />
+	<property name="version.major" value="1" />
+	<property name="version.minor" value="0" />
+	<property name="version.build" value="0" />
+  
+  <loadtasks assembly="${dir.tools}\office\Microsoft.VisualStudio.Tools.Applications.BuildTasks.dll" />
+  <loadtasks assembly="${dir.tools}\office\Microsoft.VisualStudio.Tools.Office.BuildTasks.dll" />
+  
+	<target name="send" >
+		<call target="publish" />
+		<call target="pushtolatest" />
+	</target>
+  
+   <loadtasks assembly="${dir.tools}\nant\nantcontrib-0.85\bin\NAnt.Contrib.Tasks.dll" />
+
+	<target name="publish" depends="version">    
+		<exec program="${MSBuildPath}">		
+		  <arg value="/target:publish" />     
+		  <arg value="/property:Configuration=${build.configuration}-NoTds" /> 
+		  <arg value="/property:ApplicationVersion=${version.major}.${version.minor}.${version.build}.${version.revision}"/>
+		  <arg value="/property:BootstrapperEnabled=false"/>		
+		  <arg value="/property:Install=true"/>		
+		  <arg value="/property:InstallUrl=${installpath}"/>
+		  <arg value="/property:UpdateEnabled=true"/>	
+		  <arg value="/property:UpdateMode=Background"/>	
+		  <arg value="/property:UpdateInterval=1"/>	
+		  <arg value="/property:UpdateIntervalUnits=Days"/>		  
+		  <arg value="/property:UpdateUrl=${updatepath}"/>	
+		  <arg value="/property:PublisherName=Insight Platform"/>	
+		  <arg value="/property:ProductName=Insight Platform Word Plugin"/>	
+		  <arg value="/property:UpdateIntervalUnits=Days"/>	
+		  <arg value="/property:PublishUrl=${publish.dir}"/>			  
+		</exec>
+	</target>
+  
+    <target name="pushtolatest">
+	<echo message="Copying From:${publish.base.vsto.dir}" />
+	<echo message="Copying To:${publish.dir}" />
+		<copy todir="${publish.dir}" verbose="true">
+			<fileset basedir="${publish.base.vsto.dir}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="version">
+		<property name="version.revision" value="0" />
+		<loadfile file="${revision.file}" property="version.revision" />
+		<echo message=" ${version.revision}" />
+		<property name="version.revision" value="${string::trim(version.revision)}" />
+		<property name="version.revision" value="${(int::parse(version.revision)+1)}" />
+		<echo message="${version.revision}" file="${revision.file}" />
+	</target>		
 </project>

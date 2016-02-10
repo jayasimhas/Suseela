@@ -53,7 +53,7 @@ namespace Informa.Web.ViewModels
 				filter.TaxonomyIds.AddRange(Parameters.Subjects.Select(s => s._Id));
 				
 				var results = ArticleSearch.Search(filter);
-				var articles = results.Articles.Select(a => ArticleListableFactory.Create(a)).ToList();
+				var articles = results.Articles.Select(a => ArticleListableFactory.Create(a)).Where(a => a != null).ToList();
 
 				articles.ForEach(a => a.DisplayImage = false);
 

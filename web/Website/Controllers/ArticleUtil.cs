@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
 using System.Xml;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -11,10 +15,91 @@ using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
+using Informa.Library.Article.Search;
+using Sitecore.ContentSearch;
+using Sitecore.Data;
+using Sitecore.Links;
+using Sitecore.Mvc.Controllers;
 
 namespace Informa.Web.Controllers
 {
-	public class ArticleUtil
+    [System.Web.Mvc.Route]
+    public class ArticleController : ApiController
+    {
+        protected readonly IArticleSearch ArticleSearcher;
+        protected readonly ISitecoreContext SitecoreContext;
+        
+        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+        {
+            ArticleSearcher = searcher;
+            SitecoreContext = context;
+        }
+
+        /// <summary>
+        /// redirects all article urls that have an article number but no trailing title
+        /// </summary>
+        /// <param name="articleNumber"></param>
+        /// <param name="prefix"></param>
+        public void Get(int articleNumber, string prefix)
+        {
+            string numFormat = $"{prefix}{articleNumber:D6}";
+
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.ArticleNumber = numFormat;
+
+            var results = ArticleSearcher.Search(filter);
+            if (!results.Articles.Any())
+                return;
+            
+            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+            HttpContext.Current.Response.RedirectPermanent(newPath);
+        }
+
+        /// <summary>
+        /// redirects all article urls starting with /article
+        /// </summary>
+        /// <param name="path"></param>
+        public void Get(string year, string month, string day, string title)
+        {
+            IArticle a = SitecoreContext.GetCurrentItem<IArticle>();
+            if (a == null)
+                return;
+
+            string newPath = ArticleSearch.GetArticleCustomPath(a);
+            HttpContext.Current.Response.RedirectPermanent(newPath);
+        }
+        
+        /// <summary>
+        /// redirects all article urls that end with an escenic id
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="escenicID"></param>
+        public void Get(string title, int escenicID)
+        {
+            string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
+            //if (!uRef.Contains("scripintelligence.com"))
+            //    return;
+
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.EScenicID = escenicID.ToString();
+
+            var results = ArticleSearcher.Search(filter);
+            if (!results.Articles.Any())
+                return;
+
+            //redirect 
+            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+            HttpContext.Current.Response.RedirectPermanent(newPath);
+        }
+    }
+
+    public class ArticleUtil
 	{
 
 		static string WebDb = "web";
@@ -226,23 +311,36 @@ namespace Informa.Web.Controllers
 		{
 			var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
 			string year = date.Year.ToString();
-			string month = date.Month.ToString();
-			string day = date.Day.ToString();
+			var month = date.Month < 10 ? "0" + date.Month : date.Month.ToString();			
+			string day = date.Day < 10 ? "0" + date.Day : date.Day.ToString();
+			IHome_Page homeFolder;
 			IArticle_Folder articlesFolder;
 			IArticle_Date_Folder yearFolder;
 			IArticle_Date_Folder monthFolder;
 			IArticle_Date_Folder dayFolder;
 
-			// Articles Folder
-			if (!publication._ChildrenWithInferType.OfType<IArticle_Folder>().Any())
+			// Home Folder
+			if (!publication._ChildrenWithInferType.OfType<IHome_Page>().Any())
 			{
-				var article = _sitecoreMasterService.Create<IArticle_Folder, IGlassBase>(publication, "Articles");
+				var home = _sitecoreMasterService.Create<IHome_Page, IGlassBase>(publication, "Home");
+				_sitecoreMasterService.Save(home);
+				homeFolder = home;
+			}
+			else
+			{
+				homeFolder = publication._ChildrenWithInferType.OfType<IHome_Page>().First();
+			}
+
+			// Articles Folder
+			if (!homeFolder._ChildrenWithInferType.OfType<IArticle_Folder>().Any())
+			{
+				var article = _sitecoreMasterService.Create<IArticle_Folder, IGlassBase>(homeFolder, "Articles");
 				_sitecoreMasterService.Save(article);
 				articlesFolder = article;
 			}
 			else
 			{
-				articlesFolder = publication._ChildrenWithInferType.OfType<IArticle_Folder>().First();
+				articlesFolder = homeFolder._ChildrenWithInferType.OfType<IArticle_Folder>().First();
 			}
 
 			// Year
@@ -306,7 +404,7 @@ namespace Informa.Web.Controllers
 						Name = r.Last_Name + ", " + r.First_Name,
 					}).ToList();
 
-			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
+			//articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
 
@@ -351,5 +449,5 @@ namespace Informa.Web.Controllers
 			
 			return articleStruct;
 		}		
-	}
+    }
 }

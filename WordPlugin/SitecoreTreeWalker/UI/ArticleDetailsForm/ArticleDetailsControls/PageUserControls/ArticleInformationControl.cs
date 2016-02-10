@@ -34,7 +34,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			InitializeComponent();
 		}
 
-        public bool _isCheckedOut;
+		public bool _isCheckedOut;
 		public bool IsCheckedOut
 		{
 			get { return _isCheckedOut; }
@@ -48,7 +48,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			}
 		}
 
-        public bool _isCheckedOutByMe;
+		public bool _isCheckedOutByMe;
 		public bool IsCheckedOutByMe
 		{
 			get { return _isCheckedOutByMe; }
@@ -77,20 +77,20 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				//SitecoreAddin.WordApp.ActiveDocument.Saved = true;
 				if (save)
 				{
-					 saved = _parent.SaveArticle();
+					saved = _parent.SaveArticle();
 
 					if (!saved)
 					{
 						return false;
 					}
 				}
-				
+
 			}
 			catch (Exception ex)
 			{
 				Globals.SitecoreAddin.LogException("Error in article details when saving article.", ex);
-				
-				if(ex is WebException)
+
+				if (ex is WebException)
 				{
 					throw;
 				}
@@ -102,13 +102,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			finally
 			{
 				Guid articleGuid = _parent.ArticleDetails.ArticleGuid;
-				if(articleGuid != Guid.Empty)
+				if (articleGuid != Guid.Empty)
 				{
 					SitecoreArticle.CheckInArticle(articleGuid);
 				}
 				else
 				{
-					SitecoreArticle.CheckInArticle(_parent.GetArticleNumber()); 
+					SitecoreArticle.CheckInArticle(_parent.GetArticleNumber());
 				}
 				IsCheckedOutByMe = false;
 				IsCheckedOut = false;
@@ -168,9 +168,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 					{
 						if (DialogFactory.PromptAutoLock() == DialogResult.Yes)
 						{
-							SitecoreArticle.CheckOutArticle(articleGuid, SitecoreUser.GetUser().Username); 
+							SitecoreArticle.CheckOutArticle(articleGuid, SitecoreUser.GetUser().Username);
 						}
-					} 
+					}
 					else
 					{
 						SitecoreArticle.CheckOutArticle(articleGuid, SitecoreUser.GetUser().Username);
@@ -205,7 +205,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			if (articleNumber.IsNullOrEmpty())
 			{
 				MessageBox.Show
-					(@"Please enter an article number to link to.", @"Elsevier", 
+					(@"Please enter an article number to link to.", @"Elsevier",
 					 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return false;
 			}
@@ -265,7 +265,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		/// </summary>
 		public void SetCheckedOutStatus()
 		{
-			if(_parent == null || _parent.ArticleDetails == null)
+			if (_parent == null || _parent.ArticleDetails == null)
 			{
 				return;
 			}
@@ -277,7 +277,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut;
 				if (_parent.ArticleDetails.ArticleGuid != Guid.Empty)
 				{
-					checkedOut = SitecoreArticle.GetLockedStatus(_parent.ArticleDetails.ArticleGuid); 
+					checkedOut = SitecoreArticle.GetLockedStatus(_parent.ArticleDetails.ArticleGuid);
 				}
 				else
 				{
@@ -289,20 +289,20 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 					//TODO - This is a hack. Security might be at risk
 					if (SitecoreUser.GetUser().Username == checkedOut.User || checkedOut.User == "extranet\\Anonymous")
 					{ //locked by me
-						
+
 						IndicateCheckedOutByMe(checkedOut);
 					}
 					else
 					{ //locked by other
 						IndicateCheckedOutByOther(checkedOut);
 					}
-                    //uxLockStatusLabel.Text = @"Locked";
+					//uxLockStatusLabel.Text = @"Locked";
 				}
 				else
 				{ //unlocked
 					IndicateUnlocked();
 				}
-                //uxRefreshStatus.Enabled = true;
+				//uxRefreshStatus.Enabled = true;
 			}
 			else
 			{ //document is not linked to an article
@@ -319,27 +319,27 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			_parent.PreLinkEnable();
 			IndicatedUnfavoredLink();
 
-            //uxLockStatus.BackColor = DefaultBackColor;
-            //uxLockUser.Text = @"N\A";
-            //uxLockStatusLabel.Text = @"Unlocked";
+			//uxLockStatus.BackColor = DefaultBackColor;
+			//uxLockUser.Text = @"N\A";
+			//uxLockStatusLabel.Text = @"Unlocked";
 
 			IsCheckedOutByMe = false;
 			IsCheckedOut = false;
 
-            //uxUnlockButton.Visible = false;
-            //uxLockButton.Visible = true;
-            //uxLockButton.Enabled = true;
+			//uxUnlockButton.Visible = false;
+			//uxLockButton.Visible = true;
+			//uxLockButton.Enabled = true;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
 		public void IndicatedUnfavoredLink()
 		{
-            //uxLinkToDocumentPanel.Visible = false;
-            //uxLockStatus.Visible = true;
-            //uxVersionStatus.Visible = true;
-            uxPublication.Enabled = false;
-            //_parent.EnablePreview();
-            //_parent.HideCreationButtons();
+			//uxLinkToDocumentPanel.Visible = false;
+			//uxLockStatus.Visible = true;
+			//uxVersionStatus.Visible = true;
+			uxPublication.Enabled = false;
+			//_parent.EnablePreview();
+			//_parent.HideCreationButtons();
 
 			uxSelectAuthor.Enabled = false;
 			//uxSelectedAuthors.Enabled = false;
@@ -351,20 +351,20 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		/// Enables/disables some controls since it's so similar to a PreLinkEnable state
 		/// </summary>
 		/// <param name="checkedOut"></param>
-        public void IndicateCheckedOutByOther(Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut)
+		public void IndicateCheckedOutByOther(Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut)
 		{
 			//uxLockStatus.BackColor = Color.FromArgb(255, 244, 204, 204);
 
-            //uxLockUser.Text = FormatUserName(checkedOut.User);
+			//uxLockUser.Text = FormatUserName(checkedOut.User);
 
 			IsCheckedOutByMe = false;
 
 			_parent.PreLinkEnable();
 
 			IndicatedUnfavoredLink();
-            //uxUnlockButton.Visible = true;
-            //uxUnlockButton.Enabled = false;
-            //uxLockButton.Visible = false;
+			//uxUnlockButton.Visible = true;
+			//uxUnlockButton.Enabled = false;
+			//uxLockButton.Visible = false;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
@@ -378,13 +378,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				return;
 			}
 			_parent.CloseOnSuccessfulLock = false;
-            //uxLockStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
+			//uxLockStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
 
-            //uxLockUser.Text = FormatUserName(checkedOut.User);
+			//uxLockUser.Text = FormatUserName(checkedOut.User);
 			_parent.PostLinkEnable();
-            //uxUnlockButton.Visible = true;
-            //uxLockButton.Visible = false;
-            //uxUnlockButton.Enabled = true;
+			//uxUnlockButton.Visible = true;
+			//uxLockButton.Visible = false;
+			//uxUnlockButton.Enabled = true;
 		}
 
 		public void InitializePublications()
@@ -420,9 +420,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			{
 				if (uxPublication.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
 				{
-					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct) uxPublication.SelectedValue).ID;
+					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxPublication.SelectedValue).ID;
 				}
-				return (Guid) uxPublication.SelectedValue;
+				return (Guid)uxPublication.SelectedValue;
 			}
 			catch
 			{
@@ -485,7 +485,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public DateTime GetWebPublishDate()
 		{
 			var localDate = uxWebPublishDate.Value.Date.Add(uxWebPublishTime.Value.TimeOfDay);
-			
+
 			TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById(RemoteTimezoneId);
 
 			Globals.SitecoreAddin.Log("GetWebPublishDate: Date before DateTime conversion: [" +
@@ -526,10 +526,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			if (outOfDate)
 			{
 				//uxVersionStatus.BackColor = Color.FromArgb(255, 244, 204, 204);
-                _parent.articleStatusBar1.uxVersionStateButton.BackColor = Color.FromArgb(255, 244, 204, 204);                
+				_parent.articleStatusBar1.uxVersionStateButton.BackColor = Color.FromArgb(255, 244, 204, 204);
 				//uxVersionText.Text = @"More Recent Version Available";
 				//uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Italic | FontStyle.Bold);
-								
+
 			}
 			else
 			{
@@ -538,8 +538,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				//uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Bold);
 			}
 
-            //uxLastUpdateDate.Text = articleStruct.WordDocLastUpdateDate;
-            //uxLastUpdatedBy.Text = FormatUserName(articleStruct.WordDocLastUpdatedBy);
+			//uxLastUpdateDate.Text = articleStruct.WordDocLastUpdateDate;
+			//uxLastUpdatedBy.Text = FormatUserName(articleStruct.WordDocLastUpdatedBy);
 		}
 
 		public void UpdateFields(ArticleStruct articleDetails)
@@ -551,28 +551,22 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			{
 				return;
 			}
-			uxPublication.SelectedValue = articleDetails.Publication;			
+			uxPublication.SelectedValue = articleDetails.Publication;
 			if (articleDetails.Authors != null)
 			{
-				uxSelectedAuthors.PopulateRegular(articleDetails.Authors.Select(r =>
-																		 new StaffStruct
-																			{
-																				ID = r.ID,
-																				Name = r.Name,
-																				Publications = r.Publications
-																			}).ToList()); 
+				uxSelectedAuthors.PopulateRegular(articleDetails.Authors.Select(r => new StaffStruct { ID = r.ID, Name = r.Name }).ToList());
 			}
 
-            //uxArticleNumberLabel.Text = articleDetails.ArticleNumber;
+			//uxArticleNumberLabel.Text = articleDetails.ArticleNumber;
 			if (articleDetails.WebPublicationDate > DateTime.MinValue)
 			{
 				SetPublicationTime(articleDetails.WebPublicationDate, false);
 			}
-			
+
 			ArticleNumber = articleDetails.ArticleNumber;
-
 			uxEmbargoed.Checked = articleDetails.Embargoed;
-
+			uxMediaTypes.SelectedValue = articleDetails.MediaType;
+			uxNotes.Text = articleDetails.NotesToEditorial;
 			CheckWordDocVersion(articleDetails);
 
 			_isLive = articleDetails.IsPublished;
@@ -616,7 +610,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void UpdateArticleNumber(string articleNumber)
 		{
-            //uxArticleNumberLabel.Text = articleNumber;
+			//uxArticleNumberLabel.Text = articleNumber;
 		}
 
 		/// <summary>
@@ -634,10 +628,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				if (matchingAuthors.Count == 0)
 				{
 					matchingAuthors.Add(new StaffStruct
-											{
-												ID = Guid.Empty,
-												Name = "No authors found!"
-											}); 
+					{
+						ID = Guid.Empty,
+						Name = "No authors found!"
+					});
 				}
 			}
 
@@ -662,18 +656,18 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void PostLinkEnable()
 		{
 			uxPublication.Enabled = false;
-            //uxLinkDocument.Enabled = false;
+			//uxLinkDocument.Enabled = false;
 			uxSelectAuthor.Enabled = true;
 			uxSelectedAuthors.Enabled = true;
 			DisableAuthorControlsIfNoAuthors();
 			uxSelectedAuthors.DisableEdit = false;
 			uxAddAuthor.Enabled = true;
 
-            //uxLinkToDocumentPanel.Visible = false;
-            //uxLockStatus.Visible = true;
+			//uxLinkToDocumentPanel.Visible = false;
+			//uxLockStatus.Visible = true;
 			//uxVersionStatus.Visible = true;
 
-            //uxUnlinkDocument.Visible = true;
+			//uxUnlinkDocument.Visible = true;
 		}
 
 		/// <summary>
@@ -683,7 +677,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void PreLinkEnable()
 		{
 			uxPublication.Enabled = true;
-            //uxLinkDocument.Enabled = true;
+			//uxLinkDocument.Enabled = true;
 
 			uxSelectAuthor.Enabled = true;
 			uxAddAuthor.Enabled = true;
@@ -692,24 +686,26 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			uxSelectedAuthors.DisableEdit = false;
 
 
-            //uxLinkToDocumentPanel.Visible = true;
-            //uxLockStatus.Visible = false;
+			//uxLinkToDocumentPanel.Visible = true;
+			//uxLockStatus.Visible = false;
 			//uxVersionStatus.Visible = false;
 
-            //uxUnlinkDocument.Visible = false;
+			//uxUnlinkDocument.Visible = false;
 		}
 
 		public void ResetFields()
 		{
-			uxPublication.SelectedIndex = 0;
-			uxSelectedAuthors.Reset();
+			uxPublication.SelectedIndex = 0;			
 			SetPublicationTime(DateTime.Today, true);
+			uxMediaTypes.SelectedIndex = 0;
+			uxSelectedAuthors.Reset();
+			uxNotes.Text = string.Empty;
 			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
 		}
 
 		public void IndicateChanged()
 		{
-			if(MenuItem != null)
+			if (MenuItem != null)
 			{
 				MenuItem.HasChanged = true;
 				MenuItem.UpdateBackground();
@@ -725,7 +721,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			return CheckWordDocVersion(SitecoreGetter.ForceReadArticleDetails(GetArticleNumber()));
 		}
 
-        
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -751,7 +747,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 						(String.Format(message, articleStruct.WordDocLastUpdateDate, articleStruct.WordDocLastUpdatedBy),
 						 @"Elsevier",
 						 MessageBoxButtons.OK,
-						 MessageBoxIcon.Exclamation); 
+						 MessageBoxIcon.Exclamation);
 				}
 				return false;
 			}
@@ -762,7 +758,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			_parent.SetArticleNumber(articleNumber);
 			ArticleNumber = articleNumber;
-            //uxArticleNumberLabel.Text = articleNumber;
 		}
 
 
@@ -775,31 +770,16 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 			if (formattedUserName.IndexOf("\\") > 0)
 			{
-				formattedUserName = formattedUserName.Substring(formattedUserName.IndexOf("\\")+1);
+				formattedUserName = formattedUserName.Substring(formattedUserName.IndexOf("\\") + 1);
 			}
 
 			return formattedUserName;
 		}
 
-		private void panel2_Paint(object sender, PaintEventArgs e)
-		{
-			/*var borderColor = Color.FromArgb(222, 231, 238);
-			ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor, ButtonBorderStyle.Solid);*/
-		}
-
-		private void uxRefreshStatus_Click(object sender, EventArgs e)
-		{
-			SetCheckedOutStatus();
-		}
-
-		private void uxRefreshVersion_Click(object sender, EventArgs e)
-		{
-			//CheckWordDocVersion();
-		}
-
+		
 		private void uxLockButton_Click(object sender, EventArgs e)
 		{
-            /*
+			/*
 			if (!SitecoreArticle.DoesArticleExist(uxArticleNumberLabel.Text)) return;
 			if(SitecoreArticle.CheckOutArticle(uxArticleNumberLabel.Text, SitecoreUser.GetUser().Username))
 			{
@@ -809,7 +789,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
              * */
 		}
 
-        /*
+		/*
 		private void uxUnlockButton_Click(object sender, EventArgs e)
 		{
 			if (!SitecoreArticle.DoesArticleExist(uxArticleNumberLabel.Text)) return;
@@ -825,39 +805,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			IndicateChanged();
 		}
 
-        /*
-		private void uxLinkDocument_Click(object sender, EventArgs e)
-		{
-			if (CheckOut(uxArticleNumberToLink.Text, true))
-			{
-				_parent.ResetChangedStatus();
-			}
-		}
-         * */
-
-		private void uxUnlinkDocument_Click(object sender, EventArgs e)
-		{
-			if (_isCheckedOutByMe)
-			{
-				CheckIn(false);
-			}
-            //uxArticleNumberLabel.Text = @"Document Not Linked";
-			DocumentPropertyEditor.Clear(SitecoreAddin.ActiveDocument);
-			_parent.PreLinkEnable();
-			_parent.SetArticleNumber(null);
-			_parent.UnlinkWordFileFromSitecoreItem();
-			_parent.ResetFields();
-			_parent.ResetChangedStatus(true); //hack-ish to reset all fields
-		}
-
 		private void uxPublication_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			UpdateAuthorsList();
-			IndicateChanged();
-		}
-
-		private void uxArticleCategory_SelectedIndexChanged(object sender, EventArgs e)
-		{
 			IndicateChanged();
 		}
 
@@ -872,21 +822,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			{
 				var wordApp = SitecoreAddin.ActiveDocument.Application;
 				if (wordApp == null) return;
-				// "ComputeStatistics" dirties the document. We don't want that.
 				bool currentSavedState = SitecoreAddin.ActiveDocument.Saved;
-
-				//uxWordCount.Text = wordApp.ActiveDocument.ComputeStatistics(Microsoft.Office.Interop.Word.WdStatistic.wdStatisticWords).ToString();
-
 				SitecoreAddin.ActiveDocument.Saved = currentSavedState;
-
 				_documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
 			}
-		}
-
-		private void uxLinkToDocumentPanel_Paint(object sender, PaintEventArgs e)
-		{
-			var borderColor = Color.FromArgb(222, 231, 238);
-			ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor, ButtonBorderStyle.Solid);
 		}
 
 		private void label1_Paint(object sender, PaintEventArgs e)
@@ -898,34 +837,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			}
 		}
 
-        private void uxArticleNumberToLink_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public ArticleInformationControl GetObject()
-        {
-            return this;
-        }
-
-        private void uxLockUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label88_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uxLockStatusLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+		public ArticleInformationControl GetObject()
+		{
+			return this;
+		}
 	}
 }

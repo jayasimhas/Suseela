@@ -40,6 +40,22 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		}
 	}
 
+	[SitecoreType(TemplateId = IArticleConstants.TemplateIdString)]
+	public class GlassBase : IGlassBase
+	{
+		public Guid _Id { get; set; }
+		public Language _Language { get; set; }
+		public int _Version { get; set; }
+		public string _Url { get; set; }
+		public Guid _TemplateId { get; set; }
+		public string _Path { get; set; }
+		public string _Name { get; set; }
+		public IEnumerable<IGlassBase> _ChildrenWithInferType { get; set; }
+		public IGlassBase _Parent { get; set; }
+		public string _MediaUrl { get; set; }
+		public IEnumerable<Guid> _BaseTemplates { get; set; }
+	}
+
 	public class ArticleItem : IArticle
 	{
 		public Guid Publication => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");
@@ -48,6 +64,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public int _Version { get; set; }
 		public string _Url { get; set; }
 		public Guid _TemplateId { get; set; }
+			//= new Guid(IArticleConstants.TemplateIdString);
 		public string _Path { get; set; }
 		public string _Name { get; set; }
 		public IEnumerable<IGlassBase> _ChildrenWithInferType { get; set; }
@@ -73,6 +90,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Meta_Keywords { get; set; }
 		public string Meta_Title_Override { get; set; }
 		public string Navigation_Title { get; set; }
+		//[SitecoreField()]
 		public string Body { get; set; }
 		public string Sub_Title { get; set; }
 		public string Title { get; set; }
@@ -115,6 +133,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Referenced_Deals { get; set; }
 		public IEnumerable<IArticle> Related_Articles { get; set; }
 		public IEnumerable<IGlassBase> Supporting_Documents { get; set; }
+		public bool Scheduled_Publishing_Enabled { get; set; }
+		public Link Canonical_Link { get; set; }
 	}
 
 	public interface IPublicationChild

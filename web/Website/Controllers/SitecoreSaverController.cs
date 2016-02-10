@@ -21,12 +21,14 @@ namespace Informa.Web.Controllers
 		private readonly ISitecoreService _sitecoreMasterService;
 		public const string MasterDb = "master";
 		private readonly ArticleUtil _articleUtil;
+		private readonly SitecoreSaverUtil _sitecroreSaverUtil;
 
-		public CreateArticleController(ISitecoreService sitecoreSevice, Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		public CreateArticleController(ISitecoreService sitecoreSevice, Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil,SitecoreSaverUtil sitecroreSaverUtil)
 		{
 			_sitecoreWebService = sitecoreSevice;
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
 			_articleUtil = articleUtil;
+			_sitecroreSaverUtil = sitecroreSaverUtil;
 		}
 
 		[HttpPost]
@@ -39,11 +41,14 @@ namespace Informa.Web.Controllers
 				//TODO - Give proper name.  Remove unneeded characters like & etc
 				var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
 				var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
+				//var baseItem = new GlassBase {_Name = rinsedName, _TemplateId = new Guid(IArticleConstants.TemplateIdString)};
+				//var articleCreate = _sitecoreMasterService.Create(parent, baseItem);
 				var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
 				article.Title = content.Name;
 				article.Planned_Publish_Date = publicationDate;
 				article.Created_Date = DateTime.Now;
-				article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString().Replace("-",""), content.PublicationID, publicationDate);
+				//article.Article_Number = SitecoreUtil.GetNextArticleNumber(_sitecroreSaverUtil.GetLastArticleNumber(content.PublicationID),content.PublicationID);
+				article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString().Replace("-",""), content.PublicationID);
 				_sitecoreMasterService.Save(article);
 				var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
 				var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
@@ -90,6 +95,23 @@ namespace Informa.Web.Controllers
 		{
 			IArticle article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);
+		}
+	}
+
+	[Route]
+	public class SaveArticleDetailsController : ApiController
+	{
+		private readonly SitecoreSaverUtil _sitecoreSaver;
+
+		public SaveArticleDetailsController(SitecoreSaverUtil sitecoreSaver)
+		{
+			_sitecoreSaver = sitecoreSaver;
+		}
+
+		[HttpPost]
+		public void Post([FromBody] WordPluginModel.SaveArticleDetails content)
+		{
+			_sitecoreSaver.SaveArticleDetails(content.ArticleNumber, content.ArticleData, false, false);
 		}
 	}
 

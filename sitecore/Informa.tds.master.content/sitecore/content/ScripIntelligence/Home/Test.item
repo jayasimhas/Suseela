@@ -10,6 +10,13 @@ template: {11380B5D-3531-4570-B213-EFC5312266E4}
 templatekey: Article
 
 ----field----
+field: {8D6D4B6A-0ACA-406A-ABAE-C6C8A02A7C0D}
+name: Planned Publish Date
+key: planned publish date
+content-length: 16
+
+20151230T164400Z
+----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
@@ -82,13 +89,6 @@ key: actual publish date
 content-length: 16
 
 20151202T063000Z
-----field----
-field: {8D6D4B6A-0ACA-406A-ABAE-C6C8A02A7C0D}
-name: Planned Publish Date
-key: planned publish date
-content-length: 16
-
-20151230T164400Z
 ----field----
 field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
 name: Created Date

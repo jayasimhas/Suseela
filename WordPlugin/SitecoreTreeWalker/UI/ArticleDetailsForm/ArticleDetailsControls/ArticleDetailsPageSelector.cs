@@ -61,7 +61,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			Pages.Add(pageArticleInformationControl);
 			Pages.Add(pageRelatedArticlesControl);			
 			Pages.Add(pageWorkflowControl);
-			Pages.Add(pageSubjectsControl);
+			Pages.Add(pageFeaturedImageControl);
             Pages.Add(pageTaxonomyControl);								
 			//Pages.Add(PageNotesControl);
 
@@ -142,6 +142,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
 				//TODO - Get Taxonmoy
                 Taxonomoy = null,
+				FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
+				FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),			
 				//TODO - Editorial Notes
                 //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
@@ -151,6 +153,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),				
 				Embargoed =  pageArticleInformationControl.GetEmbargoedState(),
 			};
+			/*
+			if (pageFeaturedImageControl.GetFeaturedImage() != null)
+			{
+				articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage();
+			}*/
 
 			return articleDetails;
 		}
@@ -259,7 +266,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageArticleInformationControl.PreLinkEnable();
 			pageRelatedArticlesControl.Enabled = false;
 			pageWorkflowControl.Enabled = false;
-			pageSubjectsControl.Enabled = false;
+			pageFeaturedImageControl.Enabled = false;
             pageTaxonomyControl.Enabled = false;								
             //pageArticleInformationControl.PageNotesControl.PreLinkEnable();
 		}
@@ -274,7 +281,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 
 			pageRelatedArticlesControl.Enabled = true;
 			pageWorkflowControl.Enabled = true;
-			pageSubjectsControl.Enabled = true;
+			pageFeaturedImageControl.Enabled = true;
             pageTaxonomyControl.Enabled = true;						
             //pageArticleInformationControl.PageNotesControl.PostLinkEnable();
 		}
@@ -402,7 +409,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		private void SubjectsMenuItem_Click(object sender, EventArgs e)
 		{
-			SwitchToPage(pageSubjectsControl);
+			SwitchToPage(pageFeaturedImageControl);
 		}
 
         private void TaxonomyMenuItem_Click(object sender, EventArgs e)
