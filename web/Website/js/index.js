@@ -49,10 +49,9 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 
 
 // Pre-registration username validation
-$('.header__hover--register .js-register-submit').on('click', function validateUsername(e) {
+$('.js-register-submit').on('click', function validateUsername(e) {
 	var submitButton = $(e.target);
 	var username = submitButton.siblings('.js-register-username').val();
-
 	$.post('account/api/accountvalidation/username/', { username: username }, function (response) {
 		if (response.valid) {
 			var redirectUrl = submitButton.attr('data-register-redirect');
