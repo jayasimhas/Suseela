@@ -41,5 +41,9 @@
             margin-bottom: 4rem;
         }
 
+        &.is-active {
+            @extend .is-active;
+        }
+
     }
 }

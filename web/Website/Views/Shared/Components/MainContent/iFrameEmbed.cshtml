@@ -1,9 +1,17 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.MainContent.IIFrame_Embed
 
-<div class="desktop">
-    @Html.Glass().Editable(x => x.Desktop_Embed_Code)
-</div>
-<div class="mobile">
-    @Html.Glass().Editable(x => x.Mobile_Embed_Code)
+<div class="iframe-component">
+    @* NOTE — this data-embed-link should have quotes escaped if possible *@
+    <div class="iframe-component__desktop" data-embed-link='@Html.Glass().Editable(x => x.Desktop_Embed_Code)'>
+        <noscript>
+            @Html.Glass().Editable(x => x.Desktop_Embed_Code)
+        </noscript>
+    </div>
+    @* NOTE — this data-embed-link should have quotes escaped if possible *@
+    <div class="iframe-component__mobile" data-embed-link='@Html.Glass().Editable(x => x.Mobile_Embed_Code)'>
+        <noscript>
+            @Html.Glass().Editable(x => x.Mobile_Embed_Code)
+        </noscript>
+    </div>
 </div>

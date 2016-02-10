@@ -64,6 +64,10 @@ $('.js-register-submit').on('click', function validateUsername(e) {
 	});
 });
 
+$('.dismiss-button').on('click', function closeContainer(e) {
+	console.log($(e.srcElement));
+	console.log($(e.srcElement).data('target-element'));
+});
 
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
@@ -77,6 +81,22 @@ var showForgotPassSuccess = function() {
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
 	$('.pop-out__form-error').toggleClass('is-active');
+};
+
+var renderIframeComponents = function() {
+	$('.iframe-component').each(function(index, elm) {
+		var desktopEmbed = $(elm).find('.iframe-component__desktop');
+		var mobileEmbed = $(elm).find('.iframe-component__mobile')
+		var mobileEmbedLink = mobileEmbed.data('embed-link');
+
+		if($(window).width() <= 480 && mobileEmbedLink) {
+			mobileEmbed.show().html(mobileEmbed.data('embed-link'));
+			desktopEmbed.hide();
+		} else {
+			desktopEmbed.show().html(desktopEmbed.data('embed-link'));
+			mobileEmbed.hide();
+		}
+	});
 };
 
 $(document).ready(function() {
@@ -113,6 +133,13 @@ $(document).ready(function() {
 	// For each article table, clone and append "view full table" markup
 	$('.article-body-content table').forEach(function(e) {
 		$(e).after($('.js-mobile-table-template .article-table').clone());
+	});
+
+	// When DOM loads, render the appropriate iFrame components
+	// Also add a listener for winder resize, render appropriate containers
+	renderIframeComponents();
+	$(window).on('resize', (event) => {
+		renderIframeComponents();
 	});
 
 	// Topic links
