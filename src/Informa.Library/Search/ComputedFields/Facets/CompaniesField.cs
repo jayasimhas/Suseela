@@ -12,7 +12,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
     {
         public override object GetFieldValue(Item indexItem)
         {
-            throw new NotImplementedException();
+            return string.Empty;
         }
     }
 }

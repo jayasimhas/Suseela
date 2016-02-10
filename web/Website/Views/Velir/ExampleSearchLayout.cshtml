@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Search Application (Angular)</title>
+    <link rel="stylesheet" href="/velir/dist/patternlibrary.css" />
+    <link rel="stylesheet" href="/velir/dist/example.css" />
+</head>
+<body ng-app="example">
+    <div class="content-wrapper">
+        
+        <header class="search-header ">
+            <h1>Search Results</h1>
+            @Html.Sitecore().Placeholder("search-header")
+        </header>
+        
+        @Html.Sitecore().Placeholder("search-sort-area")
+
+        <div class="main-content">
+            @Html.Sitecore().Placeholder("search-main")
+        </div>
+        <div class="right-rail">
+            @Html.Sitecore().Placeholder("search-right")
+        </div>
+    </div>
+    @Html.Sitecore().Placeholder("search-bottom")
+</body>
+</html>

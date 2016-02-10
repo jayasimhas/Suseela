@@ -140,6 +140,9 @@
     <Reference Include="Sitecore.ContentSearch.Linq">
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.SolrProvider">
+      <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.HtmlCache">
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.HtmlCache\Sitecore.HtmlCache.dll</HintPath>
     </Reference>
@@ -344,6 +347,9 @@
     <Compile Include="Search\Results\IArticleNumber.cs" />
     <Compile Include="Search\Results\InformaSearchResultItem.cs" />
     <Compile Include="Search\Results\ITaxonomySearchResults.cs" />
+    <Compile Include="Search\SearchIndex\CustomSolrFieldNameTranslator.cs" />
+    <Compile Include="Search\SearchIndex\CustomSolrSearchIndex.cs" />
+    <Compile Include="Search\SearchIndex\CustomSwitchOnRebuildSolrSearchIndex.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
