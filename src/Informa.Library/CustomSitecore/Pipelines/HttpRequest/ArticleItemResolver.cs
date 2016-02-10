@@ -68,6 +68,8 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
                 return;
 
             Context.Item = i;
+            args.Url.ItemPath = i.Paths.FullPath;
+            Context.Request.ItemPath = i.Paths.FullPath;
         }
     }
 }
