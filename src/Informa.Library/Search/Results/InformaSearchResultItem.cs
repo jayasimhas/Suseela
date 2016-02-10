@@ -10,7 +10,7 @@ namespace Informa.Library.Search.Results
 {
     public class InformaSearchResultItem : SearchResultItem
     {
-        [IndexField("c_searchable")]
+        [IndexField("IsSearchable")]
         public bool IsSearchable { get; set; }
 
         [IndexField("_latestversion")]

@@ -535,6 +535,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
     <Compile Include="App_Start\Registrations\GlassMapperRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -860,6 +861,7 @@
     <Content Include="Views\Search\SearchScripts.cshtml" />
     <Content Include="Views\Search\SearchSortOptions.cshtml" />
     <Content Include="Views\Search\SortOption.cshtml" />
+    <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

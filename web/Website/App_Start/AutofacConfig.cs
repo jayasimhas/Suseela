@@ -50,6 +50,7 @@ namespace Informa.Web.App_Start
             builder.RegisterModule<SearchDependenciesModule>();
             builder.RegisterModule<SearchModule>();
             builder.RegisterModule<SolrSearchModule>();
+            SearchRegistrar.RegisterDependencies(builder);
 
             // Custom Modules
             builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));

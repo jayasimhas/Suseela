@@ -6,7 +6,8 @@
 					<fields hint="raw:AddComputedIndexField">
 						<field fieldName="ManuallyCuratedContent" returnType="guidCollection">Informa.Library.ContentCuration.Search.ComputedIndexField.ManuallyCuratedContent, Informa.Library</field>
 						
-            <field fieldName="SearchDate" returnType="datetime">Informa.Library.Search.ComputedFields.Base.SearchDateField, Informa.Library</field>
+						<field fieldName="IsSearchable" returnType="bool">Informa.Library.Search.ComputedFields.Base.IsSearchableField, Informa.Library</field>
+						<field fieldName="SearchDate" returnType="datetime">Informa.Library.Search.ComputedFields.Base.SearchDateField, Informa.Library</field>
             
 						<field fieldName="FacetContentType" returnType="string">Informa.Library.Search.ComputedFields.Facets.ContentTypeField, Informa.Library</field>
 						<field fieldName="FacetMediaType" returnType="string">Informa.Library.Search.ComputedFields.Facets.MediaTypeField, Informa.Library</field>
