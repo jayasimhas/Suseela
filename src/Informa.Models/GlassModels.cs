@@ -110,6 +110,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TaxonomiesFieldName = "Taxonomy";
 
 						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
 			
 
 	}
@@ -756,7 +761,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -783,7 +788,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -1342,6 +1347,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
 			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
 
 						
 					
@@ -3036,6 +3046,69 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.T
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+ 	/// <summary>
+	/// IGeneralRTEComponent Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Components/GeneralRTEComponent</para>	
+	/// <para>ID: 7b44925f-dd3b-4d01-988c-94a2d4bdc71f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IGeneralRTEComponentConstants.TemplateIdString)]
+	public partial interface IGeneralRTEComponent : IGlassBase 
+	{
+								/// <summary>
+					/// The Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 789adc78-20ba-4599-8c29-ed74bc4c7122</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneralRTEComponentConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IGeneralRTEComponent Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Components/GeneralRTEComponent</para>	
+		/// <para>ID: 7b44925f-dd3b-4d01-988c-94a2d4bdc71f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IGeneralRTEComponent__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 789adc78-20ba-4599-8c29-ed74bc4c7122</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneralRTEComponentConstants.TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Text  {get; set;}
+						}
+	
+	public static partial class IGeneralRTEComponentConstants{
+
+			public const string TemplateIdString = "7b44925f-dd3b-4d01-988c-94a2d4bdc71f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "GeneralRTEComponent";
+
+					
+			public static readonly ID TextFieldId = new ID("789adc78-20ba-4599-8c29-ed74bc4c7122");
+			public const string TextFieldName = "Text";
+
+							public static readonly ID Text__RawFieldId = new ID("789adc78-20ba-4599-8c29-ed74bc4c7122");
+				public const string Text__RawFieldName = "Text";
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
 {
 
@@ -3191,6 +3264,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Character Style Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// I___CanonicalPage Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/__CanonicalPage</para>	
+	/// <para>ID: 80315065-411e-4e0f-a0a5-6d132716d378</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=I___CanonicalPageConstants.TemplateIdString)]
+	public partial interface I___CanonicalPage : IGlassBase 
+	{
+								/// <summary>
+					/// The Canonical Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: fd4b0a78-6cfe-4fbc-b802-1145e22e4222</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I___CanonicalPageConstants.Canonical_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Canonical_Link  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// I___CanonicalPage Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/__CanonicalPage</para>	
+		/// <para>ID: 80315065-411e-4e0f-a0a5-6d132716d378</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface I___CanonicalPage__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Canonical Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: fd4b0a78-6cfe-4fbc-b802-1145e22e4222</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I___CanonicalPageConstants.Canonical_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Canonical_Link  {get; set;}
+						}
+	
+	public static partial class I___CanonicalPageConstants{
+
+			public const string TemplateIdString = "80315065-411e-4e0f-a0a5-6d132716d378";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "__CanonicalPage";
+
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
 			
 
 	}
@@ -3491,6 +3625,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+					
 			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
 			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
 
@@ -3678,7 +3817,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	/// <para>ID: 8cb9b3dc-fb05-4f6c-a73b-19eadb3a6391</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=I___BasePageConstants.TemplateIdString)]
-	public partial interface I___BasePage : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy
+	public partial interface I___BasePage : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage
 	{
 								/// <summary>
 					/// The Custom Meta Tags field.
@@ -3732,7 +3871,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.
@@ -3762,7 +3901,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 		/// <para>ID: 8cb9b3dc-fb05-4f6c-a73b-19eadb3a6391</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface I___BasePage__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy__Raw
+		public partial interface I___BasePage__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage__Raw
 		{
 										/// <summary>
 						/// The Custom Meta Tags field.
@@ -3889,6 +4028,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					
 			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
 			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
 
 						
 			

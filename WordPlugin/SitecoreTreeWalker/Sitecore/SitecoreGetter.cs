@@ -328,6 +328,16 @@ namespace SitecoreTreeWalker.Sitecore
 				return mediaItem;
 			}
 		}
+		
+		public static Guid GetItemGuidByPath(string path)
+		{
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}GetItemGuidByPath?path={path}").Result;
+				var itemGuid = JsonConvert.DeserializeObject<Guid>(response.Content.ReadAsStringAsync().Result);
+				return itemGuid;
+			}
+		}
 
 		public static byte[] GetMediaLibraryItemData(string path)
 		{

@@ -177,6 +177,27 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
+	public class GetItemGuidByPathController : ApiController
+	{
+		private string masterBD = "master";
+		private ISitecoreService _sitecoreService;
+		public GetItemGuidByPathController(Func<string, ISitecoreService> sitecoreFactory)
+		{
+			_sitecoreService = sitecoreFactory(masterBD);
+		}
+		// GET api/<controller>
+		public JsonResult<Guid> Get(string path)
+		{
+			if (!string.IsNullOrEmpty(path))
+			{
+				var item = _sitecoreService.GetItem<Item>(path);
+				return Json(item?.ID.Guid ?? new Guid());
+			}
+			return Json(new Guid());
+		}
+	}
+
+	[Route]
 	public class GetAuthorsController : ApiController
 	{
 		private string masterBD = "master";

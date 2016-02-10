@@ -39,7 +39,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			this.CurrentPagePanel = new System.Windows.Forms.Panel();
 			this.pageArticleInformationControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.ArticleInformationControl();
 			this.pageTaxonomyControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.TaxonomyControl();
-			this.pageSubjectsControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.FeaturedImage();
+			this.pageFeaturedImageControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.FeaturedImage();
 			this.pageWorkflowControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.WorkflowControl();
 			this.pageRelatedArticlesControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.RelatedArticlesControl();
 			this.FlowLayoutPanel = new System.Windows.Forms.Panel();
@@ -143,7 +143,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			this.CurrentPagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.CurrentPagePanel.Controls.Add(this.pageArticleInformationControl);
 			this.CurrentPagePanel.Controls.Add(this.pageTaxonomyControl);
-			this.CurrentPagePanel.Controls.Add(this.pageSubjectsControl);
+			this.CurrentPagePanel.Controls.Add(this.pageFeaturedImageControl);
 			this.CurrentPagePanel.Controls.Add(this.pageWorkflowControl);
 			this.CurrentPagePanel.Controls.Add(this.pageRelatedArticlesControl);
 			this.CurrentPagePanel.Location = new System.Drawing.Point(190, 3);
@@ -178,14 +178,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			// 
 			// pageSubjectsControl
 			// 
-			this.pageSubjectsControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.pageFeaturedImageControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.pageSubjectsControl.BackColor = System.Drawing.Color.White;
-			this.pageSubjectsControl.Location = new System.Drawing.Point(20, 10);
-			this.pageSubjectsControl.Name = "pageSubjectsControl";
-			this.pageSubjectsControl.Size = new System.Drawing.Size(610, 449);
-			this.pageSubjectsControl.TabIndex = 6;
-			this.pageSubjectsControl.Visible = false;
+			this.pageFeaturedImageControl.BackColor = System.Drawing.Color.White;
+			this.pageFeaturedImageControl.Location = new System.Drawing.Point(20, 10);
+			this.pageFeaturedImageControl.Name = "pageFeaturedImageControl";
+			this.pageFeaturedImageControl.Size = new System.Drawing.Size(610, 449);
+			this.pageFeaturedImageControl.TabIndex = 6;
+			this.pageFeaturedImageControl.Visible = false;
 			// 
 			// pageWorkflowControl
 			// 
@@ -254,7 +254,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		public RelatedArticlesControl pageRelatedArticlesControl;
 		//public NotesControl PageNotesControl;						
 		public TaxonomyControl pageTaxonomyControl;
-		public FeaturedImage pageSubjectsControl;
+		public FeaturedImage pageFeaturedImageControl;
 		public WorkflowControl pageWorkflowControl;
         private System.Windows.Forms.Panel FlowLayoutPanel;
 	}

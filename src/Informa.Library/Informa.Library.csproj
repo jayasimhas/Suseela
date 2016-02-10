@@ -247,6 +247,7 @@
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver.cs" />
     <Compile Include="Publishing\IPublishingStatus.cs" />
     <Compile Include="Publishing\PublishingStatus.cs" />
     <Compile Include="Publishing\IPublishingStatusCheck.cs" />
@@ -265,9 +266,11 @@
     <Compile Include="Publishing\Scheduled\IScheduledPublishResult.cs" />
     <Compile Include="Publishing\Scheduled\ItemDeleteScheduledPublises.cs" />
     <Compile Include="Publishing\Scheduled\ItemVersionDeleteScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbScheduledPublishConfiguration.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteVersionScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteItemScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbScheduledPublishConfiguration.cs" />
     <Compile Include="Publishing\Scheduled\ProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />

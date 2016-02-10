@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
+using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -24,14 +26,33 @@ namespace Informa.Web.Controllers
 		protected readonly string TempFolderFallover = Path.GetTempPath();
 		protected string TempFileLocation;
 		private readonly ArticleUtil _articleUtil;
+		private readonly IArticleSearch _articleSearcher;
+		private const string ArticleNumberLength = "000000";
 
-		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher)
 		{
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
-			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)) ? TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\temp.";			
+			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)) ? 
+				TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\temp.";
 			_articleUtil = articleUtil;
+			_articleSearcher = searcher;
 
 		}
+
+		public string GetLastArticleNumber(Guid publicationGuid)
+		{
+			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+			var results = _articleSearcher.Search(filter);
+			if (!results.Articles.Any())
+			{
+				return 0.ToString(ArticleNumberLength);
+			}
+			IEnumerable<string> articles = results.Articles.Select(a => a.Article_Number).OrderByDescending(b => b);
+			string num = articles.First().Replace(SitecoreUtil.GetPublicationPrefix(publicationGuid), "");
+			int n = int.Parse(num);
+			return (n + 1).ToString(ArticleNumberLength);
+		}
+
 		public void SaveArticleDetails(Guid articleGuid, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
 			using (new SecurityDisabler())
@@ -87,7 +108,7 @@ namespace Informa.Web.Controllers
 			{
 				loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
 			}
-			
+
 			var newVersion = article;
 
 			//TODO - Add version adn workflow informatiomn
@@ -186,7 +207,7 @@ namespace Informa.Web.Controllers
 
 			catch (Exception ex)
 			{
-				var ax = new ApplicationException("Workflow: Error with saving details while saving article [" + article.Article_Number + "]!", ex);				
+				var ax = new ApplicationException("Workflow: Error with saving details while saving article [" + article.Article_Number + "]!", ex);
 				throw ax;
 			}
 			return newVersion;
@@ -228,6 +249,14 @@ namespace Informa.Web.Controllers
 				{
 					newArticle.Planned_Publish_Date = new DateTime();
 				}
+
+				//TODO - Convert Label to dropdown or Single line text
+				//newArticle.Label = articleStruct.Label;
+				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
+				//newArticle.Featured_Image_16_9 = new Image() {MediaId = articleStruct.FeaturedImage.MediaId,Alt = articleStruct.FeaturedImage.Alt};
+				newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;
+				newArticle.Featured_Image_Source = articleStruct.FeaturedImageSource;
+
 				_sitecoreMasterService.Save(newArticle);
 			}
 		}
@@ -247,7 +276,7 @@ namespace Informa.Web.Controllers
 					articleItem["__Display name"] = trim;
 					articleItem.Name = ItemUtil.ProposeValidItemName(trim);
 				}
-				articleItem.Editing.EndEdit();					
+				articleItem.Editing.EndEdit();
 			}
 		}
 
@@ -288,12 +317,12 @@ namespace Informa.Web.Controllers
 				string companyIdsCsv;
 					article.Body = _companyFinder.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
 					article.Referenced_Companies = companyIdsCsv;					
-				*/				
+				*/
 				_sitecoreMasterService.Save(article);
 			}
 		}
 
-		
+
 		public int SendDocumentToSitecore(IArticle article, byte[] data, string extension)
 		{
 			MediaItem doc = UploadWordDoc(article, ConvertBytesToWordDoc(data, article.Article_Number, extension), article._Id.ToString(), extension);
@@ -301,14 +330,14 @@ namespace Informa.Web.Controllers
 			{
 				article.Word_Document = new Link
 				{
-					Url = doc.InnerItem.Paths.Path,				
+					Url = doc.InnerItem.Paths.Path,
 					TargetId = new Guid(doc.ID.ToString()),
 					Type = LinkType.Internal
-			};
-				
+				};
+
 				//TODO - Set this document to be internal
 				//article.Word_Document.Type = "internal";
-				_sitecoreMasterService.Save(article);				
+				_sitecoreMasterService.Save(article);
 			}
 			return doc.InnerItem.Version.Number;
 		}

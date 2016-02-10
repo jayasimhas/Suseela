@@ -74,7 +74,7 @@ namespace Informa.Web.ViewModels
         public string ListableType => Media_Type;
         public string Publication => SiterootContext.Item.Publication_Name.StripHtml();
 
-		public bool DisplayImage
+		public virtual bool DisplayImage
 		{
 			get { return !string.IsNullOrWhiteSpace(ListableImage); }
 			set { }

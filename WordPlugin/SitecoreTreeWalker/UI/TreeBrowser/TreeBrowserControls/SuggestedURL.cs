@@ -53,7 +53,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		}
 
 
-		private static string GetSuggestedUrl(string originalURL)
+		public static string GetSuggestedUrl(string originalURL)
 		{
 			string suggestedUrl;
 			if (originalURL.StartsWith("http"))

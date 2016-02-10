@@ -35,23 +35,48 @@ namespace Informa.Web.Controllers
             SitecoreContext = context;
         }
 
-        public void Get(string prefix, int articleNumber, string suffix = "")
+        /// <summary>
+        /// redirects all article urls that have an article number but no trailing title
+        /// </summary>
+        /// <param name="articleNumber"></param>
+        /// <param name="prefix"></param>
+        public void Get(int articleNumber, string prefix)
         {
+            string numFormat = $"{prefix}{articleNumber:D6}";
+
             //find the new article page
             IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
             filter.PageSize = 1;
             filter.Page = 1;
-            filter.ArticleNumber = $"{prefix}{articleNumber}";
+            filter.ArticleNumber = numFormat;
 
             var results = ArticleSearcher.Search(filter);
             if (!results.Articles.Any())
                 return;
-
-            //redirect 
-            IArticle a = results.Articles.First();
-            HttpContext.Current.Response.RedirectPermanent(a._Url);
+            
+            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+            HttpContext.Current.Response.RedirectPermanent(newPath);
         }
 
+        /// <summary>
+        /// redirects all article urls starting with /article
+        /// </summary>
+        /// <param name="path"></param>
+        public void Get(string year, string month, string day, string title)
+        {
+            IArticle a = SitecoreContext.GetCurrentItem<IArticle>();
+            if (a == null)
+                return;
+
+            string newPath = ArticleSearch.GetArticleCustomPath(a);
+            HttpContext.Current.Response.RedirectPermanent(newPath);
+        }
+        
+        /// <summary>
+        /// redirects all article urls that end with an escenic id
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="escenicID"></param>
         public void Get(string title, int escenicID)
         {
             string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
@@ -69,8 +94,8 @@ namespace Informa.Web.Controllers
                 return;
 
             //redirect 
-            IArticle a = results.Articles.First();
-            HttpContext.Current.Response.RedirectPermanent(a._Url);
+            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+            HttpContext.Current.Response.RedirectPermanent(newPath);
         }
     }
 
@@ -379,7 +404,7 @@ namespace Informa.Web.Controllers
 						Name = r.Last_Name + ", " + r.First_Name,
 					}).ToList();
 
-			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
+			//articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
 
@@ -424,5 +449,5 @@ namespace Informa.Web.Controllers
 			
 			return articleStruct;
 		}		
-	}
+    }
 }

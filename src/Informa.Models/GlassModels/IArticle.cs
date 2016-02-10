@@ -134,6 +134,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public IEnumerable<IArticle> Related_Articles { get; set; }
 		public IEnumerable<IGlassBase> Supporting_Documents { get; set; }
 		public bool Scheduled_Publishing_Enabled { get; set; }
+		public Link Canonical_Link { get; set; }
 	}
 
 	public interface IPublicationChild
