@@ -56,7 +56,7 @@ namespace Informa.Web.ViewModels
 					pageTitle = page.Title.StripHtml();
 				}
 				
-				if (string.IsNullOrWhiteSpace(pageTitle))
+				if (string.IsNullOrWhiteSpace(pageTitle) && GlassModel != null)
 				{
 					pageTitle = GlassModel._Name;
 				}
