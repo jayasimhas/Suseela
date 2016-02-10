@@ -125,8 +125,15 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
 				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),				
 				ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
-				Embargoed =  pageArticleInformationControl.GetEmbargoedState(),               
+				Embargoed =  pageArticleInformationControl.GetEmbargoedState(),
+				FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
+				FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource()
 			};
+
+			if (pageFeaturedImageControl.GetFeaturedImage() != null)
+			{
+				articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage().MediaId;
+			}
 
 			return articleDetails;
 		}
@@ -142,8 +149,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
 				//TODO - Get Taxonmoy
                 Taxonomoy = null,
-				FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
-				FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),			
 				//TODO - Editorial Notes
                 //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
@@ -152,12 +157,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
 				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),				
 				Embargoed =  pageArticleInformationControl.GetEmbargoedState(),
+				FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
+				FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
 			};
-			/*
+			
 			if (pageFeaturedImageControl.GetFeaturedImage() != null)
 			{
-				articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage();
-			}*/
+				articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage().MediaId;
+			}
 
 			return articleDetails;
 		}
@@ -305,7 +312,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageArticleInformationControl.ResetFields();
 		    pageWorkflowControl.ResetNotificationList();
 			//pageSubjectsControl.TabController.ResetFields();
-            pageTaxonomyControl.TabController.ResetFields();					
+            pageTaxonomyControl.TabController.ResetFields();	
+			pageFeaturedImageControl.ResetFields();				
             //pageArticleInformationControl.PageNotesControl.ResetFields();
 			pageRelatedArticlesControl.ResetFields();			
 		}
@@ -318,15 +326,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 			pageArticleInformationControl.UpdateFields(articleDetails);
 			pageRelatedArticlesControl.UpdateFields(articleDetails);
-			pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
+			pageFeaturedImageControl.UpdateFields(articleDetails);
+			//pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
             pageTaxonomyControl.UpdateFields(articleDetails);			
 					
 			if(string.IsNullOrEmpty(articleDetails.ArticleNumber))
 			{
 				return;
-			}
-
-            //pageArticleInformationControl.PageNotesControl.UpdateFields(articleDetails);			
+			}		
 			//pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());				
 			pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
 		}

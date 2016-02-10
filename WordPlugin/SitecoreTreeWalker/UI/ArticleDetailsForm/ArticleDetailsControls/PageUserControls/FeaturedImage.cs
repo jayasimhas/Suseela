@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Sitecore;
@@ -225,11 +226,41 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             var values = SitecoreGetter.GetGraphicsRootNode();
             AddRootNode(uxFeaturedImageTreeView, values[1], values[0]);
         }
+		public void ResetFields()
+		{
+			InitializeItems();
+			sourceTxtBox.Text = string.Empty;
+			captionTxtBox.Text = string.Empty;
+			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
+		}
 
-        /// <summary>
-        /// Removes all items in the TreeBrowser
-        /// </summary>
-        public void ClearItems()
+		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
+		{			
+			sourceTxtBox.Text = articleDetails.FeaturedImageSource;
+			captionTxtBox.Text = articleDetails.FeaturedImageCaption;
+
+
+			SitecoreItemGetter.SitecoreMediaItem mediaItem = _siteCoreItemGetter.DownloadSiteCoreMediaItem(articleDetails.FeaturedImage.ToString());
+			if ((mediaItem == null) || !(mediaItem.Extension.ToLower().Contains("gif") ||mediaItem.Extension.ToLower().Contains("jpg") ||mediaItem.Extension.ToLower().Contains("png")))
+			{
+				pictureBox1.Visible = false;
+				filenameLblHeader.Visible = false;
+				filenameLbl.Visible = false;
+				alttextLblHeader.Visible = false;
+				alttextLbl.Visible = false;
+				return;
+			}
+
+			//imageSelected = mediaItem.Url;
+			pictureBox1.ImageLocation = mediaItem.FileName;
+			filenameLbl.Text = mediaItem.Title;
+			alttextLbl.Text = mediaItem.Title;
+
+		}
+		/// <summary>
+		/// Removes all items in the TreeBrowser
+		/// </summary>
+		public void ClearItems()
         {
             uxFeaturedImageTreeView.Nodes.Clear();
         }

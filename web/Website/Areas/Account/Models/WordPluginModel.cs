@@ -254,12 +254,7 @@ namespace Informa.Web.Areas.Account.Models
 			public string NotesToEditorial { get; set; }			
 			public string Subtitle { get; set; }
 			public string Summary { get; set; }
-
 			public int WordCount { get; set; }
-
-			//indicates if article should be in the homepage list of
-			//featured articles
-			public bool IsFeaturedArticle { get; set; }
 			public WorkflowState WorkflowState { get; set; }
 			public Guid CommandID { get; set; }
 			public List<TaxonomyStruct> Taxonomoy { get; set; }
@@ -268,7 +263,6 @@ namespace Informa.Web.Areas.Account.Models
 			public List<Guid> RelatedArticles { get; set; }
 			public List<Guid> ChildArticles { get; set; }
 			public List<string> SupportingDocumentPaths { get; set; }
-			public List<TaxonomyStruct> GeneralTags { get; set; }
 			public List<ArticlePreviewInfo> ReferencedArticlesInfo { get; set; }
 			public List<ArticlePreviewInfo> RelatedArticlesInfo { get; set; }
 
@@ -298,7 +292,7 @@ namespace Informa.Web.Areas.Account.Models
 
 			public string Label { get; set; }
 			public Guid MediaType { get; set; }
-			//public Image FeaturedImage { get; set; }
+			public Guid FeaturedImage { get; set; }
 			public string FeaturedImageCaption { get; set; }
 			public string FeaturedImageSource { get; set; }
 		}
