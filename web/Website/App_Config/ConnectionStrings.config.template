@@ -12,4 +12,5 @@
   <add name="tracking.history" connectionString="${connstr.tracking.history}" />
   <add name="tracking.contact" connectionString="${connstr.tracking.contact}" />
   <add name="reporting" connectionString="${connstr.reporting}" />
+  <add name="scheduledpublishing" connectionString="${connstr.scheduledpublishing}" />
 </connectionStrings>

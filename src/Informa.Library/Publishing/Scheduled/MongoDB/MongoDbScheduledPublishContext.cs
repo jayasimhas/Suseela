@@ -1,41 +1,35 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Informa.Library.Threading;
+using Jabberwocky.Glass.Autofac.Attributes;
 using MongoDB.Driver;
 
 namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
-	public class MongoDbScheduledPublishContext : IMongoDbScheduledPublishContext
+	public class MongoDbScheduledPublishContext : ThreadSafe<MongoDatabase>, IMongoDbScheduledPublishContext
 	{
-		private MongoDatabase database;
-		private object databaseLock = new object();
+		public readonly IMongoDbScheduledPublishConfiguration Configuration;
 
-		public MongoDatabase Database
+		public MongoDbScheduledPublishContext(
+			IMongoDbScheduledPublishConfiguration configuration)
+		{
+			Configuration = configuration;
+		}
+
+		public MongoDatabase Database => SafeObject;
+
+		public MongoCollection<ScheduledPublishDocument> ScheduledPublishes => Database.GetCollection<ScheduledPublishDocument>(Configuration.CollectionName);
+
+		protected override MongoDatabase UnsafeObject
 		{
 			get
 			{
-				if (database != null)
-				{
-					return database;
-				}
+				var url = new MongoUrl(Configuration.ConnectionString);
+				var clientSettings = MongoClientSettings.FromUrl(url);
+				var client = new MongoClient(clientSettings);
+				var server = client.GetServer();
 
-				lock(databaseLock)
-				{
-					if (database != null)
-					{
-						return database;
-					}
-
-					// TODO: Read connection details from connection strings config
-					var client = new MongoClient(new MongoClientSettings
-					{
-						Server = new MongoServerAddress("localhost", 27017)
-					});
-
-					return database = client.GetServer().GetDatabase("Informa_scheduled_publishing");
-				}
+				return server.GetDatabase(url.DatabaseName);
 			}
 		}
-
-		public MongoCollection<ScheduledPublishDocument> ScheduledPublishes => Database.GetCollection<ScheduledPublishDocument>("scheduled_publishes");
 	}
 }
