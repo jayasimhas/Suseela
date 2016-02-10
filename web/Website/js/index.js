@@ -88,13 +88,19 @@ var renderIframeComponents = function() {
 		var desktopEmbed = $(elm).find('.iframe-component__desktop');
 		var mobileEmbed = $(elm).find('.iframe-component__mobile')
 		var mobileEmbedLink = mobileEmbed.data('embed-link');
-
+		
 		if($(window).width() <= 480 && mobileEmbedLink) {
-			mobileEmbed.show().html(mobileEmbed.data('embed-link'));
+			mobileEmbed.show();
 			desktopEmbed.hide();
+			if(mobileEmbed.html() == '') {
+				mobileEmbed.html(mobileEmbed.data('embed-link'));
+			}
 		} else {
-			desktopEmbed.show().html(desktopEmbed.data('embed-link'));
+			desktopEmbed.show();
 			mobileEmbed.hide();
+			if(desktopEmbed.html() == '') {
+				desktopEmbed.html(desktopEmbed.data('embed-link'));
+			}
 		}
 	});
 };
