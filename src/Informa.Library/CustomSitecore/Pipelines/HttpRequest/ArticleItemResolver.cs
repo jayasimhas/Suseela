@@ -9,6 +9,7 @@ using System.Web.Http;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Sitecore;
 using Sitecore.Data.ItemResolvers;
 using Sitecore.Data.Items;
@@ -22,19 +23,19 @@ using Sitecore.Sites;
 
 namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 {
-    public class ArticleItemResolver : HttpRequestProcessor
+    public class ArticleItemResolver : IProcessor<HttpRequestArgs>
     {
 
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ISitecoreContext SitecoreContext;
 
-        public ArticleItemResolver()
+        public ArticleItemResolver(IArticleSearch searcher, ISitecoreContext context)
         {
-            ArticleSearcher = GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(IArticleSearch)) as IArticleSearch;
-            SitecoreContext = GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(ISitecoreContext)) as ISitecoreContext;
+            ArticleSearcher = searcher;
+            SitecoreContext = context;
         }
 
-        public override void Process(HttpRequestArgs args)
+        public void Process(HttpRequestArgs args)
         {
             Assert.ArgumentNotNull((object)args, "args");
             if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
@@ -68,6 +69,8 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
                 return;
 
             Context.Item = i;
+            args.Url.ItemPath = i.Paths.FullPath;
+            Context.Request.ItemPath = i.Paths.FullPath;
         }
     }
 }
