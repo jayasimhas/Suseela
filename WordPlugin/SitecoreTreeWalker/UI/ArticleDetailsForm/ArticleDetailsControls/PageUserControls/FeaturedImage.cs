@@ -105,23 +105,16 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
         private void uxBrowseImages_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            pictureBox1.Visible = true;
             pictureBox1.Image = Properties.Resources.loading;
-            filenameLblHeader.Visible = true;
-            filenameLbl.Visible = true;
-            alttextLblHeader.Visible = true;
-            alttextLbl.Visible = true;
-            TreeNode node = e.Node;
+	        ShowHideElements(true);
+
+			TreeNode node = e.Node;
             var sitecorePath = node.Tag as SitecorePath;
 
             if (sitecorePath == null)
             {
-                pictureBox1.Visible = false;
-                filenameLblHeader.Visible = false;
-                filenameLbl.Visible = false;
-                alttextLblHeader.Visible = false;
-                alttextLbl.Visible = false;
-                return;
+				ShowHideElements(false);
+				return;
             }
             try
             {
@@ -131,24 +124,35 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
                       mediaItem.Extension.ToLower().Contains("jpg") ||
                       mediaItem.Extension.ToLower().Contains("png")))
                 {
-                    pictureBox1.Visible = false;
-                    filenameLblHeader.Visible = false;
-                    filenameLbl.Visible = false;
-                    alttextLblHeader.Visible = false;
-                    alttextLbl.Visible = false;
-                    return;
+					ShowHideElements(false);
+					return;
                 }
 
 	            imageSelected = sitecorePath.Path;
 				pictureBox1.ImageLocation = mediaItem.FileName;
                 filenameLbl.Text = mediaItem.Title;
                 alttextLbl.Text = mediaItem.Title;
-            }
+			}
             catch (WebException)
             {
                 Globals.SitecoreAddin.AlertConnectionFailure();
             }
         }
+
+	    public void ShowHideElements(bool state)
+	    {
+			groupBox2.Visible = state;
+			pictureBox1.Visible = state;
+			filenameLblHeader.Visible = state;
+			filenameLbl.Visible = state;
+			alttextLblHeader.Visible = state;
+			alttextLbl.Visible = state;
+			captionTxtBox.Visible = state;
+			sourceTxtBox.Visible = state;
+			label5.Visible = state;
+			label6.Visible = state;
+			clearBtn.Visible = state;			
+		}
 
         void uxInsertImage_Click(object sender, System.EventArgs e)
         {
@@ -273,7 +277,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             ClearItems();
             InitializeItems();
         }
-    }
+
+		private void clearBtn_Click(object sender, EventArgs e)
+		{
+			ReloadItems();
+			ShowHideElements(false);
+			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
+		}
+	}
 }
 
 
