@@ -67,6 +67,6 @@ namespace Informa.Web.ViewModels
 			}
 		}
 
-		public string CanonicalUrl => GlassModel.Canonical_Link.GetLink();
+		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}
 }
