@@ -39,23 +39,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			//	.Select(tag => z.Service.GetItem<IGlassBase>(tag, true, true)).OfType<ISite_Root>().FirstOrDefault()?._Id));		
 		}
 	}
-
-	[SitecoreType(TemplateId = IArticleConstants.TemplateIdString)]
-	public class GlassBase : IGlassBase
-	{
-		public Guid _Id { get; set; }
-		public Language _Language { get; set; }
-		public int _Version { get; set; }
-		public string _Url { get; set; }
-		public Guid _TemplateId { get; set; }
-		public string _Path { get; set; }
-		public string _Name { get; set; }
-		public IEnumerable<IGlassBase> _ChildrenWithInferType { get; set; }
-		public IGlassBase _Parent { get; set; }
-		public string _MediaUrl { get; set; }
-		public IEnumerable<Guid> _BaseTemplates { get; set; }
-	}
-
+    
 	public class ArticleItem : IArticle
 	{
 		public Guid Publication => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");
