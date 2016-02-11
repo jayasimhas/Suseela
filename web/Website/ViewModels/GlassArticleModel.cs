@@ -58,7 +58,7 @@ namespace Informa.Web.ViewModels
                     x => new LinkableModel {LinkableText = x.Name, LinkableUrl = $"mailto://{x.Email_Address}"});
 
         public DateTime ListableDate => Date;
-        public string ListableImage => Image.ImageUrl;
+        public string ListableImage => Image?.ImageUrl;
         //TODO: Get real summary
         public string ListableSummary
             => string.IsNullOrWhiteSpace(GlassModel.Summary) ? Body.Substring(0, 200) : GlassModel.Summary;
