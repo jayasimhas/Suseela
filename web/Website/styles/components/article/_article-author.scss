@@ -1,0 +1,116 @@
+.article-author {
+    @include textMix("Roboto", 18px, 500);
+    background-color: $informa-light-gray-f;
+    border-top: 2px solid $informa-light-gray-d;
+    margin: 1rem 0;
+    padding: 1rem;
+
+    // MULTIPLE AUTHORS
+
+    &:before {
+        color: $informa-mid-gray;
+        content: "Written by";
+        display: block;
+        font-size: 16px;
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    &__list li {
+        border-bottom: 1px solid $informa-light-gray-d;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            border: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__name {
+        width: 30%;
+    }
+
+    &__contact {
+        font-size: 15px;
+        font-weight: 400;
+
+        a:first-child {
+            margin-right: 18px;
+            padding-right: 18px;
+            position: relative;
+
+            &:after {
+                border-right: 1px solid $informa-light-gray-d;
+                content: "";
+                height: 120%;
+                position: absolute;
+                right: 0px;
+                top: -10%;
+                width: 2px;
+            }
+        }
+    }
+
+    @include breakpoint('small') {
+
+        &__list li:last-child {
+            padding-bottom: 0;
+        }
+
+        &__name {
+            display: block;
+            margin-bottom: 0.375rem;
+            width: 100%;
+        }
+        &__contact {
+            font-size: 15px;
+            font-weight: 400;
+
+            a {
+                display: block;
+                font-size: 0.9375rem;
+                margin-bottom: 0.375rem;
+                width: 100%;
+
+                &:first-child {
+                    margin-right: 0;
+                    padding-right: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // SINGLE AUTHOR
+
+    &--solo {
+        &:before {
+            display: none;
+        }
+    }
+    &__photo {
+        width: 7.5rem;
+        vertical-align: middle;
+        margin-right: 1.125rem;
+    }
+
+    &__solo-wrapper {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &--solo .article-author__name {
+        display: block;
+        margin-bottom: 0.75rem;
+        width: 100%;
+
+        &:before {
+            display: inline;
+            content: "by ";
+        }
+    }
+    &--solo .article-author__contact {
+    }
+}

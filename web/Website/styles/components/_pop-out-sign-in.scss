@@ -25,6 +25,7 @@
 
     &-forgot-password {
         border-top: 1px solid $informa-light-gray-d;
+        display: none;
         margin-top: 1.5rem;
         padding-top: 1.625rem;
 
@@ -34,6 +35,14 @@
 
         & p:last-child {
             margin-bottom: 0;
+        }
+
+        .alert-success {
+            margin-bottom: 4rem;
+        }
+
+        &.is-active {
+            @extend .is-active;
         }
 
     }

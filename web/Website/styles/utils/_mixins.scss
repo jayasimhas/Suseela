@@ -47,6 +47,11 @@
   font-weight: $weight;
 }
 
+
+@mixin smooth-transition($target: all, $timing: 200ms, $easing: ease-in-out) {
+  transition: $target $timing $easing;
+}
+
 /// Responsive manager
 /// @param {String} $breakpoint - Breakpoint
 /// @requires $breakpoints

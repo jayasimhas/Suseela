@@ -24,11 +24,13 @@
 
 /* * * * COMPONENTS — GLOBAL * * * */
 @import 'components/advertising';
+@import 'components/alerts';
 @import 'components/banners';
 @import 'components/bar-separated-link-list';
 @import 'components/buttons';
 @import 'components/dismiss-button';
 @import 'components/forms';
+@import 'components/iframe-component';
 @import 'components/latest-news';
 @import 'components/main-menu';
 @import 'components/menu-toggler';
@@ -40,21 +42,24 @@
 @import 'components/topic-subtopic';
 
 /* * * * COMPONENTS — ARTICLE * * * */
+@import 'components/header/header-account-access';
+
+/* * * * COMPONENTS — ARTICLE * * * */
+@import 'components/article/article-author';
 @import 'components/article/article-body';
 @import 'components/article/article-interview';
 @import 'components/article/article-key-documents';
 @import 'components/article/article-metadata';
 @import 'components/article/article-preview';
 @import 'components/article/article-prologue';
-@import 'components/article/article-pullquote';
 @import 'components/article/article-quick-facts';
 @import 'components/article/article-related-content';
 @import 'components/article/article-sidebar';
 @import 'components/article/article-tags';
 @import 'components/article/article-topics';
 
-
 /* * * * ATOMS * * * */
+@import 'components/atoms/blockquote';
 
 /* * * * MOLECULES * * * */
 @import 'molecules/boxout';

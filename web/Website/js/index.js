@@ -49,10 +49,9 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 
 
 // Pre-registration username validation
-$('.header__hover--register .js-register-submit').on('click', function validateUsername(e) {
+$('.js-register-submit').on('click', function validateUsername(e) {
 	var submitButton = $(e.target);
 	var username = submitButton.siblings('.js-register-username').val();
-
 	$.post('account/api/accountvalidation/username/', { username: username }, function (response) {
 		if (response.valid) {
 			var redirectUrl = submitButton.attr('data-register-redirect');
@@ -65,6 +64,46 @@ $('.header__hover--register .js-register-submit').on('click', function validateU
 	});
 });
 
+$('.dismiss-button').on('click', function closeContainer(e) {
+	console.log($(e.srcElement));
+	console.log($(e.srcElement).data('target-element'));
+});
+
+// When a user submits a Forgot Password request, this will display the proper
+// success message and hide the form to prevent re-sending.
+var showForgotPassSuccess = function() {
+	$('.pop-out__sign-in-forgot-password-nested').toggleClass('is-hidden');
+	$('.pop-out__sign-in-forgot-password')
+		.find('.alert-success')
+		.toggleClass('is-active');
+};
+
+// Toggle the sign-in error message displayed to a user
+var toggleSignInError = function() {
+	$('.pop-out__form-error').toggleClass('is-active');
+};
+
+var renderIframeComponents = function() {
+	$('.iframe-component').each(function(index, elm) {
+		var desktopEmbed = $(elm).find('.iframe-component__desktop');
+		var mobileEmbed = $(elm).find('.iframe-component__mobile')
+		var mobileEmbedLink = mobileEmbed.data('embed-link');
+		
+		if($(window).width() <= 480 && mobileEmbedLink) {
+			mobileEmbed.show();
+			desktopEmbed.hide();
+			if(mobileEmbed.html() == '') {
+				mobileEmbed.html(mobileEmbed.data('embed-link'));
+			}
+		} else {
+			desktopEmbed.show();
+			mobileEmbed.hide();
+			if(desktopEmbed.html() == '') {
+				desktopEmbed.html(desktopEmbed.data('embed-link'));
+			}
+		}
+	});
+};
 
 $(document).ready(function() {
 
@@ -102,6 +141,13 @@ $(document).ready(function() {
 		$(e).after($('.js-mobile-table-template .article-table').clone());
 	});
 
+	// When DOM loads, render the appropriate iFrame components
+	// Also add a listener for winder resize, render appropriate containers
+	renderIframeComponents();
+	$(window).on('resize', (event) => {
+		renderIframeComponents();
+	});
+
 	// Topic links
 	var topicContainers = $('.topic-subtopic');
 
@@ -115,6 +161,12 @@ $(document).ready(function() {
 			linkList.append('<a href="#' + id + '">' + text + '</a>');
 		});
 	});
+
+	// Display the Forgot Password block when "forgot your password" is clicked
+	$('.js-show-forgot-password').on('click', function toggleForgotPass() {
+		$('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+	});
+
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
