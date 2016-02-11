@@ -7,13 +7,14 @@
         <legend class="search-facet__legend">{{ group.label }}</legend>
         <div class="search-facet__checkbox-group"
              ng-repeat="f in group.facets">
+
             <input id="{{ group.id }}-{{ $index }}"
                    type="checkbox"
                    class="visuallyhidden"
                    ng-checked="f.selected"
                    ng-model="f.selected"
                    ng-change="allFacets.update()">
-            <label for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
+            <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
         </div>
         <button type="reset"
                 class="btn btn--reset search-facet__reset"
