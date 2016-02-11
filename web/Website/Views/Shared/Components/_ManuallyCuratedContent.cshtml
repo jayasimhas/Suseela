@@ -1,14 +1,12 @@
 @model ManuallyCuratedContentViewModel
-<div class="manually-curated-articles">
-    <div class="manually-curated-articles__main-well">
+<div class="manually-curated-content">
+    <div class="manually-curated-content__main-well">
         @Html.Sitecore().DynamicPlaceholder("left-curated-content")
     </div>
 
-    <div class="manually-curated-articles__right--force-top">
+    <div class="manually-curated-content__right-rail">
         @Html.Sitecore().DynamicPlaceholder("right-curated-content")
+        @{ Html.RenderPartial("Components/_ManuallyCuratedNewsletterSignUp"); }
+    	@{ Html.RenderPartial("Components/_ManuallyCuratedAdvert"); }
     </div>
-
-	@{ Html.RenderPartial("Components/_ManuallyCuratedNewsletterSignUp"); }
-	@{ Html.RenderPartial("Components/_ManuallyCuratedAdvert"); }
-
 </div>

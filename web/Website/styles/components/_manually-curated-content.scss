@@ -1,0 +1,32 @@
+.manually-curated-content {
+    // Makes this element the source for absolutely positioning children elms
+    position: relative;
+    width: 100%;
+    clear: both;
+
+    &__main-well {
+        float: left;
+        width: calc(66.666% - 1rem);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .article-preview--small {
+            border-top: 2px solid $informa-light-gray-d;
+            padding-top: 6px;
+        }
+    }
+    &__right-rail {
+        float: right;
+        width: calc(33.333% - 1rem);
+    }
+
+
+    @include breakpoint('small') {
+        &__main-well .article-preview,
+        &__main-well .article-preview--small,
+        &__right-rail {
+            width: 100%;
+        }
+    }
+}
