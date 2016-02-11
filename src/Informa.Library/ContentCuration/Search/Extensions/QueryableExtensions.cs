@@ -19,7 +19,7 @@ namespace Informa.Library.ContentCuration.Search.Extensions
 
 			var predicate = PredicateBuilder.True<T>();
 
-			predicate = filter.ExcludeManuallyCuratedItems.Aggregate(predicate, (current, f) => current.Or(i => i.ItemId != ID.Parse(f)));
+			predicate = filter.ExcludeManuallyCuratedItems.Aggregate(predicate, (current, f) => current.Or(i => i.ItemId == ID.Parse(f))).Not();
 
 			return source.Filter(predicate);
 		}
