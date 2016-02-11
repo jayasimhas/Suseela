@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -27,7 +28,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
                 return string.Empty;
             }
 
-            return article.Content_Type.Item_Name;
+            return article.Content_Type.Item_Name.Trim();
             
         }
     }

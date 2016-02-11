@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Sitecore.Data.Items;
@@ -24,7 +25,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
                             x._Path.ToLower()
                                 .StartsWith("/sitecore/content/scripintelligence/globals/taxonomy/regions"));
 
-                return subjectTaxonomyItems.Select(x => x.Item_Name).ToList();
+                return subjectTaxonomyItems.Select(x => x.Item_Name.Trim()).ToList();
             }
             return new List<string>();
         }

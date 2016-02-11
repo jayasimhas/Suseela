@@ -24,7 +24,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
                             x._Path.ToLower()
                                 .StartsWith("/sitecore/content/scripintelligence/globals/taxonomy/therapy areas"));
 
-                return subjectTaxonomyItems.Select(x => x.Item_Name).ToList();
+                return subjectTaxonomyItems.Select(x => x.Item_Name.Trim()).ToList();
             }
             return new List<string>();
         }
