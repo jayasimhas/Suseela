@@ -4,6 +4,10 @@
     width: 100%;
     clear: both;
 
+    .article-preview__inner-wrapper {
+        margin-bottom: 1rem;
+    }
+
     &__main-well {
         float: left;
         width: calc(66.666% - 1rem);
@@ -11,6 +15,11 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
+        .article-preview--featured p,
+        .article-preview--small p {
+            font-size: 1.125rem;
+            line-height: 1.875rem;
+        }
         .article-preview--small {
             border-top: 2px solid $informa-light-gray-d;
             padding-top: 6px;
@@ -19,6 +28,12 @@
     &__right-rail {
         float: right;
         width: calc(33.333% - 1rem);
+
+        .article-preview--featured p,
+        .article-preview--small p {
+            font-size: 0.9375rem;
+            line-height: 1.5rem;
+        }
     }
 
 
