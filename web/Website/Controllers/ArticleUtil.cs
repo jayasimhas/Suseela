@@ -23,83 +23,83 @@ using Sitecore.Mvc.Controllers;
 
 namespace Informa.Web.Controllers
 {
-    [System.Web.Mvc.Route]
-    public class ArticleController : ApiController
-    {
-        protected readonly IArticleSearch ArticleSearcher;
-        protected readonly ISitecoreContext SitecoreContext;
-        
-        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
-        {
-            ArticleSearcher = searcher;
-            SitecoreContext = context;
-        }
+	[System.Web.Mvc.Route]
+	public class ArticleController : ApiController
+	{
+		protected readonly IArticleSearch ArticleSearcher;
+		protected readonly ISitecoreContext SitecoreContext;
 
-        /// <summary>
-        /// redirects all article urls that have an article number but no trailing title
-        /// </summary>
-        /// <param name="articleNumber"></param>
-        /// <param name="prefix"></param>
-        public void Get(int articleNumber, string prefix)
-        {
-            string numFormat = $"{prefix}{articleNumber:D6}";
+		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+		{
+			ArticleSearcher = searcher;
+			SitecoreContext = context;
+		}
 
-            //find the new article page
-            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-            filter.PageSize = 1;
-            filter.Page = 1;
-            filter.ArticleNumber = numFormat;
+		/// <summary>
+		/// redirects all article urls that have an article number but no trailing title
+		/// </summary>
+		/// <param name="articleNumber"></param>
+		/// <param name="prefix"></param>
+		public void Get(int articleNumber, string prefix)
+		{
+			string numFormat = $"{prefix}{articleNumber:D6}";
 
-            var results = ArticleSearcher.Search(filter);
-            if (!results.Articles.Any())
-                return;
-            
-            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
-            HttpContext.Current.Response.RedirectPermanent(newPath);
-        }
+			//find the new article page
+			IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+			filter.PageSize = 1;
+			filter.Page = 1;
+			filter.ArticleNumber = numFormat;
 
-        /// <summary>
-        /// redirects all article urls starting with /article
-        /// </summary>
-        /// <param name="path"></param>
-        public void Get(string year, string month, string day, string title)
-        {
-            IArticle a = SitecoreContext.GetCurrentItem<IArticle>();
-            if (a == null)
-                return;
+			var results = ArticleSearcher.Search(filter);
+			if (!results.Articles.Any())
+				return;
 
-            string newPath = ArticleSearch.GetArticleCustomPath(a);
-            HttpContext.Current.Response.RedirectPermanent(newPath);
-        }
-        
-        /// <summary>
-        /// redirects all article urls that end with an escenic id
-        /// </summary>
-        /// <param name="title"></param>
-        /// <param name="escenicID"></param>
-        public void Get(string title, int escenicID)
-        {
-            string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
-            //if (!uRef.Contains("scripintelligence.com"))
-            //    return;
+			string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+			HttpContext.Current.Response.RedirectPermanent(newPath);
+		}
 
-            //find the new article page
-            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-            filter.PageSize = 1;
-            filter.Page = 1;
-            filter.EScenicID = escenicID.ToString();
+		/// <summary>
+		/// redirects all article urls starting with /article
+		/// </summary>
+		/// <param name="path"></param>
+		public void Get(string year, string month, string day, string title)
+		{
+			IArticle a = SitecoreContext.GetCurrentItem<IArticle>();
+			if (a == null)
+				return;
 
-            var results = ArticleSearcher.Search(filter);
-            if (!results.Articles.Any())
-                return;
+			string newPath = ArticleSearch.GetArticleCustomPath(a);
+			HttpContext.Current.Response.RedirectPermanent(newPath);
+		}
 
-            //redirect 
-            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
-            HttpContext.Current.Response.RedirectPermanent(newPath);
-        }
-    }
+		/// <summary>
+		/// redirects all article urls that end with an escenic id
+		/// </summary>
+		/// <param name="title"></param>
+		/// <param name="escenicID"></param>
+		public void Get(string title, int escenicID)
+		{
+			string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
+			//if (!uRef.Contains("scripintelligence.com"))
+			//    return;
 
-    public class ArticleUtil
+			//find the new article page
+			IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+			filter.PageSize = 1;
+			filter.Page = 1;
+			filter.EScenicID = escenicID.ToString();
+
+			var results = ArticleSearcher.Search(filter);
+			if (!results.Articles.Any())
+				return;
+
+			//redirect 
+			string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+			HttpContext.Current.Response.RedirectPermanent(newPath);
+		}
+	}
+
+	public class ArticleUtil
 	{
 
 		static string WebDb = "web";
@@ -124,7 +124,7 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
-			
+
 			IArticle articleItem = GetArticleByNumber(articleNumber);
 			var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
 			return article;
@@ -147,7 +147,7 @@ namespace Informa.Web.Controllers
 			if (article == null)
 				return null;
 			return _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
-			
+
 		}
 
 		/// <summary>
@@ -311,7 +311,7 @@ namespace Informa.Web.Controllers
 		{
 			var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
 			string year = date.Year.ToString();
-			var month = date.Month < 10 ? "0" + date.Month : date.Month.ToString();			
+			var month = date.Month < 10 ? "0" + date.Month : date.Month.ToString();
 			string day = date.Day < 10 ? "0" + date.Day : date.Day.ToString();
 			IHome_Page homeFolder;
 			IArticle_Folder articlesFolder;
@@ -388,26 +388,38 @@ namespace Informa.Web.Controllers
 			{
 				ArticleGuid = articleItem._Id,
 				Title = articleItem.Title,
-				WebPublicationDate = articleItem.Planned_Publish_Date,
-				PrintPublicationDate = articleItem.Actual_Publish_Date,
 				ArticleNumber = articleItem.Article_Number,
-				NotesToEditorial = articleItem.Editorial_Notes,
-				Embargoed = articleItem.Embargoed
-			};
+				//TODO - Get article Publication
+				Publication = articleItem.Publication
+		};
 
+			//articleStruct.Label = articleItem.Label.ToString();
+			articleStruct.WebPublicationDate = articleItem.Planned_Publish_Date;
+			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;			
+			articleStruct.Embargoed = articleItem.Embargoed;
+			//articleStruct.MediaType = articleItem.Media_Type._Id;
 			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
-			articleStruct.Authors =
-				authors.Select(
-					r => new WordPluginModel.StaffStruct()
-					{
-						ID = r._Id,
-						Name = r.Last_Name + ", " + r.First_Name,
-					}).ToList();
+			articleStruct.Authors = authors.Select(r => new WordPluginModel.StaffStruct {ID = r._Id,Name = r.Last_Name + ", " + r.First_Name,}).ToList();
+			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
-			//articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
-			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
 
+			//TODO - Workflow - 
+			// In order to read the available commands for a given workflow state, we need to be in a secured environment.
+			//try
+			//{
+			//	articleStruct.WorkflowState = _workflowController.GetWorkflowState(this.ID.ToGuid());
+			//}
+
+			articleStruct.FeaturedImageSource = articleItem.Featured_Image_Source;
+			articleStruct.FeaturedImageCaption = articleItem.Featured_Image_Caption;
+			if (articleItem.Featured_Image_16_9 != null)
+			{ articleStruct.FeaturedImage = articleItem.Featured_Image_16_9.MediaId; }
+
+			//articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
+
+			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
+			
 			if (articleItem.Word_Document != null)
 			{
 				var wordDocURL = articleItem.Word_Document.Url;
@@ -421,14 +433,7 @@ namespace Informa.Web.Controllers
 					articleStruct.WordDocLastUpdatedBy = wordDoc.Statistics.UpdatedBy;
 				}
 			}
-			//TODO - Get article Publication
-			articleStruct.Publication = articleItem.Publication;
-			//articleStruct.Publication  = new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");			
-			/*
-			/sitecore/content//*[@@id='{articleStruct.ArticleGuid}']/ancestor::*[@@templateid='{3B0461BF-9ABC-4AF1-B937-C8D225FC2313}']
-			Sitecore.Data.Items.Item[] items =  database.SelectItems("fast:/sitecore/content/Product Catalog/Industrial/Products//*[@@templateid='yourTemplateId']");
-			*/
-
+			
 			try
 			{
 				ISitecoreService service = new SitecoreContext(WebDb);
@@ -439,15 +444,8 @@ namespace Informa.Web.Controllers
 			{
 				articleStruct.IsPublished = false;
 			}
-
-			//TODO - Workflow - 
-			// In order to read the available commands for a given workflow state, we need to be in a secured environment.
-			//try
-			//{
-			//	articleStruct.WorkflowState = _workflowController.GetWorkflowState(this.ID.ToGuid());
-			//}
 			
 			return articleStruct;
-		}		
-    }
+		}
+	}
 }
