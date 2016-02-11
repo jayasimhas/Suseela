@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {6AD23D69-CC02-4708-A167-F737245D163B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/01/BioNotebook Incyte Agenus sign 410m immunooncology pact plus six more deals
+parent: {28F237FF-EEF1-41C5-A15C-B67E96203F9A}
+name: BioNotebook Incyte Agenus sign 410m immunooncology pact plus six more deals
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8d083f4b-348d-40d7-8323-cdce2de45cbd
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 80
+
+BioNotebook: Incyte, Agenus sign $410m immuno-oncology pact; plus six more deals
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 75
+
+BioNotebook Incyte Agenus sign 410m immunooncology pact plus six more deals
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7940
+
+<p>Incyte will pay Agenus $60m up front and $350m in development, regulatory and commercial milestone fees to license the Retrocyte Display antibody discovery platform for the development of novel immunotherapies. The upfront fee is comprised of a $25m technology and program access fee as well as a $35m equity investment at $4.51 per share. </p><p>Agenus closed up 28.7% at $5.29 per share on 9 January following the collaboration announcement, bringing the company's market cap to $331.6m. Agenus's stock price has suffered since GlaxoSmithKline put an end to development of MAGE-A3 in April after the cancer vaccine failed in a Phase III lung cancer clinical trial, but the Lexington, Massachusetts-based company has been on a slow climb from its one-year low of $2.27 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/GSKs-concedes-defeat-over-MAGE-A3-in-lung-cancer-351002" target="_new">2 April 2014</a>). </p><p>Agenus announced a partnership with Merck & Co to develop antibodies against immune checkpoints in May and reported positive Phase II brain cancer results for its Prophage cancer vaccine in July (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Second-GenomePfizer-MerckAgenus-EndoSomar-ParionGilead-Lightstone-Ventures-Kite-Pharma-five-IPO-updates-351608" target="_new">5 May</a> and <a href="http://www.scripintelligence.com/business/Brain-cancer-results-PD-1-potential-boost-Agenus-352614" target="_new">2 July 2014</a>).</p><p>The collaboration with Incyte will use the antibody discovery platform that Agenus acquired when it bought 4-Antibody 11 months ago (scripintelligence.com, <a href="http://www.scripintelligence.com/home/BioNotebook-Agenus-buys-4-Antibody-Concert-IPO-PTC-MacroGenics-raise-cash-Biodel-insulin-data-Isis-earns-SMA-milestones-350041" target="_new">14 February 2014</a>). Incyte and Agenus will develop checkpoint modulator antibodies against GITR, OX40, LAG-3 and TIM-3. </p><p>The partners will share all costs and profits for the GITR and OX40 antibody programs on a 50-50 basis, with Agenus eligible for up to $20m in milestone fees under each program. Agenus will earn tiered royalties under the TIM-3 and LAG-3 programs and milestone fees of up to $155m, and the company may opt in to fund 30% of development costs to earn higher royalty rates. The first clinical trials under the collaboration are expected to begin in 2016.</p><p>Incyte has been an active dealmaker in the immuno-oncology space during the past year. The Wilmington, Delaware-based company entered into research agreements with Genentech, Bristol-Myers Squibb and Merck in July, May and February to study Incyte drug candidates in combination with the big pharma companies' programmed cell death-1 (PD-1) immune checkpoint inhibitors (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Genentech-combo-deal-Incyte-bags-another-anti-PD-bigshot-353108" target="_new">30 July</a>, <a href="http://www.scripintelligence.com/business/Bristol-Myers-Incyte-to-study-PD-1IDO1-combination-352007" target="_new">28 May</a> and <a href="http://www.scripintelligence.com/home/Merck-partners-with-Pfizer-Amgen-and-Incyte-to-study-promising-cancer-drug-349840" target="_new">5 February 2014</a>).</p><p><b>Six more dealmakers announce acquisitions, partnerships</b></p><p>The first week of January was a busy one for data, financing and dealmaking news. In addition to the Incyte/Agenus collaboration, the table below outlines transactions announced by six other dealmakers on 8 and 9 January.</p><table><tbody><tr><td><p><b>Company</b></p>&nbsp;</td><td><p><b>Partner/Licensor/Target</b></p>&nbsp;</td><td><p><b>Deal terms and technology</b></p>&nbsp;</td></tr><tr><td><p>Egalet;</p><p>Wayne, Pennsylvania</p>&nbsp;</td><td><p>Acura Pharmaceuticals and Luitpold Pharmaceuticals</p>&nbsp;</td><td><p>Egalet completed a $15m debt financing with Hercules Technology Growth to fund 1) a license agreement with Acura for Oxaydo, an oral, immediate-release oxycodone pill formulated to deter abuse via snorting and approved in the US to manage acute and chronic moderate-to-severe pain; and 2) the acquisition of Luitpold's Sprix (ketorolac tromethamine) nasal spray, a non-steroidal anti-inflammatory drug (NSAID) indicated for short-term management of moderate to moderately severe pain. Egalet will pay Acura $5m up front for worldwide rights to Oxaydo, $2.5m for the drug's first commercial sale and up to $12.5m in sales milestone fees plus royalties. The company paid $7m for Sprix.</p>&nbsp;</td></tr><tr><td><p>Cipher Pharmaceuticals;</p><p>Mississauga, Ontario, Canada</p>&nbsp;</td><td><p>Melanovirus Oncology;</p><p>Hershey, Pennsylvania</p>&nbsp;</td><td><p>Cipher invested $500,000 up front and paid certain intellectual property expenses to acquire Melanovirus, whose assets include seven preclinical compounds to treat melanoma and other cancers, which were licensed globally from the Penn State Research Foundation in 2012.</p>&nbsp;</td></tr><tr><td><p>Biogen Idec;</p><p>Cambridge, Massachusetts</p>&nbsp;</td><td><p>Columbia University Medical Center;</p><p>New York City</p>&nbsp;</td><td><p>Biogen and Columbia formed a $30m strategic alliance to conduct genetics discovery research on the underlying causes of diseases, including amyotrophic lateral sclerosis (ALS) and idiopathic pulmonary fibrosis (IPF), and identify new treatment approaches. The allies will establish a sequencing and analysis facility and shared postdoctoral program at Columbia to support collaborative genetics studies.</p>&nbsp;</td></tr><tr><td><p>Isis Pharmaceuticals;</p><p>Carlsbad, California</p>&nbsp;</td><td><p>Alnylam Pharmaceuticals;</p><p>Cambridge, Massachusetts</p>&nbsp;</td><td><p>Isis and Alnylam extended their existing strategic partnership, originally formed in 2004, in the development and commercialization of RNA therapeutics. The new agreement includes a cross-license of intellectual property (IP) on four disease targets, giving each company exclusive rights for two programs. The deal also includes a non-exclusive technology IP cross-license so that the partners can access each other's technology advances through April 2019.</p>&nbsp;</td></tr><tr><td><p>Adimab;</p><p>Lebanon, New Hampshire</p>&nbsp;</td><td><p>Acceleron Pharma, Oncothyreon, Surface Oncology and Potenza Therapeutics</p>&nbsp;</td><td><p>Adimab entered into separate collaborations with Acceleron, Oncothyreon, Surface and Potenza. Adimab will discover and optimize monoclonal or bispecific antibodies against multiple targets for each of its new partners. The company's partners have an option to exclusively license compounds under the collaborations in exchange for license and milestones fees plus royalties. Adimab recently licensed a compound to Genentech under a previous deal (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Big-pharma-partners-flock-to-Adimab-for-antibodies-320581" target="_new">31 August 2011</a>).</p>&nbsp;</td></tr><tr><td><p>X-Chem;</p><p>Waltham, Massachusetts</p>&nbsp;</td><td><p>Janssen Biotech</p>&nbsp;</td><td><p>X-Chem and Johnson & Johnson's Janssen subsidiary entered into a multi-target collaboration facilitated by Johnson & Johnson Innovation in Boston for the discovery and development of small molecules to treat inflammatory diseases. Janssen has an exclusive option to license drug candidates discovered under the collaboration in exchange for undisclosed upfront fees, research funding, milestone payments and royalties. Bayer licensed a cardiovascular drug candidate from X-Chem in December under a 2012 discovery deal (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Ten-deals-and-a-breakup-GileadOno-VernalisNovartis-SorrentoNantWorks-and-more-355774" target="_new">20 December 2014</a>).</p>&nbsp;</td></tr></tbody></table><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 347
+
+<p>Incyte will pay Agenus $60m up front and $350m in development, regulatory and commercial milestone fees to license the Retrocyte Display antibody discovery platform for the development of novel immunotherapies. The upfront fee is comprised of a $25m technology and program access fee as well as a $35m equity investment at $4.51 per share. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 75
+
+BioNotebook Incyte Agenus sign 410m immunooncology pact plus six more deals
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150701T111121
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150701T111121
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150701T111121
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027479
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 80
+
+BioNotebook: Incyte, Agenus sign $410m immuno-oncology pact; plus six more deals
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355974
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042230Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8d083f4b-348d-40d7-8323-cdce2de45cbd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042230Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {F8DAFB10-A2F1-46D7-9C74-6B92EE6329F5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/12/Merck AZ Roche BMS work off grid for mixandmatch immunooncology
+parent: {A8E04CE2-4C46-4A28-8CD4-0F6C270157F5}
+name: Merck AZ Roche BMS work off grid for mixandmatch immunooncology
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: dff024f0-44a4-4590-8c11-52bfba1c4f9e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 69
+
+Merck, AZ, Roche, BMS work off grid for mix-and-match immuno-oncology
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Merck AZ Roche BMS work off grid for mixandmatch immunooncology
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10732
+
+<p>In the three months running up to the annual ASCO meeting in Chicago, Merck & Co, AstraZeneca, Roche and Bristol-Myers Squibb each announced deals with external companies designed to strengthen the clinical hands of their most advanced immune-oncology products (Table 1). Most are clinical trial collaborations putting a second-drug overlay on a checkpoint inhibition canvas. </p><p>Table 1 gives just a taste of the complexity of options within immune-oncology: it features selected deals from the past few months and it doesn't even touch on CAR T-cell and T cell receptor approaches. </p><p>It is shown as a two-dimensional matrix: clinically advanced checkpoint inhibitors along the top and other drugs that are or will be tested in combination down the side. But in reality there are many more dimensions: the tissue origins of the tumors, the clinical staging of cancers, and the molecular markers that characterize the underlying changes in tissue and, to some extent, provide information on treatment guidance and outcome prognosis &ndash; to mention but three.</p><p>Furthermore, most of Table 1 is empty. This does not necessarily reflect clear mechanistic reasoning arguing for ideal combinations of two agents. It reflects resource limitations.</p><p>Combos are clearly the way ahead in immune-oncology. Eric Rubin, head of Merck's early stage oncology development unit confirmed recently that Merck's anti-PD-1 Keytruda (pembrolizumab), approved as a monotherapy for treating advanced melanoma, was a component in over 40 active or planned combination cancer trials. At AstraZeneca, currently fourth in the immune-oncology race behind Bristol-Myers Squibb, Merck and Roche, CEO Pascal Soriot said that "combinations hold the key" for the patients not benefiting from the currently-available immunotherapies.</p><p>Merck is leading the current charge with six deals announced since 20 April that aim to put its approved PD-1 inhibitor Keytruda (pembrolizumab) into clinical trials in combination with a range of other companies earlier-stage experimental products. </p><p>Merck's recent flurry of deal announcements may have been designed to attract attention at ASCO 2015, which reflects a degree of collaborative catch-up by the company. Keytruda was approved by the FDA for advanced melanoma in September 2014, roughly three months ahead of the approval of Bristol-Myers Squibb's PD-1 inhibitory antibody Opdivo (nivolumab) for the same indication on 22 December. But as Table 1 shows, BMS already had three deals in place before the end of February 2015. </p><p>Merck's six deals fall into two distinct classes.</p><p>The deals involving Tetralogic's birinapant, Syndax's entinostat and Daiichi Sankyo/Plexxikon's PLX3397, link Merck's PD-1 antibody with other anti-immune-suppression mechanisms, the presumption being that easing off two brakes on the two immune systems is better than just easing off one.</p><p>Merck's deals with Tesaro, Dynavax and Amgen, on the other hand, aim to combine an unfettered immune response with aggressive anti-tumor action. </p><p>Tesaro's niraparib, which is already in two Phase III studies for ovarian cancer and BRCA-positive breast cancer, is a PARP inhibitor that shuts down DNA repair proteins thereby promoting cancer cell death. Dynavax's SD-101 a Phase I/II Toll-like receptor-9 agonist that activates multiple anti-tumor activities of the innate immune systems. Amgen's T-Vec (talimogene laherparepvec) is an oncolytic virus system that received a reserved recommendation from an FDA advisory group at the end of April 2015.</p><p>Merck and Amgen had already been working together on a combination of Keytruda and T-Vec in malignant melanoma since 2014: their latest collaboration is in head and neck cancer. Two days after the Merck/Amgen announcement, Amgen announced a collaboration involving the use of Roche's PDL-1 inhibitor atezolizumab with T-Vec in triple negative breast cancer and colorectal cancer.</p><p>The recent deals announced by Bristol-Myers Squibb seem to be looking beyond the current dog-fight to the future of its immune-oncology portfolio. </p><p>In February, BMS announced a discovery agreement with Rigel Pharmaceuticals centered around TGF-beta receptor kinase inhibitors. TGF-beta signaling is thought to provide a cloaking mechanism allowing tumor cells to evade immune surveillance. </p><p>Even further back, another BMS deal hopes to use Five Prime Therapeutics' human protein library and platform to discover appropriate targets in two immune checkpoint pathways.</p><p>AstraZeneca's lead immune-oncology product, anti PDL-1 antibody MEDI4736, entered its first Phase III study &ndash; in non-small cell lung cancer &ndash; in May 2014, putting the British company behind the PD-1/PDL-1 efforts of Merck, BMS and Roche.</p><p>AstraZeneca's strategy appears to garner resources for the development of combination therapies to offset its relatively tardy start in immune-oncology.</p><p>On 24 April, it announced two deals around MEDI4736 that together appear to provide a book-balancing asset swap. </p><p>It paid $250m upfront to Innate Pharma for development control of the French biotech's IPH2201, a checkpoint inhibiting antibody that targets NKG2A receptors. A $100m milestone also awaits Innate when Phase III trials begin. </p><p>At the same time, AstraZeneca's deal with Celgene puts MEDI4736 largely in Celgene's hands for the treatment for hematological cancers, with the US company paying AstraZeneca $450m upfront, funding the biggest part of the planned clinical programs and winning the lion's share of upstream revenues.</p><p>In effect, AstraZeneca has diverted its resources from MEDI4736's development in blood cancers to the development of double checkpoint inhibition in solid cancers.</p><p>That&rsquo;s not the only example of AstraZeneca's resource shuffling. In AstraZeneca's 29 May deal with Eli Lilly on safety and early efficacy of the combination of MEDI4736 with Lilly's Cyramza (ramucirumab) to treat advanced solid tumors, Lilly is trial sponsor. The division of trial funding and potential revenues were not disclosed.</p><p>Even in its deal with Incyte which will look at safety and efficacy of MEDI4736 with Incyte's indoleamine dioxygenase-1 inhibitor, INCB24360, in solid cancers including metastatic melanoma, non-small cell lung cancer, squamous cell carcinoma of the head and neck and pancreatic cancer, it is Incyte that will conduct the co-funded study.</p><p><table><h2>Table 1. A matrix of recent immunotherapy deals</h2><th><tr><td><p>Company</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>Bristol-Myers Squibb</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td colspan="2"><p>Merck & Co</p>&nbsp;</td><td colspan="2"><p>AstraZeneca</p>&nbsp;</td></tr><tr><td><p>&nbsp;</td><td><p>Molecule </p>&nbsp;</td><td><p>&nbsp;</td><td tinted="DarkTint"><p>nivolumab</p>&nbsp;</td><td><p>atezolizumab (MPDL3280A)</p>&nbsp;</td><td><p>MK-1966 </p>&nbsp;</td><td><p>pembrolizumab</p>&nbsp;</td><td><p>MEDI4736</p>&nbsp;</td><td><p>Tremelimumab</p>&nbsp;</td></tr><tr><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>Function</p>&nbsp;</td><td><p>anti-PD-1</p>&nbsp;</td><td><p>Anti-PDL-1</p>&nbsp;</td><td><p>Anti-IL-10</p>&nbsp;</td><td><p>Anti-PD-1</p>&nbsp;</td><td><p>Anti&ndash;PDL1</p>&nbsp;</td><td><p>Anti-CTLA-4</p>&nbsp;</td></tr></th><tbody><tr><td><p>Celldex Therapeutics</p>&nbsp;</td><td><p>varlilumab</p>&nbsp;</td><td><p>Lymphocyte activator</p>&nbsp;</td><td><p>14 May 2014</p><p>&nbsp;</td><td><p>17-Mar</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Five Prime Therapeutics</p>&nbsp;</td><td><p>FPA008</p>&nbsp;</td><td><p>CSF1R inhibitor</p>&nbsp;</td><td><p>17 Mar 2014</p><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Rigel Pharmaceuticals</p>&nbsp;</td><td><p>Various</p>&nbsp;</td><td><p>TGF beta receptor kinase inhibitors</p>&nbsp;</td><td><p>23 Feb 2015</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Dynavax</p>&nbsp;</td><td><p>SD-101</p>&nbsp;</td><td><p>TLR9 agonist</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>01-Jun</p>&nbsp;</td><td><p>01-Jun</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Amgen</p>&nbsp;</td><td><p>talimogene laherparepvec</p>&nbsp;</td><td><p>Oncolytic virus</p>&nbsp;</td><td><p>&nbsp;</td><td><p>02-Jun</p>&nbsp;</td><td><p>&nbsp;</td><td><p>29-May</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Syndax</p>&nbsp;</td><td><p>entinostat</p>&nbsp;</td><td><p>HDAC inhibitor</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>31-Mar</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Plexxikon</p>&nbsp;</td><td><p>PLX3397</p>&nbsp;</td><td><p>CSF-1R inhibitor</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>07-May</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Tesaro</p>&nbsp;</td><td><p>niraparib</p>&nbsp;</td><td><p>PARP inhibitor</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>30-May</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Tetralogic</p>&nbsp;</td><td><p>birinapant</p>&nbsp;</td><td><p>Apoptosis desuppression</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>20-Apr</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Eli Lilly</p>&nbsp;</td><td><p>ramucirumab</p>&nbsp;</td><td><p>Anti-VEGF</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>29-May</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Innate Pharma</p>&nbsp;</td><td><p>IPH2201</p>&nbsp;</td><td><p>Anti-NKG2A receptor</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>24-Apr</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Immunocore</p>&nbsp;</td><td><p>IMCgp100</p>&nbsp;</td><td><p>Adapted T cell receptor</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>16-Apr</p>&nbsp;</td><td><p>16-Apr</p>&nbsp;</td></tr><tr><td><p>Celgene</p>&nbsp;</td><td><p>Unspecified</p>&nbsp;</td><td><p>Unspecified</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>24-Apr</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Incyte</p>&nbsp;</td><td><p>INCB24360</p>&nbsp;</td><td tinted="DarkTint"><p>indoleamine dioxygenase-1 inhibitor</p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>14 May</p>&nbsp;</td><td><p>&nbsp;</td></tr></tbody></table></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 383
+
+<p>In the three months running up to the annual ASCO meeting in Chicago, Merck & Co, AstraZeneca, Roche and Bristol-Myers Squibb each announced deals with external companies designed to strengthen the clinical hands of their most advanced immune-oncology products (Table 1). Most are clinical trial collaborations putting a second-drug overlay on a checkpoint inhibition canvas. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Merck AZ Roche BMS work off grid for mixandmatch immunooncology
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150612T053056
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150612T053056
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150612T053056
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028970
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 69
+
+Merck, AZ, Roche, BMS work off grid for mix-and-match immuno-oncology
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358826
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042402Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dff024f0-44a4-4590-8c11-52bfba1c4f9e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042402Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

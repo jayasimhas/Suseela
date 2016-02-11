@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {D859DA05-2D52-4BFA-AA7E-5CCF31516263}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/28/Federal Circuit dances with biosimilar laws complexity in Zarxio fight
+parent: {13587B21-C2AC-45A3-9B37-20A4DC43DB48}
+name: Federal Circuit dances with biosimilar laws complexity in Zarxio fight
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ed1edd68-64a4-4ed0-ab88-f8538bd4a2dd
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{5A64215F-6AF5-4F56-A509-95AB911ED052}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+Federal Circuit dances with biosimilar law's complexity in Zarxio fight
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 70
+
+Federal Circuit dances with biosimilar laws complexity in Zarxio fight
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6977
+
+<p>While the case before the US Court of Appeals for the Federal Circuit on 3 June was a dispute between Amgen and Novartis' Sandoz unit over how soon the latter firm should be able to market its biosimilar medicine Zarxio (filgrastim-sndz), it was the knotty intricacies of the <i>Biologics Price Competition and Innovation Act</i> (BPCIA) &ndash; the law that created the regulatory pathway for the FDA to approve biosimilars &ndash; that was on trial.</p><p>Indeed, Circuit Judge Alan Lourie declared that the "multifaceted" law should be entitled to a Pulitzer Prize for its "complexity or unclarity."</p><p>At issue is whether Sandoz failed to comply with BPCIA's disclosure and negotiation procedures &ndash; often called the &ldquo;patent dance.&rdquo; </p><p>Amgen filed a lawsuit in the US District Court for the Northern District of California last October claiming Sandoz had violated those requirements by "unlawfully" withholding its 351(k) biosimilars application and manufacturing information from the California biotech giant.</p><p>Amgen is charging BPCIA requires biosimilar applicants under section 262(l) of the law &ndash; the patent measures &ndash; to provide the innovators whose products are referenced a 180-day notice before first commercial marketing of the biologic copycats.</p><p>Zarxio is referenced on Amgen's Neupogen (filgrastim), a human granulocyte colony-stimulating factor.</p><p>Sandoz, which gained the FDA's <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">approval of Zarxio on 6 March</a> &ndash; making history as the first biosimilar OK&rsquo;d in the US &ndash; insisted it gave the proper notice when it sent a letter to Amgen on 25 July 2014 acknowledging the FDA had accepted the Swiss firm&rsquo;s 351(k) application. </p><p>But Amgen's lawyer, Nicholas Groombridge, a partner at Paul Weiss in New York, argued Sandoz skipped over a series of "carefully crafted" steps in BPCIA&rsquo;s section 262(l) &ndash; specifically (l)2 through (l)6 &ndash; which states 351(k) applicants "shall" do if they want to enjoy the benefits of the biosimilars pathway. </p><p>"Shall means shall," Mr Groombridge contended.</p><p>But Sandoz's lawyer, Deanne Maynard, a partner at Morrison & Foerster in Washington, had a different interpretation of "shall" in the provisions in question in BPCIA.</p><p>The way the (l) provisions work, she said, is that if a biosimilar maker wants to engage in the patent exchange process, then the 351(k) applicant "shall provide certain information. It may provide additional information. But it doesn't have to."</p><p>If innovators object to the 351(k) application, the BPCIA provides a remedy under the (l)9 provision, which lets them immediately bring a patent infringement suit, Ms Maynard said.</p><p>But Mr Groombridge said Sandoz was sidestepping the process. </p><p>District Judge Richard Seeborg in late March, however, <a href="http://www.scripintelligence.com/policyregulation/Will-others-avoid-patent-dance-after-Sandoz-court-win-357429" target="_new">ruled that Sandoz did nothing wrong</a> by not engaging in the disclosure and dispute resolution process, declaring the firm's actions were within its rights.</p><p>The judge refused to grant an injunction to stop Sandoz from launching Zarxio. </p><p>But Amgen appealed to the Federal Circuit, which <a href="http://www.scripintelligence.com/policyregulation/US-court-delays-NovartisSandoz-biosimilar-Zarxios-marketing-358232" target="_new">granted the motion</a> for the injunction in May, prohibiting Sandoz from marketing its biosimilar until the court had ruled on the case.</p><p><b>Broader than Neupogen</b></p><p>At the 3 June hearing, Mr Groombridge said Amgen's reason for pursuing the lawsuit was broader than simply trying to protect Neupogen.</p><p>The outcome of the case, he said, will be "integral in how this regime is going to work going forward, and ultimately as a patent holder, what this is intended to get us . . . is information and time in which to analyze that information, exchange contentions and come to court in an orderly fashion and not have to have a fire drill."</p><p>The argument being made by Sandoz, he asserted is "'Oh what's the harm. Let's just go jump to a lawsuit.&rsquo;"</p><p>"That guts the statutory regime," Mr Groombridge charged. "The whole purpose of the regime is to not have us running into court."</p><p>But Judge Lourie quickly quipped "If the purpose of the statute was to avoid litigation, it's already failed, and doesn't show promise of success."</p><p>He questioned why Congress would make the biosimilars 262(l) patent provisions so detailed for the exchange of information if it was all for naught and "you could just skip it."</p><p>But Ms Maynard insisted that Sandoz had operated inside the confines of BPCIA &ndash; following the detailed "if-then" scheme.</p><p>"It's Amgen that's trying to look outside the BPCIA and ask the court to impose state remedies found nowhere in the BPCIA," she charged. </p><p>Circuit Judge Raymond Chen said that in reading the 262 (l) patent provisions of BPCIA, "I don't see either through the language or structure . . . where there's a hint that it's a choose your own adventure situation."</p><p>He said the "shall" language "feels like mandatory."</p><p>Judge Chen also questioned whether BPCIA really intended for biosimilar makers to make 180-day notifications based on the acceptance of a 351(k) application.</p><p>At the time Sandoz sent its July 2014 letter including its intent to market Zarxio in the first or second quarter of 2015, "it was entirely speculative" on whether the company would actually gain approval of the biosimilar, he said.</p><p>"They had no idea, nobody has any idea when or if that application is going to get approved," Judge Chen insisted. "So it sounds a little nonsensical to say that is an appropriate form of notice of commercial marketing when you don't have any clue of when your application will ever get approved."</p><p>Ms Maynard attempted to explain the FDA has a certain timeline for approving biosimilars &ndash; although she struggled to provide the details to the court.</p><p>The FDA has in fact committed for fiscal years 2013-2017 to review and act on 70% of its original biosimilar application submissions within 10 months of receipt of those filed in 2014.</p><p>But Judge Chen remained skeptical &ndash; declaring that "We are right at the beginning of the FDA reviewing and approving or denying these types of applications."</p><p>"I don't think anybody in July of last year had a good sense of when the FDA was actually going to act and then approve your application," he told the Sandoz lawyer.</p><p>Judge Lourie pointed out Amgen's situation likely was "atypical."</p><p>"We have to interpret the statute not just for these parties but in terms of what it really means," he said.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 458
+
+<p>While the case before the US Court of Appeals for the Federal Circuit on 3 June was a dispute between Amgen and Novartis' Sandoz unit over how soon the latter firm should be able to market its biosimilar medicine Zarxio (filgrastim-sndz), it was the knotty intricacies of the <i>Biologics Price Competition and Innovation Act</i> (BPCIA) &ndash; the law that created the regulatory pathway for the FDA to approve biosimilars &ndash; that was on trial.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 70
+
+Federal Circuit dances with biosimilar laws complexity in Zarxio fight
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150528T170837
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150528T170837
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150528T170837
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028903
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+Federal Circuit dances with biosimilar law's complexity in Zarxio fight
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358641
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ed1edd68-64a4-4ed0-ab88-f8538bd4a2dd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

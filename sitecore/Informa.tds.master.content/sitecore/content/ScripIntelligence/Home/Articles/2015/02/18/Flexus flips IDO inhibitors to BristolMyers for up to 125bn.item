@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {95BA5738-45C2-4015-A910-BE3BAF870D4F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/18/Flexus flips IDO inhibitors to BristolMyers for up to 125bn
+parent: {7236B4FE-DE6A-42E5-BF9D-A1048727BD42}
+name: Flexus flips IDO inhibitors to BristolMyers for up to 125bn
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1743fc3b-51c8-4549-96cc-6f0759f729eb
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Flexus flips IDO inhibitors to Bristol-Myers for up to $1.25bn
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Flexus flips IDO inhibitors to BristolMyers for up to 125bn
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4776
+
+<p>Bristol-Myers Squibb will pay $800m up front and up to $450m in milestone fees to buy Flexus Biosciences, but all of the immunotherapy developer's assets except for its indoleamine-2,3-dioxygenase-1 (IDO-1) inhibitor program will be spun out into a new company.</p><p>IDO inhibitors have become hot properties for evaluation in combination regimens with other immunotherapy agents, especially with programmed cell death-1 (PD-1) inhibitors like Opdivo (nivolumab) from Bristol-Myers. But Flexus's IDO inhibitors are not the most advanced programs at the less than two-year-old company, which raised $38m in venture capital between 2013 and 2014.</p><p>If all $1.25bn in upfront and milestone fees under the Bristol-Myers transaction are realized, Flexus investors will get an average return of almost 33 times their original investment based on BMS's interest in the IDO inhibitor program alone. </p><p>Kleiner Perkins Caufield and Byers, the company's founding investor in October 2013, was joined by The Column Group and Celgene when Flexus raised a Series B venture capital round in December 2014. They likely will support the new company that spins out when the BMS deal closes.</p><p>"We have a very committed set of investors that feel strongly about us starting another company," Flexus CEO Terry Rosen told <i>Scrip</i>.</p><p>The company uses its Agents for Reversal of Tumor Immunosuppression (ARTIS) platform to develop immunotherapies, especially small molecules that target regulatory T cells (Tregs), and it aims to sell or license some of its programs to partners while keeping other assets in its own pipeline.</p><p>"When you think of the potential of an IDO inhibitor, we realized with this program that it needs to be explored across a lot of cancer settings in combination with other immunotherapies," Dr Rosen said. "We needed the expertise of one of the best immuno-oncology companies in the business with the economic or human power and the agents needed to take this forward."</p><p>It's thought that IDO inhibitors may be highly complementary to inhibitors of PD-1 and other immune checkpoints, so Flexus found that it had multiple bidders for its IDO program.</p><p>The company will retain all 31 of its employees after the BMS transaction closes, and they should notice little difference between Flexus and the new company other than the lack of an IDO inhibitor program. </p><p>"We will start the company with a compound initiating Phase I almost when new company starts and we have the potential to generate one [investigational new drug (IND) application] a year," Dr Rosen said.</p><p>The BMS deal is expected to close before the end of the first quarter of 2015, and around that time is when a Phase I clinical trial for FLX925, an inhibitor of CDK4/6 and FLT3, will recruit its first patients.</p><p>Before it was sold to Bristol-Myers, the IDO program was slated to hit the clinic in 2016 following an IND submission to the US FDA this year and it appears that BMS will stick to a similar schedule for lead IDO inhibitor F001287. The $450m in fees that will be paid to Flexus's investors based on certain IDO program milestones are expected to be distributed during the next three years.</p><p><b>IDO competition</b></p><p>Bristol-Myers and several other companies with approved or investigational PD-1 and PD-1 ligand-1 (PD-L1) inhibitors have agreements with Incyte to test their checkpoint inhibitors in combination with that company's IDO inhibitor epacadostat (INCB24360) (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Bristol-Myers-Incyte-to-study-PD-1IDO1-combination-352007" target="_new">28 May 2014</a>).</p><p>Also, NewLink Genetics signed a collaboration worth more than $1.15bn in upfront and potential milestone payments under which the Roche subsidiary Genentech will develop NLG919 and other IDO inhibitors, including programs that combine the drugs with multiple Genentech immunotherapies (scripintelligence.com, <a href="http://www.scripintelligence.com/home/NewLink-Genentech-deal-could-be-worth-more-than-1bn-354573" target="_new">21 October 2014</a>).</p><p>On its own, NewLink has an IDO inhibitor called indoximod in Phase I and II development for various cancers in a race with Incyte's epacadostat for first place in the field. Genentech has RG6078 (NLG919) under evaluation in a Phase I solid tumor study.</p><p>Pfizer agreed to pay &euro;24m to iTeos Therapeutics in December to access that company's preclinical IDO inhibitor and other programs (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Versant-raises-305m-venture-fund-plus-deal-notes-from-PfizeriTeos-JunoOpus-CHIBayBio-355559" target="_new">11 December 2014</a>).</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 268
+
+<p>Bristol-Myers Squibb will pay $800m up front and up to $450m in milestone fees to buy Flexus Biosciences, but all of the immunotherapy developer's assets except for its indoleamine-2,3-dioxygenase-1 (IDO-1) inhibitor program will be spun out into a new company.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Flexus flips IDO inhibitors to BristolMyers for up to 125bn
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150218T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150218T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150218T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027908
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Flexus flips IDO inhibitors to Bristol-Myers for up to $1.25bn
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+Feature
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356811
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1743fc3b-51c8-4549-96cc-6f0759f729eb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

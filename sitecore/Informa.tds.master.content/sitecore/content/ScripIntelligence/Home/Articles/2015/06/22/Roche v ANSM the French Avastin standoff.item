@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {33E683F5-EA00-46D5-8709-A4C549FA08F9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/22/Roche v ANSM the French Avastin standoff
+parent: {00F73790-0694-4BB8-8A63-FA232FC172C8}
+name: Roche v ANSM the French Avastin standoff
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fc1549dc-1d61-4514-9198-913dcbadd81e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Roche v ANSM: the French Avastin stand-off
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+Roche v ANSM the French Avastin standoff
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5716
+
+<p>It's a war of words: Roche and the French regulator ANSM have locked horns over plans to make Avastin available off-label for wet AMD, and it's not easy to say who will emerge the winner.</p><p>Taking advantage of a 2014 law that allows drugs to be made available off-label even when satisfactory (but more expensive) therapies are already on the market, ANSM has produced a "temporary use recommendation" (RTU) under which hospital pharmacists will be able to titrate Avastin (bevacizumab) into syringes for injection into the eye. </p><p>The RTU requires Roche to play its part by monitoring and reporting on the use of Avastin in patients with wet AMD, but the company is refusing to have anything to do with procedures involving a therapeutic indication that it does not recommend. </p><p>The facts behind the stand-off are well known: Novartis's Lucentis (ranibizumab) is approved in France to treat wet AMD (as is Bayer's Eylea/aflibercept), but treatment with the Novartis drug is much more expensive than with Avastin, and the government wants to reduce the costs of treating the condition. </p><p>Roche has never sought approval in any market for Avastin in AMD, and both it and Novartis have come under fire for taking steps to keep the Roche drug out of the ophthalmic market in order to shore up sales of Lucentis. Roche owns the rights to both products, while Novartis holds the product licence for Lucentis and Roche collects royalties on sales of the more expensive drug.</p><p>In 2014 the two firms were fined by the Italian competition authority for allegedly colluding to protect Lucentis' market position. Italy has also passed legislation allowing off-label use of unapproved drugs in cases where authorized alternatives are available, and some AMD patients are understood to have been given Avastin.</p><p>France's decision to use the formal RTU process opens the way up to more widespread use of Avastin in AMD, and Roche is none too pleased. When the RTU was first announced in March, the company said the use of unlicensed medicines where approved therapies exist "undermines the regulatory system" and would impair innovation. A similar position has been taken by the European industry federation EFPIA.</p><p>Following a 17 June meeting with ANSM, the Swiss firm wrote to the agency reiterating its opposition to any such RTU on both legal and scientific grounds, and refusing to take any responsibility for monitoring the product's use in AMD. A spokesperson told Scrip that "Roche will continue to fulfil its obligations" as the owner of the Avastin marketing authorization "but in our view we cannot be compelled to support the RTU".</p><p>The company told ANSM it would not oppose an RTU if it was done under the sole responsibility of the agency and with no company involvement. A third party &ndash; a hospital pharmacy, for example, or one of the French promoters of trials of Avastin in AMD &ndash; could take charge of the practical requirements.</p><p>But ANSM is having none of this, and has published the RTU in its full glory, including a 40-page patient monitoring protocol that among other things gives detailed instructions for preparing and administering Avastin injections. The document lists Roche's responsibilities under the RTU, which include gathering data on the efficacy and safety of Avastin's use in AMD, and sending ANSM annual reports analysing these data throughout the three-year validity period of the RTU. The agency says it wants Roche to submit protocols for collecting and analysing the data within two months.</p><p>Despite Roche's protestations, ANSM insists the company is obliged to respect the terms of the RTU under the Code of Public Health, as amended by the 2014 legislation. "It is important for us to remind Roche, and other marketing authorization holders, of the obligations under such a mechanism," a spokesperson said. </p><p>So what happens next? It's difficult to say, and neither party was prepared to comment on what avenues might be open to them to break the stalemate. </p><p>Roche has put forward a range of arguments against the use of Avastin in AMD, saying it is not justified by any therapeutic need or public health interest (the implication being that it is purely a cost-containment exercise), and that it requires Avastin to be reformulated into syringes with the risk of bacterial contamination. The RTU also places new legal and financial obligations on the company, and will affect its pharmacovigilance commitments. </p><p>On the other hand, the RTU has been prepared under the provisions of the 2014 legislation, which allows an RTU to be issued provided there is no existing drug for that condition with the same active substance, and requires the company concerned to fulfil its obligations. </p><p>ANSM may also take comfort from other moves to promote Avastin for AMD. The World Health Organization, for example, recently decided to keep Avastin on its Essential Medicines List for wet AMD while rejecting an application for Lucentis, and in February UK clinical commissioning groups called on the government and NHS England to support doctors who want to prescribe Avastin rather than Lucentis. </p><p>Good arguments on both sides, then, and no obvious compromise in sight. Will one side stand down, or could legal action be in the offing? Certainly, there have been suggestions that the new rule may be out of line with EU law. EFPIA has already filed a complaint with the European Commission against the Italian legislation, and is considering whether to take similar action against France. Meanwhile, ANSM says it aims to have the RTU in place as scheduled in just over two months' time, on 1 September. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 194
+
+<p>It's a war of words: Roche and the French regulator ANSM have locked horns over plans to make Avastin available off-label for wet AMD, and it's not easy to say who will emerge the winner.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+Roche v ANSM the French Avastin standoff
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150622T120631
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150622T120631
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150622T120631
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029094
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Roche v ANSM: the French Avastin stand-off
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+Feature
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359057
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042413Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fc1549dc-1d61-4514-9198-913dcbadd81e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042413Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

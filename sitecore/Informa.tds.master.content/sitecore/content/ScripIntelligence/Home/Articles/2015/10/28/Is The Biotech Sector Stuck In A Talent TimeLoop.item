@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {39B3CE59-A089-4E9F-A784-FCFC73C0F8A5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/28/Is The Biotech Sector Stuck In A Talent TimeLoop
+parent: {B358485D-A13A-4DC9-B21A-C4965B42C6F0}
+name: Is The Biotech Sector Stuck In A Talent TimeLoop
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: eceab3e0-d48b-44de-be88-15baf49f5197
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Is The Biotech Sector Stuck In A Talent Time-Loop?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+Is The Biotech Sector Stuck In A Talent TimeLoop
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4475
+
+<p>Recently <i>Scrip</i> took an in depth look at the lack of female board members and senior executives at pharmaceutical and biotech companies &ndash; and the data showed a shocking gender gap at the top of these businesses. Diversity issues for boards of life science companies appear not to be limited to gender inequality, either. </p><p>Non-executive board opportunities for younger members of the life science sector are few and far between, with a survey from consultancy group RSA finding that boards of directors for the majority of public and private life science companies tend to include members from the same small pool of people. </p><p>RSA found, in its survey of 153 non-executive directors who represented 352 private, public, and charitable boards, that there were no women (contributing to the survey) under the age of 50 serving as non-executive directors. And only one in six male non-executive directors who participated was under the age of 50. In fact of the men who participate in the survey, 107 were over 50, 21 were between 40 and 49 years old and only one was under 40. </p><p>RSA also found a theme of companies relying on "fireside chats" and personal networks to select their board candidates. 72% of those surveyed also said they found their first non-executive director position through personal networking. </p><p>However, RSA did note that in recent years public companies needed to carry out a more extensive and thorough search for their board candidates in order to comply with regulations.</p><p>Chris Molloy CEO of RSA told <i>Scrip</i> that biotechs especially need to examine their employment pools. He noted that currently senior management teams and boards are filled with "white, middle-aged men, with lengthy big pharma backgrounds."</p><p>He said the typical CEO profile of today needs updating. "We need to develop new sets of leaders," Molloy said, noting that companies should be "actively seeking youth and diversity" in order to bulk up the next generation of business leaders.</p><p>"There are great examples of very young, innovative, and successful CEOs," Molloy noted, adding that more needed to be seen in venture-backed biotech. One such recent example would be Vivek Ramaswamy, a 29-year-old former hedge fund partner and the CEO of Alzheimer's disease (AD) drug developer Axovant Sciences &ndash; a company which successfully raised a record breaking $360m via an initial public offering earlier this year.</p><p>Molloy highlighted that for change to happen, though, companies need to actively assess their succession plans and make an effort to look outside the stale circle of life science leaders. "Change like this takes making an effort or things will just stay the same," he said. </p><p>Molloy doesn't see quotas as a solution to the problem, though, and prefers "clear objectives." He said: "Quotas smell of political correctness." However he noted that more could be done to make businesses aware of the issue of lack of diversity in the biotech sector. He noted that in the UK the BioIndustry Association was active on the issue. The BIA is currently promoting its 2025 target of 130 more clinical stage drug companies and management teams, bringing 30,000-60,000 additional 'high skill' jobs into the country. </p><p>As well as the current lack of diversity in pharma and biotech, Molloy noted that changes in the business models for these types of companies has affected the evolution of new talent. He said RSA's research found that the kind of single-asset, high-risk biotech firm that is on the increase makes for a "brutal training ground."</p><p>RSA noted that the industry needed to realize that experience outside the industry is useful; youth protects the biotech community and its long-term assets; and "looking after your culture is as important as your money in attracting new talent."</p><p><b>Related stories: </b></p><p><a href="http://www.scripintelligence.com/home/Women-In-Pharma-Bayer-Executives-Challenge-Industry-Expectations-360868" target="_new">Women In Pharma: Bayer Executives Challenge Industry Expectations</a></p><p><a href="http://www.scripintelligence.com/home/Phemale-pharma-more-women-more-revenue-340930" target="_new">Phemale Pharma: More Women, More Revenue?</a></p><p><a href="http://www.scripintelligence.com/home/Half-a-century-of-women-prime-ministers-still-no-Pharma-CEO-341922" target="_new">Half A Century Of Women Prime Ministers; Still No Pharma CEO</a></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 340
+
+<p>Recently <i>Scrip</i> took an in depth look at the lack of female board members and senior executives at pharmaceutical and biotech companies &ndash; and the data showed a shocking gender gap at the top of these businesses. Diversity issues for boards of life science companies appear not to be limited to gender inequality, either. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Is The Biotech Sector Stuck In A Talent TimeLoop
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151028T170005
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151028T170005
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151028T170005
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030178
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Is The Biotech Sector Stuck In A Talent Time-Loop?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361180
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eceab3e0-d48b-44de-be88-15baf49f5197
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

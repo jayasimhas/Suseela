@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {000736CE-7927-496B-87AC-6B2899B4D503}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/01/Outrage at Cancer Drugs Fund casualty list
+parent: {430A16F1-19D6-4034-BEB3-EFB94183F1C6}
+name: Outrage at Cancer Drugs Fund casualty list
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 38d78ed2-ecc4-4806-a40a-a821f5e1468c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{2E069F42-D0F0-4A2F-80B3-B8EEFC9D8071}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+Outrage at Cancer Drugs Fund casualty list 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+Outrage at Cancer Drugs Fund casualty list
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5153
+
+<p>It looks like Sanofi, Novartis and Eisai are the first companies to have their drugs dropped from England's Cancer Drugs Fund (CDF) under a controversial new review process which industry has described has "devastating" and "appalling".</p><p>Breast cancer drugs Halaven (erubilin) and Afinitor (everolimus), along with prostate cancer drug Jevtana (cabazitaxel) and bowel cancer drug Zaltrap (aflibercept) appear to be the first casualties from the review process. NHS England has yet to make an official announcement on the withdrawals, but Sanofi and Eisai have confirmed that their drugs are affected, and that funding will be withdrawn. Novartis said that it could not confirm reports about Afinitor, but did not deny them either. The company also commented on its concerns regarding the drug's review process.</p><p>Patients currently taking the drugs will not be affected, but as of 12 March 2015 physicians will no longer be able to prescribe them to new patients.</p><p>More drugs are expected to have their funding withdrawn, as the review affects 42 of the 80 drugs currently available on the CDF. NHS England told <i>Scrip </i>that an announcement containing a full list of affected products could be made as early as Monday 12 January.</p><p>In November, NHS England announced that it would be overhauling the CDF to curb overspending (<a href="http://www.scripintelligence.com/home/Pharma-rages-at-crude-Cancer-Drugs-Fund-overhaul-355077" target="_new">scripintelligence.com</a>, 14 November 2014). The fund overspent by &pound;40m in 2013, and it is expected that it overspent by a similar amount in 2014. Drugs available on the CDF, and new drugs applying for CDF access, will now be put through an additional cost-effectiveness evaluation led by clinicians, whereas previously any clinically effective cancer drug was given funding.</p><p>The CDF's cost-effectiveness assessment is in addition to NICE's assessment. Drugs available on the CDF have all already failed to meet NICE's standards for cost-effectiveness; the fund was a vote-winning political vehicle set up by UK Prime Minister David Cameron in 2010, and sidesteps NICE recommendations in order to make more cancer products available to English patients.</p><h2>Devastating decisions</h2><p>All three of the companies affected so far have expressed strong views condemning the CDF's decisions. Halaven's maker Eisai said it was "appalled" by what it sees as an arbitrary decision to delist its drug. Gary Hendler, president & CEO of Eisai EMEA and President of Eisai Oncology Global Business Unit, commented: "To say that we are disappointed by this decision would be a gross understatement; we are outraged. We will engage in further dialogue with the CDF and NHS England and firmly stand by the clinical efficacy of eribulin."</p><p>Eisai also said that the decision threatens the company's continued interest in the UK as a place of business. In a statement, the company wrote: "The CDF decision is particularly regrettable given the need for direct foreign investment into the UK and may ultimately mean Eisai is forced to scale back its operations in the country."</p><p>Sanofi, meanwhile, manufactures both Jevtana and Zaltrap and described the withdrawals as a "devastating blow" to patients. The company is particularly upset by Jevtana's delisting, as the drug is the only one to treat prostate cancer on the CDF's list. "We understand a number of drugs of varying efficacy will also be removed from the CDF. However Jevtana fulfils an important unmet need in certain patients," the company said in a statement. Removing Jevtana leaves patients with no other treatment options, said Sanofi.</p><p>Afinitor manufacturer Novartis spoke out with concerns about the review process itself, saying it was "extremely concerned". The company added: "We fundamentally disagree with the new process. We are afraid that patients are in danger of being denied vital medicines as a result of a crude process that lacks transparency and is not fit for purpose."</p><h2>Changing the competitive landscape</h2><p>Without NICE recommendation, these drugs are now completely removed from the English and Welsh markets. Most of them also lack positive reimbursement decisions in Scotland, which removes them from the UK entirely.</p><p>While this is obviously bad news for the companies directly affected, there could be a potential knock on effect which benefits the more fortunate cancer drug manufacturers. Datamonitor Healthcare analyst Dr Aine Slowey said: "I think that this decision will change the competitive landscape in the UK. It is likely that the withdrawal of these drugs will lead to boost in uptake of competitor drugs that are still available on the Cancer Drugs Fund, and increase the sales revenues of these drugs in the UK."</p><p>Several of the drugs under threat have become the standard of care in England, which could potentially open the market for less frequently used products. Dr Slowey added, "It will restrict the number of therapies available to patients in the relevant disease areas, and could alter the treatment of these diseases in the UK."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 243
+
+<p>It looks like Sanofi, Novartis and Eisai are the first companies to have their drugs dropped from England's Cancer Drugs Fund (CDF) under a controversial new review process which industry has described has "devastating" and "appalling".</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+Outrage at Cancer Drugs Fund casualty list
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150601T080000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150601T080000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150601T080000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027464
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+Outrage at Cancer Drugs Fund casualty list 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355943
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+38d78ed2-ecc4-4806-a40a-a821f5e1468c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

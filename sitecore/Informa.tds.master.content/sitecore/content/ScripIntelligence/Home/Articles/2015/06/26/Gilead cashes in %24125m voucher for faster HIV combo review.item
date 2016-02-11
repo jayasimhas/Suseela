@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {CD9C8C62-289A-4BDB-9015-90E8DCBCDC2C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/26/Gilead cashes in $125m voucher for faster HIV combo review
+parent: {32E6A98D-86BC-40BD-A1D6-A27CF9BCD395}
+name: Gilead cashes in $125m voucher for faster HIV combo review
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fc6b94eb-b8d7-4f8b-8aa5-4e5d74036bfb
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Gilead cashes in $125m voucher for faster HIV combo review
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Gilead cashes in $125m voucher for faster HIV combo review
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3066
+
+<p>Gilead Sciences has decided to cash in a voucher it paid big bucks for to gain a quicker US review of its once-daily single tablet combination regimen, which consists of the firm's emtricitabine 200mg and tenofovir alafenamide (TAF) 25mg with Janssen's rilpivirine 25mg.</p><p>Gilead is seeking approval to market the R/F/TAF combination as a treatment for HIV-1 infection in adults and pediatric patients 12 years or older. </p><p>With the help of a voucher it <a href="http://www.scripintelligence.com/home/Gilead-pays-unprecedented-125m-for-Knight-priority-voucher-355151" target="_new">bought</a> from Knight Therapeutics for $125m, Gilead is anticipating a six-month review of the R/F/TAF product's application.</p><p>The priority review voucher (PRV) program was initially created under a provision included in the <i>Food and Drug Administration Amendments Act (FDAAA) of 2007</i> to encourage development of new drugs and biologics to prevent and treat neglected tropical diseases, which typically affect larger populations in poor nations.</p><p>Congress established a similar program under the <i>Food and Drug Administration Safety and Innovation Act (FDASIA) of 2012</i> to incentivize the development of products to treat rare pediatric diseases.</p><p>The vouchers are transferable, with the FDAAA and FDASIA permitting the holders to sell them to fund their development programs, allowing buyers to then have a priority review for a product that may otherwise have been examined under a standard review.</p><p>Knight won its PRV in March 2014 when it gained the FDA's approval to market <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Impavido-in-leishmaniasis-Knight-wins-priority-voucher-350770" target="_new">Impavido</a> (miltefosine) as a treatment for cutaneous, mucosal and visceral leishmaniasis, a parasitic disease transmitted by the phlebotomine sand flies and is found in parts of the tropics subtropics and southern Europe.</p><p>At $125m, Gilead had paid the highest amount for a voucher until this past May, when Sanofi <a href="http://www.scripintelligence.com/home/Sanofi-paying-big-for-FDA-voucher-Retrophin-snags-245m-358627" target="_new">laid down an unheard of $245m</a> for a rare disease pediatric PRV &ndash; purchasing it from Retrophin, which acquired it when it exercised its rights to buy <a href="http://www.scripintelligence.com/business/Voucher-FDA-approval-lure-Retrophin-to-buy-Cholbam-357371" target="_new">Cholbam</a> (cholic acid) from Asklepion Pharmaceuticals for $27m plus 661,278 shares of common stock.</p><p>The R/F/TAF product is Gilead's third TAF-based combination for which the firm has submitted applications to the FDA in less than a year. </p><p>The company is anticipating hearing from the FDA this November on its once0daily single table regimen containing elvitegravir 150mg, cobicistat 150mg, emtricitabine 200mg and TAF 10mg. The other product, which consists of emtricitabine and TAF, has a <i>Prescription Drug User Fee Act</i> action date of 7 April 2016.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 277
+
+<p>Gilead Sciences has decided to cash in a voucher it paid big bucks for to gain a quicker US review of its once-daily single tablet combination regimen, which consists of the firm's emtricitabine 200mg and tenofovir alafenamide (TAF) 25mg with Janssen's rilpivirine 25mg.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Gilead cashes in $125m voucher for faster HIV combo review
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150626T211517
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150626T211517
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150626T211517
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029145
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Gilead cashes in $125m voucher for faster HIV combo review
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200500022
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359150
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fc6b94eb-b8d7-4f8b-8aa5-4e5d74036bfb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

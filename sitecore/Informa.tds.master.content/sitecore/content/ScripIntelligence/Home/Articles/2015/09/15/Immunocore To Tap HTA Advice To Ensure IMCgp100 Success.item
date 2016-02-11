@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {AB8F1D73-4F01-4D1D-8A29-E6130E425FAA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/15/Immunocore To Tap HTA Advice To Ensure IMCgp100 Success
+parent: {60DD0A61-687E-4825-852F-A2FA9D0FA023}
+name: Immunocore To Tap HTA Advice To Ensure IMCgp100 Success
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8d1949c7-9b95-4dd9-a0f6-a6342258ba05
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Immunocore To Tap HTA Advice To Ensure IMCgp100 Success 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Immunocore To Tap HTA Advice To Ensure IMCgp100 Success
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7270
+
+<p>British immunotherapy specialist Immunocore Limited plans to make full use of the scientific advice national regulators are offering to help it progress its lead product IMCgp100 through the European Medicines Agency's adaptive pathways pilot program. </p><p>Accepted into EMA's fast track initiative on Sept. 9, Immunocore hopes to win conditional approval for IMCgp100 for treating patients with metastatic uveal melanoma on the basis of a limited dataset. Conversion to full approval would depend on successful completion of a Phase II clinical trial in uveal melanoma, with long-term follow-up data. Uveal melanoma is an eye cancer in which the malignant cells arise in the part of the eye called the uvea. </p><p>"Yes, we have been in touch with the various national HTAs [Health Technology Assessment agencies] about our adaptive pathway program, and a couple of them took part in our most recent conversations in early September, which was a face-to-face meeting in London with the EMA, and yes, they've been very collaborative so far," said Dr Christina Coughlin, chief medical officer at Immunocore. They include the UK's Medicines and Healthcare Products Regulatory Agency (MHRA) and the cost effectiveness-oriented National Institute for Health and Care Excellence (NICE).</p><p>The EMA's pilot project on Adaptive Pathways (formerly Adaptive Licensing), initiated in March 2014, aims to provide a framework for informal interactions. Discussions take place in a "Safe Harbour" environment to enable all participants to freely explore different pathways and solutions without the fear of early commitments. </p><p>EMA's concept of Adaptive Pathways foresees either an initial approval in a well-defined patient subgroup with a high medical need followed by a widening of the indication to a larger patient population, or an early conditional regulatory okay which is where uncertainty is reduced over time as post-approval data on the drug's use in patients is gathered. </p><p>Pharma regards the adaptive licensing process for breakthrough products in the EU as a vital tool for making the region's drug development system sustainable in the long term.</p><p>"Part of the Adaptive Pathway process is early meetings; early conversations with the national regulators, the HTAs, as the pivotal program comes forward," Immunocore's Coughlin explained in an interview. "That will probably be part of the best aspects of this collaboration, this early dialogue held before plans are set out and before clinical trials are really written. It's all about how we're going to do this. It's about outlining how can we can all work together and make such medicines available earlier for people who really don't have any other options." </p><p>Asked if Immunocore would eventually seek fast track regulatory approval in the US, she replied: "Yes we will, but the EMA pathway is definitely our first regulatory route. The US regulatory strategy is still coming together, and breakthrough status maybe one of the routes we go for there. I can't comment more on that because we don't have our strategy down for that just yet. "</p><p>She said Immunocore's advantage was its ability to create high affinity T Cell Receptors and link them to an anti-CD3 antibody fragment, which is able to activate the immune system to kill the targeted cells. These bi-functional molecules, called ImmTACS (Immune mobilizing mTCR Against Cancer), have big potential as antiviral or anticancer agents and in immunotherapy. </p><p>IMCgp100 is Immunocore's first ImmTAC to enter clinical trials. IMCgp100 comprises an affinity-enhanced soluble TCR specific for the HLA-A2 restricted melanoma-associated antigen gp100, fused to an anti-CD3 scFv. IMCgp100 is currently in a phase I/II clinical study in patients with late-stage malignant melanoma in US and UK.</p><p>"This is our main asset. It's wholly owned by Immunocore. It's our only clinical candidate right now. We have a few preclinical collaborations, so there will be other assets coming through the pipeline but IMCgp100 is the only asset we have in the clinic currently," Coughlin said.</p><p>If IMCgp100 is approved in uveal melanoma, then the next logical step would be to seek further indications where gp100 is expressed, "so we are thinking about glioblastoma as well," she said. </p><p>Coughlin believes IMCgp100 has an open field with little sign of competition in the space of treating uveal melanoma after AstraZeneca PLC in July announced that its Phase III SUMIT study of MEK inhibitor selumetinib in combination with dacarbazine for the treatment of patients with metastatic uveal melanoma did not meet its primary endpoint of progression free survival. "That seems to have left things pretty open for us," Coughlin said. If all goes successfully to plan, she said IMCgp100 could come on the market as early as late 2018.</p><p>In preparation for that, Immunocore In July brought home Europe's largest ever private financing of a biotechnology company, generating $320m in an oversubscribed round from investors who include its R&D partner Eli Lilly & Co. </p><p>The funds will be used to advance the biotech's pipeline of ImmTACs. The financing round was completed July 16 and is second in size only to Moderna Therapeutics LLC's $450m private equity event made at the start of2015.</p><p>The Oxford, UK-based biotech has R&D partnerships with Lilly, AstraZeneca PLC's biologics unit MedImmune LLC, GlaxoSmithKline PLC and Roche Holding AG's Genentech Inc. in immunotherapy, but it has not divulged the targets. Immunocore, which so far has resisted seeking an initial public offering, in April reported positive Phase I/IIa trial data for IMCgp100 in patients with advanced metastatic cutaneous and ocular melanoma.</p><p>In June, Lilly and Immunocore announced plans to explore combinations of the pair's melanoma immunotherapies in a new clinical trial collaboration. First is a Phase Ib/II trial involving Immunocore's T-cell receptor-based IMCgp100 together with Lilly's immunotherapy galunisertib (LY2157299); the combination will be studied for metastatic cutaneous melanoma. The partners also aim to conduct Phase Ib/II trials on a combo of IMCgp100 with Lilly's multi-kinase inhibitor merestinib (LY2801653), with the potential indication of metastatic uveal melanoma.</p><p>Immunocore and Lilly first teamed up in 2014 in a separate deal to discover and develop T-cell therapies for cancer based on the ImmTAC platform. That trial collaboration is the second this year involving IMCgp100; Immunocore and MedImmune are studying combinations of the compound with MedImmune's checkpoint inhibitors. Immunocore's first major partner was Genentech, which in June 2013 licensed rights to discover, develop and market ImmTACs directed at several undisclosed novel oncology targets.</p><p>Besides Lilly, Immunocore's investors include Woodford Investment Management, Malin Corporation PLC and RTW Investments, as well as a number of existing investors in Immunocore. Its business origins were in an Oxford university spinout company called Avidex Ltd., which also produced Adaptimmune Therapeutics PLC, another cancer drug developer that in May this year raised $178m in a Nasdaq IPO that valued it at $1.2bn.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 259
+
+<p>British immunotherapy specialist Immunocore Limited plans to make full use of the scientific advice national regulators are offering to help it progress its lead product IMCgp100 through the European Medicines Agency's adaptive pathways pilot program. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Immunocore To Tap HTA Advice To Ensure IMCgp100 Success
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150915T234242
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150915T234242
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150915T234242
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029771
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Immunocore To Tap HTA Advice To Ensure IMCgp100 Success 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360376
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8d1949c7-9b95-4dd9-a0f6-a6342258ba05
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

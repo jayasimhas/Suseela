@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {3DCC8B6D-9DFD-4EDB-B7C5-77F5332471F6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/11/Regenerons Eylea overtakes Lucentis with 2014 US sales
+parent: {EBDD8AF7-1355-4966-A963-936A0484BFF1}
+name: Regenerons Eylea overtakes Lucentis with 2014 US sales
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d1282b62-680d-4872-861f-0e5e57fd58e7
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Regeneron's Eylea overtakes Lucentis with 2014 US sales
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Regenerons Eylea overtakes Lucentis with 2014 US sales
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8391
+
+<p>Regeneron Pharmaceuticals reported $1.74bn in US sales for Eylea (aflibercept) in 2014, surpassing Roche's $1.7bn US total for the competing biologic Lucentis (ranibizumab), and a slightly higher Eylea growth rate is expected in 2015 based on increased use and new indications.</p><p>Eylea gained approvals in 2014 for diabetic macular edema (DME) and macular edema following retinal vein occlusion (RVO), including branch RVO (BRVO), and a US FDA decision on the vascular endothelial growth factor (VEGF) inhibitor's approval to treat diabetic retinopathy related to DME is expected by 30 March (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-approval-comes-early-for-Regenerons-Eylea-in-DME-353094" target="_new">30 July</a> and <a href="http://www.scripintelligence.com/policyregulation/Regenerons-Eylea-granted-priority-review-in-diabetic-retinopathy-355353" target="_new">1 December 2014</a>). Eylea won its first approval to treat wet age-related macular degeneration (AMD) in 2011 and Regeneron expects the product's 2015 sales to rise 25% to 30% above the 2014 total, which was 23% higher than in 2013.</p><p>"Eylea currently has approximately a 34% dollar market share of the ex-US approved anti-VEGF market as compared to a 53% dollar share of the US FDA-approved anti-VEGF market. Therefore, there's ample opportunity for growth through approval in additional indications, further geographic expansion and market share gains," Regeneron senior vice president of commercial Robert Terifay said during the company's 2014 earnings conference call with investors and analysts.</p><p>Regeneron's 2015 guidance translates to $2.17bn to $2.26bn in US sales for 2015, breaking the $2bn mark for the first time. However, the forecast was below analyst consensus expectations of $2.32bn, so the company's stock fluctuated between a loss and a gain on 10 February. The stock ultimately closed 0.3% higher at $400.71 per share after trading as low as $394.01 earlier in the day.</p><p>Jefferies analyst Biren Amin said he expects 2015 sales to reach just $2.16bn in the US, because Eylea's growth based on the DME indication may be slower than the sales growth achieved with wet AMD.</p><p>Regeneron executives made similar predictions about the company's DME-related Eylea sales.</p><p>"It's not a market where there is an urgency to immediately treat patients with the most aggressive therapy given that the threat to vision is slower," Mr Terifay said. "We do expect to see growth in DME, but it's going to be gradual."</p><p>Among the challenges for Eylea this year is the fact that Roche's Lucentis has an almost two month lead in the US for the treatment of diabetic retinopathy after recent FDA approval of the competing VEGF inhibitor in the new indication (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Lucentis-in-diabetic-retinopathy-one-ups-Eylea-356607" target="_new">6 February 2015</a>). </p><p>Also, Lucentis is in the lead outside of the US by a wide margin. Novartis, which markets the product in ex-US markets, reported $2.4bn in Lucentis sales for 2014. </p><p>Bayer Healthcare markets Eylea outside of the US, except for in Japan, and it reported $1.04bn in 2014 sales versus $472m in 2013. Regeneron's royalty revenue from Bayer was $301m in 2014.</p><p>Partnerships are profitable for Regeneron, which reported $2.8bn in revenue last year, including $1.1bn from Bayer and the company's other major partner Sanofi. In addition to ex-US Eylea royalties, Regeneron earned milestone fees from Bayer and Sanofi. The company's non-GAAP earnings per share (EPS) was $10 in 2014, which was a 22% increase from $8.17 in 2013. </p><p><b>Upcoming milestones</b></p><p>The biggest upcoming milestone for Regeneron's research and development pipeline is the potential US FDA approval for the cholesterol-lowering biologic Praluent (alirocumab), a PCSK9 inhibitor developed with Sanofi. The partners gained priority review for Praluent and expect an FDA decision by 24 July (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Sanofi-leapfrogs-Amgen-with-US-priority-review-for-alirocumab-356357" target="_new">26 January 2015</a>).</p><p>Praluent is in a race with Amgen's evolocumab to be the first PCSK9 inhibitor on the market in the US, since data revealed to date show little differentiation between the two product candidates (scripintelligence.com, <a href="http://www.scripintelligence.com/home/PCSK9-inhibitors-shine-at-AHA-but-how-to-differentiate-355132" target="_new">19 November 2014</a>).</p><p>It remains to be seen if the two products will compete on price, as Gilead Sciences and AbbVie have done in the hepatitis C arena, but at least one pharmacy benefits manager (PBM) has hinted at PCSK9 inhibitors as a therapeutic class worthy of scrutiny.</p><p>Express Scripts chief medical officer Steve Miller told <i>Scrip</i> in December that PBMs are likely to look beyond hepatitis C to other large indications with costly new drugs, like PCSK9 inhibitors for high cholesterol (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Express-Scripts-on-deal-for-AbbVies-Viekira-more-to-come-beyond-hepatitis-C-355807" target="_new">23 December 2014</a>).</p><p>Regeneron president and CEO Leonard Schleifer would not specifically address Praluent pricing and reimbursement during the company's earnings conference call, but he noted that: "our goals are really not that different than the PBMs. Our goals are to try and get our product, if it's approved, to patients who could benefit from it and get it to them in a way that they can afford and have access to it."</p><p>It'll be five more months before questions about Praluent pricing and discounts are answered, assuming the biologic wins FDA approval in July. In the mean time Regeneron has several other regulatory and clinical milestones coming up in 2015 per the table below.</p><table><tbody><tr><td><p><b>Product candidate</b></p>&nbsp;</td><td><p><b>2015 Milestones</b></p>&nbsp;</td></tr><tr><td><p>Sarilumab</p>&nbsp;</td><td><p>Sanofi and Regeneron will report Phase III data for the interleukin-6 receptor (IL-6R) inhibitor in rheumatoid arthritis in 2015 and submit a biologic license application (BLA) in the US by the end of the year.</p>&nbsp;</td></tr><tr><td><p>Dupilumab</p>&nbsp;</td><td><p>Phase III clinical trials in atopic dermatitis are under way for the interleukin-4 (IL-4) and IL-13 inhibitor and a Phase III asthma study will begin during the first half of this year. Also, a Phase II trial in eosinophilic esophagitis began recently and a Phase II pediatric atopic dermatitis study will begin in 2015.</p>&nbsp;</td></tr><tr><td><p>Fasinumab</p>&nbsp;</td><td><p>The nerve growth factor (NGF) inhibitor will begin osteoarthritis studies in 2015 if the company can get the FDA to lift a clinical hold on the program.</p>&nbsp;</td></tr><tr><td><p>REGN2222</p>&nbsp;</td><td><p>The antibody targeting the respiratory syncytial virus (RSV) is in Phase I, but Regeneron plans to begin Phase III trials during the second half of 2015.</p>&nbsp;</td></tr><tr><td><p>REGN1979 and REGN2810</p>&nbsp;</td><td><p>REGN1979 is a bi-specific antibody targeting CD20 and CD3. REGN2810 targets programmed cell death-1 (PD-1). Both began Phase I clinical trials for the treatment of cancer this year.</p>&nbsp;</td></tr></tbody></table><p><p>As payers increase their scrutiny of AMD therapies, especially high-priced monoclonal antibodies, Regeneron has initiated Phase I clinical trials for two candidates that it wants to add to Eylea treatment (scripintelligence.com, <a href="http://www.scripintelligence.com/home/AMD-drug-reimbursement-pressure-rising-in-US-353461" target="_new">20 August 2014</a>).</p><p>The company is running Phase I studies for REGN910-3, which combines an Ang2 antibody with Eylea in a single injection, and REGN2176-3, which combines a platelet derived growth factor receptor beta (PDGFR-beta) antibody with Eylea.</p><p>Regeneron also signed a deal with Avalanche Biotechnologies in 2014 to explore the development of gene therapies for AMD and other ophthalmic indications (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Avalanche-eyes-640m-windfall-in-Regeneron-deal-351616" target="_new">6 May 2014</a>).</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 284
+
+<p>Regeneron Pharmaceuticals reported $1.74bn in US sales for Eylea (aflibercept) in 2014, surpassing Roche's $1.7bn US total for the competing biologic Lucentis (ranibizumab), and a slightly higher Eylea growth rate is expected in 2015 based on increased use and new indications.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Regenerons Eylea overtakes Lucentis with 2014 US sales
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150211T043206
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150211T043206
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150211T043206
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027784
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Regeneron's Eylea overtakes Lucentis with 2014 US sales
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356599
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d1282b62-680d-4872-861f-0e5e57fd58e7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

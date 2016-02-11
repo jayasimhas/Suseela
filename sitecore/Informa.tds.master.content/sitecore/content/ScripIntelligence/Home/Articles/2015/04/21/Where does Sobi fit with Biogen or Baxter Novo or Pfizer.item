@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {88ED146D-A08A-44E2-B0DF-16F6EE9D3C08}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/21/Where does Sobi fit with Biogen or Baxter Novo or Pfizer
+parent: {7C444FDC-DC63-4D50-B812-A158B8DC325D}
+name: Where does Sobi fit with Biogen or Baxter Novo or Pfizer
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 807fd036-f911-4221-8a9e-b42e1242b514
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Where does Sobi fit: with Biogen or Baxter, Novo or Pfizer?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Where does Sobi fit with Biogen or Baxter Novo or Pfizer
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5675
+
+<p>Swedish Orphan Biovitrum (SOBI) has been approached by a mystery corporate buyer, the company confirmed on 27 April. But the company has given no indication where the approach comes from. The most likely acquirer is Biogen, SOBI's US and rest-of-world partner for two hemophilia products approved in the US. But Pfizer is also a long-term partner of SOBI's in hemophilia, and hemophilia market leader Baxter has been strengthening its offering through acquisition in recent years. Novo Nordisk might also be a decent fit, if it were not for Novo's reticence about growth based on acquisition.</p><p>2014 was not the best year for SOBI: it wrote off two important parts of its biopharmaceutical development portfolio: its enzyme replacement therapy Kiobrina (rhBSSL &ndash; recombinant human bile salt stimulated lipase) for preterm infants, and a cancer drug Multiferon, valuing the losses at over SEK 500m ($73m), which is a lot for the small Swedish company. With a Phase I study of complement inhibitor SOBI002 also on clinical hold after what the company described as "transient and mild side-effects," SOBI's pipeline of specialist biologics very quickly started looking sparse, with the exception of its two long-lasting recombinant hemophilia clotting factors, Elocta/Eloctate (efraloctocog alfa, a long-lasting factor VIII fusion protein) in Factor VIII deficiency and Alprolix (Coagulation Factor IX (Recombinant), Fc Fusion Protein).</p><p>As the owner of the commercial rights to these two clotting factors in the US and most of the world outside Europe, Biogen stands out as a potential acquirer of SOBI. The highpoints of SOBI's 2014 were the FDA approvals of the hemophilia products that Biogen is commercializing in the US, Elocta/Eloctate and Alprolix. Biogen racked up sales of roughly $120m for both products together in 2014, with European approval imminent for the Factor VIII product after submission to the EMA in Q4 2014.</p><p>SOBI is currently trying to engineer a better position to benefit from the clinical promise of the two compounds. In November 2014, SOBI exercised its opt-in right to develop Elocta/Eloctate in Europe but that means that it will have to find a way of reimbursing Biogen for 50% of the manufacturing and development bill the US firm has been footing since 2009. According to Biogen's annual report for 2014, that bill could be $175m for Elocta/Eloctate and $150m for Alprolix. </p><p>In order to accommodate SOBI's opt-in, SOBI and Biogen have restructured their cross-territory royalties agreement so that, until that development money is paid off, Biogen will pay SOBI only 2% royalties on US sales, rather than 12%, whereas SOBI will pay Biogen 17% rather than 12% on sales of the compounds in Europe (if approved). </p><p>In taking on the option on Elocta/Eloctate, SOBI may therefore be stretching its hand. It has a sales and marketing infrastructure in Europe, but one more suited to selling the highly specialist drugs in the rest of its portfolio than to the hemophilia products. As its annual report declares, "Compared with most other markets for rare diseases served by SOBI, the hemophilia market is &ndash; in terms of size and market value &ndash; larger and more competitive, with several treatment options available for people with hemophilia today."</p><p>SOBI's annual report, released on 15 April, revealed not only SOBI's write-offs but also its relatively cash-strapped position. At the end of 2014, according to its annual report, SOBI had SEK 519m ($75m) in cash and cash equivalents and that it was spending that amount on R&D alone per year.</p><p>Both SOBI and Biogen are relative 'newbies' at the hemophilia game: the companies with the biggest markets to protect or franchises to expand are Baxter, Novo Nordisk and Pfizer.</p><p>Novo might be a good geographic and cultural fit with SOBI. Its hemophilia franchise &ndash; NovoSeven (recombinant clotting factor VII) and the 2014-launched NovoEight (recombinant clotting factor VIII) was worth over $1.5bn in 2014. However, standing firmly against Novo's candidature as an acquirer for SOBI is its serial recalcitrance to grow by acquisition.</p><p>Another potential acquirer for SOBI is Baxter International. The US company's hemophilia franchise was worth over $3.7bn in 2014, demonstrating a broad market reach in a relatively narrow indication. The company has also been acquisitive in recent years, picking up a gene therapy approach to hemophilia from Chatham, a Brazilian partnership on FVIII supply and tech transfer with Hemobras, and the firesale purchase of Inspiration/Ipsen's recombinant porcine factor VIII, amongst other deals.</p><p>However, the fly in the ointment for Baxter may be that its own extended-lifetime Factor VIII, BAX 855, is awaiting FDA's go ahead after the company filed a BLA in Q4 2014. To the costs of buying SOBI, Baxter, therefore, would have to add another $300m to pay off Biogen's development costs to gain Europe-only commercial rights to products that compete with its own near-market portfolio compounds.</p><p>That leaves Pfizer as a potential buyer of SOBI and its hemophilia franchise. Pfizer sold over $630m worth of its Factor VIII products, Xyntha and Refacto, in 2014, as well as over $850m worth of the Factor IX replacement, Benefix, despite the expiration of the core patents on all the products. Pfizer could provide an effective sales and marketing infrastructure, but it would probably want to operate commercially in the US market, as well as in Europe. That makes Biogen poisonous to the deal unless, of course, Biogen doesn't really want to be in the hemophilia market at all.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 599
+
+<p>Swedish Orphan Biovitrum (SOBI) has been approached by a mystery corporate buyer, the company confirmed on 27 April. But the company has given no indication where the approach comes from. The most likely acquirer is Biogen, SOBI's US and rest-of-world partner for two hemophilia products approved in the US. But Pfizer is also a long-term partner of SOBI's in hemophilia, and hemophilia market leader Baxter has been strengthening its offering through acquisition in recent years. Novo Nordisk might also be a decent fit, if it were not for Novo's reticence about growth based on acquisition.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Where does Sobi fit with Biogen or Baxter Novo or Pfizer
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150421T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150421T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150421T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028550
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Where does Sobi fit: with Biogen or Baxter, Novo or Pfizer?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357988
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+807fd036-f911-4221-8a9e-b42e1242b514
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {C8860C87-989B-4281-8E47-E923A6413BF5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Biocon firms up plans to list Syngene licenses Sovaldi
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Biocon firms up plans to list Syngene licenses Sovaldi
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f0b0e323-32fb-4471-81c4-015c867556d2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Biocon firms up plans to list Syngene, licenses Sovaldi 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Biocon firms up plans to list Syngene licenses Sovaldi
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5266
+
+<p>Biocon has outlined definitive plans to take public its research services arm, Syngene, and expects to offload 10-15% from its majority stake via an offer for sale.</p><p>Biocon's board has approved the initiation of the listing process for Syngene and the appointment of merchant bankers for the purpose.</p><p>''It is important and much awaited and will help us unlock value of this business that is not fully captured at the moment. Proceeds from the offer for sale will help fund Biocon's requirements for cash for both for its R&D and capex,'' Biocon's chairman and managing director, Kiran Mazumdar-Shaw, said at a post results investor call.</p><p>Asked how much the company hoped to raise via the IPO, Ms Mazumdar Shaw said that a possible idea of the kind of expected realiszation could be gauged from the valuation benchmark through the ''IVF [India Value Fund] investment''. </p><p>The Mauritius-based investment vehicle Silver Leaf Oak, which was advised by the private equity firm India Value Fund Advisors, last year picked up 10% in Syngene for INR3.8bn ($61.6m), valuing the IPO-bound Syngene at INR38bn <a href="http://%5bhttp:/www.scripintelligence.com/business/Silver-Leaf-picks-up-10-in-IPO-bound-Syngene-354043%5d" target="_new">(scripintelligence.com 19 September 2014)</a>. </p><p>''Obviously at listing you expect to see a much higher price level and valuation,'' Biocon's boss said.</p><p>Biocon expects the listing to happen in the first half of 2015-16. Biocon's research services segment reported sales of INR2.2bn (+20%) in the third quarter ended December 2014.</p><p>The Bengaluru-based firm also made a slew of announcements on results day including an agreement with Gilead Sciences to license its chronic hepatitis C blockbuster range including Sovaldi (sofosbuvir) and sofosbuvir/ledipasvir combination. Gilead already has licensing deals for Sovaldi with seven other India-based firms including Cipla and Zydus Cadila <a href="http://%5bhttp:/www.scripintelligence.com/home/Cut-price-generics-in-sight-as-Gilead-licenses-Sovaldi-353966%5d" target="_new">(scripintelligence.com 16 September 2014)</a>. </p><p>Asked about how the company hopes to derive value being the eighth licensee, Ms Mazumdar Shaw told <i>Scrip</i> that hepatitis C was a huge problem in India and developing world economies where the firm can market the product. ''Each one of us will look at a very good branded strategy and we will look a differentiation to gain leadership in the market,'' she said. </p><p>Other key announcements include the appointment of former Teva CEO Dr Jeremy Levin and Harvard Medical School professor Dr Vijay Kuchroo to the Biocon board. </p><h2>R&D expenses </h2><p>Biocon reported a 13% decline in net profits at INR910m for the third quarter, largely weighed down by R&D expenses that more than doubled. Revenues increase to INR7.79bn (+8%).</p><p>Ms Mazumdar-Shaw underscored that the jump in R&D spending was indicative of the advancement of the firm's biosimilars and other programmes. </p><p>Two additional global programs had entered the clinic and the company said that it had also commenced recruitment of patients for the India clinical trial of its biosimilar bevacizumab.</p><p>The firm's oral insulin programme continued to progress well in trials in the US and Biocon expects certain critical readouts by the end of this fiscal. </p><p>Biocon entered into an agreement with Bristol-Myers Squibb (BMS) in 2012, under which the US multinational holds an exclusive option to further develop and commercialize the Indian firm's prandial oral insulin candidate, IN-105, pending the outcome of certain clinical trials (scripintelligence.com 16 November 2012). </p><p>The deal with BMS infused a fresh lease of life into IN-105, which had earlier failed to meet its primary endpoint of lowering HbA1c levels by 0.7% compared with placebo, although an unexpectedly high placebo response had been observed.</p><p>Biocon's branded formulations business reported revenues of INR1.05bn (+6%) and the company expects to develop this as a ''specialty franchise'' to drive greater profitability through product and portfolio rationalization. ''We have taken a lot of strategic corrective action on this business, where we have rationalised our portfolio[...,] trimmed it down. While that has impacted revenues, the profitability has significantly improved,'' Ms Mazumdar-Shaw said.</p><p>Biocon has rationalized about 30% of its products as part of these efforts, it said in the investor call.</p><p>The company also said that Canmab, its biosimilar trastuzumab, has been one of the most successful oncology launches in India, but declined to share numbers. Launched in 2014, Canmab was developed under a partnered program with Mylan.</p><p>Ms Mazumdar-Shaw also indicated that licensing plans for the firm's anti CD6 molecule, itolizumab, were likely to be delayed as the potential licensee requires ''certain regulatory clearances''. </p><p>The biopharma segment recorded revenues of INR4.36bn (+4%) during the quarter and continued to be impacted by factors like the credit risk in the MENA (Middle East and North Africa) region, reduced offtake of specialty active pharmaceutical ingredients and capacity constraints.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 171
+
+<p>Biocon has outlined definitive plans to take public its research services arm, Syngene, and expects to offload 10-15% from its majority stake via an offer for sale.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Biocon firms up plans to list Syngene licenses Sovaldi
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027603
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Biocon firms up plans to list Syngene, licenses Sovaldi 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356240
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f0b0e323-32fb-4471-81c4-015c867556d2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

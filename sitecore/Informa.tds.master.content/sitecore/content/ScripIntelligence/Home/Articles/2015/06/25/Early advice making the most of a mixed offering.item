@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {04AB8053-D4E1-46A2-AC50-AB70D4402610}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/25/Early advice making the most of a mixed offering
+parent: {FACCF432-3C0E-4752-A3F4-8CF6BA1DEF18}
+name: Early advice making the most of a mixed offering
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 44d25b1a-8338-40ff-a4d4-e9ffa38d3dac
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+Early advice: making the most of a mixed offering
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+Early advice making the most of a mixed offering
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4458
+
+<p>Early scientific advice from health technology assessment bodies is increasingly used by manufacturers to ensure their development programs and submission dossiers satisfy the requirements. Although the HTA bodies' advice is proving to be valuable to drug developers, further changes are needed to optimize the effectiveness of these new and evolving processes, as discussed at the eyeforpharma Market Access and Pricing Excellence event in Amsterdam on 3-4 June 2015.</p><p>According to Andreas Altermark, Head of Global Pricing at Bayer, early discussions offer an opportunity to engage with payers and regulators and to have a realistic discussion with the aim of defining what evidence is sufficient to prevent delays in access. So far, Bayer has found "early advice helpful in selecting secondary endpoints for trials," he stated. More significantly, feedback on early trial results was also constructive. "We got feedback that improvement was not meaningful and fed back to R&D that we needed to be more ambitious" he said. The early advice procedure was also useful "to go beyond the guidelines and talk about adaptive pathways" Altermark went on to add. </p><p>There is still scope to improve the early advice process, however. Friedhelm Leverkus, Director Health Technology Assessment and Outcomes for Pfizer, noted that the early advice meetings with the German HTA body, the Gemeinsamer Bundesausschuss (G-BA), are useful but focus on the selection of comparators. These meetings do not allow for discussion of other methodological issues as the Institute for Quality and Efficiency in Healthcare (IQWiG), which conducts the first assessment and develops the assessment methodology, is not involved in early scientific advice procedures. While the G-BA considers IQWIG's assessment guidelines to be detailed and sufficient, the sponsors often find themselves having to decide between many potential options laid out in the guidelines without knowing which one would be most likely to be accepted by the evaluators. "Industry groups are now pushing for a change in the process to include IQWiG representatives at these meetings", added Leverkus.He went on to state that it also "helps to involve EMA in early advice meetings." The main benefit would be to reconcile contradictory advice that can sometimes be received from the regulators and HTA bodies.</p><h2>UK stretched</h2><p>In the UK, pharma companies may find the demand for early advice outstrips NICE's availability. According to Jennifer Rowell, Head of Market Access Excellence for Roche UK:"It is difficult to get a slot and get time to engage [with NICE] at phase II.". She added that scientific advice consultations with NICE carry a hefty price tag. The need to find an acceptable solution for funding early advice consultations with HTA bodies in order to make them sustainable has also been raised by Fran&ccedil;ois Meyer, Advisor to the President of Haute Authorité de Santé (HAS). HAS has been heading up the Shaping European Early Dialogue (SEED) for health technologies initiative. Composed of 14 European HTA agencies, SEED offers an opportunity for drug developers to discuss their development plans and HTA evidence needs with multiple agencies at one time. It is currently run as a pilot with limited EU funding and Meyer acknowledged that for the initiative to continue, its "financing will need to be sorted out in a way that would not burden SMEs."</p><p>Despite these obstacles, the appetite for engaging with decision-makers remains unabated among pharma companies. In order to ensure they reap maximum benefits from the process Ulf Maywald, Head of Drug Department at the German sickness fund AOK Plus and former G-BA member, urged pharma companies to have an open dialogue during early HTA advice. According to Maywald there is "no need to fear the system will know too much. If the G-BA does not hear all it needs to know from the manufacturer, it will make its own interpretations." When it comes to G-BA it also pays to be proactive and come prepared. According to Maywald, G-BA members are not very open to answering broad hypothetical questions so if for example a manufacturer wants to discuss use of a surrogate endpoint, it is better to present a detailed case for surrogate endpoint validation upfront and ask the G-BA to comment on whether it is likely to be accepted. That way the assessment body will be under more pressure to voice its opinion.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 475
+
+<p>Early scientific advice from health technology assessment bodies is increasingly used by manufacturers to ensure their development programs and submission dossiers satisfy the requirements. Although the HTA bodies' advice is proving to be valuable to drug developers, further changes are needed to optimize the effectiveness of these new and evolving processes, as discussed at the eyeforpharma Market Access and Pricing Excellence event in Amsterdam on 3-4 June 2015.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Early advice making the most of a mixed offering
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150625T150002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150625T150002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150625T150002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029121
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+Early advice: making the most of a mixed offering
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200264
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B18369C6-1BC6-45A1-9CF5-DA59EBB80DE6}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359114
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042415Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+44d25b1a-8338-40ff-a4d4-e9ffa38d3dac
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042415Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

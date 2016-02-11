@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {735606B9-CEE9-47E5-B417-C858A95DE197}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/LillyBI gain Japan approval for first Lantus biosimilar
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: LillyBI gain Japan approval for first Lantus biosimilar
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ba823fa7-e453-4d2b-aff8-00fbc619b821
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Lilly/BI gain Japan approval for first Lantus biosimilar
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+LillyBI gain Japan approval for first Lantus biosimilar
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5264
+
+<p>Lilly and Boehringer Ingelheim have confirmed that they have received regulatory approval in Japan for their insulin glargine product as the first biosimilar version of Sanofi's Lantus, the first such local competition for the branded basal insulin analog.</p><p>Eli Lilly and Boehringer Ingelheim have just jointly disclosed that the co-developed product was approved in late December by the ministry of health, labor and welfare, after it was submitted for review under Japan's defined regulatory pathway for biosimilars. </p><p>While Lilly's Japanese subsidiary hailed the clearance as a "very meaningful achievement," Nippon Boehringer Ingelheim told <i>Scrip's </i>sister publication <i>PharmAsia News</i> that it could not say at present when the product was likely to receive a reimbursement price or be launched, but that this would be announced at the time. </p><p>Roughly six million people in Japan are estimated to be living with type 2 diabetes, and around 11 million to have some form of the disease.</p><p>The long-acting insulin analog, coded LY2963016, was developed by Lilly, which will manufacture and market it in Japan, with co-promotion to be carried out together with the German firm.</p><p>The Lilly/BI product was also filed as a biosimilar in July 2013 in Europe, where it was approved last September. In the US however, it was filed in December 2013 through the 505(b) (2) pathway for modified NDAs rather than as a biosimilar, which provides flexibility to "tweak" product formulations and other characteristics.</p><p>Although it received a tentative FDA approval last August, a final approval decision has been put on hold due to a patent infringement action brought by Sanofi and a related 30-month stay of approval, meaning a clearance is not possible before mid-2016 unless Lilly wins the case.</p><p>Lilly and BI have generated a suite of clinical and other data for their product including two previously reported international Phase III trials, ELEMENT 1 and 2, and several Phase I studies, which have showed similar clinical results to Lantus.</p><p>Japan's regulatory framework for biosimilars is comparable to the approach adopted in the EU, with the manufacturing process having to be highly consistent, the biosimilar fully characterized, and dosage and administration route the same as the reference product, which also must be approved in Japan.</p><p>Several other types of biosimilars have already passed through the process and been approved in the country.</p><p>The Lilly/BI product has been approved in Japan as a cartridge and for use with the Lilly Miriopen delivery system, but under local regulations has no brand name, being referred to only as "insulin glargine BS [biosimilar]."</p><p>This is different to the provisional Abasria name in Europe and the proposed Basaglar brand in the US, although Lilly has said that it is looking at revising these names to come up with a standard global name. </p><h2>Rising Competition</h2><p>For Sanofi in Japan, the approval presents a further genericization risk to its business, which is already contending with such competition to several products including Allegra (fexofenadine) and Myslee (zolpidem). The subsidiary's top product Plavix (clopidogrel) is also set to face its first local generic challengers within the next few years. </p><p>Sanofi in Japan declined to disclose recent Japanese sales of Lantus, but according to published figures from IMS, these were JPY18.3bn ($156m) at reimbursement prices in calendar 2012.</p><p>Among other basal insulins, Novo Nordisk AS's Tresiba (insulin degludec) is already marketed in Japan, while the broader diabetes sector in the country has been marked by the rapid rise of DPP-4 inhibitors and approvals for a clutch of SGLT2 inhibitors over the past few years. </p><p>Datamonitor Healthcare expects the rise of these and other new therapies such as GLP-1 agonists (of which several have also been launched in Japan) to "lead to a slight reduction in the use of basal insulins, including Lantus" on a global basis, by merit of convenient oral dosing and fewer of the weight gain risks associated with Lantus. </p><p>Sanofi has in the meantime been strengthening its own portfolio through new introductions including the first GLP-1 agonist launched in Japan, Lyxumia (lixisenatide) &ndash; approved for use in combination with basal insulin therapy &ndash; and the SGLT2 inhibitor Apleway (tofogliflozin; licensed from Chugai Pharmaceutical). </p><p>It is also looking to its more concentrated and longer lasting glargine formulation, Toujeo (U300), to help weather the local biosimilar challenge to Lantus, and to more directly compete with Tresiba. The product was filed for Japanese approval in July 2014 and so could be approved sometime this year, albeit after the biosimilar Lantus. </p><p>While Lilly already has a strong presence in diabetes and the insulin sector in Japan, BI is building up its presence through the SGLT2 inhibitor Jardiance (empogliflozin), which was approved in December.</p><p><i>This article first appeared in PharmAsia News, </i><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">https://www.pharmamedtechbi.com/publications/pharmasia-news</a></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 263
+
+<p>Lilly and Boehringer Ingelheim have confirmed that they have received regulatory approval in Japan for their insulin glargine product as the first biosimilar version of Sanofi's Lantus, the first such local competition for the branded basal insulin analog.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+LillyBI gain Japan approval for first Lantus biosimilar
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T091411
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T091411
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T091411
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027641
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Lilly/BI gain Japan approval for first Lantus biosimilar
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356315
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ba823fa7-e453-4d2b-aff8-00fbc619b821
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

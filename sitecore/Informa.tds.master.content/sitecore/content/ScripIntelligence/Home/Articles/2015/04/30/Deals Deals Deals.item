@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {58CCB179-2641-483F-B5E6-CA1FB3F2B722}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/Deals Deals Deals
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: Deals Deals Deals
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 02f53b9d-2765-4120-b252-6c1c06e8aaf4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 20
+
+Deals! Deals! Deals!
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 17
+
+Deals Deals Deals
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4618
+
+<p><p>Dealmakers were in full force this week as biotechs and pharmas look to shore up their pipelines and give investors something to smile about after a bad bout of first quarter earnings. </p><p>Analysts have been disappointed by slowing revenues during the quarter and investors are worried that a biotech bubble is about to burst &ndash; biotech stocks have been down over the last few weeks, stirring further worry. A recent poll of 400 investors by Evercore ISI analyst Dr Mark Schoenebaum showed that 59% of respondents believe small-to-mid cap biotechs are in a bubble. </p><p>"Maybe we're in a bubble and maybe we're not in a bubble, but overall seeing corrections in a space that has been going up over the last three to five years is healthy," said Dr Schoenebaum of the market moving down about 5% during early April. "To have a bubble you must have a pop, without a pop you don't have a bubble," added the analyst on 02 April. Dr Schoenebaum noted that there is plenty of discernment between companies and he doesn't see a trend where everything is moving upward.</p><p>Likely in an effort to pad pipelines and earnings in case of a market slide, companies of all shapes and sizes have been conducting deals this week &ndash; everyone from Gilead Sciences to Alexion Pharmaceuticals to PlasmaTech Biopharmaceuticals. </p><h2>Gilead buys Danish Co</h2><p>The big biotech announced 06 May that it is paying $65m in cash for Copenhagen-based EpiTherapeutics. The privately-held Danish company focuses on epigenetics, a study of the environmental impact on genes. The company currently has several preclinical assets in development for the treatment of cancer. EpiTherapeutics is working with small molecule drugs that are inhibitors of enzymes involved in regulating cancer genes. The enzymes, histone demethalyses, "represents a strategic fit with our existing research portfolio, including the potential for novel combination approaches," said Gilead Chief Scientific Officer Dr Norbert Bischofberger.</p><p>The deal gives Gilead a buffer for its pipeline in the highly competitive oncology drug market. The big biotech is currently a market leader in both the HIV and hepatitis C space. Its blockbuster HCV medications Sovaldi and Harvoni have disrupted the market in that therapeutic space &ndash; giving the company a leg up over a rapidly changing, and highly competitive market. Gilead has several oncology assets in the pipeline, including two drugs in Phase III, as well as two more in mid-stages and several earlier candidates.</p><h2>Alexion buys Synageva for $8.4bn</h2><p>Ultra-rare disease biotech Alexion is laying down $8.4bn to add Lexington, Mass.-based rare disease company Synageva BioPharma into its arsenal in an effort to gain its protein therapeutics. Alexion is paying $115 per share in cash, as well as 0.6581 Alexion in shares in stock, about $230m, for the biotech. </p><p>The $8.4bn deal, which is expected to close in mid-2015, sent shares of Synageva skyrocketing &ndash; the stock jumped 112% to linger near $204 per share, after a close the previous day of $95. </p><p>The value for Alexion comes from Synageva's Kanuma (sebelipase alfa), a treatment for lysosomal acid lipase (LAL) deficiency &ndash; a rare disease caused by a genetic mutation and characterized by a buildup of fatty tissue in the liver and the blood vessel walls. The drug was granted Breakthrough Therapy Designation by the FDA and has a user fee action date of 08 September. Alexion is expected to give the drug a global launch this year. Analysts estimate that the drug could be worth $5m in 2015 and bring in as much as $493m in 2020. </p><h2>PlasmaTech inks deal with Abeona</h2><p>Another rare disease deal was announced 06 May. Dallas-based PlasmaTech Biopharmaceuticals has agreed to buy Cleveland-based Abeona Therapeutics for 3,979,761 in shares and another $9m in potential milestones in stock or cash. PlasmaTech's stock jumped 44% to close at $8.60 per share on the news. </p><p>The Dallas biotech is looking to get its hands on Abeona's compounds for lysosomal storage diseases. The company is developing treatments for Sanfilippo syndrome &ndash; the same disease that Synageva is working on a compound for. Abeona's CEO Tim Miller will replace PlasmaTech CEO Scott Schorer once the acquisition has closed in the second quarter of 2015. </p><p>"We believe this acquisition represents an exciting cornerstone of our strategy to build a world class cell and gene therapy company focused on rare diseases," said PlasmaTech Executive Chairman Steven H. Rouhandeh, in a statement. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 17
+
+Deals Deals Deals
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028643
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 20
+
+Deals! Deals! Deals!
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358140
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+02f53b9d-2765-4120-b252-6c1c06e8aaf4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

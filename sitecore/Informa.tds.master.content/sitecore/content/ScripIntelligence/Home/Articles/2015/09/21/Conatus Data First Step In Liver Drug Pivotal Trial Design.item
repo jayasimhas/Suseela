@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D0AC7195-D16E-4E6E-872D-F805025EDAE0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/21/Conatus Data First Step In Liver Drug Pivotal Trial Design
+parent: {4B7F304D-9C2D-4432-B9EB-9C4CAC22ECA9}
+name: Conatus Data First Step In Liver Drug Pivotal Trial Design
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1adb4277-6895-4e5f-b5bc-4100ffc455fb
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Conatus Data First Step In Liver Drug Pivotal Trial Design
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Conatus Data First Step In Liver Drug Pivotal Trial Design
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7184
+
+<p>Conatus Pharmaceuticals Inc. reported mostly positive data from the first of two Phase II clinical trials that are meant to inform the design of pivotal trials for emricasan in the treatment of liver cirrhosis associated with alcoholism, non-alcoholic steatohepatitis (NASH) and the hepatitis C virus (HCV).</p><p>San Diego-based Conatus found that 28 days of treatment with its oral pan-caspase inhibitor had an effect on severe portal hypertension &ndash; elevated blood pressure in the major vein feeding into the liver &ndash; regardless of etiology, or the cause of liver cirrhosis, since about half of the individuals in the company's 23-patient Phase II study had NASH and the other half had been diagnosed with HCV. </p><p>Conatus will report results from a second Phase II study evaluating the effects of three months of emricasan treatment on liver cirrhosis and reveal the design of its pivotal program &ndash; with an eye on potential accelerated approval &ndash; later this year.</p><p><b>Efficacy Best In Sicker Patients</b></p><p>Emricasan dosed at 25mg twice-daily in patients with portal hypertension and compensated liver cirrhosis met both primary endpoints in the study &ndash; reductions from baseline at 28 days in hepatic venous pressure gradient (HVPG) and cleaved cytokeratin 18 (cCK18), a biomarker of excessive cell death that leads to chronic liver inflammation &ndash; although the HVPG endpoint was met only in patients with severe portal hypertension (HVPG of at least 12mmHg).</p><p>HVPG was reduced by a mean of 3.7mmHg in severe patients (n=12) from a mean baseline of 20.6mmHg (p<0.003), whereas="" hvpg="" increased="" by="" 1.1mmhg="" from="" a="" mean="" baseline="" of="" 8.1mmhg="" in="" patients="" with="" lower="" levels="" of="" hvpg="" (n="10;" p="0.12)." the="" measure="" fell="" by="" a="" mean="" of="" 1.1mmhg="" for="" all="" patients="" in="" the="" study,="" which="" was="" not="" statistically="" significant="" (p="0.26)," but="" cck18="" decreases="" were="" statistically="" significant="" across="" the="" entire="" study="" population=""></0.003),><0.03).></0.03).></p><p>In terms of safety, there were no dose-limiting toxicities and no drug-related serious adverse events, but Conatus provided no specific side effect data. More detailed results will be presented at a later date.</p><p>"What we think is very important about the results is that were able to show was a significant reduction in portal pressure for patients with higher HPVG," Conatus president and CEO Steven Mento said. "This is just Step 1; we have two other clinical trials ongoing now."</p><p>Investors endorsed the company's sentiment regarding emricasan's 28-day effect on severe portal hypertension after the stock market closed. Conatus jumped 36.8% to $7.85 per share in after-hours trading.</p><p>While emricasan acted differently in patients with high and low HVPG levels, Conatus noted that HVPG reductions of at least 10% have been associated with clinical benefits, and in the company's study eight out of 12 cirrhosis patients with severe portal hypertension had a 10% or greater HVPG decrease and four had a 20% or greater reduction after a month of treatment.</p><p>The severity of portal hypertension is important, because the condition eventually may lead to liver failure and death for people with cirrhosis. About 1.2m people in the US and 900,000 in Europe have a cirrhosis diagnosis, but the prevalence may be four times as high based on estimates of undiagnosed cases, Mento said. About 32,000 people in the US die each year of complications related to cirrhosis. </p><p><b>HPVG Enough For Approval?</b></p><p>In terms of emricasan's role in treating the condition, Conatus notes that the US FDA previously has indicated that showing a decrease in HVPG may be an acceptable surrogate endpoint for liver cirrhosis clinical trials, so the company may seek accelerated approval based on a Phase IIb trial with HVPG as its primary endpoint. </p><p>"We will have a registration strategy by the end of the year," Mento said. "We do believe that there is a basis for approval using HVPG as an endpoint."</p><p>It appears that emricasan can reduce severe portal hypertension, but Conatus also hopes to show that the drug's effect can improve liver function when data from the slightly longer term Phase II liver cirrhosis study are reported in the fourth quarter of this year. </p><p>The company's pivotal trial program may also be informed by the 80-patient study evaluating three months of emricasan treatment for liver cirrhosis. The primary endpoint is cCK18 reduction, but the study will assess improvements in liver function via Model for End-Stage Liver Disease (MELD) scores and Child-Pugh-Turcotte (CPT) status.</p><p>But whether or not emricasan can also reverse liver damage, or fibrosis, caused by cirrhosis probably won't be known until Conatus has results from an ongoing 60-patient, two-year, placebo-controlled Phase IIb study. That clinical trial is enrolling post-orthotopic liver transplant (POLT) patients with post-transplant liver fibrosis or cirrhosis due to recurrent HCV infection, who have achieved a sustained virologic response (SVR) after antiviral therapy (POLT-HCV-SVR).</p><p>"Reduction of portal hypertension is the most immediate and rapid effect. The next study will have three-month data reading out later this year with more data in the first half of next year in liver cirrhosis. The third trial is designed to show an impact on fibrosis," Mento said. "I don't know of any drug with all three actions." </p><p><b>Competition Coming Soon</b></p><p>Conatus is one of <a href="http://www.scripintelligence.com/home/BioNotebook-The-Intercept-Effect-new-IPOs-and-a-slew-of-financings-349272" target="_new">several biotechnology companies</a> whose share prices benefitted in early 2014 when Intercept Pharmaceuticals saw its stock soar based on positive results from the Phase II investigator-initiated clinical trial known as FLINT. Intercept's bile acid analog and farnesoid X receptor (FXR) agonist known as obeticholic acid (OCA) showed an <a href="http://www.scripintelligence.com/home/Intercept-skyrockets-281-on-NASH-results-349223" target="_new">improvement in liver fibrosis</a> for people with NASH. </p><p>Intercept is expected to start its Phase III clinical trial for OCA in the treatment of NASH during the third quarter of 2015, which is nearly over, but the drug could hit the market well before the Phase III results are in. Intercept <a href="http://www.scripintelligence.com/policyregulation/Intercept-seeks-US-accelerated-obeticholic-acid-OK-MAA-accepted-359181" target="_new">submitted a new drug application</a> (NDA) in the US and a marketing authorization application (MAA) in the EU in June for OCA as a treatment for primary biliary cirrhosis (PBC). The FDA accepted the NDA and <a href="http://www.scripintelligence.com/home/marketdata/Pipeline-Watch---Pivotal-events-for-late-stage-and-marketed-drugs-28-August--3-September-2015-360280" target="_new">granted priority review</a> at the end of August, setting a Feb. 26 date for the agency's approval decision.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 314
+
+<p>Conatus Pharmaceuticals Inc. reported mostly positive data from the first of two Phase II clinical trials that are meant to inform the design of pivotal trials for emricasan in the treatment of liver cirrhosis associated with alcoholism, non-alcoholic steatohepatitis (NASH) and the hepatitis C virus (HCV).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Conatus Data First Step In Liver Drug Pivotal Trial Design
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150921T060000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150921T060000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150921T060000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029855
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Conatus Data First Step In Liver Drug Pivotal Trial Design
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360558
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042454Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1adb4277-6895-4e5f-b5bc-4100ffc455fb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042454Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

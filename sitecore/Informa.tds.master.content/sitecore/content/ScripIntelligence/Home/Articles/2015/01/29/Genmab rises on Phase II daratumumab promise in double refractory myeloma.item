@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {5862A998-D7A0-4CAB-AA8B-6623DCDBC0A4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/29/Genmab rises on Phase II daratumumab promise in double refractory myeloma
+parent: {93A86D1A-8F23-4D80-A592-DF81C1BD2FC4}
+name: Genmab rises on Phase II daratumumab promise in double refractory myeloma
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b552916c-a3ba-4978-9f06-a263104a3ad9
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 74
+
+Genmab rises on Phase II daratumumab promise in double refractory myeloma 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 73
+
+Genmab rises on Phase II daratumumab promise in double refractory myeloma
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2718
+
+<p>Shares in Genmab rose by as much as 9% on the morning of 4 February after it announced a nearly 30% overall response rate in a Phase II trial of its anti-CD38 antibody product daratumumab as a monotherapy in double refractory multiple myeloma patients. The product already has a breakthrough therapy designation for this indication. </p><p>In the study, conducted by its partner Janssen Biotech (Johnson & Johnson), an Independent Review Committee found that the overall response rate (ORR) was 29.2% in the 16 mg/kg dosing group and the median duration of response was 7.4 months. The two-part study was intended to find the optimal dose and dosing schedule and then test the efficacy of the two most promising doses as measured by ORR. </p><p>124 patients enrolled had received at least three different lines of therapy including both a proteasome inhibitor (such as Takeda/J&J's bortezomib (Velcade) or Amgen's carfilzomib (Kyprolis)) and an immunomodulatory agent (eg Celgene's pomalidomide (Pomylast) or lenalidomide (Revlimid)) or who are double refractory to a proteasome inhibitor and an immunomodulator.</p><p>Genmab said the safety profile in the study was "manageable" and that it hoped to discuss the data with health authorities. Further data will be presented at a medical conference this year. </p><p>Daratumumab is already in Phase III for use in relapsed or refractory multiple myeloma in combination with lenalidomide and dexamethasone compared with lenalidomide and dexamethsome alone. But it is aiming to enter an increasingly crowded market in the second-line setting, and having efficacy in more heavily pre-treated patient would give the product another string to its bow. </p><p>In May 2013, Genmab announced that the FDA had granted daratumumab breakthrough therapy designation for the fourth-line treatment of multiple myeloma patients after prior therapy with a proteasome inhibitor, an immunomodulator, or both. </p><p>But other existing therapies, as well as late-stage pipeline therapies, are also being positioned for the treatment of heavily pretreated multiple myeloma patients, say analysts at Datamonitor Healthcare. Most noteworthy is Celgene's Pomalyst, which has already shown an ORR of 26% in patients with at least three prior lines of therapy when used with low-dose dexamethasone. </p><p>Datamonitor Healthcare believes that daratumumab's breakthrough therapy designation, coupled with Johnson & Johnson&rsquo;s strong commercial support, will enhance the drug&rsquo;s ability to pose a more significant challenge to Pomalyst than PharmaMar's Aplidin (plitidepsin), which is another Phase III drug being positioned for the fourth-line treatment of multiple myeloma. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 340
+
+<p>Shares in Genmab rose by as much as 9% on the morning of 4 February after it announced a nearly 30% overall response rate in a Phase II trial of its anti-CD38 antibody product daratumumab as a monotherapy in double refractory multiple myeloma patients. The product already has a breakthrough therapy designation for this indication. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 73
+
+Genmab rises on Phase II daratumumab promise in double refractory myeloma
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150129T194254
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150129T194254
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150129T194254
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027720
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 74
+
+Genmab rises on Phase II daratumumab promise in double refractory myeloma 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356447
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b552916c-a3ba-4978-9f06-a263104a3ad9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {428E90DE-2F0A-4E25-A6A4-CC595D75EE49}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/26/NIH pharma losers in latest Cures maneuvering
+parent: {32E6A98D-86BC-40BD-A1D6-A27CF9BCD395}
+name: NIH pharma losers in latest Cures maneuvering
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6894d52a-c72f-484a-93a8-c6d6419b7cd4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+NIH, pharma losers in latest 'Cures' maneuvering 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+NIH pharma losers in latest Cures maneuvering
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5623
+
+<p>Two changes made to legislation aimed at overhauling the US biomedical enterprise would trim the $10bn in added funding over five years lawmakers had promised to the National Institutes of Health (NIH) &ndash; cutting it by $1.25bn &ndash; and force some biopharmaceutical makers to pay higher Medicaid rebates.</p><p>The NIH was supposed to get an additional $2bn each year over five years under the original version of the <i>21st Century Cures Act</i>.</p><p>But lawmakers have now reduced that to $1.75bn per year &ndash; or $8.75bn total &ndash; an amount that could change again once the full House takes up the measure next week.</p><p>Another loser in the updated version of the Cures bill is the biopharmaceutical industry, which no longer would be able to exclude so-called authorized generics from the calculation in the rebates companies pay to states and the federal government under the Medicaid program.</p><p>The legislation, also known as HR 6, had easily passed the House E&C on 21 May in a <a href="http://www.scripintelligence.com/home/FDA-hugged-Medicare-plans-squeezed-A-Cures-lovefest-358551" target="_new">unanimous vote</a> &ndash; 51-0. </p><p>The Congressional Budget Office, a nonpartisan organization that provides budgetary advice to lawmakers, last month estimated that implementing the Cures legislation would <a href="http://www.scripintelligence.com/home/Cures-to-cost-106.4bn-exclusivity-ups-health-costs-359093" target="_new">cost $106.4bn over five years</a>, with the reauthorization of the NIH accounting for most of that amount, or $105.1bn.</p><p>While the NIH would not get as much as lawmakers had initially pledged, on the bright side, an $8.75bn increase would still be significant. Plus, House and Senate appropriators have <a href="http://www.scripintelligence.com/home/White-House-NIH-spending-boost-comes-at-healthcares-expense-359111" target="_new">approved an increase</a> of the agency's budget for fiscal year 2016 &ndash; with the former chamber calling for $1.1bn and the latter $2bn. </p><p>The full Congress, however, must still consider and approve the FY 2016 appropriations.</p><p>The changes to the Cures legislation were imposed to make up for a controversial offset that was dropped from the bill, which would have changed the timing of reinsurance payments to Medicare Part D drug plans, which was opposed by healthcare insurers, which stood to lose a bundle of money.</p><p>The Centers for Medicare & Medicaid Services currently makes advance capitated payments, or prepayments, to Part D prescription drug plans for each enrollee at the beginning of each month. </p><p>The Part D plans may invest those Medicare funds in interest-bearing instruments until the money is needed to pay for drug costs and administrative services. </p><p>The law currently does not limit the ability of Part D plans to retain as additional revenue the investment income earned on federal funds.</p><p>The House E&C leaders estimated that limiting the ability of Part D plans to retain investment income earned on Medicare funds over the next five years could bring in as much as $7bn to cover the costs of the Cures bill.</p><p>But the lobbying group America's Health Insurance Plans (AHIP) insisted that changing the timing of the reinsurance payments would have taken funds away from the "component of Medicare that is driving innovation for beneficiaries" &ndash; contradicting the "shared goal of improving patient care and health outcomes for individuals with serious medical conditions."</p><p>AHIP's lobbying paid off &ndash; with lawmakers in the end deciding to seek their Cures pay-fors elsewhere.</p><p>The legislation that passed the E&C Committee in May also had proposed to cover a big chunk of the costs through requiring the Department of Energy to sell 8 million barrels of crude oil from the US Strategic Petroleum Reserve for each year over eight years &ndash; from 2018 through 2025 &ndash; which was estimated to bring in $5.2bn.</p><p>Now, though, the latest revisions call for selling a total of 80 million barrels of oil over that period: 4 million in 2018, 5 million in 2019, 8 million in 2020, 8 million in 2021, 10 million in 2022, 15 million in 2023, 15 million in 2024 and 15 million in 2025.</p><p>But the lawmakers also are looking for savings to pay for the Cures bill by excluding the sales of authorized generics &ndash; medicines produced by innovators but sold under chemical agent names &ndash; from the calculation of the average manufacturer price (AMP) for determining Medicaid rebates.</p><p>The proposal would have the effect of increasing the AMP of brand drugs, therefore, boosting the rebates manufacturers would owe to the states and federal government. </p><p>Companies' sales and reporting of brand products would not be affected by the proposal, lawmakers said.</p><p>Certain drug manufacturers, however, would be liable for Medicaid rebates on their products based on the AMP for the existing brand, calculated without including sales of the lower-priced authorized generic drug.</p><p>There were no changes to the $550m, or $110m each year for five years, lawmakers had included in the bill that passed the E&C Committee in May <a href="http://www.scripintelligence.com/home/FDA-hugged-Medicare-plans-squeezed-A-Cures-lovefest-358551" target="_new">for the FDA</a>. The agency, however, estimated it would need closer to <a href="http://www.scripintelligence.com/home/FDA-1bn-needed-to-cover-Cures-costs-358495" target="_new">$1bn to implement</a> the proposed Cures provisions affecting the FDA.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 318
+
+<p>Two changes made to legislation aimed at overhauling the US biomedical enterprise would trim the $10bn in added funding over five years lawmakers had promised to the National Institutes of Health (NIH) &ndash; cutting it by $1.25bn &ndash; and force some biopharmaceutical makers to pay higher Medicaid rebates.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+NIH pharma losers in latest Cures maneuvering
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150626T183054
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150626T183054
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150626T183054
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029143
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+NIH, pharma losers in latest 'Cures' maneuvering 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359148
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6894d52a-c72f-484a-93a8-c6d6419b7cd4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {641F6C79-49F3-44F8-8FAC-9BC26C179292}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/03/CDC to soon launch NewLinkMerck Ebola vaccine study
+parent: {B4DD542A-3150-404B-9742-7EB9440DE618}
+name: CDC to soon launch NewLinkMerck Ebola vaccine study
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c99053d9-153b-415e-87e8-f8fe6f15c362
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}|{C7FD764C-38F2-42BC-9F1A-A9864C90E18B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+CDC to soon launch NewLink/Merck Ebola vaccine study
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+CDC to soon launch NewLinkMerck Ebola vaccine study
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4680
+
+<p>The Centers for Disease Control and Prevention (CDC) is nearly ready to launch its Phase II/III trial in Sierra Leone testing an experimental monovalent recombinant vesicular stomatitis virus (rVSV) Ebola vaccine from NewLink and its partner Merck.</p><p>The CDC and its collaborators &ndash; the College of Medicine and Allied Health Sciences at the University of Sierra Leone, the Sierra Leone Ministry of Health and Sanitation and the US Biomedical Advanced Research & Development Authority &ndash; plan to enroll 6,000 patients in the study, known as Sierra Leone Trial to Introduce a Vaccine Against Ebola (STRIVE), which is an unblinded, randomized trial with phased vaccine introduction in the target population.</p><p>The trial is expected to launch before the end of this month, a CDC spokesman told <i>Scrip</i>.</p><p>The World Health Organization (WHO) and its partners &ndash; the Health Ministry of Guinea, Medecins Sans Frontieres/Doctors Without Borders, Epicentre and the Norwegian Institute of Public Health &ndash; launched a Phase III trial of the rVSV vaccine in Guinea on 7 March to test the product&rsquo;s effectiveness against Ebola.</p><p>Another study, known as PREVAIL, testing rVSV and an experimental Ebola vaccine developed by the National Institute of Allergy and Infectious Diseases and GlaxoSmithKline, got underway in Liberia on <a href="http://www.scripintelligence.com/home/Much-anticipated-Ebola-vaccine-efficacy-trial-starts-356509" target="_new">2 February</a>.</p><p>The Phase II/III PREVAIL trial was designed to enroll 27,000 adults 18 years or older &ndash; some healthy subjects and others healthcare workers or those at high risk of contracting Ebola.</p><p>But the NIH is <a href="http://www.scripintelligence.com/home/Liberias-drop-in-Ebola-may-mean-NIH-trial-move-357294" target="_new">considering moving</a> the next stage of the PREVAIL trial to potentially Guinea or Sierra Leone because the number of Ebola cases in Liberia have subsided in recent weeks. </p><p>Ebola has infected more than 24,500 people in the current outbreak, killing about 10,100.</p><p>The CDC currently is <a href="http://www.scripintelligence.com/policyregulation/CDC-Several-Americans-potentially-exposed-to-NIH-Ebola-patient-357292" target="_new">investigating</a> how one American healthcare worker became <a href="http://www.scripintelligence.com/policyregulation/Ebola-deaths-top-10000-NIH-to-treat-infected-American-357273" target="_new">infected</a> with Ebola and potentially exposed 10 others to the disease at a treatment center in Sierra Leone.</p><p>A CDC spokesman told <i>Scrip</i> it was unclear whether that center was slated to participate in the STRIVE study.</p><p><b>STRIVE</b></p><p>Participation in the CDC&rsquo;s STRIVE study will be voluntary and open to adults 18 years or older at high risk of exposure to Ebola infection through their daily work and who work in a selected study area, including personnel working in healthcare facilities where care is provided for patients with the virus; those working in non-Ebola healthcare facilities who may have exposure to undiagnosed infected patients; and people working in surveillance or ambulance teams or laboratories where they are responsible for swabbing deceased persons. </p><p>Staff members involved in the study also are eligible to receive the vaccine under the STRIVE protocol. Those people will be followed for six months post-vaccination to monitor for safety of the rVSV vaccine.</p><p>Eligible participants within a healthcare facility or front-line team will be enrolled and individually randomized to either immediate or deferred vaccination with a single dose of rVSV, which will be administered intramuscularly. </p><p>Immediate vaccination is defined as vaccination within seven days of enrollment and deferred vaccination is defined as vaccination at the end of an 18-24 week follow-up period, according to information posted on the clinicaltrials.gov website. </p><p>Participants will not be blinded to the randomized assignment of immediate or deferred vaccination. All enrolled participants will have the opportunity to receive rVSV by the end of the study. </p><p>Enrollment and vaccination will be phased over time.</p><p>Ebola events that occur during the 18-24 week post-enrollment will be included in the vaccine efficacy analysis, with the immediate vaccination arm contributing vaccinated follow-up time and the deferred vaccination arm contributing unvaccinated follow-up time. </p><p>All participants, regardless of randomized assignment, will be followed for six months after vaccination to monitor for safety of rVSV.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 255
+
+<p>The Centers for Disease Control and Prevention (CDC) is nearly ready to launch its Phase II/III trial in Sierra Leone testing an experimental monovalent recombinant vesicular stomatitis virus (rVSV) Ebola vaccine from NewLink and its partner Merck.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+CDC to soon launch NewLinkMerck Ebola vaccine study
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151003T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151003T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151003T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028112
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+CDC to soon launch NewLink/Merck Ebola vaccine study
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357203
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c99053d9-153b-415e-87e8-f8fe6f15c362
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

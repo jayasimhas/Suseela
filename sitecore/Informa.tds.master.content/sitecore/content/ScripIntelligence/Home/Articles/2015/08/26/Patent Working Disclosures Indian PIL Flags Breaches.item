@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {222B4B25-DB02-4C21-B2C0-F22D6607CD4C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/26/Patent Working Disclosures Indian PIL Flags Breaches
+parent: {DD56DE4A-39AC-48A9-BB39-DDC56CF0FE6D}
+name: Patent Working Disclosures Indian PIL Flags Breaches
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1cd599be-2254-4b50-b109-94a20a874c56
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Patent Working Disclosures: Indian PIL Flags Breaches 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Patent Working Disclosures Indian PIL Flags Breaches
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5992
+
+<p>A public interest litigation (PIL) has brought back to focus a seemingly contentious issue around mandatory disclosures pertaining to the working of patents in India. </p><p>The PIL filed in the Delhi High Court by Shamnad Basheer, a former ministry of human resource development chair professor in intellectual property law at the West Bengal National University of Juridical Sciences, has flagged concerns over "widespread contravention" of Form-27 filings norms by patentees. The Indian government, the Controller General of Patents, Designs and Trade Marks and certain others are the respondents in the case.</p><p>This is second time round that Basheer is drawing attention to the issue of mandatory disclosures around patent working. In 2011, he claimed that some foreign firms had flouted these requirements &ndash; an allegation then refuted by the concerned firms.</p><p>India's patent regulations require all patentees and licensees to furnish annual disclosure on the extent to which the patented invention has been worked on a commercial scale in India. The format for this mandatory disclosure is specified as Form-27 under India's patent rules.</p><p>If a patented invention has been worked, under Form 27 the patentee is required to specify, among other details, the quantum and value of sale of the product covered by the patent in India for the relevant year in question, details of licenses and sub-licenses granted and also whether the patented invention is manufactured in India.</p><p>Basheer, who is the founder of SpicyIP, a non-profit online portal on intellectual property rights issues, also referred to the "arbitrary and cavalier" attitude of respondents in failing to effectively enforce statutory provisions pertaining to public disclosure of patent "working" information, despite having "full knowledge" of the contraventions.</p><p>Data provided under Form 27 is considered critical, especially in the area of medicines, given that Indian laws stipulate that non-working of a patented invention is one of the criteria to attract compulsory licensing provisions. The patent controller could also consider revoking patents which are not worked, after a compulsory license has been issued.</p><p>The Patent Controller can fine parties who fail to provide details under Form 27 up to Rs1,000,000 ($15,042) under Section 122 of the Patents Act. Filing of a Form 27 is a requirement not only for pharmaceutical patents but is applicable to any patent issued in India.</p><p>The PIL comes at a time when India is close to finalizing its National Intellectual Property Rights (IPR) policy amid concerns of some other top industry experts that <a href="http://www.scripintelligence.com/policyregulation/Indias-National-IPR-policy-whats-cooking-359573" target="_new">concessions</a> around "patent linkage" and "data exclusivity" may possibly find their way into the final framework.</p><p>Basheer has, in a post on SpicyIP, also claimed that there is seeming pressure by the US government and some multinationals to dismantle Indian patent working norms and have them removed from the statute.</p><p>Leena Menghaney, head (South Asia), Médecins Sans Fronti&egrave;res Access Campaign, told <i>Scrip</i> that safeguards and good practices under India's patent regulations were clearly under attack and referred to a "clear attempt" to bring in patent linkage. </p><p>"While the US is keen to obtain patent rights, it did not want to be responsible for working these patents," she claimed. Menghaney also alleged that adequate efforts were not being made to work the patent on delamanid for MDR-TB. <i>Scrip</i> could not immediately verify these claims or reach Otsuka for a comment.</p><p>One Indian industry expert also referred to a "dog in the manger" approach, where some patentees don't work the patent in a market of India's size. If not anything, the PIL, the official claimed, will potentially put some pressure on the Indian government to not succumb to US pressure.</p><h2>Survey</h2><p>Significantly, Basheer and his research associates also conducted an extensive survey of patent working in the areas of pharmaceutical drugs (lifesaving drugs for fatal diseases such as cancer, AIDS, diabetes and hepatitis), telecommunications and publicly funded R&D.</p><p>The survey, Basheer said, revealed that close to 35% of the patentees failed to disclose their patent working status during 2009 to 2012. The survey also found a significant number of defective declarations - FORM-27s that were "grossly incomplete, incomprehensible," the petition added. Worse still, the respondents had not initiated action against any of the errant patentees, he claimed. </p><p>The petition also refers to how the respondent authorities appear to be "reading down" the provision and not insisting on FORM-27 filings by licensees.</p><p>In 2011, Basheer had indicated that a right to information (RTI) disclosure had revealed that a clutch of foreign firms had <a href="http://www.scripintelligence.com/home/Multinationals-claim-no-flouting-of-Indian-patent-rules-as-disclosures-come-under-scrutiny-313853" target="_new">failed to provide complete data</a> on the working of certain patented products in India as required under Form 27. All the foreign companies had then claimed to have complied with Indian laws. </p><p>Roche had then <a href="http://www.scripintelligence.com/policyregulation/Roche-pushes-for-corrective-statement-from-Indian-Patent-Office-316136" target="_new">written a letter</a> to the Controller General of Patents to issue a "corrective statement" by furnishing information that all its working statements were filed. </p><p>In the current PIL, Basheer has also sought that the present format of Form-27 be declared insufficient to sub-serve the purpose of India's Patents Act, 1970. He has also sought the constitution of a committee of experts to suggest reforms to improve the public disclosure norms around the commercial working of patents.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 174
+
+<p>A public interest litigation (PIL) has brought back to focus a seemingly contentious issue around mandatory disclosures pertaining to the working of patents in India. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Patent Working Disclosures Indian PIL Flags Breaches
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150826T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150826T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150826T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029656
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Patent Working Disclosures: Indian PIL Flags Breaches 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360115
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1cd599be-2254-4b50-b109-94a20a874c56
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

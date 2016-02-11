@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {7B7473C3-3B24-4072-B09E-0E3752B5868F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/27/PharmAsia News business bulletin
+parent: {32110CE4-9FEB-4D8C-9DFF-1F8EA6DC908B}
+name: PharmAsia News business bulletin
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 71e50873-948b-4ab2-9523-05f964a9bcff
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5749
+
+<p>A new regular roundup of commercial stories appearing in <i>Scrip</i>'s sister publication <i>PharmAsia News</i>, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p><p>Full stories can be accessed by clicking on the story title (subscription required).</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/30/lower-china-growth-for-takeda-but-impact-limited" target="_new">Lower China Growth For Takeda, But Impact Limited</a></p><p>In line with some of its larger multinational peers, Takeda saw weaker growth in China over the past three months, although its relatively small exposure to emerging markets and increases for new products in major markets mean investors do not appear concerned.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/30/lilly-hit-by-china-2q-slowdown" target="_new">Lilly Hit By China 2Q Contraction</a></p><p>Not all pharma multinationals have provided details of their emerging markets performance in the second quarter, but for those that have, it is clear that growth in China has slowed dramatically over the past few months. Lilly was among those to concede to current challenges in this major emerging market, although it remains bullish on long term prospects.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/30/novartis-china-growth-slows-sharply-in-2q" target="_new">Novartis China Growth Slows Sharply In 2Q</a></p><p>China's economic slowdown has hit Novartis hard, with the Swiss multinational's second quarter growth in the country being slashed by around half. Despite the company emphasizing the challenges are short-term, the underlying reasons such as growing generic competition from domestic companies could be far-reaching.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/29/medytox-in-china-jv-deal-aims-to-set-up-more-asian-units" target="_new">Medytox In China JV Deal, Aims To Set Up More Asian Units</a></p><p>After the establishment of its first overseas subsidiary in Taiwan early this year, Medytox has set up a joint venture with China's Bloomage BioTechnology to sell its botulinum toxin products and hyaluronic acid fillers in China. The South Korean biopharma company is aiming to establish more subsidiaries in other major Asian countries as part of plans to directly sell its products in the region.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/28/3sbio-acquires-wansheng-to-bolster-small-molecule-portfolio" target="_new">3SBio Acquires Wansheng To Bolster Small Molecule Portfolio</a></p><p>China's 3SBio has been actively scouting M&A targets in both overseas and domestic markets, aiming to enrich its product pipeline and diversify its offering. It has now landed its first acquisition, of a chemical drug maker in China, just one month after its Hong Kong IPO, in a deal that will provide 3SBio with an integrated small molecule R&D and manufacturing platform and increase its manufacturing cost competitiveness.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/27/biocon-betting-big-on-biosimilars-as-profit-jumps" target="_new">Biocon Betting Big On Biosimilars As Profit Jumps</a></p><p>Biocon, India's biggest biotechnology company, has just reported a 23% year-on-year jump in quarterly net profit, and says it has sharply boosted its research and development spend as it bets heavily on biosimilars.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/23/bukwang-acquires-acer-stake-in-pattern-of-venture-investments" target="_new">Bukwang Acquires Acer Stake In Pattern Of Venture Investments</a></p><p>Bukwang Pharm has purchased a minority stake in US bioventure Acer Therapeutics, which is seeking to list its shares on Nasdaq early next year. The investment is the sixth the South Korean firm has made together with TVM Life Science Capital to gain investment returns and beef up R&D.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/21/korean-pharma-asks-for-govt-support-as-mers-hits-sales" target="_new">Korean Pharma Asks For Govt Support as MERS Hits Sales</a></p><p>South Korean pharma firms have decided to ask the government to support the industry, which is suffering from sales decline due to the recent outbreak of the Middle East Respiratory Syndrome (MERS) coronavirus. They will ask the government to postpone a planned drug price cut by one year in an effort to overcome the MERS impact and proceed with drug development and globalization programs.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/20/pharmaresearch-ipo-draws-robust-interest-amid-biotech-boom" target="_new">PharmaResearch IPO Draws Robust Interest Amid Biotech Boom</a></p><p>Following a series of successful IPOs by South Korean biopharma firms earlier this year, helped by the ongoing biotech rallies at home and in the US, PharmaResearch Products, which focuses on cell and tissue regeneration technology, has priced its shares sharply above the pricing band for its offering.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/27/astrazeneca-tests-biosimilar-waters-through-bevacizumab-jv" target="_new">AstraZeneca Tests Biosimilar Waters Through Bevacizumab JV</a></p><p>AstraZeneca and Japan's Fujifilm Kyowa Kirin Biologics have signed an agreement to set up a UK-based joint venture to develop globally a biosimilar version of bevacizumab, marking the first tentative step into the biosimilars sector by the research-based pharma giant.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 243
+
+<p>A new regular roundup of commercial stories appearing in <i>Scrip</i>'s sister publication <i>PharmAsia News</i>, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150727T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150727T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150727T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029393
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359630
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042430Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+71e50873-948b-4ab2-9523-05f964a9bcff
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042430Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {B542364C-013B-4EAE-B0BD-71902B23DDC3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/03/Boehringer Spiriva patent rescinded in India
+parent: {C10C73BD-F7C3-476F-ABFC-B27344ADF644}
+name: Boehringer Spiriva patent rescinded in India
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: df76e74c-481b-4f19-9908-7fcb727219c9
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Boehringer Spiriva patent rescinded in India 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+Boehringer Spiriva patent rescinded in India
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5361
+
+<p>India has revoked a Boehringer Ingelheim (BI) patent concerning a crystalline form of tiotropium bromide monohydrate citing ''obviousness'' and ''lack of inventive step'' and failure to meet the criteria for a patentable invention under the controversial section 3(d) of the Indian Patents Act. </p><p><p>While BI's commercially available Spiriva is the tiotropium bromide monohydrate form, a valid patent for the crystalline version could have eclipsed the existence of generic versions of Spiriva in India, some experts said.</p><p>The revocation follows a post-grant opposition filed in 2013 by Cipla. In 2007 BI's Indian patent claim for ''crystalline tiotropium bromide monohydrate and process thereof'' faced a pre-grant opposition from Intermed Labs, but was granted a patent in 2012.</p><p>Section 3 (d) broadly deals with incremental inventions that are not patentable unless they show improved efficacy or unless a known process results in a new product or employs at least one new reactant.</p><h2>Order details</h2><p>In a 92-page order, Dr Ajay Thakur, Assistant Controller of Patents and Designs, held that that the BI invention claimed and its dependent claims lack inventive step and was obvious to a person skilled in the art and that the opponents ground of opposition had been ''validly established''. </p><p>''To clear the test of inventiveness, the patentee has to show some surprising effect in comparison to closest prior art D3 [which essentially teaches tiotropium bromide] but patentee has failed to show such surprising effect over D3,'' Dr Thakur said in an order dated 4 March.</p><p>BI had asserted that the claimed crystalline had an unexpected surprising advantageous technical effect in meeting the stringent requirements imposed on pharmaceutically active substances to be used for inhalation. </p><p>However, among a string of observations, Dr Thakur noted that it was ''crystal clear'' that the applicant had failed ''miserably'' to disclose any surprising advantageous technical effect in the description and in the evidences and therefore ''cannot be relied upon for assessing inventiveness''. </p><p>Industry experts claimed that BI was merely attempting to patent a crystalline salt of a pre-1995 molecule &ndash; tiotropium bromide monohydrate. Products patented before 1 January 1995 do not qualify for patent protection in India. ''It's like a form of evergreening,'' an expert told <i>Scrip</i>.</p><p>Significantly, the assistant controller also noted that the grant of a patent in other countries ''cannot be cited as a proof of inventiveness'' and referred to a Chinese case cited by Cipla. The Indian firm had highlighted that the Supreme People's Court of People's Republic of China had upheld the invalidity of Boehringer's crystalline tiotropium bromide monohydrate patent application reasoning that it lacked ''unexpected technical effects'' and hence was not ''creative''.</p><p>In the case of failing to meet the conditions of Section 3(d) of the Indian Patent Act, Dr Thakur held that for a polymorph to qualify for an invention under the section, it has to show significant improvement of therapeutic efficacy as compared to the known form. </p><p>''The impugned patent relates to the crystalline tiotropium bromide monohydrate which is a polymorph of tiotropium bromide; however, there is no disclosure in the specification as to enhancement in the therapeutic efficacy as compared to its structurally similar compounds i.e. tiotropium bromide as cited in document D3,'' he said.</p><p>Under Section 3(d), salts, esters, ethers, polymorphs, and other derivatives of known substances are presumed to be the same substance as the original chemical and thus not patentable, unless it can be shown that they differ significantly in properties with regard to efficacy.</p><h2>BI's arguments</h2><p>BI, in its defence, put forth a series of arguments and said that Cipla did not file any evidence with the opposition.</p><p>It also argued that the Indian firm was incorrect in stating that the inventive step of the invention lay in the particle size of the active. BI submitted that the problem underlying the invention was not to determine the effective particle size range but lay in identifying and finding a novel pharmaceutical substance that can be converted into the particle size range which is effective in entering the lungs when administered by inhalation. </p><p>BI underscored that there was no teaching or motivation in D3 to arrive at a tiotropium bromide monohydrate form.</p><p>The German multinational also said that the invention was not mere discovery and therefore, section 3(d) would not apply. Even if section 3(d) was applied, BI believes that it had shown increase in pharmaceutical properties and therapeutic efficacy of the claimed form vis-a-vis a closest known compound tiotropium bromide disclosed in D3.</p><p>BI told <i>Scrip</i> that the Indian patent relating to tiotropium bromide monohydrate had been previously granted and all other requirements of patentability had been confirmed by the patent office.</p><p>''BI will be evaluating carefully the basis for the recent decision once the detailed reasons thereof are available,'' a statement from the company said.</p><p>BI can appeal against the revocation decision to India's Intellectual Property Appellate Board.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 302
+
+<p>India has revoked a Boehringer Ingelheim (BI) patent concerning a crystalline form of tiotropium bromide monohydrate citing ''obviousness'' and ''lack of inventive step'' and failure to meet the criteria for a patentable invention under the controversial section 3(d) of the Indian Patents Act. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Boehringer Spiriva patent rescinded in India
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150403T111122
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150403T111122
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150403T111122
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028044
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Boehringer Spiriva patent rescinded in India 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357060
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+df76e74c-481b-4f19-9908-7fcb727219c9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

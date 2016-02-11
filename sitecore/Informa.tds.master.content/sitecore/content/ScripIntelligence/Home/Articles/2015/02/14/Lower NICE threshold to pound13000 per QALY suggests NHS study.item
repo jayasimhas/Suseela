@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {74340BC2-4767-4483-B315-2E12D15254EC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/14/Lower NICE threshold to pound13000 per QALY suggests NHS study
+parent: {A647F8EB-FA40-4C70-A196-25708FDF442B}
+name: Lower NICE threshold to pound13000 per QALY suggests NHS study
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0631961a-be7b-41d5-9470-eb6d48789c74
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Lower NICE threshold to &pound;13,000 per QALY, suggests NHS study
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+Lower NICE threshold to pound13000 per QALY suggests NHS study
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4124
+
+<p>NICE should not be recommending drugs which cost the NHS more than &pound;13,000 per quality adjusted life year (QALY), suggests a new study conducted on behalf of the UK's National Institute of Health Research (NIHR). If the UK were to follow this advice, market access for the majority of innovative drugs would be almost impossible.</p><p>The study, published in a journal called <i>Health Technology Assessment </i>and done by researchers at the University of York led by Professor Karl Claxton, found that spending any more than &pound;13,000 per QALY on a new drug displaces a disproportionate amount of QALYs from elsewhere in the NHS's budget. This means that although some patients benefit from gaining access to the new treatment, far more suffer from a drop in NHS services as cheaper treatments and interventions are dispensed with.</p><p>As an example, the study notes that NICE's approval of Roche's eye drug Lucentis (ranibizumab) would have imposed costs of up to &pound;80m a year on the NHS, likely displacing 6,184 QALYs from elsewhere in the system. The study reckons this would likely have been made up of 411 additional deaths, and 1,864 life-years forgone, mostly occurring in patients with respiratory, gastrointestinal, and circulatory diseases, and cancer. An additional 4,987 QALYs associated with quality of life would have been forgone, mainly by patients with respiratory, neurological, circulatory and mental health conditions.</p><p>These patients, the study says, are largely anonymous compared to the high profile garnered by some patient groups when NICE rejects high-cost drugs. In particular, there is often a high profile national media debate when NICE says the NHS cannot afford innovative cancer drugs. By contrast, it is not possible to identify all the patients who are negatively affected because cheaper treatments have been displaced.</p><p>However, lowering NICE's threshold &ndash; which is currently &pound;20,000-30,000 &ndash; to &pound;13,000 would mean that very few innovative products would make it onto the English and Welsh market. Sir Andrew Dillon, NICE's chief executive, noted in a blog response to the study: "Unless you believe that drug companies would be prepared to lower their prices in an unprecedented way, reducing the threshold to &pound;13,000 per QALY would mean the NHS closing the door on most new treatments."</p><p>NICE has often been criticized for sticking by its QALY threshold, which has not been changed since 2004. Many people would like more research into what is often seen as an arbitrary figure, but few have argued the case for lowering it. More typically, the calls come from parties who wish to see more innovative products accepted onto the UK market, which would mean increasing the threshold. </p><p>NICE itself encourages debate on whether or not the balance is right, but is for now confident that the &pound;20,000-30,000 range is appropriate. "We think we've found a balance that reflects what the public expect the NHS to do," said Sir Andrew. "At this threshold, NICE currently recommends eight out of 10 drugs or other technologies that it appraises, including six out of 10 cancer drugs. So we are careful about protecting, as much as we can, the interests of those who don't benefit from the newest treatments."</p><p>Sir Andrew also commented that by focusing solely on QALYs, the study ignores points which are highly valued by other stakeholders. "This includes encouraging an innovative UK research base, or perhaps valuing more highly specific treatments that may be the only option for people with certain conditions," he said. </p><p>The Association of the British Pharmaceutical Industry (ABPI) agrees. The report "misses a fundamental point about how NHS investment decisions are made. Very few healthcare decisions are made using the QALY alone and in reality a wide range of other factors are used for decision making," said Paul Catchpole, director of value and access. He added that while the study is likely to be of academic interest, it "should not be used as a basis for policy or decision making."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 342
+
+<p>NICE should not be recommending drugs which cost the NHS more than &pound;13,000 per quality adjusted life year (QALY), suggests a new study conducted on behalf of the UK's National Institute of Health Research (NIHR). If the UK were to follow this advice, market access for the majority of innovative drugs would be almost impossible.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+Lower NICE threshold to pound13000 per QALY suggests NHS study
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150214T102825
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150214T102825
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150214T102825
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027874
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Lower NICE threshold to &pound;13,000 per QALY, suggests NHS study
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199400040
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356759
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042257Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0631961a-be7b-41d5-9470-eb6d48789c74
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042257Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

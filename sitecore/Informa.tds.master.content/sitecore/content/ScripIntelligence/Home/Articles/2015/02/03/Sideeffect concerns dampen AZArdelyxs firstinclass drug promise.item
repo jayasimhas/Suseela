@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {DDC34CFA-DC44-4644-A519-AA2FC7C102AE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/03/Sideeffect concerns dampen AZArdelyxs firstinclass drug promise
+parent: {55E29947-DC90-4290-B641-1F353372E1C3}
+name: Sideeffect concerns dampen AZArdelyxs firstinclass drug promise
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: cb25161d-93c4-4fc3-babe-9af7e97d7ca0
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+Side-effect concerns dampen AZ/Ardelyx's first-in-class drug promise
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Sideeffect concerns dampen AZArdelyxs firstinclass drug promise
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3637
+
+<p>A Phase IIb study of Ardelyx's selective NHE3 inhibitor tempanor has thrown up a side-effect concern in one of its potential indications, hyperphosphatemia. Shares in the firm dropped by 29% to close at $19.25 on Nasdaq on 2 February. </p><p>The company, which partnered with AstraZeneca for development of the first-in-class product back in 2012 for $35m up front (<a href="http://www.scripintelligence.com/home/AstraZeneca-tie-up-worth-up-to-870m-to-sodium-diverting-Ardelyx-335882" target="_new">scripintelligence.com, 8 October 2012</a>), said that AstraZeneca's 161-patient study of tenapanor in hyperphosphatemic patients with chronic kidney disease on hemodialysis met its primary endpoint of a significant dose-related decrease in serum phosphate levels compared with placebo (p=0.012). However, the rate of diarrhea, while expected due to its pharmacological action, was "distinctly higher than previously observed". </p><p>Tenapanor is a minimally absorbed oral drug that works by inhibiting the intestinal sodium transporter NHE3 (sodium&ndash;hydrogen exchanger 3) to reduce the intestinal absorption of both dietary sodium and phosphorus. The idea is that decreasing the absorption of sodium in the gastrointestinal tract both from ingested food and from endogenous sources such as pancreatic and biliary secretions diverts sodium excretion away from the kidney to the faeces, sparing the kidney from sodium exposure and fluid accumulation. It appears to be the only product with this mechanism of action in clinical development.</p><p>Tenapanor is also in Phase II for constipation-predominant irritable bowel syndrome, for which positive results were reported late last year (<a href="http://www.scripintelligence.com/researchdevelopment/AstraZeneca-partnered-IBS-drug-positive-in-PhII-but-lags-Linzess-354240" target="_new">scripintelligence.com, 1 October 2014</a>). Here diarrhea was also a side-effect, but its incidence was modest. </p><p>Meanwhile, another Phase IIa study is ongoing in Stage 3 chronic kidney disease patients with type 2 diabetes, the presence of the protein albumin in the urine (albuminuria) and high blood pressure. Results are due in the second quarter of 2015, earlier than the second half of 2015, as was previously reported, Ardelyx said.</p><h2>data</h2><p>The newly reported Phase IIb trial evaluated six dose levels of tenapanor (3 and 30mg once daily, and 1, 3, 10, and 30mg twice daily) in 161 hyperphosphatemic patients with chronic kidney disease on hemodialysis (end-stage renal disease or ESRD). </p><p>The primary efficacy endpoint was the change from baseline of serum phosphate levels to the end of treatment and the endpoint was analyzed using an analysis of covariance model (ANCOVA). The company said there was an intent-to-treat dose-response relationship for the primary endpoint and that twice daily dosing had better pharmacodynamic activity than once daily.</p><p>More information on the magnitude of the decrease in serum phosphate levels awaits full presentation of the results. </p><h2>concern</h2><p>Analysts at BioMedTracker said that the higher than expected rate of diarrhea was "a big concern in patients whose fluid balance is very important". Based on unknown magnitude of an efficacy effect coupled with a concerning safety signal for patients with CKD, they are decreasing their likelihood of approval rate in this indication by 10% to 14% pending further details of the adverse events.</p><p>BioMedTracker pitches tenapanor's likelihood of approval for IBS at 67%, ie 5% above average, and at 24% (the same as average) for end-stage renal disease. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 242
+
+<p>A Phase IIb study of Ardelyx's selective NHE3 inhibitor tempanor has thrown up a side-effect concern in one of its potential indications, hyperphosphatemia. Shares in the firm dropped by 29% to close at $19.25 on Nasdaq on 2 February. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Sideeffect concerns dampen AZArdelyxs firstinclass drug promise
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150203T170421
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150203T170421
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150203T170421
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027708
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+Side-effect concerns dampen AZ/Ardelyx's first-in-class drug promise
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356432
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cb25161d-93c4-4fc3-babe-9af7e97d7ca0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

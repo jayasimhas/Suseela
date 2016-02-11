@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {0B579797-138F-4249-AE4E-8E36874B477A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/07/Afferent raises $55m from IPOfocused investors
+parent: {CCCCEB03-F824-4093-9DF3-B59985C4D8C0}
+name: Afferent raises $55m from IPOfocused investors
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d32a88f5-7ae2-4d0c-8d4f-5cdd5383ea7c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Afferent raises $55m from IPO-focused investors
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+Afferent raises $55m from IPOfocused investors
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4365
+
+<p>San Mateo, California-based Afferent Pharmaceuticals will prepare for a Phase III study for lead drug candidate AF-219 and take a second P2X3 antagonist into the clinic with $55m in venture capital from investors that hope the private company will go public fairly soon. </p><p>Fidelity Management & Research Co led fundraising for Afferent's Series B round with a group of like-minded crossover investors &ndash; groups that back private firms to be in a good position when a company is ready for an initial public offering. Afferent CEO Kathleen Sereda Glaub told <i>Scrip</i> that an IPO is one option that the company is considering to fund development and commercialization of AF-219.</p><p>The fact that AF-219 may be able to treat patients plagued by coughing in both large and orphan indications makes Afferent an attractive candidate for an IPO, especially since the drug is moving into late-stage development. The addition of significant new capital to the company's balance sheet also may give stock market investors some peace of mind if Afferent goes public well before the Series C cash runs out.</p><p>With this latest funding round, Afferent has raised $98m in venture capital since it launched with a $23m Series A round after <a href="http://www.scripintelligence.com/business/Roche-out-licenses-pain-programme-to-new-company-185401" target="_new">licensing Roche's assets targeting the P2X3 receptor</a>. The company also raised $20m in Series B capital in late 2014.</p><h2>Maintaining focus</h2><p>Afferent has kept its focus on the development of drugs that target the P2X3 receptor, which mainly is expressed in C-fiber primary afferent nerves found in tissues, hollow organs and joints. These neurons usually are not very important, but they can become hyperactive or oversensitive following an injury, infection or inflammation.</p><p>While Afferent prepares AF-219 for a Phase III clinical trial in pathologic cough, which is expected to begin in early 2017, the company will run a study testing a lower dose of the P2X3 receptor antagonist. The drug reduced cough frequency by 84% in a prior Phase II trial and top-line data from a fully enrolled Phase IIb study are expected in September.</p><p>Pathologic cough encompasses non-productive coughing that falls into three categories &ndash; chronic cough that continues for months or years after an infection or injury, sub-acute cough that lasts for three to eight weeks (i.e. whooping cough), and acute cough that occurs for less than three weeks (a cough that follows a cold). </p><p>About 10% of people in the US suffer from chronic cough and while some of those patients have underlying diseases, such as chronic obstructive pulmonary disease (COPD) or gastroesophageal reflux disease (GERD), cough is not well-controlled by medicines for those conditions. </p><p>As for the sub-acute population, about 25,000 people were diagnosed with whooping cough in 2013. And in the acute cough category, most people have two colds per year, many of which conclude with a nagging cough. Added together, the three groups included in the pathologic cough indication represent a market of potentially millions of patients.</p><h2>Orphan indication possible</h2><p>However, Afferent also will use its Series C cash to test its lead drug candidate in a small orphan indication &ndash; chronic cough associated with idiopathic pulmonary fibrosis (IPF) &ndash; in a Phase II clinical trial. Depending on the trial's results, the company will speak with regulators about accelerated approval for AF-219 as a treatment for the chronic cough experienced by most of the 85,000 people in the US diagnosed with IPF.</p><p>"If the data in this study is sufficient, we think we would be in a good position to discuss a potential accelerated path forward and that will involve beginning a Phase III [IPF] study," Ms Glaub said.</p><p>The Series C funding also will cover a Phase I clinical trial in healthy volunteers for AF-130, which is being developed for cardiovascular or other diseases. If the drug appears to be safe in the initial trial, Afferent plans to conduct a proof-of-concept study, possibly in treatment-resistant hypertension. The company expects to file an investigation new drug (IND) application for AF-130 by the end of third quarter 2015 after completion of IND-enabling studies.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 278
+
+<p>San Mateo, California-based Afferent Pharmaceuticals will prepare for a Phase III study for lead drug candidate AF-219 and take a second P2X3 antagonist into the clinic with $55m in venture capital from investors that hope the private company will go public fairly soon. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Afferent raises $55m from IPOfocused investors
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150207T110002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150207T110002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150207T110002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029184
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Afferent raises $55m from IPO-focused investors
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359223
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042419Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d32a88f5-7ae2-4d0c-8d4f-5cdd5383ea7c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042419Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

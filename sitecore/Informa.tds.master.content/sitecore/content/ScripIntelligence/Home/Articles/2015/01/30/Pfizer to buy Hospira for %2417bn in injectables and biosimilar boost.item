@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {FBB962E8-9BB3-4048-B48B-FF804DF9E631}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/30/Pfizer to buy Hospira for $17bn in injectables and biosimilar boost
+parent: {BCCFFBED-8CF5-4EB8-8FFF-BBD8EF95AF0D}
+name: Pfizer to buy Hospira for $17bn in injectables and biosimilar boost
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2a6ed98c-f9e7-4df4-bda9-ab8d85f23d9a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+Pfizer to buy Hospira for $17bn in injectables and biosimilar boost
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+Pfizer to buy Hospira for $17bn in injectables and biosimilar boost
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2532
+
+<p>Pfizer is to acquire the injectables and biosimilar specialist Hospira for $90 a share in cash, in a deal worth around $17bn.</p><p>Pfizer expects the transaction, which has been unanimously approved by both boards, to be immediately accretive to earnings, by $0.10 - $0.12 per share for the first full year following its close, with additional accretion thereafter.</p><p>Pfizer will finance the transaction through a combination of existing cash (about two thirds of the value) and new debt (one third). It is also expected to deliver $800m in annual cost savings by 2018. </p><p>The acquisition of Hospira will bring a growing revenue stream and a platform for growth for Pfizer's global established pharmaceuticals (GEP) business, the big pharma says. The deal is designed to enhance Pfizer's GEP division, and "vault it into a leadership position in the large and growing off-patent sterile injectables marketplace". It will allow Pfizer to build a broad portfolio of biosimilars in its therapeutic areas of strength. Pfizer will use its commercial muscle to take Hospira's products, which are currently distributed primarily in the US, to Europe and key emerging markets, where GEP has a significant presence. </p><p>The combined firm will have a larger portfolio of sterile injectable pharmaceuticals, including Hospira's broad generic sterile injectables product line, and its biosimilars portfolio, combined with GEP's branded sterile injectables, including anti-infectives, anti-inflammatories and cytotoxics. </p><p>"The proposed acquisition of Hospira demonstrates our commitment to prudently deploy capital to create shareholder value and deliver incremental revenue and EPS growth in the near-term," said Pfizer chairman and CEO Ian Read. "In addition, Hospira's business aligns well with our new commercial structure and is an excellent strategic fit for our Global Established Pharmaceutical business, which will benefit from a significantly enhanced product portfolio in growing markets. Coupled with Pfizer's global reach, Hospira is expected to drive greater sustainability for our Global Established Pharmaceutical business over the long term." </p><p>Both sterile injectables and biosimilars are large and growing categories, Pfizer notes. The global marketplace value for generic sterile injectables is estimated to be $70bn in 2020, while the global marketplace for biosimilars is estimated to be approximately $20bn in 2020. </p><p>Pfizer will host a conference call to discuss the deal at 9am EST.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 132
+
+<p>Pfizer is to acquire the injectables and biosimilar specialist Hospira for $90 a share in cash, in a deal worth around $17bn.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+Pfizer to buy Hospira for $17bn in injectables and biosimilar boost
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150130T171538
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150130T171538
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150130T171538
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027730
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+Pfizer to buy Hospira for $17bn in injectables and biosimilar boost
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356470
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2a6ed98c-f9e7-4df4-bda9-ab8d85f23d9a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

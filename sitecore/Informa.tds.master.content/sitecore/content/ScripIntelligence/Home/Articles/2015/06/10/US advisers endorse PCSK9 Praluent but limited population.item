@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {2514EDDB-37CC-42BC-8A49-CB682611E090}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/10/US advisers endorse PCSK9 Praluent but limited population
+parent: {7DA54026-83C1-4132-8355-6BAE992E24F0}
+name: US advisers endorse PCSK9 Praluent but limited population
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7b069d9f-d72e-4685-8c62-c3d2a656cb92
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+US advisers endorse PCSK9 Praluent, but limited population
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+US advisers endorse PCSK9 Praluent but limited population
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8518
+
+<p>Not wanting to withhold a new type of cholesterol-lowering drug for two years from desperate patients while waiting for cardiovascular outcomes trial (CVOT) data, a panel of experts on 9 June supported Sanofi and Regeneron Pharmaceuticals putting their proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitor Praluent (alirocumab) on the US market, despite fears that an FDA approval could mean the large study testing the medicine's ability to prevent heart attacks may be abandoned. </p><p>The FDA's Endocrinologic and Metabolic Drugs Advisory Committee (EMDAC) voted 13-3 that Sanofi and Regeneron had sufficiently established that the low-density lipoprotein (LDL) lowering benefit of Praluent exceeded its risks to support approval in one or more patient populations.</p><p>But most on the committee said Praluent should only approved to treat patients with heterozygous familial hypercholesterolemia (HeFH) &ndash; a genetic disease that causes unusually high levels of LDL-C, often resulting in heart attacks at a young age &ndash; and those at high CV risk where statins are not enough.</p><p>Sanofi and Regeneron, however, want to market the drug in the US as a long-term treatment of adults with primary hypercholesterolemia &ndash; non-familial and HeFH &ndash; or mixed dyslipidemia, including patients with type 2 diabetes, to reduce LDL-C, total cholesterol, non-high-density lipoprotein cholesterol HDL-C, apolipoprotein B, triglycerides and lipoprotein (a) and to increase HDL-C and apolipoprotein A1.</p><p>The companies said Praluent is intended to be used in combination with a statin, with or without other lipid-modifying therapy (LMT), or as a monotherapy &ndash; or as add-on to other non-statin LMT &ndash; in patients who cannot tolerate statins. </p><p>But the EMDAC panelists said the FDA should wait until the 18,000-patient CVOT, known as ODYSSEY OUTCOMES, was completed before permitting Sanofi and Regeneron to market Praluent in a broader patient population to lower LDL-C.</p><p>The CVOT, which got underway in 2012, is expected to complete enrollment by the end of this year, with data anticipated by the end of 2017.</p><p>Most on the committee also said Praluent-induced LDL-C lowering was not sufficient to substitute for demonstrating the drug's effect on clinical outcomes.</p><p>"There is no substitute for cardiovascular outcomes," said panelist Dr Philip Sager, a consulting professor of medicine at Stanford University in San Francisco.</p><p><b>Market life means CVOT&rsquo;s death?</b></p><p>Several EMDAC members expressed concern that once Praluent was on the market &ndash; especially if it got the broad indication &ndash; patients would demand the drug rather than being in the placebo group and Sanofi and Regeneron would not finish the CVOT.</p><p>"I don't want to see the cardiovascular outcomes trial derailed, which I think it would be if the drug is licensed for anyone but certainly for a wide swath of people," said panelist Dr Martha Nason, a mathematical statistician at the National Institute of Allergy and Infectious Diseases," who voted against approval. "I think it's going to be really important to get that data."</p><p>But, she said, once Praluent is available, "I think you would systematically lose a lot of placebo people" from the CVOT.</p><p>"We need assurances from the sponsors the outcomes trial will be completed," said Dr Michele Orza, the consumer representative on the EMDAC.</p><p>Dr Jay Edelberg, head of Sanofi's PCSK9 development and launch unit, said the companies are working with all of the CVOT sites in 50 countries and the investigators and patients and trying to convince them "about the importance of staying in the trial to answer this important question&rdquo; on CV outcomes with Praluent.</p><p>Dr Christopher Cannon, a professor of medicine at Harvard University and a cardiovascular physician at Brigham & Women's Hospital in Boston and a consultant for Sanofi and Regeneron, said study investigators "face this all the time in doing big trials, and we do a reasonable job keeping them going."</p><p>"It's always a concern of the changing landscape and is something trial groups are well-poised to try to respond to," Dr Cannon said.</p><p>But he insisted that if Praluent were approved by the FDA, at least 75% of the CVOT participants would likely remain in the study because they are outside of the US.</p><p>Dr James Smith, deputy director of the FDA's Division of Metabolism and Endocrinology Products, said the agency had "no reason to suspect" Sanofi and Regeneron "won't do everything in their power to encourage investigators and patients to remain in the trial and uphold integrity."</p><p>But, he said, "It's a risk."</p><p>Dr Smith noted there have been other situations with CVOTs in which a drug has entered the market and "They didn't have great success."</p><p>But he said it is a situation the FDA "can't control that once the drug is on the market."</p><p>"We can't predict the future," Dr Smith said.</p><p>"I hope and strongly encourage the sponsors to complete the outcomes trials and with that data in hand, they might be able to go for a broader indication," said panelist Dr Daniel Budnitz, director of medication safety at the Centers for Disease Control and Prevention.</p><p>One motivation for Sanofi and Regeneron to complete the CVOT for Praluent, said EMDAC chairman Dr Robert Smith, a professor of endocrinology at Brown University Alpert Medical School, is "if the trial comes out favorably, that can have tremendous impact in terms of the utilization of the drug."</p><p>The CVOT might also be able to answer some safety questions about diabetes, neurocognitive and liver function signals, the panelists said, although they also acknowledged it may take several years before it's clear what those signals mean. So they said those signals should therefore be monitored and potentially studied.</p><p>The FDA had also raised concerns about LDL levels slipping below 25mg/dL &ndash; which also was a worry for some on the committee.</p><p>But Dr Ned Braunstein, senior vice president of regulatory affairs at Regenron, said the company's two-dose strategy of 75mg and 150mg was designed to achieve cholesterol goals, "while avoiding very low LDL."</p><p>He said the "practical way" to start Praluent for most patients is on the 75mg dose and reserve the 150mg dose for the more difficult to treat patients. </p><p><b>Tough to market?</b></p><p>Panelist Dr Abraham Thomas, chairman of the Department of Medicine at New York University Lutheran in Brooklyn, predicted Sanofi and Regeneron may have trouble marketing their injectable drug without the CVOT data.</p><p>"It's hard enough to get patients to take statins . . . an oral med once a day. It's going to be harder to get someone to take an injection once every two weeks without convincing data," Dr Thomas said.</p><p>Debra McCall, the patient representative on the EMDAC, however, said an injection every two weeks "may be a plus" for patients who are "suffering pill fatigue."</p><p>"And one more pill might be one too many," she said.</p><p>But Dr Thomas insisted the CVOT data will be key to driving prescribers to prescribe Praluent.</p><p>And, he said, given that it's money that drives the US healthcare system, "I don't think pharmacy benefit managers and insurers want to pay for something unless they have outcomes data."</p><p>Nonetheless, Dr Thomas said "I don't think it's right to deprive the FH patients who could benefit from this drug in the short term." </p><p>"I think there is an unmet need in the heterozygous FH group," said panelist Dr Nancy Geller, chief of the Biostatistics Branch at the US National Heart, Lung and Blood Institute. "I don't want to deprive them of this drug for another two years."</p><p>But, she said, "I think we really want the outcomes trial results before we approve it in others."</p><p>With the EMDAC backing a more limited label for Praluent, JP Morgan analyst Cory Kasimov said he anticipated Sanofi and Rengeron to launch the drug in two stages &ndash; with a "tempered" rollout after approval, which is expected by 24 July, followed by a "reacceleration" post-positive CVOT results in late 2017 or early 2018 once the broader population is added to the labeling. </p><p>"Longer term, we still see multi-billion dollar sales potential," Mr Kasimov predicted.</p><p>The EMDAC will review Amgen's PCSK9 inhibitor Repatha (evolocumab) on 10 June.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 495
+
+<p>Not wanting to withhold a new type of cholesterol-lowering drug for two years from desperate patients while waiting for cardiovascular outcomes trial (CVOT) data, a panel of experts on 9 June supported Sanofi and Regeneron Pharmaceuticals putting their proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitor Praluent (alirocumab) on the US market, despite fears that an FDA approval could mean the large study testing the medicine's ability to prevent heart attacks may be abandoned. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+US advisers endorse PCSK9 Praluent but limited population
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150610T053116
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150610T053116
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150610T053116
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028950
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+US advisers endorse PCSK9 Praluent, but limited population
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358783
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042400Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7b069d9f-d72e-4685-8c62-c3d2a656cb92
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042400Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {D84F1739-A747-4232-8F47-70233A11AC9B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/20/Indias rotavirus vaccine row show me the data
+parent: {4A5C71DE-F86E-4022-98D9-F4BD70B5C95D}
+name: Indias rotavirus vaccine row show me the data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 200c36e5-9714-492e-8cc4-0f1f096b9828
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+India's rotavirus vaccine row: show me the data
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Indias rotavirus vaccine row show me the data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9648
+
+<p>A public interest litigation (PIL) has brought to the fore a simmering controversy over alleged safety signals concerning an indigenous oral rotavirus vaccine (Rotavac) developed through a unique public-private partnership in India.</p><p>The PIL filed in the Delhi High Court by Dr Jacob Puliyel, a paediatrician with St Stephen's Hospital, Delhi, is said to have sought a court direction against further trials of the vaccine till full data from the earlier trials is made available. Dr Puliyel is also a member of India's National Technical Advisory Group on Immunization (NTAGI).</p><p>At the core of the controversy are concerns over the allegedly high risk of intussusception that may potentially be associated with the Indian vaccine. </p><p>Dr Puliyel has requested that disaggregated data on numbers of ultrasound-diagnosed intussusception among the vaccinated and the controls in the trial site in Vellore be shared so that any potential risk may be calculated meaningfully. </p><p>In a letter to the editor published in the peer reviewed journal <i>Vaccine</i> last year, Dr Puliyel and a colleague noted that a surveillance study for intussusception in a Phase III efficacy trial of Rotavac suggests that there was an excess of 11 cases of intussusception per 10,000 vaccinated. </p><p>"This is 5&ndash;10 times higher than the risk of intussusception with Rotashield vaccine (which was withdrawn from the market) and nearly 70 times higher than the risk of intussusception with the current, internationally licensed vaccine, RotaTeq," the physician claimed in the letter. The Phase III clinical trial with the Indian vaccine enrolled more than 6,700 children across three Indian sites in Delhi, Pune, Vellore &ndash; 4,532 children received the vaccine and 2,267 placebo.</p><p>Dr Puliyel also refers to the varied rate of intussusception in the different regions under the study - an incidence of 581 per 100,000 child-years (95% CI 332, 943) at Vellore, 178 per 100,000 child-years (95% CI,58, 415) at Pune and 27.7 per 100,000 child-years (95% CI, 3, 100) at Delhi. </p><p>The regional differences in intussusception rates, he believes, could mean that it may be more risky to use the vaccine in some areas. </p><p>"We need to know number of kids vaccinated and number in controls (in the two year study period) in Vellore with symptoms of intussusception confirmed by a paediatrician, numbers further confirmed by ultrasound, and numbers that needed surgery separately in the two groups. This is the data we are requesting," Dr Puliyel told <i>Scrip</i>.</p><p>The Clinical trial registry of India (CTRI) registration has registered this as an outcome measure so the data is available, he underscored.</p><p>Dr Puliyel explains that if indeed there is a "statistically significant" increase in the intussusception rate one centre, it will be "completely unethical" to do further trials as it will be exposing children in areas where "we do not know susceptibility, to unacceptable risk". </p><p>"Perhaps disclosure of data from Vellore may shut down further studies and that is why there is this reluctance to part with the data," Dr Puliyel alleged.</p><p>On any potential risk around the general use of the vaccine in India, at least in the near term, given the general state of the country's healthcare system, access to care, Dr Puliyel said that much will depend on what the data shows. </p><p>"For the present I do not know. If the Vellore data does not show statistically significant increase in intussusception it may be alright to license. If there is significant difference, then license for general use in India cannot be given," he declared.</p><h2>Rotavac </h2><p>Rotavac's final licensure or then non-licensure could be potentially game changing since it is expected to be priced at a fraction of the currently available products from Merck & Co and GlaxoSmithKline. </p><p>Last year, Sanofi group firm <a href="http://www.scripintelligence.com/business/Sanofi-eyes-2016-rotavirus-vaccine-licensure-in-India-354485" target="_new">Shantha Biotechnics</a>, initiated Phase III trials in India for its investigational rotavirus vaccine, which it expects will be ready for licensure in the country in 2016. An estimated 100,000 young children die each year from severe diarrhoea and dehydration caused by the rotavirus in India. </p><p>The <a href="http://www.scripintelligence.com/researchdevelopment/Dollar-a-dose-rotavirus-vaccine-on-Indian-horizon-343209" target="_new">Rotavac</a> vaccine originated from an attenuated strain of rotavirus that was isolated from an Indian child at the All India Institute of Medical Sciences in New Delhi in 1985-86, and the project has involved multiple partners including India's Department of Biotechnology (DBT), the local firm Bharat Biotech, the US National Institutes of Health, the US Centers for Disease Control and Prevention (CDC), Stanford University School of Medicine, and the non-governmental organization PATH. </p><p>Bharat Biotech's Sai D Prasad, president (quality operations) told <i>Scrip</i> that the firm was unable to send a "detailed technical response" to <i>Scrip's</i> queries on the issue due to the shortage of time but referred to previous articles and publications including the World Health Organization's Weekly epidemiological record dated 18 July 2014 and ones in <i>The Lancet</i> and <i>Vaccine</i>.</p><p>Details in the WHO record explained that while there were 11 confirmed cases of intussusception in the Indian Phase III study importantly, no case occurred in proximity to the time of vaccination. </p><p>"The earliest case following receipt of placebo was 36 days post dose 3. The earliest case following receipt of Rotavac was 112 days post dose 3. The lack of a temporal association argues strongly against a causative relationship between Rotavac and intussusception since most rotavirus vaccine-attributable cases are expected to occur within the first week following vaccination," details in the WHO epidemiological record said.</p><p>It also said that the observed incidence of confirmed intussusception was 94 per 100,000 child-years (95% confidence interval [CI]: 41&ndash;185) among vaccinated infants and 71 per 100,000 child-years (95% CI:15&ndash;206) among those who received placebo. And this incidence is similar to that measured, in the absence of vaccine, from countries with active surveillance systems for intussusception. It then noted that since the available safety data support further use of the vaccine, a post-licensure study of at least 45,000 vaccinated infants is planned. </p><p>"However, based on the experience with similar vaccines, it will be important that additional data be continuously collected in order to assess the risk of intussusception as well as to identify any other rare adverse events that may occur," it added.</p><p>Last year <i>The Lancet</i> published additional data from a Phase III study, which showed that Rotavac reduced severe rotavirus diarrhoea by 56% during the first year of life, with protection continuing into the second year. Bharat Biotech had earlier said that it has an installed capacity of 300 million doses.</p><p>PATH suggested that an email sent to it by <i>Scrip</i> on 22 July be redirected to India's Department of Biotechnology (DBT), which did not immediately respond to queries on the issue. The US NIH too did not immediately comment on the concerns raised. </p><p>DBT secretary K Vijayaraghavan was, however, quoted in the local media as suggesting that the department plans to discuss the issue and similar data requests, but "when time permits". "In the absence of concerns by any recognized safety experts, I see no urgency and would prefer a considered approach after appropriate consultations," Mr Vijayaraghavan was reported as saying in Firstpost.com, part of India's Network18 group.</p><h2>SEC meeting</h2><p>Meanwhile, an Indian Subject Expert Committee (SEC) on vaccines recently discussed the concerns around the rotavirus vaccine. India currently follows a three tier review process for clinical trials, under which applications are initially evaluated by specialized SECs. The recommendations of the SECs are then vetted by a technical review committee and finally cleared by an "apex committee".</p><p>The minutes of the meeting of the SEC held on 30 June note that the committee reviewed the submission related to the serious adverse events (SAE) during the Phase III clinical trial of the rotavirus vaccine and did not find the concerns of non-disclosure of SAE of intussusception and safety from Vellore site "well authenticated." </p><p>Dr Puliyel, however, argues that either the data has been provided in the public domain or it is not and there are no "shades of grey."</p><p>"What is well authenticated and what does poorly authenticated mean in this context?" he counters.</p><p>The SEC also notes that the intussusception rate was very low in the trial and "statistically not different significantly" in the study and placebo arms. Dr Puliyel says that since dis-aggregated data from Vellore has still to be provided, you can't be sure if it is "statistically not different in Vellore" and that is the data requested.</p><p>The SEC added that further evaluation of SAEs may be undertaken under periodic safety update report (PSUR) evaluation or adverse event following immunization (AEFI) as per the rules. </p><p>In March this year, some local media reports said that the government plans to study 100,000 infants so as to re-evaluate the indigenous rotavirus vaccine and measure the risk of intussusception more precisely.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 239
+
+<p>A public interest litigation (PIL) has brought to the fore a simmering controversy over alleged safety signals concerning an indigenous oral rotavirus vaccine (Rotavac) developed through a unique public-private partnership in India.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Indias rotavirus vaccine row show me the data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150720T160001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150720T160001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150720T160001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029328
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+India's rotavirus vaccine row: show me the data
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359527
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+200c36e5-9714-492e-8cc4-0f1f096b9828
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

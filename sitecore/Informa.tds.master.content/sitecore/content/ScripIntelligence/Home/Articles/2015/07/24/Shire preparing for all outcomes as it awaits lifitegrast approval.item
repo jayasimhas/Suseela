@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {17047F3A-5D6F-40AE-9F96-EBE7FE5EC711}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/24/Shire preparing for all outcomes as it awaits lifitegrast approval
+parent: {66CD7E66-2939-47F2-B54E-FB3DFF5070A2}
+name: Shire preparing for all outcomes as it awaits lifitegrast approval
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 763ec34a-014d-4e85-89f7-bb771fa54286
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 69
+
+ Shire preparing for all outcomes as it awaits lifitegrast approval  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Shire preparing for all outcomes as it awaits lifitegrast approval
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5703
+
+<p> Although Shire strived to place its flat earnings during the second quarter into a positive context on 23 July, its second quarter earnings call largely focused on dry eye disease candidate lifitegrast and how the US FDA might view the mixed data from its pivotal Phase III studies. </p> <p> Lifitegrast showed promising results in Phase II, but then produced nearly diametrically opposed results in the Phase III OPUS-1 and OPUS-2 studies. In <a href="http://www.scripintelligence.com/researchdevelopment/SARcode-Bioscience-eyes-positive-Phase-III-data-for-lead-product-336523" target="_new">OPUS-1</a> the drug met a primary endpoint for addressing signs of dry eye, but not the symptoms. OPUS-2 met a co-primary endpoint for reducing symptoms, but not one for addressing signs of dry eye. </p> <p> After discussions with FDA in 2014, Shire filed a new drug application (NDA) earlier this year and the drug, a small molecule integrin antagonist that inhibits T-cell inflammation by blocking lymphocyte function-associated antigen (LFA-1) and intercellular adhesion molecule-1 (ICAM-1), is under <a href="http://www.scripintelligence.com/policyregulation/Shires-dry-eye-drug-lifitegrast-granted-speedy-review-357751" target="_new">priority review</a> with a 25 October PDUFA date. Shire hopes it can launch lifitegrast in the US as a competitor to Allergan's Restasis (cyclosporine), as well as in Europe and Japan where no dry eye disease therapies have been approved. </p> <p> But even as the drug is under review, the firm has also launched the Phase III OPUS-3 trial to again look at lifitegrast's efficacy and safety in reducing dry eye symptoms. </p> <p> During the company's 23 July investor call, CEO Flemming Ornskov noted that the FDA has not scheduled an advisory committee review for lifitegrast. He also pointed out that OPUS-3 is ongoing, having enrolled quicker than expected with top-line data anticipated during the fourth quarter, &quot;should the FDA come to a different interpretation of the data&quot; included in the NDA. </p> <p> Asked if Shire was hedging its bets and preparing ahead of time for a complete response letter (CRL) related to the lifitegrast filing, Ornskov said in an interview that the company's actions should not be viewed that way &ndash; but the additional trial could meet that purpose. </p> <p> &quot;When we had the initial discussion with the FDA way before we filed the NDA, it was our interpretation of their assessment &#8230; that potentially replication of the symptom data could be an area they would be focusing in on in their review,&quot; the CEO said. &quot;When I discussed that with my team, I felt that I did not want to be in a situation having filed and ending up with a complete response letter and then not having planned ahead for what could be the future.&quot; </p> <p> <b>Approval a matter of &quot;when, not if&quot;?</b> </p> <p> Shire continues to stand behind the data lifitegrast generated during its clinical trial program in more than 1,800 patients, Ornskov said. </p> <p> &quot;We have stated all the time [that] my assessment is that approvability of lifitegrast is hopefully a when, not an if,&quot; he said in a response to an analyst's question during the earnings call. </p> <p> &quot;We are ready for all eventualities,&quot; Ornskov added. &quot;Should the FDA decide by the PDUFA date that they still need additional evidence, we hope that the evidence they are looking for will be what OPUS-3 will provide. &#8230; On all other aspects of the filing, and what normally happens in a filing, without going into any detail I will say we've made excellent progress and have a good dialogue [with the FDA].&quot; </p> <p> In terms of the dry eye market opportunity in the US, he said Allergan had done an excellent job building the market, but that research indicates a need for better therapeutic options. </p> <p> &quot;Our research shows that there is still significant unmet need either in new patients or patients that have dropped off, are not satisfied with Restasis, and are looking for features that may not be fully covered by Restasis,&quot; he explained. &quot;So, both in terms of coexistence and competition, we feel very good and we think there are opportunities to continue to grow this market, and we think that will happen with a new entrant in addition to normal market share situations.&quot; </p> <p> The opportunity in Europe is harder to project because the therapeutic alternatives have very low price points, Ornskov added. Beyond possibly bolstering the NDA's dataset, OPUS-3 is intended as part of the package that will be used to seek EU approval. If Shire can replicate the symptom relief data (change in Eye Dryness Score from baseline to week 12) seen in OPUS-2, that would put the drug's ex-US approval prospects &quot;in a very strong situation,&quot; he said. </p> <p> Japan will be a key market for Shire because it represents the second-largest dry-eye opportunity after the US, the CEO said on the call. </p> <p> The primary asset in Shire's 2013 buyout of SARcode Bioscience for <a href="http://www.scripintelligence.com/business/Shire-punts-160m-on-second-eye-care-firm-SARcode-341496" target="_new">$160 million</a>, lifitegrast is seen as the potential tent pole for an ophthalmology franchise that would further diversify the specialty firm. </p> <p> <i>[Editor's note: This story is also being published in <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet-daily" target="_blank">&quot;The Pink Sheet&quot; DAILY</a></i> <i>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.]</i> </p> <p><p><p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 291
+
+<p> Although Shire strived to place its flat earnings during the second quarter into a positive context on 23 July, its second quarter earnings call largely focused on dry eye disease candidate lifitegrast and how the US FDA might view the mixed data from its pivotal Phase III studies. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Shire preparing for all outcomes as it awaits lifitegrast approval
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150724T030319
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150724T030319
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150724T030319
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029319
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 69
+
+ Shire preparing for all outcomes as it awaits lifitegrast approval  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{35998F02-6661-4699-8D32-35450F867D10}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359508
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+763ec34a-014d-4e85-89f7-bb771fa54286
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

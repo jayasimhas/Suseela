@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {96EE670F-5845-49E5-9108-4C1AE65EB75E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/23/Advanced Accelerator Preps LutetiumTipped Warhead For NETs Filing
+parent: {E8CB3B12-58E6-4D8C-926D-C49922785188}
+name: Advanced Accelerator Preps LutetiumTipped Warhead For NETs Filing
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 87c1f7e4-3a44-4a3f-9972-4111666b7ac7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{F5161CC2-772F-472E-A21C-BF196343462E}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Advanced Accelerator Preps Lutetium-Tipped Warhead For NETs Filing
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+Advanced Accelerator Preps LutetiumTipped Warhead For NETs Filing
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5262
+
+<p><p>With positive Phase III clinical results in hand, France's Advanced Accelerator Applications SA (AAA) expects to start filing a rolling US NDA submission later this year and file a European marketing application in 2016 for its lead radiotherapeutic, <i>Lutathera</i>, to treat advanced mid-gut neuroendocrine tumors (NETs). The lutetium-labeled somatostatin analog met its primary endpoint in the Phase III NETTER-1 study.</p><p><p>The strength of the Phase III results could also bring to fruition AAA's plans to list on NASDAQ. The company already has a significant business in Europe selling PET and SPECT imaging agents, with sales last year of $92.9m generating a net loss of $11.4m. It has also supported its R&D with venture capital and crossover financings, the last in June 2015 for $26m. </p><p><p>The French company plans to extend its business to the US, including the building of a manufacturing facility in New Jersey for Lutathera (Lu-177 DOTATATE) and the recruitment of a payer-focused US sales and marketing team to support the use of the radiotherapeutic and its gallium-labeled companion diagnostic.</p><p><p>The company submitted in July 2015 a US NDA for <i>SomaKit-TATE</i>, a kit containing gallium-86 DOTATATE for diagnosing NET patients using positron emission tomography (PET). It is the first US NDA for a product containing gallium-68 as a positron emitter to be submitted for approval.</p><p><p>Lutathera will likely also be the first product containing lutetium-177 to be submitted for regulatory approval; it is produced in research nuclear reactors and has a half-life while it is being prepared by AAA of around three days, so it can be made in Italy where AAA has manufacturing facilities and transported to the US by air and then administered to patients.</p><p><h2>PFS Significantly Prolonged</h2><p><p>The Phase III NETTER-1 study found that Lutathera, a drug consisting of radioactive lutetium-177 bound to a somatostatin analog, significantly prolonged progression-free survival (PFS) when added to the standard therapy, Novartis AG 's long-acting <i>Sandostatin LAR</i> (octreotide) 60 mg in patients with advanced mid-gut neuroendocrine tumors. </p><p><p>In 230 US and European patients randomized 1:1 to either Lutathera plus octreotide LAR or to octreotide LAR alone, the addition of Lutathera was associated with a 79% risk reduction of disease progression or death versus octreotide LAR alone. At the time of analysis, there were 23 disease progressions or deaths in the Lutathera group and 67 in the octreotide LAR alone group. The median PFS was not reached in the Lutathera arm but was 8.4 months in the standard-of-care arm.</p><p><p>Overall survival data were not mature enough for analysis, but there were 19 complete or partial responses in the Lutathera arm of the study and three in the octreotide alone arm, and 13 deaths in the Lutathera arm and 22 in the octreotide arm.</p><p><p>The results were presented Sept. 25 at the European Cancer Congress 2015 being held in Vienna, Austria, and AAA CEO Stefano Buono said he expected Lutathera "to completely change the management of NET patients."</p><p><p>That view of the importance of the results was shared by the ECC organizers, who included the study in the event's presidential sessions, the first time a nuclear medicine has featured in a plenary session at an international oncology meeting. </p><p><p>"What's astonishing is that statistically significant results have been obtained in a relatively small number of patients," Buono noted. "Our drug binds to somatostatin receptors on the surface of NET cells, is internalized and damages DNA through the release of electrons."</p><p><p>Other companies including fellow French company Ipsen have targeted the development of NET therapies as a route to future growth. But Buono was relaxed about potential competitors. "We have orphan drug designation that will protect our drug in the NET indication for 10 years in the EU and seven years in the US," he said. Lutathera was granted fast-track designation by FDA in April 2015 for the treatment of inoperable progressive midgut NETs. </p><p><p>The clinical studies with Lutathera are thought to be the first to show that diffuse tumors can be successfully treated with radiotherapy; the use of radiotherapy is usually reserved for solid tumors. But with an electron emitter like lutetium-177, radiation extends over several millimeters and bombards more than one cell.</p><p><p>Lutathera is not the first radiotherapeutic to be developed recently &ndash; the Norwegian biotech Algeta ASA developed the alpha-particle releasing product <i>Xofigo</i> (radium-223 dichloride) for use in prostate cancer patients. Following the product's approval, the licensee, Bayer AG, announced in December 2013 it would acquire Algeta for $2.4bn.</p><p><p>Professor Philippe Ruszniewski of Paris Diderot University, who presented the results at ECCO, urged futher exploration of the use of Lutathera in other types of NETs, including pancreatic and bronchial tumors.</p><p><p><i>This article is also being published in "The Pink Sheet" DAILY. Scrip Intelligence brings selected complementary coverage from our sister pulications to our subscribers.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+Advanced Accelerator Preps LutetiumTipped Warhead For NETs Filing
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150923T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150923T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150923T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029907
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Advanced Accelerator Preps Lutetium-Tipped Warhead For NETs Filing
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{64DA3A31-2EAC-451B-9E20-7426CE8C307C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360642
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+87c1f7e4-3a44-4a3f-9972-4111666b7ac7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

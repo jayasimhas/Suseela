@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {AA7A752A-2A61-4EA5-958B-92A776AEDD92}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/01/Indias Sovaldi patent rejection what now and next
+parent: {EA1D4587-581F-40F6-8301-9C0D169A59C2}
+name: Indias Sovaldi patent rejection what now and next
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9cdd7e23-27e6-4a5e-8862-c80b90c28367
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{6AADCF53-8C4F-49F5-B29C-408059584A54}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+India's Sovaldi patent rejection: what now and next?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+Indias Sovaldi patent rejection what now and next
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6993
+
+<p>India's rejection of one of Gilead's key patent applications for hepatitis C treatment, Sovaldi (sofosbuvir), has thrown up many interesting potential prospects, as well as possible difficulties. </p><p>First the prospects: Can and will Natco Pharma, not among the licensees for Sovaldi, quickly cash in on the opportunity, knowing full well that Gilead is expected to appeal the verdict? Natco and the US based non-profit group, Initiative for Medicines, Access and Knowledge (I-MAK) have previously filed pre-grant patent oppositions against the Sovaldi patent <a href="http://%5bhttp:/www.scripintelligence.com/business/India-set-to-hear-Sovaldi-patent-objections-case-352584%5d" target="_new">(scripintelligence.com 30 June 2014)</a>. </p><p>While Natco deliberates, experts say that the decision may embolden similar firms to continue any plans they may have to produce their own versions and compete in an ''unrestricted'' marketplace where there are no granted patents, unlike licensees. </p><p>''This is so especially in middle income countries excluded from the license. So this decision could be the key to genuine open competition from Indian companies that opted to stay out of the license, rather than the managed competition Gilead has permitted through the licenses,'' Tahir Amin, co-founder and director of intellectual property I-MAK, told <i>Scrip</i>.</p><p>Then, there is currently not much clarity on whether Gilead's licensing deals with the seven Indian firms, including Cipla and Zydus Cadila ,to develop sofosbuvir and the single tablet regimen of ledipasvir/sofosbuvir for distribution in 91 developing countries <a href="http://%5bhttp:/www.scripintelligence.com/home/Cut-price-generics-in-sight-as-Gilead-licenses-Sovaldi-353966%5d" target="_new">(scripintelligence.com 16 September 2014)</a>, have restrictive conditions, or whether, as is generally seen, the pact stays valid only as long as the patent is valid.</p><p>Next, the licensing pact allowed the licensees to set their own prices and receive a complete technology transfer of the Gilead manufacturing process, but it is speculated that some companies did not opt for the latter. Cipla, for one, is known to have the prowess to develop such complex therapies on its own. </p><p>Mr Amin believes that the decision does not affect the licensees' ability to continue with their plans as they already have Gilead's permission to start production. Interestingly, India's apex committee for regulating clinical trials recently endorsed trial waivers for certain products including sofosbuvir <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/With-trial-waivers-India-moots-PMS-norms-for-anticancers-355956%5d" target="_new">(scripintelligence.com 6 January 2015)</a>. </p><p>Mr Amin says that the licensees may now look at whether they made the right commercial decision to enter into a license given that one of the ''two main blocking patents'' has been refused. </p><p>''It may be that some may be thinking of terminating the license, especially if the prodrug application, as we expect, is refused also. I imagine they will watch developments closely now and some may potentially be re-thinking possible strategies,'' Mr Amin added.</p><p>I-MAK believes that the decision will have some knock-on effect, whether in terms of patents being rejected or better price deals.</p><p>Sovaldi's pricing plan has been under the spotlight internationally. Its $84,000 price tag for 12 weeks of treatment in the US has come in for sharp criticism, though Gilead earlier indicated that it had set the price in Egypt at $900 for a course &ndash; about 1% of what Americans will pay for the drug. In India, Sovaldi is expected to be launched at $300 per bottle/per month in India - along the lines of the price set in Egypt.</p><p><b>Order</b></p><p>India's rejection of the Sovaldi patent was made essentially on the grounds that it falls under section 3(d) of the Indian Patent Act and fails to meet the conditions therein. </p><p>Under Section 3(d), salts, esters, ethers, polymorphs, and other derivatives of known substances are presumed to be the same substance as the original chemical and thus not patentable, unless it can be shown that they differ significantly in properties with regard to efficacy.</p><p>Hardev Karar, Deputy Controller of Patents and Designs at the Delhi patent office, said that Gilead's submission that for application of sec 3(d) there should be the known substance ''is not acceptable'' as the intention of the law comes out from the words "&#8230;salts, esters&#8230;.shall be considered the same substance, unless they differ&#8230;"</p><p>''These words clearly shows that the claimed compound may have passed the test of novelty on minor changes in the molecule but to qualify sec 3(d) which this compound does not show the properties with regard to the therapeutic efficacy. In other words we can say that a molecule with minor changes in addition to the novelty must show significantly enhanced therapeutic efficacy as compared to the nearest prior art molecule which is structurally and functionally close,'' Mr Karar said in an order dated 13 January.</p><p>Gilead had argued that for application of Section 3(d) there has to be a "known substance". In the absence of a "known substance" there cannot be a "new form", it said. "It is not meant to create a higher bar for new substances by deeming all new compounds to be merely derivatives of known compounds," Gilead added.</p><p>The order, however, acknowledges the novelty and inventive step of the ''present set of claims'' concerning the sofosbuvir patent. Mr Amin, though, clarified that the latest decision came from the Patent Office Controller's own examination report and hearing with Gilead, although the evidence it used to make its decision was the same as filed by the opponents Natco and I-MAK/ Delhi Network of Positive People.</p><p>''The decision relates to the base compound that forms part of the final product as sold. The prodrug application, the marketed form and which we also opposed, is under examination,'' Mr Amin added.</p><p>The order also notes that Gilead should have shown therapeutic efficacy data to show the significant difference in the properties with regard to efficacy by ''providing the clinical trials etc''.</p><p>''The applicants showed the cytotoxicity data to prove the difference in properties which is insufficient to prove significant increase in the therapeutic efficacy. The data does not show any clinical trials to prove the improvement in the therapeutic efficacy,'' the order stated. </p><p>A post on the intellectual property blog, <a href="http://#http://spicyip.com/" target="_new">http://spicyip.com/</a>, said that asking for clinical trial data at the patent stage was asking for an ''excessively high level of proof'', and was "unreasonable''. By asking for such data, the order opens itself up for criticism, author Swaraj Paul Barooah added.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 203
+
+<p>India's rejection of one of Gilead's key patent applications for hepatitis C treatment, Sovaldi (sofosbuvir), has thrown up many interesting potential prospects, as well as possible difficulties. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+Indias Sovaldi patent rejection what now and next
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151001T044417
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151001T044417
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151001T044417
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027528
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+India's Sovaldi patent rejection: what now and next?
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800321
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356064
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042232Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9cdd7e23-27e6-4a5e-8862-c80b90c28367
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042233Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

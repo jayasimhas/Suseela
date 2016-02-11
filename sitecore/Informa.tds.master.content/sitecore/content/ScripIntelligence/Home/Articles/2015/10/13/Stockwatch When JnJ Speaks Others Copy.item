@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {F04217DD-5BF9-44F9-B01D-2D795C3761CE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/13/Stockwatch When JnJ Speaks Others Copy
+parent: {795A7AEF-21C6-4727-ABCA-CA7142D31AA1}
+name: Stockwatch When JnJ Speaks Others Copy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a94c66f1-45b3-4ee9-9bc1-cf7df2f5235d
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 40
+
+Stockwatch: When JnJ Speaks, Others Copy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Stockwatch When JnJ Speaks Others Copy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6760
+
+<p>In David Thomas' 2011 novel <i>Blood Relative</i>, a husband tries to recreate his wife's life in the heart of the former German Democratic Republic as a time when the influence of the socialist state was absolute. In a similar way, but in the home of capitalism, the world's largest healthcare company Johnson & Johnson (J&J) reported its third-quarter earnings last week and its methods to massage the news quickly influenced announcements of much smaller companies.</p><p><p>About an hour before J&J's third-quarter earnings announcement, it announced a $10bn share buyback and in pre-market trading this news induced the shares of J&J to trade up by about 1%. </p><p><p>I am an unapologetic cynic when any positive announcement emanates from a company because after fifteen years as an investor I have learned that form often compensates for substance. So when a matter of minutes later the pre-market share price rise reversed to a 1% decline after <a href="http://www.scripintelligence.com/home/JandJ-Large-Scale-MandA-Still-On-The-Table-Despite-10bn-Share-Buyback-361029" target="_new">J&J announced that its third-quarter sales missed analysts' consensus estimates by $352m</a>, I was left wondering why so many investors were surprised. The performance of J&J's medical devices and diagnostics division and its consumer division conformed to their usual underperforming trends. However the pharmaceutical division, which has over many of the most recent quarters been the savior of the group, joined its companion segments in also missing consensus sales expectations by about 2%. To compound this misery, the recurring headwind of a strong US dollar against other currencies where J&J records sales added to the gloom and the analysts from JP Morgan calculated that foreign exchange dented sales by an additional 0.7%, contributing to an overall performance that they diplomatically described as 'mixed'.</p><p><p>The analysts from Jefferies were less forgiving (and more accurate) when they explained how J&J's sales performance could be so bad, yet their earnings actually beat consensus estimates. J&J's third-quarter earnings per share (EPS) beat estimates by 2%, which came from a temporary lower tax rate and some mysterious one-off 'other income'. In the module I teach to undergraduates and post-graduates, we discuss the phrase "quality of earnings" which means that a company can only really have longevity in earnings growth if profits grow in the operating divisions, rather than being massaged by one-off and temporary gains in parts of the business that are nothing to do with, in J&J's case, its three operating segments. As an independent analyst, I'm happy to describe J&J's third-quarter earnings beat of analysts' estimates as low quality, although none of the sell-side analysts I read could bring themselves to be so critical. While the analysts at Cowen sycophantically described J&J's EPS performance as 'solid', it is not hard to discern why analysts other than me are so reticent to criticize the world's largest healthcare company. In J&J's narrative to its results, the $10bn share buy-back was stressed as not excluding a significant M&A transaction and indeed since J&J will be raising additional debt to finance the share buy-back, most of its $33bn in cash and cash equivalents that remains outside the US could be used for transactions there. Perhaps the reticence of the analyst community not to describe J&J's low quality results as such is related to their desire not to jeopardize the potential for juicy transaction fees.</p><p><p>The timing of the $10bn share buy-back announcement may not have been designed solely to induce floods of saliva in investment bankers, but its release just before J&J's earnings announcement may have been designed divert its investors' attention from what came next. This object lesion in phased PR was quickly learned or emulated last week by other companies announcing bad news after good.</p><p><p>PTC Therapeutics, Inc.'s <a href="http://www.scripintelligence.com/researchdevelopment/PTC-wins-conditional-EU-Translarna-approval-353208" target="_new">conditional EU approval</a> of its drug <i>Translarna</i> (ataluren) to treat Duchenne muscular dystrophy seemed under threat when it announced the failure of the Phase III study which was a condition of the EU approval. The third bullet point of PTC's announcement noted the 15 meter benefit in the primary endpoint of six minute walk (6MW) test, although investors had to plough through 225 words of about 1,000 before they came across the 'not statistically significant' verdict on the study. Instead, PTC played the old '<a href="http://www.scripintelligence.com/home/Stockwatch-Investors-Beware-Of-The-False-Positive-360817" target="_new">totality of the data</a>' card, which the cognoscenti will understand as indicating at least one failed clinical study. In PTC's case, regulators will have to dust off their electron microscopes in order to find any positive data on an ITT basis since <i>Translarna</i><a href="http://#http://www.scripintelligence.com/researchdevelopment/PTC-TherapeuticsGenzymes-ataluren-fails-in-Phase-IIb-muscular-dystrophy-trial-202171" target="_new">previously failed a Phase IIb study</a> using the same 6MW primary endpoint, contributing to the <a href="http://www.scripintelligence.com/business/Stop-signal-for-Ataluren-as-PTC-regains-nonsense-asset-from-Genzyme-320747" target="_new">loss of its commercialization partner</a> Genzyme in 2011. The PTC share price finished a volatile ride last week up by just over 11% as investors were diverted by its emphasis on the positive data from one (of what may have been many possibly negative) pre-specified and smaller subgroups of patients.</p><p><p>It's ironic that the world's largest healthcare company domiciled in the home of capitalism can produce financial results that are so reminiscent of state-sponsored mediocrity. It is even more ironic to see much smaller companies emulating J&J's attempt to divert investors' attention away from blindingly obvious operational failings. If this is the backdrop to third-quarter earnings, then I probably need to move more of my portfolio into cash.</p><p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 475
+
+<p>In David Thomas' 2011 novel <i>Blood Relative</i>, a husband tries to recreate his wife's life in the heart of the former German Democratic Republic as a time when the influence of the socialist state was absolute. In a similar way, but in the home of capitalism, the world's largest healthcare company Johnson & Johnson (J&J) reported its third-quarter earnings last week and its methods to massage the news quickly influenced announcements of much smaller companies.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Stockwatch When JnJ Speaks Others Copy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151013T204648
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151013T204648
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151013T204648
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030087
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 40
+
+Stockwatch: When JnJ Speaks, Others Copy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+Feature
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361023
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a94c66f1-45b3-4ee9-9bc1-cf7df2f5235d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E49907C2-382C-4A8B-8859-C4904BDC7C48}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/02/FDA clarifies registration for outsourcing compounders
+parent: {649A1F5F-680B-4755-ABE7-6BF2F8862CDD}
+name: FDA clarifies registration for outsourcing compounders
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 35283493-c676-485f-b988-bc2b095a55d4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+FDA clarifies registration for 'outsourcing' compounders 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+FDA clarifies registration for outsourcing compounders
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4645
+
+<p>The FDA on 13 February issued five new draft documents &ndash; four guidances and one memorandum of understanding (MOU) &ndash; aimed at clarifying the agency's thinking about certain provisions related to pharmacy compounding imposed under the <i>Drug Quality and Security Act</i> (DQSA) of 2013.</p><p>The four draft guidance documents are focused on outsourcing facility registration; outsourcing facility adverse event reporting; drug repackaging; and mixing, diluting and repackaging biological products.</p><p>The draft MOU describes the responsibilities of states investigating and responding to complaints related to compounded drugs distributed outside of its jurisdiction. It also addresses the interstate distribution of "inordinate amounts" of compounded medicines.</p><p>The FDA said it has received questions about whether entities engaged in various types of activities, such as compounding only nonsterile drugs or only repackaging biological products, should register as so-called outsourcing facilities &ndash; a new category of pharmacies engaged in large-volume compounding that are allowed to send compounded products to healthcare facilities without obtaining prescriptions for identified individual patients, although they are not permitted to dispense their products to a patient without a prescription (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Voluntary-process-leaves-FDA-in-the-dark-over-compounders-identities-348462" target="_new">03 December 2013</a>).</p><p>Under the DQSA, signed by President Barack Obama in November 2013, entities that choose to remain as "traditional" pharmacies, meaning they must only compound products subject to a prescription, will continue to be regulated by state boards of pharmacy (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Obama-signs-compoundingtrack-and-trace-bill-348404" target="_new">28 November 2013</a>, <a href="http://www.scripintelligence.com/home/After-decades-of-apathy-blunders-compoundingtrack-and-trace-bill-done-348213" target="_new">19 November 2013</a>).</p><p>Because entities that register as outsourcing facilities &ndash; a voluntary process &ndash; were required to start paying a registration fee as of 1 October 2014 to the FDA, which will not be refunded, regulators wanted to clarify who should register. </p><p>Outsourcing facilities can qualify for exemptions from the FDA approval and labeling requirements, but they are subject to current good manufacturing practice (cGMP) requirements. </p><p>Outsourcing facilities also must be inspected by the FDA according to a risk-based schedule and meet certain other conditions, such as reporting adverse events and providing federal regulators with certain information about the products the firms compound, the agency pointed out in its draft <a href="http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM434171.pdf" target="_new">guidance</a>, <i>For Entities Considering Whether to Register As Outsourcing Facilities under Section 503B of the Federal Food, Drug and Cosmetic Act</i>. </p><p>But, the FDA said, if a compounder does not intend to make all types of drugs at its facility and comply with cGMP requirements, it should not register as an outsourcing facility. </p><p>Regulators also pointed out that the definition of compounding does not include repackaging, so entities engaged in repackaging also should not register.</p><p>In addition, entities engaged in mixing, diluting or repackaging biological products subject to licensure should not register because those products do not qualify for the exemptions under the law. </p><p>The FDA issued separate draft guidances on mixing, diluting and repackaging biological products outside the scope of an approved biologics license application and repackaging certain medicines by pharmacies and outsourcing facilities. </p><p>The agency emphasized in another <a href="http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM434188.pdf" target="_new">document</a> that registered outsourcing facilities must report all serious "unexpected" adverse experiences associated with the use of their compounded prescription products &ndash; defining those as events resulting in life-threatening experiences, hospitalization or prolonged hospital visit, a persistent or significant disability or incapacity, a congenital anomaly or birth defect or death. </p><p>This article also may be read at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">US Capitol Capsule</a></p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 304
+
+<p>The FDA on 13 February issued five new draft documents &ndash; four guidances and one memorandum of understanding (MOU) &ndash; aimed at clarifying the agency's thinking about certain provisions related to pharmacy compounding imposed under the <i>Drug Quality and Security Act</i> (DQSA) of 2013.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+FDA clarifies registration for outsourcing compounders
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151002T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151002T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151002T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027825
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+FDA clarifies registration for 'outsourcing' compounders 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356676
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+35283493-c676-485f-b988-bc2b095a55d4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

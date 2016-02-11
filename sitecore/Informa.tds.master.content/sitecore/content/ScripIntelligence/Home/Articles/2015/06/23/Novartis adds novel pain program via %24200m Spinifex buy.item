@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {F1FF83AF-7711-4F22-B1E3-E8A26E83C1F6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/23/Novartis adds novel pain program via $200m Spinifex buy
+parent: {DE7D9A84-8A06-46D5-8FF8-36C2152C4A3F}
+name: Novartis adds novel pain program via $200m Spinifex buy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 00a5e7bd-1c3a-4810-bcfd-7fc90f1b4cce
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Novartis adds novel pain program via $200m Spinifex buy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Novartis adds novel pain program via $200m Spinifex buy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3376
+
+<p>Executing on its planned strategy for an 'exit' exactly on schedule, Australian/US biotech Spinifex Pharmaceuticals has agreed to be acquired by Novartis for $200m plus undisclosed development and regulatory milestones.</p><p>The acquisition is centered on Spinifex's lead candidate EMA401, a novel angiotensin II type 2 (AT2) receptor antagonist, being developed as a potential first-in-class oral treatment for chronic pain, particularly neuropathic pain, without central nervous system (CNS) side effects.</p><p>Spinifex's "totally novel approach" to the treatment of chronic pain without significant CNS side-effects "attracted a lot of interest," Spinifex CEO Tom McCarthy told <i>Scrip</i>.</p><p>"Spinifex was built to do what any other VC backed biotech aims to do; take promising technology from innovators/researchers and push it through to value inflection points," he explained. "The 'exit' could have come in many forms; the sort of trade sale we did with Novartis, licensing out to pharma or IPO. Novartis was the right partner, with the right vision for EMA401 and AT2 receptor antagonist technology, at the right time."</p><p>Positive results from Spinifex's Phase II trial of EMA401 in post-herpetic neuralgia (PHN), a painful condition that develops in some people following herpes zoster (shingles), have been published in <i>The Lancet</i>. Novartis plans to continue the development of EMA401 and is planning to initiate Phase IIb trials in patients with PHN and painful diabetic neuropathy (PDN). Novartis also intends to build on these two key indications and pursue a broad peripheral neuropathic pain (PNP) label for EMA401.</p><p>Under the deal, in addition to the upfront payment of $200m from Novartis, Spinifex shareholders are eligible for payments contingent on future clinical development and regulatory milestones. </p><p>The company's VC investors including Novo Ventures, Canaan Partners, GBS Venture Partners, Brandon Capital Partners, Uniseed and UniQuest. Including Spinifex's 2014 <a href="http://www.scripintelligence.com/business/Spinifex-raises-45m-to-build-PhII-and-quadruple-size-351209" target="_new">series C financing</a> of (US)$45m, the company had raised approximately $70m in total up to this acquisition.</p><p>"[Spinifex] was impressed by Novartis's strong commitment to neuroscience," said Dr McCarthy. "It has a leading product in the treatment of multiple sclerosis and a commitment to Alzheimer's disease and so this acquisition in the neuropathic pain space broadens its neuroscience portfolio."</p><p>Spinifex has 8 US-based employees and 2 in Australia, plus a network of contractors and consultants around the world. It is unclear whether any of its staff will be transferred to Novartis after the close of the deal. With regards to Dr McCarthy's own plans post-acquisition, other than "successfully transitioning this program and then getting some sleep, I'm not looking too far beyond that point," he concluded.</p><p>The transaction is expected to close in about four weeks, subject to clearance under the Hart-Scott-Rodino Act and customary closing conditions.</p><p>"I'm really pleased for Professor Maree Smith at University of Queensland who carried out the founding discovery and research. It's an excellent outcome for technology transfer from an Australian university," Dr McCarthy concluded.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 226
+
+<p>Executing on its planned strategy for an 'exit' exactly on schedule, Australian/US biotech Spinifex Pharmaceuticals has agreed to be acquired by Novartis for $200m plus undisclosed development and regulatory milestones.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Novartis adds novel pain program via $200m Spinifex buy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150623T170007
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150623T170007
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150623T170007
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029107
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Novartis adds novel pain program via $200m Spinifex buy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359085
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+00a5e7bd-1c3a-4810-bcfd-7fc90f1b4cce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

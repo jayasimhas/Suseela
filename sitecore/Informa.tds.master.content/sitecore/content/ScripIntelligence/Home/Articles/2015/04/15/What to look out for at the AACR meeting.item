@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {0E0ABD96-E518-4F1A-B886-7E627095533E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/15/What to look out for at the AACR meeting
+parent: {19AE7706-F850-4AD9-804C-0500E26F606C}
+name: What to look out for at the AACR meeting
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3fb20627-1c70-4140-8a72-9bf6000fc24b
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+What to look out for at the AACR meeting 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+What to look out for at the AACR meeting
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8108
+
+<p>This year's American Association of Cancer Research (AACR) meeting in Philadelphia (18-22 April) looks set to reveal data in several hot areas of research such as immune-oncology, including checkpoint inhibitors and PD-1/PD-L1-acting products. </p><p>Little clinical data may be expected on the CAR-T therapies but some preclinical presentations may provide some insight into future targets, say analysts at BioMedTracker. Also featuring will be the next wave of EGFR inhibitors designed to tackle resistance to current therapies. </p><p>The launch of Pharmacyclics/Johnson & Johnson's Bruton's tyrosine kinase (BTK) inhibitor Imbruvica (ibrutinib) and AbbVie's recent <a href="http://www.scripintelligence.com/home/AbbVie-outdoes-rumored-JandJ-bid-with-21bn-Pharmacyclics-buy-357078" target="_new">pricey acquisition of Pharmacyclics</a> suggest that Imbruvica also has activity in solid tumors and other hematologic malignancies outside of CLL, and/or B cell-mediated autoimmune disease, the analysts say. Both industry- and investigator-led studies are looking at Imbruvica and other BTK inhibitors in combination with many other agents in multiple tumor models. While Pharmacyclics and others have already announced the results of some of their studies, some of the data being presented at the AACR could inform future development plans. </p><p>Preclinical data due to be presented for Imbruvica include results for the product used together with an anti-PD-L1 antibody or anti-CTLA-4 antibody in mice bearing triple-negative breast cancer and colon cancer solid tumors. The BioMedTracker analysts note that Imbruvica exhibits "off-target" inhibition of Itk (interleukin-2-inducible Tec kinase), a soluble kinase that plays a role in T cell survival. "This immune modulation may enhance the effects of immunotherapies and reduce levels of harmful inflammatory effects (eg, fibrosis in pancreatic cancer) associated with solid tumors."</p><p>"As more patients are treated with Imbruvica, an increasing number of patients with resistance mutations in BTK will crop up in clinical practice. Many of these patients will harbor a cysteine point mutation at the Imbruvica covalent bonding site, but some of these tumors may still be susceptible to inhibition by reversible BTK inhibitors that are currently in development."</p><p>The analysts suggest that pancreatic cancer may be picked as the first disease target in a new solid tumors program for Imbruvica, based on the direction of development program for Acerta Pharma's second-generation BTK inhibitor ACP-196.</p><p>This product is in already in clinical trials for pancreatic cancer, rheumatoid arthritis, CLL and DLBCL, and recently announced Phase II clinical trial will test ACP-196 with Merck & Co's pembrolizumab (Keytruda) in patients with advanced pancreatic cancer. It is thought that synergy between ACP-196 and gemcitabine may allow clinical trials for earlier-stage or first-line metastatic patients who might otherwise receive gemcitabine monotherapy, the analysts note.</p><p>The ACP-196/pembrolizumab combination is also being tested in a Phase I/II trial enrolling patients with B cell malignancies. </p><p>Other new second-generation BTK inhibitors putting in an appearance at the AACR include BeiGene's BGB-3111, which is being tested in a Phase I clinical trial in lymphoid malignancies in Australia. "The sponsors believe that BGB-3111 displays less off-target kinase inhibition, which may allow it to better pair with rituximab than Imbruvica."</p><h2>PD-1/PD-L1 immunotherapies </h2><p>One major study being presented on Sunday 19 April is the KEYNOTE-006 trial of pembrolizumab versus Bristol-Myers Squibb's Yervoy (ipilimumab) for the first-line treatment of metastatic melanoma, which <a href="http://www.scripintelligence.com/researchdevelopment/Keytruda-beats-Yervoy-and-edges-ahead-of-Opdivo-in-first-line-melanoma-357471" target="_new">was halted early in March</a> when a Data Safety and Monitoring Board analysis found that patients in the experimental arm had significant improvements in progression-free an overall survival. </p><p>"These data will expand the patient pool eligible for pembrolizumab treatment and help pembrolizumab leapfrog the BMS immuno-oncology franchise in this indication: Bristol-Myers Squibb's Opdivo (nivolumab) is only approved for later lines of treatment in melanoma but has approval in advanced NSCLC," say the analysts. </p><p>Also on Sunday are the top-line results for Keytruda from the KEYNOTE-028 study in mesothelioma, a highly aggressive and difficult-to-treat cancer. </p><p>Data in triple-negative breast cancer (TNBC) for Roche/Genentech's anti-PD1 antibody RG7446 (MPDL3208A) from a Phase I study will be presented which is strong. "TNBC could allow the sponsor to initiate a registrational trial in breast cancer; the leading therapies in this space have focused on melanoma and non-small cell lung cancer." Genentech/Roche is testing MPDL3280A in clinical trials in multiple solid tumor subtypes; Phase III trials of this agent against chemotherapy in urothelial bladder cancer and non-small cell lung cancer are underway. </p><h2>EGFR Inhibitors </h2><p>Of the new EGFR inhibitors, three much-publicized experimental agents in late-stage clinical trials for non-small cell lung cancer patients with the T790M EGFR mutation are Clovis's rociletinib (CO-1686), AstraZeneca's AZD9291, and Hanmi's HM61713, but other companies are throwing their early stage candidates into the ring. </p><p>AstraZeneca will present data on novel combinations of AZD9291 with its selective MET inhibitor AZD6094, while Novartis, Pfizer and Amgen will report early research on their offerings. Novartis's EGF816 is being developed for non-small cell lung cancer: "Previously released preclinical data suggest that EGF816 inhibits EGFR activating mutations and the T790M resistance mutation. The sponsor has initiated trials for patients harboring tumors with EGFR mutations." Pfizer has recently initiated a Phase I/II trial for NSCLC patients with EGFR mutations for its candidate PF-06747775.</p><h2>Other Kinase Inhibitors</h2><p>Early data for other novel kinase inhibitors highlighted by the BioMedTracker analysts include preclinical data for Pfizer's next-generation inhibitor PF-06463922, which is in a Phase I/II trial for NSCLC patients with ALK and ROS1 rearrangements. "Data suggest that this compound has activity against common ALK inhibitor resistance mutations and may have activity against brain metastases." The abstracts describe this agent's superiority to Pfizer's crizotinib (Xalkori) in preclinical experiments but do not provide comparisons to Novartis's ceritinib (Zykadia) or other ALK inhibitors; the presentations may provide additional information, the analysts say.</p><p>Also, the final results from a Phase I trial of Novartis's buparlisib (BKM120) with AstraZeneca's PARP inhibitor olaparib (Lynparza, approved in ovarian cancer) in breast and ovarian cancer will be presented. Preclinical results for various PARP inhibitors have suggested that Pi3k/Akt pathway inhibition enhance the effects of PARP inhibition. "Interim safety results for this trial were presented at the ASCO 2014 meeting, but Novartis has released little efficacy data from the buparlisib development program."</p><p>Preclinical data for Flexis BioSciences' FLX925, an inhibitor of FLT3 and CDK4/6, for acute myelogenous leukemia will be presented. This Amgen-originated compound has high affinity for resistance mutations in FLT3. Flexis hypothesizes that this compound's inhibition of CDK4/6 will reduce the rate of FLT3 resistance mutation development relative to FLT3-specific inhibitors. This product did not form part of Bristol-Myers Squibb's <a href="http://www.scripintelligence.com/home/Flexus-flips-IDO-inhibitors-to-Bristol-Myers-for-up-to-1.25bn-356901" target="_new">recent acquisition of the Flexus IDO/TDO inhibitor program</a> in an effort to boost its immune-oncology pipeline. "Instead, Flexus intends to spin out a new company to continue development of FLX925."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 251
+
+<p>This year's American Association of Cancer Research (AACR) meeting in Philadelphia (18-22 April) looks set to reveal data in several hot areas of research such as immune-oncology, including checkpoint inhibitors and PD-1/PD-L1-acting products. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+What to look out for at the AACR meeting
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150415T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150415T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150415T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028434
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+What to look out for at the AACR meeting 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357798
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3fb20627-1c70-4140-8a72-9bf6000fc24b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

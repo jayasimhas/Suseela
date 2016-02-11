@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {AE06E53D-864B-4315-9AE4-6E3100CD4A4B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/07/Sobi exceeds in 2Q takeover speculation to continue
+parent: {3BC254C1-F684-481F-AC19-2127127A06F5}
+name: Sobi exceeds in 2Q takeover speculation to continue
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 16b6c602-108c-4c90-b549-73273f596573
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Sobi exceeds in 2Q; takeover speculation to continue? 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Sobi exceeds in 2Q takeover speculation to continue
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3293
+
+<p>Swedish Orphan Biovirtum (Sobi) has surpassed expectations for the second quarter of 2015 and raised its guidance for the rest of the year &ndash; again leaving the company looking like a viable acquisition target. </p><p>The company saw revenues in 2Q 2015 reach SEK764m (approximately $89m), up 15% (4% at CER) from the same period a year previously. EBITA was SEK74m and Sobi ended the quarter in a strong position with SEK763m in available cash. </p><p>After Sobi posted robust 1Q results earlier this year, rumors circled that the firm might be an attractive target for asset-hungry big pharmas and Sobi confirmed at the time it had been approached. The company repeatedly declined to name its mystery bidder but some reports claimed Pfizer had been weighing in with takeover offers. However, no transaction has occurred yet, and <a href="http://www.scripintelligence.com/business/Sobi-no-longer-in-acquisition-talks-358844" target="_new">last month</a> Sobi's board of directors said those particular takeover talks had been terminated. </p><p>In April <i>Scrip </i>predicted a few M&A scenarios for Sobi in our piece: <a href="http://www.scripintelligence.com/home/Where-does-Sobi-fit-with-Biogen-or-Baxter-Novo-or-Pfizer-358078" target="_new">Where does Sobi fit: With Biogen or Baxter, Novo or Pfizer?</a></p><p>Based on the results for the first two quarters of 2015, Sobi now expects total revenues for the full year to be in the range of SEK3,000m to SEK3,200m, (previously SEK2,800m to SEK3,000m) and gross margin to be in the range of 59-61% (previously 58-60%).</p><p>However, Sobi highlighted in its 2Q earnings announcement that operating costs are expected to increase as it prepares for the launch of hemophilia A product Elocta, planned for the fourth quarter of this year. The company's full year outlook excludes revenue from the potential European launch of Elocta, a product developed under a partnership with Biogen. </p><h2>Alprolix filed in Europe</h2><p>The drug developer has also exercised its opt-in rights for hemophilia B product, Alprolix (Factor IX, recombinant, Fc fusion protein), now that the drug has been filed in Europe. </p><p>Sobi will pay $10m to partner Biogen now and will make further repayments to the company when Alprolix secures approval in Europe. A market authorization application for the product has been filed in the region. </p><p>So far Biogen has led development for Alprolix, has manufacturing rights, and has commercialization rights in North America and all other regions in the world excluding Sobi's territory of Europe, North Africa, Russia and certain Middle Eastern markets. Upon European regulatory approval of Alprolix, Sobi will be liable to repay approximately half of the development and manufacturing costs for Alprolix incurred by Biogen, as well as for additional investments. Sobi estimates the total repayment obligation to reach approximately $201m. </p><p>Alprolix is already approved in the US, Canada, Australia and Japan for the treatment of hemophilia B. Sagient Research's BioMedTracker doesn't expect an approval for Alprolix in Europe until May 2016 at the very earliest. A recommendation from the European Medicines Agency's scientific committee, CHMP, is expected between March and September 2016. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 222
+
+<p>Swedish Orphan Biovirtum (Sobi) has surpassed expectations for the second quarter of 2015 and raised its guidance for the rest of the year &ndash; again leaving the company looking like a viable acquisition target. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Sobi exceeds in 2Q takeover speculation to continue
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151007T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151007T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151007T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029251
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Sobi exceeds in 2Q; takeover speculation to continue? 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359375
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+16b6c602-108c-4c90-b549-73273f596573
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

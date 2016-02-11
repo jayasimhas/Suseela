@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {B19C2112-82C7-44F1-8815-0DB35FDD7AC9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/11/NICE Should Ape Swiss HTA Says Roche CEO
+parent: {5EDD049F-1031-4290-8719-6CA0186009DA}
+name: NICE Should Ape Swiss HTA Says Roche CEO
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b1614dd6-3ae4-4dc1-ae92-7cbd1808fead
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+NICE Should Ape Swiss HTA, Says Roche CEO
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+NICE Should Ape Swiss HTA Says Roche CEO
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8525
+
+<p>The chief executive of the world's biggest maker of cancer drugs believes the drug approval process used by the UK's National Institute of Health and Care Excellence's needs revamping and that the country should look to Switzerland for a model to emulate.</p><p>Severin Schwan, the Austrian-born CEO of Swiss pharma giant Roche Holding AG, says NICE's cost-effectiveness approach is one-sided and doesn't take in the views of key stakeholders. The result is a lower level of novel drug approvals in England than elsewhere in Europe. Part of the problem reflects a lack of involvement by British politicians to drive the issue, he said.</p><p>Speaking at the FT Global Pharmaceutical and Biotechnology Conference in London Nov. 16 Schwan said NICE decisions preventing certain drugs from being used on the publicly funded National Health Service (NHS) went against the interests of society at large, resulting in makeshift remedial steps by politicians such as establishment of England's Cancer Drug Fund in 2010.</p><p>"A better alternative would be to get the stakeholders around the table from the very beginning to give their respective views. In Switzerland &ndash; and I can say this as an Austrian with the necessary objectivity &ndash; there you have a commission that includes doctors, and importantly the patients, payers, and also the industry, and it's a moderated process which is institutionalized and where the politicians take responsibility &ndash; there they're not hiding - so this leads to tough discussions and at the end you have a consensus and very often the politicians will follow the view and back the recommended price," Schwan said.</p><p>He was referring to the approval process in Switzerland conducted by the Federal Commission for Pharmaceuticals (EAK - Eidgenössische Arzneimittelkommission), which makes recommendations on whether to include a drug in the list of available therapies there. </p><p>"What happens in the UK is that you have just one perspective, a price is determined, and only then do other stakeholders get to come back, with additional arguments coming from patients, doctors, the industry &ndash; and then the whole thing falls apart," Schwan told conference delegates.</p><p>EAK meetings are comprised of four scientific experts, three doctors, three pharmacists, one hospital representative, three representatives of sickness funds and accident insurance groups, two representatives of the insurants, two representatives from the pharma industry, one Swiss Canton representative, one representative from drug and device regulator Swissmedic, along with the EAK's president who doesn't participate in normal voting, but who does decide in the case of a tie. The EAK's process allows for external experts to be consulted either by the commission when needed. </p><p>Schwan, who has been CEO of the 118-year-old Swiss firm since 2008, said the EAK, like NICE, is capable of tough decisions, but uses a consensual approach.</p><p>"My point is that each normal objective for finding the right price for the value of life needs a societal consensus which, of course, might vary from society to society, and all the important stakeholders must sit around the table &ndash; and you can't have just one perspective where jury and judge is the same [such as NICE]."</p><p>He noted that in other countries the HTA approval process is done in a more informal ways, "but the key thing is that stakeholders are consulted early. In the UK, one gets the feeling other stakeholders are part of the problem, not the solution."</p><p>Roche's CEO was speaking as NICE prepared to announce that, although retained for use in England through the Cancer Drugs Fund, Roche's breast cancer combination treatment Kadcyla (ado-trastuzumab emtansine) will not be recommended by it on grounds that the drug's price is still too high.</p><p>Although Roche has offered a discount, NICE's independent appraisal committee found that it did not cut the price enough to make it cost-effective for the NHS. This is despite using the specially extended range of cost effectiveness for cancer drugs, which allows more expensive treatments to be recommended if they are shown to benefit people reaching the end of their lives, NICE said.</p><p>"We recognise that Kadcyla has a place in treating some patients with advanced breast cancer and we have been as flexible as we can in making our recommendation. However, the price that the manufacturer is asking the NHS to pay in the long-term is too high," NICE's CEO Andrew Dillon said in a statement.</p><p>Kadcyla had also been slated to be delisted from the CDF for breast cancer, and Roche's blockbuster Avastin (bevacizumab) removed for cervical cancer, breast cancer and bowel cancer as part of the fund's latest cull of expensive drugs, announced in September. Successful last-ditch negotiations between Roche and NHS England have now prevented Kadcyla from being delisted. But as things now stand patients with advanced colorectal cancer and triple-negative breast cancer, a difficult to treat form of breast cancer, will no longer be able to access Avastin (bevacizumab). Avastin for treatment of cervical cancer remains available through the CDF.</p><p>The CDF was set up by the UK government as a makeshift answer to the widespread view that not enough innovative cancer drugs were gaining access in the UK market. In September, Britain's National Audit Office said the CDF seemed to have contributed to the use of innovative drugs in the UK but that its actual impact on patient outcomes cannot be certain due to lack of evidence. </p><p>Roche has the greatest number of CDF-listed therapies and is thus the biggest beneficiary of the CDF. Angered by the partial de-listings of Avastin, Schwan echoed warnings that they might prevent Roche from conducting future clinical trials in the UK in certain indications because the decision lowers standards and means that new drugs cannot be tested against Avastin, the current standard of care for some cancers. "That would have ripple effects, such as the leading scientists and investigators not getting involved in clinical trials," he told <i>Scrip</i> in an interview. </p><p>Speaking on the conference's sidelines he said the UK needed to address basic questions such as how much the country is willing to pay nominally for its healthcare. </p><p>"The reality is that the UK spends less than most of its European peers. In certain cases much less. That's a decision the UK must make. But it should be a political discussion."</p><p>He said the UK spends 8.5% of its GDP on healthcare compared with around 10% of GDP for other European countries. </p><p>"But people in the UK don't know that the spending here is lower than in Germany, for example. That's because there's no broad discussion about it here in the UK. But you need that discussion, Some people will put more value on health and others put less, and people make different trade-offs in societies. And if you make those trade-offs then you need the different perspectives &ndash; you cannot have only one; you cannot only have a payer's perspective. You need the perspective of the patient, the physician, the perspective of the industry, and of course the perspective of the payer to keep the system sustainable, and then it needs a political decision-making process to reach a conclusion. That's the fundamental issue here because in this country you have just one institution, NICE, which has been appointed to make the decision."</p><p>Karl Claxton, professor of health economics at the University of York who helped develop some of the economic modelling used by NICE, followed up from the stage panel by saying "What we need in the UK is a factual assessment to an empirical question that being if we spend this additional money over here, what are going to be the health effects on the rest of the NHS, in other words, the supply side? Does that mean that you should spend more on our healthcare system so that maybe that should be higher? That is a political question, and if you don't like [the current approach] then we voters should vote for higher taxes or more borrowing &ndash; or both &ndash; to shift public expenditure around. We didn't [at last May's UK general election, which gave the Conservative Party a parliamentary majority]!"</p><p>"The truth is, people weren't informed about how good our NHS was and if they had been maybe they would have made a different political decision [in May]," Claxton said. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 262
+
+<p>The chief executive of the world's biggest maker of cancer drugs believes the drug approval process used by the UK's National Institute of Health and Care Excellence's needs revamping and that the country should look to Switzerland for a model to emulate.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+NICE Should Ape Swiss HTA Says Roche CEO
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151111T052303
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151111T052303
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151111T052303
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030336
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+NICE Should Ape Swiss HTA, Says Roche CEO
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361511
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b1614dd6-3ae4-4dc1-ae92-7cbd1808fead
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {FDB297AF-E533-414A-8893-9EA456AAEE35}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/23/Hemophilia A And Graves Focus For Freshly Financed Apitope
+parent: {E8CB3B12-58E6-4D8C-926D-C49922785188}
+name: Hemophilia A And Graves Focus For Freshly Financed Apitope
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4feab481-dc9b-48bf-980a-d79796d01e13
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Hemophilia A And Graves' Focus For Freshly Financed Apitope 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Hemophilia A And Graves Focus For Freshly Financed Apitope
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8253
+
+<p> Few will remember Apitope. Those that do will remember it had a good run in 2008, with a series A financing and a licensing deal with Merck Serono for its lead program in multiple sclerosis (MS), and then&#8230;near radio silence. Until now. Suddenly that distant MS candidate ATX MS 1467 is Merck Serono's second-to-last remaining hope as a successor to Rebif. And Apitope has two more interesting compounds ready for clinical testing &ndash; for hemophilia A and Graves' disease &ndash; and the money to fund them with a &euro;12m series B financing announced this week. <i>Scrip's</i> Sukaina Virji caught up with CEO Dr Keith Martin. </p><p> <b><i>Scrip: </i>What are Apitopes?</b> </p><p> <b><i>Keith Martin:</i></b> Apitopes are therapeutic peptides that are designed to treat the underlying causes of a disease by suppressing portions of the immune system. Usually the immune system works to protect us from disease but an abnormal immune response to the body's own proteins can cause a lot of damage. Apitopes can reinstate normal immune responses or reduce abnormal immune responses. This is via the induction of IL-10 secreting regulatory T cells. </p><p> <b><i>Scrip:</i> What are the priorities with the latest financing?</b> </p><p> <b><i>KM:</i></b> We have two lead programs that are about to go into the clinic, both of which we are very excited about. The first one is the treatment for hemophilia A patients who have got inhibitors to their Factor VIII treatment. Hemophilia A is a genetic disorder that causes missing or defective Factor VIII, an essential blood-clotting protein. Hemophilia A patients are normally treated with infusions of Factor VIII to help with the clotting of their blood. Unfortunately about 30% of patients will develop neutralizing antibodies to that Factor VIII which prevents them from using that product. It's a real problem because you can't control the bleeding except with bypass agents (which trigger the generation of thrombin). </p><p> We are trying to treat the underlying cause of that problem, which is the T cell-driven lack of tolerance to Factor VIII by the immune system. We hope to take that into the clinic in the next three or four months. </p><p> The other key imperative for us is the Graves' disease program, which is an autoimmune disorder where you have an overactive thyroid due the production of stimulating antibodies to the TSH receptor which drives the thyroid to produce the hormones T3 and T4. Patients with Graves can develop goitre and serious medical issues as it affects multiple systems of the body. We're developing a treatment to treat the underlying cause of that disease rather than just simply treating the symptoms. That clinical trial is in part funded by a big Framework 7 grant that we got last year, over &euro;6m. </p><p> <b><i>Scrip: </i>Can you put your hemophilia A program into context against other compounds in development?</b> </p><p> <b><i>KM: </i></b>There are two types of product in development. There are new improved Factor VIII products, so improved half-lives, and attempts to deimmunize the Factor VIII to make it less likely to cause inhibitor antibodies. There are a number of products like that currently under development by all the leading players in the space such as Baxter and Novo Nordisk and so on. Other companies are developing long acting recombinant products. Bayer's got a pegylated recombinant Factor VIII in development. Novo Nordisk has got a long acting recombinant Factor VIII in development. Roche has got a product in Phase I &ndash; a bispecific antibody &ndash; which works like a bypass agent. So there are a number of people trying to develop programs to improve on the current therapies. </p><p> But Apitope, to my knowledge, is the only company that is actively looking to reinstate immune tolerance to Factor VIII and tackle the problem of inhibitors at the very cause, which is the T cells recognizing Factor VIII as a foreign antigen and generating these neutralizing antibodies to it. </p><p> <b><i>Scrip: </i>What's the current standard of care in Graves' disease?</b> </p><p> <b><i>KM:</i></b> Currently Graves' disease is treated with an anti-thyroid drug. Basically you give a drug that stops the thyroid gland from producing T3 and T4. A big problem is that 40% to 50% patients will fail on this treatment within a year of starting and then you're left with either surgical removal of the thyroid or radioactive iodine to neutralize the thyroid gland. </p><p> The problem in all of these conditions &ndash; including Factor VIII and MS &ndash; is that you're simply treating the symptoms; you're not addressing the underlying cause of the disease, which is this overproduction of antibodies through T cells. What we do with our antigen specific therapy is induce regulatory T cells which stop that from happening and very selectively switch off that part of the immune system that's gone wrong. </p><p> This is a very selective approach and very different from everybody else. We've got a very low side effect profile and in the preclinical and clinical data we have at present, we have very strong signs of efficacy in all of our programs. </p><p> <b><i>Scrip: </i>What were your priorities when the company raised its series A?</b> </p><p> <b><i>KM:</i></b> Our lead program back in 2008 was the MS program. At the time of closing the series A, we had completed one Phase I trial in MS patients with very nice safety data and very early signs of efficacy, although the trial wasn't designed to show efficacy. Shortly after the financing we <a href="http://www.scripintelligence.com/business/Merck-Serono-signs-MS-deal-with-Apitope-21747" target="_new">closed the deal</a> with Merck Serono. They picked up all the future costs of developing ATX MS 1467 and then we did another much larger Phase I study in MS patients, and it was in that study that we got some very strong indications of efficacy based on MRI data. We had an 80% suppression of new gadolinium enhancing lesions measured by MRI. So far we haven't had any treatment related SAEs and a very benign adverse event profile. So it looks very clean on the safety side at the moment, and it's been in about 60-70 patients and we've seen very early indications of efficacy. </p><p> In August this year we put out a press release that Merck Serono had just competed recruitment into the first Phase II trial. We're looking forward to data from that study early next year. </p><p> <b><i>Scrip: </i>Would it be fair to say things haven't gone as quickly as you might have hoped?</b> </p><p> <b><i>KM:</i></b> I don't think it is fair to say that. Everyone wants their programs to go as fast as they possibly can. We have designed a very challenging Phase II study and it's a great achievement to get the recruitment done with the inclusion criteria that Merck Serono set out. </p><p> <b><i>Scrip: </i>How long will this latest series B financing last, and what will you achieve with it?</b> </p><p> <b><i>KM:</i></b> The objective of the current financing is to complete the first two Phase I trials in hemophilia A and Graves' disease patients, and we expect that to take us to early 2017/middle of 2017, depending on recruitment times. We've raised enough money to be able to complete those trials. </p><p> <b><i>Scrip: </i>Will you then look to license these programs out?</b> </p><p> <b><i>KM:</i></b> One of the things we did fairly early on is get orphan designation in the US and Europe for the Factor VIII inhibitor program. Due to it being an ultra-orphan indication, we're giving serious consideration to whether this is something we could take a bit further ourselves and not license it early. </p><p> Graves' disease is a much bigger indication and so we may consider looking at partnering that a bit earlier, so at a similar stage as we did with MS. But again a lot depends on what comes out of the first clinical trials, and the opportunities for further funding to take the products forward. </p><p> <i>Apitope's series B round was led by new investor Wales Life Sciences Fund. Current investors Vesalius Biocapital, LRM, PMV and Wyvern also participated in the round. Existing shareholders include the Wellcome Trust. </i> </p> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 646
+
+<p> Few will remember Apitope. Those that do will remember it had a good run in 2008, with a series A financing and a licensing deal with Merck Serono for its lead program in multiple sclerosis (MS), and then&#8230;near radio silence. Until now. Suddenly that distant MS candidate ATX MS 1467 is Merck Serono's second-to-last remaining hope as a successor to Rebif. And Apitope has two more interesting compounds ready for clinical testing &ndash; for hemophilia A and Graves' disease &ndash; and the money to fund them with a &euro;12m series B financing announced this week. <i>Scrip's</i> Sukaina Virji caught up with CEO Dr Keith Martin. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Hemophilia A And Graves Focus For Freshly Financed Apitope
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150923T181556
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150923T181556
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150923T181556
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029909
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Hemophilia A And Graves' Focus For Freshly Financed Apitope 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198601368
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360644
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4feab481-dc9b-48bf-980a-d79796d01e13
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

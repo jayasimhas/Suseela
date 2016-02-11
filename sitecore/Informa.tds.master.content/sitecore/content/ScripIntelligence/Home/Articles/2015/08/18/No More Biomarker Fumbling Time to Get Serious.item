@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {B0294D6C-C650-49B2-91DF-6D80064AE923}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/18/No More Biomarker Fumbling Time to Get Serious
+parent: {CB6FF202-8CE5-4A7D-A8CE-6DB1F8FB3621}
+name: No More Biomarker Fumbling Time to Get Serious
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 059058c6-5c8f-4c48-9f79-9f9bb6daafb2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+No More Biomarker Fumbling; Time to Get Serious
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+No More Biomarker Fumbling Time to Get Serious
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5825
+
+<p>Developing reliable, informative biomarkers has been a messy business over the past two decades, said Janet Woodcock, director of the FDA's Center for Drug Evaluation and Research (CDER), who acknowledged there's been a lot of "fumbling" in determining what types of evidence are needed, because of uncertainty by regulators and a lack of research funding.</p><p>But now, Woodcock said, it's time to get down to the business of establishing the evidentiary standards, taxonomy and a common vocabulary for biomarkers &ndash; characteristics objectively measured and evaluated as indicators of normal biological processes, pathogenic processes or biological responses to therapeutic interventions &ndash; "so we can all talk to each other without having these long preliminary archeological expeditions about what are you trying to prove, what you want to support and what kind of decisions you are talking about."</p><p>At an Aug. 21 <a href="http://www.scripintelligence.com/home/Ready-For-The-Big-Biomarker-Debate-359757" target="_new">symposium</a> hosted by the FDA, in collaboration with the Critical Path Institute and the University of Maryland Center of Excellence in Regulatory Science and Innovation, Woodcock admitted her agency has struggled with developing evidentiary standards for biomarkers. </p><p>"No one has clearly articulated the evidentiary criteria that would match up to a certain type of biomarker," she said.</p><p>"The secret is, we didn't know either," Woodcock divulged.</p><p>She pointed out the FDA's mission is approving drugs, not biomarkers, so the process has been quite difficult for regulators.</p><p>Nonetheless, the FDA has established a biomarker qualification program (BQP), which is intended to facilitate integration of biomarkers into the drug R&D and regulatory review processes.</p><p>The agency has received 24 BQP submissions, of which six, so far, have been deemed <a href="http://www.fda.gov/Drugs/DevelopmentApprovalProcess/DrugDevelopmentToolsQualificationProgram/ucm284076.htm" target="_new">qualified biomarkers</a>.</p><p>But Woodcock acknowledged the process for determining evidence is still evolving.</p><p>The FDA was thrown into the "turmoil" of trying to set biomarker standards more than two decades ago in the midst of the HIV/AIDS crisis, she said.</p><p>CD4 and viral load were eventually accepted as HIV biomarkers, "even though they didn't meet all the strict criteria for qualifying for efficacy," Woodcock said.</p><p>She said the FDA has long accepted the use of biomarkers, despite the lack of evidentiary standards.</p><p>"Obviously, they are used ubiquitously in clinical medicine and clinical trials and long been used in drug development," Woodcock said.</p><p>But because of several "bad experiences" with poorly developed biomarkers, particularly in the cardiovascular space, she said there's been a lot of "suspicion" by regulators, whom Woodcock said continue to have "guarded skepticism" about the use of biomarkers as surrogate endpoints.</p><p>"There's been a checkered history around the use of various biomarkers as surrogate endpoints," Woodcock said.</p><p>When biomarkers don't perform well, "that introduces noise, and the trial may fail to show the effect of an effective drug," she warned.</p><p>Woodcock noted one particular thorny biomarker area for the FDA has been prostate-specific antigen, which she said lacks rigorous evidence, so the agency has not embraced it "the way oncologists have urged us to do."</p><p>A major roadblock in advancing the science of evaluating biomarker qualifications, Woodcock said, is the fact there is no funding for such endeavors, "and academics only work on things that have the possibility of getting funded."</p><p>"It's hard to move thousands of discovered biomarkers down the path into clinical reliance because there isn't a funding pathway to evaluate those," she said. "It isn't just a matter of assembling a few datasets and waving a magic wand over them. There are many barriers to getting this done."</p><p>Woodcock argued it's "going to take a village" to advance the field of biomarkers, because no one company, organization or sector can do it by itself.</p><p>"None have had the resources to do these activities alone," she insisted.</p><p>But Woodcock said there's been lots of interest on Capitol Hill about biomarker R&D and qualification, so she anticipated lawmakers may get behind providing funding.</p><p>She pointed out the House included biomarker requirements the <i>21st Century Cures Act</i>, adopted by the chamber on <a href="http://www.scripintelligence.com/home/Cures-adopted-mandatory-NIH-FDA-funds-survive-challenge-359386" target="_new">July 10</a>.</p><p>And Woodcock said she anticipated the <a href="http://www.scripintelligence.com/home/Senate-chance-to-improve-Cures-but-dont-expect-soon-359643" target="_new">Senate bill</a> &ndash; not expected until later this year &ndash; to also include biomarker provisions.</p><p>In addition, the CDER chief said she anticipated biomarkers to be a topic of discussion during the negotiations for the <a href="http://www.scripintelligence.com/home/PDUFA-VI-launches-Not-Pluto-flyby-but-has-potential-359452" target="_new">sixth round</a> of the <i>Prescription Drug User Fee Act</i>, "because industry is realizing qualification of biomarkers could help move the field along."</p><p>"This has become more urgent as the era of molecular medicine becomes a reality," Woodcock said.</p><p>Before precision medicine can truly be realized on a large scale, reliable biomarkers will need to be established, she said.</p><p>"If we are going to actually deliver precision medicine, we've got to have precision diagnostics that work for those medicines that tell us what to do," Woodcock declared.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 363
+
+<p>Developing reliable, informative biomarkers has been a messy business over the past two decades, said Janet Woodcock, director of the FDA's Center for Drug Evaluation and Research (CDER), who acknowledged there's been a lot of "fumbling" in determining what types of evidence are needed, because of uncertainty by regulators and a lack of research funding.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+No More Biomarker Fumbling Time to Get Serious
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150818T150859
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150818T150859
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150818T150859
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029587
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+No More Biomarker Fumbling; Time to Get Serious
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360004
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042439Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+059058c6-5c8f-4c48-9f79-9f9bb6daafb2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042439Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

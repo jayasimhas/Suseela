@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E23AF2EA-A0AC-4D71-A4A9-9067BA8FADA6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/15/ICAAC 2015 Mercks Bezlotoxumab A Big Step In C Diff
+parent: {60DD0A61-687E-4825-852F-A2FA9D0FA023}
+name: ICAAC 2015 Mercks Bezlotoxumab A Big Step In C Diff
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e261737b-6993-4393-9fad-94d664d20578
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+ICAAC 2015: Merck's Bezlotoxumab A 'Big Step' In C Diff
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+ICAAC 2015 Mercks Bezlotoxumab A Big Step In C Diff
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6545
+
+<p>Merck & Co.'s bezlotoxumab for the treatment of recurrent <i>clostridium difficile</i> (C diff) infections is "a big step" for treatment of the debilitating and potentially deadly gut infection, according to Dale Gerding, a professor at Loyola University Chicago Stritch School of Medicine and a lead investigator for the monoclonal antibody's Phase III clinical trials.</p><p>Bezlotoxumab and Merck's actoxumab are the only antibody therapies in clinical development for C diff infections, which are characterized by acute diarrhea, but antibodies represent one of a handful of different approaches that are making headway for patients, especially vulnerable patients plagued by reinfection. The company's Phase III results also hinted that one of the two toxins that cause C diff, known as toxin A and toxin B, may have a more important role than the other.</p><p>The data were presented on Sept. 20 during the American Society for Microbiology's and International Society of Chemotherapy's Interscience Conference of Antimicrobial Agents and Chemotherapy (ICAAC) and International Congress of Chemotherapy and Infection (ICC) joint conference in San Diego.</p><p><b>Stand-Alone Efficacy</b></p><p>Bezlotoxumab targets toxin A and actoxumab targets toxin B. The monoclonal antibodies were tested alone, together and against placebo in Merck's Phase III program, but actoxumab alone didn't decrease reinfections and the two antibodies tested together didn't perform significantly better than bezlotoxumab alone. </p><p>The MODIFY I study enrolled 1,452 patients and MODIFY II enrolled 1,203 patients, all of whom were treated with the standard of care for C diff infections. Patients in MODIFY I were randomized for treatment with a single intravenous infusion of bezlotoxumab, actoxumab, both antibody therapies together, or placebo. Enrollment in the MODIFY I actoxumab arm was stopped early for efficacy and safety. Patients in MODIFY II received an infusion of bezlotoxumab, bezlotoxumab plus actoxumab, or placebo. The rate of C diff recurrence at 12 weeks was the primary endpoint in both Phase III trials.</p><table><tbody><tr><td><p>&nbsp;</td><td><p><b>MODIFY I C diff recurrence rate</b></p>&nbsp;</td><td><p><b>MODIFY II C diff recurrence rate</b></p>&nbsp;</td></tr><tr><td><p>bezlotoxumab</p>&nbsp;</td><td><p>17.4% (p=0.0003)</p>&nbsp;</td><td><p>15.7% (p=0.0003)</p>&nbsp;</td></tr><tr><td><p>Bezlotoxumab plus actoxumab</p>&nbsp;</td><td><p>15.9% (p<></p>&nbsp;</td><td><p>14.9% (p<></p>&nbsp;</td></tr><tr><td><p>placebo</p>&nbsp;</td><td><p>27.6%</p>&nbsp;</td><td><p>25.7%</p>&nbsp;</td></tr></tbody></table><p><p>"A 10% reduction in recurrence is massive from a health burden standpoint," said Nicholas Kartsonis, Merck Research Laboratories section head for antibiotics and antibacterials, and associate vice president of clinical research in infectious diseases.</p><p>He noted during an interview with <i>Scrip</i> at the ICAAC/ICC conference that there are about 500,000 cases of C diff in the US each year and about 29,000 people die from the infections, and about 25% of C diff patients have a recurrence with about 40% of those individuals experiencing another recurrence. </p><p>C diff is especially deadly for elderly and immunocompromised patients, but bezlotoxumab was particularly effective in men and women over 65 years old and patients with compromised immunity.</p><p><b>A Growing Problem</b></p><p><a href="http://#http://www.scripintelligence.com/policyregulation/CDC-C-diff-spread-underscores-need-for-improved-antibiotic-use-356955" target="_new">Antibiotic misuse contributes</a> to the rising prevalence of C diff, so alternative approaches to treating and preventing the infections are needed, especially since about 30% of diagnosed patients end up in the hospital at an estimated annual cost of $7bn to $8bn worldwide, Kartsonis noted. He said Merck is reviewing health economics results from MODIFY I and II, such as reductions in the length of hospital stays and the number of patients who were readmitted to the hospital, for future data presentations.</p><p>"We hope to have the first non-antibiotic approved to treat C diff," Kartsonis said in an on-site interview during the ICAAC/ICC meeting in San Diego.</p><p>Merck's portfolio already includes Dificid (fidaxomicin), which is one of the two antibiotics specifically approved to treat C diff infections &ndash; an asset the big pharma added <a href="http://#http://www.scripintelligence.com/home/Mercks-9.5bn-Cubist-buy-overshadowed-by-court-decision-355511" target="_new">when it purchased</a>Cubist Pharmaceuticals for $9.5bn. Cubist bought the <a href="http://#http://www.scripintelligence.com/home/Two-for-the-price-of-two-Cubist-fronts-1.24b-for-Trius-Optimer-345397" target="_new">troubled Dificid developer</a> Optimer Pharmaceuticals for up to $801m in 2013. </p><p>Merck <a href="http://#http://www.scripintelligence.com/business/Merck-and-Co-buys-Clostridium-difficile-combination-rights-for-225-million-140633" target="_new">acquired the rights to bezlotoxumab</a> and actoxumab from Medarex (later purchased by Bristol-Myers Squibb) and Massachusetts Biologic Laboratories for up to $225m in 2009.</p><p>Kartsonis said Merck is speaking with the US FDA and European Medicines Agency (EMA) about submitting marketing applications for bezlotoxumab by the end of 2015. The therapy could be on the market in the US in 2016, if approved.</p><p><b>More Help Needed</b></p><p>"This is a big step in the right direction, but not the last step, because it's not going to address primary prevention," Gerding said in an interview during the ICAAC/ICC conference.</p><p>Bezlotoxumab, as a monoclonal antibody, would be a "whole new modality for treating C diff infections," he said, but the pharma industry and C diff-focused researchers are working on several novel treatments, including new antibiotics, antibodies, vaccines, biotherapeutics to restore the gut microbiome, and biological therapies, such as fecal transplants, to repopulate normal bacteria.</p><p>"The biggest needs for C diff are, no. 1, preventing this problem in the first place," Gerding said, "and no. 2, preventing recurrence."</p><p>And while the bezlotoxumab studies point to toxin B as a greater factor in C diff than toxin A, he and Kartsonis said more research is needed to examine the finding.</p><p>"It doesn't mean you only need to target toxin B, because someone might come up with an [effective] antibody against toxin A," Gerding said.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 377
+
+<p>Merck & Co.'s bezlotoxumab for the treatment of recurrent <i>clostridium difficile</i> (C diff) infections is "a big step" for treatment of the debilitating and potentially deadly gut infection, according to Dale Gerding, a professor at Loyola University Chicago Stritch School of Medicine and a lead investigator for the monoclonal antibody's Phase III clinical trials.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+ICAAC 2015 Mercks Bezlotoxumab A Big Step In C Diff
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150915T234441
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150915T234441
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150915T234441
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029815
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+ICAAC 2015: Merck's Bezlotoxumab A 'Big Step' In C Diff
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360468
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e261737b-6993-4393-9fad-94d664d20578
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

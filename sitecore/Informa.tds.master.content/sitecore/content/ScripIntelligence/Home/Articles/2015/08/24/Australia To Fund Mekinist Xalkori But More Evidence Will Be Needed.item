@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {5F8A42EA-E29C-4EF4-977D-F84D14740291}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/24/Australia To Fund Mekinist Xalkori But More Evidence Will Be Needed
+parent: {D37D02A2-D786-4924-A7F9-DF194032F233}
+name: Australia To Fund Mekinist Xalkori But More Evidence Will Be Needed
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3208ad18-baf4-4e1c-8f89-791b11c35796
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+Australia To Fund Mekinist, Xalkori But More Evidence Will Be Needed
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+Australia To Fund Mekinist Xalkori But More Evidence Will Be Needed
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7741
+
+<p>In another example of reimbursement agencies agreeing to pay for expensive new drugs in exchange for a commitment to provide more evidence of real clinical value, two major new anticancers from Novartis and Pfizer have been recommended for funding by the Australian Pharmaceutical Benefits Scheme under managed entry schemes. The agreements include a commitment to provide more convincing data with the possibility of a price cut if the terms of the schemes are not met.</p><p>The products involved are Novartis's Mekinist (trametinib) in combination with Tafinlar (dabrafenib) for patients with BRAF V600 mutation-positive unresectable stage III or IV malignant melanoma, and Pfizer's Xalkori (crizotinib) for ALK-positive advanced non-small-cell lung cancer (NSCLC). </p><p>Recommendations on managed entry schemes (MES) are made by the Pharmaceutical Benefits Advisory Committee under arrangements agreed in 2011. They are generally used for drugs meeting high clinical needs where the committee would not otherwise recommend listing the drug on the PBS at the company's proposed price because of uncertainty over the clinical effect, and where additional data, including from ongoing trials, are likely to resolve the uncertainties identified by the PBAC. </p><p>In the case of Mekinist, which Novartis has just acquired from GlaxoSmithKline (together with Tafinlar), the PBAC had rejected GSK's original 2014 application for listing on the grounds that it had not shown the product's superior comparative effectiveness against dabrafenib as monotherapy. That submission had included data from the Phase II BRF113220 trial, which was later supplemented by data emerging from the Phase III COMBI-D study. </p><p>But the committee said that BRF113220 was not designed as an efficacy trial and so was not considered to be a robust basis for making a subsidy recommendation. It said that the results from COMBI-D and another Phase III trial, COMBI-V, would be more informative, noting that COMBI-D was ongoing and COMBI-V was halted prematurely because of a statistically and clinically significant overall survival benefit in favor of the trametinib/dabrafenib combination arm over the vemurafenib (Roche's Zelboraf) arm.</p><p>GSK resubmitted its application with new data from the COMBI-V trial that the PBAC said "provided the committee with more confidence that trametinib with dabrafenib has an incremental effect on overall survival (OS) over a BRAF inhibitor alone." </p><p>The committed noted the clinical need and importance of early access for this patient population, and said it was satisfied that trametinib, when used in combination with dabrafenib, was more effective than dabrafenib alone. However, it said that the size of the incremental treatment effect was still uncertain, particularly for overall survival, and so it recommended listing under a managed entry scheme (MES). An MES, it said, would be appropriate to address the uncertainty relating to the magnitude of clinical benefit while providing early access to patients with a high clinical need.</p><p>The committee said that its recommended price would give an incremental cost-effectiveness ratio (ICER) of A$45,000-75,000 ($32,000-53,000) per quality adjusted life year (QALY). It could have recommended trametinib at a price justified by the existing evidence (which it said would be lower), but instead it proposed a rebate with interest, "thereby ensuring that the conditions of the MES framework are fulfilled." </p><p>It said: "The sponsor has provided reassurances that more robust evidence will be forthcoming in the foreseeable future to better inform its modelling, and the PBAC has proposed a plan to review this evidence within two years, to make sure patients receiving medicines on the PBS are being treated according to the best available evidence and that the cost of the combination therapy remains justified in terms of acceptable cost-effectiveness."</p><p>Although GSK has agreed to provide more conclusive evidence of cost-effectiveness, "there would be no option for an increase in the price of trametinib, as the higher price is being paid at entry into the PBS", the PBAC said. The ICER is already high, "as are the total budgetary implications," it continued, adding that the only two possible outcomes would be price maintenance or a price cut. </p><p>Following the recommendation, GSK said it would work with the government to ensure the listing of trametinib "in a timely manner". Presumably responsibility for doing so will now pass to Novartis.</p><h2>Pfizer's Xalkori</h2><p>Pfizer's submission for Xalkori first came to the PBAC in November 2013, but the committee was not convinced and deferred its consideration. In order to achieve what it saw as a cost-effective price, it asked for more information including a respecified economic evaluation. In March 2014, Pfizer filed its resubmission, offering a price reduction that would yield an ICER of A$45,000-75,000. </p><p>However, the resubmission included the company's original claim of an overall survival gain of 12 months for crizotinib over the comparator pemetrexed, which the committee said was "implausible" &ndash; its own estimate for the likely incremental overall survival gain was 3.1-3.5 months. The committee said that at least a 30% price reduction would be needed to achieve an acceptable ICER; it also had a number of other observations regarding ALK testing, so it again deferred its consideration.</p><p>Pfizer subsequently made a further submission, arguing that the economic analysis it had presented to the March 2014 meeting was "reasonable" and rejecting the PBAC's suggestion of a 30% price reduction. The committee noted that the resubmission contained no new data to support the proposed price, and repeated its assertion that the OS gain of 12 months was implausible.</p><p>It therefore suggested that a managed entry scheme would be the best way forward. The MES would allow the initial entry price requested, but would include the possibility of a rebate should crizotinib fail to deliver on its claimed benefits. As with GSK's drug, the MES would offer no option for a price increase and the only two outcomes following the submission of further evidence would be price maintenance or a price cut.</p><p>The evidence Pfizer must provide is the proportion of the first 50 consecutive patients to begin crizotinib therapy after any PBS listing begins who are alive 365 days after starting therapy. The data are to be provided as soon as possible after the 50th consecutive patient has been followed for 365 days. "This sample size was proposed on the expectation that, with the estimated number of incident patients, it would take approximately two years to generate the data," the committee noted.</p><p>If Pfizer is not able to produce the data within the two-year timeframe, the penalty should be a price reduction for crizotinib (with associated rebate and interest), on the assumption of an incremental overall survival of 3.1 months. Moreover, the product's price would also be cut if the PBAC recommended the listing of a second-generation ALK inhibitor before the requested data became available.</p><p>Pfizer said it welcomed the PBAC's recommendation, and gave the following updates to the information published by the committee, based on agreements reached with the department of health after the recommendation: the results of the managed entry scheme are to be delivered 14 months after the 50th eligible patient is initiated on crizotinib, and a new deed of agreement will be negotiated if a second-generation ALK inhibitor is listed on the PBS before the results of the managed entry scheme are delivered to the department.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 477
+
+<p>In another example of reimbursement agencies agreeing to pay for expensive new drugs in exchange for a commitment to provide more evidence of real clinical value, two major new anticancers from Novartis and Pfizer have been recommended for funding by the Australian Pharmaceutical Benefits Scheme under managed entry schemes. The agreements include a commitment to provide more convincing data with the possibility of a price cut if the terms of the schemes are not met.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+Australia To Fund Mekinist Xalkori But More Evidence Will Be Needed
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150824T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150824T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150824T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029636
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+Australia To Fund Mekinist, Xalkori But More Evidence Will Be Needed
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200700295
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360085
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042443Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3208ad18-baf4-4e1c-8f89-791b11c35796
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042443Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

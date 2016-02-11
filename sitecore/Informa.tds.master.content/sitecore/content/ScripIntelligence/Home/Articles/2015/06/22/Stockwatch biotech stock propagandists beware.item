@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {56AEC766-9C55-4DF4-8C20-0027ABBF5D24}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/22/Stockwatch biotech stock propagandists beware
+parent: {00F73790-0694-4BB8-8A63-FA232FC172C8}
+name: Stockwatch biotech stock propagandists beware
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a22b2489-427c-461c-8f83-bb6086c44b32
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+Stockwatch: biotech stock propagandists, beware!
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Stockwatch biotech stock propagandists beware
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6857
+
+<p>In Allan Massie's series of historical novels set in Bordeaux from 1940, the war in Europe is followed through the lives of French civilians as the invasion turns to into the occupation, and collaboration rather than resistance becomes acceptable and even encouraged. After the liberation however, collaboration takes on a quite different connotation. </p><p><p>As broad stock market indices stagnate and become range-bound while breath is held before a probable Grexit, a possible Brexit, and a definite exit of Chinese investors from their stock market, early-stage biotechnology companies with data that should be regarded as outright failures have become the new battle ground. There are no shots fired in this battle: truth and investment performance are the only casualties. As is the case with most conflicts, the truth is heavily modified by propaganda.</p><p><p>Alcobra reported its <a href="http://www.scripintelligence.com/researchdevelopment/Placebo-continues-winning-streak-in-Alcobra-Transition-trials-359108" target="_new">Phase II trial results for metadoxine</a> in fragile X syndrome which missed statistical significance in the primary endpoint and three out of five of the secondary endpoints. While all but the most cognitively impaired would have recognised Alcobra's results as a disaster, the analyst from Piper Jaffray offered his congratulations to the Alcobra management on the conference call to discuss the results. In their published research, Piper Jaffray suggested that investors may be associating the failure in fragile X syndrome with a similar outcome in the planned Phase III studies in attention deficit hyperactivity disorder (ADHD). This propaganda is a little like re-writing history since metadoxine has already <a href="http://www.scripintelligence.com/researchdevelopment/Alcobra-tumbles-on-Phase-III-ADHD-results-for-metadoxine-354315" target="_new">failed a Phase III study in ADHD</a>, making Alcobra &ndash; a company that describes itself as developing safe and effective products for the treatment of cognitive disorders &ndash; zero for two on that particular corporate objective. The analysts at Piper Jaffray also attempted to call a defeat a victory when they published a research note on Otonomy last week. Otonomy's recent Phase IIb study of OTO-104 in Méni&egrave;re's disease also <a href="http://www.scripintelligence.com/researchdevelopment/Otonomy-drug-flunks-Phase-IIb-full-speed-ahead-to-Phase-III-358567" target="_new">failed its primary endpoint</a>, which is apparently now suitably summed up by the euphemism "showed very encouraging signs of efficacy", in the phrase book used by the analysts at Piper Jaffray. Both Alcobra and Otonomy are recommended as overweight in their clients' portfolios.</p><p><p>With so many clinical trial failures in one week it is not surprising that the sell side would want to apply a sugar-coating in order to prevent a broad sell-off in these risky stocks. There were two companies where either a clinical trial failure was recognized for what it was last week, or the company did not have the analyst support to paint a failure as something else. Transition Therapeutics' drug ELND005 (scyllo-inositol) failed to meet the primary endpoint in its phase II/III study in Alzheimer's Disease (AD) agitation. While the analysts from Cowen reported the failure, removed their price target but maintained their 'market perform' recommendation, the analysts from Canaccord suggested that future development of ELND005 was unlikely and removed it from their model. I would concur with Canaccord's assessment since Elan and Transition Therapeutics' previous report of <a href="http://www.scripintelligence.com/business/Transition-hands-over-Alzheimers-asset-to-Elan-ahead-of-Phase-III-307879" target="_new">ELND005's Phase II failure</a> in 351 mild- to moderate AD patients in 2010 also makes this molecule zero for two in neurocognitive diseases and their sequelae. Very few companies can match the failure rate of Vical, whose recent <a href="http://www.scripintelligence.com/home/Vical-dives-as-Allovectin-terminated-on-conclusive-failure-345819" target="_new">Phase III failure of Allovectin</a> (velimogene aliplasmid) in cancer immunotherapy was compounded by last week's failure of two forms of its therapeutic genital herpes vaccine. As if to match the mood of the week amongst biotech companies reporting clinical trial results, both forms of Vical's vaccine were inferior to placebo in the study's primary endpoint of reduction in viral shedding. </p><p><p>Not all of last week's clinical trial results were reported so definitively as failures as those of Transition Therapeutics and Vical. Aquinox reported the results of its phase II proof-of-concept placebo-controlled LEADERSHIP study of AQX-1125 (a SHIP1 activating anti-inflammatory agent) in 69 patients with bladder pain syndrome and interstitial cystitis. AQX-1125 missed the primary endpoint of pain reduction after six weeks of treatment. If the point of the LEADERSHIP study was for Aquinox to prove the principle of AQX-1125 in pain management, investors may have missed that fact as the press release highlighted the (not statistically significant) "encouraging" reduction in pain. In addition, the analysts from Jefferies were so keen on the 'encouraging' adjective that they used it seven times in the abstract of their research report and maintained their 'buy' recommendation on the stock. The analysts from Cowen maintained their 'outperform' recommendation and were keen to point out that the top-line data suggested clinical efficacy, even as the results suggested the opposite.</p><p><p>Last week was a good week for placebos. The discomfort for investors who lost money on those binary events was probably compounded by reading investment bank research that bathed a clinical failure in the positive light of either 'promising' or 'encouraging' results and an unchanged buy, outperform or overweight recommendation. The last time investment recommendations remained this bullish in the face of declining fundamentals, Merrill Lynch and its former technology analyst Henry Blodget were fined and the latter barred for life from the securities industry. Come the liberation, whenever that is, the penalties for collaboration have precedent.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 359
+
+<p>In Allan Massie's series of historical novels set in Bordeaux from 1940, the war in Europe is followed through the lives of French civilians as the invasion turns to into the occupation, and collaboration rather than resistance becomes acceptable and even encouraged. After the liberation however, collaboration takes on a quite different connotation. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Stockwatch biotech stock propagandists beware
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150622T160003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150622T160003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150622T160003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029098
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+Stockwatch: biotech stock propagandists, beware!
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359065
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042413Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a22b2489-427c-461c-8f83-bb6086c44b32
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042413Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

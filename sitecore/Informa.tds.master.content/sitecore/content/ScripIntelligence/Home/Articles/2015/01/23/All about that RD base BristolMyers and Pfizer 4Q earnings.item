@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {20E4031D-BD01-463E-9EAB-50576BEBA0BF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/All about that RD base BristolMyers and Pfizer 4Q earnings
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: All about that RD base BristolMyers and Pfizer 4Q earnings
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0d7a3680-1875-4b60-9e5b-eaa85c672761
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+All about that (R&D) base: Bristol-Myers and Pfizer 4Q earnings
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+All about that RD base BristolMyers and Pfizer 4Q earnings
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 12277
+
+<p>Foreign currency exchange rates, generic competition and product sales (both good and bad) affected fourth quarter and full-year 2014 revenue and earnings for Bristol-Myers Squibb and Pfizer, but the companies assured investors on 27 January that their growth is dependent on what each of them sees as an improving research and development base.</p><p>Like Johnson & Johnson &ndash; the first big pharma to report year-end earnings on 20 January &ndash; the impact of currency exchange rates on the strengthening US dollar shaved a few percentage points from revenue figures and will continue to do so in 2015 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/JandJs-rising-sales-face-currency-hits-in-2014-2015-356274" target="_new">21 January 2015</a>). However, Bristol-Myers and Pfizer see recently launched products and near-term drug approvals as offsets to currency impacts and generic competitors for legacy assets. The companies also are betting on plans to advance molecules or acquire new compounds that could add even more value.</p><p><b>PD-1 inhibitor Opdivo is the focus at BMS as revenue slips</b></p><p>Analyst consensus for Bristol-Myers was $15.7bn in 2014 revenue with earnings per share (EPS) of $0.41 for the fourth quarter and $1.80 for the year (scripintelligence.com, <a href="http://www.scripintelligence.com/home/4Q-preview-Amgen-Biogen-BMS-Celgene-Novartis-Pfizer-and-Roche-356329" target="_new">23 January 2015</a>). </p><p>The company beat the forecasts even with revenue that declined 4% to $4.3bn in the fourth quarter, including a 3% hit due to currency concerns. Full-year revenue also slipped 3% to $15.9bn. Non-GAAP diluted EPS fell 10% to $0.46 for the quarter, including a $0.03 foreign exchange impact, but EPS increased 2% to $1.85 for the year.</p><p>Excluding the impact from a sale of its share of diabetes alliance revenue to AstraZeneca &ndash; a deal worth up to $4.1bn that closed during the first quarter of 2014 &ndash; Bristol-Myers said its fourth quarter revenue increased 6%, or 9% including currency impacts (scripintelligence.com, <a href="http://www.scripintelligence.com/home/1Q-EARNINGS-BMS-sees-sales-slide-plans-nivolumab-rolling-BLA-351514" target="_new">30 April 2014</a>).</p><p>Major contributors to 2014 financial growth were the melanoma immunotherapy Yervoy (ipilimumab), a leukemia drug Sprycel (dasatinib), arthritis medicine Orencia (abatacept), and the oral anticoagulant Eliquis (apixaban). Sales last year declined for the depression and schizophrenia drug Abilify (aripiprazole) due to competition from Abilify Maintena, a long-acting injectable product, and revenue dropped for the HIV drugs Reyataz (atazanavir) and Sustiva (efavirenz).</p><table><tbody><tr><td><p><b>Product</b></p>&nbsp;</td><td><p><b>2014 Sales</b></p>&nbsp;</td><td><p><b>Change from 2013</b></p>&nbsp;</td></tr><tr><td><p>Yervoy</p>&nbsp;</td><td><p>$1.3bn</p>&nbsp;</td><td><p>36%</p>&nbsp;</td></tr><tr><td><p>Sprycel</p>&nbsp;</td><td><p>$1.5bn</p>&nbsp;</td><td><p>17%</p>&nbsp;</td></tr><tr><td><p>Orencia</p>&nbsp;</td><td><p>$1.7bn</p>&nbsp;</td><td><p>14%</p>&nbsp;</td></tr><tr><td><p>Eliquis</p>&nbsp;</td><td><p>$774m</p>&nbsp;</td><td><p>530%</p>&nbsp;</td></tr><tr><td><p>Abilify</p>&nbsp;</td><td><p>$2bn</p>&nbsp;</td><td><p>-12%</p>&nbsp;</td></tr><tr><td><p>Reyataz</p>&nbsp;</td><td><p>$1.4bn</p>&nbsp;</td><td><p>-12%</p>&nbsp;</td></tr><tr><td><p>Sustiva</p>&nbsp;</td><td><p>$1.4bn</p>&nbsp;</td><td><p>-11%</p>&nbsp;</td></tr></tbody></table><p><p>Bristol-Myers provided a 2015 forecast that was below the company's 2014 results: $14.4bn to $15bn in revenue with non-GAAP EPS between $1.55 and $1.70. Foreign exchange concerns cut $800m from the company's revenue guidance for this year and $0.12 to $0.14 in EPS. Without the currency impact, BMS's 2015 guidance would have been in line with William Blair analysts' expectations for $15.6bn in revenue and $1.80 in EPS this year.</p><p>BMS expects Abilify revenue to fall further in 2015 after the drug loses patent protection in the US in April. The company saw sales for Baraclude (entecavir) fall 6% to $1.4bn in 2014 after the hepatitis B drug lost patent protection last year and a greater decline is anticipated in 2015.</p><p>That means a lot is riding on the success of the programmed cell death-1 (PD-1) checkpoint inhibitor Opdivo (nivolumab) and the Bristol-Myers immuno-oncology franchise, including Yervoy. After Opdivo was approved to treat advanced melanoma in Japan in July and in the US in December, the immunotherapy generated $6m in 2014 sales (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Latest-Japanese-drug-approvals-BMSOnos-PD-1-drug-first-352718" target="_new">9 July</a> and <a href="http://www.scripintelligence.com/home/Bristol-Myers-wins-US-Opdivo-approval-three-months-early-355806" target="_new">23 December 2014</a>).</p><p>Bristol-Myers CEO Lamberto Andreotti recently announced his retirement and the appointment of BMS chief operating officer Giovanni Caforio as his replacement, leaving the immuno-oncology franchise in the hands of the company's former oncology leader (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BMSs-Andreotti-steps-down-as-CEO-356296" target="_new">22 January 2015</a>). </p><p>Dr Caforio noted that BMS has completed a rolling supplemental biologic license application (sBLA) submission to the US FDA for Opdivo in the third-line treatment of lung cancer, but a Prescription Drug User Fee Act (PDUFA) date for the agency's decision was not revealed.</p><p>"I'm confident by the end of this next 12 months we are going to have an approval in lung [cancer]," Dr Caforio said during the company's fourth quarter earnings conference call.</p><p>BMS reported on 11 January that the Phase III CheckMate-017 clinical trial was stopped early, since Opdivo demonstrated a significant improvement in overall survival versus docetaxel in previously treated advanced or metastatic squamous cell non-small cell lung cancer (NSCLC) patients (scripintelligence.com, <a href="http://www.scripintelligence.com/home/BMSs-anti-PD1-Opdivo-takes-lead-in-lung-cancer-356075" target="_new">12 January 2015</a>). </p><p>BMS is testing Opdivo alone and in combination with other therapies in more than 50 clinical trials in more than 20 different types of cancer (scripintelligence.com, <a href="http://www.scripintelligence.com/business/JP-MORGAN-2015-Bristol-Myers-oncology-head-boasts-PD-1-promise-partners-356107" target="_new">13 January 2015</a>). A Phase III clinical trial testing Opdivo with BMS's own Yervoy as a first-line treatment for lung cancer is expected to begin sometime in 2015.</p><p><b>Pfizer focuses on pipeline as major M&A seems less likely</b></p><p>Two weeks after its 13 January presentation at the 33rd Annual JP Morgan Healthcare Conference in San Francisco, during which Pfizer highlighted its R&D pipeline, the company's fourth quarter earnings report again focused on products in development, including the expected FDA approval of Ibrance (palbociclib) for breast cancer in April and the development of an immuno-oncology pipeline anchored by the Merck KGaA PD-1 ligand (PDL-1) inhibitor avelumab (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Pfizer-promotes-underappreciated-RandD-pipeline-356297" target="_new">22 January 2015</a>).</p><p>Pfizer needs a boost from novel therapies, since the company's revenue and earnings continue to suffer from generic competition for what used to be blockbuster drugs. </p><p>Pfizer reported $49.6bn in 2014 revenue, which was down 2% from 2013 or 4% with foreign exchange factored in. Non-GAAP EPS was down 4% at $0.54 for the fourth quarter, but EPS increased 2% to $2.26 for the year. The results were in line with analyst consensus estimates of $49.3bn in revenue and $2.25 in 2014 EPS.</p><p>The pain drug Lyrica (pregabalin), the Prevnar pneumococcal vaccine franchise, Xalkori (crizotinib) for lung cancer and lymphoma, the kidney cancer therapy Inlyta (axitinib) and arthritis drug Xeljanz (tofacitinib) drove revenue gains in 2014, which were offset by declining sales for the cholesterol drug Lipitor (atorvastatin), Detrol (tolterodine tartrate) for overactive bladder and the arthritis therapy Celebrex (celecoxib) due to generic competition.</p><table><tbody><tr><td><p><b>Product</b></p>&nbsp;</td><td><p><b>2014 Sales</b></p>&nbsp;</td><td><p><b>Change from 2013</b></p>&nbsp;</td></tr><tr><td><p>Lyrica</p>&nbsp;</td><td><p>$5.2bn</p>&nbsp;</td><td><p>12%</p>&nbsp;</td></tr><tr><td><p>Prevnar family</p>&nbsp;</td><td><p>$4.5bn</p>&nbsp;</td><td><p>12%</p>&nbsp;</td></tr><tr><td><p>Celebrex</p>&nbsp;</td><td><p>$2.7bn</p>&nbsp;</td><td><p>-8%</p>&nbsp;</td></tr><tr><td><p>Lipitor</p>&nbsp;</td><td><p>$2.1bn</p>&nbsp;</td><td><p>-11%</p>&nbsp;</td></tr><tr><td><p>Xalkori</p>&nbsp;</td><td><p>$438m</p>&nbsp;</td><td><p>56%</p>&nbsp;</td></tr><tr><td><p>Inlyta</p>&nbsp;</td><td><p>$410m</p>&nbsp;</td><td><p>32%</p>&nbsp;</td></tr><tr><td><p>Xeljanz</p>&nbsp;</td><td><p>$308m</p>&nbsp;</td><td><p>172%</p>&nbsp;</td></tr><tr><td><p>Detrol</p>&nbsp;</td><td><p>$201m</p>&nbsp;</td><td><p>-63%</p>&nbsp;</td></tr></tbody></table></p><p>Pfizer also no longer collects revenue from US and Canadian sales for Amgen's arthritis blockbuster Enbrel (etanercept) nor from Boehringer Ingelheim's treatment for chronic obstructive pulmonary disease (COPD) Spiriva (tiotropium bromide) in certain markets. </p><p>The company's alliance revenue fell 64% from $2.7bn in 2013 to $957m in 2014. Pfizer's take from the BMS-partnered drug Eliquis contributed positively to last year's revenue, but the company didn't detail its portion of the anticoagulant's sales.</p><p>Pfizer's 2015 financial guidance anticipates $2.8bn in additional impacts from currency exchange rates and a $3.5bn hit from generic competition this year. The company expects to see $44.5bn to $46.5bn in revenue this year with non-GAAP earnings between $2 and $2.10 per share. The consensus EPS forecast for 2015 is $2.18.</p><p>"We see 2015 as the trough earnings year for [Pfizer] and believe that [Ibrance (palbociclib)], M&A and restructuring should be strong value drivers from here," Jefferies analyst Jeffrey Holford said in a 27 January report.</p><p>Investors and analysts looking for clear guidance about Pfizer's intention to grow revenue and earnings through major acquisitions, like the company's failed attempt to buy AstraZeneca in 2014, likely were disappointed. CEO Ian Read would not commit to a big buyout in 2015, but said Pfizer will consider transactions that make sense for the company and its investors.</p><p>"Given the strength of our late and mid-stage pipeline, we will evaluate business development opportunities biased towards deals with the potential for creating value in the near term," Mr Read said during Pfizer's earnings conference call.</p><p>He later noted that the company did not push for an acquisition of AstraZeneca at a high price just to close the deal. Going forward, he said, "I don't feel that we need to do a large deal. I do believe though that we can deploy capital in a way that it can improve return to shareholders."</p><p>In addition to the Merck KGaA PDL-1 partnership, Pfizer's recent deals include a growth hormone collaboration with Opko Health and a hemophilia B gene therapy pact with Spark Therapeutics (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Pfizer-sides-with-Merck-KGaA-on-PD-L1-AZ-deal-out-for-good-355101" target="_new">17 November</a>, <a href="http://www.scripintelligence.com/business/Another-Pfizer-deal-Opkos-once-weekly-growth-hormone-355670" target="_new">16 December</a> and <a href="http://www.scripintelligence.com/home/Gene-therapy-rising-Bluebird-soars-at-ASH-Pfizer-builds-platform-355514" target="_new">9 December 2014</a>).</p><p>Pfizer closed down 0.6% at $32.60 per share on 27 February after trading as high as $33.35 earlier in the day &ndash; just $0.15 below the stock's one-year high. </p><p>Bristol-Myers also closed down 0.8% at $61.99. The company's stock, like Pfizer's, remains near its one-year high of $64.44.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 352
+
+<p>Foreign currency exchange rates, generic competition and product sales (both good and bad) affected fourth quarter and full-year 2014 revenue and earnings for Bristol-Myers Squibb and Pfizer, but the companies assured investors on 27 January that their growth is dependent on what each of them sees as an improving research and development base.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+All about that RD base BristolMyers and Pfizer 4Q earnings
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027646
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+All about that (R&D) base: Bristol-Myers and Pfizer 4Q earnings
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356322
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0d7a3680-1875-4b60-9e5b-eaa85c672761
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

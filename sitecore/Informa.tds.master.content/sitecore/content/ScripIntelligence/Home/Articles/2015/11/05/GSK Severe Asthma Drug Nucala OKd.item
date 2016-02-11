@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {2BB00167-CC08-443F-A766-CF8E9D90FAA9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/05/GSK Severe Asthma Drug Nucala OKd
+parent: {AB3D0A5F-5AD9-4FF9-983E-109114074A87}
+name: GSK Severe Asthma Drug Nucala OKd
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6c089fd4-fb84-4b29-a290-f65da7982f38
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 35
+
+GSK Severe Asthma Drug Nucala OK'd 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 33
+
+GSK Severe Asthma Drug Nucala OKd
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5127
+
+<p>GlaxoSmithKline PLC on Nov. 4 gained the FDA's blessing to market Nucala (mepolizumab) as the first anti-interleukin-5 treatment in the US for adults and adolescents with severe asthma with an eosinophilic phenotype &ndash; gaining broader use than a panel of experts had advised.</p><p>Nucala is intended to be used as add-on maintenance treatment for patients with the disease 12 years or older with eosinophilic inflammation &ndash; a very difficult to treat population, which makes up about 3% of the 25 million people with asthma in the US.</p><p>Patients with severe asthma account for 50% of all direct health care costs related to asthma.</p><p>Asthma often is characterized by an accumulation of white blood cells, or eosinophils, in lung tissues. In general, eosinophil levels correlate with severity and frequency of exacerbations of asthma.</p><p>IL-5 is the main promoter of eosinophil growth, activation and survival, and provides an essential signal for the movement of eosinophils from the bone marrow into the lung. </p><p>Nucala inhibits IL-5.</p><p>"Our research has allowed us to better understand the specific role eosinophils play in severe asthma," explained Eric Dube, senior vice president and head of GSK's global respiratory franchise.</p><p>GSK, which has priced Nucala at $2,500 per vial, which is administered every 28 days, noted the FDA approval is the first marketing authorization granted for the drug anywhere in the world.</p><p>"We are eager as a company, based on the unmet needs, to get the product to patients quickly," a spokeswoman told <i>Scrip</i>, adding the firm is aiming for a launch near the end of this year.</p><p>Allergists and pulmonologists are expected to be the main prescribers of the drug, she said, noting those professionals are who GSK is targeting for its education program.</p><p>"Our intent is to get it in front of these experts and make sure they understand the value of the medicine and to meet that unmet patient need," she said, adding there are an estimated 300,000 to 400,000 patients in the US who would be appropriate for Nucala.</p><p><b>Snubbing Experts' Advice</b></p><p>The FDA actually went against its panel of outside advisers, who <a href="http://www.scripintelligence.com/home/Panel-backs-GSK-severe-asthma-drug-in-adults-not-adolescents-358914" target="_new">voted at a June 11</a> meeting to approve Nucala in adults, but said they could not endorse the use of the drug in adolescents 12-17 years because of a lack of safety and efficacy data in that population.</p><p>The panelists voted 14-0 that GSK's efficacy data provided substantial evidence of a clinically meaningful benefit of Nucala 100mg once every four weeks to treat severe eosinophilic asthma. </p><p>But the committee voted 9-5 that the data failed to demonstrate the same in the adolescent population.</p><p>The panel voted 13-1 the drug's safety had been adequately demonstrated in adults, but in a 12-2 vote, the committee said the data fell short in patients 12-17 years.</p><p>In another 14-0 vote, the panel said the available efficacy and safety data supported approval of Nucala 100mg for adults, but voted 10-4 the drug was not ready for approval to treat adolescents.</p><p>But the FDA gave its approval for GSK to market Nucala in adolescents as young as 12 years anyway &ndash; snubbing the advice of the expert committee and giving the firm a broader market in which to sell its drug.</p><p>Steve Yancey, vice president and medicine development leader for Nucala, pointed out the advisory panel's concerns were more about the small number of adolescent patients enrolled in the Phase III studies rather than on the results of Nucala in that population.</p><p>In fact, he said, the adolescent subgroup showed a similar treatment response and safety profile as the overall study population.</p><p>But Yancey explained it's more difficult to enroll adolescents with severe asthma with an eosinophilic phenotype, because there are fewer of those patients than there are adults.</p><p>Nonetheless, he told <i>Scrip</i>, there remains a high unmet need for the adolescent population.</p><p>"They really don't have treatment options," Yancey said.</p><p>The safety and efficacy of Nucala were established in three double-blind, randomized, placebo controlled trials in patients with severe asthma on currently available therapies. </p><p>Nucala or a placebo was administered to patients every four weeks as an add-on asthma treatment. Patients with severe asthma who received Nucala had fewer exacerbations requiring hospitalization or emergency department visits and a longer time to the first exacerbation, versus placebo. </p><p>In addition, patients with severe asthma receiving Nucala experienced greater reductions in their daily maintenance oral corticosteroid dose, while maintaining asthma control compared with patients receiving placebo, regulators pointed out. </p><p>But treatment with the drug did not result in a significant improvement in lung function, as measured by the volume of air exhaled by patients in one second.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 287
+
+<p>GlaxoSmithKline PLC on Nov. 4 gained the FDA's blessing to market Nucala (mepolizumab) as the first anti-interleukin-5 treatment in the US for adults and adolescents with severe asthma with an eosinophilic phenotype &ndash; gaining broader use than a panel of experts had advised.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+GSK Severe Asthma Drug Nucala OKd
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151105T053957
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151105T053957
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151105T053957
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030237
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 35
+
+GSK Severe Asthma Drug Nucala OK'd 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361286
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042517Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6c089fd4-fb84-4b29-a290-f65da7982f38
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042517Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

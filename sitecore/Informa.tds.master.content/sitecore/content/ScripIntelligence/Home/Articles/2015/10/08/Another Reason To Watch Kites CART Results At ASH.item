@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {583D1C9C-6516-43C8-B06D-48C15D704043}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/08/Another Reason To Watch Kites CART Results At ASH
+parent: {83EF6A9B-4CC6-487A-9149-D19CA9E8F934}
+name: Another Reason To Watch Kites CART Results At ASH
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 35394bc0-97b7-4e28-b664-da292bebab27
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Another Reason To Watch Kite's CAR-T Results At ASH
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+Another Reason To Watch Kites CART Results At ASH
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6647
+
+<p>Kite Pharma CEO Arie Belldegrun confirmed on Aug. 17 that a patient died soon after treatment with the company's chimeric antigen receptor T-cell (CAR-T) therapy during the Phase I portion of an ongoing Phase I/II clinical trial, but he said the death was not related to Kite's closely-watched cancer therapy.</p><p>It's expected that some severely ill patients enrolled in a cancer drug trial will succumb to the disease during the course of the study, and that appears to be what happened in the case of Kite's CAR-T therapy known as KTE-C19. In fact, Belldegrun noted that KTE-C19 has performed well since the single-arm, open-label Phase I study began enrolling people with refractory, aggressive non-Hodgkin's lymphoma (NHL) in May, inducing complete responses that will be revealed at a key medical meeting later this year.</p><p>"We expect the patients in our trial will have failed on average between four and five prior rounds of often debilitating chemo and immune therapy, and despite this treatment the prognosis for all of the patients in our study &ndash; by definition and design &ndash; is poor," Mr Belldegrun said during a conference call to address "a high level of noise and misinformation" about the KTE-C19 clinical trial program.</p><p>"We have seen tumors melting away in weeks and complete responses in a very sick and desperate group of patients with one of the worst types of aggressive cancers," Kite's chairman, president and CEO said.</p><p>Details about the CAR-T therapy's Phase I safety and efficacy will be presented at the American Society for Hematology (ASH) annual meeting from Dec. 5 to 8 in Orlando, Florida, and Santa Monica, California-based Kite remains on track to begin the Phase II portion of its clinical trial later this year. The company also still plans to file a biologics license application (BLA) with the US FDA by the end of 2016 based on the Phase II results, which means KTE-C19 could be on the market in 2017.</p><p><b>Death Unrelated To CAR-T</b></p><p>Kite informed the FDA about the patient who died prior to their death as the individual's cancer progressed then shared with the agency a trial investigator's assessment that the death was not linked to KTE-C19. The agency never requested that the study be placed on clinical hold following its review of the data, which is notable since a competitor had its Phase I study for a CAR-T therapy targeting CD-19 briefly placed on clinical hold in 2014 following two deaths.</p><p>Juno Therapeutics said the deaths in its study may have been related to severe <a href="http://www.scripintelligence.com/researchdevelopment/ASH-2014-CAR-T-cell-therapies-generate-buzz-355536" target="_new">cytokine release syndrome</a> (CRS) that the patients experienced after treatment with <a href="http://www.scripintelligence.com/policyregulation/Junos-leukemia-drug-JCAR015-granted-FDA-breakthrough-status-355266" target="_new">JCAR015</a>. Juno amended its clinical trial protocol to lower the dose of JCAR015 administered to relapsed or refractory acute lymphocytic leukemia (ALL) patients with a high disease burden. </p><p>Also, patients with severe congestive heart failure and leukemia that was active in the central nervous system (CNS) were excluded from the JCAR015 trial. Individuals with severe non-hematologic severe adverse events after the first dose of JCAR015 were excluded from additional treatments.</p><p>Belldegrun did not explain the cause of death for the patient treated with KTE-C19 during Kite's conference call, but details about his or her demise will be reported at the ASH meeting. Belldegrun and Kite's chief medical officer David Chang would not confirm whether the patient experienced CRS, which has been observed previously in studies for the company's CAR-T therapies.</p><p>Chang noted that CRS and neurotoxicity observed in other early-stage studies for Kite's CAR-T products "are transient events that occur very early in the course of treatment and most patients tend to recover fully from these events."</p><p><b>Highly Anticipated Data</b></p><p>Kite shared its early Phase I data with ASH prior to the company's public disclosure of the patient death, and the medical society allowed the company to reveal some information about the ongoing Phase I study ahead of its meeting in December. With that permission granted, Belldegrun revealed a surprising amount of insight into the Phase I data, considering the fact that the trial is ongoing and its results are in consideration for presentation at ASH.</p><p>He said side effects to date are consistent with those <a href="http://www.scripintelligence.com/home/Kites-CAR-T-cell-therapy-shows-high-response-long-term-survival-353533" target="_new">observed in a study</a> conducted by the National Cancer Institute (NCI), part of the National Institutes of Health (NIH). And while Kite continues to monitor patients for the durability of their responses, Belldegrun described the early occurrence of responses as "extremely gratifying" and said the company believes KTE-C19 is "the best possible hope for patients with no other viable alternatives."</p><p>CAR-T therapies are among the hottest properties in <a href="http://www.scripintelligence.com/home/comment/Scrips-Rough-Guide-to-Immuno-Oncology-358690" target="_new">cancer immunotherapy</a>, given the high percentage of complete responses observed in patients with hematological malignancies. Despite the early stage of clinical programs among the field's top players, companies that are developing CAR-T therapies have had some of the most successful initial public offerings during the ongoing biotech IPO boom, including <a href="http://www.scripintelligence.com/business/BioNotebook-Kite-IPO-catches-strong-breeze-plus-Endocyte-Merrimack-Aastrom-Nektar-Horizon-Acorda-Ariad-352463" target="_new">Kite</a>, <a href="http://www.scripintelligence.com/business/IPO-Update-Juno-has-biggest-2014-offering-as-investors-chase-CAR-T-stocks-355776" target="_new">Juno</a>, Bellicum Pharmaceuticals and <a href="http://www.scripintelligence.com/home/IPO-keeps-Adaptimmune-in-immunotherapy-race-as-bets-pass-1.5bn-358243" target="_new">Adaptimmune</a>.</p><p>Kite's stock closed up 4% at $60.32 per share on Aug. 17 after the company confirmed that the rumored patient death in Phase I was real, but unrelated to KTE-C19. Juno gained 5.2% to close at $41.56 after Kite's disclosure, Bellicum rose 3.1% to $19.06, and Adaptimmune jumped 8.2% to $15.53. The Swiss big pharma Novartis, which is neck-and-neck with Kite and Juno in the development of CAR-T therapies closed 0.8% higher at $103.29.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 316
+
+<p>Kite Pharma CEO Arie Belldegrun confirmed on Aug. 17 that a patient died soon after treatment with the company's chimeric antigen receptor T-cell (CAR-T) therapy during the Phase I portion of an ongoing Phase I/II clinical trial, but he said the death was not related to Kite's closely-watched cancer therapy.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+Another Reason To Watch Kites CART Results At ASH
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151008T213808
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151008T213808
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151008T213808
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029529
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Another Reason To Watch Kite's CAR-T Results At ASH
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200500304
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359903
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+35394bc0-97b7-4e28-b664-da292bebab27
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

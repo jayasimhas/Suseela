@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {B4634204-9356-4657-B7A6-6FA745DE80FB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/28/XenoPort Puts A Brave Face On Failure
+parent: {101B4B8A-8F7B-4386-9044-D3F3856A0B84}
+name: XenoPort Puts A Brave Face On Failure
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fd1293a2-bc06-4ab5-9678-0b7644d83567
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 40
+
+ XenoPort Puts A Brave Face On Failure  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 37
+
+XenoPort Puts A Brave Face On Failure
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1845
+
+<p> <p> With a string of flops in its past, XenoPort is shifting gears to put all its resources and concentration on its already-marketed restless leg syndrome drug Horizant. </p> <p> The biotech announced Oct. 2 that its CEO would retire and its chief operating officer will take over immediately in order to oversee the new strategic focus of the company. </p> <p> Ronald Barrett will leave his position as CEO and director and Vincent Angotti will step in. Prior to joining XenoPort in 2008, Angotti has had a variety of positions at big pharmas, as well as the top marketing slot at Reliant Pharmaceuticals prior to its sale to GlaxoSmithKline. </p> <p> Horizant was relaunched by the biotech in May 2013 after GSK abandoned its partnership. The biotech didn't have the resources to put behind the drug that its former partner did, but XenoPort is proud of the growth the product has shown so far, jumping from $1.6m in the second quarter of 2013 to $8.2m in the same period of 2015. XenoPort will now use all its resources to bolster the sales of this product. </p> <p> This decision came after its psoriasis drug demonstrated some unexpected safety issues in a Phase II trial that was announced in <a target="_new" href="http://#http://www.scripintelligence.com/home/XenoPort-Sinks-On-Psoriasis-Drug-Safety-No-Big-Gain-For-Fumarates-360463">mid-September</a>. While the efficacy of XP23829 was good, the safety problems would mean it's unlikely to compete well against existing competition. XenoPort noted in statement on Oct. 2 that it will put this drug on the shelf for the moment and look for any potential partners that could be interested in developing it further. </p> <p> The strategic shift will also include a work force reduction and cost cutting. The company expects to save $6.7m in relation to the management shift. </p> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 4
+
+<p/>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 37
+
+XenoPort Puts A Brave Face On Failure
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150928T223938
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150928T223938
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150928T223938
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029948
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 40
+
+ XenoPort Puts A Brave Face On Failure  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360712
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042458Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fd1293a2-bc06-4ab5-9678-0b7644d83567
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042458Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

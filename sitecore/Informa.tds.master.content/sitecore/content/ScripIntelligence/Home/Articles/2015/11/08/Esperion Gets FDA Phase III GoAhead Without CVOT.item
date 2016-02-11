@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {1C675F6B-7672-47DA-A96C-7279682F62BF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/08/Esperion Gets FDA Phase III GoAhead Without CVOT
+parent: {DB30F1A8-28AC-4826-9401-DF423A977628}
+name: Esperion Gets FDA Phase III GoAhead Without CVOT
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d7955ab8-0a9d-4aaf-8b1b-84590ec21915
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Esperion Gets FDA Phase III Go-Ahead Without CVOT 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+Esperion Gets FDA Phase III GoAhead Without CVOT
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5858
+
+<p>Esperion Therapeutics reiterated after consulting with the US FDA what it's been saying for several months: the regulator will not require the company to complete a cardiovascular outcomes trial (CVOT) before its cholesterol-lowering drug ETC-1002 will be considered for approval.</p><p>Although Ann Arbor, Michigan-based Esperion announced the outcome of its end-of-Phase II meeting with the FDA after the stock market closed on Aug. 17, the company jumped in late morning trading and closed up 14.1% at $75.51 per share then gained another 10.6% to reach $83.50 in after-hours trading. Based on the agency's confirmation that reduction of lipoprotein cholesterol (LDL-C) levels is a sufficient Phase III endpoint, Esperion said it remains on track to begin late-stage clinical trials by the end of 2015.</p><p>"We have a clear regulatory path forward for development and approval of ETC-1002," Esperion president and CEO Tim Mayleben said in a statement.</p><p>The company's stock price suffered during the past few months from uncertainty about the FDA's requirements for ETC-1002 in Phase III, including the requirement for a CVOT, as approvals for the first inhibitors of proprotein convertase subtilisin/kexin 9 (PCSK9) drew near. </p><p>Esperion took a small 0.9% hit in July when <a href="http://www.scripintelligence.com/home/Surprise-as-Amgen-pips-RegeneronSanofi-to-first-PCSK9-inhibitor-approval-359541" target="_new">the European Medicines Agency approved</a>Amgen's PCSK9 inhibitor <i>Repatha</i> (evolocumab), but felt a much bigger 21.6% blow when the <a href="http://www.scripintelligence.com/home/SanofiRegeneron-win-1st-US-PCSK9-OK-with-Praluent-359621" target="_new">FDA approved another PCSK9-targeting biologic</a> a few days later &ndash; <i>Praluent</i> (alirocumab) from Regeneron Pharmaceuticals and Sanofi for the treatment of high cholesterol. </p><p>With the FDA's guidance that significant LDL-C lowering will be sufficient for ETC-1002 approval without completion of a CVOT before a new drug application (NDA) submission, Esperion's drug is getting <a href="http://www.scripintelligence.com/home/Praluent-Repatha-FDA-guinea-pigs-to-market-trailblazers-359580" target="_new">the same regulatory treatment</a> as the PCSK9 inhibitors. </p><p>ETC-1002 targets ATP citrate lyase, an enzyme on the same cholesterol biosynthesis pathway as the enzyme targeted by statins. The drug does not cut LDL-C as much as the PCSK9 inhibitors, but it does have the benefit of being an oral therapy.</p><p>Esperion is betting that its drug will be favored by doctors, patients and payers despite hitting the market a few years after Repatha and Praluent. Patients may prefer an oral drug over a once- or twice-monthly poke, and <a href="http://www.scripintelligence.com/home/PCSK9s-are-coming-But-who-will-get-them-359579" target="_new">payers are likely to favor</a> small molecule drug pricing over large molecule costs.</p><p>It's also important to note that the FDA's feedback on ETC-1002 pertained to the treatment of heterozygous familial hypercholesterolemia (HeFH) and patients with atherosclerotic cardiovascular disease (ASCVD), who aren't achieving LDL-C goals at the highest tolerated doses of statins &ndash; about 9m US patients. That's the same population for which Praluent is approved in the US.</p><p>Esperion will shed more light on the FDA's guidance during a conference call that the company plans to host in September after it receives the written minutes from its end-of-Phase II meeting with the regulator.</p><p>Despite the lack of a pre-approval requirement, Esperion will initiate a CVOT before it submits an NDA so that the label can be expanded to more patients after initial FDA approval. The company intends to seek approval and market its drug as an add-on to statin therapy in all patient groups. </p><p>A separate investigational new drug (IND) application will be finalized and submitted to the FDA during the fourth quarter of this year for a fixed-dose combination of ETC-1002 plus Merck & Co's cholesterol absorption inhibitor Zetia (ezetimibe).</p><p>However, Esperion's ETC-1002 faces another threat to its market share before the drug's potential FDA approval &ndash; Phase III oral cholesterol ester transfer protein (CETP) inhibitors anacetrapib from Merck and evacetrapib from Eli Lilly & Co., and the <a href="http://www.scripintelligence.com/home/Dezimas-CETP-inhibitor-could-be-cheaper-oral-alternative-to-PCSK9s-358730" target="_new">Phase IIb CETP inhibitor TA-8995</a> from Dezima Pharma. The FDA required CVOT studies prior to approval and data from Merck's and Lilly's massive clinical trials are expected in 2016.</p><p>Esperion has been confident during the past few years that it <a href="http://www.scripintelligence.com/home/Esperions-ETC-1002-succeeds-in-Phase-IIb-but-Zetia-combo-could-be-key-354250" target="_new">would not have to conduct</a> a CVOT study prior to FDA approval, so the company and its investors finally have confirmation from the regulator that the very large clinical trial can be completed after approval. Esperion intends to complete development without outside help, but the company may <a href="http://www.scripintelligence.com/researchdevelopment/Esperions-ETC-1002-lowers-cholesterol-but-safety-questions-remain-344011" target="_new">seek a commercial partner</a>.</p><p>Esperion has a lot of in-house experience with the development of cholesterol-lowering therapies, since chairman and chief scientific officer Roger Newton is <a href="http://www.scripintelligence.com/business/Esperion-raises-33m-for-LDL-lowering-drug-342579" target="_new">one of the scientists</a> who discovered Pfizer's blockbuster statin <i>Lipitor</i> (atorvastatin). Pfizer acquired Esperion in 2003 then spun the company back out as a stand-alone entity in 2008. </p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 287
+
+<p>Esperion Therapeutics reiterated after consulting with the US FDA what it's been saying for several months: the regulator will not require the company to complete a cardiovascular outcomes trial (CVOT) before its cholesterol-lowering drug ETC-1002 will be considered for approval.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Esperion Gets FDA Phase III GoAhead Without CVOT
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151108T032237
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151108T032237
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151108T032237
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029531
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Esperion Gets FDA Phase III Go-Ahead Without CVOT 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200100343
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359905
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d7955ab8-0a9d-4aaf-8b1b-84590ec21915
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

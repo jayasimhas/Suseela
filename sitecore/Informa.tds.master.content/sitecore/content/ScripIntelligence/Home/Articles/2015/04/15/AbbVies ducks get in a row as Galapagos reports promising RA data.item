@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {FB7C29D1-758A-4C2C-82D2-158B66AEB7FB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/15/AbbVies ducks get in a row as Galapagos reports promising RA data
+parent: {19AE7706-F850-4AD9-804C-0500E26F606C}
+name: AbbVies ducks get in a row as Galapagos reports promising RA data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 03380dc2-bc53-4e45-a866-888af2da4593
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+AbbVie's ducks get in a row as Galapagos reports promising RA data 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+AbbVies ducks get in a row as Galapagos reports promising RA data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3831
+
+<p>Galapagos' oral JAK1 inhibitor filgotinib (GLPG0634) has met the primary and other endpoints in an important Phase IIb study in rheumatoid arthritis. The news will also be welcomed by AbbVie, which is partnered with Galapagos for the drug. </p><p>The primary endpoint of the Phase IIb DARWIN 1 study was significant improvement in ACR20 score versus placebo following 12 weeks treatment with filgotinib at a daily dose of 200mg as an add-on to methotrexate. A total of 594 patients with moderate to severe rheumatoid arthritis who showed an inadequate response to methotrexate and who remained on their background therapy were recruited for the study.</p><p>AbbVie will make a decision on whether to take up its option on the drug after seeing 24-week data from the DARWIN 1 trial, and another Phase IIb trial, DARWIN 2, which is due to readout shortly.</p><p>These initial results from DARWIN 1 are consistent with the efficacy/safety profile of filgotinib observed in the prior four-week clinical studies. Galapagos expects to report the full 24-week results for DARWIN 1 around the middle of the year.</p><p>Significant ACR50 scores, a more stringent test, were also achieved with all dose levels and dose regimens. There were no statistically relevant differences for the once-daily and twice-daily dosing regimens, Galapagos noted, suggesting a rapid onset of activity.</p><p>"[Filgotinib's] selective inhibition of JAK1 also leads to a differentiated safety profile, as measured by an improvement in hemoglobin and overall lipid profile," commented Dr Piet Wigerinck, CSO of Galapagos. "We look forward to seeing the DARWIN 2 monotherapy results in just a few weeks."</p><p>Johnson & Johnson, another firm with an interest in rheumatoid arthritis, holds a stake in Galapagos. However, many of the products that it had licensed from Galapagos have been returned. Most recently, the companies agreed <a href="http://www.scripintelligence.com/business/Galapagos-and-Janssen-part-ways-following-therapeutic-shift-357346" target="_new">to mutually terminate</a> their inflammation alliance and option agreements. Among others, all rights to candidate drug GLPG1690, a selective autotaxin inhibitor, were returned to Galapagos. A first-in-human Phase I trial for GLPG1690 has been completed and Galapagos is preparing to file for permission by the end of this year to start a Phase II trial in idiopathic pulmonary fibrosis (IPF). Janssen returned the rights to <a href="http://www.scripintelligence.com/business/Galapagos-sees-another-program-spurned-by-big-pharma-355695" target="_new">another program</a>, targeting G-coupled protein receptor 84 (GPR84), in December.</p><p>Evercore ISI analyst Mark Schoenebaum suggests that in addition to confirming safety and efficacy, the data imply that filgotinib's efficacy is in-line with Lilly's Phase III candidate baricitinib and AbbVie's Humira (adalimumab), and better than Pfizer's Xeljanz (tofacitinib citrate). "Filgotinib is potentially best in class on safety - based on limited data from press release," he says. "Consensus currently models 2020 sales of only around $220m for GLPG0634 in comparison to around $1.7bn and $640m for Xeljanz and baricitinib respectively." He believes these numbers need to come up.</p><p>AbbVie, as Abbott, <a href="http://www.scripintelligence.com/home/Galapagos-lands-150M-bounty-in-1.35bn-autoimmune-deal-with-Abbott-327475" target="_new">signed the deal</a> for filgotinib in 2012, paying $150m upfront. AbbVie has the option to license the product and take over development at the end of Phase II. In 2013, the deal was <a href="http://www.scripintelligence.com/home/AbbVie-Galapagos-expand-RA-deal-for-Crohns-study-343345" target="_new">expanded</a> to include Crohn's disease. A Phase II trial in this indication is also ongoing. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 247
+
+<p>Galapagos' oral JAK1 inhibitor filgotinib (GLPG0634) has met the primary and other endpoints in an important Phase IIb study in rheumatoid arthritis. The news will also be welcomed by AbbVie, which is partnered with Galapagos for the drug. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+AbbVies ducks get in a row as Galapagos reports promising RA data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150415T171346
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150415T171346
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150415T171346
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028438
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+AbbVie's ducks get in a row as Galapagos reports promising RA data 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357807
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+03380dc2-bc53-4e45-a866-888af2da4593
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

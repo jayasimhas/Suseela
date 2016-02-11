@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {2C2B60D3-6F84-48C0-B9B6-BE91C97F0E4F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/13/Economist Pharmas Are Protected Fragile Little Birds
+parent: {B23F589E-74E7-4CA3-9A57-5AB55E4AFD4B}
+name: Economist Pharmas Are Protected Fragile Little Birds
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8b309ba4-70a8-4292-9518-02bb78f14d01
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Economist: Pharmas Are Protected 'Fragile Little Birds'
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Economist Pharmas Are Protected Fragile Little Birds
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3777
+
+<p>While makers of high-priced specialty drugs in the US like to think they are free-enterprisers operating in the competitive markets, what those firms really are, argued Princeton economics professor Uwe Reinhardt, are "fragile little birds" protected by the government, which he said "carefully shields" the companies from the "harsh vagaries of truly free, competitive markets." </p><p>Drug makers, specialty or not, enjoy all sorts of protections from the US government: patents on their technology from the US Patent and Trademark Office and exclusivity against competitors granted by the FDA, Reinhardt pointed out.</p><p>The US federal government also prohibits reimportation of drugs sold in foreign countries at cheaper prices, he noted in a <i>JAMA Forum</i><a href="http://newsatjama.jama.com/2015/08/11/jama-forum-probing-our-moral-values-in-health-care-the-pricing-of-specialty-drugs/" target="_new">commentary</a>.</p><p>But Reinhardt insisted that when the government grants drug manufacturers and their investors "monopoly powers," federal agencies have the "right and the duty to monitor and possibly to regulate" what those firms and investors do with that privilege, including their pricing policies. </p><p>While he acknowledged biopharmas and their investors must be able to recover their investments with an added premium for assuming the financial risks of research and development, he questioned whether the billions they reap is worthy when considering the types of risk others assume on society's behalf, such as police officers, firefighters or members of the armed forces, for comparably very little pay.</p><p>Reinhardt also pointed out that when government programs have to cover the costs of high-priced specialty drugs, such as Gilead Sciences' hepatitis C virus drug <a href="http://www.scripintelligence.com/home/Its-the-volume-stupid-350860" target="_new">Sovaldi</a> (sofosbuvir) and presumably, the new proprotein convertase subtilisin kexin 9 inhibitors, like Sanofi's and Regeneron Pharmaceuticals' <a href="http://www.scripintelligence.com/home/SanofiRegeneron-win-1st-US-PCSK9-OK-with-Praluent-359621" target="_new">Praluent</a> (alirocumab), approved late last month, and Amgen's <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Barriers-to-PCSK9s-use-What-to-expect-359629" target="_new">Repatha</a> (evolocumab), which is expected to gain the FDA's blessing later this month, spending on other social programs, such as education and infrastructure, may be displaced. </p><p>The "social opportunity costs" of high drug prices, Reinhardt said, depend heavily on the incidence and prevalence of the disease being targeted by a medicine. </p><p>He noted that for a "genuine orphan drug," which likely would benefit a small number of patients, a high price would have only a small effect on total health care spending &ndash; although he pointed out the cost to an uninsured individual would be devastating.</p><p>But in the case of medicines intended for many populations, like those with HCV or high cholesterol, when treatments for those diseases have high prices &ndash; like the Sovaldi's $1,000-per-pill or Praluent's $14,600 annual prices &ndash; the impact for total health care spending could be sizable, Reinhardt said.</p><p>"The government faces a tricky trade-off in bringing countervailing power to the market for specialty drugs, weighing the social opportunity costs of ever-higher health spending vs. the reality that prices of new drugs should be high enough to encourage private investors to foster medical innovation," he declared.</p><p>A lively debate could be had, Reinhardt said, over how high specialty drug makers' compensation should be for their financial risk.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 387
+
+<p>While makers of high-priced specialty drugs in the US like to think they are free-enterprisers operating in the competitive markets, what those firms really are, argued Princeton economics professor Uwe Reinhardt, are "fragile little birds" protected by the government, which he said "carefully shields" the companies from the "harsh vagaries of truly free, competitive markets." </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Economist Pharmas Are Protected Fragile Little Birds
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150813T233210
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150813T233210
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150813T233210
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029501
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Economist: Pharmas Are Protected 'Fragile Little Birds'
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359858
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042435Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8b309ba4-70a8-4292-9518-02bb78f14d01
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042435Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

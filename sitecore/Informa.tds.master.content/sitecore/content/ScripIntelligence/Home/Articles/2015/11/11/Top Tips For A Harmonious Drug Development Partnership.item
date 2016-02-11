@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {385B17CD-2882-4B97-9109-22DD2D7BC466}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/11/Top Tips For A Harmonious Drug Development Partnership
+parent: {5EDD049F-1031-4290-8719-6CA0186009DA}
+name: Top Tips For A Harmonious Drug Development Partnership
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 67ef229d-7afe-46ba-8ef8-4f611767de70
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Top Tips For A Harmonious Drug Development Partnership
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Top Tips For A Harmonious Drug Development Partnership
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6752
+
+<p><b>Global challenges in and out of the life sciences world are affecting the way pharma, biotech and startup firms do deals and alliance management will need to keep evolving to follow pace.  </b></p><p><b>Mark Archer, global head of business development for inVentiv Health's commercial division, caught up with<i> Scrip</i> at BIO-Europe, in Munich, Germany, to explain what the big disruptions are for deal-making businesses and to highlight his top tips for avoiding conflict in an alliance.</b></p><p>Archer named drug pricing &ndash; a current buzzword amongst industry bods, governments, charities, political campaigners, and patients alike &ndash; as the biggest challenge affecting alliance arrangements between life science firms.</p><p>"Pricing is a huge issue. Over the next year or two, we will be facing increased scrutiny on pricing in general that will affect the whole industry and not only the US, where the situation has recently come to a head," Archer said. "This pricing situation will eventually have a knock-on effect to how we do deals. For example, when assessing the value of an earlier stage drug, say Phase II, you are going to have to think more than ever about what price you can eventually achieve. This will affect the valuations of deals, and perhaps the appetite for deals, if people are concerned they will not be able to achieve the higher prices. I think some companies could be more reticent to get into long-term deals."</p><p>Archer noted that in the past alliances were often structured around regulatory endpoints. Nowadays, though, as well as regulatory milestones deals have pricing and reimbursement milestones. "This has made it a bit more difficult to structure and manage some partnerships to an extent," he said. "It is a case of involving your experts in the formation of the alliance. You need to make sure that your market access specialists are closely involved so you have a realistic expectation of what is achievable."</p><p>There are now more option-based deals around too, according to inVentiv's business development chief. "This is where companies have the option to buy out the asset according to the performance of the project," he said. "This was less common 10 years ago but these deals can work well. Anything that makes partners enthusiastic about developing an asset is a good thing." While Archer thinks this evolution is a positive change he noted that option deals do make alliances more complicated to structure.</p><h2>Top Tips for Happy Couples</h2><p><b>Understand the goals of the partnership:</b> This must be distinct from the goals of each individual company. "Usually at the beginning you will have combined goals," Archer noted. "Then you have to make sure you have the capabilities to deliver on those goals, and that's about setting up the right organization."</p><p>He said a bigger company nearly always needs to have a specific alliance management function but how this is managed often depends on the size of the organization. "We had an example in the BIO-Europe panel on Tuesday of a small, Swedish biotech called NeuroVive Pharmaceutical, where the chief executive basically did everything himself. But when the CEO wanted to set up an alliance with a Chinese company he hired a bi-lingual Swedish-Chinese executive to help," Archer said. "You have to be prepared if you are having a partnership with a company in a different part of the world, you really need to understand them and their culture and their business. But likewise, they need to understand your style of business too. You have to have that meeting of minds &ndash; it's very important."</p><p><p><b>Know and share your cultures:</b> Archer said that getting this understanding of cultures is crucial. "If you get it wrong, unintentionally you can end up in a very disastrous situation. It is typical for example that US companies will be keen to make a quick decision and then look at course correcting later on; this can be very different to say a Japanese company where the most important thing is to make the right decision," he explained. "Likewise in some European countries, like France, it is more important to make the right choice than to just make a choice. This kind of thing can create tension, you get one side of the alliance who is getting very frustrated with its partner and the other side just can't quite figure out why that is because they are both doing their best and acting in good faith.</p><p>"Another recent example I can think of where individualized business ways became an issue in a partnership was when an American company was forging a large alliance with a British company. You would think that would be straightforward from a culture point of view, but actually one company was a very centralized business and the other very decentralized," Archer said. Understanding these kinds of corporate cultures is vital as well as making sure the managers involved are aware of the differences and allowances they will need to make, he added.</p><p><b>Get the impartial party involved:</b> "A lot of big pharmas employ experienced alliance managers to deal with the culture crossover," Archer said, explaining that they are able to act as a go-between for the senior management teams of each partner. "They can help translate what the needs and wishes are of each partner. They can also effectively defuse tensions before they get unmanageable."</p><p>Meanwhile, small companies have to rely on personal contact. "Despite the fact we live in a fast-moving digital age, there is no real substitution for face-to-face contact between the decision makers," he said. "These are complex relationships. Partnerships nowadays are becoming more intricate, they encompass more products and more functionality areas and they are financially very complex," Archer noted. So to attempt to deal with all of this without doing it face -to face is too much. You need to get on the same wave length."</p><p><b>Not every type of company is the same: "</b>Don't assume that all biotech companies are lean and fast and all pharma companies are slow and lethargic. It's not always the case," Archer said. Sometimes you can get a biotech company whose founder is "so emotionally engaged" in the business that it slows things down, or they want to do things their way. Alternatively you might get a pharma company whose alliance management team is so efficient that they can act very quickly and make decision very quickly, Archer explained. "So don't always judge a book by its cover and get to know the organization."</p><p><p>This story was first publish on Scrip's BIO-Europe blog: <a href="http://www.bioeuropecoverage.tumblr.com" target="_new">www.bioeuropecoverage.tumblr.com</a></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 203
+
+<p><b>Global challenges in and out of the life sciences world are affecting the way pharma, biotech and startup firms do deals and alliance management will need to keep evolving to follow pace.  </b></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Top Tips For A Harmonious Drug Development Partnership
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151111T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151111T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151111T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030297
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Top Tips For A Harmonious Drug Development Partnership
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361433
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042522Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+67ef229d-7afe-46ba-8ef8-4f611767de70
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042522Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

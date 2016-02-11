@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {CDE0EF9C-CA3B-4369-B906-635DC6391BD4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/16/Wockhardts compliance improving as FDA woes ease
+parent: {15CEDA49-DF2B-4F46-96A7-78145A6DFE0C}
+name: Wockhardts compliance improving as FDA woes ease
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 97196314-e97d-4c29-baf1-4a40190eaa2c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Wockhardt's compliance improving as FDA woes ease?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+Wockhardts compliance improving as FDA woes ease
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4821
+
+<p>Things appear to be on the mend at India's Wockhardt, which has been on the radar over good manufacturing practice (GMP) compliance issues at its Indian facilities.</p><p>The firm's L1-Chikalthana site in India now appears to be partially out of the woods with the UK MHRA said to have indicated that the unit is in compliance. Wockhardt's top brass also sought to clarify that the US FDA's recent inspection at the plant did not result in any findings with respect to ''data security and control measures in the laboratory and manufacturing''.</p><p>"During the 10-day intensive inspection, they found our quality and manufacturing systems satisfactory. No issues regarding that," Wockhardt's chairman Dr Habil Khorakiwala said at a press briefing in Mumbai on 19 March.</p><p>The FDA had earlier placed Wockhardt's Chikalthana and Waluj sites under import alert following deviations in cGMP <a href="http://%5bhttp:/www.scripintelligence.com/business/Wockhardt-sinks-after-US-import-alert-at-second-site-348391%5d" target="_new">(scripintelligence.com 27 November 2013)</a>. The UK MHRA too had previously pulled up Wockhardt including issuing recalls of products made at the Chikalthana and Waluj units <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/A-third-Wockhardt-site-pulled-up-by-MHRA-347523%5d" target="_new">(scripintelligence.com 22 October 2013)</a>. </p><p>While the latest FDA audit at Chikalthana did result in certain Form 483 observations, these were with respect to products manufactured prior to execution and implementation of the GMP remediation programme, the company explained. A form 483 is a notice of the FDA's inspectional observations that lists deficiencies in the quality system.</p><p>Dr Khorakiwala said that the company was in the process of remedying that situation and would shortly communicate the "future line of action" to the regulatory agency.</p><p>On what this meant in terms of potential to restart exports to the US from Chikalthana, Dr Khorakiwala told <i>Scrip</i>: "It's a forward movement as far as we see and we clearly know what is the additional requirement of the regulators and we will comply with those''. </p><p>The follow-up inspection was a result of the completion of GMP remediation submitted by Wockhardt in October last year and the firm's efforts to bring about "culture change" and build "robust quality management" were also assessed.</p><p>Wockhardt has sought FDA inspections at all it plants, including its new Shendra site and Dr Khorakiwala said given that the agency had last month visited two sites - for cephalosporins at Waluj and L1-Chikalthana &ndash; the firm believes inspections of the remaining facilities may be possible in a "reasonably short period of time". Bulk of Wockhardt's new ANDA filings are said to be out of Shendra.</p><p>The Wockhardt boss also referred to an MHRA all clear to the firm's Kadaiya site in Daman, which hence continues to be in compliance. On the resolution of the Form 483 concerns at the company's US Morton Grove facility, Dr Khorakiwala said that the firm had "dealt with all the issues" the regulator had.</p><p>"It was never under warning letter and continues to supply products in the US. But they [the FDA] clearly mentioned that there is normalcy in the sense that no more further action is contemplated. But when they come and visit us we don't know&#8230; if they come after one year, two years or next few months that we don't know," he told <i>Scrip</i>.</p><h2>Compliance efforts</h2><p>Wockhardt's boss also sought to underscore the all-round efforts made to improve GMP compliance at the firm's sites globally. </p><p>Dr Khorakiwala referred to how the firm had, among a string of other actions, "revisited people-related areas" and taken appropriate action against those who were "not in line with the quality system we would like to follow". Training of personnel was another key focus.</p><p>"Today our manufacturing and quality team is new. Whatever can be done is what we've done as far as people are concerned," he said, adding that quality- related staff had been increased by 50%.</p><p>He also emphasised how the firm was striving to create a global quality system, making information electronically available across the organisation. </p><p>"If there is a CAPA [Corrective and Preventive Action] at one location and corrective measure have been taken, that is available to all our 10-12 locations. They also review whether that it is applicable to them. So issues arising at one location are flagged to all locations and they are expected to correct those if they have them," he said. </p><p>An "office of global quality" comprising leadership in India, the US and the UK had also been created, and is responsible for oversight of the entire quality system.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 171
+
+<p>Things appear to be on the mend at India's Wockhardt, which has been on the radar over good manufacturing practice (GMP) compliance issues at its Indian facilities.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Wockhardts compliance improving as FDA woes ease
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150316T114042
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150316T114042
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150316T114042
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028172
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Wockhardt's compliance improving as FDA woes ease?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357302
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042314Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+97196314-e97d-4c29-baf1-4a40190eaa2c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042314Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A86207E9-AE69-437E-A6B2-875697B4BB7D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/15/Liberia studys 27000 enrollment no longer makes sense
+parent: {19AE7706-F850-4AD9-804C-0500E26F606C}
+name: Liberia studys 27000 enrollment no longer makes sense
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9eff6a52-ad17-4880-ac4e-f770fbda0c4a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Liberia study's 27,000 enrollment 'no longer makes sense'
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Liberia studys 27000 enrollment no longer makes sense
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4469
+
+<p>Because of the decline in Ebola cases in West Africa, reaching the 27,000 enrollment goal for a Phase III study to test two experimental vaccines against the virus in Liberia "no longer makes sense," the US lead investigator of the so-called PREVAIL study acknowledged.</p><p>Dr Cliff Lane, deputy director for clinical research at the National Institute of Allergy and Infectious Diseases (NIAID), has been trying over the past few weeks to get the PREVAIL study expanded into Guinea, but there's still been no clear decision by that nation's government.</p><p>"We do think that if we are going to get a clinical endpoint from our study that started in Liberia we're going to need to go probably to Guinea,&rdquo; Dr Lane told <i>Scrip</i>.</p><p>PREVAIL, which <a href="http://www.scripintelligence.com/home/Much-anticipated-Ebola-vaccine-efficacy-trial-starts-356509" target="_new">got underway in early February</a> in Liberia, is testing cAd3, a vaccine being developed by NIAID and GlaxoSmithKline, and rVSV, a product initially developed by the Canadian government, which licensed the vaccine to NewLink Genetics, now partnered with Merck.</p><p>But even if Dr Lane and his team gets the go-ahead to expand the trial into Guinea, that nation, too, may soon have the Ebola virus under control, "and it may not at the end be possible to get a clinical endpoint result," he said.</p><p>"But we are going to keep trying," Dr Lane declared.</p><p>He told <i>Scrip</i> in <a href="http://www.scripintelligence.com/home/Liberias-drop-in-Ebola-may-mean-NIH-trial-move-357294" target="_new">mid-March</a> he thought the trial would need to be moved into Guinea or Sierra Leone.</p><p>Now, Dr Lane said he hopes to soon speak with Guinea officials again to "get a sense of what they think is or is not possible."</p><p>"Whatever we do, we don't want to interfere with the other things that are ongoing," Dr Lane said.</p><p>There currently is another Phase III study taking place in Guinea &ndash; <a href="http://www.scripintelligence.com/researchdevelopment/NewLinkMerck-Ebola-vaccine-ring-study-starts-in-Guinea-357504" target="_new">a "ring" trial</a>, being conducted by the World Health Organization (WHO) and its partners, the Guinea government, Doctors without Borders/Medecins sans Fronti&egrave;res, Epicentre and the Norwegian Institute of Public Health.</p><p>That trial is seeking to enroll 10,000 volunteers testing the NewLink-Merck rVSV Ebola vaccine in Coyah prefecture, Guinea, in which contacts of infected patients are identified and vaccinated &ndash; creating a "ring of immunity" around them to stop the virus from spreading.</p><p><a href="http://www.scripintelligence.com/home/WHO-Ebola-remains-emergency-vaccine-trials-a-challenge-357842" target="_new">Last week</a>, Dr Bruce Aylward, assistant director-general at WHO, said the ring study was the "most likely to generate a meaningful answer."</p><p>While Dr Lane said that may well be true, given the ring study is "taking place where you have the greatest number of transmissions,&rdquo; he said "whether that study design is the optimal study design is an open question."</p><p>For now, PREVAIL continues to enroll its Phase II portion of the study, which reported positive interim results <a href="http://www.scripintelligence.com/home/Ebola-vaccines-safe-but-quandary-for-Liberia-efficacy-enrollment-357521" target="_new">last month</a> showing the two vaccines are safe.</p><p>Dr Lane noted there is an alternative path to licensure for the NIAID-GSK and NewLink-Merck vaccines, if necessary, through the animal rule, in which the products would need to show efficacy in animals that correlates with a certain marker and then demonstrates that same marker is present in humans who receive the experimental vaccines.</p><p>Meanwhile, a study being conducted by the Centers for Disease Control and Prevention (CDC) just got <a href="http://www.scripintelligence.com/policyregulation/25m-US-funded-study-goes-beyond-testing-Ebola-vaccine-357889" target="_new">underway in Sierra Leone</a>.</p><p>That study, which is also testing the NewLink-Merck rVSV vacciine, is aiming to enroll 6,000 frontline Ebola workers.</p><p>But Dr Anne Schuchat, director of the National Center for Immunization and Respiratory Diseases at the CDC, acknowledged the STRIVE study also may not reach its efficacy endpoint and said the animal rule may need to be the ultimate answer. </p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 276
+
+<p>Because of the decline in Ebola cases in West Africa, reaching the 27,000 enrollment goal for a Phase III study to test two experimental vaccines against the virus in Liberia "no longer makes sense," the US lead investigator of the so-called PREVAIL study acknowledged.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Liberia studys 27000 enrollment no longer makes sense
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150415T083311
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150415T083311
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150415T083311
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028437
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Liberia study's 27,000 enrollment 'no longer makes sense'
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357800
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9eff6a52-ad17-4880-ac4e-f770fbda0c4a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

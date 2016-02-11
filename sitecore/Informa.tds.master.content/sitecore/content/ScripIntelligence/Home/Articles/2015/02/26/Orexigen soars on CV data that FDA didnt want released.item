@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1874D4F0-0364-4E68-81CA-03C2C87D23B9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/26/Orexigen soars on CV data that FDA didnt want released
+parent: {36275DB8-48EA-487C-BD7F-C8F8E306B3C7}
+name: Orexigen soars on CV data that FDA didnt want released
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: dc29a0b2-14ec-43c2-8f14-d418b9006e3a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Orexigen soars on CV data that FDA didn't want released
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Orexigen soars on CV data that FDA didnt want released
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7057
+
+<p>Orexigen Therapeutics soared 32% to close at $7.64 per share on 3 March after the San Diego-based company disclosed a newly issued patent for its weight loss drug Contrave (naltrexone and bupropion) that contained positive interim results from a cardiovascular outcomes trial (CVOT) known as the Light study &ndash; data that the US FDA expressly asked Orexigen not to disclose.</p><p>In fact, the FDA informed the company long before its patent disclosure was filed with the US Securities and Exchange Commission (SEC) that too many people had been given access to the Light study's interim results, so a second CVOT would be needed to fulfill post-marketing requirements for Contrave, which the agency approved in September and commercial partner Takeda Pharmaceuticals launched on 20 October (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Contrave-OKd-in-obesity-multiple-trials-required-353812" target="_new">11 September</a> and <a href="http://www.scripintelligence.com/home/Orexigen-rises-as-Contrave-launches-in-tough-obesity-market-354959" target="_new">11 November 2014</a>).</p><p>"Since Orexigen has made the interim data from the Light trial public through the process of obtaining patents, FDA believes it is critical that these interim data should not be misinterpreted given that these results only represent approximately one-quarter of the planned trial," the FDA said in a statement issued to <i>Scrip</i> and others.</p><p>Following FDA approval for Contrave, the agency "strongly urged Orexigen to protect the interim data from public disclosure and we are very disappointed by Orexigen's actions."</p><p><b>Patent news via SEC filing</b></p><p>Orexigen said in a statement given to <i>Scrip</i> and others that the company went ahead with a patent application based on unexpectedly good interim results from the Light study, knowing that the US Patent and Trademark Office (USPTO) would publish the data when the patent application was approved, because Orexigen had already received word from the FDA that it would need to conduct a second large CVOT to meet post-approval requirements. </p><p>On 3 March, "the USPTO published the patent and supporting documentation, and we believed it was appropriate and necessary to make sure this information was equally available to all investors," the company said.</p><p>The Light study enrolled 8,910 patients, who were treated with either Contrave or placebo with the goal of evaluating major adverse cardiovascular events (MACE). The FDA's Contrave approval took into consideration interim data from the first 25% of the study's expected MACE events. </p><p>The agency was looking for a hazard ratio of no more than 2.0 &ndash; a doubling in the number of MACE for Contrave versus placebo &ndash; since the drug's bupropion component has been associated with a risk of increased blood pressure. In fact, the Light study found that patients treated with Contrave, particularly smokers and people with diabetes for less than six years, had a lower risk of adverse cardiac events than individuals in the placebo arm of the CVOT.</p><p>With 94 MACE at the 25% interim analysis &ndash; 35 events in the Contrave arm and 59 events in the placebo group &ndash; the risk of death was cut by 41% for patients who received Orexigen's drug (HR=0.59; p<0.0001). there="" were="" 24="" myocardial="" infarctions="" (heart="" attacks)="" in="" the="" contrave="" arm="" versus="" 34="" in="" the="" placebo="" arm="" (hr="0.70;"></0.0001).><0.0001); seven="" versus="" 11="" strokes="" (hr="0.63;" p="0.0088);" and="" five="" versus="" 19="" cardiovascular="" deaths="" (hr="0.26;"></0.0001);><></p><p>Orexigen plans to initiate its second CVOT later in 2015 and the company expects to complete the study in 2022.</p><p><b>Analysis of Light disclosure</b></p><p>If the Light study results hold up as the CVOT progresses "it would be remarkable" Sagient Research said in a 3 March BioMedTracker analysis, "but we are somewhat skeptical."</p><p>The first interim analysis of the Light study includes a relatively limited number of MACE events &ndash; 94 versus the 378 that need to occur by the end of the trial, the BioMedTracker analysis noted. Also, the cardiovascular benefits do not appear to be weight loss-related and there is a lack of clarity about what else could be responsible for the positive results, according to Sagient.</p><p>Despite the potential cardiovascular benefits of Contrave for overweight and obese individuals as disclosed in Orexigen's SEC filing, the MACE results remain difficult to interpret without more detail.</p><p>However, Leerink Swann analyst Paul Matteis had a more optimistic view of the interim Light study results based on his own assessment and the opinions of recently interviewed key opinion leaders (KOLs).</p><p>"While it's unclear whether or not the observed 41% reduction in Major Cardiovascular Adverse Events (MACE) will be sustained as the Light trial data mature, KOLs note that their opinions of Contrave have improved significantly now that it appears almost certain the drug does not do any cardiac harm," Mr Matteis wrote in a 3 March research note.</p><p>He said that prescribers, including wary primary care physicians (PCPs), may become more comfortable with Contrave since the drug's effects on blood pressure and heart rate observed in prior clinical trials may not result in increased cardiovascular adverse events.</p><p>"We believe that many potential prescribers (especially PCPs) have approached new obesity medications with caution, highly aware that multiple drugs have been pulled from the market once an unexpected CV risk signal was discovered. Specialists with whom we spoke were very surprised by the interim findings and believe the new CV data increase the proportion of their patients who are Contrave candidates," Mr Matteis wrote.</p><p><b>FDA has its doubts</b></p><p>Even so, only the second set of CVOT results due in 2022 will meet the FDA's post-marketing requirements, since the agency believes the Light study's results were compromised by Orexigen sharing the first set of interim data with too many internal and external contacts.</p><p>The FDA also said in its 3 March statement about Orexigen's patent disclosure that it is too early into the Light study to draw any conclusions that Contrave reduces cardiovascular events for overweight and obese patients. </p><p>Previously, the agency noted in its review of the interim Light study data in September that 62% of the people treated with Contrave and 73% who received placebo discontinued treatment as of the interim data cutoff date with 4.9% and 4.7% lost to follow-up for MACE events.</p><p>When Orexigen reports results from its second CVOT seven years from now, potentially confirming the positive cardiovascular effects observed in the Light study to date, the company will have another 12 years of patent exclusivity for Contrave in the US. The patent that Orexigen disclosed on 3 March will not expire until 2034.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 385
+
+<p>Orexigen Therapeutics soared 32% to close at $7.64 per share on 3 March after the San Diego-based company disclosed a newly issued patent for its weight loss drug Contrave (naltrexone and bupropion) that contained positive interim results from a cardiovascular outcomes trial (CVOT) known as the Light study &ndash; data that the US FDA expressly asked Orexigen not to disclose.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Orexigen soars on CV data that FDA didnt want released
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150226T211826
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150226T211826
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150226T211826
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027993
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Orexigen soars on CV data that FDA didn't want released
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356967
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dc29a0b2-14ec-43c2-8f14-d418b9006e3a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

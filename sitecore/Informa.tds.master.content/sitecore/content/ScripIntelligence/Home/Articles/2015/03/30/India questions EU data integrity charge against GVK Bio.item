@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {A9EB1B81-F1FD-43F4-989F-00A77C2072DC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/30/India questions EU data integrity charge against GVK Bio
+parent: {CB8312FA-59CF-4683-9123-7DB09EB8FEB8}
+name: India questions EU data integrity charge against GVK Bio
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0c310e32-ac3e-43fb-9813-46b7ef363da7
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+India questions EU data integrity charge against GVK Bio
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+India questions EU data integrity charge against GVK Bio
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4311
+
+<p>India appears to be moving full throttle to back GVK Biosciences, the contract research organization in the eye of a storm over allegations of data manipulation by European regulators.</p><p>A senior Indian government official is reported to have indicated that the country is ready to consider &ldquo;commercial and legal" action against the EU, the latter involving hauling the EU to the World Trade Organization, should current efforts fail.</p><p>A report in the local media quoted India's commerce secretary, Rajeev Kher, as saying that India had met with both the European Medicines Agency (EMA) and the French medicines agency ANSM, which uncovered the alleged data manipulation, and shared evidence to show that GVK's tests "were not manipulated.&rdquo; The French agency had earlier raised concerns about the reliability of studies conducted at GVK's Hyderabad site between 2008 and 2014.</p><p>Mr Kher was reported as saying that the grounds of suspecting the firm's studies were &ldquo;absolutely flimsy.&rdquo; Besides, companies for which the clinical trials were done that included several multinationals had also furnished a "plethora of evidence" suggesting no manipulation, the report said. </p><p>Mr Kher is also said to have referred to an agenda against the generic industry by certain big multinationals.</p><p>GVK Bio confirmed to <i>Scrip</i> that it had furnished additional evidence to the government of India to reiterate the integrity of its data, including additional verification of the ECG data by independent cardiologists.</p><p>"The EU, ANSM and EMA have taken our government&rsquo;s requests into consideration," GVK told <i>Scrip</i>.</p><p>The firm also claimed that it had put in place new safeguards to doubly ensure that such issues do not crop up again, but did not share any specifics.</p><p>GVK data concerns centre on apparent evidence of manipulation of electrocardiogram records during the conduct of nine generic medicines studies over a period of at least five years. </p><p>"Their systematic nature, the extended period of time during which they took place and the number of members of staff involved cast doubt on the integrity of the way trials were performed at the site generally and on the reliability of data generated at that site," the EMA had stated earlier.</p><p>The EMA's Committee for Medicinal Products for Human Use (CHMP) had earlier looked at more than 1,000 pharmaceutical forms and strengths of generic medicines for which clinical studies had been done by GVK. While it cleared more than 300 as having sufficient supporting data from other sources, it recommended the suspension of all of the others, unless they are of critical importance for patients because alternatives will not be able to meet patients' needs <a href="http://%5bhttp:/www.scripintelligence.com/home/Hundreds-of-generics-face-European-ban-following-GVK-breaches-356345%5d" target="_new">(scripintelligence.com 23 January 2015)</a>. </p><p>GVK had earlier told <i>Scrip</i> that while it respected the regulator&rsquo;s views, it was important to consider that the check-out ECGs had no bearing on the study outcome or the bio-equivalence of the drugs being tested (as stated by ANSM ) and that there was &ldquo;never any question&rdquo; about the safety or efficacy of the drugs (also stated by the EMA). </p><p>&ldquo;The ANSM itself stated that the findings at the Hyderabad clinical facility should not be extrapolated, yet the EMA decided to extrapolate and went on to recommend suspension of over 700 marketing authorizations,&rdquo; Manni Kantipudi, CEO of GVK Bio, had then told <i>Scrip</i><a href="http://%5bhttp:/www.scripintelligence.com/home/Indian-CRO-segment-in-throes-of-a-shakeout-356762%5d" target="_new">(scripintelligence.com 15 February 2015)</a>. </p><p>He also underscored that the EU action was &ldquo;unprecedented and highly disproportional.&rdquo; </p><p>GVK had also earlier argued that its processes were rigorous and that it cannot be pulled up for check-out ECG readings of healthy volunteers that were found to be "similar" in nine trial studies <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/Fudged-ECG-reports-GVK-blunder-or-overblown-storm-355513%5d" target="_new">(scripintelligence.com 9 December 2014)</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 191
+
+<p>India appears to be moving full throttle to back GVK Biosciences, the contract research organization in the eye of a storm over allegations of data manipulation by European regulators.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+India questions EU data integrity charge against GVK Bio
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150330T181211
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150330T181211
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150330T181211
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028334
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+India questions EU data integrity charge against GVK Bio
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357578
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0c310e32-ac3e-43fb-9813-46b7ef363da7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

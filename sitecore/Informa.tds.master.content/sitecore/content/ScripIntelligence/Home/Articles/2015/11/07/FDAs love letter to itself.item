@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {EF0C23A2-25A2-438C-B906-C088C78F5447}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/07/FDAs love letter to itself
+parent: {D87FB8ED-427C-47B0-B4A1-E1D7C92284A2}
+name: FDAs love letter to itself
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0f767e00-e3aa-42ab-bb0e-d95915bb3ca4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 27
+
+FDA's love letter to itself
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 26
+
+FDAs love letter to itself
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5579
+
+<p>The FDA sent itself a love letter on 16 July, which came in the form of a new report, in which regulators insisted that while the agency has worked to "transform the landscape" for the "final stage of drug development" &ndash; approval &ndash; those in science and industry who are doing the discovery, development and testing of new medicines have "not kept pace" in their progress. </p><p>"As a result, too many diseases are still awaiting treatments and cures," the FDA said in its report, <i>Targeted Drug Development: Why Are Many Diseases Lagging Behind?</i> &ndash; a question regulators answered by pointing to causes outside of the agency.</p><p>In a blog introducing the report, Dr Robert Califf, the FDA's deputy commissioner of medical products and tobacco &ndash; who has been widely speculated to be the <a href="http://www.scripintelligence.com/home/Educating-Califf-Eyes-opened-on-PDUFA-patient-advocates-359451" target="_new">next permanent agency chief</a> &ndash; said "when research does not offer answers to important scientific questions, cures cannot be developed."</p><p>And, Dr Califf added, "when viable cures are not in the pipeline, focusing on regulation will not improve the situation, since FDA can only approve therapies with evidence for safety and effectiveness."</p><p>The US approval process, he contended, is "the fastest in the world" &ndash; noting the FDA last year approved 41 new molecular entities and novel biologics and 10 more unique biological products. </p><p>And while the FDA is expecting an "astounding increase in knowledge of biological systems" enabled by whole genome sequencing, cloud computing, social media and wearable devices for monitoring physiology, Dr Califf argued the agency was "prepared to deal with the product" of those scientific investments &ndash; precision medicine.</p><p>The FDA, however, appears not quite ready to latch on to the term of "precision medicine" &ndash; treatment and prevention approaches that take variability of genes, environment and lifestyle of each person into account &ndash; used by the <a href="http://www.scripintelligence.com/home/Obama-unveils-215m-bold-precision-medicine-initiative-356457" target="_new">White House</a> and the National Institutes of Health.</p><p>The FDA, instead, prefers to use "targeted medicine" in its report, although acknowledging it's the same thing.</p><p>No matter what the FDA calls it, a panel of scientists and a former lawmaker asserted during a <a href="http://www.scripintelligence.com/home/Getting-science-monkey-off-FDAs-back-359428" target="_new">Capitol Hill hearing</a> just a few days earlier the agency was far from ready to handle the science that's coming its way &ndash; declaring that even Dr Janet Woodcock, director of the Center for Drug Evaluation and Research, has admitted as much.</p><p>But in its report, the FDA insisted it recognized a decade ago the translation process was not keeping up with the data being gained from mapping the human genome and revolutionary basic discoveries.</p><p>"In response, FDA has for many years been building collaborations with industry and academia to modernize the 'translational' science of drug development," the agency said.</p><p>The FDA said its goal is to improve the efficiency and predictability of drug development through the creation and use of genomic data, biomarkers and surrogate endpoints, modernized clinical trial designs, disease modeling and bioinformatics and advanced imaging technology. </p><p>Such tools have the potential to dramatically reduce the length and cost of drug development by predicting the efficacy and toxicity of the medicines earlier, thereby avoiding wasteful late-stage failures, regulators said.</p><p>Those tools also could help target medicines to the populations most likely to benefit, which would result in fewer study patients being exposed to adverse events and allowing companies to rely on smaller trials, the FDA said.</p><p>But the agency said the speed at which the scientific community can develop and use those tools to shorten drug development in certain disease areas is "highly variable" &ndash; noting that the ability to use genetic data to identify useful biomarkers and surrogate endpoints relies on how well the molecular and genetic bases for the disease are understood. </p><p>For instance, the FDA said, while there's been "tremendous progress" in diseases like cancer and HIV/AIDS, where the causes are well understood, that's not been the case for Alzheimer's, in which even certain basic information is lacking. </p><p>"As a result, we have witnessed a series of failed attempts to find biomarkers or surrogate endpoints that can predict disease progression or drug activity and available treatments are limited," the FDA said.</p><p>Overall, pharmaceutical productivity has fallen, regulators said.</p><p>The agency, however, said it was "active in initiatives to modernize and speed the earlier stages of drug development, from collaborations to improve the science of biomarkers and surrogate endpoints to working closely with drug manufacturers and patient groups on clinical trial design early in drug development, resulting in substantially shorter development times."</p><p>But to develop the treatments and cures that patients need, the FDA said, "the healthcare community, including patient groups, government, industry and researchers must continue to work together to improve both our understanding of disease and the tools to translate scientific discoveries into cures."</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 391
+
+<p>The FDA sent itself a love letter on 16 July, which came in the form of a new report, in which regulators insisted that while the agency has worked to "transform the landscape" for the "final stage of drug development" &ndash; approval &ndash; those in science and industry who are doing the discovery, development and testing of new medicines have "not kept pace" in their progress. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 26
+
+FDAs love letter to itself
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151107T004158
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151107T004158
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151107T004158
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029259
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 27
+
+FDA's love letter to itself
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200700004
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359387
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0f767e00-e3aa-42ab-bb0e-d95915bb3ca4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A188A298-54D2-482A-B7B9-08C17C5084D0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/12/BioNotebook PhaseBio closes 40m Series C round led by AstraZeneca plus five other VC financings
+parent: {E53F24E6-BD38-493D-8AAE-66E738CC434C}
+name: BioNotebook PhaseBio closes 40m Series C round led by AstraZeneca plus five other VC financings
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 981aaf5e-f10f-4a1d-89d9-aa3af1e5d898
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 98
+
+BioNotebook: PhaseBio closes $40m Series C round led by AstraZeneca, plus five other VC financings
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 95
+
+BioNotebook PhaseBio closes 40m Series C round led by AstraZeneca plus five other VC financings
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9287
+
+<p>AstraZeneca led a $40m Series C venture capital round that will fund PhaseBio's Phase IIa clinical trials for drug candidates to treat diabetes and heart failure &ndash; two key areas of interest for the UK-based big pharma company.</p><p>PhaseBio's recently appointed CEO Jonathan Mow, who previously was chief business officer, said AstraZeneca has "an option to option" the company's novel, once-weekly insulin (scripintelligence.com, <a href="http://www.scripintelligence.com/home/people/PhaseBio-makes-three-leadership-changes-357080" target="_new">5 March 2015</a>). PhaseBio will make a decision on how and whether to out-license its heart failure drug based on results from the Malvern, Pennsylvania-based company's upcoming trials for heart failure and for cardiomyopathy in patients with muscular dystrophy.</p><p>PhaseBio's lead product candidates were developed with the company's Elastin-Like Polypeptide (ELP) technology, which uses recombinant biopolymers to control half-life, bioavailability and physical characteristics, which should improve dosing, efficacy and side effects of native molecules.</p><p>A Phase IIa clinical trial is scheduled to begin in mid-2015 for PE0139, PhaseBio's fully native basal insulin designed for once-weekly use as monotherapy or in combination with other type 2 diabetes treatments. Data from the trial are expected by late 2015 or early 2016. </p><p>PhaseBio's ELP technology slows the absorption of native basal insulin and prolongs the molecule's half-life, giving the therapy a flat pharmacokinetic profile, which avoids spikes in insulin that can cause hypoglycemia. If PE0139 is successful, it would make sense for AstraZeneca to take an option for future development of the novel insulin, given the pharma company's presence in the diabetes market.</p><p>"They are not one of the players in the insulin market, but if they are going to get into the insulin market they would want a differentiated product," Mr Mow said.</p><p>PhaseBio's heart drug, PB1046, that is a recombinant form of the human peptide hormone known as vasoactive intestinal peptide (VIP), which stimulates pathways involved in regulation of the cardiopulmonary and immune systems. VIP has a very short 48-second half-life, but the company believes its ELP platform has generated a compound that could be administered once-weekly.</p><p>A Phase IIa clinical trial for PB1046 in acute heart failure is on track to begin in the second half of 2015 with data from the trial available early next year. A second Phase IIa study in acute cardiomyopathy in patients with Duchenne and Becker's muscular dystrophy is expected to begin in early 2016.</p><p>"Heart failure is a large indication where we would likely need to partner to go any further, but we could take PB1046 further down the line on our own in muscular dystrophy," Mr Mow said. </p><p>PhaseBio's lead programs are different from when it raised the first $25m of its $48m Series B venture capital round in 2010 (scripintelligence.com, <a href="http://www.scripintelligence.com/business/PhaseBio-raises-25-million-to-advance-fusion-technology-186267" target="_new">11 January</a> and <a href="http://www.scripintelligence.com/business/Clinical-progress-makes-investors-stump-up-rest-of-PhaseBios-B-round-306881" target="_new">3 December 2010</a>). The company added $23m to its Series B round in 2012 then executed a $10m bridge loan within the last 12 months. </p><p>In addition to AstraZeneca, PhaseBio's Series C round was backed by prior investors New Enterprise Associates, Hatteras Venture Partners, Johnson & Johnson Innovation and Fletcher Spaght Ventures.</p><p>Back in 2010 when it raised the initial Series B cash, PhaseBio was developing the GLP-1 analog Glymera (PB1023) for type 2 diabetes, but Mr Mow said the company determined after Phase IIb testing that "it had a very nice product profile, but not a great product profile," so PE0139 was advanced into the clinic.</p><p>PhaseBio also was developing a different recombinant VIP peptide called PB1120, but PB1046 binds to a different receptor, which may allow for fewer gastrointestinal side effects. </p><p><b>Five other venture capital rounds</b></p><p>In addition to a $50m private financing for pain drug developer Collegium Pharmaceutical (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Collegium-raises-50m-for-abuse-resistant-opioid-development-357207" target="_new">10 March 2015</a>), at least five other therapeutics companies announced significant venture capital financings during the first two weeks of March: Allergen Research Corp, Tricida, Macrolide Pharmaceuticals, Aura Biosciences and Vascular Pharmaceuticals. Details from their funding rounds are outlined in the table below.</p><table><tbody><tr><td><p><b>Company</b></p>&nbsp;</td><td><p><b>Investors</b></p>&nbsp;</td><td><p><b>Use of proceeds</b></p>&nbsp;</td></tr><tr><td><p>Allergen Research Corp (ARC);</p><p>San Mateo, California</p>&nbsp;</td><td><p>ARC completed an $80m Series B round led by Foresite Capital with participation from existing investor Longitude Capital and new investors Fidelity Management & Research, Aisling Capital, Adage Capital, RA Capital Management and Palo Alto Investors.</p>&nbsp;</td><td><p>The money will finance a Phase III clinical trial &ndash; and, if successful, the regulatory approval process &ndash; for the treatment of peanut allergies with AR-101, a standardized, pharmaceutical-grade peanut protein formulation developed with ARC's characterized oral desensitization immunotherapy (CODIT) technology. The company also plans to begin studies for milk and egg allergies during the next year. It raised $17m in Series A capital in 2013 to fund a Phase II peanut allergy trial (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Series-A-rounds-abound-Editas-ARMO-Allergen-348349" target="_new">26 November 2013</a>).</p>&nbsp;</td></tr><tr><td><p>Tricida;</p><p>South San Francisco</p>&nbsp;</td><td><p>Existing investor OrbiMed led a $30m Series B round for Tricida, which is developing first-in-class therapies for chronic complications of renal disease. Sibling Capital Ventures and Limulus Venture Partners also participated in the financing.</p>&nbsp;</td><td><p>Tricida plans to submit an investigational new drug (IND) application to the US FDA later this year to begin clinical trials for lead drug candidate TRC101, which may be able to treat electrolyte imbalances, slow chronic kidney disease progression and reduce the number of patients requiring dialysis. The company has raised $40m in venture capital to date.</p>&nbsp;</td></tr><tr><td><p>Macrolide Pharmaceuticals;</p><p>Newton, Massachusetts</p>&nbsp;</td><td><p>The antibiotic startup company close a $22m Series A round led by Novartis Venture Fund, Gurnet Point Capital, Roche Ventures and GlaxoSmithKline's venture capital arm SROne. Macrolide also inked a worldwide license agreement for technology developed at Harvard University.</p>&nbsp;</td><td><p>Macrolide will use the Series A cash to build its drug discovery platform and accelerate development of novel macrolide antibiotics. The platform will expand on the building blocks for total synthesis of macrolide antibiotics that was developed by Harvard professor Andrew Myers with support from the Blavatnik Biomedical Accelerator at the university.</p>&nbsp;</td></tr><tr><td><p>Aura Biosciences;</p><p>Cambridge, Massachusetts</p>&nbsp;</td><td><p>Advent Life Sciences led a $21m Series B round for Aura with participation from new investors Chiesi Ventures, Ysios Capital and Alexandria Venture Investments plus existing investors LI-COR Biosciences and former Genzyme CEO Henri Termeer.</p>&nbsp;</td><td><p>Aura will use the cash to begin clinical trials for targeted therapies that treat rare ocular cancers. The company also will pursue programs in additional cancer indications for its viral nanoparticle-based technology that was discovered and developed in partnership with John Schiller at the National Cancer Institute (NCI). Aura's lead product candidate is a viral nanoparticle conjugated to a cell-killing, laser-activated molecule from LI-COR.</p>&nbsp;</td></tr><tr><td><p>Vascular Pharmaceuticals (VPI);</p><p>Chapel Hill, North Carolina</p>&nbsp;</td><td><p>VPI increased its Series A round to $25m after the company raised $16m and signed an option agreement with Johnson & Johnson's Janssen subsidiary in 2012. Lumira Capital led the $9m in additional investment with participation from an unnamed investor plus existing supporters Intersouth Partners and MPM Capital. </p>&nbsp;</td><td><p>The new funding will help pay for the ongoing Phase II clinical trial for VPI-2690B in the treatment of diabetic nephropathy. Janssen has an exclusive option to acquire VPI based on successful completion of the trial (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Janssen-deal-and-16m-financing-pave-development-path-for-Vasculars-nephropathy-candidate-335015" target="_new">13 September 2012</a>). The company's monoclonal antibody targets the alpha-V beta-3 integrin receptor involved in the insulin-like growth factor 1 (IGF-1) pathway.</p>&nbsp;</td></tr></tbody></table><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 239
+
+<p>AstraZeneca led a $40m Series C venture capital round that will fund PhaseBio's Phase IIa clinical trials for drug candidates to treat diabetes and heart failure &ndash; two key areas of interest for the UK-based big pharma company.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 95
+
+BioNotebook PhaseBio closes 40m Series C round led by AstraZeneca plus five other VC financings
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150312T215244
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150312T215244
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150312T215244
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028098
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 98
+
+BioNotebook: PhaseBio closes $40m Series C round led by AstraZeneca, plus five other VC financings
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357180
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042310Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+981aaf5e-f10f-4a1d-89d9-aa3af1e5d898
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042310Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

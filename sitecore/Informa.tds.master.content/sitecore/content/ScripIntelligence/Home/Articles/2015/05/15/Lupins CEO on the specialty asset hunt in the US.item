@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {26B8225B-F402-4733-906A-1C63940C498E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/15/Lupins CEO on the specialty asset hunt in the US
+parent: {22B77BC9-1D41-4F3C-86FC-19BC331D0A4A}
+name: Lupins CEO on the specialty asset hunt in the US
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 230f7272-04e8-4ef7-9a04-2fdb2cf73072
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Lupin's CEO on the specialty asset hunt in the US 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+Lupins CEO on the specialty asset hunt in the US
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5442
+
+<p>Lupin's CEO Vinita Gupta nonchalantly remarks that the company is "impatient" and would like to step up growth in markets like the US via a buy, as she outlines the firm's M&A game plan.</p><p>In an interview with <i>Scrip</i> a day after Lupin snapped up Brazil's Medqu&iacute;mica Ind&uacute;stria Farmac&ecirc;utica, Ms Gupta and her brother, Lupin's managing director Nilesh Gupta, also commented that the current "approval slowdown" at the FDA makes it imperative to have a larger product basket in the US to have "more shots at the goal." </p><p>"We are looking to expand our portfolio/pipeline but primarily into the complex generic areas. We are trying to accelerate our entry in the complex generic areas," Ms Gupta said.</p><p>In a presentation to investors on 13 May, Lupin noted that the median ANDA approval timeline had risen to 42 months in 2014, from an estimated 32 months in 2013. ANDA approvals of five frontline Indian firms including Lupin declined to 76 in 2014 from more than 100 in the previous year, data presented by Lupin said, though analysts cautioned there may be more than one reason for the apparent slowdown. </p><p>The presentation also referred to how channel consolidation in the US &ndash; the CVS-Caremark, Medco-Express Scripts and Walgreen-Alliance Boots mergers - had seen generic firms experience double-digit price erosion, though much of it had already taken place.</p><p>Nilesh Gupta suggested that while the "number one priority" for acquisitions continued to be brands in the US, the firm was also seeing "a time value" of getting into some of the other generic platforms in which it is not well embedded. </p><p>"We've been laggards in the injectables space and stayed away from it for far too long; dermatology is another opportunity. From the time value perspective, we'd like to get into some of these areas quicker," he said.</p><p>However, he underscored that the firm's "bigger" acquisitions will be in its big geographies: the US, India or Japan or in companies geared towards those markets. The US, India and Japan accounted for 45%, 24% and 10% respectively of Lupin's net sales in 2014-15.</p><p>"But it could be a company based in Europe with a fab ANDA pipeline - that again would be of interest."</p><p>Some analysts have previously suggested that acquisitions could account for about $1bn of Lupin's targeted revenues of $5bn by FY18.</p><p>Lupin also confirmed having evaluated the established products portfolios that were put on the block by GlaxoSmithKline and UCB [the latter's was <a href="http://%5bhttp:/www.scripintelligence.com/business/Dr-Reddys-buys-UCB-portfolio-in-S-Asia-357628%5d" target="_new">recently acquired</a> by Dr Reddy's Laboratories]. It did not pursue these due to lack of a strategic fit. </p><p>"We looked at them&#8230;. participated in the process, got information, evaluated it and determined it did not fit our strategic interest," Ms Gupta added.</p><p>GSK recently indicated that it <a href="http://%5bhttp:/www.scripintelligence.com/business/GSK-to-keep-mature-products-355449%5d" target="_new">won't be divesting</a> its established brands portfolio because bids received for the products had not met expectations. </p><h2>US brand acquisitions</h2><p>Lupin's thrust on scanning potential brand buy targets in the US is also, in part, triggered by the potential risk to its Suprax (cefixime) franchise in the wake of competitor Aurobindo Pharma receiving FDA approval for its cefixime for oral suspension 100mg/5mL and 200mg/5mL last month. </p><p>"It really puts pressure, for sure. We had hoped by now we would have got a couple of brands that would have meaningfully taken Suprax's position. We had a tremendous run with Suprax over 10 years. When we launched we thought we'd have exclusivity for three years," Ms Gupta noted. </p><p>Lupin launched its brand business with Suprax suspension. The market size for Suprax was estimated at around $123m as per IMS data for the 12 months to February 2015.</p><p>Ms Gupta noted that Suprax had contributed "beautifully" to the firm's top and bottom lines over the years, and had allowed it to create a relationship with the paediatric community in the US &ndash; and it was now time to leverage it with other products. Other pediatric products in Lupin's stable include Suprax chewable, Alinia (nitazoxanide), licensed from Romark Labs, and InspiraChamber anti-Static Valved Holding Chamber, licensed from the New Jersey -based respiratory R&D firm InspiRX. </p><p>"But it's not enough for us &#8230; those brands are still small at this point. We continue to look for other brands that fit our pediatric portfolio as well as other therapeutic areas."</p><p>Lupin also said that specialty assets were the" most competed for" in the US market place and that the firm may have looked at almost every such asset in its therapeutic area of focus. </p><p>On whether it was price expectations that were holding a deal back, she said: "It's been a combination of sometimes valuation, sometimes level of exclusivity you have in a number of established brands like the GSK products or some had a cliff that was pretty soon."</p><p>Alongside acquisitions, Lupin is also developing its brands pipeline and has two respiratory products for the pediatric segment getting into the clinic this year, while two dermatology products &ndash; potentially 505(b) (2) filings &ndash; are also being developed.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 193
+
+<p>Lupin's CEO Vinita Gupta nonchalantly remarks that the company is "impatient" and would like to step up growth in markets like the US via a buy, as she outlines the firm's M&A game plan.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Lupins CEO on the specialty asset hunt in the US
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150515T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150515T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150515T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028727
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Lupin's CEO on the specialty asset hunt in the US 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358348
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+230f7272-04e8-4ef7-9a04-2fdb2cf73072
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

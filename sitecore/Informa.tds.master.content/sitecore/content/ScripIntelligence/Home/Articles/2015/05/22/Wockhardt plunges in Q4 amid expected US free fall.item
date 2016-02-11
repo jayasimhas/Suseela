@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C93179EB-3227-4B4A-8685-55DF5F8F0AF2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/22/Wockhardt plunges in Q4 amid expected US free fall
+parent: {F5E96EB9-60E0-4AAE-863A-DF3CFDF656A2}
+name: Wockhardt plunges in Q4 amid expected US free fall
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: cf406e5a-8e56-48f1-ab6e-008a9634636b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{F5161CC2-772F-472E-A21C-BF196343462E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Wockhardt plunges in Q4 amid expected US free fall
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Wockhardt plunges in Q4 amid expected US free fall
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3599
+
+<p>Wockhardt, which continues to grapple with compliance issues at its Indian manufacturing sites, reported a slump in profits for the fourth quarter ended March 2015, though revenues inched up propped mainly by the UK and India businesses.</p><p>Net profit for the quarter was down 55% to INR340m ($5.3m), but revenues increased by 4% to INR10.79bn.</p><p>Wockhardt's UK business was up 36% to INR3.08bn and the firm made 11 new filings there in FY14-15. Europe (including France) contributed 36% of Wockhardt's revenues in the quarter. The French operations declined by 55% to INR220m, with the Irish business at INR380m (-11%).</p><p>Revenues from India and emerging markets were INR4.03bn, with the India business up 46% during the quarter. The firm launched 42 new products on the domestic market in FY14-15. The emerging markets business, however, fell 25% during the quarter. </p><p>The US business slid by 21% to INR2.90bn. The US business contributed 27% of Wockhardt's global revenues in the fourth quarter of FY15 as against 35% in the same period of the previous fiscal. The decline in the US business was on "expected lines" due to the restrictions on imports from the firm's Indian facilities.</p><p>Recently Wockhardt has underscored its slew of efforts to improve compliance at its Indian sites that have been on the US FDA's radar over good manufacturing practice (GMP) deviations.</p><p>In its latest investor note, the firm said that as an outcome of completion of GMP remediation submitted by the company during the year, the FDA had inspected its L1-Chikalthana and Waluj facilities in Aurangabad and "observed ongoing improvement" in the firm's efforts towards compliance. </p><p>"The company is in the process of implementing remedial measures," it said. </p><p>Earlier, the firm said that the <a href="http://%5bhttp:/www.scripintelligence.com/business/Wockhardts-compliance-improving-as-FDA-woes-ease-357392%5d" target="_new">US FDA's inspection</a> at the L1-Chikalthana site plant did not result in any findings with respect to ''data security and control measures in the laboratory and manufacturing''. It did, though, result in certain Form 483 observations, but these were with respect to products manufactured prior to execution and implementation of the GMP remediation programme. A form 483 is a notice of the FDA's inspectional observations that lists deficiencies in the quality system. </p><p>Last month, the company said that it was <a href="http://%5bhttp:/www.scripintelligence.com/business/Wockhardt-initiates-remedial-US-recall-358092%5d" target="_new">voluntary recalling</a>, as part of remedial measures, a clutch of products from the US market. </p><p>The FDA had earlier placed Wockhardt's Chikalthana and Waluj sites in Aurangabad under <a href="http://%5bhttp:/www.scripintelligence.com/business/Wockhardt-sinks-after-US-import-alert-at-second-site-348391%5d" target="_new">import alert</a> following deviations in cGMP.The UK MHRA too had previously <a href="http://www.scripintelligence.com/policyregulation/A-third-Wockhardt-site-pulled-up-by-MHRA-347523" target="_new">pulled up</a> Wockhardt including issuing recalls of products made at the Chikalthana and Waluj units. </p><p>The investor note also said that the MHRA had, during the year, inspected the firm's manufacturing unit at Aurangabad and has lifted the statement of non-compliance. A GMP certificate remains in force allowing products to be supplied to the UK, it said. The MHRA has also restored the EU GMP certification of the company&rsquo;s potent product facility in Kadaiya.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 244
+
+<p>Wockhardt, which continues to grapple with compliance issues at its Indian manufacturing sites, reported a slump in profits for the fourth quarter ended March 2015, though revenues inched up propped mainly by the UK and India businesses.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Wockhardt plunges in Q4 amid expected US free fall
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150522T060000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150522T060000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150522T060000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028854
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Wockhardt plunges in Q4 amid expected US free fall
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358553
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042353Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cf406e5a-8e56-48f1-ab6e-008a9634636b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042353Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {A3A91CEC-CD71-45AB-A963-616610825257}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/16/Pfizer GSK rebuff 5 vaccine price challenge
+parent: {5088355F-30B1-475A-AA64-05A47833A5BE}
+name: Pfizer GSK rebuff 5 vaccine price challenge
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 91a341ae-c43f-4e9c-a491-9ddcd79aead4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{DBA29625-E20C-4C62-9C26-9028048455F2}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Pfizer, GSK rebuff $5 vaccine price challenge
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Pfizer GSK rebuff 5 vaccine price challenge
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8361
+
+<p>Pfizer and GlaxoSmithKline have hit back at claims that they are pricing their pneumococcal vaccines too highly in poor countries. </p><p>"Our pneumococcal vaccine is one of the most complex we've ever manufactured, essentially combining 10 vaccines in one," GlaxoSmithKline said in a written statement responding to a call by the medical charity Médecins Sans Fronti&egrave;res to slash the price of the product in developing countries. It said that lowering the price any further could compromise its ability to supply the vaccine.</p><p>Pfizer said: "The price of Prevenar 13 [its pneumococcal vaccine] reflects the fact that it is one of the most complex biologic products ever developed and manufactured. For example, each one of the 13 individual components (13 serotypes of the pneumococcal bacteria, which cause pneumococcal disease) requires a separate process for purification, conjugation and testing. It takes more than two years to create one batch of Prevenar 13, encompassing some 500 separate quality control tests prior to product release and distribution, multiple facilities and hundreds of trained professionals."</p><h2>Surging costs</h2><p>MSF states in the newly published second edition of its vaccine pricing report, <i>The Right Shot: Bringing Down Barriers to Affordable and Adapted Vaccines</i>, that the cost of vaccinating a child is now 68 times more expensive than it was in 2001 in the poorest countries, and that many parts of the world are unable to afford high-priced new vaccines like that against pneumococcal disease, which kills about 1 million children a year. It argues that the pneumococcal vaccine accounts for an unreasonably high proportion of the burden of paying for immunization programs in poorer countries. </p><p>The charity has issued a call for further discounting just before the Gavi Vaccine Alliance's pledging conference in Berlin in on 27 January, when the international public-private organization will mobilize funds for immunization programs through 2020. MSF has called on GSK and Pfizer to cut the price of pneumococcal vaccine to $5 a child for a full vaccination schedule in developing countries.</p><p>The two companies signed a contract in 2010 to provide agreed quantities of GSK's Synflorix and Pfizer's Prevenar 13 products for as little as $3.50 per dose (in a three-dose schedule) for immunization programs in developing countries through Gavi. In some cases the companies stood to receive additional donor-funded payments via a "tail price" of $3.50. The original contract was worth $450m over 10 years, and was subsequently expanded to include more doses over a longer period (<a href="http://www.scripintelligence.com/home/GSK-and-Pfizer-sign-450-million-vaccine-contract-for-developing-countries-220095" target="_new">scripintelligence.com, 24 March 2010</a>; <a href="http://www.scripintelligence.com/business/Pfizer-GSK-expand-discount-pneumococcal-vaccine-agreements-with-GAVI-324938" target="_new">19 December 2011</a>).</p><p>"Donors will be asked to put an additional $7.5bn on the table to pay for vaccines in poor countries for the next five years, with over one third of that going to pay for one vaccine alone, the high-priced pneumococcal vaccine; just think of how much further taxpayer money could go to vaccinate more children if vaccines were cheaper," said Rohit Malpani, director of policy and analysis for MSF's access campaign. "We think it's time for GSK and Pfizer to do their part to make vaccines more affordable for countries in the long term, because the discounts the companies are offering today are just not good enough."</p><p>MSF reports that the pneumococcal vaccine accounts for about 45% of the total cost of vaccinating a child against a full package of 12 diseases in the poorest countries. It argues that pricing secrecy means that prices can vary greatly between different markets, with some developed countries actually getting the vaccine cheaper than some developing countries.</p><p>It says that $5 per child for three doses is only slightly less than the $6 price target announced by Indian firm Serum Institute for a pneumococcal vaccine it plans to bring to market "in the next few years". </p><p>However, GSK says that, for the poorest countries eligible for support from Gavi, "We are providing this vaccine at a deeply discounted price. At this level, we are able to just cover our costs. To discount it further would threaten our ability to supply it to these countries in the long-term. Nevertheless, we continue to look at ways to reduce production costs and any savings we make we would pass on to GAVI."</p><p>Pfizer added that it reduced the tail price to $3.40 for 2013 and $3.30 for all subsequent years through 2025, and would grant access to the tail price of $3.30 through 2025 for all Gavi-graduated countries that cease to qualify for support.</p><p>Pfizer said: "60% of the world's poor children are covered by the Gavi-AMC [Advance Market Commitment] program at a price that is far below the cost to manufacture the vaccine."</p><p>GSK added that around 80% of all its vaccines (including the pneumococcal vaccine) are made available at substantial discounts to western prices and that it offers lowest prices to Gavi and UNICEF for as little as a tenth of the developed market prices. It also commits to vaccine R&D in diseases affecting poorer countries, including malaria, tuberculosis, HIV and Ebola.</p><p>Pfizer and GSK pointed to additional commitments they have made to freeze prices for a number of years for countries that cease to be eligible for Gavi support. "This gives countries the best chance of maintaining their pneumococcal vaccination programs and sustaining the significant public health gains these programs provide, even after Gavi support ends," said Pfizer.</p><p> GSK notes that it also supplies vaccine to MSF at a nominal cost for children caught up in crises. </p><p>However, MSF was unmoved.</p><p>"We disagree that $5 for three doses of the pneumococcal vaccine is unsustainable, especially considering that GSK and Pfizer have together made more than $19bn on the PCV vaccine to date. Both companies can and should do more to ensure immunization for the world's poorest children," Mr Malpani told <i>Scrip</i>. </p><p>"The Serum Institute has already committed to sell the pneumococcal vaccine, with similar investments in development and production, for only $2 a dose. And the Serum Institute, unlike GSK and Pfizer, has not made such extraordinary revenues worldwide," he added.</p><p>The MSF Access Campaign policy director challenged the firms to prove that they cannot afford to reduce the price. </p><p>"Right now the cost of manufacturing &ndash; like the prices paid and the actual cost of research and development &ndash; is guarded like a state secret. We call on both companies to submit to an independent audit to verify the cost of production so that we can ensure poor countries and their donors are paying the lowest possible price for life-saving vaccines."</p><p>He went on: "Both GSK and Pfizer have almost claimed more than $1.5bn extra on a donor-financed subsidy that doubled the payout for the vaccine in developing countries under Gavi, the Vaccine Alliance. Gavi's own independent assessment concluded that the price it was paying for the pneumonia vaccine was well over the estimated cost of manufacture."</p><p>He concluded: "A deeply discounted price when compared with a developed country price may look good, but really it reflects the unaffordable prices of vaccines in developed countries more than it reflects developing countries getting a good deal."</p><p>"As opposed to criticising pricing as if it is the sole barrier to access, it is vital to continue an open dialogue about how best to achieve a sustainable vaccines access environment in which all partners are incentivised to make significant contributions in our shared pursuit of vaccinating every child," commented Pfizer. "As the Gavi partners know, preventing disease is a complex challenge that requires partnership and perseverance on many fronts."</p><p>It added that MSF's comments "fail to recognise the public health value pneumococcal vaccines have created by reducing the burden of disease and saving lives &ndash; something impossible to achieve before their introduction."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 138
+
+<p>Pfizer and GlaxoSmithKline have hit back at claims that they are pricing their pneumococcal vaccines too highly in poor countries. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Pfizer GSK rebuff 5 vaccine price challenge
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150116T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150116T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150116T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027571
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Pfizer, GSK rebuff $5 vaccine price challenge
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356183
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+91a341ae-c43f-4e9c-a491-9ddcd79aead4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {D148FD6C-D935-458D-9299-C851D6ACA815}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/09/AZs Brilinta Takes Next Step Gains FDA Approval For Extended Use
+parent: {A1488DBB-C468-4AE3-BA7B-6FC254EF9442}
+name: AZs Brilinta Takes Next Step Gains FDA Approval For Extended Use
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d19b783d-4854-4c90-88e5-32997b3b2897
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+AZ's Brilinta Takes Next Step, Gains FDA Approval For Extended Use
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+AZs Brilinta Takes Next Step Gains FDA Approval For Extended Use
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5809
+
+<p>The US FDA has approved AstraZeneca PLC's oral antiplatelet treatment, <i>Brilinta</i> (ticagrelor), in a new indication, allowing the product to be used as a longer term therapy for patients with acute coronary syndrome (ACS).</p><p>Brilinta has been granted approval in the US at a new 60 mg dose for use as a long-term treatment in patients with a history of heart attack beyond the first year. With this expanded indication, Brilinta is now approved to reduce the rate of cardiovascular death, myocardial infarction (MI) and stroke in patients with ACS or a history of MI.</p><p>Datamonitor Healthcare noted that the new expanded approval should help boost physician confidence in AstraZeneca's product, which has previously been the center of investigations in the US.</p><p>Brilinta was first given the green light by the FDA in July 2011 on the basis of data from the pivotal Phase III PLATO study. However, uptake of the drug was hampered in the US by a Department of Justice's (DoJ) investigation into data from the PLATO trial. The investigation related to the potential misrepresentation of data, particularly in Eastern Europe. In particular concerns were raised over the excess mortality rates seen in the comparator arm of the trial. However, the DoJ has since closed the investigation with no further action to be taken. </p><p>Analysts at Datamonitor highlighted that attempts to restore Brilinta's reputation are "of particular importance as the drug has been earmarked as a key growth driver for the company, as it has optimistically forecast sales of $3.5bn by 2023. In order to achieve these sales, the company has invested heavily in marketing and advertising the drug."</p><p>However, Paul Hudson, president of AstraZeneca US and executive vice-president, North America, told <i>Scrip</i>, "The last couple of years have seen us put that [DoJ investigation] behind us anyway. We are the branded oral antiplatelet market leader in the US &ndash; there is confidence in Brilinta."</p><p>He noted though, "For those that perhaps remained on the fence, I think that's how we should describe it, this is an important step in making our data clear. We are already seeing a lively positive debate around longer use for Brilinta."</p><p>In the management of ACS, the recommended maintenance dose of Brilinta is 90 mg twice daily plus aspirin during the first year after an ACS event. Following the approval of an expanded indication, after one year, patients with a history of heart attack can now be treated with 60 mg twice daily plus aspirin.</p><h2>Benefit Vs. Risk</h2><p>This approval is based on the PEGASUS TIMI-54 study, a large-scale outcomes trial involving more than 21,000 patients. In March this year, <a href="http://www.scripintelligence.com/home/ACC-2015-AstraZeneca-optimistic-on-Brilinta-after-PEGASUS-others-less-so-357300" target="_new">data from the study were presented</a> at the America College of Cardiology (ACC) Scientific Session & Expo in San Diego. At the time, some doctors raised concerns about the bleeding risk associated with the drug.</p><p>The rates of death, heart attack or stroke at three years in PEGASUS were 7.85% for 90 mg of Brilinta twice-daily, 7.77% for 60 mg of Brilinta and 9.04% for placebo (HR=0.85, p=0.008 for 90 mg dose versus placebo; HR=0.84, p=0.0043 for 60 mg dose).</p><p>At three years, 2.6% of patients who were given 90 mg of Brilinta had a major bleed and 2.3% of people who got 60 mg of Brilinta had a bleeding event versus 1.06% in the placebo group. Fatal bleeding (0.11% for 90 mg Brilinta, 0.25% for 60mg Brilinta and 0.26% for placebo) and intracranial hemorrhage (0.56%, 0.61% and 0.47%, respectively) were similar between all treatment groups.</p><p>The bleed risk hasn't dissuaded the FDA from approving the product and Steven Zelenkofske, head of CV medical affairs at AstraZeneca, told <i>Scrip</i>: "Though we saw an increase in bleeding we did not see an increase in fatal bleeding or bleeding in the brain. We will represent all the data from the studies on the labeling for Brilinta but there is clear benefit here."</p><p>The expanded indication for Brilinta was approved under FDA Priority Review, a designation granted to medicines that the FDA determines have the potential to provide significant improvements in the treatment, prevention or diagnosis of a disease. AstraZeneca expects to be able to offer the drug in this new indication in the US by the end of September. </p><p>Hudson said, "This approval means a lot to us because of what it means to patients." He noted that there is a large unmet need for the treatment of ACS past the first year. "What doesn't get talked about is that there is still the same number of patients, 20%, dying after the first year as there are in the first year after heart attack," he said. "We have done the work and we can to answer the scientific question: what would happen next if Brilinta was continued? We have shown there is benefit. We are excited to have this information to share with the cardiology community and benefit patients."</p><p>He added, "Brilinta is a fantastic medicine and we are only two indications into a massive program." He said the latest US approval is "an important moment for patients and a great second step in the life of this product."</p><p>AstraZeneca is also studying Brilinta as a treatment for peripheral arterial disease, ischemic stroke and diabetes&ndash; Phase III trials are ongoing for all three indications. </p><p><i>[CORRECTION: This story previously stated, "AstraZeneca is also studying Brilinta as a treatment for peripheral arterial disease, ischemic stroke and atherosclerosis &ndash; Phase III trials are ongoing for all three indications." Atherosclerosis has since been corrected to say "diabetes".] </i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 234
+
+<p>The US FDA has approved AstraZeneca PLC's oral antiplatelet treatment, <i>Brilinta</i> (ticagrelor), in a new indication, allowing the product to be used as a longer term therapy for patients with acute coronary syndrome (ACS).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+AZs Brilinta Takes Next Step Gains FDA Approval For Extended Use
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150909T170229
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150909T170229
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150909T170229
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029690
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+AZ's Brilinta Takes Next Step, Gains FDA Approval For Extended Use
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360179
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d19b783d-4854-4c90-88e5-32997b3b2897
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {34A50299-1EAC-44E2-B073-4A4A9D52386E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/31/US Top 20 Gilead employees make five times the money
+parent: {50A3B851-5621-4D88-87C1-94751D882AC7}
+name: US Top 20 Gilead employees make five times the money
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 617bc076-c0d8-4834-92a6-aae2c9435464
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+US Top 20: Gilead employees make five times the money
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+US Top 20 Gilead employees make five times the money
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7785
+
+<p>Gilead is only the fourth biggest North American pharmaceutical company, but each of its employees generates five times more revenue and nearly four times the profit than any of its big rivals. In doing so it is raising a new standard for performance that should have stock analysts and pharmaceutical executives alike rewriting their expectations. And perhaps the Gilead folks should start redrafting their remuneration packages.</p><p><i>Scrip</i>'s latest analysis of the North American pharma scene based on publicly filed returns for 2014 shows the usual suspects on top of the league table of drug sales (Table 1), with Pfizer, Merck & Co, and Johnson & Johnson in the rostrum positions.</p><p>Gilead comes in fourth, but while Pfizer deployed over 78,000 people to generate its $45.7bn in drug sales, Gilead generated $24.9bn in drug sales with around 7000 employees.</p><table><h2>Table 1. Top 20 North American companies by drug sales</h2><th><tr><td><p>Company</p>&nbsp;</td><td><p>Pharma sales ($m)</p>&nbsp;</td></tr></th><tbody><tr><td><p>Pfizer</p>&nbsp;</td><td><p>45708</p>&nbsp;</td></tr><tr><td><p>Merck & Co</p>&nbsp;</td><td><p>36042</p>&nbsp;</td></tr><tr><td><p>Johnson & Johnson</p>&nbsp;</td><td><p>32313</p>&nbsp;</td></tr><tr><td><p>Gilead Sciences</p>&nbsp;</td><td><p>24890</p>&nbsp;</td></tr><tr><td><p>AbbVie</p>&nbsp;</td><td><p>19960</p>&nbsp;</td></tr><tr><td><p>Amgen</p>&nbsp;</td><td><p>19327</p>&nbsp;</td></tr><tr><td><p>Eli Lilly</p>&nbsp;</td><td><p>16481</p>&nbsp;</td></tr><tr><td><p>Bristol-Myers Squibb</p>&nbsp;</td><td><p>15879</p>&nbsp;</td></tr><tr><td><p>Baxter International</p>&nbsp;</td><td><p>15000</p>&nbsp;</td></tr><tr><td><p>Actavis</p>&nbsp;</td><td><p>13062</p>&nbsp;</td></tr><tr><td><p>Biogen </p>&nbsp;</td><td><p>9399</p>&nbsp;</td></tr><tr><td><p>Valeant Pharmaceuticals</p>&nbsp;</td><td><p>8104</p>&nbsp;</td></tr><tr><td><p>Mylan</p>&nbsp;</td><td><p>7647</p>&nbsp;</td></tr><tr><td><p>Celgene </p>&nbsp;</td><td><p>7564</p>&nbsp;</td></tr><tr><td><p>Allergan</p>&nbsp;</td><td><p>6012</p>&nbsp;</td></tr><tr><td><p>Hospira</p>&nbsp;</td><td><p>3035</p>&nbsp;</td></tr><tr><td><p>Regeneron</p>&nbsp;</td><td><p>2787</p>&nbsp;</td></tr><tr><td><p>Endo International</p>&nbsp;</td><td><p>2323</p>&nbsp;</td></tr><tr><td><p>Alexion Pharmaceuticals</p>&nbsp;</td><td><p>2234</p>&nbsp;</td></tr><tr><td><p>Mallinkrodt</p>&nbsp;</td><td><p>1613</p>&nbsp;</td></tr></tbody><tr><td colspan="2"><p>Data are pre-merger figures for Allergan, Actavis, Hospira, Pfizer and Valeant.</p></td></tr></table><p><p><p>In effect, each of Gilead's employees generated $3.5m in drug sales, five times more than counterparts at AbbVie, six times more than those at Pfizer, and nearly seven times that of people who work for Merck & Co (Table 2).</p><p>Some of the smaller US companies come closer to Gilead's productivity, although not really within touching distance: Celgene's pharma sales return is $1.26m per employee, Biogen's $1.24m, and Amgen's $1.08m.</p><p>In fact the closest rival to Gilead is United Therapeutics, sitting just outside the top 20 at #21. United has just 740 employees who generated $1.28bn in drug sales, $1.73m each.</p><p><table><h2>Table 2. Top 20 North American companies by drug sales per employee</h2><th><tr><td><p>Company</p>&nbsp;</td><td><p>Pharma sales ($) per employee</p>&nbsp;</td></tr></th><tbody><tr><td><p>Gilead Sciences</p>&nbsp;</td><td><p>3,555,714 </p>&nbsp;</td></tr><tr><td><p>United Therapeutics</p>&nbsp;</td><td><p>1,729,095</p>&nbsp;</td></tr><tr><td><p>Jazz Pharmaceuticals</p>&nbsp;</td><td><p>1,336,460</p>&nbsp;</td></tr><tr><td><p>Celgene </p>&nbsp;</td><td><p>1,258,117</p>&nbsp;</td></tr><tr><td><p>Biogen </p>&nbsp;</td><td><p>1,244,874</p>&nbsp;</td></tr><tr><td><p>Salix</p>&nbsp;</td><td><p>1,133,540</p>&nbsp;</td></tr><tr><td><p>Amgen</p>&nbsp;</td><td><p>1,079,720</p>&nbsp;</td></tr><tr><td><p>Alexion Pharmaceuticals</p>&nbsp;</td><td><p>982,723</p>&nbsp;</td></tr><tr><td><p>Regeneron</p>&nbsp;</td><td><p>952,820 </p>&nbsp;</td></tr><tr><td><p>Par Pharmaceutical</p>&nbsp;</td><td><p>798,813 </p>&nbsp;</td></tr><tr><td><p>Cubist Pharmaceuticals</p>&nbsp;</td><td><p>797,600 </p>&nbsp;</td></tr><tr><td><p>AbbVie</p>&nbsp;</td><td><p>767,692</p>&nbsp;</td></tr><tr><td><p>Bristol-Myers Squibb</p>&nbsp;</td><td><p>635,160</p>&nbsp;</td></tr><tr><td><p>Actavis</p>&nbsp;</td><td><p>604,736 </p>&nbsp;</td></tr><tr><td><p>Pfizer</p>&nbsp;</td><td><p>583,755</p>&nbsp;</td></tr><tr><td><p>Allergan</p>&nbsp;</td><td><p>572,581</p>&nbsp;</td></tr><tr><td><p>Merck & Co</p>&nbsp;</td><td><p>514,886</p>&nbsp;</td></tr><tr><td><p>Valeant Pharmaceuticals</p>&nbsp;</td><td><p>482,357 </p>&nbsp;</td></tr><tr><td><p>Endo International</p>&nbsp;</td><td><p>459,004 </p>&nbsp;</td></tr><tr><td><p>Eli Lilly</p>&nbsp;</td><td><p>421,122</p>&nbsp;</td></tr></tbody><tr><td colspan="2"><p>Data are pre-merger figures for Allergan, Actavis, Hospira, Pfizer, Salix and Valeant</p></td></tr></table></p><p>Pfizer's $0.58m in drug sales per employee is not only well behind these big biotech companies (and others like Alexion and Regeneron) but it is also behind generics company, Actavis ($0.60m).</p><p>On a pro forma basis, Allergan's per employee productivity is on a par with that at new owners, Actavis; Salix brings a much higher performance to Valeant while Hospira, which generated only $0.16m in drug sales per employee during 2014, will drag Pfizer down.</p><p>Gilead's stand-out performance for drug revenue also extends to per capita profitability (Table 3). People working at Gilead each generated $1.73m in net profit compared to $0.46m for those at United, $0.39m for those at Biogen, $0.33m at Celgene, and $0.29m per employee at both Amgen and Alexion.</p><p>The more established North American companies produced much lower per capita profit: $0.17m for Merck, $0.13m for Johnson & Johnson, $0.12m for Pfizer, $0.08m for Bristol-Myers Squibb, $0.07m for AbbVie and $0.06m for Eli Lilly.</p><table><h2>Table 3. Top 20 North American companies by net profit per employee</h2><tbody><tr><td><p>Company</p>&nbsp;</td><td><p>Total net profit ($) per employee</p>&nbsp;</td></tr><tr><td><p>Gilead Sciences</p>&nbsp;</td><td><p>1,728,714</p>&nbsp;</td></tr><tr><td><p>United Therapeutics</p>&nbsp;</td><td><p>459,554</p>&nbsp;</td></tr><tr><td><p>Biogen </p>&nbsp;</td><td><p>388,713</p>&nbsp;</td></tr><tr><td><p>Celgene </p>&nbsp;</td><td><p>332,651</p>&nbsp;</td></tr><tr><td><p>Alexion Pharmaceuticals</p>&nbsp;</td><td><p>289,006</p>&nbsp;</td></tr><tr><td><p>Amgen</p>&nbsp;</td><td><p>288,156</p>&nbsp;</td></tr><tr><td><p>Merck & Co</p>&nbsp;</td><td><p>170,286</p>&nbsp;</td></tr><tr><td><p>Allergan</p>&nbsp;</td><td><p>145,162</p>&nbsp;</td></tr><tr><td><p>Johnson & Johnson</p>&nbsp;</td><td><p>129,036</p>&nbsp;</td></tr><tr><td><p>Regeneron</p>&nbsp;</td><td><p>118,998</p>&nbsp;</td></tr><tr><td><p>Pfizer</p>&nbsp;</td><td><p>116,667</p>&nbsp;</td></tr><tr><td><p>Bristol-Myers Squibb</p>&nbsp;</td><td><p>80,160</p>&nbsp;</td></tr><tr><td><p>Cubist Pharmaceuticals</p>&nbsp;</td><td><p>71,090</p>&nbsp;</td></tr><tr><td><p>AbbVie</p>&nbsp;</td><td><p>68,231</p>&nbsp;</td></tr><tr><td><p>Jazz Pharmaceuticals</p>&nbsp;</td><td><p>65,897</p>&nbsp;</td></tr><tr><td><p>Eli Lilly</p>&nbsp;</td><td><p>61,083</p>&nbsp;</td></tr><tr><td><p>Valeant Pharmaceuticals</p>&nbsp;</td><td><p>54,375</p>&nbsp;</td></tr><tr><td><p>Baxter International</p>&nbsp;</td><td><p>37,833</p>&nbsp;</td></tr><tr><td><p>Mylan</p>&nbsp;</td><td><p>37,176</p>&nbsp;</td></tr><tr><td><p>Perrigo</p>&nbsp;</td><td><p>20,088</p>&nbsp;</td></tr></tbody><tr><td colspan="2"><p>Data are pre-merger figures for Allergan, Actavis, Pfizer, and Valeant</p></td></tr></table></p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 437
+
+<p>Gilead is only the fourth biggest North American pharmaceutical company, but each of its employees generates five times more revenue and nearly four times the profit than any of its big rivals. In doing so it is raising a new standard for performance that should have stock analysts and pharmaceutical executives alike rewriting their expectations. And perhaps the Gilead folks should start redrafting their remuneration packages.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+US Top 20 Gilead employees make five times the money
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150331T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150331T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150331T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028347
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+US Top 20: Gilead employees make five times the money
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Event stories
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357598
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042326Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+617bc076-c0d8-4834-92a6-aae2c9435464
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042326Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

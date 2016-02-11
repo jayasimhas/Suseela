@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {842D492E-68B6-4B2C-B57B-ECD7A530FF93}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/08/Keytruda Wins Expanded Melanoma Priority Review Also A Delay
+parent: {EB98594F-6768-459E-BE38-AA507619EAFF}
+name: Keytruda Wins Expanded Melanoma Priority Review Also A Delay
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 01e7f895-348c-43a8-a33f-8b754b24f4b5
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Keytruda Wins Expanded Melanoma Priority Review; Also A Delay
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Keytruda Wins Expanded Melanoma Priority Review Also A Delay
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2853
+
+<p>The FDA has granted a priority review for Merck's supplemental biologics license application (sBLA) for its human programmed death receptor-1 (PD-1)-blocking antibody Keytruda (pembrolizumab) at the 2mg/kg every three weeks dosage as a first-line treatment for patients with unresectable or metastatic melanoma.</p><p>The agency set Dec. 19 as the <i>Prescription Drug User Fee Act</i> (PDUFA) action date for the sBLA, which was based in part on data from Merck's Phase III KEYNOTE-006 trial.</p><p>But the FDA also extended the PDUFA until Dec. 24 for a separate sBLA for Keytruda &ndash; that one as a treatment for patients with ipilimumab-refractory advanced melanoma. </p><p>Merck said the delay for the latter indication was because it had submitted an additional analysis from its Phase II KEYNOTE-002 trial, which the FDA considered a major amendment to the application.</p><p>The firm said it submitted the extra information because it wanted to provide the FDA with the "most robust data" for Keytruda in that population.</p><p>Merck reported that the KEYNOTE-002 study demonstrated Keytruda was superior to chemotherapy in helping more patients with ipilimumab-refractory advanced melanoma achieve progression-free survival.</p><p>Merck's rival, Bristol-Myers Squibb, also recently had its sBLA <a href="http://www.scripintelligence.com/policyregulation/Beefed-Up-Submission-Delays-Opdivos-1st-Line-Melanoma-Timeline-359932" target="_new">delayed for a similar reason</a> for its PD-1-blocking antibody Opdivo (nivolumab) as a first-line monotherapy for advanced melanoma &ndash; declaring that it submitted the additional data "to ensure the broadest dataset, irrespective of BRAF status, was available for review."</p><p>The new PDUFA for the Opdivo sBLA is Nov. 27.</p><p>The Opdivo delay did not affect the company's supplemental submission to market the drug plus BMS' Yervoy (ipilimumab) as a therapy for patients with previously untreated advanced melanoma, whose PDUFA is Sept. 30.</p><p>Merck's drug beat BMS' product to the US market in their respective initial melanoma indications &ndash; with the former firm making history <a href="http://www.scripintelligence.com/home/Merck-melanoma-drug-Keytruda-OKd-1st-US-PD-1-353714" target="_new">last September</a> when Keytruda became the first PD-1-blocking antibody approved in the US.</p><p>That first win for Keytruda was as a treatment for unresectable or metastatic melanoma and disease progression in patients previously treated with Yervoy, and, if BRAF V600 mutation positive, a BRAF inhibitor.</p><p>Opdivo's <a href="http://www.scripintelligence.com/home/Bristol-Myers-wins-US-Opdivo-approval-three-months-early-355806" target="_new">first approval</a> in melanoma followed a few months later in December 2014 for the same indication.</p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 318
+
+<p>The FDA has granted a priority review for Merck's supplemental biologics license application (sBLA) for its human programmed death receptor-1 (PD-1)-blocking antibody Keytruda (pembrolizumab) at the 2mg/kg every three weeks dosage as a first-line treatment for patients with unresectable or metastatic melanoma.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Keytruda Wins Expanded Melanoma Priority Review Also A Delay
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151208T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151208T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151208T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029540
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Keytruda Wins Expanded Melanoma Priority Review; Also A Delay
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199400040
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359924
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+01e7f895-348c-43a8-a33f-8b754b24f4b5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

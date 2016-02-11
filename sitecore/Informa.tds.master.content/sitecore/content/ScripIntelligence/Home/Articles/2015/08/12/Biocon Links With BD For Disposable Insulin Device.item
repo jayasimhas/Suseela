@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {E7394531-695A-4B45-901A-FD76179B77A2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/12/Biocon Links With BD For Disposable Insulin Device
+parent: {1A74978F-4972-4A4B-BB28-CBAFD32209D0}
+name: Biocon Links With BD For Disposable Insulin Device
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 567da2b3-e8a4-4721-b0ae-c1f9742c83c4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Biocon Links With BD For Disposable Insulin Device
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Biocon Links With BD For Disposable Insulin Device
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3002
+
+<p>More details on the Indian biopharmaceuticals firm Biocon's plans to enter the disposable insulin device segment have now emerged.</p><p>Biocon's chairman and managing director, Kiran Mazumdar-Shaw, told <i>Scrip</i> that the device has been developed for the company by BD (Becton, Dickinson and Company), with the assembly being done in India. </p><p>"We import the components and do the assembly in Bangalore," Mazumdar-Shaw said in an interview in Mumbai on Aug. 11.</p><p>The new disposable device is expected to be launched in the "next few months" and Biocon expects it to propel its domestic insulin glargine business.</p><p>"That was the one lacuna we had in competing with Lantus [Sanofi's insulin glargine brand] and with that in line, we will be very competitive and well-placed. Now finally, we have a good competitive position in glargine," Mazumdar-Shaw added.</p><p>The Indian market for disposable devices for insulin and insulin analogues is estimated at about INR3.30bn ($51.4m).</p><p>Biocon previously noted that more people <a href="http://www.scripintelligence.com/business/Biocon-eyes-specialty-build-up-insulin-disposable-devices-foray-358151" target="_new">prefer disposable devices</a> but that it would have to take into account the "economics" of such devices, which is important in the Indian context. </p><p>Biocon had also pointed out that developed markets were "more oriented" towards disposable devices and that it expected return on investment to be "quite lucrative" when sales commence to such markets. </p><p>Last year Biocon launched INSUPen EZ, a second generation insulin pen, following on the success of its reusable insulin delivery device INSUPen introduced in 2011. Both devices were developed by Germany's Haselmeier. </p><p>The INSUPen EZ is a reusable insulin pen based on Haselmeier's i-pen&sup2; platform and is designed to be easy to use and provide a smoother injection experience. Biocon has worldwide distribution rights to INSUPen EZ for use with its Basalog (glargine), Insugen (rh-insulin) and insulin analogues. </p><p>Earlier this year, Biocon received GDPMD (Good Distribution Practice for Medical Device) certification for INSUPen and INSUPen EZ in Malaysia.</p><p>Asked about the recent trend of Big Pharma looking at innovation through non-traditional partners and whether Biocon may perhaps look at a similar approach, Mazumdar-Shaw said that her company expected to partner with Indian IT (information technology) firms to look at some opportunities.</p><p>"It would be around patient data management, personal data monitoring and things like that," Biocon's boss said.</p><p>Last year, Novartis's Alcon unit signed a <a href="http://www.scripintelligence.com/home/Google-and-Novartis-in-smart-lens-pact-352875" target="_new">deal</a> with Google to license the latter's "smart lens" technology, which could lead to medical innovations such as constant blood sugar monitoring via the eye, or adaptive focusing of contact lenses. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 137
+
+<p>More details on the Indian biopharmaceuticals firm Biocon's plans to enter the disposable insulin device segment have now emerged.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Biocon Links With BD For Disposable Insulin Device
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150812T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150812T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150812T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029486
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Biocon Links With BD For Disposable Insulin Device
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359837
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+567da2b3-e8a4-4721-b0ae-c1f9742c83c4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {671A9439-A214-4551-B504-0DC2B82BE565}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/30/Zosano program still holds promise after Novo exit
+parent: {E67CB7D0-70DE-425B-8565-3BEAD05ACFC4}
+name: Zosano program still holds promise after Novo exit
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3639efad-63c3-44be-a118-668f29361a7e
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Zosano program still holds promise after Novo exit
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Zosano program still holds promise after Novo exit
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3265
+
+<p><p>Diabetes drug giant Novo Nordisk is pulling out of a partnership with drug delivery biotech Zosano Pharma, returning all rights for the preclinical program back to the smaller company. Analysts believe it's an opportunity for Zosano to find a new partner and investors seem excited by the prospect. </p><p>Zosano announced 06 July that the Danish drugmaker has returned the rights to a preclinical program the pair had been working on that used Zosano's transdermal technology to deliver Novo Nordisk's glucagon-like peptide-1 (GLP-1) antagonist semaglutide for the treatment of type II diabetes.</p><p>Zosano is focused on the development of drugs delivered systemically via transdermal patches comprised of microneedles that rapidly and painlessly inject therapeutic compounds into the skin.</p><p>The biotech said in a statement that it had been notified by the big pharma partner that the discontinuation of the program was due to "strategic prioritization" of the company's research portfolio, "despite continued progress during the collaboration period." Novo Nordisk would not elaborate further when contacted for comment. </p><p>The drug used in the patch was Novo Nordisk's Phase III GLP-1, which is being developed as a follow-on product to the blockbuster Victoza (liraglutide). While the once-weekly injectable version of semaglutide is currently in Phase III, the company recently announced positive results from a Phase II trial of the once-daily oral formulation of the drug; the patch would&rsquo;ve been a third alternative. </p><p>The diabetes field has become increasingly crowded and Novo Nordisk has been looking for ways to maintain its position as a market leader in the space. The discontinuation of the program could indicate that the big pharma doesn't see enough room for all three formulations of the drug in the market. </p><p>Novo Nordisk and Zosano original entered into the partnership in <a href="http://#http://www.scripintelligence.com/home/BioNotebook-Deals-and-Data-ZosanoNovo-MacroGenicsServier-RegulusSanofi-Seattle-GeneticsTakeda-Sarepta-349842" target="_new">late-January 2014</a> when the pharma paid an undisclosed upfront and promised $60m in milestones. </p><p>The deal was a small one &ndash; even for the drug delivery biotech. Zosano also has a <a href="http://#http://www.scripintelligence.com/business/Lilly-boosts-osteoporosis-franchise-Zosanos-IPO-prospects-355377" target="_new">much larger partnership</a> with Eli Lilly & Co on a patch formulation of the pharma's osteoporosis drug Forteo (teriparatide) in a deal worth $440m. Lilly made a $15m equity investment in the company when it debuted on the NASDAQ earlier this year. </p><p>Investors didn't seem fazed by the return of the diabetes program &ndash; the stock gained 3.71%, or 29 cents, to close at $8.10 on 06 July. </p><p>"Prior to this event, we had attributed only a small placeholder valuation to the GLP-1 program due to small single-digit royalty economics," wrote Roth Capital Partners analyst Scott Henry. "We believe that this compound could still be out-licensed to another player in the active GLP-1 category. Thus, we continue to value this program greater than zero, but not enough to quantify it as a standalone program."</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Zosano program still holds promise after Novo exit
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150630T040213
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150630T040213
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150630T040213
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029156
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Zosano program still holds promise after Novo exit
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359176
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042417Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3639efad-63c3-44be-a118-668f29361a7e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042417Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

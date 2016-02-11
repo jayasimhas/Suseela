@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {1C85DACE-FDC7-48CD-8731-A331F8D76C26}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/31/US Capitol Capsule FDAs TradeOff Balancing Act Room For Disease Severity
+parent: {CBD943D1-3709-41E5-B6F8-C3721892EEE4}
+name: US Capitol Capsule FDAs TradeOff Balancing Act Room For Disease Severity
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 27a00f9d-024e-46cd-857a-922b26d4b067
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 79
+
+US Capitol Capsule: FDA's 'Trade-Off' Balancing Act: Room For Disease Severity?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+US Capitol Capsule FDAs TradeOff Balancing Act Room For Disease Severity
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 12023
+
+<p>Should the FDA take the severity of a disease into account when weighing the benefits of a new treatment against its risks, especially for the most deadly conditions, such as pancreatic cancer or cirrhosis of the liver?</p><p>Absolutely, said two Massachusetts Institute of Technology (MIT) economists, who have proposed applying a Bayesian decision analysis (BDA) framework to the drug R&D and regulatory processes, which they argued in a new paper could "yield greater benefits to a greater portion of the population."</p><p>Andrew Lo, the Charles E. and Susan T. Harris Professor at MIT's Sloan School of Management and director of the MIT Laboratory for Financial Engineering, and Vahid Montazerhodjat, a graduate student at the university, said their approach, which they outlined in a new paper, could yield a systematic, objective, transparent and repeatable process for making regulatory decisions that reflects differences in disease-specific parameters. </p><p>Having a more transparent and systematic approach to the FDA's decision making, Lo said in an interview, would reduce the uncertainty for the biopharma industry &ndash; a result he said could spur more investment and innovation. </p><p>And, he said, the transparency provided by the framework also would help make it so people are not having to second-guess how the agency made decisions, like the recent <a href="http://www.scripintelligence.com/home/50-Shades-Of-Regulatory-Gray-More-Flexible-FDA-360111" target="_new">controversial approval</a> of Sprout Pharmaceuticals' libido-boosting pill <a href="http://www.scripintelligence.com/home/FDA-Embraces-Sex-Pill-For-Women-Restrictions-Apply-360015" target="_new">Addyi</a> (flibanserin) &ndash; a drug that some have called a placebo with <a href="http://www.scripintelligence.com/home/Bumps-May-Grind-Female-Sex-Pills-Sales-360016" target="_new">numerous side effects</a>.</p><p>Implicit in the drug approval process, Lo and Montazerhodjat said, is the trade-off the FDA &ndash; which often is criticized for <a href="http://www.scripintelligence.com/home/50-Shades-Of-Regulatory-Gray-More-Flexible-FDA-360111" target="_new">lacking flexibility</a> &ndash; must make between a "Type I error" of approving an ineffective therapy and a "Type II error" of rejecting an effective medicine.</p><p>Lo and Montazerhodjat noted the relative costs &ndash; financial as well as consequences for patients &ndash; of Type I and II errors are very different for terminal illnesses than for non-life-threatening conditions. </p><p>But, they contended, the FDA is more concerned about ensuring it does not commit a Type I error over a Type II &ndash; even though the latter may be the difference between life and death for some patients &ndash; and relies too heavily on one-size-fits-all statistical criteria in evaluating new drugs, despite different disease categories having very different implications of frequency, severity and mortality for patients.</p><p>Using a 2010 study that looked at the burden of disease in the U.S., Lo and Montazerhodjat said their analysis showed that when the risk of adverse effects were explicitly weighed against the severity of the disease, the FDA's standard thresholds of statistical significance often were too conservative for the most serious illnesses, yet too aggressive for milder conditions.</p><p>For instance, they noted FDA regulations require that one-sided tests have at most 2.5% probability of a Type I error.</p><p>But, they said, that percentage is too conservative for clinical trials of therapies for pancreatic cancer, for which Lo and Montazerhodjat said the BDA-optimal size would be 27.9% &ndash; "reflecting the fact that, for these desperate patients, the cost of trying an ineffective drug is considerably less than the cost of not trying an effective one." </p><p>On the other hand, they said, 2.5% may be too aggressive for prostate cancer therapies, for which the BDA-optimal significance level was 1.2%.</p><p>The trade-offs in weighing the cost of a Type I error against a Type II "sometimes involve utilitarian conundrums in which small benefits for a large number of patients must be weighed against devastating consequences for an unfortunate few," Lo and Montazerhodjat said.</p><p>They also noted the risks of the potential outcomes are viewed quite differently depending on the specific stakeholder.</p><p>For instance, Lo and Montazerhodjat said, patients dying of pancreatic cancer may not be as concerned about the dangerous adverse effects of an experimental drug as a publicly traded biopharmaceutical company, "whose shareholders would bear the enormous cost of wrongful death litigation."</p><p>Such competing factors, they said, should be taken into account when designing clinical trials.</p><p>Lo and Montazerhodjat said their BDA framework assigns different costs to Type I and II errors, but also takes into account the "delicate balance" between the costs associated with an ineffective treatment during and after a clinical trial. </p><p>They insisted their proposed Bayesian framework could fulfill a need mandated by the fifth authorization of the <i>Prescription Drug User Fee Act</i> (PDUFA) &ndash; enacted in 2012 under the <i>FDA Safety and Innovation Act</i> (FDASIA) &ndash; for an enhanced quantitative approach to the benefit-risk assessment of new drugs.</p><p>"Due to its quantitative nature, BDA provides transparency, consistency and repeatability to the review process, which is one of the key objectives in PDUFA," Lo and Montazerhodjat said, adding that their approach also was "ideally suited for weighing and incorporating patient perspectives into the drug approval process" &ndash; something regulators and industry have acknowledged they will be wrangling with for <a href="http://www.scripintelligence.com/home/Spending-User-Fees-Biomarker-Research-Drug-Device-Combos-360235" target="_new">PDUFA VI</a>.</p><p>FDASIA recognized the value of patient input to the entire drug development enterprise, including FDA review and decision making, they said, noting that one proposal for implementing that aspect of the law was for the FDA to create a patient advisory board consisting of representatives from advocacy groups, with the specific charge of formulating explicit cost estimates of Type I and Type II errors.</p><p>Those estimates could then be incorporated into the FDA decision-making process, "not mechanically, but as an additional inputs into the agency's quantitative and qualitative deliberations," the MIT economists said.</p><p>Lo told <i>Scrip</i> he thinks the BDA framework he and Montazerhodjat proposed in their paper is something the FDA could "almost immediately" adopt, given it's a "pretty straightforward" roadmap.</p><p>But, he said, "I think what would be more delicate and challenging are the political and ethical ramifications."</p><p>"Creating it and being able to get the stakeholders together does require some further effort and thought," specifically for medical ethics issues, Lo said in an interview.</p><p>One thing he said he was worried about is the potential the concept of the framework could get misconstrued and labeled with negative connotations, like what happened when the <i>Affordable Care Act's</i> Independent Payment Advisory Board &ndash; a 15-member panel intended to develop proposals for slowing the growth of Medicare &ndash; was dubbed a "death panel." </p><p>But Lo argued the reality is, "we make decisions about life and death all the time, and we do so in many cases rationally and without a lot of controversy."</p><p>He pointed to the fact that state governments set speed limits to "balance the needs of getting to work on time, versus being safe."</p><p>"You could argue that those decision-making bodies are also death panels," Lo said.</p><p>Nonetheless, he said using the BDA framework might provide the FDA "with a certain degree of relief because it would allow them to share the burden, the moral responsibility with patients, who I think should be involved in the decisions and should bear the weight of some of these decisions."</p><p><b>In other Washington news:</b></p><p><a href="http://www.scripintelligence.com/home/HospiraCelltrion-Dont-Let-U.S.-Biosimilar-Laws-Questions-Percolate-360256" target="_new">Hospira/Celltrion: Don't Let U.S. Biosimilar Law's Questions 'Percolate'</a></p><p>Questions raised in an ongoing lawsuit filed by Amgen involving Novartis unit Sandoz's Zarxio (filgrastim-sndz) about the notice of commercial marketing provision in the <i>Biologics Price Competition and Innovation Act</i> are vital to the competition and functioning of the multibillion dollar biosimilars industry and should not be allowed to "percolate" and must be answered now, Hospira and Celltrion said in a brief filed on Sept. 3.</p><p><a href="http://www.scripintelligence.com/home/1st-U.S.-Biosimilar-Arrives-Zarxio-Launches-Legal-Saga-Ongoing-360244" target="_new">1st U.S. Biosimilar Arrives: Zarxio Launches; Legal Saga Ongoing</a></p><p>Novartis unit Sandoz launched its biosimilar Zarxio (filgrastim-sndz) on Sept. 3 &ndash; the first biologic copycat available to Americans &ndash; pricing it at a 15% discount to Amgen's Neupogen (filgrastim), which was initially approved in the U.S. in 1991.</p><p><a href="http://www.scripintelligence.com/home/Amgens-Plea-To-Stop-Zarxio-Launch-Denied-Next-Move-360233" target="_new">Amgen's Plea To Stop Zarxio Launch Denied; Next Move?</a></p><p>In a brief order on Sept. 2, a three-judge panel from the US Court of Appeals for the Federal Circuit denied Amgen's "emergency" motion for an injunction to stop Novartis unit Sandoz from launching its biosimilar Zarxio (filgrastim-sndz).</p><p><a href="http://www.scripintelligence.com/home/Spending-User-Fees-Biomarker-Research-Drug-Device-Combos-360235" target="_new">Spending User Fees: Biomarker Research, Drug-Device Combos?</a></p><p>Even though the technical negotiations between the FDA and representatives from the biopharmaceutical industry are just getting underway this month in earnest for the sixth round of the Prescription Drug User Fee Act, some regulators and drug makers already have their eyes set on how the money should be spent, or at least, some of it.</p><p><a href="http://www.scripintelligence.com/policyregulation/Tesaros-Varubi-Wins-FDA-Approval-Shares-Up-360237" target="_new">Tesaro's Varubi Wins FDA Approval; Shares Up</a></p><p>Shares of Tesaro jumped about 10% on Sept. 2 on the news the FDA had approved the Waltham, MA firm's new drug application to market Varubi (rolapitant) to prevent delayed phase chemotherapy-induced nausea and vomiting in adults.</p><p><a href="http://www.scripintelligence.com/home/Sandoz-Dont-Block-Zarxio-Under-Amgen-Created-Emergency-360191" target="_new">Sandoz: Don't Block Zarxio Under Amgen-Created 'Emergency'</a></p><p>Declaring that if its biosimilar Zarxio (filgrastim-sndz) was further withheld from the US market, cancer patients and purchasers of the biosimilar, including taxpayers, would be harmed, Novartis unit Sandoz on Aug. 31 asked the U.S. Court of Appeals for the Federal Circuit to reject a "perfunctory" emergency motion filed late last week by Amgen, which seeks to block the Sept. 2 launch of the medicine.</p><p><a href="http://www.scripintelligence.com/home/Possible-FDAAmarin-Off-Label-Deal-Rule-Tweaks-Ahead-360183" target="_new">Possible FDA/Amarin Off-Label Deal; Rule Tweaks Ahead?</a></p><p>The FDA appears to be headed towards a settlement with Amarin over the company's challenge that it has the right to share "truthful and non-misleading" information about the unapproved uses of its fish-oil pill Vascepa (icosapent ethyl) &ndash; a case in which the biotech was handed a big win on Aug. 7.</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 226
+
+<p>Should the FDA take the severity of a disease into account when weighing the benefits of a new treatment against its risks, especially for the most deadly conditions, such as pancreatic cancer or cirrhosis of the liver?</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+US Capitol Capsule FDAs TradeOff Balancing Act Room For Disease Severity
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150831T210229
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150831T210229
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150831T210229
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029693
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 79
+
+US Capitol Capsule: FDA's 'Trade-Off' Balancing Act: Room For Disease Severity?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360182
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+27a00f9d-024e-46cd-857a-922b26d4b067
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

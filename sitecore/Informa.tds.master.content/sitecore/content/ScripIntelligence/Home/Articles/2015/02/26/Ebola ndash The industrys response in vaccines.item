@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {D19992B7-DC39-41BA-A140-2CD9BBF5C6CF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/26/Ebola ndash The industrys response in vaccines
+parent: {36275DB8-48EA-487C-BD7F-C8F8E306B3C7}
+name: Ebola ndash The industrys response in vaccines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f6ee9ad4-ba64-4778-8e34-585b9e0902b9
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Ebola &ndash; The industry's response in vaccines 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+Ebola ndash The industrys response in vaccines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 18888
+
+<p>The latest Ebola epidemic, which the WHO says has now claimed more than 9,600 lives, has focused attention on the long-term need for a prophylactic vaccine to prevent future outbreaks of this size. </p><p>Though no vaccine will be ready in time to have an impact on the current epidemic, having an effective vaccine product is essential to tackle the virus if it becomes endemic in these areas, especially given the high mortality rates associated with the infection. </p><p>There are no ready-made mock-ups for Ebola as there are for flu, and developing a novel vaccine is complicated enough even when using an established platform. Many of the potential candidates are using relatively new platforms and experts say this creates some additional steps before safety can be demonstrated for use in healthy populations. </p><p>Encouragingly large-scale clinical studies have now begun with the more advanced candidates. Here <i>Scrip</i> surveys the vaccines known to be in development against the filovirus (antiviral products were dealt with in a parallel piece, <a href="http://www.scripintelligence.com/home/Ebola---the-industrys-response-in-antivirals-356934" target="_new">scripintelligence.com, 25 February 2015</a>).</p><p>There appear to be around 23 prophylactic vaccine candidates being investigated, with some already being tested against each other in clinical trials and others being tested sequentially in a prime-boost approach to eliciting an immune response. The majority are still at the preclinical stage and, as can be seen, are using a range of potential vectors. </p><table><h2>Prophylactic vaccine products in development against Ebola</h2><tbody><tr><td><p><b>Vaccine</b></p>&nbsp;</td><td><p><b>Mechanism</b></p>&nbsp;</td><td><p><b>Stage and further information</b></p>&nbsp;</td></tr><tr><td><p>NewLink Genetics and Merck & Co's vesicular stomatitis virus Ebola vaccine/rVSV-ZEBOV vaccine </p><p>&nbsp;</td><td><p>A recombinant vesicular stomatitis virus Ebola vaccine, expressing the envelope glycoprotein of the Zaire Ebola strain.</p>&nbsp;</td><td><p><b>Phase II/III </b>&ndash; The 27,000-patient Phase II/III PREVAIL (Partnership for Research on Ebola Vaccines in Liberia) trial has begun to evaluate the safety and efficacy of two investigational vaccines intended to prevent Ebola virus infection: NewLink/Merck's VSV-ZEBOV investigational Ebola vaccine, and the NIAID/GSK's investigational Ebola vaccine (see below). The trial is being led by a recently formed Liberia-US clinical research partnership and is sponsored by the National Institute of Allergy and Infectious Diseases (NIAID), part of the National Institutes of Health (NIH). It is currently anticipated to be completed in June 2016 (<a href="http://www.scripintelligence.com/home/Much-anticipated-Ebola-vaccine-efficacy-trial-starts-356509" target="_new">scripintelligence.com, 3 February 2015</a>).</p>&nbsp;</td></tr><tr><td><p>GlaxoSmithKline (Okairos)/NIAID's ChAd3-EBOZ monovalent vaccine </p>&nbsp;</td><td><p>A chimpanzee adenovirus type 3 that is used as a carrier, or vector, to deliver segments of genetic material derived from the Zaire strain of Ebola virus.</p>&nbsp;</td><td><p><b>Phase II/III</b> &ndash; The 27,000-patient Phase II/III PREVAIL (Partnership for Research on Ebola Vaccines in Liberia) trial has begun to evaluate the safety and efficacy of two investigational vaccines intended to prevent Ebola virus infection: the NIAID/GSK's investigational Ebola vaccine CAd3-EBOZ and NewLink/Merck's VSV-ZEBOV investigational Ebola vaccine (see above). The trial is being led by a recently formed Liberia-US clinical research partnership and is sponsored by the NIAID, part of the NIH. It is currently anticipated to be completed in June 2016 (<a href="http://www.scripintelligence.com/home/Much-anticipated-Ebola-vaccine-efficacy-trial-starts-356509" target="_new">scripintelligence.com, 3 February 2015</a>).</p>&nbsp;</td></tr><tr><td><p>GlaxoSmithKline (Okairos)/NIAID's ChAd3 EBOV bivalent vaccine</p>&nbsp;</td><td><p>A chimpanzee adenovirus type 3 (ChAd3), as a carrier to deliver genetic material from two strains of the Ebola virus &ndash; the Sudan strain and the Zaire strain.</p>&nbsp;</td><td><p><b>Phase I </b>&ndash; In November, first results from a small Phase I trial were published in the <i>New England Journal of Medicine</i> showing that the GSK/NIH Ebola candidate vaccine was well tolerated and produced an immunological response in each of the 20 healthy adult volunteers in the US who received it.</p>&nbsp;</td></tr><tr><td><p>Johnson & Johnson (Crucell)/NIAID's Ad26.ZEBOV and Bavarian Nordic/NIAID's MVA-BN-Filo prime-boost vaccine</p>&nbsp;</td><td><p>The regimen consists of two vaccine components that are based on AdVac technology from Crucell, and the MVA-BN technology from Bavarian Nordic. </p>&nbsp;</td><td><p><b>Phase I</b> &ndash; In January, J&J announced the start of a Phase I, first-in-human clinical trial of a preventive Ebola vaccine. The trial is being led by the Oxford Vaccine Group, part of the University of Oxford Department of Paediatrics. Recruitment in the trial is underway, and the first volunteers have received their initial vaccine dose. Enrollment was expected to be completed by the end of January. The study will evaluate the safety and tolerability of a prime-boost vaccine regimen, in which patients are first given a dose to prime the immune system, and then a boost intended to enhance the immune response over time. Additional clinical studies were planned to begin in the US later in January and soon after in Africa (<a href="http://www.scripintelligence.com/researchdevelopment/Oxford-tests-JnJBavarian-Nordic-prime-boost-Ebola-vaccine-355965" target="_new">scripintelligence.com, 7 January 2015</a>).</p>&nbsp;</td></tr><tr><td><p>Bavarian Nordic/NIAID's MVA-BN Filo and GlaxoSmithKline's ChAd3-EBOZ prime-boost vaccine </p>&nbsp;</td><td><p>Using Bavarian Nordic's MVA-BN technology, MVA-BN Filo is being investigated as a booster in an ongoing Phase I study of the ChAd3-EBOZ vaccine (qv) being developed by GSK and the US National Institutes of Health.</p>&nbsp;</td><td><p><b>Phase I</b> &ndash;In December, a dose-escalating, safety and immunogenicity Phase I trial (EBL01) of GSK's monovalent Zaire Ebola viral vector candidate vaccine ChAd3-EBOZ and the heterologous prime-boost candidate vaccine regimen ChAd3-EBOZ and Bavarian Nordic's MVA-BN Filo in 60 healthy UK adults was begun. Preliminary results are expected in the first half of 2015.</p>&nbsp;</td></tr><tr><td><p>Novavax's Ebola vaccine </p>&nbsp;</td><td><p>Novavax is developing a recombinant glycoprotein (GP) nanoparticle Ebola vaccine. It is based on the 2014 Guinea Ebola strain that is responsible for the current Ebola disease epidemic in West Africa (Makona).</p>&nbsp;</td><td><p><b>Phase I</b> &ndash; In February Novavax began a Phase I clinical trial of its Ebola virus glycoprotein (GP) recombinant nanoparticle vaccine candidate adjuvanted with Matrix-M (Ebola GP Vaccine) in healthy subjects. Novavax initiated the development of its Ebola GP Vaccine shortly after the publication of the genetic sequence of the 2014 Ebola Makona strain, which is responsible for the current Ebola epidemic in West Africa. In an expedited time-frame, from the publication of the Makona sequence in September 2014, Novavax has developed the vaccine, scaled up GMP manufacturing, delivered positive results from multiple relevant animal models, including a non-human primate challenge study, and initiated a Phase I clinical trial (<a href="http://www.scripintelligence.com/researchdevelopment/Novavax-starts-human-testing-of-Ebola-vaccine-356735" target="_new">scripintelligence.com, 12 February 2015</a>).</p>&nbsp;</td></tr><tr><td><p>Inovio and GeneOne Life Sciences' INO-4200 Ebola vaccine</p>&nbsp;</td><td><p>Inovio's Ebola vaccine was designed using the SynCon technology to provide broad protective antibody and T-cell responses against multiple strains of Ebola virus. It consists of three consensus plasmids to broadly target variant virus strains within three distinct families of Ebola and Marburg viruses.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In September, Inovio Pharmaceuticals said it would advance its DNA vaccine for Ebola into a Phase I clinical trial in collaboration with GeneOne Life Sciences. The companies are currently conducting pre-IND activities and plan to start the clinical study in the first half of 2015. Upon successful completion of the Phase I, they will jointly seek additional third party support and resources to further develop and commercialize the product. In published preclinical testing, 100% of vaccinated guinea pigs and mice were protected from death and weight loss after being exposed to the Ebola virus. Researchers found significant increases in neutralizing antibody titers and strong and broad levels of vaccine-induced T-cells, including "killer" T-cells, suggesting it could provide both preventive and treatment benefits.</p>&nbsp;</td></tr><tr><td><p>Protein Sciences Ebola vaccine</p>&nbsp;</td><td><p>Developed using its BEVS platform (Baculovirus Expression Vector System).</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; No further information.</p>&nbsp;</td></tr><tr><td><p>Profectus BioSciences' rVSV Ebola vaccine / VesiculoVax </p>&nbsp;</td><td><p>Atrivalent vaccine that is delivered through recombinant vesicular stomatitis virus (rVSV) for the prevention and treatment of Ebola and Marburg viral infections. </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In October, the Department of Defense (DoD), through the Medical Countermeasure Systems-Joint Vaccine Acquisition Program (MCS-JVAP), contracted the manufacture and IND-enabling preclinical testing of the Profectus trivalent Ebola/Marburg vaccine. In addition, the USACC has contracted for clinical evaluation of the VesiculoVax Zaire-Ebola virus vaccine to meet the current outbreak in West Africa. In the FANG studies a single dose of the Profectus VesiculoVax rVSVN4CT1-vectored Ebola vaccine provided 100% protection of non-human primates against challenge with 1,000 times the lethal dose of highly pathogenic low passage Zaire-Ebola virus.</p>&nbsp;</td></tr><tr><td><p>AlphaVax's Ebola vaccine </p>&nbsp;</td><td><p>A multivalent vaccine against Marburg and Ebola virus infection using its proprietary alphavaccine replicon vector (ArV) technology. </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; No further information.</p>&nbsp;</td></tr><tr><td><p>Vaxart's Ebola vaccine </p>&nbsp;</td><td><p>Based on its proprietary oral vaccine delivery platform: a disabled virus (non-replicating adenovirus type 5, or Ad5) that co-delivers the gene for the specific vaccine antigen and the gene for a TLR3 ligand that functions as an adjuvant to amplify the immune response.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Vaxart anticipates commencing human clinical trials in the first quarter of 2015. In a preclinical study conducted at the United States Army Medical Research Institute of Infectious Diseases (USAMRIID), Vaxart's Ebola vaccine candidate demonstrated protective efficacy against a challenge with Ebola virus.</p>&nbsp;</td></tr><tr><td><p>Memcine's Ebola vaccine </p>&nbsp;</td><td><p>Memcine is using its Immunoplex technology to develop a vaccine for the prevention of Ebola virus infection.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Memcine says this product is at the design stage and its next steps are to establish a contract with the USAAMRIID. </p>&nbsp;</td></tr><tr><td><p>Integrated BioTherapeutics' FiloVax </p>&nbsp;</td><td><p>A multivalent subunit vector-free panfilovirus vaccine (FiloVax) for the prevention of haemorrhagic fevers caused by Ebola and Marburg viruses.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Integrated BioTherapeutics (IBT) is developing two platforms for filovirus vaccines, one based on a proprietary virus like particle technology and a second generation platform based on rational immunogen design. IBT's work on filovirus vaccines is supported by the NIAID. IBT is collaborating with the University of Texas Medical Branch for development of both platforms.</p>&nbsp;</td></tr><tr><td><p>Immunovaccine's DPX-Ebola</p>&nbsp;</td><td><p>Using its DepoVax technology for the prevention or treatment of Ebola virus infection.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In a challenge study performed by the NIAID of the NIH using cynomolgus monkeys, all vaccinated subjects survived exposure to a lethal dose of the wild type Zaire strain of the virus. Immunovaccine is working with researchers at the NIH on the planning and ramp-up of additional studies of DPX-Ebola with data from these studies expected in 2015. These new data are expected to support advancing DPX-Ebola into human studies.</p>&nbsp;</td></tr><tr><td><p>Greffex's Ebola vaccine</p>&nbsp;</td><td><p>Using its GREVAX universal platform of small synthetic nanoparticles of genes packaged in an adenoviral shells.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In October, Greffex said it had designed a trivalent engineered Ebola-Marburg vaccine (GreEMTri) that carries glycoprotein genes of the Zaire Ebola virus (ZEBOV), the Sudan Ebola virus (SEBOV) and the Marburg virus (MV). It targets three different viruses with a single vector. Standardized production schemes have been established so that millions of doses of GreEMTri can be delivered within six months.</p>&nbsp;</td></tr><tr><td><p>FIT Biotech and Icosagen Ebola vaccine</p>&nbsp;</td><td><p>FIT Biotech is developing an Ebola vaccine for prevention and antibody therapy. It is based on Gene Transport Unit (GTU) technology allowing induction of passive as well as active immunotherapy.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; FIT Biotech and Icosagen said in October that the clinical stage is planned to start in 2016 at the latest. </p>&nbsp;</td></tr><tr><td><p>GeoVax's GOVX-301</p>&nbsp;</td><td><p>GOVX-E301 uses GeoVax's recombinant modified vaccinia Ankara (MVA) platform to expresses virus-like particles (VLPs) in the person being vaccinated. It is being developed as a monovalent vaccine for the Zaire strain of Ebola, the virus responsible for the current outbreak.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; GeoVax says it has successfully designed its MVA-based vaccine vector for the Zaire strain of Ebola using the most current genetic sequences from the ongoing epidemic. It has now demonstrated that its vaccine produces VLPs in vaccine-expressing human cells, an important milestone in the vaccine's development. GeoVax believes that MVA-expressed VLPs, which display the virus's surface protein (glycoprotein), will be highly effective at eliciting antibody capable of preventing and controlling Ebola virus infections. GeoVax's goals for 2015 include completion of initial immunogenicity studies in small animals, followed by proof-of-concept challenge studies. The company expects to begin challenge studies in non-human primates in late 2015. Simultaneously, GeoVax will be advancing its vaccine manufacturing and test methods, with the goal of initiating human clinical testing in 2016.</p>&nbsp;</td></tr><tr><td><p>GeoVax's GOVX-E302</p>&nbsp;</td><td><p>GOVX-E302 is a recombinant MVA vaccine designed to produce non-infectious virus-like particles (VLPs) displaying the Ebola virus glycoprotein, under development by GeoVax for routine immunization and designed to protect against all three versions of Ebola known to be lethal in humans (Zaire, Sudan and Bundibugyo). GOVX-E302 is anticipated to be used in a two-dose regimen.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; see above. The company says it has now made its Ebola program a top priority for allocation of internal resources.</p>&nbsp;</td></tr><tr><td><p>Pentamer Pharmaceuticals' NoBola vaccine </p>&nbsp;</td><td><p>Using its NodaVax technology against Ebola virus infection. It consists of genetically engineering the chimeric viral-like particle protein to contain key Ebola epitopes that stimulate the immune system to produce antibodies against the virus.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; The NoBola vaccine is currently in the preclinical development phase that includes efficacy studies in the lab and in animal models. Successful completion of this phase would allow for a large scale Ebola challenge trial in non-human primates in collaboration with the US government followed by a fast-track approach with the FDA to get the vaccine available to the public as quickly as possible given the urgent need. Upon successful initial testing, Pentamer hopes to receive funding from the Department of Defense's Defense Threat Reduction Agency for continued testing.</p>&nbsp;</td></tr><tr><td><p>Novartis's Ebola vaccine</p>&nbsp;</td><td><p>Using its RNA-based vaccine and small molecule TLR7 agonist technologies.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Novartis is undertaking work with scientists at the USAMRIID to assess a new technology for its potential to provide a vaccine candidate or treatment of Ebola. This work is still in early stages of preclinical research and, even if it is successful, it will likely take several years for any treatments to be ready for large scale clinical trials. According to the IFPMA, Novartis's RNA-based vaccine and small molecule TLR7 agonist technologies have demonstrated proof of concept in animal models at preventing and treating lethal Ebola virus infections, respectively. </p>&nbsp;</td></tr><tr><td><p>Tianjin CanSino Biotechnology, the Bioengineering Institute of China's Academy of Military Medical Sciences and the Beijing institute of Biotechnology's Ad5-EBOV vaccine</p>&nbsp;</td><td><p>An Ebola adenovirus vector vaccine (Ad5-EBOV). The vaccine was updated to the 2014 Ebola Zaire-Guinea type currently prevalent in West Africa by the Bioengineering Institute of AMMS.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In December, the Chinese Academy of Military Medical Sciences announced today that an Ebola vaccine (jointly developed by its Bioengineering Institute and Tianjin CanSino Biotechnology) has been approved for clinical trials. A double-blind, placebo-controlled, dose-escalation Phase I trial (JSVCT020) in 120 healthy adults in China to evaluate the safety, tolerability and immunogenicity of the Ebola adenovirus vector vaccine (Ad5-EBOV) is planned.</p>&nbsp;</td></tr><tr><td><p>UbiVac's Ebola virus vaccine</p>&nbsp;</td><td><p>UbiVac is developing an autophagosome-enriched vaccine to induce both humoural and cellular immunity against the Ebola virus, using its proprietary DRibble technology.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; No further information.</p>&nbsp;</td></tr></tbody><p>Source: Scrip research; Citeline's Pharmaprojects</p></table><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 205
+
+<p>The latest Ebola epidemic, which the WHO says has now claimed more than 9,600 lives, has focused attention on the long-term need for a prophylactic vaccine to prevent future outbreaks of this size. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Ebola ndash The industrys response in vaccines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150226T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150226T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150226T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027992
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Ebola &ndash; The industry's response in vaccines 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356966
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f6ee9ad4-ba64-4778-8e34-585b9e0902b9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

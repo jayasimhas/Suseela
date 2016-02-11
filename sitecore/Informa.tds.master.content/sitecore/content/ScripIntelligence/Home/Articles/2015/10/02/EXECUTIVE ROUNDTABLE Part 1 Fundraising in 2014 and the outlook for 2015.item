@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {BB39425D-3ACF-4142-8076-ABDAE59F6DC6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/02/EXECUTIVE ROUNDTABLE Part 1 Fundraising in 2014 and the outlook for 2015
+parent: {649A1F5F-680B-4755-ABE7-6BF2F8862CDD}
+name: EXECUTIVE ROUNDTABLE Part 1 Fundraising in 2014 and the outlook for 2015
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9b830d32-8cb4-42ef-b13e-ddcdc0d50999
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{51C76967-12F2-4AC5-BE15-E4861E5B0865}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 74
+
+EXECUTIVE ROUNDTABLE: Part 1; Fundraising in 2014 and the outlook for 2015
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+EXECUTIVE ROUNDTABLE Part 1 Fundraising in 2014 and the outlook for 2015
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 14128
+
+<p><i>Scrip Intelligence</i> sat down with a group of executives from six US and EU biotechnology companies during the 33rd Annual JP Morgan Healthcare Conference from 12 to 15 January in San Francisco to discuss their experiences in fundraising and dealmaking during 2014 and gather their predictions for the financial and business environment for 2015.</p><p>The result was a wide-ranging discussion, moderated by <i>Scrip</i>'s global director of content Mike Ward and US West Coast editor Mandy Jackson, which addressed investment and capital allocation as well as regulatory matters and reimbursement issues.</p><p>Part 1 provides a look at the biotech companies' recent fundraising experiences, observations and outlook for the year to come. Part 2 will delve into the changing regulatory environment and reimbursement challenges. Part 3 will focus on dealmaking and expectations for 2015.</p><p>Participants in the roundtable discussion were: Jeremy Bender, chief business officer at Sutro BioPharma; John Haurum, CEO of F-Star; Friedrich von Bohlen, chairman of CureVac and managing director of the company's main investor dievini Hopp BioTech (SAP founder Dietmar Hopp's investment fund); Robert Ryan, CEO of Scioderm; Stanley Erck, president and CEO of Novavax; and Mark Boulding, executive vice president and chief legal officer at PTC Therapeutics.</p><p><p><b>Mike Ward, Scrip</b>: Some of you have been able to go to the capital markets and raise money and one of you, Friedrich, provides money for private companies. In 2014, if you were out there looking for money, how easy was it? We know the actual amounts, the sums of money that people raised were huge. Was it any different from any other time? What was different? What drove last year's push for capital?</p><p><b>Mark Boulding, PTC</b>: From the public company side, we did two follow-on offerings in 2014, having gone public in 2013 and it was much easier. The demand was much higher. There was a much higher level of interest from investors, a lot of capital was freed up from some successful exits. We moved very rapidly. For both of the follow-ons, it was really only a matter of weeks between the idea and then getting in front of the banks and getting in front of investors. </p><p>We'd been trying to go public from about 2006 and we finally did it in 2013. Either externalities or internal conditions made it difficult. But this felt, I don't know how everybody else felt, but we felt it was completely different, much easier.</p><p><i>[South Plainfield, New Jersey-based PTC won European Commission approval in August for Translarna (ataluren) in the treatment of nonsense mutation Duchenne muscular dystrophy </i>(scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/PTC-wins-conditional-EU-Translarna-approval-353208" target="_new">5 August 2014</a>)<i>]</i></p><p><b>Mike Ward</b>: Did you get a sense of what triggered that?</p><p><b>Mark Boulding</b>: I think that other sectors weren't performing as well and there's a sense that biotech can deliver these outsized returns, so there's a lot of interest in placing capital.</p><p><b>Stanley Erck, Novavax</b>: This is my 31st year in biotech, my fourth company, and three of them I've taken public. I've been through hard times raising money and 2014 was very different, I agree. </p><p>In my field of expertise, my experience of 31 years, this is the best year for fundraising. But I think it's driven by the fact that there are so many successes and our industry is increasingly delivering those successes and some people are getting more winners and funding them.</p><p><i>[Novavax in Gaithersburg, Maryland recently began testing an ebola vaccine in humans </i>(scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-starts-human-testing-of-Ebola-vaccine-356735" target="_new">12 February 2015</a>)<i>. The public company's most advanced programs are Phase II vaccines for respiratory syncytial virus (RSV) and influenza </i>(scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-may-take-nano-RSV-vaccine-forward-without-pharma-341800" target="_new">5 April</a> and <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-prepares-for-new-BARDA-funded-flu-studies-raises-cash-346810" target="_new">25 September 2013</a>).<i>]</i></p><p><b>Mike Ward</b>: So are investors asking different questions?</p><p><b>Stanley Erck</b>: They haven't changed. They're asking the same questions. But it's so much different than it was 10 or 20 years ago when you had generalists investing in biotech, and you don't want that. I think there are a lot of sophisticated investors now. </p><p><b>Jeremy Bender, Sutro</b>: Over my 15 years, it seems to me that the investor side has become increasingly sophisticated, actually, for the most part. In talking to public market investors last year, I think they're very differentiated. Yes, there's capital there, but they're just as discriminating as they have been, if not, more so. </p><p><i>[South San Francisco-based Sutro expanded a collaboration with Celgene in October to develop antibody-drug conjugates and bi-specific antibodies. The deal is worth more than $1bn and it gives Celgene an option to buy Sutro</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/home/3Q-EARNINGS-Celgene-surges-on-growth-commits-to-larger-Sutro-deal-354642" target="_new">24 October 2014</a>)<i>.]</i></p><p><b>Mike Ward</b>: But it's also true that there have always been deep pools of capital here in the US, but that's not always been true in Europe. So, John and Friedrich, do you get the sense that Europe is not basking in the same sunlight?</p><p><b>John Haurum, F-Star</b>: We've got some investors both from over here and European based. Typically, we look to maintain our strong support from our US-based investors and are ready for the worst from our European-based investors. One fund has not been able to refinance their subsequent funds. It's very different. </p><p>The other thing is, the access by one of our investors, Atlas Venture, to big pharma has been really quite important. Atlas is very well connected into some of the bigger companies, including BMS, and they played some role in the way we actually landed that deal. I think that's another dynamic that is helpful.</p><p><i>[Cambridge, UK-based F-Star negotiated a $475m agreement with Bristol-Myers Squibb in October that gives BMS an option to buy the private company's F-Star Alpha subsidiary, a business unit that's developing the HER2-targeting antibody therapeutic FS102 </i>(scripintelligence.com, <a href="http://www.scripintelligence.com/business/Bristol-Myers-commits-up-to-475m-for-F-star-option-354723" target="_new">29 October 2014</a>)<i>.]</i></p><p><b>Friedrich von Bohlen, CureVac and dievini</b>: I think Mike's observation is absolutely right. I've been in the industry 17 years now and in a certain way, nothing has changed. Europe has always been lagging behind. It has been somewhat better, but it is not a bit different [in the US], it is drastically different. </p><p>The main reason is that no European country that I know of has been able to create the kind of critical mass ecosystems that you have created in the United States, not only in Silicon Valley, but in other places. In Germany, this has to do with very federalistic thinking. If you ask a state minister what is the hot spot in biotech, they tell you about seven places. You cannot have seven hot spots in one single state in Germany. </p><p>The other thing is, taxation is a disease. The way investors get taxed in this industry, for example, under very, very few circumstances only you can carry forward losses against offsetting with profits. This is a reason why all Anglo-American investors are not in Germany. It's a very simple thing to change. It kills an industry. </p><p>Then, in Germany, maybe more than other European countries, we don't have a culture of failure. 90% of all clinical drugs fail, maybe 85%, but that goes along with big pharma. In Germany, there are so many people who are so afraid of this, because it is the end of your personal reputation. It may be the end of your career. In such a climate, in Germany we have such a net loss of talent to the United States. </p><p><i>[Tubingen, Germany-based CureVac's partnerships include a deal worth up to $601m with Boehringer Ingelheim to develop messenger RNA (mRNA)-based oncology vaccines </i>(scripintelligence.com, <a href="http://www.scripintelligence.com/home/CureVac-propels-cancer-vaccine-in-601m-Boehringer-Ingelheim-deal-354023" target="_new">19 September 2014</a>)<i>.]</i></p><p><b>John Haurum</b>: I just want to make one comment though about the business environment in Europe. I actually think there are some good things going for it. For example, we're based in England and the business environment in England is very conducive to the biotech industry. There's lots of tax breaks, there's lots of nice aspects about being there. It's probably also different from country to country in Europe, but the financial climate, the investor climate is still nowhere near comparable to what you have over here.</p><p><b>Mike Ward</b>: Among your investors, are they all specialist investors or do you get a lot of generalists who also participate?</p><p><b>Stan Erck</b>: I think generally all of them are either specialists or generalists who have specialist funds. That's a good thing. This feels so different from every other time.</p><p><b>Barclay "Buck" Phillips, Novavax chief financial officer</b>: <i>"</i> One of the reasons the markets have been so accommodating is that, take Fidelity, they have their specialists in house that have a biotech fund, but when the generalist funds start seeing biotech as a sector move against their peer groups they can start cross-selling through the generalist funds. When that opens up, that's where the floodgate opens and that's what we've seen for the last two years is the generalists have started to open up to the industry.</p><p><b>Mike Ward</b>: We've been basking in the sunshine, so what is likely to put a break on that? What are the things you've been looking at that indicate the tap might be switched off?</p><p><b>Robert Ryan, Scioderm</b>: I don't think it's a function of being switched off. From what I've heard, during the first quarter of this year there's going to be a flood of a lot of people looking for a lot of money. I think the investors are a little bit more selective and if you've got a good story then the money is there. I think the only issue is if it gets too flooded and then the money is going to get spread out even more. </p><p>If there gets to be too many groups raising money all at one time, I think it's going to get a little more difficult and investors are going to be a little more selective, because the groups that do the investing are a lot more sophisticated than they used to be. There's more diligence versus basically just throwing the money out, so they are a lot more specialized.</p><p><i>[Durham, North Carolina-based Scioderm won a breakthrough therapy designation from the US FDA for SD-101 in the treatment of Epidermolysis bullosa (EB) and began a Phase II clinical trial in early 2014 to test the drug in EB </i>(scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-bestows-breakthrough-on-AbbVie-hep-C-combo-Scioderm-fragile-skin-therapy-342863" target="_new">7 May 2013</a> and <a href="http://www.scripintelligence.com/home/BioNotebook-EpizymeCelgene-Aldexa-Halozyme-Ignyta-Synageva-Scioderm-349120" target="_new">7 January 2014</a>)<i>.]</i></p><p><b>Jeremy Bender</b>: My view on what could turn the faucet off, so to speak, is data. I think data has largely driven where we are today. Maybe in the form of big biotech companies or companies that have grown enormously due to real commercial successes in the last five years. I think there's a lot of data points coming up in the next couple of years for the companies that have gone public in the last 24 months. To the extent that those companies have some positive data from studies that are ongoing, I think you'll see continued enthusiasm among investors. That's not to say valuations are going to be wildly higher or not correct somehow, but I think they are going to be the fundamental drivers for whether there's going to be capital available for good stories. </p><p><b>Mandy Jackson, Scrip</b>: I think that's the fear that seems to be building now in the industry with all of these great deals and financings and IPOs. Now it hinges on the data. What if CAR-T blows up or the data just doesn't look good in something that everybody was really excited about this past year? The fear is that's going to hurt everybody, not just the companies that are reporting the bad results. </p><p><b>Friedrich von Bohlen</b>: I agree, but I think one of the fundamental developments, one of the reasons that I believe that the sector's odds are so bullish is because through this personalization of medicine we have a much better understanding of why something could or should work or not. This isn't true for everything yet, but it's getting better and better. </p><p>I don't want to step into discussions of like how regulators need to change and so on, but the light from better data is going to increase over time, so that makes this industry better predictable to invest in and that makes the drug labels stronger. But this is why these completely out of the blue unexpected dropouts will become lesser, I would say. </p><p>The things that concerns me more than data, because data is always [an issue in biotech] and it's a singular event for each and every company, global political developments &ndash; if [Russian president] Putin marches in to Ukraine, or if [the Islamic State of Iraq (ISIS)] does more of the things they've done.</p><p><b>Mike Ward</b>: A major geopolitical catastrophe could flip a deal away?</p><p><b>Friedrich von Bohlen</b>: Yeah.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 358
+
+<p><i>Scrip Intelligence</i> sat down with a group of executives from six US and EU biotechnology companies during the 33rd Annual JP Morgan Healthcare Conference from 12 to 15 January in San Francisco to discuss their experiences in fundraising and dealmaking during 2014 and gather their predictions for the financial and business environment for 2015.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+EXECUTIVE ROUNDTABLE Part 1 Fundraising in 2014 and the outlook for 2015
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151002T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151002T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151002T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027824
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 74
+
+EXECUTIVE ROUNDTABLE: Part 1; Fundraising in 2014 and the outlook for 2015
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356674
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9b830d32-8cb4-42ef-b13e-ddcdc0d50999
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

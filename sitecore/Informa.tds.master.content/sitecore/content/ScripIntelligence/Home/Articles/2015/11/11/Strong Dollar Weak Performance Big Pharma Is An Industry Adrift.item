@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {EB92AFAF-B821-488F-BD1F-768339B82F16}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/11/Strong Dollar Weak Performance Big Pharma Is An Industry Adrift
+parent: {5EDD049F-1031-4290-8719-6CA0186009DA}
+name: Strong Dollar Weak Performance Big Pharma Is An Industry Adrift
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 801a6e9a-8442-4ec1-b49e-4aba34ead759
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Strong Dollar, Weak Performance: Big Pharma Is An Industry Adrift 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Strong Dollar Weak Performance Big Pharma Is An Industry Adrift
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 22911
+
+<p>On the face of it, the latest quarterly results from the 10 biggest drug companies indicate that eight of them will have lower drug sales in 2015 than in 2014. The mood music behind the Q3 numbers is wistful and selective, suggesting that some of the biggest names in the industry are not sure where they are going even though they know that they don't really want to start from here.</p><p>Ignoring a possible uptick in Q4 sales, only Johnson & Johnson (marginally), and Gilead (spectacularly) will do better than last year (see Table 1). The results from the rest say that with little prospect of organic growth in the near future, operational performance and not revenue is what counts. In addition, it seems that exceptional items and pesky currency fluctuations are to blame for the figures being a bit off right now. </p><table><h2>Table 1. Projected 2015 Pharma Sales</h2><th><tr><td><p>Company</p>&nbsp;</td><td><p>Pharma sales FY 2014 ($bn)</p>&nbsp;</td><td><p>Projected pharma sales FY 2015* ($bn)</p>&nbsp;</td><td><p>Projected change %</p>&nbsp;</td></tr></th><tbody><tr><td><p>Novartis</p>&nbsp;</td><td><p>46.6</p>&nbsp;</td><td><p>43.5</p>&nbsp;</td><td><p>-6.7</p>&nbsp;</td></tr><tr><td><p>Pfizer</p>&nbsp;</td><td><p>45.7</p>&nbsp;</td><td><p>42.6</p>&nbsp;</td><td><p>-6.8</p>&nbsp;</td></tr><tr><td><p>Roche**</p>&nbsp;</td><td><p>39.5</p>&nbsp;</td><td><p>38.7</p>&nbsp;</td><td><p>-2.0</p>&nbsp;</td></tr><tr><td><p>Sanofi**</p>&nbsp;</td><td><p>42.1</p>&nbsp;</td><td><p>38.6</p>&nbsp;</td><td><p>-8.5</p>&nbsp;</td></tr><tr><td><p>Merck & Co</p>&nbsp;</td><td><p>36</p>&nbsp;</td><td><p>34.3</p>&nbsp;</td><td><p>-2.0</p>&nbsp;</td></tr><tr><td><p>Johnson & Johnson</p>&nbsp;</td><td><p>32.3</p>&nbsp;</td><td><p>32.4</p>&nbsp;</td><td><p>0.3</p>&nbsp;</td></tr><tr><td><p>Gilead</p>&nbsp;</td><td><p>24.9</p>&nbsp;</td><td><p>30.5</p>&nbsp;</td><td><p>+22.5</p>&nbsp;</td></tr><tr><td><p>GlaxoSmithKline**</p>&nbsp;</td><td><p>30.8</p>&nbsp;</td><td><p>26.8</p>&nbsp;</td><td><p>-13.0</p>&nbsp;</td></tr><tr><td><p>AstraZeneca</p>&nbsp;</td><td><p>26.1</p>&nbsp;</td><td><p>23.4</p>&nbsp;</td><td><p>-10.3</p>&nbsp;</td></tr><tr><td><p>Teva</p>&nbsp;</td><td><p>20.3</p>&nbsp;</td><td><p>19.7</p>&nbsp;</td><td><p>-3.0</p>&nbsp;</td></tr><tr><td colspan="4"><p>&nbsp;</td></tr><tr><td><p><b>Total</b></p>&nbsp;</td><td><p>344.3</p>&nbsp;</td><td><p>335.6</p>&nbsp;</td><td><p>-2.5%</p>&nbsp;</td></tr></tbody><tr><td colspan="4"><p>* Based on sales in the first nine month of 2015 multiplied by 4/3 and converted to US dollars at average 2015 currency exchange rates.</p><p>**These companies report their results in currencies other than US dollars; Roche in Swiss francs, Sanofi in euros and GSK in British Pounds: see main text for additional details</p></td></tr></table><p><p>Table 1 compares drug sales in 2014 for the top 10 pharma companies with projections for full-year 2015 sales (based on a 4/3 multiple of reported nine-month figures). </p><p>All companies have been affected by the strength of the dollar against euro and the yen. </p><p>For companies that report their performance in dollars &ndash;all the top 10 firms except for Roche, Sanofi and GlaxoSmithKline &ndash; the strong dollar adversely affected reported pharma sales during 2015 relative to those in 2014. For every euro earned in 2014, companies received $1.33: for the first nine months of 2015, that fell 16% to $1.12. In 2015, the yen is worth 13% less in dollars than it was in 2014 on average.</p><p>For Sanofi, pharma sales in the first three quarters of 2015 (in <i>Scrip</i>, this includes vaccines, too) rose 11.7% when reported in euros. The rise is just under 3% when assessed at constant exchange rates (creating a scenario where the euro is worth what it was last year against every other currency). And the downward lurch of the euro in the real world means that Sanofi's nine-month pharma sales expressed in dollars are around 6% down on the first nine months of last year.</p><p>The currency impacts on the figures reported by Roche and GSK were lower because the Swiss franc and British pound did not fall as much against the dollar as the euro did. Roche's 3% nine-month sales rise in Swiss francs (+6% at Constant Exchange Rates) became a fall of 2% when expressed in dollars. GlaxoSmithKline's nine-month pharma sales (pharma and vaccines) fell 3.3% in pounds, or rose 4% at Constant Exchange Rates, but fell 10.1% when converted to dollars. </p><p>The large currency swings in the last year have clearly caused accountants some angst in comparing the 2014 version of a single company's performance with the 2015 version. In order to compare different companyies' performances, <i>Scrip</i> will convert all reported sales figures into dollars. The justification for doing this is outlined in Box 1. </p><p>If <i>Scrip's</i> projections for FY 2015 (Table 1) pan out, GlaxoSmithKline's year-end number (expressed in dollars) will be 13% down on 2014 and AstraZeneca's 10% down. Even at Constant Exchange Rates (CER), AZ saw sales decline 2% globally. At the top of the list, too, the falls in drug sales at Novartis, Pfizer and Sanofi could be in the high single digit range. Teva suffered less, although currency effects turned gains of 3% on the quarter into a 5% decline. For the year to September, Teva's sales were down 2%. GlaxoSmithKline's asset swap with Novartis pushed its drug sales down 7% (at Constant Exchange Rates) in the first nine months of 2015 compared with the same period 2014: but its vaccine sales were up 19% (CER), for the same reason. But any gains were lost on conversion to the dollar. Furthermore, GSK saw big declines in its Established Products division (-13% CER) and in its biggest franchise, respiratory drugs (-8% CER).</p><p>All in all, there was lots of hedging and number-spinning from most of Big Pharma as it tried to explain how down is really up if you look at it the other way around. </p><p>The exception was Gilead: its Q3 results were expressed in terms that were clear and simple. </p><p>The Foster City, California antivirals company didn't bother with Constant Exchange Rates adjustment; there were no contingencies around definitions of Core Operations and no fiddling corrections for portfolio swaps. Exchange rates and the like don't matter that much when a company provides pharma revenue growth of 37.6% for the first nine months of 2015 over 2014, and increases its operating profit of 52%. </p><p>It is worth taking a moment to appreciate just what Gilead has achieved. In the first nine months of 2015, it had already generated 97% of its stupendous 2014 full-year revenue total; and it had done it all while increasing its operating margin from only 60% of revenues in 2014 to over 67% in 2015. </p><p>Gilead's gross over-simplification of the complex and labyrinthine process of pharmaceutical accounting should not obscure the end result: By the end of 2015, it will be the seventh biggest drug company in the world by drug sales, peddling $30-31bn worth of drugs around the world (see Table 1). That figure would take it far beyond the declining annual sales at AstraZeneca and GlaxoSmithKline; indeed Gilead's sales would be closing in fast on J&J's and Merck's. </p><p>Furthermore, on a pro rata basis, it will generate just shy of $18bn in net profit, twice as much as Pfizer managed in 2014.</p><h2>Getting To Pharma's Innovative Core</h2><p>There are many ways of looking at financial results: the presentations that accompany pharma's Q3 show that quite clearly.</p><p>One perspective is that under current circumstances growth should be based on bottom-line profit rather than top-line revenues. Teva's "strong performance", for instance, was based on rising operating profit, not escalating sales. Pfizer took the same approach, highlighting its "operational performance". AstraZeneca emphasizes improvement in its "core" operational performance, allowing it to skate quickly around $2bn of costs that represent inefficiencies inherently associated with its massive corporate restructuring.</p><p>Indeed, the "core" is a familiar pharmaceutical company meme. AstraZeneca's "core" is what will be left of AZ after Pascal Soriot is finished with his shake out. Pfizer's core, apparently, is the portfolio of innovative products (where sales and margins are rising) as opposed to the half of the company where both are shrinking. Novartis' nine-month results highlighted a 29.1% "Core operating income" margin as opposed to a straight 19.8% actual operating margin. </p><p>Novartis was pointing out to shareholders that the difference between these two numbers comes from $3.4bn in legal settlements and fees and the amortization of the ex-GSK's oncology assets, expenses that do not crop up every year. And, of course, that's true. However, in 2014 last year Novartis also incurred $2.5bn of "non-core" spending. Individually exceptional costs are out of the ordinary; but collectively they are the norm. A year without them really would be exceptional.</p><p>In a spirit of looking at pharma in the way that pharma looks at itself, <i>Scrip</i> has drawn up a league table of FY 2015 projections on pharma's innovative core (see Table 2).</p><table><h2>Table 2. 2015 Innovative Core Pharma Sales (Projected)</h2><th><tr><td><p>Company</p>&nbsp;</td><td><p>Projected year-end core pharma sales ($bn)</p>&nbsp;</td><td><p>% of pharma portfolio</p>&nbsp;</td><td><p>Notes</p>&nbsp;</td></tr></th><tbody><tr><td><p>Roche</p>&nbsp;</td><td><p>38.7</p>&nbsp;</td><td><p>100%</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Merck & Co</p>&nbsp;</td><td><p>34.3</p>&nbsp;</td><td><p>100%</p>&nbsp;</td><td><p>Merck guidance between $39.bn and $39.8bn</p>&nbsp;</td></tr><tr><td><p>Novartis</p>&nbsp;</td><td><p>34</p>&nbsp;</td><td><p>78%</p>&nbsp;</td><td><p>Excludes Sandoz; could be lower if genericizing Alcon products are also excluded</p>&nbsp;</td></tr><tr><td><p>Gilead</p>&nbsp;</td><td><p>30.5</p>&nbsp;</td><td><p>100%</p>&nbsp;</td><td><p>Gilead guidance is for $30-31bn</p>&nbsp;</td></tr><tr><td><p>Johnson & Johnson</p>&nbsp;</td><td><p>28.6</p>&nbsp;</td><td><p>88%</p>&nbsp;</td><td><p>Excludes Infectious Disease portfolio worth a projected $3.8bn, which J&J excluded in its presentation</p>&nbsp;</td></tr><tr><td><p>Pfizer</p>&nbsp;</td><td><p>25.5</p>&nbsp;</td><td><p>60%</p>&nbsp;</td><td><p>"Innovative products" group; if Consumer health is excluded, "Innovative Products" would be 48% of pharma, or $22.2bn projected for 2015</p>&nbsp;</td></tr><tr><td><p>AstraZeneca</p>&nbsp;</td><td><p>23.4</p>&nbsp;</td><td><p>100%</p>&nbsp;</td><td><p>100% innovative products may be too high since AZ talks of its 'Growth Platforms' representing 57% of sales</p>&nbsp;</td></tr><tr><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>22.8</p>&nbsp;</td><td><p>85%</p>&nbsp;</td><td><p>Consumer division (projected sales FY 2015=$8.9bn) and Established Products (projected FY sales $3.9bn) excluded</p>&nbsp;</td></tr><tr><td><p>Sanofi</p>&nbsp;</td><td><p>18.8</p>&nbsp;</td><td><p>49%</p>&nbsp;</td><td><p>Established Rx Products, Generics, and Consumer Healthcare account for &euro;13.1bn ($19.4bn) of $38.4bn pharma total, according to the company</p>&nbsp;</td></tr><tr><td><p>Teva</p>&nbsp;</td><td><p>6.2</p>&nbsp;</td><td><p>31%</p>&nbsp;</td><td><p>MS and Specialty products included in innovative group; data including projections are pre-Actavis generics merger</p>&nbsp;</td></tr><tr><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p><b>Total</b></p>&nbsp;</td><td><p>257.84</p>&nbsp;</td><td><p>78%</p>&nbsp;</td><td><p>&nbsp;</td></tr></tbody></table></p><p><p>The innovative core takes sales not of all drugs (and vaccines, where appropriate) but just those products that the companies themselves want to recognize as being at the center of their present and future businesses. That means that some drug sales will be excluded because the products are non-innovative; generics, or products facing generic competition, for instance. Others are excluded because the products are non-core; for example, products that are still under patent but have nevertheless been outmoded by better products. </p><p>Two things to bear in mind when considering the innovative cores of pharmaceutical companies are that both "innovative" and "core" are flexible terms with euphemistic tendencies.</p><p>"Innovation" strictly speaking it implies nothing more than newness but in pharma it can be used to convey a sense of improvement. It might also be used to suggest a high level of desirability or profitability, or both. Or it may simply be used to reinforce a company's sense of its own innovative tendencies, independent of its record in R&D: "we are an innovative company &ndash; therefore our products are innovative," or vice versa.</p><p>Similarly, the etymology of "core" implies something at the heart of a business, but it can also have other meanings: "our fastest growing activity" or "what will remain when we are through closing down everything else" or, simply, "what we want to focus on today". In that last sense, it a contrasts with matters that are "non-core" meaning "stuff we don't want to talk about any more".</p><p>Company-by-company definitions of "innovative" and "core" follow.</p><p>Overall, Table 2 shows that only about 78% of the top 10 pharmas' drug revenue falls into the innovative core. </p><p>In a league table based on assessment of innovative cores, Gilead moves up to fourth place, ahead not only of AstraZeneca and GSK but also ahead of J&J, Sanofi and Pfizer. On current trajectories, Gilead would overtake Novartis and Merck by the end of 2016.</p><p>GSK, Sanofi and Teva sit at the bottom (although they probably shouldn't feel bad since it is a league of rather elite firms).</p><h2>Exclusions From The Innovative Core</h2><p>Roche tops the core innovation pharma league with Merck in second place. Neither company discounts any part of its drug portfolio when asking investors to think about the current or future shape of the company. Neither does Gilead, nor (to a large extent) AstraZeneca.</p><p>In contrast, Novartis clearly distinguishes its Sandoz generics/biosimilar arm from its Pharmaceutical division. Sandoz represents around 22% of Novartis' overall drug sales. So Novartis' innovative pharma core is just the remaining 78% which includes contributions from Alcon's ophthalmic drugs. </p><p>Novartis is quite clear and consistent about this separation. But not every company is.</p><p>GlaxoSmithKline, Teva and Sanofi seem still to be deciding whether they are in the innovative pharma business at all. </p><p>Teva's innovative core at present consists of its specialty divisions in multiple sclerosis &ndash; basically Copaxone (glatiramer acetate) &ndash; and other indications. These represent around 31% of its nine-months 2015 sales. Teva has tried to build an innovative business outward from Copaxone and it has also fought hard to prevent the emergence of competitors' versions of the drug. But Copaxone is now under generic threat from the big guns at Sandoz (Novartis) and Pfizer. In that context, the acquisition of Actavis (Allergan's generic division) looks like a pharmaceutical street fighter returning to its roots. </p><p>For GlaxoSmithKline, both its 2014 asset-swap with Novartis and its decision in May 2015 to retain its global HIV franchise internally (rather than to spin it off) as an independent unit appear to reinforce a reasonably clear strategic intent to move to lower-margin, larger-volume products marketed more globally (even if the company hasn't fully enunciated the lower-margin aspect of that strategy to all its shareholders yet). In seeking GSK's core, <i>Scrip</i> has excluded not only its Consumer division but also its struggling Established Products subdivision. Established Products sales were down 13% year-on-year in the first nine months of 2015: they provided 11% of GSK's pharma sales.</p><p>Superficially, Sanofi is undecided about innovation but a dissection of its operations suggests it may already know which way it is headed. On the one hand Sanofi has Genzyme &ndash; micro-indications, macro-pricing, super-margins, wonderful growth but just 12% of its pharmaceutical turnover; and on the other it has three segments &ndash;Generics, Consumer Healthcare, and a rump of "Established Rx Products" &ndash; that together represent 51% of its pharma turnover (which in <i>Scrip</i>'s definitions include vaccines). Its diabetes franchise which had been badly eroded by pricing pressure in the USA in 2015 may soon start to resemble these businesses, meaning that Sanofi at the end of FY 2015 could become Genzyme plus a bit of oncology plus 73% of little-growth-lower-margin operations. Add its vaccines in as well (innovative but not high-margin), and Sanofi could be 85% non-innovative core.</p><p>Johnson & Johnson's drug portfolio is largely innovative. However, the company does provide perhaps the best example of selective exclusion of patented drugs from its core. </p><p>Four years ago J&J was in the vanguard of the HCV protease revolution. Post-Sovaldi and Harvoni though, it sits on a shrinking infectious disease portfolio: sales in that franchise were down 36.9% in the first nine months of 2015 relative to 2014 levels, helping create an overall 3.9% fall across J&J's entire pharmaceutical portfolio. </p><p>So how did J&J present that in its Q3 results? Well, as with a fart in an elevator, the company coughed and disowned the infectious disease result, explaining that without the net impacts of acquisition and divestment and the bad result from Infectious Diseases, its pharmaceutical sales would have grown by 10.1% worldwide in Q3. And that's so true generally, isn't it? The world would be a much better place if things were just a little bit different than they actually are. </p><p>Following the company's lead, J&J's infectious disease drug revenues (still 12% of its pharma business) have been removed from <i>Scrip</i>'s estimates of its FY 2015 core drug sales in Table 2.</p><p>From fantasy, now to Pfizer. Pfizer makes a clear distinction between its Innovative Products division and its Established Products division. The former encompassed its on-patent drugs including those in oncology, vaccines and (slightly oddly, perhaps) Consumer Healthcare. Established Products includes Lipitor and other drugs facing generic competition and now the generic and biosimilar products that came in with its acquisition of Hospira. </p><p>And what is the advantage of dividing the company up like that? It may be more manageable that way. It certainly makes Pfizer more conducive to spin. Pfizer's overall drug sales fell 5% in the first three quarters of 2015 compared with the same period in 2014, and there is nothing positive about that, right? But just look at Innovative Products: sales there were up 10% in Q1-Q3 2015 compared with 2014. Never mind that Established Products sales fell 18% in the same timeframe, despite the addition of Hospira. </p><p>One conclusion from Pfizer's presentation of its results is that its Innovative Products division is its innovative core even though it represents only around 55% of the company's drug revenue. Based on the company's own guidance, that Pfizer core would generate around $25.5bn in sales for FY 2015 (see Table 2).</p><p>With one clear exception, the reality of Q3 and 2015 thus far is that it has been largely out of Big Pharma's control. For nine out of 10 of the biggest global drug sellers, any signals of sales growth (or shrinkage) have been largely drowned out by the noise of currency exchange. Greek debt and its sequelae, combined with differential rates of recovery from the global economic downturn on either side of the Atlantic, have made pharma efforts to please investors through innovation or acquisition largely redundant. Gilead has become the jewel of Big Pharma; and although its success is undoubted, it is founded largely on two related drugs within one market that could be in the process of self-destruction. Sustained growth within pharma, even within Gilead, will require more than that. </p><p><p><table><h2>Box 1. Why Comparisons Based On Dollar Data Are Justified</h2><th><tr><td><p>Although the use of company performances data expressed in dollars is a simplification, some form of standardization is necessary in order to make comparisons and there are several reasons to believe that the use of the dollar is the least bad option. </p><p>&nbsp;</td></tr></th><tbody><tr><td><ol listformat="Numbered"><li>Constant currency comparisons are a simplifying affectation of accountants and not part of the real world in which companies operate: they shuttle unwary analysts back or forward in time but their range is limited to a single year. Constant currency calculations would be more useful if they allowed performance to be indexed over a longer period, say, over a decade or one drug-development-cycle.</li></ol><p>&nbsp;</td></tr><tr><td><ol listformat="Numbered"><li>In global economic terms, the dollar remains the dominant currency in the world. The primacy of the US economy may be under threat, but the international banking organization, the Bank for International Settlements, estimates that around 60% of global GDP resides in the countries that either use the US dollar or link their own currencies formally or informally to the US dollar. The dollar-zone includes all of North American much of South America, Russia, China, India, and much of the rest of Asia. Of the major economies, only parts of Europe (<17% of="" world="" gdp)="" and="" japan=""></17%><5%) lie="" outside=""></5%)></li></ol><p>&nbsp;</td></tr><tr><td><ol><li>The pharmaceutical industry is particularly focused in the dollar-zone, largely because of high US spending on healthcare. The US remains the biggest single market for drugs. It is also the source of much of the early and late-stage pipeline products: wherever it is based, pharma will have to pay in dollars to acquire those assets.</li></ol><p>&nbsp;</td></tr><tr><td><ol><li>Reporting results in US dollars is becoming the norm for pharma companies. Of the top 10 pharma companies covered in this article, four are US companies, while three are based outside the US but report their results in US dollars (Teva, AstraZeneca and Novartis). GlaxoSmithKline issues a "dollar translation" document with each of its quarterly filings. Sanofi could justify reporting in dollars since only around 44% of its shareholder are now in France or other euro-using countries. The rest are outside the eurozone (UK, Switzerland, USA, Asia, Rest of the World). Partially family-held Roche probably couldn't, even though nearly half of its pharma sales are in the US.</li></ol><p>&nbsp;</td></tr></tbody></table></p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 391
+
+<p>On the face of it, the latest quarterly results from the 10 biggest drug companies indicate that eight of them will have lower drug sales in 2015 than in 2014. The mood music behind the Q3 numbers is wistful and selective, suggesting that some of the biggest names in the industry are not sure where they are going even though they know that they don't really want to start from here.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Strong Dollar Weak Performance Big Pharma Is An Industry Adrift
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151111T105655
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151111T105655
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151111T105655
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030339
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Strong Dollar, Weak Performance: Big Pharma Is An Industry Adrift 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361514
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+801a6e9a-8442-4ec1-b49e-4aba34ead759
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

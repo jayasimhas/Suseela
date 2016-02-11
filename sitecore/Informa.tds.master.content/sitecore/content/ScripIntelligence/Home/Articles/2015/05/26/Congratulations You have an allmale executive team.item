@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {A7FF8566-85F7-48B8-B232-EC556BFE1267}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/26/Congratulations You have an allmale executive team
+parent: {BE692C32-5AA8-45EF-8DEC-C1CC14E864B1}
+name: Congratulations You have an allmale executive team
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5a4c2736-fa68-4112-b668-56be81c739d9
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Congratulations! You have an all-male executive team
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Congratulations You have an allmale executive team
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 14104
+
+<p>It's 2015, and nine of the top 39 pharmaceutical companies in Europe and North America have no women within their senior executive team. Eight of those nine companies are headquartered in supposedly egalitarian nations such as Switzerland, Germany, Denmark, and France. Fewer than 16% of the senior executives in these leading pharma firms are women. This article considers how likely it is that this situation arose by chance.</p><p>The nine companies with no female members in their senior executive teams are, in descending order of pharmaceutical sales, Novartis, Bayer, Novo Nordisk, Boehringer Ingelheim, Servier, Regeneron, STADA, Lundbeck, and Actelion. </p><p>That's nine more photographs of Y-chromosome dominated line-ups to post to <i>Congrats, you have an all male panel</i>!, the satirical Tumblr page highlighted in a <a href="http://#http://www.scripintelligence.com/home/comment/Editorial-Too-many-men-in-suits-358610" target="_new">recent Scrip editorial</a>.</p><p>But wait, finger-pointers! Perhaps this gross gender imbalance has arisen by chance. Let's run the stats first and get accusatory afterwards.</p><p>Two factors are relevant here: one, the size of the executive team; and, two, the nature of the base population.</p><p>Scrip's null hypothesis is that there are no underlying mechanisms of gender bias in selecting senior executive teams (it's just a hypothesis) and it turns out that the size of a team is important. </p><p>In a three-person team, an all-male group is indistinguishable from a gender-balanced team at the 0.05 significance level (p=0.083). However, a five-person all-male team is biased (p=0.025).</p><p>This means that, by the standards of evidence the pharmaceutical industry generally applies to its own clinical studies, there is no evidence of gender prejudice at Stada and Lundbeck because their senior corporate teams consist of only three people, even though the three people are all men.</p><p>However, the situation at Bayer, Boehringer Ingelheim and Actelion, where their five-membered teams are all men, warrants further investigation. </p><p>The evidence of male preference is even stronger at Regeneron with its senior team of seven men and no women (p=0.0081), and at Novo Nordisk and Servier (teams of nine men, no women: p=0.0027), and utterly convincing at Novartis (just twelve men, good and true; p=0.00053).</p><p>There is, of course, a flaw in the above analysis&ndash; it lies in the assumption that there are equal numbers of men and women in the population from which the senior team can be drawn. That is demonstrably not the case, and it does shift the numbers a bit.</p><p>A recent Novartis document on diversity and inclusion indicates that 46% of its employees are female, as are 42% of its local managers (68% in Russia, apparently). Adjusting for the gender-biased starting population doesn't much help Novartis escape a label of further gender bias at a senior level, however. The p value roughly doubles from 0.00053 to 0.0013, but we can still roundly reject the null hypothesis &ndash;there is indeed strong evidence of gender bias at the Basel bastion.</p><h3>gender bias across the industry</h3><p>Do phallocentric preferences pertain across the entire pharmaceutical industry? </p><p>Clearly not. Stada and Lundbeck have already been exonerated at least on statistical grounds because of their tiny membership. </p><p>And there is more evidence that gender bias is not universal in pharma. For instance, over 75% of the 37 firms already need more than one comfort station for their senior teams because they have embraced equality at least to the extent of having one woman on board.</p><p>Amgen has six women in its upper tier (although that's still only 23% of its 26-member group); AbbVie boasts a 25%-female team (two out of eight); while Bristol-Myers Squibb tops the emancipation league with an XX-rating of 30% (three out of 10). Impressively liberated.</p><p>In what is probably a vain attempt to avoid tarring the whole industry with an undeserved sexist brush, <i>Scrip</i> has run the stats on all 39 companies individually (Table 1) to try to distinguish those firms that are statistically sexist from those where the evidence is less certain. </p><table><h2>Table 1. Statistical gender bias at 15 out of 39 pharma companies</h2><th><tr><td><p>Company</p>&nbsp;</td><td><p>Senior exec members</p>&nbsp;</td><td><p>Women senior executives</p>&nbsp;</td><td><p>Outcome</p>&nbsp;</td><td><p>p value</p>&nbsp;</td></tr></th><tbody><tr><td><p>AbbVie</p>&nbsp;</td><td><p>8</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.256</p>&nbsp;</td></tr><tr><td><p>Actavis</p>&nbsp;</td><td><p>10</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.112</p>&nbsp;</td></tr><tr><td><p>Actelion</p>&nbsp;</td><td><p>5</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.043</p>&nbsp;</td></tr><tr><td><p>Alexion Pharmaceuticals</p>&nbsp;</td><td><p>10</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.112</p>&nbsp;</td></tr><tr><td><p>Amgen</p>&nbsp;</td><td><p>26</p>&nbsp;</td><td><p>6</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.025</p>&nbsp;</td></tr><tr><td><p>AstraZeneca</p>&nbsp;</td><td><p>13</p>&nbsp;</td><td><p>3</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.112</p>&nbsp;</td></tr><tr><td><p>Baxter International</p>&nbsp;</td><td><p>5</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.261</p>&nbsp;</td></tr><tr><td><p>Bayer</p>&nbsp;</td><td><p>5</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.043</p>&nbsp;</td></tr><tr><td><p>Biogen Idec</p>&nbsp;</td><td><p>12</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.049</p>&nbsp;</td></tr><tr><td><p>Boehringer Ingelheim</p>&nbsp;</td><td><p>5</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.043</p>&nbsp;</td></tr><tr><td><p>Bristol-Myers Squibb</p>&nbsp;</td><td><p>10</p>&nbsp;</td><td><p>3</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.340</p>&nbsp;</td></tr><tr><td><p>Celgene </p>&nbsp;</td><td><p>8</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.065</p>&nbsp;</td></tr><tr><td><p>Eli Lilly</p>&nbsp;</td><td><p>13</p>&nbsp;</td><td><p>3</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.112</p>&nbsp;</td></tr><tr><td><p>Endo International</p>&nbsp;</td><td><p>7</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.102</p>&nbsp;</td></tr><tr><td><p>Ferring</p>&nbsp;</td><td><p>5</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.261</p>&nbsp;</td></tr><tr><td><p>Galderma</p>&nbsp;</td><td><p>9</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.17</p>&nbsp;</td></tr><tr><td><p>Gilead Sciences</p>&nbsp;</td><td><p>10</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.112</p>&nbsp;</td></tr><tr><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>13</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.032</p>&nbsp;</td></tr><tr><td><p>Hospira</p>&nbsp;</td><td><p>13</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.032</p>&nbsp;</td></tr><tr><td><p>Ipsen</p>&nbsp;</td><td><p>7</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.102</p>&nbsp;</td></tr><tr><td><p>Johnson & Johnson</p>&nbsp;</td><td><p>16</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.009</p>&nbsp;</td></tr><tr><td><p>Lundbeck</p>&nbsp;</td><td><p>3</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.117</p>&nbsp;</td></tr><tr><td><p>Mallinckrodt</p>&nbsp;</td><td><p>11</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.074</p>&nbsp;</td></tr><tr><td><p>Menarini</p>&nbsp;</td><td><p>15</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.0137</p>&nbsp;</td></tr><tr><td><p>Merck & Co</p>&nbsp;</td><td><p>12</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.049</p>&nbsp;</td></tr><tr><td><p>Merck KGaA</p>&nbsp;</td><td><p>6</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.163</p>&nbsp;</td></tr><tr><td><p>Mylan</p>&nbsp;</td><td><p>5</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.261</p>&nbsp;</td></tr><tr><td><p>Novartis</p>&nbsp;</td><td><p>12</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.002</p>&nbsp;</td></tr><tr><td><p>Novo Nordisk</p>&nbsp;</td><td><p>9</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.007</p>&nbsp;</td></tr><tr><td><p>Pfizer</p>&nbsp;</td><td><p>13</p>&nbsp;</td><td><p>3</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.112</p>&nbsp;</td></tr><tr><td><p>Regeneron </p>&nbsp;</td><td><p>7</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.017</p>&nbsp;</td></tr><tr><td><p>Roche</p>&nbsp;</td><td><p>11</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.074</p>&nbsp;</td></tr><tr><td><p>Sanofi</p>&nbsp;</td><td><p>12</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.049</p>&nbsp;</td></tr><tr><td><p>Servier</p>&nbsp;</td><td><p>9</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.007</p>&nbsp;</td></tr><tr><td><p>Shire</p>&nbsp;</td><td><p>5</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.261</p>&nbsp;</td></tr><tr><td><p>STADA</p>&nbsp;</td><td><p>3</p>&nbsp;</td><td><p>0</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.117</p>&nbsp;</td></tr><tr><td><p>Teva</p>&nbsp;</td><td><p>9</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>Gender bias</p>&nbsp;</td><td><p>0.041</p>&nbsp;</td></tr><tr><td><p>UCB</p>&nbsp;</td><td><p>10</p>&nbsp;</td><td><p>2</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.112</p>&nbsp;</td></tr><tr><td><p>Valeant Pharmaceuticals</p>&nbsp;</td><td><p>8</p>&nbsp;</td><td><p>1</p>&nbsp;</td><td><p>NS</p>&nbsp;</td><td><p>0.065</p>&nbsp;</td></tr><tr><td><p><b>All companies</b></p>&nbsp;</td><td><p><b>370</b></p>&nbsp;</td><td><p><b>58</b></p>&nbsp;</td><td><p><b>Gender bias</b></p>&nbsp;</td><td><p><b><></b></p>&nbsp;</td></tr></tbody><tr><td colspan="5"><p>NS &ndash; Not significant at the 0.05 level of significance</p></td></tr></table><p><p>To get to the data in Table 1, we assumed in a spirit of optimism that women make up just 45% of the workforce in each of the 40 companies, slightly lower than Novartis's 46% female representation, matching Sanofi's 45%, but less than the 50% of which AbbVie is so rightly proud. </p><p>The good news from Table 1 is that there is statistically significant evidence of upper executive gender bias in only 16 of 39 companies (41%). Ten of those firms have European headquarters (Novartis, Sanofi, GSK, Teva, Bayer, Novo Nordisk, Boehringer Ingelheim, Servier, Menarini and Actelion), and six are in the Americas (Merck & Co, Johnson & Johnson, Amgen, Biogen, Hospira, Regeneron, and Mallinckrodt). Perhaps Hospira will be reformed by its incorporation into the nurturing impartiality of Pfizer.</p><p>The bad news from Table 1 is that there is no company with a preponderance of female senior executives: indeed, only 10 companies in this set have more than 20% women in their senior teams (Pfizer, Gilead, AbbVie, Amgen, Eli Lilly, BMS, Actavis, Baxter, Mylan and Alexion) &ndash; all US firms.</p><p>Furthermore, across all 37 companies for which there are data, just 58 women feature in a total of 370 senior corporate executives. If the senior stratum in the industry reflected the 45%-female base population, one would expect 166 women senior executives. Again, the null "no-bias" hypothesis is completely exploded (p<></p><h3>Quick fixes for gender bias</h3><p>Is there anything pharma can do about its own apparent proclivities for ignoring close to half its workforce when it comes to senior appointments? Well, almost certainly, yes! But they all take time, not to mention a reinvention of the industry.</p><p>For now, however, there are four quick fixes that might help the numbers look much better than they currently do: one of the fixes, the most unlikely admittedly, actually helps the process of change.</p><p><b>Quick Fix 1:</b> Restructure the company, expanding the size of the senior executive team greatly. By reaching out to a more junior echelon, the chances of designating more women as members of the "senior" management increases. Amgen is the prime example of this approach: its leadership of 26 includes roles such as senior vice-presidents of discovery research, of global value and access, of translational sciences, and of quality, and executive vice-president of full potential initiatives. Interesting and rewarding jobs all, no doubt.</p><p><b>Quick Fix 2:</b> Restructure the company and drastically shrink the size of the senior executive team. This is an approach apparently favored by companies in Germany. It changes nothing really, but it does remove the stigma of statistical significance from gender bias.</p><p><b>Quick Fix 3:</b> Restructure the company and selectively adjust the gender balance outside the senior management team so that proportionally fewer women are employed. Adopt either one or both of two radical employment policies: men-only hiring or women-only dismissal. This might ruffle the odd feather (especially, perhaps, if the heads of HR and Legal are women) and is probably quite expensive, what with all the extra hires or the redundancy expenses and legal costs, but apparently it's a lot easier than Quick Fix 4.</p><p><b>Quick Fix 4:</b> Replace male incumbents with women. Replacing just one man with one woman would remove statistical significance from the gender bias in all but four of the companies in our sample (Servier, Novo Nordisk, J&J and Novartis). </p><p>This option also has one slight advantage: it gives 45% of your employees the idea that their advancement options are not restricted by social attitudes to their genetic inheritance.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 434
+
+<p>It's 2015, and nine of the top 39 pharmaceutical companies in Europe and North America have no women within their senior executive team. Eight of those nine companies are headquartered in supposedly egalitarian nations such as Switzerland, Germany, Denmark, and France. Fewer than 16% of the senior executives in these leading pharma firms are women. This article considers how likely it is that this situation arose by chance.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Congratulations You have an allmale executive team
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150526T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150526T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150526T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028877
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Congratulations! You have an all-male executive team
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358592
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5a4c2736-fa68-4112-b668-56be81c739d9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

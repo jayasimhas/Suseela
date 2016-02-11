@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {02EE0F7E-DF89-4AD0-BE84-3D3A47C80142}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/23/India rejects teneligliptin salts patent
+parent: {857BC899-3328-4898-A866-876B56579D04}
+name: India rejects teneligliptin salts patent
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9170703e-2553-4fdf-9403-ee067e947bd8
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+India rejects teneligliptin salts patent 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+India rejects teneligliptin salts patent
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4631
+
+<p>India has rejected Mitsubishi Tanabe's patent application relating to certain salts of teneligliptin, the dipeptidyl peptidase-4 (DPP-4) inhibitor currently in the news after the arrival of a cut-price generic version on the domestic market.</p><p>Glenmark had recently announced plans to roll out its teneligliptin brands, Ziten and Zita Plus, at INR19.90 ($0.31) per tablet across India.</p><p>Mitsubishi's instant Patent Application 4217/KOLNP/2007 titled "Prophylactic/therapeutic agent for abnormalities of sugar/lipid metabolism" has been rejected under section 3 (d) of India's Patent Act. Section 3 (d) broadly deals with incremental inventions that are not patentable unless they show improved efficacy or unless a known process results in a new product or employs at least one new reactant.</p><p>Dr D K Chakrabarti, deputy controller of patents and designs, at the Kolkata Patent Office, noted that it was "very clear" that the applicant discovered a new medical use of some salts as claimed which was termed as efficacy and that there are several mentions in the literature of similar salts having glucose lowering activity. </p><p>"In the present invention it has been observed that the applicant by doing several trials establishes a joint activity of lipid lowering as well as glucose lowering activity. I cannot consider this as an efficacy but consider this as a new medical use of a pharmaceutical agent which is not allowable as per Indian Patent's Act," Dr Chakrabarti said in an order dated 22 July.</p><p>The order referred to the existence of the basic compound teneligliptin and its different salts that are well known in the patent as well as non-patent literatures. </p><p>"The activity of the said compounds as well as its salt were found to be used as a DPP inhibitor. I therefore held that the salt of the instant invention shows a new property which has [been] discovered by the applicant after doing clinical trial and therefore not allowable under section 3(d) of the Act," the deputy controller noted. </p><p>Under Section 3(d), salts, esters, ethers, polymorphs, and other derivatives of known substances are presumed to be the same substance as the original chemical and thus not patentable, unless it can be shown that they differ significantly in properties with regard to efficacy.</p><p>Mitsubishi Tanabe could not immediately be reached for a comment on the order.</p><h2>Mitsubishi's submission</h2><p>The Japanese firm is said to have referred to how the correlation between a DPP-IV inhibitory activity and a lipid-lowering effect based thereon, was "neither known nor suggested" before the priority date of its application, and that there was no suggestion for a concrete DPP-IV inhibitor showing such effect.</p><p>"In contrast, the animal test results in the present application have verified for the first time the effect of decreasing blood lipid/effect of suppressing an increase in blood lipid, which is achieved by a compound having a DPP-4 inhibitory action, namely, a salt of the compound of the present application," Mitsubishi's agent was quoted as saying.</p><p>The Japanese company, therefore, underscored that the compounds as per the invention show an enhancement in efficacy in the inhibition of DPP-4 and are therefore "novel and inventive over the document cited."</p><p>Mitsubishi's Tenelia (teneligliptin) was launched in Japan in September 2012 with partner Daiichi Sankyo, though the product has yet to be introduced in several key developed markets.</p><p>Last month Glenmark said that it expects its teneligliptin to be a <a href="http://www.scripintelligence.com/business/Glenmark-pioneers-Mitsubishis-teneligliptin-in-India-358948" target="_new">game changer</a> in India as it will lower the daily cost of treatment for a diabetes patient by around 60% as compared to other gliptins which are currently priced at around INR45 for a day's treatment. </p><p>India's highly competitive DPP-4 inhibitor market is expected to see more action including the potential entry of more teneligliptin versions. The local firm, Intas, is also known to be developing anagliptin in Type-2 diabetes mellitus. </p><p>Current <a href="http://%5bhttp:/www.scripintelligence.com/home/Indias-mega-gliptins-battle-shifting-sands-359254%5d" target="_new">market trends</a> also suggest the narrowing gap between vildagliptin and sitagliptin as a whole &ndash; though some experts claim that "representation issues" in data captured in some Indian states may be giving the former an edge. Teneligliptin is currently believed to be the only gliptin to be manufactured in India. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 248
+
+<p>India has rejected Mitsubishi Tanabe's patent application relating to certain salts of teneligliptin, the dipeptidyl peptidase-4 (DPP-4) inhibitor currently in the news after the arrival of a cut-price generic version on the domestic market.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+India rejects teneligliptin salts patent
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150723T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150723T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150723T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029310
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+India rejects teneligliptin salts patent 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359498
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9170703e-2553-4fdf-9403-ee067e947bd8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

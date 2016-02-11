@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {40496CB3-02DC-414A-9E11-A67FB16FA057}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/16/Novartis talks up potential blockbusters
+parent: {C117A4E3-2531-414E-8FEF-96540B531C8B}
+name: Novartis talks up potential blockbusters
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 321f0ca1-fe28-4ab8-8351-731ced53fec6
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{DD548E28-6D47-4403-832E-A9D982190B89}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+Novartis talks up potential blockbusters 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+Novartis talks up potential blockbusters
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8159
+
+<p>With its sweeping revamp now complete, Novartis says it is putting the bulk of its efforts into expanding underlying growth generated from innovative new drugs, many of which have big blockbuster potential. Two are new breakthrough drugs - Cosentyx (secukinumab) and Entresto (sacubitril/valsartan) &ndash; while another is the former GlaxoSmithKline oncology asset Promacta (eltrombopag olamine). </p><p>Novartis had already said it acquired three products with blockbuster potential from GSK &ndash; Votrient (pazopanib), Tafinlar (dabrafenib) and Mekinist (trametinib) &ndash; as part of its narrowed focus on innovative pharmaceuticals, eye care and generics, and the divestment of vaccines, OTCs and animal health.</p><p>David Epstein, division head of Novartis pharmaceuticals, told an analyst call during the company's second-quarter results presentation on 21 July that Promacta is also in that category, and that the Basel, Switzerland-based firm is increasingly excited about the drug's prospects.</p><p><b>Promacta</b></p><p>Asked where Promacta's growth will come from and over what timeframe, Mr Epstein said there are various new indications that will drive that growth, and that Novartis believes it can drive sales outside the US where GSK had little presence in oncology. </p><p>"Q2 sales of Promacta were about $116m, so you could argue that we're almost half-way there," Mr Epstein said. He noted that the FDA recently approved Promacta for the treatment of children six years and older with chronic immune thrombocytopenia, a rare blood disorder, who have had an insufficient response to corticosteroids, immunoglobulins or splenectomy. "We expect EU approvals in SAA [severe aplastic anemia] in the second half of 2015," he added. </p><p>Other indications for Promacta, also known as Revolade, are also being worked on, he added. "As GSK had virtually no meaningful oncology footprint [outside the US], there's an opportunity to accelerate its use outside the US." </p><p>Mr Epstein noted ongoing clinical trials might make a difference for Promacta's prospects, including the Phase II ASPIRE trial in myelodysplastic syndromes (MDS). "If that trial is positive, and we seek regulatory approval, then that will allow us to reach a much broader range of patients than we currently have on the label," Mr Epstein said. </p><p>Promacta's prospects could also be enhanced by the ongoing trial dubbed SUPPORT [StUdy of eltromboPag in myelodysPlastic SyndrOmes Receiving azaciTidine] which is a Phase III, randomized, double-blind, placebo-controlled, multi-center study of eltrombopag or placebo in combination with azacitidine in subjects with MDS.</p><p><b>BKM120 caution</b></p><p>The Swiss company also used its quarterly update to announce results of the BELLE-2 Phase III trial of its candidate BKM120, in which the pI3K inhibitor met its progression free survival primary objective in postmenopausal women with HR+/HER2- advanced breast cancer. But the company sounded a cautious note about the absolute benefit seen in the trial.</p><p>"We had a positive Phase III in breast cancer measuring progression free survival and met its primary end point. We can thus take the product forward and discuss it with the regulatory authorities. [But] the reason we've been more cautious is that, while we see an overall improvement in progression free survival, it's relatively modest from a clinical perspective, but when you start to look at subgroups &ndash; in particular those with PIK3CA mutation, you start to see much more robust and in our opinion clinically meaningful result. So we want to have discussions with the regulators about what a filing could look like," Mr Epstein explained.</p><p><b>Cosentyx strong</b></p><p>During the second quarter, Novartis made global regulatory submissions for IL-17 cytokine inhibitor Cosentyx in ankylosing spondylitis (AS) and psoriatic arthritis (PsA). Cosentyx was launched in the US in February and is the first LI-17 blocker to reach the market for psoriasis. Novartis expects it to be a huge money spinner.</p><p>The LI-17 blocker already faces a tough reimbursement environment based on concerns over its cost, and new worries about safety could complicate things further. Cosentyx, administered as a 300mg subcutaneous injection, was cleared to treat adults with moderate-to-severe plaque psoriasis, nearly identical wording to the European approval announced on 19 January this year. The drug had worldwide sales of $30m in the second quarter. "This was ahead of our internal plan," Mr Epstein said. </p><p>About 80% of that business was in the US market. "There are now over 6,500 requests in the US for the medication &#8230; When one thinks that there are probably around 130,000 moderate-to-severe psoriasis patients who are on biologics in the US market, you quickly realize that using simple math we've already achieved middle single digit market share with this product, which is a really, really good start after just a few months," Mr Epstein said. </p><p>Novartis is also seeing "a good uptake" in major countries outside the US for Cosentyx, including Germany, Canada and Japan. "Interestingly enough, in some of those markets, we're seeing earlier line use than we're seeing usually in the US, where the payers have a bit more control." </p><p>In the second quarter Novartis also generated data on difficult-to-treat psoriasis. "I believe this will give increased impetus to use this product. We recently completed a regulatory filing in the US and Europe for psoriatic arthritis and ankylosing spondylitis and these indications could well be as big as the psoriasis indication, an opportunity that we think could one day reach as much as $5 billion once we have approvals in all these indication."</p><p><b>Alcon slump, Pharmaceuticals growth</b></p><p>The pipeline update was presented along with second-quarter results in which a weakness from Novartis's eye care division Alcon and a strong dollar off-set strong performances in the Sandoz generics and biosimilar unit and from the company's pharmaceuticals division. That prompted the Swiss drug maker to keep its 2015 financial outlook unchanged, and it projects mid-single-digit sales growth in 2015 and high-single-digit growth in core operating income after stripping out currency fluctuations.</p><p>Its pharmaceuticals division posted net sales in the period of $ 7.8bn, down 4% measured in market exchange rates but up 6% at constant currencies. The new oncology assets acquired from GSK had sales of $500m in the latest quarter. Growth Products, which include Gilenya (fingolimod), Lucentis (ranibizumab), Afinitor (everolimus), Tasigna (nilotinib), Xolair (omalizumab), the COPD portfolio, the Tafinlar/Mekinist combination and Jakavi (ruxolitinib) &ndash; generated $3.5bn or 44% of division net sales. These products grew 38% measured at constant currencies over the same period last year, it said.</p><p>Management was also asked by analysts about the reception of about heart failure drug Entresto, which received FDA approval earlier this month and which experts believe will become a game-changer therapy.</p><p><b>Entresto response?</b></p><p>Novartis CEO Joe Jimenez said Entresto sales would take time to grow but would accelerate next year. Reception to the new drug has been good and there was little resistance to the $12.50 daily cost. "The average hospital stay for a heart failure patient in the US is $11,000," Mr Jimenez said. "So we are not receiving pushback on the price because I think this is seen as good value."</p><p>Mr Epstein said there was so far a lack of feedback from payers on Entresto, noting that payer processes usually take weeks if not months to become active. </p><p>"We would anticipate in the US that, because the population is highly MEDICARE, about 65%, that those plans will take the 6-plus months to make their decision. And then as we move into 2016 then some of the access hurdles would begin to come off. But the tone of the conversations is positive. The conversations I have with doctors are enthusiastic. You're going to have to give it time," he said.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 405
+
+<p>With its sweeping revamp now complete, Novartis says it is putting the bulk of its efforts into expanding underlying growth generated from innovative new drugs, many of which have big blockbuster potential. Two are new breakthrough drugs - Cosentyx (secukinumab) and Entresto (sacubitril/valsartan) &ndash; while another is the former GlaxoSmithKline oncology asset Promacta (eltrombopag olamine). </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+Novartis talks up potential blockbusters
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150716T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150716T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150716T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029290
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+Novartis talks up potential blockbusters 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359464
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+321f0ca1-fe28-4ab8-8351-731ced53fec6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

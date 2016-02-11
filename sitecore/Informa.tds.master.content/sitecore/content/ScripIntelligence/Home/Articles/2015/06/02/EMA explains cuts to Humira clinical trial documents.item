@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {A950AA99-6F5F-44B9-BFA3-02A9404E7E67}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/02/EMA explains cuts to Humira clinical trial documents
+parent: {F07BDF72-8313-4021-A765-C4ED157C5731}
+name: EMA explains cuts to Humira clinical trial documents
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 22911e71-4d04-4799-8477-5ec172491785
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+EMA explains cuts to Humira clinical trial documents 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+EMA explains cuts to Humira clinical trial documents
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8775
+
+<p> The European Medicines Agency has written to the European Ombudsman giving its reasons for redacting certain information from three clinical study reports on AbbVie's Humira (adalimumab) before releasing them in response to a citizen's access to documents request. </p><p> The CSRs were released in April 2014 after the EMA and AbbVie reached an agreement on the redaction of what was described as &quot;commercially confidential information&quot; (CCI) in order to settle the company's lawsuit seeking to prevent disclosure of the documents. The agency says these redactions were in line with EU rules and its own policy on access to documents. </p><p> However, in a 30 January 2015 letter to the Ombudsman, which has just been released, the EMA that in some cases the information should not have been redacted and was removed simply because of the &quot;massive amount of documents reviewed&quot; and the time pressures the agency was under. </p><p> Moreover, it noted that in some cases circumstances had changed &ndash; for example information had since entered the public domain &ndash; and so the data was not redacted from subsequent releases of Humira clinical trial documentation. &quot;This shows that the redaction of a CSR is a dynamic process and evolves with time taking into consideration, amongst others, the stage of development of products and the availability of information in the public domain,&quot; the agency's deputy executive director Andreas Pott declared in the letter. </p><p> The Ombudsman, Emily O'Reilly, who opened an investigation into the EMA's &quot;partial refusal to give public access to the Humira CSRs&quot; in April last year, wrote directly to the EMA in October expressing concern over some of the redactions (<a target="_new" href="http://www.scripintelligence.com/policyregulation/EMA-quizzed-over-Humira-trial-data-redactions-355012">scripintelligence.com</a>, 12 November 2014). On 10 February, she said she would now analyse the EMA's response and decide as soon as possible what steps should be taken next. </p><h2> Clash </h2><p> The clash between the EMA and AbbVie over the Humira CSRs was emblematic of the strong feelings stirred up by the agency's drive for more transparency in clinical trial data, not only via its 2010 policy on access to documents and EU Regulation No 1049/2001, but also its even more controversial policy on proactive disclosure of trial data, which was finally approved by the EMA management board in October 2014. </p><p> The spat began in March 2013 when AbbVie filed two applications with the EU General Court to prevent the EMA from disclosing its CSRs on the grounds that the information they contained should be considered commercially confidential. The Ombudsman intervened in support of the EMA, saying there was no general presumption of confidentiality applicable to CSRs, but accepting that in exceptional cases, and with specific justifications, certain data could be deemed commercially confidential information (CCI). </p><p> AbbVie then went back to the EMA to propose that only specific parts of the CSRs should be considered CCI and therefore redacted. The EMA rejected some of AbbVie's proposed redactions, but accepted others &quot;closely related to the ongoing and confidential commercial development&quot; of Humira, Mr Pott said. In April 2014, AbbVie dropped its legal challenge. </p><p> Mr Pott said the EMA's behaviour in agreeing to these redactions was in line &quot;not only with the rules laid down in Regulation (EC) No 1049/2001 and with its administrative practice stemming from the application of the EMA policy on access to documents of 2010, but also, we believe, with the European Ombudsman's position that, although CSRs could not be presumptively considered confidential, some specific parts of these documents could be legitimately and exceptionally redacted.&quot; </p><p> He said there were specific exceptions to the principle that documents held by EU public administrations are publicly accessible. &quot;This means, in practice, that when EMA assesses the scientific information contained in CSRs, it has to balance the interest to have the information publicly accessible with the legitimate interest of those who submit it to have their commercially confidential information protected from disclosure in exceptional cases.&quot; </p><p> The importance of appropriate technical competence in assessing these claims was &quot;paramount&quot;, he said. To some extent, this assessment was a discretionary analysis, although it had to comply with the EU's general transparency provisions and the EMA's internal rules and regulations. &quot;We would like to respectfully submit,&quot; he told the Ombudsman in his letter, &quot;that the EMA enjoys a wide discretionary power in the scientific assessment underpinning claims of confidentiality for certain information contained in marketing authorisation dossiers submitted by pharmaceutical companies.&quot; </p><h2> Specific redactions </h2><p> An annex to the letter describes in some detail the agency's response to the numerous questions posed by the Ombudsman last year. In her April 2014 letter to the EMA asking for an explanation of the redactions, Ms O'Reilly said she agreed to the removal of information like personal data and names of companies or software used by AbbVie, but questioned many other redactions on the CSRs. </p><p> These covered a wide range of material, from protocol changes, statistical analyses, dosing regimens, subgroup analyses and sub-indications to secondary endpoints and batch numbers. Much of the information removed related to the ongoing development of Humira, such as new doses or dose adjustments. </p><p> In most cases, the information in question was not redacted in subsequent access to document requests, for various reasons, either because circumstances had changed or the information had subsequently become public knowledge. </p><p> For example, AbbVie had claimed, at the time of the EMA's review of the Humira documentation, that the release of information about the ongoing development program for a new induction dose for the product could result in &quot;a reasonably foreseeable risk of undermining their legitimate economic interest&quot;. This claim, the EMA said, &quot;could not have been legitimately disregarded by EMA&quot; under the EU Regulation on access to documents. However, this information is now in the public domain, and the EMA &quot;can confirm that this information was not redacted in subsequent access to documents requests&quot;. </p><p> Similarly, AbbVie claimed that some exploratory and subgroup analyses were linked to ongoing development of the dosing regimen in different populations, and the EMA said that this &quot;could not be reasonably dismissed at that time&quot;. Some detailed tables were therefore considered CCI and redacted in line with the access to documents policy, although in subsequent access requests, this information was not redacted. </p><p> The Ombudsman had also questioned the EMA's removal of &quot;entire sections describing protocol and statistical changes from each CSR&quot;. The agency explained that the request for access covered the body of the CSRs, not the appendix containing the protocol and statistical changes, so it was not provided. However, the &quot;specific information and protocol appendices have since been released to satisfy two subsequent requests to access these documents&quot;. </p><h2> Sticking to its guns </h2><p> Conversely, in one case the EMA said that no overriding public interest in disclosing information was evident, and the claim by AbbVie that the information could be useful for the ongoing development of the product was &quot;prima facie founded&quot;. </p><p> In another case, and illustrating a more general point, the Ombudsman had taken issue with the agency's redaction of batch number information from the CSRs, saying that no justification for the redaction had been given, nor any explanation as to why the release of such information might damage AbbVie's commercial interests. But the EMA asserted that &quot;companies often formulate their batch numbers in such a way that it indicates manufacturing site, month of manufacture and number of the specific batch in the calendar year, which could possibly undermine their legitimate commercial interests&quot;. </p><h2> 416 requests in 2014 </h2><p> In his letter, Mr Pott said that the EMA had a &quot;dedicated multidisciplinary team&quot; of 13 full-time equivalent staff members working on requests for information and access to documents. In 2014 alone, he said, the agency dealt with 416 access to documents requests and released 1,816 documents amounting to 167,309 pages. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 273
+
+<p> The European Medicines Agency has written to the European Ombudsman giving its reasons for redacting certain information from three clinical study reports on AbbVie's Humira (adalimumab) before releasing them in response to a citizen's access to documents request. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+EMA explains cuts to Humira clinical trial documents
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150602T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150602T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150602T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027788
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+EMA explains cuts to Humira clinical trial documents 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356604
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+22911e71-4d04-4799-8477-5ec172491785
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

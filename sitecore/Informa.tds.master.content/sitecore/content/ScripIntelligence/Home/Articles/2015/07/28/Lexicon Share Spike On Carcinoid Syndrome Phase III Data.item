@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6B75EEC2-567A-4773-8C0C-86202C0992A4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/28/Lexicon Share Spike On Carcinoid Syndrome Phase III Data
+parent: {0C0E697F-F691-47CD-A5D3-3B289DB4CAAB}
+name: Lexicon Share Spike On Carcinoid Syndrome Phase III Data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0b676a92-0083-4b59-a80f-8a1124c5a1e6
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Lexicon Share Spike On Carcinoid Syndrome Phase III Data 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Lexicon Share Spike On Carcinoid Syndrome Phase III Data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4143
+
+<p>Lexicon Pharmaceuticals Inc. is looking forward to filing its first US NDA after announcing positive top-line Phase III data for its lead product, telotristat etiprate, in treating cancer patients with carcinoid syndrome inadequately controlled by the current standard of care. Shares in the firm shot up by 47% to $12.41 on NASDAQ the morning of Aug. 1, 2015 following the news. </p><p>If successful, the company claims, telotristat etiprate would be the first oral treatment developed for carcinoid syndrome and the first addition to the standard of care (somatostatin analog depot injection) in more than 16 years. </p><p>This orphan indication affects patients with neuroendocrine tumors that originate in the gastrointestinal tract and metastasize or spread to the liver or other organs. Carcinoid syndrome is driven by the overproduction of serotonin within these metastatic neuroendocrine tumor (mNET) cells, which causes debilitating diarrhea, facial flushing, abdominal pain and heart valve damage. </p><p>Somatostatin analog depot injection therapy begins to fail for many patients within the first two years. A longer-term treatment is needed for the increasing number of patients who survive for many years with metastatic cancer. </p><p>Telotristat etiprate is different in that it prevents serotonin production by blocking tryptophan hydroxylase (TPH), which triggers the excess serotonin production within mNET cells, rather than by reducing its release from tumor cells. This allows a two-pronged approach to the disease when used together with somatostatin analogs. The product was <a href="http://www.scripintelligence.com/business/Ipsen-pays-Lexicon-23m-upfront-for-ex-US-Japan-rights-to-PhIII-drug-354610" target="_new">licensed to Ipsen</a> (which markets the leading somatostatin analog product Somatuline (lanreotide)) for Europe and other markets outside the US and Japan in October last year for an upfront payment of $23m. </p><p>Lexicon retains rights to market telotristat etiprate in the US and Japan, and is building the in-house commercial infrastructure for the US market. It plans to file both doses with the FDA early next year. "We are extremely pleased with these top-line results," said Lexicon President and CEO Lonnel Coats.</p><h2>TELESTAR Study</h2><p>The 135-patient TELESTAR study tested two doses of telotristat etiprate &ndash; 250 mg and 500 mg each three times per day &ndash; against placebo when added to somatostatin analog therapy. Both doses produced a significant reduction from baseline compared with placebo in the average number of daily bowel movements over the 12-week study period (p<0.001), meeting="" the="" study's="" primary="" endpoint.=""></0.001),></p><p>More telotristat etiprate patients achieved a durable response (44% and 42% in the 250 mg and 500 mg arms, respectively), defined as at least a 30% reduction in daily bowel movements over at least half the days of the study period, as compared to 20% with placebo (p<0.040), a="" key="" secondary=""></0.040),></p><p>In the final week of the study, the 250 mg patient group experienced a 29% reduction in the average number of daily bowel movements compared with baseline, those in the 500 mg arm experienced a 35% reduction, while the placebo group had a 17% reduction. Lexicon said these results were consistent with those seen in the 12-week Phase II telotristat etiprate study.</p><p>Treatment-emergent adverse events, serious AEs and discontinuation due to AEs were generally similar in all three treatment arms, but it looked like the 250 mg dose had a better tolerability profile, similar to placebo and somewhat better than the 500 mg dose with respect to gastrointestinal discomfort and mood, Lexicon said. </p><p>The 12-week study period is being followed by a 36-week open-label extension where all patients receive telotristat etiprate 500 mg three times daily. </p><p>Lexicon's other lead product is a dual SGLT-1 and -2 inhibitor, sotagliflozin, in Phase III for type 1 diabetes. It also has products for glaucoma, rheumatoid arthritis and irritable bowel syndrome in earlier clinical development. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 387
+
+<p>Lexicon Pharmaceuticals Inc. is looking forward to filing its first US NDA after announcing positive top-line Phase III data for its lead product, telotristat etiprate, in treating cancer patients with carcinoid syndrome inadequately controlled by the current standard of care. Shares in the firm shot up by 47% to $12.41 on NASDAQ the morning of Aug. 1, 2015 following the news. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Lexicon Share Spike On Carcinoid Syndrome Phase III Data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150728T230000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150728T230000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150728T230000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029408
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Lexicon Share Spike On Carcinoid Syndrome Phase III Data 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359657
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0b676a92-0083-4b59-a80f-8a1124c5a1e6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

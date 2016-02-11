@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {0A729832-CC0C-4DDC-A41A-0460AA10FBDA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/17/AbbVie In Hot Seat Over HCV Drugs Serious Liver Injury Risk
+parent: {69090E84-59B3-48E6-BA8E-17CCEB89279C}
+name: AbbVie In Hot Seat Over HCV Drugs Serious Liver Injury Risk
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 81a4c44f-08fb-491b-b40d-f4e4ca3b78c2
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{B3CB389F-B9B7-4041-9E3D-C9810F548727}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+AbbVie In Hot Seat Over HCV Drugs' Serious Liver Injury Risk
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+AbbVie In Hot Seat Over HCV Drugs Serious Liver Injury Risk
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5506
+
+<p>The US FDA's alert about liver failure and death in patients taking AbbVie Inc.'s hepatitis C fixed-dose combination therapies Viekira Pak and Technivie is a significant setback for a company that already is a distant second in the market behind Gilead Sciences Inc., and the agency's move clears the way for HCV newcomer Merck & Co. Inc.</p><p>AbbVie is adding safety warnings to the package inserts for Viekira Pak (ombitasvir/paritaprevir/ritonavir/dasabuvir) and Technivie (ombitasvir/paritaprevir/ritonavir) after the FDA's Oct. 22 drug safety communication about post-market reports of hepatic decompensation and liver failure in patients with underlying liver cirrhosis who were taking the drugs.</p><p>AbbVie stressed in a statement issued after the FDA's notice that the cases mostly were in patients not recommended for treatment. It issued a statement explaining that initial labeling for Viekira did not recommend using the drug in patients with Child-Pugh B cirrhosis, with a contraindication in Child-Pugh C (both forms of severe hepatic impairment). After consultation with the FDA, Viekira is now also contraindicated in Child-Pugh B, the firm said.</p><p>There have been 26 cases in the FDA Adverse Event Reporting System (FAERS) of hepatic decompensation since Viekira and Technivie's launches in December 2014 and July 2015, respectively, and at least 10 cases have resulted in liver transplantation or death, the agency said. Most of the cases occurred in patients receiving Viekira who had evidence of advanced cirrhosis before starting treatment.</p><p>Viekira is indicated, with or without co-administration of ribavirin, in <a href="http://#http://www.scripintelligence.com/home/Viekira-OKd-AbbVie-prices-under-Gileads-Harvoni-355775" target="_new">genotype 1 HCV patients with compensated cirrhosis</a>, including Child-Pugh A disease. Technivie, which includes the same components as Viekira except for the polymerase inhibitor dasabuvir, is <a href="http://#http://www.scripintelligence.com/business/Viekira-on-blockbuster-pace-as-AbbVie-adds-2nd-HCV-drug-359623" target="_new">indicated for genotype 4 HCV patients without cirrhosis</a>.</p><p>AbbVie noted in its Oct. 22 statement that the updated packaging inserts for Viekira recommend that physicians assess evidence of hepatic decompensation prior to treatment and during treatment in cirrhotic patients. </p><p>"Most patients with these severe outcomes had evidence of advanced cirrhosis prior to initiating therapy," the big pharma added. "Because post-marketing events are reported voluntarily during clinical practice, estimates of frequency cannot be made and a causal relationship between treatment and these events has not been established."</p><p>The FDA, however, noted that "temporal association from starting Viekira Pak or Technivie and resolution of symptoms in some patients after the medicine was stopped suggest a potential causal association."</p><p><b>AbbVie And Partners Take Stock Hit</b></p><p>The news surfaced about an hour before stock trading closed in the US, but AbbVie and Enanta Pharmaceuticals Inc., which developed the protease inhibitor ombitasvir, took hits to their share prices. AbbVie's stock closed down 10.3% on the day at $48.27, while Enanta was hit harder, falling 40.6% to $23.90.</p><p>Express Scripts Holding Co. also saw a decline, dropping 4.1% to $82.69. The pharmacy benefit manager is in a difficult position as it has given Viekira <a href="http://www.scripintelligence.com/home/Express-Scripts-on-deal-for-AbbVies-Viekira-more-to-come-beyond-hepatitis-C-355807" target="_new">exclusive positioning on its preferred formulary</a>.</p><p>ISI Evercore analyst Mark Schoenebaum called the sell-off of AbbVie stock an overreaction by investors. "Although we are sympathetic to the market environment, on paper the stock movement in this instance does not make sense to us," he wrote.</p><p>About 20% of the patient population has underlying liver cirrhosis, he noted, "however, in patients without cirrhosis, there still may be hesitation from doctors on the news."</p><p>AbbVie is on track to bring out its second-generation HCV products in 2017, Schoenebaum pointed out, and the single-pill regimen was expected to unseat Viekira then, so the long-term impact isn&rsquo;t dire.</p><p>Tim Anderson of Sanford C. Bernstein called the labeling change "likely a damaging event" for AbbVie in a hyper-competitive HCV market. While AbbVie's regimens are already running a distant second to Gilead's Sovaldi (sofosbuvir) and the combination pill Harvoni (sofosbuvir/ledipasvir), he pointed out, Merck will be the main beneficiary of the news as it is on track to bring a once-daily combo pill regimen to market in the US during the first quarter of 2016.</p><p>AbbVie, which is scheduled to report its third quarter earnings on Oct. 30, posted worldwide sales of $385m for Viekira during the second quarter. Although somewhat disappointing and a mere fraction of Gilead's HCV drug revenue, AbbVie said its sales put Viekira on a path to earn $1.5bn in 2015 and to eventually reach $3bn. The Oct. 30 earnings report will provide the first sales data for Technivie since its July launch.</p><p><p>This article has also been published in <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet-daily" target="_new">"The Pink Sheet" Daily</a>. <i>Scrip Intelligence</i> brings selected complementary coverage from our sister publications to our subscribers.</p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 345
+
+<p>The US FDA's alert about liver failure and death in patients taking AbbVie Inc.'s hepatitis C fixed-dose combination therapies Viekira Pak and Technivie is a significant setback for a company that already is a distant second in the market behind Gilead Sciences Inc., and the agency's move clears the way for HCV newcomer Merck & Co. Inc.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+AbbVie In Hot Seat Over HCV Drugs Serious Liver Injury Risk
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151017T034941
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151017T034941
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151017T034941
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030133
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+AbbVie In Hot Seat Over HCV Drugs' Serious Liver Injury Risk
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+201000116
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{35998F02-6661-4699-8D32-35450F867D10}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361103
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+81a4c44f-08fb-491b-b40d-f4e4ca3b78c2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

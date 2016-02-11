@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {5986535D-753A-40D6-921C-804A0D0BC85E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/11/Unsustainable Drug Pricing Requires Global Solution
+parent: {22D0ECFE-8F71-4F7C-BBF9-629CD8FA035B}
+name: Unsustainable Drug Pricing Requires Global Solution
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: afeb8472-c357-4010-9c5b-9e78e223cbb6
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+'Unsustainable' Drug Pricing Requires 'Global Solution'
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Unsustainable Drug Pricing Requires Global Solution
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4248
+
+<p>The pricing situation in the US is "completely unsustainable," according to Express Scripts CMO Steve Miller. Of course, this isn't a uniquely US issue, but with more than half of global pharma industry profits coming out of the US, "patients feel they're bearing the brunt of the cost of innovation," he told delegates at the FT Global Pharmaceutical and Biotechnology Conference in London (Nov. 16). </p><p>According to Miller, US drug spending is set to rise from $300bn to $500bn by 2018. "Patients expect the newest and best drugs, but unfortunately can no longer afford them."</p><p>Other speakers at the meeting debating market access and the solution to rising drug costs agreed in principle to this unsustainability but some &ndash; notably Roche CEO Severin Schwan &ndash; were more optimistic than others on the potential for a solution.</p><p>"The pricing debate is fierce and pharma doesn't shy away from it," stated the ABPI's Richard Torbett. "Nothing is under greater scrutiny by the public and by government. And it should be under scrutiny, that's only right, but it does raise the question, 'What does fair scrutiny look like?'"</p><p>Roche's Schwan noted that around 10% of GDP of European countries is spent on healthcare, and 10% of this is spent on medicines, "So just 1%," he pointed out. "If you listened to the media, your impression would be that it was 90% of GDP that was spent on medicines."</p><p>The CEO believes the debate on how much countries should be spending on medicines is a "premature" discussion. "First we need to decide how much of GDP we want to spend on healthcare overall, then we should decide how much to spend on medicines." In Switzerland, proportionately more is spent on general healthcare outside of medicines than in other European countries, he noted.</p><p>The key question being asked is what is the value of life? "But there is no objective answer," said Schwan. He bemoaned the limitation of NICE's tool to assess reimbursement, the QALY.</p><p>Karl Claxton, professor of health economics at the University of York (UK) believes what is "long overdue" is for everyone to get to grips with the discrepancy between the price charged for medicines and the price payers can afford to pay for them. The UK has a transparent system of assessing benefit versus cost, called NICE, Claxton reminded delegates. Misunderstandings arise in the UK because the QALY is misunderstood. The QALY is just a (well-researched) number, "not an answer to the value of life question," he said. </p><p>NICE's chair, David Haslam, agreed that the QALY is not the final word in reimbursement. "The QALY wasn't delivered from on high as the only way to deal with pricing. But it's what we have at the moment. If someone comes to us with a better model, we'll be very happy to listen to them." However, NICE is committed to the QALY in the meantime under the PPRS, he noted.</p><p>Despite the challenges, Roche's Schwan expects to see great improvement in pricing strategies via "sophisticated differentiated pricing solutions." But what needs to happen first is shift towards a "more global" approach to tackling the crisis, which means more collaboration between companies, more collaboration between industry and regulators, and more collaboration between regulatory agencies.</p><p>"Clinical trial data is proprietary, but outcomes data is not," Schwan said. To access this data, which is necessary for pricing discussions, collaboration with regulators and with the wider industry is critical.</p><p>One outcome of innovative collaboration is a new surrogate endpoint, pathological clinical response (the absence of cancer cells), which Roche developed "in collaboration with regulatory authorities," claimed Schwan.</p><p>"The greatest challenge, the greatest pain I feel, is when it comes to the regulatory environment," added Schwan. The FDA is succeeding in accelerating regulatory processes for innovative medicines, but the EMA is lagging behind, he said. China, meanwhile, has been beset by major delays, according to the CEO.</p><p>Torbett from the ABPI concurs. "How can local, national and regional views be knit together for a comprehensive pricing strategy?" This will be key to the solution.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 409
+
+<p>The pricing situation in the US is "completely unsustainable," according to Express Scripts CMO Steve Miller. Of course, this isn't a uniquely US issue, but with more than half of global pharma industry profits coming out of the US, "patients feel they're bearing the brunt of the cost of innovation," he told delegates at the FT Global Pharmaceutical and Biotechnology Conference in London (Nov. 16). </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Unsustainable Drug Pricing Requires Global Solution
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151011T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151011T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151011T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030326
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+'Unsustainable' Drug Pricing Requires 'Global Solution'
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361493
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+afeb8472-c357-4010-9c5b-9e78e223cbb6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

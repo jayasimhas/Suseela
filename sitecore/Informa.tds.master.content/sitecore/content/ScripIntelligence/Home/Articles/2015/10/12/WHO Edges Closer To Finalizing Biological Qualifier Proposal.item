@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {E3D589EA-2408-4FC0-BC1B-DE29E54F95E9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/12/WHO Edges Closer To Finalizing Biological Qualifier Proposal
+parent: {813E91F7-2534-45AC-BC00-F510C03EF4F7}
+name: WHO Edges Closer To Finalizing Biological Qualifier Proposal
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5539578d-7f8e-4a08-bf7a-06113eb0294a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+WHO Edges Closer To Finalizing 'Biological Qualifier' Proposal
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+WHO Edges Closer To Finalizing Biological Qualifier Proposal
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11057
+
+<p>The final version of the World Health Organization's plan for a "biological qualifier" for all biological medicines could be adopted by the end of this year if agreement is reached on the latest draft during a meeting this week.</p><p>Agreement is not a foregone conclusion though. While a majority of stakeholders are in favor of the scheme, some see no need for it, and the 61st Consultation on International Nonproprietary Names (INN) for Pharmaceutical Substances, which begins on Oct. 13, is therefore likely to see some quite polarized positions presented on the biological qualifier (BQ) proposal. </p><p>The International Federation of Pharmaceutical Manufacturers and Associations (IFPMA), for example, is backing the idea, while others, including most EU member states and the European Biosimilars Group (EBG) at the European Generic and Biosimilar Medicines Association (EGA), are not. The EBG has gone so far as to call for all further talks to be put on hold until more clarity is achieved.</p><p>The BQ would be a randomly generated four-letter code that would follow, but not be part of, the INN, and would apply to all biologics, the aim being to facilitate the identification of individual products by tagging the BQ to a particular manufacturer. It would be a voluntary scheme, although the WHO clearly hopes that it will be taken up by jurisdictions worldwide. </p><p>The proposal, which has been under development for a couple of years now, has been revised to address a number of issues and concerns that have been raised by various stakeholders. At the 60th Consultation in April, the WHO said that two-thirds of stakeholders were in favor, mainly industry and patient groups, but that a "significant minority" disagreed, "comprising funding organizations, pharmacists and personal submissions." </p><p>Government agency responses varied, with Australia, Canada and Japan in favor, and Argentina, Brazil, Colombia and South Korea against the proposal, and, "despite the European Medicines Agency being partially in agreement, most constituent EU member states were against," the WHO declared. Opposition was in part based on suggestions that there would be "a deleterious effect on the uptake of biosimilars."</p><p>But positions within the pharmaceutical industry are quite different too. The EBG told <i>Scrip </i>that while it welcomed efforts by the WHO INN Secretariat and the WHO INN Expert Committee to "avoid proliferation of separate and distinct naming by individual regulatory authorities," it could not support the BQ proposal in its current form. </p><p>The IFPMA by contrast says the BQ scheme is intended to be an adjunct to current pharmacovigilance systems, to improve reporting strategies and to make a clearer link between biological substances. "As with any process, there are many stakeholders and many views, but it is supported by the IFPMA," according to Keith Watson of the IFPMA's Biotherapeutics Group. </p><h2>Revised Proposal</h2><p>The proposal to be discussed at the open session of the Oct. 13 meeting has been revised in a number of respects. To allay fears that the BQ was being introduced to identify biosimilars specifically, and thereby suggest some sort of different in quality between them and originator products, practically all references to biosimilars have been removed from the latest version. </p><p>Moreover, the proposal now says that the BQ will be assigned to the marketing authorization holder (MAH), rather than to the manufacturing site. This is mainly because multinational companies often shift production around among their various manufacturing facilities at global level, and may also add new sites, for example. </p><p>The EBG said it wanted the WHO to relate the BQ to the company instead of the manufacturer of the active substance "because the BQ must not separate the product from the company accountable for its safety." </p><p>For the IFPMA, Watson told <i>Scrip</i> that the federation was "pleased that the WHO listened to those concerns from manufacturers and regulators alike, and modified and updated the proposal to link the BQ to the parent company, which is legally responsible for the safety of its own products worldwide, immaterial of where the product is manufactured." The BQ is "all about reporting of ADRs," so "linking it to the parent organisation is the best objective in this situation," he said. </p><p>Not all would agree that this is the key objective of the BQ, though. The WHO said that as well as pharmacovigilance issues, stakeholders had different positions on the use of the qualifier, with some seeing value in its identification of licensed products, and others focusing on prescribing and the avoidance of biosimilar interchangeability.</p><p>These and numerous other questions have yet to be sorted out, and are likely to be raised by stakeholders at the Oct. 13 meeting, who each have 10 minutes to deliver a presentation on the BQ proposal. </p><h2>Key Issues</h2><p>One key issue is the form that the BQ would take. The plan at present is to have a randomly generated four-letter code (excluding vowels to avoid producing potentially inappropriate words). However, some stakeholders have suggested it "would be easier for stakeholders, particularly patients and physicians, if the code were memorable," Watson says, adding that his position is that "a memorable code would perhaps be preferable. The BQ is to there to help attribute adverse events, so either option would be workable in the long term, but we also have to consider the memorability concept."</p><p>Fabio Bisordi, Global Head of International Regulatory Policy at Roche, said that the US Food and Drug Administration had made a proposal for both options, random and memorable, and that it was "important that the regulators and the WHO are interacting and discussing this topic. It is important that they have consistency on this." </p><p>Certainly the situation in the US is far from clear. Pending the adoption of final guidance, the FDA agreed that Sandoz' Zarxio, which in March became the first biosimilar to receive FDA approval, should carry the "placeholder" name filgrastim-sndz, although the agency wants to change the suffix and the issue is still under discussion.</p><p>While the WHO says that the random four-letter code remains the preferred format, there have also been suggestions that the four-letter code should be followed by a fifth letter &ndash; a "checksum" &ndash; to verify the accuracy of the code. However, this idea is not likely to gain much traction: the WHO said it had received a "lukewarm reception" as it could "exacerbate an already non-memorable four-letter code" and could only be used with appropriate software, although it added that the idea would be "further explored."</p><p>The IFPMA, for one, isn't keen. "We are certainly not in favour of the checksum for the simple reason that it adds additional complexity," Watson said. "It would be another letter, so you would move from four to five, and it is important to have some pragmatism here, you have to be clear about something that may add unnecessary complexity."</p><h2>Who Wants The BQ?</h2><p>Beyond the technical details, a number of issues remain to be decided, such as whether the BQ is really needed, where it would be taken up, and what would happen in countries which had already introduced their own naming conventions, such as Australia. </p><p>Certainly sentiment about the BQ plan is lukewarm within the EU regulatory system, where most regulators, the European Commission and the generics industry feel that the current situation, requiring brand names and batch numbers for traceability purposes, is satisfactory and doesn't need any further system of identification for biologic medicines. </p><p>Earlier this year, Sabine Jülicher, head of unit D5 (medicinal products &ndash; authorizations, EMA) at the commission's health directorate, said "we are not intending to change labelling and naming of biosimilars. We're not going to [address] that topic in detail, knowing it's a sore point, but we don't have intentions to change our current position". Peter Richardson, head of quality at the EMA, said that at the EMA "we follow WHO policy on INNs for biologicals, and we agreed in Europe that we will continue to use the INN of the reference product for biosimilars."</p><p>The EBG agrees. "The BQ should not be implemented in countries which manage very well with brand name or INN accompanied by company name, like the EU," it declared." "Any new identifier must be systematically tested and not be implemented before a vast majority of regulators agrees it is needed on their territory and will be used (otherwise it defeats the initial goal of prevention of the proliferation of different naming policies)."</p><p>It said that at this week's meeting it would call for a "moratorium on further discussion of the BQ proposal until further clarity becomes available further to international regulators' exchange on this important matter."</p><p>By contrast, the IFPMA is keen to see the project go ahead, although it conceded it was not clear exactly where it would be taken up. Watson said it was "premature to speculate which drug regulatory authorities will adopt the BQ, but certainly there has been a lot of input from the DRAs to the WHO." It is possible that some jurisdictions will actively adopt the BQ idea, and others will accept it "passively". </p><p>There is also the question of the retrospective application of the BQ to products already on the market. The proposal initially called for retrospective application, although the WHO said in June this year that this might not be legally possible in some jurisdictions. Where a substance was already marketed, it said, information could gradually be fed into the WHO database, for example when a manufacturing change required regulatory authorization. Watson says it is too early to say how it will be done, but "probably a stepwise approach will be adopted. It will depend on the timing and the jurisdiction." </p><p>A number of other issues are likely to be discussed, such as the fee for a BQ application, confidentiality of the BQ database, and whether the scheme should be piloted, for example by one "enthusiastic" regulatory body, before it was implemented, in order to "avoid the BQ doing more harm than good," in the WHO's words.</p><p>After stakeholders have exchanged views with the INN committee at the meeting, the committee will hold a closed session to discuss the comments made and then make any changes deemed necessary. Watson said he hoped the proposal would be recommended and adopted soon after the meeting. "We would like to think this is the last open session before the proposal is adopted later this year." </p><p><i>This article has also been published in </i><a href="http://www.rajpharma.com/home/" target="_new">Scrip Regulatory Affairs</a>. <i>Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers</i>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 235
+
+<p>The final version of the World Health Organization's plan for a "biological qualifier" for all biological medicines could be adopted by the end of this year if agreement is reached on the latest draft during a meeting this week.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+WHO Edges Closer To Finalizing Biological Qualifier Proposal
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151012T230006
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151012T230006
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151012T230006
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030024
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+WHO Edges Closer To Finalizing 'Biological Qualifier' Proposal
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360912
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042504Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5539578d-7f8e-4a08-bf7a-06113eb0294a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042504Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

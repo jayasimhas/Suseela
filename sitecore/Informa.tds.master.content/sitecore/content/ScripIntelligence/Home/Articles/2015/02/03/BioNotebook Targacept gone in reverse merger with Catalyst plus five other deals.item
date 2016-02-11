@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {80B69862-ECBE-48CC-9DC7-2BD4809BC9C4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/03/BioNotebook Targacept gone in reverse merger with Catalyst plus five other deals
+parent: {55E29947-DC90-4290-B641-1F353372E1C3}
+name: BioNotebook Targacept gone in reverse merger with Catalyst plus five other deals
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fc0f8222-c75a-4347-84c3-b216feffec4c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 82
+
+BioNotebook: Targacept gone in reverse merger with Catalyst, plus five other deals
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 80
+
+BioNotebook Targacept gone in reverse merger with Catalyst plus five other deals
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8688
+
+<p>After a string of failures, Winston-Salem, North Carolina-based Targacept and its neuronal nicotinic receptor (NNR) therapeutics will be replaced by engineered human proteases for hemophilia and complement-mediated disorders in a reverse merger with privately-held Catalyst Biosciences in South San Francisco.</p><p>Publicly-held Targacept will be known as Catalyst and its stock market ticker symbol will change from TRGT to CBIO. The combined company will focus entirely on the development of Catalyst's five mostly preclinical therapeutic candidates. Only PF-05280602 (CB 813d), an engineered Factor VIIa drug candidate licensed to Pfizer predecessor Wyeth in 2009, is in clinical development (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Wyeth-signs-500-million-deal-with-Catalyst-149511" target="_new">2 July 2009</a>).</p><p>Targacept's last drug candidate TG-6499 is under evaluation in a Phase I/II exploratory clinical trial for the treatment of gastroparesis. Current Targacept shareholders will retain rights to the NNR drug for two years unless it is sold prior to the reverse merger with Catalyst.</p><p>It seems unlikely that Targacept will be able to derive any value out of TG-6499 given the company's past clinical failures with all other NNR therapeutics. AstraZeneca abandoned its long-term collaboration with Targacept in October after several disappointments (scripintelligence.com, <a href="http://www.scripintelligence.com/business/AstraZeneca-ditches-troublesome-Targacept-354395" target="_new">10 October 2014</a>). Targacept said at that time that it would focus on business development opportunities for non-nicotinic therapies going forward.</p><p>Targacept had $114.5m in cash as of 30 September, according to the company's third quarter 2014 financial results &ndash; the last time it reported quarterly earnings. When combined with Catalyst, the company will have $40m in cash (including $5m from Catalyst) after $20m is distributed to current Targacept shareholders in a special dividend. Another $37m in convertible notes also will be given to existing stock owners.</p><p>"This merger establishes a well-capitalized public company with resources to advance our unique protease-based product candidates through multiple future value inflection points," Catalyst CEO Nassim Usman said in a joint statement with Targacept. "In addition to our Factor VIIa program, we will also have sufficient resources to initiate and complete a planned proof-of-concept study of CB 2679d, a next-generation Factor IX for hemophilia B patients, as well as further develop of our novel Factor Xa variant and our anti-complement programs."</p><p>CB 2679d is being developed in partnership with ISU Abxis of South Korea (scripintelligence.com, <a href="http://www.scripintelligence.com/business/ISU-Abxis-has-the-IX-factor-as-Catalyst-chooses-hemophilia-partner-347250" target="_new">11 October 2013</a>).</p><p>Current Catalyst shareholders will own 65% of the combined company immediately after the merger closes, but Targacept shareholders will own up to 49% depending on how many investors redeem their non-interest-bearing convertible notes in the two years following completion of the merger.</p><p>"The proposed transaction employs an innovative structure that is designed to optimize stockholder value for both Catalyst and Targacept," Targacept president and CEO Stephen Hill said in the joint statement with Catalyst.</p><p>Targacept closed at $2.62 per share on 5 March with an $89.9m market cap, but the stock fell 4.2% to $2.51 in after-hours trading following the merger announcement.</p><p><b>Grifols invests in startup Alkahest</b></p><p>Alkahest recently became a tenant in Johnson & Johnson's newest early-stage biotechnology company incubator in South San Francisco and now the startup has a $37.5m equity investment from the Spanish company Grifols to pay its rent and fund research into treatments for aging and neurodegenerative diseases (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Denovo-Celimmune-revive-Lilly-Amgen-programs-Malin-invests-in-Serenus-JandJ-opens-fourth-incubator-Blueprint-Alexion-partner-357054" target="_new">4 March 2015</a>). </p><p>Alkahest was founded by Tony Wyss-Coray and other Stanford University scientists. It will develop novel plasma-based products for the treatment of cognitive decline in aging as well as central nervous system (CNS) disorders, including Alzheimer's disease, with Grifols. </p><p>The Barcelona-based company's investment in Alkahest will give Grifols a 45% ownership stake in the private firm and two seats on Alkahest's board of directors. Grifols also will provide $12.5m in research funding and Alkahest is eligible to receive milestone fees and royalties during the course of the companies' partnership.</p><p><b>Spectrum licenses poziotinib from Hanmi</b></p><p>Henderson, Nevada-based Spectrum Pharmaceuticals will license the pan-HER inhibitor poziotinib from Hanmi Pharmaceuticals for undisclosed financial terms. Spectrum has global rights to develop and sell the drug worldwide, except for in Korea and China. </p><p>Hanmi will retain financial responsibility for ongoing Phase II clinical trials in breast, gastric, non-small cell lung cancer (NSCLC), and head and neck cancer. The breast and lung cancer trials are backed by National OncoVenture, an initiative from the Korean government's National Cancer Center.</p><p><b>TG Therapeutics, Checkpoint Therapeutics collaborate in immuno-oncology</b></p><p>New York-based TG Therapeutics and Checkpoint Therapeutics, a new subsidiary of Coronado Biosciences in New York, will collaborate on development and commercialization of Checkpoint's preclinical monoclonal antibodies that inhibit programmed death ligand-1 (PD-L1) and glucocorticoid-induced tumor necrosis factor receptor related protein (GITR). Both programs are expected to begin clinical trials in the second half of 2016. </p><p>Checkpoint will earn undisclosed upfront, milestone and royalty fees under the companies' agreement. TG hopes to enhance the efficacy of its TG-1101 and TG-1202 with the Coronado subsidiary's immuno-oncology antibody therapeutics. TG's two clinical cancer drug candidates already are being tested in combination with Imbruvica (ibrutinib) and other externally developed therapies (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Four-deal-updates-a-venture-funding-round-and-a-milestone-fee-355431" target="_new">5 December 2014</a>).</p><p><b>Kite expands NCI partnership for CAR-T therapies</b></p><p>Kite Pharma amended its Cooperative Research and Development Agreement (CRADA) with the National Cancer Institute (NCI), part of the National Institutes of Health (NIH), to include new research regarding immune responses in cancer and to add more T cell receptor (TCR) and chimeric antigen receptor T cell (CAR-T) therapeutic candidates to the Kite-NCI collaboration. </p><p>Kite's quarterly payments to NCI under the revised CRADA will increase from $250,000 to $750,000. The Santa Monica, California-based company launched an initial public offering in 2014 to fund development of TCR and CAR-T therapies that came out of its partnership with NCI (scripintelligence.com, <a href="http://www.scripintelligence.com/home/TABLE-2014-IPO-values-mixed-at-mid-year-352984" target="_new">23 July 2014</a>).</p><p><b>Cerulean, GOG Foundation partner on CRLX101 in ovarian cancer</b></p><p>Cambridge, Massachusetts-based Cerulean Pharma and the GOG Foundation, a nonprofit focused on research for gynecological malignancies, entered into a clinical research agreement for an 18-patient Phase Ib clinical trial to evaluate CRLX101 plus paclitaxel in relapsed ovarian cancer. The partners will enroll their first patient in the second quarter of 2015.</p><p>CRLX101 is a nanoparticle-drug conjugate (NDC) designed to slowly release the anti-cancer payload camptothecin inside tumor cells. The NDC inhibits topoisomerase 1 (topo 1), which is involved in cellular replication, and hypoxia-inducible factor-1&#945; (HIF-1&#945;), which may be involved in drug and radiation resistance. CRLX101 is under evaluation in combination with Avastin (bevacizumab) in a Phase II renal cell carcinoma study. </p><p>The drug previously succeeded in a Phase II ovarian cancer clinical trial as a monotherapy after failing in a Phase IIb lung cancer trial (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Nano-anticancer-promise-in-Phase-II-ovarian-cancer-trial-349344" target="_new">15 January 2014</a>).</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 316
+
+<p>After a string of failures, Winston-Salem, North Carolina-based Targacept and its neuronal nicotinic receptor (NNR) therapeutics will be replaced by engineered human proteases for hemophilia and complement-mediated disorders in a reverse merger with privately-held Catalyst Biosciences in South San Francisco.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 80
+
+BioNotebook Targacept gone in reverse merger with Catalyst plus five other deals
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150203T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150203T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150203T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028014
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 82
+
+BioNotebook: Targacept gone in reverse merger with Catalyst, plus five other deals
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357005
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042304Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fc0f8222-c75a-4347-84c3-b216feffec4c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042304Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

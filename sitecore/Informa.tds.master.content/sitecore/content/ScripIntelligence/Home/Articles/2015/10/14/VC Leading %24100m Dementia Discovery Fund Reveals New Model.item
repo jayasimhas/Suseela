@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C1EEA596-5D94-4852-A234-0637220202CF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/14/VC Leading $100m Dementia Discovery Fund Reveals New Model
+parent: {604E8046-5BA9-4567-9E2A-9612EB50B405}
+name: VC Leading $100m Dementia Discovery Fund Reveals New Model
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b5be6956-c06a-4b0b-a5e9-6dc9554c83b3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{C547E0DE-05E0-4671-8C7A-37F0D3DF4F0E}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+ VC Leading $100m Dementia Discovery Fund Reveals New Model  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+VC Leading $100m Dementia Discovery Fund Reveals New Model
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7697
+
+<p> A very early stage fund run by a venture capital firm purely for the discovery of disease-modifying drugs for the treatment of dementia &ndash; the Dementia Discovery Fund (DDF) &ndash; has been launched. Six pharma companies, the UK government and the charity Alzheimer's Research UK have raised $100m in total in the first closing. It will be run by SV Life Sciences (SVLS), a leading international life sciences VC firm. SVLS's Kate Bingham tells <i>Scrip</i> why she believes the DDF could provide the breakthrough needed to develop new drugs to treat dementia. </p> <p> <p> <b>Scrip:<i> Who came up with the idea of the DDF?</i></b> </p> <p> <b>Kate Bingham:</b> The World Dementia Congress, led by World Dementia Envoy Dennis Gillings, was formed following the G8 dementia summit in December 2013. The WDC said the current model clearly was not working. Academia, small companies, big companies: nobody has developed any new drugs. </p> <p> So they recommended setting up a new fund, the DDF, which should be funded largely by the pharma industry. Pharma pools its expertise, experience, resources, knowledge of the space &ndash; but it is managed by an experienced venture firm that can handle that early, nimble, high-risk, potentially high impact science that might be able to tease out some new drugs that address new mechanisms for treatment of dementia. </p> <p> <p> <b>Scrip: <i>Which pharma companies have contributed to the fund, and why are they taking part?</i></b> </p> <p> <b>KB:</b> Biogen, GlaxoSmithKline, Johnson &amp; Johnson, Lilly, Pfizer and Takeda. They're taking part for a number of reasons, led by the general recognition that the world hasn't solved the problem of dementia, and as people get older, it becomes a much more pressing and growing problem. So there are elements of altruism. But also elements of, if it's successful, while the people sitting around the SAB [scientific advisory board] table don't have any rights of negotiation or rights to license or acquire anything the fund invests in, but they do have a seat on the SAB and that's attractive as that's the vehicle that we will use to tap into the experience and knowledge of these different companies. We want to make sure that if there are lessons to be learnt from the past &ndash; we don't go up the same blind alleys &ndash; and if there are some positive new models or experts or assays or anything we can benefit from that they have learnt, that we can take advantage of that knowledge. </p> <p> <p> <b>Scrip: <i>How committed are these pharma companies to pool their resources?</i></b> </p> <p> <b>KB:</b> The fantastic thing is that these six guys have committed to come together for at least one day, three times a year. We will use that group to test new ideas, look at new opportunities, update on investments we've made already. While they don't have rights to acquire, should they think that something fits within their neuroscience pipeline, they will be well placed to step in and make a market competitive bid for the assets, given that they will have seen those assets develop over the course of months and years. </p> <p> From our perspective, building a selection of investments &ndash; with our potential customers sitting around the table, sharing their knowledge and expertise &ndash; it's pretty interesting. </p> <p> It's never happened that the head of R&amp;D at GSK [Patrick Vallance] has committed three days a year, physically, to host and take part in SAB meetings, and contribute resources and other support from GSK. It's being done at an order of magnitude that shows they mean it this time, rather than half a million dollars over several years to support a few early research programs. </p> <p> <p> <b>Scrip: <i>Has anything similar been done before?</i></b> </p> <p> <b>KB:</b> I don't think it has. Government, industry and charities, all working together with a venture capital fund manager running it? No. We plan to run this how we run our current fund, but with a clear strategic goal of getting new disease modifying drugs into the clinic for the treatment of dementia. </p> <p> I can give you one example though. J&amp;J and GSK both invested in Index Ventures' Index Life 6 fund. J&amp;J acquired XO1, which was a cardiovascular company that Index funded, which J&amp;J will have seen from the beginning. That's an example of pharma investors in a fund, with that SAB relationship, being able to see programs develop, and then step in. </p> <p> But [the pharma investors] have no rights to DDF portfolio assets. It could be a new pharma, it could be Roche, that comes in with a bid. And we are able to make a decision as we would in the open market. </p> <p> <p> <b>Scrip: <i>What will be the criteria for investment?</i></b> </p> <p> <b>KB:</b> That's one of the really interesting things about this fund. We can go from very early, hypothesis-testing, target identification &ndash; so early biology which will really be projects within academia. They won't be companies, initially. We can fund this early speculative exploratory research, and then keep funding it all the way through to hit-to-lead, lead optimization, candidate, preclinical, and into early clinical studies. Clearly with a fund this size, we're not going to be funding late clinical studies, but we want to be able to fund the lead drugs sufficiently that we can get some signals of efficacy, even if its biomarker efficacy, in patients. </p> <p> <p> <b>Scrip: <i>How does this compare with one of your regular VC funds?</i></b> </p> <p> <b>KB:</b> In a regular VC fund, our returns are purely financial. We would not be able to do this project based funding. That's something that's very different for the potential academic inventors too. This is not a grant process where you go through years' worth of writing proposals in order to get a small amount of money. If this is something interesting, we can make a decision quickly and get that money to them straight away. </p> <p> <p> <b>Scrip: <i>So we could be talking about investing very small amounts of money?</i></b> </p> <p> <b>KB:</b> $50,000-$100,000 would be the bottom end of what we do. We might repeat some studies at a CRO that has been done at an academic lab, if we want to test some of the data that we've been presented. So yes, it could absolutely be small amounts of money. Typically we'll keep core biology within the academic lab, but any chemistry or screening or tox work will be done by a third party. As the fund manager we will bring project managers who can help run those programs with the academics. </p> <p> <p> <b>Scrip: <i>Is the aim only is to create assets that will then be sold to pharma?</i></b> </p> <p> <b>KB:</b> The aim is to get novel drugs into patients that have a disease modifying effect. Theoretically it's possible that you could take that company through to another financing &ndash; venture capital or corporate venture money &ndash; and if it's something hugely attractive we could technically build up the company and take it public. So it's not automatic that it gets sold to pharma. You could conceive of building up some big neuroscience companies which are entirely independent and strategically focused and can take the drugs all the way through to market themselves, but I don't think that's going to happen for every company. </p> <p> <p> <b>Scrip: <i>Who has put in the most money?</i></b> </p> <p> <b>KB:</b> As a group, the pharma companies are by far the dominant. It's not been disclosed how much each has put in. But it doesn't matter as they each have one seat on the SAB, and we plan to leverage each of them as much as they are prepared to be leveraged. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 574
+
+<p> A very early stage fund run by a venture capital firm purely for the discovery of disease-modifying drugs for the treatment of dementia &ndash; the Dementia Discovery Fund (DDF) &ndash; has been launched. Six pharma companies, the UK government and the charity Alzheimer's Research UK have raised $100m in total in the first closing. It will be run by SV Life Sciences (SVLS), a leading international life sciences VC firm. SVLS's Kate Bingham tells <i>Scrip</i> why she believes the DDF could provide the breakthrough needed to develop new drugs to treat dementia. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+VC Leading $100m Dementia Discovery Fund Reveals New Model
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151014T200006
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151014T200006
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151014T200006
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030103
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+ VC Leading $100m Dementia Discovery Fund Reveals New Model  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361053
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042509Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b5be6956-c06a-4b0b-a5e9-6dc9554c83b3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042509Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

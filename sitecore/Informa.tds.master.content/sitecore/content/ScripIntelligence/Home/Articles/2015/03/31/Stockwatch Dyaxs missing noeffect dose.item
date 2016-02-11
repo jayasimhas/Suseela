@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {301B8F98-EF6F-49E1-8810-55390E7D69BC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/31/Stockwatch Dyaxs missing noeffect dose
+parent: {50A3B851-5621-4D88-87C1-94751D882AC7}
+name: Stockwatch Dyaxs missing noeffect dose
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e69ce844-3708-4935-bbce-f417ebd6c591
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+Stockwatch: Dyax's missing no-effect dose
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Stockwatch Dyaxs missing noeffect dose
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6050
+
+<p>On a day in a week when biotechnology stocks resumed their rout, Dyax's release of "positive" Phase Ib data was a high point in an otherwise bruising period for investors. A closer look at the data, however, suggests that the most important data points are significantly 'off-message' from Dyax's positive bravado.</p><p><p>Dyax's shares <a href="http://www.scripintelligence.com/home/Dyax-surges-on-surprise-results-for-HAE-drug-357631" target="_new">jumped by close to 50%</a> when it reported the results of the Phase I b trial with its monoclonal antibody DX-2930 in the prevention of hereditary angioedema (HAE) attacks in a total of 37 patients. The number of HAE attacks between day 8 and day 50 showed a statistically significant reduction over placebo for the 300mg and 400mg doses in 4 patients and 9 patients, respectively. Dyax's CMO regarded the trial as clear proof of concept that DX-2930 could prevent HAE attacks. The investment bank analysts from JP Morgan and Cowen were typically effusive describing the results as "impressive" and "strongly positive", respectively. The analysts from Mizuho and Piper Jaffray were more reserved in their assessments although none of the sell-side research I read mentioned the 100% efficacy at the lower doses.</p><p><p>To approve a drug, the US FDA looks at a number of aspects, principally safety, efficacy and reproducibility. For certain chronic indications like the prophylaxis of HAE for example, ICH guidelines will also recommend how many thousands of patient years of drug exposure should be included in the license application, although for orphan drugs without an existing approved therapy, some of this can be mitigated by post-approval studies. On the efficacy front, Dyax has shown in Phase Ib that the 300mg and 400mg doses of DX-2930 in 13 patients combined provided a 97% reduction in HAE attacks. However, in the smaller graphs in Dyax's presentation, the 30mg and the 100mg doses also had 100% reductions in HAE attacks. One can see how this may confuse sell-side analysts since the 400mg dose of DX-2930 had a lower efficacy than a dose over 13 times lower. Dyax has not demonstrated something the FDA likes to see &ndash; the so called no-effect dose &ndash; which, because the 30mg dose is better than the 400mg dose, could be significantly lower than the 30mg dose. Undeterred by the absence of a linear dose response despite dose-dependent pharmacokinetics, Dyax, <a href="http://www.scripintelligence.com/home/Biogens-high-risk-bet-on-Alzheimers-a-potential-game-changer-357421" target="_new">like Biogen</a>, announced on its call that "there would not be a lot of value in a Phase II study" of DX-2930 and it wants to go directly into Phase III. Modern drug development has a <a href="http://www.scripintelligence.com/home/MedivationPfizers-disappointing-Dimebon-data-sends-Alzheimers-hopes-and-shares-crashing-189110" target="_new">litany of Phase III failures</a> even after highly statistically significant Phase II studies supposedly validated by <i>Lancet</i> papers. The worrying trend seems to be for CEOs not to even want to know the Phase II answer but to prolong their tenures and their company's stock offerings by going straight for the big, years-long Phase III study without any interim analyses. </p><p><p>Despite the clinical trials website not listing the number of HAE attacks as a primary outcome measure for study <a href="https://www.clinicaltrials.gov/ct2/show/NCT02093923?term=DX-2930&rank=1" target="_new">NCT02093923</a>, we can only wonder what an end of Phase II meeting with the FDA would look like as Dyax uses the "Phase Ib data to inform the design and discussion of the Phase III pivotal trial design with the FDA". On the safety front, Dyax has previous 'form' with the FDA after the agency placed its now approved product for the acute treatment of HAE (Kalbitor, ecallantide) on clinical hold and the issue of hypersensitivity <a href="http://www.scripintelligence.com/home/Stockwatch-For-what-the-clinical-hold-tolls-352368" target="_new">continues to limit Kalbitor's commercial success</a>. If I were an FDA reviewer, I would wonder if whoever it was in Dyax that decided it should move into Phase III in a chronic indication with only 24 patients dosed and the absence of a no-effect dose should probably go back to their psychiatrist for a medication review because clearly, and unlike DX-2930, they are well below the therapeutic dose in their medication.</p><p><p>On the conference call, Dyax management announced that the results for the 30mg and 100mg doses with 100% attack prevention rates were difficult to interpret. Let me help them out. One explanation for the highest dose of DX-2930 being less efficacious than the lowest dose is that the number of patients treated is so small that all of these results could have arisen by chance and either all or none of the doses work. Unfortunately for Dyax, the only way to clarify this ambiguity would be to run a larger Phase II study but, like Biogen, it seems intent on avoiding this.</p><p><p>So why the outpouring of enthusiasm from the sell-side who, to an analyst, seem to have missed the startling efficacy of the two lowest doses in their research? If we've learnt anything from the latest biotech bubble it is that a 50% boost in stock price at a loss-making biotech equals an imminent investment bank-led stock offering. As the character Winston Zeddemore said in the film Ghostbusters, "If there's a steady pay check in it, I'll believe anything you say."</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest manages the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science&ndash;specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 321
+
+<p>On a day in a week when biotechnology stocks resumed their rout, Dyax's release of "positive" Phase Ib data was a high point in an otherwise bruising period for investors. A closer look at the data, however, suggests that the most important data points are significantly 'off-message' from Dyax's positive bravado.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Stockwatch Dyaxs missing noeffect dose
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150331T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150331T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150331T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028342
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+Stockwatch: Dyax's missing no-effect dose
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357590
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e69ce844-3708-4935-bbce-f417ebd6c591
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

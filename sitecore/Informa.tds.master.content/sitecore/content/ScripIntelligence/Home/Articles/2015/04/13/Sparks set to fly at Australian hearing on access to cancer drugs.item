@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {936E84E4-81D4-4533-BD0A-917F28A8928C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/13/Sparks set to fly at Australian hearing on access to cancer drugs
+parent: {9FB0ADDF-A2A3-44A3-B361-887553556EB6}
+name: Sparks set to fly at Australian hearing on access to cancer drugs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 925f7119-5708-4c27-9fcd-21913dbb07f7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Sparks set to fly at Australian hearing on access to cancer drugs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+Sparks set to fly at Australian hearing on access to cancer drugs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11780
+
+<p>A public hearing is to be held in Canberra on 20 April as part of a review of patient access to new, innovative and specialist cancer drugs in Australia that is being conducted by the Senate's Community Affairs References Committee. </p><p>The hearing will involve the government in the form of the Department of Health and the Pharmaceutical Benefits Advisory Committee (PBAC), while batting for industry will be the trade body Medicines Australia as well as representatives of Novartis Oncology, MSD Australia and Roche Products. </p><p>The department, the PBAC and Medicines Australia have all made submissions to the review, and if the often-polarized views set out in these filings are anything to go by, the hearing is set to be a lively affair. </p><p>While both sides agree there is a problem with delays to the availability of new cancer drugs, they have very different views as to who or what is responsible. And although there is consensus on the need to address the question of paying for increasingly expensive cancer treatments, industry representatives are likely to be unimpressed with the government's view that there are "real challenges" in establishing the evidence to support the high costs of many new drugs.</p><p>The review, which was launched in December, is looking into a range of issues relating to the availability of cancer drugs, such as the timing and affordability of access, the operation of the PBAC and the Pharmaceutical Benefits Scheme, and the effect of pricing and reimbursement delays on the quality of patient care. It is also considering what lessons might be drawn from experience in other countries facing similar problems on the funding of anticancers. The Senate committee was originally due to hand in its report last month, but it has been given an extension to 17 June. </p><h2>"Antiquated methodologies", says industry </h2><p>In its submission, Medicines Australia says the evidence shows that it takes longer for Australian patients to gain subsidised access to cancer medicines compared with their counterparts in the UK, Canada, France and Germany. While significant advances have been made in all areas of cancer treatment during the last three decades, the biggest advance has been in the field of medicines used to treat cancer. </p><p>"For example, some innovative medicines have increased survival by as much as 40% for some cancer patients," while cumulative innovations in drugs for other cancers have contributed to a 10% drop in mortality and an increase in overall survival up to two and a half years for some patients, the association says. </p><p>It suggests one factor causing delays in access is the system of health technology assessment (HTA) used to determine drugs' value for money. It says that HTA was first implemented in Australia 20 years ago but it "has not evolved adequately to the changes in the development of medicines and diagnostic technologies that have occurred in that time". While all new medicines are affected, "this inquiry provides the opportunity to examine how the growing system deficiencies particularly impact specialised cancer medicines". </p><p>The association notes that many cancer stakeholders take the view that access to cancer medicines in Australia is frequently "suboptimal and unsustainable" and that there is a significant time lag between the decision by the Therapeutic Goods Administration to approve a medicine and the PBS listing processes. "There is also an absence of any meaningful debate about what the Australian community considers the &lsquo;value&rsquo; of a cancer drug, or what the acceptable level of funding for caring for patients nearing the end of their life should be." </p><p>According to Medicines Australia, action is needed now to improve both the registration and reimbursement pathways for cancer medicines. "The limitations of Australia&rsquo;s reimbursement approach, based on antiquated cost-effectiveness methodologies, needs to be reviewed," and "this inquiry provides an opportunity for Australia to learn from the experiments of other countries and to develop world leading innovative access approaches so that Australian patients can get timely, subsidised access to the latest cancer treatments. Dialogue with industry is critical to achieving workable solutions and approaches."</p><p>The association talks of deficiencies in the system causing delays in access, and says there is a need for improvements to the system for cancer medicines that could also be applied to improve the system for all medicines access. It says it has already identified a number of options to improve the system through of recent submissions to a range of reviews, and those that are equally relevant to this review can be summarised as follows:</p><p>1. The government should work with industry to develop innovative access models that will acknowledge the complexity of cancer and the limitations of current regulatory and reimbursement systems, deliver more flexible evidentiary requirements which deal with issues such as crossover in clinical trials (rather than denying access on the basis of uncertainty), and properly reflect the value of cancer drugs to patients, carers and the community.</p><p>2. System efficiencies should be introduced to deliver faster access times for patients, such as fast-track registration options for the TGA, improved parallel TGA/PBAC processes, and allocation of resources to allow the PBAC to spend more time on more complex listing applications, particularly new cancer medicines.</p><p>3. Expert oncology and consumer input should be made central to the decision-making process: the inclusion of oncology relevant expertise is particularly important given the many different types of cancer and the speed with which treatment regimens are evolving. Consumers should have a stronger voice in deciding what the system of universal access should fund, as well as providing input to the decision makers about the reimbursement of individual cancer medicines.</p><h2>Often the fault of companies, says PBAC</h2><p>But the PBAC takes a rather different view, and bats the ball back into the industry's court. "There is a perception that delays in access to the listing of cancer (and other) medicines are due to PBAC processes," it says. "In fact, delays are often due to the failure of pharmaceutical companies to apply for listing, or to reach agreement with government on the conditions of supply. Some cancer medicines are never submitted to the PBAC." </p><p>When the PBAC does not recommend the listing of a new drug, this is most often because the benefit of the drug has not been demonstrated or is too small relative to the proposed price. Benefits of cancer drugs are assessed in terms of effects on overall survival, progression free-survival, response to treatment and quality of life and toxicity. And many new cancer drugs "produce only very small gains in survival, less than three months, and have very little impact on quality of life, or negative impacts due to side effects," according to the PBAC.</p><p>The committee is concerned that there is often a mismatch between the public perception of the value of cancer medicines ("often developed through the media") and the data presented by the sponsor on a confidential basis to the PBAC. This confidentiality requirement is at the insistence of the pharmaceutical industry, it observes.</p><p>In a reference to suggestions that a cancer drugs fund could be set up on the model of that in the UK (see below), the committee also rejects any moves to bypass the PBAC process in order to expedite access to new cancer drugs, which it says would "greatly increase the cost to the community and diminish the sustainability of the PBS without any commensurate gain in health outcomes. It would also lead to justified resentment among patients with other diseases." </p><p>The PBAC makes a number of recommendations, such as giving patients and clinicians access to sponsor submissions and to the evaluation of these data by the PBAC and its subcommittees, including the details of the recommendations, and collecting data nationally on the outcomes of all patients treated with new drugs, with outcomes to be monitored on a real-time basis.</p><h2>"Few transformative cancer medicines"</h2><p>The Department of Health takes a similar line, saying that the availability of new medicines is "dependent on the timing of submissions to the PBAC, which is in the hands of pharmaceutical companies", adding that the pricing of new cancer therapies "should also be more closely aligned to their patient outcomes". </p><p>Moreover, it claims, there have been few "transformative" cancer medicines in recent years and there is "a risk to innovation if business models continue to focus on the financial rewards associated with 'me-too' medicines, and not significant innovation".</p><p>There are "real challenges in establishing the evidence to support the high costs for many of these medicines, especially when benefits are incremental," the department says. "Many clinicians, as well as third-party payers, have expressed serious concern for future health expenditure if systems don&rsquo;t evolve to meet these challenges." It is important that all partners in the operation of the PBS take responsibility for achieving timely access to medicines and value for money, "and to ensure that cost-effectiveness is not lost to the expectation of quicker access to medicines of marginal or unproven benefit".</p><p>Choices will need to be made between funding new cancer drugs and other kinds of treatments, the department suggests. "Medicines are just one component of the cancer treatment journey and are often used in patients with end-stage disease, providing a small health gain. Notwithstanding the separate budgets each area of expenditure represents, total available funding for healthcare is not limitless and choices need to be made to ensure that cancer care is both clinically optimal and cost effective," it says. </p><p>With total cancer expenditure estimated to be around $4-5bn, this means a third of current funding is used for medicines, according to the department. "Any additional focus on medicines must continue to be weighed against other components of the continuum of care, as well as against other health priority areas."</p><p>The department also looks at experience in other countries, including the UK Cancer Drugs Fund (CDF). "Over the last two years, some consumer and industry stakeholders have called for Australia to have a cancer drugs fund with dedicated funding and low access thresholds, similar to the CDF," it says. </p><p>"However, analysis shows that 48% of the requests for CDF new patient applications in 2013-14 were for medicines and indications already funded on the PBS, or medicines that have since been recommended for PBS funding." 38% of the requests were for medicines not seen by PBAC, and only 9% were requests for medicines rejected by the PBAC. "In light of this, it appears difficult to sustain the argument that an English-style CDF would significantly improve access to new cancer drugs for Australians."</p><h2>Spending data</h2><p>In its submission, the department notes that more than 100 medicines for the treatment of cancer are listed on the PBS and that expenditure for currently-listed medicines was close to Aus$1.5bn (US$1.17bn) in 2013-14. "That is one in every six dollars expended through the PBS. This is up from one in eight dollars in 2012-13 and this proportion is likely to increase." At its March 2015 meeting, it said, the PBAC was due to consider 11 major submissions for cancer medicines, "with a potential total cost of Aus$589m if they are recommended for PBS listing".</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 240
+
+<p>A public hearing is to be held in Canberra on 20 April as part of a review of patient access to new, innovative and specialist cancer drugs in Australia that is being conducted by the Senate's Community Affairs References Committee. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+Sparks set to fly at Australian hearing on access to cancer drugs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150413T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150413T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150413T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028461
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Sparks set to fly at Australian hearing on access to cancer drugs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 9
+
+interview
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357851
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+925f7119-5708-4c27-9fcd-21913dbb07f7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

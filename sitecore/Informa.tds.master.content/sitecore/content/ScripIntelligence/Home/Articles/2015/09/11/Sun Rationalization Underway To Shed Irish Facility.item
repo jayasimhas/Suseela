@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {9D9C4BFB-4F9D-40C7-9168-5B01D4579BB9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/11/Sun Rationalization Underway To Shed Irish Facility
+parent: {62C55766-C278-4043-A2CE-96E19F97E9EA}
+name: Sun Rationalization Underway To Shed Irish Facility
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0c0f00c0-c7f1-4ded-a377-345285e04f25
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Sun Rationalization Underway; To Shed Irish Facility
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Sun Rationalization Underway To Shed Irish Facility
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4312
+
+<p>India's top drug firm, Sun Pharmaceutical Industries, expects to divest its Irish site. This is probably among the first of such decisions as the company goes about complex rationalization efforts aimed at deriving synergy benefits from the Ranbaxy acquisition. </p><p>Ranbaxy's site in Cashel, Ireland, manufactures formulations and Sun said that the facility had been "identified for divestment." </p><p>Sun announced the closure of the merger with Ranbaxy in March this year. "This has provided an opportunity to optimize [the] overall manufacturing network in terms of capacity, costs and efficiencies. As a result of this, decisions are being made to either close or divest some of our manufacturing facilities," a statement from Sun said. </p><p>Sun declined to provide details on the number of employees or the revenue contribution from the site in Ireland, saying it would be premature to discuss specifics.</p><p>Industry experts, though, referred to past data which suggested that the Irish facility employs close to 100 people and manufactures a range of generic products mainly in tablet form for the UK. They also claimed that the Irish unit had been "bleeding" and referred to the relatively high cost of production there.</p><p>With about 45 facilities, the Sun-Ranbaxy combine's manufacturing footprint covers five continents, with products sold in more than 150 nations. </p><p>Earlier this year, Sun raised its target for <a href="http://www.scripintelligence.com/home/Amid-Suns-FY16-earnings-gloom-some-little-gems-359545" target="_new">synergy benefits</a> from the Ranbaxy acquisition by 15-20% compared with the original target of $250m by FY18. This, the company said, will be achieved by focusing on overall profitability improvement driven by revenue and procurement synergies, manufacturing rationalization and certain cost-management measures. </p><h2>More In Store?</h2><p>Plans to divest the Irish site are seen as the first among more such potential efforts as Sun restructures its manufacturing network. </p><p>Senior Sun officials recently indicated to <i>Scrip</i> how the company expected to use a "judicious balance" between reducing complexities in its vast <a href="http://www.scripintelligence.com/business/Suns-Plant-Review-Blueprint-Balance-And-Fall-Backs-359987" target="_new">manufacturing network</a> and maintaining adequate and "fall-back" capacities for critical products as part of rationalization efforts aimed at deriving synergy benefits from the Ranbaxy acquisition. </p><p>Nimish Mehta, founder of Research Delta Advisors, believes that plants with relatively old designs, for which a revamp will mean unjustifiable investments, would be on the radar under the ongoing rationalization efforts.</p><p>"Probably non-India sites that are not critical and may not be able to service emerging markets could be targeted," he told <i>Scrip</i>.</p><p>Some industry watchers speculated that Ranbaxy's Mohali site, though tainted, may be among those being viewed favorably and nurtured back to FDA compliance, while Sun's <a href="http://%5bhttp:/www.scripintelligence.com/business/FDA-action-to-have-limited-impact-on-Sun-Marck-site-under-lens-too-350626%5d" target="_new">Karkhadi unit</a>, also under FDA glare, may potentially have a less exciting long-term future, they said. </p><p>Sun had earlier indicated that remedial action at Ranbaxy's Mohali, Dewas, Poanta Sahib and Toansa facilities was on track. Sun said it was working towards the fulfilment of the requirements of the US consent decree and hoped to expedite the resolution for at least one of these facilities. </p><p>The <a href="http://www.scripintelligence.com/policyregulation/More-trouble-for-Ranbaxy-FDA-bans-drugs-from-Toansa-facility-349561" target="_new">FDA had previously prohibited</a> Ranbaxy from manufacturing and distributing active pharmaceutical ingredients from its facility in Toansa, and subjected it to certain terms of a consent decree of permanent injunction entered against Ranbaxy in January 2012.The Dewas, Mohali and Paonta Sahib plants are already operating under the consent decree. Ranbaxy previously pleaded guilty and agreed to pay $500m to settle felony charges of manufacturing and distributing adulterated drugs made at the Paonta Sahib and Dewas facilities.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 269
+
+<p>India's top drug firm, Sun Pharmaceutical Industries, expects to divest its Irish site. This is probably among the first of such decisions as the company goes about complex rationalization efforts aimed at deriving synergy benefits from the Ranbaxy acquisition. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Sun Rationalization Underway To Shed Irish Facility
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150911T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150911T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150911T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029733
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Sun Rationalization Underway; To Shed Irish Facility
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360313
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0c0f00c0-c7f1-4ded-a377-345285e04f25
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

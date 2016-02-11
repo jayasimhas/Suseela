@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D6D9E410-9749-4810-B692-6D53A03C12AA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/02/EXECUTIVE ROUNDTABLE Part 2 Regulatory responsiveness and reimbursement challenges
+parent: {12801DE4-1951-467D-BFA2-3B630621D372}
+name: EXECUTIVE ROUNDTABLE Part 2 Regulatory responsiveness and reimbursement challenges
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1f2e92d9-a5d3-4fb2-b7b9-d6f4e94de181
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 84
+
+EXECUTIVE ROUNDTABLE: Part 2; Regulatory responsiveness and reimbursement challenges
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 82
+
+EXECUTIVE ROUNDTABLE Part 2 Regulatory responsiveness and reimbursement challenges
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 14609
+
+<p>Regulators have welcomed novel drugs more warmly in recent years, especially for rare diseases and patients lacking effective treatments, but reimbursement for innovative therapies is becoming a greater challenge, according to executives from six US and EU biotechnology companies that participated in a roundtable discussion with <i>Scrip Intelligence</i> last month.</p><p>In Part Two of a conversation that took place during the 33rd Annual JP Morgan Healthcare Conference from 12 to 15 January in San Francisco, <i>Scrip</i>'s global director of content Mike Ward and US West Coast editor Mandy Jackson spoke with executives from public and private developers of vaccines and treatments for cancer and rare diseases.</p><p>Part One provided insights into the fundraising environment for biotech companies in 2014 and a glimpse of the outlook for 2015 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/EXECUTIVE-ROUNDTABLE-Part-1-Fundraising-in-2014-and-the-outlook-for-2015-356764" target="_new">16 February 2015</a>). The forthcoming Part three will cover the dealmaking environment and predictions for this year.</p><p>Roundtable participants were: Jeremy Bender, chief business officer at Sutro BioPharma; John Haurum, CEO of F-Star; Friedrich von Bohlen, chairman of CureVac and managing director of the company's main investor dievini Hopp BioTech (SAP founder Dietmar Hopp's investment fund); CEO Robert Ryan and chief scientific officer Ron Nardi of Scioderm; Stanley Erck, president and CEO of Novavax; and Mark Boulding, executive vice president and chief legal officer at PTC Therapeutics.</p><p><p><b>Mike Ward, Scrip</b>: PTC got EU approval for Translarna [(ataluren) for nonsense mutation Duchenne muscular dystrophy (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/PTC-wins-conditional-EU-Translarna-approval-353208" target="_new">5 August 2014</a>)] more quickly than anticipated and it does seem from where Scrip is sitting, that actually it's never been so good for people to go to the US FDA or the European Medicines Agency (EMA). In the past, you got the impression that regulators were looking for a reason to say, "No," whereas now it looks like they're almost co-sponsors.</p><p><b>Mark Boulding, PTC</b>: I think that's right. Many of us are in the orphan or ultra-orphan area, and if you're in the ultra-orphan area there's tremendous flexibility, but I have to give kudos to the European Medicines Agency. They led the way with that. We found them to be very flexible and accommodating. It was a very friendly few years that we had with the [EMA's Committee for Medicinal Products for Human Use (CHMP)]. </p><p>The FDA also now, we feel, is changing and listening more to the needs of the patients and to what the physicians are saying. At least for certain companies that are addressing those high unmet medical need areas, it's become much easier to have that dialog.</p><p><b>Stanley Erck, Novavax</b>: I had a meeting with the FDA back in August in advance of our vaccinating pregnant women. You go on the road and investors will tell you, "The FDA will never let you do that," but the FDA helped us. They said, "Well, have you thought of these exclusion criteria for women who've had abdominal surgery, because you may have more adverse events unrelated to your vaccine and we want this to succeed?" At least in certain circumstances, we have found the FDA is working with you to develop products. </p><p>[<i>Novavax recently began testing an ebola vaccine in humans</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-starts-human-testing-of-Ebola-vaccine-356735" target="_new">12 February 2015</a>). <i>However, the company's most advanced programs are Phase II vaccines for respiratory syncytial virus (RSV) and influenza</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-may-take-nano-RSV-vaccine-forward-without-pharma-341800" target="_new">5 April</a> and <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-prepares-for-new-BARDA-funded-flu-studies-raises-cash-346810" target="_new">25 September 2013</a>).]</p><p><b>John Haurum, F-Star</b>: The industry has matured. We have a better understanding, for example in oncology, about the targeted selection of patients. We know more about the patients that will benefit from the medicine, so we have a better hit rate. We have fewer failures, perhaps, in trials that previously would've been doomed due to the absence of biomarkers. </p><p>And when you look at what's happening with the FDA and EMA, there are a lot of things that are making it go well for the industry. I think that's coming together in this biotech investment boom that we see right now. </p><p>[<i>F-Star negotiated a $475m agreement with Bristol-Myers Squibb in October that gives BMS an option to buy the private company's subsidiary F-Star Alpha, which is developing the HER2-targeting antibody therapeutic FS102</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Bristol-Myers-commits-up-to-475m-for-F-star-option-354723" target="_new">29 October 2014</a>).]</p><p><b>Robert Ryan, Scioderm</b>: I don't think most divisions of the FDA or EMA have changed. I think it depends on the disease and it depends on the area. In the orphan space and with unmet need like that, the level of interaction and flexibility is way different. Other things still probably have gotten more bureaucratic, not easier, for a lot of the other divisions, because they've actually gotten more rigid. </p><p>[<i>Scioderm won a breakthrough therapy designation from the US FDA for SD-101 in the treatment of Epidermolysis bullosa (EB) and began a Phase II clinical trial in early 2014 to test the drug in EB</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-bestows-breakthrough-on-AbbVie-hep-C-combo-Scioderm-fragile-skin-therapy-342863" target="_new">7 May 2013</a> and <a href="http://www.scripintelligence.com/home/BioNotebook-EpizymeCelgene-Aldexa-Halozyme-Ignyta-Synageva-Scioderm-349120" target="_new">7 January 2014</a>).]</p><p><b>Mark Boulding</b>: Part of it is also education. We've all touched on this area of personalized medicine where we understand at the genetic level who the patients are. That's the case with our drug. You have to have a specific mutation for our drug to work. That gives the regulators some confidence. Part of what we're doing is educating the regulators about these new areas and they're receptive for the first time ever, so you have to give them credit. </p><p><b>Robert Ryan</b>: You have better flexibility to get in the door than you used to.</p><p><b>Mark Boulding</b>: This is where we found, actually, the CHMP and the whole European process much more open. It's much easier to interact with CHMP members to get the scientific advice. The FDA still has a system, which perhaps we're stuck with, that's more formal. The opportunities for informal direction are harder to come by.</p><p><b>Robert Ryan</b>: The tough part is, for example, if you're a pediatric product in Europe, the process of going through the [Pediatric Committee (PDCO)] is still bureaucratic and ridiculous and it's always been a bottleneck process. But outside of that, the interaction on other things is much, much better. </p><p><b>John Haurum</b>: In oncology, there's a big improvement there. I think it's matched with, quite frankly, a realization in the industry that you can't get drugs onto the market if you have just one and a half months of improvement on overall survival. Those were the drugs that you could get approved maybe 10 years ago, but that's changed. With the industry now pursuing real, meaningful differences for the patient it's also much easier for the regulators to work with that.</p><p><b>Ron Nardi, Scioderm</b>: Regulators also interact more today with each other than they used to, and as a consequence they learn from each other, hear the concerns earlier, feedback the concerns to the sponsors, spend time trying to figure out how to address those concerns rather than just throw them all on the table and say, "Call me when you have a good idea."</p><p>I think the environment is just different than it was 10 years ago where the EMA was trying to reestablish its more or less central process and understand it itself. The FDA was running around trying to reject drugs, if they could. And now, in the last two to five years, I think we see that the Europeans have figured out how they really want to make their regulatory environment work and the FDA has come to the realization that we actually need new drugs. </p><p>Together, they've done that. I've even had the opportunity, at the suggestion of the regulators, that we should do joint meetings with the FDA and EMA on some projects. A few years ago, even though that was on the books, it wasn't something that anyone would campaign for.</p><p><b>Mike Ward</b>: What might change the attitude of the regulators? Some of it is political. The person who runs the EMA, although he's not there now, but he'll be back soon, and the FDA, they are political or quasi-political appointments. Does that have an impact?</p><p><b>John Haurum</b>: I think for reimbursement, it's beginning to play into the whole issue around the cost. In oncology, with combination therapies, you're just adding on and layering more and more expensive [therapies]. And then there's Gilead's experience with hepatitis C drugs. </p><p>On the regulator side, at the moment, we all expect that the price of the products is separated from the regulatory process. I think that will change. I think it's going to be baked in somehow in a different way. I don't think that anyone really feels that it's sustainable, the way we see everything continuing to be more and more expensive for society. I have no idea what the solution will be, but I think it's going to be factored in somehow. </p><p><b>Mark Boulding</b>: The concern I have is that this is a system that has worked. We have these treatments for rare diseases that come with a cost. The cost is because they come with a very high degree of risk. You wouldn't see these drugs developed for these populations without that reward at the end. There is no other system that has worked. If this system fails, what is the system for drugs for these diseases? I haven't seen one. </p><p>People will say things like, "Oh, academia will do it. Government will do it." Governments don't invent drugs. Academics do great basic science, but they don't bring drugs to market. It's companies like ours that do it and we do it because of the rewards at the end. Take those away and the system's gone. And then, in 10 years, people will be looking around [asking], "Where are all of the new drugs?" Guess what? You killed the system.</p><p><b>Mandy Jackson, Scrip</b>: But do you feel like drugs like yours are going to be under attack or will the pressure remain on these very, very large indications like hepatitis C or even some cancers?</p><p><b>Mark Boulding</b>: I think, actually, that the European reimbursement authorities are looking at every drug. They're looking at budgetary impacts. That's their metric. I think it's a generalized problem.</p><p><b>John Haurum</b>: But the threat to the process, I think, has been for the big products. I think orphan drugs are actually insulated. It's much more detrimental to the political side of the system to step in against that kind of product, because the impact to society is much smaller than it is with the big indications. The risk is probably for the big indications. </p><p><b>Jeremy Bender, Sutro</b>: I agree and I think that's actually one of the reasons you've seen the hepatitis C virus (HCV) evolve as it has. It hits payers in a very different way [than] an orphan drug or an oncology drug. </p><p>[<i>Sutro expanded a collaboration with Celgene in October to develop antibody-drug conjugates and bi-specific antibodies for cancer. The deal is worth more than $1bn and it gives Celgene an option to buy Sutro</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/home/3Q-EARNINGS-Celgene-surges-on-growth-commits-to-larger-Sutro-deal-354642" target="_new">24 October 2014</a>).]</p><p><b>John Haurum</b>: It puts a lot of pressure on ensuring that the products really are that good. </p><p><b>Robert Ryan</b>: The drugs that are going to get reimbursed are not going to get by with a small incremental benefit. It's going to have to be something that's more novel or like HCV where it's curative. </p><p><b>Jeremy Bender</b>: That's why I'm optimistic, actually. We've been talking about pricing as long as I've been in the industry. Everyone's said that pricing pressures are coming. I think that's real, if we don't make the case, but I think if we do there is an opportunity to say, look, "The state of innovation has been really positive, especially in the last few years. Look at the successes that comes about, because the rationale for investment is there, let's not break it."</p><p><b>Mandy Jackson</b>: Do you feel like the industry is poised to advocate for itself, because so far it seems like they're not. Gilead Sciences is sort of blowing in the wind over HCV drug pricing.</p><p><b>Jeremy Bender</b>: The short answer is, the industry has the capability to do so if it gets organized to do it. You're starting to see folks write op-eds on these things in major papers to try to influence the situation. The advocacy organizations in Washington DC are aware of this and have been advocating.</p><p><b>Mark Boulding</b>: I think there's also two different focuses of our industry. There's sort of the life sciences, small company to mid-cap company and then there's big pharma. Big pharma has definitely fumbled its credibility. It doesn't really have credibility in this area. </p><p>But I think those of us that are on the smaller side still have that credibility, because of what we're bringing to the patients. We still have an opportunity to weight in here. And it has to be about what we're delivering to the patients. It has to be about the fact that it's not a purely economic analysis. </p><p>You've got to look at what clinical benefit are you giving to a patient population that perhaps had nothing before, that had no hope. What are you bringing to them? As a society are you going to leave those people behind or are you going to support a treatment for them? That's the question.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 375
+
+<p>Regulators have welcomed novel drugs more warmly in recent years, especially for rare diseases and patients lacking effective treatments, but reimbursement for innovative therapies is becoming a greater challenge, according to executives from six US and EU biotechnology companies that participated in a roundtable discussion with <i>Scrip Intelligence</i> last month.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 82
+
+EXECUTIVE ROUNDTABLE Part 2 Regulatory responsiveness and reimbursement challenges
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151102T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151102T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151102T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027836
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 84
+
+EXECUTIVE ROUNDTABLE: Part 2; Regulatory responsiveness and reimbursement challenges
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356694
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042254Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1f2e92d9-a5d3-4fb2-b7b9-d6f4e94de181
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042254Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

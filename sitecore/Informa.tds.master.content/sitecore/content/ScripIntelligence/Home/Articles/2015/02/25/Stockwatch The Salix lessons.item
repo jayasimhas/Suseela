@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {C986E05C-166F-4695-AEC1-0C16F4E34797}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/25/Stockwatch The Salix lessons
+parent: {15B1B217-4524-49F3-9FDF-A5CEA8404E4B}
+name: Stockwatch The Salix lessons
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1688067d-4d1f-4f90-ad7a-77a45d44e08d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{8F83A09A-07BA-4F08-827B-DF2AA1F0FE38}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+Stockwatch: The Salix lessons
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 28
+
+Stockwatch The Salix lessons
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6524
+
+<p>As Salix Pharmaceuticals becomes the latest in a long line of recent specialty pharmaceutical acquisitions by generic pharmaceutical companies, there are a few lessons from this transaction that any investor would do well to learn.</p><p><p>I never loved the Salix specialty gastroenterology story. However, after seeing the company again at the 2013 JP Morgan conference, I was struck at how well it fitted the picture that companies like Mylan and Watson were painting of potential therapeutic area acquisitions (<a href="http://www.scripintelligence.com/home/STOCKWATCH-Orphan-and-generic-drugs-diverge-339151" target="_new">scripintelligence.com, 17 January 2013</a>). Perhaps our first lesson from the acquisition of Salix is about timing. You didn't have to rush home and start investing in the company in January 2013 like I did in order to benefit from last week's acquisition (<a href="http://#http://www.scripintelligence.com/home/Valeant-confirms-10.1bn-acquisition-deal-for-Salix-356886" target="_new">scripintelligence.com, 23 February 2015</a>). You could have waited. On the other hand, had you bought in January 2013, you would have doubled your money by the end of that year as the company's sales and earnings increases came to be reflected in their stock price.</p><p><p>In retrospect, those financial results during 2013 may have been what also attracted potential acquirers of Salix. Perhaps there was tentative contact between boards or possibly even a data room set up and visited. But we investors never know that this is going on, so when we see a company we like, we should probably invest as soon as we're happy with the proposition, and suffer the volatility of the markets rather than waiting for some 'suitable entry point'.</p><p><p>The second lesson is one I should have learned already. For a number of years when I was a product manager at SmithKline Beecham, I used to receive the monthly flash sales report for my product. These are the numbers that are much sought after, but not immediately known outside of the companies since they are the real deal &ndash; the ex-factory sales. Investors have to make do with investment bank reports of prescription sales, based on IMS Health data. Had you, like me, believed that these prescription data correlated to ex-factory sales, then you would have been similarly surprised to realize that &ndash; in Salix's case at least &ndash; they are not, and are distorted by sampling errors, seasonality and wholesaler stocking rather than accurately representing end-user prescriptions. At least for me, this is now a lesson learned, albeit belatedly.</p><p><p>The third lesson is that M&A doesn't happen suddenly and at the very start of discussions: there is plenty of time for the management to sugar-coat the company's proposition. This is exactly what Salix seems to have admitted to have been doing when it restated its financial statements all the way back to the beginning of 2013 (<a href="http://www.scripintelligence.com/business/Salix-to-restate-201314-results-356445" target="_new">scripintelligence.com, 29 January 2015</a>). It is well known that managers of target companies will try to "stuff the channel" with product during M&A discussions. Either Salix had been doing this for longer than most, or successive acquirers came and went as they realised the extent of the cumulative inventory issues, and those issues became magnified. After a 2014 summer of bid speculation and the revelation of these inventory issues, Salix came crashing to earth, erasing the 73% share price gain for the year and giving those investors made of sterner stuff than me that 'suitable entry point' (<a href="http://www.scripintelligence.com/business/Salix-sinks-as-audit-admission-hurts-MandA-potential-354915" target="_new">scripintelligence.com, 17 November 2014</a>). Salix jettisoned first its CFO then its CEO as the remaining board members tried to work out where the sugar-coating stopped and the cake began. </p><p><p>The fourth lesson is that companies without CEOs and probably CFOs make less encumbered bid targets than they had been with a complete management team. At that point last November, I should have averaged down on our holding but at over 3% of our fund, and having also just suffered the effects of AbbVie terminating its acquisition of Shire (<a href="http://www.scripintelligence.com/home/AbbVie-drops-Shire-bid-354511" target="_new">scripintelligence.com, 16 October 2014</a>), I wasn't too inclined to increase my holding in either stocks. However, the insult to our fund's performance that Salix and Shire dished out last year has turned out to flatter performance in 2015 as from that low point to last Friday's close, the share price of Salix rose by 72%. </p><p><p>At least I had already learned one lesson, thanks to the London-based biotech investor who is known for selling all his Pharmasset and Onyx stock in the weeks before their acquisitions were announced. </p><p><p>The most important lesson now is what the acquisition of Salix teaches us about those acquisitions yet to come. Last week saw the valuation of biotech company Pharmacyclics rocket to $16.5bn on rumours of its acquisition (<a href="http://www.scripintelligence.com/business/Pharmacyclics-rockets-on-acquisition-speculation-356961" target="_new">scripintelligence.com, 26 February 2015</a>), dwarfing the $10bn valuation of Salix after its acquisition had been announced. On the one hand, a biotech company with one oncology product on the market may be a tad overvalued relative to Salix, which has a number of marketed products and a US sales and marketing infrastructure. On the other hand, at the end of last week, Pharmacyclics announced some preclinical data for its second product in development. It appears that investors aren't the only ones learning the lessons from the Salix acquisition.</p><p><p>The Magna BioPharma Income fund holdings include Salix Pharmaceuticals, Mylan, Actavis, Shire and Pharmacyclics. </p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest manages the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 238
+
+<p>As Salix Pharmaceuticals becomes the latest in a long line of recent specialty pharmaceutical acquisitions by generic pharmaceutical companies, there are a few lessons from this transaction that any investor would do well to learn.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+Stockwatch The Salix lessons
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150225T052854
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150225T052854
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150225T052854
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027971
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+Stockwatch: The Salix lessons
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356931
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1688067d-4d1f-4f90-ad7a-77a45d44e08d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

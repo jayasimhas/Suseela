@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6E61D04E-10E8-405A-B6A1-DA1CC028B544}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/15/Biotech VC deals have bestever quarter 23bn
+parent: {B572AA0F-1E69-46EF-B199-C36FCA38BD43}
+name: Biotech VC deals have bestever quarter 23bn
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 25600b6f-a46a-45cc-bfe4-685ee87342cc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{6C1A974D-9AF6-44A1-9435-2B18B0E42D3C}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Biotech VC deals have best-ever quarter: $2.3bn
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Biotech VC deals have bestever quarter 23bn
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6568
+
+<p>Biotechnology companies had their best quarter on record for venture capital fundraising with 126 companies bringing in $2.3bn during the second quarter as initial public offerings and acquisitions of smaller firms by big pharma continue to fuel VC investment.</p><p>The second quarter bested the impressive $1.7bn that biotech companies raised in the first three months of 2015 and the $1.9bn raised in the second quarter of 2014, according to the MoneyTree Report from PricewaterhouseCoopers (PwC), the National Venture Capital Association (NVCA) and data from Thomson Reuters. The MoneyTree Report, which goes back to 1995, shows that venture capital investment across all industries jumped 30% to $17.5bn between the first and second quarters, but biotech VC investment soared 32% in the same timeframe. </p><p>Investment in US biotech, high tech and other venture-backed industries is "on track to well exceed the $50bn invested in all of 2014," according to PwC's US venture capital leader Tom Ciccolella. And with nearly $4bn invested in biotech so far in 2015, VC investment in the industry this year may exceed the <a href="http://www.scripintelligence.com/home/Biotech-raised-6bn-in-2014-venture-capital-most-since-2007-356200" target="_new">full-year 2014 total</a> of $6bn by the end of the third quarter. </p><p>The venture capital boom is welcome relief for entrepreneurs with promising drug targets who need cash to get new companies going. Biotech firms in the earliest stages of drug development were particularly hard hit by the dip in VC investment that began after the 2008 economic recession.</p><table><tbody><tr><td><p><b>Year</b></p>&nbsp;</td><td><p><b>Second quarter VC investment in biotech </b></p>&nbsp;</td><td><p><b>Full-year (through 2Q for 2015)</b></p>&nbsp;</td></tr><tr><td><p>2008</p>&nbsp;</td><td><p>$1.3bn</p>&nbsp;</td><td><p>$5.2bn</p>&nbsp;</td></tr><tr><td><p>2009</p>&nbsp;</td><td><p>$906m</p>&nbsp;</td><td><p>$3.9bn</p>&nbsp;</td></tr><tr><td><p>2010</p>&nbsp;</td><td><p>$1.3bn</p>&nbsp;</td><td><p>$4bn</p>&nbsp;</td></tr><tr><td><p>2011</p>&nbsp;</td><td><p>$1.5bn</p>&nbsp;</td><td><p>$4.7bn</p>&nbsp;</td></tr><tr><td><p>2012</p>&nbsp;</td><td><p>$780.8m</p>&nbsp;</td><td><p>$4.3bn</p>&nbsp;</td></tr><tr><td><p>2013</p>&nbsp;</td><td><p>$1.4bn</p>&nbsp;</td><td><p>$4.6bn</p>&nbsp;</td></tr><tr><td><p>2014</p>&nbsp;</td><td><p>$1.9bn</p>&nbsp;</td><td><p>$6.1bn</p>&nbsp;</td></tr><tr><td><p>2015</p>&nbsp;</td><td><p>$2.3bn</p>&nbsp;</td><td><p>$4bn</p>&nbsp;</td></tr></tbody></table><p><p><i>*Source: MoneyTree Report</i></p><p><b>Early-stage wins</b></p><p>Fundraising in 2015 for first-time investments in new biotech companies totaled $1.1bn during the first half of the year. The first two quarters already have seen startups raise as much money as they did in the full years of 2006 and 2007 &ndash; the only two years since 1995 in which new biotech firms raised more than $1bn. </p><p>Who benefitted from the surge in biotech startup funding during the first half of this year?</p><p>Under an <a href="http://www.scripintelligence.com/home/UPDATE-GSK-and-Avalon-commit-495m-to-startups-342455" target="_new">ongoing partnership</a> to launch <a href="http://www.scripintelligence.com/business/Avalon-GSK-invest-10m-in-Sitari-first-deal-under-VC-collaboration-348295" target="_new">new biotech companies</a>, Avalon Ventures and GlaxoSmithKline committed up to $10m each for <a href="http://www.scripintelligence.com/home/Avalon-GSK-launch-latest-slate-of-biotechs-358952" target="_new">Adrenergics, CadheRx Therapeutics and Calporta Therapeutics</a>. Also, the antibiotic developer <a href="http://www.scripintelligence.com/business/BioNotebook-PhaseBio-closes-40m-Series-C-round-led-by-AstraZeneca-plus-five-other-VC-financings-357270" target="_new">Macrolide Pharmaceuticals</a> was among several companies with Series A funding rounds so far this year.</p><p>But the big biotech startup winner during the first half of 2015 was <a href="http://www.scripintelligence.com/business/Denali-launches-with-ex-Genentech-management-and-217m-deep-pockets-358430" target="_new">Denali Therapeutics</a>, run by ex-Genentech executives, which raised $217m in May to develop new treatments for neurodegenerative diseases.</p><p><b>Follow-on funding</b></p><p>Drug developers with multiple rounds of funding under their belts also raised sizeable venture capital rounds during the first half of the year. Moderna Therapeutics hauled in the <a href="http://www.scripintelligence.com/home/Moderna-raises-450m-most-ever-for-private-biotech-355938" target="_new">largest VC round ever</a> with $450m to advance its messenger RNA-based therapies in early January, <a href="http://www.scripintelligence.com/home/Biotech-venture-capital-off-to-a-659m-start-in-2015-355964" target="_new">kicking off a great start</a> to 2015 for venture capital investment in drug developers.</p><p>Such investments serve to continue the biotech circle of life. Early-stage funding helps new firms develop their technology, which puts them in a good position to raise more money to finance selection of drug candidates and begin clinical trials. They then generate enough data after a few rounds of venture capital to either sell their assets to big pharma companies or enter the public markets.</p><p>Case in point: 11 companies that raised venture capital rounds in the first half of this year have filed documents since then with the US Securities and Exchange Commission (SEC) to support an IPO. Seven of those companies have completed their offerings. The most recent was <a href="http://www.scripintelligence.com/business/IPO-UPDATE-Biotech-gearing-up-for-a-big-July-359517" target="_new">Chiasma</a>, which raised more than $100m on 16 July.</p><p>Both acquisitions and IPOs provide returns on VC firm investments that they can feed back to their limited partners, who seem to be more willing than ever &ndash; or at least more willing than they have been since the 2008 recession &ndash; to back new VC funds. Venture capital groups have <a href="http://www.scripintelligence.com/home/Biotech-benefits-as-VC-firms-raise-cash-in-Q2-359387" target="_new">raised a few billions dollars</a> so far this year for biotech investments.</p><p>Biotech IPOs and venture capital investment may be in a bubble that's about to burst, but even if that's the case it looks like drug developers will raise more money in 2015 than they have in a long time &ndash; and maybe set a new record &ndash; before the bubble bursts.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 267
+
+<p>Biotechnology companies had their best quarter on record for venture capital fundraising with 126 companies bringing in $2.3bn during the second quarter as initial public offerings and acquisitions of smaller firms by big pharma continue to fuel VC investment.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Biotech VC deals have bestever quarter 23bn
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150715T002822
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150715T002822
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150715T002822
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029274
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Biotech VC deals have best-ever quarter: $2.3bn
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359429
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042424Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+25600b6f-a46a-45cc-bfe4-685ee87342cc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042424Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

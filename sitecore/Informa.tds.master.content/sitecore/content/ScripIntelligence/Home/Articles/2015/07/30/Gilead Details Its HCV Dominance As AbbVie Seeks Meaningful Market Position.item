@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {745F2F51-7DA4-486B-9658-4CA183825315}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/30/Gilead Details Its HCV Dominance As AbbVie Seeks Meaningful Market Position
+parent: {33D065F8-4841-41E4-809A-5D1E27443795}
+name: Gilead Details Its HCV Dominance As AbbVie Seeks Meaningful Market Position
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ca821940-2ff2-413d-9a4c-bb3eca7fcf57
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 75
+
+Gilead Details Its HCV Dominance As AbbVie Seeks Meaningful Market Position
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 75
+
+Gilead Details Its HCV Dominance As AbbVie Seeks Meaningful Market Position
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 12732
+
+<p>Gilead Sciences Inc. continues to maintain a dominant share in the hepatitis C market, while AbbVie Inc. tries to capitalize on a subordinate but still viable position in the indication. Gilead provided some granularity during its July 28 earnings call on how it has built such a huge edge in HCV sales and what its next tasks are, just as AbbVie used its July 24 call to assure investors it still has room to grow. The latter hopes an imminent Japanese approval and a second-generation regimen will boost its HCV business. </p><p><p>Several numbers provided by Gilead Exec VP-Commercial Operations Paul Carter illustrate just how significantly the company controls the HCV market with regimens anchored by its nucleoside polymerase inhibitor sofosbuvir, marketed on its own as Sovaldi and in a fixed-dose combination with the NS5A inhibitor ledipasvir as Harvoni. </p><p><p>There have been 130,000 patient starts in the US on Gilead HCV regimens &ndash; Sovaldi often is dosed with other companies' drugs, such as Janssen Pharmaceuticals Inc.'s Olysio (simeprevir) &ndash; during the <a href="http://www.scripintelligence.com/business/Harvoni-US-sales-dip-reflects-progress-in-treating-sickest-patients-Gilead-says-359661" target="_new">first six months of 2015</a>, roughly equivalent to the entire amount of HCV-infected patients treated with any therapy during 2014.</p><p><p>"This represents Gilead market share over 90% of all HCV patients, with Harvoni alone representing approximately 85% of all patients captured in the standard third-party tracking data," Carter told the investor call. "We have also maintained our very strong position with US payers, as reflected by our formulary status across all payer segments."</p><p><p>AbbVie, meanwhile, reported a solid second quarter for its all-oral HCV combo regimen Viekira Pak (ombitasvir/paritaprevir/ritonavir tablets; dasabuvir tablets) during its quarterly call on July 24, and got an extra bit of good news with the <a href="http://www.scripintelligence.com/policyregulation/FDA-approves-2-hep-C-drugs-from-AbbVie-BMS-359624" target="_new">early approval by FDA of Technivie</a>, another fixed-dose combo from AbbVie, indicated specifically for non-cirrhotic genotype 4 patients. Technivie contains all of the agents found in Viekira except for dasabuvir, a non-nucleoside polymerase inhibitor.</p><p><p>The Chicago-area pharma reported that Viekira tallied $385m in worldwide sales during the second quarter, putting it on pace to bring in more than $1.5bn this year and in line for the company's goal of eventually peaking at around $3bn a year ("Viekira On Blockbuster Pace As AbbVie Adds Second HCV Drug" &mdash; "The Pink Sheet" DAILY, Jul. 24, 2015). Chairman and CEO Rick Gonzalez cited some reasons for optimism, such as the Department of Veterans Affairs getting new appropriations Oct. 1 to fund HCV treatment within its health care system, but those totals are a fraction of the $4.9bn in HCV sales Gilead reported for the second quarter.</p><p><p>"If we look at our performance so far, I think we're up 67% quarter over quarter," he said on AbbVie's call. "If you look at just the second-quarter running rate, it says the product is tracking at about a $1.5bn product and continuing to grow nicely. The international side of the business obviously has performed better than the US. I think the US has not met our expectations. I think we understand why and we're continuing to work on that, but certainly the international market is performing incrementally better than what we expected."</p><p><p>Gonzalez may have been trying to mollify investors about AbbVie's significant investment in HCV, but analysts saw his commentary also as trying to dampen expectations for Viekira. "The cautious commentary on US hep C sales didn't help," wrote BMO Capital Markets analyst Alex Arfaei on July 24, although he continues to rate the firm's shares "outperform."</p><p><h2>AbbVie Banking On Japan, Next-Gen Combo</h2><p><p>To improve its business in HCV, AbbVie is banking on two other factors beyond some incremental improvements in the US market &ndash; it anticipates a second-half 2015 approval in Japan for a once-daily combo regimen that includes the same components as Technivie, and also spent a good portion of its call extolling the promising data seen so far with its next-generation combo for the virus &ndash; protease inhibitor ABT-493 and NS5A inhibitor ABT-530. In a Phase IIb trial, the tandem earlier this year had yielded a 99% sustained virologic response (SVR) rate at four weeks in genotype 1a and 1b treatment-experienced and treatment-na&iuml;ve patients.</p><p><p>On July 24, AbbVie Chief Scientific Officer Mike Severino reported that the combo was sustaining that cure rate through SVR12 data. "In fact, the dose we intend to pursue in Phase III drove an SVR12 rate of 100%," he said. "Evaluation in other genotypes continues to progress with encouraging results and we're also evaluating shorter duration of therapy with this combination."</p><p><p>AbbVie's goal is to bring the next-generation combo to market in 2017.</p><p><p>Gilead also is making progress on next-generation regimens for HCV &ndash; it expects Phase III data later this year for a pan-genotypic combo of sofosbuvir with next-generation NS5A inhibitor GS-5816, and is working on a triple-combination therapy now in Phase II (sofosbuvir, '5816 and pan-genotypic protease inhibitor GS-9857) that could standardize a six-week dosing regimen.</p><p><p>Like AbbVie, Gilead is anticipating greater ease in obtaining treatment approvals for publicly insured HCV patients as 2015 goes on. Medicaid patients with HCV comprise a growing portion of the caseload for Gilead regimens. Carter noted that overall US patient starts seem to be leveling out after a historically high number of patient starts in first quarter, about 70,000, which was due at least partially to patients being warehoused in anticipation of the availability of Harvoni.</p><p><p>There were roughly 60,000 treatment starts during the second quarter and Gilead's research indicates about 30,000 patients are being diagnosed with HCV each quarter and gradually moving toward treatment.</p><p><p>"We don't know for sure yet whether the US is actually stabilized, but we have a sense that, directionally, it will stabilize and it will start to grow as payer restrictions start to get loosened up," Carter said. "We will see a gradual shift of mix of payers in the US, I think, slightly towards the public payers."</p><p><p>During the first six months of 2015, Gilead's US patient base broke down as about 70% privately insured and 30% publicly insured, he said. In the second half of the year, the company expects that ratio to move closer to 60/40.</p><p><p>"The Medicaid population will start to come on," Carter added. "Our competitors have exclusive access to some Medicaid [state programs], we have [access] to others. &#8230; about 34 states have signed deals with us to make Harvoni available. That's about two-thirds of the patients covered by Medicaid, so we are getting reasonable access there. And as I said, I think that mix will start to shift very slightly towards Medicaid during the rest of the year."</p><p><h2>US Payer Restrictions Loosening?</h2><p><p>Both Gilead and AbbVie are counting on payer restrictions loosening so that less-sick HCV-infected patients can get approved for treatment. Carter said he is seeing evidence that such changes are beginning to occur.</p><p><p>"We have some quantitative evidence. We have plenty of anecdotal evidence," he noted. "We talk to doctors &#8230; in the US, and all of them tell us that they have many patients in the queue, if you like, waiting for treatment. And really the barrier to them being treated is the restrictions that the payers are putting on. &#8230; A lot of stakeholders [including Gilead and its competitors] are working hard to encourage awareness of hepatitis C, encourage testing, encourage people to think about how they link their status to treatment. We do try and measure that to some extent as well."</p><p><p>"We are seeing at a very stable rate actually, around 30,000 a month moving under treated care," the exec continued. "It takes time to actually get traction on some of these things. We are doing a lot of things now with a view to the longer-term future as well, to really try and think about how do we increase diagnosis rates. We've got about 1.6 million people in the US diagnosed. We have treated &#8230; maybe 300,000 in the last year or two."</p><p><p>One cause for optimism, Carter added, is that roughly 40% of patients on Harvoni during the second quarter were being treated for eight weeks, meaning that these are less-sick patients. This could indicate that payers are beginning to accept the argument that curing healthier patients now saves the health care system money in the long run by avoiding the costs of chronic therapy.</p><p><p>"We also hope that &#8230; starts to provide some encouragement to payers in terms of value, as they think about curing patients," Carter said. "But we'll have to wait and see over time how these restrictions unfold. I do think that as the markets start to become a bit more predictable now in terms of the numbers of patients coming through that hopefully payers will also feel more encouraged to open the gates slightly."</p><p><p>Gilead expects about 250,000 HCV patients to be treated in the US next year, the exec said, encompassing all genotypes of the virus and all competing therapies. He thinks there is capacity to treat 300,000 patients a year in the US and anticipates an annual ebb and flow between 250,000 and 300,000 for the near term, with payer policies being the primary variable.</p><p><p>Another variable factor is the formulary placement agreements Gilead and AbbVie have signed with a number of pharmacy benefit managers. With many agreements in place, some of which provide preferred status, rather than exclusive placement, for one regimen over another, AbbVie's Gonzalez indicated that execution now comes down largely to maximizing such agreements.</p><p><p>"As far as contracting is concerned, I would say the contracting hasn't changed a lot in the US from the last [earnings call]," he said. "As we indicated [on the first quarter call], we had a number of exclusive contracts that were coming online &#8230; they're now up and running. We are ramping within those particular contracts."</p><p><p>"If you look at our single largest customer in the US [Express Scripts Holding Co.], that's an exclusive [and] we've now reached peak share there," Gonzalez continued. "Ultimately, we've reached the level of share that we had anticipated and it's a very high level of share. And so now the rest of the growth will be around driving these incremental contracts and then also driving additional share gains within the parity accounts and the non-exclusive accounts. And that's the work that goes on day by day by day."</p><p><p>Express Scripts unveiled its national preferred formulary for 2016 <a href="http://www.scripintelligence.com/home/Express-Scripts-CVS-Formulary-Updates-Whos-In-Whos-Out-359772" target="_new">on July 31</a> &ndash; it continues to exclude both Harvoni and Sovaldi, along with Janssen's Olysio, while listing Viekira as the preferred treatment for HCV.</p><p><h2>Harvoni Available To 83% On Private Insurance</h2><p><p>Gilead's Carter estimated contracts cover about 96% of privately insured US patients now. Harvoni has access to about 83% of those, through either exclusives or some sort of preferred or parity agreement with payers, he said.</p><p><p>"I would take the opportunity just to emphasize yet again that Gilead does not believe in exclusive access," he noted. "We believe in physicians and their patients having the right to prescribe whatever they want to prescribe and not [be] dictated to by payers. So certainly, we are not aiming to establish any more exclusivity in a competitive way."</p><p><p>"We have agreements in place with most of the payers; most of those agreements are multi-year," Carter continued. "We hope that we can compete on our products, and we think that's the way it is going to be. But we will defend our market share vigorously. We have competed before where the competitor wants to compete on price. I think that the results speak for themselves. We will consider every scenario and be ready for it."</p><p>This article has also being published in <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet" target="_new">"The Pink Sheet"</a>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 531
+
+<p>Gilead Sciences Inc. continues to maintain a dominant share in the hepatitis C market, while AbbVie Inc. tries to capitalize on a subordinate but still viable position in the indication. Gilead provided some granularity during its July 28 earnings call on how it has built such a huge edge in HCV sales and what its next tasks are, just as AbbVie used its July 24 call to assure investors it still has room to grow. The latter hopes an imminent Japanese approval and a second-generation regimen will boost its HCV business. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 75
+
+Gilead Details Its HCV Dominance As AbbVie Seeks Meaningful Market Position
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150730T152046
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150730T152046
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150730T152046
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029426
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 75
+
+Gilead Details Its HCV Dominance As AbbVie Seeks Meaningful Market Position
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{35998F02-6661-4699-8D32-35450F867D10}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+Commentary
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359693
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ca821940-2ff2-413d-9a4c-bb3eca7fcf57
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F4B8DD44-80C7-4C4F-854C-39C50DFEEBA7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/11/Stockwatch Bulls Bears And White Elephants
+parent: {22D0ECFE-8F71-4F7C-BBF9-629CD8FA035B}
+name: Stockwatch Bulls Bears And White Elephants
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5521444c-4e9e-4f28-9240-3c721fba039c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{9FB3D40B-7068-4C1F-8DA7-9C61F575EA21}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Stockwatch: Bulls, Bears And White Elephants
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+Stockwatch Bulls Bears And White Elephants
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6201
+
+<p>Investors classify each other as bulls or bears. Bulls are greedy for rising markets whereas bears fear falling markets. After another down-week for the NASDAQ Biotech Index that included a savage selloff on Thursday, I suspect the weight of money is bearishly moving away from the sector, and some of this flight away from riskier life science investments may be due to the focus on quite a different stock market animal.</p><p><p>I have been writing for years about the white elephant approach to drug development where smaller companies embark on the development of drugs that clearly will never recoup the money invested, let alone lead to a profit for the developing or licensing partners. With so many white elephants rearing their ugly heads during the tail end of earnings season last week, other investors may be getting the idea that this is an inevitability for many life science companies with smaller capitalizations.</p><p><p>Since we don't run a hedge fund, I do not gain financially nor take any pleasure from the misfortunes of others. My only reward for predicting white elephants is the satisfaction that I actually learned and retained something whilst working in pharmaceutical companies and avoided losing my investors' money. Thus I only felt vindicated when BTG Plc's first-half results were critiqued by the analysts from JP Morgan as being 'mixed'. Although both JP Morgan and Jefferies maintain their buy recommendations on BTG, both sets of analysts highlighted the low quality of BTG's earnings that were flattered by one-off backdated royalties from Johnson & Johnson for its product <i>Zytiga</i> (abiraterone acetate), and a temporary lower tax rate. Before the end of the week, BTG admitted a financial accounting error which cut its already flattered underlying earnings by a staggering 21%. However, the bigger error has not yet been accepted by its management. BTG's wholly-owned and internally developed great white hope &ndash; <i>Varithena</i> (polydocanol foam), for the treatment of varicose veins &ndash; had dismal sales in BTG's first six months of &pound;0.4m. This was compounded by the refusal of the Centers for Medicare and Medicaid Services to recognize the value of <i>Varithena</i> and grant a J-Code. <i>Varithena</i> is currently (or, more accurately, barely) reimbursed under a temporary code that provides strong support for its classification as a white elephant.</p><p><p>Whilst the defining characteristics of the mammalian variety of white elephants are that they are big and white, those of the life science variety may be a little less obvious. Before their approval, a common characteristic of white elephant products is that they will also be big, or "blockbuster" in the forward-looking parlance of company management and its analysts. The target product profiles of the past would have included the phrases "a large patient population" and "an unmet clinical need" in order to have justified the development of drugs to treat obesity. Those drugs from Orexigen Therapeutics, Inc., Arena Pharmaceuticals, Inc. and Vivus, Inc., recently reported third-quarter sales of $12.8m, $12.6m and $13.8m, respectively. There is probably no hope for these companies with their white elephant products dragging them into the arms of the liquidators but at least other companies can learn from their demise. Many cancers, certainly in second- and third-line settings, have both large patient populations and unmet clinical needs. However, unlike many morbidly obese patients, most cancer patients are able to or want to eliminate the cause of their disease. Obese patients probably only want a drug that allows them to continue to eat as much as they have always done without putting on weight. Thus when we look at companies as potential investments, we now think about target product profiles that include the phrase "large patient populations that are motivated and able to change and resolve their disease". This is why we do not have significant exposure to companies developing or selling drugs to treat alcohol or drug dependency, or even type 2 diabetes. </p><p><p>One product to treat type 2 diabetes that is rapidly turning into an archetypal white elephant is <i>Afrezza</i> (inhaled human insulin), from MannKind Corp. and partner Sanofi. Afrezza<i>'s</i> sales in the third-quarter were $2.2m, which the analysts from JP Morgan described as 'disappointing', having not grown from the previous three months. Many have suggested that it is now only a matter of time before Sanofi returns the rights to MannKind. In a cynical attempt to persuade Israeli investors that Afrezza was a raging bull rather than a rogue white elephant, MannKind tried to raise $50m by parlaying its US $1bn market capitalization into a significant weighting in Israeli index funds after completing a secondary listing on the Tel Aviv stock market. In the end, the intervention by the Israeli regulator outweighed the enthusiasm for the offering and continued 'Buy' recommendation from the analysts at Jefferies, and the offering raised $35m, although all that means is that there will be 35 million white elephant hunters at some point in the future.</p><p><p>The animal and life science product types of white elephant have some characteristics in common. The latter has a big impact on the viability of a small company and in many cases can lead to its demise. Both types can therefore make a big mess, but while a skilled tracker can find the white elephant animal from many miles away, the skill that many investors seem to lack is to spot a white elephant product before it has trampled all over their assets.</p><p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 429
+
+<p>Investors classify each other as bulls or bears. Bulls are greedy for rising markets whereas bears fear falling markets. After another down-week for the NASDAQ Biotech Index that included a savage selloff on Thursday, I suspect the weight of money is bearishly moving away from the sector, and some of this flight away from riskier life science investments may be due to the focus on quite a different stock market animal.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+Stockwatch Bulls Bears And White Elephants
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151011T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151011T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151011T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030321
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Stockwatch: Bulls, Bears And White Elephants
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361488
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5521444c-4e9e-4f28-9240-3c721fba039c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

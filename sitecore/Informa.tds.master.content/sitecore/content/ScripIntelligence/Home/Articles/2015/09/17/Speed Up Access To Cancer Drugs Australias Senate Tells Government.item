@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6766D314-F1A0-4469-AE64-7FABB3A8C6BE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/17/Speed Up Access To Cancer Drugs Australias Senate Tells Government
+parent: {B53F7F84-6EA4-4D07-B215-728AC98CCD87}
+name: Speed Up Access To Cancer Drugs Australias Senate Tells Government
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 76dc13e7-ec0d-41f1-be98-ff05354f5ae8
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+Speed Up Access To Cancer Drugs, Australia's Senate Tells Government
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Speed Up Access To Cancer Drugs Australias Senate Tells Government
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 20405
+
+<p> An Australian Senate committee has called on the government to carry out a comprehensive review of the systems for drug approval and reimbursement listing in order to help speed up the availability and affordability of new innovative cancer medicines. </p><p> In a 125-page report, the Senate's Community Affairs Reference Committee makes a range of recommendations for improving patient access to cancer drugs, such as changing the way the Pharmaceutical Benefits Advisory Committee (PBAC) assesses cost-effectiveness, making more use of special access mechanisms, and giving patients and clinicians a greater role in the Pharmaceutical Benefits Scheme (PBS) assessment process. </p><p> It also proposes that the PBAC should increase its engagement with companies and other stakeholders, for example through pre-application planning meetings, and make more use of data from post-market evaluations and off-label use when conducting its evaluations. </p><p> It says it is &quot;incumbent on the Australian government to respond to the challenges facing the operation of the PBAC and the ongoing sustainability of the PBS in a comprehensive and considered manner,&quot; and that the government should &quot;give careful consideration&quot; to the implementation of its recommendations. </p><p> In its report, the committee seems to have taken on board at least some of the criticisms and suggestions made by the industry association, Medicines Australia, individual companies and other stakeholders during the consultation period on the Senate inquiry in January and February 2015. </p><p> Medicines Australia, for example, had urged the government to work with industry to develop innovative access models, &quot;commit to expert oncology and consumer input as central to the decision making process,&quot; and &quot;implement system efficiencies to deliver faster access for patients.&quot; </p><p> Its CEO, Tim James, said it was &quot;promising to see the report recognize that it is time for a thorough examination of options to improve the evaluation, registration and listing processes and speed up access to medicines.&quot; He was also encouraged by the Senators' backing for more consumer and clinician input. </p><p> The association said the report confirmed its long held view that &quot;we have a problem with access to cancer and other medicines in Australia&quot;, adding that it was &quot;ready to help the parliament and policy makers to implement any recommendations which will improve access for patients.&quot; </p><h2> Background </h2><p> In its introduction to the report, the committee says cancer diagnoses in Australia are expected to increase to 150,000 new cases by 2020, an increase of almost 40% over 2007, mainly because of the growing elderly population. Five cancers account for just under half of all deaths from cancer in Australia: in descending order of incidence, they are lung, colorectal, prostate, breast and pancreatic cancer. </p><p> In 2013-14, A$1.5bn ($1.08bn) was spent on subsidising the cost of cancer medicines listing on the Pharmaceutical Benefits Scheme (PBS), representing 16% of total PBS expenditure of A$9.2 billion, and an additional A$50 million is used each year to fund the special Herceptin Program. According to the Department of Health (DoH), PBS benefits paid for newer cancer medicines have risen by 33% per year over the last five financial years, compared with just 5% per year for established cancer medicines. </p><p> The Senate committee began its inquiry in 2014 in light of growing concern that patients are facing what it calls &quot;significant delays and expense&quot; in accessing new cancer drugs or existing drugs that are not available under the PBS for their form of cancer. It focussed on a number of key issues, including timing and affordability of access, the operation of the PBAC and the PBS, and the effect of pricing and reimbursement delays on the quality of patient care. It also considered what lessons might be drawn from experience in other countries facing similar problems on the funding of new anticancers. </p><p> Following the public consultation, a <a href="http://www.scripintelligence.com/policyregulation/Sparks-set-to-fly-at-Australian-hearing-on-access-to-cancer-drugs-357941" target="_new">public hearing</a> was held on 20 April this year to discuss the matters being examined by the Senate committee's inquiry. </p><h2> Timing Of Availability </h2><p> In terms of timely access to cancer drugs, a key issue raised by the committee was that pharmaceutical companies tend to file for approval in the US and Europe before they do so in Australia, partly to avoid the possibility of a negative decision in Australia rebounding on the drug's chances in the bigger markets. </p><p> The PBAC said that new drugs were generally filed for approval with the Australian regulator, the Therapeutic Goods Administration (TGA), a median of 150 days after submission to the European Medicines Agency, &quot;even though the TGA accepts the same evidence package as the EMA&quot;. </p><p> Numerous respondents pointed out that there is no formal system for expedited approvals in Australia as there is in the US or the EU. In some cases the TGA will work with the company to speed up approval if it considers a drug to be a significant therapeutic advance or of critical importance, but it was pointed out that this approach is unpredictable and that a more formal procedure is needed. </p><p> However, it was not so much the TGA approval time that mattered, the committee said, but more the time taken between a TGA decision and a listing on the PBS. Medicines Australia put the timeline for new listings at 589 days on average (versus 584 in England, 456 in Canada and 256 in France), although it estimated anticancer drugs could take six months longer &ndash; an average of 1.6 years from TGA approval to reimbursement listing. </p><p> As for the actual PBS review time, the PBAC said it was 17 weeks from submission of the dossier to the PBAC's recommendation on listing, which the DoH said was &quot;one of the fastest reimbursement processes in the world.&quot; But Medicines Australia rejected this figure, saying that very few applications received a positive recommendation within 17 weeks because most required more than one submission, and the actual timeline was commonly 12-18 months. </p><p> Novartis suggested a rolling submission approach, while others raised the question of parallel submissions to the TGA and the PBAC in order to save time. Parallel submissions have been possible since January 2011, but although this should theoretically offer shorter overall timelines, &quot;the committee heard that it does not necessarily result in faster listings&quot;, according to the report. </p><p> Medicines Australia told the committee that there had been a lower recommendation rate for cancer medicine submissions using parallel processing, and that there was no guarantee that parallel processing would result in a faster listing, while Novartis said that the average time from TGA approval to PBS listing had actually increased since 2011. </p><p> This didn't go down too well with the authorities, which pointed out that maybe it was a matter of bedding the parallel process in. &quot;We have seen some really fantastic outcomes in that space and, yes, we have seen some that have not been successful at all,&quot; insisted Felicity McNeill, first assistant secretary of the DoH's Pharmaceutical Benefits Division. She said there were both risks and opportunities: &quot;We always learn from these things; systems evolve. But if 30-plus percent of submissions are coming through this, there must be something in there that is going reasonably well.&quot; </p><p> It also seemed that some companies may be taking the parallel review idea a little too far. The PBAC said that some sponsors were choosing to submit applications to the PBAC so far in advance of TGA approval that the PBAC had no option but to reject or defer them, as the TGA-approved indication was critical to determining a PBAC listing. &quot;This practice may be distorting the reported time to approval,&quot; the committee remarked. </p><p> Some respondents told the committee that greater collaboration was needed between the regulatory and reimbursement agencies with regard to the assessment of clinical evidence, in order to enhance the efficiency of parallel processing. </p><p> Complicating matters further is the fact that cancer medicines, particularly targeted therapies, are increasingly associated with a diagnostic test or device, and that such submissions are complex in terms of content and process. &quot;They currently require a separate recommendation from two separate committees with differing meeting schedules: the Medical Services Advisory Committee (MSAC) for the test and the PBAC for the drug,&quot; the committee observed. &quot;There appears inadequate interaction between the two committees, and the submission processes vary greatly between the two.&quot; </p><h2> The Cost-Effectiveness Question </h2><p> In common with most other health systems around the world, a key issue governing access to innovation in Australia is the difficulty of determining cost-effectiveness and arriving at a price that satisfies both the company and the payer, and in a reasonable timeframe. </p><p> The committee noted that one of the major challenges in the evaluation of the cost effectiveness of cancer drugs was that cancer drugs cost significantly more than other drugs: the potential total cost of the 11 major submissions for cancer medicines considered at the PBAC's March 2015 meeting was A$589m, for example. </p><p> The DoH was also sceptical about the value offered by many new drugs. It said that while the costs of new cancer medicines were substantially higher than for other new medicines, many offered &quot;only a small incremental survival benefit to patients&quot;. And even where the health benefits might be considered large, it said, &quot;the prohibitive cost can act to restrict access, even after a reasonable timeframe to recoup development costs.&quot; </p><p> Moreover, the DoH and the PBAC claimed a key problem in the PBS review process was the &quot;poor quality&quot; of clinical evidence supplied by companies on the effectiveness and cost effectiveness of new cancer medicines, citing studies without proper comparison groups and the presentation of data from excessively early analyses. For the DoH, one of the main difficulties in assessing cancer medicines was that survival improvements were difficult to determine and were generally not the main outcome measured in clinical cancer trials. </p><p> Looking at the mechanism used to determine cost-effectiveness, the committee said that the PBAC does not use a definitive threshold but instead references the prices of new medicines against existing listed treatments for the same or similar indications: &quot;Where there is no listed alternative treatment the PBAC considers the 'clinical place, overall effectiveness, cost and cost-effectiveness of the proposed medicine compared with standard medical care'.&quot; The DoH's McNeill told the committee that the fact that the PBAC did not have fixed thresholds was one of the advantages that it had over assessment models used in other countries. </p><p> However, some respondents questioned the assertion that the PBAC does not apply a fixed cost-effectiveness threshold in determining value for money. Novo Nordisk argued that while there was no explicit cost-effectiveness threshold for the reimbursement of medicines in Australia, over the past four years more than half of the major cost effectiveness submissions rejected by the PBAC had had an ICER (incremental cost-effectiveness ratio) below A$45,000. </p><p> The company said this happened &quot;despite Australia's economic capacity to pay for innovative and advanced treatments,&quot; arguing that the current PBAC policy and process significantly restricted the ability of pharmaceutical companies to achieve a reasonable premium for new medicines. </p><p> Merck Sharp &amp; Dohme (MSD) told the inquiry that the high prices of cancer drugs reflected the significant investment required in R&amp;D to bring medicines to market. It noted that over time, the cost of individual medicines became comparatively lower, &quot;because drugs are not subject to price increases, unlike all other health care costs, and once generic they will be available at a significantly reduced price.&quot; </p><p> The PBAC took issue with this, saying it considered that a major barrier to rapid PBS listing for new cancer drugs was the expectations of pharmaceutical companies with respect to pricing. &quot;The reason new cancer drugs are so expensive has been the subject of considerable debate but it is not simply related to the cost of development and manufacture. The pharmaceutical industry's expectations in relation to price and profit at international and national levels are also relevant.&quot; </p><p> Roche said that one of the key challenges in gaining PBAC approval was that the committee had &quot;a low tolerance for uncertainty,&quot; which frequently resulted in rejection and re-submission of applications, and consequent delays in access for cancer patients. </p><p> Novo Nordisk expressed concern that the current process for evaluating the benefits of a new medicine was too narrow and did not include the broader patient perspective or the economic view of the benefits of a healthy and productive population. </p><h2> Access Schemes </h2><p> The use of early access schemes is an approach that has been taken in several countries, and while Australia has some provision for providing access through compassionate programs and special access schemes, the Senate committee observed that these helped only a small number of patients and were &quot;neither sustainable nor equitable alternatives to subsidized access through the PBS.&quot; </p><p> Many respondents to the consultation said that a specialist early access program was needed for cancer drugs, or an interim access scheme within, or closely aligned with, the existing PBAC/PBS mechanism. </p><p> There were suggestions that the existing Managed Entry Scheme (MES) program should be used more widely, as it could improve the collection of clinical data and consideration of broader social and economic factors by capturing real-world experience with new cancer drugs. The committee noted that a subgroup of the Access to Medicines Working Group (AMWG) had been developing a framework for a Managed Access Program since June 2014. </p><p> Others suggested that a mechanism like England's Cancer Drugs Fund (CDF) &ndash; which pays for drugs not undergoing assessment by the National Institute for Health and Care Excellences &ndash; could be set up in Australia as a temporary measure while the current listing system is under review. </p><p> However, this idea received a mixed response, with some pointing out that such funds have not necessarily alleviated issues around access to high-priced medicines. The Cancer Council of Australia and the Clinical Oncology Society of Australia noted that while the CDF had improved access to new listings, &quot;the fund was over budget and has been criticised for not addressing the issue of price negotiation with manufacturers.&quot; Roche said the CDF had its limitations, &quot;principally the lack of an acceptable method of prioritising medicines to list, and the perception of discrimination against other high-burden health conditions.&quot; </p><p> The Society of Hospital Pharmacists of Australia highlighted what it called the CDF's use of &quot;less stringent approval processes&quot; compared with the standard NICE process, &quot;a tendency for the price paid by the fund to result in the UK paying a higher price for cancer medicines than most European countries,&quot; and the diversion of funds away from potential treatment alternatives. </p><p> Incidentally, a <a href="http://www.scripintelligence.com/home/UK-NAO-Cancer-Drug-Fund-Probe-Curbed-By-Data-Gaps-360544" target="_new">report on the CDF</a> just published by the UK National Audit Office says that while the fund has contributed to the use of innovative drugs, its actual impact on patient outcomes is unclear and that the fund, set up five years ago, is not sustainable in its current form. </p><h2> More Patient And Expert Input Needed </h2><p> Many respondents to the consultation were of the opinion that things could be improved if consumers and oncology experts had more input into the decision-making process. The current PBAC processes do include provision for comments from these groups to be considered as part of the evaluation for PBS subsidy, but the committee heard that in practice consumers and their organizations can experience difficulties in taking part in the process. </p><p> The Cancer Drugs Alliance (CDA) said there was a need for more meaningful engagement with consumer groups by the PBAC, together with greater visibility and transparency of PBAC processes. It recommended that the PBAC improve and increase its communication with consumer groups, including through social media, and provide improved guidance on how to make submissions, how submissions are used and how decisions are made. </p><h2> Committee's Recommendations </h2><p> In urging the Australian government to undertake a comprehensive review of the registration and subsidy systems, the report made a number of specific recommendations. It said the government should examine all available pathways for the registration and listing of new medicines, or new indications for medicines already registered on the ARTG and listed on the PBS, including making provision for the use of assessments conducted by comparable overseas regulators. </p><p> It should also look at: </p><ul> <li> managed access programs and risk-sharing, and the adoption of more flexible evidential requirements by the PBAC; </li><li> enhancing engagement with sponsors and other stakeholders to better tailor their applications to the requirements of the PBAC, including consideration of pre-application planning meetings; </li><li> applying tiered assessment processes to match resources to the complexity of applications; </li><li> encouraging more cooperation between the PBAC, the TGA and the Medical Services Advisory Committee, including options for enhancing the operation of parallel processing arrangements; and </li><li> ensuring greater transparency throughout the assessment process. </li> </ul><p> The report said consumers and clinicians should play a more central and substantial role in the evaluation of new medicines and new indications, including: </p><ul> <li> consideration of options for expanding consumer and clinician representation on the PBAC; </li><li> enhancing existing avenues for stakeholder input, including the use of consumer and patient hearings; and </li><li> incorporating public perspectives on moral, ethical and opportunity cost considerations into PBAC decision-making processes, including consideration of models employed by comparable overseas regulators. </li> </ul><p> The committee further recommended that the government commission a review of current data collection mechanisms for cancer medicines, which would include the identification of: </p><ul> <li> obstacles to the integration of existing databases and potential avenues for addressing these; </li><li> opportunities to incorporate data from post-market evaluations; and </li><li> avenues for capturing data relating to the off-label use of cancer medicines. </li> </ul><p> Finally, the committee called for the establishment of a steering committee to look at setting up a national register of cancer medicines. </p><h2> PBAC guideline review </h2><p> A <a href="http://www.scripintelligence.com/policyregulation/Australia-to-include-modern-HTAclinical-evaluation-methods-in-updated-PBAC-guidelines-358111" target="_new">separate review</a> of the PBAC's guidelines on preparing submissions for the listing of products on the PBS was announced in April this year, intended to address concerns that the guidelines are out of step with recent developments in areas such as health technology assessments (HTA) and clinical evaluation methods. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 260
+
+<p> An Australian Senate committee has called on the government to carry out a comprehensive review of the systems for drug approval and reimbursement listing in order to help speed up the availability and affordability of new innovative cancer medicines. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Speed Up Access To Cancer Drugs Australias Senate Tells Government
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150917T053220
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150917T053220
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150917T053220
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029817
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+Speed Up Access To Cancer Drugs, Australia's Senate Tells Government
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360493
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+76dc13e7-ec0d-41f1-be98-ff05354f5ae8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

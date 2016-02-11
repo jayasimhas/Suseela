@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {AF36615E-A05E-433B-B3FA-030B3E89B3C7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/13/Rumor speculation and Salix8230
+parent: {94CB4D6F-0A34-4D6B-BFF6-200B2B6E99B6}
+name: Rumor speculation and Salix8230
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fe996abc-237d-4b61-a317-8817f5f12005
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 35
+
+Rumor, speculation and Salix&#8230;
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 31
+
+Rumor speculation and Salix8230
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4278
+
+<p>If we were in Hollywood and Salix Pharmaceuticals was a movie star, it would be Orlando Bloom just because of the sheer amount of gossip surrounding the company and it's not so private affairs right now. </p><p>While Mr Bloom has been linked to the likes of Demi Moore, Nina Dobrev, Selena Gomez and a mystery blonde since his divorce from model Miranda Kerr; Salix is rumored to have been romancing Valeant Pharmaceuticals, Shire, AbbVie and others&#8230; and that's just in the last few months. </p><p>Much like Hollywood romance stories though, we have very few facts, anonymous "people in the know" and the proverbial "no comments" from Salix and its various parties of interest to go on. </p><p>That M&A theories have continued to dominate the pharma rumor mill this year is no surprise after an active year of takeovers, hostile acquisition attempts and tax inversion dramas in 2014. We should probably consider starting a WDW (who's dating, or trying to hook up with, who) column. </p><p>But Salix has remained on people's lips amidst numerous takeover stories. The struggling firm, which in late January announced it would be restating its financial results for the past seven quarters due to errors in reporting (<a href="http://www.scripintelligence.com/business/Salix-to-restate-201314-results-356445" target="_new">scripintelligence.com, 29 January 2015</a>), has been considering all options for its future including a sale. </p><p>Salix, which markets a range of gastrointestinal products including treatments for gastroesophageal reflux disease (GERD), travelers' diarrhea and ulcerative colitis, had gone all in with Allergan for a merger but the deal fell through in late 2014. So it makes sense then that Salix's most cited potential suitor in 2015 would be Allergan's previously jilted love interest Valeant. The latter firm lost in a drawn-out and hostile takeover contest for Allergan last year to a higher bid from Actavis (<a href="http://www.scripintelligence.com/home/Big-paydays-ahead-as-Actavis-buys-Allergan-for-219-per-share-355111" target="_new">scripintelligence.com, 18 November 2014</a>). </p><p>Several reports, claiming information from "sources in the know" have pointed out that Valeant has arranged financing for a potential bid for Salix. Reports claim the acquisitive Canadian drug maker will likely bid more than $150 per share for the company. Salix's stock (traded on Nasdaq) was up 4.6% at $149.82 in afternoon trading on 12 January. But its share price had been on a steady rise since early February when <i>Bloomberg</i> first reported that Valeant might be exploring a bid. </p><p>Though Valeant has repeatedly said it would not comment on the speculation, Evercore ISI analysts saw enough strength in the rumors to warrant a survey on the possibility. Evercore said its polling of long-term and hedge fund investors' initial reactions to the Salix/Valeant rumors revealed that more than 50% of people were in favor of an acquisition. While less than 20% were against it. Around 20% of respondents voted on a neutral opinion to the whole saga &ndash; but they still voted. </p><p>While Valeant has a reputation of having a no-fuss, efficient M&A style (with the exception of its Allergan shenanigans) it has previously said it is not a company to over-pay for its targets. Sources say this might be one reason any potential Valeant/Salix deal could come back off the table. </p><p>Valeant might not see the attraction of getting into another bidding war because specialty pharma Shire has also been linked to a Salix takeover. <i>Reuters</i> said on 12 February that Shire was also working with advisors on a potential offer. However, this seems less likely to come to pass as Shire has recently signed at massive $5.2bn deal for rare disease drug developer NPS (<a href="http://www.scripintelligence.com/home/Shire-paying-5.2bn-for-rare-disease-specialist-NPS-356071" target="_new">scripintelligence.com, 12 January 2015</a>). </p><p>Furthermore Salix isn't shy about putting itself out there and it has been mentioned that a number of other companies might have interest in taking on its gastrointestinal portfolio. Possible competition Valeant could face includes: Takeda Pharmaceutical, AstraZeneca, AbbVie and Endo. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 211
+
+<p>If we were in Hollywood and Salix Pharmaceuticals was a movie star, it would be Orlando Bloom just because of the sheer amount of gossip surrounding the company and it's not so private affairs right now. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 31
+
+Rumor speculation and Salix8230
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150213T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150213T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150213T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027813
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 35
+
+Rumor, speculation and Salix&#8230;
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356660
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042252Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fe996abc-237d-4b61-a317-8817f5f12005
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042252Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

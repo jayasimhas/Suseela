@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {6E81B960-79AC-4C50-89F9-80BC1ECA2DF4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/20/JJs Yondelis Leads New Wave Of Sarcoma Drugs
+parent: {FBD889C4-A34C-4E16-BF27-9E42B717898E}
+name: JJs Yondelis Leads New Wave Of Sarcoma Drugs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 25b1bba4-7e16-4961-8b84-b99ea69bd5e8
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+J&J's Yondelis Leads New Wave Of Sarcoma Drugs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+JJs Yondelis Leads New Wave Of Sarcoma Drugs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6621
+
+<p><p><p>Johnson & Johnson's long-awaited chemotherapy <i>Yondelis</i> (trabedectin) is finally approved for sarcoma in the US, having been approved in multiple other markets already, but leading a wave of potential new entrants in an area of high unmet need.</p><p><p>FDA approved Yondelis on Oct. 23 for the treatment of two kinds of unresectable or metastatic soft tissue sarcomas (STS) &ndash; liposarcoma and leiomyosarcoma &ndash; following treatment with anthracycline-based chemotherapy.</p><p><p>According to the agency, an estimated 12,000 cases of STS were diagnosed in the US in 2014. J&J estimates there are about 4,200 cases each year of liposarcoma and leiomyosarcoma in the US. Labeling exactly reflects the population studied for the drug, Craig Tendler VP of late development and global medical affairs for oncology at Janssen R&D LLC, commented in an interview.</p><p><p>The agency noted that treatment of advanced or metastatic soft tissue sarcoma "represents a difficult challenge with few effective therapeutic choices available for patients."</p><p><p>Yondelis' approval &ndash; its first in the US, though its first international approval was almost a decade ago &ndash; was supported by a Phase III trial, in which the study demonstrated a progression-free survival benefit, but failed on a secondary overall survival endpoint.</p><p><p>The Phase III study included 518 patients with metastatic or recurrent leiomyosarcoma or liposarcoma. Those taking Yondelis had a median PFS of 4.2 months compared to 1.5 months for dacarbazine chemotherapy, a statistically significant result with a 45% reduction in risk of progression. Median overall survival was 13.7 months vs. 13.1 months but did not meet statistical significance; the hazard ratio was 0.93. Furthermore, the objective response rate was 7% for Yondelis vs. 6% for dacarbazine.</p><p><p>On the safety side, labeling includes warnings for severe adverse events, including heart failure, which can be fatal. Labeling also warns of risk of severe and fatal neutropenic sepsis, muscle tissue breakdown, liver damage, leakage around the vein or catheter and tissue necrosis. In the pivotal trial, the incidence of Grade 3 or 4 neutropenia based on laboratory values was 43% in patients receiving Yondelis, labeling states.</p><p><h2>More Drugs Around The Corner</h2><p><p>The lack of OS benefit is not likely to be a competitive disadvantage currently. The most recent drug approved by FDA was GlaxoSmithKline PLC's <i>Votrient</i> (pazopanib), now owned by Novartis AG, was cleared for second-line treatment of soft tissue sarcomas in 2012, though labeling on limitations of use notes lack of data for adipocytic STS (including liposarcoma) and gastrointestinal stromal tumors. </p><p><p>Votrient was approved based on a three-month survival benefit over placebo in its pivotal trial. The ORR in the trial was 4% for Votrient vs. 0 for placebo. Nevertheless, the Votrient approval was a "landmark moment" that established that endpoint, according to the Sarcoma Foundation of America.</p><p><p>Nevertheless, the lack of a survival benefit leaves room for new entrants to differentiate. Other drugs are right around the corner. EisaiEisai Co. Ltd.'s <i>Halaven</i> (eribulin mesylate) is now with FDA, under priority review for liposarcoma and leiomyosarcoma. Thomas noted that three other promising drugs are in Phase III for sarcoma: CytRx Corp.'s aldoxorubicin and Eli Lilly & Co.'s LY301227 and Threshold Pharmaceuticals Inc./Merck Serono SA's evofosfamide (TH-302). </p><p><p>"We've gone from nothing to five drugs that have potential to be approved in the next two years," sarcoma foundation CEO Bert Thomas said.</p><p><h2>US Launch Planned For Nov. 16</h2><p><p>Yondelis was originally developed with partner PharmaMar SA. Yondelis was approved for sarcoma in Europe in 2007 and is now cleared in almost 80 countries. </p><p><p>Cowen and Company noted in its 2015 Therapeutic Category Outlook Report that the US is one of the few countries where the drug was not approved yet for sarcoma and that consultants were "somewhat frustrated" by the fact that it was not available.</p><p><p>Tendler explained that FDA wanted Phase III trial results, whereas the ex-US sarcoma approvals were based on Phase II data. J&J has also developed Yondelis in ovarian cancer but withdrew a US application for this indication in 2011; the agency had requested a second Phase III study. </p><p><p>J&J plans to launch the drug in the week of Nov. 16 at the price of $8,100 per infusion (comprising three vials costing $2,700 each). Cost and number of infusions vary depending on the patient, but the company says on average a treatment course will cost $40,500. These cancers are typically treated by gynecologic oncologists, and J&J already has an established sales force to reach that base through its <i>Doxil</i> (doxorubicin) franchise, Tendler said.</p><p><h2>Off-Label Potential</h2><p><p>Sarcoma is rare, representing just 1% of cancers in the US. In addition to 12,000 with soft tissue sarcoma, 3,000 have bone sarcomas, according to the Sarcoma Foundation of America. "The real challenge has been that there are over 100 different histologic subtypes of sarcoma, and it's been a challenge to find compounds that are broadly applicable across all of these different subtypes," Thomas said.</p><p><p>In the case of the gastrointestinal stromal tumor (GIST) subtype of STS, a genomic driver was identified, paving the way for targeted treatments like Novartis' <i>Gleevec</i> (imatinib). The discovery was a "godsend" for GIST but for other types there has been no clean development path, Thomas said.</p><p><p>Treatment currently often involves chemotherapy and is up to the individual oncologist based on experience, Thomas explained. Any time there is an opportunity to have a new therapeutics option on the table for sarcoma patients the "whole community is eager to have it," he added.</p><p><p>Thomas also presumes that a wider pool of patients will wind up benefiting from Yondelis.</p><p><p>"The wonderful thing is that there is a wealth of experience ex-US in terms of using Yondelis, and once it's approved in the sarcoma subtype, it allows doctors to have that option for patients that might be more likely to respond, even if they are not in those subtypes based on the experience developed by oncologists around the world," he said.</p><p><p><i>This article is also being published in "The Pink Sheet" DAILY. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.</i></p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+JJs Yondelis Leads New Wave Of Sarcoma Drugs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151020T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151020T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151020T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030152
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+J&J's Yondelis Leads New Wave Of Sarcoma Drugs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{7C1602C1-F505-4889-841D-3232758E15A0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361138
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042513Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+25b1bba4-7e16-4961-8b84-b99ea69bd5e8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042513Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

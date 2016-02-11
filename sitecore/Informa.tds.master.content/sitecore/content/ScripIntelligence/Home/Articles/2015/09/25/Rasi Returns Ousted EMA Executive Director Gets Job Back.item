@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {06F5A115-E01E-4351-9C9F-1FFEB64E3AF9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/25/Rasi Returns Ousted EMA Executive Director Gets Job Back
+parent: {E629FDA3-8894-4F13-A9A5-B607E831F18A}
+name: Rasi Returns Ousted EMA Executive Director Gets Job Back
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 55894d9c-725e-4e83-bab0-c66284b40a55
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Rasi Returns! Ousted EMA Executive Director Gets Job Back
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Rasi Returns Ousted EMA Executive Director Gets Job Back
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4637
+
+<p>Professor Guido Rasi is to return as executive director of the European Medicines Agency, a post he had to relinquish in November 2014 following a ruling by the EU's civil service tribunal. </p><p>The nomination was announced following an extraordinary meeting of the EMA management board today during which the shortlisted candidates were interviewed. A total of 36 people had applied for the job, but the agency did not say how many were on the shortlist.</p><p>Rasi had been forced to step down after the tribunal annulled, on procedural grounds, a 2011 decision by the European Commission establishing the shortlist of candidates &ndash; and, consequently, the EMA's decision to appoint him executive director. </p><p>Following the announcement of his imminent return, Rasi said: "I am honored to have been nominated as EMA&rsquo;s executive director and am grateful for the opportunity to continue our efforts to make the agency fit for the challenges ahead. I am enormously proud of the agency and its network." </p><p>He will now be invited to appear before the European Parliament's committee on the environment, public health and food safety (ENVI) on Oct. 13 to make a statement and answer questions from MEPs. Following this hearing, if all goes according to plan, he will sign a contract and then take up his official duties at the agency. </p><p>The nomination is not entirely unexpected. As the EMA made clear at the time, the tribunal's ruling concerned a "procedural formality" and did not reflect in any way on Rasi's competence to run the agency, so he was free to apply to get his job back. Moreover, Rasi was highly respected as head of the EMA, having helped steer through prestige projects such as the policy on clinical trial data publication and the adaptive pathways initiative. </p><p>He should have no difficulty stepping back into the breach: having been appointed principal adviser in charge of strategy &ndash; a new post &ndash; after stepping down, he will have been keeping abreast of significant developments in the regulatory field. </p><p>Professor Sir Kent Woods, chair of the management board, said the decision to nominate Rasi was "the result of a robust recruitment process over the last months. We look forward to Professor Rasi resuming his leadership of the agency." </p><p>In the meantime, deputy executive director Andreas Pott, who has led the agency's operations and been its legal representative in the interim, will continue doing so until Rasi has officially taken up his duties.</p><p>Rasi said that the EMA had to continue to meet patients&rsquo; legitimate expectations for access to new and safe therapeutic options. "This requires that the medicines authorisation process not only supports the early stages of research and development, but also strives to make the best possible use of real world data throughout a medicine&rsquo;s lifecycle."</p><p>As well as the policy on proactive publication of clinical trial data and the adaptive pathways project, another key topic that will be high on Rasi's agenda is the ongoing drive to involve patients more closely in discussions on new drugs at the EMA's Committee on Medicinal Products for Human Use (CHMP). </p><h2>History </h2><p>Rasi had to step down in November 2014, three years into his five-year tenure, after Emil Hristov, a former head of the Bulgarian medicines agency, said the procedure used to select him was compromised by conflicts of interest involving candidates and members of the pre-selection panel. </p><p>Hristov said that two representatives of the commission's health directorate on that panel were also members of the EMA board. This, he said, represented a conflict of interests and violated the principle of impartiality imposed upon members of the panel, because the presence of two EMA board members would have favored the two applicants who were also board members (including Rasi, who at the time was head of the Italian medicines agency AIFA).</p><p>The tribunal's ruling annulling the commission's decision meant that the decision by the EMA board to select Prof Rasi from the shortlist and appoint him director general in October 2011 was also annulled. Both the EMA and the European Commission appealed against the tribunal's ruling. </p><p>The executive director of the EMA is its legal representative as well as its public face. The responsibilities of the post include drawing up the agency's strategy and work programmes, preparing and executing the budget in line with EU rules, working with the EU institutes and member states, and ensuring co-ordination among the various committees.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 197
+
+<p>Professor Guido Rasi is to return as executive director of the European Medicines Agency, a post he had to relinquish in November 2014 following a ruling by the EU's civil service tribunal. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Rasi Returns Ousted EMA Executive Director Gets Job Back
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150925T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150925T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150925T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029931
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Rasi Returns! Ousted EMA Executive Director Gets Job Back
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360680
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042458Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+55894d9c-725e-4e83-bab0-c66284b40a55
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042458Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

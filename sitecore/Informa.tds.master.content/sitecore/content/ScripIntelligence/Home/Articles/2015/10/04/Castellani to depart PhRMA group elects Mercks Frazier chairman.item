@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6B901162-A693-4429-85DD-B2C260821D8E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/04/Castellani to depart PhRMA group elects Mercks Frazier chairman
+parent: {573CFD6E-B2DD-45CD-ABE4-2EE91F9C3735}
+name: Castellani to depart PhRMA group elects Mercks Frazier chairman
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 53699b75-7458-469e-9419-f0cf0f22e6ba
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Castellani to depart PhRMA; group elects Merck's Frazier chairman
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Castellani to depart PhRMA group elects Mercks Frazier chairman
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3535
+
+<p>John Castellani plans to step down as CEO of the Pharmaceutical Research and Manufacturers of America (PhRMA) at the end of the year, he disclosed at the mega-drug industry lobbying group's board meeting on 16 April.</p><p>The revelation came on the same day PhRMA's board elected Merck's chief Kenneth Frazier as chairman of the Washington-based drug industry group.</p><p>Mr Frazier will succeed Pfizer CEO Ian Read as PhRMA chairman.</p><p>Mr Castellani came to PhRMA in September 2010, replacing Billy Tauzin, a former member of Congress from Louisiana, who was at the helm for more than five years and led the group in sealing the deal with the White House and the Democrats to limit the costs of drugs under Medicare Part D as part of the <i>Affordable Care Act</i>. </p><p>Mr Frazier said the search for Mr Castellani's successor would begin immediately and would be led by the PhRMA board's nominations and compensation committee. It retained the international headhunting agency Korn Ferry to conduct the search. </p><p>Before joining PhRMA, Mr Castellani was the president and CEO of the Business Roundtable, a Washington lobbying group made up of US corporate chief executives, which represents a combined workforce of nearly 12 million employees and $6tn in annual revenues.</p><p>Mr Castellani, a chemist by trade, also previously served as executive vice president of Lake Forest, Illinois-based Tenneco, which makes clean air and ride performance products and systems for the automotive, commercial truck and off-highway original equipment markets.</p><p>He started his career as an environmental scientist at General Electric.</p><p>In recent months, Mr Castellani has found himself at public forums <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Innovation-without-high-drug-prices-A-difficult-conversation-351991" target="_new">debating</a> with Karen Ignagni, president and CEO of the insurance lobbying group America's Health Insurance Plans, over the prices of drugs &ndash; particularly the new hepatitis C virus medicine's, like Gilead's $1,000-per pill Sovaldi (sofosbuvir) and $1,125-per-pill Harvoni (ledipasvir-sofosbuvir). </p><p>Ms Ignagni has argued companies like Gilead want a "blank check" when it comes to pricing their medicines.</p><p>While Mr Castellani has agreed the cost situation needs to be solved, or diseases like Alzheimer's will break the healthcare system and the economy, he argued at a forum last year that "the current system doesn't allow the investment in the right decision at the right time for the right price to have a reward for the person or the entity that makes that investment."</p><p>Mr Frazier called Mr Castellani a "strong advocate on behalf of the biopharmaceutical research industry and for the millions of patients we serve all around the world." </p><p>"Thanks to John&rsquo;s leadership, PhRMA is strong and well positioned in Washington today," the Merck chief said.</p><p>"We have an opportunity to manage this transition smoothly," Mr Frazier said. </p><p>"Representing the biopharmaceutical industry has been one of the most rewarding experiences of my career and I am very proud of the incredible work our members do every day to improve the lives of patients," Mr Castellani remarked. </p><p>Also elected by PhRMA's board on 16 April were Biogen CEO Dr George Scangos was named chairman-elect of the board of directors and Johnson & Johnson worldwide chairman Joaquin Duato, who is the new board treasurer.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 223
+
+<p>John Castellani plans to step down as CEO of the Pharmaceutical Research and Manufacturers of America (PhRMA) at the end of the year, he disclosed at the mega-drug industry lobbying group's board meeting on 16 April.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Castellani to depart PhRMA group elects Mercks Frazier chairman
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151004T160001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151004T160001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151004T160001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028454
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Castellani to depart PhRMA; group elects Merck's Frazier chairman
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357833
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+53699b75-7458-469e-9419-f0cf0f22e6ba
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

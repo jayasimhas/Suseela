@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {26703D04-FACE-4584-9382-9DE7308D64F7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/17/IPO UPDATE Are investors cooling to new biotech offerings
+parent: {673CAFAF-49B7-437A-9242-01ECA36193FF}
+name: IPO UPDATE Are investors cooling to new biotech offerings
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 36698265-3133-4cb8-ab2b-93aff7981f7b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+IPO UPDATE: Are investors cooling to new biotech offerings?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+IPO UPDATE Are investors cooling to new biotech offerings
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4831
+
+<p>The market for initial public offerings by high-tech companies is not in a bubble, but biotechnology IPOs may be entering bubble territory, according to a recent analysis by Renaissance Capital, which seems to be confirmed by the performance of recent biotech offerings.</p><p>Renaissance noted that 345 of the 486 IPOs in 1999 and 237 of the 406 IPOs in 2000 &ndash; peak dot-com boom years &ndash; were technology companies, but only 55 of the 275 IPOs in 2014 were in the high-tech space. The firm added: "Instead of a tech bubble, we see warnings of a biotech bubble. There were about 50% more development-stage biotech and biomedical IPOs in 2014 compared to 2000. None of these companies have operating earnings, yet the group has outperformed all other industries."</p><p>But the fervor for biotech offerings in the US, including drug developers as well as device and diagnostic makers, seems to have cooled to a mild fever considering life science IPOs in 2015 (through mid-February) raised $750m, which is down 45% compared to the same period last year when the industry garnered $1.3bn (scripintelligence.com, <a href="http://www.scripintelligence.com/home/comment/Fading-romance-for-pharma-and-biotech-in-2015-356839" target="_new">19 February 2015</a>).</p><p>Inotek Pharmaceuticals, whose lead drug candidate is meant to treat glaucoma, was the only therapeutics developer to go public during the week of 16 to 20 February and the company had to cut its proposed offering terms to launch its IPO. </p><p>Lexington, Massachusetts-based Inotek registered with the US Securities and Exchange Commission to raise up to $86.2m in an IPO in November then set a price range of $13 to $15 per share in January that would have grossed up to $69.6m from the sale of 4.6m shares plus as much as $34.5m from a concurrent offering of convertible senior notes (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Up-to-2.6bn-in-post-JP-Morgan-stock-offerings-plus-six-IPO-updates-356349" target="_new">25 January 2015</a>).</p><p>However, Inotek priced its offering of 6.7m shares at $6 each on 18 February for $40m in gross proceeds. The company also will raise another $20m from the sale of 5% convertible senior notes due in 2020. Its stock is trading above the IPO price, so far, closing at $6.09 on 20 February.</p><p>The British biotech Summit Therapeutics said in late January that it would raise up to $40m from its first sale of American depository shares (ADSs), but now the developer of therapies to treat Duchenne muscular dystrophy and <i>clostridium difficile</i> infections plans to raise up to $46m from ADSs priced around Summit's London Stock Exchange share value of approximately $11.54 (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Spark-ignites-investors-one-of-years-first-five-biotech-IPOs-356490" target="_new">2 February 2015</a>).</p><p>Meanwhile, Palo Alto, California-based Carbylan Therapeutics recently postponed its IPO, which could have raised more than $80m. The company originally planned to raise up to $86.25m and set a $12 to $14 preliminary price for 5.8m shares, which might have generated as much as $81.2m for Carbylan's low-dose corticosteroid injection and a hyaluronic acid viscosupplement for osteoarthritis of the knee under more favorable market conditions (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Up-to-2.6bn-in-post-JP-Morgan-stock-offerings-plus-six-IPO-updates-356349" target="_new">25 January 2015</a>).</p><p>But Inotek's discount pricing and Carbylan's decision to postpone didn't dissuade Cellectis from registering a new IPO with the SEC on 20 February. Like Summit, Cellectis already is a public company in Europe, although its stock trades on the Alternext market of the Euronext Paris. The Parisian biotech wants to raise up to $115m for development of its chimeric antigen receptor T-cell (CAR-T) immunotherapies.</p><p>Cellectis is working at a couple of advantages versus many other biotechs in the IPO queue: 1) the company signed a couple of high-profile licensing deals with Pfizer and Servier in 2014 and 2) it is working in the hot CAR-T space that saw Kite Pharma, Juno Therapeutics and Bellicum Pharmaceuticals complete successful IPOs during the past year (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Cellectis-soars-as-Pfizer-fronts-80m-for-immuno-oncology-352405" target="_new">18 June</a>, <a href="http://www.scripintelligence.com/business/Servier-and-Cellectis-sign-850m-cancer-collaboration-350105" target="_new">18 February</a> and <a href="http://www.scripintelligence.com/business/IPO-Update-Juno-has-biggest-2014-offering-as-investors-chase-CAR-T-stocks-355776" target="_new">21 December 2014</a>).</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 277
+
+<p>The market for initial public offerings by high-tech companies is not in a bubble, but biotechnology IPOs may be entering bubble territory, according to a recent analysis by Renaissance Capital, which seems to be confirmed by the performance of recent biotech offerings.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+IPO UPDATE Are investors cooling to new biotech offerings
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150217T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150217T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150217T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027893
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+IPO UPDATE: Are investors cooling to new biotech offerings?
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200200521
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356792
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+36698265-3133-4cb8-ab2b-93aff7981f7b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

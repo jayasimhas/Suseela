@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {64941B11-5386-46E4-9B29-0D5E677BB2A0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/06/BIO 2015 Dispatches Enough ideas plans time for action on antimicrobial resistance
+parent: {71347526-9D56-4939-98D3-CFAEEBA97EA8}
+name: BIO 2015 Dispatches Enough ideas plans time for action on antimicrobial resistance
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 942859b8-949b-4ead-8703-ced11c096ff3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 86
+
+BIO 2015 Dispatches: Enough ideas, plans; time for action on antimicrobial resistance 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 82
+
+BIO 2015 Dispatches Enough ideas plans time for action on antimicrobial resistance
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6331
+
+<p>Antimicrobial resistance (AMR) has been an emerging problem that has progressively gotten worse, which scientists have warned about for much of the past century, said Dr Steve Solomon, of Global Public Health Consulting and the former director of the Office of Antimicrobial Resistance at the Centers for Disease Control and Prevention (CDC).</p><p>But now, he said, it has reached a critical juncture and "we're at the beginning of a post-antibiotic era" &ndash; a situation created by underfunding and lack of support.</p><p>"Therapeutic options for treating resistant infections have been dwindling fairly rapidly," Dr Solomon said. "And now we are paying the price," he said, adding that the "pipeline is running dry."</p><p>And while there's been numerous reports filled with "superb" ideas and "excellent" strategies, "what we need to do urgently is to move from action plans to action," Dr Solomon declared during a 17 June session at the annual meeting in Philadelphia of the Biotechnology Industry Organization (BIO), which is changing its name early next year &ndash; replacing "industry" with "innovation."</p><p>Dr Solomon pointed out that while "real-time data" exist, it's not making its way to doctors, veterinarians, hospitals, national health ministries and other decision makers. </p><p>"We have the tools, but we are not there yet," he said.</p><p>Dr Solomon and other experts on the panel at the BIO session &ndash; Investment Incentives to Combat Antimicrobial Resistance &ndash; urged broader use of social media, like Twitter, to help communicate the importance of not using antibiotics unnecessarily and improve the knowledge of AMR to foster greater global collaboration. </p><p>Economist and ex-Goldman Sachs executive Lord Jim O'Neill, chairman of Review on Antimicrobial Resistance, an independent project <a href="http://www.scripintelligence.com/researchdevelopment/Antibiotic-crisis-spurs-UK-prime-minster-to-action-352628" target="_new">commissioned in 2014</a> by UK Prime Minister David Cameron and funded by the Wellcome Trust, said an analysis he co-authored projected as many as 10 million people worldwide with AMR infections by 2050 if the status quo remains, resulting in up to $100tn in global medical care and other associated costs.</p><p>In a <a href="http://www.scripintelligence.com/researchdevelopment/Pay-into-2bn-antibiotics-fund-ONeill-tells-big-pharma-358415" target="_new">report issued last month</a>, the AMR review team of experts said it would take from $16bn to $37bn over a decade to bring 15 new antibiotics to the global marketplace.</p><p>While that may sound like a sizable amount, Lord O'Neill argued it "peanuts" compared with paying out the $100tn for medical costs.</p><p>To boost antibiotic development, he said there must be "lump-sum payments to successful developers of antibiotics that meet urgent clinical needs."</p><p>In addition, Lord O'Neill said, the volume of use of antimicrobials must be "de-linked" from the rewards for innovation, "therefore removing the commercial imperative to sell large quantities."</p><p>"A key insight that has emerged is that we have to think both of the value of the antibiotic when we use it and also when we know that we could use it," Dr John Rex, vice president of infection development at AstraZeneca, told <i>Scrip</i> after the panel discussion.</p><p>He noted that one point that was highlighted during the discussion was the fact that patients are being denied important therapies, like chemotherapy, because of colonization with currently untreatable bacteria. </p><p>"It makes you realize that antibiotics are rather like the local fire station," Dr Rex explained. "We don't want to ever call on the local firemen, but knowing that they &ndash; and their truck and dog &ndash; are just around the corner makes a huge difference to public confidence. Funding antibiotics on a community basis makes perfect sense from that perspective."</p><p>Lord O'Neill noted that he and his team last month also had called for the creation of a new global innovation fund for "blue-sky" research of $2bn over five years supported by the biopharmaceutical industry &ndash; a recommendation he said stirred up controversy with drug makers.</p><p>But, he said, "We believe, for many reasons, the pharmaceutical industry itself should finance it because they are the ones who understand better than anyone else how to go from having a good idea down the path to having a successful drug."</p><p>In response to the O'Neill report, Steve Bates, CEO of the UK BioIndustry Association (BIA), said that while the AMR review team was "right to point out that the emergence and spread of bacteria resistant to antibiotics is now recognized as a major threat to medicine," he also said he wanted to ensure that "any new economic model is based on an informed stewardship not restrictive stewardship approach."</p><p>Mr Bates and his colleagues argued that an economic model for securing new drugs for future generations would best be delivered through the continuous supply of narrow spectrum antibiotics coupled to rapid diagnostics to inform treatment supported by a free-market remuneration model.</p><p>Such a strategy, combined with incentives and reasonable pricing for combination therapy, they contended, "would allow the world to change from empirically-driven antibiotic monotherapy, where resistance spreads like wild fire, to a more diverse and informed approach where protection from resistance is controlled locally," BIA said in a statement. </p><p>Lord O'Neill said to expect more reports from the AMR review team over the next year focused on diagnostics, agricultural & environmental use, surveillance and alternatives to conventional antibiotics. </p><p>He also plans to spend time over the next year persuading China, which will host the 2016 meeting of the G-20 &ndash; the international forum of world leaders and bankers from the 20 major world economies &ndash; to "take ownership" of the AMR topic at that event.</p><p>"We have a very historic moment coming up, and I can't think of a better topic," he said.</p><p><i>Our daily &ldquo;BIO 2015 Dispatches&rdquo; draw on the combined forces of Scrip Intelligence and "The Pink Sheet" staff, reporting from the Philadelphia meeting.</i></p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 349
+
+<p>Antimicrobial resistance (AMR) has been an emerging problem that has progressively gotten worse, which scientists have warned about for much of the past century, said Dr Steve Solomon, of Global Public Health Consulting and the former director of the Office of Antimicrobial Resistance at the Centers for Disease Control and Prevention (CDC).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 82
+
+BIO 2015 Dispatches Enough ideas plans time for action on antimicrobial resistance
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151206T043439
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151206T043439
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151206T043439
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029025
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 86
+
+BIO 2015 Dispatches: Enough ideas, plans; time for action on antimicrobial resistance 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+Expert View
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358915
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042409Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+942859b8-949b-4ead-8703-ced11c096ff3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042409Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {120F6032-CA26-480B-B397-0156E4837641}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/20/Turnaround means Italian firms will benefit from unitary patent system
+parent: {9272B77E-1398-4EF1-A77A-17C397C8C6D1}
+name: Turnaround means Italian firms will benefit from unitary patent system
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 24367305-ab02-410b-a051-6ad1f6f15e34
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+Turnaround means Italian firms will benefit from unitary patent system
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 70
+
+Turnaround means Italian firms will benefit from unitary patent system
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4825
+
+<p>In a move that will come as some relief to companies seeking broad patent protection in the EU, Italy has decided that it wants to be part of the future unitary patent system in the EU after all, despite its initial misgivings. "Joining the unitary patent is a priority," the Italian ministry for economic affairs said.</p><p>The decision to bring one of the EU's major economies into the future unitary patent fold comes after the Court of Justice of the EU dismissed Spain's action to annul the regulations underlying the patent package on 5 May.</p><p>Following that ruling, economic affairs minister Simona Vicari said, "We have confirmation that the legal framework of the unitary patent is not under discussion." Taking part in the patent system will help fight counterfeiting and encourage foreign investment in Italy, she added.</p><p>Membership of the unitary patent system "is in line with the interests of a country that focuses on innovation and the internationalization of its own companies and that wants to ensure more timely and uniform protection at European level for anyone who invests in research, development and innovation, and who therefore applies for patents", Ms Vicari said in a statement. </p><p>It wasn't always like this. Italy had initially joined with Spain in opposing the legislation on the patent and its associated translation arrangements, which was produced via the EU's so-called "enhanced co-operation" procedure. They claimed, inter alia, that the way the framework was developed was in contravention of EU law and that the language regime chosen (English, French or German) discriminated against the two countries. </p><p>The CJEU dismissed these claims, but Spain then went it alone and lodged another case against the two regulations governing the patent and the language regime. It was this action that was <a href="http://www.scripintelligence.com/policyregulation/EU-courts-dismissal-of-Spanish-actions-clears-way-for-new-patent-system-358202" target="_new">dismissed by the court</a> at the beginning of this month, effectively removing the last remaining legal obstacle to the establishment of the patent system.</p><p>However, while Spain did not sign the agreement on the Unified Patent Court (UPC), Italy did, which left it in the odd position of being a signatory to a patent court system but not accepting the unitary patents that will be litigated at the UPC. </p><p>As a signatory to the UPC agreement, Italy will have a local division of the UPC once the patent system is up and running. "Having a division of the UPC in Italy will allow our companies to have a national office to protect their interests, if necessary in the Italian language," Ms Vicari noted. </p><p>If Italy now goes ahead and signs up to the patent regulations, patents with unitary effect issued by the European Patent Office will be valid in the country. Italy should also be able to contribute to the discussion on the future system of patent renewal fees and their distribution and to ask for more support for Italy's small and medium sized enterprises, Ms Vicari added. </p><p>According to Dutch patent attorneys Delta Patents, the minister is probably saying here that she supports the <a href="http://unitary-patent.blogspot.nl/2015/03/renewal-fees-discussed-in-select.html" target="_new">proposal</a> by EPO president Beno&icirc;t Battistelli for two different renewal fee schedules for the unitary patent, referred to as TOP4 and TOP5. </p><p>Under this plan, the renewal fee level would be equal to the sum of the national fees payable in the four or five EU countries where European patents are most frequently validated. The TOP5 proposal suggests a 25% reduction for early renewals for applicants such as SMEs. </p><p>"Likewise, she may favor the fee proposal for the Unified Patent Court in which SMEs pay no fees at all," the firm commented. The draft proposal on court fees was <a href="http://www.unified-patent-court.org/images/documents/court_fees_and_recoverable_costs_consultation.pdf" target="_new">published</a> earlier this month.</p><p>25 EU countries have now adopted the patent regulations, while 25 have signed the UPC agreement. The agreement also has to be ratified by at least 13 countries, including France, Germany and the UK. So far, only six &ndash; Austria, Belgium, Denmark, France, Malta and Sweden &ndash; have completed the ratification process. Luxembourg is understood to have ratified the agreement but not yet deposited its instrument of ratification. </p><p>Countries that have begun ratification procedures include the Netherlands, Portugal and the UK, although the UK process has been delayed because of time pressures. Whether the UK ratification process will be affected by the prospect of the referendum on EU membership remains to be seen.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 326
+
+<p>In a move that will come as some relief to companies seeking broad patent protection in the EU, Italy has decided that it wants to be part of the future unitary patent system in the EU after all, despite its initial misgivings. "Joining the unitary patent is a priority," the Italian ministry for economic affairs said.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 70
+
+Turnaround means Italian firms will benefit from unitary patent system
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150520T050004
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150520T050004
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150520T050004
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028823
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+Turnaround means Italian firms will benefit from unitary patent system
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358502
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042351Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+24367305-ab02-410b-a051-6ad1f6f15e34
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042351Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

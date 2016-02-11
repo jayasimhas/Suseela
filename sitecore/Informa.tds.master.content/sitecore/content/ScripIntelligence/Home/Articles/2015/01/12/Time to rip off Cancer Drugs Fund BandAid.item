@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {560C6651-29A7-4C11-9C55-D3511B22F1C8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/12/Time to rip off Cancer Drugs Fund BandAid
+parent: {11212ABD-A8C4-447B-82EC-A68A3E16552E}
+name: Time to rip off Cancer Drugs Fund BandAid
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c773e97d-6e24-4f0c-ab6e-898066caad7b
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Time to rip off Cancer Drugs Fund Band-Aid
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+Time to rip off Cancer Drugs Fund BandAid
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8597
+
+<p>Following last week's furore over products being delisted from England's Cancer Drugs Fund (CDF), people are once again pointing to the more fundamental problems that led to this situation. One theme seems fairly consistent: the Cancer Drugs Fund is a sticking plaster that needs ripping off so that a real healing of the NHS's cancer drug use can begin.</p><p>For cancer drug manufacturers, the CDF is a lifeline which allows them access to a market from which they would otherwise be excluded, since the majority of drugs available on the fund have been rejected by NICE as too expensive. For many of these companies, getting rid of it now would be disastrous in the short-term. Yet all the companies affected by the latest CDF reform, along with the Association of the British Pharmaceutical Industry (ABPI), are calling for a fundamental reform of the UK's system which would leave no room for the CDF. </p><p>Set up by David Cameron in 2010, the CDF was a crude solution to the perception that not enough innovative cancer drugs were able to gain market access in the UK. It offered a large pot of money ring-fenced specifically for cancer &ndash; a disease which garners a disproportionate amount of media attention and public opinion &ndash; and was intended as a short-term solution until NICE had been through a reform.</p><p>Now, however, the fund looks likely to stay, with both of the UK's major political parties promising, ahead of the general election, to bolster it should they win power. And NICE reform, though apparently on the way, could be a long way off after plans for value-based assessment fell through last year (<a href="http://www.scripintelligence.com/policyregulation/No-reform-for-now-NICE-puts-value-based-assessment-on-hold-354093" target="_new">scripintelligence.com</a>, 24 September 2014).</p><p>Even at the time of its inception, many critics questioned what would happen when the fund ran out of money, as it now has. As Dr Vivek Misra, a consultant in clinical oncology at The Christie in Manchester, UK, points out: "After a number of years of using [the fund], everyone has got used to it and we've now got a situation where drugs that are standard of care will come out of the fund." With hindsight, he says, making the decision to approve drugs for use without first engaging in a pricing negotiation with industry was the "wrong thing to do."</p><p>Pharma, among others, has been particularly vocal on the subject since November when the CDF began a process of withdrawing drugs as a cost-containment measure. For years, the ABPI has called for a major and speedy overhaul of NICE, hopes for which fell through with the collapse of value-based assessment discussions. Now, the ABPI is concerned that the recent overhaul of the CDF &ndash; which sees cancer drugs subjected to a second cost effectiveness review &ndash; is yet another short-term solution to a long-term problem, detracting from the urgent and immediate need for NICE reform (<a href="http://www.scripintelligence.com/home/Pharma-rages-at-crude-Cancer-Drugs-Fund-overhaul-355077" target="_new">scripintelligence.com</a>, 14 November 2014).</p><p>The first outcomes from the new CDF review procedure, which has affected 42 out of the 80 drugs available on the fund, sparked outrage from industry (<a href="http://www.scripintelligence.com/home/Outrage-at-Cancer-Drugs-Fund-casualty-list-356034" target="_new">scripintelligence.com</a>, 9 January 2014). Unsurprisingly, no company wants to be told that their drug will be one of those delisted. But the problems with the government's latest sticking plaster solution to curbing costs go deeper than companies' bottom lines.</p><h2>Unattractive UK</h2><p>Eisai was the first company to threaten that the UK no longer seems such an attractive place to do business after breast cancer drug Halaven (eribulin) was identified as one of the first to have funding withdrawn, but it may not be the last. </p><p>The company said last week that it was outraged by the decision, and added: "The CDF decision is particularly regrettable given the need for direct foreign investment into the UK and may ultimately mean Eisai is forced to scale back its operations in the country."</p><p>Doctors too were disappointed. Dr Misra warned that the UK was at risk of "shooting [itself] in the foot" unless the country worked with the pharma industry to establish a "decent pricing structure." </p><p>"The pharmaceutical industry will look at the UK as a small and diminishing market and there is only so much pressure that we can apply before they become disinterested," he said. </p><h2>Removing standard of care</h2><p>Withdrawing products from the CDF will change the landscape of cancer care in the UK, in some cases removing treatments which have become the standard of care from patients' reach. </p><p>Dr Misra said that this is the case with Halaven, which, for the metastatic patients it is used to treat, is the final option. They are patients who have already had two lines of chemotherapy, and for whom Halaven offers the chance to extend their lives by 9-12 months with a manageable side-effect profile that does not leave them bedridden for the remainder of their lives. "If you stop the use of eribulin, I really don't know what we should be doing next," Dr Misra told <i>Scrip</i>.</p><p>He added that there was no suitable substitute available on the NHS, and that the only option for patients once the drug is withdrawn from the CDF is to pay for it out of pocket. In 2011, when NICE rejected Halaven, the comparator the institute used was oral vinorelbine, which Dr Misra said had no survival data attached to it. </p><p>"I'm surprised," he said, "that we're allowed to use a drug which is not effective [vinorelbine], and yet we are not allowed to use a drug which clearly is effective [Halaven]."</p><p>Similarly, Sanofi noted that by delisting its prostate cancer drug, Jevtana (cabazitaxel), the NHS was leaving patients with no other treatment options. "Jevtana is the only active treatment for men with hormone-resistant prostate cancer whose disease has progressed in spite of chemotherapy," the company said. "This delisting goes against NHS England's own criteria that a drug should continue to be funded if there is no other effective treatment for a particular group of patients."</p><h2>Fundamental reform needed</h2><p>In line with the ABPI's consistently voiced demands for reform, Sanofi, Eisai and Novartis, the first casualties from the CDF withdrawals, were unanimous on 8 January in their anger, and their calls for fundamental reform. "The government spoke of a commitment to improving patient access to cancer medicines and promised NICE reform to make this a reality, with the CDF in place until this happened. NICE, the Department of Health and NHS England must quickly review and overhaul the evaluation process for cancer drugs, as promised," said Sanofi.</p><p>Novartis added: "Novartis strongly believes that new ways to evaluate cancer medicines are needed. However, ongoing work to define a better system for the long term must not detract from the fact that delisting medicines threatens to undermine the progress in access to cancer medicines that has been made over the past years."</p><p>Dr Misra said that having a two-tier system for cancer drugs, consisting of NICE and the CDF, is not sustainable. Whether the problem is chronic underfunding of the NHS, or chronic overpricing by the pharmaceutical industry, he said, "we need a single system that can evaluate the efficacy of the drug, as NICE does," followed up with negotiation between the Department of Health and industry to find a sensible price. This system, Dr Misra said, needs to be universally applied to all drugs across the UK rather than having a separate system just for cancer drugs and just in England.</p><p>NHS England itself agrees that the current situation is not sustainable. "The fund has delivered benefits to thousands of patients, but if this is to continue we have to act now. We want as many patients as possible to be able to access the best drugs, some of which have just become available," said NHS England. </p><p>But with the government dragging its heels over long-term reform, a Band-Aid solution seems to be the best it can offer. Focusing narrowly on the immediate funding problem with the CDF, NHS England's response was: "If we don't re-evaluate drugs and prioritize the ones that offer the best value, thousands more people could miss out on promising, more effective treatments that are in the pipeline."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 361
+
+<p>Following last week's furore over products being delisted from England's Cancer Drugs Fund (CDF), people are once again pointing to the more fundamental problems that led to this situation. One theme seems fairly consistent: the Cancer Drugs Fund is a sticking plaster that needs ripping off so that a real healing of the NHS's cancer drug use can begin.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Time to rip off Cancer Drugs Fund BandAid
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150112T230048
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150112T230048
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150112T230048
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027498
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Time to rip off Cancer Drugs Fund Band-Aid
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356006
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c773e97d-6e24-4f0c-ab6e-898066caad7b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

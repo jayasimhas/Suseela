@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {C1258BBB-067B-4A7F-95E5-A0C30251BFD0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/13/JJ Takes Ebola Vaccine Into Phase III
+parent: {795A7AEF-21C6-4727-ABCA-CA7142D31AA1}
+name: JJ Takes Ebola Vaccine Into Phase III
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0e99f958-bf05-4e25-8c5e-f9fd5f9f2c5f
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+J&J Takes Ebola Vaccine Into Phase III 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 37
+
+JJ Takes Ebola Vaccine Into Phase III
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2641
+
+<p>The Johnson & Johnson company, Janssen Pharmaceutical, has started a Phase III trial of its Ebola vaccine in Sierra Leone &ndash; pushing on with R&D for the candidate despite the initial Ebola crisis having calmed and other big players developing competing late-stage immunization options.</p><p>The first volunteers have received the initial dose of Janssen's prime-boost vaccine in the EBOVAC-Salone study which is taking place in an area reported to have had recent Ebola cases, Sierra Leone's Kambia district. </p><p>Janssen's vaccine regimen in EBOVAC-Salone is a combination of two vaccine components based on AdVac technology from one of J&J's companies, Crucell Holland B.V., and MVA-BN technology from Bavarian Nordic. The aim is to optimize and strengthen the length of the immunity, with the initial AdVac dose priming the immune system and MVA-BN, the second dose, boosting the response. </p><p>As of October 2015, over 28,400 people have been infected with the virus across Sierra Leone, Liberia and Guinea, and nearly 11,300 have died. So far, there is no licensed vaccine, treatment or cure for the Ebola virus, though there are other vaccines in the pipeline. In April this year Merck & Co. and NewLink Genetics Corp. initiated their <a href="http://www.scripintelligence.com/policyregulation/25m-US-funded-study-goes-beyond-testing-Ebola-vaccine-357889" target="_new">STRIVE</a> (Sierra Leone Trial to Introduce a Vaccine against Ebola) Phase III study, also in Sierra Leone, for their Ebola vaccine rVSV-ZEBOV-GP (V920). In July 2015, this vaccine was found to have 100% efficacy in an analysis of interim data from a <a href="http://www.scripintelligence.com/home/MerckNewLink-Ebola-vaccine-100-effective-in-Guinea-trial-359726" target="_new">Phase III trial in Guinea</a>. </p><p>Last month Crucell and Bavarian Nordic were <a href="http://www.scripintelligence.com/policyregulation/Crucell-Bavarian-Land-28.5m-U.S.-Ebola-Vaccine-Award-360452" target="_new">awarded $28.5m</a> over four years by the Biomedical Advanced Research and Development Authority (BARDA) to advance their prime-boost Ebola vaccine. Alongside the new study, there are ongoing Phase I and II trials of the prime boost vaccine across Europe, the US, and Africa. The first Phase I studies started in the UK and US early this year, with others beginning in Africa shortly after. After positive preclinical data from the UK Phase I study, the next stage was initiated in both UK and France in July 2015. A Phase II study is also set to start in various West and East African countries in areas directly and indirectly affected by the virus. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 297
+
+<p>The Johnson & Johnson company, Janssen Pharmaceutical, has started a Phase III trial of its Ebola vaccine in Sierra Leone &ndash; pushing on with R&D for the candidate despite the initial Ebola crisis having calmed and other big players developing competing late-stage immunization options.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 37
+
+JJ Takes Ebola Vaccine Into Phase III
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151013T180001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151013T180001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151013T180001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030037
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+J&J Takes Ebola Vaccine Into Phase III 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{202BB75B-8718-40FC-96EC-851DBBB43362}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360930
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042504Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0e99f958-bf05-4e25-8c5e-f9fd5f9f2c5f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042504Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

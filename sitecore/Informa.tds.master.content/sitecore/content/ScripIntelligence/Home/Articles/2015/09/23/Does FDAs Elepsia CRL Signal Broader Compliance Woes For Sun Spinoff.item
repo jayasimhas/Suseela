@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {235DB9D5-B958-49DA-9953-DC0EBCC15517}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/23/Does FDAs Elepsia CRL Signal Broader Compliance Woes For Sun Spinoff
+parent: {E8CB3B12-58E6-4D8C-926D-C49922785188}
+name: Does FDAs Elepsia CRL Signal Broader Compliance Woes For Sun Spinoff
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d7d126ca-5835-4288-8d03-5ab92f6d3320
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+Does FDA's Elepsia CRL Signal Broader Compliance Woes For Sun Spin-off?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 68
+
+Does FDAs Elepsia CRL Signal Broader Compliance Woes For Sun Spinoff
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4166
+
+<p>Shares of Sun Pharmaceutical Industries Ltd were dented on Indian bourses after investors appeared concerned that the US FDA's decision to rescind a previous approval for its R&D arm's new drug application (NDA) for <i>Elepsia XR</i> (levetiracetam extended-release tablets) implied more than met the eye.</p><p>Sun Pharma Advanced Research Company Ltd (SPARC) is the listed R&D spin-off of Sun Pharma, which has been evaluating several marketing partners for commercialization of Elepsia in the US.</p><p>Late Sept. 25, SPARC announced that the FDA had issued a Complete Response letter (CRL) to its NDA for Elepsia XR 1000mg and 1500mg, revoking an earlier approval. </p><p>Investors were seemingly rattled by the comment in the CRL that the compliance status of Sun's manufacturing facility for the product was not acceptable on the date of approval.</p><p>Elepsia XR is to be manufactured at Sun's Halol facility, which is under FDA scrutiny for current good manufacturing practice (cGMP) deficiencies, though the Indian company has been working with the agency to set things right and has taken several corrective measures.</p><p>Some investors appeared to also view the CRL as a sign of limited progress at resolving cGMP issues at Halol &ndash; seen as a key site for the Indian firm.</p><p>Shares of Sun declined 3.42% to end at INR860.80 ($13) on the Bombay Stock Exchange on Sept. 28, while SPARC closed at INR375.80 (-2.62%).</p><p>Asked about the rationality of concerns that the CRL for Elepsia represented a double whammy , SPARC underscored that the CRL related to the "status" of the Halol facility as "on the date" of the NDA approval (i.e. March 2015). </p><p>"Sun Pharma has indicated that it is focused on resolving the issues and that its remediation process for Halol is on track," SPARC told <i>Scrip</i>.</p><p>The FDA has previously also stipulated a satisfactory resolution of the cGMP deficiencies at Halol as a prerequisite for the final approval of SPARC's NDA for <a href="http://www.scripintelligence.com/policyregulation/Little-Spark-Yet-For-Xelpros-Amid-New-CRL-359768" target="_new">Xelpros</a> (latanoprost BAK-free eye drops). </p><p>Some analysts suggested that investor concerns, at this stage, may be overblown. </p><p>Nimish Mehta, founder of Research Delta Advisors, believes that the market's reading of the linkage between the CRL for Elepsia XR and the Halol site resolution may be somewhat misplaced, given that the compliance status of the manufacturing facility was not acceptable on the date of [the NDA] approval (i.e. March 2015).</p><p>"I don't think there's been anything new at Halol that triggered the CRL. The retraction is probably also on the lines of similar action by the FDA, which has in the past cancelled approvals that are based on non-compliant sites," Mehta told <i>Scrip</i>.</p><p>The FDA in November last year <a href="http://www.scripintelligence.com/business/Ranbaxys-generic-Nexium-exclusivity-dead-or-alive-354921" target="_new">rescinded</a> the tentative approvals for Ranbaxy's generic Nexium and Valcyte, saying that these were in error because of the ''compliance status'' of Ranbaxy's facilities referenced in the ANDAs at the time the approvals were granted. Dr Reddy's Laboratories and Endo International then received approval from the agency for generic Valcyte. </p><p>The FDA could not immediately be reached to clarify whether similar rules were applied in the case of SPARC.</p><p>SPARC has previously said that it is at an advanced stage of <a href="http://www.scripintelligence.com/researchdevelopment/SPARC-close-to-licensing-epilepsy-therapy-in-US-358907" target="_new">licensing discussions</a> with potential partners for Elepsia XR, its epilepsy therapy that is expected to pare the pill burden for patients. </p><p>The firm had been hoping to market Elepsia XR at a significant premium to generics and was eying commercialization in the US by the second half of 2015&ndash;16.</p><p>SPARC told <i>Scrip</i> that it was "difficult to estimate at this stage" whether the CRL completely wiped out chances of commercialization of the product as originally anticipated.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 312
+
+<p>Shares of Sun Pharmaceutical Industries Ltd were dented on Indian bourses after investors appeared concerned that the US FDA's decision to rescind a previous approval for its R&D arm's new drug application (NDA) for <i>Elepsia XR</i> (levetiracetam extended-release tablets) implied more than met the eye.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+Does FDAs Elepsia CRL Signal Broader Compliance Woes For Sun Spinoff
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150923T120002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150923T120002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150923T120002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029902
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+Does FDA's Elepsia CRL Signal Broader Compliance Woes For Sun Spin-off?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360635
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d7d126ca-5835-4288-8d03-5ab92f6d3320
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

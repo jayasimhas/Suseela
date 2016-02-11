@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {7F6D9EBD-FE48-4635-8985-10D5A3302F9F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/Athyrium to invest 123bn in nearcommercial companies
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: Athyrium to invest 123bn in nearcommercial companies
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8007a11d-7c47-4144-b704-165aa074e40a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Athyrium to invest $1.23bn in near-commercial companies
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Athyrium to invest 123bn in nearcommercial companies
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2551
+
+<p>Can't find a partner to help commercialize your Phase III drug awaiting US FDA approval? Athyrium Capital Management has raised its second fund in hopes of investing $1.23bn in such an opportunity.</p><p>But late-stage companies should move quickly to tap Athyrium's resources, because the asset management firm and its investment management partner Neuberger Berman already have committed about 30% of the freshly raised capital &ndash; roughly $360m &ndash; to six investments to date. </p><p>Two of the first six investments were Cipher Pharmaceuticals, which sold <a href="http://www.scripintelligence.com/business/Cipher-enters-US-derm-market-with-Innocutis-deal-357861" target="_new">$100m in senior secured notes</a> to Athyrium to fund its $45.5m purchase of dermatology-focused Innocutis in April and to support future acquisitions, as well as a commitment to <a href="http://www.scripintelligence.com/business/Valneva-builds-on-travelers-vaccine-franchise-with-45m-Dukoral-buy-355957" target="_new">traveler's vaccine</a> specialist Valneva in January. Athyrium previously provided an <a href="http://www.scripintelligence.com/business/Retrophin-secures-more-cash-buys-potential-100m-drug-352080" target="_new">$80m loan facility</a> to acquisitive drug developer Retrophin in mid-2014. </p><p>Other biopharma recipients of the investor's capital include Zealand Pharma, Indivior, Ironwood Pharmaceuticals, InnoPharma, Horizon Pharma, Pernix Therapeutics and Vivus.</p><p>Athyrium Opportunities Fund II brings the firm's total capital under management to more than $1.7bn following Athyrium Opportunities Fund I, which raised $507m. More than 40 investors &ndash; pension funds, endowments, foundations, sovereign wealth funds and others &ndash; put money into the oversubscribed second fund.</p><p>Athyrium invests in biopharmaceuticals, medical devices, diagnostics, health care information technology and health care services at companies that have commercial assets or products nearing regulatory approval and a commercial launch. </p><p>The second fund's investments in private and public companies will range from $25m to $150m in various forms of debt, equity, royalty transactions and other structured financial instruments. </p><p>Athyrium founder Jeff Ferrell said in a statement that the firm provides "large, flexible and long-term capital solutions at attractive costs of capital," which Athyrium partner Jeremy Lack said companies may use for "acquisitions, growth acceleration and other forms of expansion."</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 204
+
+<p>Can't find a partner to help commercialize your Phase III drug awaiting US FDA approval? Athyrium Capital Management has raised its second fund in hopes of investing $1.23bn in such an opportunity.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Athyrium to invest 123bn in nearcommercial companies
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T203549
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T203549
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T203549
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029302
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Athyrium to invest $1.23bn in near-commercial companies
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359486
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8007a11d-7c47-4144-b704-165aa074e40a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

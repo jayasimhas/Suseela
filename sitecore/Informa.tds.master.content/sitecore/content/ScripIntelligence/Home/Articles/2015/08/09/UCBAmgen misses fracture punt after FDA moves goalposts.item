@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {D68D131F-D8CB-49E9-AC5A-FD2967DADD93}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/09/UCBAmgen misses fracture punt after FDA moves goalposts
+parent: {3B23AF36-6608-40B4-A2F2-A35E455DD1A5}
+name: UCBAmgen misses fracture punt after FDA moves goalposts
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f3de579f-98f9-471b-9d41-f18cfac7edf7
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+UCB/Amgen misses fracture punt after FDA moves goalposts 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+UCBAmgen misses fracture punt after FDA moves goalposts
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2833
+
+<p>UCB and Amgen's 50-50 collaboration on the novel sclerostin antibody romosozumab (CDP7851/AMG785) will not proceed into Phase III trials in fracture healing. The decision is based on two factors: firstly, the FDA has moved the goalposts for clinical studies in fracture healing, and secondly, in a Phase II trial investigating its use in accelerating tibial fracture healing, the drug was "not reaching its endpoint to our full satisfaction", according to a UCB spokesperson. </p><p>Despite the setback, UCB says it will press on with Amgen in the Phase III program of the product for postmenopausal osteoporosis (PMO), a far larger indication than fracture healing, for which first results are expected at the end of 2015. It said the decision to discontinue the fracture healing program was not related to the drug's safety profile, which had proved consistent in the Phase II fracture healing trials with that seen in the PMO program.</p><p>According to UCB, latest guidance from the FDA on recommended primary endpoints in fracture healing trials did not chime with its studies so far, and would have required a "costly and complex restructuring of the planned Phase III program". The company said that it wanted to allocate its resources to other pipeline priorities (fracture healing had not been expected to be a major market opportunity anyway). </p><p>UCB told <i>Scrip </i>that its primary endpoint of acceleration of fracture healing was not aligned with the FDA's expectations that new drug trials should focus on long-term outcomes with three clear primary endpoints: radiographic evidence of fracture healing, functional evidence of healing and the absence of a requirement for re-operation or revision surgery.</p><p>UCB says it will present completed Phase II accelerated fracture healing results at an unnamed future conference. It has completed a study in tibial fractures in around 400 patients, and is continuing with a second Phase II study in around 330 hip fracture patients.</p><p>UCB/Amgen's sclerostin antibody is the most advanced candidate of its type (Amgen and Novartis have others earlier in development). While existing therapies aim to stop bone resorption, the approach with this antibody is to promote bone growth. If all goes well, the product could still launch in 2017 in osteoporosis. </p><p>Datamonitor analysts predict the osteoporosis market will decline in value from $5.9 billion in 2012 to $5.2 billion in 2021 in the US, Japan and the five largest EU markets, driven by generic erosion of the major brands of the bisphosphonate class. It expects only four new key products to be launched over that period: as well as romosozumab, these are Radius's BA058 (parathyroid hormone-related protein analog), Pfizer's Aprela (bazedoxifene and conjugated estrogens) and Merck's odanacatib.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 483
+
+<p>UCB and Amgen's 50-50 collaboration on the novel sclerostin antibody romosozumab (CDP7851/AMG785) will not proceed into Phase III trials in fracture healing. The decision is based on two factors: firstly, the FDA has moved the goalposts for clinical studies in fracture healing, and secondly, in a Phase II trial investigating its use in accelerating tibial fracture healing, the drug was "not reaching its endpoint to our full satisfaction", according to a UCB spokesperson. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+UCBAmgen misses fracture punt after FDA moves goalposts
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150809T220000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150809T220000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150809T220000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC020366
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+UCB/Amgen misses fracture punt after FDA moves goalposts 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+339858
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T041530Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f3de579f-98f9-471b-9d41-f18cfac7edf7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T041530Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {21D4E62A-0344-46D1-AE65-5F8337CC3E82}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/23/Novo Nordisk Reveals Tresiba US Pricing Premium To Levemir
+parent: {3C066B44-2408-4C2D-939F-7AF55362398E}
+name: Novo Nordisk Reveals Tresiba US Pricing Premium To Levemir
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9f85a465-032b-467b-a9c2-966f4ca215c4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Novo Nordisk Reveals Tresiba US Pricing Premium To Levemir 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Novo Nordisk Reveals Tresiba US Pricing Premium To Levemir
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6862
+
+<p>Novo Nordisk AS says its ultra-long-acting insulin Tresiba will be launched in the US at a 10% premium to the Danish company's currently marketed Levemir (insulin detemir) and made available first to specialists and pharmacies there in the fourth quarter, with full commercial launch slated for the first quarter of 2016. </p><p>The world's largest insulin maker, which won FDA approval for Tresiba on Sept. 25, said it would introduce the new insulin gradually to ensure it gets maximum coverage in that increasingly competitive diabetes market. </p><p>"You should expect a relatively slow ramp-up of Tresiba in the United States. We are not currently going to pursue an aggressive access strategy," Novo Nordisk CEO Lars Rebien Sørensen told analysts on Oct. 29 when presenting the group's third-quarter results. The group did not give discounts to get on Medicare Part D plans and will be going after the commercial market initially, he added.</p><p>Tresiba is now launched in 36 countries. In Japan, where Tresiba was launched in March 2013, it now has 31% of the basal insulin market. The once-daily, next-generation basal insulin analogue has a half-life of 25 hours and an action duration of at least 42 hours; Tresiba can be injected at any time of the day.</p><p>"Regarding the price of Tresiba in the United States, we have set a price that we know, which is Levemir. And then we have added a premium to Levemir. In fact we have added a 10% premium to Levemir," Sørensen said. The company has said Levemir pricing is currently on par with Sanofi's blockbuster Lantus (insulin glargine).</p><p>Sørensen, a Dane, said there would probably be some sales "cannibalization" effect for Levemir as Tresiba penetrates the US market. "The growth of Levemir will be stunted as we penetrate the market but &#8230; our anticipation is that as far as switches goes, it will be primarily Lantus patients that would be switching to Tresiba," Sørensen said.</p><p>Asked to describe the group's approach to rebates, he said: "Our rebating strategies will be dependent on where our competition will be moving with their prices. And so we'll have to take into consideration that in reality what the payers are looking at is a net price. That's list price minus rebates. And we will have to adjust accordingly should the current pricing environment become tougher." </p><p>Novo Nordisk's chief executive was speaking the same day that rival Sanofi SA warned that sales at its key diabetes division would keep falling until 2018, as the French group faces rising payer push-back and competition in the US, where the patent on its long-acting Lantus is due to expire this year.</p><p>In response to Sanofi's downward outlook revision, Sørensen said: "Sanofi's basal franchise is under pressure from two sides &ndash; pressure from the launch of an innovative premium product, Tresiba, and the launch of a [Eli Lilly & Co's Lantus follow-on biosimilar] Basaglar. So obviously this is putting pressure on their pricing and their volume growth expectations going forward." </p><p>He denied that Novo Nordisk would also cut its diabetes outlook: "Our assumption for the overall insulin market growth is still 5% in volume, and given our portfolio, we expect that we will be gaining share. So the overall model still applies." </p><p>Underscoring the group's robust performance, the Denmark-based group said it was raising its 2015 operating profit growth guidance to 20% from an earlier expected 19%. Novo Nordisk is forecasting mid to high single-digit percent growth in operating profit in local currencies for 2016.</p><p>The group said sales growth in the first nine months of 2015 was 23% in Danish kroner and 9% measured in local currencies, with growth primarily driven by North America and international operations. Sales growth was realized within both diabetes care and biopharmaceuticals with the highest contribution coming from GLP-1 agonist Victoza and Levemir. Novo Nordisk said the rollout of its new generation insulins and especially Tresiba was progressing well, with them accounting for 10% of growth In the first nine months of this year new. In the third quarter, net sales rose 20% from the same year ago period, to $3.99bn.</p><p>Last month, Novo Nordisk filed Xultophy, its once-daily fixed ratio combination of insulin degludec and liraglutide, for US approval. The submission is expected to be reviewed on the US FDA's PDUFA V program. Xultophy has already been launched in Germany, UK, Switzerland and Sweden. "In Switzerland, the first country to launch Xultophy, the market penetration measured in value of the long-acting insulin market continues on a trajectory similar to the one achieved with Tresiba," Sørensen said on the analyst call. </p><p>Another positive product trend was seen with the obesity drug Saxenda (liraglutide), which was launched in the US in late April 2015. "The initial uptake is encouraging with Saxenda at 25% volume market share and total branded anti-obesity prescriptions six months after launch," the CEO said.</p><p>Still, market access for its anti-obesity medication in the US remains restrictive compared to other therapeutic categories such as diabetes. "This is due to the fact that anti-obesity medication is not covered in the Medicare Part D, leaving access opportunities limited to the commercial channel. Nonetheless, the level of temporary and contracted coverage that we have been able to secure to date has exceeded our expectation and the level of formulary access for Saxenda has gradually increased to more than 50 million lives now covered," Sørensen said.</p><p>The company used its third-quarter update to announce that it had initiated two new clinical programs within obesity. The first study is the Phase II dose-finding trial with injectable just one analog semaglutide administered once daily for treatment for obesity. The second study is the first Phase I trial with NN9747, a long-acting analog of the endogenous appetite regulating peptide YY. The trial will investigate the safety, tolerability and pharmacokinetics of single and multiple once-daily doses of NN9747 in around 120 overweight to obese but otherwise healthy people, said Mads Krogsgaard Thomsen, Novo Nordisk's chief science officer.</p><p>The group plans to progress its once-daily oral formulation of semaglutide into Phase IIIa trials in the first quarter of next year, he added.</p><p>One sour note was that results from the second and final Phase IIIa ADJUNCT study for the use of liraglutide as adjunct to insulin therapy in people with type 1 diabetes did not significantly lower rates of severe hypoglycaemia for all doses of liraglutide compared with placebo. "Based on these results we do not expect to file for label expansions for the use of liraglutide in type 1 diabetes," Krogsgaard Thomsen said. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 329
+
+<p>Novo Nordisk AS says its ultra-long-acting insulin Tresiba will be launched in the US at a 10% premium to the Danish company's currently marketed Levemir (insulin detemir) and made available first to specialists and pharmacies there in the fourth quarter, with full commercial launch slated for the first quarter of 2016. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Novo Nordisk Reveals Tresiba US Pricing Premium To Levemir
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151023T193413
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151023T193413
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151023T193413
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030201
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Novo Nordisk Reveals Tresiba US Pricing Premium To Levemir 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361217
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042515Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9f85a465-032b-467b-a9c2-966f4ca215c4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042515Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

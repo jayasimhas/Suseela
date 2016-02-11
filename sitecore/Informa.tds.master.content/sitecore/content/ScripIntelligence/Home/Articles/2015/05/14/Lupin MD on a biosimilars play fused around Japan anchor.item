@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2C64ED2C-9330-4EDB-BA07-FF0046A1B8AF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/14/Lupin MD on a biosimilars play fused around Japan anchor
+parent: {C175FE23-2601-4F4F-B3CE-DA1791987470}
+name: Lupin MD on a biosimilars play fused around Japan anchor
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 110da2a5-6e7f-4554-90b5-1997ee2d277f
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Lupin MD on a biosimilars play fused around Japan 'anchor' 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Lupin MD on a biosimilars play fused around Japan anchor
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4436
+
+<p>Lupin may have been slow off the block in the biosimilars space in emerging markets compared with some of its Indian peers, but the Mumbai-based firm is hoping that a strategy centred around its "anchor market" Japan may more than compensate as well as propelling its entry into the US and Europe.</p><p>In an exclusive interaction with <i>Scrip</i>, Lupin's managing director, Nilesh Gupta, highlighted why the joint venture with Japan's Yoshindo was "one big concrete step" the firm had taken in the biosimilars space, a targeted FY17 filing in Japan for etanercept and why the firm won't follow a "low disruptive" pricing approach, at least for the first wave of biosimilars, in emerging markets. </p><p>A specialty play in Japan, probably through an acquisition - maybe a CNS brand for example - was also something that was being considered, Lupin's top brass indicated. </p><p>Lupin may have been a little late in emerging markets for biosimilars, but Mr Gupta says that that those markets are not where the "big biosimilars game" is being played and that it will not really "move the needle" as far as the company is concerned.</p><p>"The good thing is that since then we took concrete steps for Japan, started development of etanercept in partnership with Yoshindo, completed Phase I in Japan and will shortly start Phase III," Mr Gupta said.</p><p>Last year Lupin and Yoshindo announced plans to form a <a href="http://%5bhttp:/www.scripintelligence.com/business/Japan-firmly-in-Lupins-sights-with-Yoshindo-biosimilars-JV-351422%5d" target="_new">new jointly managed entity</a>, YL Biologics, that is expected to conduct clinical development of certain biosimilars including regulatory filings and obtaining marketing authorizations. The Japanese biologicals market was then valued at around $12bn and growing at 2-3% annually. Lupin's etanercept, a biosimilar version of Amgen's Enbrel, was the first product to be licensed to the new venture.</p><h2>First mover</h2><p>Mr Gupta also referred to a recent statement by sibling and Lupin's CEO, Vinita Gupta, on why biosimilars is currently one of the areas where you probably don't really gain by being the first mover. </p><p>"I think that's correct. Lot of regulation is yet to be clarified, how the channel operates to open up&#8230; is it going to be a brand/generic&#8230; all of those things have to be sorted out. Till these hurdles exist&#8230;. you could always argue about being the first mover, but from a generic perspective it doesn't fly," Mr Gupta said.</p><p>"I don't think people really make money in Europe yet and the US is yet to evolve."</p><p>While Lupin expects to "capitalize" on the US biosimilars opportunity when that opens up, till then Japan will be the firm's key play on a "product by product basis", alongside key emerging markets such as Russia, Latin America and India. </p><p>Lupin also hopes that global trial data from its Japanese venture in the biosimilars segment would make it easier to gain access to the US and Europe.</p><p>"That's what we are trying to do &#8230; in fact we are trying to do that in some other platforms as well. We are certainly trying to work with a couple of regulatory bodies. I don't know if it will fly with the US. The intention is to do a global trial, with the relevant number of patients in the geographies that matter, "Mr Gupta explained.</p><p>Lupin believes that if it could include enough patients, it could possibly get the dossier to work in Japan, Europe and the US. </p><p>"That will be a nice play, if we could pull it off," Mr Gupta added.</p><p>On the pricing front, he believes a low disruptive pricing approach may not make sense, at least in emerging markets like India, which has witnessed "extremely aggressive pricing" and where Lupin has been a tad late especially for the first wave of products. He also referred to the influx of products from China.</p><p>"We might do it for the newer products," he said, though.</p><p>Lupin, which has 10 biosimilars under development, <a href="http://%5bhttp:/www.scripintelligence.com/business/Lupin-snaps-up-Nanomi-for-complex-injectables-as-first-biosimilar-looms-349804%5d" target="_new">expects to launch</a> two products in India in FY16 &ndash; likely to be pegfilgrastim and filgrastim-granulocyte colony stimulating factor (GCSF). Peginterferon alfa-2b and rituximab are believed to be some of the other products in Lupin's pipeline.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 304
+
+<p>Lupin may have been slow off the block in the biosimilars space in emerging markets compared with some of its Indian peers, but the Mumbai-based firm is hoping that a strategy centred around its "anchor market" Japan may more than compensate as well as propelling its entry into the US and Europe.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Lupin MD on a biosimilars play fused around Japan anchor
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150514T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150514T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150514T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028775
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Lupin MD on a biosimilars play fused around Japan 'anchor' 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358426
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042349Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+110da2a5-6e7f-4554-90b5-1997ee2d277f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042349Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

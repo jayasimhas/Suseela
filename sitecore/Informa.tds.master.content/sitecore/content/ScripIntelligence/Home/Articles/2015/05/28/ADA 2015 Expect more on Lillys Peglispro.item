@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {8EF45600-B3A3-4A19-BBE8-464C81AFA73A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/28/ADA 2015 Expect more on Lillys Peglispro
+parent: {13587B21-C2AC-45A3-9B37-20A4DC43DB48}
+name: ADA 2015 Expect more on Lillys Peglispro
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 38d35de2-58fe-41d5-93f3-6b207fdf25fe
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+ADA 2015: Expect more on Lilly's Peglispro
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+ADA 2015 Expect more on Lillys Peglispro
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3814
+
+<p><p>Eli Lilly & Co says it novel basal insulin program is alive and continues to be a major priority for the company, despite concerns that the drug was dead in the water after liver issues delayed regulatory action. </p><p>To drive home the point that Lilly Diabetes is fully-invested in peglispro are the 19 abstracts &ndash; out of a total of 79 &ndash; that the company will be presenting at the American Diabetes Association (ADA) meeting in Boston on 05 &ndash; 09 June. Ten of those abstracts will focus on the effects of the insulin on hypoglycemia, blood lipids and liver function. </p><p>The data dump from the Phase III IMAGINE program comes three months after Lilly notified the investment community that it was delaying US and European regulatory submissions until at least 2016 due to an increase in liver fat in patients taking the drug. At the time, Lilly emphasized that there were no drug-induced liver impairment or Hy's Law cases observed in the 3,900 patients given peglispro in the firm&rsquo;s trials.</p><p>"These data represent the completion of the full planned Phase III trial data, looking at both patients with type 1 and type 2 diabetes," said Dr David Kendall, VP of Medical Affairs, in an interview. "Other components of any clinical trial program are to understand the full profile, including nocturnal hypoglycemia, the effects on body weight and changes in some measures of liver function testing. In looking at this data in total, the delay in the submission was a decision made proactively by Lilly to better understand these other components of the drug profile."</p><p>Kendall was quick to point out that the Phase III program included seven clinical trials with a total of 6,000 patients and that those with type 1 diabetes actually lost weight on the insulin, while type 2 patients gained less weight &ndash; an unusual profile for an insulin. </p><p>As <a href="http://#http://www.scripintelligence.com/researchdevelopment/Lillys-insulin-shows-superiority-over-Lantus-but-drug-safety-a-concern-353737" target="_new">previously reported</a>, the IMAGINE studies have shown that peglispro is actually superior to Sanofi's market-leader Lantus (insulin glargine). In the IMAGINE-1 and IMAGINE-3 trials peglispro demonstrated a significant lower hemoglobin A1c (HbA1c) compared with Lantus at 26 weeks and 52 weeks in type 1 patients. The full results from these trials will be available 06 June. </p><p><a href="http://#http://www.scripintelligence.com/policyregulation/Liver-concerns-hang-up-Lilly-basal-insulin-peglispro-356899" target="_new">After the delay</a>, Sagient Research's BioMedTracker lowered its likelihood peglispro will make it to the market in type 1 diabetes to 55%, which is 5% below the average probability of approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>BioMedTracker put the likelihood of peglispro gaining approval in type 2 diabetes at 57%, which is 3% below the average probability of approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>BioMedTracker estimates peak sales of $726.9m in type 2 diabetes &ndash; a huge discount to what the drug could&rsquo;ve earned if it had been on the market earlier. </p><p>One thing that analysts have said in favor of the delay &ndash; Lilly will likely shift its resources to its other diabetes offerings. This also frees Lilly up from creating competition for its own Lantus biosimilar, which it has been developing with Boehringer Ingelheim. </p><p>Lilly signed an agreement with the German pharma in 2010 to collaborate on a swath of diabetes products. BI pulled out of the development of peglispro in 2013, leaving Lilly to develop the drug on its own. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+ADA 2015 Expect more on Lillys Peglispro
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150528T163052
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150528T163052
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150528T163052
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028901
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+ADA 2015: Expect more on Lilly's Peglispro
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358639
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+38d35de2-58fe-41d5-93f3-6b207fdf25fe
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {7DAD0FC8-70E8-4AF4-AE9B-26F2FA5242A4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/16/Lilly to collaborate with Hanmi on RA drug
+parent: {15CEDA49-DF2B-4F46-96A7-78145A6DFE0C}
+name: Lilly to collaborate with Hanmi on RA drug
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e7264f8f-9522-4cd6-9493-91a43779f378
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Lilly to collaborate with Hanmi on RA drug
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+Lilly to collaborate with Hanmi on RA drug
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3208
+
+<p>Eli Lilly & Co is building out its autoimmune pipeline with a deal that could be worth $690m to Korea's Hanmi Pharmaceuticals, the companies announced 19 March. </p><p>The Indianapolis, Indiana-based pharma has inked a license and collaboration agreement with Hanmi for its oral Bruton's tyrosine kinase (BTK) inhibitor HM71224. The partners intend to develop it for rheumatoid arthritis, lupus, Sjogren's syndrome and other related autoimmune conditions. </p><p>Lilly will pay $50m up front and has agreed to up to $640m in potential development, regulatory and sales milestones for the drug. The big pharma also has agreed to tiered double-digit royalties on HM71224 should it reach commercialization. Lilly will be responsible for development, regulatory, manufacturing and commercialization for all territories outside of Asia where the company operates. </p><p>The drug is of the same class as Johnson & Johnson's and Pharmacyclics's blockbuster cancer drug Imbruvica (ibrutinib), but Lilly &ndash; despite its strong pipeline in oncology &ndash; intends to study the drug only in autoimmune diseases. </p><p>Hanmi has studied the drug in Phase I trials in healthy volunteers, so HM71224 is now Phase II-ready. The space is dominated by tumor necrosis factor (TNF) inhibitors like Humira (adalimumab) and Enbrel (etanercept), which are both injections and known for their unfavorable side effect profile. HM71224 could offer an oral alternative to these products and would have a significant advantage if it can show superior efficacy and less troublesome side effects. </p><p>Lilly doesn't currently have any autoimmune products on the market and has a portfolio dominated by cancer and diabetes drugs. The company plans to maintain its strength in diabetes and cancer, but is trying to build a presence in autoimmune conditions as well. </p><p>The big pharma has two Phase III assets in the space, including baricitinib with Incyte. The partners have multiple ongoing Phase III trials for the oral JAK 1/2 inhibitor, which is being tested in rheumatoid arthritis. The companies announced positive results from a late-stage trial in December and further results are expected later this year (<a href="http://#http://www.scripintelligence.com/researchdevelopment/First-PhIII-data-with-LillyIncytes-oral-JAK-inhibitor-impresses-in-rheumatoid-arthritis-355542" target="_new">scripintelligence.com, 10 December 2014</a>). Lilly also has ixekizumab in Phase III for psoriasis. </p><p>During the fourth quarter of 2014, Lilly pulled the plug on its Phase III autoimmune asset tabalumab after the compound failed in both rheumatoid arthritis and systemic lupus erythematosus (SLE). The B-cell activating factor (BAFF) inhibitor showed mixed results in clinical trials and the company did not feel the data was solid enough to bring to regulators (<a href="http://#http://www.scripintelligence.com/home/Lilly-ditches-tabalumab-after-another-Phase-III-trial-fails-354268" target="_new">scripintelligence.com, 02 October 2014</a>). </p><p>According to Sagient Research's BioMedTracker database, Acerta Pharma and Celgene both have mid-stage BTK inhibitors in development for rheumatoid arthritis.</p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 168
+
+<p>Eli Lilly & Co is building out its autoimmune pipeline with a deal that could be worth $690m to Korea's Hanmi Pharmaceuticals, the companies announced 19 March. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+Lilly to collaborate with Hanmi on RA drug
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150316T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150316T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150316T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028176
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{99C1E0C6-E575-4630-A767-F6BBBF6CA843}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Lilly to collaborate with Hanmi on RA drug
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+MarketData
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357307
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042314Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e7264f8f-9522-4cd6-9493-91a43779f378
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042314Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

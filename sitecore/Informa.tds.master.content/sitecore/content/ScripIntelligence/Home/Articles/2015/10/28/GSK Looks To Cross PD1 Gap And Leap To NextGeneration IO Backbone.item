@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {0E63486C-CCCC-45A6-9C10-C00B50FED365}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/28/GSK Looks To Cross PD1 Gap And Leap To NextGeneration IO Backbone
+parent: {B358485D-A13A-4DC9-B21A-C4965B42C6F0}
+name: GSK Looks To Cross PD1 Gap And Leap To NextGeneration IO Backbone
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3f69a349-6043-4922-9206-85f86c554728
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+GSK Looks To Cross PD-1 Gap And Leap To Next-Generation IO Backbone
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+GSK Looks To Cross PD1 Gap And Leap To NextGeneration IO Backbone
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6910
+
+<p>GlaxoSmithKline PLC isn't letting the fact that it doesn&rsquo;t have a PD-1/L1 inhibitor get its immuno-oncology R&D efforts down. Instead, the company is focusing immuno-oncology research on next-generation checkpoint modulators, including the OX40 agonist antibody GSK3174998 and first-in-class ICOS agonist antibody GSK3359609, the company said during an R&D day in New York City Nov. 3.</p><p>The immuno-oncology overview was part of a four-hour pipeline review in which management highlighted dozens of drugs in development in six core areas: HIV/infectious disease, respiratory, vaccines, immuno-inflammation, oncology and rare diseases. Altogether, the company said it has the potential to file up to 20 assets with regulators before 2020, seven of which are in advanced late-stage development with the potential to launch before then.</p><p>The R&D day overview was part of an effort to convince investors that the company's long-term, <a href="http://www.scripintelligence.com/home/GSK-Likes-Its-Go-It-Alone-Strategy-Over-A-Mega-Merger-361280" target="_new">go-it-alone strategy</a> &ndash; involving deeper expansion into consumer health care and vaccines as the pharmaceuticals pipeline matures &ndash; is working, even as the company's pharmaceuticals sales have continued to slip.</p><p>GSK's immuno-oncology pipeline is still in the early stages of development, one reason the company hasn't revealed many details about it. The area of research is also an interesting one for the company because GSK sold its marketed cancer drugs including targeted therapies Mekinist and Tafinlar to Novartis AG in a <a href="http://www.scripintelligence.com/business/Its-a-wrap-GSK-and-Novartis-megadeal-completes-357034" target="_new">multi-pronged asset-swap</a> that closed earlier this year, raising questions in the minds of investors about its long-term prospects in the field.</p><p>Management sought to set the record straight during the R&D day. "The approach in oncology is to go for those areas which we think are profoundly disruptive in terms of what may happen in cancers," President-Pharmaceuticals R&D Patrick Vallance said. "We are not pursuing any of the other things. We are not pursuing targeted therapies."</p><p>"We have a very high hurdle, but we expect the choices we've made will clear that hurdle," he added.</p><p>To that end, GSK is not developing a PD-1/L1 inhibitor, an asset that nearly every frontrunner in immuno-oncology, including Bristol-Myers Squibb Co., Merck & Co. Inc., Roche, AstraZeneca PLC and Pfizer Inc., is developing internally or has licensed rights to. Bristol and Merck have the first two FDA-approved PD-1 inhibitors on the market, <i>Opdivo</i> (nivolumab) and <i>Keytruda</i> (pembrolizumab), respectively.</p><p>GSK announced the same day that it has partnered with Merck to study its OX40 agonist antibody in combination with Merck's Keytruda, with studies expected to start in 2016. GSK has already initiated a Phase I trial testing the drug alone in eight different cancers. It plans to begin studies in combination with its own TLR4 agonist in 2017.</p><p>Management said it doesn't need to have its own PD-1 inhibitor to be successful in immuno-oncology. Vallance admitted the company had one in development at one point and missed the mark in the development.</p><p>"We didn't get to where we needed to be and we made a very clear decision that we were not going to be chasing the pack," he said. "We were going to jump to what the next generation of what we saw as combination medicines rather than come in with the sixth, seventh, whatever it might be PD-1."</p><p>Head of Immuno-Oncology Axel Hoos &ndash; well known for leading development of the first cancer immunotherapy to reach the market, Bristol's CTLA-4 inhibitor <i>Yervoy</i> (ipilimumab) &ndash; agreed.</p><p>"We believe it is quite possible that any of these checkpoint modulators could become another backbone strategy, or another backbone medicine," Hoos said. "Until we developed ipilimumab, nobody had fully appreciated how big PD-1 would become afterwards. Now we are at PD-1, and I don't think we fully appreciate yet how big the next generation will be. Our focus is on third generation with leading molecules. ICOS and OX40 both could be backbone strategies."</p><p>There are several other OX40 agonist antibodies in development across the industry, but GSK sees an opportunity to be first-to-market with an ICOS agonist, which appears to be a mechanism that works against multiple cancers and might be positioned after PD-1 inhibitors in unresponsive or refractory patients.</p><p>Under GSK's deal with Novartis, the Swiss pharma has the right to make an offer to buy any of the oncology assets that its partner develops before regulatory filing, but GSK is not obliged to accept the offer. GSK can market the drugs independently or accept a better offer if a partner emerges.</p><p>GSK highlighted several other later-stage assets, including the IL-5 antibody <i>Nucala</i> (mepolizumab) for severe eosinophilic asthma, which is pending at FDA with a PDUFA date of Nov. 4; <i>Shingrix</i> (zoster), a vaccine for the prevention of shingles; sirukumab for the treatment of rheumatoid arthritis; daprodustat for anemia; and cabotegravir, a long-acting antiviral for <a href="http://www.scripintelligence.com/home/HIV-drug-sales-rescue-GSKs-second-quarter-359688" target="_new">HIV infection</a> that has the potential for dosing every two to three months versus daily.</p><p>The long-acting integrase strand inhibitor is in Phase II development. GSK's ViiV Healthcare and its partner Johnson & Johnson also presented positive top-line data from the LATTE2 trial on Nov. 3, studying long-acting cabotegravir in combination with Janssen's long-acting non-nucleoside reverse transcriptase inhibitor rilpivirine in 309 treatment-na&iuml;ve patients versus an oral regimen of three HIV medicines. Through 32 weeks on the two-drug maintenance therapy, 95% of patients dosed every four weeks and 94% of those dosed every eight weeks were virologic successes, the firms reported. The data support moving cabotegravir into Phase III development, GSK said.</p><p>"This raises the possibility of a new paradigm of HIV treatment, where you are looking at intermittent injections every two or three months rather than daily treatment," Vallance said.</p><p>Much of the R&D update focused on early- to mid-stage assets where the level of uncertainty remains high. Not surprisingly then, investors appeared underwhelmed by the update, with the company's stock closing down 1.4% to $42.50.</p><p><p>Editor's note: This article is also published in <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet-daily" target="_new">"The Pink Sheet" DAILY</a>. <i>Scrip Intelligence</i> brings selected complementary coverage from sister publications to subscribers.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 398
+
+<p>GlaxoSmithKline PLC isn't letting the fact that it doesn&rsquo;t have a PD-1/L1 inhibitor get its immuno-oncology R&D efforts down. Instead, the company is focusing immuno-oncology research on next-generation checkpoint modulators, including the OX40 agonist antibody GSK3174998 and first-in-class ICOS agonist antibody GSK3359609, the company said during an R&D day in New York City Nov. 3.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+GSK Looks To Cross PD1 Gap And Leap To NextGeneration IO Backbone
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151028T172504
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151028T172504
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151028T172504
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030229
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+GSK Looks To Cross PD-1 Gap And Leap To Next-Generation IO Backbone
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{82DFA523-C3A1-41A0-A50F-D8A52B45592E}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361271
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042517Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3f69a349-6043-4922-9206-85f86c554728
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042517Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

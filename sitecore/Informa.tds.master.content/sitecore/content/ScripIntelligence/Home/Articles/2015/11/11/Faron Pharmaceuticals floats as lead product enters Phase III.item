@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8D7FD110-C28D-4002-8C0C-D129AFD0B8C4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/11/Faron Pharmaceuticals floats as lead product enters Phase III
+parent: {5EDD049F-1031-4290-8719-6CA0186009DA}
+name: Faron Pharmaceuticals floats as lead product enters Phase III
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: dccd8dba-4500-4de3-bd23-6d352f5a6ca8
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{7E16F926-C771-439C-A255-2F3555119F6B}|{EBE9B072-7313-4B27-B849-CB50CD3B42E6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Faron Pharmaceuticals floats as lead product enters Phase III
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+Faron Pharmaceuticals floats as lead product enters Phase III
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6409
+
+<p>Turku, Finland-based Faron Pharmaceuticals has floated on the London Stock Exchange's Alternative Investment Market (AIM), raising &pound;10m to fund a Phase III trial for its lead product, orphan drug <i>Traumakine</i>. </p><p>Traumakine (interferon-beta 1a) is being developed by Faron to prevent vascular leakage in acute respiratory distress syndrome (ARDS) and other traumatic conditions. If successful in its late-stage program and eventual regulatory filings, the drug could be the first specifically approved therapy for patients with ARDS.</p><p>Following its initial public offering of 3,846,154 new ordinary shares priced at &pound;2.60 per share, which has raised final net proceeds of &pound;8.3m, Faron plans to initiate a pan-global Phase III trial of Traumakine &ndash; with first patient recruitment expected to start before the end of 2015. </p><p>The company will also advance development of its preclinical cancer immunotherapy candidate, <i>Clevegen</i> &ndash; a product which Faron told <i>Scrip</i> it was currently seeking a manufacturing contract for.</p><p>Faron, founded in 2007, had been funded prior to its IPO with approximately &euro;17.2m made up of a combination of equity, debt and grant funding that has so far been used to develop the company's products and intellectual property. The company has also generated revenues of &euro;3.3m to date through the receipt of milestone payments pursuant to licensing arrangements and the sale of surplus API of interferon-beta. </p><p>Faron told <i>Scrip</i> it decided to float on AIM because it was the "best market for smaller growing companies&#8230; as it gives companies access to significant growth capital and liquidity, as well as a diverse and committed base of investors seeking companies with growth potential." Furthermore, successful early trials of Faron's lead product, Traumakine, were carried out in the UK and its Phase III program will be led by Geoff Bellingan, a world leading key opinion leader based at University College London Hospital. </p><p>In a Phase I/II clinical study, Traumakine was tested in 37 adult patients with ARDS or acute lung injury (ALI), and demonstrated a significant reduction in mortality (the primary endpoint) in both indications. All other measured parameters, e.g. length of mechanical ventilation needed, length of ICU stay and support of vital functions, also benefitted from the treatment. </p><p>At the time these results were reported in January 2014, analysts at Sagient Research's BioMedTracker said that Traumakine up-regulated human lung CD73 expression and was associated with a reduction in 28-day mortality in patients with ARDS. "These findings need to be substantiated in large, prospective randomized trials, but suggest that [the drug] could be the first effective, mechanistically targeted, disease-specific pharmacotherapy for ARDS patients." </p><p>Faron said it expected first data readouts from the Phase III Traumakine trial, known as INTEREST, in 2017 &ndash; at this time it will also pursue conditional approval in Europe for the drug for ARDS. Faron said its decision to move the product directly to Phase III from Phase I/II testing followed advice given to the company from regulators at the European Medicines Agency in December 2013.</p><p>While the company has retained full marketing and sales rights in Traumakine's main target markets of Europe and the US, it has out-licensed the drug in other geographical territories. "We currently have agreements with two local pharmaceutical companies to carry out the clinical development and commercialization of Traumakine in Japan (Maruishi) and the Greater China Area (A&B (HongKong) & CMS Pharma Co. Ltd.)," Faron said. </p><p>The company said its future commercialization strategy would be dependent on data from the Phase III trial and it wouldl "consider the best way to maximize value, which could include partnering/ licensing out rights".</p><p>Faron has also developed a new diagnostic tool to estimate ARDS severity and to follow ARDS outcomes by measuring MxA, (an interferon beta related biomarker), CD73 and several other inflammatory markers from ARDS patient plasma. "The combined use of these assays gives a strong correlation to an ARDS patient's outcome and the efficacy of the treatment with Traumakine and Faron estimates that the D-ARDS measurements could become a significant part of ICU (Intensive Care Unit) practice," the company said. </p><h2>ARDS Market Opportunity</h2><p>Since World War I, it has been recognized that some patients with nonthoracic injuries, severe pancreatitis, massive transfusion, sepsis, and other conditions develop respiratory distress, diffuse lung infiltrates, and respiratory failure, sometimes after a delay of hours to days &ndash; termed acute respiratory distress syndrome. Traumakine has been granted orphan drug status in Europe; however the incidence of ARDS varies widely, partly because studies have used different definitions of the disease. </p><p>By the end of 2015, Faron hopes to have received orphan drug status for Traumakine in the US, and it is targeting the same status in Japan in 2016. </p><p>MedScape, part of the health professional network, WebMD, notes that, "The first study to use the agreed1994 AECC (American-European Consensus Conference) definitions of ARDS was performed in Scandinavia and reported annual rates of 17.9 cases per 100,000 population for ALI and 13.5 cases per 100,000 population for ARDS." </p><p>Faron said there are approximately 170,000 annual patients in Europe and nearly 200,000 in the US and it expects to highlight the cost-saving benefits of Traumakine to regulators. ARDS is generally treated with lung-protective mechanical ventilation and healthcare costs are estimated to be approximately $5,000 per patient per day spent in intensive care, which can be for an average of 25 days and could be up to six months. Commonly, increased healthcare costs extend up to five years or more after discharge from hospital.</p><p>Major risk factors associated with the development of ARDS include: bacteremia, sepsis, trauma with or without pulmonary contusion, fractures particularly multiple fractures and long bone fractures, burns, massive transfusion, pneumonia, aspiration, drug overdose, near drowning, post-perfusion injury after cardiopulmonary bypass, pancreatitis, and fat embolism.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 228
+
+<p>Turku, Finland-based Faron Pharmaceuticals has floated on the London Stock Exchange's Alternative Investment Market (AIM), raising &pound;10m to fund a Phase III trial for its lead product, orphan drug <i>Traumakine</i>. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Faron Pharmaceuticals floats as lead product enters Phase III
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151111T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151111T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151111T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030334
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Faron Pharmaceuticals floats as lead product enters Phase III
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361509
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dccd8dba-4500-4de3-bd23-6d352f5a6ca8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

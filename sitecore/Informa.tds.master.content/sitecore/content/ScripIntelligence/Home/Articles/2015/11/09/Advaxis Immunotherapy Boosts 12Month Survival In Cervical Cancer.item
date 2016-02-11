@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D28F2338-D6EB-4AB5-B460-4EA198FDDCC3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/09/Advaxis Immunotherapy Boosts 12Month Survival In Cervical Cancer
+parent: {38487DA6-20C9-4C4C-B736-2808B0CBC09B}
+name: Advaxis Immunotherapy Boosts 12Month Survival In Cervical Cancer
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5e53dcb7-0bfb-45fb-98fd-6f2afbc47830
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Advaxis Immunotherapy Boosts 12-Month Survival In Cervical Cancer
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+Advaxis Immunotherapy Boosts 12Month Survival In Cervical Cancer
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5900
+
+<p>Advaxis Inc. reported that 38.5% of advanced cervical cancer patients &ndash; a group that normally survives for four to seven months on average &ndash; survived for at least 12 months after treatment with the company's immunotherapy axalimogene filolisbac (ADXS-HPV) in the first stage of a 67-patient, investigator-initiated, two-stage Phase II clinical trial.</p><p>The Gynecologic Oncology Group (GOG), part of NRG Oncology under the National Cancer Institute (NCI) National Clinical Trials Network, is conducting the Phase II study in women with persistent or recurrent metastatic carcinoma of the cervix (PRmCC) who have completed at least one round of prior therapy, including 26 patients in Stage 1. </p><p>The open-label study so far has improved upon results from a <a href="http://www.scripintelligence.com/home/BIO-2014-Hillary-Clinton-speaks-biotechs-tout-new-approaches-352530" target="_new">prior Phase II study</a> conducted in India in a similar population, which had a 32% 12-month survival rate.</p><p>"We showed a survival advantage at 12 months of 20% or greater, which was the goal in design of the GOG study," Advaxis president and CEO Daniel O'Connor told <i>Scrip</i>.</p><p>Princeton, New Jersey-based Advaxis is working with the US FDA on a special protocol assessment (SPA) for its Phase III clinical trial in collaboration with the GOG Foundation Inc. to test axalimogene filolisbac in high-risk, locally-advanced cervical cancer, which is expected to begin enrolling patients by the end of 2015, depending on the pace of SPA negotiations with the FDA.</p><p>Axalimogene filolisbac was developed with Advaxis's Lm Technology platform, which attaches a targeted antigen to an altered live strain of Listeria monocytogenes (Lm) bacteria, so that the immune system recognizes Lm bacteria that's been delivered to antigen-presenting tumors then attacks and kills the tumor cells. Axalimogene filolisbac targets the human papillomavirus (HPV) associated with cervical, head and neck, and anal cancers. </p><p><b>Efficacy, Safety Data At AGOS Conference</b></p><p>Advaxis noted as data from the Phase II investigator-sponsored study, known as GOG-0265, were presented on Sept. 17 at the American Gynecological and Obstetrical Society (AGOS) annual meeting in Half Moon Bay, California, that the GOG has conducted more than 20 clinical trials for regimens that may treat PRmCC and none of those options have shown a 12-month survival rate above 30%. <i>Avastin</i> (bevacizumab) achieved 7.3 months of median survival with a 30% 12-month survival rate when the GOG tested the Roche biologic.</p><p>The median overall survival for axalimogene filolisbac was 7.7 months in Stage 1 of GOG-0265. Among the 18 patients who received all three axalimogene filolisbac doses as outlined in the study protocol, the 12-month survival rate rose to 55.6% and the medial overall survival was 12.1 months.</p><p>In terms of safety, 19 out of 26 patients (73%) enrolled in Stage 1 of the study experienced a Grade 1 or 2 adverse event. The most common side effects were fatigue, chills, fever, nausea and headache. Four patients experienced Grade 3 hypotension and cytokine release syndrome. One patient had a Grade 4 lung infection with sepsis, which may not be related to axalimogene filolisbac. </p><p>"The study population evaluated in GOG-0265 are end-stage cervical cancer patients. Serious comorbidities are not uncommon and infection and sepsis is, unfortunately, often present more frequently as disease progresses. The Grade 4 infection seen in Stage 1 was not caused by listeria and therefore we believe it is unrelated to our therapy," Advaxis chief medical officer David Mauro told <i>Scrip</i>.</p><p>The GOG determined that the safety and efficacy of axalimogene filolisbac were sufficient to move the immunotherapy into Stage 2 of the GOG-0265 study, which is enrolling patients. Avastin and axalimogene filolisbac are the only two therapies to move from Stage 1 to Stage 2 in the GOG's series of Phase II PRmCC clinical trials. </p><p>The GOG-0265 protocol was amended for Stage 2 based on the Stage 1 safety to allow for continuous treatment with axalimogene filolisbac rather than the three-dose limit in the first stage.</p><p><b>Meeting An Unmet Need</b></p><p>With 38.5% of women achieving 12-month survival regardless of the number of doses received in Stage 1 of GOG-0265, axalimogene filolisbac may represent a significant improvement for cervical cancer, which has 528,000 new cases reported worldwide each year with 266,000 related deaths. Thirty percent of the 12,900 women diagnosed annually in the US have locally-advanced or metastatic cervical cancer. </p><p>Median cervical cancer survival is 13 to 17 months with first-line platinum-based chemotherapy with or without Avastin, but women who progress usually have only four to seven months of survival after a first-line treatment failure. No second-line therapies are approved for PRmCC.</p><p>"There's nothing available for patients beyond the initial standard of care, just multiple rounds of various types of chemo," O'Connor said.</p><p>Given the lack of available treatments for women with PRmCC, he said Advaxis will "take advantage of every regulatory advantage opportunity that we can" when asked if the company will pursue a breakthrough therapy designation from the FDA for axalimogene filolisbac. The breakthrough therapy designation provides a path to speed drugs to severely ill patients who have no other treatment options.</p><p>The FDA's Office of Orphan Products Development (OOPD) recently awarded a three-year, $1.1m grant to Baylor College of Medicine in support of an ongoing Phase II trial for axalimogene filolisbac in HPV-associated oropharynx (throat) cancer, a type of head and neck cancer.</p><p>"That's emblematic of the things we're trying to do," O'Connor said.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 369
+
+<p>Advaxis Inc. reported that 38.5% of advanced cervical cancer patients &ndash; a group that normally survives for four to seven months on average &ndash; survived for at least 12 months after treatment with the company's immunotherapy axalimogene filolisbac (ADXS-HPV) in the first stage of a 67-patient, investigator-initiated, two-stage Phase II clinical trial.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+Advaxis Immunotherapy Boosts 12Month Survival In Cervical Cancer
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151109T203839
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151109T203839
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151109T203839
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029798
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Advaxis Immunotherapy Boosts 12-Month Survival In Cervical Cancer
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360421
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5e53dcb7-0bfb-45fb-98fd-6f2afbc47830
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {5EE1313E-6E45-4E6B-B33F-950C7FC8B803}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/20/Shionogi Lays Out RD Goals Ahead of Crestor Challenges
+parent: {AD42DA69-3D39-4357-AFF7-F14E275A07AC}
+name: Shionogi Lays Out RD Goals Ahead of Crestor Challenges
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e08e40bf-2612-4f39-b9aa-356a9ee51b4b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Shionogi Lays Out R&D Goals Ahead of Crestor Challenges
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Shionogi Lays Out RD Goals Ahead of Crestor Challenges
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5989
+
+<p>Japan's Shionogi is looking to bolster its presence in core therapeutic areas, unveiling positive new data for a novel constipation therapy and a raft of anti-infective projects at a recent R&D update.</p><p>At a briefing in Japan ahead of the end of its fiscal year on 31 March, the Osaka-based company was keen to highlight its pipeline as a driver of mid-term growth, amid challenges to its AstraZeneca royalty stream from the loss of exclusivity for Crestor (rosuvastatin) next year.</p><p>Under its "SGS2020" business plan, Shionogi is aiming for JPY500bn ($4.19bn) in sales in fiscal 2020, up from JPY273.5bn forecast for the fiscal year just ending, and plans to raise R&D spending to JPY100bn, almost twice that of last fiscal year.</p><p>The main news to come out of the R&D meeting was the first top-line data from a pivotal Phase III study with the oral opioid receptor antagonist naldemedine, in opioid-induced constipation (OIC). The treatment difference in responder rate between the drug and placebo in the COMPOSE-1 study in chronic non-cancer pain patients was statistically significant, meeting the primary endpoint of the study.</p><p>The firm, which already has a direct presence in the opioid analgesic market through its marketing in Japan of OxyContin (oxycodone; licensed from Mundipharma International), said regulatory filings are now planned in the US and Japan for the fiscal year ending March 2016. </p><p>Some analysts are viewing the OIC sector as a major opportunity, and Shionogi noted the value of the global opioid painkiller market at $14.8bn. Around half of the 70 million chronic opioid patients have OIC, but only half of these respond adequately to conventional laxatives.</p><p>OIC is also a recent target of another Japanese firm, with Daiichi Sankyo signing a US co-promotion deal with AstraZeneca for the mu-opioid receptor antagonist Movantik (naloxegol).</p><h2>Anti-Infective Progress</h2><p>Shionogi's other main focus areas include antibiotics against currently untreatable infections such as multidrug-resistant <i>Pseudomonas aeruginosa</i> and <i>Acinetobacter baumannii</i> and <i>Enterobacteriaceae</i>.</p><p>Under a research collaboration with GlaxoSmithKline, the cell wall synthesis inhibitor S-649266, an injectable cephalosporin, is due to enter a global Phase III trial next fiscal year (beginning this April) for severe gram-negative infections, Dr Kohji Hanasaki, senior vice-president of the pharmaceutical research division, told the briefing. </p><p>The "Trojan horse" beta-lactam uses the bacteria's own transport system to enter and kill it.</p><p>Shionogi also disclosed that it is working on several novel flu agents, with one oral candidate, S-033188, set to complete a Phase I program in Japan next fiscal year, when a go-no go decision will be made. Although the mode of action was undisclosed, the molecule was described as first-in-class and rapid-acting, and active against types A and B and avian flu, and a Japanese NDA is seen in fiscal 2017 at the earliest.</p><p>Elsewhere in the anti-infective area, under its HIV collaboration with ViiV Healthcare, Shionogi is helping develop a single pill combining the integrase inhibitor dolutegravir with Janssen Pharmaceuticals' non-nucleoside reverse transcriptase inhibitor rilpivirine, with Phase III start set for this calendar year. </p><p>ViiV's single-pill triple combination therapy Triumeq (dolutegravir, abacavir and lamivudine) was approved in Japan this month. </p><h2>CNS/Cardiovascular</h2><p>In CNS, executives said the main focus is on Alzheimer's disease and attention-deficit hyperactivity disorder. ADHD prevalence in Japan is similar to that globally, with 2.5% of children and 1-7% of adults suffering from the disorder.</p><p>2014 sales in Japan's ADHD sector were around JPY20.3 billion, with 31% CAGR seen over the 2010-14 period, Shionogi noted.</p><p>The local market is increasing due to improved awareness and diagnosis, however, and <i>Vyvanse</i> (lisdexamfetamine; licensed from Shire) is set to complete Phase II/III trials in Japan in 2016.</p><p>A Japanese NDA for Intuniv (guanfacine, also from Shire) is currently under preparation in Japan for the indication and should be made in the fiscal year beginning this April. </p><p>The BACE inhibitor for Alzheimer's JNJ-54861911, licensed to Janssen globally, has moved into Phase II, with Shionogi retaining co-promotion rights in Japan and several other selected markets.</p><p>Shionogi&rsquo;s TPO receptor antagonist lusutrombopag was submitted in Japan in December for thrombocytopenia and should also be approved sometime next fiscal year. In Japanese Phase III trials, a significantly higher proportion of patients did not require platelet transfusions versus placebo.</p><h2>'Further To Go'</h2><p>"We still have further to go to achieve full globalization" of the development process conceded Takuko Sawada, senior vice-president of the global pharmaceutical development division. A new Global Innovation Office was set up a year ago to foster open innovation alliances with academia both in Japan and elsewhere.</p><p>The main mid-term R&D aim is to concentrate resources on core projects in the main target therapeutic areas, with a global portfolio committee setting priorities. In common with many other firms, Shionogi is looking to reduce participants in clinical trials via regulatory consultations on design, the use of biomarkers and IT simulations, Sawada said.</p><p>The overall goal is to discover at least three drug candidates with a focus on pain/neurology and infections in fiscal 2015.</p><p>While it has not had a major presence in oncology, research is being conducted on PD-1 checkpoint inhibitors and new targets to control regulatory T-cells and immunosuppressive factors with Osaka University.</p><p>This article was first published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 208
+
+<p>Japan's Shionogi is looking to bolster its presence in core therapeutic areas, unveiling positive new data for a novel constipation therapy and a raft of anti-infective projects at a recent R&D update.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Shionogi Lays Out RD Goals Ahead of Crestor Challenges
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150320T172957
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150320T172957
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150320T172957
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028245
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Shionogi Lays Out R&D Goals Ahead of Crestor Challenges
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+Commentary
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357417
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042321Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e08e40bf-2612-4f39-b9aa-356a9ee51b4b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042321Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

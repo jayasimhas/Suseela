@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {E13C1246-1A83-45CD-9543-08742E07B032}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/10/Cell And Gene Therapy Clinical Milestones Highlight Reimbursement Challenges
+parent: {D9DADF4E-B5CA-430A-AF43-7CE1FB27EBD6}
+name: Cell And Gene Therapy Clinical Milestones Highlight Reimbursement Challenges
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 361d050c-f76c-4a46-ad34-6a6f37c97a94
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 76
+
+Cell And Gene Therapy Clinical Milestones Highlight Reimbursement Challenges
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 76
+
+Cell And Gene Therapy Clinical Milestones Highlight Reimbursement Challenges
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10160
+
+<p>The Stem Cell Meeting on the Mesa began on Oct. 7 in San Diego just a few days after Spark Therapeutics posted positive Phase III results that could support the first-ever US FDA approval of a gene therapy, but the achievement and the conference highlighted a still-unsolved challenge for regenerative medicines: How will health care systems pay for curative, one-time treatments?</p><p>The conference, with two days of business-focused discussions and a one-day scientific symposium, highlighted the fact that cell and gene therapies not only are moving into the clinic, but they finally are beginning to show results in diseases with high unmet needs. And the meeting &ndash; <a href="http://www.scripintelligence.com/home/Companies-Clearing-Cell-And-Gene-Therapy-Manufacturing-Hurdles-360909" target="_new">co-hosted by the Alliance for Regenerative Medicine</a> (ARM), the California Institute for Regenerative Medicine (CIRM) and the Sanford Consortium for Regenerative Medicine &ndash; also shined a spotlight on some of the industry's other big hurdles, including reimbursement.</p><p><b>Translating Data Into Value</b></p><p>Spark's late-stage study showed that <a href="http://#http://www.scripintelligence.com/home/Spark-Restores-Vision-In-Phase-III-CEO-Hopes-To-Lead-Gene-Therapy-Field-360832" target="_new">SPK-RPE65 restored vision</a> in 21 people with a degenerative form of blindness, and the Phase III success was mentioned by many speakers at the Stem Cell meeting as a pivotal event for regenerative medicine. It also was noted that SPK-RPE65 could be the first gene therapy, if approved by the FDA, to determine what and how payers are willing to reimburse for treatments that may cure patients and remove years of ongoing costs from the health care system.</p><p>"Companies like Novartis are doing a lot to educate payers and governments," Usman Azam, global head of cell and gene therapies at Novartis, said in an interview with <i>Scrip</i>.</p><p>Azam noted that companies will have to show the value that cell and gene therapies deliver to patients in the form of cures and to the health care system in terms of reducing overall health care costs.</p><p>Novartis, through a partnership with the University of Pennsylvania, is heavily invested in the development of <a href="http://#http://www.scripintelligence.com/home/Novartis-aims-to-cure-cancer-with-CART-352668" target="_new">chimeric antigen receptor T-cell (CAR-T) therapies</a> &ndash; T-cells re-engineered to kick the immune system into gear and kill cancer cells. </p><p>In leukemia, Azam noted, CAR-T therapies may be the only option to treat patients who've relapsed multiple times following traditional treatments and to prevent future relapses. One-time <a href="http://#http://www.scripintelligence.com/researchdevelopment/ASH-2014-Novartiss-CAR-T-therapy-performs-well-in-pediatric-trial-355523" target="_new">CAR-T infusions may deliver cures</a> to people with no remaining treatment options and cut costs for payers that may be on the hook for several rounds of treatment-related and palliative care for patients who are likely to relapse after administration of currently approved therapies.</p><p>CAR-T therapies from Novartis, Juno Therapeutics and Kite Pharma are generating a lot of buzz based on <a href="http://#http://www.scripintelligence.com/researchdevelopment/ASH-2014-CAR-T-cell-therapies-generate-buzz-355536" target="_new">high remission rates</a> in very sick blood cancer patients, but those medicines have only recently made their way into late-stage development.</p><p>Belgium-based Celyad, formerly Cardio3 BioSciences, is in the middle of a Phase III clinical trial to support European Medicines Agency (EMA) approval for C-Cure, a cell therapy to treat and prevent congestive heart failure. The treatment improved left ventricular ejection fraction, ventricular volumes and exercise capacity in a <a href="http://#http://www.scripintelligence.com/researchdevelopment/Cardio3-to-start-Phase-III-with-cell-therapy-for-heart-failure-334118" target="_new">Phase II study</a>. </p><p>Results from the ongoing Phase III trial are expected in mid-2016 and a Phase III trial for FDA approval is expected to begin in the second half of 2015 after a clinical hold is lifted from the study.</p><p>"In congestive heart therapy, C-Cure is not up against any pharma products, because none restore function. We are up against non-pharmacological products," Celyad chairman Michel Lussier told <i>Scrip</i>. "These didn't have to go through extensive trials, but we'll have 400 to 500 patients in two randomized, controlled trials."</p><p>Lussier noted that patients with congestive heart failure cost $200,000 to $400,000 per year due to multiple rehospitalizations, so he's confident that if C-Cure works in Phase III and keeps patients out of the hospital, then Celyad's cell therapy can win reimbursement at a price that recognizes the therapy's value and its high development cost.</p><p>Similarly, Avita Medical is collecting data in its ongoing clinical trial to support FDA approval that show a health care cost benefit for ReCell, its medical device used to treat burns and other wounds. </p><p>"In the chronic wound space, you could get home health visits multiple times per week" to tend to slow-healing diabetic foot ulcers, Avita's vice president of research and technology Andrew Quick said in an interview with <i>Scrip</i>. But effective wound healing, Quick noted, could reduce or eliminate expensive in-home nurse visits.</p><p>Also, patients burned over 60% of their body who were treated with ReCell via compassionate use programs have been able to leave the hospital within 60 days of treatment versus 120 to 180 days in the hospital for burn victims treated with typical skin grafts, Avita chief operating officer and chief financial officer Timothy Rooney said.</p><p>Avita's device is a kit that doctors use to grow Regenerative Epithelial Suspension (RES) using a small sample of the patient's skin. RES is made up of the patient's cells as well as wound healing factors that can regenerate healthy skin. </p><p>The product has been granted a CE Mark in the EU under the brands ReCell for burns, ReGenerCell for chronic wounds, and ReNovaCell to improve the appearance of scars and damaged skin. Avita is working with European payers to broaden the use of its device.</p><p><b>New Payment Models</b></p><p>Celyad CEO Christian Homsy acknowledged that new payment models will be required for one-time treatments like C-Cure and products from Celyad's <a href="http://#http://www.scripintelligence.com/business/Cardio3-acquires-broad-acting-CAR-T-portfolio-from-US-firm-Celdara-355943" target="_new">recently acquired CAR-T platform</a>, which is in Phase I testing with five more studies expected to begin during the next 18 months. For instance, payers may fund an upfront fee followed by future payments contingent on a cell therapy's ability to keep patients out of the hospital for two or three years, he said.</p><p>Aquilo Capital Management analyst and director of research Adam Bristol said during an Oct. 8 panel at the Stem Cell meeting titled "The Gene Therapy Financing Window" that companies and investors that are interested in gene therapy are watching UniQure's Glybera (alipogene tiparvovec) &ndash; the first approved gene therapy in the EU &ndash; to see how payers in Europe reimburse the <a href="http://#http://www.scripintelligence.com/home/How-much-Eyes-water-as-first-gene-therapy-Glybera-approaches-the-market-355304" target="_new">$1m treatment for familial lipoprotein lipase deficiency (LPLD)</a>. </p><p>"If the promise [of gene therapy] pans out &#8230; we're going to find a way to get it to patients," Bristol said. "Government will support it, patients will demand it and companies will invest in it."</p><p>However, Germany's pharma product assessment authority recently declared that the benefit of UniQure's gene therapy <a href="http://#http://www.scripintelligence.com/policyregulation/Glyberas-additional-benefits-not-quantifiable-says-Germany-358550" target="_new">does not justify Glybera's &euro;1.1m per patient price tag</a>.</p><p>Pharma and biotech leaders in the cell and gene therapy field acknowledged throughout the Stem Cell meeting that companies need to do a better job of explaining the value of their therapies to patients as well as to public and private health care systems around the world. </p><p>"If the structure isn't available in terms of a return, we won't have people investing in these areas," Celgene Cellular Therapeutics CEO Perry Karsen said during an Oct. 7 plenary session titled "Beyond Clinical Proof of Concept."</p><p>Karsen said later in an interview with <i>Scrip</i> that it's up to cell and gene therapy innovators working in collaboration with payers to come up with new reimbursement paradigms that take into account the value and cost of one-time curative medicines so that treatments will be made available to patients.</p><p>"Most companies are just continuing to advance into clinical trials and generate data, because they feel the data will add value and be the differentiator," he said.</p><p>Celgene is working on a Phase II clinical trial testing a <a href="http://#http://www.scripintelligence.com/home/Companies-focus-on-hard-science-long-term-pay-off-at-stem-cell-meeting-347413" target="_new">placental cell therapy</a> for the treatment of diabetic foot ulcers on patients with peripheral artery disease. The big biotech company inked a <a href="http://#http://www.scripintelligence.com/home/Celgene-shows-CAR-T-confidence-with-1bn-Juno-investment-359176" target="_new">CAR-T deal with Juno</a> in late June and dumped one collaboration with Bluebird Bio in early June in favor of the <a href="http://#http://www.scripintelligence.com/home/Celgene-backing-off-bluebird-partnership-358728" target="_new">companies' CAR-T partnership</a>.</p><p><p><i>For further insights from the Stem Cell Meeting on the Mesa, follow @ScripMandy on Twitter to see Mandy Jackson's tweets from the conference with the hash tag #Mesa15.</i></p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 387
+
+<p>The Stem Cell Meeting on the Mesa began on Oct. 7 in San Diego just a few days after Spark Therapeutics posted positive Phase III results that could support the first-ever US FDA approval of a gene therapy, but the achievement and the conference highlighted a still-unsolved challenge for regenerative medicines: How will health care systems pay for curative, one-time treatments?</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 76
+
+Cell And Gene Therapy Clinical Milestones Highlight Reimbursement Challenges
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150510T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150510T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150510T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030015
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 76
+
+Cell And Gene Therapy Clinical Milestones Highlight Reimbursement Challenges
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pdfNewsLetter
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360818
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042503Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+361d050c-f76c-4a46-ad34-6a6f37c97a94
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042503Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {23EE8152-2BDA-46D9-B51B-E5C264C3271C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/02/BIO Venture capital trends toward rare disease medicines
+parent: {0CBDEEF4-9AC4-4491-AA70-F3114C458FCA}
+name: BIO Venture capital trends toward rare disease medicines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f0c04051-7345-40cd-b368-6b98532b503e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+BIO: Venture capital trends toward rare disease medicines
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+BIO Venture capital trends toward rare disease medicines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3912
+
+<p>Drugs to treat rare diseases have been a popular area for venture capitalists to put their investment over the past decade, according to a new report from the Biotechnology Industry Organization (BIO).</p><p>In the five years that followed the 2007-08 financial crisis, investment soared in the rare disease space &ndash; climbing from $288m to well over $500m by 2013, BIO said.</p><p>The trade group noted there's been a decline in VC investment in disease areas affecting large populations of Americans, such as diabetes.</p><p>While venture funding in diabetes and other endocrine diseases reached $2.4bn over the past 10 years &ndash; accounting for 6% of total VC raised &ndash; the funding has dropped 31%, falling from over $1.4bn to less than $1bn, BIO said. </p><p>Most of the funding in rare disease medicines in the past decade was directed to clinical trial stage companies, except in 2013, when nearly half went towards preclinical stage firms, said the trade group, which reported the results of its analysis at the BIO CEO and Investor Conference in New York. </p><p>Some of the orphan diseases being tackled by firms receiving VC funds include epidermolysis bullosa, hereditary inclusion body myopathy, Friedreich's ataxia, primary hyperoxaluria, familial amyloid polyneuropathy, spinal muscular atrophy, transthyretin amyloidosis, hypohidrotic ectodermal dysplasia, Pompe disease, Fabry's disease, von Gierke's disease, Leber's congenital amaurosis, muscular dystrophy, narcolepsy, Hunter syndrome and lymphangioleiomyomatosis. </p><p>"We see significant interest in rare diseases as gene therapy technologies mature and generate meaningful clinical data and returns for investors," said Jim Healy, general partner at Soffinova Ventures. "We are hopeful that advanced gene therapy approaches will deliver products that will dramatically improve patients' lives." </p><p>In the years just before the financial meltdown, venture capitalists were nowhere as enthusiastic about gambling on rare disease research and development &ndash; investing under $400m in 2004, with funds dropping down to about $200m in 2005 and 2006.</p><p>While investing in rare diseases climbed up to $300m in 2007, in plunged to only about $150m in 2008, BIO reported.</p><p>But in 2009, VCs jumped back onto the rare disease engine, investing about $400m, although investment fell to between $200m to $300m for the next two years.</p><p>In 2012, however, investment in that area shot up to $500m &ndash; nudging up higher the next year, according to BIO's report. </p><p>Speaking on a panel at the National Organization of Rare Disorders Breakthrough Summit in Alexandria, Virginia this past October, Jean-Fran&ccedil;ois Formela, a partner at Atlas Venture, said the ecosystem was "ripe for investing in rare diseases" (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Once-market-failure-orphan-drugs-ripe-for-investing-354671" target="_new">27 October 2014</a>).</p><p>BIO's analysis showed that of the $38bn of venture capital invested in the more than 1,200 US drug companies, 78% went to R&D of novel agents, "suggesting innovation is a core priority for venture investors."</p><p>Firms developing biologics received 50% of total venture funding for therapeutics &ndash; up from 27% in 2004. BIO noted that most of that increase came after President Barack Obama signed the <i>Affordable Care Act</i> in March 2010 &ndash; a law that granted 12 years of data exclusivity protection for biologics. </p><p>But the analysis also discovered that while investment has picked up in the past few years, it still is not at the levels it was before 2008 &ndash; falling from $21.5bn over 2004-08 to $16.7bn from 2009-2013, or down 21%.</p><p>There were fewer first-time Series A financings in recent years &ndash; down 30% from a peak in 2006, BIO said. </p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 208
+
+<p>Drugs to treat rare diseases have been a popular area for venture capitalists to put their investment over the past decade, according to a new report from the Biotechnology Industry Organization (BIO).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+BIO Venture capital trends toward rare disease medicines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150402T171121
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150402T171121
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150402T171121
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027770
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+BIO: Venture capital trends toward rare disease medicines
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356542
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f0c04051-7345-40cd-b368-6b98532b503e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

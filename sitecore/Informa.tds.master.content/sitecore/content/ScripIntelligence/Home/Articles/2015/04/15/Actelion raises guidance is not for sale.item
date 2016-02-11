@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {D177A950-110D-40C8-9658-7B0B33C6B22A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/15/Actelion raises guidance is not for sale
+parent: {19AE7706-F850-4AD9-804C-0500E26F606C}
+name: Actelion raises guidance is not for sale
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 17727fc4-901f-4147-9697-facc72fa32bd
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+Actelion raises guidance; is not for sale
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+Actelion raises guidance is not for sale
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3887
+
+<p>Actelion has raised its full year guidance estimates on the back on strong first quarter figures, but some are questioning the sustainability of the firm's strategies.</p><p>Actelion's saw product sales of CHF515m ($537m) in the first quarter of the year, CHF95m of which came from its newly launched Tracleer (bosentan) follow-on product Opsumit (macitentan) &ndash; which is approved for the treatment of pulmonary arterial hypertension (PAH). As a result, the Basel, Switzerland-based company is now anticipating core earnings growth for 2015 will be in the low double-digit percentage range. </p><p>The firm had, as recently as <a href="http://www.scripintelligence.com/home/STOCKWATCH-Waiting-for-the-biotech-bubble-to-burst-356889" target="_new">February</a>, forecast that 2015 core earnings would grow by only a low single-digit percentage after sales for Tracleer and Opsumit missed consensus estimates in the fourth quarter of 2014. </p><p>However, a spokesperson for Actelion told <i>Scrip</i> the 4Q 2014 was seen as a triumph by the company. "Opsumit's launch has been a great success and 4Q 2014 turned out to be a good patient demand quarter," the spokesperson said. "We saw inventory go up and down a bit which may have played a role in what some called missed estimates," he noted. "But the continuity of patient numbers using Opsumit saw the figures steadily going up, so we do not consider 4Q sales a miss."</p><h2>M&A future?</h2><p>Dr Andy Smith, chief investment officer of Mann Bioinvest which manages the Magna BioPharma Income Fund, told <i>Scrip</i> Actelion's first quarter results were "surprisingly good." </p><p>"Actelion has set itself a very high bar for the rest of the year," Dr Smith said. </p><p>He said stocking of Opsumit and a price rise for Tracleer contributed significantly to the company's strong 1Q 2015 results. However, he noted neither method was a sustainable strategy and that the activities of the company could point towards a possible acquisition discussion taking place. </p><p>However, the Actelion spokesperson adamantly said this was not the case. They told <i>Scrip</i>, "We value our independence, we have not been approached by anyone and we are not for sale."</p><p>On the topic of M&A though, Actelion is still in pursuit of its own acquisition targets. Its spokesperson said, "We are seeking M&A opportunities and we do see this as part of our ongoing strategy; but we have been very prudent and diligent in what opportunities we are willing to pursue. We have found that others are willing to pay more for some assets than we are willing to or need to, so we are continuing to assess our options," they said. </p><p>Actelion is seeking target companies broadly in the specialist areas, generally looking at "new markets in high unmet need areas," the spokesperson said. </p><h2>Coming up in 2015&#8230;</h2><p>Actelion's goals for the rest of 2015 include continued efforts to push uptake of its Tracleer follow-on product Opsumit, and more data readouts for its Phase III investigational oral prostacyclin agonist product selexipag &ndash; which is also being developed for PAH. The company released <a href="http://www.scripintelligence.com/researchdevelopment/Actelion-boosted-by-selexipag-data-357322" target="_new">positive data early in March</a> for the drug and expects to release more information at upcoming medical meetings. "We will be focusing on making the medical community more aware of selexipag and its uses," the company said. </p><p>Actelion is still anticipating approvals for selexipag in the US and Europe by the end of the year or early 2016. </p><p>Finally the company is anticipating that increased generic competition for Tracleer and Zavesca (miglustat) will have more of an effect towards the end of the year, but it doesn't expect this to impact its new full year guidance estimates. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 174
+
+<p>Actelion has raised its full year guidance estimates on the back on strong first quarter figures, but some are questioning the sustainability of the firm's strategies.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+Actelion raises guidance is not for sale
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150415T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150415T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150415T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028492
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+Actelion raises guidance; is not for sale
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357893
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042332Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+17727fc4-901f-4147-9697-facc72fa32bd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042332Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

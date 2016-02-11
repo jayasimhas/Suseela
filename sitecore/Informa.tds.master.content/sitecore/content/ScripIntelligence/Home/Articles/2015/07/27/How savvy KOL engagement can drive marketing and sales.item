@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {4295AED0-75B8-4CF9-B351-DB71D8E339BE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/27/How savvy KOL engagement can drive marketing and sales
+parent: {32110CE4-9FEB-4D8C-9DFF-1F8EA6DC908B}
+name: How savvy KOL engagement can drive marketing and sales
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f2f3c937-93c0-4853-8e51-36594d9c7af3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{552987B1-BD8D-4646-96D6-B804F8158E1D}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+How savvy KOL engagement can drive marketing and sales
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+How savvy KOL engagement can drive marketing and sales
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3852
+
+<p>A shrewd understanding of how key opinion leadership is changing can help companies drive better launch and marketing campaigns for their drugs. Increasingly strained, localized and patient-centric healthcare systems mean that the days of simply appointing a clinician to write about a drug or present at meetings to raise its profile are gone. To get the help with advocacy and marketing they want, firms must change their strategies and engage with a wider array of KOLs, explains Leyla Hannbeck, head of pharmacy at the National Pharmacy Association. </p><p>"The UK healthcare system is changing and sticking to the old way of doing things won't work anymore. New KOLs are emerging who are basically influencing the way drugs are made accessible to patients," said Ms Hannbeck at the eyeforpharma Market Access and Pricing Excellence summit in Amsterdam (3-4 June). Right from the start companies need to think about the new complexities in the market place and who they need to engage with, then infuse this into the whole process of launching a drug, and beyond, she said. "The more you build it in, the smoother the ride will be for your drug," she told <i>Scrip</i> in an interview. </p><p>The National Health Service (NHS) is becoming increasingly localized, and decision makers want to understand how treatments can benefit their local populations; all, of course, in the context of cost in relation to value. Companies can engage with commissioners and hospital management teams and other decision makers, but other figures can also wield a lot of influence to help them understand why your drug is worth paying for.</p><p>Other healthcare professionals, aside from the traditional clinicians, have increasingly more clout. For example, a lot of pharmacists work on Clinical Commissioning Group medicines management teams and are responsible for controlling local drugs budgets and prescribing. </p><p>Pharmacists also play an important role in the government's "medicines optimization" strategy, which aims to cut spending related to the misuse of medicines and to ease pressure on strained GP surgeries and A&E departments. When medicines aren't used properly, they may not work, or worse, the patient may end up in hospital. Either scenario is a waste of money. Pharmacists are helping patients understand their medicines and take them properly, which is all part of the government's plan to help patients take greater responsibility for their prescribed treatment. So if companies engage with pharmacists and make sure they understand their product, they can be good advocates for it, says Ms Hannbeck.</p><p>Patients are also key. With its "no decision about me without me" mantra, the government wants to put patients at the center of the NHS, so when commissioners are commissioning, they look at patient expectations. Companies must also be wise to the fact that if patients aren't happy with something, the news can quickly spread, thanks to social media. "Before you would just talk about it with a friend, but now you can put it on Twitter and Facebook and it can suddenly go global. The power of this sort of medium is very important to take into consideration," says MS Hannbeck. Companies need to have a patient opinion leader on board from the start when they bring a new drug to market, including in trial design, says Ms Hannbeck.</p><p>Companies not only need to understand what they want from a KOL, but what a KOL would want from them. They could be in it for financial or professional gain, to learn more about research or to bring greater benefits to patients. Whatever the reason, says Ms Hannbeck, understanding your KOL's motivations promotes proper partnership. This means they can be better advocates for the product, beyond the old model of getting a clinician to attend an event and promote it.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 561
+
+<p>A shrewd understanding of how key opinion leadership is changing can help companies drive better launch and marketing campaigns for their drugs. Increasingly strained, localized and patient-centric healthcare systems mean that the days of simply appointing a clinician to write about a drug or present at meetings to raise its profile are gone. To get the help with advocacy and marketing they want, firms must change their strategies and engage with a wider array of KOLs, explains Leyla Hannbeck, head of pharmacy at the National Pharmacy Association. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+How savvy KOL engagement can drive marketing and sales
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150727T051500
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150727T051500
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150727T051500
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029392
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+How savvy KOL engagement can drive marketing and sales
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199800390
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359629
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042430Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f2f3c937-93c0-4853-8e51-36594d9c7af3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042430Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

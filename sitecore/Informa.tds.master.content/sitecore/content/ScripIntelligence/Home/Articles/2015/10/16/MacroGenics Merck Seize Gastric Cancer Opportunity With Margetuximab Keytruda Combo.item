@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {B0E85C2D-DFE6-4C58-B67F-153872E44C53}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/16/MacroGenics Merck Seize Gastric Cancer Opportunity With Margetuximab Keytruda Combo
+parent: {6AAE7279-2B4F-4136-849E-20689C005A44}
+name: MacroGenics Merck Seize Gastric Cancer Opportunity With Margetuximab Keytruda Combo
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 04be672e-54a6-46e7-ac71-3cba2cdcd0c3
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 85
+
+MacroGenics, Merck Seize Gastric Cancer Opportunity With Margetuximab, Keytruda Combo
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 83
+
+MacroGenics Merck Seize Gastric Cancer Opportunity With Margetuximab Keytruda Combo
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5010
+
+<p>MacroGenics Inc. will study the ability of margetuximab to enhance the immune system's destruction of HER2-positive tumors in a Phase Ib/II clinical trial to evaluate the monoclonal antibody in combination with Merck & Co.'s PD-1 inhibitor Keytruda (pembrolizumab) in advanced gastric cancer.</p><p>Rockville, Maryland-based MacroGenics expects to begin patient enrollment for the trial, which will test the drug combination's safety in Phase Ib and anti-tumor activity in Phase II, during the first quarter of 2016. The company's agreement with Merck allows the partners to extend their collaboration to a Phase III study if margetuximab plus Keytruda effectively boosts the immune system of hard-to-treat gastric cancer patients with few options for their advanced disease.</p><p>"The combination of mechanisms engaged by margetuximab and Keytruda could provide an important alternative for patients who do not respond to currently available regimens," MacroGenics president and CEO Scott Koenig said in the company's Oct. 22 announcement of the Merck agreement.</p><p>Eric Rubin, vice president and therapeutic area head for early-stage oncology development at Merck Research Laboratories, said that: "Evaluating the potential of combination therapies through strategic collaborations in difficult-to-treat tumor types continues to be an important part of our immuno-oncology clinical development program for Keytruda." </p><p><b>Two Platforms, One Phase III Program</b></p><p>MacroGenics has two development pathways &ndash; Fc-optimized monoclonal antibodies and a platform known as Dual-Affinity Re-Targeting (DART) that generates dual specificity, antibody-like therapeutic proteins. Margetuximab is an Fc-optimized antibody and the company's lead product candidate.</p><p>The Merck collaboration is the first partnership that MacroGenics has struck for margetuximab, but the company also has relationships with Servier, Johnson & Johnson's <a href="http://www.scripintelligence.com/home/Janssen-MacroGenics-sign-potential-575m-licensing-deal-355818" target="_new">Janssen subsidiary</a>, Takeda Pharmaceutical Co. Ltd. and Boehringer Ingelheim for the joint development of certain antibody therapies and DART compounds. The margetuximab collaboration is merely for the conduct of clinical trials; Merck does not have any rights to the antibody.</p><p>MacroGenics claims that margetuximab is engineered to more effectively harness the immune system in an attack on HER2-positive tumor cells compared with other HER2-targeting therapies, including the blockbuster breast and gastric cancer treatment Herceptin (trastuzumab) from Genentech, a Roche company. </p><p>Margetuximab could succeed in advanced gastric cancer where Kadcyla (ado-trastuzumab emtansine) &ndash; a Herceptin-containing antibody-drug conjugate (ADC) developed by Genentech and ImmunoGen Inc. &ndash; recently failed. Roche disclosed in its third quarter earnings report on Oct. 22 that Kadcyla did not meet the primary endpoint in the Phase II/III GATSBY study evaluating the ADC versus paclitaxel or docetaxel as a second-line treatment for HER2-positive advanced gastric cancer.</p><p>Phase I data presented at the end of May during the annual American Society of Clinical Oncology (ASCO) meeting hinted that margetuximab may perform better than Herceptin in breast cancer. </p><p>The early-stage study showed a 22% overall response rate (ORR) and 5.5 months of progression-free survival (PFS) for evaluable breast cancer patients treated with margetuximab plus chemotherapy, which compares favorably with Herceptin's 8.6% ORR and 3.2 months of PFS in the Phase III TH3RESA clinical trial in women who previously received at least two prior HER2-containing treatments, Leerink Swann analyst Michael Schmidt noted in a May 30 ASCO report.</p><p>The ORR and PFS for <a href="http://www.scripintelligence.com/home/Kadcyla-should-be-standard-of-care-in-metastatic-breast-cancer-346925" target="_new">Kadcyla-treated breast cancer patients in TH3RESA</a> were 31.3% and 6.2 months. Schmidt said in his report that as a third-line treatment "margetuximab could address a [roughly] $100m to $200m US opportunity in patients refractory to second-line Kadcyla." Margetuximab is being tested in third-line HER2-positive breast cancer patients in the ongoing Phase III clinical trial.</p><p>The Phase Ib/II combination study of margetuximab plus the PD-1 inhibitor Keytruda will be the first gastric cancer-only study for the MacroGenics antibody. </p><p>Roth Capital analyst Debjit Chattopadhyay noted in an Oct. 22 report on the MacroGenics-Merck deal that "anti-PD-1 potentiates anti-HER2 activity in murine mammary adenocarcinoma model. Combination allows coordinated engagement of both innate and adaptive immunity and could improve response rate and positively impact survival, in our view. Importantly, [the combination] provides an opportunity to establish 'chemo-free' approach for treatment of gastric cancer."</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 299
+
+<p>MacroGenics Inc. will study the ability of margetuximab to enhance the immune system's destruction of HER2-positive tumors in a Phase Ib/II clinical trial to evaluate the monoclonal antibody in combination with Merck & Co.'s PD-1 inhibitor Keytruda (pembrolizumab) in advanced gastric cancer.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 83
+
+MacroGenics Merck Seize Gastric Cancer Opportunity With Margetuximab Keytruda Combo
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151016T170003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151016T170003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151016T170003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030127
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 85
+
+MacroGenics, Merck Seize Gastric Cancer Opportunity With Margetuximab, Keytruda Combo
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361097
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+04be672e-54a6-46e7-ac71-3cba2cdcd0c3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

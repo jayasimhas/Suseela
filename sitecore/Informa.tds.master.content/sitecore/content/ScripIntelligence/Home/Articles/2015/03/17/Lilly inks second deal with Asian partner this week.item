@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6F75B31D-B68F-407F-A079-BAD1416CB3B1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/17/Lilly inks second deal with Asian partner this week
+parent: {0AA1E8EF-FE42-4F16-A931-BB0192AE2994}
+name: Lilly inks second deal with Asian partner this week
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: bea4c620-2eab-4923-a656-4fb496aea478
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Lilly inks second deal with Asian partner this week
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Lilly inks second deal with Asian partner this week
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2876
+
+<p>The Indianapolis pharma signed a second deal with an Asian company in as many days. Eli Lilly & Co announced on 20 March that it will pay $56m up front to Chinese biotech Innovent Biologics to collaborate on several oncology compounds. </p><p>The deal comes just a day after Lilly inked a collaboration with Korea's Hanmi Pharmaceuticals for $690m to work on a Phase II-ready autoimmune compound. Under the terms of this deal, Lilly is paying Hanmi $50m upfront, as well as milestones and royalties on the oral Bruton's tyrosine kinase (BTK) inhibitor HM71224 (<a href="http://#http://www.scripintelligence.com/business/Lilly-to-collaborate-with-Hanmi-on-RA-drug-357397" target="_new">scripintelligence.com, 19 March 2015</a>). </p><p>In the 20 March deal with Innovent, Lilly has agreed to $400m in milestone payments beyond the upfront payment, as well as sales royalties. Innovent will be responsible for development and manufacturing of the compounds included in the deal for the Chinese market, while Lilly will handle all commercialization. </p><p>Innovent, an up-and-coming biotech in the monoclonal antibody field, will contribute two compounds to the collaboration. The first is a Phase I-ready antibody targeting the CD20 protein for the treatment of hematologic malignancies. It will also contribute a pre-clinical immuno-oncology asset that Innovent will develop in China and Lilly will be responsible for in the rest of the world. </p><p>Lilly will also receive the rights to develop and commercialize three bi-specific immuno-oncology molecules outside of China. </p><p>Meanwhile, the big pharma will contribute its cMet monoclonal antibody for development in non-small cell lung cancer (NSCLC). Lilly will continue development of the compound outside of China. </p><p>This isn't the first time that Lilly has supported Innovent &ndash; the company's regional venture investment arm, Lilly Asia Ventures, contributed to multiple rounds of financing for the Chinese biotech. </p><p>In January, Innovent closed a record-breaking $100m private-financing led by new investors Legend Capital, Singapore's government-owned investment fund Temasek, and two other undisclosed investors, as well as existing investors Fidelity Biosciences, Fidelity Growth Partners Asia, Lilly Asia Ventures and Frontline Bioventures. Established with $30m from Lilly Asia Ventures, Fidelity Growth Partners Asia and local incubator Suzhou BioBay in 2001, Innovent raised an additional $25m in 2012 from the investment consortium (<a href="http://#http://www.scripintelligence.com/business/Big-biologics-bet-Chinas-Innovent-gets-100m-financing-356321" target="_new">scripintelligence.com, 23 January 2015</a>).</p><p>Innovent currently has four cancer antibodies in its pipeline, as well as several biosimilar products, including a version of Roche's Rituxan (rituximab). </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 243
+
+<p>The Indianapolis pharma signed a second deal with an Asian company in as many days. Eli Lilly & Co announced on 20 March that it will pay $56m up front to Chinese biotech Innovent Biologics to collaborate on several oncology compounds. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Lilly inks second deal with Asian partner this week
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150317T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150317T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150317T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028191
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Lilly inks second deal with Asian partner this week
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357332
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042315Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bea4c620-2eab-4923-a656-4fb496aea478
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042315Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

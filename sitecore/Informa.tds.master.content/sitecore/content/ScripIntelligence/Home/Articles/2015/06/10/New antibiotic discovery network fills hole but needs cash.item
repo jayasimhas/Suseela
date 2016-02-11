@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {173BE374-4C87-4925-9621-5BD19CBF8F38}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/10/New antibiotic discovery network fills hole but needs cash
+parent: {7DA54026-83C1-4132-8355-6BAE992E24F0}
+name: New antibiotic discovery network fills hole but needs cash
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 77b18b05-acb9-4723-bd0d-d86c7d2d2a3a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+New antibiotic discovery network fills hole but needs cash
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+New antibiotic discovery network fills hole but needs cash
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4881
+
+<p>A new global network of industry and academic researchers in antibiotic discovery being unveiled today in London, UK, hopes to be able to achieve as a group what they have failed to achieve as individuals. By gathering together a critical mass of experts in the field and joining to call for specific actions as one voice, they are hoping they will gain what founding member Professor Sir Anthony Coates describes as "synergistic power" and become an "irresistible force" for change. </p><p>He emphasized that the new Antibiotic Discovery Global Network, which is not for profit and free to join, will not produce "yet another report", but will lend its support to major projects such as the <a href="http://www.scripintelligence.com/researchdevelopment/Pay-into-2bn-antibiotics-fund-ONeill-tells-big-pharma-358415" target="_new">research fund</a> Jim O'Neill has called for in his review of antimicrobial resistance (AMR) for the UK government.</p><p>"There is currently no global fund, no global infrastructure and no global network for antibiotic discovery," Sir Anthony told <i>Scrip</i>. "If you want change, if you want a global fund, then what you need is a caucus of people to support you and you need them to be the experts who are actually doing the work." </p><p>Antibiotic Discovery Global Network comprises academics and representatives of small and medium-sized enterprises (SMEs) including Helperby Therapeutics, which was established by Sir Anthony (who is its CSO as well as professor of medical microbiology at the Institute of Infection and Immunity, St George's, University of London). However, no big pharma companies participate. </p><p>"Big pharma has almost completely pulled out of this area in terms of research," said Sir Anthony, citing the recent example of Merck & Co, which earlier this year laid off most of newly acquired Cubist's US-based research team &ndash; "the best commercial antibiotic research team and the future of antibiotic discovery", in his words. "It's a disaster," he added. </p><p>He believes that the answer now lies in funding the SMEs and academia to replenish the pipeline rather than in relying on big pharma to do it. "Why are we in this situation if they've been producing enough antibiotics? It's not been successful. We have to do something different. They'll buy up all the SMEs if we don't fund them. And then they will sell antibiotics into the marketplace but they won't address the Gram-negative bacteria [the most serious concern in AMR] and they will sack the research teams. It's not a good model, it hasn't worked and it won't work." He argues that big pharma's role should instead be to complete later-stage trials, secure approval and do the commercialization.</p><p>Now, the aim is to "regenerate a broken infrastructure", which will require "starting from the beginning, training people in the art of antibiotic research and discovery," Sir Anthony said. "We need the people to do the research, and the money and network of people who are prepared to train PhD students and work with post-docs."</p><p>However, money is currently in very short supply. "This organization has no money. It is free but it has no money. Unless we can build sponsorship, it's a problem." </p><p>While many desperate medical crises in the world have attracted funding from the Bill & Melinda Gates Foundation, that organization focuses exclusively on helping the poorest of the poor, and it does not recognize AMR as a problem of the very poorest. This is obviously a source of frustration to Sir Anthony, who argues that actually the burden of AMR falls disproportionately on the very poor even though this is not widely recognized. "Carbapenem-resistant <i>E. Coli</i> is actually a disease of the poorest of the poor, although it isn't thought of like that," he said.</p><p>So for now, his priorities are to find the money and to raise recognition of the importance of antibiotic discovery in addressing AMR. "In the very diverse response to AMR, discovery comes bottom of the list, and that's not right. Common sense says get new antibiotics into the market. This is the biggest threat to public health but there isn't any money. We need vast sums of money or we've had it."</p><p>Sir Anthony previously helped set up Antibiotic Discovery UK, a UK network of around 70 experts from 15 companies and 15 universities, who last year formed Antibiotic Research UK, the first UK-registered charity focused on antibiotic resistance breakers, which is seeking to raise funds to discover a new antibiotic by 2020. This group also helped set up BEAM, a network of European small and medium-sized enterprises (SMEs), co-founded by Sir Anthony and Florence Sejourne, CEO of French antibiotic developer Da Volterra. Members of these groups as well as others in additional countries have come together to form the new global group. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 491
+
+<p>A new global network of industry and academic researchers in antibiotic discovery being unveiled today in London, UK, hopes to be able to achieve as a group what they have failed to achieve as individuals. By gathering together a critical mass of experts in the field and joining to call for specific actions as one voice, they are hoping they will gain what founding member Professor Sir Anthony Coates describes as "synergistic power" and become an "irresistible force" for change. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+New antibiotic discovery network fills hole but needs cash
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150610T000214
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150610T000214
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150610T000214
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028949
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+New antibiotic discovery network fills hole but needs cash
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358782
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042400Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+77b18b05-acb9-4723-bd0d-d86c7d2d2a3a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042400Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

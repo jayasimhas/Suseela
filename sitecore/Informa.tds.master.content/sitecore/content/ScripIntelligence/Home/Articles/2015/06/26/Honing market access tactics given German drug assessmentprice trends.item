@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {D1F59F38-9297-4398-BBE2-21CD1AB12383}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/26/Honing market access tactics given German drug assessmentprice trends
+parent: {32E6A98D-86BC-40BD-A1D6-A27CF9BCD395}
+name: Honing market access tactics given German drug assessmentprice trends
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f0701287-2a34-400d-85d0-8bfe46d03aba
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+Honing market access tactics given German drug assessment/price trends 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 69
+
+Honing market access tactics given German drug assessmentprice trends
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6909
+
+<p>Four years after its introduction, Germany's early benefit assessment process continues to make waves in the industry. </p><p>The process, introduced under the Pharmaceutical Market Reform Law (AMNOG; Arzneimittelmarktneuordungsgesetz), has become best known for its very strict assessment of the benefits that new drugs have over existing comparators, where many companies have failed to provide adequate evidence to satisfy stringent criteria set by the key assessor, the Institute for Quality and Efficiency in Health Care (IQWiG; Institut für Qualität und Wirtschaftlichkeit im Gesundheitswesen), and the final decision-making body, the Federal Joint Committee (G-BA; Gemeinsamer Bundesausschuss). </p><p>The subsequent pricing negotiation with the federation of statutory health insurers, GKV Spitzenverband, is also key in the process, but to date it has been far from clear what impact the level of added benefit that the G-BA assigns to new treatments, if any, has on the outcome of the pricing negotiations. </p><p>A study conducted by the German consulting company IGES Institut, presented at eyeforpharma's Market Access and Pricing Excellence event held on 3-4 June in Amsterdam, revealed that, in general terms, the higher the level of added benefit, the higher the negotiated price relative to the comparator treatment.</p><p>IGES Institut analyzed all medicines that underwent the AMNOG assessment from January 2011 until the end of January 2015 (excluding orphan drugs and drugs that were withdrawn from the German market) and found that the negotiated price was a function of the price of the comparator therapy and the added benefit assessment, with those drugs that the G-BA judged not to have added benefit priced close to parity with their comparators, while those that were judged to show benefit had a higher mark-up over the comparator price, rising in line with the level of added benefit. </p><h2>outliers </h2><p>However, while this relationship was found to hold true for drugs with prices in the middle of the range of those that were analyzed, the correlation was not as strong for those at either end of the range. </p><p>This means that for those drugs with highly priced comparator treatments, there is less of a mark-up derived from additional benefit, and for those with no comparators, negotiated prices tend to be high, reflecting perhaps the lack of alternatives and the need for new treatments. Therefore, if the price of the comparator therapy is already high, even with a high added benefit, there is a limit to the mark-up that can be achieved, according to Professor Bertram Haussler of the IGES Institut. On the flip side, even if no added benefit is proven, as long as the comparator is not a generic drug, the price need not be low.</p><p>Despite this positive conclusion, demonstrating that it is worthwhile for manufacturers to invest in the generation of strong evidence and preparation of dossiers, there are still many challenges when navigating AMNOG waters. </p><p>The intense "slicing" of the patient population is one of the key challenges, as it can often be the case that the appropriate comparator as determined by the G-BA will differ for various subpopulations. This makes it difficult to design clinical trials in a way that satisfies both the expectations of the G-BA and the requirements of other countries' health technology assessment (HTA) bodies. And yet satisfying the G-BA's requirements is critical if a company is to secure a good price. "You can only get additional benefit if you have data for something, if you have no data you cannot get additional benefit. And the price is based on weighting of the whole population. If you have a large population with no additional benefit this will have a large impact on the price," said Friedhelm Leverkus, director of HTA and outcomes for Pfizer in Germany. This can create conflicts between different functions of the company. "Market access people want to have a narrow label where we have data and evidence, and the commercial people want a very broad label," added Leverkus.</p><h2>play your subpopulations right</h2><p>This salami slicing also poses a problem for the statistical analysis of trials &ndash; the subgroup analysis can then not be adequately powered, and "with every subgroup, the probability of having added benefit goes down," said Leverkus. And for the IQWiG, it is the numbers that count, not story-telling. Therefore, companies should aim to have the lowest possible number of subpopulations to increase the chances of a positive AMNOG decision, and should bear in mind that the size and the power of the study can have an impact on the level of additional benefit they could achieve.</p><p>Ulf Maywald, head of drug department at the German insurer AOK Plus, echoed the view of Leverkus regarding the discrepancy between the clinical development programs for drugs and the often wider label given by the European Medicines Agency (EMA). "There is one fundamental problem with the legal framework with the broadness of the population," stated Maywald. He gave an example of Novartis's recently launched psoriasis drug Cosentyx (secukinumab) to highlight this problem. According to Maywald, the drug is superior to tumor necrosis factor-alpha inhibitors, but its EMA label is for systemic treatment of psoriasis, so data are missing for the broader patient population where there are many generic comparators. While there are strong data for a smaller patient population, legally the negotiated mixed price needs to consider the whole population according to the EMA's label. </p><p>Payers are unsure about how to deal with this situation, and they are now "discussing with the politicians how to deal with this and maybe how to change the regulatory framework to be able to get more shades of gray: currently it is black or white," added Maywald.</p><p>Until any such changes that could be favorable for pharma occur, Maywald's advice to sponsors is to be well prepared, honest, and to make the most of the available evidence. For example, although only two out of 22 drugs whose assessment included an indirect mixed treatment comparison in the absence of head-to-head trials received an added benefit, the G-BA is more pragmatic in considering such evidence, and he urged companies to conduct indirect comparisons even if the IQWiG is unlikely to accept them. </p><p>So far, the G-BA's decision has diverged from the IQWiG's recommendation in around one third of cases, but Maywald said companies should not "count on [the] G-BA's mercy" and should instead be prepared to deliver a "perfect performance at the oral hearing." This would include providing compelling evidence as to why certain studies could not be conducted. It is not sufficient to say "it was ethically not possible," added Maywald, "bring the stamp from the ethics committee that says so."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 126
+
+<p>Four years after its introduction, Germany's early benefit assessment process continues to make waves in the industry. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+Honing market access tactics given German drug assessmentprice trends
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150626T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150626T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150626T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029135
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+Honing market access tactics given German drug assessment/price trends 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B18369C6-1BC6-45A1-9CF5-DA59EBB80DE6}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pdfNewsLetter
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359135
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f0701287-2a34-400d-85d0-8bfe46d03aba
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {36B2E224-1E82-4BDA-B7BB-C377F2D496E8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/02/French health reform bill to address drug shortages clinical trials
+parent: {0CBDEEF4-9AC4-4491-AA70-F3114C458FCA}
+name: French health reform bill to address drug shortages clinical trials
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 634c74a0-1cfe-4d42-a74a-baddbc86921b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+French health reform bill to address drug shortages, clinical trials
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+French health reform bill to address drug shortages clinical trials
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11788
+
+<p>The French parliament is preparing to examine a bill reforming the healthcare system as part of the national health strategy launched by the government in 2013. While the main thrust of the draft "Health Law" is to iron out inequalities and inefficiencies in the healthcare system, it includes proposals to avoid shortages of high therapeutic value medicines and to bring French legislation into line with the new EU Clinical Trials Regulation. </p><p>The bill was presented to the cabinet on 15 October last year, and is expected to come before parliament sometime in April, the delay apparently being due to a full parliamentary calendar. According to health minister Marisol Touraine, the law will address numerous shortcomings in the current framework for the provision of healthcare. </p><p>"Our health system works well but it is inequitable, and that is why it is imperative to rebuild it," she said. The emphasis will be firmly on preventive measures, reducing inequalities in patient access to healthcare, and better co-ordinating the actions of the state and the health insurers. It will also tackle challenges brought by ageing of the population, such as the growth in chronic conditions.</p><h2>Preventing shortages </h2><p>But there are also some proposals that will have a direct effect on the pharmaceutical sector, one of which is intended to address medicine shortages, which are growing in frequency despite the introduction of a series of measures to prevent interruptions in product supply. </p><p>Shortages occur for a number of reasons relating to manufacturing (production problems, availability of raw materials, etc), breakdowns at various stages of the supply chain, and so on. </p><p>In September 2012 the government published a decree strengthening the obligations on all actors in the supply chain, particularly those of wholesalers and distributors, in order to ensure patients are guaranteed access to the medicines they need. </p><p>The decree said that pharmaceutical companies had to supply wholesalers with enough stock to allow them to meet their public service obligations in terms of meeting patients' needs. It also set up a system allowing companies to notify the regulatory agency ANSM of any current or expected stock shortages and identify possible substitute medicines, and gave ANSM responsibility for dealing with shortages, for example by looking for alternative products and informing health professionals.</p><p>But problems have continued to occur. In 2013, ANSM received 453 notifications of drug supply disruptions, a four-fold increase since 2011. "It is therefore necessary to go further, notably by strengthening the obligations on actors in the pharmaceutical supply chain, as well as the means available to the authorities, in order to combat all the causes of shortages and guarantee that all patients can have access to their treatment at all times," the government says.</p><p>Article 36 of the bill addresses a range of issues, such as: </p><ul><li>identification of those medicines where shortages are likely to be most serious; </li><li>new obligations for companies marketing "certain medicines of major therapeutic interest" where supply interruptions would present the greatest risk for patients; </li><li>publication of a list of such medicines where shortages are occurring or are at risk of such, on the ANSM website; </li><li>strengthening the obligations on industry in terms of identifying and obtaining alternative solutions when supplies are at risk. </li></ul><p>The article also outlines the rules regarding the export of medicines of major therapeutic interest and the dispensing of imported drugs by pharmacists.</p><p>"Major therapeutic interest" is defined as those drugs or classes of drug where treatment interruption could be life-threatening in the short or long term, or would represent a significant lost opportunity for patients because of the seriousness or likelihood of progression of the disease. </p><p>A list of such drugs that are in short supply or at risk thereof will be drawn up by the ANSM and published on its website, together with information on whether these medicines can be sold to the public by hospital pharmacies. Community pharmacies will be able to dispense alternative medicines with an import licence in order to mitigate any supply interruptions. </p><p>MA holders and marketers of medicines must ensure "appropriate and continuous supply of the national market in order to meet the needs of French patients", the bill says. They must take "all useful measures to prevent and mitigate any supply difficulties" and, in cases of supply interruptions, provide pharmacists with all the relevant information they have.</p><p>They must also draw up plans for managing shortages and notify the agency of the products for which they are doing this.</p><p>As for wholesalers, once they have met their domestic supply obligations, they can sell medicines outside France or to wholesalers that export medicines, but cannot do this for medicines of major therapeutic interest.</p><p>Efforts to deal more efficiently with drug shortages are also under way in the US, where the FDA said recently that it was encouraging companies to report potential problems as soon as possible so that action can be taken to prevent them becoming a broader issue (<a href="http://www.scripintelligence.com/home/FDA-pledges-to-work-with-drug-makers-on-shortages-356547" target="_new">scripintelligence.com</a>, 5 February).</p><h2>Clinical trials</h2><p>Article 53 of the French bill says that steps will need to be taken to bring French practices into line with the EU Clinical Trials Regulation, which was approved last year and will come into effect sometime after 28 May 2016. The Regulation imposes a whole range of changes to clinical trial practice, and the French legislation will need to be amended and updated in numerous areas such as transparency, the use of trial data, clinical trial pharmacovigilance, and the responsibilities of ethics committees. </p><p>Other aspects of clinical trials are dealt with in Article 37, notably the need to streamline trial approval times and procedures in order to reduce delays in starting up trials, and to adapt French legislation on studies of advanced therapy medicines. </p><p>Between 2007 and 2011, the government says in an impact assessment attached to the bill, the number of industry-sponsored and academic trials of medicines in France fell by 13%, more so for company sponsored trials (down by 21%) than for academic (down 11%). It says the main problems are differences among clinical trial contracts, which cause delays to starting trials and put France at a disadvantage to other European countries and North America. </p><p>"There is a need to increase the number of industry sponsored trials by one third to two thirds," it says. "So it is essential to put in place an administrative environment that contributes to the attractiveness of France and Europe." One way this can be done is to put in place a single contract valid for all industry-sponsored clinical research, so that the time taken to start up a trial is significantly reduced.</p><p>The is in line with the aims of the strategic contract signed in July 2013 by the government and pharmaceutical industry to "simplify and accelerate the conduct of commercial clinical trials in health establishments by putting in place a single agreement for investigators' fees and to increase the number of clinical trials proposed in France".</p><p>Another aspect of the clinical trial problem relates to advanced therapy medicinal products (ATMPs), which are governed by the EU ATMP Regulation. The government says the regulation offers certain opportunities that the French legislation does not, such as flexibility in the preparation of advanced therapies for limited numbers of patients. The legislation currently does not allow the import or export of such products for biomedical research, which means that French researchers cannot take part in multinational clinical trials, it says. The bill would allow health establishments to obtain an authorization to manufacture one-off advanced therapies (tissue and cell therapy) for use in human studies, and to import and export such products for the same purpose. </p><h2>Other areas</h2><p>Moves are afoot to improve the information available to doctors to help them in their prescribing. The bill says that while health professionals have access to public information on the medicines they prescribe, dispense or administer, there is no comprehensive tool allowing a disease-based approach like the British National Formulary or the Swedish Kloka Listan. </p><p>So for some drugs, for example those that have undergone a medico-economic evaluation, a guide to their proper use will be published by the HTA body HAS (Haute Autorité de Santé) at the same time as it issues its opinion on the product's medical benefit (SMR) rating. The HAS will also draw up a guide to diagnostic and therapeutic strategies that will provide a basis for the drafting of preferential medicine lists. </p><p>Article 42 will set up a national institute for prevention, surveillance and intervention in public health, as well as strengthening the coordination of agencies. It will also streamline some of the responsibilities of ANSM, as that some of its tasks are no longer necessary, and various administrative procedures need to be simplified. </p><p>For example approval procedures for the import and export of certain products such as toxins and microorganisms, blood and plasma products, and medicines imported for individual patients will be abolished and replaced by a notification procedure. Also undergoing change are some procedures relating to the distribution, dispensing, commercialization and vigilance of blood products and derivatives. </p><h2>Working groups</h2><p>In preparation for the examination of the bill, four working groups have been set up to accompany its progress through the parliamentary process, focusing specifically on issues like the organization of healthcare at local level, links between specialists, private clinics and public hospitals, and extending the "tiers payant" (third-party payment) system to doctors' fees. </p><p>This last measure is a key part of the government's plans to improve patient access to care, but it has run into heavy resistance from doctors. Under the "tiers payant" system, the healthcare insurers pick up the bill directly for the reimbursed part of patients' treatment so that they don't have to pay up front. The bill would extend the system to cover the medical consultation fee &ndash; a cost that is said to discourage many patients, particularly those in financial difficulties, from visiting the doctor. </p><p>If the system were extended, the doctor would have to claim back the cost of the fee from the relevant health insurer rather than being paid directly by the patient. The doctors' associations argue this would take responsibility away from the patient and "devalue" the medical consultation, and that it would be beset by delays in payments by the health insurers and cause an increase in paperwork, according to a report in Le Monde.</p><p>To try to assuage doctors' fears, the health minister has re-opened talks with their representatives but insists that the extension of the tiers-payant system will go ahead. She told the French TV channel BFMTV that it was an "essential element of the law". </p><p>President Fran&ccedil;ois Hollande too has waded into the debate, saying that the measure will only be put in place if there is a simple payment mechanism for doctors, although he urged the government and parliament to move much more quickly with the reform.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 452
+
+<p>The French parliament is preparing to examine a bill reforming the healthcare system as part of the national health strategy launched by the government in 2013. While the main thrust of the draft "Health Law" is to iron out inequalities and inefficiencies in the healthcare system, it includes proposals to avoid shortages of high therapeutic value medicines and to bring French legislation into line with the new EU Clinical Trials Regulation. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+French health reform bill to address drug shortages clinical trials
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150402T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150402T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150402T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027766
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+French health reform bill to address drug shortages, clinical trials
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200395
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356538
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+634c74a0-1cfe-4d42-a74a-baddbc86921b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

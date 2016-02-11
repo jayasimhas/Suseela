@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {7A9A4F10-2267-409E-8B99-F311694460CD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/13/FDA 1bn needed to cover Cures costs
+parent: {00E1F432-3245-46E7-B97A-7253B91FCA66}
+name: FDA 1bn needed to cover Cures costs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 41dd6c33-ccce-4bff-91ff-53437ff96b4b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+FDA: $1bn needed to cover 'Cures' costs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 35
+
+FDA 1bn needed to cover Cures costs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6548
+
+<p>The FDA estimated it would cost about $1bn to cover its costs for implementing the provisions in the <i>21st Century Cures Act</i>, which the House Energy and Commerce Committee started on 19 May to mark up &ndash; the point at which amendments will be added, or not, before a vote is taken on whether to move the bill to the full chamber for consideration.</p><p>But Representative Fred Upton (Republican-Michigan), chairman of the E&C and one of the lead authors of the Cures bill, has yet to disclose how lawmakers will cover the costs of the legislation, which aims to overhaul the US biomedical enterprise and provide the National Institutes of Health (NIH) and the FDA with new authorities and responsibilities.</p><p>While the legislation calls for a <a href="http://www.scripintelligence.com/home/Cures-10bn-NIH-boost-nice-wish-no-granting-power-358130" target="_new">$10bn increase for the NIH</a> over the next five years, the bill has very <a href="http://www.scripintelligence.com/home/NIH-Thanks-for-the-funds-FDA-Wheres-ours-358162" target="_new">little to offer the FDA</a> in terms of a budget boost.</p><p>But Congress is going to have to find a way to pony up or leave the FDA with more unfunded mandates &ndash; something Dr Janet Woodcock, director of the agency's Center for Drug Evaluation and Research, <a href="http://www.scripintelligence.com/home/Dont-break-whats-working-FDAs-Woodcock-urges-Congress-358096" target="_new">pleaded last month</a> with lawmakers not to again do.</p><p>After crunching the numbers, the FDA has estimated a total cost of $882.8m over five years to implement the Cures provisions that affect it, although when adding in the expected $112.5m in costs for a national surveillance system regulators determined they would need to carry off the provision that calls for priority reviews of breakthrough devices, that puts that bill at $995.3m, an agency official told <i>Scrip</i>.</p><p>The FDA calculated the costs of reviewing the breakthrough devices at $26m annually, or $130m over five years. </p><p>But the official pointed out that the $882.8m base total does not include an additional $188m the FDA has determined would be needed to cover its expenses to execute the provision in the Cures legislation for qualification of drug development tools.</p><p>That section of the bill, known as 2021, would require the FDA to issue guidance intended to assist in the development of biomarkers, with input from public-private partnerships, and to establish a codified process for qualification of biomarkers and other drug development tools. </p><p>The agency has estimated it would cost $1.3m to $2.3m over five years per biomarker, the FDA official said.</p><p>In weighing the costs of implementing the measure that would reauthorize the FDA's <a href="http://www.scripintelligence.com/home/Cures-resurrects-orphan-exclusivity-Dormant-protection-dead-and-buried-358417" target="_new">rare pediatric disease priority review vouchers</a> (PRV) &ndash; an incentive program created by Congress under the <i>Food and Drug Administration Safety and Innovation Act</i>, which turned out to be quite lucrative for BioMarin, the first company to gain one &ndash; the agency came up with an estimate of $17.5m per year, or $87.5m over five years, although lawmakers have only included a three-year renewal in their legislation.</p><p>Among the tweaks included in the latest version of the bill, which was released on 19 May just hours before it was presented to the full E&C Committee for consideration, was a requirement for the General Accounting Office &ndash; the watchdog of Congress &ndash; to evaluate the effectiveness of the PRV program in incentivizing drug development for rare pediatric diseases. </p><p>To fulfill the Cures legislation's requirement of establishing a public-private partnership aimed at creating or enhancing and supporting an information technology system, including the staffing, to collect, maintain, analyze and interpret data on the natural history of diseases, with a particular focus on rare conditions, the FDA determined it would need $25m over five years, the official told <i>Scrip</i>.</p><p>Regulators also reckoned it would cost $42m to implement a provision that would require the FDA to establish a program to evaluate the potential use of evidence from clinical experience to help support the approval of a new indication for a drug and to help support or satisfy post-approval study requirements. </p><p>Under that measure, the agency also would be required in parallel to identify and execute pilot demonstrations to extend the existing use of its Sentinel system &ndash; an active postmarket risk identification and analysis system that uses electronic health records representing about 178 million patients from 18 healthcare plan data partners, which retain the physical and operational control over their data, to track medical product safety issues. </p><p>The FDA also appraised the cost of putting in place the Cures measure that calls for approval of certain antibiotics for use in limited populations at $5m over five years, the official said.</p><p>Other costs calculated by the FDA included $46.1m to implement the provision to establish a voluntary third-party quality system assessment program where device companies could have their quality system certified by an FDA-authorized third party and, once certified, gain certain efficiencies in the agency's pre-market review process.</p><p>While regulators provided lawmakers with their best estimates, the FDA official noted there were some measures in the Cures bill, such as the provisions involving precision medicine, in which the agency currently was unable to determine the costs.</p><p>The big question now, however, is how will Congress pay for the Cures bill &ndash; $1bn for the FDA, $10bn for NIH, plus the added costs of the other measures &ndash; something Representative Upton has pledged to reveal before the E&C votes on the legislation, which is scheduled to take place on 20 May.</p><p><b><i>Update:</i></b><i> Just two hours before the E&C was set to reconvene on 20 May to move forward with the mark up process, Representative Upton canceled the session and said the committee would now meet on 21 May &ndash; obviously signaling lawmakers are having trouble finding the pay-fors for the bill.</i></p><p><i>&ldquo;A few extra hours of work now will pay dividends in what we deliver to patients,&rdquo; Representative Upton insisted.</i></p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 364
+
+<p>The FDA estimated it would cost about $1bn to cover its costs for implementing the provisions in the <i>21st Century Cures Act</i>, which the House Energy and Commerce Committee started on 19 May to mark up &ndash; the point at which amendments will be added, or not, before a vote is taken on whether to move the bill to the full chamber for consideration.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 35
+
+FDA 1bn needed to cover Cures costs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150513T180819
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150513T180819
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150513T180819
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028759
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+FDA: $1bn needed to cover 'Cures' costs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358405
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042347Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+41dd6c33-ccce-4bff-91ff-53437ff96b4b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

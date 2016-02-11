@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {BF3596BF-EEEB-4984-9697-1FFBCB83A839}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/27/Dendreon Geron jobs cut after Valeant Janssen deals
+parent: {8E71AD2E-3D59-4E74-B732-B3CC0A62D38F}
+name: Dendreon Geron jobs cut after Valeant Janssen deals
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fb8d76e5-a844-440f-94f0-1dce9df3c4c3
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Dendreon, Geron jobs cut after Valeant, Janssen deals
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Dendreon Geron jobs cut after Valeant Janssen deals
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4549
+
+<p>Valeant Pharmaceuticals pulled Dendreon out of bankruptcy by acquiring the troubled prostate cancer immunotherapy company, and Johnson & Johnson's Janssen Biotech subsidiary pumped much-needed cash into Geron with a drug development partnership, but because of those deals 95 people at Dendreon and Geron are losing their jobs.</p><p>After no other bidders emerged for Dendreon, the bankruptcy court approved Valeant's $400m offer to buy the Provenge (sipuleucel-T) maker and the transaction closed on 23 February (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Valeant-ups-bid-for-Dendreons-Provenge-to-400m-356577" target="_new">6 February 2015</a>). By 2 March, Valeant filed a Worker Adjustment and Retraining Notification (WARN) with the state of Washington that said Valeant began cutting 77 jobs in Dendreon's hometown of Seattle on the day the acquisition closed.</p><p><b>More cash, less Geron jobs</b></p><p>Meanwhile, Menlo Park, California-based cancer drug developer Geron ended 2014 with $170.6m in cash and investments versus $66m at the end of 2013, but the company will reduce its head count from 39 to 21 employees as it hands off research and development oversight for lead drug candidate imetelstat to Janssen. Geron received $35m from Janssen in November under a co-development deal that's worth up to $935m (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Geron-inks-935m-Janssen-deal-after-clinical-hold-lift-355057" target="_new">14 November 2014</a>). The upfront fee was on top of the $96.8m that Geron raised in a February 2014 stock offering to fund imetelstat studies.</p><p>"Given projected reduced operational demands as a result of the collaboration with Janssen, the company is conducting an organizational resizing," Geron said on 3 March when it announced 2014 financial results.</p><p>The 18-person workforce reduction following the good news of Janssen's involvement with imetelstat follows prior job cuts when Geron ran into problems with the telomerase inhibitor's development and earlier when the company shifted its focus from stem cell therapies to cancer drugs (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Geron-cuts-20-jobs-awaits-imetelstat-investigator-results-342608" target="_new">29 April 2013</a>, <a href="http://www.scripintelligence.com/business/And-then-there-was-one-GRN1005-failure-leaves-Geron-with-imetelstat-and-90m-337936" target="_new">6 December 2012</a> and <a href="http://www.scripintelligence.com/home/Stem-cell-death-for-cash-crunched-Geron-Angiotech-but-Mesoblast-outlasts-them-323727" target="_new">16 November 2011</a>).</p><p>While the Janssen deal for imetelstat &ndash; Geron's only viable clinical program &ndash; provided important validation for that asset, Needham & Co analyst Chad Messer said in a 3 March report that "value drivers from that program remain far enough away that we believe a current investment in Geron shares is an investment in the company's business development acumen. We maintain our 'Hold' rating while that part of the story plays out."</p><p><b>Valeant's Dendreon cuts expected</b></p><p>Job cuts following a cash influx may be surprising at Geron, but given Valeant's penchant for dramatically cutting costs after it acquires companies, the layoffs at Dendreon likely were expected by employees and investors alike.</p><p>Valeant chairman and CEO Michael Pearson noted during the company's 2014 earnings conference call on 23 February that another $15m was added to the Dendreon purchase price, bringing the transaction's value to 1.3 times annual Provenge sales. </p><p>"In addition to growth opportunities, we believe this asset has been undermanaged as it has an infrastructure in place built for a $1bn product," Mr Pearson said.</p><p>He noted that Valeant will cut $130m in Dendreon's annual costs and increase gross margins for that business from about 50% historically to more than 65% by the end of 2015 and 80% over the longer term, largely by increasing the number of prescribers that Provenge sales staff contact. The projected return on Valeant's investment is 30% with a cash payback period of five years.</p><p>Mr Pearson noted that Valeant would not make big cuts at Dendreon's specialized Provenge manufacturing facilities in Seal Beach, California and Atlanta, Georgia, but he said costs will be reduced significantly by eliminating infrastructure, technology, operations and other expenses that Valeant already has in-house.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 334
+
+<p>Valeant Pharmaceuticals pulled Dendreon out of bankruptcy by acquiring the troubled prostate cancer immunotherapy company, and Johnson & Johnson's Janssen Biotech subsidiary pumped much-needed cash into Geron with a drug development partnership, but because of those deals 95 people at Dendreon and Geron are losing their jobs.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Dendreon Geron jobs cut after Valeant Janssen deals
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150227T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150227T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150227T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028001
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Dendreon, Geron jobs cut after Valeant, Janssen deals
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pdfNewsLetter
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356985
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fb8d76e5-a844-440f-94f0-1dce9df3c4c3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

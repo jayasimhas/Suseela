@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {42A16138-5EEB-4A1D-AFB9-12AE223F763C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/17/Warning added to Gileads Sovaldi Harvoni after cardiac death
+parent: {0AA1E8EF-FE42-4F16-A931-BB0192AE2994}
+name: Warning added to Gileads Sovaldi Harvoni after cardiac death
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: be01b719-f7ca-46b4-9faa-56180107d868
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Warning added to Gilead's Sovaldi, Harvoni after cardiac death
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Warning added to Gileads Sovaldi Harvoni after cardiac death
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5324
+
+<p>Gilead Sciences warned prescribers on 20 March that co-administering the anti-arrhythmics agent amiodarone with the company's hepatitis C virus (HCV) treatments Sovaldi (sofosbuvir) or Harvoni (ledipasvir/sofosbuvir) in combination with another direct acting antiviral (DAA) could be deadly.</p><p>In a "Dear Healthcare Provider" letter, Gilead told prescribers there were nine postmarketing cases of symptomatic bradycardia &ndash; a slower than normal heart rate, under 60 beats per minute &ndash; in patients who got amiodarone while taking either Harvoni or Sovaldi with Bristol-Myers Squibb's investigational HCV drug daclatasvir or Johnson & Johnson's Olysio (simeprevir).</p><p>One of those patients died of cardiac arrest and three others required pacemakers, Gilead said.</p><p>The Foster City, California-based biotech giant said seven of the nine patients also were taking a beta blocker when the bradycardia occurred.</p><p>Six patients experienced bradycardia within the first 24 hours after starting Sovaldi or Harvoni, Gilead said, adding that the other three cases occurred within the first two to 12 days following the initiation of the HCV treatments.</p><p>A rechallenge with HCV treatment in the setting of continued amiodarone therapy resulted in recurrence of symptomatic bradycardia, Gilead warned. </p><p>Sovaldi, an HCV nucleotide analog NS5B polymerase inhibitor, which demonstrated a sustained virologic response of 12 weeks (SVR12) of up to 90%, was approved in <a href="http://www.scripintelligence.com/home/Gilead-wins-OK-for-Sovaldi-but-1000-a-day-price-criticized-348611" target="_new">December 2013</a>.</p><p>Harvoni, a fixed-dose combination of ledipasvir, an HCV NS5A inhibitor, and Sovaldi, was approved this past <a href="http://www.scripintelligence.com/home/Gilead-combo-HCV-drug-OKd-price-dents-shares-354407" target="_new">October</a>. The drug demonstrated cure rates of 94%-99% in clinical testing.</p><p>Sovaldi's $1,000-per-pill and Harvoni's $1,125-per-pill prices, however, have been controversial.</p><p>Gilead said the FDA has approved changes to the "Warning and Precautions," "Adverse Reactions" and "Drug Interactions" sections of Sovaldi's and Harvoni's labeling to alert prescribers and patients about serious risk of bradycardia when combining the drugs with amiodarone and other DAAs.</p><p>The company emphasized that similar cases of bradycardia have not been reported in patients receiving Sovaldi with ribavirin or with pegylated interferon and ribavirin.</p><p>The firm said the mechanism of the potential interaction between amiodarone and Harvoni or Sovaldi in combination with another DAA is unknown.</p><p>Because the number is not known of patients given amiodarone while taking Harvoni or Sovaldi in combination with another DAA, it's not possible to estimate the incidence of occurrence of the bradycardia events, Gilead said.</p><p>The company noted that risk factors of developing symptomatic bradycardia in patients receiving amiodarone may include co-administration of a beta blocker or in those with underlying cardiac comorbidities or advanced liver disease.</p><p>If patients have no other viable treatment options other than being administered amiodarone with Harvoni or Sovaldi in combination with another DAA, the labeling of Gilead&rsquo;s drugs advises that patients should be counseled about the risk of serious symptomatic bradycardia and should undergo cardiac monitoring at an in-patient facility for the first 48 hours, after which outpatient or self-monitoring of the heart rate should occur on a daily basis through at least the first two weeks of treatment.</p><p>Due to amiodarone's long half-life, patients discontinuing the drug just prior to starting Harvoni or Sovaldi in combination with a DAA should also undergo similar cardiac monitoring, Gilead said.</p><p>The labeling for Olysio, a NS3/4A protease inhibitor, which was approved in <a href="http://www.scripintelligence.com/home/Janssen-gains-FDA-nod-for-HCV-protease-inhibitor-Olysio-348313" target="_new">November 2013</a>, already warns that concomitant use of the drug with certain anti-arrhythmics, including amiodarone, may result in increases in the concentrations of those heart agents due to intestinal CYP3A4 inhibition J&J's drug. </p><p>Olysio's labeling advises to monitor patients when the drug is co-administered with anti-arrhythmics.</p><p>The labeling for another HCV competitor to Harvoni and Sovaldi, AbbVie's Viekira Pak (ombitasvir/paritaprevir/ritonavir/dasabuvir), which was approved this past <a href="http://www.scripintelligence.com/home/Viekira-OKd-AbbVie-prices-under-Gileads-Harvoni-355775" target="_new">December</a>, also includes drug interaction warning alerting prescribers and patients to use caution when co-administering the drug with anti-arrhythmics, including amiodarone. It also recommends concentration monitoring of anti-arrhythmics when co-administered with Viekira.</p><p>BMS' daclatasvir, an investigational NS5A replication complex inhibitor, currently is <a href="http://www.scripintelligence.com/policyregulation/FDA-accepts-BMS-resubmitted-daclatasvir-NDA-357271" target="_new">under review</a> at the FDA as a treatment in combination with Sovaldi for patients with HCV genotype 3. </p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 298
+
+<p>Gilead Sciences warned prescribers on 20 March that co-administering the anti-arrhythmics agent amiodarone with the company's hepatitis C virus (HCV) treatments Sovaldi (sofosbuvir) or Harvoni (ledipasvir/sofosbuvir) in combination with another direct acting antiviral (DAA) could be deadly.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Warning added to Gileads Sovaldi Harvoni after cardiac death
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150317T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150317T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150317T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028194
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Warning added to Gilead's Sovaldi, Harvoni after cardiac death
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357336
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042316Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+be01b719-f7ca-46b4-9faa-56180107d868
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042316Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

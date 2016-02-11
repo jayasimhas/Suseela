@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {D7467E3F-9068-45AC-9CE5-0A78D189CB93}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/16/US Capitol Capsule Of space genes and genius the future of biopharma
+parent: {CD515B17-C025-4812-A259-F398C278F9AE}
+name: US Capitol Capsule Of space genes and genius the future of biopharma
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ad2079a6-71e2-4a70-b112-646dee24f429
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+US Capitol Capsule: Of space, genes and genius: the future of biopharma
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 68
+
+US Capitol Capsule Of space genes and genius the future of biopharma
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 16253
+
+<p>While there was much serious business going on last week in Philadelphia among the nearly 16,000 attendees at the Biotechnology Industry Organization (BIO) International Convention &ndash; exchanges on best partnering strategies, debates over what projects are worthy of investment, or not, and discussions about better ways to interact with regulators &ndash; there also were some purely thrilling moments reflecting the bright future ahead for the biopharmaceutical industry.</p><p>Top of that list was the in-flight downlink from the International Space Station (ISS) on 17 June with NASA astronaut Commander Scott Kelly, who is spending a year in space, which began on 27 March, along with Russian cosmonaut Mikhail Kornienko.</p><p>While the goal of the yearlong mission is to examine the effects of gravity on the human body with the aim of reducing the health risks on future crewmembers, Commander Kelly and his twin brother, retired astronaut Commander Mark Kelly &ndash; who is not on the flight &ndash; are participating in a separate genetics study consisting of 10 different investigations to provide deeper insight into the changes that occur during long-term spaceflight on the heart, brain and other organs.</p><p>The data from the Twins Study are being shared among the various participating research teams, NASA said. </p><p>"There are a lot of things that change with our physiology in space that's similar to how people change when they age," Commander Kelly said from the ISS during the <a href="http://www.iss-casis.org/NewsEvents/OnStation/tabid/113/ArticleID/178/ArtMID/570/In-Flight-Downlink-Event-for-CASISBiotech-Conference.aspx" target="_new">17 June live feed</a>, which lasted just under 10 minutes. </p><p>He noted bone and muscle loss, especially, happen faster in space.</p><p>"From understanding the mechanism behind this in space and how to mitigate it, we can develop new drugs to prevent that, new methodologies," Commander Kelly said.</p><p>He told the BIO 2015 attendees he and his ISS colleagues are conducting "some pretty cutting-edge research," which also includes experiments involving imaging &ndash; something astronauts and scientists aboard the former Russian Mir space station lacked.</p><p>"They didn't have the ability to get the type of data we have now on human health and physiology," Commander Kelly said of the Mir, whose mission ran from 1986 to 2001. </p><p>He said the thing he wants to learn the most from the yearlong ISS flight is whether "there a cliff to our physiology as we go from six months to a year or longer and how we mitigate it so we can explore further away from Earth than we've gone before."</p><p>Among the 10 Twin Study investigations is one being conducted by researchers from NASA's cardiovascular and nutritional biochemistry labs in conjunction with the University of California at San Diego (UCSD) and Dana-Farber/Harvard Cancer Center in Boston to examine the metabolomic and genomic markers of atherosclerosis related to oxidative stress, inflammation and vascular function.</p><p>Another group of researchers from NASA's cardio and advanced projects labs have teamed with UCSD investigators in conducting a proteomic assessment of fluid shifts and the association with visual impairment and intracranial pressure.</p><p>Researchers from Northwestern University, Rush University Medical Center and the University of Illinois in Chicago are exploring the astronaut brothers' dietary differences and stressors to find out how both affect the organisms in their guts through a microbiome experiment involving metagenomic sequencing. </p><p>Another set of investigations involves looking at the way genes in human cells are turned on and off as a result of spaceflight and how stressors like radiation, confinement and microgravity prompt changes in the proteins and metabolites gathered in biological samples, like blood, saliva, urine and the stool. </p><p><b>This is genius</b></p><p>How could anyone attending the International BioGENEius Challenge awards on 16 June at BIO 2015 not walk away feeling inspired by the group of 28 teenagers whose work in drug discovery and other innovative biotechnology experiments was well beyond their years. </p><p>"I am impressed by the outstanding talent of these young scientists," said Seema Kumar, vice president of innovation, global health and policy communications at Johnson & Johnson, a sponsor of the competition, which is run by the Biotechnology Institute, a nonprofit educational foundation founded by BIO in 1998 to help bridge the knowledge gap about the life sciences between the general public and the biopharmaceutical community.</p><p>The grand prize winner of the BioGENEius Global Healthcare Challenge was 17-year-old Anvita Gupta, of Scottsdale, Arizona, for her experiment that combined artificial intelligence techniques with 3D visualization and biomimicry to systematically discover which pharmaceutical agents might inhibit the interactions of so-called intrinsically disordered proteins (IDPs) with other proteins in an effort to autonomously find drug leads for diseases like cancer, tuberculosis and Ebola. </p><p>IDPs make up 70% of all cancer proteins and are mutated in tuberculosis and Ebola.</p><p>"These proteins change shape constantly, and when they are mutated, they lead to a lot of different diseases. They are really hard to target because finding a drug for them is like finding a key for a lock that keep son changing," Ms Gupta told <i>Scrip</i> at the <a href="http://www.scripintelligence.com/home/This-is-what-genius-looks-like-357456" target="_new">White House in March</a>, where she was a participant this year at President Barack Obama's annual science fair. </p><p>President Obama noted at the 2015 White House Science Fair that Ms Gupta's work in developing an algorithm with the potential to speed up pathways to discovering how to match drugs to diseases is consistent with his <a href="http://www.scripintelligence.com/home/Obama-unveils-215m-bold-precision-medicine-initiative-356457" target="_new">precision medicine initiative</a> (PMI). </p><p><b>The power of genes</b></p><p>The BIO 2015 conference was an opportunity for National Institutes of Health (NIH) Director Dr Francis Collins to update the biopharmaceutical community on the PMI's status.</p><p>Bottom line: It needs funding.</p><p>BIO CEO Jim Greenwood surprised Dr Collins by starting off the 17 June morning session by playing a clip of the NIH chief singing his song, "<a href="https://www.youtube.com/watch?v=XbJ8wEhlsvc" target="_new">The sequester blues</a>," in which he lamented about the cut in medical research funding. </p><p>President Obama has asked for $215m for fiscal year 2016 to move the PMI forward.</p><p>And Dr Collins was elated at the BIO 2015 conference about a proposal that came out of the House Appropriations Committee a day earlier that would, indeed, provide those funds in the full amount, although it may still be a battle over the summer to get all lawmakers on board with the idea. </p><p>Senator Lamar Alexander (Republican-Tennessee), chairman of the Senate Health, Education, Labor and Pensions (HELP) Committee, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Making-precision-medicine-a-reality-in-cancer-other-diseases-358677" target="_new">in late May pledged</a> to make precision medicine a reality through legislation his chamber currently is developing, which is intended to be the companion to the House <i>21st Century Cures Act</i>, which is <a href="http://www.scripintelligence.com/home/Lawmakers-Cures-bill-wont-sacrifice-US-drug-safety-358983" target="_new">expected to come up for a vote</a> by the full chamber next month. </p><p>Dr Collins pointed out the NIH is accepting comments from the public until 26 June on a number of areas where the research from the planned one-million person study cohort under the PMI may be particularly helpful, including determining how an individual will respond to a particular drug based on their genes; discovering new molecular causes for a variety of rare diseases; identifying new ways to predict disease development using an individual&rsquo;s genes or other physical characteristics; identifying new ways to predict disease using information about an individual&rsquo;s environment or behaviors; and testing new ways to prevent or treat disease using mobile health technologies, such as smart phones or activity trackers.</p><p>By the end of last week, the NIH had received more than 30 comments on its <a href="http://feedback.nih.gov/2015/06/05/research-questions-precision-medicine-initiative-cohort/" target="_new">feedback website</a>.</p><p><b>In other Washington news:</b></p><p><a href="http://www.scripintelligence.com/home/Deficit-uninsured-to-significantly-grow-under-Obamacare-repeal-359053" target="_new">Deficit, uninsured to significantly grow if Obamacare repealed</a></p><p>If Republicans are successful at repealing the <i>Affordable Care Act</i> &ndash; Obamacare &ndash; up to 24 million Americans could lose their healthcare insurance and the US federal budget deficit would increase by $137bn over the decade 2016-2025, the Congressional Budget Office and the Joint Committee on Taxation of the House and Senate projected on 19 June.</p><p><a href="http://www.scripintelligence.com/policyregulation/NIH-reveals-plan-to-address-drug-plant-contamination-359056" target="_new">NIH reveals plan to address drug plant contamination </a></p><p>The National Institutes of Health (NIH) on 19 June said it had come up with a plan to correct the problems that led to at least six patients possibly exposed to contaminated products made by the agency's Pharmaceutical Development Section because of a lack of sterility. </p><p><a href="http://www.scripintelligence.com/policyregulation/Is-Tevas-battle-against-generic-Copaxone-done-359055" target="_new">Is Teva's battle against generic Copaxone done?</a></p><p>With the US Court of Appeals for the Federal Circuit on 18 June invalidating the last remaining patent on the 20mg once-daily dosage of Teva's big moneymaker drug Copaxone (glatiramer acetate injection) &ndash; the second time the court had done so &ndash; Novartis unit Sandoz and its partner Momenta Pharmaceuticals said they were immediately moving forward with launching their recently approved generic competitor. But the legal saga, which has been ongoing since 2008, may not be over, with Teva vowing it may still pursue another appellate review, even though Wall Street analysts insisted there's not much to be gained in that strategy, given the patent, known as '808, was already set to expire in less than two months.</p><p><a href="http://www.scripintelligence.com/policyregulation/Re-worked-strategy-gives-fast-track-new-life-for-now-359038" target="_new">Re-worked strategy gives 'fast track' new life, for now</a></p><p>For the second time in one week, the House on 18 June passed the fast-track bill that President Barack Obama has sought to give him trade promotion authority, allowing him to send negotiated trade deals to Congress for an up-or-down vote, with no ability for lawmakers to amend or filibuster the agreements.</p><p><a href="http://www.scripintelligence.com/policyregulation/81m-in-fake-drugs-seized-in-global-anti-counterfeit-operation-359037" target="_new">$81m in fake drugs seized in global anti-counterfeit operation</a></p><p>An international operation coordinated by Interpol and involving the US FDA, the UK Medicines and Healthcare Products Regulatory Agency and more than 230 other global regulatory and law enforcement bodies from 115 countries has resulted in 156 arrests, 2,414 websites shut down and more than 20 million illicit and counterfeit drugs seized &ndash; illegal products officials said were worth about $81m.</p><p><a href="http://www.scripintelligence.com/policyregulation/Breakthrough-status-granted-to-Aimmunes-peanut-allergy-drug-359036" target="_new">'Breakthrough' status granted to Aimmune's peanut allergy drug</a></p><p>The FDA has granted breakthrough therapy designation to Aimmune Therapeutics' investigational oral immunotherapy for peanut allergy, known as AR101.</p><p><a href="http://www.scripintelligence.com/home/BIO-2015-Dispatches-Enough-ideas-plans-time-for-action-on-antimicrobial-resistance-359005" target="_new">Enough ideas, plans; time for action on antimicrobial resistance</a></p><p>While there's been numerous reports filled with "superb" ideas and "excellent" strategies about antimicrobial resistance, "what we need to do urgently is to move from action plans to action," said Steve Solomon, of Global Public Health Consulting and the former director of the Office of Antimicrobial Resistance at the Centers for Disease Control and Prevention.</p><p><a href="http://www.scripintelligence.com/home/BIO-2015-Dispatches-Antibiotics-Uninteresting-to-investors-tough-to-find-advocates-359004" target="_new">Antibiotics: Uninteresting to investors, tough to find advocates</a></p><p>There are a number of factors why industry has been hesitant to invest in new antibiotics, said Dr Julie Gerberding, executive vice president of strategic communications, global public policy and population health at Merck and the former director of the Centers for Disease Control and Prevention during the George W Bush administration. The main problem with antibiotics, said Dr Kenneth Hillan, CEO of biotech Achaogen, "is fundamentally, they really don't make economic sense."</p><p><a href="http://www.scripintelligence.com/home/BIO-2015-Dispatches-Payer-considerations-engagement-key-to-biopharma-success-358981" target="_new">Payer considerations, engagement key to biopharma success</a></p><p>Too often, biopharmaceutical firms put their investment and attention mostly on research and development and gaining regulatory approval and fail to provide equal support to the commercial market access side of their businesses &ndash; which can ultimately result in a successfully approved drug being a flop in the marketplace, three expert consultants said during a 16 June session at the annual Biotechnology Industry Organization International Convention in Philadelphia.</p><p><a href="http://www.scripintelligence.com/home/Lawmakers-Cures-bill-wont-sacrifice-US-drug-safety-358983" target="_new">Lawmakers: 'Cures' bill won't sacrifice US drug safety</a></p><p>Surrounded by patients and their advocates, a bipartisan group of leaders from the House Energy and Commerce Committee insisted during a 16 June Capitol Hill press conference a bill aimed at overhauling the US biomedical enterprise would not forgo patient safety by speeding up the drug development and approval processes.</p><p><a href="http://www.scripintelligence.com/policyregulation/Spending-bill-seeks-1.1bn-NIH-boost-but-defunds-Obamacare-358984" target="_new">Spending bill seeks $1.1bn NIH boost, but defunds Obamacare</a></p><p>A draft House spending bill unveiled on 16 June would boost the fiscal year 2016 funding for the National Institutes of Health, but would defund the <i>Affordable Care Act</i>, or Obamacare, in the process.</p><p><a href="http://www.scripintelligence.com/home/BIO-2015-Dispatches-Acorda-CEO-Cohen-to-bring-passion-to-BIO-chairmanship-358951" target="_new">Acorda CEO Cohen to bring 'passion' to BIO chairmanship</a></p><p>The board of directors for the Biotechnology Industry Organization on 15 June opened the group's annual meeting in Philadelphia by electing Dr Ron Cohen, president and CEO of Acorda Therapeutics, as chairman for 2015-16.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-partners-with-patient-network-to-glean-safety-information-358958" target="_new">FDA partners with patient network to glean safety information</a></p><p>The FDA has entered into a partnership with an online patient networking forum, PatientsLikeMe, to try to glean safety information from anecdotal experiences about the drugs people take for a variety of diseases.</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 484
+
+<p>While there was much serious business going on last week in Philadelphia among the nearly 16,000 attendees at the Biotechnology Industry Organization (BIO) International Convention &ndash; exchanges on best partnering strategies, debates over what projects are worthy of investment, or not, and discussions about better ways to interact with regulators &ndash; there also were some purely thrilling moments reflecting the bright future ahead for the biopharmaceutical industry.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+US Capitol Capsule Of space genes and genius the future of biopharma
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150616T112736
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150616T112736
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150616T112736
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029045
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+US Capitol Capsule: Of space, genes and genius: the future of biopharma
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358964
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ad2079a6-71e2-4a70-b112-646dee24f429
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

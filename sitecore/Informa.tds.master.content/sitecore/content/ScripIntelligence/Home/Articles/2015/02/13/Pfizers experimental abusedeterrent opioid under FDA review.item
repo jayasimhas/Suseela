@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {27A5DF2E-455A-42EE-AB99-B771CE7EB4A4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/13/Pfizers experimental abusedeterrent opioid under FDA review
+parent: {94CB4D6F-0A34-4D6B-BFF6-200B2B6E99B6}
+name: Pfizers experimental abusedeterrent opioid under FDA review
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0d08c2c5-2a74-43ea-8341-f577c8b647a0
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Pfizer's experimental 'abuse-deterrent' opioid under FDA review
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Pfizers experimental abusedeterrent opioid under FDA review
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2861
+
+<p>The FDA has accepted Pfizer's new drug application for its ALO-02, an extended-release combination of oxycodone hydrochloride and naltrexone hydrochloride, which is formulated in a way intended to deter abuse via snorting and intravenous (IV) routes when crushed. </p><p>The company is seeking approval of the drug as a therapy to treat pain severe enough to require a daily, around-the-clock, long-term opioid for which alternative treatment options are inadequate. </p><p>Pfizer said ALO-02 capsules contain pellets that consist of extended-release oxycodone, an opioid agonist, which surround sequestered naltrexone, an opioid receptor antagonist. </p><p>When used as directed, the naltrexone remains sequestered and patients receive oxycodone in an extended release manner, Pfizer said. </p><p>But when the pellets are crushed in an attempt to misuse or abuse ALO-02, the naltrexone is released and is designed to counteract the effects of oxycodone.</p><p>Pfizer&rsquo;s drug would compete with Purdue Pharma's reformulated version of OxyContin, which was the first opioid approved in the US to win the abuse-deterrent language in the product's labeling (scripintelligence.com, <a href="http://www.scripintelligence.com/home/OxyContin-wins-abuse-deterrent-label-but-FDA-bans-older-generic-forms-342210" target="_new">17 April 2013</a>).</p><p>Purdue also has an abuse-deterrent form of pure hydrocodone on the US market, sold under brand name Hysingla, which gained the FDA's approval this past November (scripintelligence.com, <a href="http://www.scripintelligence.com/home/FDA-clears-Purdues-harder-to-abuse-hydrocodone-Hysingla-355182" target="_new">21 November 2014</a>).</p><p>Zogenix gained the FDA's blessing on 30 January to market the firm&rsquo;s new formulation of its a single-entity extended-release hydrocodone Zohydro, which uses an abuse-deterrent technology. The drug, though, has not yet been awarded the claim against abuse in its labeling &ndash; something it is hoping to win once it submits the results of its human abuse liability studies in the second half of this year (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-new-Zohydro-formulation-abuse-deterrent-claims-pending-356480" target="_new">2 February 2015</a>).</p><p>Pfizer said its NDA for ALO-02 was based on the results of two Phase III trials in patients with moderate-to-severe, non-cancer chronic pain. </p><p>The company also conducted three abuse-potential studies in recreational opioid users, comparing the abuse potential of crushed ALO-02 with immediate-release oxycodone when taken by the oral, intranasal or IV. The combination of oxycodone and 12% naltrexone was used to simulate crushed ALO-02 in the IV study routes. </p><p>Shares of Pfizer closed at $34.64 on 13 February, down 23 cents.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 271
+
+<p>The FDA has accepted Pfizer's new drug application for its ALO-02, an extended-release combination of oxycodone hydrochloride and naltrexone hydrochloride, which is formulated in a way intended to deter abuse via snorting and intravenous (IV) routes when crushed. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Pfizers experimental abusedeterrent opioid under FDA review
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150213T232930
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150213T232930
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150213T232930
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027817
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Pfizer's experimental 'abuse-deterrent' opioid under FDA review
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356667
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0d08c2c5-2a74-43ea-8341-f577c8b647a0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {6AB0972B-8CE4-4BED-9BC1-EA3AB10E0A43}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/16/AAIC Lillys solanezumab delays Alzheimers progression by 34
+parent: {C117A4E3-2531-414E-8FEF-96540B531C8B}
+name: AAIC Lillys solanezumab delays Alzheimers progression by 34
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 50536f34-955a-4b08-9558-735d9cdefda8
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+AAIC: Lilly's solanezumab delays Alzheimer's progression by 34%
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+AAIC Lillys solanezumab delays Alzheimers progression by 34
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6599
+
+<p>New data from Eli Lilly support the company's hypothesis that solanezumab is effective in treating patients with mild Alzheimer's disease and provide evidence that the biologic may be able to slow disease progression rather than just reduce Alzheimer's symptoms.</p><p>Data from a delayed-start analysis of patients in Lilly's Phase III EXPEDITION and EXPEDITION2 clinical trials who were enrolled in the EXPEDITION-EXT extension trial were presented on 22 July at the Alzheimer's Association International Conference (AAIC) in Washington, DC. People with mild Alzheimer's disease who were treated with solanezumab in the company's first two Phase III studies and in the extension study had a 34% slowing in the rate of disease progression compared with patients who received a placebo in EXPEDITION and EXPEDITION2 and were treated with Lilly's biologic in EXPEDITION-EXT.</p><p>Solanezumab clears amyloid-beta proteins before amyloid plaques associated with Alzheimer's disease build up in the brain. Lilly's earlier Phase III clinical trials enrolled both mild and moderate Alzheimer's patients, but the company's biologic <a href="http://www.scripintelligence.com/researchdevelopment/Lilly-may-yet-squeeze-some-lemonade-out-of-Phase-III-solanezumab-lemons-334330" target="_new">failed to show</a> statistically significant improvements in cognition and function.</p><p>However, Lilly <a href="http://www.scripintelligence.com/home/Eli-Lilly-bets-big-again-on-Alzheimers-drug-344961" target="_new">moved forward</a> with the ongoing Phase III EXPEDITION3 trial after the company noted a <a href="http://www.scripintelligence.com/home/Lilly-EXPEDITION-data-puts-some-flesh-on-solanezumabs-bones-335926" target="_new">significant difference</a> between mild and moderate patients in terms of <a href="http://www.scripintelligence.com/home/Four-years-late-50-success-rate-Lillys-solanezumab-stays-in-PhIII-338214" target="_new">cognitive effects</a> of Alzheimer's disease. A delayed-start analysis similar to the one used in the EXPEDITION-EXT extension study will be used in EXPEDITION3, which is expected to yield data in <a href="http://www.scripintelligence.com/business/Lilly-sets-timelines-for-solanezumab-358038" target="_new">late 2016</a> or early 2017. The last patient visit will take place in October 2016.</p><p>If the delayed-start results in EXPEDITION-EXT are repeated in EXPEDITION3, "it is the strongest argument to date for early Alzheimer's diagnosis, because getting the drug earlier makes a significant difference in the outcome," Alzheimer's Association chief scientific officer Maria Carrillo said in a statement from the organization.</p><p><b>Delayed-start design </b></p><p>People with Alzheimer's received either solanezumab or placebo for 18 months (80 weeks) in EXPEDITION and EXPEDITION2, but only patients with a mild form of the disease from both arms of those trials were enrolled in the extension study and all of those individuals were treated with solanezumab for up to two years (n=975). </p><p>EXPEDITION-EXT investigators reported at AAIC that after 28 weeks and at one year of treatment, mild Alzheimer's patients who received placebo in the Phase III studies benefitted from solanezumab in the extension trial (the delayed-treatment group), but they were unable to catch up to mild patients who received the Lilly drug in Phase III as well as in the extension study (the early treatment group).</p><p>Hong Liu-Seifert, study research advisor at Eli Lilly, said the delayed-start design for clinical trials was proposed many years ago, but it was used only in one Parkinson's disease trial, due to a lack of commonly accepted statistical methods. Lilly proposed its own statistical method for EXPEDITION-EXT and EXPEDITION3. </p><p>"It could potentially be a helpful tool to determine if a treatment is disease-modifying or not. The data for solanezumab seem to be consistent with a disease-modifying drug and suggest a benefit of starting treatment early," Dr Liu Seifert said.</p><p>Since the cognitive and functional differences between patients in the delayed and early treatment groups were maintained at weeks 28 and 52 in the extension study, it appears that the earlier that patients are treated the more likely they are to benefit from solanezumab in terms of the amount and speed of cognitive and functional decline.</p><p><b>Disease-modifying results</b></p><p>"The field has been looking for potentially disease-modifying treatments. If solanezumab can be confirmed to have a disease-modifying effect it would be very exciting for the field," Dr Liu-Seifert said. "A disease-modifying effect suggests that patients should receive treatment earlier rather than later or else they lose functions that cannot be overcome later on."</p><p>At 28 weeks in EXPEDITION-EXT, investigators noted a two-point difference between Alzheimer's patients who received early treatment with solanezumab and those who had delayed treatment in terms of the Alzheimer's Disease Assessment Scale &ndash; Cognitive subscale (ADAS-Cog), otherwise known as memory, language, orientation and related skills.</p><p>There was a 1.2-point difference in terms of an assessment called Alzheimer's Disease Cooperative Study &ndash; Instrumental Activities of Daily Living (ADCS-iADL), which measures the ability to do routine activities, such as shopping and maintaining a budget. </p><p>The cognitive and functional differences between early and delayed-treatment patients were statistically significant at 28 weeks and at one year in the extension study.</p><p>"If we have a disease-modifying effect in the drug, we could slow down or eventually prevent further additional damage to the underlying biology," Dr Liu-Seifert said. "So far, all of the drugs on the market are symptomatic drugs."</p><p><b>Early treatment lowers costs</b></p><p>The Alzheimer's Association estimates that 5.3m Americans have Alzheimer's disease as of 2015 and that number will rise to 16m by 2050. The cost of caring for Alzheimer's patients in the US will total $226bn this year and will skyrocket to $1.1 trillion by 2050.</p><p>However, an Alzheimer's Association report titled "Changing the Trajectory of Alzheimer's Disease: How a Treatment by 2025 Saves Lives and Dollars" projects a $220bn savings on the cost of caring for people with Alzheimer's between 2020 and 2025 if a treatment that delays disease onset by five years hits the market in 2020. The savings comes from 2.5m fewer people being affected by the disease if treated early on with a disease-modifying drug.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 269
+
+<p>New data from Eli Lilly support the company's hypothesis that solanezumab is effective in treating patients with mild Alzheimer's disease and provide evidence that the biologic may be able to slow disease progression rather than just reduce Alzheimer's symptoms.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+AAIC Lillys solanezumab delays Alzheimers progression by 34
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150716T204158
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150716T204158
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150716T204158
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029293
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+AAIC: Lilly's solanezumab delays Alzheimer's progression by 34%
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+201200660
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359470
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+50536f34-955a-4b08-9558-735d9cdefda8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

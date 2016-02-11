@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {EB778074-B5C5-40E7-8395-1CCCC4E04F2B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/18/TiGenix Rises On Landmark Phase III Crohns Data
+parent: {CB6FF202-8CE5-4A7D-A8CE-6DB1F8FB3621}
+name: TiGenix Rises On Landmark Phase III Crohns Data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: bd75cddf-63d6-4ca9-ab4a-449e5b6a5051
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+TiGenix Rises On 'Landmark' Phase III Crohn's Data
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+TiGenix Rises On Landmark Phase III Crohns Data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4962
+
+<p>Shares in the Belgian biotech firm TiGenix rose by more than 22% to &euro;0.88 on Euronext Brussels on the morning Aug. 24 as it announced "remarkable" top-line Phase III success for its allogeneic cell therapy Cx601 in treating complex perianal fistulas in Crohn's disease patients. </p><p>The study, dubbed ADMIRE-CD, is the largest to date in this patient population and appears to be the first successful Phase III trial of an allogeneic stem cell product. "This is a landmark achievement for TiGenix," said CEO Eduardo Bravo.</p><p>TiGenix plans to file the product for EU approval in the first quarter of 2016 on the basis of these data, with an approval and launch slated for the second half of 2017. It wants to market the product itself in some EU countries, while finding partners for others. In the US, TiGenix first needs to finalize the tech transfer to its US CMO Lonza, before filing an IND in the second half of 2016, when it hopes to start a study newly agreed under an Special Protocol Assessment with the FDA; it is aiming for approval and launch of Cx601 in the US in 2020 based on the results of both trials. </p><p>Cx601 is a suspension of allogeneic expanded adipose-derived stem cells (eASC) which are injected into the lesion, where they are thought to exert an anti-inflammatory and immune regulating effect. In the ADMIRE-CD study, Crohn's disease patients who had had an inadequate response to previous therapies, including anti-TNFs, received a single injection of Cx601 or placebo for the treatment of complex perianal fistulas. Patients were allowed to continuation their standard of care medical treatment.</p><p>The study primary endpoint was combined remission at week 24, defined as closure of all treated external openings draining at baseline despite gentle finger compression, and absence of collections >2 cm confirmed by MRI. This, said TiGenix's Chief Medical Officer Dr Marie Paule Richard, is the first trial in Crohn's disease to use such a stringent combined primary endpoint. </p><p>In the intent-to-treat (ITT) population (n=212), Cx601 was significantly better than placebo with 49.5% combined remission at week 24 compared with 34.3% in the placebo arm (p<0.025). in="" the="" modified="" itt="" population="" (n="204)," these="" remission="" rates="" were="" 51.5%="" and="" 35.6%="" for="" cx601="" and="" placebo,="" respectively=""></0.025).><0.025), giving="" an="" observed="" relative="" risk="" of="" 1.44,="" or="" a="" 44%="" higher="" chance="" of="" achieving="" combined="" remission="" with="" cx601="" than="" with="" placebo.=""></0.025),></p><p>TiGenix added that the efficacy results were robust and consistent across all statistical populations, and that both serious and non-serious treatment-emergent adverse events and discontinuations due to adverse events were comparable between the two arms. Patients are being followed up for 52 weeks, and the full efficacy and safety results will be presented at the European Crohn's and Colitis Organisation (ECCO) meeting in Amsterdam in March. </p><p>Professor Juli�n Panés of the Hospital Clinic of Barcelona, and Chairman of the study's scientific advisory board said the results "open a completely new avenue for the treatment of perianal fistulising Crohn's disease". The 44% increased chance for patients of closing their fistula with a single injection is a "major breakthrough", he added. </p><p>"Achieving more than 50% combined remission in patients who have not responded adequately to previous treatments, including anti-TNFs, is a remarkable accomplishment&rdquo;, said Richard. Next questions for the product include how long-lasting the benefits are, and whether further injections could help patients with this chronic disease. </p><p>Datamonitor Healthcare analyst Dr Joseph Hedden described the data as very good, and in line with the efficacy seen in Phase I/II, but added that the product's commercial potential could be limited by the small patient population, and the fact that Cx601 treatment would come late in the treatment paradigm. Current treatment consists of antibiotics, followed by immunosuppressants such as 6-mercaptopurine, and then anti-TNF and surgery.</p><p>"I think we will see this become an important treatment option for fistulizing CD, where there is still very large unmet need due to the lack of therapies. However, I think it's important to point out the target population isn't huge, so we aren't talking about the kind of revenues a MAb could make. CD patients with perianal disease make up about 1/3 of all patients, and then this will be sequenced behind surgery and Remicade. Certainly the KOLs I have spoken to view it as effective, but a potential last resort."</p><p>The European Commission granted Cx601 orphan designation for the treatment of anal fistulas in 2009. In Europe and the US, nearly 100,000 Crohn's disease patients suffer from complex perianal fistulas each year. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 291
+
+<p>Shares in the Belgian biotech firm TiGenix rose by more than 22% to &euro;0.88 on Euronext Brussels on the morning Aug. 24 as it announced "remarkable" top-line Phase III success for its allogeneic cell therapy Cx601 in treating complex perianal fistulas in Crohn's disease patients. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+TiGenix Rises On Landmark Phase III Crohns Data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150818T101930
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150818T101930
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150818T101930
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029582
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+TiGenix Rises On 'Landmark' Phase III Crohn's Data
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199800170
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359996
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042439Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bd75cddf-63d6-4ca9-ab4a-449e5b6a5051
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042439Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {63134D44-A9A1-4479-A3CF-3DF007BF3535}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/05/Boehringer Ingelheim buys Pharmaxis NASH candidate
+parent: {957A8F17-85A6-461E-A6AC-96C1B33928DB}
+name: Boehringer Ingelheim buys Pharmaxis NASH candidate
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7ccabb86-566b-4bd3-9a41-c786de5804b5
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{EF0B77E2-D8CF-42C6-BA65-48EE8FBEA0EF}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Boehringer Ingelheim buys Pharmaxis NASH candidate
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Boehringer Ingelheim buys Pharmaxis NASH candidate
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1482
+
+<p>Boehringer Ingelheim is to pay &euro;27.5m up front plus upwards of &euro;500m in milestones to acquire a Phase I candidate that has shown preclinical promise in non-alcoholic steatohepatitis (NASH) from Pharmaxis. The German company is exercising an option that it already held to acquire the investigational drug PXS4728A, a semicarbazide-sensitive amine oxidase/vascular adhesion protein-1 (SSAO/VAP-1) inhibitor that is designed to block leucocyte adhesion and tissue infiltration in inflammatory processes. </p><p>The product has been developed to Phase I clinical studies to demonstrate oral bioavailability, long-lasting target inhibition and good tolerability and safety, the companies noted. </p><p>The deal includes a commitment by Boehringer Ingelheim to pay the Australian firm up to &euro;55m in development milestones, up to &euro;140m in regulatory milestones in key markets for NASH, additional milestones for a second indication, commercialization milestones and earn-out payments on net sales at tiered percentages starting in the high single digits. </p><p>NASH is the progressive form of non-alcoholic fatty liver disease, and can be a consequence of diabetes and obesity. Boehringer said the drug fit well in its diabetes and metabolism development portfolio. The drug may also have potential in other areas, including chronic obstructive pulmonary disorder (COPD), an important area historically for Boehringer with its blockbuster Spiriva (tiotropium).</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 519
+
+<p>Boehringer Ingelheim is to pay &euro;27.5m up front plus upwards of &euro;500m in milestones to acquire a Phase I candidate that has shown preclinical promise in non-alcoholic steatohepatitis (NASH) from Pharmaxis. The German company is exercising an option that it already held to acquire the investigational drug PXS4728A, a semicarbazide-sensitive amine oxidase/vascular adhesion protein-1 (SSAO/VAP-1) inhibitor that is designed to block leucocyte adhesion and tissue infiltration in inflammatory processes. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Boehringer Ingelheim buys Pharmaxis NASH candidate
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151205T203902
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151205T203902
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151205T203902
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028745
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Boehringer Ingelheim buys Pharmaxis NASH candidate
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358381
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042346Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7ccabb86-566b-4bd3-9a41-c786de5804b5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

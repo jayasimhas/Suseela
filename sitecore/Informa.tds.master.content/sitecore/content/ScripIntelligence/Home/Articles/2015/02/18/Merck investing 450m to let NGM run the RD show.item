@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {F2FAA842-3450-4630-BCB0-05F189AD4FDF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/18/Merck investing 450m to let NGM run the RD show
+parent: {7236B4FE-DE6A-42E5-BF9D-A1048727BD42}
+name: Merck investing 450m to let NGM run the RD show
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5aaef53c-4741-40f9-84cb-18edbedf8520
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+Merck investing $450m to let NGM run the R&D show
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Merck investing 450m to let NGM run the RD show
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4469
+
+<p>Merck & Co will pay NGM Biopharmaceuticals $96m up front and spend $106m to own a 15% share of the privately-held company and the big pharma will provide at least $250m during the next five to fund research and development through Phase II for novel biologics across a wide range of diseases.</p><p>The transaction gives Merck an initial license for NP201, a preclinical candidate for the treatment of diabetes, obesity and non-alcoholic steatohepatitis (NASH), but the agreement excludes South San Francisco-based NGM's clinical program NGM282 for primary biliary cirrhosis (PBC) and NASH. And as other clinical programs emerge from the Merck partnership, NGM has some flexibility on financial terms for any additional compounds that Merck may license. </p><p>NGM's ongoing alliances with MedImmune, Daiichi Sankyo and the Juvenile Diabetes Research Foundation (JDRF) are unaffected by the Merck agreement, although the company no longer lists Janssen as a partner (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Daiichi-Sankyo-builds-diabetes-position-with-NGM-research-alliance-328694" target="_new">29 March 2012</a> and <a href="http://www.scripintelligence.com/business/NGM-and-Janssen-strike-diabetes-agreement-338819" target="_new">7 January 2013</a>). All of those deals focused on diabetes and metabolic diseases.</p><p>NGM also raised $50m in Series C venture capital in mid-2013 &ndash; bringing its venture capital total since 2008 to about $130m &ndash; to fund biologics for diabetes, obesity and other cardio-metabolic diseases, but the deal with Merck will finance R&D in both previously disclosed and new disease areas (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Venture-funding-rises-in-2Q-NGM-Audentes-and-Lithera-grab-3Q-deals-345133" target="_new">19 July 2013</a>).</p><p>"We are very pleased to establish this alliance with Merck, which will be transformational for NGM, providing us with the resources and flexibility to pursue our ambitious research and development goals while preserving our unique drug discovery culture," NGM CEO William Rieflin said in a joint statement from the company and Merck. </p><p>The partners' agreement keeps responsibility for existing preclinical assets with NGM and the deal gives the company autonomy to select new discovery programs. Merck has an option to license each asset prior to Phase III and NGM can choose to receive milestone and royalty payments or it may elect to co-develop each program in exchange for a global cost and revenue-sharing agreement of up to 50%.</p><p>Merck Research Laboratories president Roger Perlmutter described NGM's platform as yielding "novel, and quite consequential, pathways for metabolic regulation" and his comments hinted at Merck's priorities under the NGM collaboration: "innovative biologics that address the needs of patients suffering from diabetes, metabolic dysregulation and malignancy."</p><p><b>NGM's own assets</b></p><p>NGM's wholly-owned NGM282 is a proprietary form of FGF19 that is designed to mimic the curative effects of gastric bypass surgery on metabolic and bile acid-related diseases. The company plans to report Phase II data for NGM282 in the treatment of PBC in 2015 and initiate clinical trials in new indications this year.</p><p>The biologic came out of research conducted by founder and chief scientific officer Jin-Long Chen, who was vice president of research at Amgen when Merck's Dr Perlmutter was head R&D at the Thousand Oaks, California-based biotechnology giant. Before that, Dr Chen was vice president of biology at Tularik where Mr Rieflin was chief financial officer and general counsel when Amgen bought the cancer, inflammation and metabolic disease-focused company for $1.3bn in 2004 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/news/Amgen-to-buy-Tularik-for-1.3-billion-79912" target="_new">31 March 2014</a>).</p><p>NGM chief medical officer Alex DePaoli said during a 23 February conference call to discuss the Merck deal's details that the company's discovery and development focus is novel disease pathways that have yet to be validated or that have proven difficult for drug development.</p><p>President Jeff Jonker said during the call that NGM will "pursue biology with no limits" under the Merck agreement and the deal gives the company "enormous capital resources to pursue our broad research strategy."</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 299
+
+<p>Merck & Co will pay NGM Biopharmaceuticals $96m up front and spend $106m to own a 15% share of the privately-held company and the big pharma will provide at least $250m during the next five to fund research and development through Phase II for novel biologics across a wide range of diseases.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Merck investing 450m to let NGM run the RD show
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150218T080000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150218T080000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150218T080000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027903
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+Merck investing $450m to let NGM run the R&D show
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356805
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5aaef53c-4741-40f9-84cb-18edbedf8520
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

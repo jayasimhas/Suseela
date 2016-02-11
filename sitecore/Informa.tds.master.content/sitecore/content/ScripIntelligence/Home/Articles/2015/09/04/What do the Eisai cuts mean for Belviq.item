@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {89C2B414-9B8E-4DC0-B60F-9622A26CA7CE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/04/What do the Eisai cuts mean for Belviq
+parent: {194ECEF1-FC3A-4493-B5A0-5BE540D1EF34}
+name: What do the Eisai cuts mean for Belviq
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c1ab5d25-0dbc-46b4-a859-a59df1e5d4e3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+What do the Eisai cuts mean for Belviq?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+What do the Eisai cuts mean for Belviq
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3295
+
+<p><p>Obesity drugmaker Eisai is cutting a little over 200 people from its US commercial and regional corporate services units in what the Japanese pharma is dubbing a "realignment of its US operations," said the company on 09 April.</p><p>Eisai currently has about 1,800 employees across several facilities in New Jersey, Pennsylvania, Massachusetts and North Carolina, who provide commercial, corporate and R&D functions. The employees being affected with not be in the R&D functions, but 25% of the 850 employees in the commercial and regional corporate services units will be laid off, revealed a spokesperson for Eisai. The restructuring is expected to happen by the end of the month and all of the US offices will remain open. </p><p>It's unclear how the current cuts are going to affect the sales force for obesity drug Belviq, but an Eisai spokesperson responded to request for comments by saying, "As part of this effort, we are realigning our sales force by creating a new neurology unit as well as a shared contract sales organization (promoting BELVIQ and another product from another pharmaceutical company). We remain committed to BELVIQ and will continue to promote the brand through these two sales forces."</p><p>Eisai has watched Belviq, which is partnered with Arena Pharmaceuticals, struggle to gain market share in the slowly-growing US weight loss market. Eisai, which is responsible for all commercialization activities of Belviq, has shuffled around the sales force for the weight drug several times. At last count, the company had about 450 US sales reps pushing the drug (after initial launch at 400 reps and an increase to 650 reps). The drug only brought in $45m in 2014 sales &ndash; a far cry from the billions analysts had predicted just five years ago before the new wave obesity drugs hit the market. </p><p>Belviq isn't the only drug at the Japanese pharma that is floundering. The cuts at Eisai come after a number of disappointing quarters for the company. The Japanese pharma has seen poor sales for its Alzheimer's drug Aricept (donepezil) due to generic competition in Japan and price cuts in the US. Its breast cancer drug Halaven (eribulin) has also been off to a slow start and Phase III results in non-small cell lung cancer were disappointing. Meanwhile, Eisai has been increasing its R&D costs due to multiple ongoing late-stage programs in oncology, neurology and obesity.</p><p>"The actions we are taking will ensure Eisai stays competitive in a rapidly changing business environment," said Yuji Matsue, Chairman and CEO of Eisai in a statement. "Eisai remains fully committed to the U.S. market and will continue to serve the needs of patients and their families by developing and marketing important new treatments that help to satisfy unmet medical needs. Through this realignment, we will be able to redeploy our resources to support the development of our priority late-stage compounds and our current product portfolio."</p><p>One bright spot for the Japanese pharma &ndash; the company <a href="http://#http://www.scripintelligence.com/policyregulation/Once-daily-Belviq-NDA-coming-later-this-year-357835" target="_new">announced 10 April</a> that it intends to seek approval from FDA for an extended release version of Belviq. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+What do the Eisai cuts mean for Belviq
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150904T182144
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150904T182144
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150904T182144
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028407
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+What do the Eisai cuts mean for Belviq?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357750
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c1ab5d25-0dbc-46b4-a859-a59df1e5d4e3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

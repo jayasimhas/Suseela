@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {9F8B2B58-0FE2-4CAE-BBE3-393FF2EE2F65}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/13/FDA reviewers endorse Medicines cangrelor back to CRDAC
+parent: {9FB0ADDF-A2A3-44A3-B361-887553556EB6}
+name: FDA reviewers endorse Medicines cangrelor back to CRDAC
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e606a6ba-710a-4ab1-8a00-01133b84c52f
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+FDA reviewers endorse Medicines' cangrelor; back to CRDAC
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+FDA reviewers endorse Medicines cangrelor back to CRDAC
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4802
+
+<p>After getting smacked down last year, the Medicines Company (MDCO) is headed back to the FDA's Cardiovascular and Renal Drugs Advisory Committee (CRDAC) on 15 April with its antiplatelet agent cangrelor for a second round.</p><p>But the firm should feel more confident this time around after the FDA's scientists gave cangrelor a positive review and recommended the drug for approval, agency briefing documents released on 13 April ahead of the CRDAC meeting revealed.</p><p>Shares of MDCO jumped 6.6% in morning trading on 13 April, before closing the day at $29.30, up 99 cents, or 3.5%.</p><p>The company is seeking to market cangrelor under the brand name Kengreal as an adjunct to percutaneous coronary intervention (PCI) for the reduction in risk of periprocedural ischemic complications, including myocardial infarction (MI) and stent thrombosis, in patients in whom treatment with an oral P2Y12 platelet inhibitor prior to PCI is not feasible and when glycoprotein IIb/IIIa receptor antagonists are not anticipated to be used.</p><p>Sagient Research's <i>BioMedTracker</i>, an affiliate of <i>Scrip</i>, put the chances of cangrelor gaining the FDA's nod at 87%, which 2% above the average probability of US approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>Regulators <a href="http://www.scripintelligence.com/home/FDA-rejects-The-Medicines-cangrelor-but-could-have-been-worse-351556" target="_new">initially rejected cangrelor</a> &ndash; telling the company last year the agency needed additional analyses of MDCO's 11,145 patient randomized, double-blind Phase III CHAMPION PHOENIX study and other information before regulators could consider approving the drug.</p><p>The FDA also asked for a review of certain processes about data management and bioequivalence information on the clinical supplies of Bristol-Myers Squibb's Plavix (clopidogrel) for the CHAMPION trial program before the agency would take another look at MDCO's application.</p><p><b>Earlier CRDAC snub</b></p><p>Cangrelor's snub by the FDA came after the CRDAC <a href="http://www.scripintelligence.com/home/Cool-drug-unconvincing-data-FDA-panel-rejects-MDCOs-cangrelor-350021" target="_new">rejected the drug at a 12 February 2014</a> meeting, where the panel voted 7-2 against approval for use in PCI.</p><p>The committee had expressed concern about the design of MDCO's CHAMPION PHOENIX study and the fact the company's CHAMPION PLATFORM and CHAMPION PCI trials were halted in 2009 after interim analysis showed that the studies were unlikely to show superiority of the cangrelor regimen to Plavix.</p><p>The two failed trials were both conducted in patients undergoing PCI. Both used Plavix, with a 600mg loading dose, and both had a primary endpoint of death, MI or ischemia-driven revascularization at 48 hours.</p><p>The CRDAC said the increased risk of bleeding was not outweighed by the small clinical benefit. </p><p>In particular, the committee did not believe reduction in the risk of intra-procedural stent thrombosis was clinically important and expressed uncertainty about the clinical import of periprocedural MIs detectable only by rises in serum biomarkers. </p><p>The CRDAC also voted unanimously against a second use of cangrelor as a therapy to maintain P2Y12 inhibition in patients with acute coronary syndromes or patients with stents who are at increased risk for thrombotic events, such as stent thrombosis, when oral P2Y12 therapy is interrupted due to surgery &ndash; the so-called bridging indication. </p><p>The committee concluded that the measure of platelet inhibition in that setting was an unproven surrogate and expressed concern that without a clinical trial in patients that assesses clinical outcome, the risks and benefits could not be known.</p><p>So regulators called for a prospective, adequate and well-controlled study, where outcomes, such as bleeding, are studied to provide the data the agency thinks is necessary to assess the benefit-risk relationship for the drug's use in the bridging indication. </p><p>Regulators said MDCO is holding off for now in pursuing approval for cangrelor in the bridging indication, so that use will not be discussed at the meeting.</p><p>While MDCO is now seeking a narrower indication for cangrelor than it originally was pursuing, JP Morgan analyst Jessica Fye said she still sees a place for the product. </p><p>She noted the FDA's reviews said cangrelor "has utility in the ad hoc PCI setting where P2Y12 receptor inhibitor was not administered prior to angiography."</p><p>Ad-hoc PCI, the agency's scientists said, is "a feature of American practice."</p><p>Nonetheless, Ms Fye warned that FDA panels "inherently carry uncertainty." </p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 229
+
+<p>After getting smacked down last year, the Medicines Company (MDCO) is headed back to the FDA's Cardiovascular and Renal Drugs Advisory Committee (CRDAC) on 15 April with its antiplatelet agent cangrelor for a second round.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+FDA reviewers endorse Medicines cangrelor back to CRDAC
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150413T215818
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150413T215818
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150413T215818
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028417
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+FDA reviewers endorse Medicines' cangrelor; back to CRDAC
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357770
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e606a6ba-710a-4ab1-8a00-01133b84c52f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

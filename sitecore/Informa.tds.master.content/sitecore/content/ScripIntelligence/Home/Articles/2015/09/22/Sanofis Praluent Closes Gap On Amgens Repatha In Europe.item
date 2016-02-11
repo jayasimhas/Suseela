@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {CE4162A0-7274-45FC-882F-75D875E86F51}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/22/Sanofis Praluent Closes Gap On Amgens Repatha In Europe
+parent: {DB7AFD0C-FF3A-4A4A-B0E2-6A1121FFD09B}
+name: Sanofis Praluent Closes Gap On Amgens Repatha In Europe
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 660470b9-1499-407d-8836-5d31e1e9ce03
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Sanofi's Praluent Closes Gap On Amgen's Repatha In Europe
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Sanofis Praluent Closes Gap On Amgens Repatha In Europe
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5991
+
+<p>With its formal EU approval now announced, Sanofi SA and Regeneron Pharmaceuticals Inc.'s powerful cholesterol-lowering drug Praluent (alirocumab) will now catch up with its key competitor there, Amgen's Repatha (evolocumab), but their high price tags will probably mean a slow up-take for both therapies in the region. </p><p>Sanofi and Regeneron announced EU approval for their PCSK9 inhibitor on Sep. 28, two months behind Repatha which won marketing authorization in the 28-nation bloc on July 21. </p><p>The stage is thus set for a Transatlantic market battle for the likely blockbusters after summer US approvals for each in heterozygous familial hypercholesterolemia, and for secondary-prevention patients who need further LDL-C lowering, in spite of maximally tolerated statin therapy. </p><p>Both drugs use the same mechanism and can cut low-density lipoprotein (LDL) cholesterol, the so-called bad kind, by 40% or more beyond what can be achieved with statins like Crestor and Lipitor. Both therapies have been approved with nearly identical labels which generally provide broad discretion to physicians. But their list prices are steep: Praluent's is $14,600 a year while Amgen says it will price its drug at $14,100 a year, or $1.36 a day less than Praluent. Analysts say that could give Amgen more room to negotiate. Insurers meanwhile hope competition between the two will lower costs. </p><p>"It's likely Praluent's high cost will limit the drug's initial uptake to high-risk patients who are unable to achieve their LDL-C goals on current lipid-lowering therapies," said Louisa Joseph, an analyst at Datamonitor Healthcare. Insurance companies are expected to enforce strict protocols to ensure that patients have tried every other option available to them before moving onto this type of therapy. These payer restrictions will likely limit any off-label prescription, restricting Praluent&rsquo;s commercial potential to the high-risk population, the DataMonitor Healthcare analyst said.</p><p>"Demonstrating an improvement in cardiovascular outcomes will be necessary to justify the high cost of Praluent in the wider dyslipidemia population," Joseph said. </p><p>Sanofi and Regeneron hope to show that via their ODYSSEY OUTCOMES trial, which has been designed to investigate the long-term effect of Praluent treatment on cardiovascular outcomes and which should be fully enrolled by end 2015. Results of that trial are expected by December 2017, and will be crucial in determining the extent of Praluent's market uptake, according to BioMedTracker. </p><p>To justify its high cost, Praluent will have to demonstrate superior reductions in CV risk in comparison to current lipid-lowering therapies. Positive outcomes data will therefore be central to Praluent&rsquo;s commercial and clinical success in the wider, more commercially lucrative, dyslipidemia population, the Datamonitor Healthcare analyst said.</p><p>Repatha could also have an advantage over Praluent due to its more convenient dosing regimen, analysts at BioMedTracker believe. </p><p>Praluent will be made available as both a low- and a high-dose injection to be taken every two weeks, with the intention that patients start off with the low dose and up-titrate to the high dose if they do not reach their LDL-C goals. This two-dose formulation will give physicians greater flexibility when adjusting patients&rsquo; LDL-C levels, and may be particularly favoured by those physicians who are uncomfortable with patients having &ldquo;very low&rdquo; LDL-C levels. But Repatha&rsquo;s high-dose, once-monthly injection may gain the competitive edge over Praluent by offering physicians and patients a more convenient treatment regimen. </p><p>"Ultimately, outcomes data will be required to understand the true clinical benefit of each of the dosing regimens, but until then, Repatha's once-monthly injection may be the more favoured option simply due to convenience," said DataMonitor Healthcare's Joseph.</p><p>Repatha and Praluent are expected to compete with each other by offering insurance companies significant price discounts. </p><p>"In the US, it is likely that both Repatha and Praluent will offer price rebates to health insurers in return for exclusive reimbursement contracts. The insurance companies are expected to take full advantage of the competitive tension between the two drugs in order to negotiate the largest discounts possible. Pricing will therefore be an important competitive strategy for Praluent and Repatha, as the lowest-priced drug will likely gain the most market exclusivity, Joseph said.</p><p>Still, enthusiasm remains generally high for the PCSK9 inhibitors, with predictions that Praluent and other drugs in the class will eventually see strong uptake, particularly if CV outcomes studies are successful.</p><p>Analysts at UBS believe Repatha and Praluent will start gaining market traction sooner than generally thought despite the expected payor pushback. </p><p>"Based on our PCSK9 survey of 50 cardiologists, we think consensus applies an excessive haircut over uncertainty over access, so Praluent sales are likely to have upside as early as 2016," UBS said in a note to investors, forecasting Praluent sales alone will reach &euro;6.8bn by 2020.</p><p>"We expect positive outcome data to substantially expand the labelled indication and also to affect how many patients doctors consider to have sufficient unmet need to warrant treatment with PCSK9 monoclonal antibodies," they said.</p><p>One legal cloud of uncertainty remains the patent litigation brought by Amgen against Praluent's development partners Sanofi and Regeneron. A trial date for that has been set for March 7, 2016 trial, but that has not blocked the US launch of the first PCSK9 inhibitor there.</p><p>"We continue to believe that the worst case outcome of this court case would be a royalty payment to Amgen, in the region of 10% of sales," said analysts at Exane BNP Paribas Research.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 327
+
+<p>With its formal EU approval now announced, Sanofi SA and Regeneron Pharmaceuticals Inc.'s powerful cholesterol-lowering drug Praluent (alirocumab) will now catch up with its key competitor there, Amgen's Repatha (evolocumab), but their high price tags will probably mean a slow up-take for both therapies in the region. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Sanofis Praluent Closes Gap On Amgens Repatha In Europe
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150922T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150922T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150922T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029891
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Sanofi's Praluent Closes Gap On Amgen's Repatha In Europe
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360618
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+660470b9-1499-407d-8836-5d31e1e9ce03
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

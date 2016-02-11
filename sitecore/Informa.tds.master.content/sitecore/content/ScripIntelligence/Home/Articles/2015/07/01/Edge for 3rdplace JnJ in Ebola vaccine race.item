@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {7D083DA2-2D1B-464E-BC12-668031F4BB6D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/01/Edge for 3rdplace JnJ in Ebola vaccine race
+parent: {28F237FF-EEF1-41C5-A15C-B67E96203F9A}
+name: Edge for 3rdplace JnJ in Ebola vaccine race
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 096165e8-1622-4b3c-abd7-e95582a3ea78
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Edge for 3rd-place JnJ in Ebola vaccine race?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Edge for 3rdplace JnJ in Ebola vaccine race
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6840
+
+<p>Fast-tracking the regulatory processes in the West African countries being hit the hardest by Ebola is paying off with two vaccines ready to enter efficacy testing beginning later this month, with other trials set for February, according to a high-level official from the World Health Organization (WHO).</p><p>Dr Marie-Paule Kieny, assistant director-general for health systems and innovation at WHO, confirmed on 9 January that two vaccines &ndash; one developed jointly by the US National Institute of Allergy and Infectious Diseases (NIAID) and GlaxoSmithKline and another being developed under a collaboration between NewLink Genetics, Merck and the Canadian government &ndash; will likely enter randomized controlled Phase II/III efficacy testing in Liberia before the end of this month in people living in the local communities, with about 9,000 in each of three arms.</p><p>A prime-boost Ebola vaccine from Johnson & Johnson and its partner Bavarian Nordic, which just entered a Phase I trial, also is expected to soon start efficacy testing, although the West African site and a timeline for the latter study are still being determined, Dr Kieny said (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Oxford-tests-JnJBavarian-Nordic-prime-boost-Ebola-vaccine-355965" target="_new">6 January 2015</a>).</p><p>But even though the J&J-BN vaccine is running in third place, it may have important advantages over the NIAID-GSK and NewLink-Merck products, Dr Kieny told reporters during a media briefing.</p><p>J&J and BN already have established a better regulated refrigeration process, giving them a logistics edge, she said.</p><p>The prime-boost vaccine also may ultimately be the preferred prophylactic strategy for immunizing people at risk for Ebola, as opposed to the other vaccines, although the single dose would likely be best in responding to the current emergency situation, where even a transient immune response is better than nothing in the immediate crisis, Dr Kieny said. </p><p>While there has been ongoing testing of the NIAID-GSK vaccine with a second boost component, she noted the single-dose product will be used for the Phase II/III trials against Ebola, which has infected more than 20,000 people in West Africa, killing over 8,200. </p><p><b>Phase II/III trials</b></p><p>Dr Kieny had actually predicted back in October the efficacy trials of at least the NIAID-GSK Ebola vaccine would be ready to start as early as January in West Africa (scripintelligence.com <a href="http://www.scripintelligence.com/policyregulation/WHO-West-Africa-to-test-Ebola-vaccines-in-January-354596" target="_new">22 October 2014</a>).</p><p>Last month, however, representatives from some African national regulatory authorities and ethics committees at a WHO-convened meeting concluded Ebola vaccine trials in Cameroon, Ghana, Mali, Nigeria and Senegal would likely not start until later this year, although they did not address the planned Liberia, Sierra Leone and Guinea trials (scripintelligence.com, <a href="http://www.scripintelligence.com/home/WHO-Some-NIAIDGSK-Ebola-vaccine-efficacy-trials-delayed-355757" target="_new">19 December 2014</a>).</p><p>NIAID's chief, Dr Anthony Fauci, had hoped the Liberia trial of the NIAID-GSK chimp adenovirus type 3 (ChAd3) vaccine and the NewLink-Merck recombinant vesicular stomatitis virus product, rVSV-EBOV, could get underway sooner, in mid-January (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Ebola-A-test-of-character-355379" target="_new">3 December 2014</a>, <a href="http://www.scripintelligence.com/home/GSK-NIH-declare-Ebola-vaccine-safety-test-a-success-355287" target="_new">27 November 2014</a>).</p><p>But in an email to <i>Scrip</i>, Kathy Stover, a spokeswoman for NIAID, confirmed WHO's updated timeline for late January will be followed for the Phase II/III testing in Liberia of the ChAd3 and rVSV vaccines.</p><p>Dr Kieny said a second trial planned to be carried out in Sierra Leone, which will involve only one of the two vaccines and use a stepped-wedge design, is expected to start in February.</p><p>Frontline healthcare workers would be the priority population targeted for the Sierra Leone study, she said.</p><p>The vaccine, however, has yet to be selected for that study, which will be overseen by the US Centers for Disease Control and Prevention (CDC).</p><p>Last month, CDC Director Dr Tom Frieden had raised hopes there was still a chance the Sierra Leone trial would get started this month. But a group of stakeholders at a "high-level" meeting convened on 8 January by WHO determined the study could not start until February, Dr Kieny said, in summing up the gathering, which was attended by various world government leaders and representatives from several manufacturers, including GSK, Merck, NewLink, J&J, Novavax and Protein Sciences (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/CDC-hopeful-for-January-start-of-Ebola-vaccine-trial-355804" target="_new">22 December 2014</a>).</p><p>A third trial of the two lead vaccines is planned to take place in Guinea using a so-called "ring" vaccination design, in which people in the community where an Ebola-infected person resides are vaccinated.</p><p>In that study, there are expected to be 90 "rings" of 50 people each, with 4,500 vaccinated immediately and the same number receiving the shot later, Dr Kieny explained, noting the ring design was used to eradicate smallpox. </p><p>The Guinea trial also is expected to include an observational study, in which frontline healthcare workers are vaccinated, but would not be part of a ring, she added.</p><p><b>Need for multiple vaccines</b></p><p>Chair of the high-level WHO panel, Dr Helen Rees, executive director of the Wits Reproductive Health and HIV Institute of the University of the Witwatersrand in Johannesburg, South Africa, argued it was necessary to have multiple companies involved in Ebola vaccine R&D.</p><p>"We can't assume that anything is going to work, so we want this pipeline to continue," she told reporters during the 9 January briefing, adding there may be a "home run" in only one of the lead products.</p><p>"The world is waiting for us to get these vaccines ready and out to the people with this virus raging through their communities," Dr Kieny acknowledged. </p><p>But she also emphasized the significance of fast-tracking the Ebola vaccines.</p><p>&ldquo;At this time last year, I would have said the cupboard was empty, dry," Dr Kieny said. "But now, the cupboard is clearly filling up rapidly."</p><p>While 2014 will be "remembered as the year the Ebola virus challenged humanity," Dr Kieny said she believes 2015 will be the year humanity used its "best scientific minds to fight back."</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 311
+
+<p>Fast-tracking the regulatory processes in the West African countries being hit the hardest by Ebola is paying off with two vaccines ready to enter efficacy testing beginning later this month, with other trials set for February, according to a high-level official from the World Health Organization (WHO).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Edge for 3rdplace JnJ in Ebola vaccine race
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150701T114205
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150701T114205
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150701T114205
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027480
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Edge for 3rd-place JnJ in Ebola vaccine race?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355975
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042230Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+096165e8-1622-4b3c-abd7-e95582a3ea78
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042230Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

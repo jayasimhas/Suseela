@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {8C4814B5-5B93-4580-BC01-DA2C7B890CE3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/20/Relief for Pfizer as Indian Sutent case heads back to patent office
+parent: {81E739B8-75DC-4D93-A8A3-C2678DEF9DA8}
+name: Relief for Pfizer as Indian Sutent case heads back to patent office
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6ec28e29-9228-4756-a02e-735927e19bee
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{12C97AC3-D19F-4DF0-B0DB-B9C82176F72C}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+Relief for Pfizer as Indian Sutent case heads back to patent office 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+Relief for Pfizer as Indian Sutent case heads back to patent office
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3262
+
+<p>The Supreme Court of India has set aside a patent revocation order against Pfizer's anticancer Sutent (sunitinib malate), remanding the case back to the patent office following certain procedural lapses.</p><p>The case now heads back to the Delhi patent office and would have to be reheard in four weeks, legal sources in the know told <i>Scrip</i>. A previous high court injunction against Cipla in the case has also been set aside.</p><p>The Sutent patent had been revoked after Dr Nilanjana Mukherjee, assistant controller of patents and designs at the Delhi patent office, had held, in a ruling dated 24 September, that the invention claimed in the Sutent patent did not involve an inventive step and was obvious to the person skilled in the art. Cipla had in 2008 filed an opposition against Sugen and Pfizer's 2007 patent for Sutent in India.</p><p>The indications are that Pfizer said that it did not receive a copy on the recommendations of a three-member "opposition board" (which is constituted by the patent controller and examines issues such as the notice of opposition) in the case, and this was acknowledged as a procedural lapse by the Supreme Court. </p><p><i>Scrip</i> had earlier reported that Pfizer claimed that natural justice had been denied to it the case since it hadn't received access to the board's report (<a href="http://www.scripintelligence.com/home/Court-stops-Ciplas-generic-despite-revoked-patent-on-Pfizers-Sutent-336162" target="_new">scripintelligence.com, 15 October 2012</a>). While Pfizer did not immediately comment on the grounds on which the case was remanded to the patent office, it said that the Supreme Court ruling is a "welcome recognition of IP rights" in India. </p><p>"Meaningful patent protection is vital as it encourages further investment into discovery and development of newer and effective medicines that address unmet medical needs of patients in India. Pfizer is continuously working to find medicines to treat many diseases, and we are pleased that we have the society's commitment to innovation in order to succeed," said Jazz Tobaccowalla, managing director of Pfizer India.</p><p>Industry analysts though claimed that the "second life" of sorts for the Sutent patent must be viewed with some caution, since in theory the merits of the case remained unchanged. "Should the revocation be upheld, Pfizer can then appeal to the Intellectual property Board," one analyst said. </p><p>It's unclear if any generic firm would risk a launch in the interim. The Supreme Court had earlier lifted a lower court stay against Cipla in a case concerning the potential launch of its cut-price generic version of Sutent (<a href="http://www.scripintelligence.com/business/Indian-court-lifts-stay-on-Ciplas-generic-Sutent-firm-slashes-prices-of-anticancers-337007" target="_new">scripintelligence.com, 9 November 2012</a>). </p><p>Cipla's proposed generic version was expected to be priced about 75-80% cheaper than Sutent, which currently carries a maximum retail price tag of Rs255,149 ($4,931) for a pack of 28 capsules, though it is said to be available to patients at about Rs196,000. Pfizer also has a patient assistance program for Sutent, which has been running in India for more than four years.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 210
+
+<p>The Supreme Court of India has set aside a patent revocation order against Pfizer's anticancer Sutent (sunitinib malate), remanding the case back to the patent office following certain procedural lapses.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+Relief for Pfizer as Indian Sutent case heads back to patent office
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150420T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150420T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150420T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC019634
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+Relief for Pfizer as Indian Sutent case heads back to patent office 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200000505
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+337655
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T041450Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6ec28e29-9228-4756-a02e-735927e19bee
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T041450Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

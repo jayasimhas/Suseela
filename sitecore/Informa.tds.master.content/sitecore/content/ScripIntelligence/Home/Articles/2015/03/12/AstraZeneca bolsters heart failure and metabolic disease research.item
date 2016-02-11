@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {F31571A6-8595-47DC-A633-90575BB08D56}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/12/AstraZeneca bolsters heart failure and metabolic disease research
+parent: {E53F24E6-BD38-493D-8AAE-66E738CC434C}
+name: AstraZeneca bolsters heart failure and metabolic disease research
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 759ba721-64bb-4756-9c9e-7e1509f5d493
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+AstraZeneca bolsters heart failure and metabolic disease research
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+AstraZeneca bolsters heart failure and metabolic disease research
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4858
+
+<p>AstraZeneca and its MedImmune unit have signed a couple of early stage research deals aimed at boosting their cardiovascular and metabolic pipeline efforts &ndash; one of its three core therapeutic areas.</p><p>AstraZeneca has announced a two-year collaboration looking at heart failure with the Singaporean institutions, the Agency for Science, Technology and Research (A*STAR), National University Heart Centre, Singapore (NUHCS) and National University of Singapore. It specifically wants to understand better the pathophysiology of heart failure with preserved ejection fraction, an area of unmet medical need. The idea is that work will help the company learn which patient populations in particular might benefit most from the cardiovascular product candidates already in its pipeline.</p><p>Chronic heart failure is a common consequence of acute coronary syndromes such as heart attacks, but has little in the way of effective therapies. The death rate is around 50% at five years, and those patients with preserved ejection fraction (ie, >45%) who account for around half of all heart failure are particularly poorly served. While therapies acting on the renin-angiotensin system have shown some benefit for patients with low ejection fractions, major studies with angiotensin receptor blockers irbesartan (I-PRESERVE) and AstraZeneca's own candesartan (CHARM-Preserved), and the ACE inhibitor perindopril (PEP-CHF) all disappointed in this setting.</p><p>In the field, most excitement is currently centered around Novartis's forthcoming dual angiotensin and neprilysin inhibitor LCZ-696 which is <a href="http://www.scripintelligence.com/policyregulation/Novartis-heart-failure-drug-wins-FDA-priority-review-356800" target="_new">expected to receive US approval</a> for use heart failure patients with reduced ejection fraction this summer. The filing is based on the results of the PARADIGM-HF study &ndash; the largest ever conducted in heart failure &ndash; that showed its benefits over the ACE inhibitor enalapril in reducing the risk of CV death and heart failure hospitalization. And Novartis is now also testing the product at Phase III in preserved patients after it looked promising in the Phase II PARAMOUNT study; if successful, the drug could prove a game changer. </p><p>AstraZeneca's Ratan Bhat, head of strategy and externalisation CVMD iMED, told <i>Scrip</i> that its strategy was to look for treatments that could be disease modifying, rather than symptomatic, for this chronic progressive disease. "In the past you had small molecules and these were practical targets but now we are looking at the next generation of medicines," he said. Through its collaborations with companies, such as that with Moderna Therapeutics in RNAi, AstraZeneca hopes to open up the target space beyond small molecules, he added. </p><p>Here the new collaborations will take advantage of high quality clinical, cardiac imaging and blood data which have been collected through the Singapore Heart Failure Outcomes & Phenotypes (SHOP) study from patients with heart failure representative of the Asian populations in and around Singapore. These south Indian, Malay and Chinese populations have a higher incidence of preserved ejection fraction heart failure in general than in the west, and around 25% carry a mutation in the myosin binding protein C3 associated with accelerated disease. </p><p>This information will be used to distinguish between subsets of heart failure patients and identify the molecular pathway leading to preserved EF heart failure before establishing biomarkers and eventually potential new treatments. The findings will also be integrated into AstraZeneca's broader cardiovascular research program. </p><h2>MedImmune and Joslin</h2><p>Meanwhile, AstraZeneca's MedImmune biologics unit has teamed up with the Boston, Massachusetts-based Joslin Diabetes Center in a three-year collaboration to development new treatments for diabetes, obesity and other metabolic disorders. </p><p>The two parties will work together to identify potential news drugs, in three initial projects. These include protecting and regenerating the insulin-producing beta cells, increasing the caloric utilization of fat depots ("beiging" white fat or expanding brown fat), and replicating the beneficial effects of bariatric surgery pharmacologically. If the collaboration is successful in identifying compelling new science there is potential for new projects to be added. </p><p>Under the terms of the agreement, MedImmune will provide research funding to Joslin and bring drug development expertise and capabilities to complement Joslin&rsquo;s early metabolic disease research competencies and clinical care infrastructure. MedImmune has the option to license development and commercial rights to projects emerging from the collaboration. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 211
+
+<p>AstraZeneca and its MedImmune unit have signed a couple of early stage research deals aimed at boosting their cardiovascular and metabolic pipeline efforts &ndash; one of its three core therapeutic areas.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+AstraZeneca bolsters heart failure and metabolic disease research
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150312T160003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150312T160003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150312T160003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028091
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+AstraZeneca bolsters heart failure and metabolic disease research
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357172
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042309Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+759ba721-64bb-4756-9c9e-7e1509f5d493
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042309Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

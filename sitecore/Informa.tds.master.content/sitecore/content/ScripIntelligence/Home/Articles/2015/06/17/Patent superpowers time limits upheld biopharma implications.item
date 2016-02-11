@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E8E5D130-A35E-464F-AACA-3A6DF0C184F4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/17/Patent superpowers time limits upheld biopharma implications
+parent: {8B19334F-ECBE-485B-8DBC-E15AECF32AEF}
+name: Patent superpowers time limits upheld biopharma implications
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1166f3d4-115a-44b9-a5c6-85d783ee8990
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Patent 'superpowers' time limits upheld: biopharma implications
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Patent superpowers time limits upheld biopharma implications
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8807
+
+<p>While a 22 June US Supreme Court ruling that was peppered with Spider-Man puns may have provided some comic relief to legal watchers &ndash; although the loser in <i>Kimble v Marvel</i> likely didn't find much to laugh about &ndash; the case may help patent holders and those that enter into licensing rights deals, including biopharmaceutical makers, better understand and be more aware of a nearly half-century old case law rule.</p><p>In a 6-3 decision, the justices said they were unwilling to change a standard set by the Supreme Court itself in November 1964 in its ruling in <i>Brulotte v Thys</i>, which declared that patent holders cannot continue to demand sales royalties for the use of their inventions after the patent terms have expired.</p><p>The "superpowers" endowed by patents to their holders are limited &ndash; generally lasting only 20 years &ndash; and so, too, are the patentee's prerogatives, with the rights after expiration free from restrictions, including contracts, Supreme Court Justice Elena Kagan said in her 22 June majority opinion in the <i>Marvel</i> case.</p><p>The lawsuit involved a 1990 patent awarded to inventor Stephen Kimble for his "Spider-Man" toy &ndash; essentially a polyester glove and a canister of pressurized foam string, which allows users to shoot make-believe webs from their wrists, mimicking the superhero's actions.</p><p>After patenting his toy, Mr Kimble had met with the president of Marvel Entertainment, which makes and markets Spider-Man and other comic book character products, to discuss the invention. </p><p>Soon thereafter, however, Marvel began marketing its own toy, dubbed the "Web Blaster," which was similar to Mr Kimble's idea. </p><p>So the inventor sued the entertainment company in 1997, claiming patent infringement.</p><p>The two parties ultimately settled the litigation, under which Marvel purchased Mr Kimble's patent in exchange for a lump sum of about $500,000 plus 3% royalties on future sales of the Web Blaster and similar products.</p><p>The problem was, however, the contract set no end date for the royalties, with the parties apparently contemplating they would continue for as long as kids wanted to imitate Spider-Man &ndash; "by doing whatever a spider can," Justice Kagan said, stealing a line out of the superhero's theme song.</p><p>But then Marvel "stumbled across" the 1964 <i>Brulotte</i> decision &ndash; a ruling the firm was unaware of at the time it settled with Mr Kimble, who apparently also didn't know about it when he entered into the deal with the entertainment company, according to court documents.</p><p>Marvel then sought a declaratory judgment in federal district court seeking to confirm it could stop paying Mr Kimble the royalties in 2010 &ndash; the end of the patent term for his toy.</p><p>The court sided with Marvel, declaring the royalties were "unenforceable after the expiration" of Mr Kimble's patent.</p><p>The US Court of Appeals for the Ninth Circuit affirmed the lower court's ruling &ndash; although reluctantly, complaining the <i>Brulotte</i> rule was "counterintuitive" and its rationale "arguably unconvincing."</p><p>So Mr Kimble took his appeal to the Supreme Court, asking the justices to overturn the 50-year-old <i>Brulotte</i> decision.</p><p>But the Supreme Court refused &ndash; declaring it was standing by what it already had decided &ndash; or as Justice Kagan put it in Latin, <i>"stare decisis."</i></p><p>"What we can decide, we can undecide. But <i>stare decisis</i> teaches that we should exercise that authority sparingly," she wrote.</p><p>And then thrilling comic book nerds everywhere, the justice quoted a 1962 Stan Lee/Steve Ditko "Amazing Fantasy" Spider-Man episode &ndash; declaring that "'[I]n this world, with great power there must also come great responsibility.'"</p><p>Finding many reasons for staying the <i>stare decisis</i> course and no special justification for departing from it, Justice Kagan said the Supreme Court was declining Mr Kimble's "invitation to overrule Brulotte," and was affirming the appeals court's ruling.</p><p>Using another Spider-Man pun, Justice Kagan insisted <i>Brulotte's</i> close relation to a "whole web" of precedents means that overruling it could threaten others. </p><p>And, she said, nothing about the 1964 rule set by the Supreme Court has proved "unworkable," and the arguments Mr Kimble made for striking it down were not justifiable.</p><p>Mr Kimble had asserted <i>Brulotte</i> hinged on an economic error &ndash; an assumption that post-expiration royalties were always anticompetitive. </p><p>But Justice Kagan contended that while the rule may prevent some parties from entering into deals they desire, "parties can often find ways to achieve similar outcomes."</p><p>She argued that <i>Brulotte</i> allows a licensee to defer payments for pre-expiration use of a patent into the post-expiration period, with only barring royalties for using an invention after it has moved into the public domain. So a licensee could agree to pay the licensor a sum equal to 10% of sales during the 20-year patent term, but to amortize that amount over 40 years.</p><p><b>Not so easy for biotechs</b></p><p>But Dr Hans Sauer, deputy general counsel for intellectual property at Biotechnology Industry Organization, said such a scenario is not so easily accomplished for biotechs, given the uncertainties about when their products may reach the marketplace and if they will ever be profitable. </p><p>And even if it was amortized, the biotechs don't know if they'll have the money to meet the payments under such deals, Dr Sauer told <i>Scrip</i>.</p><p>Plus, said Seattle lawyer Dr Melanie Mayer, an associate in the litigation group at Fenwick & West, "It might require the parties at the time of contracting to anticipate what a fair royalty is if they are amortizing, whereas if you had post-patent expiration agreements and those were enforceable then the parties could set a fair royalty and the success of the product would be wrapped into the ultimate payment for the licensure."</p><p><b>Congress the hero?</b></p><p>Justice Kagan also said that if Mr Kimble were correct and the <i>Brulotte</i> rule relied on an economic misjudgment, "Congress is the right entity to fix it."</p><p>Dr Sauer said it was highly unlikely lawmakers on Capitol Hill would be taking up any efforts to address <i>Brulotte</i> anytime soon, given they are in the midst of trying to finalize a large patent reform bill already.</p><p>He said, however, that it's possible Congress could pursue a measure on <i>Brulotte</i> in the future.</p><p>But in dissenting in the case, Justice Samuel Alito contended that when a precedent was based on a "judge-made rule" and was not grounded in anything enacted through Congress, "we cannot properly place on the shoulders" of lawmakers the "entire burden" of correcting "the court's own error."</p><p>Plus, he said, "Passing legislation is no easy task" - inferring Congress may not be the hero to rescue the situation.</p><p>Justice Alito, who was joined in his dissent by Chief Justice John Roberts and Justice Clarence Thomas, insisted "A proper understanding of our doctrine of <i>stare decisis</i> does not prevent us from reexamining <i>Brulotte.</i>"</p><p>Justice Alito asserted the "super-duper" protection of the 1964 decision was unwarranted because that ruling didn't "actually interpret a statute."</p><p>"I would reconsider and overrule our obvious mistake," he said.</p><p><b>More awareness</b></p><p>Big biopharmaceutical firms are well-represented in patent law and intellectual property matters, so they already know their way around the <i>Brulotte</i> rule, said Chicago lawyer Jordan Sigale, director with Dunlap Codding.</p><p>If anything, the Supreme Court's ruling in the Marvel case "makes it clearer the <i>Brulotte</i> rule is narrow and that there are ways to draft around it," Mr Sigale told <i>Scrip.</i></p><p>But, he said, for those who are unsophisticated about <i>Brulotte</i>, the opinion is "unfortunate."</p><p>"It would be much better to knock out this rule. It doesn't make economic sense," Mr Sigale said, adding that any standard that gives the advantage to those who can afford the best legal representation is "bad for society."</p><p>Fenwick's Dr Mayer said the publicity surrounding the Marvel case &ndash; thanks now largely to Justice Kagan's Spider-Man puns &ndash; may help small companies and inventors, and even the unaware big firms, be more conscious of the <i>Brulotte</i> rule so they can ensure patent licensing agreements are fair.</p><p>But, she urged, "parties will likely need to be explicit about how they parse the royalties," so they don't end up in the same type of predicament as Mr Kimble. </p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 438
+
+<p>While a 22 June US Supreme Court ruling that was peppered with Spider-Man puns may have provided some comic relief to legal watchers &ndash; although the loser in <i>Kimble v Marvel</i> likely didn't find much to laugh about &ndash; the case may help patent holders and those that enter into licensing rights deals, including biopharmaceutical makers, better understand and be more aware of a nearly half-century old case law rule.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Patent superpowers time limits upheld biopharma implications
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150617T050001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150617T050001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150617T050001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029056
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Patent 'superpowers' time limits upheld: biopharma implications
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358982
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042412Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1166f3d4-115a-44b9-a5c6-85d783ee8990
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042412Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

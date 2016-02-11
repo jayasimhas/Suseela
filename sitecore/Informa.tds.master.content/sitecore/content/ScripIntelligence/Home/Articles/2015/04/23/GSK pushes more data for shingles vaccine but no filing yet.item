@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {CE6FF0B7-9B5D-4A79-9A6A-820B0F35CB56}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/23/GSK pushes more data for shingles vaccine but no filing yet
+parent: {513DB860-8F3F-41F5-BCB6-26F09C90B6E0}
+name: GSK pushes more data for shingles vaccine but no filing yet
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: df0539b2-7882-46ce-9a3c-e1a56f368d9e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+GSK pushes more data for shingles vaccine, but no filing yet
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+GSK pushes more data for shingles vaccine but no filing yet
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5634
+
+<p>GlaxoSmithKline's shingles vaccine continues to demonstrate strong efficacy in all ages in Phase III trials but the company doesn't plan to file the product just yet. </p><p>Late-stage data for GSK's investigational vaccine candidate for the prevention of shingles, HZ/su (GSK1437173A), were presented at the European Society of Clinical Microbiology and Infectious diseases (ECCMID) meeting in Copenhagen and published online simultaneously in the <i>New England Journal of Medicine</i> on 28 April. GSK released topline data from the same Phase III shingles trial in <a href="http://www.scripintelligence.com/researchdevelopment/GSKs-shingles-vaccine-threatens-MerckSanofis-Zostavax-355738" target="_new">December 2014</a>. </p><p>Analysis of the primary endpoint showed a two-dose schedule of HZ/su reduced the risk of shingles by 97.2% (95% confidence interval [CI] 93.7-99.0) in adults aged 50 years and older compared with placebo. Vaccine efficacy was maintained across the various age groups included in the study, ranging between 96.6% in people aged 50-59 years, 97.4% in those aged 60-69 years, 97.6% in people aged 60 years and above, and 98% in those 70 years or older.</p><p>In December 2014, GSK said a filing on the back of positive topline Phase III data was "definitely a possibility".</p><p>However, a spokesperson for GSK said this time around, "Regulatory submission dates will depend on the results of the overall clinical development program and we should have a better idea of these timelines later in the year."</p><p>The product has not yet been filed in any market. </p><p>GSK's vaccine could threaten Sanofi Pasteur MSD's (SPMSD) Zostavax, which is currently the only approved shingles vaccine on the market. However, GSK said, "Because our vaccine is still in development we can't comment on how it may be positioned in the marketplace." </p><p>GSK's vaccine has the disadvantage that it requires two doses given two months apart, whereas Zostavax is a single dose vaccine. However, given HZ/su's apparently superior efficacy, this is unlikely to pose much of a problem.</p><p>A person's risk for shingles increases sharply after 50 years of age. Risk of complications, including hospitalization, also increase with age. The individual lifetime risk of developing shingles is approximately one in three people; however, for individuals aged 85 and over, this risk increases to one in two people.</p><p>Additional trials evaluating HZ/su in people aged 70 and older and in adults with compromised immune systems are ongoing. </p><h2>Agenus partnership</h2><p>HZ/su, a recombinant protein vaccine, contains Agenus's QS-21 Stimulon adjuvant. In March 2012 GSK and Agenus amended their QS-21 license and manufacturing agreement to include additional rights for the use of Agenus' proprietary QS-21 Stimulon adjuvant in GSK Biologicals' adjuvant systems. GSK is currently developing a candidate vaccine for the treatment of tuberculosis which contains the same QS-21 Stimulon adjuvant; this is in Phase II. </p><p>In 2012, Agenus agreed to grant GSK the first right to negotiate for the purchase of Agenus or certain of its assets. GSK paid Agenus $9m upfront and the deal also included royalty payments for an undisclosed indication upon commercialization of a vaccine product.</p><h2>Malaria vaccine</h2><p>Also in partnership with Agenus, GSK is developing malaria vaccine, Mosquirix (RTS,S) &ndash; for which it reported positive Phase III results recently. Mosquirix also uses Agenus's QS-21 Stimulon adjuvant. </p><p>On 24 April, GSK said final results from a Phase III trial suggest substantial public health benefits could be provided by its RTS,S malaria vaccine candidate in endemic regions in sub-Saharan Africa. Data from the trial were published in <i>The Lancet</i> on the same day. </p><p>Phase III results showed that vaccination with RTS,S, followed by a booster dose of RTS,S administered 18 months after the primary schedule, reduced the number of cases of clinical malaria in children (aged 5-17 months at first vaccination) by 36% to the end of the study (over an average follow-up of 48 months across trial sites) and in infants (aged 6-12 weeks at first vaccination) by 26% to the end of the study (over an average follow-up of 38 months across trial sites). Efficacy decreased over time in both age groups and significant efficacy against severe malaria to the end of the study period was observed only in children who received the booster dose.</p><p>Eleven research centers in seven African countries conducted the efficacy and safety trial, in partnership with GSK and the PATH Malaria Vaccine Initiative (MVI), with grant funding from the Bill & Melinda Gates Foundation to MVI. The trial, started in March 2009 and concluded in January 2014, enrolled 15,459 participants. </p><h2>vaccines focus</h2><p><a href="http://www.scripintelligence.com/home/GSK-to-set-up-global-vaccine-center-near-FDA-NIH-357665" target="_new">Earlier in April</a> this year GSK announced it was setting up a global vaccine center in the US near the FDA. </p><p>The drug-maker had nine sites across the US devoted to vaccines research and development after its mega swapping deal with Novartis. GSK said it would consolidate these sites and create a global R&D center focused on those products in Maryland &ndash; the home of the FDA and the National Institutes of Health (NIH) and close to Washington DC.</p><p>GSK said the new vaccines R&D center would expand its efforts to discover and develop novel vaccines across a range of pressing public health threats, including those relevant to the US.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 174
+
+<p>GlaxoSmithKline's shingles vaccine continues to demonstrate strong efficacy in all ages in Phase III trials but the company doesn't plan to file the product just yet. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+GSK pushes more data for shingles vaccine but no filing yet
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150423T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150423T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150423T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028574
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+GSK pushes more data for shingles vaccine, but no filing yet
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358026
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+df0539b2-7882-46ce-9a3c-e1a56f368d9e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

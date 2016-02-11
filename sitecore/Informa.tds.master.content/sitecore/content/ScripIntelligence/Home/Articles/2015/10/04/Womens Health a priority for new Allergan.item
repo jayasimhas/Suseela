@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {45D31102-F6E9-48F5-AF16-9F333B4D2449}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/04/Womens Health a priority for new Allergan
+parent: {573CFD6E-B2DD-45CD-ABE4-2EE91F9C3735}
+name: Womens Health a priority for new Allergan
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 57fe3fb0-137d-423b-a29e-4500d329659c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{EF0B77E2-D8CF-42C6-BA65-48EE8FBEA0EF}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Women's Health a priority for new Allergan
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+Womens Health a priority for new Allergan
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3269
+
+<p><p>The new Allergan &ndash; currently Actavis &ndash; intends to make women's health a priority throughout its transformation, said President of branded pharma Bill Meury in an interview, as the company launches its latest product in the category. </p><p>"Our discovery capability is a network of biopharmaceutical companies all around the world and one of our largest therapeutic areas, in terms of sales and product, is women's health. We routinely look for opportunities in women's health because there are strategic economic advantages to building product line depth &ndash; and we have it in women's health. We also have regulatory development and expertise," said Mr Meury. "Women's health will be our fourth largest product line out of the seven in the combined business."</p><p>Currently women's health is a $1bn business for Actavis and the company intends to add to that with the introduction of its hormonal contraceptive device Liletta, an intrauterine device (IUD) that releases the hormone levonorgestrel. Approved in February, Liletta became available on 13 April.</p><p>Liletta is far from the first IUD to hit the US market; the sector is currently dominated by Bayer's Mirena and also includes Teva's non-hormonal option ParaGard. Despite the options, Meury says that 40% of women in the US that are interested in IUD's ultimately don't get them. Currently, the IUD market in the US is just a fraction of the market in Europe. Actavis is hoping to expand that market domestically. </p><p>"You can't get a safer, more effective, long-term means of contraceptive than an IUD, and yet, it's used by only 10% of women taking contraceptives," Mr Meury told <i>Scrip</i>. "I think you'll see this market expand over the next three to five years and attitudes about IUD expand. Bayer is a big educator in this category and we expect to be too."</p><p>Actavis currently has all the tools it needs to educate physicians and patients. The company has 400 US sales reps calling on more than 20,000 physicians that already support the firm's other women's health products &ndash; the oral contraceptive Lo Loestrin (ethinyl estradiol and norethindrone) and the menopausal symptom treatment Estrace (estradiol). </p><p>While both Bayer and Teva offer discounts for their products, Actavis says its Liletta is 25A% cheaper than the wholesale price of Mirena, the current standard of care. Beyond price, Meury touted the clinical program for Liletta, which was the largest, most diverse clinical trial for an IUD and showed the device offered the same efficacy as Mirena. It also has the added bonus that it can be inserted at any point during a women's menstrual cycle, while Mirena needs to be inserted within seven days of the start of a women's period. </p><p>Actavis is putting a large customer service effort behind the launch of the device &ndash; its Access Connect program helps patients find out in real-time if they have coverage for Liletta and helps women better understand the process. The company also intends to conduct "a full-blown" direct-to-consumer effort within the next twelve months. "Whether you're talking about the physician or the patient, we are trying to break down some of the barriers for use of IUDs," said Mr Meury. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Womens Health a priority for new Allergan
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151004T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151004T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151004T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028453
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Women's Health a priority for new Allergan
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600433
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357832
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+57fe3fb0-137d-423b-a29e-4500d329659c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

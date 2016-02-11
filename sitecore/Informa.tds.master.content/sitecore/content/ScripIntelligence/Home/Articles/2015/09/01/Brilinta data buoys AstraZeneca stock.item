@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {5A541A57-0893-47B0-8CA8-7601EEC4BD7A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/01/Brilinta data buoys AstraZeneca stock
+parent: {684FC8D5-D802-45B5-B1B4-59D6EC33E6A8}
+name: Brilinta data buoys AstraZeneca stock
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1d0233ae-8e3e-456f-ad6d-e46a2a0441e8
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 37
+
+Brilinta data buoys AstraZeneca stock
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 37
+
+Brilinta data buoys AstraZeneca stock
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3002
+
+<p>AstraZeneca's shares received a boost on 14 January after the company revealed positive data from its latest study of heart drug Brilinta (ticagrelor). Investors seemed hopeful that these data may eventually get the company closer to its ambitious sales targets for Brilinta.</p><p><img src="-/media/2664B28661C245DFA35FB39561875A8C.ashx"></p><p>The PEGASUS-TIMI 54 study, which was aiming to demonstrate Brilinta's merit in the prevention of atherothrombotic events in patients who had experienced a heart attack one to three years previously, met its primary endpoint for both the 60mg and 90mg doses. The primary endpoint was a composite of cardiovascular death, myocardial infarction, or stroke. There were no unexpected safety issues.</p><p>The study compared Brilinta taken with low dose aspirin, versus placebo plus low dose aspirin in patients aged 50 and older. It recruited over 21,000 patients.</p><p>AstraZeneca said that full evaluation of the data is ongoing, and that the company plans to present it at the 2015 American College of Cardiology meeting in March. Following this, said Paul Hudson, president of AstraZeneca US and executive vice-president of North America, the company hopes to file the data with regulators to expand Brilinta's license. &quot;I think it's then that we'll have a real sense of what the opportunity could be,&quot; he told <i>Scrip</i>. </p><p>He added that 20% of patients who have had no cardiovascular events a year after having a heart attack go on to have a serious cardiovascular event at some point three years after. &quot;So there's a huge unmet need,&quot; he said.</p><p>Brilinta is currently used to prevent atherothrombotic events in patients for a year after heart attack. These data show that the drug could be used for three times as long in patients who remain at high risk. </p><p>The news seemed to strike hope into investors, who sent the stock soaring early on 14 January. Brilinta has had difficulty gaining traction thanks to stiff competition from generic Plavix (clopidogrel). AstraZeneca has a lot resting on the drug, forecasting sales of $3.5bn by 2023, a figure analysts have always been dubious about. &quot;It does build on a growing confidence in and around Brilinta,&quot; said Mr Hudson.</p><p>However, the stock price fell throughout the afternoon to more normal trading levels for the company in recent times. By late afternoon the company was trading at &pound;46.78, down from highs of &pound;48.00 earlier in the day.</p><p>The PEGASUS-TIMI 54 study is one part of AstraZeneca's PARTHENON program, in which the company is studying Brilinta in a number or cardiovascular indications. The first study in the program, PLATO, showed Brilinta to be clinically superior to clopidogrel plus aspirin in reducing cardiovascular events in acute coronary syndrome patients ( <a href="http://www.scripintelligence.com/home/AstraZeneca-in-the-clear-over-PLATO-353455" target="_new">scripintelligence.com</a>, 19 August 2014).</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 282
+
+<p>AstraZeneca's shares received a boost on 14 January after the company revealed positive data from its latest study of heart drug Brilinta (ticagrelor). Investors seemed hopeful that these data may eventually get the company closer to its ambitious sales targets for Brilinta.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 37
+
+Brilinta data buoys AstraZeneca stock
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150901T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150901T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150901T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027521
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 37
+
+Brilinta data buoys AstraZeneca stock
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356052
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042232Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1d0233ae-8e3e-456f-ad6d-e46a2a0441e8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042232Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {CC24E7BF-7AE5-43AA-B4AB-687C7B80F846}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/14/Valeant Enters Female Pharma Field With Sprout Buy
+parent: {F1BDB59F-EC79-4308-B3FA-AD67FD3F4F4E}
+name: Valeant Enters Female Pharma Field With Sprout Buy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 87a4b061-07d0-4b56-894d-b973f9d93645
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Valeant Enters Female Pharma Field With Sprout Buy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Valeant Enters Female Pharma Field With Sprout Buy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7036
+
+<p>Valeant Pharmaceuticals will add a new therapeutic area to its portfolio with the $1bn purchase of Sprout Pharmaceuticals two days after the smaller company won US FDA approval for <i>Addyi</i> (flibanserin) to treat women with a low sex drive, but the Canadian acquirer has some catching up to do with leaders in the female pharma field.</p><p>Investor sentiment &ndash; Valeant shares fell 6.5% to close at $229.06 on 20 August after the deal was announced &ndash; seems to reflect industry doubts about Addyi, which showed mediocre efficacy in clinical trials along with some concerning side effects. However, buying Sprout gives Valeant a toehold in women's health, which has relatively few competitors, including one of the company's top rivals &ndash; Allergan.</p><p>Valeant will pay $500m when the Sprout deal closes in the third quarter of 2015 and $500m during the first quarter of 2016 to buy a product that "gives us the perfect opportunity to establish a new portfolio of important medicines that uniquely impact women," Valeant chairman and CEO Michael Pearson said in a statement announcing the Sprout acquisition.</p><p>Sprout's investors also are entitled to a share of profits based on achievement of certain milestones for Addyi, which is a once-daily oral drug approved to treat premenopausal women with acquired, generalized hypoactive sexual desire disorder (HSDD). But it's unclear how much Sprout shareholders are likely to receive in milestone payments, because the percentage of Addyi royalties wasn't disclosed and the drug has several <a href="http://www.scripintelligence.com/home/FDA-Embraces-Sex-Pill-For-Women-Restrictions-Apply-360015" target="_new">FDA-imposed restrictions</a>.</p><p>For instance, women should not drink alcohol while taking the daily drug. Addyi also is contraindicated for women taking CYP3A4 inhibitors or who have hepatic impairment, because those patients are at higher risk for low blood pressure and fainting.</p><p>Sprout, and now Valeant, also was restricted from promoting the drug with direct-to-consumer (DTC) advertising for 18 months. And Addyi can only be prescribed by physicians and sold by pharmacies trained to comply with the <a href="http://www.scripintelligence.com/home/Bumps-May-Grind-Female-Sex-Pills-Sales-360016" target="_new">risk evaluation and mitigation strategy</a> (REMS) regarding the safety concerns for women who drink alcohol or have liver disease.</p><p>While Valeant doesn't already have a sales force dedicated to women's health, what the company brings to the table for Sprout's drug is the resources to build a sales team as well as a global presence that can seek regulatory approvals and market Addyi around the world.</p><p>"This partnership with Valeant allows us the capacity to now ensure broader, more affordable access to all the women who have been waiting for this treatment," Sprout CEO Cindy Whitehead said in Valeant's announcement of their deal.</p><p>Valeant plans to maintain Sprout's 34-person operation in Raleigh, North Carolina with Whitehead staying on to lead the Addyi commercialization effort.</p><p><b>Competition In An Uncrowded Field</b></p><p>Acquiring Sprout gives Valeant a small push into the women's health arena, which is dominated by a few major players &ndash; namely Ferring Pharmaceuticals, Merck KGaA, Teva Pharmaceutical Industries, Bayer AG and Allergan (formerly Actavis).</p><p>A review of <i>Scrip</i> affiliate Sagient Research's BioMedTracker database shows that Ferring is the leader among pharma companies in the area of obstetrics and gynecology &ndash; excluding contraceptives &ndash; with nine approved and investigational assets. Behind Ferring are Merck KGaA and Allergan with five gynecological assets, Bayer with four, and Repros and Merck & Co. with three each.</p><p>But contraceptives is an area of women's health where Allergan and Bayer really stand out with 10 and 12 birth control products, respectively, either on the market or in development. Teva follows with seven contraceptives.</p><p>Bayer Healthcare's UK and Ireland chief Alexander Moscho told <i>Scrip</i> in May that there is room for <a href="http://www.scripintelligence.com/business/Still-room-for-innovators-in-womens-health-says-Bayer-358304" target="_new">more competitors in women's health</a>, especially with companies like Teva and Pierre Fabre leaving the specialized market.</p><p>But it's also true that Valeant has a long way to go to catch up with the likes of Bayer with its 14 gynecology and contraceptive drugs, and Allergan with its portfolio of 17 women's health products.</p><p>Actavis, a generics specialist and growing branded drug company, began building its <a href="http://www.scripintelligence.com/business/Womens-Health-a-priority-for-new-Allergan-357922" target="_new">women's health portfolio</a> long before it acquired Allergan and <a href="http://www.scripintelligence.com/business/Actavis-will-become-Allergan-to-emphasize-branded-pharma-focus-356827" target="_new">changed its name earlier this year</a> to reflect its new focus on brand name pharmaceuticals. Actavis predecessor Watson Pharmaceuticals, which acquired Actavis in 2012 and changed its name in 2013, made its first major expansion into women's health two years ago when it bought Uteron Pharma <a href="http://www.scripintelligence.com/home/Watson-buys-womens-health-focused-Uteron-for-up-to-305m-as-it-adopts-Actavis-name-339343" target="_new">for up to $305m</a>.</p><p>Allergan is a notable competitor for Valeant in any field, considering the two companies have several similar therapeutic interests and a rivalry that grew bitterer in 2014 when Valeant made a hostile attempt to buy Allergan before <a href="http://www.scripintelligence.com/home/Big-paydays-ahead-as-Actavis-buys-Allergan-for-219-per-share-355111" target="_new">Actavis stepped in</a>.</p><p>Among the top 10 disease categories for Allergan's and Valeant's portfolios, the companies have seven specialties in common: ophthalmology, neurology, endocrine (including contraceptives), infectious diseases, cardiovascular, dermatology and immunology, according to the BioMedTracker database. Ophthalmology and infectious diseases are the first and fourth biggest categories for both companies. Endocrine is Allergan's third largest area and it's Valeant's 10th biggest category.</p><p>But with Sprout and its drug Addyi, Valeant has something that Allergan doesn't have in women's health: a treatment for female sexual arousal disorder that's approved in the US. Allergan's <i>Intrinsa</i>, a transdermal testosterone patch <a href="http://www.scripintelligence.com/home/Chilcott-deal-has-slaked-thirst-of-generic-hunter-Actavis---for-now-343382" target="_new">that was acquired</a> when Actavis bought Warner Chilcott, is <a href="http://www.scripintelligence.com/home/news/Thelin-and-Intrinsa-get-CHMP-nod-63908" target="_new">approved in Europe</a> to treat HSDD in post-menopausal women who've had their womb and ovaries removed.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 345
+
+<p>Valeant Pharmaceuticals will add a new therapeutic area to its portfolio with the $1bn purchase of Sprout Pharmaceuticals two days after the smaller company won US FDA approval for <i>Addyi</i> (flibanserin) to treat women with a low sex drive, but the Canadian acquirer has some catching up to do with leaders in the female pharma field.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Valeant Enters Female Pharma Field With Sprout Buy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150814T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150814T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150814T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029564
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Valeant Enters Female Pharma Field With Sprout Buy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359964
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042437Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+87a4b061-07d0-4b56-894d-b973f9d93645
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042437Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

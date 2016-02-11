@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {A3053438-9DAF-45A6-BA08-FB4EE9200543}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/FDA to hold offlabel drug meeting
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: FDA to hold offlabel drug meeting
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: febf2078-03ce-4882-8bf0-46ddd4693c88
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 37
+
+FDA to hold 'off-label' drug meeting 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 33
+
+FDA to hold offlabel drug meeting
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6673
+
+<p>For those eager to gain insight into what the FDA's latest thinking is on whether it plans to loosen rules that restrict biopharmaceutical makers from discussing off-label uses of their drugs, watch the <i>Federal Register</i> &ndash; the place where the US government informs the public of federal actions, including plans for public meetings.</p><p>An FDA spokeswoman confirmed the agency plans to hold a public meeting focused on off-label uses of drugs sometime in the coming months, although she said she had no information on the date or makeup of the meeting. But she said that information would be disclosed in an upcoming <i>Federal Register</i> notice.</p><p>FDA spokeswoman Karen Riley said plans for the meeting were first revealed last month by an FDA official at the Food and Drug Law Institute's annual conference.</p><p>"A number of stakeholders have raised issues about the agency's policies regarding manufacturer communications with physicians as well as with other entities," Ms Riley told <i>Scrip</i>. </p><p>In acknowledgement of those concerns, the FDA plans to soon issue new comprehensive guidance about manufacturer communication involving off-label uses of approved products, she said. </p><p>&ldquo;FDA's objective is to revise its policies to best protect and promote the public health,&rdquo; Ms Riley said. &ldquo;Because of the wide range of views held by different stakeholders and the importance of the underlying public health issues, FDA plans to engage stakeholders by releasing its draft guidance for comment and by holding a public meeting."</p><p>Another spokeswoman, Andrea Fischer, said the FDA was currently engaged in a comprehensive review of its regulations and guidance documents in an effort to "harmonize the fundamental public health interests" underlying the agency's mission and statutory framework with the interests in the dissemination of &ldquo;truthful and non-misleading information."</p><p>That review, Ms Fischer said, came as a result of "emerging case law" involving the First and Fifth Amendments of the US Constitution.</p><p>The Pharmaceutical Research and Manufacturers of America (PhRMA) has been asserting that First Amendment protections for an "open and robust exchange of ideas" limit the FDA's ability to regulate scientific speech.</p><p>The US Court of Appeals for the Second Circuit in Manhattan has agreed, as long as that speech is "truthful and non-misleading."</p><p>The court in <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Americans-unwilling-to-sacrifice-Medicare-but-back-better-Part-D-deal-339427" target="_new">December 2012</a> overturned the October 2008 conviction of a New York sales representative, Alfred Caronia, for conspiracy to introduce a misbranded drug into interstate commerce related to discussions he had with doctors about unapproved uses for Jazz Pharmaceuticals' narcolepsy drug Xyrem (sodium oxybate).</p><p>The Second Circuit relied on the Supreme Court's 6-3 opinion in <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-House-adopts-patent-reform-but-fee-change-could-be-trouble-for-Senate-317676" target="_new">June 2011</a> in <i>Sorrell v IMS Health</i>, in which the high court determined that a Vermont law prohibiting pharmaceutical companies and similar entities from using prescriber-identifying information for marketing purposes violated the First Amendment.</p><p>PhRMA has referenced both rulings in raising <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-FDAs-revised-reprint-guidance-chokes-communication-PhRMA-asserts-351775" target="_new">objections</a> to the FDA's <i>Revised Draft Guidance for Industry on Distributing Scientific and Medical Publications on Unapproved New Uses</i> &ndash; arguing the document, issued last year, imposed "unduly and impermissibly burden" on biopharmaceutical companies' "truthful and non-misleading" communications with healthcare professionals, and ultimately risked "chilling the provision of timely, educational and accurate information" to prescribers about certain unapproved uses, "many of which are medically accepted and indeed even the standard of care for certain diseases."</p><p>PhRMA took particular issue with the FDA's insistence that any scientific or medical journal article distributed by drug makers that included information about off-label uses of US approved medicines contain data from "adequate and well-controlled clinical investigations" considered scientifically sound by experts with scientific training and experience to evaluate the safety or effectiveness of the product.</p><p>The lobbying group asserted the "FDA does not have the legal authority, nor a public health-based justification," to impose such a limitation on companies' dissemination of published literature "simply because the information references unapproved uses.</p><p><b>Another free speech test</b></p><p>A lawsuit <a href="http://www.scripintelligence.com/policyregulation/Amarin-files-free-speech-suit-against-FDA-358256" target="_new">filed on 7 May by Amarin</a> may be another chance to test the free speech issue involving off-label promotion.</p><p>In the company&rsquo;s suit against the FDA, which was filed in the US District Court for the Southern District of New York, Amarin is charging the agency's regulations restrict the company&rsquo;s free speech rights to discuss off-label use of the firm's fish oil pill Vascepa (icosapent ethyl).</p><p>The drug, a semisynthetic, 96% ultra-pure ethyl ester of eicosapentaenoic acid, is approved in the US as an adjunct to diet to reduce TG levels in adults with severe hypertriglyceridemia, or above 500mg/dL.</p><p>But late last month, the <a href="http://www.scripintelligence.com/policyregulation/FDA-rejects-expanded-use-of-Amarins-Vascepa-358103" target="_new">FDA declined to expand</a> the use of Vascepa as an adjunct to diet to reduce triglyceride (TG) levels in adults on statin therapy with mixed dyslipidemia and TG levels from 200mg/dL to 499mg/dL &ndash; the so-called ANCHOR indication.</p><p>Amarin said it is not suing the FDA to compel it to approve the expanded indication for Vascepa based on the ANCHOR trial results. Nor is the firm asking the court to evaluate whether the FDA's scientific conclusions about Vascepa are right or wrong. </p><p>The company said it's also not out to strike down off-label promotion laws and regulations as facially unconstitutional and it is not challenging the US government's ability to prohibit pharmaceutical companies, including Amarin, from disseminating false or misleading information about their products.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 351
+
+<p>For those eager to gain insight into what the FDA's latest thinking is on whether it plans to loosen rules that restrict biopharmaceutical makers from discussing off-label uses of their drugs, watch the <i>Federal Register</i> &ndash; the place where the US government informs the public of federal actions, including plans for public meetings.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+FDA to hold offlabel drug meeting
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T225139
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T225139
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T225139
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028657
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 37
+
+FDA to hold 'off-label' drug meeting 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200300032
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358159
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+febf2078-03ce-4882-8bf0-46ddd4693c88
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

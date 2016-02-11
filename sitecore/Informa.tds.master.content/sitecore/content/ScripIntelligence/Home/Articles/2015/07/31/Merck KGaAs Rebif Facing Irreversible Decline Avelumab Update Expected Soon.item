@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {D1062C46-3674-400C-9033-F3D6F4AD1D2A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/31/Merck KGaAs Rebif Facing Irreversible Decline Avelumab Update Expected Soon
+parent: {41EBBC65-C73D-4320-B22C-6EBD0BE8A7D8}
+name: Merck KGaAs Rebif Facing Irreversible Decline Avelumab Update Expected Soon
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 81368e34-4d74-4131-ba70-2564175f419b
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 77
+
+Merck KGaA's Rebif Facing Irreversible Decline, Avelumab Update Expected Soon
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 75
+
+Merck KGaAs Rebif Facing Irreversible Decline Avelumab Update Expected Soon
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3221
+
+<p>New oral therapies for multiple sclerosis are starting to have their expected adverse effect on sales of Merck KGAA's best-selling injectable product Rebif (interferon beta-1a), whose sales markedly declined in the 2015 second quarter.</p><p>Although currency exchange rate tailwinds of 11.3% helped to maintain Rebif's reported sales at &euro;461m in the quarter, without those tailwinds Rebif sales were down 13% compared with the same quarter last year. "We don't expect this trend to reverse over the next few years," commented company CFO Marcus Kuhnert in Aug. 8 briefings on Merck's second-quarter financial results.</p><p>But the German multinational said it wasn't giving up on Rebif. "We are still committed to Rebif and we will fight for market share," Kuhnert said. The volume losses for Rebif in the EU and US in the 2015 second quarter were "slightly mitigated" by US price increases for the product, the company said.</p><p>The grim long-term outlook for Rebif is backed by recent comments from companies marketing new oral MS therapies that have more glowing prospects: Sanofi recently reported sales of its portfolio of new oral MS therapies were growing strongly and should reach blockbuster status in the near future.</p><p>One of big future hopes for Merck involves its multi-billion dollar collaboration with Pfizer Inc. on the development of immune-oncology products, including the clinical-stage PD-L1 inhibitor avelumab. Merck expects to issue an update on its progress with avelumab over the next several weeks, Kuhnert revealed.</p><p>"Up to 20 clinical development programs are expected to start in 2015 with avelumab, including six approval-relevant studies, and this year our healthcare business Merck Serono SA will spend &euro;1.4bn on R&D," Kuhnert said. This spending will increase in 2016 and in 2017, he added.</p><p>But the company is not putting "all its eggs in the same basket", Kuhnert said. He pointed to the advanced-stage product evofosfamide that is in Phase III clinical studies in pancreatic cancer and soft tissue sarcoma, and the company is evaluating a number of early-stage product opportunities. Further data from the evofosfamide studies should be available by the end of 2015, Kuhnert said.</p><h2>Asia Pacific Largest Sector</h2><p>Asia Pacific became the largest geographic sector for Merck KGaA during the second quarter, accounting for 33% of net sales compared with Europe accounting for 31% of sales and North America by 20%. Merck also sells liquid crystal displays for incorporation in digital displays, and overall growth in the Asia Pacific region was driven by sales in China and India. A new pharmaceutical manufacturing facility is nearing completion in Nantong, China.</p><p>The Merck executive also addressed concerns the acquisition of Sigma-Aldrich Corp. was being delayed, saying the $17bn all-cash acquisition was expected to close in September. Antitrust approvals are expected shortly from Brazil, and negotiations are underway to sell its solvents and inorganics businesses in Europe, as requested by the EU competition authorities. Organizational structures have been planned out, and integration will begin immediately after closing. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 242
+
+<p>New oral therapies for multiple sclerosis are starting to have their expected adverse effect on sales of Merck KGAA's best-selling injectable product Rebif (interferon beta-1a), whose sales markedly declined in the 2015 second quarter.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 75
+
+Merck KGaAs Rebif Facing Irreversible Decline Avelumab Update Expected Soon
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150731T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150731T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150731T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029446
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 77
+
+Merck KGaA's Rebif Facing Irreversible Decline, Avelumab Update Expected Soon
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{64DA3A31-2EAC-451B-9E20-7426CE8C307C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+Commentary
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359719
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+81368e34-4d74-4131-ba70-2564175f419b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

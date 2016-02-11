@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8E7D92A9-3101-4DF5-BF1C-19D849EB2B45}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/24/Strong UCB 1Q revenues hide weaker Cimzia performance
+parent: {AA6F50D5-126C-48B5-BD02-B1AAD79EE996}
+name: Strong UCB 1Q revenues hide weaker Cimzia performance
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 985fb424-fdf9-4057-bc01-d5abd151d608
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Strong UCB 1Q revenues hide weaker Cimzia performance
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Strong UCB 1Q revenues hide weaker Cimzia performance
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2854
+
+<p>Belgium's UCB reported strong revenue growth of 19% (11% at constant currencies) in the first quarter beating consensus, but one-off stocking of the epilepsy drug Keppra in the US hid a disappointing performance of its anti-inflammatory Cimzia in that market.</p><p>Revenues were up by 19% (11% at constant currencies) to &euro;895m, which was 6% above consensus, but sales of its four core products were 3% off and the company gave no change to its full-year outlook. </p><p>Net sales of Keppra (levetiracetam) were &euro;190m, up by 14% (+4% CER), but the stocking effects largely responsible for the extent of the rise are "not expected to reoccur in the next quarters", UCB said. Analysts at Jefferies noted that IMS scripts fell 14% year on year. "EU sales are tracking in-line with our estimates but Emerging Markets are ahead," they added.</p><p>UCB's other biggest products, Cimzia, Vimpat and Neupro had combined net sales of &euro;433m, +36% or +20% at constant currencies, but still 3% shy of consensus, Jefferies noted, mostly caused by weaker Cimzia, notably in the US, "but partly also Japanese ordering patterns." Together all four products accounted for 70% of the 1Q revenues. </p><p>The anti-TNF product Cimzia (certolizumab pegol) had net sales of &euro;227m, +42% (+24% CER), on the back of expanded indications of active psoriatic arthritis or severe active axial spondyloarthritis, versus consensus expectations of &euro;241m. UCB said: "Cimzia net sales in Japan are reflecting the order pattern of our partner while the in-market growth was positive (+36%)."</p><p>Anti-epileptic drug Vimpat (lacosamide) had net sales of &euro;146m, (+39% or +20% CER) &ndash; the product has been additionally available since last September as a monotherapy for partial onset seizures. Neupro (rotigotine) for Parkinson's and restless legs syndrome had net sales up by 14% (+8% CER) at &euro;60m.</p><p>UCB confirmed its financial outlook for 2015 saying that revenues for the full year should reach &euro;3.55-3.65bn; recurring EBITDA should increase to approximately &euro;710-740m. Core earnings per share (EPS) are expected in the range of &euro;1.90-2.05 based on an average of 193.7 million shares outstanding, it added.</p><h2>pipeline</h2><p>CEO Jean-Christophe Tellier said the company was making good progress on its pipeline. It started the Phase III program for Vimpat in primary generalized tonic-clonic seizures on schedule in April, but the first headline results are not expected until 2019, a longer timeframe than Jefferies analysts had expected. </p><p>"There is no update on the potential disposal of [its US generic drug unit] KUDCo, or the plans for its US generic Concerta (methylphenidate ER) which we understand could be withdrawn next month depending on the upcoming bioequivalence data," the analysts added. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 266
+
+<p>Belgium's UCB reported strong revenue growth of 19% (11% at constant currencies) in the first quarter beating consensus, but one-off stocking of the epilepsy drug Keppra in the US hid a disappointing performance of its anti-inflammatory Cimzia in that market.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Strong UCB 1Q revenues hide weaker Cimzia performance
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150424T224444
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150424T224444
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150424T224444
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028597
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Strong UCB 1Q revenues hide weaker Cimzia performance
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358063
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+985fb424-fdf9-4057-bc01-d5abd151d608
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {6AB2C34D-FE8A-46F5-973C-C47A371C073B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/11/Teva Actavis among Sovaldi patent challengers in Europe
+parent: {C813A924-FA67-4ACD-BC54-776E67623CD6}
+name: Teva Actavis among Sovaldi patent challengers in Europe
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0e7a2865-fc4d-42d9-81cc-ce7da37d268e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Teva, Actavis among Sovaldi patent challengers in Europe
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Teva Actavis among Sovaldi patent challengers in Europe
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4698
+
+<p>There appears to be quite a formidable queue of challengers to Gilead's Sovaldi (sofosbuvir) patent at the European patent office (EPO).</p><p>Those who've filed oppositions include Teva Pharmaceutical Industries, Generics UK (part of Mylan), Actavis, Stada and Polpharma (see table), in addition to the French charity Médecins du Monde's (MdM; Doctors of the World) <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/Charity-seeks-to-overturn-European-Sovaldi-patent-356676%5d" target="_new">(scripintelligence.com 10 February 2015)</a>.The US based non-profit group, Initiative for Medicines, Access and Knowledge (I-MAK), has collaborated with MdM's European patent attorney to write the dossier for the European opposition. </p><p>Teva UK confirmed to <i>Scrip</i> that that it had opposed the Sovaldi patent ''together with nine other opponents'', while Actavis and Mylan declined comment, including on whether a date for a hearing had been set. </p><p>Significantly, Mylan is expected to begin distribution of Sovaldi, priced at $300per bottle/per month, in India in 2Q <a href="http://%5bhttp:/www.scripintelligence.com/business/Gileads-10.71-Sovaldi-to-set-ceiling-for-other-Indian-entrants-356937%5d" target="_new">(scripintelligence.com 25 February 2015)</a>. </p><p>Stada did not immediately respond to an e-mail request for comment. </p><table><tbody><tr><td><p>OPPONENT</p>&nbsp;</td><td><p>LAW FIRM</p>&nbsp;</td></tr><tr><td><p>Teva Pharmaceutical Industries </p>&nbsp;</td><td><p>D Young & Co LLP</p>&nbsp;</td></tr><tr><td><p>Generics UK (trading as Mylan)</p>&nbsp;</td><td><p>Elkington and Fife LLP</p>&nbsp;</td></tr><tr><td><p>Pharmaceutical Works Polpharma SA</p>&nbsp;</td><td><p>Elkington and Fife LLP</p>&nbsp;</td></tr><tr><td><p>Actavis Group</p>&nbsp;</td><td><p>Maiwald Patentanwalts GmbH</p>&nbsp;</td></tr><tr><td><p>Stada Arzneimittel AG</p>&nbsp;</td><td><p>Maiwald Patentanwalts GmbH</p>&nbsp;</td></tr></tbody></table><p><p><p>Tahir Amin, co-founder and director of intellectual property at I-MAK, told <i>Scrip</i> that all the companies had ''copied the arguments'' I-MAK/MdM has made in its oppositions. </p><p>MdM has claimed that the opposed patent, at its effective date, is merely a list of 1000s of compounds of ''unknown activity'' for the most part. It claims that this is aimed at reserving an ''unexplored field of research'' instead of protecting factual results of successful research as a reward for making concrete technical results available to the public.</p><p>''Sofosbuvir itself does not have any support in the application as filed,'' MdM said.</p><p>The French charity also notes, among a string of other arguments, that sofosbuvir follows from the ''normal evolution'' of technic, simply ''aggregating'' the contributions of various researchers from the scientific community. </p><p>''Thus the nucleoside analog found in sofosbuvir was known in the art and the use of phosphoramidates such as the phenyl-phosphoramidate of L-alanine isopropyl ester found in sofosbuvir was also well documented in the art as a means to provide antiviral nucleotides analogs by bypassing the blockade of the first phosphorylation,'' the opposition notes.</p><p>It also claims that the subject matter of the Sovaldi European patent is not novel.</p><p>Similarly, Teva has claimed that the conclusions reached by the patent examining division were not based on the entire relevant prior art. The Israeli firm noted that claims relate to a phosphoramidate derivative or a modified nucleoside.</p><p>''The nucleoside was known before the priority date and the concept of developing a phosphoramidate prodrug form of such nucleoside in order to effectively deliver such nucleoside for its intended anti-viral effect was well known before the priority date,'' Teva said.</p><p>It added that the claimed derivatives represent ''no more than routine modifications'' obtained by the application of generally known techniques available at the priority date.</p><p>Earlier, Park Grove IP, a UK-based patent attorney firm, had, with reference to the MdM opposition, suggested that it seemed ''inherently unlikely'' that knocking out the prodrug patent would remove all relevant barriers to market entry for generic versions of Sovaldi.</p><p>Meanwhile, most opponents have sought that the opposed patent be revoked in its entirety. ''Oral proceedings are requested if the patent is not to be revoked on the basis of the written submission alone,'' Teva said in its opposition.</p><p>It's not immediately clear if the patent oppositions could have any impact at all on Gilead's combination hepatitis C product Harvoni (sofosbuvir and ledipasvir).</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 143
+
+<p>There appears to be quite a formidable queue of challengers to Gilead's Sovaldi (sofosbuvir) patent at the European patent office (EPO).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Teva Actavis among Sovaldi patent challengers in Europe
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150311T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150311T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150311T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028071
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Teva, Actavis among Sovaldi patent challengers in Europe
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357141
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042308Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0e7a2865-fc4d-42d9-81cc-ce7da37d268e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042308Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {C4DF4EDE-613D-4E41-99DF-86EA896BA3EB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/19/Court Actavis Namenda hard switch coercion anticompetitive
+parent: {739B9BD0-B1A1-42BA-9C1C-FF9F9E7958ED}
+name: Court Actavis Namenda hard switch coercion anticompetitive
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2a76be66-3136-414a-8c45-d61f99f3eabf
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Court: Actavis' Namenda hard switch 'coercion,' 'anticompetitive'
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Court Actavis Namenda hard switch coercion anticompetitive
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5291
+
+<p>A three-judge panel from the US Court of Appeals for the Second Circuit in New York on 22 May upheld a lower court's ruling ordering Actavis to keep its twice-daily immediate-release version of its Alzheimer's drug Namenda (memantine hydrochloride) on the US market &ndash; declaring the firm's plan for a "forced switch" to a newer version before generics are available is "coercion" and "anticompetitive."</p><p>The case could have broad implications for drug makers that seek to market improved versions of their prescription medications.</p><p>The patent for Namenda IR is set to expire in July. Actavis has been trying to get doctors to switch Alzheimer's patients to the extended-release version of the drug, which has patent protection until 2029. </p><p>But by taking Namenda IR off the US market before generics are available, New York Attorney General Eric Schneiderman charged that such a scheme was an attempt to impede competition &ndash; insisting Actavis and its US subsidiary Forest Laboratories would essentially be forcing patients to switch to the newer branded, and more expensive, medicine.</p><p>Mr Schneiderman asserted that once patients were on Namenda ER, doctors may be reluctant to move them to the generic formulation &ndash; which essentially would allow Actavis to "insulate its profits from competition."</p><p>And, he said, pharmacists would not be permitted to switch the Namenda XR with a lower cost generic version of the IR product without a doctor's approval &ndash; resulting in patients likely paying for the higher-priced drug because of the difficulty involved in getting the prescription changed. </p><p>"A drug company manipulating vulnerable patients and forcing physicians to alter treatment plans unnecessarily simply to protect corporate profits is unethical and illegal," Mr Schneiderman said last fall shortly after he filed a lawsuit trying to stop Actavis from halting sales of the older Namenda.</p><p>He said such "product-hopping" schemes are a growing trend in the US.</p><p>By standing up to Actavis, Mr Schneiderman said he was "sending a clear message to all pharmaceutical companies: prioritizing profits over patients' rights will not be tolerated."</p><p>But Actavis said it wanted to remove Namenda IR from the market because the once-daily extended-release product is a more superior drug over the older version.</p><p>The New York attorney general, however, has insisted Actavis should be able to offer patients a choice between both products rather than forcing them to switch to Namenda XR. </p><p>But, Mr Schneiderman said, "Actavis knows that its profits will take a hit once the Namenda patent expires, and is seeking to blunt the financial impact." </p><p>Mr Schneiderman pointed out that Actavis CEO Brenton Saunders last year admitted during an earning call that generics would have a more difficult time if the company did a hard switch.</p><p>Going that route, the Actavis chief said, also would allow the company to "go into a slow decline versus a complete cliff" with Namenda IR. </p><p>This past December, Judge Robert Sweet of the US District Court for the Southern District of New York in Manhattan told Actavis it had to keep making Namenda IR available to patients while the antitrust lawsuit brought by Mr Schneiderman was being fought in the courts.</p><p>Actavis tried to persuade the appeals court <a href="http://www.scripintelligence.com/home/Actavis-Namenda-case-could-trigger-more-product-hopping-scrutiny-357862" target="_new">last month</a> to overturn Judge Sweet's order.</p><p>The company said the injunction would lead to a loss of $200m this year for the firm.</p><p>But the Second Circuit panel on 22 May agreed with Judge Sweet &ndash; ordering that by removing the older Namenda from the market before generic entry was depriving consumers of the opportunity to evaluate whether the added costs for the extended release drug was worth it over a generic version of the immediate-release medicine.</p><p>"Today's appeals court decision is a sweeping victory for consumers and Alzheimer's patients," Mr Schneiderman declared. "Our lawsuit and the court's injunction protect competition and prevent Actavis from coercing Alzheimer's patients into taking drugs they do not want in order to charge them monopoly prices." </p><p>While Mr Saunders said his firm was disappointed in the appeals court's decision, he said the company intends to "continue our strong efforts to convey the significant benefits of Namenda XR to physicians, patients and caregivers."</p><p>Mr Saunders said patient demand for Namenda XR currently is trending at more than 50% of the total product line's days of therapy and was growing &ndash; "underscoring the strong physician, patient and caregiver demand for our once-daily product." </p><p>The Actavis chief noted the company recently launched once-daily Namzaric, a fixed-dose combination of Namenda XR and donepezil as a treatment for moderate-to-severe Alzheimer's disease. </p><p>Actavis said it would continue to manage sales and R&D expenses to ensure that the appeals court's decision would have "minimal to no impact" on its 2015 Namenda franchise contribution to earnings "and longer term company earnings aspirations."</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 414
+
+<p>A three-judge panel from the US Court of Appeals for the Second Circuit in New York on 22 May upheld a lower court's ruling ordering Actavis to keep its twice-daily immediate-release version of its Alzheimer's drug Namenda (memantine hydrochloride) on the US market &ndash; declaring the firm's plan for a "forced switch" to a newer version before generics are available is "coercion" and "anticompetitive."</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Court Actavis Namenda hard switch coercion anticompetitive
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150519T105400
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150519T105400
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150519T105400
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028812
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Court: Actavis' Namenda hard switch 'coercion,' 'anticompetitive'
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358486
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042350Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2a76be66-3136-414a-8c45-d61f99f3eabf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042350Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

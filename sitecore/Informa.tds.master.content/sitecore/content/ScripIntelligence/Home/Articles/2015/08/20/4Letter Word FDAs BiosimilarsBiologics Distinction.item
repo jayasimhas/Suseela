@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {88C475E8-EEB9-4A93-8AA4-C7DE8D4BC436}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/20/4Letter Word FDAs BiosimilarsBiologics Distinction
+parent: {34CAE052-3989-4BC7-BA14-1EF803FF3625}
+name: 4Letter Word FDAs BiosimilarsBiologics Distinction
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: bc5c40d6-ea28-460e-89bb-7a202d21a609
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+4-Letter Word: FDA's Biosimilars/Biologics Distinction
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+4Letter Word FDAs BiosimilarsBiologics Distinction
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7901
+
+<p>The FDA wants all biologics, including biosimilars, to carry a unique four-letter suffix as part of the nonproprietary names (INNs) of the active drug substance, the agency revealed on Aug. 27 in a draft guidance document and a proposed rule &ndash; giving a big win to innovator manufacturers, which have insisted on imposing distinguishable names on the copycats.</p><p>The FDA's proposed rule means some name changes to the INNs within the next three months for Sandoz's new biosimilar Zarxio, Teva's Graxnix, Johnson & Johnson's Remicade and Amgen's Neupogen, Neulasta and Epogen, which also is sold under the brand name Procrit by J&J.</p><p>The Generics Pharmaceutical Association and its related biosimilar trade group have long opposed such a scenario, arguing the established INN system has worked effectively for small molecules around the world and should be continued for biosimilars in the US.</p><p>"The additional suffix proposed will needlessly complicate the prescribing system and create confusion between physicians and pharmacists," said biosimilar maker Pfenex, which contended drugs approved in the US already have unique codes that identify them and indicate which company produced them. </p><p>"This additional bureaucracy will inhibit biosimilars uptake, creating roadblocks to the cost savings biosimilars provide to patients and payers," the firm said.</p><p>But not all biosimilar makers are on board with that idea.</p><p>A group calling itself the Biosimilars Forum, which consists of a mixed bag of traditionally brand-name and generic firms &ndash; Allergan, Amgen, Boehringer Ingelheim, Coherus BioSciences, EMD Serono, Hospira, Merck, Pfizer, Samsung, Sandoz and Teva &ndash; praised the FDA for taking the approach that "each biosimilar is a unique drug."</p><p>The forum said that "important distinction" supports its <a href="http://www.scripintelligence.com/home/Biosimilars-face-uncertain-market-if-CMS-payment-plan-proceeds-359795" target="_new">opposition</a> to the proposed rule by the Center for Medicare & Medicaid Services to use the same Medicare Part B reimbursement codes for all biosimilars based on the same reference &ndash; a plan the group asserted "may limit the future treatment options."</p><p>Some of the forum's members, specifically Sandoz and Hospira, have previously objected to the idea of adding a prefix or suffix to the INN.</p><p>The FDA said having the distinct suffixes on all biological products would help prevent inadvertent substitution of biosimilars that have not been determined to be interchangeable by the agency.</p><p>"Confusion may arise among health care providers who, based on their experience with small-molecule drugs and generic versions of those drugs, may incorrectly assume the use of the same proper name to mean that the biological products are interchangeable," the FDA said.</p><p>The unique suffixes also would make it easier to accurately trace an adverse event back to the correct innovator biologic or biosimilar a patient was taking, the agency said.</p><p>Regulators emphasized biological products with the same active drug substance would use the same core INN, which would indicate a relationship among the products. </p><p>The placement of the identifier as a suffix in biologicals with the same core name being grouped together in electronic databases should help health care providers more easily identify those products, regulators said. </p><p>The FDA said it intends to apply the naming convention outlined in its draft guidance, Nonproprietary Naming of Biological Products &ndash; which regulators had been <a href="http://www.scripintelligence.com/policyregulation/Biosimilars-social-media-among-2015-expected-FDA-guidances-355960" target="_new">promising to release since January</a> &ndash; to biosimilars deemed interchangeable.</p><p>But the agency also wants the public to weigh in on whether the FDA should consider two alternative approaches: A unique suffix that distinguishes an interchangeable product from other biologicals sharing the same core name or a suffix shared with the innovator reference product.</p><p><b>Identity Change</b></p><p>While the FDA said it intends to apply its naming policy to newly licensed and previously approved biologicals, it said it was continuing to consider the "most effective" regulatory approach to implement the convention for previously licensed products.</p><p>But in the near term, the FDA wants to assign distinguishing suffixes to the INNs of six previously licensed biological products, which either are a reference product for an approved or publicly disclosed biosimilar application or a product that's either biosimilar to or related to one of the reference products &ndash; having that action put in place within the next 90 days under a proposed rule.</p><p>The six products are Sandoz's Zarxio (filgrastim-sndz) &ndash; the first biosimilar cleared for the US market &ndash; filgrastim, sold by Amgen as Neupogen; tbo-filgrastim, marketed by Teva as Granix; pegfilgrastim, sold by Amgen as Neulasta; epoetin alfa, which is marketed by Amgen as Epogen and by Johnson & Johnson's under a license from the California firm as Procrit; and infliximab, which is sold by J&J's Janssen unit as Remicade. </p><p>The firms will need to submit supplemental biologics license applications to the FDA with the amended INNs. The FDA said it would work with the companies to minimize any manufacturing and distribution disruptions.</p><p>When Zarxio was <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">approved in March</a>, the agency designated "sndz" as a four-letter "placeholder."</p><p>But the FDA wants to change that suffix to "bflm."</p><p>Regulators said the distinguishing "sndz" suffix designated at the time of licensure was "derived from the name of the license holder" &ndash; Sandoz. </p><p>While the FDA said the four-letter suffixes added to the INN are intended to be devoid of meaning, it wants to hear from the public about whether the agency should consider "meaningful suffixes," like those derived from the name of the license holder.</p><p>Meanwhile, the FDA said the INN for Amgen's innovator Neupogen should incorporate the suffix "jcwp" into its name &ndash;"filgrastim-jcwp." </p><p>Regulators also want to designate the official name of "filgrastim-vkzt" for Teva's Granix, <a href="http://www.scripintelligence.com/home/Tomatotomahto-Teva-tbo-filgrastim-OKd-but-FDA-says-not-biosimilar-to-Neupogen-334470" target="_new">approved in 2012</a> &ndash; declaring "tbo-filgrastim" is no longer useful.</p><p>The FDA said the elimination of the "tbo" prefix from Granix's INN also would help avoid confusion about its relationship with Neupogen and Zarxio.</p><p>"The placement of the identifier as a suffix should result in an originator product, a related biological product, and a biosimilar product being grouped together in electronic databases, yet remaining distinguishable, which should help health care providers identify these products," the agency said.</p><p>The FDA has proposed adding "cgkn" to the Epogen's and Procrit's INN epoetin alfa.</p><p>And regulators also are proposing adding "hjmt" to infliximab and "ljfd" to pegfilgrastim.</p><p>The FDA noted there are "publicly disclosed" 351(k) applications pending for biosimilars of pegfilgrastim from Apotex, epoetin alfa from Hospira and infliximab from Celltrion.</p><p>The agency had a quick turnaround time of its proposed rule, dubbed <i>Designation of Official Names and Proper Names for Certain Biological Products</i> &ndash; submitting it for review on Aug. 21 to the White House Office of Management and Budget, which quickly signed off on it on Aug. 25, according to a notice posted on the US government's reginfo.gov website. </p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 372
+
+<p>The FDA wants all biologics, including biosimilars, to carry a unique four-letter suffix as part of the nonproprietary names (INNs) of the active drug substance, the agency revealed on Aug. 27 in a draft guidance document and a proposed rule &ndash; giving a big win to innovator manufacturers, which have insisted on imposing distinguishable names on the copycats.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+4Letter Word FDAs BiosimilarsBiologics Distinction
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150820T190000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150820T190000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150820T190000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029615
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+4-Letter Word: FDA's Biosimilars/Biologics Distinction
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360052
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bc5c40d6-ea28-460e-89bb-7a202d21a609
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

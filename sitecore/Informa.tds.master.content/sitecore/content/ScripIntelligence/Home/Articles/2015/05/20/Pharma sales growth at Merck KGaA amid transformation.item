@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {440A6861-59A5-43EB-948F-82FA165259EE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/20/Pharma sales growth at Merck KGaA amid transformation
+parent: {9272B77E-1398-4EF1-A77A-17C397C8C6D1}
+name: Pharma sales growth at Merck KGaA amid transformation
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: eb6533f6-3886-411a-bf1b-fc44247e5bdd
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Pharma sales growth at Merck KGaA amid 'transformation'
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Pharma sales growth at Merck KGaA amid transformation
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3253
+
+<p>Merck KGaA, which is expecting 2015 to be a "challenging year" as it goes through a "transformation period," has reported a solid first quarter. The German chemicals and pharmaceuticals firm signed a major deal with Pfizer last year in the immune-oncology space. </p><p>Merck said EBIDTA, excluding one-time items, was &euro;853m &ndash; up 6% on the first quarter last year. Analysts had estimated around &euro;863.5m. Revenues, however, rose by 16% to &euro;3.0bn &ndash; just ahead of estimates. Organically, sales grew by 1%.</p><p>Last year, Merck condensed its businesses into three core units: Healthcare, which will combine pharma and consumer health; Life Science; and Performance Materials. It also <a href="http://www.scripintelligence.com/business/Immune-oncology-central-to-Merck-KGaAs-pharma-growth-hopes-357071" target="_new">made moves</a> to strengthen all three of these units through acquisitions or collaborations. </p><p>It bought materials firm AZ Electronic Materials, started the process of buying Sigma-Aldrich for $17bn to strengthen its life science business, and struck a <a href="http://www.scripintelligence.com/home/Pfizer-sides-with-Merck-KGaA-on-PD-L1-AZ-deal-out-for-good-355101" target="_new">major strategic alliance with Pfizer</a> for the co-development of immune-oncology therapies. Merck is hoping to climb the pharma ranks over the next few years by investing heavily in its pipeline, with immune oncology a major focus of attention.</p><p>"We are pleased that all three business sectors grew despite a challenging environment," said Karl-Ludwig Kley, CEO of Merck. "We continue to expect slight organic sales growth for the full year as well."</p><p>In a conference call accompanying its first quarter results presentation, Merck said EU antitrust regulators had some concerns about its Sigma-Aldrich deal, but it expects to complete the acquisition in the middle of the year.</p><p>Healthcare sales were up by 7% to &euro;1.7bn, driven in particular by products to treat diabetes (Glucophage), cardiovascular diseases (Concor) and infertility, as well as by the brand Neurobion, which is marketed by the Consumer Health business. The company's top-selling drugs are Rebif for multiple sclerosis and cancer medicine Erbitux, however, sales of these drugs declined by 16% and 6% respectively compared with the same period last year.</p><p>"In 2015, we plan to invest heavily in immuno-oncology and together with Pfizer we want to build a strong position in this emerging research area," said Dr Kley. "A Phase III trial of avelumab in non-small-cell lung cancer was recently initiated. Up to five further trials that could be pivotal for product registrations are to start this year, also in gastric and bladder cancer." </p><p>The avelumab program contributed to a 16% rise in R&D costs to &euro;441m. Merck received $850m as part of the avelumab agreement with Pfizer, and may get $2bn if the product meets certain milestones. Some clinical data are due to be presented at ASCO.</p><p>Merck repeated its forecast for slight sales growth in 2015, and estimated EBITDA before certain items of &euro;3.45bn &euro;3.55bn. Sales are expected to rise to &euro;12.3bn to &euro;12.5bn (excluding Sigma-Aldrich).</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 270
+
+<p>Merck KGaA, which is expecting 2015 to be a "challenging year" as it goes through a "transformation period," has reported a solid first quarter. The German chemicals and pharmaceuticals firm signed a major deal with Pfizer last year in the immune-oncology space. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Pharma sales growth at Merck KGaA amid transformation
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150520T050003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150520T050003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150520T050003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028765
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Pharma sales growth at Merck KGaA amid 'transformation'
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358411
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042347Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eb6533f6-3886-411a-bf1b-fc44247e5bdd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

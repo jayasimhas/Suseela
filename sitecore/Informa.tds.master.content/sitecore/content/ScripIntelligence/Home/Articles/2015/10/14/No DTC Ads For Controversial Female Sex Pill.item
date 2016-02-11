@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1781F2F9-DD47-4424-B6C2-F53DA6DA8307}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/14/No DTC Ads For Controversial Female Sex Pill
+parent: {604E8046-5BA9-4567-9E2A-9612EB50B405}
+name: No DTC Ads For Controversial Female Sex Pill
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4e9e0795-b599-4590-ae9c-eca22c8f2d09
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+No DTC Ads For Controversial Female Sex Pill
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+No DTC Ads For Controversial Female Sex Pill
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4699
+
+<p>The controversial libido-boosting pill Addyi (flibanserin) was launched in the US over this past weekend with little fanfare &ndash; and no direct-to-consumer (DTC) ads, or at least, not yet.</p><p>Even the drug's maker, Sprout Pharmaceuticals Inc., now part of Valeant Pharmaceuticals International Inc., waited until Oct. 19 to issue a press release.</p><p>But Valeant CEO Michael Pearson said Sprout has lined up 148 sales representatives and has hired eight so-called medical science liaisons under the Addyi marketing effort.</p><p>Sprout said it was making Addyi available under what it called "affordable and innovative" programs "for as little as $20 per prescription" in the US, where it is <a href="http://www.scripintelligence.com/home/FDA-Embraces-Sex-Pill-For-Women-Restrictions-Apply-360015" target="_new">approved</a> as a treatment for acquired, generalized hypoactive sexual desire disorder in premenopausal women &ndash; a condition characterized by low sexual desire that causes marked distress or interpersonal difficulty and is not due to a co-existing medical or psychiatric condition, problems within the relationship or the effects of a medication or other drug substance. </p><p>Sprout earlier said it had anticipated insurers would make Addyi a second- or third-tier drug, with co-pays for patients ranging from $30 to $75, which the company argued was similar to what men pay for drugs like Pfizer's Viagra (sildenafil) and other PDE5 inhibitors.</p><p>In August, Sprout's CEO Cindy Whitehead had pledged to provide co-pay assistance cards to help offset out-of-pocket expenses for patients prescribed Addyi.</p><p>Pearson acknowledged Valeant and Sprout must still submit the Addyi marketing materials to the FDA's Office of Prescription Drug Promotion for the agency's pre-dissemination inspection.</p><p>He emphasized there currently are no plans for DTC ads "at this time" for the once-daily pill, which gained the FDA's nod on <a href="http://www.scripintelligence.com/home/FDA-Embraces-Sex-Pill-For-Women-Restrictions-Apply-360015" target="_new">Aug. 18</a>, but not without first being twice before rejected over <a href="http://www.scripintelligence.com/home/Bumps-May-Grind-Female-Sex-Pills-Sales-360016" target="_new">safety and efficacy concerns</a>.</p><p>Because of the drug's serious risks of hypotension, or low blood pressure, and fainting, which get severely worse with alcohol use, the FDA imposed a strict risk evaluation and mitigation strategy (REMS) plan on Addyi, which includes elements to assure safe use &ndash; something a <a href="http://www.scripintelligence.com/home/FDA-panel-backs-female-sex-pill-but-multiple-caveats-358749" target="_new">panel of the agency's outside advisers</a> insisted must be in place for the drug to be marketed in the US.</p><p>At the June 4 joint meeting of the FDA's the Bone, Reproductive and Urologic Drugs and Drug Safety and Risk Management Advisory Committees, several panelists, as well as some consumer groups, had cited the drug's risks as a reason Sprout should hold off on the DTC ads.</p><p>Addyi is only available through a strict distribution program, which requires prescribers to be certified in the REMS program, which involves enrolling in and completing training. </p><p>Doctors also must counsel patients about the drug's risks of hypotension and fainting and warn them off of alcohol during Addyi treatment &ndash; getting them to sign off on an agreement form attesting they understand those risks and conditions.</p><p>Additionally, only pharmacies that are certified under the Addyi REMS program may dispense the drug. They also are required to counsel patients about not drinking alcohol while taking Sprout's product, making it likely some pharmacies may not want to carry Addyi.</p><p>The drug's labeling also carries a black-box warning alerting prescribers about the risks of severe hypotension and fainting in patients who drink alcohol during treatment with Addyi. </p><p>Alcohol use is actually contraindicated with the drug.</p><p>The boxed warning also notes severe hypotension and syncope can occur when Addyi is used with moderate or strong CYP3A4 inhibitors or in patients with hepatic impairment, so it's also contraindicated in those settings.</p><p>Sprout must conduct three postmarketing studies in women to better understand the known serious risks of the interaction between Addyi and alcohol.</p><p>The initial alcohol interaction study the FDA requested to be conducted with Addyi only included two women out of the 25 participants.</p><p>Pearson said the companies expect to begin the alcohol studies for Addyi later this quarter.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 198
+
+<p>The controversial libido-boosting pill Addyi (flibanserin) was launched in the US over this past weekend with little fanfare &ndash; and no direct-to-consumer (DTC) ads, or at least, not yet.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+No DTC Ads For Controversial Female Sex Pill
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151014T090001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151014T090001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151014T090001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030093
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+No DTC Ads For Controversial Female Sex Pill
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361033
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4e9e0795-b599-4590-ae9c-eca22c8f2d09
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

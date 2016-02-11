@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {8EE9720C-3A8D-4355-93CC-D9F9FAEAE41B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/11/Forxiga debuts in India at fraction of global prices
+parent: {0C4E4294-FE7F-444B-9DB5-24F666F256E8}
+name: Forxiga debuts in India at fraction of global prices
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 44b3bded-6024-4d79-830f-15e9b3de58ab
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Forxiga debuts in India at fraction of global prices
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Forxiga debuts in India at fraction of global prices
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3806
+
+<p>The Indian diabetes segment continues to buzz with action. Close on the heels of going through with a second brand plan for saxagliptin, AstraZeneca Pharma has launched Forxiga (dapaglifozin), for type 2 diabetes, on the Indian market at a fraction of international prices.</p><p>Forxiga, a sodium-glucose cotransporter-2 (SGLT2) inhibitor, is available at INR43($0.67) per dose for 10mg in India &ndash; "competitively" priced with other innovative anti-diabetes drugs on the market. </p><p>"In line with our commitment to deliver our treatment solutions to more patients, we have priced it 75% lesser in India as compared to developed markets," Sanjay Murdeshwar, managing director, AstraZeneca Pharma India, told <i>Scrip</i>.</p><p>Internationally, Forxiga is the first medicine in the new SGLT2 inhibitor class to gain regulatory approval for the treatment of type 2 diabetes mellitus, though in India it appears to have been pipped to the market by Janssen's Invokana (canagliflozin).</p><p>Janssen then said that the <a href="http://%5bhttp:/www.scripintelligence.com/business/Responsibly-priced-Invokana-debuts-in-India-357917%5d" target="_new">daily cost of therapy</a> with Invokana is INR51, generally comparable with the newer treatment options available in the country and a fraction of the product's US cost, reported in some sections of the media to be in the region of around $8.77 per pill (wholesale price). </p><p>A launch of Boehringer Ingelheim/Eli Lilly's Jardiance (empagliflozin) is also widely anticipated in India.</p><p>Asked whether the <a href="http://%5bhttp:/www.scripintelligence.com/home/AstraZeneca-Lilly-JandJ-dinged-by-FDA-SGLT2-alert-358454%5d" target="_new">US FDA's recent observations</a> that SGLT2 inhibitors may cause ketoacidosis could potentially cloud their outlook in India, Mr Murdeshwar said that Forxiga was not recommended for patients with type 1 diabetes or for the treatment of diabetic ketoacidosis. </p><p>"Forxiga is indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus. AstraZeneca has a robust pharmacovigilance program for our products and will continue to evaluate information in our safety databases related to diabetic ketoacidosis in patients exposed to Forxiga. AstraZeneca is committed to communicating appropriately about our medicines and the safety profiles of our therapies for type 2 diabetes." </p><p>The AZ India boss also added that the company monitors the use of its medications through "comprehensive surveillance programs", and works with health authorities and scientific experts to help ensure patients and physicians have a clear understanding of the risk benefit profile of its medications.</p><p>Forxiga is currently approved in more than 40 countries. It was cleared by the Drugs Controller General of India on 25 February this year supported by a broad clinical development program comprising 11,801 patients in various clinical studies evaluating the product's safety and efficacy. </p><p>AstraZeneca India already offers a range of diabetes treatments in India &ndash; Onglyza (saxagliptin) and Kombiglyze XR (saxagliptin and metformin) in the DPP-4 inhibitor and Byetta in the GLP1 analogue treatment segments. Last month AstraZeneca unveiled <a href="http://%5bhttp:/www.scripintelligence.com/business/AstraZeneca-unveils-second-brand-play-in-India-358707%5d" target="_new">a second-brand plan</a> with Dr Reddy's Laboratories for saxagliptin and its combination with metformin. </p><p>India has about 65 million diabetics, while 77.2 million Indians are seen as pre-diabetic (impaired fasting glucose and/or impaired glucose tolerance). Worse still, just a fraction of diabetes patients in India, leading physicians say, get "appropriate" treatment.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 280
+
+<p>The Indian diabetes segment continues to buzz with action. Close on the heels of going through with a second brand plan for saxagliptin, AstraZeneca Pharma has launched Forxiga (dapaglifozin), for type 2 diabetes, on the Indian market at a fraction of international prices.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Forxiga debuts in India at fraction of global prices
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150611T180003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150611T180003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150611T180003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028964
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Forxiga debuts in India at fraction of global prices
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358820
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042401Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+44b3bded-6024-4d79-830f-15e9b3de58ab
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042401Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

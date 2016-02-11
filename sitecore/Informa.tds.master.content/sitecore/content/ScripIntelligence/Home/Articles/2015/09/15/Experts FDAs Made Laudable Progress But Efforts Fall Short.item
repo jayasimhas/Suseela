@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {446621F1-971D-40A6-8828-3D8EE560C5C9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/15/Experts FDAs Made Laudable Progress But Efforts Fall Short
+parent: {60DD0A61-687E-4825-852F-A2FA9D0FA023}
+name: Experts FDAs Made Laudable Progress But Efforts Fall Short
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d79b8786-9234-4517-9406-c5ab1756103e
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Experts: FDA's Made 'Laudable' Progress, But Efforts Fall Short
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Experts FDAs Made Laudable Progress But Efforts Fall Short
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6957
+
+<p>While the FDA has made "extensive, transformative and laudable" progress since a scathing 2007 report by a subcommittee of the agency's Science Board condemned regulators for failing to fulfill their mission because of a weak scientific base and lack of scientific workforce, the same panel of outside expert advisers in a new analysis, unveiled on Sept. 18, identified a number of areas in which improvements continue to be needed. </p><p>Specifically, the subcommittee said that to better support biomedical innovation, the FDA needs to facilitate the qualification of biomarkers, including surrogate endpoints, for evaluation of new therapies and provide guidance on how new biomarkers can be qualified as surrogate endpoints.</p><p>The panel also said the agency must increase the efficiency and lower the cost of clinical studies by facilitating the development and encouraging the use of clinical trial networks and master protocols. </p><p>In its report, Mission Possible: How FDA Can Move at the Speed of Science, the subcommittee said regulators should expand ongoing access to external experts in emerging technologies to help accelerate approvals.</p><p>In addition, the expert advisers said the FDA should use new data-mining and analytical tools to evaluate the efficacy and safety of new medical products, including full deployment of the agency's Sentinel system &ndash; an active risk identification and analysis database that uses electronic health records representing about 178 million patients from 18 healthcare plan data partners, which retain the physical and operational control over their data, to track medical product safety issues &ndash; which the subcommittee said should be expanded to include medical devices.</p><p>They also said the FDA's quality control procedures have failed to keep pace with the advances being made in research and product development and said the agency needs to the use of the latest DNA technology to characterize medical products, including vaccines, and to ensure their purity and safety.</p><p>Also among its recommendations, the subcommittee said the FDA should expand the use of appropriate analytic methods for assessing purity of products made using nanotechnology.</p><p>The science advisers also scolded the FDA for having "decades-old" toxicology principles and approaches and for being too slow in completing the work needed to modernize those programs.</p><p>They urged the FDA to adopt the latest technologies to identify and qualify biomarkers of toxicity.</p><p>While the FDA has successfully used collaborations with industry, academia, the U.S. health care system and other government agencies, the panel said the agency's efforts have fallen short and said regulators need to take a more assertive posture in identifying and designing new partnerships.</p><p>To do that, the subcommittee said the FDA should bring research universities and research-supporting foundations into play and use the Reagan-Udall Foundation as a catalyst for new initiatives.</p><p>They also recommended the agency establish a "portfolio approach" to extramural collaborative alliances, set priorities and match specific collaborations to the FDA's objectives and scientific needs.</p><p>In addition, the advisers said regulators need to identify structural hurdles to more effective collaborations &ndash; legal, policy or conflict-of-interest &ndash; and develop plans to seek statutory or policy change to overcome those barriers.</p><p>The subcommittee also advised the FDA to ascertain the level of increased funding needed to effectively increase collaborations and make enhanced funding a priority.</p><p>While the FDA has "clearly improved" its efforts to recruit and retain "outstanding" scientists, the panel said barriers to adequate training programs remain and restrictions on pay have reduced the applicant pool for "important" positions.</p><p>In addition, they said an "archaic and ponderous" human resources system has further impeded the FDA's ability to recruit "outstanding" talent.</p><p>Therefore, the subcommittee said the FDA needs to seek so-called "direct hire authority" for scientific staff for a period of no less than five years, which they said could help the agency more rapidly fill current vacancies "without having to fulfill the cumbersome and time-consuming procedures required by current civil service hiring authorities."</p><p>"Outstanding and senior scientists" should be paid up to as much as President Barack Obama currently makes &ndash; $400,000 &ndash; so the science panel said the FDA needs to seek the authority from Congress to offer special pay levels.</p><p>They said the FDA also needs to ensure its scientists are given the training and continuing education opportunities they need to keep up with advances in their disciplines, so the agency needs to urge Congress to relax rules limiting attendance at scientific conferences.</p><p>The Science Board's subcommittee also noted in its report that the advisers were concerned the Congress is seeking to impose significant new demands on the FDA under an effort to overhaul the U.S. biomedical enterprise, but so far has not matched the amounts of funding &ndash; <a href="http://www.scripintelligence.com/home/FDA-1bn-needed-to-cover-Cures-costs-358495" target="_new">about $1bn</a> &ndash; the agency and the Congressional Budget Office both said would be needed to do the job of implementing the provisions, or at least those included in the House's <i>21st Century Cures Act</i>. The Senate has yet to disclose what types of funding and measures it has in mind.</p><p>"The subcommittee expresses its strong opinion that an unfunded mandate of that magnitude could set back the progress of medical product development by forcing FDA to divert its scientific staff away from its currently successful review programs, thus harming patients and the progress of biomedical innovation," the experts advisers said. </p><p>"With responsibilities have to come the resources to carry them out correctly," acting FDA Commissioner Stephen Ostroff told reporters on Sept. 18 &ndash; reiterating a sentiment he'd expressed just a week earlier at a <a href="http://www.scripintelligence.com/home/FDAs-Evolving-But-Into-What-360398" target="_new">Washington forum</a> and during the Science Board's <a href="http://www.scripintelligence.com/home/User-fees-Cures-elections-FDA-bracing-for-the-crash-359689" target="_new">July meeting</a>. </p><p>But those worries may soon be the concerns of <a href="http://www.scripintelligence.com/home/A-Califf-Regime-The-Disruptor-FDA-Industry-Needs-360491" target="_new">Robert Califf</a>, deputy commissioner for medical products and tobacco at the FDA, who President Barack Obama has <a href="http://www.scripintelligence.com/home/Califf-Praised-As-Thoughtful-Choice-To-Lead-FDA-360469" target="_new">nominated</a> to lead the agency.</p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 440
+
+<p>While the FDA has made "extensive, transformative and laudable" progress since a scathing 2007 report by a subcommittee of the agency's Science Board condemned regulators for failing to fulfill their mission because of a weak scientific base and lack of scientific workforce, the same panel of outside expert advisers in a new analysis, unveiled on Sept. 18, identified a number of areas in which improvements continue to be needed. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Experts FDAs Made Laudable Progress But Efforts Fall Short
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150915T234310
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150915T234310
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150915T234310
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029814
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Experts: FDA's Made 'Laudable' Progress, But Efforts Fall Short
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360467
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042451Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d79b8786-9234-4517-9406-c5ab1756103e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

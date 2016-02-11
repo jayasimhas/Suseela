@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {26ED355C-A805-44EF-8A02-1F0B123CB959}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/13/1Q preview AbbVie Amgen AstraZeneca Biogen Lilly Novartis Roche
+parent: {9FB0ADDF-A2A3-44A3-B361-887553556EB6}
+name: 1Q preview AbbVie Amgen AstraZeneca Biogen Lilly Novartis Roche
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4f291856-d874-41c4-a4d6-4e1ef8f5ebf4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 73
+
+ 1Q preview: AbbVie, Amgen, AstraZeneca, Biogen, Lilly, Novartis, Roche  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+1Q preview AbbVie Amgen AstraZeneca Biogen Lilly Novartis Roche
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11791
+
+<p> Johnson &amp; Johnson set the tone for the first-quarter pharma financial reporting season on 14 April when it reported a 4% drop in sales due to currency fluctuations, although pharma beat expectations. </p> <p> <preform><script id="infogram_0__/07iyPXuNR0S8iRnGxTKu" src="//e.infogr.am/js/embed.js?coq" type="text/javascript"></script></preform></p> <p> Goldman Sachs' healthcare analysts believe that although the rise of the US dollar versus other currencies will have a noticeable negative impact on US companies, the &quot;FX sideshow&quot; will be &quot;upstaged by new drug data and deals&quot;: it sees several big players as potential bidders in major future transactions. Meanwhile, Gilead's domination of the hepatitis C space impacted J&amp;J's results, and AbbVie is likely to feel this too. Other looming concerns affecting several companies include speculation over how biosimilar competition will play out. </p> <h2> AbbVie </h2> <p> <b>1Q 2015 EPS estimate:</b> $0.85 per share, up from $0.71 in 1Q 2014 </p> <p> <b>1Q revenue estimate:</b> $4.96bn, up 8.8% from $4.56bn in the year-prior quarter </p> <p> <b>Earnings Announcement:</b> 23 April </p> <p> <b>What to watch for</b>: Investors and analysts alike have been worried about the performance of this company as its best-selling rheumatoid arthritis drug Humira (adalimumab) faces shrinking revenues from generic competition in the market, likely sooner rather than later. Adding to the dire situation is stiff competition from Gilead in the hepatitis C space and a pipeline that has yet to prove itself. Yet, analysts do see some bright spots. BMO Capital Markets analyst Alex Arfaei upgraded the stock to Outperform on 13 April based on the $19bn Pharmacyclics deal the company conducted in March. The analyst believes the biotech's cancer drug Imbruvica (ibrutinib) could eventually fill the Humira revenue gap, potentially reaching $7bn in sales. </p> <p> Expect AbbVie to talk up its oral JAK1 inhibitor filgotinib that it's developing with Galapagos &ndash; the pair recently announced positive data in a mid-stage rheumatoid arthritis. AbbVie has yet to take its option to in-license the program, but could shed more light on this decision during its first quarter earnings call. &quot;Filgotinib is one of several pipeline assets that we point investors to that we believe could provide opportunities for upside to ABBV, with Elagolix, venetoclax (ABT-199) and velaparib (ABT-888) being amongst the others,&quot; wrote Credit Suisse analyst Vamil Divan in a 14 April note. </p> <p> <h2> Amgen </h2> <p> <b>1Q 2015 EPS estimate:</b> $2.11 per share versus $1.87 in 1Q 2014 </p> <p> <b>1Q revenue estimate:</b> $4.91bn, 8.7% growth from $4.52bn in 1Q 2014 </p> <p> <b>Earnings Announcement:</b> 21 April </p> <p> <b>What to watch for:</b> Even though biosimilar competition threatens Amgen, analysts believe the company's oncology drugs could hold a lot of upside for the stock. Expect to hear commentary on lifecycle management for Neupogen (filgrastim) now that Novartis has gotten the FDA greenlight for its biosimilar version of the chemotherapy aid. Neupogen brought in $1.2bn in revenues for the big biotech in 2014 &ndash; only a small part of the $20bn Amgen pie. Yet, the company's strategy for combatting biosimilars will be of interest. Analysts are also interested in the biosimilars that Amgen itself is developing &ndash; the company currently has six in the works, including a version of AbbVie's blockbuster RA drug Humira. But those won't likely be earners for Amgen any time soon. </p> <p> A lot of Amgen's future potential rests with its multiple myeloma drug Kyprolis (carfilzomib). The drug has had lackluster sales since its initial 2012 approval, but currently is only approved for limited patient populations. Further data for the drug could help expand its reach. &quot;Amgen will host an investor event at ASCO to dissect the safety, as it appears confident that the clinical profile should cement Kyprolis' role with Revlimid/dex as a backbone of therapy. The relevance of prior Velcade should be addressed as well, and we wouldn&rsquo;t be surprised if Kyprolis is superior to Velcade even in Velcade-na&iuml;ve patients. We think ASCO will drive upward revisions to Amgen shares, with every 5pts share in 2nd/3rd line adding $180m in US sales in 2016 and 1% to EPS,&quot; wrote UBS analyst Dr Matthew Roden in a 7 April note. </p> <h2> AstraZeneca </h2> <p> <b>1Q 2015 EPS estimate:</b> &pound;1.10 per share versus &pound;1.17 in 1Q 2014 </p> <p> <b>1Q revenue estimate:</b> &pound;5.99bn versus &pound;6.42bn in 1Q 2014 </p> <p> <b>Earnings Announcement:</b> 24 April </p> <p> <b>What to watch for:</b> While the bulk of analysts supported CEO Pascal Soriot's efforts to fend off the hostile approach by Pfizer last year, most acknowledge that his promise of $45bn in sales by 2023 is a big reach, and there are many short-term challenges to overcome. AstraZeneca is expected to report a tough first quarter, as the erosion of Nexium sales finally start to hit, among other headwinds. Mr Soriot is particularly hopeful about AstraZeneca's immune-oncology franchise. Speaking earlier this year, he acknowledged that while the company was not a leader in field, when taking into account trials of promising compounds as monotherapies, &quot;our strategy is sound,&quot; he assured. Future successes will likely come from combinations of products, &quot;and here you could say we are at the front.&quot; Another &quot;dimension&quot; will come from combining immuno-oncology products with small molecules, and &quot;we are working on this.&quot; </p> <p> Next week's AACR meeting will see AstraZeneca present a bumper crop of abstracts. </p> <p> <h2> Biogen </h2> <p> <b>1Q 2015 EPS estimate: </b>$3.91 versus $2.47 in 1Q 2014 </p> <p> <b>1Q revenue estimate: </b>$2.66bn versus $2.13bn in 1Q 2014 </p> <p> <b>Earnings Announcement: </b>24 April </p> <p> <b>What to watch for:</b> Biogen, which has dropped Idec from its name, has ridden high this past year. The company's oral multiple sclerosis drug Tecfidera (dimethyl fumarate) helped drive group 2014 revenues up 40% on its first year on the market, while Tysabri (natalizumab), also for MS, grew strongly too. However, the explosive growth of Tecfidera has slowed and it will be interesting to see how quarter-on-quarter sales compare for the product: in the fourth quarter they were $916m and analysts are expecting 1Q sales of about $930m. There is a niggling doubt about the company's IP position for Tecfidera, with Forward Pharma of Denmark launching challenges and demanding damages for what it claims is Biogen Idec's infringement of its own patents. Meanwhile, the ongoing launch trajectory of Biogen's pegylated interferon beta1a product Plegridy will be of interest. There has been much recent activity and interest in Biogen's pipeline, and executives will likely face further questioning on aducanumab (BIIB037) for Alzheimer's disease following positive early results (and with further data expected at the American Academy of Neurology meeting in advance of the company's results call), as well as on the latest data on anti-LINGO-1 announced on 14 April in light of <a target="_new" href="http://www.scripintelligence.com/researchdevelopment/Biogens-highly-anticipated-anti-LINGO-data-fall-flat-356028">earlier data</a> that left questions unanswered. </p> <p> <h2> Lilly </h2> <p> <b>1Q 2015 EPS estimate: </b>$0.76 per share, up from $0.70 in the 1Q 2014 </p> <p> <b>1Q revenue estimate: </b>$4.63bn, down from $4.68bn in 1Q 2014 </p> <p> <b>Earnings Announcement: </b>23 April </p> <p> <b>What to watch for:</b> Analysts are keeping an eye out for commentary on the company's type 2 diabetes franchise, its integration of the Novartis animal health business after the $5.4bn acquisition last year and color on key pipeline candidates. </p> <p> Diabetes has been a growth driver for Lilly and an area the company has placed great emphasis on, but recent launches of the once-weekly GLP-1 agonist Trulicity (dulaglutide), the SGLT-2 inhibitor Jardiance (empagliflozin) and the combo product Glyxambi (empagliflozin/linagliptin) have been less than stellar. The products have yet to gain significant market share and are all late entrants into an already crowded market &ndash; expect Lilly to talk about uptake and differentiation for commercialization of these products. </p> <p> The main focus of the pipeline &ndash; beyond the diabetes franchise &ndash; will be on Lilly's cholesterol-lowering drugs, including its CETP inhibitor evacetrapib and its PCSK9 antibody. Leerink analyst Seamus Fernandez estimates evacetrapib could have peak sales of $815m. Mr Fernandez is hoping to see commentary on Lilly's plans to partner, or potentially out-license, its PCSK9 antibody. </p> <p> &quot;Lilly management believe these two classes of drugs will compete, each with its own advantages and drawbacks. But there should be enough potential patients for both to do well, given estimated ~9-10M patients who are statin-intolerant or already on maximum dose of statin but still not at LDL-C goal,&quot; the analyst added in a 24 March note. </p> <p> <h2> Novartis </h2> <p> <b>1Q 2015 EPS estimate: </b>$1.01 versus $1.28 in 1Q 2014 </p> <p> <b>1Q revenue estimate: </b>$13.02bn versus $14.02bn in 1Q 2014 </p> <p> <b>Earnings Announcement: </b>23 April </p> <p> <b>What to watch for:</b> Novartis started the quarter by closing the divestment of its animal health business to Eli Lilly for $5.4bn, which will show up in its first quarter figures as an exceptional pre-tax gain of $4.6bn. The transaction was part of the mega-deal announced last April which saw GSK acquire Novartis's global vaccines business and the creation of consumer healthcare joint venture. In addition, GSK divested its oncology business to Novartis. The bulk of the mega-deal closed at the start of March, and Novartis will be reporting a &quot;substantial exceptional gain&quot;, as yet undisclosed. </p> <p> There was good news and bad news in the first quarter for Novartis with regards to its promising anti-IL17a product Cosentyx (secukinumab). The <a target="_new" href="http://www.scripintelligence.com/home/Novartis-adds-another-Cosentyx-approval-with-FDA-nod-356289">expected approvals</a> in the US and Europe for psoriasis were accompanied by the <a target="_new" href="http://www.scripintelligence.com/researchdevelopment/Novartis-concedes-defeat-with-Cosentyx-in-RA-356500">termination</a> of development in rheumatoid arthritis are disappointing Phase III data. </p> <p> In other positive portfolio news, Novartis also filed for approval of heart failure therapy LCZ696. </p> <p> <h2> Roche </h2> <p> <b>1Q 2015 EPS estimate: </b>n/a - Roche does not report profits in 1Q </p> <p> <b>1Q revenue estimate: </b>n/a </p> <p> <b>Earnings Announcement: </b>22 April </p> <p> <b>What to watch for:</b> Currency impact. Roche records more than 40% of its sales in the US. While the dollar has appreciated against most major currencies in the first quarter, generally serving big pharma reporting in non-dollar currencies well, Roche, unlike its cross-town rival Novartis, reports in Swiss Francs, and the Swiss Franc has risen against the dollar since the beginning of 2015. The company said in January that this year it expected sales to grow in the low to mid-single digits, with currency exchange effects stripped out. Watch the 1Q sales details for early signs it is on track, and observe the Tamiflu effect (the US flu epidemic that pushed up sales of the antiviral late in 2014 may bolster 1Q figures but the effect will not persist through the year). </p> <p> <img src="-/media/EE152EC75E1B49F5B6AA2DBD5D599C3C.ashx"> </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 212
+
+<p> Johnson &amp; Johnson set the tone for the first-quarter pharma financial reporting season on 14 April when it reported a 4% drop in sales due to currency fluctuations, although pharma beat expectations. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+1Q preview AbbVie Amgen AstraZeneca Biogen Lilly Novartis Roche
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150413T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150413T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150413T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028464
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 73
+
+ 1Q preview: AbbVie, Amgen, AstraZeneca, Biogen, Lilly, Novartis, Roche  
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357854
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4f291856-d874-41c4-a4d6-4e1ef8f5ebf4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042331Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

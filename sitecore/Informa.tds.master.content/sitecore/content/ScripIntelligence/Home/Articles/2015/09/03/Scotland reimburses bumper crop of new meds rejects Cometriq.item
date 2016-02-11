@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {B17DA0B3-E6F9-4FFF-9564-D56A488B9F52}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/03/Scotland reimburses bumper crop of new meds rejects Cometriq
+parent: {67454E32-12CF-4865-97B8-E6AB86442A6F}
+name: Scotland reimburses bumper crop of new meds rejects Cometriq
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 56068aa1-200b-4673-8010-def0592e85e6
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Scotland reimburses bumper crop of new meds, rejects Cometriq
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Scotland reimburses bumper crop of new meds rejects Cometriq
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7929
+
+<p> The Scottish Medicines Consortium (SMC) has recommended seven products to be used on NHS Scotland, including Gilead's Harvoni (sofosbuvir and ledipasvir), GlaxoSmithKline's Tafinlar (dabrafenib), and two biosimilar versions of infliximab. However, the consortium rejected Exelixis/Swedish Orphan Biovitrum's rare disease drug Cometriq (cabozantinib). </p><table> <tr> <td> <p> <b>Drug</b> </p>&nbsp; </td><td> <p> <b>Submitting company</b> </p>&nbsp; </td><td> <p> <b>Indication</b> </p>&nbsp; </td><td> <p> <b>SMC decision</b> </p>&nbsp; </td><td> <p> NICE <b>decision</b> </p>&nbsp; </td><td> <p> <b>Comments</b> </p>&nbsp; </td> </tr><tr> <td> <p> Cometriq (cabozantinib) </p>&nbsp; </td><td> <p> Swedish Orphan Biovitrum </p>&nbsp; </td><td> <p> progressive, unresectable locally advanced or metastatic medullary thyroid carcinoma </p>&nbsp; </td><td> <p> No </p>&nbsp; </td><td> <p> N/A </p>&nbsp; </td><td> <p> SMC said SOBI &quot;did not present a sufficiently robust economic analysis and in addition their justification of the treatment's cost in relation to its benefits was not sufficient.&quot; This outcome was despite input from a PACE (patient and clinician engagement) panel, which supported its reimbursement. </p><p> Incremental cost effectiveness ratio (ICER) versus best supportive care was estimated at &pound;93,141 per quality adjusted life year (QALY) gained. </p><p> Cometriq costs &pound;4,800 per 28 day cycle. Its comparator, AstraZeneca's Caprelsa (vandetinib), costs &pound;4,667 and was also previously rejected by the SMC. </p>&nbsp; </td> </tr><tr> <td> <p> Eliquis (apixaban) </p>&nbsp; </td><td> <p> Bristol-Myers Squibb / Pfizer </p>&nbsp; </td><td> <p> deep vein thrombosis (DVT) and pulmonary embolism (PE) and prevention of recurrent DVT and PE in adults </p>&nbsp; </td><td> <p> Yes </p>&nbsp; </td><td> <p> Yes in draft guidance. Final guidance expected in May. </p>&nbsp; </td><td> <p> SMC said the companies had demonstrated the economic case for both the six-month and lifetime treatment durations. </p><p> Eliquis costs &pound;385 per six-month course compared to &pound;400 for Boehringer Ingelheim's Pradaxa (dabigatran). </p>&nbsp; </td> </tr><tr> <td> <p> Harvoni (sofosbuvir and ledipasvir) </p>&nbsp; </td><td> <p> Gilead </p>&nbsp; </td><td> <p> hepatitis C virus </p>&nbsp; </td><td> <p> Yes, with restrictions. Genotypes 1 and 4 only. </p>&nbsp; </td><td> <p> <a href="http://www.scripintelligence.com/policyregulation/NICE-favors-Harvoni-in-draft-guidance-357036" target="_new">Yes, with restrictions</a>. </p>&nbsp; </td><td> <p> Gilead's economic analysis comparing Harvoni to Johnson &amp; Johnson's Olysio (simeprevir) showed that Harvoni would save the NHS money. The SMC pointed out that Olysio would not be the displaced product in many cases, but even when compared with other HCV drug regimens (telaprevir and boceprevir) Harvoni's ICERs were consistently below &pound;22,000 per QALY. </p><p> The SMC said: &quot;Given the acceptable ICERs and robustness shown in sensitivity analysis against all comparators, the economic case has been demonstrated.&quot; </p><p> Harvoni's list price per course ranges from &pound;24,987 to &pound;79,810. </p><p> Gilead did not submit any data for genotype 3 patients. </p>&nbsp; </td> </tr><tr> <td> <p> Inflectra (biosimilar infliximab) </p>&nbsp; </td><td> <p> Hospira </p>&nbsp; </td><td> <p> rheumatoid arthritis; Crohn's disease and ulcerative colitis; adult ankylosing spondylitis, psoriatic arthritis and psoriasis </p>&nbsp; </td><td> <p> Yes, in line with the current SMC and </p><p> Healthcare Improvement Scotland advice for the reference product infliximab (Remicade). </p>&nbsp; </td><td> <p> Yes </p>&nbsp; </td><td> <p> The SMC was satisfied that Inflectra was clinically equivalent to Johnson &amp; Johnson's Remicade, and that its use would result in cost savings. Inflectra is 10% cheaper than Remicade and is estimated to save between &pound;500-1,000 per patient per year depending on indication. </p>&nbsp; </td> </tr><tr> <td> <p> Jakavi (ruxolotinib) </p>&nbsp; </td><td> <p> Novartis </p>&nbsp; </td><td> <p> disease-related splenomegaly or symptoms in adult patients with primary myelofibrosis (also known as chronic idiopathic myelofibrosis), post polycythemia vera myelofibrosis or post essential thrombocythemia myelofibrosis </p>&nbsp; </td><td> <p> Yes </p>&nbsp; </td><td> <p> <a href="http://www.scripintelligence.com/policyregulation/NICE-final-guidance-disappoints-Novartis-344422" target="_new">No &ndash; NICE found that Jakavi was not cost-effective</a>. </p>&nbsp; </td><td> <p> The SMC approved Jakavi on the condition that Novartis continues to offer a patient access scheme (PAS), the details of which are confidential. The decision took into account strong support for the drug from a PACE panel. </p><p> The SMC accepted a higher level of uncertainty than usual in the economic case because Jakavi is an orphan drug. Base case ICER estimates, which included the PAS, were &pound;49,774 per QALY gained. </p><p> Jakavi's list price is &pound;43,680 per year. </p>&nbsp; </td> </tr><tr> <td> <p> Remsima (biosimilar infliximab) </p>&nbsp; </td><td> <p> Celltrion </p>&nbsp; </td><td> <p> rheumatoid arthritis; Crohn's disease and ulcerative colitis; adult ankylosing spondylitis, psoriatic arthritis and psoriasis </p>&nbsp; </td><td> <p> Yes, in line with the current SMC and </p><p> Healthcare Improvement Scotland advice for the reference product infliximab (Remicade). </p>&nbsp; </td><td> <p> Yes </p>&nbsp; </td><td> <p> No price data were provided for Remsima, as the company deemed them commercially confidential. However, the SMC noted that the drug was clinically equivalent to Remicade, and accepted it for use on the NHS. </p>&nbsp; </td> </tr><tr> <td> <p> Tafinlar (dabrafenib) </p>&nbsp; </td><td> <p> GSK </p>&nbsp; </td><td> <p> unresectable or metastatic melanoma with a BRAF V600 mutation </p>&nbsp; </td><td> <p> Yes, but restricted to treatment-na&iuml;ve patients. </p>&nbsp; </td><td> <p> <a href="http://www.scripintelligence.com/policyregulation/NICE-recommends-GSKs-Tafinlar-in-final-guidance-354593" target="_new">Yes, fast-tracked recommendation</a>. </p>&nbsp; </td><td> <p> The SMC's recommendation is contingent on a confidential PAS. Without the PAS, ICERs were estimated at &pound;49,019 per QALY gained compared with Roche's Zelboraf (vemurafenib). </p><p> The decision took into account the recommendation of a PACE panel. </p>&nbsp; </td> </tr><tr> <td> <p> Zydelig (idelalisib) </p>&nbsp; </td><td> <p> Gilead </p>&nbsp; </td><td> <p> in combination with rituximab for the treatment of adult patients with chronic lymphocytic leukemia (CLL) </p>&nbsp; </td><td> <p> Yes, restricted to patients with relapsed CLL who are unsuitable for chemotherapy and treatment-na&iuml;ve patients with 17p deletion or TP53 mutation who are unsuitable for chemo-immunotherapy. </p>&nbsp; </td><td> <p> N/A </p>&nbsp; </td><td> <p> The SMC's recommendation is contingent on a confidential PAS. Without the PAS, base case ICER for relapsed patients was &pound;32,468 per QALY, and for the treatment naive 17p/TP53 sub-group was &pound;19,040 per QALY, but the SMC was dubious about several aspects of the economic analysis. </p><p> The SMC summarized: &quot;The committee considered the benefits of idelalisib in the context of SMC decision modifiers and agreed that a number of the criteria were satisfied: a substantial improvement in life expectancy in the patient population targeted in the submission; a substantial improvement in quality of life; and the absence of other treatments of proven benefit. Despite the limitations in the economic analysis, after application of the appropriate modifiers, the Committee accepted idelalisib for use in NHS Scotland.&quot; </p><p> Zydelig's list price is &pound;37,792 per year. </p>&nbsp; </td> </tr> </table> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 359
+
+<p> The Scottish Medicines Consortium (SMC) has recommended seven products to be used on NHS Scotland, including Gilead's Harvoni (sofosbuvir and ledipasvir), GlaxoSmithKline's Tafinlar (dabrafenib), and two biosimilar versions of infliximab. However, the consortium rejected Exelixis/Swedish Orphan Biovitrum's rare disease drug Cometriq (cabozantinib). </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Scotland reimburses bumper crop of new meds rejects Cometriq
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150903T091407
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150903T091407
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150903T091407
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028063
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Scotland reimburses bumper crop of new meds, rejects Cometriq
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357127
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+56068aa1-200b-4673-8010-def0592e85e6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

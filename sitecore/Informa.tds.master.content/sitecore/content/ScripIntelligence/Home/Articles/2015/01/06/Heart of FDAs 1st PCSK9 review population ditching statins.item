@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {90C1E02E-4856-47F4-8D84-DB1F900FA5EA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/06/Heart of FDAs 1st PCSK9 review population ditching statins
+parent: {46908925-A371-41CC-864B-BC921F8ACF71}
+name: Heart of FDAs 1st PCSK9 review population ditching statins
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4d01e21f-68fd-4cff-93ca-c2a42192247d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Heart of FDA's 1st PCSK9 review: population, ditching statins 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Heart of FDAs 1st PCSK9 review population ditching statins
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7619
+
+<p>FDA drug reviewers on 5 June had little safety or efficacy concerns about the first of the experimental proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitors to come before the agency as a treatment to lower low-density lipoprotein (LDL) cholesterol in certain patients.</p><p>Indeed, they said Sanofi's and Regeneron Pharmaceuticals' PCSK9 inhibitor Praluent (alirocumab) demonstrated early and sustained LDL-C lowering from baseline across patient populations &ndash; regardless of background lipid-modifying therapies &ndash; and was generally well-tolerated.</p><p>Even the <a href="http://www.scripintelligence.com/home/FDA-raises-cognitive-concerns-with-PCSK9s-Amgen-Sanofi-Regeneron-hit-350449" target="_new">neurocognitive concerns</a> the FDA had raised last year appeared now to be a non-issue for the agency in review documents posted on the agency's website on 5 June. </p><p>The key question, though, is in what population does the LDL-C-lowering benefit of Praluent exceed its risks to support approval &ndash; something the FDA is hoping its Endocrinologic and Metabolic Drugs Advisory Committee (EMDAC) can help regulators flesh out.</p><p>The only real concern that popped up in the briefing documents, released ahead of the 9 June meeting of the EMDAC, which will review the biologics license application (BLA) for Praluent, is whether patients would prematurely stop taking statins in favor of the newer drugs, which currently lack long-term safety and cardiovascular outcomes data.</p><p>It will be a while before data are available on PCSK9 inhibitors from CV outcomes trials (CVOTs). </p><p>Sanofi's and Regeneron's ODYSSEY OUTCOMES CVOT will have data on 18,000 patients.</p><p> Amgen, whose own investigational PCSK9 inhibitor, Repatha (evolocumab), is in a race with Praluent to be first to the US market, coincidentally announced on 5 June that it's CVOT, known as FOURIER, is now fully enrolled with about 27,500 patients. Amgen's BLA for Repatha goes before the EMDAC on 10 June.</p><p>The results from both CVOT studies are expected in the next two years.</p><p>In the absence of CVOT data, the FDA said its considerations about the approval of novel LDL-lowering therapies, such as Praluent, include the direction and magnitude of drug-induced changes in LDL-C, the effects of the medicine on other markers of cardiometabolic risk and characterization of the agent's safety profile.</p><p>Sanofi and Regeneron are seeking approval to market Praluent, a monoclonal antibody, as a long-term treatment of adults with primary hypercholesterolemia &ndash; non-familial and heterozygous familial (HeFH) &ndash; or mixed dyslipidemia, including patients with type 2 diabetes, to reduce LDL-C, total cholesterol, non-high-density lipoprotein cholesterol (HDL-C), apolipoprotein B, triglycerides and lipoprotein (a), and to increase HDL-C and apolipoprotein A1.</p><p>Praluent is intended to be used in combination with a statin, with or without other lipid-modifying therapy (LMT), or as a monotherapy &ndash; or as add-on to other non-statin LMT &ndash; in patients who cannot tolerate statins. </p><p>Sanofi and Regeneron noted the monotherapy indication was tweaked, removing the word "including," based on the FDA's comment in its EMDAC briefing book the drug "could be used in patients who cannot tolerate statins."</p><p>In a memo to the EMDAC, Dr James Smith, deputy director of the FDA's Division of Metabolism and Endocrinology Products, said regulators have "struggled" with whether the use of the description "statin-intolerant" is warranted in labeling.</p><p>"One must consider whether labeling that specifically indicates a drug for 'statin-intolerant patients' could promote a condition that is not well-understood and encourage some patients to prematurely abandon statins, a class that has robustly established benefits on CV outcomes," Dr Smith said.</p><p>While the new lipid-lowering guidelines issued by the American College of Cardiology and the American Heart Association focus on statins as first-line cholesterol-lowering therapy for primary and secondary prevention of atherosclerotic cardiovascular disease, "much discussion has been made of statin-intolerance in recent years, increasing the likelihood that alternative therapies for lowering LDL-C will be sought," said FDA clinical reviewers Drs Julie Golden and Mary Roberts.</p><p>"We have concerns that many patients who have symptoms that may be entirely unrelated to statins could prematurely discontinue their statins and turn, instead, to a PCSK9 inhibitor," Drs Golden and Roberts said.</p><p>Alternatively, Dr Smith said, language that indicates use in combination with "maximally tolerated statin therapy" would recognize that, for some patients, "maximally tolerated statin therapy may be no statin therapy at all."</p><p>Leerink analyst Seamus Fernandez took those remarks as a sign Sanofi and Regeneron are likely to win a broad label for Praluent.</p><p>"This corroborates our view that a specific indication for statin intolerance was unlikely, yet suggests the likelihood of a broad approval that would include the group known as statin intolerant group as well as high risk patient populations with familial hetero and homozygous hypercholesterolemia," he said in a research note.</p><p>RW Baird analyst Christopher Raymond said he thinks Praluent is likely to win the FH indication "at the very least with upside potential for a tightly defined 'statin intolerant' label."</p><p>Given that FDA seems to already be proposing nuances with Dr Smith&rsquo;s "maximally tolerated statins" remarks, "we think a path forward with such a label is being actively considered," Mr Raymond said.</p><p>The FDA's statistical reviewers raised some issues with the proposed high and low dosing options for Praluent &ndash; declaring the designs of the Phase III trials "do not support an evaluation of the difference in efficacy, if any, between doses." </p><p>In particular, they said it was not possible to evaluate whether similar efficacy at the high dose could have been achieved with the low dose or if up-titrating leads to additional LDL-C lowering. </p><p>While JP Morgan analyst Cory Kasimov said he didn't think that concern would impact the probability of Praluent gaining FDA approval, he said it does question the key lone differentiating factor that Sanofi and Regeneron cite for their PCSK9 inhibitor against the competition. </p><p>"We will be closely monitoring this dynamic during the discussions" at the 9 June EMDAC, he said.</p><p>Mr Kasimov said he expected the FDA's commentary on Amgen's Repatha to be similar to Praluent&rsquo;s documents.</p><p>At both EMDAC meetings, he said he anticipated paying particular attention to the committee's commentary around the CV risk remaining for patients who respond to treatment with a PCSK9 inhibitor as well as the panel&rsquo;s view on the benefit-risk profile for each treatment subpopulation. </p><p>"We believe the panel's opinion on these issues will ultimately determine how broad the label on the PCSK9s will be," Mr Kasimov said. </p><p>Overall, he said he expected a positive review by the committee on both drugs and anticipated seeing similar recommendations on the labeling due to marginal contrasts between the compounds.</p><p>While shares of Regeneron got a boost on 5 June, Sanofi's and Amgen's stock both took hits.</p><p>Shares of Regeneron gained $20.78, or 4%, to close at $539.40. </p><p>Sanofi's stock lost $1.33, or 2.6%, closing at $49.57. Shares of Amgen closed at $157.25, down 84 cents.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 283
+
+<p>FDA drug reviewers on 5 June had little safety or efficacy concerns about the first of the experimental proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitors to come before the agency as a treatment to lower low-density lipoprotein (LDL) cholesterol in certain patients.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Heart of FDAs 1st PCSK9 review population ditching statins
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150106T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150106T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150106T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028922
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Heart of FDA's 1st PCSK9 review: population, ditching statins 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358682
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042358Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4d01e21f-68fd-4cff-93ca-c2a42192247d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042358Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

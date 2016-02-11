@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {670CFAFA-E0C5-4A83-AC2A-02EAFDC56D0E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/01/Cancer Drugs Fund table 12 drugs delisted six refused entry
+parent: {684FC8D5-D802-45B5-B1B4-59D6EC33E6A8}
+name: Cancer Drugs Fund table 12 drugs delisted six refused entry
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 59b1b9a3-4ae8-4e95-bf43-8b196607c990
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Cancer Drugs Fund table: 12 drugs delisted, six refused entry
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Cancer Drugs Fund table 12 drugs delisted six refused entry
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 22829
+
+<p>England's latest Cancer Drugs Fund decisions, which follow a recent overhaul of the assessment process, have resulted in 12 previously funded drugs being withdrawn in 24 indications, and six drugs applying for the first time being refused entry to the fund in seven indications.</p><p>This means that out of the 31 drugs assessed in the December 2014 round of decisions, the Cancer Drugs Fund found that over half were not cost-effective. The cost effectiveness assessment, which has left industry outraged, was implemented in December for the first time after being announced in November (<a href="http://www.scripintelligence.com/home/Pharma-rages-at-crude-Cancer-Drugs-Fund-overhaul-355077" target="_new">scripintelligence.com</a>, 14 November 2014). Just two new drugs were granted entry to the fund, while 11 previously funded products retained their funding.</p><p>Those drugs which have been delisted will continue to be funded until March, and patients currently receiving treatment will continue to do so.</p><p>The first casualties were revealed late last week and sparked strong reaction from the companies involved (<a href="http://www.scripintelligence.com/home/Outrage-at-Cancer-Drugs-Fund-casualty-list-356034" target="_new">scripintelligence.com</a>, 9 January 2015). The delisted drugs prompted renewed calls for a fundamental overhaul of the UK's value assessment system from industry, physicians and charities (<a href="http://www.scripintelligence.com/home/Time-to-rip-off-Cancer-Drugs-Fund-Band-Aid-356096" target="_new">scripintelligence.com</a>, 12 January 2015). </p><p>Eric Low, OBE, chief executive of Myeloma UK, said, "Throwing money at fixing a complex issue does not solve the underlying reasons why these drugs are not available on the NHS in the first place." </p><p>Dr Jayson Dallas, general manager at Roche, said: "The CDF has been successful in enabling patients to receive newer cancer medicines not routinely available on the NHS. However, we are now seeing the first casualties of a failure to reform the wider system of access for established cancer medicines, such as Avastin (bevacizumab), which is being taken away from patients with some forms of cancer." Roche actually fared relatively well in the assessment process, with Perjeta (pertuzumab), Kadcyla (trastuzumab emtansine) and Avastin retaining funding in most of their indications. However, Avastin was delisted in four indications.</p><p>In addition, companies have criticized the review process itself as slapdash. Eisai called it arbitrary, while Lilly commented: "The delisting of Alimta (pemetrexed) for continuation maintenance is based on, what Lilly believes is the incorrect application of an overly simplistic scoring tool and a flawed process."</p><p>Roche agreed, saying, "We do not agree with NHS England's assessment and feel that critical evidence was not taken into account." </p><p>This sentiment was also echoed by a number of charities. Nick Bason, head of policy & communications at Bowel Cancer UK, said: "Decisions about drugs already available via the Cancer Drugs Fund appear to have been made in haste without any proper consideration of the real-world benefits that these drugs have for patients themselves in terms of both extension and quality of life."</p><p>Meanwhile, many UK charities, including Breakthrough Breast Cancer, have also laid responsibility with pharma companies, who they say should be doing more to lower their prices. "What we've learned is that pharmaceutical companies can negotiate on price. However, it is disappointing that it has taken a drastic measure like the threat of drugs being removed from the Cancer Drugs Fund to make companies offer their products at prices that the NHS can afford," the charity said.</p><p>Most of the drugs on the list had already been assessed and rejected by NICE as too expensive. Those which hadn't were either being assessed by the Cancer Drugs Fund for off-label use, have a NICE assessment pending, or have not been scoped by the Department of Health for NICE assessment.</p><p><b>Key stats:</b></p><ul><li>31 drugs assessed in 55 indications.</li><li>18 out of 31 drugs assessed found not to be cost-effective in at least one indication.</li><li>12 drugs delisted in at least one indication.</li><li>11 previously funded drugs allowed to retain funding.</li><li>Six drugs refused entry to the fund in at least one indication.</li><li>Two new drugs allowed entry to the fund in three indications.</li></ul><p>The table below details the full list of Cancer Drugs Fund decisions for December, along with NICE's assessment of the drugs' cost per quality adjusted life year (QALY) where available.</p><table><tbody><tr><td><p><b>Drug</b></p>&nbsp;</td><td><p><b>Manufacturer</b></p>&nbsp;</td><td><p><b>Indication(s) assessed</b></p>&nbsp;</td><td><p><b>CDF decision</b></p>&nbsp;</td><td><p><b>List price</b></p>&nbsp;</td><td><p><b>NICE-assessed cost per QALY</b></p>&nbsp;</td></tr><tr><td><p>Abraxane (paclitaxel)</p>&nbsp;</td><td><p>Celgene</p>&nbsp;</td><td><p>first line chemotherapy in metastatic adenocarcinoma of the pancreas</p>&nbsp;</td><td><p>Retained. The CDF panel concluded that the clinical benefits of nab-paclitaxel in metastatic pancreatic adenocarcinoma to be insufficient to merit retention within longer term CDF funding. In this exceptional circumstance, it therefore wished to defer its final decision until NHS England had concluded its further consideration. Until this time, the use of nab-paclitaxel would be retained in the CDF.</p>&nbsp;</td><td><p>&pound;2,657 (four week cycle)</p>&nbsp;</td><td><p>&pound;72,500-&pound;78,500</p>&nbsp;</td></tr><tr><td><p>Zaltrap (aflibercept)</p>&nbsp;</td><td><p>Sanofi/Regeneron</p>&nbsp;</td><td valign="bottom"><p>In combination with second line irinotecan-based combination chemotherapy for metastatic colorectal cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,064 (two week cycle)</p>&nbsp;</td><td><p>&pound;44,000-&pound;51,000</p>&nbsp;</td></tr><tr><td><p>Inlyta (axitinib)</p>&nbsp;</td><td><p>Pfizer</p>&nbsp;</td><td><p>renal cell cancer patients progressing on therapy with either a tyrosine kinase inhibitor or a cytokine</p>&nbsp;</td><td><p>Retained. The CDF panel considered the clinical benefits of axitinib afterone line of systemic therapy to offer sufficient clinical benefit to remain potentially included in the CDF. It considered it in the best interests of patients and the NHS to allow continued CDF funding pending final NICE guidance being issued.</p>&nbsp;</td><td><p> </p>&nbsp;</td><td><p>&pound;33,000-&pound;52,900</p>&nbsp;</td></tr><tr><td><p>Levact (bendamustine)</p>&nbsp;</td><td><p>Mundipharma</p>&nbsp;</td><td valign="bottom"><p>indolent non-Hodgkin&rsquo;s lymphoma in patients who are refractory to rituximab</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,491 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td rowspan="7" valign="middle"><p>Avastin (bevacizumab)</p>&nbsp;</td><td rowspan="7" valign="middle"><p>Roche/Genentech</p>&nbsp;</td><td><p>in combination with first line irinotecan-based combination chemotherapy for metastatic colorectal cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,109 (two week cycle)</p>&nbsp;</td><td><p>&pound;60,430&ndash;&pound;76,831</p>&nbsp;</td></tr><tr><td><p>in combination with first line oxaliplatin-based combination chemotherapy for metastatic colorectal cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,109 (two week cycle)</p>&nbsp;</td><td><p>&pound;103,000</p>&nbsp;</td></tr><tr><td><p>in combination with first line single agent fluoropyrimidine-based chemotherapy for metastatic colorectal cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,692 (three week cycle)</p>&nbsp;</td><td><p>&pound;51,355</p>&nbsp;</td></tr><tr><td><p>in combination with irinotecan as at least third line treatment of paediatric low grade glioma</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>Variable</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td valign="bottom"><p>in combination with single-agent chemotherapy for platinum-resistant ovarian cancer</p>&nbsp;</td><td><p>Refused entry</p>&nbsp;</td><td><p>&pound;4,437 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>in combination with carboplatin and gemcitabine chemotherapy for recurrent platinum-sensitive ovarian cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;3,328 (three week cycle)</p>&nbsp;</td><td><p>&pound;149,000</p>&nbsp;</td></tr><tr><td><p>in combination with paclitaxel chemotherapy for triple negative metastatic breast cancer</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;4,437 (four week cycle)</p>&nbsp;</td><td><p>&pound;128,000-&pound;161,000 </p>&nbsp;</td></tr><tr><td rowspan="4" valign="middle"><p>Velcade (bortezomib)</p>&nbsp;</td><td rowspan="4" valign="middle"><p>Takeda</p>&nbsp;</td><td><p>bortezomib-naive patients with relapsed myeloma</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;3,659 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>for the treatment of patients with relapsed mantle cell lymphoma</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;3,659 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>for the treatment of patients with relapsed Waldenstrom&rsquo;s macroglobulinaemia</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;3,659 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>re-treatment in patients with relapsed myeloma</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;3,659 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td rowspan="3" valign="middle"><p>Bosulif (bosutinib)</p>&nbsp;</td><td rowspan="3" valign="middle"><p>Pfizer</p>&nbsp;</td><td><p>accelerated phase chronic myeloid leukemia</p>&nbsp;</td><td><p>Retained for patients who are resistant to nilotinib/dasatinib.</p>&nbsp;</td><td><p>&pound;4,124 (four week cycle)</p>&nbsp;</td><td><p>&pound;58,000</p>&nbsp;</td></tr><tr><td><p>blast phase chronic myeloid leukemia</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;4,124 (four week cycle)</p>&nbsp;</td><td><p>&pound;60,000</p>&nbsp;</td></tr><tr><td><p>chronic phase chronic myeloid leukemia</p>&nbsp;</td><td><p>Retained for patients who are resistant to nilotinib/dasatinib.</p>&nbsp;</td><td><p>&pound;4,124 (four week cycle)</p>&nbsp;</td><td><p>&pound;43,000</p>&nbsp;</td></tr><tr><td rowspan="2" valign="middle"><p>Adcetris (brentuximab)</p>&nbsp;</td><td rowspan="2" valign="middle"><p>Seattle Genetics</p>&nbsp;</td><td><p>relapsed anaplastic large cell lymphoma</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;9,000 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>relapsed Hodgkin&rsquo;s lymphoma</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;9,000 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>Jevtana (cabazitaxel)</p>&nbsp;</td><td><p>Sanofi</p>&nbsp;</td><td><p>castrate-resistant metastatic prostate cancer previously treated with a docetaxel-containing regimen</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;4,435 (three week cycle)</p>&nbsp;</td><td><p>&pound;87,500</p>&nbsp;</td></tr><tr><td><p>Cometriq (cabozantinib)</p>&nbsp;</td><td><p>Exelixis</p>&nbsp;</td><td><p>second line treatment for medullary thyroid cancer</p>&nbsp;</td><td><p>The CDF panel&rsquo;s position was to request an update from the manufacturer as to the degree of clinical benefit as wellas information as to the median duration of treatment. The CDF panel wished to see this information before further consideration took place as to whether to add to the CDF the use of cabozantinib as a potential second line option for systemic therapy in medullary thyroid cancer.</p>&nbsp;</td><td><p>&pound;5,760 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td rowspan="3" valign="middle"><p>Erbitux (cetuximab)</p>&nbsp;</td><td rowspan="3" valign="middle"><p>Eli Lilly/Merck KGaA/Bristol-Myers Squibb</p>&nbsp;</td><td><p>in combination with first line irinotecan&ndash;based chemotherapy for metastatic colorectal cancer in patients with RAS wild type (non-mutated) tumors</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;1,923 (two week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>in combination with first line oxaliplatin-based chemotherapy for metastatic colorectal cancer in patients with RAS wild type (non-mutated) tumors</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;1,923 (two week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>in combination with second line irinotecan chemotherapy for metastatic colorectal cancer in patients with RAS wild type (non-mutated) tumors</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;1,923 (two week cycle)</p>&nbsp;</td><td><p>&pound;88,000</p>&nbsp;</td></tr><tr><td><p>Xalkori (crizotinib)</p>&nbsp;</td><td><p>Pfizer</p>&nbsp;</td><td><p>second line treatment for patients with anaplastic lymphoma kinase (ALK) positive lung cancer</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;5,252 (four week cycle)</p>&nbsp;</td><td><p>&pound;50,200-&pound;100,000</p>&nbsp;</td></tr><tr><td rowspan="2" valign="middle"><p>Sprycel (dasatinib)</p>&nbsp;</td><td rowspan="2" valign="middle"><p>Bristol-Myers Squibb</p>&nbsp;</td><td><p>lymphoid blast phase of chronic myeloid leukemia</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;2,806 (four week cycle)</p>&nbsp;</td><td><p>Inconclusive</p>&nbsp;</td></tr><tr><td><p>Philadelphia chromosome positive acute lymphoblastic leukemia</p>&nbsp;</td><td><p>Before coming to a final decision as to the retention of dasatinib or otherwise, the CDF panel wished to review further evidence as to the use and benefits of dasatinib in Ph+ acute lymphoblastic leukemia with additional consideration of any alternative options</p>&nbsp;</td><td><p>&pound;2,806 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td rowspan="2" valign="middle"><p>Halaven (eribulin)</p>&nbsp;</td><td rowspan="2" valign="middle"><p>Eisai</p>&nbsp;</td><td><p>single agent chemotherapy for locally advanced or metastatic breast cancer in patients who have had at least one line of chemotherapy for advanced disease</p>&nbsp;</td><td><p>Refused entry</p>&nbsp;</td><td><p>&pound;2,599 (three week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>single agent third line chemotherapy for locally advanced or metastatic breast cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;2,599 (three week cycle)</p>&nbsp;</td><td><p>&pound;68,000</p>&nbsp;</td></tr><tr><td rowspan="3" valign="middle"><p>Afinitor (everolimus)</p>&nbsp;</td><td rowspan="3" valign="middle"><p>Novartis</p>&nbsp;</td><td><p>in combination with exemestane hormone therapy for estrogen receptor positive locally advanced or metastatic breast cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;3,226 (four week cycle)</p>&nbsp;</td><td><p>&pound;68,000</p>&nbsp;</td></tr><tr><td><p>progressive unresectable or metastatic well or moderately differentiated neuroendocrine tumor of the pancreas</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;3,226 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>renal cell cancer patients progressing on therapy with tyrosine kinase inhibitor(s)</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;3,226 (four week cycle)</p>&nbsp;</td><td><p>&pound;49,300-&pound;51,700</p>&nbsp;</td></tr><tr><td rowspan="2" valign="middle"><p>Imbruvica (ibrutinib)</p>&nbsp;</td><td rowspan="2" valign="middle"><p>Pharmacyclics/Janssen</p>&nbsp;</td><td><p>relapsed mantle cell lymphoma</p>&nbsp;</td><td><p>Allowed entry</p>&nbsp;</td><td><p>&pound;6,868 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>relapsed or refractory chronic lymphatic leukemia</p>&nbsp;</td><td><p>Allowed entry, but use restricted to patients that had not previously been treated with idelalisib</p>&nbsp;</td><td><p>&pound;5,151 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td rowspan="2" valign="middle"><p>Zydelig (idelasib)</p>&nbsp;</td><td rowspan="2" valign="middle"><p>Gilead</p>&nbsp;</td><td><p>plus rituximab for the first line treatment of high risk chronic lymphatic leukemia (adverse mutations)</p>&nbsp;</td><td><p>Refused entry for now. The CDF panel declined to score the combination of first line idelalisib plus rituximab in patients with CLL bearing adverse mutations on account of the immaturity of the data. The drug clearly had promise in this group of patients with CLL but furtherfollow-up was required in order to set its benefits in a clearer context. </p>&nbsp;</td><td><p>&pound;3,489 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>plus rituximab for the treatment of relapsed chronic lymphatic leukemia</p>&nbsp;</td><td><p>Retained, but restricted to patients that had not previously been treated with ibrutinib.</p>&nbsp;</td><td><p>&pound;3,489 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>Tyverb (lapatinib)</p>&nbsp;</td><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>in combination with capecitabine chemotherapy for HER-2 receptor positive locally advanced or metastatic breast cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,448 (three week cycle)</p>&nbsp;</td><td><p>&pound;74,000</p>&nbsp;</td></tr><tr><td><p>Revlimid (lenalidomide)</p>&nbsp;</td><td><p>Celgene</p>&nbsp;</td><td><p>second line treatment for patients with relapsed myeloma</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;5,242 (four week cycle)</p>&nbsp;</td><td><p>&pound;56,000-&pound;69,000</p>&nbsp;</td></tr><tr><td><p>Arzerra (ofatumumab)</p>&nbsp;</td><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>relapsed or refractory chronic lymphatic leukemia</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;4,368</p>&nbsp;</td><td><p>&pound;60,500-&pound;81,500</p>&nbsp;</td></tr><tr><td rowspan="2" valign="middle"><p>Vectibix (panitumumab)</p>&nbsp;</td><td rowspan="2" valign="middle"><p>Amgen</p>&nbsp;</td><td><p>in combination with second line irinotecan-based combination chemotherapy for metastatic colorectal cancer in patients with RAS wild type (non-mutated) tumors</p>&nbsp;</td><td><p>Refused entry</p>&nbsp;</td><td><p>&pound;2,276 (two week cycle)</p>&nbsp;</td><td><p>&pound;110,000-&pound;150,000</p>&nbsp;</td></tr><tr><td><p>monotherapy in patients progressing after 2 or more previous lines of chemotherapy for metastatic colorectal cancer in patients with RAS wild type (non-mutated) tumors</p>&nbsp;</td><td><p>Allowed entry</p>&nbsp;</td><td><p>&pound;2,276 (two week cycle)</p>&nbsp;</td><td><p>&pound;110,000-&pound;150,000</p>&nbsp;</td></tr><tr><td><p>Votrient (pazopanib)</p>&nbsp;</td><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>previously treated metastatic non-adipocytic soft tissue sarcomas</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;2,511 (two week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td rowspan="3" valign="middle"><p>Doxil (pegylated liposomal doxorubicin)</p>&nbsp;</td><td rowspan="3" valign="middle"><p>Janssen</p>&nbsp;</td><td><p>first or second line chemotherapy of angiosarcoma</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,710 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>chemotherapy of patients with sarcoma who have cardiac impairment and a contra-indication to treatment with doxorubicin</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;1,710 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>chemotherapy of primary malignant sarcomas of the heart and great vessels</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,710 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td rowspan="2" valign="middle"><p>Alimta (pemetrexed)</p>&nbsp;</td><td rowspan="2" valign="middle"><p>Eli Lilly</p>&nbsp;</td><td><p>second line treatment for patients with non-squamous non-small cell lung cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,728 (three week cycle)</p>&nbsp;</td><td><p>&pound;74,500</p>&nbsp;</td></tr><tr><td><p>maintenance therapy after first line treatment with the combination of cisplatin and pemetrexed in patients with non-squamous non-small cell lung cancer</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;1,728 (three week cycle)</p>&nbsp;</td><td><p>&pound;74,500</p>&nbsp;</td></tr><tr><td><p>Perjeta (pertuzumab)</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td><p>in combination with trastuzumab and docetaxel as first line chemotherapy for HER-2 positive metastatic breast cancer</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;2,874 (three week cycle)</p>&nbsp;</td><td><p>Above &pound;30,000</p>&nbsp;</td></tr><tr><td><p>Imnovid (pomalidomide)</p>&nbsp;</td><td><p>Celgene</p>&nbsp;</td><td><p>at least third line treatment for patients with relapsed myeloma</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;10,661 (four week cycle)</p>&nbsp;</td><td><p>Above &pound;50,000</p>&nbsp;</td></tr><tr><td><p>Stivarga (regorafenib)</p>&nbsp;</td><td><p>Bayer</p>&nbsp;</td><td><p>previously treated gastrointestinal stromal tumors</p>&nbsp;</td><td><p>Delisted</p>&nbsp;</td><td><p>&pound;4,493 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>Sutent (sunitinib)</p>&nbsp;</td><td><p>Pfizer</p>&nbsp;</td><td><p>recurrent thymic carcinoma after first line chemotherapy</p>&nbsp;</td><td><p>Refused entry</p>&nbsp;</td><td><p>&pound;3,767 (six week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr><tr><td><p>Yondelis (trabectedin)</p>&nbsp;</td><td><p>PharmaMar</p>&nbsp;</td><td><p>in combination with pegylated liposomal doxorubicin chemotherapy for recurrent platinum-partially sensitive ovarian cancer</p>&nbsp;</td><td><p>Refused entry</p>&nbsp;</td><td><p>&pound;3,278 (three week cycle)</p>&nbsp;</td><td><p>&pound;68,000-&pound;95,000</p>&nbsp;</td></tr><tr><td><p>Kadcyla (trastuzumab emtansine)</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td><p>as a further line of chemotherapy for HER-2 positive locally advanced or metastatic breast cancer</p>&nbsp;</td><td><p>Retained</p>&nbsp;</td><td><p>&pound;5,908 (three week cycle)</p>&nbsp;</td><td><p>&pound;90,000</p>&nbsp;</td></tr><tr><td><p>Zelboraf (vemurafenib)</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td><p>hairy cell leukemia</p>&nbsp;</td><td><p>Refused entry</p>&nbsp;</td><td><p>&pound;8,400 (four week cycle)</p>&nbsp;</td><td><p>N/A</p>&nbsp;</td></tr></tbody></table><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 285
+
+<p>England's latest Cancer Drugs Fund decisions, which follow a recent overhaul of the assessment process, have resulted in 12 previously funded drugs being withdrawn in 24 indications, and six drugs applying for the first time being refused entry to the fund in seven indications.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Cancer Drugs Fund table 12 drugs delisted six refused entry
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150901T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150901T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150901T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027514
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Cancer Drugs Fund table: 12 drugs delisted, six refused entry
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356038
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+59b1b9a3-4ae8-4e95-bf43-8b196607c990
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

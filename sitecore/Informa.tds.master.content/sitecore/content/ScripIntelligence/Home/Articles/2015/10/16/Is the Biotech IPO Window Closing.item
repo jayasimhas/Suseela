@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {CD4C3D44-8B3B-4E3A-9717-1120A8AB341B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/16/Is the Biotech IPO Window Closing
+parent: {6AAE7279-2B4F-4136-849E-20689C005A44}
+name: Is the Biotech IPO Window Closing
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ed229f50-f8f4-468b-9c84-fc5487cc11ee
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 34
+
+Is the Biotech IPO Window Closing?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 33
+
+Is the Biotech IPO Window Closing
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9677
+
+<p>Drug developers are filing for initial public offerings at a brisk pace in October despite falling biotechnology stock values and the struggle to price first-time offerings attractively, which begs the question: Are biotech companies afraid that the IPO window is about to close?</p><p>The past few months have been brutal for publicly-traded biotech and pharmaceutical firms as politicians scrutinize drug price increases and investors react to disappointing sales and clinical trial results, bringing the Nasdaq Biotechnology Index (NBI) down 23.5% as of Oct. 21 versus the NBI's July 20 peak. Even so, the number of drug developers that have filed paperwork so far in October to support potential IPOs already exceeds the monthly average for 2015, but the four companies that launched first-time offerings this month have done so only after cutting proposed stock prices.</p><p><b>Rushing Through The Window</b></p><p>Ten therapeutics companies have registered new IPOs with the US Securities and Exchange Commission (SEC) as of Oct. 21 versus this year's average of six IPO filings per month &ndash; and there's still a week and a half left of October. </p><p>The rush to file suggests that biotech companies fear an end to the IPO bonanza that drug makers have dominated during the past few years, because recent performance of just-launched public biotech companies doesn't seem to justify the push to price new offerings.</p><p>Drug developers raised <a href="http://www.scripintelligence.com/home/INFOGRAPHIC-A-US-biotech-IPO-surge-Data-are-mixed-359219" target="_new">$2.8bn in 29 first-time offerings</a> during the first half of 2015 and their stocks closed their first day of trading 24.2% above the IPO share price, on average. The four biotech companies that have launched IPOs so far in October ended their first day just 0.8% above their offering price and by Oct. 21 their shares rose only 2.2% above their IPO values, on average.</p><table><tbody><tr><td><p><b>Company</b></p>&nbsp;</td><td><p><b>IPO Range</b></p>&nbsp;</td><td><p><b>IPO Price</b></p>&nbsp;</td><td><p><b>Amount Raised</b></p>&nbsp;</td><td><p><b>1st-Day Value</b></p>&nbsp;</td><td><p><b>Oct. 21 Price</b></p>&nbsp;</td></tr><tr><td><p><a href="http://www.scripintelligence.com/home/Despite-Headwinds-US-IPOs-Show-Few-Signs-Of-Slowing-In-Q3-360806" target="_new">Aclaris Therapeutics Inc.</a>; </p><p>Malvern, Pennsylvania</p>&nbsp;</td><td><p>$14-$16</p>&nbsp;</td><td><p>$11</p>&nbsp;</td><td><p>$55m</p>&nbsp;</td><td><p>$11.05</p>&nbsp;</td><td><p>$14.92</p>&nbsp;</td></tr><tr><td><p>CytomX Therapeutics Inc.; </p><p>South San Francisco</p>&nbsp;</td><td><p>$12-$14</p>&nbsp;</td><td><p>$12</p>&nbsp;</td><td><p>$80m</p>&nbsp;</td><td><p>$12.40</p>&nbsp;</td><td><p>$9.58</p>&nbsp;</td></tr><tr><td><p>Cerecor Inc.;</p><p>Baltimore, Maryland</p>&nbsp;</td><td><p>$6-$7</p>&nbsp;</td><td><p>$6.50</p>&nbsp;</td><td><p>$26m</p>&nbsp;</td><td><p>$6.40</p>&nbsp;</td><td><p>$6.15</p>&nbsp;</td></tr><tr><td><p>Strongbridge Biopharma plc (formerly Cortendo);</p><p>Trevose, Pennsylvania</p>&nbsp;</td><td><p>$10 for 4.25m shares</p>&nbsp;</td><td><p>$10 for 2.5m shares</p>&nbsp;</td><td><p>$25m</p>&nbsp;</td><td><p>$10</p>&nbsp;</td><td><p>$8</p>&nbsp;</td></tr></tbody></table><p><p>IPO performance began to slump in the third quarter when <a href="http://www.scripintelligence.com/home/Despite-Headwinds-US-IPOs-Show-Few-Signs-Of-Slowing-In-Q3-360806" target="_new">eight of the 15 drug makers who went public</a> between July and September traded below their IPO prices as of Oct. 1. The average return for third quarter biotech IPOs was just 2.4% above their IPO values by the start of the fourth quarter.</p><p><b>Who Dares To Follow?</b></p><p>So which 10 companies were brave enough to test stock market investor interest with a new filing? Or, to put it another way, which drug developers were fearful enough to file for an IPO before the window closes on biotech offerings?</p><table><tbody><tr><td><p><b>Company</b></p>&nbsp;</td><td><p><b>IPO Fundraising Goal</b></p>&nbsp;</td><td><p><b>Use of Proceeds</b></p>&nbsp;</td></tr><tr><td><p>PLx Pharma Inc.;</p><p>Houston, Texas</p>&nbsp;</td><td><p>$20m</p>&nbsp;</td><td><p>Commercialization of a better absorbed aspirin with fewer gastrointestinal side effects to treat cardiovascular disease.</p>&nbsp;</td></tr><tr><td><p>Wave Life Sciences PTE. LTD.;</p><p>Singapore</p>&nbsp;</td><td><p>$80m</p>&nbsp;</td><td><p>After a <a href="http://www.scripintelligence.com/business/FINANCE-ROUNDUP-An-IPO-in-a-tough-stock-market-two-VC-deals-360074" target="_new">$66m Series B in August</a> following an $18m Series A in February, the company is seeking funds to advance its nucleic acid therapeutics for the treatment of Huntington&rsquo;s disease, Duchenne muscular dystrophy, and inflammatory bowel disease into clinical trials.</p>&nbsp;</td></tr><tr><td><p>Voyager Therapeutics Inc.;</p><p>Cambridge, Massachusetts</p>&nbsp;</td><td><p>$86.25m</p>&nbsp;</td><td><p>An IPO would pay for manufacturing and the first clinical trials for gene therapies to treat Parkinson's disease, ALS, Friedreich's ataxia, Huntington's disease and spinal muscular atrophy. The company received $100m up front in February <a href="http://www.scripintelligence.com/business/Genzyme-commits-100m-upfront-for-Voyagers-gene-therapy-expertise-in-CNS-356709" target="_new">under a collaboration agreement</a> with Genzyme and raised $45m in Series A venture capital in February 2014.</p>&nbsp;</td></tr><tr><td><p>Apellis Pharmaceuticals Inc.;</p><p>Crestwood, Kentucky</p>&nbsp;</td><td><p>$86.25m</p>&nbsp;</td><td><p>Apellis was spun out of Potentia Pharmaceuticals in 2009, but the company <a href="http://www.scripintelligence.com/business/BioNotebook-Shire-moves-jobs-to-Massachusetts-as-California-asserts-dominance-plus-two-deals-three-financings-355208" target="_new">bought Potentia</a> in 2014. Now, Apellis wants to start Phase Ib and II clinical trials for lead drug candidates APL-1 and APL-2 in autoimmune and inflammatory diseases.</p>&nbsp;</td></tr><tr><td><p>Hutchison China MediTech Limited (Chi-Med);</p><p>Hong Kong</p>&nbsp;</td><td><p>$100m</p>&nbsp;</td><td><p>Johnson & Johnson's Janssen subsidiary recently <a href="http://www.scripintelligence.com/business/PharmAsia-News-Business-Bulletin-360260" target="_new">terminated the inflammation and immunology portion</a> of its collaboration with Chi-Med, which <a href="http://www.scripintelligence.com/business/Chi-Med-gets-18m-from-Lilly-deal-358405" target="_new">also has a partnership</a> with Eli Lilly & Co. Chi-Med will use its US IPO proceeds to seek approvals in China and begin studies to support US FDA approvals for its inflammation, immunology and oncology drug candidates.</p>&nbsp;</td></tr><tr><td><p>BeiGene Ltd.; </p><p>Cayman Islands</p>&nbsp;</td><td><p>$100m</p>&nbsp;</td><td><p>The <a href="http://www.scripintelligence.com/business/BeiGene-gears-up-for-cancer-immunology-debut-355901" target="_new">cancer immunology-focused</a> company will fund ongoing early-stage clinical trials and repay debt to Merck Serono.</p>&nbsp;</td></tr><tr><td><p>Basilea Pharmaceutica Ltd.;</p><p>Basel, Switzerland</p>&nbsp;</td><td><p>$189.52m</p>&nbsp;</td><td><p>Basilea is <a href="http://www.scripintelligence.com/researchdevelopment/Basilea-files-antifungal-in-the-EU-353490" target="_new">pursuing EU approval</a> for its antifungal drug isavuconazole and won a <a href="http://www.scripintelligence.com/policyregulation/Basileas-ceftobiprole-dubbed-qualified-infectious-disease-product-359935" target="_new">Qualified Infectious Disease Product (QIDP) designation</a> from the FDA for its antibiotic ceftobiprole. The company is raising funds for Phase III ceftobiprole studies, to support isavuconazole and ceftobiprole approvals and commercialization, and to conduct post approval pediatric studies in the EU. </p>&nbsp;</td></tr><tr><td><p>Merus B.V.;</p><p>Utrecht, Netherlands</p>&nbsp;</td><td><p>$60m</p>&nbsp;</td><td><p>Merus <a href="http://www.scripintelligence.com/business/FINANCE-ROUNDUP-Venture-Cash-Flows-To-Biotech-IPOs-Stagnate-360172" target="_new">raised $80.5m in Series C venture capital</a> in August for its bi-specific antibodies, but the immuno-oncology company is seeking additional funds to support Phase I/II ongoing and planned clinical trials for MCLA-128 to treat HER2-expressing tumors and MCLA-117 for acute myeloid leukemia.</p>&nbsp;</td></tr><tr><td><p>Kura Oncology Inc.;</p><p>San Diego</p>&nbsp;</td><td><p>$86.25m</p>&nbsp;</td><td><p>Kura was a startup <a href="http://www.scripintelligence.com/business/Kura-launches-with-60m-to-revive-Janssens-tipifarnib-357251" target="_new">in March when it raised $60m</a> to develop the cancer drug tipifarnib, which it acquired from J&J's Janssen. The company is raising additional funds to conduct Phase II clinical trials for tipifarnib, to develop a companion diagnostic and to advance its ERK inhibitor program. </p>&nbsp;</td></tr><tr><td><p>Viventia Bio Inc.;</p><p>Winnipeg, Manitoba, Canada</p>&nbsp;</td><td><p>$86.25m</p>&nbsp;</td><td><p>The company has come a long way since <a href="http://www.scripintelligence.com/home/news/Viventia-up-for-sale-as-clinical-development-costs-rise-58645" target="_new">2008 when it explored strategic alternatives</a> due to high clinical development costs. Viventia will use its IPO proceeds to fund Phase III clinical trials for vicinium in bladder cancer and proxinium in head and neck cancer as well as earlier-stage trials for additional targeted protein therapeutics.</p>&nbsp;</td></tr></tbody></table></p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 286
+
+<p>Drug developers are filing for initial public offerings at a brisk pace in October despite falling biotechnology stock values and the struggle to price first-time offerings attractively, which begs the question: Are biotech companies afraid that the IPO window is about to close?</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+Is the Biotech IPO Window Closing
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151016T050007
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151016T050007
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151016T050007
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030117
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 34
+
+Is the Biotech IPO Window Closing?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361075
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042509Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ed229f50-f8f4-468b-9c84-fc5487cc11ee
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042509Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {01813989-DBD9-42AE-9E04-C38717040407}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/13/Novartis Alcon Eyed By Lawsuit For Gender Inequality
+parent: {645FC40A-FA7F-499D-A4DF-345C0883A8C0}
+name: Novartis Alcon Eyed By Lawsuit For Gender Inequality
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 18693d4c-7602-47aa-a087-79944a7de0ee
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Novartis' Alcon Eyed By Lawsuit For Gender Inequality
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Novartis Alcon Eyed By Lawsuit For Gender Inequality
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3436
+
+<p>Novartis is facing another lawsuit regarding gender discrimination &ndash; this time from two former employees of the company's Alcon eye-care division. The two women allege in a complaint filed with the US District Court of the Southern District of New York that Alcon "discriminated against them on the basis of their gender" and are seeking $110m in reparations. </p><p>The complaint, filed on 17 March, states that both defendants Elyse Dickerson and Susan Orr were denied "career-enhancing opportunities" and promotions in favor of similarly-situated men. Since joining the company in March 2002, Dickerson served as Alcon's first female Global Director responsible for a portfolio of products that generated 15% of Alcon sales. Orr, who joined the company in 1997, was "the initiator and primary driver of the acquisition of a potential blockbuster medication."</p><p>Orr was eventually forced to resign after being passed over for several opportunities for advancement, while Dickerson was forced-out of the company in January 2015 after complaining about the gender discrimination, said the complaint. </p><p>"Novartis launched a sham investigation to contrive a reason to find to fire her," said Alexandra Harwin, an attorney at Sanford Heisler Kimpel, which is representing the two women. </p><p>Dickerson is seeking $10m in damages, as well as her former job. Meanwhile, Orr, on behalf of herself and a class of similarly-situated female employees, is seeking in excess of $100m. </p><p>Harwin said in an interview that the women seek "to reform a problem that has been rampant at Novartis for some time," and that the law firm has "heard from many women interested [in joining the class] since we filed the complaint."</p><p>"Alcon disputes these allegations and will vigorously defend itself in litigation," said Alcon representative Elizabeth Harness Murphy. "The company is deeply committed to equal employment opportunity for all employees and to preventing discrimination. We value our associates and are committed to their fair and equitable treatment in all aspects of employment, including compensation."</p><p>Murphy added that it "is important to note that one of these former employees was terminated for serious violations of company policies. The company does not tolerate activities which are not in compliance with the company's principles for ethical business conduct."</p><p>This isn't the first time Novartis has faced a gender discrimination lawsuit. In July 2010, the company settled a gender discrimination suit with 5,600 current and former female sales representatives, paying out $152.5m. The big pharma was accused of blocking promotions, cutting salaries and cutting jobs due to pregnancies (<a href="http://www.scripintelligence.com/home/Novartis-settles-sex-discrimination-case-as-second-quarter-beats-expectations-299641" target="_new">scripintelligence.com, 15 July 2010</a>). </p><p>Novartis acquired the remaining 23% of Alcon in 2011 for $12.9bn; the Swiss pharma had previously begun purchasing pieces of the ophthalmic business in 2008 and paid a total of $51bn for the company (<a href="http://www.scripintelligence.com/business/Shareholders-approve-Novartis-Alcon-merger-313825" target="_new">scripintelligence.com, 08 April 2011</a>). The maker of eye-care products, Alcon is Novartis' second largest division with $58bn in sales in 2014 and more than 24,000 employees. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 373
+
+<p>Novartis is facing another lawsuit regarding gender discrimination &ndash; this time from two former employees of the company's Alcon eye-care division. The two women allege in a complaint filed with the US District Court of the Southern District of New York that Alcon "discriminated against them on the basis of their gender" and are seeking $110m in reparations. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Novartis Alcon Eyed By Lawsuit For Gender Inequality
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150313T082239
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150313T082239
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150313T082239
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028154
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Novartis' Alcon Eyed By Lawsuit For Gender Inequality
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357274
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042312Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+18693d4c-7602-47aa-a087-79944a7de0ee
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042312Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

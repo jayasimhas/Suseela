@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {0D9FBFD2-99AF-440B-8A46-D2A00CD5C217}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/30/Obama unveils 215m bold precision medicine initiative
+parent: {BCCFFBED-8CF5-4EB8-8FFF-BBD8EF95AF0D}
+name: Obama unveils 215m bold precision medicine initiative
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 58aebe1c-e20b-487b-a023-088b4f99c1f1
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Obama unveils $215m 'bold' precision medicine initiative
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Obama unveils 215m bold precision medicine initiative
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7819
+
+<p>President Barack Obama plans to ask Congress for $215m in new funding in his fiscal year 2016 budget to build an infrastructure to unleash the full potential of precision medicine.</p><p>The White House is touting the new initiative as a "bold" biomedical research effort aimed at accelerating discoveries and providing clinicians with new tools to better understand the underlying mechanisms of diseases and predict which treatments work best. </p><p>"I believe precision medicine is a game changer," Dr Jo Handelsman, associate director for science at the White House Office of Science and Technology (OSTP), told reporters during a 29 January briefing. "It holds the potential to revolutionize the way we approach health in this country and ultimately around the world."</p><p>"We are just beginning to glimpse the promise of precision medicine, but we are far from unlocking its potential," Dr Handelsman said. </p><p>Officials acknowledged the president's plan, which he first talked about in his 20 January State of the Union address, is in the early stages and many of the details are far from being worked out (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Obama-launches-precision-medicine-initiative-details-scarce-356275" target="_new">21 January 2015</a>).</p><p>National Institutes of Health (NIH) Director Dr Francis Collins said the Obama administration plans to convene a "blue-ribbon" panel to "help us to put the specifics into what is right now an exciting but somewhat general plan."</p><p>Dr Handelsman said there's no plan to put a "czar" in place to oversee the process. But she said the White House will play a role in coordinating to ensure there is no overlap of efforts among the federal agencies. </p><p>Officials said the administration plans to forge strong partnerships calling on academic medical centers, researchers, foundations, privacy experts, medical ethicists and medical product innovators to lay the foundation for the precision medicine effort, including developing new approaches to patient participation and empowerment. </p><p>The president has summoned several scientists, including those from industry, to the White House for a morning ceremony on 30 January to publicly announce his new plan (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Biopharmas-summoned-to-White-House-for-precision-med-reveal-356435" target="_new">30 January 2015</a>).</p><p>Mr Obama has called for lawmakers to approve $130m for the NIH to develop a "patient-powered" national research cohort of at least one million volunteers, whose gene, metabolites and microorganisms profiles will be collected, along with additional information from medical records and other sources.</p><p>"This precision medicine initiative is not just about scale. It's also intended to be a new model of research, one in which people who participate are true partner, not subjects, not even patients &ndash; partners," Dr Collins said. </p><p>He said the project will draw on already existing cohorts &ndash; at least 200 already exist with more than 10,000 patients &ndash; and add more volunteers.</p><p>"The challenge will be putting them together in an interoperable form," he acknowledged. &ldquo;Obviously, there's a lot that will need to be done."</p><p>Officials said earlier reported characterizations of the NIH creating a "biobank" were inaccurate.</p><p>"We don't envision this being a biobank, which would suggest a single repository for all the data or all the samples," Dr Handelsman said. "This is a distributive kind of cohort. There are existing cohorts that have rich sources of data. The challenge in this initiative is to link those together and fill in some of the gaps.&rdquo;</p><p>"This is more than a biobank because this is going to involve active participation by those who volunteer, with opportunities for them to take advantage of new technologies to access to their own kinds of data to help them maintain," Dr Collins added. "The word 'biobank' implies something a lot more static than what we had in mind here."</p><p>He said, however, biospecimens may be obtained, but not all collected in one repository. </p><p>Dr Collins said the ambitious project will leverage existing research and clinical networks and build on innovative research models that enable patients to be active participants and partners. </p><p>The cohort will be broadly accessible to qualified researchers, officials said, emphasizing that patient privacy will be "rigorously protected."</p><p>The NIH plans to hold a workshop 11-12 February to discuss the research cohort.</p><p>The US Office of the National Coordinator (ONC) for Health Information Technology will be tasked with developing interoperability standards and requirements to ensure secure data exchange with patients' consent.</p><p>To support the ONC's efforts, President Obama is asking lawmakers to grant $5m. </p><p>To ensure from the start that this Initiative adheres to rigorous privacy protections, the White House said it would launch a multi-stakeholder process with Health and Human Services and other federal agencies to solicit input from patient groups, bioethicists, privacy, and civil liberties advocates, technologists, and other experts in order to identify and address any legal and technical issues related to the privacy and security of data in the context of precision medicine. </p><p>President Obama wants $70m for the National Cancer Institute (NCI) to scale up efforts to identify genomic drivers in cancer and apply that knowledge in the development of more effective approaches to cancer treatment.</p><p>Dr Collins explained that the near-term focus of the precision medicine initiative is on cancer, but the longer term goal is to generate knowledge that can be applied to a whole range of health issues and diseases.</p><p>Cancer was chosen first, he said, "because we have made significant strides in recent through research to learn the molecular signatures of many cancers and develop targeted therapies."</p><p>"This is the leading edge of precision medicine, but still there's much remains to be done," Dr Collins said. "We need to develop a different understanding of many more different types of cancers and their unique molecular entity."</p><p>There also needs to be more novel designs for clinical trials and non-invasive methods for tracking response to therapies, he said.</p><p>"We need to build a cancer knowledge network to store all of this data in a usable digital format," Dr Collins added.</p><p>"The initiative will also help us tackle some of oncology's most vexing problem, including drug resistance and how to combine therapies for maximum effect and to achieve not just remission but ultimately a cure," he said. </p><p>The president also is calling for Congress to allot $10m to the FDA, so the agency can acquire additional expertise and advance the development of high quality, curated databases to support the regulatory structure needed to advance innovation in precision medicine and protect public health.</p><p>The FDA will be charged with developing a new approach for evaluating next-generation sequencing technologies for rapidly sequencing large segments of a person's DNA &ndash; or even their entire genome. "The new approach will facilitate the generation of knowledge about which genetic changes are important to patient care and foster innovation in genetic sequencing technology, while ensuring that the tests are accurate and reliable," the White House said.</p><p>President Obama's precision medicine initiative is "an ambitious effort, to be sure," said Dr John Holdren, OSTP director, "but one we think holds tremendous promise to make our citizens healthier and keep our country competitive."</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 187
+
+<p>President Barack Obama plans to ask Congress for $215m in new funding in his fiscal year 2016 budget to build an infrastructure to unleash the full potential of precision medicine.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Obama unveils 215m bold precision medicine initiative
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150130T110906
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150130T110906
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150130T110906
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027673
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Obama unveils $215m 'bold' precision medicine initiative
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356367
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+58aebe1c-e20b-487b-a023-088b4f99c1f1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

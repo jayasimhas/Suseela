@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {7B2591C7-F94B-4155-B417-7327094B6B30}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/22/Roches Atezolizumab Makes Its Mark On The PD1L1 Field
+parent: {DB7AFD0C-FF3A-4A4A-B0E2-6A1121FFD09B}
+name: Roches Atezolizumab Makes Its Mark On The PD1L1 Field
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ad7e9f6e-0655-4567-97d0-2c9599a82468
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}|{02BF5E8E-46B6-457B-82C8-D013C26B8CF9}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Roche's Atezolizumab Makes Its Mark On The PD1/L1 Field
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Roches Atezolizumab Makes Its Mark On The PD1L1 Field
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13427
+
+<p>Roche/ Genentech's anti-PD-L1 product atezolizumab that Roche's is shaping up as a meaningful competitor to the frontrunners Opdivo and Keytruda in lung cancer and could move ahead in bladder cancer, data presented at the ECC meeting in Vienna this weekend suggest.</p><p>The results presented were from two pivotal Phase II studies - POPLAR and BIRCH - in non-small cell lung cancer (NSCLC), and were followed by initial data from a third pivotal Phase II study, IMvigor 210, in a type of bladder cancer called urothelial carcinoma.</p><p>Atezolizumab is set to be the third in the PD-1/L1 space following the PD-1 inhibitors Bristol-Myers Squibb Inc.'s <i>Opdivo</i> (nivolumab) and Merck & Co Inc.'s <i>Keytruda</i> (pembrolizumab). Opdivo is already approved in NSCLC, and Keytruda is awaiting approval for this indication (both products are already on the market for melanoma, while atezolizumab's development for this indication is still at an early stage).</p><p>Atezolizumab differs from its more advanced rivals in that the monoclonal antibody targets the PD-1 ligand (Programmed Death Ligand-1) found on the tumor cell surface rather than the PD-1 receptor found on the T-cell. Drugs aimed at these two targets act to disrupt this ligand receptor binding process which ordinarily inhibits T-cell proliferation, survival and effector functions and induces apoptosis of tumor-specific T-cells. </p><p>In February, atezolizumab received US breakthrough therapy designation for the treatment of people whose NSCLC expresses PD-L1 and whose disease worsened during or after standard treatments (e.g. platinum-based chemotherapy and appropriate targeted therapy for EGFR mutation-positive or ALK-positive disease). Roche says it is discussing the POPLAR and BIRCH data with the FDA and other regulators and filings are expected early next year.</p><p>The new results suggest that blocking the PD-L1 ligand is as effective as blocking the PD-1 receptor, and that expression of PD-L1 looks to be a reliable indicator of response to therapy. The NSCLC data show that Roche/Genentech is still very much in the running in the lung cancer indication, despite trailing its rivals, while the product holds significant promise in the underserved bladder cancer indication.</p><p>Overall, experts note that the data show a correlation between PD-L1+ expression and increased response/improvement to atezolizumab treatment. While this observation is not new (it has been already seen with atezolizumab as well as Opdivo and Keytruda), it is adding to the body of evidence supporting a correlation. "The POPLAR data are particularly good for this as this study shows that in patients with no PD-L1 expression, the OS benefit was the same as docetaxel. In patients with the highest levels of PD-L1, the OS from atezolizumab shot up to 15.5 months," said Datamonitor Healthcare analyst Dominique Fontanilla. </p><p>"The POPLAR data also give us a look at how PD-L1 targeted therapies differ from PD-1 therapies (although bear in mind these aren't head-to-head trials). The answer is, they aren't. The POPLAR atezolizumab data has comparable safety and efficacy to Opdivo and Keytruda in similar patient populations along the same lines of therapy," she commented.</p><h2>POPLAR</h2><p>In the POPLAR study, atezolizumab met its primary endpoint of overall survival (OS), with a significant 7.7 months survival benefit seen over docetaxel chemotherapy (HR=0.54; p=0.014) in patients whose tumours expressed medium and high levels of PD-L1.</p><p>In the open-label trial, 287 patients with recurrent locally advanced or metastatic NSCLC were randomised to receive either 1,200 mg of atezolizumab iv every three weeks or docetaxel 75 mg/m2 iv every three weeks. Treatment with atezolizumab was have been continued as long as patients were experiencing a clinical benefit. </p><p>The researchers used an immunohistochemistry (IHC) test being developed by Roche Diagnostics to stratify patients by PD-L1 expression for both tumour cells (TCs) and tumour-infiltrating immune cells (ICs). These were scored as TC0, 1, 2 or 3 and IC0, 1, 2 or 3, and showed there was variation in response according to PD-L1 expression (see table): </p><table><h2>POPLAR Efficacy Data</h2><tbody><tr><td><p>&nbsp;</td><td><p><b>ITT </b></p>&nbsp;</td><td><p><b>TC3 or IC3 (high)</b></p>&nbsp;</td><td><p><b>TC2/3 or IC2/3 (medium and high) </b></p>&nbsp;</td><td><p><b>TC1/2/3 or IC1/2/3 (any expression) </b></p>&nbsp;</td><td><p><b>TC0 and IC0</b></p>&nbsp;</td></tr><tr><td><p>number (A / D)</p>&nbsp;</td><td><p>144 / 143</p>&nbsp;</td><td><p>24 / 21</p>&nbsp;</td><td><p>50 / 55</p>&nbsp;</td><td><p>93 / 102</p>&nbsp;</td><td><p>51 / 41</p>&nbsp;</td></tr><tr><td><p>median OS (months) (A / D) </p>&nbsp;</td><td><p>12.6 / 9.7</p>&nbsp;</td><td><p>15.5 / 11.1</p>&nbsp;</td><td><p>15.1 / 7.4</p>&nbsp;</td><td><p>15.5 / 9.2</p>&nbsp;</td><td><p>9.7 / 9.7</p>&nbsp;</td></tr><tr><td><p>HR (965% CI)</p>&nbsp;</td><td><p>0.73 (0.53&ndash;0.99)</p>&nbsp;</td><td><p>0.49 (0.22&ndash;1.07)</p>&nbsp;</td><td><p>0.54 (0.33&ndash;0.89)</p>&nbsp;</td><td><p>0.59 (0.4&ndash;0.85)</p>&nbsp;</td><td><p>1.04 (0.62&ndash;1.75)</p>&nbsp;</td></tr><tr><td><p>p value </p>&nbsp;</td><td><p>0.040</p>&nbsp;</td><td><p>0.068</p>&nbsp;</td><td><p>0.014</p>&nbsp;</td><td><p>0.005</p>&nbsp;</td><td><p>0.871</p>&nbsp;</td></tr><tr><td><p>median PFS (months) (A/ D)</p>&nbsp;</td><td><p>2.7 / 3.0</p>&nbsp;</td><td><p>7.8 / 3.9</p>&nbsp;</td><td><p>3.4 / 2.8 </p>&nbsp;</td><td><p>2.8 / 3.0</p>&nbsp;</td><td><p>1.7 / 4.1</p>&nbsp;</td></tr><tr><td><p>HR (95% CI)</p>&nbsp;</td><td><p>0.94 (0.72&ndash;1.23)</p>&nbsp;</td><td><p>0.60 (0.31&ndash;1.16)</p>&nbsp;</td><td><p>0.72 (0.47&ndash;1.10)</p>&nbsp;</td><td><p>0.85 (0.63&ndash;1.16)</p>&nbsp;</td><td><p>1.12</p><p>(0.72&ndash;1.77)</p>&nbsp;</td></tr><tr><td><p>confirmed ORR %</p>&nbsp;</td><td><p>15 / 15</p>&nbsp;</td><td><p>28 / 13</p>&nbsp;</td><td><p>22 /15 </p>&nbsp;</td><td><p>18 / 17</p>&nbsp;</td><td><p>8 /10</p>&nbsp;</td></tr></tbody><tr><td colspan="6"><p>A = atezolizumab; D = docetaxel; ORR = objective response rate</p><p>Source: Roche</p></td></tr></table><p><h2>BIRCH</h2><p>Top-line data from <a href="http://www.scripintelligence.com/home/Roches-PD-L1-Contender-Makes-Strides-In-NSCLC-Rival-Chase-359984" target="_new">BIRCH were released</a> last month, and now the full data reported in Vienna show that the single-arm study met its primary endpoint of objective response rate (ORR). </p><p>BIRCH evaluated the safety and efficacy of atezolizumab in 667 patients with locally advanced or metastatic NSCLC whose disease expressed PD-L1 with an IHC score of TC2/3 or IC2/3 who received 1,200 mg of atezolizumab iv every three weeks. The primary endpoint of the study was the ORR assessed by independent review facility per RECIST v1.1. Secondary endpoints included duration of response, OS, PFS and safety. </p><p>Again, the full data suggest a correlation between PD-L1 expression and response, at each line of treatment, with the best ORR rate in those patients whose disease had progressed on prior medicines and also expressed the highest levels of PD-L1 (see table). Median survival has not yet been reached.</p><table><h2>BIRCH Efficacy Data</h2><tbody><tr><td><p>&nbsp;</td><td><p><b>First-line </b></p>&nbsp;</td><td><p>&nbsp;</td><td><p><b>Second-line </b></p>&nbsp;</td><td><p>&nbsp;</td><td><p><b>Third-line</b></p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>&nbsp;</td><td><p>TC3 or IC3 (high)</p>&nbsp;</td><td><p>TC2/3 or IC2/3 (medium and high)</p>&nbsp;</td><td><p>TC3 or IC3 (high)</p>&nbsp;</td><td><p>TC2/3 or IC2/3 (medium and high)</p>&nbsp;</td><td><p>TC3 or IC3 (high)</p>&nbsp;</td><td><p>TC2/3 or IC2/3 (medium and high)</p>&nbsp;</td></tr><tr><td><p>Number</p>&nbsp;</td><td><p>65</p>&nbsp;</td><td><p>139</p>&nbsp;</td><td><p>122</p>&nbsp;</td><td><p>267</p>&nbsp;</td><td><p>115</p>&nbsp;</td><td><p>253</p>&nbsp;</td></tr><tr><td><p>ORR % (95% CI)</p>&nbsp;</td><td><p>26 (16, 39)</p>&nbsp;</td><td><p>19 (13, 27)</p>&nbsp;</td><td><p>24 (17, 32)</p>&nbsp;</td><td><p>17 (13, 22)</p>&nbsp;</td><td><p>27 (19, 36)</p>&nbsp;</td><td><p>17 (13, 23)</p>&nbsp;</td></tr><tr><td><p>6-month PFS, % (95% CI)</p>&nbsp;</td><td><p>48 (35, 61)</p>&nbsp;</td><td><p>46 (37, 55)</p>&nbsp;</td><td><p>34 (26, 43)</p>&nbsp;</td><td><p>29 (23, 34)</p>&nbsp;</td><td><p>39 (30, 48)</p>&nbsp;</td><td><p>31 (25, 37)</p>&nbsp;</td></tr><tr><td><p>6-month OS, % (95% CI)</p>&nbsp;</td><td><p>79 (69, 89)</p>&nbsp;</td><td><p>82 (75, 88)</p>&nbsp;</td><td><p>80 (72, 87)</p>&nbsp;</td><td><p>76 (71, 81)</p>&nbsp;</td><td><p>75 (67, 83)</p>&nbsp;</td><td><p>71 (65, 76)</p>&nbsp;</td></tr><tr><td><p>6-month OS, % (95% CI)</p>&nbsp;</td><td><p>79 (69, 89)</p>&nbsp;</td><td><p>82 (75, 88)</p>&nbsp;</td><td><p>80 (72, 87)</p>&nbsp;</td><td><p>76 (71, 81)</p>&nbsp;</td><td><p>75 (67, 83)</p>&nbsp;</td><td><p>71 (65, 76)</p>&nbsp;</td></tr></tbody><tr><td colspan="6"><p>ORR = objective response rate; OS = overall survival</p></td></tr><p>Source: Roche</p></table></p><p><p>In both studies of atezolizumab, adverse events were consistent with those observed in previous trials.</p><p>Fontanilla added that the POPLAR and BIRCH data will most certainly support atezolizumab's breakthrough therapy designation for second-line PD-L1+ NSCLC and Roche's planned submission for early 2016. "It's unclear how the first-line data will fit into their regulatory submission, but being the first to show first-line data for PD-L1+ NSCLC indicates that Roche is still in the game. Being the first to gain access to first-line patients would mean a big commercial return even in PD-L1+ selected patients (the BIRCH study indicated that of the patients they screened, 34% turned out to be PD-L1+)."</p><h2>Bladder Cancer </h2><p>Meanwhile Roche revealed the more results from the IMvigor 210 study; the headline data from this <a href="http://www.scripintelligence.com/researchdevelopment/Roches-big-immune-oncology-hope-atezolizumab-shrinks-certain-bladder-tumors-359397" target="_new">bladder cancer trial</a> were released in July.</p><p>The data reported were from Cohort 2 of the study in locally advanced or metastatic urothelial carcinoma (mUC) patients whose disease had progressed during or following previous treatment with a platinum-based chemotherapy regimen who received a 1,200 mg dose of atezolizumab iv on day one of 21-day cycles until loss of clinical benefit. </p><p>The co-primary endpoint was ORR assessed by central review (RECIST v1.1) and by investigators using modified RECIST. Patients were stratified by PD-L1 expression on tumour-infiltrating immune cells (IC), using the investigational immunohistochemistry (IHC) test being developed by Roche Diagnostics, and again, the results show a correlation with treatment response: atezolizumab shrank tumours in 27% of patients whose disease had medium and high levels of PD-L1 expression</p><p>The primary endpoint data from Cohort 2 were as follows:</p><table><h2>IMvigor 210 Cohort 2 Results</h2><tbody><tr><td><p>&nbsp;</td><td><p>IC 2/3</p><p>(medium and high)</p>&nbsp;</td><td><p>IC123</p><p>(any expression)</p>&nbsp;</td><td><p>Intent-To-Treat</p><p>(ITT; all patients)</p>&nbsp;</td></tr><tr><td><p>Number </p>&nbsp;</td><td><p>100 </p>&nbsp;</td><td><p>208</p>&nbsp;</td><td><p>311</p>&nbsp;</td></tr><tr><td><p>IRF assessed ORR per RECIST v.1.1</p><p>(95% CI)</p>&nbsp;</td><td><p>27%</p><p>(19%, 37%)</p>&nbsp;</td><td><p>18%</p><p>(13%, 24%)</p>&nbsp;</td><td><p>15%</p><p>(11%, 20%)</p>&nbsp;</td></tr><tr><td><p>p value</p>&nbsp;</td><td><p>p<0.0001></0.0001></p>&nbsp;</td><td><p>p=0.0004</p>&nbsp;</td><td><p>p=0.0058</p>&nbsp;</td></tr><tr><td><p>Investigator-assessed ORR per modified RECIST</p><p>(95% CI)</p>&nbsp;</td><td><p>26%</p><p>(18%, 36%)</p>&nbsp;</td><td><p>21%</p><p>(15%, 27%)</p>&nbsp;</td><td><p>18%</p><p>(14%, 23%)</p>&nbsp;</td></tr><tr><td><p>p-value</p>&nbsp;</td><td><p>p<></p>&nbsp;</td><td><p>p<></p>&nbsp;</td><td><p>p<></p>&nbsp;</td></tr></tbody><p>Source: Roche</p></table></p><p>Moreover, at the time when the data were assessed, Roche noted, 92% of people who responded to atezolizumab were continuing to respond, and median duration of response had not yet been reached. Other secondary endpoints were overall survival (OS), progression-free survival (PFS) and safety. Adverse events were consistent with those observed in previous studies. </p><p>"These results may represent the first major treatment advancement in advanced bladder cancer in nearly 30 years," said Dr Sandra Horning, Roche's Chief Medical Officer and Head of Global Product Development. </p><p>Roche is planning to submit the data to regulators worldwide, including to the US FDA under a Breakthrough Therapy Designation for metastatic bladder cancer that expresses PD-L1.</p><p>Keytruda has also shown early promise in bladder cancer, also with PD-L1 expressers benefiting the most, but the unmet need in this area means that both could reasonably be expected to have an indication for both PD-L1+ and PD-L1&ndash; patients.</p><p>Fontanilla noted: "We are still awaiting data from Cohort 1 in this study which would be really interesting since it's first-line. I believe with this Cohort 2 data however, that atezolizumab looks like it will reach the bladder cancer market before Keytruda."</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 272
+
+<p>Roche/ Genentech's anti-PD-L1 product atezolizumab that Roche's is shaping up as a meaningful competitor to the frontrunners Opdivo and Keytruda in lung cancer and could move ahead in bladder cancer, data presented at the ECC meeting in Vienna this weekend suggest.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Roches Atezolizumab Makes Its Mark On The PD1L1 Field
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150922T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150922T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150922T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029892
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Roche's Atezolizumab Makes Its Mark On The PD1/L1 Field
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360619
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ad7e9f6e-0655-4567-97d0-2c9599a82468
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

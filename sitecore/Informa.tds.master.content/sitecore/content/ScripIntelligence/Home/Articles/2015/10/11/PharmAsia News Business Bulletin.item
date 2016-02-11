@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {C9AA6949-2737-4A2E-98ED-DC2D2C3C1657}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/11/PharmAsia News Business Bulletin
+parent: {22D0ECFE-8F71-4F7C-BBF9-629CD8FA035B}
+name: PharmAsia News Business Bulletin
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e81e0b6b-a8f4-4b6e-be25-5be562f6f087
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4902
+
+<p>A new regular roundup of commercial stories appearing in Scrip's sister publication PharmAsia News, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p><p>Full stories can be accessed by clicking on the story title (subscription required).</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/11/astellas-offloads-ailing-derma-business-to-leo" target="_new">Astellas Offloads Ailing Derma Business To LEO</a></p><p>In its second major transaction this week, Astellas is to divest its declining global dermatology business to sector specialist Leo for around $727m, in a move that enables the Japanese firm to focus on its core therapy areas.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/12/celltrion-files-first-rituximab-biosimilar-in-europe" target="_new">Celltrion Files First Rituximab Biosimilar In Europe</a></p><p>Following the launch of its biosimilar version of Remicade, South Korea's Celltrion has applied for European approval of its second biosimilar candidate, rituximab, marking the first filing in Europe for a biosimilar of the CD20-targeted oncology antibody.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/12/new-wuxililly-deal-builds-on-long-partnership" target="_new">New WuXi/Lilly Deal Builds On Long Partnership</a></p><p>WuXi and Lilly are building on a long history of collaboration by entering into a new partnership for the development in China of an experimental drug that addresses cardiovascular risk in patients with dyslipidemia, a huge unmet medical need in the country. The move also marks another step in WuXi's flexible approach to international alliances.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/12/china-reforms-welcome-but-more-needed-frazier" target="_new">China Reforms Welcome, But More Needed: Frazier</a></p><p>Visiting Beijing on another grey day choked with thick smog, PhRMA chairman Kenneth Frazier stressed the need for drug companies to adopt flexible pricing practices in the Chinese market, along with reimbursement and other measures to support innovation, and a globally-harmonized, science-based, transparent and predictable regulatory framework.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/11/amgen-sets-up-for-independence-in-korea" target="_new">Amgen Sets Up For Independence In Korea</a></p><p>In a sign South Korea is becoming an increasingly important market for multinational biopharma firms, Amgen has set up an independent affiliate in the country. The US biotech giant plans to bring more clinical trials and innovative therapies for serious diseases to a country that it sees as offering medical excellence and a large and diverse patient population.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/10/challenges-linger-as-chinese-firms-kick-off-rampd-race-pt2" target="_new">Challenges Linger as Chinese Firms Kick Off R&D Race (Pt.2)</a></p><p>China's pharmaceutical industry is entering a critical period of transformation as it is losing its traditional price competitiveness in the international market and is now looking more to develop its potential as a force in original R&D. New development models and innovative firms have emerged in the country in recent years, some of which shared their strategies and challenges at a recent meeting in Shanghai.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/9/emerging-markets-lead-growth-at-astrazeneca" target="_new">Emerging Markets Lead Growth At AstraZeneca</a></p><p>AstraZeneca logged continued high growth across the emerging markets, particularly China, in the third quarter, mainly on the back of its strong respiratory franchise</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/8/sun-profit-dives-on-ranbaxy-merger-costs" target="_new">Sun Profit Dives On Ranbaxy Merger Costs</a></p><p>Sun Pharmaceutical Industries, India's biggest drug maker by sales, has reported a 30% drop in quarterly net profit from a year earlier, undershooting analysts' expectations for a third straight trimester and reflecting in part the costs of digesting its merger with Ranbaxy.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/11/9/aslan-strikes-first-licensing-out-deal-for-lead-project" target="_new">ASLAN Strikes First Licensing Out Deal For Lead Project</a></p><p>Hyundai Pharm, a mid-sized South Korean pharma firm, is to license in local rights to Singapore venture ASLAN's lead development molecule varlitinib, a novel small molecule pan-HER inhibitor for cholangiocarcinoma, in a move to boost its oncology pipeline.</p><p><p>www.pharmasianews.com</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 229
+
+<p>A new regular roundup of commercial stories appearing in Scrip's sister publication PharmAsia News, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151011T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151011T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151011T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030320
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200100809
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361485
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e81e0b6b-a8f4-4b6e-be25-5be562f6f087
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

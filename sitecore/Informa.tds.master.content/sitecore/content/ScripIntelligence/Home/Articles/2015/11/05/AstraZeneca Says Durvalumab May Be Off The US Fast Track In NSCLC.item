@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {33E97D4F-0D08-4AA1-BEEF-8B02809EE8D1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/05/AstraZeneca Says Durvalumab May Be Off The US Fast Track In NSCLC
+parent: {AB3D0A5F-5AD9-4FF9-983E-109114074A87}
+name: AstraZeneca Says Durvalumab May Be Off The US Fast Track In NSCLC
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4da9d6a4-ef30-4671-a612-1207519b84f0
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+ AstraZeneca Says Durvalumab May Be Off The US Fast Track In NSCLC  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+AstraZeneca Says Durvalumab May Be Off The US Fast Track In NSCLC
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6935
+
+<p> Advances by competing medicines in the field of lung cancer mean AstraZeneca PLC's PD-L1 inhibitor durvalumab (MEDI4736) may not get to market as quickly as first hoped, the company said Nov. 5 when presenting its third quarter results. </p> <p> Britain's second-biggest drug maker is conducting a trial in third-line PDL-1 positive non-small cell lung cancer (NSCLC) called ATLANTIC, which is due to read out by the end of 2015. The big pharma had hoped the results could back a filing for accelerated approval in the US sometime in the first half of 2016, but that scenario now looks less likely now after Merck &amp; Co. Inc.'s <i>Keytruda</i> (pembrolizumab) and Bristol-Myers Squibb Co.'s <i>Opdivo</i> (nivolumab) recently secured approval in second-line treatment of NSCLC on top of initial clearance in melanoma. </p> <p> &quot;Given the evolving treatment landscape in lung cancer, there is now a lower likelihood that ATLANTIC can be used for regulatory submission. But we're still awaiting the data to make that determination,&quot; Sean Bohen, the company's newly arrived executive vice president of global medicines development and chief medical officer, said during AstraZeneca's earnings call. </p> <p> AZ's head of strategic partnering and business development Shaun Grady added that &quot;if the data is compelling, it's certainly the kind of thing that we can approach the FDA, [but] when we look at how crowded the field has become and so quickly, we do believe the probability of being successful in that approach may be less than it was a while ago.&quot; </p> <p> Analysts sounded concerned about the delayed timeline. Bernstein's Tim Anderson in a reaction note said &quot;AstraZeneca claims it will not have survival data on durvalumab until 2017. This implies that launch in NSCLC may not occur until later 2017 or even 2018, which then begs the question about the drug's commercial competitiveness in this important area, at least when it comes to monotherapy.&quot; </p> <p> Analysts were also keen to hear what the company was doing about the FDA's <a href="http://www.scripintelligence.com/home/marketdata/Pipeline-Watch---Pivotal-events-for-late-stage-and-marketed-drugs-16---22-October-2015-361202" target="_new">decision not to approve</a> its fixed-dose product combining two oral anti-diabetic agents and the regulator's request for more clinical data. The company admitted it didn't yet know what the US regulator wants. Both elements of the product, which combines the DPP-4 inhibitor <i>Onglyza</i> (saxagliptin) and the SGLT2 inhibitor Farxiga (dapagliflozin) for treatment of adults with type 2 diabetes, are already approved, yet FDA still appears to have safety or efficacy concerns about the fixed-dose combination. </p> <p> &quot;We have not yet met with the FDA and as a result, we don't know exactly what more clinical data would be required,&quot; Bohen said. &quot;That leads to not being able to provide any clear guidance with regard to how long the delay might be.&quot; </p> <p> The company believes FDA concerns are not to do with heart failure or ketoacidosis, but it can't say more without having met with FDA at this point. </p> <p> &quot;We're hopeful to meet with them soon, and then, we will have clarity around that. I think it's important to recognize that we do not believe that this particular complete response letter will affect filing outside the United States,&quot; Bohen added. </p> <p> The third-quarter earnings update was his debut with the company, having <a href="http://www.scripintelligence.com/home/Who-Is-Sean-Bohen-360101" target="_new">joined in mid-September</a> as the replacement for Briggs Morrison. Bohen moved over after 12 years at Roche's biologics division Genentech Inc., which he joined in 2003 and where he oversaw preclinical and clinical development programs, including oncology, respiratory and autoimmune diseases. </p> <p> The third quarter of 2015 saw AstraZeneca's sales fall by 10% to $5.95 billion, hurt by a drop in sales of flu vaccine <i>FluMist</i>, <i>Nexium</i> (esomeprazole) heart burn generics, and the strong US dollar. </p> <p> Its five growth platforms &ndash; <i>Brilinta</i> (ticagrelor), diabetes, respiratory, emerging markets and Japan &ndash; posted revenue growth of 8% collectively in the quarter, with Brilinta revenue up 48%. The diabetes franchise grew 17% and respiratory by 7%. Emerging markets were up 10%, led by China, while Japan grew 6%. The five platforms now represent 57% of the group's total revenue. Third quarter sales in China were 11% higher, driven by strong performance of the diabetes franchise there, giving a year-to-date growth rate of growth of 17% in that market, now AstraZeneca's second biggest. </p> <p> The quarterly revenue slide generated a 2% fall in core earnings per share, which exclude certain items, to $1.03 cents. But measured at constant exchange rates in the year so far, the pharma's revenue was stable, with core EPS up 2% and earnings per share for the third quarter 8% higher, helped by good cost control and income from certain disposals. Core R&amp;D costs were up by 18% in the latest three months, reflecting the recent start of key oncology trials. </p> <p> AstraZeneca's CEO Pascal Soriot told the earnings call that &quot;2016 will be a pivotal year in our strategic journey as we face the impact of loss of exclusivity to Crestor in the US.&quot; </p> <p> &quot;Looking ahead however, the continued performance of our growth platforms and upcoming launches will combine with our increasing focus on costs and cash generation to help offset short-term headwinds and return AstraZeneca to sustainable growth.&rdquo; </p> <p> He said the company would continue with and expand on its collaborative externalization strategy to enhance its pipeline and develop promising therapies, maximizing the value of its assets while recognizing that it cannot do everything. He noted as an example the company's <a href="http://www.scripintelligence.com/business/Celgene-pays-450m-for-AZs-MEDI4736-in-blood-cancers-AZ-signs-250m-Innate-deal-358057" target="_new">alliance in hematology</a> with Celgene Corp. </p> <p> The group now expects full-year 2015 revenue at constant currencies to be in line with 2014, after previously predicting a low single-digit percent decline. Core EPS guidance was increased to a mid-to-high single-digit increase from the prior year, another slight upward revision from low single digits. </p> <p> AstraZeneca's US shares traded about 1.2% higher at $32.50 following the company's earnings report and guidance for a better-than-expected year, despite concerns that durvalumab would fall further behind its competitors in lung cancer in <a href="http://www.scripintelligence.com/researchdevelopment/AstraZenecas-Immune-Oncology-Strategy-Suffers-Setback-360999" target="_new">yet another setback</a> for AZ's PD-L1 inhibitor. </p> <p><p><p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 245
+
+<p> Advances by competing medicines in the field of lung cancer mean AstraZeneca PLC's PD-L1 inhibitor durvalumab (MEDI4736) may not get to market as quickly as first hoped, the company said Nov. 5 when presenting its third quarter results. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+AstraZeneca Says Durvalumab May Be Off The US Fast Track In NSCLC
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151105T192727
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151105T192727
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151105T192727
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030249
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+ AstraZeneca Says Durvalumab May Be Off The US Fast Track In NSCLC  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361309
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4da9d6a4-ef30-4671-a612-1207519b84f0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

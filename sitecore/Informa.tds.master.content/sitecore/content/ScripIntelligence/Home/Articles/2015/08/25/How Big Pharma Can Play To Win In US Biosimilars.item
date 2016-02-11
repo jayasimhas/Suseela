@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {5C4D1037-963E-4AF5-A2B2-490D1444AB5A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/25/How Big Pharma Can Play To Win In US Biosimilars
+parent: {1F07280F-8F6D-415E-89E0-E2842C6A21BF}
+name: How Big Pharma Can Play To Win In US Biosimilars
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ed4bd366-6158-4969-ad28-cbc24dc6d0ae
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+How Big Pharma Can Play To Win In US Biosimilars
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+How Big Pharma Can Play To Win In US Biosimilars
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9109
+
+<p>Successful entry into the nascent US biosimilars market is fraught with unknowns, but an analysis by independent research service BioMedTracker concludes that aspiring big pharma would be well advised to partner early, ideally when the drug is in development outside the US, and to use the 351(k) abbreviated pathway to get the quickest regulatory approval.</p><p>"In observing partnerships signed over the past 15 years we found that there is a strong incentive to partner early for US biosimilars. And one in three drugs currently in US development has participated in an ex-US partnership," says Clara Tan, author of BioMedTracker's <i>Biosimilars Special Report 2015.</i></p><p>By partnering at the discovery phase, large cap companies can use their resources to focus on marketing, while small cap and foreign companies can focus on the discovery of biosimilars, thereby leveraging each company's individual strengths, Tan believes.</p><p>"It is becoming convention to include US-referenced products to studies done outside the US. With development stemming from EU markets, we foresee increasing participation with partners in the development of US biosimilars," Tan says. Swiss drug maker Novartis AG's generics unit Sandoz Ltd in May 2014 submitted with its clinical package for Zarxio, data from EU trials of Zarxio compared with EU-licensed Neupogen. Biosimilarity trials were required but Novartis was able to supplement its US application with EU data, allowing Zarxio to become the first biosimilar approved in the US earlier this year. </p><p>"By developing biosimilars, emerging market companies like Biocon Limited and Samsung Bioepis Co Ltd have reaped the benefits of access into global markets through their partnership with Mylan Laboratories Ltd and Merck & Co, while big pharma has mostly sought partnerships with companies with biosimilar discovery capabilities, rather than investing internally." Tan gives as an example Baxter International Inc's strong interest in a biosimilar strategy reflected through its partnership with Momenta Pharmaceuticals, Inc. in late December 2011, which was worth up to around $450m including milestones. Samsung Bioepis and Merck are collaborating on four Phase III 351(k) candidates: etanercept (SB4), infliximab (SB2), adalimumab (SB5), and trastuzumab (SB3). All are slated for filing worldwide in 2015 and 2016.</p><p>Tan's report notes that of the 36 partnership deals entered developing US biosimilars, 20 &ndash; or 56% - were initiated during the preclinical phase. That, she says, "indicates both that partners have strong confidence in future approval and that late partnerships are costly." </p><p>Of the seven US biosimilars partnerships that began prior to US development, all have progressed to Phase III or approval filing to the FDA. "Many of these partnerships began with non-US-based companies that also have experience with biosimilar discovery or have already received approval from countries outside the US," Tan says. </p><p>A dearth of cancelled partnerships seems to reinforce the view that partnerships are the way to go in developing biosimilars for the US market. "Since biosimilar partnerships began in 2006, we have only observed two reported terminations, so this partnering trend may be lasting for the next couple of years," Tan says. </p><p>Unsurprisingly, the ramp up of licensing deals appears to correlate with regulatory mapping by the FDA. </p><p>In March 2010, the US Biologics Price Competition and Innovation Act (BPCIA), or 351(k) pathway, was enacted to allow an abbreviated pathway, enabling biosimilar entrants to forgo Phase II clinical trials. As a result, there are now four ways to bring a biosimilar to the US market: The standard BLA, the 505(b)(2) regulatory pathway, the 351(k) biosimilar route, and the Interchangeable designation. (See Table) </p><p>"We observed a threefold increase in biosimilars deals in the year following the enactment of biosimilar 351(k) pathway. With roughly 67% (19/36) of these transactions being related to US marketing, we believe that there is strong incentive to partner for biosimilars in the US," Tan said. The 351(k) pathway could also cut the development time for US biosimilars compared with a BLA filing, she added. </p><p>Novartis' Zarxio (filgrastim-sndz), a biologic follow-on to Amgen Inc's Neupogen (filgrastim), was approved by the FDA on March 6 using the 351(k) pathway. That approval route is fast filling up even though the contours of the 351(k) BLA pathway are still not entirely clear. More than 20 biosimilars are now in Phase III. While the Phase III pipeline is largely stocked by big pharma, big biotech, and big generics firms, a class of pure-play biosimilars companies is beginning to emerge.</p><p>The financial impact of biosimilars will only be understood once issues such as patent and naming disputes, pricing, doctor and patient acceptance and clinical effectiveness become clearer. But the market potential looks huge.</p><p>A recent report by US-based consultancy Allied Market Research suggests the global biosimilars market would reach $35bn by 2020 from the estimated $1.3bn in 2013, driven by deeper penetration aided by clearer regulatory pathways in developed markets and higher efficacy and safety in emerging markets. </p><p>A report by Morningstar equity analysts foresees strong biosimilar market growth in that period being built on new European launches and US entry and led, they believe, by Novartis AG, Pfizer Inc, and Amgen. </p><p>Express Scripts, the US' largest pharmacy benefit, has said the arrival of biosimilars "is crucial for the affordability of health care in the US" and for continued innovation in the pharmaceutical industry.</p><p><i>For further information on BioMedTracker's report, </i><a href="http://goo.gl/E6J69D" target="_new">click here</a></p><p><table><tbody><tr><td><p>US Biosimilar Approval Pathways</p>&nbsp;</td><td><p>BLA/505(b)(1)</p>&nbsp;</td><td><p>505(b)(2)</p>&nbsp;</td><td><p>Biosimilar 351(k)</p>&nbsp;</td><td><p>Interchangeable 351(k)</p>&nbsp;</td></tr><tr><td><p><i>Application Length</i></p>&nbsp;</td><td><p><i>12-month PDUFA</i></p>&nbsp;</td><td><p><i>10-month PDUFA</i></p>&nbsp;</td><td><p><i>10-month PDUFA</i></p>&nbsp;</td><td><p><i>10-month PDUFA</i></p>&nbsp;</td></tr><tr><td><p><i>Exclusivity</i></p>&nbsp;</td><td><p><i>12 year exclusivity</i></p>&nbsp;</td><td><p><i>3-7 years </i></p><p><i>(case by case)</i></p>&nbsp;</td><td><p><i>No exclusivity</i></p>&nbsp;</td><td><p><i>1 year exclusivity</i></p>&nbsp;</td></tr><tr><td><p><i>Relation to brand</i></p>&nbsp;</td><td><p><i>             -</i></p>&nbsp;</td><td><p><i>Reformulation or Label Change to Brand</i></p>&nbsp;</td><td><p><i>Similar to Brand</i></p>&nbsp;</td><td><p><i>"Identical" to Brand</i></p>&nbsp;</td></tr><tr><td><p><i>Required Trials</i></p>&nbsp;</td><td><p><i>Pivotal Phase III (At least two)</i></p>&nbsp;</td><td><p><i>Pivotal Phase III for each label change</i></p>&nbsp;</td><td><p><i>Pivotal Phase III (At least 1, Possibility of extrapolation)</i></p>&nbsp;</td><td><p><i>Pivotal Phase III (Switch Study) for each indication</i></p>&nbsp;</td></tr></tbody></table></p><p><table><tbody><tr><td><p>The 351(k) Biosimilar: The key motivating factor to encourage the use of this pathway is the potential to extrapolate across all the approved indications of the reference product with limited clinical trials. The standard BLA, wherein pivotal trials are required for every marketed indication, is more demanding in terms of time and costs.</p>&nbsp;</td></tr><tr><td><p>The Standard BLA: Companies seeking to make improvements on an approved biologic may find this an attractive option. This pathway allows the NDA holder to retain trade secrets (unique drug traits, manufacturing processes, etc.) and take advantage of the 12 years of marketing exclusivity that is granted by the FDA. However, a more costly clinical package containing at least 2 large pivotal Phase III trials is required. </p>&nbsp;</td></tr><tr><td><p>505(b)(2): The 505(b)(2) application relies on existing information submitted for a reference product. The applicant essentially builds on the reference application to introduce new indications, modified release forms, dosage, and dosing regimen. Prior to the introduction of the 351(k), 505(b)(2) was the only conceivable abbreviated pathway for approval, though its initial purpose was to bring a greater variety of chemical entities to market.</p>&nbsp;</td></tr><tr><td><p>Interchangeable: The Interchangeable designation is unique to the US. The EMA lacks the jurisdiction to designate any of its approved biosimilars to be substitutable at the pharmacy level (automatic substitution). Certain EU countries have determined that biosimilars are to be directly substitutable with other biosimilars with the same manufacturer (Germany), while others have banned any type of automatic substitution (France). Interchangeability is the main driver in the erosion of the prices in the generic competition model. </p>&nbsp;</td></tr></tbody></table></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 364
+
+<p>Successful entry into the nascent US biosimilars market is fraught with unknowns, but an analysis by independent research service BioMedTracker concludes that aspiring big pharma would be well advised to partner early, ideally when the drug is in development outside the US, and to use the 351(k) abbreviated pathway to get the quickest regulatory approval.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+How Big Pharma Can Play To Win In US Biosimilars
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150825T180001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150825T180001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150825T180001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029651
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+How Big Pharma Can Play To Win In US Biosimilars
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360107
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ed4bd366-6158-4969-ad28-cbc24dc6d0ae
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

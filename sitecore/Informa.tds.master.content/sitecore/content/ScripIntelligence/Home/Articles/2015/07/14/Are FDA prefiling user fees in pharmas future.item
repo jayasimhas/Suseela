@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {11362A69-4B56-4D46-8843-CBB69394C043}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/14/Are FDA prefiling user fees in pharmas future
+parent: {CDA12E48-3499-4F0B-8DA5-8FF067DDAF1D}
+name: Are FDA prefiling user fees in pharmas future
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e7674d2a-5adf-4d64-8b5b-eaa5d8abde3d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+Are FDA pre-filing user fees in pharma's future?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Are FDA prefiling user fees in pharmas future
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4364
+
+<p>When the FDA negotiates with brand-name manufacturers for the next round of the <i>Prescription Drug User Fee Act</i> &ndash; PDUFA VI &ndash; the agency may try to finagle a way to receive some payments up front, said Dr Gillian Woollett, senior vice president at Washington-based analysis and consultancy firm Avalere Health.</p><p>"Everything is on the table," Dr Woollett told <i>Scrip</i>.</p><p>The Europe Union already uses a process in which drug makers pay fees up front for meetings when they want to seek the European Medicine Agency's scientific advice, and companies can schedule as many as of those sessions as they like, although regulators must still agree to hold them, she said.</p><p>In the US, under the <i>Biosimilar User Fee Act of 2012</i> (BsUFA), biosimilar manufacturers must pay 10% of the application fee up front on an annual basis, with that amount subtracted from the overall user fee total when companies file their applications, known as a 351(k)s, Dr Woollett explained.</p><p>Like PDUFA, the BsUFA fees are intended to expedite the application review process. </p><p>For fiscal year 2015, fees for biosimilar applications requiring clinical data are $2,335,200, so the current annual up-front fee is $233,520.</p><p>Biosimilar product firms must pay a development fee, or BPD, to participate in the FDA's program to receive a Type 1, 2, 3 or 4 meeting with the agency. </p><p>The FDA's guidance notes there is no fee for a "biosimilar initial advisory meeting" with US regulators. </p><p>Regulators emphasized the BPD fee is an annual per-product fee, "not a per-meeting or per-review" activity fee. </p><p>Under BsUFA, there are three types of BPD fees: initial BPD fee ($233,520), annual BPD fee ($233,502) and the reactivation fee ($467,040). </p><p>Dr Woollett noted companies pay the annual BPD fee until they submit an application or discontinue participation.</p><p>But if biosimilar maker wants to re-engage with the FDA after the firm has discontinued, the company must pay the reactivation fee.</p><p>According to the FDA, if a company submits a 351(k) to the agency, the fee for the application is reduced by the cumulative amount of the previously paid BPD fees.</p><p>The initial BPD fee is due on the date a company submits an investigational new drug application for an investigation the FDA determines is intended to support a 351(k) or within five calendar days after the agency grants a request for a firm's BPD Types 1-4 meeting, whichever occurs first.</p><p>If a firm fails to pay the BPD fees on time, the FDA may cancel or deny requests for the meetings. </p><p>Dr Woollett noted that when the FDA and biosimilar makers were negotiating the fee structure of BsUFA, the initial discussions revolved around the agency charging "meeting fees," similar to what's done in Europe. But ultimately, the idea for the annual fees won out.</p><p>The upside for the FDA in BsUFA is it gets funds right away from biosimilar makers &ndash; allowing the agency to expand its resources and staffing, Dr Woollett told <i>Scrip</i> in an interview.</p><p>The downside for companies, she said, is "you don't get it refunded if you fail to file."</p><p>Under PDUFA, companies don't pay until they submit their applications, Dr Woollett pointed out.</p><p>But she said that could change under PDUFA VI &ndash; a process the FDA officially launched with a <a href="http://www.scripintelligence.com/home/PDUFA-VI-launches-Not-Pluto-flyby-but-has-potential-359452" target="_new">public meeting on 15 July</a>.</p><p>"It's one of the things I anticipate to be under consideration," she said, although she acknowledged it was "purely conjecture" on her part, but nonetheless, a "logical conclusion."</p><p>While the European scientific advice payment process may be "easier" for the FDA to adopt, Dr Woollett said the agency likely would try to move PDUFA more to the BsUFA model.</p><p>In fact, she added, "the logic is even more compelling under PDUFA for originator products than it is under BsUFA" for such an up-front payment structure &ndash; and possibly even something that could be adopted for all of the "UFAs," including fees for generics and medical devices.</p><p>"I think the FDA is going to be very strategic, very adept" in the PDUFA VI negotiation process, Dr Woollett declared.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 334
+
+<p>When the FDA negotiates with brand-name manufacturers for the next round of the <i>Prescription Drug User Fee Act</i> &ndash; PDUFA VI &ndash; the agency may try to finagle a way to receive some payments up front, said Dr Gillian Woollett, senior vice president at Washington-based analysis and consultancy firm Avalere Health.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Are FDA prefiling user fees in pharmas future
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150714T235804
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150714T235804
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150714T235804
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029273
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+Are FDA pre-filing user fees in pharma's future?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359428
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042424Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e7674d2a-5adf-4d64-8b5b-eaa5d8abde3d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042424Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

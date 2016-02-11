@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {5FB663B1-044C-4CA3-A099-EE1D21D2D66E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/06/Lawmakers expand anthrax probe 69 labs affected
+parent: {1433669C-C53A-4B22-AB4D-371A05B8BBF0}
+name: Lawmakers expand anthrax probe 69 labs affected
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 904fdb12-e4eb-4f1a-9864-cd63f751a356
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{C7FD764C-38F2-42BC-9F1A-A9864C90E18B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+Lawmakers expand anthrax probe; 69 labs affected
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Lawmakers expand anthrax probe 69 labs affected
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3892
+
+<p>US lawmakers have expanded their probe into how the US military sent shipments of live anthrax to 69 private, academic and federal laboratories in 19 US states and five foreign nations. </p><p>The Centers for Disease Control and Prevention (CDC) has confirmed live anthrax in 22 samples it tested, which originated at the US Army's Dugway Proving Grounds in Utah.</p><p>An outside lab in late April made the initial discovery and contacted the CDC.</p><p>A CDC spokesman confirmed to <i>Scrip</i> on 12 June that at least 31 people &ndash; eight US non-military citizens and 23 Department of Defense (DOD) employees &ndash; were taking post-exposure prophylaxis antibiotics.</p><p>No one has shown any symptoms since <a href="http://www.scripintelligence.com/home/Live-anthrax-may-have-reached-numerous-US-labs-358624" target="_new">27 May</a> when the DOD and CDC acknowledged that researchers working at Dugway accidentally shipped live <i>Bacillus anthracis</i> spores to what the agencies thought at the time were 18 labs in nine states and a military base in one foreign nation &ndash; numbers that have since grown considerably.</p><p>DOD disclosed on 12 June that a US military base in Japan was the latest location discovered to have possibly received the live anthrax. </p><p>But, DOD said, "It is impossible to determine whether the sample sent to Camp Zama contained live <i>Bacillus anthracis</i>, as it was destroyed in 2009."</p><p>The military agency said an inventory of the Camp Zama lab conducted this month verified there were no remaining proficiency samples. </p><p>"There were no cases of infection related to the 2005 sample, and there is no health risk to the laboratory personnel or the general public in Japan, as it was properly transported and stored prior to destruction," DOD said.</p><p><a href="http://www.scripintelligence.com/policyregulation/Lawmakers-troubled-over-anthrax-mishap-demand-answers-358649" target="_new">On 28 May</a>, bipartisan leaders from the House Energy and Commerce Committee demanded answers from the heads of the DOD and CDC about what led to the latest anthrax mishap.</p><p>On 12 June, the lawmakers sent another letter to the CDC and also to Department of Health and Human Services Office of Inspector General requesting documents related to biosafety inspections that have been conducted at Dugway since 1 January 2006</p><p>"We remain deeply concerned by the issue of inactivation protocols and procedures for studying dangerous pathogens in our federal research laboratories, an issue that this committee has been overseeing since similar incidents occurred at the CDC more than a year ago," the House E&C leaders said.</p><p>The DOD on 29 May said it was conducting a comprehensive review of its laboratory procedures, processes and protocols associated with inactivating anthrax after it was discovered samples with live spores were shipped from Dugway to the labs.</p><p>US Defense Secretary Ashton Carter on <a href="http://www.scripintelligence.com/policyregulation/US-military-chief-calls-for-accountability-in-anthrax-mishap-358675" target="_new">31 May</a> called for those involved in the anthrax accident to be held accountable.</p><p>The military's mishap follows near-calamities last year at government agencies involving <a href="http://www.scripintelligence.com/home/CDC-anthrax-mishap-puts-spotlight-on-biosafety-lab-vulnerabilities-352431" target="_new">anthrax</a>, <a href="http://www.scripintelligence.com/home/Smallpox-discovery-triggers-FBI-probe-NIH-lab-search-352714" target="_new">smallpox</a>, the <a href="http://www.scripintelligence.com/home/Anthrax-smallpox-and-H5N1-Bad-beyond-Walter-White-352849" target="_new">H5N1</a> influenza virus and <a href="http://www.scripintelligence.com/home/CDC-reports-another-lab-mishap-this-time-Ebola-355849" target="_new">Ebola</a>.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 193
+
+<p>US lawmakers have expanded their probe into how the US military sent shipments of live anthrax to 69 private, academic and federal laboratories in 19 US states and five foreign nations. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Lawmakers expand anthrax probe 69 labs affected
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150806T160006
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150806T160006
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150806T160006
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028980
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+Lawmakers expand anthrax probe; 69 labs affected
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358844
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+904fdb12-e4eb-4f1a-9864-cd63f751a356
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

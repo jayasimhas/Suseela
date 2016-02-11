@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {15861482-DAC8-4495-B844-D4F20D2A95F7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/07/Depomed Calls Horizons Bluff
+parent: {4B2AA564-01BF-4300-9644-9E54CE0DA67F}
+name: Depomed Calls Horizons Bluff
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 82a99c43-a97f-40b9-8019-a73005bc1385
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+Depomed Calls Horizon's Bluff
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 28
+
+Depomed Calls Horizons Bluff
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3214
+
+<p><p>In an unlikely twist, Depomed is forcing Horizon Pharma to up its offer before it will come to the negotiating table &ndash; indicating Depomed might be willing to make a deal if the price is right. </p><p>The maker of the pain drug Nucynta (tapentadol) called out its potential acquirer on Aug. 7 in a public letter, noting that Horizon has said it will increase its offer for Depomed, but has failed to make an official proposal. </p><p>"In our conversation late last week, you stated that Horizon was prepared to increase its proposal and to include a cash component of up to 25%.This was confirmed in an email late Friday night from one of your Board members to our Board Chairman," wrote Depomed CEO Jim Schoeneck. "Yet you still have not made a new proposal. Instead, you have insisted that we need to first make a counter-offer. It does not make any sense to engage with Horizon unless you make a sufficiently compelling and detailed proposal."</p><p>While the tone of Schoeneck's letter was largely negative about the deal, it does show Depomed would be open to the deal if negotiations could give the company's shareholders a better stake in the combined company. At Horizon's current offer of $33 per share in an all-stock deal, Depomed shareholders would only own about 25% of the new company. </p><p>"What matters is the intrinsic value of Depomed and the contribution Depomed would make to the combined company. The inclusion of 25% cash does not change this from being mostly a stock-for-stock transaction," wrote Schoeneck, who went on to point out that the Depomed equity contribution to the combined company would be 35% in 2017. </p><p>"The Depomed shareholders are entitled to an ownership interest that is commensurate with what Depomed would contribute to the combined company as well as a share of the synergies," the exec added in his letter. "Your willingness to increase your proposal is an obvious recognition that the vast majority of our shareholders do not support what you have proposed."</p><p><b>An Ongoing Fight</b></p><p>Horizon revealed Aug. 3 that it is pushing Depomed to organize a special meeting of its shareholders to vote on its offer for the pain med company. Horizon is also <a href="http://www.scripintelligence.com/home/Lawsuits-On-The-Horizon-For-Depomed-359752" target="_new">tapping the Superior Court of California</a> for the County of Santa Clara to fight Depomed's poison pill measures and some of the bylaws that the company put in place.</p><p>Depomed is also bringing complaints to the courts, alleging that Horizon's offer is based on "the improper and unlawful use of highly confidential and proprietary information related to" Depomed's lead product, the pain drug Nucynta. </p><p>Horizon upped its offer for Depomed to $33 per share from $29 per share on 21 July, just days after the target company enacted a poison pill defense that would trigger a flood of shares into the market if any one investor buys more than 10% of the company.</p><p>Depomed has been adamant about <a href="http://www.scripintelligence.com/business/Depomed-says-no-way-to-Horizon-again-359683" target="_new">its rejections</a> since Horizon made its bid public. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+Depomed Calls Horizons Bluff
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150807T212612
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150807T212612
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150807T212612
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029458
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+Depomed Calls Horizon's Bluff
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359743
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042433Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+82a99c43-a97f-40b9-8019-a73005bc1385
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042433Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

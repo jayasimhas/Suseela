@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {466B031F-E879-497B-870B-F149DB306063}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/01/Boehringer considers sale of generics business
+parent: {704BB214-984D-4FA9-81BA-16097208AE7E}
+name: Boehringer considers sale of generics business
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4ff20dab-5772-4935-b1ee-49df41813bf3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Boehringer considers sale of generics business 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+Boehringer considers sale of generics business
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2911
+
+<p>Boehringer Ingelheim has confirmed to <i>Scrip</i> that it is "exploring strategic options" for its generic pharmaceutical business, known collectively as Roxane Labs, which is based in Columbus, Ohio. The business also includes a manufacturing plant.</p><p>Boehringer said Roxane Labs was experiencing a "strong business performance" and has a "successful track record of regulatory compliance." However, Boehringer is "confident that there may be other strategic options that can better support the business and its significant future potential."</p><p>Boehringer declined to comment on the potential value of Roxane Labs but media reports suggest a potential price-tag in the region of $2bn. </p><p>Boehringer noted that it is engaged in various life science industries around the world, including branded pharmaceuticals, consumer healthcare, animal health, biopharmaceuticals, and, within the US, generic pharmaceuticals. However, "The strategic priority of Boehringer Ingelheim is to focus on the company's core areas of expertise and businesses with an established global scale, or where a pathway to a global scale can be achieved and prioritized among the company's portfolio opportunities."</p><p>This move is the latest by pharma companies to focus on core areas of strength, with many of Boehringer's peers making similar strategic changes over the past year. The huge Novartis and GlaxoSmithKline asset swap of 2014 is a prime example of this strategy. Novartis bought GSK's cancer drugs for $16bn, and GSK agreed to pay $5.25bn and up to $1.8bn in milestone fees for Novartis's vaccine business (<a href="http://www.scripintelligence.com/home/INFOGRAPHIC-NovartisGSKLilly-swapping-extravaganza-explained-351569" target="_new">scripintelligence.com, 20 May 2014</a>). At the same time, the two companies agreed to create an over-the-counter and consumer health joint venture, and Eli Lilly bought Novartis's animal health business for $5.4bn.</p><p><b>manufacturing deal</b></p><p>In separate news, Boehringer and French pharma major Sanofi have enter into an alliance to extend Sanofi's manufacturing capacity for therapeutic monoclonal antibodies ahead of upcoming product launches. </p><p>Under the agreement, Sanofi will have access to Boehringer's facilities in Biberach an der Riss, Germany to transfer and manufacture therapeutic monoclonal antibodies. Initial product transfers will begin in early 2015. Financial terms were not disclosed. Sanofi noted that 72% of its R&D projects are in biologics, of which nearly half are monoclonal antibodies.</p><p>"Boehringer Ingelheim is a highly capable and experienced partner to complement our continued alliance with Regeneron and the investments we are making in building our own internal capabilities as we prepare for a wave of potential new product launches in the coming years," said Wolfram Carius, senior vp of biologics at Sanofi.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 258
+
+<p>Boehringer Ingelheim has confirmed to <i>Scrip</i> that it is "exploring strategic options" for its generic pharmaceutical business, known collectively as Roxane Labs, which is based in Columbus, Ohio. The business also includes a manufacturing plant.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Boehringer considers sale of generics business
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151201T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151201T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151201T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027539
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Boehringer considers sale of generics business 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356082
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042233Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4ff20dab-5772-4935-b1ee-49df41813bf3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042233Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

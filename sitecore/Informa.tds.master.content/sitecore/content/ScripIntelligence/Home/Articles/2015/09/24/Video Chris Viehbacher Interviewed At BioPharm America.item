@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {CB6E5C21-2361-4A6B-B650-5819BEFAB4F3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/24/Video Chris Viehbacher Interviewed At BioPharm America
+parent: {D0AAADAC-3A4D-4719-8453-0B9B929C7097}
+name: Video Chris Viehbacher Interviewed At BioPharm America
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 64cb1a10-4c67-457b-b254-b29a6d9ca527
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+ Video: Chris Viehbacher Interviewed At BioPharm America  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Video Chris Viehbacher Interviewed At BioPharm America
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1200
+
+<p> Since his departure from Sanofi, Christopher Viehbacher has taken on a significant role in venture capital. At the BioPharm America 2015 conference in Boston, Massachusetts, he spoke about his company's business model and goals, as well as the trend of pharma execs moving into smaller companies. </p> <p> After departing unceremoniously from his position as CEO of Sanofi last year, Viehbacher has moved into the venture capital realm, now serving as managing partner of Boston-based Gurnet Point Capital. Prior to addressing the conference on Sept. 15, Viehbacher spoke with <i>Scrip</i>'s sister publication &quot;The Pink Sheet&quot; about the recent trend of big pharma executives moving into roles with smaller companies putting them closer to innovation as well as about the deal-making atmosphere in biopharmaceuticals. </p> <p> <b>BioPharm America 2015: Interview with Christopher Viehbacher </b> </p> <p> <preform><iframe src="https://www.youtube.com/embed/LLtyJzovKTI?rel=0" frameborder="0" allowfullscreen=""></iframe></preform></p> <p> Now managing partner at Gurnet Point Capital, Viehbacher spoke about deal-making and other industry trends. </p> <p> <i>SOURCE: EBD Group</i> </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 305
+
+<p> Since his departure from Sanofi, Christopher Viehbacher has taken on a significant role in venture capital. At the BioPharm America 2015 conference in Boston, Massachusetts, he spoke about his company's business model and goals, as well as the trend of pharma execs moving into smaller companies. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Video Chris Viehbacher Interviewed At BioPharm America
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150924T184510
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150924T184510
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150924T184510
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029867
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+ Video: Chris Viehbacher Interviewed At BioPharm America  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EABD3322-E3F8-4F5F-905F-C400968461EA}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360581
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+64cb1a10-4c67-457b-b254-b29a6d9ca527
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

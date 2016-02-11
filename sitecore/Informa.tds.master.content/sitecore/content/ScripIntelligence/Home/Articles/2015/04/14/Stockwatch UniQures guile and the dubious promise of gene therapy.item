@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {2FC09644-9FD7-466E-91F0-D2FE35C4CDEC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/14/Stockwatch UniQures guile and the dubious promise of gene therapy
+parent: {A8A43D63-6ACC-4DA4-B2AE-AFEB13F96A43}
+name: Stockwatch UniQures guile and the dubious promise of gene therapy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0ec1acfa-0dbd-4e49-8b96-62a0625a1225
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+Stockwatch: UniQure's guile and the dubious promise of gene therapy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+Stockwatch UniQures guile and the dubious promise of gene therapy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7825
+
+<p>After last week's headline-grabbing deal between Bristol Myers Squibb (BMS) and Dutch gene therapy company uniQure (<a href="http://www.scripintelligence.com/home/BMS-dives-whole-heartedly-into-gene-therapy-with-uniQure-357671" target="_new">scripintelligence.com, 6 April 2015</a>), who would have thought that events in Europe might by the end of the week spell the demise of uniQure's gene therapy platform? </p><p><p>Certainly not the business development group at BMS, who stumped up a $127m investment in uniQure and should now be dreading their annual performance reviews of a deal where due diligence seems to have been lacking. Nor the poor investors who shelled out $88.5m in the uniQure fund-raising, which for some reason followed the BMS deal announcement with great haste. Those unwitting investors probably remain unaware of the latest in uniQure's long line of clinical, regulatory and commercial failures. </p><p><p>Absent from uniQure's website press releases, but hidden away in an April 9 SEC filing, sandwiched between the those that announced the fundraising, and its completion on April 7 and 10, respectively, was the a summary of the European Medicines Agency (EMA) report that concluded after six years of follow-up, uniQure's gene therapy product Glybera (alipogene tiparvovec) lacked efficacy and had a negative benefit-risk balance. Glybera has a chequered history with the European regulators: it was rejected twice having failed to demonstrate sufficient clinical benefit (<a href="http://www.scripintelligence.com/policyregulation/CHMP-AMTs-Glybera-Europes-first-gene-therapy-stillnotapprovable-322784" target="_new">scripintelligence.com, 24 October 2011</a>). After those failures, the company that originally developed Glybera was taken private, renamed uniQure and after a further appeal to the EMA, Glybera was finally approved under exceptional circumstances in 2012. It is not clear whether it was the recent investigations into this type of opaque European approval (<a href="http://www.scripintelligence.com/home/French-agencies-to-probe-claims-of-malpractice-by-former-committee-members-357547" target="_new">scripintelligence.com, 27 March 2015</a>), the continued lack of efficacy on long-term follow-up, or both, that were responsible for the EMA's reversion to its original stance.</p><p><p>In any event, the adeno-associated vector (AAV) platform that underpins uniQure's gene therapy products must now be compromised and the business development lawyers from BMS should probably be searching their agreements for the material adverse event clauses in order to see if they can wriggle out of the recently signed collaboration. Investors in the fundraising, however, may have little recourse since the SEC suggests that all the information needed to make an investment decision can be provided in the company's SEC filings. This is unlikely to stop the legions of class action attorneys who could point to the absence of a press release about this price-sensitive information (PSI) on uniQure's website, although a research note from the analysts at Jefferies was published to its clients on 9 April. I did not, however, see any research highlighting this development from the investment banks underwriting uniQure's stock offering until the week after the offering closed.</p><p><p>UniQure was, however, happy to issue a press release about the EU's approval of Glybera back in November 2012, when it noted that commercial roll-out was expected in the second half of 2013. This may be the additional ammunition the class action cases need. The product having been approved in the EU for nearly two years and it being two weeks into the second quarter of 2015, uniQure should have been well aware of how many commercial doses of Glybera had been sold to the end of Q1 2015 and should have pre-announced this PSI in advance of the offering. One of the tests of PSI is whether investors would have made a different investment decision to the one they actually made, had the information been known prior to the fundraising. Were it widely known that the EMA had continued concerns on Glybera's efficacy and risk-benefit, and that uniQure and its partner has sold zero commercial doses of Glybera to date, I imagine that there might have been about 88.5m investment decisions differing from the ones taken without this information.</p><p><p>What the company had stated, in its annual report published as a press release on its website on 6 April, is: "uniQure's commercialization partner Chiesi has submitted price and reimbursement dossiers in key European countries in order to make Glybera accessible to patients. Glybera is officially available to doctors in Germany. The price has also been accepted by the Department of Health and published in the UK. In other key European countries the process is on-going according to national procedures. While Chiesi believes the first patient in Germany may receive treatment by mid-2015, the ultimate timing is subject to several factors including the treating physician's decision and relevant patient consent. Chiesi has sole control over commercialization in Europe, and given our limited visibility into these activities, uniQure will no longer provide guidance in this regard."</p><p><p>While newer technologies like the immunotherapy of cancer and PCKS9 inhibition for lipid-lowering have advanced to commercialization this year, gene therapy has failed and continues to fail, independently of the vector employed. Oxford BioMedica has wasted about &pound;150m in the gene therapy of Parkinson's disease without any tangible results to date. Ark Therapeutics failed after a number of attempts and appeals to get its gene therapy for brain cancer approved (<a href="http://#http://www.scripintelligence.com/home/Ark-withdraws-EU-brain-cancer-filing-for-Cerepro-and-starts-strategic-review-198974" target="_new">scripintelligance.com, 9 March 2010</a>) and Avigen gave up an AAV gene therapy similar to that of uniQure's, but for haemophilia and Parkinson's disease, about 10 years ago (<a href="http://www.scripintelligence.com/home/news/End-of-the-road-for-Avigens-haemophilia-gene-therapy-81286" target="_new">scripintelligence.com, 2 June 2004</a>).</p><p><p>Other US gene therapies are still riding high with multi-billion dollar market capitalisations based on the treatment of a handful of patients. It probably won't be long before these companies run out of hyper-responsive patients and encounter real-life response rates, or the toxic side effects of their gene therapies. For the moment, however, the most recent detonation in the salvo of evidence against therapeutic gene therapy is uniQure's lack of clinical benefit. This latest in a long line of gene therapy failures hangs over the other companies like an artillery shell in flight. Gravity always wins in the end. When it does, let's hope that the early but promising field of <i>ex vivo</i> gene therapy of immune effector cells isn't also one of the casualties.</p><p><p>The Magna Biopharma Income fund holdings include BMS.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest manages the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p><b>Correction</b></p><p>This article was amended on 16 April 2015. The previous version did not contain the extract from uniQure's annual report that was published as a press release on its website on 6 April.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 295
+
+<p>After last week's headline-grabbing deal between Bristol Myers Squibb (BMS) and Dutch gene therapy company uniQure (<a>scripintelligence.com, 6 April 2015</a>), who would have thought that events in Europe might by the end of the week spell the demise of uniQure's gene therapy platform? </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+Stockwatch UniQures guile and the dubious promise of gene therapy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150414T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150414T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150414T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028421
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+Stockwatch: UniQure's guile and the dubious promise of gene therapy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357774
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0ec1acfa-0dbd-4e49-8b96-62a0625a1225
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

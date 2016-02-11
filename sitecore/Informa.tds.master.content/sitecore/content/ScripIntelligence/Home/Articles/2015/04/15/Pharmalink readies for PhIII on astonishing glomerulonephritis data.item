@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {7A576A5A-AAB4-44CF-9DF8-6F62698A4B73}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/15/Pharmalink readies for PhIII on astonishing glomerulonephritis data
+parent: {19AE7706-F850-4AD9-804C-0500E26F606C}
+name: Pharmalink readies for PhIII on astonishing glomerulonephritis data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 13ed04d6-2bcd-4aac-8001-c3dd7f5d8afe
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 69
+
+Pharmalink readies for PhIII on 'astonishing' glomerulonephritis data
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+Pharmalink readies for PhIII on astonishing glomerulonephritis data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3585
+
+<p>Pharmalink of Sweden is basking in the "astonishingly good" Phase IIb data of Nefecon, its oral modified-release capsule of budesonide, in the treatment of primary IgA nephropathy &ndash; the most common form of glomerulonephritis. The NEFIGEN trial met its primary endpoint at a planned interim analysis and has been stopped early with respect to statistical analysis of the endpoint. </p><p>IgA nephropathy is an autoimmune renal disease characterized by deposits, predominantly containing polymeric IgA antibody, in the kidney that cause inflammation and renal damage. Nefecon is an enteric formulation of the locally acting corticosteroid budesonide and down regulates the inflammatory process in the kidneys through suppression of the gut immune system. </p><p>The trial is being conducted in 62 centers in 10 European countries and was originally intended to recruit 90 patients. "We had complete opinion leader buy-in," managing director Johan Häggblad told <i>Scrip</i>. As a result, over-recruitment resulted in more than 150 patients being enrolled.</p><p>The NEFIGAN trial is a randomized, double-blinded, placebo-controlled study assessing the safety and efficacy of two different doses of Nefecon administered daily over a nine-month treatment period to primary IgA nephropathy patients with persistent proteinuria despite "rigorous" standard-of-care therapy.</p><p>The interim analysis demonstrated that Nefecon treatment (both treatment groups combined) resulted in a highly significant improvement [p=0.0066 on an intention-to-treat (ITT) basis] in the primary endpoint, defined as the mean reduction in urine protein creatinine ratio (UPCR) during the nine-month treatment period, as compared to placebo. </p><p>The result will be used to determine an optimal dose of Nefecon for a Phase III registration trial. </p><p>The treatment phase of patients currently enrolled in the Phase IIb trial will conclude by the end of April and complete a three-month follow-up, with results expected in Q3 2015.</p><p>"Meeting the primary endpoint with such high significance and at this interim analysis is a tremendous result and major milestone for us," said Dr Häggblad. The Phase III trial will likely be conducted globally and be designed to meet the registrational requirements of both the US FDA and EMA.</p><p>Pharmalink has Phase III competence in-house, claimed Dr Häggblad, and he is in negotiations with the company's "deep-pocketed investors who are very keen to support us" as to how Pharmalink's investment needs can be met. "There are choices to explore and decisions to be made," he said. An IPO is one of the options being discussed.</p><p><b>disease-modifying</b></p><p>"No current therapies address the root cause of the disease which makes the results from the NEFIGAN trial all the more encouraging," commented Dr Bengt Fellström, professor of nephrology at Uppsala University Hospital, Sweden and principal investigator of the NEFIGAN trial. "A new medicine for early treatment with the potential to stop disease progression and minimize any further loss of renal function would be very welcome news."</p><p>The Nefecon story began when Professors Bengt Fellström and Roger Hällgren at Uppsala University identified that if the immune system of the gut was suppressed, disease progression was reduced (as detected by a reduction of protein in the urine). </p><p>Pharmalink developed Nefecon, which specifically acts at the Peyer's Patches at the bottom of the small intestine, with the help of Archimedes Pharma and its TARGIT drug delivery platform.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 393
+
+<p>Pharmalink of Sweden is basking in the "astonishingly good" Phase IIb data of Nefecon, its oral modified-release capsule of budesonide, in the treatment of primary IgA nephropathy &ndash; the most common form of glomerulonephritis. The NEFIGEN trial met its primary endpoint at a planned interim analysis and has been stopped early with respect to statistical analysis of the endpoint. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+Pharmalink readies for PhIII on astonishing glomerulonephritis data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150415T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150415T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150415T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028433
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 69
+
+Pharmalink readies for PhIII on 'astonishing' glomerulonephritis data
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357797
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+13ed04d6-2bcd-4aac-8001-c3dd7f5d8afe
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

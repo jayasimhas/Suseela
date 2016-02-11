@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {4C3CBD54-0DC8-4A29-8A2B-05DBF8907B05}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/01/Tobira Regado merged business will focus on NASH therapies
+parent: {704BB214-984D-4FA9-81BA-16097208AE7E}
+name: Tobira Regado merged business will focus on NASH therapies
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6ebe9c0b-5af7-45e9-9514-4b40f9d15bbb
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Tobira, Regado merged business will focus on NASH therapies
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Tobira Regado merged business will focus on NASH therapies
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5159
+
+<p>Tobira Therapeutics, which last year discarded IPO plans, will merge its business with publically traded Regado Biosciences in an all-stock transaction, creating one company focused on the development of novel treatments for liver and inflammatory diseases.</p><p>Tobira had planned to raise $64.6m through an initial public offering back in July 2014, but postponed this offering a month later (<a href="http://www.scripintelligence.com/business/BioNotebook-Three-public-company-financings-three-IPO-no-gos-353319" target="_new">scripintelligence.com, 10 August 2014</a>). Now it's trying a different tactic.</p><p>The merger with Regado is expected to close in the second quarter after which Regado will be renamed Tobira Therapeutics and will be under the leadership of Tobira's CEO Dr Laurent Fischer. Regado's shareholders will own a 32% stake in the combined outfit. </p><p>Regado has been struggling since the US FDA put its Phase III REGULATE-PCI trial &ndash; testing factor IXa compound Revolixys (REG1) &ndash; on hold in August 2014 (<a href="http://www.scripintelligence.com/business/Regado-sinks-on-permanent-Phase-III-Revolixys-halt-353538" target="_new">scripintelligence.com, 26 August 2014</a>). The company cut its head count by 60% and closed related facilities in September 2014 as a result of the Phase III disappointment. It terminated the trial on the recommendation of REGULATE-PCI's data and safety monitoring board (DSMB), which said enrollment should be halted permanently due to severe allergic reactions.</p><p>President and CEO of Regado, Michael A Metzger, said in a statement: "Following an extensive and thorough review of strategic alternatives, we believe the proposed merger with Tobira provides the opportunity for substantial returns for Regado shareholders." Mr Metzger took over as CEO of the company in October 2014, replacing Dr David J Mazzo who resigned from the firm (<a href="http://www.scripintelligence.com/home/people/Regado-names-Michael-Metzger-CEO-354517" target="_new">scripintelligence.com, 16 October 2014</a>). </p><p>The combined company will focus on the development of novel drugs for liver and inflammatory diseases &ndash; with an initial focus on non-alcoholic steatohepatitis (NASH) treatments. Tobira's lead product, immunomodulator and anti-fibrotic agent cenicriviroc (CVC), received fast track designation from the US FDA and is currently in a Phase IIb trial in NASH.</p><p>A Tobira investor syndicate has committed to invest up to $22m in the combined company following the merger. This financing is expected to fully fund the CVC development program through the completion of the Phase IIb program. Meanwhile, total cash balance of the combined company following the closing of the merger and the financing is expected to be approximately $60m. </p><p>NASH is a chronic liver disease that may affect 10% to 20% of the developed world. It is caused by inflammation and fat accumulation in the liver that may lead to progressive fibrosis, cirrhosis and liver failure. There are currently no approved treatments for the ailment. </p><p>"We expect Tobira to be the next breakout company in NASH based on the best-in-class profile and potential of their lead drug CVC," Mr Metzger said in a statement. Top-line data from the Phase IIb CENTAUR study of CVC in patients with NASH and liver fibrosis are expected by the second quarter of 2016, Tobira said. </p><p>It isn't immediately clear what Tobira hopes to gain from the merger, considering Regado's limited pipeline and struggling business, but the company was unable to comment at this time. Tobira will be discussing the merger in greater detail a conference call scheduled for 20 January. </p><h2>Competitive development landscape</h2><p>Topbira's CVC is the only compound currently in development for NASH that targets inflammation and fibrosis. However, the therapy area has been garnering more attention recently and a number of products are at close stages of development.</p><p>Earlier in January Gilead expanded its portfolio with the acquisition of NASH compounds from Phenex Pharmaceuticals, in a deal worth a potential $470m (<a href="http://www.scripintelligence.com/business/Gilead-buying-another-NASH-program-for-up-to-470m-355961" target="_new">scripintelligence.com, 7 January 2015</a>). Phenex's lead FXR agonist Px-104 is under evaluation in a Phase II NASH safety study. Gilead also has a monoclonal antibody called simtuzumab in Phase IIb clinical trials for NASH. The intravenous therapy is in development for various liver, fibrosis and cancer indications, but data from the company's Phase IIb trials are expected in mid-2015. Gilead's preclinical NASH drug candidates include the orally active small molecule ASK1 inhibitors GS-444217 and GS-4997, according to Sagient Research's BioMedTracker database. The latter is also in Phase I for diabetic nephropathy and Phase II for pulmonary arterial hypertension.</p><p>Meanwhile, Intercept Pharmaceuticals has a NASH product in Phase IIb trials as well, FXR agonist obeticholic acid (OCA). The product is also in Phase III for primary billiary cirrhosis (PBC).  </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 264
+
+<p>Tobira Therapeutics, which last year discarded IPO plans, will merge its business with publically traded Regado Biosciences in an all-stock transaction, creating one company focused on the development of novel treatments for liver and inflammatory diseases.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Tobira Regado merged business will focus on NASH therapies
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151201T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151201T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151201T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027534
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Tobira, Regado merged business will focus on NASH therapies
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356076
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042233Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6ebe9c0b-5af7-45e9-9514-4b40f9d15bbb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042233Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

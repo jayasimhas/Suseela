@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {2E0D014A-D00E-4B23-BF36-A86AC28484BC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/24/FDA NIH Saved From Shutdown ndash For Now
+parent: {D0AAADAC-3A4D-4719-8453-0B9B929C7097}
+name: FDA NIH Saved From Shutdown ndash For Now
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 981b959e-0eaa-4d2d-b99a-467b277657e5
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+FDA, NIH Saved From Shutdown &ndash; For Now
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+FDA NIH Saved From Shutdown ndash For Now
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3501
+
+<p>U.S. lawmakers managed to avert a government shutdown by passing a stopgap measure hours before a midnight deadline on Sept. 30 &ndash; when fiscal year 2015 funding was set to run out &ndash; allowing the FDA, the National Institutes of Health (NIH) and other federal agencies to remain open for business.</p><p>But the measure that was passed by Congress &ndash; first by the Senate in a 78-20 vote, followed by a 277-151 vote by the House &ndash; and quickly signed by President Barack Obama is only temporary, with the funding due to expire on Dec. 11, which means the threat of a shutdown has only been put on hold.</p><p>Indeed, in 10 weeks, the FDA and the NIH may again find themselves having to prepare to tell 42% and 78%, respectively, of their scientists and other employees to stay home for an unknown number of days under a <a href="http://www.scripintelligence.com/home/FDA-NIH-Get-Just-In-Case-Shutdown-Ready-360714" target="_new">contingency plan</a> outlined by the Department of Health and Human Services.</p><p>But Senate Majority Leader Mitch McConnell (R-KY) said he and House Speaker John Boehner (R-OH), who stunned Capitol Hill on Sept. 25 with the revelation he would give up his post and leave Congress on Oct. 30, have already started talking with President Obama about working out a two-year budget deal to avoid another shutdown scenario.</p><p>It's unclear, however, whether the Republican leaders will be able to get enough of their members on board &ndash; especially given all 151 of the "nay" votes on Sept. 30 in the House were from their party.</p><p>For drug makers, a shutdown would have meant the FDA could not have accepted any new marketing applications during the period, delaying manufacturers from moving their products to the U.S. market.</p><p>The agency, however, would have been allowed to continue limited activities related to its user fee-funded programs and other "select vital activities," including maintaining critical consumer protection to handle emergencies, high-risk recalls, civil and criminal investigations, import entry review and other critical public health issues.</p><p>But in the event of a shutdown, the FDA was told it would need to furlough 6,929 medical reviewers and other workers &ndash; something it may still need to do come December.</p><p>The contingency plan also called for 14,536 of the NIH's 18,530 scientists and other workers to be furloughed. The agency also would not have been able to issue any grants during a shutdown, meaning an untold number of research projects would have been at risk for being stopped, with the potential of never being able to be started up again.</p><p>With the temporary funding measure in place, the <a href="http://www.scripintelligence.com/home/U.S.-Government-Shutdown-Threatens-Research-Patients-360630" target="_new">NIH also may now keep the doors to its Clinical Center open</a> &ndash; unlike in October 2013 during the last shutdown when it had to tell hundreds of patients they could not come to the hospital for care.</p><p>If there had been another shutdown, the NIH Clinical Center was set to operate at only 90% of normal patient load. It would not have been allowed to take any new patients, unless it was a life-threatening situation.</p><p>The last government shutdown <a href="http://www.scripintelligence.com/home/Research-blunted-economy-damaged-And-for-what-347447" target="_new">cost the U.S. economy $24bn</a>, according to Standard & Poor's.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 313
+
+<p>U.S. lawmakers managed to avert a government shutdown by passing a stopgap measure hours before a midnight deadline on Sept. 30 &ndash; when fiscal year 2015 funding was set to run out &ndash; allowing the FDA, the National Institutes of Health (NIH) and other federal agencies to remain open for business.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+FDA NIH Saved From Shutdown ndash For Now
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150924T184510
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150924T184510
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150924T184510
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029926
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+FDA, NIH Saved From Shutdown &ndash; For Now
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360671
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+981b959e-0eaa-4d2d-b99a-467b277657e5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

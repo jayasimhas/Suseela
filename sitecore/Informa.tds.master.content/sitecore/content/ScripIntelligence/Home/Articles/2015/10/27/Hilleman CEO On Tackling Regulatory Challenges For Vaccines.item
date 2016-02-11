@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {AA0258FB-8B70-4724-8232-90EBE65CA92C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/27/Hilleman CEO On Tackling Regulatory Challenges For Vaccines
+parent: {2D330967-8DB2-4077-92B3-CBD6ACF7FB17}
+name: Hilleman CEO On Tackling Regulatory Challenges For Vaccines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a2d1277c-2ecf-4312-8dac-6410fe8fe4ce
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Hilleman CEO On Tackling Regulatory Challenges For Vaccines
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Hilleman CEO On Tackling Regulatory Challenges For Vaccines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5250
+
+<p>Hilleman Laboratories' CEO, Dr Davinder Gill, is upbeat about the firm's tie-ups in Bangladesh for its "high-impact" cholera vaccine but underscores that it is critical to get the country's national regulatory authority (NRA) functional as quickly as possible to make such products available globally.</p><p>Hilleman is an equal joint-venture partnership between Merck & Co and the Wellcome Trust. </p><p>In June last year, Hilleman and Gotovax AB, a University of Gothenburg spin-off biopharma firm, outlined plans to develop a cut-price oral cholera vaccine that could potentially address some of the <a href="http://www.scripintelligence.com/home/Hilleman-CEO-on-why-new-cholera-vaccine-could-be-high-impact-352381" target="_new">key limitations</a> of existing products for the deadly disease. </p><p>In November 2014, Hilleman announced a memorandum of understanding with the Bangladesh-based icddr,b (formerly the International Centre for Diarrheal Disease Research, Bangladesh), an international public health research organization, and a leading local firm, Incepta Vaccine Ltd, to fast track clinical trials and product licensing and commercialization of its cholera vaccine.</p><p>Gill told <i>Scrip</i> that Incepta had been building a "very large capacity" to supply vaccines at a global scale but what was "limiting" at the moment is that the NRA in Bangladesh is "not functional."</p><p>"So therefore products coming out of the Incepta facility at this point in time would not make it to the World Health Organization (WHO) prequalification process," Gill told <i>Scrip</i> in an interview in Mumbai. </p><p>The Hilleman boss stressed that it was vital to get the NRA functional as quickly as possible so that not just the venture's vaccine but other vaccines that are being made in Bangladesh can seek WHO prequalification and be made available for global use.</p><p>Gill, though, believes that since the Hilleman cholera vaccine is still going through development, in two to three years when it actually finishes development in Bangladesh, it will likely be approved there. </p><p>"So we have this two-three year window, possibly four years. If during that time the Bangladesh NRA becomes functional then we are in a very strong position. The indications that we are getting in our discussions with Bangladesh is that the process is on track."</p><p>NRAs are generally responsible for ensuring that products released for public distribution (normally pharmaceuticals and biological products, such as vaccines) are evaluated properly and meet international standards of quality and safety. For prequalification of vaccines for UN supply, it is typically a prerequisite that a NRA responsible for the product is "functional" as per the assessment performed using the WHO's established indicators, industry experts explained.</p><p>Getting things moving, Gill indicated, would entail the government of Bangladesh putting in the "appropriate resource" to build a functional NRA; a significant amount of training and development that other functioning regulatory authorities can provide for the Bangladeshi NRA staff. </p><p>"Ultimately it also working closely with global agencies like the WHO to make sure that the whole process is streamlined and that it actually happens quickly."</p><p>An official comment from the Bangladesh's Directorate General of Drug Administration (DGDA) on the progress of the NRA could not immediately beobtained. However, industry experts from Bangladesh told <i>Scrip</i> that the WHO and DGDA are working closely to ensure compliance with all the WHO indicators.</p><p>"With the aim of building national capacity for sustainable manufacturing and monitoring of quality medicines, the WHO also organizes various training and hands-on programs. We hope vaccines produced in Bangladesh will be prequalified in the very near future," the expert told <i>Scrip</i>.</p><h2>Global Use</h2><p>Hilleman's vision for the cholera vaccine, though, extends beyond Bangladesh and Gill hopes that the product will be available for global use. </p><p>"We are in discussions with icddr,b and Incepta on how can we seek a global registration once we get this product registered in Bangladesh," Gill said.</p><p>Cholera is endemic in more than 50 countries with an estimated mortality of 100,000-120,000 deaths and a morbidity of 3.8-4.4 million annual cases attributed to it. </p><p>Hilleman, which on Oct. 26 announced the publication of an original scientific report in the Royal Society of Chemistry Advances Journal on the synthesis of a meningitis vaccine for <i>Neisseria meningitidis</i> sero group X, is also developing a <a href="http://www.scripintelligence.com/home/Hilleman-CEO-On-1-Rotavirus-Vaccine-Pricing-And-GSKs-Mosquirix-361232" target="_new">rotavirus vaccine</a> and a Hib vaccine.</p><p>Partnering discussions for the Hib vaccine are at a "fairly advanced stage" with two organizations - one in India and one outside the country.</p><p>"We are reviewing all the technical and process details; both of these partners have substantial expertise and capacity in developing Hib conjugate vaccines and ultimately the pentavalent vaccine of which the Hib conjugate vaccine is a component," Gill added.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 308
+
+<p>Hilleman Laboratories' CEO, Dr Davinder Gill, is upbeat about the firm's tie-ups in Bangladesh for its "high-impact" cholera vaccine but underscores that it is critical to get the country's national regulatory authority (NRA) functional as quickly as possible to make such products available globally.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Hilleman CEO On Tackling Regulatory Challenges For Vaccines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151027T160002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151027T160002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151027T160002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030217
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Hilleman CEO On Tackling Regulatory Challenges For Vaccines
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361249
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042516Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a2d1277c-2ecf-4312-8dac-6410fe8fe4ce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042516Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

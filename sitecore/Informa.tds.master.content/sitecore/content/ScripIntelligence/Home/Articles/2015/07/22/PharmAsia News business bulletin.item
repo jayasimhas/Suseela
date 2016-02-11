@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F60D168B-7E91-401D-B775-26ACC73EFA99}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/PharmAsia News business bulletin
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: PharmAsia News business bulletin
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1a3928df-fd7d-4946-b9f3-bfe3f5f98b0f
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{F5161CC2-772F-472E-A21C-BF196343462E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4161
+
+<p>A new regular roundup of commercial stories appearing in <i>Scrip</i>&rsquo;s sister publication <i>PharmAsia News</i>, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace. </p><p><p>Full stories can be accessed by clicking on the story title (subscription required). </p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/23/bayer-eyes-new-areas-for-collaborative-singapore-research" target="_new">Bayer Eyes New Areas For Collaborative Singapore Research</a></p><p>Bayer HealthCare is expanding its spread of research collaborations in Singapore into new therapeutic areas, tapping local academic and other institutions to assist with drug and biomarker development and commercialization.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/23/interview-hilleman-seeks-hib-partners-as-it-hones-focus" target="_new">INTERVIEW: Hilleman Seeks Hib Partners As It Hones Focus</a></p><p>Indian vaccine R&D firm Hilleman Laboratories says it's talking to potential partners about the clinical testing of a new "breakthrough" vaccine formulation that could create a far cheaper, more effective way to combat Haemophilus influenzae type b (Hib) and be in production in the next three to four years.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/22/why-no-blockbusters-from-korea" target="_new">Why No Blockbusters from Korea?</a></p><p>During a recent seminar in Seoul, South Korean pharma experts discussed problems related to the country's drug pricing system, the current status of the domestic pharma industry and ways to boost R&D. Participants called for the need for fundamental changes to the pricing system to make it more friendly to companies and provide better incentives to develop innovative drugs.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/22/foreign-industry-unites-against-annual-japan-price-cuts" target="_new">Foreign Industry Unites Against Annual Japan Price Cuts</a></p><p>Major groups representing the foreign innovation-based pharma and medtech industries in Japan have come out in strong united opposition to a proposal to adopt annual, rather than biennial, reimbursement price cuts, warning this could adversely affect investment and the provision of healthcare.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/21/korean-pharma-asks-for-govt-support-as-mers-hits-sales" target="_new">Korean Pharma Asks For Govt Support as MERS Hits Sales</a></p><p>South Korean pharma firms have decided to ask the government to support the industry, which is suffering from sales decline due to the recent outbreak of the Middle East Respiratory Syndrome (MERS) coronavirus. They will ask the government to postpone a planned drug price cut by one year in an effort to overcome the MERS impact and proceed with drug development and globalization programs.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/21/turkey-company-roundup-abdi-ibrahim-biotech-plant-cuba-project" target="_new">Turkey Company Roundup: Abdi Ibrahim Biotech Plant, Cuba Project</a></p><p>Abdi Ibrahim is to establish Turkey&rsquo;s biggest biotech drug production facility, while the Ukrainian firm Biofarma will also invest in the country. Meanwhile, Hasbiotech is starting a joint project with the Cuban government for a hepatitis C vaccine facility, and Sanofi has made personnel changes.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/7/17/shifting-china-otc-sales-affect-jampj-prompt-new-alliances" target="_new">Shifting China OTC Sales Affect J&J, Prompt New Alliances</a></p><p>Johnson & Johnson sees shifting consumer behavior in China as a reason for its slowing OTC sales in this market, a trend that could potentially force more multinationals to embrace the e-commerce phenomenon. Pfizer is among the first such companies to form a tie-up with a domestic firm to surf the surging online drug sales tide.</p><p><p>www.pharmasianews.com</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 250
+
+<p>A new regular roundup of commercial stories appearing in <i>Scrip</i>&rsquo;s sister publication <i>PharmAsia News</i>, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T202556
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T202556
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T202556
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029362
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+PharmAsia News business bulletin
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359575
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1a3928df-fd7d-4946-b9f3-bfe3f5f98b0f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

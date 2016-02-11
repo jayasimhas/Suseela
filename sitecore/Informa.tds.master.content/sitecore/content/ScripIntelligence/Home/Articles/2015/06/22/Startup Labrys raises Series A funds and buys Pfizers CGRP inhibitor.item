@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {35D809D0-B12B-4954-937B-1D897EF4F233}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/22/Startup Labrys raises Series A funds and buys Pfizers CGRP inhibitor
+parent: {00F73790-0694-4BB8-8A63-FA232FC172C8}
+name: Startup Labrys raises Series A funds and buys Pfizers CGRP inhibitor
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 93a7eeb5-c5ea-4a9e-8a6b-1f5b0910dee1
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+Startup Labrys raises Series A funds and buys Pfizer's CGRP inhibitor 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 68
+
+Startup Labrys raises Series A funds and buys Pfizers CGRP inhibitor
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7034
+
+<p>San Francisco-based startup Labrys Biologics simultaneously closed the first $14.6 million of a $31 million Series A venture funding round and acquired the Phase II-ready RN-307 from Pfizer, becoming one of at least three private companies with calcitonin gene-related peptide (CGRP) inhibitors in development for prophylactic treatment of chronic migraine headaches.</p><p>Labrys also announced on 3 January that Steven James &ndash; CEO of KAI Pharmaceuticals until its $315 million all-cash acquisition by Amgen in 2012 (<a href="http://www.scripintelligence.com/business/Amgen-buys-KAI-Pharma-for-315M-to-extend-franchise-in-secondary-hyperparathyroidism-329162" target="_new">scripintelligence.com, 11 April 2012</a>) &ndash; was hired as the startup firm's first president and CEO. </p><p>James told <i>Scrip</i> that the cash from Labrys' two-tranche venture funding round is "sufficient to reach an important proof-of-concept and value creation point" for RN-307, which will be evaluated in a Phase IIb clinical trial starting in 2013. The company will amass a small executive team to run mid-stage trials with help from consultants and contract research firms.</p><p>"The idea is to keep it small and focused," James said, with no immediate plans to acquire complimentary product candidates.</p><p>Canaan Partners, InterWest Partners and Sofinnova Ventures participated in Labrys' Series A round with the San Francisco venture capital firm venBio, which founded the new startup around the acquisition of worldwide rights to RN-307. </p><p>The monoclonal antibody that binds to CGRP was purchased for an undisclosed upfront payment to Pfizer, which also is entitled to milestone payments, royalties on commercial drug sales and a liquidity payment if Labrys is acquired. </p><p>Pfizer completed a 74-patient Phase I clinical trial for RN-307, but the CGRP inhibitor and migraine prophylaxis was discovered by Rinat Pharmaceuticals before the private company's acquisition by Pfizer in 2006 for an undisclosed amount (<a href="http://www.scripintelligence.com/home/news/Pfizer-acquires-Rinat-to-expand-neuroscience-franchise-62855" target="_new">scripintelligence.com, 14 April 2006</a>).</p><p>"Somewhere in the last couple of years Pfizer made a strategic decision to focus on markets other than migraine," James said. "They wanted to put [RN-307] in a good home where someone else could focus on it; then it would have a higher likelihood of success. The fact that they want a downstream interest demonstrates their belief in it."</p><p>Labrys will conduct a Phase IIb placebo-controlled, double-blind, dose-ranging clinical trial with multiple study arms, several hundred patients and standard primary and secondary migraine endpoints.</p><p>Jaume Pons, senior vice-presdent and chief scientific officer of Pfizer's Rinat Research Unit in South San Francisco said in a statement from Labrys that Pfizer is "pleased that the capable team at Labrys will continue to pursue the development of this potential candidate for patients with migraine".</p><p>Difficult-to-treat migraines have been attractive to early-stage biotechnology companies, despite Big Pharma decisions to turn away from the market.</p><p>Arteaus Therapeutics of Cambridge, Massachusetts raised $18 million in startup funding in 2011 for Phase II development of Eli Lilly's antibody against CGRP (<a href="http://www.scripintelligence.com/home/Atlas-tests-single-asset-VC-model-with-18M-in-Arteaus-to-develop-Lilly-migraine-molecule-322773" target="_new">scripintelligence.com, 24 October 2011</a>) and Alder Biopharmaceuticals of Bothell, Washington raised $38 million in Series D funds in April to fund several programs, including a Phase I study for the CGRP-inhibiting antibody ALD403 (<a href="http://www.scripintelligence.com/business/Alder-raises-38-million-in-Series-D-round-to-advance-cancer-migraine-and-other-programs-329533" target="_new">scripintelligence.com, 20 April 2012</a>). </p><p>However, Merck discontinued the Phase III development of its CGRP antagonist known as telcagepant in 2011 based on data from a six-month, 4,500-patient Phase III study designed to investigate elevated liver enzyme levels observed in earlier migraine prophylaxis clinical trials (<a href="http://www.scripintelligence.com/home/comment/Telcagepant-failure-is-a-headache-for-Merck-and-perhaps-Pfizer-but-a-break-for-others-319266" target="_new">scripintelligence.com, 1 August 2011</a>). The drug was thought to inhibit the transmission of pain signals that lead to migraine headaches.</p><p>James said RN-307 appears to be differentiated from other antibodies, because it is an IgG2 humanized antibody that forms a highly specific bond with both forms of CGRP. It also has a half-life that is longer than 45 days. </p><p>But he also noted that: "In any condition that's this prevalent, there's certainly the likelihood of multiple therapies getting into the [migraine] market and being successful."</p><p>Companies developing CGRP inhibitors are chasing the prophylactic market for migraine headaches since largely generic triptans, such as sumatriptan and zolmitriptan &ndash; the standard of care after the onset of a migraine headache &ndash; fail to treat many chronic migraine sufferers effectively.</p><p>Chronic migraine is defined as fifteen or more headache days per month. The condition affects about 6 million people in the US whose debilitating headaches often occur with nausea, vomiting, sensitivity to light and fatigue. Women are three times more likely than men to have chronic migraine headaches. </p><p>"There is significant interest in new treatments that can improve upon the limited efficacy of current pharmaceuticals," venBio managing director and Labrys founder and chairman Corey Goodman said in a statement.</p><p><i>Datamonitor</i> analyst Daniel Chancellor noted in August 2011 after the failure of telcagepant that only about half of migraine patients treated prophylactically with Johnson & Johnson's anti-epileptic drug Topamax (topiramate) have relief from their headaches. </p><p>Considering the lack of effective prophylaxis, Allergan won regulatory approvals to market Botox (onabotulinumtoxin A) for chronic migraine prevention and launched the wrinkle-reducing injectable drug in the migraine market in 2010 in the US and UK. Botox sales totaled $1.6 billion in 2011, which was up 12.4% from 2010, and 51% of the drug's sales were for therapeutic indications versus 49% for cosmetic uses.</p><p>Labrys foresees other pain and pain-related indications beyond migraine prevention for RN-307, but the specific treatment areas have not been disclosed.</p><p>"It's an asset that may have other indications and we intend to judiciously explore as much of the utility of the compound as possible," James said.</p><p>In addition to James and Goodman, Canaan general partner Wende Hutton, Nina Kjellson of InterWest and Mike Powell of Sofinnova have joined the Labrys board of directors to guide the development of RN-307.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 374
+
+<p>San Francisco-based startup Labrys Biologics simultaneously closed the first $14.6 million of a $31 million Series A venture funding round and acquired the Phase II-ready RN-307 from Pfizer, becoming one of at least three private companies with calcitonin gene-related peptide (CGRP) inhibitors in development for prophylactic treatment of chronic migraine headaches.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+Startup Labrys raises Series A funds and buys Pfizers CGRP inhibitor
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150622T054538
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150622T054538
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150622T054538
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC019923
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+Startup Labrys raises Series A funds and buys Pfizer's CGRP inhibitor 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+338659
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T041507Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+93a7eeb5-c5ea-4a9e-8a6b-1f5b0910dee1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T041507Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

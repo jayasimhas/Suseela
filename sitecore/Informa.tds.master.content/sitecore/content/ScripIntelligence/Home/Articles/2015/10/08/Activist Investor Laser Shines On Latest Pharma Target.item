@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {B8408671-6232-4A80-BAAD-847187A1DC26}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/08/Activist Investor Laser Shines On Latest Pharma Target
+parent: {83EF6A9B-4CC6-487A-9149-D19CA9E8F934}
+name: Activist Investor Laser Shines On Latest Pharma Target
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 155caa54-c4f5-40af-92fa-d07898f0fd8f
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{6813DF9C-1DA9-44AE-9B9D-FB83827E8521}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Activist Investor Laser Shines On Latest Pharma Target
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Activist Investor Laser Shines On Latest Pharma Target
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2756
+
+<p>We don't wish to speculate on the personal reasons that prompted Bavarian Nordic A/S's executive vice president and chief development officer Dr Jim Breitmeyer to resign on Aug. 5, two days after famed short seller Sahm Adrangi's hedge fund Kerrisdale Capital turned its laser on the Danish firm. Suffice to say, his resignation releases him from what promises to be an unpleasant and drawn-out short-selling campaign. </p><p>Being thrown into the spotlight by an activist investor probably counts among of the more uncomfortable facets of life as a biopharma executive, as previous management at Amylin, Enzon, Biogen, MedImmune, Genzyme, ImClone and Forest Laboratories can attest following the attentions of Carl Icahn. </p><p>Kerrisdale's opening salvo was a 52-page <a href="http://kerrisdalecap.com/wp-content/uploads/2015/08/BAVA-Report-Kerrisdale-Capital.pdf" target="_new">report</a> savaging the data and prospects of Bavarian's Phase III prostate cancer vaccine Prostvac, which in March 2015 attracted a <a href="http://www.scripintelligence.com/home/BMS-explores-OS-potential-of-prostate-cancer-vaccine-with-975m-deal-357074" target="_new">$60m upfront payment</a> from Bristol-Myers Squibb under a deal that Bavarian hopes will eventually yield up to $975m in payments from its partner.</p><p>Since Kerrisdale opened its attack, Bavarian Nordic's share price has slid 13.4% to close at DKK278.00 on Aug. 12, which is unlikely to assuage the short-seller. Indeed, Kerrisdale has now announced it will host on Aug. 18 a conference call to discuss further its analysis of the company, which it dubbed "Dendreon 2.0", and of Prostvac, which it says "is a failed, 20-year-old product that has only managed to look promising thanks to a misleading statistical fluke in its Phase II data coupled with the absence of any meaningful point of reference in its combination trial with ipilimumab."</p><p>Previous tactics demonstrate Kerrisdale's persistence. It launched a stock-damaging publicity campaign against Globalstar, Inc. in October 2014 that included brutal and detailed critiques of the satellite communications giant, and it continues to attack the firm publicly. Adrangi and his firm built their renown and fortune shorting and exposing dodgy Chinese firms listed in the US. </p><p>Some argue short-sellers like Adrangi provide a service by holding listed companies to account; others say they hijack the market by cynically creating unwarranted suspicion around innocent victim firms for personal gain. These positions are not mutually exclusive.</p><p> Kerrisdale is short on Bavarian shares and says it believes the stock is worth 70% less than its trading value prior to Kerrisdale's report coming out. This one could run and run.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 426
+
+<p>We don't wish to speculate on the personal reasons that prompted Bavarian Nordic A/S's executive vice president and chief development officer Dr Jim Breitmeyer to resign on Aug. 5, two days after famed short seller Sahm Adrangi's hedge fund Kerrisdale Capital turned its laser on the Danish firm. Suffice to say, his resignation releases him from what promises to be an unpleasant and drawn-out short-selling campaign. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Activist Investor Laser Shines On Latest Pharma Target
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151008T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151008T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151008T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029489
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{99C1E0C6-E575-4630-A767-F6BBBF6CA843}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Activist Investor Laser Shines On Latest Pharma Target
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200264
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+MarketData
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359841
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+155caa54-c4f5-40af-92fa-d07898f0fd8f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

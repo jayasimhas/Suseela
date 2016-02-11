@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {F3687157-5202-4204-B544-E07BC0FA9234}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/12/Biotech bubbles as money pours in
+parent: {A8E04CE2-4C46-4A28-8CD4-0F6C270157F5}
+name: Biotech bubbles as money pours in
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 27d81230-6d5f-4bcc-8350-bccba83f21fe
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 33
+
+Biotech bubbles as money pours in
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 33
+
+Biotech bubbles as money pours in
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3840
+
+<p><p>Lots of money moved into the biotech sector this week as the bull market continues to charge ahead, potentially indicating the bubble that investors fear. </p><p>The biggest market mover was the initial public offering of Axovant Sciences, a newly formed biotech that has some people questioning its worth. Beyond that, Unum Therapeutics raked in a second round of financing to fund its T-cell therapies and Chimerix priced its IPO, amongst other financings. </p><p><b>Axovant</b></p><p>The shiny new biotech priced its IPO at the high of its range, bringing in $15 per share on an offering of 21m shares for a total haul of $315m. Beyond the bounty, some industry insiders question why investors are putting money in the stock. </p><p>The company was formed by 29-year-old Vivek Ramaswamy, a former at QVT Financial partner that has dipped his toes in a few biotechs along the way. The backbone of Axovant is RVT-101, an Alzheimer's disease drug that Ramaswamy picked up for $5m from GlaxoSmithKline. The drug has been tested in Phase II trials that showed it helped with symptoms of the debilitating disease, but was not disease modifying. Axovant now has a Phase III trial planned for later in the year. </p><p>Alzheimer's disease has been a notoriously tricky space for drug developers and many a big pharma has failed to find a worthwhile treatment after conducting expensive late-stage trials. The Axovant IPO leaves industry insiders wondering if the company is worth its $2.2bn valuation and if the record-breaking IPO is a sign of the bubble getting too big. </p><p><b>Unum</b></p><p>Cambridge, Mass.-based Unum brought in $65m in Series B financing that closed 11 June and led by new investor New Leaf Ventures. Brace Pharma Capital, Cowen Private Investments, Jennison Associates, Novo A/S, Sabby Management LLC, Sectoral Asset Management, Wellington Management Company LLP, Fidelity Biosciences, Atlas Venture and Sanofi-Genzyme BioVentures also participated in the round. </p><p>Unum will use the money to expand its immunotherapy pipeline.</p><p>&ldquo;Unum has a unique platform in the T cell therapy space, by which a single T cell construct expresses a cell surface receptor that then can bind with a wide range of antibodies. This offers the potential to expand rapidly across multiple targets with existing antibodies and provides more options for dose and regimen modulation. The technology can adjust the dose of cells, as well as the dose and frequency of the antibodies separately," said Dr Liam Ratcliffe, managing director of New Leaf Venture Partners, about the VCs reason for the investment. </p><p><b>Melinta</b></p><p>Antibiotic developer Melinta Therapeutics raked in $67m in a fourth round of financing led by Vatera Healthcare Partners. The round included a $35m investment from Malin, a biotech started by ex-Elan CEO Kelly Martin. Malin has agreed to commit another $10m in a year's time. </p><p>The company is using the money to fund its final Phase III trial of delafloxacin, a treatment for patients with acute bacterial skin and skin structure infections (ABSSSI), as well as to support a new drug application with the FDA. </p><p>The biotech brought in another $70m last year in a round of financing led by Vatera. That cash was meant to fund trials in gonorrhea patients, but those trials were scrapped after the company realized the drug would require multiple doses for treatment. </p><p><b>Chimerix</b></p><p>In an effort to keep up with its rising R&D costs, Chimerix raised $150m in a public offering of 3,775,000 shares for $39.75 apiece. The company noted in a filing that it expects 2015 R&D costs to be as high as $125m to support four Phase III trials of its antiviral brincidofovir. The trials are in highly immune-compromised patients and chronic kidney disease patients. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+Biotech bubbles as money pours in
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150612T214524
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150612T214524
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150612T214524
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028975
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 33
+
+Biotech bubbles as money pours in
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358839
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+27d81230-6d5f-4bcc-8350-bccba83f21fe
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

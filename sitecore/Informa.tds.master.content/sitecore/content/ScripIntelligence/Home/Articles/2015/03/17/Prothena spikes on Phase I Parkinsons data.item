@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {1ED4B9B5-8097-46B2-AA98-16B974B228D3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/17/Prothena spikes on Phase I Parkinsons data
+parent: {0AA1E8EF-FE42-4F16-A931-BB0192AE2994}
+name: Prothena spikes on Phase I Parkinsons data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6dcc0b54-0817-451f-aa34-c1de9d171422
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{371E7359-6B0E-465F-9722-49065D1B3D8E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+Prothena spikes on Phase I Parkinson's data
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+Prothena spikes on Phase I Parkinsons data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1806
+
+<p>Shares in Elan spin-out Prothena shot up by as much as 37% to $40.14 on Nasdaq on 20 March on the back of Phase I data for its experimental Parkinson's disease therapy PRX002. The monoclonal antibody product is being developed under a worldwide collaboration with Roche for antibodies targeting alpha-synuclein that was signed in late 2013. PRX002 was safe and well-tolerated, meeting the primary objective of the study, and further results showed that administration of PRX002 led to rapid and dose-dependent reductions of free serum alpha-synuclein levels of up to 96% (p<0.00001). alpha-synuclein="" is="" a="" protein="" thought="" to="" be="" involved="" in="" the="" onset="" and="" progression="" of="" parkinson's="" disease,="" and="" it="" is="" hoped="" that="" this="" approach="" will="" translate="" into="" a="" clinically="" meaningful="" delay="" or="" even="" reversal="" of="" disease="" progression="" in="" patients.="" further="" phase="" i="" results="" are="" expected="" in="" the="" first="" half="" of="" 2016,="" which="" will="" look="" at="" levels="" of="" prx002="" in="" the="" cerebrospinal="" fluid="" and="" assess="" other="" biochemical,="" imaging="" and="" clinical="" biomarker="" endpoints.=""></0.00001).></p><p><b>Related stories</b></p><p><a href="http://www.scripintelligence.com/business/Roche-in-600m-deal-for-Parkinsons-antibody-program-348739" target="_new">Roche in $600m deal for Parkinson's antibody program</a></p><p><a href="http://www.scripintelligence.com/business/Prothena-reveals-positive-amyloidosis-data-CEOs-cancer-355402" target="_new">Prothena reveals positive amyloidosis data; CEO's cancer</a></p><p><a href="http://www.scripintelligence.com/business/Prothena-spins-out-of-Elan-338534" target="_new">Prothena spins out of Elan</a></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 603
+
+<p>Shares in Elan spin-out Prothena shot up by as much as 37% to $40.14 on Nasdaq on 20 March on the back of Phase I data for its experimental Parkinson's disease therapy PRX002. The monoclonal antibody product is being developed under a worldwide collaboration with Roche for antibodies targeting alpha-synuclein that was signed in late 2013. PRX002 was safe and well-tolerated, meeting the primary objective of the study, and further results showed that administration of PRX002 led to rapid and dose-dependent reductions of free serum alpha-synuclein levels of up to 96% (p<0.00001).></0.00001).></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+Prothena spikes on Phase I Parkinsons data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150317T040210
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150317T040210
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150317T040210
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028185
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+Prothena spikes on Phase I Parkinson's data
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357324
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042315Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6dcc0b54-0817-451f-aa34-c1de9d171422
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042315Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

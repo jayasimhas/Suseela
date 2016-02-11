@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {3705A4F7-CCD4-4C1E-9A27-C8887A6B48AB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/18/Adjust your mawashi Its Big Pharma Europe vs US II Sumostyle
+parent: {2B134FB3-AC89-4ADA-ACDA-2545A221075B}
+name: Adjust your mawashi Its Big Pharma Europe vs US II Sumostyle
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d1545bda-b45b-4db8-b707-649b2ba66c92
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 64
+
+Adjust your mawashi! It's Big Pharma Europe vs US II, Sumo-style
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Adjust your mawashi Its Big Pharma Europe vs US II Sumostyle
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 22170
+
+<p> It's the next phase of Big Pharma US versus Big Pharma Europe. This time it's down to the dojo for some head-to-head pharma Sumo. </p><p> The top 10 pharmaceutical companies on either side of the Atlantic will fight for the winning white star in five areas of pharma performance: drug sales, R&amp;D expenditure, operating profit, net assets, and enterprise value. </p><p> Their bulky near-naked figures waddle and posture, belly-bump and explode into action as <i>Scrip</i> pairs company against company, <i>mano a mano</i>. Or, if that imagery is too disturbing and you prefer relaxed plaid to a tight mawashi, this is the Ryder Cup of pharma. </p><p> The team contest was a close run thing: the European contingent took prizes for aggregate drug sales and pharma R&amp;D spending in 2014, but lost out in operating profit, net assets and enterprise value, giving <a target="_new" href="http://www.scripintelligence.com/home/Big-Pharma-Face-off-Europe-vs-US-358427">the US 'team' an overall 3-2 victory</a>. </p><p> In the head-to-head contest, company is pitted against company by rankings. Europe's #1 takes on the US #1, the two #2s face off, and so on down in each discipline. </p><h3> Pharma sales </h3><p> In Pharma sales (Table 1a), Novartis overtook Pfizer in 2014 as the biggest seller of prescription pharmaceuticals on the planet, meaning that the top 'match' falls in Europe's favor. But what about the rest of the team: did the US's fourth biggest drug seller, Gilead Sciences, sell more drugs in 2014 than Europe's #4, GlaxoSmithKline? Has Novo Nordisk overtaken Bristol-Myers Squibb? Table 1a tells all. </p><table> <h2> Table 1a. Head to head Pharma sales: Big Pharma US versus Big Pharma Europe** </h2><tr> <td> <p> Match </p>&nbsp; </td><td> <p> Head-to-head Pharma sales </p>&nbsp; </td><td> <p> Winner </p>&nbsp; </td> </tr><tr> <td> <p> #1 </p>&nbsp; </td><td> <p> Novartis, $46,564m, plays Pfizer, $45,708m </p>&nbsp; </td><td> <p> Novartis. <b>Europe wins</b>, by $856m </p>&nbsp; </td> </tr><tr> <td> <p> #2 </p>&nbsp; </td><td> <p> Sanofi, $42,126m, plays Merck &amp; Co, $36,042m </p>&nbsp; </td><td> <p> Sanofi. <b>Europe wins</b>, by $6,084m </p>&nbsp; </td> </tr><tr> <td> <p> #3 </p>&nbsp; </td><td> <p> Roche, $39,476m, plays Johnson &amp; Johnson, $32,313m </p>&nbsp; </td><td> <p> Roche. <b>Europe wins</b>, by $7,163m </p>&nbsp; </td> </tr><tr> <td> <p> #4 </p>&nbsp; </td><td> <p> GlaxoSmithKline, $30,762m, plays Gilead Sciences, $24,890m </p>&nbsp; </td><td> <p> GlaxoSmithKline. <b>Europe wins</b>, by $5,872m </p>&nbsp; </td> </tr><tr> <td> <p> #5 </p>&nbsp; </td><td> <p> AstraZeneca, $26,095m, plays AbbVie, $19,960m </p>&nbsp; </td><td> <p> AstraZeneca. <b>Europe wins</b>, by $6,135m </p>&nbsp; </td> </tr><tr> <td> <p> #6 </p>&nbsp; </td><td> <p> Teva, $20,272m, plays Amgen, $19,327m </p>&nbsp; </td><td> <p> Teva. <b>Europe wins</b>, by $945m </p>&nbsp; </td> </tr><tr> <td> <p> #7 </p>&nbsp; </td><td> <p> Bayer, $16,005m, plays Eli Lilly, $16,480m </p>&nbsp; </td><td> <p> Eli Lilly. <b>USA wins,</b> by $475m </p>&nbsp; </td> </tr><tr> <td> <p> #8 </p>&nbsp; </td><td> <p> Novo Nordisk, $15,414m, plays Bristol-Myers Squibb, $15,879m </p>&nbsp; </td><td> <p> Bristol-Myers Squibb. <b>USA wins,</b> by $464m </p>&nbsp; </td> </tr><tr> <td> <p> #9 </p>&nbsp; </td><td> <p> Boehringer Ingelheim, $14,091m, plays Actavis, $13,062m </p>&nbsp; </td><td> <p> Boehringer Ingelheim. <b>Europe wins</b>, by $1,029m </p>&nbsp; </td> </tr><tr> <td> <p> #10 </p>&nbsp; </td><td> <p> Merck KGaA, $7,687m, plays Baxter International, $9,700m* </p>&nbsp; </td><td> <p> Baxter International. <b>USA wins,</b> by $2,012m </p>&nbsp; </td> </tr><tr> <td> <p> <b>Result Pharma sales</b> </p>&nbsp; </td><td><p> &nbsp; </td><td> <p> <b>Europe wins 7-3</b> </p>&nbsp; </td> </tr><tr> <td colspan="3"> <p> * Estimate based on Baxter's 2013 pharma proportion of sales and 2014 0verall sales </p><p> **Currency exchange rates used throughout are yearly averages: Euro-US$, 1.3292; DKr-US$, 0.1783; GBP-US$, 1.6477 </p> </td> </tr> </table><p> Yes, Europe wins the head-to-head pharma sales event. For the US, Eli Lilly, BMS and Baxter came through ahead of Bayer, Novo Nordisk and Merck KGaA, respectively. Had the Pfizer-AstraZeneca and AbbVie-Shire mergers come off in 2014, the result might have been closer, not only because Pfizer would have beaten Novartis, but also because AZ's absence from the Europe team would mean that AbbVie would have faced (and beaten) Teva, Amgen would beat Bayer, Lilly would beat Novo, and so forth. On the other hand, inversion could have put Pfizer and AbbVie on the European team. </p><h3> R&amp;D expenditure </h3><p> Next up is the intriguing pharma-related R&amp;D expenditure category (Table 1b). It's the Blue Riband event for innovation. Look out for two mid-table Germany-US clashes &ndash; Boehringer Ingelheim against Amgen (founded 1885 versus founded 1990) and Bayer versus AbbVie (disaggregating versus disaggregated). Then there is the close encounter between Sanofi and Johnson &amp; Johnson &ndash; just $9m difference between their two $6.2bn-plus pharma R&amp;D budgets. And finally, in what might be an ironic reflection of uncertainties about the value of R&amp;D, the deciding encounter in the class sees Teva take on Actavis, a clash between two of pharma's most 'wannovative' companies. [Ed: That's unfair, why pick on these two? Nearly every pharma company wants to innovate!] </p><table> <h2> Table 1b. Head to head R&amp;D: Big Pharma US versus Big Pharma Europe </h2><tr> <td> <p> Match </p>&nbsp; </td><td> <p> Head-to-head Pharma R&amp;D </p>&nbsp; </td><td> <p> Winner </p>&nbsp; </td> </tr><tr> <td> <p> #1 </p>&nbsp; </td><td> <p> Roche, $8,959m, plays Pfizer, $8,393m </p>&nbsp; </td><td> <p> Roche. <b>Europe wins</b>, by $356m </p>&nbsp; </td> </tr><tr> <td> <p> #2 </p>&nbsp; </td><td> <p> Novartis, $8,181m, plays Merck &amp; Co, $7,180m </p>&nbsp; </td><td> <p> Novartis. <b>Europe wins</b>, by $1,001m </p>&nbsp; </td> </tr><tr> <td> <p> #3 </p>&nbsp; </td><td> <p> Sanofi, $6,203m, plays Johnson &amp; Johnson, $6,213m </p>&nbsp; </td><td> <p> Johnson &amp; Johnson. <b>USA wins</b> by $9m </p>&nbsp; </td> </tr><tr> <td> <p> #4 </p>&nbsp; </td><td> <p> GlaxoSmithKline, $5,684m, plays Eli Lilly, $4,733m </p>&nbsp; </td><td> <p> GlaxoSmithKline. <b>Europe wins</b>, by $950m </p>&nbsp; </td> </tr><tr> <td> <p> #5 </p>&nbsp; </td><td> <p> AstraZeneca, $5,579m, plays Bristol-Myers Squibb, $4,534m </p>&nbsp; </td><td> <p> AstraZeneca. <b>Europe wins</b>, by $1,045m </p>&nbsp; </td> </tr><tr> <td> <p> #6 </p>&nbsp; </td><td> <p> Boehringer Ingelheim, $3,527m, plays Amgen, $4,297m </p>&nbsp; </td><td> <p> Amgen. <b>USA wins</b> by $769m </p>&nbsp; </td> </tr><tr> <td> <p> #7 </p>&nbsp; </td><td> <p> Bayer, $2,491m, plays AbbVie, $3,297m </p>&nbsp; </td><td> <p> AbbVie. <b>USA wins</b> by $805m </p>&nbsp; </td> </tr><tr> <td> <p> #8 </p>&nbsp; </td><td> <p> Novo Nordisk, $2,453m, plays Gilead Sciences, $2,854m </p>&nbsp; </td><td> <p> Gilead Sciences. <b>USA wins</b> by $400m </p>&nbsp; </td> </tr><tr> <td> <p> #9 </p>&nbsp; </td><td> <p> Merck KGaA, $1,786m, plays Baxter International, $1,421m </p>&nbsp; </td><td> <p> Merck KGaA. <b>Europe wins</b>, by $365m </p>&nbsp; </td> </tr><tr> <td> <p> #10 </p>&nbsp; </td><td> <p> Teva, $1,488m, plays Actavis, $1,085m </p>&nbsp; </td><td> <p> Teva. <b>Europe wins</b>, by $402m </p>&nbsp; </td> </tr><tr> <td> <p> <b>Result Pharma R&amp;D</b> </p>&nbsp; </td><td><p> &nbsp; </td><td> <p> <b>Europe wins 6-4</b> </p>&nbsp; </td> </tr> </table><p> Again, Europe comes out ahead, but by a closer margin this time. J&amp;J's $9m pharma R&amp;D spending margin over Sanofi would have been less narrow had its additional R&amp;D spending on consumer health and medical devices ($2.28bn) been wrapped into the total. And the addition of Allergan's $1.91bn R&amp;D spend to Actavis's $1.09bn would have given Actavis a pro forma advantage over Teva at 'the bottom of the innings', turning the result of the R&amp;D spending event into a 5-5 tie. </p><p> But it didn't, because these numbers are based on year-end reporting, so the head-to-head now stands at Europe 2, US 0. </p><p> Now, if you are still with me in this journey into Pharma Fantasy Land, firstly, shame on you, haven't you got ailments to sort out? &#8230; but secondly, well done and thanks. Press on, because we're coming to a really interesting bit now: pharma's operating profit. </p><h3> Operating profit </h3><p> Crudely speaking, one can look at a pharma company in two ways: either it is a societally entrenched, capital-fuelled service machine that turns investment and endeavor into desirable and health-promoting products; or it is an instrument for turning only recently legalized packages of invisible chemistry and biology into gold. </p><p> Operating profits focus the attention on the latter perspective, telling those who care to browse annual reports about the efficiency with which a company turns drugs into money. Once you take out the direct costs of product manufacture and dissemination, the costs of engineering future products to appropriate tolerances, the costs of marketing current products, and the costs of maintaining the legal and administrative integrity of the organization, the money remaining from the sales proceeds is the operating profit. Or operating income, if you prefer. </p><p> It's a measure of efficiency when seeing a company as a money-making machine (as many do). </p><p> Of course, there are many more ways of looking at a pharma company; perhaps (to judge from annual report photography) as an evolving exhibition of crisp laboratory and business wear, or rehab for the terminally caring. Put your own take on Twitter #definepharma. Meanwhile, let's continue to view pharma through the accountants' lens. </p><table> <h2> Table 1c. Head to head Pharma operating profit: Big Pharma US versus Big Pharma Europe </h2><tr> <td> <p> Match </p>&nbsp; </td><td> <p> Head-to-head Pharma operating profit </p>&nbsp; </td><td> <p> Winner </p>&nbsp; </td> </tr><tr> <td> <p> #1 </p>&nbsp; </td><td> <p> Roche, $15,633m, plays Gilead Sciences, $15,265m </p>&nbsp; </td><td> <p> Roche. <b>Europe wins</b>, by $368m </p>&nbsp; </td> </tr><tr> <td> <p> #2 </p>&nbsp; </td><td> <p> Sanofi, $11,978m, plays Pfizer, $12,240m </p>&nbsp; </td><td> <p> Pfizer. <b>USA wins</b>, by $262m </p>&nbsp; </td> </tr><tr> <td> <p> #3 </p>&nbsp; </td><td> <p> Novartis, $10,197m, plays Johnson &amp; Johnson, $11,696m </p>&nbsp; </td><td> <p> Johnson &amp; Johnson. <b>USA wins</b>, by $1,498m </p>&nbsp; </td> </tr><tr> <td> <p> #4 </p>&nbsp; </td><td> <p> Novo Nordisk, $6,149m, plays Amgen, $6,191m </p>&nbsp; </td><td> <p> Amgen. <b>USA wins</b>, by $41m </p>&nbsp; </td> </tr><tr> <td> <p> #5 </p>&nbsp; </td><td> <p> GlaxoSmithKline, $5,926m, plays Merck &amp; Co, $5,827m </p>&nbsp; </td><td> <p> GSK. <b>Europe wins</b>, by $100m </p>&nbsp; </td> </tr><tr> <td> <p> #6 </p>&nbsp; </td><td> <p> Bayer, $4,759m, plays AbbVie, $3,411m </p>&nbsp; </td><td> <p> Bayer. <b>Europe wins</b>, by $1,348m </p>&nbsp; </td> </tr><tr> <td> <p> #7 </p>&nbsp; </td><td> <p> Teva, $3,951m, plays Eli Lilly, $3,000m </p>&nbsp; </td><td> <p> Teva. <b>Europe wins</b>, by $950m </p>&nbsp; </td> </tr><tr> <td> <p> #8 </p>&nbsp; </td><td> <p> Boehringer Ingelheim, $2,844m, plays Baxter International, $2,439m </p>&nbsp; </td><td> <p> Boehringer Ingelheim. <b>Europe wins</b>, by $405m </p>&nbsp; </td> </tr><tr> <td> <p> #9 </p>&nbsp; </td><td> <p> AstraZeneca, $2137m, plays Bristol-Myers Squibb, $2381m </p>&nbsp; </td><td> <p> Bristol-Myers Squibb. <b>USA wins</b>, by $244m </p>&nbsp; </td> </tr><tr> <td> <p> #10 </p>&nbsp; </td><td> <p> Merck KGaA, $1,271m, plays Actavis, $1,268m </p>&nbsp; </td><td> <p> Merck KGaA. <b>Europe wins</b>, by $2,539m </p>&nbsp; </td> </tr><tr> <td> <p> <b>Result Pharma operating profit</b> </p>&nbsp; </td><td><p> &nbsp; </td><td> <p> <b>Europe wins 6-4</b> </p>&nbsp; </td> </tr> </table><p> Merck &amp; Co could have been the US #1 seed in this discipline with a massive $17.28bn figure for &quot;income before taxes&quot;. However, that $17.28bn includes an $11.4bn &quot;other income&quot; line, most of which derives from the sale of its Consumer Care segment to Bayer, completed in October 2014, and the rest from the balance of interest earned or paid on investments. Thus Merck's operating profit figure encompasses both continuing and discontinued business; in effect, its accounting approach suggests Merck treats sales of parts of its business in the same way it treats sales of products made by its business. Part of Merck's business is selling businesses, apparently. </p><p> Merck's operating profit from continuing business (the figure most other companies publish), is closer to $5.83bn, marginally failing to giving it victory in a very tight fifth seed contest that GSK wins by $100m. </p><p> Other tight results included the #2 play-off, where Sanofi emerged victorious over Pfizer, and the #4 match, where Novo Nordisk beat Amgen by just $41m. </p><p> At the top of the order, Roche, with an operating profit in its pharmaceutical operations of $15.6bn, just managed to see off Gilead's $15.3bn. Gilead squeezed its operating profit from product sales of just $24.90bn, an operating margin of 61.3%, well beyond the 15-40% range typical of Big Pharma companies. </p><p> Correspondents have asked whether <i>Scrip</i> thinks this level of profitability is sustainable for Gilead. Since FY 2007, when Gilead came into profit, it has maintained operating margins above 40% every year, and above 50% for five years out of the eight. Gilead's 2014 operating profitability of 61% is high for pharma, and it is high for Gilead and difficult to sustain. However, Gilead's Q1 2015 results released 30 April showed $5.37bn in operating profit, a 72.5% operating margin. </p><p> AstraZeneca's operating profit fell drastically to $2.14bn in 2014, bringing its operating margin down from around 14% to 8%. That meant that AZ lost out in the 9th seed match to its former diabetes alliance partner, Bristol-Myers Squibb. </p><p> Overall, Europe takes the operating profit contest 6-4 to give the Old World an unassailable lead in the head-to head phase. </p><h3> Net assets </h3><p> With the US now only playing for pride, the focus shifts to net assets, the difference between a company's total assets and its total liabilities (Table 1d). In essence, the net asset value reflects the 'size' of the corporate machine needed to generate products, or profits, depending on the perspective. </p><p> This is a category in which generic medicine companies and broader life science firms such as Johnson &amp; Johnson or Bayer ought to compete at the top of the order, with sleeker pharma 'racehorses' occupying the lower order. </p><p> Thus Actavis finds itself head to head with Roche, despite generating only a third of the Swiss major's pharma sales. However, strikingly, Teva is again going head-to-head with Amgen, meaning that the net asset values of the two companies are as similar as their pharma sales. </p><table> <h2> Table 1d. Head to head Net Assets: Big Pharma US versus Big Pharma Europe </h2><tr> <td> <p> Match </p>&nbsp; </td><td> <p> Head-to-head Net Assets </p>&nbsp; </td><td> <p> Winner </p>&nbsp; </td> </tr><tr> <td> <p> #1 </p>&nbsp; </td><td> <p> Sanofi, $74,790m, plays Pfizer, $71,301m </p>&nbsp; </td><td> <p> Sanofi. <b>Europe wins</b>, by $3,489m </p>&nbsp; </td> </tr><tr> <td> <p> #2 </p>&nbsp; </td><td> <p> Novartis, $70,844m, plays Johnson &amp; Johnson, $69,752m </p>&nbsp; </td><td> <p> Novartis. <b>Europe wins</b>, by $1,092m </p>&nbsp; </td> </tr><tr> <td> <p> #3 </p>&nbsp; </td><td> <p> Bayer, $24,444m, plays Merck &amp; Co, $48,647m </p>&nbsp; </td><td> <p> Merck &amp; Co. <b>USA wins</b>, by $24,202m </p>&nbsp; </td> </tr><tr> <td> <p> #4 </p>&nbsp; </td><td> <p> Roche, $23,561m, plays Actavis, $28,331m </p>&nbsp; </td><td> <p> Actavis. <b>USA wins</b>, by $4,769m </p>&nbsp; </td> </tr><tr> <td> <p> #5 </p>&nbsp; </td><td> <p> Teva, $23,355m, plays Amgen, $25,778m </p>&nbsp; </td><td> <p> Amgen. <b>USA wins</b>, by $2,423m </p>&nbsp; </td> </tr><tr> <td> <p> #6 </p>&nbsp; </td><td> <p> AstraZeneca, $19,646m, plays Gilead Sciences, $15,426m </p>&nbsp; </td><td> <p> AstraZeneca. <b>Europe wins</b>, by $4,220m </p>&nbsp; </td> </tr><tr> <td> <p> #7 </p>&nbsp; </td><td> <p> Merck KGaA, $15,685m, plays Eli Lilly, $15,373m </p>&nbsp; </td><td> <p> Merck KGaA. <b>Europe wins</b>, by $312m </p>&nbsp; </td> </tr><tr> <td> <p> #8 </p>&nbsp; </td><td> <p> Boehringer Ingelheim, $12,070m, plays Bristol-Myers Squibb, $14,852m </p>&nbsp; </td><td> <p> Bristol-Myers Squibb. <b>USA wins</b>, by $2781m </p>&nbsp; </td> </tr><tr> <td> <p> #9 </p>&nbsp; </td><td> <p> GlaxoSmithKline, $8,095m, plays Baxter International, $8,120m </p>&nbsp; </td><td> <p> Baxter International. <b>USA wins</b>, by $24m </p>&nbsp; </td> </tr><tr> <td> <p> #10 </p>&nbsp; </td><td> <p> Novo Nordisk, $7,183m, plays AbbVie, $1,742m </p>&nbsp; </td><td> <p> Novo Nordisk. <b>Europe wins</b>, by $5,441m </p>&nbsp; </td> </tr><tr> <td> <p> <b>Result Net Assets</b> </p>&nbsp; </td><td><p> &nbsp; </td><td> <p> <b>Tie 5-5</b> </p>&nbsp; </td> </tr> </table><p> At the 'big dog' end of the league, Sanofi is victorious over Pfizer while Novartis sees off Johnson &amp; Johnson. </p><p> Pfizer has by far the biggest asset base of any of the 20 companies ($169bn), $38bn ahead of nearest rival J&amp;J, but also by far the largest liabilities ($98bn) including a massive $31bn in long-term debt (roughly equal to the combined long-term debts of Sanofi and J&amp;J). Only GSK with around $26bn in long-terms borrowings comes close to Pfizer's debt level. </p><p> At the low end of the scale, Novo Nordisk's net assets amount to just $7.2bn, with an asset base of $13.7bn and liabilities of $6.5bn. AbbVie's net assets are even smaller &ndash; just $1.7bn &ndash; making the newly independent pharma firm the more efficient converter of assets into drugs sales among this group. </p><p> The Net Assets category is a tie, Europe 5, US 5. </p><p> Overall in the head-to-heads Europe leads 3.5 to 0.5. </p><h3> Enterprise value </h3><p> Enterprise value represents the value of a business &ndash; it's the value that stock markets put on a company (market capitalization, on 31 December 2014 to align with year-end results) minus the balance of current assets and current liabilities. </p><p> Of particular note in this category is Novo Nordisk, fighting above its weight in the #3 seed position. Novo's drug sales are only 43% of Merck's and its assets less than 14% of Merck's but its enterprise value is 76% of Merck's. However, that still means it loses out to the New Jersey company. </p><p> In the #4 bout, there is a similar imbalance between GSK and Gilead. Gilead has 80% of GSK's drug sales and half its assets but makes 2.5 times as much operating profit and net profit, and its enterprise value is 17% more than GSK's. </p><p> At the #10 position, Merck KGaA out-muscles Baxter International in terms of enterprise value, despite lower drug sales, operating profits and net profits. </p><p> Across the piece in this category, the US comes out on top by 6 bouts to 4, making the overall head-to-head 'score' Europe 3.5, US 1.5. </p><table> <h2> Table 1e. Head to head Enterprise value: Big Pharma US versus Big Pharma Europe </h2><tr> <td> <p> Match </p>&nbsp; </td><td> <p> Head-to-head Enterprise value $m </p>&nbsp; </td><td> <p> Winner </p>&nbsp; </td> </tr><tr> <td> <p> #1 </p>&nbsp; </td><td> <p> Roche, $221.25bn, plays Johnson &amp; Johnson, $255.8bn </p>&nbsp; </td><td> <p> Johnson &amp; Johnson. <b>USA wins</b>, by $34.5bn </p>&nbsp; </td> </tr><tr> <td> <p> #2 </p>&nbsp; </td><td> <p> Novartis, $210.5bn, plays Pfizer, $161bn </p>&nbsp; </td><td> <p> Novartis. <b>Europe wins</b>, by $49.5bn </p>&nbsp; </td> </tr><tr> <td> <p> #3 </p>&nbsp; </td><td> <p> Novo Nordisk, $112bn, plays Merck &amp; Co, $147.6bn </p>&nbsp; </td><td> <p> Merck &amp; Co. <b>USA wins</b>, by $35.6bn </p>&nbsp; </td> </tr><tr> <td> <p> #4 </p>&nbsp; </td><td> <p> GlaxoSmithKline, $110.7bn, plays Gilead Sciences, $130bn </p>&nbsp; </td><td> <p> Gilead Sciences. <b>USA wins</b>, by $19.3bn </p>&nbsp; </td> </tr><tr> <td> <p> #5 </p>&nbsp; </td><td> <p> Sanofi, $106.2bn, plays AbbVie, $100.2bn </p>&nbsp; </td><td> <p> Sanofi. <b>Europe wins</b>, by $6bn </p>&nbsp; </td> </tr><tr> <td> <p> #6 </p>&nbsp; </td><td> <p> Bayer, $103.8bn, plays Amgen, $93.9bn </p>&nbsp; </td><td> <p> Bayer. <b>Europe wins</b>, by $9.9bn </p>&nbsp; </td> </tr><tr> <td> <p> #7 </p>&nbsp; </td><td> <p> AstraZeneca, $89.6bn, plays Bristol-Myers Squibb, $92.2bn </p>&nbsp; </td><td> <p> Bristol-Myers Squibb. <b>USA wins</b>, by $2.6bn </p>&nbsp; </td> </tr><tr> <td> <p> #8 </p>&nbsp; </td><td> <p> Boehringer Ingelheim, $73.8bn*, plays Eli Lilly, $77.0bn </p>&nbsp; </td><td> <p> Eli Lilly. <b>USA wins</b>, by $3.2bn </p>&nbsp; </td> </tr><tr> <td> <p> #9 </p>&nbsp; </td><td> <p> Teva, $45.9bn, plays Actavis, $67.0bn </p>&nbsp; </td><td> <p> Actavis. <b>USA wins</b>, by $21.1bn </p>&nbsp; </td> </tr><tr> <td> <p> #10 </p>&nbsp; </td><td> <p> Merck KGaA, $38bn, plays Baxter International, $35.7bn </p>&nbsp; </td><td> <p> Merck KGaA. <b>Europe wins</b>, by $3.3bn </p>&nbsp; </td> </tr><tr> <td> <p> <b>Result Enterprise value $m</b> </p>&nbsp; </td><td><p> &nbsp; </td><td> <p> <b>US wins 6-4</b> </p>&nbsp; </td> </tr><tr> <td colspan="3"> <p> *Boehringer Ingelheim, a private company was assigned a market capitalization of $80bn, a similar figure to Eli Lilly and AstraZeneca, companies with similar pharma sales </p> </td> </tr> </table><h3> The decider </h3><p> Europe's victory in the head-to-head and the US triumph in the <b>aggregated totals phase </b>means that everything comes down to the third and final 'individual' phase of the contest which will look at pharma outputs and achievements on a per employee basis. Watch this space for <i>Scrip</i>'s exclusive coverage. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 138
+
+<p> It's the next phase of Big Pharma US versus Big Pharma Europe. This time it's down to the dojo for some head-to-head pharma Sumo. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Adjust your mawashi Its Big Pharma Europe vs US II Sumostyle
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150518T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150518T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150518T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028798
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 64
+
+Adjust your mawashi! It's Big Pharma Europe vs US II, Sumo-style
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200300828
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358463
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042350Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d1545bda-b45b-4db8-b707-649b2ba66c92
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042350Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

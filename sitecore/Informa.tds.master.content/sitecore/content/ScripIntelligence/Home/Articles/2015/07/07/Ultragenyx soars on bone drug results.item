@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {08044194-CFBF-4305-9903-0971CE44DB84}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/07/Ultragenyx soars on bone drug results
+parent: {CC2443D4-0E6D-4729-AC39-BFE81987180B}
+name: Ultragenyx soars on bone drug results
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 868f71ce-3a48-49ae-894e-21a8334a25cc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 37
+
+Ultragenyx soars on bone drug results
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 37
+
+Ultragenyx soars on bone drug results
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2112
+
+<p><p>Rare disease-focused company Ultragenyx traded to a new high when the biotech announced positive results from an ongoing mid-stage study. </p><p>Ultragenyx jumped 14%, or $13.81, to $112.89 on 09 July when the company showed that an ongoing pediatric study of KRN23 improved rickets scores after 40 weeks of treatment in patients with X-linked hypophosphatemia (XLH), a genetic disorder that causes severe softening and weakening of the bones.</p><p>Although the study was small and still ongoing, patients showed improvement prompting the FDA to grant the drug Fast Track designation to speed up development. </p><p>Of the 12 patients in the study, half received biweekly dosing, while the other half of the children received monthly dosing of KRN23. Five patients with rickets at baseline in the biweekly dosing group demonstrated improvement in rickets from a mean baseline rickets score of 1.5 to a mean score of 0.3 at week 40, an 80% reduction. Three of the monthly dosing patients showed improvement, with a 38% reduction in rickets score. Overall, eight of the children showed an improvement, with three patients no longer showing radiographic evidence of rickets at the 40-week check in. </p><p>There were no serious adverse events during the study and all of the patients continue on treatment. The company expects another 40-week analysis of 36 patients in the third quarter. </p><p>The positive results prompted JMP analyst Liisa Bayko to initiate coverage on the company with an Outperform rating and a price target of $119. She wrote in a 09 July note to investors that the company should reach profitability by 2019 with annual sales of $1.9bn. The analyst expects several data read outs from the company over the next year that could move the stock and sees the expedited development path for KRN23 as a positive. </p><p>"Since its inception in 2010, the company has accumulated an impressive portfolio of four clinical stage assets directed at a half dozen, ultra-rare indications and with $343m in cash, RARE is well capitalized to execute upon its development plan," she said. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 37
+
+Ultragenyx soars on bone drug results
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150707T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150707T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150707T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029193
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 37
+
+Ultragenyx soars on bone drug results
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359280
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042420Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+868f71ce-3a48-49ae-894e-21a8334a25cc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042420Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

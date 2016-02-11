@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {C84FB81B-D882-4179-9865-088C8DB07138}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/04/Novos Tresiba resubmission accepted in US
+parent: {F45D0EF1-0E2D-4B25-A0FE-8EB2CF2E030E}
+name: Novos Tresiba resubmission accepted in US
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 834b1e40-0021-41e6-b045-501ee6002ea6
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Novo's Tresiba resubmission accepted in US
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+Novos Tresiba resubmission accepted in US
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3482
+
+<p>Novo Nordisk has finally got its diabetes product Tresiba back on track for entry to the US market &ndash; after a delay that could cost the company an estimated $5bn. </p><p>On 7 April the Danish-headquartered firm reported that the US FDA has accepted for review a Class II resubmission application for Tresiba (insulin degludec) and Ryzodeg (insulin degludec/insulin aspart).</p><p>Previously the US regulator turned down Tresiba's application; issuing a complete response letter for the product in <a href="http://www.scripintelligence.com/home/Sanofi-and-Lilly-boosted-by-Novos-shock-Tresiba-FDA-knockback-339910" target="_new">February 2013</a>. The FDA at that time requested a large-scale trial comparing the cardiovascular (CV) safety of insulin degludec to that of insulin glargine in subjects with type 2 diabetes at high risk of cardiovascular events &ndash; the DEVOTE study. This was somewhat unexpected as the FDA's advisory committee had voted in favor of Tresiba with the requirement of a post-marketing CV outcomes trial. Given the size and breadth of the trial required, it took Novo Nordisk some time to set up and initiate it after discussions with the FDA. </p><p>Datamonitor Healthcare analyst Rajan Sharma said: "The US market is by far the most important for insulins &ndash; we forecast Tresiba to achieve revenues of $792m in 2023. This is considerably less than would have been expected had Tresiba been approved first time around." </p><p>He added that Datamonitor estimates Tresiba's regulatory delay will cost Novo Nordisk close to $5bn in lost revenues over this period. As Tresiba is also a component of Ryzodeg and Xultophy (insulin degludec/ liraglutide), its delay has come at a cost to these products too. </p><p>"It's difficult to predict the FDA's decision this time around as the data have not been released," Mr Sharman told <i>Scrip</i>. However, Novo Nordisk must be confident in the strength of its interim data given that it is submitting slightly ahead of its original expected timeline, he said. </p><p>Another issue now facing Novo Nordisk is increased competition in the US. "Upon Tresiba's launch, the market will be substantially more competitive than when the product was originally submitted which is a major reason for the magnitude of lost revenues," Mr Sharman said. </p><p>Competitors will include: Novo Nordisk's own Levemir (insulin detemir [rDNA origin] injection); Sanofi's Lantus (insulin glargine); and Sanofi's recently approved Lantus follow on, Toujeo (insulin glargine U300). </p><p>Tresiba's main contender though will likely be Toujeo as both products will be marketed on their hypoglycemia (particularly nocturnal) benefits.</p><p>A Lantus biosimilar is also expected to enter the US market in mid-2016 and launching ahead of this would be beneficial to Tresiba's US uptake.</p><p>The DEVOTE trial &ndash; randomized, double-blind, global trial including 7,500 patients &ndash; is not expected to be completed until the second half of 2016, however a small team within Novo Nordisk has prepared the interim analysis for the Class II resubmission and will interact with the FDA during the review. To "preserve the integrity of the ongoing DEVOTE trial", only this small Novo team has access to the interim data and Novo Nordisk management does not have access to the results of the interim analysis, the company noted.</p><p>Tresiba is already approved in several other regions including Japan and Europe. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 175
+
+<p>Novo Nordisk has finally got its diabetes product Tresiba back on track for entry to the US market &ndash; after a delay that could cost the company an estimated $5bn. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Novos Tresiba resubmission accepted in US
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150104T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150104T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150104T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028362
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Novo's Tresiba resubmission accepted in US
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Business News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357626
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042326Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+834b1e40-0021-41e6-b045-501ee6002ea6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042326Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

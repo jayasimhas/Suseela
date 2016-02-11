@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C039AEFB-B446-41BC-8902-DE19AD125751}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/21/Another Step Towards Myeloma Market Dominance For Amgens Kyprolis
+parent: {4B7F304D-9C2D-4432-B9EB-9C4CAC22ECA9}
+name: Another Step Towards Myeloma Market Dominance For Amgens Kyprolis
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ac3a5a12-eb95-4a28-8786-a177be5f9f52
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{12C97AC3-D19F-4DF0-B0DB-B9C82176F72C}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+Another Step Towards Myeloma Market Dominance For Amgen's Kyprolis 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+Another Step Towards Myeloma Market Dominance For Amgens Kyprolis
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3135
+
+<p>Amgen Inc.'s <i>Kyprolis</i> (carfilzomib) has been given the green light in Europe for the treatment of relapsed multiple myeloma, after being pushed through reviews under the European Medicines Agency's accelerated assessment program. </p><p>The EMA's committee for medicinal products for human use (CHMP), has given Kyprolis, which has been also a designated orphan medicine since June 2008, a positive recommendation for approval in combination with cancer medicines lenalidomide (Celgene's <i>Revlimid</i>) and dexamethasone. The marketing application for Kyprolis in Europe was granted accelerated review in February this year and is for second-line treatment of the disease. In the US the drug is already approved as a second-line, single agent therapy for multiple myeloma and for use in combination with lenalidomide and dexamethasone.</p><p>Kyprolis is the first irreversible, highly-selective, proteasome inhibitor for multiple myeloma to be recommended for approval in Europe. Proteasome inhibitors work by blocking a system in cells that breaks down proteins when they are no longer needed. When proteins in the cancer cells are not broken down the cells eventually die, slowing down the growth of the cancer.</p><p>Amgen's drug is predicted to reach worldwide sales of $1.7bn by 2024. Analysts at Sagient Research's BioMedTracker believe the Kyprolis combination could become the standard of care for second-line multiple myeloma treatment. </p><p>Analysts at Datamonitor Healthcare said in their <a href="https://www.futureofoncology.com/asco-2015-conference-review" target="_new">ASCO 2015 review</a> that the drug could even surpass Velcade (bortezomib; Takeda/Johnson & Johnson) to become the multiple myeloma market leader if Amgen can also secure a first-line label expansion.</p><p>The CHMP's decision is based on data from an open-label, multicenter Phase III trial, in which 792 patients with relapsed multiple myeloma were randomly assigned to receive Kyprolis combined with lenalidomide and dexamethasone or just lenalidomide and dexamethasone. The study found that patients who received the Kyprolis combination had an average increase of 8.7 months during which their disease did not progress compared with lenalidomide and dexamethasone (26.3 months versus 17.6 months).</p><p>The most common side effects of Kyprolis were anemia, fatigue, diarrhea, thrombocytopenia, nausea and dyspnea. More serious side effects included blood abnormalities and cardiac events. As such the CHMP has agreed a monitoring plan for the product. </p><p>Kyprolis is also being developed for the treatment of mantel cell lymphoma (currently in Phase II) and non-small cell lung cancer (Phase I/II). Investigator initiated trials are also ongoing in amyloidosis and chronic lymphocytic leukemia. </p><p>Multiple myeloma is the second most common hematologic cancer. </p><h2>Other Amgen CHMP Results</h2><p>This month has been a strong one for Amgen products in Europe. The CHMP has also granted a positive recommendation for conditional approval of the firm's acute lymphoblastic leukemia therapy, Blincyto (blinatumomab). </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 244
+
+<p>Amgen Inc.'s <i>Kyprolis</i> (carfilzomib) has been given the green light in Europe for the treatment of relapsed multiple myeloma, after being pushed through reviews under the European Medicines Agency's accelerated assessment program. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+Another Step Towards Myeloma Market Dominance For Amgens Kyprolis
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150921T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150921T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150921T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029872
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+Another Step Towards Myeloma Market Dominance For Amgen's Kyprolis 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200300146
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360591
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ac3a5a12-eb95-4a28-8786-a177be5f9f52
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

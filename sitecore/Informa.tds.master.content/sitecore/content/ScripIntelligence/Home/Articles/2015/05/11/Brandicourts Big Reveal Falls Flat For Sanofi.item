@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {3F49FE62-7D2F-4352-809C-E16172068A78}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/11/Brandicourts Big Reveal Falls Flat For Sanofi
+parent: {1BE3AA12-1C39-4525-B308-110947259A7E}
+name: Brandicourts Big Reveal Falls Flat For Sanofi
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ce322caf-7d94-4f79-a56f-eeb205450df4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+ Brandicourt's 'Big Reveal' Falls Flat For Sanofi  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Brandicourts Big Reveal Falls Flat For Sanofi
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5322
+
+<p> Seven months into the job and the shine is wearing off Sanofi's new CEO Olivier Brandicourt. His first 'Meet the Management' investor day on Nov. 6 left analysts underwhelmed and shares slipping. </p> <p> <img src="-/media/B6E136D7466D4BC2B0029397A50697C5.ashx"></p> <p> <i>Olivier Brandicourt, CEO of Sanofi</i> </p> <p> Previous CEO Christopher Viehbacher's ignominious departure last year was blamed on the poor performance of its US diabetes franchise, weak oversight of local management and poor communication with Sanofi's board of directors. Brandicourt may feel he has made strides to tackle management and communication issues, but the diabetes franchise continues to be problematic. </p> <p> &quot;Sanofi provided a 2020 growth outlook with a disappointing near-term earnings trajectory &ndash; flat EPS growth to 2017 versus consensus expectations of 3-5% growth,&quot; noted Goldman Sachs. </p> <p> Building on a <a target="_new" href="http://www.scripintelligence.com/home/Brandicourt-reorganizes-Sanofi-359442">reorganization</a> of Sanofi that he announced in July, Brandicourt delivered a set of ambitious priorities for the French pharma major. &quot;The company will remain diversified but with a portfolio focused on areas where we can win,&quot; he said. </p> <p> Brandicourt outlined four strategic priorities for Sanofi. </p> <p> 1. To reshape its portfolio around the core businesses where it can sustain a leadership position or build a competitive position. </p> <p> 2. To deliver &quot;outstanding&quot; launches with a particular focus on six major products: <i>Toujeo</i> (insulin glargine injection), <i>Praluent</i> (alirocumab), <i>Dengvaxia</i> (dengue fever vaccine), sarilumab, <i>LixiLan</i> (lixisenatide and insulin glargine) and dupilumab. Sanofi expects to generate peak sales of &euro;12bn to &euro;14bn for these products. </p> <p> 3. Continue &quot;innovation in R&amp;D.&quot; As its late stage development pipeline launches, &quot;we need to replenish it,&quot; acknowledged Brandicourt. &quot;We expect to increase our R&amp;D investment up to &euro;6bn annually. This is in part to create headroom to pursue more external innovation.&quot; </p> <p> 4. Simplify its organization and generate &euro;1.5bn in cost savings by 2018 (to &quot;partly offset lower diabetes sales expectation.&quot;) </p> <h2> Reshaping Its Portfolio </h2> <p> Brandicourt is reshaping Sanofi's business by categorizing the portfolio into businesses where Sanofi intends to remain in a &quot;leadership position&quot; (in a top three position), businesses where Sanofi plans to &quot;build a competitive position,&quot; and businesses where it intends to &quot;explore strategic options.&quot; </p> <p> Sanofi is &quot;already a leader in diabetes, rare diseases, vaccines and emerging markets,&quot; said Brandicourt. </p> <p> In the second set of businesses, Sanofi does not have a leadership position. &quot;We are fifth in consumer healthcare and MS, 11th in oncology, and we have no on market position as yet in immunology.&quot; </p> <p> But Sanofi believes these are &quot;attractive businesses where we have or can acquire the assets to build competitive positions.&quot; </p> <p> These first two business groups will be the growth drivers for Sanofi, said Brandicourt. </p> <p> However, the animal health and generics businesses in Europe will see Sanofi exploring divestment opportunities. </p> <h2> Diabetes Headwinds </h2> <p> &quot;We have come through a patent cliff and still face a patent hill as Lantus loses exclusivity,&quot; noted Brandicourt. The outlook for its diabetes business is &quot;challenging,&quot; and Sanofi expects global diabetes sales to decline at an average annualized rate of between 4% to 8% over the next three years. </p> <p> However, Brandicourt outlined three priorities to return the diabetes business to growth beginning in 2019. </p> <p> &quot;First, we are developing the insulin franchise with Lantus, Toujeo, and soon LixiLan. Second, we will strengthen our pipeline. Third, lead the market shift to managing diabetes outcomes. In Google, Sanofi has a world-class partner for connecting the dots in diabetes care. We are working to integrate devices, services, data analytics, and drugs to improve patient outcomes.&quot; </p> <p> In cardiovascular, Sanofi believes it has the opportunity to transform the management of hypercholesterolemia through Praluent. &quot;It has multi-blockbuster potential,&quot; said Brandicourt. &quot;We are looking for opportunities to rebuild a cardiovascular franchise around Praluent, expanding beyond cholesterol-lowering.&quot; </p> <h2> Consumer Health </h2> <p> Sanofi is aiming &quot;to achieve leadership&quot; in consumer health. &quot;Today we are the number five player globally with 3% market share.&quot; Brandicourt listed three reasons why he wants to stay in the consumer health space business. &quot;First, consumer healthcare is a highly fragmented market right for consolidation. Second, it offers consistent growth with different dynamics to the branded prescription market. Third, it's a good portfolio fit where we can capture real synergies.&quot; </p> <p> Sanofi will &quot;maximize the value of existing brands, shape new categories and build scale through bolt-on acquisitions.&quot; </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 204
+
+<p> Seven months into the job and the shine is wearing off Sanofi's new CEO Olivier Brandicourt. His first 'Meet the Management' investor day on Nov. 6 left analysts underwhelmed and shares slipping. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Brandicourts Big Reveal Falls Flat For Sanofi
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150511T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150511T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150511T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030274
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+ Brandicourt's 'Big Reveal' Falls Flat For Sanofi  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361395
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042519Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ce322caf-7d94-4f79-a56f-eeb205450df4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042520Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

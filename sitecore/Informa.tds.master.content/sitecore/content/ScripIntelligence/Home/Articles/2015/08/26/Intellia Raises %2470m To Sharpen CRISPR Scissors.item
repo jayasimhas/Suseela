@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {31E3AA6F-DEC2-4E45-9A5F-0AF9EED6380B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/26/Intellia Raises $70m To Sharpen CRISPR Scissors
+parent: {DD56DE4A-39AC-48A9-BB39-DDC56CF0FE6D}
+name: Intellia Raises $70m To Sharpen CRISPR Scissors
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d8380d0b-8111-440f-bca0-f252533fb40a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{F33C567E-43AA-4F5D-A484-E2C7F5C08D89}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Intellia Raises $70m To Sharpen CRISPR Scissors
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Intellia Raises $70m To Sharpen CRISPR Scissors
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4641
+
+<p>Intellia Therapeutics raised a $70m Series B venture capital round that the Cambridge, Massachusetts-based company will use to sharpen its approach to CRISPR/Cas9, a pair of molecular scissors used to edit genes involved in hard-to-treat diseases.</p><p>Clustered, regularly interspaced short palindromic repeats (CRISPR)/CRISPR-associated protein 9 (Cas9) is a nascent means of treating the underlying cause of genetic diseases, but the field is so hot that Intellia entered into a partnership with Novartis in January just two months after the Swiss pharma company invested in the biotech firm's $15m Series A round. Intellia will use its Series B cash to advance its own programs as well as license or acquire helpful technology from outside the company.</p><p>"We are looking to build our patent portfolio, both through partnerships and the work we're doing internally," Intellia founder and CEO Nessan Bermingham told <i>Scrip</i>.</p><p>Bermingham describes CRISPR technology as a simple system to cut DNA with Cas9 as the molecular scissors that snips the genetic code, so that a mutated gene can be removed or edited, or so that a new gene can be inserted into the incision. </p><p>Novartis wants to use Intellia's CRISPR technology to edit patients' T-cells for chimeric antigen receptor T-cell (CAR-T) therapies. The company had a good understanding of Intellia's capabilities before <a href="http://www.scripintelligence.com/business/Novartis-to-use-gene-editing-tool-with-CAR-T-therapies-355979" target="_new">closing the deal</a>, since it participated in the biotech's <a href="http://www.scripintelligence.com/business/VC-UPDATE-Polaris-closes-450m-fund-in-biotech-friendly-US-market-355269" target="_new">Series A financing</a>.</p><p><b>Making The Scissors Sharp</b></p><p>Intellia has roughly 40 employees with plans to hire more people who can help the company sharpen its gene-editing scissors. There are a few challenges yet to be solved, such as finding the best way to deliver CRISPR therapies, i.e. viral vectors, lipid nanoparticles and other options. Lipid nanoparticles are Intellia's favored delivery method, so far.</p><p>The company's scientists also are looking at specific diseases and trying to determine in each instance how much of the mutated gene should be removed, edited or replaced to provide a sufficient therapeutic effect. </p><p>CRISPR technology and Intellia's research are so new and specialized that Bermingham said it would not work for Intellia to operate as a virtual company with just a few employees overseeing testing that's outsourced to a clinical research organization (CRO) and other consultants. Intellia is hiring scientists familiar with the field as well as disease area specialists, manufacturing experts and other biopharma personnel.</p><p>However, the company has not revealed the disease areas where it will first deploy its technology nor has Intellia disclosed a timeline for its first human clinical trial. The company hasn't sharpened its scissors enough to take its CRISPR technology into human studies, but in the meantime Intellia is working with the US FDA and other regulatory agencies to determine how a CRISPR study in patients should be designed.</p><p>"We will talk to them about what kind of data package is relevant for progressing CRISPR into the clinic. Getting into the clinic is very much dependent on our studies going on right now and talking to the FDA," Bermingham said.</p><p>Intellia's competitor Editas Medicine, which closed a <a href="http://www.scripintelligence.com/home/Could-120m-Make-Editas-1st-in-Clinic-With-CRISPR-359904" target="_new">$120m Series B round</a> in August, also hasn't revealed a timeline for the start of its first human clinical trial, but the biotech's large venture capital financing could make it the first company to take a CRISPR therapy into the clinic.</p><p>As for the specific use of Intellia's Series B capital, Bermingham declined to comment on whether it's a precursor to another large fundraising event, including a future initial public offering.</p><p>"$70m is a great Series B with a great group of blue chip investors. This capital positions us very well to develop programs through research and development and into the clinic," he said.</p><p>OrbiMed HealthCare Fund Management led Intellia's Series B with participation from Fidelity Management and Research Company, Janus Capital Management, Foresite Capital, Sectoral Asset Management, EcoR1 Capital and other mutual fund and health care investors. Prior investors Atlas Venture and Novartis also contributed to the Series B round.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 254
+
+<p>Intellia Therapeutics raised a $70m Series B venture capital round that the Cambridge, Massachusetts-based company will use to sharpen its approach to CRISPR/Cas9, a pair of molecular scissors used to edit genes involved in hard-to-treat diseases.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Intellia Raises $70m To Sharpen CRISPR Scissors
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150826T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150826T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150826T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029660
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{B17EB169-D816-450D-BAF5-3AEE9B8BC441}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Intellia Raises $70m To Sharpen CRISPR Scissors
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 9
+
+Editorial
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360120
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d8380d0b-8111-440f-bca0-f252533fb40a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

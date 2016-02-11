@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {80397C8E-1969-41F4-AF1A-01CACD1BF287}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/26/Pharma sounds alarm over Grexit threats
+parent: {32E6A98D-86BC-40BD-A1D6-A27CF9BCD395}
+name: Pharma sounds alarm over Grexit threats
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 56cf8455-2a81-4204-9872-eda545658c4b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Pharma sounds alarm over Grexit threats
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 39
+
+Pharma sounds alarm over Grexit threats
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2916
+
+<p>As Greece prepares for a referendum that could bring it to the brink of an exit from the Eurozone, the European Federation of Pharmaceutical Industries and Associations ( EFPIA) has warned of the threats posed both to patients and to the pharma industry. Its director general Richard Bergström has written to the European Commissioner for Health Vytenis Andriukaitis and a number of business- and economy-focused commissioners calling urgently for a dialog to find solutions.</p><p>Mr Bergström highlights the risk of medicines shortages in Greece as a result of parallel trade triggered by rapid currency devaluation following a "Grexit", or Greek exit from the euro. He also warns of a more general potential for disruption to the business environment, pointing out that the particular complexity and fragmentation of the Greek pharmaceutical supply chain makes it especially vulnerable to disruptions like technical breakdown in transaction infrastructure or uncertainty over the validity of contracts, as well as general social unrest.</p><p>One complicating factor for industry is that European competition law prevents companies from taking co-ordinated action on either of these issues.</p><p>Mr Bergström has therefore asked the European Commission to explore with EFPIA "a number of temporary and proportionate options [...] that both respect the European Treaty whilst mitigating what we believe to be a significant risk to public health that would arise if the risk of Grexit became reality." He notes that some of the actions would require Commission approval or action.</p><p>Aside from the risk of medicines arbitrage causing shortages in Greece should a new currency be introduced &ndash; or indeed should companies reduce prices to help secure access &ndash; EFPIA is also worried about a broader pricing impact on industry. This is because 26 out of the 28 member states refer to prices of other countries in setting their own prices. "[I]t is certain that any abnormal effective price reductions in Greece would spread around Europe," wrote Mr Bergström, before calling on the Commission to "facilitate a political agreement by the EPSCO Council of Health Ministers that member states will not refer to Greek prices." </p><p>As of May 2015, EFPIA members were owed some &euro;1.1bn in arrears for supplying medicines to Greece, a fact that adds to the likely risk to the supply of medicines there should member states continue to include Greece in reference pricing calculations, EFPIA notes.</p><p>As of 1 July, EFPIA had not had a response to its 29 June letter.</p><p>The other commissioners copied in were Commissioners Elzbieta Bienkowska (Internal Market, Industry, Entrepreneurship, SMEs), Jyrki Katainen (vice-president for Jobs, Growth, Investment and Competitiveness), Pierre Moscovici (Economic and Financial Affairs, Taxation and Customs) and Margrethe Vestager (Competition).</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 482
+
+<p>As Greece prepares for a referendum that could bring it to the brink of an exit from the Eurozone, the European Federation of Pharmaceutical Industries and Associations ( EFPIA) has warned of the threats posed both to patients and to the pharma industry. Its director general Richard Bergström has written to the European Commissioner for Health Vytenis Andriukaitis and a number of business- and economy-focused commissioners calling urgently for a dialog to find solutions.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 39
+
+Pharma sounds alarm over Grexit threats
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150626T050004
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150626T050004
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150626T050004
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029131
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Pharma sounds alarm over Grexit threats
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359130
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+56cf8455-2a81-4204-9872-eda545658c4b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042416Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

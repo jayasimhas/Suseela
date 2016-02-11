@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2A34BA76-3073-4615-B6BE-B548F52A1195}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/28/The curious case of Finland and the US trade watch list
+parent: {13587B21-C2AC-45A3-9B37-20A4DC43DB48}
+name: The curious case of Finland and the US trade watch list
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b8d227e2-1e5e-43b9-801c-05e2897a0aa5
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+The curious case of Finland and the US trade watch list
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+The curious case of Finland and the US trade watch list
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8057
+
+<p>A footnote in the United States Trade Representative's (USTR) 2015 Special 301 report recently announced that Finland is off the US "Watch List" of countries that present intellectual property rights (IPR)-related concerns, but the Nordic nation's seemingly quiet exit is probably interesting for more reasons than one, going by what some experts have to say.</p><p>The north European nation, probably one of the last developed countries to accept product patent protection for pharmaceuticals, acknowledged its exit apparently without too much fanfare.</p><p>"Earlier Finnish patent legislation was deemed problematic from an IPR standpoint. Based on patent applications submitted prior to 1 January 1995, it was possible to grant pharmaceuticals a method patent, but not a product patent. The new [USTR] report states that the term for such patents is set to expire shortly and Finland is removed from the watch list in 2015," Finland's ministry of foreign affairs said last month.</p><p>Asked by <i>Scrip</i> on how important it was for Finland to be off the USTR's watch list, in terms of potentially enhanced business relations and improved investments in the domestic pharmaceutical space, Finland's ministry of social affairs and health said: "Finland is content to be off the watch list."</p><p>Finland was on the Watch List from 2009-14 in view of what the US considered as insufficient pharmaceutical patent protection as well as issues with the pharmaceutical reimbursement system and the pricing and substitutability of pharmaceuticals.</p><p>American firms have in the past claimed that the Finnish regulatory framework denied adequate protection to many of their top-selling drugs there. "The lack of patent protection for original products covered by an analogous process patent is symptomatic of broader inadequacies of intellectual property protection in Finland that could negatively impact government pricing in other markets that refer to pharmaceutical prices in Finland," the Pharmaceutical Research and Manufacturers of America (PhRMA) said as part of its submission last year that sought to keep Finland on the USTR's watch list in the 2014 Special 301 Report. </p><h2>reference pricing</h2><p>Finland's "inferior" patent protection, regulatory reforms, such as mandatory substitution and reference pricing, were also cited in PhRMA's 2014 submission as having had "severe adverse effects" for its member companies.</p><p>An amendment to the Finnish Medicines Act (FMA) 2006 had previously clarified that the originator product and its generic equivalent may not be listed on the interchangeable drug list of mandatory generic substitution if the holder of the original marketing authorization has an analogous process patent in Finland and corresponding product patents for the active ingredient in at least five European Economic Area countries. However, in 2008, the Finnish Parliament passed a bill that set aside this amendment. </p><p>What appeared to be of particular concern to Big Pharma was that Finnish prices may be referenced by other European countries. This would mean that early introduction of generic products in Finland could not only lead to a reference price group that lowers the Finnish price but also a potential paring of prices set by other governments in Europe. </p><p>On whether other European nations ought to have perhaps been looking at Finland more closely, given escalating healthcare costs, Finland's ministry of social affairs and health said that that should be "inquired from other countries", as they have "better knowledge" of whether the Finnish system could be useful for them. </p><p>"Finland's health care system is very different from most European countries," the ministry told <i>Scrip</i>.</p><p>But the reference price system has clearly brought in some savings to Finland. </p><p>"The cost saving on pharmaceuticals expenditure to Finland from April 2009 to March 2010 was &euro;110m (the year following the introduction of the reference price system in Finland). Unfortunately, we don't have statistics [on] what is the influence of the unique IPR system to the amount of savings," Lauri Pelkonen, Director of the Pharmaceuticals Pricing Board, Ministry of Social Affairs and Health, Finland, told <i>Scrip</i>. The generic reference price system was introduced in Finland on 1 April 2009 while generic substitution was introduced as early as 2003.</p><p>Legal experts, though, underscored potential perils of an unreasonable reference price setting. Mark Pohl of the US-based Pharmaceutical Patent Attorneys said that drug pricing is not set based on what the "neighbour's price" is but based on the perceived clinical value of the product compared with alternative therapy. </p><p>He referred to a hypothetical example of metformin use that reduces healthcare spending by say &euro;4,000 per patient per year. "Assume Finland believes metformin is a critical drug, essential for public welfare, and thus sets the maximum price of metformin at &euro;0[zero]. Will Germany do the same? No. With a price of zero in Finland, drug manufacturers will simply stop exporting to Finland," Mr Pohl said. </p><p>He underscored that this was not merely "academic musing" and referred to how the financially distressed Greece had reneged on its invoices from multinational drugs manufacturers &ndash; in effect, setting the price to zero. In return, manufacturers have all but stopped drug exports to Greece, he noted. </p><p>Others, though, cited the tight reference pricing in Europe with Germany being a clear outlier. An industry expert referred to a 2013 report on pharma pricing in Europe from the Rand Corporation that stated that UK prices remained significantly lower than those in the US (by just over 150%) and in seven European comparator countries (by between 3% in Italy and 22% in Germany), though they were somewhat higher than those in Spain, France and Finland (by between 3-5%). </p><p>"However with the Transatlantic Trade and Investment Partnership (TTIP) looming on the horizon, the prices of medicines in the EU are set to rise drastically as the power of the industry to negotiate with governments increases disproportionately with the inclusion of the investor-to-state dispute settlement (ISDS) clause, which the Finnish minister recently supported," the industry expert with a foreign multinational told <i>Scrip</i>. The US and the EU have held several rounds of negotiations under the TTIP.</p><h2>lessons?</h2><p>But is there a lesson for others to emulate, especially developing nations, around how Finland appears to have held its ground on its IPR policy that has been quite distinct from most EU nations? </p><p>Maybe not, according to Mr Pohl. He notes that while Finland as a Soviet satellite did not allow drug patents, this is no longer the case. </p><p>"Finland is now signatory of the European Patent Convention, and European Community directives requiring respect for IPR. Generic drugs launch in Finland in general when they launch elsewhere in the EPC," he said. A lesson for emulation, he argues, may be to look as a chart of Finland's GDP over time; acceptance of drug patents correlated with an increase in GDP growth. </p><p>"This lesson, however, is misleading: in addition to drug research, there are many other factors which aided Finnish GDP growth." </p><p>Others, though, appear to see another dimension in Finland's exit from the USTR. The expert with the foreign multinational firm referred to the "coincidence" of the news of the USTR taking Finland off the watch list coming close on the heels of the Finnish Minister for European Affairs and Foreign Trade publicly voicing her support for the inclusion of the <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/EU-politicians-turn-up-the-heat-on-TTIPs-ISDS-clause-358074%5d" target="_new">controversial ISDS clause</a> in the Transatlantic Trade and Investment Partnership. </p><p><i>Scrip</i> could not independently verify any linkage between the two, though.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 366
+
+<p>A footnote in the United States Trade Representative's (USTR) 2015 Special 301 report recently announced that Finland is off the US "Watch List" of countries that present intellectual property rights (IPR)-related concerns, but the Nordic nation's seemingly quiet exit is probably interesting for more reasons than one, going by what some experts have to say.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+The curious case of Finland and the US trade watch list
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150528T160002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150528T160002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150528T160002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028899
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+The curious case of Finland and the US trade watch list
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358637
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b8d227e2-1e5e-43b9-801c-05e2897a0aa5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

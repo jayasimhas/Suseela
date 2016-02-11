@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {915D71EA-5710-45A3-A9F7-486DD235176F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/28/Tevas Next Blockbuster Its AntiCGRP Antibody Prepares For Phase III In DifficultToTreat Migraines
+parent: {101B4B8A-8F7B-4386-9044-D3F3856A0B84}
+name: Tevas Next Blockbuster Its AntiCGRP Antibody Prepares For Phase III In DifficultToTreat Migraines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 223ac318-fb12-4fbc-99aa-c7122cbe5dc5
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 102
+
+Teva's Next Blockbuster? Its Anti-CGRP Antibody Prepares For Phase III In Difficult-To-Treat Migraines
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 97
+
+Tevas Next Blockbuster Its AntiCGRP Antibody Prepares For Phase III In DifficultToTreat Migraines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5987
+
+<p>Teva Pharmaceutical Industries confirmed it is to start Phase III studies with TEV-48125, its humanized monoclonal antibody against calcitonin-gene-related peptide (CGRP), but the company was not giving details on timings and indications as it published online Sept. 30 the full Phase IIb clinical trial results with the product in episodic migraine and chronic migraine, in two papers in <i>The Lancet Neurology</i>.</p><p>Adding to top-line data from Phase IIb studies announced at leading international headache conferences this year, the two scientific papers flesh out that data as well as being the first formal validation of CGRP as a target for chronic migraine therapies.</p><p>The leading generics company is developing research-based products to replenish its sales as its blockbuster MS drug <i>Copaxone</i> (glatiramer acetate) faces increasing levels of generic competition. But it is in a tight-run race with several other pharmaceutical companies that also have potential anti-migraine biologics at an advanced clinical-stage, particularly in the chronic migraine segment where Allergan&rsquo;s <i>Botox</i> (onabotulinumtoxinA) is one of the few recent breakthroughs. </p><p>"Patients with chronic or frequent episodic migraine are often in extreme pain and severely disabled, unable to leave the home for 2-3 days at a time," noted Alan Rapoport, professor of medicine at the David Geffen School of Medicine, UCLA, in a Teva statement; Rapoport was one of the US doctors that took part in the studies.</p><p>In the first study in 264 patients in the US with chronic migraine, treated with monthly subcutaneous doses of TEV-48125 (a loading dose of 675 mg followed by doses of either 225 mg or 900 mg) for three months, both drug regimens were significantly better than placebo in reducing the number of headache-hours (primary endpoint, p=0.038 and p=0.0057), reported Teva's Dr Marcelo Bigal and US academic researchers in the first paper. Both TEV-48125 regimens were also significantly better than placebo in the number of headache-days of moderate to severe intensity in month three (secondary endpoint: p<0.0345 and="" p=""></0.0345></p><p>Consistent clinical improvements were evident as early as one month after the start of therapy, showing a rapid onset of relief. Over half of drug treated patients had a 50% or more decrease in headache frequency and 15% were free of headache after three months.</p><p>The second paper involved 297 patients in the US with high frequency episodic migraine who had 8-14 days of migraine headaches every month and were treated with 225 mg or 675 mg doses of TEV-48125 each month. Both doses were associated with statistically and clinically significant reductions in migraine-days and headache-days, Bigal and colleagues reported.</p><p>The number of migraine-days per month were reduced by at least 50% in 53% (p-0.0005) and 59% (p<0.001) of="" patients="" treated="" with="" 225="" mg="" and="" 675="" mg="" doses="" ot="" tev-48125="" respectively,="" compared="" with="" 28%="" of="" those="" receiving="" placebo.="" episodic="" migraine="" days="" declined="" by="" at="" least="" 75%="" in="" 11%,="" 34%="" and="" 31%="" treated="" with="" placebo,="" 225="" mg="" or="" 675="" mg="" doses="" of="" tev-48125="" respectively.="" "this="" was="" the="" first="" study="" to="" report="" on="" more="" than="" one="" dose="" of="" a="" monoclonal="" anti-cgrp="" antibody="" for="" the="" prevention="" of="" high="" frequency="" episodic="" migraine,="" and="" the="" study="" was="" remarkably="" positive,="" especially="" considering="" the="" severity="" of="" the="" disorder,"="" said="" bigal=""></0.001)><i>et al</i>. Patients were still having migraines despite the use of other therapies including opioids and barbiturates.</p><p>There were no serious adverse events during TEV-48125 therapy in either study, Bigal and colleagues said. Liver abnormalities that have been seen with other anti-CGRP MAbs were not seen with TEV-48125, suggesting they were due to off-target effects, Bigal <i>et al</i> commented. There were no evidence of immunologic dysfunction with TEV-48125, with the 1% incidence of detectable antibodies against TEV-48125 being much lower than with other anti-CGRP monoclonal antibodies, according to the company. The rapid onset of action is particularly important as it stops patients prematurely stopping therapy.</p><h2>Crucial Role Of CGRP</h2><p>CGRP is believed to be play a crucial role in the pathology of migraine, both in the periphery and in the brain, and targeting both its alpha and beta isoforms directly with TEV-48125 and other antibodies, rather than the CGRP receptor, may allow some CGRP-related activities to continue and reduce any potential side effects associated with complete CGRP blockade, Teva commented.</p><p>Other anti-CGRP antibodies in development for migraine include Amgen's fully human AMG 334, that expects to enter Phase III studies by the end of the year, and for which the biotech has recruited Novartis to have certain-US rights, according to a deal announcement made in September. Novartis has a strong neuroscience capability, Amgen noted at the time. </p><p>Lilly's antibody LY-2951742 has met its primary endpoint in a Phase IIB study in patients with episodic migraine, and Phase III studies are expected to start in the first quarter of 2016. It has already started two Phase III studies in patients with cluster headache</p><p>And Bothell, Washington-based Alder BioPharmaceuticals, Inc. is developing an intravenous humanized antibody ALD403 that has shown activity for up to six months in patients with frequent episodic migraine, and is currently conducting a Phase IIb study in patients with chronic migraine.</p><p>Oral small-molecule CGRP antagonists are also in early- to mid-stage clinical development and include MK-1602 that Allergan acquired from Merck & Co in July and expects to move into Phase III studies in 2016.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 424
+
+<p>Teva Pharmaceutical Industries confirmed it is to start Phase III studies with TEV-48125, its humanized monoclonal antibody against calcitonin-gene-related peptide (CGRP), but the company was not giving details on timings and indications as it published online Sept. 30 the full Phase IIb clinical trial results with the product in episodic migraine and chronic migraine, in two papers in <i>The Lancet Neurology</i>.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 97
+
+Tevas Next Blockbuster Its AntiCGRP Antibody Prepares For Phase III In DifficultToTreat Migraines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150928T220000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150928T220000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150928T220000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029946
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 102
+
+Teva's Next Blockbuster? Its Anti-CGRP Antibody Prepares For Phase III In Difficult-To-Treat Migraines
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{64DA3A31-2EAC-451B-9E20-7426CE8C307C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360710
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042458Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+223ac318-fb12-4fbc-99aa-c7122cbe5dc5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042458Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

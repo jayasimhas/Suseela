@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {00892C0A-7010-4E69-9612-AF375DFC1F5E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/30/PRAC relief for HPV vaccines
+parent: {21E60BE4-5191-4953-B136-3A0915C11D36}
+name: PRAC relief for HPV vaccines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 79ec1f74-2b46-451d-bfd9-aed1d21048ce
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 28
+
+PRAC relief for HPV vaccines
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 28
+
+PRAC relief for HPV vaccines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3512
+
+<p>The European Medicines Agency's Pharmacovigilance Risk Assessment Committee (PRAC) has found no evidence to support a causal link between the marketed HPV vaccines and two rare conditions after a review of the latest scientific knowledge.</p><p>The review, begun by the European Commission under an Article 20 procedure in July at the request of Denmark, confirms the safety of the HPV vaccines &ndash; <i>Cervarix</i>, <i>Gardasil</i>/<i>Silgard</i> and <i>Gardasil-9</i> &ndash; in respect to the two syndromes: complex regional pain syndrome (CRPS, a chronic pain condition affecting the limbs); and postural orthostatic tachycardia syndrome (POTS, where the heart rate increases abnormally after sitting or standing up, causing dizziness and fainting, as well as headache, chest pain and weakness).</p><p>"By consensus, the evidence does not support a causal link between the vaccines and development of the two conditions," said Dr Enrica Alteri, head of safety and efficacy of medicines at the EMA. The benefits of HPV vaccines therefore continue to outweigh their risks, and there is no reason to change the way the vaccines are used or amend the current product information, she added. </p><p>The PRAC recommendations will now be sent to the CHMP, which will adopt the EMA's final opinion in two weeks' time. The final stage of the review procedure is the adoption by the European Commission of a legally binding decision applicable in all EU member states. The full report of the PRAC's findings will then be made available. </p><p>The HPV vaccines have been available in the EU since 2006 (Merck & Co's Gardasil, against HPV types 6, 11, 16 and 18) and 2007 (GlaxoSmithKline's Cervarix against types 16 and 18), with Gardasil 9 (against HPV types 6, 11, 16, 18, 31, 33, 45, 52 and 58) being approved in June this year. </p><p>The PRAC said it reviewed the published research, data from clinical trials and reports of suspected side effects from patients and healthcare professionals, as well as data supplied by member states. It also said it consulted a group of leading experts in the field, and took into account detailed information received from a number of patient groups.</p><p>Alteri said that the PRAC had erred on the conservative side during its assessment, using a wider range of signs and symptoms that might normally be attributed to each syndrome, and taking into account the possibility of under-reporting. Nevertheless, it found no evidence that the overall rates of these syndromes in vaccinated girls were different from expected rates in these age groups. </p><p>Diagnosis is difficult in both the vaccinated and unvaccinated population as the symptoms of CRPS and POTS can overlap with other conditions, but the estimates are that in the general population around 150 girls and young women per million aged 10 to 19 years develop CRPS each year, and at least 150 girls and young women per million develop POTS each year. </p><p>The PRAC noted that some symptoms of CRPS and POTS may overlap with chronic fatigue syndrome (CFS) and many of the reports considered in the review have features of CFS and some patients had diagnoses of both POTS and CFS. Results of a large published study that showed no link between HPV vaccine and CFS were therefore particularly relevant, it said. </p><p>More than 80 million girls and women worldwide have received the vaccines, and in some European countries they have been given to 90% of the age group recommended for vaccination. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 245
+
+<p>The European Medicines Agency's Pharmacovigilance Risk Assessment Committee (PRAC) has found no evidence to support a causal link between the marketed HPV vaccines and two rare conditions after a review of the latest scientific knowledge.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+PRAC relief for HPV vaccines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151030T054517
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151030T054517
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151030T054517
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030244
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 28
+
+PRAC relief for HPV vaccines
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199902692
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361299
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+79ec1f74-2b46-451d-bfd9-aed1d21048ce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

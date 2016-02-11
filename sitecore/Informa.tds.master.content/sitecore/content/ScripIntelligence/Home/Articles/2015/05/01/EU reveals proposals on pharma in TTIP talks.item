@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C63CE71D-6902-44AC-BC21-7DDF26DAFAD9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/01/EU reveals proposals on pharma in TTIP talks
+parent: {F3529FA8-0243-497B-B0D5-C9A18790E4DC}
+name: EU reveals proposals on pharma in TTIP talks
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0299ba01-5233-4297-abec-7c3a9d6d876a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{DD548E28-6D47-4403-832E-A9D982190B89}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+EU reveals proposals on pharma in TTIP talks
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+EU reveals proposals on pharma in TTIP talks
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 12545
+
+<p>The European Commission has released a number of texts laying out the EU's proposals on specific issues, including pharmaceutical and medical device regulation, that are under discussion with the US government as part of the negotiations on the Transatlantic Trade and Investment Partnership (TTIP). The commission says this is the first time it has made such proposals public during bilateral trade talks, and that this "reflects its commitment to greater transparency in the negotiations".</p><p>The documents published include eight EU textual proposals covering issues such as competition, technical barriers to trade, SMEs, and customs issues, as well as TTIP position papers and several two-page "plain language" factsheets. The textual proposals set out the actual language and binding commitments that the EU would like to see in those parts of the TTIP that cover regulatory issues and rules in these areas.</p><p>Among the documents opened up to public view are an EU position paper on pharmaceuticals in the TTIP, and factsheets on pharmaceuticals and medical devices. The pharma factsheet outlines the commission's main priorities in this sector, and gives reassurances about the claimed adverse effects of the treaty on European pricing and reimbursement practices, the release of clinical trial data, and the level of intellectual property protections. </p><p>"Today's publication of our specific legal proposals in the context of TTIP marks another first in EU trade policy," declared trade commissioner Cecilia Malmström on 7 January. She said the commission was particularly pleased that explanations in non-technical language were being included. "It's important that everyone can see and understand what we're proposing in TTIP and &ndash; just as importantly &ndash; what we're not," she declared. </p><p>The commission began the process of opening up the TTIP documents last November, when it promised to make more negotiating texts public, to give all members of the European Parliament access to the negotiating texts, to classify fewer negotiating documents as "EU restricted", and to publish a regularly updated public list of documents that have been shared with the parliament and the Council of Ministers. </p><p>It has already posted some documents setting out its position on a wide range of issues covered by the TTIP talks, but this is the first time that specific EU legal proposals have been published while a bilateral trade agreement is being negotiated.</p><h2>Pharma implications</h2><p>In its position paper on pharmaceutical products, the commission says that regulatory cooperation between the EU and the US is already well established through bilateral arrangements and multilateral fora such as the ICH, but that the TTIP could be used to strengthen these links by: </p><ul><li>Establishing bilateral commitments that would facilitate pharmaceutical products authorization processes and optimise agencies' resources (notably with respect to Good Manufacturing Practice (GMP) inspections and exchange of confidential information).</li><li>Fostering additional harmonization of technical requirements in new areas or in areas where the need to improve harmonization at bilateral or international level has been identified (eg biosimilars, paediatrics, generics, terminology).</li><li>Reinforcing joint approaches on scientific advice and evaluation of quality by design applications.</li></ul><p>These actions, it says, should allow the regulators to make more efficient use of the available resources and reduce unnecessary duplication, including in the area of clinical trials, and would also be compatible with the EU regulatory framework and EU rules on mutual recognition of GMP inspections in existing agreements with third countries.</p><p>More specifically, the commission says the EU and US should look at the possibility of mutual recognition of each other's GMP inspections, which would strengthen the existing bilateral collaboration and bring "significant cost savings for the industry". The two parties' GMP schemes should be subjected to "rigorous assessment" to determine their equivalence, and "provisions on the exchange of confidential/trade secret information should be in place for such an approach to function".</p><p>Taking this further, the commission says both parties should look at allowing the exchange of confidential information and trade secrets among EU member states and institutions and the FDA, not only with regard to GMP but also to "data and information on marketing authorization applications".</p><h2>Biosimilars and generics regulation</h2><p>Another key topic is convergence in the regulation of biosimilars and generics. Both parties, the commission suggests, could "commit on converging systems for the authorization of biosimilars, and are expected to pursue their scientific exchanges regarding their respective guidelines". </p><p>This would be highly significant given that the US is lagging well behind the EU (and some other countries) in terms of biosimilar development and approval systems &ndash; while there are some 30 biosimilar products on the EU market, the US has none &ndash; although an FDA advisory panel has just given the all-clear to the first biosimilar: Sandoz Zarxio (filgrastim), a version of Amgen's Neupogen (scripintelligence.com, 8 January). </p><p>The commission says: "In the context of the current development of the authorisation system for biosimilars in the US, an advantage of this approach would be the potential increase of approved biosimilars in the US and limit the number of diverging requirements to demonstrate the quality, safety and efficacy of these products." The US and the EU could also "shape the international approach for the review/authorization of biosimilars".</p><p>As for generics, it is suggested that the US and the EU could look at streamlining the marketing authorization systems, "including the development or review, if need be, of respective guidelines, in particular as regards bioequivalence, biowaivers and the use of reference medicines". Convergence is recommended in other areas too, such as pediatric drug authorization requirements, terminology for pharmaceutical products, and areas like parallel scientific advice and Quality by Design applications.</p><h2>"Sensitive areas"</h2><p>The pharmaceuticals "factsheet", which is aimed at the general public, describes a number of specific areas where collaboration between the EU and the US can "make a difference for consumers and the industry".</p><p>It also addresses a number of "sensitive or controversial issues" that have been widely raised by campaigners against the provisions of the TTIP, and uses a Q&A-type format to respond to a number of specific claims:</p><p><i>TTIP will change the way EU authorities decide on the pricing and reimbursement of medicines</i>.</p><p>The commission says that the EU member states will continue to take decisions on the pricing and reimbursement of medicines. "This will not change with TTIP or with any other trade agreement. Those decisions only have to follow some transparency principles as set out in Council Directive 89/105/EEC."</p><p><i>TTIP could undermine the policy of the EMA on releasing data from clinical trials</i>.</p><p>In October 2014, the commission notes, the EMA published its final policy on disclosure of clinical data: TTIP will have no influence on this policy, or on the new Clinical Trials Regulation that is due to enter into force from May 2016, it insists.</p><p><i>There will be more protection of intellectual property rights, meaning medicines will be more difficult to get and more expensive</i>. </p><p>Civil society and public interest groups have suggested that the US is seeking patent term extensions to compensate for delays at the European Patent Office, and that it also wants to introduce "patent linkage", whereby decisions on generic medicine approvals are linked to the IP status of the reference product &ndash; something the EU does not allow.</p><p>But the commission is adamant that no such IP changes are in prospect through the TTIP. It says that both the EU and the US have a solid and comprehensive IPR system that allows innovative companies to thrive and remain competitive. "We will not negotiate any IP rules that change this delicate balance or put more strain on already stretched national health budgets." The commission has also consistently opposed any idea of introducing patent linkage in the EU.</p><h2>Other concerns</h2><p>More generally, concern has been expressed about the proposed ISDS mechanism, which would in certain cases allow companies to sue governments for any loss of earnings seen to be due to national laws and regulations. Critics have suggested that this could jeopardize the right of governments to regulate in the public interest, for example where they want to introduce legislation on curbing healthcare costs that might affect a US firm with interests in the health service.</p><p>The commission counters that the aim of the ISDS and the investment protection clauses being negotiated in the TTIP are intended to encourage US investors to come to the EU by laying down some basic principles protecting companies against practices such as discrimination, expropriation without compensation, denial of justice to foreign investors, and abusive or arbitrary treatment of EU and US investors in each other's territory.</p><p>In its TTIP document, it says it has put forward proposals for safeguarding the right of governments to regulate and limiting the rights granted to investors under such a mechanism. In response to claims that ISDS proceedings would be conducted "in secret and tainted by bias and conflicts of interest", it says it has proposed ways of ensuring "full transparency and further guarantees for impartiality and ethical conduct of arbitrators". </p><p>In the SME sector, the commission outlines plans to help smaller firms by removing customs duties, simplifying customs procedures, reducing the costs caused by divergent standards, and improving IP protections.</p><p>As for the medical devices area, the commission says it wants to use TTIP to improve cooperation so as to ensure faster access to life-saving devices by streamlining approval procedures, and to implement better procedures for monitoring and recalling devices.</p><h2>More to come</h2><p>Some have credited Ms Malmström with bringing fresh impetus to the drive for more openness since she became trade commissioner last year, but even before that the commission had for some time been under pressure from activists, civil society organizations and pressure groups to be more transparent on the TTIP, particularly on issues such as the ISDS. </p><p>Adding to the clamour has been the European Ombudsman, Emily O'Reilly, who last year began an investigation into the transparency of the negotiations because of concerns over the non-disclosure of "key documents" and the "alleged granting of privileged access to certain stakeholders".</p><p>On the same day that the commission published the texts (7 January), Ms O'Reilly issued a lengthy report saying that while she welcomed progress on transparency made by the commission to date, more needed to be done. In the report, she made a series of recommendations in areas such as public access to consolidated negotiating texts, greater proactive disclosure of TTIP documents, and more transparency on meetings that commission officials hold with business organizations, lobby groups and NGOs. </p><p>"The commission has made real efforts to make the TTIP negotiations more transparent," the Ombudsman said. "I am aware that the commission at times needs to talk to the US confidentially to be able to negotiate effectively. However, US resistance to publishing certain TTIP documents is not in itself sufficient to keep them from the European public. The commission has to ensure at all times that exceptions to the EU citizens' fundamental right to get access to documents are well-founded and fully justified."</p><p>Whether the US will follow suit and publish its own documents remains to be seen, but the pressure is certainly growing in view of the EU's decision to open up and the expectation of more to come in the next weeks or months. "In line with its determination to make EU trade policy more transparent," Ms Malmström said, "the commission intends to publish further texts and proposals in the course of the negotiations, as they become available."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 498
+
+<p>The European Commission has released a number of texts laying out the EU's proposals on specific issues, including pharmaceutical and medical device regulation, that are under discussion with the US government as part of the negotiations on the Transatlantic Trade and Investment Partnership (TTIP). The commission says this is the first time it has made such proposals public during bilateral trade talks, and that this "reflects its commitment to greater transparency in the negotiations".</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+EU reveals proposals on pharma in TTIP talks
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150501T234010
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150501T234010
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150501T234010
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027457
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+EU reveals proposals on pharma in TTIP talks
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355934
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0299ba01-5233-4297-abec-7c3a9d6d876a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

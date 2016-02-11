@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {70D2210F-C169-4598-8DDF-53A4152E68C0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/30/Kalas lead product shows promise in two eye indications
+parent: {CB8312FA-59CF-4683-9123-7DB09EB8FEB8}
+name: Kalas lead product shows promise in two eye indications
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: dce67591-fdfd-4a5a-b266-a222859ae431
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Kala's lead product shows promise in two eye indications
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Kalas lead product shows promise in two eye indications
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3337
+
+<p>The Massachusetts-based ophthalmic company Kala Pharmaceuticals has reported positive data for its formulation of the steroid loteprednol etabonate KPI-121 in two indications, pain in cataract surgery and dry eye disease.</p><p>The product is a novel nanoparticle formulation of loteprednol etabonate that uses Kala's proprietary mucus-penetrating particle (MPP) technology to improve penetration into target tissues of the eye.</p><p>Top-line results from a Phase III trial of KPI-121 for the treatment of inflammation and pain in patients who had undergone cataract surgery show that it met all its primary efficacy endpoints and was generally well tolerated, with no significant treatment-related safety. </p><p>The company says the data demonstrate the potential of the MPP technology to enhance ocular delivery of drugs, allowing for reduced dosing and dose-frequency. </p><p>In the study, 380 patients were randomized to receive either 0.25% KPI-121 four times daily, 1.0% KPI-121 two times daily or their corresponding vehicles for two weeks. </p><p>At day eight, there were significant differences favoring KPI-121 for the primary endpoint of complete resolution of inflammation with both dosing regimens (p < 0.0001).="" complete="" resolution="" of="" ocular="" pain="" by="" day="" eight="" (also="" a="" primary="" endpoint)="" was="" also="" achieved="" for="" 1%="" kpi-121="" (p="0.0019)" and="" 0.25%="" (p="0.0003)."></p><p>Kala notes that corticosteroids currently approved in the US for this use are indicated for four times a day dosing during the first two weeks of therapy. </p><h2>dry eye</h2><p>KPI-121 also achieved significance in a Phase II trial in dry eye disease for the primary endpoint of bulbar conjunctival hyperemia, and showed "promising trends" for key symptom endpoints. "The achievement of statistical significance for the primary sign endpoint in this relatively small trial is an extremely important accomplishment," said Kala's chief medical officer Dr Kim Brazzell. "We believe this to be one of the first times an initial Phase II dry eye trial has achieved a primary endpoint."</p><p>The study compared 0.25% KPI-121 to vehicle, dosed four times a day for 28 days, in 150 patients with dry eye disease, and showed KPI-121 produced significant improvements for the primary clinical sign endpoint of bulbar conjunctival hyperemia at day 29 (p=0.0387). KPI-121 did not achieve significance for the primary symptom endpoint of ocular discomfort, but Kala says the trial did show promising trends toward improvement in this and other symptom endpoints, particularly in patients with more severe baseline ocular discomfort. </p><p>The product was well tolerated: the only treatment-emergent adverse event reported in greater than 3% of patients was instillation site pain, in 6.9% of KPI-121 patients compared with 3.8% of patients treated with vehicle. </p><p>Last April, Kala raised $22.5m in a series B financing to advance the clinical development of this product, which is also in Phase II for blepharitis. The company is also investigating a small-molecule receptor tyrosine kinase inhibitor MPP as a potential topical treatment for wet age-related macular degeneration. Its investors include Ysios Capital, Crown Venture Find, Lux Capital, Polaris Partners and Third Rock Ventures.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 228
+
+<p>The Massachusetts-based ophthalmic company Kala Pharmaceuticals has reported positive data for its formulation of the steroid loteprednol etabonate KPI-121 in two indications, pain in cataract surgery and dry eye disease.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Kalas lead product shows promise in two eye indications
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150330T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150330T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150330T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028327
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Kala's lead product shows promise in two eye indications
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357567
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dce67591-fdfd-4a5a-b266-a222859ae431
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

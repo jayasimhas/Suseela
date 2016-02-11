@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {D82A38EE-50BB-4687-B70B-B1CA1195D609}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/11/Replacing Animals An Emerging MultiBillion Dollar Industry
+parent: {0C4E4294-FE7F-444B-9DB5-24F666F256E8}
+name: Replacing Animals An Emerging MultiBillion Dollar Industry
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a861196c-8309-494a-a79c-c05829264cc4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Replacing Animals: An Emerging Multi-Billion Dollar Industry
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Replacing Animals An Emerging MultiBillion Dollar Industry
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3201
+
+<p><p>Using new and emerging "non-animal technologies (NATs)" in the testing of the safety and efficacy of new pharmaceuticals is a growing industrial sector that could be worth $25bn by 2020, according to a roadmap released Nov. 10 by Innovate UK, the government agency that identifies, plans and invests in emerging technologies that have the potential to drive future economic growth.</p><p><p>It has long been held that animal studies and models are not particularly good models for what happens in patients, but it is only in recent years that cell culture techniques and computer-based analytics have proven themselves as alternatives. With such technology advances, the global market for cell-based assays used in drug discovery, safety and toxicology is now expected to reach $21.6bn by 2018, and the global market for induced pluripotent stem cells is expected to reach $2.9bn in 2018, the roadmap says. The 3D cell culture market is expected to grow to about $2.2bn in 2019. </p><p><p>NATs include complex 3D tissue models, organ-on-chips, stem cell platforms, in silico tools and cell imaging technologies.</p><p><p>The Innovate UK roadmap is the second on the subject of using new technologies in the drug development process to be produced in Europe over the past couple of months; the Avicenna Consortium, a group of academic and company researchers, has also released its own roadmap for conducting "in silico" clinical trials on computer, that could reduce the number of patients and human volunteers used in the development of new medicines.</p><p><p>Although produced in the UK to guide future industrial investment in the country, the Innovate UK roadmap could likely be applied in any country, and in fact the UK may already be behind other countries: "Significant investment in NATs is also taking place in the US and elsewhere in Europe," the roadmap claims. It points to the work of the US "Criticial Path" Initiative that is also trying to overcome bottlenecks in the drug development process.</p><p><p>Regulators should be involved early in the development of NATs, to expedite regulatory acceptance, and support should be given to building NAT capacity across science and technology disciplines, ensuring the right base of skills,, the roadmap continues. Collaborations between industry, biotechs and academia should be fostered, and individuals from all areas should be involved in a strategic advisory board to drive the roadmap forward.</p><p><p>NATs should be useful in a range of industries, include makers of pharmaceutical, veterinary products, agrichemicals and cosmetics, and the roadmap suggests NATs in the future could include methods and instrumentation to improve the efficiency of ex vivo tissue analysis using automated multiplexed digital image analysis; compound screening using genetically defined panels of induced pluripotent stem cells; 3D printed model systems, or model systems that incorporate nutrient flow and multiplexed organ-like models.</p><p><p>Companies deploying NATs will be dependent on being able to buy "off-the-shelf" products or to source their NAT work from specialist SMEs and CROs that provide tools, products or services.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Replacing Animals An Emerging MultiBillion Dollar Industry
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150611T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150611T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150611T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030284
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Replacing Animals: An Emerging Multi-Billion Dollar Industry
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{64DA3A31-2EAC-451B-9E20-7426CE8C307C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361411
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042520Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a861196c-8309-494a-a79c-c05829264cc4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042520Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

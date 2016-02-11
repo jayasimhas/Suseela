@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8FE7DBC9-BB8B-41A5-A8C7-F6852826F4CE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/Pharma firms way ahead in requesting access to EMA documents
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: Pharma firms way ahead in requesting access to EMA documents
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: eb61487b-f813-435d-bf7f-7d03a447b988
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Pharma firms way ahead in requesting access to EMA documents 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Pharma firms way ahead in requesting access to EMA documents
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5253
+
+<p>When the European Medicines Agency was drafting its policy on the proactive publication of clinical trial data, one concern expressed by the R&D industry was that the documents released might be of benefit to competitor companies, particularly if they contained commercially confidential information. </p><p>The policy, which was finally adopted last October, only came into effect in January this year, but the extent of companies' likely interest in the data to be released can be gauged from the EMA's latest statistics on the number of requests filed in 2014 under its separate 2010 policy on access to documents. </p><p>Of the 416 access to document requests made last year, almost half &ndash; 47.1%, or 196 &ndash; came from the pharmaceutical industry. Some way behind, with 15.9% of requests, were law firms, while 13.5% were filed by the media, 8.4% by academia/research institutes, and 3.4% by patients and consumers. The number of access to document requests in 2014 was well above the 293 seen in 2013.</p><p>A slightly different picture emerges when the requests are broken down by the number of pages actually released. Of the 167,309 pages the EMA provided to requesters in 2014, the largest single proportion (35.6%, or 59,637 pages) went to law firms, followed by the pharmaceutical industry with 26.2%, the media with 20.1%, and academia/research institutes with 14.2%. The number of pages released was substantially down on the previous year's figure of 308,931. </p><p>Not that the EMA has been handing out documents without a care for what they contain. Out of the 380 decisions on document release taken by the agency last year, only in 229 cases was full access granted in the first instance. 70 requests were turned down, and in 15 cases only partial access (ie with some information redacted) was granted. 66 requests were withdrawn. </p><p>Requesters have a right to appeal any refusal to disclose documents, and in 2014 the EMA took 42 decisions on such appeals. 25 of these resulted in disclosure, and 14 in a final refusal. Two resulted in partial disclosure, and one was withdrawn.</p><p>The statistics are contained in the 2014 EMA annual report and annexes. In the report, the agency says it continued to grant access to documents pending the outcome of three court cases, although it took "particular care" when assessing requests for documents that were "similar" to those that were the subject matter of the court cases. </p><p>Two of these cases were brought by AbbVie, and the other by InterMune. AbbVie, which had sought to prevent the EMA from releasing clinical study reports (CSRs) on its blockbuster MAb Humira (adalimumab), <a href="http://www.scripintelligence.com/policyregulation/AbbVie-drops-lawsuit-against-EMA-after-data-redaction-agreed-351045" target="_new">dropped its action in April 2014</a> after the EMA agreed to what it described as "very limited redactions". The agency confirmed to <i>Scrip</i> that the InterMune case, where the company is seeking to block access to CSRs on its pulmonary fibrosis drug Esbriet (pirfenidone), was still ongoing as of the end of 2014. </p><h2>Policies and procedures</h2><p>There are a number of policies and rules regarding public access to EMA documents and the publication of clinical trial data. </p><p>The EMA's <a href="http://www.ema.europa.eu/docs/en_GB/document_library/Other/2010/11/WC500099473.pdf" target="_new">access to documents policy</a>, which has been in effect since 1 December 2010, outlines the procedures for releasing documents prepared or submitted as part of the its activities in the area of medicines for human and veterinary use, including decisions as to whether documents are classified as public or confidential and whether any documents need to be redacted before release. The agency said that it does not publish details of the information requested under this policy. </p><p>Under the new <a href="http://www.ema.europa.eu/docs/en_GB/document_library/Other/2014/10/WC500174796.pdf" target="_new">proactive data disclosure policy</a>, the EMA will publish CSRs contained in marketing authorizations that are submitted to the agency as of 1 January 2015. The CSRs, redacted where appropriate, will be published once the EU decision-making process on the product has been completed, regardless of whether a marketing authorization is actually granted. In a second phase, the agency will consult on the best way of making individual patient data available in compliance with privacy and data protection laws.</p><p>Under another initiative, as of July 2014 sponsors have to post their clinical trial results in the European Clinical Trials Database (EudraCT), which is hosted by the EMA. A subset of this information is made available to the public through the EU Clinical Trials Register &ndash; by of the end of 2014, summary results (including the aims of the study, its design, and the main results and conclusions) were already available for a number of trials. </p><p>Rules on trial data disclosure are also contained in the <a href="http://ec.europa.eu/health/human-use/clinical-trials/regulation/index_en.htm" target="_new">EU Clinical Trials Regulation</a>, which is due to come into effect sometime in mid-2016.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 308
+
+<p>When the European Medicines Agency was drafting its policy on the proactive publication of clinical trial data, one concern expressed by the R&D industry was that the documents released might be of benefit to competitor companies, particularly if they contained commercially confidential information. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Pharma firms way ahead in requesting access to EMA documents
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T001541
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T001541
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T001541
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028637
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Pharma firms way ahead in requesting access to EMA documents 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358129
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eb61487b-f813-435d-bf7f-7d03a447b988
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

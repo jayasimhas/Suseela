@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {4B0190E7-A118-4EB2-966E-C7641B6A2584}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/13/Commission Names Products That Wont Need EU Safety Feature
+parent: {B23F589E-74E7-4CA3-9A57-5AB55E4AFD4B}
+name: Commission Names Products That Wont Need EU Safety Feature
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ea71da21-1806-4e50-b824-28d91ffd8876
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{6B8CA4CA-B011-4664-BDA8-317A5239A357}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Commission Names Products That Won't Need EU 'Safety Feature' 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Commission Names Products That Wont Need EU Safety Feature
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13003
+
+<p> The European Commission has set out the fine detail of the &quot;unique identifier&quot; that in future will have to be affixed to the packaging of practically all prescription medicines marketed in Europe, as required by the EU's directive on falsified medicines. </p><p> The unique identifier, contained in a 2D barcode, will include information such as the product code, serial number, batch number and expiry date. It will be used as part of a Europe-wide product repository system allowing the authenticity of a medicine to be checked when it enters the supply chain and again when it is dispensed at the pharmacy. </p><p> After much deliberation, the commission has decided that the unique identifier, together with a tamper-proof device &ndash; collectively known as the &quot;safety feature&quot; &ndash; should be attached to all prescription drugs apart from those in certain categories such as advanced therapies containing tissues or cells, contrast media, and homeopathic products (the so-called &quot;white list&quot;). </p><p> By contrast, the only non-prescription medicine that will be required to carry the safety feature will be omeprazole gastro-resistant capsules (the &quot;black list&quot;). </p><p> However, this is unlikely to satisfy the pharmaceutical industry federation EFPIA, which is not impressed by the lists and has consistently argued that all prescription medicines should carry the safety feature, saying that otherwise efforts to eliminate drug falsification could be undermined. </p><p> Andreas Walter, EFPIA's serialisation project director, said that because the list of products not requiring a safety feature will be publicly available, there was &quot;a high threat that counterfeiters will target those products to fake.&quot; </p><p> Efforts to devise a traceability system for medicines in the EU have been under way since at least 2011 when, following initial talks with key European industry, wholesaler and pharmacy bodies, the commission published a concept paper proposing a &quot;delegated act&quot;, or for implementing legislation, containing the technical details of the unique identifier. This was put out for consultation until April 2012, with respondents asked to identify those products that were judged to be at risk of falsification and so should carry the safety feature. 90 replies were received. </p><p> A dedicated expert group set up to discuss the initiative met nine times between December 2011 and March 2015, and further consultations were held in December 2012, December 2013 and April 2014, after which an impact assessment was produced. </p><h2> Key recommendations </h2><p> The impact assessment made the following <a href="http://www.scripintelligence.com/policyregulation/Commission-to-publish-details-of-EU-product-safety-feature-later-this-year-357875" target="_new">recommendations</a>: </p><ul> <li> The composition, format and carrier of the unique identifier should be fully harmonized across the EU. The unique identifier should be placed in a 2D barcode and contain the product code, a serial number, the national reimbursement number (if requested by EU member states), the batch number and the expiry date. </li><li> Medicine authenticity should be guaranteed by an end-to-end verification system supplemented by risk-based verifications by wholesalers. Medicines should be systematically verified before being supplied to the public (e.g., at pharmacy level). Medicines at higher risk of falsification (including returned medicines or those that are not distributed directly by manufacturers, marketing authorization holders or people acting on their behalf) should additionally be checked by wholesalers. </li><li> A repositories system containing the unique identifiers should be set up and managed by stakeholders, with national competent authorities being able to access and supervise the system. </li> </ul><p> Under the proposed system, the authenticity of each product's unique identifier will be verified by comparing it with the corresponding identifier stored in the repositories system. </p><p> Industry and pharmacy stakeholder have been working on a Europe-wide verification system for some time now, in a partnership known as the European Stakeholder Model (ESM). Established in 2011, it comprises EFPIA, the European Generic and Biosimilar medicines Association (EGA), the European Association of Euro-Pharmaceutical Companies (EAEPC, representing parallel traders), the Groupement International de la Répartition Pharmaceutique (GIRP, representing wholesalers) and the Pharmaceutical Group of the European Union (PGEU, representing pharmacists). </p><p> In February the ESM set up the non-profit <a href="http://www.scripintelligence.com/policyregulation/EU-stakeholders-set-up-new-body-to-oversee-product-verification-system-356869" target="_new">European Medicines Verification Organisation</a> (EMVO) to oversee the European Hub linking national verification systems across Europe, and in June it announced that it had finalized contract negotiations with three preferred providers of the repositories system. </p><h2> The 'white' and 'black' lists </h2><p> Now things have taken another step forward with the publication by the commission of a draft &quot;delegated regulation&quot; that contains the technical nuts and bolts of the unique identifier and explains the verification process and repositories system. </p><p> The draft, which is out for consultation until Oct. 11, includes the three recommendations made in the impact assessment and describes the obligations of marketing authorization holders, distributors, parallel traders and the regulatory authorities. Attached to the draft are four annexes, including the &quot;white list&quot; and the &quot;black list&quot;. </p><p> These are the product categories on the &quot;white list&quot; (i.e., those that will <b>not</b> have to carry the safety feature): </p><ul> <li> Homeopathic medicinal products. </li><li> Radionuclide generators. </li><li> Radionuclide precursors. </li><li> Kits. </li><li> Advanced therapy medicinal products containing or consisting of tissues or cells. </li><li> Medicinal gases. </li><li> Solutions for parenteral nutrition having an anatomical therapeutic chemical (ATC) code beginning with B05BA. </li><li> Solutions affecting the electrolyte balance (ATC code beginning with B05BB). </li><li> Solutions producing osmotic diuresis (ATC code beginning with B05BC). </li><li> Intravenous solution additives (ATC code beginning with B05X). </li><li> Solvents and diluting agents, including irrigating solutions (ATC code beginning with V07AB). </li><li> Contrast media (ATC code beginning with V08). </li><li> Tests for allergic diseases (ATC code beginning with V04CL). </li><li> Allergen extracts (ATC code beginning with V01AA). </li> </ul><p> The non-prescription &quot;black list&quot; has only one product: omeprazole gastro-resistant capsules (20 mg and 40 mg). No reason for its inclusion is given, although it is possibly due to the fact that fake versions of the product were discovered in the supply chain in 2013. </p><p> The commission says the lists were &quot;populated in consultation with the member states and taking into account the risk of and the risk arising from falsification of the medicinal products.&quot; </p><h2> Arguments over product choice </h2><p> Inevitably there had been arguments over which products were most open to falsification, and which products or categories should and should not carry the safety feature. The EGA said that cheaper generics were much less likely to be falsified than the more expensive branded products, and that the costs would outweigh the benefits for the generics industry and would force prices up. For a while the EGA refused to join the stakeholder organization, but after much negotiation with the other stakeholders it <a href="http://www.scripintelligence.com/policyregulation/After-initial-doubts-generics-firms-join-European-anti-counterfeiting-scheme-355548" target="_new">announced</a> at the end of 2014 that it would take part after all. </p><p> For their part, EFPIA, the EAEPC and the PGEU felt that all prescription-only products should carry the safety feature, while GIRP preferred the risk-based approach, saying that the additional requirement on wholesalers to record the batch numbers of products with the feature meant additional costs. </p><p> Following the publication of the delegated regulation and the black and white lists, EFPIA's Andreas Walter, who is also interim director general of EMVO, said EFPIA still &quot;firmly believes that all prescription-only medicines without any exception should be subject to the same level of security&quot;. As well as shifting the threat of falsification to unprotected products, a lack of systematic use of the safety feature &quot;is likely to increase risks due to human error.&quot; </p><p> From the manufacturing point of view, Walter said, it is logistically easier to put the unique identifier on all products and thereby reduce manufacturing errors. Moreover, for pharmacists it is more straightforward to assume that all products should be scanned. If not, then &quot;the act of scanning may not become part of the standard workflow and so the pharmacist may forget to scan &ndash; meaning counterfeits may go undetected.&quot; If not every pack needs to be scanned, he added, pharmacists may receive a falsified pack with no unique identifier and assume that it is on the &quot;white list&quot;. </p><h2> Cost implications </h2><p> There will clearly be substantial cost and resource implications for the industry, not only via its contribution to the establishment of the verification system but also in having to place the unique identifier and tamper-evident feature onto product packs. </p><p> Serialization and traceability projects don't come cheap, and moreover putting them in place will take time and possibly cause disruptions to manufacturing output. Production lines will need to be upgraded to install coding and image-recognition systems that can work at high speed to &quot;check out&quot; products into the supply chain. </p><p> But stakeholders will have some breathing space in which to bring their systems up to speed. Once the consultation is over and the delegated regulation has been adopted, possibly later this year but perhaps not until early 2016, it will be published in the Official Journal of the EU. It will enter into force 20 days later, but its provisions won't apply until three years after publication, which would put the compliance deadline at sometime in late 2018 or early 2019. </p><p> In some countries that have had comparable authentication systems in place since July 2011 &ndash; which could include Italy and Belgium, for example &ndash; the deadline is extended by a further three years. </p><p> And while the delegated regulation has only just been published, stakeholders have been in constant touch with the commission over the technical requirements of the unique identifier, so companies should already be well aware of what is involved. </p><h2> The technical detail </h2><p> The draft delegated regulation goes into great detail on the technical specifications of the unique identifier. It will consist of a code showing the brand/generic name, strength, and pack size and type; a serial number consisting of a numeric or alphanumeric sequence of a maximum of 20 characters &quot;generated by a deterministic or a non-deterministic randomisation algorithm&quot;; a national reimbursement or other identification number, where required; the batch number; and the product's expiry date. </p><p> The barcode is to be a machine-readable data matrix with error detection and correction equivalent to or higher than those of the Data Matrix ECC200 standard. The structure of the unique identifier must follow internationally recognized, standardized data syntax and semantics (&quot;coding scheme&quot;) that allows the identification and accurate decoding of each data element of the unique identifier, using common scanning equipment. There is also likely to be room in the barcode for additional information where appropriate. </p><p> Some parts of the unique identifier &ndash; the product code, serial number and national reimbursement number &ndash; will also have to be printed in a human-readable format next to the barcode, unless the pack is too small. </p><p> See <a href="http://ec.europa.eu/growth/tools-databases/tbt/en/search/?tbtaction=search.detail&amp;num=306&amp;Country_ID=EU&amp;dspLang=EN&amp;BASDATEDEB=&amp;basdatedeb=&amp;basdatefin=&amp;baspays=EU&amp;basnotifnum=306&amp;basnotifnum2=306&amp;bastypepays=EU&amp;baskeywords" target="_new">here</a> for the delegated regulation with the full technical specifications. </p><p> The draft does not give the technical characteristics of the tamper-evident device because the commission's mandate covers only the unique identifier. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 273
+
+<p> The European Commission has set out the fine detail of the &quot;unique identifier&quot; that in future will have to be affixed to the packaging of practically all prescription medicines marketed in Europe, as required by the EU's directive on falsified medicines. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Commission Names Products That Wont Need EU Safety Feature
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150813T144436
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150813T144436
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150813T144436
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029547
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Commission Names Products That Won't Need EU 'Safety Feature' 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359942
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ea71da21-1806-4e50-b824-28d91ffd8876
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042437Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

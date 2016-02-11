@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {8AD9FC5E-0882-4957-AF1A-6BCC50DB547F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/17/Another Deal Dashed For QLT
+parent: {07445639-AADB-410F-83DA-5DED6152D73A}
+name: Another Deal Dashed For QLT
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 71389e47-af55-42eb-8e60-e33cb3eaee04
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 28
+
+Another Deal Dashed For QLT?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 27
+
+Another Deal Dashed For QLT
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3676
+
+<p><p>Ophthalmology company InSite Vision is opting to take an all-cash bid from an undisclosed bidder than go through with its merger with Canadian biotech QLT &ndash; resulting in a second deal that the biotech can't get done. </p><p>InSite announced Aug. 21 that its board of directors had determined that the 25 cents per share offer from an undisclosed bidder was superior to the all-stock transaction that InSite had agreed upon with QLT in early June that would give InSite shareholders 0.048 QLT shares for each of their own shares. </p><p>QLT now has until the evening of Aug. 26 to respond with a better offer or InSite will go through with the better bid. InSite's unanimous white knight has also agreed to pay the $1.17m termination to QLT to break the merger agreement. </p><p>InSite already has two marketed products that treat bacterial infections in the eye and has a third product for the treatment of ocular pain post-surgery that is awaiting approval at FDA &ndash; it has a user fee action date of April 10, 2016. </p><p><b>QLT Struggles</b></p><p>QLT has been <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet-daily/2013/11/21/qlt-shows-off-its-assets-in-hopes-of-attracting-a-suitor" target="_new">struggling</a> for the last several years and has been virtually a shell company. The company ousted its management in 2012 and went through a messy proxy battle that resulted in the selling off of its assets. The biotech has been working the last few years to make itself more palatable to an acquirer by touting its favorable tax rate and solid balance sheet, but with the closing of the tax loophole in the US and a virtually empty pipeline, QLT continued to struggle. </p><p>Last month, the company's management announced a plan to get back on track that included the acquisition of InSite as one of the crowning jewels of the vision. The InSite deal was meant to give QLT the resources and flexibility to advance its own late-stage asset for inherited retinal diseases &ndash; the drug's development has been on hold. </p><p>QLT had been counting on a royalty stream from the sale of InSite's <i>AzaSite</i> (azithromycin) for bacterial conjunctivitis, which InSite is set to receive 8% - 9% royalties on all sales. </p><p><b>The First Failed Attempt</b></p><p>For QLT, this is the first deal that has failed to come to fruition in the last year. Before the plans to acquire InSite, QLT had hopes to find salvation with another company. The Canadian company ophthalmology company had <a href="http://www.scripintelligence.com/business/AuxiliumQLT-is-latest-pharma-tax-play-352560" target="_new">inked an agreement</a> to be acquired by Pennsylvania-based Auxilium Pharmaceuticals that would&rsquo;ve given Auxilium a favorable tax position and would&rsquo;ve salvaged what was left of QLT. </p><p>Auxilium had intended to retain QLT's incorporation in British Columbia, and said in June 2014 that the deal was contingent on it obtaining a legal opinion confirming that the combined company would not be treated as a US domestic corporation for US federal income tax purposes.</p><p>The intent of the Auxilium acquisition of QLT was to ditch the high corporate tax rates of the US and take advantage of the much lower rates in Canada. But US legislation that was put in place in September 2014 put the kibosh on any plans companies had to make a tax inversion deal. </p><p>Auxilium's board unanimously rejected the $2.2bn merger with QLT in October and instead agreed to a <a href="http://www.scripintelligence.com/home/Endo-wins-over-Auxilium-QLT-dropped-354371" target="_new">$2.6bn tie-up with</a> Endo Pharmaceuticals. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 27
+
+Another Deal Dashed For QLT
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150817T130004
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150817T130004
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150817T130004
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029572
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 28
+
+Another Deal Dashed For QLT?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359981
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042438Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+71389e47-af55-42eb-8e60-e33cb3eaee04
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042438Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

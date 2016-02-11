@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2817B961-6668-449A-B8E9-309FB901AE18}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/29/Click and mortar Indias Dadha group plans online pharmacy
+parent: {C14ED64E-C9E7-40EB-93B8-679AFA5F32DB}
+name: Click and mortar Indias Dadha group plans online pharmacy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 35a9b463-1f44-4927-abb1-be5b3a44fd37
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Click and mortar: India's Dadha group plans online pharmacy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+Click and mortar Indias Dadha group plans online pharmacy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5394
+
+<p>India's Dadha group, with erstwhile interests in brick-and-mortar drug manufacturing, is venturing into the online pharmacy space, backed by Mape Advisory Group, a boutique investment bank turned investor.</p><p>The Dadhas comes with deep roots in the pharma industry &ndash; group firms Tamil Nadu Dadha Pharmaceuticals (TDPL) and Pradeep Drug Company were both merged into India's Sun Pharma several years ago and S Mohanchand Dadha, founder of the erstwhile TDPL, sits on Sun's board.</p><p>Now son, Pradeep Dadha is set to launch Netmeds Marketplace, which Dadha junior hopes will be the go-to online store in India for prescription and OTC products, backed not just by potential cost gains from generic options and the convenience of home delivery, but also a host of value-added services.</p><p>"We hope to make the customer experience better. For example in the case of chronic ailments, in addition to information, we could provide month by month requirement of delivery of medicines once we have relevant prescriptions, remind you before your medicines get over that you would need a refill," Mr Pradeep Dadha told <i>Scrip</i>.</p><p>He notes that some existing competitors such as Healthkart have a smaller focus area in the country &ndash; largely around Delhi and Bangalore, while for others such as the Apollo group, the pharmacy business is not really the core focus. Healthkart recently spun off its generic drug search business, HealthkartPlus (now rebranded as 1MG), which is reported to have seen more than 1.5 million downloads and counting. </p><h2>Last mile delivery</h2><p>Netmeds, which expects to make a pan-India launch in the second half of this month, says that last mile delivery would be via India Post [the Indian government-run postal system], though it would also have linkages with retail pharmacies.</p><p>"It's a sort of a marketplace model. We'd have alliance with retailers who would follow exact procedures as we want them to follow, this being a regulated space&#8230;.retailers who follow the entire process of dispensing as we would like it to be followed. Yet, we might not be able to serve every pin code in the country, so that&rsquo;s the idea about using India Post for last mile delivery," Mr Dadha said.</p><p>India has the largest postal network in the world with over 155,015 post offices (as of March 2009) of which roughly 90% are in the rural areas, details on the India Post website said. </p><p>Asked whether NetMeds plans direct alliances with pharma firms to pass on potential cost benefits to patients, Mr Dadha that he does not see that happening at least initially.</p><p>"Maybe down the line this could happen for say OTC products, sugar monitors but not trade related pharma products," he said.</p><p>Netmeds is backed by co-investor Mape, though Mr Dadha says that several other investors have evinced an interest in the venture. He indicated that Netmeds could consider strategic investments, if the investor can "add value to what we are doing".</p><p>Asked if Sun's boss, Dilip Shanghvi, had been approached, he said: "There are no talks with Mr Shanghvi&#8230; he's definitely aware of this. His wishes are with the venture."</p><h2>Tricky area?</h2><p>Mr Dadha hopes that online pharmacies can mirror the same levels of growth as India has seen in online shopping, but some industry experts while acknowledging the potential of online drug sales caution that this is perhaps still a tricky area, with regulation still evolving and considerable unpredictability on how retailers will respond, if things pick up.</p><p>"The government is reported to be working on norms to regulate online drug sales and it's unclear if there could be some backlash from trade, should online sales pick up," an industry expert told <i>Scrip</i>.</p><p>Snapdeal, a hugely popular online marketplace, was recently in the dock after it emerged that it listed prescription only drugs on its site. Local media reports said that a sting operation by the local FDA allegedly suggested that it was possible to buy emergency contraceptives without a doctor's prescription via the site. </p><p>The Maharashtra state FDA has since reportedly ordered that a first information report (FIR) be filed against Snapdeal's top ranking officials in a local police station, though Snapdeal has argued that it is just an online marketplace that connects buyers and sellers to provide the widest assortment of products.</p><p>"Though we invest significantly in educating sellers on engaging in fair and safe sales on the platform and the consequences of selling inappropriate products, at times sellers end up listing such product," Snapdeal is reported to have said. </p><p>Mr Dadha, though, explained that the accused firm probably did not have the requisite licence, nor was it looking at the prescriptions. </p><p>"In our case both are pre-requisites. We wouldn't be dispensing a product without a prescription&#8230;.without verifying and validating a prescription."</p><p>There have also been reports of ongoing litigation concerning online pharmacies in India, though the latest position on this could not be immediately be ascertained.</p><p>Mr Dadha, however, expects Netmeds to garner sales of $1bn in next five years. </p><p> "At even 4-5% market share, by 2020, depending on the size of the market, we should be able to reach that point," he said.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 212
+
+<p>India's Dadha group, with erstwhile interests in brick-and-mortar drug manufacturing, is venturing into the online pharmacy space, backed by Mape Advisory Group, a boutique investment bank turned investor.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Click and mortar Indias Dadha group plans online pharmacy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150429T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150429T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150429T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028632
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Click and mortar: India's Dadha group plans online pharmacy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358120
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+35a9b463-1f44-4927-abb1-be5b3a44fd37
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9C9D5730-D1CF-4897-8CAF-46BFC1CFC492}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/14/Drug Prices Now A Bipartisan Campaign Prop
+parent: {604E8046-5BA9-4567-9E2A-9612EB50B405}
+name: Drug Prices Now A Bipartisan Campaign Prop
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f029b81e-3e59-4b8d-a390-b8b1222b6379
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Drug Prices Now A Bipartisan Campaign Prop
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+Drug Prices Now A Bipartisan Campaign Prop
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7232
+
+<p>While the price hikes of some older drugs have been talking points over the past month for Democratic presidential candidates former Secretary of State Hillary Clinton and Sen. Bernie Sanders (I-VT), Sen. Marco Rubio (R-FL), who aspires to be the Republican nominee, has joined in on using the issue as a prop on the campaign trail.</p><p>In a video that emerged online in the past few days, Rubio told an audience in New Hampshire to expect to "hear more and more about this."</p><p>Part of what's leading to spiking drug prices, Rubio said, is the FDA is taking too long to approve generic competitors &ndash; accusing the agency of taking an average of 58 months.</p><p>It's unclear, however, where he got that figure.</p><p>The FDA reported the average generic approval times for fiscal year 2014 were high &ndash; at 42 months, which was up from 31 months just a few years earlier &ndash; but that's still well under Rubio's timeline. </p><p>The agency now must meet certain timeline goals under the Generic Drug User Fee Amendments of 2012.</p><p>Regulators also have reported the abbreviated new drug application <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Clearing-FDAs-Generics-Backlog-Answer-To-Drug-Price-Controversy-361105" target="_new">backlog</a> has been significantly reduced since 2012.</p><p>But the FDA didn't get all the blame at Rubio's rally.</p><p>He also took aim at the biopharmaceutical industry &ndash; declaring that some of the price increases are simply due to "pure profiteering" by drug makers who boost the costs "because they can," justifying those hikes "because the market will bear it, people like this drug, they rely on it and the physicians will write it."</p><p>Such actions, Rubio said, need to be examined.</p><p>He also suggested pricing should be linked to a drug's effectiveness.</p><p>"There are some drugs that are really expensive, and there's another drug out there that's less expensive, but the difference between the two in performance is nothing," Rubio asserted. "In fact, there are cheaper drugs that are better than the more expensive drug that people have gotten used to writing because it's a brand name, because it's become established and because physicians don't know about the other alternatives."</p><p>Significant increases in the prices of medicines, the Florida senator said, "threatens to bankrupt our system."</p><p>He said what's also frustrating is "the exact same medicine just across the border is a quarter of the price."</p><p>"You realize America is subsidizing the health care of the world, and so it's an issue we're going to have to take more seriously and figure out what we can do with market and competitive solutions," Rubio said. "It's a complex issue, but one we have to confront."</p><p><b>Clinton Wants FDA, FTC Action</b></p><p>Meanwhile, Clinton sent a letter on Oct. 19 to acting FDA Commissioner Stephen Ostroff calling on him to expedite any pending reviews of generic alternatives to Turing Pharmaceuticals AG's toxoplasmosis medicine Daraprim (pyrimethamine), whose price shot up 5,500% after the company acquired it in August from Impax Laboratories.</p><p>Clinton, who created a <a href="http://www.scripintelligence.com/home/Biotech-Walloped-On-Clinton-Drug-Price-Controls-Threat-360599" target="_new">panic on Wall Street</a> last month when she tweeted about Turing and the drug pricing issue, also said the FDA should explore whether it has the authority and discretion, "given the special circumstances involving the potential shortage of a critical drug," to accelerate approvals or allow for temporary importation from other Organization for Economic Cooperation and Development countries. </p><p>She pointed out that under a White House executive order, the FDA has the authority to "expedite its regulatory reviews, including reviews of new drug suppliers, manufacturing sites and manufacturing changes, whenever it determines that expedited review would help to avoid or mitigate existing or potential drug shortages."</p><p>In a separate letter, Clinton asked Federal Trade Commission chairwoman Edith Ramirez to consider studying "what has become an increasing problem in the pharmaceutical industry &ndash; dramatic price increases that result in drugs remaining artificially high and causing real barriers for consumers, while there is a very long lag in approval of potential competitors onto the market." </p><p>She also called on the FTC to investigate whether the restricted distribution of Daraprim amounts to anticompetitive behavior &ndash; something the New York attorney general already is <a href="http://www.scripintelligence.com/home/Antitrust-Trouble-For-Turing-NY-Opens-Probe-361030" target="_new">probing</a>.</p><p>Turing CEO Martin Shkreli, in the meantime, has been using Twitter to criticize Clinton and Sanders.</p><p>Last week, Shkreli said he'd made a $2,700 donation to Sanders and appeared to somewhat support his candidacy. </p><p>But after the Sanders campaign said it was not accepting the donation and was instead giving it away to a Washington-based AIDS clinic, Shkreli took to Twitter again, calling the Vermont lawmaker a price gouger for raising his campaign contribution requests from $3 to $25.66. </p><p>Investors were worried last week that the first Democratic debate would again thrust pricing practices into the spotlight, bringing biotech stocks down again.</p><p>But Clinton and Sanders didn't raise the issue &ndash; although they both said they were proud to have the biopharmaceutical industry among their <a href="http://www.scripintelligence.com/home/Clinton-Sanders-Proud-Pharmas-An-Enemy-361031" target="_new">greatest enemies</a>.</p><p><b>Valeant Backs Away</b></p><p>One company that has admitted the public spotlight on drug prices has gotten to be too much for it to handle was Valeant Pharmaceuticals International Inc., which said on Oct. 19 it was <a href="http://www.scripintelligence.com/home/Probes-Drive-Valeant-To-Fewer-Price-Based-Transactions-361119" target="_new">changing its pricing strategies</a>.</p><p>Last week, Valeant received <a href="http://www.scripintelligence.com/home/Valeant-Subpoenaed-Price-Hikes-Bring-Patient-Assistance-Scrutiny-361076" target="_new">subpoenas</a> from federal prosecutors in Massachusetts and New York seeking information about the company's pricing decisions.</p><p>The company said it intends to cooperate in the investigations.</p><p>Sanders and Rep. Elijah Cummings (D-MD) also have opened their own <a href="http://www.scripintelligence.com/policyregulation/Valeant-Latest-Congressional-Target-Over-High-Drug-Prices-359973" target="_new">investigation</a> into Valeant's sharp price increases for Nitropress (sodium nitroprusside) and Isuprel (isoprenaline), which leaped from $257.80 to $805.61, or 212.5%, and from $215.46 to $1,346.62, or about 525%, respectively, after the company acquired the medicines from Marathon Pharmaceuticals in February.</p><p>Given the industry has been aggressively "attacked" over prices, Valeant CEO Michael Pearson said he anticipated all drug makers would turn to "more modest" pricing of their medicines in the future.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 339
+
+<p>While the price hikes of some older drugs have been talking points over the past month for Democratic presidential candidates former Secretary of State Hillary Clinton and Sen. Bernie Sanders (I-VT), Sen. Marco Rubio (R-FL), who aspires to be the Republican nominee, has joined in on using the issue as a prop on the campaign trail.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+Drug Prices Now A Bipartisan Campaign Prop
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151014T120003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151014T120003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151014T120003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030097
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Drug Prices Now A Bipartisan Campaign Prop
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361037
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f029b81e-3e59-4b8d-a390-b8b1222b6379
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

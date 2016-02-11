@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {70AE2BD9-96DD-4C00-9348-C70C7276C5EA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/24/FDA panel backs Amgens TVec with caveats
+parent: {AA6F50D5-126C-48B5-BD02-B1AAD79EE996}
+name: FDA panel backs Amgens TVec with caveats
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d5e98096-3c2b-42a2-9d4b-6209b0de3cf4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+FDA panel backs Amgen's T-Vec, with caveats
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+FDA panel backs Amgens TVec with caveats
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6568
+
+<p>An FDA panel on 29 April endorsed Amgen's oncolytic immunotherapy T-Vec (talimogene laherparepvec), although that support from the agency's outside advisers came with several caveats. </p><p>At the joint meeting of the FDA's Cellular, Tissue and Gene Therapies (CTGTAC) and Oncologic Drugs (ODAC) Advisory Committees, the panel voted 22-1 that T-Vec has an overall favorable benefit-risk profile to support traditional approval as a treatment for injectable regionally or distantly metastatic melanoma.</p><p>T-Vec is intended to be injected directly into cutaneous, subcutaneous or nodal lesions, resulting in selective lysis, or breakdown, of the injected tumor cells, but not the normal tissue. </p><p>The result, according to Amgen, is the release and presentation of tumor-derived antigens and local expression of granulocyte macrophage colony-stimulating factor (GM-CSF) to initiate a systemic anti-tumor immune response that also induces regression of noninjected and distant lesions.</p><p>Much of the afternoon discussion at the CTGTAC-ODAC meeting revolved around whether the drug should be used in only a subgroup of patients, with many of the panelists expressing concerns the drug should not be used in late-stage disease. </p><p>Amgen's single multicenter, open-label, randomized Phase III study, known as study 005/05, tested T-Vec 436 patients with stages IIIB, IIIC or IV melanoma that was not surgically resectable, comparing the drug against GM-CSF. </p><p>Amgen reported there was a statistically significant higher durable response rate, including complete responses or partial responses, maintained for at least six months with T-Vec, versus GM-CSF.</p><p>But in briefing documents released <a href="http://www.scripintelligence.com/home/Uphill-battle-for-Amgens-T-Vec-FDA-expresses-uncertainty-358082" target="_new">ahead of the advisory committee meeting</a>, the FDA's reviewers said there was "uncertainty" about the meaningfulness of the observed responses in study 005/05. They also suspected there was bias involved, which they said "could have had substantial impact on the results of the survival analysis" of T-Vec.</p><p>Panelist Dr Deborah Armstrong, a professor of oncology at Johns Hopkins University in Baltimore, said the T-Vec's labeling should restrict usage to the population studied in the 005/05 trial, since those are the patients for whom benefit was shown.</p><p>And, she said, the labeling also should provide clear guidance on administration and dosing, and Amgen should develop videos for prescribers on the safe use of the drug.</p><p>"This is not going to be an easy thing," Dr Armstrong said.</p><p>Panelist Dr Grzegorz Nowakowski, an assistant professor of medicine at the Mayo Clinic in Rochester, Minnesota, said that although he gave a thumbs up for T-Vec, he said he still had concerns about the lack of activity in advanced visceral metastatic disease.</p><p>On the other hand, he said, "the study endpoint was met."</p><p>Nonetheless, Dr Nowakowski said, "I don't think it's a drug that's going to change the field drastically." </p><p>Panelist Dr Richard Simon, chief of the Biometric Research Branch at the US National Cancer Institute (NCI), said the FDA should ensure there is "strong" language in the labeling for T-Vec "discouraging physicians from using it where there is substantial metastatic disease."</p><p>But, said panelist Dr Brian Rini, an associate professor of medicine at the Cleveland Clinic Lerner College of Medicine Case Western Reserve University in Ohio, "we have to give docs out there a little credit to use their brains and look at the data and judge the individual risk-benefit for individual patients as they see them." </p><p>Panelist Dr Louis Diehl, a professor of medicine at Duke University Medical Center in Durham, North Carolina, said his vote in favor of T-Vec was buoyed up by patients who testified earlier at the meeting.</p><p>"I would not want to take this drug out of the hands of individual medical oncologists who are treating melanoma and restrict it to certain subgroups," he said.</p><p>While panelist Dr Patrick Hwu, a professor of cancer medicine at the University of Texas MD Anderson Cancer Center in Houston, said he would not use T-Vec "blindly in everybody," there are "clearly patients in my clinic I would like to have this agent for."</p><p>Several of the panelists, however, pointed out that T-Vec's development was initiated a decade ago, and several innovative melanoma drugs have recently entered the US market, like immune checkpoint inhibitors, such as Bristol-Myers Squibb's Yervoy (ipilimumab); BRAF inhibitors, including Genentech's and Daiichi Sankyo's Zelboraf (vemurafenib) and GlaxoSmithKline's Mekinist (trametinib) and Tafinlar (dabrafenib); and programmed death 1 inhibitors, such as BMS' Opdivo (nivolumab) and Merck's Keytruda (pembrolizumab), have entered the US market.</p><p>But Dr Rini argued T-Vec "sort of fits into a niche of this disease," despite the "evolving current landscape."</p><p>Panelist Dr Richard Sherry, a staff clinician at the NCI's Surgery Branch &ndash; the lone "no" vote from the joint committee &ndash; contended, however, that "part of the obligation here is to step up and define the patient population we know this works in" and that it's "not impinging on anybody's right to practice by letting clinicians know."</p><p>He said he was concerned prescribers would fail to read the package insert.</p><p>"Who is going to look at this data more closely than this group here? Nobody," Dr Sherry asserted. </p><p>He said his negative vote was about making a statement &ndash; "in part in principle, but also pragmatic &ndash; and to get people's attention.</p><p>"This drug is not appropriate for the vast majority of patients who have visceral disease," Dr Sherry said.</p><p>"T-VEC may very well win an FDA approval, but it would likely be for an extremely limited population," said analysts from Sagient Research's <i>BioMedTracker</i>, an affiliate of <i>Scrip</i>.</p><p>And, they said, "it is hard to imagine T-Vec having much real-world impact for melanoma treatment or in market terms."</p><p>Nevertheless, they raised the likelihood T-Vec would make it to the US market in melanoma from 80% to 85%, which is 3% above the average probability of approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>Shares of Amgen rose 71 cents in after-hours trading on 29 April after the FDA committee&rsquo;s vote.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 191
+
+<p>An FDA panel on 29 April endorsed Amgen's oncolytic immunotherapy T-Vec (talimogene laherparepvec), although that support from the agency's outside advisers came with several caveats. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+FDA panel backs Amgens TVec with caveats
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150424T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150424T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150424T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028588
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+FDA panel backs Amgen's T-Vec, with caveats
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pdfNewsLetter
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358043
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d5e98096-3c2b-42a2-9d4b-6209b0de3cf4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

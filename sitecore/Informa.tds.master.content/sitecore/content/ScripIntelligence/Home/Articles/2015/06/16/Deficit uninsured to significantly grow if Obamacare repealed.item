@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {CB443C79-514E-44BD-AFD0-C42F33924CFC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/16/Deficit uninsured to significantly grow if Obamacare repealed
+parent: {CD515B17-C025-4812-A259-F398C278F9AE}
+name: Deficit uninsured to significantly grow if Obamacare repealed
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b1d164ca-7a24-4733-940b-56cb125aeccd
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{DC0A2BBF-AFE1-4257-A6DA-FF8AF24165B5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Deficit, uninsured to significantly grow if Obamacare repealed
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+Deficit uninsured to significantly grow if Obamacare repealed
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4278
+
+<p>If Republicans are successful at repealing the <i>Affordable Care Act</i> (ACA) &ndash; Obamacare &ndash; up to 24 million Americans could lose their healthcare insurance and the US federal budget deficit would increase by $137bn over the decade between 2016-2025, the Congressional Budget Office (CBO) and the Joint Committee on Taxation (JCT) of the House and Senate projected on 19 June. </p><p>The CBO, a nonpartisan organization that provides budgetary advice to lawmakers, and the JCT, which investigates internal revenue taxation, said as many as 19 million people could lose their insurance in 2016 alone if the 2010 law is killed &ndash; something unlikely to happen next year, given President Barack Obama won't leave the White House until 2017 and has vowed to veto any legislation that comes across his desk aimed at dismantling or repealing the ACA.</p><p>The loss of health insurance by those Americans means the biopharmaceutical industry also could lose millions of its new customers drug makers gained for their medicines, for which prescriptions would have likely gone unfilled without the coverage. </p><p>The CBO and JCT report comes just as the US Supreme Court is set to issue its <a href="http://www.scripintelligence.com/home/Supreme-Court-grapples-with-words-in-never-ending-Obamacare-saga-357077" target="_new">decision</a> about whether Congress intended for the tax credits subsidies offered under the ACA to help pay for healthcare plan premiums offered through exchanges only established by states or through the marketplaces run by the federal government.</p><p>The CBO and JCT noted the justices ruling, which is expected by 30 June, could impact the estimates reflected in the 19 June analysis.</p><p>But, the congressional analysts said, "repealing the ACA would cause federal budget deficits to increase by growing amounts after 2025, whether or not the budgetary effects of macroeconomic feedback are included." </p><p>That would occur, they said, because the net savings attributable to a repeal of the law's insurance coverage provisions would grow more slowly than would the estimated costs of repealing the ACA's other provisions &ndash; in particular, those that reduce updates to Medicare's payments. </p><p>The estimated effects on deficits of repealing the ACA are so large in the decade after 2025 as to make it unlikely that a repeal would reduce deficits during that period, even after considering the great uncertainties involved, the CBO and JCT said.</p><p>The analysts' $137bn deficit growth estimate was based on budgetary effects of macroeconomic feedback and takes into account the proposal's impact on federal revenues and direct or mandatory spending.</p><p>But excluding the effects of macroeconomic feedback &ndash; as has been done for previous estimates related to the ACA and most other CBO cost estimates &ndash; the analysts estimated the federal deficits would increase by $353bn over the next decade if the ACA was repealed.</p><p>"Any way you slice it, repealing the <i>Affordable Care Act</i> will add hundreds of billions of dollars to the deficit," said House Minority Leader Nancy Pelosi (Democrat-California).</p><p>"This latest report confirms that the cost of repealing the ACA would be devastating, especially to the 24 million Americans who would find themselves uninsured," added Representative Frank Pallone (Democrat-New Jersey), ranking member on the Energy and Commerce Committee ranking member. </p><p>But the CBO and JCT also said that repealing the ACA could raise economic output, mainly by boosting the supply of labor, with the resulting increase in gross domestic product projected to average about 0.7% over the 2021-2025 period &ndash; effects that could reduce the federal deficit by $216bn over a decade, mostly because of increased federal revenues.</p><p>That statement was enough for some Republicans to make lemonade out of lemons.</p><p>"While CBO's report notes that the deficit impact of repealing the law is highly uncertain and could even reduce the deficit, it does show that repealing this law will boost nationwide employment and grow the economy," said Senator Mike Enzi (Republican-Wyoming), chairman of the Senate Budget Committee. </p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 398
+
+<p>If Republicans are successful at repealing the <i>Affordable Care Act</i> (ACA) &ndash; Obamacare &ndash; up to 24 million Americans could lose their healthcare insurance and the US federal budget deficit would increase by $137bn over the decade between 2016-2025, the Congressional Budget Office (CBO) and the Joint Committee on Taxation (JCT) of the House and Senate projected on 19 June. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Deficit uninsured to significantly grow if Obamacare repealed
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150616T100001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150616T100001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150616T100001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029044
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Deficit, uninsured to significantly grow if Obamacare repealed
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800081
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358963
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b1d164ca-7a24-4733-940b-56cb125aeccd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

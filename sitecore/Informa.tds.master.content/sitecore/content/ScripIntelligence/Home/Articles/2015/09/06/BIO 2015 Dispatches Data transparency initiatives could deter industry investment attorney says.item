@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {92288EE1-2AC9-4FCF-B992-A16BEFFD7C77}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/06/BIO 2015 Dispatches Data transparency initiatives could deter industry investment attorney says
+parent: {199B8802-DA9B-45D7-BE07-8E7DA944A744}
+name: BIO 2015 Dispatches Data transparency initiatives could deter industry investment attorney says
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 37c61ca1-373e-4a2e-80e7-661de80c9819
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 97
+
+BIO 2015 Dispatches: Data transparency initiatives could deter industry investment, attorney says
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 95
+
+BIO 2015 Dispatches Data transparency initiatives could deter industry investment attorney says
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7633
+
+<p>Clinical trial data transparency initiatives could make it difficult for drug developers to secure patents for new products and, in turn, investment for their compounds, an industry attorney said on 15 June.</p><p>During a panel discussion at the Biotechnology Industry Organization's annual convention in Philadelphia, Covington and Burling partner Richard Kingham said global transparency initiatives that require publication of trial results while a compound is still early in development could close off a drug developer's ability to patent an innovation.</p><p>"The moment the information is disclosed it becomes part of the prior art, and therefore you can't get a patent," Kingham said.</p><p>While Kingham asserted that transparency initiatives could undercut intellectual property, deterring investment and drug development in the process, European Medicines Agency Senior Medical Officer Hans-Georg Eichler had a decidedly more optimistic view of the investor impact of public and private data transparency initiatives sweeping across the globe. Greater data-sharing will increase efficiency in drug development and reduce the high rate of failure in the clinical stages, which is something that investors should welcome, Eichler said.</p><h2>EMA led, and industry followed</h2><p>The panel discussion at BIO brought together representatives from industry and the European Union regulator to discuss recent developments in global initiatives to increase clinical data transparency.</p><p>EMA has taken a driving role in these initiatives, and its interest in the subject has led industry to develop its own voluntary measures.</p><p>After more than two years of debate and discussion, EMA in October announced plans to publish clinical reports and individual patient data for centralized marketing authorization applications submitted on or after 1 January 2015 for new products and 1 July for new uses of approved products.</p><p>The measure includes two different levels of access, requiring those who want to download and save the data to identify themselves and agree to certain conditions for that level of access. In addition, those who access the data will be prohibited from using the clinical study report to support an application for a marketing authorization, and any extensions or variations to it for a product anywhere in the world.</p><p>Eichler said the agency expects the first data pursuant to the initiative to be available near the end of the year, as products covered by the new policy are still making their way through the regulatory process.</p><p>Facing public pressure to disclose more of their clinical trial data, numerous pharma companies have sought to get out ahead on the issue and developed their own initiatives for making clinical trial data accessible to researchers and other entities.</p><p>Some companies, like GlaxoSmithKline, have set up independent panels of experts to assess requests for data, while others have turned to an independent third party, as Johnson & Johnson did in entering into an agreement with the Yale School of Medicine's Open Data Access (YODA) Project.</p><p>Major pharmaceutical and biotech trade associations in the US and Europe also have developed principles for data-sharing.</p><p>In the US, FDA in 2013 called for public comments on a proposal to make available clinical and preclinical data that has been de-identified and masked so the data are not linked to a specific product or application. That proposal has not advanced any further.</p><h2>undercutting the patent process &#8230;</h2><p>When asked what impact the transparency initiatives might have on investment to support drug development, Kingham pointed to several unintended consequences that could threaten investment in the sector.</p><p>Certain disclosures are of competitive importance because they can show where a company is in the development process &ndash; a revelation that may be particularly important when there is a potential race to market among several drugs in a class, Kingham said.</p><p>Another concern is that if enough data are disclosed, an entity might be able to take those data and use them to seek drug approval in a foreign country.</p><p>"There are also concerns about patents," Kingham said, "because once the information is public, the general principle is you can't patent it."</p><p>The EU initiative does provide some "relieving principles" in this regard, he said. "You have up to a year after the publication of the results of a study to apply for a patent. But you don't in the US and many other jurisdictions."</p><p>The timing of disclosure is particularly concerning if it comes early in drug development, Kingham said. He noted that the EU initiative relates to data disclosure for drugs that have already been authorized for marketing and, thus, are well past the stage when patent applications are filed.</p><p>However, "we have other initiatives under way or under discussion in which there should be closer to real time disclosure of what's going on in the clinical trials process," he said.</p><p>"For the time being, most of those are quite reasonable in terms of the timing of disclosures," Kingham said, "but there will be pressures for closer to real time disclosures, and there comes a point earlier in the development of the drug product where you have not yet accumulated the information that's necessary to show utility in a patent application, especially because [US] courts are becoming tougher on demonstrating utility to obtain a patent.</p><p>"You need enough data to show the drug really does something," he said. "You're fairly well into the clinical trials process sometimes before you can file a patent application that will withstand scrutiny and will be upheld in the various challenges that will come later if the drug is successful."</p><p>If disclosure is required before a company is able to file for a patent, "you can essentially eliminate the likelihood that the drug will ever be developed for a commercial use, which is clearly not in anybody's interest."</p><p>While the transparency initiatives under discussion have not yet reached this stage, "I just think that people need to recognize that when we get near it, it's much more of a binary issue than some of the other things that we've discussed," Kingham said.</p><h2>&#8230; or just bringing more efficiency?</h2><p>Eichler said he largely agreed with Kingham about some of the potential unintended consequences of the push for clinical trial transparency.</p><p>"The worst thing for us would be with our policy someone surreptitiously takes data &#8230;and runs to a third country, China has been mentioned always, and says here' s the full dataset, give me a license," he said.</p><p>However, the EMA representative also saw a lot of upside for biopharma investors in the push for transparency.</p><p>"If I was from the financing industry, I would be totally behind these transparency measures," Eichler said. "Why? If we look at the drug development endeavor &#8230; I'm talking about the clinical development, this is probably the most inefficient industry under the sun."</p><p>"It is hugely expensive. The failure rate is huge. The costs explode. The duration explodes. I would argue that, as a scientist, this data sharing has the potential to make the development &#8230; much more efficient, much faster, reducing failure rates. So you should welcome that if you're an investor."</p><p><i>Our daily BIO 2015 Dispatches draw on the combined forces of "The Pink Sheet" and Scrip Intelligence staff, reporting from the Philadelphia meeting.</i></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 214
+
+<p>Clinical trial data transparency initiatives could make it difficult for drug developers to secure patents for new products and, in turn, investment for their compounds, an industry attorney said on 15 June.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 95
+
+BIO 2015 Dispatches Data transparency initiatives could deter industry investment attorney says
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150906T234828
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150906T234828
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150906T234828
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028994
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 97
+
+BIO 2015 Dispatches: Data transparency initiatives could deter industry investment, attorney says
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200100809
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BEB9AD1B-80D8-412D-A31D-0DF065CAF165}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358870
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+37c61ca1-373e-4a2e-80e7-661de80c9819
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

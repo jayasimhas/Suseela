@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A12116E9-F56D-4CD4-8FFE-2FBD2CB3D079}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/14/Scots say yes to cancer drugs after patients have their say
+parent: {A8A43D63-6ACC-4DA4-B2AE-AFEB13F96A43}
+name: Scots say yes to cancer drugs after patients have their say
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1b7bb802-d5c2-4437-a4c8-9aa8e9e7585e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Scots say yes to cancer drugs after patients have their say
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Scots say yes to cancer drugs after patients have their say
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3236
+
+<p>Using a new process that involves greater patient input, Scotland's health technology appraisal body, the Scottish Medicines Consortium, has okayed for use on the local NHS three anticancers that England has so far largely rejected for use on its NHS. Ariad's Iclusig (ponatinib), Boehringer Ingelheim's Vargatef (nintedanib) and Bayer's Stivarga (regorafenib) have all been given the green light in Scotland. </p><p>The ayes follow appraisals using the SMC's new Patient and Clinician Engagement (PACE) process, aimed at improving access to new drugs for end of life treatment and for very rare conditions. From May 2014, pharma companies have been able to request that the SMC summon a PACE group, which gives patient groups and clinicians a louder voice in the SMC's decision making. The main part of this process is a meeting that brings together patient representatives and expert clinicians for a detailed discussion on the benefits of a medicine and the impact it could have on a patient's life. Topics up for discussion include: unmet need and added value for patients and their carers and family.</p><p>Meanwhile. south of the border in England, provision of cancer drugs remains a political hot potato with a floundering and underfunded Cancer Drugs Fund that was meant to provide a temporary solution to England's comparatively poor uptake of new oncology drugs.</p><h2>SMC decisions</h2><p>In Scotland Iclusig is now available for patients with chronic phase, accelerated phase, or blast phase chronic myeloid leukemia (CML) who are resistant to dasatinib or nilotinib; who are intolerant to dasatinib or nilotinib and for whom subsequent treatment with imatinib is not clinically appropriate; or who have the T315I mutation. It is also available for Philadelphia chromosome positive acute lymphoblastic leukemia (Ph+ALL) patients who are resistant to dasatinib; who are intolerant to dasatinib and for whom subsequent treatment with imatinib is not clinically appropriate; or who have the T315I mutation .Iclusig is available through England's Cancer Drug's Fund, but only for patients with the T135I mutation.</p><p>SMC has accepted Boehringer Ingelheim's Vargatef (nintedanib) in combination with docetaxel for treating adults with locally advanced, metastatic or locally recurrent non-small cell lung cancer of adenocarcinoma tumor histology after first-line chemotherapy. BI helped secure a positive recommendation with a discount on the drug's list price. NICE, the HTA for England and Wales, has issued preliminary guidance rejecting the drug for use on the English NHS because it is too expensive. Final and binding guidance is expected in May.</p><p>The SMC also backed Stivarga for treating adults with unresectable or metastatic gastrointestinal stromal tumors (GIST) whose condition has progressed on or who have been unable to tolerate imatinib and sunitinib. Provision of Stivarga depends on a patient access scheme, also in the form of a confidential discount on the list price. Meanwhile, in England, Stivarga was <a href="http://www.scripintelligence.com/home/Cancer-Drugs-Fund-table-12-drugs-delisted-six-refused-entry-356128" target="_new">delisted from the Cancer Drugs Fund</a> in December.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 417
+
+<p>Using a new process that involves greater patient input, Scotland's health technology appraisal body, the Scottish Medicines Consortium, has okayed for use on the local NHS three anticancers that England has so far largely rejected for use on its NHS. Ariad's Iclusig (ponatinib), Boehringer Ingelheim's Vargatef (nintedanib) and Bayer's Stivarga (regorafenib) have all been given the green light in Scotland. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Scots say yes to cancer drugs after patients have their say
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150414T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150414T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150414T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028420
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Scots say yes to cancer drugs after patients have their say
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357773
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1b7bb802-d5c2-4437-a4c8-9aa8e9e7585e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

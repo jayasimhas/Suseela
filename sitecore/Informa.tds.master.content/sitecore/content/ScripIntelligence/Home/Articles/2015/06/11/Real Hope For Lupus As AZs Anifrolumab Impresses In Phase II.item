@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {91D5BEF9-889C-48E0-AB02-51C0C087A6E4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/11/Real Hope For Lupus As AZs Anifrolumab Impresses In Phase II
+parent: {0C4E4294-FE7F-444B-9DB5-24F666F256E8}
+name: Real Hope For Lupus As AZs Anifrolumab Impresses In Phase II
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 703f96f0-e95d-4a4d-9ef8-eef66fcc516b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{78485A7A-B73F-43C5-A545-3DC6EC60C23B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Real Hope For Lupus As AZ's Anifrolumab Impresses In Phase II
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Real Hope For Lupus As AZs Anifrolumab Impresses In Phase II
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4669
+
+<p>A Phase II trial of AstraZeneca's investigational monoclonal antibody, anifrolumab, in patients with moderate-to-severe systemic lupus erythematosus (SLE) met its primary and secondary endpoints. The data were presented at the American College of Rheumatology 2015 Scientific Meeting in San Francisco this week.</p><p>Only one new drug - GlaxoSmithKline's Benlysta (belimumab) - has been introduced for the treatment of lupus in the past 60 years, highlighting the difficulties in new drug development for this condition.</p><p>AstraZeneca has been pursuing a "<a href="http://www.scripintelligence.com/researchdevelopment/Positive-Phase-IIb-data-from-AstraZeneca-in-lupus-and-RA-but-PhIII-not-assured-355122" target="_new">dual approach in lupus</a>," Bing Yao, head of MedImmune's Respiratory, Inflammation and Autoimmunity Innovative Medicines Unit told <i>Scrip</i> at last year's ACR meeting. Another AstraZeneca lupus candidate, sifalimumab, targets soluble interferon-alpha, while anifrolumab targets receptors shared by multiple interferon subtypes, he explained. "This could potentially result in better efficacy," he noted, although there was concern that safety might be compromised. Data from anifrolumab's Phase IIb trial would be analyzed before deciding which of the two products would be taken into Phase III, Dr Yao said last November. </p><p>"Driven by the data from the Phase II trials, we have progressed what we believe is the most promising of these two therapies, anifrolumab, into Phase III," Yao told <i>Scrip</i> this week. "While the sifalimumab data were encouraging, we believe anifrolumab has a more favorable benefit-risk profile, and therefore we do not intend to develop sifalimumab in SLE."</p><p>AstraZeneca decided to back anifrolumab over sifalimumab earlier this year and a Phase III trial with anifrolumab was initiated in July.</p><p><b>Phase II Anifrolumab Trial Details</b></p><p>The study met its primary endpoint of showing a significant difference in the percentage of responders compared to placebo as measured by the SLS Responder Index 4 (SRI4) at day 169, along with a sustained reduction of oral corticosteroid (OCS) use between day 85 and 169. 34.4% of patients receiving anifrolumab 300 mg IV for four weeks achieved a response while 28.8% who received anifrolumab 1,000 mg IV for four weeks responded. Both beat the placebo response rate of 17.6%.</p><p>Principal Investigator Dr Richard Furie, chief of the division of rheumatology, North Shore-LIJ Health System, said: "The lupus community has been disappointed too often with clinical trial results. We have been eagerly awaiting clinical data of this magnitude for many years. These results provide very compelling evidence that blocking the type 1 interferon system with an inhibitor of the type I interferon receptor is a promising strategy for the treatment of SLE and support the progression of anifrolumab into Phase III."</p><p>The trial met the secondary endpoint of a significant difference in responders measured by SRI4 at day 365. The proportions for the 300 mg, 1000 mg and placebo arms were 51.5%, 38.5% and 25.5%, respectively. Another secondary endpoint, a sustained reduction in OCS use, was also met. In those patients taking at least 10mg/day of OCS at baseline, their use fell to no more than 7.5 mg/day by day 365.</p><p>Adverse events were similar across the groups. Serious adverse events occurred in 18.8% of the placebo cohort compared to 16.7% in the pooled anifrolumab groups. A dose-dependent increase in Herpes zoster was observed (placebo: 2.0%; 300 mg: 5.1%; 1000 mg: 9.5%) as was the incidence of influenza infections, although most were unconfirmed (placebo: 2.0%; 300 mg: 6.1%; 1000 mg: 7.6%).</p><p>Anifrolumab (formerly MED-546) has been designated for Fast Track review by the FDA. It is a fully human monoclonal antibody against the type 1 interferon (IFN) receptor and inhibits the activity of all type 1 IFNs, which play a key role in SLE. The company hopes the product will become a blockbuster. AstraZeneca obtained the rights to anifrolumab through its $15.6bn acquisition of MedImmune in April 2007.</p><p>A Phase II trial of anifrolumab in lupus nephritis and Phase I subcutaneous administration study are slated to begin in the second half of 2015.</p><p>"These positive results for anifrolumab represent real hope for patients with lupus, who have only seen one new treatment for their disease in almost 60 years," said Dr Yao. "We followed the science behind the potential therapeutic benefits of blocking the interferon pathway and look forward to confirming the data in our robust Phase III TULIP program."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 318
+
+<p>A Phase II trial of AstraZeneca's investigational monoclonal antibody, anifrolumab, in patients with moderate-to-severe systemic lupus erythematosus (SLE) met its primary and secondary endpoints. The data were presented at the American College of Rheumatology 2015 Scientific Meeting in San Francisco this week.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Real Hope For Lupus As AZs Anifrolumab Impresses In Phase II
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150611T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150611T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150611T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030286
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Real Hope For Lupus As AZ's Anifrolumab Impresses In Phase II
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361413
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042521Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+703f96f0-e95d-4a4d-9ef8-eef66fcc516b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042521Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

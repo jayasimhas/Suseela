@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {6EFF7211-8907-4C66-A07E-155086704FE8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/15/AstraZeneca Lilly JJ dinged by FDA SGLT2 alert
+parent: {22B77BC9-1D41-4F3C-86FC-19BC331D0A4A}
+name: AstraZeneca Lilly JJ dinged by FDA SGLT2 alert
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b88f4e87-2557-4758-b2d3-907bb2fe19da
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+AstraZeneca, Lilly, J&J dinged by FDA SGLT2 alert 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+AstraZeneca Lilly JJ dinged by FDA SGLT2 alert
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4070
+
+<p>Shares of AstraZeneca, Johnson and Johnson and Lilly took slight hits on 15 May after the FDA warned the firms' sodium-glucose cotransporter-2 (SGLT2) inhibitors &ndash; a fairly new class of drugs used to treat type 2 diabetes &ndash; may cause ketoacidosis, a serious condition in which the body produces ketones, or high levels of blood acids, which may lead to hospitalization. </p><p>The FDA has not yet taken any action to update the labeling of the SGLT2s to warn about the potential of a risk of ketoacidosis with the drugs. For now, the agency will continue to investigate the ketoacidosis safety issue and make a determination later, regulators said in a "safety communication" and a MedWatch alert.</p><p>Shares of AstraZeneca, which markets the SGLT2 inhibitors <a href="http://www.scripintelligence.com/home/FDA-OKs-AstraZenecaBMS-SGLT2-Farxiga-requires-6-postmarketing-studies-349189" target="_new">Farxiga</a> (dapaglifozin) and <a href="http://www.scripintelligence.com/policyregulation/FDA-clears-AstraZenecas-SGLT2-metformin-combo-Xigduo-XR-354773" target="_new">Xigduo XR</a> (dapagliflozin/metformin extended-release), already were having a tough day on the New York Stock Exchange, losing $1.44, or 2%, early on. The news from the FDA sent the stock on another somewhat bumpy ride in the afternoon, before closing at $69.29, down 81 cents, or 1.16%. </p><p>Investors in J&J didn't take the news quite as hard, with the stock only losing 16 cents, before regaining ground, to close at $102.30, up 47 cents.</p><p>The company&rsquo;s Janssen unit sells <a href="http://www.scripintelligence.com/home/JanssenJandJ-Invokana-wins-US-SGLT2-race-5-postmarket-studies-required-341657" target="_new">Invokana</a> (canagliflozin) &ndash; the first SGLT2 inhibitor approved in the US for type 2 diabetes, gaining that nod from the FDA in March 2013 &ndash; which is expected to earn J&J $1bn this year after soaring to $278m in worldwide sales in the first quarter. It also markets a combination SGLT2 product, <a href="http://www.scripintelligence.com/policyregulation/JandJJanssen-win-US-OK-for-diabetes-drug-Invokamet-353324" target="_new">Invokamet</a> (canagliflozin/metformin). </p><p>Shares of Lilly, which markets <a href="http://www.scripintelligence.com/home/FDA-OKs-BoehringerLilly-type-2-diabetes-drug-Jardiance-353159" target="_new">Jardiance</a> (empagliflozin) and <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-LillyBI-dual-mechanism-diabetes-drug-Glyxambi-356510" target="_new">Glyxambi</a> (empagliflozi/linagliptin) with its partner privately held Boehringer Ingelheim, were off 47 cents, before closing at $72.90, down 16 cents.</p><p>US regulators said a search of the FDA Adverse Event Reporting System (FAERS) database identified 20 cases of acidosis reported as diabetic ketoacidosis (DKA), ketoacidosis or ketosis in patients treated with SGLT2 inhibitors from March 2013 to early June 2014, with all of those patients requiring emergency room visits or hospitalization.</p><p>The FDA pointed out that the cases of DKA were unusual, given that most of the patients in the FAERS reports had type 2 diabetes and diabetic ketoacidosis generally is a condition that occurs in patients with type 1 diabetes and usually is accompanied by high blood sugar levels. </p><p>SGLT2 inhibitors are not approved for type 1 diabetes.</p><p>Regulators said factors identified in some of the reports as having potentially triggered the ketoacidosis included major illness, reduced food and fluid intake and reduced insulin dose.</p><p>The median time to onset of the symptoms of ketoacidosis following initiation of an SGLT2 was 2 weeks, with a range of one day to 175. </p><p>The FDA urged healthcare professionals to evaluate patients for the presence of acidosis, including ketoacidosis, who are experiencing difficulty breathing, nausea, vomiting, abdominal pain, confusion and unusual fatigue or sleepiness. Regulators told doctors to discontinue SGLT2 inhibitors if ketoacidosis is confirmed.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 389
+
+<p>Shares of AstraZeneca, Johnson and Johnson and Lilly took slight hits on 15 May after the FDA warned the firms' sodium-glucose cotransporter-2 (SGLT2) inhibitors &ndash; a fairly new class of drugs used to treat type 2 diabetes &ndash; may cause ketoacidosis, a serious condition in which the body produces ketones, or high levels of blood acids, which may lead to hospitalization. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+AstraZeneca Lilly JJ dinged by FDA SGLT2 alert
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150515T222642
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150515T222642
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150515T222642
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028736
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+AstraZeneca, Lilly, J&J dinged by FDA SGLT2 alert 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358364
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042346Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b88f4e87-2557-4758-b2d3-907bb2fe19da
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

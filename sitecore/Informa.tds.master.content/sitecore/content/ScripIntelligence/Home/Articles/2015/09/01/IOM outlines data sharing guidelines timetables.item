@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6CCC6F7A-613B-42E2-8FFC-A05E98A06B37}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/01/IOM outlines data sharing guidelines timetables
+parent: {684FC8D5-D802-45B5-B1B4-59D6EC33E6A8}
+name: IOM outlines data sharing guidelines timetables
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7965e571-2ba8-45d4-baf0-313905a39395
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+IOM outlines data sharing guidelines, timetables 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+IOM outlines data sharing guidelines timetables
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7846
+
+<p>After several months of deliberations, a panel convened by the US Institute of Medicine (IOM) on 14 January outlined a set of guidelines for sharing clinical trials data with the public and provided recommendations aimed at increasing the benefits of doing so, while minimizing the risks.</p><p>The IOM committee said their advice is an attempt to balance the interests of stakeholders with the public interest of having the best information possible about the effectiveness and safety of therapies.</p><p>The issue of sharing clinical trials data is no longer whether to do it, but what to share, when and under what conditions, said IOM panel chair Dr Bernard Lo, president of the nonprofit Greenwall Foundation. </p><p>He noted some biopharmaceutical companies already have opened up their data under certain conditions.</p><p>Johnson & Johnson contracted with Yale University's Open Data Access (YODA) project last year in which the company gave the academic institution's program all decision-making authority over the release to outside researchers of the firm's trial data &ndash; the first time any US drug maker has handed the control to a completely independent third party to review and make determinations about every request to access information, including clinical study reports and de-identified patient-level data (scripintelligence.com, <a href="http://www.scripintelligence.com/home/YODA-lifts-veil-from-JandJs-data-no-Jedi-mind-tricks-involved-349697" target="_new">31 January 2014</a>).</p><p>J&J has now expanded that agreement &ndash; giving YODA control over the company's device and diagnostics data.</p><p>GlaxoSmithKline (GSK) established an online study register with an easily accessible repository of data studies the firm sponsored.</p><p> Astellas, Bayer, Boehringer Ingelheim, GSK, Lilly, Novartis, Roche, Sanofi, Takeda, UCB and ViiV Healthcare committed to sharing clinical trial data through a website, known as www.clinicalstudydatarequest.com, and allowing an independent review panel to make decisions on data requests.</p><p>Pfizer also created a data access policy and web portal.</p><p>On 1 January 2014, a new set of clinical trial data sharing principles took effect for members of the Pharmaceutical Research and Manufacturers of America (PhRMA) and European Federation of Pharmaceutical Industries and Associations (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Everybody-wants-some-Firms-prepare-for-data-sharing-347361" target="_new">16 October 2013</a>).</p><p>The AllTrials campaign also was launched last year, which called for all past and present clinical studies to be registered and their full methods and summary results reported.</p><p>The IOM noted that as of last month, 532 organizations had joined AllTrials, while more than 81,000 people had signed its petition.</p><p>This past November, the Obama administration issued a proposal to expand the scope of clinical trials required to submit summary results to a government database by including studies of drugs and devices not approved by the FDA (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-seeks-to-expand-public-access-to-trial-data-355149" target="_new">19 November 2014</a>).</p><p>Still, a large portion of data are never published or are made available to other researchers, Dr Lo pointed out. </p><p>He insisted data sharing could advance scientific discovery and improve clinical care by maximizing the knowledge gained from the information collected in trials.</p><p>Sharing data also stimulates new ideas for research and it would avoid unnecessarily duplicative trials. </p><p>While there are benefits of sharing data, Dr Lo also admitted there are risks and challenges for drug makers, which are concerned about losing their competitive edge and loss over control of their data.</p><p>Members of the IOM committee said policies are needed to protect the privacy of participants and the investment by drug and device makers, among other concerns.</p><p>Among its recommendations, the IOM panel said stakeholders in clinical trials should foster a culture in which data sharing is the expected norm, and should commit to responsible strategies aimed at maximizing the benefits, minimizing the risks and overcoming the challenges of sharing clinical trial data for all parties.</p><p>The IOM committee said holders of study data should mitigate the risks and enhance the benefits of sharing sensitive information by implementing operational strategies that include employing data use agreements, designating an independent review panel, including members of the lay public in governance and making access to clinical trial data transparent.</p><p><b>Timetables</b></p><p>The IOM committee also laid out timetables for sponsors and investigators to share the various types of trial data.</p><p>Before the first participant is enrolled, sponsors and investigators should have a plan for which data will be shared, when it will be shared and under what conditions.</p><p>At the completion of a study, the IOM committee said trial sponsors and investigators should make summary-level results, including adverse event summaries, publicly available no later than 12 months after study completion. </p><p>They also said lay summaries of results should be made available to trial participants concurrently with the sharing of summary-level results no later than 12 months after study completion.</p><p>The committee insisted that a full data package consisting of the full analyzable dataset, full protocol, statistical analysis plan and analytic code, should be shared no later than 18 months after study completion, unless the trial is in support of a regulatory application.</p><p>After a publication reports the results of a clinical trial, the post-publication data package &ndash; the analytic dataset supporting the results and metadata, with the protocol, statistical analysis plan and analytic code supporting published results &ndash; should be shared no later than six months after publication, the IOM panelists said.</p><p>They said for studies of products or new indications that are approved, the post-regulatory data package &ndash; study report redacted for commercially or personal confidential information, the full analyzable data set, full protocol, statistical analysis plan and analytic code &ndash; should be shared 30 days after regulatory approval or 18 months after study completion, whichever occurs later.</p><p>For marketed products that are abandoned, the "post-regulatory data package" should be shared no later than 18 months after abandonment, unless the product is licensed to another party for further development. In that case, the data should be shared only after publication, approval or final abandonment.</p><p>The committee also recommended how clinical trial data should be shared to mitigate risks and enhance benefits. </p><p>The IOM committee urged holders of trial data to employ data use agreements, designate an independent review panel that involves members of the lay public, make access to clinical trial data a transparent process, and learn from experience by collecting and sharing data on the outcomes of data sharing policies.</p><p>"This isn't the beginning or the end of the discussion," Dr Lo said. </p><p>Jeffrey Francer, vice president and senior counsel at PhRMA, said his group supported the IOM's efforts to identify strategies for responsible data sharing.</p><p>"The biopharmaceutical industry is strongly committed to enhancing public health through responsible data sharing that recognizes the importance of protecting patient privacy, respects the integrity of national regulatory systems, and maintains incentives for continued investment in biopharmaceutical research," he said. </p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 295
+
+<p>After several months of deliberations, a panel convened by the US Institute of Medicine (IOM) on 14 January outlined a set of guidelines for sharing clinical trials data with the public and provided recommendations aimed at increasing the benefits of doing so, while minimizing the risks.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+IOM outlines data sharing guidelines timetables
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150901T235827
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150901T235827
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150901T235827
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027527
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+IOM outlines data sharing guidelines, timetables 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356062
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042232Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7965e571-2ba8-45d4-baf0-313905a39395
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042232Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

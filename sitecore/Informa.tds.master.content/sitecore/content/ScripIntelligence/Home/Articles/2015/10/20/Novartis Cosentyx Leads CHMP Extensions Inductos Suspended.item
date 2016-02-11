@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {5A79A01F-D860-4955-A940-7C8D129C5385}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/20/Novartis Cosentyx Leads CHMP Extensions Inductos Suspended
+parent: {FBD889C4-A34C-4E16-BF27-9E42B717898E}
+name: Novartis Cosentyx Leads CHMP Extensions Inductos Suspended
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5695cb0a-bb8b-431c-9d4a-6674f316357d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Novartis' Cosentyx Leads CHMP Extensions, Inductos Suspended
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Novartis Cosentyx Leads CHMP Extensions Inductos Suspended
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5159
+
+<p>The EU's CHMP has given the go-ahead for expanding the approved indications for Novartis's first-in-class of interleukin-17A (IL-17A) inhibitor <i>Cosentyx</i> (secukinumab) to encompass psoriatic arthritis and ankylosing spondylitis.</p><p>The approvals, when they come, will bring the anti-inflammatory more into line with its older anti &ndash;TNF competitors such as AbbVie's <i>Humira</i> (adalimumab), and move it well ahead of its rivals. </p><p>Cosentyx is already available for use in plaque psoriasis following its <a href="http://www.scripintelligence.com/home/Novartis-and-Celgene-get-EU-approval-for-novel-psoriasis-therapies-356218" target="_new">first EU approval in January</a>. It is additionally approved for psoriatic arthritis in Japan, and awaiting US additional approval for this indication. Its competitor anti-IL17s Amgen/AstraZeneca's brodalumab and Lilly's ixekizumab are in late-stage development for psoriatic arthritis (both are filed for this indication in Japan) but neither appears to be in development in ankylosing spondylitis, leaving the field clear for Cosentyx in patients who do not respond adequately to other treatments. </p><p>Specifically, the CHMP said the new expanded indication will be:</p><p>* Cosentyx, alone or in combination with methotrexate, is indicated for the treatment of active psoriatic arthritis in adult patients when the response to previous disease-modifying antirheumatic drug (DMARD) therapy has been inadequate.</p><p>* Cosentyx is indicated for the treatment of active ankylosing spondylitis in adults who have responded inadequately to conventional therapy.</p><p>Novartis notes that up to 45% of psoriatic arthritis patients and up to 40% of ankylosing spondylitis patients are dissatisfied with, do not respond to or do not tolerate their treatment with anti-TNFs, the current biologic standard of care that generally follows therapy with DMARDs and NSAIDs. </p><p><b>Other Expansions</b></p><p>Meanwhile, Pfizer's anticancer Xalkori (crizotinib) was recommended to be approved for use earlier on in the treatment paradigm with the CHMP adopting a new indication as follows: for the first-line treatment of adults with anaplastic lymphoma kinase (ALK)-positive advanced non-small cell lung cancer (NSCLC).</p><p>The product was first <a href="http://www.scripintelligence.com/researchdevelopment/Pfizers-Xalkori-conditionally-approved-in-Europe-for-previously-treated-lung-cancer-336588" target="_new">conditionally approved in the EU</a> for the previously treated population with this type of NSCLC (which affects just 4-5% of the NSCLC population) three years ago, but the expanded approval based on <a href="http://www.scripintelligence.com/researchdevelopment/Pfizers-Xalkori-rides-on-in-first-line-NSCLC-350890" target="_new">data from the Phase III PROFILE 1014</a> study should boost its use especially in markets where it has struggled to gain reimbursement. </p><p>* GlaxoSmithKline's <i>Volibris</i> (ambrisentan)'s indication will be expanded to include its use in combination treatment to improved exercise capacity in pulmonary arterial hypertension in adults patients with WHO functional class II to III disease. </p><p>* Merck & Co (MSD)'s antiemetic <i>Emend</i> (aprepitant) will have its indication extended to include the "prevention of nausea and vomiting associated with highly and moderately emetogenic cancer chemotherapy in adults and adolescents from the age of 12". This replaces its previous indication for "prevention of acute and delayed nausea and vomiting associated with highly emetogenic cisplatin-based cancer chemotherapy in adults". And "Prevention of nausea and vomiting associated with moderately emetogenic cancer chemotherapy in adults."</p><p>* Novartis' <i>Cubicin</i> (daptomycin) has a pediatric extension to include the antibiotic's use in patients aged 1 &ndash; 17 years with complicated skin and skin structure infections. </p><p>* Janssen's <i>Edurant</i> (rilpivirine) also has a pediatric extension to expand its use in antiretroviral treatment-na&iuml;ve adult patients <b>12 years of age and older </b>with a viral load ? 100,000 HIV-1 RNA copies/ml. </p><p><b>Inductos to be suspended in the EU</b></p><p>Meanwhile, the committee also recommended the suspension of Pfizer's <i>Inductos</i>, an implant used to help new bone develop in patients with spinal disc problems and leg fractures, due to manufacturing issues. </p><p>No risk to patients has been identified, but the product will remain suspended until issues with the manufacturing site for one of its components (an absorbable sponge) are resolved, it said.</p><p>The EMA review of Inductos was prompted by an inspection by Dutch and Spanish authorities which found the manufacturing site of the absorbable sponge to be non-compliant. The inspectors said that the manufacturer, located in the US, did not have adequate measures in place to prevent particle contamination of the sponges. The CHMP added that there were no alternative treatments available in the EU.</p><p>Inductos was first approved for use in spine fusions in 2005, when it was a Wyeth product. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 241
+
+<p>The EU's CHMP has given the go-ahead for expanding the approved indications for Novartis's first-in-class of interleukin-17A (IL-17A) inhibitor <i>Cosentyx</i> (secukinumab) to encompass psoriatic arthritis and ankylosing spondylitis.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Novartis Cosentyx Leads CHMP Extensions Inductos Suspended
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151020T012044
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151020T012044
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151020T012044
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030143
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Novartis' Cosentyx Leads CHMP Extensions, Inductos Suspended
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361125
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042513Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5695cb0a-bb8b-431c-9d4a-6674f316357d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042513Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {DC461DB9-D6A3-48CB-9EBE-82C51E1AA4A0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/03/Ocular Therapeutix to file eye drug
+parent: {BC075EB3-76AA-4093-B057-CD1BE0713E4D}
+name: Ocular Therapeutix to file eye drug
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1f16fefe-8b8d-4380-b18c-517c05874198
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 36
+
+Ocular Therapeutix to file eye drug 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 35
+
+Ocular Therapeutix to file eye drug
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1058
+
+<p>Massachusetts-based Ocular Therapeutix is set to file for US approval of its sustained-release dexamethasone product OTX-DP in the second quarter, following positive top-line data from the first of two Phase III trials in post-surgical ocular pain and inflammation. The company says that the ability to administer the entire course of therapy for post-operative inflammation and pain with a single dose would "remove the onus from patients to follow complex pharmaceutical dosing regimens while providing the desired tapered therapeutic effect". OTX-DP is placed in the canaliculus and designed to deliver dexamethasone to the ocular surface for about four weeks. The product resorbs and exits the nasolacrimal system without need for removal. The 247-patient study met both its efficacy endpoints, significantly improving pain and reducing the presence of inflammatory cells in the anterior chamber of the eye compared with placebo. Safety finding are still being analysed, and data from the second Phase III study are due by the end of the month.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 1055
+
+<p>Massachusetts-based Ocular Therapeutix is set to file for US approval of its sustained-release dexamethasone product OTX-DP in the second quarter, following positive top-line data from the first of two Phase III trials in post-surgical ocular pain and inflammation. The company says that the ability to administer the entire course of therapy for post-operative inflammation and pain with a single dose would "remove the onus from patients to follow complex pharmaceutical dosing regimens while providing the desired tapered therapeutic effect". OTX-DP is placed in the canaliculus and designed to deliver dexamethasone to the ocular surface for about four weeks. The product resorbs and exits the nasolacrimal system without need for removal. The 247-patient study met both its efficacy endpoints, significantly improving pain and reducing the presence of inflammatory cells in the anterior chamber of the eye compared with placebo. Safety finding are still being analysed, and data from the second Phase III study are due by the end of the month.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 35
+
+Ocular Therapeutix to file eye drug
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150603T153518
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150603T153518
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150603T153518
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028050
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 36
+
+Ocular Therapeutix to file eye drug 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357109
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1f16fefe-8b8d-4380-b18c-517c05874198
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

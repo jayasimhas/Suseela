@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {66CB107B-CC9D-436D-8646-480FD1CD1EF4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/10/FDA admits 172 guidance documents linger in draft form
+parent: {994BF5DE-6C59-4B55-8D0C-08175A8660C9}
+name: FDA admits 172 guidance documents linger in draft form
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4d20c2b4-9beb-4ab3-a86d-74542abcdf61
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+FDA admits 172 guidance documents linger in draft form
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+FDA admits 172 guidance documents linger in draft form
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7044
+
+<p>The outgoing head of the FDA on 10 March admitted there are 172 guidance documents that are in draft form that need to be finalized, revised or withdrawn &ndash; with one remaining in limbo since 1988.</p><p>Dr Margaret Hamburg, who is leaving her post as FDA commissioner at the end of this month, was pressed for answers during a hearing of the Senate Health, Education, Labor and Pensions (HELP) Committee on why critical guidance documents have not been updated &ndash; with one lawmaker particularly perturbed the agency has lagged behind on finalizing guidances for the animal rule and biosimilars. </p><p>Indeed, just last month, at an <a href="http://www.scripintelligence.com/policyregulation/Wheres-FDAs-past-due-animal-rule-final-guidance-356972" target="_new">earlier HELP hearing</a>, Senator Richard Burr (Republican-North Carolina) asked the same question of Dr Luciana Borio, director of the FDA's Office of Counterterrorism and Emerging Threats and soon-to-be chief scientist, that he posed to Dr Hamburg: "When is the animal rule guidance going to be finalized as required by law?"</p><p>It's been nearly two years since Congress passed a measure requiring the FDA to issue final guidance on the animal rule, which was created in 2002 to permit a drug's effectiveness to be demonstrated in animals when it is unethical or not feasible to conduct controlled clinical trials in humans.</p><p>At the 26 February hearing, Dr Borio had responded that she shared Senator Burr's "sense of priority" and "sense of frustration." </p><p>During the 10 March hearing, Dr Hamburg insisted the FDA has taken the animal rule "very seriously," but it is "one of those areas of regulatory science that is challenging because we want to be able to know that using animal data, which is often imperfect, we can make a good enough assessment of safety, effectiveness and appropriate use of a product against what is generally going to be a terrible life-threatening disease."</p><p>She contended that although that document is not yet finalized, the draft guidance "has shaped work that's being done and moving forward." </p><p>"It hasn't stopped progress in terms of medical countermeasure development," Dr Hamburg said. </p><p>She pledged to get it done, but doubted it would be before she leaves the FDA.</p><p>Senator Burr also noted that while one company has received approval of a biosimilar in the US &ndash;Novartis unit Sandoz's <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">Zarxio</a> (filgrastim-sndz), which is a version of Amgen's Neupogen &ndash; the other manufacturers are awaiting guidances from the FDA, including on interchangeability, labeling and naming. </p><p>In <a href="http://www.scripintelligence.com/policyregulation/Biosimilars-social-media-among-2015-expected-FDA-guidances-355960" target="_new">January</a>, the FDA pledged to release several biosimilar guidances this year.</p><p>In a letter to the Senate HELP Committee, which was received the night before the 10 March hearing, Thomas Kraus, associate commissioner for legislation at the FDA, said the median number of days it takes a guidance document at the Center for Drug Evaluation and Research (CDER) to go from draft form to being finalized is 710, while the maximum is 5,405 days &ndash; the longest of any of the agency's centers. The minimum number of days for CDER has taken to finalize a guidance is 194.</p><p>The median time it has taken to go from draft to final guidance at the FDA's Center for Biologics Evaluation and Research (CBER) is longer than at CDER, at 743 days, although the maximum is much shorter, at 1,975 days. </p><p>CBER's minimum time for moving a guidance from draft to final document is 261 days, Mr Kraus told members of the HELP committee.</p><p>The reason it took the FDA over 5,400 days to finalize the <i>Interpreting Sameness of Monoclonal Antibody Products under the Orphan Drug Regulations</i> guidance was because the document had originally been developed by CBER, and during a reorganization, the responsible office became part of CDER and there was a subsequent change in personnel. So the document finalization "lost traction," Mr Kraus explained in a footnote in his letter. </p><p>"During the initiative to identify guidances published prior to 2010, we realized that the guidance was still in draft," Mr Kraus said.</p><p>CDER finalized the guidance on 22 April 2014.</p><p>Mr Kraus' letter was in response to a request by four Republican members of the HELP Committee, who asserted in a 6 May 2014 letter to Dr Hamburg that "stakeholders tell us that draft guidances are increasingly becoming default FDA policy and position."</p><p>The draft guidances "are not being revised, finalized or withdrawn in a timely manner," the lawmakers told Dr Hamburg. </p><p>They asked the FDA chief to provide the HELP Committee a list of all "level 1" draft guidances, including the date issued and the timeline with which the agency plans to withdraw, revise or finalize each document.</p><p>"We received the answer 10 months later, last night, 12 hours before this hearing," declared Senator Johnny Isakson (Republican-Georgia), one of the four lawmakers who signed the May 2014 letter. </p><p>"I find it troubling the FDA has so much difficulty working through the regulatory process," Senator Isakson said. </p><p>"We are taking a very active look at the various guidances and what stage they are in," Dr Hamburg told the HELP Committee.</p><p>She defended the process of going from draft to a final document as "extremely useful."</p><p>And Dr Hamburg said the FDA is "not the only ones involved in shaping the guidance process." </p><p>"It does have to go through a series of other reviews before it can be published into final," she said. </p><p>But Dr Hamburg also said she agreed with Senators Isakson and Burr "that we should not have that many guidances in draft."</p><p>"While the process of moving from a draft to a final guidance has value as well, having the final guidance is important and provides more certainty," she acknowledged. </p><p>Dr Hamburg said that while it "won't be me coming back before you," she said she hoped the FDA would "soon" be able to demonstrate what has been done with some of the guidances that have lingered in draft form.</p><p><b>Related stories:</b></p><p><a href="http://www.scripintelligence.com/policyregulation/Wheres-FDAs-past-due-animal-rule-final-guidance-356972" target="_new">Where's FDA's past-due 'animal rule' final guidance?</a></p><p><a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">Novartis/Sandoz make history with 1st US biosimilar Zarxio</a></p><p><a href="http://www.scripintelligence.com/policyregulation/Biosimilars-social-media-among-2015-expected-FDA-guidances-355960" target="_new">Biosimilars, social media among 2015 expected FDA guidances</a></p><p><p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 208
+
+<p>The outgoing head of the FDA on 10 March admitted there are 172 guidance documents that are in draft form that need to be finalized, revised or withdrawn &ndash; with one remaining in limbo since 1988.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+FDA admits 172 guidance documents linger in draft form
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150310T225652
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150310T225652
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150310T225652
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028057
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+FDA admits 172 guidance documents linger in draft form
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357121
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4d20c2b4-9beb-4ab3-a86d-74542abcdf61
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {495AABD3-8873-4994-8374-D0B0573B8418}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/07/Strike two for Aquinox
+parent: {CC2443D4-0E6D-4729-AC39-BFE81987180B}
+name: Strike two for Aquinox
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a74c6f8d-f2c1-440a-9d15-f4d4afb0e6be
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 22
+
+Strike two for Aquinox
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 22
+
+Strike two for Aquinox
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2967
+
+<p><p>Biotech drug development is often like throwing spaghetti at a wall to see what sticks. In the case of Aquinox Pharmaceuticals, the most recent indication for its lead drug candidate didn't stick. </p><p>The Canadian biotech announced 09 July that results from its Phase II FLAGSHIP study of AQX-1125 in patients with chronic obstructive pulmonary disease (COPD) in patients with frequent exacerbations was a failure. </p><p>"Regrettably, AQX-1125 showed no improvement in either daily symptoms or medically-treated exacerbations over placebo," said President and CEO David Main during a call with investors on 09 July. </p><p>The drug, which is a small molecule activator of SHIP1 activity, showed no efficacy over placebo when given to patients for 12 weeks at a dose of 200mg. There was also no benefit in secondary endpoints. </p><p>Mr Main called the results disappointing and told investors that the company would no longer pursue the development of AQX-1125 in COPD. </p><p>"Although we will complete secondary analysis, these are unlikely to change our conclusions, but might give us some indication why there was no treatment effect in this population," said Dr Stephen Shrewsbury, Aquinox chief medical officer. "In all, we are confident that trial was robust, enrolled the intended patient population, was well executed and the results are conclusive," he added, making no excuses for the failure. </p><p>The negative trial results pushed down Aquinox stock by 70%, or $4.59, to trade at $1.97. Shares of the stock have traded as high as $12.28 over the last 52 weeks. </p><p>AQX-1125 is also being studied in two other indications currently. The poor results in COPD did not affect the dose that is being used in the other trials, management said. </p><p>The company previously announced topline results from the Phase II LEADERSHIP study, which tested the drug in patients with bladder pain syndrome/interstitial cystitis, and there is an ongoing trial Phase II dubbed KINSHIP that is in atopic dermatitis &ndash; results are expected in the first quarter of next year. </p><p>The results of the LEADERSHIP study, announced in June, were mixed at best. AQX-1125showed a treatment effect in the BPS patients, but the results were not statistically significant. Although, Aquinox considered the results to be promising and said it would need to have discussions with the FDA to move forward, but would likely do studies in a larger patient population. </p><p>"AQXP also suggested that a larger sample size and an increase in the treatment period would have potentially shown statistically significant result in LEADERSHIP trial and therefore would consider these options for the next studies. We concur with AQXP and believe that an increase in the treatment period beyond 6 weeks in addition to sample size could increase the odds of success of AQX-1125," wrote Jefferies analyst Biren Amin in a 25 June note about the LEADERSHIP results. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 22
+
+Strike two for Aquinox
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150707T094324
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150707T094324
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150707T094324
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029189
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 22
+
+Strike two for Aquinox
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 9
+
+Editorial
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359276
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042420Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a74c6f8d-f2c1-440a-9d15-f4d4afb0e6be
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042420Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {AEAF9869-487A-49CE-8552-05FA43D81115}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/13/Largest epigenome maps collection unveiled aid drug RD
+parent: {94CB4D6F-0A34-4D6B-BFF6-200B2B6E99B6}
+name: Largest epigenome maps collection unveiled aid drug RD
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0eab114c-60b0-452f-9195-8446243f6a7b
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Largest 'epigenome' maps collection unveiled; aid drug R&D 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Largest epigenome maps collection unveiled aid drug RD
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5406
+
+<p>Under an initiative funded by the National Institutes of Health (NIH), an international group of more than 440 scientists at 32 labs from various institutions have created the most comprehensive map so far of the human epigenome, the chemical markers that tell the genome what to do and where and when to do it.</p><p>The researchers mapped the epigenomes across a diversity of 111 types of cells and tissues, with the aim of better understanding the molecular basis of disease, having an ultimate goal of developing new therapies against those conditions.</p><p>It is the largest collection to date of reference human epigenomes from a broad range of representative primary cells and tissues, the NIH said.</p><p>The scientists, all part of the NIH's Roadmap Epigenomics Mapping Consortium, have described their work in a series of 24 <a href="http://www.nature.com/collections/vbqgtr" target="_new">papers</a> published 18 February in the scientific journal <i>Nature</i> and its related publications.</p><p>The data are being made freely available to the biomedical research community on the NIH's National Center for Biotechnology Information <a href="http://www.ncbi.nlm.nih.gov/" target="_new">website</a>.</p><p>The NIH said the studies have examined the biological importance of epigenetic changes in the context of stem cell differentiation, obesity, Alzheimer&rsquo;s disease, cancer and cardiac disease. </p><p>"This remarkable accomplishment will usher in new scientific understanding of the complexity of the human genome at a deeper level and spur new research advances in human health and disease," the agency said.</p><p>"This represents a major advance in the ongoing effort to understand how the 3 billion letters of an individual&rsquo;s DNA instruction book are able to instruct vastly different molecular activities, depending on the cellular context," said NIH Director Dr Francis Collins. "This outpouring of data-rich publications, produced by a remarkable team of creative scientists, provides powerful momentum for the rapidly growing field of epigenomics."</p><p>Dr Aleksandar Milosavljevic, a professor of molecular and human genetics at Baylor University in Houston, Texas, the genome is like a computer's "firmware," but the epigenome is the "software," which specifies how any specific cell in the body functions. </p><p>"Because of their plasticity, epigenomes contain footprints of environmental influences during a human lifetime, thus opening the door to understanding the role environment plays in human diseases," Dr Milosavljevic explained.</p><p>The team at <i>Nature</i> relied on a different analogy to explain the functions of the epigenome &ndash; using a <a href="http://www.nature.com/news/epigenome-the-symphony-in-your-cells-1.16955" target="_new">symphony orchestra</a> to put the point across.</p><p>While the genome is the musical score, the epigenome is the conductor directing how the music should be expressed, they said. </p><p>Dr David Bennett, a professor of neurological sciences and director of the Alzheimer's Disease Center at Rush University in Chicago, said cracking the epigenome's complicated codes will allow researchers to understand the key part of the molecular basis of disease and eventually to control how genes change, to cure and hopefully even prevent many common diseases.</p><p>The epigenome, Dr Bennett said, presents an "astonishing number of possibilities for gene expression, all the different permutations and combinations, its complexity orders and orders of magnitude beyond that of the basic genome sequence."</p><p>The maps, said Dr Bing Ren, a professor of cellular and molecular medicine at the University of California, San Diego, "are like snapshots of the human genome in action."</p><p>"These 111 reference epigenome maps are essentially a vocabulary book that helps us decipher each DNA segment in distinct cell and tissue types," he said. </p><p>The original goal of the NIH project was to map 25 normal reference epigenomes. But new technology allowed the researchers to go well beyond that and produce the 111. </p><p>"What the Roadmap Epigenomics Program has delivered is a way to look at the human genome in its living, breathing nature from cell type to cell type," said Dr Manolis Kellis, a professor of computer science at the Massachusetts Institute of Technology in Cambridge and a senior author of one of the Nature papers.</p><p>The work from Dr Kellis and his colleagues generated 2,805 genomewide datasets, in which they analyzed 150 billion sequencing reads, which corresponded to 3,174-fold coverage of the human genome. </p><p>Dr Kellis and the other scientists developed and applied machine-learning algorithms to translate the datasets into a reference map in each of the 111 cell types and tissues. </p><p>The algorithms distinguished different classes of epigenomic modifications and used them to annotate the genomic regions active in each sample, he explained.</p><p>Dr Kellis said different combinations of epigenetic marks characterized different regions of the genome, reflecting the specific functions that they play in each cell.</p><p>"By studying these combinations systematically, we can learn the language of the epigenome, and what it is telling us about both the activity and the function of each genomic region in each of the cell types," Dr Kellis said.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 318
+
+<p>Under an initiative funded by the National Institutes of Health (NIH), an international group of more than 440 scientists at 32 labs from various institutions have created the most comprehensive map so far of the human epigenome, the chemical markers that tell the genome what to do and where and when to do it.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Largest epigenome maps collection unveiled aid drug RD
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150213T062540
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150213T062540
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150213T062540
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027861
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Largest 'epigenome' maps collection unveiled; aid drug R&D 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356736
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042256Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0eab114c-60b0-452f-9195-8446243f6a7b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042256Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

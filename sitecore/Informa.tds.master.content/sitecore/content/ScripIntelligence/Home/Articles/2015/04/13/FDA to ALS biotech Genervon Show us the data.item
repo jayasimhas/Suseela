@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9709E940-BB9C-430A-B0E3-3BDE40D0A44B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/13/FDA to ALS biotech Genervon Show us the data
+parent: {9FB0ADDF-A2A3-44A3-B361-887553556EB6}
+name: FDA to ALS biotech Genervon Show us the data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8408477c-7058-4ced-9680-b2148a08e91d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+FDA to ALS biotech Genervon: Show us the data
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+FDA to ALS biotech Genervon Show us the data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8203
+
+<p>The FDA on 17 April issued a rare statement calling for a tiny California biotech to release all the data from its recently completed trial of the company's experimental drug for amyotrophic lateral sclerosis (ALS), often called Lou Gehrig's disease, a progressive, invariably fatal neurodegenerative condition, which affects the nerve cells responsible for controlling voluntary muscles.</p><p>The FDA said the full data from Pasadena, California-based Genervon Biopharmaceuticals' Phase IIa study of GM604, a 6-amino acid endogenous peptide, are needed "to allow a more informed discussion of the trial findings among ALS stakeholders."</p><p>The drug has been at the center of a firestorm, in which ALS patients and advocates are pushing for a quick approval, while critics are asserting Genervon has exaggerated its study results of the medicine. </p><p>Regulators emphasized the FDA is prohibited by law, under usual circumstances, from releasing confidential information about experimental drugs.</p><p>But just the fact the FDA issued the statement is evidence enough it was under pressure from patients to act on the new drug application (NDA) for GM604.</p><p>While unusual, it's not the first time the agency has addressed patients' cries for action through a public statement.</p><p>Indeed, this <a href="http://www.scripintelligence.com/home/FDA-to-Sarepta-This-is-what-we-really-meant-354795" target="_new">past October</a>, the FDA addressed the Duchenne muscular dystrophy (DMD) community over a kerfuffle that erupted involving the timing of Sarepta Therapeutics' filing of its NDA for eteplirsen &ndash; an issue that's been an ongoing saga for the firm.</p><p>Like the ALS statement, the FDA used a similar disclaimer in its 30 October 2014 message about the agency's legal restrictions. But apparently, regulators felt compelled to try to calm the DMD community and clear up the confusion that resulted from certain public statements made by Sarepta.</p><p>The FDA last year also <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-NIH-chief-cranks-it-up-with-captains-of-industry-353164" target="_new">responded</a> to the DMD community's "We the People" White House petition &ndash; a platform created in 2011 by the Obama administration to allow any American over 13 years to call on the federal government to take action on requested matters &ndash;in which patients and advocates called for the agency to use its accelerated approval authority for drugs to treat the disease.</p><p>Now, it's the frenzy over Genervon's statements concerning GM604 the FDA has found itself trying to address &ndash; telling ALS patients and advocates the agency "is prepared to use all expedited development and approval pathways available to us" to further the "mutual goal" of facilitating medicines "to treat this devastating disease." </p><p>In an email response to questions, Genervon's chief operating officer Dorothy Ko told <i>Scrip</i> the company was "aware of the FDA's request for the public release of additional data from our clinical investigations of GM604 in the treatment of ALS, and we are reviewing that request."</p><p><b>Study results</b></p><p>Genervon said 78 patients with various diseases, including ALS, Parkinson's and ischemic stroke, have received GM604 so far.</p><p>The firm said 12 of those patients were administered the drug during the double-blinded, randomized, placebo-controlled Phase IIa study, known as GALS001, which tested whether a six-dose treatment of the investigational product would begin the process of disease modification.</p><p>In October 2014, the biotech insisted the study's biomarker data for GM604 were "statistically significant" in ALS and said the drug achieved a positive trend of slowing down disease progression.</p><p>A further analysis, which was specified in the FDA-approved protocol by using historical data, showed statistical significance, with a p-value of 0.0047, the company said. </p><p>Genervon said GM604 also achieved statistical significance and a strong trend in decreasing the expressions between the treated and placebo groups of ALS patients across three matrices of the same patients: TDP43 (p=0.0078), Tau (p=0.0369) and SOD1 (p=0.055). </p><p>Last October, the company also reported some initial results, which were followed up in January, from a single compassionate patient trial, known as GALS-C, which involved a 46-year-old man first diagnosed with ALS in 2005 and who has been paralyzed by the disease and is on a ventilator.</p><p>After a six-dose treatment of GM604, Genervon said the clinical observation results of the GALS-C patient revealed "small but significant improvements" from baseline to week 12. </p><p>At week 2, the patient's speech video "definitely showed clearer articulation than baseline, and two weeks after the final dose, his swallow volume was increased 150%-200% to 25cc-30cc, the biotech said. </p><p>Genervon said the compassionate-use patient experienced no adverse effects with GM604.</p><p><b>The supporters</b></p><p>Those results sparked the excitement of patients and advocates, who quickly united around Genervon and its experimental drug. They called on US regulators in a petition through the online platform Change.org to quickly make GM604 available.</p><p>The petition has received nearly 600,000 signatures.</p><p>Patient groups also held a Capitol Hill rally on 25 March, where they demanded the FDA act on Genervon's NDA, which Ms Ko told <i>Scrip</i> was submitted to the agency on 24 February. She said the company is awaiting a response from the agency on whether the application has been accepted.</p><p>Genervon, which said it had received fast-track status and orphan drug designation in ALS for GM604, is seeking an accelerated approval based on the Phase IIa data.</p><p>The company insisted that while it "has no hesitation" in proceeding with Phase III testing, it argued the FDA could get the large population data better through a postmarketing study.</p><p>Requiring Phase III results before approval, Genervon said, would mean ALS patients waiting for the drug are likely to die of the disease before the product is available.</p><p>It also told the patient community it could not make GM604 available for compassionate use if it conducted a Phase III trial.</p><p><b>The skeptics</b></p><p>But Genervon's approach to gain a quick approval has not set well with its critics, particularly Dr Steve Perrin, president and chief scientific officer of the nonprofit ALS Therapy Development Institute.</p><p>In a 14 April blog, Dr Perrin said he was compelled to conduct his own comparison analysis of Genervon's results using a repository of ALS clinical data, known as the PRO-ACT Database. </p><p>He said he concluded several possibilities about Genervon's data, including that the forced vital capacity data could have been improperly collected, although he said that was "highly unlikely. He also suggested the data could have been "very skewed" by a "couple of fast-progressing patients in each cohort."</p><p>"Regardless, it makes me wonder whether any real conclusions can be drawn from such a small trial," Dr Perrin said about the 12-patient Phase IIa study. "Based on the modeling demonstrated here from a very large patient cohort it does not appear plausible that the cohort of patients enrolled in the Genervon trial would represent a 'normal' cohort of ALS patients. Therefore based on the model, I continue to be very skeptical that there is any way that GM604 could have provided any therapeutic benefit in this small of a trial with this short of an exposure."</p><p><b>Genervon&rsquo;s response</b></p><p>In her response to <i>Scrip</i>, Genervon's Ms Ko, who co-owns the company with her husband Winston, said Dr Perrin's assumptions were wrong and accused him of appearing to "threaten all ALS patients who have or will be receiving GM604 treatment."</p><p>She also asserted Dr Perrin was not being up front about his conflicts of interest.</p><p>After all, Ms Ko said, if GM604 were to be approved in the US, Dr Perrin's work may not continue to receive financial support from donors.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 395
+
+<p>The FDA on 17 April issued a rare statement calling for a tiny California biotech to release all the data from its recently completed trial of the company's experimental drug for amyotrophic lateral sclerosis (ALS), often called Lou Gehrig's disease, a progressive, invariably fatal neurodegenerative condition, which affects the nerve cells responsible for controlling voluntary muscles.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+FDA to ALS biotech Genervon Show us the data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150413T181136
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150413T181136
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150413T181136
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028468
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+FDA to ALS biotech Genervon: Show us the data
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357858
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042331Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8408477c-7058-4ced-9680-b2148a08e91d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042331Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

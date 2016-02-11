@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {0517D169-2CEF-49E5-B62C-84CBED822DCF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/03/Gates Foundation backs CureVac with 52m Hopp invests 24m
+parent: {87D20D5F-7D37-47C8-85FB-AD55F723C452}
+name: Gates Foundation backs CureVac with 52m Hopp invests 24m
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9acbce7d-49a7-405d-8238-a492df53cb59
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Gates Foundation backs CureVac with $52m, Hopp invests $24m
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Gates Foundation backs CureVac with 52m Hopp invests 24m
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5377
+
+<p>The Bill & Melinda Gates Foundation made its largest-ever equity investment in a biotechnology company when it committed $52m to the continued development of Tubingen, Germany-based CureVac's novel vaccines and construction of manufacturing facilities.</p><p>The Gates Foundation, which is committed to improving health care in the developing world, also will provide funding for several projects to develop prophylactic vaccines based on CureVac's proprietary messenger RNA (mRNA) technology platform. The firm's biggest private backer, SAP software company founder Dietmar Hopp, also chipped in $24m via his dievini Hopp BioTech investment fund. </p><p>"If we can teach the body to create its own natural defenses, we can revolutionize the way we treat and prevent diseases," Microsoft co-founder and Gates Foundation co-chair Bill Gates said in a statement. "Technologies like mRNA give us confidence to place big bets for the future."</p><p>CureVac's platform uses mRNA to instruct the body to produce its own proteins capable of fighting infectious diseases and cancer. The technology is designed for rapid, low-cost production of multiple drugs and vaccines that are thermostable, which means they don't require refrigeration that can be hard to come by in developing countries.</p><p>The Gates Foundation and CureVac will collaborate on development and production of vaccines against viral, bacterial and parasitic infectious diseases &ndash; including HIV and rotavirus &ndash; that disproportionately affect people in the world's poorest countries. The vaccines will be manufactured in dedicated space within the production facility funded by the foundation. Also, CureVac products developed under the agreement will be sold at an affordable price in poor countries. </p><p>CureVac co-founder and CEO Ingmar Hoerr praised the foundation as being another "strong and highly committed investor," which can be difficult to come by for private European biotech companies that often do not have the same access to cash for drug development as their US counterparts.</p><p>Friedrich von Bohlen, chairman of CureVac and managing director of dievini Hopp, noted during a mid-January roundtable discussion with <i>Scrip</i> during the 33rd Annual JP Morgan Healthcare Conference in San Francisco that there are several reasons why it is much more difficult for European biotechs to raise capital than it is for companies in the US (scripintelligence.com, <a href="http://www.scripintelligence.com/home/comment/EXECUTIVE-ROUNDTABLE-Part-1-Fundraising-in-2014-and-the-outlook-for-2015-356764" target="_new">16 February 2015</a>).</p><p>Mr von Bohlen said fundraising in the EU has gotten a little better recently, but biotech companies in Europe have not seen the kind of investment resurgence as in the US. </p><p>No European country has been able to create a large biotech hub capable of attracting major investment, he noted. Also, EU investors remain wary of the high risk associated with drug development, since the vast majority of therapies fail in clinical trials, and because of the high taxes in Europe when investors try to carry forward investment losses.</p><p>Fortunately CureVac has had long-term support from a deep-pocketed investor that remains committed to the company. Dievini Hopp's investment in CureVac is edging closer to &euro;200m with the cash the company put forward to support the Gates Foundation collaboration, including Mr Hopp's &euro;80m investment in 2012 (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Hopp-not-wavering-but-sinking-80m-into-CureVac-335195" target="_new">18 September 2012</a>).</p><p>CureVac also has generated revenue from partners, such as Boehringer Ingelheim, which paid &euro;35m up front in September and promised as much as &euro;430m in milestone fees to license the mRNA vaccine CV9202 for lung cancer (scripintelligence.com, <a href="http://www.scripintelligence.com/home/CureVac-propels-cancer-vaccine-in-601m-Boehringer-Ingelheim-deal-354023" target="_new">19 September 2014</a>).</p><p>CureVac entered into a &euro;150.5m partnership with Sanofi in 2011 that's supported by a four-year $33.1m research contract from the US Defense Advanced Research Projects Agency (DARPA) for the development of infectious disease vaccines (scripintelligence.com, <a href="http://www.scripintelligence.com/business/CureVac-signs-new-deal-with-Sanofi-firms-win-33.1M-US-DARPA-vaccine-contract-323702" target="_new">16 November 2011</a>).</p><p>Other biotech companies supported by the Gates Foundation include Affinivax, Synlogic and Kymab (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Five-VC-deals-three-public-financings-and-a-round-of-layoffs-354796" target="_new">31 October</a>, <a href="http://www.scripintelligence.com/home/Biotech-VC-dips-in-3Q-but-2014-on-track-to-beat-2013-354669" target="_new">26 October</a> and <a href="http://www.scripintelligence.com/business/Kymabs-40m-financing-is-strong-scientific-endorsement-351886" target="_new">16 May 2014</a>). The foundation also pledged $50m to support the global response to the ebola outbreak in Africa (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Gates-pledges-50m-for-Ebola-American-gets-undisclosed-drug-353836" target="_new">12 September 2014</a>).</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 259
+
+<p>The Bill & Melinda Gates Foundation made its largest-ever equity investment in a biotechnology company when it committed $52m to the continued development of Tubingen, Germany-based CureVac's novel vaccines and construction of manufacturing facilities.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Gates Foundation backs CureVac with 52m Hopp invests 24m
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150303T000651
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150303T000651
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150303T000651
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028025
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Gates Foundation backs CureVac with $52m, Hopp invests $24m
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357028
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042304Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9acbce7d-49a7-405d-8238-a492df53cb59
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

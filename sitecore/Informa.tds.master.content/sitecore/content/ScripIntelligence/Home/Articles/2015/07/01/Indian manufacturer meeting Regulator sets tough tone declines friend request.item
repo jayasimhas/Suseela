@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {12FBDF7A-51CF-401B-82B5-9F793D728160}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/01/Indian manufacturer meeting Regulator sets tough tone declines friend request
+parent: {28F237FF-EEF1-41C5-A15C-B67E96203F9A}
+name: Indian manufacturer meeting Regulator sets tough tone declines friend request
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a06980f8-f85e-4cbf-bc99-d48bd5f1faeb
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 82
+
+Indian manufacturer meeting: Regulator sets tough tone, declines 'friend' request 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 77
+
+Indian manufacturer meeting Regulator sets tough tone declines friend request
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5860
+
+<p>If the annual meeting of the Indian Drug Manufacturers' Association (IDMA) is anything to go by, then the drug regulatory regime in the country appears set for a significant makeover.</p><p>Industry could be looking at a regime that is perhaps refreshingly ''transparent, predictable and objective'' though top government and regulatory officials underscored at the event that enforcement could also be ''ruthless'', with no place for ''short-cuts''. </p><p>Setting the tone in a rather unusual style, both the Drugs Controller General of India (DCGI), Dr GN Singh, and the joint secretary, ministry of health and family welfare, KL Sharma, underscored, in part jest, that the regulator was no ''friend'' of the pharma industry. This came in response to being referred to as friends of industry by a senior IDMA official in the introductory comments. </p><p>''We are not friends, foes&#8230; we are partners&#8230; partnership for the development of the nation goes much beyond our friendship or being adversaries,'' Mr Sharma said at IDMA's 53rd annual celebrations in Mumbai on 10 January, adding that some degree of rivalry was not only inevitable but also ''desirable'' for industry's growth.</p><p>Dr Singh said that amid India's claim to be the pharmacy of the world, most global regulators were examining things through a ''magnifying glass''. </p><p>''They are seeing quality, methodology&#8230; steps adopted for that. If you [industry] want to be global, sit on the driving seat of the Indian economy, we have to address certain issues. I' m quite confident we can do it,'' Dr Singh said.</p><p>On the government's proposed revision of Good Manufacturing Practices (GMP) for drugs and medical devices under India's Drugs and Cosmetics Rules, 1945, Dr Singh told <i>Scrip</i> that it would mean establishing ''Indian standards'', with international ''expectations'' becoming part of the new GMP. </p><p>Asked whether it would be benchmarked at ICH levels, Dr Singh said: ''We are not going to adopt any one. We are going to take reference of that so it will be Indian GMP which will be a module for others''. </p><p>India's Central Drugs Standard Control Organization (CDSCO) recently outlined a list of policy initiatives for 2015, including plans to ''update'' GMP requirements for both drugs and devices and strengthen regulations concerning quality control <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/India-set-for-wide-ranging-policy-review-in-2015-355926%5d" target="_new">(scripintelligence.com5 January 2015)</a>. </p><p>Mr Sharma also indicated that the government intends to stick with the deadline set for stakeholder feedback on the proposed amended Drugs And Cosmetics Act 1940, probably allowing a grace period of three days.</p><p>''We have a target for ourselves&#8230;we have to introduce the bill in the Budget Session and preferably have it converted into the Act in that session itself&#8230; we don&rsquo;t want to prolong it,'' Mr Sharma said. There could be another round of consultation, should the draft be reviewed.</p><p>India recently unveiled plans to amend the Drugs And Cosmetics Act 1940 and upgrade and introduce provisions for trials and regulations of medical devices. The Department of Health and Family Welfare proposes to introduce the Drug and Cosmetics (Amendment) Bill, 2015 in the Budget Session (due in February) of the Parliament and has sought stakeholder comments on this by 12 January. </p><p>The new bill includes comprehensive provisions to regulate clinical trials, proposing jail terms and penalties for those flouting the standards. It also incorporates a separate chapter to regulate the import, manufacture, sale and distribution of medical devices.</p><p>IDMA president S V Veerramani underscored the need to ''properly'' define what constitutes a new drug under the amended regulations given the varying definitions used under India's Drug Prices Control Order 2013 and the Drugs and Cosmetics Rules, among others.</p><h2>Clinical trials</h2><p>But the joint secretary also received a round of applause when he indicated that the government expects to set timelines for trial related approvals very soon.</p><p>''From February onwards, nothing will be pending with the DCGI for approval /clearance for more than one month,'' Mr Sharma noted. </p><p>Trial related approvals previously took close to six months or more in some cases, though Mr Sharma referred to how the constitution of a large panel of subject experts had helped ease the process. </p><p>DCGI Dr Singh indicated that the once the subject expert committees make recommendations, the regulator would clear these proposals in the one month timeline.</p><p>India currently follows a three-tier review process for clinical trials, under which applications are evaluated by specialized new drugs advisory committees (NDACs) [or subject expert committee (SEC)]. The recommendations of the NDACs are then reviewed by a technical committee and finally cleared by the apex committee in accordance with previous Supreme Court order.</p><p>India had recently notified a slew of much awaited modifications in its clinical trial compensation regulations including clarifications concerning injury or death due to an investigational product not having its intended therapeutic effect and on the requirement of free medical management for trial-related injury <a href="http://%5bhttp:/www.scripintelligence.com/home/India-notifies-tweaked-trial-compensation-rules-355884%5d" target="_new">(scripintelligence.com, 30 December 2014)</a>. The tweaked rules appeared to have brought some hope for the country's beleaguered clinical research sector, which has witnessed a significant slow-down over the recent past amid uncertainties and delays caused by still-evolving regulations and ongoing trial-related litigation.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 190
+
+<p>If the annual meeting of the Indian Drug Manufacturers' Association (IDMA) is anything to go by, then the drug regulatory regime in the country appears set for a significant makeover.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 77
+
+Indian manufacturer meeting Regulator sets tough tone declines friend request
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150701T201245
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150701T201245
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150701T201245
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027489
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 82
+
+Indian manufacturer meeting: Regulator sets tough tone, declines 'friend' request 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355987
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042230Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a06980f8-f85e-4cbf-bc99-d48bd5f1faeb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042230Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

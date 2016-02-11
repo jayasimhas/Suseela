@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {0EF0CB38-1C8D-486F-A4A9-93EE03A34C4C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/09/Biogens S1P Modulator License ndash A Good Deal Done Too Late
+parent: {3B23AF36-6608-40B4-A2F2-A35E455DD1A5}
+name: Biogens S1P Modulator License ndash A Good Deal Done Too Late
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4801d676-ecbe-4797-8cea-8d7b50100802
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Biogen's S1P Modulator License &ndash; A Good Deal Done Too Late?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+Biogens S1P Modulator License ndash A Good Deal Done Too Late
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6798
+
+<p>Biogen's license for the sphingosine 1-phosphate (S1P) receptor modulator MT-1303 from Mitsubishi Tanabe for up to $544m makes a lot of sense, but with four S1P-targeting drugs approved or in late-stage development did Biogen execute a good deal too late to catch up with the competition?</p><p>Cambridge, Massachusetts-based Biogen said on Sept. 9 that it will pay $60m up front and up to $484m in milestone fees plus royalties for global rights outside of Asia for MT-1303, which the company plans to rapidly advance into Phase III for multiple sclerosis (MS) &ndash; Biogen's main area of expertise. However, several competitors have S1P-targeting therapies that are years ahead of MT-1303, including the Phase III drug ozanimod that Celgene bought in its recently completed $7.2bn acquisition of Receptos.</p><p>"We like this deal in that it's cheap and an obvious strategic fit for Biogen. However, we obviously need much more data before including it in our model" of future earnings, Evercore ISI analyst Mark Schoenebaum said in a Sept. 9 report.</p><p><b>Ozanimod Leads, MT-1303 Follows</b></p><p>MT-1303 also is in early to mid-stage development for multiple autoimmune diseases, such as ulcerative colitis (UC) and Crohn's disease, which could diversify Biogen's asset and revenue base beyond MS and hemophilia. The company will investigate the drug's potential in inflammatory bowel disease as well. </p><p>Biogen's chief medical officer Alfred Sandrock said in the company's announcement of the deal that MT-1303 may be a best-in-class S1P modulator based on "compelling efficacy and safety data." </p><p>But without publicly available clinical trial results for the Mitsubishi Tanabe drug, it's hard to determine whether MT-1303 has a better safety profile than Novartis's approved S1P-targeting drug Gilenya (fingolimod) for MS or whether it has better efficacy than ozanimod, which appeared to be effective without the cardiovascular risks associated with Gilenya in trials conducted by Receptos.</p><p>Sagient Research analyst Edny Inui said Biogen's license agreement for MT-1303 appears to be a lifecycle management deal in response to Gilenya's upcoming loss of patent exclusivity. </p><p>"While not much is known about [MT-1303's] safety profile, there was a lot of interest in the better cardiac and hepatic profile of ozanimod. Ozanimod reported no QT interval prolongation and had lower liver transaminase elevations. It is possible that MT-1303 mirrors this better safety profile and would be a good next-generation compound as Gilenya's patent expires in 2019," Inui said.</p><p>However, Celgene also noted <a href="http://#http://www.scripintelligence.com/home/Celgene-diversifies-with-7.2bn-Receptos-buy-359431" target="_new">when it agreed to buy Receptos</a> that ozanimod could be a best-in-class S1P modulator for multiple indications. The company also said when the Receptos acquisition closed in late August that it expects Phase III data for ozanimod in relapsing MS (RMS) in the first half of 2017 and in UC in 2018 with regulatory approval for RMS anticipated in 2018 &ndash; at least two years before any regulatory decisions are likely for Biogen's newly licensed drug. </p><p>Biogen revealed little about its development plans for MT-1303 other than to say the company is "evaluating a rapid development program" in MS. Biogen also may advance the drug into Phase III for Crohn's disease and it plans to initiate a UC clinical trial. </p><p>Mitsubishi Tanabe retained the right to participate in Biogen's clinical trials and the Japanese company may co-promote MT-1303 in the US for all non-MS indications.</p><p>Schoenebaum said Biogen may begin its Phase III MS program in 2016, which would generate data in 2019 at the earliest, putting regulatory approvals and commercialization two to three years behind ozanimod for MS and even further out for UC.</p><p>As for data to support late-stage development of MT-1303, Biogen told Schoenebaum that Phase II MS results will be reported during the European Committee for Treatment and Research in Multiple Sclerosis (ECTRIMS) Congress from Oct. 7 to 10 in Barcelona, Spain, which could show differentiation from ozanimod, the Evercore ISI analyst said in his note to investors.</p><p><b>Competition Abounds</b></p><p>Gilenya, which Novartis licensed from Mitsubishi Tanabe in 1997, is in Phase III development for the treatment of chronic inflammatory demyelinating polyneuropathy (CIPD) with regulatory approvals expected in 2017 and 2018 &ndash; a year before its key US patent will expire.</p><p>Behind Gilenya in S1P-targeting drug development is another candidate from Novartis, BAF312, which is in Phase III for MS with regulatory approvals expected in 2019. Ozanimod has a head start compared with BAF312, if Celgene can stick to its goal of approvals for the treatment of MS in 2018, and it likely will hit the market before ponesimod from Actelion Pharmaceuticals, which began its Phase III clinical program in May.</p><p>Sagient Research's BioMedTracker database also shows that Arena Pharmaceuticals, Ono Pharmaceutical Co. and Lpath Inc. have Phase II S1P-targeting drugs in Phase II for UC, MS and wet age-related macular degeneration, respectively. Those drugs and three others from Novartis, Ono and Actelion are in Phase I for various indications.</p><p>Sagient's analyst Inui recently spoke with a key opinion leader (KOL) in the MS field who noted that ozanimod may hit the market around the time that Gilenya loses patent protection, so the Celgene drug and other S1P-targeting therapies will have to show improved safety compared with Novartis's first-generation drug to compete with lower-priced fingolimod generics. Even so, payers may require patients to try Gilenya first before they begin treatment with ozanimod, the KOL said.</p><p>"We expect approval of ozanimod in late 2018, and even with a very aggressive timeline, the earliest I would expect approval of MT-1303 is in early 2020," Inui said. "If ozanimod beats out generic Gilenya on the basis of its safety profile, we expect that Biogen will be relying on its strong presence in the MS space to play catch-up with Celgene/Receptos."</p><p>Biogen closed down 1.7% at $303.48 per share on Sept. 9 after trading as high as $317.83 earlier in the day after the company announced that it licensed MT-1303. The dip may reflect the retreat in broader stock market indices during the second half of trading on Sept. 9. The stock's small decline also may reflect investors' ongoing concern that Biogen is <a href="http://www.scripintelligence.com/home/Biogen-too-slow-to-act-on-MandA-359628" target="_new">late to catch up with its competitors</a> in acquiring drugs for its mid- and late-stage development pipeline.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 295
+
+<p>Biogen's license for the sphingosine 1-phosphate (S1P) receptor modulator MT-1303 from Mitsubishi Tanabe for up to $544m makes a lot of sense, but with four S1P-targeting drugs approved or in late-stage development did Biogen execute a good deal too late to catch up with the competition?</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Biogens S1P Modulator License ndash A Good Deal Done Too Late
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150809T120406
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150809T120406
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150809T120406
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029720
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Biogen's S1P Modulator License &ndash; A Good Deal Done Too Late?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360290
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042447Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4801d676-ecbe-4797-8cea-8d7b50100802
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042447Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {61814DF1-E815-4CEA-A3AB-7F9D6071E793}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/IPO keeps Adaptimmune in immunotherapy race as bets pass 15bn
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: IPO keeps Adaptimmune in immunotherapy race as bets pass 15bn
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 20bb618e-6c3f-46e8-9c34-b97f7aebe017
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 233
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+IPO keeps Adaptimmune in immunotherapy race as bets pass $1.5bn
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+IPO keeps Adaptimmune in immunotherapy race as bets pass 15bn
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6066
+
+<p>Adaptimmune has become the latest immunotherapy company to raise a large chunk of cash on a US stock exchange, raising an estimated $175m net of expenses through a 6 May offering of American Depositary Shares on Nasdaq. In an area of huge potential but little clinically-proven differentiation, the new money may provide a sufficient financial springboard for the Oxford, UK-based company to throw cash at product development, slugging it out with well-backed US-based firms such as Bellicum Pharmaceuticals, Kite Pharma and Juno Therapeutics, as well as with established competitors such as Novartis. </p><p>Following its IPO, Adaptimmune and its three flourishing US competitors, Bellicum, Kite and Juno have raised over $1.5bn from the capital markets since January 2014 (Table 1). Around a third of that ($593m), including Adaptimmune's $104m series A round in September 2014 and Juno's $310m from A and B rounds completed in 2014, came from pre-public finances. The other two-thirds came from public markets and includes Juno's massive $281m IPO and a $216m secondary offering from Kite in December 2014 after its August 2014 IPO.</p><p>That amount of money usually chases advanced clinical assets, but none of the companies involved, including Adaptimmune, has any asset that has gone beyond a Phase II trial. The Phase II trial of Kite's most advanced product, its anti-NY ESO-1 T Cell Receptor-engineered T cell, for instance, is not expected to read out until 2017 at the earliest. Juno's anti-CD19 and anti-WT1 products have a similar timescale. Bellicum is still expecting the results of the safety trials on its products in blood and prostate cancer. </p><p>Adaptimmune's own anti-NY ESO TCR programs in synovial sarcoma, multiple myeloma, melanoma, esophageal and ovarian cancer and non-small cell lung cancer are largely in the recruitment phase and, in any case, are all partnered with GlaxoSmithKline, a company that has taken a strategic decision to put all its cancer programs in the hands of another company (Novartis) while it frolics in voluminous lagoons of consumer healthcare. Adaptimmune's wholly-owned products, including MAGE A-10 T cell receptor-engineered T cells in breast, lung and other solid tumors, are still in preclinical development.</p><p>The way is still clear, therefore, for any of these pretenders to the CAR-T cell/TCR throne or, indeed, others to register a decisive clinical strike. </p><p>As the clinical clock ticks on, the companies are looking to bolt on adjuncts to their technologies. On the day of Adaptimmune's IPO, Juno announced a four-year "strategic alliance" with Fate Therapeutics to develop small molecule modulators of Juno's genetically modified T cell products, chemical switches that can turn the T cell products on or, more likely, off (in order to address safety concerns). That addition puts Juno on a technical trajectory similar to that of Bellicum which has its own safety-switch approach in which a small molecule, rimiducid, is used to induce dimerization and activation of proto-immune agents.</p><table><h2>Table 1. War-chests for coming immunotherapy battles</h2><th><tr><td><p>&nbsp;</td><td><p>Adaptimmune</p>&nbsp;</td><td><p>Bellicum</p>&nbsp;</td><td><p>Juno </p>&nbsp;</td><td><p>Kite</p>&nbsp;</td><td><p>Total</p>&nbsp;</td></tr></th><tbody><tr><td><p>Total cash raised since January 2014</p>&nbsp;</td><td><p>$279.5m</p>&nbsp;</td><td><p>$243m</p>&nbsp;</td><td><p>$591.4m</p>&nbsp;</td><td><p>$400.1m</p>&nbsp;</td><td><p>$1514m</p>&nbsp;</td></tr><tr><td><p>IPO funds raised</p>&nbsp;</td><td><p>$175.5m net*</p>&nbsp;</td><td><p>$149 net</p>&nbsp;</td><td><p>$281.4m net</p>&nbsp;</td><td><p>$134.1m net</p>&nbsp;</td><td><p>$739m</p>&nbsp;</td></tr><tr><td><p>Secondary offering</p>&nbsp;</td><td><p>-</p>&nbsp;</td><td><p>-</p>&nbsp;</td><td><p>-</p>&nbsp;</td><td><p>$216m gross (Dec 2014)</p>&nbsp;</td><td><p>$216m</p>&nbsp;</td></tr><tr><td><p>Recent prior private financings</p>&nbsp;</td><td><p>$104m A round, Sept 2014</p>&nbsp;</td><td><p>Convertible C round $55m (plus $39m in warrants on IPO), 2014</p>&nbsp;</td><td><p>April 2014 $176 A round; Aug 2014 $134m B round</p>&nbsp;</td><td><p>$50m mezzanine round, April 2014 </p>&nbsp;</td><td><p>$593m</p>&nbsp;</td></tr><tr><td><p>A round to IPO (months)</p>&nbsp;</td><td><p>8 </p>&nbsp;</td><td><p>63 </p>&nbsp;</td><td><p>8 </p>&nbsp;</td><td><p>16 </p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Product differentiation</p>&nbsp;</td><td><p>Use of modified T Cell Receptors broadens range of potential cancer targets to include internal targets </p>&nbsp;</td><td><p>T cell function is activated or deactivated by small molecule 'switches', to control potential side-effects</p>&nbsp;</td><td><p>Licensing Fate Therapeutics' small molecule modulators of CAR-T cell action</p>&nbsp;</td><td><p>TCR products as well as CAR-T cell approaches: Amgen relationship provides cancer targets</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>IPO price</p>&nbsp;</td><td><p>$17</p>&nbsp;</td><td><p>$19</p>&nbsp;</td><td><p>$24</p>&nbsp;</td><td><p>$29</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Price on 7 May 2015</p>&nbsp;</td><td><p>$16.4</p>&nbsp;</td><td><p>$23.5</p>&nbsp;</td><td><p>$44</p>&nbsp;</td><td><p>$55.5</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>IPO shares</p>&nbsp;</td><td><p>11.25m ADS</p>&nbsp;</td><td><p>74m</p>&nbsp;</td><td><p>12.7m</p>&nbsp;</td><td><p>8.6m</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>IPO date</p>&nbsp;</td><td><p>6 May 2015</p>&nbsp;</td><td><p>18 Dec 2014</p>&nbsp;</td><td><p>29 Dec 2014</p>&nbsp;</td><td><p>August 2014</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Academic groups associated</p>&nbsp;</td><td><p>University of Oxford</p>&nbsp;</td><td><p>Leiden University Medical Center</p>&nbsp;</td><td><p>Fred Hutchinson Cancer Research Center/Memorial Sloan Kettering Cancer Center</p>&nbsp;</td><td><p>National Cancer Institute; Technische Universität München, Netherlands Cancer Institute</p>&nbsp;</td><td><p>&nbsp;</td></tr></tbody></table><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 609
+
+<p>Adaptimmune has become the latest immunotherapy company to raise a large chunk of cash on a US stock exchange, raising an estimated $175m net of expenses through a 6 May offering of American Depositary Shares on Nasdaq. In an area of huge potential but little clinically-proven differentiation, the new money may provide a sufficient financial springboard for the Oxford, UK-based company to throw cash at product development, slugging it out with well-backed US-based firms such as Bellicum Pharmaceuticals, Kite Pharma and Juno Therapeutics, as well as with established competitors such as Novartis. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+IPO keeps Adaptimmune in immunotherapy race as bets pass 15bn
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028651
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+IPO keeps Adaptimmune in immunotherapy race as bets pass $1.5bn
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358153
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+20bb618e-6c3f-46e8-9c34-b97f7aebe017
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {A0A30511-9A17-4553-BD79-04F16326DBB2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/03/Daewoong inks Autodelic deal to help international expansion
+parent: {094E6653-2FC9-44E2-B6F8-714841AEEBB9}
+name: Daewoong inks Autodelic deal to help international expansion
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e36c1369-08f1-4a98-b091-88d80f3f3b1c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Daewoong inks Autodelic deal to help international expansion
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Daewoong inks Autodelic deal to help international expansion
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4729
+
+<p>After a fairly smooth launch for its combination drug Olostar in South Korea last year, Daewoong Pharmaceutical is now taking the product into global markets as part of its international expansion strategy.</p><p>Daewoong, which like its peers in the country's pharma sector is trying to expand its international presence, has signed a deal with Autotelic of the US to sell its incrementally modified drug Olostar.</p><p>Daewoong said it is aiming to launch Olostar in North America as what it claims to be the world's first fixed-dose combination of olmesartan and rosuvastatin, to treat both hypertension and dyslipidemia simultaneously.</p><p>"Autotelic will conduct clinical trials in the US to begin sales in the US and Canada beginning in 2019,&rdquo; Daewoong told <i>Scrip's</i> sister publication <i>PharmAsia News</i>, noting that it expects to provide product to Autotelic worth as much as KRW300bn ($272m) during the initial ten years after launch.</p><p>The South Korean firm did not disclose financial details of the tie-up, saying that these would be discussed in further detail ahead of the planned international launches.</p><p>In addition to the two North American countries &ndash; set to become the first foreign markets for the product &ndash; Daewoong said it would also be gearing up to expand sales of the product to more than 50 countries including in Europe.</p><p>After winning an approval from South Korea's Ministry of Food and Drug Safety in early 2014, Daewoong began domestic sales of the product in April 2014, posting sales of about KRW6bn so far.</p><p>Daewoong said Olostar has no drug interactions between the main components to deliver the same effect as separately co-administered medication. The drug uses proprietary bi-layer tablet technology, which is pending domestic and international patents, to minimize physical and chemical interactions between the two active components.</p><p>The technology optimizes absorption of the two drugs in the body by adjusting the surface area of drug particles separated in the layers to induce a time lag release, the firm added.</p><h2>Global Expansion</h2><p>Established in 1945, Daewoong is retaining its leading position in prescription drug sales in South Korea and as it tries to reach out to global markets, it has so far set up a presence in seven countries &ndash; the US, China, Vietnam, Thailand, Philippines, Indonesia and India.</p><p>To that effect, Daewoong in 2013 purchased China's Liaoning Baifeng for $16m while it has also signed a joint-venture agreement with PT.infion of Indonesia.</p><p>Also that year, Daewoong signed a deal with Turkey's Abdi Ibrahim Ilac Sanayi ve Tic to sell treatments for renal insufficiency and diabetic foot ulcers. </p><p>Beyond Asia, Daewoong is trying to reach out for more deals with multinationals as part of its bid to survive a rapidly changing market environment at home, which had included tightened regulation of rebates and other irregular business practices. In 2011, Daewoong cut a co-promotion deal with Merck & Co to co-promote Merck & Co Vytorin (ezetimibe/simvastatin) in South Korea. </p><p>Daewoong is also one of "43 Innovative Pharma Firms" designated by South Korea's Ministry of Health and Welfare in 2012 for support to boost local research and development activity through financial and tax incentives. The companies are all local except the South Korean unit of Otsuka Pharmaceutical. </p><h2>Riken Collaboration</h2><p>As it reaches out for more international partnerships, in late February this year, Daewoong also signed a formal deal in Seoul with the Japanese national research institute Riken to back up a basic agreement last year for stronger and deeper collaboration.</p><p>In November, the two partners signed a memorandum of understanding to jointly work on R&D, personnel exchanges, and joint use of research facilities, equipment and technical support for drug development.</p><p>The MoU called for Daewoong and Riken to form a cooperation committee to promote an efficient and systematic drug development partnership, and for plans to conduct pharmacokinetic prediction and clinical dose setting studies through modeling and simulation techniques, and clinical dose setting studies using drug-drug interactions and genetic differences.</p><p>Founded in 1917, Riken is Japan's largest research institute for basic and applied research on a broad spectrum of disciplines including physics, chemistry, biology, engineering, and medical science.</p><p>This article first appeared in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/3/4/daewoong-inks-autotelic-deal-to-help-international-expansion" target="_new">PharmAsia News</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 213
+
+<p>After a fairly smooth launch for its combination drug Olostar in South Korea last year, Daewoong Pharmaceutical is now taking the product into global markets as part of its international expansion strategy.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Daewoong inks Autodelic deal to help international expansion
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150103T165847
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150103T165847
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150103T165847
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028008
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Daewoong inks Autodelic deal to help international expansion
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{088691EE-A918-4A72-877F-2DDEEFB5CAD4}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356998
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042304Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e36c1369-08f1-4a98-b091-88d80f3f3b1c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042304Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

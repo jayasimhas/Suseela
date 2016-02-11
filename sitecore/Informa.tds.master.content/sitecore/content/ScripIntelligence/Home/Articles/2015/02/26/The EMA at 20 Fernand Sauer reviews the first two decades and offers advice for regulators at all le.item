@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {54447B7F-959F-4A68-8FA2-6C9AB185C58C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/26/The EMA at 20 Fernand Sauer reviews the first two decades and offers advice for regulators at all le
+parent: {36275DB8-48EA-487C-BD7F-C8F8E306B3C7}
+name: The EMA at 20 Fernand Sauer reviews the first two decades and offers advice for regulators at all le
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b3746eb1-4afc-4b18-9306-a46355058470
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 105
+
+The EMA at 20: Fernand Sauer reviews the first two decades and offers advice for regulators at all levels
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 100
+
+The EMA at 20 Fernand Sauer reviews the first two decades and offers advice for regulators at all le
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5526
+
+<p><b>In January this year, the European Medicines Agency celebrated the 20th anniversary of its creation in 1995. To mark the occasion, <i>Scrip Intelligence</i> and its sister publication <i>Scrip Regulatory Affairs</i> invited a range of individuals and stakeholder bodies to tell us what they think the agency has achieved, and what still remains to be done. </b></p><p><b>Over the next couple of weeks, in the run-up to the invitation-only scientific conference that the EMA is holding to mark the anniversary in London on 18 March, you'll be able to read what they have to say. We'll be publishing articles by &ndash; among others &ndash; the first two executive directors of the EMA, Fernand Sauer and Thomas Lönngren, the Heads of Medicines Agencies group, industry associations EFPIA and the EGA, patient group Eurordis, the European Ombudsman, and Health Action International. </b></p><p><b>The articles will provide valuable insight into some of the key challenges the EMA and the European pharmaceutical regulatory network as a whole are facing and where they are headed as the agency moves into its third decade.</b></p><p><b>To kick off the series, Fernand Sauer, the first executive director of the EMA, offers some advice for the network and more broadly for the bodies involved in medicines regulation on a global level.</b></p><p>This year we celebrate 50 years of European pharmaceutical legislation, 25 years of the International Conference on Harmonisation and 20 years of the European Medicines Agency. Just recently, I had the privilege to participate in the official inauguration of the EMA&rsquo;s new premises in the Canary Wharf area of London, exactly 20 years after the birth of the agency close by in the same area on 26 January 1995. </p><p>Having been responsible for the European harmonisation programme that led to the establishment of the EMA, and for the setting up of the ICH, I feel proud to see the results of these continuous efforts to accelerate access to innovative medicines and rationalise drug testing. </p><p>In 1995, with just sixteen members of staff and a dedicated network of European experts, we began to build the foundations of scientific excellence, integrity, reliability and transparency. We delivered on time high quality opinions, European public assessment reports (EPARs) and useful scientific advice and we launched the orphan drugs programme. The agency became a joint venture for the protection and promotion of public health, owned by national drug regulatory agencies as well as by European institutions. </p><p>EMA membership was progressively extended to cover the EU countries plus Norway, Iceland and Liechtenstein. The agency deployed significant resources for the preparation of the accession of new member states under the "Pan European Regulatory Forum". </p><p>Having ratified in 1994 the accession of the European Union to the European Pharmacopeia, I was keen to develop activities with the many European countries that were signatories to the EP convention (there are now 37). The agency also created strong links with the World Health Organization, the US Food and Drug Administration, Japan and many other countries. </p><p>When I left for the public health directorate at the European Commission at the end of 2000, I was confident that the EMA and the agency&rsquo;s by then 200-strong staff were perfectly able to cope with new tasks and challenges. Patients and professional organizations were progressively included in several committees and in the governance of the agency. </p><p>The 800 people working today at the EMA are facing extended responsibilities and an increasing workload. They do it very well and I was happy to congratulate 12 former colleagues on their well-deserved 20 years&rsquo; service medal. I am particularly pleased to see the agency co-operating with the European network for health technology assessment, which I supported under the EU health programme. </p><h2>Looking forward </h2><p>Looking now to the future, EU regulators must try to avoid excessive complexity and bureaucracy at a time when personalized medicines are ripe for continuous and more flexible evaluations. Public health training should be systematically provided for all experts and staff members, with particular value being given to quality of life aspects. In the coming years, the European Commission should consider proposals to transfer the present clinical trial authorization system to the EMA. The commission should also delegate marketing authorization decisions to the EMA, except where these involve difficult ethical aspects. </p><p>The ICH process should become more transparent and should be expanded to include representatives from patients and health professionals. The WHO should be more proactive in disseminating ICH results and providing feedback from other regions. In order to measure the real degree of international harmonisation achieved so far, the FDA and Japan should publish their evaluations like the EMA has done with EPARs for 20 years. In that way, independent observers could compare final outcomes, especially on safety issues, for the benefit of the rest of the world.</p><p><i>Fernand Sauer was the first executive director of the European Medicines Agency and led the agency from its establishment in January 1995 until November 2000. As an honorary director general of the European Commission, Mr Sauer continues to advise European institutions and EU agencies on health and pharmaceutical issues.</i></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 371
+
+<p><b>In January this year, the European Medicines Agency celebrated the 20th anniversary of its creation in 1995. To mark the occasion, <i>Scrip Intelligence</i> and its sister publication <i>Scrip Regulatory Affairs</i> invited a range of individuals and stakeholder bodies to tell us what they think the agency has achieved, and what still remains to be done. </b></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 100
+
+The EMA at 20 Fernand Sauer reviews the first two decades and offers advice for regulators at all le
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150226T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150226T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150226T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027985
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 105
+
+The EMA at 20: Fernand Sauer reviews the first two decades and offers advice for regulators at all levels
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{697FF12F-4C33-4382-85FF-C93AFCB28F94}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356956
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b3746eb1-4afc-4b18-9306-a46355058470
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

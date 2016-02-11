@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {10398871-CF3D-4E82-B6E3-58E422CF35CD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Viehbacher received euro3m payoff from Sanofi
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Viehbacher received euro3m payoff from Sanofi
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4b7e6be2-d643-40d6-b071-ee9651377bca
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Viehbacher received &euro;3m payoff from Sanofi
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Viehbacher received euro3m payoff from Sanofi
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3653
+
+<p>Sanofi has confirmed its former chief executive Chris Viehbacher received almost &euro;3m in a payoff transaction at the end of 2014 after he was fired. </p><p>The French big pharma confirmed it will also continue to pay Mr Viehbacher a figure of nearly &euro;250,000 a month until June 2015, in exchange for his agreement to a non-compete clause. </p><p>Information relating to the former CEO's severance package was released by Sanofi on Thursday. The drug maker said in a statement, released in accordance with the recommendations of the AFEP-MEDEF corporate governance code, that it will pay Mr Viehbacher &euro;2,961,000, a number it said corresponds to his fixed and variable compensation for one year. </p><p>It also noted that Mr Viehbacher will be unable to hire away previous employees from Sanofi over the next 18 months and he is bound by a confidentiality agreement for 24 months. </p><p>Mr Viehbacher was fired from the company in October 2014, two days after the Sanofi board announced that succession plans for him were not on the agenda. At the time of his ousting Sanofi did not give a clear single reason for the removal of its head and in its 22 January statement the company said again Mr Viehbacher's firing was not linked to misconduct. As such Mr Viehbacher, who holds German and Canadian nationalities, will keep the ability to exercise the options to subscribe for shares of the company that were already awarded to him. </p><p>However, chair and interim CEO Serge Weinberg publicly described Mr Viehbacher's problem was one of execution (<a href="http://www.scripintelligence.com/home/Viehbachers-supposed-failings-from-Brazil-to-Phoenix-via-Lantus-354735" target="_new">scripintelligence.com, 29 October 2014</a>). Mr Weinberg cited the unexpectedly poor recent performance and outlook for the company's blockbuster basal insulin Lantus (insulin glargine) in the US. The company revealed in its third-quarter results last October that the outlook for its diabetes franchise would be flat for 2015. </p><p>Nearly three months on Sanofi is still searching for a successor to Mr Viehbacher, and Mr Weinberg remains acting CEO of the company. The company has given no indication as to when it will appoint a new chief, but has repeatedly said its search is not confined to French nationals only. Nevertheless, speculation has centered on prominent French executives since Mr Viehbacher's departure, as some said there was friction at Sanofi after its former CEO relocated to Boston, US in 2014. </p><p>Mr Viehbacher's payoff figure, though almost reaching &euro;3m, could seem modest in comparison with some previous severance payments made by big pharmas to departing CEOs. </p><p>In 2003, controversy swirled around GlaxoSmithKline's recommended remuneration package, including a &pound;22m (approximately $33m) severance deal, for CEO Dr Jean-Pierre Garnier. However the payment was eventually rejected by shareholders (<a href="http://www.scripintelligence.com/home/news/GlaxoSmithKline-shareholders-reject-CEOs-Chief-Executive-Officers-pay-deal-48398" target="_new">scripintelligence.com, 21 May 2003</a>). </p><p>And in 2013 Novartis's ex-CEO Daniel Vasella signed a six-year CHF72m (approximately $82m) non-compete agreement with the company upon his departure. But the payment was subsequently cancelled in the face of shareholder and Swiss public outcry (<a href="http://www.scripintelligence.com/home/Vasella-signs-final-deal-with-Novartis-345063" target="_new">scripintelligence.com, 17 July 2013</a>). Dr Vasella eventually signed a final deal which saw him take away a much smaller figure of CHF2.7m ($2.9m). </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 160
+
+<p>Sanofi has confirmed its former chief executive Chris Viehbacher received almost &euro;3m in a payoff transaction at the end of 2014 after he was fired. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Viehbacher received euro3m payoff from Sanofi
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T174604
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T174604
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T174604
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027615
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Viehbacher received &euro;3m payoff from Sanofi
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356254
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4b7e6be2-d643-40d6-b071-ee9651377bca
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

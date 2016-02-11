@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A3D398E5-A9CA-49AE-A31C-945F73FAF669}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/29/Lilly to trial kinase inhibitors with Immunocores TCR candidate in melanoma
+parent: {68A2ECAC-4A73-44F9-845E-28AA553B04B7}
+name: Lilly to trial kinase inhibitors with Immunocores TCR candidate in melanoma
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 91346169-1798-4430-922b-d5fad3d7eebf
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 76
+
+Lilly to trial kinase inhibitors with Immunocore's TCR candidate in melanoma
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 75
+
+Lilly to trial kinase inhibitors with Immunocores TCR candidate in melanoma
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4526
+
+<p>Eli Lilly has signed a second collaboration with Immunocore, this time exploring the use of Immunocore's lead T-cell receptor based investigational therapeutic, IMCgp100, in combination with Lilly's galunisertib (LY2157299) and merestinib (LY2801653) for the treatment of melanoma. </p><p>The deal is "very similar" to one signed with AstraZeneca's MedImmune unit in April to combine the big pharma's checkpoint inhibitors MEDI4736 (anti-PD-L1) and tremelimumab (anti-CTLA-4) with IMCgp100, Immunocore's CEO Eliot Forster told <i>Scrip</i>.</p><p>Lilly's galunisertib is a small-molecule inhibitor of TGF beta R1 kinase that <i>in vitro</i> selectively blocks TGF beta signaling. Merestinib is Lilly's small-molecule multi-kinase inhibitor that <i>in vitro</i> selectively blocks signaling of MET, MST1R (RON), AXL, and MKNK1/2. Both candidates are in Phase II testing for a variety of oncology indications.</p><p>"Our belief is that the technology we have will be of benefit as a monotherapy, and additional benefits can be brought to patients using it in combination," explained Dr Forster. "What we're doing here is exploring further combinations where the tumor microenvironment can be modified through TGF beta kinase or MET or AXL kinase inhibitors and allowing the tumor infiltrating lymphocytes that are produced by the ImmTac that we deliver &ndash; IMCgp100 &ndash; to overcome any microenvironment inhibition."</p><p>IMCgp100 is Immunocore's most advanced Immune mobilizing mTCR Against Cancer molecules (ImmTAC), which are a novel class of bi-specific biologics based on T-cell receptors with ultra-high affinity for intracellular and extracellular cancer targets.</p><p>Under the new agreement, Immunocore and Lilly will conduct a Phase Ib/II study evaluating the safety and preliminary efficacy of IMCgp100 in combination with galunisertib in metastatic cutaneous melanoma. A second Phase Ib/II study will be conducted combining IMCgp100 with merestinib in metastatic uveal melanoma. Lilly will act as trial sponsor. These studies are anticipated to begin in 2016. No financial terms were disclosed.</p><p>"The trials will be of a recently robust size, so well over 100 patients," noted Dr Forster. "We would anticipate it will take around 18 months to run them."</p><p>Dr Forster believes that a negative outcome to these trials would not be detrimental to Immunocore's platform. </p><p>"The industry is continuously furthering its understanding of the immune microenvironment of tumors. Whatever results we get out of these trials will tell us more. Combination therapies appear, through the data that has been published over the past year or two, to give a better patient outcome. We are certainly cognizant of that and want to optimize that outcome. If that requires a combination, then we are happy with that. We are however seeing very good results with the monotherapy as well. We are very early in development but we're happy with what we have seen so far. The real joy of all of this is that combination therapies and monotherapies give physicians much greater options when they're seeing their patients, and that's really what's it's all about."</p><p>Immunocore and Lilly entered into a co-discovery and co-development collaboration, announced in July 2014, to potentially develop other novel T-cell-based cancer therapies built on Immunocore's ImmTAC platform.</p><p>"The earlier Lilly collaboration continues to progress well," said Dr Forster. "We don't disclose where we are or what we're looking at across any of our early stage combinations, but it's a productive partnership and we're delighted with it and I'm pretty sure Lilly is too." </p><p><p><b>Related stories:</b></p><p><a href="http://www.scripintelligence.com/home/Merck-AZ-Roche-BMS-work-off-grid-for-mix-and-match-immuno-oncology-358916" target="_new">Merck, AZ, Roche, BMS work off grid for mix-and-match immuno-oncology</a></p><p><a href="http://www.scripintelligence.com/business/AZ-to-test-checkpoint-inhibitors-with-Immunocores-TCR-candidate-357903" target="_new">AZ to test checkpoint inhibitors with Immunocore's TCR candidate</a></p><p><a href="http://www.scripintelligence.com/business/Immunocore-attracts-Lilly-in-co-co-deal-352895" target="_new">Immunocore attracts Lilly in co-co deal</a></p><p><a href="http://www.scripintelligence.com/business/AZ-third-big-pharma-to-strike-deal-for-Immunocores-T-Cell-technology-349156" target="_new">AZ third big pharma to strike deal for Immunocore's T-Cell technology</a></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 289
+
+<p>Eli Lilly has signed a second collaboration with Immunocore, this time exploring the use of Immunocore's lead T-cell receptor based investigational therapeutic, IMCgp100, in combination with Lilly's galunisertib (LY2157299) and merestinib (LY2801653) for the treatment of melanoma. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 75
+
+Lilly to trial kinase inhibitors with Immunocores TCR candidate in melanoma
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150629T160011
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150629T160011
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150629T160011
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029102
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 76
+
+Lilly to trial kinase inhibitors with Immunocore's TCR candidate in melanoma
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359075
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+91346169-1798-4430-922b-d5fad3d7eebf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

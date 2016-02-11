@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {6843A0D0-7531-4327-AA9E-40E630576E14}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/13/Gelesis shuts IPO window
+parent: {00E1F432-3245-46E7-B97A-7253B91FCA66}
+name: Gelesis shuts IPO window
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9045acd0-58c9-4668-81b7-fbab39c8396a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 24
+
+Gelesis shuts IPO window
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 24
+
+Gelesis shuts IPO window
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2931
+
+<p><p>The obesity drug market has been experiencing plenty of turmoil this week, with the latest being the postponement of the Gelesis initial public offering on 13 May. </p><p>The weight loss pill maker was hoping to bring in $60m through the sale of 4m shares at a price of $12 to $14 apiece. Research firm Renaissance Capital noted that company insiders were planning to cover up to 34% of the shares. The company intended to list on the NASDAQ under the symbol GLSS. </p><p>The company didn&rsquo;t' give a specific reason for postponing, but noted in an email that market conditions were not favorable. </p><p>"While Gelesis had the ability to price the IPO last week, we have been considering the ideal timing for this. The US biotech IPO market has been turbulent in the last few weeks with mixed aftermarket performance of most stocks that listed. Given our strong cash position, and clinical studies underway, our board has been weighing the relative benefits of being a public company at this time. The IPO for the company was opportunistic and we may consider pricing as market conditions evolve," said the company. </p><p>The IPO window for life science companies has <a href="http://#http://www.scripintelligence.com/home/Biotechs-sneaking-through-a-closing-IPO-window-358278" target="_new">begun to close</a>, with IPOs dropping precipitously from the year prior. Yet, most companies have been able to bring in more favorable valuations, but stocks have shown mixed results after debuting on the public market. </p><p>After nearly running out of cash last year, the privately-held biotech tapped venture investors in March to raise $22m led by PureTech Ventures and announced shortly after that it would seek an IPO. The cash was meant to fund clinical trials of the company's lead product, Gelesis100. The pill is not a typical drug with a chemical mechanism of action, but instead uses two generally recognized as safe products &ndash; citric acid and a form of cellulose &ndash; that expand in the gastrointestinal tract and make patients feel like they're full. The pill then passes through the body. Gelesis is hoping to have the pill on the US market by 2019.</p><p>Yet, Gelesis100 has a high hurdle to get over if it's going to become a contender. Patients on the drug in early studies only showed about 2% better weightloss than those on placebo and, according to the company's SEC filings, the FDA requires Gelesis100 have an efficacy of 3% or better when compared with placebo, as well as 35% of patients experiencing at least a 5% loss of body weight. </p><p>Obesity drugmakers have been floundering since a new wave of oral obesity pills entered the market three years ago. Biotechs Vivus, Arena Pharmaceuticals and Orexigen Therapeutics have been struggling to launch their respective weight loss drugs, but have encountered reimbursement issues and faced a tough time educating physicians. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 24
+
+Gelesis shuts IPO window
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150513T203144
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150513T203144
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150513T203144
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028711
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 24
+
+Gelesis shuts IPO window
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358318
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9045acd0-58c9-4668-81b7-fbab39c8396a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1A86454F-978D-4B7D-8630-D63D26A95521}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/04/Single dose of Profectus Ebola vaccine works in monkeys
+parent: {71B77356-F6BE-4338-8E8E-DDD3D21DC0D9}
+name: Single dose of Profectus Ebola vaccine works in monkeys
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 31e2c5d0-c68e-48fe-ac0d-58178e5bfb03
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{2E069F42-D0F0-4A2F-80B3-B8EEFC9D8071}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Single dose of Profectus' Ebola vaccine works in monkeys
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Single dose of Profectus Ebola vaccine works in monkeys
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3183
+
+<p>A single dose of Profectus BioSciences' experimental Ebola vaccine, which uses the firm's VesiculoVax vector platform, provided rapid and complete protection from sickness and death in macaques when challenged with a lethal dose of the Makona form of the Zaire virus &ndash; the strain responsible for the ongoing epidemic in West Africa, which has infected more than 25,500 people, killing over 10,500. </p><p>Dr John Eldridge, chief scientific officer at Profectus, said the study is the first to demonstrate that a vaccine is able to rapidly confer single-dose protection against the current Makona strain.</p><p>He noted that a key goal in the efforts to address the 2014-2015 outbreak of the highly lethal Ebola virus has been to develop a preventive vaccine that rapidly confers protection in a single administration.</p><p>The study, whose results <a href="http://www.nature.com/nature/journal/vnfv/ncurrent/full/nature14428.html" target="_new">were published in the 9 April issue</a> of the journal <i>Nature</i>, was authored by researchers at Profectus and the University of Texas Medical Branch at Galveston.</p><p>Profectus said its highly attenuated rVSVN4CT1 VesiculoVax vector used in the study is the foundation of its Ebola and Marburg monovalent and trivalent vaccines currently in development, which have been supported by grants from the US National Institutes of Health, the Biomedical Advanced Research and Development Authority (BARDA) and the Department of Defense (DOD).</p><p>Profectus said its VesiculoVax platform provides the flexibility to construct vaccine delivery vectors with different levels of attenuation &ndash; "a capability that enables the identification of vaccines that provide complete protection with the highest level of safety."</p><p>The company noted that other studies conducted by a team from the National Institute for Allergy and Infectious Diseases (NIAID), the Centers for Disease Control and Prevention, the FDA and DOD showed that a single dose of the Profectus VesiculoVax-vectored Ebola vaccine provided 100% protection of non-human primates against challenge with 1,000 times the lethal dose of low-passage, or highly virulent, Ebola Zaire virus. </p><p>Profectus said testing in non-human primates of its trivalent VesiculoVax-vectored vaccine to protect against all filoviruses is being supported by NIAID and DOD.</p><p>This past October, the company received a $9.5m contract award from DOD to support the manufacture of the trivalent rVSVN4CT-vectored Ebola/Marburg vaccine and Phase I clinical evaluation of the rVSVN4CT1-Zaire-Ebola virus vaccine for safety and immunogenicity. </p><p>A rapid follow-up trial of the trivalent vaccine also is planned.</p><p>Profectus previously received a $8.5m grant from DOD in July 2014 for a lyophilized trivalent VesiculoVax-vectored vaccine to protect against all major strains of Ebola and Marburg viruses delivered as aerosols.</p><p>Also in October 2014, Profectus was awarded a one-year $5.8m contract with BARDA to manufacture the VesiculoVax Zaire-Ebola vaccine candidate for use in the Phase I studies &ndash; a contract that can be extended to $8.6m.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 411
+
+<p>A single dose of Profectus BioSciences' experimental Ebola vaccine, which uses the firm's VesiculoVax vector platform, provided rapid and complete protection from sickness and death in macaques when challenged with a lethal dose of the Makona form of the Zaire virus &ndash; the strain responsible for the ongoing epidemic in West Africa, which has infected more than 25,500 people, killing over 10,500. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Single dose of Profectus Ebola vaccine works in monkeys
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150204T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150204T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150204T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028372
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Single dose of Profectus' Ebola vaccine works in monkeys
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199800425
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357637
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042327Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+31e2c5d0-c68e-48fe-ac0d-58178e5bfb03
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042327Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {E0741AA5-AD38-4DD6-AE39-89DDD3012D22}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/22/Another Reason Biopharma Insider Trading Is A Dumb Idea
+parent: {DB7AFD0C-FF3A-4A4A-B0E2-6A1121FFD09B}
+name: Another Reason Biopharma Insider Trading Is A Dumb Idea
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1af47ce4-2234-47a4-9d67-9591dd2a2cd2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Another Reason Biopharma Insider Trading Is A Dumb Idea
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Another Reason Biopharma Insider Trading Is A Dumb Idea
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5130
+
+<p>Two tax and estate planning lawyers and an accountant, plus two other men, have learned the hard way crime doesn't pay, especially when trying to trade on inside information involving biopharmaceutical firms &ndash; a sector the Securities and Exchange Commission (SEC) has been keeping a particularly close eye on in recent years.</p><p>The five men, all from Florida, were caught trading on insider information about Gilead Sciences Inc.'s $11bn acquisition of Pharmasset Inc. and its hepatitis C virus drug Sovaldi (sofosbuvir).</p><p>The accused insider traders have agreed to fork over $489,000 in ill-gotten gains, prejudgment interest and civil penalties to the U.S. government to settle the charges, the SEC said on Sept. 28.</p><p>Although, certainly, it could have been much worse for the five men, who so far have appeared to have escaped jail time for their alleged crimes &ndash; unlike former hedge fund portfolio manager Mathew Martoma, who got a <a href="http://www.scripintelligence.com/home/Insider-trader-in-bapineuzumab-case-gets-9-year-sentence-353766" target="_new">nine-year prison sentence</a> and was penalized $9.3m last year for his role in an insider trading scheme involving Pfizer's and Johnson & Johnson's Alzheimer's drug bapineuzumab.</p><p>Martoma was among a string of several insider traders <a href="http://www.scripintelligence.com/home/Accused-insider-trader-undeterred-by-big-biopharma-busts-353586" target="_new">nabbed in recent years</a> by the SEC in plots involving biopharmaceutical deals, although his was certainly the largest case &ndash; amounting to just over $275m in illegal profits and avoided losses.</p><p>The Florida lawyers in the latest case, Robert Spallina and Donald Tescher, and the accountant, Steven Rosen, were made privy to the Gilead deal two weeks before it occurred through a mutual client, a Pharmasset board member, during that person's yearend personal tax and estate planning, the SEC said. </p><p>Spallina, Tescher and Rosen allegedly then purchased Pharmasset securities based on the confidential nonpublic information.</p><p>Spallina also tipped off his next-door neighbor Brian Markowitz, who officials described as an "experienced securities trader," and another friend, Thomas Palermo, who was a financial adviser at a Florida brokerage firm, about the Gilead-Pharmasset deal, and they, too, bought stock in the latter firm based on the inside information.</p><p>Gilead initially made the offer to acquire Pharmasset for $100 per share in cash on Sept. 2, 2011, but upped the bid a few more times &ndash; first to $125 per share, then $135 per share and finally settling on $137 per share. </p><p>After the acquisition was revealed on Nov. 21, 2011, Pharmasset's stock shot up 84.6%, or $61.47, to $134.14.</p><p>The five accused insider traders then allegedly liquidated their holdings &ndash; reaping $234,000 of illegal profits, the SEC asserted.</p><p>The Pharmasset board member had divulged the confidential and nonpublic information about the deal on Nov. 8, 2011 to Spallina, Tescher and Rosen for the sole purpose of obtaining legal, tax and financial advice. </p><p>Tescher's and Spallina's Boca Raton, Fla. law firm specialized in advising high-net worth individuals, families and businesses on wealth transfer planning, income tax planning, charitable and exempt organization planning and related trust and estate matters. </p><p>But the two lawyers and the accountant breached their fiduciary and other duties of trust by using the nonpublic information to trade on, and in Spallina's case, assisted his friends in doing the same, the SEC charged.</p><p>"By knowingly or recklessly" engaging in that conduct, the five men would have continued on that path, unless prohibited, the SEC said in its complaint filed in the U.S. District Court for the District of New Jersey.</p><p>The agency asked the court to "permanently enjoin defendants from engaging in the transactions, acts, practices and courses of business alleged" and to "obtain disgorgement, prejudgment interest and civil money penalties and such other and further relief as the court may deem just and appropriate."</p><p>The five men weren't the only ones to have gotten caught trading on the insider knowledge about the Gilead-Pharmasset deal.</p><p>In January 2013, Morgan Stanley broker Kevin Dowd was arrested at his home on insider trading charges related to the acquisition &ndash; information that came his way also from a Pharmasset board member.</p><p>Dowd later pleaded guilty to tipping off a childhood friend to the deal, who purchased about $196,000 worth of Pharmasset stock &ndash; netting $163,621 based on that insider information.</p><p>That friend went on to inform another person, who in turn purchased 100 highly speculative "out-of-the-money" call options in Pharmasset.</p><p>In exchange for the insider information on the Gilead-Pharmasset deal, Dowd's friend gave him a wooden dock for his jet skis and a cashier's check for $35,000, which prosecutors said he used for an in-ground pool at his Boca Raton, Fla. home.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 338
+
+<p>Two tax and estate planning lawyers and an accountant, plus two other men, have learned the hard way crime doesn't pay, especially when trying to trade on inside information involving biopharmaceutical firms &ndash; a sector the Securities and Exchange Commission (SEC) has been keeping a particularly close eye on in recent years.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Another Reason Biopharma Insider Trading Is A Dumb Idea
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150922T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150922T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150922T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029894
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Another Reason Biopharma Insider Trading Is A Dumb Idea
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200800466
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+people
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360621
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1af47ce4-2234-47a4-9d67-9591dd2a2cd2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

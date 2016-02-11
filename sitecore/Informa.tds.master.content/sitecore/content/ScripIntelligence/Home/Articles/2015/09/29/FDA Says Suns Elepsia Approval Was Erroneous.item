@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {15E758F4-6484-4A41-9981-53A91C62C86C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/29/FDA Says Suns Elepsia Approval Was Erroneous
+parent: {5398E1AD-3008-4257-BE24-65E2DBD2F089}
+name: FDA Says Suns Elepsia Approval Was Erroneous
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e7765a99-b693-4099-bb9e-35479ef2e090
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 311
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{6813DF9C-1DA9-44AE-9B9D-FB83827E8521}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+FDA Says Sun's Elepsia Approval Was Erroneous
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+FDA Says Suns Elepsia Approval Was Erroneous
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3200
+
+<p>The US FDA has stated that its earlier approval of <i>Elepsia XR</i> (levetiracetam extended-release tablets), the new drug application (NDA) of Sun Pharma Advanced Research Company Ltd (SPARC), was "erroneous."</p><p>SPARC, which is the listed spin-off R&D arm of Sun Pharmaceutical Industries Ltd, recently received a Complete Response letter (CRL) for Elepsia XR from the FDA rescinding its earlier approval, citing the compliance status of the firm's manufacturing facility for the product on the approval date.</p><p>The FDA has now clarified to <i>Scrip</i> that the approval occurred when the Center for Drug Evaluation and Research was "transitioning" to a new application review system and implementing new processes for personnel. </p><p>"At that time, the compliance status of this facility was not accurately displayed or appropriately accessed in the new system, resulting in the erroneous approval of this application," the FDA told <i>Scrip </i>Oct. 2.</p><p>SPARC previously said that it hoped to market Elepsia XR at a significant premium to generics and was eying commercialization in the US by the second half of 2015&ndash;2016.</p><p>The FDA's clarification is significant given that news of the CRL and its linkage to Sun's Halol site, which is to manufacture Elepsia XR, had <a href="http://www.scripintelligence.com/policyregulation/Does-FDAs-Elepsia-CRL-Signal-Broader-Compliance-Woes-For-Sun-Spin-off-360725" target="_new">spooked investors</a> who viewed the CRL as a sign of limited progress at resolving current good manufacturing practice (cGMP) issues at Halol, though some analysts maintained that such fears were overblown.</p><p>Sun's Halol facility, seen as a key site for India's top drug firm, is currently under FDA scrutiny for cGMP deficiencies, although the company has been working with the agency to set things right and has taken several corrective measures.</p><p>The FDA has previously stipulated a satisfactory resolution of the cGMP deficiencies at Halol as a prerequisite for the final approval of SPARC's NDA for <a href="http://www.scripintelligence.com/policyregulation/Little-Spark-Yet-For-Xelpros-Amid-New-CRL-359768" target="_new">Xelpros</a> (latanoprost BAK-free eyedrops). </p><p>The FDA also indicated that the Elepsia XR case had little in common with the agency's previous decision wherein it <a href="http://www.scripintelligence.com/business/Ranbaxys-generic-Nexium-exclusivity-dead-or-alive-354921" target="_new">rescinded tentative approvals</a> for Ranbaxy's generic Nexium (esomeprazole magnesium) and Valcyte (valganciclovir hydrochloride). </p><p>Last year, the FDA rescinded two tentative approval letters issued to Ranbaxy Laboratories, Inc., when the approval of the applications was found to have been issued when the facilities were not in compliance with good manufacturing practices. </p><p>"The firm was operating under a consent decree with the FDA and had a long history of data falsifications and misleading submissions to the agency. The facts in that case were very different from the current situation," the FDA told <i>Scrip</i>.</p><p>In March this year, Sun announced the closure of the merger with Ranbaxy.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 218
+
+<p>The US FDA has stated that its earlier approval of <i>Elepsia XR</i> (levetiracetam extended-release tablets), the new drug application (NDA) of Sun Pharma Advanced Research Company Ltd (SPARC), was "erroneous."</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+FDA Says Suns Elepsia Approval Was Erroneous
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150929T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150929T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150929T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029956
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{99C1E0C6-E575-4630-A767-F6BBBF6CA843}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+FDA Says Sun's Elepsia Approval Was Erroneous
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800081
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+MarketData
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360720
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042459Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e7765a99-b693-4099-bb9e-35479ef2e090
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042459Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

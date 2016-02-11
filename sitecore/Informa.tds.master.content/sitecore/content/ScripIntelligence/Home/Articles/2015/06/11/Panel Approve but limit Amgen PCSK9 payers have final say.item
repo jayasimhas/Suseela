@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {185B044D-F6C9-4AFD-BE31-A3001ABB82C3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/11/Panel Approve but limit Amgen PCSK9 payers have final say
+parent: {0C4E4294-FE7F-444B-9DB5-24F666F256E8}
+name: Panel Approve but limit Amgen PCSK9 payers have final say
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d914f0e4-fa0e-4de9-8608-e8de8640b8be
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Panel: Approve, but limit Amgen PCSK9; payers have final say
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+Panel Approve but limit Amgen PCSK9 payers have final say
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8380
+
+<p>Forget blockbuster status, makers of proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitors. </p><p>At least, for now.</p><p>If an FDA panel of outside experts gets its way, PCSK9 inhibitors &ndash; which have been ballyhooed as the likely next big runaway success in cardiovascular medicine &ndash; would first enter the US market with limited indications, rather than the broader use drug makers Amgen and Sanofi and its partner Regeneron Pharamaceuticals would like to gain up front.</p><p>The drugs are intended to bring low-density lipoprotein cholesterol (LDL-C) under control.</p><p>Like it had a day earlier for Sanofi's and Regeneron's Praluent (alirocumab), the FDA's Endocrinologic and Metabolic Drugs Advisory Committee (EMDAC) said the agency should permit Amgen to market its investigational drug in the class Repatha (evolocumab), but only for certain patients.</p><p>The EMDAC voted 11-4 that Amgen had sufficiently established that the LDL-C-lowering benefit of Repatha exceeded its risks to support approval in one or more patient populations &ndash; rendering a verdict similar to what it had given Sanofi and Regeneron on 9 June, when the panel <a href="http://www.scripintelligence.com/home/US-advisers-endorse-PCSK9-Praluent-but-limited-population-358873" target="_new">voted 13-3</a> on the same question about Praluent.</p><p>But also like in the case of Praluent, a majority of the panelists declined to back the broader use Amgen is seeking for Repatha &ndash; declaring the results of the California biotech giant's cardiovascular outcomes trial (CVOT) were needed to know how well the drug works on preventing events like heart attacks, strokes and CV-related death.</p><p>Amgen revealed on <a href="http://www.scripintelligence.com/home/Repatha-review-not-quite-Praluent-mirror-dosing-stands-out-358853" target="_new">5 June</a> it had fully enrolled its CVOT, known as FOURIER, which now has about 27,500 patients.</p><p>The company expects results by 2017 &ndash; around the same time Sanofi and Regeneron are anticipating data from their 18,000-patient CVOT, known as ODYSSEY OUTCOMES.</p><p>Most of the EMDAC recommended the FDA restrict the labeling for Praluent and Repatha to heterozygous familial hypercholesterolemia (HeFH) &ndash; a genetic disease that causes unusually high levels of LDL-C, often resulting in heart attacks at a young age &ndash; and those at high CV risk where statins are not enough.</p><p><b>HoFH use</b></p><p>Different from Sanofi and Regeneron, Amgen also is seeking approval to market Repatha for homozygous familial hypercholesterolemia (HoFH), a more rare form of familial hypercholesterolemia that causes early onset of arthrosclerosis, often resulting in patients experiencing heart attacks in their early teens and dying before they reach 30.</p><p>While the FDA has approved two drugs in recent years for HoFH &ndash; Genzyme's <a href="http://www.scripintelligence.com/home/A-win-for-antisense-IsisGenzyme-score-US-OK-for-Kynamro-339490" target="_new">Kynamro</a> (mipomersen sodium) and Aegerion Pharmaceuticals' <a href="http://www.scripintelligence.com/home/No-HoFH-definition-could-give-Aegerion-market-lead-with-Juxtapid-338576" target="_new">Juxtapid</a> (lomitapide) &ndash; the EMDAC unanimously agreed there currently is an unmet need in that indication, and voted 15-0 that Amgen should be allowed to market Repatha in patients as young as 12 years for the disease. </p><p>"For those of us who have treated youngsters, teenagers and adults with homozygous FH . . . they need everything we can offer them, absolutely everything," declared panelist Dr Peter Wilson, director of epidemiology and genomic medicine at Emory University in Atlanta.</p><p>And lowering LDL, he said, "offers hope" for patients with HoFH.</p><p>"HoFH is devastating," added panelist Dr Robert Shamburek, a clinician and scientist at the National Heart, Lung, and Blood Institute.</p><p>But while Dr Shamburek said Repatha could be "another armament," he also raised some concerns about Amgen's proposal for a dual dosing strategy in the HoFH population: 420mg once monthly or 420mg every two weeks, for which he said there weren't enough data to support the latter dosage &ndash; an argument for which most on the committee agreed.</p><p>Dr Shamburek also raised concerns about the lack of data in knowing how Repatha will interact with the other HoFH therapies. </p><p>But it was Amgen's proposed broader use of Repatha that consumed most of the day's discussion. </p><p>Repatha and Praluent have cardiologists excited because they have relatively few adverse effects and have shown dramatic results in lowering LDL-C more than 60%.</p><p>The panelists, however, noted the cardiology community has been burned before when some drugs that have shown reductions in LDL-C ultimately did nothing to prevent heart attacks and strokes and actually caused harm &ndash; with some pointing to Pfizer's failed cholesterol ester transport protein torcetrapib, which had drawn a lot of early excitement, only later to dash the hopes of physicians and patients alike when midstage study results revealed an imbalance in death and CV events.</p><p>Several on the EMDAC said that while LDL-C worked well as a surrogate for statins, they were not willing to declare it as such for all classes of drugs, particularly the PCSK9s.</p><p>"LDL-C is not going to be a surrogate for all classes of medications and must be context and mechanism specific," said panelist Dr David Cooke, an associate professor of pediatrics at Johns Hopkins University School of Medicine in Baltimore, Maryland.</p><p>Aside from the HoFH indication, most on the committee said they were comfortable with Repatha being made available as soon as possible for patients with HeFH and for those at high CV risk who have been taking the "maximally tolerated statin therapy." </p><p>Others said the drug should also be made available for patients who are intolerant of statins &ndash; although there was some debate about not using the language of "statin-intolerance" in the labeling for fear it could be misinterpreted, with doctors ultimately prescribing Repatha to anyone who has had the slightest side effect to those drugs.</p><p>&ldquo;At the end of the day, what we are committed to doing is working with the agency to make sure we have a label that allows the clinician to do what they think is right for the patient in front of them,&rdquo; said Dr Scott Wasserman, vice president of global development at Amgen.</p><p><b>Who decides?</b></p><p>No matter what the FDA ends up allowing in the labeling for Repatha, whose <i>Prescription Drug User Fee Act </i>action date is 27 August &ndash; about a month after the 24 July date for Praluent &ndash; the decision on who ultimately gets the drug rests with payers, said Dr Christie Ballantyne, director of the Center for Cardiovascular Disease Prevention at the Methodist DeBakey Heart Center and a professor of medicine at Baylor College of Medicine in Houston, who is a consultant for Amgen. </p><p>"People like to think it's the FDA who decides who gets the drugs. It's not. It's the payers who decide who gets the drugs,&rdquo; Dr Ballantyne argued.</p><p>CVS and Express Scripts both have been taking shots at PCSK9s in recent months &ndash; declaring their prices could dwarf those for Gilead Sciences&rsquo; Sovaldi (sofosbuvir), which is priced at $1,000 per pill, and Harvoni (ledipasvir-sofosbuvir), which costs $1,125 per pill.</p><p>The payers have said that given that PCSK9s will be used for chronic conditions, the costs of the drugs to the healthcare system in terms of volume could be enormous. </p><p>At $10,000 per year per patient, the annual cost to the US for the 1.6 million familial hypercholesterolemia population could be $16bn alone, <a href="http://www.scripintelligence.com/home/CVS-takes-aim-at-PCSK9s-costs-could-dwarf-HCV-meds-356803" target="_new">four CVS executive</a>s calculated this past February.</p><p>If used in broader populations, they estimated the overall annual cost could reach $200bn.</p><p>Shares of Amgen rose $1.45 in after-hours trading on 10 June. Sanofi closed up $1.17, or 2.4%, at $50.60. But Regeneron&rsquo;s stock took a hit during the trading day &ndash; tumbling 5.2%, before closing at $512.32, down $13.77, or 2.6%.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 105
+
+<p>Forget blockbuster status, makers of proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitors. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Panel Approve but limit Amgen PCSK9 payers have final say
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150611T052706
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150611T052706
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150611T052706
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028960
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Panel: Approve, but limit Amgen PCSK9; payers have final say
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358805
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042401Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d914f0e4-fa0e-4de9-8608-e8de8640b8be
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042401Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

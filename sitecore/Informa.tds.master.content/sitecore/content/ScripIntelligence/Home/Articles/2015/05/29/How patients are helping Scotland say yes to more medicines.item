@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {9F70FDA7-ACCB-4EC7-B75C-50540A999D57}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/29/How patients are helping Scotland say yes to more medicines
+parent: {9E44CD89-5CEF-43CD-B8D5-C3B05FCA838C}
+name: How patients are helping Scotland say yes to more medicines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 81eedfd0-12f0-4812-9371-7801c0737636
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+How patients are helping Scotland say yes to more medicines
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+How patients are helping Scotland say yes to more medicines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7467
+
+<p>The Scottish Medicines Consortium, Scotland's health technology assessment agency for new medicines, is saying yes to more and more drugs, and greater involvement of patients in the decision making process seems to be the reason why. The SMC's chief pharmacist Anne Lee spoke to <i>Scrip</i> about how patient views are affecting decisions, and the progress of the SMC's new Patient and Clinician Engagement (PACE) process, aimed at improving access to orphan and end-of-life treatments. </p><p>Patients are what the pharmaceutical industry is all about, but their views and experiences have been traditionally underrepresented by industry in drug development, by regulators in the approvals process and by payers and HTAs in pricing and reimbursement procedures. Now all stakeholders are keen to put this right. And although Scotland is a small market, companies would do well to take note of what the SMC is doing. It is a well-respected health technology appraisal agency and other HTAs, as well as countries without their own agencies, are paying close attention to what it does.</p><p>As its name suggests, the PACE process is designed to gather more input from patients and clinicians for the SMC's decision making on end-of-life medicines and drugs for rare diseases. Shaped by patient groups, the process came about in response to a review of Scotland's medicines evaluation process, which was itself prompted by ongoing public and industry concern about access to medicines. Ms Lee is keen to point out that the SMC has always involved patients in its decision making &ndash; public partners sit on its committees and it considers patient group submissions. However, the PACE process, introduced in April 2014, takes patient engagement a step further.</p><p>If, after the usual evaluation process, the SMC looks set to say no to a drug, the company can request a PACE meeting. The group that meets is tailored to the medicine in question with representatives sought from relevant patient groups or clinical specialties. The company is also able to make a brief statement that the PACE group will consider. The group discusses, among other things, clinical issues, added benefits for the patient, and added benefits for the patient's family or carers. The SMC will then include the findings of the meeting in its decision making. Notably, the meetings are held in public.</p><p>So far, the SMC is pleased with the way the process is going, says Ms Lee. To date there have been 24 meetings, and at the time of writing, the results have been published for 20 of the drugs concerned. 15 medicines were accepted, and five were rejected (see table for results).The five drugs that didn't make it through after a PACE meeting were affected by doubts over their benefits in relation to their costs. </p><p>Although it is still too early to draw any definitive conclusions on the process' impact on access to medicines, Ms Lee believes it has been positive. On analyzing the advice published on all types of medicines, she found that the SMC's acceptance rate was 83% for the year to May 2015. This compares favorably with the results for the entire year of 2013, when the acceptance rate was 64%. "Our view is that the medicines that have been accepted under the PACE process would have been very unlikely to have been accepted under the process we had previously."</p><p>The SMC has also been receiving more submissions for end-of-life and rare disease medicines. This is because companies are hopeful that their drugs will be more likely to be accepted under the new process, and because of "legacy Noes." These are drugs that were previously not recommended and which the companies are now resubmitting. In addition, the PACE process gives companies a second chance to submit a patient access scheme to make their end-of-life or ultra-orphan drug more cost-effective. For other products, companies have only one opportunity to put forward a PAS, which is at the time of submission.</p><p>So why do the meetings make such a difference? In Ms Lee's opinion, patients can very clearly articulate their experience with the drug and can highlight what may not be clear from the company's submission or from the clinical trial results, particularly given the "dearth" of quality of life data in many instances. "That adds color and a human perspective to the black and white that you might see in a written patient group submission." For example, a company might point out to the SMC in writing that the product is an oral medicine. But the real impact comes from hearing how that tablet allows him to spend precious time with his loved ones rather than in a cancer clinic receiving an intravenously administered drug. </p><p>Through the meetings, the SMC is able to hear what really matters to patients. "As health professionals, I come from a pharmacy background, we tend to assume we know what the patient preference will be, which is quite paternalistic and may not be true. What you hear is their preference," says Ms Lee. </p><p>The meetings bring to the table the type of considerations that were supposed to be part of the ill-fated value-based pricing system, for example the impact on carers or family. They are an opportunity to go beyond discussions on the clinical evidence and they offer a format that would otherwise be unavailable for highlighting what is important to patients. However, Ms Lee believes that companies could do more to draw on patient experience at an earlier stage, for example into clinical trials. She also believes that the SMC, the NHS and companies need to look at outcomes once the drug is available on the NHS to make sure the new medicines are doing what they are supposed to do in the real world.</p><p><p><b>SMC drugs approved or rejected through the PACE process</b></p><table><tbody><tr><td><p><p><b>Accepted</b></p>&nbsp;</td><td><p><p><b>Rejected</b></p>&nbsp;</td><td><p><p><b>Date decision published</b></p><p>&nbsp;</td></tr><tr><td><p>Takeda's Adectris (brentuximab vedotin) ultra orphan</p>&nbsp;</td><td><p>Roche's Kadcyla (trastuzumab emtansine) </p>&nbsp;</td><td><p>October 2014</p>&nbsp;</td></tr><tr><td><p>BMS' Yervoy (ipilimumab) </p>&nbsp;</td><td><p>Roche's Perjeta (Pertuzumab) </p>&nbsp;</td><td><p>November 2014</p>&nbsp;</td></tr><tr><td><p>Lilly's Alimta (pemetrexed ) </p><p>Bayer's Adempas (riociguat) </p>&nbsp;</td><td><p>&nbsp;</td><td><p>December 2014</p>&nbsp;</td></tr><tr><td><p>Lilly's Erbitix (cetuximab) </p><p>Gilead's Cayston (aztreonam lysine) </p>&nbsp;</td><td><p>Roche's Avastin (bevacizumab) </p>&nbsp;</td><td><p>January 2015</p>&nbsp;</td></tr><tr><td><p>Celgene's Abraxane (paclitaxel albumin) </p><p>Pfizer's Bosulif (bosutinib) ultra orphan</p>&nbsp;</td><td><p>Janssen's Zytiga (abiraterone acetate) </p>&nbsp;</td><td><p>February 2015</p>&nbsp;</td></tr><tr><td><p>GSK's Tafinlar (dabrafenib) </p><p>Novartis' Jakavi (ruxolitinib) </p>&nbsp;</td><td><p>Exelixis/Swedish Orphan Biovitrum's Cometriq (cabozantinib ) ultra orphan</p>&nbsp;</td><td><p>March 2015</p>&nbsp;</td></tr><tr><td><p>Ariad's Iclusig (ponatinib) </p><p>Bayer's Stivarga (regorafenib) ultra orphan</p><p>Boehringer Ingelheim's Vargatef (nintedanib) </p>&nbsp;</td><td><p>&nbsp;</td><td><p>April 2015</p>&nbsp;</td></tr><tr><td><p>GSK's Arzerra (ofatumumab) </p><p>Gilead's Zydelig (delalisib) ultra orphan</p>&nbsp;</td><td><p>&nbsp;</td><td><p>May 2015</p>&nbsp;</td></tr></tbody></table></p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 495
+
+<p>The Scottish Medicines Consortium, Scotland's health technology assessment agency for new medicines, is saying yes to more and more drugs, and greater involvement of patients in the decision making process seems to be the reason why. The SMC's chief pharmacist Anne Lee spoke to <i>Scrip</i> about how patient views are affecting decisions, and the progress of the SMC's new Patient and Clinician Engagement (PACE) process, aimed at improving access to orphan and end-of-life treatments. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+How patients are helping Scotland say yes to more medicines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150529T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150529T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150529T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028906
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+How patients are helping Scotland say yes to more medicines
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pipelineWatch
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358651
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+81eedfd0-12f0-4812-9371-7801c0737636
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

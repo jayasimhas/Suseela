@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {A7A55D4C-7F39-4B08-A8EE-501140B5C546}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/22/US Court Upholds Order Against Sun Arm In Layoffs Case
+parent: {C1C63B8A-C8CD-4801-9A8E-0C3D6F589AF3}
+name: US Court Upholds Order Against Sun Arm In Layoffs Case
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 055168e4-68e2-40f8-9cf7-e7dcb95be341
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 233
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B3CB389F-B9B7-4041-9E3D-C9810F548727}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+US Court Upholds Order Against Sun Arm In Layoffs Case
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+US Court Upholds Order Against Sun Arm In Layoffs Case
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3174
+
+<p>Shares of Sun Pharma were under pressure on Indian bourses after a US court upheld a previous order concerning the firm's failure to comply with requirements under the Worker Adjustment and Retraining Notification (WARN) Act while laying off employees at US arm Caraco's Michigan site.</p><p>The US Court of Appeals for the sixth circuit said that because it was reasonably foreseeable on Apr. 27, 2009, that an FDA enforcement action was imminent, Caraco was not entitled to the unforeseeable business circumstances exception under the WARN Act. </p><p>"We therefore affirm the judgment of the district court," the court said in an order dated Aug. 26.</p><p>The WARN Act requires employers to give a 60-day notice to affected employees before a plant closing or mass layoff. The plaintiffs, a class of former Caraco employees, had in 2011 moved the US court for the Eastern District of Michigan, alleging that Caraco violated the WARN Act by failing to give such notice. </p><p>The district court had in September 2014 held that it was reasonably foreseeable in April 2009 that the FDA would execute a large-scale enforcement action against Caraco. The district court had awarded damages to the plaintiffs.</p><p>Shares of Sun ended at INR884.95 ($13.4), down 2%, on the Bombay Stock Exchange on Aug. 28.</p><p>Sun, though, informed bourses that the judgment in the class action lawsuit by former employees of its US subsidiary following the shut-down of the Michigan facility had "no material impact" on the operations or performance of the company.</p><p>The Appeals court held that the district court properly concluded that Caraco's actions in the months leading up to Apr. 27, 2009, demonstrate that the company was "aware of serious deficiencies" at its facilities that rendered imminent enforcement action foreseeable. </p><p>Among a string of observations the court also noted that although previous warning letters to Caraco had not resulted in enforcement action, the district court reasonably concluded that the number of serious and longstanding violations, coupled with the advice of Quintiles and Kendle, among other factors, would have put a "reasonable" employer on notice that an enforcement action was "imminent."</p><p>In June 2009, US marshals had, at the request of the FDA, seized generic medicines and raw ingredients at Caraco's facilities in the Detroit, Michigan area after the firm had been unable to take appropriate steps to correct GMP violations. In September 2009, Caraco signed a consent decree with the FDA.</p><p>Caraco had argued, among others, that both the nature and timing of any possible enforcement action were not foreseeable by Apr. 27, 2009, and that to hold otherwise would be contrary to the WARN Act's intent to protect employees because economically viable employers would be forced to issue WARN notices and close "at even a remote possibility" of enforcement action. </p><p>It also put forth that seizures are a "very infrequent consequence" of FDA warning letters and cited FDA enforcement statistics that suggest that between 2007 and 2009, the agency issued 1,390 warning letters but conducted only 22 seizures.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 292
+
+<p>Shares of Sun Pharma were under pressure on Indian bourses after a US court upheld a previous order concerning the firm's failure to comply with requirements under the Worker Adjustment and Retraining Notification (WARN) Act while laying off employees at US arm Caraco's Michigan site.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+US Court Upholds Order Against Sun Arm In Layoffs Case
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150822T074821
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150822T074821
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150822T074821
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029627
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+US Court Upholds Order Against Sun Arm In Layoffs Case
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360074
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042442Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+055168e4-68e2-40f8-9cf7-e7dcb95be341
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042442Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

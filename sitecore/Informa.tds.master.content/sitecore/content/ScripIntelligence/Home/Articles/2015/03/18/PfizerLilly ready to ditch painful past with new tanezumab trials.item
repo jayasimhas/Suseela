@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {229F08FF-F4FB-4285-8A18-ED2B361C77F8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/18/PfizerLilly ready to ditch painful past with new tanezumab trials
+parent: {A5EBD6E2-67DE-4D32-BD47-53A5A2131394}
+name: PfizerLilly ready to ditch painful past with new tanezumab trials
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b6b7c155-b482-4b26-8dc0-706b36686be5
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Pfizer/Lilly ready to ditch painful past with new tanezumab trials
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+PfizerLilly ready to ditch painful past with new tanezumab trials
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4076
+
+<p>After five years of waiting, Pfizer and Lilly are ready to restart late-stage clinical trials for the pain drug tanezumab, the big pharmas announced 23 March. The move forward scores Pfizer a $200m milestone payment and signals a jumpstart for the class of drugs. </p><p>Pfizer and Lilly will be able to resume Phase III clinical trials of tanezumab after the FDA gave the greenlight, lifting a partial clinical hold on the drug after reviewing new non-clinical data regarding the sympathetic nervous system response that was submitted by the companies in February. Pfizer said that the Phase III protocols include risk mitigation for joint damage. </p><p>Lilly signed on for development of the drug in October 2013, with a promise to pay the $200m upfront should clinical trials be restarted, as well as $350m in regulatory milestones and $1.23b in sales milestones. </p><p>Once upon a time, Pfizer&rsquo;s and Lilly's osteoarthritis drug tanezumab was the lead compound in a new class of promising drugs, nerve growth factor (NGF) inhibitors. The class showed strong efficacy and had the potential to thwart several types of pain, including the pain caused by osteoarthritis, diabetic peripheral neuropathy and cancer. </p><p>Yet, a worsening of pain in some osteoarthritis patients, as well as a need for joint replacement in tanezumab clinical trials, pushed the FDA to put a <a href="http://www.scripintelligence.com/researchdevelopment/Pfizer-forced-to-discontinue-more-trials-for-novel-pain-drug-tanezumab-299839" target="_new">clinical hold</a> on the drug &ndash; and the rest of the class &ndash; in 2010.</p><p>At the time, Pfizer was conducting trials of tanezumab in osteoarthritis, diabetic peripheral neuropathy and chronic low back pain and as an add-on to opioids in cancer patients with bone metastases. The cancer trials were allowed to proceed, but all other trials were halted. Results from the cancer pain trials were presented by the company in October 2014. </p><p>Pfizer, Johnson & Johnson and Regeneron, amongst others, halted clinical trials for their respective biologics. </p><p>In 2012, the FDA's Arthritis Advisory Committee recommended that the NGF antagonists be studied, but with stricter safety standards. The clinical hold was lifted at the time, but another partial clinical hold was put in place in December 2012 for the whole class due to adverse changes in the sympathetic nervous system seen in animal studies. </p><p>Tanezumab, as well as the other drugs in the class, work by acting through the TrkA receptor &ndash; which plays a role in inflammatory pain. Nerve growth factor levels are elevated in inflamed tissues and by binding with the nerve growth factor, the drugs prevent the activation of the receptor, thus relieving pain. </p><p>The joint degradation issues that cropped up had investigators speculating about the cause of the safety issues. One editorial from the <i>New England Journal of Medicine</i> in <a href="http://www.scripintelligence.com/researchdevelopment/Pfizers-tanezumab-hits-a-nerve-growth-factor-303602" target="_new">September 2010</a> suggested the joint problems that some NGF inhibitor patients were experiencing was a result of overuse after their pain was relieved.</p><p>Other drugs in the space at the time included Regeneron&rsquo;s and Sanofi's REGN-475 (fasinumab), which was in Phase II development for vertebral fracture pain, chronic pancreatitis pain and osteoarthritis of the knee, as well as J&J JNJ-42160443 (fulranumab), which also was in Phase II development for diabetic painful neuropathy, chronic low back, osteoarthritis, post-therapeutic neuralgia and cystitis.</p><p>During J&J&rsquo;s fourth-quarter call in January, CEO Alex Gorsky mentioned fulranumab as "an interesting new compound for patients" and said the drug would be one of the 10 new product filings the company intends to make by 2017. </p><p>The company has four new Phase III trials of fulranumab in osteoarthritis pain listed on ClinicalTrials.gov &ndash; none of which have started recruiting. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 271
+
+<p>After five years of waiting, Pfizer and Lilly are ready to restart late-stage clinical trials for the pain drug tanezumab, the big pharmas announced 23 March. The move forward scores Pfizer a $200m milestone payment and signals a jumpstart for the class of drugs. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+PfizerLilly ready to ditch painful past with new tanezumab trials
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150318T234927
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150318T234927
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150318T234927
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028212
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Pfizer/Lilly ready to ditch painful past with new tanezumab trials
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357364
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042319Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b6b7c155-b482-4b26-8dc0-706b36686be5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042319Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

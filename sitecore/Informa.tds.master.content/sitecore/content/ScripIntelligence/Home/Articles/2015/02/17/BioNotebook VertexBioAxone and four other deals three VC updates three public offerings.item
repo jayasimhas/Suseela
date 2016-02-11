@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {5209F864-5484-4A51-ADC8-466D33109DB5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/17/BioNotebook VertexBioAxone and four other deals three VC updates three public offerings
+parent: {673CAFAF-49B7-437A-9242-01ECA36193FF}
+name: BioNotebook VertexBioAxone and four other deals three VC updates three public offerings
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9027cfa4-6447-4892-938b-d42e4b1149bb
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 91
+
+BioNotebook: Vertex/BioAxone and four other deals; three VC updates, three public offerings
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 87
+
+BioNotebook VertexBioAxone and four other deals three VC updates three public offerings
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10238
+
+<p>Vertex Pharmaceuticals said in its annual report filed recently with the US Securities and Exchange Commission (SEC) that it has licensed VX-210 (formerly Cethrin) for spinal cord injuries from BioAxone Biosciences for $10m up front and up to $90m in development and regulatory milestone payments and license continuation fees. </p><p>Boston-based Vertex said it closed the deal with BioAxone, a private company in nearby Cambridge, Massachusetts in October, but it didn't disclose the license agreement until its 13 February annual report. The deal includes undisclosed royalties on product sales plus commercial milestone fees and Vertex has an option to buy BioAxone at a predetermined price. </p><p>The option expires when a biologic license application (BLA) is accepted by the US FDA, when Vertex decides to license rather than buy BioAxone, or on 15 March 2018 unless Vertex exercises an option to extend the date by a year.</p><p>The company plans to initiate a Phase IIb clinical trial for VX-210 in the treatment of spinal cord injuries in late 2015. The drug candidate is a Rho antagonist, which may be able to block inhibitory signaling and allow the regrowth and/or regeneration of axons after spinal injury. BioAxone evaluated single doses of VX-210 in an open-label Phase I/IIa clinical trial that enrolled 48 patients with thoracic and cervical acute spinal cord injuries.</p><p><b>Vaxin expands vaccine portfolio with ITS buy</b></p><p>Gaithersburg, Maryland-based Vaxin will buy Immune Targeting Systems (ITS) of London and Strasbourg, France in an all-stock transaction to expand its vaccine pipeline. The acquisition value was not disclosed, but to pursue its three most advanced development programs Vaxin simultaneously raised $16m from its own and ITS's investors, including Novartis Venture Fund, HealthCap, Truffle Capital and Redmont Capital. The two companies have raised more than $100m in financing to date.</p><p>Vaxin's assets now include NasoVAX, a Phase II-ready seasonal flu program; a hepatitis B therapeutic vaccine for which the company plans to initiate a Phase I/II clinical trial during the first half of 2015; and AdVAV, an intranasally administered anthrax vaccine that is fully funded by the Biomedical Advanced Research and Development Authority (BARDA), which is part of the US Department of Health and Human Services. A Phase I trial will be initiated for AdVav in the first half of 2016. Vaxin also has preclinical cancer vaccines and early-stage animal health vaccines in development.</p><p><b>Genmab, BioNovion to co-develop bi-specific antibodies</b></p><p>Copenhagen, Denmark-based Genmab and the Dutch firm BioNovion agreed to co-develop and commercialize bi-specific antibodies created with Genmab's Duobody platform technology. Each company will contribute therapeutic antibodies for combination in Duobody product candidates.</p><p>Development costs will be split on a 50-50 basis if the partners decide to jointly develop a new bi-specific therapy. If one company decides not to license a particular compound, the other company can license the asset at predetermined terms. The commercial agreement follows a July 2014 research collaboration between the firms. </p><p>Genmab previously signed a deal with Janssen, Johnson & Johnson's research and development arm, for the development of bi-specific antibodies created with the Duobody platform in 2012 (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Genmab-inks-bispecific-antibody-deal-with-Janssen-332836" target="_new">16 July 2012</a>).</p><p><b>OncoSec and Heat to study combination of immunotherapy platforms</b></p><p>San Diego-based OncoSec Medical and Heat Biologics of Durham, North Carolina signed a deal to evaluate the preclinical efficacy of combining OncoSec's ImmunoPulse, an intratumoral DNA delivery platform, with Heat's ImPACT immunotherapy platform. </p><p>OncoSec is testing its intratumoral delivery of DNA IL-2 in Phase II melanoma, head and neck cancer, and triple negative breast cancer clinical trials. The company previously signed an agreement with the University of California, San Francisco in November to test ImmunoPulse with Merck & Co's Keytruda (pembrolizumab) in melanoma (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Four-deal-notes-including-Five-Primes-2nd-BMS-oncology-collaboration-355265" target="_new">25 November 2014</a>).</p><p>Heat, which went public in 2013, also is studying its ImPACT immunotherapies in Phase II lung and bladder cancer trials (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Agios-gains-74-Heat-fizzles-by-4-after-IPO-Onconova-prices-offering-345252" target="_new">25 July 2013</a>).</p><p><b>NIH will study VistaGen depression drug candidate</b></p><p>VistaGen Therapeutics in South San Francisco entered into a Cooperative Research and Development Agreement (CRADA) with the National Institute of Mental Health (NIMH), part of the National Institutes of Health (NIH), for an NIH-sponsored Phase II clinical trial testing AVA-101, an orally active NMDA receptor modulator, in the treatment of major depressive disorder (MDD). </p><p>The placebo-controlled crossover study will evaluate the safety and efficacy of AV-101 dosed once-daily for 14 days in 25 MDD patients. The primary endpoint will be depression severity as measured by the Hamilton Depression Rating Scale (HDRS) with results expected in 2015.</p><p>The NIH previously granted VistaGen $8.8m to conduct preclinical and Phase I studies for AVA-101. The drug was well-tolerated in two Phase I, placebo-controlled studies with no serious adverse events and no signs of sedation, hallucination or schizophrenia-like side effects associated with ketamine and traditional NMDA receptor channel blockers.</p><p>Naurex also is testing an NMDA partial agonist for depression and Johnson & Johnson is evaluating ketamine for MDD (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Five-promising-approaches-to-expand-the-depression-armory-354530" target="_new">17 October 2014</a>).</p><p><b>VC news: Bessemer raises new fund; Pronutria, Merganser gets Series A cash</b></p><p>Bessemer Venture Partners closed its ninth venture capital fund, BVP IX, with $1.6bn for investments in various high-tech categories and some health care opportunities. It's unknown how much of the fund will be used for biotechnology investments, since Bessemer's health care investments range from services to information technology to therapeutics and diagnostics. The VC firm's recent biotech investments include Flex Pharma and Allena Pharmaceuticals (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Westphals-Flex-Pharma-raises-40m-for-muscle-cramp-supplement-353789" target="_new">10 September</a> and <a href="http://www.scripintelligence.com/business/BioNotebook-Four-deal-updates-a-venture-funding-round-and-a-milestone-fee-355431" target="_new">5 December 2014</a>).</p><p>Meanwhile, two early-stage biotech companies recently raised Series A venture funding rounds. Pronutria Biosciences in Cambridge, Massachusetts closed at $28.3m Series A round, which will be used to advance oral biologic medicines. The company is investigating the use of its platform for the treatment of cancer, rare genetic diseases and disorders affecting the musculoskeletal, gastrointestinal, neurological, metabolic and autoimmune systems.</p><p>Newtown Square, Pennsylvania-based Merganser Biotech will use its $28m in Series A capital to develop hepcidin mimetic peptides as treatments for rare hematological and iron overload diseases. The company's funding round was led by Novartis Venture Fund with participation from Frazier Healthcare, Sutter Hill Ventures, Osage University Partners, and Merganser's seed investors BioAdvance and Stateside Developments.</p><p><b>Three public company financings: Neurocrine, TherapeuticsMD, Advaxis</b></p><p>San Diego-based Neurocrine Biosciences is selling 6.94m shares at $36 each for gross proceeds of $250m to fund research and development and to prepare for commercialization, among other corporate expenses. Neurocrine is completing a Phase III clinical trial this year for NBI-98854 in the treatment of tardive dyskinesia and the company plans to seek FDA approval in 2016 following completion of a successful Phase IIb trial a year ago (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Neurocrines-tardive-dyskinesia-drug-redeemed-in-2nd-Phase-IIb-349124" target="_new">7 January 2014</a>). In early 2015, Neurocrine and its partner AbbVie reported a first set of positive Phase III results for the endometriosis drug elagolix (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/AbbVies-elagolix-succeeds-in-Phase-III-partner-Neurocrine-surges-356026" target="_new">9 January 2015</a>).</p><p>TherapeuticsMD in Boca Raton, Florida sold 13.6m shares at $4.05 each for gross proceeds of $55m. The company is developing hormone therapy products that improve upon existing therapies for women's conditions. Other products include brand name and generic prescription prenatal vitamins, over-the-counter vitamins and cosmetic products. TherapeuticsMD raised $40m in a public offering in July (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Five-public-company-financings-TherapeuticsMD-La-Jolla-Biodel-AGTC-CymaBay-353143" target="_new">1 August 2014</a>).</p><p>Princeton, New Jersey-based immunotherapy developer Advaxis entered into securities purchase agreements with several institutional investors for $23m in gross proceeds with a registered direct offering of 3.1m shares priced at $7.50 each. Adage Capital Management now owns 19% of the company's outstanding shares. Advaxis needs the capital as it prepares to kick off clinical trials to test its immunotherapies in combination with partners' cancer drugs, like Incyte's epacadostat (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Three-collaborations-a-buyout-four-financings-two-IPOs-356761" target="_new">14 February 2015</a>).</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 335
+
+<p>Vertex Pharmaceuticals said in its annual report filed recently with the US Securities and Exchange Commission (SEC) that it has licensed VX-210 (formerly Cethrin) for spinal cord injuries from BioAxone Biosciences for $10m up front and up to $90m in development and regulatory milestone payments and license continuation fees. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 87
+
+BioNotebook VertexBioAxone and four other deals three VC updates three public offerings
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150217T143839
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150217T143839
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150217T143839
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027891
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 91
+
+BioNotebook: Vertex/BioAxone and four other deals; three VC updates, three public offerings
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+Feature
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356788
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9027cfa4-6447-4892-938b-d42e4b1149bb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

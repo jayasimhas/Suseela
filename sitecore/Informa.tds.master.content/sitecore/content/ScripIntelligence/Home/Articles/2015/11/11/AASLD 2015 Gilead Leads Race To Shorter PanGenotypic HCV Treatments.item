@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {05D929AC-5EFA-4658-92CE-82B943E67728}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/11/AASLD 2015 Gilead Leads Race To Shorter PanGenotypic HCV Treatments
+parent: {5EDD049F-1031-4290-8719-6CA0186009DA}
+name: AASLD 2015 Gilead Leads Race To Shorter PanGenotypic HCV Treatments
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d655c92a-3a3d-4e6f-b52d-8adb5242f494
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+AASLD 2015: Gilead Leads Race To Shorter, Pan-Genotypic HCV Treatments
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+AASLD 2015 Gilead Leads Race To Shorter PanGenotypic HCV Treatments
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13194
+
+<p>Gilead Sciences has led the race to market with ribavirin- and interferon-free therapies that cure most people with the hepatitis C virus (HCV), but Merck & Co. Inc. is gaining ground in the sprint toward shorter-term, pan-genotypic, two- and three-drug regimens, with AbbVie Inc. on their heels with its own dual therapy that also may eliminate HCV infection in some of the most difficult to treat patients.</p><p>Gilead remains in the lead with its next-generation, two-drug, fixed-dose combination (FDC) that's set to be the first approved regimen for all HCV genotypes, but Merck's two- and three-drug regimens and AbbVie's two-drug FDC are making their way through mid-stage testing, pivotal studies and regulatory reviews as quickly as possible, so that each company can claim their own niche in the market. All three competitors reported Phase II and III data during The Liver Meeting 2015 hosted by the American Association for the Study of Liver Disease (AASLD) from Nov. 13 to 17 in San Francisco.</p><p>But before Gilead's and Merck's triple therapies finish Phase III, the companies may have novel dual regimens on the market, considering Merck's grazoprevir/elbasvir combination <a href="http://www.scripintelligence.com/policyregulation/Merck-seeks-FDA-nod-for-hep-C-combo-grazoprevirelbasvir-358674" target="_new">was submitted for US FDA approval in May</a> and Gilead submitted a new drug application (NDA) for FDA review of <i>Sovaldi</i> (sofosbuvir)/velpatasvir (GS-5816) on October 28. </p><p>While grazoprevir/elbasvir could be the first to market, since Merck's NDA was submitted five months before Gilead's application for sofosbuvir/velpatasvir, Merck is seeking approval to treat only genotypes 1, 4 and 6 HCV, while Gilead has requested the FDA's blessing for its 12-week regimen to treat genotypes 1 through 6. Gilead plans to submit a marketing authorization application (MAA) to the European Medicines Agency by the end of 2015.</p><p>But while both companies are pursuing pan-genotypic triple therapies to treat HCV in as few as eight weeks, AbbVie's two-drug combination of ABT-493 and ABT-530 entered Phase III testing in November and the company is not planning to add a third drug to its dual regimen to compete with the Gilead and Merck triple therapies. </p><p>"We don't think adding a third agent will improve on what we've seen in the [sustained virologic responses (SVRs)] in Phase II or allow us to reduce the duration" of treatment, AbbVie's vice president of infectious disease development Barry Bernstein told <i>Scrip</i>.</p><p>ABT-493/ABT-450 could be on the market before Gilead's three-drug FDC of sofosbuvir/velpatasvir plus GS-9857, for which a Phase III clinical trial is expected to begin in the fourth quarter of 2015, and Merck's grazoprevir with MK-3682 and MK-8408, which recently moved into Phase IIb. </p><p>But with no Phase III data until 2016 and no approvals until late 2017 for AbbVie's potentially potent ABT-493/ABT-450, will the dual therapy lose too much ground to Merck's and Gilead's two-drug combinations if approved in the US in 2016 even if their three-drug combos don't hit the market until 2017 or later?</p><p>Without a nucleotide NS5B polymerase inhibitor, or "nuc," in its FDC, AbbVie's combination may be at a disadvantage if it doesn't show a high cure rate in cirrhotic genotype 1 HCV patients treated for just eight weeks versus the current standard of care of 12 to 24 weeks, according to Datamonitor Healthcare analyst Michael Haydock &ndash; data that weren't revealed during the AASLD conference.</p><p><b>Gilead Gives More Details</b></p><p>SVR at 12 weeks (SVR12) was achieved by 99% of the 624 people with genotypes 1, 2, 4, 5 and 6 HCV with and without cirrhosis in Gilead's Phase III ASTRAL-1 clinical trial, including both treatment-na&iuml;ve and treatment-experienced patients. SVR12 was 98.5% in genotype 1, 97.1% in genotype 5 and 100% in genotypes 2, 4 and 6. </p><p>Haydock noted that "these data will position it as the gold standard treatment for these genotypes in a 12-week course. It is practically impossible to improve upon these cure rates, so later launching rivals will be forced to reduce treatment duration below 12 weeks and/or compete on price."</p><p>The Phase III ASTRAL-2 trial showed a greater SVR12 benefit for 12 weeks of sofosbuvir/velpatasvir than 12 weeks of sofosbuvir/ribavirin in genotype 2 patients &ndash; the standard of care for those individuals. And in the Phase III ASTRAL-3 study in genotype 3 patients, SVR12 rates were 95% for people treated with 12 weeks of sofosbuvir/velpatasvir versus 80% for 24 weeks of sofosbuvir/ribavirin.</p><p>Phase I/II results for sofosbuvir/velpatasvir/GS-9857, which ruled out four-week treatment with the three-drug combination, <a href="http://www.scripintelligence.com/researchdevelopment/EASL-results-HepC-developers-seeking-shorter-treatments-358063" target="_new">were first presented</a> at the European Association for the Study of the Liver (EASL) meeting in April. </p><p>Phase II data for the triple therapy presented at AASLD showed high cure rates for genotype 1 and 3 patients who were treated with six or eight weeks of sofosbuvir/velpatasvir/GS-9857, including treatment-experienced patients with or without cirrhosis &ndash; an important population, since Gilead sees the three-drug regimen not only as a universal eight-week HCV treatment, but also as a salvage therapy for patients who've failed previous treatments.</p><p>Eight-week treatment with sofosbuvir/velpatasvir/GS-9857 was administered to genotype 1 patients with cirrhosis who previously were treated with peg-interferon (PEG) and ribavirin (RBV), genotype 1 patients with or without cirrhosis who'd undergone prior treatment with PEG/RBV plus a protease inhibitor (PI), and genotype 3 patients with cirrhosis who previously were treated with PEG/RBV. </p><p>The SVR12 rates were 100%, 89% and 100%, respectively, while SVR12 was 83% for treatment-na&iuml;ve genotype 3 patients with cirrhosis who received six weeks of sofosbuvir/velpatasvir/GS-9857. </p><p>William Blair & Co. analyst John Sonnier said in a Nov. 16 report on Gilead's triple therapy data that "we are optimistic that in a Phase III program, we could see similar cure rates in eight weeks among all genotypes 1-6 patients compared with treating with sofosbuvir/velpatasvir for 12 weeks."</p><p>Haydock noted that the genotype 3 results in pre-treated cirrhotics were especially remarkable, because those patients currently require 12 weeks of Sovaldi plus Bristol-Myers Squibb Co.'s NS5A inhibitor <i>Daklinza</i> (daclatasvir) or 24 weeks of ribavirin plus Sovaldi, a nucleotide analog NS5B polymerase inhibitor. </p><p>He said the sofosbuvir/velpatasvir/GS-9857 combination "is being investigated in eight-week treatment durations in a bid to fend off competition" from other two- and three-drug combinations from Merck and AbbVie.</p><p><b>AbbVie Confident In Dual Therapy</b></p><p>After 12 weeks of treatment with AbbVie's protease inhibitor ABT-493 (discovered under the company's collaboration with Enanta Pharmaceuticals) and its NS5A inhibitor ABT-530, SVR12 rates were 97% to 100% in genotype 1, 96% to 100% in genotype 2, and 83% to 94% in genotype 3 HCV patients, none of whom had liver cirrhosis, in the ongoing Phase II SURVEYOR-1 and SURVEYOR-2 clinical trials. SVR rates varied depending on the doses of ABT-493 and ABT-530 administered to patients in each genotype.</p><p>SVR12 was 97% for non-cirrhotic, genotype 1 patients who received ABT-493/ABT-530 for eight weeks in SURVEYOR-1, including people who previously were treated with PEG/RBV. </p><p>But Haydock noted that "the big question is whether it also will be effective in cirrhotic patients after eight weeks (ideally without ribavirin)," which would be a big improvement over 12- to 24-week first-generation regimens if AbbVie's eight-week ABT-493/ABT-530 combination shows a benefit in people with cirrhosis in Phase III.</p><p>SURVEYOR data for genotypes 4 through 6 will be presented at a future medical conference, but AbbVie's Bernstein notes that the Phase II results in genotypes 1 through 3 show that the two-drug regimen can achieve pan-genotypic activity.</p><p>"Ultimately, the goal of therapy is to achieve the highest possible SVR rates with a single regimen. It's more important than the number of components," he said. "The Phase III studies are just being initiated and will be informative, but we're optimistic that addition of a third drug will not be helpful or needed."</p><p>AbbVie will treat genotype 2 and 3 patients with ABT-493/ABT-530 for eight weeks in Phase III, while individuals with genotypes 1 and 4 through 6 will get 12 weeks of the dual therapy. Bernstein said the Phase III data will be reported in 2016 and AbbVie plans to submit applications for regulatory approvals in early 2017 with FDA approval expected by the end of 2017. </p><p>In the meantime, AbbVie continues to market its approved multi-pill, multi-drug regimen <i>Viekira Pak</i> (ombitasvir/paritaprevir/ritonavir/dasabuvir), which requires twice-daily administration of the dasabuvir tablets, and <i>Technivie</i>, which has all of the Viekira components except for dasabuvir &ndash; <a href="http://www.scripintelligence.com/home/Gilead-Details-Its-HCV-Dominance-As-AbbVie-Seeks-Meaningful-Market-Position-359783" target="_new">both of which already compete</a> with Gilead's HCV mega-blockbusters Sovaldi and <i>Harvoni</i> (sofosbuvir/ledipasvir). </p><p>AbbVie also recently submitted an NDA for a once-daily Viekira Pak formulation.</p><p><b>Merck Pursues New HCV Options</b></p><p>Merck's <i>Pegintron</i> (peginterferon alpha-2b) and first-generation HCV therapy Victrelis (boceprevir) have lost significant market share since the approval of Sovaldi in December 2013, followed by Harvoni and Viekira Pak in 2014, so the company <a href="http://www.scripintelligence.com/home/Who-dares-stay-in-hepatitis-C-as-another-drug-dies-356307" target="_new">will stop selling Victrelis</a> this year and it is making up for lost time with its dual therapy grazoprevir/elbasvir and triple therapy grazoprevir/MK-3682/MK-8408.</p><p>Merck conducted part A of the Phase II C-CREST-1 and C-CREST-2 clinical trials to decide which regimen to advance into part B, or Phase IIb &ndash; grazoprevir/MK-3682 plus MK-8408 or grazoprevir/MK-3682 with elbasvir. The grazoprevir/MK-3682/MK-8408 regimen &ndash; an NS3/4A protease inhibitor, a nucleotide analogue NS5B inhibitor and an NS5A inhibitor, respectively &ndash; won out after it performed particularly well in genotype 2 and 3 HCV patients.</p><p>SVR12 rates were 91% for genotype 1, 94% for genotype 2 and 91% for genotype 3 in treatment-na&iuml;ve, non-cirrhotic patients who received grazoprevir/MK-3682/MK-8408 without ribavirin for eight weeks with MK-3682 dosed at 450mg (a regimen with MK-3682 dosed at 300mg also was tested) in C-CREST-1 and C-CREST-2 part A. </p><p>Haydock said the grazoprevir/MK-3682/MK-8408 data in genotype 1 patients are competitive with Gilead's sofosbuvir/velpatasvir duo and AbbVie's ABT-493/ABT-530, but SVR12 rates in genotype 2 patients "seem lower than those observed after 12 weeks of sofosbuvir/velpatasvir or 12 weeks of ABT-493 plus ABT-530, so physicians may be unwilling to risk Merck's shorter treatment duration in these patients."</p><p>He noted that eight weeks also doesn't seem sufficient for genotype 3 patients, so Merck's Phase III trials will need to include a 12-week treatment arm in those patients and/or addition the addition of ribavirin to the eight-week grazoprevir/MK-3682/MK-8408 regimen. </p><p>"This will position grazoprevir/MK-3682/MK-8408 behind sofosbuvir/velpatasvir/GS-9587, which has already shown promising cure rates after just eight weeks of treatment," Haydock said.</p><p>Merck plans to test grazoprevir/MK-3682/MK-8408 with or without ribavirin in genotypes 1, 2 and 3 during C-CREST-1 and C-CREST-2 part B. The studies also will evaluate various treatment durations in treatment-na&iuml;ve and experienced patients with or without cirrhosis or HIV co-infection.</p><p>"The plans are going to be to look at eight weeks and somewhat longer durations for harder to treat patients," Merck vice president and infectious diseases therapeutic area head Eliav Barr told <i>Scrip</i>.</p><p>"We're looking at some populations with ribavirin only to determine whether you can achieve a universal duration and we'll add ribavirin for patients who need it, such as treatment-experienced cirrhotics," Barr added.</p><p>The goal for Merck and its competitors is a single regimen that works for the most patients without ribavirin with a duration that's as short as possible to make it easier for people to adhere to HCV treatment regimens and to reduce side effects from direct-acting antiviral therapies. </p><p>Barr said Merck will report its Phase IIb C-CREST data sometime in 2016 and the company may report results from some of the shorter duration of treatment arms before the longer-term treatment data are available, but the exact timing hasn't been disclosed.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 415
+
+<p>Gilead Sciences has led the race to market with ribavirin- and interferon-free therapies that cure most people with the hepatitis C virus (HCV), but Merck & Co. Inc. is gaining ground in the sprint toward shorter-term, pan-genotypic, two- and three-drug regimens, with AbbVie Inc. on their heels with its own dual therapy that also may eliminate HCV infection in some of the most difficult to treat patients.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+AASLD 2015 Gilead Leads Race To Shorter PanGenotypic HCV Treatments
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151111T075257
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151111T075257
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151111T075257
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030337
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+AASLD 2015: Gilead Leads Race To Shorter, Pan-Genotypic HCV Treatments
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Event stories
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361512
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d655c92a-3a3d-4e6f-b52d-8adb5242f494
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

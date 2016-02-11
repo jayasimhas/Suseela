@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6696A098-D245-4514-A3DA-50811AAB2311}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/24/Italian industry buoyant but spending cuts still loom
+parent: {45F27FEE-E6E9-4701-8F1F-87EB6F36AED7}
+name: Italian industry buoyant but spending cuts still loom
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f84d97cb-3919-4bed-a357-3890c730fdf7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Italian industry buoyant, but spending cuts still loom
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Italian industry buoyant but spending cuts still loom
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5015
+
+<p>Improving relations with the Italian government have led to led to a higher degree of stability in the pharmaceutical industry's operating environment over the past few years, but this stability is threatened by the possibility that the regional authorities will carry out their plan to make &euro;2bn in healthcare budget cuts, says Massimo Scaccabarozzi, president of the industry body Farmindustria.</p><p>Speaking ahead of the publication of new data on the competitive position of the Italian industry vis-&agrave;-vis its counterparts in the EU and globally, Mr Scaccabarozzi said that the pharmaceutical industry has been at the forefront of Italy's country's emergence from its precarious economic situation, driven by solid growth in manufacturing, exports and employment in the sector. </p><p>The industry is a key sector in terms of the country's economy, according to Mr Scaccabarozzi. "In the past two quarters, economic growth has been led by two sectors: cars and pharmaceuticals. We now have 174 pharmaceutical production plants, and manufacturing has grown strongly, as have exports," he told <i>Scrip</i> in an interview.</p><p>In the 2010-2014 period, the growth in Italian pharmaceutical exports was the highest in the world, and domestic plants have increased their manufacturing output by taking on the production of many new medicines, Mr Scaccabarozzi said, adding that the sector is particularly strong in biotechnology, particularly drugs for HIV, hepatitis C and cancer. </p><p>The industry has a strong showing in terms of foreign capital invested, but also an abundance of local firms that are well internationalized, the Farmindustria president noted. Foreign multinationals account for 60% of the sector in terms of sales, investments, export etc, and domestic firms for around 40%.</p><p>Moreover, in the last few months, employment levels in the industry have been rising strongly, particularly among younger, qualified people. The industry has more than 63,000 staff, more than 6,000 of them working in R&D, and some 5,000 new employees were taken on last year, many of them aged under 30. </p><h2>Downsides </h2><p>But this optimistic scenario is not reflected across the sector, with Italy having the lowest per capita spending on medicines among the major EU countries, according to Farmindustria data, and patient access to innovative new drugs still being delayed by sluggish reimbursement procedures. </p><p>On the question of access to innovation, Mr Scaccabarozzi said "Italy has a problem in that after drugs are centrally authorized, companies must apply to regional and hospital formularies, and there are delays related to the governance of the system." </p><p>A key issue is that pricing and reimbursement are dealt with by a committee at the regulatory agency AIFA, but new drugs then have to run the additional gauntlet of securing a regional reimbursement listing. It's possible that some improvement will be seen on this front as AIFA takes up its new HTA evaluation function, as also provided for in the 2015 Stability Law passed at the end of last year, Mr Scaccabarozzi believes.</p><p>Some relief on medicines access is provided by the new 2015-16 innovative medicines fund, which was set up under the Stability Law and will provide &euro;500m to pay for new expensive drugs for each of those two years. "If AIFA says a drug is innovative, it can be paid for by the fund. For example, the hepatitis C drugs are currently being funded," Mr Scaccabarozzi said. </p><p>One issue still looming is that while successive government policies have given the industry some stability despite tight spending ceilings and a payback mechanism, the regional authorities are still targeting healthcare for an additional &euro;2bn in savings to help it find a total of &euro;4bn savings overall this year, <a href="http://www.scripintelligence.com/policyregulation/Italy-to-set-up-innovative-drug-fund-as-pharma-spending-row-simmers-356532" target="_new">as required under the Stability Law</a>. &euro;750m of these savings would be sought from the pharmaceutical industry.</p><p>It's not clear whether these cuts will actually be implemented &ndash; talks between the government and the regions were suspended in advance of the regional elections in May, but they have now resumed and the results should be known in the first half of July, the Farmindustria president said.</p><p>Meanwhile, he pointed out, the industry had promised the government that it would make certain investments in Italy, "and these have been made and are still being made, including in terms of employment, so we are making a contribution to the recovery of the country". </p><p>He said it was important that this progress was not dampened by further cuts such as those envisaged by the regions. "We hope the country doesn't decide to put a brake on the stimulus that the pharmaceutical industry is bringing to the economy. If the country doesn't do that, we will continue in this direction".</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 409
+
+<p>Improving relations with the Italian government have led to led to a higher degree of stability in the pharmaceutical industry's operating environment over the past few years, but this stability is threatened by the possibility that the regional authorities will carry out their plan to make &euro;2bn in healthcare budget cuts, says Massimo Scaccabarozzi, president of the industry body Farmindustria.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Italian industry buoyant but spending cuts still loom
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150624T090002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150624T090002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150624T090002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029112
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Italian industry buoyant, but spending cuts still loom
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359096
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f84d97cb-3919-4bed-a357-3890c730fdf7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

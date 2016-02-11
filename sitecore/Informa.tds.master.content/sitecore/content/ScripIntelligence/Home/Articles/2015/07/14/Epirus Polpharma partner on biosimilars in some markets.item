@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {5CA86C35-D9E7-4765-9EAA-0140AAACB659}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/14/Epirus Polpharma partner on biosimilars in some markets
+parent: {CDA12E48-3499-4F0B-8DA5-8FF067DDAF1D}
+name: Epirus Polpharma partner on biosimilars in some markets
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7e0e8114-6925-4d75-9cba-9538acb9f3ef
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Epirus, Polpharma partner on biosimilars in some markets
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Epirus Polpharma partner on biosimilars in some markets
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3511
+
+<p>US biosimilar developer Epirus Biopharmaceuticals entered into a profit-sharing agreement with Polish generic medicines specialist Polpharma Group for development and commercialization in certain EU markets as well as the Middle East, Turkey, Russia and the Commonwealth of Independent States (CIS).</p><p>Boston-based Epirus initially focused its strategy on regions like the EU and certain emerging markets where the biosimilar regulatory pathway was most clear, but in deals with Polpharma and others the company has retained North American rights. Epirus will keep 49% of the profits in its agreement with Polpharma and its partner will keep the other 51% in markets covered by the deal. Epirus will hold on to European rights in Switzerland, Norway, Austria, Belgium, Denmark, Finland, Luxembourg, the Netherlands and Sweden.</p><p>The deal with Polpharma is focused on three Epirus-developed products &ndash; BOW015, BOW050 and BOW070, which are biosimilars for Johnson & Johnson's Remicade (infliximab), AbbVie's Humira (adalimumab) and Roche's Actemra (tocilizumab), respectively. The brand-name versions of the biologics generate $6bn in annual sales in the territories covered by the agreement.</p><p>Epirus will remain responsible for global development and clinical programs as well as manufacturing. Polpharma, which has $1bn in annual sales and more than 1,700 employees focused on selling drugs, will contribute $30m to help cover development costs, oversee commercialization and pay all product launch costs associated with the Epirus biosimilars in its markets.</p><p>Epirus was not focused on the US, where biosimilar regulations still are <a href="http://www.scripintelligence.com/home/FDAs-take-it-slow-biosimilars-approach-best-for-industry-359416" target="_new">being written</a>, as recently as in <a href="http://www.scripintelligence.com/business/Epirus-fixes-on-Europe-for-biosimilar-base-business-354243" target="_new">October</a>. The company also was focused outside of the US when it merged with Zalicus in <a href="http://www.scripintelligence.com/business/BioNotebook-Interviews-with-future-Raptor-CEO-Smith-Epirus-CEO-Munshi-Clinical-updates-from-Alkermes-BioLineRx-Targacept-352951" target="_new">July 2014</a> and when it raised $36m in venture capital prior to the reverse merger with Zalicus in <a href="http://www.scripintelligence.com/business/Epirus-raises-36m-reverse-merges-with-Zalicus-351349" target="_new">April 2014</a>. </p><p>However, Epirus now intends to retain North American rights to its biosimilars and commercialize on its own or with partners in the region as needed.</p><p>The company signed a deal with Ranbaxy (now part of Sun Pharma) in <a href="http://www.scripintelligence.com/business/Ranbaxy-takes-on-biosimilar-Remicade-349173" target="_new">January 2014</a> to commercialize the Remicade biosimilar BOW015 in India, some Southeast Asia countries, North Africa and other markets. The product launched as <a href="http://www.scripintelligence.com/business/First-biosim-infliximab-in-India-debuts-at-20-discount-355503" target="_new">Infimab</a> on 1 December in India. </p><p>Epirus also has agreements with Livzon Mabpharm in <a href="http://www.scripintelligence.com/business/Epirus-signs-biosimilars-deal-with-Chinese-partner-354124" target="_new">China and Taiwan</a>, and with CHEMO Group/mAbxience for Latin America.</p><p>Epirus's stock closed up 15.5% at $7.38 per share on 14 July after it disclosed the Polpharma deal.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 306
+
+<p>US biosimilar developer Epirus Biopharmaceuticals entered into a profit-sharing agreement with Polish generic medicines specialist Polpharma Group for development and commercialization in certain EU markets as well as the Middle East, Turkey, Russia and the Commonwealth of Independent States (CIS).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Epirus Polpharma partner on biosimilars in some markets
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150714T220342
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150714T220342
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150714T220342
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029224
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Epirus, Polpharma partner on biosimilars in some markets
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359336
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042421Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7e0e8114-6925-4d75-9cba-9538acb9f3ef
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042421Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

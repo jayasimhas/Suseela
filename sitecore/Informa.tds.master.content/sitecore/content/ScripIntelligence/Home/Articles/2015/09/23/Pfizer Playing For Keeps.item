@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {F64672CE-FF46-4C0E-A609-4CC5FBBF0E89}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/23/Pfizer Playing For Keeps
+parent: {E8CB3B12-58E6-4D8C-926D-C49922785188}
+name: Pfizer Playing For Keeps
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7e769e2d-ca0d-45c5-ba69-2f39847199da
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 25
+
+Pfizer: Playing For Keeps
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 24
+
+Pfizer Playing For Keeps
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3888
+
+<p><p>Pfizer Inc. is undeterred by competition in the immuno-oncology landscape and expects to be a leader in the field, despite a sizable lead by competition, said executives from the big pharma powerhouse at a meeting with reporters on Sept. 22. </p><p>"Compared to other corporations, we are uniquely positioned to be a leader in the space of immuno-oncology," said Albert Bourla, Pfizer's group president for vaccines, oncology and consumer healthcare, at the meeting. "We have such a broad range of combinable compounds in immuno-oncology and outside the space."</p><p>Pfizer &ndash; like many of those in the industry &ndash; believe that the key to finding cures for the 200 or so different types of cancers will be through combination therapies. </p><p>Combination therapies seem to be the way the industry is going &ndash; and not just in oncology. Big pharma has been in a race to develop an all-oral pan-genotypic cure for hepatitis C that has relied heavily on combination therapies. </p><p>"[The market] will be won in combinations," added Liz Barrett, general manager and president of Pfizer Oncology. "It is about being able to reach the largest number of patients &ndash; you need doublets, you need triplets. PD-1 is just one type of immunotherapy. If you look at the broader immunotherapy portfolio that we have versus the competition, it's why we believe we will be a leader."</p><p>Pfizer is in Phase III currently with its PD-L1 inhibitor avelumab for the treatment of non-small cell lung cancer, which is also being studied in Merkel cell carcinoma, as well as ovarian and gastric cancers. The drug was developed by Germany's Merck Serono and the pair partnered in late-2014.</p><p>Pfizer is testing avelumab as a combo therapy with other immuno-oncology assets and targeted cancer therapies, such as the company's <i>Inlyta</i> (axitinib) and <i>Xalkori</i> (crizotinib). Pfizer's pipeline also includes cancer vaccines, chimeric antigen receptor T-cell (CAR-T) therapies and drugs specific to other immune system targets, like 41-BB and OX40 &ndash; all of which the company sees as potential combo candidates.</p><p>Pfizer's oncology program has been growing at a rapid pace over the last few years &ndash; launching four new cancer drugs in as many years. Executives at the company are excited about expanding the indications for recently launched <i>Ibrance</i> (palbociclib), which gained approval in February from FDA for the treatment of metastatic breast cancer. Pfizer is studying the drug in pancreatic cancer, as well as head and neck cancer. </p><p>Pfizer says the launch of Ibrance is going well so far &ndash; the drug beat analysts' sales estimate by a wide margin in the <a href="http://www.scripintelligence.com/home/Ibrance-Prevnar-2Q-sales-validate-Pfizers-RandD-investments-359666?refid=RSSLATEST" target="_new">second quarter</a> &ndash; and more than 12,000 patients have tried the drug. Barrett said that about 3,000 physicians have prescribed Ibrance &ndash; almost double the company had expected at this point in the launch. </p><p>Yet, Merck & Co. and Bristol-Myers Squibb Co. both have PD-1 inhibitors already on the market that have been wowing the industry with record approval times, record sales and rapid uptake. </p><p>Despite the competition, Pfizer is undeterred. The company is confident because it has the track record to prove it. This isn't the first time that Pfizer has come late to the party and still come out ahead &ndash; Lipitor was the seventh statin to market in that category and yet, managed to gain the title of the best-selling drug of all time (at least for several years). </p><p>"If you are running a 100 meter sprint, starting one or two seconds later it is very impactful. If you are running 42 kilometers &ndash; a marathon &ndash; starting one or two seconds later it is irrelevant," added Bourla. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 24
+
+Pfizer Playing For Keeps
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150923T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150923T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150923T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029845
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 25
+
+Pfizer: Playing For Keeps
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360539
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042454Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7e769e2d-ca0d-45c5-ba69-2f39847199da
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042454Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

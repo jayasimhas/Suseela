@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {8C96F76D-C720-41C2-B539-A5B6D841655D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/07/Immunocore scores Europes biggest ever private biotech financing
+parent: {3BC254C1-F684-481F-AC19-2127127A06F5}
+name: Immunocore scores Europes biggest ever private biotech financing
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1f0a01ac-a0ec-4d38-92c4-ca607ffe7e17
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Immunocore scores Europe's biggest ever private biotech financing
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+Immunocore scores Europes biggest ever private biotech financing
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4638
+
+<p>Immunocore has raised Europe's largest-ever private financing of a biotechnology company, securing $320m in an oversubscribed round which included new investors Woodford Investment Management, Malin, Eli Lilly and RTW Investments. In fact, the round is second only to Moderna Therapeutics and its $450m private equity event at the start of this year.</p><p>"We believe we can build a franchise around our lead candidate IMCgp100 as a monotherapy and as a combination therapy," Immunocore's CEO Eliot Forster told <i>Scrip</i>. "This capital gives us the opportunity to accelerate programs that we otherwise may have waited for."</p><p>IMCgp100 is the company's most advanced Immune mobilizing mTCR Against Cancer molecules (ImmTAC), which are a novel class of bi-specific biologics based on T-cell receptors with ultra-high affinity for intracellular and extracellular cancer targets. The company reported positive Phase I/IIa trial data in April 2015 in patients with advanced metastatic cutaneous and ocular melanoma.</p><p>"We want to do some exploratory work in other indications with IMCgp100 that have the target, but it is clinical experimentation and that didn't have the priority it can now have with this capital being available," explained Dr Forster. However, "It doesn't mean that we're not going to be efficient in the use of our capital."</p><p>He expects the cash bonanza, which is not being paid in tranches, will fund operations for the next three to five years, but this could change. "If clinical opportunities arise then we'll go after those and that may shorten that period a little, but that's a good problem to have. This financing allows us to begin to properly understand the opportunities across our technology and to grow the company."</p><p>Dr Forster expects to add around 10 new staff to Immunocore's 160-strong workforce over the next year. "We will grow in a controlled way. I'm a great believer in managed growth to maximize productivity."</p><p>The money will also be used to accelerate Immunocore's internal pipeline of ImmTACs and the engine that makes them. "We have internal candidates that we heading towards the clinic and now we are able to deploy resource to accelerate that. We can also further expand our protein sciences to boost our ImmTAC production engine and our discovery engine for HLA-presented peptides that are expressed predominantly on cancer tissue versus healthy tissue."</p><p>Immunocore will continue to work on its partnerships with MedImmune and <a href="http://www.scripintelligence.com/business/Lilly-to-trial-kinase-inhibitors-with-Immunocores-TCR-candidate-in-melanoma-359165" target="_new">Lilly on combinations</a> of IMCgp100 with other drugs.</p><p>Why was a private equity event the right way to raise capital? "There were several things on the table. Clearly, organic growth: we have excellent partnerships which bring some cash into the company. There was the more traditional jump to a public market. Then there is the route we've gone down. Our view was that with these investors, the company now has an opportunity to explore other financing possibilities as and when it's right for the company. We found investors that share our vision to build a world-leading premier biotech company and that was at least as important as other considerations with respect to the financing."</p><p>Immunocore is not ruling out an IPO, "but given the enthusiasm to finance Immunocore to this level as a private company we didn't consider an IPO to be necessary at this time."</p><p>And how long does it take to put together a $300m-plus private financing round? "It takes 15-20 years of dedication to build a world-leading science platform. The actual financing takes a few months. But none of that occurs unless all of those years of dedication have gone in," said Dr Forster. "[This financing] is a measure of the science and a measure of the demand from patients that are not satisfactorily treated in cancer."</p><p>Adrian Howd from investment group Malin agreed. Immunocore's "deep and high quality science" was key. In addition, "ImmTAC's applicability in multiple disease areas and potential as monotherapy and/or combination therapies, a first class management team and board, and the small and focused investor group" all contributed to the investment case. "We saw this as an optimal way to gain exposure to this space for Malin shareholders."</p><p><p><b>Related stories:</b></p><p><a href="http://www.scripintelligence.com/home/Moderna-raises-450m-most-ever-for-private-biotech-355938" target="_new">Moderna raises $450m; most ever for private biotech</a></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 357
+
+<p>Immunocore has raised Europe's largest-ever private financing of a biotechnology company, securing $320m in an oversubscribed round which included new investors Woodford Investment Management, Malin, Eli Lilly and RTW Investments. In fact, the round is second only to Moderna Therapeutics and its $450m private equity event at the start of this year.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+Immunocore scores Europes biggest ever private biotech financing
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151007T013934
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151007T013934
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151007T013934
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029249
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Immunocore scores Europe's biggest ever private biotech financing
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199800170
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359373
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1f0a01ac-a0ec-4d38-92c4-ca607ffe7e17
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

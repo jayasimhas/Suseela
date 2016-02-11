@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {636224C5-1EB8-41A6-B36F-E03EC7FAEEC7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/19/FDA panel backs Avedro eye disorder drugdevice combo
+parent: {97D2E94C-15AA-4D21-BD20-E53C9AA5BAA3}
+name: FDA panel backs Avedro eye disorder drugdevice combo
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 90b174f0-3100-4323-b5e6-3c0fabc3cec3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+FDA panel backs Avedro eye disorder drug-device combo 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+FDA panel backs Avedro eye disorder drugdevice combo
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6922
+
+<p>After a day of taking a beating over its poor data, where it appeared from the get-go Avedro was on its way to having a losing day, an FDA advisory panel surprisingly backed approval of the firm's riboflavin ophthalmic solution and UVA light source drug-device combination products for use in a procedure known as corneal collagen cross-linking (CXL) to treat progressive keratoconus and corneal ectasia following refractive surgery.</p><p>Many of the members of the FDA's committee confessed they ultimately were swayed by the unmet need for an effective therapy to treat the two progressive orphan conditions, despite what some on the panel described as "messy" and "abysmal" data. </p><p>"The study design and execution really required some very creative acrobatics to get this to the point where one could vote in the affirmative," said panelist Dr Stephen McLeod, chairman of ophthalmology at the University of California, San Francisco. </p><p>Nevertheless, he said, with a "prevailing need, my vote has to be yes."</p><p>At a joint meeting on 24 February of the FDA's Dermatologic and Ophthalmic Drugs Advisory Committee (DODAC) and the Ophthalmic Device Panel of the Medical Devices Advisory Committee (OPMDAC), the panelists voted 10-4, with one abstention, there was substantial evidence of efficacy and safety to support approval of the drug-device combination products, known as Photrexa Viscous, which contains riboflavin plus dextran, and Photrexa, which does not contain dextran, and the KXL device system to treat progressive keratoconus.</p><p>The joint DODAC-OPMDAC also voted 6-4, with four abstentions, there was substantial evidence of the products' efficacy and safety in treating corneal ectasia following refractive surgery, such as LASIK. </p><p>In seeking the FDA's approval, Avedro is dealing with a complicated history of its investigational products &ndash; starting with the fact it obtained the rights to the drug-device combos after all patients had been treated in the Phase III clinical studies (scripintelligence.com, <a href="http://www.scripintelligence.com/home/FDA-adcomm-may-be-rough-for-Avedro-drug-device-combo-356879" target="_new">21 February 2015</a>).</p><p>To complicate matters further, the previous owner, Swiss firm Peschke Meditrade, had gone against the FDA's advice to conduct the primary endpoint analysis at 12 months &ndash; with the firm instead insisting it must be done at three months.</p><p>Avedro ended up changing it to 12 months, but that raised questions in the minds of some of the FDA's advisers about whether the analysis could be trusted. </p><p>"I don't understand why when they took over the data five years ago and they realized it was poor they didn't do an additional arm to validate the data," said panelist Dr Michael Belin, a professor of ophthalmology and vision science at the University of Arizona, who voted against approval for the keratoconus indication but left the FDA meeting before the vote was taken on the use of Avedro's products in treating corneal ectasia. </p><p>Of particular concern to several members of the FDA's committee was the fact that Avedro is seeking approval of a device that is not the one studied in the Phase III trials.</p><p>"How do we approve this when there's no data that's substantial," said panelist Dr Jayne Weiss, chair of ophthalmology at Louisiana State University in New Orleans. "We can imagine, theorize and assume. But this meeting is not about making assumptions. We need the data and we don't have the data."</p><p>"The biggest problem is they have no patients treated with the machinery that they are trying to get approved, and we don't know if there is some subtle differences in the machinery design compared to the one on which the study was done that may make a difference," said panelist Dr Stephen Feman, professor emeritus at St Lewis University in Missouri.</p><p>But Avedro CEO David Muller argued there was "not a hair's breadth" of difference between its KXL System and the study device, known as the IROC-UV-X.</p><p>Both are UVA irradiation systems that use a light emitting diode to deliver a dose of UVA light to a targeted treatment area for illuminating the cornea during CXL, he said.</p><p>The FDA's committee also was concerned that Avedro's analysis used a so-called last observation carried forward (LOCF) strategy to impute missing data resulting from patient withdrawal, which was mostly attributed to the fact that the lead academic investigator for one of the studies, known as UVX-001, departed his institution before the trial was completed, so the study was terminated.</p><p>The National Academy of Sciences has advised against using LOCF in dealing with missing data, one of the FDA committee members pointed out.</p><p>"I think we need better data," said panelist Dr Scott Evans, a professor of biostatistics at Harvard University, who voted against approval for both indications.</p><p>Panelist Dr Cynthia Owsley, chair of ophthalmology at the University of Alabama in Birmingham, who voted against approval for the keratoconus indication, but abstained on the corneal ectasia vote, said she was "very moved" by the dozen-plus patients and advocates who spoke during the public hearing portion of the FDA&rsquo;s meeting &ndash; most of whom voiced opposition to LASIK refractive surgery. </p><p>Some of the public speakers raised concerns CXL would be "hyped" as a fix-all for the injuries and problems associated with LASIK.</p><p>Other public speakers condemned the FDA &ndash; charging the agency rushed the approval of LASIK and asserting regulators are aware of, but have helped to keep hidden, "secret files" documenting the adverse effects of LASIK kept by surgeons who perform the refractory surgery. </p><p>A small number of the speakers, however, advocated for approval of Avedro's products for use in CXL. </p><p>"I think these patients deserve evidence-based interventions," Dr Owsley said. </p><p>But she said the studies for Avedro's products were "so methodologically flawed, that I could not come to a conclusion that it represented substantial evidence of efficacy."</p><p>Panelist Dr Bennie Jeng, chair of ophthalmology and visual sciences at the University of Maryland in Baltimore, abstained on both votes &ndash; declaring he was "torn."</p><p>"I think the data is not very clean," Dr Jeng said. "But I think it's convincing enough and there's definitely a medical need. But I'm very troubled by giving approval to a machine, albeit similar, that is not the same one studied, and there are nuances that could be different about it and could affect the efficacy.&rdquo;</p><p>But in the end, Avedro managed to convince the majority of the panelists &ndash; even Dr Weiss, who had been the harshest critic all throughout the 24 February meeting.</p><p>"I had many concerns," she said, "but there is medical need."</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 440
+
+<p>After a day of taking a beating over its poor data, where it appeared from the get-go Avedro was on its way to having a losing day, an FDA advisory panel surprisingly backed approval of the firm's riboflavin ophthalmic solution and UVA light source drug-device combination products for use in a procedure known as corneal collagen cross-linking (CXL) to treat progressive keratoconus and corneal ectasia following refractive surgery.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+FDA panel backs Avedro eye disorder drugdevice combo
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150219T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150219T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150219T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027915
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+FDA panel backs Avedro eye disorder drug-device combo 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356840
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+90b174f0-3100-4323-b5e6-3c0fabc3cec3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

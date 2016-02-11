@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {8811EDB9-19CF-4DD9-8665-52B7CFE019DF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/17/Cara is itching for approval
+parent: {AAE19934-7ACE-4A8F-A55E-F9C7A894CF94}
+name: Cara is itching for approval
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 20152686-957a-4c5a-9e90-46f68baf3637
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 28
+
+Cara is itching for approval
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 28
+
+Cara is itching for approval
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2327
+
+<p><p>Cara Therpeutics' stock soared on 23 July after the company announced positive mid-stage results for its anti-itch medication. </p><p>The next-gen kappa opioid receptor agonist, CR845, hit its primary endpoint in a small Phase II study of patients with uremic pruritus, a chronic itching suffered by dialysis patients. The drug was able to alleviate some of the most intense itching and improve quality of life for the patients. </p><p>"With this encouraging data, we plan to engage the FDA in a formal meeting to guide the structure of a potential Phase 3 pivotal trial, which we would expect to begin in 2016," said Cara CEO Dr Derek Chalmers. </p><p>Cara announced the topline results on 23 July, sending its shares up more than 30% during midday trading. The stock settled at $18.99 at the close, up $3.15, or 19.89%. </p><p>The two week trial enrolled 65 patients in the US and the drug reduced itching by 54% compared with placebo (p=0.016). CR845 reduced both daytime and nighttime itching, with an average reduction from baseline of 48%. </p><p>Secondary endpoints of the study looked at quality of life measurements and took into account the overall health of the skin, as well as sleep disturbances due to itching. </p><p>The drug was shown to be safe and well-tolerated with the most common adverse events being numbness and dizziness. </p><p>There are more than 400,000 patients in the US on dialysis and as many 2.2m worldwide &ndash; about of these patients experience the chronic itching. There are currently no approved treatments for the condition and patients often become resistant to corticosteroids and antihistamines. </p><p>Cara's approach is different than traditional opioid treatments for pain, bypassing the central nervous system. The mechanism of action means that there is less potential for addiction and the company can potentially avoid having the drug be classified as a restricted substance, which would allow the company more freedom of marketing should the drug gain approval. </p><p>Dr Chalmers told investors on a same day conference call that the company sees this as just the beginning for the drug and hopes to broaden the clinical program and be able to reach a wider market. </p><p>The company debuted on the public market in early 2014, bringing in $55m in its IPO. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+Cara is itching for approval
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150717T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150717T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150717T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029316
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 28
+
+Cara is itching for approval
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+Expert View
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359504
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+20152686-957a-4c5a-9e90-46f68baf3637
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

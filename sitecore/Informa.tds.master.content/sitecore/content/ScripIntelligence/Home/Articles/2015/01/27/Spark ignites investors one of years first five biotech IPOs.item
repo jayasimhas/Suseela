@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {01BA981C-BC43-4B3D-9FE3-F0AC44B93345}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/27/Spark ignites investors one of years first five biotech IPOs
+parent: {933B5F01-42A7-4CA0-9550-5E6C7B6691CA}
+name: Spark ignites investors one of years first five biotech IPOs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3a39f32e-905a-49e4-b43f-731c3980d7d2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+ Spark ignites investors; one of year's first five biotech IPOs  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Spark ignites investors one of years first five biotech IPOs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5404
+
+<p> Spark Therapeutics priced its initial public offering at $23 per share and the company's stock closed its first day of trading up 117.4% at $50, showing that investors are willing to place big bets on gene therapy that could cure or substantially reduce treatment burdens for severe diseases and conditions. </p> <p> Philadelphia, Pennsylvania-based Spark, which could have the first US FDA-approved gene therapy, will gross at least $161m from the sale of 7m shares to fund a Phase III clinical trial in inherited retinal dystrophies (IRDs) as well as regulatory submissions and commercialization of the therapy for genetic eye diseases that cause blindness (scripintelligence.com, <a target="_new" href="http://www.scripintelligence.com/business/Spark-to-IPO-to-fund-first-US-gene-therapy-approval-355927">5 January 2015</a>). The company's offering was the best-performing drug developer IPO during the last week of January. </p> <p> The IPO-tracking firm Renaissance Capital notes that only 15 companies &ndash; including Spark and the restaurant chain Shake Shack, which also went public on 30 January &ndash; have ended their first day of trading at 100% or more above their IPO prices since 2013. Twelve out of the 13 big gainers that preceded Spark are now trading below their first-day peak values. </p> <p> Spark, Dicerna Pharmaceuticals on 30 January 2014 and Ultragenyx Pharmaceuticals on 31 January 2014 were the only drug development firms among the 15 companies that doubled their stock value on their first day of trading (scripintelligence.com, <a target="_new" href="http://www.scripintelligence.com/home/BioNotebook-Ultragenyx-doubles-as-4-IPOs-enter-market-CytRx-Regado-raise-cash-349740">1 February 2014</a>). RNA-based therapeutics specialist Dicerna is now trading 42% above its IPO price, but 54% below its first-day peak. Ultragenyx is trading 177% above its IPO value and 38% above its first-day closing price. </p> <p> Among the other four biotech firms that went public between 26 and 30 January, two companies closed below their IPO prices and two closed above. Their performance is outlined in the table below. </p> <table> <tr> <td> <p> <b>Company</b> </p> <p> &nbsp; </p> </td> <td> <p> <b>Offering</b> </p> <p> &nbsp; </p> </td> <td> <p> <b>First-day performance</b> </p> <p> &nbsp; </p> </td> </tr> <tr> <td> <p> Ascendis Pharma; </p> <p> Copenhagen, Denmark </p> <p> &nbsp; </p> </td> <td> <p> Ascendis, which originally planned to raise up to $86.25m in its IPO, will gross $108m from the sale of 6m shares priced at $18 each (scripintelligence.com, <a target="_new" href="http://www.scripintelligence.com/business/IPO-Update-Juno-has-biggest-2014-offering-as-investors-chase-CAR-T-stocks-355776">21 December 2014</a>). </p> <p> &nbsp; </p> </td> <td> <p> The stock closed up 4.6% at $18.83 on 28 January. </p> <p> &nbsp; </p> </td> </tr> <tr> <td> <p> Flex Pharma; </p> <p> Boston, Massachusetts </p> <p> &nbsp; </p> </td> <td> <p> Flex Pharma planned to sell 4.6m shares at $12 to $14 each, but ultimately priced 5.4m shares at $16 to raise $86.4m for therapies that treat nocturnal leg cramps and spasms (scripintelligence.com, <a target="_new" href="http://www.scripintelligence.com/business/BioNotebook-Up-to-2.6bn-in-post-JP-Morgan-stock-offerings-plus-six-IPO-updates-356349">25 January 2015</a>). </p> <p> &nbsp; </p> </td> <td> <p> At $14.95 on 29 January, Flex finished its first day down 6.6% at $14.95. </p> <p> &nbsp; </p> </td> </tr> <tr> <td> <p> Tracon Pharmaceuticals; </p> <p> San Diego, California </p> <p> &nbsp; </p> </td> <td> <p> Tracon raised $36m from the sale of 3.6m shares priced at $10 each. The company previously expected to gross up to $50.4m from an offering priced at $12 to $14 per share. </p> <p> &nbsp; </p> </td> <td> <p> The stock closed down 2% on 30 January at $9.40. </p> <p> &nbsp; </p> </td> </tr> <tr> <td> <p> Zosano Pharma; </p> <p> Fremont, California </p> <p> &nbsp; </p> </td> <td> <p> Transdermal drug developer Zosano Pharma priced 4.5m shares at $11 each for gross proceeds of $49.5m. Back in August the company hoped to raise up to $78.6m from the sale of 6.4m shares priced at $10 to $12 (scripintelligence.com, <a target="_new" href="http://www.scripintelligence.com/business/TABLE-Sage-IPO-spices-up-sour-biotech-market-352950">21 July 2014</a>). </p> <p> &nbsp; </p> </td> <td> <p> The company's share price closed a penny higher at $11.01 on 27 January. </p> <p> &nbsp; </p> </td> </tr> </table> <p> The only drug developer to register a new IPO during the last week of January was Oxford, UK-based Summit, which filed paperwork with the US Securities and Exchange Commission (SEC) to raise up to $40m in a US IPO to finance clinical trials for the treatment of Duchenne muscular dystrophy and c. difficile infections. The company already is listed on the London Stock Exchange. </p> <p> However, another biotech company withdrew its plans to pursue an IPO. New Haven, Connecticut-based Kolltan Pharmaceuticals planned to raise up to $86.25m for the development of tyrosine kinase inhibitors for the treatment of cancer, but the company no longer intends to go public (scripintelligence.com, <a target="_new" href="http://www.scripintelligence.com/business/IPO-TABLE-Five-biotech-offerings-coming-soon-after-Affimed-priced-eight-others-filed-or-set-terms-353962">16 September 2014</a>). </p> <p><p><p><p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 316
+
+<p> Spark Therapeutics priced its initial public offering at $23 per share and the company's stock closed its first day of trading up 117.4% at $50, showing that investors are willing to place big bets on gene therapy that could cure or substantially reduce treatment burdens for severe diseases and conditions. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Spark ignites investors one of years first five biotech IPOs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150127T143535
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150127T143535
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150127T143535
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027690
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+ Spark ignites investors; one of year's first five biotech IPOs  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+Feature
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356400
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3a39f32e-905a-49e4-b43f-731c3980d7d2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

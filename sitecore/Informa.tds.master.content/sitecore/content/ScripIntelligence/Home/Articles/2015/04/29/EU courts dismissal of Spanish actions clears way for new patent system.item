@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {61F79E32-6666-4F23-8B06-05C2385FBA73}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/29/EU courts dismissal of Spanish actions clears way for new patent system
+parent: {C14ED64E-C9E7-40EB-93B8-679AFA5F32DB}
+name: EU courts dismissal of Spanish actions clears way for new patent system
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0cccf7d3-b180-4065-a6ec-b4096d05d350
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{C7EBBDA0-1A1D-4B22-8330-447DC674C2DB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 72
+
+EU court's dismissal of Spanish actions clears way for new patent system
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 71
+
+EU courts dismissal of Spanish actions clears way for new patent system
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4349
+
+<p>In a judgement that removes the last remaining legal obstacle to the creation of the EU unitary patent, the Court of Justice of the European Union has dismissed two actions brought by Spain seeking to annul the two regulations that underpin the patent package.</p><p>The so-called "European patent with unitary effect" and the proposed new Unified Patent Court, constitute the future EU system under which patents can be granted that have effect in all participating member states and can be litigated centrally through the UPC. The system is expected to be up and running sometime in 2017, with English, French and German as its official languages.</p><p>Spain, however, has taken issue with a number of aspects of the two regulations, which respectively cover the unitary patent itself and the related language arrangements, and produced a number of complex legal arguments to bolster its case at the CJEU.</p><p>In the case of the patent regulation, the Spanish government claimed that the procedures leading up to the grant of a patent were not subject to judicial review to ensure the correct application of EU law and the protection of fundamental rights.</p><p>But the CJEU rejected this argument, saying that the regulation was not intended to delimit, even partially, the conditions for granting European patents, and that it did not incorporate into EU law the procedure for granting European patents laid down by the European Patent Convention (EPC). It merely established the conditions under which a patent previously granted by the EPO might benefit from unitary effect.</p><p>In its second objection, Spain argued that the first paragraph of Article 118 of the Treaty on the Functioning of the EU (TFEU) (covering intellectual property rights) was not an adequate legal basis for the regulation. However, the court countered that unitary patent protection was likely to prevent divergences in patent protection in the participating member states, thereby providing uniform protection of IP rights in those states. </p><p>As for Spain's objection to giving the member states the power to decide on the level and distribution of patent renewal fees, the court observed that it fell to the member states, not to the European Commission or the Council of the EU, to adopt the measures needed to carry out legally binding EU acts, because the EU, unlike its member states, is not a party to the EPC.</p><h2>No discrimination on languages</h2><p>The court also dismissed Spain's claim that the principle of non-discrimination had been infringed by the fact that the translation regulation sets out a language arrangement that is prejudicial to those whose language is not one of the three official languages of the European Patent Office. The court conceded that the regulation does differentiate among the official languages of the EU, but it stressed that the regulation had a legitimate objective, namely the creation of a uniform and simple translation regime that would facilitate access to patent protection, particularly for small and medium-sized enterprises (SMEs). </p><p>The language arrangements set out in the regulation made access to the patent system easier, cheaper and legally more secure, the court said. It added that the regulation was proportionate in that it maintained the necessary balance between the interests of applicants and those of other economic operators by introducing mechanisms such as a compensation scheme for translation costs, and a transitional period pending the availability of high-quality machine translations in all the EU official languages.</p><p>Law firm Taylor Wessing said that by upholding the regulations, the CJEU had "removed all major (legal) obstacles for the creation of the unitary patent and the Unified Patent Court. The unitary patent package can now come into force as planned, ie after the UPC Agreement has received the thirteen ratifications required." The agreement has so far been ratified by six member states: Austria, Belgium, Denmark, France, Malta and Sweden. </p><p><i>Scrip</i> is currently running a <a href="http://www.scripintelligence.com/therapysector/Europes-new-patent-system-Part-3-What-happens-to-existing-patents-357980" target="_new">series of articles</a> by Paul England of Taylor Wessing looking at various aspects of the future patent system.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 267
+
+<p>In a judgement that removes the last remaining legal obstacle to the creation of the EU unitary patent, the Court of Justice of the European Union has dismissed two actions brought by Spain seeking to annul the two regulations that underpin the patent package.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 71
+
+EU courts dismissal of Spanish actions clears way for new patent system
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150429T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150429T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150429T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028624
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 72
+
+EU court's dismissal of Spanish actions clears way for new patent system
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+Commentary
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358112
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0cccf7d3-b180-4065-a6ec-b4096d05d350
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

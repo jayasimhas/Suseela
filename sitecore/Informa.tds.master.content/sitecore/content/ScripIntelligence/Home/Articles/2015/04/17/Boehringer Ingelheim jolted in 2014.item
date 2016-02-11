@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {ED3C0382-2A9B-4BAC-9245-3F49F5D69F07}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/17/Boehringer Ingelheim jolted in 2014
+parent: {5262FD33-8196-4910-BCB3-3BC76EEBE076}
+name: Boehringer Ingelheim jolted in 2014
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f31709b9-d381-4b1b-b96c-9b4db13c659a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{596C57D2-03CE-4CDE-A652-4F84D9CD4617}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 37
+
+Boehringer Ingelheim 'jolted' in 2014
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 35
+
+Boehringer Ingelheim jolted in 2014
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6835
+
+<p>Challenges in 2014 had given Boehringer Ingelheim a "jolt" last year, finance chief Hubertus von Baumbach told delegates at the privately owned company's annual conference in Germany. </p><p>Boehringer reported a decline in sales and after-tax profits after suffering the indignity of having to settle medical liability litigation over its anticoagulant Pradaxa while maintaining it would have won in court. The negative publicity damaged sales of Pradaxa: "We would have wished for more" than the flat sales of &euro;1.2bn booked, admitted company chief Professor Andreas Barner.</p><p>The company was also blindsided by pricing pressures in the US that affected many in the sector: "We couldn't have foreseen how fast the market environment would change for R&D-based pharma in 2014," said Mr von Baumbach. Those pressures from payers were particularly acute in respiratory and diabetes products: two areas of importance for Boehringer. As a result, the company's top-selling product, COPD treatment Spiriva (tiotropium), saw sales slip by nearly 9% to &euro;3.2bn. </p><p>With patent expiry also hitting other major contributors to revenues, prescription medicine sales were down more than 7% at &euro;10.1bn, with animal health and biopharma contract manufacturing revenues mitigating the damage somewhat at group level to leave the company with a 5% drop in total revenues, to &euro;13.3bn.</p><p>Nonetheless, the company moved out of the shadow of three big clouds in 2014, in <a href="http://www.scripintelligence.com/home/Boehringer-to-pay-650m-to-settle-Pradaxa-litigation-352040" target="_new">settling the majority of the Pradaxa cases</a> for $650m, <a href="http://www.scripintelligence.com/business/Hikma-to-buy-Ben-Venues-Bedford-Labs-for-up-to-300m-352041" target="_new">selling its troubled Ben Venue Laboratories</a> to Hikma, and resolving its manufacturing compliance deficiencies to the FDA's satisfaction with the lifting of a warning letter. The company also secured regulatory approvals for four new products: Jardiance (empagliflozin) for type 2 diabetes (partnered with Lilly); Vargatef (nintedanib) for advanced lung cancer following chemotherapy, Ofev (also nintedanib) for idiopathic pulmonary fibrosis) and Striverdi Respimat (olodaterol) for COPD. </p><p>Executives would not disclose sales of EGFR mutation-positive non-small cell lung cancer treatment Giotrif/Gilotrif (afatinib), which was approved in the US in July 2013 and is leading the company's charge into oncology, but head of pharma marketing and sales Allan Hillgrove told <i>Scrip</i> he was pleased with the launch as a first oncology product, and that was in line with expectations. Professor Barner said the company would probably reveal sales figures for the product at its next annual conference.</p><p>The company is expecting overall sales to grow slightly in 2015, driven by revenues from its diabetes alliance with Lilly (as well as Jardiance the partners recently <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-LillyBI-dual-mechanism-diabetes-drug-Glyxambi-356510" target="_new">won approval</a> for combination product Glyxambi (empagliflozin plus linagliptin)), other new products, and an expected uptick in Pradaxa sales following resolution of the US lawsuits, the <a href="http://www.scripintelligence.com/policyregulation/Boehringer-seeks-FDA-nod-for-Pradaxa-antidote-idarucizumab-357032" target="_new">possible approval of an antidote</a> and a concerted awareness campaign aimed at communicating the benefits of Pradaxa based on trial and real world data with an FDA analysis supporting the case. Spiriva, on the other hand, is not expected to grow, although life cycle management for the blockbuster includes the recent launch of the new inhaler device Respimat, additional approval in asthma and a Spiriva/olodaterol combination product under regulatory review.</p><h2>M&A </h2><p>Executives underlined the company's equity ratio of 40% (up from 39% in 2013), which "secures our independence for the long term", in the words of Mr von Baumbach. With financial funds of &euro;8.5bn, even allowing for a reserve of some &euro;3bn to protect independence, there is flexibility to allow for "selected acquisitions", said Professor Barner, although the underlying goal is organic growth. </p><p>Professor Barner said Boehringer was still considering the options for its US Roxane Laboratories OTC business, which "lacks critical mass", but that it had not yet decided whether to build that critical mass or to divest the business.</p><h2>R&D</h2><p>In R&D, managers reported that it Boehringer is working on combining Gilotrif with a therapeutic tumor vaccine based on messenger RNA developed by German biotech firm CureVac. It is also conducting early-stage work on second-generation checkpoint inhibitors. </p><p>In psychiatry the firm has been using optogenetics technology from US partner Circuit Therapeutics to better analyse brain cell activity. Although this is very early-stage, it could open up new therapeutic avenues for diseases like depression, based on better understanding of the disease processes. </p><p>R&D spending stood at 19.9% of revenues.</p><table><h2>Boehringer Ingelheim: key figures for 2014</h2><tbody><tr><td><p>&nbsp;</td><td><p>Total (&euro;m)</p>&nbsp;</td><td><p>% change year on year</p>&nbsp;</td></tr><tr><td><p>Group sales</p>&nbsp;</td><td><p>13,317</p>&nbsp;</td><td><p>-5.3</p>&nbsp;</td></tr><tr><td><p>Prescription medicine sales</p>&nbsp;</td><td><p>10,101</p>&nbsp;</td><td><p>-7.3</p>&nbsp;</td></tr><tr><td><p>Consumer Healthcare sales</p>&nbsp;</td><td><p>1,437</p>&nbsp;</td><td><p>-1.7</p>&nbsp;</td></tr><tr><td><p>Animal Health sales</p>&nbsp;</td><td><p>1,130</p>&nbsp;</td><td><p>+5.6</p>&nbsp;</td></tr><tr><td><p>Biopharmaceutical (Contract Manufacturing) Sales</p>&nbsp;</td><td><p>501</p>&nbsp;</td><td><p>+11.6</p>&nbsp;</td></tr><tr><td><p>R&D spending</p>&nbsp;</td><td><p>2,654</p>&nbsp;</td><td><p>-3.2</p>&nbsp;</td></tr><tr><td><p>Operating income</p>&nbsp;</td><td><p>2,140</p>&nbsp;</td><td><p>+1.2</p>&nbsp;</td></tr><tr><td><p>Income after taxes</p>&nbsp;</td><td><p>1,047</p>&nbsp;</td><td><p>-20.9</p>&nbsp;</td></tr><tr><td><p>Equity ratio</p>&nbsp;</td><td><p>40%</p>&nbsp;</td><td><p>up one percentage point from 39%</p>&nbsp;</td></tr><tr><td><p>Financial funds</p>&nbsp;</td><td><p>8,507</p>&nbsp;</td><td><p>+13.2</p>&nbsp;</td></tr><tr><td><p>Spiriva</p>&nbsp;</td><td><p>3,237</p>&nbsp;</td><td><p>-8.9</p>&nbsp;</td></tr><tr><td><p>Pradaxa</p>&nbsp;</td><td><p>1,198</p>&nbsp;</td><td><p>-0.7</p>&nbsp;</td></tr><tr><td><p>Micardis</p>&nbsp;</td><td><p>1,088</p>&nbsp;</td><td><p>-20.8</p>&nbsp;</td></tr><tr><td><p>Combivent</p>&nbsp;</td><td><p>563</p>&nbsp;</td><td><p>-20.7</p>&nbsp;</td></tr></tbody></table><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 191
+
+<p>Challenges in 2014 had given Boehringer Ingelheim a "jolt" last year, finance chief Hubertus von Baumbach told delegates at the privately owned company's annual conference in Germany. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 35
+
+Boehringer Ingelheim jolted in 2014
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150417T051327
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150417T051327
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150417T051327
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028510
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 37
+
+Boehringer Ingelheim 'jolted' in 2014
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357925
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f31709b9-d381-4b1b-b96c-9b4db13c659a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

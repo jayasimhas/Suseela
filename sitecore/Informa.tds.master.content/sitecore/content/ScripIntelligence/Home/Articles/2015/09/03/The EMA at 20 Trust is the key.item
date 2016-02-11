@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {8F34E7FD-0CC9-46A6-924A-69AA9CAD9D41}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/03/The EMA at 20 Trust is the key
+parent: {67454E32-12CF-4865-97B8-E6AB86442A6F}
+name: The EMA at 20 Trust is the key
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8dca1304-f81e-4733-8206-ac28633cc1cb
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 31
+
+The EMA at 20: Trust is the key
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 30
+
+The EMA at 20 Trust is the key
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5830
+
+<p><b>The European Medicines Agency must continue to do all it can to retain the greatest possible public trust, says Emily O'Reilly.</b></p><p>Public bodies, as we know, can function properly only if they build and maintain the citizen's trust in their work. Building and maintaining such trust is of particular importance where the activities of the public body have a direct impact on the lives and health of those citizens, as is the case with the European Medicines Agency. </p><p>If citizens ever lose trust in the work of the EMA, they lose trust in the medicines authorised by the agency and in the companies that produce such medicines. This can potentially create unfounded fears about the safety of often vital medicines to the possible detriment of individual and public health.</p><p>All stakeholders therefore &ndash; individual patients, the general public, the EMA itself, medical practitioners, and industry &ndash; have a strong interest in the maintenance of trust in the agency.</p><p>To achieve this, the EMA must prove itself to be both transparent and independent. In support of this, the European Ombudsman has worked in recent years, together with the European Parliament, to help the agency further improve its performance in these areas.</p><p>Transparency is particularly important when information held by the agency is directly related to the safety and efficacy of medicines. As such, the Ombudsman has worked to ensure that the agency makes appropriate disclosure of clinical studies reports. </p><p>Unless clinical studies reports are made public and therefore subject to review, it will be difficult to identify and correct possible errors in such reports or in the agency's assessment of such reports. The same applies to the disclosure of adverse drug reaction reports, as only consistent independent monitoring of these reports can lead to a more complete understanding of the effects of medicines on our bodies.</p><p>It therefore follows that such reviews should be welcomed by the EMA, by medical practitioners, and by scientists as being of fundamental importance. They go to the core of good medicine and good science.</p><h2>Independence from industry</h2><p>It is also critical that the agency is seen to carry out its own work independently of the pharmaceutical industry that it regulates, while still engaging &ndash; through direct employment or the seeking of advice &ndash; with the most competent professionals. </p><p>Inevitably, some of these professionals may have gained the necessary expertise within the pharmaceutical industry. This is not a problematic situation <i>per se</i>, but it does call for special vigilance and safeguards to be put in place. We have therefore dealt with cases where it has helped the EMA to improve its capacity to deal with possible conflicts of interest through the requirement on staff to make complete declarations of interests, and to ensure that these declarations are properly analysed. </p><p>The Ombudsman stresses that the EMA has made great strides in recent years in terms of improving its transparency and independence. However, we should not be complacent. We will continue to work closely with the agency to ensure that it continues to maintain the greatest possible public trust. </p><p><i>Emily O' Reilly is the European Ombudsman.</i></p><p><i>This is the latest in a series of articles marking the 20th anniversary of the European Medicines Agency. In the run-up to the invitation-only scientific conference that the EMA is holding to mark the anniversary in London on 18 March, you'll be able to read what key individuals and stakeholders in the European pharmaceutical regulatory network have to say about the challenges the EMA and the network are facing and where they are headed as the agency moves into its third decade.</i></p><p><b>Previously in this series</b>:</p><p><i>The EMA at 20: "Fernand Sauer reviews the first two decades and offers advice for regulators at all levels",</i><a href="http://#http://www.scripintelligence.com/home/The-EMA-at-20-Fernand-Sauer-reviews-the-first-two-decades-and-offers-advice-for-regulators-at-all-levels-357045" target="_new">scripintelligence.com</a>, <i>3 March 2015</i>.</p><p><i>The EMA at 20: "A decade of expansion, collaboration and new legislation", by Thomas Lönngren,</i><a href="http://#http://www.scripintelligence.com/home/The-EMA-at-20-A-decade-of-expansion-collaboration-and-new-legislation-357061" target="_new">scripintelligence.com</a>, <i>4 March 2015</i>.</p><p><i>The EMA at 20: "Independence and transparency are the key to fulfilling the EMA's public health commitments", by Health Action International,</i><a href="http://#http://www.scripintelligence.com/home/The-EMA-at-20-Independence-and-transparency-are-the-key-to-fulfilling-the-EMAs-public-health-commitments-357084" target="_new">scripintelligence.com</a>, <i>5 March 2015</i>.</p><p><i>The EMA at 20: "A short history of the European Medicines Agency", by Ian Schofield,</i><a href="http://#http://www.scripintelligence.com/home/The-EMA-at-20-A-short-history-of-the-European-Medicines-Agency-357112" target="_new">scripintelligence.com</a>, <i>6 March 2015</i>.</p><p><i>The EMA at 20: "CHMP chair on HTA, patient involvement and dealing with uncertainty", by Francesca Bruce,</i><a href="http://#http://www.scripintelligence.com/home/The-EMA-at-20-CHMP-chair-on-HTA-patient-involvement-and-dealing-with-uncertainty-357139" target="_new">scripintelligence.com</a>, <i>9 March 2015</i>.</p><p><i>The EMA at 20: "An increasing impact on the non-prescription medicines market", by Hubertus Cranz,</i><a href="http://www.scripintelligence.com/home/The-EMA-at-20-An-increasing-impact-on-the-non-prescription-medicines-market-357198" target="_new">scripintelligence.com</a>, <i>10 March 2015</i>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 141
+
+<p><b>The European Medicines Agency must continue to do all it can to retain the greatest possible public trust, says Emily O'Reilly.</b></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 30
+
+The EMA at 20 Trust is the key
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150903T155625
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150903T155625
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150903T155625
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028067
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 31
+
+The EMA at 20: Trust is the key
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{13A0EC7C-1468-4E70-91C2-80827A4EAB71}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357133
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042308Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8dca1304-f81e-4733-8206-ac28633cc1cb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042308Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

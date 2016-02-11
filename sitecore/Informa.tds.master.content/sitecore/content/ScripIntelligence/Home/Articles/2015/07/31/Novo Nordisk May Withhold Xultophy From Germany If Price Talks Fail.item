@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {0B37AED9-2F13-4F98-BACB-62E3306EE475}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/31/Novo Nordisk May Withhold Xultophy From Germany If Price Talks Fail
+parent: {41EBBC65-C73D-4320-B22C-6EBD0BE8A7D8}
+name: Novo Nordisk May Withhold Xultophy From Germany If Price Talks Fail
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d5a93665-614b-4cba-b608-8e98ba207a25
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2E354A44-16ED-4D46-BE4E-09266853F677}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+Novo Nordisk May Withhold Xultophy From Germany If Price Talks Fail
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+Novo Nordisk May Withhold Xultophy From Germany If Price Talks Fail
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4215
+
+<p>Novo Nordisk AS may withhold its new once-daily injection Xultophy from the German market if authorities there don't offer an adequate price for the new antidiabetic therapy. </p><p>The world's largest insulin maker last month said it will stop distributing of one of the constituents of Xultophy, its new basal insulin <i>Tresiba</i> (insulin degludec), in Germany because it could not negotiate a high-enough price with the GKV-Spitzenverband, the German national association of statutory health insurance funds. </p><p> "We are disappointed about the evaluation of Tresiba in Germany and are disappointed that we were forced to withdraw this product to the inconvenience of 40,000 people from using this product," Novo Nordisk's president and CEO Lars Rebien Sørensen told analysts Aug. 6 during a second-quarter update. </p><p>Asked for his reaction to the recent ruling by Germany's health technology assessment body the Institute for Quality and Efficiency in Healthcare (IQWIG) that Xultophy brings no additional benefits to clinical practice, Sørensen replied the company might need to respond in a similar fashion as it did over Tresiba </p><p>"Will we be in the same situation with Xultophy? Maybe," he said. </p><p>The GKV had wanted to set the price of Tresiba to be the same as cheaper human insulin products which have been marketed in Germany since the 1980s, an idea rejected by Novo Nordisk. Some 40,000 patients currently being treated with Tresiba are to be switched to other products, with Novo Nordisk continuing supplies until the end of September 2015. </p><p>Regarding negotiations there over Xultophy, which was launched in a number of European markets earlier this year, the CEO said: "We will be putting our best foot forward in compiling our dossiers and in our negotiations and then we shall see. I will say though that if we cannot get a positive resolution regarding Xultophy with the German insurance agencies then I don't look very positively on the German market going forward because Xultophy is seen as the best Type 2 product available on the market."</p><p>Xultophy, which received European approval last September, could also face push-back over pricing in other European countries, he said, noting: "We have a little bit of a similar situation in Denmark and in the UK."</p><p>He was speaking after the Danish group unveiled strong second-quarter sales of its GLP-1 agonist <i>Victoza</i> (liraglutide) and growth hormone <i>Norditropin</i>, which offset a weaker performance by the company's modern insulin <i>Levemir</i> (insulin detemir), in a quarter that saw strong price pressures in the US and declining sales in China. </p><p>The Danish company kept its forecast for sales to grow by 7% to 9% in 2015, but said that operating profit now was expected to grow by 19%, up from an earlier forecast of 17%. "If we look at the first half, our overall portfolio is slightly negatively impacted by pricing in the U.S.," CEO Lars Rebien Sorensen said on a conference call.</p><p>Sales in China saw 6% fall measured in local currencies, caused by in part by restrictions on marketing to doctors, cost containment, more local competition and stock building in previous quarters. </p><p>"We still believe in the fundamental growth case in China, but we have seen changes there also," noted Jacob Riis, executive vice president for China and the Pacific region.</p><p>"Some of the things that were implemented in the first part of the year &#8230; changed the dynamics [in China] and how the government interacts with institutions &#8230; Government has [for example] opened the possibility that after the provincial biddings there could potentially be a second round of negotiations with the institutions. It's not a fundamental change but still one that will further increase competition, also from a pricing point of view."</p><p>Novo still expects FDA approval on Oct. 1, 2015 based on the interim data from the ongoing DEVOTE trial, and which is now expected to complete in mid-2016.The drug has already been rolled out in 30 countries but US regulators have asked for more tests due to worries the drug might be linked to higher rates of heart attacks or strokes. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 182
+
+<p>Novo Nordisk AS may withhold its new once-daily injection Xultophy from the German market if authorities there don't offer an adequate price for the new antidiabetic therapy. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+Novo Nordisk May Withhold Xultophy From Germany If Price Talks Fail
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150731T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150731T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150731T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029447
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+Novo Nordisk May Withhold Xultophy From Germany If Price Talks Fail
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359721
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d5a93665-614b-4cba-b608-8e98ba207a25
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

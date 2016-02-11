@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {2BDC19F1-2721-4EE0-8B23-AE4F5F6B28C6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/03/Indian efforts on pricing of patented drugs gather steam
+parent: {9A22D265-E46B-490A-8BDC-BA644F0271DB}
+name: Indian efforts on pricing of patented drugs gather steam
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c79795e3-9114-448f-aedd-639807f403da
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Indian efforts on pricing of patented drugs gather steam?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Indian efforts on pricing of patented drugs gather steam
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6168
+
+<p>India appears to be inching towards defining a mechanism for price negotiations for patented drugs &ndash; a thorny issue and one that's been in the works for more than six years now.</p><p>Industry sources have told <i>Scrip</i> that a clutch of stakeholder groups has already presented their views &ndash;generally diverse ones as expected &ndash; to the government. NGOs are slated to present their views later this month. </p><p>An inter-ministerial committee, including members from the commerce and health ministries, was constituted to look into the issue.</p><p>The industry sources, though, are hopeful that the new Bharatiya Janata Party-led government will follow through with a decision on the issue this time round, though it's not immediately clear if efforts to boost India's ties with the US could see a softer approach to the issue. </p><p>Leading Indian firms, the sources say, have urged the government to consider procurement prices in Canada, the UK, Australia and New Zealand to arrive at a price for India and use the World Bank's PPP (purchasing power parity) for fixing prices for India. Their choice of these "reference" countries is broadly because the bulk of the public health expenditure in these nations is borne by the government and hence the price negotiation exercise is considered exhaustive.</p><p>Foreign firms, though, see little merit in this approach. One expert with a leading international firm suggested that such price negotiations should essentially pertain to ''government purchases &ndash; for supply to the underprivileged''.</p><p>"[The] rest should be left to market mechanism. Or to have the pricing as similar to countries with similar economic indicators &ndash; no PPP etc, complex formulae to be used,'' the expert told <i>Scrip</i>. </p><p>The expert, though, feared a ''formula which is not possible'' may be in the offing and underscored that India needed to set the ecosystem right &ndash; including reimbursement, insurance cover, the number of oncologists. That, the official claimed, was the "real national emergency".</p><h2>Pro-health groups</h2><p>But pro-health groups say that a blanket approach of price negotiation for patented medicines is itself flawed and one that ''kills other avenues'' to ensure affordable access.</p><p>''Such negotiation measures have failed in Thailand and Brazil. It only delays access and the process of potential compulsory licensing and can be used as a negotiating tactic. Only competition can pare prices dramatically,'' an official from a pro-health organization told <i>Scrip</i>.</p><p>The official also explained that the government ought to realise that even a 10-30% discount that NGOs sometimes manage to facilitate for patients in the case of patented oncology drugs, does not make the product affordable. </p><p>"The average cost of a new patented oncology drug is about INR100,000-150,000 ($1,588-$2,382) per month. Even with the discount, it's way beyond the reach of most patients,'' the official added.</p><p>Pro-health groups believe that a "watch list" of medicines, especially in the oncology and biologics space, where government should consider different solutions including compulsory licensing should be employed. </p><p>A negotiated pricing approach would block competition and keep generics at bay, affecting supplies to other nations as well, they argue.</p><h2>Compulsory Licensing</h2><p>Whatever approach is eventually arrived at, all eyes would be on whether such negotiations could potentially preclude firms that agree to a negotiated price from any kind of compulsory licensing (CL) challenge.</p><p>The industry sources quoted previously suggested that the provisions of India's Patent Act and the price negotiation exercise should be "independent". </p><p>"The patentee may argue that the price is not unreasonable, but still has to ensure adequate availability. A compulsory licence can still be invoked if the drug is not made available," the source suggested.</p><p>The expert from the foreign firm, however, argued that a price negotiated product should be "off" compulsory licensing. </p><p>"But if you see the number of triggers there are for CL &ndash; anything is possible," the expert said.</p><p>India's department of industrial policy and promotion (DIPP) has previouslyemphasized that price negotiations with reference to patented medicines need to be considered with caution since it could potentially dilute one of the grounds for grant of a CL &ndash; unaffordable pricing - under Section 84 of the Indian Patent Act. Under this section, any time after three years from sealing of a patent, anyone can make an application for a CL if: ''reasonable'' requirements of the public for the product have not been satisfied; or the patented invention is not available at a "reasonably affordable" price; or the patented invention is not "worked" in India.</p><p>Earlier this year, <i>Scrip</i> reported that an exercise to collate data pertaining to the imports of patented drugs &ndash; probably via the Form 27 route &ndash; was underway. Form 27 of the India's Patent Act is a statement pertaining to the ''working'' of the patented invention on a commercial scale in India <a href="http://%5bhttp:/www.scripintelligence.com/home/India-to-resume-patented-drug-pricing-efforts-356068%5d" target="_new">(scripintelligence.com 12 January 2015)</a>. </p><p>It's not clear if a previous government panel's suggestion that outlined three specific categories for price negotiations: medicines having no therapeutic equivalence in India; those having a therapeutic equivalent in India; and medicines introduced for the first time in India, would form the starting point in the new effort.</p><p>The previous panel's report was, however, in late 2013 reported to have had been "shelved" given that "market dynamics" had changed over the years, though there had been murmurs of hectic lobbying against the recommendations <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/Relief-for-foreign-firms-amid-reports-of-new-Indian-pricing-panel-348470%5d" target="_new">(scripintelligence.com 3 December 2013)</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 190
+
+<p>India appears to be inching towards defining a mechanism for price negotiations for patented drugs &ndash; a thorny issue and one that's been in the works for more than six years now.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Indian efforts on pricing of patented drugs gather steam
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151103T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151103T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151103T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028129
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Indian efforts on pricing of patented drugs gather steam?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357226
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c79795e3-9114-448f-aedd-639807f403da
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

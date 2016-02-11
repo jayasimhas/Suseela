@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {2383A723-04CE-47F4-9C3C-D46C713B9339}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/30/EU Demands Pfizer Offload Infliximab Biosimilar In Hospira Buy
+parent: {33D065F8-4841-41E4-809A-5D1E27443795}
+name: EU Demands Pfizer Offload Infliximab Biosimilar In Hospira Buy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7309fa71-904e-40bd-a5c5-3851a26f4443
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 311
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{DD548E28-6D47-4403-832E-A9D982190B89}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+EU Demands Pfizer Offload Infliximab Biosimilar In Hospira Buy 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+EU Demands Pfizer Offload Infliximab Biosimilar In Hospira Buy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5041
+
+<p> The EU Commission is backing Pfizer Inc.'s planned purchase of US-based generics firm Hospira Inc. provided the big pharma divest some sterile injectable drugs as well as its own biosimilar version of Johnson &amp; Johnson and Merck &amp; Co.'s Remicade (infliximab) which is currently under development. </p><p> The EU's executive body in a statement issued Aug. 4 said an investigation into the M&amp;A deal raised competition concerns for infliximab drugs, on grounds Pfizer would afterwards probably either delay or discontinue development of its biosimilar drug to focus on Hospira's, &quot;leading to the net loss of future competition by one of only three differentiated biosimilars in advanced stages of development - Hospira/Celltrion's, Samsung Bioepis's and Pfizer's.&quot; Alternatively, the commission foresaw Pfizer handing back Hospira's product to Celltrion, &quot;leading to the loss of current price competition between Hospira and Celltrion.&quot; Hospira's infliximab follow-on Inflectra became the first biosimilar monoclonal antibody to be approved in the EU in September 2013. </p><p> The commission also saw issues in the market for sterile injectables &ndash; most of which are used as chemotherapies &ndash; as competition concerns after the proposed merger could arise for certain molecules in EU member states &ndash; namely carboplatin in Belgium; cytarabine in Belgium, Italy, Portugal and Sweden; epirubicin in Austria, Belgium, Italy, the Netherlands and Spain; irinotecan in Belgium, the Czech Republic and Italy; vancomycin in Ireland and voriconazole in the EEA as a whole. Supply/demand issues for sterile injectables reflected &quot;the high combined market shares of Pfizer and Hospira and the limited number of competitors that would remain in these markets,&quot; the commission said in a statement. </p><p> EU Commissioner Margrethe Vestager, in charge of competition policy, added that &quot;this is not just about keeping prices low for patients and healthcare services. We have also made sure that the merger of Pfizer/Hospira does not stand in the way of the research and development of medication that could have huge benefits for society.&rdquo; </p><p> Pfizer for its part welcomed the commission's backing of the deal but was tight-lipped on the EU executive body's stated conditions for approval of the merger. &quot;We are pleased to have achieved a significant milestone for Pfizer's pending acquisition of Hospira with the EC's approval of the transaction,&quot; Pfizer's CEO Ian Read said in a statement, adding: &quot;We continue to work cooperatively with the regulatory agencies to obtain the requisite approvals, and continue to expect the transaction to close in the second half of 2015.&quot; A Pfizer spokesperson said &quot;We've committed to divest certain assets. With respect to specific divestitures, we're currently exploring our options, but at this point we can't comment more specifically.&quot; </p><p> The EU announcement leaves open questions about possible buyers for the offloaded infliximab, and what this means for competitors.Datamonitor Healthcare analyst Ali Al-Bazergan noted that companies with biosimilar development capabilities have already touted infliximab as a key market opportunity, while those in preclinical stages or without development prospects for their own version &quot;could view Pfizer's candidate as a favorable investment to expedite market entrance &ndash; especially in Europe, as Pfizer retain marketing rights outside Europe.&quot;Pfizer in February announced it was buying Hospira for $15.4bn in cash &ndash; $90 per share &ndash; plus $1.75bn in debt, and would finance the deal through a combination of cash (two-thirds) and debt (one-third). </p><p> The transaction will strengthen Pfizer's Global Established Pharmaceutical business, which has suffered declining sales. Hospira has a strong portfolio of acute care and oncology injectables, which Pfizer will add to its GEP unit consisting of branded off-patent anti-infectives, anti-inflammatories, and cytotoxics. The majority of the big pharma's sterile injectables are the result of acquisitions, most recently from its $225m up-front cash purchase of InnoPharma. The sterile injectables market &ndash; currently valued at $37 bn &ndash; is expected to more than double in five years. </p><p> Hospira also brings to the table a strong biosimilars portfolio &ndash; three are marketed in Europe (versions of infliximab(partnered with Celltrion), Epogen (epoetin), and Neupogen (filgrastim)). In December 2014, Hospira submitted a 351(k) application for Retacrit, a proposed biosimilar to epoetin alfa (Amgen's Epogen, Johnson &amp; Johnson's Procrit), which puts the US user fee deadline on or about Oct. 16 this year. The biosimilar has been marketed in Europe since 2008. Hospira and Pfizer both have biosimilars of Roche's Herceptin (trastuzumab) and Biogen's Rituxan (rituximab) in Phase III trials, while Pfizer also has a Phase III Remicade in the pipeline. </p> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 313
+
+<p> The EU Commission is backing Pfizer Inc.'s planned purchase of US-based generics firm Hospira Inc. provided the big pharma divest some sterile injectable drugs as well as its own biosimilar version of Johnson &amp; Johnson and Merck &amp; Co.'s Remicade (infliximab) which is currently under development. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+EU Demands Pfizer Offload Infliximab Biosimilar In Hospira Buy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150730T154015
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150730T154015
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150730T154015
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029428
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+EU Demands Pfizer Offload Infliximab Biosimilar In Hospira Buy 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359695
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7309fa71-904e-40bd-a5c5-3851a26f4443
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

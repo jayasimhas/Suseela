@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9947383E-6DBD-4B9F-AA13-59CEC0DB933B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/20/Novo Invests $2bn In Diabetes Franchise Growth
+parent: {34CAE052-3989-4BC7-BA14-1EF803FF3625}
+name: Novo Invests $2bn In Diabetes Franchise Growth
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 08ef4703-3ee5-49a6-ac7a-cc2621c40a8b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{649253E7-61BB-41CA-ACAF-6CC3C62670AE}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+Novo Invests $2bn In Diabetes Franchise Growth
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+Novo Invests $2bn In Diabetes Franchise Growth
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5579
+
+<p>Danish diabetes drug maker Novo Nordisk launched a Phase IIIa clinical trial program for the oral version of its glucagon-like peptide-1 (GLP-1) analog semaglutide on 26 August and simultaneously revealed plans to invest $2bn in manufacturing to support the potential blockbuster diabetes drug.</p><p>Most of Novo's investment will pay for construction of a new manufacturing facility in Clayton, North Carolina that will provide 700 new jobs when production begins in 2020 &ndash; around the same time that once-daily semaglutide could win US FDA approval. Novo Nordisk US president Jesper Hoiland told <i>Scrip</i> that the operation will help balance the company's US expenses and income, considering half of Novo's revenue comes from US sales. </p><p>Hoiland said the company chose Clayton &ndash; where Novo already employs 700 workers at a manufacturing plant responsible for formulation, filling and packaging of diabetes care products &ndash; based on tax incentives promised by the state and because of the quality of the local work force. </p><p>Without disclosing the dollar value of the incentive, he said the benefit given to Novo "is the biggest tax incentive granted in the state of North Carolina." In addition to the 700 permanent manufacturing jobs, the state will gain up to 2,000 short-term jobs at the peak of construction.</p><p>North Carolina Governor Pat McCrory's office said the incentives could add up to $15.8m over 12 years based on the creation of 700 jobs. The governor's office also said the average income at the new facility will be $68,420 annually, which is twice the average income in the area.</p><p><b>Multiple Manufacturing Investments</b></p><p>The new US production site will be an important piece of the commercialization puzzle for oral semaglutide, for which Novo has "high expectations," according to Hoiland. A range of other GLP-1 and insulin products also will be produced in Clayton.</p><p>Novo's once-weekly semaglutide injection &ndash; assuming ongoing Phase IIIa studies continue to be successful &ndash; will be on the market a few years before the oral version, so manufacturing for the injectable product will occur initially at existing facilities in Denmark.</p><p>Hoiland noted that the investment in North Carolina isn't Novo's only recent research or manufacturing expenditure in the US. The company spent money last year on a biopharmaceutical manufacturing facility in New Hampshire and it has expanded the capacity of a research site in Seattle, Washington to support basic research in the areas of diabetes and obesity.</p><p>Novo also will spend some of its new $2bn manufacturing investment in Malov, Denmark, where 250 people currently produce tablets for hormone replacement therapy. The facility will be expanded to manufacture oral semaglutide and other yet-to-be-approved oral drugs. The site is next to the company's largest research and development center, which employs more than 2,300 people.</p><p>Novo continues to expand the capacity of its largest active pharmaceutical ingredient (API) production site in Kalundborg, Denmark, where once-weekly semaglutide will be manufactured if approved by the FDA within the next few years. The Kalundborg site was established in 1969 and employs 2,800 people producing diabetes and hemophilia medicines. Novo expects to hire several hundred more people in the region to manufacture new products.</p><p>All of the upcoming manufacturing expenditures should give the company "sufficient API capacity for diabetes products well into the next decade," Novo executive vice president and head of product supply Henrik Wulff said in a statement from the company.</p><p><b>GLP-1s Beyond Victoza</b></p><p>Semaglutide builds upon Novo's non-insulin diabetes franchise, which is led by the GLP-1 analog <i>Victoza</i> (liraglutide), a once-daily injection. Victoza generated nearly $1.3bn in first half 2015 sales and its US patents will begin to expire in 2017, so if the company wants to maintain a leadership position in the GLP-1 field, it must come out with new and improved versions of the product.</p><p>Novo's Phase IIIa PIONEER clinical trial program for oral semaglutide will enroll 8,000 patients in seven trials, including a cardiovascular safety study, all of which will be initiated in 2016. The initial PIONEER study beginning in the first quarter of next year will evaluate 3mg, 7mg and 14mg once-daily doses of semaglutide versus 100mg daily doses of Merck & Co's oral dipeptidyl peptidase-4 (DPP-4) inhibitor <i>Januvia</i> (sitagliptin).</p><p>Novo's once-weekly semaglutide injection already is being tested in the Phase IIIa SUSTAIN clinical trial program. The company reported <a href="http://www.scripintelligence.com/researchdevelopment/Success-for-Novos-once-weekly-diabetes-therapy-in-first-PhIII-359409" target="_new">positive results versus placebo</a> in July from SUSTAIN1.</p><p><i>Scrip</i> spoke with Novo's chief scientific officer Mads Krogsgaard Thomsen in September about the company's <a href="http://www.scripintelligence.com/home/features/5-questions-for-Novo-Nordisks-Mads-Thomsen-354029" target="_new">renewed focus on diabetes</a> and related diseases, including obesity. He said at the time that it would be "really transformational" if oral semaglutide can show the same effect on diabetes patients as GLP-1 analog injections.</p><p>"It's a very exciting time in the area of diabetes," Hoiland said on Aug. 26, echoing Thomsen's enthusiasm. "We anticipate that we will strengthen our position in diabetes."</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 301
+
+<p>Danish diabetes drug maker Novo Nordisk launched a Phase IIIa clinical trial program for the oral version of its glucagon-like peptide-1 (GLP-1) analog semaglutide on 26 August and simultaneously revealed plans to invest $2bn in manufacturing to support the potential blockbuster diabetes drug.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Novo Invests $2bn In Diabetes Franchise Growth
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150820T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150820T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150820T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029606
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+Novo Invests $2bn In Diabetes Franchise Growth
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360037
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+08ef4703-3ee5-49a6-ac7a-cc2621c40a8b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

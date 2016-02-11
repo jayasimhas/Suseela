@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {874173C3-7671-4F03-960E-4083138BE8D5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/20/White House geneediting research raises serious urgent questions
+parent: {9272B77E-1398-4EF1-A77A-17C397C8C6D1}
+name: White House geneediting research raises serious urgent questions
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2592bbb7-0b7b-4214-9e95-a315d1f77567
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+White House: gene-editing research raises serious, urgent questions
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+White House geneediting research raises serious urgent questions
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3149
+
+<p>Altering the human germline for clinical purposes is a line that "should not be crossed at this time," White House Office of Science and Technology Policy Director Dr John Holdren said on 26 May, declaring that a robust review of the ethical issues involved must first be completed.</p><p>He noted the National Academy of Sciences (NAS) and its National Academy of Medicine, which recently changed its name from the Institute of Medicine, plan to convene an international meeting this fall at which researchers, ethicists and other experts are expected todiscuss the implications of human germline gene-editing technologies in research and clinical applications.</p><p>This follows an uproar that erupted last month after scientists in China had edited the genes of a nonviable human embryo using a tool known as CRISPR/Cas9, with the aim of modifying the gene responsible for a common blood disorder. </p><p>"Research along these lines raises serious and urgent questions about the potential implications for clinical applications that could lead to genetically altered humans," Dr Holdren said. "The full implications of such a step could not be known until a number of generations had inherited the genetic changes made &ndash; and choices made in one country could affect all of us."</p><p>Dr Holdren&rsquo;s statement comes a month after Dr Francis Collins, director of the National Institutes of Health (NIH), said his agency would not fund any use of gene-editing technologies in human embryos.</p><p>Even though CRISPR/Cas9 has greatly shortened the time it takes to produce knockout mouse models of disease and has been used to develop the next generation of antimicrobials, Dr Collins said there is a current lack of compelling medical applications justifying the use of the technology in embryos.</p><p>While the advances in science over the past century, such as vaccines, antibiotics and early disease diagnostics, have reduced infant mortality, extended life expectancy and alleviated suffering for millions, new technologies also bring risks and ethical challenges that require careful consideration, Dr Holdren declared. </p><p>He said it was important that the NAS' international summit "fully explore the implications of germline editing for the current generation and generations to come across the globe, as well as the potential for alternative technologies that do not require germline alteration to deliver similar medical promise." </p><p>&ldquo;CRISPR-Cas9 genome engineering technology appears to be exciting new science, which we believe may be promising for biomedical innovation in the future,&rdquo; the Biotechnology Industry Organization told <i>Scrip</i>.</p><p>But, the group said, &ldquo;As with any new rapidly evolving technology, and as was the case at the very beginning of recombinant DNA technology, it is imperative that the scientific community join together in open public discourse to consider thoughtfully the potential benefits and possible societal impact to make the best and most informed determinations about the responsible use of this scientific advancement.&rdquo;</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 289
+
+<p>Altering the human germline for clinical purposes is a line that "should not be crossed at this time," White House Office of Science and Technology Policy Director Dr John Holdren said on 26 May, declaring that a robust review of the ethical issues involved must first be completed.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+White House geneediting research raises serious urgent questions
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150520T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150520T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150520T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028831
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+White House: gene-editing research raises serious, urgent questions
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200100809
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+expert view
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358514
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042351Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2592bbb7-0b7b-4214-9e95-a315d1f77567
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042351Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

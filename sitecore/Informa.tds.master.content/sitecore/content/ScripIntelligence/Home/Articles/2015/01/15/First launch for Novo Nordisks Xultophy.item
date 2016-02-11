@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {100F9A9F-D117-4D74-9E5F-E03D6956090B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/15/First launch for Novo Nordisks Xultophy
+parent: {1D680BCB-0633-4903-8FF6-DBCEC4DF9E9B}
+name: First launch for Novo Nordisks Xultophy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d1829880-4451-421d-80f3-a38382c90765
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 40
+
+First launch for Novo Nordisk's Xultophy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 39
+
+First launch for Novo Nordisks Xultophy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2079
+
+<p>Novo Nordisk's new combination diabetes product Xultophy has reached its first market, Switzerland. </p><p>The combination of Novo's basal insulin Tresiba (insulin degludec) and its GLP-1 analog Victoza (liraglutide) is intended for use in adults with type 2 diabetes that are inadequately controlled with oral glucose-lowering treatments when these are used alone or together with basal insulin.</p><p>Xultophy (previously known as IDegLira) was approved in Switzerland on 12 September, followed a few weeks later by an EU approval on 18 September in the wake of a July positive opinion from the CHMP (<a href="http://www.scripintelligence.com/researchdevelopment/Novo-Nordisks-Xultophy-gets-EU-thumbs-up-353054" target="_new">scripintelligence.com, 25 July 2014</a>). Novo Nordisk expects to launch Xultophy in other European markets during 2015.</p><p>The once-daily single injection product extends the insulin degludec (Tresiba) franchise in Europe in the face of last year's FDA rejection of the new flagship insulin on cardiovascular concerns. </p><p>By contrast, the EMA decided in 2013 that the concerns relating to Tresiba's CV safety could be addressed in post-marketing studies and granted marketing authorization. A combination with insulin aspart (Ryzodeg) has also since been approved in the EU. </p><p>Novo is now conducting the DEVOTE CV outcomes study of Tresiba, from which it hopes to submit an interim analysis to the FDA during the first half of the year. All being well, it says, this could lead to an approval six months later and a US launch in early 2016 (<a href="http://www.scripintelligence.com/home/features/5-questions-for-Novo-Nordisks-Mads-Thomsen-354029" target="_new">scripintelligence.com, 19 September 2014</a>). Nevertheless, the delay has left a huge earnings gap for the company. </p><p>Novo will however have the benefit of being first to market in Europe with a basal insulin/GLP1 agonist combination &ndash; Sanofi's Lixilan (lixisenatide plus insulin glargine) is due to be filed before the end of the year in the US and EU. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 107
+
+<p>Novo Nordisk's new combination diabetes product Xultophy has reached its first market, Switzerland. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 39
+
+First launch for Novo Nordisks Xultophy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150115T181556
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150115T181556
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150115T181556
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027565
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 40
+
+First launch for Novo Nordisk's Xultophy
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800336
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356168
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d1829880-4451-421d-80f3-a38382c90765
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

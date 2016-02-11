@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {2D0B5541-FFC2-4076-B292-F46AB7550CEF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/22/Can Verastem Recover After Failure
+parent: {DB7AFD0C-FF3A-4A4A-B0E2-6A1121FFD09B}
+name: Can Verastem Recover After Failure
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f6588413-ff1f-4f98-aaf8-f2e3f743d2c3
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 35
+
+Can Verastem Recover After Failure?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 34
+
+Can Verastem Recover After Failure
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4451
+
+<p><p>A fast track development program for its lead compound has back-fired now that Verastem's mesothelioma program has been scrapped &ndash; leaving the biotech to shuffle around resources. The failure is prompting further concerns that a biotech bubble is about to burst. </p><p>The stem-cell focused company announced Sept. 28 that it is winding down a Phase II trial of its lead compound VS-6063 (defactinib) in mesothelioma after a planned interim analysis by an independent data safety monitoring board revealed that the drug was not showing "sufficient levels of efficacy" compared with a placebo. There was no difference in VS-6063 versus placebo in either the intent to treat population or in patients with merlin-low tumors.</p><p>There were no safety issues with the drug. VS-6063 was used as a maintenance treatment in patients after chemotherapy. </p><p>Verastem will now stop enrollment of the trial and is winding down the COMMAND study. "We are disappointed with the COMMAND outcome," said President and CEO Robert Forrester. "Based on these results, we will reevaluate our clinical priorities and direct our resources toward further development of VS-6063, VS-4718, and VS-5584.&rdquo;</p><p>VS-6063 is also being developed in ovarian and lung cancers, but the lead trials were in mesothelioma &ndash; a type of cancer that affects the lining of the lungs and is often caused by asbestos. Verastem was actively pursuing approval of VS-6063 in the US, EU and <a href="http://#http://www.scripintelligence.com/researchdevelopment/Verastem-taking-dafactinib-early-to-Japan-346809" target="_new">Japan</a> simultaneously and had intended the COMMAND study to be for registrational purposes. The company had chosen mesothelioma as the lead indication because of pre-clinical data that showed patients with merlin-low tumors would have greater sensitivity to the drug. </p><p>"A number of drugs have failed in mesothelioma. And I think what we've clearly shown is that a single agent in a disease such as this that is so aggressive is not the right setting for VS-6063," added Forrester during a conference call with analysts. </p><p><b>What's Next?</b></p><p>As for the rest of the <a href="http://#http://www.scripintelligence.com/business/Money-talks-Verastem-leverages-IPO-to-build-cancer-stem-cell-pipeline-332827" target="_new">company's portfolio</a>, Forrester wouldn't reveal to analysts what is next. Both VS-4718 and VS-5584 are in Phase I and would have data before the end of the year. Meanwhile, a study of VS-6063 in ovarian cancer will also report out later this year. There is an ongoing study of VS-6063 in early mesothelioma patients that will be updated next year. </p><p>"I mean we have to be open to different indications, so we're obviously looking beyond mesothelioma. We obviously got an active program going on in ovarian. We've obviously got a program going on in non-small cell lung cancer. There are other tumors that we're very interested in for each of our compounds," said the exec. "So this is the developing story, we only have to evaluate the risk benefit for each of our trials and we'll be able to give greater guidance later on this year in terms of where we're going to go with each of the compounds."</p><p>Verastem had $132m in cash on hand at the end of the first half. Forrester admitted that much of the capital will be redistributed to the early-stage program now. Yet, the failure throws the whole pipeline into question, as many of Verastem's programs are FAK inhibitors. </p><p>Investors were not pleased with the news, sending shares of Verastem down more than 65% to close at $1.85. The biotech's share price is significantly lower than its $10 per share IPO price in 2012. </p><p>Verastem was one of the first biotech's to take advantage of the opening biotech window &ndash; jumping through well before the window fully opened. There have been dozens of biotech IPOs since, many with outrageous valuations. The market has been speculating for months that the biotech industry is in a bubble and that it's set to burst. Recent commentary regarding the high price of drugs have pushed generalists out of biotech stocks and has been putting pressure on the sector. </p><p>The unfortunate reality of the biotech sector is that most drugs fail. This can wreak havoc on a small company's stock that doesn't have a strong pipeline, while larger companies have a bit more of a buffer. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 34
+
+Can Verastem Recover After Failure
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150922T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150922T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150922T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029893
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 35
+
+Can Verastem Recover After Failure?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+people
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360620
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f6588413-ff1f-4f98-aaf8-f2e3f743d2c3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

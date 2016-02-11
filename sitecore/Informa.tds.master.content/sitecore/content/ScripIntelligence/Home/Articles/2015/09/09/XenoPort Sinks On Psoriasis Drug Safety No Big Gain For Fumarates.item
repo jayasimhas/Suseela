@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {F654BFA2-17B0-47FB-8CD0-ECB9D9394598}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/09/XenoPort Sinks On Psoriasis Drug Safety No Big Gain For Fumarates
+parent: {A1488DBB-C468-4AE3-BA7B-6FC254EF9442}
+name: XenoPort Sinks On Psoriasis Drug Safety No Big Gain For Fumarates
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fc0e90b7-26c5-4e91-bf24-5cad02da4c9d
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+XenoPort Sinks On Psoriasis Drug Safety; No Big Gain For Fumarates?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+XenoPort Sinks On Psoriasis Drug Safety No Big Gain For Fumarates
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6514
+
+<p>XenoPort Inc. touted the positive efficacy of XP23829 in a Phase II psoriasis clinical trial on Sept. 15, but the Santa Clara, California-based company's stock sank 28.1% to close at $4.84 per share based on safety concerns for its prodrug of monomethyl fumarate (MMF).</p><p>The two highest of three doses of XP23829 showed statistically significant improvements versus placebo in Psoriasis Area and Severity Index (PASI) scores between baseline and week 12 with an almost 50% improvement for patients treated with XenoPort's preferred dose of 800mg once-daily. However, gastrointestinal (GI) side effects observed in the 200-patient Phase II trial as well as one case each of acute cholecystitis and enterocolitis could hurt XP23829's chances versus other fumaric acid esters like Biogen's blockbuster multiple sclerosis (MS) drug <i>Tecfidera</i> (dimethyl fumarate). </p><p>It seems that investors had high hopes that XenoPort's drug could beat Tecfidera on dosing and safety. While the once-daily dosing goal may have been met and there was a lower incidence of flushing relative to fumarate prodrugs, GI and other side effects for XP23829 as well as competition from other new oral psoriasis therapies may offset the dosing and flushing improvements. </p><p><b>Great Expectations Unmet?</b></p><p>Jefferies analyst David Steinberg said in an Aug. 5 report on XenoPort's second quarter earnings that the Phase II results for XP23829 expected by the end of the third quarter should be positive and could be a significant catalyst for the company's future growth.</p><p>"Of note, despite the heightened focus on [progressive multifocal leukoencephalopathy (PML)] risk in the fumarate class, management believes simple lymphocyte monitoring would be a reasonable tradeoff for physicians in order to prescribe a drug with 829's potentially improved clinical profile (e.g., [once-daily] dosing, less flushing, lower GI side effects). We wonder, however, if this [PML] issue will significantly limit the psoriasis opportunity," Steinberg wrote.</p><p>XenoPort reported no cases of PML and no Grade 3 or 4 lymphopenia in the Phase II psoriasis study. Also, fewer than 5% of patients in any of the three XP23829 dosing arms (400mg daily, 800mg daily and 400mg twice-daily) experienced Grade 2 lymphopenia and less than 15% had Grade 1 lymphopenia. </p><p>PML is an important issue for any fumarate prodrug, because concerns about the potentially deadly brain disease are having an <a href="http://www.scripintelligence.com/home/Biogens-Tecfidera-feeling-the-brunt-of-PML-case-358064" target="_new">impact on prescriptions for Tecfidera</a> after a few patients treated with Biogen's drug experienced PML symptoms.</p><p>However, it does not appear that XP23829 improved GI side effects relative to Tecfidera or Fumaderm &ndash; a dimethyl fumarate prodrug that's approved in Germany to treat psoriasis and which <a href="http://www.scripintelligence.com/home/news/Biogen-licenses-oral-psoriasis-product-from-Fumapharm-50940" target="_new">Biogen acquired</a> to protect its Tecfidera <a href="http://www.scripintelligence.com/home/Biogen-wins-European-ruling-for-MS-pill-shares-spike-348314" target="_new">patent position in Europe</a>. XenoPort said that diarrhea adverse event rates for the three tested doses of its drug ranged from 22% to 40%, which the company said is in line with the fumaric acid ester drug class.</p><p>On top of the undifferentiated GI side effect profile, physicians may be hesitant to prescribe XP23829 if it could cause severe bladder and digestive tract issues. Investors and doctors alike will look for Phase III results to show no cases of acute cholecystitis and enterocolitis in patients who go through longer-term treatment with the XenoPort drug.</p><p><b>Efficacy Sound, Competitors Abound</b></p><p>Sagient Research noted in a BioMedTracker report that the PASI scores observed in Phase II could be improved with longer-term XP23829 treatment in Phase III psoriasis studies given the trend of ongoing improvement during the 12-week mid-stage clinical trial.</p><table><tbody><tr><td><p>&nbsp;</td><td><p><b>400mg Daily</b></p>&nbsp;</td><td><p><b>800mg Daily</b></p>&nbsp;</td><td><p><b>400mg Twice-Daily</b></p>&nbsp;</td><td><p><b>Placebo</b></p>&nbsp;</td></tr><tr><td><p><b>Mean PASI change</b></p>&nbsp;</td><td><p>-38.1</p>&nbsp;</td><td><p>-48.2</p>&nbsp;</td><td><p>-50.7</p>&nbsp;</td><td><p>-25</p>&nbsp;</td></tr><tr><td><p><b>P-value</b></p>&nbsp;</td><td><p>P=0.066</p>&nbsp;</td><td><p>P=0.001</p>&nbsp;</td><td><p>P<></p>&nbsp;</td><td><p>&nbsp;</td></tr></tbody></table><p><p>However, side effects observed in the Phase II trial and the approval of other oral psoriasis drugs could significantly reduce the market for XP23829, Sagient noted. </p><p>Celgene's selective phosphodiesterase 4 (PDE4) inhibitor <i>Otezla</i> (apremilast) was <a href="http://www.scripintelligence.com/policyregulation/Celgenes-Otezla-OKd-in-plaque-psoriasis-354098" target="_new">approved in the US</a> in September 2014 and was <a href="http://www.scripintelligence.com/researchdevelopment/EU-blesses-Celgenes-oral-psoriasis-drug-355210" target="_new">recommended for approval in the EU</a> two months later. Pfizer's janus kinase inhibitor <i>Xeljanz</i> (tofacitinib) is <a href="http://www.scripintelligence.com/policyregulation/Pfizers-Xeljanz-under-FDA-review-to-treat-plaque-psoriasis-356575" target="_new">under US FDA review</a>.</p><p>Despite the oral psoriasis drug competition and the mixed safety results for XP23829 in Phase II, XenoPort remains convinced that its candidate will be a differentiated fumarate prodrug with improved efficacy, safety and tolerability that also may be repeated in the treatment of MS.</p><p>"We believe these clinical data demonstrate for the first time that a MMF prodrug other than dimethyl fumarate (DMF) can be effective in reducing lesions in psoriatic patients," XenoPort chief medical officer Richard Kim said in a statement from the company. "Based on what is known about fumarates, we believe that the efficacy of XP23829 is likely to improve with a more extended duration of treatment beyond 12 weeks."</p><p>CEO Ronald Barrett said XenoPort will share its Phase II XP23829 data with psoriasis and MS experts as well as with the FDA to determine next steps for the drug's development. The company also will "explore potential partnerships that could accelerate the development of XP23829 globally," Barrett said.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 276
+
+<p>XenoPort Inc. touted the positive efficacy of XP23829 in a Phase II psoriasis clinical trial on Sept. 15, but the Santa Clara, California-based company's stock sank 28.1% to close at $4.84 per share based on safety concerns for its prodrug of monomethyl fumarate (MMF).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+XenoPort Sinks On Psoriasis Drug Safety No Big Gain For Fumarates
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150909T170856
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150909T170856
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150909T170856
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029768
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+XenoPort Sinks On Psoriasis Drug Safety; No Big Gain For Fumarates?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360373
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fc0e90b7-26c5-4e91-bf24-5cad02da4c9d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

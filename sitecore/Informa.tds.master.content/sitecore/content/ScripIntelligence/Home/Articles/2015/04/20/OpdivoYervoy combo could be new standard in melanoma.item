@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {9CE20A9E-3A30-43C3-A9A8-5B834B5F5557}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/20/OpdivoYervoy combo could be new standard in melanoma
+parent: {81E739B8-75DC-4D93-A8A3-C2678DEF9DA8}
+name: OpdivoYervoy combo could be new standard in melanoma
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 52c9c0cb-b64f-43b7-91a4-befc8dc3bcc0
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Opdivo/Yervoy combo could be new standard in melanoma
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+OpdivoYervoy combo could be new standard in melanoma
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4120
+
+<p><p>Newly released data for Bristol-Myers Squibb's closely-watched immunotherapy Opdivo (nivolumab) in combination with its older cancer drug Yervoy (ipilimumab) may have just cemented the combo as the new standard of care for the treatment of melanoma, edging out Merck's therapy Keytruda (pembrolizumab). </p><p>Results from the Phase II CheckMate-069 trial, announced 20 April at the American Association of Cancer Research (AACR) annual meeting and published in the New England Journal of Medicine, showed that the combination of the programmed death-1 (PD-1) inhibitor Opdivo and the anti-CTLA-4 antibody Yervoy showed outstanding results in all of its endpoints compared with Yervoy alone in previously untreated advanced melanoma patients. </p><p>Forty-four patients with BRAF wild-type mutations in the study, or 61%, showed an overall response rate to the combo compared to only four patients, or 11%, on Yervoy alone. Sixteen BRAF wild-type patients, or 16%, showed a complete response, compared with no patients on the monotherapy. </p><p>Patients in the Opdivo/Yervoy arm received 1 mg/kg of Opdivo plus 3 mg/kg of Yervoy every three weeks for four doses followed by 3 mg/kg of Opdivo every two weeks until progression or unacceptable toxic effects. The Yervoy group was treated with the same dosing schedule plus placebo. The results were independent of PD-L1 status. Adverse events occurred twice as often in the combination group as in the Yervoy group alone &ndash; indicating toxicity could be viewed as an issue for some patients. </p><p>BMS also announced that it will present further Opdivo/Yervoy combo data at the American Society of Clinical Oncology (ASCO) meeting coming up in late-May. Presentation of the CheckMate-067 trial suggests that the company could likely file for approval of the combination much sooner than expected, noted several analysts, who had been expecting the results of the trial in late-2016. </p><p>"Today's data (when compared across trials to Opdivo or Keytruda alone), essentially confirm that the combination of Opdivo and Yervoy in melanoma provides meaningfully greater efficacy than for the PD1 antibodies alone albeit at a higher risk of toxicity. We believe that if ph3 and survival data are ultimately consistent, the combo of Opdivo + Yervoy will likely become the standard of care for most melanoma patients able to tolerate the combination," wrote Evercore ISI analyst Dr Mark Schoenebaum in a note to investors. </p><p>Leerink analyst Seamus Fernandez echoed that sentiment, writing in his own note, "We believe that CTLA4 combos will continue to draw meaningful interest over the remainder of 2015 as the first IO + IO combos move forward."</p><p>Opdivo got approval in late 2014 for the treatment of unresectable or metastatic melanoma following Yervoy or BRAF inhibitor, if BRAF positive. In March, it gained its second FDA-approval in squamous non-small cell lung cancer (NSCLC). </p><p>Another clinical trial of Opdivo in lung cancer patients was recently stopped early due to superior efficacy. The big pharma announced 17 April that a Phase III Checkmate-057 trial of Opdivo in advanced non-small cell lung cancer (NSCLC) patients was stopped early because the drug showed superior overall survival over Genentech's standard of care Taxotere (docetaxel). <a href="http://#http://www.scripintelligence.com/home/Another-quick-lung-cancer-approval-in-Opdivos-future-357947" target="_new">These results</a> put BMS ahead of both Merck and Roche, as well as other competitors in the indication &ndash; the largest patient population for the immunotherapies. </p><p>Yet, Merck's Keytruda has been getting as much attention as Opdivo and <a href="http://#http://www.scripintelligence.com/home/Keytruda-filing-comes-early-as-data-shine-at-the-AACR-357963" target="_new">exhibited impressive results</a> in multiple different cancer types. Merck crowned a busy day of data presentations at the AACR meeting in Philadelphia on Sunday 19 April with news that it filed Keytruda in the US earlier than expected in second-line non-small lung cancer.</p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+OpdivoYervoy combo could be new standard in melanoma
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150420T222906
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150420T222906
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150420T222906
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028482
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Opdivo/Yervoy combo could be new standard in melanoma
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357878
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042332Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+52c9c0cb-b64f-43b7-91a4-befc8dc3bcc0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042332Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

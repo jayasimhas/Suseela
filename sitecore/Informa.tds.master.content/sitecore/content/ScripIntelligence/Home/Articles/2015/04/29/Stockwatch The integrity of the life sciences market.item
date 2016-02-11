@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {EEF2827D-B823-43AA-841B-7DB06C986A39}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/29/Stockwatch The integrity of the life sciences market
+parent: {C14ED64E-C9E7-40EB-93B8-679AFA5F32DB}
+name: Stockwatch The integrity of the life sciences market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 64fdfa4b-c13e-434a-b213-9287c9216447
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Stockwatch: The integrity of the life sciences market
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Stockwatch The integrity of the life sciences market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6485
+
+<p>This current earnings season is accompanied by a UK general election, in which the leaders of the three largest parties were last week ridiculed by members of the public during a televised debate for having lost their trust. UK politicians have presented the electorate with expenses scandals, broken promises and much worse, with the result that we no longer believe anything they say. They have lost their integrity.</p><p><p>It might be considered unfortunate that the first-quarter 2015 earnings season is being accompanied by a broad sell-off in the shares of life science companies. Some may point to other recent stock market retrenchments as being short sharp shocks. However, if investors have stopped believing the CEOs of the companies they have invested in and the analysts from investment banks, the integrity of the market will have been lost and this correction may be sharp but not short.</p><p><p>Last week was a particularly acute shock for companies producing good results and whose deserved share price appreciation was lost in the rush for the exits. Shire, for example, produced a strong set of results, beating analysts' consensus estimates of sales and earnings &ndash; the latter by more than the former, implying good cost control &ndash; despite reporting in dollars and having 18% of its first-quarter sales in euros (<a href="http://www.scripintelligence.com/business/Shire-posts-strong-Q1-results-358154" target="_new">scripintelligence.com, 30 April 2015</a>). Shire's share price spiked up about 8% on its results announcement, but as the US markets continued to lead all others down, it was lucky to eke out a slightly positive performance from a dismal day. </p><p><p>Gilead Sciences was fortunate to announce a very strong set of results after the market had closed on the same day as Shire's earlier results announcement. As the analysts from Piper Jaffray wrote, Gilead "crushed the quarter" with an exceptional performance from its hepatitis C virus (HCV) treatment franchise, sales from which rose 19% despite competition from AbbVie. No one, myself included, was at all concerned about the cannibalization of Gilead's Sovaldi (sofosbuvir) by its combination product Harvoni (sofosbuvir and ledipasvir). The next day, the biotechnology sector bounced nearly 3% after five days in the red and Gilead's share price was propelled up about 4.5%. The main loser was AbbVie with its recently launched competitor to Gilead's Harvoni, Viekira Pak (ombitasvir, paritaprevir, ritonavir and dasabuvir): its share price finished the day down about 0.5%. Nevertheless, it seems that the success of Gilead's HCV franchise has brought more winners than losers, since the first-quarter financial results of Cardinal Health, AmerisourceBergen and CVS Health were all strong by virtue of their pharmacy benefit manager (PBM) and pharmacy sourcing businesses, which benefited from sales of Harvoni. Lining up against the Gilead camp in HCV was the obvious loser in the PBM space, Express Scripts, whose results were described as "in-line". My take was that Express Scripts' results were lackluster in comparison to its peers and were almost certainly held back by the exclusive formulary agreement on HCV with AbbVie. In a football analogy, any AbbVie supporter going home after last quarter's HCV match &ndash; which ended Gilead $4.6bn, AbbVie $231m &ndash;was going home disappointed. </p><p><p>And that disappointment may be behind selling pressure that could resume next week. AbbVie attempted to bolster its first-quarter results by forecasting a greater than $3bn run rate for Viekira Pak by the end of 2015 (<a href="http://www.scripintelligence.com/home/AbbVie-biosimilars-not-a-threat-to-Humira-358037" target="_new">scripintelligence.com, 23 April 2015</a>). Since that time, AbbVie's share price has closed down almost every day to finish the period since its results about 1% behind a flat ARCA Pharmaceutical Index. Perhaps AbbVie's investors are having a hard time believing its promises. Overpromising was also the order of the day when United Therapeutics reported its first-quarter results, significantly missing consensus estimates of both sales and earnings. One of the big sales laggards in its results was Orenitram (oral treprostinil diolamine) for pulmonary hypertension, which was launched in early 2014. Orenitram sales last quarter were only &pound;21m, missing analysts' estimates and largely unchanged from the previous quarter (<a href="http://www.scripintelligence.com/home/FDA-OKs-United-Therapeutics-oral-PAH-drug-Orenitram-on-3rd-try-348968" target="_new">scripintelligence.com, 23 December 2013</a>). United Therapeutics' share price slumped by over 6% on the day of its results announcement and the wild expectations of its management that Orenitram will have sales of more than $1bn probably contributed to the desertion of its investors and damaged their integrity. </p><p><p>As a sharp journalist said to me last week, good specialist investors do not necessarily believe what the management of companies tell them. One of the reasons we are balanced on the edge of a bigger market correction than we have seen in many years is that the vast weight of money invested in biotechnology companies is from generalist investors. Generalists are only now learning from the recent failures of gene therapy (<a href="http://www.scripintelligence.com/business/Celladons-CUPID-wont-kill-gene-therapy-358080" target="_new">scripintelligence.com, 27 April 2015</a>) and Athersys's stem cell Phase II study &ndash; as well as the 100% chances of success quoted by a Deutsche Bank analyst &ndash; that perhaps not everything they've been told should be believed. It could continue to be an uncomfortable market as effervescent valuations and expectations come to terms with reality.</p><p><p>The Magna Biopharma Income fund holdings include Shire, Gilead Sciences, Cardinal Health and CVS Health.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 425
+
+<p>This current earnings season is accompanied by a UK general election, in which the leaders of the three largest parties were last week ridiculed by members of the public during a televised debate for having lost their trust. UK politicians have presented the electorate with expenses scandals, broken promises and much worse, with the result that we no longer believe anything they say. They have lost their integrity.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Stockwatch The integrity of the life sciences market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150429T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150429T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150429T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028621
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Stockwatch: The integrity of the life sciences market
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358103
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+64fdfa4b-c13e-434a-b213-9287c9216447
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

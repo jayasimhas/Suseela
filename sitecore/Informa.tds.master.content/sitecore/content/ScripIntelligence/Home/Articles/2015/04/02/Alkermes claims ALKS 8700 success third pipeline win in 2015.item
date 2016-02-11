@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C837F95C-E8D2-4BE8-903B-742D26F9D0ED}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/02/Alkermes claims ALKS 8700 success third pipeline win in 2015
+parent: {0CBDEEF4-9AC4-4491-AA70-F3114C458FCA}
+name: Alkermes claims ALKS 8700 success third pipeline win in 2015
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7ad023b4-578e-4789-abc4-ae3d00b52e4c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Alkermes claims ALKS 8700 success; third pipeline win in 2015
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Alkermes claims ALKS 8700 success third pipeline win in 2015
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8671
+
+<p>Alkermes plans to move ALKS 8700, a novel monomethyl fumarate (MMF) molecule and a competitor for Biogen Idec's successful oral multiple sclerosis (MS) drug Tecfidera (dimethyl fumarate), into pivotal studies following a large, placebo-controlled Phase I clinical trial.</p><p>ALKS 8700 showed less variability and improved gastrointestinal tolerability compared with Tecfidera, according to top-line results from the trial, so Alkermes plans to move the drug into pivotal studies in 2015 based on forthcoming discussions with the US FDA. Less than two months into the year, the company is celebrating its third clinical success of 2015.</p><p>ALKS 8700 is one of a series of product candidates developed as an improvement over existing blockbusters and Alkermes, which has transformed from a royalty-driven drug delivery firm to a company developing its own novel therapies, will take two new drugs into the clinic this year &ndash; at least one of which will go beyond the company's traditional central nervous system (CNS) focus (scripintelligence.com, <a href="http://www.scripintelligence.com/home/JP-Morgan-Day-2-Allergan-and-Alkermes-rise-on-patents-and-pipelines-349354" target="_new">15 January 2014</a>).</p><p>"Right now, we are about a $10bn company. As we get bigger, we can do more collaborations. We don't necessarily need to right now, but if we want to grow, we do need to do more," Alkermes chairman and CEO Richard Pops told <i>Scrip</i> during the 33rd Annual JP Morgan Healthcare Conference in January.</p><p>Alkermes closed down 4.5% at $66.39 per share on 9 February with a $9.7bn market cap after it previewed the Phase I results for twice-daily ALKS 8700. However, the company's stock still is trading near levels achieved in January thanks to the first set of positive Phase III data for ALKS 5461 in depression and encouraging Phase II results for the schizophrenia drug ALKS 3831 (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Alkermes-spikes-on-first-Phase-III-ALKS-5461-depression-data-355959" target="_new">6 January</a> and <a href="http://www.scripintelligence.com/researchdevelopment/Alkermes-soars-on-positive-schizophrenia-data-355990" target="_new">7 January 2015</a>). </p><p>The Phase I clinical trial for ALKS 8700 confirmed the drug's ability to efficiently convert into MMF in the body. The trial also informed dose selection for later-stage studies and provided useful information for a once-daily formulation of the drug.</p><p><b>ALKS 8700 study design</b></p><p>The company's three-part Phase I clinical trial enrolled 104 healthy volunteers. The first part tested safety, tolerability and pharmacokinetics (PK) of single ascending doses versus placebo in 56 subjects with the goal of determining a dose with MMF exposure comparable to 240mg of Tecfidera for Part 2. </p><p>Sixteen patients participated in the second part of the study, which was a two-treatment, two-period crossover comparison of PK and tolerability of a single dose of ALKS 8700, 240mg of Tecfidera or placebo. Part 3 enrolled 32 people and evaluated the PK of extended-release ALKS 8700 formulations.</p><p>Alkermes did not disclose the ALKS 8700 dose selected for Part 2, but the company said people treated with a single dose of the drug showed less variability in MMF exposure than subjects who received Tecfidera, with a significantly lower maximum plasma concentration (Cmax). The ratio of gastrointestinal adverse events also was lower &ndash; 8.3% for people who received a dose of ALKS 8700 compared with 41.7% for subjects who received a 240mg dose of Tecfidera. </p><p>Mild to moderate flushing and gastrointestinal adverse events were the most common side effects across all three parts of the Phase I study with no serious adverse events or side effect-related study discontinuations. </p><p>Detailed Phase I results will be presented at an upcoming medical meeting and submitted for publication in a peer-reviewed journal.</p><p><b>Pipeline progress with payers in mind</b></p><p>Mr Pops noted during <i>Scrip</i>'s interview with the CEO in January that there are almost no competitors for Tecfidera, because of Biogen's strong intellectual property surrounding dimethyl fumarate globally. </p><p>Much of the Alkermes strategy around novel molecules that improves on existing therapies, "is about understanding how chronic use matters. These are medicines for people that need to take them for a long period of time," he said.</p><p>For ALKS 8700, that means reducing gastrointestinal side effects for MS patients currently taking Tecfidera and potentially giving patients a once-daily treatment option.</p><p>With aripiprazole lauroxil, a long-acting injectable prodrug of Bristol-Myers Squibb's and Otsuka's atypical antipsychotic Abilify, the focus is better patient compliance versus oral schizophrenia treatments. The FDA is expected to approve or deny the new drug application (NDA) for aripiprazole lauroxil by 22 August (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Alkermes-long-acting-schizophrenia-drug-under-FDA-scrutiny-354619" target="_new">23 October 2014</a>).</p><p>While Abilify will go generic soon, Mr Pops doesn't seem worried about the chances that payers will reimburse the cost of an Abilify prodrug. Abilify generated $2bn in worldwide sales for Bristol-Myers Squibb in 2014. That means that the availability of generic aripiprazole, according to Mr Pops, will reduce spending on Abilify in 2015 and free up capacity among US payers to reimburse the costs of novel schizophrenia therapies, like aripiprazole lauroxil.</p><p>"Payers are resistant to using branded medicines in a generic market, but they will pay for branded medicines that work well and are better," he said, noting that new treatments also must be priced within reason. "If you price it too high, you're only guaranteeing that fewer patients get access to it." </p><p>For other CNS-related programs, Alkermes designed ALKS 5461 to provide rapid onset and continued improvements in depression symptoms for patients who've previously failed standard treatments, such as selective serotonin reuptake inhibitors (SSRI) or a serotonin-norepinephrine reuptake inhibitor (SNRI). </p><p>The company sees ALKS 5461 as an add-on to current depression treatments that could improve patient outcomes without resorting to expensive alternatives, like electro-shock therapy.</p><p>With ALKS 3831, Alkermes formulated the mu-opioid antagonist samidorphan together with the well-established antipsychotic Zyprexa (olanzapine) to provide efficacy similar to Zyprexa with less weight gain in hopes to improving patient compliance with prescribed therapies.</p><p><b>Earlier-stage programs</b></p><p>While aripiprazole lauroxil is moving toward FDA approval and commercialization later this year as ALKS 5461 makes progress in Phase III, ALKS 3831 nears late-stage development and ALKS 8700 moves toward pivotal studies, that doesn't mean that Alkermes is done with early-stage development. </p><p>The company plans to report its first Phase I results for the opioid modulator ALKS 7106, a pain drug with low abuse potential, during the first half of 2015. A second study in dental pain also is in the works.</p><p>Earlier still, Alkermes plans to initiate clinical development this year for RDB 1419, which targets Interleukin-2 (IL-2) and could be a potent immunomodulator for the treatment of melanoma, renal cell carcinoma and other types of cancer. </p><p>The immuno-oncology program emerged from the company's past work in drug delivery and was developed with its Picasso technology for extending the half-life of therapeutic proteins. Alkermes will decide how to develop RDB 1419 on its own or with a partner after the company has Phase I data.</p><p>The second program that Alkermes intends to take into the clinic in 2015 has not been publicly identified.</p><p>Mr Pops said it's too soon for Alkermes to make a big commitment to immuno-oncology as it continues to hunt for new drug candidates from external sources, but the company will continue to look for assets that target the CNS. </p><p>For instance, ALKS 8700 gives Alkermes an entry point into neurodegenerative diseases and the company is interested in programs in this area, such as Alzheimer's disease. However, Alkermes is likely to focus on Alzheimer's agitation or psychosis rather than therapies that try to treat the underlying cause of the difficult disease.</p><p>"Short of curing Alzheimer's or delaying its onset, helping people deal with this disease is something to focus on," Mr Pops said.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 277
+
+<p>Alkermes plans to move ALKS 8700, a novel monomethyl fumarate (MMF) molecule and a competitor for Biogen Idec's successful oral multiple sclerosis (MS) drug Tecfidera (dimethyl fumarate), into pivotal studies following a large, placebo-controlled Phase I clinical trial.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Alkermes claims ALKS 8700 success third pipeline win in 2015
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150402T170958
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150402T170958
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150402T170958
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027771
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Alkermes claims ALKS 8700 success; third pipeline win in 2015
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356543
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7ad023b4-578e-4789-abc4-ae3d00b52e4c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

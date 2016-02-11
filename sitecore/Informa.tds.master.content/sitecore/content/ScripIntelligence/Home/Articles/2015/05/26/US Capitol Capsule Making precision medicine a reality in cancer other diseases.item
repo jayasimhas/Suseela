@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {358D0D49-FE10-4508-BBE2-05CACE4E781B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/26/US Capitol Capsule Making precision medicine a reality in cancer other diseases
+parent: {BE692C32-5AA8-45EF-8DEC-C1CC14E864B1}
+name: US Capitol Capsule Making precision medicine a reality in cancer other diseases
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 32d23d99-54dc-47e9-876d-f63fd667a0fb
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{F043FBB7-13CF-4A00-B764-9F7837FBBCCD}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 83
+
+US Capitol Capsule: Making precision medicine a 'reality' in cancer, other diseases
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 79
+
+US Capitol Capsule Making precision medicine a reality in cancer other diseases
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 17442
+
+<p>Tailored approaches for preventing, diagnosing and treating disease &ndash; precision medicine &ndash; remains out of reach for most patients, although big news at this year's meeting of the American Society of Clinical Oncology about the latest advances in targeted cancer therapies and the role biomarkers play in determining whether a combination of drugs is better than monotherapy certainly demonstrates science has made enormous strides in the past 15 years.</p><p>About 20% of the drugs approved in 2014 in the US were considered products that could be classified as precision medicine therapies, according to the Personalized Medicine Coalition (PMC).</p><p>A recent survey sponsored by PMC and conducted by the Tufts Center for the Study of Drug Development found that 42% of all medicines in the pipeline have the potential to be precision medicine therapies &ndash; 73% of which are drugs for cancer. </p><p>Nonetheless, precision medicine is a long way away from becoming an actuality on a large scale.</p><p>But a powerful lawmaker, Senator Lamar Alexander (Republican-Tennessee), chairman of the Senate Health, Education, Labor and Pensions (HELP) Committee, late last week pledged to make precision medicine a reality through legislation his chamber currently is developing. </p><p>At a 28-29 May workshop hosted by the National Institutes of Health (NIH) at Vanderbilt University in Tennessee, Senator Alexander insisted there was bipartisan support for backing precision medicine efforts.</p><p>The Tennessee lawmaker emphasized he told President Barack Obama earlier this year the Senate <a href="http://www.scripintelligence.com/home/Senators-jump-on-accelerating-cures-bandwagon-356448" target="_new">HELP's effort</a> to overhaul the US biomedical innovation enterprise would include precision medicine.</p><p>Senator Alexander, however, did not say whether he would back the full <a href="http://www.scripintelligence.com/home/Obama-outlines-spending-wish-lists-for-FDA-NIH-356508" target="_new">$215m Mr Obama had asked</a> Congress to provide for his initiative, which the president first <a href="http://www.scripintelligence.com/home/Obama-launches-precision-medicine-initiative-details-scarce-356275" target="_new">announced</a> during his 2015 State of the Union address to the House and Senate in January and <a href="http://www.scripintelligence.com/home/Obama-unveils-215m-bold-precision-medicine-initiative-356457" target="_new">unveiled</a> later that month at a White House ceremony, at which several biopharmaceutical executives were <a href="http://www.scripintelligence.com/home/Biopharmas-summoned-to-White-House-for-precision-med-reveal-356435" target="_new">invited</a> to attend, including those from Vertex and Regeneron.</p><p>NIH Director Dr Francis Collins said he hopes to have an initial proposal for the <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-NIH-seeks-collaborators-for-large-genetics-data-cohort-356479" target="_new">one-million person cohort</a> &ndash; the heart of President Obama's precision medicine initiative &ndash; ready by August.</p><p>The large single cohort will consist of volunteers whose gene, metabolite and microorganism profiles will be collected, along with additional information from medical records and other sources, he said.</p><p>While the cohort is at the center of the long-term goal of President Obama's plan to generate knowledge that can be applied to a whole range of health issues and diseases, his initiative also has a second major component, in which the National Cancer Institute is scaling up efforts to identify genomic drivers in cancer and apply that knowledge in the development of more effective approaches to cancer treatment.</p><p>At the Vanderbilt workshop &ndash; one in a series NIH is holding this year to gain input from the scientific community and other stakeholders &ndash; Senator Alexander called for NIH and the participating stakeholders to deliver a "specific blueprint" on precision medicine so that lawmakers would know how to tailor their legislation.</p><p>"We don't know what you know," the senator acknowledged to the room full of scientists and other participants at the workshop. "So tell us."</p><p>The Senate is far behind the House in crafting legislation to address precision medicine and efforts to improve the US biomedical research enterprise.</p><p>Indeed, the House Energy & Commerce Committee <a href="http://www.scripintelligence.com/home/FDA-hugged-Medicare-plans-squeezed-A-Cures-lovefest-358551" target="_new">already has adopted</a> its legislation, dubbed the <i>21st Century Cures Act</i>, which the full chamber is expected to soon take up.</p><p>The House bill has called for $10bn for the NIH and $550m for the FDA, while also increasing each agency's responsibilities aimed at accelerating the medical product R&D and approval processes. </p><p>While the <a href="http://www.scripintelligence.com/home/NIH-Thanks-for-the-funds-FDA-Wheres-ours-358162" target="_new">NIH was overjoyed</a> at the thought of getting $10bn extra, the FDA said it actually needed about <a href="http://www.scripintelligence.com/home/FDA-1bn-needed-to-cover-Cures-costs-358495" target="_new">$1bn to implement</a> the measures in the Cures bill.</p><p>The House E&C <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Time-to-go-big-on-cures-innovation-lawmakers-declare-351611" target="_new">launched</a> its effort last year, but the Senate HELP Committee didn't get started until this past <a href="http://www.scripintelligence.com/home/Senators-jump-on-accelerating-cures-bandwagon-356448" target="_new">January</a>, although it has held three hearings on the matter so far &ndash; in <a href="http://www.scripintelligence.com/home/Warren-picks-fight-with-Cures-author-over-NIH-funding-357475" target="_new">March</a>, <a href="http://www.scripintelligence.com/home/Dont-break-whats-working-FDAs-Woodcock-urges-Congress-358096" target="_new">April</a> and <a href="http://www.scripintelligence.com/home/NIH-chief-Dont-let-moment-pass-for-precision-medicine-358211" target="_new">May</a>.</p><p>But Senator Alexander, who declared that "precision medicine is an important part of this committee initiative," said his goal, nonetheless, is to have legislation ready by the end of this year, although there's no guarantee the Senate will agree with what has been included in the House bill or if there will be the same levels of funding proposed.</p><p>He praised Vanderbilt for its efforts in pursuing precision medicine, including its BioVU biobank, which links DNA samples to de-identified patient records, and the university's PREDICT project, an electronic system used to inform drug choice and dosages based on patients' genetic information. </p><p>At last week's workshop, scientists mulled over what existing cohorts could be leveraged to help make up the one-million person cohort.</p><p>The workshop participants &ndash; who declared Mr Obama's precision medicine initiative an effort similar to President John F Kennedy's "space race" against Russia and the rest of the world &ndash; also discussed what resources were available outside of the US healthcare delivery and research settings and how researchers involved in the effort could ascertain health information prospectively, in addition to what baseline information and samples should be collected and how to manage the data that will be generated.</p><p>Dr Gina Wei, from the National Heart, Lung and Blood Institute, noted the NIH had received 152 public responses from inside and outside the US to the agency&rsquo;s request for information it had issued last month.</p><p>She said the comments identified several research entities interested in participating in the precision medicine initiative.</p><p>Much of the discussion at the May workshop picked up on topics earlier debated at a two-day workshop on the NIH campus in <a href="http://www.scripintelligence.com/home/Data-security-diversity-debated-at-precision-medicine-Super-Bowl-356706" target="_new">February</a> &ndash; dubbed the Superbowl for precision medicine &ndash; including data security and ensuring diversity in the large study cohort.</p><p>Dr Collins <a href="http://www.scripintelligence.com/home/NIH-chief-has-big-plans-for-dream-research-cohort-356736" target="_new">has said</a> putting together the million-person cohort &ndash; which he's said he actually hopes surpasses 1 million &ndash; was his "dream," ever since he led the effort to sequence the human genome.</p><p>"It is magical to be able to contemplate, certainly after some of us have been laboring through this trying to figure out a way to make this happen for more than a decade," he said at the February workshop.</p><p>At a Senate HELP hearing early <a href="http://www.scripintelligence.com/home/NIH-chief-Dont-let-moment-pass-for-precision-medicine-358211" target="_new">last month</a>, Dr Collins pleaded with lawmakers "we should not let this moment pass" for precision medicine.</p><p>"The time is now," the NIH chief said, insisting the technology is ready.</p><p><b>In other Washington news:</b></p><p><a href="http://www.scripintelligence.com/policyregulation/US-military-chief-calls-for-accountability-in-anthrax-mishap-358675" target="_new">US military chief calls for accountability in anthrax mishap</a></p><p>US Defense Secretary Ashton Carter on 31 May called for those involved in the anthrax accident in which live <i>Bacillus anthracis</i> spores were inadvertently shipped from an American military base in April to potentially numerous private, academic and federal laboratories across the US, as well as to South Korea and Australia, to be held accountable.</p><p><a href="http://www.scripintelligence.com/policyregulation/Merck-seeks-FDA-nod-for-hep-C-combo-grazoprevirelbasvir-358674" target="_new">Merck seeks FDA nod for hep C combo grazoprevir/elbasvir</a></p><p>After some back-and-forth with the FDA over the status of the breakthrough therapy designation of Merck's experimental hepatitis C virus combination drug grazoprevir/elbasvir (100mg/50mg) &ndash; which was eventually tweaked &ndash; the company is now seeking approval of the product in the US, announcing after the markets closed on 28 May it had submitted a new drug application.</p><p><a href="http://www.scripintelligence.com/home/What-Tevas-1.2bn-settlement-means-for-pay-for-delay-358646" target="_new">What Teva's $1.2bn settlement means for pay for delay</a></p><p>Drug manufacturer giant Teva was practically at the courthouse steps when it settled on 28 May for $1.2bn with the US Federal Trade Commission over what the agency said were illegal efforts by the company's subsidiary Cephalon to block US generic competition of its $1bn blockbuster narcolepsy and sleep apnea drug Provigil (modafinil).</p><p><a href="http://www.scripintelligence.com/policyregulation/Lawmakers-troubled-over-anthrax-mishap-demand-answers-358649" target="_new">Lawmakers 'troubled' over anthrax mishap; demand answers</a></p><p>Bipartisan leaders from the House Energy and Commerce Committee on 28 May demanded answers from the heads of the Department of Defense and the Centers for Disease Control and Prevention about what led to live anthrax being shipped to numerous laboratories across the US and to an American military base in South Korea.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-rejects-AMAGs-single-dose-vial-Makena-358648" target="_new">FDA rejects AMAG's single-dose vial Makena</a></p><p>Investors weren't too alarmed over the FDA's rejection on 28 May of AMAG Pharmaceuticals single-dose vial of its preterm birth drug Makena (hydroxyprogesterone caproate), with shares of the firm actually gaining 8%.</p><p><a href="http://www.scripintelligence.com/policyregulation/Pfizers-Rapamune-1st-drug-OKd-for-lymphangioleiomyomatosis-358647" target="_new">Pfizer's Rapamune 1st drug OK'd for lymphangioleiomyomatosis</a></p><p>The FDA on 28 May gave Pfizer the go-ahead to market Rapamune (sirolimus) as a treatment for lymphangioleiomyomatosis, a very rare, but progressive lung disease, which primarily affects women of childbearing age. It is the first drug approved in the US to treat the disease.</p><p><a href="http://www.scripintelligence.com/home/Sanofi-paying-big-for-FDA-voucher-Retrophin-snags-245m-358627" target="_new">Sanofi paying big for FDA voucher; Retrophin snags $245m</a></p><p>Sanofi is laying down a cool $245m for Retrophin's rare disease pediatric priority review voucher &ndash; the largest amount paid to date.</p><p><a href="http://www.scripintelligence.com/home/Live-anthrax-may-have-reached-numerous-US-labs-358624" target="_new">Live anthrax may have reached numerous US labs</a></p><p>Researchers working in a military laboratory in Utah accidentally shipped live <i>Bacillus anthracis</i>, the bacterium that causes anthrax, to at least 18 private, academic and federal labs in nine states across the US, as well as to a US air base in the Republic of Korea, the Department of Defense and the CDC confirmed on 27 May.</p><p><a href="http://www.scripintelligence.com/home/Pazdurs-pitfalls-prevention-plan-lessons-of-cancer-NDA-failures-358622" target="_new">Pazdur's pitfalls prevention plan: lessons of cancer NDA failures</a></p><p>With the speed at which cancer drugs like Bristol-Myers Squibb's PD-1 immune checkpoint inhibitor Opdivo (nivolumab) and Amgen's bispecific T-cell engager antibody Blincyto (blinatumomab) gained the FDA's approval in recent months, one would think winning over the agency's oncology reviewers has become almost effortless &ndash; or at least, a lot easier than it used to be.</p><p><a href="http://www.scripintelligence.com/home/NIH-evidence-solid-for-early-HIV-antiretroviral-treatment-358626" target="_new">NIH: evidence solid for early HIV antiretroviral treatment</a></p><p>Results of a large international study, which was stopped early because of its positive results, provided solid evidence of what the HIV research community has known for a long time: starting antiretroviral therapy early provides the best outcomes for patients.</p><p><a href="http://www.scripintelligence.com/policyregulation/Actavis-Viberzi-Valeants-Xifaxan-OKd-in-IBS-D-in-US-358630" target="_new">Actavis' Viberzi, Valeant's Xifaxan OK'd in IBS-D in US</a></p><p>The FDA on 27 May approved Actavis' and Patheon Pharmaceuticals' Viberzi (eluxadoline) and Valeant's and its subsidiary Salix's Xifaxan (rifaximin) to treat adults with irritable bowel syndrome with diarrhea.</p><p><a href="http://www.scripintelligence.com/home/Good-faith-belief-no-defense-in-inducing-patent-infringement-358600" target="_new">'Good-faith belief' no defense in inducing patent infringement</a></p><p>The US Supreme Court in a 6-2 ruling on 26 May said claiming a "good-faith belief" that a patent is invalid doesn't hold water as a defense for inducing infringement by others. While the case, which overturned a decision by the US Court of Appeals for the Federal Circuit, involves wireless network technology, the ruling has broad implications for the biopharmaceutical industry.</p><p><a href="http://www.scripintelligence.com/policyregulation/White-House-gene-editing-research-raises-serious-urgent-questions-358604" target="_new">White House: gene-editing research raises serious, urgent questions</a></p><p>Altering the human germline for clinical purposes is a line that "should not be crossed at this time," White House Office of Science and Technology Policy Director Dr John Holdren said on 26 May, declaring that a robust review of the ethical issues involved must first be completed.</p><p><a href="http://www.scripintelligence.com/policyregulation/Nations-back-WHO-antimicrobial-resistance-global-action-plan-358603" target="_new">Nations back WHO antimicrobial resistance global action plan</a></p><p>Members states of the World Health Organization, including the US, have agreed to adopt a global action plan against antimicrobial resistance, which calls for new concepts to provide incentives for innovation and promote the cooperation between policymakers, academia and the pharmaceutical industry to ensure new technologies are available globally to prevent, diagnose and treat resistant infections.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-gives-more-time-for-electronic-safety-reporting-358601" target="_new">FDA gives more time for electronic safety reporting</a></p><p>The FDA on 26 May said it was delaying until 8 September compliance with a requirement to electronically submit postmarketing individual case safety reports of adverse events linked to drugs and biologics.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Boehringers-Stiolto-Respimat-in-COPD-358602" target="_new">FDA OK's Boehringer's Stiolto Respimat in COPD</a></p><p>The FDA has given Boehringer Ingelheim the go-ahead to market Stiolto Respimat (tiotropium bromide and olodaterol) as a long-term, once-daily maintenance treatment of airflow obstruction in patients with chronic obstructive pulmonary disease, including chronic bronchitis and emphysema.</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 471
+
+<p>Tailored approaches for preventing, diagnosing and treating disease &ndash; precision medicine &ndash; remains out of reach for most patients, although big news at this year's meeting of the American Society of Clinical Oncology about the latest advances in targeted cancer therapies and the role biomarkers play in determining whether a combination of drugs is better than monotherapy certainly demonstrates science has made enormous strides in the past 15 years.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 79
+
+US Capitol Capsule Making precision medicine a reality in cancer other diseases
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150526T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150526T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150526T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028875
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 83
+
+US Capitol Capsule: Making precision medicine a 'reality' in cancer, other diseases
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358587
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+32d23d99-54dc-47e9-876d-f63fd667a0fb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

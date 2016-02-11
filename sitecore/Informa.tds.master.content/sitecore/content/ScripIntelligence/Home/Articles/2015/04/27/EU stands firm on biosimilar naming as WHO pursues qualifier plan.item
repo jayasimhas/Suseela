@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {2E0A6353-5780-4827-9BF7-8226DD3A66FB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/27/EU stands firm on biosimilar naming as WHO pursues qualifier plan
+parent: {EA24C766-2E78-4AED-8518-75CB3FD1FB63}
+name: EU stands firm on biosimilar naming as WHO pursues qualifier plan
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f10c5487-8153-4dce-a4a6-41c865102066
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+EU stands firm on biosimilar naming as WHO pursues qualifier plan
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+EU stands firm on biosimilar naming as WHO pursues qualifier plan
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6541
+
+<p>As arguments continue to rage over whether biosimilars should carry the same non-proprietary name as their reference drug, a global naming system for biosimilars seems as far away as ever, at least to judge by recent moves in this area by key regulatory and health authorities across the world. </p><p>The debate is well rehearsed: biosimilars companies back the same-name approach, on the basis that any differences would merely serve to confuse matters, while the originator industry position is that a distinctive international non-proprietary name (INN) is vital in order to ensure traceability. </p><p>In Europe, where 20 biosimilar products containing a total of six active substances have been approved, the practice is to give them the same INN as the drug they reference. The US has yet to issue draft guidance on the matter, in the absence of which it agreed that Sandoz' Zarxio, which in March became the first biosimilar to receive FDA approval, should carry the "placeholder" name filgrastim-sndz. </p><p>The World Health Organization meanwhile is pursuing its own proposal for a "biological qualifier", a randomly generated four-letter code that would follow, but not be part of, the INN, and would apply to all biologics (but on a voluntary basis). </p><p>The naming issue was a key thread at a conference last week organized by the European Biosimilars Group (EBG), part of the European Generic and Biosimilar Medicines Association (EGA), where speakers from bodies such as the European Commission, the European Medicines Agency (EMA), the FDA and the WHO outlined their views on the situation.</p><h2>"No plans to change", says EU</h2><p>The EU authorities are clear that when it comes to biosimilar naming, Europe is happy the way it is and, despite moves towards some sort of qualifier, has no plans to change it. Sabine Jülicher, head of unit D5 (medicinal products &ndash; authorizations, EMA) at the commission's health directorate, said that "we are not intending to change labelling and naming of biosimilars. We're not going to [address] that topic in detail, knowing it's a sore point, but we don't have intentions to change our current position".</p><p>Similarly, Peter Richardson, head of quality at the EMA, said that naming of biosimilars had been something of a "thorny issue" over the years, but insisted that Europe had no intention of changing direction. At the EMA "we follow WHO policy on INNs for biologicals, and we agreed in Europe that we will continue to use the INN of the reference product for biosimilars," he declared. "This hasn&rsquo;t satisfied everyone, for a number of reasons," he said, noting for example the current discussion on the WHO's biological qualifier (BQ). </p><p>Disputing the need for a qualifier to allow the traceability of biosimilars in the case of safety issues, he said that the European pharmacovigilance system had "developed over many years into a robust system in terms of surveillance of products on the market". It was "clearly written in our legislation now that we will want to receive the brand name and batch number in our ADR reports, and basically that is sufficient to give the full level of identification that we need." </p><p>Some studies have been conducted on how this approach works, and these have shown that, essentially, identification is very good by brand name, but "probably there is a little bit more work to do on batch numbers in the future", Dr Richardson said. He also noted that a further degree of detail is being introduced into the pharmacovigilance network through the ISO standards, whose implementation is due to begin in Europe in July 2016. </p><p>Speaking for the biosimilars industry, Jörg Windisch, chief scientific officer at Sandoz Biopharmaceuticals and chair of the EBG, agreed there was no need for additional identifiers. He said the industry supported the "successful EU system with separate product [brand] names and the same INN", which he insisted "works well and is a model for the world". </p><h2>FDA guidance awaited</h2><p>The situation in the US is still evolving. The FDA has not yet released its draft guideline on biosimilar naming, and for this reason it took the seemingly precautionary decision to approve the Sandoz product with a four-letter code. The agency had apparently initially proposed a more random set of letters &ndash; which would have been pretty much in line with the WHO proposal &ndash; but it eventually came down in favour of Sandoz' proposal for a company abbreviation. </p><p>At the EGA/EBG conference, Leah Christl, associate director for therapeutic biologics at the FDA's Office of New Drugs, reiterated the agency's position that the code was a temporary measure pending the release of draft guidance on "non-proprietary naming of biologicals", but gave no indication as to which approach that guidance might recommend.</p><p>What will also need to be discussed is what happens if the US opts in favour of a different naming convention than the one adopted for Zarxio &ndash; ie, whether Sandoz, or any other company that obtains an approval before the guideline is in place, will have to change the name of the product.</p><h2>WHO presses on with BQ plan</h2><p>The EU may be happy with its existing approach, but the WHO still intends to press ahead with the biological qualifier proposal after its INN expert group authorized the production of a new draft based on responses to a stakeholder consultation held at the end of last year. </p><p>Derek Calam, chair of the WHO's INN expert group, said that the group had recently decided to proceed with the development of the scheme, which he stressed would be purely voluntary. Many regulators had initially been sceptical, but following a recent meeting of the group, at which some misunderstandings had been dispelled, he said there now seemed to be enough support from drug regulatory agencies to make it worthwhile pursuing. </p><p>Professor Calam said the next draft of the BQ plan, which is expected to be ready by June, would include some proposed changes intended to address concerns raised about the initial draft. These include a decision to link the BQ to the marketing authorization holder rather than to the manufacturing site, and consideration of whether a change in glycosylation, which currently requires the addition of a Greek letter to the INN, should justify a new BQ. </p><p>(Details of progress with the BQ scheme, and of the changes being discussed, will be outlined in a future <i>Scrip</i> article.)</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 302
+
+<p>As arguments continue to rage over whether biosimilars should carry the same non-proprietary name as their reference drug, a global naming system for biosimilars seems as far away as ever, at least to judge by recent moves in this area by key regulatory and health authorities across the world. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+EU stands firm on biosimilar naming as WHO pursues qualifier plan
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150427T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150427T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150427T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028547
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+EU stands firm on biosimilar naming as WHO pursues qualifier plan
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357985
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f10c5487-8153-4dce-a4a6-41c865102066
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

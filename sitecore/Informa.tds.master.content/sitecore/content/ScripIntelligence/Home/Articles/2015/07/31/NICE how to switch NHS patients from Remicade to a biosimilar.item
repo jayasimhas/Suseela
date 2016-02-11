@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {BCB8F1E6-E284-41F2-BAE5-8DA4202BFAFC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/31/NICE how to switch NHS patients from Remicade to a biosimilar
+parent: {41EBBC65-C73D-4320-B22C-6EBD0BE8A7D8}
+name: NICE how to switch NHS patients from Remicade to a biosimilar
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 42a7f5a6-0814-4472-9a06-98d77e49ea28
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+NICE: how to switch NHS patients from Remicade to a biosimilar 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+NICE how to switch NHS patients from Remicade to a biosimilar
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11715
+
+<p>The National Institute for Health and Care Excellence (NICE) has produced some "practical advice" for NHS staff on how to manage the introduction of the two biosimilar versions of Merck & Co/J&J's Remicade (infliximab) that were launched in the UK in February this year following further patent expiries on the originator.</p><p>NICE's "tips" include appointing clinical and pharmacy "champions" to take the lead on introducing biosimilars, identifying the opportunities for cost savings and re-investment, and ensuring that all stakeholders are fully informed about all aspects of biosimilars, including the approval procedures and the basis behind extrapolation of indications.</p><p>The "technology appraisal support" document, which does not constitute official NICE guidance, is based partly on two case studies of NHS bodies that have introduced the infliximab biosimilars &ndash; Celltrion's Remsima (marketed in the UK by Napp Pharmaceuticals) and Hospira's Inflectra &ndash; into their clinical practice this year.</p><p>The new resource was welcomed by British Generic Manufacturers' Association (BGMA), whose director general, Warwick Smith, said he hoped to see it widely publicised to clinicians and patients. "The biosimilars industry is still relatively new in the UK with only a handful of products available. Therefore resources like this which contain real life case studies are invaluable for providing people with information and guidance on how best to implement this critical class of medicines," Mr Smith declared.</p><p>Generally speaking, NICE does not appraise biosimilars on their own, but as part of a multiple technology appraisal in parallel with the reference product. However, the Department of Health has confirmed that a technology appraisal of an originator drug can be applied to a biosimilar version of that drug that subsequently appears on the market. </p><p>NICE has already issued guidance on infliximab that can be applied to the biosimilars. The advice on Remsima and Inflectra &ndash; produced by NICE's Adoption and Impact Programme &ndash; is therefore intended more as a set of practical steps that clinical and non-clinical staff can take to manage the introduction of infliximab and other biosimilars into NHS practice as efficiently as possible. </p><h2>Comparability issues</h2><p>NICE is at pain to stress that biosimilars undergo a "comprehensive regulatory process which demands extensive comparability studies that demonstrate similarity to the reference medicine," and that they are "generally used at the same dose and route of administration as the biological reference medicine and have the same contraindications and warnings."</p><p>In an apparent reference to claims often made that the use of biosimilars may carry risks because they are not identical to the reference drug, it notes that any originator biological drug is likely to be modified several times during its development and production history, for example when there is a change in manufacturing process. </p><p>"In the case of Remicade, the infliximab reference medicine, there have been 40 listed changes made to the manufacturing process for the active substance or the final product since its original authorisation (1999&ndash;2011). After each such change, the same comparability exercise that is carried out for a biosimilar is carried out to ensure that the new biological drug is similar to the old one," the institute says. </p><p>It adds, though, that the Medicines and Healthcare products Regulatory Agency (MHRA) recommends that all biologicals, including biosimilars, be prescribed by their brand name to ensure the patient receives the intended product, and that products cannot be automatically substituted at pharmacy level. The choice of product rests with the physician in consultation with the patient.</p><h2>Practicalities</h2><p>NHS bodies, NICE says, should make sure their staff are well informed about the biosimilar approval process and manufacturing issues (including manufacturing changes for biologicals and their biosimilars), as well as other key questions such as extrapolation. </p><p>It says they should identify "clinical and pharmacy champions" to take the lead on biosimilar introduction as well as consulting all stakeholders, including patients, to "ensure confidence in using biosimilars."</p><p>Other "tips" include:</p><ul><li>Identify the potential cost saving and re-investment opportunities and explore gain-share agreements.</li><li>Seek formal approval at the local formulary committee once there is clinical consensus to include biosimilars on the formulary.</li><li>Collect baseline data and agree metrics to be collected during and after the introduction of biosimilars.</li><li>Submit data to national audits and registries.</li><li>Prescribe by brand name to ensure that there is no unintended substitution of drugs at the pharmacy level.</li></ul><h2>Case studies</h2><p>To flesh out its advice, NICE offers two case studies of NHS organizations that have managed the introduction of biosimilars, including switching patients from Remicade.</p><p>The first example is that of the University Hospital Southampton NHS Foundation Trust, whose gastroenterology team includes nine consultants, five nurse specialists, two pharmacists and two specialise dieticians. Four of the consultants have a defined interest in one of infliximab's six indications, inflammatory bowel disease (IBD). </p><p>In January this year, the trust was treating more than 350 IBD patients, of whom 150 were taking Remicade, and the team saw the chance to implement a gain-share agreement with the two main clinical commissioning groups (CCGs) for the imminent introduction of the cheaper biosimilar versions. To prepare for their introduction, the consultant clinical lead for the IBD service proposed a managed switching program for all the Remicade patients.</p><p>"It was recognized that the principles and science of biosimilars were not fully understood by clinicians and that it was important to discuss this as a team to ensure that everyone was fully briefed and in agreement," NICE says. The proposed switching programme was discussed in detail with the IBD patient panel as well as with people in the clinic on an ad hoc basis. "Feedback suggested that for patients, it was ultimately a matter of trust in the clinicians providing the service and the re-assurance of no harm." Moreover, a major motivation for patients was "seeing at least some of the cost savings being invested in improvements to their care."</p><p>The "safe switch" program began in April, with patients on Remicade being approached by IBD specialist nurses to advise them they were being switched to Inflectra and asking them to get in touch if they had any concerns. The team identified good communication with patients as being vital to the successful implementation of the switch program.</p><p>After two months, all 150 patients had been switched from Remicade to Inflectra, NICE reports, and to date only two patients have requested a review of the switch on medical grounds. "Understandably some patients with severe disease had more detailed discussions and reassurance before agreeing to the switch. These people have had a full assessment and review in line with local protocols and will be monitored on a case-by-case basis."</p><p>The team concluded that large cost savings can be achieved by using biosimilar infliximab and through more effective use of all biologic therapies in IBD, provide the focus is on patient needs and investment in local IBD services including staff and IT. "They reflected that none of this would have been possible without close collaboration and trust between clinicians, hospital management and CCGs, with all parties being appropriately incentivised to deliver high quality patient care and cost savings."</p><h2>UCL practice</h2><p>The IBD service at University College London Hospitals NHS Foundation Trust has some 400 patients on a biological drug, split between infliximab (150) and adalimumab (AbbVie's Humira) (250). The medicines management team at the trust had already introduced biosimilar filgrastim, epoetin and human growth hormone onto the formulary, and had experience of the challenges involved, which they used to prepare for the introduction of infliximab, NICE notes.</p><p>They reached similar conclusions about introducing biosimilars, including the need for comprehensive information on the licensing process, the cost savings, the importance of gain-share agreements, and so on. They also found that there needs to be clear starting and stopping criteria with biosimilars, and that formal approval at the local formulary committee should be sought once clinical agreement has been reached.</p><p>Demonstrating the importance of offering clear information about biosimilars versus their reference drugs &ndash; and incidentally the confusion that can result when the same products is marketed under different trade names &ndash; it emerged that some clinicians were initially unaware of the intra-manufacturing changes that Remicade had already gone through, and that "not all understood that the two biosimilars are in fact exactly the same substance, being packaged and distributed by two different companies." </p><p>Once these issues were discussed, most clinicians were reassured about starting new patients on a biosimilar, but some were still worried about switching gastroenterology patients from Remicade to a biosimilar based on extrapolation from rheumatology patients &ndash; particularly the risk of relapse where remission had been difficult to achieve.</p><p>Agreement has now been reached for patients starting a new course of infliximab in the IBD service to be prescribed a biosimilar, and this will be closely monitored and reviewed in six months, NICE notes. An interim tender arrangement is in place through a London procurement partnership agreement for use of Remsima, which will be re tendered later in 2015.</p><h2>Cost savings</h2><p>NICE notes that like other biosimilar medicines infliximab has the potential to offer the NHS considerable cost savings, especially in long-term conditions. </p><p>In March it published a costing statement that implemented NICE guidance on infliximab, adalimumab and golimumab for moderately to severely active ulcerative colitis after the failure of conventional therapy (TA329), which includes biosimilar versions of infliximab. The statement says that using biosimilar infliximab may lead to drug cost savings for commissioners. </p><p>"The statement shows a cost saving of 10% per cycle by changing to a biosimilar version of infliximab. However, costs may vary locally depending on local contractual arrangements and it is reported that some centres have achieved much greater cost savings."</p><p>Indeed, the UK Medicines Information website says that the NHS list price for Remsima was &pound;377.66 per 100mg vial at its launch in February, "at least 30% lower than that of originator Remicade." </p><p>And Merck said recently that the effect of biosimilar competition on Remicade had grown since the loss of exclusivity in the core European markets (the second wave of patent expiries) in February this year, and that biosimilar discounts were now higher than original expectations of 30%, at nearer 45%. This was the discount negotiated recently for Inflectra by the <a href="http://www.scripintelligence.com/policyregulation/biosimilar-infliximab-on-the-up-as-French-hospitals-secure-steep-discount-359271" target="_new">French hospital group AP-HP</a> in Paris. In Norway an even greater discount (69%) has been negotiated for Remsima.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 329
+
+<p>The National Institute for Health and Care Excellence (NICE) has produced some "practical advice" for NHS staff on how to manage the introduction of the two biosimilar versions of Merck & Co/J&J's Remicade (infliximab) that were launched in the UK in February this year following further patent expiries on the originator.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+NICE how to switch NHS patients from Remicade to a biosimilar
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150731T000040
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150731T000040
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150731T000040
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029441
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+NICE: how to switch NHS patients from Remicade to a biosimilar 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359710
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+42a7f5a6-0814-4472-9a06-98d77e49ea28
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

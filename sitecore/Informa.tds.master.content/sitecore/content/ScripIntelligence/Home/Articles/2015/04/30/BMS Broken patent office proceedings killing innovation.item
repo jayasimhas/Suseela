@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {966E9E2D-A45D-49C0-8436-609789547D44}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/BMS Broken patent office proceedings killing innovation
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: BMS Broken patent office proceedings killing innovation
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fd83396d-5d49-4660-96f8-542df0c212e4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+BMS: Broken patent office proceedings killing innovation
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+BMS Broken patent office proceedings killing innovation
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7391
+
+<p>While Senator Charles Grassley (Republican-Iowa), chairman of the Senate Judiciary Committee, on 7 May said he was "comfortable with where we are on the language" of a bill aimed at again overhauling the US patent system, the lawmaker said he's also heard the pleas by some stakeholders, including the biopharmaceutical industry, to make tweaks to certain US Patent & Trademark Office (US PTO) proceedings, known as the post-grant (PGR) and inter partes (IPR) reviews.</p><p>But Senator Grassley said there also were other stakeholders &ndash; some of whom testified before the committee at a 7 May Capitol Hill hearing &ndash; who want the PGRs and IPRs to stay the way they are because the proceedings have been effective at weeding out weak patents. </p><p>Although the Senate bill, known as the <i>Protecting American Talent and Entrepreneurship (PATENT) Act</i>, has gained bipartisan support &ndash; mostly because of its efforts to rein in suits filed by so-called patent trolls &ndash; there are some lawmakers from both sides of the aisle who have voiced opposition, which may slow down Senator Grassley's plan to move the legislation swiftly through his committee to the full Senate for debate and a vote.</p><p>The Pharmaceutical Research and Manufacturers of America and the Biotechnology Industry Organization are among those currently opposing the bill because it ignores abusive PGR and IPR filings, which the groups are arguing are unintended consequences of the <i>America Invents Act</i> (AIA) &ndash; a law signed by President Barack Obama on <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Obama-backs-NCATS-reveals-plans-to-move-ideas-from-lab-to----market-321330" target="_new">16 September 2011</a>.</p><p>The post-grant proceedings, conducted by the US PTO's Patent Trial and Appeal Board (PTAB), were established to provide faster and more affordable ways to challenge patents than going through the long and arduous US court system.</p><p>The IPRs, especially, have caught on like wildfire &ndash; with close to 3,000 filed so far &ndash; something US PTO officials have admitted they never expected.</p><p>Unfortunately, said Henry Hadad, senior vice president and deputy general counsel of intellectual property at Bristol-Myers Squibb, the post-grant proceedings "have been implemented in a manner that lacks basic due process protections and unfairly prejudices patent owners," which he said was evidenced by recent statistics from the US PTO showing the PTAB has granted about 75% of petitions, most of which are IPRs, and has found at least some challenged claims unpatentable in over 80% of the final written decisions. </p><p>"These one-sided results have led to increasing abuse of these proceedings, including IPR petition filings by hedge funds that are shorting stock to drive down share prices, by parties primarily seeking to extract a financial settlement from patent holders and by litigants presenting the same or substantially the same arguments that were unsuccessful in federal court," Mr Hadad argued. "Rather than provide a more efficient proceeding for determining patent validity, IPR and PGR proceedings unfortunately are being used to serially harass patent owners in multiple proceedings before the district courts and the US PTO."</p><p>The result of the ongoing abuse of the post-grant proceedings system, he said, has reduced confidence in the US patent system, meaning there is less incentive to invest in innovators, like biopharmaceutical makers. </p><p>After all, Mr Hadad said, "you wouldn't buy a plot of land if you were told there was a 75% chance it would be taken from you in the future." </p><p>A patent, he said, is effectively a "leap of faith" that if someone performs the up-front work, they'll be rewarded a limited period of exclusivity to recoup investment and hopefully receive revenue that could be used to fund further research in the future. </p><p>It's up to the US PTO to ensure that leap of faith &ndash; which Mr Hadad said is particularly pronounced in the biopharmaceutical industry &ndash; "is justified." </p><p>The current Senate bill, however, has failed to address the "unbalanced" IPR and PGR environment, he charged.</p><p>Indeed, stopping the abuse of patent trolls &ndash; entities that acquire patents for the sole purpose of forcing companies to pay licensing fees or settling infringement suits through threats of aggressive litigation &ndash; has dominated the recent patent reform legislative efforts.</p><p>But Mr Hadad said if abuse of the IPR and PGR system is permitted to continue by <a href="http://www.scripintelligence.com/home/Patent-reform-its-all-about-the-trolls-no-Bass-358182" target="_new">hedge fund</a> managers and others, ultimately, it will result in the lack of a robust and predictable patent system &ndash; meaning less innovation by biopharmaceutical makers, reduced investment in the industry and fewer jobs in the sector.</p><p>"To that end, there will be fewer groundbreaking therapies for patients," he said.</p><p>Mr Hadad offered up three ways Congress should make a "course correction" for the post-grant proceedings in the <i>PATENT Act</i>, which he said would provide "faith and predictability in the patent system."</p><p>First, he said, in PGR and IPR proceedings, "the PTAB should apply the same correct claim construction standards as district courts rather than the broadest reasonable interpretation."</p><p>Next, Mr Hadad said, "the PTAB should also respect presumption of validity for granted patents and apply the same clear and convincing evidentiary standard as applied in district courts for establishing invalidity of the patent."</p><p>Patent owners, he contended, should be permitted to amend patent claims in a US PTO reissue or reexamination proceeding prior to IPR or PGR institution.</p><p>Third, Mr Hadad said, the procedural rules governing IPR and PGR should be revised to ensure fairness and due process for patent owners, including equal opportunity to submit evidence, reducing potential bias by having someone other than the PTAB merits panel decide whether to institute the petition and by permitting live testimony on key issues. </p><p>But others testifying before the Judiciary Committee called on lawmakers not to mess with the IPR and PGR processes.</p><p>While Congress should find a way to stop hedge funds from filing "spurious review requests to manipulate the stock price of innovative life sciences companies," said Mark Chandler, senior vice president and general counsel at high-tech giant Cisco Systems, he also argued "we must preserve the post-grant proceedings as an openly accessible tool for protecting the public from improperly granted patents." </p><p>He praised the authors of the <i>PATENT Act</i> for leaving the "longstanding rules for claim interpretation in post-grant proceedings undisturbed" &ndash; unlike other legislation introduced in the House.</p><p>Diane Lettelleir, senior managing counsel in litigation for US retailer JC Penney, urged lawmakers to keep the <i>PATENT Act's</i> focus on patent trolls and leave the post-grant review process, which she said was a "carefully structured" part of the AIA, alone. </p><p>"To pick out one element" of the AIA, like the post-grant reviews, "would disrupt the balance of the law," Ms Lettelleir declared.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 475
+
+<p>While Senator Charles Grassley (Republican-Iowa), chairman of the Senate Judiciary Committee, on 7 May said he was "comfortable with where we are on the language" of a bill aimed at again overhauling the US patent system, the lawmaker said he's also heard the pleas by some stakeholders, including the biopharmaceutical industry, to make tweaks to certain US Patent & Trademark Office (US PTO) proceedings, known as the post-grant (PGR) and inter partes (IPR) reviews.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+BMS Broken patent office proceedings killing innovation
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T224344
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T224344
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T224344
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028656
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+BMS: Broken patent office proceedings killing innovation
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358158
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fd83396d-5d49-4660-96f8-542df0c212e4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

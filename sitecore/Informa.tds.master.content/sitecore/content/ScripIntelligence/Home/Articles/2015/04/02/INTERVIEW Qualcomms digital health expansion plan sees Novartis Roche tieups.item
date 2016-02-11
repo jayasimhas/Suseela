@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {F61E409E-0303-49AD-BC04-C84ABC89A4B1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/02/INTERVIEW Qualcomms digital health expansion plan sees Novartis Roche tieups
+parent: {0CBDEEF4-9AC4-4491-AA70-F3114C458FCA}
+name: INTERVIEW Qualcomms digital health expansion plan sees Novartis Roche tieups
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8ae4a423-f373-4f85-85d8-551aa3ffb0b6
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{32C2DFCA-405E-43AB-88A5-3883EB932000}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 80
+
+INTERVIEW: Qualcomm's digital health expansion plan sees Novartis, Roche tie-ups
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 76
+
+INTERVIEW Qualcomms digital health expansion plan sees Novartis Roche tieups
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8903
+
+<p><b>The recent partnerships forged between telecommunications giant Qualcomm and pharma companies Novartis and Roche has highlighted a growing trend towards healthcare becoming more connected. Madeleine Armstrong spoke to Qualcomm's Jack Young to find out more.</b></p><p>Digital health, mHealth, eHealth&#8230;call it what you will, these terms have been around for some time. But after several false starts, 2015 could be a tipping point. Momentum appears to be growing in the space, not least with a recent deal between Qualcomm and Novartis that will see the companies investing $100m in promising early-stage technology.</p><p>The investment will come via a company that Qualcomm Ventures and Novartis have set up, called dRx Capital. "We're in business and we're looking to invest, primarily in the US and Europe, as well as Israel," said Jack Young, senior director of the Qualcomm Life Fund. "Hopefully we'll make our first investment in the next couple of months." </p><p>The Qualcomm Life Fund was set up in 2011, with $100m for investments &ndash; the same time as the firm established its Qualcomm Life subsidiary, focused on wireless and mobile healthcare technologies.</p><p>The latest venture with Novartis builds on Qualcomm's previous efforts in healthcare and aims to go "beyond the pill," the companies said. Both firms have pledged $50m and will contribute an equal amount to each investment, Mr Young explained. "It's fairly similar to a traditional investment fund where you have multiple LPs [limited partners, or secondary investors - ed]. dRx Capital will have two LPs: Qualcomm and Novartis. dRx Capital will make the investment agreement, and will withdraw an equal amount from Qualcomm and Novartis."</p><h2>'Pill plus' and digital therapeutics</h2><p>What kind of technologies are the firms looking for? "We have come down to four areas where we potentially see common interests," Mr Young replied. "The first we call 'pill plus.' There are companies pairing a medication with a piece of software or an application, or sometimes a wearable device, which can provide additional benefits to patients as well as providers and pharma companies, who will get a better idea of how the patients are doing."</p><p>One example is Proteus Digital Health, which Novartis has already invested in. "[Proteus has developed] a tiny little chip that can be embedded into a pill, and once you swallow that pill, it sends a signal that the pill has been taken, so that's one way of validating compliance."</p><p>Mr Young continued: "The second category is 'digital therapeutics,' so instead of traditional drugs they use a combination of applications, wearable devices, as well as human coaching, to achieve similar medical results."</p><p>He gave two examples of digital therapeutics, both in the diabetes space. One, the DiabetesManager developed by WellDoc, is an app that patients follow to achieve certain goals such as controlling their blood glucose levels (WellDoc has also developed products for other chronic diseases). The second, Omada Health's 16-week Prevent program, can reduce the chances of people with pre-diabetes developing full-blown type 2 disease. "Patients are sent home with online instructions as well as connected devices, in this case I believe these are a pedometer and a set of scales," Mr Young said. "If the patient follows the instructions, they'll reduce weight and hopefully delay the progress of type 2 diabetes." Omada has also developed Prevent programs for high blood pressure, dyslipidemia and obesity, which it hasn't yet launched.</p><p>Mr Young described digital therapeutics as "both an opportunity for the traditional pharma company as well as a threat."</p><h2>Clinical trials and new payment models</h2><p>The third category that dRx Capital is interested in involves clinical trials. "Clinical trials take up 60-70% of the budget of pharma's overall R&D, which totals $100bn. Today it's probably underserved by technology, especially mobile technology. The entire chain &ndash; from the patient to principle investigator to contract research organizations and pharma &ndash; can be upgraded, in terms of using connected devices and software." </p><p>Mr Young concluded: "The last category is probably the least-defined category. For the time being we're just calling it 'enterprise software for pharma.' For example, companies are working on new payment models: some are providing software to better manage these payments; others have software, for example, that tries to streamline the specialty pharma distribution."</p><h2>2net powering clinical trials</h2><p>Qualcomm Life is also working with big pharma to power their clinical trials with its 2net Platform, Hub and Mobile. </p><p>The 2net Hub is similar in size to a pack of cards, and will automatically connect to the patient's devices, whether they are from different vendors or use different connectivity technology, for example BlueTooth or Wi-Fi. There is no need for an existing internet connection or phone line. Similarly, 2net Mobile automatically collects patients' device data using their smartphone or tablet.</p><p>Mr Young described 2net as "the middle man," adding: "We don't provide medical services or the end units, but in between we solve the connectivity and interoperability problem so a common platform can be used with just about every connected device, as well as any disease population management company."</p><p>Beyond trials, connected health can improve transitional and chronic care management. Congestive heart failure (CHF) patient readmissions, which are currently under scrutiny in the US, can lead to fines for hospitals that fail to meet readmission targets. "One way of reducing readmissions is to monitor the patient when they're at home, using connected devices, so the patient can go home with an SpO2 [monitor] to measure oxygen saturation, or a blood pressure [monitor], or a scale or even a pedometer," Mr Young said. "So the doctor/hospital can keep an eye on them and avoid readmission within 30 days."</p><p>On top of the new investment company, Novartis and Qualcomm will be working together using 2net in the former's clinical trials. Novartis will be using 2net in its Trials of the Future program, which will automate collection of patient data in their homes during clinical trials. "A patient will go home with 2net Mobile and some connected devices to improve the experience of clinical trial participants and patients.</p><p>Novartis will initially use 2net in a clinical study that is observational in nature, focused on chronic lung disease patients. </p><p>Is Qualcomm partnering with any more companies in a similar way in clinical trials? Mr Young says: "Qualcomm Life's mission is to mobilize healthcare and increase access to care anytime, anywhere, and we're working with major pharmaceutical and medtech leaders to help realize this vision."</p><h2>Roche deal</h2><p>Indeed, not long after our interview, Qualcomm announced that it was collaborating with Roche in the field of point-of-care diagnostics, "to improve remote monitoring and management of chronic disease patients." </p><p>Roche will use the 2net Platform to gather patient data from its diagnostic devices, starting with anticoagulation meters. The data will be transmitted to Roche's cloud-based back-end services, and can then be employed and shared by clinicians treating patients with chronic diseases to facilitate care decisions and potentially lower cost, the companies say.</p><p>Ultimately, the plan is to aggregate more data from a host of different Roche systems.</p><h2>Little overlap</h2><p>Are the latest deals a sign of growing ties between the tech and pharma sectors? "The two industries have very little overlap at this moment: if you were to draw a Venn diagram of Novartis's core business and Qualcomm's, we'd probably touch very little," Mr Young replied. "And yet everybody knows that this mobilization and digitalization is permeating into all industries, whether it's automobile, healthcare or pharma."</p><p>The latest announcements "will be the first of many from medtech and pharmaceutical leaders as the return on investment of connected health is shown, and I think others will pay attention," he added.</p><p>It seems that the agreement between Qualcomm and Novartis has been a long time coming. "We started having discussions in the last two to three years to form a broad level of corporate alliances," he said. "[Eventually], we decided to form a company so we could put a flag in the ground."</p><p>He stressed that the agreement between Qualcomm and Novartis "isn't just for the two companies that are making the investment. It really aims to serve the entire pharma industry."</p><p>A version of this article was first published in <a href="http://www.clinica.co.uk/" target="_new">Clinica Medtech Intelligence</a>.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 271
+
+<p><b>The recent partnerships forged between telecommunications giant Qualcomm and pharma companies Novartis and Roche has highlighted a growing trend towards healthcare becoming more connected. Madeleine Armstrong spoke to Qualcomm's Jack Young to find out more.</b></p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 76
+
+INTERVIEW Qualcomms digital health expansion plan sees Novartis Roche tieups
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150402T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150402T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150402T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027765
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 80
+
+INTERVIEW: Qualcomm's digital health expansion plan sees Novartis, Roche tie-ups
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{6B0DE3A8-39EC-48B6-800A-BA8DAF5799A4}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356535
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8ae4a423-f373-4f85-85d8-551aa3ffb0b6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

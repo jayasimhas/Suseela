@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {32C839E2-2EDF-4426-BCE1-F02D59C9355E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/06/Bright prospects seen for Turkish pharma market despite challenges
+parent: {71347526-9D56-4939-98D3-CFAEEBA97EA8}
+name: Bright prospects seen for Turkish pharma market despite challenges
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c0805382-424a-4893-ad26-7221bd2eafc7
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Bright prospects seen for Turkish pharma market despite challenges
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Bright prospects seen for Turkish pharma market despite challenges
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4982
+
+<p>A new report shows that tough market conditions are pushing Turkish pharmaceutical companies towards becoming leaner, bolder and more competitive. While growth in Turkey's traditional markets sank last year, there has been an explosion in pharmaceutical exports to Russia and South Korea. Investment in CIS states is also increasing as Turkish firms see these markets as entry points to Russia.</p><p>The pharmaceutical industry in Turkey has been going through tough times in recent years, mainly as a result of government policies to keep prices under pressure. Forced discounts and a strict refusal to update the euro exchange rate since 2009 have cost dearly and resulted in declining profitability for the main players in the market.</p><p>The Pharmaceutical Manufacturers Association of Turkey (IEIS), one of the main local associations for the industry, estimated the five-year bill of the euro rate policy for the industry at TRY19bn ($7bn) in a recent report.</p><p>The rate, which is used to determine drug prices, is fixed at TRY1.95, despite the current actual figure being over TRY3. Many drugs are not available &ndash; or become periodically non-available &ndash; in the Turkish market because their prices became so low that it did not make any financial sense to import them into Turkey or to manufacture them locally.</p><p>However a recent report, <i>Pharma Insights Turkey 2015</i>, prepared by UBM EMEA, shows the other side of the coin. It concludes that despite short-term margin pressures, the long-term opportunities across the Turkish and neighboring pharma markets are substantial.</p><p>In the near term, growth is predicted to come primarily from generics in the domestic market, but over the next two to five years, manufacturers will increasingly be exporting to new markets with limited native manufacturing capabilities.</p><p>The report projects that in particular, Turkey's manufacturers will look to invest in new facilities in nearby CIS states to take advantage of the Russian pharma market, where many Western manufacturers are reluctant to invest for geopolitical reasons. The Russian government is targeting increasing domestic drug production, but significantly, medicines imported from CIS nations will be counted as being domestically manufactured.</p><p>The report also points out that despite the difficulties, no major international players have pulled out of the Turkish market. It emphasizes that these firms are not put off by short-term low margins and are actively seeking to secure a presence within Turkey, supporting the view that pricing pressures are only temporarily hindering the market.</p><h2>more consolidation?</h2><p>According to <i>Pharma Insights Turkey 2015</i>, a consolidated industry will emerge in the next two to three years, thanks to a mixture of acquisitions by international companies and "survival of the fittest" among domestic firms. Leaner, more flexible manufacturers and a significantly enlarged contract services sector are seen emerging.</p><p>The report underlines that ultimately, with a highly flexible workforce and co-operation between industry and academia, an export-led pharma economy should emerge in Turkey from the current capital-restricted times.</p><p>Another key finding of the report is that manufacturers that have already invested in specialty products and biosimilars are experiencing substantial sales increases, with growth rates forecast at over 20% for the near future.</p><p>To sustain these impressive figures and to increase margins, it is likely these companies will seek to sell their high value formulations into EU markets.</p><p>The general consensus among firms is that EU markets will open up once an initial approval has been granted by a member state, with subsequent approvals being viewed as easier to achieve.</p><p>However, the report finds that growth in exports among Turkish manufacturers is very uneven, as only those that have pre-existing investments are seeing increases. The problem for companies yet to invest is a lack of available capital due to margin pressures and likely losses in the first one to two years of entering a new market, which remain prohibitive.</p><p>Collectively, these two factors will result in a wave of consolidation over the next few years with capital-rich companies acquiring the production facilities of more cash-strapped rivals, the report predicts.</p><p>The report finds it notable that while exports to traditional neighboring MENA countries &ndash; many of which have been dealing with political and economic instabilities &ndash; are in decline, Turkey has maintained growth in this sector by looking to supply to newer and more diverse regions.</p><p>Last year, for example, exports to Russia surged by 81% while those to South Korea rocketed by 260%.</p><p><i>This article has also been published in</i><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsiaNews</a>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 401
+
+<p>A new report shows that tough market conditions are pushing Turkish pharmaceutical companies towards becoming leaner, bolder and more competitive. While growth in Turkey's traditional markets sank last year, there has been an explosion in pharmaceutical exports to Russia and South Korea. Investment in CIS states is also increasing as Turkish firms see these markets as entry points to Russia.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Bright prospects seen for Turkish pharma market despite challenges
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151206T150002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151206T150002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151206T150002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029027
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Bright prospects seen for Turkish pharma market despite challenges
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FE0F3ACC-BE86-4CDB-BF42-2F029C612C18}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358921
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042409Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c0805382-424a-4893-ad26-7221bd2eafc7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042409Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

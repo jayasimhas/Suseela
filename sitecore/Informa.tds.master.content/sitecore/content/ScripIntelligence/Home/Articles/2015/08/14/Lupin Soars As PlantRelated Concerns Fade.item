@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {DF61A5AA-A9CE-48E2-8850-13E9923A75D6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/14/Lupin Soars As PlantRelated Concerns Fade
+parent: {F1BDB59F-EC79-4308-B3FA-AD67FD3F4F4E}
+name: Lupin Soars As PlantRelated Concerns Fade
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8766a949-bd85-4701-b914-d2d7b0048bc2
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Lupin Soars As Plant-Related Concerns Fade
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+Lupin Soars As PlantRelated Concerns Fade
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2804
+
+<p>Diminishing plant-related concerns lifted shares of Lupin on Indian bourses after the US FDA approved the firm's fenofibrate tablets 54 mg and 160 mg, generic versions of Teva's fenofibrate of the same strengths, the current reference listed drug.</p><p>The FDA approved on Aug.17, Lupin's fenofibrate 54 mg and 160 mg tablets, which analysts say were filed from the Goa site that has been under some scrutiny following an FDA audit.</p><p>Some analysts were reported as saying that the approval underscores that the compliance issues at the Goa site were "not disruptive" in nature - a stance that Lupin's top brass had maintained at the time of the firm's first quarter results.</p><p>Last month, Lupin's managing director, Nilesh Gupta, said that the firm had received nine observations in the Form 483 pertaining to the Goa site, but added that some of the observations were "fairly routine" and <a href="http://www.scripintelligence.com/business/Lupin-takes-more-shots-at-the-goal-with-880m-US-buy-359600" target="_new">unlikely to impact product approvals</a>. A form 483 is a notice of the FDA's inspectional observations that lists deficiencies in the quality system. </p><p>"It was really about whether certain standard operating procedures were inadequate, they challenged the periodicity of some of the cleaning equipment and &#8230; warehouse management they had certain questions as well. We've already complied with the observations and responded to the FDA. We take quality very seriously," Gupta then said.</p><p>Lupin expects to commence promoting fenofibrate 54 mg and 160 mg tablets shortly in the US, a company statement said. The two strengths reported US sales of $156m as per moving annual total (MAT) data for June 2015 and a clutch of players including India's Sun Pharma are said to have therapeutic equivalents on the market.</p><p>Shares of Lupin rose by 5.39% to end at INR1892.10 ($28.9) on the Bombay Stock Exchange on Aug.20.</p><p>In 2012, Lupin had introduced fenofibrate tablets 48 mg and 145 mg, generic versions of Abbott's TriCor, on the US market, in what was then seen as a "material" launch for the Indian firm in the short term. </p><p>However, the genericisation of Tricor, had thrown up some concerns around its <a href="http://www.scripintelligence.com/business/Generic-Tricor-could-boost-Lupin-in-the-US-but-shadow-on-Antara-337405" target="_new">impact</a> on Lupin's Antara (fenofibrate capsules 43 mg and 130 mg) brand there. </p><p>Details in Lupin's annual report for 2014-15, though, note that despite the entry of a third generic into the market, Lupin's US arm not only maintained a significant market share for Antara but was also able to grow branded Antara revenues on the back of the launch of Antara 90 mg, which is an exclusive strength.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 254
+
+<p>Diminishing plant-related concerns lifted shares of Lupin on Indian bourses after the US FDA approved the firm's fenofibrate tablets 54 mg and 160 mg, generic versions of Teva's fenofibrate of the same strengths, the current reference listed drug.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Lupin Soars As PlantRelated Concerns Fade
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150814T120002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150814T120002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150814T120002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029556
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Lupin Soars As Plant-Related Concerns Fade
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359954
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042437Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8766a949-bd85-4701-b914-d2d7b0048bc2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042437Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

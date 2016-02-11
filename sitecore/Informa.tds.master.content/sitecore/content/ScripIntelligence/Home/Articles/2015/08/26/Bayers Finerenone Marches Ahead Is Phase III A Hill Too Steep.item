@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {06DF399B-BD6E-41B4-94CA-DDA196A99970}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/26/Bayers Finerenone Marches Ahead Is Phase III A Hill Too Steep
+parent: {DD56DE4A-39AC-48A9-BB39-DDC56CF0FE6D}
+name: Bayers Finerenone Marches Ahead Is Phase III A Hill Too Steep
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 991e89ee-f54a-442f-8f42-1fee5e71d115
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{F5161CC2-772F-472E-A21C-BF196343462E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Bayer's Finerenone Marches Ahead; Is Phase III A Hill Too Steep? 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+Bayers Finerenone Marches Ahead Is Phase III A Hill Too Steep
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9333
+
+<p>Bayer AG's Phase III program for its heart failure drug finerenone could create a dual indication product with a strong label, but those potential rewards carry their own risks, since it is uncertain if the design can adequately address appropriate dosing, the crucial hyperkalemia safety factor, and accommodation of Novartis AG's just-approved <i>Entresto</i> (sacubitril/valsartan).</p><p>Finerenone is an oral, once-daily, non-steroidal mineralocorticoid (aldosterone) receptor antagonist (MRA) designed to be more selective, with less impact on the kidney than its MRA predecessors &ndash; Pfizer Inc.'s <i>Inspra</i> (eplerenone) and generic spironolactone. </p><p>Bayer's data from the Phase II ARTS-HF dose-ranging study presented on Aug. 31 at the European Society of Cardiology Congress in London included some promising exploratory efficacy data for the drug compared to Inspra in chronic heart failure patients, though finerenone missed the primary endpoint related to a surrogate marker. </p><p>The same day, the company announced plans to launch three Phase III trials &ndash; one in heart failure and two in diabetic kidney disease (<i>see box below</i>). Bayer said that it was positioning finerenone as best-in-class for heart failure and first-in-class for diabetic kidney disease (DKD).</p><p><p><b>Finerenone Phase III Program</b></p><p><i>Chronic Heart Failure, with reduced ejection fraction</i></p><p>FINESSE-HF<i>:</i> Cardiovascular outcomes study of 3,600 patients with co-morbidities (diabetes and/or chronic kidney disease) of finerenone (10 mg to 20 mg once daily) vs. eplerenone (25-50 mg once daily), both on top of current standard of care</p><p><i>Diabetic Kidney Disease</i></p><p>FIGARO-DKD: Cardiovascular outcomes study of 6,400 patients, finerenone vs. placebo, on top of standard of care</p><p>FIDELIO-DKD<i>:</i> Safety study (primary endpoint related to kidney damage or death) of 4,800 patients, finerenone vs. placebo, on top of standard of care </p><p><p>The DKD trial designs were guided partly by results from the ARTS-DN Phase IIb dose-ranging study, which was published in the Journal of the American Medical Association on Sept. 1. That study tested finerenone against placebo in diabetic neuropathy. </p><p>Finerenone demonstrated significant reductions in the urinary albumin-creatinine ratio, a marker associated with progression of chronic kidney disease, but which is not validated, compared to placebo. Safety was similar to placebo. Bayer hopes to show that the drug can reduce albuminuria, or protein in the urine, as other members of its class do, but without the downside of hyperkalemia, or high potassium. </p><p>In the trial, the rate of hyperkalemia and discontinuation for those taking 7.5 mg to 20 mg of finerenone daily was 1.8% vs. zero for placebo, but investigators noted that the risk was lower due to exclusion criteria. </p><p>The company said that it will be discussing Phase III trial design with FDA and wants to secure a special protocol assessment. </p><p>"We expect to conclude these discussions in the very near-term future and expect to have the first patients enrolled by the end of this year," Joerg Moeller, head of Bayer HealthCare Global Development, said during an Aug. 31 investor call.</p><p>Deutsche Bank analyst Tim Race noted the strong performance on exploratory cardiovascular outcomes endpoints and said that Phase III plans suggest that the drug could be in a position to launch in 2020 or beyond. Deutsche Bank is projecting potential sales of $5bn or more.</p><p>ARTS-HF data suggest the drug's "long-term replacement power" of Bayer's pipeline, and "if these results were replicated in Phase III, it could point to significant uptake for heart failure patients," Race said.</p><p><b>Guilt By Association</b></p><p>Finerenone has had some inherent strikes against it, due to association with eplerenone and spirolactone. Both drugs cause hyperkalemia, which can be dangerous and needs to be monitored regularly. Labels for both have warnings for use in patients with severe kidney disease. Approved in 2002, Inspra had a high profile at Pfizer, but its launch <a href="http://www.scripintelligence.com/researchdevelopment/Pfizer-drug-Inspra-helps-prevent-heart-failure-in-study-341044" target="_new">fell flat</a>. The generic spironolactone, around since the early 1960s, also is under-utilized.</p><p>Writing in an Aug. 26 note, Deutsche Bank's Race said that in theory, finerenone has "blockbuster potential," but lackluster performance for the class has left "investors cautious."</p><p>Safety has been viewed as a crucial factor for finerenone and lack of warnings and blood monitoring requirements for hyperkalemia in the labeling would be a big commercial asset.</p><p><b>What's the Best Dose?</b></p><p>Despite highlights, some aspects of the Phase II ARTS-HFS study and the Phase III design drew scrutiny from analysts during an Aug. 31 call with Bayer.</p><p>The study of 1,055 patients with worsening heart failure with reduced ejection fraction tested a range of doses of finerenone against Inspra, titrated up after a 30-day period of treatment. On the primary endpoint &ndash; change in NT-proBNP, a marker of heart failure symptoms &ndash; there was no difference between Inspra and finerenone, nor was there a numerical dose-dependent response for the test drug on this measure. </p><p>The trial was underpowered for clinical outcomes. Nevertheless, outcomes improvements were notable and encouraging. The composite of cardiovascular events was lower for all but the lowest dose of finerenone compared to eplerenone. Outcomes were better with higher doses. For patients on the 10-20mg dose selected to move to Phase III, there was a 48% reduction in all-cause death and a 44% reduction in hospitalization related to CV events. </p><p>Rates of adverse events were similar. The increase in potassium was significantly lower for the three lowest doses of finerenone (not 10-20mg or 15-20mg) and the incidence of hyperkalemia was a bit lower for finerenone for all doses except 15-20mg. </p><p>Analysts questioned whether the difference in hyperkalemia was big enough and whether a lower dose than the chosen 10-20mg might be sufficiently efficacious, but with a better safety profile.</p><p>Frank Misselwitz, head of global cardiovascular clinical development, said Bayer wants to prove superiority over eplerenone and that 10-20mg was the best dose in terms of clinical outcomes.</p><p>"What is important to note is, of course, the overall risk-benefit balance here &#8230; not just to select a dose that is particularly safe for hyperkalemia, but also a dose in the long run which will be able to show profound efficacy also on anti-fibrotic anti-remodeling effect," Misselwitz said.</p><p>Furthermore, the trial was likely too short and small to show a significant difference for the 10-20mg dose when it came to hyperkalemia events, he said. And there are other side effects to consider, for example deterioration of kidney function, where finerenone looks better tolerated than eplerenone, according to the company.</p><p><b>Studying With, Not Against, Entresto</b></p><p>Bayer also fielded a number of questions about the coming entry of Entresto on its own Phase III plans. </p><p>Heart failure is typically treated with a range of generics, including ACE and ARB inhibitors, but Novartis scored <a href="http://www.scripintelligence.com/home/Payers-expected-to-embrace-Novartis-heart-failure-drug-Entresto-359294" target="_new">early FDA approval</a> in July for Entresto, which combines the first-in-class neprilysin inhibitor sacubitril with the now generic angiotensive II receptor blocker Diovan (valsartan). The drug, previously known as LCZ696, is expected to become part of the <a href="http://www.scripintelligence.com/home/Novartis-set-for-clear-win-in-heart-failure-353209" target="_new">standard of care</a>. </p><p>Entresto got another boost from the PARAMETER study, results of which were released Aug. 31 at the European Society of Cardiology meeting, which showed the product was better than the ARB olmesartan for reducing blood pressure. That gives Entresto an added potential benefit for CV event reduction. </p><p>Eplerenone and spironolactone are steroidal MRAs, which reduce blood pressure, but the non-steroidal MRA finerenone has only a modest effect at the highest dosages. Authors of the ARTS-DN study noted that finerenone does not cross the blood-brain barrier to act centrally on the mineralocorticoid receptor, which could explain the lack of effect on blood pressure.</p><p>Bayer execs noted that while they would not be testing finerenone directly against Ernestro in FINESSE-HF, the standard of care background treatment in the trial could include Entresto.</p><p>"We will of course design the trial in a way that we have a sizable and informative subgroup of patients also tested on top of Entresto, so that we will document safety and efficacy of that subgroup," Misselwitz said.</p><p><p>[Editor's note: This story is also being published in <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet-daily" target="_new">"The Pink Sheet" DAILY</a>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.]</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 392
+
+<p>Bayer AG's Phase III program for its heart failure drug finerenone could create a dual indication product with a strong label, but those potential rewards carry their own risks, since it is uncertain if the design can adequately address appropriate dosing, the crucial hyperkalemia safety factor, and accommodation of Novartis AG's just-approved <i>Entresto</i> (sacubitril/valsartan).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Bayers Finerenone Marches Ahead Is Phase III A Hill Too Steep
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150826T180002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150826T180002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150826T180002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029662
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Bayer's Finerenone Marches Ahead; Is Phase III A Hill Too Steep? 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{7C1602C1-F505-4889-841D-3232758E15A0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360123
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+991e89ee-f54a-442f-8f42-1fee5e71d115
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

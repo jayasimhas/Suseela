@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {1926D5B9-94D8-4A1D-910C-7D787B488D9B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/09/LongTerm Scleroderma Data Support Cytoris Phase III Plans
+parent: {A1488DBB-C468-4AE3-BA7B-6FC254EF9442}
+name: LongTerm Scleroderma Data Support Cytoris Phase III Plans
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 213882f5-b1b5-41c5-a14c-66510d017843
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Long-Term Scleroderma Data Support Cytori's Phase III Plans
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+LongTerm Scleroderma Data Support Cytoris Phase III Plans
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2276
+
+<p>Twelve scleroderma patients experienced long-term improvement of their rare skin disease symptoms after a single administration of the Cytori Therapeutics cell therapy ECCS-50 in an investigator-initiated, open-label study published in the journal <i>Rheumatology</i> on Sept. 8.</p><p>San Diego-based Cytori used the clinical trial results to justify initiation of an 80-patient Phase III clinical trial in August to support US FDA approval and the company expects a European Phase III trial to begin before the end of 2015. Cytori's stock closed up 17.3% at $0.48 per share. The company's stock has been battered since the summer of 2014 after Cytori was forced to halt its clinical trials in heart failure patients due to cerebrovascular events.</p><p>While <a href="http://www.scripintelligence.com/policyregulation/Cytori-soars-after-FDA-permits-ATHENA-to-move-forward-354637" target="_new">the FDA eventually allowed</a> the ATHENA and ATHENA II trials in heart failure to continue, Cytori no longer is pursuing that indication, which means the <a href="http://www.scripintelligence.com/business/Cell-therapy-developer-Cytori-restructuring-cutting-42-jobs-354069" target="_new">slimmed down company's</a> autologous cell therapy for scleroderma is now its lead development program. </p><p>At 12 months after a single treatment of ECCS-50, scleroderma patients in the small investigator-sponsored study experienced average reductions of 51.3% and 46.8% in hand function measures known as the Cochin Hand Function Scale and the Scleroderma Health Activity Questionnaire (p<0.001 for="" both).="" the="" incidence="" and="" severity="" of="" raynaud's="" syndrome="" declined="" by="" 63.2%="" from="" baseline="" on="" average=""></0.001><0.001), grip="" strength="" improved="" 30.5%="" (p="0.002)" and="" pain="" was="" reduced="" by="" 34.5%=""></0.001),><0.001). fibrosis="" and="" vascular="" suppression="" also=""></0.001).></p><p>Scleroderma is a chronic autoimmune disease that causes hardening of the skin. There are no approved treatments and aside from ECCS-50 there are only seven drugs in Phase I and II development. Cytori's ECCS-50 study in the US is being conducted under an investigational device exemption (IDE) granted by the FDA.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 286
+
+<p>Twelve scleroderma patients experienced long-term improvement of their rare skin disease symptoms after a single administration of the Cytori Therapeutics cell therapy ECCS-50 in an investigator-initiated, open-label study published in the journal <i>Rheumatology</i> on Sept. 8.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+LongTerm Scleroderma Data Support Cytoris Phase III Plans
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150909T042732
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150909T042732
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150909T042732
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029728
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Long-Term Scleroderma Data Support Cytori's Phase III Plans
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360304
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042447Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+213882f5-b1b5-41c5-a14c-66510d017843
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042447Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

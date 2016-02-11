@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {A9BAB193-9E9A-46DB-A62E-35D052CF639D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/05/Mysterious BioNTech strikes $60mplus cancer T cell deal with Lilly
+parent: {AB3D0A5F-5AD9-4FF9-983E-109114074A87}
+name: Mysterious BioNTech strikes $60mplus cancer T cell deal with Lilly
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 02194bfc-5c25-4354-9140-d176d34c19b1
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+Mysterious BioNTech strikes $60m-plus cancer T cell deal with Lilly
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Mysterious BioNTech strikes $60mplus cancer T cell deal with Lilly
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3531
+
+<p>Mainz-based BioNTech, which once called itself "the biggest European biotech that you have never heard of", has announced a research collaboration in cancer immunotherapies with Eli Lilly centered around the German company's assets and platform in T cell receptors (TCR) and chimeric antigen receptor T cells (CAR T cells). BioNTech will receive a $30m signing on fee and Lilly will make a $30m equity investment in BioNTech's subsidiary, Cell & Gene Therapies. </p><p>Dr Sierk Poetting, BioNTech's CFO, told <i>Scrip</i> that Lilly had "bought into its TCR platform" and that this would include "targets already identified by BioNTech and others yet to be identified". He added that those targets would be in more than one indication [within oncology]. "The important thing for BioNTech is that we now have Big Pharma validation for our approach," he said.</p><p>Dr Poetting said that BioNTech hoped to be able to announce additional development collaborations in the coming months, although he would not say whether they would involve further licensing of assets within the Cell & Gene Therapy unit of the company, or other platforms such as those in its mRNA subsidiary.</p><p>None of BioNTech's cell therapy assets has progressed beyond preclinical development at present, making assessment of the overall value of the deal difficult. However, for what it is worth, BioNTech stated in its press release that it could receive over $300m in development, regulatory and commercial milestones, as well as "up-to-double-digit royalty payments" for each of the indications that Lilly pursues.</p><p>BioNTech was unable to give any details on the timings of the expected developments, on the number of projects that would be pursued or the specific triggers for milestone payments.</p><p>Similarly, Dr Poetting could not put a figure on the percentage of Cell & Gene Therapies' equity that Lilly owns as a result of the deal beyond saying that it was a minority stake. He did add, however, that it was commensurate with the valuations of some of the public companies in the TCR and CAR T cell space. BioNTech's cell therapy assets are currently all preclinical, which puts it a step behind the publicly quoted companies, such as AdaptImmune, Juno, Bellicum and Kite. Working from the lowest valued of those companies, Bellicum Pharmaceuticals, which has a market capitalization of around $600m, Lilly's $30m may have bought it 10-25% of the BioNTech subsidiary.</p><p>One differentiator of the BioNTech T cell platform is its focus on solid tumors: it is not exploring blood cancers and has no CD19-based therapeutic. </p><p>BioNTech has managed to remain relatively unknown because, in 2008, it secured the largest initial financing round ever reported in the European biopharmaceutical sector, although even the precise amount raised then is a bit of a mystery &ndash;'three-digit-million' of an unspecified currency, but presumably euros. The funding came from a consortium of investors, principally from ATS Beteiligungsverwaltung, the family investment firm of pharma billionaires Andreas and Thomas Strüngmann. This made it largely independent of venture capital and the tempestuous European public capital markets. </p><p>The Strüngmann brothers founded generic pharmaceutical firm Hexal in 1986, selling it to Novartis for $7.5bn in 2005. They are majority owners not only of BioNTech but also its sister company, Ganymed Pharmaceuticals, with which BioNTech shares assets, some senior management and R&D facilities.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 469
+
+<p>Mainz-based BioNTech, which once called itself "the biggest European biotech that you have never heard of", has announced a research collaboration in cancer immunotherapies with Eli Lilly centered around the German company's assets and platform in T cell receptors (TCR) and chimeric antigen receptor T cells (CAR T cells). BioNTech will receive a $30m signing on fee and Lilly will make a $30m equity investment in BioNTech's subsidiary, Cell & Gene Therapies. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Mysterious BioNTech strikes $60mplus cancer T cell deal with Lilly
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151105T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151105T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151105T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028696
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+Mysterious BioNTech strikes $60m-plus cancer T cell deal with Lilly
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358292
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+02194bfc-5c25-4354-9140-d176d34c19b1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

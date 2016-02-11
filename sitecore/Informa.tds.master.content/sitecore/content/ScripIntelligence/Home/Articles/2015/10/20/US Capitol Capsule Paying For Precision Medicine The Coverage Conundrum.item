@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {02054AB4-E88B-4280-9C48-E4253BE6902E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/20/US Capitol Capsule Paying For Precision Medicine The Coverage Conundrum
+parent: {FBD889C4-A34C-4E16-BF27-9E42B717898E}
+name: US Capitol Capsule Paying For Precision Medicine The Coverage Conundrum
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9c710307-377c-4230-a2f5-2f5a3ecc8416
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 73
+
+US Capitol Capsule: Paying For Precision Medicine: The Coverage Conundrum
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 71
+
+US Capitol Capsule Paying For Precision Medicine The Coverage Conundrum
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13656
+
+<p>While the science of personalized medicine has been moving at an extremely rapid pace in recent years &ndash; evidenced by the fact that 20% of the novel therapies approved by the FDA in 2014 were targeted therapies &ndash; the efforts by the biopharmaceutical industry and others in the biomedical community, including the National Institutes of Health (NIH), will all be for naught if payers don't catch up, leaving patients without access, a panel of stakeholders said last week in Washington. </p><p>"It's a bit of a perfect storm," said Alan Balch, CEO of the Washington-based National Patient Advocate Foundation.</p><p>For precision medicine to advance in the US and ensure its benefits to patients are fully realized, all components of the three-legged stool &ndash; therapies, information and reimbursement &ndash; "have to come together to create a personalized health care paradigm," Balch insisted. </p><p>"The challenges in the future are really going to be very much around how we engineer a reimbursement system that can not only accommodate but actually encourage the utilization of precision medicine," he said.</p><p>Clearly, the advent of molecular biology and specifically, the elucidation of the human genome and the new tools to understand genomic components, which have allowed researchers to identify specific aberrations in patients, have been the biggest breakthroughs that have enabled the whole concept of precision medicine, noted Steven Averbuch, vice president of development for oncology and pharmacodiagnostics at Bristol-Myers Squibb & Co.</p><p>But while precision medicine has changed the way diseases like breast and lung cancers and cystic fibrosis are treated, personalized therapeutics and diagnostics, which are lauded by the FDA, have not been so fondly embraced by the Centers for Medicare & Medicaid Services (CMS), said Amy Miller, executive vice president at the Personalized Medicine Coalition.</p><p>"That's an interesting conundrum" she said, acknowledging the situation likely is the result of the "relative newness and also the wave of these new technologies."</p><p>Although CMS only covers certain segments of the American population, like seniors, the disabled and the poor, the agency's decisions have strong influence over the path other payers take, Miller said.</p><p>While there's some "great programs" currently underway to rethink the clinical trial paradigm, with efforts to come up with new designs to accommodate the precision medicine approach to drug discovery and development &ndash; most notably President Barack Obama's <a href="http://www.scripintelligence.com/home/NIH-Unveils-Precision-Medicine-Working-Laboratory-Plan-360515" target="_new">initiative</a> announced in <a href="http://www.scripintelligence.com/home/Obama-unveils-215m-bold-precision-medicine-initiative-356457" target="_new">January</a>, which the NIH is leading &ndash; the conversation of marrying those efforts with the payment side of the equation "is not happening at the same level," Balch said.</p><p>"Precision medicine is really trying to individualize care and customize care, yet one of the main ways to organize a reimbursement platform in the system is around standardized care around large populations," he said. "You can see there's a tension there between those two concepts."</p><p>Population-based payment models may in some ways be a good strategy for cost-containment, "but it also in some ways inherently conflicts with precision medicine," Balch argued.</p><p>While precision medicine sounds like a very expensive proposition, with many of the new therapies having price tags of hundreds of thousands of dollars, the "idea is it's actually in the long term a more efficient and effective way to treat a patient," he contended.</p><p>"If you can give [a patient] an opportunity to engage in the treatment protocol that they are going to get a higher response from that's going to be more reflective of the value that patient wants to see in their treatment journey, that's a better use of money than putting them on a standard therapy that may or may not get them the response or effect that they are looking for and they're still paying for it," Balch said. "The idea is, properly created and applied, this should be a more cost-effective model for treating a patient if you're actually delivering them the treatment option that's going to give them the best opportunity for response to therapy."</p><p>But the trick, he said, is figuring out how to create a model to allow that to happen.</p><p>"This is a potentially radical shift," Balch said. "That's why I'm not as optimistic about how long this is going to take. Trying to rethink the reimbursement paradigm in this model and create those processes, I think, is going to take time to get it right."</p><p>In all fairness to payers, Miller said, "they're puzzling over this with us and curious about how to make it work."</p><p>She noted that there have been some "alternative" payment models structured for certain areas of care, although with great variation.</p><p>But, Miller said, "those who design alternative payment models are very curious about how they best suit patients, how they best suit systems and how they best suit treating physicians, and I think we need to recognize that."</p><p>"Everyone recognizes we're learning right now and we're altering a system that's been in place for decades," she said, noting the US health care system was "built on a one-size-fits-all model."</p><p>"When we are talking about personalized medicines, we are talking about looking at the entire system of care," Miller said. "Instead of looking at the cost of a diagnostic, the cost of a therapeutic and the cost of a hospitalization, we need to look at all of them at the same time. When we are looking at personalized therapeutics, they go to only people who will respond to them, which is a very different paradigm. And so we do need to make that point and we also need to recognize that we're changing the health care system completely. And we're at the very beginning of that change, and it will require a lot of work."</p><p>Miller also lamented the fact that "there aren't that many incentives for developing novel personalized therapeutics. It's a challenged industry, and we need to figure it out."</p><p>BMS' Averbuch said one of the greatest challenges facing precision medicine R&D is ensuring the FDA's rules, regulations, guidances and approaches are modernized so they don't end up being roadblocks to advancing the science and successfully implementing it.</p><p>He also insisted the complexities added to drug development and approval by precision medicine won't be solved by one sector alone. </p><p>"We are going to have to put increased reliance on collaborative efforts, public-private partner relationships, to really solve the most pressing questions" if the promises of precision medicine are going to be realized, Averbuch said.</p><p>But, he said, "I am an eternal optimist."</p><p><b>In other Washington news:</b></p><p><a href="http://www.scripintelligence.com/home/Alexion-Nabs-Valuable-Voucher-On-Strensiq-Approval-361221" target="_new">Alexion Nabs Valuable Voucher On Strensiq Approval</a></p><p>Alexion Pharmaceuticals Inc. not only gained the FDA's approval on Oct. 23 for Strensiq (asfotase alfa) as a treatment for patients with perinatal-, infantile- and juvenile-onset hypophosphatasia (HPP), but the win also garnered the company a rare pediatric disease priority review voucher (PRV), potentially putting hundreds of millions of dollars in the firm's pocket.</p><p><a href="http://www.scripintelligence.com/home/Conflicted-Panel-Backs-AZ-Gout-Drug-Market-Potential-361220" target="_new">'Conflicted' Panel Backs AZ Gout Drug; Market Potential?</a></p><p>The FDA's Arthritis Advisory Committee (AAC) on Oct. 23 in a 10-4 vote recommended approval of lesinurad, an experimental drug from AstraZeneca plc and its US unit Ardea Biosciences Inc., as a treatment in combination with a xanthine oxidase inhibitor, such as allopurinol or febuxostat, for hyperuricemia associated with gout in adults. But that nod came with much anguish and many caveats, with a majority of the AAC calling for postmarketing studies to be completed.</p><p><a href="http://www.scripintelligence.com/home/What-Else-Dont-We-Know-May-Spread-Beyond-Valeant-361194" target="_new">'What Else Don't We Know?' May Spread Beyond Valeant</a></p><p>The day after a damning report from short-selling firm Citron Research sent shares of Valeant Pharmaceuticals International Inc. into tailspin, diving 40%, the stock spiraled down again, plunging 20% &ndash; this time pushed off the cliff by BMO Nesbitt Burns Inc. analyst Alex Arfaei, who started off the day by asking "What else is out there that we don't know?"</p><p><a href="http://www.scripintelligence.com/policyregulation/Relypsas-Veltassa-OKd-But-Black-Box-Spooks-Investors-361195" target="_new">Relypsa's Veltassa OK'd, But Black Box Spooks Investors</a></p><p>Even though Relypsa Inc. achieved the ultimate regulatory success of gaining US approval on Oct. 21 of Veltassa (patiromer) &ndash; the first drug in 50 years to treat hyperkalemia, which often affects people with stage 3 or 4 chronic kidney disease, heart failure, diabetes and hypertension &ndash; investors were spooked by the black-box warning the FDA imposed on the medicine's labeling.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Onivyde-In-Pancreatic-Cancer-Warnings-Smack-Merrimack-361196" target="_new">FDA OK's Onivyde In Pancreatic Cancer; Warnings Smack Merrimack</a></p><p>Merrimack Pharmaceuticals Inc. won the FDA's approval on Oct. 22 to market Onivyde (irinotecan liposome injection), an topoisomerase inhibitor, as a treatment in combination with fluorouracil (5-FU) and leucovorin for patients with metastatic adenocarcinoma of the pancreas after disease progression following gemcitabine-based therapy.</p><p><a href="http://www.scripintelligence.com/home/Fraud-Accusations-Vex-Valeant-Slam-Specialty-Shares-361167" target="_new">'Fraud' Accusations Vex Valeant, Slam 'Specialty' Shares</a></p><p>It's unclear whether it was simply another example of Valeant Pharmaceuticals International Inc.'s inability to clearly communicate or there's some actual wrongdoing going on, but the company's shares took a beating on Oct. 21, with the stock freefalling 40% &ndash; a walloping that spread to other drug makers in the sector.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-AZArdea-Gout-Drug-Modest-Efficacy-Safety-Concerns-361168" target="_new">FDA: AZ/Ardea Gout Drug Modest Efficacy, Safety Concerns</a></p><p>An experimental gout drug from AstraZeneca plc unit Ardea Biosciences Inc., known as lesinurad, demonstrated only modest efficacy in clinical trials and has some concerning adverse cardiovascular and renal-related effects, FDA drug reviewers said on Oct. 21.</p><p><a href="http://www.scripintelligence.com/home/Enhanced-Patent-Damages-Under-Supreme-Court-Review-361142" target="_new">'Enhanced' Patent Damages Under Supreme Court Review</a></p><p>The Supreme Court has decided to dive into the issue of whether the US Court of Appeals for the Federal Circuit has been applying too rigid of a test in deciding whether to award so-called "enhanced damages" &ndash; which can be as high as three times the amount a district court has awarded under US law &ndash; when a company has infringed a patent.</p><p><a href="http://www.scripintelligence.com/home/Amgen-Apotex-Lost-Bet-Biosimilar-Should-Be-Blocked-361147" target="_new">Amgen: Apotex Lost Bet; Biosimilar Should Be Blocked</a></p><p>With the FDA set to make a decision any day on whether it will approve Apotex Corp.'s pegfilgrastim biosimilar, Amgen Inc. is seeking to block the product from entering the US market for at least six months after the medicine gains the agency's blessing.</p><p><a href="http://www.scripintelligence.com/home/Probes-Drive-Valeant-To-Fewer-Price-Based-Transactions-361119" target="_new">Probes Drive Valeant To Fewer Price-Based Transactions</a></p><p>Valeant Pharmaceuticals International Inc. on Oct. 19 said the "turmoil" over its practices of buying up companies with older drugs and raising their prices has driven the company to change its strategy to seek fewer transactions focused on what it called "mispriced products."</p><p><a href="http://www.scripintelligence.com/home/Drug-Prices-Now-A-Bipartisan-Campaign-Prop-361127" target="_new">Drug Prices Now A Bipartisan Campaign Prop</a></p><p>While the price hikes of some older drugs have been talking points over the past month for Democratic presidential candidates former Secretary of State Hillary Clinton and Sen. Bernie Sanders (I-VT), Sen. Marco Rubio (R-FL), who aspires to be the Republican nominee, has joined in on using the issue as a prop on the campaign trail.</p><p><a href="http://www.scripintelligence.com/policyregulation/No-DTC-Ads-For-Controversial-Female-Sex-Pill-361123" target="_new">No DTC Ads For Controversial Female Sex Pill</a></p><p>The controversial libido-boosting pill Addyi (flibanserin) was launched in the US earlier this month with little fanfare &ndash; and no direct-to-consumer (DTC) ads, or at least, not yet. The company initially pledged to wait 18 months, but it remains to be seen whether it will hold to that promise.</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 504
+
+<p>While the science of personalized medicine has been moving at an extremely rapid pace in recent years &ndash; evidenced by the fact that 20% of the novel therapies approved by the FDA in 2014 were targeted therapies &ndash; the efforts by the biopharmaceutical industry and others in the biomedical community, including the National Institutes of Health (NIH), will all be for naught if payers don't catch up, leaving patients without access, a panel of stakeholders said last week in Washington. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 71
+
+US Capitol Capsule Paying For Precision Medicine The Coverage Conundrum
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151020T120001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151020T120001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151020T120001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030149
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 73
+
+US Capitol Capsule: Paying For Precision Medicine: The Coverage Conundrum
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361132
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042513Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9c710307-377c-4230-a2f5-2f5a3ecc8416
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042513Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

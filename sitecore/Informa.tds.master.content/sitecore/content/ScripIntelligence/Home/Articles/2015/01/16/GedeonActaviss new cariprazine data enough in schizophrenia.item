@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {608DFC7F-D93C-400F-88BA-7BA8B097E7B1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/16/GedeonActaviss new cariprazine data enough in schizophrenia
+parent: {5088355F-30B1-475A-AA64-05A47833A5BE}
+name: GedeonActaviss new cariprazine data enough in schizophrenia
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8e780354-557f-4200-97e3-ce0b8c64d02e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Gedeon/Actavis's new cariprazine data enough in schizophrenia?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+GedeonActaviss new cariprazine data enough in schizophrenia
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3485
+
+<p>Gedeon Richter and Actavis's novel antipsychotic cariprazine has shown positive top-line Phase III results in preventing relapse in patients with schizophrenia, but analysts doubt that they will be enough to propel decent sales of the product in the presence of generic competition.</p><p>Cariprazine has already been the recipient of a FDA complete response letter (CRL). Back in November 2013, the FDA rejected the NDA for what was then Forest Laboratories' and Gedeon Richter's atypical antipsychotic to treat schizophrenia, and as an acute treatment for manic or mixed episodes associated with bipolar I disorder in adults. </p><p>In the CRL, the FDA acknowledged that cariprazine had clearly demonstrated effectiveness in the treatment of schizophrenia and mania associated with bipolar disorder, the companies said, but it indicated more information, including data from an additional clinical trial, would be needed to determine dosing regimen (<a href="http://www.scripintelligence.com/policyregulation/REJECTED-FDA-snubs-ForestGedeon-Richter-antipsychotic-cariprazine-348293" target="_new">scripintelligence.com, 22 November 2013</a>).</p><p>Analysts believe the new trial may have been aimed at addressing this FDA request optimal dosing regimen data "perhaps especially as it relates to minimizing safety issues (akathisia?)." Evercore ISI senior analyst Umer Raffat noted that the trial included doses from 3-9mg of cariprazine per day but the data released so far make it hard to draw any conclusions on what dose seems best. </p><p>The 97-week placebo-controlled study included a 20-week open-label phase where schizophrenia patients were treated with cariprazine 3, 6 or 9mg per day. Those who responded and met the stabilization criteria during the open-label period were then randomized to continue their cariprazine dose or switched to placebo for up to 72 weeks or until a relapse occurred. The primary endpoint was time to first symptom relapse during the double-blind phase. </p><p>Results from 200 patients show there were 25 relapses (24.8%) in the cariprazine group versus 47 relapses (47.5%) in the placebo group, giving a 55% reduction in risk of relapse compared with placebo (hazard ratio 0.45, 95% CI [0.28, 0.73] p=0.0010). </p><p>Across the cariprazine treated group, the most common adverse events (incidence >/=5% and > placebo) were nasopharyngitis, tremor, extrapyramidal disorder, akathisia, back pain, and increased blood creatine phosphokinase.</p><p>The problem for cariprazine is to show enough differentiation from other atypicals in a crowded market. It is a potent dopamine D(3)/D(2) receptor partial agonist with preferential binding to D(3) receptors and is in development for the treatment of patients with schizophrenia and for adult patients with manic or mixed episodes associated with bipolar I disorder. </p><p>The key issue, says Mr Raffat, is that its efficacy/safety profile is generally similar to Otsuka/Lundbeck/Bristol-Myers Squibb's Abilify (aripiprazole), which is due to lose US patent protection in April 2015. "Thus, although Abilify is a ~$4.5bn drug in US alone, cariprazine may likely enter the market with significant pressure from Abilify generics." Consensus peak sales forecast for cariprazine are around $200m. </p><p>It will also need to compete with other new products including Otsuka and Lundbeck's brexpiprazole, for which US approval is due in July for schizophrenia and major depressive disorder. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 289
+
+<p>Gedeon Richter and Actavis's novel antipsychotic cariprazine has shown positive top-line Phase III results in preventing relapse in patients with schizophrenia, but analysts doubt that they will be enough to propel decent sales of the product in the presence of generic competition.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+GedeonActaviss new cariprazine data enough in schizophrenia
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150116T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150116T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150116T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027568
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Gedeon/Actavis's new cariprazine data enough in schizophrenia?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+expert view
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356176
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8e780354-557f-4200-97e3-ce0b8c64d02e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

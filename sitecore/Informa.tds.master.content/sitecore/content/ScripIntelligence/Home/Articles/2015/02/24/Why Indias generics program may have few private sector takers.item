@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {FD567A70-4565-464E-BB5C-5922C678AF67}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/24/Why Indias generics program may have few private sector takers
+parent: {C1DA9DF5-F77D-47A2-A40D-AF16E2FF9916}
+name: Why Indias generics program may have few private sector takers
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4e26cb32-fc87-4028-9422-d39d015ea076
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}|{C7FD764C-38F2-42BC-9F1A-A9864C90E18B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Why India's generics program may have few private sector takers
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+Why Indias generics program may have few private sector takers
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5793
+
+<p>An Indian government tender for more than 280 drugs under its ambitious "Jan Aushadhi" cut-price medicines program is expected to generate limited interest from leading private players, if the early responses of a number of experts is anything to go by.</p><p>Poor last-mile distribution planning, uncertainty over payments and concerns around trade margins are some of the key issues that are seen keeping leading private firms away. A government statement recently noted that the Jan Aushadhi Scheme was being ''revisited'' by expanding the medicines basket and also that such drugs were now proposed to be sold through private retailers in addition to government hospitals and Jan Aushadhi stores.</p><p>Ranjit Shahani, vice chairman and managing director of Novartis India told <i>Scrip</i> that unless the government ''professionalizes'' the Jan Aushadhi scheme there would be ''very few'' takers. </p><p>''The Jan Aushadhi scheme could take a leaf out of the very professionally run Tamil Nadu Medical Services Corporation Ltd that is running like a well-oiled machine. Under the current construct no private players are attracted to Jan Aushadhi,'' Mr Shahani said.</p><p>The Tamil Nadu Medical Supplies Corporation (in the southern Indian state of Tamil Nadu) ensures availability of all essential medicines in government medical institutions in the state via a streamlined procedure for procurement, storage and distribution and is said to be rather successful.</p><p>Some Indian generic players too appear disillusioned with the Jan Aushadhi program in its current form and the tender plan. An Indian generic industry official said that the Jan Aushadhi was currently ''not a commercial proposition'' for large, quality-focused players.</p><p> ''There are payments concerns, chemists generally work on assurances that date expired stocks, breakages are accounted for/taken back, there are trade margin issues. Who is responsible for all this? It's a logistics nightmare,'' the official told <i>Scrip</i>. A reaction from the government on these concerns could not immediately be obtained.</p><p>Similar concerns were voiced by another expert with a leading foreign firm. </p><p>''If Jan Aushadi 2.0 is anything like the 1.0 version, I don&rsquo;t think it will even get off the ground to begin with. In the 1.0 version the government could manage to open just a fraction of stores against the declared 650. Imagine that in a country of 1.2 billion people,'' the expert told <i>Scrip</i>. </p><p>A government-commissioned consultancy responsible for preparing a new plan for Jan Aushadhi in 2013 is reported to have estimated that only 84 stores were functional of the 149 or so that were set up since the scheme's inception in 2008. In addition, only 85 drugs across 11 therapeutic categories were supplied to the stores despite a mandate to stock 319 such medicines.</p><p>The expert suggested that the private sector would ''never be attracted'' to a venture where the government decides on ''just the price'' of the product and has no ''robust distribution chain'' to back it up. He noted that industry was just recovering from price controls on the one hand, while on the other margins will likely be ''more suppressed'' if government tenders are mandatory.</p><p>The expert also referred to reports that a leading Indian firm had stayed away from participating in an Indian tender for antiretrovirals, opting for an international one instead, not because of better prices but simply since it had not been paid for years.</p><p>''This is most likely the case with the Jan Aushadhi scheme as well. Like most government-run schemes, the private industry is wary of supplying medicines since payments are not guaranteed,'' he said.</p><p>There are also concerns around the interest of private retailers in offering Jan Aushadhi drugs if these yield lower margins and supplies are irregular.</p><p>''Jan Aushadhi could have been a wonderful platform to penetrate health services into the hinterland. Unfortunately, a lack of vision and inadequacies due to bureaucratic hurdles has created a lethal combination that drives the private sector away from the scheme. Providing free healthcare or low-cost health services like the Jan Aushadhi will only succeed if demand and supply side levers are aligned,'' the expert from the foreign firm declared.</p><h2>Tender</h2><p>Meanwhile, the amended Jan Aushadhi tender floated by the Bureau of Pharma Public Sector Undertakings of India (BPPI) under India's department of pharmaceuticals covers 288 medicines including products such as cefixime oral suspension, salmeterol + fluticasone and insulin injection.</p><p>Among a string of conditions for potential tender applicants, the government has set a minimum threshold of INR200m ($3.23m)in average annual turnover in the last three years, while in the case of loan licensees it has been set at INR1bn.</p><p>Jan Aushadhi outlets offer unbranded generic medicines and the first store was launched in Amritsar in November 2008. Past data have suggested that unbranded versions of antibiotics such as amikacin and ciprofloxacin have been available at Jan Aushadhi stores at less than half the price of some of their branded equivalents <a href="http://www.scripintelligence.com/policyregulation/India-unveils-reinvented-cut-price-generic-supply-plan-346976" target="_new">(scripintelligence.com 2 October 2013)</a>. The government also recently indicated that an IT-based management system had been installed to ascertain availability of medicines in stores /stockists on a real time basis and that this was being further strengthened.</p><p>The government was also reported to have held meetings with the Indian Medical Association to facilitate generic prescriptions by physicians.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 260
+
+<p>An Indian government tender for more than 280 drugs under its ambitious "Jan Aushadhi" cut-price medicines program is expected to generate limited interest from leading private players, if the early responses of a number of experts is anything to go by.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+Why Indias generics program may have few private sector takers
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150224T233312
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150224T233312
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150224T233312
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027968
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Why India's generics program may have few private sector takers
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356928
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4e26cb32-fc87-4028-9422-d39d015ea076
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

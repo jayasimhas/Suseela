@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {49BB2CC4-2063-479B-8151-F924C2FFDE89}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/09/Mercks once weekly DPP4 to personalize diabetes therapy
+parent: {38487DA6-20C9-4C4C-B736-2808B0CBC09B}
+name: Mercks once weekly DPP4 to personalize diabetes therapy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d77fc180-4f75-4bcf-8df9-50895a9fc840
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{78485A7A-B73F-43C5-A545-3DC6EC60C23B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Merck's once weekly DPP-4 to personalize diabetes therapy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Mercks once weekly DPP4 to personalize diabetes therapy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4684
+
+<p>Merck & Co. is keen to "individualize" and simplify therapy for type 2 diabetes patients, says Merck Research Laboratories' vice-president of late stage development for diabetes and endocrinology, Dr. Peter Stein, and its new once-weekly DPP-IV inhibitor omarigliptin is a key example of this. </p><p>Merck reported Phase III data for the product, on Sep. 16 at the European Association for the Study of Diabetes (EASD) meeting in Stockholm that showed the drug was non-inferior to the company's market-leading daily DPP-4 inhibitor <i>Januvia</i> (sitagliptin).</p><p>Merck has already filed omarigliptin in Japan and plans to submit for regulatory approval in the US by the end of the year. The Japanese market already has Takeda's once-weekly DPP-IV inhibitor Zafatek (trelagliptin) but this does not appear to have been filed for approval elsewhere. </p><p>The head-to-head study was designed to evaluate once weekly omarigliptin 25 mg against 100 mg Januvia. At 24 weeks, 51% of patients treated with omarigliptin reached an HbA1c of less than 7.0%, compared with 49% of patients treated with sitagliptin (p=0.334). The percentage of patients reaching an HbA1c of less than 6.5% was also similar across treatment groups: 27% for omarigliptin compared with 23% for sitagliptin (p=0.219). The incidences of serious adverse events, drug-related adverse events and discontinuations were similar across both treatment groups. </p><p>Despite the positive Phase III data for omarigliptin, some analysts have questioned whether there is a need for a once-weekly DPP-4 product. </p><p>But in an exclusive interview at the Stockholm meeting, Stein told <i>Scrip</i> that the more options patients have the better. "The way we think about diabetes now is different. In the past we just didn't have all these options. Twenty years ago it was a very much 'one-size-fits-all' approach because we were limited in treatments and knowledge."</p><p>He admitted the drug isn't meant for everyone and that it won't be the case that physicians will just swap all of their once-daily DPP-4 users over to a weekly version. "It's about individualization. It's about tailoring the right therapy to the right patient," he said. </p><p>"To explain I can give an example from my own practice. I have a patient who is an electrician, he is younger, he has a hectic schedule where one day he is working nights, the next early mornings, and it can be something different every day of the week. But he is always at home on Saturdays. He is the kind of patient where I know he isn't taking his medication every day. This is the situation where I could have a discussion about omariglipitin. I can say here is a medication you take once a week every Saturday. That kind of patient &ndash; younger, active lifestyle, busy schedule &ndash; this is who I expect to would be better off and likely more compliant with a once weekly DPP-4 therapy."</p><p>Stein added that omarigliptin could also benefit some elderly patients who can be helped by a friend or family members who visits once a week, or patients who simply prefer to take fewer medications each day where possible. "There are patients who say they just hate taking pills. If I can reduce the burden with one less pill every day, then this might suit them also."</p><p>"The thing I like about omarigliptin is that it gives me another tool I can consider when treating patients," Stein said. </p><p>When asked if this product actually addresses a medical need, when there are already a number of available options on the market, Stein said: "The guidance is to say we are going to personalize therapies, the more choices we have the better. Do we need another once daily DPP4 inhibitor? No, there are many in the class already. But the medical need for omarigliptin comes because not everyone does well on a once-a-day tablet." To put it simply he said, "Can this therapy approve the life of some patients? If there answer is yes, then there is medical need. "</p><p>Merck said that as omarigliptin is an investigational treatment, "it's too early to comment on how it will be priced when it comes to market." Additionally, a spokesperson for the company said, "We are unable to speculate on how any future price of omariglitpin will compare to that of Januvia or other products for the treatment of type 2 diabetes."</p><h2>Other benefits?</h2><p>In an oral presentation at EASD, it was briefly noted that another benefit of omarigliptin compared with Januvia is its potential to be used without dose adjustment in patients with mild to moderate renal impairment. Though more investigation might be required in this area to substantiate this. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 301
+
+<p>Merck & Co. is keen to "individualize" and simplify therapy for type 2 diabetes patients, says Merck Research Laboratories' vice-president of late stage development for diabetes and endocrinology, Dr. Peter Stein, and its new once-weekly DPP-IV inhibitor omarigliptin is a key example of this. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Mercks once weekly DPP4 to personalize diabetes therapy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151109T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151109T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151109T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029796
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Merck's once weekly DPP-4 to personalize diabetes therapy
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+201200811
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360419
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d77fc180-4f75-4bcf-8df9-50895a9fc840
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

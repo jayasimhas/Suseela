@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {501F2F3B-74F4-400C-B713-C9ECB6D60B6D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/11/Chief Barner To Pass Baton To Baumbach At Boehringer
+parent: {EBDD8AF7-1355-4966-A963-936A0484BFF1}
+name: Chief Barner To Pass Baton To Baumbach At Boehringer
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 64a50221-f0ef-437e-9761-aac54be70951
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Chief Barner To Pass Baton To Baumbach At Boehringer
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Chief Barner To Pass Baton To Baumbach At Boehringer
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2586
+
+<p>Professor Dr Andreas Barner is to step aside from the helm of family-owned Boehringer Ingelheim, to be succeeded by current finance chief, Hubertus von Baumbach, who is a member of the founding family. Barner will move from the role of chairman of the board of managing directors (effectively the CEO position) that he has held since 2009 to join the company's shareholders' committee, which is the equivalent of a supervisory board and is chaired by Christian Boehringer, another scion of the founder.</p><p>Von Baumbach will succeed to the leadership position on July 1, 2016, retaining his position as head of finance.</p><p>Dr Michel Pairet will take over Barner's role overseeing R&D: he will join the board of managing directors with responsibility for corporate board division research and nonclinical development from Jan. 1, 2016. Having joined Boehringer Ingelheim in 1992 as head of the pharmacology unit at the company's research facility in Biberach, Germany, he has been head of worldwide pharmaceutical research and clinical development since 2013.</p><p>While Barner has a doctorate in medicine and mathematics, and joined the company in 1992 as head of its medical division, von Baumbach's background is in finance, law and business administration.</p><p>Boehringer Ingelheim is suffering the challenge of needing to ensure the sustainability of its future revenues and profits in the face of declining revenues from its top-selling product, <i>Spiriva </i>(tiotropium), the COPD monotherapy product that is facing competition not only from new market entrants but also from impending generic products. The company was somewhat blindsided in 2014 by payer pressures in its key respiratory and diabetes markets, as well as by the negative impact of medical liability litigation over its anticoagulant <i>Pradaxa</i> (dabigatran), which hit sales and for which a $650m settlement pay-out dented profits. The company is now under pressure to return to growth in 2015, after the 5% drop in 2014 revenues. In September 2014, the company announced its plan to eliminate up to 600 jobs in Germany to cut costs by &euro;450m.</p><p>Barner has previously indicated that while the company has the flexibility to allow for selected acquisitions, its underlying goal is organic growth and it intends to keep financial funds in reserve to protect its independence. This goal was reinforced by Christian Boehringer, who declared that von Baumbach would "continue the drive for change at Boehringer Ingelheim in order to secure the company's independence in the long term." </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 509
+
+<p>Professor Dr Andreas Barner is to step aside from the helm of family-owned Boehringer Ingelheim, to be succeeded by current finance chief, Hubertus von Baumbach, who is a member of the founding family. Barner will move from the role of chairman of the board of managing directors (effectively the CEO position) that he has held since 2009 to join the company's shareholders' committee, which is the equivalent of a supervisory board and is chaired by Christian Boehringer, another scion of the founder.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Chief Barner To Pass Baton To Baumbach At Boehringer
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150211T054608
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150211T054608
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150211T054608
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030257
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Chief Barner To Pass Baton To Baumbach At Boehringer
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361325
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+64a50221-f0ef-437e-9761-aac54be70951
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

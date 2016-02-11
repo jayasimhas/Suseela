@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {09B8D64D-2FCC-44DD-A2AD-AD035A5CE1CD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/05/Takeda ditching Orexigen
+parent: {957A8F17-85A6-461E-A6AC-96C1B33928DB}
+name: Takeda ditching Orexigen
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 341788f2-481a-4dfe-9301-394f9d313dd0
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 25
+
+Takeda ditching Orexigen?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 24
+
+Takeda ditching Orexigen
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4525
+
+<p><p>It's starting to look like there is an acrimonious divorce in store for Orexigen Therapeutics and its marketing partner Takeda Pharmaceuticals now that the Japanese pharma has said it won't pay for another costly cardiovascular outcomes study for their obesity drug Contrave &ndash; putting the $200m bill all on the small biotech. </p><p>Recent events give the Japanese pharma a clear path to exit the partnership and pull out of the floundering obesity market before it has to dump further cash into the money pit that obesity drugs have been so far (Orexigen competitors Arena Pharmaceuticals and Vivus have had little luck with their obesity drugs &ndash; pulling in only about $40m apiece in revenues on their respective products last year.)</p><p>After the termination of their CV trial LIGHT and the <a href="http://#http://www.scripintelligence.com/home/Orexigen-feels-the-backlash-of-PR-faux-pas-358378" target="_new">unexpected data dump</a> by the lead investigator on 12 May, Orexigen revealed that Takeda is beginning a formal dispute process. The Japanese pharma is claiming the smaller biotech breached their contract and is seeking &ndash; amongst other things &ndash; that Orexigen shoulder the full cost of the very expensive post-marketing cardiovascular outcomes trial that the FDA required upon approval of Contrave (naltrexone/bupropion) in September. </p><p>The companies will enter a dispute resolution process that was set out in a previous collaboration agreement and may include arbitration if the <a href="http://#http://www.scripintelligence.com/home/Stockwatch-Mind-what-you-disclose-357132" target="_new">issues cannot be resolved.</a></p><p>"We are currently evaluating the assertions made by Takeda and believe they are without merit. Further we intend to vigorously defend all of our rights and remedies, and assert any counterclaims that we have against Takeda," said Orexigen in a statement. </p><h2>Starting to stink</h2><p>While Orexigen has always had a good relationship with its investors, even as its lead compound was delayed by more than two years due to regulatory issues, that relationship is beginning to sour. Shares of the biotech slid more than 12% on 12 May after the Cleveland Clinic released the 50% interim data from the LIGHT trial without the company's approval, and has dropped almost another 15% to linger near $5 per share on 13 May now that issues with its largest partner have been revealed. </p><p>Orexigen has always contended that the relationship between itself and Takeda had a strong foundation, but recent events seem to indicate that things may not have been as solid as the biotech purported. </p><p>"Likely more worrisome to investors is the change in message from OREX regarding its key partnership; OREX has continually assured investors of the strong foundation of its Takeda affiliation. We expect many OREX investors to view Takeda's step as an abrupt change and a source of concern regarding ongoing management guidance; it may take time/clarity for investors' confidence to grow," wrote Leerink analyst Paul Matteis in a 12 May note to investors. </p><h2>In its defense</h2><p>In a statement to the press, Orexigen tried to clarify its position &ndash; noting that articles in the media have made "misleading statements about our company," it said. Orexigen goes on to say that it did not mislead patients or investors when it prematurely <a href="http://#http://www.scripintelligence.com/home/Orexigen-soars-on-CV-data-that-FDA-didnt-want-released-357057" target="_new">released the 25% interim results</a> from the LIGHT trial in March, or by withholding the 50% interim data from the trial in recent weeks. "Contrary to allegations cited today by a journalist, Orexigen has never misled patients. At the time of the patent issuance in March, we stated plainly and clearly that the effect of Contrave on CV morbidity and mortality has not been established and that a larger number of MACE are required to precisely determine the effect of Contrave on CV outcomes," said the statement. </p><p>"Takeda and Orexigen agreed that the appropriate manner to wind down the study was to collect the final information from the study and then to present and publish the study results. There was pressure from the Executive Steering Committee to release the 50% interim data. We maintained we would not be in a position to release data without access to the full data set, which we have not had and still do not have," added the company. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 24
+
+Takeda ditching Orexigen
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151205T110001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151205T110001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151205T110001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028708
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 25
+
+Takeda ditching Orexigen?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358314
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+341788f2-481a-4dfe-9301-394f9d313dd0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

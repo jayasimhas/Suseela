@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {7B72AFFE-5B63-47D8-8414-D14DF68D9D81}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Ipca slumps after US import alert ripple effect fears
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Ipca slumps after US import alert ripple effect fears
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 98da18bb-c0d3-4792-862e-95fb5da1bcad
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Ipca slumps after US import alert, ripple effect fears
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Ipca slumps after US import alert ripple effect fears
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3542
+
+<p>Shares of Ipca Laboratories fell sharply following news of an FDA import alert against the company's active pharmaceutical ingredients (APls) unit in Ratlam and concerns on whether other international regulators may follow suit.</p><p>The import alert published on 22 January cites good manufacturing practice (GMP) problems at the site and covers all drugs except four products &ndash; trimethoprim, ondansetron and hydroxychloroquine sulfate and propanolol hydrochloride. </p><p>Some products such as hydroxychloroquine have seen sharp price increases in the US, but analysts say it remains to be seen whether Ipca can regain some lost ground.</p><p>Ipca's shares were down by more than 8% in early trading but recovered to close at INR661 ($10.70), a decline of 5.48%, on the Bombay Stock Exchange on 23 January 2015.</p><p>The company informed the bourse that it was fully committed to resolving the issue at the earliest. ''The company is also committed to its philosophy of highest quality in manufacturing, operations, systems, integrity and cGMP culture,'' it added. </p><p>The FDA had also raised GMP compliance concerns at Ipca's Indore site in India, though the company has previously claimed these issues were ''not of the same gravity'' as those flagged up by the agency at the Ratlam unit <a href="http://%5bhttp:/www.scripintelligence.com/business/Ipca-clarifies-gravity-of-FDA-inspection-at-Indore-site-354973%5d" target="_new">(scripintelligence.com 11 November 2014)</a>. </p><p>Last year, Ipca voluntarily stopped shipments from its Ratlam unit following a US FDA inspection. Ipca said at the time that the Ratlam unit had received certain inspection Form 483 observations from the US FDA <a href="http://%5bhttp:/www.scripintelligence.com/business/Ipca-slumps-after-firm-suspends-API-shipments-to-US-353019%5d" target="_new">(scripintelligence.com 24 July 2014)</a>.</p><p>Ipca had added that the voluntarily stoppage would have an impact on the company's formulations export business to the US market since the formulations manufacturing units situated at Piparia (Silvassa) and SEZ, Indore (Pithampur) used APls manufactured from the Ratlam site. The company's management stated at that time that business worth around INR3bn could be impacted.</p><p>However, Ipca appeared subsequently to be working towards a Plan B, largely involving manufacturing its APIs at certain third party sites. Ipca was said to be evaluating two sites in southern India and discussions were at an advanced stage, the company's top brass said at the time of the second-quarter results. </p><p>Company sources, though, told <i>Scrip</i> that plans on this front had not materialized yet. </p><p>Analysts have also been concerned about ripple effect action from other regulators. Ipca earlier said that it hoped for an ''independent assessment'' of the unit by European regulatory authorities. The company, sources said, expects audits by the EMA and TGA possibly in the next month or so.</p><p>In September last year, Health Canada stopped import into Canada of drug products from Ipca after it received information from the FDA, which flagged concerns on the reliability of data. In December 2014, Health Canada said that Canadian importers had agreed to quarantine health products from Ipca's Pithampur site and Dr Reddy's API site Srikakulam because of data integrity concerns. The regulatory agency then clarified, however, that there was no identified risk to health, and that it was not requesting a recall of any of the products.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 235
+
+<p>Shares of Ipca Laboratories fell sharply following news of an FDA import alert against the company's active pharmaceutical ingredients (APls) unit in Ratlam and concerns on whether other international regulators may follow suit.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Ipca slumps after US import alert ripple effect fears
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T170003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T170003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T170003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027609
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Ipca slumps after US import alert, ripple effect fears
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356246
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+98da18bb-c0d3-4792-862e-95fb5da1bcad
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

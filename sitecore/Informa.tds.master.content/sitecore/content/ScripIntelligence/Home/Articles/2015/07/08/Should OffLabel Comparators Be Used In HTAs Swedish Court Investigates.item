@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {E2FA27C8-ADDA-4957-9785-FC8593303C79}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/08/Should OffLabel Comparators Be Used In HTAs Swedish Court Investigates
+parent: {AF97731A-5C70-4542-9DF1-6FA2ED0D8593}
+name: Should OffLabel Comparators Be Used In HTAs Swedish Court Investigates
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 61a2c66c-0fae-45ec-a9cd-47e7419590be
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 72
+
+Should Off-Label Comparators Be Used In HTAs? Swedish Court Investigates
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 70
+
+Should OffLabel Comparators Be Used In HTAs Swedish Court Investigates
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8784
+
+<p>Should an off-label use of an existing medicine be allowed as a comparator when conducting health technology assessments on new drugs? Some prominent European HTA bodies, like the National Institute for Health and Care Excellence (NICE), are quite happy to include off-label uses in their evaluations, but others, including many in the originator industry, feel such comparisons are not necessarily valid.</p><p>The question has now come before a Swedish court in a case brought by Bayer over a decision by the Swedish reimbursement body, the Tandvårds och Läkemedelsförmånsverket (TLV), to fund its pulmonary hypertension product <i>Adempas</i> (riociguat) for chronic thromboembolic pulmonary hypertension (CTEPH) only when treatment with PAH inhibitors &ndash; which are often used, but not approved, for CTEPH &ndash; has failed. </p><p>Judgment in the case is expected later this year. Just what the court will decide remains to be seen, of course, but whatever the outcome it should be instructive because it involves an orphan indication of a new drug for a difficult-to treat disease that has no other approved therapies. It also raises the question of whether off-label use is a cost-effective option and a therefore a valid comparator in such circumstances, and the outcome may help companies decide whether to agree to HTA agencies' demands for an off-label comparator in future. </p><p>Adempas received EU approval in March 2014 for two indications: pulmonary arterial hypertension (PAH), for which several other approved treatments are available, and chronic thromboembolic pulmonary hypertension (CTEPH), for which the product is classified as an orphan drug and is the only approved treatment for this condition.</p><p>Last year Bayer applied to the TLV for a decision on pricing and reimbursement for Adempas. Under Swedish legislation, a prescription-only drug can be included in the reimbursement system provided there are no other authorized medicines that are significantly more effective. </p><p>However, according to the TVL, the fact that a product is the only one approved for a particular use does not automatically qualify it for reimbursement. The agency also noted that a number of other treatments for PAH &ndash; <i>Revatio</i> (sildenafil), <i>Adcirca</i> (tadalafil), <i>Opsumit</i>, <i>Volibris</i> and <i>Tracleer</i> &ndash; are widely used off-label for the treatment of CTEPH. </p><h2>TLV decision</h2><p>In a 20 December 2014 decision, the TLV said that in the studies that formed the basis for Adempas' approval, "patients with PAH or CTEPH that was inoperable, residual or recurrent after surgical treatment demonstrated a significant improvement in functional ability compared with those who received placebo." </p><p>As for the HTA procedure, it decided that the company, "through indirect comparisons, has shown that Adempas in terms of efficacy is at least no worse than other drugs for PAH". It said the daily cost of Adempas was higher than that of Revatio and Adcirca, but in line with, or slightly lower than, the cost of Opsumit, Volibris and Tracleer. Therefore, Adempas "appears to be a cost-effective treatment", but only for patients not adequately controlled with Revatio or Adcirca."It therefore concluded that Adempas should be given limited reimbursement under the cost-ceiling restriction &ndash; ie, it should only be reimbursed for patients who had not responded to PAH-specific drugs.</p><p>Bayer appealed the decision to the Stockholm Administrative Court, claiming that Adempas should be reimbursed without limitation for the CTEPH indication. The company did not contest the use of PAH treatments for CTEPH per se, but it did dispute the claim that such off-label use was cost effective, according to the Swedish law firm Lindahl.</p><p>"The company further referred to the 2014 European Society of Cardiology Guidelines on the diagnosis and management of acute pulmonary embolism, in which its CTEPH product was recommended as first choice (Class 1) for treatment," Lindahl said. "The guidelines also stated that off-label treatment may be considered. However, as the company pointed out, this treatment was given the second to lowest recommendation level possible (Class II(b)). Thus, the company argued that the TLV's finding that the CTEPH product and the comparator were equivalent was incorrect from a medicinal point of view."</p><p>Bayer also argued that limiting reimbursement was contrary to the Swedish laws on pricing and reimbursement, which state that a product will be included in the reimbursement scheme if no other available therapies are considered to be significantly more effective. It added that the TLV had not given it enough time to submit data on comparisons between Adempas and placebo in CTEPH. </p><p>"This appears to be the first pricing and reimbursement decision in Sweden in which a product under off-label use has been used as a comparator in the TLV's health technology assessment," Lindahl commented, although it noted that this type of decision has been more been common in other European jurisdictions, such as the UK.</p><p>It also suggested that the decision ran contrary to the intent of the EU legislation on orphan drugs. "The issue in the case at hand is noteworthy, as it includes the extensive off-label use of medicinal products with orphan drug status and the fact that this line of reasoning from the reimbursement authorities undermines market exclusivity and one of the incentives of the EU Regulation on Orphan Medicinal Products (ie, to encourage investment in the research, development and marketing of orphan medicinal products)," the law firm declared. The court is likely to hand down its judgment at the end of 2015, it added.</p><h2>TLV view on off-label</h2><p>The question of using off-label comparators has taxed regulators and industry for some time now. Indeed, back in 2013 it was raised by the TLV itself at the 16th annual European Congress of the International Society for Pharmacoeconomics and Outcomes Research (ISPOR). </p><p>The TLV said that while ideally the comparator used should be reimbursed in Sweden and approved for the same indication as the new drug, in some cases an off-label comparator could be used, provided the product was used in a similar medical indication, and there was sufficient scientific support (such as published studies and systematic reviews) as well as clinical experience with that use.</p><p>It said that in cases where the most relevant comparator was a treatment that was widely used but lacked approval for that particular medical indication, or was a cost effective alternative outside the reimbursement system, that comparator could be used, although it cautioned that patient safety should always be prioritized and there should be an individual evaluation for each specific case.</p><h2>NICE </h2><p>NICE has used off-label comparators on a number of occasions. NICE's 2013 guide to the methods of technology appraisal states: "The Appraisal Committee can consider as comparators technologies that do not have a marketing authorisation (or CE mark for medical devices) for the indication defined in the scope when they are considered to be part of established clinical practice for the indication in the NHS" (National Health Service). </p><p>NICE seems to request off-label agents as comparators within the scope of technology appraisals fairly regularly. In a 2014 "Update on how NICE manage off-label comparators", Kusel <i>et al</i> said that of 111 technology appraisals over the 2008-13 period, NICE requested at least one off-label comparator in 31 cases. </p><p>In 23 of these cases NICE did not reject the new technology in favour of the off-label comparator, while in eight cases it rejected the new technology in favour of the off-label agent or because the company did not carry out the comparison requested. The authors also suggested that recently there seems to have been a shift towards manufacturers deciding not to present a comparison with the off-label drug proposed by NICE, and also towards NICE accepting such decisions. </p><h2>Disharmony in Europe </h2><p>One wider problem with using off-label comparators is that it is not done in all EU member states, and therefore adds to the numerous barriers to efforts to co-ordinate HTA assessments across Europe. A European Parliament committee recently recommended setting up a central expert body responsible for producing a single relative effectiveness assessment for national bodies to use in their own HTA and pricing decisions. Opinions differ as to whether this will fly; disagreements over comparators, on top of differences over relative effectiveness methodologies in general, suggest it won't, at least in the short term.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 412
+
+<p>Should an off-label use of an existing medicine be allowed as a comparator when conducting health technology assessments on new drugs? Some prominent European HTA bodies, like the National Institute for Health and Care Excellence (NICE), are quite happy to include off-label uses in their evaluations, but others, including many in the originator industry, feel such comparisons are not necessarily valid.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 70
+
+Should OffLabel Comparators Be Used In HTAs Swedish Court Investigates
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150708T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150708T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150708T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029477
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 72
+
+Should Off-Label Comparators Be Used In HTAs? Swedish Court Investigates
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359822
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+61a2c66c-0fae-45ec-a9cd-47e7419590be
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

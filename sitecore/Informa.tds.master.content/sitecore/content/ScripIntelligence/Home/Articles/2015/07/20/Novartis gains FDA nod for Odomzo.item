@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {2CD32D3C-046C-4DE3-B565-4F0895CDD676}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/20/Novartis gains FDA nod for Odomzo
+parent: {4A5C71DE-F86E-4022-98D9-F4BD70B5C95D}
+name: Novartis gains FDA nod for Odomzo
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ee3edc45-e64d-4e5e-944f-8e67de720326
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{32C2DFCA-405E-43AB-88A5-3883EB932000}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 34
+
+Novartis gains FDA nod for Odomzo 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 33
+
+Novartis gains FDA nod for Odomzo
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1693
+
+<p>Novartis won US approval on 24 July from the FDA to market Odomzo (sonidegib), previously known as LDE225, as a treatment for adults with locally advanced basal cell carcinoma (laBCC) that has recurred following surgery or radiation therapy, or those who are not candidates for surgery or radiation therapy.</p><p>Odomzo is an oral, selective smoothened inhibitor, a molecule that regulates the hedgehog signaling pathway, which Novartis said plays a critical role in stem cell maintenance and tissue repair and also in advanced basal cell carcinoma. </p><p>Odomzo's US approval was based the results of a randomized, double-blind multicenter Phase II study, known as BOLT, in which 58% of patients treated with the drug at the 200mg dose had their tumors shrink or disappear &ndash; an effect that lasted at least 1.9 to 18.6 months.</p><p>The response rates were similar in patients who received Odomzo 800mg daily, although the adverse effects were more common at this dose.</p><p>BCC consists of abnormal, uncontrolled growths or lesions that arise in the skin's basal cells, which line the deepest layer of the epidermis and accounts for more than 80% of non-melanoma skin cancers.</p><p>The disease occurs most frequently on the head and neck, with the nose being the most common site. Locally advanced BCC spreads from where it started to nearby and can be highly disfiguring, Novartis explained.</p><p>Last month, Swiss regulators approved Odomzo to treat advanced BCC not amenable to curative surgery or radiotherapy. </p><p>The drug also has gained a positive opinion from the European Medicines Agency's Committee for Medicinal Products for Human Use.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 314
+
+<p>Novartis won US approval on 24 July from the FDA to market Odomzo (sonidegib), previously known as LDE225, as a treatment for adults with locally advanced basal cell carcinoma (laBCC) that has recurred following surgery or radiation therapy, or those who are not candidates for surgery or radiation therapy.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+Novartis gains FDA nod for Odomzo
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150720T210019
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150720T210019
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150720T210019
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029337
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 34
+
+Novartis gains FDA nod for Odomzo 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200600548
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359536
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ee3edc45-e64d-4e5e-944f-8e67de720326
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

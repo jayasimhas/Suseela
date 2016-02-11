@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {C2807275-5229-4635-932D-64851B4FA686}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/29/Ardelyx dives again on trial failure awaits AstraZeneca verdict
+parent: {C14ED64E-C9E7-40EB-93B8-679AFA5F32DB}
+name: Ardelyx dives again on trial failure awaits AstraZeneca verdict
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ac2c374e-d515-4651-91d9-84ac34e8f8ff
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 64
+
+Ardelyx dives again on trial failure, awaits AstraZeneca verdict
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Ardelyx dives again on trial failure awaits AstraZeneca verdict
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3446
+
+<p>Ardelyx has seen its share price slump for the second time in three months following news that lead drug tenapanor, which is partnered with AstraZeneca, has failed a Phase IIa trial in Stage 3 chronic kidney disease patients with type 2 diabetes mellitus and albuminuria. Shares dropped by as much as a quarter of their value in after-market trading (5 May).</p><p>Earlier this year, the Fremont, California-based firm's share price plunged when a Phase IIb study of the selective NHE3 inhibitor <a href="http://www.scripintelligence.com/researchdevelopment/Side-effect-concerns-dampen-AZArdelyxs-first-in-class-drug-promise-356522" target="_new">threw up a side-effect concern</a> in another of potential indications, hyperphosphatemia.</p><p>The company partnered with AstraZeneca for development of the first-in-class product back <a href="http://www.scripintelligence.com/home/AstraZeneca-tie-up-worth-up-to-870m-to-sodium-diverting-Ardelyx-335882" target="_new">in 2012</a> for $35m up front.</p><p>Tenapanor is also in Phase II for constipation-predominant irritable bowel syndrome (IBS-C), for <a href="http://www.scripintelligence.com/researchdevelopment/AstraZeneca-partnered-IBS-drug-positive-in-PhII-but-lags-Linzess-354240" target="_new">which positive results</a> were reported late last year. Here diarrhea was also a side-effect, but its incidence was modest. </p><p>"We continue to work with AstraZeneca as they evaluate [all] the data, and we are preparing for the continuation of the development of tenapanor under a variety of different scenarios," said Mike Raab, president and CEO of Ardelyx. </p><p>Under their agreement, AstraZeneca is obligated to tell Ardelyx by June 29 whether it will continue development of tenapanor. Should AstraZeneca decide to pursue the development of only the IBS-C indication, Ardelyx will be entitled to a milestone payment of $10m. Pursuing development in any other indication or multiple indications means Ardelyx will be entitled to receive a $20m milestone.</p><p>"We are preparing for an end of Phase II meeting for IBS-C with the FDA scheduled to occur in June. Should AstraZeneca decide to return the program to us, we seek to be in a position to initiate a Phase III clinical program for tenapanor in IBS-C in the fourth quarter of 2015. Additionally, we intend to be prepared to continue the development of tenapanor for the treatment of hyperphosphatemia in CKD patients on dialysis," said Mr Raab.</p><p>The latest data were from a 154-patient Phase IIa trial evaluating tenapanor in Stage 3 chronic kidney disease patients with type 2 diabetes mellitus and albuminuria. The study did not meet the primary endpoint of a significant decrease of urinary albumin-creatinine ratio from baseline to week 12 for tenapanor-treated patients compared to patients receiving placebo with a 16% reduction in the tenapanor group versus 11% on placebo. </p><p>Ardelyx said the overall safety profile was consistent with that observed in previous tenapanor trials.</p><p>"The pharmacodynamic effects of tenapanor in both reducing the absorption of dietary phosphorus as measured by decreased urinary phosphorous excretion and softer stool form and increased stool frequency were confirmed in the Phase IIa CKD trial and continue to support the use of tenapanor in IBS-C and in patients with hyperphosphatemia on dialysis," said Dr David Rosenbaum, senior vp of drug development for Ardelyx.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 365
+
+<p>Ardelyx has seen its share price slump for the second time in three months following news that lead drug tenapanor, which is partnered with AstraZeneca, has failed a Phase IIa trial in Stage 3 chronic kidney disease patients with type 2 diabetes mellitus and albuminuria. Shares dropped by as much as a quarter of their value in after-market trading (5 May).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Ardelyx dives again on trial failure awaits AstraZeneca verdict
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150429T235642
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150429T235642
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150429T235642
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028636
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 64
+
+Ardelyx dives again on trial failure, awaits AstraZeneca verdict
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200600002
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358128
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ac2c374e-d515-4651-91d9-84ac34e8f8ff
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {3EC54E6C-5A42-447D-9EDB-7B71253217F6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/25/Chugai signals cell therapy interest via Athersys deal
+parent: {15B1B217-4524-49F3-9FDF-A5CEA8404E4B}
+name: Chugai signals cell therapy interest via Athersys deal
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0bc4d5f5-f08b-44a5-905b-fb2895ccd15f
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{32C2DFCA-405E-43AB-88A5-3883EB932000}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Chugai signals cell therapy interest via Athersys deal
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Chugai signals cell therapy interest via Athersys deal
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4904
+
+<p>The US venture Athersys has entered into a cell therapy alliance with Chugai that will enable it to take advantage of the newly supportive regulatory environment in Japan for regenerative medicines and to access a potentially large market.</p><p><p>Under the deal, Chugai Pharmaceutical will develop and commercialize in Japan Athersys's proprietary cell therapy product MultiStem for the indication of ischemic stroke. The alliance is worth $10m up front to Athersys plus additional development and regulatory milestone payments of up to $45m. </p><p><p>Chugai has also agreed to pay sales milestones of up to JPY17.5bn (around $150m at current exchange rates) plus tiered, double-digit royalties on its net sales of the therapy.</p><p><p>The Japanese firm has extensive expertise in biologics (mainly antibodies), particularly in oncology where it has successfully commercialized a series of products from its parent Roche. But the move into the cell therapy and cardiovascular fields through the modest agreement represents something of a departure for oncology-focused Chugai.</p><p><p>Athersys chairman and CEO Dr Gil Van Bokkelen pointed to its new partner's broad development capabilities and in particular to the "key competitive advantage" of its sales force (which is one of the most productive in Japan in terms of sales per rep) as some of the key attractions of the tie-up for the Cleveland, Ohio-based venture.</p><p><p>MultiStem has been developed using Athersys's proprietary MAPC technology and comprises stem cells derived and expanded from cells obtained from the bone marrow or other tissue of healthy, consenting adult donors. It is administered intravenously or locally with no need for patient tissue matching or concurrent immunosuppressive therapy to control rejection.</p><p><p>As part of the alliance, Nasdaq-listed Athersys will supply the off-the-shelf product, for which it will also receive payments from Chugai.</p><p><p>In its lead ischemic stroke indication, MultiStem is currently in a Phase II placebo-controlled trial in the US and Europe, for which enrolment in complete and interim results following a 90-day follow-up are due to be announced in April.</p><p><p>While initial standard thrombolytic TPA therapy must be administered within several hours of an ischemic stroke &ndash; in which blood flow to areas of the brain is cut off by a clot, causing potential tissue and nerve damage &ndash; Athersys says that MultiStem administered several days or even a week after a stroke confers benefits.</p><p><p>Preclinical studies have suggested a range of actions including reduction of inflammation and immuno-modulation in affected ischemic tissue, protection and recovery of damaged cells and neuronal tissue, and expression of therapeutic proteins and factors that promote tissue repair and angiogenesis.</p><p><h2>preliminary discussions</h2><p><p>The US company had already begun preliminary discussions with the regulatory authorities in Japan before linking up with Chugai, with a view to initiating a clinical program there. "We are pleased that the PMDA [Japan's regulator] recently confirmed that our manufacturing is suitable for Japanese clinical development, which represents an important regulatory milestone," Dr Van Bokkelen said in November at the time of Athersys's third quarter results.</p><p><p>The cell therapy is also being investigated for potential uses in other settings such as inflammatory bowel disease, graft versus host disease, neurological disorders and injuries including multiple sclerosis, and cardiovascular disease such as congestive heart failure.</p><p><p>Preparations for the start of a Phase II program in acute myocardial infarction are progressing, with Athersys expecting "substantial clinical study activity" in the indication this year.</p><p><h2>new legislation</h2><p><p>Late last year, Japan enacted revised and new legislation for regenerative medicines, which is designed to encourage the development and ensure the effective regulation and categorization of such therapies, and was warmly welcomed by several firms working in the field. Japan is placing strategic priority on the sector to help maintain its strong position in induced pluripotent stem (iPS) cells.</p><p><p>The new regulations allow the granting of conditional approvals based on Phase II data only to speed up development, with strict post-surveillance requirements.</p><p><p>Dr Van Bokkelen stated in Athersys's third quarter results that the regulations and new pathway in Japan are set to pave the way "for accelerated development and commercialization of regenerative medicines, such as MultiStem therapy."</p><p><p>Athersys made a third quarter net loss of $4.7m on revenues of $300,000.</p><p>This article was first published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 246
+
+<p>The US venture Athersys has entered into a cell therapy alliance with Chugai that will enable it to take advantage of the newly supportive regulatory environment in Japan for regenerative medicines and to access a potentially large market.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Chugai signals cell therapy interest via Athersys deal
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150225T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150225T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150225T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027982
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Chugai signals cell therapy interest via Athersys deal
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356948
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0bc4d5f5-f08b-44a5-905b-fb2895ccd15f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

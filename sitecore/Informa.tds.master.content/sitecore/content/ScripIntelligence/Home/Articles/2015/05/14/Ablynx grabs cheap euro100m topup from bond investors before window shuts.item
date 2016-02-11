@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {B32A176A-EB2E-44B9-97F6-96DA87D8760D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/14/Ablynx grabs cheap euro100m topup from bond investors before window shuts
+parent: {C175FE23-2601-4F4F-B3CE-DA1791987470}
+name: Ablynx grabs cheap euro100m topup from bond investors before window shuts
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 37a95a26-f41c-41a1-9dd8-3eb3fb49b255
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{FAC5845E-1D70-4F9F-B043-60D9ECE62E57}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 76
+
+Ablynx grabs cheap &euro;100m top-up from bond investors before window shuts
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 73
+
+Ablynx grabs cheap euro100m topup from bond investors before window shuts
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3532
+
+<p>In the first significant return to the European bond market since Norwegian radiopharmaceutical specialist Algeta raised $120m back in September 2013, Belgian nanobody firm, Ablynx, has raised &euro;100m ($110m) through a private placement of Senior Unsecured Convertible Bonds. According to CEO Edwin Moses, this provides Ablynx with "a lot more choice of how we spend our money, and options in product development." The bond route allowed Ablynx to raise its money rapidly and relatively cheaply.</p><p>Ablynx had some &euro;206 million in cash and equivalents at the end of 2014, equivalent to six times its 2014 burn rate, including &euro;41.7 million from a private placement in July 2014. However, Dr Moses told <i>Scrip</i> that the company anticipated spending much more on its development programs in 2015 and beyond.</p><p>"Its simple maths," he said. "We will have four Phase II and one Phase III trials running and will be spending around &euro;80m a year. We have never wanted to run down our cash pile."</p><p>For Ablynx, the convertible bond mechanism had two distinct advantages over alternative funding routes, according to Dr Moses. It allowed the company to access a group of investors whose activity in healthcare has been relatively quiet during the biotech stock price boom of the past two years. And it brought a step up in the level of funding it could achieve.</p><p>"The convertible bond specialists are now very keen to get into the upside that healthcare represents," Dr Moses told <i>Scrip, "</i>but the last substantial European bond deal was Algeta in 2013. Some of the banks approached us about 6 months ago."</p><p>Under Belgian and European stock market rules, public companies can raise up to 10% of their existing market capitalization in a year through a process known as accelerated book building without going through the more byzantine machinations involved in a full secondary offer. In Ablynx' case, that would allow the company to raise &euro;50m a year, a figure that is now insufficient for its clinical needs.</p><p>Edwin Moses said that Ablynx could have gone the route that fellow-Belgian company Galapagos took and <a href="http://www.scripintelligence.com/home/Biotechs-sneaking-through-a-closing-IPO-window-358278" target="_new">raised money on a US exchange</a>. However, he said, "building that offer could have taken two to three months and the window may not be there in two or three months."</p><p>Another Belgian biotech, Tigenix, raised &euro;25m through a convertible bond in February with a coupon value (interest rate) of 9%, comparable with the 6-8% interest rates attached to straight commercial loans. Ablynx' &euro;100m bear a coupon of just 3.25%. </p><p>The money will be used principally for the further development of two wholly-owned Ablynx min-antibody compounds, caplacizumab and ALX-0171, as well as propelling pre-clinical drug candidates into the clinic.</p><p>Caplacizumab is a bivalent anti-vWF mini-antibody for treating thrombotic thrombocytopenic purpura (TTP) which will enter a Phase III study in H2 2015. The extra money will allow Ablynx to file for conditional approval of caplacizumab in Europe based on the Phase II results, and give it the choice of being directly involved in further commercialization.</p><p>ALX-0171 is for the treatment of respiratory syncytial infection in infants, with results of a Phase IIa trial expected in the second half of 2016. The new cash could allow Ablynx to fund a global Phase IIb study in late 2016. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 505
+
+<p>In the first significant return to the European bond market since Norwegian radiopharmaceutical specialist Algeta raised $120m back in September 2013, Belgian nanobody firm, Ablynx, has raised &euro;100m ($110m) through a private placement of Senior Unsecured Convertible Bonds. According to CEO Edwin Moses, this provides Ablynx with "a lot more choice of how we spend our money, and options in product development." The bond route allowed Ablynx to raise its money rapidly and relatively cheaply.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 73
+
+Ablynx grabs cheap euro100m topup from bond investors before window shuts
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150514T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150514T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150514T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028776
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 76
+
+Ablynx grabs cheap &euro;100m top-up from bond investors before window shuts
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358427
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042349Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+37a95a26-f41c-41a1-9dd8-3eb3fb49b255
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042349Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

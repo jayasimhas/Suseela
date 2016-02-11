@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {ADEABB12-8BFB-41A8-BCA8-E6B720B8F991}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/11/NHS England limits access to new hep C drugs
+parent: {0C4E4294-FE7F-444B-9DB5-24F666F256E8}
+name: NHS England limits access to new hep C drugs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2e1d3c70-872b-4f9d-95ba-580d7f1e41e6
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+NHS England limits access to new hep C drugs 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+NHS England limits access to new hep C drugs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5569
+
+<p>Hepatitis C (HCV) patients in the UK might find themselves in a battle for access to new curative drugs if NHS England's plans for treatment rationing go ahead. </p><p>NHS England announced on 10 June that it was investing &pound;190m into an "early access" scheme for HCV patients with liver cirrhosis (F4), to help those with most serious cases get access to new interferon-free therapies. However, the fund will exclude other HCV patients including those with advanced fibrosis (F3). </p><p>The treatment regimens expected to be covered by the latest NHS England policy include: Gilead Science's Harvoni (sofosbuvir/ledipasvir) and AbbVie's Viekirax/Exviera for GT-1, Gilead's Sovaldi (sofosbuvir) plus ribavirin for genotype-2/3, and Sovaldi plus Bristol-Myers Squibb's Daklinza (daclatasvir) for genotype-3 cirrhotic patients.</p><p>The final NICE guidance for Harvoni and Viekirax/Exviera is expected in June 2015 and September 2015, respectively. In <a href="http://www.scripintelligence.com/policyregulation/NICE-favors-Harvoni-in-draft-guidance-357036" target="_new">previous draft guidance</a>, NICE favored Harvoni for use in several patient populations. </p><p>NHS England in its 10 June policy statement said it will aim to treat 2,000 HCV patients a year with the new therapies &ndash; and these will be patients with liver cirrhosis. The policy states: "Public Health England has undertaken modelling that suggests that if 2,000 patients with cirrhosis were treated with new therapies each year, the annual incidence of hepatitis C-related end-stage liver disease and hepatocellular cancer could be reduced by half by 2020, from a predicted 1,900 per year in 2015 to 580 cases by 2020." The new policy makes no reference to how HCV patients who are not suffering cirrhosis or liver failure will be able to receive new therapies. However, the NHS body said its policy statement "will be reviewed in line with the NICE technology appraisal guidance schedule."</p><p>NHS England's early access fund was initially set up in 2014 for HCV patients with imminent risk of liver failure with &pound;40m in investment. So far approximately 1,000 patients have benefited from the fund. The further &pound;190m is expected to help an additional 3,500 patients in the region. </p><p>Though this investment represents the NHS' single largest treatment expansion so far in 2015, Charles Gore, CEO of the Hepatitis C Trust and President of the World Hepatitis Alliance, said NHS England had ultimately failed patients. "NHS England has known about these drugs for some time and knew they were coming to market but it has failed to budget for them," he told <i>Scrip</i>. </p><p>While Mr Gore said the new investment from the NHS body was "good news" for patients with cirrhosis, he called its decision to block access for patients with mild-to-moderate forms of the disease "unfair."</p><p>"I'm sorry NHS England are in a financial hole and I have sympathy: they are trying to do a difficult job with limited resources, but this is not the way to do it," he said, adding that he found the approach illogical. "These are drugs that have a cure rate of 90% plus, yet this is the area NHS England is saying they are going to ration. Of all the areas in health where you are making marginal improvements to people's wellbeing they are picking on an area that can make a massive difference," he said. </p><p>He noted that if NICE has found the drugs to be cost-effective for use on the NHS then the products should be made available to all. "Why should people with HCV be singled out? Of all of the disease areas, why should hep C patients be the ones having to face rationing so NHS England can balance its books?"</p><h2>Making NICE redundant?</h2><p>Mr Gore highlighted that NHS England is asking NICE to introduce a new criteria: not just are drugs cost-effective but also "affordable." This is an area he believes is beyond the HTA body's scope.</p><p>"If NHS England has approximately &pound;98bn to spend it can clearly afford to spend an extra &pound;200m on this. If it is saying it can't afford to, it's because that &pound;98bn has been spent elsewhere &ndash; which is a choice. That's the problem with this system, it moves away from a rational, evidence-based approach to allocating resources," Mr Gore said. "This is extraordinary; NHS England is trying to introduce a whole new system."</p><p>Datamonitor Healthcare analyst Michael Haydock added that while the &pound;190m is likely to cover treatment for cirrhotic patients, treatment for other HCV patients in the UK needs to be addressed. "These patients [F3] are also at elevated risk for morbidity/mortality and are recommended for treatment in EASL [European Association for the Study of the Liver] guidelines, but they are not included in this announcement."</p><p>However, he expects NICE will recommend treatment for F3/F4 patients but suggest "warehousing" less advanced patients until the more advanced patients have been treated. "I think physicians understand patient prioritization is necessary because of the high cost of the new regimens. Nobody questions that these new treatments are more cost-effective than the older regimens despite their higher prices, but the issue is the sheer volume of patients who will be seeking treatment," he told <i>Scrip. </i></p><p>Patients that do fit NHS England's criteria for HCV treatment will be able to access new interferon-free therapies immediately through the early access fund. </p><p>NHS England was not immediately available for comment. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 168
+
+<p>Hepatitis C (HCV) patients in the UK might find themselves in a battle for access to new curative drugs if NHS England's plans for treatment rationing go ahead. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+NHS England limits access to new hep C drugs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150611T222042
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150611T222042
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150611T222042
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028966
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+NHS England limits access to new hep C drugs 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358822
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042401Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2e1d3c70-872b-4f9d-95ba-580d7f1e41e6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042401Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

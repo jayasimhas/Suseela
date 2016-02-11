@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {431415BB-06E6-4441-93E5-161B31B02015}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/09/Edge rakes in 725m in Series C
+parent: {88A8FD69-CEA0-4AB4-B14D-DEC11D107C9E}
+name: Edge rakes in 725m in Series C
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 65bdd6f5-7117-4ec5-87a3-5132ce748bb1
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+Edge rakes in $72.5m in Series C
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 30
+
+Edge rakes in 725m in Series C
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2328
+
+<p><p>Brain treatment developer Edge Therapeutics has hauled in $72.5m in a two-part Series C financing that closed in April and included a number of high net worth individuals, family offices and private foundations, as well as venture investors that will help move the company's brain injury drug into late-stages. </p><p>Berkeley Heights, NJ-based Edge announced 09 April that it has completed the second part of its C round. The most recent financing of $56m was led by Venrock and included Sofinnova Ventures, Janus Capital Management, funds managed by Franklin Advisers, New Leaf Venture Partners and BioMed Ventures. The first portion of the money - $16.5m &ndash; was completed in December and came from non-venture investors. </p><p>As part of the second portion of the offering, Venrock partner Dr Anders Hove and Sofinnova managing partner Dr James Healy joined the company's board of directors. </p><p>Edge intends to use the cash to complete a Phase I/II study of its lead therapeutic, EG-1962, and move the drug into Phase III pivotal study. EG-1962 was designed to improve the outcomes for patients that have suffered an aneurysmal subarachnoid hemorrhage (aSUH), or ruptured brain aneurysm. </p><p>Preliminary data from the Phase I/II NEWTON study showed that 11 of the 18 patients, or 61%, who received EG-1962 showed a favorable outcome on the extended Glasgow Outcome Scale (eGOS), which measures patient recovery based on a scale of one to eight, with one equaling death and eight equal to good recovery. Patients who received a favorable score in the NEWTON study had an eGOS score between six and eight when measured 90 days after treatment. Meanwhile, only one of six, or 17%, of those patients in the trial given Bayer's calcium channel blocker Nimotop (nimodipine). </p><p>Edge intends to use the money from the financing to enroll further patient cohorts in the NEWTON study and hopes to announce topline data in later this year. </p><p>EG-1962 contains nimodipine, but the polymer-based microparticle allows for better outcomes and a more favorable side effect profile than the older drug, according to the company. The drug also has a more favorable mode of administration &ndash; EG-1962 is delivered as a single dose, while oral Nimotop is given every four hours over a 21-day period. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 30
+
+Edge rakes in 725m in Series C
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150409T225914
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150409T225914
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150409T225914
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028389
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+Edge rakes in $72.5m in Series C
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357664
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042327Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+65bdd6f5-7117-4ec5-87a3-5132ce748bb1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042327Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

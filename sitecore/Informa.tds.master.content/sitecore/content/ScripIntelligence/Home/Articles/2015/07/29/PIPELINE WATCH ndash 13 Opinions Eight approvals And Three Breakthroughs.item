@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {8E99AB1B-5CD6-46E0-BF10-0526A4285F57}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/29/PIPELINE WATCH ndash 13 Opinions Eight approvals And Three Breakthroughs
+parent: {BEC3B212-EAA2-4ACE-8629-63E1A9A454B0}
+name: PIPELINE WATCH ndash 13 Opinions Eight approvals And Three Breakthroughs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ad201fd2-bc8e-43bf-ab51-a4884882b8a0
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2E354A44-16ED-4D46-BE4E-09266853F677}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 75
+
+PIPELINE WATCH &ndash; 13 Opinions, Eight approvals And Three Breakthroughs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+PIPELINE WATCH ndash 13 Opinions Eight approvals And Three Breakthroughs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 811
+
+<p>This week's Pipeline Watch, a snapshot of all the late-stage R&D and regulatory events in the pharma and biotech industries, is now available to view.</p><p><a href="http://www.scripintelligence.com/home/marketdata/Pipeline-Watch---Pivotal-events-for-late-stage-and-marketed-drugs-24-30-July-2015-359765" target="_new">CLICK HERE TO SEE THIS WEEK'S PIPELINE WATCH</a></p><p>The table records clinical and regulatory developments using data from BioMedTracker. It lists all drugs for which an event was recorded from Jul. 24-30, 2015, divided by event type. </p><p>Events can include latest launches, approvals, withdrawals, suspensions, regulatory filings, CHMP recommendations, Phase III clinical trial initiations, development discontinuations, and the granting of orphan drug and fast-track status.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 157
+
+<p>This week's Pipeline Watch, a snapshot of all the late-stage R&D and regulatory events in the pharma and biotech industries, is now available to view.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+PIPELINE WATCH ndash 13 Opinions Eight approvals And Three Breakthroughs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150729T160002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150729T160002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150729T160002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029418
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 75
+
+PIPELINE WATCH &ndash; 13 Opinions, Eight approvals And Three Breakthroughs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359676
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ad201fd2-bc8e-43bf-ab51-a4884882b8a0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

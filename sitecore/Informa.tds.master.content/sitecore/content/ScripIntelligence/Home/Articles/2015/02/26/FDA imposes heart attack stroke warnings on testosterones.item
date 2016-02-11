@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E68E1EBF-A014-4FAB-A941-8A0A44D25E67}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/26/FDA imposes heart attack stroke warnings on testosterones
+parent: {36275DB8-48EA-487C-BD7F-C8F8E306B3C7}
+name: FDA imposes heart attack stroke warnings on testosterones
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 14cfd93f-8b16-46c1-b981-7368c219fe0b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+FDA imposes heart attack, stroke warnings on testosterones 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+FDA imposes heart attack stroke warnings on testosterones
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3798
+
+<p>The FDA on 3 March said it was imposing new warnings on the labeling of testosterone replacement therapies (TRTs), like AbbVie's $1bn drug AndroGel, about an increased risk of heart attack and stroke.</p><p>The agency is requiring manufacturers of approved TRTs, which also include drugs like Lilly's Axiron and Endo's Testim and Fortesta, to conduct a well-designed clinical trial to more clearly address the question of whether an increased risk of heart attack or stroke exists among users of the products. </p><p>Regulators encouraged TRT makers to work together on the trial, but said manufacturers are allowed to work separately, if they so choose.</p><p>The FDA also cautioned against the use of TRTs to treat low testosterone levels, or low-T, due to aging, and said it wants manufacturers of all approved testosterone products to clarify in the labeling the medicines should only be used for the approved indications. </p><p>"Health care professionals should prescribe testosterone therapy only for men with low testosterone levels caused by certain medical conditions and confirmed by laboratory tests," the FDA said.</p><p>The agency emphasized that prescription TRTs are approved only in the US for men who have low testosterone levels due to disorders of the testicles, pituitary gland or the brain that cause hypogonadism. </p><p>The FDA said it is aware TRTs are being used extensively in attempts to relieve symptoms in men who have low-T for no apparent reason other than aging. </p><p>"The benefits and safety of this use have not been established," regulators said.</p><p>Given the increased use of TRTs, the FDA last fall said it was reassessing the benefit the products provide, particularly in older men (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-questions-benefits-of-testosterone-therapy-353720" target="_new">05 September 2014</a>). </p><p>On 17 September 2014, the agency convened a joint meeting of its Bone, Reproductive and Urologic Drugs (BRUDAC) and the Drug Safety and Risk Management (DSaRM) Advisory Committees, which voted 20-1 in favor of revising the labeling for TRTs, limiting the drugs' use in men with classical hypogonadism. </p><p>The BRUDAC-DSaRM panel said the labelibng should include statements to address the potential cardiovascular risks of testosterone therapy, the importance of proper testing of serum testosterone concentrations to confirm the diagnosis and that efficacy and safety in age-related hypogonadism have not been established. </p><p>A majority of the joint committee said the agency should require manufacturers to conduct a study to further assess the potential cardiovascular risk with the use of TRTs.</p><p>Based on the input from the September 2014 advisory committee meeting and the available evidence from published studies, the FDA said it concluded there is a possible increased cardiovascular risk associated with testosterone use. </p><p>Dr Sidney Wolfe, senior adviser and former director of health research at the consumer group Public Citizen complained the warnings are coming too late.</p><p>He noted the Canadian government had issued a warning about cardiovascular risks associated with TRTs on 15 July 2015 &ndash; a day before the FDA rejected a petition from Public Citizen.</p><p> the nearly eight months since the Canadian action, about four million prescriptions have been filled in the US for TRTs, Dr Wolfe said. </p><p>"Had the FDA made this announcement last summer when the Canadian government acted, it would have reduced the number of US prescriptions for and damage from testosterone, a medication of questionable effectiveness for a large proportion of users and one that increases the risk of heart attacks and strokes," he said.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 207
+
+<p>The FDA on 3 March said it was imposing new warnings on the labeling of testosterone replacement therapies (TRTs), like AbbVie's $1bn drug AndroGel, about an increased risk of heart attack and stroke.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+FDA imposes heart attack stroke warnings on testosterones
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150226T160001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150226T160001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150226T160001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027991
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+FDA imposes heart attack, stroke warnings on testosterones 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356965
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+14cfd93f-8b16-46c1-b981-7368c219fe0b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

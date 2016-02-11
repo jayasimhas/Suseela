@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {6748784A-7E24-443C-A54E-71FED595781D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/17/Indias Syngene eyes CRAMS role listing by July
+parent: {5262FD33-8196-4910-BCB3-3BC76EEBE076}
+name: Indias Syngene eyes CRAMS role listing by July
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e63a087d-d983-486d-8700-1dd34e84d89b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3C1D616F-8B3D-44FE-BECC-6DFB88AA7466}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+India's Syngene eyes CRAMS role; listing by July
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+Indias Syngene eyes CRAMS role listing by July
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3239
+
+<p>IPO-bound Syngene, the research services arm of India's Biocon, expects to evolve into a contract research and manufacturing services (CRAMS) organisation with commercial-scale manufacturing capabilities.</p><p>With several client programmes moving up the development phase, Syngene believes it has gained the necessary process knowledge and experience for these molecules. </p><p>"We believe this would typically make us a partner of choice to manufacture developmental batches and large-scale commercial supplies of these molecules if and when they are commercialised," Syngene said its draft prospectus for its initial public offering. </p><p>Biocon said that on 22 April Syngene filed a draft prospectus with the Securities and Exchange Board of India for a proposed public issue of equity shares through the 100% book building method. </p><p>Syngene, which currently makes developmental batches of small and large molecules to support clinical trials for clients, has recently entered into a long-term contract with an existing client for commercial manufacture of a novel small molecule active pharmaceuticals ingredient (API), currently in late-stage development. </p><p>In addition to a greenfield commercial-scale facility to manufacture novel small molecules for innovator companies in the pharmaceutical, agrochemical and other industrial sectors is coming up in Mangaluru, Syngene has also expanded its current small-molecule facilities in Bengaluru to meet the interim requirements of clients. </p><p>For the nine months ended December 2014, Syngene serviced 195 clients ranging from start-ups to multinational firms, including seven of the top 10 global pharmaceutical companies by sales for 2014, details in the draft prospectus said. Syngene also has multidisciplinary partnerships, each with a dedicated research centre, with Bristol-Myers Squibb, Abbott and Baxter. </p><h2>IPO details</h2><p>Biocon expects to sell up to 22 million equity shares through the Syngene IPO, including a reservation of two million shares for subscription by Biocon's shareholders.</p><p>It expects to raise around INR6bn ($95.4m) via the offer, agency reports said. </p><p>"The listing is about monetizing Biocon's stake in Syngene and to give Syngene a life of its own," Biocon's chairperson Kiran Mazumdar-Shaw was reported as saying. </p><p>A listing around July is likely subject to regulatory approvals.</p><p>For the nine months ended December 2014, Syngene reported revenues INR6.17bn and restated profits of INR1.19bn.</p><p>Some analysts were reported as saying that Syngene's return ratios were superior to those of China's WuXi PharmaTech.</p><p>Last year, the Mauritius-based investment vehicle Silver Leaf Oak <a href="http://%5bhttp:/www.scripintelligence.com/business/Silver-Leaf-picks-up-10-in-IPO-bound-Syngene-354043%5d" target="_new">picked up 10%</a> in Syngene for INR3.8bn (then $62.4m), valuing the IPO-bound Syngene at INR38bn. </p><p>The Silver Leaf deal came close on the heels of <a href="http://%5bhttp:/www.scripintelligence.com/business/Biocon-buys-back-GE-holding-in-IPO-bound-Syngene-353801%5d" target="_new">Biocon buying back</a> 7.69% in Syngene from a subsidiary of GE Capital for about INR2.15bn. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 211
+
+<p>IPO-bound Syngene, the research services arm of India's Biocon, expects to evolve into a contract research and manufacturing services (CRAMS) organisation with commercial-scale manufacturing capabilities.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Indias Syngene eyes CRAMS role listing by July
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150417T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150417T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150417T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028521
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+India's Syngene eyes CRAMS role; listing by July
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+201100182
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357943
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e63a087d-d983-486d-8700-1dd34e84d89b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

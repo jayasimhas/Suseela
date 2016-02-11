@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {36FDBA22-1D51-49FC-A327-9448CF11679C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/07/MA pushing up drug prices
+parent: {3BC254C1-F684-481F-AC19-2127127A06F5}
+name: MA pushing up drug prices
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a76fc400-f3ae-413f-a9b1-63761982c7dc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 27
+
+M&A pushing up drug prices?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 25
+
+MA pushing up drug prices
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5818
+
+<p><p>The recent spate of consolidation in the generics industry over the last three years has consumers worried that generic drugs are no longer going to be the affordable solution that they were intended to be and that M&A in the space is leading to higher prices. </p><p>The backlash to the consolidation has already begun; a number of consumer groups recently wrote to Federal Trade Commission Chairwoman Edith Ramirez urging the agency to block Teva Pharmaceutical's proposed acquisition of generics competitor Mylan. </p><p>The acquisition would result in the merger of the two largest generic drugmakers in the US who would control more than 25% of the market and would be more than double the size of their next largest competitor, noted the consumer groups, which included Public Citizen and Consumers Union. </p><p>"We are concerned that this merger would increase prices for generic as well as specialty drugs, exacerbate drug shortages and reduce the development of new generic drugs," said the letter. </p><p>The groups aren't wrong; generic drug prices &ndash; which are meant to help control healthcare costs &ndash; have been rising over the last five years as the industry has already begun to consolidate. From mid-2013 to mid-2014, more than half of generic drugs incurred a price increase, with nearly a fifth of generic drugs getting a price increase of 25% or more. </p><p>Drug pricing throughout the pharmaceutical world has been rising and consumers &ndash; as well as payers &ndash; have been pushing back. The argument over pricing hit a tipping point in 2014 when Gilead Sciences priced its hepatitis C drug at $1,000 a pill, bringing the total cost to more than $84,000. The high-priced pill has brought drug pricing to the national stage. With the cost of specialty drugs reaching these astronomical highs, it's important that generic drugs be maintained as a low-cost option for patients. </p><p>"In our view, the significant anticompetitive harm that would result from this merger cannot be alleviated through simply divesting specific drugs that now compete with each other, as the Commission has done in past generics mergers. Because of the significant overlapping drug portfolios of the two companies, coupled with the loss of Mylan&rsquo;s substantial separate research and development activities in generic drugs, no divestiture of specific drugs would be sufficient to replace the loss of competition," noted the groups.</p><p>Typically, the FTC requires companies that have products that compete in the same space to divest one of them in order to maintain competition, but Mylan and Teva have thousands of products in their portfolios that overlap. Even if the companies were to divest products, there is no telling what the impact of that would be on the overall competitive landscape. By combining the two companies there will be a reduction in the workforce, as well as the manufacturing sites, which could lead to drug shortages. </p><p><b>Mylan agrees</b></p><p>The acquisition is far from a done deal &ndash; Mylan has opposed the $40bn offer from the start, publicly rejecting Teva in April. Mylan Executive Chairman Robert Coury has taken a harsh stance against the merger, citing his own concerns about antitrust issues and a lengthy process that would be dragged out by integration. </p><p>"It is important to note that given the massive overlap between our companies, the synergizing of redundant or similar efforts and products will inherently have a major negative impact on the very growth prospects you are aiming to extract from Mylan. What will be left is a short-term financial pop and longer-term value erosion," said Coury in a <a href="http://www.scripintelligence.com/home/Mylan-to-Teva-we-dont-want-your-problems-358077" target="_new">public letter</a> in April. </p><p>Mylan CEO Heather Bresch added to the criticism in July with a response to the consumer group letter, saying, "As we have said all along, we do not believe that these concerns can be remedied through product divestitures, and we believe that the FTC and other regulators will take all of these factors into consideration in their analysis. Certainly, this deal faces a long and difficult review by the antitrust regulators and we believe it will ultimately be rejected."</p><p>In its own effort to keep Teva at bay, Mylan has been doggedly chasing an acquisition of Perrigo &ndash; another unwanted pursuit. Mylan is currently conducting its <a href="http://www.scripintelligence.com/home/Perrigo-not-seeing-the-value-in-Mylan-offer-358127" target="_new">own hostile takeover</a> of the other generic drugmaker with its $33bn offer. </p><p>Teva has been floundering for the last few years as it's tried &ndash; but failed &ndash; to fend off a biosimilar version of its blockbuster multiple sclerosis drug Copaxone (glatiramer acetate injection). The company has lost investor and analyst faith over the last few years as its undergone several changes, including the public &ndash; and messy &ndash; exit of its CEO Jeremy Levin. The Israeli company has vowed that it's back on track, but it has a pipeline that has yet to prove itself and the company has continuously changed its strategy. </p><p><h2>Related Reading:</h2><p><a href="http://www.scripintelligence.com/home/Tangled-in-the-web-of-mass-generic-consolidation-Let-Scrip-explain-359304" target="_new">Tangled in the web of mass generic consolidation? Let Scrip explain</a></p><p><a href="http://www.scripintelligence.com/home/Rejections-All-Around-Mylan-to-Teva-Perrigo-to-Mylan-357994" target="_new">Rejections All Around: Mylan to Teva, Perrigo to Mylan</a></p><p><a href="http://www.scripintelligence.com/home/Teva-defends-its-deal-plans-for-Mylan-358207" target="_new">Teva defends its deal plans for Mylan</a></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 25
+
+MA pushing up drug prices
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151007T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151007T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151007T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029255
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 27
+
+M&A pushing up drug prices?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359383
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a76fc400-f3ae-413f-a9b1-63761982c7dc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
