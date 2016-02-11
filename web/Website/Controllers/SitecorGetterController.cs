@@ -317,6 +317,26 @@ namespace Informa.Web.Controllers
 		}
 	}
 
+	[Route]
+	public class GetContentTypesController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		public GetContentTypesController(ISitecoreService service)
+		{
+			_sitecoreService = service;
+		}
+		// GET api/<controller>
+		public JsonResult<List<WordPluginModel.ItemStruct>> Get()
+		{
+			var publicationRootChildren = GetChildrenWithIDs("{CAAD10A6-51CF-41F4-B6CE-773C8CA94CB9}");
+			return Json(publicationRootChildren.Select(c => new WordPluginModel.ItemStruct() { Name = c.Key, ID = c.Value }).ToList());
+		}
+		public Dictionary<string, Guid> GetChildrenWithIDs(string pathOrId)
+		{
+			Item item = _sitecoreService.GetItem<Item>(pathOrId);
+			return item?.Children.ToArray().ToDictionary(child => child.DisplayName, child => child.ID.Guid);
+		}
+	}
 	//TODO: This might have bugs, and would need to fix it.
 	[Route]
 	public class GetWidthHeightOfMediaItemController : ApiController

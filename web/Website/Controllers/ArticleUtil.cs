@@ -391,13 +391,20 @@ namespace Informa.Web.Controllers
 				ArticleNumber = articleItem.Article_Number,
 				//TODO - Get article Publication
 				Publication = articleItem.Publication
-		};
+			};
 
-			//articleStruct.Label = articleItem.Label.ToString();
+			if (articleItem.Content_Type != null)
+			{
+				articleStruct.Label = articleItem.Content_Type._Id;
+			}
+
+			if (articleItem.Media_Type != null)
+			{
+				articleStruct.MediaType = articleItem.Media_Type._Id;
+			}
 			articleStruct.WebPublicationDate = articleItem.Planned_Publish_Date;
-			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;			
-			articleStruct.Embargoed = articleItem.Embargoed;
-			//articleStruct.MediaType = articleItem.Media_Type._Id;
+			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;
+			articleStruct.Embargoed = articleItem.Embargoed;			
 			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
 			articleStruct.Authors = authors.Select(r => new WordPluginModel.StaffStruct {ID = r._Id,Name = r.Last_Name + ", " + r.First_Name,}).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
@@ -419,7 +426,7 @@ namespace Informa.Web.Controllers
 			//articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
 
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
-			
+
 			if (articleItem.Word_Document != null)
 			{
 				var wordDocURL = articleItem.Word_Document.Url;
@@ -433,7 +440,7 @@ namespace Informa.Web.Controllers
 					articleStruct.WordDocLastUpdatedBy = wordDoc.Statistics.UpdatedBy;
 				}
 			}
-			
+
 			try
 			{
 				ISitecoreService service = new SitecoreContext(WebDb);
@@ -444,7 +451,7 @@ namespace Informa.Web.Controllers
 			{
 				articleStruct.IsPublished = false;
 			}
-			
+
 			return articleStruct;
 		}
 	}

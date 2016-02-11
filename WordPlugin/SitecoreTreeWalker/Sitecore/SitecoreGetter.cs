@@ -138,6 +138,16 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		public static List<WordPluginModel.ItemStruct> GetContentTypes()
+		{
+			using (var client = new HttpClient())
+			{
+				var response = client.GetAsync($"{webApiURL}GetContentTypes").Result;
+				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+				return mediaItem;
+			}
+		}
+
 		public static List<WordPluginModel.ArticleSize> GetArticleSizes(Guid publicationID)
 		{
 			using (var client = new HttpClient())
