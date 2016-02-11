@@ -37,7 +37,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AE348589
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{1E22B878-107D-452C-91B6-F02F8C7796E6}"
 	ProjectSection(SolutionItems) = preProject
+		config\env\default.properties = config\env\default.properties
+		config\env\dev.properties = config\env\dev.properties
 		config\env\local.properties = config\env\local.properties
+		config\env\local.properties.example = config\env\local.properties.example
+		config\env\prodCD.properties = config\env\prodCD.properties
+		config\env\prodCD2.properties = config\env\prodCD2.properties
+		config\env\prodCM.properties = config\env\prodCM.properties
+		config\env\stageCD.properties = config\env\stageCD.properties
+		config\env\stageCM.properties = config\env\stageCM.properties
+		config\env\uat.properties = config\env\uat.properties
 	EndProjectSection
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Informa.tds.master.content", "sitecore\Informa.tds.master.content\Informa.tds.master.content.scproj", "{1AD20906-6DB6-4FE5-872E-EA79ECFB3491}"
