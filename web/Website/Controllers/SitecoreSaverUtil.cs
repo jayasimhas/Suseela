@@ -217,7 +217,7 @@ namespace Informa.Web.Controllers
 		{
 			using (new SecurityDisabler())
 			{
-				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
+				
 				if (articleStruct.Subtitle != null) newArticle.Sub_Title = articleStruct.Subtitle;
 				if (articleStruct.Summary != null) newArticle.Summary = articleStruct.Summary;
 				if (!originalArticle.IsPublished || articleStruct.WebPublicationDate != originalArticle.Planned_Publish_Date)
@@ -251,8 +251,9 @@ namespace Informa.Web.Controllers
 				}
 
 				//TODO - Convert Label to dropdown or Single line text
-				//newArticle.Label = articleStruct.Label;
+				newArticle.Content_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.Label);
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
+				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
 				newArticle.Featured_Image_16_9 = new Image {MediaId = articleStruct.FeaturedImage};
 				newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;
 				newArticle.Featured_Image_Source = articleStruct.FeaturedImageSource;

@@ -30,7 +30,6 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.uxWebPublishTime = new System.Windows.Forms.DateTimePicker();
 			this.uxEmbargoed = new System.Windows.Forms.CheckBox();
@@ -48,6 +47,7 @@
 			this.uxMediaTypes = new System.Windows.Forms.ComboBox();
 			this.uxNotes = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.uxLabel = new System.Windows.Forms.ComboBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -65,13 +65,6 @@
 			this.label1.Size = new System.Drawing.Size(610, 30);
 			this.label1.TabIndex = 10;
 			this.label1.Paint += new System.Windows.Forms.PaintEventHandler(this.label1_Paint);
-			// 
-			// textBox2
-			// 
-			this.textBox2.Location = new System.Drawing.Point(81, 49);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(504, 22);
-			this.textBox2.TabIndex = 81;
 			// 
 			// label4
 			// 
@@ -230,6 +223,7 @@
 			// 
 			// uxMediaTypes
 			// 
+			this.uxMediaTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.uxMediaTypes.FormattingEnabled = true;
 			this.uxMediaTypes.Location = new System.Drawing.Point(142, 142);
 			this.uxMediaTypes.Name = "uxMediaTypes";
@@ -246,12 +240,12 @@
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.uxLabel);
 			this.groupBox2.Controls.Add(this.uxEmbargoed);
 			this.groupBox2.Controls.Add(this.uxWebPublishTime);
 			this.groupBox2.Controls.Add(this.label4);
 			this.groupBox2.Controls.Add(this.label2);
 			this.groupBox2.Controls.Add(this.uxMediaTypes);
-			this.groupBox2.Controls.Add(this.textBox2);
 			this.groupBox2.Controls.Add(this.uxWebPublishDate);
 			this.groupBox2.Controls.Add(this.label7);
 			this.groupBox2.Controls.Add(this.label11);
@@ -262,6 +256,17 @@
 			this.groupBox2.TabIndex = 81;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Article Information";
+			// 
+			// uxLabel
+			// 
+			this.uxLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxLabel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.uxLabel.FormattingEnabled = true;
+			this.uxLabel.Location = new System.Drawing.Point(81, 49);
+			this.uxLabel.Name = "uxLabel";
+			this.uxLabel.Size = new System.Drawing.Size(504, 21);
+			this.uxLabel.TabIndex = 82;
 			// 
 			// groupBox3
 			// 
@@ -314,9 +319,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox uxMediaTypes;
         private System.Windows.Forms.TextBox uxNotes;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.ComboBox uxLabel;
 	}
 }

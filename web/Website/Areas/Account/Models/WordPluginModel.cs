@@ -290,7 +290,7 @@ namespace Informa.Web.Areas.Account.Models
 			public Boolean Embargoed { get; set; }
 			public bool IsPublished { get; set; }
 
-			public string Label { get; set; }
+			public Guid Label { get; set; }
 			public Guid MediaType { get; set; }
 			public Guid FeaturedImage { get; set; }
 			public string FeaturedImageCaption { get; set; }

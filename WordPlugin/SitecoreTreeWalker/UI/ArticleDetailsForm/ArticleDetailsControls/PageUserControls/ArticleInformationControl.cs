@@ -405,6 +405,15 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			uxMediaTypes.ValueMember = "ID";
 		}
 
+		public void InitializeContentType()
+		{
+			List<Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct> contentTypes = SitecoreGetter.GetContentTypes();
+			contentTypes.Insert(0, new Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct { ID = Guid.Empty, Name = "Select Content Type" });
+			uxLabel.DataSource = contentTypes;
+			uxLabel.DisplayMember = "Name";
+			uxLabel.ValueMember = "ID";
+		}
+
 		public void LinkToParent(ArticleDetail parent)
 		{
 			_parent = parent;
@@ -470,6 +479,43 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public List<StaffStruct> GetSelectedAuthors()
 		{
 			return uxSelectedAuthors.Selected;
+		}
+
+		public string GetNotes()
+		{
+			return uxNotes.Text;
+		}
+
+		public Guid GetLabelGuid()
+		{
+			try
+			{
+				if (uxLabel.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				{
+					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxLabel.SelectedValue).ID;
+				}
+				return (Guid)uxLabel.SelectedValue;
+			}
+			catch
+			{
+				return Guid.Empty;
+			}
+		}
+
+		public Guid GetMediaTypeGuid()
+		{
+			try
+			{
+				if (uxMediaTypes.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				{
+					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxMediaTypes.SelectedValue).ID;
+				}
+				return (Guid)uxMediaTypes.SelectedValue;
+			}
+			catch
+			{
+				return Guid.Empty;
+			}
 		}
 
 		public List<StaffStruct> GetSelectedNotifyees()
@@ -546,6 +592,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			InitializePublications();
 			InitializeMediaType();
+			InitializeContentType();
 			SetCheckedOutStatus();
 			if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
 			{
@@ -566,6 +613,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			ArticleNumber = articleDetails.ArticleNumber;
 			uxEmbargoed.Checked = articleDetails.Embargoed;
 			uxMediaTypes.SelectedValue = articleDetails.MediaType;
+			uxLabel.SelectedValue = articleDetails.Label;
 			uxNotes.Text = articleDetails.NotesToEditorial;
 			CheckWordDocVersion(articleDetails);
 
@@ -698,6 +746,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			uxPublication.SelectedIndex = 0;			
 			SetPublicationTime(DateTime.Today, true);
 			uxMediaTypes.SelectedIndex = 0;
+			uxLabel.SelectedIndex = 0;
 			uxSelectedAuthors.Reset();
 			uxNotes.Text = string.Empty;
 			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
