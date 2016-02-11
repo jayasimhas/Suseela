@@ -647,15 +647,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Is_Sidebar_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					bool Is_Sidebar_Article  {get; set;}
 								/// <summary>
-					/// The Label field.
-					/// <para></para>
-					/// <para>Field Type: Droplink</para>		
-					/// <para>Field ID: 9db174e4-039b-41da-b9d0-4a3e05144255</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticleConstants.LabelFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Label  {get; set;}
-								/// <summary>
 					/// The Media Type field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
@@ -938,15 +929,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Is_Sidebar_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
 						bool Is_Sidebar_Article  {get; set;}
 										/// <summary>
-						/// The Label field.
-						/// <para></para>
-						/// <para>Field Type: Droplink</para>		
-						/// <para>Field ID: 9db174e4-039b-41da-b9d0-4a3e05144255</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticleConstants.LabelFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Label  {get; set;}
-										/// <summary>
 						/// The Media Type field.
 						/// <para></para>
 						/// <para>Field Type: Droplink</para>		
@@ -1186,11 +1168,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Is_Sidebar_ArticleFieldId = new ID("457eac4f-0113-491e-b931-6fe718b69f91");
 			public const string Is_Sidebar_ArticleFieldName = "Is Sidebar Article";
-
-						
-					
-			public static readonly ID LabelFieldId = new ID("9db174e4-039b-41da-b9d0-4a3e05144255");
-			public const string LabelFieldName = "Label";
 
 						
 					
