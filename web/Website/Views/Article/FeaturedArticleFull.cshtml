@@ -1,2 +1,6 @@
 ﻿@model FeaturedArticleViewModel
-@{ Html.RenderPartial("Components/ListableContentWide", Model); }
+<section class="article-preview article-preview--wide">
+    @{
+        @{ Html.RenderPartial("Components/_ArticleListContent", Model); }
+    }
+</section>

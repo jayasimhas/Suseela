@@ -880,6 +880,7 @@
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
+    <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
