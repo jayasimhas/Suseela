@@ -2,7 +2,7 @@
 version: 1
 id: {832554E5-EC9E-4747-8623-6770D36CAF32}
 database: master
-path: /sitecore/content/ScripIntelligence/Globals/Taxonomy/Content Types/News
+path: /sitecore/content/Environment Globals/Content Types/News
 parent: {CAAD10A6-51CF-41F4-B6CE-773C8CA94CB9}
 name: News
 master: {00000000-0000-0000-0000-000000000000}
