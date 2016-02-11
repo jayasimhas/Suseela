@@ -13,13 +13,13 @@ templatekey: Content Curation
 field: {97377948-ABEF-49B6-9199-ABD11C64FE20}
 name: Manually Curated Renderings
 key: manually curated renderings
-content-length: 38
+content-length: 116
 
-{C7E595D3-9F0C-41E0-890F-6D8C54B8EF40}
+{A94F54D2-AD2B-4921-82B3-5093C020674C}|{DA528FF7-F3EB-4A38-80EE-8FF3A8F6DE41}|{B835C69E-153A-49E1-96C4-F073E1B6A8E3}
 ----version----
 language: en
 version: 1
-revision: 5adf387f-2c3e-4519-866b-3041416ae32a
+revision: 4f3bace1-943b-45f5-9439-6a016c0b5753
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5adf387f-2c3e-4519-866b-3041416ae32a
+4f3bace1-943b-45f5-9439-6a016c0b5753
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160126T150618Z
+20160211T113611Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
