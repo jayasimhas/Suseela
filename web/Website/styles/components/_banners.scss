@@ -1,6 +1,6 @@
 .banner {
 	margin-bottom: 2rem;
-	
+
 	// By default, all banners are hidden.
 	// If banner not seen/dismissed, will be displayed when document ready.
 	overflow: hidden;
@@ -31,7 +31,7 @@
 		border-right: 0;
 		text-align: center;
 
-		b {
+		b, strong {
 			@include textMix('Roboto', 20px, 600);
 			margin-right: 8px;
 		}

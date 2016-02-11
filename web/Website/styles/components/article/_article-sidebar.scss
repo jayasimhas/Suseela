@@ -19,7 +19,14 @@
     &__date {
         @include textMix('Roboto', 1rem, 400);
         display: block;
+    }
+
+    &__byline {
         margin-bottom: 0.25rem;
+    }
+
+    &__date {
+        margin-bottom: 1rem;
     }
 
     &__read-more {
@@ -33,6 +40,12 @@
             line-height: 1rem;
             vertical-align: middle;
         }
+    }
+
+    p {
+        color: $color-zeus-black;
+        font-size: 1rem;
+        line-height: 1.75rem;
     }
 
     @include breakpoint('small') {

@@ -116,6 +116,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				Subtitle = metadataParser.Subtitle,
 				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
 				Authors = pageArticleInformationControl.GetSelectedAuthors().ToList(),
+				Label = pageArticleInformationControl.GetLabelGuid(),
+				MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
+				NotesToEditorial = pageArticleInformationControl.GetNotes(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
 				//TODO - Add taxonomy
 				Taxonomoy = null,
@@ -146,9 +149,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
 				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
 				Authors = pageArticleInformationControl.GetSelectedAuthors().ToList(),
+				Label = pageArticleInformationControl.GetLabelGuid(),
+				MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
+				NotesToEditorial = pageArticleInformationControl.GetNotes(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
 				//TODO - Get Taxonmoy
-                Taxonomoy = null,
+				Taxonomoy = null,
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),			
 				//TODO - Editorial Notes
                 //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),

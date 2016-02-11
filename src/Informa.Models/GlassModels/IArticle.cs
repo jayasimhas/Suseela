@@ -39,7 +39,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			//	.Select(tag => z.Service.GetItem<IGlassBase>(tag, true, true)).OfType<ISite_Root>().FirstOrDefault()?._Id));		
 		}
 	}
-     
+    
 	public class ArticleItem : IArticle
 	{
 		public Guid Publication => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");

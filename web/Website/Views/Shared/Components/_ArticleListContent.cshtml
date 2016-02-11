@@ -1,4 +1,4 @@
-﻿@model Informa.Web.ViewModels.IListableViewModel
+﻿@model FeaturedArticleViewModel
 
 @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
@@ -20,7 +20,7 @@
         @if (!string.IsNullOrEmpty(Model.LinkableText))
         {
             <li>
-                <h6>@string.Join(", ", Model.LinkableText)</h6>
+                <h6>@string.Join(", ", Model.Content_Type)</h6>
             </li>
         }
         @if (!string.IsNullOrEmpty(Model.ListableType))

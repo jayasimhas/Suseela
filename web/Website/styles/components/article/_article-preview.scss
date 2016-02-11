@@ -63,9 +63,10 @@
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
+        color: $informa-dark-gray;
         display: block;
         line-height: 18px;
-        color: $informa-dark-gray;
+        margin-bottom: 1rem;
     }
 
     &__ad {
@@ -83,9 +84,17 @@
     }
 
     &__tags {
+        width: 100%;
 
-        a:first-child {
-            padding-left: 0;
+        a {
+            max-width: 30%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            &:first-child {
+                padding-left: 0;
+            }
         }
     }
 
@@ -133,10 +142,6 @@
         .article-preview__image {
             width: 100%;
             float: none;
-        }
-
-        @include breakpoint('medium') {
-            width: calc(60% - 1rem);
         }
     }
 
@@ -250,67 +255,5 @@
     // Image floats left, but other content needs to stay within right "col"
     &__wrapper {
         margin-left: 388px;
-    }
-}
-
-.manually-curated-articles {
-    // Makes this element the source for absolutely positioning children elms
-    position: relative;
-    width: 100%;
-    clear: both;
-
-    &__main-well {
-        float: left;
-        width: calc(66.666% - 1rem);
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        .article-preview--small {
-            border-top: 2px solid $informa-light-gray-d;
-            padding-top: 6px;
-        }
-
-        @include breakpoint('medium') {
-            width: 100%;
-        }
-    }
-    &__right,
-    &__right--force-top {
-        float: right;
-        width: calc(33.333% - 1rem);
-    }
-
-    @include breakpoint('medium') {
-
-        &__right {
-            clear: both;
-            width: 50%;
-            float: left;
-        }
-        &__right--force-top {
-            // Bump this up to the top of the parent, flank main article preview
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: calc(40% - 1rem);
-
-            .article-preview--small {
-                width: 100%;
-            }
-        }
-    }
-
-    @include breakpoint('small') {
-        &__main-well .article-preview,
-        &__main-well .article-preview--small,
-        &__right--force-top,
-        &__right {
-            width: 100%;
-        }
-
-        &__right--force-top {
-            position: relative;
-        }
     }
 }
