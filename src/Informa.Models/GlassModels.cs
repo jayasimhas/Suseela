@@ -752,7 +752,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -779,7 +779,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -2962,6 +2962,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Schedule
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+ 	/// <summary>
+	/// ILandscape_Image Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Components/Landscape Image</para>	
+	/// <para>ID: 727a5674-9c6e-478e-bc04-327d8aa58278</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ILandscape_ImageConstants.TemplateIdString)]
+	public partial interface ILandscape_Image : IGlassBase 
+	{
+								/// <summary>
+					/// The Landscape Image field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 5daf7d5c-9820-4308-b80f-3567fa68e833</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILandscape_ImageConstants.Landscape_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Landscape_Image  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ILandscape_Image Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Components/Landscape Image</para>	
+		/// <para>ID: 727a5674-9c6e-478e-bc04-327d8aa58278</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ILandscape_Image__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Landscape Image field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: 5daf7d5c-9820-4308-b80f-3567fa68e833</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILandscape_ImageConstants.Landscape_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Landscape_Image  {get; set;}
+						}
+	
+	public static partial class ILandscape_ImageConstants{
+
+			public const string TemplateIdString = "727a5674-9c6e-478e-bc04-327d8aa58278";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Landscape Image";
+
+					
+			public static readonly ID Landscape_ImageFieldId = new ID("5daf7d5c-9820-4308-b80f-3567fa68e833");
+			public const string Landscape_ImageFieldName = "Landscape Image";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
@@ -3973,7 +4034,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.
