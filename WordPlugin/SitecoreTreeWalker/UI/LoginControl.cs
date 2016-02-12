@@ -118,20 +118,20 @@ namespace SitecoreTreeWalker.UI
 			return false;
 		}
 
-        /// <summary>
-        /// This function will set the environment for the user as per the Advance settings.
-        /// </summary>
-        private void SetUserEnvironment()
-        {
-            if (_reader.HasEditorEnvironment())
-            {
-                Constants.EDITOR_ENVIRONMENT_VALUE = _reader.GetEditorEnvironment();
-                Constants.EDITOR_ENVIRONMENT_SERVERURL = _reader.GetEditorEnvironmentServerUrl();
-                Constants.EDITOR_ENVIRONMENT_LOGINURL = _reader.GetEditorEnvironmentLoginUrl();
-                Constants.EDITOR_ENVIRONMENT_FORGOTPASSWORDLINK = _reader.GetEditorEnvironmentForgotPasswordLink();
-            }
+		/// <summary>
+		/// This function will set the environment for the user as per the Advance settings.
+		/// </summary>
+		private void SetUserEnvironment()
+		{
+			if (_reader.HasEditorEnvironment())
+			{
+				Constants.EDITOR_ENVIRONMENT_VALUE = _reader.GetEditorEnvironment();
+				Constants.EDITOR_ENVIRONMENT_SERVERURL = _reader.GetEditorEnvironmentServerUrl();
+				Constants.EDITOR_ENVIRONMENT_LOGINURL = _reader.GetEditorEnvironmentLoginUrl();
+				Constants.EDITOR_ENVIRONMENT_FORGOTPASSWORDLINK = _reader.GetEditorEnvironmentForgotPasswordLink();
+			}
 
-        }
+		}
 
 		/// <summary>
 		/// Tries to login using user credentials entered in username and password fields. If successful, 
@@ -141,7 +141,7 @@ namespace SitecoreTreeWalker.UI
 		{
 			try
 			{
-                SetUserEnvironment();
+				SetUserEnvironment();
 				Globals.SitecoreAddin.Log("LoginControl.TryToLogin: Attempting to login...");
 				var userStatus = Authenticate();
 				if (userStatus.LoginSuccessful)
@@ -157,8 +157,10 @@ namespace SitecoreTreeWalker.UI
 					}
 					else
 					{
-						Globals.SitecoreAddin.Log("LoginControl.TryToLogin: Saving the username...");
-						_reader.Write(uxUsername.Text);
+						//IIPP-330 - Fixing hidding of both the fields
+						_reader.Clear();
+						//Globals.SitecoreAddin.Log("LoginControl.TryToLogin: Saving the username...");
+						//_reader.Write(uxUsername.Text);
 					}
 					HideError();
 					HideLogin();
@@ -213,35 +215,38 @@ namespace SitecoreTreeWalker.UI
 
 		private void PopulateFields()
 		{
-			uxUsername.Text = _reader.GetUsername();
 			uxRememberPassword.Checked = (uxPassword.Text = _reader.GetPassword()) != null;
+			if (uxRememberPassword.Checked)
+			{
+				uxUsername.Text = _reader.GetUsername();
+			}
 		}
 
 		private void LoginControl_Load(object sender, EventArgs e)
 		{
-            uxVersionNumber.Text = GetRunningVersion().ToString();
+			uxVersionNumber.Text = GetRunningVersion().ToString();
 			//if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-			{				
+			{
 				uxVersionNumber.Text = Application.ProductVersion;
 			}
 			PopulateFields();
 		}
 
-        /// <summary>
-        /// This method gets the current running version of the Plugin
-        /// </summary>
-        /// <returns></returns>
-        private string GetRunningVersion()
-        {
-            try
-            {
-	            return Application.ProductVersion;
-            }
-            catch
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
+		/// <summary>
+		/// This method gets the current running version of the Plugin
+		/// </summary>
+		/// <returns></returns>
+		private string GetRunningVersion()
+		{
+			try
+			{
+				return Application.ProductVersion;
+			}
+			catch
+			{
+				return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+			}
+		}
 
 		private void uxUsername_KeyDown(object sender, KeyEventArgs e)
 		{
@@ -274,7 +279,7 @@ namespace SitecoreTreeWalker.UI
 
 		private void uxForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-            SetUserEnvironment();
+			SetUserEnvironment();
 			var forgotPasswordLink = Constants.EDITOR_ENVIRONMENT_FORGOTPASSWORDLINK;
 
 			if (!forgotPasswordLink.IsNullOrEmpty())
@@ -283,11 +288,11 @@ namespace SitecoreTreeWalker.UI
 			}
 		}
 
-        private void AdvancedSettingsLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var advancedSettingModal = new AdvancedSettings();
-            advancedSettingModal.StartPosition = FormStartPosition.CenterParent;
-            advancedSettingModal.ShowDialog();
-        }
+		private void AdvancedSettingsLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			var advancedSettingModal = new AdvancedSettings();
+			advancedSettingModal.StartPosition = FormStartPosition.CenterParent;
+			advancedSettingModal.ShowDialog();
+		}
 	}
 }
