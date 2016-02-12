@@ -221,6 +221,7 @@ namespace SitecoreTreeWalker.Util
 		{
 			var a = new XElement("a");
 			a.SetAttributeValue("href", hyperlink.Address);
+			a.SetAttributeValue("class", "article-link");
             a.Value = hyperlink.Range.Text;
 			return a;
 		}
