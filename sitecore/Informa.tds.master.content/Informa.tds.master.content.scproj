@@ -17370,6 +17370,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Local Components.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Login.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
