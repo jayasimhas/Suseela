@@ -1,4 +1,7 @@
-﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.ViewModels.HighlightViewModel>
+﻿@inherits CustomGlassView<HighlightViewModel>
 <div class="banner banner--highlights">
-	@Editable(Model.GlassModel, gm => gm.Highlight)
+	@if (Model.GlassModel != null)
+	{
+		@Editable(Model.GlassModel, gm => gm.Highlight)
+	}
 </div>
