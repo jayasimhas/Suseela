@@ -174,11 +174,12 @@
             bottom: 0;
             display: block;
             position: relative;
+            width: auto;
         }
 
         .article-metadata {
-            width: calc(100% - 384px);
             margin-bottom: 1rem;
+            width: calc(100% - 384px);
         }
 
         .article-preview__content-wrapper {

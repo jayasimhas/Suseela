@@ -49,7 +49,10 @@
         </li>
     </ul>
 
-    <hr class="footer__separator">
+    @if (Model.MenuOneLinks.Any() || Model.MenuTwoLinks.Any())
+    {
+        <hr class="footer__separator">
+    }
 
 	@if (Model.MenuOneLinks.Any())
 	{
@@ -75,7 +78,7 @@
 		</div>
 	}
 
-</div>                        
+</div>
 
 @helper RenderLinks(IEnumerable<Informa.Web.Models.IPageLink> pageLinks)
 {
