@@ -64,9 +64,13 @@ $('.js-register-submit').on('click', function validateUsername(e) {
 	});
 });
 
-$('.dismiss-button').on('click', function closeContainer(e) {
-	console.log($(e.srcElement));
-	console.log($(e.srcElement).data('target-element'));
+// Global dismiss button for pop-outs
+$('.dismiss-button').on('click', function(e) {
+	if (e.target !== this) {
+		this.click();
+    	return;
+	}
+	$($(e.srcElement).data('target-element')).removeClass('is-active');
 });
 
 // When a user submits a Forgot Password request, this will display the proper
@@ -88,7 +92,7 @@ var renderIframeComponents = function() {
 		var desktopEmbed = $(elm).find('.iframe-component__desktop');
 		var mobileEmbed = $(elm).find('.iframe-component__mobile')
 		var mobileEmbedLink = mobileEmbed.data('embed-link');
-		
+
 		if($(window).width() <= 480 && mobileEmbedLink) {
 			mobileEmbed.show();
 			desktopEmbed.hide();
