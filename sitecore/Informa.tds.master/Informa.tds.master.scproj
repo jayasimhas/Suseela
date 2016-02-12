@@ -5,11 +5,11 @@
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0707d4fe-c860-4127-bae4-463e673d4d69</ProjectGuid>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SourceWebPhysicalPath>..\..\web\Website</SourceWebPhysicalPath>
     <SourceWebProject>{efe15f11-b900-4515-a45e-5b817c483a36}|web\Website\Informa.Web.csproj</SourceWebProject>
     <SourceWebVirtualPath>/Informa.Web.csproj</SourceWebVirtualPath>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
     <SingleAssemblyName>Informa.tds.master</SingleAssemblyName>
