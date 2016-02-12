@@ -9,7 +9,7 @@
     <SourceWebPhysicalPath>..\..\web\Website</SourceWebPhysicalPath>
     <SourceWebProject>{efe15f11-b900-4515-a45e-5b817c483a36}|web\Website\Informa.Web.csproj</SourceWebProject>
     <SourceWebVirtualPath>/Informa.Web.csproj</SourceWebVirtualPath>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
     <UseMerge>true</UseMerge>
     <SingleAssemblyName>Informa.tds.core</SingleAssemblyName>
