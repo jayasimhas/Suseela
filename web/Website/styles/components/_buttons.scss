@@ -31,4 +31,9 @@
 			border-color: $informa-dark-orange;
 		}
 	}
+
+	&--gilded {
+		background-color: #fff;
+		border: 1px solid $color-goldenrod;
+	}
 }
