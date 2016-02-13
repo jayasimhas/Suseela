@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {3B91B663-7ECB-4964-9145-0F3DD02EA49B}
+id: {51BB12D8-8732-422C-9121-BE981836D2FC}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Shared Components/GeneralRTEComponent
+path: /sitecore/layout/Renderings/User Defined/Shared Components/Landscape Image
 parent: {C89B6A9F-E766-4320-BCB2-A9ECD153E4E6}
-name: GeneralRTEComponent
+name: Landscape Image
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
 templatekey: View rendering
@@ -13,9 +13,9 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 51
+content-length: 42
 
-/Views/Shared/Components/GeneralRTEComponent.cshtml
+/Views/Shared/Components//WideImage.cshtml
 ----field----
 field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
@@ -34,16 +34,16 @@ content-length: 20
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
 key: datasource template
-content-length: 63
+content-length: 59
 
-/sitecore/templates/User Defined/Components/GeneralRTEComponent
+/sitecore/templates/User Defined/Components/Landscape Image
 ----field----
 field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
 name: Compatible Renderings
 key: compatible renderings
-content-length: 38
+content-length: 194
 
-{3B91B663-7ECB-4964-9145-0F3DD02EA49B}
+{3B91B663-7ECB-4964-9145-0F3DD02EA49B}|{231A0FB2-657C-4A34-A8C9-BC490DEDAD1C}|{B302F679-C10E-4D17-B387-C06D275E9F78}|{9DCE5D27-9823-40F0-BBDE-28F8862318B5}|{B835C69E-153A-49E1-96C4-F073E1B6A8E3}
 ----field----
 field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
 name: Page Editor Buttons
@@ -54,7 +54,7 @@ content-length: 116
 ----version----
 language: en
 version: 1
-revision: ac7d0513-041c-49b9-9153-ae7466d06a7d
+revision: ec8458e2-cee8-4f12-b465-90a190557c45
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ac7d0513-041c-49b9-9153-ae7466d06a7d
+ec8458e2-cee8-4f12-b465-90a190557c45
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160213T171707Z
+20160213T171643Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
