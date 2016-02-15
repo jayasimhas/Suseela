@@ -922,6 +922,7 @@
     <Content Include="Views\Shared\Components\ContentListing\Container.cshtml" />
     <Content Include="Views\Shared\Components\ContentListing\Landscape.cshtml" />
     <Content Include="Views\Shared\Components\ContentListing\_Listing.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Portrait.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
