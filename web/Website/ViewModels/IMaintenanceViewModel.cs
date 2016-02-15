@@ -9,5 +9,6 @@ namespace Informa.Web.ViewModels
 		DateTime DisplayFrom { get; }
 		DateTime DisplayTo { get; }
 		bool Display { get; }
+		string Id { get; }
 	}
 }

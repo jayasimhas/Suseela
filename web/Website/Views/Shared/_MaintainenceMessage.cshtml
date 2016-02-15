@@ -1,7 +1,7 @@
 ﻿@inherits CustomGlassView<IMaintenanceViewModel>
 @if (Model.Display)
 {
-	<div class="banner banner--maintenance" data-banner-id="maint1234">
+	<div class="banner banner--maintenance" data-banner-id="@Model.Id">
 		<div class="banner__wrapper">
 			<div class="dismiss-button js-dismiss-banner">
 				<label>@Model.DismissText</label>
