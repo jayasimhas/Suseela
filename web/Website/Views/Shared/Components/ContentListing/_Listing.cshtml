@@ -1,6 +1,8 @@
-﻿<ul>
-	<li><p>Image</p></li>
-	<li><p>Title/Text/Heading [Headline]</p></li>
-	<li><p>Body [Promo Text]</p></li>
-	<li><p>Link</p></li>
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content.IContent
+<ul>
+	<li>@Html.Glass().Editable(x => x.Image)</li>
+	<li><h3>@Html.Glass().Editable(x => x.Title)</h3></li>
+	<li><div>@Html.Glass().Editable(x => x.Text)</div></li>
+	<li>@Html.Glass().Editable(x => x.Link)</li>
 </ul>
