@@ -1,8 +1,11 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
-@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content.IContent
+@model Informa.Web.ViewModels.ContentListing.ContentListingViewModel
 <ul>
-	<li>@Html.Glass().Editable(x => x.Image)</li>
-	<li><h3>@Html.Glass().Editable(x => x.Title)</h3></li>
-	<li><div>@Html.Glass().Editable(x => x.Text)</div></li>
-	<li>@Html.Glass().Editable(x => x.Link)</li>
+	@if (Model.DisplayImage)
+	{
+		<li>@Html.Glass().Editable(x => x.GlassModel.Image)</li>
+	}
+	<li><h3>@Html.Glass().Editable(x => x.GlassModel.Title)</h3></li>
+	<li><div>@Html.Glass().Editable(x => x.GlassModel.Text)</div></li>
+	<li>@Html.Glass().Editable(x => x.GlassModel.Link)</li>
 </ul>

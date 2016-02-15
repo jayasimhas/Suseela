@@ -16,10 +16,31 @@ key: path
 content-length: 56
 
 /Views/Shared/Components/ContentListing/Landscape.cshtml
+----field----
+field: {7D24E54F-5C16-4314-90C9-6051AA1A7DA1}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{41955FAE-8E87-4F0D-B0F5-598440A59357}
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 20
+
+./|/sitecore/content
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 56
+
+/sitecore/templates/User Defined/General Content/Content
 ----version----
 language: en
 version: 1
-revision: 3329f81e-91ad-45e6-b630-640a0d79a0c7
+revision: ca063643-1679-4411-83e9-6d2f85686e3b
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3329f81e-91ad-45e6-b630-640a0d79a0c7
+ca063643-1679-4411-83e9-6d2f85686e3b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160215T123304Z
+20160215T131429Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

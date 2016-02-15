@@ -2026,6 +2026,49 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// IContent_Listing_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Content Listing Options</para>	
+	/// <para>ID: 41955fae-8e87-4f0d-b0f5-598440a59357</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IContent_Listing_OptionsConstants.TemplateIdString)]
+	public partial interface IContent_Listing_Options : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options
+	{
+				}
+
+	
+		/// <summary>
+		/// IContent_Listing_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Content Listing Options</para>	
+		/// <para>ID: 41955fae-8e87-4f0d-b0f5-598440a59357</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IContent_Listing_Options__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options__Raw
+		{
+						}
+	
+	public static partial class IContent_Listing_OptionsConstants{
+
+			public const string TemplateIdString = "41955fae-8e87-4f0d-b0f5-598440a59357";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Content Listing Options";
+
+					
+			public static readonly ID Show_ImageFieldId = new ID("6914c8da-e0dc-49ae-9571-14fddb6d9011");
+			public const string Show_ImageFieldName = "Show Image";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
