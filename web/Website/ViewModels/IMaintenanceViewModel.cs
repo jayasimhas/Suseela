@@ -8,5 +8,6 @@ namespace Informa.Web.ViewModels
 		string DismissText { get; }
 		DateTime DisplayFrom { get; }
 		DateTime DisplayTo { get; }
+		bool Display { get; }
 	}
 }

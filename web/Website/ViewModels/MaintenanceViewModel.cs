@@ -23,5 +23,6 @@ namespace Informa.Web.ViewModels
 		public string DismissText => TextTranslator.Translate("Maintenance.MaintenanceDismiss");
 		public DateTime DisplayFrom => SiteMaintenanceContext.Info.From;
 		public DateTime DisplayTo => SiteMaintenanceContext.Info.To;
+		public bool Display => DisplayFrom <= DateTime.Now && DisplayTo >= DateTime.Now;
 	}
 }
