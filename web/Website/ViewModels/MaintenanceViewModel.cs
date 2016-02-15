@@ -2,6 +2,8 @@
 using Informa.Library.Site;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System;
+using System.Web;
+using System.Web.Mvc;
 
 namespace Informa.Web.ViewModels
 {
@@ -19,7 +21,7 @@ namespace Informa.Web.ViewModels
 			TextTranslator = textTranslator;
 		}
 
-		public string Message => SiteMaintenanceContext.Info.Message;
+		public IHtmlString Message => new MvcHtmlString(SiteMaintenanceContext.Info.Message);
 		public string DismissText => TextTranslator.Translate("Maintenance.MaintenanceDismiss");
 		public DateTime DisplayFrom => SiteMaintenanceContext.Info.From;
 		public DateTime DisplayTo => SiteMaintenanceContext.Info.To;

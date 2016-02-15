@@ -5089,7 +5089,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 								/// <summary>
 					/// The System Maintenance Text field.
 					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field Type: Rich Text</para>		
 					/// <para>Field ID: b1e96fe0-25a3-49a5-8941-927c708a93cf</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -5416,11 +5416,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 										/// <summary>
 						/// The System Maintenance Text field.
 						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field Type: Rich Text</para>		
 						/// <para>Field ID: b1e96fe0-25a3-49a5-8941-927c708a93cf</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string System_Maintenance_Text  {get; set;}
 										/// <summary>
 						/// The Supporting Documents Folder field.
@@ -5618,6 +5618,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID System_Maintenance_TextFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
 			public const string System_Maintenance_TextFieldName = "System Maintenance Text";
 
+							public static readonly ID System_Maintenance_Text__RawFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
+				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
 						
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
@@ -7570,6 +7572,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID System_Maintenance_TextFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
 			public const string System_Maintenance_TextFieldName = "System Maintenance Text";
 
+							public static readonly ID System_Maintenance_Text__RawFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
+				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
 						
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
