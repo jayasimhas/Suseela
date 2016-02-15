@@ -7983,6 +7983,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
+{
+
+
+ 	/// <summary>
+	/// IPage_Assets Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Page Assets</para>	
+	/// <para>ID: ebeb3ce7-6437-4f3f-8140-f5c9a552471f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPage_AssetsConstants.TemplateIdString)]
+	public partial interface IPage_Assets : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IPage_Assets Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Page Assets</para>	
+		/// <para>ID: ebeb3ce7-6437-4f3f-8140-f5c9a552471f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IPage_Assets__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IPage_AssetsConstants{
+
+			public const string TemplateIdString = "ebeb3ce7-6437-4f3f-8140-f5c9a552471f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Page Assets";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
