@@ -918,6 +918,9 @@
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Container.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Landscape.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\_Listing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

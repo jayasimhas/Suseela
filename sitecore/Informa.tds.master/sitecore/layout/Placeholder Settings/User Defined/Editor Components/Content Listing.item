@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {CB199CE9-0FE9-459F-9F34-D7EA1E5E31C0}
+id: {AED95890-EAD4-49A1-B305-6D45D80806CF}
 database: master
-path: /sitecore/layout/Placeholder Settings/User Defined/Editor Components/Left Curated Content
+path: /sitecore/layout/Placeholder Settings/User Defined/Editor Components/Content Listing
 parent: {F48C637B-281D-41D8-BACC-1F39184202FE}
-name: Left Curated Content
+name: Content Listing
 master: {00000000-0000-0000-0000-000000000000}
 template: {5C547D4E-7111-4995-95B0-6B561751BF2E}
 templatekey: Placeholder
@@ -13,20 +13,20 @@ templatekey: Placeholder
 field: {7256BDAB-1FD2-49DD-B205-CB4873D2917C}
 name: Placeholder Key
 key: placeholder key
-content-length: 20
+content-length: 22
 
-left-curated-content
+content-list-container
 ----field----
 field: {E391B526-D0C5-439D-803E-17512EAE6222}
 name: Allowed Controls
 key: allowed controls
-content-length: 233
+content-length: 38
 
-{A94F54D2-AD2B-4921-82B3-5093C020674C}|{AC9254EB-F8DB-4AF8-B491-7E2B0601AD43}|{DA528FF7-F3EB-4A38-80EE-8FF3A8F6DE41}|{9DCE5D27-9823-40F0-BBDE-28F8862318B5}|{51BB12D8-8732-422C-9121-BE981836D2FC}|{F2BCD25C-EDF3-4001-A7A9-E8F94E24D427}
+{DB007E1F-F5C9-4A05-8249-7F359AFA68EF}
 ----version----
 language: en
 version: 1
-revision: e6a2ec76-d1af-4151-aeec-9ee4ef0707f1
+revision: 0433bbc8-77c2-43ff-bdad-02e25fd5eb83
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160121T222853Z
+20160215T123340Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-e6a2ec76-d1af-4151-aeec-9ee4ef0707f1
+0433bbc8-77c2-43ff-bdad-02e25fd5eb83
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160215T123243Z
+20160215T123404Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
