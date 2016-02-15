@@ -34,9 +34,9 @@ content-length: 20
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
 key: datasource template
-content-length: 59
+content-length: 62
 
-/sitecore/templates/User Defined/Components/Landscape Image
+/sitecore/templates/User Defined/General Content/Content Image
 ----field----
 field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
 name: Compatible Renderings
@@ -54,7 +54,7 @@ content-length: 116
 ----version----
 language: en
 version: 1
-revision: 824d4d2e-2f72-4f93-871f-83e5782419cd
+revision: f1aeadac-629e-41c6-ab32-d122e4091cae
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-824d4d2e-2f72-4f93-871f-83e5782419cd
+f1aeadac-629e-41c6-ab32-d122e4091cae
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160215T121131Z
+20160215T124353Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

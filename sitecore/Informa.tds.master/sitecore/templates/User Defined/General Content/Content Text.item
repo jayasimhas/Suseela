@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {727A5674-9C6E-478E-BC04-327D8AA58278}
+id: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
 database: master
-path: /sitecore/templates/User Defined/Components/Landscape Image
-parent: {F22FF131-F725-4F14-B7DF-242A521485DC}
-name: Landscape Image
+path: /sitecore/templates/User Defined/General Content/Content Text
+parent: {6DBE6A98-F323-4B9C-8A67-0733D91A5306}
+name: Content Text
 master: {00000000-0000-0000-0000-000000000000}
 template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
 templatekey: Template
@@ -22,18 +22,18 @@ name: __Standard values
 key: __standard values
 content-length: 38
 
-{404DC29E-A569-4CE6-9415-BBD60DC7A760}
+{A6599F04-1869-4CA3-9748-EE504CA6BD62}
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 32
+content-length: 47
 
-Office/32x32/photo_landscape.png
+Office/32x32/document_orientation_landscape.png
 ----version----
 language: en
 version: 1
-revision: b82db622-1ba8-4a28-b887-96a53df83d13
+revision: 93b8ecec-0855-4d76-b4b6-a10a9b7a5b7f
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,7 +41,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160212T143257Z
+20160205T164429Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b82db622-1ba8-4a28-b887-96a53df83d13
+93b8ecec-0855-4d76-b4b6-a10a9b7a5b7f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160212T143524Z
+20160215T125043Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

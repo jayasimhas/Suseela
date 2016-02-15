@@ -1,26 +1,33 @@
 ----item----
 version: 1
-id: {59A95F7F-2415-4837-A99F-D2575A42C2B0}
+id: {404DC29E-A569-4CE6-9415-BBD60DC7A760}
 database: master
-path: /sitecore/templates/User Defined/Components/Landscape Image/Content
+path: /sitecore/templates/User Defined/General Content/Content Image/__Standard Values
 parent: {727A5674-9C6E-478E-BC04-327D8AA58278}
-name: Content
+name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {E269FBB5-3750-427A-9149-7AA950B49301}
-templatekey: Template section
+template: {727A5674-9C6E-478E-BC04-327D8AA58278}
+templatekey: Content Image
 
 ----version----
 language: en
 version: 1
-revision: 18378e97-b0a8-4d07-a3a5-ab165af7eb26
+revision: 07f3caf4-8050-499b-a7d7-b17f01b13625
 
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160212T143329Z
+20160212T143332Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-18378e97-b0a8-4d07-a3a5-ab165af7eb26
+07f3caf4-8050-499b-a7d7-b17f01b13625
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160212T143526Z
+20160212T143332Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

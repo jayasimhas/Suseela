@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {2E8E4564-45B7-45AB-830C-5069F312C6E8}
+id: {6DBE6A98-F323-4B9C-8A67-0733D91A5306}
 database: master
-path: /sitecore/templates/User Defined/Components/GeneralRTEComponent/RTESection
-parent: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
-name: RTESection
+path: /sitecore/templates/User Defined/General Content
+parent: {B29EE504-861C-492F-95A3-0D890B6FCA09}
+name: General Content
 master: {00000000-0000-0000-0000-000000000000}
-template: {E269FBB5-3750-427A-9149-7AA950B49301}
-templatekey: Template section
+template: {0437FEE2-44C9-46A6-ABE9-28858D9FEE8C}
+templatekey: Template Folder
 
 ----version----
 language: en
 version: 1
-revision: f187525e-32db-4ab0-93b4-8eda5470d0b5
+revision: 4fee0a44-665c-4a60-92fa-43948ffb307e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -20,7 +20,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160205T175712Z
+20160215T124327Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f187525e-32db-4ab0-93b4-8eda5470d0b5
+4fee0a44-665c-4a60-92fa-43948ffb307e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160205T175712Z
+20160215T124345Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
