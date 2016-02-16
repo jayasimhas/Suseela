@@ -10,15 +10,10 @@ namespace Informa.Library.Search.ComputedFields.Base
     {
         public override object GetFieldValue(Item indexItem)
         {
-            IGlassBase glassItem = indexItem.GlassCast<IGlassBase>(inferType: true);
 
-            I___BasePage page = glassItem as I___BasePage;
+            if (!indexItem.Paths.Path.StartsWith("/sitecore/content")) return false;
 
-            if (page == null) return false;
-
-            if (!glassItem._Path.StartsWith("/sitecore/content")) return false;
-
-            return page.Include_In_Search;
+            return indexItem[I___BasePageConstants.Include_In_SearchFieldName] == "1";
         }
     }
 }

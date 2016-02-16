@@ -10,6 +10,9 @@ namespace Informa.Library.Search.PredicateBuilders
 {
     public class InformaPredicateBuilder<T> : SearchPredicateBuilder<T> where T : InformaSearchResultItem
     {
+        public DateTime DateRangeStart { get; set; }
+        public DateTime DateRangeEnd { get; set; }
+
         public InformaPredicateBuilder(ISearchPageParser pageParser, ISearchRequest request = null)
             : base(pageParser, request)
         {
@@ -21,6 +24,14 @@ namespace Informa.Library.Search.PredicateBuilders
 
             predicate = predicate.And(x => x.IsSearchable);
             predicate = predicate.And(x => x.IsLatestVersion);
+
+            //Date Searching
+            if (DateRangeStart > DateTime.MinValue)
+            {
+                predicate = predicate.And(x => x.SearchDate > DateRangeStart);
+                DateRangeEnd = DateRangeEnd != DateTime.MinValue ? DateRangeEnd : DateTime.Now;
+                predicate = predicate.And(x => x.SearchDate < DateRangeEnd);
+            }
 
             return predicate;
         }
