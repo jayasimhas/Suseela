@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Informa.Library.Search.ComputedFields.SearchResults;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter;
 using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Converters;
 using Sitecore.ContentSearch.SearchTypes;
 
 namespace Informa.Library.Search.Results
@@ -44,5 +48,12 @@ namespace Informa.Library.Search.Results
         [IndexField("searchsummary_s")]
         [DataMember]
         public string Summary { get; set; }
+
+        [TypeConverter(typeof(HtmlLinkListTypeConverter))]
+        [IndexField("searchdisplaytaxonomy_s")]
+        [DataMember]
+        public HtmlLinkList SearchDisplayTaxonomy { get; set; }
     }
+
+
 }
