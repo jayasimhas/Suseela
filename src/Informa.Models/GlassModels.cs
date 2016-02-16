@@ -4367,6 +4367,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content
+{
+
+
+ 	/// <summary>
+	/// IContent_Quote Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/General Content/Content Quote</para>	
+	/// <para>ID: 936976d6-533f-4db1-be06-1b840e33a346</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IContent_QuoteConstants.TemplateIdString)]
+	public partial interface IContent_Quote : IGlassBase 
+	{
+								/// <summary>
+					/// The Quote field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4ddaa80c-5033-42ec-a315-685f03c6918e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IContent_QuoteConstants.QuoteFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Quote  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IContent_Quote Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/General Content/Content Quote</para>	
+		/// <para>ID: 936976d6-533f-4db1-be06-1b840e33a346</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IContent_Quote__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Quote field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 4ddaa80c-5033-42ec-a315-685f03c6918e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IContent_QuoteConstants.QuoteFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Quote  {get; set;}
+						}
+	
+	public static partial class IContent_QuoteConstants{
+
+			public const string TemplateIdString = "936976d6-533f-4db1-be06-1b840e33a346";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Content Quote";
+
+					
+			public static readonly ID QuoteFieldId = new ID("4ddaa80c-5033-42ec-a315-685f03c6918e");
+			public const string QuoteFieldName = "Quote";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 {
 
