@@ -41,7 +41,7 @@
     </h1>
 
     <span class="article-preview__byline">
-        by @string.Join(",", Model.ListableAuthors?.Select(x => x.LinkableText))
+        by @string.Join(", ", Model.ListableAuthors?.Select(x => x.LinkableText))
     </span>
 
     <div class="article-summary">
