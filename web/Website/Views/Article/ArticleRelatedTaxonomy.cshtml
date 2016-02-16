@@ -1,21 +1,23 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Web.ViewModels.HierarchyLinksViewModel
 
-<div class="article-topics">
-    <h2>Topics</h2>
-    <ul>
-        @foreach (var catagory in Model.Children)
-        {
-            <li class="article-topics__section-header">@catagory.Text</li>
-            foreach (var tag in catagory.Children)
+@if (Model.Children.Any())
+{
+    <div class="article-topics">
+        <h2>Topics</h2>
+        <ul>
+            @foreach (var catagory in Model.Children)
             {
-                <li class="article-topics__li"><a href="@tag.Url">@tag.Text</a></li>
-                foreach (var childTag in tag.Children)
-                 {
-                     Html.RenderPartial("ChildTaxonomy", childTag);
-                 }
+                <li class="article-topics__section-header">@catagory.Text</li>
+                foreach (var tag in catagory.Children)
+                {
+                    <li class="article-topics__li"><a href="@tag.Url">@tag.Text</a></li>
+                    foreach (var childTag in tag.Children)
+                    {
+                        Html.RenderPartial("ChildTaxonomy", childTag);
+                    }
+                }
             }
-        }
 
             @*<li class="article-topics__li"><a href="#">Biosimilars</a></li>
         <ul>
@@ -34,5 +36,6 @@
             </ul>
         </ul>
         <li class="article-topics__li"><a href="#">Respiratory</a></li>*@
-    </ul>
-</div>
+        </ul>
+    </div>
+}
