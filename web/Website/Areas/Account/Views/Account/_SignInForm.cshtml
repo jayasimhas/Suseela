@@ -1,0 +1,65 @@
+@model Informa.Web.ViewModels.ISignInViewModel
+<div class="pop-out__form-error">
+    @Model.SignInInvalidText
+</div>
+          
+     @using (Html.BeginForm("Login", "Account", FormMethod.Post, new {id = "signInForm", @class = "header__logout-form"}))
+     {
+         @*@Html.AntiForgeryToken()*@
+        <input type="hidden" name="fhController" value="Account" />
+        <input type="hidden" name="fhAction" value="Login" />
+
+         @Html.TextBoxFor(m => m.Email, new {@class = "inf-standard-form-field header__hover-input", placeholder = @Model.EmailPlaceholderText })    
+        @Html.PasswordFor(m => m.Password, new { @class = "inf-standard-form-field header__hover-input", placeholder = @Model.PasswordPlaceholderText })
+
+        <input class="inf-standard-form-field header__hover-input"
+               placeholder="@Model.PasswordPlaceholderText"
+               type="password">
+
+        <div class="pop-out__form-actions-wrapper">
+            <div>
+                <a class="pop-out__form-actions" href="#">@Model.ForgotPasswordLinkText</a>
+                @*<a class="pop-out__form-actions" href="#">Register now</a>*@
+                <div class="pop-out__form-actions--remember-me">@Html.CheckBoxFor(m => m.RememberMe)@Model.RememberMeText</div>
+            </div>
+            <div class="sign-in__submit-wrapper">
+               
+                <a href="javascript:document.getElementById('signInForm').submit()">@Model.SignInButtonText</a>
+                @*<input class="button--filled sign-in__submit" value="@Model.SignInButtonText" type="submit" id="signInForm">*@
+            </div>
+        </div>
+
+         @*<div class="header__my-account">
+             <svg class="header__icons icon-my-account">
+                 <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+             </svg>
+             @Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new {area = "Account"}, htmlAttributes: new {title = "Manage"})
+         </div>
+         <div class="header__sign-in-out">
+             <svg class="header__icons icon-sign-out">
+                 <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+             </svg>
+             <a href="javascript:document.getElementById('logoutForm').submit()">@Model.SignOutLinkText</a>
+         </div>*@
+     }
+
+
+<div class="pop-out__forgot-password">
+    <h5>Forgot your password?</h5>
+    <p class="pop-out__details">
+        @Model.ForgotPasswordHelpText
+    </p>
+    <input  class="inf-standard-form-field"
+            type="text"
+            placeholder="@Model.EmailPlaceholderText">
+    <div class="pop-out__form-actions-wrapper">
+        <div></div>
+        <div class="sign-in__submit-wrapper">
+            <button class="button--filled sign-in__submit">@Model.ForgotPasswordButtonText</button>
+        </div>
+    </div>
+    <p class="pop-out__details pop-out__details--inset u-italic u-centered">
+        @Model.ForgotPasswordContactText
+    </p>
+
+</div>

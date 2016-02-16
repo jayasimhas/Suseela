@@ -1,4 +1,5 @@
 ﻿@model MainLayoutViewModel
+@using Informa.Library.Utilities.References
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +60,8 @@
 
         @* * *  POP-OUT TEMPLATE MARKUP *@
 
-		@{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
+        
+        @Html.Sitecore().Rendering(RenderingReferences.Instance.LoginPopout.ToString())
 		@{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
 		@{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
 
