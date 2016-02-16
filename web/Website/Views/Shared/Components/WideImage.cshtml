@@ -1,4 +1,6 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
-@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.ILandscape_Image
 
-<h1>@Html.Glass().RenderImage(i => i.Title)</h1>
+<div class="GeneralRTEComponent">
+    @Html.Glass().Editable(x => x.Landscape_Image)
+</div>                                            

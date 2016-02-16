@@ -17,6 +17,7 @@ namespace Informa.Web.ViewModels
         IEnumerable<IPersonModel> Authors { get; }
         string Category { get; }     
         IEnumerable<IListable> RelatedArticles { get; }  
+        IEnumerable<ILinkable> KeyDocuments { get; }
         
     }
 }
