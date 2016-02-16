@@ -752,7 +752,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -779,7 +779,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -4198,7 +4198,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.
@@ -4360,6 +4360,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					
 			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
 			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content
+{
+
+
+ 	/// <summary>
+	/// IContent_Quote Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/General Content/Content Quote</para>	
+	/// <para>ID: 936976d6-533f-4db1-be06-1b840e33a346</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IContent_QuoteConstants.TemplateIdString)]
+	public partial interface IContent_Quote : IGlassBase 
+	{
+								/// <summary>
+					/// The Quote field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4ddaa80c-5033-42ec-a315-685f03c6918e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IContent_QuoteConstants.QuoteFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Quote  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IContent_Quote Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/General Content/Content Quote</para>	
+		/// <para>ID: 936976d6-533f-4db1-be06-1b840e33a346</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IContent_Quote__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Quote field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 4ddaa80c-5033-42ec-a315-685f03c6918e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IContent_QuoteConstants.QuoteFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Quote  {get; set;}
+						}
+	
+	public static partial class IContent_QuoteConstants{
+
+			public const string TemplateIdString = "936976d6-533f-4db1-be06-1b840e33a346";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Content Quote";
+
+					
+			public static readonly ID QuoteFieldId = new ID("4ddaa80c-5033-42ec-a315-685f03c6918e");
+			public const string QuoteFieldName = "Quote";
 
 						
 			
@@ -6519,6 +6580,49 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Default Article Category Style Mapping";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// IPromotional_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Promotional Options</para>	
+	/// <para>ID: bc8bbb26-9d07-441f-bf09-b533af03b191</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPromotional_OptionsConstants.TemplateIdString)]
+	public partial interface IPromotional_Options : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options
+	{
+				}
+
+	
+		/// <summary>
+		/// IPromotional_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Promotional Options</para>	
+		/// <para>ID: bc8bbb26-9d07-441f-bf09-b533af03b191</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IPromotional_Options__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates.IShow_Image_Options__Raw
+		{
+						}
+	
+	public static partial class IPromotional_OptionsConstants{
+
+			public const string TemplateIdString = "bc8bbb26-9d07-441f-bf09-b533af03b191";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Promotional Options";
+
+					
+			public static readonly ID Show_ImageFieldId = new ID("6914c8da-e0dc-49ae-9571-14fddb6d9011");
+			public const string Show_ImageFieldName = "Show Image";
+
+						
 			
 
 	}
