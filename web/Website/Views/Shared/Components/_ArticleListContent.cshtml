@@ -1,5 +1,4 @@
 ﻿@model FeaturedArticleViewModel
-
 @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
     <img class="article-preview__image" src="@Model.ListableImage">
@@ -29,16 +28,15 @@
                 <svg class="article-metadata__media-type">
                     <use xlink:href="/dist/img/svg-sprite.svg#@Model.ListableType"></use>
                 </svg>
-                @* * *  END ARTICLE MEDIA TYPE *@
             </li>
         }
     </ul>
 </div>
 
-<div class="article-preview__inner-wrapper">
-    <h1 class="article-preview__headline">
+<div class="topic-featured-article__inner-wrapper">
+    <h3 class="topic-featured-article__headline">
         <a href="@Model.LinkableUrl">@Model.ListableTitle</a>
-    </h1>
+    </h3>
 
     <span class="article-preview__byline">
         by @string.Join(",", Model.ListableAuthors?.Select(x => x.LinkableText))
