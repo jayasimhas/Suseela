@@ -561,6 +561,10 @@ SearchModule.controller('searchMetaController', _ControllersMetaController.MetaC
 SearchModule.controller('searchPaginationController', _ControllersPaginationController.PaginationController);
 SearchModule.controller('searchSortController', _ControllersSortController.SortController);
 
+    SearchModule.controller("InformaFacetsController", function ($scope,$controller, $location, $http, searchService, searchBootstrapper) {
+    $controller('searchFacetsController', { $scope: $scope, $location: $location, $http: $http, searchService: searchService, searchBootstrapper: searchBootstrapper }); //This works
+});
+
 // Configure the search service
 SearchModule.config(function (searchServiceProvider) {
 	searchServiceProvider.setFilters(defaultFilters);
