@@ -1,0 +1,11 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Web.ViewModels.ContentListing.ContentListingViewModel
+<ul>
+	@if (Model.DisplayImage)
+	{
+		<li>@Html.Glass().Editable(x => x.GlassModel.Image)</li>
+	}
+	<li><h3>@Html.Glass().Editable(x => x.GlassModel.Title)</h3></li>
+	<li><div>@Html.Glass().Editable(x => x.GlassModel.Text)</div></li>
+	<li>@Html.Glass().Editable(x => x.GlassModel.Link)</li>
+</ul>

@@ -23,12 +23,19 @@ namespace Informa.Library.Site
 			get
 			{
 				var siteRoot = SiteRootContext.Item;
+				var from = siteRoot?.System_Maintenance_Start_Date ?? default(DateTime);
+				var to = siteRoot?.System_Maintenance_End_Date ?? default(DateTime);
+				var message = siteRoot.System_Maintenance_Text ?? TextTranslator.Translate(DefaultMessageKey);
+				var id = string.Concat(from.ToString("yyyyMMddHHmmss"), to.ToString("yyyyMMddHHmmss"));
+				var show = from == default(DateTime) && to == default(DateTime) ? false : from <= DateTime.Now && to >= DateTime.Now;
 
 				return new SiteMaintenanceInfo
 				{
-					From = siteRoot == null ? default(DateTime) : siteRoot.System_Maintenance_Start_Date,
-					To = siteRoot == null ? default(DateTime) : siteRoot.System_Maintenance_End_Date,
-					Message = siteRoot == null ? TextTranslator.Translate(DefaultMessageKey) : siteRoot.System_Maintenance_Text
+					From = from,
+					To = to,
+					Message = message,
+					Id = id,
+					Show = show
 				};
 			}
 		}

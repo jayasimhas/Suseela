@@ -2,9 +2,9 @@
 version: 1
 id: {5DAF7D5C-9820-4308-B80F-3567FA68E833}
 database: master
-path: /sitecore/templates/User Defined/Components/Landscape Image/Content/Landscape Image
+path: /sitecore/templates/User Defined/General Content/Content Image/Content/Image
 parent: {59A95F7F-2415-4837-A99F-D2575A42C2B0}
-name: Landscape Image
+name: Image
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-100
+130
 ----version----
 language: en
 version: 1
-revision: b46a7e63-f627-4348-8217-4be5a0442303
+revision: b0f09b00-e83f-4545-ba70-18180bf25b11
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b46a7e63-f627-4348-8217-4be5a0442303
+b0f09b00-e83f-4545-ba70-18180bf25b11
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160212T143526Z
+20160215T133358Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

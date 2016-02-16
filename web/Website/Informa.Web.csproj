@@ -631,6 +631,7 @@
     <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
     <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\ContentListing\ContentListingViewModel.cs" />
     <Compile Include="ViewModels\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
     <Compile Include="ViewModels\IArticleListItemModelFactory.cs" />
@@ -876,6 +877,9 @@
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
+    <Content Include="App_Config\Include\UserDefined\Content.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -914,7 +918,11 @@
     <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
-    <Content Include="Views\Shared\Components\WideImage.cshtml" />
+    <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Container.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Landscape.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\_Listing.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Portrait.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
