@@ -86,6 +86,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Velir.Search.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Velir.Search.Models.1.2.0\lib\net45\Velir.Search.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AncestorDataMapper.cs" />
@@ -104,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="App_Config\Include\Jabberwocky.Glass.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
