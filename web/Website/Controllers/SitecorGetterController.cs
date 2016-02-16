@@ -453,7 +453,7 @@ namespace Informa.Web.Controllers
 		public JsonResult<string[]> Get()
 		{
 			List<string> result = new List<string>();
-			var siteConfigItem = _sitecoreService.GetItem<ISite_Config>("{BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}");
+			var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
 			if (siteConfigItem == null) return Json(result.ToArray());
 			var supportingDocumentFieldValue = siteConfigItem.Supporting_Documents_Folder;
 			if (supportingDocumentFieldValue == new Guid()) return Json(result.ToArray());
