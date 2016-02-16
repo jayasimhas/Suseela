@@ -624,6 +624,7 @@
     <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
     <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\PromotionalViewModel.cs" />
     <Compile Include="ViewModels\ContentListing\ContentListingViewModel.cs" />
     <Compile Include="ViewModels\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
@@ -924,6 +925,7 @@
     <Content Include="Views\Shared\Components\ContentListing\_Listing.cshtml" />
     <Content Include="Views\Shared\Components\ContentListing\Portrait.cshtml" />
     <Content Include="Views\Shared\Components\PullQuote.cshtml" />
+    <Content Include="Views\Shared\Components\Promotional.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
