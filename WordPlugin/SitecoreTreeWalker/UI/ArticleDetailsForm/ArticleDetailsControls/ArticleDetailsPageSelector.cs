@@ -185,6 +185,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			return pageArticleInformationControl.GetSelectedPublicationGuid();
 		}
 
+		public int GetTaxonomyCount()
+		{
+			return pageTaxonomyControl.TabController.GetSelected().ToList().Count;
+		}
+
 		public DateTime GetDate()
 		{
 			return pageArticleInformationControl.GetWebPublishDate();
