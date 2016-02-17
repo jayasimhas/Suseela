@@ -26,7 +26,7 @@ content-length: 483
 ----version----
 language: en
 version: 1
-revision: 8509dee7-f980-4cfe-9245-00117e74e53c
+revision: 93e9a914-208e-4463-a0ca-4d0e61a0b58b
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -49,6 +49,13 @@ key: navigation title
 content-length: 5
 
 $name
+----field----
+field: {F2B6EE8B-D5E1-49AE-92F0-BC966269B300}
+name: Include In Search
+key: include in search
+content-length: 1
+
+1
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -76,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-8509dee7-f980-4cfe-9245-00117e74e53c
+93e9a914-208e-4463-a0ca-4d0e61a0b58b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151218T015204Z
+20160210T191822Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
