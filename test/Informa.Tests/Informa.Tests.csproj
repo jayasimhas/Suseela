@@ -88,6 +88,7 @@
     <None Include="app.config.template">
       <SubType>Designer</SubType>
     </None>
+    <None Include="App_Config\Include\Jabberwocky.Glass.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
