@@ -58,8 +58,7 @@
               </crawler>
             </locations>
           </index>
-          </index>
-				
+        
 					<index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
