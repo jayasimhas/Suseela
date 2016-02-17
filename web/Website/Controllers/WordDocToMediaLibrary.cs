@@ -25,7 +25,8 @@ namespace Informa.Web.Controllers
 
 		public MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension)
 		{
-			Guid publicationGuid = article.Publication;
+			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
+			Guid publicationGuid = articleItem.Publication;
 			var articleDate = article.Planned_Publish_Date > DateTime.MinValue ? article.Planned_Publish_Date : article.Created_Date;
 			var itemFolder = GetMediaFolder(publicationGuid, articleDate);
 			var path = itemFolder._Path;
