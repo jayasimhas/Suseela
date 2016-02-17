@@ -1,4 +1,4 @@
-﻿@model Informa.Web.ViewModels.IListableViewModel
+﻿@model FeaturedArticleViewModel
 
 @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
@@ -17,10 +17,10 @@
         <li>
             <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
         </li>
-        @if (!string.IsNullOrEmpty(Model.LinkableText))
+        @if (!string.IsNullOrEmpty(Model.Content_Type))
         {
             <li>
-                <h6>@string.Join(", ", Model.LinkableText)</h6>
+                <h6>@string.Join(", ", Model.Content_Type)</h6>
             </li>
         }
         @if (!string.IsNullOrEmpty(Model.ListableType))
@@ -29,7 +29,6 @@
                 <svg class="article-metadata__media-type">
                     <use xlink:href="/dist/img/svg-sprite.svg#@Model.ListableType"></use>
                 </svg>
-                @* * *  END ARTICLE MEDIA TYPE *@
             </li>
         }
     </ul>
