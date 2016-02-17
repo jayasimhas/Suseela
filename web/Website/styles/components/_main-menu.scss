@@ -43,12 +43,19 @@ $main-menu-handle-width: 70px;
 	}
 
 	&__section-title {
+		color: $color-zeus-black;
 		cursor: pointer;
-		padding-left: 1.5rem;
-		text-transform: uppercase;
 		font-weight: 600;
 		letter-spacing: 1.2px;
+		padding-left: 1.5rem;
+		text-transform: uppercase;
 		width: 100%;
+
+		a {
+			@include on-event(true) {
+				@extend .u-inherit-text-color;
+			}
+		}
 	}
 	&__arrow-icon {
 		@include svg-fill($informa-dark-gray);
@@ -60,7 +67,11 @@ $main-menu-handle-width: 70px;
 
 	&__section-link {
 		margin: 0;
-		color: $informa-mid-gray;
+		color: $color-dusty-gray;
+
+		@include on-event(true) {
+			@extend .u-inherit-text-color;
+		}
 	}
 
 	&__section-wrapper {
@@ -94,7 +105,7 @@ $main-menu-handle-width: 70px;
 
 // Toggle menu section link visibility on-click
 .main-menu__section-title.is-active {
-	
+
 	// For some reason, this is required for the transform to render properly
 	// on iOS (and potentially other mobile browsers). Dumb.
 	-webkit-perspective: 500px;
