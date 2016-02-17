@@ -44,9 +44,9 @@
         text-transform: uppercase;
     }
     &__bookmarker-label {
-        // @include breakpoint('medium') {
+        @include breakpoint('medium') {
             display: none;
-        // }
+        }
     }
 
     &__category {
@@ -131,17 +131,6 @@
         clear: both;
         content: "";
         display: block;
-    }
-
-    // * * * * *
-    // Featured Article (2/3, manually curated container)
-    // IIPP-72
-
-    &--featured {
-        .article-preview__image {
-            width: 100%;
-            float: none;
-        }
     }
 
     // .latest-news previews need a wrapper for all content besides the image
