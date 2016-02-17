@@ -3,15 +3,15 @@
     <div class="pop-out__tab"></div>
     <div class="pop-out__internal">
         <div class="pop-out__sign-in">
-            <div class="dismiss-button">
+            <div class="dismiss-button" data-target-element=".js-pop-out__sign-in">
                 <svg class="dismiss-button__icon">
                     <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
                 </svg>
             </div>
-            <h4 class="pop-out__header">
+            <h3 class="pop-out__register-header">
                 @Model.SignInButtonText
-            </h4>
+            </h3>
             @{ Html.RenderPartial("Login", Model); }
         </div>
     </div>
-</div>
+</div>                                                                                        

@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {BD6A0FD0-1B33-4410-A044-B6BE00E342C3}
+id: {7A0B4F46-A4A9-4A2B-A45E-5AF282A4BE3F}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Globals/Login Rendering
+path: /sitecore/layout/Renderings/User Defined/Globals/Register
 parent: {17FB15BC-6DD7-4D86-8A9F-6CA96F567BF0}
-name: Login Rendering
+name: Register
 master: {00000000-0000-0000-0000-000000000000}
 template: {2A3E91A0-7987-44B5-AB34-35C2D9DE83B9}
 templatekey: Controller rendering
@@ -20,9 +20,9 @@ Account
 field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
 name: Controller Action
 key: controller action
-content-length: 5
+content-length: 8
 
-Login
+Register
 ----field----
 field: {FC5C3451-DFDE-4778-9901-5D0B1DA1E212}
 name: Area
@@ -47,7 +47,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: d075454e-695b-48d8-9f00-135750599735
+revision: fde5cbfc-1b6c-4549-b227-9bf6a64ad969
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -62,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d075454e-695b-48d8-9f00-135750599735
+fde5cbfc-1b6c-4549-b227-9bf6a64ad969
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160208T173519Z
+20160205T060049Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

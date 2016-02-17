@@ -733,7 +733,7 @@
     <Content Include="Areas\Account\Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Areas\Account\Views\Account\ForgotPassword.cshtml" />
     <Content Include="Areas\Account\Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Areas\Account\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Account\Views\Auth\Login.cshtml" />
     <Content Include="Areas\Account\Views\Account\Register.cshtml" />
     <Content Include="Areas\Account\Views\Account\ResetPassword.cshtml" />
     <Content Include="Areas\Account\Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -890,7 +890,6 @@
     <Content Include="Views\Frontend\Template.cshtml" />
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\Frontend\Listing.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\Global\ContentListItem.cshtml" />
     <Content Include="Views\Article\ArticlePrologue.cshtml" />
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
@@ -945,6 +944,8 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Areas\Account\Views\Account\SignIn.cshtml" />
+    <Content Include="Areas\Account\Views\Account\_SignInForm.cshtml" />
+    <Content Include="Areas\Account\Views\Account\Login.cshtml" />
     <None Include="Areas\Account\Views\Auth\Index.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
@@ -979,7 +980,7 @@
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
     <Content Include="Service References\Salesforce\ConnectedService.json" />
-    <None Include="Views\Auth2\Index.cshtml" />
+    <None Include="Views\Auth\Index.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
