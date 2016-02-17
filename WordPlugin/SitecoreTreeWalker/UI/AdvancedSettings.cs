@@ -45,7 +45,7 @@ namespace SitecoreTreeWalker.UI
         {
             Constants.EDITOR_ENVIRONMENT_VALUE = uxEnvironmentPicker.SelectedValue.ToString();
             string serverURL = ApplicationConfig.GetPropertyValue(Constants.EDITOR_ENVIRONMENT_VALUE);
-            string loginURL = ApplicationConfig.GetPropertyValue(Constants.EDITOR_ENVIRONMENT_VALUE+"Tree");
+            string loginURL = ApplicationConfig.GetPropertyValue(Constants.EDITOR_ENVIRONMENT_VALUE);
             string forgotPasswordLink = ApplicationConfig.GetPropertyValue(Constants.EDITOR_ENVIRONMENT_VALUE + "ForgotPasswordLink");
             _reader.ClearEditorEnvironment();
             _reader.WriteEditorEnvironment(Constants.EDITOR_ENVIRONMENT_VALUE, serverURL, loginURL, forgotPasswordLink);
