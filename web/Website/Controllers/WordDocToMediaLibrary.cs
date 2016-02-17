@@ -6,6 +6,7 @@ using Sitecore.Data.Items;
 using System.IO;
 using System.Text.RegularExpressions;
 using Glass.Mapper.Sc;
+using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Models;
@@ -15,16 +16,11 @@ namespace Informa.Web.Controllers
 {
 	public class WordDocToMediaLibrary
 	{
-		public const string MasterDb = "master";
-		protected static string MediaLibraryRoot;
-		protected static string MediaLibraryPath;
 		private static ISitecoreService _sitecoreMasterService;
 
 		public WordDocToMediaLibrary(ISitecoreService sitecoreService)
 		{
 			_sitecoreMasterService = sitecoreService;
-			MediaLibraryRoot = "/sitecore/media library/";
-			MediaLibraryPath = "Documents/";
 		}
 
 		public MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension)
@@ -38,7 +34,7 @@ namespace Informa.Web.Controllers
 
 		public Item GetMSWordDocumentRootNode()
 		{
-			IItem_Pointer_Config pointer = _sitecoreMasterService.GetItem<IItem_Pointer_Config>("{FDBFCAC8-03CA-4B0B-BEFE-2171050E19C6}");
+			IItem_Pointer_Config pointer = _sitecoreMasterService.GetItem<IItem_Pointer_Config>(Constants.MSWordDocumentRootNode);
 			if (pointer == null) return null;
 			return _sitecoreMasterService.GetItem<Item>(pointer.Item_Pointer);
 		}
@@ -52,7 +48,7 @@ namespace Informa.Web.Controllers
 		{
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
-				var mediaFolder = _sitecoreMasterService.GetItem<IMedia_Folder>(MediaLibraryRoot + MediaLibraryPath);
+				var mediaFolder = _sitecoreMasterService.GetItem<IMedia_Folder>(Constants.MediaLibraryRoot + Constants.MediaLibraryPath);
 				var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
 				string year = date.Year.ToString();
 				string month = date.Month.ToString();
@@ -112,7 +108,6 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-
 		/// <summary>
 		/// Creates an item in the media library from a file. Saves it to the specified path in the media library
 		/// </summary>
@@ -124,7 +119,7 @@ namespace Informa.Web.Controllers
 		public MediaItem CreateMediaLibraryItemFromFile(string filePath, string itemName, string fileExtension, string mediaLibraryPath)
 		{
 			Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.Current;
-			MediaCreatorOptions mediaCreatorOptions = GetDefaultMediaCreatorOptions(MediaLibraryRoot + mediaLibraryPath, itemName.Replace("-",""));
+			MediaCreatorOptions mediaCreatorOptions = GetDefaultMediaCreatorOptions(Constants.MediaLibraryRoot + mediaLibraryPath, itemName.Replace("-",""));
 			//using (new Sitecore.Security.Accounts.UserSwitcher(user))
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{

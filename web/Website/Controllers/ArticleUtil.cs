@@ -16,6 +16,7 @@ using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
 using Informa.Library.Article.Search;
+using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch;
 using Sitecore.Data;
 using Sitecore.Links;
@@ -104,7 +105,6 @@ namespace Informa.Web.Controllers
 
 		static string WebDb = "web";
 		private readonly ISitecoreService _sitecoreMasterService;
-		public const string MasterDb = "master";
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 
@@ -114,7 +114,7 @@ namespace Informa.Web.Controllers
 		/// <param name="sitecoreFactory"></param>
 		public ArticleUtil(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 		}
 
 		/// <summary>
