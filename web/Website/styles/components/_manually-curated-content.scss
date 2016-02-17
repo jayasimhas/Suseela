@@ -38,6 +38,7 @@
 
 
     @include breakpoint('small') {
+        &__main-well,
         &__main-well .article-preview,
         &__main-well .article-preview--small,
         &__right-rail {
