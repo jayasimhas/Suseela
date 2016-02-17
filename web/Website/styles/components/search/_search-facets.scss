@@ -1,0 +1,14 @@
+.search__facets {
+  // rules for flex container
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  // rules for flex child
+  order: 1;
+  flex-grow: 1;
+  // other rules
+  // height: 100%;
+  border: 1px solid $color-light-gray;
+  padding: 15px;
+  margin-right: 15px;
+}

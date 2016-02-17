@@ -1,4 +1,21 @@
-<h1>Search Results</h1>
+<div class="search">
 
-@Html.Partial("../Search/SearchContent")
-@Html.Partial("../Search/SearchFacets")
+  <div class="search__header">
+
+    <div class="search__header-icons">
+      <a class="icon icon--email">email</a>
+      <a class="icon icon--rss">rss</a>
+    </div>
+
+    <h1 class="search__header-title">Search Results</h1>
+
+  </div>
+
+  <div class="search__content">
+
+    @Html.Partial("../Search/SearchFacets")
+    @Html.Partial("../Search/SearchResults")
+
+  </div>
+
+</div>
