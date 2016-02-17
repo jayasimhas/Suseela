@@ -528,13 +528,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             if (string.IsNullOrEmpty(title))
             {
-                MessageBox.Show(@"Please enter an article title.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter an article title.", @"Insight Platform", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
 
-            if (pubGuid.Equals(Guid.Empty))
+            if (articleDetailsPageSelector.GetPublicationGuid().Equals(Guid.Empty))
             {
-                MessageBox.Show(@"Please select a publication.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please select a publication.", @"Insight Platform", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
 
