@@ -185,7 +185,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         public string GetXMLData(XmlDocument xd, string nodeName)
         {
-            if(!nodeName.Equals("THERAPY_SECTOR") && !nodeName.Equals("TREATABLE_CONDITION")) { 
+            if(!nodeName.Equals("THERAPY_SECTOR") 
+                && !nodeName.Equals("TREATABLE_CONDITION") 
+                && !nodeName.Equals("COMPANY")) { 
                 XmlNode xn = xd.SelectSingleNode($"//{nodeName}");
                 return (xn != null) ? xn.InnerText : string.Empty;
             }

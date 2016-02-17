@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Sitecore.Collections;
@@ -330,51 +331,66 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             // connect to the company database and get the ID to store
             if (importValue.Equals(string.Empty))
                 return;
-            
+
             //try exact search first
-            Dictionary<string, string> companies = GetAllCompanies(map, newItem.Paths.FullPath);
-            string casedValue = importValue.ToLower();
-            IEnumerable<KeyValuePair<string, string>> ids = companies.Where(a => a.Key.ToLower().Equals(casedValue));
-            if (ids == null || !ids.Any())
-             {
-                ids = companies.Where(a => a.Key.ToLower().Contains(casedValue));
-                if (ids == null || !ids.Any())
-                {
-                    map.Logger.Log(newItem.Paths.FullPath, "Company not found", ProcessStatus.FieldError, NewItemField, importValue);
-                    return;
+            Dictionary<string, string> fileCompanies = GetFileCompanies();
+            Dictionary<string, string> dbCompanies = GetDBCompanies(map, newItem.Paths.FullPath);
+
+            IEnumerable<string> importCompanies = importValue.Split(new string[] {","},
+                StringSplitOptions.RemoveEmptyEntries).Distinct();
+
+            List<string> cIDs = new List<string>();
+
+            foreach(string cName in importCompanies) { 
+                string casedValue = cName.ToLower();
+                KeyValuePair<string, string> id;
+                if (fileCompanies.ContainsKey(casedValue)) { 
+                    id = fileCompanies.First(a => a.Key.Equals(casedValue));
                 }
-                else if (ids.Count() > 1)
-                { // format as (number-name)
-                    map.Logger.Log(newItem.Paths.FullPath, $"Company not selected. Possible matches '{string.Join(", ", ids.Select(m => $"{m.Key}-{m.Value}"))}'", ProcessStatus.FieldError, NewItemField, importValue);
-                    return;
+                else if (dbCompanies.ContainsKey(casedValue)) { 
+                    id = dbCompanies.First(a => a.Key.Equals(casedValue));
                 }
+                else { 
+                    var ids = dbCompanies.Where(a => a.Key.Contains(casedValue));
+                    if (ids == null || !ids.Any())
+                    {
+                        map.Logger.Log(newItem.Paths.FullPath, "Company not found", ProcessStatus.FieldError, NewItemField, cName);
+                        continue;
+                    }
+                    else if (ids.Count() > 1)
+                    { // format as (number-name)
+                        map.Logger.Log(newItem.Paths.FullPath, $"Company not selected. Possible matches '{string.Join(" ", ids.Select(m => $"{m.Key}-{m.Value}"))}'", ProcessStatus.FieldError, NewItemField, cName);
+                        continue;
+                    }
+                    id = ids.First();
+                }
+                
+                string businessID = id.Value;
+                if (string.IsNullOrEmpty(businessID))
+                    return;
+                
+                //the name should be the importValue and not the value from the database
+                Field sf = newItem.Fields["Summary"];
+                if (sf != null)
+                    sf.Value = Regex.Replace(sf.Value, $"({cName})", delegate (Match match) { return $"[C#{businessID}:{match.Value}]"; }, RegexOptions.IgnoreCase);
+
+                Field bf = newItem.Fields["Body"];
+                if (bf != null)
+                    bf.Value = Regex.Replace(bf.Value, $"({cName})", delegate (Match match) { return $"[C#{businessID}:{match.Value}]"; }, RegexOptions.IgnoreCase);
+
+                cIDs.Add(businessID);
             }
-
-            string businessID = ids.First().Value;
-            if (string.IsNullOrEmpty(businessID))
-                return;
-
-            //replace matches in the body and summary fields with: [C#{ID}:{Name}]
-            //the name should be the importValue and not the value from the database
-            Field sf = newItem.Fields["Summary"];
-            if (sf != null)
-                sf.Value.Replace(importValue, $"[C#{businessID}:{importValue}]");
-
-            Field bf = newItem.Fields["Body"];
-            if (bf != null)
-                bf.Value.Replace(importValue, $"[C#{businessID}:{importValue}]");
 
             //store the imported value as is
             Field f = newItem.Fields[NewItemField];
             if (f == null)
                 return;
 
-            //map.Log("Company Found", $"item '{newItem.Paths.FullPath}', company '{importValue}', id '{businessID}'");
-            f.Value = businessID;
+            //set ids in field as comma delim list
+            f.Value = string.Join(",", cIDs);
         }
-        
 
-        public Dictionary<string, string> GetAllCompanies(IDataMap map, string itemPath)
+        public Dictionary<string, string> GetDBCompanies(IDataMap map, string itemPath)
         {
             string cacheKey = "Companies";
             Dictionary<string, string> o = Context.Items[cacheKey] as Dictionary<string, string>;
@@ -413,11 +429,298 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             foreach (DataRow r in returnObj.Rows)
             {
-                companies.Add(r["Title"].ToString(), r["RecordNumber"].ToString());
+                companies.Add(r["Title"].ToString().ToLower(), r["RecordNumber"].ToString());
             }
 
             Context.Items[cacheKey] = companies;
             return companies;
+        }
+
+        public Dictionary<string, string> GetFileCompanies()
+        {
+            Dictionary<string, string> d = new Dictionary<string, string>();
+
+            d.Add("abbot","198600101");
+            d.Add("abbott","198600101");
+            d.Add("acadia","199700102");
+            d.Add("acambis","199300262");
+            d.Add("actelion","199800188");
+            d.Add("adventrx","199700459");
+            d.Add("akorn","199000427");
+            d.Add("alcon","198601361");
+            d.Add("aldrich","199000633");
+            d.Add("alexion","199300121");
+            d.Add("alios","200700864");
+            d.Add("alkermes","198800695");
+            d.Add("allergan","198601285");
+            d.Add("alnylam","200200681");
+            d.Add("alter","198700592");
+            d.Add("altus pharmaceuticals","200100009");
+            d.Add("amarin","198900628");
+            d.Add("amgen","198600111");
+            d.Add("amri","199500499");
+            d.Add("anaphore","200400257");
+            d.Add("angiotech","198601320");
+            d.Add("anika therapeutics","199300161");
+            d.Add("anthera","200500234");
+            d.Add("antigenics","198601321");
+            d.Add("antisense pharma","200400074");
+            d.Add("apotex","198601232");
+            d.Add("arana therapeutics","199100165");
+            d.Add("arena","199800421");
+            d.Add("ariad","199200091");
+            d.Add("ark therapeutics","199800145");
+            d.Add("asahi kasei pharma","200600424");
+            d.Add("astellas","198600364");
+            d.Add("astrazenec","198601342");
+            d.Add("astrazeneca","198601342");
+            d.Add("aveo","200200462");
+            d.Add("basilea pharmaceutica","200001083");
+            d.Add("bavarian nordic","199700439");
+            d.Add("bayer","198600358");
+            d.Add("benitec","200300357");
+            d.Add("bial","200800001");
+            d.Add("biocompatibles","199000041");
+            d.Add("biocon","200400289");
+            d.Add("biodel","200600510");
+            d.Add("biogen idec","198601366");
+            d.Add("bioinvent","200000438");
+            d.Add("biomarin","199400477");
+            d.Add("bionomics","200101261");
+            d.Add("biovail","198601277");
+            d.Add("biovex","200001412");
+            d.Add("boehringer ingelhei","198600820");
+            d.Add("boehringer ingelheim","198600820");
+            d.Add("bradmer pharmaceuticals","201400677");
+            d.Add("bristol-myers squibb","198601245");
+            d.Add("bt pharma","200700411");
+            d.Add("btg","198601174");
+            d.Add("cancer research technology","200300248");
+            d.Add("cangene","198600453");
+            d.Add("cardinal health","198600127");
+            d.Add("cardiome","199200060");
+            d.Add("cardion","199700461");
+            d.Add("celera","199100413");
+            d.Add("celgene","198601148");
+            d.Add("cell genesys","198601263");
+            d.Add("cell therapeutics","200500330");
+            d.Add("cephalon","198800712");
+            d.Add("champions biotechnology","200700142");
+            d.Add("charleston laboratories","201400433");
+            d.Add("compugen","199800393");
+            d.Add("covidien","201100770");
+            d.Add("crucell","199400312");
+            d.Add("csl","198600617");
+            d.Add("cubist","199400401");
+            d.Add("curis","199400401");
+            d.Add("cydex","199800025");
+            d.Add("cytyc","199000273");
+            d.Add("dabur pharma","200800383");
+            d.Add("daiichi sanky","198700764");
+            d.Add("daiichi sankyo","198700764");
+            d.Add("debiopharm","199100420");
+            d.Add("dexcel pharma","200200830");
+            d.Add("diamyd medical","200600508");
+            d.Add("dnx","198700297");
+            d.Add("dompe","199200120");
+            d.Add("dr falk pharma","199000506");
+            d.Add("dr reddy's","199700124");
+            d.Add("eisa","198800610");
+            d.Add("eisai","198800610");
+            d.Add("elan","198600151");
+            d.Add("eli lill","198600152");
+            d.Add("eli lilly","198600152");
+            d.Add("endo pharmaceuticals","200200679");
+            d.Add("enobia","200500069");
+            d.Add("enzon","198600154");
+            d.Add("epicept","199902983");
+            d.Add("epitope","198600593");
+            d.Add("ethypharm","199903139");
+            d.Add("eurand","199700451");
+            d.Add("evotec","199200398");
+            d.Add("exonhit therapeutics","199800438");
+            d.Add("eyetech","199200398");
+            d.Add("ferring","199200432");
+            d.Add("forest laboratories","198600158");
+            d.Add("forma therapeutics","200900023");
+            d.Add("freseniu","198601363");
+            d.Add("fresenius","198601363");
+            d.Add("fuso","199700419");
+            d.Add("galderma","199200273");
+            d.Add("generex","200000856");
+            d.Add("genta","198900047");
+            d.Add("genzyme","198600234");
+            d.Add("geron","199300040");
+            d.Add("gilead sciences","198601242");
+            d.Add("glaxosmithkline","198601356");
+            d.Add("glenmark","200400041");
+            d.Add("glycomar","200600009");
+            d.Add("gni","200400838");
+            d.Add("gpc biotech","199400474");
+            d.Add("grifols","200900443");
+            d.Add("helsinn","200100277");
+            d.Add("henderson morley","199903011");
+            d.Add("hisamitsu","200400004");
+            d.Add("horizon therapeutics","200700010");
+            d.Add("hra pharma","200700883");
+            d.Add("imed","200800172");
+            d.Add("immunomedics","198600168");
+            d.Add("immunotope","201400539");
+            d.Add("inbiopro","201300268");
+            d.Add("indevus","198900430");
+            d.Add("innate pharma","200200602");
+            d.Add("innocoll","200500387");
+            d.Add("inovio","199300031");
+            d.Add("irx therapeutics","200600267");
+            d.Add("is pharma","200000427");
+            d.Add("isotechnika","199903161");
+            d.Add("ista pharmaceuticals","200000483");
+            d.Add("johnson matthey","198600981");
+            d.Add("jubilant organosys","200800242");
+            d.Add("karo bio","198900367");
+            d.Add("kinex","200300779");
+            d.Add("kirin pharma","199400214");
+            d.Add("kowa","200200841");
+            d.Add("kyowa hakko","198700398");
+            d.Add("labopharm","199500072");
+            d.Add("lexicon pharmaceuticals","199500461");
+            d.Add("life technologies","198601261");
+            d.Add("ligand","198700772");
+            d.Add("lundbeck","198700814");
+            d.Add("lupin","199000010");
+            d.Add("martek biosciences","199300244");
+            d.Add("maxygen","199700251");
+            d.Add("mdrna","198800048");
+            d.Add("meda","200200740");
+            d.Add("medac","199600282");
+            d.Add("medical devices","199200072");
+            d.Add("medicines company","199600430");
+            d.Add("medicinova","200001022");
+            d.Add("medigene","199100031");
+            d.Add("medivation","200500497");
+            d.Add("medivir","199500405");
+            d.Add("medtronic","198600185");
+            d.Add("menarini","198800771");
+            d.Add("mentor","198600926");
+            d.Add("merz","199000351");
+            d.Add("metabolex","199700023");
+            d.Add("molteni farmaceutici","200001267");
+            d.Add("mpex","200300839");
+            d.Add("mundipharma","198900663");
+            d.Add("nanobio","200300753");
+            d.Add("neuropharm","200700194");
+            d.Add("neurosearch","199000144");
+            d.Add("nih","198600351");
+            d.Add("nobelpharma","201100708");
+            d.Add("norgine","200200747");
+            d.Add("novartis","198600519");
+            d.Add("novelos therapeutics","200000801");
+            d.Add("novo nordisk","198700137");
+            d.Add("novozymes","200200498");
+            d.Add("omnichem","198900398");
+            d.Add("omrix","200600032");
+            d.Add("oni biopharma","200400781");
+            d.Add("ono","199000105");
+            d.Add("onyx pharmaceuticals","199200104");
+            d.Add("optimer","200001371");
+            d.Add("orthologic","198700799");
+            d.Add("oryzon","201400198");
+            d.Add("osi pharmaceuticals","198600253");
+            d.Add("osteologix","200500099");
+            d.Add("otsuka","198700860");
+            d.Add("ovation pharmaceuticals","200200417");
+            d.Add("oxis","198600150");
+            d.Add("par pharmaceutical","198601284");
+            d.Add("peptcell","200900485");
+            d.Add("pfize","198600199");
+            d.Add("pfizer","198600199");
+            d.Add("pharmacopeia","200400357");
+            d.Add("pharmascience","199200256");
+            d.Add("pharming","199300356");
+            d.Add("phytopharm","199100209");
+            d.Add("pierre fabre","198700584");
+            d.Add("piramal","199400120");
+            d.Add("ppd","198700837");
+            d.Add("proethic","200500155");
+            d.Add("prostrakan","199800263");
+            d.Add("protein delivery","199100400");
+            d.Add("proteome sciences","200200490");
+            d.Add("proximagen neuroscience","200400545");
+            d.Add("psivida","200500553");
+            d.Add("qlt","198700035");
+            d.Add("ranbaxy","199000613");
+            d.Add("ratiopharm","199400021");
+            d.Add("reckitt benckiser","199000115");
+            d.Add("recordati","198601005");
+            d.Add("renovo","200001321");
+            d.Add("repair","200000542");
+            d.Add("replidyne","200200552");
+            d.Add("respironics","198601203");
+            d.Add("retroscreen","201200299");
+            d.Add("rib-x pharmaceuticals","200200095");
+            d.Add("ruxton pharmaceuticals","200400611");
+            d.Add("sanguine","199400264");
+            d.Add("sanofi-aventis","198601345");
+            d.Add("schering-plough","198600260");
+            d.Add("schwabe","201200150");
+            d.Add("sciele pharma","199700395");
+            d.Add("sepracor","198600347");
+            d.Add("sequenom","199600433");
+            d.Add("shionogi","198700350");
+            d.Add("shire","198601293");
+            d.Add("sidus","198800569");
+            d.Add("siga","199700257");
+            d.Add("sigma-tau","198700534");
+            d.Add("simcere pharmaceuticals","200600652");
+            d.Add("sinclair pharma","199000168");
+            d.Add("skyepharma","199200414");
+            d.Add("solvay","198600973");
+            d.Add("sonus pharmaceuticals","199300077");
+            d.Add("sosei","199700078");
+            d.Add("stiefel laboratories","199000425");
+            d.Add("supergen","199100265");
+            d.Add("swedish orphan","200100680");
+            d.Add("taisho","198700590");
+            d.Add("takeda","198600337");
+            d.Add("taro pharmaceutical","200000010");
+            d.Add("taurx therapeutics","201000238");
+            d.Add("teijin","198600626");
+            d.Add("terumo","198700811");
+            d.Add("teva","198601169");
+            d.Add("theraquest biosciences","200400553");
+            d.Add("thrombogenics","200101324");
+            d.Add("tigenix","200300560");
+            d.Add("tolerrx","200100825");
+            d.Add("toray","198700013");
+            d.Add("toyama","198800549");
+            d.Add("transdermal","199901331");
+            d.Add("transgene","198700558");
+            d.Add("tripep","200200556");
+            d.Add("ucb","198900659");
+            d.Add("unigene","198600551");
+            d.Add("urigen","199300312");
+            d.Add("valeant","198600166");
+            d.Add("vantia","200800216");
+            d.Add("vasogen","200100069");
+            d.Add("ventech","198600445");
+            d.Add("vernalis","198700854");
+            d.Add("vertex pharmaceuticals","198900222");
+            d.Add("vion pharmaceuticals","199200386");
+            d.Add("viralytics","201400183");
+            d.Add("viropharma","199500305");
+            d.Add("vivalis","200300399");
+            d.Add("wellstat","200900459");
+            d.Add("wilex","199902912");
+            d.Add("wockhardt","200200261");
+            d.Add("xenome","200101271");
+            d.Add("xention","201100036");
+            d.Add("xigen","200300238");
+            d.Add("yaupon therapeutics","200400876");
+            d.Add("ym biosciences","200000253");
+            d.Add("zambon","198800493");
+            d.Add("zelos therapeutics","200300266");
+            
+            return d;
         }
 
         #endregion Methods
@@ -659,7 +962,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("anorexia nervosa","Neurology");
             d.Add("anthrax","Infectious Diseases");
             d.Add("antibiotic Resistance","Infectious Diseases");
-            d.Add("antithrombin III deficiency","");
+            d.Add("antithrombin iii deficiency","");
             d.Add("anxiety", "Neurology");
             d.Add("aphthous ulcer","");
             d.Add("apnoea","Cardiovascular");
@@ -832,6 +1135,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("dystonia","");
             d.Add("dysuria","");
             d.Add("ear, nose & throat","Ear, Nose & Throat");
+            d.Add("ear, nose &throat", "Ear, Nose & Throat");
             d.Add("eastern equine encephalitis virus","Infectious Diseases");
             d.Add("eating disorders","Metabolic Disorders");
             d.Add("ebola virus","Infectious Diseases");
@@ -852,13 +1156,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("epstein barr","Infectious Diseases");
             d.Add("epstein-barr virus","Infectious Diseases");
             d.Add("erectile dysfunction","Gynecology & Urology");
-            d.Add("escherichia Coli","Infectious Diseases");
+            d.Add("escherichia coli","Infectious Diseases");
             d.Add("esophageal cancer","Cancer");
             d.Add("esophagitis","Gastrointestinal");
             d.Add("ewing's sarcoma","Cancer");
             d.Add("fabry disease","Metabolic Disorders");
             d.Add("fabry's disease","");
-            d.Add("factor XIII deficiency","");
+            d.Add("factor xiii deficiency","");
             d.Add("fallopian tube cancer","Cancer");
             d.Add("familial cold autoinflammatory syndrome","");
             d.Add("fat malabsorption","");
@@ -1378,8 +1682,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             d.Add("turner's syndrome","");
             d.Add("type 1 diabetes","Metabolic Disorders");
             d.Add("type 2 diabetes","Metabolic Disorders");
-            d.Add("type I diabetes","Metabolic Disorders");
-            d.Add("type II diabetes","Metabolic Disorders");
+            d.Add("type i diabetes","Metabolic Disorders");
+            d.Add("type ii diabetes","Metabolic Disorders");
             d.Add("typhoid","Infectious Diseases");
             d.Add("ulcer","Gastrointestinal");
             d.Add("ulcerative colitis","Gastrointestinal");
