@@ -289,9 +289,10 @@ namespace Informa.Web.Controllers
 
 		protected void MoveArticleIfNecessary(IArticle article, WordPluginModel.ArticleStruct articleStruct)
 		{
+			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
 			using (new SecurityDisabler())
 			{
-				var publication = article.Publication;
+				var publication = articleItem.Publication;
 				var newParent = _articleUtil.GenerateDailyFolder(publication, articleStruct.WebPublicationDate);
 				if (newParent != null)
 				{
