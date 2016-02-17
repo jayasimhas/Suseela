@@ -752,7 +752,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -779,7 +779,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -4198,7 +4198,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.
