@@ -1,17 +1,17 @@
-﻿@using Velir.Search.Core.Reference
-@model Velir.Search.Models.I_Listing_Configuration
+﻿@model Velir.Search.Models.I_Listing_Configuration
 
-<script src="/velir/vendor/bower_components/lodash/lodash.min.js"></script>
+<script src="/velir/vendor/bower_components/lodash/lodash.js"></script>
 <script src="/velir/vendor/bower_components/angular/angular.js"></script>
 <script src="/velir/dist/velir.search.angular.js"></script>
 <script src="/velir/js/app.js"></script>
+<script src="/scripts/search/InformaFacetsController.js"></script>
 <script>
     (function (angular) {
 
         var app = angular.module('example');
 
         app.config(function (searchServiceProvider) {
-            searchServiceProvider.setUrl('@Model.Base_Endpoint_Url?@SiteSettings.QueryString.PageIdKey=@Model._Id');
+            searchServiceProvider.setUrl('@Model.Base_Endpoint_Url?@Velir.Search.Core.Reference.SiteSettings.QueryString.PageIdKey=@Model._Id');
         });
 
     })(angular);
