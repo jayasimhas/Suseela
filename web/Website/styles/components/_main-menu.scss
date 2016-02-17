@@ -94,12 +94,18 @@ $main-menu-handle-width: 70px;
 
 // Toggle menu section link visibility on-click
 .main-menu__section-title.is-active {
+	
+	// For some reason, this is required for the transform to render properly
+	// on iOS (and potentially other mobile browsers). Dumb.
+	-webkit-perspective: 500px;
 
 	.main-menu__arrow-icon {
+		-webkit-transform: rotateX(-180deg);
 		transform: rotateX(-180deg);
 	}
 
 	&~ .main-menu__section-wrapper {
+		-webkit-transform: scaleY(1);
 		transform: scaleY(1);
 		max-height: 999px;
 	}
