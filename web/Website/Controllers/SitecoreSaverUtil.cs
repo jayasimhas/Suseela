@@ -250,9 +250,13 @@ namespace Informa.Web.Controllers
 
 				//TODO - Add Taxonomy items
 
-				if (articleStruct.Taxonomoy != null && articleStruct.Taxonomoy.Any())
+				var taxonomyItems = new List<ITaxonomy_Item>();
+				if (articleStruct.Taxonomoy.Any())
 				{
-					//newArticle.Taxonomies = articleStruct.Taxonomoy.Select(x => _sitecoreMasterService.GetItem<ITaxonomy_Item>(x.ID)).ToList();
+					taxonomyItems.AddRange(articleStruct.Taxonomoy
+						.Select(eachTaxonomy => _sitecoreMasterService.GetItem<ITaxonomy_Item>(eachTaxonomy.ID))
+						.Where(taxItem => taxItem != null));
+					//newArticle.Taxonomies = taxonomyItems;
 				}
 
 				if (saveDocumentSpecificData)
