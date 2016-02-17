@@ -32,6 +32,7 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="connstr.tracking.live" value="mongodb://localhost/Informa_tracking_live" />
 	<property name="connstr.tracking.history" value="mongodb://localhost/Informa_tracking_history" />
 	<property name="connstr.tracking.contact" value="mongodb://localhost/Informa_tracking_contact" />
+  <property name="connstr.scheduledpublishing" value="mongodb://localhost/Informa_scheduled_publishing" />
 		
 	<!-- Web.config settings -->
 	<property name="data.folder" value="${project.folder}\web\Data" />

@@ -24,7 +24,6 @@
                     <svg class="article-metadata__media-type">
                         <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
                     </svg>
-                    @* * *  END ARTICLE MEDIA TYPE *@
                 </li>
             }
         </ul>
@@ -93,7 +92,12 @@
         IIPP-117 *@
         <aside class="article-inline-image">
             <img src="@Model.Image.ImageUrl">
-            <span class="article-inline-image__source">@Model.Image.ImageSource</span>
+            @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+                {
+                    <span class="article-inline-image__source">
+                        Image Source: @Model.Image.ImageSource
+                    </span>
+                }
             <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
         </aside>
     @* * *  END ARTICLE - FEATURED IMAGE *@

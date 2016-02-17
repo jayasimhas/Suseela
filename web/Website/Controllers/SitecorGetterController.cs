@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Results;
 using Glass.Mapper.Sc;
+using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.System;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -14,6 +15,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
+using Informa.Library.Utilities.References;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Sitecore.Links;
@@ -25,11 +27,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class TaxonomyController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public TaxonomyController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 
 		public JsonResult<List<WordPluginModel.TaxonomyStruct>> Get()
@@ -71,11 +72,10 @@ namespace Informa.Web.Controllers
 
 	public class SearchTaxonomyController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public SearchTaxonomyController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 
 		// GET api/<controller>
@@ -118,11 +118,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GraphicsNodeController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GraphicsNodeController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<string[]> Get()
@@ -141,11 +140,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetParagraphStylesController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetParagraphStylesController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<List<WordPluginModel.WordStyleStruct>> Get()
@@ -160,11 +158,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetCharacterStylesController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetCharacterStylesController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<List<WordPluginModel.WordStyleStruct>> Get()
@@ -179,11 +176,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetItemGuidByPathController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetItemGuidByPathController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<Guid> Get(string path)
@@ -200,11 +196,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetAuthorsController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetAuthorsController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<List<WordPluginModel.StaffStruct>> Get()
@@ -219,11 +214,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetPublicationsController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetPublicationsController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<List<WordPluginModel.ItemStruct>> Get()
@@ -246,11 +240,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetArticleSizeForPublicationController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetArticleSizeForPublicationController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<List<WordPluginModel.ArticleSize>> Get(Guid publicationID)
@@ -337,15 +330,31 @@ namespace Informa.Web.Controllers
 			return item?.Children.ToArray().ToDictionary(child => child.DisplayName, child => child.ID.Guid);
 		}
 	}
+
+	public class GetNumberController : ApiController
+	{
+		private readonly ISitecoreService _sitecoreService;
+		private readonly IArticleSearch _search;
+		public GetNumberController(ISitecoreService service, IArticleSearch search)
+		{
+			_sitecoreService = service;
+			_search = search;
+		}
+		// GET api/<controller>
+		public JsonResult<int> Get(string publicationGuid)
+		{
+			return Json(_search.GetNextArticleNumber(new Guid(publicationGuid)));
+		}
+	}
+
 	//TODO: This might have bugs, and would need to fix it.
 	[Route]
 	public class GetWidthHeightOfMediaItemController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetWidthHeightOfMediaItemController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<int[]> Get(string path)
@@ -431,23 +440,20 @@ namespace Informa.Web.Controllers
 			return Json(!string.IsNullOrEmpty(length?.Text) ? Int32.Parse(length.Text) : 1500);
 		}
 	}
-
-
-
+	
 	[Route]
 	public class SupportingDocumentsNodeController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public SupportingDocumentsNodeController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
-		// GET api/<controller>
+
 		public JsonResult<string[]> Get()
 		{
 			List<string> result = new List<string>();
-			var siteConfigItem = _sitecoreService.GetItem<ISite_Config>("{BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}");
+			var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
 			if (siteConfigItem == null) return Json(result.ToArray());
 			var supportingDocumentFieldValue = siteConfigItem.Supporting_Documents_Folder;
 			if (supportingDocumentFieldValue == new Guid()) return Json(result.ToArray());
@@ -462,11 +468,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetChildrenDirectoriesController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetChildrenDirectoriesController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<WordPluginModel.DirectoryStruct[]> Get()
@@ -571,11 +576,10 @@ namespace Informa.Web.Controllers
 	}
 	public class GetMediaLibraryItemController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetMediaLibraryItemController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<WordPluginModel.MediaItemStruct> Get()
@@ -615,11 +619,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetMediaStatisticsController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetMediaStatisticsController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<WordPluginModel.MediaItemStruct> Get()
@@ -669,11 +672,10 @@ namespace Informa.Web.Controllers
 
 	public class GetDynamicUrlController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetDynamicUrlController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<string> Get()
@@ -701,11 +703,10 @@ namespace Informa.Web.Controllers
 
 	public class GetDocumentPasswordController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetDocumentPasswordController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<string> Get()
@@ -718,11 +719,10 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetHierarchyByGuidController : ApiController
 	{
-		private string masterBD = "master";
 		private ISitecoreService _sitecoreService;
 		public GetHierarchyByGuidController(Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(masterBD);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 		}
 		// GET api/<controller>
 		public JsonResult<string> Get()
@@ -743,13 +743,9 @@ namespace Informa.Web.Controllers
 		public WordPluginModel.HDirectoryStruct GetHierarchy(string path)
 		{
 			var item = _sitecoreService.GetItem<Item>(path);
-			var children = new List<WordPluginModel.HDirectoryStruct>();
 			List<Item> searchField = item.Children.ToList();
 
-			foreach (Item child in searchField)
-			{
-				children.Add(GetHierarchy(child.Paths.Path));
-			}
+			var children = searchField.Select(child => GetHierarchy(child.Paths.Path)).ToList();
 			var childNode = new WordPluginModel.HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
 			childNode.Children = childNode.ChildrenList.ToArray();
 			return childNode;
@@ -781,12 +777,11 @@ namespace Informa.Web.Controllers
 	[Route]
 	public class GetArticleDetailsBgController : ApiController
 	{
-		public string MasterDb = "master";
 		private readonly ISitecoreService _sitecoreService;
 		private readonly ArticleUtil _articleUtil;
 		public GetArticleDetailsBgController(ArticleUtil articleUtil, Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreService = sitecoreFactory(MasterDb);
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
 			_articleUtil = articleUtil;
 		}
 
