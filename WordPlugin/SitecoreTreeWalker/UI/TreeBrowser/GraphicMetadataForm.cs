@@ -36,7 +36,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
                 pictureBox1.Visible = false;
                 return;
             }
-
+	        uxFloatBox.SelectedIndex = 2;
             pictureBox1.ImageLocation = imagePath;
         }
 

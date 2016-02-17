@@ -425,7 +425,7 @@ namespace Informa.Web.Controllers
 			if (articleItem.Featured_Image_16_9 != null)
 			{ articleStruct.FeaturedImage = articleItem.Featured_Image_16_9.MediaId; }
 
-			//articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
+			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
 
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
 

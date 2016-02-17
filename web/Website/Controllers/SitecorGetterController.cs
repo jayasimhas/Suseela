@@ -664,7 +664,7 @@ namespace Informa.Web.Controllers
 		public JsonResult<string> Get(string path)
 		{
 			Item media = _sitecoreService.GetItem<Item>(path);
-			string url = "https://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(media);
+			string url = "http://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(media);
 			return Json(url);
 		}
 
