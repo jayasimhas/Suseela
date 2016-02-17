@@ -19,7 +19,7 @@ content-length: 1863
 ----version----
 language: en
 version: 1
-revision: be34398b-fcac-4b8f-887d-8a843a696f55
+revision: 8afe908d-9acc-4363-9957-8e9edcc4ae89
 
 ----field----
 field: {9F76D8DF-EF1C-4B6D-AF33-B2655FD0CC74}
@@ -48,14 +48,14 @@ name: Base Endpoint Url
 key: base endpoint url
 content-length: 18
 
-/api/examplesearch
+/api/informasearch
 ----field----
 field: {8538E64B-69B6-44C0-829B-0826F26231DC}
 name: Index Name
 key: index name
-content-length: 18
+content-length: 25
 
-sitecore_{0}_index
+informa_content_{0}_index
 ----field----
 field: {3DD8AA26-2B10-4305-831C-7FCC78A674BE}
 name: Refinements
@@ -97,14 +97,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-be34398b-fcac-4b8f-887d-8a843a696f55
+8afe908d-9acc-4363-9957-8e9edcc4ae89
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160217T165137Z
+20160217T170532Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
