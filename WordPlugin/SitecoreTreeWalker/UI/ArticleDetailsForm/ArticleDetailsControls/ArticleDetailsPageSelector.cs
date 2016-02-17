@@ -184,6 +184,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 			return pageArticleInformationControl.GetSelectedPublicationName();
 		}
+		public Guid GetPublicationGuid()
+		{
+			return pageArticleInformationControl.GetSelectedPublicationGuid();
+		}
 
 		public DateTime GetDate()
 		{
