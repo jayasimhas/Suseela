@@ -119,11 +119,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				Label = pageArticleInformationControl.GetLabelGuid(),
 				MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
 				NotesToEditorial = pageArticleInformationControl.GetNotes(),
-				//Industries = pageIndustriesControl.TabController.GetSelected(),
-				//TODO - Add taxonomy
 				Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),
-				//TODO - Editotrial Notes				
 				//NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
 				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
 				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),
@@ -153,7 +150,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
 				NotesToEditorial = pageArticleInformationControl.GetNotes(),
 				//Industries = pageIndustriesControl.TabController.GetSelected(),
-				//TODO - Get Taxonmoy
 				Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
 				//Subjects = pageSubjectsControl.TabController.GetSelected(),			
 				//TODO - Editorial Notes

@@ -30,11 +30,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.FeaturedImage = articleStruct.FeaturedImage;
 			articleDetails.FeaturedImageCaption = articleStruct.FeaturedImageCaption;
 			articleDetails.FeaturedImageSource = articleStruct.FeaturedImageSource;
-
-			//TODO - add article taxonomy to the Struct.
 			articleDetails.Taxonomoy = articleStruct.Taxonomoy;
-
-
 			articleDetails.RelatedArticles = articleStruct.RelatedArticles;
 			articleDetails.ReferencedDeals = articleStruct.ReferencedDeals;
 			articleDetails.Subtitle = articleStruct.Subtitle;
