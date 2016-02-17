@@ -170,12 +170,28 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			var form = button.Parent as GraphicsMetadataForm;
 			if (form == null) return;
 			var path = uxBrowseImages.SelectedNode.Tag as SitecorePath;
-			if(path == null) return;
-			InsertImage(form.uxHeader.Text, form.uxTitle.Text, path, form.uxCaption.Text, form.uxSource.Text);
+			if (path == null) return;
+			string floatValue = "None";
+			try
+			{
+				if (form.uxFloatBox.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				{
+					floatValue = ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)form.uxFloatBox.SelectedValue).Name;
+				}
+				else
+				{
+					floatValue = (string)form.uxFloatBox.SelectedValue;
+				}
+			}
+			catch (Exception ex)
+			{
+
+			}
+			InsertImage(form.uxHeader.Text, form.uxTitle.Text, path, form.uxCaption.Text, form.uxSource.Text, floatValue);
 			form.Close();
 		}
 
-		static void InsertImage(string header, string title, SitecorePath path, string caption, string source)
+		static void InsertImage(string header, string title, SitecorePath path, string caption, string source, string floatType)
 		{
 			var app = Globals.SitecoreAddin.Application;
 			int numParagraph = 2;
@@ -209,7 +225,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			selection.Text = path.DisplayName;
 			try
 			{
-				app.ActiveDocument.Hyperlinks.Add(selection, SitecoreGetter.MediaPreviewUrl(path.Path), null, path.Path);
+				app.ActiveDocument.Hyperlinks.Add(selection, SitecoreGetter.MediaPreviewUrl(path.Path), null, floatType, path.Path);
 			}
 			catch (WebException)
 			{
