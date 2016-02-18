@@ -1,28 +1,26 @@
 .search__facets {
-  // rules for flex container
+  @include textMix('Roboto', 13px, 400);
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  // rules for flex child
-  order: 1;
   flex-grow: 1;
+  flex-wrap: nowrap;
+  order: 1;
   max-width: 300px;
-  // other rules
-  border: 1px solid $informa-light-gray-d;
   margin-right: 15px;
-  @include textMix('Roboto', 13px, 400);
+  border: 1px solid $informa-light-gray-d;
 }
 
 .facets {
 
   &__header {
-    border-bottom: 2px solid $informa-light-gray-d;
     padding: 20px;
+    border-bottom: 2px solid $informa-light-gray-d;
 
     h3 {
       display: inline-block;
       color: $informa-black;
     }
+
     a.facets__clear {
       float: right;
       line-height: 29px;
@@ -38,15 +36,15 @@
     line-height: 23px;
 
     &:not(:first-child) {
-      border-top: 1px solid $informa-light-gray-d;
       padding-top: 20px;
+      border-top: 1px solid $informa-light-gray-d;
     }
   }
 
   &__section-header {
     display: inline-block;
-    color: $informa-black;
     padding-bottom: 15px;
+    color: $informa-black;
   }
 
   &__section-list {
@@ -55,8 +53,8 @@
     }
 
     input[type="checkbox"] {
-      opacity: 0; // hiding to replace with custom checkbox style
       position: absolute;
+      opacity: 0; // hiding to replace with custom checkbox style
     }
 
     input[type="checkbox"] + label {
