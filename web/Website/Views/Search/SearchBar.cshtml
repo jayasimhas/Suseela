@@ -4,7 +4,7 @@
   <h3 class="search-bar__label"><label for="js-search-field">Search</label></h3>
 
   <div class="search-bar__content">
-    <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site">
+    <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site" ng-controller="searchQueryController as query" ng-model="query.keywords" ng-model-options="{ debounce: { 'default': query.typingTimeout } }" ng-change="query.update()">
 
     <!--TODO: get correct svg icon and update classes (extend from header) -->
     <svg class="header__icons header__icons--search search-bar__submit js-header-search-trigger">
