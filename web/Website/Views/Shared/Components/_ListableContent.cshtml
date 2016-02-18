@@ -1,4 +1,4 @@
-﻿@model FeaturedArticleViewModel
+﻿@model Informa.Web.ViewModels.IListableViewModel
 
 @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
@@ -17,10 +17,10 @@
         <li>
             <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
         </li>
-        @if (!string.IsNullOrEmpty(Model.Content_Type))
+        @if (!string.IsNullOrEmpty(Model.LinkableText))
         {
             <li>
-                <h6>@string.Join(", ", Model.Content_Type)</h6>
+                <h6>@string.Join(", ", Model.LinkableText)</h6>
             </li>
         }
         @if (!string.IsNullOrEmpty(Model.ListableType))
