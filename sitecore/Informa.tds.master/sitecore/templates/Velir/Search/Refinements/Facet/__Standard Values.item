@@ -12,7 +12,7 @@ templatekey: Facet
 ----version----
 language: en
 version: 1
-revision: 53ce1097-a8f6-451e-83a4-354e76425520
+revision: cd9c8f31-a15a-4da2-a173-d42c0def370e
 
 ----field----
 field: {F0B316E1-2D87-4433-9634-40685172DD3C}
@@ -21,6 +21,13 @@ key: and filter
 content-length: 1
 
 1
+----field----
+field: {C009EFA3-5B61-4AF2-9180-538D9D4A6918}
+name: Sort By
+key: sort by
+content-length: 38
+
+{20A22163-95EB-431E-A912-B54B03317FA6}
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -32,9 +39,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 15
+content-length: 16
 
-20140815T113114
+20140815T153114Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-53ce1097-a8f6-451e-83a4-354e76425520
+cd9c8f31-a15a-4da2-a173-d42c0def370e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 35
 
-20140829T114636:635449095961665939
+20151207T152116:635850984764476857Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

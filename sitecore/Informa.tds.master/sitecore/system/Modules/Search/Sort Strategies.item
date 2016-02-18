@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {4A79DA78-93CD-41AE-9F08-48212F62211A}
+database: master
+path: /sitecore/system/Modules/Search/Sort Strategies
+parent: {B9C5D243-921D-45E3-833B-8C4EE3FCA798}
+name: Sort Strategies
+master: {00000000-0000-0000-0000-000000000000}
+template: {76B2FE32-C1F6-446D-AF66-4C04E2981A94}
+templatekey: Sort Strategies Folder
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+200
+----version----
+language: en
+version: 1
+revision: 2d77ba4f-f5e2-4e2f-a970-78242cb26ee5
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151203T200556Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2d77ba4f-f5e2-4e2f-a970-78242cb26ee5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 35
+
+20151203T200607:635847699671623127Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

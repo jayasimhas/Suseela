@@ -16,7 +16,6 @@
     <UseWebConfigReplacement>false</UseWebConfigReplacement>
     <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
     <LegacyFileReplacement>false</LegacyFileReplacement>
-    <AssemblyName>Informa.tds.master.content</AssemblyName>
     <Name>Informa.tds.master.content</Name>
     <RootNamespace>Informa.tds.master.content</RootNamespace>
     <EnableCodeGeneration>false</EnableCodeGeneration>
@@ -39,6 +38,19 @@
     <OutputPath>.\bin\Release\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-NoTds' ">
+    <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>True</DisableFileDeployment>
+    <OutputPath>.\bin\Debug-NoTds\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release-NoTds' ">
+    <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>True</DisableFileDeployment>
+    <OutputPath>bin\Release-NoTds\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <AssemblyAttributes Include="AssemblyFileVersion">
       <Value>$(AssemblyFileVersion)</Value>
@@ -46,6 +58,12 @@
     <AssemblyAttributes Include="AssemblyVersion">
       <Value>$(AssemblyVersion)</Value>
     </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\web\Website\Informa.Web.csproj">
+      <Project>{efe15f11-b900-4515-a45e-5b817c483a36}</Project>
+      <Name>Informa.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SitecoreItem Include="sitecore\content.item">
@@ -17368,7 +17386,14 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\New Example Search Page.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Register.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Search.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
@@ -17408,10 +17433,6 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\Documents\Scrip Intelligence.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-    </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Documents\ScripIntelligence.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -17429,6 +17450,10 @@
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\scriplogo.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\media library\Supporting Documents.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>

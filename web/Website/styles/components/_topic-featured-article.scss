@@ -1,0 +1,140 @@
+// * * * * *
+// TOPIC - Featured Article — Full Width
+// IIPP-69
+
+.topic-featured-article {
+    background-color: $color-concrete-gray;
+    border-top: 2px solid $color-light-gray;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    height: 290px;
+
+    // Overrides _article-preview.scss
+    // TODO — Refactor so this isn't necessary
+    &.article-preview {
+        padding: 1.5rem;
+    }
+
+    &__image {
+        float: left;
+        margin-bottom: 2rem;
+        margin-right: 24px;
+        height: 216px;
+        width: 384px;
+    }
+
+    &__inner-wrapper {
+        height: 180px;
+        overflow: hidden;
+        z-index: 226;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2.25rem;
+            bottom: 0;
+            left: 0;
+            // Permalink - use to edit and share this gradient:
+            // http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+46,ffffff+100&0+0,1+46,1+100
+            background: -moz-linear-gradient(top, rgba(241,242,242,0) 0%, rgba(241,242,242,1) 45%, rgba(241,242,242,1) 100%); // FF3.6-15
+            background: -webkit-linear-gradient(top, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 45%,rgba(241,242,242,1) 100%);
+            // Chrome10-25,Safari5.1-6
+            background: linear-gradient(to bottom, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 45%,rgba(241,242,242,1) 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+            z-index: 227;
+        }
+    }
+
+    &__headline {
+        @include textMix('Roboto Condensed', 30px, 700);
+        color: $informa-black;
+        line-height: 2.175rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+
+    .article-preview__tags {
+        bottom: 0;
+        display: block;
+        position: relative;
+        width: auto;
+    }
+
+    .article-metadata {
+        margin-bottom: 1rem;
+    }
+
+    @include breakpoint('medium') {
+        height: 344px;
+
+        &__inner-wrapper {
+            height: 270px;
+
+            &:after {
+                height: 3rem;
+            }
+        }
+
+        .article-metadata {
+            position: absolute;
+            width: calc(100% - 3rem);
+            margin-left: 0;
+        }
+
+        &__image {
+            width: 272px;
+            height: 153px;
+            margin-bottom: 5rem;
+        }
+
+        &__image,
+        &__headline, {
+            margin-top: 3rem;
+        }
+    }
+    @include breakpoint('small') {
+        height: auto;
+        padding: 1rem;
+
+        &__image {
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .article-metadata {
+            position: static;
+            width: 100%;
+        }
+
+        &__inner-wrapper {
+            height: 245px;
+
+            &:after {
+                height: 2rem;
+            }
+        }
+
+        &__headline {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.75rem;
+        }
+
+        &__image,
+        &__headline {
+            width: 100%;
+            margin-top: 0;
+        }
+        &__headline,
+        .article-preview__tags,
+        p {
+            margin-left: 0;
+        }
+    }
+}

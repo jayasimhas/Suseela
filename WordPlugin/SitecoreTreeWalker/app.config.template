@@ -29,10 +29,7 @@
 		<add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
 	    <add key ="Development"  value="${Development}"/>
 	    <add key ="Stage"  value="${Stage}"/>
-	    <add key ="Production"  value="${Production}"/>
-	    <add key ="DevelopmentTree"  value="${DevelopmentTree}"/>
-	    <add key ="StageTree"  value="${StageTree}"/>
-	    <add key ="ProductionTree"  value="${ProductionTree}"/>
+	    <add key ="Production"  value="${Production}"/>	   
 		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
 	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
     	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />

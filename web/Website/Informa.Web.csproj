@@ -265,6 +265,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.SharedSource.PageEditor">
+      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Social, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Social.dll</HintPath>
@@ -495,10 +498,6 @@
       <HintPath>..\..\packages\Velir.Search.Mvc.1.0.2\lib\net45\Velir.Search.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Velir.Search.Web">
-      <HintPath>..\..\packages\Velir.Search.Web.1.1.0-alpha\lib\net45\Velir.Search.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Velir.Search.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Search.WebApi.1.0.3\lib\net45\Velir.Search.WebApi.dll</HintPath>
       <Private>True</Private>
@@ -582,6 +581,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
     <Compile Include="App_Start\Registrations\GlassMapperRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -599,6 +599,7 @@
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
+    <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
     <Compile Include="Controllers\SitecoreUtil.cs" />
@@ -812,19 +813,9 @@
     <Content Include="Areas\Article\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Article\Views\Shared\Lockout.cshtml" />
     <Content Include="velir\dist\velir.search.angular.js.map" />
-    <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
     <Content Include="styles\index.scss" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Shared\SearchFacets.cshtml" />
-    <Content Include="Views\Shared\SearchKeywords.cshtml" />
-    <Content Include="Views\Shared\SearchListing.cshtml" />
-    <Content Include="Views\Shared\SearchMetadata.cshtml" />
-    <Content Include="Views\Shared\SearchPager.cshtml" />
-    <Content Include="Views\Shared\SearchPagination.cshtml" />
-    <Content Include="Views\Shared\SearchScripts.cshtml" />
-    <Content Include="Views\Shared\SearchSortOptions.cshtml" />
-    <Content Include="Views\Shared\SortOption.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Frontend\Index.cshtml" />
@@ -921,11 +912,21 @@
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
     <Content Include="Views\Shared\Components\ContentListing\Container.cshtml" />
+    <Content Include="Views\Search\SearchFacets.cshtml" />
+    <Content Include="Views\Search\SearchKeywords.cshtml" />
+    <Content Include="Views\Search\SearchListing.cshtml" />
+    <Content Include="Views\Search\SearchMetadata.cshtml" />
+    <Content Include="Views\Search\SearchPagination.cshtml" />
+    <Content Include="Views\Search\SearchScripts.cshtml" />
+    <Content Include="Views\Search\SearchSortOptions.cshtml" />
+    <Content Include="Views\Search\SortOption.cshtml" />
+    <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
     <Content Include="Views\Shared\Components\ContentListing\Landscape.cshtml" />
     <Content Include="Views\Shared\Components\ContentListing\_Listing.cshtml" />
     <Content Include="Views\Shared\Components\ContentListing\Portrait.cshtml" />
     <Content Include="Views\Shared\Components\PullQuote.cshtml" />
     <Content Include="Views\Shared\Components\Promotional.cshtml" />
+    <Content Include="Views\Search\SearchWrapper.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
@@ -935,6 +936,10 @@
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
+      <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>
+      <Name>Sitecore.SharedSource.DataImporter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
