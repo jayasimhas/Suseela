@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Services.Protocols;
-using SitecoreTreeWalker.SitecoreTree;
+using Informa.Web.Areas.Account.Models;
 using SitecoreTreeWalker.Config;
 
 namespace SitecoreTreeWalker.User
@@ -8,7 +8,6 @@ namespace SitecoreTreeWalker.User
 	public class SitecoreUser
 	{
 		private static readonly SitecoreUser User = new SitecoreUser();
-		protected SCTree _scTree;
 		public const string DefaultDomain = @"sitecore";
 
 		/// <summary>
@@ -29,7 +28,6 @@ namespace SitecoreTreeWalker.User
 		private SitecoreUser()
 		{
 			IsLoggedIn = false;
-			_scTree = new SCTree();
 		}
 
 
@@ -64,13 +62,12 @@ namespace SitecoreTreeWalker.User
 		/// <param name="username">User's username</param>
 		/// <param name="password">User's password</param>
 		/// <returns>True if authentication successful; otherwise, false.</returns>
-		public UserStatusStruct Authenticate(string username, string password)
+		public WordPluginModel.UserStatusStruct Authenticate(string username, string password)
 		{
 			Globals.SitecoreAddin.Log("SitecoreUser.Authenticate: Trying to authenticate user [" + username + "]...");
 			var domainAndUsername = DefaultDomain + @"\" + username;
 			try
 			{
-                _scTree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
 				var userStatus = SitecoreArticle.AuthenticateUser(domainAndUsername, password);
 				if (userStatus.LoginSuccessful)
 				{
