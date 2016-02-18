@@ -6,10 +6,10 @@ using Informa.Web.Areas.Account.Models;
 using Informa.Web.Controllers;
 using Microsoft.Office.Interop.Word;
 using Newtonsoft.Json;
+using Sitecore.Shell.Applications.ContentEditor;
+using Sitecore.Shell.Framework.Commands;
 using SitecoreTreeWalker.Custom_Exceptions;
 using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.SitecoreServer;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
@@ -23,14 +23,14 @@ namespace SitecoreTreeWalker
 	public class SitecoreArticle
 	{
 		//TODO - Add env variable
-		private static string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/";
+		//public  string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}"+"/api/";
 
 		public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
 		{
 			using (var client = new HttpClient())
 			{
 				var article = new WordPluginModel.CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
-				var response = client.PostAsJsonAsync($"{webApiURL}CreateArticle", article).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CreateArticle", article).Result;
 				var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
 				return articleItem;
 			}
@@ -40,7 +40,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}DoesArticleNameAlreadyExistInIssue").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleNameAlreadyExistInIssue").Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -51,7 +51,7 @@ namespace SitecoreTreeWalker
 			using (var client = new HttpClient())
 			{
 				var article = new WordPluginModel.SaveArticleDetails() { ArticleNumber = articleID, ArticleData = articleData };
-				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleDetails", article).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetails", article).Result;
 			}
 		}
 
@@ -60,7 +60,7 @@ namespace SitecoreTreeWalker
 			using (var client = new HttpClient())
 			{
 				var article = new WordPluginModel.SaveArticleDetailsByGuid() { ArticleGuid = articleGuid, ArticleData = articleData };
-				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleDetailsByGuid", article).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetailsByGuid", article).Result;
 			}
 		}
 
@@ -68,7 +68,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetArticleUrl", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleUrl", articleNumber).Result;
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
@@ -78,7 +78,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}PreviewUrlArticle", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}PreviewUrlArticle", articleNumber).Result;
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
@@ -88,7 +88,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetArticleDynamicUrl", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleDynamicUrl", articleNumber).Result;
 				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return url;
 			}
@@ -98,7 +98,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleHaveText",articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleHaveText",articleNumber).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -108,7 +108,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleGuidHaveText",articleGuid).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleGuidHaveText",articleGuid).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -118,7 +118,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleExist",articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist",articleNumber).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -128,7 +128,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}DoesArticleGuidExist",articleGuid).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleGuidExist",articleGuid).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -138,7 +138,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetLockedStatus", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetLockedStatus", articleNumber).Result;
 				return JsonConvert.DeserializeObject<WordPluginModel.CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
 			}
 		}
@@ -147,7 +147,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetLockedStatusByGuid", articleGuid).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetLockedStatusByGuid", articleGuid).Result;
 				return JsonConvert.DeserializeObject<WordPluginModel.CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
 			}
 		}
@@ -156,7 +156,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}CheckOutArticle",articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckOutArticle",articleNumber).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -166,7 +166,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}CheckOutArticleByGuid",articleGuid).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckOutArticleByGuid",articleGuid).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -176,7 +176,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}CheckInArticle", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckInArticle", articleNumber).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -186,7 +186,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}CheckInArticleByGuid", articleGuid).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckInArticleByGuid", articleGuid).Result;
 				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 				return flag;
 			}
@@ -196,7 +196,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetArticleGuidByNum", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum", articleNumber).Result;
 				var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
 				return articleGuid;
 			}
@@ -206,7 +206,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetArticlePreviewInfo", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo", articleNumber).Result;
 				var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
 				return previewInfo;
 			}
@@ -216,7 +216,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetArticlePreviewInfoByGuids", guids).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfoByGuids", guids).Result;
 				var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
 				return articlePreviewCollection;
 			}
@@ -227,7 +227,7 @@ namespace SitecoreTreeWalker
 			using (var client = new HttpClient())
 			{
 				var article = new WordPluginModel.SaveArticleText() { ArticleNumber = articleNumber, ArticleData = articleStruct, WordText = text };
-				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleText", article).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleText", article).Result;
 			}
 		}
 
@@ -236,7 +236,7 @@ namespace SitecoreTreeWalker
 			using (var client = new HttpClient())
 			{
 				var article = new WordPluginModel.SaveArticleTextByGuid() { ArticleGuid = articleGuid, ArticleData = articleStruct, WordText = text };
-				var response = client.PostAsJsonAsync($"{webApiURL}SaveArticleTextByGuid", article).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleTextByGuid", article).Result;
 			}
 		}
 
@@ -244,7 +244,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetWordVersionNum", articleNumber).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNum", articleNumber).Result;
 				var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return versionNumber;
 			}
@@ -254,7 +254,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}GetWordVersionNumByGuid", articleguid).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNumByGuid", articleguid).Result;
 				var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return versionNumber;
 			}
@@ -264,7 +264,7 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}SendDocumentToSitecore", new WordPluginModel.SendDocumentToSitecore() {ArticleNumber = articleNumber,Data = data,Extension = extension}).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SendDocumentToSitecore", new WordPluginModel.SendDocumentToSitecore() {ArticleNumber = articleNumber,Data = data,Extension = extension}).Result;
 				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);				
 			}
 		}
@@ -273,54 +273,52 @@ namespace SitecoreTreeWalker
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}SendDocumentToSitecoreByGuid", new WordPluginModel.SendDocumentToSitecoreByGuid() { ArticlGuid = articleGuid, Data = data, Extension = extension }).Result;
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SendDocumentToSitecoreByGuid", new WordPluginModel.SendDocumentToSitecoreByGuid() { ArticlGuid = articleGuid, Data = data, Extension = extension }).Result;
 				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 			}
 		}
 
-		public static UserStatusStruct AuthenticateUser(string username,string password)
+		public static WordPluginModel.UserStatusStruct AuthenticateUser(string username, string password)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}AuthenticateUser", new WordPluginModel.LoginModel() {Username= username,Password = password}).Result;
-				var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}AuthenticateUser", new WordPluginModel.LoginModel() {Username= username,Password = password}).Result;
+				var userStatus = JsonConvert.DeserializeObject<WordPluginModel.UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
 				return userStatus;
 			}
 		}
 
 
 		public SitecoreArticle()
-			: this(new SCServer(), new SCTree(), new WordUtils())
+			: this(new WordUtils())
 		{ }
 
-		public SitecoreArticle(SCServer server, SCTree tree, WordUtils wordUtils)
+		public SitecoreArticle(WordUtils wordUtils)
 		{
-			_server = server;
-			_server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			_tree = tree;
-			_tree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
 			_wordUtils = wordUtils;
 		}
 
+		//TODO - work flow
 		public static WorkflowState GetWorkflowState(string articleNumber)
 		{
-			var sctree = new SitecoreTree.SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.GetWorkflowState(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			//return sctree.GetWorkflowState(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WordPluginModel.WorkflowCommand>() };
 		}
 
+		//TODO - work flow
 		public static WorkflowState GetWorkflowState(Guid articleGuid)
 		{
-			var sctree = new SitecoreTree.SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.GetWorkflowStateByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			//var sctree = new SitecoreTree.SCTree();
+			//sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
+			//return sctree.GetWorkflowStateByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WordPluginModel.WorkflowCommand>() };
 		}
 
 		public static string GetDocumentPassword()
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetDocumentPassword").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetDocumentPassword").Result;
 				return response.Content.ReadAsStringAsync().Result;
 			}
 		}
@@ -450,8 +448,6 @@ namespace SitecoreTreeWalker
 			return extension;
 		}
 
-		protected SCServer _server;
-		protected SCTree _tree;
 		protected WordUtils _wordUtils;
 		protected static StructConverter _structConverter = new StructConverter();
 	}
