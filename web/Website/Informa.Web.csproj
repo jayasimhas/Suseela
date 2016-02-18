@@ -926,6 +926,7 @@
     <Content Include="Views\Shared\Components\ContentListing\Portrait.cshtml" />
     <Content Include="Views\Shared\Components\PullQuote.cshtml" />
     <Content Include="Views\Shared\Components\Promotional.cshtml" />
+    <Content Include="Views\Search\SearchWrapper.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
