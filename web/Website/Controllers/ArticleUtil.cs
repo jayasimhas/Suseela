@@ -16,11 +16,16 @@ using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
 using Informa.Library.Article.Search;
+using Informa.Library.Search.PredicateBuilders;
+using Informa.Library.Search.Results;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
 using Sitecore.Links;
 using Sitecore.Mvc.Controllers;
+using Velir.Search.Core.Managers;
+using Velir.Search.Core.Page;
+using Velir.Search.Core.Queries;
 using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Web.Controllers
@@ -108,14 +113,17 @@ namespace Informa.Web.Controllers
 		private readonly ISitecoreService _sitecoreMasterService;
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
+		private readonly IArticleSearch _articleSearcher;
 
 		/// <summary>
 		/// Constructor
-		/// </summary>
+		/// </summary
+		/// <param name="searcher"></param>
 		/// <param name="sitecoreFactory"></param>
-		public ArticleUtil(Func<string, ISitecoreService> sitecoreFactory)
+		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
+			_articleSearcher = searcher;
 		}
 
 		/// <summary>
@@ -139,15 +147,15 @@ namespace Informa.Web.Controllers
 		public IArticle GetArticleByNumber(string articleNumber)
 		{
 
-			var articleFolder = _sitecoreMasterService.GetItem<Item>("{9191621D-2FE9-47A9-B1DA-DA89F17796C6}");
-
-			Item article = LanguageFallbackDataService
-				.GetDescendantsByTemplateWithFallback(articleFolder, IArticleConstants.TemplateIdString)
-				.FirstOrDefault(a => (a.Fields[IArticleConstants.Article_NumberFieldName] != null &&
-				a.Fields[IArticleConstants.Article_NumberFieldName].Value == articleNumber));
-			if (article == null)
-				return null;
-			return _sitecoreMasterService.GetItem<ArticleItem>(article.ID.ToString());
+			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+			filter.ArticleNumber = articleNumber;
+			var results = _articleSearcher.SearchCustomDatabase(filter, Constants.MasterDb);
+			if (results.Articles.Any())
+			{
+				IArticle foundArticle = results.Articles.FirstOrDefault();
+				if (foundArticle != null) return _sitecoreMasterService.GetItem<ArticleItem>(foundArticle._Id);
+			}
+			return null;
 		}
 
 		/// <summary>
