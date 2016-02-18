@@ -7949,6 +7949,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
+namespace Informa.Models.Velir.Search.Models.Example
+{
+
+
+ 	/// <summary>
+	/// IExample_Search_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Velir/Search/Example/Example Search Page</para>	
+	/// <para>ID: dd15a131-7035-4180-a316-78d3f2b90c90</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IExample_Search_PageConstants.TemplateIdString)]
+	public partial interface IExample_Search_Page : IGlassBase , global::Velir.Search.Models.ISearch_Listing, global::Velir.Search.Models.ISearch_Refinements
+	{
+								/// <summary>
+					/// The Boost field.
+					/// <para></para>
+					/// <para>Field Type: Rules</para>		
+					/// <para>Field ID: 776e4fd4-c086-4d81-9530-dc5ee878e132</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExample_Search_PageConstants.BoostFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Boost  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IExample_Search_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Velir/Search/Example/Example Search Page</para>	
+		/// <para>ID: dd15a131-7035-4180-a316-78d3f2b90c90</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IExample_Search_Page__Raw : IGlassBase , global::Velir.Search.Models.ISearch_Listing__Raw, global::Velir.Search.Models.ISearch_Refinements__Raw
+		{
+										/// <summary>
+						/// The Boost field.
+						/// <para></para>
+						/// <para>Field Type: Rules</para>		
+						/// <para>Field ID: 776e4fd4-c086-4d81-9530-dc5ee878e132</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExample_Search_PageConstants.BoostFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Boost  {get; set;}
+						}
+	
+	public static partial class IExample_Search_PageConstants{
+
+			public const string TemplateIdString = "dd15a131-7035-4180-a316-78d3f2b90c90";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Example Search Page";
+
+					
+			public static readonly ID BoostFieldId = new ID("776e4fd4-c086-4d81-9530-dc5ee878e132");
+			public const string BoostFieldName = "Boost";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Velir.Search.Models.Sort_Strategies
 {
 
@@ -9013,4 +9074,3 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Media
 	}
 
 }
-                     

@@ -33,6 +33,7 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="connstr.tracking.history" value="mongodb://localhost/Informa_tracking_history" />
 	<property name="connstr.tracking.contact" value="mongodb://localhost/Informa_tracking_contact" />
   <property name="connstr.scheduledpublishing" value="mongodb://localhost/Informa_scheduled_publishing" />
+  <property name="connstr.dcd" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Companies" />
 		
 	<!-- Web.config settings -->
 	<property name="data.folder" value="${project.folder}\web\Data" />
@@ -58,17 +59,14 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="domain" value="http://supportinforma.velir.com/" />
 
 	<!-- Added for configuration of the Editor Environment --> 
-	<property name="scserver" value="http://supportinforma.velir.com/services/scserver.asmx" />
-	<property name="sctree" value="http://supportinforma.velir.com/services/sctree.asmx" />	
-	<property name="Development"  value="http://supportinforma.velir.com/services/scserver.asmx"/>
-    <property name="Stage"  value="http://supportinforma.velir.com/services/scserver.asmx"/>
-    <property name="Production"  value="http://supportinforma.velir.com/services/scserver.asmx"/>
-    <property name="DevelopmentTree"  value="http://supportinforma.velir.com/services/sctree.asmx"/>
-    <property name="StageTree"  value="http://supportinforma.velir.com/services/sctree.asmx"/>
-    <property name="ProductionTree"  value="http://supportinforma.velir.com/services/sctree.asmx"/>
-	<property name="DevelopmentForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />
-	<property name="StageForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />
-	<property name="ProductionForgotPasswordLink" value="http://supportinforma.velir.com/sitecore/login/passwordrecovery.aspx" />	
+	<property name="Development"  value="http://dev.ibi.velir.com/"/>
+    <property name="Stage"  value="http://uat.ibi.velir.com"/>
+    <property name="Production"  value="http://informa8.ashah.velir.com"/>
+	<property name="DevelopmentForgotPasswordLink" value="${Development}/sitecore/login/passwordrecovery.aspx" />
+	<property name="StageForgotPasswordLink" value="${Stage}/sitecore/login/passwordrecovery.aspx" />
+	<property name="ProductionForgotPasswordLink" value="${Production}/sitecore/login/passwordrecovery.aspx" />	
+	<property name="scserver" value="${Production}" />
+	<property name="sctree" value="${Production}" />	
 	<property name="publish.dir" value="${project.folder}Web\Website\wordinstaller\" />
 	
 	<!-- For web deployments, the URL end-users visit for the application -->

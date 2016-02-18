@@ -70,7 +70,7 @@ namespace SitecoreTreeWalker
         public static readonly string InvalidPassword = "Your login attempt was not successful. Please try again. You have {0} more login attempts remaining before you are locked out.";
         public static string EDITOR_ENVIRONMENT_VALUE = "Production";
         public static string EDITOR_ENVIRONMENT_SERVERURL = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE);
-        public static string EDITOR_ENVIRONMENT_LOGINURL = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE + "Tree");
+        public static string EDITOR_ENVIRONMENT_LOGINURL = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE);
         public static string EDITOR_ENVIRONMENT_FORGOTPASSWORDLINK = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE + "ForgotPasswordLink");
         public static string DOCUMENT_NOT_LINKED = @"Document Not Linked";
 

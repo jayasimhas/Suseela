@@ -26,11 +26,10 @@
 			</indexConfigurations>
 			<configuration>
 				<indexes hint="list:AddIndex">
-				
-				    <!-- Custom Indexes -->
-		            <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
+				<!-- Custom Indexes -->
+          <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
-            <param desc="core">informa_content_master</param>
+            <param desc="core">${Solr.CustomIndex.CoreName}_content_master</param>
             <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
             <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
             <strategies hint="list:AddStrategy">
@@ -43,23 +42,23 @@
               </crawler>
             </locations>
           </index>
-		            <index id="informa_content_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
+          <index id="informa_content_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
-            <param desc="core">informa_content_web</param>
-            <param desc="rebuildcore">informa_content_web_rebuild</param>
+            <param desc="core">${Solr.CustomIndex.CoreName}_content_web</param>
+            <param desc="rebuildcore">${Solr.CustomIndex.CoreName}_content_web_rebuild</param>
             <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
             <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
             <strategies hint="list:AddStrategy">
               <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync" />
             </strategies>
             <locations hint="list:AddCrawler">
-			              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
+              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
                 <Database>web</Database>
                 <Root>/sitecore/Content</Root>
               </crawler>
-			            </locations>
+            </locations>
           </index>
-				
+        
 					<index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
