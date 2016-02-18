@@ -7,8 +7,6 @@ using System.Web.Script.Serialization;
 using Informa.Web.Areas.Account.Models;
 using Newtonsoft.Json;
 using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.SitecoreTree;
-
 /// <summary>
 namespace SitecoreTreeWalker.Sitecore
 {
@@ -230,13 +228,7 @@ namespace SitecoreTreeWalker.Sitecore
 				var response = client.GetAsync($"{webApiURL}GetMaxLengthLongSummary").Result;
 				var length =  JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return length;
-				/*
-				Int32.TryParse(response.Content.ReadAsStringAsync().Result, out length);
-				return length;
-				*/
 			}
-			var sctree = new SCTree();
-			return sctree.GetMaxLengthLongSummary(_sitecoreUser.Username, _sitecoreUser.Password);
 		}
 
 
@@ -268,11 +260,12 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-		public static DealInfo GetDealInfo(string recordNumber)
+		//TODO - GetDealInfo
+		public static WordPluginModel.DealInfo GetDealInfo(string recordNumber)
 		{
-			var sctree = new SCTree();
-			return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
-		}
+			//return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
+			return new WordPluginModel.DealInfo();
+	}
 
 		public static int[] GetWidthHeightOfMediaItem(string path)
 		{
@@ -284,19 +277,18 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 
 		}
-
-		public static List<CompanyWrapper> GetAllCompanies()
+		//TODO - GetAllCompanies
+		public static List<WordPluginModel.CompanyWrapper> GetAllCompanies()
 		{
-			var sctree = new SCTree();
-
-			return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
+			//return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
+			return new List<WordPluginModel.CompanyWrapper>();
 		}
-
-		public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
+		
+		//TODO - GetAllRelatedCompanies
+		public static IEnumerable<WordPluginModel.CompanyWrapper> GetAllCompaniesWithRelated()
 		{
-			var sctree = new SCTree();
-
-			return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
+			//return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
+			return new List<WordPluginModel.CompanyWrapper>();
 		}
 
 		public static List<WordPluginModel.WordStyleStruct> GetParagraphStyles()

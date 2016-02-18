@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SitecoreTreeWalker.SitecoreTree;
+using Informa.Web.Areas.Account.Models;
 
 namespace SitecoreTreeWalker.UI 
 {
@@ -57,10 +57,11 @@ namespace SitecoreTreeWalker.UI
 			};
 		}
 
-		public bool UpdatePreview(DealInfo info)
+		public bool UpdatePreview(WordPluginModel.DealInfo info)
 		{
-			Controls.Clear();
-			if(info == null || string.IsNullOrEmpty(info.ID))
+			Controls.Clear();			
+			//TODO - Work on this to check if info is null
+			//if(info == null || string.IsNullOrEmpty(info.ID))
 			{
 				Title.Text = @"No Deal with that ID exists";
 				SetColumnSpan(Title, 2);

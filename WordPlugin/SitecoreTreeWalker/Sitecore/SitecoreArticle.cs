@@ -6,10 +6,10 @@ using Informa.Web.Areas.Account.Models;
 using Informa.Web.Controllers;
 using Microsoft.Office.Interop.Word;
 using Newtonsoft.Json;
+using Sitecore.Shell.Applications.ContentEditor;
+using Sitecore.Shell.Framework.Commands;
 using SitecoreTreeWalker.Custom_Exceptions;
 using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.SitecoreServer;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
@@ -278,42 +278,40 @@ namespace SitecoreTreeWalker
 			}
 		}
 
-		public static UserStatusStruct AuthenticateUser(string username,string password)
+		public static WordPluginModel.UserStatusStruct AuthenticateUser(string username, string password)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.PostAsJsonAsync($"{webApiURL}AuthenticateUser", new WordPluginModel.LoginModel() {Username= username,Password = password}).Result;
-				var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
+				var response = client.PostAsJsonAsync($"{webApiURL}AuthenticateUser", new WordPluginModel.LoginModel() { Username = username, Password = password }).Result;
+				var userStatus = JsonConvert.DeserializeObject<WordPluginModel.UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
 				return userStatus;
 			}
 		}
 
 
 		public SitecoreArticle()
-			: this(new SCServer(), new SCTree(), new WordUtils())
+			: this(new WordUtils())
 		{ }
 
-		public SitecoreArticle(SCServer server, SCTree tree, WordUtils wordUtils)
+		public SitecoreArticle(WordUtils wordUtils)
 		{
-			_server = server;
-			_server.Url = Constants.EDITOR_ENVIRONMENT_SERVERURL;
-			_tree = tree;
-			_tree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
 			_wordUtils = wordUtils;
 		}
 
+		//TODO - work flow
 		public static WorkflowState GetWorkflowState(string articleNumber)
 		{
-			var sctree = new SitecoreTree.SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.GetWorkflowState(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			//return sctree.GetWorkflowState(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WordPluginModel.WorkflowCommand>() };
 		}
 
+		//TODO - work flow
 		public static WorkflowState GetWorkflowState(Guid articleGuid)
 		{
-			var sctree = new SitecoreTree.SCTree();
-			sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-			return sctree.GetWorkflowStateByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			//var sctree = new SitecoreTree.SCTree();
+			//sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
+			//return sctree.GetWorkflowStateByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
+			return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WordPluginModel.WorkflowCommand>() };
 		}
 
 		public static string GetDocumentPassword()
@@ -450,8 +448,6 @@ namespace SitecoreTreeWalker
 			return extension;
 		}
 
-		protected SCServer _server;
-		protected SCTree _tree;
 		protected WordUtils _wordUtils;
 		protected static StructConverter _structConverter = new StructConverter();
 	}

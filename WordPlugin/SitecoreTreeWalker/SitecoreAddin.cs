@@ -7,7 +7,6 @@ using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.document;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.UI;
@@ -92,10 +91,11 @@ namespace SitecoreTreeWalker
 
             try
             {
-                var sctree = new SCTree();
-                SupportEmailAddress = sctree.GetSupportEmail();
+				//TODO - Work on this service to get the support email.
+                //SupportEmailAddress = sctree.GetSupportEmail();
+				SupportEmailAddress = "aakash.shah@velir.com";
 
-            }
+			}
             catch (Exception ex)
             {
                 SupportEmailAddress = "";

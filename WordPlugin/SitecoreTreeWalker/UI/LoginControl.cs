@@ -9,7 +9,6 @@ using SitecoreTreeWalker.Util;
 using System.Deployment ;
 using System.Reflection;
 using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.SitecoreTree;
 
 namespace SitecoreTreeWalker.UI
 {
@@ -200,7 +199,7 @@ namespace SitecoreTreeWalker.UI
 		/// Authenticates user credentials entered the username and password fields.
 		/// </summary>
 		/// <returns>True if authentication successful. Otherwise, false.</returns>
-		private UserStatusStruct Authenticate()
+		private WordPluginModel.UserStatusStruct Authenticate()
 		{
 			try
 			{
