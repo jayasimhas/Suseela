@@ -187,7 +187,10 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			var article = uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
 			if (article != null)
-				Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+			{
+				//Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+				Process.Start(article.PreviewUrl);
+			}
 		}
 
 		private void uxRelatedArticleNumber_KeyDown(object sender, KeyEventArgs e)

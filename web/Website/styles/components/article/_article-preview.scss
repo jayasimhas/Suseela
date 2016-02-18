@@ -44,9 +44,9 @@
         text-transform: uppercase;
     }
     &__bookmarker-label {
-        // @include breakpoint('medium') {
+        @include breakpoint('medium') {
             display: none;
-        // }
+        }
     }
 
     &__category {
@@ -58,7 +58,6 @@
         @include textMix('Roboto Condensed', 30px, 700);
         color: $informa-black;
         line-height: 2.175rem;
-        margin-top: 1.125rem;
         margin-bottom: 0.5rem;
     }
     &__byline {
@@ -132,124 +131,6 @@
         clear: both;
         content: "";
         display: block;
-    }
-
-    // * * * * *
-    // Featured Article (2/3, manually curated container)
-    // IIPP-72
-
-    &--featured {
-        .article-preview__image {
-            width: 100%;
-            float: none;
-        }
-    }
-
-
-    // * * * * *
-    // Featured Article — Full Width
-    // IIPP-69
-
-    $featured-article-wide-img-width: 384px;
-    $featured-article-wide-img-width--tablet: 294px;
-
-    &--wide {
-        background-color: $informa-light-gray-f;
-        border-top: 2px solid $informa-light-gray-d;
-        margin-bottom: 1.5rem;
-        padding: 1.5rem;
-        width: 100%;
-
-        .article-preview__image {
-            float: left;
-            margin-right: 24px;
-            width: 360px;
-
-            @include breakpoint('medium') {
-                width: 240px;
-            }
-        }
-
-        .article-preview__tags {
-            bottom: 0;
-            display: block;
-            position: relative;
-            width: auto;
-        }
-
-        .article-metadata {
-            margin-bottom: 1rem;
-            width: calc(100% - 384px);
-        }
-
-        .article-preview__content-wrapper {
-            margin-left: 384px;
-            position: relative;
-        }
-
-        .article-metadata,
-        .article-preview__headline,
-        .article-preview__tags,
-        p {
-            margin-left: $featured-article-wide-img-width;
-        }
-
-
-        @include breakpoint('medium') {
-            .article-metadata {
-                position: absolute;
-                width: calc(100% - 3rem);
-                margin-left: 0;
-            }
-
-            .article-preview__image {
-                width: 270px;
-            }
-
-            .article-preview__image,
-            .article-preview__headline, {
-                margin-top: 4rem;
-            }
-
-            .article-preview__headline,
-            .article-preview__tags,
-            p {
-                margin-left: $featured-article-wide-img-width--tablet;
-            }
-        }
-        @include breakpoint('small') {
-            padding: 1rem;
-
-            .article-preview__image {
-                margin-bottom: 1rem;
-            }
-
-            .article-metadata {
-                position: static;
-                width: 100%;
-            }
-
-            .article-preview__headline {
-                font-size: 1.5rem;
-                line-height: 2rem;
-            }
-
-            p {
-                font-size: 1rem;
-                line-height: 1.75rem;
-            }
-
-            .article-preview__image,
-            .article-preview__headline {
-                width: 100%;
-                margin-top: 0;
-            }
-            .article-preview__headline,
-            .article-preview__tags,
-            p {
-                margin-left: 0;
-            }
-        }
     }
 
     // .latest-news previews need a wrapper for all content besides the image
