@@ -93,6 +93,13 @@ var renderIframeComponents = function() {
 		var mobileEmbed = $(elm).find('.iframe-component__mobile')
 		var mobileEmbedLink = mobileEmbed.data('embed-link');
 
+		// Check if the user is viewing inside the page editor
+		// Don't hide/show desktop and/or mobile, just keep both visible
+		// so users can add, edit, or delete either.
+		if(desktopEmbed.hasClass('is-page-editor')) {
+			return;
+		}
+
 		if($(window).width() <= 480 && mobileEmbedLink) {
 			mobileEmbed.show();
 			desktopEmbed.hide();
