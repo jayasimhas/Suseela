@@ -10,7 +10,7 @@ namespace SitecoreTreeWalker.Util
 		public static Uri GetPreviewURL(string urlstring)
 		{
 			var uribuilder = new UriBuilder(urlstring);
-			uribuilder.Scheme = Uri.UriSchemeHttps;
+			uribuilder.Scheme = Uri.UriSchemeHttp;
 			uribuilder.Port = 443;
 			return uribuilder.Uri;
 		}

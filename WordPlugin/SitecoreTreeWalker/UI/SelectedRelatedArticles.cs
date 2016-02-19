@@ -135,7 +135,8 @@ namespace SitecoreTreeWalker.UI
 			           	};
 			view.MouseClick += delegate
 			                   	{
-									Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+									   //Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+									   Process.Start(article.PreviewUrl);
 			                   	};
 			return view;
 		}
