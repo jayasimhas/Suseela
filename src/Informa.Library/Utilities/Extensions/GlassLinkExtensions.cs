@@ -1,3 +1,4 @@
+using System.Web;
 using Glass.Mapper.Sc.Fields;
 
 namespace Informa.Library.Utilities.Extensions
@@ -8,12 +9,16 @@ namespace Informa.Library.Utilities.Extensions
 		{
 			const string hash = "#";
 
-			if (link == null)
+			if (link == null || string.IsNullOrEmpty(link.Url))
 				return hash;
 
-			return string.IsNullOrEmpty(link.Url)
-				? hash
-				: link.Url;
+		    if (HttpContext.Current == null || HttpContext.Current.Request == null)
+		        return hash;
+
+            var req = HttpContext.Current.Request;
+		    return (link.Url.StartsWith("/"))
+		        ? $"{req.Url.Scheme}://{req.Url.Host}{link.Url}"
+		        : link.Url;
 		}
 	}
 }

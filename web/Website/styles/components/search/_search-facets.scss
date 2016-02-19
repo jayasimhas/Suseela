@@ -1,0 +1,107 @@
+.search__facets {
+  @include textMix('Roboto', 13px, 400);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  order: 1;
+  max-width: 300px;
+  margin-right: 15px;
+  border: 1px solid $informa-light-gray-d;
+}
+
+.facets {
+
+  &__header {
+    padding: 20px;
+    border-bottom: 2px solid $informa-light-gray-d;
+
+    h3 {
+      display: inline-block;
+      color: $informa-black;
+    }
+
+    a.facets__clear {
+      float: right;
+      line-height: 29px;
+    }
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__section {
+    font-size: 15px;
+    line-height: 23px;
+
+    &:not(:first-child) {
+      padding-top: 20px;
+      border-top: 1px solid $informa-light-gray-d;
+    }
+  }
+
+  &__section-header {
+    display: inline-block;
+    padding-bottom: 15px;
+    color: $informa-black;
+  }
+
+  &__section-list {
+    li {
+      padding-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0; // hiding to replace with custom checkbox style
+    }
+
+    input[type="checkbox"] + label {
+      font-size: 15px;
+      line-height: 23px;
+    }
+
+    input[type="checkbox"]:checked + label {
+      font-weight: 700;
+    }
+
+    input[type="checkbox"] + label:before {
+      content:" ";
+      display:inline-block;
+      height: 17px;
+      width: 17px;
+      border: 1px solid $informa-light-gray-d;
+      border-radius: 20%;
+      margin-right: 10px;
+      vertical-align: text-bottom;
+    }
+
+    // input[type="checkbox"]:checked + label:before {
+    //   content:" ";
+    // }
+      /* TODO: below is an example, make a real svg for check, then encode it */
+      /* Base 64 encoded SVG image, source:
+      <?xml version="1.0" standalone="no"?>
+      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+      "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+      <svg width="100%" height="100%" version="1.0"
+      xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="0" x2="100%" y2="100%" stroke="#000000 "/>
+      <line x1="0" y1="100%" x2="100%" y2="0" stroke="#000000"/>
+      </svg>
+      */
+
+      &--sub {
+        padding-top: 10px;
+        padding-left: 30px;
+
+        input[type="checkbox"] + label {
+          font-size: 13px;
+          line-height: 20px;
+        }
+      }
+  }
+
+
+}

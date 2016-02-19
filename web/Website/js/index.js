@@ -2,6 +2,7 @@ import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
+import BookmarkController from './bookmark-controller';
 
 /* Toggle menu visibility */
 $('.js-toggle-menu').on('click', function toggleMenu() {
@@ -66,6 +67,7 @@ $('.js-register-submit').on('click', function validateUsername(e) {
 
 // Global dismiss button for pop-outs
 $('.dismiss-button').on('click', function(e) {
+	// Make sure proper elm gets the click event
 	if (e.target !== this) {
 		this.click();
     	return;
@@ -109,6 +111,7 @@ var renderIframeComponents = function() {
 	});
 };
 
+
 $(document).ready(function() {
 
 	var poc = new PopOutController('.js-pop-out-trigger');
@@ -130,6 +133,22 @@ $(document).ready(function() {
 			phoneHeight: '' // Default
 		}
 	});
+
+
+	var bookmark = new BookmarkController();
+
+	// Toggle bookmark icon
+	$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
+		// Make sure proper elm gets the click event
+		if (e.target !== this) {
+			this.click();
+			return;
+		}
+
+		bookmark.toggle(e.target);
+
+	});
+	
 
     svg4everybody();
 
