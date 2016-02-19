@@ -426,7 +426,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			SwitchToPage(pageWorkflowControl);
 		}
 
-		private void SubjectsMenuItem_Click(object sender, EventArgs e)
+		private void FeaturedImageMenuItem_Click(object sender, EventArgs e)
 		{
 			SwitchToPage(pageFeaturedImageControl);
 		}
