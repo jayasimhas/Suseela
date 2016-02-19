@@ -135,8 +135,12 @@ namespace Informa.Web.Controllers
 		{
 
 			IArticle articleItem = GetArticleByNumber(articleNumber);
-			var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
-			return article;
+			if (articleItem != null)
+			{
+				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
+				return article;
+			}
+			return null;
 		}
 
 		/// <summary>
