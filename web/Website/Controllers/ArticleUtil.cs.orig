@@ -134,13 +134,19 @@ namespace Informa.Web.Controllers
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
 
-            ArticleItem articleItem = GetArticleByNumber(articleNumber);
+<<<<<<< origin/Word-Plugin-v2
+			IArticle articleItem = GetArticleByNumber(articleNumber);
 			if (articleItem != null)
 			{
 				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
 				return article;
 			}
 			return null;
+=======
+            ArticleItem articleItem = GetArticleByNumber(articleNumber);
+			var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
+			return article;
+>>>>>>> local
 		}
 
 		/// <summary>
@@ -181,10 +187,11 @@ namespace Informa.Web.Controllers
 			return new WordPluginModel.ArticlePreviewInfo
 			{
 				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,				
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
+				//Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
 				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
-				Date = article.Actual_Publish_Date,
+				//Date = GetProperDate(), TODO
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
 				Guid = article._Id
 			};
@@ -192,7 +199,17 @@ namespace Informa.Web.Controllers
 
         public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
         {
-            return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
+            return new WordPluginModel.ArticlePreviewInfo
+            {
+                Title = article.Title,
+                Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
+                //Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
+                Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
+                ArticleNumber = article.Article_Number,
+                //Date = GetProperDate(), TODO
+                PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
+                Guid = article._Id
+            };
         }
 
 
@@ -444,7 +461,7 @@ namespace Informa.Web.Controllers
 
 			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
 
-			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo((IArticle)a)).ToList();
+			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((ArticleItem)a))).ToList();
 
 			if (articleItem.Word_Document != null)
 			{
