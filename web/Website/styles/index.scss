@@ -62,6 +62,12 @@
 @import 'components/article/article-tags';
 @import 'components/article/article-topics';
 
+/* * * * COMPONENTS — SEARCH RESULTS * * * */
+@import 'components/search/search';
+@import 'components/search/search-facets';
+@import 'components/search/search-results';
+@import 'components/search/search-bar';
+
 /* * * * ATOMS * * * */
 @import 'components/atoms/blockquote';
 
