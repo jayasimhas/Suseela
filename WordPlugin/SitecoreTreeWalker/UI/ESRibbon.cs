@@ -64,7 +64,7 @@ namespace SitecoreTreeWalker.UI
                 MessageBox.Show
                     (@"An error has occurred while attempting to display the Sitecore browser tab. Please restart Word and try again." +
                      Environment.NewLine + Environment.NewLine +
-                     @"If the problem persists, contact your system administrator.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -80,7 +80,7 @@ namespace SitecoreTreeWalker.UI
                 MessageBox.Show
                     (@"An error has occurred while attempting to display the article information window. Please restart Word and try again." +
                      Environment.NewLine + Environment.NewLine +
-                     @"If the problem persists, contact your system administrator.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -241,7 +241,7 @@ namespace SitecoreTreeWalker.UI
                 MessageBox.Show
                     (@"An error has occurred while attempting to display the article information window. Please restart Word and try again." +
                      Environment.NewLine + Environment.NewLine +
-                     @"If the problem persists, contact your system administrator.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -249,7 +249,7 @@ namespace SitecoreTreeWalker.UI
         {
             if (GetArticleNumber() == null)
             {
-                MessageBox.Show(@"There is no article linked!", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             Process.Start(GetPreviewUrl(false));
@@ -260,7 +260,7 @@ namespace SitecoreTreeWalker.UI
         {
             if (GetArticleNumber() == null)
             {
-                MessageBox.Show(@"There is no article linked!", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
