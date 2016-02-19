@@ -5,15 +5,19 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 
+	span {
+		vertical-align: middle;
+	}
+
 	&__icon {
 		width: 18px;
-		height: 18px;
+		height: 19px;
 		vertical-align: middle;
 		margin-left: 12px;
 	}
 
 	@include breakpoint('medium') {
-		label {
+		span {
 			display: none;
 		}
 	}

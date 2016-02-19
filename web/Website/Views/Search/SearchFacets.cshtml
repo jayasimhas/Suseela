@@ -1,0 +1,60 @@
+﻿
+<div id="search-facet-01"
+     class="search-facet search-facet--expand-short search-facet--list search__facets"
+     ng-controller="searchFacetsController as allFacets">
+
+  <div class="facets__header">
+    <h3>Filter By</h3>
+    <a class="facets__clear js-clear-all">Clear All</a>
+  </div>
+
+  <div class="facets__content">
+
+      <div class="facets__section" ng-repeat="group in allFacets.facetGroups">
+        <h4 class="facets__section-header">{{ group.label }}</h4>
+
+        <ul class="facets__section-list" ng-repeat="f in group.facets">
+          <li>
+            <input id="{{ group.id }}-{{ $index }}"
+                   type="checkbox"
+                   class="visuallyhidden"
+                   ng-checked="f.selected"
+                   ng-model="f.selected"
+                   ng-change="allFacets.update()">
+            <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
+          </li>
+        </ul>
+
+      </div>
+
+    <div class="facets__section">
+      <h4 class="facets__section-header">Therapy Areas</h4>
+      <ul class="facets__section-list">
+        <li>
+            <input type="checkbox"><label for="">Lorem ipsum</label></li>
+        <li>
+            <input type="checkbox"><label for="">Corrupti ipsa</label></li>
+        <li>
+            <input type="checkbox"><label for="">Maxime vita!</label></li>
+        <li>
+            <input type="checkbox"><label for="">Eveniet quisquam</label></li>
+        <li>
+            <input type="checkbox"><label for="">Veniam voluptatum</label></li>
+        <li>
+          <input type="checkbox"><label for="">Placeat rem</label>
+          <ul class="facets__section-list--sub">
+            <li><input type="checkbox"><label for="">Lorem ipsum dolor</label></li>
+            <li><input type="checkbox"><label for="">Minima voluptatibus animi</label></li>
+            <li><input type="checkbox"><label for="">Tempora quia quaerat</label></li>
+            <li><input type="checkbox"><label for="">Voluptas repellendus nisi</label></li>
+            <li><input type="checkbox"><label for="">Explicabo ipsum natus</label></li>
+            <li><input type="checkbox"><label for="">Quo beatae tempore</label></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
+        </div>
+
+</div>

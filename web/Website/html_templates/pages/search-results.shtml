@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Search Results</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/default.css">
+</head>
+<body ng-app="hof">
+
+<!--#include virtual="/html_templates/components/panel-push.shtml" -->
+<div class="l-outer-wrapper js-push-wrapper">
+	<!--#include virtual="/html_templates/components/header.shtml" -->
+	<!--#include virtual="/html_templates/components/nav-top.shtml" -->
+	<div class="l-content-wrapper">
+		<div ng-controller="CaratController as carats" class="filter-container">
+			<!--#include virtual="/html_templates/components/slider-range.shtml" -->
+		</div>
+	</div>
+	<div>
+	<!--Checkbox -->
+	<div class="checkbox-component">
+		<input class="checkbox checkbox__input" type="checkbox" id="checkbox1" value="tests">
+		<label for="checkbox1" class="checkbox__label">
+			<p class="checkbox__text">Include in-stock diamonds only</p>
+			<span class="checkbox__box"></span>
+		</label>
+	</div>
+	<!--Radio Buttons -->
+	<div class="checkbox-component checkbox-component--radio">
+		<input class="checkbox checkbox__input" type="radio" name="radio" id="test1" value="test1">
+		<label for="test1" class="checkbox__label">
+			<p class="checkbox__text">Square</p>
+			<span class="checkbox__box"></span>
+		</label>
+
+		<input checked="true" class="checkbox checkbox__input" type="radio" name="radio" id="test2" value="test2">
+		<label for="test2" class="checkbox__label">
+			<p class="checkbox__text">Round</p>
+			<span class="checkbox__box"></span>
+		</label>
+	</div>
+
+</div>
+<div class="footer js-push-footer">
+	<!--#include virtual="/html_templates/components/nav-bottom.shtml" -->
+	<!--#include virtual="/html_templates/components/footer.shtml" -->
+</div>
+
+<script src="/Scripts/vendor.js"></script>
+<script>
+	$.noConflict();
+</script>
+<!-- <script src="/Scripts/index.js"></script> -->
+
+</body>
+</html>

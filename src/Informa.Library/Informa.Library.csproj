@@ -151,6 +151,9 @@
     <Reference Include="Sitecore.ContentSearch.Linq">
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.SolrProvider">
+      <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.HtmlCache">
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.HtmlCache\Sitecore.HtmlCache.dll</HintPath>
     </Reference>
@@ -189,6 +192,7 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -230,6 +234,14 @@
       <HintPath>..\..\packages\Velir.Library.Core.1.0.4\lib\net45\Velir.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Velir.Search.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Velir.Search.Core.1.2.3\lib\net45\Velir.Search.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Velir.Search.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Velir.Search.Models.1.2.0\lib\net45\Velir.Search.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebApi.OutputCache.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
       <Private>True</Private>
@@ -242,6 +254,7 @@
   <ItemGroup>
     <Compile Include="Article\IUserArticleBookmarkedContext.cs" />
     <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
+    <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
@@ -254,6 +267,7 @@
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
     <Compile Include="Content\Assets\CreatePageAssetsCommand.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver.cs" />
+    <Compile Include="CustomSitecore\Ribbon\DownloadWord.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomValidateFormHandlerAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomValidHttpPostAttribute.cs" />
     <Compile Include="Publishing\IPublishingStatus.cs" />
@@ -369,15 +383,37 @@
     <Compile Include="Registration\MockUsernameValidator.cs" />
     <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
     <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Search\ComputedFields\Base\IsSearchableField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLink.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomyTypeConverter.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLinkList.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchDisplayTaxonomyField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultBylineField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultDateField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\AreasField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\CompaniesField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\ContentTypeField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\MediaTypeField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\RegionsField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\SubjectsField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationTitleField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultSummaryField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultTitleField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultUrlField.cs" />
     <Compile Include="Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\Filter\IArticleEScenicIDFilter.cs" />
     <Compile Include="Search\Filter\IArticleNumberFilter.cs" />
     <Compile Include="Search\Filter\ITaxonomySearchFilter.cs" />
     <Compile Include="Search\IProviderSearchContextFactory.cs" />
+    <Compile Include="Search\PredicateBuilders\InformaPredicateBuilder.cs" />
     <Compile Include="Search\ProviderSearchContextFactory.cs" />
     <Compile Include="Search\Results\IArticleEScenicID.cs" />
     <Compile Include="Search\Results\IArticleNumber.cs" />
+    <Compile Include="Search\Results\InformaSearchResultItem.cs" />
     <Compile Include="Search\Results\ITaxonomySearchResults.cs" />
+    <Compile Include="Search\SearchIndex\CustomSolrFieldNameTranslator.cs" />
+    <Compile Include="Search\SearchIndex\CustomSolrSearchIndex.cs" />
+    <Compile Include="Search\SearchIndex\CustomSwitchOnRebuildSolrSearchIndex.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
@@ -396,6 +432,7 @@
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
+    <Compile Include="Utilities\References\Constants.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
@@ -408,6 +445,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
+    <None Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
+    <None Include="App_Config\Include\Jabberwocky.Glass.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -417,7 +457,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Config\" />
     <Folder Include="InterfaceFactory\Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

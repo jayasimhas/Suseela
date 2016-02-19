@@ -528,13 +528,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             if (string.IsNullOrEmpty(title))
             {
-                MessageBox.Show(@"Please enter an article title.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter an article title.", @"Insight Platform", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
 
-            if (pubGuid.Equals(Guid.Empty))
+            if (articleDetailsPageSelector.GetPublicationGuid().Equals(Guid.Empty))
             {
-                MessageBox.Show(@"Please select a publication.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please select a publication.", @"Insight Platform", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
 
@@ -737,7 +737,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
         private void uxSaveMetadata_Click(object sender, EventArgs e)
         {
-            var articleDate = articleDetailsPageSelector.GetDate();
+			if (articleDetailsPageSelector.GetTaxonomyCount() < 1)
+			{
+				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Insight Platform", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				return;
+			}
+			var articleDate = articleDetailsPageSelector.GetDate();
             if (articleDate < DateTime.Now)
             {
                 var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
@@ -814,6 +819,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
         private void uxSaveAndTransfer_Click(object sender, EventArgs e)
         {
+	        if (articleDetailsPageSelector.GetTaxonomyCount() < 1)
+	        {
+				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Insight Platform", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				return;
+			}
             var articleDate = articleDetailsPageSelector.GetDate();
             if (articleDate < DateTime.Now)
             {
