@@ -232,6 +232,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         }
 		public void ResetFields()
 		{
+			ClearItems();
 			InitializeItems();
 			sourceTxtBox.Text = string.Empty;
 			captionTxtBox.Text = string.Empty;

@@ -769,7 +769,7 @@ namespace Informa.Web.Controllers
 
 		public JsonResult<WordPluginModel.ArticleStruct> Get(string articleNumber)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			return Json(article == null ? new WordPluginModel.ArticleStruct() : _articleUtil.GetArticleStruct(article));
 		}
 	}
@@ -792,7 +792,7 @@ namespace Informa.Web.Controllers
 
 		public JsonResult<WordPluginModel.ArticleStruct> Get(string articleGuid)
 		{
-			IArticle article = _sitecoreService.GetItem<ArticleItem>(articleGuid);
+            ArticleItem article = _sitecoreService.GetItem<ArticleItem>(articleGuid);
 			return Json(article == null ? new WordPluginModel.ArticleStruct() : _articleUtil.GetArticleStruct(article));
 		}
 	}

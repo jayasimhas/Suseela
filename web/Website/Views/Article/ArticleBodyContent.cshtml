@@ -61,7 +61,7 @@
     {
         <div class="article-author">
             <ul class="article-author__list">
-                @foreach (var author in Model.Authors)
+                @foreach (var author in Model.Authors.Take(3))
                 {
                     <li>
                         <span class="article-author__name">@author.Name</span>
@@ -82,18 +82,16 @@
     @* END MULTIPLE AUTHORs *@
     }
 
-    @* * * IIPP-94 — Executive Summary
-
-    NOTE - If no Executive Summary exists for an article,
-    this entire <div> should be hidden.
-
-    <div class="article-executive-summary">
-        <h4>Executive Summary</h4>
-        <p> SUMMARY GOES HERE </p>
-    </div>
-
-    *@
-
+    @if (!string.IsNullOrEmpty(Model.ListableSummary))
+    {
+        @* * * Executive Summary *@
+        <div class="article-executive-summary">
+            <h4>Executive Summary</h4>
+            @Html.Raw(Model.ListableSummary)
+        </div>
+        @* End Executive Summary  *@
+    }
+    
     @if (Model.Image != null)
     {
     @* * *  ARTICLE - FEATURED IMAGE

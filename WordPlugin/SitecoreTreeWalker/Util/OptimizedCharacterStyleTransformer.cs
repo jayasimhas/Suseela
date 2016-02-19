@@ -12,7 +12,7 @@ namespace SitecoreTreeWalker.Util
 	{
 		public SupportingDocumentsReferenceBuilder SupportingDocumentsReferenceBuilder = new SupportingDocumentsReferenceBuilder();
 
-		public XElement GetCharacterStyledElement(XElement element, Paragraph paragraph, 
+		public XElement GetCharacterStyledElement(XElement element, Paragraph paragraph,
 			List<CharacterStyle> characterStyles, bool ignoreParagraphStyle, int limit = -1)
 		{
 			if (limit == 0) return element;
@@ -67,7 +67,7 @@ namespace SitecoreTreeWalker.Util
 			return element;
 		}
 
-		public void GetCharacterStyledElement(XElement element, List<Range> characters, 
+		public void GetCharacterStyledElement(XElement element, List<Range> characters,
 			List<CharacterStyle> characterStyles, int limit = -1)
 		{
 			if (limit == 0) return;
@@ -129,7 +129,7 @@ namespace SitecoreTreeWalker.Util
 		}
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		/// <param name="characterStyles">List of relevant character styles</param>
 		/// <param name="stylesToPrune">List which to add styles to prune</param>
@@ -206,7 +206,7 @@ namespace SitecoreTreeWalker.Util
 		}
 
 		/// <summary>
-		/// Hyperlinks that should be transformed are those that author inputs, 
+		/// Hyperlinks that should be transformed are those that author inputs,
 		/// not a related article, not a sidebar, and not a deal.
 		/// </summary>
 		/// <param name="currentHyperlink"></param>
@@ -221,13 +221,8 @@ namespace SitecoreTreeWalker.Util
 		{
 			var a = new XElement("a");
 			a.SetAttributeValue("href", hyperlink.Address);
+			a.SetAttributeValue("class", "article-link");
             a.Value = hyperlink.Range.Text;
-			var img = new XElement("img");
-			img.SetAttributeValue("width", "10");
-			img.SetAttributeValue("height", "14");
-			img.SetAttributeValue("class", "docicon");
-			img.SetAttributeValue("src", "/images/icon_external.gif");
-			a.Add(img);
 			return a;
 		}
 

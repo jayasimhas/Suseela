@@ -509,6 +509,15 @@ namespace SitecoreTreeWalker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date not Set.
+        /// </summary>
+        internal static string SelectedRelatedArticles_CreateDateLabel_Date_not_Set {
+            get {
+                return ResourceManager.GetString("SelectedRelatedArticles_CreateDateLabel_Date_not_Set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap sidearrow {
