@@ -8,6 +8,9 @@ using Informa.Library.Search.Extensions;
 using System.Collections.Generic;
 using System;
 using Informa.Library.Search;
+using Informa.Library.Utilities.References;
+using Sitecore.Configuration;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 
 namespace Informa.Library.Article.Search
@@ -16,14 +19,17 @@ namespace Informa.Library.Article.Search
 	public class ArticleSearch : IArticleSearch
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
-		protected readonly ISitecoreService SitecoreContext;
+		protected readonly ISitecoreService SitecoreContext;		
+		protected readonly Func<string, ISitecoreService> SitecoreFactory;
 
 		public ArticleSearch(
 			IProviderSearchContextFactory searchContextFactory,
-			ISitecoreService sitecoreContext)
+			ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory
+			)
 		{
 			SearchContextFactory = searchContextFactory;
 			SitecoreContext = sitecoreContext;
+			SitecoreFactory = sitecoreFactory;
 		}
 
 		public IArticleSearchFilter CreateFilter()
@@ -63,6 +69,37 @@ namespace Informa.Library.Article.Search
 			}
 		}
 
+		/// <summary>
+		/// This is a search implementatation where you want to pass the database name along with the filter.
+		/// </summary>
+		/// <param name="filter"></param>
+		/// <param name="database"></param>
+		/// <returns></returns>
+		public IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database)
+		{
+			using (var context = SearchContextFactory.Create(database))
+			{
+				var query = context.GetQueryable<ArticleSearchResultItem>()
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+					.FilterTaxonomies(filter)
+					.ExcludeManuallyCurated(filter)
+					.FilteryByArticleNumber(filter)
+					.FilteryByEScenicID(filter);
+
+				if (filter.PageSize > 0)
+				{
+					query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
+				}
+
+				query = query.OrderByDescending(i => i.ActualPublishDate);
+				ISitecoreService localSearchContext = SitecoreFactory(database);
+				var results = query.GetResults();
+				return new ArticleSearchResults
+				{
+					Articles = results.Hits.ToList().Select(h => localSearchContext.GetItem<IArticle>(h.Document.ItemId.Guid))
+				};
+			}
+		}
 		public int GetNextArticleNumber(Guid publicationGuid)
 		{
 			using (var context = SearchContextFactory.Create())
