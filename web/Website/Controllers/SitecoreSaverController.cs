@@ -68,7 +68,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public void Post([FromBody] WordPluginModel.SaveArticleTextByGuid content)
 		{
-			IArticle item = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticleGuid);
+            ArticleItem item = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticleGuid);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(item, content.WordText, content.ArticleData);
 		}
 	}
@@ -88,7 +88,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public void Post([FromBody] WordPluginModel.SaveArticleText content)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
+			ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);
 		}
 	}
@@ -197,7 +197,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public bool Post([FromBody] string articleNumber)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			return _articleUtil.DoesArticleHaveText(article);
 		}
 	}
@@ -217,7 +217,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public bool Post([FromBody] Guid articleGuid)
 		{
-			IArticle article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
+            ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			return _articleUtil.DoesArticleHaveText(article);
 		}
 	}
@@ -276,7 +276,7 @@ namespace Informa.Web.Controllers
 			var previews = new List<WordPluginModel.ArticlePreviewInfo>();
 			foreach (Guid guid in guids)
 			{
-				IArticle article = _sitecoreMasterService.GetItem<ArticleItem>(guid);
+                ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(guid);
 				if (article != null)
 				{
 					previews.Add(_articleUtil.GetPreviewInfo(article));
@@ -298,7 +298,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public WordPluginModel.ArticlePreviewInfo Post([FromBody] string articleNumber)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new WordPluginModel.ArticlePreviewInfo();
 			return preview;
 		}
@@ -318,7 +318,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public int Post([FromBody] string articleNumber)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			if (article == null)
 			{
 				return -1;
@@ -342,7 +342,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public int Post([FromBody] Guid articleGuid)
 		{
-			IArticle article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
+            ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			if (article == null)
 			{
 				return -1;
@@ -443,7 +443,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public int Post([FromBody] WordPluginModel.SendDocumentToSitecoreByGuid content)
 		{
-			IArticle article = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticlGuid);
+            ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticlGuid);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
 		}
 	}
@@ -463,7 +463,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public int Post([FromBody] WordPluginModel.SendDocumentToSitecore content)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
 		}
 	}
@@ -481,7 +481,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public string Post([FromBody] string articleNumber)
 		{
-			IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			return article?._Id.ToString() ?? Guid.Empty.ToString();
 		}
 	}

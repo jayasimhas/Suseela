@@ -40,14 +40,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		}
 	}
     
-	public class ArticleItem : IArticle
+	public class ArticleItem : GlassBase, IArticle__Raw
 	{
 	    public Guid Publication => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");
 		public Guid _Id { get; set; }
 		public Language _Language { get; set; }
 		public int _Version { get; set; }
 		public string _Url { get; set; }
-		public Guid _TemplateId { get; set; }
+	    public Guid _TemplateId { get; set; } = IArticleConstants.TemplateId.Guid;
 			//= new Guid(IArticleConstants.TemplateIdString);
 		public string _Path { get; set; }
 		public string _Name { get; set; }
