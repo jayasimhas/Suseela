@@ -1,34 +1,29 @@
-﻿
-<div class="pagination-wrapper" ng-controller="searchPaginationController as paginator">
-    <ol class="pagination"
-        ng-if="paginator.showPagination">
-        <li class="pagination__prev" ng-class="{ 'is-disabled': page.num === paginator.pageFirst }">
-            <a href="
-                       title=" previous page"
-               ng-click="paginator.prev()">Previous</a>
-        </li>
+<!-- TODO: Do they want the Previous / Next controls?
+     TODO: Do they want to replace the # of the last page with the word 'Last'?﻿
+     TODO: What is the max # of numbered pages to list?
+     TODO: Will there be 2 ellipsis if you're in the middle, e.g.  "First ... 7 8 9 10 11 ... Last" ?
+     TODO: Add a class to the active page number
+-->
+
+
+<div class="search-pagination__wrapper" ng-controller="searchPaginationController as paginator">
+    <ol class="search-pagination__pagination-list" ng-if="paginator.showPagination">
+        <!-- <li class="pagination__prev" ng-class="{ 'is-disabled': page.num === paginator.pageFirst }">
+            <a href="title=' previous page'" ng-click="paginator.prev()">Previous</a>
+        </li> -->
         <li ng-if="!paginator.isFirstPageInBlock()">
-            <a href=""
-               title="Page {{paginator.pageFirst}}"
-               ng-click="paginator.goto(paginator.pageFirst)">{{paginator.pageFirst}}</a>
+            <a href="" title="Page {{paginator.pageFirst}}" ng-click="paginator.goto(paginator.pageFirst)">{{paginator.pageFirst}}</a>
         </li>
         <li ng-if="!paginator.isFirstPageInBlock()">...</li>
-        <li ng-repeat="page in paginator.pageBlock"
-            ng-class="{ 'is-active': page.current }">
-            <a href=""
-               title="Page {{page.label}}"
-               ng-click="paginator.goto(page.num)">{{page.label}}</a>
+        <li ng-repeat="page in paginator.pageBlock" ng-class="{ 'is-active': page.current }">
+            <a href="" title="Page {{page.label}}" ng-click="paginator.goto(page.num)">{{page.label}}</a>
         </li>
         <li ng-if="!paginator.isLastPageInBlock()">...</li>
         <li ng-if="!paginator.isLastPageInBlock()">
-            <a href=""
-               title="Page {{paginator.pageLast}}"
-               ng-click="paginator.goto(paginator.pageLast)">{{paginator.pageLast}}</a>
+            <a href="" title="Page {{paginator.pageLast}}" ng-click="paginator.goto(paginator.pageLast)">{{paginator.pageLast}}</a>
         </li>
-        <li class="pagination__next" ng-class="{ 'is-disabled': page.num === paginator.pageLast }">
-            <a href=""
-               title="Next Page"
-               ng-click="paginator.next()">Next</a>
-        </li>
+        <!-- <li class="pagination__next" ng-class="{ 'is-disabled': page.num === paginator.pageLast }">
+            <a href="" title="Next Page" ng-click="paginator.next()">Next</a>
+        </li> -->
     </ol>
 </div>
