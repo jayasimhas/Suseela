@@ -64,15 +64,6 @@ $('.js-register-submit').on('click', function validateUsername(e) {
 	});
 });
 
-// Global dismiss button for pop-outs
-$('.dismiss-button').on('click', function(e) {
-	if (e.target !== this) {
-		this.click();
-    	return;
-	}
-	$($(e.srcElement).data('target-element')).removeClass('is-active');
-});
-
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
 var showForgotPassSuccess = function() {
@@ -169,6 +160,15 @@ $(document).ready(function() {
 	// Display the Forgot Password block when "forgot your password" is clicked
 	$('.js-show-forgot-password').on('click', function toggleForgotPass() {
 		$('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+	});
+
+	// Global dismiss button for pop-outs
+	$('.dismiss-button').on('click', function(e) {
+		if (e.target !== this) {
+			this.click();
+	    	return;
+		}
+		$($(e.target).data('target-element')).removeClass('is-active');
 	});
 
 
