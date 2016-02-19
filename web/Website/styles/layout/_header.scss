@@ -60,8 +60,14 @@ $main-menu-smartphone-width: 62px;
 			}
 
 			@include breakpoint('small') {
-				margin-left: 4.5rem;
+				margin-left: 5rem;
+				padding-top: 1rem;
 			}
+		}
+
+		@include breakpoint('small') {
+			align-self: auto;
+			height: calc(100% - 1.25rem);
 		}
 	}
 
