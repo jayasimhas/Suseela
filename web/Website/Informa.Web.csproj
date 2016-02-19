@@ -872,6 +872,9 @@
     <Content Include="App_Config\Include\UserDefined\Content.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\UserDefined\Article.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>

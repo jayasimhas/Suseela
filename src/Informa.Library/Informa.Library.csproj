@@ -250,6 +250,7 @@
   <ItemGroup>
     <Compile Include="Article\IUserArticleBookmarkedContext.cs" />
     <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
+    <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
@@ -450,7 +451,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Config\" />
     <Folder Include="InterfaceFactory\Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

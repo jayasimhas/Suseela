@@ -31,7 +31,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			if (string.IsNullOrEmpty(uxArticleNumber.Text))
 			{
-				MessageBox.Show(@"Please enter an article number!", @"Elsevier");
+				MessageBox.Show(@"Please enter an article number!", @"Informa");
 				return false;
 			}
 			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(uxArticleNumber.Text) 

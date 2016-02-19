@@ -96,7 +96,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				}
 				else
 				{
-					MessageBox.Show(@"Error in article details when checking in article.", @"Elsevier");
+					MessageBox.Show(@"Error in article details when checking in article.", @"Informa");
 				}
 			}
 			finally
@@ -126,7 +126,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			if (articleGuid == Guid.Empty)
 			{
 				MessageBox.Show
-					(@"No article associated with file.", @"Elsevier",
+					(@"No article associated with file.", @"Informa",
 					 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return false;
 			}
@@ -137,7 +137,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				if (!exists)
 				{
 					MessageBox.Show
-						(@"Article no longer exists on Sitecore", @"Elsevier",
+						(@"Article no longer exists on Sitecore", @"Informa",
 						 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					return false;
 				}
@@ -154,7 +154,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 							+ @"If you choose to check out the article now and later upload, "
 							+ @"you will overwrite that content. "
 							+ @"Are you sure you wish to checkout this article?",
-							@"Elsevier",
+							@"Informa",
 							MessageBoxButtons.YesNo,
 							MessageBoxIcon.Question);
 					if (dialogResult != DialogResult.Yes)
@@ -205,7 +205,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			if (articleNumber.IsNullOrEmpty())
 			{
 				MessageBox.Show
-					(@"Please enter an article number to link to.", @"Elsevier",
+					(@"Please enter an article number to link to.", @"Informa",
 					 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return false;
 			}
@@ -216,7 +216,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				if (!exists && prompt)
 				{
 					MessageBox.Show
-						(@"Article number entered does not exist.", @"Elsevier",
+						(@"Article number entered does not exist.", @"Informa",
 						 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					return false;
 				}
@@ -234,7 +234,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 							 + @"If you choose to check out the article now and later upload, "
 							 + @"you will overwrite that content. "
 							 + @"Are you sure you wish to checkout this article?",
-							 @"Elsevier",
+							 @"Informa",
 							 MessageBoxButtons.YesNo,
 							 MessageBoxIcon.Question);
 						if (dialogResult != DialogResult.Yes)
@@ -794,7 +794,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 					MessageBox.Show
 						(String.Format(message, articleStruct.WordDocLastUpdateDate, articleStruct.WordDocLastUpdatedBy),
-						 @"Elsevier",
+						 @"Informa",
 						 MessageBoxButtons.OK,
 						 MessageBoxIcon.Exclamation);
 				}
