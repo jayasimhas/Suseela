@@ -4,7 +4,7 @@
 @if (Model.Children.Any())
 {
     <div class="article-topics">
-        <h2>Topics</h2>
+        <h2>@Model.RelatedTaxonomyHeader</h2>
         <ul>
             @foreach (var catagory in Model.Children)
             {
