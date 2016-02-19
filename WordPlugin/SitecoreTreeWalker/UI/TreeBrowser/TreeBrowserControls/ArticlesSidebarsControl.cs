@@ -117,7 +117,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (string.IsNullOrEmpty(articleNumber))
 			{
-				MessageBox.Show(@"Please enter an article number!", @"Elsevier");
+				MessageBox.Show(@"Please enter an article number!", @"Insight Platform");
 				return;
 			}
 			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(articleNumber)

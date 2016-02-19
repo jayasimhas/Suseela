@@ -143,14 +143,15 @@ namespace SitecoreTreeWalker.UI
 				|| LocalReferencedArticles.Select(t => t.ArticleNumber).Contains(preview.ArticleNumber)
 				|| HasArticle(GetActiveSitecoreRelatedArticles(), preview))
 			{
-				foreach(Control control in Controls)
-				{
-					if (control.Tag == null || control.Font.Strikeout) continue;
-					control.BackColor = 
-						control.Tag.ToString() == preview.ArticleNumber 
-						? Color.Yellow 
-						: Color.Transparent;
-				}
+				MessageBox.Show(@"The selected article is already Related Article or Referenced Article!", @"Insight Platform");
+				//foreach(Control control in Controls)
+				//{
+				//	if (control.Tag == null || control.Font.Strikeout) continue;
+				//	control.BackColor = 
+				//		control.Tag.ToString() == preview.ArticleNumber 
+				//		? Color.Yellow 
+				//		: Color.Transparent;
+				//}
 				return;
 			}
 			LocalRelatedArticles.Add(preview);
