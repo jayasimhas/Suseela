@@ -34,9 +34,9 @@ content-length: 20
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
 key: datasource template
-content-length: 63
+content-length: 61
 
-/sitecore/templates/User Defined/Components/GeneralRTEComponent
+/sitecore/templates/User Defined/General Content/Content Text
 ----field----
 field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
 name: Compatible Renderings
@@ -48,13 +48,13 @@ content-length: 38
 field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
 name: Page Editor Buttons
 key: page editor buttons
-content-length: 116
+content-length: 155
 
-{028DFE18-F0FE-431B-B5D2-9D944FD8B3C6}|{E0C30162-EA09-4244-8261-81FD8456D4AF}|{28E37FE8-6561-4854-8B11-468E64DF5374}
+{31A3A929-C599-4DD3-91A6-F4A9487CC8B7}|{028DFE18-F0FE-431B-B5D2-9D944FD8B3C6}|{E0C30162-EA09-4244-8261-81FD8456D4AF}|{28E37FE8-6561-4854-8B11-468E64DF5374}
 ----version----
 language: en
 version: 1
-revision: ac7d0513-041c-49b9-9153-ae7466d06a7d
+revision: cd920f7a-40f2-4fac-9139-f2edb17f881e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ac7d0513-041c-49b9-9153-ae7466d06a7d
+cd920f7a-40f2-4fac-9139-f2edb17f881e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160213T171707Z
+20160219T121717Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
