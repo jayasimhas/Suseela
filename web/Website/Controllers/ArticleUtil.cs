@@ -192,17 +192,7 @@ namespace Informa.Web.Controllers
 
         public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
         {
-            return new WordPluginModel.ArticlePreviewInfo
-            {
-                Title = article.Title,
-                Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
-                //Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
-                Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
-                ArticleNumber = article.Article_Number,
-                //Date = GetProperDate(), TODO
-                PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
-                Guid = article._Id
-            };
+            return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
         }
 
 
@@ -454,7 +444,7 @@ namespace Informa.Web.Controllers
 
 			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
 
-			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((ArticleItem)a))).ToList();
+			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo((IArticle)a)).ToList();
 
 			if (articleItem.Word_Document != null)
 			{

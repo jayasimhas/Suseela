@@ -68,7 +68,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Category { get; }
 		public IEnumerable<ITaxonomy_Item> LongIds { get; }
 		public IEnumerable<ITaxonomy_Item> Taxonomies { get; set; }
-		public IEnumerable<ITaxonomyHierarchy> TaxonomyLongIds { get; set; }
 		public string Custom_Meta_Tags { get; set; }
 		public string Meta_Description { get; set; }
 		public string Meta_Keywords { get; set; }

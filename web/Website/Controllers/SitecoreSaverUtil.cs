@@ -256,8 +256,8 @@ namespace Informa.Web.Controllers
 					taxonomyItems.AddRange(articleStruct.Taxonomoy
 						.Select(eachTaxonomy => _sitecoreMasterService.GetItem<ITaxonomy_Item>(eachTaxonomy.ID))
 						.Where(taxItem => taxItem != null));
-					//newArticle.Taxonomies = taxonomyItems;
-				}
+                    newArticle.Taxonomies = taxonomyItems;
+                }
 
 				if (saveDocumentSpecificData)
 				{
