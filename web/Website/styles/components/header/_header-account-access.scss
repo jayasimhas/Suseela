@@ -14,8 +14,8 @@
     @include breakpoint('small') {
         border-top: 1px solid #ccc;
         font-size: 13px;
-        margin: 1.0625rem 0.75rem 0 74px;
-        padding: .5625rem 0 0;
+        margin: -2rem 0.75rem 0 74px;
+        padding: .4375rem 0 0;
         width: calc(100% - 88px);
     }
 
