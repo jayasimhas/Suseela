@@ -610,7 +610,7 @@ namespace Informa.Web.Controllers
 				Path = path,
 				Uploader = item.Statistics.CreatedBy,
 				UploadDate = item.Statistics.Created,
-				Url = "https://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(item)
+				Url = "http://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(item)
 			};
 			return Json(mediaItem);
 		}
@@ -643,7 +643,7 @@ namespace Informa.Web.Controllers
 				Path = path,
 				Uploader = item.Statistics.CreatedBy,
 				UploadDate = item.Statistics.Created,
-				Url = "https://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(item)
+				Url = "http://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(item)
 			};
 			return Json(mediaItem);
 		}
