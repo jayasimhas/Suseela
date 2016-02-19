@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
@@ -13,13 +14,16 @@ namespace Informa.Web.ViewModels
     {
         public ISiteRootContext SiterootContext { get; set; }
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
+        protected readonly ITextTranslator TextTranslator;
 
-		public GlassArticleModel(
+        public GlassArticleModel(
 			ISiteRootContext siterootContext,
-			IArticleListItemModelFactory articleListableFactory)
+			IArticleListItemModelFactory articleListableFactory,
+            ITextTranslator textTranslator)
         {
             SiterootContext = siterootContext;
 			ArticleListableFactory = articleListableFactory;
+            TextTranslator = textTranslator;
         }                                                    
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -68,6 +72,7 @@ namespace Informa.Web.ViewModels
         public string ListableSummary
             => string.IsNullOrWhiteSpace(GlassModel.Summary) ? Body.Substring(0, 200) : GlassModel.Summary;
 
+        public string ListableSummaryHeader => TextTranslator.Translate("Article.ExecSummHeader");
         public string ListableTitle => Title;
         public string ListableByline => Publication;
 

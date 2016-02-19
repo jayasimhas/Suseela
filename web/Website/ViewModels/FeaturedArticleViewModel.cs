@@ -1,4 +1,5 @@
-﻿using Informa.Library.Presentation;
+﻿using Informa.Library.Globalization;
+using Informa.Library.Presentation;
 using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 
@@ -11,8 +12,9 @@ namespace Informa.Web.ViewModels
 		public FeaturedArticleViewModel(
 			IRenderingParametersContext renderingParametersContext,
 			ISiteRootContext siterootContext,
-			IArticleListItemModelFactory articleListableFactory)
-			: base(siterootContext, articleListableFactory)
+			IArticleListItemModelFactory articleListableFactory,
+            ITextTranslator textTranslator)
+			: base(siterootContext, articleListableFactory, textTranslator)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}
