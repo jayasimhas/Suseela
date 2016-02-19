@@ -181,11 +181,10 @@ namespace Informa.Web.Controllers
 			return new WordPluginModel.ArticlePreviewInfo
 			{
 				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
-				//Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,				
 				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
-				//Date = GetProperDate(), TODO
+				Date = article.Actual_Publish_Date,
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
 				Guid = article._Id
 			};

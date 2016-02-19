@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Informa.Web.Areas.Account.Models;
+using SitecoreTreeWalker.Properties;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
 using SitecoreTreeWalker.Util;
 
@@ -89,19 +90,29 @@ namespace SitecoreTreeWalker.UI
 
 		public Label CreateDateLabel(DateTime dateTime)
 		{
-			string strdate = dateTime.Month + "-" + dateTime.Day + "-" + dateTime.Year;
-			if(dateTime.CompareTo(DateTime.Today) > 0)
+			if (dateTime > DateTime.MinValue)
+			{
+				string strdate = dateTime.Month + "-" + dateTime.Day + "-" + dateTime.Year;
+				if (dateTime.CompareTo(DateTime.Today) > 0)
+				{
+					return new Label
+					{
+						Text = strdate,
+						//ForeColor = Color.Red
+					};
+				}
+				return new Label
+				{
+					Text = strdate,
+				};
+			}
+			else
 			{
 				return new Label
-				       	{
-				       		Text = strdate,
-							ForeColor = Color.Red
-				       	};
+				{
+					Text = Resources.SelectedRelatedArticles_CreateDateLabel_Date_not_Set,
+				};
 			}
-			return new Label
-			{
-				Text = strdate,
-			};
 		}
 
 		public Label CreateHeaderLabel(string text)
