@@ -143,7 +143,7 @@ namespace SitecoreTreeWalker.UI
 				|| LocalReferencedArticles.Select(t => t.ArticleNumber).Contains(preview.ArticleNumber)
 				|| HasArticle(GetActiveSitecoreRelatedArticles(), preview))
 			{
-				MessageBox.Show(@"The selected article is already Related Article or Referenced Article!", @"Insight Platform");
+				MessageBox.Show(@"The selected article is already Related Article or Referenced Article!", @"Informa");
 				//foreach(Control control in Controls)
 				//{
 				//	if (control.Tag == null || control.Font.Strikeout) continue;

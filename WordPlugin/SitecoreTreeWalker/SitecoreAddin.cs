@@ -36,12 +36,12 @@ namespace SitecoreTreeWalker
 
         public DialogResult AlertConnectionFailure()
         {
-            return MessageBox.Show(@"Sitecore server could not be contacted!", @"Elsevier");
+            return MessageBox.Show(@"Sitecore server could not be contacted!", @"Informa");
         }
 
         public DialogResult Alert(string alert)
         {
-            return MessageBox.Show(alert, @"Elsevier");
+            return MessageBox.Show(alert, @"Informa");
         }
 
         public static Document ActiveDocument { get; private set; }
@@ -154,7 +154,7 @@ namespace SitecoreTreeWalker
                             MessageBox.Show
                                 (@"There was an error saving the document to Sitecore. Please try again." + Environment.NewLine +
                                  Environment.NewLine + @"If the problem persists, contact your system administrator.",
-                                 @"Elsevier",
+                                 @"Informa",
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Error);
                             cancel = true;

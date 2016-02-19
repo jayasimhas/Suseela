@@ -87,7 +87,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (string.IsNullOrEmpty(uxSidebarArticleNumber.Text))
 			{
-				MessageBox.Show(@"Please enter an article number", @"Elsevier");
+				MessageBox.Show(@"Please enter an article number", @"Informa");
 				return;
 			}
 
@@ -96,7 +96,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 			if (string.IsNullOrEmpty(address))
 			{
-				MessageBox.Show(@"Article number does not exist!", @"Elsevier");
+				MessageBox.Show(@"Article number does not exist!", @"Informa");
 				return;
 			}
 
@@ -117,7 +117,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (string.IsNullOrEmpty(articleNumber))
 			{
-				MessageBox.Show(@"Please enter an article number!", @"Insight Platform");
+				MessageBox.Show(@"Please enter an article number!", @"Informa");
 				return;
 			}
 			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(articleNumber)
