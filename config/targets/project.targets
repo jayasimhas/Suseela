@@ -78,7 +78,7 @@
     
 	<property name="output.dir" value="${dir.web}\Website\wordinstaller" />
 	<property name="publish.dir" value="${TDS.SitecoreDeployFolder}\wordinstaller\" />
-	<property name="publish.base.vsto.dir" value="WordPlugin\SitecoreTreeWalker\bin\WordPlugin-${build.configuration}\app.publish\" />	
+	<property name="publish.base.vsto.dir" value="WordPlugin\SitecoreTreeWalker\bin\${build.configuration}\app.publish\" />	
 	<property name="publish.base.dir" value="${publish.dir}" />
 	<property name="revision.file" value="revision.number" />
 	<property name="version.major" value="1" />
