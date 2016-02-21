@@ -76,9 +76,9 @@
 		</delete>
 	</target> 
     
-	<property name="output.dir" value="Web\Website\wordinstaller" />
+	<property name="output.dir" value="${dir.web}\Website\wordinstaller" />
 	<property name="publish.dir" value="${TDS.SitecoreDeployFolder}\wordinstaller\" />
-	<property name="publish.base.vsto.dir" value="E:\slave\workspace\Informa Dev\WordPlugin\SitecoreTreeWalker\bin\${build.configuration}\app.publish\" />	
+	<property name="publish.base.vsto.dir" value="WordPlugin\SitecoreTreeWalker\bin\${build.configuration}\app.publish\" />	
 	<property name="publish.base.dir" value="${publish.dir}" />
 	<property name="revision.file" value="revision.number" />
 	<property name="version.major" value="1" />
@@ -98,7 +98,7 @@
 	<target name="publish" depends="version">    
 		<exec program="${MSBuildPath}">		
 		  <arg value="/target:publish" />     
-		  <arg value="/property:Configuration=${build.configuration}-NoTds" /> 
+		  <arg value="/property:Configuration=WordPlugin-${Configuration}" /> 
 		  <arg value="/property:ApplicationVersion=${version.major}.${version.minor}.${version.build}.${version.revision}"/>
 		  <arg value="/property:BootstrapperEnabled=false"/>		
 		  <arg value="/property:Install=true"/>		
