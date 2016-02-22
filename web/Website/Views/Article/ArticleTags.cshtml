@@ -1,6 +1,6 @@
 ﻿@model Informa.Web.ViewModels.IArticleTagsViewModel
-<div class="article-prologue__tags-bar">
-    Tags:
+<div class="article-tags-bar">
+    <span class="article-tags-bar__label">Tags:</span>
     <div class="bar-separated-link-list">
         @foreach (var tag in Model.Tags)
 		{
@@ -8,4 +8,3 @@
         }
     </div>
 </div>
-
