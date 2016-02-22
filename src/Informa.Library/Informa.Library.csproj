@@ -262,6 +262,12 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="Authentication\IAuthenticateUser.cs" />
+    <Compile Include="Authentication\IAuthenticateUserResult.cs" />
+    <Compile Include="Authentication\AuthenticateUserResultState.cs" />
+    <Compile Include="Authentication\ILoginWebUser.cs" />
+    <Compile Include="Authentication\ILoginWebUserResult.cs" />
+    <Compile Include="Authentication\LoginWebUser.cs" />
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
@@ -428,6 +434,8 @@
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
     <Compile Include="Subscription\IUserSubscriptionContext.cs" />
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
+    <Compile Include="User\IUser.cs" />
+    <Compile Include="User\IUserContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
