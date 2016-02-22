@@ -852,7 +852,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 5ba0578f-65b7-4c22-8233-1603d698d8a4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Summary  {get; set;}
 								/// <summary>
 					/// The Authors field.
@@ -879,7 +879,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 9c5c6c13-9448-43eb-b3dc-df9cc122b4ee</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(IArticleConstants.Start_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Start_Page  {get; set;}
 								/// <summary>
 					/// The Word Count field.
@@ -1634,7 +1634,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 								/// <summary>
 					/// The Desktop Embed Code field.
 					/// <para></para>
-					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -1643,7 +1643,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 								/// <summary>
 					/// The Mobile Embed Code field.
 					/// <para></para>
-					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -1664,7 +1664,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 										/// <summary>
 						/// The Desktop Embed Code field.
 						/// <para></para>
-						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
@@ -1673,7 +1673,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 										/// <summary>
 						/// The Mobile Embed Code field.
 						/// <para></para>
-						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
@@ -4435,7 +4435,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					/// <para>Field ID: 446a339b-e1d9-4de1-8b5e-db7942ef1723</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+					[SitecoreField(I___BasePageConstants.BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Body  {get; set;}
 								/// <summary>
 					/// The Sub Title field.

@@ -63,10 +63,13 @@
 @import 'components/article/article-topics';
 
 /* * * * COMPONENTS — SEARCH RESULTS * * * */
-@import 'components/search/search';
+@import 'components/search/search-wrapper';
 @import 'components/search/search-facets';
-@import 'components/search/search-results';
-@import 'components/search/search-bar';
+@import 'components/search/search-keywords';
+@import 'components/search/search-metadata';
+@import 'components/search/search-sort-options';
+@import 'components/search/search-listing';
+@import 'components/search/search-pagination';
 
 /* * * * ATOMS * * * */
 @import 'components/atoms/blockquote';

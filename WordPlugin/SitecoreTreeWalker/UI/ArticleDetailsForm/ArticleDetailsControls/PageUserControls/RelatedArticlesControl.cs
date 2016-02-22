@@ -31,12 +31,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			if (string.IsNullOrEmpty(uxArticleNumber.Text))
 			{
-				MessageBox.Show(@"Please enter an article number!", @"Elsevier");
+				MessageBox.Show(@"Please enter an article number!", @"Informa");
 				return false;
 			}
-			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(uxArticleNumber.Text) 
-			                          	? SitecoreArticle.GetArticlePreviewInfo(uxArticleNumber.Text) 
-			                          	: new WordPluginModel.ArticlePreviewInfo();
+			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(uxArticleNumber.Text)
+										  ? SitecoreArticle.GetArticlePreviewInfo(uxArticleNumber.Text)
+										  : new WordPluginModel.ArticlePreviewInfo();
 			bool retrieved = _uxArticlePreviewTable.UpdatePreview(info);
 			_uxArticlePreviewTable.Tag = info;
 			return retrieved;
@@ -87,7 +87,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				}
 				e.SuppressKeyPress = true;
 			}
-			
+
 		}
 
 		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
@@ -146,7 +146,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			var article = _uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
 			if (article != null)
-				Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+				//Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+				Process.Start(article.PreviewUrl);
 		}
 
 		/// <summary>
@@ -156,7 +157,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public void PushSitecoreChanges()
 		{
 			uxSelectedLayout.SitecoreReferencedArticles = uxSelectedLayout.LocalReferencedArticles;
-			uxSelectedLayout.SitecoreRelatedArticles = 
+			uxSelectedLayout.SitecoreRelatedArticles =
 				uxSelectedLayout.LocalRelatedArticles.Union(uxSelectedLayout.GetActiveSitecoreRelatedArticles()).ToList();
 			uxSelectedLayout.LocalRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
 			uxSelectedLayout.PopulateTable();
@@ -175,6 +176,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				e.Graphics.DrawString("Live!", new Font("SegoeUI", 18), Brushes.Green, 510, 1);
 			}
 		}
-	
+
 	}
 }
