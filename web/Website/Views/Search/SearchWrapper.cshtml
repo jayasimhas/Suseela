@@ -1,10 +1,27 @@
 ﻿<div class="search" ng-app="example">
 
     <header class="search__header">
-        <div class="search__header-icons">
-          <h6 class="icon icon--email"><a>email</a></h6>
-          <h6 class="icon icon--rss"><a>rss</a></h6>
+
+        <div class="search__header-buttons">
+
+            <!--TODO: replace with correct email and subject-->
+            <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="search__header-buttons--email">
+                <h6>email</h6>
+                <svg class="icon icon--email">
+              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
+            	</svg>
+            </a>
+
+            <!--TODO: replace with correct RSS feed link-->
+            <a target="_top" class="search__header-buttons--rss">
+                <h6>rss</h6>
+                <svg class="icon icon--rss">
+              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
+            	</svg>
+            </a>
+
         </div>
+
         <h1 class="search__header-title">Search Results</h1>
         @Html.Sitecore().Placeholder("search-header")
     </header>
