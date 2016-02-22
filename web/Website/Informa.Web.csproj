@@ -997,6 +997,10 @@
     <Content Include="Views\Search\SearchWrapper.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
+      <Project>{69ff8121-1969-4032-90fa-b4b9148cd780}</Project>
+      <Name>Informa.Library.Salesforce</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
       <Project>{4fb3b700-30c7-4b1b-b377-59c15a58cb3d}</Project>
       <Name>Informa.Library</Name>
