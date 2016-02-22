@@ -3,26 +3,26 @@
 
   <h3 class="search-bar__label"><label for="js-search-field">Search</label></h3>
 
-  <div class="search-bar__content">
+  <div class="search-bar__content" ng-controller="searchQueryController as query">
 
     <div class="search-bar__input-wrapper">
 
       <!-- TODO: button clears input field -->
-      <a class="js-clear-search-field search-bar__clear">
+      <a class="js-clear-search-field search-bar__clear" ng-click="query.keywords = ''">
         <svg class="search-bar__icon--clear">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
         </svg>
       </a>
 
         <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
-               ng-controller="searchQueryController as query"
+               
                ng-model="query.keywords"/>
 
 
     </div>
 
     <!--TODO: get correct svg icon and update classes (extend from header) -->
-    <a class="js-header-search-trigger search-bar__submit"  ng-controller="searchQueryController as query" ng-click="query.update()">
+    <a class="js-header-search-trigger search-bar__submit" ng-click="query.update()">
       <svg class="search-bar__icon search-bar__icon--search">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#search"></use>
       </svg>
