@@ -16,12 +16,6 @@
                  {{doc.contentType }}
             </div>
 
-            <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
-                <a  href="{{tax.url}}">
-                    {{tax.title}}
-                </a><span ng-if="!$last">, </span>
-            </span>
-
             <div class="result__publication">{{ doc.publicationTitle }} </div>
 
             <a class="result__heading" ng-href="{{ doc.url }}" title="Page Title">
@@ -31,6 +25,12 @@
             <div class="result__author">by {{ doc.byline }}</div>
 
             <p class="result__description">{{ doc.summary }}</p>
+
+            <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
+                <a href="{{tax.url}}">
+                    {{tax.title}}
+                </a><span ng-if="!$last"> | </span>
+            </span>
         </div>
     </div>
 
