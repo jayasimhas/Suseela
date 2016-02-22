@@ -609,7 +609,6 @@
     <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
-    <Compile Include="GlassMaps\Class1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -843,6 +842,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
+    <Folder Include="GlassMaps\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
@@ -865,7 +865,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
@@ -930,6 +932,7 @@
     <Content Include="Views\Shared\Components\PullQuote.cshtml" />
     <Content Include="Views\Shared\Components\Promotional.cshtml" />
     <Content Include="Views\Search\SearchWrapper.cshtml" />
+    <Content Include="Views\Article\_ArticleSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
