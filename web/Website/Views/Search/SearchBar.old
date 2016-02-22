@@ -1,5 +1,5 @@
 <div class="search-bar">
-<!-- TODO: where should the form wrap be? -->
+<!-- TODO: where should the form wrap be? not necessary?-->
 
   <h3 class="search-bar__label"><label for="js-search-field">Search</label></h3>
 
@@ -7,8 +7,9 @@
     <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site" ng-controller="searchQueryController as query" ng-model="query.keywords" ng-model-options="{ debounce: { 'default': query.typingTimeout } }" ng-change="query.update()">
 
     <!--TODO: get correct svg icon and update classes (extend from header) -->
-    <svg class="header__icons header__icons--search search-bar__submit js-header-search-trigger">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#search"></use>
+    <!-- <svg class="header__icons header__icons--search search-bar__submit js-header-search-trigger"> -->
+    <svg class="search-bar__submit">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use>
     </svg>
     <!--<button class="search__submit" type="submit">Submit</button>-->
 
@@ -16,7 +17,6 @@
   </div>
 
   <div class="search-bar__footer">
-
     <div class="search-bar__headline-toggle onoffswitch">
         <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
         <label class="onoffswitch-label" for="headline-toggle">
@@ -27,7 +27,6 @@
     <div class="search-bar__headline-label">
       View headlines only
     </div>
-
   </div>
 
 </div>

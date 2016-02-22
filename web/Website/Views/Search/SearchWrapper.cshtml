@@ -13,9 +13,13 @@
 
         @Html.Sitecore().Placeholder("search-right")
 
-        <div class="search__results">
+        <div class="search__body">
+
+            <!-- includes search bar, metadata, and sorting -->
             @Html.Sitecore().Placeholder("search-sort-area")
+
             @Html.Sitecore().Placeholder("search-main")
+
         </div>
 
         @Html.Sitecore().Placeholder("search-bottom")
