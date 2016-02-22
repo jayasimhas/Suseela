@@ -1,0 +1,36 @@
+.search-pagination {
+  &__wrapper {
+    padding: 10px 0 50px;
+    border-top: 2px solid $informa-light-gray-d;
+  }
+
+  &__pagination-list {
+    text-align: right;
+
+    li {
+      @include textMix('Roboto', 15px, 400);
+      display: inline;
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      &.is-active {
+        position: relative;
+        
+        a {
+          color: $informa-dark-gray;
+
+          &:after {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: $informa-light-gray-f;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}

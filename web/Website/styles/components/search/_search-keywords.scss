@@ -1,8 +1,9 @@
 .search-bar {
   @include textMix('Roboto', 15px, 400);
   min-height: 156px;
-  padding: 15px;
+  padding: 20px;
   background-color: $informa-light-gray-f;
+  margin-bottom: 50px;
 
   &__label {
     width: 100%;
@@ -20,12 +21,17 @@
     display: inline-block;
     order: 1;
     width: 100%;
+    max-width: 616px;
     height: 35px;
     padding-right: 30px;
     padding-left: 13px;
-    // TODO: add sans font
-    // TODO: after element for X to close?
+    border: 1px solid $informa-light-gray-d;
+    // TODO: after element for X to clear
     // TODO: change placeholder color to dark grey
+
+    &:placeholder {
+      color: $informa-dark-gray;
+    }
   }
 
   &__submit {
@@ -56,6 +62,24 @@
     padding-left: 10px;
   }
 
+  &__icon {
 
+    &--search {
+       @include svg-fill($informa-black);
+       height: 20px;
+       width: 20px;
+       vertical-align: middle;
+       margin-left: 10px;
+      //  background-color: $informa-light-orange;
+       //  padding: 7px;
+      //  box-sizing: content-box;
+    }
 
+    &--info {
+       @include svg-fill($informa-black);
+       height: 24px;
+       width: 24px;
+      //  margin-left: 0.5rem;
+    }
+  }
 }
