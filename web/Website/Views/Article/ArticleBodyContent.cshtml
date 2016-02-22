@@ -109,7 +109,7 @@
     @* * *  END ARTICLE - FEATURED IMAGE *@
     }
 
-    @Html.Raw(Model.Body)
+    @Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar")
 
 </div>
 
