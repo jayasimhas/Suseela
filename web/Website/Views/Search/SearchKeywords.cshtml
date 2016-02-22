@@ -14,12 +14,15 @@
         </svg>
       </a>
 
-      <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site" ng-controller="searchQueryController as query" ng-model="query.keywords" ng-model-options="{ debounce: { 'default': query.typingTimeout } }" ng-change="query.update()">
+        <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
+               ng-controller="searchQueryController as query"
+               ng-model="query.keywords"/>
+
 
     </div>
 
     <!--TODO: get correct svg icon and update classes (extend from header) -->
-    <a class="js-header-search-trigger search-bar__submit">
+    <a class="js-header-search-trigger search-bar__submit"  ng-controller="searchQueryController as query" ng-click="query.update()">
       <svg class="search-bar__icon search-bar__icon--search">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#search"></use>
       </svg>
