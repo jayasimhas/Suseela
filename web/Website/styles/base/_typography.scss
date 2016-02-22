@@ -3,7 +3,7 @@
  */
 body {
   color: $informa-dark-gray;
-  @include textMix('PT Serif', 400, 16px);
+  @include textMix('PT Serif', 16px, 400);
 }
 
 h1, h2, h3, h4, h5, h6 {
