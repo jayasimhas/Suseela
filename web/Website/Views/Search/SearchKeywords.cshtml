@@ -1,41 +1,54 @@
 <div class="search-bar">
-<!-- TODO: where should the form wrap be? -->
+<!-- TODO: form wrap? -->
 
   <h3 class="search-bar__label"><label for="js-search-field">Search</label></h3>
 
   <div class="search-bar__content">
-    <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site" ng-controller="searchQueryController as query" ng-model="query.keywords" ng-model-options="{ debounce: { 'default': query.typingTimeout } }" ng-change="query.update()">
-    <svg class="dismiss-button__icon">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
-			</svg>
+
+    <div class="search-bar__input-wrapper">
+
+      <!-- TODO: button clears input field -->
+      <a class="js-clear-search-field search-bar__clear">
+        <svg class="search-bar__icon--clear">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+        </svg>
+      </a>
+
+      <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site" ng-controller="searchQueryController as query" ng-model="query.keywords" ng-model-options="{ debounce: { 'default': query.typingTimeout } }" ng-change="query.update()">
+
+    </div>
 
     <!--TODO: get correct svg icon and update classes (extend from header) -->
-    <svg class="search-bar__submit search-bar__icon search-bar__icon--search js-header-search-trigger">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#search"></use>
-    </svg>
+    <a class="js-header-search-trigger search-bar__submit">
+      <svg class="search-bar__icon search-bar__icon--search">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#search"></use>
+      </svg>
+    </a>
     <!--<button class="search__submit" type="submit">Submit</button>-->
 
     <a class="search-bar__tips">
-      <svg class="search-bar__icon search-bar__icon--info">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#info"></use>
+      <svg class="search-bar__icon search-bar__icon--info js-open-search-tips">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
       </svg>
-      Search Tips
+      <span>Search Tips</span>
     </a>
+
   </div>
 
   <div class="search-bar__footer">
+
     <!-- TODO: fix toggle -->
-    <div class="search-bar__headline-toggle onoffswitch">
+    <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only">
         <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
         <label class="onoffswitch-label" for="headline-toggle">
             <span class="onoffswitch-inner"></span>
             <span class="onoffswitch-switch"></span>
         </label>
     </div>
+
     <div class="search-bar__headline-label">
       View headlines only
     </div>
 
   </div>
-
 </div>
