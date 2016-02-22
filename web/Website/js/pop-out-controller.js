@@ -135,6 +135,12 @@ function popOutController(triggerElm) {
 		// plus padding, minus 1px for border positioning
 		res.offset.box.top = Math.floor(trgr.offset.top + trgr.offset.height + (vPad - 1));
 
+		// Check if pop-out will bleed off-screen, causing horizontal scroll bar
+		// If it will, force right-align to keep it on-screen
+		if(popOut.width() + trgr.offset.left > $(window).width()) {
+			trgr.e.data('pop-out-align', 'right');
+		}
+
 		// Check for pop-out alignment
 		if(trgr.e.data('pop-out-align') === 'right' && !isNarrow) {
 			// Pop-out box is flush right with trigger element

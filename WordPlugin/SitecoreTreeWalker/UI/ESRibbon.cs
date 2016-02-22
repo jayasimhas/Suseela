@@ -14,6 +14,7 @@ using SitecoreTreeWalker.UI.ArticleDetailsForm;
 using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.User;
+using SitecoreTreeWalker.WebserviceHelper;
 
 
 namespace SitecoreTreeWalker.UI
@@ -27,7 +28,7 @@ namespace SitecoreTreeWalker.UI
 
         private void ESRibbon_Load(object sender, RibbonUIEventArgs e)
         {
-            LogoutBtn.Visible = false;
+			LogoutBtn.Visible = false;
             LoginBtn.Visible = true;
         }
 
@@ -63,7 +64,7 @@ namespace SitecoreTreeWalker.UI
                 MessageBox.Show
                     (@"An error has occurred while attempting to display the Sitecore browser tab. Please restart Word and try again." +
                      Environment.NewLine + Environment.NewLine +
-                     @"If the problem persists, contact your system administrator.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,7 +80,7 @@ namespace SitecoreTreeWalker.UI
                 MessageBox.Show
                     (@"An error has occurred while attempting to display the article information window. Please restart Word and try again." +
                      Environment.NewLine + Environment.NewLine +
-                     @"If the problem persists, contact your system administrator.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -240,7 +241,7 @@ namespace SitecoreTreeWalker.UI
                 MessageBox.Show
                     (@"An error has occurred while attempting to display the article information window. Please restart Word and try again." +
                      Environment.NewLine + Environment.NewLine +
-                     @"If the problem persists, contact your system administrator.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -248,7 +249,7 @@ namespace SitecoreTreeWalker.UI
         {
             if (GetArticleNumber() == null)
             {
-                MessageBox.Show(@"There is no article linked!", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             Process.Start(GetPreviewUrl(false));
@@ -259,7 +260,7 @@ namespace SitecoreTreeWalker.UI
         {
             if (GetArticleNumber() == null)
             {
-                MessageBox.Show(@"There is no article linked!", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -273,22 +274,10 @@ namespace SitecoreTreeWalker.UI
         /// otherwise, the article number set to the document</returns>
         public string GetArticleNumber()
         {
-            return ArticleDetails.ArticleNumber;
-        }
-
-        /// <summary>
-        /// Initializes the fields based on the information associated with the document,
-        /// or lack thereof
-        /// </summary>
-        private void InitializeFields()
-        {
-            _documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
-            SetArticleNumber(_documentCustomProperties.ArticleNumber);
-            string articleNumber = GetArticleNumber();
-            if (!articleNumber.IsNullOrEmpty())
-            {
-                SetArticleDetails(SitecoreGetter.LazyReadArticleDetails(GetArticleNumber()));
-            }
+			SitecoreAddin.TagActiveDocument();
+			_documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+			ArticleDetails.ArticleNumber = _documentCustomProperties.ArticleNumber;
+			return ArticleDetails.ArticleNumber;
         }
 
         /// <summary>

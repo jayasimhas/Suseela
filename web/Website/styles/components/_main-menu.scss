@@ -5,12 +5,12 @@ $main-menu-handle-width: 70px;
 	@include textMix('Roboto', 1rem, 400);
 
 	align-items: stretch;
-	background-color: $informa-light-gray-e;
-	border-right: $main-menu-handle-width solid $informa-darker-gray;
+	background-color: $color-mercury-gray;
+	border-right: $main-menu-handle-width solid $color-ship-gray;
 	flex: 0 0 auto;
 	float: left;
 	width: $main-menu-width;
-	z-index: 999999;
+	z-index: 9089; // Sitecore ribbon = 9090 z-index. Stay below that!
 
 	// Start off translated on-screen just enough to see the handle
 	transform: translate3d($main-menu-handle-width, 0, 0);
@@ -67,10 +67,11 @@ $main-menu-handle-width: 70px;
 
 	&__section-link {
 		margin: 0;
-		color: $color-dusty-gray;
+		color: $color-abbey-gray;
 
 		@include on-event(true) {
 			@extend .u-inherit-text-color;
+			text-decoration: none;
 		}
 	}
 

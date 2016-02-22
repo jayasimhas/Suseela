@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.Sitecore;
 using Application = Microsoft.Office.Interop.Word.Application;
 
@@ -25,7 +24,6 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
             //will call the the Sitecore Tree. Instead, load the items only when the user tries
             //to open the Sitecore Tree.
             _siteCoreItemGetter = sitecoreItemGetter;
-            _scTree = new SCTree();
             Globals.SitecoreAddin.Log("Tree Browser initialized.");
         }
 
@@ -35,7 +33,6 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
 
         protected SitecoreItemGetter _siteCoreItemGetter;
         protected Application Application { get; set; }
-        protected SCTree _scTree;
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {

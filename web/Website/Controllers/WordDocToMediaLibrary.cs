@@ -23,7 +23,7 @@ namespace Informa.Web.Controllers
 			_sitecoreMasterService = sitecoreService;
 		}
 
-		public MediaItem SaveWordDocIntoMediaLibrary(IArticle article, string fileName, string docName, string extension)
+		public MediaItem SaveWordDocIntoMediaLibrary(ArticleItem article, string fileName, string docName, string extension)
 		{
 			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
 			Guid publicationGuid = articleItem.Publication;

@@ -13,7 +13,7 @@ namespace SitecoreTreeWalker.UI
 			const string message = "This article is currently unlocked. Would you like to lock it and edit it?\n\n" 
 								+"If you select 'Yes' it will be locked for you and will remain locked until you unlock it or move it through the Workflow.\n\n"
 								+"If you select no, the article will open in read only mode.";
-			return MessageBox.Show(message, @"Elsevier", MessageBoxButtons.YesNo);
+			return MessageBox.Show(message, @"Informa", MessageBoxButtons.YesNo);
 		}
 	}
 }

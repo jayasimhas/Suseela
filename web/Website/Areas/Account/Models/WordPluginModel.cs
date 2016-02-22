@@ -412,5 +412,19 @@ namespace Informa.Web.Areas.Account.Models
 			public string Password { get; set; }
 		}
 
+		public class CompanyWrapper
+		{
+			/// <remarks/>
+			public int RecordID { get; set; }
+			public string RecordNumber { get; set; }
+			
+			public string Title { get; set; }
+			
+			public CompanyWrapper[] RelatedCompanies { get; set; }
+			
+			[System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
+			public System.Nullable<int> Parent { get; set; }
+		}
+
 	}
 }
