@@ -53,6 +53,7 @@
     input[type="checkbox"] + label {
       font-size: 15px;
       line-height: 23px;
+      position: relative;
     }
 
     input[type="checkbox"]:checked + label {
@@ -70,20 +71,19 @@
       vertical-align: text-bottom;
     }
 
-    input[type="checkbox"]:checked + label:before {
-      content:" ";
+    input[type="checkbox"]:checked + label:after {
+      // TODO: get correct SVG sprite URL working. get rid of ugly uri-encoded svg
+      @include svg-fill($informa-black);
+      content:"";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      top: 2px;
+      left: 0;
+      // background: url("/dist/img/svg-sprite.svg#check") no-repeat center center;
+      background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E);
     }
-      /* TODO: below is an example, make a real svg for check, then encode it */
-      /* Base 64 encoded SVG image, source:
-      <?xml version="1.0" standalone="no"?>
-      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-      "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-      <svg width="100%" height="100%" version="1.0"
-      xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="0" x2="100%" y2="100%" stroke="#000000 "/>
-      <line x1="0" y1="100%" x2="100%" y2="0" stroke="#000000"/>
-      </svg>
-      */
 
       &--sub {
         padding-top: 10px;
