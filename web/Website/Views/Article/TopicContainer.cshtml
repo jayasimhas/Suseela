@@ -2,8 +2,17 @@
 
 <div id="@Model.Id.ToString("N")" class="topic-subtopic" data-topic-link-text="@Model.NavigationText">
     <h1 class="topic-subtopic__header">
-        @Model.Title
-        <a class="topic-subtopic__header-explore-link" href="@Model.Link.LinkableUrl">@Model.Link.LinkableText</a>
+        @Html.Glass().Editable(x => x.GlassModel.Title)
+        @if (Sitecore.Context.PageMode.IsPageEditor)
+        {
+            <br/>
+            @Html.Glass().Editable(x => x.GlassModel.Navigation_Link)
+            <br/>
+            @Html.Glass().Editable(x => x.GlassModel.Navigation_Text)
+        }
+        else {
+            <a class="topic-subtopic__header-explore-link" href="@Model.Link.LinkableUrl">@Model.Link.LinkableText</a>
+        }
     </h1>
 	@Html.Sitecore().DynamicPlaceholder("two-column-curated")
 </div>
