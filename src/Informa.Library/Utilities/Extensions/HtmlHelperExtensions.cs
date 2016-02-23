@@ -37,7 +37,7 @@ namespace Informa.Library.Utilities.Extensions
 
         //public static 
 
-		public static string CsrfTokenHeaderValue(this HtmlHelper htmlHelper)
+        public static string CsrfTokenHeaderValue(this HtmlHelper htmlHelper)
 		{
 			string cookieToken, formToken;
 			AntiForgery.GetTokens(null, out cookieToken, out formToken);

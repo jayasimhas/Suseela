@@ -1,7 +1,6 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-@using Sitecore.ExperienceAnalytics.Client
-@model Informa.Web.ViewModels.GlassArticleModel
+﻿@using Glass.Mapper.Sc.Web.Mvc                                              
+@using Informa.Web.Models
+@model GlassArticleModel
 
 <div class="article-body-content">
     <h1>@Model.Title</h1>
@@ -37,6 +36,11 @@
         <div class="article-author article-author--solo">
             <ul class="article-author__list">
                 <li>
+                    @* IF AUTHOR PHOTO EXISTS...
+                    <div class="article-author__photo">
+                        <img src=" AUTHOR PHOTO URL HERE ">
+                    </div>
+                    END IF *@
                     <div class="article-author__solo-wrapper">
                         <span class="article-author__name">@author.Name</span>
                         <span class="article-author__contact">
@@ -91,7 +95,7 @@
         </div>
         @* End Executive Summary  *@
     }
-    
+
     @if (Model.Image != null)
     {
     @* * *  ARTICLE - FEATURED IMAGE
@@ -109,7 +113,7 @@
     @* * *  END ARTICLE - FEATURED IMAGE *@
     }
 
-    @Html.Raw(Model.Body)
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
 
 </div>
 
