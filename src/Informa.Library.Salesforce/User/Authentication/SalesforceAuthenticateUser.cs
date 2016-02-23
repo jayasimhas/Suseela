@@ -16,7 +16,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 		public IAuthenticateUserResult Authenticate(string username, string password)
 		{
 			var result = Service.Execute(s => s.login(username, password));
-
+			
 			throw new NotImplementedException();
 		}
 	}

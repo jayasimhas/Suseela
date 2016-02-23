@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="ISalesforceServiceContextExtensions.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticateUser.cs" />
     <Compile Include="User\Authentication\SalesforceAuthenticateUser.cs" />

@@ -27,6 +27,7 @@ namespace Informa.Library.Salesforce
 		}
 
 		public TResult Execute<TResult>(Expression<Func<ISalesforceService, TResult>> functionExpression)
+			where TResult : IEbiResponse
 		{
 			var function = functionExpression.Compile();
 
