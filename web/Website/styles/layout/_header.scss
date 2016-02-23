@@ -68,6 +68,7 @@ $main-menu-smartphone-width: 62px;
 		@include breakpoint('small') {
 			align-self: auto;
 			height: calc(100% - 1.25rem);
+			flex: 1 0 auto;
 		}
 	}
 
@@ -143,6 +144,9 @@ $main-menu-smartphone-width: 62px;
 				margin-top: 0;
 				margin-right: 12px;
 				padding: 0;
+				position: absolute;
+				right: 0;
+				left: 70px;
 			}
 		}
 
@@ -156,7 +160,7 @@ $main-menu-smartphone-width: 62px;
 				display: none;
 				font-size: 18px;
 				left: 0;
-				line-height: 48px;
+				line-height: calc(3rem - 1px); // 1px border below
 				margin: 0.5625rem 0;
 				position: absolute;
 				width: 60%;
