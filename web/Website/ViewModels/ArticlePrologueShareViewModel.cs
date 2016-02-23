@@ -23,6 +23,6 @@ namespace Informa.Web.ViewModels
 
         public string ArticleTitle => ArticleRenderingContext.Get<IArticle>().Title;
         public string ArticleUrl => $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{ArticleRenderingContext.Get<IArticle>()._Url}";
-        public string ShareText => TextTranslator.Translate("Bookmark");
+        public string ShareText => TextTranslator.Translate("Article.Share");
     }
 }
