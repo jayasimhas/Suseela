@@ -101,7 +101,7 @@
 			margin: 4px;
 	    background: $informa-light-gray-d;
 	    position: absolute;
-			top: 0;
+			top: 1px;
 			bottom: 0;
 	    right: 24px;
 	    border-radius: 50%;
@@ -114,5 +114,6 @@
 
 		&-checkbox:checked + &-label &-switch {
 			right: 0;
+			background: $informa-light-orange;
 		}
 }
