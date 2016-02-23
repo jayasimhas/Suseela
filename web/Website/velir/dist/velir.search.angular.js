@@ -311,7 +311,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var ResultsController = function ResultsController($scope, searchService) {
+var ResultsController = function ResultsController($scope, searchService, viewHeadlinesStateService) {
 	var _this = this;
 
 	_classCallCheck(this, ResultsController);
@@ -319,16 +319,20 @@ var ResultsController = function ResultsController($scope, searchService) {
 	this.service = searchService;
 	this.docs = [];
 
+	$scope.headlinesOnly = viewHeadlinesStateService;
+
 	$scope.$watchCollection(function () {
 		return searchService.getResults();
 	}, function () {
 		_this.docs = searchService.getResults();
 	});
+
+
 };
 
 exports.ResultsController = ResultsController;
 
-ResultsController.$inject = ['$scope', 'searchService'];
+ResultsController.$inject = ['$scope', 'searchService', 'viewHeadlinesStateService'];
 
 },{}],8:[function(require,module,exports){
 'use strict';
@@ -552,6 +556,7 @@ SearchModule.provider('searchService', _Core.SearchServiceProvider);
 
 // Register the search bootstrapper
 SearchModule.service('searchBootstrapper', _SearchBootstrapper.SearchBootstrapper);
+
 
 // Register controllers
 SearchModule.controller('searchQueryController', _ControllersQueryController.QueryController);

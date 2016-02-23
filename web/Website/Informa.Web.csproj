@@ -702,6 +702,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
@@ -798,7 +799,6 @@
     <Content Include="velir\dist\patternlibrary.css" />
     <Content Include="velir\dist\velir.search.angular.js" />
     <Content Include="velir\images\svgdefs.svg" />
-    <Content Include="velir\js\app.js" />
     <Content Include="velir\vendor\bower_components\angular\angular.js" />
     <Content Include="velir\vendor\bower_components\lodash\lodash.js" />
     <Content Include="Web.config">
