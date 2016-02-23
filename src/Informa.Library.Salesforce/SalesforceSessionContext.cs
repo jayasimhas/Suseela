@@ -14,7 +14,7 @@ namespace Informa.Library.Salesforce
 
 		public ISalesforceSession Session { get; set; }
 
-		public void Refresh()
+		public ISalesforceSession Refresh()
 		{
 			throw new NotImplementedException();
 		}

@@ -3,6 +3,6 @@
 	public interface ISalesforceSessionContext
 	{
 		ISalesforceSession Session { get; }
-		void Refresh();
+		ISalesforceSession Refresh();
 	}
 }

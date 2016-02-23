@@ -5,17 +5,17 @@ namespace Informa.Library.Salesforce.User.Authentication
 {
 	public class SalesforceAuthenticateUser : ISalesforceAuthenticateUser
 	{
-		protected readonly ISalesforceServiceExecutor<ISalesforceServiceContext> ServiceExecutor;
+		protected readonly ISalesforceServiceContext Service;
 
 		public SalesforceAuthenticateUser(
-			ISalesforceServiceExecutor<ISalesforceServiceContext> serviceExecutor)
+			ISalesforceServiceContext service)
 		{
-			ServiceExecutor = serviceExecutor;
+			Service = service;
 		}
 
 		public IAuthenticateUserResult Authenticate(string username, string password)
 		{
-			var result = ServiceExecutor.Execute(() => ServiceExecutor.Service.login(username, password));
+			var result = Service.Execute(s => s.login(username, password));
 
 			throw new NotImplementedException();
 		}

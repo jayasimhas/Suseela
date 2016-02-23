@@ -1,27 +1,36 @@
 ﻿using Informa.Library.Salesforce.EBIWebServices;
+using System;
+using System.Linq.Expressions;
 
 namespace Informa.Library.Salesforce
 {
-	public class SalesforceServiceContext : SalesforceService, ISalesforceServiceContext
+	public class SalesforceServiceContext : ISalesforceServiceContext
 	{
+		protected readonly ISalesforceService Service;
 		protected readonly ISalesforceSessionContext SessionContext;
 
 		public SalesforceServiceContext(
+			ISalesforceService service,
 			ISalesforceSessionContext sessionContext)
 		{
+			Service = service;
 			SessionContext = sessionContext;
+
+			Service.SessionHeaderValue = new SessionHeader();
 
 			RefreshSession();
 		}
 
 		public void RefreshSession()
 		{
-			if (SessionHeaderValue == null)
-			{
-				SessionHeaderValue = new SessionHeader();
-			}
+			Service.SessionHeaderValue.sessionId = SessionContext.Refresh().Id;
+		}
 
-			SessionHeaderValue.sessionId = SessionContext.Session.Id;
+		public TResult Execute<TResult>(Expression<Func<ISalesforceService, TResult>> functionExpression)
+		{
+			var function = functionExpression.Compile();
+
+			return function(Service);
 		}
 	}
 }

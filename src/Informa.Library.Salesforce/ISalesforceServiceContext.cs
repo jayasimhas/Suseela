@@ -1,7 +1,10 @@
-﻿namespace Informa.Library.Salesforce
+﻿using System;
+using System.Linq.Expressions;
+
+namespace Informa.Library.Salesforce
 {
-	public interface ISalesforceServiceContext : ISalesforceService
+	public interface ISalesforceServiceContext
 	{
-		void RefreshSession();
+		TResult Execute<TResult>(Expression<Func<ISalesforceService, TResult>> functionExpression);
 	}
 }

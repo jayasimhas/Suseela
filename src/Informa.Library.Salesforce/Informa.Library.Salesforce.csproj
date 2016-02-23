@@ -50,7 +50,6 @@
     <Compile Include="EBIWebServices\IEBI_WebServicesBinding.cs" />
     <Compile Include="ISalesforceService.cs" />
     <Compile Include="ISalesforceServiceContext.cs" />
-    <Compile Include="ISalesforceServiceExecutor`1.cs" />
     <Compile Include="ISalesforceSession.cs" />
     <Compile Include="ISalesforceSessionContext.cs" />
     <Compile Include="ISalesforceSessionFactory.cs" />
@@ -62,7 +61,6 @@
     </Compile>
     <Compile Include="SalesforceService.cs" />
     <Compile Include="SalesforceServiceContext.cs" />
-    <Compile Include="SalesforceServiceExecutor`1.cs" />
     <Compile Include="SalesforceSession.cs" />
     <Compile Include="SalesforceSessionContext.cs" />
     <Compile Include="SalesforceSessionFactory.cs" />
