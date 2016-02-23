@@ -1,6 +1,19 @@
-// .search-results {
-//
-// }
+
+.search-results {
+  @include breakpoint('medium') {
+    order: 4;
+  }
+
+  // headlines-only view
+  .headlines-only {
+    .result__publication,
+    .result__author,
+    .result__description {
+      display: none;
+    }
+  }
+}
+
 .result {
   display: block;
   padding: 22px 0;
@@ -49,6 +62,11 @@
     margin: 0 15px;
     vertical-align: sub;
     background-color: $informa-light-gray-d;
+  }
+
+  &__bookmark {
+    @extend .article-preview__bookmarker;
+    z-index: -1; // overrides .pop-out__trigger z-index:993
   }
 
   &__description {

@@ -2,6 +2,12 @@
   display: inline-block;
   float: right;
 
+  @include breakpoint('medium') {
+    display: block;
+    float: left;
+    order: 3;
+  }
+
   h6 {
     text-transform: uppercase;
     display: inline;
