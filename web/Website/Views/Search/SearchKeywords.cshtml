@@ -15,7 +15,7 @@
       </a>
 
         <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
-               
+
                ng-model="query.keywords"/>
 
 
@@ -79,6 +79,13 @@
   </div>
 
   <div class="search-bar__footer">
+
+  <!-- <div ng-class="class">Current class is: {{class}}</div>
+  <button ng-click="toggleClass()">Toggle Class</button> -->
+
+  <!-- <div ng-app="classApp" ng-controller="classCtrl">
+    <button class="button" ng-class="{'active': isActive}" ng-click="activeButton()" type="button">Click Me to Toggle Class</button>
+  </div> -->
 
     <!-- TODO: fix toggle -->
     <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only">

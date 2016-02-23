@@ -1,6 +1,19 @@
-// .search-results {
-//
-// }
+
+.search-results {
+  @include breakpoint('medium') {
+    order: 4;
+  }
+
+  // headlines-only view
+  .headlines-only {
+    .result__publication,
+    .result__author,
+    .result__description {
+      display: none;
+    }
+  }
+}
+
 .result {
   display: block;
   padding: 22px 0;
