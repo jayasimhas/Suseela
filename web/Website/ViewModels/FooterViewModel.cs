@@ -1,5 +1,5 @@
 ﻿using Glass.Mapper.Sc.Fields;
-using Informa.Library.Authentication;
+using Informa.Library.User.Authentication;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.Subscription;

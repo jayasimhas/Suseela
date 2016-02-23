@@ -43,12 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISalesforceServiceContextExtensions.cs" />
+    <Compile Include="User\Authentication\ISalesforceAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\SalesforceAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\SalesforceAuthenticateUserResult.cs" />
+    <Compile Include="EBIWebServices\IEBI_WebServicesBinding.cs" />
+    <Compile Include="ISalesforceService.cs" />
+    <Compile Include="ISalesforceServiceContext.cs" />
+    <Compile Include="ISalesforceServiceExecutor`1.cs" />
+    <Compile Include="ISalesforceSession.cs" />
+    <Compile Include="ISalesforceSessionContext.cs" />
+    <Compile Include="ISalesforceSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SalesforceService.cs" />
+    <Compile Include="SalesforceServiceContext.cs" />
+    <Compile Include="SalesforceServiceExecutor`1.cs" />
+    <Compile Include="SalesforceSession.cs" />
+    <Compile Include="SalesforceSessionContext.cs" />
+    <Compile Include="SalesforceSessionFactory.cs" />
+    <Compile Include="User\ISalesforceUser.cs" />
+    <Compile Include="User\SalesforceUser.cs" />
     <Compile Include="Web References\EBIWebServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +279,7 @@
       <Name>Informa.Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

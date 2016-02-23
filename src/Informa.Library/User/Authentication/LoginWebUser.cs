@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Informa.Library.Authentication
+namespace Informa.Library.User.Authentication
 {
 	public class LoginWebUser : ILoginWebUser
 	{

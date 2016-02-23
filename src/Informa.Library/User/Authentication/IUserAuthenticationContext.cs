@@ -1,4 +1,4 @@
-﻿namespace Informa.Library.Authentication
+﻿namespace Informa.Library.User.Authentication
 {
 	public interface IUserAuthenticationContext
 	{
