@@ -3,12 +3,11 @@
 <script src="/velir/vendor/bower_components/lodash/lodash.js"></script>
 <script src="/velir/vendor/bower_components/angular/angular.js"></script>
 <script src="/velir/dist/velir.search.angular.js"></script>
-<script src="/velir/js/app.js"></script>
-<script src="/scripts/search/InformaFacetsController.js"></script>
+<script src="/js/search/informaSearchApp.js"></script>
 <script>
     (function (angular) {
 
-        var app = angular.module('example');
+        var app = angular.module('informaSearchApp');
 
         app.config(function (searchServiceProvider) {
             searchServiceProvider.setUrl('@Model.Base_Endpoint_Url?@Velir.Search.Core.Reference.SiteSettings.QueryString.PageIdKey=@Model._Id');
