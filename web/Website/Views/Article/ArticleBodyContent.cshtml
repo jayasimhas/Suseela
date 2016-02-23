@@ -1,7 +1,6 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-@using Sitecore.ExperienceAnalytics.Client
-@model Informa.Web.ViewModels.GlassArticleModel
+﻿@using Glass.Mapper.Sc.Web.Mvc                                              
+@using Informa.Web.Models
+@model GlassArticleModel
 
 <div class="article-body-content">
     <h1>@Model.Title</h1>
@@ -114,7 +113,7 @@
     @* * *  END ARTICLE - FEATURED IMAGE *@
     }
 
-    @Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar")
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
 
 </div>
 
