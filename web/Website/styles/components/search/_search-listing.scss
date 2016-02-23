@@ -51,6 +51,11 @@
     background-color: $informa-light-gray-d;
   }
 
+  &__bookmark {
+    @extend .article-preview__bookmarker;
+    z-index: -1; // overrides .pop-out__trigger z-index:993
+  }
+
   &__description {
     @include textMix('PTSerif', 15px, 400);
     line-height: 25px;

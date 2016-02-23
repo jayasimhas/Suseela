@@ -5,6 +5,10 @@
   background-color: $informa-light-gray-f;
   margin-bottom: 50px;
 
+  &.tips-open {
+    z-index: -1;
+  }
+
   &__label {
     width: 100%;
     padding-bottom: 20px;
@@ -16,6 +20,10 @@
     position: relative;
     display: flex;
     align-items: center;
+  }
+
+  &.tips-open &__content {
+    z-index: 0;
   }
 
   &__input-wrapper {
@@ -57,12 +65,94 @@
 
   &__tips {
     order: 3;
+    position: relative;
     white-space: nowrap;
 
-    span{
+    &.open {
+      position: relative;
+    }
+
+    &-button {
       cursor: pointer;
     }
+
+    &.open &-button {
+      cursor: pointer;
+
+      // &:after {
+      //   content: "";
+      //   display: block;
+      //   width: 155px;
+      //   height: 86px;
+      //   position: absolute;
+      //   top: -20px;
+      //   right: -20px;
+      //   background-color: $color-white;
+      //   border: 1px solid #d1d3d4;
+      // }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 155px;
+        height: 86px;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: $color-white;
+        border: 1px solid #d1d3d4;
+        z-index: -1;
+      }
+    }
+
+    &-panel {
+      display: none;
+    }
+
+    &.open &-panel {
+      display: block;
+      position: absolute;
+      top: 65px;
+      right: -20px;
+      width: 470px;
+      height: auto;
+      background-color: $color-white;
+      padding: 30px;
+      border: 1px solid $informa-light-gray-d;
+      white-space: normal;
+      z-index: 1000; // super high to go above bookmarks
+
+      // &:before {
+      //   content: "";
+      //   display: block;
+      //   width: 155px;
+      //   height: 86px;
+      //   position: absolute;
+      //   top: -86px;
+      //   right: -1px;
+      //   background-color: $color-white;
+      //   border: 1px solid #d1d3d4;
+      //   // z-index: 0;
+      // }
+
+      .search-bar__close-tips {
+        float: right;
+        svg {
+          fill: $informa-black;
+        }
+      }
+
+      h3 {
+        padding-bottom: 20px;
+      }
+
+      *:not(h3) {
+        @include textMix('PT Serif', 15px, 400);
+        line-height: 25px;
+      }
+    }
   }
+
 
   &__footer {
     display: block;

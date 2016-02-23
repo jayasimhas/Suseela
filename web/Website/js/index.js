@@ -3,6 +3,7 @@ import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
+import SearchScript from './search-page.js';
 
 /* Toggle menu visibility */
 $('.js-toggle-menu').on('click', function toggleMenu() {
