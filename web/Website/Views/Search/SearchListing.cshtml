@@ -16,11 +16,13 @@
                  {{doc.contentType }}
             </div>
 
-            <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
-                <a  href="{{tax.url}}">
-                    {{tax.title}}
-                </a><span ng-if="!$last">, </span>
-            </span>
+            <!-- <div class="article-preview__bookmarker pop-out__trigger js-pop-out-trigger"
+                 data-pop-out-type="sign-in"
+                 data-pop-out-align="right">
+                <svg class="article-prologue__share-icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                </svg>
+            </div> -->
 
             <div class="result__publication">{{ doc.publicationTitle }} </div>
 
@@ -31,6 +33,18 @@
             <div class="result__author">by {{ doc.byline }}</div>
 
             <p class="result__description">{{ doc.summary }}</p>
+
+            <!-- <div class="article-preview__tags bar-separated-link-list">
+                <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
+                    <a href="{{tax.url}}">
+                        {{tax.title}}
+                    </a>
+                </span>
+                <span ng-if="!$last">
+                    ,
+                </span>
+            </div> -->
+
         </div>
     </div>
 

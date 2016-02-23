@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Web.Mvc;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
@@ -34,7 +36,9 @@ namespace Informa.Web.ViewModels
 
         public string Title => GlassModel.Title;
         public string Sub_Title => GlassModel.Sub_Title;
-        public string Body => GlassModel.Body;
+        public string Body => GlassModel.Body;  
+   
+
         public IHierarchyLinks TaxonomyHierarchy => new HierarchyLinksViewModel(GlassModel, TextTranslator);
         public DateTime Date => GlassModel.Actual_Publish_Date;
         //TODO: Extract to a dictionary.

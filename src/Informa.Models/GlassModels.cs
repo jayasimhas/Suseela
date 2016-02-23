@@ -1634,7 +1634,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 								/// <summary>
 					/// The Desktop Embed Code field.
 					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field Type: Multi-Line Text</para>		
 					/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -1643,7 +1643,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 								/// <summary>
 					/// The Mobile Embed Code field.
 					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field Type: Multi-Line Text</para>		
 					/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -1664,7 +1664,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 										/// <summary>
 						/// The Desktop Embed Code field.
 						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field Type: Multi-Line Text</para>		
 						/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
@@ -1673,7 +1673,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 										/// <summary>
 						/// The Mobile Embed Code field.
 						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field Type: Multi-Line Text</para>		
 						/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
 						/// <para>Custom Data: </para>
 						/// </summary>

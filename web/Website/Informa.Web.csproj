@@ -651,7 +651,6 @@
     <Compile Include="CustomMvc\Pipelines\HttpRequest\AuthenticationChecker.cs" />
     <Compile Include="CustomMvc\Pipelines\HttpRequest\LoginHelper.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
-    <Compile Include="GlassMaps\Class1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -666,7 +665,6 @@
     <Compile Include="Models\Salesforce\AuthConfigProviders.cs" />
     <Compile Include="Models\Salesforce\AuthProvider.cs" />
     <Compile Include="Models\Salesforce\AuthSession.cs" />
-    <Compile Include="Models\Salesforce\LoginHistory.cs" />
     <Compile Include="Models\Salesforce\Organization.cs" />
     <Compile Include="Models\Salesforce\Profile.cs" />
     <Compile Include="Models\Salesforce\User.cs" />
@@ -833,6 +831,7 @@
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="Areas\Account\Views\Connector\Login.cshtml" />
     <Content Include="Areas\Account\Views\Account\Lockout.cshtml" />
+    <Content Include="sitecore\login\login.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -901,6 +900,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
+    <Folder Include="GlassMaps\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
@@ -923,7 +923,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
     <Content Include="App_Config\Salesforce.config" />
@@ -995,6 +997,7 @@
     <Content Include="Views\Shared\Components\PullQuote.cshtml" />
     <Content Include="Views\Shared\Components\Promotional.cshtml" />
     <Content Include="Views\Search\SearchWrapper.cshtml" />
+    <Content Include="Views\Article\_ArticleSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
