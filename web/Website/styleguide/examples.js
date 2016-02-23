@@ -118,10 +118,11 @@ examples.lang = {
 		// set iframe height based on content
 		var documentElement = idoc.documentElement;
 		var scrollHeight;
+		var resizeTimeout = 0;
 
-		function resize() {
+		var resize = function() {
 			var currentScrollHeight = documentElement.scrollHeight;
-			
+			console.log('resizing');
 			//if (scrollHeight !== currentScrollHeight) {
 				scrollHeight = currentScrollHeight;
 
@@ -129,9 +130,29 @@ examples.lang = {
 
 				style.height = parseInt(documentElement.scrollHeight) + (iframe.offsetHeight - iwin.innerHeight) + 'px';
 			//}
-		}
+		};
 
-		iwin.addEventListener('resize', resize);
+		var debounce = function (func, threshold, execAsap) {
+		    var timeout;
+
+		    return function debounced () {
+		        var obj = this, args = arguments;
+		        function delayed () {
+		            if (!execAsap)
+		                func.apply(obj, args);
+		            timeout = null;
+		        }
+
+		        if (timeout)
+		            clearTimeout(timeout);
+		        else if (execAsap)
+		            func.apply(obj, args);
+
+		        timeout = setTimeout(delayed, threshold || 100);
+		    };
+		 };
+
+		iwin.addEventListener('resize', debounce(resize, 200, false));
 
 		resize();
 
