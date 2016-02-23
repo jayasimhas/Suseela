@@ -1,16 +1,16 @@
-
 .search-results {
-  @include breakpoint('medium') {
-    order: 4;
-  }
-
   // headlines-only view
-  .headlines-only {
+  &.headlines-only {
     .result__publication,
     .result__author,
-    .result__description {
+    .result__description,
+    .article-preview__tags {
       display: none;
     }
+  }
+
+  @include breakpoint('medium') {
+    order: 4;
   }
 }
 
