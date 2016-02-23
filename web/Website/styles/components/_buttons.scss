@@ -79,14 +79,14 @@
 			}
 
 			&:before {
-				content: "ON";
+				content: "OFF";
 		    padding-left: 9px;
 		    background-color: $color-white;
 				color: $color-medium-gray-8; // also try $informa-mid-gray
 			}
 
-			&-after {
-				content: "OFF";
+			&:after {
+				content: "ON";
 		    padding-right: 9px;
 		    background-color: $color-white;
 				color: $color-medium-gray-8; // also try $informa-mid-gray

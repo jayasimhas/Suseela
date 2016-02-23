@@ -24,6 +24,7 @@
         &:last-child {
             border: 0;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
 
@@ -97,6 +98,7 @@
         width: 7.5rem;
         vertical-align: middle;
         margin-right: 1.125rem;
+        display: inline-block;
     }
 
     &__solo-wrapper {
