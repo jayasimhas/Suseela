@@ -79,18 +79,6 @@
     &.open &-button {
       cursor: pointer;
 
-      // &:after {
-      //   content: "";
-      //   display: block;
-      //   width: 155px;
-      //   height: 86px;
-      //   position: absolute;
-      //   top: -20px;
-      //   right: -20px;
-      //   background-color: $color-white;
-      //   border: 1px solid #d1d3d4;
-      // }
-
       &:before {
         content: "";
         display: block;
@@ -122,21 +110,21 @@
       white-space: normal;
       z-index: 1000; // super high to go above bookmarks
 
-      // &:before {
-      //   content: "";
-      //   display: block;
-      //   width: 155px;
-      //   height: 86px;
-      //   position: absolute;
-      //   top: -86px;
-      //   right: -1px;
-      //   background-color: $color-white;
-      //   border: 1px solid #d1d3d4;
-      //   // z-index: 0;
-      // }
+      // white strip to hide border between open tip panel and button
+      &:before {
+        content: "";
+        display: block;
+        width: 153px;
+        height: 10px;
+        position: absolute;
+        top: -5px;
+        right: 0;
+        background-color: $color-white;
+      }
 
       .search-bar__close-tips {
         float: right;
+
         svg {
           fill: $informa-black;
         }
