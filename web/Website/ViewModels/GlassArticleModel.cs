@@ -106,5 +106,5 @@ namespace Informa.Web.ViewModels
 		}
 
 		#endregion
-	}}
+	}
 }
