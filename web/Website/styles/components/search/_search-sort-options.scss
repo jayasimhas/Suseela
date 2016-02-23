@@ -1,0 +1,18 @@
+.search-sort {
+  display: inline-block;
+  float: right;
+
+  h6 {
+    text-transform: uppercase;
+    display: inline;
+    margin-right: 5px;
+  }
+
+  ol {
+    display: inline-block;
+  }
+
+  a {
+    @include textMix('Roboto', 15px, 400);
+  }
+}

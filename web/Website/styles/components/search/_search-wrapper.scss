@@ -1,0 +1,62 @@
+.search {
+  * {
+    box-sizing: border-box;
+  }
+
+// Includes top border, page title, and email & rss icons
+  &__header {
+    min-height: 60px;
+    margin-bottom: 35px;
+    border-top: 2px solid $informa-light-gray-d;
+
+    &-buttons {
+      padding-top: 18px;
+      text-align: right;
+
+      &--email {
+        margin-right: 30px;
+      }
+
+      a {
+        display: inline-block;
+        color: $informa-black;
+      }
+
+      h6 {
+        display: inline;
+        vertical-align: middle;
+        padding-right: 5px;
+      }
+
+      .icon {
+        @include svg-fill($informa-mid-gray);
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+      }
+    }
+
+    &-title {
+      color: $informa-black;
+    }
+  }
+
+// Includes filters, search bar, and search results
+  &__content {
+    display: flex;
+  }
+
+  // 2 sections are nested inside search__content:
+  &__left-sidebar {
+    flex-basis: 300px;
+    min-width: 300px;
+    margin-right: 15px;
+  }
+
+  &__body {
+    flex-grow: 3;
+    order:2;
+    margin-left: 15px;
+  }
+}

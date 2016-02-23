@@ -1,6 +1,6 @@
 ﻿@model Informa.Web.ViewModels.IArticlePrologueShareViewModel
 <li class="article-prologue__share-item">
-	<span class="article-prologue__share-label">Share</span>
+	<span class="article-prologue__share-label">@Model.ShareText</span>
 
 	@*
 		LAST UPDATED — FEBRAURY 02 2016
@@ -13,7 +13,7 @@
 		source — OPTIONAL URL-encoded source of the content (e.g. your website or application name)
 	*@
 	<a
-		href="https://www.linkedin.com/shareArticle?mini=true&url=http://developer.linkedin.com&title=LinkedIn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn"
+		href="https://www.linkedin.com/shareArticle?mini=true&url=@HttpUtility.UrlEncode(Model.ArticleUrl)&title=@HttpUtility.UrlEncode(Model.ArticleTitle)&summary=&source="
 		target="_blank"
 		class="link__no-hover">
 		<svg class="article-prologue__share-icon article-prologue__share-icon--linkedin">
@@ -29,7 +29,7 @@
 		url — fully-qualified URL with a HTTP or HTTPS scheme, URL-encoded
 	*@
 	<a
-		href="https://twitter.com/intent/tweet?text=TEXT-HERE&url=URL-HERE"
+		href="https://twitter.com/intent/tweet?text=@HttpUtility.UrlEncode(Model.ArticleTitle)&url=@HttpUtility.UrlEncode(Model.ArticleUrl)"
 		class="link__no-hover">
 		<svg class="article-prologue__share-icon article-prologue__share-icon--twitter">
 			<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>

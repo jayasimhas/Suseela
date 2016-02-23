@@ -49,12 +49,14 @@
 			display: none;
 		}
 
+    // TODO: ask if colors need to be exact from designs, or should be reused from preexisting
 		&-label {
 			display: block;
 			overflow: hidden;
 			cursor: pointer;
-	    border: 1px solid #bbbcbe;
+	    border: 1px solid $color-light-gray-b; // also try $informa-light-gray-d
 			border-radius: 11px;
+			background-color: $color-white;
 		}
 
 		&-inner {
@@ -72,22 +74,22 @@
 				height: 22px;
 				padding: 0;
 				line-height: 22px;
-				color: white;
+				color: $color-white;
 		    box-sizing: border-box;
 			}
 
 			&:before {
-				content: "ON";
+				content: "OFF";
 		    padding-left: 9px;
-		    background-color: #FFFFFF;
-				color: #808285;
+		    background-color: $color-white;
+				color: $color-medium-gray-8; // also try $informa-mid-gray
 			}
 
-			&-after {
-				content: "OFF";
+			&:after {
+				content: "ON";
 		    padding-right: 9px;
-		    background-color: #FFFFFF;
-				color: #808285;
+		    background-color: $color-white;
+				color: $color-medium-gray-8; // also try $informa-mid-gray
 		    text-align: right;
 			}
 		}
@@ -97,7 +99,7 @@
 			width: 14px;
 			height: 14px;
 			margin: 4px;
-	    background: #D1D3D4;
+	    background: $informa-light-gray-d;
 	    position: absolute;
 			top: 0;
 			bottom: 0;
