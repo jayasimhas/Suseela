@@ -256,7 +256,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				return;
 			}
 
-			//imageSelected = mediaItem.Url;
+			imageSelected = articleDetails.FeaturedImage.ToString();
 			pictureBox1.ImageLocation = mediaItem.FileName;
 			filenameLbl.Text = mediaItem.Title;
 			alttextLbl.Text = mediaItem.Title;
