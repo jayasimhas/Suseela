@@ -1,13 +1,6 @@
 ﻿(function () {
     'use strict';
 
-    //'ngTouch',
-    //       'achqAppServices',
-    //       'achqAppControllers',
-    //       'velirPagerFactory',
-    //       'velirSearchMapper',
-    //       'velirSkip'
-
     var informaSearchApp = angular.module('informaSearchApp', [
         'velir.search'
     ])
@@ -18,7 +11,7 @@
         .config(['$logProvider', function ($logProvider) {
             // All debugging should be done via $log instead of directly to console
             // This flag disables $log.debug() output
-            $logProvider.debugEnabled(false);
+            //$logProvider.debugEnabled(false);
         }])
         .config(['$compileProvider', function ($compileProvider) {
             // Disabled to increase performance
@@ -27,4 +20,17 @@
         }])
     ;
 
-})();
+    informaSearchApp.factory('viewHeadlinesStateService', function () {
+        var headlines = false;
+
+        return {
+            showOnlyHeadlines: function () { return headlines; }
+            ,
+            updateValue: function () {
+                
+                headlines = !headlines;
+            }
+        }
+    });
+
+})(); 

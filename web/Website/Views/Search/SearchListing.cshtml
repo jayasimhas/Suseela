@@ -1,6 +1,6 @@
 ﻿@model dynamic
-
-<section class="search-results" ng-controller="searchResultsController as results">
+ 
+<section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="searchResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
     <div class="result" ng-repeat="doc in results.docs">
@@ -34,7 +34,7 @@
 
             <p class="result__description">{{ doc.summary }}</p>
 
-            <!-- <div class="article-preview__tags bar-separated-link-list">
+             <div class="article-preview__tags bar-separated-link-list">
                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
                     <a href="{{tax.url}}">
                         {{tax.title}}
@@ -43,7 +43,7 @@
                 <span ng-if="!$last">
                     ,
                 </span>
-            </div> -->
+            </div> 
 
         </div>
     </div>
