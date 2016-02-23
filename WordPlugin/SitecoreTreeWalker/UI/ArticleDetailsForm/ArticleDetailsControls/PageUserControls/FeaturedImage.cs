@@ -281,7 +281,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		private void clearBtn_Click(object sender, EventArgs e)
 		{
-			ReloadItems();
+			ResetFields();
+			imageSelected = null;
 			ShowHideElements(false);
 			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
 		}
