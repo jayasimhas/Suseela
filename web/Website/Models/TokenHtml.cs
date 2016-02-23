@@ -9,8 +9,9 @@ using System.Web.Mvc.Html;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Web.ViewModels;
 
-namespace Informa.Library.Utilities.Extensions
+namespace Informa.Web.Models
 {
     public class TokenHtml<TK>
     {
@@ -23,7 +24,7 @@ namespace Informa.Library.Utilities.Extensions
         public IArticleSearch ArticleSearch { get; private set; }
 
         public static string Token = @"\[Sidebar#(.*?)\]";
-        private readonly object ArticleListableFactory;
+        private readonly IArticleListItemModelFactory ArticleListableFactory;
 
         public TokenHtml(HtmlHelper<TK> helper)
         {
@@ -32,6 +33,8 @@ namespace Informa.Library.Utilities.Extensions
             Model = HtmlHelper.ViewData.Model;
 
             ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
+            ArticleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
+
 
         }                                       
 
@@ -44,7 +47,9 @@ namespace Informa.Library.Utilities.Extensions
         public virtual IHtmlString RenderTokenBody(Expression<Func<TK, string>> expression, string partialName)
         {
 
-            var sidebarRegex = new Regex(@"\[Sidebar#(.*?)\]");   
+            var sidebarRegex = new Regex(@"\[Sidebar#(.*?)\]");    
+
+            //var citationTokenRegex = new Regex(@"\[A#(.*?)\]");
              
             var fieldValue = expression.Compile()(this.Model);
 
@@ -61,15 +66,44 @@ namespace Informa.Library.Utilities.Extensions
 
                 if (results.Articles.Any())
                 {
-                    replace = HtmlHelper.Partial(partialName, results.Articles.FirstOrDefault());
+                    replace = HtmlHelper.Partial(partialName, ArticleListableFactory.Create(results.Articles.FirstOrDefault()));
                 }     
                
                 fieldValue = fieldValue.Replace(match.Value, replace.ToString());
                
             }
 
+            //foreach (Match match in citationTokenRegex.Matches(fieldValue))
+            //{
+            //    string articleNumber = match.Groups[1].Value;
+
+
+            //    IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+            //    filter.ArticleNumber = articleNumber;
+            //    var results = ArticleSearch.Search(filter);
+
+            //    HtmlString replace = new HtmlString("");
+
+            //    if (results.Articles.Any())
+            //    {
+            //        replace = HtmlHelper.Partial(partialName, results.Articles.FirstOrDefault());
+            //    }
+
+            //    fieldValue = fieldValue.Replace(match.Value, replace.ToString());
+
+            //}
+
             return HtmlHelper.Raw(fieldValue);
             //return new HtmlString(this.GlassHtml.RenderLink<T>(model, field, attributes, isEditable, contents));
+        }
+    }
+
+
+    public static class TokenExtensions
+    {
+        public static TokenHtml<T> TokenTransform<T>(this HtmlHelper<T> htmlHelper)
+        {
+            return new TokenHtml<T>(htmlHelper);
         }
     }
 }

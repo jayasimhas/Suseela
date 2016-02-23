@@ -33,6 +33,10 @@ namespace Informa.Library.Search.Results
         [DataMember]
         public string Title { get; set; }
 
+        [IndexField("sub_title_t")]
+        [DataMember]
+        public string SubTitle { get; set; }
+
         [IndexField("searchpublicationtitle_s")]
         [DataMember]
         public string PublicationTitle { get; set; }
