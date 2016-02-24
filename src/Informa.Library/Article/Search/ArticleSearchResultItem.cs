@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 using Informa.Library.Search.Results;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.ContentSearch;
@@ -14,6 +18,9 @@ namespace Informa.Library.Article.Search
 		public DateTime ActualPublishDate { get; set; }
 
 	    public string ArticleNumber { get; set; }
-        public string EScenicID { get; set; }
+	    public long ArticleIntegerNumber { get; set; }
+	    public string EScenicID { get; set; }
 	}
 }
+
+
