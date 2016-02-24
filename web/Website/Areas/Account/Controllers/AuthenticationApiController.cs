@@ -6,40 +6,36 @@ namespace Informa.Web.Areas.Account.Controllers
 {
     public class AuthenticationApiController : ApiController
     {
-		protected readonly IAuthenticateUser AuthenticateUser;
+		protected readonly ILoginWebUser LoginWebUser;
 
 		public AuthenticationApiController(
-			IAuthenticateUser authenticateUser)
+			ILoginWebUser loginWebUser)
 		{
-			AuthenticateUser = authenticateUser;
+			LoginWebUser = loginWebUser;
 		}
 
 		[HttpPost]
 		[HttpGet]
 		public IHttpActionResult Authenticate([FromUri]AuthenticateRequest request)
 		{
-			if (request == null)
-			{
-				return BadRequest("Request not set");
-			}
-
-			var username = request.Username;
-			var password = request.Password;
+			var username = request?.Username;
+			var password = request?.Password;
 
 			if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
 			{
 				return Ok(new
 				{
-					success = false
+					success = false,
+					message = "Username or password missing"
 				});
 			}
 
-			var result = AuthenticateUser.Authenticate(request.Username, request.Password);
+			var result = LoginWebUser.Login(request.Username, request.Password, request.Persist);
 
 			return Ok(new
 			{
-				success = result.State == AuthenticateUserResultState.Success,
-				id = result.User?.Id,
+				success = result.Success,
+				message = result.Message,
 				username = username
 			});
 		}

@@ -322,6 +322,7 @@
     <Compile Include="Presentation\GlassRenderingParametersContext`1.cs" />
     <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="User\Authentication\IUserAuthenticationContext.cs" />
+    <Compile Include="User\Authentication\LoginWebUserResult.cs" />
     <Compile Include="User\Authentication\RequestUserAuthenticationContext.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
     <Compile Include="Corporate\MockCorporateAccountNameContext.cs" />
