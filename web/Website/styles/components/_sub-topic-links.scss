@@ -2,22 +2,38 @@
     margin-bottom: 1rem;
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 
     span {
         @include textMix('Roboto Condensed', 0.875rem, 700);
         color: $color-zeus-black;
+        flex: 0 0 auto;
+        line-height: 1.5rem;
+        padding-right: 0.75rem;
         text-transform: uppercase;
         vertical-align: top;
+
+        @include breakpoint(small) {
+            display: block;
+        }
     }
 
+    .bar-separated-link-list {
+        flex-wrap: wrap;
+    }
     a {
         @include textMix('Roboto', 0.875rem, 400);
-        color: $informa-dark-gray;
         border-right: 1px solid $informa-light-gray-d;
+        color: $informa-dark-gray;
         display: inline-block;
-        padding: 0 0.75rem;
         flex: 0 0 auto;
+        line-height: 1.5rem;
+        padding: 0 0.75rem 0 0;
+        margin-right: 0.75rem;
 
+        &:first-child {
+            padding-left: 0;
+        }
         &:last-child {
             border: 0;
         }
@@ -26,6 +42,6 @@
     // Offset topic header anchors to create headroom for sticky mobile menu bar
     &__invisible-topic-header-anchor {
         position: absolute;
-        margin-top: -2.5rem;
+        margin-top: -3rem;
     }
 }
