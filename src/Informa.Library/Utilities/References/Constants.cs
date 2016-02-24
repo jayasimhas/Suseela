@@ -11,6 +11,7 @@ namespace Informa.Library.Utilities.References
 	{
 		public static string ArticleNumberLength = "000000";
 		public static string MasterDb = "master";
+        public static string ScripPublicationName = "Scrip Intelligence";
 
 		public static string MediaLibraryRoot = "/sitecore/media library/";
 		public static string MediaLibraryPath = "Documents/";
@@ -21,5 +22,10 @@ namespace Informa.Library.Utilities.References
 		{
 			{ new Guid(ScripRootNode), "SC"},
 		};
+
+        public static Dictionary<string, string> PublicationPrefixByName = new Dictionary<string, string>
+        {
+            {ScripPublicationName, "SC" }
+        };
 	}
 }
