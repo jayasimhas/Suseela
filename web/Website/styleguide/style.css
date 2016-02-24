@@ -649,3 +649,79 @@ perferendis quam! Ullam, debitis ab maiores.
 :root {
 	background-color: #ffffff;
 }
+
+body {
+    color: #58595b;
+    font-family: "PT Serif", Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+	body {
+	    padding: 0;
+	}
+
+	nav {
+	    font-family: "Roboto", Helvetica, Arial, sans-serif;
+	    background-color: #f1f2f2;
+	   	border-right: 1px solid #ccc;
+		min-height: 100%;
+	}
+
+	nav > img {
+	    height: auto;
+	    margin: 20px auto;
+	    width: 120px;
+	    display: block;
+	}
+
+	nav > ul {
+	    max-height: calc(100vh - 190px - 20px);
+	}
+
+	nav > ul > li {
+	    border-bottom: 1px solid #d1d3d4;
+	    padding-bottom: 20px;
+	}
+
+
+	nav > ul > li:last-child {
+	    border-bottom: 0;
+	}
+
+
+	nav > ul > li > a {
+	    color: #231f20;
+	    font-size: 1rem;
+	    font-weight: 600;
+	    letter-spacing: 1.2px;
+	    padding: 15px 25px 15px 20px;
+	}
+
+	nav > ul > li > a > span {
+	    box-shadow: 0;
+	}
+
+	nav a {
+	    color: #58595b;
+	    font-size: 1rem;
+	    border-left: 6px solid #f1f2f2;
+	    padding: 10px 25px 10px 40px;
+	}
+
+	nav a:hover, nav a:focus {
+	    background-color: transparent;
+	    border-left: 6px solid #f7941e;
+	}
+
+
+	nav ::-webkit-scrollbar {
+	    background-color: #f1f2f2;
+	    width:20px;
+	}
+
+	nav ::-webkit-scrollbar-thumb {
+		background-color: #ccc;
+		border-radius: 10px;
+		border:5px solid #f1f2f2;
+	}

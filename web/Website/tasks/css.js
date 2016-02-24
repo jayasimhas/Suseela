@@ -62,6 +62,7 @@ gulp.task("css", function() {
             require('mdcss')({
                 title: "Informa Style Guide",
                 logo: "https://pbs.twimg.com/profile_images/537287811724881921/JrtNWIt5.png",
+                css: ['style.css', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic'],
                 examples: {
                     css: ["https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic", "../dist/index-generated.css"]
                 }

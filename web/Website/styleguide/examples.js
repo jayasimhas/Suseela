@@ -121,6 +121,7 @@ examples.lang = {
 		var resizeTimeout = 0;
 
 		var resize = function() {
+			iwin.removeEventListener('resize');
 			var currentScrollHeight = documentElement.scrollHeight;
 			console.log('resizing');
 			//if (scrollHeight !== currentScrollHeight) {
@@ -130,6 +131,7 @@ examples.lang = {
 
 				style.height = parseInt(documentElement.scrollHeight) + (iframe.offsetHeight - iwin.innerHeight) + 'px';
 			//}
+			iwin.addEventListener('resize', resize);
 		};
 
 		var debounce = function (func, threshold, execAsap) {
@@ -152,7 +154,7 @@ examples.lang = {
 		    };
 		 };
 
-		iwin.addEventListener('resize', debounce(resize, 200, false));
+		iwin.addEventListener('resize', resize);
 
 		resize();
 
