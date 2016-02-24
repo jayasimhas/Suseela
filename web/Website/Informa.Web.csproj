@@ -706,6 +706,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search\controllers\headlineToggleController.js" />
     <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\zepto.min.js" />
@@ -849,6 +850,7 @@
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="GlassMaps\" />
+    <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
