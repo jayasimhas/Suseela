@@ -10,13 +10,13 @@
                 <time datetime="2015-01-15">{{doc.searchDate | date: 'd MMM yyyy' }}</time>
             </div>
 
-            <span class="result__line-seperator" ng-if="doc.contentType !== ''"></span>
+            <span class="result__line-separator" ng-if="doc.contentType !== ''"></span>
 
             <div class="result__content-type">
                  {{doc.contentType }}
             </div>
 
-            <span class="result__line-seperator" ng-if="doc.mediaType !== ''"></span> <!-- only prints if media type isn't blank -->
+            <span class="result__line-separator" ng-if="doc.mediaType !== ''"></span> <!-- only prints if media type isn't blank -->
 
             <div class="result__media-type">
                 <svg><use xlink:href="/dist/img/svg-sprite.svg#video"></use></svg> <!-- example media type icon, video -->
@@ -45,7 +45,7 @@
                  <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a href="{{tax.url}}">
                     {{tax.title}}
                 </a>
-                     <span ng-if="!$last" class="result__line-seperator"></span> <!-- only prints if there are multiple tags -->
+                     <span ng-if="!$last" class="result__line-separator"></span> <!-- only prints if there are multiple tags -->
                  </span>
                 
             </div>

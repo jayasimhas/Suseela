@@ -1,16 +1,17 @@
 ﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Velir.Search.Models.ISort>
 
-<li ng-class="{ 'is-selected': sorter.sortBy === '@Model.Key',
+<li class="search-sort__control-type"
+    ng-class="{ 'is-selected': sorter.sortBy === '@Model.Key',
                                 'is-sorted-up': sorter.isSortedAsc('@Model.Key'),
                                 'is-sorted-down': sorter.isSortedDesc('@Model.Key') }">
     <a href=""
        title="@Model.Sort_Title"
        class="btn btn--sort btn--icon-group"
        ng-click="sorter.setByOrFlipOrder('@Model.Key', '@(Model.Sort_Ascending ? Velir.Search.Core.Reference.SiteSettings.QueryString.SortAscendingValue : Velir.Search.Core.Reference.SiteSettings.QueryString.SortDescendingValue)')">
-        @Editable(model => model.Sort_Title)
-        <div class="btn_icon-group">
-            <svg class="icon icon-arrow_drop_up"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/svgdefs.svg#icon-arrow_drop_up"></use></svg>
-            <svg class="icon icon-arrow_drop_down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/svgdefs.svg#icon-arrow_drop_down"></use></svg>
+        <span>@Editable(model => model.Sort_Title)</span>
+        <div class="search-sort__icon-group">
+            <svg class="icon icon-triangle icon-triangle--up"><use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
+            <svg class="icon icon-triangle icon-triangle--down"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
         </div>
     </a>
 </li>

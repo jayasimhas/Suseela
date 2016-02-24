@@ -8,43 +8,57 @@
     order: 3;
   }
 
-  h6 {
+  &__title {
+    display: inline-block;
     text-transform: uppercase;
-    display: inline;
     margin-right: 5px;
   }
 
-  ol {
-    display: inline-block;
-
-    li {
-      display: inline-block;
-    }
+  &__line-separator {
+    @extend .result__line-separator;
   }
 
-  a {
-    @include textMix('Roboto', 15px, 400);
+  &__control-list {
+    display: inline-block;
+  }
 
-    &.active span {
+  &__control-type {
+    display: inline-block;
+
+    a {
+      @include textMix('Roboto', 15px, 400);
+      display: inline-block;
+    }
+
+    &.is-selected span {
       text-decoration: underline;
     }
 
-    .icon-group {
-      display: inline-block;
-      vertical-align: bottom;
-      margin-left: 5px;
+    &.is-sorted-up {
+      .icon-triangle--up {
+        @include svg-fill($informa-red);
+      }
     }
 
-    .icon-triangle {
-      display: block;
-      width: 12px;
-      height: 11px;
-
-      @include svg-fill($informa-light-gray-d);
-
-      &.active {
-          @include svg-fill($informa-red);
+    &.is-sorted-down {
+      .icon-triangle--down {
+        @include svg-fill($informa-red);
       }
     }
   }
+
+  &__icon-group {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 5px;
+  }
+
+  .icon-triangle {
+    @include svg-fill($informa-light-gray-d);
+    display: block;
+    width: 12px;
+    height: 11px;
+  }
+
 }
+
