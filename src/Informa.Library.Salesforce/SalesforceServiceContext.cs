@@ -18,21 +18,26 @@ namespace Informa.Library.Salesforce
 			SessionContext = sessionContext;
 
 			Service.SessionHeaderValue = new SessionHeader();
-
-			RefreshSession();
 		}
 
 		public void RefreshSession()
 		{
 			if (string.Equals(Service.SessionHeaderValue.sessionId, SessionContext.Session.Id))
 			{
-				Service.SessionHeaderValue.sessionId = SessionContext.Refresh().Id;
+				SessionContext.Refresh();
 			}
+
+			Service.SessionHeaderValue.sessionId = SessionContext.Session.Id;
 		}
 
 		public TResult Execute<TResult>(Expression<Func<ISalesforceService, TResult>> functionExpression)
 			where TResult : IEbiResponse
 		{
+			if (!HasSession)
+			{
+				RefreshSession();
+			}
+
 			var function = functionExpression.Compile();
 			var result = function(Service);
 
@@ -48,5 +53,7 @@ namespace Informa.Library.Salesforce
 
 			return result;
 		}
+
+		public bool HasSession => !string.IsNullOrWhiteSpace(Service.SessionHeaderValue.sessionId);
 	}
 }
