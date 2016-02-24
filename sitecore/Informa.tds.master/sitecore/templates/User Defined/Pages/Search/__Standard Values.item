@@ -19,7 +19,7 @@ content-length: 2221
 ----version----
 language: en
 version: 1
-revision: 231a46a7-b1b9-4ca3-8b98-8de8027f8a08
+revision: 747cef9a-1e43-40ef-b012-c4e41dcf3585
 
 ----field----
 field: {040C0194-6C6E-43FD-AC5C-0AA3DAA35A87}
@@ -35,6 +35,47 @@ key: available sort options
 content-length: 38
 
 {521208F3-4B07-41C8-A07E-18EDF0E5CD7A}
+----field----
+field: {29106A20-F739-465E-BD36-EA83AF0935EA}
+name: Search Tips Title
+key: search tips title
+content-length: 19
+
+Keyword Search Tips
+----field----
+field: {F3C99235-B6AE-4181-AADA-199155242AC6}
+name: Search Tips Text
+key: search tips text
+content-length: 1639
+
+
+                <p>
+                    You can use spaces between words to indicate and.
+                    You can also use and, or, not, and * (for wildcard word endings).
+                </p>
+                <p>
+                    <ul>
+                        For example, type:
+                        <li>
+                            Pfizer AND Novartis for articles about both companies.
+                        </li>
+                        <li>
+                            Pfizer OR Novartis for articles about either company.
+                        </li>
+                        <li>
+                            Pfizer NOT Novartis for articles about Pfizer but not about Novartis.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    To search for an exact phrase, place it in quote marks. To search for a phrase or headline that includes or ends with a question mark, use an asterisk (*) instead of the question mark (?).
+                </p>
+                <p>
+                    To search for company names that include an asterisk, ampersand or other non-letter characters in their name, replace the character with a period. For example, type S.BIO instead of S*BIO, type J.J instead of J&J.
+                </p>
+                <p>
+                    To search using any parameters combined with or instead of Keyword or Article #, you must click the "GO" button on the right side of the page after entering your selections even if you already have other parameters selected from a previous search and only changed the search term.
+                </p>
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
@@ -90,14 +131,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-231a46a7-b1b9-4ca3-8b98-8de8027f8a08
+747cef9a-1e43-40ef-b012-c4e41dcf3585
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160224T160404Z
+20160224T191933Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

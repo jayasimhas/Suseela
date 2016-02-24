@@ -1,3 +1,8 @@
+@using Sitecore.Mvc.Presentation
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.ISearch>
+
+
+
 <div class="search-bar">
     <!-- TODO: form wrap? -->
 
@@ -43,34 +48,8 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                     </svg>
                 </a>
-                <h3>Keyword Search Tips</h3>
-                <p>
-                    You can use spaces between words to indicate and.
-                    You can also use and, or, not, and * (for wildcard word endings).
-                </p>
-                <p>
-                    <ul>
-                        For example, type:
-                        <li>
-                            Pfizer AND Novartis for articles about both companies.
-                        </li>
-                        <li>
-                            Pfizer OR Novartis for articles about either company.
-                        </li>
-                        <li>
-                            Pfizer NOT Novartis for articles about Pfizer but not about Novartis.
-                        </li>
-                    </ul>
-                </p>
-                <p>
-                    To search for an exact phrase, place it in quote marks. To search for a phrase or headline that includes or ends with a question mark, use an asterisk (*) instead of the question mark (?).
-                </p>
-                <p>
-                    To search for company names that include an asterisk, ampersand or other non-letter characters in their name, replace the character with a period. For example, type S.BIO instead of S*BIO, type J.J instead of J&J.
-                </p>
-                <p>
-                    To search using any parameters combined with or instead of Keyword or Article #, you must click the "GO" button on the right side of the page after entering your selections even if you already have other parameters selected from a previous search and only changed the search term.
-                </p>
+                <h3>@Html.Raw(Model.Search_Tips_Title)</h3>
+                @Html.Raw(Model.Search_Tips_Text)
             </div>
 
         </div>
