@@ -74,10 +74,20 @@ namespace Informa.Web.ViewModels
         public DateTime ListableDate => Date;
         public string ListableImage => Image?.ImageUrl;
         //TODO: Get real summary
-        public string ListableSummary
-            => string.IsNullOrWhiteSpace(GlassModel.Summary) ? Body.Substring(0, 200) : GlassModel.Summary;
+	    public string ListableSummary
+	    {
+		    get
+		    {
+			    if (string.IsNullOrWhiteSpace(GlassModel.Summary))
+			    {
+				    return Body.Length < 200 ? Body : Body.Substring(0, 200);
+			    }
+			    return GlassModel.Summary;
+		    }
+		    set { }
+	    }
 
-        public string ListableSummaryHeader => TextTranslator.Translate("Article.ExecSummHeader");
+	    public string ListableSummaryHeader => TextTranslator.Translate("Article.ExecSummHeader");
         public string ListableTitle => Title;
         public string ListableByline => Publication;
 
