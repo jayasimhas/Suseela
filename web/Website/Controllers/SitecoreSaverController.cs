@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Web.Http;
 using Glass.Mapper.Sc;
+using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
@@ -19,11 +20,13 @@ namespace Informa.Web.Controllers
 	{
 		private readonly ISitecoreService _sitecoreMasterService;
 		private readonly ArticleUtil _articleUtil;
+	    private readonly IArticleSearch _articleSearch;
 
-		public CreateArticleController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		public CreateArticleController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch search)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleUtil = articleUtil;
+		    _articleSearch = search;
 		}
 
 		[HttpPost]
@@ -42,18 +45,43 @@ namespace Informa.Web.Controllers
 				article.Title = content.Name;
 				article.Planned_Publish_Date = publicationDate;
 				article.Created_Date = DateTime.Now;
-				//article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID),content.PublicationID);
-				article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString().Replace("-", ""),
-					content.PublicationID);
+				article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID),content.PublicationID);
+				//article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString().Replace("-", ""), content.PublicationID);
 				_sitecoreMasterService.Save(article);
 				var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
 				var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
 				return articleStruct;
 			}
 		}
-	}
+	
 
-	[Route]
+    [HttpGet]
+    public long Get()
+    {
+        using (new SecurityDisabler())
+        {
+            //var publicationDate = DateTime.Parse(content.PublicationDate);
+            //var parent = _articleUtil.GenerateDailyFolder(content.PublicationID, publicationDate);
+            ////TODO - Give proper name.  Remove unneeded characters like & etc
+            //var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
+            //var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
+            ////var baseItem = new GlassBase {_Name = rinsedName, _TemplateId = new Guid(IArticleConstants.TemplateIdString)};
+            ////var articleCreate = _sitecoreMasterService.Create(parent, baseItem);
+            //var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
+            //article.Title = content.Name;
+            //article.Planned_Publish_Date = publicationDate;
+            //article.Created_Date = DateTime.Now;
+            //article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
+            ////article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString().Replace("-", ""), content.PublicationID);
+            //_sitecoreMasterService.Save(article);
+            //var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
+            //var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
+            return _articleSearch.GetNextArticleNumber(Guid.NewGuid());
+        }
+    }
+}
+
+[Route]
 	public class SaveArticleTextByGuidController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreMasterService;

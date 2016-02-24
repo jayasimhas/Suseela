@@ -62,9 +62,9 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="Development"  value="http://dev.ibi.velir.com/"/>
     <property name="Stage"  value="http://uat.ibi.velir.com"/>
     <property name="Production"  value="http://informa8.ashah.velir.com"/>
-	<property name="DevelopmentForgotPasswordLink" value="${Development}/sitecore/login/passwordrecovery.aspx" />
-	<property name="StageForgotPasswordLink" value="${Stage}/sitecore/login/passwordrecovery.aspx" />
-	<property name="ProductionForgotPasswordLink" value="${Production}/sitecore/login/passwordrecovery.aspx" />	
+	<property name="DevelopmentForgotPasswordLink" value="${Development}/sitecore/login?passwordrecovery=1" />
+	<property name="StageForgotPasswordLink" value="${Stage}/sitecore/login?passwordrecovery=1" />
+	<property name="ProductionForgotPasswordLink" value="${Production}/sitecore/login?passwordrecovery=1" />	
 	<property name="scserver" value="${Production}" />
 	<property name="sctree" value="${Production}" />	
 	<property name="publish.dir" value="${project.folder}Web\Website\wordinstaller\" />

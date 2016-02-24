@@ -232,6 +232,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Solr, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch.SolrProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.dll</HintPath>
@@ -1002,6 +1006,7 @@
     <Content Include="Views\Shared\Components\Promotional.cshtml" />
     <Content Include="Views\Search\SearchWrapper.cshtml" />
     <Content Include="Views\Article\_ArticleSidebar.cshtml" />
+    <Content Include="Views\Shared\Components\SectionTitle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

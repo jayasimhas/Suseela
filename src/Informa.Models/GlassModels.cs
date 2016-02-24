@@ -138,6 +138,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	[SitecoreType(TemplateId=IGeneral_Content_PageConstants.TemplateIdString)]
 	public partial interface IGeneral_Content_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
+								/// <summary>
+					/// The Section Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e3a3e51e-a8f0-4ee1-986f-2562f9d279de</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Section_Title  {get; set;}
 				}
 
 	
@@ -150,6 +159,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		[SitecoreType]
 		public partial interface IGeneral_Content_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
+										/// <summary>
+						/// The Section Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e3a3e51e-a8f0-4ee1-986f-2562f9d279de</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Section_Title  {get; set;}
 						}
 	
 	public static partial class IGeneral_Content_PageConstants{
@@ -158,6 +176,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "General Content Page";
 
+					
+			public static readonly ID Section_TitleFieldId = new ID("e3a3e51e-a8f0-4ee1-986f-2562f9d279de");
+			public const string Section_TitleFieldName = "Section Title";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";

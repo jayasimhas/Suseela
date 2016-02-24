@@ -36,6 +36,8 @@
 
     <div class="main__wrapper">
 
+        @Html.Sitecore().Placeholder("main-wrapper")
+
         @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
 
         @*
