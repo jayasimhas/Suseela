@@ -1,10 +1,29 @@
 ﻿@using Sitecore.Mvc.Presentation
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<RenderingModel>
 
+
+<!-- TODO: add a class to the item if it is the active sort -->
+
 <section class="search-sort" ng-controller="searchSortController as sorter">
     <div aria-labeledby="aria-label-sort" class="" role="">
         <h6 id="aria-label-sort">Sort by:</h6>
         <ol class="search-sort__control-list">
+            <li>
+                <a href=""
+                   title="Date"
+                   class="btn btn--sort active">
+                   <span>Date</span>
+                   <div class="icon-group">
+                        <svg class="icon icon-triangle icon-triangle--up active">
+                            <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                        </svg>
+                        <svg class="icon icon-triangle icon-triangle--down">
+                            <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+            <span class="result__line-seperator"></span> <!-- only prints if there are multiple sort options -->
             <li ng-class="{ 'is-selected': sorter.sortBy === 'relevance' }">
                 <a href=""
                    title="Relevance"
