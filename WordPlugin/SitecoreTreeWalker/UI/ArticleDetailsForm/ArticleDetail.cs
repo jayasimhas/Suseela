@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
@@ -18,7 +18,7 @@ using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 using SitecoreTreeWalker.WebserviceHelper;
 using Application = Microsoft.Office.Interop.Word.Application;
-using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
+using ArticleStruct = PluginModels.ArticleStruct;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 {
@@ -344,7 +344,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = articleDetailsPageSelector.GetArticleDetails(metadataParser);
                     ArticleDetails.ArticleGuid = copy;
-					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new WordPluginModel.StaffStruct[0], GetArticleNumber(), body);
+					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
 					//TODO - Add workflow commands and Notification List
 					//List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body);
 
@@ -541,7 +541,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             
             SuspendLayout();
 
-			WordPluginModel.ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
+			ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
 
             //articleDetailsPageSelector.UpdateArticleNumber(astruct.ArticleNumber);
             articleDetails.ArticleNumber = astruct.ArticleNumber;
@@ -724,7 +724,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             }
         }
 
-        private DialogResult WantsToSetArticleDateToNow(WordPluginModel.WorkflowCommand command)
+        private DialogResult WantsToSetArticleDateToNow(WorkflowCommand command)
         {
             if (command != null && command.SendsToFinal)
             {

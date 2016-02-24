@@ -174,9 +174,9 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			string floatValue = "None";
 			try
 			{
-				if (form.uxFloatBox.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				if (form.uxFloatBox.SelectedValue.GetType() == typeof(PluginModels.ItemStruct))
 				{
-					floatValue = ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)form.uxFloatBox.SelectedValue).Name;
+					floatValue = ((PluginModels.ItemStruct)form.uxFloatBox.SelectedValue).Name;
 				}
 				else
 				{

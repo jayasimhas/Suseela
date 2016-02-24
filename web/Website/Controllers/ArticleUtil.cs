@@ -18,6 +18,7 @@ using Sitecore.Web;
 using Informa.Library.Article.Search;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using PluginModels;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
@@ -176,9 +177,9 @@ namespace Informa.Web.Controllers
 			return wordDoc?.Version.Number ?? -1;
 		}
 
-		public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(ArticleItem article)
+		public ArticlePreviewInfo GetPreviewInfo(ArticleItem article)
 		{
-			return new WordPluginModel.ArticlePreviewInfo
+			return new ArticlePreviewInfo
 			{
 				Title = article.Title,
 				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,				
@@ -190,7 +191,7 @@ namespace Informa.Web.Controllers
 			};
 		}
 
-        public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
+        public ArticlePreviewInfo GetPreviewInfo(IArticle article)
         {
             return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
         }
@@ -283,7 +284,7 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="article"></param>
 		/// <returns></returns>
-		public WordPluginModel.CheckoutStatus GetLockedStatus(Item article)
+		public CheckoutStatus GetLockedStatus(Item article)
 		{
 			if (article == null)
 			{
@@ -291,7 +292,7 @@ namespace Informa.Web.Controllers
 				throw nex;
 			}
 
-			var checkoutStatus = new WordPluginModel.CheckoutStatus();
+			var checkoutStatus = new CheckoutStatus();
 
 			ItemLocking itemLocking = article.Locking;
 			checkoutStatus.Locked = itemLocking.IsLocked();
@@ -399,11 +400,11 @@ namespace Informa.Web.Controllers
 			return dayFolder;
 		}
 
-		public WordPluginModel.ArticleStruct
+		public ArticleStruct
 			GetArticleStruct(ArticleItem articleItem)
 		{
 			var article = _sitecoreMasterService.GetItem<ArticleItem>(articleItem._Id);
-			var articleStruct = new WordPluginModel.ArticleStruct
+			var articleStruct = new ArticleStruct
 			{
 				ArticleGuid = articleItem._Id,
 				Title = articleItem.Title,
@@ -425,7 +426,7 @@ namespace Informa.Web.Controllers
 			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;
 			articleStruct.Embargoed = articleItem.Embargoed;
 			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
-			articleStruct.Authors = authors.Select(r => new WordPluginModel.StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
+			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
@@ -442,7 +443,7 @@ namespace Informa.Web.Controllers
 			if (articleItem.Featured_Image_16_9 != null)
 			{ articleStruct.FeaturedImage = articleItem.Featured_Image_16_9.MediaId; }
 
-			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id , Section = r._Parent._Name}).ToList();
+			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new TaxonomyStruct() { Name = r._Name, ID = r._Id , Section = r._Parent._Name}).ToList();
 
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo((IArticle)a)).ToList();
 

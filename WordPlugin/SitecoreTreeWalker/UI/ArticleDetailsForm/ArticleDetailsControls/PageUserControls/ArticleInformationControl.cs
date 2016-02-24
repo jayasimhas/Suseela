@@ -10,8 +10,8 @@ using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces
 using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
-using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
-using StaffStruct = Informa.Web.Areas.Account.Models.WordPluginModel.StaffStruct;
+using ArticleStruct = PluginModels.ArticleStruct;
+using StaffStruct = PluginModels.StaffStruct;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
@@ -145,7 +145,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				//uxArticleNumberLabel.Text = ArticleNumber;
 
 
-				Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleGuid);
+				PluginModels.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleGuid);
 
 				if (SitecoreArticle.DoesArticleHaveText(articleGuid) && prompt)
 				{
@@ -223,7 +223,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				ArticleNumber = articleNumber;
 				//uxArticleNumberLabel.Text = articleNumber;
 
-				Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
+				PluginModels.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
 
 				if (!checkedOut.Locked)
 				{ //if unlocked, then lock it by current user
@@ -274,7 +274,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			if (!articleNum.IsNullOrEmpty())
 			{ //document is linked to an article
 				SetArticleNumber(articleNum);
-				Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut;
+				PluginModels.CheckoutStatus checkedOut;
 				if (_parent.ArticleDetails.ArticleGuid != Guid.Empty)
 				{
 					checkedOut = SitecoreArticle.GetLockedStatus(_parent.ArticleDetails.ArticleGuid);
@@ -351,7 +351,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		/// Enables/disables some controls since it's so similar to a PreLinkEnable state
 		/// </summary>
 		/// <param name="checkedOut"></param>
-		public void IndicateCheckedOutByOther(Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut)
+		public void IndicateCheckedOutByOther(PluginModels.CheckoutStatus checkedOut)
 		{
 			//uxLockStatus.BackColor = Color.FromArgb(255, 244, 204, 204);
 
@@ -368,7 +368,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
-		public void IndicateCheckedOutByMe(Informa.Web.Areas.Account.Models.WordPluginModel.CheckoutStatus checkedOut)
+		public void IndicateCheckedOutByMe(PluginModels.CheckoutStatus checkedOut)
 		{
 			DocumentProtection.Unprotect(_documentCustomProperties);
 			IsCheckedOutByMe = true;
@@ -389,8 +389,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void InitializePublications()
 		{
-			List<Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct> publications = SitecoreGetter.GetPublications();
-			publications.Insert(0, new Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct { ID = Guid.Empty, Name = "Select Publication" });
+			List<PluginModels.ItemStruct> publications = SitecoreGetter.GetPublications();
+			publications.Insert(0, new PluginModels.ItemStruct { ID = Guid.Empty, Name = "Select Publication" });
 			uxPublication.DataSource = publications;
 			uxPublication.DisplayMember = "Name";
 			uxPublication.ValueMember = "ID";
@@ -398,8 +398,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void InitializeMediaType()
 		{
-			List<Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct> mediaTypes = SitecoreGetter.GetMediaTypes();
-			mediaTypes.Insert(0, new Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct { ID = Guid.Empty, Name = "Select Media Type" });
+			List<PluginModels.ItemStruct> mediaTypes = SitecoreGetter.GetMediaTypes();
+			mediaTypes.Insert(0, new PluginModels.ItemStruct { ID = Guid.Empty, Name = "Select Media Type" });
 			uxMediaTypes.DataSource = mediaTypes;
 			uxMediaTypes.DisplayMember = "Name";
 			uxMediaTypes.ValueMember = "ID";
@@ -407,8 +407,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void InitializeContentType()
 		{
-			List<Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct> contentTypes = SitecoreGetter.GetContentTypes();
-			contentTypes.Insert(0, new Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct { ID = Guid.Empty, Name = "Select Content Type" });
+			List<PluginModels.ItemStruct> contentTypes = SitecoreGetter.GetContentTypes();
+			contentTypes.Insert(0, new PluginModels.ItemStruct { ID = Guid.Empty, Name = "Select Content Type" });
 			uxLabel.DataSource = contentTypes;
 			uxLabel.DisplayMember = "Name";
 			uxLabel.ValueMember = "ID";
@@ -427,9 +427,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			try
 			{
-				if (uxPublication.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				if (uxPublication.SelectedValue.GetType() == typeof(PluginModels.ItemStruct))
 				{
-					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxPublication.SelectedValue).ID;
+					return ((PluginModels.ItemStruct)uxPublication.SelectedValue).ID;
 				}
 				return (Guid)uxPublication.SelectedValue;
 			}
@@ -440,7 +440,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		}
 
 
-		public string GetDisplayName(Informa.Web.Areas.Account.Models.WordPluginModel.ArticleSize articleSize, int wordCount)
+		public string GetDisplayName(PluginModels.ArticleSize articleSize, int wordCount)
 		{
 			string displayName = articleSize.Name;
 			if (articleSize.MinimumWordCount < 0 && articleSize.MaximumWordCount > 0)
@@ -473,7 +473,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public string GetSelectedPublicationName()
 		{
-			return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxPublication.SelectedItem).Name;
+			return ((PluginModels.ItemStruct)uxPublication.SelectedItem).Name;
 		}
 
 		public List<StaffStruct> GetSelectedAuthors()
@@ -490,9 +490,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			try
 			{
-				if (uxLabel.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				if (uxLabel.SelectedValue.GetType() == typeof(PluginModels.ItemStruct))
 				{
-					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxLabel.SelectedValue).ID;
+					return ((PluginModels.ItemStruct)uxLabel.SelectedValue).ID;
 				}
 				return (Guid)uxLabel.SelectedValue;
 			}
@@ -506,9 +506,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			try
 			{
-				if (uxMediaTypes.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				if (uxMediaTypes.SelectedValue.GetType() == typeof(PluginModels.ItemStruct))
 				{
-					return ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)uxMediaTypes.SelectedValue).ID;
+					return ((PluginModels.ItemStruct)uxMediaTypes.SelectedValue).ID;
 				}
 				return (Guid)uxMediaTypes.SelectedValue;
 			}

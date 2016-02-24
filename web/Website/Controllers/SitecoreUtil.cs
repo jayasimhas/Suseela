@@ -6,6 +6,7 @@ using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
 using Informa.Web.Areas.Account.Models;   
 using Informa.Models.FactoryInterface;
+using PluginModels;
 using Sitecore.Security.Authentication;
 
 namespace Informa.Web.Controllers
@@ -37,9 +38,9 @@ namespace Informa.Web.Controllers
 			return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
 		}
 
-		public static WordPluginModel.UserStatusStruct GetUserStatus(string username, string password)
+		public static UserStatusStruct GetUserStatus(string username, string password)
 		{
-			var userStatus = new WordPluginModel.UserStatusStruct { UserName = username };
+			var userStatus = new UserStatusStruct { UserName = username };
 
 			MembershipUser user = Membership.GetUser(username);
 			if (user == null)

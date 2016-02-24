@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.Util;
 
 namespace SitecoreTreeWalker.Sitecore
@@ -18,7 +18,7 @@ namespace SitecoreTreeWalker.Sitecore
 			public DateTime UploadDate { get; set; }
         }
 
-		protected SitecoreMediaItem GetMediaSitecoreItem(WordPluginModel.MediaItemStruct mediaItem)
+		protected SitecoreMediaItem GetMediaSitecoreItem(MediaItemStruct mediaItem)
 		{
 			if (mediaItem == null || mediaItem.Extension.IsNullOrEmpty() || mediaItem.Name.IsNullOrEmpty())
 			{
@@ -56,7 +56,7 @@ namespace SitecoreTreeWalker.Sitecore
 
         public SitecoreMediaItem DownloadSiteCoreMediaItem(string path)
         {
-			WordPluginModel.MediaItemStruct mediaItem = null;
+			MediaItemStruct mediaItem = null;
             try
             {
                 mediaItem = SitecoreGetter.GetMediaLibraryItem(path);
@@ -75,7 +75,7 @@ namespace SitecoreTreeWalker.Sitecore
 
 		public SitecoreMediaItem GetDocumentInfo(string path)
 		{
-			WordPluginModel.MediaItemStruct mediaItem = null;
+			MediaItemStruct mediaItem = null;
 			try
 			{
 				mediaItem = SitecoreGetter.GetMediaStatistics(path);

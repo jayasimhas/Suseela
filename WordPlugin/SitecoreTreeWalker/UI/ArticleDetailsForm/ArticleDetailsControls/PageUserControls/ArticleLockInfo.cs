@@ -3,7 +3,7 @@ using SitecoreTreeWalker.User;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
@@ -94,7 +94,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             if (!string.IsNullOrEmpty(_articleNumber))
             { //document is linked to an article
                 SetArticleNumber(articleNum);
-                WordPluginModel.CheckoutStatus checkedOut;
+                CheckoutStatus checkedOut;
                 if (_parent.ArticleDetails.ArticleGuid != Guid.Empty)
                 {
                     checkedOut = SitecoreArticle.GetLockedStatus(_parent.ArticleDetails.ArticleGuid);
@@ -167,7 +167,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         /// Enables/disables some controls since it's so similar to a PreLinkEnable state
         /// </summary>
         /// <param name="checkedOut"></param>
-        public void IndicateCheckedOutByOther(WordPluginModel.CheckoutStatus checkedOut)
+        public void IndicateCheckedOutByOther(CheckoutStatus checkedOut)
         {
             uxLockUser.Text = _articleInformationControl.FormatUserName(checkedOut.User);
             _articleInformationControl.IsCheckedOutByMe = false;
@@ -179,7 +179,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             DocumentProtection.Protect(DocumentCustomProperties);
         }
 
-        public void IndicateCheckedOutByMe(WordPluginModel.CheckoutStatus checkedOut)
+        public void IndicateCheckedOutByMe(CheckoutStatus checkedOut)
         {
             DocumentProtection.Unprotect(DocumentCustomProperties);
             _articleInformationControl.IsCheckedOutByMe = true;
