@@ -1,53 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-	<configSections>
-		<sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
-			<section name="SitecoreTreeWalker.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
-		</sectionGroup>
-	</configSections>
-	<system.serviceModel>
-		<bindings />
-		<client />
-	</system.serviceModel>
-	<appSettings>
-		<add key="connectionString" value="server=localhost;user id=root; password=admin; database=fdc;port=3306"/>
-		<add key="ADServer" value="science.regn.net"/>
-		<add key="TitleStyle" value="1.0 Story Title"/>
-		<add key="DeckStyle" value="1.2 Deck"/>
-		<add key="LongSummaryStyle" value="7.0 Long Summary"/>
-		<add key="ShortSummaryStyle" value="7.1 Short Summary"/>
-		<add key="SubtitleStyle" value="1.1 Story Sub-Title"/>
-		<add key="hyperlinkStyle" value="Hyperlink"/>
-		<add key="CertificationFolder" value="\\localhost\certMonitoredFolder\"/>
-		<add key="ProductionFolder" value="\\elswshw-172195\monitoredFolder\"/>
-		<add key="VolumeYear" value="2010"/>
-		<add key="VoulmeVal" value="72"/>
-		<add key="LogFileDirectory" value="{path}\ElsevierWordPlugin\elsevier_word_addin_{date}.log" />
-		<add key="DomainName" value="${domain}"/>
-		<add key="TitleMaxCharacters" value="500"/>
-		<add key="TempFileName" value="{path}\ElsevierWordPlugin\temp.docx"/>
-		<add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
-	    <add key ="Development"  value="${Development}"/>
-	    <add key ="Stage"  value="${Stage}"/>
-	    <add key ="Production"  value="${Production}"/>
-	    <add key ="DevelopmentTree"  value="${DevelopmentTree}"/>
-	    <add key ="StageTree"  value="${StageTree}"/>
-	    <add key ="ProductionTree"  value="${ProductionTree}"/>
-		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
-	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
-    	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
-	</appSettings>
-	<applicationSettings>
-		<SitecoreTreeWalker.Properties.Settings>
-   <setting name="SitecoreTreeWalker_SitecoreServer_SCServer" serializeAs="String">
-    <value>${scserver}</value>
-   </setting>
-   <setting name="SitecoreTreeWalker_SitecoreTree_SCTree" serializeAs="String">
-    <value>${sctree}</value>
-   </setting>
-  </SitecoreTreeWalker.Properties.Settings>
-	</applicationSettings>
-	<runtime>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="SitecoreTreeWalker.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <system.serviceModel>
+    <bindings />
+    <client />
+  </system.serviceModel>
+  <appSettings>
+    <add key="connectionString" value="server=localhost;user id=root; password=admin; database=fdc;port=3306"/>
+    <add key="ADServer" value="science.regn.net"/>
+    <add key="TitleStyle" value="1.0 Story Title"/>
+    <add key="DeckStyle" value="1.2 Deck"/>
+    <add key="LongSummaryStyle" value="7.0 Long Summary"/>
+    <add key="ShortSummaryStyle" value="7.1 Short Summary"/>
+    <add key="SubtitleStyle" value="1.1 Story Sub-Title"/>
+    <add key="hyperlinkStyle" value="Hyperlink"/>
+    <add key="CertificationFolder" value="\\localhost\certMonitoredFolder\"/>
+    <add key="ProductionFolder" value="\\elswshw-172195\monitoredFolder\"/>
+    <add key="VolumeYear" value="2010"/>
+    <add key="VoulmeVal" value="72"/>
+    <add key="LogFileDirectory" value="{path}\ElsevierWordPlugin\elsevier_word_addin_{date}.log" />
+    <add key="DomainName" value="${domain}"/>
+    <add key="TitleMaxCharacters" value="500"/>
+    <add key="TempFileName" value="{path}\ElsevierWordPlugin\temp.docx"/>
+    <add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
+    <add key ="Development"  value="${Development}"/>
+    <add key ="Stage"  value="${Stage}"/>
+    <add key ="Production"  value="${Production}"/>
+    <add key ="DevelopmentTree"  value="${DevelopmentTree}"/>
+    <add key ="StageTree"  value="${StageTree}"/>
+    <add key ="ProductionTree"  value="${ProductionTree}"/>
+    <add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
+    <add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
+    <add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
+    <add key="RemoteTimezoneToConvertTo" value="Greenwich Standard Time"/>
+  </appSettings>
+  <applicationSettings>
+    <SitecoreTreeWalker.Properties.Settings>
+      <setting name="SitecoreTreeWalker_SitecoreServer_SCServer" serializeAs="String">
+        <value>${scserver}</value>
+      </setting>
+      <setting name="SitecoreTreeWalker_SitecoreTree_SCTree" serializeAs="String">
+        <value>${sctree}</value>
+      </setting>
+    </SitecoreTreeWalker.Properties.Settings>
+  </applicationSettings>
+  <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
         <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
