@@ -4,11 +4,11 @@ using Informa.Web.Areas.Account.Models.User.Authentication;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
-    public class AuthenticationApiController : ApiController
+    public class LoginWebUserApiController : ApiController
     {
 		protected readonly ILoginWebUser LoginWebUser;
 
-		public AuthenticationApiController(
+		public LoginWebUserApiController(
 			ILoginWebUser loginWebUser)
 		{
 			LoginWebUser = loginWebUser;
@@ -16,7 +16,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
 		[HttpPost]
 		[HttpGet]
-		public IHttpActionResult Authenticate([FromUri]AuthenticateRequest request)
+		public IHttpActionResult Login([FromUri]AuthenticateRequest request)
 		{
 			var username = request?.Username;
 			var password = request?.Password;
