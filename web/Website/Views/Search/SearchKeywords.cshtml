@@ -1,87 +1,102 @@
 <div class="search-bar">
-<!-- TODO: form wrap? -->
+    <!-- TODO: form wrap? -->
 
-  <h3 class="search-bar__label"><label for="js-search-field">Search</label></h3>
+    <h3 class="search-bar__label">
+        <label for="js-search-field">Search</label>
+    </h3>
 
-  <div class="search-bar__content" ng-controller="searchQueryController as query">
+    <div class="search-bar__content" ng-controller="searchQueryController as query">
 
-    <div class="search-bar__input-wrapper">
+        <div class="search-bar__input-wrapper">
 
-      <!-- TODO: button clears input field -->
-      <a class="js-clear-search-field search-bar__clear" ng-click="query.keywords = ''">
-        <svg class="search-bar__icon search-bar__icon--clear">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
-        </svg>
-      </a>
+            <a class="js-clear-search-field search-bar__clear" ng-click="query.keywords = ''">
+                <svg class="search-bar__icon search-bar__icon--clear">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </a>
 
-        <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
-               
-               ng-model="query.keywords"/>
+            <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
 
+                   ng-model="query.keywords"/>
+        </div>
+
+        <!--TODO: get correct svg icon and update classes (extend from header) -->
+        <a class="js-header-search-trigger search-bar__submit" ng-click="query.update()">
+            <svg class="search-bar__icon search-bar__icon--search">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#search"></use>
+            </svg>
+        </a>
+
+        <div class="search-bar__tips">
+
+            <a class="search-bar__tips-button js-toggle-search-tips">
+                <svg class="search-bar__icon search-bar__icon--info">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                </svg>
+                <span>Search Tips</span>
+            </a>
+
+            <!-- TODO: replace with sitecore field data (rich text?) -->
+            <div class="search-bar__tips-panel">
+                <a class="js-toggle-search-tips search-bar__close-tips">
+                    <svg class="search-bar__icon search-bar__icon--clear">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    </svg>
+                </a>
+                <h3>Keyword Search Tips</h3>
+                <p>
+                    You can use spaces between words to indicate and.
+                    You can also use and, or, not, and * (for wildcard word endings).
+                </p>
+                <p>
+                    <ul>
+                        For example, type:
+                        <li>
+                            Pfizer AND Novartis for articles about both companies.
+                        </li>
+                        <li>
+                            Pfizer OR Novartis for articles about either company.
+                        </li>
+                        <li>
+                            Pfizer NOT Novartis for articles about Pfizer but not about Novartis.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    To search for an exact phrase, place it in quote marks. To search for a phrase or headline that includes or ends with a question mark, use an asterisk (*) instead of the question mark (?).
+                </p>
+                <p>
+                    To search for company names that include an asterisk, ampersand or other non-letter characters in their name, replace the character with a period. For example, type S.BIO instead of S*BIO, type J.J instead of J&J.
+                </p>
+                <p>
+                    To search using any parameters combined with or instead of Keyword or Article #, you must click the "GO" button on the right side of the page after entering your selections even if you already have other parameters selected from a previous search and only changed the search term.
+                </p>
+            </div>
+
+        </div>
 
     </div>
 
-    <!--TODO: get correct svg icon and update classes (extend from header) -->
-    <a class="js-header-search-trigger search-bar__submit" ng-click="query.update()">
-      <svg class="search-bar__icon search-bar__icon--search">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#search"></use>
-      </svg>
-    </a>
-    <!--<button class="search__submit" type="submit">Submit</button>-->
+    <div class="search-bar__footer">
 
-    <a class="search-bar__tips">
-      <svg class="search-bar__icon search-bar__icon--info js-open-search-tips">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-      </svg>
-      <span>Search Tips</span>
-    </a>
+        <!-- <div ng-class="class">Current class is: {{class}}</div>
+        <button ng-click="toggleClass()">Toggle Class</button> -->
 
-    <!-- <div class="search-bar__tips--open">
-      <h3>Keyword Search Tips</h3>
-      <p>
-        You can use spaces between words to indicate and.
-        You can also use and, or, not, and * (for wildcard word endings).
-      </p>
-      <p>
-        <ul>For example, type:
-          <li>
-              Pfizer AND Novartis for articles about both companies.
-          </li>
-          <li>
-            Pfizer OR Novartis for articles about either company.
-          </li>
-          <li>
-            Pfizer NOT Novartis for articles about Pfizer but not about Novartis.
-          </li>
-        </ul>
-      </p>
-      <p>
-        To search for an exact phrase, place it in quote marks. To search for a phrase or headline that includes or ends with a question mark, use an asterisk (*) instead of the question mark (?).
-      </p>
-      <p>
-        To search for company names that include an asterisk, ampersand or other non-letter characters in their name, replace the character with a period. For example, type S.BIO instead of S*BIO, type J.J instead of J&J.
-      </p>
-      <p>
-        To search using any parameters combined with or instead of Keyword or Article #, you must click the "GO" button on the right side of the page after entering your selections even if you already have other parameters selected from a previous search and only changed the search term.
-      </p>
-    </div> -->
+        <!-- <div ng-app="classApp" ng-controller="classCtrl">
+            <button class="button" ng-class="{'active': isActive}" ng-click="activeButton()" type="button">Click Me to Toggle Class</button>
+        </div> -->
 
-  </div>
+        <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only" ng-controller="HeadlineToggleController as toggle">
+            <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
+            <label class="onoffswitch-label" for="headline-toggle" ng-click="headlinesOnly.updateValue()">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
 
-  <div class="search-bar__footer">
+        <div class="search-bar__headline-label">
+            View headlines only
+        </div>
 
-    <!-- TODO: fix toggle -->
-    <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only">
-        <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
-        <label class="onoffswitch-label" for="headline-toggle">
-            <span class="onoffswitch-inner"></span>
-            <span class="onoffswitch-switch"></span>
-        </label>
     </div>
-
-    <div class="search-bar__headline-label">
-      View headlines only
-    </div>
-
-  </div>
 </div>

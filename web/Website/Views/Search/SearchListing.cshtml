@@ -1,6 +1,6 @@
 ﻿@model dynamic
 
-<section class="search-results" ng-controller="searchResultsController as results">
+<section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="searchResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
     <div class="result" ng-repeat="doc in results.docs">
@@ -16,13 +16,19 @@
                  {{doc.contentType }}
             </div>
 
-            <!-- <div class="article-preview__bookmarker pop-out__trigger js-pop-out-trigger"
+            <span class="result__line-seperator" ng-if="doc.mediaType !== ''"></span> <!-- only prints if media type isn't blank -->
+
+            <div class="result__media-type">
+                <svg><use xlink:href="/dist/img/svg-sprite.svg#video"></use></svg> <!-- example media type icon, video -->
+            </div>
+
+            <div class="result__bookmark pop-out__trigger js-pop-out-trigger"
                  data-pop-out-type="sign-in"
                  data-pop-out-align="right">
                 <svg class="article-prologue__share-icon">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
-            </div> -->
+            </div>
 
             <div class="result__publication">{{ doc.publicationTitle }} </div>
 
@@ -34,7 +40,7 @@
 
             <p class="result__description">{{ doc.summary }}</p>
 
-            <!-- <div class="article-preview__tags bar-separated-link-list">
+             <div class="article-preview__tags bar-separated-link-list">
                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
                     <a href="{{tax.url}}">
                         {{tax.title}}
@@ -43,7 +49,7 @@
                 <span ng-if="!$last">
                     ,
                 </span>
-            </div> -->
+            </div>
 
         </div>
     </div>

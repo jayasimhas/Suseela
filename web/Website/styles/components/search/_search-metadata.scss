@@ -5,4 +5,8 @@
   display: inline-block;
   padding-bottom: 30px;
   color: $informa-black;
+
+  @include breakpoint('medium') {
+    order: 2;
+  }
 }

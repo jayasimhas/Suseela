@@ -2,6 +2,10 @@
   &__wrapper {
     padding: 10px 0 50px;
     border-top: 2px solid $informa-light-gray-d;
+
+    @include breakpoint('medium') {
+      order: 5;
+    }
   }
 
   &__pagination-list {
@@ -17,7 +21,7 @@
 
       &.is-active {
         position: relative;
-        
+
         a {
           color: $informa-dark-gray;
 
