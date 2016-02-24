@@ -1,5 +1,5 @@
 ﻿@model dynamic
- 
+
 <section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="searchResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
@@ -14,6 +14,12 @@
 
             <div class="result__content-type">
                  {{doc.contentType }}
+            </div>
+
+            <span class="result__line-seperator" ng-if="doc.mediaType !== ''"></span> <!-- only prints if media type isn't blank -->
+
+            <div class="result__media-type">
+                <svg><use xlink:href="/dist/img/svg-sprite.svg#video"></use></svg> <!-- example media type icon, video -->
             </div>
 
             <div class="result__bookmark pop-out__trigger js-pop-out-trigger"
@@ -43,7 +49,7 @@
                 <span ng-if="!$last">
                     ,
                 </span>
-            </div> 
+            </div>
 
         </div>
     </div>
