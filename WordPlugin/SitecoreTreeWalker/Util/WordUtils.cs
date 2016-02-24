@@ -431,8 +431,10 @@ namespace SitecoreTreeWalker.Util
             var contiguousBlockquoteElements = new List<Paragraph>();
             List<string> StylesToIgnore = ArticleDocumentMetadataParser.GetInstance().MetadataStyles;
             Paragraph lastParagraph = null;
-            var xData = new XElement("root");
-            Errors = new List<string>();
+			//var xData = new XElement("root");
+			var xData = new XElement("div");
+			xData.SetAttributeValue("class","root");
+			Errors = new List<string>();
             int imageTagCount = 0;
             XElement divElement = null;
 
