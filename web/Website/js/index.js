@@ -147,7 +147,7 @@ $(document).ready(function() {
 		bookmark.toggle(e.target);
 
 	});
-	
+
 
     svg4everybody();
 
@@ -196,6 +196,7 @@ $(document).ready(function() {
 	    	return;
 		}
 		$($(e.target).data('target-element')).removeClass('is-active');
+		poc.closePopOut();
 	});
 
 
