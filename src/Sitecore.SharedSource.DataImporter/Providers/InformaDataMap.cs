@@ -39,7 +39,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
-            int artNumber = GetNextArticleNumber();
+            long artNumber = GetNextArticleNumber();
 
             string[] files = Directory.GetFiles(this.Query);
             foreach (string f in files)

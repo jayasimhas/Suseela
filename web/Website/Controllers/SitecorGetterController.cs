@@ -341,7 +341,7 @@ namespace Informa.Web.Controllers
 			_search = search;
 		}
 		// GET api/<controller>
-		public JsonResult<int> Get(string publicationGuid)
+		public JsonResult<long> Get(string publicationGuid)
 		{
 			return Json(_search.GetNextArticleNumber(new Guid(publicationGuid)));
 		}

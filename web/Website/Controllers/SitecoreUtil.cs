@@ -19,25 +19,13 @@ namespace Informa.Web.Controllers
 		/// <param name="lastArticleNumber"></param>
 		/// <param name="publication"></param>		
 		/// <returns></returns>
-		public static string GetNextArticleNumber(int lastArticleNumber, Guid publication)
+		public static string GetNextArticleNumber(long lastArticleNumber, Guid publication)
 		{			
 			string number = GetPublicationPrefix(publication) + lastArticleNumber.ToString(Constants.ArticleNumberLength);
 			return number;
 		}
 
-		//TODO: remove this
-		/// <summary>
-		/// This method Generates the Article Number
-		/// </summary>
-		/// <param name="lastArticleNumber"></param>
-		/// <param name="publication"></param>		
-		/// <returns></returns>
-		public static string GetNextArticleNumber(string lastArticleNumber, Guid publication)
-		{
-			string number = GetPublicationPrefix(publication) + lastArticleNumber;
-			return number;
-		}
-
+		
 		/// <summary>
 		/// This method gets the Publication Prefix which is used in Article Number Generation.
 		/// </summary>
