@@ -141,12 +141,13 @@ $main-menu-smartphone-width: 62px;
 			}
 
 			@include breakpoint('small') {
-				margin-top: 0;
+				height: auto;
+				left: 70px;
 				margin-right: 12px;
+				margin-top: 0;
 				padding: 0;
 				position: absolute;
 				right: 0;
-				left: 70px;
 			}
 		}
 

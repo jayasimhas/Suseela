@@ -40,21 +40,14 @@
 
             <p class="result__description">{{ doc.summary }}</p>
 
-             <div class="result__tags">
-                 <!-- EXAMPLE USED FOR FRONT-END STYLING -->
-                 <span><a>Tag</a></span>
-                 <span class="result__line-seperator"></span> <!-- only prints if there are multiple tags -->
-                 <span><a>Test</a></span>
-                 <!-- /EXAMPLE -->
+             <div class="result__tags"  >
 
-                <!-- <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
-                    <a href="{{tax.url}}">
-                        {{tax.title}}
-                    </a>
-                </span>
-                <span ng-if="!$last">
-                    |
-                </span> -->
+                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a href="{{tax.url}}">
+                    {{tax.title}}
+                </a>
+                     <span ng-if="!$last" class="result__line-seperator"></span> <!-- only prints if there are multiple tags -->
+                 </span>
+                
             </div>
 
         </div>
