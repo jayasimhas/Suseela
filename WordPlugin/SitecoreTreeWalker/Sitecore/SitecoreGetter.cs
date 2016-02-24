@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using SitecoreTreeWalker.User;
-using System.Web.Script.Serialization;
 using Informa.Web.Areas.Account.Models;
 using Newtonsoft.Json;
-using SitecoreTreeWalker.Config;
-/// <summary>
+
 namespace SitecoreTreeWalker.Sitecore
 {
 	class SitecoreGetter
 	{
 		private static List<WordPluginModel.StaffStruct> _authors;
-		private static WordPluginModel.ArticleStruct _articleDetails = new WordPluginModel.ArticleStruct();
-		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
+		private static WordPluginModel.ArticleStruct _articleDetails = new WordPluginModel.ArticleStruct();		
 	
 
+		/// <summary>
+		/// This method returns all the Taxonomy Items found based on the search term which is passed.
+		/// </summary>
+		/// <param name="term"></param>
+		/// <returns></returns>
 		public static List<WordPluginModel.TaxonomyStruct> SearchTaxonomy(string term)
 		{
 			using (var client = new HttpClient())
@@ -36,6 +36,7 @@ namespace SitecoreTreeWalker.Sitecore
 				return directoryList;
 			}
 		}
+
 
 		public static WordPluginModel.MediaItemStruct GetMediaStatistics(string path)
 		{
@@ -58,8 +59,7 @@ namespace SitecoreTreeWalker.Sitecore
 		}
 
 		/// <summary>
-		/// [0] - display name
-		/// [1] - path
+		/// This method returns the Supporting Document Base node from Media Library.
 		/// </summary>
 		/// <returns></returns>
 		public static string[] GetSupportingDocumentsRootNode()
@@ -73,8 +73,7 @@ namespace SitecoreTreeWalker.Sitecore
 		}
 
 		/// <summary>
-		/// [0] - display name
-		/// [1] - path
+		/// The method returns the Media Library Base node items.
 		/// </summary>
 		/// <returns></returns>
 		public static string[] GetGraphicsRootNode()
@@ -116,6 +115,10 @@ namespace SitecoreTreeWalker.Sitecore
 			return _articleDetails = GetArticleDetails(articleGuid);
 		}
 
+		/// <summary>
+		/// This method gets the list of all the publications.
+		/// </summary>
+		/// <returns></returns>
 		public static List<WordPluginModel.ItemStruct> GetPublications()
 		{
 			using (var client = new HttpClient())
@@ -126,6 +129,10 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// This method gets all the media types.
+		/// </summary>
+		/// <returns></returns>
 		public static List<WordPluginModel.ItemStruct> GetMediaTypes()
 		{
 			using (var client = new HttpClient())
@@ -136,6 +143,10 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// This methd gets al the Content Types.
+		/// </summary>
+		/// <returns></returns>
 		public static List<WordPluginModel.ItemStruct> GetContentTypes()
 		{
 			using (var client = new HttpClient())
@@ -146,16 +157,10 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-		public static List<WordPluginModel.ArticleSize> GetArticleSizes(Guid publicationID)
-		{
-			using (var client = new HttpClient())
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleSizesForPublication?publicationID={publicationID}").Result;
-				var articleSizes = JsonConvert.DeserializeObject<List<WordPluginModel.ArticleSize>>(response.Content.ReadAsStringAsync().Result);
-				return articleSizes;
-			}
-		}
-
+		/// <summary>
+		/// Gets all the authors. TODO - This mayneed tweak when we have authors from multiple publications.
+		/// </summary>
+		/// <returns></returns>
 		private static List<WordPluginModel.StaffStruct> GetAuthors()
 		{
 			using (var client = new HttpClient())
@@ -166,6 +171,11 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// This is one of the key methods, where you get all the details about the article on passing the Article Number.
+		/// </summary>
+		/// <param name="articleNumber"></param>
+		/// <returns></returns>
 		private static WordPluginModel.ArticleStruct GetArticleDetails(string articleNumber)
 		{
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
@@ -175,12 +185,13 @@ namespace SitecoreTreeWalker.Sitecore
 				var articleStruct = JsonConvert.DeserializeObject<WordPluginModel.ArticleStruct>(response.Content.ReadAsStringAsync().Result);
 				return articleStruct;
 			}
-			/*
-			var sctree = new SCTree();
-			return sctree.GetArticleDetails(articleNumber, _sitecoreUser.Username, _sitecoreUser.Password);
-			*/
 		}
 
+		/// <summary>
+		/// This is one of the key methods, where you get all the details about the article on passing the Article Guid.
+		/// </summary>
+		/// <param name="articleGuid"></param>
+		/// <returns></returns>
 		private static WordPluginModel.ArticleStruct GetArticleDetails(Guid articleGuid)
 		{
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
@@ -190,10 +201,6 @@ namespace SitecoreTreeWalker.Sitecore
 				var articleStruct = JsonConvert.DeserializeObject<WordPluginModel.ArticleStruct>(response.Content.ReadAsStringAsync().Result);
 				return articleStruct;
 			}
-			/*
-			var sctree = new SCTree();
-			return sctree.GetArticleDetailsBG(articleGuid, _sitecoreUser.Username, _sitecoreUser.Password);
-			*/
 		}
 
 		public static string GetDynamicUrl(string path)
@@ -204,8 +211,11 @@ namespace SitecoreTreeWalker.Sitecore
 				return response.Content.ReadAsStringAsync().Result;
 			}
 		}
-
-		//TODO - Implement this
+		
+		/// <summary>
+		///  Get's the Max lenght of the Summary
+		/// </summary>
+		/// <returns></returns>
 		public static int GetMaxLengthShortSummary()
 		{			
 			using (var client = new HttpClient())
@@ -213,14 +223,13 @@ namespace SitecoreTreeWalker.Sitecore
 				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthShortSummary").Result;
 				var length = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return length;
-				/*
-				Int32.TryParse(response.Content.ReadAsStringAsync().Result, out length);
-				return length;
-				*/
 			}
 		}
-		
-		//TODO - Implement this
+
+		/// <summary>
+		///  Get's the Max lenght of the Summary
+		/// </summary>
+		/// <returns></returns>
 		public static int GetMaxLengthLongSummary()
 		{
 			using (var client = new HttpClient())
@@ -231,7 +240,10 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-
+		/// <summary>
+		/// The method checks if the API service is avialable or not.
+		/// </summary>
+		/// <returns></returns>
 		public static bool IsAvailable()
 		{
 			try
@@ -249,6 +261,10 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// This method returns a list of all the Staff.
+		/// </summary>
+		/// <returns></returns>
 		public static List<WordPluginModel.StaffStruct> GetStaffAndGroups()
 		{
 			using (var client = new HttpClient())
@@ -265,7 +281,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			//return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
 			return new WordPluginModel.DealInfo();
-	}
+		}
 
 		public static int[] GetWidthHeightOfMediaItem(string path)
 		{
@@ -277,6 +293,7 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 
 		}
+
 		//TODO - GetAllCompanies
 		public static List<WordPluginModel.CompanyWrapper> GetAllCompanies()
 		{
@@ -291,6 +308,10 @@ namespace SitecoreTreeWalker.Sitecore
 			return new List<WordPluginModel.CompanyWrapper>();
 		}
 
+		/// <summary>
+		/// The method gets all the Paragraph Styles from Sitecore
+		/// </summary>
+		/// <returns></returns>
 		public static List<WordPluginModel.WordStyleStruct> GetParagraphStyles()
 		{
 			using (var client = new HttpClient())
@@ -301,6 +322,10 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// The method gets all the Character Styles from Sitecore
+		/// </summary>
+		/// <returns></returns>
 		public static List<WordPluginModel.WordStyleStruct> GetCharacterStyles()
 		{
 			using (var client = new HttpClient())
@@ -311,6 +336,11 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// This method returns the Directory Structure of the Path that is passed to Sitecore.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
 		public static WordPluginModel.DirectoryStruct[] GetChildrenDirectories(string path)
 		{
 			using (var client = new HttpClient())
@@ -321,6 +351,11 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// This method returns the MediaItem Information based on the GUID or Path passed to the method.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
 		public static WordPluginModel.MediaItemStruct GetMediaLibraryItem(string path)
 		{
 			using (var client = new HttpClient())
@@ -331,6 +366,11 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 		
+		/// <summary>
+		/// The method returns the GUID of the item when passed in the path.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
 		public static Guid GetItemGuidByPath(string path)
 		{
 			using (var client = new HttpClient())
@@ -341,11 +381,21 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
+		/// <summary>
+		/// This Method get the Media Item in form of Bytes when you give in a GUID / Path of the item.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
 		public static byte[] GetMediaLibraryItemData(string path)
 		{
 			return GetMediaLibraryItem(path).Data;
 		}
 
+		/// <summary>
+		/// This Method returns the Preview URL of the MediaItem.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
 		public static string MediaPreviewUrl(string path)
 		{
 			using (var client = new HttpClient())
