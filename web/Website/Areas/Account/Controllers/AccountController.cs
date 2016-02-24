@@ -14,7 +14,6 @@ using Informa.Web.ViewModels.PopOuts;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using SFRestClient;
 using Sitecore.Analytics;
 
 namespace Informa.Web.Controllers
