@@ -1,17 +1,27 @@
-﻿using System.Linq;
-using Glass.Mapper.Sc;
-using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.ContentSearch.Linq;
+﻿using Glass.Mapper.Sc;
+using Jabberwocky.Glass.Autofac.Attributes;                                 
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.ContentCuration.Search.Extensions;
 using Informa.Library.Search.Extensions;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using Informa.Library.Search;
 using Informa.Library.Utilities.References;
+using Sitecore.Buckets.Extensions;
 using Sitecore.Configuration;
+using Sitecore.ContentSearch.Linq;
+using Sitecore.ContentSearch.Linq.Utilities;
 using Sitecore.Data;
-using Sitecore.Data.Items;
+using Sitecore.Data.Items;                             
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Abstractions;
+using Sitecore.ContentSearch.Diagnostics;
+using Sitecore.ContentSearch.Linq;
+using Sitecore.ContentSearch.Linq.Common;
+using Sitecore.ContentSearch.Linq.Methods;
+using Sitecore.ContentSearch.Linq.Nodes;
+using Sitecore.ContentSearch.Linq.Solr;
 
 namespace Informa.Library.Article.Search
 {
@@ -64,7 +74,7 @@ namespace Informa.Library.Article.Search
 
 				return new ArticleSearchResults
 				{
-					Articles = results.Hits.ToList().Select(h => SitecoreContext.GetItem<IArticle>(h.Document.ItemId.Guid))
+					Articles = results.Hits.Select(h => SitecoreContext.GetItem<IArticle>(h.Document.ItemId.Guid))
 				};
 			}
 		}
@@ -96,30 +106,38 @@ namespace Informa.Library.Article.Search
 				var results = query.GetResults();
 				return new ArticleSearchResults
 				{
-					Articles = results.Hits.ToList().Select(h => localSearchContext.GetItem<IArticle>(h.Document.ItemId.Guid))
+					Articles = results.Hits.Select(h => localSearchContext.GetItem<IArticle>(h.Document.ItemId.Guid))
 				};
 			}
 		}
-		public int GetNextArticleNumber(Guid publicationGuid)
+		public long GetNextArticleNumber(Guid publicationGuid)
 		{
-			using (var context = SearchContextFactory.Create())
-			{
-				var parent = SitecoreContext.GetItem<Item>(publicationGuid);
-				//var result = context.GetQueryable<ArticleSearchResultItem>().
-				//	Filter(i => i.TemplateId == IArticleConstants.TemplateId && i.Path.Contains(parent.Paths.FullPath)).OrderByDescending(i => i.ArticleNumber).FirstOrDefault();
+		    using (var context = SearchContextFactory.Create("master"))
+		    {
+		        var filter = CreateFilter();
 
-				string parPath = parent.Paths.FullPath.ToLower();
-				//var result = context.GetQueryable<ArticleSearchResultItem>().Filter(i => i.TemplateId == IArticleConstants.TemplateId);
-				var result = context.GetQueryable<ArticleSearchResultItem>()
-					.Where(i => i.TemplateId == IArticleConstants.TemplateId && i.Path.StartsWith(parPath)).ToList();
-				var filteredList = result.Where( i=>  i.ArticleNumber != null).OrderBy(i => i.ArticleNumber).FirstOrDefault();
+		        var query = context.GetQueryable<ArticleSearchResultItem>()
+		            .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+		            .FilterTaxonomies(filter)
+		            //.Max(x => x.ArticleIntegerNumber);
+		            .OrderByDescending(i => i.ArticleIntegerNumber)
+                    .Take(1);
 
-				if (result == null) return 0;
-				//string num = result.Replace(GetPublicationPrefix(publicationGuid), "");
-				int n;
-				//return (int.TryParse(num, out n)) ? n + 1 : 0;
-				return 0;
-			}
+		        var results = query.GetResults();
+
+
+		        return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber + 1;
+		    
+
+		        //var results = articleSearchResultItem.GetResults();
+
+
+		        //var articleResults2 = context.GetQueryable<ArticleSearchResultItem>()     Max(x => x.ArticleIntegerNumber);
+
+
+		        //return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber;
+		    }
+		    return 0;
 		}
 
 		/// <summary>

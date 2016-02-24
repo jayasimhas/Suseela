@@ -1,9 +1,9 @@
 .sidebox,
 .article-quick-facts {
+    background-color: $color-antique-white;
     float: right;
-    padding: 2rem 1.75rem 0;
     margin: 2rem 0 2rem 2rem;
-    background-color: #ffeedd;
+    padding: 2rem 1.75rem 0;
     width: 50%;
 
     p,
@@ -22,20 +22,20 @@ p.quickfactstitle,
 
 ul.quickfactsbulleted li,
 .article-quick-facts ul li {
-    color: $informa-black;
+    color: $color-zeus-black;
 
     &:before { } // See shame.scss
 }
 ol.quickfactsnumbered li,
 .article-quick-facts ol li {
+    color: $color-zeus-black;
     list-style-position: inside;
     list-style-type: decimal;
-    color: $informa-black;
 }
 p.quickfactssource,
 .article-quick-facts__source {
     @include textMix('Roboto', 0.9375rem, 400);
-    font-style: italic;
-    float: right;
     color: $informa-dark-gray;
+    float: right;
+    font-style: italic;
 }

@@ -7,6 +7,6 @@ namespace Informa.Library.Article.Search
 		IArticleSearchResults Search(IArticleSearchFilter filter);
 		IArticleSearchResults SearchCustomDatabase (IArticleSearchFilter filter, string database);
 		IArticleSearchFilter CreateFilter();
-		int GetNextArticleNumber(Guid publicationGuid);
+		long GetNextArticleNumber(Guid publicationGuid);
 	}
 }

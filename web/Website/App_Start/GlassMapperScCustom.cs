@@ -61,7 +61,7 @@ namespace Informa.Web.App_Start
 			// Add maps here
             mapsConfigFactory.Add(() => new TaxonomyMap());
             //mapsConfigFactory.Add(() => new ListableConfig());
-			mapsConfigFactory.Add(() => new ArticleMap());
+			//mapsConfigFactory.Add(() => new ArticleMap());
             //mapsConfigFactory.Add(() => new ScripConfig());
         }
     }
