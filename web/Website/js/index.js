@@ -171,12 +171,12 @@ $(document).ready(function() {
 	});
 
 	// Topic links
-	var topicContainers = $('.topic-subtopic');
+	var topicAnchors = $('.js-topic-anchor');
 
 	$('.sub-topic-links').forEach(function(e) {
 		var linkList = $(e).find('.bar-separated-link-list');
 
-		topicContainers.forEach(function(tc) {
+		topicAnchors.forEach(function(tc) {
 			var id = tc.id;
 			var text = $(tc).data('topic-link-text');
 

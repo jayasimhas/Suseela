@@ -22,4 +22,10 @@
             border: 0;
         }
     }
+
+    // Offset topic header anchors to create headroom for sticky mobile menu bar
+    &__invisible-topic-header-anchor {
+        position: absolute;
+        margin-top: -2.5rem;
+    }
 }
