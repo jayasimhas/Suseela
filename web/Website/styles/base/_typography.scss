@@ -1,12 +1,24 @@
-/**
- * Basic typography style for copy text
- */
+/*---
+title: Headers
+section: Typography
+---
+
+```example:html
+<h1>H1 Header</h1>
+<h2>H2 Header</h2>
+<h3>H3 Header</h3>
+<h4>H4 Header</h4>
+<h5>H5 Header</h5>
+<h6>H6 Header</h6>
+```
+*/
 body {
   color: $informa-dark-gray;
   @include textMix('PT Serif', 16px, 400);
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: $color-zeus-black;
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;

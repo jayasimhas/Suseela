@@ -2,7 +2,7 @@
 <title>Informa Style Guide</title>
 <meta charset="utf-8">
 <link href="style.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic" rel="stylesheet">
-<script>examples={"base":"","target":"_self","css":["https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic","../dist/index-generated.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+<script>examples={"base":"","target":"_self","css":["https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic","index-generated.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
 
 <header>
 	<nav>
@@ -16,12 +16,50 @@
 				</li>
 				
 				<li>
+					<a href="#typography"><span>Typography</span></a>
+					
+	<ul>
+		
+				<li>
+					<a href="#headers"><span>Headers</span></a>
+					
+				</li>
+				
+	</ul>
+	
+				</li>
+				
+				<li>
 					<a href="#ui-elements"><span>UI Elements</span></a>
 					
 	<ul>
 		
 				<li>
+					<a href="#banners"><span>Banners</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#bar-separated-link-list"><span>Bar-separated Link List</span></a>
+					
+				</li>
+				
+				<li>
 					<a href="#buttons"><span>Buttons</span></a>
+					
+				</li>
+				
+	</ul>
+	
+				</li>
+				
+				<li>
+					<a href="#topic-page-components"><span>Topic Page Components</span></a>
+					
+	<ul>
+		
+				<li>
+					<a href="#topic-jump-links"><span>Topic Jump Links</span></a>
 					
 				</li>
 				
@@ -36,6 +74,21 @@
 		
 				<li>
 					<a href="#article-author"><span>Article Author</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#article-interview"><span>Article Interview</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#article-pullquote"><span>Article Pullquote</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#article-sidebar"><span>Article Sidebar</span></a>
 					
 				</li>
 				
@@ -75,11 +128,73 @@
 			</div>
 		</section>
 		
+		<section id="typography">
+			<h2>Typography</h2>
+			<div>
+				
+				
+		<section id="headers">
+			<h3>Headers</h3>
+			<div>
+				<pre><code class="lang-example:html">&lt;h1&gt;H1 Header&lt;/h1&gt;
+&lt;h2&gt;H2 Header&lt;/h2&gt;
+&lt;h3&gt;H3 Header&lt;/h3&gt;
+&lt;h4&gt;H4 Header&lt;/h4&gt;
+&lt;h5&gt;H5 Header&lt;/h5&gt;
+&lt;h6&gt;H6 Header&lt;/h6&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
 		<section id="ui-elements">
 			<h2>UI Elements</h2>
 			<div>
 				
 				
+		<section id="banners">
+			<h3>Banners</h3>
+			<div>
+				<p>Multiple banner styles.</p>
+<pre><code class="lang-example:html">&lt;div class=&quot;banner banner--maintenance is-visible&quot;&gt;
+    &lt;div class=&quot;banner__wrapper&quot;&gt;
+        &lt;div class=&quot;dismiss-button js-dismiss-banner&quot;&gt;
+            &lt;span&gt;Dismiss&lt;/span&gt;
+            &lt;svg class=&quot;dismiss-button__icon&quot;&gt;
+                &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#x&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;svg class=&quot;banner__lead-icon&quot;&gt;
+            &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#tool-maintenance&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="bar-separated-link-list">
+			<h3>Bar-separated Link List</h3>
+			<div>
+				<p>Styling for a horizontal list of links, separated by a thin bar.</p>
+<pre><code class="lang-example:html">&lt;div class=&quot;bar-separated-link-list&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Person&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Place&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Thing&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
 		<section id="buttons">
 			<h3>Buttons</h3>
 			<div>
@@ -87,6 +202,33 @@
 <pre><code class="lang-example:html">&lt;button class=&quot;button--filled&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button--outline&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button--gilded&quot;&gt;Button&lt;/button&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
+		<section id="topic-page-components">
+			<h2>Topic Page Components</h2>
+			<div>
+				
+				
+		<section id="topic-jump-links">
+			<h3>Topic Jump Links</h3>
+			<div>
+				<p>Contains a list of links to anchors within the page, allowing visitors to jump directly to a subtopic within the page.</p>
+<pre><code class="lang-example:html">&lt;div class=&quot;sub-topic-links&quot;&gt;
+    &lt;span&gt;Jump To Section&lt;/span&gt;
+    &lt;div class=&quot;bar-separated-link-list&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;Companies&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;Deals&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;Strategy&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;Markets&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 
 				
@@ -150,10 +292,70 @@
 			</div>
 		</section>
 		
+		<section id="article-interview">
+			<h3>Article Interview</h3>
+			<div>
+				<p>An interview (questions and answers) added via the Word plugin.</p>
+<pre><code class="lang-example:html">&lt;div class=&quot;article-interview&quot;&gt;
+    &lt;h2&gt;Interviews and Q&amp;amp;A&lt;/h2&gt;
+
+    &lt;div class=&quot;article-interview__question&quot;&gt;
+        The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+    &lt;/div&gt;
+    &lt;div class=&quot;article-interview__answer&quot;&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    &lt;/div&gt;
+    &lt;div class=&quot;article-interview__question&quot;&gt;
+        The quick brown fox jumped over the lazy dog.
+    &lt;/div&gt;
+    &lt;div class=&quot;article-interview__answer&quot;&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+				
 			</div>
 		</section>
 		
-	<footer>Last modified Tuesday, 23 February 2016 16:31
+		<section id="article-pullquote">
+			<h3>Article Pullquote</h3>
+			<div>
+				<p>Styles for a pull quote or blockquote.</p>
+<pre><code class="lang-example:html">&lt;blockquote class=&quot;article-pullquote&quot;&gt;
+    &lt;p&gt;Sometimes you just gotta come up with something to say.&lt;/p&gt;
+&lt;/blockquote&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="article-sidebar">
+			<h3>Article Sidebar</h3>
+			<div>
+				<p>Styles for a floated sidebar within an article body.</p>
+<pre><code class="lang-example:html">&lt;aside class=&quot;article-sidebar&quot;&gt;
+
+    &lt;h3&gt;Sidebar? Sidebar.&lt;/h3&gt;
+    &lt;span class=&quot;article-sidebar__byline&quot;&gt;by The Author&lt;/span&gt;
+    &lt;time class=&quot;article-sidebar__date&quot;&gt;26 Feb 2014&lt;/time&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+    &lt;a class=&quot;article-sidebar__read-more&quot; href=&quot;#&quot;&gt;Read the full article here&lt;/a&gt;
+
+&lt;/aside&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
+	<footer>Last modified Wednesday, 24 February 2016 16:11
 </main>
 <script src="prism.js"></script>
 <script src="examples.js"></script>

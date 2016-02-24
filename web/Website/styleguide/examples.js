@@ -113,6 +113,8 @@ examples.lang = {
 		idoc.documentElement.setAttribute('style', examples.htmlcss);
 		idoc.body.setAttribute('style', examples.bodycss);
 
+		idoc.body.innerHTML = '<div class="iframe-wrapper">' + idoc.body.innerHTML + '</div>';
+
 		if (conf.width) style.width = String(conf.width);
 
 		// set iframe height based on content
@@ -121,43 +123,18 @@ examples.lang = {
 		var resizeTimeout = 0;
 
 		var resize = function() {
-			iwin.removeEventListener('resize');
-			var currentScrollHeight = documentElement.scrollHeight;
-			console.log('resizing');
-			//if (scrollHeight !== currentScrollHeight) {
+			var currentScrollHeight = documentElement.getElementsByClassName('iframe-wrapper')[0].offsetHeight;
+			if (scrollHeight !== currentScrollHeight) {
 				scrollHeight = currentScrollHeight;
-
 				style.height = 0;
-
 				style.height = parseInt(documentElement.scrollHeight) + (iframe.offsetHeight - iwin.innerHeight) + 'px';
-			//}
-			iwin.addEventListener('resize', resize);
+			}
 		};
 
-		var debounce = function (func, threshold, execAsap) {
-		    var timeout;
-
-		    return function debounced () {
-		        var obj = this, args = arguments;
-		        function delayed () {
-		            if (!execAsap)
-		                func.apply(obj, args);
-		            timeout = null;
-		        }
-
-		        if (timeout)
-		            clearTimeout(timeout);
-		        else if (execAsap)
-		            func.apply(obj, args);
-
-		        timeout = setTimeout(delayed, threshold || 100);
-		    };
-		 };
-
-		iwin.addEventListener('resize', resize);
+		iwin.addEventListener('load', resize);
 
 		resize();
 
-		//setInterval(resize, 334);
+		setInterval(resize, 334);
 	}
 };

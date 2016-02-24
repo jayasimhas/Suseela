@@ -271,11 +271,7 @@ pre code {
 .color {
 	margin-bottom: 20px;
 	vertical-align: top;
-	width: 160px;
-}
-
-.color:not(:last-child) {
-	margin-right: 40px;
+	padding: 0 1rem;
 }
 
 .color-swatch {
@@ -439,8 +435,7 @@ The navigation remains fixed while you scroll.
 
 @media screen and (min-width: 640px) {
 	main {
-		max-width: 50em;
-		width: calc(100% - 250px);
+		width: calc(100% - 150px);
 	}
 }
 

@@ -63,8 +63,9 @@ gulp.task("css", function() {
                 title: "Informa Style Guide",
                 logo: "https://pbs.twimg.com/profile_images/537287811724881921/JrtNWIt5.png",
                 css: ['style.css', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic'],
+                assets: ['dist/img/svg-sprite.svg', 'dist/index-generated.css'],
                 examples: {
-                    css: ["https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic", "../dist/index-generated.css"]
+                    css: ["https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic", "index-generated.css"]
                 }
             })
         ]));
