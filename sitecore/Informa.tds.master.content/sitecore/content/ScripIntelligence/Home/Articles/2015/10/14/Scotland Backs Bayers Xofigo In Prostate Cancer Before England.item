@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {05714D2C-ADBC-4A0B-9D51-78A72CB90381}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/14/Scotland Backs Bayers Xofigo In Prostate Cancer Before England
+parent: {604E8046-5BA9-4567-9E2A-9612EB50B405}
+name: Scotland Backs Bayers Xofigo In Prostate Cancer Before England
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2748786b-fffc-493c-8c4c-195e647e8260
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Scotland Backs Bayer's Xofigo In Prostate Cancer Before England
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+Scotland Backs Bayers Xofigo In Prostate Cancer Before England
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5526
+
+<p>The Scottish Medicines Consortium (SMC) has published advice accepting six new medicines for use in NHS Scotland, three of which have yet to receive final vetting from NICE &ndash; the HTA body for England and Wales.</p><p>Of the six accepted by the SMC in its latest review of newly licensed medicines, four &ndash; Bayer AG's Xofigo (radium Ra 223 dichloride) and Johnson & Johnson's Zytiga (abiraterone) for prostate cancer, Roche AG's Herceptin (trastuzumab) for stomach cancer and Boehringer Ingelheim GMBH's Ofev (nintedanib) for idiopathic pulmonary fibrosis &ndash; were accepted after assessment under the Scottish HTA's Patient and Clinician Engagement process, or PACE, which brings patient representatives and healthcare experts together for a more flexible approach in assessing medicines for either end of life treatment or very rare conditions. The latest SMC review outcome was announced Oct. 12.</p><p>The SMC also accepted Ikervis (ciclosporin eye drops) from Santen Pharmaceutical Co., Ltd for treating severe keratitis, and Novo Nordisk A/S's Xultophy (insulin degludec / liraglutide) combination therapy for diabetes. </p><p>But the Scottish HTA was unable to recommend Novartis AG's Afinitor (everolimus) for breast cancer, which was also considered under the PACE process. </p><p>While passed by the SMC, Xofigo &ndash; used to treat men with prostate cancer which has spread to the bones &ndash; is still being considered by the National institute for Health and Care Excellence for treating metastatic hormone relapsed prostate cancer with bone metastases; the English HTA expects to publish a verdict in January 2016. The Scottish HTA said patient groups and clinicians who took part in the PACE meeting emphasised the big improvement in overall survival radium 223 can offer patients, noting that it can cut the risk of spinal cord compression and fractures. </p><p>A second prostate cancer medicine, Zytiga, was also accepted by the SMC following consideration by an Independent Review Panel. That submission related to its use at an early stage in the treatment pathway for prostate cancer. The SMC previously accepted Zytiga for restricted use in patients who have already had chemotherapy. The green light in Scotland comes long after NICE's June 2012 recommendation of Zytiga for some adults with metastatic prostate cancer who have already had treatment to reduce testosterone and have had docetaxel chemotherapy. </p><p>But NICE is still assessing Ofev for idiopathic pulmonary fibrosis, having published an initial Appraisal Consultation Document (ACD) in September this year recommending the drug for the indication. It expects to give a final opinion in January 2016.</p><p>The English HTA is way ahead of its Scottish counterpart in backing Herceptin for treating stomach cancer. In November 2010, NICE recommended trastuzumab as a possible treatment for some people with a type of HER2-positive metastatic gastric cancer called adenocarcinoma. The SMC noted that, in its PACE meeting discussing on the drug, participants highlighted that there are no other treatment options for patients available at present and that Herceptin can improve overall survival and progression-free survival and is well tolerated. </p><p>NICE is currently developing guidance on ciclosporin eye drops for severe keratitis. In June 2015, it published an ACD asking for more information from the manufacturer Santen. </p><p>Like the SMC, NICE has decided not to back Afinitor in combination with exemestane for treating postmenopausal women with advanced human epidermal growth factor receptor 2 (HER2) negative hormone-receptor-positive breast cancer that has recurred or progressed following treatment with a non-steroidal aromatase inhibitor. That decision by NICE, announced in August 2013, was taken on cost-effectiveness grounds.</p><p>The SMC in its Oct. 12 statement said it was unable to recommend Afinitor because of uncertainties surrounding the overall clinical benefit the medicine would provide for patients at the end of their lives. During the PACE meeting patients highlighted that Afinitor has the ability to delay chemotherapy. However, the uncertainties around clinical benefits meant that the SMC was concerned everolimus may not be an effective use of publicly funded NHS resources.</p><p>Novartis in an emailed statement said it was "disappointed" and "surprised" at the SMC's decision not to recommend Afinitor. </p><p>But the Swiss group voiced "hopes that through resubmission and continued constructive communication, a positive outcome can be reached as soon as possible to ensure Afinitor is available to Scottish patients."</p><p>It said there was a huge unmet need for this group of patients in Scotland, and that Afinitor "is the first new-targeted therapy licensed in 15 years in this particular patient group. This is the fourth advanced breast cancer treatment not recommended in Scotland over the past 12 months, leaving patients with few treatment options compared to other parts of the UK," it said.</p><p>The Switzerland-based company quoted David Cameron, an oncology professor at Edinburgh University, as saying that "sadly, many women with advanced breast cancer find that their disease eventually becomes resistant to endocrine therapy, often leading to treatment with chemotherapy. I am pleased that discussions are ongoing with the potential that Scottish patients will be granted access to everolimus [Afinotor], which can help overcome this resistance."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 223
+
+<p>The Scottish Medicines Consortium (SMC) has published advice accepting six new medicines for use in NHS Scotland, three of which have yet to receive final vetting from NICE &ndash; the HTA body for England and Wales.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+Scotland Backs Bayers Xofigo In Prostate Cancer Before England
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151014T200001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151014T200001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151014T200001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030054
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Scotland Backs Bayer's Xofigo In Prostate Cancer Before England
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360962
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042506Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2748786b-fffc-493c-8c4c-195e647e8260
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042507Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

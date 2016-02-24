@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {8241F008-17DB-440B-A322-41E1D9778581}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/21/BristolMyers Boosted By Opdivo Sales Growth Prospects
+parent: {99A8E8E0-2038-4AC6-A370-61351CFAC90A}
+name: BristolMyers Boosted By Opdivo Sales Growth Prospects
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6a7d9544-2210-4090-82b7-08734dc0b971
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Bristol-Myers Boosted By Opdivo Sales, Growth Prospects
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+BristolMyers Boosted By Opdivo Sales Growth Prospects
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9735
+
+<p>Bristol-Myers Squibb Co.'s <i>Opdivo</i> (nivolumab) exceeded expectations in the third quarter and the company's commentary on future indications and combinations for the immunotherapy gave investors hope that sales would continue to blast ahead of Merck & Co.'s competing PD-1 inhibitor <i>Keytruda</i> (pembrolizumab).</p><p>New York-based Bristol-Myers raised its guidance for full-year 2015 revenue by $500m to a range of $16bn to $16.4bn based on higher-than-expected revenue for Opdivo as well as the oral anticoagulant <i>Eliquis</i> (apixaban) and the company's hepatitis C franchise. Opdivo launched during the second half of 2014 and generated just $1m in third quarter sales last year, but delivered $305m during the same period in 2015, bringing in $67m more than analysts expected and $146m more than Keytruda.</p><p>BMS gained 3.5% to close at $66.80 per share on Oct. 27 as the company reported a 4% year-over-year increase in non-GAAP revenue to $4.1bn in the third quarter &ndash; $200m more than analyst consensus &ndash; even as non-GAAP earnings per share (EPS) for the July-to-September period fell 13% to $0.39. EPS for the year is expected to reach $1.85 to $1.90 versus a prior estimate of $1.70 to $1.80 given the increased revenue guidance.</p><p>"Our performance across the company, from commercial through R&D, is strong and we are making the investments necessary to deliver on the promise of our exciting portfolio," Bristol-Myers CEO Giovanni Caforio said during the company's third quarter earnings conference call after noting that BMS will continue to acquire or license assets that could "strengthen our leadership position in immuno-oncology and also to enhance our non-oncology businesses."</p><p><b>Opdivo Mono, Combo Indications Drive Revenue</b></p><p>Opdivo sales were driven by monotherapy treatment of melanoma and lung cancer patients under the monoclonal antibody's approved indications, which expanded in October with US FDA approval for previously treated <a href="http://www.scripintelligence.com/home/Obviously-FDA-Loves-Opdivo-Another-Quick-Nod-360905" target="_new">non-squamous non-small cell lung cancer</a> (NSCLC), adding to the prior approval in pre-treated squamous NSCLC. </p><p>BMS chief financial officer Charles Bancroft said during the company's conference call that about 75% of new squamous NSCLC patients are being treated with Opdivo and the PD-1 inhibitor was being prescribed to non-squamous patients before the recent FDA approval based on National Comprehensive Cancer Network (NCCN) guidelines issued in June that recommended the immunotherapy as a second-line lung cancer treatment in various NSCLC populations. </p><p>The NCCN endorsement helped <a href="http://www.scripintelligence.com/home/Opdivo-Overtakes-Keytruda-Fueled-By-Lung-Cancer-Use-359777" target="_new">boost Opdivo sales higher than Keytruda sales</a> in the second quarter ($122m and $110m, respectively) and the gap widened in the third quarter when Merck reported $159m in Keytruda sales versus Opdivo's $305m.</p><p>Bristol-Myers plans to seek US and EU approvals of Opdivo in renal cell carcinoma (RCC) by the end of 2015 based on positive <a href="http://www.scripintelligence.com/home/BMSs-Opdivo-blows-Exelixiss-Cometriq-kidney-cancer-data-out-of-the-water-359526" target="_new">Phase III data revealed in July</a> with <a href="http://www.scripintelligence.com/home/What-To-Expect-From-The-ESMO-ECC-Cancer-Meeting-360623" target="_new">additional details presented in September</a>. Other monotherapy and combination regimens are under investigation in dozens of clinical trials, but BMS also won its first approval for Opdivo plus the company's <i>Yervoy</i> (ipilimumab) in October. </p><p>The FDA <a href="http://www.scripintelligence.com/home/BMS-OpdivoYervoy-OKd-1st-U.S.-Immuno-Oncology-Combo-360779" target="_new">approved the Opdivo-Yervoy combination</a> for patients with BRAF-V600 wild-type unresectable or metastatic melanoma. It was the first approval for a PD-1 inhibitor-containing combination regimen, opening the door for both increased Opdivo uptake and improved Yervoy sales, which fell 31% in the third quarter to $240m due to competition from PD-1 inhibitors.</p><p>"In the US, I think we will see some stabilization of Yervoy between now and the end of the year," Bristol-Myers senior vice president and head of worldwide markets Murdo Gordon said during the company's earnings conference call, noting that 10% to 15% of patients who are new to Opdivo are being treated with the PD-1 inhibitor in combination with Yervoy.</p><p>Gordon also pointed out that "when we go outside of the US, it's going to obviously take a little longer, because it will take time to secure reimbursement, so I would expect Yervoy to continue to be under some pressure ex-US."</p><p><b>Combinations Increasingly Important</b></p><p>Bancroft said that "Yervoy will play an important role in combination with Opdivo going forward, not only in melanoma, but potentially in many tumors, including lung and renal," highlighting the fact that Yervoy sales growth is highly dependent on its efficacy in combination with Opdivo in order to see the CTLA4 inhibitor's sales regain momentum. </p><p>Bristol-Myers revealed in its third quarter earnings reports that Yervoy in combination with paclitaxel and carboplatin did not meet the primary endpoint of overall survival compared with the two chemotherapy agents alone in a Phase III advanced NSCLC clinical trial. Credit Suisse analysts said the result was not significant given Yervoy's activity in combination with Opdivo in lung cancer.</p><p>Bancroft and Caforio indicated during the earnings call that payers generally are reimbursing the cost of Opdivo and Opdivo-plus-Yervoy, despite concerns that it <a href="http://www.scripintelligence.com/home/Costs-for-cancer-drugs-combos-face-increasing-scrutiny-357432" target="_new">may be difficult to win payer support</a> for combinations of two or more high-priced cancer therapies.</p><p>Caforio said Bristol-Myers is focused on developing "truly innovative medicines that offer significant value to patients" and the company is working on extending its reimbursement support and patient access programs globally. He noted that payers are responding positively to the high tumor response rates seen in melanoma clinical trials for the Opdivo and Yervoy combo and "we have really not seen significant objections to date" in regard to the two-drug regimen's $256,000 annual price.</p><p>Of course, BMS is looking beyond its own pipeline to evaluate combinations with Opdivo, and the company's business development strategy in this area led to a <a href="http://www.scripintelligence.com/home/Bristol-Likes-What-It-Sees-In-Five-Prime-Invests-More-In-CSF1R-Program-361073" target="_new">worldwide license in October</a> for a colony stimulating factor 1 receptor (CSF1R) antibody program developed by Five Prime Therapeutics, including lead candidate FPA008. Bristol-Myers originally partnered with Five Prime to test FPA008 in combination with Opdivo, but now the big pharma has rights to the drug.</p><p>Francis Cuss, executive vice president and chief scientific officer at BMS, said during the company's earnings call that data from early-stage Opdivo combination studies will be revealed later this year and early next year. Exploratory combination therapy trials are under way or planned <a href="http://www.scripintelligence.com/home/Merck-AZ-Roche-BMS-work-off-grid-for-mix-and-match-immuno-oncology-358916" target="_new">with candidates from</a> Celldex Therapeutics, Rigel Pharmaceuticals and others.</p><p>In terms of immuno-oncology deals, and business development generally, Caforio said the company is "agnostic with respect to pipeline versus marketed assets," but noted that "it is more likely that we will continue to do more pipeline deals, just because of the nature of our business."</p><p><b>Non-Oncology Assets Also Drive Growth</b></p><p>Outside of oncology, Bristol-Myers also benefitted in the third quarter from rising sales of the blood clot-buster Eliquis and <i>Daklinza</i> (daclatasvir), which was approved in the US in combination with the Gilead Sciences blockbuster <i>Sovaldi</i> (sofosbuvir) for patients with <a href="http://www.scripintelligence.com/policyregulation/FDA-approves-2-hep-C-drugs-from-AbbVie-BMS-359624" target="_new">genotype 3 hepatitis C virus</a> (HCV) in July. Third quarter Daklinza sales totaled $111m in the US, $175m in Japan and $75m in the EU.</p><p>BMS is seeking additional FDA approvals for Daklinza with Sovaldi in the treatment of HCV patients with HIV co-infection, cirrhosis and post-liver transplant. The company also won a <a href="http://www.scripintelligence.com/home/NICE-Reverses-Stance-On-BMS-HCV-Pill-Daklinza-361072" target="_new">favorable health appraisal decision</a> in England and Wales for genotypes 1, 3 and 4 HCV in October.</p><p>Worldwide Eliquis sales more than doubled to $466m in the third quarter from $216m in the same period of 2014. Global HCV franchise sales totaled $402m in the third quarter, primarily from Daklinza, versus $49m a year earlier. Year-to-date sales are equally impressive, rising to $1.3bn for Eliquis during the first nine months of 2015 from $493m in the first three quarters of 2014, while the HCV franchise brought in $1.1bn versus $49m.</p><p>"We are encouraged by the commercial progress of the company's younger products, particularly Eliquis and Opdivo. We believe that these products will gradually form the base of the company's top line and should drive significant long-term growth," William Blair analyst John Sonnier said in an Oct. 27 report.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 328
+
+<p>Bristol-Myers Squibb Co.'s <i>Opdivo</i> (nivolumab) exceeded expectations in the third quarter and the company's commentary on future indications and combinations for the immunotherapy gave investors hope that sales would continue to blast ahead of Merck & Co.'s competing PD-1 inhibitor <i>Keytruda</i> (pembrolizumab).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+BristolMyers Boosted By Opdivo Sales Growth Prospects
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151021T173303
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151021T173303
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151021T173303
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030173
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Bristol-Myers Boosted By Opdivo Sales, Growth Prospects
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361171
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6a7d9544-2210-4090-82b7-08734dc0b971
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {C6F7A12E-EA6C-49A0-87BC-BA31648DD88D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/17/STOCKWATCH Waiting for the biotech bubble to burst
+parent: {673CAFAF-49B7-437A-9242-01ECA36193FF}
+name: STOCKWATCH Waiting for the biotech bubble to burst
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f1b6f840-969b-43a8-af80-2437c1a7397c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+STOCKWATCH: Waiting for the biotech bubble to burst
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+STOCKWATCH Waiting for the biotech bubble to burst
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6507
+
+<p>Everybody's wondering, when will the biotech bubble burst? Whilst there have been IPOs cancelled citing "market conditions", news of many more primary and secondary offerings continues to appear in our in boxes. Logic dictates that the bubble will burst eventually and indeed in the last year we've already had two warning pops caused by drug pricing concerns, but the NASDAQ Biotech Index has continued its relentless climb. Even so, fresh evidence is appearing that the bubble is about to die, starting with this latest earnings season </p><p>When Swiss biotech company Actelion reported its fourth quarter 2015 financial results, weak sales of its biggest product for the treatment of pulmonary arterial hypertension, Tracleer (bosentan) and its replacement Opsumit (macitentan) resulted in 8% and 20% misses in consensus estimates of sales and earnings, respectively. Combined with very cautious 2015 earnings guidance, not all of which was due to the strength of the Swiss franc, one might have expected a significant down day for Actelion's shares. That the Actelion share price actually finished the day just into positive territory sent its analysts scurrying for reasons why it was left unscathed when less dismal results than Actelion's this season have floored the share prices of most big pharmaceutical and biotechnology companies. </p><p>The most popular explanations centred around investors wanting to position themselves ahead of the continuing Opsumit launch (the quarterly sales of which had just disappointed) and a potential late 2015 Uptravi (selexipag) approval by the FDA. A similar product to Uptravi was approved at United Therapeutics in December 2013 and after a delayed launch has only seen $14.5m in sales from its first quarter on the market (<a href="http://www.scripintelligence.com/home/FDA-OKs-United-Therapeutics-oral-PAH-drug-Orenitram-on-3rd-try-348968" target="_new">scripintelligence.com, 23 December 2013</a>). I had two alternative explanations for the robustness of Actelion's share price. Firstly the announcement of a ten million share buy-back program or the cancellation of almost 9% of its outstanding share capital must have been a non-operational off-set for last quarter's dismal operations. </p><p>More structurally, I was left wondering if we have entered a death throe period where only computers and other non-specialist investors continue to buy shares in biotech companies in response to any announcement, regardless of the content. I'm always puzzled at the share price rises in response to the "presents at a conference" announcements when I have long since set these to be automatically filed to junk. In addition, you only have to look at the wild swings in the share price of Dendreon of late to wonder why any rational investor would buy shares the company where the only prospect is to lose all of the investment (<a href="http://www.scripintelligence.com/business/Valeant-ups-bid-for-Dendreons-Provenge-to-400m-356577" target="_new">scripintelligence.com, 5 February 2015</a>).</p><p>What are the other clues for a near-term biotech pull-back? Well stratospheric valuations are one guide but the biotech bulls would argue that the sector has re-rated so that preclinical companies can justify having two or three billion dollar valuations. Indeed our own valuation model which we run over about 900 public healthcare companies has shown dividends and earnings are not now significantly correlated with market capitalisation when they had been for most of the last two years. This implies that most of the investors who are investing in life science companies have absolutely no regard for profits or dividends in a caution-thrown-to-the-wind approach to investing which we'll probably later come to recognize as "the CART-T period".</p><p>One piece of evidence related to the high valuations for biotech companies comes if we look at the kind of companies that have been acquired from our portfolio over the last three months. None of them was a biotech company. Hospira is a small generics company and the two others &ndash; Cubist and NPS Pharmaceuticals are specialty pharmaceutical companies. The same is true of Salix Pharmaceuticals. In the cool light of logic then, why would anyone pay $3bn for a gene therapy biotech company with data on a handful of patients in Phase I, when you could pay $5.2bn for a specialty company with two approved products, sales and a commercial infrastructure?</p><p>Another M&A death throe was seen last week when Sinclair IS Pharma announced that it was were evaluating options that could include a possible sale. This type of announcement usually results in a share price hike, as it did for Salix (<a href="http://www.scripintelligence.com/business/Rumor-speculation-and-Salix-356750" target="_new">scripintelligence.com, 13 February 2015</a>), as investors position themselves ahead of a potential payday. As the analysts from Jefferies pointed out, with net debt more than three times EBITDA and &pound;90m in contingent payments, Sinclair's prospects as an acquisition prospect are quite different from those of Salix. For Sinclair Pharma its announcement had the opposite effect than intended with the shares dropping by nearly 9% as investors who had probably heard the imminent deal story before, made a more realistic valuation determination.</p><p>Perhaps the latest death throe of this latest biotech bubble came last week when I met a small private company hoping to list on AIM. Their investment proposition aside, the proposed IPO valuation was twice the valuation of the last equity raise in 2011 and their bankers were charging them a stratospheric 10% of the money raised. It seems that money is trying to be made just before the sun goes in.</p><p>The Magna BioPharma Income fund holdings include Salix Pharmaceuticals. In the last three months the fund held Cubist, NPS Pharmaceuticals and Hospira, and divested these assets after their acquisitions were announced.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest manages the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 545
+
+<p>Everybody's wondering, when will the biotech bubble burst? Whilst there have been IPOs cancelled citing "market conditions", news of many more primary and secondary offerings continues to appear in our in boxes. Logic dictates that the bubble will burst eventually and indeed in the last year we've already had two warning pops caused by drug pricing concerns, but the NASDAQ Biotech Index has continued its relentless climb. Even so, fresh evidence is appearing that the bubble is about to die, starting with this latest earnings season </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+STOCKWATCH Waiting for the biotech bubble to burst
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150217T233632
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150217T233632
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150217T233632
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027899
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+STOCKWATCH: Waiting for the biotech bubble to burst
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199700433
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356799
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f1b6f840-969b-43a8-af80-2437c1a7397c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

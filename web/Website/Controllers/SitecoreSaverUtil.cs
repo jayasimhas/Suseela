@@ -16,23 +16,23 @@ using Sitecore.SecurityModel;
 using Sitecore.Workflows;
 using static System.String;
 using File = System.IO.File;
+using Informa.Library.Utilities.References;
 
 namespace Informa.Web.Controllers
 {
 	public class SitecoreSaverUtil
 	{
 		private readonly ISitecoreService _sitecoreMasterService;
-		public const string MasterDb = "master";
 		protected readonly string TempFolderFallover = Path.GetTempPath();
 		protected string TempFileLocation;
 		private readonly ArticleUtil _articleUtil;
 		private readonly IArticleSearch _articleSearcher;
-		private const string ArticleNumberLength = "000000";
+
 
 		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher)
 		{
-			_sitecoreMasterService = sitecoreFactory(MasterDb);
-			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)) ? 
+			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
+			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)) ?
 				TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\temp.";
 			_articleUtil = articleUtil;
 			_articleSearcher = searcher;
@@ -45,19 +45,19 @@ namespace Informa.Web.Controllers
 			var results = _articleSearcher.Search(filter);
 			if (!results.Articles.Any())
 			{
-				return 0.ToString(ArticleNumberLength);
+				return 0.ToString(Constants.ArticleNumberLength);
 			}
 			IEnumerable<string> articles = results.Articles.Select(a => a.Article_Number).OrderByDescending(b => b);
 			string num = articles.First().Replace(SitecoreUtil.GetPublicationPrefix(publicationGuid), "");
 			int n = int.Parse(num);
-			return (n + 1).ToString(ArticleNumberLength);
+			return (n + 1).ToString(Constants.ArticleNumberLength);
 		}
 
 		public void SaveArticleDetails(Guid articleGuid, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
 			using (new SecurityDisabler())
 			{
-				IArticle article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
+				ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 				if (article == null)
 				{
 					throw new ApplicationException("Could not find article with Guid " + articleGuid);
@@ -72,7 +72,7 @@ namespace Informa.Web.Controllers
 		{
 			using (new SecurityDisabler())
 			{
-				IArticle article = _articleUtil.GetArticleByNumber(articleNumber);
+				ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 				if (article == null)
 				{
 					throw new ApplicationException("Could not find article for number [" + articleNumber + "]");
@@ -93,7 +93,7 @@ namespace Informa.Web.Controllers
 		/// <param name="shouldNotify">Should notifications be sent for this update</param>
 		/// <returns>The updated Sitecore item representing the article</returns>
 		/// <remarks>This method could stand to be refactored into smaller chunks.</remarks>
-		private IArticle SaveArticleDetails(IArticle article, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData, bool addVersion, bool shouldNotify = true)
+		private ArticleItem SaveArticleDetails(ArticleItem article, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData, bool addVersion, bool shouldNotify = true)
 		{
 			var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
 
@@ -141,7 +141,7 @@ namespace Informa.Web.Controllers
 			//		}
 			//		//newVersion = article.InnerItem.Versions.AddVersion();
 			//		updatedVersion = articleItem.Versions.AddVersion();
-			//		newVersion = _sitecoreMasterService.GetItem<IArticle>(updatedVersion.ID.ToString());
+			//		newVersion = _sitecoreMasterService.GetItem<ArticleItem>(updatedVersion.ID.ToString());
 			//	}
 			//}
 			//else
@@ -213,11 +213,11 @@ namespace Informa.Web.Controllers
 			return newVersion;
 		}
 
-		private void SaveArticleFields(IArticle newArticle, IArticle originalArticle, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData)
+		private void SaveArticleFields(ArticleItem newArticle, ArticleItem originalArticle, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData)
 		{
 			using (new SecurityDisabler())
 			{
-				
+
 				if (articleStruct.Subtitle != null) newArticle.Sub_Title = articleStruct.Subtitle;
 				if (articleStruct.Summary != null) newArticle.Summary = articleStruct.Summary;
 				if (!originalArticle.IsPublished || articleStruct.WebPublicationDate != originalArticle.Planned_Publish_Date)
@@ -225,21 +225,7 @@ namespace Informa.Web.Controllers
 					newArticle.Planned_Publish_Date = articleStruct.WebPublicationDate;
 				}
 
-				//TODO - Add Taxonomy items
-				//newArticle.Taxonomies = articleStruct.Taxonomoy.Select(x => _sitecoreMasterService.GetItem<ITaxonomy_Item>(x.ID));
-				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
-				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<ArticleItem>(x));
-
-				if (saveDocumentSpecificData)
-				{
-					//the following will now always be saved and not just on a save entire document	
-					newArticle.Supporting_Documents = articleStruct.SupportingDocumentPaths.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
-					newArticle.Referenced_Deals = Join(",", articleStruct.ReferencedDeals.ToArray());
-				}
-				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
-				newArticle.Word_Count = articleStruct.WordCount.ToString();
-
-				newArticle.Embargoed = articleStruct.Embargoed;
+				newArticle.Content_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.Label);
 				DateTime webDate = articleStruct.WebPublicationDate;
 				if (webDate != DateTime.MinValue || webDate != DateTime.MaxValue)
 				{
@@ -250,19 +236,43 @@ namespace Informa.Web.Controllers
 					newArticle.Planned_Publish_Date = new DateTime();
 				}
 
-				//TODO - Convert Label to dropdown or Single line text
-				newArticle.Content_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.Label);
+				newArticle.Embargoed = articleStruct.Embargoed;
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
+				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
 				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
-				newArticle.Featured_Image_16_9 = new Image {MediaId = articleStruct.FeaturedImage};
+
+				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
+				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+
+				newArticle.Featured_Image_16_9 = new Image { MediaId = articleStruct.FeaturedImage };
 				newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;
 				newArticle.Featured_Image_Source = articleStruct.FeaturedImageSource;
+
+				//TODO - Add Taxonomy items
+
+				var taxonomyItems = new List<ITaxonomy_Item>();
+				if (articleStruct.Taxonomoy.Any())
+				{
+					taxonomyItems.AddRange(articleStruct.Taxonomoy
+						.Select(eachTaxonomy => _sitecoreMasterService.GetItem<ITaxonomy_Item>(eachTaxonomy.ID))
+						.Where(taxItem => taxItem != null));
+                    newArticle.Taxonomies = taxonomyItems;
+                }
+
+				if (saveDocumentSpecificData)
+				{
+					//the following will now always be saved and not just on a save entire document	
+					newArticle.Supporting_Documents = articleStruct.SupportingDocumentPaths.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
+					newArticle.Referenced_Deals = Join(",", articleStruct.ReferencedDeals.ToArray());
+				}
+
+				newArticle.Word_Count = articleStruct.WordCount.ToString();
 
 				_sitecoreMasterService.Save(newArticle);
 			}
 		}
 
-		protected void RenameArticleItem(IArticle article, WordPluginModel.ArticleStruct articleStruct)
+		protected void RenameArticleItem(ArticleItem article, WordPluginModel.ArticleStruct articleStruct)
 		{
 			string title = articleStruct.Title;
 			if (title == null) return;
@@ -281,11 +291,12 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-		protected void MoveArticleIfNecessary(IArticle article, WordPluginModel.ArticleStruct articleStruct)
+		protected void MoveArticleIfNecessary(ArticleItem article, WordPluginModel.ArticleStruct articleStruct)
 		{
+			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
 			using (new SecurityDisabler())
 			{
-				var publication = article.Publication;
+				var publication = articleItem.Publication;
 				var newParent = _articleUtil.GenerateDailyFolder(publication, articleStruct.WebPublicationDate);
 				if (newParent != null)
 				{
@@ -302,7 +313,7 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="article"></param>
 		/// <param name="articleText"></param>
-		public void SaveArticleDetailsAndText(IArticle article, string articleText, WordPluginModel.ArticleStruct articleStruct)
+		public void SaveArticleDetailsAndText(ArticleItem article, string articleText, WordPluginModel.ArticleStruct articleStruct)
 		{
 			using (new SecurityDisabler())
 			{
@@ -324,7 +335,7 @@ namespace Informa.Web.Controllers
 		}
 
 
-		public int SendDocumentToSitecore(IArticle article, byte[] data, string extension)
+		public int SendDocumentToSitecore(ArticleItem article, byte[] data, string extension)
 		{
 			MediaItem doc = UploadWordDoc(article, ConvertBytesToWordDoc(data, article.Article_Number, extension), article._Id.ToString(), extension);
 			using (new SecurityDisabler())
@@ -335,9 +346,6 @@ namespace Informa.Web.Controllers
 					TargetId = new Guid(doc.ID.ToString()),
 					Type = LinkType.Internal
 				};
-
-				//TODO - Set this document to be internal
-				//article.Word_Document.Type = "internal";
 				_sitecoreMasterService.Save(article);
 			}
 			return doc.InnerItem.Version.Number;
@@ -351,10 +359,10 @@ namespace Informa.Web.Controllers
 		/// <param name="docName"></param>
 		/// <param name="extension"></param>		
 		/// <returns></returns>
-		protected MediaItem UploadWordDoc(IArticle article, string fileName, string docName, string extension)
+		protected MediaItem UploadWordDoc(ArticleItem article, string fileName, string docName, string extension)
 		{
-			var _wordDocLibrary = new WordDocToMediaLibrary(_sitecoreMasterService);
-			return _wordDocLibrary.SaveWordDocIntoMediaLibrary(article, fileName, docName, extension);
+			var wordDocLibrary = new WordDocToMediaLibrary(_sitecoreMasterService);
+			return wordDocLibrary.SaveWordDocIntoMediaLibrary(article, fileName, docName, extension);
 		}
 
 		protected string ConvertBytesToWordDoc(byte[] data, string articleID, string extension)

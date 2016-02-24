@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {A8C1DB79-28AE-4CC9-83C2-6897252C17B8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/27/Vertex hopes Orkambi is a turning point
+parent: {EA24C766-2E78-4AED-8518-75CB3FD1FB63}
+name: Vertex hopes Orkambi is a turning point
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a62745d6-d676-4ab8-aaa3-8a2a4e1c9d25
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Vertex hopes Orkambi is a turning point
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 39
+
+Vertex hopes Orkambi is a turning point
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3243
+
+<p><p>Anyone looking purely at Vertex Pharmaceuticals first quarter numbers would see a company in trouble, but expect the big biotech to bounce back once an FDA approval for its cystic fibrosis combination comes through. </p><p>Vertex reported a net loss of $198.6m, or $0.83 per share, after the close of the market on 29 April, slightly better than its loss in the year-ago period. Meanwhile, revenues rose 31% to $130.2m. </p><p>The trouble at Vertex has been ongoing for a few years; the company was forced to switch gears from hepatitis C to cystic fibrosis when its blockbuster HCV drug became virtually irrelevant as new advances in the space quickly entered the market. While Kalydeco (ivacaftor) has been slowly picking up the pace as it adds to its eligible patient populations through indications &ndash; it's currently approved for 10 different CF mutations &ndash; it isn't very effective in the largest cystic fibrosis population of F508del mutation patients. Kalydeco was only available to about 2,200 patients when it was first approved in 2012, but was approved for 3,100 patients by the end of 2014. The company expects that number to reach 3.900 by the end of 2015. </p><p>Vertex says Kayldeco is on track to bring in $560m to $580m for the year, but it's coming in a little light so far with only $130.2m in the first quarter. Beyond that, Vertex only has about $1.2bn in cash and a burn rate of about $200m &ndash; giving it about six quarters of cash in the bank. </p><p>Turning the corner</p><p>With so little cash and Kalydeco on such a slow ramp up, things might seem dour, but Vertex's bright spot is likely going to be the combination of Kalydeco and lumacaftor, dubbed Orkambi. The drug is currently under review at the FDA and by EU regulatory authorities, and would serve the F508del mutation patients &ndash; about 20,000 people. The FDA is slated to make its decision on the combo drug by 05 July. </p><p>"We are ready to bring Orkambi to the approximately 8,500 patients ages 12 and older in the US who have two copies of the F508del mutation. We look forward to our meeting with the FDA advisory committee on 12 May to discuss Orkambi for the F508del homozygous population who currently don't have any treatment options that target the underlying cause of their disease," said Chairman and CEO Jeff Leiden during the 29 April conference call with investors. </p><p>Vertex currently has a Phase III trial ongoing in pediatric patients who have two copies of the F508del mutation, with hopes of getting approval by the FDA in a younger population. </p><p>The biggest hurdle for Vertex concerning Orkambi will be garnering reimbursement, but the company seemed to think it wouldn't be a problem. </p><p>"Management indicated that reimbursement discussions have focused on helping payers understand the CF population and budget impact, severity of the disease and unmet need and innovative nature of the product," wrote Dr Howard Liang in a 30 April note. </p><p>"Regarding the US launch, while the Orkambi initial launch could be slower than Kalydeco uptake, which was characterized as 'virtually vertical', management still expects significant demand from both patients and physicians," he added. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 39
+
+Vertex hopes Orkambi is a turning point
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150427T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150427T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150427T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028600
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Vertex hopes Orkambi is a turning point
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358066
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a62745d6-d676-4ab8-aaa3-8a2a4e1c9d25
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

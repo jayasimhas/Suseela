@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A77796CE-7332-4988-A1C7-0AF95F499782}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/02/AstraZeneca unveils second brand play in India
+parent: {F07BDF72-8313-4021-A765-C4ED157C5731}
+name: AstraZeneca unveils second brand play in India
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 77722388-1489-4cf6-9436-62135eb1229d
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+AstraZeneca unveils second brand play in India
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+AstraZeneca unveils second brand play in India
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3130
+
+<p>AstraZeneca appears to be the latest to join a clutch of foreign firms deploying the second-brand approach to penetrate the Indian market more effectively. </p><p>The firm's Indian arm, AstraZeneca Pharma, has entered into a "distribution services agreement" with India's top-ranked firm, Sun Pharma, for a new brand of ticagrelor (to be sold as Axcer) for the treatment of acute coronary syndromes (ACS). </p><p>AstraZeneca's existing ticagrelor brand, Brilinta, has been on the Indian market since 2012. Sun will promote and distribute Axcer in India. Brilinta and Axcer are manufactured at AstraZeneca Sweden and will be imported to India. </p><p>On Axcer's pricing approach, AstraZeneca told <i>Scrip</i> that the agreement with Sun is a distribution contract and as such an "arm's length" one. "Therefore, we do not have any say in the pricing strategy of Sun Pharma for the Axcer brand. Pricing of Axcer is solely their decision," AstraZeneca said. Sun declined specific comment on the agreement.</p><p>This is the second such announcement by AstraZeneca in quick succession. Last week it unveiled similar second-brand plans with Dr Reddy's Laboratories for saxagliptin and a fixed-dose combination of saxagliptin with metformin. Last year, AstraZeneca had <a href="http://%5bhttp:/www.scripintelligence.com/home/AstraZeneca-hauls-Glenmark-to-Indian-court-over-saxagliptin-351036%5d" target="_new">moved the Delhi High Court</a> against Glenmark over intellectual property rights issues concerning its dipeptidyl peptidase-4 (DPP-4) inhibitor for diabetes, Onglyza (saxagliptin), in India. </p><h2>Wider reach</h2><p>A joint statement on the ticagrelor deal said that the collaboration enables AstraZeneca to expand usage of this molecule through wider reach to physicians and thereby benefiting a greater number of ACS patients. It also strengthens Sun's cardiology portfolio with the addition of a new patented therapy.</p><p>Sun, at the time of announcing its Q4 results last week, said that it is currently ranked number one based on share of prescriptions with 12 classes of doctors including psychiatrists, neurologists, cardiologists, gastroenterologists and diabetologists, as per a report of SMSRC, a strategic consultancy focused on healthcare services.</p><p>While AstraZeneca declined to divulge specific sales details for Brilinta, the product appears to have had a good run in India. Details in AstraZeneca Pharma India's annual report for 2013-14 referred to how the brand's market share increased from 1.4% MAT (moving annual total) in March 2013 to 6.7% (MAT March 2014) as per IMS Health data. Brilinta was then ranked among the top 10 brands in the oral antiplatelets segment in the Indian market, the annual report added.</p><p>A number of foreign firms, including Novartis (for vildagliptin) and Merck & Co have deployed second-brand approaches in India. MSD (as Merck is known outside of the US and Canada) has a co-marketing arrangement with Sun Pharmaceutical Industries for Januvia (sitagliptin) and Janumet (sitagliptin/metformin hydrochloride) in India as part of efforts to improve access.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 163
+
+<p>AstraZeneca appears to be the latest to join a clutch of foreign firms deploying the second-brand approach to penetrate the Indian market more effectively. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+AstraZeneca unveils second brand play in India
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150602T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150602T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150602T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028889
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+AstraZeneca unveils second brand play in India
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358617
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042356Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+77722388-1489-4cf6-9436-62135eb1229d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042356Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

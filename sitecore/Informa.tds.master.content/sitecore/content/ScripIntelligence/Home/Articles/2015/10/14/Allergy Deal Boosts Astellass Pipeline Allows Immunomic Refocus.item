@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {EA810984-A289-4E62-BA30-7442F243C71C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/14/Allergy Deal Boosts Astellass Pipeline Allows Immunomic Refocus
+parent: {604E8046-5BA9-4567-9E2A-9612EB50B405}
+name: Allergy Deal Boosts Astellass Pipeline Allows Immunomic Refocus
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: eff97b63-898f-488f-b369-c703a099b22c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Allergy Deal Boosts Astellas's Pipeline, Allows Immunomic Refocus
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Allergy Deal Boosts Astellass Pipeline Allows Immunomic Refocus
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5301
+
+<p>Astellas is making good on its strategic intention to expand in vaccines and immunology, paying $300m upfront for worldwide rights to Immunomic's technology and pipeline for DNA vaccines against human allergies, in a deal that will also allow the US biotech to focus on other applications including oncology.</p><p><p>Japanese major Astellas Pharma Inc. has acquired exclusive global rights to research, develop, manufacture and commercialize products deriving from Immunomic Therapeutics Inc.'s LAMP-vax DNA vaccine platform for the prevention and treatment of multiple types of allergies in humans, including food and environmental allergies. </p><p><p>The deal will be a significant payday for privately held Immunomic, which is eligible for 10% royalties on Astellas's net sales of any resulting products as well as a sizable $300m upfront on execution of the agreement.</p><p><p>The Japanese firm meanwhile gains a handful of active research programs in various areas including the treatment of peanut allergies, a potentially major market in itself where there are no currently approved specific therapies.</p><p><p>Hershey, Philadelphia-based Immunomic retains rights to all other uses of its proprietary LAMP-vax platform, CEO Dr. William Hearl noting in a statement that the "large scale and scope of the new partnership allows Immunomic to focus our efforts on other applications like oncology".</p><p><p>The design of the vaccines enables potential use in a wide range of areas including infectious diseases such as HIV and in animal health.</p><p><h2>LAMP-vax Tech</h2><p><p>Immunomic originally licensed the LAMP-vax technology globally in 2006 from Johns Hopkins University School of Medicine, where it was developed by a professor with the aid of a $20m grant from the US National Institutes for Health.</p><p><p>The approach effectively eliminates allergens to avoid the normal inflammatory response, and instead elicits an immune response against a specific protein through the injection of DNA coding for the protein, rather than the protein itself.</p><p><p>The vaccines also include a short DNA sequence encoding lysosomal associated membrane protein (LAMP), which redirects and generates a more complete immune response &ndash; including antibody production, cytokine release and immunological "memory" &ndash; compared to standard DNA vaccines.</p><p><p>These primarily elicit a cytotoxic T-cell response, and LAMP-vax vaccines are expected to have improved safety and cost-effectiveness.</p><p><p>In the case of peanut allergies, for example, Immunomic's preclinical pipeline therapeutic vaccine ARA-LAMP-vax comprises one DNA plasmid that encodes the major peanut allergens, but also converts the immune response from a TH2/IgE allergen response to a TH1/IgG antigen response, thereby eliminating allergy symptoms.</p><p><h2>Large And Growing Market</h2><p><p>Immunomic said the incidence of food allergies is rising and that these now affect five to six million people in the US alone, causing an estimated $25bn in indirect and $4.3bn in direct medical costs.</p><p><p>There are around 30,000 related cases of anaphylaxis and up to 200 deaths in the US, with peanut allergies the most common problem, affecting more than 1.5m people.</p><p><p>The market addressable through Immunomic's research in the area (and being acquired by Astellas) represents around a quarter of the total allergy population, and potentially "billions in annual revenue," Immunomics said.</p><p><p>Astellas's broader interest in the promise of the technology appears to have been piqued by its prior January 2015 deal with Immunomic for the development and commercialization in Japan of ASP4070 (JRC2-LAMP-vax), a DNA vaccine to treat Japanese red cedar pollen allergies, a particular problem in Japan.</p><p><p>A local Phase I study has already started and this program will continue after the new deal.</p><p><p>The allergy pipeline being acquired by Astellas also includes a Phase I stage product for mountain cedar allergies and a very early stage multivalent product for multiple allergies.</p><p><h2>Strategic Considerations</h2><p><p>More broadly, Astellas sees novel vaccines and immunology as key areas for investment under its current mid-term strategy, with chief strategy officer Dr. Kenji Yasukawa stating that immunology is "one of the prioritized disease areas for our research and [we] are exploring targets for new discoveries that involve several immune disorders".</p><p><p>Astellas is already developing several vaccines, including for seasonal and H5N1 flu prophylaxis (with UMN Pharma Inc.). </p><p><p>Immunomic is already well advanced in its exploration of LAMP-vax vaccines in immuno-oncology, where several Phase II trials are underway. It said that early clinical studies in acute myeloid leukemia (AML) and glioblastoma multiforme (a form of brain cancer) had shown "promising results."</p><p><p>Its AML and prostate cancer programs are already partnered with BioTime Inc./Asterias Biotherapeutics Inc.</p><p><p>This article has also been published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 315
+
+<p>Astellas is making good on its strategic intention to expand in vaccines and immunology, paying $300m upfront for worldwide rights to Immunomic's technology and pipeline for DNA vaccines against human allergies, in a deal that will also allow the US biotech to focus on other applications including oncology.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Allergy Deal Boosts Astellass Pipeline Allows Immunomic Refocus
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151014T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151014T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151014T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030046
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Allergy Deal Boosts Astellas's Pipeline, Allows Immunomic Refocus
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360945
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042506Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eff97b63-898f-488f-b369-c703a099b22c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042506Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

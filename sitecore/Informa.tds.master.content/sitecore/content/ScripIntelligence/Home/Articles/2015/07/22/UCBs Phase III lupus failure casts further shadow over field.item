@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C0401781-72A6-4439-A64B-D217AB7069F6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/UCBs Phase III lupus failure casts further shadow over field
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: UCBs Phase III lupus failure casts further shadow over field
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a69ca0e9-5f47-40dd-b92c-b1626f860844
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+UCB's Phase III lupus failure casts further shadow over field
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+UCBs Phase III lupus failure casts further shadow over field
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4829
+
+<p>UCB's leading lupus drug, epratuzumab, has failed to meet primary endpoints in two Phase III trials &ndash; an event which could deter future investment from this historically tricky development space. </p><p>Epratuzumab failed to meet its primary goals in the two identical Phase III EMBODY (EMBODY 1 and EMBODY 2) trials in systemic lupus erythematosus (SLE) at tested doses of 2400mg and 1200mg. The Belgian firm said treatment response in patients who received epratuzumab in addition to standard therapy was not significantly higher than those who received placebo in addition to standard therapy. The primary endpoint of both studies was the percentage of patients meeting treatment response criteria at Week 48 according to a combined response index, the BILAG-based Combined Lupus Assessment (BICLA).</p><p>UCB chief medical officer and executive vice-president, Professor Dr Iris Loew-Friedrich, said the trial failures have not altered the company's focus on developing therapies for the treatment of lupus. "Although we are disappointed with the results from the Phase III program, our commitment to the lupus community remains," she said. "We are focused on developing new therapies for the treatment of immunological conditions including SLE and have another SLE drug in clinical development."</p><p>UCB's other SLE product, dapirolizumab pegol, is a humanized anti-CD40L antibody fragment being developed in partnership with Biogen. It is expected to enter a Phase II trial in the coming months, UCB said. </p><p>Meanwhile, the company told <i>Scrip</i> it is "too early to tell" what its future plans for epratuzumab will be following the Phase III trial failures. The company plans to carry out further analysis of the EMBODY trial data and said it "looks forward to sharing the findings [from EMBODY 1 and 2] with the scientific community."</p><p>The product is being tested in other indications by UCB's partner Immunomedics but lupus was the only indication in which UCB had a current clinical program. The company suspended development of the drug in Sjogren's syndrome in 2009. Immunomedics has development programs for the product are ongoing in indolent non-Hodgkin's lymphoma (NHL; Phase II); diffuse large B-cell lymphoma (Phase II); and acute lymphocytic leukemia (ALL; Phase I/II).</p><h2>knock-on effect?</h2><p>Datamonitor Healthcare lead analyst Jacoba Procter told <i>Scrip</i> that the failure of epratuzumab in lupus will do little to encourage investment in this disease area. "Lupus is notorious for failed clinical trials," she noted, adding that though there is significant unmet need in the field and a large opportunity for pharma, successes have been few and far between. </p><p>"There is a strong sense in the lupus community that the trail of failed lupus candidates suggests flawed trial design, rather than lack of efficacy," Ms Procter said. "The difficultly stems from the need for background medications to be given to trial participants, and the flaring nature of lupus, which makes it difficult to distinguish between the impact of a therapy in a clinical trial and a natural period of non-flare."</p><p>Following the success of GlaxoSmithKline's Benlysta (belimumab) in treating SLE other companies such as UCB followed suit in using a combined response index as a trial's primary endpoint hoping this would be the key to demonstrating response. "However, this latest news highlights that the challenges in clinical trial development for lupus are far from over," Ms Procter noted. When Benlysta was approved in 2011 it was the first drug to receive regulatory approval for SLE for over 50 years. </p><p>UCB suspended development of epratuzumab back in 2007 after it reached Phase III stages of development. The company decided to return the drug to a redesigned Phase IIb trial in 2008 and continued with the EMBODY Phase III studies in 2010. While this appeared to be a wise decision at the time, as an appropriately designed clinical program was essential to increase the likelihood of success, it hasn't paid off. As a result, "UCB will no doubt have to carefully consider how to proceed with development of its remaining lupus candidate, CDP7657," Ms Procter said. </p><h2>lupus development pipeline</h2><p>According to Sagient Research's BioMedTracker, there are currently three products in Phase III trials for the treatment of SLE: ImmuPharma's Lupuzor; AstraZeneca's MEDI-546; and Anthera Pharmaceuticals' Blisibimod. GSK is also developing a subcutaneous version of Benlysta for SLE, which is currently in Phase III. </p><p>There are 16 products in Phase I stages of development for SLE; two in Phase I/II; and 11 drugs in Phase II. However, there are 24 products that have been suspended or placed on a program hold, according to the BioMedTracker database. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 209
+
+<p>UCB's leading lupus drug, epratuzumab, has failed to meet primary endpoints in two Phase III trials &ndash; an event which could deter future investment from this historically tricky development space. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+UCBs Phase III lupus failure casts further shadow over field
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T120001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T120001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T120001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029351
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+UCB's Phase III lupus failure casts further shadow over field
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359560
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a69ca0e9-5f47-40dd-b92c-b1626f860844
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

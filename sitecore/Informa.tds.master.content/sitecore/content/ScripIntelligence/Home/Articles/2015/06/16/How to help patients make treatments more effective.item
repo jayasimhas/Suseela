@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {AB84C68A-7EEF-4DCD-ADBD-C13E203C4D20}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/16/How to help patients make treatments more effective
+parent: {CD515B17-C025-4812-A259-F398C278F9AE}
+name: How to help patients make treatments more effective
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7088a34e-69dd-4f2a-b749-9a639505b804
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+How to help patients make treatments more effective
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+How to help patients make treatments more effective
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3859
+
+<p>Patients have traditionally been allocated a back seat when it comes to medicines and how they are developed and used within healthcare systems. But this is changing and indeed there is a strong business case for companies to help drive the change, says Dr Andrew McCullloch, CEO of the Picker Institute, Europe, a charity that aims to improve health and social care.</p><p>Companies need to go beyond making pills to understand patient journeys and how issues like concordance (when patients and doctors agree a treatment approach based on the patient's needs and expectations) can ensure that treatment is effective, Dr McCulloch told <i>Scrip</i>, ahead of his presentation at the eyeforpharma Patient Summit 2015 in London next week. "What we must understand is that we need a whole systems approach. A medication in itself is neither effective nor ineffective, it's only effective if it's delivered within a quality healthcare environment and that involves patients at every stage and it involves it being patient centred."</p><p>This means behaving like any other industry and involving the consumer in service and product design, seeking their feedback all along the way, and changing products and services accordingly. Involving patients and finding out what they actually want makes healthcare systems more efficient and cost-effective, which is good news for cash-strapped payers and the pharmaceutical industry that wants to supply them. </p><p>Obviously companies alone cannot create patient-centred healthcare systems, but they can play an important role in driving them. Indeed, Dr McCulloch believes that they have certain commercial marketing and communications expertise that can be very valuable and relevant. And because big pharma is commercially driven, it is less paternalistic than healthcare systems, and therefore more customer-focused. </p><p>One important thing firms can do is try to make sure the healthcare systems get the best out of their products and that they work as well as possible in real life. For example, companies can train healthcare professionals on issues that affect how patients use their medicines, such as side-effects, concordance and compliance. The latter is when a patient follows advice rather than reaching a joint decision with the physician. It is therefore a different approach to concordance, which many healthcare professionals believe is more effective in helping patients take their medicines properly.</p><p>Companies can also do more to understand how patients relate to their drugs beyond clinical trials. "At the moment there is a sort of separation between the R&D process and the real world which I think is really unhelpful for patients," says Dr McCulloch. </p><p>He advises companies to triangulate their approaches to information gathering through numerous channels to get a good mix of quantitative and qualitative information. Beyond randomised control trials for data gathering, a website, for example, might allow patients to talk to medical directors about their care, while focus groups may allow patients to share their experiences.</p><p>Firms can also gather more information about what patients expect from their treatment from the very beginning. What doctors and companies think a patient wants from his medicine can often be quite different. "Companies may focus on symptom reduction as defined by medical models whereas what the patient usually wants is to be able to interact with their family, walk to the shops, get back to work or whatever it is. That's related to symptom reduction but it's not the same &#8230; understanding how the human interface works with that product is critical just the same as car manufacturers will have punters sitting in the cars, how else do you know how the consumers are going to react to the products?" Dr McCulloch asks. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 374
+
+<p>Patients have traditionally been allocated a back seat when it comes to medicines and how they are developed and used within healthcare systems. But this is changing and indeed there is a strong business case for companies to help drive the change, says Dr Andrew McCullloch, CEO of the Picker Institute, Europe, a charity that aims to improve health and social care.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+How to help patients make treatments more effective
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150616T012003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150616T012003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150616T012003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029041
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+How to help patients make treatments more effective
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600240
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358958
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7088a34e-69dd-4f2a-b749-9a639505b804
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

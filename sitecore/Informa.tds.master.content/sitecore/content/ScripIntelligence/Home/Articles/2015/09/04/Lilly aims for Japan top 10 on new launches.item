@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {F83BFDC1-9384-41D2-A4CF-B1E237472E7C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/04/Lilly aims for Japan top 10 on new launches
+parent: {194ECEF1-FC3A-4493-B5A0-5BE540D1EF34}
+name: Lilly aims for Japan top 10 on new launches
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 645c5f48-6320-44fc-b150-6fa5cf818c57
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+Lilly aims for Japan top 10 on new launches
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Lilly aims for Japan top 10 on new launches
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5227
+
+<p>Lilly remains bullish about its business in Japan on the back of strong sales increases over the past few years, and is confident it can achieve a top 10 ranking in the industry by 2020 following a slew of launches this year.</p><p>New country president Patrik Jonsson, appointed last year from his former position as head of the US firm's Italian business, said calendar 2014 sales at Eli Lilly Japan were up 7% to JPY210.5bn ($1.76bn), passing the JPY200bn mark for the first time.</p><p>"We were one of the top three pharma firms [by growth] in Japan last year. While some people didn't believe us when we first set the target, we have doubled our sales over the last five years and tripled them over 10 years. We believe we are extremely well prepared for continued strong growth," the Swedish national told a Tokyo press briefing.</p><p>Lilly ranked 16th in the Japanese pharma industry in sales terms last year, and while Jonsson declined to disclose a specific target for 2020, he was confident that the business is "on a path" to that goal. Along with the planned sales expansion, another major goal for the operation is to have women make up at least 30% of its leadership team over the same timescale, he said.</p><p>The main driver of the recent growth has been top product Zyprexa (olanzapine), which last year rose by 4% to JPY59.9 billion and is used as an atypical antipsychotic mainly in schizophrenia and bipolar disorder. The executive told <i>Scrip</i>'s sister publication <i>PharmAsia News</i> that while Zyprexa would take its main hit from local generic competition "in the latter part of this decade, new launches will more than make up for any losses" in the broader business.</p><p>The projected growth for what is Lilly's largest affiliate outside the US will also be helped by what Jonsson described as a "very predictable" business environment in Japan, where he said the market for prescription only drugs still remains "significantly bigger in terms of potential compared to China."</p><h2>Positive Environment</h2><p>The reliable social security system is one of best in world, while there has also been "tremendous improvement from a regulatory perspective" over the past few years. Japan now approves new drugs "with similar speed to the US and EU" resulting in more or less simultaneous patient access, he noted.</p><p>Lilly Japan's R&D head Dr Toshio Fujimoto told the meeting that the "drug lag" - defined as the difference in actual or forecasted first submission dates worldwide and Japan - had been reduced substantially to just 1.2 years in 2014, versus 7.2 years in 2003.</p><p>In addition, there have been "significant improvements" in the drug reimbursement pricing scheme in the country, with the price maintenance "premium" offered since 2010 - which exempts innovative drugs from regulator biennial price cuts - playing an "extremely important" role, Jonsson said.</p><p>Research-based industry associations have been calling for the still pilot stage scheme to be adopted on a permanent basis. </p><p>Together, these positive factors are creating a predictable environment in Japan that is encouraging continued investments, Jonsson said, echoing the views of other industry executives. </p><h2>Growth Portfolio/Launches</h2><p>In addition to Zyprexa, other major growth products for Lilly Japan last year included Strattera (atomoxetine) for attention-deficit hyperactivity disorders, up by 43% to JPY13.9bn, and Forteo (teriparatide) for osteoporosis, which surged 23% to JPY48bn and took second position in the commercial portfolio, reflecting a large unmet need in Japan.</p><p>"There are around 13 million people with osteoporosis in Japan, of whom 90% are women, but only two million currently receive treatment and many have undiscovered fractures," Jonsson observed, pointing to a Lilly campaign to raise disease awareness.</p><p>Sales of anticancer Gemzar (gemcitabine) were hit hard by generics however, slumping by 31% to JPY6.1bn. </p><p>Looking ahead, the executive said that Lilly is aiming for five big launches in Japan this year (including line extensions), with three of these in the diabetes field. The SGLT2 inhibitor Jardiance (empogliflozin) and biosimilar insulin glargine (developed with Boehringer Ingelheim) were both approved in December.</p><p>Other expected launches include the GLP-1 agonist dulaglutide (Trulicity elsewhere) and the anti-VEGF receptor 2 antibody Cyramza (ramucirumab), which has just been approved for gastric cancer.</p><p>Dr Fujimoto said the drug provided a good example of Lilly's simultaneous global development strategy, as more than 100 patients in Japan were enrolled in the global Phase III study, and the product was granted fast-track status.</p><p>To prepare for the raft of launches, the subsidiary bolstered its sales force by around 200 to 1,880 reps last year.</p><p>Earlier in the pipeline, there are currently 22 projects at the Phase II/III stage in Japan, with global simultaneous development programs accounting for about 90% of the total, Dr Fujimoto noted.</p><p>This article first appeared in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 232
+
+<p>Lilly remains bullish about its business in Japan on the back of strong sales increases over the past few years, and is confident it can achieve a top 10 ranking in the industry by 2020 following a slew of launches this year.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Lilly aims for Japan top 10 on new launches
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150904T154557
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150904T154557
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150904T154557
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028400
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+Lilly aims for Japan top 10 on new launches
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357743
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+645c5f48-6320-44fc-b150-6fa5cf818c57
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

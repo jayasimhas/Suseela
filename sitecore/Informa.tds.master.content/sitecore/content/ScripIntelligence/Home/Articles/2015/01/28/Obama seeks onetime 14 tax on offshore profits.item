@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {DA00C201-4A2F-4C83-B91C-E0EA97AEFAAA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/28/Obama seeks onetime 14 tax on offshore profits
+parent: {283E19C4-7725-4BBF-92AA-D47D04C385F4}
+name: Obama seeks onetime 14 tax on offshore profits
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 84c02dac-86d1-4548-bef3-7ada89e5b485
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+Obama seeks one-time 14% tax on offshore profits
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+Obama seeks onetime 14 tax on offshore profits
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4122
+
+<p>US companies have been hoarding their foreign earnings &ndash; with an estimated $2tn of untaxed profits sitting overseas &ndash; and President Barack Obama wants firms like Pfizer, Merck and Johnson & Johnson to bring their cash back home.</p><p>In his fiscal year 2016 budget proposal, unveiled on 2 February, President Obama has called for revamping the way taxes on foreign profits are paid.</p><p>Corporations are supposed to pay 35% on their foreign earnings, but they generally avoid doing so by a loophole that allows them to defer, resulting in the cash piling up overseas. </p><p>President Obama would drop the foreign earnings rate to 19%, but the taxes must be paid on the profits when they are earned &ndash; banning any attempts to defer paying.</p><p>He also is seeking to impose a one-time &ldquo;transition toll charge&rdquo; of 14% on offshore profits, declaring that he would use those funds, estimated to be about $240bn, to finance a $474bn six-year surface transportation reauthorization project &ndash; which he said is pro-growth and fiscally responsible. </p><p>But President Obama would permit companies to reinvest their foreign funds in the US without additional taxes under his plan, the White House said. </p><p>Mr Obama's international reform plan also would prevent US companies from avoiding paying US taxes through so-called inversions &ndash; a practice in which American firms are reincorporating abroad through mergers and acquisitions to pay lower tax rates.</p><p>His proposal also calls for preventing foreign companies operating in America from using excessive interest deductions to "strip" earnings out of the US and avoid paying taxes there. </p><p>The US Treasury Department this past September took initial steps to reduce the economic benefits of inversions (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Obama-admin-takes-action-to-thwart-tax-inversion-354073" target="_new">23 September 2014</a>, <a href="http://www.scripintelligence.com/home/Legality-effectiveness-of-US-Treasury-inversion-actions-questioned-354097" target="_new">24 September 2014</a>).</p><p>But President Obama has insisted the only way to fully address inversions is through action by the Congress. </p><p>In his budget request to Congress, the president also proposed lowering the corporate tax rate to 28%, with a 25% effective rate for domestic manufacturing &ndash; a proposal he repeated from last year and something for which Republicans have supported, although many in the party want an even lower rate (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Brain-research-antimicrobial-resistance-among-Obama-FY15-priorities-350379" target="_new">4 March 2014</a>).</p><p>But Republicans are likely to reject most of the president&rsquo;s other proposals.</p><p>Nonetheless, Mr Obama insisted his plan would put the US in line with major competitor countries and encourage greater investment here at home. </p><p>The rate reduction would be paid for by eliminating dozens of inefficient tax expenditures and through additional structural reforms &ndash; addressing accelerated depreciation and reducing the tax preference for debt financed investment, the White House said. </p><p>During a briefing with reporters, White House officials said the president would not agree to a "tax holiday" &ndash; something that has long been backed by the biopharmaceutical industry &ndash; calling it "bad policy."</p><p>An October 2011 report from the Institute for Policy Studies found that a 2004 tax holiday failed to live up to the promise that it would create US jobs (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-IOM-focus-on-affordable-essential-benefits-expected-to-stir-debate-on-drug-prices-322128" target="_new">10 October 2011</a>).</p><p>Pharmaceutical makers benefited the most from the 2004 tax holiday on repatriated profits than any other industry &ndash; pocketing an estimated $30bn in tax savings on the $100bn in offshore earnings they brought back to the US, the group said. </p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 247
+
+<p>US companies have been hoarding their foreign earnings &ndash; with an estimated $2tn of untaxed profits sitting overseas &ndash; and President Barack Obama wants firms like Pfizer, Merck and Johnson & Johnson to bring their cash back home.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Obama seeks onetime 14 tax on offshore profits
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150128T084850
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150128T084850
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150128T084850
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027700
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+Obama seeks one-time 14% tax on offshore profits
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356415
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+84c02dac-86d1-4548-bef3-7ada89e5b485
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

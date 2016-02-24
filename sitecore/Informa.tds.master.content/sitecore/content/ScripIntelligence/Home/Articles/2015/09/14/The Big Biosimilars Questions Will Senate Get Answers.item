@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {41C1D47B-38CA-4B6A-865E-5E39929818B1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/14/The Big Biosimilars Questions Will Senate Get Answers
+parent: {9F8ADCFB-E320-4549-AFC1-EAAB109CA5F9}
+name: The Big Biosimilars Questions Will Senate Get Answers
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 44338056-edef-4488-ac82-5ca67149fdcf
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+The Big Biosimilars Questions: Will Senate Get Answers? 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+The Big Biosimilars Questions Will Senate Get Answers
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9461
+
+<p>When a Senate subcommittee of the Health, Education, Labor and Pensions (HELP) panel calls Janet Woodcock, director of the FDA's Center for Drug Evaluation and Research, to testify on Sept. 17, AbbVie is hoping lawmakers will get to the bottom of why the agency did not require Novartis and its Sandoz unit to identify in the labeling of Zarxio (filgrastim-sndz) the product is a biosimilar and did not clearly state the drug had not been found to be interchangeable &ndash; something regulators had earlier said in a draft guidance was "necessary" to declare.</p><p>AbbVie already has raised its objections with the FDA &ndash; filing a citizen petition in June, revising it in August, in which the company accused regulators of violating the <i>Administrative Procedures Act</i> when they did an "unexplained about-face" on the biosimilars and interchangeability identification labeling issue.</p><p>A month after the FDA <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">approved Zarxio in March</a>, the agency dropped the language in the final guidance about biosimilars labeling identifying the products as such or stating whether they have been found to be interchangeable, AbbVie pointed out.</p><p>"It will be interesting to see the FDA's justification on its labeling decision" when Woodcock testifies on Sept. 17, Emily Alexander, director of U.S. regulatory affairs at AbbVie, told <i>Scrip</i>.</p><p>In its June citizen petition, the company insisted Zarxio's labeling "mimics" that of the reference product &ndash;Amgen's human granulocyte colony-stimulating factor Neupogen (filgrastim) &ndash; which AbbVie said "suggests" that FDA has decided to apply the "same labeling" requirement the agency uses for small-molecule generics.</p><p>"FDA's decision to reverse course and adopt a same labeling approach for biosimilars is arbitrary and capricious," AbbVie charged.</p><p>In its citizen petition, AbbVie called for the FDA to require biosimilars labeling to contain a clear statement that the product is indeed a biosimilar, and that if it is licensed for fewer than all of the reference product's conditions of use, it should say so clearly in the labeling.</p><p>AbbVie also wants the biosimilars labeling to identify whether its licensed conditions of use were based on extrapolation.</p><p>If products have not been deemed interchangeable, the labeling should say so, the company demanded.</p><p>Biosimilars labeling also should contain a "concise description of the pertinent data developed to support licensure" of the product, along with information adequate to enable prescribers to distinguish data derived from studies of the biosimilar from data derived from studies of the reference product, AbbVie said.</p><p>In its revised citizen petition, submitted last month, AbbVie noted that the chairman of the Senate HELP Committee and eight other members inquired about why the FDA had left out the statements in Zarxio's labeling about it being a biosimilar and the fact that it was not deemed interchangeable.</p><p>The company pointed out that the FDA had responded in June to the HELP Committee explaining the so-called <i>Purple Book</i> &ndash; the <i>Lists of Licensed Biological Products with Reference Product Exclusivity and Biosimilarity or Interchangeability Evaluations</i> &ndash; would <a href="http://www.scripintelligence.com/policyregulation/FDA-unveils-biologics-Purple-Book-353788" target="_new">enable health care professionals</a> to see whether a 351(k)-licensed product has been determined by U.S. drug regulators to be biosimilar to or interchangeable with an innovator biologic.</p><p>But AbbVie said the "proposition that the <i>Purple Book</i> could cure a material omission in the labeling for a biosimilar is indefensible."</p><p>In its revised petition, the company also said it had the support of other stakeholders, including pharmacist and patient advocacy groups, for the firm's requests to the FDA.</p><p>Amgen, which pointed out in comments that it is not just an innovator but also is involved in biosimilar R&D, said it supported AbbVie's petition, while Novartis objected to it &ndash; telling the FDA in separate comments the agency should reject it in its entirety.</p><p>AbbVie's petition, Novartis said, "misinterprets the concept of biosimilarity, missing entirely its sound regulatory basis &ndash; i.e., that the approval of a biosimilar through appropriate 'highly-similar' or 'sameness' criteria . . . is based on the well-established safety and efficacy data of the reference product."</p><p>"Our experience as the product's sponsor gives us particularly pertinent understanding as to the reasoning behind the label for Zarxio," said Novartis, whose Sandoz unit is in a <a href="http://www.scripintelligence.com/policyregulation/Will-Amgen-Sandoz-Tango-Across-Old-Ground-360426" target="_new">fierce legal battle</a> with Amgen over the interpretation of the <i>Biologics Price Competition and Innovation Act</i> &ndash; the law that created the regulatory pathway for the FDA to approve biosimilars.</p><p>But Jerry Clewell, associate scientific director of U.S. medical affairs at AbbVie, argued that not having clear information in biosimilars labeling sets doctors and patients up for confusion about the products.</p><p><b>Not Generics</b></p><p>"The most important thing that everyone needs to understand and get their heads around is biosimilars are not generics," Clewell told <i>Scrip</i>. Doctors and patients need to have the right information to make best medical decisions. They can't do that without clear and consistent information in a variety of forms."</p><p>Unfortunately, Alexander said, there's been a real struggle in removing the mindset that biosimilars are like small molecule generics rather than the large molecules that they are, in which even slight changes in manufacturing can make a difference in how the medicines affect patients.</p><p>"Any subtle differences seen in the laboratory analytically with these drugs could produce clinical differences," Clewell explained. "So hence the reason to be very cautious as agencies set policies on things like indication extrapolation or interchangeability." </p><p>While AbbVie is "supportive of the entry of biosimilars" into the U.S. market, "we do a disservice to our patients and physicians if we acted as if all the policy decisions around biosimilars are simple or settled," Alexander said. </p><p>She noted the Senate HELP subcommittee is likely to also ask FDA's Woodcock about the agency's plan for all biologics, including biosimilars, to carry a unique <a href="http://www.scripintelligence.com/home/4-Letter-Word-FDAs-BiosimilarsBiologics-Distinction-360142" target="_new">four-letter suffix</a> as part of the nonproprietary names (INN) of the active drug substance.</p><p>"Naming seems like a very simple concept," Alexander said. "But distinguishable names are critical for ensuring patient safety."</p><p>She insisted there's been "significant misattribution of adverse events," in which the innovator small molecule was blamed for side effects actually caused by generics. </p><p>"Most stakeholders don't realize the impact that naming can have on the prescribing decision process, dispensing process and in the adverse event reporting process," Alexander said.</p><p>The Generics Pharmaceutical Association and its related biosimilar trade group, however, argued the current INN system that's worked well for generics should be continued for biosimilars and insisted the suffixes were unnecessary and could cause confusion.</p><p><b>Expect Vocal Woodcock</b></p><p>The labeling and naming debate, said New York lawyer Robert Cerwinski, a partner in the intellectual property litigation group at Goodwin Procter, boils down to whether there is a need to warn patients and doctors that what is in the package is not the brand product. </p><p>"Where there is no scientific basis for drawing a clinical distinction between a biosimilar and a brand product, such warnings may needlessly hobble market acceptance of biosimilars by suggesting to the public that the biosimilar is different, or even inferior, when in fact it is not," he told <i>Scrip</i>. "The resolution of this debate may hinge on whether the science behind the FDA's biosimilar approval framework is capable of reliably establishing that a biosimilar has clinically equivalent safety and efficacy to the branded product and is clinically substitutable. Since the reliability of this framework is key to the public's trust in biosimilars, we expect Dr. Woodcock to be vocal in defending it." </p><p>While Cerwinski said the FDA's view on the strength of the Zarxio data package is unclear, he said he expected to hear from Woodcock that a "case-by-case approach to labeling grounded in good science is better than a one-size-fits-all labeling protocol, or even a two-tiered protocol where biosimilar labels contain warnings and interchangeable ones do not." </p><p>Whatever lawmakers conclude at the Sept. 17 hearing, AbbVie's Clewell argued "the science really should be driving the policy, and not the other way around."</p><p>"From the scientific perspective, we have to be very clear that we don't know everything there is to know when the biosimilar launches and there will be a lot to learn over time," he said.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 567
+
+<p>When a Senate subcommittee of the Health, Education, Labor and Pensions (HELP) panel calls Janet Woodcock, director of the FDA's Center for Drug Evaluation and Research, to testify on Sept. 17, AbbVie is hoping lawmakers will get to the bottom of why the agency did not require Novartis and its Sandoz unit to identify in the labeling of Zarxio (filgrastim-sndz) the product is a biosimilar and did not clearly state the drug had not been found to be interchangeable &ndash; something regulators had earlier said in a draft guidance was "necessary" to declare.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+The Big Biosimilars Questions Will Senate Get Answers
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150914T234720
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150914T234720
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150914T234720
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029761
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+The Big Biosimilars Questions: Will Senate Get Answers? 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360358
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+44338056-edef-4488-ac82-5ca67149fdcf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

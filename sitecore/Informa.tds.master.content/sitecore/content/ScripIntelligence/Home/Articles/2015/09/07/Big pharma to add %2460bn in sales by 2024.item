@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {D36A0505-3201-4D3D-8090-1285B2979E50}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/07/Big pharma to add $60bn in sales by 2024
+parent: {6840D804-C125-4C0D-BF8C-D980093E6D42}
+name: Big pharma to add $60bn in sales by 2024
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0b0abb33-cb93-4a41-9244-bf180a2ba89e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 40
+
+Big pharma to add $60bn in sales by 2024
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+Big pharma to add $60bn in sales by 2024
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10296
+
+<p>Big pharma companies are set to grow their revenues by a modest 1.3% a year over the next 10 years, and oncology will slip from the top spot as the most lucrative therapy area. So says a new report on the outlook for big pharma from Datamonitor Healthcare. It forecasts that the top 16 US/European big pharma companies will see prescription drug revenues grow by $60bn to reach $499bn in 2024. </p><p>Datamonitor Healthcare expects that Novartis will hold onto its position as the leading company by prescription drug sales and that AbbVie's TNF inhibitor Humira (adalimumab) will still be the world's biggest selling drug in 2024, with global sales of $11bn (compared with $12.5bn in 2014).</p><p>"By focusing on its high performing divisions, Novartis's vigorous examination of its value-maximizing assets and targeted deal making has really set the tone for the rest of its peers," said report author Ali Al-Bazergan, senior analyst at Datamonitor Healthcare.</p><table><h2>Big pharma prescription drug sales by company</h2><th><tr><td><p>Rank</p>&nbsp;</td><td><p>Company</p>&nbsp;</td><td><p>2024 Sales Forecast ($m)</p>&nbsp;</td><td><p>2014 Sales ($m)</p>&nbsp;</td><td><p>2014-2024 CAGR (%)</p>&nbsp;</td></tr></th><tbody><tr><td><p>1</p>&nbsp;</td><td><p>Novartis</p>&nbsp;</td><td><p>58,518</p>&nbsp;</td><td><p>53,717</p>&nbsp;</td><td><p>0.9</p>&nbsp;</td></tr><tr><td><p>2</p>&nbsp;</td><td><p>Sanofi</p>&nbsp;</td><td><p>50,823</p>&nbsp;</td><td><p>37,619</p>&nbsp;</td><td><p>3.1</p>&nbsp;</td></tr><tr><td><p>3</p>&nbsp;</td><td><p>Merck & Co</p>&nbsp;</td><td><p>46,921</p>&nbsp;</td><td><p>36,042</p>&nbsp;</td><td><p>2.7</p>&nbsp;</td></tr><tr><td><p>4</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td><p>42,467</p>&nbsp;</td><td><p>40,092</p>&nbsp;</td><td><p>0.6</p>&nbsp;</td></tr><tr><td><p>5</p>&nbsp;</td><td><p>Pfizer</p>&nbsp;</td><td><p>39,457</p>&nbsp;</td><td><p>45,511</p>&nbsp;</td><td><p>-1.4</p>&nbsp;</td></tr><tr><td><p>6</p>&nbsp;</td><td><p>Johnson & Johnson</p>&nbsp;</td><td><p>35,372</p>&nbsp;</td><td><p>32,313</p>&nbsp;</td><td><p>0.9</p>&nbsp;</td></tr><tr><td><p>7</p>&nbsp;</td><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>34,087</p>&nbsp;</td><td><p>30,737</p>&nbsp;</td><td><p>1.0</p>&nbsp;</td></tr><tr><td><p>8</p>&nbsp;</td><td><p>Amgen</p>&nbsp;</td><td><p>25,825</p>&nbsp;</td><td><p>19,327</p>&nbsp;</td><td><p>2.9</p>&nbsp;</td></tr><tr><td><p>9</p>&nbsp;</td><td><p>AbbVie</p>&nbsp;</td><td><p>25,285</p>&nbsp;</td><td><p>19,960</p>&nbsp;</td><td><p>2.4</p>&nbsp;</td></tr><tr><td><p>10</p>&nbsp;</td><td><p>AstraZeneca</p>&nbsp;</td><td><p>24,746</p>&nbsp;</td><td><p>26,095</p>&nbsp;</td><td><p>-0.5</p>&nbsp;</td></tr><tr><td><p>11</p>&nbsp;</td><td><p>Novo Nordisk</p>&nbsp;</td><td><p>24,526</p>&nbsp;</td><td><p>15,805</p>&nbsp;</td><td><p>4.5</p>&nbsp;</td></tr><tr><td><p>12</p>&nbsp;</td><td><p>Eli Lilly</p>&nbsp;</td><td><p>23,522</p>&nbsp;</td><td><p>17,270</p>&nbsp;</td><td><p>3.1</p>&nbsp;</td></tr><tr><td><p>13</p>&nbsp;</td><td><p>Teva</p>&nbsp;</td><td><p>18,612</p>&nbsp;</td><td><p>18,374</p>&nbsp;</td><td><p>0.1</p>&nbsp;</td></tr><tr><td><p>14</p>&nbsp;</td><td><p>Bristol-Myers Squibb</p>&nbsp;</td><td><p>16,887</p>&nbsp;</td><td><p>15,879</p>&nbsp;</td><td><p>0.6</p>&nbsp;</td></tr><tr><td><p>15</p>&nbsp;</td><td><p>Bayer</p>&nbsp;</td><td><p>16,716</p>&nbsp;</td><td><p>15,988</p>&nbsp;</td><td><p>0.4</p>&nbsp;</td></tr><tr><td><p>16</p>&nbsp;</td><td><p>Boehringer Ingelheim</p>&nbsp;</td><td><p>15,087</p>&nbsp;</td><td><p>14,065</p>&nbsp;</td><td><p>0.7</p>&nbsp;</td></tr><tr><td colspan="2"><p><b>Grand Total</b></p>&nbsp;</td><td><p><b>498,851</b></p>&nbsp;</td><td><p><b>438,793</b></p>&nbsp;</td><td><p><b>1.3</b></p>&nbsp;</td></tr></tbody><p>Source: Datamonitor Healthcare</p></table><p><p>However, not everything will remain the same. Oncology will cease to be the most lucrative therapy area, overtaken by endocrine, metabolic and genetic disorders. The decline in sales from CNS drugs will continue, with revenues dropping from $50.3bn in 2014 to $32.6bn in 2024 and the therapy area falling from the number one spot in 2011 to eighth position by 2024 as other areas, including cardiovascular and respiratory, make more modest gains. </p><p>Oncology's slide in the rankings is more to do with strong launches in cardiovascular and other areas than serious weaknesses in the sector, since cancer drug sales are forecast to rise from $66.0bn to $84.6bn over the 10 years. Patent expiries will be offset by new launches including notably immuno-oncology therapies like Bristol-Myers Squibb's Opdivo (nivolumab) and Merck & Co's Keytruda (pembrolizumab).</p><p>"Big pharma is investing in breakthrough therapies that are providing large step-changes to treatment outcomes," said Mr Al-Bazergan. "In immuno-oncology, companies are in a race to fill their portfolios across all phases through partnerships and acquisitions to fully realize the market opportunity."</p><p>Pfizer will slip from the number two slot as it continues to struggle under blockbuster patent expiries, including for CNS products Lyrica (pregabalin) and Celebrex (celecoxib), although it will remain in the top five thanks to further deal making and its acquisition of Hospira allowing it to capitalize on the growth in biosimilars, the Datamonitor analysts predict. Meanwhile, Pfizer's one-time acquisition target AstraZeneca will also slide in the rankings, with revenues declining from $26.1bn in 2014 to $24.7bn in 2024. This forecast contrasts sharply with CEO Pascal Soriot's promise in 2014 that the company would grow revenues to more than $45bn by 2023.</p><p>"Although its oncology assets will add upwards of $3bn to its top line, AstraZeneca's current portfolio will not be sufficient to offset the dent in sales from its expiry brands such as Crestor," said Mr Al-Bazergan.</p><p>The companies that are expected to grow the most over the 10-year period are Sanofi, Novo Nordisk and Lilly, while Pfizer and AstraZeneca are the only two in their 16-strong peer set projected to decline.</p><p>Of the $499bn in revenues that the top 16 firms in DMHC's peer set are expected to book in 2024, $119bn is expected to come from products yet to launch, while $23bn in revenues will have been lost to products losing market exclusivity in 2015. </p><h2>top products</h2><p>Among the 10 products from big pharma expected to book the highest revenues in 2024, four will be new launches: Merck & Co and Lilly's CETP inhibitors anacetrapib and evacetrapib for dyslipidemia, Novartis's just-approved Entresto (sacubitril/valsartan) for heart failure and Sanofi/Regeneron Pharmaceuticals' PCSK9 inhibitor Praluent (alirocumab), also for dyslipidemia. Topping the table will be Humira (with AbbVie expected to use launches in new indications to contain declining sales brought on by the advent of biosimilars in its space), followed by Johnson & Johnson/Merck & Co's Remicade (infliximab) and Sanofi's Lantus (insulin glargine).</p><table><h2>Big pharma top 10 products in 2024</h2><th><tr><td><p>Rank</p>&nbsp;</td><td><p>Product Brand Name</p>&nbsp;</td><td><p>Generic Name</p>&nbsp;</td><td><p>Primary Disease</p>&nbsp;</td><td><p>Company</p>&nbsp;</td><td><p>$2024 Sales Forecast ($m)</p>&nbsp;</td><td><p>2014-24 CAGR</p>&nbsp;</td></tr></th><tbody><tr><td><p>1</p>&nbsp;</td><td><p>Humira</p>&nbsp;</td><td><p>adalimumab</p>&nbsp;</td><td><p>rheumatoid arthritis</p>&nbsp;</td><td><p>AbbVie</p>&nbsp;</td><td><p>11,153</p>&nbsp;</td><td><p>-1.2</p>&nbsp;</td></tr><tr><td><p>2 </p>&nbsp;</td><td><p>Remicade</p>&nbsp;</td><td><p>infliximab</p>&nbsp;</td><td><p>rheumatoid arthritis</p>&nbsp;</td><td><p>Johnson & Johnson, Merck & Co</p>&nbsp;</td><td><p>6,875</p>&nbsp;</td><td><p>-2.9</p>&nbsp;</td></tr><tr><td><p>3</p>&nbsp;</td><td><p>Lantus</p>&nbsp;</td><td><p>insulin glargine</p>&nbsp;</td><td><p>diabetes</p>&nbsp;</td><td><p>Sanofi</p>&nbsp;</td><td><p>6,559</p>&nbsp;</td><td><p>-2.5</p>&nbsp;</td></tr><tr><td><p>4</p>&nbsp;</td><td><p>anacetrapib</p>&nbsp;</td><td><p>anacetrapib</p>&nbsp;</td><td><p>dyslipidemia</p>&nbsp;</td><td><p>Merck & Co</p>&nbsp;</td><td><p>6,331</p>&nbsp;</td><td><p>n/a</p>&nbsp;</td></tr><tr><td><p>5</p>&nbsp;</td><td><p>Entresto</p>&nbsp;</td><td><p>sacubitril/valsartan</p>&nbsp;</td><td><p>heart failure</p>&nbsp;</td><td><p>Novartis</p>&nbsp;</td><td><p>6,191</p>&nbsp;</td><td><p>n/a</p>&nbsp;</td></tr><tr><td><p>6</p>&nbsp;</td><td><p>Prevnar</p>&nbsp;</td><td><p>vaccine, pneumococcal</p>&nbsp;</td><td><p><i>Streptococcus pneumoniae</i></p>&nbsp;</td><td><p>Pfizer</p>&nbsp;</td><td><p>6,190</p>&nbsp;</td><td><p>3.3</p>&nbsp;</td></tr><tr><td><p>7</p>&nbsp;</td><td><p>Xarelto</p>&nbsp;</td><td><p>rivaroxaban</p>&nbsp;</td><td><p>thromboembolism</p>&nbsp;</td><td><p>Bayer, Johnson & Johnson</p>&nbsp;</td><td><p>5,859</p>&nbsp;</td><td><p>4.6</p>&nbsp;</td></tr><tr><td><p>8</p>&nbsp;</td><td><p>evacetrapib</p>&nbsp;</td><td><p>evacetrapib</p>&nbsp;</td><td><p>dyslipidemia</p>&nbsp;</td><td><p>Eli Lilly</p>&nbsp;</td><td><p>5,467</p>&nbsp;</td><td><p>n/a</p>&nbsp;</td></tr><tr><td><p>9</p>&nbsp;</td><td><p>Praluent</p>&nbsp;</td><td><p>alirocumab</p>&nbsp;</td><td><p>dyslipidemia</p>&nbsp;</td><td><p>Sanofi</p>&nbsp;</td><td><p>5,427</p>&nbsp;</td><td><p>n/a</p>&nbsp;</td></tr><tr><td><p>10</p>&nbsp;</td><td><p>Enbrel</p>&nbsp;</td><td><p>etanercept</p>&nbsp;</td><td><p>rheumatoid arthritis</p>&nbsp;</td><td><p>Amgen, Pfizer</p>&nbsp;</td><td><p>5,402</p>&nbsp;</td><td><p>-4.5</p>&nbsp;</td></tr></tbody><p>Source: Datamonitor Healthcare</p></table></p><p>With headwinds including uncertain macro-economic conditions, increased payer scrutiny of drug prices, competition from one-time biotech players like Gilead and Celgene, ongoing generic threats and the advent of new biosimilars, Datamonitor Healthcare suggests that big pharma has adapted by targeting emerging markets, signing deals, and taking cost-cutting measures. A buoyant financing environment and the recent IPO boom will see M&A continue to prove a strong vehicle for pharmaceutical strategy as big pharma looks to fortify long-term market positions.</p><p>To see the full report, click <a href="http://www.datamonitorhealthcare.com/coming-soon-2015-big-pharma-outlook/" target="_new">here</a>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 401
+
+<p>Big pharma companies are set to grow their revenues by a modest 1.3% a year over the next 10 years, and oncology will slip from the top spot as the most lucrative therapy area. So says a new report on the outlook for big pharma from Datamonitor Healthcare. It forecasts that the top 16 US/European big pharma companies will see prescription drug revenues grow by $60bn to reach $499bn in 2024. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+Big pharma to add $60bn in sales by 2024
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150907T154043
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150907T154043
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150907T154043
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029243
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 40
+
+Big pharma to add $60bn in sales by 2024
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359363
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0b0abb33-cb93-4a41-9244-bf180a2ba89e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

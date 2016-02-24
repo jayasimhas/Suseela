@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {BA42BBB3-52D8-40EA-B5EB-8F9FD2F930D4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/15/Offsets deal reached to fund FDA NIH Cures bill
+parent: {22B77BC9-1D41-4F3C-86FC-19BC331D0A4A}
+name: Offsets deal reached to fund FDA NIH Cures bill
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9d26f485-073a-4826-addc-018882e15205
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Offsets deal reached to fund FDA, NIH 'Cures' bill
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Offsets deal reached to fund FDA NIH Cures bill
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4051
+
+<p>Republican and Democratic leaders of the House Energy and Commerce Committee late on 20 May said they had reached a deal on how they will pay for the expected $13bn costs of implementing the provisions in the proposed <i>21st Century Cures Act</i> (HR 6) &ndash; a bill aimed at overhauling the US biomedical enterprise, which is intended to speed up the discovery, development and approval processes for therapies, devices and diagnostics. </p><p>The committee had been set to resume the mark up process of the Cures bill on 20 May, but Representative Fred Upton (Republican-Michigan), chairman of the E&C, abruptly canceled the session just two hours before it was to start &ndash; declaring his Democratic partner in the effort, Colorado Congresswoman Diana DeGette, had asked for "one more day so members can digest these policies further."</p><p>"We respect that request," Mr Upton said in a 20 May statement to reporters &ndash; insisting "We will reconvene bright and early tomorrow."</p><p>Earlier in the day, however, that timeline looked uncertain after several lawmakers had expressed concerns about the package of offsets &ndash; spending cuts and revenue increases &ndash; proposed by Representative Upton to cover the Cures measures.</p><p>The FDA told <i>Scrip</i> on 19 May the agency would need about <a href="http://www.scripintelligence.com/home/FDA-1bn-needed-to-cover-Cures-costs-358495" target="_new">$1bn to implement the provisions</a> in the proposed legislation, as currently written. But the rumors on Capitol Hill on 20 May were that the Cures authors had only come up with about half of that amount so far.</p><p>FDA's Dr Janet Woodcock, director of the Center for Drug Evaluation and Research, pleaded last month with <a href="http://www.scripintelligence.com/home/NIH-Thanks-for-the-funds-FDA-Wheres-ours-358162" target="_new">House</a> and <a href="http://www.scripintelligence.com/home/Dont-break-whats-working-FDAs-Woodcock-urges-Congress-358096" target="_new">Senate</a> lawmakers not to leave her agency with more unfunded mandates.</p><p>The Cures bill authors, however, earlier put an authorization for <a href="http://www.scripintelligence.com/home/Cures-10bn-NIH-boost-nice-wish-no-granting-power-358130" target="_new">$10bn in the proposed legislation</a> for the National Institutes of Health &ndash; something Representative DeGette said at the start of the markup on 19 May was needed after years of "resource erosion and cuts" to the agency's spending.</p><p>In a late-night statement on 20 May, Mr Upton and Ms DeGette joined other committee leaders, including Representatives Frank Pallone (Democrat-New Jersey), the E&C ranking member, Joe Pitts (Republican-Pennsylvania), chairman of the E&C Health Subcommittee, and Gene Green (Democrat-Texas), the subcommittee's ranking member, in declaring they "reached an agreement on a fully-offset 21st Century Cures package," and planned to reconvene the markup at 8:30am EDT on 21 May.</p><p>The lawmakers said details of the offsets would be made available before the markup hearing starts, as would proposed amendments, if any. </p><p>Those familiar with the biopharmaceutical industry said they were just as much in the dark as everyone else on the lawmakers' plans for coming up with the funding. <a href="http://www.scripintelligence.com/policyregulation/Source-biopharma-didnt-refuse-Cures-pay-for-no-one-asked-358307" target="_new">A week earlier</a>, a source told <i>Scrip </i>no one representing the industry had been asked to chip in on funding Cures.</p><p>Speaker of the House John Boehner (Republican-Ohio) had insisted Representatives Upton and DeGette have a plan for paying for the biomedical bill before bringing it to the full chamber for debate. </p><p>Representative Joe Barton (Republican-Texas), a former E&C chairman, who called the Cures legislation a "once in every decade bill" &ndash; what Congress would be remembered for in 10-20 years &ndash; predicted the committee vote would go smoothly. </p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 448
+
+<p>Republican and Democratic leaders of the House Energy and Commerce Committee late on 20 May said they had reached a deal on how they will pay for the expected $13bn costs of implementing the provisions in the proposed <i>21st Century Cures Act</i> (HR 6) &ndash; a bill aimed at overhauling the US biomedical enterprise, which is intended to speed up the discovery, development and approval processes for therapies, devices and diagnostics. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Offsets deal reached to fund FDA NIH Cures bill
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150515T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150515T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150515T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028784
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Offsets deal reached to fund FDA, NIH 'Cures' bill
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358438
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042349Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9d26f485-073a-4826-addc-018882e15205
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042349Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

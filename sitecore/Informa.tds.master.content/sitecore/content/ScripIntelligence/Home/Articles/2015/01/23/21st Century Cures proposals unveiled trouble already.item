@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {18C809C6-6A89-4F86-9574-31691FB82249}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/21st Century Cures proposals unveiled trouble already
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: 21st Century Cures proposals unveiled trouble already
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 02ac4727-056a-45b1-9d8e-e6d63fe16696
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 233
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{596C57D2-03CE-4CDE-A652-4F84D9CD4617}|{728904A1-7259-48E8-8256-60D002A0BFEA}|{C7FD764C-38F2-42BC-9F1A-A9864C90E18B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+'21st Century Cures' proposals unveiled; trouble already
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+21st Century Cures proposals unveiled trouble already
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9062
+
+<p>After months of hearings on Capitol Hill and "listening" sessions held throughout the US with industry, government officials, scientists and patient advocates, Representative Fred Upton (Republican-Michigan), chairman of the House Energy and Commerce Committee, finally released the draft details of a much-anticipated legislative proposal intended to accelerate the US discovery, development and delivery processes for new medical breakthroughs.</p><p>But Mr Upton did so without the backing of his Democratic partner, Representative Diana DeGette (Democrat-Colorado), who issued a statement on 27 January sharply declaring "I don't endorse the draft document" &ndash; signaling the legislation may already be in for a rough ride ahead.</p><p>Ms DeGette had been at Representative Upton's side over the past several months since they first launched the so-called 21st Century Cures Initiative together this past May, with the lawmakers insisting they were pursuing a bipartisan legislative package (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Time-to-go-big-on-cures-innovation-lawmakers-declare-351611" target="_new">5 May 2014</a>, <a href="http://www.scripintelligence.com/policyregulation/Scrip-100-Lawmakers-seek-RandD-enterprise-overhaul-for-faster-cures-353964" target="_new">16 September 2014</a>).</p><p>While she's dropped her support for the proposals as they now stand, Ms DeGette said that "with continued engagement" a bipartisan consensus may eventually be reached. </p><p>Nonetheless, her statement made it clear Representative Upton's draft was only the "possible legislative language" with "potential" proposals that "might" make it into any final bill. </p><p>"While the legislative language released today is far from perfect," Representative Upton argued it was bipartisan &ndash; including provisions authored by Republicans and Democrats, although many more from the former group than that latter.</p><p>If enacted, Mr Upton said the legislation would incorporate patient perspectives into the regulatory process and help address their unmet medical needs; build the foundation for 21st century medicine; streamline clinical trials; accelerate the discovery, development, and delivery cycle and support continued innovation at our federal public health agencies; and modernize medical product regulation.</p><p>It's unclear, however, how lawmakers plan to pay for the proposals in the package.</p><p>Some in Washington already have speculated whether the ambitious plans that have been talked about over the past several months would, in the end, simply be more unfunded mandates for the National Institutes of Health (NIH) and the FDA &ndash; whose budgets already are stretched the brink.</p><p>Indeed, even the head of the NIH, Dr Francis Collins, earlier this month acknowledged that although the E&C Committee has jurisdiction over his agency and the FDA, funding ultimately is determined by House and Senate appropriators, whose points of view may not be the same as the panel that sponsored a piece of legislation (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Path-to-cures-More-unfunded-FDA-NIH-mandates-356150" target="_new">15 January 2015</a>).</p><p>Representative Frank Pallone (Democrat-New Jersey), the E&C's ranking member, was quick to criticize Representative Upton's proposed package, declaring it "does not include any real dollars to fund additional basic research" at the NIH &ndash; something that he said goes against what both sides of the aisle had agreed was fundamental to advancing 21st century cures.</p><p>The Upton draft legislation, Mr Pallone said, "could create more problems for our health care system than it solves." </p><p>Others have speculated that with Republicans now in charge, the FDA's budget, specifically, could be reined in even tighter, with nothing to spare for new initiatives (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-spending-could-be-tightened-under-Republicans-354942" target="_new">10 November 2014</a>).</p><p>The FDA and NIH both said they were reviewing the draft legislative package, but urged lawmakers to "work in a bipartisan way to more rapidly translate scientific discoveries into therapies that will improve patient outcomes." </p><p>The Pharmaceutical Research and Manufacturers of America (PhRMA) said it also was reviewing the document.</p><p>Jim Greenwood, president and CEO of the Biotechnology Industry Organization, said many of the provisions in the draft were in line with proposals his group had recommended, including the need for a large-scale national research commitment to study precursors and signs of disease and disease risk factors for chronic conditions. </p><p>He said BIO also embraced the document's focus on precision medicine. For now, however, it includes a placeholder for such language, so it&rsquo;s unclear whether it will fall in line with an initiative President Barack Obama plans to pursue, although he, too, has yet to reveal the details of his plan (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Obama-launches-precision-medicine-initiative-details-scarce-356275" target="_new">21 January 2015</a>, <a href="http://www.scripintelligence.com/home/From-science-to-bedside-Personalized-medicines-challenge-353006" target="_new">24 July 2014</a>).</p><p>Mr Greenwood said BIO also strongly supported the provisions intended to further incentivize biomedical innovation and measures that enhanced the FDA's scientific capacity by improving access to adequate funding, recruiting world-class scientific and technical experts, and expanding management processes and human resource functions. </p><p>Mary Woolley, president and CEO of the advocacy group Research!America, of which BIO and PhRMA are members, said a measure included in the draft document that her group backed was a provision that would reduce the administrative burden on researchers. </p><p><b>What's inside?</b></p><p>Among the numerous proposals included in the nearly <a href="http://energycommerce.house.gov/sites/republicans.energycommerce.house.gov/files/114/Analysis/Cures/20150127-Cures-Discussion-Document.pdf" target="_new">400-page draft</a> "Cures" package are measures that would:</p><p>? require the FDA to establish a structured framework for the "meaningful incorporation" of <a href="http://www.scripintelligence.com/home/Patient-input-must-be-elevated-in-drug-RandD-advocates-urge-352854" target="_new">patient experience data</a> into the regulatory decision-making process, including the assessment of desired benefits and tolerable risks associated with new treatments</p><p>? require the FDA to establish a predictable, transparent process for considering, and possibly qualifying, surrogate endpoints and allow agency to use private-public partnerships to qualify other types of biomarkers</p><p>? require the FDA to use real-world evidence and issue guidance on collecting that data</p><p>? permit the FDA to approve breakthrough-designated drugs when early stage clinical data provides sufficient evidence under the current safety and efficacy standards</p><p>? support greater collaboration between industry and the FDA around adaptive trials and labeling changes to foster the development of new antibiotics; create a new <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Transferable-market-exclusivity-Antibiotics-savior-354050" target="_new">transferable exclusivity</a> program intended to spur additional investment </p><p>? require certain companies to be transparent about their expanded access programs and create an expanded access task force to provide recommendations to Congress for further reforms </p><p>? require FDA to provide more certainty about regulations of communications on social media</p><p>? allow the FDA to accept and review data summaries for added indications rather than full data packages </p><p>? provide added funds for NIH research on repurposing drugs for new uses</p><p>? permit the NIH's National Center for Advancing Translational Science more flexibility on the use of its funding</p><p>? create a "<a href="http://www.scripintelligence.com/home/Cures-get-outside-Washington-perspective-353464" target="_new">dormant therapies</a>" category for abandoned compounds and grant 15 years of protection </p><p>? extend exclusivity for two years for drugs approved under FDA's 505(b)(2) approval process that have made significant improvements to existing molecules </p><p>? create a public-private consortium to similar, but broader in scope, to Europe's Innovative Medicines Initiative</p><p>? create a commission to advise Congress on issues related to the discovery-development-delivery cycle</p><p>? require those receiving NIH grants to share their data, subject to confidentiality and trade secret protections</p><p>? require NIH to reserve part of its "Common Fund" for research conducted by "young emerging" scientists</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 453
+
+<p>After months of hearings on Capitol Hill and "listening" sessions held throughout the US with industry, government officials, scientists and patient advocates, Representative Fred Upton (Republican-Michigan), chairman of the House Energy and Commerce Committee, finally released the draft details of a much-anticipated legislative proposal intended to accelerate the US discovery, development and delivery processes for new medical breakthroughs.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+21st Century Cures proposals unveiled trouble already
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027645
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+'21st Century Cures' proposals unveiled; trouble already
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356321
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+02ac4727-056a-45b1-9d8e-e6d63fe16696
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

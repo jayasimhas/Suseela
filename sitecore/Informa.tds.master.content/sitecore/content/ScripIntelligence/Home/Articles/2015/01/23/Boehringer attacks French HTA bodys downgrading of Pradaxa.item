@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {04F15500-D18B-4991-9C8F-9D98EDA49740}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Boehringer attacks French HTA bodys downgrading of Pradaxa
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Boehringer attacks French HTA bodys downgrading of Pradaxa
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 34da571b-081d-4d5e-bc03-977761be0fa4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Boehringer attacks French HTA body's downgrading of Pradaxa
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Boehringer attacks French HTA bodys downgrading of Pradaxa
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6085
+
+<p>Following a review of the novel oral anticoagulants (NOACs) in the prevention of stroke and systemic embolism, France's health technology assessment body (HAS) has downgraded the "medical benefit" rating (SMR) of Boehringer Ingelheim's Pradaxa (dabigatran etexilate) from "important" to "moderate". </p><p>However, the HAS's evaluation body, the transparency committee, decided to retain the "important" SMR rating for Pradaxa's two main competitors, Bristol-Myers Squibb's Eliquis (apixaban) and Bayer Healthcare's Xarelto (rivaroxaban). Drugs with an "important" rating are reimbursed at 65%, while a "moderate" label merits only 30%.</p><p>Boehringer Ingelheim France said it did not know why the committee had taken this stance, and demanded an "immediate re-examination" of the decision. A spokesman for the firm, Thomas Borel, said the decision to single out Pradaxa was unprecedented and that the company was "looking at all possible means" of getting the committee to reconsider.</p><p>The transparency committee carried out its review at the request of the health ministry, which wanted an opinion on whether the reimbursement conditions for the drugs needed to be changed in terms of their role in preventing stroke and systemic embolism, particularly compared with vitamin K antagonists (ie warfarin). </p><p>The three products were launched in 2008 for the prevention of venous thromboembolism in hip and knee surgery, and their indications were broadened in 2011 and 2012 to include the prevention of stroke and systemic embolism in adults with non-valvular atrial fibrillation and one or more associated vascular risk factors. Their mechanisms of action differ: Pradaxa is a direct thrombin inhibitor while Eliquis and Xarelto are direct inhibitors of Factor Xa.</p><p>Initially, the committee said, all three products had been considered to have an "important" SMR in preventing stroke and systemic embolism, but subsequent data from pivotal trials, observational studies and meta-analyses led it to conclude that while the ratings of Eliquis and Xarelto remained "important", that of Pradaxa was now deemed to be only "moderate". </p><p>As for the improvement in medical benefit (ASMR) represented by the three products compared with the reference treatment (warfarin), it said the ASMR of Eliquis was "minor" but that there was "no improvement in medical benefit" where Pradaxa and Xarelto were concerned. </p><p>Given the lack of an antidote for the products and the difficulty of measuring the degree of anticoagulation in practice, it said that all three drugs should be used only as second-line treatments, for example where therapy with warfarin did not produce the desired effect or was contraindicated or not tolerated.</p><h2>BI responds</h2><p>Boehringer Ingelheim said Pradaxa offered an important medical benefit in preventing stroke in patients with atrial fibrillation, and that since its launch seven years ago it had achieved more than 3.5 million patient years of use in all its authorized indications across the world. "The favourable benefit-risk of Pradaxa is regularly confirmed by studies in real conditions of use," it declared.</p><p>It noted that in October the US FDA published a study based on a Medicare database that "confirmed the favourable tolerance and efficacy profile of the product, consistent with the results of the RE-LY registration study". RE-LY, described in a report by BI as "the largest ever atrial fibrillation outcomes study ever completed", showed that in patients with AF, dabigatran etexilate 150mg significantly reduced the risk of stroke or systemic embolism by 34% compared with warfarin, with a 60% reduction in intracranial bleeding. </p><p>Last July, the company continued, the French regulator ANSM and the national insurance agency CNAMTS "also confirmed the favourable benefit-risk profile of the NOACs, by analyzing the health insurance database (SNIIRAM) and PMSI hospitalization data".</p><p>Mr Borel said France was the only European country to have made such a distinction between Pradaxa and the other two products. While in principle the downgrading of its SMR rating meant its reimbursement level would fall from 65% to 30%, in practice the product was in many cases being taken by patients under the "long-term conditions" rules and so was eligible for full reimbursement, he noted. But the downgrading of Pradaxa could have an effect on doctors' prescribing of the product "in a very competitive sector".</p><p>He said the company was free to go to the committee with new data and ask for a re-evaluation of the product, noting that new studies are now being conducted with Pradaxa in France that should provide data for such a re-evaluation. "We will do all we can to get the transparency committee to reconsider," Mr Borel declared. </p><p>The committee is in fact planning to review the products again in a year's time, taking into account observational studies as well as any modifications to the therapeutic strategy. </p><p>In the meantime, the company said it was continuing the international clinical development program for Pradaxa, including the RE-SPECT ESUS (in comparison with aspirin in preventing stroke recurrence), RE-DUAL PCI, GLORIA (Global Registry on Long-Term Oral Antithrombotic Treatment in Patients with Atrial Fibrillation) and RE-CIRCUIT trials.</p><p>Another factor that could help Boehringer's case before the French committee &ndash; whose concerns included the lack of an antidote to Pradaxa &ndash; is that the company is developing a fully humanized antibody, idarucizumab, which in a Phase I study showed "immediate, complete and sustained reversal" of dagibatran-induced coagulation. </p><p>Designated a "breakthrough therapy by the FDA last year (<a href="http://www.scripintelligence.com/policyregulation/Boehringers-Pradaxa-antidote-idarucizumab-deemed-breakthrough-by-FDA-352537" target="_new">scripintelligence.com</a>, 26 June 2014), idarucizumab is in a global Phase III study (RE-VERSE AD) that began in 2014 and involves sites in Europe and the US. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 306
+
+<p>Following a review of the novel oral anticoagulants (NOACs) in the prevention of stroke and systemic embolism, France's health technology assessment body (HAS) has downgraded the "medical benefit" rating (SMR) of Boehringer Ingelheim's Pradaxa (dabigatran etexilate) from "important" to "moderate". </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Boehringer attacks French HTA bodys downgrading of Pradaxa
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027651
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Boehringer attacks French HTA body's downgrading of Pradaxa
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356331
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042241Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+34da571b-081d-4d5e-bc03-977761be0fa4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042241Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

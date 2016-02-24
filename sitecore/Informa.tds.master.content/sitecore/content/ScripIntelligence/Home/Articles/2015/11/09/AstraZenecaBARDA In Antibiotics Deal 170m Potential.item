@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {47A97672-2F64-47C3-81C7-6FDE0394BD27}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/09/AstraZenecaBARDA In Antibiotics Deal 170m Potential
+parent: {38487DA6-20C9-4C4C-B736-2808B0CBC09B}
+name: AstraZenecaBARDA In Antibiotics Deal 170m Potential
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 55820342-0ae4-43e7-9c44-6e3ed7583b79
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+AstraZeneca/BARDA In Antibiotics Deal; $170m Potential 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+AstraZenecaBARDA In Antibiotics Deal 170m Potential
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3504
+
+<p>AstraZeneca has entered into a public-private partnership with the U.S. Biomedical Advanced Research and Development Authority (BARDA) to develop new antibacterials intended to address biothreat pathogens, in addition to antibiotic resistance, under a "portfolio" approach, which will allow the U.S. government funds to be steered away from a product that proves to be unsuccessful early on in the R&D process to other promising candidates.</p><p>BARDA is providing $50m to AstraZeneca, which could potentially garner up to $170m under the collaboration, in which the U.S. government agency is using the so-called "Other Transaction Authority" granted under the Pandemic and All-Hazards Preparedness Act of 2006. </p><p>The investment strategy agreement is the second public-private partnership of its kinds &ndash; with GlaxoSmithKline snagging the first in <a href="http://www.scripintelligence.com/home/GSK-BARDA-antibiotic-pact-1st-biothreat-portfolio-response-343456" target="_new">May 2013</a>.</p><p>BARDA noted that it typically supports development of individual products. </p><p>But the agency said supporting the development of multiple drug candidates would increase the likelihood that one or more would advance to the level at which a company could apply for FDA approval. </p><p>The partnership allows for the antibiotics developed under the agreement to become available in the commercial marketplace, which would diminish the U.S. federal government's need to stockpile the products for biodefense and would reduce long-term costs for taxpayers, BARDA said.</p><p>BARDA and AstraZeneca will manage and fund the portfolio over the next five years together. During joint annual portfolio reviews, the agency and the company are expected to determine which drug candidates move in or out of the portfolio, based on technical and financial considerations and each candidate's development progress. </p><p>BARDA noted that the first drug candidate in the portfolio combines two antibiotics &ndash; Aztreonam and Avibactam, known together as ATM-AVI, which is being developed to treat Gram-negative infections for which there currently are limited treatment options. </p><p>Under the agreement, AstraZeneca is expected to conduct studies evaluating ATM-AVI and other antibiotic candidates for use in treating illnesses caused by deadly bioterrorism threats, such as meliodosis, glanders and plague.</p><p>BARDA noted the drug already is in Phase II study, which is being supported by the European Union's Innovative Medicines Initiative (IMI), a partnership between the European Union and the European pharmaceutical industry, under a project called COMBACTE-CARE. </p><p>The IMI will join BARDA and AstraZeneca in funding additional clinical studies needed to apply for regulatory approval of ATM-AVI, the U.S. agency said, noting that the <i>National Action Plan for Combating Antibiotic-Resistant Bacteria</i>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Obama-superbug-attack-plan-hinges-on-funding-cooperation-357553" target="_new">released by the White House in March</a>, called for establishing international collaborations and public-private partnerships to incentivize the development of new therapeutics to counter antibiotic resistance. </p><p>The plan also called for BARDA to create at least one additional portfolio partnership with a biopharmaceutical company by March 2016 to accelerate development of new antibacterial drugs.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 447
+
+<p>AstraZeneca has entered into a public-private partnership with the U.S. Biomedical Advanced Research and Development Authority (BARDA) to develop new antibacterials intended to address biothreat pathogens, in addition to antibiotic resistance, under a "portfolio" approach, which will allow the U.S. government funds to be steered away from a product that proves to be unsuccessful early on in the R&D process to other promising candidates.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+AstraZenecaBARDA In Antibiotics Deal 170m Potential
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151109T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151109T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151109T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029786
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+AstraZeneca/BARDA In Antibiotics Deal; $170m Potential 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199100408
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360402
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+55820342-0ae4-43e7-9c44-6e3ed7583b79
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

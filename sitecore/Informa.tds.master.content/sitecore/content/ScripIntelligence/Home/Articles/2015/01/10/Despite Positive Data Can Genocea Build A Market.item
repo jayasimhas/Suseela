@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {35A13B40-0170-42B1-8A2D-58ECA1E43F70}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/10/Despite Positive Data Can Genocea Build A Market
+parent: {12A33660-1AE1-4C03-B8A3-D2F6FB93E8A2}
+name: Despite Positive Data Can Genocea Build A Market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b111ec7a-c011-4751-b7f0-977b48eda595
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{728904A1-7259-48E8-8256-60D002A0BFEA}|{C7FD764C-38F2-42BC-9F1A-A9864C90E18B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Despite Positive Data, Can Genocea Build A Market?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+Despite Positive Data Can Genocea Build A Market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3560
+
+<p>Genocea Biosciences is one step closer to moving its lead candidate into Phase III, but despite positive results, there may not be a strong market for the drug. Unlike the buzz around immunotherapies in oncology, Genocea has not been able to harness that excitement for its non-cancer immunotherapy. </p><p>The Massachusetts biotech announced Oct. 7 that it has achieved statically significant results in its primary endpoint six months after administration for GEN-003 in a Phase II trial. GEN-003 is a therapeutic T-cell-directed vaccine against HSV-2, or genital herpes. The drug is meant to reduce viral shedding &ndash; defined as when the active virus rises to the surface of the skin and becomes contagious at the site of infection, the primary endpoint of the study. The trial also aimed to reduce herpes lesions, a secondary endpoint. </p><p>Genocea said GEN-003 showed a 58% reduction in viral shedding compared to baseline and demonstrated sustained and statistically significant reductions of skin lesions from baseline in five of six dose groups ranging from 43% to 69%. Approximately 30% to 50% of patients were lesion-free at six months after administration. The therapeutic vaccine continues to be safe in patients. </p><p>The biotech will present the rest of the results on Oct. 9 at IDWeek 2015.</p><p>Genital herpes affects 400m people worldwide and is characterized by painful skin lesions. According to the CDC, one in six people in the US have genital herpes. Yet, about 80% of those people infected have no idea they have herpes and have never experienced any signs or symptoms of the infection. This is because the herpes virus lays dormant in most people and is only active during periods of viral shedding &ndash; for the majority of people infected there are no symptoms during this time. Therefore, this increases the risk of transmitting the infection to others. </p><p>What all this data means is that while genital herpes appears to be a large market, you can't treat people who don&rsquo;t know they have the virus. Beyond that, there has been little push to educate people about testing because a large majority of people infected never experience symptoms &ndash; why treat something that most patients and physicians consider medically irrelevant?</p><p>Analysts have estimated that GEN-003 could have peak sales of $1bn, but these estimates are made under the assumption that people know they have the infection and furthermore, want to be treated. </p><p>Currently, there is only one therapy on the market for the treatment of genital herpes &ndash; GlaxoSmithKline's Valtrex (valaciclovir), which is used on an as-needed basis to reduce the length and severity of outbreaks. Valtrex is available as a cheap generic and brought in about $254m in sales for GSK in 2014. </p><p>Genocea's stock price jumped up about 7% to trade at $6.35 on the positive data, but the company's stock is still trading well below its IPO price of $12 and its 52-week high of $16.18 per share. Unlike many of its counterparts that are leveraging their immunotherapies for oncology treatments and have shown a strong showing on the stock market, Genocea had had a lukewarm reception from Wall Street &ndash; the biotech priced its IPO at the low end of its range and has consistently traded below that price. </p><p>Some investors have been concerned that GEN-003 may not show as high a reduction in skin legions as they'd like to see, but the real concern should be about whether there is really an unmet medical need in this area. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 307
+
+<p>Genocea Biosciences is one step closer to moving its lead candidate into Phase III, but despite positive results, there may not be a strong market for the drug. Unlike the buzz around immunotherapies in oncology, Genocea has not been able to harness that excitement for its non-cancer immunotherapy. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Despite Positive Data Can Genocea Build A Market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150110T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150110T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150110T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029985
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Despite Positive Data, Can Genocea Build A Market?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360774
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b111ec7a-c011-4751-b7f0-977b48eda595
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

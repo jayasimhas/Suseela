@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F804CFA5-0E7E-4E9D-A4F4-E51A1A020583}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/03/Valeant ups offer for Salix Endo throws in the towel
+parent: {9A22D265-E46B-490A-8BDC-BA644F0271DB}
+name: Valeant ups offer for Salix Endo throws in the towel
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4447bedc-7f3f-4f66-adda-64c9d9b6d7cb
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{70A92E18-3EE1-4D60-9641-56EAD784405E}|{C547E0DE-05E0-4671-8C7A-37F0D3DF4F0E}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Valeant ups offer for Salix, Endo throws in the towel
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Valeant ups offer for Salix Endo throws in the towel
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4539
+
+<p>Valeant Pharmaceuticals has agreed an increased all-cash offer price for Salix Pharmaceuticals of $173 per share, up from its earlier $158 offer, prompting Endo International to pull out of the bidding war for the gastro-intestinal products specialist.</p><p>Months of rumors were <a href="http://www.scripintelligence.com/home/Valeant-confirms-10.1bn-acquisition-deal-for-Salix-356886" target="_new">confirmed on 22 February</a> when Valeant Pharmaceuticals announced it had reached an agreement to acquire Salix for $158 per share in cash, or $10.1bn in total. The deal gave Salix a total enterprise value (i.e., factoring in debt/cash and equivalents and preferred stock) of $14.5bn.</p><p>Just over two weeks later, Endo <a href="http://www.scripintelligence.com/home/Endo-one-ups-Valeant-with-11.2bn-bid-for-Salix-357237" target="_new">tried its best to gazump the deal</a>, sending Salix a $175 per share offer. Endo's bid gave shareholders $45 in cash and 1.4607 Endo shares per outstanding Salix share (compared with Valeant's all-cash offer). The corresponding deal was valued at $11.2bn.</p><p>Raleigh, North Carolina-based Salix said it would "carefully review and consider the proposal and pursue the course of action that it believes is in the best interest of the company's stockholders."</p><p>Following the latest amendment, Valeant says the total enterprise value now stands at $15.8bn, and provides an additional $1bn in cash consideration to Salix stockholders, and represents an increase of 9.49% and 43.9%, respectively, over the original offer price of $158 per share and the unaffected price of Salix common stock on 16 January of $120.19. </p><p>Shortly after Valeant made its announcement, Endo confirmed it was withdrawing its proposal. "While we are disappointed with this outcome, we have been and will continue to be disciplined in our approach to potential acquisitions," said a company statement. "As a next step, Endo is focusing our attention on other opportunities in our robust deal pipeline and on maximizing our organic growth initiatives including progressing our R&D pipeline."</p><p>Late last year, Salix had to admit it was <a href="http://www.scripintelligence.com/business/Salix-sinks-as-audit-admission-hurts-MandA-potential-354915" target="_new">auditing its unusually high inventory levels</a> and it promptly lost its CFO. The start of this year saw its CEO Carolyn Logan retire, with chair Mr D'Alonzo stepping in. Salix's audit committee then said it would <a href="http://www.scripintelligence.com/business/Salix-to-restate-201314-results-356445" target="_new">restate financials for 2013</a> and the first nine months of 2014.</p><p>Valeant has drawn up plans to reduce excess inventory more aggressively than Salix had initially intended. It also expects to cut $500m from the combined company's costs within six months with "R&D rationalization" as a key route to achieving these synergies, along with reductions in corporate overheads. However, it plans to retain Salix's 500-strong specialty sales force. </p><h2>Details</h2><p>Thomas D'Alonzo, chairman and acting CEO of Salix, said he was "pleased" that the enhanced offer price from Valeant "recognizes the value of Salix as the leading gastrointestinal specialty pharmaceutical company and delivers to our stockholders all cash consideration in the near future." </p><p>As previously announced, if the minimum tender condition is met on 31 March, Valeant expects to close the transaction on 1 April. If all of the conditions to the tender offer have not been satisfied by 8 April, the offer price will drop back to $158 per share. </p><p>Owing to the increased offer, the termination fee payable by Salix to Valeant now stands at $100m and the outside date after which either company may terminate the transaction has been moved from 20 August to 1 May. The amendment has been approved by the boards of both companies.</p><p>"We continue to be very excited about the combination of our two companies and we are committed to getting this deal done," said J. Michael Pearson, chairman and CEO of Valeant. "By offering a significant premium with a 100% cash offer, eliminating market and company equity risk that could arise from other non-cash offers with a 4+ month closing timeline, our new arrangement creates significant shareholder value for Salix."</p><p><p><b>Related story</b></p><p><a href="http://www.scripintelligence.com/home/Stockwatch-The-Salix-lessons-357021" target="_new">Stockwatch: The Salix lessons</a></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 259
+
+<p>Valeant Pharmaceuticals has agreed an increased all-cash offer price for Salix Pharmaceuticals of $173 per share, up from its earlier $158 offer, prompting Endo International to pull out of the bidding war for the gastro-intestinal products specialist.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Valeant ups offer for Salix Endo throws in the towel
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151103T113056
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151103T113056
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151103T113056
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028124
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Valeant ups offer for Salix, Endo throws in the towel
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357220
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4447bedc-7f3f-4f66-adda-64c9d9b6d7cb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

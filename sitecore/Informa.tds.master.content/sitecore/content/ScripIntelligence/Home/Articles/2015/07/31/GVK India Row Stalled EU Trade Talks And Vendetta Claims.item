@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {8E0BE5FF-6A55-40F8-ADE9-2E552C697F5B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/31/GVK India Row Stalled EU Trade Talks And Vendetta Claims
+parent: {41EBBC65-C73D-4320-B22C-6EBD0BE8A7D8}
+name: GVK India Row Stalled EU Trade Talks And Vendetta Claims
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1027079b-3d41-459e-b0a0-7eaaf9e86136
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 64
+
+ GVK India Row: Stalled EU Trade Talks And ''Vendetta'' Claims  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+GVK India Row Stalled EU Trade Talks And Vendetta Claims
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8131
+
+<p> The escalating controversy around the Indian contract research organization (CRO), GVK Biosciences, appears to have more layers to it than just flawed electrocardiogram (ECG) data flagged up by the French regulator. </p><p> Allegations of vendetta and possibly bruised egos, inadequate &quot;scientific discussion&quot; around the issue alongside some evidence that potentially backs the CRO are now being bandied around industry circles, though clearly not everyone is backing GVK. </p><p> That the issue has become heated is evidenced by the Indian government's apparently unprecedented move announcing that it has decided to defer the proposed talks between the chief negotiators on the India-EU Broadbased Investment and Trade Agreement (EU-BTIA) for the present, given the goings-on in the GVK case. </p><p> &quot;This decision has been taken as the Government of India is disappointed and concerned by the action of EU in imposing legally binding ban on the sale of around 700 pharma products clinically tested by GVK Biosciences, Hyderabad,&quot; an official government statement said. </p><p> The Indian government said that it had engaged on the issue with various EU regulators over past eight months. Industry experts have indicated to <i>Scrip</i> that Indian embassies across Europe have been involved in such efforts but to no avail. </p><p> A government statement noted that the pharmaceutical industry is one of India's flagship sectors and has developed its reputation through &quot;strong research and safety protocols&quot; over the years. </p><p> &quot;Government of India will examine all options in this regard. It is pertinent to mention that most of these drugs are already in EU market for many years without any adverse pharmaco-vigilance report from any member state.&quot; </p><p> An Indian government official was earlier reported to have indicated that the country was ready to consider &quot;commercial and legal&quot; <a href="http://www.scripintelligence.com/home/India-questions-EU-data-integrity-charge-against-GVK-Bio-357668" target="_new">action</a> against the EU, the latter involving hauling the EU to the World Trade Organization, over the GVK issue. </p><h2> Allegations </h2><p> There are now indications that the Indian government's strong backing of GVK may also have to do with some evidence, most of which may have been shared with EU regulators, that allegedly alludes to the fact that there may have been more at play when the French medicines agency ANSM flawed the GVK studies in the first place. </p><p> While no one seems willing to go on record on the events in the run-up to the ANSM decision and thereafter, allegations of &quot;vengeance&quot; backed by some support locally, has been doing the rounds. </p><p> Other evidence furnished apparently includes opinions of multiple cardiologists, including some international experts, which suggest that it is not possible to conclusively conclude that the ECGs had been manipulated. Also almost parallel investigations from other European regulators didn't seem to pick up any major signals of good clinical practice (GCP) deviations, it is alleged. </p><p> <i>Scrip</i> could, however, not directly access documentary evidence to substantiate these allegations or claims. </p><p> While a comment from the ANSM on the allegations could not immediately be got, the French agency had earlier raised concerns about the reliability of studies conducted at GVK's Hyderabad site between 2008 and 2014. </p><p> ANSM cited &quot;critical deficiencies&quot; in GVK's quality system, specifically evidence of systematic manipulation of electrocardiogram records during nine generic medicine studies over a period of at least five years. </p><p> Last month the European Commission <a href="http://www.scripintelligence.com/home/EU-confirms-suspension-of-700-products-hit-by-Indian-CRO-issues-359668" target="_new">confirmed the suspension</a> of certain products linked to the GVK issue. Around 700 generic drugs will no longer be available in Europe from Aug. 21 after the EC affirmed the suspension in view of the data manipulation concerns. </p><p> On Aug. 4, the UK MHRA enforced the EC decision to suspend medicines for which authorisation based on clinical studies conducted at GVK. It, though, said that certain products necessary to maintain continuity of supplies and those non-critical products for which further data in support of the marketing authorisation has been provided, had not been suspended at this time. </p><p> GVK, which has all along claimed that its processes were rigorous and the actions of European agencies &quot;unprecedented and highly disproportional&quot;, had earlier told <i>Scrip</i> that while it respected the foreign regulator&rsquo;s views, it was important to consider that the check-out ECGs had no bearing on the study outcome or the bio-equivalence of the drugs being tested (as stated by ANSM) and that there was &quot;never any question&quot; about the safety or efficacy of the drugs (also stated by the EMA). </p><p> &quot;The ANSM itself stated that the findings at the Hyderabad clinical facility should not be extrapolated, yet the EMA decided to extrapolate and went on to recommend suspension of over 700 marketing authorizations,&rdquo; <a href="http://www.scripintelligence.com/home/Indian-CRO-segment-in-throes-of-a-shakeout-356762" target="_new">GVK Bio</a>, then told <i>Scrip</i>. </p><h2> Industry reactions </h2><p> The industry in India, though, appeared divided over the government's action to stall trade talks. Some have also sought to liken the situation to when in the past <a href="http://www.scripintelligence.com/policyregulation/More-Indian-drugs-detained-in-EU-as-FTA-talks-progress-ahead-of-Feb-10-summit-325555" target="_new">transiting Indian generics</a> were allegedly unfairly targeted in Europe over concerns of intellectual property-related violations. </p><p> Dilip Shah, secretary general of the Indian Pharmaceutical Alliance, said that government had given a befitting reply to the EU, given that evidence around the case has been generally weak. </p><p> He referred to how the extrapolation of the study findings was not right and that the drug inspector concerned was perhaps not competent enough to read ECGs. </p><p> &quot;If the ban goes through, competition in the EU will be compromised,&quot; Mr Shah told <i>Scrip</i>. </p><p> Others, though, faulted the Indian government for linking the EU-BTIA issue with the EU's regulatory action against GVK. </p><p> &quot;These are two separate issues. While EU's action against GVK prima facie appears rather harsh, its resolution should be left to experts and not to bureaucrats,&quot; an official with wide ranging experience in foreign firms told <i>Scrip</i>. </p><p> The official also said that while the ECG is an &quot;important aid&quot; in diagnosis of cardiac disease and its examination in many hospitals is routinely carried out by trained ECG technicians, its limitations are well recognised by the medical profession. </p><p> &quot;Hence the data should be evaluated in the light of careful clinical examination and therefore should be left to a qualified cardiologist. If this is not done in the investigation, it creates a question mark about the quality of the investigation process,&quot; the official said. </p><p> An expert with a CRO, though, suggested that it's unclear how far the issue would go and whether the current action was meant to defer the ban on GVK-linked products to get back to negotiations. He also wondered whether the Indian government would now back other aggrieved players, who may have regulatory issues. </p><p> Critically, the expert also underscored that it was important to realise that regulatory inspectors are well trained at spotting discrepancies, data integrity issues as also how recordings are made. </p><p> &quot;They are not meant to be diagnosing ECGs; they are trained to suspect everything and then assess. Their jobs involve probing,&quot; the official added, citing instances of clear audits in the case of several other Indian CROs. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 224
+
+<p> The escalating controversy around the Indian contract research organization (CRO), GVK Biosciences, appears to have more layers to it than just flawed electrocardiogram (ECG) data flagged up by the French regulator. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+GVK India Row Stalled EU Trade Talks And Vendetta Claims
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150731T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150731T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150731T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029442
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 64
+
+ GVK India Row: Stalled EU Trade Talks And ''Vendetta'' Claims  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359711
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1027079b-3d41-459e-b0a0-7eaaf9e86136
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

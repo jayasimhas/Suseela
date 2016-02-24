@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {B98A5D4B-74D3-4AD7-8E4B-FB43A76609BA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/28/US site closures as Takeda restructures vaccines business
+parent: {13587B21-C2AC-45A3-9B37-20A4DC43DB48}
+name: US site closures as Takeda restructures vaccines business
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c66dab22-5845-4d3c-a888-83696202b226
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+US site closures as Takeda restructures vaccines business
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+US site closures as Takeda restructures vaccines business
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3703
+
+<p>A fundamental restructuring of Takeda Pharmaceutical's vaccines operations will see the closure of three sites in the US as it consolidates operations in this market in the Boston area as part of a revised global network for the unit.</p><p>Takeda is implementing a major restructuring of its global vaccine business unit (VBU), which will involve the closure of three sites in the US that came to the company from acquisitions in the sector over the past few years.</p><p>A site in Bozeman, Montana acquired through the 2012 purchase of LigoCyte Pharmaceuticals and two others in Madison, Wisconsin and Fort Collins in Colorado from the 2013 acquisition of Inviragen will be shut down.</p><p>The Deerfield, Illinois global headquarters of the VBU will be relocated to the Boston/Cambridge area in Massachusetts in the US, where Takeda is already expanding its sites around the former Millennium operations.</p><p>All of the changes are due to be fully completed within the next two years, Takeda said.</p><p>The company's Tokyo headquarters told <i>Scrip</i>'s sister publication <i>PharmAsia News</i> that the purpose of the restructuring was not to cut costs or jobs, but did concede that some people would be unable to relocate as part of the US changes.</p><p>It did not disclose the likely number of people to be affected or any cost savings associated with the move. At the time of their acquisition, LigoCyte employed around 40 and Inviragen roughly 50 people.</p><p>The VBU, headed by Dr. Ranjeev Venkayya, will thereafter have a series of regional and global hubs based in Boston/Cambridge, Zurich in Switzerland (Europe) and Singapore (Asia). The last of these sites was repositioned as a new hub for the VBU in February.</p><p>The unit also comprises an ongoing site in Brazil and will continue to run manufacturing facilities in Hikari, Japan, Durham, North Carolina and Singen in Germany.</p><h2>'fully committed'</h2><p>Dr Venkeyya stressed in a statement that Takeda "remains fully committed to the development of innovative vaccines" and its research portfolio, which was bolstered by the LigoCyte and Inviragen acquisitions and includes candidates for norovirus dengue and seasonal flu.</p><p>"This consolidation will help us to achieve the efficiency and operational excellence needed to execute the Phase III clinical programs and set the stage for global commercialization of these vaccines," he said.</p><p>A norovirus vaccine TAK-214 (ex-LigoCyte) and a tetravalent dengue vaccine TAK-003 (ex-Inviragen) are both in Phase II. Takeda's pipeline also includes the flu A/B vaccine TAK-850 in Phase I/II in Japan (licensed from Baxter International Inc.), and an ex-Inviragen EV71 vaccine for hand, foot and mouth disease, TAK-021, in Phase I. It is awaiting Japanese approval of a Haemophilus influenzae type B vaccine TAK-816 licensed from GlaxoSmithKline PLC.</p><p>Takeda dropped a combined diphteria-tetanus-acellular pertussis and Sabin inactivated poliovirus vaccine in Phase II trials in Japan earlier this year as it refocused its priorities.</p><p>The Japanese firm already has an established vaccines business in its home market, but set up a dedicated division in early 2012 to expand its portfolio and focus mainly on products for developed world disorders and unmet needs.</p><p><p>Takeda is aiming to save a cumulative total of at least JPY120bn ($970m) under its ongoing "Project Summit" cost reduction initiative, which is running from fiscal 2013-17.</p><p>This article was also published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/4/29/takeda-offers-24bn-nofault-settlement-of-actos-suits" target="_new">PharmAsia News</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 241
+
+<p>A fundamental restructuring of Takeda Pharmaceutical's vaccines operations will see the closure of three sites in the US as it consolidates operations in this market in the Boston area as part of a revised global network for the unit.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+US site closures as Takeda restructures vaccines business
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150528T160001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150528T160001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150528T160001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028898
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+US site closures as Takeda restructures vaccines business
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358636
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c66dab22-5845-4d3c-a888-83696202b226
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

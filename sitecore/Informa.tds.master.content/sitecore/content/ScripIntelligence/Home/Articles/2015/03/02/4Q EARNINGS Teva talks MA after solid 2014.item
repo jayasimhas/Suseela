@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {A6CB0DB8-1ED7-4ADD-B3A0-8113E88284D2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/02/4Q EARNINGS Teva talks MA after solid 2014
+parent: {B4009754-6EC4-476C-B8C2-03A5771200E2}
+name: 4Q EARNINGS Teva talks MA after solid 2014
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6cb60af0-34a2-49a4-9763-f08c19bc3ba0
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+4Q EARNINGS: Teva talks M&A after solid 2014
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+4Q EARNINGS Teva talks MA after solid 2014
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4259
+
+<p>With a solid set of results delivered for 2014, Teva has outlined its 2015 strategy, including plans to return to acquisition mode.</p><p>CEO Erez Vigodman talked on the company's conference call about shifting towards "inorganic moves which support our business model evolution." He said that the company would consider all options: "We don't want to rule out any possibility in the business development landscape. We prefer not to go hostile, but we don't want to rule out any possibility. We'll do whatever is needed in order to go for transactions that will enable us first to generate and unlock value for our shareholders."</p><p>2014, he said, was a year of establishing a solid foundation from which to grow in the coming years. The company emphasized that it had freed up a lot of cash flow, stating that is has $2.6bn in cash, and said it was ready to take "bold steps forward" to position Teva for "sustainable, profitable growth." </p><p>Analysts expect that Teva will make large-ticket purchases. Leerink said: "We estimate Teva could lever up and do one or more deals in the $10bn-15bn range which could help diversify the business away from Copaxone (glatiramer acetate), which still accounts for a disproportionately high share of earnings." Goldman Sachs also stated that it expected Teva to do "larger transactions" as opposed to bolt-ons.</p><p>The company's inorganic growth moves are likely to focus on complex generics, specialty assets in core therapeutic areas, specialty pipeline assets or portfolios in core therapeutic areas, and possibly health solution technologies and services. Michael R Hayden, president of Global R&D and chief scientific officer, said, "Around 35% of our pipeline [is] complex generics in the US and also in Europe. This is going to be about 75% in 2015. So it's a major investment and a major commitment to specific products in the complex generic space."</p><p>Sigurdur Oli Olafsson, CEO & president of Teva's Global Generic Medicines Group, also mentioned biosimilars, saying, "We have a few products in Phase II. We would love to have more; we are exploring the opportunities."</p><h2>Other plans for 2015</h2><p>In addition to M&A, Teva also outlined plans for organic growth. Mr Vigodman laid out a number of clear priorities for the business in 2015, including:</p><ul><li>Generating $500m in net cost reductions;</li><li>Solidify the Generic business, improve its profitability and drive organic growth;</li><li>Maintain the Copaxone franchise and manage the lifecycle of key specialty products;</li><li>Deliver on the potential in the Specialty pipeline.</li></ul><p>Regarding the Specialty franchise, Mr Vigodman highlighted four upcoming approvals, as well as several clinical milestones. The company hopes to win approval for asthma drug ProAir MDPI, and its extended release abuse deterrent hydrocodone in the US; and Copaxone 40mg three times a week, and contraceptive Seasonique (ethinyl estradiol and levonorgestrel) in Europe. The company will also submit asthma drug resilizumab; and expects data from a Phase II trial of LBR 101 for migraine, and a Phase II/III trial of pridopidine in Huntington's disease.</p><table><h2>2014 financials</h2><tbody><tr><td><p>&nbsp;</td><td><p>2014 </p>&nbsp;</td><td><p>2013 </p>&nbsp;</td><td><p>% change</p>&nbsp;</td></tr><tr><td><p>Revenue</p>&nbsp;</td><td><p>$20.27bn</p>&nbsp;</td><td><p>$20.31bn</p>&nbsp;</td><td><p>-0.2</p>&nbsp;</td></tr><tr><td><p>Gross profit</p>&nbsp;</td><td><p>$11.06bn</p>&nbsp;</td><td><p>$10.71bn</p>&nbsp;</td><td><p>3.2</p>&nbsp;</td></tr><tr><td><p>Net income</p>&nbsp;</td><td><p>$3.06bn</p>&nbsp;</td><td><p>$1.27bn</p>&nbsp;</td><td><p>141</p>&nbsp;</td></tr><tr><td><p>Non-GAAP net income</p>&nbsp;</td><td><p>$4.35bn</p>&nbsp;</td><td><p>$4.26bn</p>&nbsp;</td><td><p>2.1</p>&nbsp;</td></tr><tr><td><p>Earnings per share</p>&nbsp;</td><td><p>$3.56</p>&nbsp;</td><td><p>$1.49</p>&nbsp;</td><td><p>139</p>&nbsp;</td></tr><tr><td><p>Non-GAAP earnings per share</p>&nbsp;</td><td><p>$5.07</p>&nbsp;</td><td><p>$5.01</p>&nbsp;</td><td><p>1.2</p>&nbsp;</td></tr><tr><td><p>Copaxone revenues</p>&nbsp;</td><td><p>$4.24bn</p>&nbsp;</td><td><p>$4.33bn</p>&nbsp;</td><td><p>-2</p>&nbsp;</td></tr></tbody></table><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 138
+
+<p>With a solid set of results delivered for 2014, Teva has outlined its 2015 strategy, including plans to return to acquisition mode.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+4Q EARNINGS Teva talks MA after solid 2014
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150302T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150302T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150302T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027752
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+4Q EARNINGS: Teva talks M&A after solid 2014
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356516
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042248Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6cb60af0-34a2-49a4-9763-f08c19bc3ba0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042248Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

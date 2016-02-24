@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {F39BBED0-0798-44B3-8D10-A72DF41734B0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/27/Baxter acquires SuppreMol for innovative approach to autoimmune disease
+parent: {8E71AD2E-3D59-4E74-B732-B3CC0A62D38F}
+name: Baxter acquires SuppreMol for innovative approach to autoimmune disease
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 68766699-3018-40e7-87b5-b71c3ab44855
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+Baxter acquires SuppreMol for innovative approach to autoimmune disease
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 71
+
+Baxter acquires SuppreMol for innovative approach to autoimmune disease
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3891
+
+<p>Baxter's Bioscience Business has acquired SuppreMol for &euro;200m in what the privately-held German firm's CEO called "a good day for both companies." </p><p>SuppreMol is developing treatments for autoimmune and allergic diseases in an approach focused on Fc&#947; (gamma) receptors (Fc&#947;Rs). Fc&#947;Rs play a pivotal role in mounting and controlling the antibody-mediated immune response. </p><p>SuppreMol's pipeline includes lead candidate SM101, a soluble Fc&#947;R subtype called Fc&#947;RIIB which is the only Fc&#947;R that has an inhibitory effect on the humoral immune response, mounted in instances such as that found in autoimmune disease. SM101 has completed Phase IIa studies in idiopathic thrombocytopenic purpura (ITP) and systemic lupus erythematosus (SLE). SM101's Phase IIa data, presented during the American College of Rheumatology's 2014 annual meeting, showed a dose response in multiple endpoints among patients with SLE treated with either one of two different doses of SM101 for six months. </p><p>The company is also conducting preclinical development of monoclonal antibodies directed against human Fc&#947;RIIB. Theseproducts &ndash; SM201, SM211 and SM301 &ndash; directly recruit the inhibitory Fc&#947;RIIB for a down regulation of the immune system.</p><p>"SuppreMol's portfolio of novel investigational treatments complements and builds upon our leading and differentiated immunology portfolio, offering the opportunity to expand into new areas with significant market potential and unmet medical needs in autoimmune diseases," said Dr Ludwig Hantson, president of Baxter BioScience.</p><p>Baxter has made a "strong commitment to SuppreMol's programs and people," CEO Dr Klaus Schollmeier told <i>Scrip</i>. Its Munich operation will remain operational and Dr Schollmeier intends to stay with the company "for the short term at least to ensure a smooth transition of the programs."</p><p>Dr Schollmeier said the company had come to a "natural inflection point," with expensive Phase IIb trials pending, and decisions to be made over which preclinical antibody programs to progress into the clinic. "Our objective was to find one or two strong partners to help us move forward, and we found exactly what we were looking for in Baxter."</p><p>SuppreMol was founded as a spin-off from the laboratory of Professor Robert Huber at the Max Planck Institute for Biochemistry in Martinsried, Germany. Major shareholders in the company include MIG Fonds, Santo, BioMedInvest and FCP Biotech, KfW Mittelstandsbank, Bayern Kapital, Max Planck Society, and Z-Cube. </p><p>To date SuppreMol has raised &euro;51.4m through private investors and &euro;11.7m in project funding. The last round in 2013 raised &euro;9.4m in a series D financing.</p><p><b>the science</b></p><p>Three classes of Fc&#947;Rs exist in humans: the high affinity receptor Fc&#947;RI and the low affinity receptors Fc&#947;RII and Fc&#947;RIII. </p><p>Fc&#947;RII exists in two isoforms, Fc&#947;RIIA and Fc&#947;RIIB, which differ in the extracellular region only by 6% of the amino acid residues but possess distinct cytoplasmic regions that mediate either an activating or an inhibitory signal to the expressing cell. The activating Fc&#947;RIIA is the key receptor for mediating phagocytosis of immune complexes and the induction of ADCC, while Fc&#947;RIIB represents the sole inhibitory Fc&#947;R among the family of Fc&#947;Rs. Its main function is to inhibit activating signals, which is generally achieved through co-crosslinking of Fc&#947;RIIB with other membrane proteins. Specifically such proteins are, for example, activating Fc&#947;Rs or the B cell receptor (BCR). In consequence, on B cells where FcgRIIB represents the only Fc&#947;R the co-crosslinking of Fc&#947;RIIB and the BCR by immune complexes (ICs) down-regulates B cell proliferation and antibody production.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 159
+
+<p>Baxter's Bioscience Business has acquired SuppreMol for &euro;200m in what the privately-held German firm's CEO called "a good day for both companies." </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 71
+
+Baxter acquires SuppreMol for innovative approach to autoimmune disease
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150227T120001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150227T120001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150227T120001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027997
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+Baxter acquires SuppreMol for innovative approach to autoimmune disease
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356980
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+68766699-3018-40e7-87b5-b71c3ab44855
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

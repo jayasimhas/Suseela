@@ -1,0 +1,17 @@
+﻿@using Sitecore.Mvc.Presentation
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<RenderingModel>
+
+<section class="search-sort" ng-controller="searchSortController as sorter">
+    <div aria-labeledby="aria-label-sort" class="" role="">
+        <h6 id="aria-label-sort">Sort by:</h6>
+        <ol class="search-sort__control-list">
+            <li ng-class="{ 'is-selected': sorter.sortBy === 'relevance' }">
+                <a href=""
+                   title="Relevance"
+                   class="btn btn--sort"
+                   ng-click="sorter.setBy('relevance')">Relevance</a>
+            </li>
+            @Html.Sitecore().Placeholder("search-sort-options")
+        </ol>
+    </div>
+</section>

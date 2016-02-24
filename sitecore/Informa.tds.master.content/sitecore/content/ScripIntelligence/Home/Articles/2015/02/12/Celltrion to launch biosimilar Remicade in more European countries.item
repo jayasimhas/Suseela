@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {E62F2015-3182-4374-8CFD-005CF4D40942}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/12/Celltrion to launch biosimilar Remicade in more European countries
+parent: {1FE973E9-C8AA-46D4-AEE8-288FEEF805ED}
+name: Celltrion to launch biosimilar Remicade in more European countries
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3d57da72-b279-4d4b-a2db-fa9ed560478e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Celltrion to launch biosimilar Remicade in more European countries
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Celltrion to launch biosimilar Remicade in more European countries
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5712
+
+<p>South Korea's Celltrion has said it will begin selling Remsima, its biosimilar version of Johnson & Johnson's Remicade (infliximab) in 12 more European countries beginning February.</p><p>The new markets include key countries such as France, Germany, Spain, the UK and Italy, with Celltrion and partner Hospira to sell the product under two different brand names, Remsima and Inflectra respectively, as the product's patent protection ends in each location. Sales in the Netherlands will begin first on Feb. 12 but the names of the other upcoming European launch countries were not immediately disclosed.</p><p>"As the patent ends in the 12 countries including the five [major] countries, Celltrion will begin selling the products through the partners in the countries, while Hospira will also sell the product under its different brand name, like the two are doing currently in other European countries," Celltrion told Scrip's sister publication PharmAsia News. </p><p>"For instance, Celltrion will be selling the product in the UK through Napp Pharmaceutical in Spain through Kern, in France through Bio Garang."</p><p>Remicade, for which Johnson & Johnson has patent protection in most of Western Europe until February 2015, generated $6.67bn in global sales in 2013, up from $6.14bn in 2012. In Europe in 2012, sales of Remicade, used mainly in rheumatoid arthritis, exceeded $2bn.</p><p>In Europe, Inflectra is currently only sold in central and eastern region countries due to J&J's intellectual property protection, with the current market for Inflectra representing just 15% to 20% of Remicade's sales in Europe.</p><p>In 2013, the European Medicines Agency gave a green light to the two biosimilars of the blockbuster tumor necrosis factor inhibitor, and the EMA's Committee for Medicinal Products for Human Use (CHMP) recommended marketing authorizations on June 28, 2013 for Remsima and Inflectra, which became the first monoclonal antibody biosimilars approved in Europe.</p><p>In giving its nod, the CHMP supported extrapolation of clinical trial data, recommending approval for the biosimilars in all indications for which Remicade is approved, even though Celltrion's trials studied only two indications, ankylosing spondylitis and rheumatoid arthritis.</p><p>In addition to these two settings, the CHMP also recommended approval for Crohn's disease, ulcerative colitis, psoriasis and psoriatic arthritis.</p><p>Under a distribution agreement inked in 2009, Hospira has the right to collaborate on the manufacturing and marketing of Celltrion's eight biosimilars in the European Union, US, Australia, Canada and New Zealand. The agreement allows the companies to market Celltrion's biosimilars in parallel under separate brand names.</p><p>After winning approval in 2013, Cellrion has been selling the product in certain Eastern European countries, and Western European countries such as Finland, Portugal and Ireland where infliximab is not under patent protection. Celltrion is also partnered with Hungary's Egis Pharmaceuticals for 17 countries in Eastern Europe, Russia and the Commonwealth of Independent States.</p><h2>Back To Normal?</h2><p>Celltrion CEO Seo Jung-jin, who had previously stated his intention to sell his controlling share of the firm, said in July 2014 that he was no longer interested in selling his shares to a multinational drug company.</p><p>Pfizer, Johnson & Johnson or Sanofi were once quoted as potential buyers of Celltrion, but Seo had said he was moving to sell his stake as he was he was tired of fighting with short-selling stock traders. The CEO had said he would sell his shares after the EMA approved Remsima.</p><p>In October 2013, South Korea's financial watchdog the Financial Services Commission asked the state prosecution office to investigate Seo for suspected price manipulation of Celltrion's stock, which was then the largest stock on South Korea's second-tier tech-oriented KOSDAQ stock market. </p><p>In August 2014, Celltrion also filed for US FDA approval of the infliximab biosimilar and appears to have relied on two key shortcuts available under the 351(k) pathway &ndash; the use of bridging studies and indication extrapolation.</p><p>Celltrion's filing marks the first known US application for a monoclonal antibody biosimilar and the firm expects an approval sometime in 2015. Marketing of the product in the U.S. can't occur until at least the end of 2018 however, unless the company successfully wins its ongoing patent challenge against J&J.</p><p>In a step crucial to the hopes of filing for FDA approval, Celltrion, in October 2013, received approval for an IND from Germany's Paul Ehrlich Institut for a bridging study of the biosimilar.</p><p>Celltrion's infliximab biosimilar has so far won approvals in more than 50 countries including Japan and Canada as well as the EU member states.</p><p>Although some other major South Korean groups such as Samsung and LG are working on biosimilar programs under the government's efforts to boost the country's pharma industry to a global level, Hanwha Chemical seems to be stepping back from the biosimilar business after Merck & Co terminated in December 2012 a licensing deal &ndash; signed in June 2011 &ndash; with Hanwha for an Enbrel biosimilar. </p><p>The deal was to have provided Merck with development and commercialization rights to the product in all markets except South Korea and Turkey.</p><p>Hanwha is now said to be in talks over a possible licensing deal for a biosimilar version of Enbrel, which is Amgen's etanercept. </p><p>This article first appeared in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 188
+
+<p>South Korea's Celltrion has said it will begin selling Remsima, its biosimilar version of Johnson & Johnson's Remicade (infliximab) in 12 more European countries beginning February.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Celltrion to launch biosimilar Remicade in more European countries
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150212T130002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150212T130002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150212T130002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027802
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Celltrion to launch biosimilar Remicade in more European countries
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{088691EE-A918-4A72-877F-2DDEEFB5CAD4}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356626
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042252Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3d57da72-b279-4d4b-a2db-fa9ed560478e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042252Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {A5590882-5F76-4525-9B1F-F6CE5B5A5C59}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/24/Key drug regulatory changes take effect in Russia
+parent: {66CD7E66-2939-47F2-B54E-FB3DFF5070A2}
+name: Key drug regulatory changes take effect in Russia
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 08dd97b0-d902-4f6f-8eff-58fea243a32d
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+Key drug regulatory changes take effect in Russia
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+Key drug regulatory changes take effect in Russia
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8924
+
+<p>Pharma firms in Russia are facing major regulatory changes and new legal responsibilities despite a last-minute attempt by the authorities to postpone the provisions until next year to allow more time to prepare for their introduction. Among the measures are shorter approval times for new medicines, and new rules on biologics, pharmacovigilance and product interchangeability.</p><p>The measures were approved last December in the form of legislation amending the existing federal law on the circulation of medicines (No 61-FZ) in order to rectify a number of inconsistencies and shortcomings in the law. </p><p>Most of the measures were scheduled to come into effect on 1 July this year, while others, such as those on the data exclusivity period and the format of the drug registration dossier, were slated to apply from January 2016. However, as the July deadline approached the Russian authorities tried unsuccessfully to push through legislation postponing the implementation of all the measures until January 2016. </p><p>According to Paul Melling, a partner with Baker & McKenzie in Moscow, there has been no official explanation for this effort, but it would appear the authorities were not ready for the implementation of these measures and felt they needed time to put the necessary infrastructure in place. </p><p>The fact that the provisions did come into effect as scheduled may cause some problems with their implementation. "For multinational companies, from a compliance standpoint they will have to ensure they are following the new law, but in terms of the implementation of the legislation I would imagine it will be quite chaotic for the rest of the year. I hope not, but I suspect that it probably will be."</p><p>As for when the measures will be fully in force, Mr Melling said: "There is likely to be something of a gap between the theory of their existence and the reality of their enforcement, but at least they are there."</p><p>Moreover, some of the provisions in the law are quite broad, and will require implementing regulations to set out the fine detail &ndash; this will be the situation with new pricing rules for essential drugs, for example.</p><p>The problem is that often the implementing regulations are a long time coming &ndash; or don't come at all, Mr Melling observed. "For example, changes to the rules on companies' interactions with healthcare professionals came into effect about four years ago, but these have not been implemented &ndash; at least the sanctions for non-compliance haven&rsquo;t. Sometimes it takes a while, but that is the way the Russian Federation tends to work, there is nothing unusual about that."</p><h2>Key changes</h2><p>Under the <a href="http://www.scripintelligence.com/home/Russian-law-cuts-approval-times-and-trial-requirements-355812" target="_new">December 2014 law</a> (No 429-FZ), as of 1 July the timeframe for registration of medicines has been cut from 210 to 160 business days. However, the expedited registration process timeline has been increased from 60 to 80 days. The reason for this is that whereas the expedited procedure originally applied only to generic products, it has now been extended to orphan and pediatric drugs. In the case of generics, the procedure will only be open to the first three generic versions of a given reference drug, with any subsequent generics being subject to the standard assessment period; it will not apply to biosimilars.</p><p>The clinical trials process has now been fully separated from the drug approval procedure. This means that companies can run their clinical trials before they apply for state registration of the product involved. Previously applications to conduct trials were part of the four-stage registration procedure itself.</p><p>A new definition of the owner or holder of the registration certificate (marketing authorization holder) has been introduced, together with new legal responsibilities. This is seen as a significant move because the holder of the certificate will now be expressly responsible for the quality, safety and efficacy of the medicine, and will have to implement a pharmacovigilance system and ensure it works properly. </p><p>The holder will also have to submit safety monitoring reports to the competent state authority once every six months for the first two years after approval, once a year for the following three years, and then once every five years. Failure to take steps to ensure the safety of medicines may result in the registration being cancelled. </p><p>The move also means that the transfer of marketing authorizations among companies will take on added legal significance.</p><h2>Interchangeability</h2><p>Under the law a statutory basis is given to the concept of interchangeability among products, which is defined as "proven therapeutic equivalence or bioequivalence with respect to a reference drug, including an equivalent qualitative and quantitative composition of the active substances, the composition of excipients, the pharmaceutical form and the mode of administration." </p><p>The main objectives of this change are to increase competition in the public procurement sector and keep down costs of medicine tenders by more clearly identifying which products can be used in place of others, and to help in the application of competition law (ie for determining the relevant market). </p><p>Interchangeability of a particular product will be determined by an expert committee, as part of the state registration process. Information on the interchangeability of individual products is expected to be included in the State Medicines Register as of 1 January 2018. To prepare for this, evaluations of the interchangeability of pharmaceuticals registered before the December Law came into force will be conducted before 31 December 2017, and companies can request a determination of interchangeability before 31 December 2016. </p><p>Interchangeability will be determined on the basis of a number of factors, including equivalence of qualitative and quantitative characteristics and dosage form, absence of clinically relevant differences, and compliance with GMP requirements.</p><p>Also introduced is a legal definition of a "biological medicinal product" and a "biosimilar". This provision also states that biosimilars cannot be approved on the basis of just a bioequivalence study, and that some clinical trials will be necessary.</p><p>A drug can be designated as an orphan medicine at the beginning of the registration procedure Orphans will be subject to the expedited registration process, and they can be registered on the basis of trials conducted outside Russia. </p><p>The new law reintroduces the "grace period" regarding products whose registration dossier has been amended. Products manufactured within 180 days of such changes to the dossier in accordance with the "old" dossier can now remain on the market until their expiry date.</p><p>With regard to the pricing of drugs on the vital and essential medicines list, the amendments have slimmed down the very detailed provisions and the law will now only provide a very general framework for the state regulation of prices, with detailed regulations to be adopted by the government, according to Baker & McKenzie. It is understood that the provision will require the health ministry to consider whether, in establishing prices, the interests of consumers are properly balanced against those of the manufacturers.</p><p>A new single "GxP" inspectorate is to be set up to oversee compliance with Russian good practices, including the conduct of GMP compliance audits of foreign manufacturing sites.</p><p>The law introduces more circumstances in which a product's registration can be cancelled: for example if it is not marketed for three or more years, or if the company refuses to amend the use instructions where there is newly confirmed data showing that the risk outweighs the benefit.</p><h2>2016 provisions</h2><p>Some of the law's provisions will come into effect on 1 January 2016, including:</p><ul><li>A common technical document format will be introduced, along the lines of that used in other countries, with clear sections for administrative, chemical, pharmaceutical and biological data. </li><li>The data exclusivity period remains at six years, but generics companies will from next year be able to begin preparations for submitting their dossier after four of the six years have elapsed (three years for biosimilars). This will give a generics firm two years in which to prepare the required documentation for a generic application and to carry out any bioequivalence studies required.</li></ul><p><i>This story has also been published in </i><a href="http://www.rajpharma.com/home/" target="_new">Scrip Regulatory Affairs</a><i>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers</i>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 385
+
+<p>Pharma firms in Russia are facing major regulatory changes and new legal responsibilities despite a last-minute attempt by the authorities to postpone the provisions until next year to allow more time to prepare for their introduction. Among the measures are shorter approval times for new medicines, and new rules on biologics, pharmacovigilance and product interchangeability.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+Key drug regulatory changes take effect in Russia
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150724T110846
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150724T110846
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150724T110846
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029379
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+Key drug regulatory changes take effect in Russia
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359606
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042429Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+08dd97b0-d902-4f6f-8eff-58fea243a32d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042429Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {DACBF8E3-F7B2-473C-9026-48E8052E266A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/04/FDA AstraZenecas Onglyza may increase death risk
+parent: {194ECEF1-FC3A-4493-B5A0-5BE540D1EF34}
+name: FDA AstraZenecas Onglyza may increase death risk
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 781fb4c2-210d-4855-874d-5964e374138e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+FDA: AstraZeneca's Onglyza may increase death risk
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+FDA AstraZenecas Onglyza may increase death risk
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4894
+
+<p>An FDA analysis of a cardiovascular outcomes trial (CVOT) conducted on AstraZeneca&rsquo;s type 2 diabetes drug Onglyza (saxagliptin) found that the medicine appeared to increase the risk of death &ndash; news that caused the firm's shares to drop by 2% on 10 April.</p><p>But regulators did not find a similar problem with another diabetes drug from Takeda, Nesina (alogliptin), which belongs to the same class as Onglyza, known as dipeptidyl peptidase-4 (DPP-4) inhibitors.</p><p>Now, the FDA wants its outside expert advisers to weigh in at a 14 April meeting on what regulators should do about what they uncovered in their analyses of both drugs.</p><p>The outcome the Endocrinologic and Metabolic Drug Advisory Committee (EMDAC) meeting could have an impact on other DPP-4 inhibitors, including Merck's Januvia (sitagliptin) &ndash; its biggest profit-maker, said Evercore ISI analyst Dr Mark Schoenebaum.</p><p>Merck has completed a CVOT of Januvia, but the results are not expected to be reported until June.</p><p>But like AstraZeneca, shares of Merck took a 2% hit on 10 April.</p><p>AstraZeneca's shares closed at $69.91, down 25 cents, while Merck's stock lost 18 cents, closing the day at $57.25.</p><p>The FDA's concerns over the DPP-4s were sparked by results of a CVOT study published in the <i>New England Journal of Medicine</i>, known as <a href="http://www.scripintelligence.com/home/SAVOR-proves-no-savior-for-AZBMSs-Onglyza-344209" target="_new">SAVOR</a>, which reported a 27% increase in the rate of first event hospitalizations from heart failure linked to Onglyza or Kombiglyze XR (saxagliptin and metformin) versus an inactive treatment &ndash; shattering the idea DPP-4s could reduce CV outcomes.</p><p>So the FDA opened an <a href="http://www.scripintelligence.com/policyregulation/FDA-investigates-heart-failure-link-with-BMS-OnglyzaKombiglyze-349996" target="_new">investigation</a> on the possible association between heart failure and the use of Onglyza and Kombiglyze, which used to belong to Bristol-Myers Squibb, until AstraZeneca acquired the entirety of its diabetes alliance with that firm &ndash; also picking up Forxiga (dapagliflozin), Xigduo (dapagliflozin/metformin) Byetta, (exenatide), Bydureon (exenatide extended-release for injectable suspension), Myalept (metreleptin for injection) and Symlin (pramlintide acetate) in the deal.</p><p>In briefing documents posted on the FDA&rsquo;s website, agency drug reviewers said that while the primary analysis of all-cause mortality in SAVOR &ndash; a large, prospective, multicenter, randomized, double-blind, placebo-controlled trial conducted in 16,492 subjects with type 2 diabetes &ndash; did not reveal significant differences between groups, the agency's sensitivity analyses, which included only deaths occurring while patients were exposed to treatment, suggested there was a "significant or near-significant increases in all-cause mortality." </p><p>The FDA said it wants the EMDAC at the 14 April meeting to "opine on the all-cause mortality observations in SAVOR," given the fact it was a large randomized, double-blind, controlled trial, where a large number of deaths were observed. </p><p>The FDA noted SAVOR also showed a small imbalance in adverse renal events and in proportions of patients who had significant shifts in estimated glomerular filtration rate (dGFR), so regulators want the EMDAC panelists to also comment on that finding.</p><p>The agency is planning to have the EMDAC vote on whether the results of SAVOR demonstrated that the use of saxagliptin in patients with type 2 diabetes has an acceptable CV risk profile or if additional studies are needed. </p><p>The FDA wants the EMDAC to advise on whether the labeling for Onglyza or Kombiglyze needs to be changed to add new safety information and if so, should the distribution of those products be restricted &ndash; or if the drugs should be pulled from the market altogether.</p><p>As for the FDA's review of Takeda's CVOT, known as EXAMINE &ndash; a multicenter, multinational, randomized, double-blind, placebo-controlled trial, which enrolled 5,400 patients with type 2 diabetes and established cardiovascular disease &ndash; drug reviewers concluded there was no suggestion of increased risk of CV mortality or all-cause mortality with Nesina. </p><p>But they said there were nominally significant interactions in the risk of MACE identified in some subgroup analyses across distinct geographic regions and baseline.</p><p>While there were more adverse hepatic events reported in the Nesina-treated patients, there were no events of hepatic failure. </p><p>There also was no evident of an imbalance in hypersensitivity reactions, hypoglycemia or pancreatitis, and there were no new safety concerns identified in patients with moderate and severe renal impairment, regulators said.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 273
+
+<p>An FDA analysis of a cardiovascular outcomes trial (CVOT) conducted on AstraZeneca&rsquo;s type 2 diabetes drug Onglyza (saxagliptin) found that the medicine appeared to increase the risk of death &ndash; news that caused the firm's shares to drop by 2% on 10 April.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+FDA AstraZenecas Onglyza may increase death risk
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150904T202432
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150904T202432
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150904T202432
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028408
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+FDA: AstraZeneca's Onglyza may increase death risk
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357751
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+781fb4c2-210d-4855-874d-5964e374138e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

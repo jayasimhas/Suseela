@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {55C7EC81-6000-4B06-9D32-864FC1AE57EE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/Experts to scrutinize licensure paths for 1st Ebola vaccines
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: Experts to scrutinize licensure paths for 1st Ebola vaccines
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f600ac2f-da02-4438-b3fd-ff46bb4d5783
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Experts to scrutinize licensure paths for 1st Ebola vaccines 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Experts to scrutinize licensure paths for 1st Ebola vaccines
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9496
+
+<p>At a 12 May meeting, the FDA's Vaccines and Related Biological Products Advisory Committee (VRBPAC) is expected to mull over the conundrum of how to license Ebola vaccines when there's likely not going to be enough study participants to provide adequate results in the ongoing randomized controlled trials.</p><p>Indeed, although Ebola has infected more than 26,600 people and killed over 11,000 in the current epidemic, there's been a significant decline in recent months in infection rates in West Africa &ndash; with Liberia on the verge of being declared virus-free.</p><p>So manufacturers may not be able to seek US licensure of the first-ever Ebola vaccines under the "traditional" FDA approval pathway for assessing efficacy.</p><p>Therefore, companies developing the products, like GlaxoSmithKline, which is collaborating with the National Institute of Allergy and Infectious Diseases (NIAID); NewLink Genetics, whose product was initially developed by Public Health Agency of Canada (PHAC) and is now partnered with Merck; and Johnson & Johnson's Crucell unit, which is teamed with Bavarian Nordic; may need to pursue two other roads to approval that don't require a demonstration of effectiveness in a clinical disease endpoint trial or an accepted correlate of protection &ndash; the accelerated pathway, which uses a surrogate endpoint, or the so-called animal rule.</p><p>The VRBPAC is expected to hear presentations from a number of Ebola scientists at the 12 May meeting, including Dr Nancy Sullivan, who has led NIAID's development of the agency's vaccine and is considered one of the world's top experts in the field.</p><p>GSK's Dr Ozzie Berger, Merck's Dr John Konz and J&J's Dr Johan Van Hoof also are scheduled to present at the meeting.</p><p><b>In the lead</b></p><p>There are several vaccine candidates being pursued that are in various stages of development, but the GSK-NIAID, NewLink-Merck and J&J-BN products are in the lead.</p><p>The experimental GSK-NIAID candidate is a recombinant-replication-deficient chimpanzee adenovirus type 3 vectored vaccine expressing the wild-type glycoprotein (GP) from the Ebola Zaire strain (ChAd3-EBOZ). </p><p>The NewLink-Merck product is an Ebola virus recombinant vesicular stomatitis virus-vectored (rVSV-ZEBOV) vaccine based on a genetically modified VSV expressing the envelope GP from the Ebola Zaire Kikwit strain. </p><p>The J&J-BN candidate is a replication-defective adenovirus serotype 26 vaccine expressing the full-length GP of the Ebola Zaire Virus, or Ad26.ZEBOV, which is administered in a prime-boost regimen with multivalent modified vaccinia ankara (MVA), or MVA-mBN226B, which expresses the SUDV GP, the EBOVGP, the MARV Musoke GP and the Tai Forest virus nucleoprotein. </p><p>All three of the investigational vaccines have completed Phase I studies, with data demonstrating the products are immunogenic and do not pose any significant safety concerns.</p><p>NIAID said on 7 May it had reached its 1,500 enrollment goal for the Phase II portion of its Liberian PREVAIL study testing the ChAd3-EBOZ and the rVSV-ZEBOV vaccines.</p><p>In late March, NIAID <a href="http://www.scripintelligence.com/home/Ebola-vaccines-safe-but-quandary-for-Liberia-efficacy-enrollment-357521" target="_new">reported</a> that early results from the Phase II portion of PREVAIL, which <a href="http://www.scripintelligence.com/home/Much-anticipated-Ebola-vaccine-efficacy-trial-starts-356509" target="_new">got underway in early February</a> in Liberia, continued to demonstrate the ChAd3-EBOZ and the rVSV-ZEBOV vaccines were safe.</p><p><b>Enrollment trouble</b></p><p>But with the rapid drop in Ebola cases in Liberia, the lead US investigator of PREVAIL, Dr Cliff Lane, deputy director for clinical research at NIAID, told <i>Scrip</i> in mid-March the Phase III portion of the study would <a href="http://www.scripintelligence.com/home/Liberias-drop-in-Ebola-may-mean-NIH-trial-move-357294" target="_new">need to be moved</a> to another West African country, preferably Guinea, to have enough participants. He later said reaching the 27,000 enrollment goal for the Phase III stage "<a href="http://www.scripintelligence.com/policyregulation/Liberia-studys-27000-enrollment-no-longer-makes-sense-357890" target="_new">no longer makes sense</a>" in Liberia.</p><p>On 7 May, Dr Lane told <i>Scrip</i> the "detailed discussions" with Guinea government officials continues to be ongoing.</p><p>"There are no new enrollments at the moment," Dr Lane said.</p><p>The US Centers for Disease Control and Prevention (CDC) also is <a href="http://www.scripintelligence.com/policyregulation/25m-US-funded-study-goes-beyond-testing-Ebola-vaccine-357889" target="_new">conducting its own study</a> testing the NewLink-Merck rVSV-ZEBOV vaccine in Sierra Leone. </p><p>The CDC's <a href="http://www.scripintelligence.com/policyregulation/CDC-to-soon-launch-NewLinkMerck-Ebola-vaccine-study-357293" target="_new">STRIVE study</a> was designed to enroll 6,000 frontline healthcare workers and others at high risk of Ebola exposure, like those cleaning facilities where care is provided to infected patients, laboratory technicians, administrative staff, surveillance and ambulance teams or people responsible for swabbing deceased persons who died of the virus.</p><p>The World Health Organization also is sponsoring a "<a href="http://www.scripintelligence.com/researchdevelopment/NewLinkMerck-Ebola-vaccine-ring-study-starts-in-Guinea-357504" target="_new">ring" vaccination trial</a>, which is seeking to enroll 10,000 volunteers testing the NewLink-Merck rVSV Ebola vaccine in Coyah prefecture, Guinea, in which contacts of infected patients are identified and vaccinated &ndash; creating a "ring of immunity" around them to stop the virus from spreading.</p><p>The University of Oxford is <a href="http://www.scripintelligence.com/researchdevelopment/Oxford-tests-JnJBavarian-Nordic-prime-boost-Ebola-vaccine-355965" target="_new">testing</a> the J&J-BN vaccine. The Innovative Medicines Initiative has kicked in millions of dollars to <a href="http://www.scripintelligence.com/home/JnJ-others-snag-215m-IMI-Ebola-funds-356198" target="_new">fund studies</a> of the product.</p><p><b>Other pathways</b></p><p>At a <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Heeding-Ebolas-lessons-in-2015-and-beyond-355853" target="_new">12 December 2014 Ebola workshop</a> hosted by the FDA, NIAID, CDC, the US Department of Defense and the US Biomedical Advanced Research and Development Authority, scientists offered up a number of recommendations and conclusions, including the fact that approaches other than randomized trials may need to be used to license vaccines against the virus.</p><p>The scientists said it may be possible to define immune markers that predict protection even in the absence of a complete understanding of the mechanism of protection. But they also said that immune markers of protection, including antibody threshold levels, may be different for different vaccines. </p><p>At that workshop, the importance of assay validation and opportunities for standardization also were discussed. </p><p>In briefing documents released ahead of the 12 May VRBPAC meeting, regulators said that if the Ebola vaccine makers decide to seek approval under the accelerated pathway, they would need to provide data from adequate and well-controlled trials establishing an effect of the product on a surrogate endpoint, such as immune response, "reasonably likely" to predict clinical benefit. </p><p>The surrogate endpoint used to evaluate effectiveness could be derived from human studies, like immune responses in vaccinated individuals participating in currently planned or ongoing Phase II/III studies from a comparison of antibody responses in vaccinated study participants who showed protection against Ebola to those who were vaccinated but contracted the disease. </p><p>Under such a scenario, enzyme-linked immunosorbent assay (ELISA) titers achieved in vaccinated non-human primates in preclinical studies that correlated with protection from Ebola challenge also could help determine an immunogenicity endpoint reasonably likely to predict protection in humans, FDA officials said. </p><p>They pointed out that adequate and well-controlled studies would be required post-licensure to verify and describe the clinical benefit of the Ebola vaccines.</p><p>Another path Ebola vaccine makers could take is the animal rule, which was created in 2002 to permit a medical product's effectiveness to be demonstrated in animals when it is unethical or not feasible to conduct controlled clinical trials in humans.</p><p>Under the rule, a product intended for a serious or life-threatening condition may be approved on the basis of adequate and well-controlled animal studies when the results establish the product is reasonably likely to produce clinical benefit in humans.</p><p>The FDA noted there are other regulatory requirements under the provision, including criteria for the animal models and the need for data or information &ndash; in animals and humans &ndash; to allow selection of an effective dose in humans.</p><p>Postmarketing studies to verify the product's clinical benefit and to further assess safety must be conducted at a time when such studies are feasible and ethical, regulators said.</p><p>The animal rule has only been used a handful of times since its creation.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 313
+
+<p>At a 12 May meeting, the FDA's Vaccines and Related Biological Products Advisory Committee (VRBPAC) is expected to mull over the conundrum of how to license Ebola vaccines when there's likely not going to be enough study participants to provide adequate results in the ongoing randomized controlled trials.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Experts to scrutinize licensure paths for 1st Ebola vaccines
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T211815
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T211815
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T211815
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028654
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Experts to scrutinize licensure paths for 1st Ebola vaccines 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358156
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f600ac2f-da02-4438-b3fd-ff46bb4d5783
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042340Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

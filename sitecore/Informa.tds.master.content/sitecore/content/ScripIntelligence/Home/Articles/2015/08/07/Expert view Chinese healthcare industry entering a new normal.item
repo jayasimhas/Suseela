@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {14E469B0-17B4-414C-973E-BEA271E57427}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/07/Expert view Chinese healthcare industry entering a new normal
+parent: {4B2AA564-01BF-4300-9644-9E54CE0DA67F}
+name: Expert view Chinese healthcare industry entering a new normal
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 209ee878-086b-45eb-8c81-32c5cc95e71c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Expert view: Chinese healthcare industry entering a 'new normal'?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+Expert view Chinese healthcare industry entering a new normal
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6760
+
+<p>Two years after the GSK scandal broke in China, a national campaign against corruption is marching on in the country, and a series of recent events suggests that Chinese authorities are determined to clean up the healthcare industry and bring in a 'new normal'. For multinational companies, the shakeup should come as welcome news, and it is time to devise strategies to prepare for a new phase of reform in the country, writes Pengfei Lu, director of corporate strategy at the research services company Wuxi AppTec.</p><p>When the GlaxoSmithKline corruption case first erupted in China, there were many conspiracy theories about the motives of the Chinese government. Some said it took action because it was unhappy about the high prices of multinationals' drug products, and used the compliance probe to send a signal to other firms to lower their prices.</p><p><p>Some suggested that it was an act of protectionism that the Chinese government penalized a major foreign company to protect domestic manufacturers. To either end, it looks like GSK was a scapegoat. There seemed to be plenty of sympathy for the company and very little confidence about the Chinese authorities' intention to really clamp down on corruption.</p><p><p>But two years after this dramatic event, few can deny the effort and seriousness of the Chinese government to stamp out corruption in the country. Ever since President Xi Jinping's vow to strike both "tigers" and "flies" &ndash; meaning major and minor corrupt personnel &ndash; the anti-corruption campaign has swept into every corner of society, from political to social to business.</p><p><p>By the end of 2014, 656 government officials, including local party secretaries and provincial leaders, were being investigated or had been charged for corruption. The highlight was the arrest of Zhou Yongkang, one of the nine members of the previous politburo which is the most powerful decision-making entity in the country.</p><p><p>There was a rumor that Zhou and his family had assets worth an astounding figure of CNY90bn (approximately $14.5bn), most of which allegedly came from bribery. Earlier this month, Zhou was sentenced to life imprisonment &ndash; prior to President Xi, even arresting a politburo member was unthinkable, let alone giving a prison sentence to one.</p><p><h2>healthcare crackdown</h2><p><p>Aside from the political arena, the healthcare sector has had a reputation of being a major incubator for corruption, and has been heavily targeted by the authorities. Since the beginning of 2015, there have been six high profile arrests/charges of high ranking healthcare officials, including people from the China FDA and party secretaries of hospitals, medical universities, and CDC (Center for Disease Control and Prevention). All the arrests were related to corruption in one form or another.</p><p><p>Prior to that, many hospital heads had been arrested for corruption throughout the country. Many went into hiding or fled to other countries to avoid facing justice. These people were suspected of receiving money from drug companies to list the latters' drugs on their hospital formularies, effectively making the key selection criterion the size of the bribe instead of how good the quality was.</p><p><p>The most significant anti-corruption event that will have a major impact on the pharmaceutical industry is probably the arrests of 11 senior officials in the National Development and Reform Commission (NDRC), the government body that used to have the right to set the ceiling prices of drugs.</p><p><p>Because of the lack of transparency in the price setting process, high ranking NDRC officials were easily able to take bribes from drug companies to set the ceiling price of their products higher or to exempt them from being capped.</p><p><p>Many people call the NDRC the biggest corrupting machine of the country. The Chinese authorities have publicly scolded the commission and said that there was systemic corruption within the organization and it needed serious cleaning up. This is one of the reasons why the Chinese government has stripped the NDRC's power to set drug prices.</p><p><p>In the future, drug prices will largely be decided by market demand and supply, which will change how the "game" is played.</p><p><h2>quality issues</h2><p><p>In addition to cracking down on corruption, the Chinese government is showing an unprecedented low tolerance to inferior quality products in the pharmaceutical industry, which was marred by the gutter oil scandal three years ago. Most recently, it has named and shamed companies that secretly changed the approved production process of ginkgo-containing drugs and recalled all these products.</p><p><p>Moreover, the China FDA has demanded all companies that produce ginkgo-containing products to examine carefully about their production process.</p><p><p>In a more dramatic case, over 1,800 out of a total of 2,000 raw pharmaceutical ingredient companies in Zhejiang province have been shut down since 2015 because of ongoing non-compliance with the new Environmental Act of the country. 400 people in those companies were also arrested for breaking the Environmental Protection law.</p><p><p>Overall, it is clear that the Chinese authority is endeavoring to move its healthcare industry towards a "new normal" &ndash; a cleaner, more market-oriented and less administrative control environment. Although it is unrealistic to expect the "old normal" will disappear overnight, companies will find it increasingly hard to succeed if they still rely on the old practices.</p><p><p>For MNCs, this is encouraging news because the market will become more and more transparent, and rules will become fairer and easier to comprehend.</p><p><p>To a greater extent, companies will need to compete with innovation, quality, and brand in the future. Compared with local companies, MNCs have distinct advantages in these areas and rich experience in sophisticated marketing.</p><p><p>Moreover, MNCs also need to prepare for the next phase of healthcare reforms, where pricing mechanism will be under the spotlight. From 1 June 2015 the Chinese authority lifted price controls on most drug products as the first step towards a market-oriented drug pricing mechanism.</p><p><p>In the future, price negotiations between pharmaceutical companies and relevant government stakeholders will become more and more important, especially for patented drugs or drugs that have some form of exclusivity.</p><p><p>Multinationals will need to foster expertise in this area to maintain their competitive advantage.</p><p><p>This article has also been published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 523
+
+<p>Two years after the GSK scandal broke in China, a national campaign against corruption is marching on in the country, and a series of recent events suggests that Chinese authorities are determined to clean up the healthcare industry and bring in a 'new normal'. For multinational companies, the shakeup should come as welcome news, and it is time to devise strategies to prepare for a new phase of reform in the country, writes Pengfei Lu, director of corporate strategy at the research services company Wuxi AppTec.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Expert view Chinese healthcare industry entering a new normal
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150807T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150807T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150807T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029212
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Expert view: Chinese healthcare industry entering a 'new normal'?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{8B09A4B9-5D64-4983-9592-F23C0ABE3301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359305
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042421Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+209ee878-086b-45eb-8c81-32c5cc95e71c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042421Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

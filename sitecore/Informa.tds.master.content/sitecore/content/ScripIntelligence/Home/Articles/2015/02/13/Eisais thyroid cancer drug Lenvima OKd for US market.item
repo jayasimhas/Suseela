@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {C9CFAB82-F745-459E-A3D4-748CB9FD8048}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/13/Eisais thyroid cancer drug Lenvima OKd for US market
+parent: {94CB4D6F-0A34-4D6B-BFF6-200B2B6E99B6}
+name: Eisais thyroid cancer drug Lenvima OKd for US market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ba612e81-e20d-4ab5-b530-57b9daf75aa1
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Eisai's thyroid cancer drug Lenvima OK'd for US market
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Eisais thyroid cancer drug Lenvima OKd for US market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2405
+
+<p>Eisai gained US approval on 13 February for its receptor tyrosine kinase inhibitor Lenvima (lenvatinib) as a treatment for locally recurrent or metastatic, progressive, radioactive iodine-refractory differentiated thyroid cancer, or RAI-R DTC. </p><p>DTC, the most common type of thyroid cancer, is a cancerous growth of the thyroid gland, which is located in the neck and helps regulate the body's metabolism. </p><p>The National Cancer Institute estimated that 62,980 Americans were diagnosed with thyroid cancer last year, with 1,890 of those dying from the disease.</p><p>"The incidence of thyroid cancer has been increasing globally over the last 50 years and for patients with thyroid cancer that progresses following surgery and radioactive iodine treatment, the prognosis is often poor," said Gary Bloom, executive director of the Thyroid Cancer Survivors' Association. </p><p>Lenvima works in DTC by blocking certain proteins from helping cancer cells grow and divide. </p><p>In Eisai's pivotal Phase III SELECT trial, Lenvima demonstrated a highly statistically significant improvement in progression-free survival of 18.3 months, versus 3.6 months for placebo, and a high overall response rate of 65%, versus 2% with placebo, in patients with locally recurrent or metastatic, progressive, RAI-refractory DTC, said Dr Lori Wirth, medical director of the Center for Head and Neck Cancers at the Massachusetts General Hospital in Boston and one of the study's investigators. </p><p>Serious risks seen in patients in the Phase III SELECT trial were hypertension, cardiac dysfunction, arterial thromboembolic events, hepatotoxicity, proteinuria, renal failure and impairment, gastrointestinal perforation and fistula formation, QT interval prolongation, hypocalcemia, reversible posterior leukoencephalopathy syndrome, hemorrhagic events, impairment of exogenous thyroid suppression and embryofetal toxicity. </p><p>The most common adverse reactions observed in greater than or equal to 30% of Lenvima-treated patients were hypertension, fatigue, diarrhea, arthralgia/myalgia, decreased appetite, weight decreased, nausea, stomatitis, headache, vomiting, proteinuria, palmar-plantar erythrodysesthesia syndrome, abdominal pain and dysphonia. </p><p>The most common serious adverse reactions (at least 2%) were pneumonia (4%), hypertension (3%) and dehydration (3%).</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 251
+
+<p>Eisai gained US approval on 13 February for its receptor tyrosine kinase inhibitor Lenvima (lenvatinib) as a treatment for locally recurrent or metastatic, progressive, radioactive iodine-refractory differentiated thyroid cancer, or RAI-R DTC. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Eisais thyroid cancer drug Lenvima OKd for US market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150213T235621
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150213T235621
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150213T235621
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027818
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Eisai's thyroid cancer drug Lenvima OK'd for US market
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356668
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ba612e81-e20d-4ab5-b530-57b9daf75aa1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

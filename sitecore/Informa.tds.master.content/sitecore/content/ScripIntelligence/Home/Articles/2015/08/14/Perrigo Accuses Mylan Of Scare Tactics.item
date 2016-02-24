@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {D71CD70D-F03C-4A0E-94D8-91BADFD75FC0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/14/Perrigo Accuses Mylan Of Scare Tactics
+parent: {F1BDB59F-EC79-4308-B3FA-AD67FD3F4F4E}
+name: Perrigo Accuses Mylan Of Scare Tactics
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7309d7a6-7687-4a82-b6c6-428e1fb02821
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 38
+
+Perrigo Accuses Mylan Of Scare Tactics
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Perrigo Accuses Mylan Of Scare Tactics
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2985
+
+<p><p>Perrigo is not pleased with Mylan's choice to lower the threshold it needs to push the acquisition forward. The company came out in full force on Aug. 14, trying to rally its shareholders to reject Mylan and its proposal. </p><p>Mylan announced last week that it was amending the percentage of Perrigo shareholders it would need to take over the company. Mylan noted in a statement with the US Securities and Exchange Commission on Aug. 13 that it <a href="http://#http://www.scripintelligence.com/home/Mylan-Keeps-Options-Open-As-Perrigo-Pursuit-Continues-359814" target="_new">officially only needs</a> the support of more than 50% of Perrigo shareholders should it take its offer directly to the company's investors, down from its previously stated 80% threshold.</p><p>The next steps in the process will be a vote by Mylan shareholders on Aug. 28; analysts expect Mylan shareholders will be completely supportive of the acquisition of Perrigo. </p><p>As long as a majority of Mylan shareholders vote yes, Mylan will push forward with a tender offer to Perrigo shareholders. Now, this will require at least 51% of Perrigo shareholders to tender their shares. If less than 50% take Mylan's offer, than the acquisition talk goes away, but should Mylan gain that 51% it will push to gain the support of the rest of the shareholders and likely push Perrigo's current management out. </p><p><b>Perrigo's Reaction</b></p><p>"This move is an obvious sign of desperation that would have profoundly negative effects for shareholders, debtholders, customers and employees of both Perrigo and Mylan. Under Irish law, this structure all but guarantees that the promised synergy realization will fail and it would create material credit and equity risk for both companies &ndash; none of which Mylan has detailed to its own shareholders or ours," said Perrigo Chairman and CEO Joe Papa in an Aug. 14 announcement. </p><p>Papa went on to say that he doesn't believe Perrigo shareholders will tender into the offer and accusing Mylan of using "scare tactics."</p><p>Mylan has said that it expects to see about $800m in synergies from the deal over four years, and analysts have noted that achieving those synergies will be important to Mylan being able to deleverage after this deal. </p><p>Meanwhile, Moody's Investors Service commented in a note to investors that the new tender measures by Mylan could put its credit rating in jeopardy. "The move signals Mylan&rsquo;s willingness to pursue more aggressive hostile measures to acquire Perrigo and raises the possibility of a long, drawn out process that could continue indefinitely, and raises integration and execution risk," wrote the credit ratings agency. </p><p>Another problem with the transaction, notes Moody's, is that a tendering of more than 50% of Perrigo shares would trigger a change of control provision and be a credit negative for Mylan. The change in control provision could require Mylan to take on more debt.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Perrigo Accuses Mylan Of Scare Tactics
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150814T213028
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150814T213028
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150814T213028
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029515
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 38
+
+Perrigo Accuses Mylan Of Scare Tactics
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359879
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042435Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7309d7a6-7687-4a82-b6c6-428e1fb02821
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042435Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

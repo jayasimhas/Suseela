@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {CB1819F8-9366-4D2C-A286-911024B8405B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/13/Hospira seeks FDA nod for EpogenProcrit biosimilar
+parent: {9D2F63AE-799E-4109-98D7-D2124333F53B}
+name: Hospira seeks FDA nod for EpogenProcrit biosimilar
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e534253e-6d17-4c45-81fa-f79f0e17d63f
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Hospira seeks FDA nod for Epogen/Procrit biosimilar 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Hospira seeks FDA nod for EpogenProcrit biosimilar
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2915
+
+<p>On 12 January, Hospira became the fourth company in the US to disclose it had submitted a so-called 351(k) biosimilar biological product application to the FDA &ndash; following other firms Sandoz, Celltrion and Apotex.</p><p>The news, however, didn't impress Hospira investors. The firm's stock closed down 9 cents at $61.55 on 12 January, although the shares earlier gained 42 cents. </p><p>Hospira is seeking approval from the FDA to market Retacrit, an epoetin alfa biosimilar version of Amgen's Epogen and Johnson & Johnson's Procrit. </p><p>Hospira acknowledged it actually had submitted the 351(k) application on 16 December 2014, but waited nearly a month before revealing the action.</p><p>The company boasts it has one of the largest biosimilar pipeline in the industry and currently is the only US-based drug maker with biosimilars in Europe, where Hospira has marketed Retacrit since early 2008.</p><p>Hospira also markets a biosimilar version of Amgen's Neupogen (filgrastim) in Europe and Australia.</p><p>In 2013, Hospira became the first company in Europe to market a biosimilar monoclonal antibody &ndash; a version of J&J's Remicade (infliximab). Hospira sells the drug under the brand-name Inflectra in Europe. </p><p>Celltrion is hoping the FDA will approve the firm's infliximab biosimilar in the US, which the company wants to market as Remsima (scripintelligence.com, <a href="http://www.scripintelligence.com/home/First-US-biosimilar-MAb-on-the-horizon-as-Celltrion-files-Remsima-353328" target="_new">11 August 2014</a>).</p><p>Also in the US, Sandoz is pursuing a filgrastim biosimilar &ndash; making history earlier this month as the first company to have a 351(k) application go before an FDA advisory committee, where the product was warming embraced by the agency's panel of outside experts, as well as regulators (scripintelligence.com, <a href="http://www.scripintelligence.com/home/NovartisSandoz-biosimilar-1st-to-win-FDA-panel-backing-355993" target="_new">08 January 2015</a>, <a href="http://www.scripintelligence.com/home/FDAs-1st-biosimilar-adcomm-a-lovefest-355994" target="_new">08 January 2015</a>, <a href="http://www.scripintelligence.com/home/FDA-No-meaningful-differences-between-Amgens-Neupogen-Sandoz-biosimilar-355934" target="_new">5 January 2015</a>).</p><p>The firm also was the first to reveal its biosimilar application had been accepted by the FDA (scripintelligence.com, <a href="http://www.scripintelligence.com/home/NovartisSandoz-1st-to-reveal-biosimilars-application-at-FDA-353034" target="_new">24 July 2014</a>).</p><p>Apotex also has an application for a biosimilar under FDA review &ndash; seeking to market a version of Amgen's Neulasta (pegfilgrastim) (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Apotex-biosimilar-of-Amgens-Neulasta-under-FDA-review-355732" target="_new">18 December 2014</a>).</p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 226
+
+<p>On 12 January, Hospira became the fourth company in the US to disclose it had submitted a so-called 351(k) biosimilar biological product application to the FDA &ndash; following other firms Sandoz, Celltrion and Apotex.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Hospira seeks FDA nod for EpogenProcrit biosimilar
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150113T064832
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150113T064832
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150113T064832
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027502
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Hospira seeks FDA nod for Epogen/Procrit biosimilar 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356010
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e534253e-6d17-4c45-81fa-f79f0e17d63f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {CF9194C2-0F91-4EF6-8FDA-4A2CE009D411}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/Xoma sinks on 1st Phase III gevokizumab failure
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: Xoma sinks on 1st Phase III gevokizumab failure
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2a2fb627-17e3-4469-b99c-47ee4b908423
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Xoma sinks on 1st Phase III gevokizumab failure
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Xoma sinks on 1st Phase III gevokizumab failure
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3752
+
+<p>Xoma fell 77.3% to close at $1 per share on 22 July after the company revealed the first Phase III failure for lead therapeutic candidate gevokizumab in a clinical trial run by partner Servier to test the Interleukin-1 (IL-1) beta inhibitor in Behcet's uveitis, a rare eye disease. </p><p>Gevokizumab has failed in multiple trials, but Servier's EYEGUARD-B study was the first to deliver disappointing results in the final stage of clinical testing. Berkeley, California-based Xoma's Phase III clinical trials EYEGUARD-A and EYEGUARD-C to test gevokizumab in the broader indication of non-infectious uveitis are ongoing. Two more Phase III trials also are under way in pyoderma gangrenosum, a rare ulcerative skin disease.</p><p>Gevokizumab did not achieve the primary endpoint in EYEGUARD-B of improvement in time to first acute ocular exacerbation versus placebo. Indeed, Sagient Research noted in a 22 July BioMedTracker report that "the average time to the first exacerbation was 119 days in the treatment arm versus 95 days for placebo &ndash; a numerical improvement, but not strong enough to reach statistical significance."</p><p>Xoma chief medical officer Paul Rubin said the company and Servier will review positive data related to the study's secondary endpoints, including preserved visual acuity, less severe ocular exacerbations and a lower incidence of macular edema.</p><p>However, Xoma CEO John Varian didn't inspire a lot of confidence in gevokizumab's performance in the ongoing Phase III trials. In the company's statement about the EYEGUARD-B failure, Mr Varian noted that Xoma's portfolio also consists of the Phase I diabetes candidate XOMA 358 and the preclinical candidate XOMA 089 for immuno-oncology and fibrosis indications.</p><p>"We will focus our efforts on creating value with these pipeline assets and reduce expenses where appropriate," he said.</p><p>Sagient said in its BioMedTracker report that Xoma will need positive results from both ongoing Phase III non-infectious uveitis studies, which have had <a href="http://www.scripintelligence.com/business/2Q-EARNINGS-Dendreon-Amarin-Xoma-slip-on-sales-clinical-updates-345780" target="_new">problems enrolling patients</a> since at least 2013, in order to submit gevokizumab for US FDA approval after the failure in Behcet's uveitis. The company also has its own Phase III Behcet's study known as EYEGUARD-US under way.</p><p>Prior gevokizumab failures occurred during Phase II in <a href="http://www.scripintelligence.com/business/Xoma-sinks-on-gevokizumab-failure-in-hand-arthritis-350397" target="_new">osteoarthritis</a> of the hand and <a href="http://www.scripintelligence.com/home/XOMA-052-fails-in-Phase-IIb-diabetes-study-but-CEO-looking-on-the-bright-side-313042" target="_new">diabetes</a>. Sagient noted that Xoma suspended development in acne based on commercial concerns, according to a portfolio update in March.</p><p>Xoma and the private French pharma company Servier entered into an <a href="http://www.scripintelligence.com/home/XOMA-shares-soar-on-IL-1-antibody-deal-with-Servier-308026" target="_new">ex-US development deal</a> for gevokizumab in 2011. The US company acquired the rights to Servier's ACE inhibitor <a href="http://www.scripintelligence.com/business/Xoma-to-use-acquired-Servier-hypertension-drug-to-establish-a-US-commercial-operation-326052" target="_new">Aceon</a> (perindopril erbumine) in 2012 to establish a commercial operation and generate cash from product sales, but Xoma transferred its rights for the hypertension drug to a spin-out company called <a href="http://www.scripintelligence.com/business/Xoma-transfers-perindopril-franchise-to-Symplmed-startup-344648" target="_new">Symplmed</a> in 2013.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 289
+
+<p>Xoma fell 77.3% to close at $1 per share on 22 July after the company revealed the first Phase III failure for lead therapeutic candidate gevokizumab in a clinical trial run by partner Servier to test the Interleukin-1 (IL-1) beta inhibitor in Behcet's uveitis, a rare eye disease. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Xoma sinks on 1st Phase III gevokizumab failure
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T225531
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T225531
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T225531
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029303
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Xoma sinks on 1st Phase III gevokizumab failure
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359487
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2a2fb627-17e3-4469-b99c-47ee4b908423
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

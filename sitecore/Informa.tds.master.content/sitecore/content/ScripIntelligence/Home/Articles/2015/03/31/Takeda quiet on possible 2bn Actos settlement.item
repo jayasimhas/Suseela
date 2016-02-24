@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {0B14A35B-28B2-4227-B94F-6354839DF349}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/31/Takeda quiet on possible 2bn Actos settlement
+parent: {50A3B851-5621-4D88-87C1-94751D882AC7}
+name: Takeda quiet on possible 2bn Actos settlement
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1e999cf5-013e-4ae7-b56f-da510dc023b4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Takeda quiet on possible $2bn+ Actos settlement
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Takeda quiet on possible 2bn Actos settlement
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4498
+
+<p>Despite a report that it may be considering settling thousands of US lawsuits relating to its former blockbuster diabetes drug Actos, Takeda Pharmaceutical has so far given no indications it intends to do so. </p><p>While a media report earlier this month suggested that Takeda has already offered to pay a total of $2.2bn to settle the cases, brought over bladder cancer risks related to the type 2 diabetes drug, Japan's largest pharma is so far remaining resolutely tight-lipped.</p><p>In a statement provided to <i>Scrip</i>'s sister publication, <i>PharmAsia News</i>, Takeda's Tokyo headquarters said only that it "has confidence in Actos as a treatment option and will continue to vigorously defend the company in these types of cases. It would be inappropriate to comment further on marketplace rumors."</p><p>While <i>Bloomberg</i>, citing "people familiar with the matter," stated in a report that a settlement offer has been made, any agreement appears far from done and dusted. "A final deal hasn't been reached and the talks could still fall apart," <i>Bloomberg</i> cautioned, with any possible agreement also set to be limited to plaintiffs who have already sued or hired a lawyer to take action.</p><p>Takeda has been fighting legal action in the US for the past few years over Actos (pioglitazone), an oral thiazolidinedione, amid plaintiff claims of bladder cancer linked to treatment with both it and other pioglitazone-containing products marketed by the firm.</p><p>Around 3,500 suits have been consolidated into multi-district litigation in Louisiana, while there are some 4,500 other cases pending resolution in federal and state courts. Plaintiffs are arguing mainly that the company failed to provide sufficient warnings about the risk of bladder cancer following Actos's US launch in 1999.</p><p>The US FDA did revise the drug's label warnings in 2011 to warn of such risk after a year of use, and advising past or current bladder cancer patients not to take the drug.</p><p>Takeda and former Actos marketing partner Lilly &ndash; which stopped co-selling the drug in the US in 2006 &ndash; were ordered by a federal court in Louisiana last year to pay a total of around $9bn, including $6bn from Takeda. But the amount was subsequently slashed, to $27.65m for the Japanese firm.</p><p>A jury in a Pennsylvania case also awarded $2m in compensatory damages around the same time.</p><h2>pragmatism into play?</h2><p>Takeda noted in its last quarterly results that of the eight suits tried so far in the US, five have resulted in judgments in its favor, although these are being appealed by plaintiffs. The firm vowed to challenge the "adverse outcomes" in the other three cases "through all available means."</p><p>Takeda has maintained all along that there is no credible link between Actos and bladder cancer and that it will fight such claims, but may now be looking to resolve in a no fault way what has been a long-running shadow over its business under new CEO Christophe Weber, who assumed the position (in addition to president) from the beginning of this month.</p><p>While the figure may seem large, it would be balanced against the risk of further rulings awarding additional large settlements that might be upheld, as well as ongoing costly legal defense fees.</p><p>Actos is now available generically in the US, where sales of the drug have fallen sharply since the loss of exclusivity in 2012. Ahead of this, Takeda reported Americas Actos sales of JPY306.2bn (around $2.6bn at current exchange rates) in the fiscal year ended March 2011.</p><p>The company is now looking more towards new products in oncology and particularly the gastrointestinal area to drive growth in the US, with a strong focus on Entyvio (vedolizumab) for inflammatory bowel disease. </p><p>Even if Takeda does agree to a $2bn+ settlement on Actos, while large this would still be less than the $4.85bn Merck & Co agreed to pay out in 2007 to settle 27,000 lawsuits relating to the risk of heart attacks and strokes for its anti-inflammatory drug Vioxx (rofecoxib).</p><p>This May, Boehringer Ingelheim also agreed to pay $650m to settle around 4,000 lawsuits for its oral anticoagulant Pradaxa (dabigatran), brought over claims of severe or fatal bleeding</p><p>This article first appeared in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/4/6/takeda-quiet-on-possible-2bn-actos-settlement?elsca1=pan&elsca2=newsltr" target="_new">PharmAsia News</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 216
+
+<p>Despite a report that it may be considering settling thousands of US lawsuits relating to its former blockbuster diabetes drug Actos, Takeda Pharmaceutical has so far given no indications it intends to do so. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Takeda quiet on possible 2bn Actos settlement
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150331T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150331T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150331T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028343
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Takeda quiet on possible $2bn+ Actos settlement
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357591
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1e999cf5-013e-4ae7-b56f-da510dc023b4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042325Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

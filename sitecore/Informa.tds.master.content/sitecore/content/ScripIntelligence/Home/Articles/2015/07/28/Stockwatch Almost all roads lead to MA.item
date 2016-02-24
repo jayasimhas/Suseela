@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {97206DD2-B727-41E3-B6FB-D93464C8F713}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/28/Stockwatch Almost all roads lead to MA
+parent: {0C0E697F-F691-47CD-A5D3-3B289DB4CAAB}
+name: Stockwatch Almost all roads lead to MA
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 243d9544-6a7e-4b16-a2cc-d055b3b4124c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+ Stockwatch: Almost all roads lead to M&A
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Stockwatch Almost all roads lead to MA
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6610
+
+<p>Second-quarter earnings season turned on a sixpence last week. After the worries of falling sales, earnings and currencies from the previous two weeks, suddenly the world was a better place with all roads leading to mergers and acquisitions (M&A). Indeed, if you believed all the research published by investment bank analysts last week, all the life science sector's ills can be cured by M&A &ndash; although rationally that can't be true since we would eventually end up with only one life science company.</p><p><p>When United Therapeutics announced its second-quarter results, they were labeled as "disappointing" by the analysts from JP Morgan and "falling short of expectations" by those from Ladenberg Thalmann. With both sales and earnings being below consensus expectations, the analysts were probably being polite, as more products missed their target than modestly met them. Part of the earnings miss emanated from a $47m reward to employees for this dire performance in the form of a stock option expense that seems to be a regular dent to profitability at United Therapeutics. Not surprisingly there were no suggestions last week of an M&A transaction involving United Therapeutics.</p><p><p><a href="http://www.scripintelligence.com/home/Ibrance-Prevnar-2Q-sales-validate-Pfizers-RandD-investments-359666" target="_new">Pfizer's second-quarter earnings</a> announcement was described as "great" by the analysts from Jefferies and "strong" and "solid" by those from Citigroup and JP Morgan, respectively. In beating analysts' consensus estimates of sales and earnings &ndash; which featured a strong launch of its new drug for breast cancer, Ibrance (palbociclib) &ndash; Pfizer's results lived up to expectations. However, as soon as the descriptions of Pfizer's earnings were out of the way, the analysts turned their attention to Pfizer's business development priorities, or in other words, whom it was going to buy. The analysts from JP Morgan were particularly effusive on the veritable chocolate box that Pfizer had to chose from that will probably be focused on growth (translated as biotech companies) and even, in deference to the recently revised US tax code, an inversion. With no M&A on the cards, and therefore no investment banking fees to be earned from Merck & Co, the latter's second-quarter earnings report was described by the analysts at Citigroup as "mixed" and flattered by vaccine sales and operational cost-cutting, while the analysts at Cowen noted that Merck's sales were "below forecast".</p><p><p>As is often its wont, Gilead Sciences not only reversed the expectation that its HCV antiviral franchise was flattening, but also shifted the mood of earnings season after Biogen and United Therapeutics had driven it to the brink of gloom. <a href="http://www.scripintelligence.com/business/Harvoni-US-sales-dip-reflects-progress-in-treating-sickest-patients-Gilead-says-359661" target="_new">Gilead beat analysts' consensus expectations</a> of sales and earnings, in addition to increasing sales guidance for the second time this year. In their note, the analysts from JP Morgan were keenly interested in Gilead's business development trends. The analysts from Piper Jaffray were much less diplomatic in noting that its "internal pipeline is viewed as inadequate to drive long-term growth" and highlighting the "rampant discussion as to what it will acquire". Unfortunately, such was the focus on Gilead overpaying for a large acquisition that the share price rise in response to its blow-out quarter, the like of which most companies could only aspire to, was a paltry 4.2%.</p><p><p>Helping Gilead to recover the growth honours for the profitable biotech sector was <a href="http://www.scripintelligence.com/home/Amgen-Q2-sales-rise-but-growth-depends-on-Repatha-and-beyond-359713" target="_new">Amgen, which not only beat analysts' second-quarter sales and earnings</a> estimates, but like Gilead further increased its full-year sales and earnings guidance for a second consecutive quarter. As the analysts from JP Morgan suggested, the financial results were somewhat overshadowed by the appointment of former Schering-Plough CEO Fred Hassan to Amgen's board in a move that had the analysts from Piper Jaffray speculating on a transaction between Amgen and Allergan.</p><p><p>To cap a tortuous week of earnings announcements, one of the biggest stock price moves in response to a financial report was not from a company reporting its earnings. The earnings announcement of Astellas prompted an 8.6% jump in the share price of its partner Medivation, which had been the subject of a research report by the analysts from Cowen a few days before stoking fears of a flattening of prescriptions for the partners' drug Xtandi (enzalutamide) for prostate cancer. In the event these fears, like those for Gilead, proved unfounded as Astellas reported US Xtandi sales of $298m for the second quarter, up 33% from the first quarter; a performance that the analysts from JP Morgan said "crushed consensus estimates by $37m".</p><p><p>In recent weeks, clinical trial results that did not meet investors' expectations and a <a href="http://www.scripintelligence.com/home/Biogen-too-slow-to-act-on-MandA-359628" target="_new">disastrous quarterly financial report from Biogen</a> subsequently prompted investment bank analysts to frame Biogen as either an acquirer or a target of an M&A transaction. Last week positive financial results from Pfizer, Amgen and Gilead Sciences also prompted investment bank speculation on their involvement in M&A transactions. It seems irrespective of how a company performs &ndash; good or bad &ndash; they become a candidate for generating investment banking fees by participating in M&A. Wouldn't it be ironic if Medivation, the company with the most dramatically improved profile of the week, but which was not mentioned as an M&A target by the sell-side, were ultimately acquired?</p><p><p>The Magna Biopharma Income fund holdings include Pfizer, Merck, Gilead Sciences, Amgen, Allergan and Medivation.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 515
+
+<p>Second-quarter earnings season turned on a sixpence last week. After the worries of falling sales, earnings and currencies from the previous two weeks, suddenly the world was a better place with all roads leading to mergers and acquisitions (M&A). Indeed, if you believed all the research published by investment bank analysts last week, all the life science sector's ills can be cured by M&A &ndash; although rationally that can't be true since we would eventually end up with only one life science company.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Stockwatch Almost all roads lead to MA
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150728T220000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150728T220000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150728T220000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029407
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+ Stockwatch: Almost all roads lead to M&A
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199000594
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359656
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+243d9544-6a7e-4b16-a2cc-d055b3b4124c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6E4EEDAD-8E92-43C8-8E22-7016A41BCFC4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/11/Lillys Carroll Lets Debate Pricing But Dont Lump Us With Turing
+parent: {1BE3AA12-1C39-4525-B308-110947259A7E}
+name: Lillys Carroll Lets Debate Pricing But Dont Lump Us With Turing
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d4c853f8-d2e5-4aa8-8384-47125c188e8e
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+ Lilly's Carroll: Let's Debate Pricing But Don't Lump Us With Turing  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Lillys Carroll Lets Debate Pricing But Dont Lump Us With Turing
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13610
+
+<p> <b>At the recent BIO-Europe meeting, held in Munich, Germany, </b>Eli Lilly &amp; Co's <b>senior vice president of corporate business development Darren Carroll, in an exclusive interview with <i>Scrip</i>, highlighted his expectations for 2016 and concerns for innovative pharmaceutical companies being tarred with the same brush as current businesses which are under the spotlight for unfounded soaring drug prices in the US. </b> </p> <p> <img src="-/media/E6B0451CA7974042B18ADF5D08D3834F.ashx"> </p> <p> <i>Darren Carrol, Lilly's senior VP, corporate business development</i><b> </b> </p> <p> <b>Carroll spoke to Lucie Ellis about what debates are really needed to address drug pricing arguments, as well as how big pharma needs to balance in-house innovation with partnered and acquired assets and what technology firms have to offer in the healthcare space. </b> </p> <p> <p> <b>Lucie Ellis: In light of the drug pricing debate heating up in the US, what are Lilly's concerns?</b> </p> <p> <b>Darren Carroll:</b> I start at the proposition that to develop a medicine you have to have a belief that the medicine is going to be a cost-effective therapy compared to all other therapies that are available &ndash; and before Lilly invests, we have to convince ourselves of that. We know across most of the healthcare spectrum that an investment hypothesis has to start with that belief. </p> <p> We also know that what is critical for patients is that they get access to new medicines. One of the things I see around the world is that copays for what patients pay for medicines can be very different from the copays patients pay for non-pharmaceutical therapies. A patient might have a very low copay for an expensive hospitalization but a high copay for a drug that might have been able to prevent that situation. So our view at Lilly is that we should have this debate now as free and open societies, and have a conversation about what patients are actually paying. If patients are currently paying far more out-of-pocket for a medicine that is actually the more cost-effective option then that's a discussion that needs to happen. Pricing is just one of many elements in this situation. Also the actual price some of the payers are paying for new medicines is very different to the cost that is listed in some public domains. </p> <p> I'd also say that some of the more recent pricing debates in the US are focused on companies that I almost don't recognize. What we do at Lilly is invest heavily in R&amp;D, we invest about 20% maybe slightly more of our total revenues into R&amp;D. And we have been investing like that now for decades and the medicines we bring to market are the result of that investment and decades of taking risk. This is a very risky business. </p> <p> As you just saw recently we had another late stage failure despite a string of successes. That's the industry we are in. Projects fail, late and early. It's very expensive to do this work at the level we are doing it. But some of the companies that have gotten the most notoriety for some of their pricing behaviors have been companies that do very little, if any, R&amp;D. So we should ask the question, 'Are those companies really like the innovation-base pharma sector?' I think the answer to that is probably, 'Not very much.' We play very different roles in the eco-system. </p> <p> <p> [Editor's note: The first company to come under scrutiny in the current US drug pricing probe was <a href="http://#http://www.scripintelligence.com/home/Antitrust-Trouble-For-Turing-NY-Opens-Probe-361030" target="_new">Turing Pharmaceuticals AG</a> for possible antitrust violations related to the nearly 5,500% increase of the company's toxoplasmosis medicine <i>Daraprim</i> (pyrimethamine).] </p> <p> <p> <b>LE: How do these sometimes scandalous stories about certain companies affect the wider pharma industry?</b> </p> <p> <b>DC:</b> We get paid by society to take big risks and to try to solve, or provide so kind of solution for, major unmet medical needs. Those activities span decades of work and you can't let a passing debate deter you from those goals. It hasn't changed anything in how we invest in medicines, we still focus on the biggest unmet medical needs and game changing medicines, and we aim to present quality data packages that people can rely on to pick a medicine. There can be any number of issues that come up in broader society from time to time, because these can be twenty-year-long activities. We don't get deterred because we think society wants us to focus on innovation. Are these important issues? Sure they are. But we would rather have a wider conversation about innovation and value, and talk about the price a patient pays for all the things that go into their care. That would be an interesting conversation to have. </p> <p> <p> <b>LE: What is Lilly's strategy moving into 2016 and what key products would you highlight?</b> </p> <p> <b>DC: </b>Earlier this year we announced that Lilly is narrowing its focus to a smaller number of therapeutic areas, so moving forward into next year we will be concentrating on three core areas and two emerging fields. In the core areas we have of course diabetes, which we have been involved in for many decades; oncology, which we have been involved in for a very long time, but recently have had a lot more molecules coming forward in this area; and the third area is CNS [central nervous system], in this we have made a pivot away from the neuro-psychiatric therapies that we are well known for &ndash; we developed Prozac among other well-established treatments &ndash; towards neurodegenerative disorders. We have made some significant investments in Alzheimer's disease, an area we have been investing in for more than 25 years. Here we have a lead monoclonal antibody molecule, solanezumab, but we also have a partnered molecule with AstraZeneca, a beta secretase cleaving enzyme (BACE) inhibitor known as AZD3293. We also have a long pipeline following these products. </p> <p> Those are the core areas but there are two emerging areas we are focusing on: one is immunology and here we have one molecule already under regulatory review, ixekizumab, an interleukin 17 (IL-17) cytokine inhibitor. We also have in this therapy area baricitinib, an oral JAK1 and JAK2 inhibitor, for which we recently reported some very interesting data on the head-to-head comparison of this drug against world leading therapy <i>Humira</i> (AbbVie's adalimumab). Furthermore, earlier this year we announced a large partnership with Korean company Hanmi Pharmaceutical for its BTK inhibitor, HM71224, for immunology disorders. Immunology is an area of significant new investment for us. We haven't yet commercialized anything in this area but we very much like the molecules we have at the late-stage end of our pipeline, so we will be making more investment here. </p> <p> The fifth and final key area for Lilly, which is also one we consider an emerging filed for us, is pain treatment. We announced about a year and a half ago a deal with Pfizer for its product tanezumab and earlier this year the FDA lifted a clinical hold on this drug, so we are now heavily working together with Pfizer on a Phase III development plan for that molecule. Then we also have a Lilly-sourced molecule in this area, a CGRP inhibitor, LY2951742, for migraine which we had deprioritized previously. It was developed in a partnership with Arteaus Therapeutics LLC, then we bought that company and with the company all the rights to that drug. LY2951742 is now in Phase III, so we have two Phase III compounds in our pain portfolio but we are looking to add more to that, primarily through our own lab but also through external innovation. </p> <p> <p> <b>LE: Are there any countries where you are targeting more activity or regions where you are pulling back investment?</b> </p> <p> <b>DC:</b> Geographically the US is clearly Lilly's most important market and will remain so. Japan though in many respects is our second most important market, because it is a very pro-innovation market place and the key issues around pricing, reimbursement and market access in Japan we believe are still competitive on a global scale. </p> <p> Europe is an important market place for us but the pricing and reimbursement issues are frankly calling into question how much some of the payers there actually value innovation. When you keep seeing instances across the industry where some brand new, innovative medicines &ndash; that in other market places are becoming the new gold standards of therapy &ndash; in some European markets are being equated with generic medicines that have been available for years before, it's very hard to know how that market place is going to evolve. Europe will still be a strong market place for us but it is less exciting than it once was. </p> <p> On the growth side, China seems to be a very important market place for us. We have invested heavily in China; outside of the US the largest place of employment for Lilly is China. We have the second largest number of employees in a single country unit in China. The other growth area we are interested in is Latin America, as our products line up really well there. We sell our products in well over 100 markets all over the world, but some regions are more important to us than others. Some of our products are just more suited to various markets. For example, with the exception of China and very few other markets, we are no longer involved in the anti-infectives areas. So in some emerging markets where anti-infectives are still a critical part of how you take to the market, that's less of an opportunity for us. But those markets are evolving and maturing, and chronic diseases are becoming more of a concern as populations in those markets get wealthier, as people are able to reach middle-age. This is where we have a lot more focus in terms of our own initiative. </p> <p> <p> <b>LE: What is your opinion on in-house innovation vs. acquisitions for new technologies?</b> </p> <p> <b>DC: </b>My view is you have to have both. The notion that any company with a really ambitious R&amp;D agenda could actually invent everything they need would be without precedent. By the same token though I believe the idea that you can sustainably acquire or in-license everything you need is very difficult to pull off. There needs to be some balance; you need to be able to invent some of your own medicines if only to be able to actually identify what is good on the outside. If you take a look at our late-stage pipeline right now we have eight molecules that are in or could be in regulatory processes in the next 12-18 months. Three of these came directly from our pipeline: abemaciclib, a cyclin-dependent kinase (CDK) 4 and 6 inhibitor, for patients with refractory hormone-receptor-positive (HR+) advanced or metastatic breast cancer; our Alzheimer's drug solanezumab; and necitumumab, a non-small cell lung cancer (NSCLC) drug, which came from an acquisition initially but we have had it now for a long time in our hands. </p> <p> A number of the other products are in partnered relationships. Our expectation though is that our lab will continue to produce close to two thirds of what we need long-term. And when you look back over the long arch of history, 30-40 years, you'll find periods where that amount flexes and wanes but over time our lab has produced about two thirds of what we need. However, we have had some great successes with externally sourced innovation as well. They both succeed, they both fail sometimes, and they are very much like each other in that way. You have earlier failures and late failures; obviously you want early failures if you can but we get them in both areas. </p> <p> <p> <b>LE: There are currently a lot of technology companies getting involved more in healthcare in various ways, how do you view this movement?</b> </p> <p> <b>DC:</b> Actually, this can only be positive. We are seeing some fascinating convergence in areas of technology that could impact a lot of aspects of healthcare. Anything that could help a patient stay compliant is a very positive thing for the patient and the industry. When we conduct years and years of research we do so with the goal that if the medicine gets approved we can convince patients to stay compliant with the medicine because that is how it works best. We are seeing, for example, lots of small apps becoming available to help patients with this compliance issue. We are seeing larger investment by some of the bigger companies in delivery systems and the like and this is very positive. Anything you can do to enhance the patient experience and help them to understand how to take the medicine can only be a positive thing. We welcome new companies getting involved in drug development but it's a hard business. A lot of technical understanding is required to run an investigational compound through its paces, to get it all the way through Phase I, II, III clinical trials and eventually to market. I would suggest that this is probably not a great place for on the job training. That being said there can be great ways for a company like Lilly to partner with some of these tech companies where the two areas converge. </p> <p> <p> [Editor's note: Following this interview, <a href="http://www.scripintelligence.com/home/More-Drug-Pricing-Probes-Merck-Lilly-Targeted-361421" target="_new">Lilly</a> was also linked to US drug pricing probes. The company said it was voluntarily responding to prosecutors' request.] </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 441
+
+<p> <b>At the recent BIO-Europe meeting, held in Munich, Germany, </b>Eli Lilly &amp; Co's <b>senior vice president of corporate business development Darren Carroll, in an exclusive interview with <i>Scrip</i>, highlighted his expectations for 2016 and concerns for innovative pharmaceutical companies being tarred with the same brush as current businesses which are under the spotlight for unfounded soaring drug prices in the US. </b> </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Lillys Carroll Lets Debate Pricing But Dont Lump Us With Turing
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150511T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150511T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150511T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030267
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+ Lilly's Carroll: Let's Debate Pricing But Don't Lump Us With Turing  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361386
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042519Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d4c853f8-d2e5-4aa8-8384-47125c188e8e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042519Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

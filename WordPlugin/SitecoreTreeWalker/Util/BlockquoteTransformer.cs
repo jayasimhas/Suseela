@@ -12,18 +12,15 @@ namespace SitecoreTreeWalker.Util
 	{
 		public static XElement Generate(List<Paragraph> paragaphs, OptimizedCharacterStyleTransformer transformer)
 		{
-			var sidebox = new XElement("div");
-			sidebox.SetAttributeValue("class", "sidebox");
-			
 			var blockquote = new XElement("blockquote");
-			sidebox.Add(blockquote);
+			blockquote.SetAttributeValue("class", "article-pullquote");
 			foreach(Paragraph p in paragaphs)
 			{
 				var paragraphXml = new XElement("p");
 				paragraphXml = transformer.GetCharacterStyledElement(paragraphXml, p, CharacterStyleFactory.GetCharacterStyles(), false);
 				blockquote.Add(paragraphXml);
 			}
-			return sidebox;
+			return blockquote;
 		}
 	}
 }

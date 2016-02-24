@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {02C706C7-9F7B-4792-B02A-BCEFBAF25213}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/11/Factories For Sale As Roches Modernization Drives Site Closures
+parent: {62C55766-C278-4043-A2CE-96E19F97E9EA}
+name: Factories For Sale As Roches Modernization Drives Site Closures
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a576d8c8-a0e8-415f-90c4-8fe898ddf94c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{7C740CAB-1C47-4581-8FFA-55E891B7DE22}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Factories For Sale As Roche's Modernization Drives Site Closures 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Factories For Sale As Roches Modernization Drives Site Closures
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4426
+
+<p>Roche Holding AG will cease manufacturing at four sites in Europe and the US in a modernizing move that could see up to 1,200 jobs lost as a result of changes in the cancer specialist's portfolio of therapies. The decision follows a review of Roche's global manufacturing network for small molecules and an assessment of future drug innovation patterns. </p><p>"With these changes we are responding to the evolution of our small molecule portfolio towards specialized medicines produced in lower volumes," Daniel O'Day, chief operating officer of the company's pharmaceuticals division, explained in a statement.</p><p>The new generation of specialized medicines, many based on large-molecule biologics, are made in smaller amounts than medicines have hitherto been, and they demand different innovative manufacturing technologies. As Roche's portfolio mix has changed, its network of manufacturing plants has become increasingly underutilized. </p><p>It therefore plans to exit four manufacturing sites in Clarecastle, Ireland; Leganes, Spain; Segrate, Italy; and Florence, South Carolina in the US. </p><p>"For all exits, we are looking into divestment options as the best way to ensure long-term sustainable workplaces for our colleagues," a Roche spokeswoman told <i>Scrip</i> in an email. "If there is no divestment option, production will be ceased in a phased approach, currently estimated to be completed between 2018 and 2021. We will approach only reputable companies, and will have more clarity about divestment options by the end of the second quarter next year," she said.</p><p>Roche is currently in different stages of discussion with different companies on possible divestments. "We are looking at securing long-term employment for our impacted employees. We cannot comment on potential buyers as initial discussions have just commenced. We will update employees as more information becomes available. In the meantime, we need to focus on continuing to ensure reliable supply of our products for patients in a compliant manner," she said. Roche employed 88,500 people worldwide at the end of 2014.</p><p>To manufacture new generations of specialized medicines based on small molecules, Roche said it will also invest CHF300m into a dedicated facility in Kaiseraugst, Switzerland, to support future technology requirements. "This investment will strengthen the company's development and launch capabilities," the company said.</p><p>Roche's manufacturing modernizing moves, announced Nov. 12, will produce restructuring charges of CHF1.6bn ($1.6bn) through 2021. Up to CHF600m of the charges will be in cash. The company said it estimated non-core costs in 2015 are up to CHF800m, with only a minor cash flow impact for 2015, it said.</p><p>Roche is thus closing its only manufacturing plant in Ireland with the loss of 240 jobs. Consequently Roche's only operation in Ireland will be its sales organization there, employing some 90 people. The Irish plant was opened in 1974 by Syntex Ireland, and renamed Roche Ireland in 1994 following its acquisition by the Swiss pharma giant. </p><p>Roche has operated a process development and bulk active ingredient manufacturing facility in Florence, South Carolina since 1995, when 20 employees relocated from the former Roche US headquarters in Nutley, New Jersey. The decision to exit that site puts 270 jobs at risk there where the company manufactures active ingredients for cancer treatment Xeloda (capecitabine), hepatitis treatment Pegasys (peginterferon alfa-2a) and weight-loss drug Xenical (orlistat), in addition to that of Tamiflu. The Swiss company's US headquarters are south of San Francisco, California.</p><p>In Spain, Roche owns three manufacturing plants; one for pharmaceutical products in Leganes, near Madrid, which is to close, another located nearby for vitamins in San Fernando de Henares, and a third one in fragrances and flavours in Sant Celoni. Roche has around 2,000 employees in Spain.</p><p>The Segrate manufacturing site in Italy, located in an industrial area some 9 km east of Milan, employs about 310 people and focuses on the production of tablets, film coated tablets, capsules and packaging. Apart from its ability to supply EU markets, the Segrate plant, which was completed in 1998, is FDA approved to supply the US. The site also supplies products to Japan's Chugai Pharmaceutical Co., Ltd. and other world markets. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 361
+
+<p>Roche Holding AG will cease manufacturing at four sites in Europe and the US in a modernizing move that could see up to 1,200 jobs lost as a result of changes in the cancer specialist's portfolio of therapies. The decision follows a review of Roche's global manufacturing network for small molecules and an assessment of future drug innovation patterns. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Factories For Sale As Roches Modernization Drives Site Closures
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150911T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150911T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150911T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030312
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Factories For Sale As Roche's Modernization Drives Site Closures 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361470
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a576d8c8-a0e8-415f-90c4-8fe898ddf94c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {FE82DC05-AAF7-4727-ADCB-81CFF869376B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/08/Rawlins Seek More Joint Scientific Advice for your PIMs
+parent: {EB98594F-6768-459E-BE38-AA507619EAFF}
+name: Rawlins Seek More Joint Scientific Advice for your PIMs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 66763ccb-1d7c-4671-82b5-9955b0e3ebdd
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Rawlins: Seek More Joint Scientific Advice for your PIMs 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Rawlins Seek More Joint Scientific Advice for your PIMs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5357
+
+<p>Not enough companies that have won coveted PIM designations for their novel drugs are making use of joint scientific advice meetings with UK regulators, the MHRA and NICE, and are instead focusing on guidance from the European Medicine Agency &ndash; a situation that needs to change, says MHRA Chairman Sir Michael Rawlins. He added that the two bodies are also working together to bridge the gap that has opened up for products between the scheme and their NICE evaluation. </p><p>The MHRA's Early Access to Medicines Scheme (EAMS) is aimed at making cutting-edge drugs with a clear unmet need available before winning marketing authorization. Under it companies can initially apply for the Promising Innovative Medicine (PIM) designation on the basis of early clinical data. At the next stage, the MHRA will consider the evidence and can issue an EAMS scientific opinion to support prescriptions of unlicensed and off-label medicines. </p><p>The UK initiative complements the EMA's Adaptive Pathways project which encourages greater dialog between regulators, industry, health professionals, and other stakeholders at an earlier stage of drug development. </p><p>Under the UK initiative, companies with PIM designation are encouraged to seek joint scientific advice meetings with the MHRA and NICE. But too few companies are making use of that opportunity, and seem instead to be seeking advice from EMA, said Rawlins in an interview with <i>Scrip</i>. </p><p>"It's with relative rarity that companies at present ask for joint MHRA and NICE scientific advice to help with their drug's progression. I'd like them to come more often and encourage them to do so," he said.</p><p>While he added that it was too soon to draw any lessons from the adaptive licensing initiatives, Rawlins said the early signs were good: "We find that it is possible to deal with a PIM and an EAMS application simultaneously. So far we've had eight PIMs and three EAMS scientific opinions. It seems to be working fairly well."</p><p>Still, the two UK regulators have identified an EAMS issue concerning drug availability which they are now discussing.</p><p>"The problem with EAMS, in a sense, is that it provides the drug to the patient without charge from the manufacturer. Unfortunately, once the product gets marketing authorization it is no longer in the EAMS scheme and so there's a time gap between the marketing authorization and NICE giving its advice to the National Health Service, so that's the kind of gap we're thinking about trying to sort out," Rawlins said, without elaborating further. </p><p>He noted that under the EAMS process the agency decided pembrolizumab had been shown to slow the progression of cancer in a condition where other treatments currently have poor results. That positive scientific opinion was issued to Merck Sharp & Dohme Limited in March. "Around 400 patients have now received this drug as a consequence" in the UK, he said.</p><p>Co-operation between MHRA and NICE has been especially useful in the area of clinical guidelines, not least because such rules aren't limited to authorized products. </p><p>"Sometimes in clinical guidelines NICE needs to recommend the use of off-label products particularly where we're talking about children, so NICE often interacts with the MHRA to find out if there's been any experience, or if the MHRA is aware of particular problems of using products in children that have only been licensed for use in adults. I think there's only one or two products licensed use for malignant disease in children. The treatment of acute leukemia, for example, which is very effective and curative, is almost entirely done with off-label usage. That's another story, but we have close interactions with NICE over this, and it's important that we do when it comes to safety."</p><h2>Interplay</h2><p>The MHRA, which Rawlins has headed since December 2014, is responsible for regulating all medicines and medical devices in the UK. The agency has been transformed over the past few years, merging in 2013 with the National Institute for Biological Standards and Control (NIBSC) and the Clinical Practice Research Datalink (CPRD) in 2012. The idea is the interplay between the three institutions would serve to improve medicines quality and, ultimately, safety.</p><p>"We now have three centers; the MHRA's regulatory center for drugs and devices, the CPRD, and NIBSC," Rawlins explained. </p><p>The NIBSC has two main roles: one is they are the body for the control of biological medicines and secondly they provide standards for the rest of the world. Some 95% of the biological standards used globally are provided by NIBSC. They also do research and have a number of research contracts. "So it's appropriate that it's part of the MHRA," he said. </p><p>"The CPRD is different as it's in really a research database and particularly useful when there are suspected adverse reactions to drugs."</p><p>The CPRD has around 18 million medical reports and around 6 million live patient records. The agency is using the CPRD to conduct clinical trials, and some pilot studies have already been done. "It provides an opportunity to check whether an innovative medicine produces some previously unsuspected adverse reaction, or on the other hand whether what's been postulated isn't actually true," Rawlins said.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 483
+
+<p>Not enough companies that have won coveted PIM designations for their novel drugs are making use of joint scientific advice meetings with UK regulators, the MHRA and NICE, and are instead focusing on guidance from the European Medicine Agency &ndash; a situation that needs to change, says MHRA Chairman Sir Michael Rawlins. He added that the two bodies are also working together to bridge the gap that has opened up for products between the scheme and their NICE evaluation. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Rawlins Seek More Joint Scientific Advice for your PIMs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151208T005214
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151208T005214
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151208T005214
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029535
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Rawlins: Seek More Joint Scientific Advice for your PIMs 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359919
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+66763ccb-1d7c-4671-82b5-9955b0e3ebdd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

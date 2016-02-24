@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {07EB9BFD-B8E7-4976-B338-9BA3988A6604}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/13/FDA Wants Better PDUFA FeesGoals Alignment Predictability
+parent: {795A7AEF-21C6-4727-ABCA-CA7142D31AA1}
+name: FDA Wants Better PDUFA FeesGoals Alignment Predictability
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4b2a8c6d-6019-4d97-8749-107d97c57eb9
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+FDA Wants Better PDUFA Fees-Goals Alignment, Predictability 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+FDA Wants Better PDUFA FeesGoals Alignment Predictability
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6142
+
+<p>While industry wants better integration of the patient perspective into US drug development and regulatory decision-making and an enhancement of the scientific expertise, processes and tools regulators use, the FDA said it would like to see greater alignment of the fee structure with its public health goals and improved predictability of the dollar amounts under the next round of the <i>Prescription Drug User Fee Act</i> &ndash; PDUFA VI &ndash; according to the minutes from the first meeting to negotiate terms.</p><p>A group of top US regulators, which included John Jenkins, director of the FDA's Office of New Drugs, gathered on Sept. 16 with representatives from the two brand-name industry trade groups and officials from Amgen, Alkermes, Alexion, Merck, Novartis and Roche's US unit Genentech to set the ground rules for the PDUFA VI negotiations and provide their respective perspectives on the enhancements each side would like to see in the legislation reauthorizing the law, whose fifth round is due to expire on Sept. 30, 2017.</p><p>PDUFA, which was created by Congress in 1992, gives the FDA the authority to collect user fees from drug manufacturers over a five-year period, with the intent to provide additional revenues to the agency so it can hire more staff, improve systems and establish a better managed human drug review process, in exchange for meeting certain performance goals.</p><p>PDUFA VI officially got underway on <a href="http://www.scripintelligence.com/home/PDUFA-VI-launches-Not-Pluto-flyby-but-has-potential-359452" target="_new">July 15 with a public meeting</a> at the FDA's headquarters in Silver Spring, Md., at which acting Commissioner Stephen Ostroff declared the program has considerably reduced approval times "even as the complexity of the drugs and their associated data that require review have increased quite dramatically."</p><p>To help aid in ensuring the PDUFA VI process goes smoothly, the Biotechnology Industry Organization (BIO) last year created the FDA/Sponsor Interactions During Drug Development <a href="http://www.scripintelligence.com/home/FDA-crystal-ball-BIO-launches-interactions-tool-353224" target="_new">survey tool</a>, which has been tracking the various aspects of drug makers' dealings with the FDA throughout the R&D lifecycle.</p><p>BIO and the Pharmaceutical Research and Manufacturers of America in 2013 also created the <a href="http://www.scripintelligence.com/home/Tracking-PDUFA-V-Making-a-good-thing-better-344395" target="_new">Industry PDUFA Tracking Database</a> to monitor drug companies' experiences with the application processes for new drugs and biologics, which was aimed at providing real-time data to assist in guiding course corrections during the PDUFA V process, as needed, rather than waiting for PDUFA VI to fix the issues.</p><p>The industry and the FDA are expected to be engaged over the next several months in the PDUFA VI negotiation process.</p><p>The FDA's Janet Woodcock, director of the Center for Drug Evaluation and Research, told <i>Scrip</i> last week the agency also is holding a parallel group of meetings with <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Advance-Science-Dont-Pressure-FDA-On-Approvals-Drug-Chief-Tells-Advocates-360907" target="_new">patient advocates</a> to hear them out.</p><p>The PDUFA VI timeline calls for the FDA to finalize a draft of its performance goals letter by March 2016 and submit it the next month to the Department of Health and Human Services, which has until June to clear it and send it on to the White House Office of Management and Budget (OMB).</p><p>The OMB's deadline to give its approval is September 2016.</p><p>The FDA is expected to hold another public meeting sometime in the fall of 2016.</p><p>And the final proposed PDUFA VI performance goals letter is supposed to be in the hands of Congress by Jan. 15, 2017.</p><p>The FDA and industry have supposedly met at least twice already on negotiating PDUFA VI, with Sept. 29 the date of the second meeting. But only the Sept. 16 meeting minutes currently are available.</p><p>At that meeting, the FDA proposed a new rule generally requiring in-person attendance, although the industry representatives suggested there also be an option for teleconference in limited circumstances &ndash; a scenario both sides found agreeable. </p><p>The minutes document posted the FDA's website revealed that drug makers and regulators also discussed a proposed timeline for developing joint communications to the authorizing congressional committees, which was tentatively agreed on, with the stipulation to review and update that plan based on the progress of the negotiations. </p><p>At the meeting, the FDA discussed the overall experience to date in PDUFA V, including the agency's review of its goal performance and other accomplishments under the <a href="http://www.scripintelligence.com/home/All-too-easy-Obama-signs-US-FDA-user-fee-bill-without-fanfare-332602" target="_new">fifth round</a>, which was reauthorized under the <i>Food and Drug Administration Safety and Innovation Act of 2012</i>, which lawmakers, industry and regulators alike dubbed the smoothest user fee renewal process they'd ever experienced. </p><p>Among the improvements the FDA would like have as part of its PDUFA VI goals are enhancements to its review processes, regulatory science and review tools and its postmarketing surveillance. The agency also wants improvements in its information technology infrastructure, according to the record of the meeting. </p><p>Industry representatives pointed out that PDUFA has been a successful program and has evolved towards ensuring the patient perspective is considered, the minutes noted.</p><p>Among the other goals industry would like to achieve is ensuring PDUFA's long-term stability, which the representatives said could be reached by improving the financial transparency, efficiency and accountability of the program. </p><p>They said the FDA also must be able to recruit, hire and retain a highly skilled workforce to advance its public health mission. </p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 524
+
+<p>While industry wants better integration of the patient perspective into US drug development and regulatory decision-making and an enhancement of the scientific expertise, processes and tools regulators use, the FDA said it would like to see greater alignment of the fee structure with its public health goals and improved predictability of the dollar amounts under the next round of the <i>Prescription Drug User Fee Act</i> &ndash; PDUFA VI &ndash; according to the minutes from the first meeting to negotiate terms.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+FDA Wants Better PDUFA FeesGoals Alignment Predictability
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151013T231625
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151013T231625
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151013T231625
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030039
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+FDA Wants Better PDUFA Fees-Goals Alignment, Predictability 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360937
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042505Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4b2a8c6d-6019-4d97-8749-107d97c57eb9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042505Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

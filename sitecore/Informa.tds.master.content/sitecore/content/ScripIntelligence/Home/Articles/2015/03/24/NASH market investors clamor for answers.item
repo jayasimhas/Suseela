@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {A08FD161-DBA3-424D-8943-C9F1744C53FF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/24/NASH market investors clamor for answers
+parent: {3E346B30-C0AD-46A4-867D-2598595ED412}
+name: NASH market investors clamor for answers
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 68ee3b20-3dc7-4a1e-8853-59128e716665
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+NASH market investors clamor for answers 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+NASH market investors clamor for answers
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6022
+
+<p><p>Results from multiple mid-stage clinical trials in patients with non-alcoholic steatohepatitis (NASH) shook up the development landscape for fatty liver disease this week. While one small biotech surged on its positive results, another saw its stock tank after its Phase II trial missed its primary endpoint. Yet, the results will still likely have an impact on the race to get the first NASH treatment to market. </p><p>The disease, which is characterized by an accumulation of fat in the liver that can lead to the development of fibroids and eventually cirrhosis, currently has no treatments, but analysts estimate the market could be worth upwards of $10bn. The results from both studies could have a read-through on the development of other companies' drugs. </p><h2>Genfit plunges</h2><p>French biotech Genfit's shares lost almost half their value overnight to linger at about $28 per share after the company announced results from its mid-stage GOLDEN-505 study on 26 March; the stock reached a high of $70 earlier this year on hopes for the NASH drug, GFT505. In the 52-week study of 274 patients, GFT505 failed to show a resolution of NASH without worsening of fibrosis when compared to placebo. </p><p>Despite the negative result, the French biotech tried to put a positive spin on the news by discounting certain data and said it will move into Phase III after talks with US an EU regulatory agencies. </p><p>Genfit attributed the results to the patient population, as well as the number of clinical trial sites that had a small number of patients. GOLDEN-505 included NASH patients who had a NAFLD Activity Score (NAS) equal to three, indicating early disease, up to patients with a NAS equal to eight, indicating severe disease. Genfit argues that the inclusion of these less sick patients skewed the results &ndash; there was a high placebo response of 57% in these patients.</p><p>The company says that 120mg of GFT505 had a beneficial effect of decreasing the NAS by more than two (P=0.04) when this patient population is excluded from the data. Genfit also noted that the drug was cardioprotective, providing improvements in patients' lipid profile and insulin resistance. The company did not reveal any more of the topline data, but will make presentations later this year at a major medical meeting, as well as publish results in a scientific journal. </p><p>Analysts were as thrilled with the results as investors; multiple analysts downgraded the stock on the data. "We have lowered probability of success to 40% from 60% and our market shared in the advanced fibrosis population from 50% to 25% for GFT-505. We feel today's data leaves many questions around the efficacy, but does support moving to Ph3 with slightly higher risk," wrote Deutsche Bank analyst Alethia Young in a 27 March note. </p><p>RBC Capital Markets analyst Michael Yee expressed a similar sentiment in a 26 March note, writing, &ldquo;anything that is positive only after slicing the data in different ways is not usually that good."</p><h2>Conatus soars</h2><p>In a small, mid-stage trial of patients with non-alcoholic fatty liver disease (NAFLD) with a subset of patients who have NASH, Conatus Pharmaceuticals' emricasan reduced alanine amino transferase</p><p>(ALT) levels by 39% at day 28 versus 14% in the placebo arm (p<0.05). the="" study="" also="" showed="" an="" improvement="" in="" three="" serum="" biomarkers="" that="" are="" indicative="" of="" disease="" progression.="" emricasan="" had="" no="" dose-limiting="" toxicities="" or="" serious="" adverse="" events="" related="" to="" treatment.=""></0.05).></p><p>Conatus is also studying emricasan in a Phase II liver cirrhosis trial with results expected in the fourth quarter, a mid-stage portal hypertension study with results expected in the third quarter and a post liver transplant clearance of hepatitis C virus infection with sustained viral response (POLT-HCV-SVR) study. </p><p>In the meantime, the biotech is going to work with regulatory agencies to determine adequate trial design and proper surrogate endpoints for registrational trials. </p><h2>The impact</h2><p>There's plenty of competition in the NASH space. Currently leading the pack id Intercept, which expects late-stage data for its obeticholic acid (OCA) in the third quarter. The drug already received breakthrough designation from the FDA and analysts are confident that the drug will dominate the market. </p><p>Intercept <a href="http://#http://www.scripintelligence.com/business/Intercept-rollercoaster-continues-with-NASH-PBC-updates-354939" target="_new">presented data</a> from OCA last year that showed the drug had strong efficacy results, but left some investors worrying that regulators would ask for costly cardiovascular outcomes studies before approval. </p><p>"We think OCA is the clear leader in treating patients with NASH that have fibrosis. We think that this particular NASH population is of focus by regulators for developing therapeutics in our opinion," wrote Young. "We have seen other big companies partnering & acquiring NASH assets which suggest to us that this is a big market. Today, we think OCA&rsquo;s position is strengthened from a competitive data point, but the Genfit publication early 2H15 will be important in fully understanding the two datasets better."</p><p>The positive emricasan data could spur Conatus forward in the NASH race. While the biotech did not look at improvement in actual disease and fibroids, Conatus firmly believes that the surrogate endpoints are proof that the drug could have significant impact on the disease. Based on commentary from regulatory agencies about the space, Conatus will likely have a good shot at accelerated approval for emricasan. </p><p><a href="http://#http://www.scripintelligence.com/business/Gilead-buying-another-NASH-program-for-up-to-470m-355961" target="_new">Gilead</a>, Raptor, Shire, Galmed Pharmaceuticals and Galectin Therapeutics all have horses in the NASH race as well. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+NASH market investors clamor for answers
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150324T155329
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150324T155329
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150324T155329
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028265
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+NASH market investors clamor for answers 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357459
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042322Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+68ee3b20-3dc7-4a1e-8853-59128e716665
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042322Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

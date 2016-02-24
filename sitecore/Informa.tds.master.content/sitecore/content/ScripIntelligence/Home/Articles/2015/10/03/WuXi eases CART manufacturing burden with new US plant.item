@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {754795E1-B3DB-40A7-8E04-E4BC2C363992}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/03/WuXi eases CART manufacturing burden with new US plant
+parent: {B4DD542A-3150-404B-9742-7EB9440DE618}
+name: WuXi eases CART manufacturing burden with new US plant
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0f57af2b-a12d-469e-bc9f-94817f37ef6a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+WuXi eases CAR-T manufacturing burden with new US plant
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+WuXi eases CART manufacturing burden with new US plant
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2886
+
+<p>China's WuXi PharmaTech, an R&D technology company serving the pharmaceutical, biotechnology and medical device industries, has announced construction of a new manufacturing facility in Philadelphia, US designed for cell therapy products, including chimeric antigen receptor T-cell (CAR-T) therapies. More manufacturing power is crucial to the success of this burgeoning, high-potential field.</p><p>Many companies have thrown their weight behind CAR-T technology, including <a href="http://www.scripintelligence.com/business/Novartis-will-make-waves-in-gene-therapy-says-head-of-biomedical-research-356515" target="_new">Novartis</a>, <a href="http://www.scripintelligence.com/business/Amgen-hangs-on-to-Kite-in-CAR-T-race-355933" target="_new">Amgen</a>, and <a href="http://www.scripintelligence.com/business/Janssen-touts-Transposagen-technology-in-CAR-T-collaboration-355247" target="_new">Janssen</a> among other, smaller players. The big hope is that these products will bring us closer to <a href="http://www.scripintelligence.com/home/Novartis-aims-to-cure-cancer-with-CART-352668" target="_new">curing certain cancers completely</a>. It works by taking T-cells from a patient, modifying them to attack a target which is only expressed on cancer cells, and reintroducing them into the body.</p><p><a href="http://www.scripintelligence.com/researchdevelopment/ASH-2014-CAR-T-cell-therapies-generate-buzz-355536" target="_new">Results so far</a>, though early-stage, have been hugely promising, and Novartis at least is confident that pivotal trials are not far away. But no company has yet cracked the manufacturing problems associated with such a highly personalized approach, and the issues of scale which accompany them. It is not easy, quick or cheap to harvest a patient's cells, process them and return to the body within the necessary timeframe.</p><p>All of which means that companies like WuXi could see high demand for new manufacturing capabilities. Currently, the Shanghai-based firm has its sights set on the growing clinical trials market, but it has also said that it hopes to be able to meet commercial supply needs further down the line. </p><p>CEO and chair, Dr Ge Li, said: "Cell therapies like CAR-T cells offer important new treatment options for cancer patients, and WuXi aims to be at the forefront of this area of providing our partners with cutting-edge cGMP manufacturing capabilities and capacities."</p><p>The new facility will be WuXi's third cell therapy manufacturing plant. It will be 145,000 square feet, and will aim to provide single-source contract development and cGMP capabilities. 45,000 square feet will be set aside for manufacturing allogeneic and autologous cell-based therapeutics. WuXi is expanding on its existing 16,000 square foot cell therapy manufacturing facility, and expects the new unit to be operational by mid-2016.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 400
+
+<p>China's WuXi PharmaTech, an R&D technology company serving the pharmaceutical, biotechnology and medical device industries, has announced construction of a new manufacturing facility in Philadelphia, US designed for cell therapy products, including chimeric antigen receptor T-cell (CAR-T) therapies. More manufacturing power is crucial to the success of this burgeoning, high-potential field.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+WuXi eases CART manufacturing burden with new US plant
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151003T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151003T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151003T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028110
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+WuXi eases CAR-T manufacturing burden with new US plant
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357200
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042310Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0f57af2b-a12d-469e-bc9f-94817f37ef6a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042310Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {AB66F657-E310-44CE-B7F4-06EF9D9D2AA2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/26/BioNotebook Denovo Celimmune revive Lilly Amgen programs Malin invests in Serenus JJ opens fourth in
+parent: {36275DB8-48EA-487C-BD7F-C8F8E306B3C7}
+name: BioNotebook Denovo Celimmune revive Lilly Amgen programs Malin invests in Serenus JJ opens fourth in
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b6392e40-d0f4-4860-b6b7-65475d4a226f
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{3A5E806F-C17B-4751-9A9A-7717F936EE6A}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 141
+
+BioNotebook: Denovo, Celimmune revive Lilly, Amgen programs; Malin invests in Serenus; J&J opens fourth incubator; Blueprint, Alexion partner
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 100
+
+BioNotebook Denovo Celimmune revive Lilly Amgen programs Malin invests in Serenus JJ opens fourth in
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8390
+
+<p>What's old is new again as San Diego-based Denovo Biopharma has licensed a second failed Eli Lilly drug and Celimmune in Lebanon, New Jersey has licensed a monoclonal antibody that's been sitting on Amgen's shelf since 2008.</p><p>Denovo obtained all rights to develop, manufacture and commercialize pomaglumetad methionil (DB103; formerly LY2140023), an oral glutamate 2 and 3 receptor agonist that Lilly abandoned in 2012 after the drug failed in two Phase II schizophrenia clinical trials and appeared unlikely to succeed in Phase III (scripintelligence.com, <a href="http://#http://www.scripintelligence.com/business/Lillys-halts-trials-of-Zyprexa-replacement-in-schizophrenia-334433" target="_new">30 August 2012</a>). Lilly was developing pomaglumetad to help the big pharma replace revenue lost when schizophrenia blockbuster Zyprexa (olanzapine) went off patent.</p><p>The financial terms of Denovo's license agreement were not disclosed, but Lilly has an option to reacquire pomaglumetad for a predetermined price upon completion of a successful clinical trial. Denovo will pursue development of the schizophrenia drug for an unidentified patient subpopulation who benefitted from pomaglumetad in Lilly's Phase II and III trials. </p><p>Denovo will use its technology platform to develop a companion diagnostic for pomaglumetad that may identify study participants who could have positive outcomes in clinical trials.</p><p>The company is using the same strategy for the development of enzastaurin, a failed Lilly cancer drug for which Denovo licensed worldwide rights in September (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Denovo-takes-on-failed-Lilly-cancer-drug-354007" target="_new">18 September 2014</a>). The company will develop the oral serine/threonine kinase inhibitor of the PKC beta and AKT pathways to treat a subpopulation of patients with diffuse large B-cell lymphoma (DLBCL).</p><p>Meanwhile, autoimmune disease specialist Celimmune licensed an interleukin-15 (IL-15) inhibitor known as AMG 714 from Amgen, which the private company will develop for the treatment of celiac disease, the condition that keeps certain people from properly processing gluten in food. The monoclonal antibody also may be developed for other gastrointestinal autoimmune diseases.</p><p>Celimmune has worldwide rights to develop, manufacture and commercialize AMG 714, except for in Japan, and Amgen has an option to reacquire the antibody after completion of additional studies. Financial terms were not disclosed.</p><p>Amgen suspended development of AMG 714 in 2007 for rheumatoid arthritis (RA) and in 2008 for psoriasis, based on disappointing Phase II arthritis results, according to Sagient Research's BioMedTracker database. Amgen previously reported positive interim Phase II data for the anti-IL-15 therapy in RA in 2004 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/news/Mixed-fortunes-for-Phase-II-drugs-at-American-Rheumatology-meeting-75678" target="_new">22 October 2004</a>).</p><p>Celimmune said IL-15 is an important growth factor that causes intestinal problems for people with celiac disease and other gastrointestinal indications. The company set up operations in February to pursue treatments for celiac and other autoimmune diseases.</p><p><b>As European IPO awaits, Malin invests in Africa-focused Serenus</b></p><p>San Francisco-based Serenus Biotherapeutics is the first company to announce an infusion of cash from the newly revealed Irish biotechnology investment firm Malin, which is led by former Elan CEO Kelly Martin, former GlaxoSmithKline executive Bob Ingram and former US FDA commissioner Andrew von Eschenbach. When Malin revealed its plans for a $308m to $365m European initial public offering in late February, the firm said one of its first investments would be a distributor of drugs in Africa, which apparently is Serenus (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Massive-Malin-IPO-to-shake-up-stale-EU-market-356981" target="_new">27 February 2015</a>).</p><p>Serenus is focused on development and commercialization of pharma products in Africa that already are approved in the US, Europe and Japan. Malin will invest $18m to acquire a 41% interest in the company and the firm has an option based on the achievement of certain strategic and operational milestones to invest another $25m to own up to 76% of Serenus. </p><p>As a condition of Malin's investment, Serenus will assess opportunities to move the company's headquarters to tax-friendly Ireland. Also, Mr Martin and Malin chairman John Given, Elan's former executive vice president and general counsel, will join the Serenus board of directors. The company's founder, chairman and CEO Menghis Bairu served as chief medical officer at Elan.</p><p>Serenus will use Malin's cash to establish commercialization agreements, clinical development operations and a supply chain network for targeted markets in Africa, where pharma spending is expected to expand at a compound annual growth rate of 10.6%, reaching $45bn in 2016. </p><p><b>J&J opens fourth incubator with 10 tenants, room for 40 more</b></p><p>Johnson & Johnson Innovation, a business development arm of J&J, opened its fourth new incubator and its second in San Francisco with 10 tenants and room for up to 40 more biotech, pharma, medical device, consumer and digital health care startups. The no-strings-attached JLabs concept provides new companies with low-cost office and laboratory space as well as access to experts at J&J's nearby Janssen research facilities. </p><p>J&J Innovation announced plans for JLabs at South San Francisco in May (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Janssen-to-open-another-incubator-venture-capital-IPO-updates-LigandOmthera-deal-ChimerixMerck-no-deal-351894" target="_new">19 May 2014</a>). The startups are under no obligation to sell or license their technology to J&J, but they may benefit from easy access to the company's R&D experts and business development staff.</p><p>Of the first 10 tenants at JLabs @SSF, eight are developing therapeutics: Ab Initio Biotherapeutics with therapeutic proteins for immuno-oncology; Afferent Pharmaceuticals with small molecules that target P2X3 receptors; Alkahest with treatments for aging and neurodegenerative diseases; Applied Molecular Transport with oral therapies for immune-mediated inflammation and metabolic diseases; Audentes Therapeutics with gene therapies for rare diseases; Cortexyme with drugs that treat Alzheimer's and other neurodegenerative diseases; Driver BioEngineering with remote control technology for chimeric antigen receptor (CAR) therapies; and Goleini with a gene therapy for glaucoma. </p><p>Applied Molecular Transport already is working with Janssen Biotech on a drug candidate for inflammatory bowel diseases. Audentes raised a $42.5m Series B venture capital round in December (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Naurex-leads-VC-funding-surge-with-80-Series-C-355396" target="_new">3 December 2014</a>).</p><p><b>Blueprint, Alexion partner on rare disease therapies</b></p><p>Blueprint Medicines will received a $15m upfront payment and could earn more than $250m in milestone fees plus royalties from Alexion Pharmaceuticals under a collaboration to discover, develop and commercialize novel drug candidates for an undisclosed activated kinase target that causes a rare genetic disease. Cambridge, Massachusetts-based Blueprint is responsible for all preclinical work and Alexion will take over once an investigational new drug (IND) is submitted to the US FDA.</p><p>Blueprint CEO Jeffrey Albers said the agreement with Alexion related to a genetic disease will allow the company "to focus on our primary strategic area of oncology while we leverage our platform in additional therapeutic areas." Blueprint raised a $50m Series C venture capital round in November to finance its kinase-focused drug discovery platform and Phase I clinical trials for its first two oncology drug candidates (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Bristol-Myers-hiring-up-to-400-for-Ireland-biologics-plant-plus-a-deal-and-three-financings-355082" target="_new">15 November 2014</a>).</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 231
+
+<p>What's old is new again as San Diego-based Denovo Biopharma has licensed a second failed Eli Lilly drug and Celimmune in Lebanon, New Jersey has licensed a monoclonal antibody that's been sitting on Amgen's shelf since 2008.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 100
+
+BioNotebook Denovo Celimmune revive Lilly Amgen programs Malin invests in Serenus JJ opens fourth in
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150226T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150226T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150226T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027990
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 141
+
+BioNotebook: Denovo, Celimmune revive Lilly, Amgen programs; Malin invests in Serenus; J&J opens fourth incubator; Blueprint, Alexion partner
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356964
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b6392e40-d0f4-4860-b6b7-65475d4a226f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

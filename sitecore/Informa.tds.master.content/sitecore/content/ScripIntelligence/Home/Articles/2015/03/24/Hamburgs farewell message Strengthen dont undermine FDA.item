@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {EE2F0BEF-843E-4B97-9B7D-31FE97429F8D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/24/Hamburgs farewell message Strengthen dont undermine FDA
+parent: {3E346B30-C0AD-46A4-867D-2598595ED412}
+name: Hamburgs farewell message Strengthen dont undermine FDA
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 36f96cb9-8008-4072-af99-820eb8671692
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Hamburg's farewell message: Strengthen, don't undermine, FDA
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Hamburgs farewell message Strengthen dont undermine FDA
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4412
+
+<p>In her last public address as FDA commissioner, Dr Margaret Hamburg on 27 March urged stakeholders to put their collaborative efforts towards strengthening, rather than undermining, the agency she led for about six years.</p><p>"It is hard to overstate the unique and vital importance of this agency for all of us," Dr Hamburg said during a speech at the National Press Club in Washington. </p><p>But, she said, some have argued FDA regulations are the principal obstacles to developing innovative treatments and have suggested the agency's authorities and procedures should be fundamentally reconsidered.</p><p>"I strongly disagree," declared Dr Hamburg, who announced on <a href="http://www.scripintelligence.com/home/FDA-chief-Hamburg-to-depart-late-March-356562" target="_new">5 February</a> she was leaving the FDA by the end of March.</p><p>In actuality, she said, regulation, when it's done right, isn't a roadblock. "It's the actual pathway to achieve meaningful and lasting innovation." </p><p>"Smart science-based regulation instills consumer confidence in products and treatments," Dr Hamburg said. "It levels the playing field for businesses. It decreases the threat of litigation. It prevents recalls that threaten industry reputation and consumer trust, not to mention levying huge preventable costs on individual companies and entire industries. And it spurs industry to excellence."</p><p>"The fact is, when done right, smart regulation allows us to deliver on the promise of science in the service of patients, consumers. And yes, even industry," Dr Hamburg argued. </p><p>She asserted it was "foolish," even "dangerous," for anyone to believe reducing regulatory standards would help speed new treatments to the market &ndash; especially "if the science is not there."</p><p>Dr Hamburg acknowledged there are times when tensions between moving new drugs and devices swiftly out into the marketplace collide with making sure those therapies have adequately been studied.</p><p>She said she often has been asked whether she favors safety or innovation &ndash; noting that in fact, during her 2009 confirmation hearings, one lawmaker's office actually went through and counted how many times Dr Hamburg publicly said &ldquo;safety&rdquo; versus &ldquo;innovation&rdquo;</p><p>"They presumed this to be a measure of whether I was pro-industry or pro-consumer," she said.</p><p>"I'm told it was about equal, but I never went back to check," Dr Hamburg said, adding that she did not believe the two are mutually exclusive. </p><p>"Why should we have to choose?" she said. "Protecting the public health, while encouraging, not discouraging innovation, must be the goal. And it is."</p><p>But, Dr Hamburg emphasized, in the race for the newest treatment, "innovation doesn't matter if the product doesn't work."</p><p>The outgoing chief also stressed the importance of early engagement by industry with the FDA.</p><p>"Simply waiting until we see what comes through our doors for review cannot be the going model," she said. </p><p>A growing part of the FDA's focus in recent years, Dr Hamburg said, has been to identify what is in the development pipeline, provide guidance and incentives to address gaps and accelerate progress and "foster the kinds of innovation that will make a real difference for patients."</p><p>"We have seen how early and continuing engagement between the FDA and researchers in the product development plan makes a huge difference in streamlining the process and making sure that the right questions get asked and answered from the get-go," she said.</p><p>Dr Hamburg has not divulged where she's headed after the FDA &ndash; insisting she made her decision to step down independent of future opportunities.</p><p>"I'm going to rest, relax, regroup and then decide," she told a panel of lawmakers at a <a href="http://www.scripintelligence.com/home/Wheres-Hamburg-headed-after-FDA-357274" target="_new">12 March Capitol Hill hearing</a>. "But I suspect that I'll still be involved in many of the kinds of issues that I've dealt with at the FDA."</p><p><a href="http://#http://www.scripintelligence.com/policyregulation/Who-is-Dr-Stephen-Ostroff-356612" target="_new">Dr Stephen Ostroff</a>, who has most recently been the FDA&rsquo;s chief scientist, will take the helm until a permanent commissioner is selected, confirmed and sworn into the job.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 228
+
+<p>In her last public address as FDA commissioner, Dr Margaret Hamburg on 27 March urged stakeholders to put their collaborative efforts towards strengthening, rather than undermining, the agency she led for about six years.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Hamburgs farewell message Strengthen dont undermine FDA
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150324T152613
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150324T152613
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150324T152613
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028268
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Hamburg's farewell message: Strengthen, don't undermine, FDA
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357462
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042322Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+36f96cb9-8008-4072-af99-820eb8671692
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042322Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

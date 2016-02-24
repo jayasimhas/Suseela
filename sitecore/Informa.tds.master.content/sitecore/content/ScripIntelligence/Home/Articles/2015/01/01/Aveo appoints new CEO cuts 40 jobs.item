@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {100998A5-6047-4FAA-8182-128787CD75CE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/01/Aveo appoints new CEO cuts 40 jobs
+parent: {88065703-3000-40F8-A590-08BEC728CDD6}
+name: Aveo appoints new CEO cuts 40 jobs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d24aed86-57f8-4cc2-9820-168c14f9d736
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 35
+
+Aveo appoints new CEO, cuts 40 jobs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 34
+
+Aveo appoints new CEO cuts 40 jobs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2009
+
+<p> After a string of disappointments for the company's former lead drug candidate tivozanib, Aveo Oncology appointed a new president and CEO, and said it would cut it 40 jobs &ndash; two-thirds of Cambridge, Massachusetts-based Aveo's work force. </p><p> Chief business officer Michael Bailey will replace president and CEO Tuan Ha-Ngoc, who will become chairman of the board of directors. Current board chair Henri Termeer &ndash; former chairman, president and CEO of Genzyme &ndash; will become lead outside director. The executive changes and job cuts mirror Aveo's shift away from drug discovery and new focus on business development. </p><p> Aveo announced in March that the company's research and development efforts would focus on the preclinical GDF-15 inhibitor AV-380 for cancer cachexia with human clinical trials expected to begin in the second half of 2015. The company announced its new strategy after Astellas walked away from development of tivozanib in all indications following the drug's failure in multiple cancers. </p><p> Aveo decided to seek partners for further development of its cancer drugs AV-203, an ErbB3 inhibitor; ficlatuzumab, an HGF/c-Met inhibitor; and the small molecule VEGF inhibitor tivozanib. </p><p> Ophthotech licensed tivozanib to explore non-cancer indications related to the eye in November for $500,000 up front. Also, Aveo and Biodesix announced a collaboration in April to develop ficlatuzumab in combination with a companion diagnostic for lung cancer. </p><p> Aveo had $63.4m in cash and investments at the end of September and it expected to end 2014 with $50m to $55m in cash and securities, which should fund operations through the end of 2015 barring any new partnership agreements or other strategic transactions. </p><p> The company's stock price fell by a penny on 7 January to $0.84 per share following the appointment of Mr Bailey as president and CEO. The stock's 52-week range is $0.61 to $2.07 and Aveo's market cap is $43.2m. </p> <p><p><p><p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 252
+
+<p> After a string of disappointments for the company's former lead drug candidate tivozanib, Aveo Oncology appointed a new president and CEO, and said it would cut it 40 jobs &ndash; two-thirds of Cambridge, Massachusetts-based Aveo's work force. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 34
+
+Aveo appoints new CEO cuts 40 jobs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150101T234958
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150101T234958
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150101T234958
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027444
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 35
+
+Aveo appoints new CEO, cuts 40 jobs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355902
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042228Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d24aed86-57f8-4cc2-9820-168c14f9d736
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042228Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

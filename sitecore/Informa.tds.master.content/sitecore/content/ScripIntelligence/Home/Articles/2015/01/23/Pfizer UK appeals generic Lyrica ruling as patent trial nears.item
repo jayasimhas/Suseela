@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {5EBA032B-5203-47AC-8FE9-A7D5966DBA68}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Pfizer UK appeals generic Lyrica ruling as patent trial nears
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Pfizer UK appeals generic Lyrica ruling as patent trial nears
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 50a3cced-7a12-4441-9720-39936565271e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Pfizer UK appeals generic Lyrica ruling as patent trial nears
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+Pfizer UK appeals generic Lyrica ruling as patent trial nears
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9533
+
+<p>The launch by Actavis of a generic version of Pfizer's Lyrica (pregabalin) in the UK would not infringe a patent held by Warner-Lambert (part of the Pfizer group) on one of the three uses for which Lyrica is approved, a judge at the High Court has ruled. </p><p>Mr Justice Arnold said that there was "no serious issue to be tried" with regard to Warner-Lambert's claim that the marketing of the generic would infringe its patent on Lyrica's use in pain. He also dismissed the originator's attempt to force the generic to carry a removable label stating that it is not authorized for such use.</p><p>Pfizer said it would immediately appeal the ruling, noting that a full hearing on the infringement and validity of the patent was due to begin in June and that the ruling did not affect its rights to seek damages from third parties that infringed its patent if it was upheld as valid and infringed. As a result of the appeal, Actavis said it would not comment on the case until a final decision had been issued.</p><p>As well as being a blow for Pfizer and good news for Actavis, the ruling has wider implications for the patenting of pharmaceuticals. </p><p>Taylor Wessing said this was the first time that a UK court had comprehensively dealt with the issue of infringement of second medical use claims, "an issue on which both patentees and generic companies have wanted guidance for a long time". Generic companies "will be relieved by the decision, but holders of patents for specific treatments will be frustrated that they cannot prevent generic drugs also being used for those treatments", said Paul England, the law firm's senior associate in the patents practice. </p><h2>The case</h2><p>Lyrica is marketed in the UK for epilepsy, generalized anxiety disorder (GAD) and neuropathic pain. The basic composition patent on pregabalin expired last year, but Warner-Lambert has a second medical use patent protecting its use in neuropathic pain, which is valid until July 2017. </p><p>On 9 July 2014, Actavis filed an approval application for Lecaent, its generic version of Lyrica, and had hoped for a marketing authorization by November. The company declined to say whether it filed via the centralized or national route, as its regulatory and commercial strategy was confidential. The MA has not yet been awarded, although the judge said Actavis was "on the verge" of obtaining it. </p><p>As the pain indication was still under patent, Actavis sought approval for only the off-patent indications (a so-called "skinny label"), as provided for under EU legislation. It does, though, plan to seek approval for the pain indication as well, and has begun court proceedings to seek the revocation of the patent, which will be decided at the June trial. </p><p>Pfizer has every reason to be worried about its Lyrica franchise. The judge described it as "an important pharmaceutical product both therapeutically and commercially". It had global sales of around US$4.6bn in 2013, more than any other Pfizer product, and its sales in the UK alone were about US$301m, the judge noted, adding that more than 50% of UK sales were in the pain indication.</p><p>One company, Consilient, already has an MA for generic pregabalin and "expects to be in a position to launch its product in the near future", he said. Dr Reddy's also plans to launch, as does Teva, although the judge noted that "Teva has declined to confirm this or to reveal its intended timing or any other details. Much the same is true of Sandoz." Mylan, the judge continued, has stated that it does not intend to launch generic pregabalin before the fourth quarter of this year. </p><p>As of January, six pregabalin products were under review at the European Medicines Agency. Pfizer itself has a generic version that was approved by the European Commission under the centralized approval procedure in April 2014. </p><h2>Problems </h2><p>While Actavis has sought approval only for the epilepsy and GAD indications, and not for pain, the problem, the judge remarked, is that when writing prescriptions, doctors generally do not state the indications for which the drug has been prescribed. Pharmacists may therefore not know what condition the patient has, and they may also have a strong commercial incentive to dispense the cheaper generic version of the drug against a generic prescription. </p><p>"Thus it is foreseeable that pharmacists will dispense the generic version of the drug for patients who have in fact been prescribed the drug for treating the patented indication, unless positive steps are taken to prevent this", the judge said.</p><p>Both Pfizer and Actavis have taken a number of steps to address these concerns. Pfizer contacted the Department of Health and the Chief Pharmaceutical Officer explaining its position. It also held a meeting with the National Institute for Health and Care Excellence (NICE), as a result of which the institute said in December 2014 that it had amended its clinical guideline on neuropathic pain to say that until the pain patent expires, generic pregabalin products will not be licensed for this indication and their use in this condition will be off-label and might infringe the patent. Pfizer also wrote to pharmacists and Clinical Commissioning Groups to inform them that Actavis planned to launch a generic that would not be indicated for neuropathic pain. </p><p>Actavis offered to write to CCGs, superintendent pharmacists and NICE once the marketing authorization had been granted, informing them that its generic product was limited to epilepsy and GAD. </p><p>But in December 2014, Warner-Lambert launched an application for an interim injunction in which, inter alia, it said it wanted each pack of Lecaent to have a "removable notification" stating: "This product is not authorised for the treatment of pain and must not be dispensed for such purposes." </p><p>Originally, it had wanted a permanent sticker, then changed this to a removable sticker, but after the Medicines and Healthcare products Regulatory Agency (MHRA) said these would be contrary to the EU legislation, it finally plumped for a removable cellophane wrapper bearing the notice, the judge noted.</p><p>In its application, Warner-Lambert also asked Actavis to ensure that pharmacists made "reasonable endeavours" not to supply Lecaent to patients who had been prescribed pregabalin for pain, and said its contracts with wholesalers and other intermediaries must specify that the product was supplied on the basis that it should not be used for pain. </p><p>Actavis undertook not to launch its generic before the judge had ruled on the application.</p><h2>Two questions</h2><p>Mr Justice Arnold said there were two main questions to address: whether Actavis would infringe the pain patent unless it took "positive steps" to prevent its generic version being dispensed for patients prescribed the drug for that use; and if not, which steps, if any, Actavis should be obliged to take to prevent this happening.</p><p>The situation, he said, was complicated by the involvement of other parties "who are not under either party's control", such as prescribers, dispensing pharmacists, CCGs, the MHRA, NICE, the NHS and the Department of Health. </p><p>"It is still further complicated by the behaviour of patients, many of whom do not take their own prescriptions to the pharmacy, some of whom may not remember what they have been prescribed pregabalin for, and a few of whom may mislead their doctors for ulterior reasons."</p><p>He said that it was" more or less common ground between all concerned that the best solution to the problem which arises in this case is to try to ensure that prescribing doctors prescribe pregabalin for the treatment of pain by reference to the brand name Lyrica rather than by reference to the generic name pregabalin." The NHS in England and Wales should issue appropriate guidance regarding the prescription of Lyrica by brand name, he said, and if this happened Warner-Lambert was "unlikely to suffer recoverable loss". </p><p>As for requiring Actavis to put a notice on its product pack, the judge was not convinced that this would make a significant difference in terms of preventing Lecaent's use in pain. In fact, requiring it do so would delay Actavis's entry to the market and might deter pharmacists from stocking the product. He also noted that it was still not clear whether a cellophane wrapper would be in line with the EU legislation, and moreover, while such a notice would bring the matter to the pharmacist's attention, "this would not help the pharmacist to know whether the prescription had been written for treating pain."</p><p>"In my judgment," he continued, "granting the relief sought by Warner-Lambert would create a greater risk of injustice than refusing it. In my view, wrongly granting the relief is more likely to cause Actavis substantial unquantifiable harm than wrongly refusing it is likely to cause Warner-Lambert substantial unquantifiable harm. Taking into account the other factors considered above, including the likely efficacy of the measure, I consider that the balance is firmly tipped against ordering Actavis to put a notice on its packaging."</p><p>He concluded that there was no serious issue to be tried with regard to Warner-Lambert's claim that Actavis would infringe the patent by marketing Lecaent, and that "even if there was a serious issue to be tried, the balance of the risk of injustice would favour refusal of the relief sought by Warner-Lambert". </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 262
+
+<p>The launch by Actavis of a generic version of Pfizer's Lyrica (pregabalin) in the UK would not infringe a patent held by Warner-Lambert (part of the Pfizer group) on one of the three uses for which Lyrica is approved, a judge at the High Court has ruled. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Pfizer UK appeals generic Lyrica ruling as patent trial nears
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027605
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Pfizer UK appeals generic Lyrica ruling as patent trial nears
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356242
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+50a3cced-7a12-4441-9720-39936565271e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

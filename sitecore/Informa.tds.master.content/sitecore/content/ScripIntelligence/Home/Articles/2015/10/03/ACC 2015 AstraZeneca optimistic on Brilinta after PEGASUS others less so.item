@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {021D6A83-56E8-4002-A5E2-B33CDCDE597E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/03/ACC 2015 AstraZeneca optimistic on Brilinta after PEGASUS others less so
+parent: {B4DD542A-3150-404B-9742-7EB9440DE618}
+name: ACC 2015 AstraZeneca optimistic on Brilinta after PEGASUS others less so
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a341377e-2ce3-4317-a822-526b680c78ce
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 74
+
+ACC 2015: AstraZeneca optimistic on Brilinta after PEGASUS, others less so
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+ACC 2015 AstraZeneca optimistic on Brilinta after PEGASUS others less so
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5844
+
+<p>AstraZeneca's US president Paul Hudson is optimistic about the opportunities for Brilinta (ticagrelor) in longer-term treatment of acute coronary syndrome (ACS) based on results from the Phase III PEGASUS clinical trial, but analysts and doctors are concerned about the bleeding risk associated with the drug.</p><p>"This is a big day, a huge day, for patients, for the cardiovascular profession and us as a company," Mr Hudson told <i>Scrip</i> on 14 March after a presentation of PEGASUS data that kicked off the American College of Cardiology (ACC) Scientific Session & Expo in San Diego. The results, which also were published in the <i>New England Journal of Medicine</i> on 14 March, showed a 15% to 16% reduction for Brilinta versus placebo in the primary efficacy endpoint of cardiovascular death, myocardial infarction (heart attack) or stroke.</p><p>PEGASUS randomized 21,000 patients for treatment with either 90mg or 60mg twice-daily Brilinta plus aspirin or placebo plus aspirin for one to three years after a heart attack. The oral platelet inhibitor is approved in the US only for prevention of cardiovascular events during the year following a heart attack. AstraZeneca recently filed paperwork with regulators in the US and Europe to expand Brilinta's label based on PEGASUS.</p><p>The rates of death, heart attack or stroke at three years in PEGASUS were 7.85% for 90mg of Brilinta twice-daily, 7.77% for 60mg of Brilinta and 9.04% for placebo (HR=0.85, p=0.008 for 90mg dose versus placebo; HR=0.84, p=0.0043 for 60mg dose).</p><p>The primary safety endpoint in PEGASUS was major bleeding. At three years, 2.6% of patients who were given 90mg of Brilinta had a major bleed and 2.3% of people who got 60mg of Brilinta had a bleeding event versus 1.06% in the placebo group. Fatal bleeding (0.11% for 90mg Brilinta, 0.25% for 60mg Brilinta and 0.26% for placebo) and intracranial hemorrhage (0.56%, 0.61% and 0.47%, respectively) were similar between all treatment groups.</p><p>"We had to deliver on the primary efficacy piece and we've done that loud and clear. Cardiologists have to choose the right patient for treatment," Mr Hudson said.</p><p>But doctors seem unsure about what has been described as a modest reduction in cardiovascular events. An editorial published in the NEJM alongside the PEGASUS results questioned whether dual platelet inhibition therapy that combines aspirin with potent therapies, like Brilinta and the now-generic Plavix (clopidogrel) from Sanofi and Bristol-Myers Squibb, "is approaching the point of diminishing returns."</p><p>The editorial cited the PEGASUS investigators' NEJM publication of trial results, which estimated that 10,000 patients treated with 60mg of Brilinta for one year would prevent 42 primary endpoint events, but cause about 31 major bleeding events &ndash; a ratio that editorial writer John Kearney Jr of the University of Massachusetts Medical School dubbed "close to an even proposition."</p><p>The PEGASUS results don't provide a clear answer on whether to prescribe dual antiplatelet therapies, Dr Kearney wrote, but the study does "remind us of the fragile balance between efficacy and adverse events."</p><p>However, PEGASUS principal investigator Marc Sabatine of Brigham and Women's Hospital and Harvard Medical School noted in a statement issued by ACC on 14 March that the efficacy of Brilinta improves over time. Dr Sabatine also said that he would "continue treatment with [Brilinta] as long as the patient tolerated it."</p><p>Bleeding led to discontinuation of Brilinta treatment in the PEGASUS study for 7% of patients and dyspnea, or shortness of breath, led to discontinuation for 5% of patients.</p><p>The NEJM publication of PEGASUS results suggested that the 60mg Brilinta dose may be better for patients, but noted that the safety findings for the lower dose were not statistically significant.</p><p>"While PEGASUS was positive, the primary endpoint was underwhelming, with a hazard ratio in MACE (major adverse cardiovascular events) of 0.84 to 0.85, depending on the dose," Sagient Research noted in a 15 March BioMedTracker analysis.</p><p>Some key opinion leaders that Sagient spoke with at the ACC meeting thought clopidogrel, or generic Plavix, would be the biggest beneficiary from the clinical trial results. It was noted during the course of the conference that clopidogrel is prescribed in about two out of three ACS cases. Merck's Zontivity (vorapaxar), which was approved in 2014, also is an option and has a favorable once-daily dosing schedule in combination with aspirin and/or clopidogrel (scripintelligence.com, <a href="http://www.scripintelligence.com/home/VICTORY-Mercks-Zontivity-1st-PAR-1-antiplatelet-OKd-in-US-351684" target="_new">8 May 2014</a>).</p><p>Given the ongoing concern about bleeding rates for antiplatelet therapies as well as the generic and brand-name treatment options for ACS, there is some doubt whether PEGASUS demonstrates enough efficacy benefit for Brilinta to get the drug to AstraZeneca's $3.5bn per year sales goal (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Brilinta-data-buoys-AstraZeneca-stock-356142" target="_new">14 January 2015</a>). </p><p>But Mr Hudson noted that 1.7m people with ACS in the US alone could benefit from Brilinta beyond the year after they have a heart attack.</p><p>"For those that tolerate it, there is a real opportunity to think about longer-term use," he said, noting that there likely will be a lively and well-informed debate about Brilinta going forward based on the PEGASUS results.</p><p>AstraZeneca is investigating other indications in its PARTHENON clinical trial program and the company plans to report results from additional large studies at ACC during the 2016 and 2017 Scientific Sessions.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 316
+
+<p>AstraZeneca's US president Paul Hudson is optimistic about the opportunities for Brilinta (ticagrelor) in longer-term treatment of acute coronary syndrome (ACS) based on results from the Phase III PEGASUS clinical trial, but analysts and doctors are concerned about the bleeding risk associated with the drug.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+ACC 2015 AstraZeneca optimistic on Brilinta after PEGASUS others less so
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151003T214618
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151003T214618
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151003T214618
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028119
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 74
+
+ACC 2015: AstraZeneca optimistic on Brilinta after PEGASUS, others less so
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357210
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a341377e-2ce3-4317-a822-526b680c78ce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

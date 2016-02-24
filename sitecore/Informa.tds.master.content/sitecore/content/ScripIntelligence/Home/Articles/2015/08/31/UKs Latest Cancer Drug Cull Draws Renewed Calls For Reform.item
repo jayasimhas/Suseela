@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {416C8309-1960-47F5-ABC9-63E8B176E2A4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/31/UKs Latest Cancer Drug Cull Draws Renewed Calls For Reform
+parent: {CBD943D1-3709-41E5-B6F8-C3721892EEE4}
+name: UKs Latest Cancer Drug Cull Draws Renewed Calls For Reform
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ece29d09-617c-496f-ade5-78f48b925580
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+UK's Latest Cancer Drug Cull Draws Renewed Calls For Reform
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+UKs Latest Cancer Drug Cull Draws Renewed Calls For Reform
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8535
+
+<p>New cuts to publicly funded NHS oncology treatments announced in Britain have triggered fresh criticisms of the government's Cancer Drugs Fund and renewed calls for a system-wide overhaul of the way cancer drugs are commissioned in the country.</p><p>The decision by the National Health Service-England (NHSE) to cull a further 17 drugs from the UK's Cancer Drugs Fund (CDF) on clinical- and cost-effectiveness grounds has unleashed wide-spread demands yet again for the arrangement to be replaced with a more viable alternative that incorporates an overhaul of the drug appraisal processes of the controversial British national health technology association, NICE.</p><p>Announcing another review of the effectiveness of treatments that it provides via the Fund, NHSE on Sept. 4 said that its panel of cancer experts had reviewed 27 currently listed drugs &ndash; some of which are used to treat more than one cancer &ndash; and decided that 16 of those should be removed from the list on cost-effectiveness grounds. One other CDF-listed drug was also slated for removal because it was no longer used. Patients currently receiving the drugs to be removed from the CDF in the latest review will continue to be able do so.</p><p>But nine of the 16 drugs set to be de-listed could stay if their manufacturers dropped their asking price, the NHSE added. </p><p>"In cases where a drug offers enough clinical benefit, the pharmaceutical company has the opportunity to reduce the price they are asking the NHS to pay to ensure that it achieves a satisfactory level of value for money. In some cases the companies have done so, and a number of these negotiations are underway," Cancer Drugs Fund Chairman Peter Clark said in a statement. If that does not happen, then the drugs will be formally removed along with the others Nov. 4. The <a href="http://www.england.nhs.uk/wp-content/uploads/2015/09/ncdf-list-sept15.pdf" target="_new">latest drugs being axed</a> include treatments for advanced breast cancer, recurrent or metastatic cervical cancer, advanced colorectal cancer, pancreatic cancer, chronic lymphocytic leukemia and relapsed mantle cell non-Hodgkin's lymphoma.</p><p>The CDF was set up by the British government in 2010 as a makeshift answer to the widespread view that not enough innovative cancer drugs were gaining access in the UK market.</p><p>NHS England previously raised the budget for the CDF from &pound;200m in fiscal year 2013/14, then to &pound;280m in 2014/15, and to &pound;340m from April 2015.</p><p>The Fund currently allows patients to access 37 drugs that are not routinely available on the NHS in England. In January, more than 20 treatments were removed or restricted in an attempt to cut the CDF's swelling overspend. It has now more than halved the number of therapies it covers since the beginning of the 2015 after being repeatedly overspent. Still, current projections predict CDF spending will rise to around &pound;410m this year, representing overspending of &pound;70m if fresh cost savings are not made, Clark said. Initially planned to run until 2014, the CDF was extended two years. It now has a cut-off date of March 2016.</p><p>In explaining the Fund's latest round of de-listings, Clark said: "There is no escaping the fact that we face a difficult set of choices, but it is our duty to ensure we get maximum value from every penny available on behalf of patients. We must ensure we invest in those treatments that offer the most benefit, based on rigorous evidence-based clinical analysis and an assessment of the cost of those treatments."</p><p>At the time of inception, the Fund was viewed as a haven for major cancer drugs that fell shy of the cost-effectiveness assessments made by the UK reimbursement watchdog, the National Institute for Health and Care Excellence, and something of a godsend for oncology drug manufacturers since its introduction.</p><p>But that view has been radically changing.</p><p>The Association of the British Pharmaceutical Industry (ABPI) Sept. 4 expressed deep dismay at NHSE's latest drug cull, saying that the only way to safeguard cancer care going forward is to drastically overhaul the drug appraisal processes of NICE.</p><p>Alison Clough, Acting CEO of the ABPI, said the announcement on CDF's planned de-listings is "extremely" disappointing.</p><p>"We have long voiced the view that the Cancer Drug Fund is a sticking plaster, albeit one that has enabled thousands of patients to access new and innovative medicines. We believe that the de-listing process, which we recognize will be distressing for cancer patients, could have been avoided if NICE and NHS England had transitioned earlier to a more appropriate, sustainable solution for evaluating and approving cancer medicines for routine use. We are pleased that treatments for existing patients will be protected, but remain of the view that this re-evaluation process was fundamentally flawed."</p><p>The move by NHS England also drew criticism from Myeloma UK, whose CEO, Eric Low, said in a statement that it represented a "massive" step backward.</p><p>"Since the creation of the Cancer Drugs Fund, Myeloma UK has consistently argued that it is not a long-term solution to accessing cancer drugs on the NHS and does not address the reasons why drugs were not approved by NICE in the first place. &#8230; The issues underlying the Cancer Drugs Fund are endemic of a wider problem in cancer commissioning and in the end-to-end development and access of drugs in the UK. Sustainable, system-wide solutions need to be developed, and the top-down government cost-cutting rather than cost-saving pressures needs to be stopped, otherwise the goal in the new cancer strategy to save 30,000 lives a year is merely a pipe dream," Low said.</p><p>Roche of Switzerland, which has the greatest number of CDF-listed therapies and is thus the biggest beneficiary of the CDF, also weighed in, saying in an emailed statement that "in the UK, delays in reform of the broader mechanism for drug evaluation under the NHS and a high demand for access to innovative cancer medicines through the Cancer Drugs Fund have led to an overspend of the CDF, which was never intended to be a long-term solution. We believe that the way forward is a new and flexible system which will drive access to innovative, life-changing medicines." Roche's Kadcyla (trastuzumab emtansine) and Avastin (bevacizumab) are among the drugs earmarked for removal from the list.</p><p>Also set for CDF de-listing are Celgene Corp.'s cash cow Revlimid (lenalidomide) and its successor Imnovid (pomalidomide), meaning that relapsed and refractory multiple myeloma patients in England will not be able to access these medicines on the publicly funded National Health Service from November. Lenalidomide may still be accessed for patients who have received at least two prior therapies, Celgene said in a statement. In March, the UK HTA NICE rejected pomalidomide for treating multiple myeloma, on cost grounds.</p><p>Wim Souverijns, general manager for Celgene UK & Ireland, said in a statement, "We are hugely disappointed that both Revlimid and Imnovid will be removed from the CDF."</p><p>Souverijns added: "The way in which cancer drugs are commissioned for use in England is not fit for purpose. By arbitrarily removing drug funding using a scoring system that fails to recognize that in some cancers there are still high levels of unmet need, NHS England has created a scenario where life sciences investment and innovation in the UK is being put in genuine jeopardy."</p><p>Towards that end, a recently published independent cancer taskforce report commissioned by NHSE recommended that NHS England work with NICE, charities, the UK government and the pharmaceutical industry to develop a new system aligned with NICE processes. NHSE and NICE will soon be consulting on a proposed new system for commissioning cancer drugs.</p><p>"The new system will be designed to provide the NHS with a more systematic approach to getting the best price for cancer drugs, meaning more treatments can be made available, and give a greater focus on evaluation, leading to the best drugs progressing swiftly to routine commissioning," CDF Chairman Clark said. The <a href="http://www.scripintelligence.com/home/NICE-conditional-approvals-to-replace-Englands-Cancer-Drugs-Fund-359590" target="_new">emerging proposal</a> appears to involve some form of "managed access fund" to finance oncology drugs that gain conditional approval from NICE.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 251
+
+<p>New cuts to publicly funded NHS oncology treatments announced in Britain have triggered fresh criticisms of the government's Cancer Drugs Fund and renewed calls for a system-wide overhaul of the way cancer drugs are commissioned in the country.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+UKs Latest Cancer Drug Cull Draws Renewed Calls For Reform
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150831T174853
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150831T174853
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150831T174853
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029691
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+UK's Latest Cancer Drug Cull Draws Renewed Calls For Reform
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360180
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ece29d09-617c-496f-ade5-78f48b925580
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

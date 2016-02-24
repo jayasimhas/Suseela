@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {4A022B23-332D-4372-8684-F9EE2E1B62F2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/14/EU Court Stops EMA Data Release To Novartis
+parent: {9F8ADCFB-E320-4549-AFC1-EAAB109CA5F9}
+name: EU Court Stops EMA Data Release To Novartis
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ecf92163-93a1-4edb-b4cc-f1d1e6a21737
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+EU Court Stops EMA Data Release To Novartis
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+EU Court Stops EMA Data Release To Novartis
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8489
+
+<p>The EU General Court has temporarily barred the European Medicines Agency from giving Novartis access to certain data about a rival firm's product under the agency's access to documents policy. </p><p>The decision, which was reached on Sep.1, is the third such case in which the EMA has been called on to defend its access to documents policy before the court. However, because the two previous cases had been withdrawn by their applicants, Abbvie and InterMune respectively, the EU courts have not so far adjudicated on the agency's access policy.</p><p>The latest case concerns the EMA's decision in April to grant Novartis' request for access to certain information regarding German drug maker PARI Pharma's nebulizer solution Vantobra (tobramycin), which is similar to Novartis' TOBI Podhaler (an orphan medicinal product). Vantobra is meant for the management of chronic pulmonary infection due to <i>Pseudomonas aeruginosa</i> in patients aged six years and older with cystic fibrosis.</p><p>In May, PARI Pharma asked the court to prevent the EMA from releasing the data to third parties, because doing so would allow its competitors to use the data to obtain marketing authorization for their own tobramycin product without making any additional investment. PARI Pharma filed an application seeking annulment of the EMA's decision and another application for interim relief seeking suspension of the EMA decision.</p><p>On Sep. 1, the General Court granted interim relief to PARI Pharma on a <i>prima facie </i>assessment of the matter at stake and suspended the EMA's decision to grant third party access to the data. </p><p>"The order [granting interim relief] of the President of the General Court will remain in effect until the end of the main proceedings concerning the action for annulment filed by PARI Pharma against the EMA decision, subject to appeal to the Court of Justice. A date for an oral hearing in the main proceedings has not yet been scheduled," said Manja Epping, of law firm TaylorWessing, who represented PARI Pharma in the matter along with Wolfgang Rehmann.</p><p>Epping told <i>Scrip Regulatory Affairs</i> that PARI Pharma was pleased with the ruling of the General Court in support of protecting its proprietary information contained in the regulatory filings for Vantobra. "Certainly PARI Pharma respects EMA's policy of transparency of its proceedings. However, it is important to find the right balance between public interest and protection of proprietary know-how," she added.</p><h2>Public Interest Vs. Commercial Confidentiality: No Ready Answers</h2><p>Specifically, Novartis has asked the EMA for access to two assessment reports issued by the EMA's human medicines evaluation committee, the CHMP, which showed Vantobra's similarity to Novartis' TOBI Podhaler (EMA/CHMP/702525/2014 &ndash; similarity report) and its clinical superiority over TOBI Podhaler (EMA/CHMP/778270/2014 &ndash; superiority report). </p><p>The EMA said that the information that Novartis had asked for, with a few exceptions, did not constitute "commercially confidential information" and was for the most part publicly accessible, or could be easily inferred from public information. In any event, even if that information were to be considered confidential, there was an overriding public interest justifying its disclosure, the EMA said.</p><p>PARI Pharma, on the other hand, argued that the release of the similarity and superiority assessment reports would undermine its efforts to keep its proprietary business information confidential. The company explained that the disclosure of the reports would reveal the strategy it had used in the marketing authorization procedure for Vantobra, and would encourage its competitors to bring a generic tobramycin nebulizer solution to the market. </p><p>The EMA, however, told the court that it did not see merit in PARI Pharma's assertions as its claims regarding commercial confidentiality of data closely resembled the claims made by the only two other pharmaceutical companies (ie, AbbVie and InterMune) to have alleged the illegality of the EMA's decisions to release clinical and non-clinical information contained in the dossier accompanying marketing authorizations applications Both AbbVie and InterMune have now withdrawn their respective applications for annulment of EMA's decision on allowing access to data<sup>3</sup><sup>-5</sup>.</p><p>As in the case of AbbVie and InterMune, the EMA said that the "general claim" made by PARI Pharma that the whole content of the two assessment reports at issue should enjoy confidential treatment was unfounded. The agency explained that a substantial part of those reports was freely available in the public domain since it was published on widely known websites, including the EMA's own website, and was included in the European public assessment reports, or EPARs. </p><p>The agency said that it could not refuse access to an entire document unless it had been determined that each element of that document was confidential and that there was no overriding public interest in the disclosure of each of those elements. In this case, the EMA said that PARI Pharma was not able to demonstrate that each element of the reports at issue was commercially confidential.</p><p>The court observed that case raised "complex issues", whose resolution called for thorough examination within the main proceedings, particularly since the specific confidentiality issues mentioned in the arguments as well as the EMA's new access to documents policy have not yet been adjudicated on by the courts of the EU.</p><p>It added that there was no case-law that would make it possible to give "a ready answer to the questions of confidentiality."</p><p>Vincenzo Salvatore, senior counsel at law firm Sidley Austin and a former head of legal services at the EMA, told <i>SRA</i> that "clear interpretative guidance on which kind of information is accessible and when it is definitely needed and will be welcomed both by regulators and stakeholders." </p><h2>Novartis' Case Against EMA</h2><p>Novartis' TOBI Podhaler is designated as an orphan medicinal product, which means that it enjoys a marketing exclusivity period of 10 years during which the EMA cannot accept or grant another marketing authorization for a similar product for the same therapeutic indication. </p><p>By way of derogation, however, a similar product can be approved if it is established that the second medicinal product, although similar to the orphan medicinal product already authorized, is safer, more effective or otherwise clinically superior.</p><p>In the case of Vantobra, the CHMP adopted a positive opinion on June 2, 2014 but because of concerns raised by the European Commission in the decision-making phase, the CHMP decided to review Vantobra's similarity with the authorized orphan product. The review resulted in the CHMP concluding on Nov. 20 that Vantobra was similar to TOBI Podhaler.</p><p>Subsequently, PARI Pharma provided a derogation report justifying that Vantobra is clinically superior to TOBI Podhaler in the same therapeutic indication. As a result of this additional data, the CHMP concluded on Jan. 22, 2015 that Vantobra, although similar to TOBI Podhaler, is considered to be clinically superior due to greater safety in a substantial portion of the target population, and also because it offers reduced treatment times. The CHMP's favorable opinion was based on the two CHMP reports (ie the similarity and superiority assessments) to which Novartis is seeking access. </p><p>On Mar. 18, 2015, the commission accepted the CHMP's positive opinion and granted marketing authorization for Vantobra. On May 28, Novartis approached the court seeking the annulment of the commission's decision to grant marketing authorization to Vantobra on the grounds that it infringed the market exclusivity enjoyed by its TOBI Podhaler. </p><p>The case filed by Novartis &ndash; in which it contends that the commission's decision to authorize Vantobra is unlawful as it infringes the orphan market exclusivity rights of the company, and because the conditions for granting a derogation of market exclusivity are not fulfilled &ndash; is still pending.</p><p>This article has also been published in <a href="http://www.rajpharma.com/home/" target="_new">Scrip Regulatory Affairs</a>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 201
+
+<p>The EU General Court has temporarily barred the European Medicines Agency from giving Novartis access to certain data about a rival firm's product under the agency's access to documents policy. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+EU Court Stops EMA Data Release To Novartis
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150914T220001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150914T220001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150914T220001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029759
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+EU Court Stops EMA Data Release To Novartis
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{A764BBE0-790E-4825-B0CF-D8515D06DA54}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360356
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ecf92163-93a1-4edb-b4cc-f1d1e6a21737
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

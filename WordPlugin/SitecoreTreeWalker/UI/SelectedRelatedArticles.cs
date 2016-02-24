@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Informa.Web.Areas.Account.Models;
+using SitecoreTreeWalker.Properties;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
 using SitecoreTreeWalker.Util;
 
@@ -89,19 +90,29 @@ namespace SitecoreTreeWalker.UI
 
 		public Label CreateDateLabel(DateTime dateTime)
 		{
-			string strdate = dateTime.Month + "-" + dateTime.Day + "-" + dateTime.Year;
-			if(dateTime.CompareTo(DateTime.Today) > 0)
+			if (dateTime > DateTime.MinValue)
+			{
+				string strdate = dateTime.Month + "-" + dateTime.Day + "-" + dateTime.Year;
+				if (dateTime.CompareTo(DateTime.Today) > 0)
+				{
+					return new Label
+					{
+						Text = strdate,
+						//ForeColor = Color.Red
+					};
+				}
+				return new Label
+				{
+					Text = strdate,
+				};
+			}
+			else
 			{
 				return new Label
-				       	{
-				       		Text = strdate,
-							ForeColor = Color.Red
-				       	};
+				{
+					Text = Resources.SelectedRelatedArticles_CreateDateLabel_Date_not_Set,
+				};
 			}
-			return new Label
-			{
-				Text = strdate,
-			};
 		}
 
 		public Label CreateHeaderLabel(string text)
@@ -124,7 +135,8 @@ namespace SitecoreTreeWalker.UI
 			           	};
 			view.MouseClick += delegate
 			                   	{
-									Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+									   //Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
+									   Process.Start(article.PreviewUrl);
 			                   	};
 			return view;
 		}
@@ -143,14 +155,15 @@ namespace SitecoreTreeWalker.UI
 				|| LocalReferencedArticles.Select(t => t.ArticleNumber).Contains(preview.ArticleNumber)
 				|| HasArticle(GetActiveSitecoreRelatedArticles(), preview))
 			{
-				foreach(Control control in Controls)
-				{
-					if (control.Tag == null || control.Font.Strikeout) continue;
-					control.BackColor = 
-						control.Tag.ToString() == preview.ArticleNumber 
-						? Color.Yellow 
-						: Color.Transparent;
-				}
+				MessageBox.Show(@"The selected article is already a Related Article or Referenced Article.", @"Informa");
+				//foreach(Control control in Controls)
+				//{
+				//	if (control.Tag == null || control.Font.Strikeout) continue;
+				//	control.BackColor = 
+				//		control.Tag.ToString() == preview.ArticleNumber 
+				//		? Color.Yellow 
+				//		: Color.Transparent;
+				//}
 				return;
 			}
 			LocalRelatedArticles.Add(preview);

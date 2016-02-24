@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using Glass.Mapper.Sc;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Site;
 using Glass.Mapper.Sc.Fields;
+using Informa.Library.Article.Search;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Glass.Autofac.Attributes;
 
@@ -12,11 +15,15 @@ namespace Informa.Web.ViewModels
 	public class ArticleListItemModelFactory : IArticleListItemModelFactory
 	{
 		protected readonly ISiteRootContext SiteRootContext;
+	    protected readonly ISitecoreContext SitecoreContext;
+	    protected readonly IArticleSearch ArticleSearch;
 
 		public ArticleListItemModelFactory(
-			ISiteRootContext siteRootContext)
+			ISiteRootContext siteRootContext, ISitecoreContext sitecoreContext, IArticleSearch articleSearch)
 		{
 			SiteRootContext = siteRootContext;
+		    SitecoreContext = sitecoreContext;
+		    ArticleSearch = articleSearch;
 		}
 
 		public IListableViewModel Create(IArticle article)
@@ -46,5 +53,23 @@ namespace Informa.Web.ViewModels
 				Publication = publication
 			};
 		}
+
+	    public IListableViewModel Create(Guid articleId)
+	    {
+	        return Create(SitecoreContext.GetItem<IArticle>(articleId));
+	    }
+
+	    public IListableViewModel Create(string articleNumber)
+	    {
+            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+            filter.ArticleNumber = articleNumber;
+	        var results = ArticleSearch.Search(filter);
+            if (results.Articles.Any())
+            {
+                return Create(results.Articles.FirstOrDefault());
+            }
+
+	        return null;
+	    }
 	}
 }

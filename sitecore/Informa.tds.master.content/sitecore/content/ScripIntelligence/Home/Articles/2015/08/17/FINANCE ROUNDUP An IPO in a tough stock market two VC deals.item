@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {EBB6A60B-8B51-4792-9E3D-1AF368DEDC9E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/17/FINANCE ROUNDUP An IPO in a tough stock market two VC deals
+parent: {07445639-AADB-410F-83DA-5DED6152D73A}
+name: FINANCE ROUNDUP An IPO in a tough stock market two VC deals
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 12204c9f-c94e-4315-993a-5c5691713df1
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+FINANCE ROUNDUP: An IPO in a tough stock market, two VC deals
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+FINANCE ROUNDUP An IPO in a tough stock market two VC deals
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5788
+
+<p>Benitec Pharma's painfully small initial public offering during the week of Aug. 17 to 21 was emblematic of recent pain felt within the broader US stock market, but private investors kept to their commitments to fund early-stage and pre-commercial biotechnology venture capital rounds.</p><p>Australian gene-silencing specialist Benitec had to cut its proposed stock price to get investors to back the company's IPO on Aug. 18, early in a business week in which the Down Jones Industrial Average and the Nasdaq index closed down 5.8% and 6.5%, respectively, compared to where they started the week. On the private financing side, new VC funding announced during the same period included a $66bn Series B round for Wave Life Sciences and a $32.5m Series A for Orbus Therapeutics.</p><p><b>Benitec And Other IPO Hopefuls</b></p><p>Benitec had hoped to sell 1.5m shares for $10 each and <a href="http://#http://www.scripintelligence.com/business/FINANCE-ROUNDUP-Global-Blood-Doubles-Post-IPO-GlobeImmune-Considers-Options-VC-Deals-Surge-359971" target="_new">gross proceeds of $15m</a> to fund treatments for chronic and life-threatening diseases with its gene silencing technology that's delivered by gene therapy, otherwise known as DNA-directed RNA interference (RNAi). </p><p>Instead, the company &ndash; already publicly traded in Australia &ndash; went to market with 1.5m shares priced at $9.21 each for $13.8m in gross proceeds after adjusting the IPO terms several times ahead of the actual offering. The stock closed at $8 per share on Aug. 21 &ndash; up from its closing value of $7.67 on its first day of trading in the US, but still below the IPO price.</p><p>No biotech companies proposed new IPOs in the US after Benitec's offering, possibly because of a normal summertime slowdown or maybe because of the stock market's recently poor performance based on global economic concerns. Before the Benitec IPO, however, Edge Therapeutics, ReGenX Bio and Aclaris Therapeutics filed paperwork to register planned IPOs with the US Securities and Exchange Commission.</p><p>Berkeley Heights, New Jersey-based Edge closed an <a href="http://#http://www.scripintelligence.com/business/Edge-Therapeutics-raises-18m-for-brain-drug-343801" target="_new">$18m Series C financing</a> in 2014 and added $56m to the round in April. The company said in its Aug. 14 SEC filing that it wants to raise up to $115m in an IPO to fund a Phase III program for EG-1962 in the treatment of aneurysmal subarachnoid hemorrhage, to support additional development of the lead drug candidate, and for preclinical work on other assets.</p><p>ReGenX indicated in its Aug. 17 SEC filing that it will raise up to $100m in an IPO to begin Phase I/II clinical trials in the first half of 2016 for gene therapies that may treat homozygous familial hypercholesterolemia (HoFH) and Mucopolysaccharidosis Type I (MPS I). The Washington, D.C.-based company closed a $30m Series C venture capital round in January.</p><p>Aclaris of Malvern, Pennsylvania closed a <a href="http://#http://www.scripintelligence.com/home/Venture-capital-outlook-positive-on-biotech-IPO-MandA-activity-354323" target="_new">$21m Series B VC funding round</a> in October to support development and submission of a new drug application (NDA) to the US FDA for lead drug candidate A-101 as a topical treatment for seborrheic keratosis and other verrucoid skin lesions. The company wants to raise up to $86.25m in an IPO to fund completion of Phase III trials, a Phase II trial in wart removal, and development of follow-up compound A-102 for the same indications.</p><p><b>VC Deals Thrive</b></p><p>The latest round of venture capital financings may support future IPO filings for Boston-based Wave Life Sciences and Orbus Therapeutics of Palo Alto, California, given the trend of significant private capital fundraising ahead of biotech IPOs.</p><p>Wave's $66m Series B, which follows an <a href="http://#http://www.scripintelligence.com/home/G1-Revolution-lead-116m-in-new-VC-funding-356563" target="_new">$18m Series A round</a> in February, will fund the further evolution of its chemistry platform for stereopure nucleic acid therapies to treat rare diseases. The company plans to file its first investigational new drug (IND) applications by the end of 2016 to kick off the first clinical trials in Huntington's disease, Duchenne muscular dystrophy and other orphan indications for its antisense and exon-skipping therapies.</p><p>Wave's Series B round was led by new investor Foresite Capital with participation from other new backers, including Fidelity Management and Research Company, New Leaf Venture Partners, Redmile Group, certain Jennison Associates clients, Cormorant Asset Management, and some private investment funds advised by Clough Capital Partners. Prior investors RA Capital Management and Kagoshima Shinsangyo Sosei Investment also participated in the company's second VC round.</p><p>Longitude Capital, HIG BioVentures and Adams Street Partners led the Orbus Series A. Ernest Mario, chairman of Capnia and Chimerix, also participated in the Orbus venture capital round and will serve as chairman of the company's board of directors. In the past, he was deputy chairman of Glaxo Holdings and served as chairman and CEO of Alza Corporation. </p><p>Orbus will use its money to conduct a Phase III clinical trial for eflornithine in the treatment of recurrent anaplastic astrocytoma. In prior studies, the drug increased overall survival for patients with new and recurrent cases of the brain cancer. The FDA granted a breakthrough therapy designation for oral eflornithine in 2014. An intravenous version of the drug is approved to treat sleeping sickness and hirsutism, or excessive hairiness on women.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 292
+
+<p>Benitec Pharma's painfully small initial public offering during the week of Aug. 17 to 21 was emblematic of recent pain felt within the broader US stock market, but private investors kept to their commitments to fund early-stage and pre-commercial biotechnology venture capital rounds.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+FINANCE ROUNDUP An IPO in a tough stock market two VC deals
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150817T160002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150817T160002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150817T160002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029575
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+FINANCE ROUNDUP: An IPO in a tough stock market, two VC deals
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359984
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042438Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+12204c9f-c94e-4315-993a-5c5691713df1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042438Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

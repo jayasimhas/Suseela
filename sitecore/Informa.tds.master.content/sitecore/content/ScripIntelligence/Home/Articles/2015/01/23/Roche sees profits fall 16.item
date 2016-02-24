@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2CA9FDEE-7070-4D9A-AD1B-732B2204BF2D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Roche sees profits fall 16
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Roche sees profits fall 16
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4059e45a-bba8-4727-9126-1b9b5b630b16
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 28
+
+Roche sees profits fall 16% 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 26
+
+Roche sees profits fall 16
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3231
+
+<p>Roche posted a 16% drop in annual profits to CHF9.5bn for the full year 2014 but the numbers were in line with analyst expectations. The net income was impacted by debt restructuring, impairments and restructuring costs during 2014. </p><p>Roche restructured part of its debt to take advantage of the low interest environment. Net of tax, this measure resulted in a one-time loss of CHF279m. Impairments increased by CHF1.1bn, in particular in Tissue Diagnostics, following the reassessment of a product in late-stage development and cuts in US laboratory test reimbursement. Costs for restructuring increased by CHF252m.</p><p>"We made good progress in 2014 with solid growth in both divisions driven by our newly launched medicines and diagnostic tests. In addition, we have now made ten targeted acquisitions to complement our existing portfolio in Pharma and Diagnostics," said CEO Severin Schwan.</p><p>Roche reaffirmed its 2015 guidance. It expects sales to grow low- to mid-single digit, at constant exchange rates. Core earnings per share are targeted to grow ahead of sales.</p><p>Roche said sales increased by 4% in its pharmaceuticals division to CHF36.7bn in 2014, with the oncology portfolio performing well (+5%), particularly medicines for HER2-positive breast cancer (+20%). Sales of new cancer products made a significant contribution, as did sales of Avastin, which were 6% higher.</p><p>In the US, sales were 6% higher, with medicines for HER2-positive breast cancer driving growth (+27%), along with Tamiflu (+62%). In Europe, 3% higher sales were driven by solid growth in Germany and the UK, particularly in sales of HER2-positive breast cancer medicines.</p><p>However, Roche's HER2-positive breast cancer franchise suffered a blow in December, when Kadcyla failed the Phase III MARIANNE study that was designed to expand the use of the antibody-drug conjugate to the first-line setting. Roche said top-line data from MARIANNE show that Kadcyla (trastuzumab emtansine), either alone or in combination with its other HER2-targeting product, Perjeta (pertuzumab), was no better than its older product Herceptin (trastuzumab) plus chemotherapy in delaying disease progression in this population (<a href="http://www.scripintelligence.com/home/Roches-Herceptin-defenses-breached-as-Kadcyla-fails-in-MARIANNE-355766" target="_new">scripintelligence.com, 19 December 2014</a>). </p><p>The failure in MARIANNE was a big disappointment because positive data would have significantly boosted Kadcyla's commercial potential. The drug, together with Perjeta, forms Roche's defenses against the coming of biosimilar versions of its blockbuster Herceptin.</p><p>The Swiss National Bank's recent decision to abandon its euro cap of 1.20 francs per euro on 15 January sent the Swiss franc soaring and shares in Swiss firms such as Roche tumbling as investors worried that earnings from exports to the euro zone would drop.</p><p>Mr Schwan admitted this was likely to cause currency headwinds that would be a drag on growth in 2015, but there were no plans for big cost cuts in Switzerland to mitigate the impact.</p><p>Roche said it plans to pay a dividend of CHF8.00 for 2014, which was slightly below expectations.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 240
+
+<p>Roche posted a 16% drop in annual profits to CHF9.5bn for the full year 2014 but the numbers were in line with analyst expectations. The net income was impacted by debt restructuring, impairments and restructuring costs during 2014. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 26
+
+Roche sees profits fall 16
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T174536
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T174536
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T174536
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027655
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 28
+
+Roche sees profits fall 16% 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356343
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042243Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4059e45a-bba8-4727-9126-1b9b5b630b16
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042243Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

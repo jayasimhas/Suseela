@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {AE6C4B6E-A3B2-4A7F-9C1D-F8354798DCCC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/17/Zarxio Rehearing Denied Biosimilars Questions Await Next Case
+parent: {69090E84-59B3-48E6-BA8E-17CCEB89279C}
+name: Zarxio Rehearing Denied Biosimilars Questions Await Next Case
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9c7c0444-a270-4664-8e0a-55bba4281f9c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Zarxio Rehearing Denied; Biosimilars Questions Await Next Case
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 61
+
+Zarxio Rehearing Denied Biosimilars Questions Await Next Case
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8361
+
+<p>The US Court of Appeals for the Federal Circuit on Oct. 16 said it won't rehear arguments in a lawsuit brought by Amgen Inc. against Sandoz Inc. involving its biosimilar Zarxio (filgrastim-sndz), leaving several lingering questions about the <i>Biologics Price Competition and Innovation Act</i> (BPCIA) &ndash; the law that created the regulatory pathway for the FDA to approve biosimilars &ndash; waiting for another case.</p><p>But don't worry. There likely are going to be many more of such disputes to come, in which the courts will offer up their own interpretation of the law &ndash; decisions that will have broad implications for the future of the biosimilars industry.</p><p>For now, however, there are three biosimilars lawsuits currently winding their way through the US court system &ndash; two of them also filed by Amgen &ndash; where there will be opportunities to "dig deeper" into the remaining questions surrounding the BPCIA, said Boston lawyer Elaine Herrmann Blais, a partner in the intellectual property litigation group at Goodwin Procter LLP.</p><p><a href="http://www.scripintelligence.com/home/Federal-Circuit-dances-with-biosimilar-laws-complexity-in-Zarxio-fight-358731" target="_new">At issue</a> in Amgen's suit against Sandoz was whether the latter firm, a unit of Swiss drug maker Novartis AG, failed to comply with the BPCIA's disclosure and negotiation procedures &ndash; the patent dance &ndash; when it withheld its 351(k) biosimilars application and manufacturing information for Zarxio from the California innovator, whose human granulocyte colony-stimulating factor Neupogen (filgrastim) was the reference product on which the biosimilar was based.</p><p>Amgen also accused Sandoz of not giving proper notice that the biosimilar maker planned to launch its product as soon as it won FDA approval.</p><p>A three-judge panel from the Federal Circuit in <a href="http://www.scripintelligence.com/home/Court-rules-biosimilar-patent-dance-optional-but-delays-Zarxio-359555" target="_new">July ruled 2-1</a> that when a 351(k) applicant opts out of the dance, notice of commercial marketing of biosimilars is mandatory and can only be given after FDA approval &ndash; telling Sandoz it had to wait 180 days, or six months, from when Zarxio was cleared before it could enter the market.</p><p>The panel, which heard <a href="http://www.scripintelligence.com/home/Federal-Circuit-dances-with-biosimilar-laws-complexity-in-Zarxio-fight-358731" target="_new">oral arguments</a> in June, also ruled 2-1 that Sandoz and other biosimilar makers could opt out of the patent dance and would not have to disclose their applications and manufacturing details if they chose to do so.</p><p>So both sides got a win and both got a loss, which is why both sought the rehearing <i>en banc</i> by the full appeals court.</p><p>But the Federal Circuit denied both firms' petitions.</p><p>The immediate impact of the Federal Circuit's denial, explained Alexandra Lu, an associate in the litigation group at Goodwin Procter's Boston office, is that the holdings of the panel's July decision remain intact: "the patent dance is optional, and in a case where the biosimilar applicant does not dance, it must give the reference product sponsor notice 180 days prior to the first date of commercial marketing of the biosimilar, which notice can only be given after FDA has licensed the biosimilar product."</p><p>"This also means that questions left open by the Federal Circuit's July opinion will remain unanswered for now," Lu told <i>Scrip</i>.</p><p>One open question, in particular, that has been picked up by parties in other pending BPCIA litigation is whether the 180-day notice of commercial marketing is required in a case where the applicant has actually engaged in at least part of the patent dance, she said.</p><p>That issue, Lu pointed out, is "squarely presented" in legal battles between Johnson & Johnson Inc. unit Janssen Biotech Inc. and Celltrion Inc. over that firm's biosimilar of Remicade (infliximab) and Amgen and Pfizer Inc. unit Hospira Inc. involving a biosimilar of Epogen (epoetin alfa).</p><p>Celltrion, which is partnered with Hospira on the infliximab biosimilar, argued notice of commercial marketing was not required because it had engaged with Janssen in the patent dance, Lu said.</p><p>Earlier this week, Hospira made a similar argument in support of its <a href="http://www.scripintelligence.com/home/Hospira-Amgens-Biosimilar-Lawsuit-Fatally-Flawed-361075" target="_new">motion to dismiss</a> Amgen's BPCIA claims in its lawsuit involving the epoetin alfa biosimilar, she noted. </p><p>Blais said that although highly awaited, the Federal Circuit's decision on the <i>Amgen v. Sandoz</i> rehearing was not all that surprising, given the timeline in the case. </p><p>Since Sandoz waited to <a href="http://www.scripintelligence.com/home/1st-U.S.-Biosimilar-Arrives-Zarxio-Launches-Legal-Saga-Ongoing-360244" target="_new">launch Zarxio</a> &ndash; which won the FDA's approval on <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">March 6</a> &ndash; until after the Sept. 2 expiration of the injunction imposed by the Federal Circuit, the issues are moot, Blais said.</p><p>Even at the time it <a href="http://www.scripintelligence.com/policyregulation/Will-Amgen-Sandoz-Tango-Across-Old-Ground-360426" target="_new">petitioned</a> for rehearing, Sandoz had to come up with creative arguments, based on its assertion that it would be a "repeat" biosimilar applicant, to explain why the issues petitioned for rehearing would remain a live controversy beyond the injunction's expiration, she noted.</p><p><b>What Happens Now?</b></p><p>One can never really read into the denial of a petition for rehearing, Blais said, "so we can't make any presumptions about what the denial means for the challenges raised in the parties' petitions."</p><p>"It may be that the court just thought that this case was not the appropriate vehicle to decide any questions left open by the Court's July decision," she said. </p><p>In the Federal Circuit's Oct. 16 order denying the rehearing petitions, it said the mandate of the court would issue on Oct. 23 &ndash; signaling "it is done with this case, meaning that its July ruling must now be implemented," Blais said.</p><p>If the parties seek a stay of the mandate, she said that would indicate they are petitioning the US Supreme Court to take the case.</p><p>But, Blais said, "the converse is not necessarily true."</p><p>"The parties could still petition for certiorari without seeking a stay of the mandate, as the stay would accomplish very little in practice," she said, noting that any petition to the Supreme Court would be due in 90 days.</p><p>But Blais said it's "highly unlikely" the Supreme Court would take up the case. </p><p>And even though the Federal Circuit's ruling was a split decision, it seems to deal essentially with the case at hand, so the issues between Amgen and Sandoz essentially are moot, she said, noting the injunction against Sandoz already has expired, and the issuance of the mandate would not change anything for Amgen, which lost on its BPCIA claims at the district court level. </p><p>"It would thus be hard to convince the Supreme Court that there is a live issue in this case, as any change in the decision would not have an impact in the underlying dispute," Blais said. </p><p>And, she said, since this is only the first time the Federal Circuit has had a chance to construe the BPCIA, it's unlikely the Supreme Court would step in at this point to weigh in on those relatively new issues.</p><p>Meanwhile, Lu said, the proceedings on Amgen's patent infringement claims against Sandoz will continue at the district court.</p><p>She noted that Amgen on Oct. 16 filed an amended and supplemental complaint, which included its original plea for unfair competition and conversion claims in the hopes of preserving such claims pending the Federal Circuit's decision and mandate on the petition for rehearing en banc. </p><p>"Those claims are now dead in light of today's order from the Federal Circuit," Lu said.</p><p>The Zarxio lawsuit, she said, will now only proceed on Amgen's patent infringement claims in the district court. </p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 431
+
+<p>The US Court of Appeals for the Federal Circuit on Oct. 16 said it won't rehear arguments in a lawsuit brought by Amgen Inc. against Sandoz Inc. involving its biosimilar Zarxio (filgrastim-sndz), leaving several lingering questions about the <i>Biologics Price Competition and Innovation Act</i> (BPCIA) &ndash; the law that created the regulatory pathway for the FDA to approve biosimilars &ndash; waiting for another case.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 61
+
+Zarxio Rehearing Denied Biosimilars Questions Await Next Case
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151017T070838
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151017T070838
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151017T070838
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030083
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Zarxio Rehearing Denied; Biosimilars Questions Await Next Case
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361014
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9c7c0444-a270-4664-8e0a-55bba4281f9c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042508Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

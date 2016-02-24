@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {58E36898-7ACD-4042-B314-BF101D39DF50}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/21/Biogens Tecfidera feeling the brunt of PML case
+parent: {7C444FDC-DC63-4D50-B812-A158B8DC325D}
+name: Biogens Tecfidera feeling the brunt of PML case
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 31f9a393-3794-427c-92e3-741270d73feb
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+Biogen's Tecfidera feeling the brunt of PML case
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Biogens Tecfidera feeling the brunt of PML case
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4225
+
+<p><p>Biogen tried to put a bright spin on slowing Tecfidera sales during its first quarter conference call on 24 April, but the firm failed to update its guidance for the year and has made investors cautious. </p><p>"Biogen had a mixed start to 2015. We made good progress on our pipeline, but our commercial results were not as strong as we had hoped. Although we achieved 20% revenue growth and 55% non-GAAP EPS growth, compared to the same quarter last year, we had expected to do even better," regarded Biogen CEO George Scangos during the call. </p><p>A particular smear to the company's first quarter was the lagging sales of Tecfidera (dimethyl fumarate), which only brought in $825m, well below analysts' estimates of $933m. The oral multiple sclerosis drug had one of the best drug launches in history when it entered the market in 2013, but increasing competition to the oral MS market, as well as other advances in the field and safety concerns have slowed revenues. </p><p>"Tecfidera had a more challenging quarter, due to a number of issues, including an overall slowing of the MS market, the recent launch of Plegridy, the single PML case reported last year, and some first-quarter financial dynamics," said Scangos. </p><p>One of the factors affecting Tecfidera sales was a recent <a href="http://#http://www.scripintelligence.com/home/Should-Biogen-investors-worry-about-new-PML-case-357750" target="_new">spate of editorials</a> in the <i>New England Journal of Medicine</i> that talked about an association between the active ingredient in Tedfidera and a rare, but fatal brain disease. </p><p>Progressive multifocal leukoencephalopathy (PML) has been known to crop up in patients taking certain MS drugs long-term &ndash; Biogen's Tysabri (natalizumab) has had a long-running problem with the issue &ndash; but drugmakers have learned to screen patients better for certain signs that could indicate whether they will develop the fatal brain condition. Tysabri, for example, has a companion diagnostic that tests patients for the presence of JVC antibodies &ndash; those that are negative are less likely to develop PML. The creation of the test has led to fewer cases of PML for Tysabri patients and has bolstered sales of the drug &ndash; Tysabri brought in $463m for Biogen during the quarter.</p><p>The first case of PML in a Tecfidera patient showed up in October 2014 and the patient had severe lymphocytopenia, a condition that results in extremely low levels of white blood cells in the blood. It was believed that only patients with severe lymphocytopenia could develop PML. The drug's <a href="http://#http://www.scripintelligence.com/policyregulation/Biogens-Tecfidera-US-labeling-revised-to-reflect-PML-death-355263" target="_new">label was revised</a> to reflect the PML death.</p><p>Biogen admitted during the call that the event has had an impact. "As we've said in prior calls, with the launch of Tecfidera in 2013 in the US and 2014 in Europe, we saw a period where both market growth and switching dynamics were well above historical averages, and Tecfidera really drove this. And we expected a natural moderation in these rates through 2014 and into 2015. We believe this is occurring as expected, but also believe that the tech safety event in October further dampened market growth and switch rates in Q1," said Tony Kingsley, executive VP of global commercial operations.</p><p>Biogen's latest injectable interferon, Plegridy (peginterferon beta-1a), <a href="http://#http://www.scripintelligence.com/home/Biogen-MS-drug-Plegridy-OKd-can-it-compete-353413" target="_new">was approved by the FDA</a> in August and expectations for the drug were not particularly high due to the amount of competition in the market, particularly from oral options.</p><p>Despite that, Biogen blamed the drug for cannibalizing sales of Tecfidera. "Finally, in markets where we have launched Plegridy, we believe the uptake of that product has also dampened Tecfidera growth, by taking some interferon switches that could have gone to Tecfidera. But obviously, for Biogen overall, this is a positive, and again speaks to the strength of our franchise position in the market," added Kingsley. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Biogens Tecfidera feeling the brunt of PML case
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150421T081929
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150421T081929
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150421T081929
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028542
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+Biogen's Tecfidera feeling the brunt of PML case
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357974
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042334Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+31f9a393-3794-427c-92e3-741270d73feb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042334Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

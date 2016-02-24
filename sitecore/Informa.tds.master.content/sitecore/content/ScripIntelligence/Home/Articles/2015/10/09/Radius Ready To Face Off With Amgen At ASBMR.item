@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {25BE7711-4007-4B93-9996-180E63DC96B3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/09/Radius Ready To Face Off With Amgen At ASBMR
+parent: {5C20759A-3544-4173-AA09-9233B0E783B6}
+name: Radius Ready To Face Off With Amgen At ASBMR
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d4c54d0e-7883-4bfc-98b3-169bdbae44aa
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Radius Ready To Face Off With Amgen At ASBMR
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+Radius Ready To Face Off With Amgen At ASBMR
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8451
+
+<p>Conducting a large osteoporosis development program is a path that Amgen Inc. has been down before, but it's a make-or-break journey for Radius Health, which had one of the most successful initial public offerings during the recent biotechnology IPO boom based on optimism about its drug abaloparatide.</p><p>Both companies will present detailed clinical trial results for their osteoporosis therapies at the American Society for Bone and Mineral Research (ASBMR) Annual Meeting from Oct. 9 to 12 in Seattle, Washington, and both osteoporosis treatments will be highlighted in a plenary session on Monday, Oct. 12. Amgen reported its first top-line Phase III results in September for romosozumab, a sclerostin inhibitor that the company is developing in partnership with UCB, after Radius shared top-line Phase III data in December and June for abaloparatide, a synthetic peptide analog of the bone-building hormone known as human parathyroid hormone-related protein (hPTHrP).</p><p>"Now that our Phase III program has been completed, we are in the process of assembling our dossiers for US and European regulators," Radius president and CEO Robert Ward said in an interview with <i>Scrip</i>. </p><p>The Waltham, Massachusetts-based company plans to submit applications for US FDA and European Medicines Agency (EMA) approval by the end of 2015. In its BioMedTracker database, <i>Scrip</i> affiliate Sagient Research forecasts FDA approval for abaloparatide in mid to late 2016 and for romosozumab in March 2017. </p><p>Merck & Co.'s odanacatib also will be highlighted in the ASBMR plenary session with abaloparatide and romosozumab, but this won't be the first time that late-stage data for the cathepsin K inhibitor are presented at the bone health conference. </p><p>Merck <a href="http://www.scripintelligence.com/home/ASBMR-2014-Four-bone-drug-updates-including-Mercks-odanacatib-353977" target="_new">presented Phase III results for odanacatib at ASBMR</a> in 2014, but the company's new drug application (NDA) submission to the FDA has been delayed by a need for additional cardiovascular safety analyses. If the NDA is submitted in 2015, Sagient anticipates approval in 2016.</p><p><b>Phase III Details</b></p><p>Thousand Oaks, California-based Amgen did not provide any guidance regarding the timing of its FDA submission for romosozumab when it reported top-line results from the Phase III STRUCTURE clinical trial, which compared the monoclonal antibody with Eli Lilly & Co.'s recombinant parathyroid hormone <i>Forteo</i> (teriparatide).</p><p>Amgen said at the time that post-menopausal women with osteoporosis who were transitioning from bisphosphonate therapy and were treated with romosozumab had a statistically significant difference in the percent change of total hip bone mineral density versus Forteo through 12 months of treatment. However, the company is presenting only Phase II and earlier data for romosozumab at ASBMR and has not revealed when detailed STRUCTURE results will be presented or published.</p><p>While Radius has enough Phase III data for FDA and EMA submissions, Amgen still has a large placebo-controlled bone fracture rate study under way as well as a head-to-head comparison of romosozumab and Merck's now-generic <i>Fosamax</i> (alendronate).</p><p>Radius said in its second quarter earnings report in August that abaloparatide reduced major osteoporotic fractures by 67% versus placebo (p=0.0014) and by 53% versus Forteo (p=0.0437) during the company's 18-month Phase III ACTIVE clinical trial, according to a recent exploratory analysis. </p><p>Results from the first six months of the company's abaloparatide extension study, ACTIVExtend, in which patients both from the drug and placebo arms of the ACTIVE trial were treated with Fosamax or a generic, will be presented during the ASBMR plenary session at 10 a.m. Pacific on Oct. 12. </p><p>ACTIVExtend patients who were treated with abaloparatide in the ACTIVE study had no new vertebral fractures during the first six months of alendronate therapy. Those patients had an 87% reduction in new vertebral fractures (p<0.0001), a="" 52%="" reduction="" in="" non-vertebral="" fractures="" (p="0.0168)," a="" 48%="" reduction="" in="" clinical="" fractures="" (p="0.0139)," and="" a="" 58%="" reduction="" in="" major="" osteoporotic="" fractures="" (p="0.0122)" between="" the="" active="" study="" baseline="" and="" month="" six="" of="" activextend="" compared="" with="" placebo.=""></0.0001),></p><p>The abaloparatide-treated group also had a 12.8% increase in bone mineral density (BMD) at the lumbar spine, a 5.5% increase in BMD at total hip, and a 4.5% increase at the femoral neck at month six of ACTIVExtend. </p><p>Jefferies analyst Eun Yang raised her forecast for peak abaloparatide annual sales from $500m in the US in 2028 and $270m in the EU in 2027 to $660m in the US and $330m in Europe based on the major osteoporotic fracture results in ACTIVExtend, which seemed to show that the Radius drug is superior to Lilly's Forteo.</p><p>The highest dose of abaloparatide increased mean lumbar spine BMD by 6.7% compared with a 5.5% increase for Forteo-treated patients <a href="http://www.scripintelligence.com/researchdevelopment/Radiuss-bone-building-drug-positive-in-Phase-II-trials-173441" target="_new">at six months in a Phase II study</a>, but the difference between the two therapies grew at 12 months when lumbar spine BMD increased 12.9% for women who were treated with abaloparatide and by 8.6% for Forteo-treated patients.</p><p>Romosozumab performed better than both Fosamax and Forteo in a <a href="http://www.scripintelligence.com/researchdevelopment/AmgenUCBs-romosozumab-writes-script-for-osteoporosis-sequel-349073" target="_new">Phase II clinical trial</a> in terms of lumbar spine BMD with an 11.3% increase for Amgen's highest dose versus increases of 4.1% and 7.1%, respectively, for the Merck and Lilly therapies.</p><p><b>A Breakthrough Therapy?</b></p><p>Radius sought a breakthrough therapy designation from the FDA to speed up the agency's review of abaloparatide, but the request was denied in July. </p><p>Ward noted that the real definition of benefit for osteoporosis therapies comes from the bone fracture data generated in Phase III clinical trials, but the company thought its Phase II BMD increase and overall safety data in early to mid-stage trials was worthy of a breakthrough therapy designation.</p><p>"We look forward to a full data review by the FDA. The review for breakthrough therapy designation was based on a limited amount of data," he said.</p><p>In terms of pricing and reimbursement, Radius designed its trials to deliver data that payers would look for in determining whether to cover the costs of new osteoporosis treatments.</p><p>The company looked at the types of patients that doctors are likely to treat in their clinics and then tried to determine the number of women in a Phase III clinical trial that payers would need to see to agree that abaloparatide could help patients avoid fractures. What Radius learned was that health care dollars will go farther when the number of patients with osteoporotic fractures is cut in half.</p><p>"For major osteoporotic fractures, the big difference between the abaloparatide group and the teriparatide group was 53% fewer fractures. That's a big number for payers and a key cost driver for the insurance system," Ward said.</p><p>Radius intends to launch abaloparatide globally on its own, but it will consider partnership requests, Ward said. </p><p>"We're well-funded to be able to complete registration and launch abaloparatide subcutaneous globally," he said.</p><p>Radius had $224m in cash on its balance sheet as of June 30, but added $323.8m from the sale of 4.1m shares at $74 each in July. The company's stock price fell 8.4% on Oct. 8 to close at $61.10 per share after reaching a high of $80.63 on July 17, but the stock still is trading well above <a href="http://www.scripintelligence.com/business/BioNotebook-Trevi-Complexa-raise-VC-cash-Deerfield-commits-60m-to-KemPharm-Aradigm-Voyager-deal-news-IPO-updates-352181" target="_new">Radius's IPO price of $8 per share</a>.</p><p><p><i>An earlier version of this article implied that Amgen's Phase III romosozumab data would be presented at the ASBMR meeting, but the company will present only Phase II and preclinical results. </i>Scrip<i> regrets the error.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 309
+
+<p>Conducting a large osteoporosis development program is a path that Amgen Inc. has been down before, but it's a make-or-break journey for Radius Health, which had one of the most successful initial public offerings during the recent biotechnology IPO boom based on optimism about its drug abaloparatide.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Radius Ready To Face Off With Amgen At ASBMR
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151009T070000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151009T070000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151009T070000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029996
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Radius Ready To Face Off With Amgen At ASBMR
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360792
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042502Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d4c54d0e-7883-4bfc-98b3-169bdbae44aa
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042502Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {AD2C5F45-0B18-4163-8278-7815C31BD09B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/07/Employee Lawsuit Withdrawn But Burrill Faces New Investor Claims
+parent: {D87FB8ED-427C-47B0-B4A1-E1D7C92284A2}
+name: Employee Lawsuit Withdrawn But Burrill Faces New Investor Claims
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 63d84cf5-bfa7-48d0-a4aa-3a2e5eecc3f9
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Employee Lawsuit Withdrawn, But Burrill Faces New Investor Claims
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+Employee Lawsuit Withdrawn But Burrill Faces New Investor Claims
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3714
+
+<p>A lawsuit filed by an employee who oversaw venture capital funds run by Steven Burrill has been dismissed, but a separate lawsuit filed against Burrill, a prominent San Francisco-based advisor to life science companies, has been amended with new accusations against the fund's auditor, PricewaterhouseCoopers (PwC). </p><p>Burrill Life Sciences Capital Fund III LP filed its lawsuit on July 6 and amended the claim on Oct. 21, blaming PwC for the fund's losses, because the accounting firm did not report inappropriate withdrawals that allegedly were made by Burrill and his associates. Employee Ann Hanham filed her lawsuit in June 2014 after she discovered several million dollars in unexplained withdrawals from the fund, but that lawsuit was dismissed at her request on October 16.</p><p><a href="http://www.scripintelligence.com/home/Trusted-biotech-investor-advisor-Burrill-accused-of-fraud-352433" target="_new">Hanham sued Burrill</a> &ndash; a year before <a href="http://www.scripintelligence.com/business/Burrill-hit-with-second-fraud-lawsuit-359479" target="_new">the investors filed their original lawsuit</a> &ndash; after she was fired, allegedly for discovering the money taken from the venture fund and reporting it to the fund's investors. She sought compensation for the firing and wages that she claimed were withheld as retribution for informing the investors about Burrill's supposed fraud. Hanham asked the court to dismiss the claim with prejudice, meaning that she can't file a new action against Burrill and his businesses. </p><p>The investors' amended lawsuit notes that Hanham and Burrill settled their disagreement outside of the courtroom. The settlement is one of at least three agreements or judgments that the biotechnology investment banker and advisor has concluded in the wake of Hanham's and the venture fund investors' lawsuits. Burrill and his associates also have spent time responding to related criminal and civil investigations by federal authorities, according to the investment fund's lawsuit.</p><p>Filings with the Superior Court of California in San Francisco show that Burrill & Co. LLC settled a claim filed by Burrill's landlord, One Embarcadero Center Venture, in April with Burrill required to pay $169,985.71 plus $13,505.71 in interest. </p><p>Then, in September, California's Labor Commissioner ordered Burrill to pay Stephen Hurly, former CEO of Burrill & Co.'s merchant banking division, $426,505.79 in wages, interest and hearing costs. Hurly is now president and CEO of Viventia Bio Inc. in Winnipeg, Manitoba, Canada.</p><p>The investors' amended lawsuit accuses PwC of fraud, negligent misrepresentations, and aiding and abetting Burrill's fraud, negligence, breach of fiduciary duty and other alleged misdeeds. The actions of Burrill and his businesses, and the failure of PwC to report $17.6m in unauthorized cash transfers between 2006 and 2013, caused the venture fund to lose more than $34m, the investors claim.</p><p>"The Burrill Defendants could not have pulled off this years-long looting campaign without the assistance of PwC, which, it turns out, was not the independent auditor it was supposed to be," the lawsuit says.</p><p>The filing notes that Burrill and PwC had an alliance to identify investment opportunities for Burrill & Co.'s funds and investors, and PwC officials were invited to speak at Burrill-sponsored conferences. PwC then "looked the other way" when its auditors reviewed the Burrill Fund III financial statements and saw money transfers to Burrill entities that had no contractual relationship with the VC fund, the investors claim.</p><p>The lawsuit remains pending in San Francisco Superior Court.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 323
+
+<p>A lawsuit filed by an employee who oversaw venture capital funds run by Steven Burrill has been dismissed, but a separate lawsuit filed against Burrill, a prominent San Francisco-based advisor to life science companies, has been amended with new accusations against the fund's auditor, PricewaterhouseCoopers (PwC). </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+Employee Lawsuit Withdrawn But Burrill Faces New Investor Claims
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151107T204818
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151107T204818
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151107T204818
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030260
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Employee Lawsuit Withdrawn, But Burrill Faces New Investor Claims
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361328
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+63d84cf5-bfa7-48d0-a4aa-3a2e5eecc3f9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

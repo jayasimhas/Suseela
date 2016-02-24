@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {B6865994-15FB-4C2A-9611-0E93814421BB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/30/Benelux Price Negotiations Beware of EUWide Pricing Policy warns Germany
+parent: {21E60BE4-5191-4953-B136-3A0915C11D36}
+name: Benelux Price Negotiations Beware of EUWide Pricing Policy warns Germany
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1350afdc-1b74-4e19-8eab-c89ed8d44d39
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 75
+
+Benelux Price Negotiations: Beware of EU-Wide Pricing Policy, warns Germany
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+Benelux Price Negotiations Beware of EUWide Pricing Policy warns Germany
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4544
+
+<p>Manufacturers could find themselves talking with multiple EU member states at once to get their orphan drugs to patients if a pilot on joint pricing negotiations is a success. Currently Belgium, the Netherlands and Luxemburg are developing the pilot, but more countries are looking at whether they may want to join in. </p><p> Germany, the EU's biggest economy, is unlikely to be among them, however. The country is concerned about moving towards unified EU policy on drug pricing, said Dr Christian Abt, head of division for health policy at the permanent representation of Germany to the EU. He was speaking at a parliamentary evening organized by the BPI, one of Germany's pharmaceutical industry trade associations.</p><p>The EU's pharmaceutical legislation has, in its fifty years, focused largely on patient safety, but now discussions are turning to affordability and access to medicines, accelerated by the furore over the price of Gilead's HCV drug Sovaldi (sofosbuvir), said Abt. Indeed, last summer, France called for EU nations to combine their purchasing power to drive down the price of the drug, a move that Germany reportedly opposed. Abt's comments also come shortly after the EU's health commissioner Vytenis Andriukaitis urged member states to use more frequently the joint procurement mechanism allowed under the cross-border health directive for countering serious cross border health threats. He also called for transparent medicine price lists in each member state and for cooperation on HTA to become a "more permanent mechanism".</p><p>While Abt conceded that voluntary negotiations involving two or more countries are possible, he said that that Germany was unable to support any development of a common approach to pricing and access to services and drugs. He warned that any co-operation between member states must be voluntary and must not be the result of any "EU framework". "Then it would be on the way to a common harmonization of health systems and heath policy in Europe. This is something that Germany definitely does not support and is not covered under EU treaties." He added that the "historical variety" of Europe's healthcare systems needs protection and that health policy and looking after sick patients is highly emotive. "The protection of our national health system is therefore our priority and a transfer of competence for organizing health systems would be a bad idea."</p><p>But not all countries agree with Germany's stance. "A member state's autonomy is important, but the most important thing is getting new and better drugs as fast as possible to all patients," said Els Cleemput, a spokesperson for the Belgian health ministry. As she pointed out, small countries are at a disadvantage when negotiating for already expensive orphans because patient numbers are even smaller, which means the price goes up "enormously". </p><p>Cleemput was unable to give much detail on how the pilot would work as it is still under development. However, it will go beyond simple price negotiations for orphan drugs. She confirmed that the countries involved would share and analyze data together and set up joint registries to generate more information between them on how the drug works in real life. The three countries will also look at coordinating "assessment methodologies" and will examine which innovative drugs will come to the market in the next few years. She added that several other countries were interested in joining the pilot and were evaluating whether they could take part but declined to name any names.</p><p>If the pilot is successful, joint negotiations could be used to secure better prices for other drugs too, said Cleemput, although adding that it was far too soon to draw any concrete conclusions.</p><p>A number of companies have also expressed interest. "For them it is simpler, they only have to do negotiations once instead of three times, and they can potentially sell to more patients," she said.</p><p>Meanwhile, the BPI said that any joint price negotiations should be voluntary for companies and should not be used as another mandatory cost cutting measure. "Given the complexity and divergence of the national health systems of the member states a stepwise approach is more appropriate, for example, establishing a common understanding about value and relevant data."</p><p>Additionally, Matthias Heck, the BPI's representative in Brussels, warned: "Depending on how such joint procedures are set up and handled in practice, competition law concerns can arise."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 326
+
+<p>Manufacturers could find themselves talking with multiple EU member states at once to get their orphan drugs to patients if a pilot on joint pricing negotiations is a success. Currently Belgium, the Netherlands and Luxemburg are developing the pilot, but more countries are looking at whether they may want to join in. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+Benelux Price Negotiations Beware of EUWide Pricing Policy warns Germany
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151030T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151030T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151030T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030247
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 75
+
+Benelux Price Negotiations: Beware of EU-Wide Pricing Policy, warns Germany
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pipelineWatch
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361302
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1350afdc-1b74-4e19-8eab-c89ed8d44d39
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042518Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

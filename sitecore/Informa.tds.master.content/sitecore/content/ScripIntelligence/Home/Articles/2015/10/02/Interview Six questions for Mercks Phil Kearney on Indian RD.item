@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {91F6D52A-C3C0-410D-AB20-FDF0E8290FC2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/02/Interview Six questions for Mercks Phil Kearney on Indian RD
+parent: {649A1F5F-680B-4755-ABE7-6BF2F8862CDD}
+name: Interview Six questions for Mercks Phil Kearney on Indian RD
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b8214591-041f-4485-91f8-fe71761a1ccc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{1B4873C1-14E4-4116-B2CE-72B2D553B0E3}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Interview: Six questions for Merck's Phil Kearney on Indian R&D
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Interview Six questions for Mercks Phil Kearney on Indian RD
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9571
+
+<p>Dr Phil Kearney, MSD director (business development and licensing), India, South East Asia, Australia and New Zealand and ''scout'' behind Merck's Bionomics find, underscores that India, traditionally seen as a base for low FTE (full time equivalent) agreements, generic and follow-on innovations, has moved up the value chain.</p><p>In an interview with <i>Scrip</i> at the sidelines of BioAsia 2015 in Hyderabad, Dr Kearney indicated that he was keeping an eye on some ''very interesting'' academic/clinical research and small biotech R&D underway in India. Non-traditional alliances are another area of interest for MSD, especially in the backdrop of India's robust information technology (IT) sector, the Sydney-born scientist said. </p><p>Last year, Merck and Bionomics entered into an exclusive research collaboration and license pact for the latter's research program targeting cognitive dysfunction associated with Alzheimer's and other central nervous system conditions <a href="http://%5bhttp:/www.scripintelligence.com/business/Merck-ramps-up-Alzheimers-efforts-with-520m-Bionomics-deal-352497%5d" target="_new">(scripintelligence.com 24 June 2014)</a>. </p><p>While Dr Kearney won't say whether firms like India's Aurigene, recently in the news for an alliance with Curis covering the former's small molecule immuno-oncology and "precision oncology" drugs <a href="http://%5bhttp:/www.scripintelligence.com/business/Deal-roundup-ZymeworksCelgene-CurisAurigene-MedImmuneNCI-356291%5d" target="_new">(scripintelligence.com 22 January 2015)</a>, are on his alliance radar, he explains why Merck out-licensed tildrakizumab to Sun Pharma, an existing ally. </p><p><b><i>Scrip</i></b>: Merck's chairman and CEO Ken Frazier at the 3Q 2014 earnings call noted that the company would continue to focus on its highest potential growth opportunities while ''rigorously prioritizing'' the pipeline bolstering it with external assets and divesting out-licensing programs and candidates that are better suited to create value elsewhere. Broadly speaking what are the priority areas that Merck's scientific scouts will be looking at in 2015?</p><p><b><i>Phil Kearney</i></b>: Roger Perlmutter [Merck & Co executive vice president and president Merck Research Laboratories] has brought about a reorganization of research priorities. We've certainly honed down&#8230; We used to have a large number of areas that we pursued in both research and licensing. We could now say probably cardio-renal, primary care, oncology (really the check point inhibitors) and vaccines are four areas are what we would consider our core business. But if somebody came with something outside of those areas and the science is great and the argument is good, we would still look at that. </p><p>For India, we continue to be interested in anti-infectives, antivirals, cardiovascular disease, renal disease, diabetes and there are lot of opportunities in this country in that space. </p><p><b><i>Scrip</i></b>: Some years ago, Dr Greg Wiederrecht (then Merck's vice president and head external scientific affairs, worldwide licensing & external research) mentioned that Merck was looking at India's biologics capabilities with interest, including follow-on biologics <a href="http://%5bhttp:/www.scripintelligence.com/business/Merck-and-Co-scouts-for-Indian-alliances-eyes-biologics-space-307115%5d" target="_new">(scripintelligence.com, 9 December 2010)</a>. How has this shaped up &#8230;.the first biosimilar rituximab and adalimumab have all come from India? </p><p><b><i>PK</i></b>: The direction Merck is taking with biosimilars is yet to be defined. India will be a strong candidate should the company choose to pursue biosimilars.</p><p><b><i>Scrip</i></b>: Merck's deal with Sun for tildrakizumab was rather different <a href="http://%5bhttp:/www.scripintelligence.com/researchdevelopment/Sun-acquires-rights-to-late-stage-Merck-psoriasis-asset-354002%5d" target="_new">(scripintelligence.com 17 September 2014)</a>, especially since Indian firms are typically known to out-license their early stage assets. From the Merck side, what triggered the deal?</p><p><b><i>PK</i></b>: The Indian pharma [companies] are maturing significantly and are probably moving away from the out-licensing model. They are increasingly looking at bringing things in. We are a company that has gone through a significant re-prioritization of our pipeline and that creates opportunities for us to think about creating value from molecules that we perhaps can't pursue. This is a great example. We looked for partners who could continue the development &ndash; clinical development, approval and then pursue the marketing and commercialization. And Sun was an ideal partner.</p><p><b><i>Scrip</i></b>: Does this deal tie-in, in any way, with Merck's existing relationship with Sun for innovative branded generics? <a href="http://%5bhttp:/www.scripintelligence.com/business/Merck-and-Sun-team-up-to-push-branded-generics-in-emerging-markets-313967%5d" target="_new">(scripintelligence.com 12 April 2011)</a> There has been a general perception that things have been moving slowly on that front.</p><p><b><i>PK</i></b>: It ties in in the sense that we have worked with the company and we understand them a bit better than a completely new face. Relationships are very important in this industry. We continue to be very active [on the existing branded generics alliance]&#8230; We often don't publicise those actions.</p><p><b><i>Scrip</i></b>: Big Pharma has been looking at innovation through non-traditional partners &ndash; we've seen Novartis's Alcon unit sign a deal with Google to license the latter's "smart lens" technology, which could lead to medical innovations such as constant blood sugar monitoring via the eye, or adaptive focusing of contact lenses <a href="http://%5bhttp:/www.scripintelligence.com/home/Google-and-Novartis-in-smart-lens-pact-352875%5d" target="_new">(scripintelligence.com 15 July 2014)</a>. Is Merck considering similar innovative approaches, disruptive technologies via partnerships, licensing? </p><p><b><i>PK</i></b>: Yes. We've seen examples&#8230; We've looked at novel algorithms for analyzing big data sets. We've looked at computer algorithms that allow even very simple things to be done much faster. All of these things impact the drug development paradigm because they improve the decision making process or speed things up.</p><p>Here in India, there are certainly a lot of IT-based companies that are working in the biologicals space and we've talked to many of them about how they are applying that novel mathematics either in identifying new targets, the linking of targets that may not be obvious from biology and the docking of molecules to targets all the way through to manipulating huge data sets that we generate in our drug development programmes. </p><p>If you improve the infrastructure of IT in some of the big hospitals you obviously will improve your clinical trials, data collection, adverse event reporting and all these things impact on drug development. They don&rsquo;t necessarily have to be a small molecule to make sense for us&#8230; they have to make sense in terms of developing a drug quicker, with quicker reads on whether they are efficacious and also have an impact on ability to getting drugs to patients.</p><p> [On the topic of disruptive innovation] We have a ''whitespaces'' fund to try and support those type of things&#8230; not necessarily just about drugs. It's about things that go around that &ndash; may be devices, infrastructure or a novel way of interacting with your doctor, you could probably put e-health into that basket. </p><p>We've seen some really interesting technologies around dry powder inhalers, for example, which have a phone chip in them. It tells you when it's activated, so a doctor knows when it's activated. Those sorts of things will change the way we interact with patients. </p><p>We have a relationship with a company around a vaccination device, which is just a patch and you can imagine if that turns out to be effective, then no more needles, no more cold chains. We have vaccine groups that use camels in Africa with solar panels on them to keep things cool&#8230;300kgs of weight&#8230; all of that will go. That's the kind of disruption we look for.</p><p><b><i>Scrip</i></b>: We've seen a flurry of alliance activity in the past between Big Pharma and Indian firms for innovative branded generics &ndash; GSK- Dr Reddy's, Merck-Sun etc. But do you think things appear to have now slowed down andchanged?</p><p><b><i>PK</i></b>: No&#8230; but there are gradual interactions. For a long time India was considered to be low FTE, generics, follow-on sort of source of innovation, not new drugs. I think that's changed. I probably looked at several 100 companies in India and there's a lot of very interesting academic research, clinical research and small biotech research. Here in Hyderabad there are a couple of companies that are very good, very early, very interesting areas of research. But there's no one model that fits everything.</p><p>There's been a change.a few years back everyone thought China was going to be the solution to fiscal woes but that hasn&rsquo;t exactly happened and there have been certain high profile problems there. That causes things to drift again. From JP Morgan [healthcare conference], I got the sense that there is lot more energy in the market now and so I think interest and money will probably come back to India. So we will see deals done again.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 334
+
+<p>Dr Phil Kearney, MSD director (business development and licensing), India, South East Asia, Australia and New Zealand and ''scout'' behind Merck's Bionomics find, underscores that India, traditionally seen as a base for low FTE (full time equivalent) agreements, generic and follow-on innovations, has moved up the value chain.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Interview Six questions for Mercks Phil Kearney on Indian RD
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151002T234047
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151002T234047
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151002T234047
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027833
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Interview: Six questions for Merck's Phil Kearney on Indian R&D
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356686
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042254Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b8214591-041f-4485-91f8-fe71761a1ccc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042254Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

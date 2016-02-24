@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4EA0101A-6948-4923-9A39-A3BC2E50FACA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/28/Another rituximab debuts in India but no price contest
+parent: {0C0E697F-F691-47CD-A5D3-3B289DB4CAAB}
+name: Another rituximab debuts in India but no price contest
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 36d9ae0b-d21a-406c-8a7c-e45f4e7c325d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Another rituximab debuts in India but no price contest?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Another rituximab debuts in India but no price contest
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3299
+
+<p>The privately owned Indian firm Hetero has launched rituximab, its biosimilar version of Roche's MabThera/Rituxan, in India, trailing a clutch of local peers onto the market.</p><p>The product, marketed as Maball, follows biosimilar rituximab versions of Dr Reddy's Laboratories (marketed as Reditux) and Intas (Mabtas), launched in 2007 and 2013 respectively. </p><p>Roche, though, has apparently not been actively promoting the MabThera brand in India. Instead Roche's rituximab products are branded as Ristova and a second brand Ikgdar (through the alliance with the Indian firm Emcure), probably as part of the multinational's intent to <a href="http://www.scripintelligence.com/business/Four-brands-but-no-MabThera-in-Indian-rituximab-market-flux-342828" target="_new">distinguish</a> the cut-price versions in India from the global brand. </p><p>The launch of Maball also comes amid speculation that Cipla may consider co-marketing the product as part of efforts to broaden access, though this could not be officially confirmed. Cipla previously entered into an <a href="http://www.scripintelligence.com/business/Cipla-and-Hetero-to-launch-cut-price-darbepoetin-in-India-352424" target="_new">alliance</a> with Hetero to introduce a cut-price biosimilar darbepoetin alfa on the Indian market. </p><p>Maball will be marketed and distributed by group company Hetero Healthcare, a statement from Hetero said.</p><p>Hetero group's chairman and managing director, Dr Bandi Parthasaradhi Reddy, said that biosimilars is one of the key strategic business areas for the firm, which expects to introduce more biosimilar MAbs in the future. </p><p>"We also have plans to introduce affordable biosimilar rituximab into key markets outside India through our partners," he added.</p><h2>Pricing</h2><p>Going by previously known price points of competitors, Hetero's launch price for Maball appears to be slightly above that of competition. It is not however immediately clear if patient support programs and other market initiatives could position the product at a par with or even lower than competition. </p><p>Hetero's 100mg/10ml comes at a maximum retail price (MRP) of INR12,500 ($194.8) while the 500mg/50ml version has an MRP of INR42,950.</p><p>In 2010, MabThera was sold at around INR104,000 for the 500mg version and INR20,000 for the 100mg version according to details in the Monthly Index of Medical Specialities (India) of February that year. However, in 2013 India's then minister of state of chemicals and fertilisers, Srikant Jena, referred to the Roche-Emcure alliance, including proposed price cuts for rituximab 500mg and 100mg from an MRP of INR80,000 and INR16,000 respectively to INR37,500 and INR7,500, respectively. It's not immediately clear if there has been any further revision in these price points.</p><p>At the time of launch, Dr Reddy's <a href="http://www.scripintelligence.com/home/news/Dr-Reddys-launches-cut-price-rituximab-in-India-33806" target="_new">Reditux</a> was priced at INR10,000 for a 100mg dose in a 10ml vial, then around half the price of Mabthera, while the 500mg dose came at about INR40,000. The actual price to patients on Reditux, though, is believed to be significantly lower because of various patient support programs that the company backs.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 181
+
+<p>The privately owned Indian firm Hetero has launched rituximab, its biosimilar version of Roche's MabThera/Rituxan, in India, trailing a clutch of local peers onto the market.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Another rituximab debuts in India but no price contest
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150728T230001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150728T230001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150728T230001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029409
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Another rituximab debuts in India but no price contest?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359658
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+36d9ae0b-d21a-406c-8a7c-e45f4e7c325d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

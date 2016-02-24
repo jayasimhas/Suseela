@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2AC26A25-0771-4930-AE4E-0109C730D4EE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/25/Indian Sovaldi generics saga 2 suppliers  falling prices
+parent: {CE0B93D3-20EA-4DFE-BC95-04ADDD6DB633}
+name: Indian Sovaldi generics saga 2 suppliers  falling prices
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7683fff7-1677-4335-a7e4-b2b79437a5fc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{FBC11C64-3B60-46B3-97AB-5B758C859170}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Indian Sovaldi generics saga: 2 suppliers & falling prices 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Indian Sovaldi generics saga 2 suppliers  falling prices
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4560
+
+<p>Two suppliers, multiple brands and a "super" competitive market. That sums up, at least for now, the current situation with respect to sofosbuvir generic versions that have been launched in India.</p><p>To be precise, the Indian firms Natco Pharma and Hetero are believed to be the only key suppliers of sofosbuvir to the entire flock of firms, including Strides Arcolab, Cipla, Zydus Cadila and Dr Reddy's Laboratories, which have recently announced launch plans for the product in the country (see chart).</p><p>Strides confirmed that it sources the product from Natco, while Cipla is believed to have tapped Hetero for its supplies. Dr Reddy's, not an original Gilead licensee, has a pact with Hetero to distribute and market sofosbuvir in India.</p><p>Zydus Cadila did not immediately respond to an e-mail query on the issue, but sources indicate it is being supplied by Natco. </p><p>So while the two suppliers make hay, it is not immediately clear whether these sourcing deals are interim arrangements till the other firms secure regulatory approvals for their own sofosbuvir versions in India.</p><p>"Strategically Natco and Hetero have a clear advantage, though margins are not high. None of the other firms seem to want to lose out on the first mover advantage," an industry expert told <i>Scrip</i>.</p><table><tbody><tr><td><p><b>COMPANY</b></p>&nbsp;</td><td><p><b>BRAND NAME</b><uri ref=""><p>&nbsp;</uri></td><td><p><b>PRICE (INR)</b></p>&nbsp;</td></tr><tr><td><p>Natco</p>&nbsp;</td><td><p>Hepcinat</p>&nbsp;</td><td><p>19,900/28 tablets</p>&nbsp;</td></tr><tr><td><p>Cipla</p>&nbsp;</td><td><p>Hepcvir</p>&nbsp;</td><td><p>10,800/15 tablets</p>&nbsp;</td></tr><tr><td><p>Dr Reddy's </p>&nbsp;</td><td><p>Resof</p>&nbsp;</td><td><p>20,000/28 tablets</p>&nbsp;</td></tr><tr><td><p>Strides Arcolab</p>&nbsp;</td><td><p>Virso</p>&nbsp;</td><td><p>19,900/28 tablets*</p>&nbsp;</td></tr><tr><td><p>Zydus Cadila</p>&nbsp;</td><td><p>SoviHep</p>&nbsp;</td><td><p>19,900/28 tablets</p>&nbsp;</td></tr></tbody></table><p><p>*as suggested by market sources</p><p>Last year, Gilead entered into <a href="http://www.scripintelligence.com/home/Cut-price-generics-in-sight-as-Gilead-licenses-Sovaldi-353966" target="_new">licensing deals</a> with the seven India-based firms, including Cipla, Zydus Cadila, Hetero, Strides, Ranbaxy and Mylan Labs, to develop sofosbuvir and the single tablet regimen of ledipasvir/sofosbuvir &ndash; sold in the US as Harvoni &ndash; for distribution in 91 developing countries.</p><p>Biocon subsequently <a href="http://www.scripintelligence.com/business/Patent-challenger-Natco-is-now-Gilead-licensee-for-Sovaldi-357020" target="_new">joined the list of licensees</a>, followed by Natco, which had previously challenged the Sovaldi patent. </p><p><a href="http://www.scripintelligence.com/business/Gileads-10.71-Sovaldi-to-set-ceiling-for-other-Indian-entrants-356937" target="_new">Gilead had earlier</a> told <i>Scrip</i> that the branded Sovaldi product would be priced at $300per bottle/per month in India and that it expects this price to act as a ceiling price for other market entrants. </p><p>Mylan expects to begin distribution of Sovaldi in India in 2Q.</p><p><b>Prices</b></p><p>Significantly, while the maximum retail price of all the generic sofosbuvir versions launched in India are in a similar price range, with no single firm seemingly having a major price advantage, sources indicate that "net" prices have already begun dropping in hospital supplies.</p><p>"It's a super competitive market with patients set to gain. We expect prices to go down to the $200-$230 range," one generic firm told Scrip.</p><p>Natco Pharma, the most recent Gilead licensee for Sovaldi, who now appears to now be sitting pretty, recently received <a href="http://www.scripintelligence.com/business/Natco-gets-approval-for-first-Sovaldi-generic-in-India-357243" target="_new">regulatory approval</a> to launch generic sofosbuvir tablets 400mg in India &ndash; the first company to get such clearance in the country. </p><p>Natco then announced that its generic, marketed as Hepcinat, would be priced at a maximum retail price (MRP) of INR19,900 ($317) for a bottle of 28 tablets, or around $11.3 per tablet.</p><p>Bangladesh's Incepta Pharmaceuticals had <a href="http://www.scripintelligence.com/home/Bangladeshs-Incepta-leads-LDC-charge-with-10-Sovaldi-generic-356891" target="_new">earlier launched</a> a generic version of Sovaldi at a maximum retail price of Taka800 ($10.4) per tablet.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 203
+
+<p>Two suppliers, multiple brands and a "super" competitive market. That sums up, at least for now, the current situation with respect to sofosbuvir generic versions that have been launched in India.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Indian Sovaldi generics saga 2 suppliers  falling prices
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150325T234611
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150325T234611
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150325T234611
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028292
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Indian Sovaldi generics saga: 2 suppliers & falling prices 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357503
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042323Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7683fff7-1677-4335-a7e4-b2b79437a5fc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042323Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

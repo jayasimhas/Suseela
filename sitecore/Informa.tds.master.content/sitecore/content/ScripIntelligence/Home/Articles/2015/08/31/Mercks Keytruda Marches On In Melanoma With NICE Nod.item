@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {2BFCF7A7-59B5-479A-8CB4-29958B82D936}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/31/Mercks Keytruda Marches On In Melanoma With NICE Nod
+parent: {CBD943D1-3709-41E5-B6F8-C3721892EEE4}
+name: Mercks Keytruda Marches On In Melanoma With NICE Nod
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 06973410-3bb7-4302-9236-b7974d24f10a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 389
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Merck's Keytruda Marches On In Melanoma With NICE Nod
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Mercks Keytruda Marches On In Melanoma With NICE Nod
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5392
+
+<p>Merck & Co. Inc.'s PD-1 inhibitor Keytruda (pembrolizumab) has been given the provisional green light from the British national health technology association NICE as a treatment for some patients with advanced melanoma which is either inoperable or metastatic &ndash; provided the US drug maker makes the immune-oncology therapy available at an agreed discounted price. </p><p>Keytruda became the first medicine to be made available through the UK's Early Access Medicines Scheme following a positive opinion issued in March this year by the Medicines and Healthcare Products Regulatory Agency (MHRA) and after the therapy was shown to slow the progression of metastatic melanoma, a condition where other treatments currently have poor results. The regulator's EAMS arrangement makes medicines available before marketing authorization for life-threatening or seriously debilitating conditions with a clear unmet need. Around 400 patients have now received Keytruda under the EAMS plan, according the MHRA. </p><p>Pembrolizumab has a marketing authorisation in the UK as monotherapy "for the treatment of advanced (unresectable or metastatic) melanoma in adults." This is broader than the indication covered by NICE's appraisal, which looked at using pembrolizumab in people who had already had been given Bristol-Myers Squibb Co's CTLA-4 inhibitor Yervoy (ipilimumab). </p><p>The full indication covered by its Early Access to Medicines Scientific Opinion was the "treatment of unresectable or metastatic melanoma with progressive, persistent, or recurrent disease on or following treatment with standard of care agents including ipilimumab, and when indicated a V-raf murine sarcoma viral oncogene homolog B1 (BRAF) inhibitor or mitogen-activated protein kinase (MEK) enzyme inhibitor." The cost effectiveness-oriented National Institute for Health and Care Excellence said its draft guidance covered the whole population for which pembrolizumab was made available through the EAMS program initiated by the MHRA, the regulatory body which oversees the safety of drugs and devices in Britain.</p><p>Keytruda and Yervoy are members of the programmed-death family of immune checkpoint inhibitors, which release the brakes on mechanisms that would otherwise stop the typical responses of cancer-killing cells in the immune system. BMS' Yervoy was the first major breakthrough in the field and now the anti PD-1 successors &ndash; including BMS' anti-PD-1 Opdivo (nivolumab) &ndash; are stealing the limelight with strong efficacy and better tolerability. PD-1 is a checkpoint molecule in the same family as the CTLA-4, although they have very distinct and different functions.</p><p>The director of NICE's evaluation centre, Carole Longson, in a statement said: "We are pleased to be able to recommend pembrolizumab, the first EAMS drug, in final draft guidance. In 2011, over 13,000 people were diagnosed with skin cancer in the UK, and it accounts for more cancer deaths than all other skin cancers combined. I am sure this will be welcome news to patients and healthcare professionals alike.&rdquo;</p><p>UK Life science minister George Freeman welcomed the progress that Keytruda has made under the EAMS framework. "The [EAMS] Accelerated Access Review will also make practical recommendations to further increase the pace of getting innovative products to patients," he said in a statement, without elaborating. </p><p>NICE appraisals apply in England. Decisions on how they apply in other UK countries are made by ministers in the Welsh government, Scottish government, and Northern Ireland Executive. The Scottish Medicines Consortium is due to publish advice in November on pembrolizumab for the treatment of patients with unresectable or metastatic melanoma who have been previously treated with ipilimumab. </p><p>Merck's pembrolizumab is priced at &pound;1,315 per 50 mg vial, less value added tax. Merck has agreed a patient access scheme with the Department of Health involving a simple discount to the drug's list price, applied at the point of purchase or invoice. The level of the discount is confidential, NICE said. It noted its appraisal committee concluded that the most plausible incremental cost-effectiveness ratio (ICER) for pembrolizumab compared with best supportive care was likely to be less than &pound;50,000 per quality-adjusted life year (QALY) gained. </p><p>Checkpoint blockers work to defeat a cancer resistance mechanism that causes immune cells to see tumour cells as "self." Once the veil is lifted, the immune response may be enough to defeat the cancer cells on its own, but a wide-ranging array of therapeutic combinations is being tested. The aim of checkpoint-directed immunotherapeutics is to come between the receptor and the ligand, essentially turning the switch back on and freeing up the T-cells to attack the cancer.</p><p>In October 2014, NICE published guidance recommending Novartis AG's BRAF inhibitor Tafinlar (dabrafenib) as a treatment for inoperable or metastatic BRAF V600 mutation positive melanoma. Three months earlier, in July 2014, NICE published guidance backing ipilimumab for treating adults with advanced melanoma that has not been treated before. NICE is currently developing guidance on pembrolizumab for treating ipilimumab naive unresectable, metastatic melanoma and expects that to be published in January 2016. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 377
+
+<p>Merck & Co. Inc.'s PD-1 inhibitor Keytruda (pembrolizumab) has been given the provisional green light from the British national health technology association NICE as a treatment for some patients with advanced melanoma which is either inoperable or metastatic &ndash; provided the US drug maker makes the immune-oncology therapy available at an agreed discounted price. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Mercks Keytruda Marches On In Melanoma With NICE Nod
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150831T230843
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150831T230843
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150831T230843
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029695
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Merck's Keytruda Marches On In Melanoma With NICE Nod
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360188
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+06973410-3bb7-4302-9236-b7974d24f10a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

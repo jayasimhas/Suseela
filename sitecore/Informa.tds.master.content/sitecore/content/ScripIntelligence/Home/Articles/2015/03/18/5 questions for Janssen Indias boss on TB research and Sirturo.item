@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {5A785311-3E19-4822-8F47-C108FB66D3EC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/18/5 questions for Janssen Indias boss on TB research and Sirturo
+parent: {A5EBD6E2-67DE-4D32-BD47-53A5A2131394}
+name: 5 questions for Janssen Indias boss on TB research and Sirturo
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b621eee8-8f62-4022-8b63-b1b6f3456c33
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+ 5 questions for Janssen India's boss on TB research and Sirturo  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+5 questions for Janssen Indias boss on TB research and Sirturo
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10513
+
+<p> Janssen's Sirturo (bedaquiline), the first new drug for multidrug-resistant tuberculosis (MDR-TB) with a novel mechanism of action in more than 40 years, is seen as a poster child in the war against the disease. </p> <p> In an interview with <i>Scrip</i> ahead of World TB Day on 24 March, Sanjiv Navangul, Janssen India managing director, who is also responsible for markets in South Asia, elaborates on a range of innovative partnerships and programs that J&amp;J is working on to ensure access and availability of Sirturo in high burden nations. 2013 saw an estimated 480,000 new cases of MDR-TB worldwide and about 210,000 deaths from MDR-TB, as per WHO data. </p> <p> Bedaquiline was approved in India in January 2015 and Mr Navangul, a former managing director of MSD Philippines, also shared details on the staggered access plan for the product under the Indian government's program. </p> <p> <img src="-/media/2BADA62E3B134C3A965FABB88A9D3DE8.ashx"> </p> <p> <i>Sanjiv Navangul, Managing Director of Janssen India</i> </p> <p> <b>Scrip: The TB drug development landscape is rather promising - 10 new or repurposed TB drugs are in late phases - but private sector TB R&amp;D spending has dropped. What can be done to sustain private sector interest? </b> </p> <p> <b>Sanjiv Navangul:</b> Due to the unique nature of MDR-TB and the public health landscape, it is important that the private sector effectively partners with global stakeholders to incentivize additional R&amp;D, to explore alternate business and advocacy models, and to ensure appropriate use of current and new treatment options. </p> <p> Through our work in MDR-TB, we are exploring a range of innovative partnerships and programs in this regard. A few examples of this include an agreement that Janssen entered into in 2009 with the TB Alliance, a non-profit organization engaged in advocacy and the acceleration of the development of TB drugs. The agreement grants the TB alliance a royalty-free license for the worldwide development and access to bedaquiline in the field of drug-susceptible TB. </p> <p> Janssen aims to further verify and confirm the efficacy and safety of bedaquiline for patients with MDR-TB. In November [2014], we announced that we are collaborating with The International Union Against Tuberculosis and Lung Diseases (The Union) to add bedaquiline arms to the STREAM study. This confirmatory trial will meet post-approval commitments for both the US FDA and EMA. The study sponsors are eager to begin &quot;STREAM Stage 2&quot; and plan to begin immediately after all requisite approvals are in place. </p> <p> This partnership is based on a shared interest in identifying standardized, simpler and shorter regimens, which are safe and efficacious, and include the latest treatment options currently available. STREAM allows evaluation of a further simplified treatment regimen, including an all-oral option. </p> <p> <i>[Ed: The STREAM study is a multi-centre international randomized controlled trial to evaluate a standardized treatment regimen of anti-TB drugs for patients with MDR-TB]</i> </p> <p> Globally, we are also working with other pharmaceutical companies and NGOs through the Critical Path to TB Drug Regimens (CPTR) to share information on TB compounds within their respective drug pipelines to quickly identify and work together to develop the most promising TB drug regimen, regardless of sponsor. In China we launched a collaborative, five-year strategic partnership with Tsinghua University to accelerate discovery research and foster new therapeutic approaches for infectious diseases. </p> <p> <b>Scrip: The Global Alliance for TB Drug Development, whose R&amp;D partners include Janssen, has underscored that new regimens must be ''Adopted, Available, and Affordable''. Are governments in many emerging markets with high disease burden too slow on the first ''A''? Or is the cautious approach of regulators justified?</b> </p> <p> <b>SN:</b> Janssen is committed to obtaining registration for bedaquiline in countries with high MDR-TB disease burden and is working with relevant authorities to make the treatment available under equitable conditions. As drug resistance is largely man-made, governments have to take many steps to ensure new treatments are used appropriately and in a way that does not lead to further resistance developing. </p> <p> We believe that appropriate use is an integral aspect of the introduction of new drugs and regimens. We take seriously our obligation to ensure that bedaquiline will provide utility for today's and tomorrow's patient. Programs that support the adoption of effective new MDR-TB medicines must ensure their sustained availability and steps must be in place to ensure these medicines are used safely and appropriately. These activities, including a responsible distribution and access strategy where the National Tuberculosis Programme (NTP) resides as the key player, investments in diagnostic platforms, the development of appropriate clinical guidelines, and training and strengthening of health systems, takes time. </p> <p> This is why we believe it so critically important that the private sector collaborates in each step of the access program, and is why we are committed to supporting innovative partnerships and research collaborations to improve access, advance new drug regimens and ensure responsible access and appropriate use. </p> <p> <b>Scrip: Currently recommended MDR-TB regimens appear too expensive and the funding gap for TB care and control isn't meager either. What is the balanced way forward, so that neither the interest of innovators nor patients is hurt when new drugs become available? Are widespread licensing/technology transfer deals as we've seen in the case of Gilead's Sovaldi [for hepatitis C] an option? </b> </p> <p> <b>SN: </b>Fewer than 100,000 patients are treated for MDR-TB worldwide. While the relatively small number of patients poses unique supply chain challenges in itself, the situation is exacerbated by the fact that a typical treatment regimen contains as many as seven or eight different drugs, many of which are 40-50 years old. As such, generating enthusiasm from generic manufacturers to participate in a low volume, low margin area is often challenging. </p> <p> Antimicrobial resistance &ndash; and specifically MDR-TB &ndash; is one of the world's most serious public health threats. Recognizing the significant global disease threat and unmet medical need in MDR-TB, Janssen has developed a comprehensive access and affordability model to fulfil our responsibility to patients with MDR-TB. </p> <p> Through a four-year donation program of bedaquiline, J&amp;J is collaborating with USAID to jointly tackle the threat of MDR-TB in low- and middle-income countries. J&amp;J will donate an estimated 30,000 courses of bedaquiline for use in more than 100 Global Fund-eligible countries for the treatment of MDR-TB, with USAID working with national TB programs, patients and partners to ensure appropriate use of bedaquiline in accordance with WHO Guidelines. </p> <p> Together this agreement will help tackle barriers to scaling up patient access, and specifically, expand patient access to bedaquiline in a safe and appropriate manner and assess impact. </p> <p> <b>Scrip: Countries like India have seen problems of drug stock-outs and shortages of TB drugs, which could contribute to amplifying drug resistance in India. Is the government underestimating the devastating impact of such slip-shod planning? Unregulated sales and irrational prescriptions of antibiotics/TB drugs is also rife in private healthcare settings.</b> </p> <p> <b>SN:</b> Janssen is a member of the Stop TB Partnership, a group that provides a framework for sharing information, experiences and good practices in TB prevention, care and control. This work includes focusing on ways to ensure appropriate use of all TB medicines across the whole health system. </p> <p> One way that we are ensuring bedaquiline is made available in both a sustainable and appropriate way is by collaborating with the Stichting International Dispensary Association (IDA), a procurement agent for the Stop TB Partnership's Global Drug Facility (GDF), to facilitate access to bedaquiline for the treatment of pulmonary MDR-TB as part of combination therapy in adults. </p> <p> The collaboration will help to foster access to bedaquiline for MDR-TB patients in more than 130 low- and middle-income countries. The GDF handles procurement for those private providers that have established an approved treatment program that has been endorsed by the National Tuberculosis Programme (NTP) in a given country. Interested private providers should check with the NTP in their country to find out whether they may be eligible. </p> <p> <b>Scrip: Is bedaquiline already available under India's Revised National TB Control Program (RNTCP) framework for conditional access through the Programmatic Management of Drug Resistant TB (PMDT) program?</b> </p> <p> <b>SN:</b> Janssen submitted an application for the approval of bedaquiline in India to the Drugs Controller General of India (DCGI) in May 2013, and we received an approval in January 2015. This approval will provide access to bedaquiline under the RNTCP through its PMDT framework in order to ensure appropriate use. </p> <p> The introduction of bedaquiline under the RNTCP will initially provide access through five to six public hospitals of national importance in the treatment of MDR-TB patients, and after the review of clinical data from these patients the access program will be expanded to include nationwide PMDT centres. </p> <p> Patient eligibility will be defined through treatment guidelines drafted by the Government of India's National Institute for Research on Tuberculosis and approved by the RNTCP. These are currently under development. The DCGI has approved bedaquiline for conditional access and use in adults (&gt;18 years) as part of combination therapy of pulmonary tuberculosis due to multidrug-resistant mycobacterium tuberculosis when an effective treatment regimen cannot otherwise be provided. </p> <p> Related content:<a href="http://www.scripintelligence.com/policyregulation/World-TB-Day-2015-new-drugs-new-methods-new-guidance-357444"> World TB Day 2015: new drugs, new methods, new guidance</a> </p> <p> <a href="http://www.scripintelligence.com/home/Infographic-the-TB-landscape-in-2015-357440">Infographic: the TB landscape in 2015</a> </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 220
+
+<p> Janssen's Sirturo (bedaquiline), the first new drug for multidrug-resistant tuberculosis (MDR-TB) with a novel mechanism of action in more than 40 years, is seen as a poster child in the war against the disease. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+5 questions for Janssen Indias boss on TB research and Sirturo
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150318T080000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150318T080000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150318T080000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028202
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+ 5 questions for Janssen India's boss on TB research and Sirturo  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357345
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042316Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b621eee8-8f62-4022-8b63-b1b6f3456c33
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042318Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

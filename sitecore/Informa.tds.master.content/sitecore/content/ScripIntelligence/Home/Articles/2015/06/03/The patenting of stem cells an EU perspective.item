@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {3F6A5B8A-0154-47DC-BCC6-D21F3E975B08}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/03/The patenting of stem cells an EU perspective
+parent: {BC075EB3-76AA-4093-B057-CD1BE0713E4D}
+name: The patenting of stem cells an EU perspective
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 56bcee51-ebbe-4aab-864d-67c5195d64c7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+ The patenting of stem cells: an EU perspective  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+The patenting of stem cells an EU perspective
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 12314
+
+<p> <b>In a decision that was welcomed by the biotechnology industry in December 2014, the Court of Justice of the European Union (CJEU) ruled that a parthenote &ndash; an unfertilized human ovum stimulated to grow by parthenogenesis &ndash; is not capable of developing into a human being and so can be patented. In this article, Paul Harris &ndash; a IP Litigation Partner at Pillsbury Law &ndash; examines the CJEU's decision, and explores how the EU seeks to keep the moral balance in place, while allowing the patent system to work.</b> </p> <p> <img src="-/media/1CA8A0556F3D4BEE8AA6767F2ED80A83.ashx"> <br> <br> <br> <br> <b>Paul Harris</b> <br> <br> It may be stretching it a bit to credit Mary Shelley as being the originator of bioethics, but her novel portraying the indignities suffered by the monster, together with the feelings of Dr Frankenstein towards his creation, are reflected in the underlying rationale behind EU legislation on biotechnological inventions: no ability to create 'life' (let alone patent it), and preservation of human dignity. <br> <br> Yet there is tension over what society regards as permissible or impermissible when it comes to patenting because the potential benefits of allowing the experimentation on human embryonic stem cells (hESCs) could include the eradication of certain diseases and genetic deformities. <br> <br> The dilemma is that while there can be experimentation on human embryos (providing the relevant criteria for being allowed to do so under the law are met), the ability to protect the fruits of such experimentation by patenting are extremely limited. What biotech company is going to commit potentially millions of pounds in research, if the one system that enables them to get a return on their investment, namely, patenting, is prohibited? <br> <br> <b>biotechnology inventions</b> <br> <br> In Europe, Directive 98/44/EC on the Legal Protection of Biotechnological Inventions (the Biotech Directive) regulates the law for biotechnological inventions across the entire EU. As a Directive, it must be implemented by national legislation for each EU Member State. In the UK, for example, this has been achieved by amendment to the Patents Act 1977. <br> <br> Like many EU Directives, the Biotech Directive has a considerable number of recitals, which seek to explain its purpose. In a nutshell, it is to encourage research in the biotechnology field, through the use of the patent system. <br> <br> Of fundamental importance, however, is the preservation of what the Biotech Directive terms &quot;human dignity&quot;, so the human body, at any stage, is not patentable. This is seemingly underlined by Article 6(2)(c) of the Biotech Directive, which provides that the following is un-patentable: <br> <br> <i>&quot;(c) uses of human embryos for industrial or commercial purposes&quot;</i> <br> <br> <b>the law on human embryos</b> <br> <br> In a case brought before the CJEU by Greenpeace (<u><i>Brüstle</i></u> v Greenpeace: Case-34/10), the CJEU had to consider what was meant by &quot;human embryo&quot;. Having considered that any human ovum, as soon as it is fertilized, must be regarded as a human embryo [paragraph 35], the CJEU considered the classification also applied to: <br> <br> <i>&quot;&#8230;a non-fertilised human ovum whose division and further development had been stimulated by parthenogenesis. Although those organisms have not, strictly speaking, been the object of fertilisation, due to the effect of the technique used to obtain them they are, as is apparent from the written observations presented to the Court, capable of commencing the process of development of a human being just as an embryo created by fertilisation of an ovum can do so.&quot; </i> <br> <br> What this meant was that hESCs produced by &quot;normal&quot; fertilization, could not be the subject of a patent, but neither could those produced by parthenogenesis on the basis that they could become human beings. <br> <br> On 23 October 2006, International Stem Cell Corporation (ISCC) applied in the UK for two patents relating to methods where parthenogenesis is used to activate a human oocyte (i.e. stimulation of a human oocyte, without fertilization by a sperm cell) to produce a parthenogenetically activated oocyte or &quot;parthenote&quot;. These are called induced pluripotent stem cells (iPSCs). One application related to the production of human stem cells from such parthenotes, while the other relates to human synthetic corneas and corneal tissues derived from such parthenotes. <br> <br> Stimulation of a human oocyte can be achieved by using chemical or electrical parthenogenesis techniques. The stimulated human oocyte divides in a manner analogous to that of a fertilized human embryo, to produce a parthenote genetically-derived structure analogous to the blastocyst stage of normal embryonic development, from which stem cells can be obtained. These stem cells can then be used to obtain corneal tissue. <br> <br> Before the hearing officer in the UK Intellectual Property Office, ISCC argued that a parthenogenetically stimulated human oocyte was not capable of producing a human being, whereas an embryo created by fertilization of an ovum could do so. This was because the former had an inherent biological limitation that prevented those activated oocytes from developing into a viable human being. When an oocyte is caused to divide by parthenogenetic stimulation, the absence of the paternal copy of the maternally-repressed genes prevents normal development of the parthenogenetic &quot;embryo&quot; to term &ndash; in particular, there is no development of the placental tissue. <br> <br> The hearing officer considered that because of the <u><i>Brüstle</i></u> decision concluding that the parthenogenetically derived structure was analogous to the blastocyst stage of normal embryonic development, this fell within the definition of &quot;human embryo&quot;, and the production of synthetic corneas or corneal tissue was therefore &quot;use of a human embryo for industrial or commercial purposes&quot;, and so excluded from patentability. <br> <br> ISCC appealed to the English High Court. <br> <br> The key submission by ISCC, with which the judge agreed, was whether, as expressed by the CJEU in the <u><i>Brüstle</i></u> case, for an organism to be &quot;capable of commencing the development of a human being&quot; it must be: <br> <br> (i) capable of commencing the process of development which leads to a human being; or <br> <br> (ii) capable of commencing a process of development even if that process is incapable of leading to a human being. <br> <br> Although there was some guidance in the Opinion of the Advocate General in the earlier <u><i>Brüstle</i></u> case to support proposition (ii) above, the judge considered the matter was not clear. Accordingly, he referred to the CJEU the specific question as follows: <br> <br> <i>&quot;Are unfertilised human ova whose division and further development have been stimulated by parthenogenesis, and which, in contrast to fertilised ova, contain only pluripotent cells and are incapable of developing into human beings, included in the term &quot;human embryos&quot; in Article 6(2)(c) of Directive 98/44/EC on the legal protection of biotechnological inventions?&quot;</i> <br> <br> The judge indicated that his view was that proposition (ii) was the better approach. This was not, however, binding on the CJEU. <br> <br> It is clear from the CJEU's analysis of the <u><i>Brüstle</i></u> case, that at the time (and set out in written observations in the <u><i>Brüstle</i></u> case), scientific knowledge stated that an unfertilized human ovum whose division and further development had been stimulated by parthenogenesis did have the capacity to develop into a human being. However, as had been made clear to the hearing officer in the UK IPO, current scientific knowledge had established that mammalian parthenotes could never develop into a human being, because they lacked the parental DNA necessary for the development of extra-embryonic tissue. Human parthenotes had been shown to develop only to the blastocyst stage, over about 5 days. <br> <br> In the light of this, the CJEU concluded: <br> <br> <i>&quot;Article 6(2)(c) of Directive 98/44/EC of the European Parliament and of the Council of 6 July 1998 on the legal protection of biotechnological inventions must be interpreted as meaning that unfertilised human ovum whose division and further development had been stimulated by parthenogenesis does not constitute a &quot;human embryo&quot;, within the meaning of that provision, if, in the light of current scientific knowledge, it does not, in itself, have the inherent capacity of developing into a human being, this being a matter for the national court to determine&quot;</i> <br> <br> <b>implications</b> <br> <br> Whether by accident, design or just sheer luck, a decision has been reached which will both satisfy those whose ethics consider a human embryo (as in a fertilized one) should be granted the sanctuary of life, and the biotech companies that seek to alleviate suffering but at the same time, want a return on their investment. <br> <br> What, however, the CJEU's decision means, is that where a company in a country that legitimately allows the experimentation on, and patenting of, human embryos (such as the US), which files a patent in that country, and then through the international patenting system, seeks to designate countries within the European Union and which have signed up to the European Patents Convention, will find that EU legislation (as formulated in the ISCC decision) will prevent a European patent being granted where the method or product claim arises from experimentation on hESCs. <br> <br> Therefore, while it is undoubtedly easier to deal with hESCs, it is only if iPSCs were originally used for experimentation that a European patent will be granted. <br> <br> What this implies, therefore, is that unless you start with iPSCs, there is going to be a big hole (i.e. Europe) in your global patent portfolio protecting your inventions. Whatever your view point, this is going to cause biotech companies to consider whether to invest at all, or whether to follow the more difficult path of creating and using iPSCs. That decision will, no doubt, depend on the size of the potential rewards for doing so. <br> <br> <br> <br> <i>Paul Harris has over 25 years of experience in intellectual property cases, working on contentious matters relating to patent analysis and assessment, as well as a wide variety of technologies, including complex chemical cases, electronics and mechanical patents. Paul has lectured on patents, trademarks and con&#64257;dential information, and regularly shares his views on patent law in his Letters from Europe podcasts. He also teaches at the University of Oxford. </i> <br> <br> <br> <br> <b>Related stories:</b> <br> <br> <a target="_new" href="http://www.scripintelligence.com/home/EU-court-ruling-removes-another-obstacle-to-stem-cell-patenting-355736">EU court ruling removes another obstacle to stem cell patenting</a> <br> <br> <a target="_new" href="http://www.scripintelligence.com/policyregulation/Scrip-100-Patent-Protection-and-Progressive-Technologies-the-Stem-Cell-Conundrum-354355">Scrip 100: Patent Protection and Progressive Technologies; the Stem Cell Conundrum</a> <br> <br> <a target="_new" href="http://www.scripintelligence.com/home/EPO-squeezes-hESC-patenting-in-line-with-court-ruling-but-impact-could-be-limited-332032">EPO squeezes hESC patenting in line with court ruling, but impact could be limited</a> <br> <br> <a target="_new" href="http://www.scripintelligence.com/home/Panic-No-dont-panic-ECJ-embryonic-stem-cells-ruling-divides-opinion-322669">Panic! No, don't panic! ECJ embryonic stem cells ruling divides opinion</a> <br> <br> <a target="_new" href="http://www.scripintelligence.com/policyregulation/European-decision-on-embryo-stem-cells-may-undermines-medical-research-322609">European decision on embryo stem cells may undermine medical research</a> <br> <br> <a target="_new" href="http://www.scripintelligence.com/home/Stem-cell-research-charting-stormy-EU-seas-315945">Stem cell research charting stormy EU seas</a> <br> <br></p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 546
+
+<p> <b>In a decision that was welcomed by the biotechnology industry in December 2014, the Court of Justice of the European Union (CJEU) ruled that a parthenote &ndash; an unfertilized human ovum stimulated to grow by parthenogenesis &ndash; is not capable of developing into a human being and so can be patented. In this article, Paul Harris &ndash; a IP Litigation Partner at Pillsbury Law &ndash; examines the CJEU's decision, and explores how the EU seeks to keep the moral balance in place, while allowing the patent system to work.</b> </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+The patenting of stem cells an EU perspective
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150603T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150603T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150603T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028051
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+ The patenting of stem cells: an EU perspective  
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357111
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+56bcee51-ebbe-4aab-864d-67c5195d64c7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042307Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

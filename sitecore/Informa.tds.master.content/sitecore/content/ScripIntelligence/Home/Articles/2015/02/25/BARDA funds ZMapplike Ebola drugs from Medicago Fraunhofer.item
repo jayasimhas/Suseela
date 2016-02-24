@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {563F48D5-8BD1-4421-B9E2-FD956CB13379}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/25/BARDA funds ZMapplike Ebola drugs from Medicago Fraunhofer
+parent: {15B1B217-4524-49F3-9FDF-A5CEA8404E4B}
+name: BARDA funds ZMapplike Ebola drugs from Medicago Fraunhofer
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c6233b9e-77f5-448f-ac1c-a1af52d1cf3c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+BARDA funds ZMapp-like Ebola drugs from Medicago, Fraunhofer
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+BARDA funds ZMapplike Ebola drugs from Medicago Fraunhofer
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6439
+
+<p>The Biomedical Advanced Research and Development Authority (BARDA), part of the US Department of Health and Human Services, has awarded contracts to biotech Medicago and nonprofit research and development firm Fraunhofer to make ZMapp-like Ebola drugs, the head of the agency revealed on 24 February.</p><p>BARDA spokeswoman Gretchen Michael told <i>Scrip</i> the agency awarded $1.98m to Medicago and $1.77m to Fraunhofer under "task order" pilot projects to produce monoclonal antibodies like those used in ZMapp in the firms' manufacturing facilities.</p><p>ZMapp, a three-drug monoclonal antibody (mAb) made by Mapp Biopharmaceuticals, entered the public spotlight this past August when it was used in humans for the first time to treat two Ebola-infected American aid workers, Dr Kent Brantly and Nancy Writebol, who were volunteering in Liberia when they came down with the disease (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Tiny-biotech-Mapps-Ebola-drug-thrust-into-spotlight-353192" target="_new">05 August 2014</a>).</p><p>The drug is manufactured in tobacco-based plants, known as <i>Nicotiana</i>. </p><p>Mapp said its experimental drug is an optimized cocktail combining the "best components" of the firm's MB-033 and another product, ZMab, which is being developed by Toronto-based Defyrus and the Public Health Agency of Canada (PHAC).</p><p>Late last summer, BARDA awarded Mapp $24.9m to speed the development of ZMapp. The contract ultimately could be worth $42.3m for tiny San Diego-based Mapp (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-gambles-24.9m-to-speed-Ebola-drug-ZMapp-353682" target="_new">3 September 2014</a>).</p><p>Kentucky Bioprocessing currently is doing the work of growing ZMapp (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Nurse-gets-Ebola-survivor-plasma-ZMapp-maker-ups-efforts-354424" target="_new">14 October 2014</a>).</p><p>In a 24 February blog posting, Dr Robin Robinson, director of BARDA, confirmed ZMapp is now entering clinical trials in West Africa, which are set to get underway imminently. Late last month, he told reporters there was finally enough of the experimental drug to start Phase I and II trials in patients with Ebola in Liberia and the US (scripintelligence.com, <a href="http://www.scripintelligence.com/home/ZMapp-Ebola-vaccines-set-for-testing-in-Liberia-356313" target="_new">23 January 2015</a>).</p><p>In late August 2014, researchers reported that ZMapp was effective in curing all 18 rhesus macaques infected with a lethal dose of Ebola &ndash; even after five days of exposure to the virus &ndash; demonstrating the drug works even at advanced stages of the disease (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Ebola-drug-ZMapp-100-effective-in-monkeys-353643" target="_new">1 September 2014</a>). </p><p>Dr Robinson said Medicago and Fraunhofer will use their own proprietary tobacco expression systems to produce the antibodies. </p><p>In a separate statement, Medicago disclosed it plans to manufacture the antibodies at its Quebec City, Canada facility. The firm noted that two of the antibodies it will produce were discovered by the PHAC. </p><p>Medicago CEO Andy Sheldon said his firm's production platform demonstrated its potential for responding to international emergencies and pandemics when it produced candidate vaccines for H1N1 in 2009 and H7N9 in 2013 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Spread-of-MERS-CoV-triggers-CDC-concerns-FDA-action-343875" target="_new">10 June 2013</a>).</p><p>"As governments around the world continue to face health threats like pandemic strains of influenza and Ebola viruses, we believe that Medicago can make a major contribution to rapid response, surge capacity and stockpiles across the globe," he said.</p><p>Preliminary results have shown that Medicago&rsquo;s technology can rapidly produce anti-Ebola antibodies with high yields, thereby potentially boosting production volumes and worldwide supply, the firm said. </p><p>The Medicago and Fraunhofer candidates are expected to be tested in nonhuman primates &ndash; and potentially later in clinical studies in humans &ndash; to compare them to ZMapp, Dr Robinson said. </p><p>The studies are intended to help to determine whether Ebola monoclonal antibodies produced by other tobacco biopharmaceutical companies are as effective as ZMapp against Ebola, Dr Robinson said. </p><p>"If they are as effective, the US could increase the overall manufacturing capacity for ZMapp and similar products," he declared. </p><p>Dr Robinson said BARDA is collaborating with the Department of Defense using existing contracts with Medicago and Fraunhofer to expedite the manufacturing of the products.</p><p>The BARDA chief noted that his agency also is collaborating with Regeneron Pharmaceuticals and Genentech to develop and manufacture Ebola mAbs using specialized Chinese hamster ovary (CHO) cell lines for nonhuman primate studies and potentially clinical studies.</p><p>Regeneron has insisted that with its mouse engineering and cell-line development technology, the firm could identify, develop and produce mAb therapies to treat Ebola "faster than any other biopharmaceutical company working on this challenge" (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Regeneron-insists-its-mAb-fastest-solution-for-Ebola-355036" target="_new">13 November 2014</a>).</p><p>Mapp said it also started the process of making ZMapp antibodies in CHO cells last fall.</p><p>Earlier this month, President Barack Obama said that even though the US was in the next phase of its Ebola mission &ndash; bringing most of the 3,000 US troops home from West Africa by 30 April and expanding the civilian response &ndash; he pledged the US would continue its activities developing drugs and vaccines against the disease (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Drug-vaccine-work-continues-under-US-Ebola-mission-transition-356707" target="_new">12 February 2015</a>).</p><p>"Since the beginning of the Ebola outbreak in West Africa, BARDA has been working with our private industry partners to explore all possible means to speed development and production of therapeutics and vaccines. We are leaving no stone unturned," Dr Robinson said.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 307
+
+<p>The Biomedical Advanced Research and Development Authority (BARDA), part of the US Department of Health and Human Services, has awarded contracts to biotech Medicago and nonprofit research and development firm Fraunhofer to make ZMapp-like Ebola drugs, the head of the agency revealed on 24 February.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+BARDA funds ZMapplike Ebola drugs from Medicago Fraunhofer
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150225T052854
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150225T052854
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150225T052854
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027916
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+BARDA funds ZMapp-like Ebola drugs from Medicago, Fraunhofer
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356841
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c6233b9e-77f5-448f-ac1c-a1af52d1cf3c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

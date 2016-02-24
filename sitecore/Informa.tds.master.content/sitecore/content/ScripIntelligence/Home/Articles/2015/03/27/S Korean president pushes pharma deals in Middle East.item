@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {B377FF68-9BCD-4A4B-B0CF-999A2332A69C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/27/S Korean president pushes pharma deals in Middle East
+parent: {397CE1B7-2DA6-469A-8569-6CEA05A14730}
+name: S Korean president pushes pharma deals in Middle East
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7470d4f7-e6d3-4d12-bc39-ad5b0f21c15f
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+S Korean president pushes pharma deals in Middle East 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+S Korean president pushes pharma deals in Middle East
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5785
+
+<p>While the South Korean pharma sector is ultimately targeting US and European markets in its longer-term expansion drive, it is for now trying to build up wider relations with Middle East countries with a little top-level political help.</p><p><p>South Korean President Park Geun-hye recently conducted on a nine-day visit to the Middle Eastern nations of Kuwait, Saudi Arabia, the United Arab Emirates and Qatar, as part of which she made efforts to generate a new growth engine for the country's healthcare and pharma industry.</p><p><p>South Korea's healthcare sector, particularly pharmaceuticals, is largely locally oriented with a focus on generic versions of multinationals' original drugs, but the country is hoping to broaden its horizons in the Middle East given that cracking Western markets is expected to take more time.</p><p><h2>plentiful Saudi deals</h2><p><p>While President Park was in Saudi Arabia, some South Korean pharma firms signed deals with Saudi's Sudair Pharmaceutical, including JW Holdings, which has agreed to license four antibiotic products and infusion solutions and to transfer technology for five years to the Saudi firm.</p><p><p>BC World Pharm also agreed with SPC to export and sell technologies related to pain killers, hypertension and tuberculosis drugs, while JW Holdings, the parent company of JW Pharmaceutical, signed a memorandum of understanding with SPC to build an infusion solution plant for Sudair in Saudi on a turn-key basis for $150m.</p><p><p>JW will be in charge of design and construction of the facility, and will transfer technology and conduct staff training, in return receiving royalties based on sales of the solution for 10 years after the start of production, JW said. Currently, Saudi imports much of its infusion solutions from multinationals.</p><p><p>Boryung Pharmaceuticals and Chong Kun Dang Pharmaceutical have also signed MoUs with SPC for the marketing of anticancer drugs and the transfer of related technologies, the health ministry said.</p><p><p>In the care sector, South Korea's Yonsei Severance Hospital signed MoUs and co-operative agreements with Saudi's IBV group to open a 160-bed women cancer center in Saudi by 2016 and for a clinical trials center, the ministry noted.</p><p><p>On 2 March, South Korea's health minister Moon Hyung-pyo, who accompanied President Park along with officials from hospitals and pharmaceutical companies, and his Saudi counterpart Al Khateeb also signed an MoU to continue comprehensive healthcare, pharmaceutical and hospital co-operation between the two countries.</p><p><p>The agreement will enable South Korea to provide experience and skills related to its national medical insurance system while expanding training of medical staff, and also on its medical information system and anti-aging and stem cell technologies, the health ministry said.</p><p><p>South Korea runs a mandatory national health insurance scheme, which is the country's single public insurer system launched in 2000 by integrating various types of health insurance.</p><p><p>During her visit to Kuwait, President Park signed the first bilateral healthcare MoU for broad co-operation in the healthcare sector under which South Korea will provide medical service and training to the country, from which about 3,000 people go abroad each year for medical treatment.</p><p><h2>strategic goals, support</h2><p><p>While South Korea's pharma sector is ultimately looking to tap the markets of the US and Europe, it is trying to widen its presence in the Middle East in the shorter term.</p><p><p>For decades, South Korea has been drawing part of its overall economic growth momentum from construction projects in the oil-rich countries in the region, although more recently has been seeking new opportunities from healthcare deals, particularly foreign medical tourists.</p><p><p>Backed by strong government support, medical tourism to South Korea has grown steadily in recent years, and in 2011 the country's four leading general hospitals signed a deal with Abu Dhabi to treat UAE patients. The agreement also enabled South Korean operators to open more hospitals in the UAE under an exchange program to encourage sharing of medical and pharmaceutical expertise and training.</p><p><p>In 2009, then-president Lee Myung-bak named "17 new growth engines," that were expected to spearhead the country's economic growth for the next 10 years, including biologics, medical devices and global healthcare. The "Columbus Project", an official initiative supported and funded by the health ministry and other related government bodies, is also aiming to expand South Korea's health technology market share in the US.</p><p><p>No South Korean-originated innovative therapy has been launched there since LG Life Sciences' antibiotic Factive (gemifloxacin) back in 2003.</p><p><p>Biosimilar producer Celltrion is one of the few South Korean pharma firms currently actively tapping the European and US markets, and recently widened its roll-out of Remsima, its biosimilar version of Johnson & Johnson's Remicade (infliximab), to 12 more European countries beginning February.</p><p><p>Park took office in February 2013 as South Korea's first woman president, and beside foreign pharma trade has also tried to streamline government regulatory structure in the sector by separating the Korean FDA from the Ministry of Health and Welfare and making it an arm of the prime minister's office.</p><p><p>The move is expected to expand the KFDA's oversight of pharmaceuticals at the expense of the health ministry's role, by consolidating operations to enhance efficiency.</p><p>This article first appeared in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 243
+
+<p>While the South Korean pharma sector is ultimately targeting US and European markets in its longer-term expansion drive, it is for now trying to build up wider relations with Middle East countries with a little top-level political help.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+S Korean president pushes pharma deals in Middle East
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150327T084813
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150327T084813
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150327T084813
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028305
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+S Korean president pushes pharma deals in Middle East 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{088691EE-A918-4A72-877F-2DDEEFB5CAD4}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357524
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042324Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7470d4f7-e6d3-4d12-bc39-ad5b0f21c15f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042324Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

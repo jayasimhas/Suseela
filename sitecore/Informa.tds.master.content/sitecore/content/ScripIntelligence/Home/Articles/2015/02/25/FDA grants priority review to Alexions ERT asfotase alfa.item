@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {C50D745F-8C9E-41D3-A502-1E8B2B21FE1D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/25/FDA grants priority review to Alexions ERT asfotase alfa
+parent: {15B1B217-4524-49F3-9FDF-A5CEA8404E4B}
+name: FDA grants priority review to Alexions ERT asfotase alfa
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f7d6cc50-fdb1-435d-a738-cb4461abf1a4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{F5161CC2-772F-472E-A21C-BF196343462E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+FDA grants priority review to Alexion's ERT asfotase alfa
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+FDA grants priority review to Alexions ERT asfotase alfa
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1645
+
+<p>The FDA has granted a priority review to Alexion's enzyme replacement therapy asfotase alfa as a treatment for patients with infantile- and juvenile-onset hypophosphatasia (HPP), a chronic and progressive ultra-rare genetic metabolic disease characterized by defective bone mineralization, which can lead to destruction and deformity of bones, profound muscle weakness, seizures, respiratory failure and premature death.</p><p>HPP is caused by mutations in the gene encoding an enzyme known as tissue non-specific alkaline phosphatase.</p><p>Asfotase alfa is designed to address the underlying cause of HPP by aiming to restore the genetically defective metabolic process, thereby preventing or reversing the severe and potentially life-threatening complications of life-long dysregulated mineral metabolism, Alexion said.</p><p>If approved, asfotase alfa would be the first treatment for patients with HPP, noted Dr Leonard Bell, chairman and CEO of Alexion. </p><p>The BLA is supported by data from 71 treated patients with HPP enrolled in three prospective studies and their extensions, as well as two retrospective natural history studies.</p><p>In May 2013, the FDA designated asfotase alfa a breakthrough therapy &ndash; a status aimed at expediting the regulatory process of medicines intended to treat serious or life-threatening diseases (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Unsurprising-FDA-breakthrough-designation-for-Alexions-hypophosphatasia-drug-343564" target="_new">29 May 2013</a>).</p><p>Shares of Alexion closed at $184.62 on 2 March, up $4.25, or 2.36%.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 427
+
+<p>The FDA has granted a priority review to Alexion's enzyme replacement therapy asfotase alfa as a treatment for patients with infantile- and juvenile-onset hypophosphatasia (HPP), a chronic and progressive ultra-rare genetic metabolic disease characterized by defective bone mineralization, which can lead to destruction and deformity of bones, profound muscle weakness, seizures, respiratory failure and premature death.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+FDA grants priority review to Alexions ERT asfotase alfa
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150225T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150225T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150225T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027974
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+FDA grants priority review to Alexion's ERT asfotase alfa
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356940
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f7d6cc50-fdb1-435d-a738-cb4461abf1a4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

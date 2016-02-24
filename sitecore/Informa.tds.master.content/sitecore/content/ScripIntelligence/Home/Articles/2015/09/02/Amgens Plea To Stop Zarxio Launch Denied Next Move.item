@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {96826809-AFE3-48BB-B7A4-616EABC46BA7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/02/Amgens Plea To Stop Zarxio Launch Denied Next Move
+parent: {9FFE365E-7EE2-4DAD-9283-04CCF7E1CC74}
+name: Amgens Plea To Stop Zarxio Launch Denied Next Move
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 51766804-a0c9-4ef8-bcfc-dacac11dbd03
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Amgen's Plea To Stop Zarxio Launch Denied; Next Move?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Amgens Plea To Stop Zarxio Launch Denied Next Move
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7899
+
+<p>In a brief order on Sept. 2, a three-judge panel from the US Court of Appeals for the Federal Circuit denied Amgen's "emergency" motion for an injunction to stop Novartis unit Sandoz from launching its biosimilar Zarxio (filgrastim-sndz).</p><p>One of the three judges, however, Circuit Judge Pauline Newman, said she would have granted the motion, although she was outnumbered by Circuit Judges Alan Lourie and Raymond Chen, who gave no explanation for their denial.</p><p>Amgen has other options &ndash; some the firm could have, but didn't, take earlier &ndash; like seeking a temporary restraining order (TRO) and preliminary injunction from the district court on the grounds that Sandoz's biosimilar infringes the California biotech giant's patents covering the company's human granulocyte colony-stimulating factor Neupogen (filgrastim), the product on which Zarxio is referenced, New York lawyer Robert Cerwinski, a partner in the IP litigation group at Goodwin Procter, told <i>Scrip</i>.</p><p>While Sandoz is seemingly free to go ahead with putting Zarxio on the US market &ndash; complaining in court documents earlier that to withhold the biosimilar any longer would harm cancer patients and purchasers of the medicine, including taxpayers &ndash; the company declined to say whether it would indeed launch on Sept. 3 or wait until after other rulings on the case.</p><p>"We are pleased with the court's decision," Leslie Pott, vice president of communications at Sandoz, told <i>Scrip</i>.</p><p>But she said the biosimilar maker was "unable to provide any other information" at this time.</p><p>Amgen <a href="http://www.scripintelligence.com/home/Amgen-Files-Emergency-Motion-To-Block-Zarxios-Launch-360146" target="_new">filed its emergency motion on Aug. 27</a> asking for the injunction to keep Zarxio off the market until the full Federal Circuit en banc has considered the company's Aug. 20 petition for a rehearing of the three-judge panel's <a href="http://www.scripintelligence.com/home/Court-rules-biosimilar-patent-dance-optional-but-delays-Zarxio-359555" target="_new">July 21 ruling</a>, in which both sides gained a win, but also experienced a loss.</p><p>Sandoz also <a href="http://www.scripintelligence.com/home/AmgenSandoz-Zarxio-Fight-Not-Done-Rehearing-Sought-360073" target="_new">filed a petition for a rehearing</a> &ndash; submitting it to the court the same day Amgen filed on the matter.</p><p><a href="http://www.scripintelligence.com/home/Court-rules-biosimilar-patent-dance-optional-but-delays-Zarxio-359555" target="_new">In July</a>, the Federal Circuit panel, which heard <a href="http://www.scripintelligence.com/home/Federal-Circuit-dances-with-biosimilar-laws-complexity-in-Zarxio-fight-358731" target="_new">oral arguments in June</a>, ruled 2-1 that Sandoz and other biosimilar makers could opt out of the so-called patent dance and would not have to disclose their applications and manufacturing details if they chose to do so.</p><p>But in a 2-1 decision, the panel ruled in Amgen's favor, declaring that when a firm opts out of the patent dance, 180-day notice of commercial marketing under the Biologics Price Competition and Innovation Act (BPCIA) is mandatory and can only be given after FDA approval &ndash; telling Sandoz it could not market Zarxio until Sept. 2.</p><p>So both sides are seeking to get their respective losses overturned by the full Federal Circuit.</p><p>The dispute started in October 2014 when Amgen filed a lawsuit in the U.S. District Court for the Northern District of California claiming Sandoz had violated the disclosure and negotiation procedures outlined in the BPCIA &ndash; the patent dance &ndash; when it withheld its 351(k) biosimilars application and manufacturing information.</p><p>Amgen also asserted that Sandoz failed to provide proper notice that the biosimilar maker planned to launch its product as soon as it won FDA approval of Zarxio, which <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">gained the agency's nod on March 6</a> &ndash; the first biosimilar ever cleared in the US.</p><p>But so far, Goodwin Procter's Cerwinski said, the disputes in the case have revolved around the statutory interpretation of the BPCIA &ndash; with <i>Amgen v Sandoz</i> the <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Fights-Over-Interpretation-Of-Biosimilars-Law-Disruption-To-Markets-Future-359974" target="_new">pioneer lawsuit to test the 2010 law</a>, which gave the FDA the authority to approve biosimilars.</p><p>"What we haven't seen anything about yet are the merits of Amgen's patent claims," he said, noting neither the district court nor the Federal Circuit have weighed in on the strength of those claims.</p><p>Boston lawyer Elaine Herrmann Blais, a partner in the intellectual property litigation group at Goodwin Procter, noted that when Judge Richard Seeborg of the U.S. District Court for the Northern District of California heard the oral arguments in Amgen's initial lawsuit and <a href="http://www.scripintelligence.com/policyregulation/Will-others-avoid-patent-dance-after-Sandoz-court-win-357429" target="_new">rendered his opinion in March</a>, he focused on the fact the company had not asked the court to do anything involving the patents on Neupogen. </p><p>So, Blais said, it may be unlikely Amgen will get an injunction from Judge Seeborg to stop Zarxio's launch without first going down the patent infringement route. And the company can't seek an injunction from the Federal Circuit yet asserting patent infringement because Amgen didn't tee it up in the lower court or in its appeal.</p><p>While Blais said she doesn't have an opinion on whether Amgen's patents on Neupogen are strong or weak, "one would think that if you had strong patent claims, you would have asserted them at the same time as the statutory argument." </p><p>"Let's not forget, this product has been Amgen's exclusive property for more than 20 years," Blais said. "And so you start to scratch your head and say, 'What kinds of patents do they have left after 20 years?'"</p><p>She noted the types of arguments that Amgen made on irreparable harm before Judge Seeborg "were the sorts of arguments you would see in a preliminary injunction on patents claims."</p><p>"Given that Judge Seeborg rejected those arguments when Amgen requested an injunction based on its statutory argument, that might indicate that if it were to argue for a preliminary injunction from Judge Seeborg now based on its patent claims, it would have a real uphill battle on the irreparable harm part," Blais told Scrip.</p><p>While Amgen had the option of petitioning the full Federal Circuit to review the order denying the injunction to stop Zarxio's launch, Washington lawyer William Jay, a partner and co-chair of Goodwin Procter's appellate litigation practice and a former assistant to the U.S. solicitor general, said the company would have had to do that on Sept. 2 and receive either an immediate vote that day or a temporary extension of the injunction until the full court could vote. </p><p>If Sandoz waits on its launch, Jay noted that Amgen could always reevaluate its options.</p><p>Jay emphasized seeking an injunction from Chief Justice John Roberts at the U.S. Supreme Court "would have an extremely low chance of success."</p><p>"The Chief Justice has previously written that a party seeking a temporary injunction from him after failing to get one from the lower courts must show that it has an 'indisputably clear' right to relief," Jay told <i>Scrip</i>.</p><p>"The Supreme Court is not going to step on the toes of the Federal Circuit unless it's very clear that Amgen is entitled to relief," Cerwinski added. "We just don't see Chief Justice Roberts granting that relief."</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 245
+
+<p>In a brief order on Sept. 2, a three-judge panel from the US Court of Appeals for the Federal Circuit denied Amgen's "emergency" motion for an injunction to stop Novartis unit Sandoz from launching its biosimilar Zarxio (filgrastim-sndz).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Amgens Plea To Stop Zarxio Launch Denied Next Move
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150902T235811
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150902T235811
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150902T235811
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029669
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Amgen's Plea To Stop Zarxio Launch Denied; Next Move?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360143
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042445Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+51766804-a0c9-4ef8-bcfc-dacac11dbd03
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042445Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

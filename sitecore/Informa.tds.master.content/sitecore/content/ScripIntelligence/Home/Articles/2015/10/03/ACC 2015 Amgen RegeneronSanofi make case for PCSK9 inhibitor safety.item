@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {EB1E4620-5CAE-41D9-9642-E1121176FF16}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/03/ACC 2015 Amgen RegeneronSanofi make case for PCSK9 inhibitor safety
+parent: {B4DD542A-3150-404B-9742-7EB9440DE618}
+name: ACC 2015 Amgen RegeneronSanofi make case for PCSK9 inhibitor safety
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7dfc9d6a-acf2-49c5-a161-2f0b9adc26df
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+ACC 2015: Amgen, Regeneron/Sanofi make case for PCSK9 inhibitor safety
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+ACC 2015 Amgen RegeneronSanofi make case for PCSK9 inhibitor safety
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9428
+
+<p>Amgen and its competitor Regeneron Pharmaceuticals with partner Sanofi won't report data from large-scale cardiovascular outcomes studies for their PCSK9 inhibitors until 2017, but the companies are sharing longer-term data from smaller clinical trials for their cholesterol-lowering therapies in hopes of encouraging prescriptions of the injectable drugs following US FDA approval later this year.</p><p>Results were published in the New England Journal of Medicine on 14 March and presented during the American College of Cardiology (ACC) Scientific Session & Expo that's running from 14 to 16 March in San Diego from Amgen's Phase II OSLER-1 and Phase III OSLER-2 trials for Repatha (evolocumab) and from Regeneron and Sanofi's Phase III ODYSSEY LONG TERM study for Praluent (alirocumab). The data show that both monoclonal antibodies can cause steep declines in LDL cholesterol that translate to cardiovascular benefits despite slightly higher adverse event rates.</p><p>Safety will be important as doctors and patients consider whether to add the similarly effective therapies, which are likely to launch in the US within a month or two of each other in the second half of 2015, to statins or other oral drugs for hypercholesterolemia. The FDA is expected to decide on Regeneron and Sanofi's biologic license application (BLA) for Praluent by 24 July, followed shortly by a decision on Amgen's Repatha BLA by 27 August (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Sanofi-leapfrogs-Amgen-with-US-priority-review-for-alirocumab-356357" target="_new">26 January 2015</a>).</p><p>"About 10 years ago, I was a practicing cardiologist and I would get really frustrated because I had a lot of patients on maximal statin therapy and we just couldn't get their LDL under control. You could add ezetimibe [Merck's cholesterol absorption inhibitor Zetia] and get another 20% reduction, but for patients with really high cholesterol, we had nothing to offer them," Amgen executive medical director Scott Wasserman told <i>Scrip</i>.</p><p><b>Amgen's OSLER results for Repatha</b></p><p>Amgen's OSLER clinical trials enrolled 4,465 patients for long-term observation after participation in one of 12 prior Phase II and III trials. Individuals were treated with 140mg of Repatha every two weeks or 420mg monthly or placebo plus standard of care (SOC). </p><p>OSLER-1 and OSLER-2 participants were followed for a median of 11.1 months and LDL cholesterol in Repatha-treated patients declined 61% from 120mg/dL to a median of 48mg/dL at 12 weeks (p<0.001) and="" the="" effect="" was="" sustained="" through="" 48="" weeks.="" the="" rate="" of="" cardiovascular="" events="" at="" one="" year="" &ndash;="" including="" death,="" heart="" attack,="" unstable="" angina,="" coronary="" revascularization,="" stroke,="" transient="" ischemic="" attack="" and="" heart="" failure="" &ndash;="" was="" 0.95%="" in="" the="" repatha="" group="" versus="" 2.18%="" for="" the="" placebo="" group="" (hr="0.47," p=""></0.001)></p><p>"The nice thing about this is if you look at what we showed in November 2013 with the first evaluation of OSLER-1 data, the cardiovascular event rate was 1.1% versus 2.1%. It's interesting how the data seems to be holding up with more patient numbers," Dr Wasserman said.</p><p>The most common non-cardiovascular side effects were muscle-related adverse events (6.4% for Repatha versus 6% for SOC) arthralgia (4.6% versus 3.2%), injection site reactions (4.3% versus NA), headache (3.6% versus 2.1%), pain in extremity (3.3% versus 2.1%), fatigue (2.8% versus 1%) and neurocognitive events (0.9% versus 0.3%).</p><p>Two-year data from the 1,104-patient OSLER-1 study show that only 4.5% of Repatha-treated patients discontinued therapy due to adverse events. The biologic's cholesterol-lowering ability was maintained with patients recording a median decline of 54% at one year and 52% at two years.</p><p>Repatha is being studied in 22 clinical trials enrolling 35,000 patients, including Amgen's 27,500-patient cardiovascular outcomes trial known as FOURIER. Outcomes data should be available in 2017.</p><p><b>Regeneron/Sanofi's Praluent ODYSSEY and CHOICE</b></p><p>Regeneron and Sanofi plan to report results from their 18,000-patient cardiovascular outcomes trial known as ODYSSEY OUTCOMES in late 2017, but 78-week data from the 2,341-patients ODYSSEY LONG TERM clinical trial that were reported at the ACC meeting and in the NEJM offered a glimpse of what may be revealed in the larger outcomes study.</p><p>Patients treated with 150mg of Praluent every two weeks in ODYSSEY LONG TERM had a 62% reduction in LDL cholesterol compared with placebo at 24 weeks (p<0.0001), which="" remained="" fairly="" consistent="" with="" a="" 56%="" ldl="" cholesterol="" decline="" at="" 78="" weeks=""></0.0001),><0.0001). patients="" in="" both="" arms="" of="" the="" study="" were="" treated="" with="" or="" without="" other="" lipid-lowering=""></0.0001).></p><p>Praluent-treated patients dropped their LDL cholesterol levels to 48.3mg/dL at 24 weeks versus 118.9mg/dL in the placebo group compared with a median of 122mg/dL across both groups at baseline. Given some concerns about the impact of dropping LDL to 25mg/dL or less, the Praluent clinical trial program is designed to detect adverse events for patients who achieve ultra-low LDL cholesterol levels, according to Jay Edelberg, head of Sanofi's PCSK9 development and launch unit.</p><p>"In data with over 700 patients from across our program, we can demonstrate that there is no safety signal for patients who get to that," Dr Edelberg told <i>Scrip</i>.</p><p>Adjudicated cardiovascular adverse events occurred in 4.6% of Praluent-treated patients and 5.1% of the placebo group. However, a post-hoc analysis showed a much lower rate of cardiovascular events &ndash; specifically, coronary heart disease death, heart attack, stroke or unstable angina requiring rehospitalization &ndash; at 1.7% in the Praluent group and 3.3% in the placebo group (HR=0.52; p<0.01). the="" difference="" between="" the="" two="" study="" arms="" diverged="" over="" time,="" showing="" a="" greater="" praluent=""></0.01).></p><p>Non-cardiovascular side effects included injection site reactions (5.9% for Praluent versus 4.2% for placebo), myalgia (5.4% versus 2.9%), neurocognitive events (amnesia, memory impairment and confused state; 1.2% versus 0.5%) and ophthalmologic events (2.9% versus 1.9%). The ODYSSEY LONG TERM discontinuation rates were 7.2% for Praluent-treated patients and 5.8% in the placebo group.</p><p>Other data presentations for Praluent at ACC included results from the CHOICE 1 and CHOICE 2 clinical trials, which showed the benefit of once-monthly 300mg and 150mg doses. Also, pooled safety results from 3,759 patients treated with Praluent plus statins in five Phase III and four Phase II studies were scheduled for presentation on 16 March.</p><p><b>Longer term data, more patients</b></p><p>Investigators in Amgen's OSLER studies and Regeneron/Sanofi's ODYSSEY LONG TERM study, and authors of the NEJM articles, noted that larger, longer cardiovascular outcomes studies are needed to effectively determine the risk versus benefit of PCSK9 inhibitors. </p><p>"Because PCSK9 inhibitors allow the achievement of lower LDL cholesterol levels than those achieved to date with statins, a close look at safety is a paramount consideration," an accompanying NEJM editorial said on 14 March. </p><p>The editorial said "it would be premature to endorse these drugs for widespread use before the ongoing randomized trials," but noted that PCSK9 inhibitors could "become important arrows in our quiver for targeting reduction of cardiovascular events among higher-risk patients when statins are not enough."</p><p>Pfizer, which is behind Amgen and Regeneron/Sanofi in the race to get a PCSK9 inhibitor on the market, issued a statement on 15 March that echoed the NEJM editorial's sentiment.</p><p>The company noted that "ongoing cardiovascular outcome studies are necessary to help validate whether LDL cholesterol reduction with this new mechanism of action can lead to a reduction in cardiovascular risk." </p><p>Pfizer cited its own 30,000-patient clinical trial program for bococizumab, which includes two cardiovascular outcomes studies that may be completed around the same time as the outcomes studies for Repatha and Praluent.</p><p>"The legacy of our work on [best-selling statin Lipitor (atorvastatin)], which has been studied in more than 400 ongoing or completed trials including more than 80,000 patients underscores the importance of a comprehensive approach to clinical trial research," Pfizer said.</p><p>Leerink Swann analyst Seamus Fernandez viewed the ODYSSEY LONG TERM and OSLER results so positively, however, that he said the cardiovascular event results from the smaller studies could portend an early stop for the ODYSSEY OUTCOMES study for Praluent and the FOURIER study for Repatha.</p><p>Given the results to date and key opinion leader excitement about early data for PCSK9 inhibitors, Mr Fernandez wrote in a 15 March research note that: "If enthusiasm continues to build around these assets, and long-term outcome studies maintain the current momentum, we believe the PCSK9 market could easily surpass $6bn in sales per year in 2020 and more than $20bn in sales in 2026."</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 405
+
+<p>Amgen and its competitor Regeneron Pharmaceuticals with partner Sanofi won't report data from large-scale cardiovascular outcomes studies for their PCSK9 inhibitors until 2017, but the companies are sharing longer-term data from smaller clinical trials for their cholesterol-lowering therapies in hopes of encouraging prescriptions of the injectable drugs following US FDA approval later this year.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+ACC 2015 Amgen RegeneronSanofi make case for PCSK9 inhibitor safety
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151003T205557
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151003T205557
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151003T205557
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028118
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+ACC 2015: Amgen, Regeneron/Sanofi make case for PCSK9 inhibitor safety
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357209
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7dfc9d6a-acf2-49c5-a161-2f0b9adc26df
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

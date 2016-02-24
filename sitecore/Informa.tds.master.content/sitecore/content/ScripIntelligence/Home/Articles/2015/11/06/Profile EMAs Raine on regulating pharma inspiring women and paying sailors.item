@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {1D5062CB-C0AE-4C3F-96DD-F7175B45C876}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/06/Profile EMAs Raine on regulating pharma inspiring women and paying sailors
+parent: {9420E9E4-E588-4E07-B3AA-A88766CBCFBC}
+name: Profile EMAs Raine on regulating pharma inspiring women and paying sailors
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1cadf9ba-9c0b-4f81-a6b9-04ad87cb2d1a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 80
+
+ Profile: EMA's Raine on regulating pharma, inspiring women and paying sailors  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 74
+
+Profile EMAs Raine on regulating pharma inspiring women and paying sailors
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9761
+
+<p> <b>Dr June Raine is the first ever chair of the European Medicines Agency's Pharmacovigilance Risk Assessment Committee (PRAC), which oversees the risk management of your medicines. Dr Raine is also director of vigilance and risk management at MHRA, the UK regulator, as well as a member of the World Health Organization Advisory Committee on the Safety of Medicinal Products. She talked to <i>Scrip </i>about her passion for public health, preventing drug crises, and dancing to ABBA. </b> </p> <p> <img src="-/media/00F2132282A045DC90CD6FD017869547.ashx"> </p> <p> <i>Dr June Raine</i> </p> <p> <b><i>Scrip: You are head of the Pharmacovigilance Risk Assessment Committee, a key committee within the EMA. How did you get there?</i></b> </p> <p> <b>Dr June Raine:</b> I am very committed to public health. And I sometimes think it's been down to the four Ps: Pride, Passion, Pace, Professionalism. There is a fifth P that matters too &ndash; people. I love working with people. I'm very proud to work with such dedicated, highly professional colleagues from across the EU. So it's very special to me if I can help them collaborate. </p> <p> <b><i>Scrip: Why did you pursue a career as a regulator?</i></b> </p> <p> <b>JR:</b> I was drawn to public health and understanding that it is not just about the best science, but an ability to use regulatory tools to make things happen. It's the desire to make things happen that made me pursue a regulatory career. </p> <p> <b><i>Scrip: What are your long term goals and career aspirations?</i></b> </p> <p> <b>JR:</b> I would like to see regulation and its value embedded in the way public health is delivered, not just in Europe, but at an international level. The framework we have here in Europe should make that possible. What has been developed in the EU is unique and the EMA is at the centre of that. I would like to see regulation, not as a dark art, but at the forefront as a key deliverer of public health. I want to be part of that. </p> <p> <b><i>Scrip: You talked about regulations as a dark art &ndash; are there any misconceptions that industry might have that you'd like to set straight about regulators?</i></b> </p> <p> <b>JR:</b> I suspect that companies think we are obsessed with procedure. I would like to say that it's outcomes we think about and that we always remain outcome focused. Procedures support what we do and they need to be done efficiently and effectively for everyone's sake so they are clear, transparent, easy to follow and minimize burden. But outcomes are what it's all about. </p> <p> <b><i>Scrip: Is there anything that frustrates you about industry?</i></b> </p> <p> <b>JR:</b> I've thought hard about his. The effort to introduce the new [pharmacovigilance] legislation has been a massive thing for everyone, and I've really been impressed how industry has come to the table alongside everyone else. If there had been any dragging of feet, I would tell you. If there have been frustrations, it's been about the pace of change, but those frustrations are shared ones. </p> <p> <b><i>Scrip: What has been the PRAC's biggest achievement?</i></b> </p> <p> <b>JR:</b> If I had to rate one, it would be transparency. That is a massive achievement given that there is so much concern about safety signals potentially leading to misunderstandings, confusion and panic that could damage public health. All the safety signals, data on how referrals are proceeding and information on the Periodic Safety Update Report are in the public domain, as are the minutes of our meetings. Those minutes are a full and accurate account of every aspect of our work, and also help any healthcare professional or patient to understand the current state of play for drug safety in Europe. I think that's a massive achievement. </p> <p> <b><i>Scrip: And what has been its biggest challenge?</i></b> </p> <p> <b>JR</b>: In terms of products I would say some of the complex referrals and the ability to delve into the science. For example, we assessed the safety of combined oral contraceptives and we looked at nine progestogens. We reviewed all that data meticulously and maintained confidence in the contraceptives, which are an important public health measure. That requires a big effort from everyone, not just the rapporteurs and the co-rapporteurs, but also from the people at the front line of assessments, and of course the people who handle communications and maintain confidence while a large review is ongoing. That was exemplary. As far as I know there has been no loss of confidence. And I think parliamentarians and patients all feel the outcome benefited public health in terms of better information on what is a very small risk. </p> <p> <b><i>Scrip: What advice would you give companies about improving risk management?</i></b> </p> <p> <b>JR:</b> Start early, plan often, and get great scientific advice! </p> <p> <b><i>Scrip: What's the most frustrating aspect of your role?</i></b> </p> <p> <b>JR:</b> Time. You have to manage time in an ongoing, active way so that everyone keeps focused. You need enough time to get the consensus you want. I know that if we have consensus in a particular area it's because we have given the right amount of time to understanding the data, hearing all the opinions and delivering a rounded regulatory position. But we are constantly challenged by the limited number of hours in a day. </p> <p> <b><i>Scrip: Is there anyone in industry you particularly admire?</i></b> </p> <p> <b>JR:</b> I have huge admiration for people who can invent a medicine. There are too many to mention and I may not know all their names. But we should all be enormously admiring of someone who can invent a new medicine, or, importantly, deliver a vaccine in time to prevent harm to public health. We need to keep that perspective in the safety world. There are giants who have invented medicines like monoclonal antibodies, anti-TNFs, and antipsychotics, who have had an untold benefit on public health. </p> <p> <b><i>Scrip: What was your first ever job?</i></b> </p> <p> <b>JR:</b> Between school and university I worked for an oil company programming a computer for the sailors' pay roll. I'm not sure how promptly they were paid. I don't think the sailors out in the gulf were very happy with me! </p> <p> <b><i>Scrip: What were the key things that shaped you?</i></b> </p> <p> <b>JR:</b> I was fortunate enough to have parents who, although I was the only girl, expected me to do whatever I set my heart on, just like my brothers. That was a great start. </p> <p> <b><i>Scrip: Who was your biggest influence?</i></b> </p> <p> <b>JR: </b>There was a nice advert, which said &quot;I am who I am because of everyone&quot;. I think that's probably true about me. I had a college tutor who encouraged me to ask questions and a research supervisor who tested everything on himself. He even lost a lung testing anesthetics on himself. I learned that I was in it with everyone. That was a big influence. </p> <p> <b><i>Scrip: What's the best advice you've ever had?</i></b> </p> <p> <b>JR:</b> To follow your dreams. You know what you are passionate about, so go with it! </p> <p> <b><i>Scrip: How do you step back and take perspective?</i></b> </p> <p> <b>JR:</b> I like walking, preferably near some mountains. </p> <p> <b><i>Scrip: How do you relax?</i></b> </p> <p> <b>JR: </b>Same answer! </p> <p> <b><i>Scrip: Can you tell us anything surprising about yourself?</i></b> </p> <p> <b>JR:</b> I like kicking my shoes off to ABBA &ndash; my daughter says she loves to see old people dancing! I have every Beatles record, and I have Paul McCartney's autograph. I don't speak any European languages, but I did learn to speak Chichewa in Malawi. </p> <p> <b><i>Scrip: What gets you out of bed in the morning?</i></b> </p> <p> <b>JR:</b> Simply what we can achieve together. And I emphasize the word 'together'! </p> <p> <b><i>Scrip: If you weren't chair of the PRAC, what would you be doing?</i></b> </p> <p> <b>JR:</b> I'd be the conductor of a big orchestra. There is a vacancy at the Berlin Philharmonic coming up in 2017&#8230; </p> <p> <b><i>Scrip: What has been your greatest moment?</i></b> </p> <p> <b>JR: </b>Being elected chair of the PRAC. </p> <p> <b><i>Scrip: And your most difficult moment?</i></b> </p> <p> <b>JR:</b> Doing justice every month to a massive agenda in the time that we have, and finishing it to everyone's satisfaction. </p> <p> <b><i>Scrip: What was your favourite subject at school?</i></b> </p> <p> <b>JR:</b> Chemistry. Maybe that's a bit geeky, but we did things back then with burners and acid and asbestos that you can't do now. </p> <p> <b><i>Scrip: What are you reading now?</i></b> </p> <p> <b>JR:</b> Wild swans by Jung Chang. I went to China at the end of last year and I'm very much enjoying the book. There were enormous cultural changes there. </p> <p> <b><i>Scrip: What is your favourite piece of music?</i></b> </p> <p> <b>JR:</b> This is a hard one, the one that lifts my heart is Widor's Toccata. I walked down the aisle to it played loudly on a large organ. But if I was going to a desert island, I would take Bach's St Matthew Passion. It's probably the greatest piece of music ever written, in my book anyway. </p> <p> <b><i>Scrip: If you could meet anyone dead or alive, who would it be?</i></b> </p> <p> <b>JR:</b> I'd like an evening with Marie Curie, or maybe Margaret Chan or Peggy Hamburg. It's good to see women who, despite attitudes to women, have done something really important. And I wouldn't mind a day with Melinda Gates. She has looked at her situation in life and decided to use it to eradicate certain diseases by making certain vaccines available and to empower women with their fertility. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 499
+
+<p> <b>Dr June Raine is the first ever chair of the European Medicines Agency's Pharmacovigilance Risk Assessment Committee (PRAC), which oversees the risk management of your medicines. Dr Raine is also director of vigilance and risk management at MHRA, the UK regulator, as well as a member of the World Health Organization Advisory Committee on the Safety of Medicinal Products. She talked to <i>Scrip </i>about her passion for public health, preventing drug crises, and dancing to ABBA. </b> </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 74
+
+Profile EMAs Raine on regulating pharma inspiring women and paying sailors
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151106T083837
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151106T083837
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151106T083837
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029011
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 80
+
+ Profile: EMA's Raine on regulating pharma, inspiring women and paying sailors  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358896
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042405Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1cadf9ba-9c0b-4f81-a6b9-04ad87cb2d1a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042409Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {DCF6A92C-D7C3-42A4-B74F-BE681674068C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/24/HIV drug sales rescue GSKs second quarter
+parent: {66CD7E66-2939-47F2-B54E-FB3DFF5070A2}
+name: HIV drug sales rescue GSKs second quarter
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 47a16a0c-d2bf-4a87-9f50-75363aa53753
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+HIV drug sales rescue GSK's second quarter
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+HIV drug sales rescue GSKs second quarter
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3491
+
+<p>In the first full quarter since the closure of its mega three-part transaction with Novartis, GlaxoSmithKline beat analyst expectations. In particular there were "stand out" sales of its HIV drugs Tivicay and Triumeq, validating GSK's decision earlier this year to hang on to its stake in HIV company ViiV Healthcare.</p><p>GSK shares closed up 3.5% as the UK-headquartered drugs giant reported group turnover of &pound;5.89bn in the second quarter (+6% in sterling terms). Pharmaceuticals sales were &pound;3.5bn, a 6% drop from the same period last year. Core EPS was 17.3p, down 9%. Core profit stood at &pound;1.35bn, a decline of 4%.</p><p>GSK also reiterated its earnings guidance for 2015 and the outlook for return to earnings growth in 2016. "All of this represents early but positive signals of the benefits the [Novartis] transaction is delivering for GSK in terms of performance and how it's reshaping the group and strengthening our vaccine and consumer healthcare businesses," said CEO Sir Andrew Witty on a conference call accompanying the results presentation.</p><p>While pharmaceutical sales declined by 6%, they "grew 2% adjusting for the impact of the transaction," said Sir Andrew. For HIV, second quarter sales grew 59% to &pound;559m.</p><p>In the vaccines division, reported sales grew 11% to &pound;814m, but declined 5% on pro forma basis versus a strong 2Q last year. "We're very confident in the prospects going forward as we integrate post the transaction with Novartis and roll out new vaccines across multiple therapy areas," he added.</p><p>"Sales of new pharmaceutical and vaccine products were &pound;446m in the quarter, and we remain on track to see contributions from these products of at least &pound;6bn by 2020," he claimed.</p><p>GSK's respiratory franchise always garners a lot of attention. Here, GSK was boosted during the quarter by a positive FDA adcom recommendation for Nucala, its IL5 monoclonal antibody for severe asthma, which has also been filed for approval in Japan. However, "pricing pressures continue to impact Advair/Seretide," said CFO Simon Dingemans. And while "Breo is continuing to build, helped by the recent launch of the asthma indication and the commercial changes we've made, Anoro's progress in the market continues to be more difficult," he admitted.</p><p><b>next I-O wave</b></p><p>Sir Andrew noted that the company has scheduled a rare R&D showcase event on 3 November. </p><p>"[We have] some extremely exciting programs in the immuno-oncology space, as well as the epigenetic space. The work we've got partnered with Adaptimmune is very interesting. The OncoMed partnership is also very interesting." But what does GSK plan to do with its early oncology assets, having signed over its commercial oncology business to Novartis?</p><p>"The beauty is we've got every option in the world. We can go forward on our own if they're sufficiently strong and robust &ndash; and we did that before, of course &ndash; that's a scenario. We could choose to divest them. We could choose to partner with Novartis. So we're not bound to do anything. We will take whichever option we believe generates the absolute maximum value for the company. The good news is that we have a very interesting portfolio of oncology assets coming through."</p><p>Sir Andrew acknowledges that GSK "missed the current wave" of immune oncology products. However, "I'm very pleased that we're going to be able to participate in the next wave."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 324
+
+<p>In the first full quarter since the closure of its mega three-part transaction with Novartis, GlaxoSmithKline beat analyst expectations. In particular there were "stand out" sales of its HIV drugs Tivicay and Triumeq, validating GSK's decision earlier this year to hang on to its stake in HIV company ViiV Healthcare.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+HIV drug sales rescue GSKs second quarter
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150724T030319
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150724T030319
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150724T030319
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029374
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+HIV drug sales rescue GSK's second quarter
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359598
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+47a16a0c-d2bf-4a87-9f50-75363aa53753
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

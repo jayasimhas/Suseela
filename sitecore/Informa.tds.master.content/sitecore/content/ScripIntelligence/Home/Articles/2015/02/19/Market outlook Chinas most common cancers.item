@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {21C22BD6-98D7-4E0B-A5EA-C778C4433905}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/19/Market outlook Chinas most common cancers
+parent: {97D2E94C-15AA-4D21-BD20-E53C9AA5BAA3}
+name: Market outlook Chinas most common cancers
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9f2553fe-069f-438f-94e6-433b436bfb5a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Market outlook: China's most common cancers 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+Market outlook Chinas most common cancers
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5868
+
+<p>Home to the world's largest smoking population, frequently occurred food safety issues as well as serious air and water pollution, China sees fast growing new cancer cases each year, with liver, lung and gastric cancers in the lead, according to a recent report by China's national health and family planning commission (NHFPC).</p><p><p>Lung cancer, which is increasingly concentrated in China's urban areas, is expected to drive high demand for targeted therapies like bevacizumab, which will have the highest sales by 2021, according to Datamonitor Healthcare..</p><p><p>Filed in June last year, Roche's bevacizumab &ndash; Avastin &ndash; is still awaiting approval by China's food and drug administration (CFDA) to treat non-small cell lung cancer NSCLC. Meanwhile, competent Chinese pharma companies are also hoping to profit from the antibody. For example, Hengrui and Chia Tai Tianqing Pharmaceutical, both based in Jiangsu province, recently filed their own biosimilar version of bevacizumab with the CFDA for clinical trials.</p><p><p>Another major therapy area is the EGFR inhibitors, including the most widely prescribed Iressa (gefitinib) from AstraZeneca, and Roche's Tarceva (erlotinib). However, the sales growth of the two drugs are likely to slow down as Conmana (icotinib) from Hangzhou-based Betta Pharma continues to expand its market share. Launched in 2011, Conmana had earned over CNY1.1bn ($175.7m) in sales by the middle of 2014, according to Betta. </p><p><p>With a price tag of CNY2,750 per unit (125mg*21 tablets), Conmana is expected to take up 50% of the patient base of Iressa (CNY5,126 for the same unit) and Tarceva (CNY4,550) combined by 2018 in tier 1 and tier 2 Chinese cities, such as Beijing, Shanghai, Nanjing and Xiamen, predicts Datamonitor Healthcare.</p><p>In 2013, 57.4% of all NSCLC diagnoses in China were in urban areas, and the proportion is expected to increase to 74.2% in 2033, according to Datamonitor Healthcare. In contrast, gastric cancer is often seen in rural areas, according to the NHFPC. This probably is one reason that Sanofi established a primary care department ""to take care of its rural business in China. Sanofi's Taxotere (docetaxel) was approved in the country to treat advanced stages of gastric cancer in November 2014.</p><p><p>The newest therapy comes from Hengrui, whose proprietary Ai Tan (apatinib), targeting VEGFR/PDGFR/c-kit, was launched in December 2014. </p><p><p>Previously, the only available gastric cancer drug in China from multinationals was Roche's Herceptin (trastuzumab), approved in 2012.</p><p><p>GlaxoSmithKline will probably join the relatively underserved market soon: its Tykerb (lapatinib), a dual tyrosine kinase inhibitor, is in Phase III studies to treat HER2-positive advanced gastric cancer, according to the CFDA. In Taiwan and Singapore, Roche's onartuzumab, targeting the MET receptor, is to enter Phase III studies to treat HER2-negative gastric cancer.</p><p><p>China is likely to see gastric cancer cases increase by 41% from 2012 to reach 680,600 cases in 2030, according to Datamonitor Healthcare.</p><p><p>People with hepatic carcinoma, or liver cancer, also have few therapies to choose from in China, aside from Nexavar (sorafenib) from Bayer. In 2007 China introduced the proprietary Licartin (metuximab), a radio-immunotherapy to treat liver cancer from Chengdu, Sichuan province-based Huason Group, but sales has been negligible. In a recent statement, Huason attributed the poor sales to Licartin's high price - CNY28,800 per vial (5mg), and little clinical use as well.</p><p><p>There will be, however, new solutions, should clinical studies go well. According to the CFDA, Hengrui's Ai Tan is in Phase III trials for liver cancer, and is expected to get approval in 2016. Also in Phase III trials is Eisai's lenvatinib, a VEGFR2/VEGFR3 kinase inhibitor.</p><p><p>Facing few rivals, it is no surprise that Nexavar will be the best selling liver cancer drug in big Chinese cities until 2022, with sales peaking at $130m in 2020, the year it will lose patent protection, and declining to $95m in 2022, according to Datamonitor Healthcare.</p><p><p>Although the late-stage pipeline may seem rather thin, preclinical studies tell a different story, which could benefit patients in a decade.</p><p><p>"Our clients are all very much engaged in discovering the right biotherapies against identified tumor targets, primarily for the three cancers, " said Zhou He, director of Oncology at the Shanghai-based CRO ShanghPharma, whose clients are mostly multinationals, biotechs and major Chinese pharmas.</p><p><p>With extensive research experience and technologies in the oncology area, ShangPharma itself is also to enter the battlefield, but in a different way. While the clients are taking advantage of ShangPharma's patient-derived xenograft (PDX), a platform using real data from patients to build personalized oncology models, for a much more accurate prediction of clinical outcome, ShanghPharma is going to use the platform to bring personalized medicines to the next level.</p><p><p>"With the patients' oncology data collected at our PDX platform, we are able to give doctors the best solution against different targets, helping them quickly determine if a patient should be treated with chemo drugs only, or a combination of target drugs and chemo drugs, " Dr Zhou said, adding that the company had established partnership with about 20 hospitals across the country.</p><p><p>Personalized therapies, the availability of which is seriously limited by the high cost, will nonetheless become mainstream in China should they become more affordable in the future, said Dr Zhou.</p><p><p>"Chinese have no problems with the idea of personalized therapies because traditional Chinese medicines are the typical example of the kind," she said. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 335
+
+<p>Home to the world's largest smoking population, frequently occurred food safety issues as well as serious air and water pollution, China sees fast growing new cancer cases each year, with liver, lung and gastric cancers in the lead, according to a recent report by China's national health and family planning commission (NHFPC).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Market outlook Chinas most common cancers
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150219T055552
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150219T055552
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150219T055552
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027909
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Market outlook: China's most common cancers 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{53F86E82-EB9E-4199-BDE5-D55BC8104DF4}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356826
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9f2553fe-069f-438f-94e6-433b436bfb5a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

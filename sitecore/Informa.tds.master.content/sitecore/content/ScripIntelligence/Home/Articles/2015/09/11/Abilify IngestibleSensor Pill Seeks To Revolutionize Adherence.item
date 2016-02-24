@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {DFFBCFA0-2601-431E-B3C1-3971F88DEA00}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/11/Abilify IngestibleSensor Pill Seeks To Revolutionize Adherence
+parent: {62C55766-C278-4043-A2CE-96E19F97E9EA}
+name: Abilify IngestibleSensor Pill Seeks To Revolutionize Adherence
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 06416456-f081-449e-8233-5be02189635e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Abilify Ingestible-Sensor Pill Seeks To Revolutionize Adherence
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+Abilify IngestibleSensor Pill Seeks To Revolutionize Adherence
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2576
+
+<p>Otsuka and Proteus are seeking to revolutionize the adherence of medicines with their drug-device product, which embeds an ingestible sensor into the atypical antipsychotic Abilify (aripiprazole).</p><p>And now, the FDA has agreed to review the firms' application for the product, which is the first-ever digital medicine of its kind to undergo an evaluation by the agency.</p><p>The product has been filed with the FDA as a new drug application, in which the Center for Devices and Radiological Health-cleared ingestible sensor from Proteus will be embedded at the point of manufacture with the Center for Drug Evaluation and Research-approved Abilify as a combination drug-device, communicating with the Proteus patch and associated medical software. </p><p>After ingesting the tablet, the product digitally records information and communicates it with a wearable sensor patch and a medical software application to measure adherence of the medicine, which is indicated for adults with schizophrenia, acute treatment of manic and mixed episodes associated with bipolar I disorder and as adjunctive therapy for the treatment of major depressive disorder in adults. </p><p>The patch records and time-stamps the information from the ingestible sensor in addition to collecting other patient metrics, including rest, body angle and activity patterns. That information is recorded and relayed to patients on a mobile phone or other Bluetooth-enabled device, and only with their consent, to their physician or caregivers. </p><p>Patients view the information using a secure and local software application on their mobile phone or device. </p><p>Physicians and caregivers view the data using secure web portals. </p><p>Otsuka and Proteus said the their drug-device product is the first opportunity to demonstrate the potential of digital medicines to provide an objective measure of medication adherence and physiologic response and can better inform physicians in their decision making, so they can tailor treatment to the patient's needs, the companies said, noting that an estimated 50% of patients with chronic diseases in developed countries do not take their prescribed medicines.</p><p>Better adherence, Otsuka and Proteus said, could lead to up to $300bn in avoidable health care costs in the US.</p><p>"Digital Medicines have the potential to move healthcare beyond the proven efficacy of a medicine to understand the real world effectiveness of a therapy for each individual," declared Andrew Thompson, president and CEO of Proteus Digital Health.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 203
+
+<p>Otsuka and Proteus are seeking to revolutionize the adherence of medicines with their drug-device product, which embeds an ingestible sensor into the atypical antipsychotic Abilify (aripiprazole).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+Abilify IngestibleSensor Pill Seeks To Revolutionize Adherence
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150911T130934
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150911T130934
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150911T130934
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029738
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Abilify Ingestible-Sensor Pill Seeks To Revolutionize Adherence
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360318
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+06416456-f081-449e-8233-5be02189635e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

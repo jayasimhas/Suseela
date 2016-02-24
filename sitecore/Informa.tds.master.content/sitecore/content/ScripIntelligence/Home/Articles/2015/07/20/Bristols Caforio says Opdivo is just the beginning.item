@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {7C4426F3-FEDB-4496-94E8-7A491F687808}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/20/Bristols Caforio says Opdivo is just the beginning
+parent: {4A5C71DE-F86E-4022-98D9-F4BD70B5C95D}
+name: Bristols Caforio says Opdivo is just the beginning
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d4a23d14-fc47-4772-a945-2460a9913777
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Bristol's Caforio says Opdivo is just the beginning
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Bristols Caforio says Opdivo is just the beginning
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3602
+
+<p><p>This year has been nothing short of incredible for Bristol-Myers Squibb<b>.</b> Its PD-inhibitor Opdivo has had three early trial stops due to overwhelming efficacy, three regulatory filings and three far quicker-than-normal approvals. The big pharma's new CEO sees this as the start of a new phase and is backing that up with cash. </p><p>"Building on our success over the past few years, we are beginning an exciting new chapter. One characterized by the opportunity for growth for leading a transformation in the way cancer is treated and for strengthening and expanding our diversified portfolio of specialty medicines. And we are starting this next chapter from a position of strength," chief exec Mr Giovanni Caforio said during Bristol&rsquo;s second quarter earnings call on 24 July &ndash; his first official call at the helm of the company. </p><p>Bristol expects growth over the next five years to be driven by Opdivo (nivolumab) and the blood thinner Eliquis (apixaban). "With Opdivo, we will leverage our leadership position in lung, melanoma and renal cancers," said Mr Caforio. "With Eliquis, given the breadth of its label and the strength of its prescription trends, we are very encouraged and look to build on our moment. And regarding the rest of our marketed products, trends are good and we have the right resources in place to continue to compete and grow."</p><p>In the long term, Caforio intends to continue building its leading presence in immuno-oncology, which will take significant investment and strategic choices given the pressure from the rest of the pack. In addition to multiple filings for Yervoy, Opdivo and Opdivo plus Yervoy under review at FDA, the company is gearing up for submission and launch of its SLAMF7 inhibitor elotuzumab for multiple myeloma. </p><p>Outside of oncology, Bristol is focusing on fibrosis, heart failure, immunology and certain genetically defined diseases.</p><p>"Over the last several months, I have reviewed our growth opportunities and they are, for us, unprecedented. I have also focused on what we need to do to maximize them and I am fully committed to making the right strategic investments," added the exec.</p><p>Those strategic investments are set to begin in the second half of the year, and will include further investment in R&D &ndash; particularly in immuno-oncology, as well as commercial investments. </p><p>"Commercially, we are adding resources globally to fully support the launches of Opdivo and elotuzumab and also behind Eliquis to support continued strong growth. For Opdivo, we are making additional investments&rdquo; across the board, not just in R&D, CFO Mr Charlie Bancroft said. </p><p>"We are increasing investments to accelerate Opdivo development programs where possible and also to accelerate the development of new mechanisms and additional combination regimens. We are adding resources in our medical organization which include additional trials to generate data and also to increase field medical resources, which will be important for driving awareness of Opdivo both in the U.S. and around the world," he added. </p><p>Opdivo had sales of $122 million during the quarter ended 30 June, beating out analysts' consensus estimates of $105 million. Eliquis was Bristol&rsquo;s top-selling single drug, with revenues of $437 million, up from $171 million, and beating estimates of $385 million. </p><p><p>[Editor's note: This story is also being published in "The Pink Sheet" DAILY. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.]</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Bristols Caforio says Opdivo is just the beginning
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150720T161557
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150720T161557
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150720T161557
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029333
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Bristol's Caforio says Opdivo is just the beginning
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+Feature
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359532
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d4a23d14-fc47-4772-a945-2460a9913777
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

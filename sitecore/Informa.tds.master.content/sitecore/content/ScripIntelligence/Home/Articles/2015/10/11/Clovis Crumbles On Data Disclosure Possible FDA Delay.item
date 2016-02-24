@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {4E14652E-D161-4155-AB27-87C0DF8C9508}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/11/Clovis Crumbles On Data Disclosure Possible FDA Delay
+parent: {22D0ECFE-8F71-4F7C-BBF9-629CD8FA035B}
+name: Clovis Crumbles On Data Disclosure Possible FDA Delay
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d93a35bb-6181-48a3-8d5d-834a15eaa413
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Clovis Crumbles On Data Disclosure, Possible FDA Delay
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Clovis Crumbles On Data Disclosure Possible FDA Delay
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4749
+
+<p>Investors' hopes for an early approval of Clovis Oncology Inc.'s experimental lung cancer drug rociletinib were crushed on Nov. 16 after the company disclosed the drug's response rates were much lower than the firm had earlier reported.</p><p>Clovis also said additional data submitted to the FDA could result in a delay of the firm's new drug application (NDA) for rociletinib, with the <i>Prescription Drug User Fee Act</i> action date potentially being extended beyond March 30, 2016. </p><p>Investors bolted &ndash; sending shares hurtling down 73.8% on Nov. 16, before closing at $30.24, down a whopping $69.19, or 69.6%.</p><p>Analysts had been predicting rociletinib could potentially gain an earlier-than-expected approval &ndash; sailing through the FDA process like AstraZeneca PLC's drug for patients with epidermal growth factor receptor (EGFR) T790M mutation-positive non-small cell lung cancer (NSCLC), <a href="http://www.scripintelligence.com/home/Fast-AZ-Tagrisso-Approval-Springboard-For-Clovis-361562" target="_new">Tagrisso</a> (osimertinib), appeared to do, winning US approval on Nov. 13, well ahead of its Feb. 6, 2016 PDUFA date.</p><p>Tagrisso had demonstrated an objective response rate of 59% and duration of response of 12.4 months.</p><p>But Clovis shocked Wall Street on Nov. 16 &ndash; disclosing that instead of the 60% response rate the firm had claimed earlier for rociletinib in patients with EGFR T790M mutation-positive NSCLC, the firm's intent-to-treat analysis of 79 patients in the 500mg dose group had a "confirmed" response rate of only 28%, while that rate was 34% in the 170 patients in the 625mg dose group.</p><p>To make matters worse, Clovis CEO Patrick Mahaffy admitted on a conference call with investors and analysts the company actually had those data in hand for the past few weeks &ndash; even when the firm reported its third-quarter earnings on Nov. 5 &ndash; but had kept mum about the results until coming clean on Nov. 16.</p><p>Clovis had actually submitted the updated response rates to the FDA at the end of October as part of a 90-day update to the rociletinib NDA, Mahaffy explained.</p><p>Then last week, during a regularly scheduled mid-cycle communication meeting with the FDA, regulators asked Clovis for additional clinical data for use in the efficacy analysis for both the 500mg and 625mg twice daily (BID) dosage patient groups for rociletinib. </p><p>"We've prepared this information and will provide it in a major amendment to the FDA by the close of business today," Mahaffy said. </p><p>He said that in the mid-cycle communication meeting, regulators emphasized that the FDA's efficacy analysis would focus "solely" on confirmed responses. </p><p>But Mahaffy said the NDA submission contained immature data sets based on unconfirmed response rates and confirmed response rates. </p><p>He admitted the interim data publicly reported at medical meetings included a data set based primarily on unconfirmed responses. </p><p>"As the efficacy data had matured, the number of patients with an unconfirmed response who converted to a confirmed response was lower than expected," Mahaffy said.</p><p>He said the most frequent reasons that patients' responses were not confirmed in a subsequent scan were due to progression, often due to brain metastasis, and due to subsequent scans not demonstrating tumor shrinkage greater than 30%. </p><p>"In our view, rociletinib now looks likely to be both delayed and has a materially inferior profile to Tagrisso," said Deutsche Bank analyst Richard Parkes.</p><p>"Tagrisso now seems to have a meaningful efficacy profile advantage," he said. "In our view, the data for Tagrisso is likely to position it as the treatment of choice even if rociletinib is approved."</p><p>In addition, Parkes said, AstraZeneca recently presented data showing encouraging activity of Tagrisso in patients with brain metastasis, "giving it a potential meaningful advantage over rociletinib." </p><p>He anticipated the rociletinib NDA to be, "at best," delayed until mid-2016. </p><p>In a worst case for Clovis &ndash; and best for AstraZeneca &ndash; the FDA may require further randomized data from Clovis' TIGER-3 trial prior to approval of rociletinib, further delaying approval into 2017, Parkes said. </p><p>"While devastating to the market outlook for rociletinib against Tagrisso, rociletinib is still likely to be approved," said analysts at Sagient Research's <i>BioMedTracker</i>, an affiliate of <i>Scrip</i>. </p><p>Nonetheless, <i>BioMedTracker</i> lowered its likelihood of approval by 8%, but cautioned that action only reflected the analysts' opinion on "any FDA approval and is not a reflection of market potential."</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 243
+
+<p>Investors' hopes for an early approval of Clovis Oncology Inc.'s experimental lung cancer drug rociletinib were crushed on Nov. 16 after the company disclosed the drug's response rates were much lower than the firm had earlier reported.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Clovis Crumbles On Data Disclosure Possible FDA Delay
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151011T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151011T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151011T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030325
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Clovis Crumbles On Data Disclosure, Possible FDA Delay
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361492
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d93a35bb-6181-48a3-8d5d-834a15eaa413
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

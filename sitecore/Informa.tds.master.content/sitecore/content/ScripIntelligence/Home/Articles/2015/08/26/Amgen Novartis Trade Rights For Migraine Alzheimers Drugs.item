@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {584FAAD7-1F12-4E29-B0FA-01CAA1875ADD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/26/Amgen Novartis Trade Rights For Migraine Alzheimers Drugs
+parent: {DD56DE4A-39AC-48A9-BB39-DDC56CF0FE6D}
+name: Amgen Novartis Trade Rights For Migraine Alzheimers Drugs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8ddcbac3-7e25-4673-83e9-199ba30d30f1
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{F5161CC2-772F-472E-A21C-BF196343462E}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Amgen, Novartis Trade Rights For Migraine, Alzheimer's Drugs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+Amgen Novartis Trade Rights For Migraine Alzheimers Drugs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6033
+
+<p>Amgen traded certain ex-US rights to its Phase III calcitonin gene-related peptide (CGRP) inhibitor for migraine headaches to acquire shared global rights to Novartis's early-stage candidate for Alzheimer's disease, raising an important question: Who is getting the better deal?</p><p>The answer probably won't be known until the companies commercialize their lead migraine and Alzheimer's candidates, but both indications have millions of patients globally. However, Amgen's AMG 334 has a good chance at being the first CGRP inhibitor to hit the migraine market, while Novartis's Phase I/IIa CNP520 is years behind its competitors with mid- to late-stage inhibitors of beta-site APP-cleaving enzyme-1 (BACE), but both companies say their partner's participation will speed their drug candidates through development and into their respective markets around the world.</p><p>"Our collaboration on BACE inhibition reflects Amgen's strategic focus on genetically validated drug candidates while our collaboration in migraine creates an opportunity to more rapidly advance AMG 334 on a global scale," Amgen executive vice president of research and development Sean Harper said in a statement from the company.</p><p>A Novartis spokeswoman told <i>Scrip</i> that its neuroscience partnership with Amgen could result in many new targeted therapies to treat conditions with high unmet medical needs. </p><p>"Development of novel [Alzheimer's disease (AD)] compounds for disease modification, and in particular BACE inhibitors such as CNP520, requires novel approaches with significant high-risk investment. This partnership with Amgen allows Novartis and Amgen to bring [together] collective resources for the development and commercialization of CNP520," according to Novartis's Elizabeth Power.</p><p>Both companies noted Amgen's long-term involvement in BACE inhibition, since the company was the first to clone the BACE gene and its subsidiary deCODE Genetics validated BACE as a disease target. <a href="http://www.scripintelligence.com/home/marketdata/Patent-Alert---Central-and-Peripheral-Nervous-System-318624" target="_new">Amgen patented</a> a pair of BACE inhibitors in 2011.</p><p>In terms of CGRP-targeting therapies for migraine, Power pointed out that discontinuation rates are high for oral preventive drugs, so there is a significant need for new approaches, since about 10% of the population suffers from the debilitating headaches. That's why biologic medicines, such as the monoclonal antibody AMG 334, are likely to be prescribed by neurology specialists, she said.</p><p>"Novartis has a strong neuroscience capability, presence and history in the territories where they will be commercializing AMG 334, which we believe will increase the opportunity for Amgen as we launch our first product in the migraine space," Amgen spokeswoman Kristen Davis told <i>Scrip</i>.</p><p><b>Neuroscience Deal Terms</b></p><p>Novartis and Amgen will combine their Alzheimer's drug candidates targeting BACE under a global development and commercialization agreement with CNP520 as the lead program. The small molecule is under evaluation in a study conducted in partnership with the <a href="http://www.scripintelligence.com/home/Is-Novartiss-ground-breaking-Alzheimers-prevention-study-over-ambitious-352891" target="_new">Banner Alzheimer's Institute</a> to test the BACE inhibitor and a second Novartis drug candidate in pre-Alzheimer's patients with a genetic risk of accumulating beta-amyloid plaques in the brain.</p><p>Amgen and Novartis both have pre-clinical BACE inhibitor candidates, which will remain in the companies' combined portfolio as potential follow-ons to CNP520. </p><p>Amgen will pay Novartis undisclosed upfront and milestone fees under the BACE partnership. Amgen also will be responsible for a greater share of research and development costs for an unspecified period after which the partners will fund R&D and share profits on a 50-50 basis. </p><p>Under the migraine collaboration, Novartis will gain global co-development rights as well as commercial rights outside of the US, Canada and Japan for AMG 334 and Amgen's Phase I drug candidate AMG 301. Novartis also obtained an option to commercialize another early-stage Amgen migraine candidate in the same territories. Novartis will fund a greater share of global R&D costs for a certain period and pay Amgen double-digit royalties on migraine therapy sales. </p><p><b>CGRP, BACE Competition</b></p><p>Amgen, Teva Pharmaceutical Industries and Eli Lilly & Co. each reported successful Phase IIb clinical trial results for CGRP inhibitors in June at the <a href="http://www.scripintelligence.com/home/Teva-Lilly-and-Amgen-join-battle-for-new-8bn-migraine-prevention-market-359088" target="_new">American Headache Society</a> meeting in Washington, D.C. </p><p>Each company's monoclonal antibody prevented and reduced the frequency of migraine and cluster headaches with improved safety compared with small molecule CGRP inhibitors, but Amgen appears to be in the lead with plans to begin Phase III studies for AMG 334 before the end of 2015.</p><p>Meanwhile, Novartis is in fifth place with its BACE inhibitor CNP520. Merck & Co.'s <a href="http://www.scripintelligence.com/home/Merck-moves-ahead-with-large-trials-for-Alzheimers-drug-348682" target="_new">Phase III MK-8931</a> is in the lead, followed by AstraZeneca's AZD3293, which is in Phase II/III <a href="http://www.scripintelligence.com/home/Lilly-and-AstraZeneca-gang-up-on-Merck-in-Alzheimers-353976" target="_new">in partnership with Lilly</a>, and the Phase II candidates <a href="http://www.scripintelligence.com/home/Eisai-and-Biogen-Idec-pool-Alzheimers-efforts-350390" target="_new">E2609</a> from Eisai Co. Ltd. with Biogen Idec and <a href="http://www.scripintelligence.com/researchdevelopment/Janssen-touches-BACE-with-Shionogi-for-early-stage-Alzheimers-candidates-336743" target="_new">JNJ-54861911</a> from Johnson & Johnson's Janssen subsidiary and Shionogi. </p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 285
+
+<p>Amgen traded certain ex-US rights to its Phase III calcitonin gene-related peptide (CGRP) inhibitor for migraine headaches to acquire shared global rights to Novartis's early-stage candidate for Alzheimer's disease, raising an important question: Who is getting the better deal?</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Amgen Novartis Trade Rights For Migraine Alzheimers Drugs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150826T180001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150826T180001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150826T180001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029661
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Amgen, Novartis Trade Rights For Migraine, Alzheimer's Drugs
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199500436
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Business News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360122
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8ddcbac3-7e25-4673-83e9-199ba30d30f1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042444Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

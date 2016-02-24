@@ -29,10 +29,7 @@
 		<add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
 	    <add key ="Development"  value="${Development}"/>
 	    <add key ="Stage"  value="${Stage}"/>
-	    <add key ="Production"  value="${Production}"/>
-	    <add key ="DevelopmentTree"  value="${DevelopmentTree}"/>
-	    <add key ="StageTree"  value="${StageTree}"/>
-	    <add key ="ProductionTree"  value="${ProductionTree}"/>
+	    <add key ="Production"  value="${Production}"/>	   
 		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
 	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
     	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
@@ -47,7 +44,7 @@
    </setting>
   </SitecoreTreeWalker.Properties.Settings>
 	</applicationSettings>
-	<runtime>
+  <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
         <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
@@ -120,6 +117,14 @@
       <dependentAssembly>
         <assemblyIdentity name="Microsoft.Owin.Security.Cookies" publicKeyToken="31bf3856ad364e35" culture="neutral" />
         <bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="MongoDB.Driver" publicKeyToken="f686731cfb9cc103" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.11.0.92" newVersion="1.11.0.92" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="MongoDB.Bson" publicKeyToken="f686731cfb9cc103" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.11.0.92" newVersion="1.11.0.92" />
       </dependentAssembly>
     </assemblyBinding>
   </runtime>

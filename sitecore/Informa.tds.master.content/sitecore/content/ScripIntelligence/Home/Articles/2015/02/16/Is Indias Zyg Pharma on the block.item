@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {15FA305F-41A6-497F-9346-079E73D2FCA2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/16/Is Indias Zyg Pharma on the block
+parent: {4E9A5163-9C2B-434E-844F-39715C9D65BC}
+name: Is Indias Zyg Pharma on the block
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8eeab8c5-5a1f-4137-8ea6-8b9dcb6d2dad
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 35
+
+Is India's Zyg Pharma on the block?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 33
+
+Is Indias Zyg Pharma on the block
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2606
+
+<p>The privately owned Encore group of India may be looking at roping in a strategic equity partner or more for one of its pharma outfits, Zyg Pharma - a leading contract manufacturer of dermatology products.</p><p>If a number of investment bankers are to be believed, then Zyg has been approached by potential suitors for a deal, though valuations have so far been the stumbling block.</p><p>''Their [Zyg] expectations have been rather high,'' one banker told <i>Scrip</i>. </p><p>Others like Tarun Shah, founder of MP Advisors, a strategic business advisory firm based in Baroda, told <i>Scrip</i> that niche companies such as Zyg, with international regulatory approvals, could command valuations in the region of 15-18 times EBITDA (earnings before interest, tax, depreciation and amortization).</p><p>Staggered payments - part of which may be linked to receipt of product approvals &ndash; could be a useful approach potentially to iron out issues pertaining to valuation differences, Mr Shah indicated.</p><p>However, it is not immediately clear if active discussions for a potential sell-off are currently ongoing or whether the Encore group is open to private equity investment. Last year, Sequoia Capital was set to invest about INR1bn (then $16.2m) for around 25% in the Indian specialty dermatology firm, Curatio Healthcare <a href="http://%5bhttp:/www.scripintelligence.com/business/Sequoia-set-to-invest-in-Indian-derma-firm-Curatio-355120%5d" target="_new">(scripintelligence.com 14 November 2014)</a>. </p><p>E-mails to Zyg's CEO, Viren Merchant, did not elicit any response and the top executive's office declined to offer any specific comment when contacted via telephone.</p><p>Zyg, which is one of the leading contract manufacturers of ''dermaceuticals'', has a range of products in the anti-acne, anti-bacterial, anti-fungal and anti-infectives space, among others. Zyg was also known to have a technical collaboration with Schering-Plough.</p><p>Zyg comes with facilities in Pithampur in central India, which are said to cater to a clutch of multinational firms for their domestic market needs, in addition to exports. The facilities manufacture creams, ointments, lotions and gels. The company commenced exports to the US and Australia in 2012, details on its website indicated. </p><p>Founded by the Merchant family the Encore group comprises four firms &ndash;Encore Natural Polymers which manufactures guar gum and derivatives; the active pharmaceutical ingredients and intermediates manufacturer Halcyon Labs; Encore Healthcare for tablets, capsules and liquid orals; and Zyg.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 212
+
+<p>The privately owned Encore group of India may be looking at roping in a strategic equity partner or more for one of its pharma outfits, Zyg Pharma - a leading contract manufacturer of dermatology products.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+Is Indias Zyg Pharma on the block
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150216T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150216T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150216T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027886
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 35
+
+Is India's Zyg Pharma on the block?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356782
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042257Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8eeab8c5-5a1f-4137-8ea6-8b9dcb6d2dad
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042257Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {0B129CF4-0DEF-471D-B136-59D8EC2B83A1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/23/EASL highlights the hepatitis C story continues
+parent: {513DB860-8F3F-41F5-BCB6-26F09C90B6E0}
+name: EASL highlights the hepatitis C story continues
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 69a90c71-d3b4-42ca-82de-10fc82322672
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+EASL highlights: the hepatitis C story continues
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+EASL highlights the hepatitis C story continues
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4595
+
+<p>Despite hepatitis C being essentially 'cured', there was still plenty of action at last week's European Association for the Study of the Liver (EASL) annual meeting in Vienna as companies work to improve treatment durations and improve costs. </p><p>Of the drugs already on the market, Gilead Sciences' Harvoni (sofosbuvir/ledipasvir) had the most interesting new data presented at the meeting, from the SOLAR-2 study. The data demonstrated Harvoni's efficacy in very advanced patients, including decompensated cirrhotics. "The 12-week regimen seemed to have comparable efficacy to the 24-week regimen which is important in terms of convenience and more importantly cost," noted Datamonitor Healthcare analyst Michael Haydock.</p><p>The most eagerly awaited data were probably from Merck & Co, via its presentations on the Phase III C-EDGE trials with its grazoprevir/elbasvir combination. Merck is hoping to get its hepatitis C offering onto the market by the end of the year. Analysts were keen to see if the combination matched the efficacy of Gilead's Harvoni and AbbVie's Viekira Pak (paritaprevir/ritonavir/ombitasvir + dasabuvir).</p><p>"The C-EDGE TE data look to be good news for Merck," said Mr Haydock. "The 16-week treatment &ndash; with ribavirin &ndash; seems very effective in treatment-experienced cirrhotic patients. This is an attractive duration compared to Harvoni which is currently recommended for 24 weeks in these patients," he noted.</p><p>However, the C-EDGE TN data were relatively disappointing in GT-1a patients. "Cure rates were 92% in GT-1a and 99% in GT-1b &ndash; compared to 99% for GT-1a and 100% for GT-1b in Harvoni's ION-1 study," said Mr Haydock. This suggests that it might be beneficial to add in ribavirin for treatment-na&iuml;ve GT-1a patients. "That is a shame for Merck because being able to omit ribavirin for all treatment-na&iuml;ve patients would have been a nice advantage over Viekira Pak, which requires ribavirin in GT-1a patients."</p><p>Merck has been on a roller coaster in recent months with the grazoprevir/elbasvir regimen. Earlier this month, the FDA reversed course on its intention to rescind the breakthrough therapy status it had awarded in October 2013 for the combination.</p><h2>Gilead's combo</h2><p>The meeting saw Gilead Sciences report Phase I/II data for its triple combo of its blockbuster Sovaldi (sofosbuvir) with its NS5A inhibitor GS-5816 and its NS3/4A protease inhibitor GS-9857, as it investigates the potential for shorter treatment durations. </p><p>Results from the study showed that after six weeks on the drug treatment-na&iuml;ve, non-cirrhotic patients achieved a sustained virologic response (SVR12) rate of 93%, while treatment-na&iuml;ve, cirrhotic patients had an SVR12 of 87% and among those patients that had failed therapy two or more times achieved a sustained response rate of 67%. Meanwhile, the four-week regimen achieved the less-than-appealing result of 27%.</p><p>"The poor efficacy of the four-week arm was expected based on Merck's earlier C-SWIFT data (grazoprevir/elbasvir + sofosbuvir), and therefore it's not a significant setback to Gilead's development plans," noted Mr Haydock.</p><p>The data in treatment-na&iuml;ve cirrhotic patients suggests that six-week treatment is feasible "although higher patient numbers are needed to see if relapse becomes an issue compared to 12-week treatment," suggested Mr Haydock. "For cirrhotic patients, I think the rates of relapse/breakthrough will be unacceptably high when patient numbers are scaled up so six weeks might not be feasible. The eight-week data in cirrhotics will be interesting because adding another two weeks of treatment might be sufficient to prevent some/most of the relapses. This would still be a significant shortening of treatment duration because the current minimum treatment duration for cirrhotics is 12 weeks."</p><p>Data from Merck's C-SWIFT trial of grazoprevir/elbasvir + sofosbuvir in cirrhotic and non-cirrhotic treatment naive GT1 and GT3 hepatitis C patients confirmed what Gilead found: for GT-1 patients, the six-week cirrhotic arm's cure rates of 80% suggested that six-weeks treatment duration is insufficient, whereas the eight-week arm had more promising cure rates of 94%.</p><p>"NS5A resistance generation seems to be a weakness for Merck's combo &ndash; elbasvir lacks potency against some NS5A resistance-associated variants (RAVs)," said Mr Haydock. "This suggests that Gilead's GS-5816 might be the preferred choice in future 3-DAA regimens because of its better potency against NS5A RAVs."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 250
+
+<p>Despite hepatitis C being essentially 'cured', there was still plenty of action at last week's European Association for the Study of the Liver (EASL) annual meeting in Vienna as companies work to improve treatment durations and improve costs. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+EASL highlights the hepatitis C story continues
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150423T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150423T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150423T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028575
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+EASL highlights: the hepatitis C story continues
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358027
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+69a90c71-d3b4-42ca-82de-10fc82322672
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

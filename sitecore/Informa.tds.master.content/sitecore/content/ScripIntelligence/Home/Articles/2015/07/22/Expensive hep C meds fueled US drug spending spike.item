@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {CA9035B4-5003-477E-AA8C-1A21745D80C2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/Expensive hep C meds fueled US drug spending spike
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: Expensive hep C meds fueled US drug spending spike
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d150b39c-2154-4ec4-b5c3-9fbb00bf080a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Expensive hep C meds fueled US drug spending spike
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Expensive hep C meds fueled US drug spending spike
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5583
+
+<p>New expensive hepatitis C virus (HCV) medicines like Gilead Sciences' Sovaldi (sofosbuvir) and Harvoni (ledipasvir-sofosbuvir) and AbbVie's Viekira Pak (ombitasvir/paritaprevir/ritonavir/dasabuvir), which range from $84,000-$94,500 per treatment course, were blamed for the sharp increase from 2.5% in 2013 to 12.6% last year in prescription drug spending &ndash; playing a major role in the overall acceleration in dollars spent on US healthcare for 2014, government actuaries said on 28 July.</p><p>National health spending in 2014 reached $3.1tn, or $9,695 per person &ndash; an increase of 5.5%.</p><p>It was the first time growth exceeded 5% since 2007, according to the Centers for Medicare & Medicaid Services (CMS).</p><p>Prior to last year, US healthcare spending had been enjoying historic lows of around 4% for the past few years following the "Great Recession," explained Sean Keehan, a senior economist with CMS.</p><p>He said the growth in spending was largely attributed to the 8.4 million Americans who gained healthcare coverage under <i>the Affordable Care Act</i> &ndash; either through private insurance plans or from Medicaid, the government's insurance for the poor.</p><p>But high-cost specialty drugs to treat HCV &ndash; which hit the market in 2014 &ndash; and to a lesser extent, new treatments for cancer and multiple sclerosis, helped drive that spending growth last year, CMS actuaries said in the <a href="http://content.healthaffairs.org/content/early/2015/07/15/hlthaff.2015.0600.full" target="_new">report</a> published in the Washington policy journal <i>Health Affairs</i>, which outlined national health expenditures (NHE) projections for 2014-24.</p><p>They noted the growth in prescription drug spending was the highest since 2002.</p><p>The CMS economists anticipated the trend toward the use of more expensive specialty drugs, like HCV and cancer medicines, would continue, given the growth in research and development for those types of products.</p><p>The report comes just as Sanofi's and Regeneron's new cholesterol-lowering drug Praluent (alirocumab) &ndash; the first proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitor <a href="http://www.scripintelligence.com/home/SanofiRegeneron-win-1st-US-PCSK9-OK-with-Praluent-359621" target="_new">approved</a> by the FDA &ndash; is entering the US market, with Amgen's Repatha (evolocumab) not far behind.</p><p>Sanofi and Regeneron priced their product higher than anticipated &ndash; at $14,600 for the wholesale acquisition cost, which is expected to be <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Barriers-to-PCSK9s-use-What-to-expect-359629" target="_new">reduced after rebates and other discounts</a>.</p><p>Payers already have <a href="http://www.scripintelligence.com/home/CVS-takes-aim-at-PCSK9s-costs-could-dwarf-HCV-meds-356803" target="_new">declared war</a> on the PCSK9s &ndash; worried the volume of patients anticipated to eventually be taking the medicines could break the US healthcare system, if not the nation's economy.</p><p><b>PhRMA pushes back</b></p><p>But the Pharmaceutical Research and Manufacturers of America (PhRMA) immediately pushed back against the focus on drug spending in the CMS report &ndash; insisting healthcare costs were always expected to grow in 2014 with millions of Americans joining the ranks of the insured.</p><p>Robert Zirkelbach, senior vice president of communications at PhRMA, noted the NHE report projects that after spiking in 2014, growth is expected to moderate in the next few years &ndash; dropping to 7.6% in 2015 and falling further to 5.5% in 2018, although CMS said drug spending is expected to rise back up to 6.6% in 2024.</p><p>CMS attributed the expected deceleration in drug spending growth to payers negotiating better prices for specialty and other medicines, including the PCSK9s, which Mr Keehan said the actuaries had included in their cost projections for the coming years. </p><p>But even with new treatments and cures for HCV, high cholesterol and cancer, Mr Zirkelbach pointed out that spending on retail prescription medicines is projected to remain at about 10% of US healthcare spending through 2024 &ndash; "the same percentage as in 1960."</p><p>He argued the 10% of healthcare spending going towards medicines is "providing tremendous value for patients and the healthcare system broadly" &ndash; noting cancer death rates have fallen 22% since 1991 and HCV cure rates are now above 90%, dramatically decreasing the burden of the disease on the US healthcare system.</p><p>"Insurers recognize that medicines can play a crucial role in controlling future health care costs," Mr Zirkelbach contended. </p><p><b>Medicare spending expected to slightly drop</b></p><p>CMS also said that Medicare spending growth also is projected to decelerate slightly in 2015 &ndash; 5.3% in 2014 to 4.7% this year &ndash; which the agency attributed mainly to the slower growth in prescription drug expenditures and physician and clinical services spending. </p><p>Medicare's spending growth for prescription drugs is expected to drop from 17.3% in 2014 to 9% in 2015, due in part to the increased rebates from pharmaceutical companies for the new HCV drug, CMS said.</p><p>Reductions in physician incentive payments for various reporting, electronic prescribing and health information technology initiatives also are expected to contribute to slower Medicare spending growth on physician and clinical services is expected to drop from 4.6% in 2014 to 3.4% 2015.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 501
+
+<p>New expensive hepatitis C virus (HCV) medicines like Gilead Sciences' Sovaldi (sofosbuvir) and Harvoni (ledipasvir-sofosbuvir) and AbbVie's Viekira Pak (ombitasvir/paritaprevir/ritonavir/dasabuvir), which range from $84,000-$94,500 per treatment course, were blamed for the sharp increase from 2.5% in 2013 to 12.6% last year in prescription drug spending &ndash; playing a major role in the overall acceleration in dollars spent on US healthcare for 2014, government actuaries said on 28 July.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Expensive hep C meds fueled US drug spending spike
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029359
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Expensive hep C meds fueled US drug spending spike
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359572
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d150b39c-2154-4ec4-b5c3-9fbb00bf080a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

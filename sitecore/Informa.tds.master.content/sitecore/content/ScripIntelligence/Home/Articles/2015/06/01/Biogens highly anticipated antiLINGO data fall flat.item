@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {B7A8B3E8-E905-4799-B609-EBD00DB8173C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/01/Biogens highly anticipated antiLINGO data fall flat
+parent: {430A16F1-19D6-4034-BEB3-EFB94183F1C6}
+name: Biogens highly anticipated antiLINGO data fall flat
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5e75f696-a6bc-40e6-b270-a76ff1cbd70a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Biogen's highly anticipated anti-LINGO data fall flat
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Biogens highly anticipated antiLINGO data fall flat
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7340
+
+<p>After several months of questions about when Biogen Idec would reveal its first proof-of-concept data for the anti-LINGO development program, the company reported results from a Phase II clinical trial in the treatment of acute optic neuritis (AON) that gave no clear answers about the treatment's effects in multiple sclerosis (MS).</p><p>There are few companies with MS expertise that can match Biogen and none with more approved drugs for the neurological disease, so it's fitting that the company has the lead asset in clinical trials to treat the underlying cause of MS. Anti-LINGO-1 demonstrated a 34% improvement in the recovery of optic nerve latency (time for a signal to travel from retina to visual cortex) compared with placebo at 24 weeks (p=0.0504), the Phase II RENEW trial's primary endpoint, but there was no effect on the study's secondary endpoints.</p><p>Investors were not sure what to think of the highly anticipated RENEW results. Biogen traded as low as $341.71 per share on 8 January before closing down just 0.85% at $350.25. </p><p>Analysts also were unclear about how the anti-LINGO results in AON will translate to an effect in the much larger MS indication, but generally seemed to agree that the RENEW results show signs of biological activity for the antibody drug candidate. </p><p>"While we are encouraged by the positive Phase II trial with anti-LINGO-1 in acute optic neuritis, we underscore our view that a primary purpose of the study was to provide proof-of-concept of the biological activity in remyelination and neuroprotection. We are therefore cautious in 'translational' read-through to the ongoing Phase II trial in multiple sclerosis," said William Blair analyst John Sonnier in a report to investors.</p><p>Evercore ISI analyst Mark Schoenebaum agreed in a separate report, noting that "the data are encouraging, but certainly not definitive."</p><p><b>Remyelination proof-of-concept</b></p><p>Anti-LINGO-1 is an antibody designed to boost the ability of cells in the central nervous system (CNS) to produce myelin, which is the protective cellular sheath around nerve fibers. Demyelination is the underlying cause of MS, so a drug that induces remyelination would be a disease-modifying therapy compared with approved therapies, which treat the symptoms of MS. </p><p>AON damages the optic nerve, which causes loss of the myelin sheath and axonal injury, and may result in vision loss. The condition is considered a good model to test therapies that may cause remyelination and neuroprotection. RENEW was designed to study the ability of anti-LINGO-1 to repair of an optic nerve lesion via axonal remyelination following the onset of a first episode of AON.</p><p>"We believe the RENEW results are encouraging, as this is the first clinical trial to provide evidence of biological repair in the CNS by facilitating remyelination following an acute inflammatory injury," Biogen Idec chief medical officer Alfred Sandrock said in a statement from the company.</p><p>The primary endpoint measured the latency of nerve conduction between the retina and the visual cortex in the brain using full field visual evoked potential (FF-VEP), comparing the affected eye to the unaffected eye after 24 weeks of 100mg/kg infusions administered every four weeks. </p><p>Anti-LINGO-1 showed a statistically significant benefit over placebo in patients who completed the study, but the results were not significant in the intent-to-treat population, which included patients who discontinued treatment</p><p>The trial's missed secondary endpoints included change in thickness of the retinal layers (RNFL) and visual function, as measured by spectral domain optical coherence tomography (SD-OCT), and low contrast letter acuity when reading an eye chart.</p><p>"We believe that LINGO would eventually need to show disease modifying properties in endpoints like RNFL, but the duration of this AON trial may have been too short to accurately assess this. In fact, it is possible that even the Phase II trial in MS (22 months) might not paint a fully accurate description. We look for the full AON data set to show at what point potential remyelination occurred in the trial and any subsequent signals of improvement in the RNFL," Jefferies analyst Thomas Wei said in an 8 January note.</p><p>Anti-LINGO-1 was generally well tolerated in RENEW with adverse event incidence and severity that was comparable across treatment arms. Treatment-related serious adverse events included two patients with hypersensitivity reactions occurring around the time of anti-LINGO-1 infusion and one patient with an asymptomatic elevation in liver transaminases that resolved after drug discontinuation.</p><p><b>The future in MS</b></p><p>The Phase II SYNERGY study is testing anti-LINGO-1 in relapsing forms of MS, but results from the fully-enrolled, 22-month clinical trial aren't expected until next year.</p><p>"We look forward to the SYNERGY results in 2016 to further advance our understanding of this molecule in MS, including a full dose response. The totality of the data from the two Phase II studies may provide us with a clearer understanding of anti-LINGO-1's clinical potential," Dr Sandrock said.</p><p>Sagient Research noted in a BioMedTracker report on 8 January that an effect on signal transduction in AON is the most important endpoint in assessing the anti-LINGO-1 potential in MS. The RENEW results with no effect on visual acuity, but an effect on neurophysiological outcomes (optic latency), show that the antibody therapy can improve signal transduction from the eye to the brain.</p><p>"This trial was a good proof-of-concept study showing the drug really does work on acute demyelination. That is, anti-LINGO stops the signal to stop the repair of myelin, resulting in more myelin repair. However, in MS, you are dealing with patients that have less of an acute injury. While the relapsed population will have had active disease in the last 12 months, it is difficult to believe there will be a large increase in myelin repair well after an active MS attack," according to the BioMedTracker analysis.</p><p>Sagient expects modest results in Biogen's 419-patient Phase II MS study with anti-LINGO-1 most likely to succeed as an add-on therapy immediately following relapses.</p><p>Anti-LINGO-1 is dosed concurrently with Biogen's Avonex (interferon beta-1a) in the SYNERGY study.</p><p>Acorda Therapeutics also expects to report data in early 2015 for its antibody drug that's designed to promote myelin repair. The therapeutic candidate rHIgM22 is being evaluated in stable MS patients in a Phase I clinical trial. </p><p>Acorda, which already partners with Biogen to market its drug Ampyra (dalfampridine) to improve walking for MS patients, sees rHIgM22 as potentially complementary to anti-LINGO-1. Acorda's monoclonal antibody appears to promote remyelination by stimulating oligodendrocytes to repair areas of demyelination, while anti-LINGO-1 blocks the inhibition of cells that produce myelin. </p><p>"It's not a race," Acorda chief scientific officer Andy Blight told <i>Scrip</i> prior to the release of Biogen's top-line RENEW results. "If either or both works, that would be a fine situation. The two approaches could be complementary as each may have a different effect."</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 340
+
+<p>After several months of questions about when Biogen Idec would reveal its first proof-of-concept data for the anti-LINGO development program, the company reported results from a Phase II clinical trial in the treatment of acute optic neuritis (AON) that gave no clear answers about the treatment's effects in multiple sclerosis (MS).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Biogens highly anticipated antiLINGO data fall flat
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150601T034633
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150601T034633
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150601T034633
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027460
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Biogen's highly anticipated anti-LINGO data fall flat
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199000150
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355938
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5e75f696-a6bc-40e6-b270-a76ff1cbd70a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

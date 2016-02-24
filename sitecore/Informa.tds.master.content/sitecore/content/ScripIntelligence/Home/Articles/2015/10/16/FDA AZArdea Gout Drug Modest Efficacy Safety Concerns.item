@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {A2843F57-86C3-4B90-8DE8-3B0B91AC194F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/16/FDA AZArdea Gout Drug Modest Efficacy Safety Concerns
+parent: {6AAE7279-2B4F-4136-849E-20689C005A44}
+name: FDA AZArdea Gout Drug Modest Efficacy Safety Concerns
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ed4fd80c-80b5-4a7b-9aa4-1cb94b22eb81
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+FDA: AZ/Ardea Gout Drug Modest Efficacy, Safety Concerns
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+FDA AZArdea Gout Drug Modest Efficacy Safety Concerns
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6176
+
+<p>An experimental gout drug from AstraZeneca plc unit Ardea Biosciences Inc., known as lesinurad, demonstrated only modest efficacy in clinical trials and has some concerning adverse cardiovascular (CV) and renal-related effects, FDA drug reviewers said on Oct. 21.</p><p>Regulators' analysis of lesinurad, which Ardea is seeking to market under the brand-name Zurampic, came ahead of an Oct. 23 meeting of the FDA's Arthritis Advisory Committee (AAC), which is convening to review the application for the investigational medicine as a treatment in combination with a xanthine oxidase inhibitor (XOI), such as allopurinol or febuxostat, for hyperuricemia associated with gout in adults. </p><p>Based on the briefing documents, Sagient Research's <i>BioMedTracker</i>, an affiliate of Scrip, only slightly lowered its prediction by 1% &ndash; from 98% to 97% &ndash; on the likelihood lesinurad would gain the FDA's nod, which was 10% above the average probability of US approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>Even with the modest efficacy and adverse effects, the <i>BioMedTracker</i> analysts said the briefing documents were "fairly mild," although they said it suggests an approval of lesinurad "may not be as clear cut as its three successful pivotal trials would suggest."</p><p>The efficacy of lesinurad plus XOI was assessed in three multiregional, randomized, double-blind, placebo-controlled, parallel group studies, known as 301, 302 and 304. </p><p>Those three trials involved 1,537 patients who failed to achieve target serum uric acid levels, despite treatment with a minimum of eight weeks of at least 300mg/day or 200mg/day of allopurinol in studies 301 and 302 or a "medically appropriate" dosage of allopurinol or febuxostat in the 304 trial. </p><p>The studies tested the urate lowering effect of lesinurad 200mg or 400mg once daily with a concomitant XOI. </p><p>The results of studies 301 and 302 demonstrated that a greater proportion of patients in the lesinurad 200mg plus allopurinol and lesinurad 400mg plus allopurinol treatment groups achieved the primary endpoint versus placebo plus allopurinol, regulators said.</p><p>But a dose-response effect between the two lesinurad plus allopurinol groups versus placebo plus allopurinol was only demonstrated in study 302, FDA reviewers pointed out.</p><p>While the differences in treatment responses between the treatment and placebo groups were consistently maintained and supported the durability of lesinurad's urate lowering effects, the FDA's scientists said the magnitude of the Ardea drug's urate lowering effect was "modest" in 301 and 302.</p><p>They observed that the results from the other trial, 304, were "less robust."</p><p>The reviewers also pointed out there were no significant additional clinical benefits of decreasing gout flares or the resolution or size of tophi demonstrated with either lesinurad 200mg or 400mg in the three studies. </p><p>They said there also was no improvement in the assessments for disability that were conducted in the trials, although the FDA's reviewers said that may have been due to the low level of disability at baseline for the patient populations in the studies. </p><p><b>CV, Renal Safety Concerns</b></p><p>The FDA must weigh those efficacy results against lesinurad's adverse effects, which included higher rates of deaths, major adverse CV events (MACE) and serious and non-serious adverse renal-related events. </p><p>Regulators said there was a consistent overall numeric imbalance against lesinurad in deaths that occurred during the controlled portions of studies 301, 302 and 304. </p><p>Overall, the reviewers said, the types of deaths were consistent with the risks related to the patient-reported underlying and concomitant medical conditions &ndash; hypercholesterolemia, hypertension, diabetes mellitus, chronic kidney disease and cardiovascular disease.</p><p>But the exposure-adjusted incidence rates for death in the lesinurad groups were low overall, with highly overlapping confidence intervals, making it difficult to draw definitive conclusions, regulators said. </p><p>They noted that MACE events were seen in all study arms, including the placebo plus XOI arm. </p><p>Ardea also studied lesinurad 400mg monotherapy in a six-month study, known as 303, versus placebo in patients with gout who had intolerance or contraindication to treatment with an XOI.</p><p>The 303 study, the FDA's scientists said, provided the "best" evidence of renal toxicity associated with lesinurad, which they said was "clearly" linked to a marked rise in the risk of reversible and non-reversible creatinine elevations and serious renal-related adverse events, including acute and chronic renal failure, which appeared to be dose-dependent, with a higher rate of observed in with the 400mg, versus the 200mg.</p><p>They noted there also was dose-dependent rate of adverse renal events in the 301 and 302 trials, although the "phenomenon" was not observed in the 304 study, in which both the lesinurad plus febuxostat treatment groups had higher rates of adverse renal events, versus placebo. </p><p>While all of the serious adverse renal events &ndash; acute and chronic renal failure &ndash; that occurred in the treatment groups ins studies 301, 302 and 304 were experienced by patients treated who got the 400mg plus XOI, there were two patients in the extension studies who got the 200mg of Ardea's drug plus XOI who developed acute renal failure that required hemodialysis, regulators said. </p><p>The FDA's reviewers said there were unanswered questions about the true extent of the reversibility of lesinurad's nephrotoxicity, particularly since some patients continued to have serum creatinine elevations more than 84 days after discontinuing the drug. </p><p>At the Oct. 23 meeting, the FDA's advisory committee is expected to asked to discuss the available efficacy and safety data, and whether the risk-benefit profile for the use of lesinurad in a more general gout population, such as the one studied, was adequately favorable.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 270
+
+<p>An experimental gout drug from AstraZeneca plc unit Ardea Biosciences Inc., known as lesinurad, demonstrated only modest efficacy in clinical trials and has some concerning adverse cardiovascular (CV) and renal-related effects, FDA drug reviewers said on Oct. 21.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+FDA AZArdea Gout Drug Modest Efficacy Safety Concerns
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151016T073525
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151016T073525
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151016T073525
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030120
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+FDA: AZ/Ardea Gout Drug Modest Efficacy, Safety Concerns
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361078
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042509Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ed4fd80c-80b5-4a7b-9aa4-1cb94b22eb81
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042509Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

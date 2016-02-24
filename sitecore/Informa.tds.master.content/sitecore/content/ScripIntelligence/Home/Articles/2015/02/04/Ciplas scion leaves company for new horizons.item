@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2684CB3D-DD26-4971-961E-5943B998E8DB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/04/Ciplas scion leaves company for new horizons
+parent: {71B77356-F6BE-4338-8E8E-DDD3D21DC0D9}
+name: Ciplas scion leaves company for new horizons
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f7e290a1-131f-4be7-b5bb-64927597f03d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+Cipla's scion leaves company for 'new horizons' 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+Ciplas scion leaves company for new horizons
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4711
+
+<p>Cipla's scion Kamil Hamied, son of vice-chair MK Hamied and nephew of chairman, Dr Yusuf Hamied, is leaving the Indian generic giant.</p><p>If the rumour mill is to be believed then Mr Kamil Hamied, who was part of the firm's management team, has decided to exit the firm with a view to chasing his own dreams. </p><p>Why this couldn't be done alongside his present role in Cipla is not very clear, though Cipla's top brass has claimed that the young scion's plans have been in the making all along.</p><p>Cipla's global CEO Subhanu Saxena told <i>Scrip</i> that Mr Hamied's move was part of a plan that had been in place even prior to his [Mr Saxena's] taking charge at Cipla's helm.</p><p>He said that part of the young Mr Hamied's growth and development plan included getting experience outside of India at the firm's UK arm and then to take "some time and get some leadership experience" outside Cipla. </p><p>"The best timing for that was when we felt that the professionalization has been successfully embedded &ndash;there's a team that will continue to lead and drive Cipla. So it's the perfect time for him to deepen and widen his horizon," Mr Saxena added.</p><p>Mr Kamil Hamied, previously Cipla's chief strategy officer, has been managing director of Cipla EU, the Indian's firm's UK-based subsidiary Ms Samina Vaziralli &ndash; Mr M K Hamied's daughter - continues to be part the core management team in Cipla.</p><p>The young scion's exit plans, though, come at a time when the Mumbai-based company appears to be in the midst of a bit of a churn at the top level. Cipla's country head (India) Sameer Goel, was reported to have <a href="http://%5bhttp:/www.scripintelligence.com/business/Cipla-India-head-Sameer-Goel-quits-357683%5d" target="_new">quit</a>, just over a year after he took charge at the firm amid speculation of potentially more movement at the top level. </p><p>Mr Kamil Hamied, who holds a bachelor of arts degree from New York University (US), had been earlier appointed by the Cipla board to hold "an office or place of profit as a member of the <a href="http://www.scripintelligence.com/business/Cipla-scion-Kamil-Hamied-now-part-of-management-team-300529" target="_new">management team</a>" in July 2010. The board had then proposed Mr Kamil Hamied's appointment as part of the management team for five years effective 26 August that year. The appointment of the young scion was keenly viewed by industry watchers, amid speculation that he was being groomed for the top job. </p><h2>Dynamic organization</h2><p>But Cipla's global CEO sought to strongly set aside any potential concerns around the firm's talent pool. </p><p>Mr Saxena told <i>Scrip</i> that any organisation should evolve like a "living organism" and adapt and change depending on the circumstances.</p><p>He noted how the firm's "associates" are very well regarded in the outside world and get approached for other opportunities, which is "quite normal" in a dynamic organization. In some cases, such changes are driven by changes in personal circumstances.</p><p>"Everyone who is part of the Cipla story has made a phenomenal impact over the past two years. Whilst we try and retain key talent, people move for various reasons," he said.</p><p>Mr Saxena also shared that a critical area of focus for the firm over the next 18-24 months was to build its leadership bench in the top 100 positions.</p><p>"We have a business with the next five years could be double the size of what it was a couple of years ago, so the need for growing the leadership pipeline is immense. We went through a phase of bringing talent in from the outside, but I think we now have enough talent within to grow and develop the internal bench," he explained.</p><p>Mr Saxena also noted that new growth avenues for Cipla had created growth and development opportunities for its associates. "As we have expanded, front-ending outside of India, we are seconding lot of our top talent into new markets such as South Africa, creating really good internal growth opportunities for our associates."</p><p>Equally, he mentioned how Cipla was creating "new pathways" for colleagues in technical functions as well, as the firm's manufacturing footprint increases.</p><p>Mr Saxena underscored that talent retention was going to be an area of key focus for the company, particularly in technical areas &ndash;quality and technical R&D &ndash; and added that the company had put in place programmes to ensure that Cipla can retain and develop talent.</p><p>"Overall our attrition rates are below industry and they continue to go down in critical areas. But the war for talent is a big one and one that I don't want to be complacent about."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 140
+
+<p>Cipla's scion Kamil Hamied, son of vice-chair MK Hamied and nephew of chairman, Dr Yusuf Hamied, is leaving the Indian generic giant.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Ciplas scion leaves company for new horizons
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150204T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150204T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150204T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028375
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+Cipla's scion leaves company for 'new horizons' 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357643
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042327Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f7e290a1-131f-4be7-b5bb-64927597f03d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042327Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

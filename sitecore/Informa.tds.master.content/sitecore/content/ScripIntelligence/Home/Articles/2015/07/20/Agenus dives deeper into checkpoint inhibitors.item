@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {B1A42A64-2944-4011-8AE7-C005FB68BC47}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/20/Agenus dives deeper into checkpoint inhibitors
+parent: {4A5C71DE-F86E-4022-98D9-F4BD70B5C95D}
+name: Agenus dives deeper into checkpoint inhibitors
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ba2b1f14-1251-4623-a93a-7fc8acfef1e6
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+Agenus dives deeper into checkpoint inhibitors
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+Agenus dives deeper into checkpoint inhibitors
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2481
+
+<p><p>Agenus is adding to its capabilities in checkpoint inhibitors with the licensing of antibody programs from Italy's Diatheva. </p><p>The Massachusetts biotech announced 20 July that it has gotten the worldwide development and commercialization rights to Diatheva's CEACAM1 (carcinoembryonic antigen cell adhesion molecule 1) program. Agenus will pay a total of $44m including upfront and early development milestones, and Daitheva is eligible for potential sales milestones and royalties on any products that result. The programs are currently preclinical. </p><p>CEACAM1 is a glycoprotein that is expressed on T-cells and is overexpressed in a variety of cancers, including lung, colon, melanoma, bladder and pancreatic cancers. </p><p>&ldquo;CEACAM1 is emerging as a powerful immune modulator, with significant evidence that blocking its interactions could strengthen immune cells&rsquo; attack on cancer,&rdquo; said Agenus CSO Dr Robert Stein. </p><p>The CEACAM1 program from Diatheva fits into the Agenus portfolio, which already includes several other checkpoint inhibitors that work against popular targets like PD-1, CTLA-4 and TIM-3. An important part of the immuno-oncology story is combination therapies; the licensing deal gives Agenus more room to experiment with different combinations. CEACAM1 has been shown in animal models to coordinate well in TIM3 and is complementary to PD-L1 &ndash; the most popular target in the immuno-oncology space. </p><p>&ldquo;Diatheva&rsquo;s anti-CEACAM1 monoclonal antibodies expand and complement our broad portfolio of checkpoint modulators and personalized cancer vaccines, with the potential to create best-in-class combination therapies for treating patients with cancer," said Dr Stein. </p><p>The deal complements another recent deal Agenus conducted, when it bought privately-held European biotech 4-Antibody for $10m in stock upfront and another $40m in potential earn outs. </p><p>More recently, Agenus inked a deal with Incyte to development combinations in the immuno-oncology space. Under the five-year partnership, Incyte and Agenus split costs and profits equally for checkpoint modulator programs targeted at GITR and OX40. Agenus is also eligible for royalties on TIM-3 and LAG-3 programs that Incyte is taking forward on its own. The biotech is also partnered with Merck & Co on some of these assets. </p><p>Expect Agenus to discuss its plans for the new programs during its 23 July earnings call. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+Agenus dives deeper into checkpoint inhibitors
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150720T210019
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150720T210019
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150720T210019
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029281
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+Agenus dives deeper into checkpoint inhibitors
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359446
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042424Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ba2b1f14-1251-4623-a93a-7fc8acfef1e6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

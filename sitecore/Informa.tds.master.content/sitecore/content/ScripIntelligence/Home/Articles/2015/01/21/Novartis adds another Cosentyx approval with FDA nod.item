@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {C0255ABF-8FC7-452F-8470-8CD363968740}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/21/Novartis adds another Cosentyx approval with FDA nod
+parent: {E851A7AE-FEE0-492C-8010-E83528C12841}
+name: Novartis adds another Cosentyx approval with FDA nod
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1026f9b1-101b-4efb-bef6-5f9732a355aa
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Novartis adds another Cosentyx approval with FDA nod
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Novartis adds another Cosentyx approval with FDA nod
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4739
+
+<p>The FDA on 21 January gave its blessing to Novartis to market Cosentyx (secukinumab) as a treatment for adults with moderate-to-severe plaque psoriasis who are candidates for systemic therapy or phototherapy.</p><p>Cosentyx, a first-in-class, fully human, monoclonal antibody (mAb), selectively binds to the proinflammatory cytokine interleukin-17A (IL-17A) and inhibits its interaction with the IL-17 receptor.</p><p>The drug will compete in the US in the psoriasis space against Celgene's newly approved Otezla (apremilast) and more established medicines, like Amgen&rsquo;s Enbrel (etanercept) and Johnson's and Johnson's Stelara (ustekinumab) (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Celgenes-Otezla-OKd-in-plaque-psoriasis-354098" target="_new">24 September 2014</a>). </p><p>Novartis boasts that Cosentyx is the first approved mAb that selectively binds to interleukin IL-17A, a naturally occurring cytokine involved in normal inflammatory and immune responses and plays a role in the pathogenesis of plaque psoriasis, one of the most common human skin diseases, which affects 7.5 million Americans and up to 125 million people worldwide.</p><p>Psoriasis, which is incurable and can be disabling, is characterized by red, scaly plaques that are itchy and vary in severity from localized areas to complete body coverage. Manifestations of psoriasis include functional limiting sites, including palms and soles, scalp, nails, genital regions and body folds.</p><p>"Plaque psoriasis can cause significant skin irritation and discomfort for patients, so it is important to have a variety of treatment options available to patients,&rdquo; said Dr Amy Egan, deputy director of the FDA's Office of Drug Evaluation III.</p><p>The US approval follows recent nods for the drug in Japan, Australia and Europe (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Novartis-and-Celgene-get-EU-approval-for-novel-psoriasis-therapies-356218" target="_new">19 January 2015</a>, <a href="http://www.scripintelligence.com/home/Novartis-wins-world-first-Cosentyx-approval-in-Japan-355867" target="_new">29 December 2014</a>).</p><p>Cosentyx's application in the US was backed unanimously by the FDA's Dermatologic and Ophthalmic Drugs Advisory Committee at a 20 October 2014 meeting (scripintelligence.com, <a href="http://www.scripintelligence.com/home/FDA-panel-backs-Novartis-psoriasis-drug-secukinumab-354570" target="_new">21 October 2014</a>, <a href="http://www.scripintelligence.com/policyregulation/FDA-reviewers-Novartis-psoriasis-drug-secukinumab-safe-effective-354533" target="_new">17 October 2014</a>).</p><p>Sagient Research's <i>BioMedTracker</i>, an affiliate of <i>Scrip</i>, had put the chances of Novartis' drug getting OK'd in the US at 99%, which is 12% above the average probability of approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>The FDA approved Cosentyx based on the efficacy and safety outcomes from 10 Phase II and III studies, which included over 3,990 adults with moderate-to-severe plaque psoriasis.</p><p>The drug's safety and effectiveness were established in four of those trials, which enrolled 2,403 participants with plaque psoriasis who were candidates for phototherapy or systemic therapy. Participants were randomly assigned to receive Cosentyx or a placebo. </p><p>Cosentyx met all primary and key secondary endpoints, demonstrating greater clinical response than placebo, with skin that was clear or almost clear, as assessed by scoring of the extent, nature and severity of psoriatic changes of the skin.</p><p>The FDA noted that Cosentyx is being approved with a patient-friendly medication guide, which warns about a greater risk of getting an infection in those taking the drug. </p><p>Regulators said serious allergic reactions have been reported with the use of Cosentyx, so they advised caution when considering the use of the drug in patients with a chronic infection or history of recurrent infection and in those with active Crohn&rsquo;s disease. </p><p>Diarrhea and upper respiratory infections were among the most common adverse effects observed during clinical testing. </p><p>Cosentyx also is being studied as a potential treatment for active psoriatic arthritis (PsA) and ankylosing spondylitis (AS). </p><p>Novartis said it plans to submit regulatory applications for the drug in AS and PsA this year.</p><p>For a breakdown of anti-inflammatory drugs, see <i>Scrip's World of Inflammation</i><a href="http://#http://www.scripintelligence.com/multimedia/archive/00248/world-of-inflammat_248471a.html" target="_new">dashboard</a>.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 215
+
+<p>The FDA on 21 January gave its blessing to Novartis to market Cosentyx (secukinumab) as a treatment for adults with moderate-to-severe plaque psoriasis who are candidates for systemic therapy or phototherapy.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Novartis adds another Cosentyx approval with FDA nod
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150121T233933
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150121T233933
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150121T233933
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027578
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Novartis adds another Cosentyx approval with FDA nod
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356199
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042235Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1026f9b1-101b-4efb-bef6-5f9732a355aa
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042235Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

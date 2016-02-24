@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {66DF38D5-C71A-4F5E-98D7-40808ED963F9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/14/Beware the carousel HMRC warns UK pharma of VAT fraud rise
+parent: {C175FE23-2601-4F4F-B3CE-DA1791987470}
+name: Beware the carousel HMRC warns UK pharma of VAT fraud rise
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 45342ee9-4d57-477e-a7e3-ae0f45cb7934
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Beware the carousel: HMRC warns UK pharma of VAT fraud rise
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Beware the carousel HMRC warns UK pharma of VAT fraud rise
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5188
+
+<p>UK pharma and medical supplies companies are at risk of potential EU VAT fraud, according to the UK's HM Revenue and Customs office (HMRC). </p><p>So-called "missing trader fraud" (also known as missing trader intra-community or carousel fraud) has previously been seen in the mobile phone, electronics and carbon credit markets, but HMRC believes pharma and medical supplies might now be a target. </p><p>PricewaterhouseCoopers Legal, a legal advice service, is warning pharma companies to be on "high alert." Experts at PwC Legal said in a 13 May statement that "this type of fraud can spiral quickly out of control."</p><h2>What is carousel fraud? </h2><p>Carousel fraud exploits the gaps in the VAT system across the EU. In its simplest form PwC Legal explains that fraudster will import goods VAT free, sell them on with VAT, but then disappear before paying the VAT to the tax authority.</p><p>This simple system though has encouraged a more sophisticated act, where "organized gangs create a false market which may result in the same goods being traded many times over," PwC Legal said. </p><p>Pharma companies' concern though should be on these organized groups of VAT fraudsters, as in the past genuine businesses have unwittingly been linked in the chain to make the fraud harder to detect. And the missing VAT liability will fall on those legitimate businesses. </p><p>Carousel fraud is not a new concept but it has not previously been such a high-risk area for healthcare companies. In 2012, a <i>FraudTrack</i> report noted that the top three industries most susceptible to fraudulent activity were public administration; finance and insurance; and the arts, entertainment and recreation. </p><p>One example of an "innocent trader" getting caught in a carousel trading scam is computer component distributor Bond House Systems, which received a &pound;13.2m VAT bill from HMRC in 2002 because the company was found to have missing traders in its supply chain.</p><p>Bond House, based in the north of England, had to freeze its business and lay off staff as a result of the large amount of VAT it supposedly owed. Mike Cheetham, founder of Bond House, said in a 2006 article about the scam, "Customs seemed to believe they could bill my innocent company for the crimes of people we had never met or even had the means to know about." Bond House did successfully challenge the UK government's stance, but it had to take the case to the European Court of Justice. It wasn't until four years later, in January 2006 that the ECJ found in favor of Bond House and ordered that the VAT sum it had been forced to pay should be returned to the company. </p><p>The problem is also one that is evolving. Andy Brown, a partner at PwC Legal, said: "Like a disease, missing trader fraud mutates each time the tax authorities stamp out one type. Once it infiltrates a sector the fraud can spread rapidly."</p><p>He advised that pharma companies should be discussing the potential risks with HMRC now so they can safeguard against the problem. "If a business finds itself unwittingly caught up in the fraud, it can be hard to untangle itself. The costs could be significant," he said. </p><p>HMRC has published a <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/366907/How-to-spot-missing-trader-fraud.pdf" target="_new">guide</a> on how to spot missing trader fraud on its website. HMRC says companies should be suspicious of businesses which show any of these characteristics: </p><ul><li>Newly established or recently incorporated companies with no financial or trading history</li><li>Contacts have a poor knowledge of the market and products</li><li>Unsolicited approaches from organizations offering an easy profit on high-value/volume deals for no apparent risk</li><li>Repeat deals at the same or lower prices and small or consistent profit</li><li>Instructions to make payments to third parties or offshore</li><li>Individuals with prior history of wholesale trade in "high value, low volume" goods such as computer parts and mobile phones. </li><li>Unsecured loan with unrealistic interest rates and/or terms</li><li>Instructions to pay less than the full price (and often even less than the VAT invoiced) to the supplier</li><li>Established companies that have recently been bought by new owners who have no previous involvement in your sector </li><li>New companies managed by individuals with no prior knowledge of the product, who hire specialists from within the sector</li><li>Entities trading from residential or short-term lease accommodation and serviced offices</li></ul><p>HMRC notes that companies which do not conduct intelligent risk assessments including "Know Your Customer" (KYC) checks, or ignore adverse indicators, risk involvement in fraud. As a result companies face heavy financial penalties and HMRC may refuse VAT claims. </p><p>Other European countries have started to crack down on carousel fraud, Belgium and the Netherlands have both set up Carousel Fraud units, while German and Dutch authorities have enacted legislation to pass missing trader VAT liabilities to other traders in the chain suspected of fraud. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 147
+
+<p>UK pharma and medical supplies companies are at risk of potential EU VAT fraud, according to the UK's HM Revenue and Customs office (HMRC). </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Beware the carousel HMRC warns UK pharma of VAT fraud rise
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150514T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150514T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150514T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028720
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Beware the carousel: HMRC warns UK pharma of VAT fraud rise
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358336
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+45342ee9-4d57-477e-a7e3-ae0f45cb7934
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

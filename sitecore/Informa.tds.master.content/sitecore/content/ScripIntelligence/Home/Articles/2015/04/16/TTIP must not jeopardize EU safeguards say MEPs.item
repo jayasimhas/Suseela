@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {CFACC07C-76BE-4EC4-A7A7-11A4D1F21EAD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/16/TTIP must not jeopardize EU safeguards say MEPs
+parent: {D1C4EE2F-AEA4-438A-AF54-BB06F27BAC15}
+name: TTIP must not jeopardize EU safeguards say MEPs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8c56d67d-57cc-4dd6-8973-db7042db7d2e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+TTIP must not jeopardize EU safeguards, say MEPs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+TTIP must not jeopardize EU safeguards say MEPs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3297
+
+<p> The Transatlantic Trade and Investment Partnership (TTIP) could lead to common standards in areas like the safety of medicines and medical devices, but it must not &quot;sacrifice certain European safeguards on the altar of free trade&quot;, an influential European Parliament committee has said. </p><p> In an opinion on TTIP adopted this week, the parliament's environment and public health committee (ENVI) says that trade and investment are not goals in themselves but should &quot;constitute a means to raise standards of living, improve well-being and public health and ensure full employment and the sustainable use of resources&quot;. </p><p> The committee has also come out against the controversial investor-state dispute settlement (ISDS) mechanism that is proposed in TTIP. </p><p> &quot;It would have been unthinkable for the environment committee not to reach a majority vote on a critical report on TTIP, since ours is the parliamentary committee that has secured robust legal protection for people, public health and ecosystems over past decades,&quot; said the lead MEP for the ENVI's opinion, Bart Staes of the Greens/EFA. &quot;This vote supports the public interest and citizens and does not reflect in any way anti-American sentiment nor is it anti-trade,&quot; Mr Staes declared. </p><p> In its opinion, the committee calls on the European Commission to ensure there are no trade-offs between economic goals and the interests of public health, food safety, animal welfare and the environment, and says the commission should recognize that in areas where the EU and the US have very different rules, &quot;there will be no agreement&quot;. Regulatory cooperation between the US and the EU &quot;should therefore be limited to clearly specified sectorial areas&quot;, the committee says. </p><p> It lists a number of areas where there should be a common approach, regulatory cooperation or mutual recognition, including the safety of pharmaceutical products and medical devices, and reductions in the use of antibiotics in livestock farming. </p><p> Other standards should be considered as fundamental and must not be compromised, in areas such as clinical trials, the organization of national health systems, pesticides, endocrine disruptors, animal welfare, and the EU integrated approach to food safety. </p><p> The committee calls on the commission to oppose the inclusion of ISDS in the TTIP, saying it should be &quot;up to the courts of the EU and/or of the member states providing effective legal protection based on democratic legitimacy&quot; to decide on disputes. </p><p> It also says the commission should ensure that the technical barriers to trade (TBT) chapter in the TTIP does not restrict the ability of the EU and the member states to adopt measures aimed at reducing consumption of certain products such as tobacco, foods high in fat, salt and sugar, and the harmful use of alcohol. </p><p> As it is not the parliament's lead committee on the TTIP, the ENVI's views will not have as much clout as they have had in cases where it was the lead committee, such as the clinical trials Regulation approved last year. Its opinion will be forwarded to the international trade committee, which is responsible for leading the parliament's TTIP negotiations. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 305
+
+<p> The Transatlantic Trade and Investment Partnership (TTIP) could lead to common standards in areas like the safety of medicines and medical devices, but it must not &quot;sacrifice certain European safeguards on the altar of free trade&quot;, an influential European Parliament committee has said. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+TTIP must not jeopardize EU safeguards say MEPs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150416T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150416T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150416T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028449
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+TTIP must not jeopardize EU safeguards, say MEPs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357828
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8c56d67d-57cc-4dd6-8973-db7042db7d2e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {09F4D48F-7597-4AFF-BC51-868605E13C83}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/18/Who Is Sean Bohen
+parent: {CB6FF202-8CE5-4A7D-A8CE-6DB1F8FB3621}
+name: Who Is Sean Bohen
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 88f07ded-6ff3-474c-b913-eed2afa41538
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 21
+
+ Who Is Sean Bohen?  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 17
+
+Who Is Sean Bohen
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4130
+
+<p> Respected American scientist Sean Bohen made headlines Monday with news he will move to AstraZeneca PLC on September 15 from Genentech Inc., the biologics unit of Roche Holding AG where he has been senior vice president in charge of early clinical development. The California-based division, known in the jargon as gRED, has notched up a legendary string of cancer drug successes, and Bohen played a notable part in many of them. </p> <p> <img src="-/media/4761A82B870447BA9074C66898CD4E1B.ashx"> </p> <p> <i>Sean Bohen, joining AstraZeneca as executive VP global medicines development and chief medical officer</i> </p> <p> During his 12 years at Genentech &ndash; he joined in 2003 - Bohen oversaw preclinical and clinical development therapy programs, including oncology, respiratory and autoimmune diseases. gRED has some 1,100 researchers and scientists covering a wide range of cutting-edge science ranging from molecular biology and protein chemistry to bioinformatics and small molecule drug discovery. </p> <p> As Genentech's vice president of immunology development, Bohen led the clinical development group for cancer therapy MabThera/Rituxan (rituximab) and anti-CD20 antibody ocrelizumab in multiple sclerosis, and the respiratory group leading development of Xolair (omalizumab) for asthma and Pulmozyme (Dornase alfa) for cystic fibrosis. </p> <p> Prior to heading the early clinical development group within gRED Bohen brought together Genentech teams from exploratory clinical development, clinical diagnostics and early development to map and implement the early development and clinical strategy for Genentech's early stage programs and integrate diagnostics programs to support programs at all stages of development - an increasingly crucial aspect of cancer care as drugs become more personalized and focused on gene and molecular targets. </p> <p> And as an associate director in bio-oncology exploratory clinical development, Bohen's group led the clinical strategy of hematology pipeline programs and Genentech's systemic hedgehog inhibitor (Hh) program, producing breakthroughs in the Hh signaling pathway in basal cell carcinoma and medulloblastoma, thereby giving support to the notion that the Hh pathway also contributes to growth of other types of cancers. Bohen also notably led the project for Kadcyla (ado-trastuzumab emtansine), the first HER2-targeted treatment of its kind for metastatic breast cancer, bringing the program into the Genentech development portfolio. </p> <p> It's little wonder then that AstraZeneca is thrilled about <a href="http://www.scripintelligence.com/home/AstraZeneca-Installs-Genentechs-Bohen-To-Head-Late-Development-360085" target="_new">Bohen's decision to join them as executive vice president of global medicines development and chief medical officer</a>, replacing Briggs Morrison. &quot;We are really excited internally. Sean is a tremendously bright and respected scientist with a strong oncology pedigree, and that is a key area for us: AstraZeneca expects oncology to account for one quarter of our revenue in the long-term,&quot; said Esra Erkal-Paler, AZ's head of global media relations. &quot;AZ attracting such an experienced and inspiring R&amp;D leader is testament to the company's progress and strength of its pipeline.&quot; </p> <p> One such drug is AZD9291, a third-generation EGFR inhibitor being developed for lung cancer treatment and which the company recently filed with US and European regulators. </p> <p> Bohen already has a working relationship with AstraZeneca's CEO Pascal Soriot, who had a variety of leadership positions at Roche, including COO, head of pharma medicines, and even CEO of Genentech, where he stepped in to lead the integration when the biotech was acquired outright by Roche. Soriot left the Swiss drug maker in October 2012 to take over at the British pure pharma. </p> <p> Bohen will now move from California to the US East Coast, where AZ's biologics division MedImmune is based in Gaithersburg, Maryland. The firm is currently in the process of relocating its global headquarters to Cambridge in the UK. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 438
+
+<p> Respected American scientist Sean Bohen made headlines Monday with news he will move to AstraZeneca PLC on September 15 from Genentech Inc., the biologics unit of Roche Holding AG where he has been senior vice president in charge of early clinical development. The California-based division, known in the jargon as gRED, has notched up a legendary string of cancer drug successes, and Bohen played a notable part in many of them. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 17
+
+Who Is Sean Bohen
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150818T183322
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150818T183322
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150818T183322
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029589
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 21
+
+ Who Is Sean Bohen?  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360011
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042439Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+88f07ded-6ff3-474c-b913-eed2afa41538
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

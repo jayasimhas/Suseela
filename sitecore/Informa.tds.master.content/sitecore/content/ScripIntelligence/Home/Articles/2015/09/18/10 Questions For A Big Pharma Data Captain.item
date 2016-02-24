@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {06AC3457-3381-418E-91DF-DE7104C2500B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/18/10 Questions For A Big Pharma Data Captain
+parent: {699941D8-9EE7-4139-9D7E-1D993A9625CE}
+name: 10 Questions For A Big Pharma Data Captain
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6462b8b4-a6b0-431a-95c8-910d90ec2301
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+ 10 Questions For A Big Pharma Data Captain  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+10 Questions For A Big Pharma Data Captain
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13950
+
+<p> James Weatherall is the head of the Advanced Analytics Centre set up by AstraZeneca two years ago. Dr Weatherall argues that pharma needs to get on top of its data strategy and rationalize its efforts if it is to take full advantage of the tremendous opportunity that big data, data science and data analytics offer to the industry. He spoke to <i>Scrip</i>'s Eleanor Malone about his work at AstraZeneca, where industry is up to vis-&agrave;-vis big data, and the challenges and opportunities it will face in this arena in the coming years. </p> <p> <img src="-/media/23B474F1D9784036AB5AA4BD3814E41C.ashx"></p> <p> <i>James Weatherall, head of AstraZeneca's Advanced Analytics Centre</i> </p> <p> <b>Scrip: How did you come to be heading up the AZ Advanced Analytics Centre?</b> </p> <p> <b>James Weatherall</b>: I actually did a post-doctorate fellowship in high-energy particle physics, looking into things like the difference between matter and antimatter. Although my academic choices meant that I only formally studied biology up to the age of 14, there are parallels with where I am today and my background in academia, where I was doing experiments that generated huge amounts of data and considering how to design software to process it, and how to apply statistical rigor and computer science principles to the analysis of it. </p> <p> I went on to work as a scientific software consultant, where I got a couple of gigs in pharma and then joined AstraZeneca as a biomedical informatics scientist. Over the last few years I started looking to progress in the company and move into a position of leadership. </p> <p> I had seen a number of pockets of smart people doing this kind of work across the organization, statisticians, informaticians, scientific programmers, and I saw the value in bringing these pieces together. Getting people with different perspectives together gives you better triangulation on problems, and a better critical mass to innovate and look at new methods and new ways of doing things, so I kept pushing for it. </p> <p> <p> <b>Scrip: What does the Advanced Analytics Centre do for AZ?</b> </p> <p> <b>JW: </b>We are a team of circa 30 quantitative and computational scientists, using computer science and data-driven techniques to solve clinical research problems. </p> <p> <p> <b>Scrip: What challenges have you faced in setting up this center?</b> </p> <p> <b>JW: </b>As with any business proposition, the company had to be convinced that they wanted it. At the time, I was in a more junior position in the organization, but I believe in creating one's own destiny, and that the best organizations evolve by listening to people at the grass roots and then making some courageous leadership decisions. </p> <p> When we got the go-ahead, we had to create a sense of identity for the group, because the people that came in from different parts of the business hadn't worked in this way before. Then, because we're a distributed organization, split across the UK, US and Sweden, the geographical distance can make things a bit more difficult in terms of joint working. </p> <p> We also had the challenge of getting momentum going for what we could do. We had to make a splash, create some ripples in the pond and start to demonstrate to folk what we can do. So in the first 6-12 months we had to push through, doing work at risk and not waiting for work to come to us. </p> <p> <p> <b>Scrip: As a standalone unit, how do you reach out and involve yourselves in the activities of the rest of the company?</b> </p> <p> <b>JW: </b>Because the center is an unusual, possibly unique, concept in pharma, it does need a lot of work from us to build awareness in the wider organization of our mission and purpose. Closer to home, in the biometrics function, say, folks are kindred spirits with the same background and training as us, so there's much greater awareness than further afield in the organization: in the medical fraternity, for instance, we have more work to do to make sure our physicians and medical scientists know when to come to us with particular questions. </p> <p> We have one key mechanism to reach out to other parts of the organization. We have six therapy area leads within the AAC &ndash; oncology, diabetes, cardiovascular, infectious diseases, inflammatory and autoimmunity, and respiratory diseases. They can come from any of the skills groups within the AAC, but the important thing is that they have a seat on the biometrics leadership team for that therapy area, and they sit there as equal partners, hearing what's keeping that team up at night, making suggestions and advertising what we're cooking up within the AAC. </p> <p> More organically, I ask my leadership team to be advocates for our group, and they're pretty good at that: they go out and engage with relevant stakeholders. </p> <p> <p> <b>Scrip: Give us a taste of the projects you are working on.</b> </p> <p> <b>JW:</b> We spend about 60% of our time on tactical work, by which I mean in-the-moment problem solving, and 40% on strategic work, which is about capability build. An example of tactical work is putting together a SWAT team to swoop in and investigate a signal adverse event for a medicine in development. As the tactical work exposes us to problems that come up repeatedly in the business, around data or computing, we then put together a larger strategic project to create more generic solutions, such as the rollout of a guidance document or a software toolkit. </p> <p> At the moment we've got a clinical data mining project that's quite exciting. The clinical research environment in pharmaceuticals can be something of a conservative arena in terms of data analysis. That's not necessarily criticism, that's an observation based on what's required to develop a medicine and to have a sensible conversation with the regulators about whether that medicine should be released into the wild. What we've done is introduce a framework for conducting more open-ended post hoc data exploration on some of that clinical trial data. And that's really a change of mind set for AstraZeneca and for the industry: opening up some of that data &ndash; even for a drug that's still live &ndash; to a structured exploration approach. We are using machine learning and artificial intelligence techniques to learn from the data. </p> <p> Another project is the clinical trial design toolkit. The idea is that teams designing clinical trials can come to the AAC and ask for a comparative design report, in which they can look at different ways of designing their trials and compare them according to a standard set of operating characteristics. The aim is to give teams the quantitative evidence they need to select the best design. </p> <p> <p> <b>Scrip: How does the work of your center compare with what's happening in other pharma companies?</b> </p> <p> <b>JW: </b>I've not come across anything quite like the AAC. Some companies have similar groups but without all the skills tied together. The Advanced Analytics group at Eli Lilly has done some excellent work that we've sought to emulate. That group has the statistics and computing elements that we have, but not the informatics pieces. There are some really effective statistical methods or statistical research groups at other organizations, including Novartis, or the statistics in drug development group at Quintiles, where they've sought to bring together a blend of really high-end statistical consultants. They do some great work, but it's a slightly different focus from the AAC in that they're really concentrated on the statistics skillset rather than the broader statistics plus computing and informatics that we do. </p> <p> <p> <b>Scrip: We hear a lot about the transformative power of big data and its potential in healthcare. What are the key things that pharma needs to do to harness that power?</b> </p> <p> <b>JW: </b>Electronic health information, such as electronic healthcare records, insurance claims databases and disease registries, are taking on a truly huge scale these days. The techniques required to get scientific insight out of those data sources are a bit different from traditional statistical techniques. There's a competitive edge in really being able to leverage those kinds of datasets, which are a potential gold mine of information. </p> <p> A second area is genomics information, and one might look at marrying that with electronic health information at the patient level. This would move us closer to the vision of truly individualized treatment or personalized medicine. </p> <p> The third area is online content and social media. What are patients and physicians saying, and how does that inform us about areas of unmet medical need, disease burden, willingness to participate in clinical trials, and the effectiveness and perceived side effects of medicines. There are some interesting projects looking into how to do pharmacovigilance with social media. This was absolutely unthinkable a few years ago, but both industry and regulators now realize it is something we must tackle. Can you reasonably ignore a groundswell of opinion online that's possibly giving you an early sign of something you need to be aware of? That's an area which is hugely messy, but smart computer scientists have a habit of finding a way around that mess and deriving insight from the data. </p> <p> <p> <b>Scrip: Conversely, pharma sometimes seems slow to adopt new possibilities. What are the challenges that hold it back?</b> </p> <p> <b>JW: </b>Pharma is a very fast moving and highly competitive field at the moment. Certain segments are becoming a real race to be first in class, PD-L1 inhibitors in immuno-oncology for instance: companies are charging after it headlong. It's great for patients to have that level of competition, but for companies it means that their resources and their attention are much more likely to be diverted into the rush to win, and that can distract them from the longer range thinking that is required to put the right resources in place at the right time to benefit from some of the ideas I've outlined. </p> <p> <p> <b>Scrip: What can pharma learn from other industries when it comes to analytics, data science and big data?</b> </p> <p> <b>JW: </b>Some industries truly value data as an asset. It might appear on the balance sheet, or a chief data officer or chief data scientist sits on the senior executive team. I often wonder if pharma companies should think about having a chief data officer who really owns and stewards the data strategy of the company. We need to think about our overall approach to collecting scientific and biomedical data, and how we maximize its utility and value for patients. Valuing data as an asset, not just a one-time commodity which post regulatory submission is not given much attention. </p> <p> If you look at how other sectors use that information, it's to understand their customers better, so that then they can offer better products to those customers and give them a more personalized experience. </p> <p> Our ultimate customer is the patient. It stands to reason that better understanding of the information that's produced by, for or about patients would put us in a more advantageous position to make medicines that make a meaningful difference to their lives. If we can change our mind set and our strategy, and start to give data the sort of prominence it deserves, maybe via a chief data officer or something else, that's a key thing the pharmaceutical industry could learn from other industry sectors. </p> <p> <p> <b>Scrip: Fast forward 10 years. How will data analytics have transformed AZ and the industry in general, and what will the tangible benefits be?</b> </p> <p> <b>JW: </b>We'll still need people with solid statistical training to analyse clinical trials, but there's going to be increasing benefit from analysing the whole ecosystem of data that sits around the periphery, and that needs a more flexible and diverse skillset that will require a different background and training. That's why you see a lot of data scientists coming from engineering and physics, where they've had to do a lot of practical thinking and problem solving in addition to having a lot of quantitative and computing skills they bring with them as well. </p> <p> Another thing that will change is how drugs are approved by the regulators, and the way evidence is served up and discussed with health authorities that pay for our medicines. We're developing medicines now sometimes at an accelerated rate, as requested by authorities, which doesn't always allow us to collect all the data we might during a standard clinical trial. In 10 years' time, I'd like to see a more diverse set of options for what evidence will look like, and that's what data science and analytics is going to bring to the table. More of a toolkit. At one end of the spectrum is the regulatory, locked down predefined clinical trial, randomized, double-blinded and controlled, and at the other is completely open-ended data mining. In between you've got everything else: pragmatic trials, randomized observational trials, registry-based trials, various studies you could do in e-health systems, and I'd like to think we could pick the best options from that evidence toolkit to generate the evidence that we and our external stakeholders really need to evaluate whether medicines are effective and safe. </p> <p> There are people today who say we simply can't use evidence generation mechanism X because it doesn't use randomization, or evidence generation mechanism Y, because we think that data's biased. The analytics ninjas are going to find smart ways around those problems and open up the eyes of the world to a broader set of dimensions in which we can evaluate medicines. </p> <p> I'd like to see in 10 years' time that data science and analytics will have opened people's eyes. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 550
+
+<p> James Weatherall is the head of the Advanced Analytics Centre set up by AstraZeneca two years ago. Dr Weatherall argues that pharma needs to get on top of its data strategy and rationalize its efforts if it is to take full advantage of the tremendous opportunity that big data, data science and data analytics offer to the industry. He spoke to <i>Scrip</i>'s Eleanor Malone about his work at AstraZeneca, where industry is up to vis-&agrave;-vis big data, and the challenges and opportunities it will face in this arena in the coming years. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+10 Questions For A Big Pharma Data Captain
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150918T050002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150918T050002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150918T050002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029830
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+ 10 Questions For A Big Pharma Data Captain  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360513
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6462b8b4-a6b0-431a-95c8-910d90ec2301
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042453Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

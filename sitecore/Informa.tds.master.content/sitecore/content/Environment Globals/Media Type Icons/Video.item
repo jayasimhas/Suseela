@@ -6,18 +6,18 @@ path: /sitecore/content/Environment Globals/Media Type Icons/Video
 parent: {C00E39E4-3566-4307-93AE-8471769D6B36}
 name: Video
 master: {00000000-0000-0000-0000-000000000000}
-template: {59031044-D8E1-4FE2-8FD7-99BFA5D22EC5}
-templatekey: Media Icon Types
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
 
 ----version----
 language: en
 version: 1
-revision: dcce6818-a24d-420f-bbb6-92aa3a0bcaaf
+revision: 093f1d2e-914f-4dcf-83d1-38085aa175dd
 
 ----field----
-field: {629D92C9-6373-4DBB-9A46-7872C829CEC1}
-name: Name
-key: name
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
 content-length: 5
 
 Video
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-dcce6818-a24d-420f-bbb6-92aa3a0bcaaf
+093f1d2e-914f-4dcf-83d1-38085aa175dd
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151230T211111Z
+20160219T172325Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

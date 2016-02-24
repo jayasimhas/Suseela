@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {466B2496-36B0-408F-9720-0CD4E7E5B06A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/02/EXECUTIVE ROUNDTABLE Part 3 A great time for dealmaking in biotech
+parent: {A4DA0C5F-4495-437C-8ACE-4424E2BEFF66}
+name: EXECUTIVE ROUNDTABLE Part 3 A great time for dealmaking in biotech
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 30610dce-ea86-46b3-a41d-cb0bb7d728f6
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+EXECUTIVE ROUNDTABLE: Part 3; A great time for dealmaking in biotech
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+EXECUTIVE ROUNDTABLE Part 3 A great time for dealmaking in biotech
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 16051
+
+<p>Executives from six US and EU biotechnology companies who spoke with <i>Scrip Intelligence</i> agreed that it's great to commercialize novel therapies without a partner and retain all financial rewards, but for any biotech firm that's looking for a deep-pocketed collaborator, now is a good time to be negotiating deals.</p><p>The biotech executives took some time off from meeting with investors during the 33rd Annual JP Morgan Healthcare Conference from 12 to 15 January in San Francisco to participate in a roundtable discussion moderated by <i>Scrip</i>'s global director of content Mike Ward and US West Coast editor Mandy Jackson. </p><p>Part One provided insights into the fundraising environment for biotech companies and Part Two covered regulatory views and reimbursement challenges (scripintelligence.com, <a href="http://www.scripintelligence.com/home/EXECUTIVE-ROUNDTABLE-Part-1-Fundraising-in-2014-and-the-outlook-for-2015-356764" target="_new">16 February</a> and <a href="http://www.scripintelligence.com/home/EXECUTIVE-ROUNDTABLE-Part-2-Regulatory-responsiveness-and-reimbursement-challenges-356784" target="_new">17 February 2015</a>). </p><p>Roundtable participants were: Jeremy Bender, chief business officer at Sutro BioPharma; John Haurum, CEO of F-Star; Friedrich von Bohlen, chairman of CureVac and managing director of the company's main investor dievini Hopp BioTech (SAP founder Dietmar Hopp's investment fund); CEO Robert Ryan of Scioderm; Stanley Erck, president and CEO of Novavax; and Mark Boulding, executive vice president and chief legal officer at PTC Therapeutics.</p><p><p><b>Mike Ward, Scrip</b>: Mark, you raised the point about how big pharma has kind of lost its credibility in regard to drug pricing. We also hear that ultra-orphan drugs don't necessarily need pharma, because the market is really restricted. And there's access to capital right now for little biotech companies. So, against that backdrop, normally when there's been plenty of cash available, there hasn't been the need to have partners in the same way. And if you don't need partners, has the dealmaking environment shifted in any way?</p><p><b>Mark Boulding, PTC</b>: It's certainly changed our perspective on it. When we were a younger company, we never thought we'd go it alone in Europe. It seemed a very difficult problem for an American company &ndash; every country in Europe with its own regulations, its own reimbursement system. But then having had a chance to look at others do it and being coached by mentors in the industry who have done it themselves, we decided to go it alone. </p><p>[<i>PTC won European Commission approval in August for Translarna (ataluren) in the treatment of nonsense mutation Duchenne muscular dystrophy</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/PTC-wins-conditional-EU-Translarna-approval-353208" target="_new">5 August 2014</a>)]</p><p>It's not that hard. There are people you can hire to help you. So, why would you partner your asset, take your asset and give it to somebody else outside the US, which is a classic small American company thing to do? Why not keep it and keep the upside, but also control the message, control the interactions with the patients? </p><p>Now, on the other hand, if you're the kind of company &ndash; and we're this kind of company &ndash; where you have a lot of stuff in your pipeline, we're still looking at things that we can't do ourselves where we're not specialists, like antivirals and antibiotics. That's something we're not likely to build in the near term, so we're looking at partnering those programs at the right time. But I think it all depends on what kind of product you have and whether it's amenable to a small company doing it on its own. </p><p><b>Jeremy Bender, Sutro</b>: I would echo that. Sutro focuses primarily in the oncology space and the concept of commercialization downstream, which we're a long way from, is much less daunting than it was in the past. But, the concept of really maximizing your opportunity for successful products in clinical development, that's become more complicated. I think the scale and scope of what we need to do, especially if you're in the immunotherapy field or combined with immunotherapy products, has made cancer more complicated. The rationale for a partner, independent of the dollars, has become stronger if you're a small company.</p><p>[<i>Sutro expanded a collaboration with Celgene in October to develop antibody-drug conjugates and bi-specific antibodies. The deal is worth more than $1bn and it gives Celgene an option to buy Sutro</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/home/3Q-EARNINGS-Celgene-surges-on-growth-commits-to-larger-Sutro-deal-354642" target="_new">24 October 2014</a>).]</p><p><b>Mark Boulding</b>: The danger of partnering too early is that the bigger organizations are very risk averse. Nobody ever lost their job in big pharma for killing their programs, especially if it was a partnered program. But for a smaller company, you've only got one baby, so you've got to make sure before you terminate a program, that you've exhausted every option.</p><p><b>Mike Ward</b>: Back in the 1990s there was the concept of a FIBCO, a fully-integrated biotech company. When we see what large biotech companies like Celgene and Gilead are doing, are we seeing that investors are going to back the concept of a FIBCO again? Will we see the return of the FIBCO? </p><p><b>Mark Boulding</b>: We're trying to do it, but it's very hard. There's a lot of investor skepticism. [And then] the difficulty becomes, when you've become successful and you're commercial, the next question is, "OK, well what have you got now?" If you're going to be a FIBCO, you have to have a basket of innovation. That's very hard to fund at the private company stage.</p><p><b>Jeremy Bender</b>: I think there's another big industry dynamic at play that makes a FIBCO on the scale of a Gilead or a Celgene really difficult. That is that the big companies are always hungry for big commercial stories and growth. So, getting to the point where you have a viable FIBCO with a commercial asset or two that are going to fuel long-term earnings as well as reinvestment in the pipeline that will then allow you to keep growing, having that entity survive on its own today is hard. </p><p>There's almost no value that's too high for a big company to pay for that. Making it through that $10bn phase to get to the $50bn phase is not trivial, because you're going to have big companies coming after you. Somebody's going to have strategic problems and want whatever it is that you have.</p><p><b>Friedrich von Bohlen, CureVac</b>: I think with the FIBCO, there is some value in this again. When historically drugs were small molecules, you had a company that knew how to deal with chemistry. Then came the antibodies and someone who knew how to ferment antibodies or bacteria or whatever you had to produce them. </p><p>Now with all of these new drug classes, I mean for CureVac with messenger RNA (mRNA), we have our own production. No one else in the world has adjacent production. [Sutro does] bi-specifics and now the T cell therapies are coming. Genentech and Amgen, they do not know better than you do, or we do, how to do this. We found that having this production knowledge is an asset. </p><p>[<i>CureVac's partnerships include a deal worth up to $601m with Boehringer Ingelheim to develop mRNA)-based oncology vaccines</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/home/CureVac-propels-cancer-vaccine-in-601m-Boehringer-Ingelheim-deal-354023" target="_new">19 September 2014</a>).]</p><p><b>Mike Ward</b>: Do we get a sense of where the balance of power is between the pharmaceutical companies and biotechs, because we know the pharmaceutical companies are desperate for innovation? They've struggled with an innovation deficit for the last two decades. When the gas had been switched off biotechs, it was a buyer's market. Is it different now? John, F-Star got a decent upfront from Bristol-Myers for something that's quite early-stage.</p><p>[<i>F-Star negotiated a $475m agreement with Bristol-Myers Squibb in October that gives BMS an option to buy the private company's F-Star Alpha subsidiary, a business unit that's developing the HER2-targeting antibody therapeutic FS102</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Bristol-Myers-commits-up-to-475m-for-F-star-option-354723" target="_new">29 October 2014</a>).]</p><p><b>John Haurum</b>: That deal would not have been possible two years ago. I think the environment has shifted. The interplay between those early, VC-backed companies and the industry &ndash; the big companies that have this firepower &ndash; that has become one part of the chain. We also had multiple companies interested in the asset, so there was an element of competition that, in part, explains the price. </p><p>When F-Star was a little younger, we did deals with Boehringer Ingelheim and Merck Serono, so there was a more conventional licensing agreement where the partner will nominate a target, they will pay a couple of million, but they're not really creating any value for the company. But it was important at that time to have that collaboration, because it forced us to get the ship to work. Once that happened, and now with this BMS transaction, we're no longer interested in those back-loaded, milestone and royalty deals. </p><p>But with the assets and our model [to spin out assets in separate subsidiaries], we can turn the structure on its head and say we're going to keep the company and we're going to have individual programs that will sit in their own entity [that we'll sell off based on certain data milestones]. Then we'll actually do exits rather than create this sort of artificial story about building a company, but in the end hoping for a wholesale exit, which is hard to articulate for staff and investors. </p><p><b>Jeremy Bender</b>: There's one thing in my experience that really differentiates Celgene from other companies, and maybe Gilead too. I think those are two prototypical companies who do internal R&D and a lot of that has been successful. </p><p>But the people who are in R&D there, the people who have to judge external innovation, they want to do it and they understand that the company depends on them to do so. I don't know if they're incented appropriately or if their cultures have grown up differently, but they do it. And they're honest with themselves about the data that they see internally versus externally and they make decisions and recommendations accordingly. It's really, really difficult for the traditional big pharmas to do that. </p><p>If big companies can't maintain that objectivity about what real value is in the R&D process, it's not going to work. </p><p><b>Mike Ward</b>: The partners for companies like yourselves, is it the big biotechs, is it disruptive technology companies or is it big pharma?</p><p><b>Mark Boulding</b>: I think it depends what you're partnering and why you're partnering it. I think all of those things are possible, depending on what your asset is, whether you want to try to keep it or share it, whether they have special expertise that you lack. </p><p>The other thing that we're finding interesting in the commercial stage is that you're not necessarily going to do it in every single market, you're going to find in some smaller territories that you're going to want to partner it. In some of the emerging markets, I'm impressed with the distributors. Something that we never thought we'd do is meet with some of these distributors and they're incredibly intelligent people that have developed amazing markets in these smaller countries. That's great for innovation and those are great companies.</p><p><b>Mike Ward</b>: The fact that you're all in biotech is another way of saying you're all optimists. You can't be in biotech and not be optimistic. What do we anticipate that the next 12 months is going to be like? Are we going to have another stellar year? How do you think the year's going to go in terms of financing, access to capital and partnering? And what's the one thing that keeps you awake at night?</p><p><b>Mark Boulding</b>: I can answer both of those with one thing. I think a long boom is possible. I think we can see this level of market persist, but only if people understand the value of it, the value that it delivers in terms of treatments for patients, in terms of finding cures for diseases.</p><p><b>Stanley Erck, Novavax</b>: I've been around this long enough to see many downturns, so I would've never predicted that we'd have a good 2014 in 2011, which was a pretty good year and then in 2012 I never would've predicted that it would last until 2014, because it never has lasted this long before. </p><p>Having said that, being a biotech CEO and an optimist, I don't see any reason why 2015 won't be as good as 2014, because there's going to be yet more delivery of good data and products approved. It's going to have to be something non-biotech, whether it's ISIS [the Islamic State in Iraq] or [Russian president Vladamir] Putin or somebody else. </p><p>[<i>Novavax is moving new programs into the clinic this year. The public company recently began testing an ebola vaccine in humans, but its most advanced programs are Phase II vaccines for respiratory syncytial virus (RSV) and influenza</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-starts-human-testing-of-Ebola-vaccine-356735" target="_new">12 February 2015</a>, <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-may-take-nano-RSV-vaccine-forward-without-pharma-341800" target="_new">5 April</a> and <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-prepares-for-new-BARDA-funded-flu-studies-raises-cash-346810" target="_new">25 September 2013</a>).]</p><p><b>Robert Ryan, Scioderm</b>: I'm optimistic. When I look at the approvals that are coming out now, they're more novel, they're more targeted. There was a stage when there were more reformulations and more repackaging to extend the life cycle. I think the delivery of novel medicines is going to continue. We obviously need medicines, and better medicines that are more specific or provide better efficacy. I think that this year is going to be like last year. I don't see a downturn at least in terms of those type of medicines. </p><p>[<i>Scioderm won a breakthrough therapy designation from the US FDA for SD-101 in the treatment of Epidermolysis bullosa (EB) and began a Phase II clinical trial in early 2014 to test the drug in EB</i> (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-bestows-breakthrough-on-AbbVie-hep-C-combo-Scioderm-fragile-skin-therapy-342863" target="_new">7 May 2013</a> and <a href="http://www.scripintelligence.com/home/BioNotebook-EpizymeCelgene-Aldexa-Halozyme-Ignyta-Synageva-Scioderm-349120" target="_new">7 January 2014</a>).]</p><p><b>John Haurum</b>: I agree. What keeps me awake at night is nothing really. I'm thinking about what we need to do that's bringing the next wave of products through our pipeline. Having sold our lead program, we're back in the throes of discovery and finding our next products.</p><p><b>Jeremy Bender</b>: In terms of public market deals, my expectation is that they'll slow down a little bit. Last year was a breakneck pace. I don't know that there's going to be quite the deal flow that there was based on what I hope is more discriminating due diligence work. </p><p>I have no idea what will happen valuation-wise. I'm sure there's going to be some ups and downs for companies when their data packages come out. I hope there is, but generally I think we'll probably be looking back at another decent year for the industry &ndash; one in which quality companies can raise money.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 327
+
+<p>Executives from six US and EU biotechnology companies who spoke with <i>Scrip Intelligence</i> agreed that it's great to commercialize novel therapies without a partner and retain all financial rewards, but for any biotech firm that's looking for a deep-pocketed collaborator, now is a good time to be negotiating deals.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+EXECUTIVE ROUNDTABLE Part 3 A great time for dealmaking in biotech
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151202T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151202T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151202T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027850
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+EXECUTIVE ROUNDTABLE: Part 3; A great time for dealmaking in biotech
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356714
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042255Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+30610dce-ea86-46b3-a41d-cb0bb7d728f6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042256Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

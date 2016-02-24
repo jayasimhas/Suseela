@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1E7C0027-8C34-4DB3-BCF7-AF16D3352D71}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/03/STOCKWATCH Currencies continue to confound earnings
+parent: {9A22D265-E46B-490A-8BDC-BA644F0271DB}
+name: STOCKWATCH Currencies continue to confound earnings
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0107c87e-6cbe-47ec-8c5a-a52cc50216a8
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+STOCKWATCH: Currencies continue to confound earnings
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+STOCKWATCH Currencies continue to confound earnings
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5505
+
+<p>It is strange to think that while we work our way through the tail-end of the full-year 2014 earnings season, we are only about a month away from the start of next reporting period. The big issue that emerged at the start of the last earning season &ndash; the effects of foreign currency translations &ndash; is likely to worsen, particularly for those companies that couldn't bring themselves to give 2015 guidance in their last earnings announcement.</p><p><p>Last week's tacit acceptance of a near-term US interest rate rise was enough to push the euro down almost to parity with the US dollar. For US companies selling products in Europe this means tough times as the value of their sales when converted back to their home currency is reduced. For those companies that report in euros, however, happy days might be here again, as their sales in strengthened US dollars will look positively ebullient. Generalist investors are rushing to European markets to invest their own strong dollars and pounds in equities with US dollar exposure, which will enable them to report better than expected results in about a month's time. That's the theory at least.</p><p><p>US companies like Johnson & Johnson, Pfizer and Merck, which suffered at the hands of investors reacting badly to reduced full-year guidance released during the early part of last earnings season (<a href="http://www.scripintelligence.com/home/Stockwatch-The-devil-in-the-currency-detail-356502" target="_new">scripintelligence.com, 2 February 2015</a>), are likely to see their share prices dented again as guidance is trimmed to reflect the further weakening of the euro. However, those companies like GlaxoSmithKline and The Medicines Company, which declined to give 2015 earnings guidance because of the facets of the company that were still moving at the time of their earnings announcement, are likely to shock investors as the effect of currency movements will come in a big bolus. </p><p><p>However, the premise that all US and Swiss companies with strengthening home currencies will be much worse off than companies based in Europe belies the fundamentals of companies that investors are supposed to interrogate when making an investment decision. The Belgium-based biotech company Thrombogenics reported its full-year 2014 results last week. Sales and royalties were way below analysts' expectations and 2015 guidance was withdrawn. Having tried and failed to sell itself last year (<a href="http://www.scripintelligence.com/business/ThromboGenics-slumps-on-failure-to-find-a-buyer-352496" target="_new">scripintelligence.com, 24 June 2014</a>), Thrombogenics seems to be in a perfect currency and operational storm. Its only product, Jetrea (ocriplasmin) for vitreomacular adhesion, is sold outside the US by Novartis, but in the US by Thrombogenics' own sales and marketing staff, who are paid in dollars, which declining Jetrea sales are far from covering. </p><p><p>Nevertheless, Jetrea did manage to book sales of just over &euro;10m in the fourth quarter of 2014. That is likely to be about &euro;10m more than Dutch company uniQure will report in sales of its gene therapy product Glybera (alipogene tiparvovec), which was approved in the EU back in 2012 (<a href="http://www.scripintelligence.com/home/First-gene-therapy-Glybera-finally-gets-CHMP-nod-in-Europe-333061" target="_new">scripintelligence.com, 20 July 2012</a>). At a proposed selling price of about &euro;1.5m for each Glybera treatment, uniQure and commercial partner Chiesi have not yet cottoned onto the fact that Europe does its best not to reimburse expensive drugs even with proof of clinical efficacy, and in the US, where ultra-orphan drugs are currently reimbursed, the debate has shifted to a much lower trickle-type annuity model as long as the patient continues to respond. Thrombogenics' perfect storm looks like just a minor squall in comparison with the challenge faced by uniQure, as payers demand proof of continuing clinical efficacy before they'll part with a small payment (in euros). </p><p><p>So the coming earnings season is again likely to be dominated by the effect of the weakening euro on company sales. At least this is a transient problem for investors in companies that actually have sales. Companies like uniQure and BTG, whose product Varithena (polidocanol injectable foam) was approved in 2013 and may not outsell even Glybera when BTG reports in April, would love to have the luxury of material sales in a foreign currency by the products that took so much of their investors' money to develop, but they almost certainly won't. The much-anticipated pull-back in life science stocks is not going to be precipitated by marginal foreign currency translations for successful blockbusters, but by products suffering clinical, regulatory and commercial failures. It seems that if many investors are expecting bumper sales by European life science companies in about a month's time, we may be in for a bumpy ride. </p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest manages the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 460
+
+<p>It is strange to think that while we work our way through the tail-end of the full-year 2014 earnings season, we are only about a month away from the start of next reporting period. The big issue that emerged at the start of the last earning season &ndash; the effects of foreign currency translations &ndash; is likely to worsen, particularly for those companies that couldn't bring themselves to give 2015 guidance in their last earnings announcement.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+STOCKWATCH Currencies continue to confound earnings
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151103T061204
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151103T061204
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151103T061204
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028121
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+STOCKWATCH: Currencies continue to confound earnings
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357214
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0107c87e-6cbe-47ec-8c5a-a52cc50216a8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042311Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

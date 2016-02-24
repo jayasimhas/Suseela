@@ -78,18 +78,6 @@
         margin-right: 0.4375rem;
     }
 
-    &__tags-bar {
-        align-self: flex-start;
-        background-color: $informa-light-gray-f;
-        display: inline-block;
-        padding: 12px;
-        width: auto;
-
-        a {
-            text-transform: none;
-        }
-    }
-
     @include breakpoint('medium') {
         &__share-label {
             display: none;

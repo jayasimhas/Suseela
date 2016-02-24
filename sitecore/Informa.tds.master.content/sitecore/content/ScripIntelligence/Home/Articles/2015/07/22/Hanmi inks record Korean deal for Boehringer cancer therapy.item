@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {FF54F0CF-3FC9-450F-974D-9A68C9409E3E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/Hanmi inks record Korean deal for Boehringer cancer therapy
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: Hanmi inks record Korean deal for Boehringer cancer therapy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 71cdd4b2-cddc-4380-8073-723f7a343e22
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Hanmi inks record Korean deal for Boehringer cancer therapy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Hanmi inks record Korean deal for Boehringer cancer therapy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5559
+
+<p>Hanmi Pharmaceutical continues to lead South Korean pharma innovators by reaching a series of major licensing out deals. Following the major agreement with Lilly for its oral Bruton's tyrosine kinase inhibitor earlier this year, Hanmi has now inked an even bigger license agreement with Boehringer Ingelheim, for a novel non-small cell lung cancer therapy HM61713 that will beef up the German firm's oncology portfolio.</p><p>Boehringer and Hanmi have signed an exclusive license and collaboration agreement for the development and global commercialization rights, excluding South Korea, China and Hong Kong, to HM61713, a novel non-small cell lung cancer (NSCLC) therapy developed by the South Korean firm.</p><p>Under the agreement, Hanmi will receive $50m up front and will be entitled to potential milestone payments of $680m plus tiered double-digit royalties on future net sales. The deal is the largest ever single out-licensing deal by a South Korean pharma firm.</p><p>The tie-up, which remains subject to clearance under the US Hart-Scott-Rodino Antitrust Improvements Act, similar requirements outside the US and other customary closing conditions, is the first between Hanmi and Boehringer.</p><p>HM61713, an orally active novel epidermal growth factor receptor (EGFR) mutant selective inhibitor, is seen as a third generation tyrosine kinase inhibitor (TKI) which excels in reducing resistance and side-effects after administration with previous EGFR TKIs such as Iressa (gefitinib) and Tarceva (erlotinib).</p><p>"As for the rights in China and Hong Kong, our Chinese subsidiary could directly cover the region, or we could still reach a separate license deal for the region," said a Hanmi spokesperson.</p><p>Boehringer said HM61713 is another important pillar in its global lung cancer franchise which builds on two products, Giotrif/Gilotrif (afatinib) and Vargatef (nintedanib), already approved in various countries.</p><p>With the inclusion of HM61713, the German firm now has more than 10 compounds in clinical development in a wide variety of oncology indications, including immuno-oncology approaches like an mRNA based therapeutic vaccine under development with CureVac.</p><h2>promising results, pipeline</h2><p>At this year's ASCO Annual Meeting, Hanmi had presented the interim results of Phase I/II clinical trials for HM61713, which showed strong efficacy signals, combined with a favorable safety profile.</p><p>The compound is currently in Phase II clinical development for patients with NSCLC with T790M mutations who have developed resistance to previous EGFR targeting agents. Preparations have begun for a broader Phase III trial program, to be initiated in 2016.</p><p>Other companies that are developing new EGFR inhibitors such as Astellas Pharma Inc. also presented their data during the ASCO meeting.</p><p>After the licensing out deal with Lilly, analysts had been closely watching out for additional license deals involving Hanmi, including HM61713 and diabetes drugs.</p><p>The company's targeted cancer therapy pipeline also includes HM95573, a selective pan-RAF inhibitor, potentially targeting B-RAFmut and/or N-RASmut/C-RAF driven cancers. It is still in a Phase I clinical trial, but some analysts believe it has high potential as a colorectal cancer therapy.</p><p>Also noticeable in its pipeline is the Quantum Project which includes efpeglenatide (HM11260C, a long-acting Exendin-4 analog), LAPS Insulin 115 (HM12470, a long-acting insulin analog) and LAPS Insulin Combo (long-acting Insulin 115/Exendin-4 combination). Of these, efpeglenatide is scheduled to finish Phase II global clinical trials in June.</p><p>Hanmi presented the results of its Quantum Project and some other biomedicines at the American Diabetes Association's Scientific Sessions that took place on June 5-9.</p><h2>R&D push</h2><p>Hanmi has been the front runner among South Korean pharma firms in reaching license out deals amid its strong R&D efforts in the past several years.</p><p>In its efforts to transform into a R&D-based pharma firm to help tackle the tough domestic pharma environment, the company has been steadily investing hefty amounts of money in R&D, hiking its R&D spending to 20% of its annual revenue since last year, from about 10% in 2007.</p><p>In March, it reached a large licensing out agreement with Indianapolis, Indiana-based Eli Lilly for its oral Bruton's tyrosine kinase (BTK) inhibitor HM71224, which the partners intend to develop for rheumatoid arthritis, lupus, Sjogren's syndrome and other related autoimmune conditions.</p><p>Under the contract, Lilly will pay $50m up front and has agreed to up to $640m in potential development, regulatory and sales milestones for the drug. The big pharma also has agreed to tiered double-digit royalties on HM71224 should it reach commercialization.</p><p>Also in March, Hanmi signed a licensing agreement with U.S. biotech company Spectrum Pharmaceuticals for poziotinib, a drug being developed for the treatment of cancer jointly by Hanmi and the South Korean Ministry of Health and Welfare&rsquo;s anti-cancer drug development agency. </p><p>In August 2014, China&rsquo;s Luye Pharma also licensed poziotinib, a pan-HER inhibitor to treat cancer, for exclusive rights in China. The deal includes upfront and milestone payments worth up to $20m, plus royalties.</p><p><i>[Editor's note: This story is also being published in PharmAsia News. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.]</i></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 426
+
+<p>Hanmi Pharmaceutical continues to lead South Korean pharma innovators by reaching a series of major licensing out deals. Following the major agreement with Lilly for its oral Bruton's tyrosine kinase inhibitor earlier this year, Hanmi has now inked an even bigger license agreement with Boehringer Ingelheim, for a novel non-small cell lung cancer therapy HM61713 that will beef up the German firm's oncology portfolio.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Hanmi inks record Korean deal for Boehringer cancer therapy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029350
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Hanmi inks record Korean deal for Boehringer cancer therapy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B5636197-C61A-4731-8E40-9E841B7DC9FA}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359558
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+71cdd4b2-cddc-4380-8073-723f7a343e22
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

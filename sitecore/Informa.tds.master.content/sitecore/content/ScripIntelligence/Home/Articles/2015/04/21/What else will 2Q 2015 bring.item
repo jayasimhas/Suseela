@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8B350952-F90A-403F-B35F-1046864395E4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/21/What else will 2Q 2015 bring
+parent: {7C444FDC-DC63-4D50-B812-A158B8DC325D}
+name: What else will 2Q 2015 bring
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 558a9e0a-5173-4241-8981-9c59aca5cbb2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+What else will 2Q 2015 bring?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 28
+
+What else will 2Q 2015 bring
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8005
+
+<p>The first quarter of 2015 came to a close with some companies performing better than others. <i>Scrip</i> has skipped ahead and rounded up some of the big R&D events we expect to see in the second quarter of this year. </p><p>Late-stage and registrational events &ndash; in oncology, cardiovascular and psychiatry &ndash; expected to make headlines sometime in the second quarter are highlighted below. </p><p>Events have been selected from BioMedTracker's full <a href="http://www.biomedtracker.com/ReportDetail.cfm?ReportID=601" target="_new">Q2 2015 Outlook Report</a>. </p><p>2Q of 2015 will of course play host to the biggest medical conference of the year, the American Society for Clinical Oncology (ASCO) meeting, held in Chicago 29 May &ndash; 2 June, so we kicked things off with an oncology forecast. </p><p>Bristol-Myers Squibb, which reports its 1Q financial results on 28 April, is due to release topline Phase III results for its multiple myeloma drug, elotuzumab in the second quarter.</p><p>Elotuzumab targets CS1, a cell surface glycoprotein highly expressed on myeloma cells but minimally expressed on normal cells. There is currently only one other drug in clinical development targeting CS1, PVX-410 from OncoPrep.</p><p>In May 2014, the US FDA granted elotuzumab breakthrough therapy designation for use in combination with lenalidomide and dexamethasone for the treatment of multiple myeloma in patients who have received one or more prior therapies.</p><p>The drug, which demonstrated promising signs of efficacy in Phase II, is currently being evaluated in two Phase III studies, ELOQUENT-1 and ELOQUENT-2, with top-line data expected before 30 June this year. </p><p>Analysts at Datamonitor Healthcare said positive data from the two Phase III studies is expected in both refractory and first-line patients. </p><p>BioMedTracker analysts added: "Positive results from these studies will not only be critical for elotuzumab, but also significant for the validation of treatments targeting CS1."</p><h2>Celator's sAML compound</h2><p>Celator Pharmaceuticals is developing CPX-351, a liposomal formulation of the common chemotherapy agents cytarabine and daunorubicin, as a treatment for various hematologic cancers.</p><p>The compound is currently in Phase II development for myelodysplastic syndromes (MDS) and acute lymphocytic leukemia (ALL) and is in Phase III development for acute myelogenous leukemia (AML).</p><p>Topline results from the pivotal Phase III study of CPX-351 are expected sometime this quarter. </p><p>BioMedTracker noted that in a subgroup analysis of a Phase IIb study of newly-diagnosed, elderly AML patients presented in 2010, treatment with CPX-351 (vs standard "7+3" induction with cytarabine and daunorubicin) doubled median overall survival in secondary AML (sAML) patients. Phase III trials of the drug in sAML began in December 2012. </p><p>BioMedTracker analysts also highlighted that "as CPX-351 is Celator's only clinical-stage compound, topline results will undoubtedly cause a movement in the company's stock price."</p><h2>Exelixis's Cometriq</h2><p>2Q 2015 will see Exelixis report topline results from the Phase III METEOR study, evaluating Cometriq (cabozantinib) as a second-line treatment for renal cell cancer. Cometriq is Exelixis's only clinical candidate (for which it is the lead developer) and the product is being tested in Phase II and III trials in a number of cancer indications. </p><p><p>The drug has already gained approval for the small thyroid cancer market, but it suffered a major failure in its development for the much larger prostate cancer indication. As such the success of other indications, including RCC and HCC (which is also in Phase III development) will be critical for the company. </p><p>According to Exelixis, top-line results from the pivotal Phase III trial METEOR in metastatic renal cell carcinoma are anticipated before the end of the first of 2015. </p><h2>Actavis's second shot in bipolar</h2><p>Moving to psychiatry, the second quarter will see Actavis get a second attempt with the FDA to secure approval for bipolar and schizophrenia drug cariprazine. </p><p>In November 2013 the FDA issued a complete response letter (CRL) acknowledging that cariprazine clearly demonstrated effectiveness, but indicated more information, including additional clinical trial data, would be needed for approval in the US. Following the CRL, the company released additional efficacy data that showed cariprazine 1.5 mg/day demonstrated statistically significant improvement in the MADRS total score (primary endpoint) versus placebo for bipolar I disorder, similar to that observed with lurasidone.</p><p>While cariprazine isn't expected to have a huge impact on the market &ndash; due to there being a multitude of now-generic atypical antipsychotics that are well established &ndash; it will be the first antipsychotic that Actavis has worked on at the development stage, despite the company's longstanding presence in the CNS market. </p><p>Datamonitor analyst Daniel Chancellor highlighted that new launches in the same class as cariprazine have "largely underwhelmed compared to historical performance." These include launches for Latuda, Saphris and Fanapt. </p><p>However, one thing Actavis's drug may have going for it is a Phase III study in which cariprazine was superior to risperidone in treating the negative symptoms of schizophrenia, which are typically inadequately controlled by current treatment options.</p><p>It also has a slightly different mechanism (selective D3 receptor partial agonist; also binds D2) compared to traditional D2/5-HT2A receptor antagonists; although the binding profile of antipsychotic drugs is generally more relevant to their side effect profiles. </p><p>Mr Chancellor pointed out though that "in cariprazine's case, this hasn't translated into much in the clinic and cariprazine has an association with many of the common side effects of other atypical antipsychotics."</p><p>Meanwhile, Actavis acquired US commercial rights to Saphris, another atypical antipsychotic in December 2013, so the company will need to position cariprazine alongside Saphris if the product is approved this time around. </p><p>BioMedTracker has given cariprazine a 91% likelihood of approval rating, 6% higher than the average for a product at the same stage of development. Cariprazine is also in Phase III development for Major Depressive Disorder (MDD) and has released positive Phase IIb data in that indication.</p><h2>GSK's Breo Ellipta in asthma</h2><p>Finally, in the respiratory space, the second quarter should see GlaxoSmithKline finally get FDA approval for Breo Ellipta (fluticasone furoate/vilanterol trifenatate) in asthma. </p><p><a href="http://www.scripintelligence.com/home/FDA-panel-backs-Breo-adult-asthma-use-rejects-adolescents-357398" target="_new">On 19 March this year</a>, the Pulmonary-Allergy Drugs Advisory Committee and Drug Safety and Risk Management Advisory Committee met to discuss the supplemental new drug application (sNDA), for Breo Ellipta for the once-daily treatment for asthma in patients aged 12 years and older. The FDA committee overwhelmingly voted to approve Breo Ellipta in adults, but against approval for patients aged 12 to 17 years. GSK's partner on Breo, Theravance, took an 11% hit in after-hours trading on 19 March following the committee's recommendation. </p><p>Results were quite variable in the younger patients without much evidence for a benefit, though the number of patients was small, BioMedTracker analysts said. "We expect the FDA will follow the advice of the committee," they noted. </p><p>BioMedTracker has given Breo Ellipta a 99% likelihood of approval rating for its asthma indication. The product, a combination of the long-acting beta2 agonist (LABA) vilanterol and the inhaled corticosteroid (ICS) fluticasone furoate, is already approved as a treatment for chronic obstructive pulmonary disease (COPD).</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 226
+
+<p>The first quarter of 2015 came to a close with some companies performing better than others. <i>Scrip</i> has skipped ahead and rounded up some of the big R&D events we expect to see in the second quarter of this year. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+What else will 2Q 2015 bring
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150421T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150421T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150421T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028551
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+What else will 2Q 2015 bring?
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200400279
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357989
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+558a9e0a-5173-4241-8981-9c59aca5cbb2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

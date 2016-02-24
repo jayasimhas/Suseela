@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {CCDC8EB5-2867-4EA7-8C78-25C5F9D5B749}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/07/The ECG curse Indias Quest under lens in retrospective finding
+parent: {4C89FC6F-7460-40FA-9381-E59CDA388C3D}
+name: The ECG curse Indias Quest under lens in retrospective finding
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 711a0a2d-4a6f-4448-aa37-0e1377f82249
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+ The ECG curse: India's Quest under lens in ''retrospective'' finding  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+The ECG curse Indias Quest under lens in retrospective finding
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7456
+
+<p> Just when things appeared to be on an uptick, India's beleaguered clinical research industry may be headed for another trough with yet another leading CRO now under fire over data integrity concerns. </p> <p> The World Health Organization (WHO) has issued a notice of concern (NOC) against India's Quest Life Sciences over certain critical deviations from good clinical practice pertaining to studies concerning certain AIDS drugs. Quest's partial response to a WHO inspection report of March this year was found to be unsatisfactory triggering the notice. </p> <p> Quest has, however, put forth a forceful explanation including certain specifics on the concerned audit conducted by WHO in October last year jointly with the US FDA. Quest's top brass told <i>Scrip</i> that the FDA had issued five 483s which were immediately complied with and that particular audit has been closed and an EIR [Establishment Inspection Report] issued last month. A form 483 is a notice of the FDA's inspectional observations that lists deficiencies in the quality system. </p> <p> &quot;Following this we have had yet another US FDA audit in June 2015 where only one minor 483 was issued,&quot; Dr Joseph Kamalesh, associate vice president and head (operations) of Quest, told <i>Scrip</i>. He also referred to how the issue pertaining to &quot;duplicate ECGs&quot; pointed out by the WHO was a &quot;retrospective&quot; finding. </p> <p> Nevertheless, the notice probably couldn't have come at a worse time, given the recent references by the country CEO of Quintiles India on how sponsors were beginning to <a href="http://%5bhttp:/www.scripintelligence.com/home/features/Interview-Quintiles-India-CEO-on-green-shoots-digital-patients-and-white----noise-359199%5d" target="_new">reassess decisions</a> to move studies away from the country amid evolving regulations and an apparent trust deficit that may take some time to bridge. </p> <h2> ECGs </h2> <p> At the centre of the Quest controversy seemingly are ECG records, yet again, with the WHO notice referring to how in the LAZ/032/13 study (for certain AIDS drugs from the Indian firm Micro Labs) the majority of subject pre-study ECGs (over 67%) were &quot;duplicates&quot; of each other. </p> <p> The WHO observed that subject details and dates had been changed by the company in the majority of the cases to make the ECGs appear as if they were from each of the different subjects who had participated in the study. </p> <p> In one instance a single ECG was apparently reused up to nine times for different subjects, the WHO said. </p> <p> &quot;This means ECGs may not have been performed or were unreliable and therefore ineligible/unfit subjects could have been used in the study and protocol requirements may not have been met.&quot; </p> <p> Parts of Quest's response reproduced in the WHO notice quote the firm referring to nursing staff not admitting to having used the same ECGs or the possibility of the ECG machine having a digitilization error and hence a printing error. </p> <p> The WHO, though, felt that this wasn't a &quot;significantly thorough&quot; investigation into the matter or explanation on how these problems were allowed to occur. </p> <p> Quest, though, claimed that the issue of &quot;duplicate ECGs&quot; pointed out by the WHO was not part of the original audit findings but was a retrospective finding and that it did not have an opportunity to defend itself on site. </p> <p> &quot;We had taken safety of subjects as the primary concern and provided a detailed CAPA [Corrective and Preventive Action] which included demonstrating that the subjects involved in the study had no underlying cardiac problem but unfortunately WHO has not accepted it and have issued a notice of concern,&quot; Dr Kamalesh told <i>Scrip</i>. </p> <p> He noted how the issue was raised regarding a clinical study which was conducted in mid- 2013 at Quest's facility and how from December 2013, the CRO had changed the ECG machine to a completely 21 CFR Part 11 compliant machine. </p> <p> The WHO, however, also referred to how other regulatory authorities had referred to similar issues concerning Quest, implying that the issue may be &quot;systemic&quot; in nature, occurring many times over a significant period of time and not just a &quot;one-time incident&quot; for the study submitted to the WHO. </p> <p> The agency also red flagged, among other issues, the fact that the ECGs were taken under the supervision of the principal investigator and could potentially suggest that these compliance issues are done under the supervision of senior management and &quot;may not be restricted just to ECGs.&quot; </p> <p> The WHO also observed how &quot;a number of forms&quot; relating to the AIDS drugs study were in the process of being completed during the inspection as they had not been filled at the time of the activity. Reference was also made to an apparent attempt to &quot;hide&quot; documents from inspectors. The WHO said that while Quest's corrective actions were &quot;partially&quot; acceptable, there was still no &quot;suitable explanation&quot; for issues such as blank forms found in the binders. </p> <p> Concerns over Quest's data come even as another Indian CRO, GVK Biosciences has been in the <a href="http://%5bhttp:/www.scripintelligence.com/home/Hundreds-of-generics-face-European-ban-following-GVK-breaches-356345%5d" target="_new">eye of a storm</a> after the French medicines agency ANSM uncovered alleged data manipulation at one of its sites though the Indian CRO has claimed the actions of European agencies were overblown. GVK data concerns also centre on apparent evidence of manipulation of ECG records during the conduct of nine generic medicines studies over a period of at least five years. </p> <p> <a href="http://%5bhttp:/www.scripintelligence.com/home/Flawed-GVK-studies-EMA-sticks-with-suspension-as-firm-fights-on-358568%5d" target="_new">On 22 May</a>, the European Medicines Agency said that it was sticking with its previous recommendation to suspend a number of drugs for which authorization in the EU was primarily based on clinical studies conducted at GVK's Hyderabad unit. </p> <h2> Quest </h2> <p> The Chennai-based Quest Life Sciences, which is said to rank among the top 10 CROs in India and had acquired Fortis Clinical Research earlier this year, though, appears to be hoping for the best &ndash; with no spill-over effect . </p> <p> Dr Kamalesh said that though the WHO had issued a notice of concern (NOC), the fact that the agency has indicated that lifting of the NOC would be done on submission of a repeat study shows that &quot;as such bioequivalence was indeed established.&quot; </p> <p> &quot;Based on the necessary action suggested by WHO we are in the process of conducting the entire clinical study again at our own cost to ensure that the NOC is lifted at the earliest.&quot; </p> <p> Quest, which was established in 2004 and has gone through multiple audits by regulators such as the FDA, the UK MHRA and the Spanish medicines agency, also underscored that it had over the past couple of years upgraded its quality and systems &quot;tremendously&quot; amid global expansion plans. </p> <p> &quot;This isolated event would not affect the warm relationship we share with our customers. We are dedicated to provide quality service to our customers and we do take subject safety as our top priority,&quot; Dr Kamalesh added. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 208
+
+<p> Just when things appeared to be on an uptick, India's beleaguered clinical research industry may be headed for another trough with yet another leading CRO now under fire over data integrity concerns. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+The ECG curse Indias Quest under lens in retrospective finding
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150107T045022
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150107T045022
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150107T045022
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029171
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+ The ECG curse: India's Quest under lens in ''retrospective'' finding  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359202
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042418Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+711a0a2d-4a6f-4448-aa37-0e1377f82249
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042418Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

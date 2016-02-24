@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {C94FC5CE-1184-4C64-AF6F-35358BE1517A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/20/Ablynx Says No Partner Required To Get Rare Disease Drug To Market
+parent: {34CAE052-3989-4BC7-BA14-1EF803FF3625}
+name: Ablynx Says No Partner Required To Get Rare Disease Drug To Market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0eafe3c9-cd5d-4661-b7b0-7ebdd130db6b
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Ablynx Says No Partner Required To Get Rare Disease Drug To Market
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Ablynx Says No Partner Required To Get Rare Disease Drug To Market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4272
+
+<p>Ablynx says it plans to retain 100% ownership of its thrombotic thrombocytopenic purpura (TTP) therapy, caplacizumab, rather than seek commercialization deals in Europe and the US following Phase III studies. </p><p>The company announced in its half year update on Aug.27 that it intends to market caplaczimub, a potential first-in-class anti-von Willebrand Factor (VWF) for the treatment of acquired TTP, on its own in these major regions. Ablynx said it plans to file the drug for conditional approval in 2017 in Europe and submit a biologics license application (BLA) in the US in 2018. </p><p>CEO Edwin Moses said in the company's half-year financial report that caplaczimub represents a "strategic opportunity in our evolution into a commercial stage company and the value is best maximized by Ablynx retaining 100% ownership of the product."</p><p>Ablynx also noted that it is on track to launch a Phase III trial for the drug in the third quarter of this year. </p><p>Analysts at Jefferies referred to caplacizumab as "overlooked" and agreed with Ablynx that it is the "ideal asset" to help the company progress towards being a fully integrated biopharmaceutical company, given its orphan status and strong Phase II results.</p><p>Jefferies also noted that Ablynx should be able to handle commercialization of caplacizumab itself "given TTP is predominantly treated by only a subset of leading hematologists at select hospitals in each country."</p><p>Analysts are predicting worldwide peak sales of the drug to reach $400m from 60% penetration, if the drug achieves the expected launches in 1H18 in Europe and 1H19 in the US. </p><p>Ghent, Belgium-based Ablynx's new plan for its blood disease product is a turnaround from its previous strategy of seeking a partner for caplacizumab. Moses said in <a href="http://www.scripintelligence.com/researchdevelopment/Ablynx-seeks-partner-for-rare-blood-disease-drug-352403" target="_new">June last year</a>, following the announcement of "unexpectedly strong" Phase II data, that Ablynx "will be talking to potential partners and evaluating all of its strategic options for the further development and commercialization of caplacizumab."</p><p>Ablynx said last year that data from the Phase II TITAN study showed patients treated with caplacizumab plus standard of care achieved confirmed platelet normalization at more than twice the rate of the group receiving the standard of care plus placebo during the 30-day period after the start of study. </p><p>Ablynx also reported that 81% of patients achieved complete remission compared to 46% in the placebo arm. Time to confirmed platelet normalization for patients who had not received a plasma exchange prior to initial dosing with caplacizumab was a median of 3.0 days in the caplacizumab arm compared to a median of 4.9 days in the placebo arm &ndash; a "potentially clinically meaningful 39% decrease," Ablynx noted.</p><p>TTP is a rare disorder of the blood coagulation system that causes micro thrombi to form, which can block small blood vessels throughout the body. According to Sagient Research's BioMedTracker database, there are currently no approved therapies for the treatment of TTP and Ablynx's offering is the most advance candidate. Furthermore, several companies have suspended development of their products in this indication including Alexion Pharmaceuticals, which had been testing its blockbuster drug, Soliris (eculizumab), in TTP. </p><p>BioMedTracker has given the drug a likelihood of approval rating in the US of 33%, 3% above the average for a product at a similar stage of development. </p><h2>Financial Results</h2><p>In the first half of the year Ablynx's total revenue reached &euro;38.4m, up from &euro;22.2m for the same period a year earlier. Total cash held by the company as of June 30, 2015, was &euro;268.4m, compared to &euro;196m in June 2014. Also, 2015's figure does not including the net proceeds of &euro;97.2m Ablynx raised in May this year through a convertible bonds transaction. </p><p>R&D expenses increased by 64% to &euro;40.3m in the first half of 2015 (2014: &euro;24.5m). This increase was mainly attributable to higher external development costs which are largely related to clinical trials, Ablynx said. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 216
+
+<p>Ablynx says it plans to retain 100% ownership of its thrombotic thrombocytopenic purpura (TTP) therapy, caplacizumab, rather than seek commercialization deals in Europe and the US following Phase III studies. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Ablynx Says No Partner Required To Get Rare Disease Drug To Market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150820T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150820T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150820T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029613
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Ablynx Says No Partner Required To Get Rare Disease Drug To Market
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360048
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0eafe3c9-cd5d-4661-b7b0-7ebdd130db6b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

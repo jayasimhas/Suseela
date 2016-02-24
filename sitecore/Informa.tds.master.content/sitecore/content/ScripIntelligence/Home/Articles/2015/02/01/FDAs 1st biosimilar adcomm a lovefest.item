@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {EAA7A74A-8FE9-4F50-A8EE-A9A0EC5E026D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/01/FDAs 1st biosimilar adcomm a lovefest
+parent: {158758E4-B379-4712-B860-AB116AACF1BA}
+name: FDAs 1st biosimilar adcomm a lovefest
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7fee6d2d-4fbd-41b0-9d3a-863f2ee06679
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+FDA's 1st biosimilar adcomm: a lovefest
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 37
+
+FDAs 1st biosimilar adcomm a lovefest
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4185
+
+<p>From the get-go, the 7 January meeting of the FDA's Oncologic Drugs Advisory Committee (ODAC) was a lovefest between regulators and the filgrastim biosimilar from Novartis and its Sandoz unit, known as Zarxio, which won the panel's unanimous support.</p><p>Indeed, Dr Janet Woodcock, director of the FDA's Center for Drug Evaluation & Research (CDER), greeted meeting attendees by declaring it was an "historic occasion" they were witnessing &ndash; making reference to the fact it was the first time ever one of the agency's advisory committees had assessed a so-called 351(k) biosimilar application (scripintelligence.com, <a href="http://www.scripintelligence.com/home/NovartisSandoz-biosimilar-1st-to-win-FDA-panel-backing-355993" target="_new">8 January 2015</a>). </p><p>She also expressed her delight the ODAC had not convened a day earlier, when Washington was hit by an icy-cold snowstorm, which snarled traffic, and may have prevented the attendance of the other high-profile CDER officials that were in the house &ndash; Dr John Jenkins, director of the FDA's Office of New Drugs, and Dr Richard Pazdur, director of the Office of Hematology and Oncology Products. </p><p>"This is a culmination of many years of work from me and many other people," Dr Woodcock declared, in an almost Academy Award-like speech, in which she thanked staff for making the day possible. </p><p>The longtime CDER chief noted, however, the US was far behind other nations &ndash; especially those making up the European Union &ndash; in getting biosimilars on the market.</p><p>She put the onus on the US Congress.</p><p>"The simple answer is the statutory pathway was established much earlier in Europe," Dr Woodcock said. "They have been working on that for some time, and had a statutory pathway available."</p><p>Once the House and the Senate created biosimilar legislation, known as the <i>Biologics Price Competition and Innovation Act</i>, which was signed into law by President Barack Obama as part of the <i>Affordable Care Act</i> in March 2010, then the FDA had a pathway it could use, she said.</p><p>And once it was in place, the biosimilars effort in the US took off, Dr Woodcock said. </p><p>"The pharmaceutical development community has been extremely busy in working on developing products that would be biosimilars in the United States," she said. "And our program has been very busy."</p><p>While much of that work has not been public, the ODAC meeting provided Americans an opportunity to get a peek inside how the process has been going, Dr Woodcock remarked. </p><p>But she acknowledged developing and implementing a new drug approval pathway in the US is somewhat messy, and getting to the 7 January ODAC didn't come without some push back &ndash; from FDA scientists and industry, alike, which Dr Woodcock called "cognitive dissonance."</p><p>Indeed, there have been demands for biosimilars to undergo the same approval process as new drugs &ndash; two adequate and well-controlled trials, she explained.</p><p>But Dr Woodcock argued that work already has been done by the innovators, so there's no need for biosimilars to repeat it.</p><p>"Here, what we are doing is under the statute we are looking for a demonstration of biosimilarity," she said, insisting achieving that is "completely possible" and "can be done rigorously." </p><p>Dr Woodcock noted there was much skepticism when the FDA's generics program came to life in 1984 &ndash; born under the <i>Drug Price Competition and Patent Term Restoration Act</i>, known commonly as Hatch-Waxman. </p><p>But today, about 85% of dispensed prescriptions in the US are generics, she pointed out.</p><p>"Generics are providing the medical care for much of our population," Dr Woodcock declared, adding that "the benefits to the public have been shown for generics and they have been tremendous."</p><p>"I believe a biosimilar program that we develop over time will provide benefits to the public and will provide biosimilar drugs that provide the same clinical performance for patients and clinicians, yet provide that access in the United States that's so important to our patients," Dr Woodcock said. </p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 257
+
+<p>From the get-go, the 7 January meeting of the FDA's Oncologic Drugs Advisory Committee (ODAC) was a lovefest between regulators and the filgrastim biosimilar from Novartis and its Sandoz unit, known as Zarxio, which won the panel's unanimous support.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 37
+
+FDAs 1st biosimilar adcomm a lovefest
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150201T012939
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150201T012939
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150201T012939
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027446
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+FDA's 1st biosimilar adcomm: a lovefest
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200700558
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355904
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042228Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7fee6d2d-4fbd-41b0-9d3a-863f2ee06679
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042228Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

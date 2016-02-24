@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {F3FD31E6-E435-4532-ABCD-9A91F8FCAF44}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/22/Europe Ripe For Broader Biologic Use In Inflammatory Conditions
+parent: {24491DE3-DC6F-4529-9855-F0E4CDE93C9E}
+name: Europe Ripe For Broader Biologic Use In Inflammatory Conditions
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fc9ed933-9e23-45ac-b61d-970736217e29
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+ Europe Ripe For Broader Biologic Use In Inflammatory Conditions  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Europe Ripe For Broader Biologic Use In Inflammatory Conditions
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4319
+
+<p> The uptake in Europe of biosiomilar infliximab (versions of Janssen's blockbuster Remicade) for inflammatory diseases like rheumatoid arthritis and psoriasis has been patchy to date. In some countries of northern Europe, notably Norway, Denmark and the Netherlands, the biosimilar has been embraced and is capturing the large part of the infliximab market. In other parts of Europe, such as the UK, biosimilar developers report frustration at the lack of movement from the branded product. </p> <p> In the UK, executives at Napp Pharmaceuticals, one of the two distributors of biosimilar infliximab operating there (the other being Hospira), are up in arms that uptake has only reached around 5% of the infliximab usage after being launched in February 2015, despite its product being offered at a discount of around 40-50% to Remicade. They argue that switching all patients to a biosimilar infliximab would save around &pound;90m (based on the &pound;184m in UK sales of Remicade that the Association of the British Pharmaceutical Industry (ABPI) reports for 2014). </p> <p> As Warwick Smith, director general of the British Generic Manufacturers Association, told <i>Scrip</i>, &quot;Use of more cost-effective biosimilars saves the NHS large amounts of money, and increases the access to these lifesaving and life changing medicines for patients.&quot; The second point is important. While Napp points out that the saving available from Remicade would more than offset the reported &pound;80m 2014-15 overspend on the conterversial Cancer Drugs Fund, there are other ways to use that money. One would be to expand biological therapy to more patients. </p> <h2> Cut Costs To Expand </h2> <p> At present there is a large difference in the use of biologics to treat inflammatory disease between the US and EU. While the US has a similar population to the combined total number of people in the five major EU markets of Germany, the UK, France, Italy and Spain, the proportion of US patients receiving biological therapy is higher, and sales of biologics for inflammatory conditions are far lower in Europe, with cost being a significant factor. For example, Remicade sales in the US are around three times the level of sales in the five major EU markets. Biosimilars are now starting to offer the possibility of expanding biologics access to more patients without increasing overall expenditure. </p> <p> While Remicade is the front-runner, a number of significant biological blockbusters also face loss of market exclusivity in the next few years, notably for inflammatory diseases but also for cancer. Despite a slow start in some places, the trend will surely be for greater biosimilar use across Europe, with the potential for some major gains in those markets where it has yet to take off. </p> <h2> Innovate To Expand </h2> <p> But while the biosimilar opportunities might offer hope for patients, for pharma (especially those companies that aren't hedging with their own biosimilar activities) they are quite a threat. </p> <p> Nevertheless, Novartis's executives discussing the company's third-quarter results gave a glimpse of an additional driver of biologic uptake in Europe, this time of the branded variety. </p> <p> David Epstein, head of Novartis Pharmaceuticals, highlighted an interesting contrast in the trends for Cosentyx uptake in the US and EU, following its approval for psoriasis earlier in the year. While around 20% of new Cosentyx patients in the US have never previously received a biologic, the figure rises to up to 50% in Switzerland and Germany, something that he thought could at least in part be attributed to Cosentyx's superior data &quot;and the possibility of having 90-100% clear skin.&quot; </p> <p> With the caveat that it was too early to be sure the trend would persist, Epstein suggested that this &quot;could mean that the market for biologics and Cosentyx in particular, particularly outside the US, may expand, and we may find that our ex-US sales come in bigger and better than we had originally hoped for.&quot; </p> <p> The read-through for the European biologics space? With biosimilars introducing improved affordability, and innovation bringing better treatments, we should expect the number of inflammatory disease patients on such therapies to increase. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 498
+
+<p> The uptake in Europe of biosiomilar infliximab (versions of Janssen's blockbuster Remicade) for inflammatory diseases like rheumatoid arthritis and psoriasis has been patchy to date. In some countries of northern Europe, notably Norway, Denmark and the Netherlands, the biosimilar has been embraced and is capturing the large part of the infliximab market. In other parts of Europe, such as the UK, biosimilar developers report frustration at the lack of movement from the branded product. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Europe Ripe For Broader Biologic Use In Inflammatory Conditions
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151022T211836
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151022T211836
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151022T211836
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030183
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+ Europe Ripe For Broader Biologic Use In Inflammatory Conditions  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361187
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fc9ed933-9e23-45ac-b61d-970736217e29
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

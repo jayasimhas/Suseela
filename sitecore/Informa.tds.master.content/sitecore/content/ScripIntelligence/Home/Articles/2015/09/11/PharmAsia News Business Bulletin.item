@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {AEF6A9BC-FACD-4B23-9627-4125E28A0B48}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/11/PharmAsia News Business Bulletin
+parent: {62C55766-C278-4043-A2CE-96E19F97E9EA}
+name: PharmAsia News Business Bulletin
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 38eb512b-0a9b-4051-8fa0-cdc5c899469e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4610
+
+<p>A new regular roundup of commercial stories appearing in <i>Scrip</i>'s sister publication <i>PharmAsia News</i>, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p><p>Full stories can be accessed by clicking on the story title (subscription required).</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/8/pfizer-fined-for-illegal-pharmacy-viagra-promotion-in-china" target="_new">Pfizer Fined For Illegal Pharmacy Viagra Promotion In China</a></p><p>Pfizer's "Big Retail" strategy to promote Viagra in retail pharmacies in China has led to a penalty by the market supervision authority in Shanghai, although the company says it has taken immediate action to improve practices related to pharmacy promotion.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/9/roche-ceo-hopes-for-progress-as-china-tackles-approval-lag" target="_new">Roche CEO Hopes For Progress As China Tackles Approval Lag</a></p><p>Recent signs that China is aiming to speed up its lengthy drug review processes are "encouraging" but there is still more to be done towards implementing "good and robust regulatory science" in the country, says Roche CEO Severin Schwan.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/10/canada-lifts-apotex-indian-sites-ban-fda-to-follow" target="_new">Canada Lifts Apotex Indian Sites Ban, FDA To Follow?</a></p><p>Canada has lifted a ban on imports from two Indian pharmaceutical plants owned by Canadian generics giant Apotex, a year after halting shipments over allegations that company employees had faked drug test results.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/9/micurx-taps-china-links-to-progress-improved-oxazolidinone" target="_new">MicuRx Taps China Links To Progress Improved Oxazolidinone</a></p><p>Multidrug-resistant bacteria have been identified as a major public health threat by the WHO. MicuRx, a Sino-US drug developer, is discovering and developing novel potential first-in-class antibiotics to combat such infections, and is taking an oxazolidinone with expected benefits over same class drugs into Phase III China trials.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/8/bioneer-deal-may-point-to-yuhan-rampd-strategy-change" target="_new">Bioneer Deal May Point To Yuhan R&D Strategy Change</a></p><p>Yuhan has been seen as one of the less aggressive South Korean pharma firms in terms of beefing up R&D. But now, the company may be shifting its strategy as it has decided to become the second biggest shareholder of local bioventure Bioneer, in a move to strengthen its pipeline including immuno-oncology drugs and to diversify into new businesses.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/7/crownbio-aims-for-gold-amid-china-precision-medicines-rush" target="_new">CrownBio Aims For Gold Amid China Precision Medicines Rush</a></p><p>Another week has seen another plethora of deals between Chinese domestic players and global gene sequencing firms. Rising demand for individualized treatments and the rush for cancer immuno-therapies is propelling fast growth for the US-Chinese biotech company CrownBio, says its executive chairman Guo-Liang Yu.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/7/crystalgenomics-to-push-fabl-inhibitor-trials-with-govt-support" target="_new">CrystalGenomics To Push Fabl Inhibitor Trials With Govt Support</a></p><p>Following the positive outcome of a US Phase IIa study for its pioneering Fabl inhibitor, CrystalGenomics plans to proceed with global clinical trials of the first-in-class antibiotic for MRSA in improved dosage forms, with some financial help from South Korea's government.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/9/10/syrian-refugees-straining-turkish-health-pharma-systems" target="_new">Syrian Refugees Straining Turkish Health, Pharma Systems</a></p><p>There are now more than two million Syrian refugees in Turkey, both in camps organized by the country's Disaster & Emergency Management Authority and spread mainly around western cities. While all registered refugees are entitled to free healthcare services, the numbers are putting a strain on medical and drug supply systems, creating industry worries of further cost controls.</p><p><p><a href="http://www.pharmasianews.com" target="_new">www.pharmasianews.com</a></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 243
+
+<p>A new regular roundup of commercial stories appearing in <i>Scrip</i>'s sister publication <i>PharmAsia News</i>, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150911T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150911T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150911T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029741
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360329
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+38eb512b-0a9b-4051-8fa0-cdc5c899469e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

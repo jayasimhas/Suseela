@@ -16,10 +16,17 @@ using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
 using Informa.Library.Article.Search;
+using Informa.Library.Search.PredicateBuilders;
+using Informa.Library.Search.Results;
 using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
 using Sitecore.Links;
 using Sitecore.Mvc.Controllers;
+using Velir.Search.Core.Managers;
+using Velir.Search.Core.Page;
+using Velir.Search.Core.Queries;
+using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Web.Controllers
 {
@@ -104,17 +111,19 @@ namespace Informa.Web.Controllers
 
 		static string WebDb = "web";
 		private readonly ISitecoreService _sitecoreMasterService;
-		public const string MasterDb = "master";
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
+		private readonly IArticleSearch _articleSearcher;
 
 		/// <summary>
 		/// Constructor
-		/// </summary>
+		/// </summary
+		/// <param name="searcher"></param>
 		/// <param name="sitecoreFactory"></param>
-		public ArticleUtil(Func<string, ISitecoreService> sitecoreFactory)
+		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
 		{
-			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
+			_articleSearcher = searcher;
 		}
 
 		/// <summary>
@@ -125,9 +134,13 @@ namespace Informa.Web.Controllers
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
 
-			IArticle articleItem = GetArticleByNumber(articleNumber);
-			var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
-			return article;
+            ArticleItem articleItem = GetArticleByNumber(articleNumber);
+			if (articleItem != null)
+			{
+				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
+				return article;
+			}
+			return null;
 		}
 
 		/// <summary>
@@ -135,19 +148,18 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="articleNumber"></param>
 		/// <returns></returns>
-		public IArticle GetArticleByNumber(string articleNumber)
+		public ArticleItem GetArticleByNumber(string articleNumber)
 		{
-			var articleFolder = _sitecoreMasterService.GetItem<IArticle_Folder>("{9191621D-2FE9-47A9-B1DA-DA89F17796C6}");
 
-			IArticle article = articleFolder._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Year
-				.SelectMany(y => y._ChildrenWithInferType.OfType<IArticle_Date_Folder>() //Month
-				.SelectMany(z => z._ChildrenWithInferType.OfType<IArticle_Date_Folder>())) //Day
-				.SelectMany(dayItem => dayItem._ChildrenWithInferType.OfType<IArticle>())
-				.FirstOrDefault(a => a.Article_Number == articleNumber);
-			if (article == null)
-				return null;
-			return _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
-
+			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+			filter.ArticleNumber = articleNumber;
+			var results = _articleSearcher.SearchCustomDatabase(filter, Constants.MasterDb);
+			if (results.Articles.Any())
+			{
+				var foundArticle = results.Articles.FirstOrDefault();
+				if (foundArticle != null) return _sitecoreMasterService.GetItem<ArticleItem>(foundArticle._Id);
+			}
+			return null;
 		}
 
 		/// <summary>
@@ -155,7 +167,7 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="article"></param>
 		/// <returns></returns>
-		public int GetWordVersionNumber(IArticle article)
+		public int GetWordVersionNumber(ArticleItem article)
 		{
 			if (article.Word_Document == null) return -1;
 			var wordDocURL = article.Word_Document.Url;
@@ -164,22 +176,27 @@ namespace Informa.Web.Controllers
 			return wordDoc?.Version.Number ?? -1;
 		}
 
-		public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
+		public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(ArticleItem article)
 		{
 			return new WordPluginModel.ArticlePreviewInfo
 			{
 				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
-				//Authors = article.Authors.Select(r => ((IStaff_Item)r).GetFullName()).ToList(), TODO
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,				
 				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
-				//Date = GetProperDate(), TODO
+				Date = article.Actual_Publish_Date,
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
 				Guid = article._Id
 			};
 		}
 
-		public string PreviewArticleURL(string articleNumber, string siteHost)
+        public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
+        {
+            return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
+        }
+
+
+        public string PreviewArticleURL(string articleNumber, string siteHost)
 		{
 			Guid guid = GetArticleByNumber(articleNumber)._Id;
 			if (guid.Equals(Guid.Empty))
@@ -283,7 +300,7 @@ namespace Informa.Web.Controllers
 			return checkoutStatus;
 		}
 
-		public bool DoesArticleHaveText(IArticle article)
+		public bool DoesArticleHaveText(ArticleItem article)
 		{
 			if (string.IsNullOrEmpty(article.Body))
 			{
@@ -382,15 +399,17 @@ namespace Informa.Web.Controllers
 			return dayFolder;
 		}
 
-		public WordPluginModel.ArticleStruct GetArticleStruct(IArticle articleItem)
+		public WordPluginModel.ArticleStruct
+			GetArticleStruct(ArticleItem articleItem)
 		{
+			var article = _sitecoreMasterService.GetItem<ArticleItem>(articleItem._Id);
 			var articleStruct = new WordPluginModel.ArticleStruct
 			{
 				ArticleGuid = articleItem._Id,
 				Title = articleItem.Title,
 				ArticleNumber = articleItem.Article_Number,
 				//TODO - Get article Publication
-				Publication = articleItem.Publication
+				Publication = article.Publication
 			};
 
 			if (articleItem.Content_Type != null)
@@ -404,9 +423,9 @@ namespace Informa.Web.Controllers
 			}
 			articleStruct.WebPublicationDate = articleItem.Planned_Publish_Date;
 			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;
-			articleStruct.Embargoed = articleItem.Embargoed;			
+			articleStruct.Embargoed = articleItem.Embargoed;
 			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
-			articleStruct.Authors = authors.Select(r => new WordPluginModel.StaffStruct {ID = r._Id,Name = r.Last_Name + ", " + r.First_Name,}).ToList();
+			articleStruct.Authors = authors.Select(r => new WordPluginModel.StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
@@ -423,9 +442,9 @@ namespace Informa.Web.Controllers
 			if (articleItem.Featured_Image_16_9 != null)
 			{ articleStruct.FeaturedImage = articleItem.Featured_Image_16_9.MediaId; }
 
-			//articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
+			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id , Section = r._Parent._Name}).ToList();
 
-			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo(((IArticle)a))).ToList();
+			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo((IArticle)a)).ToList();
 
 			if (articleItem.Word_Document != null)
 			{

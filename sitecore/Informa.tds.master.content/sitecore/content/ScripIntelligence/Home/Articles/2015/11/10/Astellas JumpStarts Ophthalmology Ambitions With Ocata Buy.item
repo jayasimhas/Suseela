@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {62713D1D-FAFD-4752-ABFC-3AD1F45B5F33}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/10/Astellas JumpStarts Ophthalmology Ambitions With Ocata Buy
+parent: {A68B80F2-6233-4C3B-8385-1B285662F122}
+name: Astellas JumpStarts Ophthalmology Ambitions With Ocata Buy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 10e08db6-52ca-4ac7-a057-5f7a72456bb7
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Astellas Jump-Starts Ophthalmology Ambitions With Ocata Buy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Astellas JumpStarts Ophthalmology Ambitions With Ocata Buy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5809
+
+<p>Astellas Pharma Inc. has entered into a definitive agreement to buy the US clinical-stage regenerative cell therapy venture Ocata Therapeutics Inc., in a move that will give the Japanese firm a new presence and pipeline in ophthalmology and boost its research efforts in a field being strongly supported by the Japanese government.</p><p>The move is aimed at "establishing a leading position in cell therapy" by acquiring Ocata's "world-class" researchers and pipeline programs, which will be combined with Astellas's existing regulatory and commercial know-how, the firms said.</p><p>"We highly value Ocata's R&D capabilities&#8230;we're confident that we will turn innovative science into value for patients," Astellas president and CEO Yoshihiko Hatanaka commented in a statement.</p><p>Astellas in Tokyo told Scrip's sister publication <i>PharmAsia News</i> that strategy relating to the main geographic targets for the commercialization of Ocata&rsquo;s pipeline had yet to be decided, given the still early stage of the deal. </p><p>The transaction, already unanimously approved by both boards, will be routed through a wholly owned vehicle under Astellas US Holding, which will launch a 20-day, all-cash tender offer at $8.50 per share by Nov. 25.</p><p>The price represents a premium of 79% to Nasdaq-listed Ocata's closing price of $4.75 on Nov. 6 and values the total deal at around $379m, which Astellas said would have only a "minor" impact on its financial results for the current fiscal year ending next March 31.</p><p>Founded in 1994, Marlborough, Massachusetts-based Ocata has around 40 employees and held cash and equivalents of $32.1m as of Sept. 30. It reported revenues of $163,189 for the nine months ended the same date and a net loss for the period of $18.1m.</p><h2>Technology Attractions</h2><p>Ocata has developed technology to produce various types of fully differentiated eye cells from induced pluripotent and human embryonic stem cells, which can then be used to treat various ophthalmic conditions.</p><p>Its most advanced program (at Phase II) is for human embryonic stem cell-derived retinal pigment epithelium (RPE) cells, which are injected sub-retinally to restore visual function in patients with dry age-related macular degeneration.</p><p>There are currently no approved treatments for the condition, which is the main cause of vision loss in the US, and Astellas said the RPE program would be prioritized following the acquisition as a potential first-in-class therapy for dry AMD.</p><p>A Phase I/II study with RPE cells in Stargardt's macular degeneration - which affects juvenile patients - is also ongoing, and in both settings early results show the recovery of vision in some patients.</p><p>Ocata is also investigating the use of photoreceptor progenitor cell therapy in both indications, although this project is still at the preclinical stage.</p><p>Elsewhere in the clinical pipeline is a stem cell-derived RPE cell therapy for myopic macular degeneration (Phase I/II), while Ocata also has several preclinical projects. These include pluripotent stem cell-derived photoreceptor progenitor cells for retinitis pigmentosa and dry AMD, retinal ganglion progenitor cells for glaucoma, and corneal endothelial cells for corneal blindness.</p><p>Astellas said it aims to accelerate these preclinical prospects and may also pursue the application of the Ocata technology in areas outside ophthalmology, but gave no clues as to what these might be.</p><p><b>Strategic Rationale</b></p><p>For Astellas, the deal marks a modest step away from its current core interests of oncology, urology and immunology, as already envisaged in its current mid-term development plan that includes acquisitions where appropriate.</p><p>The company has already been an active strategic acquirer to boost its presence in selected areas, buying oncology specialist OSI in 2010 and Agensys in 2007.</p><p>Astellas's current research projects include several basic academic research collaborations in Japan for regenerative medicine, and it is also working with Harvard University on a potential gene therapy to restore eye cone cells.</p><p>But otherwise, it has so far had little interest in ophthalmology.</p><p>Astellas highlighted the unmet needs and opportunities in ophthalmology, including in Japan, where glaucoma and diabetic retinopathy together cause around 40% of all visual impairment.</p><p>It sees cell therapy as a particularly promising approach in the area due to its ability to restore function to the differentiated eye cells, the degeneration of which leads to the various diseases being targeted by Ocata's pipeline.</p><p>For its part, Ocata sees routine surgical processes and durable response, possibly enabling infrequent "dosing", as other practical advantages of the cell therapy approach.</p><h2>Favorable Policies</h2><p>Perhaps another factor in the deal is that the whole regenerative medicine area is being given high priority and support as a strategic national industry by Japan's government, following the country's research successes with induced pluripotent stem cells.</p><p>In a policy move warmly welcomed by the industry, new guidelines and legislation were introduced around a year ago to encourage the development and commercialization of cell and regenerative therapies. </p><p>Several of Astellas's peers are also moving into the area, with Takeda Pharmaceutical Co. Ltd. signing a 10-year joint research program with Kyoto University to discover new cell-based therapies.</p><p>This story has also been published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 338
+
+<p>Astellas Pharma Inc. has entered into a definitive agreement to buy the US clinical-stage regenerative cell therapy venture Ocata Therapeutics Inc., in a move that will give the Japanese firm a new presence and pipeline in ophthalmology and boost its research efforts in a field being strongly supported by the Japanese government.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Astellas JumpStarts Ophthalmology Ambitions With Ocata Buy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151110T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151110T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151110T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030276
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Astellas Jump-Starts Ophthalmology Ambitions With Ocata Buy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361397
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042520Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+10e08db6-52ca-4ac7-a057-5f7a72456bb7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042520Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

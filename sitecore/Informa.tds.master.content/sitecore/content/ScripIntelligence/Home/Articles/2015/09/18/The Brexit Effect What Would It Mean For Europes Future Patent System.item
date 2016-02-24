@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {885AF31C-A48F-441A-8709-D3112884B255}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/18/The Brexit Effect What Would It Mean For Europes Future Patent System
+parent: {699941D8-9EE7-4139-9D7E-1D993A9625CE}
+name: The Brexit Effect What Would It Mean For Europes Future Patent System
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 57418fe4-71d2-4979-b17d-a38f2fed31b0
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{728904A1-7259-48E8-8256-60D002A0BFEA}|{C7FD764C-38F2-42BC-9F1A-A9864C90E18B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 72
+
+The Brexit Effect: What Would It Mean For Europe's Future Patent System?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 69
+
+The Brexit Effect What Would It Mean For Europes Future Patent System
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13336
+
+<p><b>Before the end of 2017 &ndash; and possibly as early as 2016 &ndash; the UK will vote in a referendum on whether to remain a member of the EU. This latest article in our series on the effects of a "Brexit" looks at the possible impact on Europe's future Unified Patent Court and unitary patent system, and what it would mean for patentees in the UK and elsewhere</b>. </p><p>The Unified Patent Court (UPC), which is expected to be up and running by 2017, will be responsible for litigating unitary patents, which patentees will be able to obtain by applying for a European patent and then registering the patent for unitary effect in all signatory countries. </p><p>At present, European patents are applied for centrally at the European Patent Office but after grant they are converted into a bundle of national patent rights. Infringement and revocation actions are brought in the national courts, which often results in two or more simultaneous actions in different countries, divergent decisions, and high legal costs.</p><p>Under the new system the EPO will be able to grant unitary effect to a European patent at the patentee's request, although national and classical European patents can still be taken out. The aim of the UPC and the unitary patent is to facilitate more consistent decisions in patent litigation across Europe and to reduce the costs for patentees by limiting litigation to a single forum. </p><p>The UPC will comprise a Court of First Instance with local and regional divisions, a central division split between Paris, London and Munich, and a Court of Appeal in Luxembourg. The UPC Agreement will have to be ratified by at least 13 countries, including France, Germany and the UK, before it can enter into force.</p><p>As a signatory to the UPC Agreement, the UK clearly stands to derive benefits from being part of a harmonized, pan-EU patent system, as do the other participating EU member states (Croatia, Poland and Spain are not currently signatories). Moreover, London will have the distinct advantage of hosting the section of the court's Central Division that deals with chemical and pharmaceutical patents - something the previous UK coalition government had pressed hard for. </p><p>Announcing the Aldgate Tower location for the London section <a href="http://www.scripintelligence.com/policyregulation/London-branch-of-UPC-to-boost-UKs-standing-in-pharma-litigation-359982" target="_new">last month</a>, IP Minister Baroness Neville-Rolfe said it represented "a milestone in the UK's preparations for the introduction of the Unified Patent Court". Hosting this arm of the court would "further strengthen the UK's legal and professional services sector, and reinforce London's status as a world leading centre for dispute resolution," she declared.</p><h2>Strong Support </h2><p>In the pharmaceutical area, the unitary patent idea is strongly supported by European R&D-based companies, which are heavily patent-dependent and tend to seek approval in all the EU markets via the centralized procedure. The European Federation of Pharmaceutical Industries and Associations (EFPIA) said in 2013 that it was confident the UPC would develop into "a highly functioning, reliable forum for litigating its patents." </p><p>But over all this hangs the question of what would happen should UK voters decide they've had enough of the EU. Would UK companies lose a potentially valuable new tool for protecting their inventions? Would patentees be less likely to seek protection for their products in the UK, or would it be business as usual through the standard EPO process? And could London still hold on to the pharmaceutical section of the central division?</p><p>The benefits of pan-EU patenting are clear to see. While the UPC system also has some downsides, these are generally less likely to affect the pharmaceutical industry, according to Rowan Freeland, intellectual property partner at Simmons & Simmons. </p><p>The unitary patent will gives patent coverage across practically all EU countries at a cost roughly equivalent to having current European &ldquo;bundle&rdquo; patents in the four most popular countries, Freeland told <i>Scrip</i>. "This sounds like a real advantage which should prove popular. There are some issues which are generally spoken of as making the unitary patent less popular than one might expect, although further examination suggests that few are relevant for the pharma sector."</p><p>For example, patentees, including pharma firms, like to be able to trim their portfolio over time, but the unitary patent cannot be trimmed in this way and it is "all or nothing", he says. However, this is not so much of a concern for the pharmaceutical companies, which almost never trim to fewer than four countries. The unitary patent fees will be less than even a heavily trimmed family of "bundle" patents, "so there will still be a significant cost-saving even if trimming is not possible."</p><p>One concern for pharma firms, says Freeland, is that "a unitary patent puts all their eggs in one basket," and the patent can be attacked centrally, so at least until the UPC has proved itself, pharma companies will be cautious about committing to the new system. "They are likely to prefer the more costly alternative of separate proceedings in the main European countries where infringing products appear, where the risks and possibilities are better understood as a matter of long experience," Freeland observes.</p><p>However, attitudes might change over the longer term, he suggests: "So far as the UPC is concerned, it will take a few years, I suspect, before it establishes a track record so that there is a degree of predictability as to how it will operate the procedure and how it will decide cases. Once this track record is established, it will be beneficial for companies wishing to enforce either unitary patents or European 'bundle' patents across Europe."</p><h2>Effects On The UK</h2><p>So, what of the effects of a Brexit on the UK's position in thefuture European patent system? Paul England, senior associate in the UPC Group at law firm Taylor Wessing, points out that it is a requirement for each country participating in the unitary patent and the UPC that they are a member state of the EU. </p><p>"Hence, in theory, any country leaving the EU would no longer benefit from the protection of the unitary patent &ndash; patentees would no longer be able to enforce unitary patents relating to an infringement in the territory of the country concerned," England says. "It would also no longer be possible for patentees to enforce in the UPC the national validation of a 'classical' European patent for the exited country."</p><p>Freeland also notes that because the unitary patent is only available for signatories to the new system, if the UK leaves the EU it will no longer be included in countries covered by such a patent. </p><p>However, he points out that the European patent system was set up by an international treaty and includes many non-EU countries such as Norway, Switzerland and Turkey, so "whether the UK is in or out of the EU, it will remain a member of the European Patent System, and European 'bundle' patents including the UK will continue to be available."</p><h2>Ratification Issues</h2><p>What happens will depend to some extent on the date of the referendum, the date of the Brexit, and the stage of the ratification process for the UPC Agreement. </p><p>The agreement must be ratified by at least 13 EU member states, and so far only eight countries &ndash; not including the UK &ndash; have done so. The UK Intellectual Property Office (UKIPO) has said that preparations for UK ratification will continue, and that ratification is expected sometime in 2016. </p><p>If there was a vote for a Brexit, Freeland says it could take up to two years after the referendum to sort out the ramifications in all the other areas affected before an exit could actually take place. In theory, then, some unitary patents might be granted before this happened, and it would be necessary to reach agreement on what should happen to them.</p><p>Moreover, a complete exit from the EU would mean the UPC Agreement having to be redrafted to allow for non-participation by the UK, says England. In that case, what would happen to the UK's role as third ratifier? </p><p>Freeland points out that under the UPC Agreement the ratifying countries are the three member states in which the highest number of European patents have been litigated in the preceding three years. This means that the UK's place would be taken by the fourth in line, which could be the Netherlands (or perhaps Italy). </p><p>He also notes that the UPC Agreement states that EU law is paramount and it is not intended for a non-EU member to be a party to it. If the UK votes for a Brexit, "I can't see the government being able politically to agree for the UK to be a continuing member of an agreement where EU law is paramount. This is another of the many things which will need to be negotiated if the UK is to disentangle itself from its membership of the EU."</p><h2>The London Question</h2><p>Another question, of course, is what would happen to the London section of the court's central division. Somewhat surprisingly, opinions differ as to whether it would have to be moved to another country.</p><p>"Interestingly, there does not appear to be anything in the UPC Agreement to prevent the Central division from remaining in London if the UK were to leave the EU," according to European and UK patent attorneys Reddie & Grose. </p><p>To move the London branch would probably require the UPC Agreement to be amended, which could be time consuming and require the participating states to ratify it again, the firm wrote in July this year. </p><p>So if the UK left EU, there would be "a reasonable chance London will keep its branch of the Central Division. If this were to happen, then appropriately qualified British European patent attorneys would still be able to represent parties before the central division in London (Article 48 UPC Agreement)," said Reddie & Grose. "Indeed, appropriately qualified European patent attorneys should also be able to represent parties in the other branches and divisions of the Unified Patents Court across Europe."</p><p>A similar position was expressed earlier this year by Alan Johnson of Bristows. He said that there would be a political fight over the new location of the branch, and "the whole process of ratification would presumably have to be repeated by those countries which have already gone through the process." </p><p>So, if the remaining countries were willing to proceed with the UPC without the UK, "it may be easier to leave the London section of the UPC Central Division in London, since there appears, strictly speaking, to be no legal prohibition within the UPC Agreement that requires the court to be physically located within the EU," Johnson wrote. "Hence, although somewhat bizarre, it is possible that London could maintain its position as the location of a branch of the central division."</p><p>Others take the opposite view. England says that the UPC Agreement would have to be re-negotiated in order to find another location for the London branch of the Central Division, and this could "potentially set the court and the patent back for a long period." </p><p>Freeland agrees that the hosting of the branch would have to be renegotiated. "Again, I can't see the other member states agreeing to London continuing to host the court if it is not a member (and I am not sure that a non-member can receive court fees to help finance the court)."</p><p>The upshot of all this is that in the event of a Brexit, the UPC would continue but without the UK, which would be excluded from the scope of protection of unitary patents. The UK would, says Johnson, "become markedly less attractive to industry since UK national protection would have to be obtained via UK national patents or by continued designation of 'classical' EP(UK)s." </p><p>Moreover, another IP tool frequently used by the pharmaceutical industry, the supplementary protection certificate (SPC), is governed by EU law, so a Brexit would probably require an amendment to the UK Patents Act or a new act to allow SPC protection to continue in the UK, Reddie & Grose pointed out. </p><p>"Bearing in mind the importance of SPCs to UK based innovators, it seems highly likely that some form of SPC protection will be established if the UK decides to exit," the firm noted. "As for SPCs that are in force at the time of exit, it seems likely that transitional provisions will be established, so these SPCs do not suddenly cease to have effect in the UK and EU trade marks." </p><p>Many questions yet to be answered, then. While opinion polls suggest the gap between those who want to remain in the EU and those who want to leave is narrowing, for now at least the pro-EU camp seems still to be in front, and it is far from certain that when the time comes to put pen to paper the British people will opt to bail out of the Union. But at this stage of the game, nothing should be ruled out.</p><p><i>The first article in this series, on the potential effects of a Brexit on clinical trials and new drug approvals in the UK, was published last month</i>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 378
+
+<p><b>Before the end of 2017 &ndash; and possibly as early as 2016 &ndash; the UK will vote in a referendum on whether to remain a member of the EU. This latest article in our series on the effects of a "Brexit" looks at the possible impact on Europe's future Unified Patent Court and unitary patent system, and what it would mean for patentees in the UK and elsewhere</b>. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+The Brexit Effect What Would It Mean For Europes Future Patent System
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150918T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150918T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150918T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029848
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{B17EB169-D816-450D-BAF5-3AEE9B8BC441}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 72
+
+The Brexit Effect: What Would It Mean For Europe's Future Patent System?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 9
+
+Editorial
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360546
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042454Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+57418fe4-71d2-4979-b17d-a38f2fed31b0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042454Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

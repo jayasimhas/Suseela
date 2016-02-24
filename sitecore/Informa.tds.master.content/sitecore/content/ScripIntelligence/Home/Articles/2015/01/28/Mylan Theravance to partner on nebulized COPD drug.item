@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {A02E2BCF-070E-4585-8CE7-4F800DABA69A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/28/Mylan Theravance to partner on nebulized COPD drug
+parent: {283E19C4-7725-4BBF-92AA-D47D04C385F4}
+name: Mylan Theravance to partner on nebulized COPD drug
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b59c4a50-2e03-4fd3-982a-2b72fb9cdee3
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Mylan, Theravance to partner on nebulized COPD drug
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Mylan Theravance to partner on nebulized COPD drug
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4328
+
+<p>Mylan will spend $45m up front and pay up to $220m in milestone fees plus royalties to co-develop TD-4208, Theravance Biopharma's once-daily long-acting muscarinic antagonist (LAMA) delivered by a nebulizer for chronic obstructive pulmonary disease (COPD) and other respiratory diseases. </p><p>In addition to its initial $15m cash outlay and $30m equity investment in Theravance Biopharma, Mylan will fund Phase III development and regulatory submissions related to the first approved indication for TD-4208. Pittsburgh, Pennsylvania-based Mylan also noted that it will discontinue funding for its in-house combination of a nebulized inhaled corticosteroid (ICS) and long-acting beta agonist (LABA) to invest in TD-4208 monotherapy and prospective combination therapies containing the LAMA.</p><p>If successful in Phase III clinical trials that are expected to begin in 2015, TD-4208 could be the first approved LAMA for COPD that's delivered via nebulizer and the drug is covered by US patents until at least 2025. Mylan and Theravance Biopharma note that about 9% of the 12.7m American adults with COPD, or about 1.1m people, need or prefer nebulized therapy for daily management of their disease. The companies said about 30% use nebulized treatment intermittently as needed. </p><p>Mylan CEO Heather Bresch said in the company's joint statement with Theravance Biopharma that the TD-4208 collaboration "leverages Mylan's expertise in manufacturing and marketing complex respiratory products and Theravance Biopharma's respiratory clinical development capabilities. The addition of TD-4208 to our pipeline is highly complementary with our existing respiratory portfolio, including our marketed nebulized COPD product, Perforomist inhalation solution." </p><p>Theravance BioPharma chairman and CEO Rick Winningham noted that Mylan's support for TD-4208 will expand the LAMA's development program and provide resources to advance other assets in the company's pipeline, which includes the approved antibiotic Vibativ (telavancin) and the investigational drugs TD-9855 for fibromyalgia, Velusetrag in partnership with Alfa Wasserman for diabetic or idiopathic gastroparesis, and TD-8954 to help critically ill patients with enteral feeding intolerance.</p><p>Theravance Biopharma became an independent, publicly-traded company in 2014 when South San Francisco-based Theravance split into two companies (scripintelligence.com, <a href="http://www.scripintelligence.com/home/5-questions-for-Theravance-CEO-Rick-Winningham-351822" target="_new">11 May 2014</a>). Theravance Royalty Management collects royalties from products developed in partnership with GlaxoSmithKline to treat COPD and other respiratory diseases, including Breo Ellipta (fluticasone furoate/vilanterol) and Anoro Ellipta (umeclidinium bromide/vilanterol).</p><p>Theravance Biopharma cannot develop a nebulized LAMA/LABA combination, because of the royalty management company's agreements with GSK, but it may combine TD-4208 with an ICS therapy, Sagient Research noted in a September 2013 report analyzing the results of a multi-dose Phase IIb clinical trial for TD-4208 monotherapy in COPD. </p><p>The therapeutic candidate was effective at all six nebulized doses tested in the study (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Theravance-Phase-IIb-success-with-GSK-independent-COPD-drug-346350" target="_new">6 September 2013</a>). Data from a Phase II study revealed in November showed that a once-daily 175mcg nebulized dose of TD-4208 was more effective than twice-daily 44mcg doses delivered by a nebulizer.</p><p>While Mylan will fund Theravance Biopharma-led Phase III development for TD-4208 through US FDA approval in COPD, the companies will share development costs for additional monotherapy and combination therapy indications. </p><p>Mylan will be responsible for commercial manufacturing and will lead US commercialization for TD-4208, but Theravance Biopharma can opt in to co-promote the LAMA. Mylan will be solely responsible for ex-US development and commercialization of TD-4208, excluding China, and Theravance Biopharma will earn royalties on net sales.</p><p>The biopharma company retains all rights to metered dose inhaler and dry powder inhaler formulations of TD-4208.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 295
+
+<p>Mylan will spend $45m up front and pay up to $220m in milestone fees plus royalties to co-develop TD-4208, Theravance Biopharma's once-daily long-acting muscarinic antagonist (LAMA) delivered by a nebulizer for chronic obstructive pulmonary disease (COPD) and other respiratory diseases. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Mylan Theravance to partner on nebulized COPD drug
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150128T083421
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150128T083421
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150128T083421
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027699
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Mylan, Theravance to partner on nebulized COPD drug
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356414
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b59c4a50-2e03-4fd3-982a-2b72fb9cdee3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

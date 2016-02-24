@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {5C6443E0-0F0E-4914-9ED9-55B9104FCAF7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/02/Eylea bests Lucentis in DME but Avastin wins on cost
+parent: {A4DA0C5F-4495-437C-8ACE-4424E2BEFF66}
+name: Eylea bests Lucentis in DME but Avastin wins on cost
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d68d40dd-4917-4752-8217-fa8f3df8a055
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{F164A4FC-DD48-48EF-946A-76C4D25FFBFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Eylea bests Lucentis in DME, but Avastin wins on cost
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Eylea bests Lucentis in DME but Avastin wins on cost
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9570
+
+<p>An investigator-sponsored clinical trial found that three vascular endothelial growth factor (VEGF) inhibitors work similarly well in about 75% of diabetic macular edema (DME), while Eylea (aflibercept) from Regeneron Pharmaceuticals outperformed Genentech's Lucentis (ranibizumab) and Avastin (bevacizumab) in the 25% of DME patients with more severe vision loss, but a separate physician opinion recommends off-label Avastin for most patients due to its much lower cost.</p><p>Results from the Protocol T study conducted by the Diabetic Retinopathy Clinical Research Network (DRCR.net) with funding from the National Eye Institute, part of the National Institutes of Health (NIH), were published in the New England Journal of Medicine (NEJM) on 18 February. Authors of a concurrent NEJM editorial said people with 20/40 vision at treatment initiation should be given Avastin, because of its $50 per injection cost versus $1,200 for Lucentis and $1,950 for Eylea, but they recommended Regeneron's VEGF inhibitor for DME patients with 20/50 vision or worse.</p><p>"We believe physicians and patients have the right to choose the treatment that's best for them," Genentech spokeswoman Allison Neves told <i>Scrip</i> in response to pricing concerns raised in the editorial. "Having a choice of medicines to treat any disease or condition provides the best environment to provide quality patient care, something Genentech takes very seriously." </p><p>Similarly, Regeneron vice president and head of ophthalmology Robert Vitti told <i>Scrip</i> that the company supports physician and patient choice, but all products should be held to the same quality standards. </p><p>"This study was not designed to evaluate cost. When considering cost, it is important to consider the cost of care in its entirety. In this study, Eylea required one less injection and fewer laser treatments compared to the alternative anti-VEGF therapies," Dr Vitti said.</p><p><b>Results lean toward Eylea</b></p><p>The Protocol T trial enrolled 660 DME patients who received intravitreous injections of 2mg Eylea, 0.3mg Lucentis or 1.25mg of Avastin every four weeks. Avastin is not approved to treat any eye disease, but is commonly used off-label, and was prepared by a central compounding pharmacy for the head-to-head study. </p><p>From baseline to one year, visual acuity improved by a mean of 13.3 letters on a standard eye chart for DME patients treated with Eylea, 11.2 letters with Lucentis and 9.7 letters with Avastin (p<0.001 eylea="" versus="" avastin;="" p="0.03" for="" eylea="" versus="" lucentis).=""></0.001></p><p>However, the study investigators said the difference between the Regeneron and Genentech therapies was not clinically meaningful for the broader study population, because more patients with poor vision were randomized to treatment with Eylea versus the other treatment arms.</p><p>"Overall, the Protocol T study results were positive for Lucentis," Jason Ehrlich, Genentech's group medical director for ophthalmology, told <i>Scrip</i>.</p><p>Some Lucentis-treated patients gained three lines on the standard eye chart, which was a better results than Genentech observed in its pivotal DME clinical trials.</p><p>Dr Ehrlich declined to comment on the Avastin results, because "we can't support or promote the unapproved use of medicines."</p><p>In terms of Lucentis, he said the Protocol T data should be considered along with results that Genentech, a Roche subsidiary, has generated across multiple studies that enrolled thousands of patients during the past 14 years. That's especially important, because the difference between Eylea and Lucentis in DME patients with more severe vision loss has not been observed before.</p><p>"We would like to see the patient level data, especially the patients with worse baseline vision," Dr Ehrlich said. "We would like to understand what happened with those patients and review more of the baseline characteristics to see if this is more of an outlier finding or a new finding."</p><p><b>Better effect in worse patients</b></p><p>Among the patients with 20/50 vision or worse upon enrollment in Protocol T (half of the study participants) the mean change in visual acuity was 18.9 letters for Eylea, 14.2 letters for Lucentis and 11.8 letters for Avastin (p=0.003 for Eylea versus Lucentis; p<0.001 for="" eylea="" versus="" avastin;="" p="0.21" for="" lucentis="" versus="" avastin).=""></0.001></p><p>Regardless of the patient subgroup, the adverse event rate was similar for all three therapies. </p><p>Full safety and efficacy data are slated for presentation during the Annual Macula Society Meeting from 25 to 28 February in Scottsdale, Arizona.</p><p>"We believe Eylea has a longer duration of action, and that was borne out by fewer required injections in the first year," Regeneron's Dr Vitti said. "Also, consistent with better or greater efficacy, was the result that fewer patients treated with Eylea received laser rescue therapy than with the other agents."</p><p>Protocol T participants could have received up to 13 injections during the year-long study, based on individual patient need, but the median number of injections was nine for Eylea and 10 for both Lucentis and Avastin. </p><p>Laser photocoagulation procedures were allowed as needed between weeks 24 and 48. Ultimately, the laser treatments were performed at least once for 76 out of 208 Eylea-treated eyes (37%), for 95 of 206 Lucentis-treated eyes (46%), and 115 of 206 Avastin-treated eyes (56%).</p><p><b>Treatment in the real world</b></p><p>DME affects about 750,000 people in the US and about 25% of patients have 20/50 vision or worse at diagnosis, or about 187,500 Americans. The mean age of patients enrolled in Protocol T was 61 and the mean duration of their experience with diabetes was 17 years. </p><p>"Approximately 75% of patients with diabetic macular edema in the general population present with a visual acuity of 20/40 or better. Because there were no significant differences in safety or efficacy [in Protocol T] among drugs in patients with this presenting visual acuity, cost becomes a major consideration in choosing therapy," wrote NEJM editorial authors Daniel Martin of the Cleveland Clinic Cole Eye Institute in Ohio and Maureen Maguire in the ophthalmology department at the University of Pennsylvania in Philadelphia.</p><p>Drs Martin and Maguire concluded that Avastin "should be considered as first-line therapy in patients with a visual acuity of 20/40 or better." </p><p>They also wrote that Eylea should be the treatment of choice for DME patients with 20/50 vision or worse. For those patients, Avastin should be "the alternative given the lack of a significant difference in visual outcome between [Avastin] and [Lucentis] and the large difference in cost between the two drugs."</p><p>Drs Martin and Maguire also wrote that "financial incentives and logistic barriers to providing the least expensive drug" should be eliminated so that DME patients can benefit from the comparative findings from Protocol T and other studies. The doctors referred to prescription drug cost rebates provided by pharmaceutical companies and payer requirements that fall in favor of certain treatments.</p><p><b>Cost concerns rising</b></p><p>The two biggest indications for Eylea and Lucentis are DME and wet age-related macular degeneration (AMD) &ndash; diseases with rapidly growing numbers given the world's aging population and the fast rise in diabetes globally. That means drug costs for DME and AMD are rising both in the US and abroad. </p><p>There's a long-running debate in the EU, where Novartis markets Lucentis, concerning health authority recommendations for off-label Avastin rather than on-label Lucentis (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Off-label-Avastin-in-AMD-the-European-Commission-gets-involved-350811" target="_new">21 March</a> and <a href="http://www.scripintelligence.com/home/Pharma-industry-in-fightback-against-off-label-legalization-push-in-EU-352342" target="_new">13 June 2014</a>, <a href="http://www.scripintelligence.com/policyregulation/Italys-off-label-rule-turns-EU-system-upside-down-says-EFPIAs-Bergstrom-356704" target="_new">11 February 2015</a>).</p><p>And due to pricing pressures from public and private payers in the US, retina specialists said in August that they already prescribe Avastin as a first-line therapy over Lucentis and Eylea (scripintelligence.com, <a href="http://www.scripintelligence.com/home/AMD-drug-reimbursement-pressure-rising-in-US-353461" target="_new">20 August 2014</a>).</p><p>Even so, Regeneron, Genentech's parent Roche and Novartis continue to see rising sales from their VEGF inhibitors. Eylea outpaced Lucentis in the US for the first time last year with $1.74bn versus $1.7bn in 2014 sales (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Regenerons-Eylea-overtakes-Lucentis-with-2014-US-sales-356689" target="_new">11 February 2015</a>). Novartis reported $2.4bn in ex-US Lucentis sales versus $1.04bn in Eylea sales for Regeneron's ex-US partner Bayer Healthcare. </p><p>Lower cost competition is on its way, however. Ahead of Hospira's acquisition by Pfizer, the company entered into an agreement recently with Pfenex to co-develop a Lucentis biosimilar (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Before-Pfizer-buyout-Hospira-links-with-Pfenex-for-Lucentis-biosimilar-356691" target="_new">11 February 2015</a>).</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 479
+
+<p>An investigator-sponsored clinical trial found that three vascular endothelial growth factor (VEGF) inhibitors work similarly well in about 75% of diabetic macular edema (DME), while Eylea (aflibercept) from Regeneron Pharmaceuticals outperformed Genentech's Lucentis (ranibizumab) and Avastin (bevacizumab) in the 25% of DME patients with more severe vision loss, but a separate physician opinion recommends off-label Avastin for most patients due to its much lower cost.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Eylea bests Lucentis in DME but Avastin wins on cost
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151202T235224
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151202T235224
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151202T235224
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027860
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Eylea bests Lucentis in DME, but Avastin wins on cost
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199500038
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356735
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042256Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d68d40dd-4917-4752-8217-fa8f3df8a055
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042256Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

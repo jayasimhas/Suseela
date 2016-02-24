@@ -40,7 +40,7 @@ content-length: 0
 ----version----
 language: da
 version: 1
-revision: 41f8ba93-1984-4c5c-b9b3-f4b2a01394f6
+revision: bb75de52-1b1d-49b6-8eb8-3dc3a3e33a86
 
 ----field----
 field: {9B72A62B-2775-423D-B17A-EC34A9F31AF8}
@@ -69,7 +69,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151003T031054Z
+20151207T115210Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -83,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-41f8ba93-1984-4c5c-b9b3-f4b2a01394f6
+bb75de52-1b1d-49b6-8eb8-3dc3a3e33a86
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151003T031054Z
+20151207T115210Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -101,7 +101,7 @@ sitecore\admin
 ----version----
 language: de-DE
 version: 1
-revision: b5bc8a86-e855-4886-b7c6-2d0e11bed2de
+revision: 756e22c7-e061-4593-92e0-724f65fa48dc
 
 ----field----
 field: {9B72A62B-2775-423D-B17A-EC34A9F31AF8}
@@ -130,7 +130,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151003T030807Z
+20151207T115336Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -144,14 +144,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b5bc8a86-e855-4886-b7c6-2d0e11bed2de
+756e22c7-e061-4593-92e0-724f65fa48dc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151003T030807Z
+20151207T115336Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -230,7 +230,7 @@ content-length: 0
 ----version----
 language: ja-JP
 version: 1
-revision: fad37ea8-dfce-4b54-b9d2-ffb8641ecfb9
+revision: e204a8a9-1553-41ad-817c-e27224094fb4
 
 ----field----
 field: {9B72A62B-2775-423D-B17A-EC34A9F31AF8}
@@ -259,7 +259,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151003T030934Z
+20151207T115456Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -273,14 +273,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-fad37ea8-dfce-4b54-b9d2-ffb8641ecfb9
+e204a8a9-1553-41ad-817c-e27224094fb4
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151003T030934Z
+20151207T115456Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

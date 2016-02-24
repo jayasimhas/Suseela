@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {7B0A66BE-D658-4F33-B1B7-CD489D0A4941}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/27/$80m Windfall Will Push 7 ADC Drug Candidates Into Clinic Within Two Years
+parent: {4497F46D-3201-4913-B491-A39A212D961C}
+name: $80m Windfall Will Push 7 ADC Drug Candidates Into Clinic Within Two Years
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ff4e1f05-ad18-4a79-81fb-3ed43ebc7811
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 75
+
+$80m Windfall Will Push 7 ADC Drug Candidates Into Clinic Within Two Years 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 74
+
+$80m Windfall Will Push 7 ADC Drug Candidates Into Clinic Within Two Years
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5500
+
+<p>By generating $80m through its latest equity placement, oncology drug development company ADC Therapeutics (ADCT) says it is now well-funded to advance its portfolio of linked tumor-targeted antibody drug conjugates (ADCs) and plans to have seven drug candidates in human clinical trials by-mid 2017, two of which are partnered with AstraZeneca PLC's biologic's division MedImmune LLC.</p><p>The latest equity fund raising was double the size of its last and drew in new investors from Europe and the US alongside founding investor Auven Therapeutics, a private equity firm, and participation from AstraZeneca. The proceeds will be used to progress ADCT's product portfolio, including ADCT-301 which is in Phase I tests for lymphoma and leukemia. "We will have a second program entering the clinic in Q4 this year," Chris Martin, ADCT's CEO, told <i>Scrip</i>. He did not identify the ADC or its target indication, however.</p><p>The Swiss-based group, which uses ADC technology licensed from MedImmune's wholly-owned UK subsidiary Spirogen Ltd., is meanwhile talking with unidentified pharma companies and well-funded biotechs for possible partnering of some of its five remaining ADC assets, Martin said. </p><p>ADCT's drug portfolio uses technology licensed from Spirogen which has the potential to directly target cancer tumors while protecting healthy cells. Martin, a former MedImmune executive, was the CEO of Spirogen when it was bought by MedImmune in October 2013. </p><p>ADCT's ADCs are highly targeted drug constructs which combine monoclonal antibodies specific to surface antigens on particular tumor cells with highly potent pyrrolobenzodiazepine (PBD)-based warheads. PBDs are a novel class of cytotoxic binding agents that adhere to specific sites of DNA of the cancer cell. This blocks cancer cells' division and growth without distorting its DNA helix, which could potentially prevent the emergence of drug resistance. </p><p>In October 2013, AstraZeneca also agreed to pay $20 million to take an equity investment in ADCT. That investment was be matched by Auven Therapeutics, the majority shareholder in both ADCT and Spirogen. AstraZeneca at the time also agreed to collaborate with ADCT to develop two programs from a defined list and will pay an undisclosed upfront payment and development milestones. The deal gave ADCT a profit-share arrangement and an option to co-promote one of the products in the US. In May 2014, ADCT, which was established in 2012, said it was moving the first of the two antibody drug conjugates it is developing with MedImmune, called ADCT-401, into a clinical study in humans for treating prostate cancer.</p><p>"ADC Therapeutics was formed to essentially exploit PBD technology, particularly the later generations and the know-how that has been accumulated in terms of how to conjugate the PBDs effectively to deliver specific antibodies to tumor cells," Martin explained in an interview with Scrip. "We are exclusively using Spirogen technology for our payloads, but we also have in-house antibody engineering capabilities and conjugating capabilities, so we can conjugate them using our own proprietary technology."</p><p>Martin said he uses his experience with the three companies to advance the project. </p><p>"We have very good relations with MedImmune with our two partnered programs. The state of the art of antibody drug conjugate development using PBDs has developed enormously over the past years, with considerable investment and collaborative efforts between those three companies. So that has gone a long way to improve the efficacy and vulnerability of tumor cells and make the design of an ADC less of an art and more into a rational design process, and that evolution has been much to ADCT's benefit," Martin said.</p><p>Asked whether ADCT would be interested in finding a partner to fund pivotal trials for some of the Swiss group's other portfolio assets, he replied: "We are open-minded as to how we finance developments of the program. Ideally, of the five un-partnered ADC candidates in our portfolio at the moment, we probably would look to partner one or two. We have seven ADC candidates currently in our pipeline. We are also evaluating additional potential programs which we can bring in. That would be the product of our continual evaluation of new targets and new antibodies for the next ADC coming into our pipeline."</p><p>He said some of ADCT's ADCs are applicable across a range of large unmet need cancers with very large patient populations. "So it probably does make sense for us to look to partners for some of those programs, just because the ultimate size of range across indications and ultimately the marketing required for those would be substantial. So for those larger programs we are looking at partnering opportunities. But some of the ones where they are more "niche" indications and where there's more leeway to regulatory approval, then we'd be more likely to take those forward ourselves," Martin said. He did not elaborate.</p><p>The CEO said early collaborations with regulatory authorities are particularly important for ADCT.</p><p>"We have a clinical development team in New Jersey which is navigating the regulatory pathway along with the ADCT board. The regulatory pathway for an ADC needs to be identified early because you see a good level of activity in Phase I and you need to be entering into discussions about potential regulatory paths forward particularly at that stage." </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 392
+
+<p>By generating $80m through its latest equity placement, oncology drug development company ADC Therapeutics (ADCT) says it is now well-funded to advance its portfolio of linked tumor-targeted antibody drug conjugates (ADCs) and plans to have seven drug candidates in human clinical trials by-mid 2017, two of which are partnered with AstraZeneca PLC's biologic's division MedImmune LLC.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 74
+
+$80m Windfall Will Push 7 ADC Drug Candidates Into Clinic Within Two Years
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150827T193315
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150827T193315
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150827T193315
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029668
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 75
+
+$80m Windfall Will Push 7 ADC Drug Candidates Into Clinic Within Two Years 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360142
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042445Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ff4e1f05-ad18-4a79-81fb-3ed43ebc7811
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042445Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

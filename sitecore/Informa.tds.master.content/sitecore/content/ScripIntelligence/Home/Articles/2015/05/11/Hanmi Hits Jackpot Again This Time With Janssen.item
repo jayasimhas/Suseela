@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {186AF00B-E63C-470D-8E40-51D93A60285D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/11/Hanmi Hits Jackpot Again This Time With Janssen
+parent: {1BE3AA12-1C39-4525-B308-110947259A7E}
+name: Hanmi Hits Jackpot Again This Time With Janssen
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d001aedc-f5db-4020-aba2-5c2582c53b69
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+Hanmi Hits Jackpot Again, This Time With Janssen
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Hanmi Hits Jackpot Again This Time With Janssen
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5769
+
+<p>Hanmi Pharmaceutical Co. Ltd. has inked a licensing out agreement with Janssen Pharmaceutical Co. for the development and commercialization of its diabetes and obesity therapy HM12525A, a long-acting GLP/GCG analog.</p><p>Following a string of major licensing out deals with multinationals this year, the agreement will bring further international recognition of Hanmi's new diabetes therapies and once again prove the firm's potential as a leading South Korean innovator.</p><p>Under the agreement, Janssen will have the exclusive worldwide rights to the therapy, excluding in South Korea and China. Hanmi will receive an upfront payment of $105m and a total of up to $810m in milestone payments, plus double-digit sales royalties after commercialization.</p><p>The agreement remains subject to customary closing conditions including review under the US Hart-Scott-Rodino Antitrust Improvements Act.</p><p>HM12525A is a novel ultra-long-acting dual agonist which consists of a chemically synthesized GLP-1/GCG peptide, conjugated with a human IgG Fc fragment via a flexible PEG linker.</p><p>The once-weekly product is site-specifically conjugated using Hanmi's proprietary LAPSCOVERY technology for sustained duration of activity. By combining the synergetic GLP-1/GCG effects with this long-acting platform, HM12525A may improve patient compliance and thereby treatment outcomes.</p><p>Following the new licensing deal, Janssen plans to start Phase II clinical trials for HM12525A next year.</p><h2>Clinical Results So Far</h2><p>During a placebo-controlled, single ascending dose Phase I study, HM12525A demonstrated safety and prolonged pharmacokinetics in healthy volunteers, said Hanmi in a poster presentation to the recent European Association for the Study of Diabetes (EASD) meeting in Stockholm, Sweden.</p><p>The study demonstrated that HM12525A was well tolerated and the confirmed long half-life after a single dose supported potential use in weekly or longer injection intervals, Hanmi said. Heart rate elevation was observed with increasing dose levels, while no clinically relevant changes in blood pressure during 24-hour ABP monitoring at peak concentration were observed.</p><p>As expected, gastrointestinal disorders - known to be related to the mode of action of GLP-1 and GCG - were the major adverse events, but no clinically meaningful changes in laboratory parameters were observed. A low incidence of treatment-emergent antibodies and no neutralizing antibodies were observed.</p><p>In another poster presentation, Hanmi aimed to achieve increased body weight loss compared with GLP-1R agonists while extending the half-life. In DIO rats, HM12525A showed superior body weight loss compared with liraglutide (Novo Nordisk AS's <i>Victoza</i>), and the potent body weight loss effect of HM12525A was twice than pair-fed groups. </p><p>HM12525A induced the expression of the EE specific marker gene (ie, PGC1&#945;, NRF-1, and UCP) and mitochondria biogenesis as an action of glucagon in adipocytes and myocytes. The molecule also reduced body weight and fat mass without a change in lean body mass, supporting the idea that increasing EE may be the driving force for the potent weight loss.</p><p>In non-alcoholic steatohepatitis animal models, HM12525A reduced hepatic triglyceride, inflammation, fibrosis marker, and histological scores. The results suggested that the novel dual agonist may have clinical potential for the treatment of obesity and obesity-related liver disease.</p><h2>String Of Deals</h2><p>The latest deal comes just a few days after Hanmi's large diabetes therapy licensing agreement with Sanofi.</p><p>The two firms reached a <a href="http://www.scripintelligence.com/business/Sanofi-Looks-To-Hanmi-Deal-To-Bolster-Diabetes-Franchise-361386" target="_new">worldwide license agreement</a> to develop a portfolio of experimental, long-acting diabetes treatments developed by the South Korean pharma firm, in a deal worth up to &euro;3.9bn ($4.2bn), including &euro;400m upfront. </p><p>The Sanofi deal marked a new record for a licensing out agreement reached by a South Korean pharma firm. Hanmi's stock rallied for the second consecutive day, up by the daily limit high of 30% on Nov. 6 and up 16% on Nov. 9, after the deal with Sanofi.</p><p>The latest agreement with Janssen was announced shortly after the South Korean stock market closed Nov. 9.</p><p>It has been a busy and a record-setting year for Hanmi, which has clinched a series of major licensing out deals including an agreement worth up to $690m with Eli Lilly & Co. for its oral Bruton's tyrosine kinase (BTK) inhibitor HM71224.</p><p>An agreement worth up to $730m has been <a href="http://www.scripintelligence.com/business/Hanmi-inks-record-Korean-deal-for-Boehringer-cancer-therapy-359648" target="_new">signed with Boehringer Ingelheim</a> GMBH for HM61713, a novel non-small cell lung cancer (NSCLC) therapy developed by the South Korean firm (<uri ref="https://www.pharmamedtechbi.com:443/publications/pharmasia-news/2015/7/28/hanmi-inks-record-korean-deal-with-boehringer-for-cancer-therapy">).<p><p>And Hanmi's hunt for licensing out partners may not be over yet, given the other possible attractive candidates in its R&D pipeline. These include growth hormone LAPS rhGH (HM10560A), KX2-391, an Src inhibitor and tubulin destabilizer for solid tumors, and HM95573, a selective pan-RAF inhibitor potentially targeting B-RAFmut and /or N-RASmut/C-RAF driven cancers.</p><p>This story has also been published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>. <i>Scrip Intelligence</i> brings selected complementary coverage from our sister publications to our subscribers.</p><p><p></uri>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 222
+
+<p>Hanmi Pharmaceutical Co. Ltd. has inked a licensing out agreement with Janssen Pharmaceutical Co. for the development and commercialization of its diabetes and obesity therapy HM12525A, a long-acting GLP/GCG analog.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Hanmi Hits Jackpot Again This Time With Janssen
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150511T192727
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150511T192727
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150511T192727
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030278
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+Hanmi Hits Jackpot Again, This Time With Janssen
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600240
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B5636197-C61A-4731-8E40-9E841B7DC9FA}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361399
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042520Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d001aedc-f5db-4020-aba2-5c2582c53b69
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042520Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

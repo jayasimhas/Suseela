@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4E8934A7-5F81-46DF-AD6B-675921DED9C3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/29/Shire Uses Foresight to Expand in Ophthalmology
+parent: {BEC3B212-EAA2-4ACE-8629-63E1A9A454B0}
+name: Shire Uses Foresight to Expand in Ophthalmology
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 93300b7e-1d6b-42ab-9a92-1643b5ad8826
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Shire Uses Foresight to Expand in Ophthalmology
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Shire Uses Foresight to Expand in Ophthalmology
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5571
+
+<p> Shire PLC has acquired privately held Foresight Biotherapeutics for $300m, gaining FST-100, a Phase III-ready drug in development for infectious conjunctivitis and a commercial complement to Shire's lifitegrast pending at FDA. </p><p> Shire already has plans to expand the Phase III development of FST-100 beyond viral conjunctivitis to include the bacterial form of pink eye as well. Both lifitegrast and FST-100 are in development to treat ocular surface conditions, and FST-100 will join lifitegrast as a key asset in Shire's initiative to expand into eye care. </p><p> CEO Flemming Ornskov, once the president of Bausch &amp; Lomb Inc, set his sights on establishing ophthalmology as a new pillar at Shire when he took over the top leadership spot in 2013. The company acquired lifitegrast with the <a href="http://www.scripintelligence.com/business/Shire-punts-160m-on-second-eye-care-firm-SARcode-341496" target="_new">$160m acquisition of SARcode Bioscience Inc</a> in 2013. In May 2014, Shire established an Ophthalmics Business Unit. </p><p> Lifitegrast approval is pending with the US FDA with an Oct. 25 user fee date, and Shire is thinking ahead to commercialization. FT-100 &quot;is highly synergistic with the planned lifitegrast commercial structure,&quot; Mr Dr Ornskov said in a statement. </p><p> FT-100, which combines 0.6% povidone iodine and 0.1% dexamethasone in topical ophthalmic drops, is intended to reduce inflammation while killing virus and bacteria and eliminating the need for unnecessary antibiotic use. It could be the first treatment designed to treat both viral and bacterial conjunctivitis. That's important since it is difficult to know which is causing of the condition. </p><p> Approximately 50% of infectious conjunctivitis cases are viral, according to Shire, and 65% to 90% are caused by adenovirus, for which no therapy currently can resolve both clinical symptoms and eradicate adenovirus. </p><p> <b>Ready To Start Phase III</b> </p><p> Foresight, based in New York, has completed two Phase II proof-of-concept studies testing FST-100 in adenoviral conjunctivitis. One trial, a two-arm pilot study, showed a trend toward efficacy but there were too many subjects testing positive for viral presence to deliver meaningful results. </p><p> The second trial, a three-arm study, randomized patients to receive FST-100, povidone iodine or vehicle four times daily for five days. In that study, patients treated with FST-100 showed a statistically significant improvement in rates of clinical cure and viral eradication versus vehicle at day 6 (30.6% versus 6.4%). There was also a trend toward clinical significance for FST-100 versus povidone iodine. </p><p> Based on the data, Foresight already has met with FDA to discuss the Phase III clinical development plan and path forward in adenoviral conjunctivitis, Shire said. </p><p> Now Shire will move forward with the Phase III trial and expand the program to include the treatment of bacterial conjunctivitis. In preclinical studies, FST-100 showed activity against pathogens that may cause bacterial conjunctivitis. The company declined to say when the study could begin, but said it is finalizing the program. </p><p> <b>Lifitegrast Further Along</b> </p><p> Lifitegrast, meanwhile, could become the first new drug for dry eye disease since Allergan's <i>Restasis</i> (cyclosporine ophthalmic emulsion) was approved more than a decade ago. The drug was granted a priority review by FDA, although the Phase III data supporting the filing were mixed. </p><p> The drug, which inhibits T-cell inflammation by blocking two proteins &ndash; lymphocyte function-associated antigen (LFA-1) and intercellular adhesion molecule-1 (ICAM-1) &ndash; showed promising results in Phase II, but yielded mixed results in the Phase III OPUS-1 and OPUS-2 studies. </p><p> The OPUS-1 study met one of two co-primary endpoints, reducing signs of dry eye, but did not meet a second co-primary endpoint, reducing symptoms of dry eye. On the other hand, the <a href="http://www.scripintelligence.com/researchdevelopment/SARcode-Bioscience-eyes-positive-Phase-III-data-for-lead-product-336523" target="_new">OPUS-2 study</a> met the co-primary endpoint of reducing symptoms of dry eye, but failed to reduce the signs of dry eye, such as corneal scarring. Analysts lost their enthusiasm for the drug after the results were released, despite Shire's <a href="http://www.scripintelligence.com/home/Shire-preparing-for-all-outcomes-as-it-awaits-lifitegrast-approval-359598" target="_new">continued optimism</a>. </p><p> News that the FDA accepted the filing and granted a <a href="http://www.scripintelligence.com/policyregulation/Shires-dry-eye-drug-lifitegrast-granted-speedy-review-357751" target="_new">priority review</a> renewed investor excitement for lifitegrast. The company initiated another clinical trial, OPUS-3, a symptom-only study evaluating the efficacy and safety of lifitegrast. The trial is fully enrolled with top-line data expected in the fourth quarter. </p><p> Shire has begun building out its ophthalmology commercial team to support the launch of lifitegrast, the firm said, but its recruitment efforts partially depend on when it hears from FDA on the NDA. </p> <p> <p> [Editor's note: This story is also being published in <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet-daily" target="_new">&quot;The Pink Sheet&quot; DAILY</a>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.] </p> <p><p><p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 235
+
+<p> Shire PLC has acquired privately held Foresight Biotherapeutics for $300m, gaining FST-100, a Phase III-ready drug in development for infectious conjunctivitis and a commercial complement to Shire's lifitegrast pending at FDA. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Shire Uses Foresight to Expand in Ophthalmology
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150729T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150729T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150729T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029413
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Shire Uses Foresight to Expand in Ophthalmology
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198700114
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{82DFA523-C3A1-41A0-A50F-D8A52B45592E}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359664
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+93300b7e-1d6b-42ab-9a92-1643b5ad8826
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042431Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

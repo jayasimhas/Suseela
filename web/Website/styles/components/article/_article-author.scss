@@ -1,8 +1,8 @@
 .article-author {
     @include textMix("Roboto", 18px, 500);
-    background-color: $informa-light-gray-f;
-    border-top: 2px solid $informa-light-gray-d;
-    margin: 1rem 0;
+    background-color: $color-concrete-gray;
+    border-top: 2px solid $color-light-gray;
+    margin-bottom: 2rem;
     padding: 1rem;
 
     // MULTIPLE AUTHORS
@@ -19,22 +19,25 @@
     &__list li {
         border-bottom: 1px solid $informa-light-gray-d;
         margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
 
         &:last-child {
             border: 0;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
 
     &__name {
-        width: 30%;
+        display: inline-block;
+        width: 290px;
     }
 
     &__contact {
         font-size: 15px;
         font-weight: 400;
 
-        a:first-child {
+        a:first-child:not(:only-child) {
             margin-right: 18px;
             padding-right: 18px;
             position: relative;
@@ -95,6 +98,7 @@
         width: 7.5rem;
         vertical-align: middle;
         margin-right: 1.125rem;
+        display: inline-block;
     }
 
     &__solo-wrapper {

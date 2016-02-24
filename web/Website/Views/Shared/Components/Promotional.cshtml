@@ -1,0 +1,10 @@
+﻿@model PromotionalViewModel
+<div class="promotional-sidebar">
+	@if (Model.DisplayImage)
+	{
+		@Html.Glass().Editable(x => x.GlassModel.Image)
+	}
+	<h3>@Html.Glass().Editable(x => x.GlassModel.Title)</h3>
+	<div>@Html.Glass().Editable(x => x.GlassModel.Text)</div>
+	@Html.Glass().Editable(x => x.GlassModel.Link, new { @class = "button--outlined button--gilded" })
+</div>

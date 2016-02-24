@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {C4CB9A5D-B2CD-4EF5-B4ED-1A03409D6775}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/24/Biogen SOBI get pediatric results needed for Alprolix filing in EU
+parent: {C1DA9DF5-F77D-47A2-A40D-AF16E2FF9916}
+name: Biogen SOBI get pediatric results needed for Alprolix filing in EU
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fb6f6e6c-6fc3-47e6-b3ae-b4f34e53cb04
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+Biogen, SOBI get pediatric results needed for Alprolix filing in EU
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Biogen SOBI get pediatric results needed for Alprolix filing in EU
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4442
+
+<p>Biogen Idec and Swedish Orphan Biovitrum (SOBI) plan to seek approval in the EU later this year for Alprolix [coagulation factor IX (recombinant) Fc fusion protein] now that the partners have results from the Phase III Kids B-LONG clinical trial in hemophilia B.</p><p>Biogen and SOBI revealed positive top-line results from Kids B-LONG on 27 February, noting that Alprolix met the Phase III trial's primary endpoint by showing that no patients developed inhibitors to the long-acting treatment for hemophilia B. The factor IX therapy was approved for adults and children in the US in March 2014 based on a completed Phase III adult study and preliminary Kids B-LONG results, but the European Medicines Agency (EMA) requires complete pediatric results for approval of any new hemophilia therapy (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/US-yes-for-Biogen-Idec-hemophilia-drug-Alprolix-350954" target="_new">31 March 2014</a>).</p><p>Top-line pediatric results for Biogen's and SOBI's hemophilia A therapy Eloctate [antihemophilic factor (recombinant), Fc fusion protein] were reported in April from the Phase III Kids A-LONG clinical trial (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/BiogenSobis-Eloctate-meets-all-endpoints-in-Kids-trial-351204" target="_new">10 April 2014</a>). The companies sought EU approval for the antihemophilic factor, which will be known as Elocta in Europe, based on those results. </p><p>SOBI said in November that the EMA accepted the Elocta application in October and should make an approval decision during the second half of 2015 &ndash; more than a year after Eloctate's US approval (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Tough-decisions-as-Sobi-gears-up-for-new-hemophilia-launch-355168" target="_new">20 November</a> and <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Biogen-hemophilia-A-therapy-Eloctate-352194" target="_new">8 June 2014</a>).</p><p>The Kids B-LONG results for Alprolix will support a marketing authorization application (MAA) to the EMA as well as pediatric approvals for the product in various ex-US markets. In addition to the US, Alprolix is approved for hemophilia B patients in Canada, Japan and Australia. Hemophilia B affects about 4,000 people in the US and 28,000 worldwide. </p><p>Under its partnership with Biogen, SOBI can opt in to complete development and commercialize Alprolix in Europe, North Africa, Russia and certain Middle Eastern markets, as with Elocta. Biogen holds the rights to Alprolix in North America and all other non-SOBI territories.</p><p>"Assuming EMA filing by mid-2015 (and SOBI opting-in at filing), we assume Alprolix EU launch by SOBI by the end of 2016, with peak annual EU sales potential of $337m," Jefferies analyst Eun Yang said in a 27 February research note. "For Elocta &#8230; we expect EU approval by year-end 2015, with peak annual EU sales potential of $685m. In the US, Eloctate/Alprolix was launched in July 2014/May 2014, respectively. We forecast US peak sales potential of $804M for Eloctate and $466M for Alprolix."</p><p><b>Pediatric results</b></p><p>Kids B-LONG enrolled 30 boys with severe hemophilia B, although 27 completed the study, for weekly treatment with Alprolix. Beyond the primary endpoint showing that no patients developed inhibitors to the therapy, secondary endpoints included overall and spontaneous annualized bleeding rates (ABR) and the number of infusions needed to treat bleeding episodes.</p><p>The overall median ABR was 1.97, but about 33% of patients had no bleeding episodes and 91.7% of bleeding episodes were controlled by one or two Alprolix infusions. </p><p>Biogen and SOBI said Alprolix was generally well tolerated with adverse events that were consistent with the patient population studied as well as the results seen in adults and adolescents in the Phase III B-LONG clinical trial. </p><p>One boy in Kids B-LONG experienced decreased appetite that was considered to be related to Alprolix, but there were no serious allergic reactions or vascular thrombotic events in the pediatric study. No serious adverse events were determined to be related to Alprolix and there were no major side effects that led to treatment discontinuation. </p><p>More detailed results from Kids B-LONG will be presented at a future scientific meeting.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 269
+
+<p>Biogen Idec and Swedish Orphan Biovitrum (SOBI) plan to seek approval in the EU later this year for Alprolix [coagulation factor IX (recombinant) Fc fusion protein] now that the partners have results from the Phase III Kids B-LONG clinical trial in hemophilia B.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Biogen SOBI get pediatric results needed for Alprolix filing in EU
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150224T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150224T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150224T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027953
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{99C1E0C6-E575-4630-A767-F6BBBF6CA843}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+Biogen, SOBI get pediatric results needed for Alprolix filing in EU
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+MarketData
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356904
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042301Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fb6f6e6c-6fc3-47e6-b3ae-b4f34e53cb04
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042301Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

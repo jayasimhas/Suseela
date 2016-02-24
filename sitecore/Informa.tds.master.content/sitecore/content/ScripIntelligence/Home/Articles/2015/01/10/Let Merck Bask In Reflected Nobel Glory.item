@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4CEC2ED3-E843-43CB-AC8A-BCCCC352CA3A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/10/Let Merck Bask In Reflected Nobel Glory
+parent: {12A33660-1AE1-4C03-B8A3-D2F6FB93E8A2}
+name: Let Merck Bask In Reflected Nobel Glory
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 830e7f61-b55b-48f7-9986-1482832098bc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Let Merck Bask In Reflected Nobel Glory
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 39
+
+Let Merck Bask In Reflected Nobel Glory
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2453
+
+<p>This week saw the 2015 Nobel Prize for Physiology or Medicine jointly awarded to the discoverers of the ground-breaking medicines artemisinin for malaria and avermectin for diseases like river blindness that are caused by parasitic worms. </p><p>If ever there was a feel-good story with big pharma as a protagonist, it is the story that started with avermectin. </p><p>Work by Japanese microbiologist Satoshi ?mura (whose investigation of soil included samples collected from a Japanese golf course) was taken further by Merck & Co parasitologist William C. Campbell, leading eventually to the development of the avermectin derivative, ivermectin. This drug, branded by Merck as Mectizan, gave the world a powerful tool against the parasitic diseases river blindness and lymphatic filariasis, which disproportionately affect the world's poorest countries.</p><p>In the 1970s Merck had been aiming to develop avermectin for animal use, but by the early 1980s its scientists were studying it in humans. In 1987 ivermectin was approved (in France, since the FDA didn't want a drug for a disease that didn't exist in the US). Merck set about seeking funding to get it to the many poor countries in sub-Saharan Africa, Latin America and Asia where river blindness was endemic. The company was knocked back, however, by venerable institutions including the World Health Organization and the US State Department.</p><p>It didn't take long for Merck's chairman Dr Roy Vagelos to decide to make as much ivermectin as was needed freely available to anyone, anywhere, for as long as they needed it. </p><p>That generous, open-ended commitment, apparently made without prior in-depth financial calculations or even board approval, has led to lymphatic filariasis and river blindness &ndash; once a severe threat to hundreds of millions of people &ndash; having been brought under control and in some countries even eradicated. </p><p>With more than 1 billion treatments donated, Merck's Mectizan Donation Program is the biggest, longest running drug donation program around. The public-private partnership that underpins the effective distribution of Mectizan is another reason that this program is held up as a gold standard for others in the industry to emulate. </p><p>Merck deserves now to enjoy some of the Nobel-generated glow focused on the two scientists, for no medical breakthrough can be celebrated if it hasn't been made available to patients.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 246
+
+<p>This week saw the 2015 Nobel Prize for Physiology or Medicine jointly awarded to the discoverers of the ground-breaking medicines artemisinin for malaria and avermectin for diseases like river blindness that are caused by parasitic worms. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 39
+
+Let Merck Bask In Reflected Nobel Glory
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150110T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150110T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150110T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029984
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Let Merck Bask In Reflected Nobel Glory
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360773
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+830e7f61-b55b-48f7-9986-1482832098bc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

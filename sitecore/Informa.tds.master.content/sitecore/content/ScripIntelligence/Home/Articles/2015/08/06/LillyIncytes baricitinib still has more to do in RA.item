@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {04FB65C5-0237-4554-B9F1-77397E204401}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/06/LillyIncytes baricitinib still has more to do in RA
+parent: {1433669C-C53A-4B22-AB4D-371A05B8BBF0}
+name: LillyIncytes baricitinib still has more to do in RA
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 84ac7457-362c-49a7-af11-9413d6e578f2
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Lilly/Incyte's baricitinib still has more to do in RA
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+LillyIncytes baricitinib still has more to do in RA
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8542
+
+<p>The full data for Lilly/Incyte's Phase III RA-BUILD and RA-BEACON studies of their novel oral JAK 1 and 2 inhibitor baricitinib presented at EULAR in Rome this week confirm its promising efficacy but some experts want to see still more safety data.</p><p>The top-line data from RA-BEACON were <b>released late last year</b> when and showed that the product improved ACR20 scores (a relatively low hurdle) after 12 weeks when compared with placebo in moderate to severe patients who had previously failed at least one anti-TNF therapy. RA-BUILD was studying the drug in patients who had had an inadequate response to prior conventional DMARD therapy. </p><p>In all, Lilly and Incyte are conducting four pivotal Phase III trials of baricitinib to support regulatory submission in most countries, with an additional Phase III study recently initiated to support clinical development in China. Filings are due this year. Baricitinib is also in Phase II development for psoriasis and diabetic nephropathy.</p><p>Pfizer has made the first inroads into the rheumatoid arthritis market with its oral JAK inhibitor Xeljanz (tofacitinib) but its uptake has been hampered by safety concerns. Analysts generally expect the me-too JAK inhibitors, like baricitinib and also AbbVie/Galapagos's filgotinib, to have more of an impact, with their potentially smoother safety profiles adding to strong efficacy. </p><p>The full data presented at EULAR from the RA-BEACON study in 527 patients with active RA and an inadequate response or intolerance to one or more TNF inhibitor who received either 2mg or 4mg doses of baricitinib or placebo in addition to their conventional DMARDs show that ACR20 responses were significantly higher for the 4mg dose at 12 weeks (the primary endpoint) but also that both doses met the more stringent ACR50 and ACR70 scores, and that the benefit extended to 24 weeks of therapy:</p><table><tbody><tr><td colspan="7" valign="middle"><p><b>RA-BEACON data </b></p>&nbsp;</td></tr><tr><td valign="middle"><p>&nbsp;</td><td colspan="3" valign="middle"><p>Week 12</p>&nbsp;</td><td colspan="3" valign="middle"><p>Week 24</p>&nbsp;</td></tr><tr><td valign="middle"><p>&nbsp;</td><td valign="middle"><p>PBO (N=176)</p>&nbsp;</td><td valign="middle"><p>2 mg QD (N=174)</p>&nbsp;</td><td valign="middle"><p>4 mg QD (N=177)</p>&nbsp;</td><td valign="middle"><p>PBO (N=176)</p>&nbsp;</td><td valign="middle"><p>2 mg QD (N=174)</p>&nbsp;</td><td valign="middle"><p>4 mg QD (N=177)</p>&nbsp;</td></tr><tr><td valign="middle"><p>ACR20</p>&nbsp;</td><td valign="middle"><p>27</p>&nbsp;</td><td valign="middle"><p>49<sup>***</sup></p>&nbsp;</td><td valign="middle"><p>55<sup>***</sup></p>&nbsp;</td><td valign="middle"><p>27</p>&nbsp;</td><td valign="middle"><p>45<sup>***</sup></p>&nbsp;</td><td valign="middle"><p>46<sup>***</sup></p>&nbsp;</td></tr><tr><td valign="middle"><p>ACR50 </p>&nbsp;</td><td valign="middle"><p>8</p>&nbsp;</td><td valign="middle"><p>20<sup>**</sup></p>&nbsp;</td><td valign="middle"><p>28<sup>***</sup></p>&nbsp;</td><td valign="middle"><p>13</p>&nbsp;</td><td valign="middle"><p>23<sup>*</sup></p>&nbsp;</td><td valign="middle"><p>29<sup>***</sup></p>&nbsp;</td></tr><tr><td valign="middle"><p>ACR70</p>&nbsp;</td><td valign="middle"><p>2</p>&nbsp;</td><td valign="middle"><p>13<sup>***</sup></p>&nbsp;</td><td valign="middle"><p>11<sup>**</sup></p>&nbsp;</td><td valign="middle"><p>3</p>&nbsp;</td><td valign="middle"><p>13<sup>***</sup></p>&nbsp;</td><td valign="middle"><p>17<sup>***</sup></p>&nbsp;</td></tr><tr><td colspan="7" valign="middle"><p>Data are % patients achieving response (NRI); *p?0.05, **p?0.01, ***p?0.001 vs. PBO</p>&nbsp;</td></tr></tbody></table><p><p>More treatment emergent adverse events (TEAEs) occurred in patients receiving either baricitinib dose compared with placebo (71%, 77%, 64%, respectively) including infections (44%, 40%, 31%, respectively). Serious AE rates through 24 weeks were similar (4%, 10% and 7%, respectively) including serious infections (2%, 3% and 3%, respectively), and there were no opportunistic infections, TB, or GI perforations.</p><p>The researchers concluded that once daily oral baricitinib was associated with rapid and sustained clinical improvements through 24 weeks, with an acceptable safety and tolerability profile. The largest benefit was seen with the 4mg dose. </p><p><emphasis type="SmallCaps"><b>RA-BUILD</b></emphasis></p><p>In RA-BUILD, which tested the product in 684 patients with active RA and an inadequate response to conventional DMARDs were randomized to 2mg or 4mg of baricitinib once-daily or placebo, on their stable background treatment with rescue from week 16 for non-responders. The primary endpoint was ACR20 response at week 12 for the 4mg dose versus placebo, but again the data show a significant response for both doses at the ACR50 and 70 and also reaching out to 24 weeks. </p><table><tbody><tr><td colspan="7" valign="middle"><p><b>RA-BUILD data </b></p>&nbsp;</td></tr><tr><td valign="middle"><p>&nbsp;</td><td colspan="3" valign="middle"><p><b>Week 12</b></p>&nbsp;</td><td colspan="3" valign="middle"><p><b>Week 24</b></p>&nbsp;</td></tr><tr><td valign="middle"><p>&nbsp;</td><td valign="middle"><p><b>PBO (N=228)</b></p>&nbsp;</td><td valign="middle"><p><b>2 mg QD (N=229)</b></p>&nbsp;</td><td valign="middle"><p><b>4 mg QD (N=227)</b></p>&nbsp;</td><td valign="middle"><p><b>PBO (N=228)</b></p>&nbsp;</td><td valign="middle"><p><b>2 mg QD (N=229)</b></p>&nbsp;</td><td valign="middle"><p><b>4 mg QD (N=227)</b></p>&nbsp;</td></tr><tr><td valign="middle"><p>ACR20</p>&nbsp;</td><td valign="middle"><p>40</p>&nbsp;</td><td valign="middle"><p>66***</p>&nbsp;</td><td valign="middle"><p>62***</p>&nbsp;</td><td valign="middle"><p>42</p>&nbsp;</td><td valign="middle"><p>61***</p>&nbsp;</td><td valign="middle"><p>65***</p>&nbsp;</td></tr><tr><td valign="middle"><p>ACR50 </p>&nbsp;</td><td valign="middle"><p>13</p>&nbsp;</td><td valign="middle"><p>34***</p>&nbsp;</td><td valign="middle"><p>34***</p>&nbsp;</td><td valign="middle"><p>22</p>&nbsp;</td><td valign="middle"><p>42***</p>&nbsp;</td><td valign="middle"><p>44***</p>&nbsp;</td></tr><tr><td valign="middle"><p>ACR70</p>&nbsp;</td><td valign="middle"><p>3</p>&nbsp;</td><td valign="middle"><p>18***</p>&nbsp;</td><td valign="middle"><p>18***</p>&nbsp;</td><td valign="middle"><p>8</p>&nbsp;</td><td valign="middle"><p>25***</p>&nbsp;</td><td valign="middle"><p>24***</p>&nbsp;</td></tr><tr><td colspan="7" valign="middle"><p>Data are % patients (NRI);*p?0.05, **p?0.01, ***p?0.001 vs. PBO</p>&nbsp;</td></tr></tbody></table></p><p>The researchers say the drug was associated with rapid and sustained clinical improvement and inhibition of radiographic joint damage, with an acceptable safety and tolerability profile. The most robust benefit across measures was seen with the 4 mg dose.</p><p>TEAE and serious AE rates, including serious infections, were similar among patients receiving both baricitinib doses and placebo (SAEs: 3%, 5%, 5%, respectively), and again there were no GI perforations or opportunistic infections.</p><p><emphasis type="SmallCaps"><b>convincing?</b></emphasis></p><p>Nevertheless, baricitinib still has some way to go before it convinces all rheumatologists of its safety. Analysts at Credit Suisse say one expert they spoke to, while impressed with the efficacy data, wanted to see even longer-term safety data. </p><p>The analysts said: "He highlighted a signal towards increased cases of herpes zoster in the baricitinib arms of both studies and, given the safety issues that have been seen with Pfizer's pan-JAK inhibitor Xeljanz, said he would need to see much more longer-term data before becoming comfortable with the drug's safety profile. He did express optimism around a more JAK-1 selective approach with filgotinib as potentially providing a more favorable safety profile."</p><p>Credit Suisse analysts say they are now anxious to see how baricitinib stacks up to the anti-TNF Humira (adalimumab) in the ongoing Phase III RA-BEAM study. The major roadblock to the JAK inhibitors is the level of comfort rheumatologists have built up with the anti-TNFs over the years, with the added issue of the arrival of biosimilar versions of these top-selling drugs. </p><p>"We believe baricitinib is an important pipeline asset for Lilly as it works to build an autoimmune franchise (in conjunction with its IL-17 antibody ixekizumab)." They forecast peak probability-adjusted sales of about $2.5bn for the product. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 255
+
+<p>The full data for Lilly/Incyte's Phase III RA-BUILD and RA-BEACON studies of their novel oral JAK 1 and 2 inhibitor baricitinib presented at EULAR in Rome this week confirm its promising efficacy but some experts want to see still more safety data.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+LillyIncytes baricitinib still has more to do in RA
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150806T160002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150806T160002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150806T160002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028977
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Lilly/Incyte's baricitinib still has more to do in RA
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358841
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+84ac7457-362c-49a7-af11-9413d6e578f2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

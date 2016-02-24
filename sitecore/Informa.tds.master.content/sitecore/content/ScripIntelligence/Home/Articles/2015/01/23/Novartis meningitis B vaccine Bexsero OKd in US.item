@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {D531554D-3BDF-4485-BE7F-1E74BC73657E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Novartis meningitis B vaccine Bexsero OKd in US
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Novartis meningitis B vaccine Bexsero OKd in US
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d1dfbb63-b2bd-4f33-8231-e9557b0dac78
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+Novartis meningitis B vaccine Bexsero OK'd in US 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Novartis meningitis B vaccine Bexsero OKd in US
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4330
+
+<p>The FDA on 23 January cleared the way for Novartis to market its much-anticipated meningitis B vaccine Bexsero, which is approved for use in Americans 10-25 years.</p><p>Bexsero is intended to be an active immunization to prevent invasive meningococcal disease caused by <i>Neisseria meningitidis</i> serogroup B. </p><p><i>N meningitidis</i>, which is transmitted from person to person through respiratory or throat secretions, such as through coughing, kissing or sharing eating utensils, is a leading cause of bacterial meningitis, according to the FDA.</p><p>Meningococcal disease, which is a life-threatening illness, can be unpredictable and occur quickly and without warning in otherwise healthy individuals, regulators said.</p><p>Meningococcal disease can be treated with antibiotics to reduce the risk of death or serious long-term problems, but even with immediate medical attention these outcomes are not always prevented, the FDA said. </p><p>According to the Centers for Disease Control and Prevention (CDC), about 500 cases of meningococcal disease were reported in the US in 2012, of which 160 were attributed to serogroup B.</p><p>"Vaccination is the most effective way to prevent meningococcal disease," the FDA insisted.</p><p>The FDA's approval of Bexsero comes three months after rival Pfizer beat Novartis across the finish line with its own meningococcal group B vaccine, Trumenba (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Pfizer-breakthrough-meningitis-B-vaccine-OKd-beats-Novartis-354744" target="_new">29 October 2014</a>).</p><p>Both vaccines were deemed by the FDA as breakthrough therapies (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Pfizer-breakthrough-gain-may-speed-needed-meningococcal-B-vaccine-350798" target="_new">21 March 2014</a>, <a href="http://www.scripintelligence.com/policyregulation/Novartis-Bexsero-gains-breakthrough-status-BLA-expected-Q2-351142" target="_new">08 April 2014</a>).</p><p>Like Trumenba, Bexsero also was granted its license under the FDA's accelerated approval process &ndash; meaning the vaccines were allowed on the market sooner with the acknowledgement the companies' will conduct further studies to verify the products' effectiveness against additional strains of N meningitidis serogroup B.</p><p>Before the FDA gave its nod to Bexsero and Trumenba, vaccines licensed in the US against meningococcal disease &ndash;Sanofi-Pasteur&rsquo;s Menomune and Menactra, GlaxoSmithKline's MenHibrix and Novartis' Menveo &ndash; covered only four serogroups of <i>N meningitidis</i> bacteria: A, C, Y and W-135.</p><p>There was no product against serogroup B. </p><p>Bexsero's license was based on three studies evaluating the vaccine's effectiveness were conducted in Canada, Australia, Chile and the UK in about 2,600 adolescents and young adults. </p><p>Among study participants who received two doses of Bexsero, after vaccination, 62% to 88% had antibodies in their blood that killed three different <i>N meningitidis</i> serogroup B strains in tests carried out in a laboratory, versus with 0% to 23% before vaccination. </p><p>The FDA said the three strains were representative of strains that cause serogroup B meningococcal disease in the US.</p><p>Bexsero's safety was assessed in about 5,000 participants who received the vaccine in studies conducted in the US and abroad. </p><p>The most commonly reported adverse effects by those who received Bexsero were pain and swelling at the injection site, headache, diarrhea, muscle pain, joint pain, fatigue and chills. </p><p>Before Bexsero was approved, it was used in 2013-14 in about 15,000 studies at Princeton University and the University of California Santa Barbara under an investigational new drug application to curb outbreaks on those campuses of the deadly bacteria.</p><p>The same strain that was found on the Princeton campus killed a Drexel University student in Philadelphia on 10 March 2014, according to a "genetic fingerprinting" laboratory analysis conducted by the CDC.</p><p>This past September, a 19-year-old undergraduate student at Georgetown University in Washington died of meningitis B.</p><p>The FDA said the students who were given Bexsero have been monitored for any signs of adverse events.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 170
+
+<p>The FDA on 23 January cleared the way for Novartis to market its much-anticipated meningitis B vaccine Bexsero, which is approved for use in Americans 10-25 years.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Novartis meningitis B vaccine Bexsero OKd in US
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T222319
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T222319
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T222319
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027617
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+Novartis meningitis B vaccine Bexsero OK'd in US 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356256
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d1dfbb63-b2bd-4f33-8231-e9557b0dac78
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

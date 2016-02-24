@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {53F93A99-4A24-400B-B0F1-940C0BF4AC4F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/16/Europe Top 20 Novartis 1 for sales Shire tops growth and efficiency leagues
+parent: {D1C4EE2F-AEA4-438A-AF54-BB06F27BAC15}
+name: Europe Top 20 Novartis 1 for sales Shire tops growth and efficiency leagues
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3afff29a-ee1c-4d56-91ca-0515158c1a16
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}|{09212D57-26F8-47A3-9592-B0A92A1D55EA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 79
+
+Europe Top 20: Novartis #1 for sales, Shire tops growth and efficiency leagues 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 75
+
+Europe Top 20 Novartis 1 for sales Shire tops growth and efficiency leagues
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10100
+
+<p><i>Scrip's</i> latest analysis of the European pharmaceutical scene reveals only a few big movers among the Top 20 pharmaceutical companies headquartered in Europe with Shire Pharmaceuticals and Bayer the standout successes in 2014. </p><p>Novartis tops both the European drug sales league in 2014 (Table 1) with total sales from its pharmaceutical division, its Sandoz generics division plus Alcon's ophthalmic drugs amounting to $46.6bn in 2014, up 4.7% from 2013. Novartis also now heads the global pharmaceutical league, overtaking stumbling Pfizer. </p><p>Six of the top 10 European pharma companies saw dollar-based drugs sales grow in 2014, but sales at GSK, Teva, Boehringer Ingelheim and Merck KGaA fell in dollar terms. Merck was the biggest faller, with pharma sales down more than 10% in 2014 compared with 2013; however, half of Merck's pharma fall ($350m) in 2014 was due to the reallocation of two products &ndash; Neurobion and Floratil &ndash; from its pharma portfolio to its consumer health segment.</p><p>Shire's 22% growth in pharmaceutical sales was driven by a continuing acquisition strategy that saw Lumena, Fibrotech and ViroPharma come into the fold in 2014, as well as NPS Pharma in early 2015. Shire moved one place up the table of drug sales to 11th in 2014. </p><p>On a per-employee basis, Shire leads the European pack, with each employee generating $1.2m in drug sales (Table 2) and $337,000 in net earnings (Table 3). Shire's per employee returns are nearly a third higher than those of its closest European rival, Actelion.</p><p>The per-employee drug sales performance of Shire and Actelion aligns them with North American firms such as United Therapeutics, Jazz Pharmaceuticals, Celgene, Biogen, Salix and Amgen all of which posted <a href="http://#http://www.scripintelligence.com/home/US-Top-20-Gilead-employees-make-five-times-the-money-357688" target="_new">$1m-plus sales per employee in 2014</a> although, like these firms, Shire lags well behind global leader, Gilead Sciences. </p><p>Bayer's 11.6% increase in drug sales in 2014 and its rise up the European hierarchy from 9th to 7th in 2014 was driven largely by growth in recently launched products such as Xarelto (rivaroxaban), Eylea (aflibercept), Stivarga (regorafenib), and Xofigo (radium-223 dichloride).</p><p><table><h2>Table 1. Top 20 European companies by drug sales</h2><th><tr><td><p>Rank (Rank 2013)</p>&nbsp;</td><td><p>Current company</p>&nbsp;</td><td><p>Pharma sales ($m)</p>&nbsp;</td><td valign="bottom"><p>Change since 2013</p>&nbsp;</td></tr></th><tbody><tr><td><p>1 (1)</p>&nbsp;</td><td><p>Novartis</p>&nbsp;</td><td><p>46,564</p>&nbsp;</td><td valign="bottom"><p>+4.7%</p>&nbsp;</td></tr><tr><td><p>2 (2)</p>&nbsp;</td><td><p>Sanofi</p>&nbsp;</td><td><p>42,127</p>&nbsp;</td><td valign="bottom"><p>+2.4%</p>&nbsp;</td></tr><tr><td><p>3 (3)</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td><p>39,477</p>&nbsp;</td><td valign="bottom"><p>+0.7%</p>&nbsp;</td></tr><tr><td><p>4 (4)</p>&nbsp;</td><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>30,763</p>&nbsp;</td><td valign="bottom"><p>-7.8%</p>&nbsp;</td></tr><tr><td><p>5 (5)</p>&nbsp;</td><td><p>AstraZeneca</p>&nbsp;</td><td><p>26,095</p>&nbsp;</td><td valign="bottom"><p>+1.5%</p>&nbsp;</td></tr><tr><td><p>6 (6)</p>&nbsp;</td><td><p>Teva</p>&nbsp;</td><td><p>20,272</p>&nbsp;</td><td valign="bottom"><p>-0.2%</p>&nbsp;</td></tr><tr><td><p>7 (9)</p>&nbsp;</td><td><p>Bayer</p>&nbsp;</td><td><p>16,005</p>&nbsp;</td><td valign="bottom"><p>+11.6%</p>&nbsp;</td></tr><tr><td><p>8 (7)</p>&nbsp;</td><td><p>Novo Nordisk</p>&nbsp;</td><td><p>15,414</p>&nbsp;</td><td valign="bottom"><p>+3.6%</p>&nbsp;</td></tr><tr><td><p>9 (8)</p>&nbsp;</td><td><p>Boehringer Ingelheim</p>&nbsp;</td><td><p>14,092</p>&nbsp;</td><td valign="bottom"><p>-2.6%</p>&nbsp;</td></tr><tr><td><p>10 (10)</p>&nbsp;</td><td><p>Merck KGaA</p>&nbsp;</td><td><p>7,687</p>&nbsp;</td><td valign="bottom"><p>-10.0%</p>&nbsp;</td></tr><tr><td><p>11 (12)</p>&nbsp;</td><td><p>Shire</p>&nbsp;</td><td><p>5,830</p>&nbsp;</td><td valign="bottom"><p>+22.6%</p>&nbsp;</td></tr><tr><td><p>12 (11)</p>&nbsp;</td><td><p>Servier</p>&nbsp;</td><td><p>5,580</p>&nbsp;</td><td valign="bottom"><p>--</p>&nbsp;</td></tr><tr><td><p>13 (13)</p>&nbsp;</td><td><p>Menarini</p>&nbsp;</td><td><p>4,469</p>&nbsp;</td><td valign="bottom"><p>+2.3%</p>&nbsp;</td></tr><tr><td><p>14 (14)</p>&nbsp;</td><td><p>UCB</p>&nbsp;</td><td><p>3,905</p>&nbsp;</td><td valign="bottom"><p>-3.6%</p>&nbsp;</td></tr><tr><td><p>15 (15)</p>&nbsp;</td><td><p>STADA</p>&nbsp;</td><td><p>2,682</p>&nbsp;</td><td valign="bottom"><p>+0.2%</p>&nbsp;</td></tr><tr><td><p>16 (16)</p>&nbsp;</td><td><p>Lundbeck</p>&nbsp;</td><td><p>2,396</p>&nbsp;</td><td valign="bottom"><p>-2.3%</p>&nbsp;</td></tr><tr><td><p>17 (17)</p>&nbsp;</td><td><p>Galderma<sup>*</sup></p>&nbsp;</td><td><p>2,259</p>&nbsp;</td><td valign="bottom"><p>+2.9%</p>&nbsp;</td></tr><tr><td><p>18 (18)</p>&nbsp;</td><td><p>Actelion</p>&nbsp;</td><td><p>2,140</p>&nbsp;</td><td valign="bottom"><p>+11%</p>&nbsp;</td></tr><tr><td><p>19 (19) </p>&nbsp;</td><td><p>Ferring<sup>**</sup></p>&nbsp;</td><td><p>1,990</p>&nbsp;</td><td valign="bottom"><p>+7.0%</p>&nbsp;</td></tr><tr><td><p>20 (20)</p>&nbsp;</td><td><p>Ipsen</p>&nbsp;</td><td><p>1,673</p>&nbsp;</td><td valign="bottom"><p>+2.8%</p>&nbsp;</td></tr></tbody><tr><td colspan="4"><p>*2013 data: In July 2014, Galderma was wholly acquired by Nestlé</p><p>**2013 data: Ferring has not yet provided data for FY 2014 </p></td></tr></table></p><p>Behind Shire and Roche in drug sales per employee (Table 2) come UCB, Bayer and Teva. The Israeli company's employees each generate pharma sales nearly twice those of potential future colleagues at Mylan. Earnings per employee at Teva are also twice that at Mylan (Table 3): Those numbers suggest that if Teva's bid for Mylan is successful, there may be substantial restructuring of Mylan substantially in order to align its productivity and profitability.</p><p><table><h2>Table 2. Top 20 European companies by drug sales arranged by drug sales per employee</h2><th><tr><td><p>Rank</p>&nbsp;</td><td><p>Company</p>&nbsp;</td><td><p>Pharma Sales ($) per employee</p>&nbsp;</td></tr></th><tbody><tr><td><p>1</p>&nbsp;</td><td><p>Shire</p>&nbsp;</td><td><p>1,201,000</p>&nbsp;</td></tr><tr><td><p>2</p>&nbsp;</td><td><p>Actelion</p>&nbsp;</td><td><p>893,000</p>&nbsp;</td></tr><tr><td><p>3</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td><p>616,000</p>&nbsp;</td></tr><tr><td><p>4</p>&nbsp;</td><td><p>UCB</p>&nbsp;</td><td><p>511,000</p>&nbsp;</td></tr><tr><td><p>5</p>&nbsp;</td><td><p>Bayer</p>&nbsp;</td><td><p>472,000</p>&nbsp;</td></tr><tr><td><p>6</p>&nbsp;</td><td><p>Teva</p>&nbsp;</td><td><p>471,000</p>&nbsp;</td></tr><tr><td><p>7</p>&nbsp;</td><td><p>AstraZeneca</p>&nbsp;</td><td><p>454,000</p>&nbsp;</td></tr><tr><td><p>8</p>&nbsp;</td><td><p>Novartis</p>&nbsp;</td><td><p>435,000</p>&nbsp;</td></tr><tr><td><p>9</p>&nbsp;</td><td><p>Lundbeck</p>&nbsp;</td><td><p>423,000</p>&nbsp;</td></tr><tr><td><p>10</p>&nbsp;</td><td><p>Galderma*</p>&nbsp;</td><td><p>411,000</p>&nbsp;</td></tr><tr><td><p>11</p>&nbsp;</td><td><p>Boehringer Ingelheim</p>&nbsp;</td><td><p>408,000</p>&nbsp;</td></tr><tr><td><p>12</p>&nbsp;</td><td><p>Ferring**</p>&nbsp;</td><td><p>398,000</p>&nbsp;</td></tr><tr><td><p>13</p>&nbsp;</td><td><p>Sanofi</p>&nbsp;</td><td><p>395,000</p>&nbsp;</td></tr><tr><td><p>14</p>&nbsp;</td><td><p>Novo Nordisk</p>&nbsp;</td><td><p>387,000</p>&nbsp;</td></tr><tr><td><p>15</p>&nbsp;</td><td><p>Merck KGaA</p>&nbsp;</td><td><p>386,000</p>&nbsp;</td></tr><tr><td><p>16</p>&nbsp;</td><td><p>Ipsen</p>&nbsp;</td><td><p>385,000</p>&nbsp;</td></tr><tr><td><p>17</p>&nbsp;</td><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>381,000</p>&nbsp;</td></tr><tr><td><p>18</p>&nbsp;</td><td><p>Menarini</p>&nbsp;</td><td><p>269,000</p>&nbsp;</td></tr><tr><td><p>19</p>&nbsp;</td><td><p>STADA</p>&nbsp;</td><td><p>264,000</p>&nbsp;</td></tr><tr><td><p>20</p>&nbsp;</td><td><p>Servier</p>&nbsp;</td><td><p>248,000</p>&nbsp;</td></tr></tbody><tr><td colspan="4"><p>*2013 data: In July 2014, Galderma was wholly acquired by Nestlé</p><p>**2013 data: Ferring has not yet provided data for FY 2014 </p></td></tr></table></p><p><table><h2>Table 3. Top 20* European companies by drug sales arranged by net profit per employee</h2><th><tr><td><p>Rank</p>&nbsp;</td><td><p>Company</p>&nbsp;</td><td><p>Total Net Profit ($) per employee</p>&nbsp;</td></tr></th><tbody><tr><td><p>1</p>&nbsp;</td><td><p>Shire</p>&nbsp;</td><td><p>337,000</p>&nbsp;</td></tr><tr><td><p>2</p>&nbsp;</td><td><p>Actelion</p>&nbsp;</td><td><p>260,000</p>&nbsp;</td></tr><tr><td><p>3</p>&nbsp;</td><td><p>Roche</p>&nbsp;</td><td><p>177,000</p>&nbsp;</td></tr><tr><td><p>4</p>&nbsp;</td><td><p>Novo Nordisk</p>&nbsp;</td><td><p>150,000</p>&nbsp;</td></tr><tr><td><p>5</p>&nbsp;</td><td><p>Sanofi</p>&nbsp;</td><td><p>106,000</p>&nbsp;</td></tr><tr><td><p>6</p>&nbsp;</td><td><p>Teva</p>&nbsp;</td><td><p>92,000</p>&nbsp;</td></tr><tr><td><p>7</p>&nbsp;</td><td><p>Novartis</p>&nbsp;</td><td><p>76,000</p>&nbsp;</td></tr><tr><td><p>8</p>&nbsp;</td><td><p>Ipsen</p>&nbsp;</td><td><p>64,000</p>&nbsp;</td></tr><tr><td><p>9</p>&nbsp;</td><td><p>GlaxoSmithKline</p>&nbsp;</td><td><p>60,000</p>&nbsp;</td></tr><tr><td><p>10</p>&nbsp;</td><td><p>Boehringer Ingelheim</p>&nbsp;</td><td><p>60,000</p>&nbsp;</td></tr><tr><td><p>11</p>&nbsp;</td><td><p>UCB</p>&nbsp;</td><td><p>58,000</p>&nbsp;</td></tr><tr><td><p>12</p>&nbsp;</td><td><p>Lundbeck</p>&nbsp;</td><td><p>49,000</p>&nbsp;</td></tr><tr><td><p>13</p>&nbsp;</td><td><p>Bayer</p>&nbsp;</td><td><p>40,000</p>&nbsp;</td></tr><tr><td><p>14</p>&nbsp;</td><td><p>AstraZeneca</p>&nbsp;</td><td><p>37,000</p>&nbsp;</td></tr><tr><td><p>15</p>&nbsp;</td><td><p>Merck KGaA</p>&nbsp;</td><td><p>32,000</p>&nbsp;</td></tr><tr><td><p>16</p>&nbsp;</td><td><p>STADA</p>&nbsp;</td><td><p>24,000</p>&nbsp;</td></tr></tbody><tr><td colspan="4"><p>*Profit data not available for private companies Galderma, Ferring, Menarini, and Servier</p></td></tr></table></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 240
+
+<p><i>Scrip's</i> latest analysis of the European pharmaceutical scene reveals only a few big movers among the Top 20 pharmaceutical companies headquartered in Europe with Shire Pharmaceuticals and Bayer the standout successes in 2014. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 75
+
+Europe Top 20 Novartis 1 for sales Shire tops growth and efficiency leagues
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150416T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150416T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150416T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028505
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 79
+
+Europe Top 20: Novartis #1 for sales, Shire tops growth and efficiency leagues 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357918
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3afff29a-ee1c-4d56-91ca-0515158c1a16
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

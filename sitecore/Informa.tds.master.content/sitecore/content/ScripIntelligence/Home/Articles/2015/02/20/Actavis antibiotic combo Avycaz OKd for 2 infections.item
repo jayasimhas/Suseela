@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {2B005A3A-D4C8-4961-B1E1-DBBBE5A42425}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/20/Actavis antibiotic combo Avycaz OKd for 2 infections
+parent: {4CD6CF1B-7977-462C-A70C-E83307A584E6}
+name: Actavis antibiotic combo Avycaz OKd for 2 infections
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d9bba036-707f-4d09-adb4-34e898d6f589
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Actavis antibiotic combo Avycaz OK'd for 2 infections
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Actavis antibiotic combo Avycaz OKd for 2 infections
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6013
+
+<p>Actavis won the FDA's approval on 25 February to market Avycaz, an antibiotic combination containing ceftazidime and avibactam, to treat complicated intra-abdominal infections (cIAI) and complicated urinary tract infections (cUTI).</p><p>The drug is intended for use in adults who have limited or no alternative treatment options to treat those diseases.</p><p>Specifically, Avycaz in combination with metronidazole is indicated for the treatment of cIAI caused by <i>Escherichia coli, Klebsiella pneumoniae, Proteus mirabilis, Providencia stuartii, Enterobacter cloacae, Klebsiella oxytoca</i> and<i> Pseudomonas aeruginosa</i>.</p><p>Avycaz also is indicated to treat cUTI, including pyelonephritis, caused by <i>Escherichia coli, Klebsiella pneumoniae, Citrobacter koseri, E aerogenes, E cloacae, C freundii, Proteus spp</i> and<i> P aeruginosa</i>.</p><p>But Actavis, which is partnered with AstraZeneca, failed to gain the FDA's nod for Avycaz as a treatment for a third indication: aerobic Gram-negative infections, including hospital-acquired bacterial pneumonia (HABP), ventilator-associated bacterial pneumonia (VABP) and bacteremia, when limited or no alternative treatments are available.</p><p>An FDA advisory panel this past December had actually advised against the third use.</p><p>The Anti-Infective Drugs Advisory Committee, however, backed the cIAI and cUTI indications, voting 11-1 and 9-3, respectively, that the company had demonstrated substantial evidence of safety and efficacy of Avycaz in treating those conditions (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Panel-backs-2-uses-snubs-1-for-Actavis-antibiotic-355470" target="_new">6 December 2014</a>).</p><p>Ceftazidime, a third-generation cephalosporin antibacterial initially approved in 1985, is considered a well-established beta-lactam, while avibactam is a novel beta-lactamase inhibitor.</p><p>Avibactam has no antibacterial activity alone at clinically relevant doses. </p><p>But when the two drugs are combined, avibactam protects ceftazidime from breakdown by extended spectrum beta-lactamases, <i>Klebsiella pneumoniae carbapenemase</i> and AmpC producing pathogens. </p><p>The new drug application (NDA) for Avycaz was submitted under the FDA's 505(b)(2) pathway and relied on historical efficacy of ceftazidime alone, pharmacokinetic/pharmacodynamic analyses, in vitro microbiological studies, in vivo animal models, Phase I clinical pharmacology data, Phase II randomized clinical efficacy data and initial Phase III data from a study of patients infected with ceftazidime-resistant pathogens.</p><p>Actavis said it is conducting Phase III studies of Avycaz in cIAI and cUTI, which are expected to be completed in late 2015. </p><p>There also is an ongoing Phase III trial in HABP and VABP.</p><p>The company said it intends to submit Phase III Avycaz results to the FDA as a supplemental NDA.</p><p><b>'Superbug' CRE activity</b></p><p>Actavis spokesman David Belian told <i>Scrip</i> Avycaz has shown "good activity" against carbapenem-resistant <i>Klebsiella</i> and carbapenem-resistant <i>Ecoli</i> &ndash; two bugs known as carbapenem-resistant <i>Enterobacteriaceaes</i> (CREs).</p><p>But he emphasized the drug is not yet approved to treat CREs, which have been dubbed the &ldquo;nightmare&rdquo; superbugs by Dr Tom Frieden, director of the Centers for Disease Control and Prevention.</p><p>Last week, the UCLA Health System disclosed it had notified 179 patients they may have been infected with CRE during the endoscopic procedures, which took place between October 2014 and January 2015 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Super-bug-outbreak-spotlights-need-for-potent-antibacterials-356853" target="_new">19 February 2015</a>).</p><p>At least two patient deaths have been linked to the outbreak at UCLA's Ronald Reagan Medical Center in Los Angeles, while seven other patients have been confirmed as being infected with CRE after undergoing endoscopic retrograde cholangiopancreatography procedures using a duodenoscope, a flexible, lighted tube that is threaded through the mouth, throat, stomach and into the top of the small intestine. </p><p>The Los Angeles County Health Department determined the recommended cleaning procedures do not eradicate CRE from the devices.</p><p>The FDA, which issued a MedWatch alert last week, said the complex design of the duodenoscopes may impede effectiveness of the multistep process to clean and disinfect or sterilize the reusable devices. </p><p>The agency said it has received 75 reports involving 135 patients in the US related to possible microbial transmission from reprocessed duodenoscopes from January 2013 through December 2014.</p><p><b>Qualified infectious disease product</b></p><p>The FDA noted that Avycaz is the fifth drug holding the agency's qualified infectious disease product (QIDP) designation to be approved for the US market. </p><p>Antibiotics granted the QIDP status are eligible for a special priority review and fast-track status, which permits a company to use a rolling application with each piece submitted to the FDA as it is completed &ndash; accelerating the process. </p><p>They also are eligible for an additional five years of market exclusivity if they win US approval.</p><p>QIDP was one of the measures created under the <i>Generating Antibiotic Incentives Now</i> provision of the <i>Food and Drug Administration Safety and Innovation Act</i>, signed into law by President Barack Obama on 9 July 2012 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/All-too-easy-Obama-signs-US-FDA-user-fee-bill-without-fanfare-332602" target="_new">10 July 2012</a>, <a href="http://www.scripintelligence.com/home/With-more-cha-ching-will-PDUFA-V-satisfy-on-the-ba-bling-332986" target="_new">19 July 2012</a>).</p><p>To date, the FDA has granted the QIDP designation at least 68 times to 46 unique molecular entities.</p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 238
+
+<p>Actavis won the FDA's approval on 25 February to market Avycaz, an antibiotic combination containing ceftazidime and avibactam, to treat complicated intra-abdominal infections (cIAI) and complicated urinary tract infections (cUTI).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Actavis antibiotic combo Avycaz OKd for 2 infections
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150220T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150220T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150220T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027928
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Actavis antibiotic combo Avycaz OK'd for 2 infections
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+Feature
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356861
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042300Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d9bba036-707f-4d09-adb4-34e898d6f589
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042300Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

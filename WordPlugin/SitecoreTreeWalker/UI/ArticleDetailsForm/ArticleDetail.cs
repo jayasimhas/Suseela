@@ -354,7 +354,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                         {
                             if (!String.IsNullOrEmpty(error))
                             {
-                                MessageBox.Show(error, error.Contains("not secure") ? @" Non-Secure Multimedia Content" : @"Elsevier");
+                                MessageBox.Show(error, error.Contains("not secure") ? @" Non-Secure Multimedia Content" : @"Informa");
                             }
                         }
                         Cursor = Cursors.Arrow;
@@ -383,7 +383,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                     Globals.SitecoreAddin.Log(String.Format("Article with # [{0}] not found!", ArticleDetails.ArticleNumber));
                     MessageBox.Show(this, @"Unable to retrieve article information from Sitecore. " +
                                           @"Please verify that this article exists on Sitecore and " +
-                                          @"try again or contact support if you get this message again.", @"Elsevier");
+                                          @"try again or contact support if you get this message again.", @"Informa");
                     this.Close();
                 }
                 else
@@ -406,7 +406,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             DialogResult dialogResult = MessageBox.Show
                             (@"There are multiple paragraphs that are styled as Story Title. " +
                                 @"Do you wish to proceed?",
-                                @"Elsevier",
+                                @"Informa",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Question);
             return (dialogResult == DialogResult.Yes);
@@ -426,7 +426,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                               characterLimit, field);
             DialogResult dialogResult = MessageBox.Show
                             (message,
-                                @"Elsevier",
+                                @"Informa",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Question);
             return (dialogResult == DialogResult.Yes);
@@ -444,7 +444,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                  @"If you wish to proceed with saving, this text will be " +
                  @"transferred with the default story text style. Do you " +
                  @"wish to proceed?",
-                 @"Elsevier",
+                 @"Informa",
                  MessageBoxButtons.YesNo,
                  MessageBoxIcon.Question);
             return (dialogResult == DialogResult.Yes);
@@ -461,7 +461,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             if (titleLength > maxLength)
             {
                 MessageBox.Show(this, @"Title is too long! Title character limit is " + maxLength +
-                    @". Current title is " + titleLength + @" characters long!", @"Elsevier");
+                    @". Current title is " + titleLength + @" characters long!", @"Informa");
                 return true;
             }
             return false;
@@ -477,14 +477,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             if (articleDetailsPageSelector.TryingToNominateWithNoIndustries())
             {
                 MessageBox.Show(this, @"Please add at least 1 industry in order to nominate this article for the homepage.",
-                                @"Elsevier");
+                                @"Informa");
                 return true;
             }
             if (articleDetailsPageSelector.TryingToNominateWithNoPrimaryIndustries())
             {
                 MessageBox.Show(this, @"The industries you have added do not have an associated primary industry. You must have an " +
                                       @"industry taxonomy that has a primary industry.",
-                                @"Elsevier");
+                                @"Informa");
                 return true;
             }
             return false;
@@ -495,7 +495,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             return MessageBox.Show
                 (@"Sitecore server could not be contacted! Please try again in a few minutes." + Environment.NewLine +
                  Environment.NewLine + @"If the problem persists, contact your system administrator.",
-                 @"Elsevier",
+                 @"Informa",
                  MessageBoxButtons.OK,
                  MessageBoxIcon.Error);
         }
@@ -517,7 +517,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             {
                 MessageBox.Show
                     (@"This article title is already taken for this issue. Please choose another title or another issue.",
-                     @"Elsevier",
+                     @"Informa",
                      MessageBoxButtons.OK,
                      MessageBoxIcon.Exclamation);
                 return null;
@@ -528,13 +528,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
             if (string.IsNullOrEmpty(title))
             {
-                MessageBox.Show(@"Please enter an article title.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter an article title.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
 
-            if (pubGuid.Equals(Guid.Empty))
+            if (articleDetailsPageSelector.GetPublicationGuid().Equals(Guid.Empty))
             {
-                MessageBox.Show(@"Please select a publication.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please select a publication.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
 
@@ -594,7 +594,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
             UpdateFieldsAfterSave();
             articleDetailsPageSelector.ResetChangedStatus(true);
-            MessageBox.Show(@"Article successfully saved to Sitecore!", @"Elsevier");
+            MessageBox.Show(@"Article successfully saved to Sitecore!", @"Informa");
             return;
         }
 
@@ -619,7 +619,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
         {
             if (string.IsNullOrEmpty(metadataParser.Title))
             {
-                MessageBox.Show(@"Please enter an article title.", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter an article title.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
 
@@ -678,7 +678,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(@"The document could not be parsed to transfer to Sitecore! Details in logs.", @"Elsevier");
+                MessageBox.Show(@"The document could not be parsed to transfer to Sitecore! Details in logs.", @"Informa");
                 Globals.SitecoreAddin.LogException("Error when parsing article on creation!", ex);
                 return;
             }
@@ -692,7 +692,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 {
                     if (string.IsNullOrEmpty(ArticleDetails.ArticleNumber))
                     {
-                        MessageBox.Show(@"The article number generator is busy! Please try again later.", @"Elsevier");
+                        MessageBox.Show(@"The article number generator is busy! Please try again later.", @"Informa");
                     }
                     else
                     {
@@ -715,7 +715,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             catch (Exception ex)
             {
                 Globals.SitecoreAddin.LogException("Error when creating article!", ex);
-                MessageBox.Show(@"Error when creating article! Error recorded in logs.", @"Elsevier");
+                MessageBox.Show(@"Error when creating article! Error recorded in logs.", @"Informa");
             }
             finally
             {
@@ -737,7 +737,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
         private void uxSaveMetadata_Click(object sender, EventArgs e)
         {
-            var articleDate = articleDetailsPageSelector.GetDate();
+			if (articleDetailsPageSelector.GetTaxonomyCount() < 1)
+			{
+				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				return;
+			}
+			var articleDate = articleDetailsPageSelector.GetDate();
             if (articleDate < DateTime.Now)
             {
                 var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
@@ -786,7 +791,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
                 articleDetailsPageSelector.ResetChangedStatus();
                 DocumentPropertyEditor.WritePublicationAndDate(
                     SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
-                MessageBox.Show(@"Metadata saved!", @"Elsevier");
+                MessageBox.Show(@"Metadata saved!", @"Informa");
             }
             catch (WebException wex)
             {
@@ -796,7 +801,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             catch (Exception ex)
             {
                 Globals.SitecoreAddin.LogException("Error when saving meta data!", ex);
-                MessageBox.Show(@"Error when saving metadata! Error recorded in logs.", @"Elsevier");
+                MessageBox.Show(@"Error when saving metadata! Error recorded in logs.", @"Informa");
             }
             finally
             {
@@ -814,6 +819,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
         private void uxSaveAndTransfer_Click(object sender, EventArgs e)
         {
+	        if (articleDetailsPageSelector.GetTaxonomyCount() < 1)
+	        {
+				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				return;
+			}
             var articleDate = articleDetailsPageSelector.GetDate();
             if (articleDate < DateTime.Now)
             {
@@ -851,7 +861,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
             catch (Exception ex)
             {
                 Globals.SitecoreAddin.LogException("Error when saving and transferring article!", ex);
-                MessageBox.Show(@"Error when saving and transferring article! Error recorded in logs.", @"Elsevier");
+                MessageBox.Show(@"Error when saving and transferring article! Error recorded in logs.", @"Informa");
             }
             finally
             {
@@ -887,7 +897,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
         {
             if (GetArticleNumber() == null)
             {
-                MessageBox.Show(@"There is no article linked!", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             //string guid = SitecoreArticle.GetArticleGuidByArticleNumber(GetArticleNumber());
@@ -904,7 +914,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
         {
             if (GetArticleNumber() == null)
             {
-                MessageBox.Show(@"There is no article linked!", @"Elsevier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -946,7 +956,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
                 MessageBox.Show
                     (String.Format(message, this.ArticleDetails.WordDocLastUpdateDate, this.ArticleDetails.WordDocLastUpdatedBy),
-                        @"Elsevier",
+                        @"Informa",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
             }                

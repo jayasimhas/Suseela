@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {BD02466B-EFA4-45D1-8B2B-589FD799BBB1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/30/Latest Safety Warning For Novartiss Gilenya Wont Hurt Sales
+parent: {33D065F8-4841-41E4-809A-5D1E27443795}
+name: Latest Safety Warning For Novartiss Gilenya Wont Hurt Sales
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9876d4f6-911d-4cd4-a508-10f44d615270
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Latest Safety Warning For Novartis's Gilenya Won't Hurt Sales
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Latest Safety Warning For Novartiss Gilenya Wont Hurt Sales
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5033
+
+<p>A confirmed case of the rare, serious brain infection progressive multifocal leukoencephalopathy (PML) linked to Novartis' blockbuster oral multiple sclerosis drug <i>Gilenya</i> (fingolimod), along with a previously reported probable case of PML, have prompted the US FDA to issue a safety warning. </p><p>To put the report in context, Novartis notes that more than 125,000 patients have been treated with Gilenya, with 240,000 patient years of exposure: the company "continues to stand behind the positive benefit-risk profile of Gilenya in relapsing MS."</p><p>The PML reports may have some impact on Gilenya's market performance, but any such impact is likely to be modest at most. Jittery investors sent Biogen's stock down <a href="http://www.scripintelligence.com/home/3Q-EARNINGS-Tecfidera-sales-soar-but-PML-death-hits-Biogen-354615" target="_new">last year</a> following the report of a PML death in a patient on its rival oral treatment <i>Tecfidera</i> (dimethyl fumarate), but analysts generally focused on the rarity of the occurrences and that PML has by now come to be viewed as an acceptable risk. With Tecfidera linked to a second case only last month, Gilenya is no worse than the competition. </p><p>However, Biogen's slowing sales of Tecfidera in the second quarter, which it attributed in part to price reductions in Germany, could reflect as well growing caution among physicians in prescribing oral MS therapies given the PML risk. For the time being at least, though, the benefits of the current oral therapies, and the absence of good alternatives, will protect the bulk of their revenue streams.</p><p>The FDA's warning, which advises patients to contact their health care professionals immediately if they get certain symptoms, points out that these are the first cases of PML reported in Gilenya in patients who had not previously received an immunosuppressant drug. The information about the cases is being added to the drug's label. Health care professionals are advised to stop a patient's Gilenya and perform a diagnostic evaluation if PML is suspected.</p><p>Symptoms include new or worsening weakness, increased trouble using arms or legs, changes in thinking, eyesight, strength or balance.</p><p>Gilenya, which saw 26% constant currency sales growth to $700m in the second quarter and 30% growth to $2.5bn in 2014, had initially benefited from a clean record regarding any association with PML, which has notably dogged Biogen's <i>Tysabri</i> (natalizumab) as well as its newer oral MS treatment Tecfidera. However, in 2013 the FDA did investigate a case of PML in a patient on Gilenya, although the patient had received other immunosuppressants, their case was atypical, and the investigation led to no label update.</p><p>But the European Medicines Agency started to assess the situation following the first report of a Tysabri-naive patient on Gilenya contracting PML <a href="http://www.scripintelligence.com/home/EMA-to-mull-Tysabri-naive-Gilenya-PML-case-357491" target="_new">earlier this year</a>. A spokesperson for the EMA told <i>Scrip</i> there had been a "Dear Healthcare Professional" letter sent in March, but no label change had yet been recommended. The issue continues to be discussed by the agency's Pharmacovigilance Risk Assessment Committee (PRAC), which will take into account all available evidence, the spokesperson said. Novartis also noted that the Summary of Product Characteristics as published on the EMA website will be updated to include mention of PML, which will come into force by the fourth quarter of 2015.</p><p>The two cases referred to by the FDA in its new safety notice were reported to health authorities in February and June 2015. </p><p>Novartis said: "As part of the annual review of the benefit risk profile of Gilenya (reporting period March 1, 2014 to February 28, 2015), Novartis has updated the prescribing information of Gilenya to reflect the risk of opportunistic infections, including JC virus that causes PML. Physicians should follow the guidance in the Gilenya product information as locally applicable. This includes being vigilant for any signs or symptoms of infection. Any adverse event should be reported to Novartis or an appropriate Health Authority according to local regulations. Novartis will continue to work with the Health Authorities to assess the cases. Any new guidance for healthcare professionals and patients will be communicated promptly."</p><p>PML is a rare, progressive neurological disease which is caused by the JC (John Cunningham) virus. As well as to Gilenya, Tecfidera and Tysabri, it has been linked to Roche/Genentech/Biogen Idec/Chugai's Rituxan/MabThera (rituximab), Roche/Genentech/Merck Serono's now suspended psoriasis treatment Raptiva (efalizumab) and Seattle Genetics' lymphoma treatment Adcetris (brentuximab vedotin). When it occurs, it is usually in patients whose immune systems have been severely weakened and often results in an irreversible decline in neurological function and death.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 307
+
+<p>A confirmed case of the rare, serious brain infection progressive multifocal leukoencephalopathy (PML) linked to Novartis' blockbuster oral multiple sclerosis drug <i>Gilenya</i> (fingolimod), along with a previously reported probable case of PML, have prompted the US FDA to issue a safety warning. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Latest Safety Warning For Novartiss Gilenya Wont Hurt Sales
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150730T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150730T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150730T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029433
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Latest Safety Warning For Novartis's Gilenya Won't Hurt Sales
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359701
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9876d4f6-911d-4cd4-a508-10f44d615270
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

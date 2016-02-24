@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {C6945773-DF68-471B-B62D-316059FE73B5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/13/Merck inks another deal to test Keytruda combinations
+parent: {B23F589E-74E7-4CA3-9A57-5AB55E4AFD4B}
+name: Merck inks another deal to test Keytruda combinations
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8dc1657b-8ea0-4571-9df3-fc986c7a406e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Merck inks another deal to test Keytruda combinations
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Merck inks another deal to test Keytruda combinations
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2971
+
+<p>Merck & Co continued its streak of immuno-oncology dealmaking in a strategic clinical research collaboration with the University of Texas MD Anderson Cancer Center to test Keytruda (pembrolizumab) in combination with other treatments in three specific tumor types.</p><p>Keytruda inhibits the immune checkpoint known as programmed cell death-1 (PD-1) and the therapy is expected to be the backbone of cancer treatment in many tumor types. Merck's partnership with MD Anderson is designed to find the best combinations of Keytruda plus chemotherapy, radiation and/or novel anti-tumor therapies for patients with gastroesophageal adenocarcinoma, pancreatic adenocarcinoma and hepatocellular carcinoma.</p><p>The big pharma company did not disclose financial terms of the research deal, but Merck and MD Anderson expect to begin their first clinical trials later this year. MD Anderson participated in earlier Keytruda clinical trials, including studies that contributed to the PD-1 inhibitor's US FDA approval for the treatment of <a href="http://www.scripintelligence.com/home/Merck-melanoma-drug-Keytruda-OKd-1st-US-PD-1-353714" target="_new">unresectable or metastatic melanoma</a> in September.</p><p>"Agreements like this are an integral part of our strategy to evaluate Keytruda in multiple tumors and combinations," Merck Research Laboratories senior vice president and head of late-stage oncology development Roger Dansey said in a statement.</p><p>The company did not reveal which targeted cancer therapies may be combined with Keytruda during the concurrent clinical trials administered by MD Anderson investigators. However, Merck previously revealed <a href="http://www.scripintelligence.com/home/Merck-AZ-Roche-BMS-work-off-grid-for-mix-and-match-immuno-oncology-358916" target="_new">agreements to test several therapies</a> in combination with its immunotherapy drug: Tetralogic Pharmaceuticals's birinapant, Syndax Pharmaceuticals's entinostat, Daiichi Sankyo's and Plexxikon's PLX3397, Tesaro's niraparib, Dynavax's SD-101 and Amgen's T-VEC (talimogene laherparepvec).</p><p>The past few days have been lucrative for biotechnology companies with agents that may pair well with anti-PD-1 immunotherapies. Roche signed deals to test its PD-1 inhibitor atezolizumab with Clovis Oncology's <a href="http://www.scripintelligence.com/home/Why-Clovis-Is-Piggybacking-Genentech-In-Lung-Cancer-359917" target="_new">rociletinib in lung cancer</a> and Immune Design's <a href="http://www.scripintelligence.com/business/Genentech-Signs-Two-Immunotherapy-Deals-359930" target="_new">CMB305 in soft tissue sarcoma</a>.</p><p>Similarly, AstraZeneca's MedImmune licensed Inovio's INO-3112 with plans to <a href="http://www.scripintelligence.com/researchdevelopment/AZs-MedImmune-Links-With-Inovio-Cancer-Vaccine-359901" target="_new">test the cancer vaccine</a> in combination with its immunotherapy assets, which includes the PD-1 inhibitor MEDI-4736.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 271
+
+<p>Merck & Co continued its streak of immuno-oncology dealmaking in a strategic clinical research collaboration with the University of Texas MD Anderson Cancer Center to test Keytruda (pembrolizumab) in combination with other treatments in three specific tumor types.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Merck inks another deal to test Keytruda combinations
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150813T212349
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150813T212349
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150813T212349
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029499
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Merck inks another deal to test Keytruda combinations
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359856
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042435Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8dc1657b-8ea0-4571-9df3-fc986c7a406e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042435Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

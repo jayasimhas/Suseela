@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {B9FAF90A-664B-42BF-98A2-7409B94721D8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/13/Neuroblastoma Genomic Discovery Gateway To Potential Therapies
+parent: {795A7AEF-21C6-4727-ABCA-CA7142D31AA1}
+name: Neuroblastoma Genomic Discovery Gateway To Potential Therapies
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3969e918-dd49-4978-a374-74b6c64a1363
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Neuroblastoma Genomic Discovery Gateway To Potential Therapies
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+Neuroblastoma Genomic Discovery Gateway To Potential Therapies
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3327
+
+<p>Scientists at NEO New Oncology AG and the University of Cologne have identified previously unknown genomic alterations in neuroblastoma which may help improve tumor diagnostics and potentially leading to the development of new therapies for the pediatric disease.</p><p>Neuroblastoma is a tumor of the sympathetic nervous system and it is the most common cancer in infancy, with its resistance to treatment being one of its characteristics. In this study, published in <a href="http://www.nature.com/nature/journal/vaop/ncurrent/full/nature14980.html" target="_new">Nature</a>, researchers analysed over 200 tumour samples and discovered genomic rearrangements close to the telomerase reverse transcriptase gene (<i>TERT) </i>occurring in nearly one quarter of high-risk neuroblastoma patients. As of yet only a small number of molecule markers defining high-risk neuroblastoma had been recognized, with amplification of the <i>MYCN</i> oncogene and mutations of the transcriptional regulator ATRX being among them. Both <i>MYNC</i> amplification and <i>TERT</i> rearrangements seem to increase the activity of the enzyme telomerase and increase expression of TERT, which is associated with tumor formation. </p><p>These findings show that majority of high-risk neuroblastoma are affected by either <i>TERT</i> rearrangements, <i>MYCN</i> amplifications or <i>ATRX</i> mutations resulting in telomeres lengthening, giving cancer cells the ticket to proliferate out of control. </p><p>Prof. Matthias Fischer, one of the authors of the research, from the department of pediatric oncology, at the University Children's Hospital Cologne said, "The finding that telomere lengthening is the basic principle of high-risk neuroblastoma fundamentally advances our understanding of the molecular pathogenesis of this pediatric malignancy. Our discovery provides an unprecedented opportunity to improve diagnostics and treatment of children suffering from this deadly cancer." </p><p>Currently there are only a couple of older therapies approved for use in neuroblastoma: teniposide and trofosfamide, which both act as DNA inhibitors. However, <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Unituxin-United-Therapeutics-wins-pediatric-voucher-357213" target="_new">United Therapeutics'</a><i>Unituxin</i> (dinutuximab) was approved in the US in March 2015 and EU in August, but has yet to be launched. There are also a number of products in early stage clinical development, including Boehringer Ingelheim's' <a href="http://www.scripintelligence.com/researchdevelopment/Lung-data-give-welcome-boost-to-Boehringers-Gilotrif-359307" target="_new">afatinib</a>, and Novartis' <a href="http://www.scripintelligence.com/researchdevelopment/Novartis-Skin-Cancer-Therapy-Approved-In-Europe-360043" target="_new">erismodegib</a>, while <a href="http://www.scripintelligence.com/business/Cancer-drug-developers-Telik-and-MabVax-join-forces-351828" target="_new">MabVax Therapeutics</a> is planning to begin a Phase II trial in 2016 for its vaccine, MabVax. </p><p>NEO New Oncology AG designs and develops NEO, a diagnostic platform, allowing physicians to pick targeted therapies for their patients. NEO also identifies relevant alterations including amplifications, point mutations and insertions and deletions. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 270
+
+<p>Scientists at NEO New Oncology AG and the University of Cologne have identified previously unknown genomic alterations in neuroblastoma which may help improve tumor diagnostics and potentially leading to the development of new therapies for the pediatric disease.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+Neuroblastoma Genomic Discovery Gateway To Potential Therapies
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151013T040901
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151013T040901
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151013T040901
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030076
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Neuroblastoma Genomic Discovery Gateway To Potential Therapies
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{202BB75B-8718-40FC-96EC-851DBBB43362}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361006
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042507Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3969e918-dd49-4978-a374-74b6c64a1363
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042507Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

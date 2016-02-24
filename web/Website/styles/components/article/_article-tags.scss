@@ -1,0 +1,43 @@
+.article-tags-bar {
+    align-self: flex-start;
+    background-color: $informa-light-gray-f;
+    display: inline-block;
+    padding: 12px;
+
+    a {
+        text-transform: none;
+    }
+
+    @include breakpoint('medium') {
+        max-width: 100%;
+
+        & .bar-separated-link-list {
+            width: calc(100% - 2.5rem);
+        }
+
+        &__label {
+            display: inline-block;
+            width: 2rem;
+        }
+
+        a {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        // Two tags
+        a:nth-last-child(2):first-child,
+        a:nth-last-child(2):first-child ~ a {
+            width: 50%;
+        }
+
+        // Three tags
+        a:nth-last-child(3):first-child,
+        a:nth-last-child(3):first-child ~ a {
+            width: calc(100% / 3);
+        }
+
+    }
+}

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {4EFBA953-18AA-4930-8442-356A15079FBA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/27/Diabetes sales lead AstraZenecas first half fight back
+parent: {32110CE4-9FEB-4D8C-9DFF-1F8EA6DC908B}
+name: Diabetes sales lead AstraZenecas first half fight back
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 63f41ce8-dd22-4a9f-abe7-d35c102133d7
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Diabetes sales lead AstraZeneca's first half fight back
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Diabetes sales lead AstraZenecas first half fight back
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4904
+
+<p>"Genuinely driven by product sales" was how some analysts saw AstraZeneca's better-than-expected performance in the second quarter. </p><p>Total revenue in the first half of 2015 grew by 1% to $12.36bn, with 2Q marking six consecutive quarters of top line growth. "We're very pleased with this performance which looked unlikely only one or two years ago," acknowledged Pascal Soriot, CEO of AstraZeneca, in a conference call accompanying the results (30 July).</p><p>Total revenue was up "despite the impact of the US branded transfer fee now treated as a deduction from product sales," added AstraZeneca's CFO Marc Dunoyer.</p><p>The second quarter came in about 3% ahead of consensus estimates, at $5.84bn, with core EPS of $1.21, around 15% ahead.</p><h2>diabetes</h2><p>Berenberg analysts called the product sales beat "pleasing," and highlighted the diabetes franchise, which had "disappointed over recent quarters." Sales here were $559m.</p><p>"Looking at diabetes, encouraging growth of 32% in the first half was driven by Forxiga and the Bydureon pen," said Mr Soriot. "Diabetes sales were also up a full 88% in emerging markets in the half. The second quarter was the first quarter with an apples-to-apples comparison in diabetes, reflecting full ownership [following AstraZeneca's acquisition of Bristol-Myers Squibb's share of their diabetes alliance]. And this showed a 21% growth versus an estimated 14% growth in the market for non-insulin diabetes medicines."</p><p>AstraZeneca has revised its full year guidance (at CER), and it is now expected to decline by low single-digit percent versus the prior guidance of a mid-single-digit decline. Core EPS guidance is unchanged, and is expected to increase by low single-digit percent, reflecting the continued accelerated investment in R&D.</p><h2>externalization</h2><p>AstraZeneca's externalization strategy has caused some investors concern in recent months, but Mr Soriot was unapologetic, claiming earnings targets were not the only driver. "To be honest if we didn't have these goals we would probably &ndash; for sure in fact &ndash;do the same as we are doing. Because what we are doing is partnering where we don't have the capabilities to develop and market products."</p><p>Externalization revenue stood at $780m in the half (H1 2014: $352m), which primarily reflected income from the hematology collaboration with Celgene ($450m), together with income from the co-commercialization agreement with Daiichi Sankyo for Movantik in the US ($200m), plus the co-commercialization of Nexium in Japan ($55m), also with Daiichi Sankyo.</p><p>With regards to the Celgene partnership, Mr Soriot said, "We're partnering with the best hematology company in the industry. Nobody has any value for hematology in their spreadsheets for durvalumab (MEDI4736). We are potentially going to create enormous value in hematology. Of course we'll have only 50% of that value, but it will be 50% of a large value, because now we have the ability to be a leader in the field of hematology, whereas before we would have been trailing the pack and building capabilities that we don't have."</p><p>AstraZeneca has since conducted further externalization deals. It <a href="http://www.scripintelligence.com/business/AstraZeneca-divests-troublesome-thyroid-cancer-drug-359640" target="_new">sold Caprelsa</a> (vandetanib) to Sanofi's Genzyme for up to $300m, and it sold global rights, outside the US, <a href="http://www.scripintelligence.com/business/AstraZeneca-divests-GI-drug-for-215m-359319" target="_new">to Entocort</a> (budesonide) to Tillotts Pharma, part of the Zeria Group of Japan, for $215m.</p><h2>brodalumab</h2><p>There was concern during the second quarter when Amgen unexpectedly pulled out of the co-development of the interleukin-17 inhibitor brodalumab, citing <a href="http://www.scripintelligence.com/home/Amgen-dumps-brodalumab-AstraZeneca-losing-a-blockbuster-358573" target="_new">potential safety concerns</a> with the psoriasis drug.</p><p>However, "We've actually had several expressions of interest [for a replacement partner]. In fact, we've already received offers, and we are considering those and engaging in discussions with potential partners," revealed Mr Soriot. "But the key is first to go through the data in more detail, and that's what we are still doing, and then decide how we progress this together with the partner that we select."</p><p>AstraZeneca said "growth platforms" grew by 11%, and represented 56% of total revenue. It cited its first half commercial highlights as:</p><ul><li>Brilinta/Brilique: +42%; achieved 10% new-to-brand prescription market share in the US </li><li>Diabetes: +32%, including 88% sales growth in emerging Markets </li><li>Respiratory: +9%, ahead of market growth; 2Q sales up 11% </li><li>Emerging Markets: +14%; China sales +19% </li><li>Japan: +2%, with 2Q sales +6%</li></ul>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 139
+
+<p>"Genuinely driven by product sales" was how some analysts saw AstraZeneca's better-than-expected performance in the second quarter. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Diabetes sales lead AstraZenecas first half fight back
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150727T165452
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150727T165452
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150727T165452
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029396
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Diabetes sales lead AstraZeneca's first half fight back
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200264
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359638
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042430Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+63f41ce8-dd22-4a9f-abe7-d35c102133d7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042430Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

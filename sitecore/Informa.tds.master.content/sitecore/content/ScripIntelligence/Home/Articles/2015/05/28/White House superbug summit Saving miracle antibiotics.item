@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9AF242F8-43F6-49D9-8E18-96F5CA635271}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/28/White House superbug summit Saving miracle antibiotics
+parent: {13587B21-C2AC-45A3-9B37-20A4DC43DB48}
+name: White House superbug summit Saving miracle antibiotics
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2561b449-bd8b-4918-9537-48d2fd3c6feb
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+White House superbug summit: Saving 'miracle' antibiotics
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+White House superbug summit Saving miracle antibiotics
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8234
+
+<p>The world is not on the verge of a post-antibiotic era, as has been warned about by experts and international leaders over the past year, said US Health and Human Services Secretary Sylvia Mathews Burwell.</p><p>"We are actually in it," she declared at the White House on 2 June to a room full of about 150 industry, academic and government scientists, private-sector executives and other stakeholders &ndash; relating a story about an 11-year-old Arizona girl who went from entering the hospital with one staph infection and acquiring several more resistant to antibiotics, eventually ending up with a lung transplant and impaired vision and restricted arm movement from a resulting stroke. </p><p>Secretary Burwell noted that her own uncle died in April after contracting methicillin-resistant <i>Staphylococcus aureus</i>, which complicated the condition for which he was hospitalized. </p><p>So, she said, the human cost of antimicrobial resistance (AMR), which results in about two million infections in the US each year, killing about 23,000 Americans annually, was "more than just numbers" for her.</p><p>AMR, said Dr John Holdren, director of the White House Office of Science and Technology Policy, is "one of the more complex challenges we face in the public health space in the US and around the world."</p><p>While there are many drivers of the emergence and spread of AMR, a number of those remain poorly understood, Dr Holdren said.</p><p>"We cannot let this grave public health threat go unaddressed," he said.</p><p>The management of AMR "requires multifaceted strategies that involve multiple sectors of society," Dr Holdren said at the 2 June forum at the White House, in which various stakeholders, including those from the human and animal healthcare systems; the pharmaceutical, diagnostic and vaccine industries; scientific professional societies; the livestock industry; and food processors and retailers, gathered to exchange ideas on responsible antibiotic stewardship and opportunities for further improvement &ndash; a <a href="http://www.scripintelligence.com/home/Superbug-summit-White-House-to-hold-antibiotics-forum-358474" target="_new">superbug summit</a>.</p><p>While Dr Holdren stressed the importance of infection control strategies like good hand hygiene and hospital surgical room practices, he argued the "single most important" action to slow the development and spread of AMR infections was to "change the way antibiotics are used."</p><p><b>Stewardship pledges</b></p><p>Dr Holdren noted that a number of the stakeholders at the White House superbug summit had made commitments already for better antibiotic stewardship.</p><p>For instance, 10 organizations committed to working with veterinarians and feed mill operators to ensure swift and seamless adoption of the FDA's guidance to align their medically important antibiotic products with the agency's final rule, <a href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm448446.htm" target="_new">announced on 2 June</a>, on veterinary feed directive and data collection, including removing growth promotion uses and changing marketing status to require veterinary oversight of product use. </p><p>Jeff Simmons, president of Lilly's animal health unit Elanco, pledged that his company would dedicate two-thirds of its food animal research budget to discovering non-antibiotic alternatives.</p><p>He said Elanco is evaluating 25 new technology platforms and plans to deliver 10 viable development candidates within the next year.</p><p>The White House noted that Merck's animal health unit has developed a commercial surveillance program aimed at monitoring multi-drug resistant bacteria across live animal, beef and dairy production, with the ultimate goal of ensuring veterinarians can provide targeted, responsible treatments with antibiotics and other therapeutics when needed.</p><p>Zoetis, the former animal health business of Pfizer, also committed to placing the administration of medically important antibiotics under the direct purview of a veterinarian for the purpose of fighting disease &ndash; thereby eliminating the product's use for growth promotion. </p><p>The commitments by Elanco, Merck Animal Health and Zoetis, Dr Holdren said, "demonstrate the power of voluntary action to affect sweeping change."</p><p>Dr Holdren said President Barack Obama has made combating AMR a priority and set forth a <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Obama-superbug-attack-plan-hinges-on-funding-cooperation-357553" target="_new">strategy and action plan in March</a>, "by which the federal government will do its part to preserve the efficacy of existing antibiotics while promoting the development of new diagnostics, new generations of therapies and expanding the use of vaccines to prevent diseases in humans and in animals."</p><p>He noted President Obama on 2 June also signed a memorandum directing federal departments and agencies to create a preference for meat and poultry produced according to responsible antibiotic use.</p><p>A number of biopharmaceutical firms also committed to addressing the challenge of getting information to healthcare providers about what drugs are not working against resistant pathogens, the White House said.</p><p>Dr Tom Frieden, director of the Centers for Disease Control and Prevention, stressed the importance of Congress granting the "critically needed" <a href="http://www.scripintelligence.com/home/Obama-outlines-spending-wish-lists-for-FDA-NIH-356508" target="_new">$1.2bn President Obama requested</a> to implement his strategy, including $100m in new funds for the Biomedical Advanced Research and Development Authority for the development of <a href="http://www.scripintelligence.com/home/Obama-aims-to-shift-power-back-in-antibiotics-favor-356410" target="_new">new antibiotic therapies and diagnostics</a>.</p><p>"If we don't take better care of the antibiotics that we have today, if we aren't better stewards of them, we could lose these antibiotics and the next ones that come along," Dr Frieden said, calling the drugs "miracles" the world cannot afford to lose. "We truly risk undermining much of our ability to care and cure. We risk turning back the clock when simple infections could kill."</p><p><b>Antibiotic 'battleships'</b></p><p>Dr John Rex, vice president of infection development at AstraZeneca, called the White House superbug summit an important event that "matters because antibiotics are the fundamental enabler of human health, and not having them when you need them is just so astonishingly wrong that we can't tolerate it."</p><p>"The optimal use of those that we do have is a critical step towards being sure that we have what we need in the future," he told <i>Scrip</i> at the White House.</p><p>Dr Rex said he hoped the discussion during the summit would also "highlight the issues of the tension between stewardship and the development of antibiotics."</p><p>He pointed to the ongoing efforts in the UK with the recent <a href="http://www.scripintelligence.com/policyregulation/ONeill-Review-outlines-five-steps-for-immediate-AMR-relief-356603" target="_new">O'Neill Review</a> and by the <a href="http://www.scripintelligence.com/home/Give-companies-a-better-pricing-deal-for-antimicrobials-says-European-Parliament-358640" target="_new">European Parliament</a> to "de-link" the volume of use of antimicrobials from the rewards for innovation.</p><p>Governments need to figure out with industry how to construct a business model in which innovators are rewarded for ensuring the availability of antibiotics, "even when we don't use them" &ndash; which Dr Rex said is the ultimate goal if the drugs are to be preserved for time of need.</p><p>Buying antibiotics should be thought of like buying battleships or insurance &ndash; things you hope you won't ever have to use but are there when you need to use them, he insisted. </p><p>Dr Rex predicted that over the next four or five years, "we are going to change the way we pay for antibiotics so that fundamentally, governments or super-national bodies buy them or have contracts to buy them whether or not they get used."</p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 212
+
+<p>The world is not on the verge of a post-antibiotic era, as has been warned about by experts and international leaders over the past year, said US Health and Human Services Secretary Sylvia Mathews Burwell.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+White House superbug summit Saving miracle antibiotics
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150528T051328
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150528T051328
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150528T051328
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028894
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+White House superbug summit: Saving 'miracle' antibiotics
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358626
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042356Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2561b449-bd8b-4918-9537-48d2fd3c6feb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042356Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

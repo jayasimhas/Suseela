@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E2458509-E82E-49C7-BE1D-0F73610EA5FA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/18/Costs for cancer drugs combos face increasing scrutiny
+parent: {A5EBD6E2-67DE-4D32-BD47-53A5A2131394}
+name: Costs for cancer drugs combos face increasing scrutiny
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 345b2a55-3eb0-4005-8c3f-e8b6e8625542
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Costs for cancer drugs, combos face increasing scrutiny
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Costs for cancer drugs combos face increasing scrutiny
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11140
+
+<p>As more effective and more expensive cancer therapies hit the US market, doctors and payers are taking a closer look at the cost of oncology drugs &ndash; even potentially life-saving medicines &ndash; out of fear that the health care system won't be able to support the high price of treatment.</p><p>Recent research from physician and epidemiologist Peter Bach, director of the Center for Health Policy and Outcomes at Memorial Sloan Kettering Cancer Center in New York, showed that the median monthly cost of cancer drugs at the time of US FDA approval increased from $100 to $10,000 between 1965 and 2015. So with the median cost of new cancer drugs at $120,000 per year, the prospect of paying for two or three novel medicines in combination with each other is especially daunting.</p><p>Combination therapies aren't new in oncology, since new agents often are administered together with chemotherapy. However, immunotherapy developers are looking for ways to combine immuno-oncology drugs or targeted therapies to further improve responses and survival in hard-to-treat cancers.</p><p>Among the immuno-oncology players pressing forward with combination therapies are Bristol-Myers Squibb and Merck & Co, whose programmed cell death-1 (PD-1) checkpoint inhibitors &ndash; Opdivo (nivolumab) and Keytruda (pembrolizumab), respectively &ndash; were approved in the US to treat metastatic melanoma based on relatively high response rates. Bristol-Myers has inked multiple agreements to test Opdivo with drugs developed outside of the company as has Merck for Keytruda.</p><p>"While Merck is committed to really understanding the monotherapy data, because for many patients the monotherapy is enough, we recognize that it doesn't work for everybody, so we're committed to combination therapies as well," Merck Research Laboratories vice president of clinical research Alise Reicin told <i>Scrip</i> in December when the company reported data for its PD-1 inhibitor Keytruda in the treatment of triple-negative breast cancer (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Mercks-Keytruda-has-breast-cancer-activity-combo-trials-next-355557" target="_new">11 December 2014</a>).</p><p>"We've got some great collaborations with large pharma as well as with some of the smaller companies, looking for the best combinations for different tumor types," Dr Reicin said. </p><p>Merck is testing Keytruda (previously MK-3475) in combination with several therapies, including Pfizer's Inlyta (axitinib), Amgen's cancer vaccine talimogene laherparepvec (T-VEC) and Incyte's IDO inhibitor INCB24360 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Merck-partners-with-Pfizer-Amgen-and-Incyte-to-study-promising-cancer-drug-349840" target="_new">5 February 2014</a>).</p><p>But as Express Scripts chief medical officer Steve Miller told <i>Scrip</i> in a recent interview: "It's not even the combination therapy [that's concerning]. The individual drug prices are pretty high."</p><p><b>Payers sound the alarm</b></p><p>Express Scripts and CVS/Caremark, which both are pharmacy benefit managers (PBMs) for US health plans and employers, have been vocal about the high and rising cost of prescription drugs, including specialty medicines like cancer drugs. </p><p>The PBMs started with new hepatitis C medicines like Sovaldi (sofosbuvir) and Harvoni (sofosbuvir/ledipasvir), instant blockbuster products from Gilead Sciences that cost $84,000-plus for a 12-week treatment course, and moved on to PCSK9 inhibitors from Amgen and Regeneron Pharmaceuticals/Sanofi that are expected to win FDA approval later this year for patients with very high cholesterol (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Express-Scripts-on-deal-for-AbbVies-Viekira-more-to-come-beyond-hepatitis-C-355807" target="_new">23 December 2014</a>, <a href="http://www.scripintelligence.com/home/Gileads-CVS-exclusive-may-best-AbbVies-Express-Scripts-hepatitis-C-deal-355940" target="_new">6 January</a> and <a href="http://www.scripintelligence.com/home/CVS-takes-aim-at-PCSK9s-costs-could-dwarf-HCV-meds-356803" target="_new">18 February 2015</a>).</p><p>Payers and PBMs also have joined doctors in sounding the alarm about cancer drug costs. In response to patients having to choose between bankruptcy or foregoing cancer treatment because of cost, the American Society of Clinical Oncology (ASCO) is working on a framework to help oncologists determine the best drugs for their patients based on the type of cancer, the risk-versus-benefit of available therapies and the cost of treatment (scripintelligence.com, <a href="http://www.scripintelligence.com/home/ASCO-looks-for-value-in-pricey-cancer-drugs-352139" target="_new">3 June 2014</a>).</p><p>Express Scripts, along with the employers and health plan sponsors that make up its customer base, are considering ways to cut cancer drug costs while making sure that plan members still get the treatment they need. Oncology medicines will be a key topic during the PBM's annual meeting with its customers in May, Dr Miller said.</p><p><b>Drug spending jumped in 2014</b></p><p>Drug spending jumped 13.1% in the US last year, Express Scripts said in a recent 2014 review. It was the first time in several years that drugs outpaced health care spending in general. Hepatitis C medicines accounted for much of the increased drug spending in 2014, but the money spent on specialty medicines &ndash; including cancer drugs &ndash; increased 30.9% over the prior year.</p><p>Express Scripts noted that "new cancer drugs and PCSK9 inhibitors for high blood cholesterol will continue to challenge payers."</p><p>The IMS Institute for Healthcare Informatics said in November that it expects annual global drug spending to total $1.3 trillion by 2018, with oncology drugs growing from $65bn of the yearly total in 2013 to $100bn by 2018 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/INFOGRAPHIC-IMS-Institute-forecasts-1.3T-in-2018-drug-spending-355180" target="_new">21 November 2014</a>). The IMS Institute also noted that one-fourth of the 2,000-plus late-stage drugs in development are meant to treat cancer.</p><p>"Drug costs are rising faster than any other cost in health care. And with the fabulous drugs in the pipeline, the cost doesn't appear to be going down soon," Dr Miller said. "The question is, 'How can American payers of health care afford this rapid rise in the cost of pharmaceuticals?' Cancer is just one class in this debate."</p><p>Dr Miller recently spent time in Washington, D.C. speaking with legislators about the high cost of cancer drugs and why the US needs to begin a conversation about how to pay for innovative therapies. </p><p>"We're also reaching out to oncologists and advocacy groups. We are going to have to create a broad-based movement of people that are advocating for the best possible cancer care, but also at affordable pricing," he said.</p><p><b>Looking for solutions</b></p><p>Express Scripts, in partnership with its employer and health plan customers, is using traditional formulary tools to drive competitive pricing between cancer therapies that have similar safety and efficacy. They're also considering what data pharma companies must provide to show the benefits of their cancer drugs versus the safety risk and the product cost. </p><p>Drug makers also may face value-based pricing under which the costs of their medicines will be reimbursed relative to efficacy for competing therapies. But the assessment of "value" in cancer care is difficult and, for patients, it is emotional.</p><p>"If we have a drug that doesn't cure you, but prolongs your life and you feel better, what is the value of that? If you're alive for your daughter's next birthday, it's worth it to you, but it's hard for us to put a price on those extra months or that extra quality of life," Dr Miller said.</p><p>The Multiple Myeloma Research Foundation (MMRF) also is looking at drug costs as new combinations of therapies extend patients' lives. The foundation is building a genomic database to understand the best way to treat multiple myeloma and potentially reduce costs by pointing individual patients to the best drug regimen for their stage of disease (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Genomic-study-aims-to-boost-multiple-myeloma-survival-treatment-355893" target="_new">31 December 2014</a>).</p><p>"Maybe [cost] represents the impetus to find curative therapies or, if not curative, therapies that have long-term remissions. Using these new drugs for the long term in combination is not going to be viable," David Siegel, chief of the multiple myeloma division at the John Theurer Cancer Center in Hackensack, New Jersey, told <i>Scrip</i> in December following the release of new multiple myeloma drug data during the American Society of Hematology (ASH) annual meeting (scripintelligence.com, <a href="http://www.scripintelligence.com/home/New-therapies-combinations-improving-myeloma-survival-more-on-the-way-355892" target="_new">31 December 2014</a>).</p><p>Perhaps instead of combination drug regimens, companies will focus on reducing treatment costs by developing more bi-specific antibodies that combine two medicines in one injection or infusion, which could be a less costly treatment than two drugs administered separately, Dr Siegel suggested. </p><p><b>Despite approach, value is the driver</b></p><p>Regardless of therapeutic approach, Datamonitor Healthcare analyst Tijana Ignjatovic said biopharma companies will have to spend more time explaining to US payers why their drugs are not only safer and more effective than other cancer therapies, but why they deserve reimbursement.</p><p>Ms Ignjatovic said many private payers are reimbursing the cost of new cancer drugs currently without much scrutiny as long as doctors are prescribing the therapies for FDA-approved uses, especially in smaller indications like melanoma &ndash; the first approved indications for Merck's Keytruda and Opdivo from Bristol-Myers. </p><p>"If it's something like lung cancer, it becomes a different ball game, because it's much more patients," she said.</p><p>That's why private payers are developing "oncology pathways," which define cancer drug regimens for specific cancer types. Payers also are considering caps on the costs they will pay for individual cancer drugs and they're negotiating risk-sharing agreements with oncologists that give doctors financial incentives to use effective, but less costly, treatments.</p><p>Even so, "payers so far have indicated that if it makes patients live longer they are going to have real difficulty not paying for a drug," Ms Ignjatovic said. "So far, I'm hearing that they don't like it, but their hands are tied."</p><p>But with cancer drug spending expected to grow by slightly more than 50% between 2013 and 2018, according to the IMS projections, Express Scripts and other payers have made it clear that they will look for new ways to control oncology drug costs in the future.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 302
+
+<p>As more effective and more expensive cancer therapies hit the US market, doctors and payers are taking a closer look at the cost of oncology drugs &ndash; even potentially life-saving medicines &ndash; out of fear that the health care system won't be able to support the high price of treatment.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Costs for cancer drugs combos face increasing scrutiny
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150318T072050
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150318T072050
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150318T072050
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028200
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Costs for cancer drugs, combos face increasing scrutiny
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357342
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042316Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+345b2a55-3eb0-4005-8c3f-e8b6e8625542
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042316Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

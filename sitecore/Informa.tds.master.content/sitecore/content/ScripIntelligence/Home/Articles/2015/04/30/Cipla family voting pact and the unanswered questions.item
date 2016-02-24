@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {576310DE-B473-44EC-B90F-DDA6BA21E66C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/Cipla family voting pact and the unanswered questions
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: Cipla family voting pact and the unanswered questions
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: bd4535f4-25f2-4f16-b219-c4222055f19d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{F5161CC2-772F-472E-A21C-BF196343462E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Cipla family voting pact and the unanswered questions
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Cipla family voting pact and the unanswered questions
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4858
+
+<p>Plain realignment of family rights, succession planning, pre-emptive action or more? </p><p>Things seem a bit hazy for now, but Cipla patriarch Dr Yusuf Hamied's request for "informal guidance" from India's markets regulator concerning a potential voting rights pact within the founding family has set the rumour mills agog.</p><p>The entire issue revolves around a proposed agreement among various members of Cipla's founding family and family-controlled entities envisaging that the members "vote together" and grant their proxies to "identified family members" in the manner set out in the agreement. The agreement also provides for a pre-emptive right in case the shareholders choose to transfer their shares.</p><p>Cipla's chairman, Dr Yusuf Hamied, had sought an "interpretative letter" from the Securities and Exchange Board of India (SEBI) on whether the "arrangement" of voting rights set out in the proposed agreement would trigger an open offer under India's takeover regulations.</p><p>SEBI has, in a letter dated 2 February but made public only recently, indicated that such acquisition of voting rights would be exempt under certain sections of India's Takeover Regulations, subject to the fulfillment of conditions specified therein. </p><p>"Similarly, change in the family member under whose direction the voting and supervision would be done pursuant to the demise or incapacity of Dr Yusuf Hamied or Dr MK Hamied [the chairman's brother] would be exempt if condition specified in regulation 10 are complied with," SEBI said. Regulation 10 deals with acquisitions that are exempt from the obligation to make an open offer to the public shareholders of a company.</p><p>The Hamied family's proposed agreement aims to have a "coordinated" approach and to act as "single unit" for the purpose of exercising voting rights in the company. This would be under the overall direction and supervision of Dr Yusuf Hamied during his lifetime and Mr MK Hamied after the demise of or upon incapacity of the chairman to act. </p><p>Post the demise or incapacitation of both the Hamied brothers, the family is expected to act jointly in respect of voting under the overall direction and supervision of the member of the Hamied family who owns the highest number of shares, the proposed pact, the relevant parts of which are detailed in a letter dated 21 October 2014 to SEBI from Dr Hamied, says.</p><p>Cipla's founding family held 36.8% in the company as of March 2015, with Dr Hamied holding 15.55% of this share. Mr Hamied and his children and Sophie Ahmed (sister of the Hamied brothers) too hold shares in Cipla. </p><p>In terms of exercising voting rights at a company general meeting, the pact suggests that if Dr Hamied is not attending the meeting for any reason, he may authorize and nominate another person to do so and in the absence of such nomination, brother Mr MK Hamied will be deemed as the authorized representative. If the latter is unable to so act, then Dr Hamied shall nominate Mr Hamied's son Kamil Hamied to do so, it notes. </p><p>Significantly, Kamil Hamied, son of vice-chair MK Hamied and nephew of chairman, Dr Yusuf Hamied, is said to have decided to <a href="http://%5bhttp:/www.scripintelligence.com/home/Ciplas-scion-leaves-company-for-new-horizons-357733%5d" target="_new">move out of Cipla</a>, adding, what some analysts say, is another dimension to the voting pact plan. </p><h2>The real question</h2><p>While the SEBI may have opined on the Cipla chief's query, industry watchers say the real question may be what triggered the need for such a request from the Indian generic giant.</p><p>Sources in the know told <i>Scrip</i> that the "main purpose" of the agreement was only to ensure that the "family was going to vote in a block".</p><p>These sources, though, also referred to instances of how family members had sued the founder in the case of Gharda Chemicals [over a stake sale plan] or more recently how grandchildren had moved court against the India's Singhania group chair staking a claim on ancestral property. None of these situations, though, are known to apply in the case of Cipla.</p><p>In response to queries from <i>Scrip</i>, Cipla only said: "We have been informed that the voting agreement in question has not been executed till date and the matter will be taken up in due course by the promoters. The rest of the questions being premature warrant no response."</p><p>Analysts tracking the development say that Cipla's founding family appears to be putting in place a formal set-up for engagement, in terms of voting rights, post their tenure.</p><p>"But it's not very clear and if there are differences, we hope they are resolved. I'd be concerned if there's no clarity on who next after the chairman and his brother," an analyst with an Indian brokerage firm told <i>Scrip</i>.</p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 92
+
+<p>Plain realignment of family rights, succession planning, pre-emptive action or more? </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Cipla family voting pact and the unanswered questions
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028640
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Cipla family voting pact and the unanswered questions
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 9
+
+interview
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358135
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bd4535f4-25f2-4f16-b219-c4222055f19d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

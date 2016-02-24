@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {09338EF7-46DC-4A0F-8611-5C6F30089370}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/14/Novartis Sees Real Value Of Ofatumumab In MS Pays GSK Up To 1Bn
+parent: {F1BDB59F-EC79-4308-B3FA-AD67FD3F4F4E}
+name: Novartis Sees Real Value Of Ofatumumab In MS Pays GSK Up To 1Bn
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5f93cc1c-04e1-465b-8c6a-e275fdbd13a8
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Novartis Sees Real Value Of Ofatumumab In MS, Pays GSK Up To $1Bn 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Novartis Sees Real Value Of Ofatumumab In MS Pays GSK Up To 1Bn
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4251
+
+<p> GlaxoSmithKline is divesting its rights in ofatumumab in autoimmune indications, including multiple sclerosis, to Novartis. Novartis previously acquired the oncology rights for ofatumumab (marketed as Arzerra) as part of the major three-part transaction between the companies. It now holds complete rights to the fully human CD20-targeting monoclonal antibody. </p><p> Targeting CD20 to deplete B-cells is a promising strategy in MS, as highlighted by Roche's results for its anti CD20 product ocrelizumab. </p><p> The deal could be worth up to $1.034bn to GSK, and comprises: $300m on closing; $200m at the start of a Phase III study in relapsing remitting MS; and further contingent payments of up to $534m on the achievement of certain other development milestones. </p><p> Novartis will also pay royalties of up to 12% to GSK on any future net sales of ofatumumab in autoimmune indications. </p><p> Genmab, the original developer of ofatumumab, is also due a double digit royalty. The Danish biotech told <i>Scrip</i> that there were no obvious repercussions of the latest move, as all the deal terms would transfer across from GSK. However, &quot;from the outside, looking at the terms of today's deal, Novartis clearly wants the product for autoimmune disease, so that has got to be good news.&quot; </p><p> Analysts from Deutsche Bank agree. </p><p> &quot;This deal should be taken as a positive for Genmab given: 1) 100% of product rights across all indications will now sit within one company, simplifying partnering relationships and development/marketing strategies; 2) The upfront payment alone is larger than peak sales we carry in our model, albeit lower than c$600m consensus assumes, highlighting the potential Novartis sees in the asset,&quot; they said. The analysts &quot;continue to be optimistically cautious given how competitive the autoimmune space is. However, with perception of ofatumumab at a low, given its sluggish performance in oncology, renewed interest from Novartis can only be a good thing, in our view.&quot; </p><p> Regarding the contingent payments of $534m, &quot;We assume this relates to additional indications given ofatumumab is already in Phase III trials for another autoimmune indication, pemphigus vulgaris (blistering skin).&quot; </p><p> Phase II data with ofatumumab in MS was presented at the AAN in 2014. &quot;The delay to Phase III start is due to GSK's desire to develop it in a sub cutaneous formulation,&quot; note Deutsche Bank analysts. </p><p> If the Phase III data are positive, ofatumumab would compete directly with other high efficacy second/third-line agents such Biogen's Tysabri, Sanofi's Lemtrada and of course Roche's ocrelizumab. &quot;Despite being later to market, we believe ofatumumab's sub cut mode of administration (versus IV competitors) should allow it to take some share,&quot; say Deutsche Bank. </p><p> &quot;Ofatumumab has just completed a 232 patient Phase IIb dose finding study with eight dose cohorts for RRMS,&quot; note UBS analysts. &quot;We assume that Novartis has been waiting to see those results before acquiring the MS rights, and we expect to see that data at some upcoming conference.&quot; </p><p> <b>Novartis In MS </b> </p><p> The Novartis MS portfolio includes Gilenya (fingolimod), approved in the US for the first-line treatment of relapsing forms of MS in adults and in the EU for adult patients with highly active relapsing-remitting MS (RRMS). Gilenya is also being developed for pediatric MS and chronic inflammatory demyelinating polyneuropathy (CIDP). </p><p> Extavia (interferon beta-1b for subcutaneous injection) is approved in the US for the treatment of relapsing forms of MS. In Europe Extavia is approved to treat people with relapsing remitting MS, secondary progressive MS with active disease and people who have had a single clinical event suggestive of MS. </p><p> Investigational compounds include BAF312, currently in Phase III and being investigated as an oral therapy for secondary progressive MS (SPMS). Novartis is also exploring the IL-17 pathway in MS with CJM112. </p><p> Additionally, Novartis's generics arm Sandoz Division of Novartis markets Glatopa, the first generic version of Teva's Copaxone 20 mg. </p> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 369
+
+<p> GlaxoSmithKline is divesting its rights in ofatumumab in autoimmune indications, including multiple sclerosis, to Novartis. Novartis previously acquired the oncology rights for ofatumumab (marketed as Arzerra) as part of the major three-part transaction between the companies. It now holds complete rights to the fully human CD20-targeting monoclonal antibody. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Novartis Sees Real Value Of Ofatumumab In MS Pays GSK Up To 1Bn
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150814T213028
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150814T213028
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150814T213028
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029565
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Novartis Sees Real Value Of Ofatumumab In MS, Pays GSK Up To $1Bn 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359969
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042437Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5f93cc1c-04e1-465b-8c6a-e275fdbd13a8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042437Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

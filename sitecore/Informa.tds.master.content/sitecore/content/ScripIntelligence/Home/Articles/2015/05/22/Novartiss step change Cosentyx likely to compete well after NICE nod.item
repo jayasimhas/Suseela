@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {B61347E9-D876-4AAF-B33B-F2F8AED63AAF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/22/Novartiss step change Cosentyx likely to compete well after NICE nod
+parent: {F5E96EB9-60E0-4AAE-863A-DF3CFDF656A2}
+name: Novartiss step change Cosentyx likely to compete well after NICE nod
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a8483345-a90c-4819-baa4-fd7ba64e7599
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+Novartis's 'step change' Cosentyx likely to compete well after NICE nod
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 68
+
+Novartiss step change Cosentyx likely to compete well after NICE nod
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2190
+
+<p>Novartis' psoriasis treatment Cosentyx (secukinumab) looks set to win a funding recommendation from NICE, the health technology appraisal institute for England and Wales. The yes hinges on a confidential patient access scheme that offers the drug at a discount to the NHS.</p><p>According to today's final draft guidance, the drug can be used to treat adults with plaque psoriasis when the disease is severe (as defined by a total Psoriasis Area Severity Index of 10 or more and a Dermatology Life Quality Index of more than 10).</p><p>The first-in-class IL17A inhibitor has the distinction of being the only biologic so far approved in the EU as a first-line treatment. It competitors, like the anti-TNFs and J&J's anti-IL12/23 Stelara (ustekinumab) have EU approvals as second-line treatments. Nevertheless, NICE says patients must first have tried other treatments, like ciclosporin, methotrexate and PUVA (psoralen and long-wave ultraviolet radiation), if suitable for the patient, before treatment with Cosentyx.</p><p>However, Cosentyx seems set to perform well against other biologics, (NICE named as relevant comparators Amgen's Enbrel (etanercept), Stelara (ustekinumab), infliximab (Janssen's Remicade and biosimilars are available), and Abbott's Humira (adalimumab)). The appraisal committee acknowledged that the drug "reflected a step change in treatment" as it offers a different mechanism of action, and because some patients experience complete clearance of the disease. In addition, the committee pointed out that Cosentyx has fewer side-effects than its competitors. It also acknowledged that the evidence showed Cosentyx to be clinically superior to both placebo and Enbrel.</p><p>NICE was unable to conclude on the drug's incremental cost-effectiveness ratio, but said its cost-effectiveness was likely to be similar to that of other biologics. Cosentyx' undiscounted price for two 150 mg prefilled pen or syringe is &pound;1,218.78.</p><p>The draft guidance is out for consultation until 12 June and NICE expects to publish final guidance the following month.</p><p>NICE is once again issuing guidance after a hiatus owing to the UK's recent general election.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 279
+
+<p>Novartis' psoriasis treatment Cosentyx (secukinumab) looks set to win a funding recommendation from NICE, the health technology appraisal institute for England and Wales. The yes hinges on a confidential patient access scheme that offers the drug at a discount to the NHS.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+Novartiss step change Cosentyx likely to compete well after NICE nod
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150522T205209
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150522T205209
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150522T205209
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028866
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+Novartis's 'step change' Cosentyx likely to compete well after NICE nod
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358572
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a8483345-a90c-4819-baa4-fd7ba64e7599
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

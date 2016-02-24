@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9A5459AA-AE79-4FC4-AD77-4CDF84386D8F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/14/NIH Unveils Precision Medicine Working Laboratory Plan
+parent: {9F8ADCFB-E320-4549-AFC1-EAAB109CA5F9}
+name: NIH Unveils Precision Medicine Working Laboratory Plan
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 85dd9c9f-eefe-44b4-9c0e-65af27d79e5a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{DBA29625-E20C-4C62-9C26-9028048455F2}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+NIH Unveils Precision Medicine 'Working Laboratory' Plan
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+NIH Unveils Precision Medicine Working Laboratory Plan
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7202
+
+<p>After hearing from hundreds of the nation's top scientists, which gathered at four workshops over the past six months, and receiving input from two public requests for information, a working group on Sept. 17 delivered a blueprint to National Institutes of Health (NIH) Director Francis Collins mapping the way forward for building a one-million person research cohort &ndash; the foundation of President Barack Obama's precision medicine initiative (PMI).</p><p>The purpose of the PMI cohort is to generate knowledge that can be applied to a whole range of health issues and diseases, officials said.</p><p>For the biopharmaceutical industry, the data could be used to provide critical information about new drug targets for developing compounds and cures.</p><p>Collins said the cohort's volunteer participants, who he said will be "partners in research," will be expected to share a broad range of their health information, which will involve tracking their environmental exposures and lifestyle behaviors over many years &ndash; ultimately shedding light on "the myriad factors involved in disease."</p><p>Unlike other large cohort studies, the data gleaned from the PMI cohort, which is intended to be a longitudinal project lasting over several years, will be "broadly accessible to the investigators across the country with a minimum of difficulty getting access to the data itself," said Dr Richard Lifton, a professor of nephrology and chairman of the genetics department at Yale University, co-chair of the NIH's working group.</p><p>Having open access to the full spectrum of investigators across the U.S., who can bring in novel analytic capabilities, will present an "incredible opportunity" for the cohort to be a "working laboratory," Lifton told reporters during a Sept. 17 media briefing.</p><p>Collins emphasized that the cohort study &ndash; the plans of which President Obama <a href="http://www.scripintelligence.com/home/Obama-unveils-215m-bold-precision-medicine-initiative-356457" target="_new">first announced in January</a> &ndash; is a "much broader view than simply a genomics-focused enterprise."</p><p>"It's about all kinds of information gathering," he declared.</p><p>In fact, Collins said, the scientific opportunities the PMI cohort presents are numerous and include developing quantitative estimates of risk for a range of diseases by integrating environmental exposures, genetic factors and gene-environment interactions; identifying the causes of individual variation in response to commonly used therapeutics, or pharmacogenomics; and discovering biological markers that signal increased or decreased risk of developing common diseases</p><p>He said it also includes using mobile health technologies to correlate activity, physiological measures and environmental exposures with health outcomes; developing new disease classifications and relationships; empowering study participants with data and information to improve their own health; and creating a platform to enable trials of targeted therapies.</p><p>Collins pointed out that the NIH will, in fact, initially not have the funds to do whole genome sequencing on the one million volunteers in the cohort &ndash; noting that such activities could run from $1bn to $2bn, which he said "may be beyond the budget we are likely to have."</p><p>But, he said, "the good news is the cost is coming down."</p><p>"We very much hope to get that information," Collins said. </p><p>But in the short run, there are other ways the PMI researchers can collect data, including genotypes by using single nucleotide polymorphism, or SNP, chips, which run about $30 to $40 per person, he said.</p><p>"That would give you information about common variants across the genome that play a role in response to drug therapy &ndash; pharmacogenomics," Collins explained.</p><p>The NIH cohort is expected to have a coordinating center that serves as a hub for accessing data and biospecimens and participant communication and engagement.</p><p>Collins said there also will be a nationwide search to find a director of the program with "institutional authority. For now, he has appointed Josephine Briggs, who is the director of the NIH's National Center for Complementary and Integrative Health, as the interim chief of the project.</p><p>He said the NIH has had very good interactions with the FDA on the PMI cohort planning, noting the drug and device regulatory agency has been an "important part of the working group."</p><p>In fact, he said, the person who has been "most closely aligned" with the discussions is <a href="http://www.scripintelligence.com/home/A-Califf-Regime-The-Disruptor-FDA-Industry-Needs-360491" target="_new">Robert Califf</a> &ndash; President Obama's <a href="http://www.scripintelligence.com/home/Califf-Praised-As-Thoughtful-Choice-To-Lead-FDA-360469" target="_new">nominee to lead the FDA</a>.</p><p>"All the thinking has been about how to be sure the regulatory side, particularly with the genetic testing, which is a place FDA is working intensively right now, is coordinated with the PMI, is going to happen in a positive way," Collins said. "This is another example of having this large national effort that may accelerate decision-making that has benefits beyond this study."</p><p>He noted Richard Platt, chair of population medicine at Harvard University Medical School, who was the one of the chief architects of the FDA's Sentinel system &ndash; an active risk identification and analysis database that uses electronic health records representing about 178 million patients from 18 healthcare plan data partners, which retain the physical and operational control over their data, to track medical product safety issues &ndash; also served on the NIH working group and "contributed mightily" to <a href="http://www.scripintelligence.com/home/Data-security-diversity-debated-at-precision-medicine-Super-Bowl-356706" target="_new">workshop discussions</a> about how the databases may work together to exchange information.</p><p>While the NIH has set its sights on enrolling one million Americans in the cohort study &ndash; with plans of starting sometime in 2016 and reaching the goal by about 2020 &ndash; Collins acknowledged there's the "potentially serious possibility" the agency could far-surpass that figure.</p><p>Indeed, he noted <a href="http://www.scripintelligence.com/home/Knowledge-vs-Fitbit-Americans-crave-data-over-free-stuff-359221" target="_new">public opinion</a> has been very positive about participating in the cohort.</p><p>"We might find out that we are getting a lot more sign ups than we know quite what to do with," Collins said. "We would want to be very careful that we don't end up in that situation with volunteers that are limited in demographic and diversity. This is going to require close attention."</p><p>But, he said, "When you open the door to the nation, you don't quite know what will happen."</p><p>Nonetheless, Collins said, "It will be a great problem to have" &ndash; joking that "We may have to tell people that if you want to sign up, you'd better come quick because it's going fast, with only a few tickets left."</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 463
+
+<p>After hearing from hundreds of the nation's top scientists, which gathered at four workshops over the past six months, and receiving input from two public requests for information, a working group on Sept. 17 delivered a blueprint to National Institutes of Health (NIH) Director Francis Collins mapping the way forward for building a one-million person research cohort &ndash; the foundation of President Barack Obama's precision medicine initiative (PMI).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+NIH Unveils Precision Medicine Working Laboratory Plan
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150914T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150914T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150914T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029802
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+NIH Unveils Precision Medicine 'Working Laboratory' Plan
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360425
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+85dd9c9f-eefe-44b4-9c0e-65af27d79e5a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042451Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {DE11133E-0048-43D2-9C9D-AD0A0BDD106E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/19/Industry and campaigners split over transparency of EU trials database
+parent: {97D2E94C-15AA-4D21-BD20-E53C9AA5BAA3}
+name: Industry and campaigners split over transparency of EU trials database
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 84108bb4-23f0-4f87-8e8e-cf8703e9fb26
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+Industry and campaigners split over transparency of EU trials database
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 70
+
+Industry and campaigners split over transparency of EU trials database
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11541
+
+<p>The consultation on transparency in the proposed EU clinical trials database has ended, and early signs suggest a clear if predictable split between the R&D-based industry, which wants tight strictures on what can be published and what should be deemed confidential, and transparency campaigners who say that confidentiality should be the exception rather than the norm. </p><p>Launched by the European Medicines Agency in January, the short consultation sought stakeholder views on how the transparency principles in the new EU Clinical Trials Regulation (CTR) should be applied to determine what information should be made available in the publicly accessible database.</p><p>Under the regulation, information in the database will generally be open to public view, but Article 81(4) provides exceptions in certain cases such as personal data and information deemed to be commercially confidential.</p><p>In the consultation, the EMA put forward a number of proposals for applying these exceptions in a balanced way that both protected public health and fostered innovation in medical research. It also noted that information deemed commercially confidential could be released if there was an "overriding public interest" in doing so.</p><p>Numerous organizations have responded to the consultation, including the UK BioIndustry Association (BIA). Christiane Abouzeid, the BIA's head of regulatory affairs, said the association supported the need for a balanced approach that respected the rights of patients and the public to access information on the database regarding ongoing trials, and also the needs of developers and researchers to protect their investments and R&D into new medicines.</p><p>In the consultation document, the EMA said that exceptions on commercial confidentiality grounds could include study-specific documents such as the trial protocol and subject information sheet, and product-specific data like the investigator brochure and the investigational medicinal product dossier (IMPD), which comprises quality, safety and efficacy parts. It said that the IMPD-Q (quality) section should not be made public at any stage.</p><p>It also pointed out that what is deemed commercially confidential at one point in time, for instance during a clinical trial, may no longer be so later on, for example when the product has been approved. </p><h2>Proposals</h2><p>The EMA put forward a number of proposals as to when documents containing confidential information should be made available, saying that the time of publication should be linked to key time points in clinical trials and the development stage of the product. </p><p>Another factor to be taken into account when deciding which information should be publicly available, it said, was the status of the marketing authorization (as per Article 81(4)(b) of the regulation). In order to apply this exception, it said, it was necessary to determine how the concept of marketing authorization (MA) would be applied. It put forward three proposals:</p><p>1.1. Once a marketing authorisation had been issued, by at least one member state, for the active substance contained in the product.</p><p>1.2. Once a marketing authorisation had been issued, by at least one member state, for a product using that active substance and for the indication under study.</p><p>1.3. Once a marketing authorisation had been issued, by at least one member state, for a product using that active substance and for the indication and formulation/route of administration under study.</p><p>For products still in clinical trials, which are considered more likely to contain commercially confidential information, the consultation document asked stakeholders to choose one of four proposals as to when the release of information could eventually be triggered:</p><p>1. The study- and product-specific documents would be made available at the time of the decision on the trial (apart from the IMPD-Q section, which would not be made public at any stage).</p><p>2. The study- and product-specific documents would be made public at the point of marketing authorization or nine years after the first summary results were posted.</p><p>3. A conservative approach would be taken depending on the stage of development: for Phase I-II studies, study-specific information would be released at the time of the MA or nine years after first summary results, and for Phase III when the first summary results were posted. For product-specific documents only: at the time of MA or nine years after the first summary results.</p><p>4. For non-therapeutic trials: documents would be made available at the time of MA or nine years after the first summary results. For therapeutic trials: when the first summary results were posted. For product-specific documents only: at the time of MA or nine years after the first summary results.</p><p>The triggers for timing of publication in relation to proposals 2-4 would be when the granting or refusal of the MA, or the withdrawal of the MA application, had triggered the loading of the clinical study report into the database, or when nine years had elapsed from the date when the first summary results should have been published, ie in practice at least 10 years after the end of the trial. </p><p>This 10-year period was chosen to give a reasonable period of time after trial completion that corresponds "by analogy, though not actually linked to, the data protection period provided for in the EU", the EMA said.</p><p>In the case of Phase I studies, the sponsor could opt to have only a "very minimal" amount of information publicly available at the time of the decision on the trial, with other information to be released when the results summary was published 12 months after the end of the trial. </p><h2>Industry reaction</h2><p>The BIA's response, which was penned jointly with the European Association for Bioindustries (EuropaBio), has not been made public, but Ms Abouzeid summarized the BIA's position on certain key issues such as the timing of disclosure of results, and what kinds of trial data should not be published.</p><p>For products with a marketing authorization, she said that as far as the BIA was concerned, proposal 1.3 was the most appropriate for protecting commercially confidential information. If either proposals 1.1 or 1.2 were to be adopted, the triggers for timing of publication might not provide adequate protection of commercially confidential information on new and future indications and pharmaceutical forms included in the study or product specific documents. "This could compromise the protection of future intellectual property rights, proprietary information and legitimate economic interests of sponsors."</p><p>As for the four proposals on release of information on products without a marketing authorization, she said the BIA preferred proposal two.</p><p>While the consultation document said the IMPD-Q part should remain confidential, for the BIA the safety and efficacy sections "fall into the category of documents that should remain confidential, and should be subject to a redaction process". </p><p>Ms Abouzeid said the BIA was also concerned that a 12-month period in which to disclose the summary results of Phase I studies in healthy volunteers would "significantly narrow the window for filing and securing patents for new inventions". Their release within 12 months of the end of a trial "could compromise the EU competitive position for early clinical research. Consideration should be given to the need to defer the disclosure of detailed information on Phase I trials." </p><h2>Activists beg to differ</h2><p>Not surprisingly, activist groups pushing for more transparency in clinical trials, such as AllTrials and Health Action International, were on the side of wider publication of trial results. AllTrials said in its response to the consultation that regarding products without a marketing authorization, it supported proposal one, as the default should be to make information public. "Deferrals in making that information public should be justified, but each of the other proposals would result in information being withheld without justification," it declared.</p><p>AllTrials also considered that, contrary to the position taken in the consultation document, the IMPD-Q sections should be made public.</p><p>In general, it said, all clinical trials should be registered and all results reported. "Some pharmaceutical companies, such as GSK, do not distinguish between their clinical trials and have committed to registering and reporting all trials they sponsor. This is the standard that can be achieved. We still haven&rsquo;t heard of any examples of information from registration or summary results that should be commercially confidential. Any deferrals to making information public must be justified and those justifications should be independently audited and policed."</p><p>Health Action International (Europe) and a number of other groups &ndash; the Association Internationale de la Mutualité (AIM), the International Society of Drug Bulletins (ISDB) and the Medicines in Europe Forum (MiEF) &ndash; made a joint submission in which they said that the EMA's draft proposal "misinterprets the regulation and, as a result, regards non-disclosure as the norm rather than the exception." </p><p>As to how the status of the MA of the product should be applied, they said that proposal 1.1 was the most inclusive one as it covered the active substance, not the specific product or indication. "Access to information about other clinical trials concerning the same active substance (even if in different medicinal products) might be relevant to the public, sponsors, healthcare professionals and patients. In addition, proposals 1.2. and 1.3. could be used to delay the entry into the market of generics and of biosimilars."</p><p>They also took issue with the plan to defer the publication of trial information such as protocols and the IMPD safety and efficacy sections for up to 10 years after the end of a trial by "establishing a complex classification system that ranks clinical trial documents into different categories (as per the 'stage of development' of a medicinal substance or the 'intent' of a given trial)." Neither the CTR nor the Declaration of Helsinki offered such a classification, they added.</p><p>They urged the EMA to:</p><ul><li>Publish the clinical trial protocol at the time of the decision of the trial and "withdraw the proposal to defer or hamper such disclosure by making only 'minimal information' or 'summaries' available".</li><li>Withdraw the proposal for a broad definition of &ldquo;commercially confidential information&rdquo;, as its implementation would "result in the censorship of whole documents of public interest and make transparency the exception rather than the rule".</li><li>Withdraw the proposal to defer the publication of information about a clinical trial (regardless of whether it is a Phase I, II, III or IV trial). </li><li>Facilitate the publication of and access to de-identified individual listings of efficacy and safety data (raw data) to allow secondary research and analysis, and ensure that all clinical trial data information made available is in a legible, easily usable, downloadable and searchable format. </li></ul><p>The transparency principles in the CTR are linked to, but separate from, the EMA's own policy on the proactive publication of clinical trial data, which came into effect at the beginning of January.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 378
+
+<p>The consultation on transparency in the proposed EU clinical trials database has ended, and early signs suggest a clear if predictable split between the R&D-based industry, which wants tight strictures on what can be published and what should be deemed confidential, and transparency campaigners who say that confidentiality should be the exception rather than the norm. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 70
+
+Industry and campaigners split over transparency of EU trials database
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150219T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150219T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150219T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027912
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+Industry and campaigners split over transparency of EU trials database
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356837
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+84108bb4-23f0-4f87-8e8e-cf8703e9fb26
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {1AE7BEB6-8379-4D44-9D59-9A599ABBDFE1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/18/Amgen Covering Its Bases In Hospira Biosimilars Suit
+parent: {699941D8-9EE7-4139-9D7E-1D993A9625CE}
+name: Amgen Covering Its Bases In Hospira Biosimilars Suit
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2164caf4-98f1-4d17-bf5c-4fe30406d77c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{424A060F-E184-40D6-AC5C-9C52FBDA3B16}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Amgen Covering Its Bases In Hospira Biosimilars Suit
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Amgen Covering Its Bases In Hospira Biosimilars Suit
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8727
+
+<p>Seeking to obtain more clarity on the interpretation of the <i>Biologics Price Competition and Innovation Act</i> (BPCIA), Amgen Inc. has filed another lawsuit involving a biosimilar of one of its products &ndash; this time Epogen (epoetin alfa), the firm's first FDA-approved therapeutic, which gained the agency's blessing in 1989.</p><p>The company, which already is entangled in two other biosimilars lawsuits, is now going after Hospira Inc., now part of Pfizer Inc., accusing it of ignoring certain statutory requirements of the BPCIA "that Congress put in place to protect innovators such as Amgen." </p><p>The BPCIA is the law that established the regulatory pathway for the FDA to approve biosimilars. How the courts end up <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Fights-Over-Interpretation-Of-Biosimilars-Law-Disruption-To-Markets-Future-359974" target="_new">interpreting</a> it will have broad implications for the future of the industry.</p><p>Amgen is insisting that instead of following the BPCIA's requirements, Hospira, which is seeking to market an epoetin alfa biosimilar in the U.S., has "selectively decided" to comply with certain provisions, while refusing to comply with others.</p><p>Amgen filed its lawsuit against Hospira in the U.S. District Court for the District of Delaware &ndash; the first such action in that court involving a biosimilar and the BPCIA.</p><p>The case also is one of the first actions seeking to "give meaning and force to the disclosure and notice provisions of the BPCIA," Amgen said.</p><p>The company's <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Fights-Over-Interpretation-Of-Biosimilars-Law-Disruption-To-Markets-Future-359974" target="_new">other two biosimilars lawsuits</a> are against Novartis unit Sandoz, which involves the latter firm's Zarxio (filgrastim-sndz) &ndash; the <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">first biosimilar approved</a> in the U.S., which was referenced on Amgen's human granulocyte colony-stimulating factor Neupogen (filgrastim) &ndash; and Apotex, which has a 351(k) <a href="http://www.scripintelligence.com/policyregulation/Apotex-2nd-biosimilar-under-FDA-review-seeks-filgrastim-OK-356810" target="_new">application before the FDA</a> seeking to market a biosimilar of the California biotech giant's Neulasta (pegfilgrastim).</p><p>Amgen and Sandoz currently are <a href="http://www.scripintelligence.com/policyregulation/Will-Amgen-Sandoz-Tango-Across-Old-Ground-360426" target="_new">waiting for a decision</a> on whether the full U.S. Court of Appeals for the Federal Circuit will <a href="http://www.scripintelligence.com/home/AmgenSandoz-Zarxio-Fight-Not-Done-Rehearing-Sought-360073" target="_new">rehear</a> their arguments after a three-judge panel on <a href="http://www.scripintelligence.com/home/Court-rules-biosimilar-patent-dance-optional-but-delays-Zarxio-359555" target="_new">July 21</a> gave each side a win, but also each side a loss.</p><p>Specifically, the Federal Circuit panel, in a <a href="http://www.scripintelligence.com/home/Court-rules-biosimilar-patent-dance-optional-but-delays-Zarxio-359555" target="_new">2-1 ruling</a>, said Sandoz and other biosimilar makers could opt out of BPCIA's disclosure and negotiation procedures &ndash; commonly called the "patent dance" &ndash; and would not have to disclose their applications and manufacturing details if they chose to do so.</p><p>But in a 2-1 decision, the panel also ruled that when a firm opts out of the patent dance, the 180-day notice of commercial marketing under the BPCIA is mandatory and can only be given after FDA approval, telling Sandoz it could not market Zarxio until after Sept. 2. </p><p>Amgen was <a href="http://www.scripintelligence.com/home/Amgens-Plea-To-Stop-Zarxio-Launch-Denied-Next-Move-360233" target="_new">unsuccessful</a> in trying to get the Federal Circuit panel to extend its injunction beyond that date, so Sandoz was free to launch Zarxio, <a href="http://www.scripintelligence.com/home/1st-U.S.-Biosimilar-Arrives-Zarxio-Launches-Legal-Saga-Ongoing-360244" target="_new">which it did on Sept. 3</a>.</p><p><i>Amgen v. Sandoz</i>, however, is the first cast to make it to the appeals court level &ndash; something that has not been lost on either company or court watchers.</p><p><b>Complaint Against Hospira</b></p><p>In the complaint filed against Hospira, Boston lawyer Elaine Herrmann Blais, a partner in the intellectual property litigation group at Goodwin Procter, said it's clear Amgen is trying to cover all of its bases &ndash; making arguments the company previously made in the Sandoz case, but also including statements consistent with Federal Circuit Judge Pauline Newman's July 21 dissent about the patent dance.</p><p>In the new case, Amgen also borrowed arguments Johnson & Johnson unit Janssen has made in its lawsuit against Celltrion, which is partnered with Hospira on an infliximab biosimilar, Blais told <i>Scrip</i>. </p><p>In that suit, which is being waged at the U.S. District Court for the District of Massachusetts, Janssen is <a href="http://www.scripintelligence.com/policyregulation/Janssen-seeks-to-block-Celltrions-infliximab-biosimilar-357239" target="_new">trying to force</a> Celltrion and Hospira to engage in the patent dance over their infliximab product, which is referenced on the J&J firm's Remicade.</p><p>The fight Amgen is picking with Hospira over whether the notice of commercial marketing was effective is similar to the arguments Janssen has made in its suit against Celltrion, Blais said.</p><p>After Hospira's 351(k) biosimilars application for its epoetin alfa product was accepted by the FDA, the company notified Amgen on Feb. 23 and provided a copy of the application to the latter firm on March 3, but apparently not the manufacturing details.</p><p>Then on April 8, Hospira provided Amgen a notice of commercial marketing.</p><p>But a month later, Amgen objected, arguing the notice was "premature," and therefore, ineffective because it was given too early, Blais explained.</p><p>After the three-judge panel from the Federal Circuit issued its ruling in <i>Amgen v. Sandoz</i>, however, Hospira said it was no longer under any obligation to provide the notice.</p><p>Blais noted that if the full patent dance is engaged in, the application and manufacturing information is provided by the biosimilars applicant to the reference product sponsor, who provides back a list of patents, which then is negotiated over in an attempt to narrow it down.</p><p>But while Amgen provided its lists of patents to Hospira, instead of negotiating, the latter firm simply said it would accept the full list, which was similar to what happened in the <i>Janssen v. Celltrion</i> case, Blais said.</p><p>Essentially, she said, that fight is over whether "you can stop the dance in the middle of the song."</p><p>In other words, "once you've agreed to dance, must you complete the dance or can you take a seat," Blais said.</p><p><b>What Amgen Wants</b></p><p>Amgen is contending the law includes a <i>quid pro quo</i>, but because Hospira has not held up its side of the bargain, it shouldn't get any benefits under the BPCIA, she explained.</p><p>Amgen has asked that Hospira be enjoined from commercially marketing its product until the innovator company is restored the position it would have been in had the biosimilar maker met its obligations under the BPCIA, Blais said.</p><p>Amgen also is seeking an order enjoining Hospira from continuing to seek FDA review of its application until the California company has been restored the benefits afforded to a reference product sponsor under the law.</p><p>Alexandra Lu, an associate in the litigation group at Goodwin Procter's Boston office, noted that Amgen had earlier filed a citizen petition with the FDA asking that before the agency accepted any biosimilars applications for review to require the 351(k) applicant to first certify it would comply with all of the provisions of the patent dance.</p><p>But, Lu pointed out, the FDA denied that petition.</p><p>Amgen also asked the Delaware court to issue declarations that Hospira's notice of commercial marketing was ineffective and that it violated various provisions of the BPCIA.</p><p>It also wants an injunction until 180 days after Hospira provides an effective notice.</p><p>Amgen also requested an order requiring Hospira to provide its manufacturing information.</p><p>And finally, Amgen asserted its patents in its complaint, accusing Hospira of infringement on "information and belief."</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 340
+
+<p>Seeking to obtain more clarity on the interpretation of the <i>Biologics Price Competition and Innovation Act</i> (BPCIA), Amgen Inc. has filed another lawsuit involving a biosimilar of one of its products &ndash; this time Epogen (epoetin alfa), the firm's first FDA-approved therapeutic, which gained the agency's blessing in 1989.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Amgen Covering Its Bases In Hospira Biosimilars Suit
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150918T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150918T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150918T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029829
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Amgen Covering Its Bases In Hospira Biosimilars Suit
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360512
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2164caf4-98f1-4d17-bf5c-4fe30406d77c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

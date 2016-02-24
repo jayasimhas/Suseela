@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {ADD71492-9431-481C-9DAD-996BCBC186A0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/07/Stockwatch A Panglossian view of Aquinox Otonomy and Karolinska
+parent: {4B2AA564-01BF-4300-9644-9E54CE0DA67F}
+name: Stockwatch A Panglossian view of Aquinox Otonomy and Karolinska
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6083c140-7082-4511-b64f-4191396edf28
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}|{C7FD764C-38F2-42BC-9F1A-A9864C90E18B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Stockwatch: A Panglossian view of Aquinox, Otonomy and Karolinska
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Stockwatch A Panglossian view of Aquinox Otonomy and Karolinska
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5852
+
+<p>Last week saw an about-turn by a stock market emboldened by hopes of resolutions to the Greek problem and the bursting of the Chinese equity bubble. That European stock markets can rally when the biggest challenges for Greece and the eurozone are ahead of them is not surprising because, as in life sciences, hopes for a positive outcome are often greater than the actual outcome. </p><p><p>Voltaire's Pangloss is evidently alive and well and finding receptive ears on the sell-side for his view that all is for the best in the best of all possible worlds. </p><p><p>Only its shareholders were surprised last week when <a href="http://www.scripintelligence.com/researchdevelopment/Strike-two-for-Aquinox-359366" target="_new">Aquinox Pharmaceuticals reported the failure</a> of the AQX-1125 arm to have fewer exacerbations than placebo in the Phase II FLAGSHIP study in 400 unstable COPD patients. The FLAGSHIP study was not a surprise to most other investors because the same molecule <a href="http://www.scripintelligence.com/home/Stockwatch-biotech-stock-propagandists-beware-359154" target="_new">recently failed the primary endpoint</a> in the LEADERSHIP study in interstitial cystitis. Both the ships that have kept AQX-1125 and Aquinox afloat have now sunk, leading the analysts at Jefferies to cut their price target to $2 from $13 and downgrade their recommendation to clients to hold the shares instead of buy them. Likewise the analysts from Cowen cut their price target to $3 from $16.44 but maintained their outperform recommendation based on hopes of more detail on the now sunk LEADERSHIP study. The Aquinox share price closed the week at $1.94.</p><p><p>Another week, another re-hash of failed data to imply something other than a surprising failure had occurred. In a research report published last week and based on two days of meetings of investors with Otonomy, the analysts at Piper Jaffray re-iterated their overweight recommendation and price target of $46. The research note pointed out that "all the investors seen by the company appeared to agree that it had an active drug (OTO-104)" in treating vertigo in Méni&egrave;re's disease despite <a href="http://www.scripintelligence.com/researchdevelopment/Otonomy-drug-flunks-Phase-IIb-full-speed-ahead-to-Phase-III-358567" target="_new">OTO-104 failing</a> the primary endpoint in a recent Phase IIb study. The Otonomy share price closed the week at $23.96.</p><p><p>The biggest surprise of the week should have been the enormous write-down in value at early-stage life science investor Karolinska Development AB. Karolinska changed the method by which its investments were valued from a discounted cash flow (DCF) method, to the valuation at the last investment round (which was the standard method of valuating private investments at both the venture capitalists I worked for). This 28% fall in assets, plus the divestment of a portfolio company and similar downward revisions to the value of the KDev Investment <a href="http://www.scripintelligence.com/business/Karolinska-Development-appeases-shareholders-with-34-million-deal-338526" target="_new">portfolio previously transferred</a> to an investor group, could result in a whopping 75% drop in the portfolio value last reported at the end of March. Once fully recognized, these changes would result a greater write-off in value than the all money raised when Karolinska completed its IPO in June 2011 and the money from the KDev transaction combined. </p><p><p>Karolinska has had a tortuous time with its investors and series of CEOs, the <a href="http://www.scripintelligence.com/home/people/Bruno-Lucidi-leaves-Karolinska-356616" target="_new">most recent of whom departed in February</a>. While all the valuation changes are yet to be recognized by its directors, such a wide-ranging admission of failure should raise questions over the way private portfolios are valued at any company with a public quote. This could fire shots across the bows of companies like Imperial Innovations and IP Group, whose portfolios also contain decades-old investments that may not have the same value if they were to be valued at the last investment round validated by a sophisticated investor and in which the investment company participated. Under the International Private Equity and Venture Capital valuation guidelines, there is nothing to stop one investor valuing the same investment by a different method to the others and as Karolinska has proven, there is nothing to prevent an unsophisticated investor using a valuation methodology to stretch to whatever value they desired. In the public markets we have accounting standards, principles and concepts that should prevent two investors having differing valuations for the same listed asset. Indeed, if prudence were the watchword, investors like Karolinska should probably use whichever valuation in the investing syndicate is the lowest.</p><p><p>A potential 75% write-down in the value of life science investments at a company whose share price actually rose by 0.5% on the week was still not, for me, the biggest surprise of last week. That was reserved for the revelation that FIFA has an ethics committee. I wonder if the management of Karolinska Development have ever a considered a career at the federation of world football.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 388
+
+<p>Last week saw an about-turn by a stock market emboldened by hopes of resolutions to the Greek problem and the bursting of the Chinese equity bubble. That European stock markets can rally when the biggest challenges for Greece and the eurozone are ahead of them is not surprising because, as in life sciences, hopes for a positive outcome are often greater than the actual outcome. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Stockwatch A Panglossian view of Aquinox Otonomy and Karolinska
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150807T150002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150807T150002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150807T150002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029211
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Stockwatch: A Panglossian view of Aquinox, Otonomy and Karolinska
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+Commentary
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359304
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042421Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6083c140-7082-4511-b64f-4191396edf28
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042421Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

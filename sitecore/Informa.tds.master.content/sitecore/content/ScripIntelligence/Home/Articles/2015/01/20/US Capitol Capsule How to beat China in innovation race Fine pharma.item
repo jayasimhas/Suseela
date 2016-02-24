@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {AEC01667-6F38-4B70-ABA1-3EFB5EDED6E0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/20/US Capitol Capsule How to beat China in innovation race Fine pharma
+parent: {4B57E060-06FB-477A-88CD-A26C2E84BB91}
+name: US Capitol Capsule How to beat China in innovation race Fine pharma
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3d23107f-00b0-46b7-a7ce-7401c7938715
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+US Capitol Capsule: How to beat China in innovation race? Fine pharma 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 67
+
+US Capitol Capsule How to beat China in innovation race Fine pharma
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 18765
+
+<p>Senator Elizabeth Warren (Democrat-Massachusetts) said she has found a solution to National Institutes of Health (NIH) Director Dr Francis Collins' dilemma of how his agency is going to fill its budgetary gaps and stay ahead of China in the race for biomedical research and innovation: Make big biopharmas that have violated US laws and regulations or have entered into government settlements cough up the needed NIH dollars.</p><p>"It's like a swear jar," Senator Warren explained last week at the health advocacy group Families USA's annual Health Action Conference in Washington. </p><p>"Whenever a huge drug company that is generating enormous profits as a result of federal research investments gets caught breaking the law &ndash; and wants off the hook &ndash; it has to put some money in the jar to help fund the next generation of medical research," she said.</p><p>Senator Warren's proposal is at the heart of new legislation she has drafted, known as the <i>Medical Innovation Act</i>.</p><p>Big biopharmas that break US laws or violate regulations would be required to pay 1% of their annual profits for each of their blockbuster drugs that can be traced to government research support into the fund, which could be used to fund basic and translational research and support younger scientists "so that we don't lose our brightest medical minds to other fields or other countries," the Massachusetts lawmaker declared. </p><p>The penalties would run for five years, which Senator Warren noted is the typical length of most agreements for which drug makers have entered with the federal government to settle charges of various violations. </p><p>"If this policy had been in place over the past five years, NIH would have had about $6bn more every year to fund thousands of new grants to scientists and universities and research centers around the country," she said. "That's nearly a 20% increase in NIH funding, and that money would have headed right back into the economy. Every dollar invested in medical research through the NIH generates more than two dollars in economic growth."</p><p>Senator Warren insisted "This isn't a tax." </p><p>"It is simply a condition of settling to avoid a trial in a major case of wrongdoing," she said. </p><p>In addition to being able to increase the NIH's funding without raising taxes or "stealing support from other critical programs," Senator Warren said the concept behind her legislation also would be a "simple form of accountability." </p><p>"Instead of letting companies that break the law get off with a slap on the wrist, the <i>Medical Innovation Act</i> will make sure that they pay up in a way that really makes a difference &ndash; a difference to the health of all Americans, and a difference to all of the company's competitors who are playing by the rules."</p><p>The Massachusetts lawmaker noted that between 2007 and 2012, the world's largest pharmaceutical companies paid over $13bn in fines and settlements stemming from violating US federal laws (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Biopharma-sets-new-record-6.6B-civilcriminal-settlements-in-2012-so-far-335588" target="_new">2 October 2012</a>).</p><p>"That doesn't happen without serious wrongdoing," she asserted, pointing out that some of those violations included defrauding Medicare and Medicaid, withholding critical safety information, marketing medicines for unapproved uses and paying kickbacks to doctors for prescribing the companies' drugs.</p><p>The $3bn GlaxoSmithKline agreed to pay in 2012 for withholding safety data and engaging in illegal marketing practices accounted for less than 10% of what the company made selling those medicines, Senator Warren said (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Paying-3B-GSK-tops-US-criminal-civil-settlements-for-off-label-other-schemes-332383" target="_new">3 July 2012</a>).</p><p>In fact, she noted, the day the settlement was announced on 2 July 2012, that company's stock price actually went up &ndash; rising 83 cents, before closing at $46.34, a gain of 77 cents, or 1.7%.</p><p>"Fines for big drug companies have increasingly become just another cost of doing business," Senator Warren argued. </p><p>She accused big biopharmas of "increasingly playing by a different set of rules than everyone else."</p><p>While the US government has kicked thousands of small and medium sized physician practices out of the Medicare program for fraud, "not one of these major drug companies has ever been kicked out," Senator Warren declared. </p><p>She said her legislation would only require the "biggest and most successful" pharmaceutical companies to "reinvest in NIH" through the <i>Medical Innovation Act's</i> requirements, with no small or medium-sized innovator ever paying &ndash; even if they violated the law.</p><p>Over his tenure in the past nearly six years as NIH chief, Dr Collins has frequently lamented the devastation that's been inflicted on US innovation because Congress has refused to increase his agency's budget, which has been flat for the past decade &ndash; with even more damage caused by the sequester &ndash; which he said has resulted in China getting closer and closer to taking the lead (scripintelligence.com, <a href="http://www.scripintelligence.com/home/NIH-chief-laments-demise-of-US-biomedical-edge-356149" target="_new">15 January 2015</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-NIH-chief-cranks-it-up-with-captains-of-industry-353164" target="_new">4 August 2014</a>, <a href="http://www.scripintelligence.com/home/Wacky-science-today-may-be-tomorrows-next-big-thing-352435" target="_new">20 June 2014</a>, <a href="http://www.scripintelligence.com/home/US-budgeting-Is-it-madness-NIH-chief-senator-explain-350253" target="_new">26 February 2014</a>).</p><p>It's unclear whether legislation drafted by Representatives Fred Upton and Diana DeGette &ndash; the 21st Century Cures Initiative &ndash; will simply be another set of unfunded mandates for the NIH and the FDA, only adding to those agencies' burdens (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Path-to-cures-More-unfunded-FDA-NIH-mandates-356150" target="_new">15 January 2015</a>, <a href="http://www.scripintelligence.com/policyregulation/Scrip-100-Lawmakers-seek-RandD-enterprise-overhaul-for-faster-cures-353964" target="_new">16 September 2014</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Overhauling-the-biomedical-enterprise-A-fatigued-conversation-353530" target="_new">25 August 2014</a>).</p><p>But Senator Warren contended that her bill would kill two birds with one stone &ndash; penalizing rule-breakers while boosting support for research and innovation. </p><p>The lawmaker's bill was immediately criticized by the US trade group the Pharmaceutical Research and Manufacturers of America (PhRMA).</p><p>Robert Zirkelbach, senior vice president of communications at PhRMA, said that while the NIH plays a vital role in basic research and early discovery and the trade group supports sufficient federal funding for its work, he argued that "pursuing misguided policies that siphon funding from the groundbreaking medical research happening in the biopharmaceutical industry will have devastating consequences for patients and society." </p><p>"The proposed legislation would result in fewer medicines for patients and lost jobs at a time when our economy can least afford it," Mr Zirkelbach asserted. </p><p>While Senator Warren praised the accomplishments of the biopharmaceutical industry, whose medicines have helped people live longer and have healthier lives, the lawmaker reminded drug makers they didn't do it alone &ndash; pointing out that many of today's blockbuster medicines, for which companies have generated billions of dollars in profits, were often funded initially by US taxpayers. </p><p>Nearly all of the "innovative" vaccines of the past quarter century can be traced to public-sector research, and of the 21 drugs with the highest therapeutic impact that came to market between 1965 and 1992, two-thirds stem directly from a discovery that occurred as a result of government-supported research, Senator Warren said. </p><p>Nine of the ten breakthrough new uses for existing drugs approved by the FDA from 1990 to 2007 came directly from public funding, she added. </p><p>"Put simply, the astonishing scientific and financial successes of the pharmaceutical industry have been built on a foundation of taxpayer investment," she said. </p><p><b>In other Washington news:</b></p><p><b>Obama faces more trade pushback from Dems</b></p><p>When President Barack Obama during his 20 January State of the Union called on lawmakers from both sides of the aisle to stop hesitating and give him trade promotion authority (TPA) &ndash; declaring it would be "the right thing to do" &ndash; he was greeted by cheers, most of which came from Republicans, some of whom jumped to their feet.</p><p>But the president's words were not as warmly embraced by some members of his own party.</p><p>Indeed, Mr Obama has continued to face pushback from several Democrats on Capitol Hill not only on TPA, but also two pending trade deals &ndash; the Transatlantic Trade and Investment Partnership (TTIP) and the Trans-Pacific Partnership (TTP) (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Obama-Cameron-declare-trade-Ebola-among-priorities-356204" target="_new">19 January 2015</a>, <a href="http://www.scripintelligence.com/home/Obama-Break-logjam-on-Asia-Pacific-trade-pact-354960" target="_new">11 November 2014</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-US-seeks-to-get-TPP-Asia-pivot-back-on-track-354941" target="_new">10 November 2014</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Trade-officials-TTIP-aims-to-lift-smallmid-sized-firm-barriers-350660" target="_new">17 March 2014</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Biopharma-weighs-in-on-US-EU-trade-pact-343084" target="_new">13 May 2013</a>, <a href="http://www.scripintelligence.com/home/USEU-trade-investment-big-deal-pact-could-serve-biopharma-well-339997" target="_new">14 February 2013</a>).</p><p>TPA, often referred to as fast track, would give the president the authority to negotiate international trade agreements, which would then go to Congress for an up-or-down vote, with lawmakers no longer able to amend or filibuster the deals (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Bumpy-road-expected-for-fast-track-trade-bill-349279" target="_new">13 January 2014</a>).</p><p>Some of the opposition is coming from the top Democrat in the Senate, Senator Harry Reid (Nevada), who last week flat-out said he does not support giving the president fast-track authority &ndash; declaring he's "always been suspect over my entire career in Congress of these trade agreements."</p><p>"Until it's shown to me that the trade agreements help the middle class, I'm not going to be jumping on the bandwagon," Mr Reid told reporters. </p><p>White House Press Secretary Josh Earnest acknowledged "It's no secret that there are Democrats in Congress who are, on principle, skeptical of trade agreements."</p><p>But he insisted the support and opposition for the TPA and the pending trade deals were bipartisan.</p><p>Nonetheless, Mr Earnest said the president has vowed not to sign any trade deal that was not in the best interests of Americans and US businesses and farmers. </p><p>But, Mr Earnest told reporters last week, "from the president's point of view, there is no choice but to engage" with other nations in trade, and if the US fails to, there would be "significant geopolitical consequences," particularly if it does not sign on to the TPP. </p><p>"If the United States doesn't robustly engage other countries in Asia, it will allow China to step into that vacuum and start writing the rules of engagement," Mr Earnest argued. "That clearly would not be in the interest of the US economy and clearly not in the interests of American workers." </p><p>He said the White House remains committed to having conversations with any members of Congress who have questions about the ongoing negotiations for the TPP and the TTIP. </p><p>The TPP, US Trade Representative Michael Froman told US mayors last week, is expected to grow US exports by more than $123bn every year and "support hundreds of thousands of additional well-paying jobs." </p><p>"We can knock down barriers to American exports and create more good paying jobs, or we can allow other countries to capture the growth from global markets," Ambassador Froman said during a speech before the US Conference of Mayors in Washington.</p><p>Giving the president TPA would make clear to US trading partners the administration and Congress "are on the same page in negotiating high standards in our trade agreements," he said.</p><p>Ambassador Froman noted that the term "fast track" is somewhat misleading because there's nothing fast about trade agreements &ndash; most of which take many years to negotiate, "during which time there is an enormous amount of consultation with the public, stakeholders and members of Congress."</p><p>Earlier this month, Senator Orrin Hatch (Republican-Utah), chairman of the Senate Finance Committee, said he has been working with the Democratic ranking member Senator Ron Wyden (Oregon) to "quickly" introduce a "bipartisan" TPA bill &ndash; something he said is his top priority. </p><p>"Absent the passage of TPA legislation, there is no other way for Congress to effectively assert itself and its priorities into ongoing trade negotiations," Senator Hatch said during a 16 January speech at the US Chamber of Commerce. </p><p>Representative Paul Ryan (Republican-Wisconsin), chairman of the House Ways & Means Committee, said he also is pushing to get a TPA bill quickly moved through his chamber.</p><p><b>New FDA panel to review substances for compounding</b></p><p>The FDA plans to convene its newly formed Pharmacy Compounding Advisory Committee (PCAC) over two days next month to provide recommendations on what drug substances the agency should permit pharmacies to produce without seeking approval under the regulatory process. </p><p>The FDA already has lists of substances that may or may not be compounded. But regulators are seeking to tweak both lists and therefore, they want the agency's advisers to weigh in on the matter.</p><p>The first-ever meeting of the PCAC, which will take place 23-24 February, comes more than a decade after the FDA dissolved an earlier advisory committee on pharmacy compounding, largely in part because of ambiguities in the law about the agency's authority over the practice of compounding (scripintelligence.com, <a href="http://www.scripintelligence.com/home/FDA-chief-No-formal-efforts-for-change-before-NECC-deaths-but-time-is-now-338439" target="_new">20 December 2012</a>, <a href="http://www.scripintelligence.com/home/US-FDA-chief-blames-crazy-quilt-of-legal-powers-for-compounding-debacle-337240" target="_new">15 November 2012</a>, <a href="http://www.scripintelligence.com/home/FDA-official-Regulating-compounding-pharmacies-a-catch-22-for-feds-336094" target="_new">12 October 2012</a>).</p><p>But Congress clarified the FDA's powers over compounders when it passed the <i>Drug Quality and Security Act</i> (DQSA) &ndash; a law enacted in November 2013 in response to a nationwide outbreak of fungal meningitis, in which 751 people in 20 states became ill, with 64 of those patients dying from contaminated drugs made by the now-defunct Massachusetts-based New England Compounding Center (NECC) (scripintelligence.com, <a href="http://www.scripintelligence.com/home/After-decades-of-apathy-blunders-compoundingtrack-and-trace-bill-done-348213" target="_new">19 November 2013</a>, <a href="http://www.scripintelligence.com/policyregulation/Obama-signs-compoundingtrack-and-trace-bill-348404" target="_new">28 November 2013</a>, <a href="http://www.scripintelligence.com/policyregulation/NECC-100m-compounding-settlement-filed-at-bankruptcy-court-351643" target="_new">7 May 2014</a>).</p><p>The lead owner of NECC, Barry Cadden, and the company's supervising pharmacist, Glenn Chin, were arrested last month and indicted on several criminal charges, including second-degree murder, for their involvement in the deaths of several Americans linked to the tainted drugs made by the firm (scripintelligence.com, <a href="http://www.scripintelligence.com/home/ARRESTED-Compounders-of-tainted-steroids-face-life-in-prison-355717" target="_new">17 December 2014</a>).</p><p>Under the DQSA, Congress mandated the FDA create a new panel to provide advice on scientific, technical and medical issues about drug compounding (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-resurrects-compounding-advisory-panel-355699" target="_new">17 December 2014</a>).</p><p>During the morning session of the 23 February meeting, the PCAC will discuss proposed revisions to the list of drug products that may not be compounded under the exemptions provided by the <i>Food, Drug & Cosmetic Act</i>.</p><p>The FDA has proposed a rule that would add 25 agents to the list and wants to modify the description of one product to add an exception. </p><p>The agency said it received only two drug-specific comments from the public on the proposed rule &ndash; one requesting the FDA clarify whether regulators meant for all three forms of adenosine phosphate to be included and another asking that chloramphenicol tablets 250mg be excluded.</p><p>The panel will then spend the afternoon of the first day and the full day on 24 February discussing whether the FDA should permit six agents &ndash; cantharidin, diphenylcyclopropenone, piracetam, silver protein mild, squaric acid dibutyl ester and thymol iodide &ndash; to be included on the list of products that may be compounded. </p><p>Those who nominated the six agents are being invited by the FDA to make short presentations explaining why those products should be allowed to be compounded. </p><p>In comments to the FDA, many of those who nominated the six substances argued it was necessary to permit those products to be compounded because there either were no US-approved medicines on the market to address patients' needs or there were limited options available.</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 432
+
+<p>Senator Elizabeth Warren (Democrat-Massachusetts) said she has found a solution to National Institutes of Health (NIH) Director Dr Francis Collins' dilemma of how his agency is going to fill its budgetary gaps and stay ahead of China in the race for biomedical research and innovation: Make big biopharmas that have violated US laws and regulations or have entered into government settlements cough up the needed NIH dollars.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 67
+
+US Capitol Capsule How to beat China in innovation race Fine pharma
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150120T165324
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150120T165324
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150120T165324
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027624
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+US Capitol Capsule: How to beat China in innovation race? Fine pharma 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356264
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3d23107f-00b0-46b7-a7ce-7401c7938715
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

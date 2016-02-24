@@ -232,6 +232,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         }
 		public void ResetFields()
 		{
+			ClearItems();
 			InitializeItems();
 			sourceTxtBox.Text = string.Empty;
 			captionTxtBox.Text = string.Empty;
@@ -255,7 +256,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				return;
 			}
 
-			//imageSelected = mediaItem.Url;
+			imageSelected = articleDetails.FeaturedImage.ToString();
 			pictureBox1.ImageLocation = mediaItem.FileName;
 			filenameLbl.Text = mediaItem.Title;
 			alttextLbl.Text = mediaItem.Title;
@@ -280,7 +281,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		private void clearBtn_Click(object sender, EventArgs e)
 		{
-			ReloadItems();
+			ResetFields();
+			imageSelected = null;
 			ShowHideElements(false);
 			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
 		}

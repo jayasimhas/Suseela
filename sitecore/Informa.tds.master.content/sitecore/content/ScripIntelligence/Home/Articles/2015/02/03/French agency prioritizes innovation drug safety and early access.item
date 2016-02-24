@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4516F95B-F72D-4C0D-A766-7BB95570F6DE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/03/French agency prioritizes innovation drug safety and early access
+parent: {55E29947-DC90-4290-B641-1F353372E1C3}
+name: French agency prioritizes innovation drug safety and early access
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 103a8c58-281f-4e40-91e1-30bb8b138e8c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+French agency prioritizes innovation, drug safety and early access
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+French agency prioritizes innovation drug safety and early access
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5827
+
+<p> The French regulator ANSM has laid out a wide-ranging set of plans in its work program for 2015, including ensuring rapid and wider access to innovation, guaranteeing the safety of products throughout their life cycle, and using regulatory tools to speed up the availability of innovative new drugs. </p><p> It also plans to take steps to implement provisions of the new EU Clinical Trials Regulation, play a bigger part in EU regulatory procedures, and streamline its internal processes to improve efficiency. </p><p> A key aim in terms of fostering innovation is to help identify innovative medicines at an early stage of development by taking part in scientific advice procedures at EU level, acting as rapporteur/co-rapporteur for centralized drug applications, and playing a role in the European Medicines Agency's adaptive pathways initiative, which was launched last year to take more advantage of existing regulatory tools such as conditional approval as a way to speed new drugs to market. </p><p> At national level too it will prioritise early access, for example by setting up protocols for cohort ATUs (temporary use authorizations) for unapproved drugs, as well as RTUs (temporary use recommendations) for off-label uses of approved medicines. 10 RTUs are expected to be issued by ANSM this year for medicines of major public health importance, of which five could be for products for rare diseases. </p><p> It will also prepare for the 2016 entry into force of the CTR, which among other things is intended to help strengthen innovation in Europe and facilitate access to innovative drugs via a co-ordinated approach to trial authorization. For ANSM this will mean a &quot;complete reorganization of processes for dealing with applications to begin clinical trials,&quot; the work program says. ANSM plans to conduct around 50 targeted inspections of clinical trials this year, focusing on innovative drugs, pediatric trials, BE studies, and trials involving radionuclides. </p><h2> Safety monitoring </h2><p> A priority for this year, the work program says, is to guarantee the safety of products throughout their life cycle. The agency will take steps to collect as much information as possible on the safety of products, both medicines and medical devices. It will also continue and strengthen its program of systematic re-evaluation of the benefit-risk of medicines, with about 30 new drugs expected to be brought into the re-evaluation program. </p><p> Regional pharmacovigilance networks will be strengthened and consolidated, and regional centers will take part in the review and re-evaluation of the benefit-risk profile of older products. Particular efforts will be made to strengthen the monitoring network for medical devices, with plans to run a one-year trial that will involve the placing of regional contacts in two regions, Aquitaine and Nord-Pas de Calais. </p><p> The controls program will be focused on various types of medicines, including centrally approved drugs (particularly anticancers) and products with a mutual recognition or decentralized approval (about 50 of them). Controls will also target more recent generic versions of major drugs: benzodiazepines, certain neuroleptics including olanzapine and products such as amisulpride, montelukast, escitalopram and bisoprolol. Controls on medical devices will concentrate on ophthalmic solutions containing hyaluronic acid used in surgery, products based on chondroitin sulphate, disinfectants, endoscopy material, breast implants, and in vitro diagnostics, notably those used for HIV </p><p> At EU level, ANSM says it plans to strengthen its role as rapporteur or co-rapporteur for centralized applications, particularly innovative drugs with, for example, new mechanisms of action and those that are first in class. France will pursue its involvement in the national agencies' co-ordinating committee for human medicines, the CMDh, and also hopes to contribute to the development of new approaches to early approval for innovative treatments. It will also take steps to prepare for implementation of the new EU medical devices legislation (when it has been approved), notably by strengthening surveillance of the market and the clinical evaluation of medical devices. </p><h2> Inspections </h2><p> Inspections will be conducted using a risk-based approach, with plans to carry out a total of some 650 inspections during the year, of which 10% will be unannounced. Supplies of APIs from third countries will be under particularly close scrutiny. In the medical devices area the agency will prioritize inspections of at-risk products such as heart valves and leads, and will set up a devices inspection program using a new in-depth inspection methodology. </p><p> Other priorities include: </p><ul> <li> Boosting information, communication and transparency efforts by improving communications with health professionals and patients and integrating them more closely in work processes. </li><li> Closer monitoring of the consumption of medicines to improve the detection of &quot;abnormal&quot; patterns of consumption. The agency will produce updated reports on drug consumption for doctors and the public, publish international comparisons of consumption, and produce a summary of sales of medical devices and the main characteristics of the devices market. </li><li> &quot;In a context of cost-containment/resource constraints&quot;, placing the emphasis on optimizing internal procedures and strengthening the management of various activities, accompanied by more administrative simplification, modernization and the implementation of appropriate IT tools </li><li> Finalizing and signing a contract on objectives and performance with the government, which will sketch out ANSM's strategic lines of action for 2015-18. </li> </ul>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 308
+
+<p> The French regulator ANSM has laid out a wide-ranging set of plans in its work program for 2015, including ensuring rapid and wider access to innovation, guaranteeing the safety of products throughout their life cycle, and using regulatory tools to speed up the availability of innovative new drugs. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+French agency prioritizes innovation drug safety and early access
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150203T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150203T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150203T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028020
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+French agency prioritizes innovation, drug safety and early access
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357018
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042304Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+103a8c58-281f-4e40-91e1-30bb8b138e8c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042304Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

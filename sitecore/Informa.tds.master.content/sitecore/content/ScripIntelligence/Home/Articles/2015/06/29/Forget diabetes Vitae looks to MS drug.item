@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {27DB9E13-DD41-4498-B45E-9A3B3290ED55}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/29/Forget diabetes Vitae looks to MS drug
+parent: {68A2ECAC-4A73-44F9-845E-28AA553B04B7}
+name: Forget diabetes Vitae looks to MS drug
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9cc5f166-92fb-4e04-b50e-7995fd09bfa4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Forget diabetes, Vitae looks to MS drug
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Forget diabetes Vitae looks to MS drug
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4763
+
+<p><p>Investors showed their disappointment in results from Vitae Pharmaceuticals' diabetes drug, but the company sees the recent data release as just one of several catalysts that is expected this year. Yet, this is not a stock for investors that want a sure thing &ndash; Vitae works in all high-risk development areas. </p><p>The biotech wants investors to look away from the bad results and look toward the promise in its other programs. </p><p>Vitae and development partner Boehringer Ingelheim reported topline data from one arm of a Phase II study in type 2 diabetes patients on 29 June. The study showed that BI187004/VTP-34072, a potential first-in-class 11&#946;-hydroxysteroid dehydrogenase type 1 (11&#946; HSD1) inhibitor, plus standard-of-care metformin, did not reach its predefined endpoints in the 28-day study. </p><p>Boehringer Ingelheim is in charge of conducting the study and did not release details about endpoints or any of the data. The company is still conducting a monotherapy arm of the trial that is testing the drug without the metformin backbone. </p><p>The news is not good for Vitae, which likely hasn't seen any of the data from the trial yet, but it's tough to have high hopes for the monotherapy when the metformin arm was so disappointing. Investors clearly saw the read-through; the stock dropped as much as 35% during trading on 29 June, but rebounded to close down only 9.55% at $13.78. </p><p><b>A major upset?</b></p><p>The failure of a lead program usually spells serious trouble for a biotech, but that may not be the case for Vitae. The company is built on a technology platform that helps it identify drug targets with validated biology and strong genetic modifiers. The company looks for hard-to-drug targets in disease areas with high unmet need. CEO Jeff Hatfield admitted during an interview that the company is working in some very risky areas, but he made sure to note that the reward of success would be much higher. </p><p>Instead of using high throughput screening, Vitae's platform builds molecules to uniquely fit certain targets. Mr Hatfield describes it as "a precise fit," adding, "If there's a door that's locked and you really want to get through it, there are two kinds of locksmiths. One might bring a key ring with a million keys on it and keep trying them. Whereas there is a locksmith that can used advanced equipment, look inside that lock and cut the key to fit it," the exec said. </p><p>While Vitae might not have cut the right key to treat diabetes, the company has drugs in several other areas that hold plenty of promise. The diabetes drug isn't a total loss either &ndash; BI has already paid Vitae about $80m in milestone payments for the drug and the larger pharma handles all development costs. The two companies are also partnered on a drug for the treatment of Alzheimer's disease &ndash; another tricky development area, but again, BI is shouldering most of the burden. </p><p>But Mr Hatfield believes the most promise for the company is its wholly-owned asset, VTP-43742. The drug is in very early stages, but preclinical studies and mouse models have shown that it could be revolutionary in autoimmune diseases like psoriasis, multiple sclerosis and rheumatoid arthritis. </p><p>VTP-43742 is a first-in-class RORgammaT inhibitor &ndash; a target that is notorious in the industry for being hard to drug. "Our compound targets RORgammaT; that's been in the news a lot over the years. There have been seven collaborations announced in that field and none of them have ever advanced beyond the initial press release," said the exec. "A global head of R&D from a big pharma said to me once, 'That's the most exciting target in immunology, but I wouldn't waste your time, it's too hard to drug.' For us that was the stimulus to say this is what we've got to do."</p><p>Vitae thinks it can do what other companies have not. "Here's the data that has been most exciting to us, it's an animal model for multiple sclerosis &ndash; an incredibly debilitating disease," said Mr Hatfield. "We compared out molecule to a monoclonal antibody that targets interleukin-17a and in this case, the IL-17a lowered the symptoms by 50% to 60%, but if you look at '43742, you'll see that there were no symptoms."</p><p>The CEO said Vitae has had more than a dozen companies make offers to license this compound, but its board of directors believes there is too much promise to share the drug with a company that could take away from the favorable economics. </p><p>In an effort to combat some of the stock fallout from the diabetes news, Vitae announced the same day that VTP-43742 has entering the clinic with a Phase I in healthy volunteers. Results are expected before the end of the year. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Forget diabetes Vitae looks to MS drug
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150629T222615
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150629T222615
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150629T222615
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029104
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Forget diabetes, Vitae looks to MS drug
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359080
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9cc5f166-92fb-4e04-b50e-7995fd09bfa4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042414Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

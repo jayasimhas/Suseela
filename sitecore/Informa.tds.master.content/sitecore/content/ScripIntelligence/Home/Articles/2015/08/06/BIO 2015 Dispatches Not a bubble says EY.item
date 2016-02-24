@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2A21AF86-9934-441C-A004-E82221F2713B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/06/BIO 2015 Dispatches Not a bubble says EY
+parent: {1433669C-C53A-4B22-AB4D-371A05B8BBF0}
+name: BIO 2015 Dispatches Not a bubble says EY
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f758dbca-18fd-4f57-8f37-10ca04ab4cfd
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{649253E7-61BB-41CA-ACAF-6CC3C62670AE}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+ BIO 2015 Dispatches: Not a bubble, says EY  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+BIO 2015 Dispatches Not a bubble says EY
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3712
+
+<p> Despite unprecedented growth in the biotechnology sector in 2014, EY's Global Life Science leader Glen Giovannetti says the market is not likely to implode, but he does expect the amount of money flowing into biotech to normalize over the coming year. </p> <p> &quot;In terms of the peaks we've seen over the last couple of years, I do think at some point we will see a generalist investment relocation,&quot; said Giovannetti in an interview. &quot;It's not like we're going to go from 60 IPOs a year to five, but we're likely to go back to a more reasonable level. Really differentiated stories with good data &ndash; those deals will still get done.&quot; </p> <p> The market expert noted that the biotech sector won't likely be at the same high in a year's time, but he doesn't expect the gloom and doom of just a couple years ago. </p> <p> Giovannetti's comments are linked to a report that the consulting firm released 15 June that showed the biotech industry's market capitalization is now above $1trn for the first time. While the sector's growth was in part driven by the strong sales of just a few drugs &ndash; in particular, Gilead Sciences' Sovaldi (sofosbuvir) and Harvoni (sofosbuvir/ledipasvir), the sector still performed well above previous years when &quot;the Gilead effect&quot; is excluded, says EY. </p> <p> Across the US, EU, Canada and Australia, revenues grew 24% to reach $123bn and were still up 12% when Gilead is excluded. Meanwhile, net income reached a new high of $14.9bn, up 231% (although 82% came from Gilead's strong sales in hepatitis C drugs). The report notes that the growth in the market was driven by strong drugs sales &ndash; &quot;all the right reasons,&quot; says the report &ndash; while, during the economic downturn, growth was driven by severe cost-cutting in the industry. </p> <p> There were other metrics in 2014 that showed the biotechnology sector is currently booming. R&amp;D spending increased by 20% to $35bn. The report notes that the increase in R&amp;D spending was largely due to the investments made by non-commercial stage biotech companies, as opposed to their larger commercial-stage counterparts. </p> <p> The IPO window has been wide open over the past couple of years. Giovannetti marveled at the fact that the IPO window has been consistently open for more than eight consecutive quarters. Capital raised via initial public offerings in 2014 in the US and EU amounted to $6.8bn &ndash; the second highest total in the sector's history. Eighty-one percent of the companies that debuted on the public market last year had a lead drug candidate in Phase II or later. </p> <p> Venture capital increased by 28% to $7.6bn, considerably higher than the $5.5-5.9bn raised annually between 2008 and 2013, with nearly $1.8bn of that going to early-stage rounds. </p> <p> All of these positive metrics have caused investors and analysts to worry that the biotech sector is in a bubble and that the bubble could burst at any time. Yet, Giovannetti thinks there are a few indicators that show the healthy numbers are not something investors should be worried about. The late stage of companies that are doing IPOs, the strength of drug sales and the increase in R&amp;D investment are just a few indicators that the sector is not likely to crash quickly. </p> <p> &quot;A bubble to me feels like it's not at all supported by fundamentals,&quot; says Giovannetti. &quot;I don't think that's the case here. There's much more substance than any other window in the past.&quot; </p> <p> Our daily BIO 2015 Dispatches draw on the combined forces of &ldquo;The Pink Sheet&rdquo; and Scrip Intelligence staff, reporting from the Philadelphia meeting. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 260
+
+<p> Despite unprecedented growth in the biotechnology sector in 2014, EY's Global Life Science leader Glen Giovannetti says the market is not likely to implode, but he does expect the amount of money flowing into biotech to normalize over the coming year. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+BIO 2015 Dispatches Not a bubble says EY
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150806T160003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150806T160003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150806T160003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028979
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+ BIO 2015 Dispatches: Not a bubble, says EY  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358843
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f758dbca-18fd-4f57-8f37-10ca04ab4cfd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

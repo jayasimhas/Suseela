@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {74D5CE84-FAEE-4959-B949-3495E37D9DF8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/01/BMS Opdivo designation a boost for UK early access scheme
+parent: {E61C934D-419F-4703-A09B-2A315163F802}
+name: BMS Opdivo designation a boost for UK early access scheme
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3b698d7e-1bcd-4908-81cf-d878bb7bab17
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+BMS Opdivo designation a boost for UK early access scheme 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+BMS Opdivo designation a boost for UK early access scheme
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6827
+
+<p>The award of the UK's third "Promising Innovative Medicine" (PIM) designation, to Bristol-Myers Squibb's drug for advanced melanoma Opdivo (nivolumab), is clearly good news for the company and for patients. But it is also something of a vote of confidence in the UK's Early Access to Medicines Scheme (EAMS), amid concerns that the costs of the scheme could deter some companies from using it. </p><p>PIM designation represents the first stage of the EAMS, after which it will be up to the regulatory agency, the MHRA, to determine whether it should be made available to patients before it has been formally authorized for marketing. </p><p>The first investigational drug to receive a PIM, in September last year, was Northwest Biotherapeutics' cell therapy for gliobastoma multiforme, DCVax-L. According to the Department of Health, a second PIM was awarded in October, although in that case the company concerned does not seem to have identified itself or the product (the DH will not announce details of PIM designations unless the company does). </p><p>BMS has shown no such reticence. Its general manager for the UK & Ireland, Johanna Mercier, said the company was "delighted that nivolumab has become one of the first medicines to be awarded a PIM designation", which was a "clear recognition that nivolumab represents genuine innovation and offers significant potential benefits to patients". </p><p>Opdivo, a PD-1 immune checkpoint inhibitor, was filed for marketing authorization with the European Medicines Agency in June 2014 and has been granted accelerated assessment status, which BMS said could cut the EU review time by around two months. If Opdivo gets the go-ahead from the MHRA under the EAMS, it means the product could be available in the UK before it is formally authorized for marketing by the European Commission following an EMA positive opinion. </p><p>The PIM designation, BMS said, was based on the submission of a detailed dossier containing clinical and non-clinical data on nivolumab, as well as "a thorough evaluation of the benefit-risk balance". </p><p>Data supporting the designation included results from CheckMate -066, a Phase III randomized double-blind study in treatment na&iuml;ve patients with BRAF wild-type advanced melanoma, which was published in November and showed a statistically significant improvement in survival versus dacarbazine; Checkmate -037, a Phase III trial in patients previously treated with ipilimumab; and Study 209-003, a Phase Ib dose-escalation study in heavily pre-treated patients with solid tumours including melanoma, non-small cell lung cancer, renal cell cancer, prostate cancer and colorectal cancer. </p><p>The product also took the fast track in the US, where it was granted priority review and a "breakthrough" designation by the FDA and was approved for marketing at the end of last year, more three months earlier than expected. Its first approval was in Japan, in July 2014. </p><p>Among Opdivo's competitors in the melanoma field will be Merck & Co's PD-1 inhibitor Keytruda (pembrolizumab), which was approved in the US in September and filed with the EMA in mid-2014. </p><p>Opdivo is also now heading for a major lung cancer indication, after an interim analysis of the Phase III CheckMate-017 study showed an improvement in overall survival versus the control arm (<a href="http://www.scripintelligence.com/home/BMSs-anti-PD1-Opdivo-takes-lead-in-lung-cancer-356075" target="_new">scripintelligence.com</a>, 12 January).</p><h2>Navigating the EAMS process</h2><p>It's not clear just when Opdivo might be made available in the UK for melanoma under the EAMS, as the process consists of a number of distinct stages that must be followed. The first is the PIM designation, which is awarded to drugs that meet the EAMS criteria: for example, the product must be intended for a life-threatening or seriously debilitating condition and address a high unmet need. It must also offer significant advantages over current therapies, and the potential adverse effects must outweigh the benefits. </p><p>The second stage is a scientific opinion from the MHRA on whether the product should be made available before it is formally licensed. Companies wishing to proceed have to hold a pre-submission meeting with the agency to discuss whether the EAMS suitability criteria are likely to be met, and to discuss the format of the data to be submitted to support the benefit-risk opinion. </p><p>After the meeting, the MHRA will make a recommendation as to whether the product is a suitable candidate. If so, the company must submit an "EAMS dossier" based on the common technical document (CTD) format. The MHRA review period is 75 days, or 90 days where the applicant has to answer outstanding issues. </p><p>Positive opinions will be published on the MHRA website within 15 days of being adopted, together with a public assessment report and the EAMS treatment protocol. Opinions are valid for one year, and will lapse after that (unless renewed) or at the time of grant of a marketing authorization. </p><p>The final stage is commissioning of the product by NHS England, a process that will include an assessment of outcome measures, the drug's cost-effectiveness, and the number of centres where the treatment should be available. In practice this stage will run more or less in parallel with the PIM designation process and the scientific opinion. </p><p>BMS declined to comment on "speculative timings regarding when UK patients with advanced melanoma may be able to have access to nivolumab outside of a clinical trial setting", or on what its next steps would be under the EAMS, saying its specific plans were confidential. It did say, though, that its aim was to make it available to patients as soon as possible. </p><h2>Cost concerns</h2><p>While the EAMS scheme is generally regarded positively by industry, some concern has been expressed over the costs involved, particularly for smaller firms. The PIM designation process costs just over &pound;4,000, while the fee for the scientific opinion is &pound;29,000 for a new chemical or biological product.</p><p>Moreover, once the product has been made available, there will be further costs, as the company must provide it free of charge until it has been formally authorized for marketing, and it must also continue the clinical development program. In view of these cumulative expenses, there have been calls for the government to consider offering funding for the scheme.</p><p>Asked about the funding of Opdivo, BMS said that the "details of the supply of our medicines to the NHS, and the reimbursement we receive, are always confidential", although it added that its priority was to ensure that, "once approval has been granted, eligible patients are able to access our medicines".</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 401
+
+<p>The award of the UK's third "Promising Innovative Medicine" (PIM) designation, to Bristol-Myers Squibb's drug for advanced melanoma Opdivo (nivolumab), is clearly good news for the company and for patients. But it is also something of a vote of confidence in the UK's Early Access to Medicines Scheme (EAMS), amid concerns that the costs of the scheme could deter some companies from using it. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+BMS Opdivo designation a boost for UK early access scheme
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150801T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150801T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150801T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027503
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+BMS Opdivo designation a boost for UK early access scheme 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356011
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3b698d7e-1bcd-4908-81cf-d878bb7bab17
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {48A1DB8D-8A89-4027-B728-5A1D9A0CE00D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/02/Sharing the data cloud a symbiotic vision for pharma in healthcare
+parent: {F07BDF72-8313-4021-A765-C4ED157C5731}
+name: Sharing the data cloud a symbiotic vision for pharma in healthcare
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7ba20c45-8a55-41c3-9dcb-d845357c75b4
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 67
+
+Sharing the data cloud: a symbiotic vision for pharma in healthcare
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 66
+
+Sharing the data cloud a symbiotic vision for pharma in healthcare
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8345
+
+<p>It's all very well having big data, but do you know what to do with it? These days, information is an abundant resource, and the challenge is how to harness it effectively. </p><p>Take healthcare: it's a field that is overflowing with data. However, those data are kept in separate siloes - hospital data, data from wearable technologies, clinical trial data, GP data, health insurer data &ndash; there is limited mixing between the individual components. Finding ways to overcome that 'siloism' could yield some hugely important new opportunities as the world struggles to get on top of the gathering crisis in healthcare.</p><p>"Governments globally are in a state of panic, and rightly so &ndash; healthcare costs are spiralling out of control. The irony is that the answers to many of the biggest healthcare problems we face today aren't to be found in hard cash but in the data that already surrounds us," claims Freddie McMahon, director of strategy and innovation at Anomaly42, a London-based technology firm that defines itself as a "context broker" or "next-generation data-as-a-service provider". </p><p><i>Scrip</i> caught up with him to find out what he means, and why pharma should care.</p><p>A context broker is essentially a cloud-based service that takes individual nuggets of data of different types from many different sources and drives them through algorithms to place them in a context that enables informed decision making. </p><p>Anomaly42 has hitherto worked primarily with financial institutions, on processes ranging from detecting fraudulent insurance claims and identifying money laundering to undertaking due diligence of target acquisitions. It entered the healthcare arena through work done analyzing anonymized data from paper-based notes to better understand actuarial risk and develop fairer premiums in health insurance. Now, the company sees a large opportunity for its "generic capabilities to solve big problems" to be deployed more widely in healthcare. </p><p>To illustrate this point, Mr McMahon draws an analogy between data and money. "We're coming out of a recession, when there wasn't much money flowing and therefore there was not as much innovation and change. Now money is flowing more freely it is driving prosperity and change. If data like money is locked in siloes, then similarly change is slow and there are issues of higher cost and poor quality. But if data is more liquid, if it can flow faster and better, then all the players benefit, from individuals to pharma companies," he argues.</p><p>So what is needed to get data flowing in healthcare?</p><p>"It needs leadership, and I really do see that pharma could take a leadership role in terms of funding and making it happen," says Mr McMahon.</p><p>And what could pharma get out of it?</p><h2>data ecosystem</h2><p>"Imagine an ecosystem containing all the different pieces of data, from individuals, doctors, hospitals, companies. Seeing the big patterns can drive R&D," he says. Pharma stands to benefit from the burgeoning use of smartphones and individual wearable technologies, and healthcare apps that are collecting data from those devices, if it is able to gather that data from the cloud and process it along with other data both internal and external to the company. </p><p>One significant problem has traditionally been how to integrate data in different formats. "With the advances we've been making we can now collect that data, evaluate it and deliver it in context tailored separately for a pharma company, a hospital, a charity, an app provider or an individual," he says.</p><p>"For pharma, which traditionally doesn't have relationships at scale with individuals, advances in technology, apps and the Internet of Things bring chances to be connected at scale to individuals and to accelerate change," he contends.</p><p>Take, for example, people with unusual and specialized sets of medical conditions. As Thomas Goetz, author of <i>The Decision Tree: Taking Control of Your Health in the New Era of Personalized Medicine</i>, has highlighted, these individuals have been very effective at finding each other through social networking and sharing their separate knowledge gathered from all their experiences with various experts and consultants. In pooling their knowledge resources with the aim of helping themselves and others in the same small niche, they have also helped the specialists gain new insights. </p><p>"Moving from mass production to mass customization is one possibility that this kind of contextual data could facilitate for the pharma industry" says Mr McMahon. "This process of sharing could offer a valuable opportunity to the pharma industry itself, which can react to the 'experience' feedback on its drugs in real time so that, where appropriate, they can be adapted and evolved. Essentially, the pharma industry has a direct link to the very people using its drugs and is able to capitalize on that knowledge. It is not simply producing drugs but customizing and adjusting them on an ongoing basis through the knowledge being shared by the people 'on the ground'," he goes on.</p><p>"Crucially, this bottom-up knowledge, via the context broker, is then further enhanced by the knowledge being fed in by other players within healthcare, such as related new research or GP findings about a specific drug or medical condition. The drug, you could say, is itself absorbing a continuous flow of contextual knowledge about its performance from different sources, and is being evolved &mdash; or mass-customized &mdash; in response to that knowledge." </p><p>Meanwhile, that social networking phenomenon could also be tapped into by a context broker to enhance patient access to new treatments as well as to make clinical trial recruitment more efficient for pharma, points out Mr McMahon. "The current system for testing new drugs, whereby the pharma company pays third parties to find trial participants, is highly expensive and time consuming. And the model hasn't changed for decades."</p><h2>drug-based dating agency </h2><p>A context broker could also act like a dating agency for people with specific conditions: it could offer to individuals to sign up so that when pharma has a new drug or trial for their condition, "we can facilitate an introduction".</p><p>These suggestions raise the question of data protection, however, both from an individual privacy point of view, and also from the perspective of company IP. Such concerns are a major reason there hasn't been more information sharing in healthcare to date. </p><p>According to Mr McMahon, though, "those problems are all solvable. Indeed there are the same problems in financial services and they have been solved. It's fairly straightforward. Regulations vary from country to country but nowadays there is technology that can cope with those complexities. It is possible to build data protection and confidentiality into the context brokerage and set up rules of engagement that are quite transparent."</p><p>"Protecting IP is sacrament," he adds. "Previously our work has included building patent management systems so it's an area that we know very well." </p><p>He is similarly confident about the protection of sensitive and confidential information. </p><p>"What is important from a pharma perspective is actually the collated anonymized data &ndash; that's more valuable than individuals' specific data," he points out. "Let's use the 80-20 rule. 80% of data in healthcare is ripe for sharing without contravening any data protection rules. Starting with the 80% that's easiest to share would make a massive difference. It's about setting up the rules of engagement: each stakeholder needs to consider what they are giving that can benefit others, and what they stand to receive that will benefit them."</p><p>For pharma, contextualized big data could help it at many different levels, enabling it to redesign various highly expensive and time-consuming processes from recruiting trial participants to gaining regulatory clearances. "If companies could reduce cycle times even by 10%, that would have a big impact," reasons Mr McMahon.</p><p>For Mr McMahon, the problem now is not technological, nor is it about ethical or commercial concerns over data sharing. "It's an attitude problem. It needs early adopters."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 180
+
+<p>It's all very well having big data, but do you know what to do with it? These days, information is an abundant resource, and the challenge is how to harness it effectively. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 66
+
+Sharing the data cloud a symbiotic vision for pharma in healthcare
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150602T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150602T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150602T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027789
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 67
+
+Sharing the data cloud: a symbiotic vision for pharma in healthcare
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356605
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7ba20c45-8a55-41c3-9dcb-d845357c75b4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

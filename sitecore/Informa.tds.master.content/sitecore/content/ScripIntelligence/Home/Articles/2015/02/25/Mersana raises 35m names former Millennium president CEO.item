@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {EBC0F6C8-6F1C-4B78-B889-94F86AD6E9C4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/25/Mersana raises 35m names former Millennium president CEO
+parent: {15B1B217-4524-49F3-9FDF-A5CEA8404E4B}
+name: Mersana raises 35m names former Millennium president CEO
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fe03b14c-3be9-4326-89f9-95a839a5f1ef
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Mersana raises $35m, names former Millennium president CEO
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Mersana raises 35m names former Millennium president CEO
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7368
+
+<p>Seventeen-year Millennium Pharmaceuticals veteran Anna Protopapas began her first day as president and CEO of Mersana Therapeutics on 2 March with an announcement that the antibody-drug conjugate (ADC) specialist closed a $35m Series B venture capital round. </p><p>The money gives Cambridge, Massachusetts-based Mersana enough cash, on top of fees from ongoing ADC co-development partnerships, to initiate trials for its first two clinical candidates in 2015 and 2016, and to fund the company's operations through 2017. Ms Protopapas told <i>Scrip</i> that she decided to join Mersana, because she was impressed with what Mersana has been able to show in preclinical studies to date about what she believes could be a best-in-class ADC technology platform.</p><p>ADCs are comprised of a cytotoxic payload attached with a linker to an antibody that specifically targets cancer cells. The linker detaches inside the cell to deliver the payload and kill the cancer. Mersana's technology platform uses a proprietary polymer system known as Fleximer, which is used to bind the company's linkers with its own or its partners' payloads and antibodies.</p><p>Mersana already was on Ms Protopapas's radar screen, because she was president of Millennium &ndash; when it still existed as the oncology arm of Takeda Pharmaceutical &ndash; in April 2014 when it entered into an ADC collaboration with Mersana (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Takeda-strengthens-cancer-focus-with-Mersana-ADC-deal-351146" target="_new">8 April 2014</a>). Takeda subsequently exercised an option in October for the first program under the deal and expanded its agreement with Mersana in January to include more cancer targets (scripintelligence.com, <a href="http://www.scripintelligence.com/business/BioNotebook-Xencor-regains-rights-from-Amgen-plus-three-other-deals-354746" target="_new">30 October 2014</a> and <a href="http://www.scripintelligence.com/home/BioNotebook-JP-Morgan-week-deal-roundup-356162" target="_new">15 January 2015</a>). </p><p>Ms Protopapas was involved in due diligence for Takeda's transactions with Mersana before she left Millennium last fall as Takeda prepared to rename its cancer business Takeda Oncology and fully incorporate the operation under the Japanese big pharma company's broader corporate umbrella (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Playing-the-pharma-name-game-355506" target="_new">8 December 2014</a>).</p><p>"When I was with Takeda and we were evaluating companies with interesting technology, we identified Mersana as the most interesting. I left Takeda on October 1 and I was excited to see Takeda expand the partnership with Mersana," Ms Protopapas said.</p><p><b>Clinical programs on horizon</b></p><p>Mersana is preparing preclinical data for presentations at scientific conferences this year to showcase the early proof-of-concept work that the company has done for its ADC platform. That's also when Mersana will reveal some of the details behind its first clinical candidate for which the company plans to file an investigational new drug (IND) application with the US FDA later this year. </p><p>The IND will enable initiation of a cancer study in 2015 and it will be followed by another IND and initiation of a second study for an additional clinical candidate in 2016. </p><p>"I was very excited over the last couple of months to meet with the Mersana team and see how much progress they've made with the technology. The benefits have been validated, at least preclinically," Ms Protopapas said. </p><p>She noted that the company has good opportunities to generate additional proprietary programs for its pipeline beyond the first two candidates based on the preclinical work that has been done so far.</p><p>Mersana also continues to discuss potential partnerships with additional outside collaborators, but only if those transactions can help the company advance its platform technology and internal pipeline. </p><p>"Our focus is to build a pipeline and bring new products forward. To the extent that those partnerships can help with that strategy, we will do more," Ms Protopapas said.</p><p>Besides Takeda, Mersana has ADC development agreements with Merck KGaA and Endo Pharmaceuticals (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Merck-Serono-enters-antibody-drug-conjugate-fray-352479" target="_new">24 June 2014</a> and <a href="http://www.scripintelligence.com/business/Endo-begins-Mersanas-foray-into-antibody-drug-conjugates-with-270-million-deal-327803" target="_new">8 March 2012</a>). The company also has a partnership with Adimab to provide ADC development tools to pharmaceutical partners (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Adimab-and-Mersana-link-to-provide-antibody-drug-conjugate-tools-to-partners-333466" target="_new">2 August 2012</a>).</p><p>Chief business officer Eva Jack said Mersana could license one of its clinical programs to expand access to the ADC to more global markets or the company could license its technology platform to partners with a compound that they want to use in an ADC, but dealmaking largely will be focused on collaborations that could advance Mersana's pipeline.</p><p>"We'll look at opportunities potentially related to our pipeline development, but [after the Series B financing] we're in a good position where don't need to do that right now," Ms Jack said.</p><p><b>Investment in the pipeline</b></p><p>New Enterprise Associates (NEA), which backed Mersana's $27m Series A round with Pfizer Venture Investments in 2012, led the company's Series B round with repeat participation from Pfizer's venture capital arm and Fidelity Biosciences (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Targeted-antibody-ventures-Mersana-and-CytomX-attract-venture-dollars-amid-partnering-promise-333405" target="_new">1 August 2012</a>). New investors Rock Springs Capital Management plus former Bristol-Myers Squibb research and development head Elliott Sigal also participated in the Series B financing.</p><p>Ms Protopapas is Mersana's 34th employee and with its recent capital infusion the company plans to hire another 10 people within the next few months to advance its Fleximer-based ADC pipeline. </p><p>"We can refine the Fleximer, the linker and the payload for the drug target, and we can go after low-expressing targets," she said. "Because you can fine-tune the technology, can put more payload on the ADC and go after lower-expressing targets that other technology has had a hard time targeting."</p><p>That's just one of the reasons, Ms Protopapas said, why she thinks Mersana's platform has best-in-class potential. And it should be noted that she, via Millennium, has long-term experience not only in oncology, but in the ADC field.</p><p>Millennium, now Takeda, is the development and commercialization partner with Seattle Genetics for Adcetris (brentuximab vedotin), the first-ever ADC &ndash; out of two so far, including Roche's Kadcyla (ado-trastuzumab emtansine) &ndash; to reach the market (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Seattle-Genetics-predicts-1bn-in-yearly-Adcetris-sales-as-indications-expand-330465" target="_new">11 May 2012</a>).</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 266
+
+<p>Seventeen-year Millennium Pharmaceuticals veteran Anna Protopapas began her first day as president and CEO of Mersana Therapeutics on 2 March with an announcement that the antibody-drug conjugate (ADC) specialist closed a $35m Series B venture capital round. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Mersana raises 35m names former Millennium president CEO
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150225T122121
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150225T122121
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150225T122121
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027972
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Mersana raises $35m, names former Millennium president CEO
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356938
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fe03b14c-3be9-4326-89f9-95a839a5f1ef
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042302Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

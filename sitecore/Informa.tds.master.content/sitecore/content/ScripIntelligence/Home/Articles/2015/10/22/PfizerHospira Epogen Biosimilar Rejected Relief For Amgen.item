@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {9CF281B3-1C14-4057-AA6A-C46AC325BA0B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/22/PfizerHospira Epogen Biosimilar Rejected Relief For Amgen
+parent: {24491DE3-DC6F-4529-9855-F0E4CDE93C9E}
+name: PfizerHospira Epogen Biosimilar Rejected Relief For Amgen
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c5f0949c-90e2-443f-b437-68073ddfae8c
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3D24B2BE-7477-4AA6-84E2-4F0AE8BAA36A}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Pfizer/Hospira Epogen Biosimilar Rejected; Relief For Amgen
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+PfizerHospira Epogen Biosimilar Rejected Relief For Amgen
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8502
+
+<p>Pfizer Inc. sneaked the news into its quarterly earnings call on Oct. 27 that its newly acquired subsidiary Hospira Inc. had received a complete response letter earlier this month from the FDA for its epoetin alfa biosimilar &ndash; a product Amgen Inc. has been working desperately through the US court system to keep off the market for a little while longer.</p><p>Pfizer chairman and CEO Ian Read casually mentioned the Oct. 16 rejection after noting the firm had recently closed its acquisition of Hospira, making the New York-based pharma giant the "number two biosimilars company in the world," with three marketed biologic copycats and more than seven years of in-market experience for one of those products. </p><p>"Our biosimilars pipeline is now one of the largest pipelines globally with seven additional molecules in our portfolio under development," Read declared.</p><p>But Pfizer and Hospira are going to have to wait a little longer to put their epoetin alfa biosimilar, which they are seeking to sell under the name Retacrit, on the US market. </p><p>The biosimilar is referenced on Epogen, marketed by Amgen, and Procrit, which is marketed under a license from the company to Johnson & Johnson Inc.</p><p>Hospira had submitted its 351(k) <a href="http://www.scripintelligence.com/policyregulation/Hospira-seeks-FDA-nod-for-EpogenProcrit-biosimilar-356100" target="_new">application</a> on Dec. 16, 2014, but waited nearly a month before revealing the action.</p><p>Read said Pfizer and Hospira are "working closely with the FDA to address the concerns of the letter and at this time we do not believe any further clinical trials are needed."</p><p>Nonetheless, he told investors and analysts on the Oct. 27 earnings call the companies would provide "additional evidence" to the FDA to support the approval of the biosimilar. </p><p>Pfizer spokesman MacKay Jimeson told <i>Scrip</i> the company anticipated being in a position to file its response in the first half of 2016.</p><p>John Young, Pfizer's president of established pharma, noted during the call the company expected a six-month review under the biosimilars user fee program.</p><p>"Pfizer is confident that the additional evidence we provide will support approval and remains committed to bringing this important medicine to patients in the US as quickly as possible, which will increase access to safe, effective and more affordable biologic medicines," Jimeson said.</p><p><b>Competition Delayed, But Lawsuit Continues</b></p><p>For Amgen, the rejection means it gets more time before it must face US biosimilar competition against Epogen, which had just over $2bn in worldwide sales in 2014.</p><p>Amgen has been entangled in a <a href="http://www.scripintelligence.com/home/Amgen-Covering-Its-Bases-In-Hospira-Biosimilars-Suit-360602" target="_new">lawsuit</a> with Hospira involving its epoetin alfa biosimilar, accusing the latter firm of violating certain provisions of the <i>Biologics Price Competition and Innovation Act</i> &ndash; the law that established the regulatory pathway for the FDA to approve biosimilars.</p><p>Specifically, Amgen said Hospira failed to provide manufacturing information within 20 days of the FDA's acceptance of the latter firm's 351(k) marketing application for its epoetin alfa biosimilar.</p><p>Amgen also said Hospira did not comply with the requirement to provide 180 days notice of first commercial marketing.</p><p>Hospira, however, has asked the US District Court for the District of Delaware to <a href="http://www.scripintelligence.com/home/Amgen-Covering-Its-Bases-In-Hospira-Biosimilars-Suit-360602" target="_new">dismiss those counts</a> &ndash; declaring that it timely produced its epoetin alfa application to Amgen and is not required to provide any notice of commercial marketing.</p><p>Earlier this month, the US Court of Appeals for the Federal Circuit said it would <a href="http://www.scripintelligence.com/home/Zarxio-Rehearing-Denied-Biosimilars-Questions-Await-Next-Case-361104" target="_new">not rehear arguments</a> in a lawsuit brought by Amgen against Sandoz Inc. involving <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">Zarxio</a> (filgrastim-sndz), the first biosimilar approved in the US.</p><p>Amgen also has filed a lawsuit against Apotex, which is awaiting a decision any day now on its 351(k) application for its pegfilgrastim biosimilar, which is referenced on the former company's long-acting human granulocyte colony-stimulating factor Neulasta.</p><p>Apotex, however, has called the lawsuit a "<a href="http://www.scripintelligence.com/home/Apotex-Amgens-Biosimilar-Lawsuits-A-Sham-Predatory-360865" target="_new">sham</a>" and part of an "overall predatory scheme to monopolize the relevant market."</p><p><a href="http://www.scripintelligence.com/home/Amgen-Apotex-Lost-Bet-Biosimilar-Should-Be-Blocked-361147" target="_new">Last week</a>, Amgen asked US District Court for the Southern District of Florida to impose a preliminary injunction to restrain Apotex from marketing its biosimilar once approved.</p><p><b>Pfizer's Other Biosimilar Plans</b></p><p>During Pfizer's earnings call, the company also disclosed that it has opted to return the rights to South Korea-based Celltrion Inc. of its investigational rituximab and trastuzumab biosimilars, which are referenced on Rituxan, which is sold in the US by Roche AG unit Genentech and Biogen Inc., and Herceptin, marketed by Genentech, respectively.</p><p>Pfizer said it made that move to eliminate certain redundancies in its biosimilar drug products pipeline created as a result of the Hospira acquisition.</p><p>Celltrion also has been partnered with Hospira on its infliximab biosimilar in the US, which currently is <a href="http://www.scripintelligence.com/home/First-US-biosimilar-MAb-on-the-horizon-as-Celltrion-files-Remsima-353328" target="_new">under FDA review</a>.</p><p>But as a condition of approving the Hospira transaction, the European Commission is requiring divestiture of the Pfizer infliximab development program and certain European Economic Area (EEA) rights, Jimeson said. </p><p>Pfizer, however, will retain certain rights to the product outside the EEA, he said. </p><p>"We are working to complete this divestiture process swiftly," Jimeson said.</p><p>Young pointed out the biosimilars market is still in the process of forming in different regions of the world. </p><p>"We're very excited to be playing a leading role in the formation of that market with the portfolio that we now have, both of our own legacy Pfizer pipeline biosimilars, but also the end market portfolio of products from Hospira," Young said.</p><p>"The global market for biosimilars, looking at many analysts, is expected to grow from around about $1bn today to somewhere in the order of $17bn to $20bn by 2020," he said.</p><p>"Clearly, there are a number of factors that will drive and influence the evolution of that marketplace, such as substitutions, such as the labels, that extrapolation of labels that products that come to market will have," Young explained. "Overall, I would just say that we believe we're really well placed to draw on the heritage as a really strong biologics company in R&D and in manufacturing, which we believe will leave us to be well placed in that market as it forms around the world."</p><p>"We view biosimilars as playing a key role in the future of health care, and they can address evolving needs of patients, physicians and payers," he said. </p><p>Young also gave some perspective on Pfizer's views about interchangeability &ndash; declaring it should be "based on science and under physician supervision." </p><p>"Since biosimilars are not the same as the reference products, the traditional paradigms that you might see in a small molecule of interchangeability and automatic substitution just don't apply," he said. "So we believe that regulators and also payers should and will look at the data specific to each individual biologic molecule. That's why we have comprehensive development programs for our biosimilars so that we can actually help physicians and patients to be able to make informed decisions about how to appropriately use those molecules."</p><p>"There really is a need for more scientific progress to make interchangeability feasible and for that to really be driven by the data for individual molecules," Young added.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 367
+
+<p>Pfizer Inc. sneaked the news into its quarterly earnings call on Oct. 27 that its newly acquired subsidiary Hospira Inc. had received a complete response letter earlier this month from the FDA for its epoetin alfa biosimilar &ndash; a product Amgen Inc. has been working desperately through the US court system to keep off the market for a little while longer.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+PfizerHospira Epogen Biosimilar Rejected Relief For Amgen
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151022T045537
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151022T045537
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151022T045537
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030170
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Pfizer/Hospira Epogen Biosimilar Rejected; Relief For Amgen
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200264
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361168
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c5f0949c-90e2-443f-b437-68073ddfae8c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

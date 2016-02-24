@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {366DD240-12A2-4149-9E47-013DFAE3CBB8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/17/Oops US feds goof on 800000 Obamacare tax forms
+parent: {673CAFAF-49B7-437A-9242-01ECA36193FF}
+name: Oops US feds goof on 800000 Obamacare tax forms
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 37001073-d80d-4c16-90ee-497729bf6c3c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Oops! US feds goof on 800,000 Obamacare tax forms 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Oops US feds goof on 800000 Obamacare tax forms
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5330
+
+<p>Just when the Obama administration thought the nightmare of the disastrous 2014 Obamacare glitches was behind it, now comes word an erroneous form was sent out to 800,000 Americans who are seeking to claim tax credit subsidies aimed at lowering their insurance premium payments. </p><p>The Obama administration chose a blog posted on the Centers for Medicare & Medicaid Services (CMS) website to notify those Americans of the goof.</p><p>The administration said 20% of the tax filers who had signed up for private health insurance plans in 2014 offered under the <i>Affordable Care Act</i> (ACA) through the 37 exchanges run by the federal government and used the tax credits would now be receiving an updated form because the original version listed an incorrect benchmark plan premium amount. </p><p>The government wants those Americans who got the wrong forms to hold off until the first week of March to file their 2014 federal taxes &ndash; meaning if those people are owed a return, they&rsquo;ll have to wait longer for it, which likely won&rsquo;t sit well with families in desperate need of those dollars.</p><p>In the unsigned blog posted on 20 February on the CMS website, the administration insisted that up to 95% of those 800,000 people have not yet filed their 2014 taxes anyway.</p><p>But it acknowledged as many as 50,000 likely have filed their 2014 tax paperwork with "Uncle Sam." </p><p>The US Treasury Department will provide information "soon" to those people, the administration said.</p><p>The government emphasized that 80% of Americans who enrolled in Obamacare in 2014 got the correct &ldquo;1095-A&rdquo; form and are not affected by the latest glitch &ndash; another stain on the ACA, which started off its very first enrollment process in October 2013 plagued by crashing state and federal websites, although President Barack Obama ultimately got to declare victory with more than 10 million Americans covered through the plans or under Medicaid expansion (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Shutdown-drama-exchange-trauma-Obama-said-thered-be-days-like-this-346988" target="_new">2 October 2013</a>, <a href="http://www.scripintelligence.com/home/Obama-Im-sorry-347959" target="_new">8 November 2013</a>, <a href="http://www.scripintelligence.com/home/Obama-We-fumbled-but-game-not-over-348158" target="_new">15 November 2013</a>, <a href="http://www.scripintelligence.com/home/More-Obamacare-woes-Leakers-hackers-political-attackers-348235" target="_new">20 November 2013</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Website-fix-goal-met-but-salvaging-ACA-credibility-tougher-348439" target="_new">2 December 2013</a>, <a href="http://www.scripintelligence.com/home/Obama-ACA-hits-8m-time-to-forcefully-defend-351375" target="_new">18 April 2014</a>).</p><p>On 18 February, Health and Human Services Secretary Sylvia Mathews Burwell announced that about 11.4 million Americans had enrolled and selected ACA plans for 2015 through the federal and state marketplaces (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Obamacares-11.4m-enrollees-means-new-pharma-customers-356824" target="_new">18 February 2015</a>). </p><p>Biopharmaceutical manufacturers stand to gain from the large enrollment numbers because it means patients will have coverage for their prescription drugs they otherwise may not have been able to afford.</p><p>Because there was a Valentine's Day glitch with the HealthCare.gov website and others were still trying to finish their enrollment by the midnight deadline on 15 February, the administration gave those Americans until 22 February to complete the process.</p><p>Under pressure from various advocacy groups and some lawmakers, the Obama administration also revealed on 20 February it was allowing another "special" enrollment period from 15 March to 30 April &ndash; this one for Americans who were surprised to learn they owe a tax penalty because they failed to obtain health insurance in 2014, even though the fee had been warned about for years and even fought over at the US Supreme Court in 2012 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Supreme-Court-Affordable-Care-Act-constitutional-under-Congress-taxing-powers-332248" target="_new">28 June 2012</a>, <a href="http://www.scripintelligence.com/home/Constitutionality-declared-Surgery-or-hammer-time-next-for-health-reform-332278" target="_new">29 June 2012</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Post-SCOTUS-HHS-moves-forward-with-ACA-but-Republicans-push-back-332329" target="_new">2 July 2012</a>).</p><p>In a statement, CMS said the special enrollment period would allow those individuals and families who were unaware or didn't understand the implications of the new tax requirement to enroll in 2015 plans to avoid the penalty when they file next year's paperwork with the Internal Revenue Service. </p><p>Secretary Burwell had been hinting for the past week the administration was considering the additional special enrollment period, telling reporters on 18 February a decision was coming soon.</p><p>This article also may be read at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">US Capitol Capsule</a></p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 286
+
+<p>Just when the Obama administration thought the nightmare of the disastrous 2014 Obamacare glitches was behind it, now comes word an erroneous form was sent out to 800,000 Americans who are seeking to claim tax credit subsidies aimed at lowering their insurance premium payments. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Oops US feds goof on 800000 Obamacare tax forms
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150217T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150217T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150217T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027889
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Oops! US feds goof on 800,000 Obamacare tax forms 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pdfNewsLetter
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356786
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+37001073-d80d-4c16-90ee-497729bf6c3c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

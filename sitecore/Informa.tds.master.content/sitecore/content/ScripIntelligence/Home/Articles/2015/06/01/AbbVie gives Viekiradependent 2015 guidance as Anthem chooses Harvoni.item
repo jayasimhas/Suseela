@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {34F4B162-14A9-46ED-9B61-1E11953FFF4C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/01/AbbVie gives Viekiradependent 2015 guidance as Anthem chooses Harvoni
+parent: {430A16F1-19D6-4034-BEB3-EFB94183F1C6}
+name: AbbVie gives Viekiradependent 2015 guidance as Anthem chooses Harvoni
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ea247732-15cb-4ce0-bad7-e95a042a25f8
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+AbbVie gives Viekira-dependent 2015 guidance as Anthem chooses Harvoni
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 69
+
+AbbVie gives Viekiradependent 2015 guidance as Anthem chooses Harvoni
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6803
+
+<p>AbbVie announced 2015 financial guidance after the stock market closed on 8 January, but the company's share price did not rise despite an expected 30% increase in earnings for the year, likely because of a second reimbursement victory for its hepatitis C rival Gilead Sciences.</p><p>North Chicago, Illinois-based AbbVie gained 1.1% to close at $67.63 per share after reporting positive Phase III results for its endometriosis drug elagolix earlier in the day, but the stock was flat in after-hours trading (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/AbbVies-elagolix-succeeds-in-Phase-III-partner-Neurocrine-surges-356026" target="_new">9 January 2015</a>). However, Gilead gained 2.7% after market hours to reach $104.97 based on the private health insurer Anthem's decision to exclusively reimburse the Foster City, California-based company's Harvoni (ledipasvir and sofosbuvir) for the hepatitis C virus (HCV).</p><p>Investor sentiment toward AbbVie was unmoved late in the day, even after the company said it expects $4.25 to $4.45 in non-GAAP earnings per share (EPS) in 2015, which at the midpoint would be 30% above the company's 2014 guidance. </p><p>AbbVie will revise its 2015 guidance as the launch of its newly approved HCV drug regimen Viekira Pak (ombitasvir, paritaprevir, ritonavir and dasabuvir) progresses, but sales forecasts may be difficult to determine if more payers choose to exclude Viekira from their formularies.</p><p><b>Anthem decision</b></p><p>"After careful clinical review of the medical evidence, Anthem Inc has designated Harvoni as the primary treatment for hepatitis C genotype 1 in covered benefits for members of its affiliated health plans," Anthem said in a statement given to <i>Scrip</i>.</p><p>Anthem selected Harvoni over other HCV therapies, including Viekira and Gilead's Sovaldi (sofosbuvir), because they must be given in combination with ribavirin, which has significant side effects. The health plan administrator also noted Viekira's four-pill, twice-daily dosing schedule, which is more complicated than Harvoni's once-daily pill, and said Gilead's product has fewer drug interactions and a potentially shorter duration of therapy than Viekira.</p><p>"These clinical differentiators &ndash; in addition to favorable pricing &ndash; were key in Anthem's decision to prefer Harvoni," Anthem said. "Recently, an agreement was forged with Gilead Sciences, effectively lowering Anthem's hepatitis C treatment costs."</p><p>For patients who fail Harvoni or in cases where the drug would not be clinically appropriate, other therapies would get preferential coverage by Anthem. Harvoni's list price is $94,500 for a 12-week course, but the discount Gilead offered Anthem in exchange for exclusive reimbursement was not disclosed.</p><p>More than 37m people are enrolled in Anthem's health plans, but the company's Harvoni preference applies only to employer-sponsored plans, not public health care payers like Medicare and Medicaid. The plan administrator would not confirm the number of patients covered by its HCV drug reimbursement decision.</p><p>"We are pleased with the agreement as it will enable access to Harvoni," Gilead spokeswoman Amy Flood told <i>Scrip</i>.</p><p><b>Other payers' moves</b></p><p>Gilead recently won exclusive coverage for both Sovaldi and Harvoni from the pharmacy benefit manager (PBM) CVS/Caremark (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Gileads-CVS-exclusive-may-best-AbbVies-Express-Scripts-hepatitis-C-deal-355940" target="_new">6 January 2015</a>). That agreement, under which four major CVS formularies will cover Gilead's drugs for all HCV genotypes, may apply to more patients than the exclusive deal AbbVie negotiated for genotype 1 HCV patients subject to formularies run by the PBM Express Scripts (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Express-Scripts-on-deal-for-AbbVies-Viekira-more-to-come-beyond-hepatitis-C-355807" target="_new">23 December 2014</a>).</p><p>"AbbVie believes in broad market access to Viekira Pak for appropriate patients, regardless of their fibrosis stage and we are committed to supporting access to this therapy. Our multi-year agreement with Express Scripts is an example of how we will ensure broad access for all hepatitis C patients," AbbVie spokesman David Freundel told <i>Scrip</i>.</p><p>Express Scripts said in December that it would encourage all customers not covered by its formularies to exclusively reimburse Viekira, but those customers include Anthem, which clearly did not take the PBM's advice. </p><p>Anthem &ndash; Express Scripts's largest customer, according to Evercore ISI analyst Ross Muken &ndash; told <i>Scrip</i> that it will encourage its non-commercial customers to pay only for Harvoni.</p><p>"In our Medicaid business, we follow the state Medicaid formularies. Where we have flexibility, we may seek to follow the path of our commercial formulary. Our intent is to request Harvoni as a preferred regimen for Medicare," Anthem spokeswoman Jill Becher said.</p><p>Mr Muken said in an 8 January note to PBM investors that Anthem and other health plans were expected to follow the Express Scripts recommendation for Viekira. </p><p>He noted that Anthem's contrary move "raises questions about what other health plan clients will do and how they perceive decisions such as this one. Additionally, it suggests that CVS Health could be better positioned for the upcoming PBM selling season as the company's relationship with Gilead may prove more attractive to certain health plan and employer clients."</p><p><b>AbbVie's prospects</b></p><p>AbbVie said its growth in 2015 will be driven by sales from Viekira in HCV and its blockbuster Humira (adalimumab) for arthritis and other inflammatory conditions. Sales growth will be offset by generic competition for several products, including AndroGel (testosterone gel 1.62%) and the company's lipid franchise.</p><p>"AbbVie has delivered strong performance in our first two years as an independent company and we expect to continue building on that momentum in 2015 with a return to top-tier growth," chairman and CEO Richard Gonzalez said in a statement. "In addition to generating strong financial results, our priorities this year include strong commercial and operational execution as well as advancement of our promising pipeline."</p><p>AbbVie will provide more detailed guidance, including sales forecasts for specific products, when the company reports fourth quarter and full-year 2014 earnings on 30 January.</p><p>Jefferies analyst Jeffrey Holford said AbbVie's 2015 EPS guidance implies "conservative" Viekira sales of $2.5bn this year versus the Jefferies forecast for $4bn.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 285
+
+<p>AbbVie announced 2015 financial guidance after the stock market closed on 8 January, but the company's share price did not rise despite an expected 30% increase in earnings for the year, likely because of a second reimbursement victory for its hepatitis C rival Gilead Sciences.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+AbbVie gives Viekiradependent 2015 guidance as Anthem chooses Harvoni
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150601T094332
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150601T094332
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150601T094332
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027465
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+AbbVie gives Viekira-dependent 2015 guidance as Anthem chooses Harvoni
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+355945
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ea247732-15cb-4ce0-bad7-e95a042a25f8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042229Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -7,5 +7,7 @@ namespace Informa.Library.Site
 		string Message { get; }
 		DateTime From { get; }
 		DateTime To { get; }
+		string Id { get; }
+		bool Show { get; }
 	}
 }

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {06E8899A-9293-44AE-A923-7ED71EA1215F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/09/Sun Trumps Canadian Biotech To Acquire US Eye Care Firm
+parent: {5C20759A-3544-4173-AA09-9233B0E783B6}
+name: Sun Trumps Canadian Biotech To Acquire US Eye Care Firm
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 633e4010-02da-46cb-91eb-bec254a8309e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Sun Trumps Canadian Biotech To Acquire US Eye Care Firm 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Sun Trumps Canadian Biotech To Acquire US Eye Care Firm
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5166
+
+<p>Sun Pharmaceutical Industries has snapped up the US ophthalmology firm InSite Vision Inc as it sets its sights on a play in the US branded eye care space, edging out previous bidder and Canadian biotech QLT Inc.</p><p>Sun, which jumped into the fray through an unsolicited offer, is to acquire InSite via an indirect wholly owned subsidiary in an all-cash transaction for $0.35 per share, or about $48m in aggregate equity value, on a fully diluted basis. The deal has been approved by the boards of both InSite and the Sun Pharma subsidiary, and will be completed by means of a tender offer.</p><p>Significantly, InSite and QLT had in June this year reached a definitive agreement under which QLT was to acquire InSite in an all-stock transaction. But in early August, InSite said that it had received an unsolicited proposal from a multinational pharmaceutical company (presumably Sun) to acquire all its outstanding shares at a price of $0.25 per share in cash. </p><p>Subsequently InSite and QLT amended their merger agreement in late August, but Sun apparently went back early September with a second unsolicited proposal to acquire all outstanding shares of InSite common stock at an increased price of $0.35 per share in cash. </p><p>"Sun felt it was worth going higher. The bid was deemed superior," a source in the know told <i>Scrip</i> when asked how things swung the Indian firm's way. </p><p>InSite has now terminated its amended and restated merger agreement with QLT. InSite was required to pay a $2,667,000 termination fee to QLT, which has been paid by the Sun Pharma subsidiary on its behalf.</p><p>Sun's arm is to commence a tender offer for all of the issued and outstanding common stock of InSite at $0.35 per share in cash. This represents a 30% premium to the implied price per share under the terminated "Amended and restated agreement and plan of merger" between InSite and a competing bidder [QLT] for the US firm's common stock based on the stock price of the competing bidder as of Sept. 11, 2015.</p><p>The acquisition is expected to close in the fourth quarter of 2015. </p><h2>InSite</h2><p>Though not a very large-sized deal, analysts sayInSite represents a typically niche target with early value accretion potential that Sun's founder and turnaround specialist, Dilip Shanghvi, seemingly likes to pursue.</p><p>InSite develops specialty ophthalmic products and its portfolio includes three late-stage programs and the DuraSite and DuraSite2 drug delivery platforms that are capable of extending the duration of drug retention, thus resulting in lower dosing frequency, and potentially enhanced efficacy. </p><p>Based on this technology, InSite's late-stage pipeline comprises the recently filed New Drug Application (NDA) for <i>BromSite</i> (0.075% bromfenac) for the treatment of inflammation and prevention of pain associated with cataract surgery; a potential 2017 NDA filing for <i>DexaSite</i> (0.1% dexamethasone) for non-bacterial blepharitis, a common ocular condition for which there is no approved product currently available and ; <i>AzaSite Plus</i>, currently in Phase III clinical development for the treatment of eye infections. </p><p>Another product ISV-101 is in Phase I/II clinical development for dry-eye disease and inflammation, while InSite also has two commercialized products for bacterial eye infections - <i>AzaSite</i> (azithromycin ophthalmic solution) 1%, and <i>Besivance</i> (besifloxacin ophthalmic suspension) 0.6%, - marketed by respective partners. </p><p>For the six months ended June. 2015, InSite reported revenues of $3.8m, an EBITDA (earnings before interest, taxes, depreciation and amortization) loss of $ 6.4m and a net loss of $7.5m. </p><p>Analysts said that the InSite deal dovetails in neatly with Sun's recent ramp up efforts in the ophthalmology space and also underscores the firm's efforts to build its branded products franchise.</p><p>"Sun is probably looking at the branded ophthalmology space with InSite along the lines of its 2010 acquisition of Taro Pharmaceutical Industries for dermatological and topical products. Sun tends to prefer assets with potential near-term value creation," Nimish Mehta, founder of Research Delta Advisors, told <i>Scrip</i>.</p><p>Sun said that the InSite deal, coupled with the in-licensing of <i>Xelpros</i> (latanoprost BAK-free eye drops) in June, were steps towards establishing a branded ophthalmic business in the US. Sun had earlier also indicated that it had set up a <a href="http://www.scripintelligence.com/home/Amid-Suns-FY16-earnings-gloom-some-little-gems-359545" target="_new">sales and marketing group</a> focused on the ophthalmic business in the US. </p><p>Sun Pharma Advanced Research Company (SPARC), Sun's listed spin-off R&D arm, had earlier received a <a href="http://www.scripintelligence.com/policyregulation/Little-Spark-Yet-For-Xelpros-Amid-New-CRL-359768" target="_new">second complete response letter</a> (CRL) from the FDA to the NDA for Xelpros, though the company claimed that it concerns "minor" labelling modifications. SPARC has licensed out Xelpros to a subsidiary of Sun Pharma for the US market. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 218
+
+<p>Sun Pharmaceutical Industries has snapped up the US ophthalmology firm InSite Vision Inc as it sets its sights on a play in the US branded eye care space, edging out previous bidder and Canadian biotech QLT Inc.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Sun Trumps Canadian Biotech To Acquire US Eye Care Firm
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151009T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151009T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151009T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029778
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Sun Trumps Canadian Biotech To Acquire US Eye Care Firm 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360390
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+633e4010-02da-46cb-91eb-bec254a8309e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042449Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

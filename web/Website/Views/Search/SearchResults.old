@@ -1,0 +1,7 @@
+<div class="search__results">
+
+  @Html.Partial("../Search/SearchBar")
+
+  <div><a href="#">Test Link!</a><div>
+
+</div>

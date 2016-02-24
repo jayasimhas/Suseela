@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {B04B654C-F72F-4615-971F-29A0C11DA71E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/22/Stockwatch An Ultimate Answer To A Drug Pricing Question
+parent: {DB7AFD0C-FF3A-4A4A-B0E2-6A1121FFD09B}
+name: Stockwatch An Ultimate Answer To A Drug Pricing Question
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c5538815-2e85-423d-b9a6-da9b2fe93fc9
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Stockwatch: An Ultimate Answer To A Drug Pricing Question
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Stockwatch An Ultimate Answer To A Drug Pricing Question
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6891
+
+<p>Last week was one of those weeks that makes you grateful that the stock markets close for the weekend. While the preparations and arrival of Pope Francis brought much of New York's Fifth Avenue and its surrounds to a standstill as Thursday wore on, it was a shame that his presence in the city could not have had the same effect on the stock markets based there. </p><p>It is difficult for one individual to have a drastic effect on the prices of publicly quoted life science companies, but earlier in the week Senator Clinton was able to achieve just that, albeit with the wrong answers to a drug pricing question.</p><p>Leading Democratic party presidential candidate Hillary Clinton <a href="http://www.scripintelligence.com/home/Biotech-Walloped-On-Clinton-Drug-Price-Controls-Threat-360599" target="_new">used social media</a> to jump onto the growing media story highlighting the dramatic increase in price of Turing Pharmaceuticals AG's generic drug <i>Daraprim</i> (pyrimethamine) for the treatment of toxoplasmosis. Along with Senator Clinton's subsequently published drug pricing proposals came a share price sell-off the like of which we have not seen since the Gilead Sciences, Inc. <i>Sovaldi</i> (sofosbuvir) pricing backlash led by Express Scripts Holding Co. and senators, some of whom had <a href="http://www.scripintelligence.com/home/STOCKWATCH-Vertexs-almost-incomplete-disclosure-351607" target="_new">received political campaign contributions</a> from Express Scripts.</p><p><p>The knee-jerk response of Senator Clinton's proposals felt like her staff had spent the previous few hours bashing the square peg of a previously designed set of measures to address pharmaceutical drug price inflation into the round hole of the wrongs of Turing. They are two different issues. The high prices of branded drugs in the US are starting be addressed by competition in the HCV antiviral and PCSK9 drug classes, for example through private payer price negotiation and value-based pricing on the basis of outcome studies. These events are already having an effect as <a href="http://www.scripintelligence.com/home/Payers-expected-to-embrace-Novartis-heart-failure-drug-Entresto-359294" target="_new">Novartis AG's recent pricing initiative</a> on its heart drug <i>Entresto</i> (sacubitril/valsartan) has demonstrated.</p><p><p>The answer to the issue exemplified by Turing is quite different since <i>Daraprim</i> is a generic drug with few patients and restricted distribution. The control of drastic price increases for long-since patent-expired drugs is not beyond either the Democratic Senator for New York or the FDA to propose and enact, respectively, although it is not out of character for the Democrats to choose to address a business problem with a big stick. However, even non-financial incentives can often work better than sanctions, so it is almost excusable that a better solution to Turing did not occur to Senator Clinton's staff. There is apparently, only one manufacturer of United States pharmacopeial grade pyrimethamine and, since the number of patients treated is so low, the manufacturing campaigns probably run as frequently as the Pope visits New York. The FDA has a tried and trusted mechanism for incentivizing companies to manufacture and gain approval for drugs that would be prescribed to uneconomically small patient populations &ndash; the priority review voucher (PRV). Ironically, PRVs, which are tradable, have themselves shown price inflation that would make the CEO of Turing proud: from the $67.5m banked by <a href="http://www.scripintelligence.com/home/Golden-ticket-Regeneron-Sanofi-buy-priority-review-voucher-for-alirocumab-353119" target="_new">BioMarin Pharmaceuticals Inc. </a>, their price has risen to probably more than $350m with <a href="http://www.scripintelligence.com/policyregulation/AstraZeneca-Scores-Voucher-On-Wellstats-Xuriden-Approval-360306" target="_new">AstraZeneca Plc's recent purchase</a> of Wellstat Therapeutics Corp.'s PRV. </p><p><p>All the FDA needs to do to address the limited supply of pyrimethamine for the treatment of toxoplasmosis in the US is to grant accelerated approval, and offer one or two PRVs for those companies gaining approval for pyrimethamine 25mg oral tablets, probably on the basis of a small bioequivalence study. Most generics companies, especially those from Indian subcontinent, would jump at the chance to curry favour with the FDA and US law-makers &ndash; especially when there's the added bonus of the opportunity to sell a PRV.</p><p><p>The limited distribution of <i>Daraprim</i> has arisen because of the toxicity of pyrimethamine, the administration of which is associated with folate deficiency, hypersensitivity, anorexia and, much less frequently, some cancers. Here again, the FDA has a tried and tested method of enabling effective drug distribution throughout the US for drugs that have a low therapeutic index &ndash; the risk evaluation and mitigation strategies (REMS) program, which is designed to ensure that the benefits of certain drugs outweigh their risks. The FDA has the authority to require submission of a REMS program by a drug sponsor to ensure, for example, that pharmacists have the correct training and doctors are provided with a medication guide in order that pyrimethamine is safely dispensed. Thus the accelerated approval and PRV incentive would come with a REMS obligation &ndash; just the sort of commitment that might deter Turing.</p><p><p>Having kicked the hornets' nest of drug pricing, Turing Pharmaceuticals has been rewarded with exclusion from both the pharmaceutical and biotechnology industry associations, while its CEO is the subject of a US Attorney's criminal investigation. If the FDA answered this particular drug pricing question with a PRV/REMS program that need not be restricted to pyrimethamine, but all generic drugs that have seen price-gouging-type rises, no new laws would be required. Apart from Turing, its CEO, perhaps Valeant Pharmaceuticals International, Inc. and the administrative staff at the FDA (who will have more work to do), there are few losers in this scenario. Even Senator Clinton might again look forward to campaign contributions from pharmaceutical and biotechnology companies.</p><p><p>The Magna Biopharma Income fund holdings include Gilead Sciences.</p><p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 370
+
+<p>Last week was one of those weeks that makes you grateful that the stock markets close for the weekend. While the preparations and arrival of Pope Francis brought much of New York's Fifth Avenue and its surrounds to a standstill as Thursday wore on, it was a shame that his presence in the city could not have had the same effect on the stock markets based there. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Stockwatch An Ultimate Answer To A Drug Pricing Question
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150922T130001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150922T130001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150922T130001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029888
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Stockwatch: An Ultimate Answer To A Drug Pricing Question
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360610
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c5538815-2e85-423d-b9a6-da9b2fe93fc9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

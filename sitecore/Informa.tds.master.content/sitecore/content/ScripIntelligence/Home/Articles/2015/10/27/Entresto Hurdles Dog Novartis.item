@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {753BBF65-9E10-432C-A228-D5819404DBEB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/27/Entresto Hurdles Dog Novartis
+parent: {2D330967-8DB2-4077-92B3-CBD6ACF7FB17}
+name: Entresto Hurdles Dog Novartis
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b753c204-02e5-45a6-be30-5859c83aec3e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+ Entresto Hurdles Dog Novartis  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 29
+
+Entresto Hurdles Dog Novartis
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6861
+
+<p> Entresto's slow market start following its US approval prompted many questions as Novartis AG reported its quarterly results Oct. 27. The heart failure drug booked sales of $16m in third quarter following FDA approval on July 7, 2015, and the company acknowledged that its current lack of reimbursement status for Medicare Part D patients &ndash; which make up a large part of its target population &ndash; was holding it back. By way of contrast, sales for psoriasis drug Cosentyx (secukinumab), which was approved in the US in January, were $88m in the third quarter. </p> <p> Despite the company's belief in the product's value, executives on a conference call with analysts faced scrutiny over current uncertainties, both about Entresto's reimbursement prospects and about likely guidelines for its use expected to be issued in the US in 2016. Nevertheless, David Epstein, head of Novartis Pharmaceuticals, said that he expected reimbursement blocks in Medicare, as well as those currently affecting the commercial payer market, to eventually be removed, enabling the product to meet the company's previous peak sales guidance. Upon its approval, the company said it could achieve peak sales &quot;in excess of $5bn&quot; once approved around the world, for heart failure patients with reduced ejection fraction (who represent around half of the 6 million heart failure patients in the US). </p> <p> Until Oct. 1, no Medicare formulary was open to patients. The company says it now expects a few more to open by early next year. This is important, since 65% of target patients are Medicare, and only 25% commercial. At present, 72% of current business for Entresto comes from the commercial payer market. </p> <p> Another outstanding barrier to the product's growth that needs to be resolved is the prevalent attitude of cardiologists, Epstein admitted. Whereas specialist physicians in other therapeutic areas &ndash; such as oncology or rheumatology &ndash; typically deploy significant time, effort and resources in fighting for their patients to receive the novel drug of choice, cardiologists have for many years relied on older, generic drugs for heart failure. Epstein said Novartis has work to do in changing that attitude to drive uptake of Entresto. The company also plans to work on raising awareness of Entresto among patients and caregivers, since &quot;when a patient or caregiver actually asked the doctor for the drug, they were much more likely to get it.&quot; </p> <p> A niggling concern also attends the awaited guidelines from the FDA for Entresto's use. Novartis argues the drug's efficacy mean it should be used first line before the older angiotensin-converting enzyme (ACE) inhibitors and angiotensin receptor blockers (ARBs), but there is still a possibility that physicians will be guided to use Entresto alongside these products. Entresto combines Novartis's now off-patent Diovan (valsartan, an ARB) and the first-in-class angiotensin receptor neprilysin inhibitor sacubitril. &quot;I think the data is compelling and I would hope that those guidelines would reflect the compelling data,&quot; said Epstein, when asked what he expected the guidelines to say and how critical this would be. &quot;But we've seen plenty of times in the past when initial guidelines come out, and they're revised over time. &quot; </p> <p> Another risk, that Entresto might be excluded from government plans because of Novartis's alleged violation of the five-year Corporate Integrity Agreement (CIA) signed with the US Department of Health and Human Services' Office of Inspector General in September 2010, was minimized by Epstein. &quot;We don't expect anything that would be a problem for Entresto per se.&quot; He added that whether the company ends up with another CIA is still subject to discussions, but &quot;having said that, I would expect should there be anything, it will be focused on the subject of this case which was specialty pharmacies and we would not expect that to have any significant impact on how we do business.&quot; </p> <p> The company has booked a $390m third-quarter provision for a still-to-be finalized settlement of the investigation into alleged improper deals with specialty pharmacies to increase sales of its Myfortic, Exjade, Tobi, Tasigna and Gleevec brands. It neither accepts nor denies liability for any malpractice, which is alleged to have taken place while Novartis was bound by the CIA imposed for off-label marketing of epilepsy drug Trileptal. In 2010 it paid $423m in fines and to settle allegations it had paid kickbacks to healthcare providers to induce them to prescribe a number of drugs including Diovan. </p> <p> The current settlement would avert a trial planned for early November; final terms, which could potentially include a new CIA, have yet to be agreed. </p> <p> Encouragingly, meanwhile, a recent <a target="_new" href="http://ctaf.org/sites/default/files/u148/CHF_Draft_Report_091115.pdf">draft report</a> from the US non-profit ICER (Institute for Clinical and Economic Review), concluded that while Entresto's list price of $4,560 per year was on the high side, with a 17% discount from the wholesale acquisition cost it would represent a cost-effective therapy. &quot;Having such third-party analysis is helpful for discussions with payers,&quot; commented Epstein. &quot;We believe that we have priced this product correctly.&quot; He did however suggest that ICER's prediction that Entresto would achieve 75% market penetration within five years was &quot;on the bullish side.&quot; </p> <p> Entresto awaits approval in Europe and other markets (it was approved in Switzerland in September and Canada in October). In September the European Medicines Agency recommended it be granted marketing authorization, paving the way for approval by the end of the year. </p> <p> Novartis reported net sales of $12.3bn in the third quarter, down from $13.0bn a year earlier. The strong US dollar knocked 12 percentage points off the underlying growth, the company said, and an even more painful 17 percentage points off core operating income (down 3% to $3.5bn). </p> <p> Pharma sales fell 4% in the quarter (up 7% at constant currencies) to $7.6bn, but were helped by the oncology assets acquired from GSK in March 2015, which added $0.5bn to sales in the third quarter. </p> <p> The Sandoz generics business saw sales slip by 3% to $2.3bn, but revenues were up 9% when currency effects were stripped out, helped by recent launches Glatopa (glatiramer acetate injection, the generic version of Teva's multiple sclerosis drug Copaxone) and the US's first biosimilar, Zarxio (filgrastim-sndz, a version of Amgen's Neupogen). </p> <p> A slowdown at the company's eye care business Alcon has prompted plans to thoroughly analyze that unit and implement a growth acceleration plan. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 578
+
+<p> Entresto's slow market start following its US approval prompted many questions as Novartis AG reported its quarterly results Oct. 27. The heart failure drug booked sales of $16m in third quarter following FDA approval on July 7, 2015, and the company acknowledged that its current lack of reimbursement status for Medicare Part D patients &ndash; which make up a large part of its target population &ndash; was holding it back. By way of contrast, sales for psoriasis drug Cosentyx (secukinumab), which was approved in the US in January, were $88m in the third quarter. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 29
+
+Entresto Hurdles Dog Novartis
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151027T233442
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151027T233442
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151027T233442
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030171
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+ Entresto Hurdles Dog Novartis  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361169
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b753c204-02e5-45a6-be30-5859c83aec3e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042514Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {584EF7F4-7FD1-4055-897E-312CDA76EDBC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/24/Broad regulator support encourages WHO to pursue biological qualifier plan
+parent: {AA6F50D5-126C-48B5-BD02-B1AAD79EE996}
+name: Broad regulator support encourages WHO to pursue biological qualifier plan
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b04d229c-c4f5-42f6-9cb0-0ec9b1fb9dba
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 76
+
+Broad regulator support encourages WHO to pursue 'biological qualifier' plan
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 74
+
+Broad regulator support encourages WHO to pursue biological qualifier plan
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10760
+
+<p> The World Health Organization is pressing on with its proposal for a &quot;biological qualifier&quot; (BQ) after its group of experts decided the plan had garnered sufficient support from stakeholders including drug regulatory authorities and industry. </p><p> Developed by the WHO to address inconsistencies in the way that national regulatory authorities have been handling the naming of biosimilars, the BQ proposal is something of a compromise solution that most interested parties now seem to be fairly happy with. </p><p> Some agencies, as well as the originator industry, had originally called for a distinct international non-proprietary name (INN) for biosimilars to allow the substance to be properly identified, while some other regulatory bodies, and the biosimilar industry, insisted they should have the same INN as the reference drug. Under the BQ system, all biological substances would be assigned a four-letter code that would follow, but not be part of, the INN. </p><p> The fact that the BQ would be voluntary, allowing countries and regions to use it only if they wanted, seems to have gone a long way towards securing broad backing for the scheme, which has also recently been amended and clarified in a number of respects. </p><p> According to Derek Calam, chair of the WHO's INN Expert Group, regulators had initially been sceptical about the BQ proposal. The comments on the public consultation showed three main responses: positive, neutral and negative. </p><p> Of those who commented &ndash; mainly industry, governments, regulators and clinical organizations &ndash; &quot;it was only the regulators who were predominantly against the proposal, rather than neutral or for it&quot;, Professor Calam told a conference in London last week organized by the European Biosimilars Group, part of the European Generic and Biosimilar medicines Association (EGA). </p><p> &quot;Interestingly clinical groups were strongly in favour, industry, somewhat to our surprise, was in favour, and patients were too,&quot; Professor Calam said, stressing that he was giving his own personal view rather than that of the WHO or the Expert Group. </p><p> As a result of discussions at a closed regulators' meeting in March, it became clear that one of the reasons there were so many negative comments from regulators and health ministries was that &quot;they didn't fully understand what was going on, and that meeting clarified some of those concerns.&quot; </p><p> In the end, some two thirds of respondents expressed some kind of support, and following a meeting of the Expert Group a couple of weeks ago, there now seems to be enough backing from drug regulatory agencies to make it worthwhile pursuing, Professor Calam said. &quot;Some drug regulators had thought the scheme was deliberately designed to keep out biosimilars &ndash; it wasn&rsquo;t, and some of them at least have been persuaded that what they read into the document wasn&rsquo;t correct.&quot; </p><h2> Changes and clarifications </h2><p> An updated draft of the BQ proposal is now being prepared and is expected to be ready for a further meeting on 16 June, which will be an open forum for all stakeholders, Professor Calam said. </p><p> One aspect of the scheme that the biosimilar industry didn't like &ndash; linking the BQ to the substance's site of manufacture &ndash; has been changed. &quot;Now the thinking is that the first company to get approval for the substance will, perhaps as part of the regulatory process, apply for a BQ and it will be assigned to them,&quot; the WHO official observed. </p><p> The draft has also been amended to make it clear that the BQ is &quot;not designed specifically to aid prescribing or pharmacovigilance&quot;. It may have a role in these areas, but &quot;in Europe it probably wouldn't have a role, and in other parts of the world it may not have, but it will be there&quot;. Also, references to biosimilars in the proposal have been largely withdrawn (given that the scheme would apply to all biologicals). </p><p> One industry member of the audience queried what the purpose of the BQ was if not to help in prescribing and pharmacovigilance. &quot;I think probably the simple answer is to go back to the people who first suggested that we develop it,&quot; Professor Calam replied. On a more serious note, he said that some jurisdictions and agencies saw this as an important role for the BQ, but that others did not. &quot;We know for example that in Europe it almost certainly wouldn't have a role in these areas, so the document says that it isn't essential for these purposes, it may not be needed, but you can use it for these purposes. The WHO only puts forward recommendations.&quot; </p><p> A few aspects of the proposal remain to be clarified. One of these is the form that the code will take. There were originally six alternative proposals, &quot;but in the regulators' meeting, with varying degrees of reluctance, it was agreed that the four-letter code was the best way forward&quot;, Professor Calam noted. He said the idea of having a fifth letter to &quot;act as a check on the correctness of the four letter code&quot; had been suggested. &quot;It may be important to check whether this random set of digits is correct in software of various sorts,&quot; he commented. </p><h2> Lifecycle issues </h2><p> Another issue is exactly what information related to the BQ code should go into the WHO's secure database and how best to keep it up to date in terms of developments like changes of MA holder, GMP decisions, process changes and so on. A key question, Professor Calam said, was how to deal with changes in the substance's life cycle. In the case of pure proteins like somatropin, for example, the BQ assigned to the licence holder would stay the same for the life of the product. But in the case of a glycoprotein, things might not be that simple. </p><p> With glycoproteins, &quot;there is a different problem because you have the Greek letter scheme&quot;, Professor Calam observed (epoetin alfa, for example). &quot;The Greek letter is given where there are significant differences in glycosylation compared with the substance to which the original INN was issued. If a situation arose where a manufacturer produces a glycoprotein and gets a new Greek letter, they would have to have a new BQ. This is being clarified at some length in the new draft.&quot; </p><p> He noted that the use of Greek letters goes back more than 20 years, but that the BQ scheme could eventually make them redundant. &quot;It is clear that in future when the BQ scheme comes in, you may get to the stage where the need for the Greek letter disappears &ndash; it wouldn&rsquo;t be removed from existing names but the Expert Group would stop assigning new Greek letters. So the new draft says that when the BQ has received significant recognition globally, the Expert Group would probably review the continued use of Greek letters, and I think a number of us think they will become unnecessary.&quot; </p><p> So now the BQ framework is &quot;largely complete&quot;, Professor Calam said. There may be many details to be worked out, but &quot;definitely the Expert Group will proceed with development of the scheme and we will see where we get to.&quot; </p><h2> Development of the BQ </h2><p> At the conference, Professor Calam gave an overview of the background to the development of the BQ scheme. He started by noting that a total of more than 10,000 applications for INNs have been received to date, and that biological medicines accounted for around 40% of all applications over the past two or three years. &quot;There is no question,&quot; he said, &quot;that the role of biologicals in medicines globally will increase over the next years, and that is the sort of factor that is being taken into account in the biological qualifier scheme.&quot; </p><p> The problem with biosimilars at the global level, he said, was that the same substance might be treated as a biosimilar in one country but not in another. Moreover, some national authorities were of the opinion that the INN is not sufficient to identify the substance in a biosimilar, and &quot;they all started doing different things. Then a few years ago they realized that this wasn't the way to go so they asked the WHO to set up a system they could use if they wanted to, to give some additional identification scheme for biosimilars.&quot; </p><p> The INN group then held a consultation with the WHO Secretariat and some regulatory bodies to discuss the way forward, and in autumn 2013 the group agreed to take responsibility for the project. </p><p> Central to the proposal were some key conditions: the INN itself should not be modified (ie the scheme should be independent of the INN system but overseen by the WHO Secretariat and the INN Expert Group), the scheme should apply to all biologicals, whether branded or biosimilar, and that names should all be logged on a secure database at the WHO. </p><p> The first draft was produced in August 2014. It outlined a voluntary scheme that regulatory authorities could make use of, actively take part in or not take part at all. It also proposed a four-letter BQ, which would give a total of 160,000 permutations rather than the 8,000 that would have been possible with an alternative proposal for a three-letter code. </p><p> The draft was <a href="http://www.scripintelligence.com/policyregulation/Biosimilars-take-the-stage-as-regulatory-debate-goes-global-353983" target="_new">presented at last year's ICDRA conference</a> in Brazil after which it was circulated for comment. The plan proved a draw for stakeholders, and by October &quot;the group had so many comments that they decided to set up a small working group to review them,&quot; Professor Calam said. &quot;By the end of December, when the comment period in theory ceased, in practice we were still receiving comments, and by the early months of 2015 there were more than 100 sets of comments totalling about 350 pages, so the small group had a lot of work to do.&quot; </p><p> In March this year, a revised proposal was produced in light of the comments received, and was circulated to the drug regulators, who met on 30 March in a closed forum in Geneva. &quot;A large number of people took part,&quot; Professor Calam said. </p><p> What became clear from this meeting was that the revised draft was still unclear in parts, and so it was agreed to make further changes to explain and clarify certain points. Two weeks ago the Expert Group met again to look at the report of the 30 March meeting, and in light of this report authorized the production of another draft, which is the one that is now being prepared for the 16 June meeting. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 261
+
+<p> The World Health Organization is pressing on with its proposal for a &quot;biological qualifier&quot; (BQ) after its group of experts decided the plan had garnered sufficient support from stakeholders including drug regulatory authorities and industry. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 74
+
+Broad regulator support encourages WHO to pursue biological qualifier plan
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150424T151329
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150424T151329
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150424T151329
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028592
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 76
+
+Broad regulator support encourages WHO to pursue 'biological qualifier' plan
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358052
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b04d229c-c4f5-42f6-9cb0-0ec9b1fb9dba
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -13,5 +13,8 @@ namespace Informa.Library.Search.Results
     {
         [IndexField(IArticleConstants.Article_NumberFieldName)]
         string ArticleNumber { get; set; }
+
+        [IndexField("articleintegernumber_t1")]
+        long ArticleIntegerNumber { get; set; }
     }
 }

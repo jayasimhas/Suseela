@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {DD141903-2401-4C64-A980-26043FCCF396}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/09/Shield plans pound110m London IPO to fund Ferinject challenger
+parent: {CBC10FEF-E86D-4F05-BC87-4AE690AA1EBC}
+name: Shield plans pound110m London IPO to fund Ferinject challenger
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: eb76f746-4670-4f7a-915f-55cf874afc3e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 64
+
+Shield plans &pound;110m London IPO to fund Ferinject challenger
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 62
+
+Shield plans pound110m London IPO to fund Ferinject challenger
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3983
+
+<p>Shield Therapeutics, which is awaiting European marketing review for its novel oral iron replacement drug <i>Feraccru</i> (ST10, ferric maltol), plans to raise up to &pound;110m an initial public offering (IPO) on the London Stock Exchange. The money will fund the company "through to self-sufficiency," CEO Carl Strerrit told Scrip.</p><p>Feraccru is being evaluated by the European Medicines Agency for the treatment for iron deficiency anemia (IDA) in patients with inflammatory bowel disease (IBD), having been developed as an alternative for those patients whose only current option is intravenous iron therapy. Shield expects to receive European marketing approval for Feraccru in the first half of 2016.</p><p>Shield has a second late-stage product called PT20, a novel phosphate binder that is being developed for the treatment for hyperphosphatemia related to chronic kidney disease (CKD). Phase III trials are slated to begin next year. Phase IIb data are due to be presented at the American Society of Nephrology meeting in San Diego in November this year.</p><p>The plan is for Feraccru and PT20 to be sold directly by the company using its own central infrastructure and field-based salespeople in the major markets of the EU and in the US. </p><p>"This [IPO] was part of our original plan when we set the company in 2008/2009," explained Sterrit. "We were hoping that the markets would become receptive to an IPO, but it wasn't a possibility at that time. Now it is. We're a very different type of pharma proposition &ndash; two late stage assets about to be generating revenue &ndash; and hopefully the markets will appreciate that."</p><p>Listing in London was the "natural decision," added Sterrit. "Being a British company, with all of our activities being based in the UK, it is a natural home for us. And being a company that is much more focused on commercialization rather than research, with the development phase in the middle, the London market hopefully will be much more receptive to that type of low-risk investment opportunity."</p><p>With the potential cash influx, Shield has a number of priorities focused around "the commercialization of Feraccru, the broadening of its geographic approvals and its indication approvals, and taking PT20 through Phase III and to the point where it is also ready for commercialization. The purpose was to raise enough money to get us through to the point of self-sufficiency."</p><p>Part of the IPO proceeds will be used to fund a study that Shield needs to conduct in the US if it wants to successfully file for approval there. "We have a protocol drafted for a study in anemia in CKD patients which we'll crack on with as soon as we have the funds in the bank."</p><p>The European study was in patients with IBD and anemia "so we'll be able to use that data to go for a label in the US that covers that both CKD and IBD patients and then we'll use the CKD data that we generate in the US study to come back into Europe and broaden the European label."</p><p>There are a whole range of conditions where anemia is an important component, according to Sterrit: "women's health, anemia in the elderly, patients with congestive heart failure &#8230; As the understanding of the role of iron in these primary diseases becomes more apparent, so will the opportunities for Feraccru."</p><p>Vifor Pharma, which markets the leading IV iron replacement therapy <i>Ferinject</i> (ferric carboxymaltose), is "very aggressively trying to broaden the knowledge base of anemia across a whole range of disease rather than just traditional dialysis patients. They're blazing a trail for us."</p><p>Shield's plan following the European filing at the start of the year had been to secure a CRO and begin the US Phase III trial, but it then instead decided to prioritize another trial, "a Phase IIIb trial that will help support its launch in Europe," explained Sterrit. "It's a head-to-head comparison of Feraccru and Ferinject."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 340
+
+<p>Shield Therapeutics, which is awaiting European marketing review for its novel oral iron replacement drug <i>Feraccru</i> (ST10, ferric maltol), plans to raise up to &pound;110m an initial public offering (IPO) on the London Stock Exchange. The money will fund the company "through to self-sufficiency," CEO Carl Strerrit told Scrip.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 62
+
+Shield plans pound110m London IPO to fund Ferinject challenger
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150109T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150109T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150109T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029700
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 64
+
+Shield plans &pound;110m London IPO to fund Ferinject challenger
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360198
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eb76f746-4670-4f7a-915f-55cf874afc3e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042446Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {205AB6CA-3B6B-4D23-98F5-0F8BC76E2F85}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/01/STOCKWATCH The rain at ASCO falls mainly on the stock market
+parent: {430A16F1-19D6-4034-BEB3-EFB94183F1C6}
+name: STOCKWATCH The rain at ASCO falls mainly on the stock market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0d7155b3-e457-40db-85f4-ab3cf8c9339d
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+STOCKWATCH: The rain at ASCO falls mainly on the stock market
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+STOCKWATCH The rain at ASCO falls mainly on the stock market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6440
+
+<p>As the first presentations at this year's American Society of Clinical Oncology (ASCO) meeting in Chicago started, the stock market was still open. The stock price inflation that started many months ago, driven by anticipation of the clinical results, quickly started to dissipate.</p><p><p>The post-conference sell-off that is associated not just with ASCO, but also with the American Association of Cancer Research conference held earlier in the year, is a well-known phenomenon, but this time the stock market was already having a down day so the 6.6% drop in the share price of Bristol Myers Squibb (BMS) looked, at first glance, to have been a little harsh.</p><p><p>The BMS presentations on its anti-PD-L1 monoclonal antibody Opdivo (nivolumab) in non-squamous non-small cell lung cancer (NSCLC) were impressive in patients whose tumors were high-level expressers of PD-L1, but less impressive in a low PD-L1-expressing patient population. This may sound obvious, but investors had probably been toying with earlier reports of activity by anti-PD1/PD-L1 monoclonal antibodies in patients regardless of the PD-L1 expression status. While the die many now be set for the 2015 post-ASCO sell-off, the logical reasons for the effect this year seem to be a pincer movement of forces that will include cumulative drug costs, the associated reimbursement push-back, and diagnostic-aided reimbursement that does not currently exist.</p><p><p>One of the reasons for the weakness in the BMS share price was the thinking that if Opdivo doesn't treat all NSCLC patients, then perhaps those drugs coming along behind from competitors Merck, Roche or Pfizer may do. There will be many more moving parts to therapeutic oncology in the coming years, not just which drug from which manufacturer to use on which patient, but what durability of response can be expected and, most importantly, what drugs should be combined together. For investors, a portfolio approach is the safest strategy especially since PD1-L1 expression in a tumour is heterogeneous and in most patients this implies drug combinations. But if that portfolio approach applies to different therapies from different manufacturers with an anti-PD1/PD-L1 monoclonal from one, another checkpoint inhibitor like an anti-CTLA-4 inhibitor and probably a third small molecule against one of the myriad of more recently-discovered targets, the cost of treatment can only go up. We recently saw the stock market fall-out when payers complained about the price of an effective but expensive treatment that cures patients of <a href="http://www.scripintelligence.com/home/Express-Scripts-on-deal-for-AbbVies-Viekira-more-to-come-beyond-hepatitis-C-355807" target="_new">hepatitis C infection</a>. That push-back could be multiplied if the effective treatment of cancer requires two or three new, expensive drugs to be administered for periods of time significantly longer that the 12 weeks it takes Gilead's Sovaldi-based regimens (sofosbuvir) to cure most patients of HCV infection.</p><p><p>Fortunately, the solution is at hand unless you are AstraZeneca, whose CEO at this year's JP Morgan conference announced his intention to have the <a href="http://www.scripintelligence.com/home/Stockwatch-Drug-pricing-is-popular-in-your-network-356215" target="_new">whole suite of possible oncology drugs</a> available from AstraZeneca, thereby putting AstraZeneca on a collision course with payers. The answer, which was already hinted at by the early ASCO presentations from Merck and Roche, is in molecular diagnostics. However, it has to be noted that for patients to be treated by a new drug to be restricted to only those who benefit, used to be and may still be anathema to the senior management of pharmaceutical companies. But assuming they, like the CEO of AstraZeneca when his promises of $45bn in new drug sales do not come to pass in 2023, will be long gone, payers, patients and physicians of the future will probably embrace the practice of payment for molecular diagnostic-guided cancer therapy. Unfortunately, the recent first-quarter results of diagnostic companies like Myriad Genetics and Genomic Health, who would aid this revolution, were a disaster and there are good reasons to believe that widespread molecular diagnostic-guided cancer therapy may be a ways off yet. While it is in the interests of diagnostic companies to have a molecular diagnostic test that predicts cancer patients' response to a group of cancer treatments, only pharmaceutical companies can afford the large clinical trials that can validate such a test. If a pharmaceutical company pays for the test development, it then wants the test to be virtually free &ndash; but a virtually free molecular diagnostic test does not a valid diagnostic company business model make. Stalemate. However, there was one glimmer of hope, with Merck making a valiant start with DNA mismatch repair (MMR) testing guiding Keytruda (pembrolizumab) therapy in solid tumours at ASCO, although the DNA MMR test is currently immuno-histological.</p><p><p>The post-ASCO effect is a well-known seasonal retrenchment in the biotech indices. This year, there may actually be an identifiable cause for this effect, as the success of powerful and pricey oncology drugs are previewed requiring combinations that should be directed by molecular diagnostic-directed treatment guidelines. Those guidelines, however, currently don't exist and no one has anticipated paying for the diagnostics. When this realization starts early this week, expect a collective intake of breath before the sell button is reached for. To paraphrase the Joker in the first Batman film, if you think that Sovaldi was a freak terrorizing drug payers, wait until you get a look at the price of the polypharmacy of immuno-oncology.</p><p><p>The Magna Biopharma Income fund holdings include BMS, Merck, Roche and Pfizer.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 288
+
+<p>As the first presentations at this year's American Society of Clinical Oncology (ASCO) meeting in Chicago started, the stock market was still open. The stock price inflation that started many months ago, driven by anticipation of the clinical results, quickly started to dissipate.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+STOCKWATCH The rain at ASCO falls mainly on the stock market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150601T140003
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150601T140003
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150601T140003
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028880
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+STOCKWATCH: The rain at ASCO falls mainly on the stock market
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358595
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042355Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0d7155b3-e457-40db-85f4-ab3cf8c9339d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042355Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

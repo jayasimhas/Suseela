@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A8320FF6-32D6-4A44-B774-A1659A600E79}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/26/US Patent Board To Review Mylans Copaxone Challenge
+parent: {DD56DE4A-39AC-48A9-BB39-DDC56CF0FE6D}
+name: US Patent Board To Review Mylans Copaxone Challenge
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7b5422fe-838b-48c0-a845-b2786ad3b31e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+US Patent Board To Review Mylan's Copaxone Challenge
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+US Patent Board To Review Mylans Copaxone Challenge
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3707
+
+<p>The U.S. Patent and Trademark Office's Patent Trial and Appeal Board (PTAB) has instituted <i>inter partes</i> review (IPR) proceedings for petitions filed by Mylan against two patents held by Teva on its moneymaker multiple sclerosis drug Copaxone (glatiramer acetate injection).</p><p>The PTAB said there is a "reasonable likelihood" Mylan would prevail in its challenges against Teva's patents, known as '250 and '413, which cover the Israeli firm's 40mg/mL three-times per week dosage of Copaxone, which are not set to expire until 2030.</p><p>Mylan said it also has filed another IPR petition for a third of Copaxone patent, known as '302, on which the PTAB is expected to soon decide whether it will institute another trial. </p><p>The IPR reviews, created in 2011 under the <i>American Invents Act</i>, are trial proceedings intended to be a faster and more affordable way for third parties to challenge patents than going through the American court system.</p><p>The number of IPR petitions involving biopharmaceutical patents has <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Patent-Challenge-Landscape-Shifting-Inter-Partes-Reviews-Climb-360075" target="_new">more than doubled</a> in the past year to 9% from the 4% the two previous years.</p><p>A factor in that increase has been the petitions filed by hedge fund manager Kyle Bass, who has challenged patents held by several drug makers, including Biogen, Bristol-Myers Squibb, Celgene, Horizon, Jazz Pharmaceuticals, Pozen, Shire and Pharmacyclics, now part of AbbVie.</p><p>Bass, however, <a href="http://www.scripintelligence.com/home/Bass-Denied-Trials-In-Acorda-Patent-Challenges-Shares-Soar-360093" target="_new">came out the loser on Aug. 24</a> when the PTAB declined to institute hearings on his two petitions challenging patents held by Acorda on its multiple sclerosis drug Ampyra (dalfampridine).</p><p>The PTAB's decisions on the Ampyra challenges won praise from the Biotechnology Industry Organization (BIO), whose president and CEO, Jim Greenwood, has accused Bass of abusing the IPR process as part of a "cynical short-selling strategy against innovative biotech companies that are delivering transformative therapies to patients in need."</p><p>"The PTO should send a clear signal that it won&rsquo;t tolerate the abuse of its processes for such improper purposes, and Congress should act swiftly to reform the system so that it doesn&rsquo;t continue to create incentives for misuse by financial speculators and extortionists," Greenwood said in an Aug. 25 statement.</p><p>Mylan CEO Heather Bresch insisted Teva's patents on the 40mg/mL three-times per week dosage of Copaxone are invalid.</p><p>"We believe our generic version of Copaxone 40mg/mL represents an exciting first-to-file opportunity for Mylan," she said.</p><p>In August 2014, the FDA accepted Mylan's abbreviated new drug application (ANDA) filing for a generic version of the three-times-per-week 40 mg/mL dosage of Copaxone.</p><p>Mylan said it believes it is one of the first companies to have filed a substantially complete ANDA containing a Paragraph IV certification for the product and expected to be eligible for 180 days of marketing exclusivity in the US on final FDA approval.</p><p>Teva has been switching Copaxone patients from the 20mg/mL dose, whose last remaining patent was <a href="http://www.scripintelligence.com/policyregulation/Is-Tevas-battle-against-generic-Copaxone-done-359055" target="_new">invalidated in June</a> by the US Court of Appeals for the Federal Circuit, to the 40mg/mL dose.</p><p>Teva reported sales for Copaxone 40mg/mL of about $2.6bn for the 12 months ending June 30.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 287
+
+<p>The U.S. Patent and Trademark Office's Patent Trial and Appeal Board (PTAB) has instituted <i>inter partes</i> review (IPR) proceedings for petitions filed by Mylan against two patents held by Teva on its moneymaker multiple sclerosis drug Copaxone (glatiramer acetate injection).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+US Patent Board To Review Mylans Copaxone Challenge
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150826T054504
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150826T054504
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150826T054504
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029599
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+US Patent Board To Review Mylan's Copaxone Challenge
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360023
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7b5422fe-838b-48c0-a845-b2786ad3b31e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {2DA21B6C-0BC5-45B4-8A07-6D8E96B117F9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/20/Australia moves ahead with biosimilar substitution
+parent: {9272B77E-1398-4EF1-A77A-17C397C8C6D1}
+name: Australia moves ahead with biosimilar substitution
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6da722ca-0716-498a-bc3d-415923b1cf77
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{DD548E28-6D47-4403-832E-A9D982190B89}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+Australia moves ahead with biosimilar substitution
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Australia moves ahead with biosimilar substitution
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2544
+
+<p>The Australian government is pressing ahead with plans to allow pharmacist substitution of biosimilars after the Pharmaceutical Benefits Advisory Committee (PBAC) outlined the criteria that would have to be met if substitution was to take place.</p><p>The PBAC, which recommends medicines for listing on the Pharmaceutical Benefits Scheme (PBS), said at its meeting in March that it was considering whether biosimilars should be "a"-flagged &ndash; ie, deemed equivalent to the reference drug and suitable for substitution at the pharmacy level. This could be done on a case-by-case basis where the available data supported substitution, it said. </p><p>It has now published the criteria that could be used to select products for "a"-flagging biosimilars, as follows: </p><ul><li>Absence of data to suggest significant differences in clinical effectiveness or safety compared with the originator product; </li><li>Absence of identified populations where the risks of using the biosimilar are disproportionately high;</li><li>Availability of data to support switching between the originator product and the biosimilar;</li><li>Availability of data for treatment-na&iuml;ve patients initiating on the biosimilar product; </li><li>Whether the Therapeutic Goods Administration has deemed a product to be biosimilar with the originator product.</li></ul><p>The PBAC added that where a biosimilar could not be "a"-flagged at the time of PBS listing, data should be collected to support such a classification at a later time.</p><p>Biosimilar substitution is also included as a potential cost-saving measure in the PBS Access and Sustainability Package to which the generics industry body the GMiA has just signed up. </p><p>In opting for biosimilar substitution, Australia is sticking its neck out somewhat. To date, "a"-flagging has only applied to chemical generics, and it's quite a leap to apply the same equivalence rules to products that have been assessed as "similar". </p><p>Moreover, in the EU, the acknowledged pioneer in the biosimilars field, individual member states have tended to shy away from substitution &ndash; a position currently supported by both the originator and biosimilar companies. The preferred option seems to be biosimilar switching with the oversight of the prescriber, a path being taken by <a href="http://www.scripintelligence.com/policyregulation/Boost-for-biosimilar-switching-as-Finns-add-their-backing-358581" target="_new">several European countries</a> including the Netherlands, Finland and Portugal.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 252
+
+<p>The Australian government is pressing ahead with plans to allow pharmacist substitution of biosimilars after the Pharmaceutical Benefits Advisory Committee (PBAC) outlined the criteria that would have to be met if substitution was to take place.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Australia moves ahead with biosimilar substitution
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150520T224837
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150520T224837
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150520T224837
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028835
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+Australia moves ahead with biosimilar substitution
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358524
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042352Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6da722ca-0716-498a-bc3d-415923b1cf77
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042352Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

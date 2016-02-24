@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {20A0491C-B7D7-4797-9BA9-0D762FA91733}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/21/Stunned Vitae undeterred by BI backout
+parent: {00FAA250-48F1-44B2-927B-2B3D476B547B}
+name: Stunned Vitae undeterred by BI backout
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9f919814-5006-4a5b-8f9e-d6b2621b9c65
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 38
+
+Stunned Vitae undeterred by BI backout
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Stunned Vitae undeterred by BI backout
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4593
+
+<p><p>Vitae Pharmaceuticals took another hit on 27 July, in what its CEO termed some "unforeseen news." The surprise announcement was that its big pharma partner, Boehringer Ingelheim, has pulled out of another partnership with the company. Yet, the biotech's CEO wants to assure the market that there's nothing to worry about. </p><p>The Pennsylvania biotech announced that BI has opted to discontinue the development of BI-1147560/VTP-36951 for the treatment of Alzheimer's disease. The orally available beta secretase (BACE) inhibitor that the pair partnered on in 2009. The drug has completed all preclinical and IND-enabling studies, the company confirmed, and is ready for Phase I. </p><p>Vitae had told analysts earlier this year that they expected BI to take the drug into clinical studies before the end of the year. </p><p>"This was a big surprise for us and we are working on determining next steps," said Vitae CEO Jeff Hatfield in an interview. Mr Hatfield told <i>Scrip </i>that BI informed the company of the decision last week after conducting a strategic portfolio review; BI currently has nothing else in development for Alzheimer's disease. </p><p>So far the compound has performed to expectations in preclinical studies and Vitae was quick to note that there weren't any safety or efficacy issues driving the decision. BI is expected to return everything associated with the program by mid-October. </p><p>Mr Hatfield said it was unlikely that Vitae would take on the risk of a large Phase III Alzheimer's disease study on its own. The executive noted that there are really only three logical options at the moment: look for a partner for the compound immediately, pay for a Phase I trial and generate some first-in-human data before looking for a partner, or abandon the compound altogether. </p><p>Wedbush analyst Liana Moussatos agrees, stating in a 27 July note to clients that the Phase I trial would cost about $1m to $5m and would be "manageable" with Vitae's $88m in cash on hand. "Therefore, since there is apparently no new issues with VTP-36951 and preclinically was found to be potent at lowering amyloid-&#946;, we believe Vitae is likely to conduct a Phase 1 trial, given that positive data could attract another partner and a lucrative deal," Dr Moussatos wrote. </p><p>BIs decision to cut the program comes just days after competitors Biogen and Eli Lilly & Co both announced somewhat mixed results for their respective Alzheimer's disease drugs. While both company's proclaimed the data to be a success, analysts and investors were not so pleased with the results &ndash; although both companies are pushing ahead. </p><p>This isn't the first setback for Vitae recently &ndash; <a href="http://#http://www.scripintelligence.com/home/Forget-diabetes-Vitae-looks-to-MS-drug-359170" target="_new">BI announced disappointing</a> topline from the pair's type 2 diabetes drug in late-June. The Phase II study showed that BI187004/VTP-34072, a potential first-in-class 11&#946;-hydroxysteroid dehydrogenase type 1 (11&#946; HSD1) inhibitor, plus standard-of-care metformin, did not reach its predefined endpoints in the 28-day study. The program hasn't been officially discontinued, but is unlikely to move forward. </p><p>Yet, Mr Hatfield said in an interview that the company is on track. He believes the most promise for the company is its wholly-owned asset, VTP-43742. The drug is in very early stages, but preclinical studies and mouse models have shown that it could be revolutionary in autoimmune diseases like psoriasis, multiple sclerosis and rheumatoid arthritis.</p><p>VTP-43742 is a first-in-class RORgammaT inhibitor &ndash; a target that is notorious in the industry for being hard to drug. The company announced late last month that the drug has entered the clinic. Data from an early study in psoriasis is still expected before the end of the year. </p><p>"We believe that VTP-43742 has the potential to achieve blockbuster sales if it follows the path of recently launched psoriasis drugs (Stelara-launched 2009, $2.38bn expected in 2015; Otezla-launched 2014, $1.3bn expected in 2017). The company is planning to develop VTP-43742 for a large market indication (e.g. psoriasis, multiple sclerosis, rheumatoid arthritis) as well as for a rare disease," wrote Dr Moussatos, who estimates sales could be as much as $1.1bn annually.</p><p>The bad news from the diabetes program pushed Vitae's stock down 6.74, or 70 cents, to close at $9.68. The stock has lost a lot of ground over recent weeks and is well off its 52-week high of $23.35.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Stunned Vitae undeterred by BI backout
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150721T192928
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150721T192928
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150721T192928
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029346
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 38
+
+Stunned Vitae undeterred by BI backout
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359552
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9f919814-5006-4a5b-8f9e-d6b2621b9c65
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

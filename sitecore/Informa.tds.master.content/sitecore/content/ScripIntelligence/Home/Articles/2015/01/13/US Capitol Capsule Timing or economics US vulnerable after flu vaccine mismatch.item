@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {422DB69F-195B-4535-8F4D-2D73F69BCCB2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/13/US Capitol Capsule Timing or economics US vulnerable after flu vaccine mismatch
+parent: {9D2F63AE-799E-4109-98D7-D2124333F53B}
+name: US Capitol Capsule Timing or economics US vulnerable after flu vaccine mismatch
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9ce0a9bd-29e3-4852-8566-9372a48a5df1
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 81
+
+US Capitol Capsule: Timing or economics? US vulnerable after flu vaccine mismatch
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 79
+
+US Capitol Capsule Timing or economics US vulnerable after flu vaccine mismatch
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 17725
+
+<p>When US government officials this past summer realized there may potentially be a problem with the effectiveness of the flu vaccine about to be shipped to thousands of doctor offices, health clinics and pharmacies, a question that may be asked by lawmakers at a 3 February Capitol Hill hearing is why manufacturers didn't shift gears and quickly make a vaccine that was better matched to what would become the predominantly circulating A (H3N2) virus.</p><p>The chairman of the House Energy & Commerce Subcommittee on Oversight and Investigations, Representative Tim Murphy (Republican-Pennsylvania), is known for spinning out fast and provocative questions. So there's bound to be some fireworks at next month's hearing. </p><p>Mr Murphy is probing an interim analysis of the 2014-15 seasonal flu vaccine, which has turned out to be only 23% effective for the overall US population &ndash; much less so for most American adults, demonstrating only 12% effectiveness for those 18-49 years and 14% for those 50 years or older (scripintelligence.com, <a href="http://www.scripintelligence.com/home/CDC-US-flu-vax-only-23-effective-12-most-adults-356168" target="_new">15 January 2015</a>).</p><p>Was it simply economics that prevented manufacturers from starting over again on a new vaccine for the current flu season &ndash; one that better matched the H3N2 strain, which is proving to be an especially dangerous virus this season? </p><p>After it was known the current vaccine was largely ineffective against H3N2, did manufacturers avoid pursuing a new vaccine out of fear the companies and those who already had purchased the current 2014-15 vaccine would be left with a glut of unused products? </p><p>"No," insisted Dr Anthony Fauci, director of the US National Institute of Allergy and Infectious Diseases (NIAID).</p><p>"It's a matter of timing," he argued.</p><p>"If they could start over again and have it on time, that would be a different story," Dr Fauci told <i>Scrip</i>.</p><p>But it typically takes manufacturers up to six months to produce a flu vaccine, and with the season in the US generally getting underway in November, if not earlier, there wasn't enough time to make a new product for 2014-15, he contended. </p><p>Spokesmen for the Centers for Disease Control and Prevention (CDC) and the FDA made similar arguments in response to questions from <i>Scrip</i>. </p><p>Each February, the World Health Organization (WHO) makes recommendations for the composition of the seasonal influenza vaccine for the Northern Hemisphere &ndash; a process the agency does each September for the Southern Hemisphere. </p><p>The FDA's Vaccines and Related Biological Products Advisory Committee (VRBPAC) considers the WHO's recommendations, along with other information and analyses, to makes its own suggestion about what strains to select for the US vaccine. </p><p>The VRBPAC at a February 2014 meeting recommended the same strains for 2014-15 WHO had advised for the Northern Hemisphere: A/California/7/2009 (H1N1)-line virus; the A/Texas/50/2012 (H3N2)-like virus; and the B/Massachusetts/2/2012-like virus (b/Yamagata lineage), which are included in the trivalent vaccine. WHO and the FDA panel also recommended B/Brisbane/60 2008-like virus (B-Victoria lineage) &ndash; the fourth component in the US-licensed quadrivalent vaccines (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Rare-disease-research-hopeful-but-therapy-success-remains-low-350329" target="_new">3 March 2014</a>).</p><p>As soon as the strains are recommended, manufacturers begin to grow the virus strains, explained FDA spokesman Walter Gardner. </p><p>"In fact, manufacturers usually begin to grow one or more of the virus strains well before the WHO [and] FDA advisory committee recommendations are finalized based on their best guess as to what strains are most likely to be included in the vaccine, but they do so at their own risk," Mr Gardner told <i>Scrip</i> in a emailed response to questions.</p><p>The CDC first detected the H3N2 virus had started to "drift," or mutate, in March 2014 &ndash; increasing through the spring and the summer, resulting in the strain selected for the vaccine, A/Texas/50/2012, significantly different from that spreading around the world, A/Switzerland/9715293/2013 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/H3N2-flu-drift-alarm-too-late-for-vaccine-355430" target="_new">05 December 2014</a>, <a href="http://www.scripintelligence.com/policyregulation/CDC-warns-severe-flu-season-urges-Tamiflu-Relenza-use-355433" target="_new">05 December 2014</a>, <a href="http://www.scripintelligence.com/home/CDC-US-flu-shot-less-effective-this-season-355412" target="_new">4 December 2014</a>).</p><p>By September, it was clear more than half of the circulating H3N2 viruses were antigenically and genetically different from the H3N2 vaccine component. They are now more than two-thirds different from the vaccine component.</p><p>Most of the time, the VRBPAC gets it right, Dr Fauci said. But, he acknowledged, "Sometimes they don't" &ndash; as is the case for the current season.</p><p>And when the advisers get it wrong, he argued, "there is really nothing you can do about it, because by the time you fully realize that a strain has drifted away from what you've chosen . . . it's too late to start from square one because you never would have enough vaccine available to distribute it for the coming season." </p><p>"It's one of those things that's really an all-or-none phenomenon," Dr Fauci declared. </p><p>But why couldn't manufactures have worked as speedily on a new vaccine against the H3N2 drifted virus this past fall like they did in 2009, when they developed a product against the novel A (H1N1) influenza and got four vaccines approved by the FDA within three months of the virus being declared a worldwide pandemic?</p><p>Was it not possible for manufacturers to have a product against the H3N2 drifted strain, A/Switzerland/9715293/2013, completed and distributed by December 2014 had the companies started work in late summer or early fall?</p><p>Dr Fauci again said "No," &ndash; arguing the 2009-2010 H1N1 flu pandemic was the "classic example" of why it was not feasible to develop a new flu vaccine for the 2014-15 season once the significant drifting of H3N2 was identified. </p><p>By the time the H1N1 vaccine started being distributed in October 2009 &ndash; first to limited groups, like healthcare workers and those at high risk, before being provided to the public at large &ndash; the flu had peaked during its second wave in the fall, the NIAID chief said.</p><p>So even if manufacturers would have been able to make a vaccine quickly against the H3N2 drifted strain, Dr Fauci insisted the companies could not have met a December 2014 timeline for distribution. </p><p>But what about using Novartis' cell culture-based vaccine Flucelvax, which the US pumped millions of dollars into, or Protein Sciences' recombinant vaccine Flublok &ndash; both of which were touted as the answer to quicker flu vaccine production when approved by the FDA (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Protein-Sciences-wins-FDA-OK-for-egg-free-Flublok-339145" target="_new">17 January 2013</a>, <a href="http://www.scripintelligence.com/home/Novartis-wins-1st-cell-culture-flu-vaccine-OK-in-US-with-Flucelvax-337411" target="_new">21 November 2012</a>)?</p><p>Dr Fauci contended "You can shave off a couple of weeks, but you're not going from six months to one month, that's for sure" with those products.</p><p>He also argued manufacturers could not have scaled up their production processes this past fall of the flu vaccine currently being produced for the Southern Hemisphere's 2015 season &ndash; which contains the H3N2 drifted A/Switzerland/9715293/2013 strain &ndash; to meet the current needs of the Northern Hemisphere.</p><p>But he took a much different standpoint when asked about manufacturers' capabilities to address the H7N9 or H5N1 avian influenzas if those viruses were to become easily transmissible from human to human.</p><p>In those cases, Dr Fauci asserted manufacturers would be able to scale up production of units of the experimental H7N9 or H5N1 vaccines currently being stored to prevent the spread of those diseases "if, in fact, we need it."</p><p>"Once you have lots that are available, it's much less time to expand it," Dr Fauci said, although he said he could not say whether that process would take weeks or months.</p><p>Nonetheless, it remains unclear why production on an H7N9 or H5N1 vaccine could be scaled up, but the same process could not be done this past fall for the H3N2 drifted product &ndash; a topic lawmakers may tangle with Dr Fauci about at the 3 February hearing, if he is summoned to testify.</p><p>At a recent E&C Oversight and Investigations hearing, Dr Fauci was put on the hot seat over Ebola by Representative Murphy, who accused the NIAID director of "hubris" (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Ebola-drugs-vaccines-scale-up-in-jeopardy-without-funds-355154" target="_new">20 November 2014</a>).</p><p>Dr Fauci argued that a universal flu vaccine could solve the current problems with annual strain selection &ndash; making that process obsolete.</p><p>Dr Francis Collins, director of the National Institutes of Health, said at the recent JP Morgan Healthcare Conference in San Francisco that his scientists are getting close to developing such a product &ndash; with a universal vaccine potentially available within the next five years, as long as Congress continues to provide the necessary funding (scripintelligence.com, <a href="http://www.scripintelligence.com/home/NIH-chief-laments-demise-of-US-biomedical-edge-356149" target="_new">15 January 2015</a>).</p><p><b>Update 20 January:</b><i>Scrip</i> spoke with Representative Murphy on 20 January after President Barack Obama&rsquo;s State of the Union address about the subcommittee&rsquo;s upcoming hearing on the flu. </p><p>Representative Murphy said he plans to ask Dr Fauci and others many of the questions <i>Scrip</i> raised with the NIAID chief, including why nearly $1bn in taxpayer funds was spent on developing Novartis&rsquo; Flucelvax if it made no difference in being able to quickly address an emerging virus, like the drifted H3N2 strain.</p><p>The Pennsylvania lawmaker said he plans to ask NIH and CDC officials, among others, whether the strain selection was based on &ldquo;science or was it a roll of the dice.&rdquo;</p><p>Representative Murphy said federal science and health officials must get a better handle on the flu situation, otherwise, what has happened with this season&rsquo;s vaccine being largely ineffective against the predominant strain &ldquo;is going to happen more and more.&rdquo;</p><p><b>In other Washington news:</b></p><p><b>Obama, Cameron declare trade, Ebola among priorities</b></p><p>President Barack Obama and UK Prime Minister David Cameron at a joint news conference from the White House on 16 January said they plan to push hard to make significant progress this year towards getting the Transatlantic Trade and Investment Partnership (TTIP) done.</p><p>The TTIP, a proposed trade and investment pact between the US and 28 member countries of the European Union &ndash; which has been eagerly embraced by the Pharmaceutical Research and Manufacturers of America and the European Federation of Pharmaceutical Industries and Associations when first revealed in February 2013 &ndash; is envisioned to boost economic growth and add new jobs by ironing out regulatory differences (scripintelligence.com, <a href="http://www.scripintelligence.com/home/USEU-trade-investment-big-deal-pact-could-serve-biopharma-well-339997" target="_new">14 February 2013</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Biopharma-weighs-in-on-US-EU-trade-pact-343084" target="_new">13 May 2013</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Trade-officials-TTIP-aims-to-lift-smallmid-sized-firm-barriers-350660" target="_new">17 December 2013</a>).</p><p>"We believe that this needs to be the year when the United States and the European Union make real progress toward the Transatlantic Trade and Investment Partnership," President Obama told reporters. "And we share the view that boosting demand in Europe can also keep our economies growing."</p><p>"We agreed that 2015 should be a pivotal year for an ambitious and comprehensive EU-US trade deal, which could benefit the average household in Britain by &pound;400 a year," Prime Minister Cameron added. "The UK is now the top destination for American and foreign investment, with 500 projects last year providing 32,000 jobs. And America is the UK's biggest trade partner, with exports worth nearly &pound;90bn. We want to build on this." </p><p>Earlier this month, the European Commission released a number of texts laying out the EU's proposals on specific issues, including pharmaceutical and medical device regulation, which are under discussion with the US government as part of the TTIP negotiations (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/EU-reveals-proposals-on-pharma-in-TTIP-talks-356024" target="_new">8 January 2015</a>).</p><p>Last week, however, the EC confirmed talks on one of the most controversial parts of the proposed TTIP trade treaty &ndash; the Investor-State Dispute Settlement (ISDS) system &ndash; have been temporarily halted after an online consultation produced what the trade commissioner called "huge skepticism against the ISDS instrument" (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Negotiators-suspend-talks-on-investor-protection-in-EU-US-trade-treaty-356165" target="_new">15 January 2015</a>).</p><p>Messrs Obama and Cameron also noted both of their nations have made large contributions to the Ebola response efforts.</p><p>"As the two leading contributors to the global response to Ebola in West Africa, we urge the world to continue stepping up with the resources that are required so that we don's simply stop this disease, we do more to prevent future epidemics," President Obama declared. </p><p>"The entire world faces a growing threat from diseases," Mr Cameron said. "Today our fight is against Ebola. In the future, it could be against a global flu pandemic."</p><p>"We must get better at responding to these global health emergencies and make sure we can master them before they master us," the UK prime minister insisted.</p><p>He called on nations to assist in reforming the World Health Organization and establishing a team of experts to be on standby to deploy anywhere in the world.</p><p>Prime Minister Cameron also said there needs to be a new international platform to stimulate the design and development of new drugs.</p><p><b>Medicare, Medicaid chief to depart </b></p><p>Marilyn Tavenner, the embattled administrator of the Centers for Medicare & Medicaid Services (CMS), has handed in her resignation and plans to depart her job by the end of next month, she revealed on 16 January in a memo to her staff.</p><p>Ms Tavenner was appointed in 2013 to the top CMS job after serving as acting chief for two years, after Republicans refused to confirm President Barack Obama's choice to lead the agency, Dr Donald Berwick, who stepped down in December 2011 from his recess-appointment as the CMS administrator (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Berwick-steps-down-as-CMS-chief-Obama-taps-agencys-deputy-as-new-leader-324014" target="_new">24 November 2011</a>).</p><p>While Republicans warmly embraced Ms Tavenner &ndash; granting her an easy confirmation in May 2013 &ndash; it was downhill from then on, with one entanglement after another involving the <i>Affordable Care Act</i> (ACA) (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Few-bumps-to-confirmation-for-new-Medicare-chief-343295" target="_new">16 May 2013</a>).</p><p>Indeed, Ms Tavenner was grilled in several hearings over the botched launch of the ACA's online marketplace, known as HealthCare.gov &ndash; with almost daily calls by lawmakers in fall 2013 for the CMS chief to step down (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Shutdown-drama-exchange-trauma-Obama-said-thered-be-days-like-this-346988" target="_new">2 October 2013</a>, <a href="http://www.scripintelligence.com/home/Lawmakers-fury-shifts-from-ACA-website-debacle-to-dropped-policies-347712" target="_new">30 October 2013</a>, <a href="http://www.scripintelligence.com/home/Apologies-rhetoric-shifts-and-some-hyperventilating-Another-ACA-hearing-347741" target="_new">31 October 2013</a>).</p><p>But Health and Human Services Secretary Sylvia Mathews Burwell defended Ms Tavenner, insisting she will be remembered for her leadership in opening the ACA health insurance marketplace.</p><p>"In so doing, she worked day and night so that millions of Americans could finally obtain the security and peace of mind of quality health insurance at a price they could afford," Ms Burwell said in a statement. "It's a measure of her tenacity and dedication that after the tough initial rollout of HealthCare.gov, she helped right the ship, bringing aboard a systems integrator and overseeing an overhaul of the website."</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 458
+
+<p>When US government officials this past summer realized there may potentially be a problem with the effectiveness of the flu vaccine about to be shipped to thousands of doctor offices, health clinics and pharmacies, a question that may be asked by lawmakers at a 3 February Capitol Hill hearing is why manufacturers didn't shift gears and quickly make a vaccine that was better matched to what would become the predominantly circulating A (H3N2) virus.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 79
+
+US Capitol Capsule Timing or economics US vulnerable after flu vaccine mismatch
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150113T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150113T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150113T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027554
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 81
+
+US Capitol Capsule: Timing or economics? US vulnerable after flu vaccine mismatch
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200100809
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356113
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9ce0a9bd-29e3-4852-8566-9372a48a5df1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

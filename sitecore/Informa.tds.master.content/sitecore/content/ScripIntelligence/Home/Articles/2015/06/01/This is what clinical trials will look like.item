@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {64D5971F-FECD-48CC-9430-21A8953D765F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/01/This is what clinical trials will look like
+parent: {430A16F1-19D6-4034-BEB3-EFB94183F1C6}
+name: This is what clinical trials will look like
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ba92b2e8-e2b8-46d2-a18b-b9e61e85ba24
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+ This is what clinical trials will look like  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+This is what clinical trials will look like
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 17359
+
+<p> <b>Medidata is a technology firm with a single focus: improving the clinical trial process not just through more efficient data gathering and handling, but innovation in the very types of data that are being collected. Its co-founder and president Glen de Vries &ndash; by his own admission a 'glass half full' type &ndash; spoke to <i>Scrip</i> about the exciting future he foresees in the clinical research space, and how modern technology is changing the very tenets of the process and the benefits that it will bring to the pharma industry. </b> </p> <p> <img src="-/media/B91DC7A1686147E59CE9A6389ACC2D8E.ashx"> </p> <p> <i>Glen de Vries, president, Medidata</i> </p> <p> <b>Scrip:</b> <b>I'll start with the killer question. Can data make pharma R&amp;D more productive? </b> </p> <p> <b>Glen de Vries:</b> Yes, data can make R&amp;D more productive. It can also make R&amp;D more valuable, but let's start with productivity. </p> <p> As more and more technology enters the clinical trial space, the industry has held onto inherent conservatism. Although that is in part appropriate, it has also held onto a lot of outdated concepts of how clinical trials should be run. So even though technology has been added, it hasn't been fully leveraged. Companies like Medidata help their clients by managing all of their clinical trial data and processes in the Cloud, and that means having the clinical data centrally located, having the operational information centrally located. It means that not only can you use technology, which usually makes things a little bit more efficient, but also means we can give our clients better transparency, better visibility into what's happening in the geographically dispersed operations that are part of almost every clinical trial of reasonable size. We can give companies a view that allows them to decide how to take a more efficient, more effective risk-based approach to managing quality in their clinical trials. </p> <p> <p> <b>Scrip: Can you simplify the concept of a risk-based program?</b> </p> <p> <b>GdV:</b> For example, you're doing a Phase III clinical trial, you've got 50 different doctors who are working with you in different geographies and you have 500 patients. Without the risk-based approach, your schedule would probably involve sending people out monthly to visit every single one of those 50 sites and on site you would be checking every aspect of what that doctor, and their staff, is doing in the trial. From a regulatory compliance standpoint you'd be checking every single piece of data that has been gathered in the clinical trial and matching it to all of the medical records. That's a lot of work, that's a lot of travel. </p> <p> When you're doing a trial with a risk-based approach, you're looking centrally at all the data. You're looking for trends, patterns, outliers based on operational information, such as how long is it taking for doctors to give you data or how is recruitment coming along against what was expected, that's an operational aspect. </p> <p> One of the interesting things that we have at Medidata is a central statistical analytical capability to allow you to look at the clinical data itself. So are the blood pressures and tumor volumes and adverse events etc that we're getting from different doctors, do they make sense in the context of this clinical trial? You can't predict their exact medical outcomes but you can figure out what the relationships are between different aspects of these patients' physiologies and the molecular measures of their disease progression. </p> <p> <p> <b>Scrip: And regulators are happy with this hands-off approach?</b> </p> <p> <b>GdV:</b> Having this approach to looking at data quality is the right way to drive better data quality. The industry used to get away with doing an exhaustive and low-value type of quality program. I'm not accusing the industry of doing a bad job, there wasn't really a better way to do it because there was no way during a clinical trial to have a snapshot of where data quality was okay and where it wasn't, but that's not applicable anymore. Now we can look at data at any time across the study, across all the different clinical aspects, all the different operational aspects and make that assessment in real time. The fact that we can do that now means that we can do a more efficient, but more importantly, a more effective kind of quality program, so yes, regulators are going to be happy with that. </p> <p> <p> <b>Scrip: What are the different types of data that pharma can gather?</b> </p> <p> <b>GdV:</b> That is actually a very rich topic. If you look at clinical trials from a couple of years ago going back to the 1940s, right to the birth of the modern clinical trial as we conduct them today, the data was largely in two categories. </p> <p> One I would describe as the phenotypic data that you get in the clinic. Your doctor or nurse pokes and prods you and writes things down on your medical chart. For example, your blood pressure, or maybe they use an ultrasound device and measure your tumor volume. These are gross physiological phenotypes that are measurable when you are in the presence of a healthcare professional. </p> <p> The other kind of data, and we've been gathering it more and more over the last few decades, is around the chemical and molecular nature of your disease. This goes all the way from looking at the histology of cells in a tumor biopsy to things like blood chemistry, genomics, proteomics. What are the molecular drivers of the disease and how can we measure its progression or the response of the patient to therapy based on that? So going from the physiological level and down to the molecular level. </p> <p> What has started to happen over the last couple of years, what I think is going to happen faster than most people expect it to, what is important from a business perspective, and what is a huge opportunity in therapeutic innovation and competitive differentiation by pharmas and biotechs, is how much easier it is to collect two other kinds of information that we could never collect before. </p> <p> One of those kinds is still phenotypic data, but you don't have to put the patient in front of the healthcare provider to do it. You can get it from the patient in life because they've got a wearable sensor tacked onto them. This means that you don't have to get the patient into the clinic to figure out what their pulse rate is or what their ECG looks like. You can gather it constantly from a device, either a consumer device or medical device or maybe their phone. Their phone, or device, then transmits directly into the clinical trial database and it becomes part of that clinical record and you can use it for everything. </p> <p> We have worked in partnership with GSK and McLaren, the racing company &ndash; because they think about telemetry with cars all the time &ndash; to explore the question of how exquisitely we can weave an instrument to a patient. Let's just do an experiment and see how many data feeds we can take from somebody, how much data volume can we actually gather. And of course the answer is huge. But can we do this and still maintain the kind of controls that you need in a regulated environment? Can we pull this data in a way that we could package up and show it to a regulator and make it part of a submission? </p> <p> We had ECGs and respiratory rates and body surface temperatures and multiple accelerometer ratings from different parts of the patient's body and gyroscope readings and all this stuff was being streamed at spectacular volume into the same clinical trial database where the traditional in-clinic measurements were being collected, that the traditional and molecular measurements and blood chemistry data was being put into. </p> <p> You are going to see more and more clinical trials now include that in-life phenotype data. </p> <p> And then there's another category which is as exciting as the in-life medical data, if not more exciting, and that is behavioral data. What is this patient actually doing? It's one thing to measure their blood pressure and their pulse, but are they staying in their room or are they going to work? Are they going on vacation? Are they being more engaged in more productive measures of the world from a socioeconomic perspective? </p> <p> <p> <b>Scrip: So can we already take that kind of data?</b> </p> <p> <b>GdV:</b> We are beginning to gather things that could be used that way. We are in the earliest stages of actually seeing clients adopt this approach in clinical trials. We have clients who are ramping up studies using those ideas &ndash; and in several cases the reason is that they believe they can actually get a better measure of disease progression, a more precise measure than the measurements that were taken in the clinic in the past. </p> <p> <p> <b>Scrip: So up-levelling of the 6-minute Walk Test?</b> </p> <p> <b>GdV:</b> If you look at walk tests, they work. In the clinical trials framework they have been used in, the only way to gather reliable objective data about how much a patient could move around was to put them in front of a healthcare professional and time how far they could walk for six minutes. There was lots of variation, but they worked. It was scientifically and ethically a good way to do it. But now I don't think it is a scientifically or ethically good way to do it, because people have good days and bad days. I'm reminded of an article in the New York Times, about a Duchene muscular dystrophy study. The parents of one child were saying, 'I hope he has a good day, so when he does his walk test he qualifies for this experimental medication.' I don't think we should be comfortable thinking that way as an industry. We should be able to measure something that gets past the bias of good days and bad days. Putting an activity tracker on somebody does that. </p> <p> At Medidata we have decided that not only do we think this is a good idea, not only do we have clients who are beginning to do this in clinical trials, but we actually have now sponsored and run our own clinical trial. So if you look in the clinical trials.gov registry that the US government has, Medidata is a sponsor of clinical trials the same way GlaxoSmithKline is, the same way Amgen is, the same way Biogen is. Our goal was not to create medical innovation; our goal was to prove that clinical trial innovation is possible by incorporating activity trackers and feedback systems where you're given patient information based on how much they're moving around, for example. </p> <p> <p> <b>Scrip: One of these trials was in diabetes. What did you hope to achieve?</b> </p> <p> <b>GdV:</b> We took patients with type 2 diabetes who had gotten their weight under control and were in a weight maintenance mode. A treatment had been given and a course of exercise prescribed and they were all given an activity tracker. In one arm of the study they were given the activity tracker and that was all, in the other arm of the study they were given the activity tracker and reminders to exercise. Our goal was not to show the optimal amount of reminders, our goal was to show to people that you could actually run a clinical trial where the inclusion criteria had to do with what technologies the patient had or was able to support, that you could pull this data into a clinical trial database along with the HbA1c measurements. </p> <p> We're going to publish everything about the trial, how we interacted with the ethics committee that approved the protocol, how we managed to deploy the devices and support them in the field, train the doctors and nurses who were interacting with the patients, because this is actually not easy. Doing something new in a regulated context is never easy, so we decided we were going to run through this bush of thorns and get all the cuts first so we could show our clients, and people who aren't our clients, how to do it. </p> <p> It's going to prove a point to the world: it is possible to do really intricate instrumentation and data feedback and you can do it in a clinical trial context. You will see Medidata clients, and I'm sure people who aren't Medidata clients, beginning to incorporate these ideas into their clinical development plans for things that are medical innovations. </p> <p> If you manage to redefine the scale by which disease progression and efficacy of a drug is measured in a particular therapeutic area, as some of our clients are trying to do, presumably you're doing it because you have what you think is a better than current standard of care medication. </p> <p> What you will have done is change the rules for everybody else who wants to try to compete with you, because now they're going to have to show that their drug is better on your new more precise scale. Defining that new scale is not trivial, you can't just show up to a regulatory body and say I used a Garmin wrist tracker instead of a six minute walk test. You need to do the math and show why this is a valid and better way to measure the disease. You have to do the work, and we're all about helping our clients get that work done. </p> <p> <p> <b>Scrip: Are the pharma industry on board with your plans? Are people in pharma thinking the way you want them to be thinking about data?</b> </p> <p> <b>GdV:</b> I think that we're in the very early stages of people adopting these new ideas. We see pockets of people. In large companies you'll see a small team in a particular therapeutic area who is very interested in this, or you'll see a younger company who is very interested in doing something like this so they can compete aggressively. Our job is to lower the barrier of entry, to accelerate more and more people being interested in this, and ultimately doing it. </p> <p> And if you look at what's happening outside of the world of clinical trials, at a recent media event that everyone expected to be all about a new consumer device, Apple spent one-third of the time talking about medical research. To me that's a pretty good indication that the world is going to expect that pharmaceutical companies are using things like in-life phenotypic data and behavioral data. Not only do I think regulators are going to accept it, but I think payers are going to demand it, and consumers and prescribers are going to want to know it in terms of determining reimbursability and drug preference. If I had the opportunity to take a drug that is going to give me a demonstrably, objectively, quantifiably better quality of life, I want to know it and I want to take that drug. </p> <p> <p> <b>Scrip: What is the business case for all this data gathering?</b> </p> <p> <b>GdV:</b> Let's do it by example. If two companies have created drugs that slow tumor growth to the same degree, they might be submitting regulatory packages showing progression-free survival, and they both extend that for an additional year. But the patients on drug A are staying in their bedroom or their hospital room and patients on drug B are going on vacation and going to work five days a week and taking their children to school or whatever. One of those drugs is going to have a better chance of securing approval. </p> <p> <p> <b>Scrip: Are there other ways that wearable technology can create value for pharma?</b> </p> <p> <b>GdV:</b> I'll give you another example. We have a data science team at Medidata that looks at all the data that we gather and how we can we get more value out of it for our clients than they're currently getting. We've been doing some work looking at sensor data, and in many cases you can get multiple data points from multiple types of sensors on the patient. One of the things that I'm particularly interested in is objectively measuring non-serious adverse events. These are the headaches, the nausea, the stuff that's just a drag on quality of life. It's typically the worst quality data in a clinical trial. It's gathered retrospectively and it's self-reported by the patient. So maybe you haven't seen your doctor or nurse for a week or maybe a month and they say, 'Did you not feel well at all for the last couple of weeks?' 'I had some headaches.' 'Oh, when did you have those headaches?' 'I had one on Tuesday.' 'How long did it last?' 'A couple of hours.' This is not reliable data capture and of course there's no original documentation to go back and check that the values were correct. </p> <p> With wearable tech we believe it's going to be possible to build predictive models where, when we look at multiple data points like somebody's single lead ECG and their body surface temperature and their respiratory rate and what their body is doing visibly, to detect that people are, for example, throwing up, we can actually figure out that drug A or drug B is going to be the one that probably has higher adherence if there's a different level of nausea and vomiting. Adherence, taking your medication on time, is one of the biggest drivers of getting the appropriate therapeutic value once the drug's approved. </p> <p> So even if this data isn't necessary for an approval from a regulator, it could become an essential component of how pharmaceutical companies and biotechs pitch the reimbursability of their compounds to payers, governments and insurance companies. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 558
+
+<p> <b>Medidata is a technology firm with a single focus: improving the clinical trial process not just through more efficient data gathering and handling, but innovation in the very types of data that are being collected. Its co-founder and president Glen de Vries &ndash; by his own admission a 'glass half full' type &ndash; spoke to <i>Scrip</i> about the exciting future he foresees in the clinical research space, and how modern technology is changing the very tenets of the process and the benefits that it will bring to the pharma industry. </b> </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+This is what clinical trials will look like
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150601T140002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150601T140002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150601T140002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028879
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+ This is what clinical trials will look like  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358594
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042355Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ba92b2e8-e2b8-46d2-a18b-b9e61e85ba24
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042355Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

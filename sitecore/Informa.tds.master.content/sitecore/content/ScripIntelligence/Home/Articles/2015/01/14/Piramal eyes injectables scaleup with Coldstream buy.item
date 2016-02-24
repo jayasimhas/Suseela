@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4BDD8109-DF83-465F-957A-47A91E980091}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/14/Piramal eyes injectables scaleup with Coldstream buy
+parent: {8352B149-A1E0-4565-B69C-C6E7B43B32A5}
+name: Piramal eyes injectables scaleup with Coldstream buy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b764bef2-7028-4d0d-a6b2-2594e068ef5a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Piramal eyes injectables scale-up with Coldstream buy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Piramal eyes injectables scaleup with Coldstream buy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3980
+
+<p>Piramal Enterprises, the diversified Indian healthcare to financial services company, has kicked off 2015 with an all-cash acquisition of the Kentucky-based specialty contract development and manufacturing firm Coldstream Laboratories for $30.65m.</p><p>The deal, which could potentially buttress capacity and capabilities of Piramal's Grangemouth site in Scotland, allows the Indian group to move deeper into the injectables segment. </p><p>The acquisition cost represents over twice Coldstream's estimated 2014 revenues of $14m. The bulk of the payment is for the purchase of 100% of Coldstream's shares, while $5.65m is to buy the facility building currently leased to the US firm.</p><p>Vivek Sharma, CEO of PEL's Pharma Solutions business told <i>Scrip</i> that the Piramal group had, for quite some time, been actively scouting for opportunities in the sterile injectables space. </p><p>''This opportunity came in as a neat fit for our injectable development capabilities at Mumbai and provided the much needed fill and finish capability for the Antibody Drug Conjugates (ADC) facility at Grangemouth which will enhance the offering for our ADC customers,'' Mr Sharma said. </p><p>ADCs are targeted therapies designed to deliver a drug payload to cancer cells while minimising the adverse effects on normal healthy cells. Piramal Healthcare has previously claimed to be the first contract supplier of ADCs globally.</p><p>Piramal's Grangemouth site is FDA and MHRA-approved and covers all major ADC drug classes and linker chemistries.</p><p>Mr Sharma said that one of the factors for the Coldstream acquisition was that the steriles segment was a fast growing one, but added that Piramal's other business segments such as ADC, discovery services and development of niche active pharmaceutical ingredients (APIs) were also growing ''faster than the market''. </p><p>Coldstream offers a ''very high quality'' operation and has been able to build significant customer relationships and track record for sterile products, a Piramal release quoting Mr Sharma said.</p><p>Piramal's pharma solution business revenues grew at about 14% during 2013-14 &ndash; a year which saw a ''healthy flow'' of clinical stage API development projects and a ''robust stream of enquiries'' for ADCs at the Grangemouth site, details in Piramal's annual report said.</p><h2>Coldstream</h2><p>Founded in 2007, Coldstream, which is majority owned by University of Kentucky Research Foundation (an affiliate of the University of Kentucky), focuses on clinical trial to commercial-scale manufacturing of sterile liquid and lyophilized parenterals and injectables. </p><p>It also has differentiated expertise to formulate and manufacture high potency and cytotoxic compounds including ADCs.</p><p>Coldstream comes with an FDA-approved facility in Lexington, Kentucky, and employs 91 people.</p><p>Bill Wedlake, president of Piramal's pharma solutions formulations business, also noted that Coldstream's use of isolator technology offered a foundation for expansion of the facility to provide large scale commercial manufacturing including production of highly potent compounds.</p><p>Coldstream's unique mobile isolator technology within its FDA-approved sterile manufacturing unit is said to ensure product containment for potent and cytotoxic compounds and radiolabeled products.</p><p>On whether more such acquisitions were on the cards in the pharma solutions space as Piramal aspires to move up the pecking order of leading contract manufacturers, Mr Sharma said that the company was always exploring niche buys as long as they provided ''complementary'' capability or offered a ''competitive'' advantage in the market place. Piramal was ranked fifth in the list of top 10 pharmaceutical contract manufacturers globally, as per the United Nations Conference on Trade and Development's (UNCTAD), World Investment Report, 2011. The latest position on this could not immediately be ascertained.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 254
+
+<p>Piramal Enterprises, the diversified Indian healthcare to financial services company, has kicked off 2015 with an all-cash acquisition of the Kentucky-based specialty contract development and manufacturing firm Coldstream Laboratories for $30.65m.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Piramal eyes injectables scaleup with Coldstream buy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150114T035012
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150114T035012
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150114T035012
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027562
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Piramal eyes injectables scale-up with Coldstream buy
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200600389
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356129
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b764bef2-7028-4d0d-a6b2-2594e068ef5a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042234Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

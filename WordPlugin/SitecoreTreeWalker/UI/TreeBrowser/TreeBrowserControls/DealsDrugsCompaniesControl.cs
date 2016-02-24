@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using Informa.Web.Areas.Account.Models;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
 using SitecoreTreeWalker.Util;
 
 namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
@@ -14,7 +14,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 	{
 		public const string DealTooltip = "Deal";
 
-		protected IEnumerable<CompanyWrapper> _companies;
+		protected IEnumerable<WordPluginModel.CompanyWrapper> _companies;
 
 		public DealsDrugsCompaniesControl()
 		{
@@ -32,7 +32,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			uxPreviewDeals.Visible = true;
 			if(uxPreviewDeals.Tag == null)
 			{
-				DealInfo dealInfo = SitecoreGetter.GetDealInfo(uxDealNumber.Text);
+				WordPluginModel.DealInfo dealInfo = SitecoreGetter.GetDealInfo(uxDealNumber.Text);
 				uxPreviewDeals.UpdatePreview(dealInfo);
 				uxPreviewDeals.Tag = dealInfo;
 				uxRetrieveInformation.Visible = false;
@@ -41,7 +41,8 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 			else
 			{
-				InsertDealIntoDocument(uxPreviewDeals.Tag as DealInfo);
+				//TODO - Uncomment the line below and get it working.
+				//InsertDealIntoDocument(uxPreviewDeals.Tag as WordPluginModel.DealInfo);
 				SetToRetrieveDealMode();
 			}
 		}
@@ -57,7 +58,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		protected void InsertCompany()
 		{
-		    CompanyWrapper company = companyTreeView1.SelectedCompany;
+		    WordPluginModel.CompanyWrapper company = companyTreeView1.SelectedCompany;
             if (company == null)
 			{
 				Globals.SitecoreAddin.Log("DealsDrugsCompaniesControl.InsertCompany: Trying to add a company when none are selected!");
@@ -77,7 +78,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			//InsertLinkIntoDocument("C", company.RecordNumber, company.URL, CompanyTooltip);
 		}
 
-		public static void InsertDealIntoDocument(DealInfo dealInfo)
+		public static void InsertDealIntoDocument(WordPluginModel.DealInfo dealInfo)
 		{
 			InsertLinkIntoDocument("W", dealInfo.ID, dealInfo.Url, DealTooltip);
 		}
@@ -186,11 +187,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (!uxDealNumber.Text.IsNullOrEmpty())
 			{
-				var deal = uxPreviewDeals.Tag as DealInfo;
-				if (deal != null)
-				{
-					InsertDealIntoDocument(deal);
-				}
+				//TODO - Uncomment the line below and get it working.
+				//var deal = uxPreviewDeals.Tag as WordPluginModel.DealInfo;
+				//if (deal != null)
+				//{
+				//	InsertDealIntoDocument(deal);
+				//}
 				uxPreviewDeals.Tag = null;
 				uxPreviewDeals.Controls.Clear();
 				SetToRetrieveDealMode();
@@ -205,7 +207,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (!string.IsNullOrEmpty(uxDealNumber.Text))
 			{
-				DealInfo dealInfo = SitecoreGetter.GetDealInfo(uxDealNumber.Text);
+				WordPluginModel.DealInfo dealInfo = SitecoreGetter.GetDealInfo(uxDealNumber.Text);
 				uxPreviewDeals.UpdatePreview(dealInfo);
 				uxPreviewDeals.Tag = dealInfo;
 				uxRetrieveInformation.Visible = false;
@@ -216,11 +218,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxViewDetails_Click(object sender, EventArgs e)
 		{
-			var deal = uxPreviewDeals.Tag as DealInfo;
-			if (deal != null && !string.IsNullOrEmpty(deal.Url))
-			{
-				Process.Start(deal.Url); 
-			}
+			//TODO - Uncomment the line below and get it working.
+			//var deal = uxPreviewDeals.Tag as WordPluginModel.DealInfo;
+			//if (deal != null && !string.IsNullOrEmpty(deal.Url))
+			//{
+			//	Process.Start(deal.Url); 
+			//}
 		}
 
 		private void DealsDrugsCompaniesControl_Load(object sender, EventArgs e)
@@ -239,7 +242,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-        private void companyTreeView1_CompanyDoubleClicked(CompanyWrapper wrapper)
+        private void companyTreeView1_CompanyDoubleClicked(WordPluginModel.CompanyWrapper wrapper)
         {
             InsertCompany();
         }

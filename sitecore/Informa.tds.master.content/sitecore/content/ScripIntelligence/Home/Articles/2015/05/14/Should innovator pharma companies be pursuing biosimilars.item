@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {3D7D8D6F-A1EC-47A7-BE19-A1B1BF1B7CC5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/14/Should innovator pharma companies be pursuing biosimilars
+parent: {C175FE23-2601-4F4F-B3CE-DA1791987470}
+name: Should innovator pharma companies be pursuing biosimilars
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2f0dc9bb-874c-4803-91f9-a21adff50233
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Should innovator pharma companies be pursuing biosimilars?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+Should innovator pharma companies be pursuing biosimilars
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7726
+
+<p><b>Patent expiries, pricing pressures and the emergence of approval pathways in countries like China and Brazil mean that biosimilars offer a substantial global opportunity, and there are many good reasons why originator companies should consider investing in this market segment, say Anna Buscall and Christopher Stothers</b>.</p><p>Biosimilar products are relatively new to the life sciences industry, and the market is still deliberating how to treat them from a business perspective. A simplistic analysis might suggest that biosimilars are essentially a generic product because they copy, or attempt to copy, a biologic drug or treatment. But in practical business terms, biosimilars are very different from traditional small molecule generic drugs, altering the opportunity analysis for innovator pharma companies. </p><p>For a start, they are different enough from the original product to require extensive clinical trials - at least to date &ndash; and not just bioequivalence testing. The expense that this entails means the company producing a biosimilar will typically want to charge 70-80% of the price of the original branded product. This makes them a very different prospect from a chemical generic, where many different products will generally come onto the market once the patent on the original expires, and the price will then reduce dramatically, leaving the generic drugs to sell like everyday commodities. </p><p>Developing a biosimilar costs in the region of $100-200m (even before manufacturing set-up costs), and although that is a fraction of the $1bn or more that may be spent to develop a new branded drug, it is far more than the amount needed to develop a regular generic &ndash; typically under $5m. </p><p>In addition, the market is changing structurally. For so long divided into two &ndash; innovator companies and generics companies (occasionally under the same corporate roof) &ndash; the market is beginning to see a third player in the life sciences markets: biosimilar companies. These are neither solely originator nor solely generic, and do not belong naturally in any one camp. </p><p>An example is South Korea-based Celltrion, known chiefly as a biosimilars manufacturer, although it also has a biopharmaceutical division. Last year, Celltrion (partnering with Hospira) made waves by filing for the first ever biosimilar approval in the US for a monoclonal antibody (as opposed to a smaller, less complex biological): Remsima, which is a biosimilar version of Janssen's Remicade (infliximab) and is already approved in Europe. This was seen as a sign that serious biosimilar competition is arriving in the US.</p><p><b>Why is the biosimilars market commercially attractive?</b></p><p>Data on the global value of the biosimilars market show it was worth over $2.4bn in 2013, and that over the following five years it is on track to grow to around $23bn. That market opportunity must be attractive. The several drivers behind its growth are continuing ones, not temporary: they include medicine advances, price advantages, and as-yet undeveloped geographic markets for biosimilars. </p><p>Biosimilars can also be priced at a discount to the reference biologic products, appealing to the ever-tightening cost and access requirements of healthcare providers and payers/insurers, while maintaining a strong profit margin. </p><p>The US biosimilars market is underdeveloped compared with Europe: the first European regulatory approval for a biosimilar product &ndash; Sandoz' Omnitrope (somatropin) &ndash; was given in 2006, followed by a further 18 biosimilar approvals relating to six more biologic substances to date (for epoetin alfa, epoetin zeta, filgrastim, infliximab, follitropin alfa and insulin glargine). By contrast, the first US approval &ndash; for Sandoz' Zarxio (filgrastim sndz) &ndash; was not granted until March 2015. China and Latin America are likewise large and underdeveloped markets. </p><p>There are two other key growth factors. First, patents on older biologics are starting to expire: for instance, the basic supplementary protection certificates for trastuzumab (Roche's Herceptin) generally expired in July 2014, and Hospira has been challenging related patents in the UK courts.</p><p>Second, clarity is now developing about the pathway to regulatory approval in the US and other markets: companies in China, Brazil and other Asian and Latin American countries have active biosimilar development programmes with reference to local regulatory standards as well as to international guidance.</p><p><b>Should innovator pharma companies invest in the biosimilars market?</b></p><p>There are three solid reasons why the answer to that question is 'yes'.</p><p>First, because of the R&D expertise involved in creating biological products, and the advantage of their existing biologics manufacturing capability, originator pharma companies have an edge, and indeed have increasingly been launching their own biosimilar divisions. Sandoz/Novartis, Merck&rsquo;s joint venture with Samsung, and more recently Pfizer with its purchase of Hospira, are good examples. </p><p>Already by 2013, most of the ten top selling pharma products by revenue were biologics, including Abbvie's Humira (adalimumab) for rheumatoid arthritis, Remicade for RA and Crohn&rsquo;s disease, and Sanofi's Lantus (insulin glargine) for diabetes. Biosimilar versions of those biologics are either launched or in development, with around a third of the companies known to be developing them being innovator companies. </p><p>Second, an originator pharma can use a biosimilars business as a commercial hedge against its own patent expiries (a Sandoz study and a McKinsey review reported that by 2020, $100bn of biologic products will be off-patent, including the five largest monoclonal antibodies by sales) and to maintain a diverse and complementary product portfolio. </p><p>Third, originator companies also have an edge at the launch stage: they should be well placed by prior experience with their follow-on small molecule products to successfully market products in the face of undoubted challenges. One of these challenges is the scepticism of prescribers as to the safety and efficacy of a biosimilar relative to the reference product. Another is the more limited scope for discounting compared with the reference product, unless the seller decides on a dramatic discount similar to that expected by payers for a generic, as has been the case with <a href="http://www.scripintelligence.com/home/Norways-infliximab-experience-shows-effect-of-deep-price-cuts-on-biosimilar-success-358091" target="_new">Remsima in Norway</a>.</p><p>There are, of course, other risk factors. As is now well known, product substitution and interchangeability have proved more complicated for biosimilars than for generics, slowing market penetration even after approval, although this does seem to be improving. Concerns also remain in relation to potential unexpected side-effects of certain biosimilars, including immunogenicity. </p><p>Perhaps more fundamentally, alignment of corporate culture to incorporate a 'copying' model together with 'innovation' may not be straightforward, particularly for those innovators who do not have experience of a generic division (or who have chosen to dispose of it).</p><p>Nevertheless, these factors, combined with the considerable commercial market opportunity and the fact that biosimilars are now considered by regulators as therapeutic options to improve patient access, are sound reasons for innovators actively considering their biosimilars strategy.</p><p><i>Anna Buscall and Dr Christopher Stothers are partners at law firm Arnold & Porter LLP</i>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 334
+
+<p><b>Patent expiries, pricing pressures and the emergence of approval pathways in countries like China and Brazil mean that biosimilars offer a substantial global opportunity, and there are many good reasons why originator companies should consider investing in this market segment, say Anna Buscall and Christopher Stothers</b>.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Should innovator pharma companies be pursuing biosimilars
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150514T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150514T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150514T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028773
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Should innovator pharma companies be pursuing biosimilars?
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358422
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042348Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2f0dc9bb-874c-4803-91f9-a21adff50233
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042348Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

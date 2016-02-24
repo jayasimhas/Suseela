@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {3A4466BC-F1D0-4CB5-AAA7-0EFF62836D6D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/31/AZ Heptares In Possible 500m Oncology Deal
+parent: {41EBBC65-C73D-4320-B22C-6EBD0BE8A7D8}
+name: AZ Heptares In Possible 500m Oncology Deal
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 660ecd42-7618-48de-995e-b69bb3fa3d15
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{DD548E28-6D47-4403-832E-A9D982190B89}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+AZ, Heptares In Possible $500m+ Oncology Deal
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+AZ Heptares In Possible 500m Oncology Deal
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3052
+
+<p>Japan-headquartered Sosei Group's $400m acquisition of Heptares Therapeutics could prove to be a money spinner as the biotech unit has signed an immuno-oncology focused partnership with pharma major AstraZeneca plc, potentially worth $500m. </p><p>UK-based Heptares, acquired by Sosei in February, is targeting G-protein-coupled receptors (GPCRs) that play a key role in cancer biology. Under the new partnership AstraZeneca will pay Heptares $10m upfront for exclusive global rights to adenosine A2A receptor antagonist, HTL-1071, and potentially more than $500m in development and commercial milestones. The company is also eligible for up to double-digit tiered royalties on net sales.</p><p>Tumor cells have evolved mechanisms to evade the immune system, including through the production adenosine. By stimulating A2A receptors, adenosine stops T-cells within the immune system from proliferating and reduces their ability to destroy cancer cells. Heptares noted that its technology works by blocking A2A receptors to promote the anti-cancer response of T-cells. </p><p>AstraZeneca will focus on exploring HTL-1071, which is currently in preclinical stages of development, across a range of cancers and in combination with its own existing portfolio of immunotherapies. The two companies will also collaborate to discover further A2A receptor-blocking compounds for development. </p><p>The deal builds on an existing research pact between Heptares and AstraZeneca from 2011, which was focused on the development of small-molecule candidates targeting specific GPCRs in CNS and metabolic indications. </p><p>Malcolm Weir, CEO of Heptares said: "The A2A receptor program has been an outstanding example of our Structure Based Drug Design approach in action, resulting in a novel clinical candidate, HTL-1071, with a highly attractive profile."</p><p>Sosei acquired Heptares, which is now an autonomous subsidiary of the Japanese firm, to rejuvenate its R&D offering. The UK drug design specialist attracted Sosei with its StaR precision drug design platform technology and its active, revenue-bearing partnerships with Cubist Pharmaceuticals (acquired by Merck & Co.), Takeda Pharmaceutical Industries, MorphoSys AG and Novartis AG.</p><h2>Mirati deal</h2><p>Meanwhile, AstraZeneca's biologics unit MedImmune has also signed a new immuno-oncology focused deal. The firm has entered into an exclusive clinical trial collaboration with oncology company Mirati Therapetuics to test its anti-PDL1 inhibitor MEDI4736 (durvalumab) in combination with mocetinostat, Mirati's investigational spectrum-selective histone deacetylase (HDAC) inhibitor.</p><p><b>Related stories: </b></p><p><a href="http://www.scripintelligence.com/home/400m-Heptares-acquisition-to-drive-Soseis-RandD-356884" target="_new">$400m Heptares acquisition to drive Sosei's R&D</a></p><p><a href="http://www.scripintelligence.com/home/Life-after-acquisition-Heptares-CEO-on-living-with-Sosei-359211" target="_new">Life after acquisition? Heptares CEO on living with Sosei</a></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 248
+
+<p>Japan-headquartered Sosei Group's $400m acquisition of Heptares Therapeutics could prove to be a money spinner as the biotech unit has signed an immuno-oncology focused partnership with pharma major AstraZeneca plc, potentially worth $500m. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+AZ Heptares In Possible 500m Oncology Deal
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150731T050807
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150731T050807
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150731T050807
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029443
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+AZ, Heptares In Possible $500m+ Oncology Deal
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359713
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+660ecd42-7618-48de-995e-b69bb3fa3d15
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

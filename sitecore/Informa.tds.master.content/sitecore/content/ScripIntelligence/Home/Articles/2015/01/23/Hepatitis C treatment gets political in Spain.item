@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {2F132527-745D-46C8-99BF-D295D5C73F7E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Hepatitis C treatment gets political in Spain
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Hepatitis C treatment gets political in Spain
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ab7266e7-e2e2-494d-934c-0537ca28e407
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+Hepatitis C treatment gets political in Spain 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Hepatitis C treatment gets political in Spain
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5504
+
+<p>Access to medicines is an increasingly politicized issue and companies will be watching how cash strapped governments respond to mounting pressure to provide patients with their expensive drugs. Ahead of this year's general election, the Spanish health ministry is trying to appease angry hepatitis C patients/voters amid counter calls and pledges from the opposition to take increasingly drastic action to make sure patients get the medicines they need.</p><p>Last year Spain's central pricing committee gave Gilead's Sovaldi the green light, but slapped a &euro;125m spending limit on the drug during the first year of commercialization. The patient group <i>Plataforma de Afectados por Hepatitis C</i> argues that with a price tag of &euro;25,000 per three month treatment cycle, the pot would only stretch to 4,902 patients, just 1.6% of patients with a diagnosis. </p><p>Pressure on the government to do something about the lack of access to new HCV drugs, including Janssen's Olysio, is growing. On 10 January, hepatitis patients, led by <i>Plataforma de Afectados por Hepatitis C</i> and their supporters from NGOs and civil society, gathered outside the prime minister's official residence in their thousands in what local press have described as one of Europe's biggest public health demonstrations in recent times. Patients are angry at the government's austerity measures and accuse the government of putting company and bank bailouts ahead of providing access to life saving medicines. </p><p>It's not just the government that is coming under fire. The OMC, the General Council of Medical Colleges, has slammed companies for their "abusive and greedy" prices that put the national health system at risk and take away from other essential services and goods. "The OMC believes that the present model of relations between the national health system and the pharmaceutical industry is exhausted and needs profound reform," said the organization. It asks why treatment costs between &euro;69,000 in the US and &euro;750 in Egypt and India when the cost of producing these drugs is just &euro;50-&euro;100 per patient.</p><p>Meanwhile, the government's political opponents are weighing in. The socialist party, the PSOE, which is traditionally the main opposition to the ruling People's Party (PP), has slammed the government's record on healthcare. It supports the OMC's condemnation of drug prices and is demanding that the government institute some sort of pricing control strategy to prevent any oligopoly within the sector &ndash; not just for HCV drugs, but for other innovative medicines too. The party argues that such a policy should be adopted by Europe, not just Spain.</p><p>Other parties have gone further and there have been calls from some left-wing parties, including the new and rapidly growing Podemos (We Can), to revoke the patent. The UPyD (the Union, Progress and Democracy Party) has demanded that Spain, and the European Union, allow the production of generic versions of Sovaldi in the name of public health.</p><p>Spain's anti-austerity movement, particularly Podemos, is increasingly winning votes from the traditional main parties, the PP and the PSOE, and the political landscape is changing. It is unclear what will happen in the general election, likely to take place later this year, but the pressure that these groups exert could well prompt tougher policies from the mainstream parties &ndash; like the PSOE's proposal for a new pricing strategy. Already the health minister has confirmed he is pushing for EU member states to come together and jointly procure hepatitis C treatments (<a href="http://www.scripintelligence.com/home/Spain-ups-ante-on-joint-procurement-of-new-hepatitis-C-drugs-356322" target="_new">scripintelligence.com, 22 January 2015</a>). Elections are due to take place in late 2015.</p><p>In other HCV action, the health minister Alfonso Alonso says that hepatitis C is a priority and that he is considering the use of mechanisms like risk sharing deals to control prices. He said his ministry is putting together a hepatitis C strategy, one big component of which is to build a patient registry to paint a picture of the hepatitis C patient population throughout the country. It is unclear how many hepatitis C patients there are in Spain, but there could be up to 500,000 according the <i>Consejo General de Colegios Oficiales de Médicos</i> (the OMC, the General Council of Medical Colleges).</p><p>Farmaindustria, Spain's pharmaceutical industry association, says it has faith in the government's strategy and has said it will collaborate to define how many patients need treatment and what clinical protocols should be.</p><p>It warns that society is at an important crossroads where it needs to make unprecedented investments in the short term to yield big savings in the medium term. It points out that hepatitis C medicines cost a fraction of the long-term care costs for these patients, and that the drugs are more cost-effective than many of the government's public health investments. According to Farmaindustria, the government has a variety of tools and flexibilities to draw upon to make the products affordable &ndash; not least the &euro;3.4n savings on drug spending the government has made since 2010. "In light of all this, the current public and political debate needs to be redirected and any extremist proposals that distance our country from the socio-political and economic reality must be avoided," it said. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 461
+
+<p>Access to medicines is an increasingly politicized issue and companies will be watching how cash strapped governments respond to mounting pressure to provide patients with their expensive drugs. Ahead of this year's general election, the Spanish health ministry is trying to appease angry hepatitis C patients/voters amid counter calls and pledges from the opposition to take increasingly drastic action to make sure patients get the medicines they need.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Hepatitis C treatment gets political in Spain
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T174506
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T174506
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T174506
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027613
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+Hepatitis C treatment gets political in Spain 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356252
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ab7266e7-e2e2-494d-934c-0537ca28e407
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042238Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

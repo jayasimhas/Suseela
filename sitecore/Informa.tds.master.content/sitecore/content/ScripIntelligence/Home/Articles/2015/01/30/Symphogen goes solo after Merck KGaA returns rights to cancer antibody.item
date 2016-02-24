@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {79C5D314-A7F9-48E5-89C3-A105711E7690}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/30/Symphogen goes solo after Merck KGaA returns rights to cancer antibody
+parent: {BCCFFBED-8CF5-4EB8-8FFF-BBD8EF95AF0D}
+name: Symphogen goes solo after Merck KGaA returns rights to cancer antibody
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fd5f10fb-7018-4c6a-8065-5dd52464edc2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+Symphogen goes solo after Merck KGaA returns rights to cancer antibody
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 70
+
+Symphogen goes solo after Merck KGaA returns rights to cancer antibody
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3444
+
+<p>Merck KGaA has returned a Phase IIb immune-oncology compound back to its originator company Symphogen after a reassessment of its pipeline, but Symphogen is "pleased" with the turn of events. </p><p>Merck said the decision to return the worldwide rights of Sym004 to Symphogen was not related to any new safety or efficacy findings. </p><p>The German drug maker acquired the product from Symphogen in September 2012 (<a href="http://www.scripintelligence.com/home/Merck-KGaA-licenses-oncology-MAb-in-0.5-billion-deal-with-Symphogen-334756" target="_new">scripintelligence.com, 6 September 2012</a>). It is being developing as a treatment for squamous cell carcinoma of the head and neck (in Phase Ib trials), for metastatic colorectal cancer (in Phase IIb), and for non-small cell lung cancer (in Phase Ib). In addition, a Japanese Phase I study, which started in 2013, is currently recruiting patients with esophageal cancer. Sym004 is a recombinant IgG1 antibody product consisting of two anti-epidermal growth factor receptor (EGFR) antibodies directed against different non-overlapping EGFR epitopes. </p><p>Under the original license agreement Merck paid Symphogen an upfront figure of &euro;20m, the latter company was also eligible for up to &euro;225m in clinical development and regulatory milestones, &euro;250m in potential combined sales performance milestones, and royalties on net worldwide sales. In 2014, Symphogen received three milestone payments from Merck for achieving certain agreed goals in the collaboration, including the initiation of new mCRC and NSCLC clinical trials.</p><p>Though Symphogen will now miss out on payments from Merck via the partnership, it said it was "pleased" to have regained the rights of its now more mature program. CEO Dr Kirsten Drejer said Symphogen would now be able to transition into a clinical company. "With more than &euro;70m in cash to execute its strategy, the rights to an advancing clinical program, and several pipeline programs being readied for development, we can harvest the productivity of our research efforts and move the company forward with an eye toward commercial oncology opportunities," she said. </p><p>Back in 2012 when Symphogen struck its deal with Merck, the privately held Danish firm said that though out-licensing deals were its strategy, it would be looking to retain its products in the future to commercialize solely. Now it seems the company will have that chance, if a little earlier than anticipated, with Sym004. </p><p>Symphogen is opening a clinical development unit in New Jersey, US, to be led by head of corporate R&D, chief medical and scientific officer Dr Ivan Horak. Additionally, Dr Esper Boel has joined the company as chief technology officer to lead Symphogen's antibody discovery activities in Denmark, including immuno-oncology projects. Prior to joining Symphogen, Dr Boel served as corporate vice-president for the biotechnology unit in Novo Nordisk's international R&D organization. </p><p>Symphogen's pipeline includes: rozrolimupab, which is in Phase II trials in immune thrombocytopenic purpura; a preclinical mAB mixture program targeting solid tumors, expected to reach the clinic in 2016; and Sym013, known as PAN-HER, which Symphogen plans to bring into the clinic this year in a trial also targeting solid tumors. Pan-HER is a mixture of six humanized full-length monoclonal antibodies targeting EGFR, HER2 and HER3. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 199
+
+<p>Merck KGaA has returned a Phase IIb immune-oncology compound back to its originator company Symphogen after a reassessment of its pipeline, but Symphogen is "pleased" with the turn of events. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 70
+
+Symphogen goes solo after Merck KGaA returns rights to cancer antibody
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150130T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150130T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150130T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027674
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+Symphogen goes solo after Merck KGaA returns rights to cancer antibody
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356375
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fd5f10fb-7018-4c6a-8065-5dd52464edc2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

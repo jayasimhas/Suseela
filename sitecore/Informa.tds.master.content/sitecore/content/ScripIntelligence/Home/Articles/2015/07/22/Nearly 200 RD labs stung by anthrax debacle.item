@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C510853E-28D8-4981-ACD4-97FCB6EF98D0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/Nearly 200 RD labs stung by anthrax debacle
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: Nearly 200 RD labs stung by anthrax debacle
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a999340d-8842-4310-bf1d-92160b156206
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Nearly 200 R&D labs stung by anthrax debacle 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Nearly 200 RD labs stung by anthrax debacle
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7277
+
+<p>US government officials stunned lawmakers on 28 July by acknowledging the number of private, academic and federal laboratories that may have received live anthrax from a US military base lab in Utah had doubled from what was reported just last week &ndash; growing from 86 to 192, many of them private-sector labs.</p><p>They said 183 of those labs are in the US and nine are located in seven foreign nations.</p><p>The Department of Defense (DOD) in May reported that as many as 18 labs in nine US states and an American air base in Korea had received samples of what was thought to be inactivated anthrax spores, which turned out to be live.</p><p>But the military and the Centers for Disease Control and Prevention (CDC), which has been conducting a probe of the matter, have steadily been increasing that number.</p><p>Just last week, high-ranking DOD officials &ndash; one of whom called the anthrax debacle a "<a href="http://www.scripintelligence.com/policyregulation/DOD-official-Massive-institutional-failure-led-to-anthrax-mishap-359601" target="_new">massive institutional failure</a>" &ndash; said 86 laboratories in 20 US states and the District of Columbia and seven foreign countries were affected by the shipments of the live pathogen, which occurred over 12 years.</p><p>But Dr Christian Hassell, deputy assistant secretary of defense for chemical and biological defense at DOD, admitted during a 28 July House Energy and Commerce Subcommittee on Oversight and Investigations hearing there were 106 additional labs that received "secondary transfers" from the 86 facilities &ndash; many of them run by drug manufacturers, which obtain the samples from the military for research and development of medical countermeasures, like vaccines and antibiotics.</p><p>Those labs span across all 50 US states, the District of Columbia and three American territories &ndash; Guam, Puerto Rico and the US Virgin Islands, Dr Hassell explained.</p><p>It was actually a private-sector lab that <a href="http://www.scripintelligence.com/home/Live-anthrax-may-have-reached-numerous-US-labs-358624" target="_new">notified the CDC on 22 May</a> it had discovered that some of the anthrax samples the firm obtained from the US Army's Dugway Proving Grounds in Utah turned out to be live.</p><p>The company was involved in a competitive procurement for new detection systems and decided to test their sample before using it to ensure it had been inactivated, Dr Hassell told the House lawmakers.</p><p>The four US military labs that produce inactivated anthrax in support of defensive research and development, including Dugway, were directed to stop producing, shipping and working with any inactivated anthrax, and the DOD imposed a moratorium on such work, he said.</p><p>But Representative Diana DeGette (Democrat-Colorado) asked why nearly 200 labs in the US need to have access to anthrax?</p><p>Dr Hassell insisted the work the private, academic and federal labs do with anthrax and other deadly pathogens is necessary to ensure the US has proper medical countermeasure in place to protect warfighters and the public from biological threats. </p><p>Inactivated anthrax, he explained, also is used to develop detection systems, protection equipment, diagnostics and decontamination capabilities and for training, validation and testing of existing biodetection and diagnostic systems.</p><p>Nonetheless, Ms DeGette demanded that the number of labs with access to deadly biological agents should be trimmed down.</p><p>Marcia Crosse, director of healthcare at the Government Accountability Office (GAO), said her agency actually doesn't know how many high-containment biosafety level (BSL) 3 and 4 labs there are in US &ndash; telling lawmakers that not all of those facilities are registered with the US Federal Select Agent Program, which oversees the possession, use and transfer of biological select agents and toxins that have the potential to pose a severe threat to public, animal or plant health or to animal or plant products.</p><p>She said her agency has been urging the need for improved oversight of the BSL 3 and 4 labs since 2007 &ndash; noting GAO has found several problems since then.</p><p>Gregory Demske, chief counsel for the Health and Human Services Office of Inspector General, said his agency has cited Dugway for several violations, including shipping live anthrax in 2007, unauthorized shipments of botulinum neurotoxin in 2008 and 2010, </p><p>Representative Tim Murphy (Republican-Pennsylvania), chairman of the subcommittee, scolded DOD and CDC for what he called a "pattern of recurring issues of complacency and a lax culture of safety." </p><p>He noted that almost exactly a year ago, CDC Director Frieden had testified before the same subcommittee that his agency had had a wake-up call when it had its <a href="http://www.scripintelligence.com/home/CDC-anthrax-mishap-puts-spotlight-on-biosafety-lab-vulnerabilities-352431" target="_new">own anthrax mishap</a>, which was followed by an accident involving the <a href="http://www.scripintelligence.com/home/Anthrax-smallpox-and-H5N1-Bad-beyond-Walter-White-352849" target="_new">H5N1</a> influenza virus.</p><p>Representative Murphy pointed out that CDC also had a near-calamitous incident involving <a href="http://www.scripintelligence.com/home/CDC-reports-another-lab-mishap-this-time-Ebola-355849" target="_new">Ebola</a> this past December and the National Institutes of Health also discovered live <a href="http://www.scripintelligence.com/home/Smallpox-discovery-triggers-FBI-probe-NIH-lab-search-352714" target="_new">smallpox</a> on its campus last summer.</p><p>"It's like déj&agrave; vu all over again," Representative Murphy declared. "It appears that critical government agencies have hit the snooze button. What is going to change this time?"</p><p>"Please let the CDC know I don't believe them anymore," he charged.</p><p>Several lawmakers said they were flabbergasted by the admissions from CDC and DOD officials that they were still working out policies related to handling deadly pathogens.</p><p>"This is anthrax. We should have had policies for decades," charged Representative Larry Bucshon (Republican-Indiana)</p><p>"I feel really lucky we haven't had anybody infected," Representative DeGette said.</p><p>But, said Representative Frank Pallone (Democrat-New Jersey), "the next time the mishaps may be something more dangerous than liquid anthrax, such as a highly pathogenic pathogen."</p><p>Dr Hassell said the DOD's investigation didn't turn up any "willful disregard" or "nefarious" actions by anyone at Dugway.</p><p>A <a href="http://www.scripintelligence.com/policyregulation/DOD-official-Massive-institutional-failure-led-to-anthrax-mishap-359601" target="_new">comprehensive review</a> found the DOD's lab procedures to irradiate and kill live anthrax spores and test their viability after the process were ineffective &ndash; with the military declaring there was no root cause that led to the shipments of the live samples.</p><p>He said the second part of the DOD's anthrax probe would take a look at accountability. Dr Hassell also said the military agency would look closer at the private-sector labs in its investigation. </p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 321
+
+<p>US government officials stunned lawmakers on 28 July by acknowledging the number of private, academic and federal laboratories that may have received live anthrax from a US military base lab in Utah had doubled from what was reported just last week &ndash; growing from 86 to 192, many of them private-sector labs.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Nearly 200 RD labs stung by anthrax debacle
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T180001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T180001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T180001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029360
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Nearly 200 R&D labs stung by anthrax debacle 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359573
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a999340d-8842-4310-bf1d-92160b156206
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

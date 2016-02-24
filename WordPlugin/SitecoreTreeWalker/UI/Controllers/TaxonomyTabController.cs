@@ -117,7 +117,6 @@ namespace SitecoreTreeWalker.UI.Controllers
 
         public WordPluginModel.TaxonomyStruct[] GetSelected()
         {
-
             return SelectedList.Select(t => new WordPluginModel.TaxonomyStruct { ID = t.ID, Name = t.Name, Section = t.Section }).ToArray();
         }
 
@@ -293,6 +292,9 @@ namespace SitecoreTreeWalker.UI.Controllers
                         {
                             Selected.Items.RemoveAt(currentIndex);
                             Selected.Items.Insert(currentIndex + 1, item);
+							WordPluginModel.TaxonomyStruct currentItem = SelectedList.FirstOrDefault(i => i.ID.ToString() == Selected.SelectedItems[0].SubItems[1].Text);
+							SelectedList.Remove(currentItem);
+							SelectedList.Insert(currentIndex + 1, currentItem);
                         }
                     };
 
@@ -305,6 +307,9 @@ namespace SitecoreTreeWalker.UI.Controllers
                         {
                             Selected.Items.RemoveAt(currentIndex);
                             Selected.Items.Insert(currentIndex - 1, item);
+							WordPluginModel.TaxonomyStruct currentItem = SelectedList.FirstOrDefault(i => i.ID.ToString() == Selected.SelectedItems[0].SubItems[1].Text);
+							SelectedList.Remove(currentItem);
+							SelectedList.Insert(currentIndex - 1, currentItem);
                         }
                     };
 

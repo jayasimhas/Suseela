@@ -7,8 +7,6 @@ using System.Web.Script.Serialization;
 using Informa.Web.Areas.Account.Models;
 using Newtonsoft.Json;
 using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.SitecoreTree;
-
 /// <summary>
 namespace SitecoreTreeWalker.Sitecore
 {
@@ -17,13 +15,13 @@ namespace SitecoreTreeWalker.Sitecore
 		private static List<WordPluginModel.StaffStruct> _authors;
 		private static WordPluginModel.ArticleStruct _articleDetails = new WordPluginModel.ArticleStruct();
 		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
-		private static string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/";
+	
 
 		public static List<WordPluginModel.TaxonomyStruct> SearchTaxonomy(string term)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}SearchTaxonomy?searchTerm={term}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}").Result;
 				var taxonomy = JsonConvert.DeserializeObject<List<WordPluginModel.TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
 				return taxonomy;
 			}
@@ -33,7 +31,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetHierarchyByGuid?guid={taxonomyGuid}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetHierarchyByGuid?guid={taxonomyGuid}").Result;
 				var directoryList = JsonConvert.DeserializeObject<WordPluginModel.HDirectoryStruct>(response.Content.ReadAsStringAsync().Result);
 				return directoryList;
 			}
@@ -43,7 +41,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetMediaStatistics?path={path}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaStatistics?path={path}").Result;
 				var mediaItem = JsonConvert.DeserializeObject<WordPluginModel.MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -68,7 +66,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}SupportingDocumentsNode").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SupportingDocumentsNode").Result;
 				var supportingDocumentsNode = response.Content.ReadAsAsync<string[]>().Result;
 				return supportingDocumentsNode;
 			}
@@ -83,7 +81,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GraphicsNode").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GraphicsNode").Result;
 				var mediaLibraryNode = response.Content.ReadAsAsync<string[]>().Result;
 				return mediaLibraryNode;
 			}
@@ -122,7 +120,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetPublications").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetPublications").Result;
 				var publicationsList = JsonConvert.DeserializeObject<List<WordPluginModel.ItemStruct>>(response.Content.ReadAsStringAsync().Result);
 				return publicationsList;
 			}
@@ -132,7 +130,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetMediaTypes").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaTypes").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.ItemStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -142,7 +140,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetContentTypes").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetContentTypes").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.ItemStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -152,7 +150,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetArticleSizesForPublication?publicationID={publicationID}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleSizesForPublication?publicationID={publicationID}").Result;
 				var articleSizes = JsonConvert.DeserializeObject<List<WordPluginModel.ArticleSize>>(response.Content.ReadAsStringAsync().Result);
 				return articleSizes;
 			}
@@ -162,7 +160,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetAuthors").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.StaffStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -173,7 +171,7 @@ namespace SitecoreTreeWalker.Sitecore
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetArticleDetails?articleNumber={articleNumber}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetails?articleNumber={articleNumber}").Result;
 				var articleStruct = JsonConvert.DeserializeObject<WordPluginModel.ArticleStruct>(response.Content.ReadAsStringAsync().Result);
 				return articleStruct;
 			}
@@ -188,7 +186,7 @@ namespace SitecoreTreeWalker.Sitecore
 			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetArticleDetailsBg?articleGuid={articleGuid}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetailsBg?articleGuid={articleGuid}").Result;
 				var articleStruct = JsonConvert.DeserializeObject<WordPluginModel.ArticleStruct>(response.Content.ReadAsStringAsync().Result);
 				return articleStruct;
 			}
@@ -202,7 +200,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetDynamicUrl?path={path}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDynamicUrl?path={path}").Result;
 				return response.Content.ReadAsStringAsync().Result;
 			}
 		}
@@ -212,7 +210,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{			
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetMaxLengthShortSummary").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthShortSummary").Result;
 				var length = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return length;
 				/*
@@ -227,16 +225,10 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetMaxLengthLongSummary").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthLongSummary").Result;
 				var length =  JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return length;
-				/*
-				Int32.TryParse(response.Content.ReadAsStringAsync().Result, out length);
-				return length;
-				*/
 			}
-			var sctree = new SCTree();
-			return sctree.GetMaxLengthLongSummary(_sitecoreUser.Username, _sitecoreUser.Password);
 		}
 
 
@@ -246,7 +238,7 @@ namespace SitecoreTreeWalker.Sitecore
 			{
 				using (var client = new HttpClient())
 				{
-					var response = client.GetAsync($"{webApiURL}IsAvailable").Result;
+					var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}IsAvailable").Result;
 					var isAvailable = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
 					return isAvailable;
 				}
@@ -262,48 +254,48 @@ namespace SitecoreTreeWalker.Sitecore
 			using (var client = new HttpClient())
 			{
 				//TODO - This might change due to change in Staff and Authors
-				var response = client.GetAsync($"{webApiURL}GetAuthors").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.StaffStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
 		}
 
-		public static DealInfo GetDealInfo(string recordNumber)
+		//TODO - GetDealInfo
+		public static WordPluginModel.DealInfo GetDealInfo(string recordNumber)
 		{
-			var sctree = new SCTree();
-			return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
-		}
+			//return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
+			return new WordPluginModel.DealInfo();
+	}
 
 		public static int[] GetWidthHeightOfMediaItem(string path)
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetWidthHeightOfMediaItem?path={path}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetWidthHeightOfMediaItem?path={path}").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<int>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem.ToArray();
 			}
 
 		}
-
-		public static List<CompanyWrapper> GetAllCompanies()
+		//TODO - GetAllCompanies
+		public static List<WordPluginModel.CompanyWrapper> GetAllCompanies()
 		{
-			var sctree = new SCTree();
-
-			return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
+			//return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
+			return new List<WordPluginModel.CompanyWrapper>();
 		}
-
-		public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
+		
+		//TODO - GetAllRelatedCompanies
+		public static IEnumerable<WordPluginModel.CompanyWrapper> GetAllCompaniesWithRelated()
 		{
-			var sctree = new SCTree();
-
-			return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
+			//return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
+			return new List<WordPluginModel.CompanyWrapper>();
 		}
 
 		public static List<WordPluginModel.WordStyleStruct> GetParagraphStyles()
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetParagraphStyles").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetParagraphStyles").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -313,7 +305,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetCharacterStyles").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetCharacterStyles").Result;
 				var mediaItem = JsonConvert.DeserializeObject<List<WordPluginModel.WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -323,7 +315,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetChildrenDirectories?path={path}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetChildrenDirectories?path={path}").Result;
 				var directoryList = JsonConvert.DeserializeObject<WordPluginModel.DirectoryStruct[]>(response.Content.ReadAsStringAsync().Result);
 				return directoryList;
 			}
@@ -333,7 +325,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetMediaLibraryItem?path={path}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaLibraryItem?path={path}").Result;
 				var mediaItem = JsonConvert.DeserializeObject<WordPluginModel.MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
 				return mediaItem;
 			}
@@ -343,7 +335,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}GetItemGuidByPath?path={path}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetItemGuidByPath?path={path}").Result;
 				var itemGuid = JsonConvert.DeserializeObject<Guid>(response.Content.ReadAsStringAsync().Result);
 				return itemGuid;
 			}
@@ -358,7 +350,7 @@ namespace SitecoreTreeWalker.Sitecore
 		{
 			using (var client = new HttpClient())
 			{
-				var response = client.GetAsync($"{webApiURL}MediaPreviewUrl?path={path}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}MediaPreviewUrl?path={path}").Result;
 				return response.Content.ReadAsStringAsync().Result;
 			}
 		}

@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {B36FAEE9-8764-414E-BBC0-FB980FD51141}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/26/US military chief calls for accountability in anthrax mishap
+parent: {BE692C32-5AA8-45EF-8DEC-C1CC14E864B1}
+name: US military chief calls for accountability in anthrax mishap
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ef2bc612-c982-4055-b007-177a8e18a452
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+US military chief calls for accountability in anthrax mishap 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+US military chief calls for accountability in anthrax mishap
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4019
+
+<p>US Defense Secretary Ashton Carter on 31 May called for those involved in the anthrax accident in which live <i>Bacillus anthracis</i> spores were inadvertently shipped from an American military base in April to potentially numerous private, academic and federal laboratories across the US, as well as to South Korea and Australia, to be held accountable.</p><p>The US Department of Defense (DOD) on 29 May said it was planning to conduct a comprehensive review of its laboratory procedures, processes and protocols associated with inactivating anthrax after it was discovered samples with live spores were shipped from the US Army's Dugway Proving Grounds (DPG) in Utah to potentially numerous laboratories across the US and an American military base in South Korea.</p><p>The DOD on 29 May revealed DPG may also have sent live anthrax in 2008 to Australia for research purposes.</p><p>The US military agency <a href="http://www.scripintelligence.com/home/Live-anthrax-may-have-reached-numerous-US-labs-358624" target="_new">initially said</a> on 27 May 18 labs in nine US states were affected, plus Osan Air Base in Korea. </p><p>But on 29 May, DOD increased the number of US private, academic and federal labs to 24 in 11 states that may have received the live spores from DPG, which sent the samples via Fed-Ex.</p><p>On 28 May, bipartisan leaders from the House Energy and Commerce Committee on 28 May <a href="http://www.scripintelligence.com/policyregulation/Lawmakers-troubled-over-anthrax-mishap-demand-answers-358649" target="_new">demanded answers</a> from the heads of the DOD and Centers for Disease Control and Prevention (CDC) about what led to the latest anthrax mishap.</p><p>"We are troubled," the lawmakers said in letters to Secretary Carter and CDC Director Dr Tom Frieden. </p><p>Deputy Defense Secretary Bob Work said he ordered the review of the military's lab processes after consulting with Secretary Carter.</p><p>But President Barack Obama already had ordered an <a href="http://www.scripintelligence.com/home/White-House-orders-immediate-sweep-of-infectious-agent-labs-353593" target="_new">immediate government-wide search and review</a> of all laboratories last year to ensure all toxic and infectious agents were safe and secure in an attempt to minimize the potential for any future mishaps after near-calamities last year involving <a href="http://www.scripintelligence.com/home/CDC-anthrax-mishap-puts-spotlight-on-biosafety-lab-vulnerabilities-352431" target="_new">anthrax</a>, <a href="http://www.scripintelligence.com/home/Smallpox-discovery-triggers-FBI-probe-NIH-lab-search-352714" target="_new">smallpox</a> and the <a href="http://www.scripintelligence.com/home/Anthrax-smallpox-and-H5N1-Bad-beyond-Walter-White-352849" target="_new">H5N1 influenza</a> virus at government labs run by the Centers for Disease Control and Prevention, the FDA and the National Institutes of Health. There also was a later incident involving <a href="http://www.scripintelligence.com/home/CDC-reports-another-lab-mishap-this-time-Ebola-355849" target="_new">Ebola</a> at the CDC.</p><p>The NIH's review actually turned up more unsecured pathogens, <a href="http://www.scripintelligence.com/home/Ricin-other-unsecured-pathogens-found-at-NIH-FDA-353742" target="_new">including ricin</a>.</p><p>The DOD, however, has not addressed why its anthrax incident happened long-after the president's order.</p><p>The military agency said its review would include a root-cause analysis for the incomplete inactivation of anthrax; laboratory biohazard safety procedures and protocols; adherence to established procedures and protocols; and identification of systemic problems and the steps necessary to fix them.</p><p>The CDC is conducting a separate investigation, for which DOD said it is cooperating and collaborating.</p><p>At least four lab workers in the US and 22 at the air base in Korea have received prophylactic therapy due to the military anthrax accidental.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 362
+
+<p>US Defense Secretary Ashton Carter on 31 May called for those involved in the anthrax accident in which live <i>Bacillus anthracis</i> spores were inadvertently shipped from an American military base in April to potentially numerous private, academic and federal laboratories across the US, as well as to South Korea and Australia, to be held accountable.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+US military chief calls for accountability in anthrax mishap
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150526T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150526T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150526T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028873
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{99C1E0C6-E575-4630-A767-F6BBBF6CA843}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+US military chief calls for accountability in anthrax mishap 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200200407
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+MarketData
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358585
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ef2bc612-c982-4055-b007-177a8e18a452
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042354Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {C65DCEE3-9C98-4190-88D8-3EF7EC7FF540}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/07/Panel Small benefit with Lillys NSCLC drug relevance short
+parent: {CC2443D4-0E6D-4729-AC39-BFE81987180B}
+name: Panel Small benefit with Lillys NSCLC drug relevance short
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: cb85a569-7fee-4cae-951b-7dd28633a3d2
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Panel: Small benefit with Lilly's NSCLC drug; relevance short?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Panel Small benefit with Lillys NSCLC drug relevance short
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8870
+
+<p>For the most part, the members of the FDA's Oncologic Drugs Advisory Committee (ODAC) on 9 July said the risk-benefit ratio favors Lilly's necitumumab as a treatment for patients with squamous non-small-cell lung cancer (NSCLC) &ndash; a disease with a particularly poor prognosis.</p><p>Lilly is seeking approval to market necitumumab, an anti-epidermal growth factor receptor monoclonal antibody, in combination with gemcitabine and cisplatin as a first-line treatment for patients with locally advanced or metastatic squamous NSCLC.</p><p>The drug as a first-line treatment demonstrated a 1.6 month improvement of overall survival in patients with squamous NSCLC &ndash; which was small, but statistically significant &ndash; in Lilly's randomized, controlled, open-labeled, international SQUIRE study.</p><p>The trial was the first to demonstrate positive results of a first-line treatment in squamous NSCLC, Lilly officials declared.</p><p>While there have been some breakthroughs in second-line treatment, including the FDA's recent approval of Bristol-Myer's Squibb's Opdivo (nivolumab), only 50% of patients ever make it to the point of receiving second-line therapy, said Dr Everett Vokes, chair of the Department of Medicine at the University of Chicago, who was acting as a consultant for Lilly. </p><p>But there also were increases in <a href="http://www.scripintelligence.com/home/Thromboembolic-events-troublesome-for-Lilly-lung-cancer-drug-359296" target="_new">thromboembolic events</a> (TEs) and toxicities, including hypomagnesemia and skin rashes, attributed to necitumumab.</p><p>In another study, known as INSPIRE, which tested necitumumab in combination with Lilly's Alimta (pemetrexed) and cisplatin in advanced nonsquamous NSCLC patients, there was an imbalance in the number of deaths attributed to potential TEs and all-cause deaths observed in the treatment arm &ndash; events that led to the study being closed early and the company deciding to end its development of the drug in that population.</p><p>There were 12 deaths classified as sudden or unknown in patients treated with necitumumab, versus three who got the chemotherapy regimen alone, explained Dr Lee Pai-Scherf, a medical officer in the FDA's Office of Hematology and Oncology Products (OHOP).</p><p>She noted, however, a vast majority of those patients had comorbidities that may have contributed to their deaths. </p><p>Dr Pai-Scherf said the FDA determined that for some of the patients, there were electrolyte disturbances, which are known to be associated with both necitumumab and platinum therapy, that had gone uncorrected or were suboptimally corrected hypomagnesemia &ndash; likely causing those patients to die.</p><p>Dr Richard Pazdur, OHOP director, clarified that the FDA doesn't know for certain whether those deaths were caused by hypomagnesemia.</p><p>But, he said, the agency wants to do as much as possible to ensure patients given necitumumab are not dying of hypomagnesemia, "rather than just noting it and not doing anything about it."</p><p>If the drug is approved, Dr Pai-Scherf said, the FDA would insist prescribers must be aggressive about monitoring magnesium levels in patients prescribed necitumumab.</p><p>Lilly has proposed a risk management program, which includes educating prescribers and patients about the potential risk of venous TEs (VTEs), hypomagnesemia and rash, explained Dr Stephen Knowles, safety medical lead at Lilly.</p><p>He said the program also would include patient brochures and discussion guides and a website targeted to that audience.</p><p>Dr Knowles said Lilly also plans to establish necitumumab call centers for patients and doctors.</p><p>Lilly proposed including in the labeling an alert about VTEs and advice for prescribers to consider using anticoagulation in high risk patients.</p><p>In addition, the drug's labeling would include an alert to "carefully consider use of necitumumab in patients with a history of coronary artery disease or arrhythmias and to closely monitor serum electrolytes, including serum magnesium, potassium and calcium before each infusion and for eight weeks following completion. </p><p>The labeling also would advise repleting electrolytes as necessary, Dr Knowles said.</p><p>But the FDA has been grappling with whether those measures are enough to protect patients, while at the same time, wanting to provide options for squamous NSCLC.</p><p>So the agency brought the issue to its ODAC on 9 July.</p><p><b>Discussion valued over votes</b></p><p>The committee didn't take an official vote on the matter. Instead, the ODAC provided advice to the FDA through the experts' discussion of two questions: Did the INSPIRE trial results in the nonsquamous NSCLC population impact the benefit-risk assessment of necitumumab for squamous NSCLC; and do the efficacy and safety results of SQUIRE in squamous cell NSCLC support a positive benefit-risk assessment of Lilly's drug in combination with gemcitabine and cisplatin in the proposed population. </p><p>"We are interested in the underlying reasons and discussion, rather than a vote," Dr Pazdur said.</p><p>Some on the panel questioned whether it was appropriate to use anticoagulants in NSCLC patients given necitumumab and if there were other drugs in cancer in which such a regimen is used.</p><p>Dr Pazdur acknowledged there were a handful of cancer medicines in which anticoagulants are used in combination to prevent VTEs, including Celgene's Thalomid (thalidomide), in which about 20% experience those types of adverse events. </p><p>But the cancer drug chief said he would like to see Lilly conduct a study to provide evidence on use of anticoagulants with necitumumab.</p><p>Others on the committee wanted to know if there was any evidence Lilly's proposed education and awareness program would work to ensure doctors are checking magnesium levels of patients to prevent hypomagnesemia.</p><p>Dr Katie Sugarman, oncology regulatory lead at Lilly, said her company not only learned valuable lessons in its studies of necitumumab about the importance of being proactive in educating physicians about aggressively monitoring patients for metabolic issues, but also with the firm's experience with another of its drugs, Alimta, in which doctors also prescribed supplements of vitamin B-12.</p><p>"The simple answer to the question is yes, there is a positive benefit-risk ratio for this compound, but there's I think still caveats out there regarding concerns regarding toxicity and also to some degree the magnitude of the overall benefits," said panelist Dr Michael Menefee, an assistant professor of medicine at Mayo Clinic in Jacksonville, Florida. "I still think the additional studies that are evaluating this compound may bear significant impact on whether or not the results of this study are validated."</p><p>While the survival benefit of necitumumab is "modest" and "incremental," it's "real," argued ODAC chair Dr Deborah Armstrong, a professor of oncology at Johns Hopkins University in Baltimore, Maryland.</p><p>But she also acknowledged it "may be a very temporary move forward."</p><p>Nonetheless, for now, Dr Armstrong said, "it could fill the void for squamous cell patients."</p><p><b>Fortune-telling</b></p><p>But panelist Dr Bruce Roth, a professor of oncology at the Washington University St Louis in Missouri, said the FDA should be making its risk-benefit assessment on "what we have here, not based on punitive risk management strategies that may make us feel good, but may or may not save the lives of any patients down the road."</p><p>"I can hypothesis that for every VTE we successfully prophylaxis with anti-coagulation, we have another bleeding death," Dr Roth said. "We may not be addressing the right issues, much less, successfully treating the ones that we've identified. We need to make risk-benefit judgment on what we have available here today, not what might happen in postmarketing discussions." </p><p>Panelist Dr Tito Fojo, director of the Medical Oncology Fellowship Program at the National Cancer Institute, agreed.</p><p>"At the end of the day, this trial doesn't provide me with the comfort of saying the risk-benefit is a favorable one," he said. "It sure would be nice to have better data and additional data. Until then, I'm unconvinced." </p><p>"I just wish the data was much better than it is," Dr Fojo said.</p><p>In the end, though, "we might be one checkpoint inhibitor away from this data being irrelevant," he said, noting that Opdivo eventually may gain first-line therapy approval.</p><p>But Dr Pazdur said the FDA makes its decisions on what is currently known &ndash; insisting neither the agency nor the ODAC should be making "inferences on what possibilities might be coming down the line."</p><p>"We are not fortune-tellers," Dr Pazdur said.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 288
+
+<p>For the most part, the members of the FDA's Oncologic Drugs Advisory Committee (ODAC) on 9 July said the risk-benefit ratio favors Lilly's necitumumab as a treatment for patients with squamous non-small-cell lung cancer (NSCLC) &ndash; a disease with a particularly poor prognosis.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Panel Small benefit with Lillys NSCLC drug relevance short
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150707T110001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150707T110001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150707T110001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029194
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Panel: Small benefit with Lilly's NSCLC drug; relevance short?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359281
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042420Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cb85a569-7fee-4cae-951b-7dd28633a3d2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042420Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

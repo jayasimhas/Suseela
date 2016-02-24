@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.Globalization;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -11,8 +12,13 @@ namespace Informa.Web.ViewModels
     public class HierarchyLinksViewModel : GlassViewModel<I___BaseTaxonomy>, IHierarchyLinks
     {
         private HierarchyLinks model;
-        public HierarchyLinksViewModel(I___BaseTaxonomy glassModel)
+        protected readonly ITextTranslator TextTranslator;
+        public HierarchyLinksViewModel(
+            I___BaseTaxonomy glassModel,
+            ITextTranslator textTranslator)
         {
+            TextTranslator = textTranslator;
+
             model = new HierarchyLinks();
 
             model.Text = "Related Topics";
@@ -25,16 +31,16 @@ namespace Informa.Web.ViewModels
             foreach (var taxonomy in glassModel.Taxonomies)
             {
                 var taxonomyTree = GetTaxonomyHierarchy(taxonomy);
-                
+
                 if (!taxonomyItems.ContainsKey(taxonomyTree.Item1._Id))
-                {   
+                {
                     taxonomyItems.Add(taxonomyTree.Item1._Id, new HierarchyLinks
                     {
                         Text = taxonomyTree.Item1._Name,
                         Url = string.Empty,
                         Children = new List<HierarchyLinks>()
                     });
-                }
+                }        
 
                 var folderItem = taxonomyItems[taxonomyTree.Item1._Id];
 
@@ -64,8 +70,9 @@ namespace Informa.Web.ViewModels
 
                     parent.Children = pList; 
                 }
-
-                children.Add(folderItem);
+                
+                if(!children.Any(x => x.Text.Equals(folderItem.Text)))
+                    children.Add(folderItem);
             }
 
             model.Children = children;
@@ -104,6 +111,7 @@ namespace Informa.Web.ViewModels
 
         public string Text => model.Text;
 
+        public string RelatedTaxonomyHeader => TextTranslator.Translate("Article.RelTaxHeader");
 
         public string Url => model.Url;
     }

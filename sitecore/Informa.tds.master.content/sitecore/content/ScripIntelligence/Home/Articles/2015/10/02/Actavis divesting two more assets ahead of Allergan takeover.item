@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {06C8F0DD-23B1-450F-ABD3-BF56F0073F2B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/02/Actavis divesting two more assets ahead of Allergan takeover
+parent: {649A1F5F-680B-4755-ABE7-6BF2F8862CDD}
+name: Actavis divesting two more assets ahead of Allergan takeover
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b730fa68-64e4-4a1a-9f77-5f0c657b9ea0
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Actavis divesting two more assets ahead of Allergan takeover
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Actavis divesting two more assets ahead of Allergan takeover
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4082
+
+<p>Actavis is selling two more assets &ndash; Aptalis Pharmaceutical Technologies (Pharmatech) and US rights to the acne drug Doryx &ndash; as the company prepares to take on a massive aesthetic and therapeutic portfolio when its $66bn acquisition of Irvine, California-based Allergan closes in a month or two.</p><p>Pharmatech and Doryx were the second and third divestitures that Dublin-based Actavis announced in February. The company recently agreed to sell its respiratory portfolio to AstraZeneca for $600m with Actavis CEO Brent Saunders noting that the transaction will allow the company to focus on key therapeutic areas, including dermatology and ophthalmology, which will grow when the Allergan buyout closes in March or April (scripintelligence.com, <a href="http://www.scripintelligence.com/home/AstraZeneca-buys-Actavis-North-American-respiratory-business-356567" target="_new">5 February 2015</a> and <a href="http://www.scripintelligence.com/home/What-does-Actavis-get-in-66bn-Allergan-buy-355110" target="_new">18 November 2014</a>).</p><p><b>Pharmatech sale</b></p><p>The private global investment firm TPG will pay an undisclosed amount for Pharmatech, a pharmaceutical outsourcing and research and development business that operates under Actavis's specialty pharma subsidiary Aptalis. Actavis closed 1.3% higher at $285.37 per share on 13 February after the transaction was announced.</p><p>Coincidentally, Forest Laboratories purchased Aptalis from TPG for $2.9bn in early 2014, a month before Actavis agreed to buy Forest for $25bn (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Actavis-in-25bn-Forest-buy-rumor-350092" target="_new">18 February 2014</a>). Forest said when it announced the Aptalis deal that the Pharmatech business was about 15% of Aptalis's $688m in fiscal year 2013 revenue (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Forest-bets-on-growth-with-2.9bn-Aptalis-buy-349184" target="_new">9 January 2014</a>).</p><p>Actavis chief operating officer Robert Stewart said the Pharmatech sale to TPG "will enable our industry-leading Global Operations team to sharpen their focus on supporting our existing global supply chain, and on preparing for the expansion of our manufacturing network with the addition of the Allergan facilities following the close of the acquisition later this year."</p><p>TPG's John Schilling said there is a lot of demand for Pharmatech's drug delivery and R&D expertise, particularly for de novo products, novel formulations of existing therapies and targeted generic products. The investment firm's acquisition is expected to close by mid-2015.</p><p><b>Doryx deal</b></p><p>Earlier in the week, Actavis announced on 9 February that it will sell US rights to Doryx (doxycycline hyclate delayed-release tablets), a tetracycline-class antimicrobial approved as an adjunctive therapy for severe acne, to Mayne Pharma for $50m. Actavis acquired its rights to Doryx when it bought Warner Chilcott in 2013 for $8.5bn (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Chilcott-deal-has-slaked-thirst-of-generic-hunter-Actavis---for-now-343382" target="_new">20 May 2013</a>). </p><p>Warner Chilcott licensed Doryx from Mayne for US distribution under an agreement that was set to expire at the end of 2015. Mayne's reacquisition of US Doryx rights is expected to close before the end of February, but Actavis will continue to package, distribute and actively promote the product during a transition period that ends of 2 May.</p><p>"By agreeing to return the product to Mayne now we receive value for the asset and, following a brief transition period, [the divestiture] will enable our sales and marketing teams to focus their time and attention on supporting the expanded, industry-leading dermatology portfolio that will be part of our combined company following the acquisition of Allergan later this year," Actavis executive vice president of commercial for North American Brands William Meury said in a statement from the company.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 314
+
+<p>Actavis is selling two more assets &ndash; Aptalis Pharmaceutical Technologies (Pharmatech) and US rights to the acne drug Doryx &ndash; as the company prepares to take on a massive aesthetic and therapeutic portfolio when its $66bn acquisition of Irvine, California-based Allergan closes in a month or two.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Actavis divesting two more assets ahead of Allergan takeover
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151002T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151002T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151002T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027820
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Actavis divesting two more assets ahead of Allergan takeover
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356670
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b730fa68-64e4-4a1a-9f77-5f0c657b9ea0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042253Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

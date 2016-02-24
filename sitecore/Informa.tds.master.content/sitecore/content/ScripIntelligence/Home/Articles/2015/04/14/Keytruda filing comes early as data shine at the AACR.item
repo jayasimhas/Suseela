@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {DED7F79F-49DB-47B9-9F76-4773E55502FD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/14/Keytruda filing comes early as data shine at the AACR
+parent: {A8A43D63-6ACC-4DA4-B2AE-AFEB13F96A43}
+name: Keytruda filing comes early as data shine at the AACR
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7b9d13bc-29de-4065-b2b4-99c5d92e7227
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Keytruda filing comes early as data shine at the AACR
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Keytruda filing comes early as data shine at the AACR
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8123
+
+<p>Merck & Co crowned a busy day of data presentations at the AACR meeting in Philadelphia on Sunday 19 April with news that it has filed its anti-PD-1 immunotherapy product Keytruda (pembrolizumab) in the US a little earlier than expected in second-line non-small lung cancer.</p><p>Results presented for the product included the supporting data for the supplemental NDA, plus the Phase III KEYNOTE-006 study against Bristol-Myers Squibb's anti-CTLA-4 antibody Yervoy (ipilimumab) in advanced melanoma, and encouraging early data in another smaller indication, mesothelioma. </p><p>Keytruda, which was launched in the US last year for melanoma patients who have previously been treated with ipilimumab, has already received Breakthrough Therapy designation for advanced NSCLC. The latest filing is specifically for patients with advanced NSCLC whose disease has progressed on or after platinum-containing chemotherapy and an FDA-approved therapy for EGFR or ALK genomic tumor aberrations, if present.</p><p>The submission is based on data from the Phase Ib KEYNOTE-001 study in na&iuml;ve and previously-treated patients with advanced NSCLC. New analyses from this study were presented at the Philadelphia meeting, and simultaneously published in the <i>New England Journal of Medicine</i>, that broke down the overall response rates by PD-L1 expression to show better responses in those with higher expression. In the 73 patients with >50% staining for PDL-1 expression (about 25% of the 313 patients in the set) the overall-response rate (ORR) was 45.4% (95% CI, 33.5-57.3). For the other PD-L1 subgroups, ORR was 16.5% in the 103 patients with 1-49% tumour cells positive and 10.7% in the 28 patients with <1% tumour="" cells="" positive="" for="" pd-l1="" expression.="" for="" the="" total="" study="" population,="" orr="" was="" 19.4%="" (n="495)," which="" was="" consistent="" with="" data="" previously="" presented="" from="" this=""></1%></p><p>Merck says that these efficacy findings show that tumour PD-L1 expression may be a relevant biomarker for the identification of NSCLC patients with an enhanced likelihood of experiencing improved efficacy with an anti-PD-1 therapy. Indeed a premarket approval application (PMA) was submitted by Dako North American Agilent Technologies Company, for an immunohistochemistry companion diagnostic test that detects PD-L1 expression, PD-L1 IHC 22C3 PharmDx. </p><p>However, debate over the value of PDL-1 as a biomarker continues, noted analysts at Leerink, and it seems likely that PDL1 biomarkers will be used to direct rather than select patient treatment choices. </p><p>Analysts at Credit Suisse concurred: "Our base case assumption [is] that Keytruda will be approved later this year for use in the second line NSCLC setting for patients with tumors of all histologies and regardless of PD-L1 biomarker status, but the label will also include data showing the enhanced responses seen in PD-L1 positive patients."</p><p>But analysts at BioMedTracker added that the PD-L1 findings should help the ongoing Phase II/III study in NSCLC. "These results support that cutoff with generally higher efficacy in the >50% expression group (OS has not yet been reached in that group). That finding bodes well for the Phase II/III - KEYNOTE-010 study which requires patients to have PD-L1 positive tumors."</p><h2>competition</h2><p>Despite the Keytruda progress, Bristol-Myers Squibb, with its anti-PD1 product Opdivo (nivolumab), remains ahead of Merck and other competitor Roche, and fourth runner AstraZeneca, in the NSCLC indication. BMS has just announced that its <a href="http://www.scripintelligence.com/home/Another-quick-lung-cancer-approval-in-Opdivos-future-357947" target="_new">CHECKMATE-057 trial has been stopped early</a> due to overwhelming efficacy over the standard of care docetaxel (Genentech's Taxotere) in overall survival. This major win for Opdivo puts it in line to be the only PD1/PDL1 agent approved before 2016/17 with a survival benefit in a broad non-biomarker-selected NSCLC patient population. </p><p>But Credit Suisse analysts add that while Opdivo is likely to remain "the big winner" for the next few years, leveraging PD-L1 expression could provide a path for Merck to gain traction in NSCLC. "Most lung cancer doctors we have spoken with to date are not planning on assessing biomarker status prior to initiating I-O therapy, but the discussant following the Merck data presentation highlighted how using the 'imperfect' PD-L1 biomarker may still be of value when considering health economics and treatment prioritization."</p><h2>melanoma</h2><p>Meanwhile, Merck's KEYNOTE-006 data should provide a boost to Keytruda's use first-line over BMS's Yervoy in advanced melanoma. This study was also <a href="http://www.scripintelligence.com/researchdevelopment/Keytruda-beats-Yervoy-and-edges-ahead-of-Opdivo-in-first-line-melanoma-357471" target="_new">halted early </a>in March after a strong benefit was seen in both progression-free and overall survival, its primary endpoints, putting Keytruda ahead of Opdivo in the first-line treatment of advanced melanoma. </p><p>The 834-patient KEYNOTE-006 study randomized 834 unresectable stage III or IV advanced melanoma patients with no more than one prior systemic therapy to pembrolizumab 10mg/kg every two weeks, pembrolizumab 10mg/kg every three weeks, or four cycles of ipilimumab 3mg/kg every three weeks.</p><p>At the interim analysis, median PFS for pembrolizumab was 5.5 months (2 week group) and 4.1 months (3-week group) compared with 2.8 months for ipilimumab (HR 0.58, p<0.00001 for="" the="" pembrolizumab="" groups="" versus="" ipilimumab).="" the="" estimated="" six-month="" pfs="" rates="" for="" the="" pembrolizumab="" and="" ipilimumab="" arms="" were="" 47.3%,="" 46.4%="" and="" 26.5%,="" respectively.=""></0.00001></p><p>One-year OS for pembrolizumab was 74.1% (two-week group) and 68.4% (three-week group) compared with 58.2% for ipilimumab (p=0.00052 for the two-week group and p=0.00358 for the three-week group). Median overall survival was not reached in any treatment group at the time of the analysis. </p><p>The data were in line with analysts' expectations, and should drive greater near-term front-line use of Keytruda. However, longer term Keytruda will have to contend with BMS's potential combination of Opdivo plus Yervoy in this indication. Data from BMS's CheckMate-069 comparing Opdivo plus Yervoy against Yervoy alone in melanoma will also be presented at the AACR. "We expect strong efficacy from the combination but the safety profile will be important to monitor to ensure the added benefit is worth the added risk," said Credit Suisse analysts.</p><h2>mesothelioma</h2><p>Another boost for Keytruda came with promising early results from the 25-patient KEYNOTE-028 study in advanced pleural mesothelioma. </p><p>These showed an overall response rate (confirmed and unconfirmed) of 28% with Keytruda in patients with tumors that expressed PD-L1. 48% of patients had stable disease, giving in a disease control rate of 76%. Adverse events in the study were consistent with previously reported safety data for the product.</p><p>Although early, these are the first data for an anti-PD-1 therapy in this cancer, which has limited treatment options. 40% of patients remain on treatment in the ongoing study. </p><p>Analysts say the data reinforce the potential of immune-oncology in a range of cancers. "Mesothelioma is a relatively small commercial opportunity (about 3,000 new cases are diagnosed in the US each year) but the data showcases yet another tumor type where I-O has the promise to greatly boost patient outcomes &#8230; We continue to believe the move of I-O into currently underappreciated markets will allow for investor expectations for the entire class to continue to rise," said the Credit Suisse analysts. </p><p>In addition to the CheckMate-069 study for Opdivo, other PD-1/PD-L1 targeting products reporting data at the AACR include Roche's RG7446 (MPDL3208A) in triple-negative breast cancer and AstraZeneca's MEDI-4736. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 281
+
+<p>Merck & Co crowned a busy day of data presentations at the AACR meeting in Philadelphia on Sunday 19 April with news that it has filed its anti-PD-1 immunotherapy product Keytruda (pembrolizumab) in the US a little earlier than expected in second-line non-small lung cancer.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Keytruda filing comes early as data shine at the AACR
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150414T130838
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150414T130838
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150414T130838
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028478
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Keytruda filing comes early as data shine at the AACR
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357873
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042331Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7b9d13bc-29de-4065-b2b4-99c5d92e7227
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042332Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

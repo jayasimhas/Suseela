@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {61E8AD71-E685-4233-B3EF-AF685780540B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/13/NICE guidance on AMD will not give advice on Avastin
+parent: {00E1F432-3245-46E7-B97A-7253B91FCA66}
+name: NICE guidance on AMD will not give advice on Avastin
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9c2043c1-b263-480f-b0f7-df38619fdd3b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+NICE guidance on AMD will not give advice on Avastin 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+NICE guidance on AMD will not give advice on Avastin
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5245
+
+<p>The National Institute for Health and Care Excellence (NICE) has begun consulting on a draft guideline on treatments for age-related macular degeneration covering all therapies that are currently being used for wet AMD, including Novartis's Lucentis (ranibizumab), Roche's Avastin (bevacizumab), and Bayer's Eylea (aflibercept).</p><p>However, while the guideline will include information on the properties and use of Avastin in wet AMD, NICE says that because the product is not licensed for this indication by the UK regulator, the MHRA, it will not make any recommendation for Avastin's use on the NHS where licensed alternatives are available. </p><p>Avastin has been in the headlines recently, with both Italy and France controversially passing laws allowing it to be reimbursed for off-label use in wet AMD rather than the more expensive Lucentis, and clinical commissioning groups (CCGs) calling on the UK government and NHS England to support doctors who want to prescribe Avastin for this use. </p><p>The issue has also been under the spotlight after studies were published by the Royal College of Ophthalmologists and the Cochrane Collaboration showing similar efficacy and safety of the two products. </p><p>More recently, the World Health Organization <a href="http://www.scripintelligence.com/home/WHO-recommends-new-cancerhep-C-drugs-but-not-at-any-cost-358268" target="_new">turned down Novartis' application</a> to include Lucentis on the Essential Medicines List, saying it preferred to retain Avastin on safety, efficacy and cost grounds.</p><h2>Current guidance</h2><p>NICE began looking into the matter after it was referred by the Department of Health in December last year as part of the institute's work program, amid the debate over the high cost of Lucentis, the widespread off-label use of the much cheaper Avastin, and the growing incidence of AMD.</p><p>Under current guidance, NICE recommends both Lucentis and Eylea for wet AMD, but not Avastin or Pfizer's pegaptanib sodium (Macugen), even though the latter is licensed for this use. </p><p>In a "guideline scope" document that is now out for consultation until 8 June, NICE says there has been a "significant increase" in hospital activity in England for episodes with a primary diagnosis of AMD, from fewer than 10,000 episodes in 2005/06 to more than 75,000 episodes in 2013/14. "The most common primary procedure in hospital episodes of people with a primary diagnosis of macular degeneration involves intravitreal injection," it says, noting that the cost of Lucentis for the treatment of neovascular AMD is "significant". </p><p>In 2013/14 the Novartis product was second in the list of drugs by cost for medicines positively appraised by NICE, the institute says. "In the same year the cost of this medicine to the NHS was &pound;244 million (although some of this cost will be for other licensed indications)."</p><p>The scope document says that "interventions of interest" in wet AMD include Eylea, Avastin, Macugen and Lucentis, as well as intravitreal steroids, laser photocoagulation, photodynamic therapy submacular surgery, radiotherapy, psychological therapies and "reablement" services. </p><p>In the area of pharmacological treatments, it notes that guideline recommendations will normally fall within licensed indications, although "exceptionally, and only if clearly supported by evidence, use outside a licensed indication may be recommended". </p><p>However, while this might suggest that NICE might be considering recommending use of Avastin because of its lower cost, the institute says that even though the product is "in use" in the UK and elsewhere for wet AMD, the MHRA "regards it as unlicensed for this indication because its use requires it to be reconstituted". Moreover, it notes, a number of licensed alternatives are available.</p><p>Although there is evidence (including research funded by the National Institute for Health Research) demonstrating the safety and efficacy of bevacizumab for treating AMD, which will be referred to in the guideline, "our ability to refer to its use in routine clinical practice for this condition is constrained by its licensing status. Therefore, while bevacizumab will be included in the evaluations carried out to develop the guideline, and information on its properties and use may be included in the final guideline, no recommendation for its use will be made in any case where a licensed alternative is available," NICE declares.</p><p>Following the consultation on the scope document, a draft guideline will be issued for stakeholder comment from 6 February to 20 March 2017 (draft guidelines are produced around 12-18 months after the scope is finalized), the aim being to publish the final guideline in August 2017. </p><p>Current NICE guidance on the treatment of AMD includes technology appraisals on Eylea (July 2013), Lucentis and Macugen (August 2008), and photodynamic therapy (September 2003), as well as a 2010 "Clinical Knowledge Summary". </p><p>The institute is also developing related guidance on macular degeneration including a "NICE quality standard" on which production will start in autumn 2017, and a guideline on cataracts that should be published in June 2017.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 335
+
+<p>The National Institute for Health and Care Excellence (NICE) has begun consulting on a draft guideline on treatments for age-related macular degeneration covering all therapies that are currently being used for wet AMD, including Novartis's Lucentis (ranibizumab), Roche's Avastin (bevacizumab), and Bayer's Eylea (aflibercept).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+NICE guidance on AMD will not give advice on Avastin
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150513T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150513T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150513T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028753
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+NICE guidance on AMD will not give advice on Avastin 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358390
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042346Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9c2043c1-b263-480f-b0f7-df38619fdd3b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

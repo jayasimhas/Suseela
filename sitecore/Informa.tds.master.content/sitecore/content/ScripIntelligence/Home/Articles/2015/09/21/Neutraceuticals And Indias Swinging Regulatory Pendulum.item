@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {36D40851-B883-4DB2-8BAC-6620443E3ABF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/21/Neutraceuticals And Indias Swinging Regulatory Pendulum
+parent: {4B7F304D-9C2D-4432-B9EB-9C4CAC22ECA9}
+name: Neutraceuticals And Indias Swinging Regulatory Pendulum
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5127e7d2-576b-46e2-998d-95e78b015f8a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Neutraceuticals And India's Swinging Regulatory Pendulum
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Neutraceuticals And Indias Swinging Regulatory Pendulum
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5057
+
+<p>A recent recommendation by a sub-committee of India's Drugs Technical Advisory Board (DTAB) classifying a number of popular neutraceuticals as drugs appears to have swung the regulatory pendulum 180 degrees for certain products, leaving some pharma firms in a tizzy.</p><p>Industry experts tracking the developments told <i>Scrip</i> that there was considerable "confusion and overlap" between India's Food Safety and Standards Rules and the Drugs and Cosmetics Act as far as the quantity of vitamins in such products is concerned, which leaves room for interpretation. They also referred to past decisions wherein the classification of certain products as food for dietary use was apparently endorsed by both the foods and drugs regulator.</p><p>Earlier this year, the sub-committee of the DTAB, the highest technical body under the India's Drugs and Cosmetics Act, examined the ingredients present in a group of products including Sun Pharma's health supplement <i>Revital</i> (a legacy Ranbaxy brand) and Pfizer's <i>Ferradol</i>. It held that some ingredients in these products fall "under the range" as prescribed in schedule-V of the Drugs and Cosmetics Rules, 1945 either in prophylactic or in a therapeutic dose. </p><p>The committee then recommended that these products be classified as drugs. </p><p>Other products similarly classified as drugs include certain nutritional supplements from Shreya Life Sciences Pvt Ltd including <i>Beneficial</i> capsules; the health supplement <i>A to Z</i> from Alkem Laboratories Ltd; <i>Kidvit Z</i> drops from Ceza Formulations Pvt Ltd and; <i>Resource Diabetic</i> and <i>Resource Renal 2.0</i> from Drytech Process Pvt Ltd.</p><p>The sub-committee also outlined a few core points of consensus on determining such classifications. These include that fortified powders which are supposedly exempt under schedule K and special medicinal products to be used as substitutes for food shall not be considered as food if the label of the product indicates the name of the disease.</p><p>The sub-committee's recommendations have since been endorsed by the DTAB. On Sept.11, the Drugs Controller General of India (DCGI) sought comments on these within a month.</p><p>Sun said it was currently studying the DTAB's recommendations, while Pfizer did not immediately respond to e-mail queries from <i>Scrip</i>. </p><p>Revital comprises minerals, vitamins and ginseng and has been seen as among Ranbaxy's lead products in the consumer healthcare space. The product was ranked the fourth largest brand in the Indian pharmaceutical market as per IMS Health data for the 12-months to March 2014.</p><p>Analysts said that a classification as a drug could potentially mean more rigorous regulatory scrutiny and post marketing surveillance, though it's unclear if any immediate impact on sales was likely. </p><p>India is estimated to have over 8,000 registered and non-registered nutraceuticals, herbs and related firms and a recent report by MP Advisors, an Indian strategic business advisory firm, expects the global nutraceutical industry to spring to $205bn by the close of 2017. India, though just 1.6% of the global nutraceutical market, is seen growing manifold in the next few years.</p><h2>Past Decisions</h2><p>Industry experts, though, faulted the approach to the new Indian classification and also pointed to the sharp reversal of previous decisions in some cases.</p><p>"The due process of law has been compromised. Such decisions need broad discussion," one industry veteran told <i>Scrip</i>.</p><p>He noted that the mere presence of vitamins doesn't make a product a drug but acknowledged that some firms had been using this "to the extreme."</p><p>"The pendulum has now swung 180 degrees to rein these in as drugs," he said.</p><p>Other experts referred to how the Central Committee for Food Standards (CCFS) had in 1995 apparently decided that ginseng formulations containing vitamins and minerals may be termed as "food" for special dietary use. They claimed that the Drugs Controller General of India had in 1998 "accepted" the decision of CCFS and also clarified that products containing ginseng, multivitamins and minerals would fall under the purview of India's Prevention of Food Adulteration Act, 1954. A comment could not immediately be obtained from the DCGI's office.</p><p>The experts also noted that the US Dietary Supplements Health and Education Act 1994 specifically provides that a dietary supplement is deemed to be a food within the meaning of the Federal Food, Drug and Cosmetic Act</p><p>The industry veteran hopes that the consultative process would now factor in industry's concerns but predicts that a court challenge over the issue is a possibility.</p><p>Significantly, the DTAB sub-committee meeting in June this year was held to analyse the components of the ingredients of products referred to it as per the directions of the High Court of Patna to conclude whether the products be classified as drugs or food. Case specifics, though, could not immediately be ascertained.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 273
+
+<p>A recent recommendation by a sub-committee of India's Drugs Technical Advisory Board (DTAB) classifying a number of popular neutraceuticals as drugs appears to have swung the regulatory pendulum 180 degrees for certain products, leaving some pharma firms in a tizzy.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Neutraceuticals And Indias Swinging Regulatory Pendulum
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150921T174903
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150921T174903
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150921T174903
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029874
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Neutraceuticals And India's Swinging Regulatory Pendulum
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360595
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5127e7d2-576b-46e2-998d-95e78b015f8a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

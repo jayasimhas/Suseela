@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {9F9A6CAF-2DE0-4194-A680-98A9612589D4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/30/3D Printing ndash A Brave New World For Pharma And Patents
+parent: {3AB4BCB7-8BCD-4055-A7F6-07802CFBAC05}
+name: 3D Printing ndash A Brave New World For Pharma And Patents
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3391687f-1b04-49da-a06f-fc7ffe16467d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+3D Printing &ndash; A Brave New World For Pharma And Patents
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+3D Printing ndash A Brave New World For Pharma And Patents
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10232
+
+<p>In the same way that railways and fast broadband access changed the rules on where businesses could operate from, so too will 3D printing change the manufacturing and distribution of tomorrow. It presents enormous opportunity for small and medium businesses and perhaps a chance for manufacturing to return on a larger scale in the most developed economies. The accessibility of 3D printing promises to empower both businesses and individuals to create products which under traditional manufacturing processes would have been prohibitive both in terms of cost and logistics. For businesses of all sizes, the potential to decentralize production holds exciting opportunities. With the first regulatory approval of a 3D printed prescription drug, a world of opportunity presents itself for innovative pharmaceutical companies. However, capitalizing on 3D printing technology whilst retaining control over intellectual property rights (IPRs) will be challenging and require a rethink of traditional approaches both to patent drafting and licensing. </p><h2>An Overview</h2><p>The technology underlying 3D printing, often known as "rapid prototyping", has been in use for over 30 years. However, recent advances in 3D printing technology have seen it used for an expanding range of finished products, and importantly the price of printers and production has reached a point of mass uptake. The scale of the opportunity is only now being uncovered. For example, a builder in China has "printed" 10 homes in as many hours. Military applications include the use of 3D printed parts in the cockpit of RAF Tornado fighter jets. Astronauts aboard the space station have 3D printed tools and replacement parts on demand. Consumer scale applications abound as well, with numerous businesses offering "customizable" 3D printing for certain products. Accessibility of 3D printers has grown, as so-called "maker spaces" have appeared, not only in repurposed traditional copy shops, but also in public libraries. </p><p>"Bio printing" is a term which has been applied to the use of 3D printing techniques in the field of medicine, which has seen a significant increase in activity. For example, surgeons in the UK have implanted a 3D printed cranium, and a cancer patient recently received a bespoke 3D printed rib cage. Companies such as L'Oréal and Procter & Gamble are working to develop 3D printed human skin in order to reduce reliance on animal testing.</p><h2>3D Printed Drug Gets FDA Approval</h2><p>One specific advance in the sphere of bio printing has recently made headlines, as the FDA in the US this summer granted approval to <i>Spritam</i> (levetiracetam) pills, prescribed to reduce epileptic seizures. The novel aspect to the approval was that the pill was made not with traditional compression or moulding techniques, but using 3D printing. In producing pills in this manner, layer upon layer via a 3D printer, the manufacturer Aprecia has said that it can create pills which perform better for patients by dissolving more rapidly, each pill being more porous as a result of the 3D printing technique employed. The benefit to Aprecia from the successful 3D printing of its Spritam product may go well beyond the claim to improved performance of the pills; the company's website notes that it has acquired multiple patents over its 3D printing process and plans to file further applications in future. </p><h2>Opportunities For Pharma</h2><p><b>Flexibility in delivery forms:</b> Aprecia claims that its use of 3D printing technology has allowed it to optimize delivery for its Spritam drug by achieving a more porous pill. Similarly, researchers have found that the shape of delivery forms will affect the rate of release for a drug. Accordingly, we may see increasing experimentation using 3D printing techniques to create a variety of differently shaped pills which would be much more difficult to produce using traditional "tableting" processes. </p><p>The ability to print in a variety of shapes has also been noted for its potential to assist in the delivery of medicine to children. Children of varying ages and sizes have different capacities for swallowing tablets, and 3D printing could allow for tailoring of a wider range of sizes and shapes to meet their needs. </p><p><b>Decentralized production:</b> Whilst the 3D printing of pharmaceuticals is only just developing, it is clear that it may offer a myriad of possibilities for reshaping the way medicines are delivered to patients. As with traditional consumer products, 3D printing offers the possibility to decentralize production. In the future, we may see pills being 3D printed onsite in pharmacies or hospitals, thereby saving warehousing and transportation costs, and reducing waiting times between patient orders and supply. Some predict that patients may even print their medications on home 3D printers one day. </p><p>Before such fundamental change occurs, though, our concern will be ensuring that only licensed dispensation is taking place and that the integrity of the final product is consistent. Technology already in use for the 3D printing of consumer products may point the way to a solution. A number of retailers already allow customers to customize items using in-store computers, for example to select the color and finishes for some products. In some cases, the customer can order in-store and have their chosen item(s) printed by their own 3D printer in their home; the CAD file being transmitted via an encryption service directly to the consumer's home printer. If 3D printing technology is used for the dispensation of prescriptions without supervision, we can foresee similar systems needing to be adopted whereby the commands would be transmitted to 3D printers directly from the manufacturer on a score basis. </p><p><b>Bespoke dosages:</b> Linked to the possibility for decentralized production is the ability to create bespoke dosages, rather than relying on the traditional "one size fits all" approach. This has obvious benefits, not only for the fine-tuning of dosages for different patients, but for facilitating treatment regimens which require variable doses over the course of treatment. If prescriptions are being 3D printed on site by doctors, creating bespoke solutions for each patient would require no more than a tweak to the instructions sent to the printer.</p><h2>Managing risk</h2><p>These changes in the realm of consumer products, and the availability and increasing affordability of 3D printing, are not without issue. It could lead to an explosion of unauthorized goods being produced and sold for example. The technology for widespread, and potentially illicit, 3D printing of pharmaceuticals is not yet widely available, but IPR holders should think about how best to protect their rights, and limit liability, as the technology develops. </p><p>With the decentralized manufacturing of illicit goods, identifying and pursuing infringers may be difficult, and costly. The traditional approach to the licensing of patents often grants an indemnity to the licensee promising the licensee exclusivity to produce and sell a product. Yet imagine granting such an indemnity and then discovering that there are large numbers of small scale infringements via 3D printers. The chasing down and stopping of multiple 3D printing infringers could be a considerable headache and very costly; not least because at the smallest scale it may not be an infringement in the legal sense. Yet the indemnity in your license agreement may still require you to give compensation. Such a scenario would be deeply troubling. So with the increasing access to 3D printing technology, licensors should consider the scope of the indemnity offered to licensees.</p><h2>Revenue protection</h2><p>As the technology continues to evolve, 3D printing will increasingly allow individuals to reproduce products in their own homes, and in many cases this will be done for their own personal use. Reproducing a patented or design protected product, for purely private non-commercial use, will not constitute an infringement of a patent or design. Whilst this exception to infringement may not be of significant concern where the occurrences are few, it is clear that that if 100,000 customers were to 3D print a patent protected product using their own 3D printer instead of sourcing it from the rights holder, this would represent a significant loss of revenue. </p><p>Manufacturers and rights holders need to be thinking what the future holds for them. Now is the time to work with their relevant trade bodies to consider how to align their business models to the 3D printing opportunities and risks. Identification now of gaps in legal protections, before technology or its use progresses to the point of posing a serious commercial risk, is the best course. There is a clear lesson from the music industry considering their initial reaction to online file sharing. The first response was traditional legal action to stop infringement but that proved costly and ineffective at halting the change in the market. Ultimately embracing paid-for downloads and changing the approach to business proved the solution. Will 3D printing require the same changes from manufacturers?</p><p>3D printing technology offers a wealth of opportunity. Whilst local 3D printing of medicines may still be a number of years away, innovators need to consider now how best to protect their IPRs as 3D printing technology continues to advance. </p><p><p><i>James Tumbridge is the head of the intellectual property and litigation department in Pillsbury Law's London office. He has extensive experience in commercial litigation, intellectual property and alternative dispute resolution (ADR). He is also a qualified mediator, listed with the world intellectual property organisation (WIPO), the UK Intellectual Property Office, ADR Group, IDRS, Talk Mediation, Clerksroom, and a number of other ADR providers.</i></p><p><p><i>Robert Peake is an associate with the intellectual property practice in the law firm's London office. His practice covers a broad range of trade mark, copyright and patent matters, with a particular focus on contentious proceedings.</i></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 1053
+
+<p>In the same way that railways and fast broadband access changed the rules on where businesses could operate from, so too will 3D printing change the manufacturing and distribution of tomorrow. It presents enormous opportunity for small and medium businesses and perhaps a chance for manufacturing to return on a larger scale in the most developed economies. The accessibility of 3D printing promises to empower both businesses and individuals to create products which under traditional manufacturing processes would have been prohibitive both in terms of cost and logistics. For businesses of all sizes, the potential to decentralize production holds exciting opportunities. With the first regulatory approval of a 3D printed prescription drug, a world of opportunity presents itself for innovative pharmaceutical companies. However, capitalizing on 3D printing technology whilst retaining control over intellectual property rights (IPRs) will be challenging and require a rethink of traditional approaches both to patent drafting and licensing. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+3D Printing ndash A Brave New World For Pharma And Patents
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150930T130007
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150930T130007
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150930T130007
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029975
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+3D Printing &ndash; A Brave New World For Pharma And Patents
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360749
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3391687f-1b04-49da-a06f-fc7ffe16467d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -104,28 +104,32 @@
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac">
-      <HintPath>..\..\packages\Jabberwocky.Autofac.1.0.0.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Autofac.1.0.1.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac.Extras.MiniProfiler">
-      <HintPath>..\..\packages\Jabberwocky.Autofac.Extras.MiniProfiler.1.0.0.0\lib\net45\Jabberwocky.Autofac.Extras.MiniProfiler.dll</HintPath>
+    <Reference Include="Jabberwocky.Autofac.Extras.MiniProfiler, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Autofac.Extras.MiniProfiler.1.0.1.0\lib\net45\Jabberwocky.Autofac.Extras.MiniProfiler.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Core">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Jabberwocky.Core.1.0.0.0\lib\net45\Jabberwocky.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Jabberwocky.Glass">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Jabberwocky.Glass.1.0.0.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
-    </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac">
-      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.0.0.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Core, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Core.1.0.1.0\lib\net45\Jabberwocky.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac.Mvc">
-      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.0.0.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
+    <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jabberwocky.Glass.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.0.1.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jabberwocky.Glass.Autofac.Mvc, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.0.2.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jabberwocky.WebApi, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.WebApi.1.0.1.0\lib\net45\Jabberwocky.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -157,17 +161,20 @@
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NWebsec">
+    <Reference Include="NWebsec, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NWebsec.4.2.0\lib\45\NWebsec.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NWebsec.Core">
+    <Reference Include="NWebsec.Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NWebsec.Core.1.5.0\lib\45\NWebsec.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NWebsec.Mvc">
+    <Reference Include="NWebsec.Mvc, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NWebsec.Mvc.4.2.0\lib\45\NWebsec.Mvc.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Abstractions">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
@@ -183,6 +190,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
@@ -195,12 +206,44 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Solr, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch.SolrProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.SolrProvider.AutoFacIntegration">
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.AutoFacIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting.Intelligence, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Intelligence.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor.Speak, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor.Speak.Ribbon, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -225,6 +268,9 @@
     <Reference Include="Sitecore.Services.Infrastructure.Sitecore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SharedSource.PageEditor">
+      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Social, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -441,27 +487,23 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Autofac.1.0.1-alpha\lib\net45\Velir.Search.Autofac.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Autofac.1.1.2\lib\net45\Velir.Search.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Core.1.0.1-alpha\lib\net45\Velir.Search.Core.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Core.1.2.3\lib\net45\Velir.Search.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Models.1.1.0-alpha\lib\net45\Velir.Search.Models.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Models.1.2.0\lib\net45\Velir.Search.Models.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Velir.Search.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Velir.Search.Mvc.1.0.0-alpha\lib\net45\Velir.Search.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\Velir.Search.Mvc.1.0.2\lib\net45\Velir.Search.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Velir.Search.Web">
-      <HintPath>..\..\packages\Velir.Search.Web.1.1.0-alpha\lib\net45\Velir.Search.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Velir.Search.WebApi">
-      <HintPath>..\..\packages\Velir.Search.WebApi.1.0.0-alpha\lib\net45\Velir.Search.WebApi.dll</HintPath>
+    <Reference Include="Velir.Search.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Velir.Search.WebApi.1.0.3\lib\net45\Velir.Search.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebApi.OutputCache.Core">
@@ -543,6 +585,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
     <Compile Include="App_Start\Registrations\GlassMapperRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -560,15 +603,16 @@
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
+    <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
     <Compile Include="Controllers\SitecoreUtil.cs" />
     <Compile Include="Controllers\SitecorGetterController.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
+    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
-    <Compile Include="GlassMaps\Class1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -579,6 +623,7 @@
     <Compile Include="Models\IPageLinksFactory.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PageLinksFactory.cs" />
+    <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
@@ -591,6 +636,8 @@
     <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
     <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\PromotionalViewModel.cs" />
+    <Compile Include="ViewModels\ContentListing\ContentListingViewModel.cs" />
     <Compile Include="ViewModels\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
     <Compile Include="ViewModels\IArticleListItemModelFactory.cs" />
@@ -731,6 +778,7 @@
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="Areas\Account\Views\Connector\Login.cshtml" />
     <Content Include="Areas\Account\Views\Account\Lockout.cshtml" />
+    <Content Include="sitecore\login\login.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -741,8 +789,6 @@
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
     <Content Include="webedit.css" />
-    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
-    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\XamlPage.browser" />
     <Content Include="Areas\Social\Views\Connector\Login.cshtml" />
@@ -772,19 +818,9 @@
     <Content Include="Areas\Article\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Article\Views\Shared\Lockout.cshtml" />
     <Content Include="velir\dist\velir.search.angular.js.map" />
-    <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
     <Content Include="styles\index.scss" />
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Shared\SearchFacets.cshtml" />
-    <Content Include="Views\Shared\SearchKeywords.cshtml" />
-    <Content Include="Views\Shared\SearchListing.cshtml" />
-    <Content Include="Views\Shared\SearchMetadata.cshtml" />
-    <Content Include="Views\Shared\SearchPager.cshtml" />
-    <Content Include="Views\Shared\SearchPagination.cshtml" />
-    <Content Include="Views\Shared\SearchScripts.cshtml" />
-    <Content Include="Views\Shared\SearchSortOptions.cshtml" />
-    <Content Include="Views\Shared\SortOption.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Frontend\Index.cshtml" />
@@ -793,11 +829,8 @@
     <Content Include="Views\Frontend\Listing.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\Global\ContentListItem.cshtml" />
-    <Content Include="Views\Shared\_ArticlePreview.cshtml" />
     <Content Include="Views\Article\ArticlePrologue.cshtml" />
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
-    <Content Include="Views\FrontendWrappers\ArticleWrapper - Copy.cshtml" />
-    <Content Include="Views\FrontendWrappers\HomeWrapper.cshtml" />
     <Content Include="Views\Shared\_SignInForm.cshtml" />
     <Content Include="Views\Structure\TwoColumnContent.cshtml" />
     <Content Include="Views\Structure\SingleColumnContent.cshtml" />
@@ -809,15 +842,13 @@
     <Content Include="Views\Article\FeaturedArticle.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ListableContent.cshtml" />
-    <Content Include="Views\Shared\Components\TopicSubtopic.cshtml" />
-    <Content Include="Views\Article\ArticleRightRail.cshtml" />
-    <Content Include="Views\Article\ArticleLeftRail.cshtml" />
     <Content Include="Views\Shared\Components\ListItemSimple.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
+    <Folder Include="GlassMaps\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
@@ -840,8 +871,18 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
+    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
+    <Content Include="App_Config\Include\UserDefined\Content.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Article.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -860,7 +901,6 @@
     <Content Include="Views\Article\ArticleTags.cshtml" />
     <Content Include="Views\Shared\Highlight.cshtml" />
     <Content Include="Views\Shared\ChildTaxonomy.cshtml" />
-    <Content Include="Views\Article\ArticleHeader.cshtml" />
     <Content Include="Views\Article\ArticlePrologueBookmark.cshtml" />
     <Content Include="Views\Article\ArticlePrologueEmail.cshtml" />
     <Content Include="Views\Article\ArticleProloguePrint.cshtml" />
@@ -881,6 +921,25 @@
     <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
+    <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Container.cshtml" />
+    <Content Include="Views\Search\SearchFacets.cshtml" />
+    <Content Include="Views\Search\SearchKeywords.cshtml" />
+    <Content Include="Views\Search\SearchListing.cshtml" />
+    <Content Include="Views\Search\SearchMetadata.cshtml" />
+    <Content Include="Views\Search\SearchPagination.cshtml" />
+    <Content Include="Views\Search\SearchScripts.cshtml" />
+    <Content Include="Views\Search\SearchSortOptions.cshtml" />
+    <Content Include="Views\Search\SortOption.cshtml" />
+    <Content Include="Views\Velir\ExampleSearchLayout.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Landscape.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\_Listing.cshtml" />
+    <Content Include="Views\Shared\Components\ContentListing\Portrait.cshtml" />
+    <Content Include="Views\Shared\Components\PullQuote.cshtml" />
+    <Content Include="Views\Shared\Components\Promotional.cshtml" />
+    <Content Include="Views\Search\SearchWrapper.cshtml" />
+    <Content Include="Views\Article\_ArticleSidebar.cshtml" />
+    <Content Include="Views\Shared\Components\SectionTitle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
@@ -891,10 +950,10 @@
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\..\packages\Jabberwocky.Core.CodeAnalysis.1.0.0\analyzers\dotnet\cs\Jabberwocky.Core.CodeAnalysis.dll" />
-    <Analyzer Include="..\..\packages\Jabberwocky.Glass.CodeAnalysis.1.0.0\analyzers\dotnet\cs\Jabberwocky.Glass.CodeAnalysis.dll" />
+    <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
+      <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>
+      <Name>Sitecore.SharedSource.DataImporter</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="package.json" />

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {DD8B7902-4496-4A6E-8180-D466ADDAFEC3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/29/Pharma Grapevine NICE assessment fame and the blue line
+parent: {C14ED64E-C9E7-40EB-93B8-679AFA5F32DB}
+name: Pharma Grapevine NICE assessment fame and the blue line
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d5a5495b-15b9-4fa7-8f8b-323f09ed8fca
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+ Pharma Grapevine: NICE assessment, fame and the blue line  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Pharma Grapevine NICE assessment fame and the blue line
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6011
+
+<p> An occasional column in which we report amusing trivialities, pharmalicious gossip, biotech bons mots and other interesting observations picked up on our rounds. </p> <h2> The grass is greener </h2> <p> Guess which health technology assessment body was described as &quot;balanced&quot;, &quot;scientifically good&quot; and &quot;fair&quot; by a pharma CEO this week... Surprisingly enough, it was the UK's NICE, which is by no means without detractors in the industry. Bemoaning several times the lamentable, indeed indefensible, state of the German pricing regime, Professor Andreas Barner, chief of Boehringer Ingelheim, acknowledged that many would disagree with his assertion that &quot;the UK continues to be very good&quot; on reimbursement decisions, but stuck to his guns. </p> <h2> Quality and Quantity </h2> <p> For all the noise around compliance issues at Indian sites, most regulators including those from the FDA at BioAsia 2015 appeared less critical, suggesting that the sheer number of sites in India subject to audits were magnifying such concerns. The India Brand Equity Foundation (IBEF), a trust established by the country's ministry of commerce and industry, had previously estimated that there are more than 500 FDA approved sites in India and more than 3,000 drug master files (DMFs) registered with the US regulatory agency. In fact, a Dutch regulator told <i>Scrip</i> how impressed he was with the degree of automation at facilities of certain frontline Hyderabad-based firms. ''You don't even see that in Europe,'' he said. </p> <h2> The Famous and Infamous </h2> <p> A US FDA official was generally much sought after at BioAsia 2015 by both the media and general audience &ndash;with many questions posed to him. At one such session, the FDA official, who had already fielded a couple of queries, declared: ''I'm the most famous person here today'', before he went on to respond to another set of questions. If the FDA guy was the most famous, then there were also the infamous. There were several murmurs about how a leading Indian firm that had shuttered its R&amp;D operations had sent wrong signals around the world. Scientists looking to come back to India were having second thoughts, the head of an Indian firm said. </p> <h2> FDA keeps the moolah coming </h2> <p> A recent interaction with the CEO of an Indian generic company underscored just how every cloud had a silver lining. While several Indian firms have been pulled up by the US FDA for GMP compliance issues, the CEO explained how the agency's action had benefited some other companies ''superbly',' resuscitating some products that firms had perhaps long written off as dead. ''The FDA has been good for many companies, exceptionally good&#8230;.only poor patients &ndash; or their insurance companies &ndash; are paying through the nose '' he said, referring to an instance of how a several decades-old drug was currently commanding a premium to even some patented medicines after FDA action had shut down supplies from competition for the foreseeable future. </p> <h2> Undercover laboratory agent </h2> <p> Getting into Celgene's Swiss manufacturing site in Boudry is an exciting feat complete with doors operated by top-of-the-range facial recognition software one might usually spot in a James Bond flick. When visiting the site in recent weeks to meet with Tuomo Pätsi, current president of the Europe, Middle East and Africa (EMEA) region, this <i>Scrip </i>reporter was granted access to the 007-building for a behind the scenes view of what goes on there. Kitted out with white overalls and plastic glasses you could almost be acting the part of an undercover agent, playing lab sleuth. To top it off only one ambiguous and strict instruction was given upon entry&#8230;&quot;never cross the blue line.&quot; </p> <h2> Just one of the guys </h2> <p> Novo Nordisk is hanging on to its current CEO Lars Rebien Sørensen for the foreseeable, said the company in its 1Q 2015 earnings report on 30 April. Mr Sørensen's contract doesn't end until 2019 but he had been expected to step down as early as next year. However, this is no longer the case. As a result, chief exec in waiting Kåre Schultza, who had been with the company for 26 years, has quit. </p> <p> On the topic of Novo's current and remaining CEO; if you have ever desperately wanted to see Mr Sørensen on film strolling around Novo's headquarters waving friendly hellos to reception staff, making important phone calls and signing papers&#8230;now is your chance. The company has uploaded this video, which portrays Mr Sørensen as your bog-standard, every day officer worker, onto its website. </p> <p> <preform><object id="flashObj" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0"> <param name="movie" value="http://c.brightcove.com/services/viewer/federated_f9/4096135261001?isVid=1&isUI=true"> <param name="bgcolor" value="#FFFFFF"> <param name="flashVars" value="videoId=3865135840001&playerID=4096135261001 &domain=embed&autoStart=false&embedDate=Tue%20May%205%202015&embedFromUrl=embed "> <param name="base" value="http://admin.brightcove.com"> <param name="seamlesstabbing" value="true"> <param name="allowFullScreen" value="true"> <param name="swLiveConnect" value="true"> <param name="allowScriptAccess" value="always"> <param name="wmode" value="opaque"> <embed wmode="opaque" src="http://c.brightcove.com/services/viewer/federated_f9/4096135261001?isVid=1&isUI=true" bgcolor="#FFFFFF" flashvars="videoId=3865135840001 &playerID=4096135261001&domain=embed&autoStart=false&embedDate=Tue%20May%205%202015&embedFromUrl=embed" base="http://admin.brightcove.com" name="flashObj" seamlesstabbing="true" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" swliveconnect="true" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></object></preform> </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 170
+
+<p> An occasional column in which we report amusing trivialities, pharmalicious gossip, biotech bons mots and other interesting observations picked up on our rounds. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Pharma Grapevine NICE assessment fame and the blue line
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150429T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150429T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150429T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028623
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+ Pharma Grapevine: NICE assessment, fame and the blue line  
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+Expert View
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358109
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d5a5495b-15b9-4fa7-8f8b-323f09ed8fca
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

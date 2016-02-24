@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {CA6788F5-DE3E-4864-B861-A77E129DB3F8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/23/Naurex reveals promising data with oral depression candidate
+parent: {D24B68DA-F9CC-4001-96E8-34149E888C8C}
+name: Naurex reveals promising data with oral depression candidate
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 36fcee00-1295-4527-8e4f-e688f7f80b56
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{70A92E18-3EE1-4D60-9641-56EAD784405E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+Naurex reveals promising data with oral depression candidate
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+Naurex reveals promising data with oral depression candidate
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4850
+
+<p>Naurex has presented positive Phase II data with the second depression candidate in its pipeline, NRX-1074, an oral NMDA receptor partial agonist. This follows Phase IIb data reported recently with Naurex's lead program, GLYX-13, which also targets the NMDA receptor (<a href="http://www.scripintelligence.com/researchdevelopment/Naurex-presents-compelling-data-for-depression-drug-GLYX-13-355569" target="_new">scripintelligence.com, 11 December 2014</a>).</p><p>Naurex is in the "advantageous position [of having] two complementary late-stage assets with compelling clinical data in depression that can serve different needs in clinical practice. GLYX-13 is being developed as an adjunctive treatment for difficult-to-treat major depressive disorder, while orally available NRX-1074 has the potential to be an early-line monotherapy," explained Dr Norbert Riedel, president and chief executive officer of Naurex.</p><p>"NRX-1074 modulates the NMDA receptor in a similar fashion to GLYX-13, but has a synthetic modification to one of the amino acids, conferring increased potency and oral bioavailability," he told <i>Scrip</i>. "In preclinical models the two compounds both appear to be highly efficacious across a number of CNS disorders."</p><p>Naurex is planning two pivotal 6-week, parallel-designed, placebo-controlled Phase III studies of GLYX-13. "The first of these is on track to initiate in the summer of 2015, using our commercial formulation &ndash; a rapid bolus injection with a pre-filled syringe. We will provide additional details at that time."</p><p>"The reductions in depression symptoms we saw from a single dose of NRX-1074 in this study were among the most substantial I have observed in antidepressant clinical development," said Dr Susan McElroy, a study investigator and professor of psychiatry and behavioral neuroscience at the University of Cincinnati College of Medicine. "We look forward to continuing to study the benefit of this therapy, including in the upcoming repeat-dose trial."</p><p>Naurex raised an IPO-sized private financing round last month, an $80m series C (<a href="http://www.scripintelligence.com/business/Naurex-leads-VC-funding-surge-with-80-Series-C-355396" target="_new">scripintelligence.com, 3 December 2014</a>).</p><p>"It was very important for us not to just have very active insider participation, but to bring new investors into the company that are focused on CNS and who are investing in companies at a point in their life and development that are interested in pursuing an IPO next," said Dr Riedel at the time. </p><p>"We are evaluating multiple options for funding continued growth and advancement of our pipeline," he added this week.</p><p><b>study details</b></p><p>At the highest and most effective dose level, the average reduction in HDRS-17 scores at 24 hours was 14 points, with a mean difference from placebo of 7 points (p=0.0029). The effect size, a measure of the magnitude of the drug&rsquo;s antidepressant efficacy, observed at 24 hours after dosing was 0.88 &ndash; more than double the effect size seen with most other antidepressant drugs after four to six weeks of repeated dosing. Clinical response to NRX-1074 was also significantly different from placebo, with 72 percent of subjects receiving the highest dose of the compound demonstrating a clinically meaningful response at 24 hours (defined as at least a 50 percent reduction in HDRS-17 score from baseline) compared to 39 percent of subjects given placebo (p=0.038). A clear dose response was observed across the three dose levels tested. The study utilized an intravenous formulation to inform dose selection for an upcoming repeat-dose Phase 2 study with the oral form.</p><p>In the study, which was conducted at 12 clinical centers in the US and enrolled around 140 subjects, NRX-1074 was well-tolerated with no drug-related serious adverse events reported and no subjects dropping out of the study due to adverse events.</p><p>The upcoming randomized, double-blind, placebo-controlled multi-dose study will evaluate the efficacy and safety of repeated oral dosing of NRX-1074 administered as a monotherapy to subjects with MDD. </p><p>"We expect to start our repeat-dose Phase II trial by mid-2015," added Dr Riedel.</p><p>"There is a lot of evidence now from various different molecules that targeting glutamate signaling results in rapid improvement in depression symptoms," noted Datamonitor Healthcare analyst Daniel Chancellor. "The class has a large potential in treatment-resistant patients, which accounts for around one third of patients with major depressive disorder."</p><p>For an overview of early-stage approaches to treat depression, <a href="http://www.scripintelligence.com/home/Five-promising-approaches-to-expand-the-depression-armory-354530" target="_new">click here</a>. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 323
+
+<p>Naurex has presented positive Phase II data with the second depression candidate in its pipeline, NRX-1074, an oral NMDA receptor partial agonist. This follows Phase IIb data reported recently with Naurex's lead program, GLYX-13, which also targets the NMDA receptor (<a>scripintelligence.com, 11 December 2014</a>).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+Naurex reveals promising data with oral depression candidate
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150123T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150123T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150123T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027642
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+Naurex reveals promising data with oral depression candidate
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200264
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356318
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+36fcee00-1295-4527-8e4f-e688f7f80b56
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042240Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

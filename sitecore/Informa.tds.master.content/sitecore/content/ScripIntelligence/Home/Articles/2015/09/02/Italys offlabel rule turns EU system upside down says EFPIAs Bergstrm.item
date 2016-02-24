@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8F30B78C-C8C2-4C8B-B193-82581FD9DFC9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/02/Italys offlabel rule turns EU system upside down says EFPIAs Bergstrm
+parent: {9FFE365E-7EE2-4DAD-9283-04CCF7E1CC74}
+name: Italys offlabel rule turns EU system upside down says EFPIAs Bergstrm
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: eef892d3-1d40-4ff0-90dc-4da1ed738696
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 76
+
+Italy's off-label rule "turns EU system upside down", says EFPIA's Bergström
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 69
+
+Italys offlabel rule turns EU system upside down says EFPIAs Bergstrm
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7526
+
+<p>Should EU member states be free to pass laws that undermine the EU marketing authorization system by allowing the use of cheaper products for unapproved indications where approved alternatives exist, purely to save money? </p><p>Certainly not, says Richard Bergström, director general of the European industry federation EFPIA. For him the 2014 Italian law that has allowed the off-label prescribing of Roche's Avastin (bevacizumab) in place of Novartis' authorized (and much more expensive) Lucentis (ranibizumab) in age-related macular degeneration has turned the EU regulatory system "upside down". </p><p>Which is why his association joined with two others, EUCOPE and EuropaBio, to file a complaint against the law with the European Commission on 28 January on the grounds that it undermines the EU regulatory system simply in order to make healthcare savings. </p><p>"Member states should not compromise standards for quality, safety and efficacy that are successfully applied through the assessment and supervision procedures laid down in European legislation, they say. </p><p>They are particularly concerned that "certain member states" have introduced measures to expand the off-label use of medicines for economic reasons where an alternative (and more expensive) treatment is already available. Italy's law has been in place since May 2014, while a French decree allowing much the same thing is understood to be about to pass. </p><p>Following the passing of the Italian law, in June last year the technical scientific committee (CTS) of the Italian drug regulator, AIFA, came out in favour of the reimbursement of Avastin in AMD. It probably had no real choice in view of the provisions in the new law, but it's interesting that the CTS had earlier made a very different call, and AIFA itself had expressed doubts about this use of the off-label rules. </p><p>In December 2012, the committee voted to exclude Avastin from reimbursement in the AMD indication because of the safety risks of intravitreal administration and the fact that Lucentis was already available. This was after the European Medicines Agency had amended Avastin's benefit-risk profile, noting that the product is not formulated for intravitreal use and that cases of ocular adverse reactions had been reported following such use. </p><p>AIFA later wrote to Paola Testori Coggi, then head of the European Commission's health directorate, expressing concern over Avastin's off-label use and asking for clarification as to what a regulatory authority should do in such a situation. She replied that "the most responsible strategy" a national agency could take where there were doubts about the off-label use of a drug &ndash; in particular where there were warnings in the labelling &ndash; was to "protect public health regardless of the cost of the medicine", and that financial considerations "must not take precedence over the safety of patients". </p><h2>Avastin used, with conditions</h2><p>But as we now know, the Italian law now allows that very use, albeit in the case of Avastin with several strings attached. For example, the reformulation of the product from large vials into smaller prefilled syringes must be done in hospital pharmacies to guarantee sterility, and the product must only be administered in specialist hospital centres. Moreover, the patient must give their informed consent, and a monitoring system for adverse events must be in place.</p><p>Mr Bergström said in an interview with <i>Scrip </i>that Avastin had been used in some Italian patients with AMD, although he didn't know how many. He acknowledged, too, that certain conditions had to be met before it could be used in this indication in Italy. </p><p>He said the problem went much wider than just the Roche drug. "The point is that the law is there, even if we have no indication that the Italians have a long list of products they intend to do this for. The threat is still there." </p><p>Moreover, the new law is very vague when it comes to which studies can be cited when deciding on off-label uses of drugs. "Imagine a world where someone runs a study, it could be a small study, underpowered or whatever, and they say you can use this product instead because it is much cheaper."</p><p>The industry by contrast, Mr Bergström said, is held to very high standards. "We can't market a product if it is not approved, so the idea that the government suddenly says an unapproved product can be used without having the same regulatory standard, this is a can of worms, it is very dangerous for us."</p><p>Some might take issue with this argument, given that companies have often been on the other end of the off-label argument, with some having been fined for promoting their products for non-approved indications. </p><p>But Mr Bergström said this was a different kind of situation. "I acknowledge that some people can say that, but in my experience a company doing off-label promotion when authorized drugs are available is not common at all. Off-label use is a wide concept, but this now is a more hard core issue: a product that is not even approved for this condition, not even in the same therapeutic area &ndash; and you have to reformulate it." This, he said, raised serious quality concerns. </p><p>"It's not as if you are just giving a tablet at the same dose to a person for a different indication: you inject it into the eye, and you have to have even higher quality standards regarding sterility and particulate matter. I do not think that is in the interests of patient safety." </p><h2>Legal questions</h2><p>The three bodies say in their complaint to the commission that the Italian law goes against the EU legislation by undermining the very marketing authorisation system that "protects the health of the public and patients by setting detailed standards for the quality, safety and efficacy of medicines".</p><p>"The EU regulatory system ensures that medicines undergo rigorous clinical trials prior to authorisation in order to mitigate risks to patient safety. Legal provisions such as the ones introduced in Italy greatly undermine such a framework and are not conducive to patient safety," they say.</p><p>The law also appears to stand in stark contrast with the 2012 judgement by the Court of Justice of the EU stipulating that member states may not resort to off-label use as a cost-containment measure in cases where approved alternatives exist. The court said that exceptions to the requirement for a marketing authorization should remain just that &ndash; exceptional. </p><p>In addition to posing a threat to patient safety, the off-label use of medicines for economic purposes can disincentivise biopharmaceutical companies from exploring new indications to bring ever more innovative and safe products to patients, the industry bodies say.</p><p>"Given that the Italian initiative is driven entirely by budgetary considerations that should never overrule the protection of public health, EFPIA, EuropaBio and EUCOPE ask the commission to take action to ensure the termination of Italy&rsquo;s failure to comply with its obligations under Union law."</p><p>Just when and how the commission will respond to their complaint remains to be seen. In any case, it will probably find itself between a rock and a hard place. Even if the commission is minded to side with the industry's arguments about contravention of EU law and the CJEU ruling, decisions on pricing and reimbursement are still the province of the member states.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 229
+
+<p>Should EU member states be free to pass laws that undermine the EU marketing authorization system by allowing the use of cheaper products for unapproved indications where approved alternatives exist, purely to save money? </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+Italys offlabel rule turns EU system upside down says EFPIAs Bergstrm
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150902T090000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150902T090000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150902T090000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027792
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 76
+
+Italy's off-label rule "turns EU system upside down", says EFPIA's Bergström
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200200760
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356614
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eef892d3-1d40-4ff0-90dc-4da1ed738696
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

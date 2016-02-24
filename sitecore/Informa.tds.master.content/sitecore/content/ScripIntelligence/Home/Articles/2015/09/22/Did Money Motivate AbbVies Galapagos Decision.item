@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6DF1DD6E-2101-4234-B7B0-C5C6BA213A41}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/22/Did Money Motivate AbbVies Galapagos Decision
+parent: {DB7AFD0C-FF3A-4A4A-B0E2-6A1121FFD09B}
+name: Did Money Motivate AbbVies Galapagos Decision
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3fae7f3d-e2e9-42de-9180-b1c40bf2d32e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+Did Money Motivate AbbVie's Galapagos Decision?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Did Money Motivate AbbVies Galapagos Decision
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3838
+
+<p><p>A surprise move by AbbVie regarding its Galapagos NV partnership has investors wondering if there is a problem with the biotech's drug, but the decision is more likely financially motivated.</p><p>AbbVie dealt a crushing blow to its tiny biotech partner Galapagos on Sept. 25, opting to bring forward its own internally-developed rheumatoid arthritis drug into late stages instead of the compound that the pair had been partnered on. The move is a major setback for the biotech, which lost 27% of its value in a matter of hours &ndash; dropping $16.88 to close at $44.60. </p><p>The big biotech made the announcement abruptly through a press release, announcing Phase II data for its internally-developed candidate ABT-494 at the same time it revealed that it would not opt into a licensing agreement with Galapagos for filgotinib. Galapagos was not told ahead of the announcement. </p><p>Not only did AbbVie spring the news on its partner, but the choice was a total shock to investors &ndash; who had assumed AbbVie's opt-in was merely a formality after the stellar Phase II data that Galapagos announced in mid-August. </p><p>At the time, the company and analysts were calling data from the janus kinase (JAK) 1 inhibitor potentially best-in-class. Analysts were particularly impressed with the safety data for the drug, which they believe could be a major differentiating factor. </p><p>AbbVie announced Phase II data for ABT-494 that showed patients taking the drug who had previously failed on either methotrexate or multiple anti-TNF agents had better response rates at 12 weeks than those taking a placebo &ndash; on all but the lowest dose. AbbVie did not reveal much of the safety data from the trials. AbbVie has said it will now move the compound into Phase III before the end of the year. </p><p>Analysts note that the data from the efficacy data from the two drugs looks fairly similar. Although AbbVie said ABT-494 carried "less uncertainty."</p><p><b>But Why?</b></p><p>AbbVie and Galapagos inked their initial partnership in 2012 when AbbVie (then Abbott Labs) paid $150m upfront and $250m in milestones upon the delivery of Phase II data in rheumatoid arthritis. Galapagos was also eligible for another $1bn in development regulatory and sales milestones, as well as double digit royalties on the drug. AbbVie paid an additional $20m upfront in 2013 when it agreed to expand the collaboration to include cystic fibrosis. </p><p>TNF-blockers currently dominate the rheumatoid arthritis market, with most bringing in upwards of $4bn annually, but many are expected to go off patent in a few years and face biosimlar competition. AbbVie and Galapagos are both expected to target the population of patients that have failed after using multiple TNF-blockers and analysts estimate that these drugs could be just as successful as the TNF-blockers. </p><p>AbbVie's decision prompted concerns about the integrity of the Galapagos drug, but more likely, AbbVie is trying to avoid paying $1bn in further milestones or splitting potential revenues. It seems AbbVie isn't willing to give up a double digit percentage of its multi-billion dollar pie. Although some analysts have speculated that some toxicity issues in rats could slow regulatory progress for filgotinib. </p><p>Galapagos insisted on Sept. 25, shortly after AbbVie's announcement, that filgotinib is still best-in-class and that the company is "currently in advanced discussions with a substantial number of large pharma companies to partner filgotinib."</p><p>Investors weren't likely to believe talk of other partners since Galapagos had considered AbbVie a done deal. </p><p>The companies also have a partnership in cystic fibrosis that recently entered Phase II. They have said this partnership will continue and data is expected early next year. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Did Money Motivate AbbVies Galapagos Decision
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150922T054919
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150922T054919
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150922T054919
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029882
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+Did Money Motivate AbbVie's Galapagos Decision?
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198800586
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360604
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3fae7f3d-e2e9-42de-9180-b1c40bf2d32e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

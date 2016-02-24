@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6FF0C034-6121-45DD-B188-51CFFD569CE3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/25/Shire posts strong Q1 results
+parent: {D77C77DF-D537-43FA-BCDB-61BE023EE9B0}
+name: Shire posts strong Q1 results
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c7bacb1a-bc4a-4510-bd7b-e78d75b47873
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 29
+
+Shire posts strong Q1 results
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 29
+
+Shire posts strong Q1 results
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2052
+
+<p>Shire has beaten analyst expectations for the first quarter, with product sales increasing by 9% (13% in constant currencies) and total revenues up by 11% (15% in constant currencies), driven by strong sales of ADHD drug Vyvanse and orphan drug Cinryze</p><p>Sales of Vyvanse beat consensus with sales up by 19%, reaching $417m. Growth was largely on the back of price increases and lower de-stocking than in 2014, although the firm also said it was pleased with an increase in prescriptions following the approval of a new indication for Vyvanse in binge eating disorder. </p><p>Meanwhile, sales of Cinryze for the prophylactic treatment of hereditary angioedema, which came to Shire through its acquisition of ViroPharma in 2014, were up by 73%, totaling $148.1m. Growth was down to more patients taking the therapy and a price increase.</p><p>Meanwhile, sales for Lialda/Mezavant for ulcerative colitis grew by 15% due to higher prescription demand and a price increase. </p><p>Some products were down, but this was largely because of negative foreign exchange. Replagal for Fabry's disease was down by 15%, Vpriv for Guacher's disease by1% and Elaprase for Hunter syndrome by 3%. Nevertheless, the three drugs showed growth in constant currencies (3%, 6% and 7% respectively).</p><p>Shire said that it would again be affected by currency headwinds and that the NPS Pharma operating costs and increased pipeline investments in the NPS portfolio would have an impact on margins. It said it would deliver non-GAAP diluted earnings per ADS growth in the mid-single digits in 2015. However, analysts at Deutsche Bank believe this is conservative, particularly if sales of Vyvanse continue to be strong.</p><p>Shire added that it now has "the broadest and deepest pipeline in its history." One potentially important asset is lifitegrast for dry eye disease, which is due for US regulatory review towards the end of 2015. Meanwhile, the company expects in 2015 results from Phase II trials of SHP625 for rare cholestatic liver diseases in 2015. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 259
+
+<p>Shire has beaten analyst expectations for the first quarter, with product sales increasing by 9% (13% in constant currencies) and total revenues up by 11% (15% in constant currencies), driven by strong sales of ADHD drug Vyvanse and orphan drug Cinryze</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 29
+
+Shire posts strong Q1 results
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150425T013039
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150425T013039
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150425T013039
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028598
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 29
+
+Shire posts strong Q1 results
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358064
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c7bacb1a-bc4a-4510-bd7b-e78d75b47873
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042337Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

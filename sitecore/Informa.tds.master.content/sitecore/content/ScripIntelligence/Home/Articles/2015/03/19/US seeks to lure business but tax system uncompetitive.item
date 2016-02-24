@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {6E5F035D-6D41-4146-990B-B15BEED2567B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/19/US seeks to lure business but tax system uncompetitive
+parent: {798B9929-702E-43F3-AF78-EB188E58F171}
+name: US seeks to lure business but tax system uncompetitive
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b20f61f1-c482-42cc-8662-195fb2dcbf80
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+US seeks to lure business, but tax system 'uncompetitive'
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+US seeks to lure business but tax system uncompetitive
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3139
+
+<p>While Treasury Secretary Jack Lew insisted the US economy is the most dynamic, innovative and resilient, and the nation is "the best place in the world to do business," he acknowledged the American tax system is flawed and in desperate need of reform.</p><p>From high statutory rates to unfair, inefficient loopholes, this system is creating distortions that are hampering investment in the United States," Mr Lew said during the 2015 SelectUSA Summit, held just outside of Washington. </p><p>He admitted that in today's global economy, the US tax system is "uncompetitive." </p><p>"The bottom-line is, our business tax system needs to be fixed," Mr Lew said. </p><p>He said President Barack Obama has long recognized how necessary fixing the US tax system is to ensuring the nation stays an attractive place for investment &ndash; even though the president himself made no mention of tax reform when he addressed the SelectUSA Summit.</p><p>Nonetheless, Mr Lew argued a tax reform proposal included in the president's <a href="http://www.scripintelligence.com/policyregulation/Obama-seeks-one-time-14-tax-on-offshore-profits-356505" target="_new">fiscal year 2016 budget</a> plan is "pro-growth" for businesses. </p><p>"His plan reduces rates, levels the playing field, closes loopholes and encourages investment while protecting and strengthening small businesses and the middle class," Mr Lew declared. </p><p>The Treasury chief said the US knows when deciding where to direct their energy and resources, companies and investors have nearly unlimited options. </p><p>"That is why, since the day he came into office, the president has made it clear that in the race for the future, America cannot afford to run the risk of falling behind, and since that day, he has made increasing America&rsquo;s competiveness a core component of his economic strategy," Mr Lew said.</p><p>The reasons to invest, expand and start doing business in the US, he said, is because the nation's workers are "more skilled, creative and productive" than any other place and its colleges, universities and research institutions "are second to none." </p><p>"Our rule of law and intellectual property protections provide unparalleled certainty and stability," Mr Lew said. "Our market is the single largest market in the world, and that market is connected by a deep infrastructure of roads, bridges, pipelines and ports." </p><p>He noted that the Obama administration is working intensely to strike strong new trade agreements in Asia and Europe &ndash; the Trans-Pacific Partnership and the Transatlantic Trade and Investment Partnership, respectively.</p><p>The Treasury secretary called on Congress to give Mr Obama trade promotion authority, often referred to as fast track, which would give the president the authority to negotiate international trade agreements, which would then go to Congress for an up-or-down vote, with lawmakers no longer able to amend or filibuster the deals.</p><p>"But let me be clear: we will only enter into trade agreements that are free, fair, and good for our workers and businesses," Mr Lew said.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 258
+
+<p>While Treasury Secretary Jack Lew insisted the US economy is the most dynamic, innovative and resilient, and the nation is "the best place in the world to do business," he acknowledged the American tax system is flawed and in desperate need of reform.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+US seeks to lure business but tax system uncompetitive
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150319T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150319T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150319T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028226
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+US seeks to lure business, but tax system 'uncompetitive'
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357387
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042320Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b20f61f1-c482-42cc-8662-195fb2dcbf80
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042320Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {83AB5F32-B73B-410E-9E14-56E8BFA7EA23}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/04/Supreme Court grapples with words in neverending Obamacare saga
+parent: {67DBC50E-433A-4157-A60F-992F0D4A4CF6}
+name: Supreme Court grapples with words in neverending Obamacare saga
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ec751f1f-b052-4fae-9c6b-9b6493254172
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Supreme Court grapples with words in 'never-ending' Obamacare saga
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Supreme Court grapples with words in neverending Obamacare saga
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6694
+
+<p> Not since former President Bill Clinton asked &quot;It depends on what the meaning of 'is,' is,&quot; has Washington been in such a tussle over the interpretation of words &ndash; something the Supreme Court grappled with on 4 March. </p><p> In this case, it was the phrase buried deep in the <i>Affordable Care Act</i> (ACA) &quot;established by the state&quot; with the word &quot;by&quot; the trigger. </p><p> Sure, to Shakespeare's Hamlet, those are just &quot;words, words, words,&quot; but to opponents of the law, they saw a way to kill Obamacare once and for all &ndash; something they have failed to do through nearly 60 votes on Capitol Hill or through two previous lawsuits that reached the Supreme Court, which had Justice Elena Kagan on 4 March referring to the latest case as &quot;this never-ending saga.&quot; </p><p> At issue in the current lawsuit, known as <i>King v Burwell</i>, is whether Congress intended for any eligible American to receive the tax credits offered under the ACA to help cover the costs of paying for their health plan premiums or if lawmakers intended to use those subsidies as a way to entice states to establish their own &quot;exchanges&quot; &ndash; the online marketplaces for enrolling in Obamacare coverage. </p><p> But less than a third of the states created their own exchanges, so the federal government stepped in and set up the other two-thirds on behalf of those that chose not to establish the marketplaces. </p><p> Those who'd like to see the end of the ACA are contending the four-word phrase expressly limits the subsidy eligibility to only those Americans who purchase insurance through the exchanges operated by the states. </p><p> If the Supreme Court backs that argument, millions of Americans &ndash; with some estimates as high as nine million &ndash; could potentially drop their Obamacare coverage because they may not be able to afford it without the tax credit subsidies. </p><p> For the pharmaceutical industry, that means also losing millions of customers, who may go without filling their prescriptions if they are unable to afford paying for the drugs without insurance. </p><p> ACA advocates, including those who wrote the law, are insisting Congress always intended for all Americans who qualify for the tax credit subsidies to obtain them &ndash; no matter if they buy their health insurance on a state-based exchange or a federally run marketplace. </p><p> Justice Anthony Kennedy, who is often seen as a swing vote on the court between the liberals and the conservatives, appeared to give Obamacare supporters hope &ndash; declaring that if the court accepts the plaintiffs' argument, there would be a &quot;serious constitutional problem.&quot; </p><p> He suggested that if Congress was telling states to create their own exchanges &quot;or we'll send your insurance market into a death spiral,&quot; that would be coercion. </p><p> For oral arguments so focused on words, Chief Justice John Roberts, who generally weighs in with numerous questions, had few to offer. And when he did, it was focused on the issue of whether the plaintiffs had standing to bring the case &ndash; a question raised by Justice Ruth Bader Ginsburg. </p><p> US Solicitor General Donald Verrilli said that if none of the four are liable for a tax penalty for 2014, &quot;there just isn't the case or controversy. None of them is liable, there's no injury.&quot; </p><p> But the plaintiff's lawyer, Michael Carvin, a partner at the Washington mega-law firm Jones Day, said one his clients, Mr Doug Hurst, would be subject to the penalty for 2014, absent relief by the Supreme Court, and another client, Mrs Brenda Levy, would face the same in 2015. </p><p> Another time Chief Justice Roberts piped up was to joke about the fact Obamacare opponents, who Mr Carvin represented, lost at the Supreme Court in a case brought in 2012 against the ACA &ndash; a decision in which the chief justice was the fifth vote in favor of the government (scripintelligence.com, <a target="_new" href="http://www.scripintelligence.com/home/Supreme-Court-Affordable-Care-Act-constitutional-under-Congress-taxing-powers-332248">28 June 2012</a>, <a target="_new" href="http://www.scripintelligence.com/home/Constitutionality-declared-Surgery-or-hammer-time-next-for-health-reform-332278">29 June 2012</a>, <a target="_new" href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Post-SCOTUS-HHS-moves-forward-with-ACA-but-Republicans-push-back-332329">2 July 2012</a>). </p><p> Justices Stephen Breyer, Sonya Sotomayor, Ginsburg and Kagan &ndash; the four liberal justices &ndash; peppered Mr Carvin with questions throughout the more than 90-minute oral arguments. </p><p> In posing one question, Justice Kagan's used an example involving her three clerks &ndash; Will, Elizabeth and Amanda. </p><p> In her make-believe scenario, the justice asks Will to write a memo and tasks Elizabeth with editing it. </p><p> But then she tells Amanda that if Will is too busy to write the memo, she should take over for him and do the job. </p><p> So, asked Justice Kagan, if Amanda ends up writing the memo, does Elizabeth still edit it? </p><p> If Elizabeth does not edit the memo, she would not be performing her function, the justice argued. </p><p> The instructions carry over for Elizabeth to edit, no matter who writes the memo, Justice Kagan said. </p><p> She contended that in her analogy, she had set up a substitute, which is what Congress intended &ndash; when states did not step up to create the exchanges, the federal government would do the job. </p><p> But the task of the subsidies &ndash; no matter who did the job of building the exchanges &ndash; remained the same, just like Elizabeth's task to edit the memo. </p><p> The government's lawyer, Mr Verrilli, argued that Health and Human Services was fulfilling the requirement in the law by creating the marketplaces for the states, &quot;and for that reason, we say it qualifies as an exchange established by the state.&quot; </p><p> Justice Antonin Scalia, however, suggested that if the court rules in favor of the challengers, Congress could step in and fix the statute to ensure Americans are not left without health insurance. </p><p> &quot;You really think Congress is just going to sit there while all of these disastrous consequences ensue?&quot; Justice Scalia said. &quot;Congress adjusts, enacts a statute that takes care of the problem. It happens all the time.&quot; </p><p> At which the solicitor general quipped, &quot;This Congress?&quot; </p><p> The Supreme Court is expected to make a decision by the end of June, when its current term ends. </p> <p><p><p><p><p><p><p><p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 242
+
+<p> Not since former President Bill Clinton asked &quot;It depends on what the meaning of 'is,' is,&quot; has Washington been in such a tussle over the interpretation of words &ndash; something the Supreme Court grappled with on 4 March. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Supreme Court grapples with words in neverending Obamacare saga
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150304T235557
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150304T235557
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150304T235557
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028003
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Supreme Court grapples with words in 'never-ending' Obamacare saga
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356987
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ec751f1f-b052-4fae-9c6b-9b6493254172
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

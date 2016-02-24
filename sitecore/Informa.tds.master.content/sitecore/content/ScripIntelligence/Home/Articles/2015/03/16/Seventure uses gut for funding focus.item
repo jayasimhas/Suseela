@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {F2D00DFF-7B32-4B4E-A8DC-4E114463A2A7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/16/Seventure uses gut for funding focus
+parent: {15CEDA49-DF2B-4F46-96A7-78145A6DFE0C}
+name: Seventure uses gut for funding focus
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b885194c-407a-45fa-8370-e9df557cbbe8
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+ Seventure uses gut for funding focus  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 36
+
+Seventure uses gut for funding focus
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5573
+
+<p> With a rapid increase of research into the human microbiome, Seventure continues to attract investors into its Health for Life Capital Fund. Since launching the fund in December 2013, Seventure has raised a total of &euro;100m to back microbiome-focused businesses in the pharmaceutical and nutrition sectors. The latest &euro;25m tranche edges the French venture capitalist closer to its &euro;120m target. </p> <p> The geographic focus of Health for Life Capital is primarily in Europe, but also extends to North America and Asia. The fund will back opportunities in four areas: the microbiome, nutrition, biotech and digital health. The venture capitalist anticipates investing from &euro;500,000 to &euro;10m per round, or up to &euro;20m per company from early to late stage. </p> <p> &quot;Since 2008, we have noticed the steady interest in microbiome. The number of papers mentioning the microbiome continues to grow each year. We are also seeing and expect to continue see more and more deals in the area. We intend to be one of the major drivers of this trend,&quot; Isabelle de Cremoux, president &amp; CEO at Seventure Partners told <i>Scrip</i>. </p> <p> <img src="-/media/B78AA4C9F6184803B3001507187E995F.ashx" border="0"></p> <p> <i>source: Seventure, PubMed</i> </p> <p> The microbiome is the collective name given to the genomes of bacteria residing in the human body, principally the gut, and its relationship to health and disease is one of the hottest areas of research. Evidence is emerging that many chronic and infectious diseases are governed, in part, by the microbial populations that colonize the body. It is thought they may have a role in conditions such as diabetes, rheumatoid arthritis, inflammatory diseases of the gut as well as some cancers. </p> <p> Seventure's Health for Life Capital Fund has attracted backing from institutional investors including Natixis Private Equity and Unigrains, strategic investors including food product conglomerate Groupe Danone, yeast business Lesaffre, agroindustrial business Tereos and medical device maker Tornier. </p> <p> To date, the 10-year fund has invested in three French companies &ndash; Enterome Bioscience, LNC (Laboratoires Nutrition &amp; Cardiometabolisme) and MaaT Pharma &ndash; the Berlin-based Humedics and the Californian company Interface Therapeutics. </p> <p> Enterome Bioscience, in collaboration with Abbvie, is developing a fecal-based test to diagnose and monitor how Crohn's disease patients respond to tumor necrosis factor alpha inhibitors to help physicians select the most appropriate drug for treatment. The test is based on a signature of nine bacteria believed to have a functional role in obesity, inflammatory bowel disease and Crohn's disease. </p> <p> The biotech is also using the microbiome to identify new targets for drug development. Enterome's most advanced compound is EP-8018, a small molecule antagonist of bacterial fimbrial adhesin, which binds to the carcinoembryonic antigen (CEA)-related cell adhesion molecule 6 on intestinal epithelial cells. Phase 1 testing of EP-8018 is slated to start in early 2016. </p> <p> LNC is an R&amp;D company focused on adipocyte dysfunction and adipose tissue inflammation, to treat the underlying causes of metabolic diseases. The company is designing and developing clinically proven, safe, efficient medical food formulas. The first two products - Stabilor to treat abdominal obesity and co-morbidities and Bariamed to treat morbid obesity-- are due for launch in 2015. </p> <p> Founded in 2013, MaaT Pharma is looking to develop a first safe and standardized microbiotherapy solution for hospital use, intended for patients suffering from treatment-induced microbial imbalance (dysbiotic enteropathies) restoring the balance of microbial populations in the human gut. Initially it is targeting hospitalized patients suffering from severe intestinal dysbiosis, consecutive to strong doses of antibiotics. MaaT Pharma believes its therapies should increase therapeutic options for the initial pathology and limit the risk of nosocomial infections. </p> <p> Humedics is specializing in instant and exact liver function measurement. The Berlin based company has developed the LiMAx test, a breath analysis device that measures liver function instantly at the bedside of patients with liver failure. This allows for selection of treatment strategies that are optimally adapted to the individual patients liver status. </p> <p> Current applications of LiMAx test include diagnosis of the liver function before and after liver transplantation, liver surgery planning and assessment of diseases such as liver cirrhosis. The LiMAx test has been used more than 12,500 times in clinical practice. Humedics is conducting a phase III multi-center clinical trial with results expected mid 2015. </p> <p> Interface Therapeutics is focusing on intestinal sampling and is taking a two staged approach to acquiring and evaluating samples from the upper gastrointestinal tract that include genetic material, microbes and metabolites, and is growing the sample collection and database in a number of disease areas including inflammatory, metabolic, digestive, and oncology. </p> <p> Interface's Multiomic and Bioinformatics Platform is being used to generate novel markers and targets, from previously inaccessible parts of the human gastrointestinal tract, to identify and develop therapeutic targets, diagnostics, prognostics and predictive tests in the fields of inflammatory, metabolic, digestive diseases and oncology. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 416
+
+<p> With a rapid increase of research into the human microbiome, Seventure continues to attract investors into its Health for Life Capital Fund. Since launching the fund in December 2013, Seventure has raised a total of &euro;100m to back microbiome-focused businesses in the pharmaceutical and nutrition sectors. The latest &euro;25m tranche edges the French venture capitalist closer to its &euro;120m target. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 36
+
+Seventure uses gut for funding focus
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150316T022611
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150316T022611
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150316T022611
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028167
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+ Seventure uses gut for funding focus  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{16D9D9EB-DDE8-4147-A69F-C778D7CD9BC2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357297
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042313Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b885194c-407a-45fa-8370-e9df557cbbe8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042313Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

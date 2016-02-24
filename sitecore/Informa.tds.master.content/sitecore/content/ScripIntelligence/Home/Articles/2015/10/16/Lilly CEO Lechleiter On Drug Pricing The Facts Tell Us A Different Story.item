@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9025E03A-529D-44C3-85C3-2E79F3102058}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/16/Lilly CEO Lechleiter On Drug Pricing The Facts Tell Us A Different Story
+parent: {6AAE7279-2B4F-4136-849E-20689C005A44}
+name: Lilly CEO Lechleiter On Drug Pricing The Facts Tell Us A Different Story
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2354da97-9245-49a1-b3f7-f118e88927da
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{78485A7A-B73F-43C5-A545-3DC6EC60C23B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 80
+
+ Lilly CEO Lechleiter On Drug Pricing: ''The Facts Tell Us A Different Story''  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+Lilly CEO Lechleiter On Drug Pricing The Facts Tell Us A Different Story
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6106
+
+<p> <p> The pharmaceutical industry needs to do more to change perceptions about drug pricing, Eli Lilly &amp; Co. CEO John Lechleiter said during the company&rsquo;s third quarter sales and earnings call Oct. 22. The chief executive was asked by an analyst to address the renewed controversy over drug pricing that has arisen in recent weeks. </p> <p> Lechleiter blamed the latest headlines on a few select examples and a presidential campaign. Democratic presidential candidate Hillary Clinton released a proposal to curb drug costs Sept. 22 in the midst of a scandal over Turing Pharmaceuticals AG&rsquo;s re-pricing of an old, off-patent rare disease therapy &ndash; and <a href="http://#https://www.pharmamedtechbi.com/Publications/RPM-Report/11/10/The-Campaign-Against-Drug-Pricing-Candidates-Can-Only-Hope-Voters-React-As-Strongly-As-Wall-Street?result=1&amp;total=1&amp;searchquery=%253fq%253d2015500104%25255D" target="_new">investors quickly reacted</a>. </p> <p> &ldquo;If you go back through successive presidential campaigns, with some bit of variability, drug pricing tends to rear its head because I think it&rsquo;s something the politicians have found resonates with voters,&rdquo; Lechleiter said. &ldquo;Having said that, I think the facts tell us a different story.&rdquo; </p> <p> One recent data update showed the net effective price increase for brand drugs in the US was seven-tenths of 1%, he said. &ldquo;That reflects not necessarily these things that get called out in the media, these individual huge drug price increases. It reflects the fact that many of our medicines are going generic still. &#8230; It reflects the deep discount that we&rsquo;re mandated by the government to provide, but increasingly must provide to commercial insurers and payers in order to get onto formularies to be able to compete for business,&rdquo; he said. </p> <p> Industry needs to respond to the criticism and set the record straight, Lechleiter said, but &ldquo;I think we&rsquo;ve got to be careful and thoughtful.&rdquo; </p> <p> &ldquo;We&rsquo;ve got a great story to tell,&rdquo; he added. &ldquo;I&rsquo;ve never been as optimistic as I am about the chances we have as an industry to really make a difference for patients. We&rsquo;ve got to keep telling the story, reminding people that the medicines as a percentage of total health care spend have remained remarkably constant for a long period of time, which suggest that our medicines are helping to hold the line or even reduce other costs in the system.&rdquo; </p> <p> The reemergence of drug pricing as a hot button issue has cast a pall over the biotech bull market, but potentially lower valuations for assets has not changed Lilly&rsquo;s thinking on M&amp;A, according to Lechleiter. </p> <p> &ldquo;Does that change our fundamental posture with respect to business development? It doesn&rsquo;t. I think we&rsquo;ve said all along that we&rsquo;re really not interested in large-scale M&amp;A, but we&rsquo;re going to continue to look at opportunities, particularly earlier in development, even at the preclinical stage,&rdquo; he said. </p> <p> He pointed to Lilly&rsquo;s recent deal with Locemia Solutions for worldwide rights to an intranasal glucagon as a potential treatment for severe hypoglycemia in people with diabetes treated with insulin as an example of the kinds of business development Lilly is looking at. The drug is currently in Phase III testing and could potentially be the first needle-free rescue treatment for severe hypoglycemia. </p> <p> <b>Lilly&rsquo;s Top Line Grows On New Products</b> </p> <p> Lilly continued its return to sales growth in the third quarter after weathering several challenging years due to patent expirations. Worldwide revenues increased $4.96bn in the third quarter, up 2% compared to the third quarter of 2014, including 12% volume growth offset by an 8% decline due to currency and 2% due to lower prices. </p> <p> Volume growth was driven by the inclusion of Novartis Animal Health and strong sales of an authorized generic of <i>Evista</i> (raloxifene), the VEGF receptor 2 antagonist <i>Cyramza</i> (ramucirumab) for cancer and the once-weekly glucagon-like peptide-1 (GLP-1) receptor agonist <i>Trulicity</i> (dulaglutide), which debuted last year. Trulicity generated $73.7m in sales in the third quarter. </p> <p> Lilly&rsquo;s sodium glucose transporter-2 (SGLT-2) inhibitor <i>Jardiance</i> (empagliflozin) has already shown an uptick in prescriptions since the company released positive data from the <a href="http://#https://www.pharmamedtechbi.com/Publications/The-Pink-Sheet/77/39/EMPAREG-Data-Will-Boost-emJardianceems-Role-In-Combination-Therapy-Lilly-Says?" target="_new">EMPA-REG OUTCOME trial</a> in September, showing Jardiance improved cardiovascular outcomes in type 2 diabetes patients taking the drug. </p> <p> Johnson &amp; Johnson&rsquo;s fist-to-market <i>Invokana</i> (canagliflozin) has been the market leader in the category, but Lilly&rsquo;s impressive data could put more pressure on the drug to maintain its position. </p> <p> J&amp;J is running its own large CV outcomes trial, CANVAS, which is expected to complete in June 2017; execs said during the big pharma&rsquo;s Oct. 13 earnings call that they expect the benefit see in Lilly&rsquo;s trial is a class effect of the SGLT-2s. </p> <p> Jardiance is already positioned for strong access in 2016, Senior VP-Lilly Diabetes Enrique Conterno said, with over 85% commercial access and over 55% Medicare Part D access. </p> <p> Even though Lilly is not promoting the EMPA-REG OUTCOME data until it is incorporated into the drug&rsquo;s labeling, the company has already seen growth in Jardiance&rsquo;s share of new prescriptions. </p> <p> New prescription share for Jardiance and the combination drug <i>Glyxambi</i> (empagliflozin/linagliptin) grew from 15% to 17% at the time the data was released in September. Now it is at 21%, Conterno said. The shift has been most notable with endocrinologists, going from 21% to 31% new-to-brand share since the data release, he added. </p> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 4
+
+<p/>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+Lilly CEO Lechleiter On Drug Pricing The Facts Tell Us A Different Story
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151016T170005
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151016T170005
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151016T170005
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030128
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 80
+
+ Lilly CEO Lechleiter On Drug Pricing: ''The Facts Tell Us A Different Story''  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{82DFA523-C3A1-41A0-A50F-D8A52B45592E}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361098
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2354da97-9245-49a1-b3f7-f118e88927da
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

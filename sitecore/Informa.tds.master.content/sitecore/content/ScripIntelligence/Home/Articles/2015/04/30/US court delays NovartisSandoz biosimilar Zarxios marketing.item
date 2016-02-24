@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {71B50834-E747-454D-A0D5-04B8A904E51F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/30/US court delays NovartisSandoz biosimilar Zarxios marketing
+parent: {6EF0A086-FBAD-416C-BDCB-49AF70773B44}
+name: US court delays NovartisSandoz biosimilar Zarxios marketing
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 30dc28b8-1258-4ace-a24c-0e3ebba94a3d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{02BF5E8E-46B6-457B-82C8-D013C26B8CF9}|{C547E0DE-05E0-4671-8C7A-37F0D3DF4F0E}|{C73EC67A-5E68-4D6E-8A63-F12AB8D18B20}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+US court delays Novartis/Sandoz biosimilar Zarxio's marketing
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+US court delays NovartisSandoz biosimilar Zarxios marketing
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4128
+
+<p>Amgen won its motion for an injunction to stop Novartis and its Sandoz unit from putting their newly approved biosimilar Zarxio (filgrastim-sndz) on the market until the US Court of Appeals for the Federal Circuit renders a decision in an ongoing lawsuit.</p><p>Zarxio is referenced on Amgen's Neupogen (filgrastim), a human granulocyte colony-stimulating factor.</p><p>The FDA granted <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">approval</a> of Zarxio on 5 March &ndash; putting Novartis and Sandoz in the record books for being the first companies in the US to gain the agency's nod for a biosimilar.</p><p>But Amgen quickly sought legal action against Sandoz &ndash; arguing it acted unlawfully because it failed to comply with the disclosure and negotiation procedures, often called the "patent dance," laid out in the out by the <i>Biologics Price Competition and Innovation Act</i> (BPCIA) &ndash; the law that established the abbreviated licensure pathway for biosimilars &ndash; and intended to market the drug immediately on receiving the FDA's approval, rather than waiting until at least 180 days thereafter. </p><p>A California district court, however, <a href="http://www.scripintelligence.com/policyregulation/Will-others-avoid-patent-dance-after-Sandoz-court-win-357429" target="_new">sided with Sandoz</a> &ndash; declaring the company did nothing wrong by not engaging in the disclosure and dispute resolution process under BPCIA.</p><p>Judge Richard Seeborg of US District Court for the Northern District of California said that while Amgen may have preferred that Sandoz share the information voluntarily, BPCIA left that decision up to the biosimilar maker. </p><p>Sandoz's decision not to follow the disclosure and negotiation procedures "reflects how the statute's overall scheme operates to promote expedient resolution of patent disputes," the judge declared. </p><p>The Federal Circuit in Washington is scheduled to hear oral arguments in Amgen's suit against Sandoz on 3 June.</p><p>It has put the review of the case on an expedited path.</p><p>Johnson & Johnson unit Janssen filed a <a href="http://www.scripintelligence.com/policyregulation/Janssen-seeks-to-block-Celltrions-infliximab-biosimilar-357239" target="_new">similar lawsuit</a> at the US District Court for the District of Massachusetts seeking to block Celltrion from bringing its infliximab biosimilar, known as CTP13, to the US market.</p><p><b>Naming dispute</b></p><p>Meanwhile, a group of Republican senators in Washington demanded to know why the FDA granted Zarxio's approval before the agency had a nonproprietary naming policy in place.</p><p>When the FDA approved Zarxio, it said it was designating filgrastim-sndz as a "placeholder nonproprietary name" &ndash; declaring the agency's decision to do so "should not be viewed as a statement about a general naming policy for biosimilar products."</p><p>"At this time, it's premature to know whether the name we applied to the filgrastim-sndz product may or may not change based on the finalization of the naming policy," Dr John Jenkins, director of the FDA's Office of New Drugs, told reporters during a <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">5 March media telebriefing</a>.</p><p>But the group of nine Republican lawmakers, led by Senator Lamar Alexander (Tennessee), chairman of the Senate Health, Education, Labor and Pensions Committee, late last week called on the current acting head of the FDA, Dr Stephen Ostroff, to explain exactly what regulators mean by "placeholder nonproprietary name" and what legal authority the agency has to issue or change such a name and what is involved in those processes.</p><p>Among their demands, the senators said they want to know how placeholder names differ from other forms of nonproprietary names.</p><p>They called for the FDA to disclose when it plans to publish its naming guidance, along with one on interchangeability.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 262
+
+<p>Amgen won its motion for an injunction to stop Novartis and its Sandoz unit from putting their newly approved biosimilar Zarxio (filgrastim-sndz) on the market until the US Court of Appeals for the Federal Circuit renders a decision in an ongoing lawsuit.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+US court delays NovartisSandoz biosimilar Zarxios marketing
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150430T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150430T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150430T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028645
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+US court delays Novartis/Sandoz biosimilar Zarxio's marketing
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358142
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+30dc28b8-1258-4ace-a24c-0e3ebba94a3d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

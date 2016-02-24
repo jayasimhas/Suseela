@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {CFF6EA2C-154E-46A9-969D-40E4C8908C28}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/03/Gilead faces tough Harvoni reimbursement discussions in Germany
+parent: {C10C73BD-F7C3-476F-ABFC-B27344ADF644}
+name: Gilead faces tough Harvoni reimbursement discussions in Germany
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 27c8efe2-ce42-40cf-837f-d883b09e96f5
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{8B2376D2-D914-41D6-9402-D3CD38CABF23}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+Gilead faces tough Harvoni reimbursement discussions in Germany
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Gilead faces tough Harvoni reimbursement discussions in Germany
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3304
+
+<p>Germany's health technology appraisal institute, IQWiG, has given a lukewarm appraisal of Gilead's combination hepatitis C product Harvoni (sofosbuvir and ledipasvir), which could cause the company difficulties when it comes to negotiating a price with Germany's health insurers.</p><p>Out of seven patient populations, IQWiG only found that Harvoni offers an additional benefit in two. According to IQWiG, only certain patients with genotype 1 can benefit from treatment with Harvoni &ndash; those in whom previous therapies have been unsuccessful, and previously untreated patients who have not yet developed cirrhosis of the liver.</p><p>And even then IQWiG said only a hint of non-quantifiable benefit could be derived, that Gilead had not proved Harvoni's benefit. This was because Gilead's evidence relied on historical, rather than direct, comparisons, which IQWiG said are inherently biased. IQWiG also said that it was unclear in how many patients Harvoni could prevent liver cancer.</p><p>Nonetheless, IQWiG noted that in the three GT-1 patient groups assessed, the difference between treatment with Harvoni and comparators was "so large" that its benefit could not be denied. Harvoni cleared the virus in 100% of patients, whereas the comparator therapies had a success rate between 35-75%.</p><p>However, in treatment na&iuml;ve GT-1 patients with cirrhosis of the liver, IQWiG said, "Greater harm in the form of side effects could not be excluded," which is why only two GT-1 groups received a positive assessment. </p><p>IQWiG's Harvoni assessment is reminiscent of the restrictive review that it gave Gilead's single-agent hepatitis C drug, <a href="http://www.scripintelligence.com/home/Germanys-IQWiG-verdict-for-Sovaldi-sets-scene-for-tough-pricing-negotiations-351634" target="_new">Sovaldi</a> (sofosbuvir). In Sovaldi's case, IQWiG dismissed large swathes of evidence because it only provided historical comparisons. Analysts expected the assessment to make pricing negotiations difficult, and big discounts necessary, and also that German physicians would reserve Sovaldi for use only in certain patients.</p><p>The same concerns now surround Harvoni, which will now be assessed by the G-BA, the body in Germany with the final say over reimbursement decisions. Following that, Gilead will enter into negotiations with Germany's statutory health insurers to agree a price.</p><p>Prices agreed with health insurers in Germany are kept confidential, so it is not known what sort of discount Gilead has agreed for Sovaldi. However, the drug's list price is a respectable &euro;49,000 a course. Gilead is likely to try and get a comparable price for Harvoni.</p><p>Both Harvoni and Sovaldi have had an easier time convincing Europe's other notoriously conservative HTA body, the UK's NICE, of their benefit. NICE also put restrictions on the drugs' access in England in Wales, but <a href="http://www.scripintelligence.com/policyregulation/NICE-favors-Harvoni-in-draft-guidance-357036" target="_new">recommended Harvoni in a broader spectrum of patients</a> earlier in March. Sovaldi gained final and binding <a href="http://www.scripintelligence.com/policyregulation/NICE-recommends-hep-C-drugs-Olysio-and-Sovaldi-356170" target="_new">positive NICE guidance</a> in January 2015.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 286
+
+<p>Germany's health technology appraisal institute, IQWiG, has given a lukewarm appraisal of Gilead's combination hepatitis C product Harvoni (sofosbuvir and ledipasvir), which could cause the company difficulties when it comes to negotiating a price with Germany's health insurers.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Gilead faces tough Harvoni reimbursement discussions in Germany
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150403T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150403T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150403T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028043
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+Gilead faces tough Harvoni reimbursement discussions in Germany
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357059
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+27c8efe2-ce42-40cf-837f-d883b09e96f5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

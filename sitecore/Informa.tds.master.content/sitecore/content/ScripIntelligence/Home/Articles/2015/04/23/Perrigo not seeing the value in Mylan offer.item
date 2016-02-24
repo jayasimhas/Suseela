@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {CEAC9F3B-A43E-43A2-91AD-337C797967EF}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/23/Perrigo not seeing the value in Mylan offer
+parent: {513DB860-8F3F-41F5-BCB6-26F09C90B6E0}
+name: Perrigo not seeing the value in Mylan offer
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8ccd283f-f6f4-4962-af95-9a0fc9c0a52d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+Perrigo not seeing the value in Mylan offer
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Perrigo not seeing the value in Mylan offer
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3384
+
+<p><p>Generic drugmakers Mylan, Teva and Perrigo are moving at a rapid clip to figure out who will be the acquirer and who will be the acquired, with Mylan upping its offer again and Perrigo giving a quick rejection. Yet, analysts think Teva will win out in the end. </p><p>Mylan issued a statement 29 April noting it has upped its offer for generic competitor Perrigo to $75 per share plus 2.3 Mylan shares. Mylan says the mixed cash/stock offer is worth $232.23 per share based on its closing stock price on 08 April, the last trading day before the initial offer was made public. </p><p>"With this enhanced offer, I look forward to meeting with Joe Papa and his team to finalize the implementation of this truly compelling combination, which is a win-win for both Mylan and Perrigo shareholders and all other stakeholders," said Mylan's Executive Chairman Robert Coury. </p><p>Meanwhile, Perrigo is singing a different tune. The company considers the value of the offer to be $202.20 a share based on Mylan's closing price on 10 March, before speculation began about Teva's interest in the company. Based on Perrigo's reasoning, the new offer is below Mylan's original all-cash offer of <a href="http://#http://www.scripintelligence.com/home/More-generic-consolidation-Mylan-goes-after-Perrigo-357722" target="_new">$205 per share</a>. </p><p>"Today's announcement from Mylan continues to propose a price lower than the previously rejected proposal," wrote Perrigo in a statement. </p><p>To complicate things, Teva has added itself to the mix. Mylan has made clear over the last week that it isn't interested in Teva's proposal &ndash; the Israeli pharma <a href="http://#http://www.scripintelligence.com/home/Rejections-All-Around-Mylan-to-Teva-Perrigo-to-Mylan-357994" target="_new">made a $40bn public offer</a> to Mylan just days after Mylan made its intentions for Perrigo public. Teva never approached Mylan privately and Coury was sure to publicly chastise his competitor for making such a move. In <a href="http://#http://www.scripintelligence.com/home/Mylan-to-Teva-we-dont-want-your-problems-358077" target="_new">a public letter</a> to Teva CEO Erez Vigodman, Coury called the company dysfunctional, criticized its management and highlighted the consistent turmoil Teva has been going through over the last few years. </p><p>While analysts seem to believe that the combination of Mylan and Perrigo makes more strategic sense, they think Teva will eventually triumph in this battle of hostile takeovers. </p><p>"Even the way Perrigo calculates the price, this is a nice offer valuing the target at 15x 2015 EBITDA ($1.86B). However, given the high equity component (63% by PRGO math), uncertainty due to Teva and Perrigo viewing itself at a relative valuation low point after a tough year, this is unlikely to be enough," wrote Bernstein analyst Dr Ronny Gal in a 29 April note. "In short, we still think Teva-Mylan is the more likely scenario unless Perrigo decides to engage."</p><p>Teva has yet to up its offer after the verbal flogging from Coury, but analysts believe it will step in again shortly. "For Teva, all options are on the table, including changing the mix of cash-equity financing on Mylan offer," wrote Leerink analyst Jason Gerberry. "We came away convinced TEVA is committed to getting the Mylan deal done & has room to sweeten its offer."</p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Perrigo not seeing the value in Mylan offer
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150423T210502
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150423T210502
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150423T210502
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028582
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+Perrigo not seeing the value in Mylan offer
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358037
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8ccd283f-f6f4-4962-af95-9a0fc9c0a52d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

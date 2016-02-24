@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {1AB1E3AC-D9F0-4DFF-A8BB-50E46DFD93A4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/24/BioMarin Scores Patent Board Win Sarepta To Appeal
+parent: {D0AAADAC-3A4D-4719-8453-0B9B929C7097}
+name: BioMarin Scores Patent Board Win Sarepta To Appeal
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f3e3d7ea-a85a-4dca-8661-0d4f795a59fc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+BioMarin Scores Patent Board Win; Sarepta To Appeal
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+BioMarin Scores Patent Board Win Sarepta To Appeal
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4855
+
+<p>Shares of BioMarin Pharmaceutical Inc. leaped more than 13% on Sept. 30 after the firm scored a win at the Patent Trial and Appeal Board (PTAB) of the U.S. Patent & Trademark Office (US PTO) in a patent interference dispute with Sarepta Therapeutics Inc. involving methods of use claims for the firms' respective experimental Duchenne muscular dystrophy (DMD) drugs drisapersen and eteplirsen.</p><p>Sarepta, whose shares took at 2.8% hit on Sept. 30 before regaining ground, closing up 21 cents at $32.11, has vowed to appeal the PTAB's decision to the U.S. Court of Appeals for the Federal Circuit.</p><p>BioMarin's stock closed at $105.21, gaining $8.50, or 8.8%. </p><p>Specifically, the PTAB determined that Academisch Ziekenhuis Leiden (AZL), BioMarin's licensor, was the first to invent the methods of use for exon 51 skipping oligonucleotides claimed in the company's '992 patent application pending at the US PTO and in Sarepta's U.S. granted patent '907, which the latter firm licensed from the University of Western Australia.</p><p>The PTAB decision was the second win for BioMarin, whose method patent in Europe, EP 1 619 249 B1, previously was upheld by the European Patent Office Opposition Division in an amended form after an opposition procedure initiated by Sarepta, which formerly went under the moniker AVI Biopharma.</p><p>But Sarepta noted the European patent is not related to BioMarin's pending '992 application involved in the PTAB's Sept. 29 decision and that a forthcoming verdict from the European Patent Office Board of Appeals would be independent of the US PTO's patent board.</p><p>BioMarin and Sarepta both have new drug applications pending at the FDA, which granted priority reviews to <a href="http://www.scripintelligence.com/home/FDA-fates-converge-for-BioMarins-drisapersen-Sareptas-eteplirsen-359173" target="_new">drisapersen</a> and <a href="http://www.scripintelligence.com/policyregulation/Sarepta-Wins-Priority-Review-For-Duchenne-Drug-Eteplirsen-360112" target="_new">eteplirsen</a>, with decisions expected by Dec. 27 and Feb. 26, 2016, respectively.</p><p>Sarepta was quick to point out the PTAB has yet to issue a decision in two related pending composition of matter patent interference proceedings.</p><p>"The PTAB decision was based on a procedural matter and did not include a decision on the substantive motions of unpatentability at issue in the pending interferences for exon 51 and 53 oligonucleotides," Sarepta said.</p><p>The biotech also noted the PTAB's ruling did not address the patentability of BioMarin's method claims in its pending '992 patent application "in the course of ordering the cancellation" of Sarepta's '907 patent.</p><p>Additionally, Sarepta said, the PTAB decision does not impact the company's key patent protection for eteplirsen and its other experimental drug SRP-4053. The firm emphasized its primary patent protection for eteplirsen and SRP-4053 &ndash; patents '368 and '007, which are covered until June 2025 &ndash; is not the subject of any pending interferences and insisted those patents are "presumed valid and enforceable." </p><p>BioMarin acknowledged that if Sarepta files a timely appeal with the Federal Circuit, it's unlikely the US PTO will issue claims on AZL's patent until after the court rules.</p><p>And without an issued patent, BioMarin cannot file for a preliminary injunction against Sarepta to possibly prevent it from marketing eteplirsen in the US, Evercore ISI analyst Mark Schoenebaum pointed out.</p><p>Nonetheless, Schoenebaum said BioMarin believes that if it wins at the Federal Circuit, and the US PTO issues the method patent to AZL, that may be enough for the company to block Sarepta from marketing its drug &ndash; or at least to extract royalties from it.</p><p>RBC Capital Markets analyst Simos Simeonidis said he already had assumed an agreement would be reached between BioMarin and Sarepta &ndash; or forced upon the latter company &ndash; under which eteplirsen could be sold in the U.S. in exchange for a royalty payment, which he anticipated would be 10%. </p><p>But Simeonidis said what really matters most is "which of these drugs gets to the market and when."</p><p>Even though there are concerns with the datasets for both drisapersen and eteplirsen, he expected the FDA would "not split the baby" and would grant approval to both medicines, given the unmet need and devastating nature of DMD.</p><p>"We believe the agency is under significant pressure to approve a drug for these patients soon," Simeonidis said.</p><p>Regardless, JP Morgan analyst Cory Kasimov said BioMarin has the upper hand on the intellectual property front, and if Sarepta was to commercialize eteplirsen before the Federal Circuit's decision, but then loses at the court, the firm would be subject to damages.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 400
+
+<p>Shares of BioMarin Pharmaceutical Inc. leaped more than 13% on Sept. 30 after the firm scored a win at the Patent Trial and Appeal Board (PTAB) of the U.S. Patent & Trademark Office (US PTO) in a patent interference dispute with Sarepta Therapeutics Inc. involving methods of use claims for the firms' respective experimental Duchenne muscular dystrophy (DMD) drugs drisapersen and eteplirsen.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+BioMarin Scores Patent Board Win Sarepta To Appeal
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150924T190000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150924T190000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150924T190000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029927
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+BioMarin Scores Patent Board Win; Sarepta To Appeal
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360672
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f3e3d7ea-a85a-4dca-8661-0d4f795a59fc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042458Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

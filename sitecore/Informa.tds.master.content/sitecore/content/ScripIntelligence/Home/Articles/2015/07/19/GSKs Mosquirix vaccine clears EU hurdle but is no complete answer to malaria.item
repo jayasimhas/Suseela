@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {F88C04C4-49F2-47A9-AA69-AC1F41DC250F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/19/GSKs Mosquirix vaccine clears EU hurdle but is no complete answer to malaria
+parent: {8362F198-8C67-417D-887F-8EA093B6F581}
+name: GSKs Mosquirix vaccine clears EU hurdle but is no complete answer to malaria
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 07c97c0b-aa15-4c3a-8489-44ba052ef1c3
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 80
+
+GSK's Mosquirix vaccine clears EU hurdle but is no 'complete answer' to malaria 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 76
+
+GSKs Mosquirix vaccine clears EU hurdle but is no complete answer to malaria
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5801
+
+<p>The Committee for Medicinal Products for Human Use (CHMP) of the European Medicines Agency (EMA) has recommended GlaxoSmithKline's partially successful malaria vaccine Mosquirix &ndash; also known as RTS,S &ndash; be approved in children aged 6 weeks to 17 months. </p><p>The EMA, under a process known as article 58, is performing a scientific evaluation of the vaccine which will provide an opinion which African regulators may use to help their own regulatory processes.</p><p>In clinical testing the vaccine has been shown to protect between a quarter to one half of children who receive the full dose schedule (three primary doses plus a booster after 18 months), with the age that children receive the first dose adding another layer of variability to its success. In addition, efficacy has been shown to decrease over time.</p><p>However, the vaccine is up to 10 years ahead of other malaria vaccines in development, and has been extensively bank-rolled by the Gates Foundation.</p><p>"While RTS,S on its own is not the complete answer to malaria, its use alongside those interventions currently available such as bed nets and insecticides, would provide a very meaningful contribution to controlling the impact of malaria on children in those African communities that need it the most," said GSK CEO Sir Andrew Witty.</p><h2>Phase III data</h2><p>In April this year, GSK reported the effect of a fourth 'booster' dose given 18 months after the third dose, and provided information on longer term follow-up. Results are now available from an average of 48 months follow-up from dose 1 in the 5-17 month olds, and an average of 38 months follow-up in the 6-12 week olds.</p><p>Vaccine efficacy against clinical malaria in 5-17 month old children who received four doses on a 0, 1, 2, 20 month schedule was 39% over the full duration of the trial. </p><p>Vaccine efficacy against clinical malaria in 6-12 week old children was 27% in the group who received four doses. </p><p>"The need for high quality, safe and effective drugs to treat malaria will continue regardless of any deployment of a first-generation malaria vaccine," the WHO said. "The vaccine will be evaluated as an addition to, not a replacement for, existing preventive, diagnostic and treatment measures. The need for long-lasting insecticidal nets, rapid diagnostic tests and artemisinin-based combination therapies will continue if RTS,S/AS01 becomes available and is used." </p><p>The development of Mosquirix began in 1987, and has thus far cost around $565m, according to GSK. GSK itself has invested around $365m to date and expects to invest a further $200m to $250m until development is completed. Between 2001 and the end of 2014, the PATH Malaria Vaccine Initiative (MVI), supported by grants from the Gates Foundation, put in more than $200m to fund the final stages of clinical testing.</p><p>The EMA's CHMP opinion is a final stage in the Article 58 procedure initiated in July 2014, by which the CHMP gives a scientific opinion on a medicinal product that is intended exclusively for markets outside of the European Union (EU). This assessment requires medicinal products to meet the same standards as those intended for use in the EU. </p><p>However, there is still a long way to go before the vaccine is rolled out across malaria-ravaged parts of Africa.</p><h2>next steps</h2><p>Following the CHMP's positive scientific opinion, two of the WHO's independent advisory groups, the Strategic Advisory Group of Experts (SAGE) on Immunization and the Malaria Policy Advisory Committee (MPAC) will now jointly review the evidence base for Mosquirix and make a joint policy recommendation for how it might be used alongside other tools to prevent malaria in the event the vaccine candidate is approved by national regulatory authorities in sub-Saharan Africa. The WHO has indicated that such a recommendation may be possible by end of this year.</p><p>Following the WHO recommendation, GSK will also file for pre-qualification of Mosquirix. WHO pre-qualification involves a scientific assessment of any new vaccine proposed for introduction in WHO's Expanded Programme on Immunization. A pre-qualification decision is used by the United Nations agencies and other procurement agencies to help inform vaccine purchasing decisions.</p><p>Once a WHO pre-qualification is granted, GSK plans to apply for marketing authorisation in countries in sub-Saharan Africa on a country-by-country basis. Mosquirix targets the deadly version of malaria that is prevalent in this region.</p><p>A roll out of the vaccine is likely to be significantly supported financially by Gavi, the Gates Foundation-backed vaccine alliance.</p><h2>not-for-profit</h2><p>While the price of Mosquirix has yet to be determined, GSK has committed to a not-for-profit price for the vaccine to cover the cost of manufacturing the vaccine plus a "small return of around 5% that will be reinvested in research and development for second-generation malaria vaccines, or vaccines against other neglected tropical diseases," said the company. A figure of $5 per dose has been suggested by observers, about the price of an insecticide-treated mosquito net, but with up to four doses in the schedule and no guarantee of success, even this price could be seen as problematic. </p><p>"While eradication is the ultimate goal, malaria has yet to be eliminated or even fully controlled in many parts of the world; [the] data suggest that malaria vaccines can help us take some critical steps along that path," said Dr David Kaslow, vice president of product development at PATH. "PATH will continue to work with GSK and other partners to ensure that the evidence is available, as soon as possible, to support informed decision-making on those remaining steps."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 272
+
+<p>The Committee for Medicinal Products for Human Use (CHMP) of the European Medicines Agency (EMA) has recommended GlaxoSmithKline's partially successful malaria vaccine Mosquirix &ndash; also known as RTS,S &ndash; be approved in children aged 6 weeks to 17 months. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 76
+
+GSKs Mosquirix vaccine clears EU hurdle but is no complete answer to malaria
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150719T203250
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150719T203250
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150719T203250
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029325
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 80
+
+GSK's Mosquirix vaccine clears EU hurdle but is no 'complete answer' to malaria 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359519
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+07c97c0b-aa15-4c3a-8489-44ba052ef1c3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

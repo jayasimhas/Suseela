@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {09FA9210-8062-4D46-BAA7-AB55915721F6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/17/Strong Q1 operating profit hides weaker revenues at newlook Novartis
+parent: {5262FD33-8196-4910-BCB3-3BC76EEBE076}
+name: Strong Q1 operating profit hides weaker revenues at newlook Novartis
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 331ea06d-bd8c-4f64-8a85-91a6607e2fbd
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 70
+
+Strong Q1 operating profit hides weaker revenues at new-look Novartis 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 68
+
+Strong Q1 operating profit hides weaker revenues at newlook Novartis
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3600
+
+<p>Swiss major Novartis missed its consensus revenues estimates but nonetheless posted a very healthy operating profit in the first quarter thanks largely to higher margins in its pharma and Sandoz divisions.</p><p>With its asset swapping mega-deal with GlaxoSmithKline now complete and the Novartis streamlined to focus on pharma, its Sandoz generics business and Alcon eye care business, the benefits of CEO Joe Jimenez's overhaul are now coming through to the bottom line. This is despite the drag caused by the strengthening dollar, which management said would continue add pressure for the rest of 2015. </p><p>On a continuing operations basis, net sales for the quarter were $11.9bn, which was a drop of 7% but up by 3% at constant currencies, while core operating income rose by 15% at constant currencies at $2.8bn (-1%).</p><p>"On a continuing operations basis, Novartis missed consensus 1Q15 revenue estimates by 2%, due to weaker than expected Pharma and Alcon sales, but delivered an exceptionally strong operating profit beat of 11% due to stronger margins in Pharma and Sandoz, boosted by operational excellence," said analysts at Jefferies. As a result, core EPS was 15% ahead of consensus at $1.33 (+11% at constant currencies).</p><p>Guidance remains unchanged with group net sales expected to grow at mid-single digits at constant exchange rates, implying that they will reach $49.6bn for the year.</p><p>Mr Jimenez said: <i>"</i>Our focus on execution has resulted in a strong operational performance. We have completed the GSK and Lilly transactions and innovation continues to be strong."</p><p>The operational efficiencies created savings of $498m in continuing operations at Novartis, including cuts of $300m (10%) in marketing and sales costs, $50m (7.7%) in general and administrative expenses and $143m (6.5%) in R&D costs. As a result, quarterly operating income within Novartis's pharma division increased from 28.4% of sales to 32.2%.</p><p>Pharmaceuticals net sales reached $7.1bn (-9%,or +1% at constant currencies), with volume growth of 9 percentage points, Novartis said. This included the new oncology assets acquired from GSK (sales of $0.2bn in March), which were offset by generic competition (-8 percentage points), largely for Diovan monotherapy, Exforge and Vivelle<i>-</i>Dot in the US.</p><p>For Alcon, Q1 net sales were $2.6bn (-3%, +5% at constant currencies), led by continued growth in thesurgical and ophthalmic pharmaceuticals franchises, while Sandoz's net sales for the quarter were $2.2bn (-3%, +9% at constant currencies), as volume growth of 13 percentage points more than compensated for 4 percentage points of price erosion. US sales of retail generics and biosimilars were up 13%, driven by continuing strong performance from recent launches and Fougera sales, Novartis said.</p><h2>pipeline</h2><p>The first quarter saw progress with its pipeline: there were three approvals in its oncology portfolio (Jakavi in polycythemia vera in the EU, Farydak in multiple myeloma in the US and Jadenu for chronic iron overload (US)). Its novel heart failure therapy LCZ696 &ndash; potentially an $11bn dollar drug &ndash; was granted FDA priority review and CHMP accelerated assessment. And its new anti-IL17 product Cosentyx has continued its run of trial successes in psoriasis (although development in rheumatoid arthritis was dropped).</p><p>Meanwhile, its Sandoz division received US approval for its first biosimilar product Zarxio, a version of Amgen's Neupogen (filgrastim), and its first substitutional generic Copaxone, called Glatopa. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 212
+
+<p>Swiss major Novartis missed its consensus revenues estimates but nonetheless posted a very healthy operating profit in the first quarter thanks largely to higher margins in its pharma and Sandoz divisions.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+Strong Q1 operating profit hides weaker revenues at newlook Novartis
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150417T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150417T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150417T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028518
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 70
+
+Strong Q1 operating profit hides weaker revenues at new-look Novartis 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200600221
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357939
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+331ea06d-bd8c-4f64-8a85-91a6607e2fbd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

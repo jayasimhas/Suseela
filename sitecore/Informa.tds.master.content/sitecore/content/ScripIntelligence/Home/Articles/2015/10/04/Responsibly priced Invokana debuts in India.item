@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {344B526F-36D9-4DF9-8C47-C2280800D501}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/04/Responsibly priced Invokana debuts in India
+parent: {573CFD6E-B2DD-45CD-ABE4-2EE91F9C3735}
+name: Responsibly priced Invokana debuts in India
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d3fa24dd-1e1f-436c-b2d5-bb09d806e7e7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 311
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{596C57D2-03CE-4CDE-A652-4F84D9CD4617}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+'Responsibly' priced Invokana debuts in India
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Responsibly priced Invokana debuts in India
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3290
+
+<p>Janssen has launched its selective sodium glucose co-transporter 2 (SGLT2) inhibitor Invokana (canagliflozin) for type 2 diabetes in India &ndash; sticking with its "commitment" of offering India-specific pricing for its products as far as possible.</p><p>The daily cost of therapy with Invokana in India is INR51 ($0.8), generally comparable with the newer treatment options available in the country and a fraction of the product's US cost, reported in some sections of the media to be in the region of around $8.77 per pill (wholesale price). </p><p>"Responsible pricing will continue to be an important part of our strategy," Janssen India managing director Sanjiv Navangul said at a press briefing in Mumbai on 15 April. </p><p>Pricing is expected to be one of the important planks if Invokana hopes to dent the established DPP-4 market. Januvia (sitagliptin) and Janumet (sitagliptin/metformin hydrochloride) were among the early products that Merck & Co introduced in 2008 in India at differential prices - Januvia was then said to be available at about INR43 per day in India, compared to about $5 a day (equivalent to Rs200 then) in the US.</p><p>Mr Navangul noted that given India's diabetes disease burden and currently available treatment options, there was "scope and space" for more drugs to come into the market with a different mechanism of action.</p><p>India has about 65 million diabetics, while 77.2 million Indians are seen as pre-diabetic (impaired fasting glucose and/or impaired glucose tolerance). Worse still just a fraction of diabetes patients in India, leading physicians say, get "appropriate" treatment.</p><p>The efficacy of Invokana had been studied in trials involving more than 10,000 patients, making it one of the largest development programmes for type 2 diabetes globally. The trials included 1,038 Indian subjects. </p><p>Janssen India's top brass maintained that it would be important to observe where the medical fraternity positions the drug since it can be used across the disease spectrum.</p><h2>First mover advantage</h2><p>Janssen, however, de-emphasized the importance of a first mover advantage in the SGLT2 inhibitor space in India.</p><p>Mr Navangul said that the first mover will have a certain advantage in speaking about the differentiation early on but "that's about it". </p><p>"Because of the sheer size and nature of the market I don&rsquo;t think it's of huge relevance. We shoulder the responsibility of introducing the class and the science behind the class," he maintained.</p><p>Boehringer Ingelheim/ Eli Lilly's Jardiance (empagliflozin) and Bristol-Myers Squibb/ AstraZeneca's Forxiga<i> (</i>dapagliflozin) are eyeing the Indian market.</p><p>Mr Navangul also indicated that Janssen was working on a "very differentiated" model to take Invokana to the market but shared no specifics. He, though, referred to how the Internet had "equalized" lot of knowledge between pharmaceutical firms and physicians and so companies should concentrate on the "real issue" of how to help doctors better manage their patients. Better compliance and outcomes of patients were key, he added.</p><p>"Watch this space on how we take the lead in the industry on trying to understand this better and working on this model better," he said.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 256
+
+<p>Janssen has launched its selective sodium glucose co-transporter 2 (SGLT2) inhibitor Invokana (canagliflozin) for type 2 diabetes in India &ndash; sticking with its "commitment" of offering India-specific pricing for its products as far as possible.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Responsibly priced Invokana debuts in India
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151004T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151004T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151004T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028448
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{99C1E0C6-E575-4630-A767-F6BBBF6CA843}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+'Responsibly' priced Invokana debuts in India
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+MarketData
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357827
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d3fa24dd-1e1f-436c-b2d5-bb09d806e7e7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

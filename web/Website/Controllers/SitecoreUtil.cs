@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Security;
 using Informa.Library.Article.Search;
+using Informa.Library.Utilities.References;
 using Informa.Web.Areas.Account.Models;   
 using Informa.Models.FactoryInterface;
 using Sitecore.Security.Authentication;
@@ -18,12 +19,13 @@ namespace Informa.Web.Controllers
 		/// <param name="lastArticleNumber"></param>
 		/// <param name="publication"></param>		
 		/// <returns></returns>
-		public static string GetNextArticleNumber(string lastArticleNumber, Guid publication)
+		public static string GetNextArticleNumber(long lastArticleNumber, Guid publication)
 		{			
-			string number = GetPublicationPrefix(publication) + lastArticleNumber;
+			string number = GetPublicationPrefix(publication) + lastArticleNumber.ToString(Constants.ArticleNumberLength);
 			return number;
 		}
 
+		
 		/// <summary>
 		/// This method gets the Publication Prefix which is used in Article Number Generation.
 		/// </summary>
@@ -31,14 +33,8 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		public static string GetPublicationPrefix(Guid publicationGuid)
 		{
-			var publicationPrefixDictionary =
-				new Dictionary<Guid, string>
-					{
-						{new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}"), "SC"},
-					};
-
 			string value;
-			return publicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
+			return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
 		}
 
 		public static WordPluginModel.UserStatusStruct GetUserStatus(string username, string password)

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9F2D3C82-11CB-4DEC-BF0A-C0E248C965E3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/22/Rockwells Triferic OKd but without ESAsparing use
+parent: {A9E02FEC-E9DE-4B22-BE6D-1EC0B8B5CAAD}
+name: Rockwells Triferic OKd but without ESAsparing use
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c29c0db2-1663-4816-83fa-15238a840484
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+Rockwell's Triferic OK'd, but without ESA-sparing use
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+Rockwells Triferic OKd but without ESAsparing use
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4537
+
+<p>Rockwell Medical revealed on 26 January it had won approval from the FDA to market Triferic (ferric pyrophosphate) as a replacement of iron to maintain hemoglobin in adults with hemodialysis-dependent chronic kidney disease.</p><p>The company, however, failed to win a second indication of reducing the use of erythropoiesis stimulating agents (ESAs) required to maintain desired hemoglobin levels.</p><p>Nonetheless, investors drove shares of the firm up as high as 15.3% on 26 January, or a gain of $1.66, before the stock closed at $10.73, down 8 cents. </p><p>Sagient Research's <i>BioMedTracker</i>, an affiliate of <i>Scrip</i>, had put the chances of Triferic winning the FDA's nod at 88%, which is 4% above the average probability of US approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>Triferic is a water-soluble iron salt intended to be administered via hemodialysate during dialysis treatment. </p><p>The drug is introduced into bicarbonate concentrate, on-site at the dialysis clinic, and subsequently mixed into dialysate. Once in dialysate, Triferic crosses the dialyzer membrane and enters the blood where it immediately binds to transferrin and is transported to the erythroid precursor cells to be incorporated into hemoglobin, according to Rockwell. </p><p>Triferic is the first drug approved to replace ongoing iron losses and to maintain hemoglobin levels in hemodialysis patients, noted Robert Chioini, founder, chairman and CEO at Rockwell.</p><p>In the US, other iron products are primarily used as a maintenance iron therapy, but they are labeled and indicated only for iron repletion to treat iron-deficiency anemia, and have not been approved by the FDA as a maintenance therapy.</p><p>"Triferic's unique ability to be delivered via dialysate and to deliver iron without increasing iron stores strengthens its potential to become the market-leading iron therapy treatment for hemodialysis patients," Mr Chioini said. "We view today's FDA decision as a major development both for Rockwell and for the entire hemodialysis patient population who now have a significantly better treatment option for addressing their iron losses."</p><p>Mr Chioini said Rockwell was "highly confident" it could execute a successful commercial launch of Triferic and penetrate the market.</p><p>The drug's approval was backed by the FDA's Oncologic Drugs Advisory Committee (ODAC), which voted 8-3 at a 6 November 2014 meeting that the company's efficacy and safety results supported the product's benefit in the iron replacement indication over the medicine's risk, despite the fact that the firm's two identical Phase III trials had missing data and showed there were imbalances in adverse events (scripintelligence.com, <a href="http://www.scripintelligence.com/home/FDA-advisers-back-Rockwells-Triferic-to-treat-iron-loss-354906" target="_new">7 November 2014</a>).</p><p>While treatment duration was planned for up to 48 weeks, only 17.7% of patients completed the trial, due in large part to protocol-mandated change in anemia management (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-notes-study-withdrawals-side-effects-with-Rockwells-Triferic-354850" target="_new">5 November 2014</a>).</p><p>Only 44% completed 24 weeks of treatment.</p><p>The missing data and differential reasons for treatment discontinuation made it difficult to determine the magnitude of effect, regulators said. </p><p>But the results showed there was a statistically significant difference between groups, with Triferic better than placebo, for the primary efficacy endpoint of mean change in hemoglobin from baseline to end of treatment.</p><p>While the FDA's ODAC didn't vote on the second indication, it reached a consensus another study would be needed before Rockwell could make the ESA reduction claim.</p><p>The labeling notes that most patients in the company's trial were receiving stable dose of ESAs at baseline, and that after randomization, patients' ESA doses were not to be changed. </p><p>Even without the ESA indication, the <i>BioMedTracker</i> analysts said it's likely doctors will still employ the drug for that use. </p><p>"So in practice, physicians will likely just change the ESA dose and continue the drug if they think it is helpful, since there are concerns about safety with higher ESA doses. Of course, how they use the drug will depend on what they see in terms of efficacy," they said.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 231
+
+<p>Rockwell Medical revealed on 26 January it had won approval from the FDA to market Triferic (ferric pyrophosphate) as a replacement of iron to maintain hemoglobin in adults with hemodialysis-dependent chronic kidney disease.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+Rockwells Triferic OKd but without ESAsparing use
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150122T080000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150122T080000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150122T080000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027632
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+Rockwell's Triferic OK'd, but without ESA-sparing use
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356295
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c29c0db2-1663-4816-83fa-15238a840484
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

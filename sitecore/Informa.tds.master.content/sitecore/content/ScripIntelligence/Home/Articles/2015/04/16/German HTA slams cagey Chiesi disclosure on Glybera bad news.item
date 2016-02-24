@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {6E399959-FDC1-4C24-AC74-359764B55674}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/16/German HTA slams cagey Chiesi disclosure on Glybera bad news
+parent: {D1C4EE2F-AEA4-438A-AF54-BB06F27BAC15}
+name: German HTA slams cagey Chiesi disclosure on Glybera bad news
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4cabaaef-52d3-4ca6-aa40-b714a88b3c31
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 60
+
+German HTA slams cagey Chiesi disclosure on Glybera bad news
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 60
+
+German HTA slams cagey Chiesi disclosure on Glybera bad news
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4382
+
+<p>The G-BA, the body in charge of Germany's AMNOG health technology appraisals, is "bewildered" that it learned about a potentially damming EMA risk benefit report on Chiesi/uniQure's gene therapy Glybera from the US Security and Exchange Commission and not the company responsible for the drug. The G-BA was due to publish a resolution declaring that the orphan drug has additional therapeutic value on 16 April, but has instead decided to suspend the process.</p><p>On 14 April, Chiesi (which bought the Glybera marketing rights from uniQure in 2013) wrote to the G-BA informing it of uniQure's announcement on the gene therapy to the SEC. But the Italian firm did not refer to the report or disclose any information about what was actually in the announcement. Instead it was from the SEC website that the G-BA learned about the risk benefit report. </p><p>The assessment report, written by a rapporteur at the European Medicines Agency's Committee for Advanced Therapy Medicinal Products, concludes that Glybera, for lipoprotein lipase deficiency, lacks efficacy, which therefore renders its benefit risk balance negative. The report is based on six years of follow up data submitted to update the product's SPC. The report is not binding and the CAT has been deliberating it at its meeting this week (16-17 April). The Committee for Medicinal Product for Human Use will review the both the report and the CAT's findings at its April meeting next week (21-23 April). </p><p>Josef Hecken, head of the G-BA, has complained that full disclosure was made to the SEC about the potential financial risks of the report but not to his organization. "In light of the current G-BA assessment, I would have expected at least a simultaneous disclosure of information to the Exchange and the G-BA because patient protection in such cases is more important than any business uncertainties," he said. uniQure says it received word about the report from the European Medicines Agency on 8 April and its <a href="http://www.scripintelligence.com/home/Stockwatch-UniQures-guile-and-the-dubious-promise-of-gene-therapy-357864" target="_new">SEC filing</a> appeared on 9 April. Chiesi says it understands the G-BA's decision to suspend procedures until the CHMP makes its recommendations known. The company claims, however, that it "proactively and promptly informed the G-BA of the situation, in time before the completion of the procedure. In fact, GBA took their decision on the basis of the information provided by Chiesi." </p><p>The firm also says it provided the G-BA with data from its long term follow up study when it made its AMNOG submission in the autumn of 2014. "Chiesi can confirm that all information available to Chiesi was timely provided to the GBA in full disclosure." The firm welcomes "deep scrutiny" of clinical data and continuous interaction with regulators and HTA agencies as it is committed to getting safe and effective treatments to patients, it added.</p><p>Companies undergoing an AMNOG assessment are supposed to submit all information and documents relating to a drug's benefit concerning a product's benefit. Relevant information can be sent in at any time, says the G-BA. </p><p>The AMNOG process rates the extent of additional benefit a product offers over a competitor and the rating is supposed to influence pricing negotiations between the company and health insurers. Because Glybera is an orphan, which means no other treatments are available, it would automatically have been awarded a status of additional benefit, which would have given Chiesi more leverage to defend its price of &euro;43,870 per vial. This tots up to an <a href="http://www.scripintelligence.com/home/How-much-Eyes-water-as-first-gene-therapy-Glybera-approaches-the-market-355304" target="_new">eye wateringly expensive &euro;1.1m</a> in treatment costs for a typical patient. Assuming Glybera does not have its marketing authorization revoked, the G-BA is asking Chieisi to bring forward any new data and information to the postponed hearing, scheduled for 7 May. </p><p>No patients in Germany have been treated with the product, although the firm thinks the first patient may receive treatment by the middle of 2015, depending on "the treating physician's decision and patient consent." Reimbursement and access procedures are ongoing in all key European countries it said.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 466
+
+<p>The G-BA, the body in charge of Germany's AMNOG health technology appraisals, is "bewildered" that it learned about a potentially damming EMA risk benefit report on Chiesi/uniQure's gene therapy Glybera from the US Security and Exchange Commission and not the company responsible for the drug. The G-BA was due to publish a resolution declaring that the orphan drug has additional therapeutic value on 16 April, but has instead decided to suspend the process.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 60
+
+German HTA slams cagey Chiesi disclosure on Glybera bad news
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150416T171437
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150416T171437
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150416T171437
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028450
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 60
+
+German HTA slams cagey Chiesi disclosure on Glybera bad news
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357829
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4cabaaef-52d3-4ca6-aa40-b714a88b3c31
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

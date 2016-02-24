@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {6C1E27C5-1BD9-4109-B5FB-2884977E49F5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/16/Amgen launching into a strong 2015
+parent: {D1C4EE2F-AEA4-438A-AF54-BB06F27BAC15}
+name: Amgen launching into a strong 2015
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a3ee0dab-707f-4ed9-bebd-95ab6254d862
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 34
+
+Amgen launching into a strong 2015
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 34
+
+Amgen launching into a strong 2015
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4606
+
+<p><p>Launch was the keyword coming out of the Amgen first quarter conference call after the close of the market on 21 April. The big biotech expects to begin commercializing several new products this year and analysts believe this could lead to $10bn in peak revenues from new drugs. </p><p>Amgen posted a solid first quarter -- reporting $5bn in quarterly revenues, beating analysts' expectations of $4.9bn, and earnings per share of $2.48, topping estimates of $2.11. The beats were largely due to conservative use of capital by the company, which expects spending to increase as its new drugs hit the market. </p><p>"Our earnings growth of 33% reflects the benefits of our transformation initiatives and our discipline in controlling expenses ahead of the launch investments that we will make later this year," said Amgen Chairman and CEO Bob Bradway during the call with investors. </p><p>"With the Corlanor approval last week, we are excited to bring the first new heart failure medicine to the market in the US in almost a decade. Corlanor <a href="http://#http://www.scripintelligence.com/home/Amgen-gains-1st-US-CV-drug-OK-with-Corlanor-357898" target="_new">was approved</a> to reduce the risk of hospitalization for worsening heart failure in patients with chronic heart failure, which as you know is a significant economic burden on our society. Through Corlanor, we look forward to establishing our presence in the cardiovascular field as we prepare to launch Repatha later this year," the exec added. </p><p>Corlanor (ivabradine) was approved 15 April and Amgen is expected to charge $4,500 per year for the drug; it is expected to be in pharmacies later this week, said the company. But the cardiovascular drug garnering the most attention is the LDL-cholesterol lowering proprotein convertase subtilisin/kexin type 9 (PCSK9) inhibitor Repatha (evolocumab), whose biologics license application (BLA) currently is under review at the FDA. The drug has a Prescription Drug User Fee Act (PDUFA) action date of 27 August, about a month behind competition from Regeneron and Sanofi. </p><p>Amgen is <a href="http://#http://www.scripintelligence.com/business/Amgen-takes-PCSK9-contest-to-court-354567" target="_new">preparing for the competition</a> and is actively trying to keep Regeneron's PCSK9 inhibitor off the market &ndash; the big biotech claims that the competition's product violates three of its patents. "And as you know and as we have said before, we feel we have a very strong intellectual property patent estate on this product. And we demonstrated in the past our determination to assert our IP rights and defend them, and that's what we look forward to doing for this product early next year," said Mr Bradway during the earnings call. </p><p>In addition to Corlanor and Repatha, Amgen is launching Blincyto (blinatumomab) for patients with relapsed refractory acute lymphoblastic leukemia and the Neulasta (pegfilgrastim) on-body injector, a more accurate administration device for the already-marketed chemotherapy aid. </p><p>"In the US, our recent launches of Blincyto for acute lymphoblastic leukemia and the on-body injector for Neulasta are going very well with positive feedback from healthcare providers," said Amgen Head of Global Commercial Operations Tony Hooper. "Blincyto as you know was approved in 2.5 months by the FDA, underscoring the unmet medical need in ALL patients. We are seeing a broad acceptance of the product with orders from most major institutions and good reimbursement access."</p><p>He noted that the on-body injector for Neulasta is also going well. "Patients no longer have to return to the hospital 24 hours later after their chemo. The on-body injector simply infuses Neulasta at home. While still in the early phases of our launch, we have seen good breadth of prescribing with about 800 accounts ordering product to date," said Mr Hooper. </p><p>Analysts believe these launches, as well as others in coming months and years, will have a dramatic effect on Amgen's business. Deutsche Bank analyst Robyn Karnauskas believes these products could result in $10bn in peak revenues. " Amgen is expected to launch many major products in next 6-18 months including PCSK9, Kyprolis in second line multiple myeloma and brodalumab in psoriasis. In </p><p>addition, we will see data from phase III biosimilar Avastin trial, phase II data for omecamtiv in heart failure and Phase II data from episodic migraine trial in May&rsquo;15. We think expectations for these products are likely too low," she wrote in a 22 April note to investors. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 34
+
+Amgen launching into a strong 2015
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150416T225129
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150416T225129
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150416T225129
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028507
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 34
+
+Amgen launching into a strong 2015
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357922
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a3ee0dab-707f-4ed9-bebd-95ab6254d862
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042333Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {76FA7CC3-5BD1-4FE8-8621-72C31A35A2E3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/21/Japan ups generic use target
+parent: {8F6157F9-9E9D-45D0-9A9C-F51772A3F6A9}
+name: Japan ups generic use target
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 69bb721c-8b45-40aa-b780-81125996f409
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 28
+
+Japan ups generic use target
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 28
+
+Japan ups generic use target
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5921
+
+<p>Japan's government has released a new "road map" for the development of the generic drug sector, setting an ambitious new five-year target for such products to reflect faster than expected sales expansion following recent policy changes.</p><p>For generic companies in Japan there is some good news: government policy makers seem to be on your side.</p><p>As part of ongoing broader discussions by the Cabinet's Council on Economic and Fiscal Policy, the ministry of health, labor and welfare (MHLW) has released a new road map for the sector, setting an over-arching goal of a generic volume share of at least 80% by the end of fiscal 2020, ending March 2021.</p><p>The figure refers to the percentage share of the substitutable market for which generics are available, rather than Japan's overall prescription market, which is valued at roughly JPY10,000bn ($81.28bn) at official reimbursement prices including still patent-protected drugs.</p><p>The new target compares with the 60% share of the substitutable market that was set for generics by the end of fiscal 2017 in April 2013 by the ministry, which has been brought forward and now looks set to be achieved by the end of fiscal 2016.</p><p>Generics currently account for close to 50% by volume of the substitutable sector and around a quarter of Japan's total prescription market by value. All prescription medicines currently take up around a fifth of Japan's total healthcare spending.</p><p>There had been some recent subtle hints that the generic target might be raised, with Katsufumi Jo, director of the economic affairs division of the MHLW's Health Policy Bureau, noting at the recent CPhI meeting in Tokyo that things were "moving ahead of schedule."</p><p>Dr Masaki Muto, chair of the Japan Society of Generic Medicine, also told the same meeting that an 80% target could be reached easily and would be appropriate at the time of the Tokyo Olympics in 2020.</p><p>But the adoption of a new official goal suggests that the government will continue with its policies of encouraging generic use, with the ultimate aim of containing the nation's total medical costs. Figures published in relation to the roadmap suggest the new generic target will cut around JPY1,300bn from Japan's total medical costs over the period, including JPY160bn from patients' co-payments for drugs (which are usually 30%).</p><h2>policy successes</h2><p>The rapid growth of Japan's generic sector over the past year has taken some by surprise, including major firms such as Pfizer and Takeda Pharmaceutical, that have pointed to the stronger than expected hits to their respective big sellers Lipitor (atorvastatin) and Blopress (candesartan) after loss of market exclusivity.</p><p>Following a series of changes over the past few years that have included changes to doctors' prescription forms to allow easier substitution, and new fee structures, other policies were introduced in April last year. These included increased pharmacy service fees for generics and a generic drug index for DPC (diagnosis procedure combination) hospitals which reflects the volumes of generics used in in-patient care and provides an incentive for use.</p><p>These have all resulted in sharp growth for the sector over the past year, with major local generic firm Sawai Pharmaceutical for instance seeing a 17% rise in its net sales (to JPY105.5bn) in the fiscal year ended 31 March.</p><p><p>Late last year, the Japanese branch of the European industry federation EFPIA released a detailed model of the Japanese prescription market over the next decade, which predicted flat growth overall but strong growth for generics.</p><p>Aggregate sales of such products were seen rising from around JPY1,000bn in 2013 to double this figure in 2025, accounting for 20% of the total market at that time in value terms.</p><p>In fact the EFPIA model sees savings from generics as more than offsetting the higher costs of innovative drugs, and as providing room for additional rewards for such products. The group predicted total generic savings to the system of JPY8,298bn over the 2012-25 period. </p><h2>policy balance</h2><p>It is not clear at this stage whether there may be any additional policies to encourage generics, given the success of those that have already been implemented, but the MHLW and Prime Minister Shinzo Abe's government have been moving in parallel to build a broad strategy that also supports novel drugs.</p><p>Moves at this innovative end of the product spectrum include the pilot "innovation premium" scheme introduced in April 2010, which exempts drugs from regular biennial price cuts during their patent life as a trade-off for official requests to develop high-need drugs and faster generic penetration thereafter.</p><p>R&D-based industry groups, including EFPIA and PhRMA, have welcomed the scheme and are calling for it to be made permanent.</p><p>More recently, Japan's regulatory agency, the PMDA, has introduced the "Sakigake" initiative to encourage the more rapid development and commercialization of breakthrough therapies, while a new Agency for Medical R&D to oversee R&D, encourage basic research and promote innovative public-private partnerships was set up in April.</p><p>The firms seen as being most squeezed by this panoply of policy initiatives are those mostly smaller operations in the middle that are reliant on older branded drugs, which are suffering from generic erosion but not benefiting from the support for innovative products.</p><p>Such products are also now subject to possible government-imposed one-off reimbursement price cuts depending on the proportion of substituted generics in total sales of the active ingredient.</p><p>This article has also been published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/4/29/takeda-offers-24bn-nofault-settlement-of-actos-suits" target="_new">PharmAsia News</a>.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 244
+
+<p>Japan's government has released a new "road map" for the development of the generic drug sector, setting an ambitious new five-year target for such products to reflect faster than expected sales expansion following recent policy changes.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+Japan ups generic use target
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150521T150004
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150521T150004
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150521T150004
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028846
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 28
+
+Japan ups generic use target
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358541
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042353Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+69bb721c-8b45-40aa-b780-81125996f409
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042353Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {D8E3A066-23E1-4D57-850A-B52AE7F770CE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/16/FDA cardio panel backs approval of Medicines cangrelor
+parent: {D1C4EE2F-AEA4-438A-AF54-BB06F27BAC15}
+name: FDA cardio panel backs approval of Medicines cangrelor
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7f7bb96c-4102-450f-bd7d-3976d6947a79
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+FDA cardio panel backs approval of Medicines' cangrelor 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+FDA cardio panel backs approval of Medicines cangrelor
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7211
+
+<p>After a day of what often was intense debate, The Medicines Company (MDCO) managed to walk away with a solid majority of FDA panelists backing the firm's experimental drug cangrelor &ndash; something earlier at the meeting of the Cardiovascular and Renal Drugs Advisory Committee (CRDAC) appeared to be a near impossibility to achieve.</p><p>Trading of MDCO's shares had been suspending during the day on 15 April, but in after-hours trading, the stock jumped 7%, or $2.03.</p><p>The CRDAC voted 9-2, with one abstention, to recommend approval of cangrelor as an adjunct to percutaneous coronary intervention (PCI) to reduce the risk of periprocedural thrombotic events, such as myocardial infarction and stent thrombosis, in patients in whom treatment with an oral P2Y12 platelet inhibitor prior to PCI is not feasible and when glycoprotein IIb/IIIa receptor antagonists are not anticipated to be used.</p><p>Dr Robert Temple, deputy director for clinical science at the FDA, said the agency likely will tweak the language of the indication, particularly the use of "not feasible."</p><p>"I don't know what not feasible means," Dr Temple said.</p><p>The 15 April meeting was the second go-around for cangrelor at the FDA's CRDAC.</p><p>At a <a href="http://www.scripintelligence.com/home/Cool-drug-unconvincing-data-FDA-panel-rejects-MDCOs-cangrelor-350021" target="_new">12 February 2014</a> meeting, the committee recommended against approval in the PCI indication in a 7-2 vote.</p><p>The same panel also voted unanimously against approval for a second use of cangrelor as a therapy to maintain P2Y12 inhibition in patients with acute coronary syndromes or patients with stents who are at increased risk for thrombotic events, such as stent thrombosis, when oral P2Y12 therapy is interrupted due to surgery &ndash; the bridging indication. </p><p>But after the FDA <a href="http://www.scripintelligence.com/home/FDA-rejects-The-Medicines-cangrelor-but-could-have-been-worse-351556" target="_new">rejected</a> MDCO's new drug application (NDA) for cangrelor last spring, the firm dropped its pursuit, at least for the time being, of the bridging indication and refined the proposed use in PCI.</p><p>The initial NDA was based on the results of MDCO's CHAMPION trial program, which included three Phase III studies &ndash; PCI, PLATFORM and PHOENIX. </p><p>The PCI and PLATFORM studies failed, but PHOENIX ended up demonstrating superiority of cangrelor over Bristol-Myers Squibb's Plavix (clopidogrel).</p><p>Dr Fred Senatore, a clinical reviewer in the FDA's Office of New Drugs, said there were five specific issues raised by the CRDAC, which the agency reflected in its 30 April 2014 complete response letter: some subcomponents of PHOENIX's primary endpoint may not be clinically important; the study's data may not be relevant to current US practice; loss of platelet inhibition during transition from cangrelor to Plavix; uncertainty about the utility of MDCO's drug in patients with stable angina undergoing PCI; and post hoc post-unblinding re-classification of the investigators' diagnosis at randomization and use for determining baseline diagnosis.</p><p>In MDCO's resubmitted NDA, in which the firm "refined" the PCI indication and submitted a reanalysis of its PHOENIX data and a sensitivity analysis, Dr Senatore said the company satisfied all of the agency's concerns about cangrelor.</p><p>While regulators determined cangrelor is effective for reducing the risk of periprocedural thromobotic events, the benefit of the drug is, nonetheless, "small," said Dr Nhi Beasley, a clinical reviewer at the FDA. But, she added, "the risk is smaller."</p><p>The majority of the CRDAC at the 15 April meeting felt the sensitivity analyses supported the beneficial effect of cangrelor.</p><p>The panel also agreed with MDCO that ad hoc PCI &ndash; in which patients with stable angina undergo angiography and PCI in the same session without being pretreated with an oral P2Y12 inhibitor &ndash; is a common practice in the US, and therefore, cangrelor is a reasonable alternative to Plavix given at the start of PCI.</p><p>The CRDAC also agreed the benefits of administering cangrelor for preventing periprocedural thrombotic events outweighed the risks.</p><p>But even though the committee voted to approve the drug based on the new analyses, there were the doubters &ndash; particularly Dr Thomas Fleming, a professor of biostatistics at the University of Washington, who was the most vocal among the CRDAC throughout the daylong meeting, although in the end, he abstained from the vote. </p><p>"As the FDA knows, I consider the least important thing I have to do today is vote," Dr Fleming said. "The most important thing to do is give reasoning, because we are advisory."</p><p>He said he abstained "because there are issues on both sides to this."</p><p>Dr Fleming said he had significant concerns about the configuration of the active comparator in PHOENIX and how it was set up.</p><p>"At best, the approval should be with a corresponding set of restrictions," he said.</p><p>Dr Fleming said he also could not simply ignore the data from the two failed trials &ndash; PCI and PLATFORM.</p><p>"When you look at all three [trials] together, as you should, I can't see how one can argue they've shown efficacy in a favorable benefit to risk," he said.</p><p>Panelist Dr Julia Lewis, a professor of medicine at Vanderbilt University in Nashville, Tennessee &ndash; one of the two who voted against approval &ndash; said she had "a lot of concerns," and "those concerns make me unwilling to accept a single trial for approval."</p><p>"I would have loved to have seen new data rather than the same data repackaged again and cherry picked out," said Dr Stuart Rich, a professor of medicine at the University of Chicago, who voted in favor of cangrelor. </p><p>But CRDAC chair Dr Philip Sager, consulting professor of medicine at Stanford University in San Francisco, said he believed PHOENIX reflected a real-world setting, in which doctors in the US are using the ad hoc PCI approach. </p><p>While panelist Dr James DeLemos, chair of cardiology at the University of Texas Southwestern Medical Center in Dallas, gave cangrelor a thumbs up, he said he remained concerned about the "very narrow clinical benefit relative to the risks."</p><p>"I would hope this drug is used very selectively and very narrowly in circumstances where P2Y12 inhibitors cannot be used appropriately," he said. "If it is used broadly and indiscriminately, it will not only be expensive, but it will expose low risk patients to unnecessary bleeding, some of which as we have seen can be quite substantial." </p><p>"There is a great responsibility that this gets used appropriately and not overused," Dr DeLemos said.</p><p>"I think this has been an enlightening discussion today," said panelist Dr David Kandzari, director of interventional cardiology at the Peidmont Heart Institute in Atlanta. "We've gone down the course of debating what appropriate practice is."</p><p>"We've learned today, or were reminded, that there's quite a lot of variation in the practice of cardiology," he said.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 342
+
+<p>After a day of what often was intense debate, The Medicines Company (MDCO) managed to walk away with a solid majority of FDA panelists backing the firm's experimental drug cangrelor &ndash; something earlier at the meeting of the Cardiovascular and Renal Drugs Advisory Committee (CRDAC) appeared to be a near impossibility to achieve.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+FDA cardio panel backs approval of Medicines cangrelor
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150416T060123
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150416T060123
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150416T060123
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028443
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+FDA cardio panel backs approval of Medicines' cangrelor 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357812
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7f7bb96c-4102-450f-bd7d-3976d6947a79
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042330Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

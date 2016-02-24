@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {79B58FC1-ACF8-4E77-8735-6BC0F96406B4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/22/Indias National IPR policy whats cooking
+parent: {D254BC4D-71AA-4496-91EB-0FC2A9B440F2}
+name: Indias National IPR policy whats cooking
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 175d1ef0-44e0-4534-850a-374926d93f4f
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+India's National IPR policy: what's cooking?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+Indias National IPR policy whats cooking
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6206
+
+<p>India appears to be on course to releasing its National Intellectual Property Rights (IPR) policy but some industry experts say they are concerned that, despite seeming assurances, concessions around "patent linkage" and "data exclusivity" may find their way into the final framework.</p><p>India's commerce and industry minister, Nirmala Sitharaman, recently said that the final draft of the National IPR Policy had been circulated for inter-ministerial consultation.</p><p>Indian industry experts, however, are highlighting what they see as somewhat incongruous statements coming from the commerce ministry, which has in the past underscored that India is fully compliant with international IPR standards but yet hints at addressing concerns of foreign investors.</p><p>"India appears to be considering something. We fear it could be around patent linkage or data exclusivity. It can potentially come in the form of very cleverly worded statements around how regulators should view second applicants of a drug," an expert told <i>Scrip</i>.</p><p>A response from the government on these concerns could not immediately be had.</p><p>India doesn't currently recognize <a href="http://%5bhttp:/www.scripintelligence.com/business/Pre-emptive-litigation-in-India-extra-cautionary-or-backdoor-patent-linkage-351573%5d" target="_new">patent linkage</a> though some legal experts have in the past noted that the recent spate of pre-emptive litigation opens up the possibility of a back door entry for such linkage. </p><p>Allegations of potential trade-offs have being doing the rounds against the backdrop of India's continued engagement with the US on IPR issues of interest to both countries, including by establishing the High Level Working Group on Intellectual Property, which operates under the auspices of the US-India Trade Policy Forum, though not everyone agrees. Experts such as <a href="http://www.scripintelligence.com/home/Prof-Abbott-on-Lillys-borderline-absurd-ISDS-plaint-and-the-TPP-358894" target="_new">Frederick Abbott</a>, Edward Ball Eminent Scholar Professor of International Law at Florida State University College of Law, earlier told <i>Scrip</i> that he was "hard pressed" to read a shift in India's IPR policy, despite the bonhomie with the US. </p><p>Earlier this year, the US Trade Representative's (USTR) 2015 "Special 301" <a href="http://www.scripintelligence.com/policyregulation/US-keeps-India-on-IPR-watch-list-but-expectations-run-high-358181" target="_new">report</a> kept 13 nations including India and China on its priority watch list but spared India another immediate out-of-cycle review (OCR) in view of steps initiated by the Indian government indicating that it is "engaged and examining" key IPR issues. The report noted recent positive developments on engagement that should ultimately translate into "substantive and measurable" action, prompting health activists to demand a clarification from the Indian government on what "improvements" the US was referring to. </p><p>The USTR's report also refers to patent linkage and underscores the need for "greater regulatory coordination" between officials in India's state and central governments. It also urges India to provide an effective system for protecting against unfair commercial use, as well as the unauthorized disclosure, of undisclosed test or other data generated to obtain marketing approval for pharmaceutical and agricultural chemical products. </p><p>"The US notes the potential to address this issue as part of the first draft of India's National IPR Policy, which describes protection of undisclosed information as an 'important area of study and research' for future policy development," the report said.</p><h2>Final draft</h2><p>Earlier this week, India indicated that the final draft of the National IPR Policy had been circulated for inter-ministerial consultation and is expected to be put up to the Union Cabinet for approval after getting comments. </p><p>Minister Nirmala Sitharaman, who was speaking at the inauguration of a seminar on 'Protecting Brands Abroad with the Madrid System' organized by the Federation of Indian Chambers of Commerce and Industry, in association with the World Intellectual Property Organization and the Department of Industrial Policy and Promotion, said that India's IPR policy will "fully protect" patents, geographical indications and copyrights. </p><p>She also sought to allay "apprehensions in the minds of foreign investors" about the "strength" of the Indian IPR regime, saying that the final draft of the policy had been arrived at through a "transparent" process with inputs from all stakeholders.</p><p>The official statement also quoted the minister as saying that the draft policy focuses on stronger enforcement of IPR by increasing the manpower strength in IP offices and reducing the pendency of IPR filings. Most of the offices have done away with manual interface as all applications, queries and decisions are made online, it noted. </p><p>Last year, the <a href="http://www.scripintelligence.com/policyregulation/Speedy-dispute-resolution-on-Indian-IPR-policy-agenda-355866" target="_new">first draft</a> of India's national IPR policy, which appeared to steer clear from very radical suggestions, suggested, among others, a string of measures to help resolve IP disputes including designation of a specialized patent bench in the High Courts of Bombay, Calcutta, Delhi and Madras for speedy disposal of patent cases and providing infrastructural support such as video conferencing. </p><p>In the past, foreign firms have raised concerns about inadequate IP enforcement and delays in the judicial system in India. Bayer, for example, in its <a href="http://www.scripintelligence.com/home/Peeved-Bayer-to-USTR-Indian-govt-picking-winners-354816" target="_new">submission</a> last year pertaining to the USTR's Special 301 Report Out-of-Cycle Review of India's IPR regime, lamented that whether by ''design or simply as a result of inadequate resources, the Indian courts had consistently delayed justice in patent infringement cases, further exacerbating the impact of India's industrial policy'' on it and other global companies. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 291
+
+<p>India appears to be on course to releasing its National Intellectual Property Rights (IPR) policy but some industry experts say they are concerned that, despite seeming assurances, concessions around "patent linkage" and "data exclusivity" may find their way into the final framework.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+Indias National IPR policy whats cooking
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150722T180001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150722T180001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150722T180001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029300
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+India's National IPR policy: what's cooking?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359483
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+175d1ef0-44e0-4534-850a-374926d93f4f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

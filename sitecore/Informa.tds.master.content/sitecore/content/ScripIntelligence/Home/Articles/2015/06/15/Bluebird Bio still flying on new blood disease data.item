@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {ECDFE4ED-D6E9-45F1-A141-E2D263AC1484}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/15/Bluebird Bio still flying on new blood disease data
+parent: {EA2FC27C-B001-4ABE-AA87-724D6FA5D3EE}
+name: Bluebird Bio still flying on new blood disease data
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 87400eda-e482-4d52-acb5-6de4c3adcd54
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Bluebird Bio still flying on new blood disease data
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Bluebird Bio still flying on new blood disease data
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3593
+
+<p>New data from three patients treated with Bluebird Bio's LentiGlobin BB305 are keeping hope alive for gene therapy, raising the heady prospect of a cure in sickle cell anemia. </p><p>The full results presented at the European Hematology Association meeting in Vienna, Austria, show that one patient with severe sickle cell disease treated with LentiGlobin BB305 is now producing 45% anti-sickling hemoglobin six months after treatment and has been free from the need for blood transfusions for more than three months. <a href="http://www.scripintelligence.com/researchdevelopment/bluebird-gives-gene-therapy-another-push-358546" target="_new">Previous top-line reports</a> released in May showed that the sickle cell patient had 31.6% anti-sickling hemoglobin at 4.5 months, showing a solid increase since that time point. </p><p>In addition, long-term follow-up data from two patients with beta-thalassemia major show that they are still transfusion independent at 14 and 16 months respectively. </p><p>The data from all three patients are from the HGB-205 study, an ongoing, open-label, single-center Phase I/II trial looking at the safety and efficacy of LentiGlobin BB305 in both diseases. As of May 2015, two patients with beta-thalassemia major and one patient with severe SCD have undergone infusion with LentiGlobin BB305 product candidate in this study, which is planned to enrol up to seven patients. </p><p>In the trial, patients' CD34+ hematopoietic stem cells are transduced <i>ex vivo</i> with the LentiGlobin BB305 lentiviral vector encoding the human beta-A0T87Q globin gene and then re-infused into the patient. In beta-thalassemia major, the stem cells are procured by bone marrow harvest or apheresis after mobilization with filgrastim alone or combination with plerixafor, but in sickle cell disease they are procured by bone marrow harvest as stem cell mobilization could induce a sickle cell crisis. </p><p>So far the product has been well tolerated with the only adverse events consistent with myeloablative conditioning, and the lead investigator Professor Marina Cavazzana, of Paris Descartes University and the Institute of Genetic Diseases, Imagine, Paris, France, said the data were "promising". </p><p>"The steady rise and high-level of HbA<sup>T87Q</sup> production in our patient with severe sickle cell disease is cause for optimism as we expect levels of anti-sickling hemoglobin of 30% percent or more could significantly improve and potentially eliminate the serious and life-threatening complications associated with sickle cell disease," she said. </p><p>The 30% threshold for a phenotypic change in the patient and an elimination of blood transfusions could increase the life-span for patients beyond the current median of about 43 years, note analysts form Roth Capital Partners. </p><p>They also point out that the proportion of the abnormal S hemoglobin in the patient reduced from 7.6% at month 4.5 to 5% at month six, "which should lower the stress on the patient". Also the sickle cell patients showed improvements in hemolysis markers.</p><p>Bluebird has now enrolled the first patient in its HGB-206 Phase I trial in severe sickle cell disease. It has already started <a href="http://www.scripintelligence.com/therapysector/Bluebird-Bio-takes-gene-therapy-into-EMAs-adaptive-pathways-pilot-358665" target="_new">to explore the EMA's adaptive pathway pilot</a> for European approval of the product in beta-thalassemia major. In the US, it is has been in discussions with the FDA and the product has been granted breakthrough designation. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 183
+
+<p>New data from three patients treated with Bluebird Bio's LentiGlobin BB305 are keeping hope alive for gene therapy, raising the heady prospect of a cure in sickle cell anemia. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Bluebird Bio still flying on new blood disease data
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150615T220737
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150615T220737
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150615T220737
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028989
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Bluebird Bio still flying on new blood disease data
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358865
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+87400eda-e482-4d52-acb5-6de4c3adcd54
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

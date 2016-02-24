@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {34DE693D-F9B6-44E4-8FDD-3E3C6861DF27}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/05/Cyber spies target pharma and biotech How safe are you
+parent: {85079610-6816-4411-8485-196EC64F9223}
+name: Cyber spies target pharma and biotech How safe are you
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9ab1f43c-4f21-43ce-8706-13c8bb3739a9
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Cyber spies target pharma and biotech: How safe are you?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Cyber spies target pharma and biotech How safe are you
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6695
+
+<p>In the past six months Sony Pictures was allegedly hacked by North Korea, Kaspersky Labs reported that more than $1bn was stolen from up to 100 banks across 30 countries, and Anthem Inc revealed that in a massive data breach, considered the largest in corporate history, tens of millions of customers' private information was leaked. These are just three large scale examples, amongst many, of big businesses suffering the effects of cyber-attacks. </p><p>Hitting a little closer to home, in December 2014, cyber spies reportedly broke into the emails of a number of publicly traded companies &ndash; the majority of which were healthcare and pharmaceutical businesses. The group of cyber attackers, known as FIN4, accessed the email networks of more than 100 companies according to a report from security firm FireEye. </p><p>The targets were executives, scientists, legal counsel, and others with sensitive information at healthcare firms. And <a href="https://www.fireeye.com/solutions/pharmaceutical.html" target="_new">FireEye</a> deduced that FIN4 was after inside information on impending market catalysts. </p><p>Worryingly, FIN4 appeared to attack without leaving any trace of their malice, never leaving behind malware on systems. The group had a focus solely on capturing usernames, passwords and email correspondence. </p><p>Other target companies included firms advising public companies on securities, legal and M&A matters, the FireEye report found. </p><p>50% of those companies hacked were biotech firms. Some other affected businesses were: medical instruments and equipment companies (12%); medical device businesses (13%); and drug manufacturers (10%). </p><p>FireEye, a leader in cyber security and malware protection, said in its report: "We believe FIN4 heavily targets healthcare and pharmaceutical companies as stocks in these industries can move dramatically in response to news of clinical trial results, regulatory decisions, or safety and legal issues."</p><h2>what can network defenders do?</h2><p>FireEye pinpointed, using FIN4's tactics as a case study, some tips for protecting networks. The software company said in its report that disabling VBA macros in Microsoft Office by default will help protect against threatening activities like those being carried out by FIN4. </p><p>Additionally, enabling two-factor authentication for OWA (Outlook Web App) and any other remote access mechanisms can help prevent credentials stolen in this manner from being leveraged successfully.</p><p>Thirdly, companies can also check their network logs for OWA logins from known Tor exit nodes if they suspect they have been victimized. Typically, legitimate users do not use Tor for accessing email, FireEye said. </p><h2>cyber threats to pharma partners</h2><p>While looking into the risks of cyber threats to pharma and biotech companies, <i>Scrip</i> sent out a number of Freedom of Information requests to pharma and healthcare related public bodies in the UK to investigate how at risk these groups were to cyber attacks, how they deal with cyber threats and budgets for cyber security. </p><p>Public Health England responded with the following information: since 2009 it says there have been just seven cyber threat incidences on its networks. These have been in various areas, including malware infection, suspected breach of internet facing application, theft of PHE IT equipment, and vulnerabilities in web applications. </p><p>In September 2014, the public body &ndash; which works with the UK government, industry and the NHS &ndash; made a single complaint to the Metropolitan Police in regards to a cyber-threat. PHE did not provide any further information on this case. </p><p>Meanwhile, health technology appraisal body NICE (National Institute for Health and Care Excellence) also replied to a FOI request from <i>Scrip</i>. The HTA body said it did not hold information on the number of cyber threats it has encountered. NICE said it "does not consider itself or its work to be under a significant threat" but it did outline securities measures in place. </p><p>NICE has a hybrid mix of in-house and cloud network provisions. "We have physical access controls, multiple factor authentication, restricted system access, multiple firewalls and of course anti-virus/malware systems and mail scanning and filtering," NICE said. "Staff are required to undertake annual information governance training which highlights and reinforces the risks of cyber threats and the appropriate steps we can take to minimize them as individuals. We also encrypt all laptops and can track and remotely wipe our smart phones."</p><p>A specific cyber security budget was not accessible, but NICE said between February 2014 and February 2015 it spent &pound;69,026.92 on products it would classify as security licenses or system maintenance. This figure excludes the costs of Microsoft licenses with their ongoing security support and the cloud provisions where the security element is included in the hosting costs.</p><p>The UK's Intellectual Property Office was also asked a set of questions via a FOI request. The office refused to reveal how many cyber threats, if any, it had encountered. The Intellectual Property Office said: "If we were to release the number of cyber-attacks that had taken place against the IPO's IT systems then malicious parties could determine whether attacks they may have carried out had been detected. Such information could aid them in their attempts as they would know whether to continue with the type of attacks they had tried or whether to use a different approach."</p><p>Similarly, the Medicines and Healthcare Products Regulatory Agency (MHRA) refused to answer a FOI request about past cyber security breaches, IT security budgets and types of security used. The regulator said: "Having considered the public interest we can see no overriding public benefit from releasing this information that would outweigh the harm it would cause to patients, staff and other members of the public, representatives of the pharmaceutical industry and other national and international partners of the MHRA, who have sensitive data stored with the agency which could be compromised if the agency IT security was breached."</p><p>The UK's Freedom of Information Act is applicable to only public sector organizations. </p><p><b>Correction</b></p><p><i>This article was amended on 15 May 2015. The previous version incorrectly stated "Kaspersky Labs reportedly lost more than $1bn from up to 100 banks across 30 countries." This has been corrected to say that Kaspersky Labs reported that $1bn was lost from more than 100 banks across 30 countries. </i></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 456
+
+<p>In the past six months Sony Pictures was allegedly hacked by North Korea, Kaspersky Labs reported that more than $1bn was stolen from up to 100 banks across 30 countries, and Anthem Inc revealed that in a massive data breach, considered the largest in corporate history, tens of millions of customers' private information was leaked. These are just three large scale examples, amongst many, of big businesses suffering the effects of cyber-attacks. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Cyber spies target pharma and biotech How safe are you
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150605T150002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150605T150002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150605T150002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028691
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Cyber spies target pharma and biotech: How safe are you?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358219
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9ab1f43c-4f21-43ce-8706-13c8bb3739a9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

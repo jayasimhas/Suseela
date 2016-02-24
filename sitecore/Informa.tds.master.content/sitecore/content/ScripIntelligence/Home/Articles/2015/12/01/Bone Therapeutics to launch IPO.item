@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C48D1DDB-7D7A-449E-9901-BD514DDA24D3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/01/Bone Therapeutics to launch IPO
+parent: {704BB214-984D-4FA9-81BA-16097208AE7E}
+name: Bone Therapeutics to launch IPO
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7741ec71-b41b-40bf-8c30-34c02888e9d7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 31
+
+Bone Therapeutics to launch IPO
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 31
+
+Bone Therapeutics to launch IPO
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3019
+
+<p>Belgium's Bone Therapeutics is planning to launch an IPO to fund progress on its Phase III candidates. <i>Scrip</i> understands that the IPO is targeting funds of &euro;20-25m.</p><p>The company, which is focused on developing cell therapies to meet unmet needs in bone fracture repair and prevention, plans to launch on Euronext Brussels and Euronext Paris. The company's CEO Enrico Bastianelli said he believed it was the "ideal time."</p><p>Bone's plans for the money center around progressing its lead candidate, Preob, an osteoblastic (bone-forming) bone cell therapy derived from the patient's bone marrow currently in two Phase III trials. The company requires more funding to complete the Phase III trials and advance Preob towards market authorization. Preob's two Phase III indications are osteonecrosis of the hip and non-union fractures.</p><p>Bone raised &euro;7.7m in a series D fundraising in 2013, which it used to sustain the two Phase III trials (<a href="http://www.scripintelligence.com/business/Bone-Therapeutics-raises-7.7m-to-progress-PhIII-PREOB-with-plans-for-more-339481" target="_new">scripintelligence.com</a>, 29 January 2013). However, at the time, Mr Bastianelli was aware that the money would not be enough to complete the trials. He told <i>Scrip</i> that the series D was preparation for a second fundraising, but the company has not raised any significant cash since then. In the interim, Bone appointed a new chief financial officer, Wim Goemaere (<a href="http://www.scripintelligence.com/home/people/Bone-Therapeutics-names-new-CFO-346641" target="_new">scripintelligence.com</a>, 17 September 2013).</p><p>In addition to completing the Preob trials, Bone plans to accelerate Phase II studies with its second drug candidate, Allob. Allob is an allogeneic osteoblastic cell product, which recently gained positive results from a Phase I/IIa study in patients with delayed union fractures. </p><p>Mr Bastianelli said of his pipeline: "Results gathered so far have been very positive and address areas of high unmet medical need with limited competition. To pursue ongoing clinical development and consider product commercialization, we believe that this is the ideal time to apply for a listing of the company's shares on Euronext Brussels and Euronext Paris." </p><p>Bone also said it would be launching clinical trials in the US, but did not specify for which product. In addition, the company hopes to progress its Allob in its preclinical spine fusion indication, scale up manufacturing capabilities, and build commercial partnerships.</p><p>Bone estimates that the bone fracture market is worth $34bn, and said that its products target around a third of the patients in the market. The company is also confident that it faces limited to no competition. In osteonecrosis, the only approved treatment is Sewon Cellontech's autologous cell therapy product Ossron, which is only available in South Korea. For non-union fractures, the only treatment option is bone autograft. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 183
+
+<p>Belgium's Bone Therapeutics is planning to launch an IPO to fund progress on its Phase III candidates. <i>Scrip</i> understands that the IPO is targeting funds of &euro;20-25m.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 31
+
+Bone Therapeutics to launch IPO
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151201T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151201T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151201T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027538
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 31
+
+Bone Therapeutics to launch IPO
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{BBD22749-9044-4912-BC14-7EE1D64B80BB}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356081
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042233Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7741ec71-b41b-40bf-8c30-34c02888e9d7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042233Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

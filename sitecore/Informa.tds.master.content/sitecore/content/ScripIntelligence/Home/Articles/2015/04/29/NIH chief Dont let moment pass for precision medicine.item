@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {5ECCF910-9829-483A-90B8-F2207895C8AE}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/29/NIH chief Dont let moment pass for precision medicine
+parent: {C14ED64E-C9E7-40EB-93B8-679AFA5F32DB}
+name: NIH chief Dont let moment pass for precision medicine
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6b721135-edb3-47b1-a39e-780451ec118d
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+NIH chief: Don't let moment pass for precision medicine
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+NIH chief Dont let moment pass for precision medicine
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6220
+
+<p>National Institutes of Health (NIH) Director Dr Francis Collins on 5 May found himself once again on Capitol Hill explaining President Barack Obama's precision medicine proposal &ndash; declaring "the time is right for this ambitious initiative."</p><p>"We have reached a remarkable inflection point in the potential of medical research and we should not let this moment pass," Dr Collins told members of the Senate Health, Education, Labor and Pensions (HELP) Committee.</p><p>The NIH chief used real-world, but hypothetical, scenarios to put a human face on the urgency of pursuing President Obama's $215m initiative, <a href="http://www.scripintelligence.com/home/Obama-unveils-215m-bold-precision-medicine-initiative-356457" target="_new">unveiled at the White House</a> on 30 January, which Dr Collins said would "revolutionize how we diagnose and treat disease." </p><p>"People get excited about the idea of precision medicine, but after awhile, they are like, 'What exactly can you do with it and what is it?'" Dr Collins told <i>Scrip</i> before the hearing. </p><p>Appearing before the HELP Committee, he said, was a "great opportunity" to lay it all out. </p><p>"Precision medicine is an innovative approach that takes into account individual differences in patients' genes, environments and lifestyles," Dr Collins told the senators.</p><p>He explained that the near-term focus of the precision medicine initiative is on cancer, while the longer term goal involves studying one million Americans in a <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-NIH-seeks-collaborators-for-large-genetics-data-cohort-356479" target="_new">single cohort</a>, with the aim of generating knowledge that can be applied to a whole range of health issues and diseases.</p><p>"We have waited a long time to reach the point where the technology would make that possible and the time is now," Dr Collins said during his testimony.</p><p>Pharmaceutical companies will be counted on as "integral" players in the cancer research portion of the precision medicine initiative, because they will provide the drugs, Dr Kathy Hudson, deputy director for science, outreach and policy at the NIH, told <i>Scrip</i> in an interview.</p><p>The data that will come out of the cohort side of the initiative should provide critical information for the biopharma industry, such as new drug targets for developing compounds and cures, she added. "Too frequently, people don't have the right diagnosis, the right medications available and they end up at the end of a long odyssey with no answers and no effective interventions," Dr Hudson said. </p><p>It's the NIH's "big ambition" to change that and to "create a new way of doing research," in which researchers, study participants and industry are "partners from the get-go," she said.</p><p>"I think we are going to have people who sign up and are with us for years, if not decades," Dr Hudson said. "This is a really historic moment in research and medicine. I'm super jazzed."</p><p>Dr Hudson noted the precision medicine working group, which she co-chairs, is scheduled to hold a meeting later this month to further work out the particulars of how to build the one-million participant cohort.</p><p>This past February, the NIH held a <a href="http://www.scripintelligence.com/home/Data-security-diversity-debated-at-precision-medicine-Super-Bowl-356706" target="_new">two-day "Super Bowl"</a> of scientists at its Bethesda, Maryland campus, where 80-plus representatives from academic institutions, government agencies, mobile technology and the drug and device industries puzzled over what may be the fundamental problems the cohort could try to solve and to get things going on the initiative.</p><p>But the NIH is still waiting to hear on whether Congress will give it a portion or all of the $215m in funding President Obama requested in his <a href="http://www.scripintelligence.com/home/Obama-outlines-spending-wish-lists-for-FDA-NIH-356508" target="_new">fiscal year 2016 budget proposal</a> to actually get the project off the ground.</p><p>"I haven't really encountered anybody who thinks this is a bad idea," Dr Collins said in an interview.</p><p>He noted that even Senator Roy Blunt (Republican-Missouri), chairman of the Senate Appropriations Subcommittee on Labor, Health and Human Services, Education and Related Agencies, showed clear support for the initiative during a hearing last week. </p><p>The Republican-led Senate, however, passed a non-binding budget blueprint on 5 May full of cost-cutting measures &ndash; aiming to ultimately slice $5.3bn over 10 years in spending.</p><p>The Republican-led House gave its approval to the blueprint last week.</p><p>President Obama, though, made it clear shortly thereafter he has no intention of ever signing any final appropriations bill that followed that blueprint, which also includes an attempt to kill the <i>Affordable Care Act</i>.</p><p>The Republican plan also would lock in the across-the-board sequestration spending cuts imposed in 2011 &ndash; something the president said he would not stand for and therefore, would reject.</p><p>"Without doing something about sequestration, it's going to be very hard to have any of these exciting medical advances go forward at the pace that they should," Dr Collins said. "My firm hope is that this is the year when the decision is made where sequestration, which was never intended to be implemented in the first place, can be lifted off the backs of so many valuable government investments, including medical research, but not just medical research."</p><p>"I don't think anybody particularly loves sequestration," he said.</p><p>He noted that most of the debate is, &ldquo;if Congress is not going to use sequestration as a means to rein in spending, what else can it do to ensure it's not saddling future generations with too much debt.&rdquo;</p><p>But, Dr Collins said, "How can we avoid saddling future generations with illness that we might have been able to prevent or cure if we'd made the investments now in research?"</p><p>"They might have a harder time forgiving us that failure than for the fiscal deficits," he said.</p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 253
+
+<p>National Institutes of Health (NIH) Director Dr Francis Collins on 5 May found himself once again on Capitol Hill explaining President Barack Obama's precision medicine proposal &ndash; declaring "the time is right for this ambitious initiative."</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+NIH chief Dont let moment pass for precision medicine
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150429T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150429T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150429T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028633
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+NIH chief: Don't let moment pass for precision medicine
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358121
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6b721135-edb3-47b1-a39e-780451ec118d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

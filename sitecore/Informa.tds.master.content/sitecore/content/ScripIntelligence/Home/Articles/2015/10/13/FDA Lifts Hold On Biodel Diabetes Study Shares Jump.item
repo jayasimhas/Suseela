@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {A066C961-D6A6-4455-97A8-6136D48D46A3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/13/FDA Lifts Hold On Biodel Diabetes Study Shares Jump
+parent: {795A7AEF-21C6-4727-ABCA-CA7142D31AA1}
+name: FDA Lifts Hold On Biodel Diabetes Study Shares Jump
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f0c03e8f-8b89-40e2-a0e6-212ff83c9c94
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+FDA Lifts Hold On Biodel Diabetes Study; Shares Jump
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+FDA Lifts Hold On Biodel Diabetes Study Shares Jump
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1898
+
+<p>Shares of Biodel Inc. leaped 16.3% on Oct. 13 on news the FDA had lifted the partial clinical hold on the company's randomized, open-label, parallel group Phase IIb trial, known as Study 3-250, which was testing the company's ultra-rapid-acting concentrated insulin formulation candidate BIOD-531 in patients with insulin-treated type 2 diabetes versus Eli Lilly & Co.'s Humalog (insulin lispro) Mix 75/25. </p><p>The FDA has cleared the use of Biodel's investigational U-400 syringes in the trial, the company reported. </p><p>Biodel president and CEO Errol De Souza said data from the study will further inform later stage multi-dose trials with the "optimal patient population" and comparators early next year.</p><p>The company also plans to start a Phase IIa standardized meal challenge study plus a independent market analysis in the fourth quarter to determine whether the target diabetes populations and market segments for BIOD-531 can be further expanded.</p><p>The study will evaluate the hypothesis that treatment with BIOD-531 can reduce the injection burden and achieve glucose control at least as effective as that with separate basal and prandial insulins in patients with type 2 diabetes, Biodel said. </p><p>The market analysis, the firm said, will assess the optimal target patient populations and commercial opportunity for BIOD-531, including patients who are on intensive basal/prandial insulin therapy. </p><p>Biodel said it will continue Study 3-250 to allow completion of patients currently in the trial while deferring recruitment of new patients until the optimal target populations have been selected following review of top-line data from the new Phase 2a meal study and the results of the market analysis in the first calendar quarter of 2016.</p><p>Shares of Biodel closed at 43 cents on Oct. 13 &ndash; where the stock started the day.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 414
+
+<p>Shares of Biodel Inc. leaped 16.3% on Oct. 13 on news the FDA had lifted the partial clinical hold on the company's randomized, open-label, parallel group Phase IIb trial, known as Study 3-250, which was testing the company's ultra-rapid-acting concentrated insulin formulation candidate BIOD-531 in patients with insulin-treated type 2 diabetes versus Eli Lilly & Co.'s Humalog (insulin lispro) Mix 75/25. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+FDA Lifts Hold On Biodel Diabetes Study Shares Jump
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151013T040901
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151013T040901
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151013T040901
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030028
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+FDA Lifts Hold On Biodel Diabetes Study; Shares Jump
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360916
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042504Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f0c03e8f-8b89-40e2-a0e6-212ff83c9c94
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042504Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

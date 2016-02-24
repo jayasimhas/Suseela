@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {07517C48-2DB1-455D-AC34-4B1953F48D8A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/22/Dukes Califf takes deputy job at FDA next chief
+parent: {A9E02FEC-E9DE-4B22-BE6D-1EC0B8B5CAAD}
+name: Dukes Califf takes deputy job at FDA next chief
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f123f0ef-b4ae-4323-9feb-210bd3f018cf
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{43C4E1AD-D511-45E8-954D-355293770C89}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Duke's Califf takes deputy job at FDA; next chief? 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 47
+
+Dukes Califf takes deputy job at FDA next chief
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2200
+
+<p>Cardiologist Dr Robert Califf, vice chancellor of clinical and translational research at Duke University, has been appointed the FDA's new deputy commissioner for medical products and tobacco &ndash; a move that has some speculating whether he is in line to be the next chief at the agency.</p><p>Dr Califf, who will join the FDA next month, will provide executive leadership to the Center for Drug Evaluation and Research, the Center for Biologics Evaluation and Research, the Center for Devices and Radiological Health and the Center for Tobacco Products, said Dr Margaret Hamburg, the agency's current commissioner. </p><p>In his new job, Dr Califf also will oversee the FDA&rsquo;s Office of Special Medical Programs in the Office of the Commissioner. </p><p>At Duke, Dr Califf&rsquo;s roles include serving as the director of the university's translational medicine institute. He also is a professor of medicine in the division of cardiology at the school's medical center in Durham, North Carolina. </p><p>Dr Califf also is the founding director of the Duke Clinical Research Institute (DCRI).</p><p>He also is the editor-in-chief of the <i>American Heart Journal</i> &ndash; the oldest cardiovascular specialty journal.</p><p>Dr Califf previously served on the FDA's Cardiovascular and Renal Drugs Advisory Committee, where he was known to often spar with fellow member Dr Steven Nissen, head of cardiology at the Cleveland Clinic in Ohio.</p><p>More recently, the two cardiologists have found themselves at loggerheads as presenters at FDA adcomms, rather than as panelists &ndash; especially over an analysis by DCRI of data involving GlaxoSmithKline's Avandia (rosiglitazone) (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Panel-backs-lighter-Avandia-restrictions-but-drugs-rehabilitation-unlikely-343851" target="_new">7 June 2013</a>, <a href="http://www.scripintelligence.com/home/Fatal-flaws-of-trial-designs-Nissen-explains-342897" target="_new">8 May 2013</a>, <a href="http://www.scripintelligence.com/home/FDA-advisers-back-JandJ-Bayer-stroke-drug-but-call-for-warfarin-transition-testing-320925" target="_new">9 September 2011</a>).</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 297
+
+<p>Cardiologist Dr Robert Califf, vice chancellor of clinical and translational research at Duke University, has been appointed the FDA's new deputy commissioner for medical products and tobacco &ndash; a move that has some speculating whether he is in line to be the next chief at the agency.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 47
+
+Dukes Califf takes deputy job at FDA next chief
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150122T080001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150122T080001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150122T080001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027633
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Duke's Califf takes deputy job at FDA; next chief? 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356296
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f123f0ef-b4ae-4323-9feb-210bd3f018cf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

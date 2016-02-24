@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {EC942556-4879-4814-BA0E-4416DCAAE0C0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/03/The EMA at 20 CHMP chair on HTA patient involvement and dealing with uncertainty
+parent: {87D20D5F-7D37-47C8-85FB-AD55F723C452}
+name: The EMA at 20 CHMP chair on HTA patient involvement and dealing with uncertainty
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 94ec7e70-9e20-4866-86f7-37ef517b1aa9
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 82
+
+The EMA at 20: CHMP chair on HTA, patient involvement and dealing with uncertainty
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 80
+
+The EMA at 20 CHMP chair on HTA patient involvement and dealing with uncertainty
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10071
+
+<p> Getting Europe's diverse member states together to evaluate and manage human medicines was a tall order when the European Medicines Agency was created 20 years ago. It can still seem that way today. Dr Tomas Salmonson, the chair of the EMA's Committee for Medicinal Products for Human Use, talks to Francesca Bruce about the challenges of reaching consensus, evaluating drugs with little data, and getting patients more closely involved. </p><p> Representatives of 30 countries (the 28 EU member states plus Norway and Iceland) now sit on the CHMP at the European Medicines Agency, to debate a whole range of issues relating to medicines evaluation and monitoring. Being able to reach a truly &quot;European consensus&quot; has proved one of the biggest challenges overcome by the committee, according to Tomas Salmonson, CHMP chair since 2012 (and a member of the committee since 1999) and senior scientific advisor at Sweden's Medical Products Agency. This challenge relates not just to whether to recommend a product for approval, but to other matters too, such as deciding how to word information to prescribers. </p><p> Back in 1995 when the EMA was established, collaboration was new to regulators, who were not accustomed to having to argue their point. &quot;In Sweden we were used to receiving an application and we would say yes or no. Then suddenly we had this situation where we would write an assessment report and we would have to defend that report against other regulators,&quot; says Dr Salmonson. </p><p> Fierce debate within the CHMP, now one of seven EMA scientific committees, has always been par for the course, but, says Dr Salmonson, relations among committee members are good and the committee has avoided the trap of developing factions. &quot;We can be at each other's throats during discussions but I believe that a frank but tough dialogue facilitates the discussion. We are good friends during the coffee break.&quot; </p><p> For Dr Salmonson, it is important that every committee member has a voice in the meetings and that representatives from smaller states with less regulatory capacity have their say too, without being drowned out by members supported by large agencies such as France, Germany, Italy, the Netherlands, Spain, Sweden and the UK. </p><p> Thanks to the new Pharmacovigilance Risk Assessment Committee, the CHMP now largely focuses on new applications and giving companies scientific advice, says Dr Salmonson. The PRAC, created in 2012, has taken some heat off the CHMP by looking at safety issues affecting older products. The trend towards new applications is not really surprising: many are for personalised medicines, particularly in oncology, and for biologics. </p><p> A key question, according to Dr Salmonson, is how important biosimilars will be. The committee gives a lot of scientific advice on biosimilars, but whether or not they will become as ubiquitous as generics will depend on factors such as cost of development and originator pricing strategies, he says. </p><p> There are often tough decisions for the committee to make and the most difficult drugs to assess are those which have little data to support them. One such drug was UniQure's Glybera (alipogene tiparvovec), the first gene therapy, and Dr Salmonson regards its approval as one of the committee's biggest challenges under his chairmanship. </p><p> In 2011, the CHMP initially issued a negative opinion on Glybera, in consultation with another EMA committee, the Committee for Advanced Therapies. UniQure subsequently requested a review of the opinion and even though the CAT decided that uncertainties could be managed with post marketing surveillance, the CHMP remained negative. The CHMP was again requested to review its decision, and in 2012, just when Dr Salmonson started as chair, the committee said yes. The debate on that drug was long and hard, said Dr Salmonson. The difficulty the CHMP faced was not the disagreement between the committees, but the fact that the data was from a very small number of patients on a surrogate marker. &quot;There are so many uncertainties that taking a decision in that situation is challenging,&quot; he says. </p><p> Another tricky product for the CHMP was Clinuvel's orphan drug Scenesse (afamelanotide) for severe light intolerance. The Australian firm had faced many methodological difficulties due to this condition being very difficult to study &ndash; for example, patients being unwilling to expose themselves to sunlight for fear of developing painful symptoms. The company submitted data from placebo controlled trials and from compassionate use programmes. Scenesse was approved under exceptional circumstances. And for the first time ever, the CHMP allowed patients to take part in benefit-risk discussions at the oral explanations. The pilot was successful and the experiment will be repeated, Dr Salmonson says. </p><h2> More patient involvement in store </h2><p> So what is in store for the CHMP? The committee is working to get even better patient input. This is a work in progress that is evolving all the time. Dr Salmonson says: &quot;We need to understand patient preference: when I started in this business that was neglected. At the Swedish agency we did not interact enough with patients to understand their perceptions. Clinicians thought they knew patient preference so that's probably why we didn't interact enough.&quot; </p><p> Today the importance of patients' views is not in any doubt. Patient representatives have been taking part in scientific advisory groups for some time and although the Scenesse pilot was an important milestone for the CHMP, it isn't enough, says Dr Salmonson. &quot;We need to continue to find ways where we can ask a larger number of patients about their preference in a more structured way,&quot; he says. Relatively soon, for example, there will be test cases of patient panels or surveys, which could come in written format, or a group of patients might be questioned in person by an expert in detail about their preferences. A pilot should be on paper during the first half of the year, according to Dr Salmonson. </p><p> Also, the CHMP chair would like to see the committee have a role in developing the EMA's adaptive pathways project and in fostering joined-up thinking on health technology assessments (HTAs). For Dr Salmonson, one great frustration is that a good drug can win approval but then fail to get to patients in many markets. He believes that the number of hurdles manufacturers have to clear is unsustainable and that the lack of collaboration between regulators, payers and HTAs is unacceptable. </p><p> &quot;I want the CHMP's quality, safety and efficacy evaluations to be the starting point for the models they would use for cost-effectiveness ... We have an impressive system of assessing drugs and the knowledge we generate should be used in HTA assessments&#8230; For us to transfer knowledge in an effective way and to engage with HTAs during drug development , it is essential for companies to have parallel advice.&quot; This means, he says, that the development programme of a medicine that will ultimately help patients should not only lead to an approval, but also to a reimbursable price. </p><p> Dr Salmonson would also like to see industry and other stakeholders change their views on conditional approvals, which are one of the mechanisms available to facilitate market access for medicines that fulfil patients&rsquo; unmet medical needs. At the moment, he is concerned that companies see such approvals as a consolation prize for failing to win full approval and that they worry they will be in a weaker position when arguing for a price at national level. As a result, few companies actually apply for conditional approval and it usually comes after negotiations for full approval. Dr Salmonson thinks the wording of the term conditional approval could be improved to make it more appealing and that the adaptive pathways approach might help convince payers to stump up for products with a conditional licence. </p><p> <i>Francesca Bruce is a senior reporter on Scrip Intelligence.</i> </p><p> <i>This is the latest in a series of articles marking the 20th anniversary of the European Medicines Agency. In the run-up to the invitation-only scientific conference that the EMA is holding to mark the anniversary in London on 18 March, you'll be able to read what key individuals and stakeholders in the European pharmaceutical regulatory network have to say about the challenges the EMA and the network are facing and where they are headed as the agency moves into its third decade.</i> </p><p> <b><i>Previously in this series</i></b><i>:</i> </p><p> <i>The EMA at 20: &quot;Fernand Sauer reviews the first two decades and offers advice for regulators at all levels&quot;,</i><a href="http://#http://www.scripintelligence.com/home/The-EMA-at-20-Fernand-Sauer-reviews-the-first-two-decades-and-offers-advice-for-regulators-at-all-levels-357045" target="_new">scripintelligence.com</a><i>, 3 March 2015.</i> </p><p> <i>The EMA at 20: &quot;A decade of expansion, collaboration and new legislation&quot;, by Thomas Lönngren</i>, <a href="http://www.scripintelligence.com/home/The-EMA-at-20-A-decade-of-expansion-collaboration-and-new-legislation-357061" target="_new">scripintelligence.com</a><i>, 4 March 2015.</i> </p><p> <i>The EMA at 20: &quot;Independence and transparency are the key to fulfilling the EMA's public health commitments&quot;, by Health Action International, </i><a href="http://www.scripintelligence.com/home/The-EMA-at-20-Independence-and-transparency-are-the-key-to-fulfilling-the-EMAs-public-health-commitments-357084" target="_new">scripintelligence.com</a>,<i> 5 March 2015.</i> </p><p> <i>The EMA at 20: &quot;A short history of the European Medicines Agency&quot;, by Ian Schofield, </i><a href="http://www.scripintelligence.com/home/The-EMA-at-20-A-short-history-of-the-European-Medicines-Agency-357112" target="_new">scripintelligence.com</a>, <i>6 March 2015.</i> </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 446
+
+<p> Getting Europe's diverse member states together to evaluate and manage human medicines was a tall order when the European Medicines Agency was created 20 years ago. It can still seem that way today. Dr Tomas Salmonson, the chair of the EMA's Committee for Medicinal Products for Human Use, talks to Francesca Bruce about the challenges of reaching consensus, evaluating drugs with little data, and getting patients more closely involved. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 80
+
+The EMA at 20 CHMP chair on HTA patient involvement and dealing with uncertainty
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150303T170001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150303T170001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150303T170001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028035
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 82
+
+The EMA at 20: CHMP chair on HTA, patient involvement and dealing with uncertainty
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357049
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+94ec7e70-9e20-4866-86f7-37ef517b1aa9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

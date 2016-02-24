@@ -41,6 +41,7 @@
 @import 'components/pop-out-sign-in';
 @import 'components/promotional-sidebar';
 @import 'components/sub-topic-links';
+@import 'components/topic-featured-article';
 @import 'components/topic-subtopic';
 
 /* * * * COMPONENTS — ARTICLE * * * */
@@ -49,6 +50,7 @@
 /* * * * COMPONENTS — ARTICLE * * * */
 @import 'components/article/article-author';
 @import 'components/article/article-body';
+@import 'components/article/article-executive-summary';
 @import 'components/article/article-interview';
 @import 'components/article/article-key-documents';
 @import 'components/article/article-metadata';
@@ -59,6 +61,15 @@
 @import 'components/article/article-sidebar';
 @import 'components/article/article-tags';
 @import 'components/article/article-topics';
+
+/* * * * COMPONENTS — SEARCH RESULTS * * * */
+@import 'components/search/search-wrapper';
+@import 'components/search/search-facets';
+@import 'components/search/search-keywords';
+@import 'components/search/search-metadata';
+@import 'components/search/search-sort-options';
+@import 'components/search/search-listing';
+@import 'components/search/search-pagination';
 
 /* * * * ATOMS * * * */
 @import 'components/atoms/blockquote';

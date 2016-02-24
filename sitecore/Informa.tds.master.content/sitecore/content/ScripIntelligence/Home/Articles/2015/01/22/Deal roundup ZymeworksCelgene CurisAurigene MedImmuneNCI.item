@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {E9A2AD81-A377-4E6D-834E-0D7FB4BB1405}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/22/Deal roundup ZymeworksCelgene CurisAurigene MedImmuneNCI
+parent: {A9E02FEC-E9DE-4B22-BE6D-1EC0B8B5CAAD}
+name: Deal roundup ZymeworksCelgene CurisAurigene MedImmuneNCI
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 95c9a528-432f-4794-85eb-cc2f0af95e8e
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+Deal roundup: Zymeworks/Celgene, Curis/Aurigene, MedImmune/NCI
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Deal roundup ZymeworksCelgene CurisAurigene MedImmuneNCI
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9613
+
+<p>Zymeworks will earn up to $164m in clinical, regulatory and commercial milestone fees plus royalties for each bi-specific antibody developed under a new collaboration with Celgene. </p><p>Vancouver, British Columbia-based Zymeworks also received an undisclosed upfront payment and an equity investment from Celgene to use its Azymetric platform for the discovery and development of multiple bi-specific antibody therapeutics. Celgene will have an option to license each antibody so that it may take over development and commercialization. </p><p>Bi-specific antibodies developed with the Azymetric platform are similar to mono-specific antibody therapies, but each compound binds to two different targets. Zymeworks and Celgene did not specify the diseases, therapeutic targets or number of programs subject to their agreement. </p><p>Zymeworks president and CEO Ali Tehrani said the private Canadian biotechnology company will use the upfront cash from Celgene as well as proceeds from recent financing activities to accelerate development of internal oncology programs. Zymeworks plans to file its first investigational new drug (IND) application with the US FDA in 2016 so that it can begin clinical development soon thereafter.</p><p>The company signed a bi-specific antibody deal with Merck & Co for up to $187m plus royalties in 2011 and collected its second milestone fee in 2013 under the oncology and autoimmune disease-focused partnership (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Protein-design-firm-Zymeworks-in-187M-deal-with-Merck-for-bi-specific-antibodies-320569" target="_new">31 August 2011</a> and <a href="http://www.scripintelligence.com/home/Merck-licenses-Xenon-CV-compounds-pays-ZymeWorks-milestone-fee-342255" target="_new">18 April 2013</a>).</p><p>ZymeWorks also signed an oncology-focused bi-specific antibody collaboration with Eli Lilly's Imclone Systems subsidiary a year ago for undisclosed upfront and milestone fees (scripintelligence.com, <a href="http://www.scripintelligence.com/home/BioNotebook-SangamoBiogen-AdamasForest-ZymeworksLilly-Sunesis-349218" target="_new">10 January 2014</a>).</p><p><b>Curis licenses Aurigene small molecule PDL-1, IRAK4 inhibitors</b></p><p>Lexington, Massachusetts-based cancer drug developer Curis will give the drug discovery firm Aurigene in Bangalore, India 17.7m shares of its common stock in exchange for a five-year collaboration, license and option agreement for the development and commercialization of small molecule immuno-oncology and "precision oncology" drugs. </p><p>The all-stock upfront commitment gives Aurigene a 19.9% stake in Curis valued at $25.3m as of 21 January when Curis's stock closed up 2.1% at $1.43 per share following the Aurigene deal announcement. </p><p>Aurigene also is eligible to receive development, approval and commercial milestone fees totaling $52.5m for each of the first two programs, up to $50m each for the third and fourth programs, and up to $140.5m for each program after that. Royalties for any drug commercialized under the collaboration will range from the high single digits to 10%. </p><p>Aurigene will share in any upfront, milestone and royalty payments that Curis receives from sublicense agreements. Curis intends to hold on to US and EU rights and sublicense drugs developed under the partnership in areas outside of Aurigene's territories &ndash; India and Russia.</p><p>Curis plans to exercise its exclusive worldwide option and file investigational new drug (IND) applications with the US FDA in 2015 to enable clinical trials for the first immuno-oncology drug under the Aurigene partnership, a programmed death ligand-1 (PDL-1) inhibitor. An IND also may be filed in 2015 for the first precision oncology drug under the collaboration, which inhibits interleukin-1 receptor-associated kinase 4 (IRAK4).</p><p>Curis was quick to stake a claim in precision oncology &ndash; otherwise known as a cancer therapies that target specific genetic markers &ndash; on 21 January after US President Barack Obama announced with few details during his 20 January State of the Union address that his administration would pursue a precision medicine initiative for genetically defined diseases (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Obama-launches-precision-medicine-initiative-details-scarce-356275" target="_new">21 January 2015</a>). </p><p>In immuno-oncology, the company will go head-to-head with Merck & Co and Bristol-Myers Squibb, whose monoclonal antibodies targeting the programmed death-1 (PD-1) receptor &ndash; Keytruda (pembrolizumab) and Opdivo (nivolumab), respectively &ndash; won FDA approval in 2014 to treat advanced melanoma (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Bristol-Myers-wins-US-Opdivo-approval-three-months-early-355806" target="_new">23 December 2014</a>).</p><p>Merck and BMS as well as Roche and AstraZeneca, which are developing monoclonal antibodies against PDL-1, have several dozen clinical trials under way in a variety of solid tumors and hematological malignancies.</p><p>Curis plans to develop the Aurigene-discovered small molecules in combination with its own Phase I drugs, which include the HDAC and PI3K inhibitor CUDC-907 for lymphoma and multiple myeloma; the IAP inhibitor CUDC-427 for solid tumors and lymphomas; and the Hsp90 inhibitor Debio 0932 for non-small cell lung cancer (NSCLC). </p><p>Curis president and CEO Ali Fattaey said during the company's 21 January conference call with analysts and investors that the company is about to regain the rights to Debio 0932, which will be renamed CUDC-305, from Debiopharm. The Swiss company licensed the drug from Curis in 2009 (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Debiopharm-inks-deal-with-INC-Research-319057" target="_new">26 July 2011</a>).</p><p>Curis recently resumed patient enrollment in the Phase I clinical trial for CUDC-427 after the FDA lifted a partial clinical hold instituted after the death of a stage IV breast cancer patient (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-lifts-partial-hold-on-Curis-anticancer-agent-350973" target="_new">1 April 2014</a>). The drug was licensed from Roche's Genentech subsidiary in 2012 (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Curis-secures-loan-and-licenses-cancer-drug-candidate-from-Genentech-337684" target="_new">30 November 2012</a>).</p><p>The company has a long-standing relationship with Genentech, whose parent company markets the Curis-discovered drug Erivedge (vismodegib), which is approved in 50 markets. The FDA endorsed Erivedge for non-surgical treatment of advanced basal cell carcinoma in 2012, nine years after Genentech entered into a hedgehog pathway inhibitor development deal with Curis in 2003 (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Genentech-goes-beyond-Infinity-with-FDA-OK-to-sell-Hedgehog-inhibitor-for-advanced-BCC-326447" target="_new">31 January 2012</a>). Erivedge generated $104.8m in sales for Roche during the first nine months of 2014.</p><p>Aurigene has discovery collaboration agreements with several pharma and biotech companies, including an oncology deal with the soon-to-be former Curis partner Debiopharm (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Debiopharm-and-Aurigene-enter-licensing-pact-for-onco-pathway-inhibitor-314197" target="_new">15 April 2011</a>).</p><p><b>MedImmune enters into CRADAs with NCI</b></p><p>AstraZeneca's biologics arm MedImmune established a three-year partnership with the National Cancer Institute (NCI), part of the National Institutes of Health (NIH), via two Cooperative Research and Development Agreements (CRADAs) focused on immunotherapy and targeted therapies. </p><p>Under the CRADA agreements, NCI's expertise will be applied to MedImmune's biological understanding of its immunomodulatory and tumor-targeted antibody drug candidates in an attempt to translate preclinical research into clinical development programs. </p><p>Two initial programs will test combinations of immunotherapy agents in mouse models, including MedImmune's PDL-1 inhibitor MEDI4736, PD-1 inhibitor MEDI0680, CTLA-4 inhibitor tremelimumab and MEDI6469, which targets OX40. </p><p>Another two programs will evaluate molecular imaging of MedImmune's investigational antibody-drug conjugates as well as therapeutic efficacy in cancer stem cell models.</p><p>MedImmune has been in partnering mode to advance its immuno-oncology and targeted cancer therapies in combination with externally developed programs. The AstraZeneca subsidiary most recently tapped Omnis Pharmaceuticals to test the private company's lead investigational oncolytic virus program, a genetically engineered strain of vesicular stomatitis virus (VSV), with MedImmune's immunotherapies (scripintelligence.com, <a href="http://www.scripintelligence.com/home/BioNotebook-JP-Morgan-week-deal-roundup-356162" target="_new">15 January 2015</a>).</p><p>AstraZeneca executive vice president and MedImmune head Bahija Jallal told <i>Scrip</i> in June that the companies are eager to combine AstraZeneca's small molecules with MedImmune's biologics, but they will look outside of their portfolios "If we don't have the quality we are looking for" (scripintelligence.com, <a href="http://www.scripintelligence.com/home/comment/ASCO-2014-Needle-still-unmoved-in-PD-1-space-352163" target="_new">5 June 2014</a>).</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 188
+
+<p>Zymeworks will earn up to $164m in clinical, regulatory and commercial milestone fees plus royalties for each bi-specific antibody developed under a new collaboration with Celgene. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Deal roundup ZymeworksCelgene CurisAurigene MedImmuneNCI
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150122T005316
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150122T005316
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150122T005316
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027581
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+Deal roundup: Zymeworks/Celgene, Curis/Aurigene, MedImmune/NCI
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356201
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042235Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+95c9a528-432f-4794-85eb-cc2f0af95e8e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042235Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,90 @@
+.search__facets {
+  @include textMix('Roboto', 13px, 400);
+  border: 1px solid $informa-light-gray-d;
+}
+
+.facets {
+
+  &__header {
+    padding: 20px;
+    border-bottom: 2px solid $informa-light-gray-d;
+
+    h3 {
+      display: inline-block;
+      color: $informa-black;
+    }
+
+    a.facets__clear {
+      float: right;
+      line-height: 29px;
+    }
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__section {
+    font-size: 15px;
+    line-height: 23px;
+
+    &:not(:first-child) {
+      padding-top: 20px;
+      border-top: 1px solid $informa-light-gray-d;
+    }
+  }
+
+  &__section-header {
+    display: inline-block;
+    padding-bottom: 15px;
+    color: $informa-black;
+  }
+
+  &__section-list {
+    li {
+      padding-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0; // hiding to replace with custom checkbox style
+    }
+
+    input[type="checkbox"] + label {
+      font-size: 15px;
+      line-height: 23px;
+      position: relative;
+    }
+
+    input[type="checkbox"]:checked + label {
+      font-weight: 700;
+    }
+
+    input[type="checkbox"] + label:before {
+      content:" ";
+      display:inline-block;
+      height: 17px;
+      width: 17px;
+      border: 1px solid $informa-light-gray-d;
+      border-radius: 20%;
+      margin-right: 15px;
+      vertical-align: text-bottom;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+      // DEV NOTE: see '_shame.scss' for style
+    }
+
+    &--sub {
+      padding-top: 10px;
+      padding-left: 30px;
+
+      input[type="checkbox"] + label {
+        font-size: 13px;
+        line-height: 20px;
+      }
+    }
+  }
+
+
+}

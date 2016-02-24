@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Web.Mvc;
+using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Velir.Search.Core.CustomGlass.Models;
 
 namespace Informa.Web.ViewModels
 {  
@@ -13,13 +17,16 @@ namespace Informa.Web.ViewModels
     {
         public ISiteRootContext SiterootContext { get; set; }
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
+        protected readonly ITextTranslator TextTranslator;
 
-		public GlassArticleModel(
+        public GlassArticleModel(
 			ISiteRootContext siterootContext,
-			IArticleListItemModelFactory articleListableFactory)
+			IArticleListItemModelFactory articleListableFactory, 
+            ITextTranslator textTranslator)
         {
             SiterootContext = siterootContext;
 			ArticleListableFactory = articleListableFactory;
+            TextTranslator = textTranslator;
         }                                                    
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -29,8 +36,10 @@ namespace Informa.Web.ViewModels
 
         public string Title => GlassModel.Title;
         public string Sub_Title => GlassModel.Sub_Title;
-        public string Body => GlassModel.Body;
-        public IHierarchyLinks TaxonomyHierarchy => new HierarchyLinksViewModel(GlassModel);
+        public string Body => GlassModel.Body;  
+   
+
+        public IHierarchyLinks TaxonomyHierarchy => new HierarchyLinksViewModel(GlassModel, TextTranslator);
         public DateTime Date => GlassModel.Actual_Publish_Date;
         //TODO: Extract to a dictionary.
         public string Content_Type => GlassModel.Content_Type?.Item_Name;
@@ -39,6 +48,11 @@ namespace Informa.Web.ViewModels
         public IEnumerable<IPersonModel> Authors => GlassModel.Authors.Select(x => new PersonModel(x));
         public string Category => GlassModel.Article_Category;
         public IEnumerable<IListable> RelatedArticles => GlassModel.Related_Articles.Select(x => ArticleListableFactory.Create(x)).Cast<IListable>();
+
+        public IEnumerable<ILinkable> KeyDocuments
+            =>
+                GlassModel.Supporting_Documents.Select(
+                    x => new LinkableModel {LinkableText = x._Name, LinkableUrl = x._MediaUrl});
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 
         #endregion
@@ -58,11 +72,22 @@ namespace Informa.Web.ViewModels
                     x => new LinkableModel {LinkableText = x.Name, LinkableUrl = $"mailto://{x.Email_Address}"});
 
         public DateTime ListableDate => Date;
-        public string ListableImage => Image.ImageUrl;
+        public string ListableImage => Image?.ImageUrl;
         //TODO: Get real summary
-        public string ListableSummary
-            => string.IsNullOrWhiteSpace(GlassModel.Summary) ? Body.Substring(0, 200) : GlassModel.Summary;
+	    public string ListableSummary
+	    {
+		    get
+		    {
+			    if (string.IsNullOrWhiteSpace(GlassModel.Summary))
+			    {
+				    return Body.Length < 200 ? Body : Body.Substring(0, 200);
+			    }
+			    return GlassModel.Summary;
+		    }
+		    set { }
+	    }
 
+	    public string ListableSummaryHeader => TextTranslator.Translate("Article.ExecSummHeader");
         public string ListableTitle => Title;
         public string ListableByline => Publication;
 

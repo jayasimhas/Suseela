@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {4147EA47-E1FD-4BBE-BFE6-685D4CAD9321}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/02/CVS takes aim at PCSK9s costs could dwarf HCV meds
+parent: {A4DA0C5F-4495-437C-8ACE-4424E2BEFF66}
+name: CVS takes aim at PCSK9s costs could dwarf HCV meds
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 477f895b-c495-4c37-a265-1eebd4d9ccfc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{F2567504-3987-4CDE-BD6A-AE8E9F8D3FFF}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+CVS takes aim at PCSK9s; costs could dwarf HCV meds
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+CVS takes aim at PCSK9s costs could dwarf HCV meds
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4190
+
+<p>Forget Sovaldi's $1,000-per-pill price. </p><p>The costs to the US healthcare system for proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitors to treat the growing number of Americans with high cholesterol could be enormous &ndash; $100bn to $200bn per year, four executives from CVS Health charged on 17 February.</p><p>Even though PCSK9 inhibitors, like Sanofi's and Regeneron's alirocumab and Amgen's evolocumab, which are both awaiting the FDA's approval in July and August, respectively, may end up costing individual patients much less than the pricey hepatitis C virus (HCV) medicines, such as Gilead Sciences' Sovaldi (sofosbuvir) and Harvoni (ledipasvir-sofosbuvir) and AbbVie's Viekira Pak (ombitasvir/paritaprevir/ritonavir/dasabuvir) &ndash; $7,000-$12,000 versus $84,000-$94,500 &ndash; it's the volume of use that's got CVS, Express Scripts and other payers vexed (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Its-the-volume-stupid-350860" target="_new">25 March 2014</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Analysts-drug-price-advice-Define-yourself-before-opponents-do-350829" target="_new">24 March 2014</a>).</p><p>The costs to "cure" the 1.5 million people in the US currently known to be infected with HCV could be as high as $150bn over the next decade, the CVS officials said in a 17 February article published in the public policy journal <i>Health Affairs</i>. </p><p>But the target for PCSK9s, hyperlipidemia, is one of the most prevalent conditions in the developed world, so the market for those drugs far exceeds that for the HCV medicines.</p><p>While PCSK9 inhibitors have been shown to be highly effective in reducing low-density lipoprotein cholesterol (LDL), increasing high-density lipoprotein and lowering triglycerides, the drugs don't provide a cure and are likely to be prescribed as ongoing maintenance therapies &ndash; potentially for decades. </p><p>Even if the medicines were limited in the US to just the familial hypercholesterolemia and severe hypercholesteremia populations &ndash; or about 1.6 million people &ndash; at a cost of $10,000 per patient, that's $16bn annually, said the four CVS executives, Dr William Shrank, chief scientific officer; Dr Alan Lotvin, executive vice president of specialty pharmacy; Dr Surya Singh, corporate vice president and head of specialty client solutions; and Dr Troyen Brennan, chief medical officer.</p><p>They estimated another $20bn could be added on top of that amount for use in statin-intolerant patients. And the costs could be as much as $150bn to treat those with a history of coronary disease. </p><p>If the PCSK9 inhibitors were used only in patients for whom statins were ineffective &ndash; those who do not reach LDL goals from previous guidelines &ndash; the price tag could be somewhere between $50bn and $100bn, the CVS officials said. </p><p>And, they said, those calculations leave aside what is likely the eventual target for the PCSK9 manufacturers &ndash; primary prevention.</p><p>&ldquo;As this is chronic therapy, PCSK9 sales could be expected to persist and grow over time,&rdquo; the CVS doctors said. In fact, they argued, the drugs could end up being the highest selling class of medicines in history. </p><p>And with PCSK9 biosimilars at least 10-15 years away, any possible price reductions are likely well into the future. </p><p>While the initial anger by policymakers and payers over Sovaldi's price has faded, "suggesting a certain resiliency in our system's ability to absorb costs," that's about to change, the CVS officials asserted. </p><p>First, they said, there will be shock over the money spent on PCSK9 inhibitors. But then there will be a demand for action. </p><p>"Managed pharmacy care, indeed the healthcare system, has never seen a challenge like this to our resilience in absorbing costs," the CVS leaders declared. </p><p>"Perhaps the costs of PCSK9 inhibitors will push us to develop some consensus about the pricing of new specialty medications, as part of a more thoughtful discussion about the use of scarce resources on behalf of patients," they said.</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 47
+
+<p>Forget Sovaldi's $1,000-per-pill price. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+CVS takes aim at PCSK9s costs could dwarf HCV meds
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151202T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151202T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151202T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027849
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+CVS takes aim at PCSK9s; costs could dwarf HCV meds
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356713
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042255Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+477f895b-c495-4c37-a265-1eebd4d9ccfc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042255Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

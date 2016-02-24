@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {050D5723-899E-4A2D-94BF-5956DED61F51}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/02/FDA wants easiertounderstand Rx drug print ads
+parent: {B4009754-6EC4-476C-B8C2-03A5771200E2}
+name: FDA wants easiertounderstand Rx drug print ads
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 63c528d5-8906-484f-9809-25406b31c098
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 48
+
+FDA wants easier-to-understand Rx drug print ads
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 46
+
+FDA wants easiertounderstand Rx drug print ads
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3519
+
+<p>In a policy shift, the FDA is calling on pharmaceutical manufacturers to make risk information in their print advertisements and promotions easier for consumers to understand &ndash; directing companies in a newly revised draft guidance how to accomplish that feat.</p><p>Instead of an exhaustive list of possible adverse events and other risk information, the FDA said it wants the focus in the so-called brief summary of a print advertisement or promotion to focus on the most important information, which regulators said would provide consumers with better and more actionable information.</p><p>The FDA said it believes exhaustive lists that include even minor risks detract from and make it difficult for consumers to comprehend and retain information about the more important risks.</p><p>Because the FDA wants risk information to be presented in a way most likely to be understood by consumers, it now is recommending against the inclusion in the brief summary of the risk-related sections from a drug's package insert (PI), which generally appears verbatim and in a small font in the print ads and promotions. </p><p>PIs are written for healthcare providers in highly technical terminology, which the FDA said is potentially of limited value to consumers, who may not have the medical or scientific background to understand that information, regulators noted in the revised draft <a href="http://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM069984.pdf" target="_new">guidance</a>, <i>Brief Summary and Adequate Directions for Use: Disclosing Risk Information in Consumer-Directed Print Advertisements and Promotional Labeling for Human Prescription Drugs</i>.</p><p>The volume of material in excerpted sections of the PI, along with small fonts and very technical language may serve to detract from consumers' comprehension of the information or from the likelihood of them reading the material in its entirety, the FDA said. </p><p>"Research has demonstrated that people process only a limited amount of information at one time both in general communications and in direct-to-consumer prescription drug advertising specifically," the agency said. </p><p>Indeed, in an FDA survey, regulators said few respondents reported reading half or more of the brief summary presented in the traditional format. </p><p>Of those who read at least some of the brief summary, 55% described it as hard to read. Over 40% said they don't usually read any of the brief summary in direct-to-consumer prescription drug print advertisements.</p><p>So the FDA said it does not intend to object if companies do not include each side effect from the PI in the brief summary in consumer-directed print ads.</p><p>Regulators also said they will give firms a pass for not including the entire PI in those advertisements and promotions as long as pharmaceutical companies follow the FDA's advice in its revised guidance. </p><p>The FDA strongly encouraged the use of consumer-friendly language in promotional materials directed at that audience. </p><p>"The consumer brief summary should be written in language designed for understanding by a broad target audience, with various levels of literacy skills," regulators added.</p><p>In addition, they said, technical language, scientific terms, and medical jargon should be avoided. </p><p>This article also may be read at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">US Capitol Capsule</a></p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 272
+
+<p>In a policy shift, the FDA is calling on pharmaceutical manufacturers to make risk information in their print advertisements and promotions easier for consumers to understand &ndash; directing companies in a newly revised draft guidance how to accomplish that feat.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 46
+
+FDA wants easiertounderstand Rx drug print ads
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150302T172648
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150302T172648
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150302T172648
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027759
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 48
+
+FDA wants easier-to-understand Rx drug print ads
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356523
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+63c528d5-8906-484f-9809-25406b31c098
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

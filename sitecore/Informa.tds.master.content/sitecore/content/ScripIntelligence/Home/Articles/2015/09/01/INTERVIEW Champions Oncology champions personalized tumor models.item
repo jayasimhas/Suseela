@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {761BB06F-FA26-4F3C-BF78-800610B0625E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/01/INTERVIEW Champions Oncology champions personalized tumor models
+parent: {684FC8D5-D802-45B5-B1B4-59D6EC33E6A8}
+name: INTERVIEW Champions Oncology champions personalized tumor models
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: bfc4fb52-736f-466d-b43d-b3840ab3f6ac
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+INTERVIEW: Champions Oncology champions personalized tumor models
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+INTERVIEW Champions Oncology champions personalized tumor models
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6619
+
+<p>It may sound like something from the realms of science fiction: growing human tumors on mice to monitor their response to therapy and find the best treatment for a patient. But at least one company, Champions Oncology, has made this a reality.</p><p>"[We're trying to] recreate the tumor the way it was growing in the patient as predictably as we can, and as exactly as we can, so that it can continue in another host," Ronnie Morris, the firm's president, told <i>Scrip's </i>sister publication <i>Clinica.</i></p><p>Hackensack, New Jersey-based Champions has developed TumorGrafts, which he described as a "very powerful" platform for both patients in the clinic and pharmaceutical companies. The firm currently markets TumorGraft to patients as a lab-developed test under CLIA regulations.</p><p>The current treatment of cancer patients leaves a lot to be desired. "How do you figure out what's the right drug for the right patient? It's basically trial and error," Dr Morris said.</p><p>How does creating mouse "avatars" &ndash; each carrying a replica of the patient's tumor &ndash; help? For a start, several can be produced for each patient, meaning many different drugs can be trialled simultaneously. "A patient in the clinic can only get one drug at any one time. We recreate the tumor and we can test it 15 times at the same time."</p><p>One drawback to this method is the period it takes to produce the mouse avatars. "It takes about four to five months for the model to grow," Dr Morris explained. "So it is important that the patient gets their TumorGraft built early enough in the course of their disease so that they're on first-line therapy while we're building the model, and by the time they need choices for second- and third-line therapy, there's still time to be able to do all that."</p><p>This makes TumorGraft unsuitable for certain cancers, including pancreatic cancer. "We only deal with solid tumors, and we've seen that certain cancers naturally lend better to this type of process," Dr Morris said. "For instance, pancreatic cancer presents at a very late stage, so for these patients, often by the time they're thinking about taking out their tumor to grow it in a host environment, they don't have the time."</p><p>"Also tumors that have a very good prognosis, for instance an early-stage ER/PR-positive cancer of the breast [where patients] have a 99% five-year survival&#8230;they're never going to need to use an assay that tells them which chemotherapy combinations to use&#8230;they're probably never going to undergo chemo. So why build a TumorGraft avatar model?"</p><p>Conversely, sarcoma is particularly well-suited to TumorGraft. "It's primarily a disease of a younger population; it's a disease with a lot of tumor tissue that can be readily taken to be put into a model. It's also a tumor type where there are no great guidelines &ndash; people just don't know what to give young sarcoma patients &ndash; so we can do a lot of good experimentation with the mice to try to find the best combination."</p><p>He continued: "Also, tumors like triple-negative breast cancer, certain types of lung cancer, ovarian cancer&#8230;those are tumors that are treated for a long period of time, there are a lot of treatments out there, but no one's really sure which one's better than the other or what order people should be getting these in."</p><h2>Reimbursement studies</h2><p>Champions is currently planning clinical trials to help build the case for reimbursement. "So far we've implanted just over 800 patients &ndash; but that's outside of insurance," Dr Morris said. These studies aim to test whether the mouse tumor has the same characteristics as the patient's tumor, and whether it responds in a similar way to therapy. "So if I gave drug X to a [mouse] model, how is the response going to correlate with the patient's response?" he explained.</p><p>So far, the company has found that "these models are very accurate." He continued: "What we've found is that our positive predictive value is around 87%. So 87% of the time, when we say that a drug is going to have an effect on a tumor, it has an effect on the tumor."</p><p>"We also have a very high, negative predictive value, in the high 90% range, so are able to tell when drugs are going to be resistant."</p><p>Several sets of data involving TumorGrafts have been published, including studies in Cancer and Clinical Cancer Research. Data involving 495 patients was presented at the most recent ESMO conference, held in Madrid, Spain in September 2014. The firm is also slated to start a trial in sarcoma "in the next couple of months."</p><h2>Pharma models</h2><p>Champions' approach could also be a boon to the pharma industry, potentially speeding up drug development, cutting costs and reducing the chance of drugs failing in late-stage trials. "Currently, only about 8% of pipeline drugs make it to approval. Drugs are just not getting into the clinic, and even when they do, [patients] have a survival [improvement] of 8 or 12 weeks, and that's [classed as] a big success."</p><p>Dr Morris continued: "[Pharma companies] will do a Phase II or III trial and spend $70m, and at the end of the day, they get one answer: does this drug work or not? All these patients are different patients, the tumors are different tumors.</p><p>"I think the old notion of developing a drug that's going to cure lung cancer is gone," he said. "But if my drug can be good for 5% of lung cancers, how do I find the right 5%? And these cohorts are very good for this type of endeavor &ndash; to help the pharma companies find which patients are going to be good for [a particular] drug."</p><p>Champions is working with "many large pharmaceutical companies," Dr Morris said, but declined to give specific examples of partnerships.</p><p>In conclusion, Dr Morris conceded that TumorGraft is "not a perfect model; it's not the same as having a patient. But we don't have the luxury of taking a patient, making 100 patients out of that patient, and giving each patient a drug. So we have to find other ways to try to figure out the problem."</p><p>And although patients using TumorGraft get the immediate benefit, "it's not just about the one or two patients &ndash; over time, this is a great tool for the pharmaceutical and biomarker companies," to allow the development of new diagnostics and therapies for cancer.</p><p>This article was first published in <a href="http://www.clinica.co.uk/marketsector/ivds/INTERVIEW-Champions-Oncology-champions-personalized-tumor-models-356114" target="_new">Clinica Medtech Intelligence</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 250
+
+<p>It may sound like something from the realms of science fiction: growing human tumors on mice to monitor their response to therapy and find the best treatment for a patient. But at least one company, Champions Oncology, has made this a reality.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+INTERVIEW Champions Oncology champions personalized tumor models
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150901T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150901T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150901T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027513
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+INTERVIEW: Champions Oncology champions personalized tumor models
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{6B0DE3A8-39EC-48B6-800A-BA8DAF5799A4}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pipelineWatch
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356037
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bfc4fb52-736f-466d-b43d-b3840ab3f6ac
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

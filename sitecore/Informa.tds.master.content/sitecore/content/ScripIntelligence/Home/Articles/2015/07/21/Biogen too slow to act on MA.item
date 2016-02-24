@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {AEDF1C84-DD74-4016-9B9A-A076016B61C5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/21/Biogen too slow to act on MA
+parent: {00FAA250-48F1-44B2-927B-2B3D476B547B}
+name: Biogen too slow to act on MA
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 48c1fc52-0f9a-446e-a5f0-5acab6a73d2b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{8F83A09A-07BA-4F08-827B-DF2AA1F0FE38}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 30
+
+Biogen too slow to act on M&A?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 28
+
+Biogen too slow to act on MA
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5873
+
+<p><p>With problems piling up and plenty of cash, the logical next step for Biogen seems like it would be an acquisition, but the company insists on putting a rosy spin on all its problems and hasn't been taking advantage of deal opportunities. Its stubborn attitude toward M&A may be causing the company irreparable harm, however. </p><p>"Every time there's some M&A event, stocks go up. We are certainly not engaged in an M&A for any short term stock performance but we certainly are, I would say, increasingly aggressive about wanting to add additional compounds to our portfolio and to our pipeline. And we will be aggressive when we see good opportunities that are consistent with our strategy," Biogen CEO Mr George Scangos said during the firm&rsquo;s earnings call 24 July. </p><p>Biogen&rsquo;s second quarter earnings disappointed analysts and investors, prompting some catastrophic thinking and worst case scenario models. Evercore ISI analyst Mark Schoenebaum projected a worst case stock price of $305 per share for the stock. Biogen was trading as high as $412 per share earlier in July, but the stock has been hit hard over the last few days. The big biotech's stock dropped below Schoenebaum's downside price and finished the day down 22.08%, or $85.02, on the day of its earnings to close at $300.01.</p><p>The bloom was off the rose earlier this week when long-expected data from its PRIME trial of Alzheimer's disease therapy aducanumab were revealed at an industry conference. While previously announced data had the market buzzing about the prospects of a disease-modifying Alzheimer's treatment, results from the middle dose in the early-stage study were inconsistent. The 6 mg/kg dose fell in-line between the 3 mg/kg dose and the 10 mg/kg dose on reducing beta-amyloid plaques, but failed to show a statically significant improvement in cognitive functions. </p><p>Biogen has put its rose-colored blinders on regarding the data, while its stock has been ravished by unhappy investors. "By now, you've all seen the data, which we take to be positive, in line with and supportive of the data that we reported earlier," Mr Scangos told the call. The firm is moving forward with the 6 mg/kg dose as one of the two doses being studied in recently started Phase III trials. </p><p><b>Tecfidera Tanks</b></p><p>The aducanumab data wasn't the only dark spot that Scangos tried to put a positive spin on; Biogen's blockbuster oral multiple sclerosis drug Tecfidera (dimethyl fumarate) has past the point of floundering and has grown stagnant. The once bright star &ndash; it had one of the most successful drug launches of all time &ndash; seems to be burning out. The report of a risk for progressive multifocal leukoencephalopathy (PML) in late 2014 has significantly slowed sales of the drug. </p><p>Tecfidera revenues were $883m compared to $700 million in the year-prior quarter. These results consisted of $721m in US sales and $163m in ex-US sales. Sales were drastically off the mark from what analysts had expected with consensus estimates being $933m for the quarter. </p><p>It wasn't just the blockbuster oral drug that was hit hard, but Biogen's other MS drugs lagged as well. The company's interferons Avonex and Plegridy brought in $690m in sales for the quarter, falling short of the $767m estimated. Tysabri (natalizumab) missed the $505m estimates with sales of only $463m. </p><p>"We'd expected to see a reacceleration of Tecfidera this quarter, but that did not happen to any appreciable extent. Rather, Tecfidera experienced modest sequential patient growth as we continued to work through the same commercial challenges experienced in the first quarter of the year," said Mr Scangos, adding, "We believe that Plegridy is on its way to becoming the interferon of choice as we continue to make it available in new markets around the world and Tysabri, which we believe is viewed as the preferred high efficacy therapy, continued to add patients this quarter."</p><p>The poor performance of its core franchise has pushed Biogen to lower its guidance for the year. Previously, the company expected revenue growth of 14% to 16%. The company has lowered those numbers to year-over-year growth of 6% to 8% &ndash; drastically lower than anyone had expected. </p><p><b>Pipeline Promise?</b></p><p>The dwindling sales and issues with aducanumab have pushed many to question Scangos' leadership ability and whether the pipeline will come through. The firm has one drug that could be approved by the end of the year; a new high-yield form of daclizumab, partnered with AbbVie, for relapsing-remitting MS. Biogen has three more programs of note in its pipeline and all of them are risky at best. </p><p>Buried within its bad second quarter earnings was the announcement that its clinical trial of Tysabri as a treatment for stroke has failed to meet its primary endpoint. Regardless, Biogen is pushing the program forward into Phase III. </p><p>Two more catalysts coming in the future are the Phase III results of its studies of ISIS-SMNrx in the rare orphan disease spinal muscular atrophy, partnered with Isis Pharmaceuticals, and the Phase II trial results of anti-LINGO in MS, another therapy that is hoped to be disease modifying. </p><p>All of these issues have caused investors to ask why Biogen hasn't made any significant acquisitions to add to its pipeline and acquire assets that could be less risky. Some chatter has questioned why Biogen didn't jump at the chance to acquire Receptos before Celgene picked it up in its recent $7.2bn deal. Receptos has a strong lead candidate in MS, an area that Celgene hasn't been in previously. </p><p><p>[Editor's note: This story is also being published in "The Pink Sheet" DAILY. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.]</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 28
+
+Biogen too slow to act on MA
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150721T031644
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150721T031644
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150721T031644
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029339
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 30
+
+Biogen too slow to act on M&A?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359538
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+48c1fc52-0f9a-446e-a5f0-5acab6a73d2b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042427Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

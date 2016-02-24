@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {2F94FB81-94AF-4F70-8661-3748935A6BC1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/22/Marshal your PROs for market access
+parent: {00F73790-0694-4BB8-8A63-FA232FC172C8}
+name: Marshal your PROs for market access
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 112e369e-78b6-4b6a-ba50-a8812bf236ed
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 35
+
+Marshal your PROs for market access
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 35
+
+Marshal your PROs for market access
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4519
+
+<p>Patient reported outcomes (PROs), with their ability to reflect patients' experience of a drug's impact on symptoms or overall quality of life (QoL), are increasingly valued by the regulators and health technology assessment (HTA) bodies. However, manufacturers need to ensure the PROs they capture satisfy the regulators' and HTAs' standards and requirements in order to have an impact.</p><p>While in the past PROs were seldom included in pivotal studies and often appeared only as an afterthought, decision-makers' growing appetite for such data is likely to lead to more consistent and concerted efforts to collect QoL data in clinical trials. This trend was one of the topics of discussed by speakers at eyeforpharma's Market Access and Pricing Excellence event held in Amsterdam on 3-4 June 2015. </p><p>PROs are starting to play a role even in oncology, where impact on patient survival has for a long time been the gold standard and overall survival (OS) the hard endpoint preferred by payers. In the absence of OS data PROs can serve to differentiate between treatments, especially when small differences in gain in progression free survival (PFS) are observed or there is a small increase in PFS, suggested Katelijne de Nys, President of Belgium's Reimbursement Commission of Medicines (Belgium), speaking at the event. However, most of the time data on QoL are not submitted for oncology treatments, de Nyz added.</p><h2>Germany</h2><p>PROs also have the potential to increase the chances of a positive assessment by Germany's HTA bodies IQWiG and the G-BA. IQWiG and the G-BA assess benefit offered by a new treatment over comparators in terms of its effect on mortality, morbidity or quality of life. For example, Pfizer's non-small cell lung cancer drug Xalkori (crizotinib) gained an evaluation of indication of significant added value in patients eligible for chemotherapy and the G-BA judged the drug to offer improvement in morbidity as evidenced by improvement in symptoms of pain, shortness of breath and cough. </p><p>PROs also played a role in the strong positive assessment of Roche's breast cancer drug Kadcyla (ado-trastuzumab emtansine). In its appraisal the G-BA took into account data demonstrating a statistically significant improvement in median time to the deterioration of health-related QoL in the Kadcyla arm. The data were based on the FACT-B QoL questionnaire that was specified prior to the study and was therefore considered patient-relevant. This positive assessment demonstrates that QoL data can be taken into consideration by the G-BA if appropriate measures are used and defined in advance. On the other hand, in its appraisal of Roche's other breast cancer drug Perjeta (pertuzumab), the G-BA considered the data on the improvement in QoL as not usable as they were collected through a non-validated version of the FACT-B questionnaire, for which endpoints were defined after the completion of the study.</p><p>This issue was highlighted by Friedhelm Leverkus, Director Health Technology Assessment and Outcomes for Pfizer, who stated that IQWiG and the G-BA only accept validated instruments for measurement of the health-related quality of life (HRQoL) and that sponsors need to check beforehand whether the instruments and the methodology they intend to use are likely to be accepted as robust evidence by the G-BA. HRQoL data needs to be presented from the end of treatment and missing data (more than 20%) can also cause problems with the consideration of such evidence by the German HTA bodies, he added.</p><h2>US FDA</h2><p>Stefan Holmstrom, Executive Director of HEOR at Astellas Pharma, also highlighted that the US FDA is becoming more open to incorporating QoL in the label. Indeed the FDA label for prostate cancer drug Zytiga (abiraterone, Janssen) references a delay in patient reported pain progression as favouring the Zytiga arm of the pivotal clinical trials.</p><p>As cancer treatment and survival gain improve, so will the importance of including PROs in development programs. Given the often differing requirements of the regulators and numerous HTA bodies, selection of appropriate measures will require coordination across numerous functions and local affiliates within companies to increase the chances that they can make an impact on reimbursement decisions. And as inclusion of QoL outcomes in products' labels becomes more common they will also present an opportunity to differentiate treatments in the eyes of physicians and patients too.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 394
+
+<p>Patient reported outcomes (PROs), with their ability to reflect patients' experience of a drug's impact on symptoms or overall quality of life (QoL), are increasingly valued by the regulators and health technology assessment (HTA) bodies. However, manufacturers need to ensure the PROs they capture satisfy the regulators' and HTAs' standards and requirements in order to have an impact.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 35
+
+Marshal your PROs for market access
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150622T160007
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150622T160007
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150622T160007
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029099
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 35
+
+Marshal your PROs for market access
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B18369C6-1BC6-45A1-9CF5-DA59EBB80DE6}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359066
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042413Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+112e369e-78b6-4b6a-ba50-a8812bf236ed
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042413Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

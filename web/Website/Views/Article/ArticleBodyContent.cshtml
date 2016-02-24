@@ -1,8 +1,6 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-@using Informa.Web.TestData
-@using Sitecore.ExperienceAnalytics.Client
-@model Informa.Web.ViewModels.GlassArticleModel
+﻿@using Glass.Mapper.Sc.Web.Mvc                                              
+@using Informa.Web.Models
+@model GlassArticleModel
 
 <div class="article-body-content">
     <h1>@Model.Title</h1>
@@ -25,7 +23,6 @@
                     <svg class="article-metadata__media-type">
                         <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
                     </svg>
-                    @* * *  END ARTICLE MEDIA TYPE *@
                 </li>
             }
         </ul>
@@ -39,10 +36,11 @@
         <div class="article-author article-author--solo">
             <ul class="article-author__list">
                 <li>
-                    @if (!string.IsNullOrEmpty(author.Image))
-                    {
-                        <img src="@author.Image" class="article-author__photo">
-                    }
+                    @* IF AUTHOR PHOTO EXISTS...
+                    <div class="article-author__photo">
+                        <img src=" AUTHOR PHOTO URL HERE ">
+                    </div>
+                    END IF *@
                     <div class="article-author__solo-wrapper">
                         <span class="article-author__name">@author.Name</span>
                         <span class="article-author__contact">
@@ -67,7 +65,7 @@
     {
         <div class="article-author">
             <ul class="article-author__list">
-                @foreach (var author in Model.Authors)
+                @foreach (var author in Model.Authors.Take(3))
                 {
                     <li>
                         <span class="article-author__name">@author.Name</span>
@@ -88,18 +86,34 @@
     @* END MULTIPLE AUTHORs *@
     }
 
+    @if (!string.IsNullOrEmpty(Model.ListableSummary))
+    {
+        @* * * Executive Summary *@
+        <div class="article-executive-summary">
+            <h4>Executive Summary</h4>
+            @Html.Raw(Model.ListableSummary)
+        </div>
+        @* End Executive Summary  *@
+    }
+
     @if (Model.Image != null)
     {
     @* * *  ARTICLE - FEATURED IMAGE
         IIPP-117 *@
         <aside class="article-inline-image">
             <img src="@Model.Image.ImageUrl">
-            <span class="article-inline-image__source">@Model.Image.ImageSource</span>
+            @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+                {
+                    <span class="article-inline-image__source">
+                        Image Source: @Model.Image.ImageSource
+                    </span>
+                }
             <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
         </aside>
     @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-    @Html.Raw(Model.Body)
+
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
 
 </div>
 

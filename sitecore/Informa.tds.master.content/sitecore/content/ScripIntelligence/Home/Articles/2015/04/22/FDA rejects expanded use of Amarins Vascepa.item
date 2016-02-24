@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {52541D7F-3F94-4721-8806-A2E64B08ADF3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/22/FDA rejects expanded use of Amarins Vascepa
+parent: {2F6B6639-D934-4DFA-9EB8-1D57248EB5BD}
+name: FDA rejects expanded use of Amarins Vascepa
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: be75a700-8f6d-45bc-9920-81820e42b2d4
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+FDA rejects expanded use of Amarin's Vascepa 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+FDA rejects expanded use of Amarins Vascepa
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4885
+
+<p>Shares of Amarin tumbled about 10% on 28 April after the company disclosed the FDA declined to expand the use of Vascepa (icosapent ethyl) in the US as an adjunct to diet to reduce triglyceride (TG) levels in adults on statin therapy with mixed dyslipidemia and TG levels from 200mg/dL to 499mg/dL &ndash; the so-called ANCHOR indication.</p><p>Vascepa, a semisynthetic, 96% ultra-pure ethyl ester of eicosapentaenoic acid, already is approved in the US as an adjunct to diet to reduce TG levels in adults with severe hypertriglyceridemia, or above 500mg/dL. </p><p>Amarin said it has been expecting the FDA's complete response letter (CRL) after the firm decided not to further appeal the agency's October 2013 decision to <a href="http://www.scripintelligence.com/home/RESCINDED-FDA-yanks-Amarin-ANCHOR-SPA-shares-tumble-347711" target="_new">rescind</a> its special protocol assessment (SPA) agreement with the company on the Phase III ANCHOR trial.</p><p>The FDA made the decision on the SPA because the results from three cardiovascular outcomes trials (CVOTs) involving other drugs failed to support the hypothesis that a TG-lowering drug significantly reduces the risk for CV events among statin-treated patients with mixed dyslipidemia and residually high serum triglyceride levels of 200-499mg/dL.</p><p>Therefore, the agency told the firm, regulators no longer considered a change in serum TG levels as sufficient to establish the effectiveness of a drug intended to reduce CV risk in patients with serum TG levels below 500mg/dL. </p><p>So the FDA yanked the SPA on the ANCHOR study.</p><p>Amarin had appealed the FDA's action, but <a href="http://www.scripintelligence.com/policyregulation/Amarin-loses-FDA-Vascepa-SPA-appeal-shares-crushed-353927" target="_new">failed this past fall to convince</a> the agency to reconsider.</p><p>Amarin said the FDA acknowledged in the CRL Vascepa yielded a treatment difference showing reduced TG levels versus placebo in patients treated in the ANCHOR study. </p><p>The clinical rationale for reducing serum TGs with Vascepa and modifying other lipid/lipoprotein parameters shown in ANCHOR among statin-treated patients with TGs 200-499mg/dL is to reduce cardiovascular risk, the company explained. </p><p>But the FDA concluded that for regulatory approval purposes, there currently were insufficient data to support a drug-induced change in serum TGs as a surrogate for reducing cardiovascular risk in the ANCHOR population, Amarin said.</p><p>"FDA did not determine that the drug-induced effects of Vascepa, which go beyond TG-lowering, would not actually reduce cardiovascular risk in this population," the company said.</p><p>Amarin said it has proposed multiple alternative indications, data presentations, disclaimers and other regulatory pathways to approval under its supplemental new drug application.</p><p>But, the company said, the FDA determined not to approve label expansion reflecting the ANCHOR trial efficacy data. </p><p>Amarin noted that the safety data from the ANCHOR study remains in the currently FDA-approved labeling for Vascepa. </p><p>The FDA urged Amarin to complete its ongoing multinational, prospective, randomized, double-blind, placebo-controlled, parallel-group REDUCE-IT CVOT trial &ndash; telling the company in the CRL that final results from the study could be submitted to satisfy the agency's uncertainty about the benefits of drug-induced changes in lipid/lipoprotein parameters on CV risk in the ANCHOR population. </p><p>The firm emphasized the CRL has no effect on the SPA agreement for the REDUCE-IT study or the anticipated timing for results of the trial, which is designed to evaluate the effectiveness of Vascepa at the 4g daily dosage on top of statin therapy in reducing the prevalence of first major cardiovascular events in a high-risk patient population. </p><p>Amarin said enrollment in REDUCE-IT is at 93% of the targeted 8,000 patients. </p><p>The firm said an interim review by the independent data monitoring committee of the efficacy and safety results of the trial is scheduled to occur on reaching 60% of the target aggregate number of cardiovascular events, which likely will occur next year. </p><p>Based on projected event rates, Amarin also estimated the REDUCE-IT study may be completed in or about 2017, with final results expected to be available and published in 2018.</p><p>In <a href="http://www.scripintelligence.com/home/FDA-Panel-CVOT-needed-before-expanding-use-of-Amarins-Vascepa-347419" target="_new">October 2013</a>, the FDA's Endocrinologic and Metabolic Drugs Advisory Committee voted 9-2 that Vascepa was not ready for primetime in the ANCHOR indication &ndash; advising the agency to wait for the results of the REDUCE-IT study.</p><p>Shares of Amarin closed at $2.08 on 28 April, down 7 cents, or about 3.3%.</p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 345
+
+<p>Shares of Amarin tumbled about 10% on 28 April after the company disclosed the FDA declined to expand the use of Vascepa (icosapent ethyl) in the US as an adjunct to diet to reduce triglyceride (TG) levels in adults on statin therapy with mixed dyslipidemia and TG levels from 200mg/dL to 499mg/dL &ndash; the so-called ANCHOR indication.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+FDA rejects expanded use of Amarins Vascepa
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150422T230630
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150422T230630
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150422T230630
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028569
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+FDA rejects expanded use of Amarin's Vascepa 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358013
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+be75a700-8f6d-45bc-9920-81820e42b2d4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042336Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {D22CD748-7F87-4215-BEC8-7786AFF5E060}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/16/NICE Reverses Stance On BMS HCV Pill Daklinza
+parent: {6AAE7279-2B4F-4136-849E-20689C005A44}
+name: NICE Reverses Stance On BMS HCV Pill Daklinza
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d2724864-db2f-485f-90b4-d0e8b2499cca
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+NICE Reverses Stance On BMS' HCV Pill Daklinza
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+NICE Reverses Stance On BMS HCV Pill Daklinza
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5297
+
+<p>NICE, the health technology appraisal institute for England and Wales, has reversed its previous position to limit use of Bristol-Myers Squibb Company's HCV pill <i>Daklinza</i> to only patients with genotypes 1 and 4 without cirrhosis. It now says in final draft guidance issued Oct. 16 that presentations made by the US drug maker since that preliminary draft opinion was issued in July has convinced the HTA to include genotype 3 patients in Daklinza's label. </p><p>News of NICE's about-face was contained in the latest final draft guidance from the National Institute for Health and Care Excellence, which is now backing three new treatments for some adults with hepatitis C: BMS Daklinza (daclatasvir), Gilead Sciences' combo pill <i>Harvoni</i> (sofosbuvir/ledipasvir), and AbbVie Inc.'s <i>Viekirax</i> with or without <i>Exviera</i> (ombitasvir-paritaprevir-ritonavir with or without dasabuvir). </p><p>NICE in a statement Oct. 16 said the final draft guidance has been issued to consultees who can now, if they so choose, appeal against the decisions. The three therapies got the green light from NICE after agreeing to price discounts, details of which were not disclosed.</p><p>In its July guidance, NICE had said its appraisal committee concluded that BMS' Daklinza oral therapy would not be cost-effective for treating genotype 3 patients. That view has since changed.</p><p>BMS was thrilled with NICE's change of heart, which will see its once-a-day pill used in combination with other agents to treat certain patients with genotypes 1, 3 and 4. BMS in a statement noted that around 214,000 people in the UK are thought to have chronic HCV and that around 100,000 patients thought to have hepatitis C genotype 3, a difficult-to-treat and often aggressive form of chronic HCV.</p><p>Johanna Mercier, the general manager of Bristol-Myers Squibb UK & Ireland, added: "Before now, hepatitis C patients have had limited treatment options and we are delighted that NICE has taken the decision to recommend daclatasvir-based regimens. BMS and clinicians alike have seen the positive impact this treatment has had among some patients in the UK to date and it is therefore good news that it will now be available to a wider group of people who are in much need of new treatment options."</p><p>Commenting on the guidance, Liz Carroll, chief executive of The Haemophilia Society said, "We are delighted with the decision by NICE to recommend this treatment option for people with hepatitis C, particularly those with genotype 3 which is difficult-to-treat and progresses quickly. This decision means patients will have access to an effective treatment that could clear their infection, is a shorter course, and is more tolerable compared to traditional therapies, providing hope for the future."</p><p>HCV genotype 3 is associated with accelerated progression to end-stage liver disease, making treatment time critical. Genotype 3 is associated with increased incidence of hepatocellular carcinoma in cirrhotic patients, and more rapid progression to fibrosis compared with other genotypes, leading to increased mortality. Deaths from HCV have nearly quadrupled between 1996 and 2012 in England.</p><p>BMS also noted that up until recently treatment options for genotype 3 patients have been limited. Standard of care has been up to 48 weeks of interferon-based therapy which could be associated with a number of debilitating side effects throughout the body. "Daclatasvir, in combination with other treatments, has been generally well tolerated and has been shown to clear the infection in most of these patients after 12 or 24 weeks of therapy. It is currently one of only two all oral treatment regimens recommended in EU guidelines by The European Association for the Study of the Liver (EASL) for patients with genotype 3," it said.</p><p>"This is an important decision by NICE and very good news for patients," said Charles Gore, chief executive of The Hepatitis C Trust. </p><p>"Each new treatment for hepatitis C takes us closer to making the elimination of this virus as a serious public health problem a realistic possibility. At present, it is estimated that only 3% of people with hepatitis C in England get access to treatment each year. It is therefore crucial that patients are able to access new medicines, which offer much better efficacy and tolerability than previous treatments," said Gore.</p><p>Gilead and AbbVie were also pleased with the positive recommendations given their respective therapies.</p><p>"We are pleased with NICE's final appraisal, which represents Gilead's commitment to innovation in the areas of great unmet need, and reinforces the value of Harvoni as a clinical and cost effective treatment for the majority of genotype 1 and 4 adult hepatitis C patients. This decision means that a broader group of hepatitis C patients will have the chance to be cured," said Stelios Karagiannoglou, general manager, UK and Ireland, Gilead Sciences Ltd.</p><p>Neil Pumford, AbbVie's UK medical director, in a statement said: "We look forward to seeing the NHS England Operational Delivery Networks, which have been in existence since August 2015, implementing the NICE guidance swiftly and in full as soon as possible to benefit all eligible patients."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 470
+
+<p>NICE, the health technology appraisal institute for England and Wales, has reversed its previous position to limit use of Bristol-Myers Squibb Company's HCV pill <i>Daklinza</i> to only patients with genotypes 1 and 4 without cirrhosis. It now says in final draft guidance issued Oct. 16 that presentations made by the US drug maker since that preliminary draft opinion was issued in July has convinced the HTA to include genotype 3 patients in Daklinza's label. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+NICE Reverses Stance On BMS HCV Pill Daklinza
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151016T050001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151016T050001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151016T050001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030065
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+NICE Reverses Stance On BMS' HCV Pill Daklinza
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360982
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042507Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d2724864-db2f-485f-90b4-d0e8b2499cca
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042507Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

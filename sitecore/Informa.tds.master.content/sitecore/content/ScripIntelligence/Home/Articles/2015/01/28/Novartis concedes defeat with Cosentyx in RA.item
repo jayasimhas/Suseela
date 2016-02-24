@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {3F284D56-B8A4-4B7B-AAC3-889540735611}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/28/Novartis concedes defeat with Cosentyx in RA
+parent: {283E19C4-7725-4BBF-92AA-D47D04C385F4}
+name: Novartis concedes defeat with Cosentyx in RA
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6e1615ca-231a-45f3-bb64-bd9410d7343a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+ Novartis concedes defeat with Cosentyx in RA  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+Novartis concedes defeat with Cosentyx in RA
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2122
+
+<p> Novartis has dropped development of its first-in-class anti-IL17a product Cosentyx (secukinumab) in rheumatoid arthritis after disappointing Phase III data. </p> <p> The move means the product joins AstraZeneca's similar product brodalumab in being discontinued for this indication, although AZ pulled the rug at the Phase II stage. </p> <p> Novartis said, during its Q4 results presentation that the results of the NURTURE 1 study of secukinumab in rheumatoid arthritis (RA) met its primary endpoint but did not reach statistical significance for several pre-specified endpoints. The study's primary endpoint was the relatively low bar of ACR20 response compared with placebo, but the secondary endpoints included the more stringent ACR50 response necessary to compete effectively in this market, and disease activity scores. </p> <p> Analysts at Datamonitor Healthcare point out that Novartis's decision is unsurprising as the Phase II data for secukinumab in this disease were underwhelming and the company has relatively little experience in the already well-served RA market. It would be better off concentrating on the psoriatic indications (plaque psoriasis and psoriatic arthritis) where it has an efficacy advantage over the older anti-TNFs, and for which it has recently received approvals in the major markets of the US and EU (for psoriasis) and Japan (for both indications). When the Phase III trial began, BioMedTracker analysts put is chances of approval in this indication at 56%, or 3% below average. </p> <p> But there are products targeting IL-17 remaining in clinical development for rheumatoid arthritis: Lilly's ixekizumab and AbbVie's ABT-122 &ndash; both at Phase II &ndash; and Ablynx/Merck Serono's ALX-0761, which is due to enter Phase IIa next year. </p> <p> Other potential new drug classes still approaching the market in RA include the anti-IL6 products sarilumab (Regeneron/Sanofi) and sirukumab (Johnson &amp; Johnson /GlaxoSmithKline), both in Phase III, and the JAK inhibitors, for which Inctye/Lilly's baricitinib and Astellas's peficitinib are the most advanced at Phase III. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 165
+
+<p> Novartis has dropped development of its first-in-class anti-IL17a product Cosentyx (secukinumab) in rheumatoid arthritis after disappointing Phase III data. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Novartis concedes defeat with Cosentyx in RA
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150128T012637
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150128T012637
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150128T012637
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027695
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+ Novartis concedes defeat with Cosentyx in RA  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356410
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6e1615ca-231a-45f3-bb64-bd9410d7343a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

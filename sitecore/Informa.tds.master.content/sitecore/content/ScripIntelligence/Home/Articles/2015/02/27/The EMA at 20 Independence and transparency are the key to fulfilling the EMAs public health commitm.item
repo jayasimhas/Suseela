@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {502B66C5-9760-4CFF-B975-5ADAF4D3B1D2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/27/The EMA at 20 Independence and transparency are the key to fulfilling the EMAs public health commitm
+parent: {8E71AD2E-3D59-4E74-B732-B3CC0A62D38F}
+name: The EMA at 20 Independence and transparency are the key to fulfilling the EMAs public health commitm
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f32ac14c-4d91-4ce9-9903-470e6a4f3cf0
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{8F83A09A-07BA-4F08-827B-DF2AA1F0FE38}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 106
+
+The EMA at 20: Independence and transparency are the key to fulfilling the EMA's public health commitments
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 100
+
+The EMA at 20 Independence and transparency are the key to fulfilling the EMAs public health commitm
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6215
+
+<p><b>The EMA is ahead of the curve in addressing the concerns of patients, consumers and health professionals, but when it comes to independence, transparency and stimulating innovation, the agency still has a long way to go, say Tim Reed and Ancel.la Santos Quintano of Health Action International</b>.</p><p>The establishment of the European Medicines Agency (EMA) in 1995 was a bold and radical step&mdash;one that, despite the agency&rsquo;s chequered history, has come to show the value of supra-national regulation in evaluating and supervising what is now the largest single market in the world. But outside its core technical function as a regulator, the EMA has struggled to improve its independence and transparency, leading critics to argue that it has yet to fully honour its mandate to protect public health. </p><p>As a now almost entirely fee-based organisation, the EMA relies heavily on pharmaceutical companies to survive. In fact, industry funding for the agency accounted for 86% of its budget in 2014. To ensure true independence, the EMA&rsquo;s budget needs restructuring so direct financial relationships with the pharmaceutical industry can be phased out.</p><p>Meanwhile, the EMA&rsquo;s recent revision of its 2010 policy on conflicts of interest signalled, at best, a rather mediocre attempt to improve independence. Reduced cooling-off periods for declared interests, as well as arbitrary distinctions between direct and indirect interests, weakened the policy, making it fall well short of its true potential. A stronger policy is essential for objective decision-making at the agency, particularly in product-related assessments and discussions, including public hearings on pharmacovigilance.</p><p>The EMA also claims to play a role in stimulating innovation in the pharmaceutical sector through the provision of scientific advice; however, its current practice of providing this advice to facilitate approval, especially with the payment of a fee, represents a serious risk of regulatory capture. This is particularly the case considering that the outcomes of scientific advice meetings between 'the regulator' and 'the regulated' are never publicly reported. The potential for conflicts of interest is amplified when bought scientific advice is formally adopted by the agency&rsquo;s committee for human medicinal products (CHMP), which is responsible for making recommendations on marketing authorisation.</p><p>Let there be no doubt, European citizens need the EMA, not only as a regulatory body entrusted to protect their health, but also to promote innovation of new medicines of added therapeutic value that address real health needs. The agency purports to do this through ever-faster authorisation processes, which bring medicines to market sooner. But while timely access to medicines is important, it should never jeopardize patient safety. Procedures to provide earlier access to medicines should remain rigid and be used sparingly &ndash; never by the pharmaceutical industry for early marketing authorisation of mundane or 'me-too' medicines.</p><h2>Data transparency </h2><p>In the coming years, the EMA also needs to honour its long-voiced commitment to clinical trial data transparency. Although passing the 2014 policy on proactive publication was significant, the agency went too far in pacifying industry&rsquo;s criticisms. The end result is a policy that, on one hand, obliges companies to publish clinical study reports, but on the other offers considerable scope for industry to redact data that is crucial for thorough, independent analyses. The EMA&rsquo;s recent proposal on the EU&rsquo;s clinical trials database also raises serious concern about whether the agency will abide by the principle that clinical trial data should not be considered commercially confidential information. </p><p>Looking ahead, the implementation of policies on public access to clinical data, including pharmacovigilance data, must be guided by public, rather than commercial, interests. This also includes finding realistic solutions to providing access to de-identified patient level data.</p><p>Ultimately, the EMA has learned and grown substantially in 20 years in its challenging role as a regulatory body. When compared with national agencies, it is now ahead of the curve in responding to concerns raised by patients, consumers and health professionals. But in this era of growing health complexities, a drying R&D pipeline, reductions in truly innovative medicines, and excessive intellectual property rights, a courageous, independent and transparent regulatory agency &ndash; one that truly puts patients at the core of its mandate &ndash; is is required. We hope the EMA will accept this challenge now and in the coming years.</p><p><i>Tim Reed is Executive Director, and Ancel.la Santos Quintano Policy Advisor, at Health Action International</i>.</p><p><i>This is the latest in a series of articles that Scrip Intelligence and its sister publication Scrip Regulatory Affairs are publishing to mark the 20th anniversary of the European Medicines Agency. Over the next couple of weeks, in the run-up to the invitation-only scientific conference that the EMA is holding to mark the anniversary in London on 18 March, you'll be able to read what key individuals and stakeholders in the European pharmaceutical regulatory network have to say about the challenges the EMA and the network are facing and where they are headed as the agency moves into its third decade. </i></p><p><b><i>Previously in this series</i></b><i>:</i></p><p><i>The EMA at 20: "Fernand Sauer reviews the first two decades and offers advice for regulators at all levels,"</i><a href="http://www.scripintelligence.com/home/The-EMA-at-20-Fernand-Sauer-reviews-the-first-two-decades-and-offers-advice-for-regulators-at-all-levels-357045" target="_new">scripintelligence.com</a><i>, 3 March 2015.</i></p><p><i>The EMA at 20: "A decade of expansion, collaboration and new legislation", by Thomas Lönngren,</i><a href="http://www.scripintelligence.com/home/The-EMA-at-20-A-decade-of-expansion-collaboration-and-new-legislation-357061" target="_new">scripintelligence.com</a><i>, 4 March 2015.</i></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 308
+
+<p><b>The EMA is ahead of the curve in addressing the concerns of patients, consumers and health professionals, but when it comes to independence, transparency and stimulating innovation, the agency still has a long way to go, say Tim Reed and Ancel.la Santos Quintano of Health Action International</b>.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 100
+
+The EMA at 20 Independence and transparency are the key to fulfilling the EMAs public health commitm
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150227T222210
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150227T222210
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150227T222210
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028007
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 106
+
+The EMA at 20: Independence and transparency are the key to fulfilling the EMA's public health commitments
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356995
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f32ac14c-4d91-4ce9-9903-470e6a4f3cf0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042303Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

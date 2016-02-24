@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {7385DFF0-8585-4988-832C-B0CADEDC6A1B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/08/Galapagos Boasts BestInClass With Its RA JAK Inhibitor
+parent: {AF97731A-5C70-4542-9DF1-6FA2ED0D8593}
+name: Galapagos Boasts BestInClass With Its RA JAK Inhibitor
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 31936b19-7707-4acf-909f-7715796e5687
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{596C57D2-03CE-4CDE-A652-4F84D9CD4617}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 63
+
+ Galapagos Boasts ''Best-In-Class'' With Its RA JAK Inhibitor  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Galapagos Boasts BestInClass With Its RA JAK Inhibitor
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5956
+
+<p> Galapagos NV has thrown down the gauntlet to its rivals in the JAK inhibitor space, saying new Phase II data support a potential &quot;best-in-class&quot; title for its drug candidate filgotinib in rheumatoid arthritis. AbbVie Inc. now has 60 days to decide whether it wants to take up its option to license the product, something which analysts say these data make almost inevitable. </p><p> Coming off the back of positive results from <a href="http://www.scripintelligence.com/researchdevelopment/AbbVies-ducks-get-in-a-row-as-Galapagos-reports-promising-RA-data-357897" target="_new">Galapagos' Phase IIb DARWIN 1 study</a> when filgotinib was used as an add-on to methotrexate (MTX) in moderate to severe patients in April, the final 24-week results from its DARWIN 2 study show its therapeutic benefits as a monotherapy, also in moderate-to-severe patients who had shown an inadequate response to MTX. Once again, the drug's safety profile in the trial seems to differentiate it from its competitors. </p><p> &quot;We believe these support the best-in-class potential of filgotinib,&quot; said Galapagos' Chief Scientific Officer Piet Wigerinck. &quot;We very much look forward to AbbVie's in-licensing decision.&quot; </p><p> The 24-week DARWIN 2 study compared three once daily doses of filgotinib with placebo in 283 patients with moderate to severe rheumatoid arthritis who showed an inadequate response to methotrexate. </p><p> The primary endpoint was efficacy in terms of percentage of subjects achieving an ACR20 response after 12 weeks of treatment. At week 12, all subjects on placebo and those who received 50 mg once-daily filgotinib but did not achieve a 20% improvement in swollen joint count and tender joint count were re-randomized to a 100 mg once-daily dose. Other subjects maintained their randomized treatment until week 24. </p><p> Secondary trial objectives include efficacy at ACR20 at week 24, ACR50 and ACR70 response and other disease activity measures, as well as safety and tolerability. </p><p> A summary of the ACR responses and changes in disease activity score based on the inflammatory biomarker CRP (DAS28 (CRP)) at 24 weeks is as follows: </p><table> <tr> <td> <p> <b>Measure / Dose</b> </p>&nbsp; </td><td> <p> <b>50 mg (n=72) </b> </p>&nbsp; </td><td> <p> <b>100 mg (n=70)</b> </p>&nbsp; </td><td> <p> <b>200mg (n=69)</b> </p>&nbsp; </td> </tr><tr> <td> <p> ACR20 responders % </p>&nbsp; </td><td> <p> 57 </p>&nbsp; </td><td> <p> 77 </p>&nbsp; </td><td> <p> 68 </p>&nbsp; </td> </tr><tr> <td> <p> ACR50 responders % </p>&nbsp; </td><td> <p> 32 </p>&nbsp; </td><td> <p> 40 </p>&nbsp; </td><td> <p> 45 </p>&nbsp; </td> </tr><tr> <td> <p> ACR70 responders % </p>&nbsp; </td><td> <p> 19 </p>&nbsp; </td><td> <p> 26 </p>&nbsp; </td><td> <p> 25 </p>&nbsp; </td> </tr><tr> <td> <p> DAS28 (CRP) </p>&nbsp; </td><td> <p> -1.9 </p>&nbsp; </td><td> <p> -2.6 </p>&nbsp; </td><td> <p> -2.6 </p>&nbsp; </td> </tr><tr> <td colspan="4"> <p> ACR responses based on intent to treat (ITT) analysis, with non-responder imputation (NRI). Placebo was only given for a maximum duration of 12 weeks, so no comparisons were possible at Week 24. Mean baseline DAS28(CRP) varied between 6.0 and 6.2. The DAS28(CRP) is analyzed by ITT with last observation carried forward (LOCF). </p> </td> </tr> </table> <p> <p> Galapagos said that the maximum ACR20 and ACR50 responses were obtained at weeks eight and 12 respectively, but additional gain was reported for ACR70 and DAS28(CRP) during the second half of the study. In the highest dose groups, up to 50% of the patients reached low disease activity or remission. </p><p> The incidence of serious and non-serious treatment-emergent adverse events was evenly spread over the dose groups including placebo. There was a higher rate of infections with filgotinib (19% over 24 weeks) compared with placebo (10% up to week 12), but serious infections were limited (1.4% of filgotinib patients). No malignancies, tuberculosis, major adverse coronary events, opportunistic infections, or death were reported. </p><p> Consistent with its selective JAK1 inhibition, filgotinib treatment led to an improvement in hemoglobin (up to 0.4 g/dL, or 3.6% increase from baseline), Galapagos said. Neutrophil levels remained stable after initial decline to mid-normal range at week 4. There was no impact on lymphocytes or liver function tests. The similar increases in LDL and HDL were maintained, Galapagos added. </p><p> The study's principle investigator, Arthur Kavanaugh of the University of California, San Diego School of Medicine, commented: &quot;The safety profile is quite notable. The increase in hemoglobin and lack of lymphocyte reduction suggest that there can be differentiation of various safety signals among different JAK inhibitors.&quot; </p><p> Typical side effects reported with other JAK inhibitors, such as Incyte/Eli Lilly's JAK 1 and 2 inhibitor baricitinib and Vertex Pharmaceuticals' JAK 3 inhibitor VX-509 () include anemia, LDL cholesterol and liver function test changes, and neutropenia. </p><p> Analysts at Credit Suisse described the data as encouraging and &quot;supportive of the multi-billion dollar potential that we see in filgotinib&quot;. The efficacy data were solid and safety data reassuring, they said, adding that it was &quot;highly likely&quot; that AbbVie would now license the product. </p><p> AbbVie, as Abbott, <a href="http://www.scripintelligence.com/home/Galapagos-lands-150M-bounty-in-1.35bn-autoimmune-deal-with-Abbott-327475" target="_new">signed the deal</a> for filgotinib in 2012, paying $150m upfront. AbbVie has the option to license the product and take over development at the end of Phase II. In 2013, the deal was <a href="http://www.scripintelligence.com/home/AbbVie-Galapagos-expand-RA-deal-for-Crohns-study-343345" target="_new">expanded</a> to include Crohn's disease. A Phase II trial in this indication is also ongoing. </p> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 393
+
+<p> Galapagos NV has thrown down the gauntlet to its rivals in the JAK inhibitor space, saying new Phase II data support a potential &quot;best-in-class&quot; title for its drug candidate filgotinib in rheumatoid arthritis. AbbVie Inc. now has 60 days to decide whether it wants to take up its option to license the product, something which analysts say these data make almost inevitable. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Galapagos Boasts BestInClass With Its RA JAK Inhibitor
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150708T193041
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150708T193041
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150708T193041
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029484
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 63
+
+ Galapagos Boasts ''Best-In-Class'' With Its RA JAK Inhibitor  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359831
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+31936b19-7707-4acf-909f-7715796e5687
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

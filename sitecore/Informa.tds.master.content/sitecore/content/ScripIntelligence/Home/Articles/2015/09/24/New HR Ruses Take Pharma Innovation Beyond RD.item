@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {1ADE2D59-DA14-422F-AA52-D438F5C2BA6C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/24/New HR Ruses Take Pharma Innovation Beyond RD
+parent: {D0AAADAC-3A4D-4719-8453-0B9B929C7097}
+name: New HR Ruses Take Pharma Innovation Beyond RD
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2ae14984-615b-402a-af0c-a1e0be1ecc74
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+New HR Ruses Take Pharma Innovation Beyond R&D
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+New HR Ruses Take Pharma Innovation Beyond RD
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6416
+
+<p>Innovation in pharma appears to have percolated well beyond the lab and marketing strategies, if a peek into some interesting human resource (HR) practices at play in a number of leading multinational firms is anything to go by.</p><p>And as the war for talent intensifies, companies are deploying a string of innovative approaches along the recruitment-to-retention journey in an attempt to create successful and happy workplaces.</p><p>While psychometric testing during the recruitment process to secure the best fit for a role may not be unusual, how about linking every new hire with a childhood immunization drive? Or "instant recognition" for those who are probably less inclined to wait silently for rewards or a "resilience" program to ensure no ebb in energy levels at the workplace? Or even seemingly simple but invaluable stuff like concierge facilities, yoga classes, counselling services that help some stay the course. </p><p>Quintiles, which has recently launched a global initiative whereby it will make a donation to the Greater Gift Initiative (GGI) for every new hire globally, told <i>Scrip</i> that aligning social responsibility with its recruitment efforts takes its talent brand promise "Connect to a Great Opportunity" to a whole new level. Each donation will result in a child receiving an immunization in the name of the new hire, who will also receive a certificate in recognition of the donation.</p><p>"The great opportunity isn't just about the career choice our new hires make. It's the opportunity for new employees to understand the impact their work has on others while raising awareness of our commitment to social responsibility," Quintiles said.</p><p>Quintiles currently has more than 1,500 openings and believes there is "ample" opportunity for the program to have a "positive impact". It declined to share specifics on the donation, though.</p><p>Asked about how it would react to critics who argue that the GGI highlights the greater good of trial participation, a segment where Quintiles is a stakeholder, the world's largest provider of product development and integrated healthcare services said that its program was really an expansion of GGI's good work, as even more children in need would receive needed vaccines.</p><p>"We choose to look at this program in a larger context. The goals of GGI are aligned with the strategic priorities of our charitable contributions, which include health and education in life sciences."</p><p>Others like Meenakshi Priyam, head of human resources, Novartis India, underscored that the "culture of performance and innovation" plays a key role in the success of the company; hence one of the key objectives is to create the right culture so as to attract, develop and retain highly diversified employees. </p><p>Priyam believes that one of the ways of attracting, developing and retaining talent is by providing associates with multiple opportunities for growth &ndash; across functions, divisions and geographies.</p><p>There's also a focus on healthy "work-life integration", whereby Novartis employees can access numerous services on-site, such as gym, concierge and even weekly yoga classes. Access to the gym is free, while the other services are subsidized, the Swiss multinational said. </p><h2>Mind And Body</h2><p>Companies are also addressing various other aspects of employee wellness, including ensuring that appreciation isn't delayed or possibly lost in hierarchy.</p><p>Gaurav Bahadur, senior director- human resources, India and South Asia, at Sanofi, noted the French multinational's "Game Changers" effort, an instant recognition initiative launched recently to create a "performance culture" at Sanofi India. </p><p>The initiative facilitates an environment for acknowledging and recognizing employees who make a "real difference" &ndash; be it enhancing the brand image, going beyond the call of duty, taking up challenging assignments, solving problems innovatively or being solution-centric, Bahadur told <i>Scrip</i>. It is targeted at non-sales employees.</p><p>Experts have long underscored the value of appreciation at the workplace. In a recent article in the local media, Prabir Jha, global chief people officer (designate) at Cipla, said that some workplaces are "stingy" with compliments, appreciation and the little things that make individuals and teams feel appreciated.</p><p>"In my experience, environments that are low in the practice of positive psychology are unhappier places. No big annual bonus can ever replace the power of a smile or the little thank you," Jha, who has had stints as chief human resources officer in Dr Reddy's, Tata Motors and mostly Reliance Industries, said.</p><p>Others, like GlaxoSmithKline India, which prides itself as one of the first to introduce an Employee Assistance Program as part of its employee wellness initiative, have put in place a unique anonymous counselling service for employees. </p><p>"Any employee can call a helpline and seek counselling on matters relating to workplace issues, personal problems, health etc. The service provider is contracted never to identify individuals availing themselves of the service to the company so that the employee is free to discuss his/her problems in complete confidentiality," Ronald Sequeira, executive director, human resources at GSK Pharmaceuticals India, told <i>Scrip</i>.</p><p>Only statistics are provided to the company on the nature of usage, numbers etc. and these are essentially done to help the company understand if there are any "interventions" that need to be introduced, he added.</p><p>GSK also appears keen to ensure that employees eat right and are on the ball through the work day.</p><p>The firm's "Energy for Performance" or "Resilience" programs center on teaching employees to keep their energy levels high through the day by focusing on the right kind of snacks to be consumed, calorie in-take, nutrition, exercise and how to maintain the right glycemic index to stay energetic. </p><p>Employee safety also ranks high on GSK's agenda. Sequeira noted how "extensive inputs" are provided on safe two wheeler riding to ensure that the firm's medical representatives ride safely by not only complying with the road safety rules but also making sure that their two wheelers are well maintained. </p><p>"The company mandates the use of helmets and even pays for the same," he added.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 235
+
+<p>Innovation in pharma appears to have percolated well beyond the lab and marketing strategies, if a peek into some interesting human resource (HR) practices at play in a number of leading multinational firms is anything to go by.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+New HR Ruses Take Pharma Innovation Beyond RD
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150924T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150924T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150924T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029860
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+New HR Ruses Take Pharma Innovation Beyond R&D
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360563
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2ae14984-615b-402a-af0c-a1e0be1ecc74
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

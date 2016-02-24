@@ -199,3 +199,5 @@ config/env/local.json
 logs/*
 web/Website/local.js
 nant.send.bat
+web/Data
+web/Website/sitecore modules/Web/ExperienceExplorer

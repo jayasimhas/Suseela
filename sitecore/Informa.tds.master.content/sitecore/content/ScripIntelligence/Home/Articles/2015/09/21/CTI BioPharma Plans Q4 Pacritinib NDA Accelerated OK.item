@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {4FD6FC84-CD48-4DA3-9AB9-1EBABC950D87}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/21/CTI BioPharma Plans Q4 Pacritinib NDA Accelerated OK
+parent: {4B7F304D-9C2D-4432-B9EB-9C4CAC22ECA9}
+name: CTI BioPharma Plans Q4 Pacritinib NDA Accelerated OK
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1300bf78-1e7c-439c-9a24-750b97c4ea26
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+CTI BioPharma Plans Q4 Pacritinib NDA, Accelerated OK
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+CTI BioPharma Plans Q4 Pacritinib NDA Accelerated OK
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2661
+
+<p>Shares of CTI BioPharma rose nearly 12% on Sept. 23 after the company said it plans to submit a new drug application (NDA) in the fourth-quarter for pacritinib following a "productive" meeting with the FDA.</p><p>The firm also said it also plans to ask the FDA for an accelerated approval to market pacritinib, an investigational oral kinase inhibitor with specificity for JAK2, FLT3, IRAK1 and CSF1R, as a treatment for patients with intermediate and high-risk myelofibrosis with low platelet counts of less than 50,000 per microliter (<50,000></50,000></p><p>Myelofibrosis is a rare and serious chronic blood cancer that can affect patients of all ages with a median age of 65 years, with an estimated prevalence in the U.S. of about 18,000 patients.</p><p>The NDA will be primarily based on CTI BioPharma's randomized, open-label, multicenter PERSIST-1 Phase III trial, with additional data from the company's Phase I and II studies of pacritinib, plus a separate study report and datasets for the specific patient population with low platelet counts of <50,000 l,="" for="" whom="" there="" are="" no="" approved="" drugs.=""></50,000></p><p>Submitting an NDA after a single Phase III trial under accelerated approval, instead of waiting to complete two Phase III studies, CTI BioPharma insisted, "could potentially reduce time to market by up to 14 months."</p><p>In PERSIST-1, pacritinib is being compared with best available therapy (BAT), exclusive of a JAK inhibitor, in 327 enrolled patients with myelofibrosis, regardless of the patients' platelet counts. </p><p>The drug also is being studied in another randomized, open-label, multicenter Phase III trial, known as PERSIST-2, in which the experimental medicine is being compared with BAT, including Incyte's JAK1/JAK2 inhibitor Jakafi (ruxolitinib) dosed according to product label for patients with myelofibrosis whose platelet counts are <100,000></100,000></p><p>PERSIST-2 is being conducted under a special protocol assessment agreement with the FDA.</p><p>The design of PERSIST-1 and PERSIST-2 allows for patients on the BAT arm to crossover and receive treatment with pacritinib if their disease progresses or after they achieve the 24-week measurement endpoint, CTI BioPharma said.</p><p>But the independent data monitoring committee for the program recommended patients on the best available therapy arm should not crossover to receive pacritinib due to non-statistically significant safety concerns in patients who crossover after 24 weeks, which crossover confounds evaluation of survival. </p><p>Shares of CTI BioPharma closed at $1.57, up 13 cents, or 9%.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 213
+
+<p>Shares of CTI BioPharma rose nearly 12% on Sept. 23 after the company said it plans to submit a new drug application (NDA) in the fourth-quarter for pacritinib following a "productive" meeting with the FDA.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+CTI BioPharma Plans Q4 Pacritinib NDA Accelerated OK
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150921T090542
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150921T090542
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150921T090542
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029857
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+CTI BioPharma Plans Q4 Pacritinib NDA, Accelerated OK
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360560
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1300bf78-1e7c-439c-9a24-750b97c4ea26
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

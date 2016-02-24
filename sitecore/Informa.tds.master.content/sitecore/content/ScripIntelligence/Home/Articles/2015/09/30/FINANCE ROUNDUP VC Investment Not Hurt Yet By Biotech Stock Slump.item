@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {B912FD79-C352-4342-97CC-BEAC35218804}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/30/FINANCE ROUNDUP VC Investment Not Hurt Yet By Biotech Stock Slump
+parent: {3AB4BCB7-8BCD-4055-A7F6-07802CFBAC05}
+name: FINANCE ROUNDUP VC Investment Not Hurt Yet By Biotech Stock Slump
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4a46efa1-f00f-4ae3-9515-d40aedff6377
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+FINANCE ROUNDUP: VC Investment Not Hurt Yet By Biotech Stock Slump
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+FINANCE ROUNDUP VC Investment Not Hurt Yet By Biotech Stock Slump
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9950
+
+<p>Neon Therapeutics launched its immunotherapy platform with $55m in Series A venture capital, exceeding recent investments in several other private therapeutics companies, including a diabetes drug developer on its fifth round of funding.</p><p>Neon's focus on the hot cancer immunotherapy field rose to the top in a recent spate of VC fundraising announcements, but Elcelyx Therapeutics disclosed a still impressive $40m Series E round to fund its Phase IIb clinical trial for metformin delayed-release (metformin DR). And with venture capital still pouring into private biotechnology companies despite a slump in biotech stocks, Fidelity Biosciences sharpened its focus on early-stage funding for innovative companies.</p><p>Fidelity Biosciences and Devonshire Investors' technology venture capital group joined together to become F-Prime Capital, providing a single name for the venture capital funds of FMR LLC, the parent company of Fidelity investments, the firms announced jointly on Oct. 5. </p><p>The consolidation of VC teams is meant to "clarify our mission as a venture capital investor in private companies apart from Fidelity Investments' mutual fund business," F-Prime managing partner Stephen Knight said in a statement regarding the combined VC venture's launch.</p><p>The F-Prime Capital teams have invested in more than 89 technology and life science companies during the past 15 years and "will carry on our mission of partnering with leading entrepreneurs and top academics to build great companies," Knight said.</p><p><a href="http://www.scripintelligence.com/business/FINANCE-ROUNDUP-Will-VC-Be-Last-Man-Standing-If-Biotech-Bubble-Bursts-360716" target="_new">Venture capital investment seems to be unscathed</a>, so far, by the recent decline in biotech stocks that's been fueled by <a href="http://www.scripintelligence.com/home/Biotech-Walloped-On-Clinton-Drug-Price-Controls-Threat-360599" target="_new">concerns about drug pricing</a>, <a href="http://www.scripintelligence.com/home/TPP-Missed-Opportunity-Or-Unprecedented-Assault-360838" target="_new">international intellectual property</a> and other industry issues, all of which contributed to a 3.77% drop in the Nasdaq Biotechnology Index (NBI) on Oct. 6 versus a 0.69% decline in the broader Nasdaq index.</p><p>It's probably too early in the biotech stock slump for VC firms to begin holding off on drug development investments &ndash; <a href="http://www.scripintelligence.com/home/Despite-Headwinds-US-IPOs-Show-Few-Signs-Of-Slowing-In-Q3-360806" target="_new">not even biotech IPOs have been hit yet</a> by the NBI's continued decline &ndash; but quarterly venture capital data will be important numbers to watch during the next few quarters, especially since biotech VC investment reached <a href="http://www.scripintelligence.com/home/Biotech-VC-deals-have-best-ever-quarter-2.3bn-359519" target="_new">a new high during the second quarter of 2015</a>. </p><p>The table below describes Neon's Series A funding round as well as other recent VC and private equity biotech investments.</p><table><tbody><tr><td><p><b>Company</b></p>&nbsp;</td><td><p><b>Investors</b></p>&nbsp;</td><td><p><b>Use Of Proceeds</b></p>&nbsp;</td></tr><tr><td><p>Neon Therapeutics;</p><p>Cambridge, Massachusetts</p>&nbsp;</td><td><p>Clal Biotechnology Industries, Access Industries and Third Rock Ventures backed a $55m Series A venture capital round to establish Neon, which is developing therapeutic vaccines and T cell therapies that recognize and attack cancer via targeting proteins known as neoantigens, which result from mutations that occur during tumor growth.</p>&nbsp;</td><td><p>Neon's interim CEO Cary Pfeffer said the company will "develop therapies that are complimentary to current immunomodulatory therapies and may significantly enhance the specificity and potency of existing approaches." Lead product candidate NEO-PV-01, is a personalized neoantigen vaccine that will be advanced beyond initial clinical trials already conducted by the Broad Institute and Dana-Farber Cancer Institute.</p>&nbsp;</td></tr><tr><td><p><a href="http://www.scripintelligence.com/researchdevelopment/Elcelyxs-NewMet-meets-1st-Phase-IIb-endpoint-346344" target="_new">Elcelyx Therapeutics</a>;</p><p>San Diego</p>&nbsp;</td><td><p>Hong Kong-based global private equity firm Sailing Capital led Elcelyx's $40m Series E with participation from another new investor Clough Capital Partners L.P. The company's prior investors Morgenthaler Ventures, Kleiner Perkins Caufield & Byers, Technology Partners and GSM Fund LLC also supported the funding round.</p>&nbsp;</td><td><p>Elcelyx will use the money to finance a 550-patient, dose-ranging Phase IIb clinical trial for metformin DR, a proprietary formulation of metformin &ndash; a generic that is contraindicated or isn't well tolerated in about 40% of type 2 diabetics. The company also is planning two Phase III trials, including a late-stage study in patients with renal impairment.</p>&nbsp;</td></tr><tr><td><p>Theracon;</p><p>Nice, France</p>&nbsp;</td><td><p>OrbiMed and New Enterprise Associates led a $35m Series A round for Theracon with participation from existing investors Inserm Transfert Initiative and Versant Ventures.</p>&nbsp;</td><td><p>Theracon is developing treatments for achondroplasia, the leading cause of dwarfism, including a soluble form of human fibroblast growth factor receptor 3 (FGFR3), which will be taken into proof-of-concept studies.</p>&nbsp;</td></tr><tr><td><p>AMO Pharma Ltd.;</p><p>London, UK and Philadelphia, Pennsylvania.</p>&nbsp;</td><td><p>Woodford Investment Management via the Woodford Patient Capital Trust provided $25m in private equity financing, which AMO will use to fund drug development and acquisitions of additional assets.</p>&nbsp;</td><td><p>AMO will advance two recently acquired therapies &ndash; AMO-02 for myotonic dystrophy and AMO-01 for fragile X syndrome &ndash; in 2016. AMO-02 is a glycogen synthase kinase 3 beta (GSK3 beta) inhibitor that is headed for Phase II. AMO-01, an inhibitor of the Ras-extracellular signal-regulated kinase (Ras-ERK) pathway, will be tested in its first human clinical trial.</p>&nbsp;</td></tr><tr><td><p>Oncobiologics Inc.;</p><p>Cranbury, New Jersey</p>&nbsp;</td><td><p>Sabby Management LLC added capital to <a href="http://www.scripintelligence.com/business/Oncobiologics-raises-31m-for-biosimilars-RaNA-Ra-SutroVax-add-VC-cash-359633" target="_new">a $31m private equity fundraising effort</a> that Oncobiologics revealed in July, bringing the total to $44m.</p>&nbsp;</td><td><p>Oncobiologics is developing biosimilars and recently reported results from a Phase I clinical trial for its Avastin (bevacizumab) biosimilar product candidate ONS-1045.</p>&nbsp;</td></tr><tr><td><p>Accelerator Corp.;</p><p>Seattle, Washington and New York City</p>&nbsp;</td><td><p>AbbVie, WuXi PharmaTech and Watson Fund added $11.7m in additional capital to Accelerator IV, <a href="http://www.scripintelligence.com/business/BioNotebook-Two-new-VC-funds-and-a-financing-Venrock-Accelerator-Cold-Genesys-353162" target="_new">a fund that initially raised $51.1m in August 2014</a> to expand Accelerator's biotech incubator from Seattle, Washington to New York City.</p>&nbsp;</td><td><p>Accelerator will invest capital from its latest fund in various early-stage life science startups with an emphasis on companies that are developing novel therapeutics. Accelerator IV has raised $62.8m to date and Accelerator Corp. has raised more than $100m to fund new life science companies.</p>&nbsp;</td></tr><tr><td><p>Tunitas Therapeutics;</p><p>San Francisco</p>&nbsp;</td><td><p>Ally Bridge Group and WuXi Ventures co-led a $10m Series A funding round for Tunitas with participation from RA Capital Advisors. The company previously prepared its lead drug candidate for clinical trials with funding from the National Institutes of Health (NIH).</p>&nbsp;</td><td><p>Tunitas is developing protein therapeutics that are designed to improve upon the efficacy, safety and duration of existing allergy therapies. The company will use its VC cash to conduct Phase I clinical trials and initiate a Phase IIa trial for its lead fusion protein candidate, epsi-gam, for uncontrolled moderate-to-severe asthma and for severe food allergies. </p>&nbsp;</td></tr><tr><td><p>OncoResponse;</p><p>Houston, Texas</p>&nbsp;</td><td><p>The University of Texas MD Anderson Cancer Center and Theraclone Sciences launched the immuno-oncology antibody discovery company OncoResponse with a $9.5m Series A round led by ARCH Venture Partners, Canaan Partners and MD Anderson with participation from William March Rice University and Alexandria Real Estate Equities. </p>&nbsp;</td><td><p>OncoResponse will use Theraclone's I-STAR immune repertoire screening technology to identify therapeutic antibodies against novel targets from patients who've been treated with immuno-oncology drugs. The startup also will have access to samples and data from patients that have responded well to immunotherapies. MD Anderson also will lend its oncology and translational medicine expertise to the new company.</p><p>Theraclone and PharmAthene <a href="http://www.scripintelligence.com/home/BioNotebook-PharmAtheneTheraclone-Orexigen-OptimerCubist-Xencor-Exelixis-348459" target="_new">planned to merge in 2013</a>, but later canceled the transaction. However, Theraclone has numerous antibody discovery collaborations, including deals signed with Gilead Sciences <a href="http://www.scripintelligence.com/business/BioNotebook-Seven-deals-an-extension-and-a-delay-RegulusBiogen-TheracloneGilead-IgnytaNerviano-AffirisMJFF-and-more-353212" target="_new">in 2014</a> and Pfizer Inc. <a href="http://www.scripintelligence.com/business/Pfizer-and-Theraclone-in-632-million-antibody-drug-research-deal-308868" target="_new">in 2011</a>.</p>&nbsp;</td></tr></tbody></table><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 244
+
+<p>Neon Therapeutics launched its immunotherapy platform with $55m in Series A venture capital, exceeding recent investments in several other private therapeutics companies, including a diabetes drug developer on its fifth round of funding.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+FINANCE ROUNDUP VC Investment Not Hurt Yet By Biotech Stock Slump
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150930T181729
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150930T181729
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150930T181729
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029978
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+FINANCE ROUNDUP: VC Investment Not Hurt Yet By Biotech Stock Slump
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360758
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4a46efa1-f00f-4ae3-9515-d40aedff6377
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

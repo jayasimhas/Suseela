@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {90F5A4AE-4E6A-4087-B02D-BEAA5826B427}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/30/Q4 EARNINGS Merck pushes pipeline as competition currency hit revenue
+parent: {BCCFFBED-8CF5-4EB8-8FFF-BBD8EF95AF0D}
+name: Q4 EARNINGS Merck pushes pipeline as competition currency hit revenue
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4113311f-f670-4a72-84c8-76c048b92593
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+Q4 EARNINGS: Merck pushes pipeline as competition, currency hit revenue
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 69
+
+Q4 EARNINGS Merck pushes pipeline as competition currency hit revenue
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10770
+
+<p>Merck & Co won US FDA approval for six new products in 2014, an achievement that won't fully correct the drop in net sales that the company expects to see in 2015 as one of its top-selling products faces biosimilar competition and foreign currency exchange rates eat into profits. </p><p>Merck, like many of its big pharma colleagues with recently expired US patents for blockbuster products, emphasized the value of its research and development pipeline in the near and long term during its fourth quarter and year-end 2014 earnings conference call. But those programs won't boost sales and earnings growth right away, since the company's 2015 forecast anticipates lower revenue and earnings per share (EPS) than were reported for the past year.</p><p>Merck's 2014 sales and earnings were in line with analyst consensus, even with sales that fell 7% year-over-year in the fourth quarter of 2014 to $10.5bn and dropped 4% to $42.2bn for the year (scripintelligence.com, <a href="http://www.scripintelligence.com/home/4Q-preview-AbbVie-AZ-Gilead-GSK-Lilly-Merck-Novo-Nordisk-and-Sanofi-356426" target="_new">28 January 2015</a>). Non-GAAP EPS of $0.87 for the quarter and $3.49 for the year were essentially unchanged versus 2013.</p><p>The company anticipates $38.3bn to $39.8bn in revenue and non-GAAP EPS between $3.32 and $3.47 in 2015, including a $2.6bn currency impact on revenue and $1bn in sales lost in recent divestitures &ndash; the disposition of its consumer health business to Bayer and AstraZeneca's acquisition of Merck's share of Nexium and Prilosec sales (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Merck-and-Co-and-Bayer-agree-their-own-asset-swapping-megadeal-351629" target="_new">4 May</a> and <a href="http://www.scripintelligence.com/home/2Q-EARNINGS-Pharma-sales-fall-but-Merck-optimistic-353093" target="_new">29 July 2014</a>).</p><p>ISI Evercore analyst Mark Schoenebaum said in a note to investors that the company's guidance was in line with consensus excluding the currency impact. Merck closed down 3.2% at $59.05 per share on 4 February following its earnings and guidance disclosures.</p><p>"While we made real progress in 2014, you should all know that we are by no means content," Merck chairman and CEO Kenneth Frazier said during the company's earnings call.</p><p>Mr Frazier noted that "an important part of our strategy is actively pursuing the best external opportunities to augment our portfolio, while divesting products and businesses that we believe can be better maximized outside of Merck."</p><p>Three major transactions in 2014 were the buyout of OncoEthix for up to $265m, the $9bn purchase of antibiotic and hospital care specialist Cubist Pharmaceuticals, and the acquisition of hepatitis C-focused Idenix Pharmaceuticals for $3.85bn (scripintelligence.com, <a href="http://www.scripintelligence.com/business/Merck-pays-110m-for-OncoEthix-and-ex-Mitsubishi-oncology-candidate-355740" target="_new">18 December</a>, <a href="http://www.scripintelligence.com/home/Mercks-9.5bn-Cubist-buy-overshadowed-by-court-decision-355511" target="_new">9 December</a> and <a href="http://www.scripintelligence.com/home/Merck-in-3.85bn-Idenix-buy-to-bolster-hep-C-outlook-352208" target="_new">9 June 2014</a>).</p><p><b>Current key assets</b></p><p>In terms of current pharmaceutical assets, immunology, diabetes, hospital acute care and vaccines contributed to positive growth in 2014, but declining hepatitis C drug sales hurt Merck's revenue tally, per the table below. The company said in January that it will discontinue sales of Victrelis (boceprevir) in 2015 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Who-dares-stay-in-hepatitis-C-as-another-drug-dies-356307" target="_new">22 January 2015</a>).</p><table><tbody><tr><td><p><b>Drug</b></p>&nbsp;</td><td><p><b>2014 Sales</b></p>&nbsp;</td><td><p><b>2013 Sales</b></p>&nbsp;</td><td><p><b>Difference</b></p>&nbsp;</td></tr><tr><td><p>Zetia (ezetimibe)</p>&nbsp;</td><td><p>$2.7bn</p>&nbsp;</td><td><p>$2.7bn</p>&nbsp;</td><td><p>0%</p>&nbsp;</td></tr><tr><td><p>Vytorin (ezetimibe/ simvastatin)</p>&nbsp;</td><td><p>$1.5bn</p>&nbsp;</td><td><p>$1.6bn</p>&nbsp;</td><td><p>-8%</p>&nbsp;</td></tr><tr><td><p>Januvia (sitagliptin)</p>&nbsp;</td><td><p>$3.9bn</p>&nbsp;</td><td><p>$4bn</p>&nbsp;</td><td><p>-2%</p>&nbsp;</td></tr><tr><td><p>Janumet (sitagliptin/ metformin)</p>&nbsp;</td><td><p>$2.1bn</p>&nbsp;</td><td><p>$1.8bn</p>&nbsp;</td><td><p>13%</p>&nbsp;</td></tr><tr><td><p>Pegintron (peginterferon alfa-2b)</p>&nbsp;</td><td><p>$381m</p>&nbsp;</td><td><p>$496m</p>&nbsp;</td><td><p>-23%</p>&nbsp;</td></tr><tr><td><p>Victrelis</p>&nbsp;</td><td><p>$153m</p>&nbsp;</td><td><p>$428m</p>&nbsp;</td><td><p>-64%</p>&nbsp;</td></tr><tr><td><p>Remicade (infliximab)</p>&nbsp;</td><td><p>$2.4bn</p>&nbsp;</td><td><p>$2.3bn</p>&nbsp;</td><td><p>4%</p>&nbsp;</td></tr><tr><td><p>Simponi (golimumab)</p>&nbsp;</td><td><p>$689m</p>&nbsp;</td><td><p>$500m</p>&nbsp;</td><td><p>38%</p>&nbsp;</td></tr><tr><td><p>Keytruda (pembrolizumab)</p>&nbsp;</td><td><p>$55m</p>&nbsp;</td><td><p>NA</p>&nbsp;</td><td><p>NA</p>&nbsp;</td></tr><tr><td><p>Nasonex (mometasone furoate monohydrate)</p>&nbsp;</td><td><p>$1.1bn</p>&nbsp;</td><td><p>$1.3bn</p>&nbsp;</td><td><p>-18%</p>&nbsp;</td></tr><tr><td><p>Singulair (montelukast sodium)</p>&nbsp;</td><td><p>$1.1bn</p>&nbsp;</td><td><p>$1.2bn</p>&nbsp;</td><td><p>-9%</p>&nbsp;</td></tr><tr><td><p>Gardasil (human papillomavirus quadrivalent)</p>&nbsp;</td><td><p>$1.7bn</p>&nbsp;</td><td><p>$1.8bn</p>&nbsp;</td><td><p>-5%</p>&nbsp;</td></tr><tr><td><p>Pneumovax 23 (pneumococcal vaccine polyvalent)</p>&nbsp;</td><td><p>$746m</p>&nbsp;</td><td><p>$653m</p>&nbsp;</td><td><p>14%</p>&nbsp;</td></tr></tbody></table><p><p>Merck's immunology business grew by 10% in 2014, but that includes a 3% decline for Remicade (infliximab), which slumped as the year wore on due to biosimilar competition in Europe. Simponi sales grew at a fast pace, but Merck does not expect its continued gains in 2015 to make up for Remicade's sales losses in Europe where the use of substantially discounted biosimilars will increase this year (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Biosimilar-Remicade-now-available-in-Europe-350035" target="_new">13 February 2014</a>).</p><p>Merck's president of global human health Adam Schechter said during the company's conference call that "we believe in the broader European markets that we will see significant price decreases from the competition, but it will impact primarily the new patients coming in. Therefore, we'll try to hang on to the existing patients for as long as we can."</p><p>Remicade is competing with biosimilars in Europe that cost about 30% less than the brand-name product &ndash; there's a greater than 30% discount in Norway &ndash; but Merck anticipates that it will have to drop Remicade's price to the biosimilar reference list price in only four countries: France, Spain, Austria and Belgium.</p><p>Sales of the cervical cancer preventing-product Gardasil fell globally, but Merck's human papillomavirus (HPV) vaccine franchise should grow in 2015 following US FDA approval of Gardasil 9 (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Mercks-new-Gardasil-provides-broader-protection-355558" target="_new">11 December 2014</a>).</p><p>Merck's programmed cell death-1 (PD-1) checkpoint inhibitor Keytruda (pembrolizumab) was approved to treat advanced melanoma in the US in September and generated $5m in third quarter and $50m in fourth quarter sales (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Merck-melanoma-drug-Keytruda-OKd-1st-US-PD-1-353714" target="_new">4 September 2014</a>). About 2,000 patients have been treated with the immunotherapy, mostly under Keytruda's FDA-approved label, and Mr Schechter said payers have reimbursed the cost for almost all prescriptions that comply with the PD-1 inhibitor's label.</p><p><b>Pipeline milestones ahead</b></p><p>Merck plans to seek FDA approval for Keytruda in the treatment of lung cancer with a supplemental biologic license application (sBLA) submission in mid-2015 and the company will report additional data this year from some of its 30-plus ongoing clinical trials in several different indications, including monotherapy and combination therapy trials (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Merck-ups-filing-pace-for-lung-cancer-HCV-drugs-356097" target="_new">13 January 2015</a>).</p><p>The company also said in January, when it disclosed the Keytruda lung cancer filing timeline, that it would seek approval for its two-drug hepatitis C virus (HCV) therapy grazoprevir/elbasvir (MK-5172/MK-8742) in 2015. Phase III studies for the "doublet" therapy were fully enrolled in the fourth quarter of 2014 and should yield data in time for presentation at the European Association for the Study of the Liver (EASL) international meeting in April in Vienna, Austria. A new drug application (NDA) submission to the FDA is expected during the first half of this year.</p><p>However, the FDA recently notified Merck that it rescinded the breakthrough therapy designation granted to the two-drug combination, which would have sped up the agency's review of the HCV regimen by four months, but the company does not expect the breakthrough therapy decision to impact its ND filing plans (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Healthy-HCV-market-kills-Mercks-breakthrough-status-356534" target="_new">4 February 2015</a>).</p><p>Merck has initiated the Phase II C-CREST clinical trial program to test grazoprevir and MK-3682 &ndash; an Idenix-developed drug formerly known as IDX21437 &ndash; with elbasvir or MK-8048. Phase III studies with one of the Phase III regimens are expected to begin by the end of 2015.</p><p>The company does not expect to share results from the Phase III REVEAL clinical trial for the CETP inhibitor anacetrapib, a cholesterol-lowering drug, in 2015 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Merck-is-a-lonely-hunter-in-CETP-field-342787" target="_new">2 May 2013</a>). </p><p>But in terms of long-awaited data from a long-term trial, Merck plans to report data from the TECOS cardiovascular outcomes trials for Januvia at the American Diabetes Association (ADA) meeting in June.</p><p>In addition to managing programs in the R&D pipeline, Mr Frazier noted that "we will also pursue the right kinds of deals, which for us are bolt-on opportunities that drive our pipeline, which of course is the most important thing to our future growth."</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 288
+
+<p>Merck & Co won US FDA approval for six new products in 2014, an achievement that won't fully correct the drop in net sales that the company expects to see in 2015 as one of its top-selling products faces biosimilar competition and foreign currency exchange rates eat into profits. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+Q4 EARNINGS Merck pushes pipeline as competition currency hit revenue
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150130T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150130T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150130T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027728
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+Q4 EARNINGS: Merck pushes pipeline as competition, currency hit revenue
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356459
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4113311f-f670-4a72-84c8-76c048b92593
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

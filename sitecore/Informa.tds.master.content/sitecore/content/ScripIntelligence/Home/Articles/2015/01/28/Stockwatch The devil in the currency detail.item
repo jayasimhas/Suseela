@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {3CCB072B-FBB4-49FF-A31E-19E08E5D3CED}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/28/Stockwatch The devil in the currency detail
+parent: {283E19C4-7725-4BBF-92AA-D47D04C385F4}
+name: Stockwatch The devil in the currency detail
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b95874ee-3ee2-46be-9e76-eb099a29c410
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Stockwatch: The devil in the currency detail
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Stockwatch The devil in the currency detail
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6972
+
+<p>This season's currency shifts are not merely crimping pharma's fourth-quarter 2014 earnings reports and 2015 guidance, but crushing them in a hydraulic press and only letting them out when their size is guaranteed to disappoint investors. That's the big picture; let's take a look at the important but little appreciated subtexts for some companies that might magnify or mitigate these currency effects.</p><p><p>The new normal for 2015 is for profitable companies to have their outlooks dented by currency translations just as many of them were expected to come out of the shadow of their patent cliffs. Pfizer reported sales and earnings that were about 2% ahead of analysts' consensus estimates for the last quarter of 2014 but, like Bristol-Myers Squibb (BMS), which reported even better quarterly results than Pfizer, the celebrations were transformed into a wake by worse than expected 2015 guidance (<a href="http://www.scripintelligence.com/home/All-about-that-RandD-base-Bristol-Myers-and-Pfizer-4Q-earnings-356412" target="_new">scripintelligence.com, 28 January 2015</a>). Despite the analysts from Citigroup describing Pfizer's results as 'robust' and Pfizer's insistence that a transformational deal is not required, its continuing patent expiries and every analysis by groups of Master's-level students that I've reviewed in the last two years suggests the opposite.</p><p><p>On an admittedly down day in the stock market, both Pfizer and BMS saw their share prices fall on their announcements. Novartis on the other hand reported fourth-quarter 2014 sales that were just in line with consensus estimates, earnings which beat consensus estimates by about the same 2% as Pfizer, and the now obligatory lowering of 2015 guidance (because of Swiss franc strength; <a href="http://www.scripintelligence.com/home/Novartis-pharma-sales-down-in-4Q-but-Alcon-and-Sandoz-units-see-profits-356399" target="_new">scripintelligence.com, 27 January 2015</a>). Since the pressures it faces are similar to those weighing on Pfizer and BMS, I was expecting a sympathetically negative share price reaction to Novartis's results. Paradoxically, though, the Novartis share price finished up over 2% on the day of its results with investors cheering the announcement of significant operating cost cuts. These.</p><p><p>Regarding those cuts, an important point is that they were only partially related to their ongoing vaccines and consumer divestments. Where will the rest come from? If they are all in Switzerland, then the removal of expensive overhead should be cheered. If the cuts are in the increasingly cheaper EU operations then the share price rise was overdone. Unfortunately, we don't yet have that sort of detail. </p><p>Meanwhile, similar scenarios played out in the results reported by Amgen, Alexion and Celgene last week, although not those of Roche.</p><p><p>Fellow Swiss-domiciled company Roche tried to report a mirror image set of results to Novartis with sales about 2% ahead of consensus estimates, but by the bottom of the income statement, earnings were about 4% below estimates because of currencies and a higher tax rate (<a href="http://www.scripintelligence.com/business/Roche-sees-profits-fall-16-356433" target="_new">scripintelligence.com, 28 January 2015</a>). The analysts from JP Morgan accurately described Roche's results as "disappointing", while the analysts at Jefferies threw their reputations to the wind in describing them as "strong". The weakness seen in the share prices of Pfizer and BMS was magnified by the earnings miss at Roche as investors ignored the Jefferies analysts and drove the Roche share price down about 2% over the remainder of the week. </p><p><p>Amgen reported what was widely recognised as a strong last quarter of 2014 with sales and earnings that beat consensus earnings, in part thanks to a favorable tax rate (<a href="http://www.scripintelligence.com/business/Amgen-beats-expectations-in-2014-and-gears-up-for-more-growth-356420" target="_new">scripintelligence.com 28 January 2015</a>). Unlike almost every other big company reporting this season, Amgen left its full-year 2015 guidance unchanged from its release back in October 2014. Whilst the analysts from Citigroup pointed to the positive and negative influences of biosimilars on Amgen, the analysts from JP Morgan made the excellent point that since 75% of its sales are in US dollars, Amgen is much less exposed to the ravages of foreign exchange than most companies.</p><p><p>Although serial outperformer Alexion's results announcement was muted by marginal sales and earnings beats of consensus estimates, its 2015 guidance was lowered because of the impact of &ndash; you guessed it &ndash; foreign exchange (<a href="http://www.scripintelligence.com/business/4Q-EARNINGS-ROUNDUP-Alexion-Vertex-and-Baxter-356449" target="_new">scripintelligence.com, 30 January 2015</a>). The share price of Alexion however, rose strongly on the results. Had those investors realised that unlike Amgen, less than 33% of Alexion's sales were in US dollars, they might be more worried in the face of greater currency pressures. In addition, like Amgen, Alexion benefited from a lower tax rate. However, in Alexion's case this was almost certainly due to its intellectual property being based in Ireland (<a href="http://www.scripintelligence.com/home/Alexion-surges-on-Soliris-sales-Irish-tax-rate-349692" target="_new">scripintelligence.com, 30 January 2014</a>). Presumably this IP earned royalties there in euros which when reported in dollars may suffer a translation that could blunt any tax rate advantage.</p><p><p>It could be worse, however. Celgene reported narrow beats of consensus estimates of sales and earnings and, like Amgen, reiterated its 2015 guidance (<a href="http://www.scripintelligence.com/business/4Q-EARNINGS-Celgene-growth-on-track-for-2015-and-beyond-356451" target="_new">scripintelligence.com, 30 January 2015</a>). But the location of Celgene's international manufacturing and commercial operations is important. Its significant investment in Switzerland would be difficult to reverse. Expensive Revlimid (lenalidomide) made in Switzerland and shipped to the EU or Russia worried me enough last week to sell some Celgene and put the money into Amgen. I hope that you can see the method to my madness.</p><p><p>The Magna BioPharma Income fund holdings include Pfizer, BMS, Novartis, Roche, Amgen, Alexion and Celgene.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest manages the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 410
+
+<p>This season's currency shifts are not merely crimping pharma's fourth-quarter 2014 earnings reports and 2015 guidance, but crushing them in a hydraulic press and only letting them out when their size is guaranteed to disappoint investors. That's the big picture; let's take a look at the important but little appreciated subtexts for some companies that might magnify or mitigate these currency effects.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Stockwatch The devil in the currency detail
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150128T071223
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150128T071223
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150128T071223
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027697
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Stockwatch: The devil in the currency detail
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356412
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b95874ee-3ee2-46be-9e76-eb099a29c410
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042245Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

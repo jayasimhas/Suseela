@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {E37D1613-D43C-4666-BE3F-D8469733FD60}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/02/Novartis heart failure drug wins FDA priority review
+parent: {A4DA0C5F-4495-437C-8ACE-4424E2BEFF66}
+name: Novartis heart failure drug wins FDA priority review
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: edcdac93-b92a-4635-8651-fd7175aeaa22
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Novartis heart failure drug wins FDA priority review
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Novartis heart failure drug wins FDA priority review
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3265
+
+<p>The FDA has granted a priority review to Novartis' new drug application (NDA) for its experimental heart failure drug LCZ696, an angiotensin receptor neprilysin inhibitor.</p><p>The Basel, Switzerland company said it is expecting a verdict from US regulators in August.</p><p>"Considering the FDA&rsquo;s increasingly higher regulatory and safety requirements, the additional priority review designation only solidifies LCZ696&rsquo;s reputation as a potential blockbuster," said Datamonitor analyst Ines Guerra. "By granting a priority review, the FDA recognizes the drug's significance in the treatment of a disease with a growing prevalence and poor prognosis."</p><p>Specifically, Novartis is seeking approval to market LCZ696 as a treatment heart failure with reduced ejection fraction (HFrEF).</p><p>Ms Guerra said LCZ696 has the potential to change the heart failure treatment paradigm while significantly boosting Novartis's revenue. She said Datamonitor has forecasted annual sales of the drug to reach $6bn in 2023. </p><p>Moreover, Ms Guerra said, LCZ696 also will aid the company's cardiovascular portfolio, which she said currently is struggling following Diovan's (valsartan) patent expiry in the EU, US, and Japan, as well as the launch of generic competition.</p><p>Sagient Research's <i>BioMedTracker</i>, an affiliate of <i>Scrip</i>, put the likelihood of Novartis' drug winning US regulators' nod at 98%, which is 13% above the average probability of approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>The company insisted that LCZ696, which is intended to be taken twice daily, has a "unique" mode of action that is thought to reduce the strain on the failing heart. </p><p>Novartis said the drug acts to enhance the protective neurohormonal systems of the heart, while simultaneously suppressing renin-angiotensin-aldosterone system &ndash; the harmful system. </p><p>Currently available medicines for HFrEF, Novartis argued, primarily block the harmful effects, with mortality remaining high. </p><p>Indeed, up to 50% of patients with heart failure die within five years of a diagnosis.</p><p>The disease costs the world economy $108bn annually, with hospitalizations accounting for up to 70% of the direct treatment costs, Novartis pointed out.</p><p>With its ability to reduce hospitalizations, and therefore the economic burden of heart failure, LCZ696 is in an attractive position with payers, Datamonitor's Ms Guerra said. </p><p>"In decreasing these rates relative to the current standard of care, payers should look more favorably on a therapy that is expected to compete with the widely genericized angiotensin-converting enzyme inhibitors," she said.</p><p>The LCZ696 NDA was based on the results from Novartis' PARADIGM-HF study &ndash; the largest ever conducted in heart failure &ndash; which showed the drug was superior to the ACE-inhibitor enalapril on key endpoints, including significantly reducing the risk of cardiovascular death or heart failure hospitalization. </p><p>"Patients' reports of how well they felt were significantly better with LCZ696 than enalapril, whilst maintaining an acceptable safety profile," Novartis said.</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 178
+
+<p>The FDA has granted a priority review to Novartis' new drug application (NDA) for its experimental heart failure drug LCZ696, an angiotensin receptor neprilysin inhibitor.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Novartis heart failure drug wins FDA priority review
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151202T100000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151202T100000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151202T100000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027846
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Novartis heart failure drug wins FDA priority review
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356710
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042255Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+edcdac93-b92a-4635-8651-fd7175aeaa22
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042255Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

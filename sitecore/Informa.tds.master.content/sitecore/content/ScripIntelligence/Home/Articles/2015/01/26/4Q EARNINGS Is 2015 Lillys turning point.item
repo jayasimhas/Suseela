@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {B9B9A0D6-4F7F-4EA1-83B0-60CF6E16F2A9}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/26/4Q EARNINGS Is 2015 Lillys turning point
+parent: {42793673-1AE9-40CA-9F02-708FD6A91D29}
+name: 4Q EARNINGS Is 2015 Lillys turning point
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f65cd51b-0257-4f68-aa44-adcb1ecd2d2b
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+4Q EARNINGS: Is 2015 Lilly's turning point?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+4Q EARNINGS Is 2015 Lillys turning point
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11656
+
+<p>Eli Lilly's revenue fell 15% to $19.6bn in 2014 from $23.1bn in 2013, largely due to patent expirations for two of its top-selling products, but the company believes that 2015 could be the year that things turn around and investors seemed to agree.</p><p>"We enter this post-patent period in a position of strength and we are very optimistic about the opportunity before us," Lilly chief financial officer Derica Rice said on 30 January during Lilly's fourth quarter 2014 earnings conference call, after which the company's stock traded as high as $73.47 per share &ndash; a gain of almost 2% from the prior day. Indianapolis, Indiana-based Lilly ultimately closed down 0.2% at $72, however, on a down day for stocks in general.</p><p>While revenue fell 15% in 2014, sales gains and revenue from newly approved products shaved three percentage points from Lilly's revenue decline in the last three months of the year. The company reported fourth quarter revenue of $5.1bn, which was 12% below fourth quarter 2013 revenue of $5.8bn. Similarly, non-GAAP earnings per share (EPS) were $2.78 for the year, down 33% from 2013, but fourth quarter revenue increased 1% to $0.75. </p><p>Lilly's 2014 results fell within the estimates of $19.4bn to $19.8bn in revenue and $2.72 to $2.80 in EPS that the company revealed in early January when it issued guidance for 2015 revenue and earnings: $20.3bn to $20.8bn and $3.10 to $3.20, respectively (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Lilly-slips-on-outlook-355986" target="_new">7 January 2015</a>). </p><p>However, Lilly has now revised its 2015 forecast based on updated foreign currency exchange rates, which have had a negative impact on all big pharma earnings this year due to the strengthening value of the US dollar. The company now believes that 2015 revenue will fall between $19.5bn and $20bn, but it did not adjust EPS guidance, because it lowered marketing and research spending expectations.</p><p>"Revenue guidance reduction from [foreign exchange] headwind (-$800m at midpoint) is not unexpected given 'early' timing of the company's initial 2015 guidance and large recent currency moves," Credit Suisse analyst Vamil Divan wrote on 30 January.</p><p><b>Product performance</b></p><p>Sales for the depression and pain drug Cymbalta (duloxetine) plunged 68% from $5.1bn in 2013 to $1.6bn in 2014 and sales of the osteoporosis drug Evista (raloxifene) fell 60% from $1.1bn to $419.8m following US patent expirations in December 2013 and March 2014, respectively.</p><p>Lilly's top-selling drugs in 2014 provided just over half the revenue of the 2013 bestseller Cymbalta, but the company launched three new products in 2014: Cyramza (ramucirumab) for gastric and lung cancers as well as Jardiance (empagliflozin) and Trulicity (dulaglutide) for diabetes.</p><table><tbody><tr><td><p><b>Product</b></p>&nbsp;</td><td><p><b>Indication</b></p>&nbsp;</td><td><p><b>2014 Sales</b></p>&nbsp;</td><td><p><b>2013 Sales</b></p>&nbsp;</td><td><p><b>Difference</b></p>&nbsp;</td></tr><tr><td><p>Alimta</p>&nbsp;</td><td><p>Lung cancer</p>&nbsp;</td><td><p>$2.8bn</p>&nbsp;</td><td><p>$2.7bn</p>&nbsp;</td><td><p>3%</p>&nbsp;</td></tr><tr><td><p>Humalog</p>&nbsp;</td><td><p>Diabetes</p>&nbsp;</td><td><p>$2.8bn</p>&nbsp;</td><td><p>$2.6bn</p>&nbsp;</td><td><p>7%</p>&nbsp;</td></tr><tr><td><p>Cialis</p>&nbsp;</td><td><p>Erectile dysfunction</p>&nbsp;</td><td><p>$2.3bn</p>&nbsp;</td><td><p>$2.2bn</p>&nbsp;</td><td><p>6%</p>&nbsp;</td></tr><tr><td><p>Humulin</p>&nbsp;</td><td><p>Diabetes </p>&nbsp;</td><td><p>$1.4bn</p>&nbsp;</td><td><p>$1.3bn</p>&nbsp;</td><td><p>6%</p>&nbsp;</td></tr><tr><td><p>Forteo</p>&nbsp;</td><td><p>Osteoporosis</p>&nbsp;</td><td><p>$1.3bn</p>&nbsp;</td><td><p>$1.2bn</p>&nbsp;</td><td><p>6%</p>&nbsp;</td></tr><tr><td><p>Zyprexa</p>&nbsp;</td><td><p>Schizophrenia</p>&nbsp;</td><td><p>$1bn</p>&nbsp;</td><td><p>$1.2bn</p>&nbsp;</td><td><p>-13%</p>&nbsp;</td></tr><tr><td><p>Strattera</p>&nbsp;</td><td><p>ADHD</p>&nbsp;</td><td><p>$738.5m</p>&nbsp;</td><td><p>$709.2m</p>&nbsp;</td><td><p>4%</p>&nbsp;</td></tr><tr><td><p>Effient</p>&nbsp;</td><td><p>Acute coronary syndrome</p>&nbsp;</td><td><p>$522.2m</p>&nbsp;</td><td><p>$508.7m</p>&nbsp;</td><td><p>3%</p>&nbsp;</td></tr></tbody></table><p><p>Cyramza generated $34m in sales during the fourth quarter, primarily from gastric cancer since the drug wasn't approved in the US for lung cancer until December (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Lillys-Cyramza-OKd-for-US-lung-cancer-patients-355643" target="_new">12 December 2014</a>).</p><p>Trulicity was launched during the fourth quarter after its US FDA approval in September (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Lillys-Trulicity-OKd-can-it-top-GLP-1-market-354024" target="_new">19 September 2014</a>). It won marketing approval in the EU in November (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Lillys-dulaglutide-arrives-in-Europe-Novo-Nordisk-quakes-355262" target="_new">25 November 2014</a>).</p><p>"Lilly has thus far focused its [Trulicity] launch on specialists, which represent 30% of the market opportunity. Lilly is in the process of launching in primary care, which is a critical component of their launch strategy," Evercore ISI analyst Mark Schoenebaum said in a 30 January research note.</p><p>Jardiance won FDA approval on 1 August and was launched in the US during the third quarter (scripintelligence.com, <a href="http://www.scripintelligence.com/home/FDA-OKs-BoehringerLilly-type-2-diabetes-drug-Jardiance-353159" target="_new">1 August 2014</a>). Lilly's partner Boehringer Ingelheim won EU marketing approval earlier in the year (scripintelligence.com, <a href="http://www.scripintelligence.com/home/CHMP-says-yes-to-BILillys-empagliflozin-after-FDA-snub-350815" target="_new">21 March 2014</a>).</p><p><b>Pipeline milestones in 2015</b></p><p>Lilly outlined several upcoming regulatory approvals and submissions for both marketed and investigational products. The table below lists potential regulatory milestones in 2015 for unapproved therapeutic candidates.</p><table><tbody><tr><td><p><b>Product candidate</b></p>&nbsp;</td><td><p><b>Potential milestone</b></p>&nbsp;</td></tr><tr><td><p>Necitumumab</p>&nbsp;</td><td><p>US and EU approvals for first-line squamous non-small cell lung cancer (NSCLC) (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/ASCO-2014-Lillys-necitumumab-fails-to-impress-with-SQUIRE-352140" target="_new">4 June 2014</a>)</p>&nbsp;</td></tr><tr><td><p>Humalog Kwikpen</p>&nbsp;</td><td><p>US approval for type 1 and 2 diabetes</p>&nbsp;</td></tr><tr><td><p>Jardiance/Tradjenta (linagliptin) </p>&nbsp;</td><td><p>US approval for the fixed-dose combination (FDC) in type 2 diabetes (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/More-positive-data-will-help-differentiate-BILillys-diabetes-combo-354001" target="_new">17 September 2014</a>)</p>&nbsp;</td></tr><tr><td><p>Jardiance/metformin immediate-release</p>&nbsp;</td><td><p>US and EU approval for the FDC in type 2 diabetes</p>&nbsp;</td></tr><tr><td><p>Basal insulin peglispro</p>&nbsp;</td><td><p>Submission of applications for US and EU approval to treat type 1 and 2 diabetes (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Lillys-insulin-shows-superiority-over-Lantus-but-drug-safety-a-concern-353737" target="_new">5 September 2014</a>)</p>&nbsp;</td></tr><tr><td><p>Jardiance/Tradjenta FDC</p>&nbsp;</td><td><p>Submission of application for EU approval to treat type 2 diabetes</p>&nbsp;</td></tr><tr><td><p>Ixekizumab</p>&nbsp;</td><td><p>US and EU application submissions for psoriasis (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/Lilly-takes-its-turn-in-the-IL-17-psoriasis-data-game-353499" target="_new">21 August 2014</a>)</p>&nbsp;</td></tr><tr><td><p>Baricitinib</p>&nbsp;</td><td><p>US and EU submissions for rheumatoid arthritis (scripintelligence.com, <a href="http://www.scripintelligence.com/researchdevelopment/First-PhIII-data-with-LillyIncytes-oral-JAK-inhibitor-impresses-in-rheumatoid-arthritis-355542" target="_new">10 December 2014</a>)</p>&nbsp;</td></tr></tbody></table></p><p>Lilly also expects additional approvals and applications for Cyramza in the US, EU and Japan in 2015 as well as Japanese approval for Trulicity.</p><p>"We've paid particular attention to putting the company in a position where we do not have to go through the boom and bust cycle [due to patent expirations] that's characterized the last 10 years. We're very focused on our Phase I molecule entries on progression from Phase II to Phase III and ensuring that those molecules are high-quality and substantially de-risked by the time we get to Phase III," Lilly chairman, president and CEO John Lechleiter said during the company's earnings call.</p><p>The following table lists programs with Phase III data disclosures that are expected this year and programs that may begin Phase III clinical trials in 2015.</p><table><tbody><tr><td><p><b>Product candidate</b></p>&nbsp;</td><td><p><b>Indication</b></p>&nbsp;</td></tr><tr><td><p>Basal insulin peglispro</p>&nbsp;</td><td><p>Data in type 1 and 2 diabetes</p>&nbsp;</td></tr><tr><td><p>Jardiance</p>&nbsp;</td><td><p>Cardiovascular outcomes study results</p>&nbsp;</td></tr><tr><td><p>Ixekizumab</p>&nbsp;</td><td><p>More details to be disclosed in psoriasis</p>&nbsp;</td></tr><tr><td><p>Baricitinib</p>&nbsp;</td><td><p>Data from the second, third and fourth Phase III trials in rheumatoid arthritis</p>&nbsp;</td></tr><tr><td><p>Solanezumab</p>&nbsp;</td><td><p>Two-year data from the EXPEDITION extension study in Alzheimer's disease</p>&nbsp;</td></tr><tr><td><p>Olaratumab</p>&nbsp;</td><td><p>Initiation of a soft tissue sarcoma study</p>&nbsp;</td></tr><tr><td><p>Cyramza</p>&nbsp;</td><td><p>Initiation of separate studies in first-line gastric cancer and NSCLC</p>&nbsp;</td></tr><tr><td><p>Tanezumab</p>&nbsp;</td><td><p>Initiation of studies in pain management with partner Pfizer if a clinical hold on the program is lifted in 2015 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Pfizer-promotes-underappreciated-RandD-pipeline-356297" target="_new">22 January 2015</a>)</p>&nbsp;</td></tr></tbody></table><p><p>"We know it's unreasonable to expect all of these potential events to be positive. However, we believe it is very possible that a significant majority will break our way and solidify our near to medium-term growth prospects," Ms Rice said during the company's conference call.</p><p>Lilly also has several Phase I and II clinical trials planned or under way on its own and with partners. Highly anticipated Phase III results for the CETP inhibitor evacetrapib aren't expected until early 2016, but the company suggested that the market undervalues its oral cholesterol-lowering drug, especially since it was reformulated for Phase III and its being tested at a different dose than in prior studies. Also, results from the third Phase III solanezumab trial in Alzheimer's disease aren't due until 2016. </p><p>"2015 will be a year of execution for Lilly as it works to successfully rollout its new products (especially in diabetes and oncology) and deliver additional data from the pipeline, while we await potentially transformative pipeline data from solanezumab and evacetrapib in the 2016 timeframe," Credit Suisse's Dr Divan wrote.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 255
+
+<p>Eli Lilly's revenue fell 15% to $19.6bn in 2014 from $23.1bn in 2013, largely due to patent expirations for two of its top-selling products, but the company believes that 2015 could be the year that things turn around and investors seemed to agree.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+4Q EARNINGS Is 2015 Lillys turning point
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150126T235819
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150126T235819
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150126T235819
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027678
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+4Q EARNINGS: Is 2015 Lilly's turning point?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356386
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f65cd51b-0257-4f68-aa44-adcb1ecd2d2b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042244Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

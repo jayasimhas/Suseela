@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {0BF1E23D-5583-4E55-9C73-27FA143284B6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/14/UK Government Drug Price Revamp Move Surprises The ABPI
+parent: {9F8ADCFB-E320-4549-AFC1-EAAB109CA5F9}
+name: UK Government Drug Price Revamp Move Surprises The ABPI
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 60aba318-d252-41df-974c-8237f72fb24b
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+UK Government Drug Price Revamp Move Surprises The ABPI
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+UK Government Drug Price Revamp Move Surprises The ABPI
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7163
+
+<p>Less than two years after the first-ever cap on UK National Health Service drug prices was agreed, the country's Department of Health has announced it wants to change a central part of the pact on grounds it does not provide the NHS with adequate savings or price transparency.</p><p>In November 2013, the British Department of Health and the Association of the British Pharmaceutical Industry (ABPI) agreed a new five-year Pharmaceutical Price Regulation Scheme under which prices for branded medicines on sale to the publicly funded health service on Dec. 1, 2013 were to be held flat for two years, with growth rates of 1.8% allowed in the subsequent two years and 1.9% in the final year. The PPRS took effect on Jan. 1, 2014 and was the result of more than a year of complex negotiations. </p><p>The parties at the time also agreed on a new parallel statutory pricing scheme applied to companies that choose not to join the negotiated voluntary PPRS pricing agreement. That statutory scheme, which currently applies to about 10% of the branded medicines used in the UK, imposes a cut of 15% in the maximum price of branded medicines on sale on Dec. 1, 2013 for companies that did not sign up to the new PPRS scheme. It is that statutory element of the pact which the DoH wants amended. </p><p>But rather than a flat rate of price cuts, the department now says it wants a payment system with the payment by companies against sales, after first deducting discounts and value added tax, set at between 10% and 17%, applying to new as well as old products sold. It is the department's preferred choice of a menu of four options. </p><p>"These proposals for the statutory branded medicine pricing scheme, which applies to companies that choose not to be in the PPRS, will create a more level playing field between the two schemes," a spokesperson for the health department told <i>Scrip</i>. "This is part of the ongoing consultation of the statutory arrangement reached at the end of 2013, as we've kept that option open. We need to re-align the statutory scheme savings with the PPRS in order to promote a more level playing field between companies in the two schemes."</p><p>The department said it is nonetheless keen to see companies already in the PPRS remain there, "to deliver its agreed objectives of stability and predictability." </p><p>Consultations will now begin between the government and drug makers for the next three months. The health department hopes to have an outcome agreed in December. The department says the exercise will be complicated, but necessary. "It is currently difficult to re-align the schemes because of the differences in the mechanisms used to make savings, and the differential effect that the statutory scheme price cut has on companies depending on the levels of discount they offer the NHS," the department spokesperson said.</p><p>The UK government in its consultation paper, signed by Life Sciences Minister George Freeman, listed four the options for discussion. Its preferred choice, entailing a payment system with the payment set between 10% and 17% that applies to new as well as old drugs, is known as Option 2a. This preferred choice, it said, has the following advantages over a higher maximum drug price cut:</p><ul><li>It would deliver the highest level of additional NHS savings of all the options, estimated at &pound;113m in 2017/18 </li><li>It would result in a fairer outcome for companies in the statutory scheme than setting a uniform cut in list price which affects companies differently depending on the discounts they offer </li><li>It provides the best way to encourage companies to remain in the PPRS and therefore to prevent costs falling on the NHS through companies switching to the statutory scheme </li><li>It would deliver an objective the Government's consulted on in 2013, of limiting average selling price in secondary care, because the payment percentage is applied to total sales having first deducted discounts </li><li>It would avoid the problems of having two list prices for the same product associated with the protection of prices of procurement frameworks in place at the time the regulations are implemented.</li></ul><p>The three other options are: a further cut in maximum price for existing branded drugs; a further cut in maximum price including that for new products not listed December 2013; or a percentage payment by companies replacing the existing price cut arrangement for products listed December 2013.</p><p>"Regardless of which option we decide to take forward as a result of this consultation, we need a transparent way of controlling the maximum price. As companies can choose to move between the statutory scheme and the PPRS, we consider that it is important that we have transparency," the department's consultation document said.</p><h2>ABPI Surprised</h2><p>Its arrival seems to have caught the ABPI on the hop.</p><p>"We were very surprised by this," said David Watson, the ABPI's director of pricing and reimbursement, adding: "The government apparently doesn't like some features of the statutory scheme and it may be trying to push everybody into the PPRS."</p><p>The latest consultation comes less than a year after the department initiated discussions with the industry on whether the maximum price for companies in the statutory scheme should be reduced by a further 10 percentage points. That would have meant overall price cuts of 25% for members of that scheme.</p><p>"I think the department thinks that, because of the different contracted commercial arrangements which drug companies have with the NHS itself, the government may believe that it doesn't directly get the visibility of a price cut, so it is therefore thinking it will find another mechanism to apply that gives it greater saving, regardless of whether drug companies have contracts with NHS customers containing price discounts," Watson mused. </p><p>He noted that the NHS is a very fragmented system. "It's not just one drug customer but rather a whole bunch of different customers with 200 purchasing points."</p><p>What the UK government seems to be proposing is to essentially make the statutory scheme more complicated, he added.</p><p>"That would act as a disincentive for companies to be in the statutory scheme," Watson said in an interview. "We don't see the logic of this more complicated approach. It seems aimed at inducing or encouraging companies that are in the statutory scheme to move over to the PPRS and this might in part explain why the department is trying to make the statutory element more complicated." </p><p>While it might be in the government's interest that everyone is subject to only one arrangement, the ABPI and its membership think it is important that companies have a choice.</p><p>"If they ultimately don't like the features of the PPRS and it doesn't fit their business model, then they should have an alternative. But creating a statutory scheme that's very much more complicated, then that starts to distort that position where we thought we had a common ground on along with the department, which is having a choice," Watson said.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 284
+
+<p>Less than two years after the first-ever cap on UK National Health Service drug prices was agreed, the country's Department of Health has announced it wants to change a central part of the pact on grounds it does not provide the NHS with adequate savings or price transparency.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+UK Government Drug Price Revamp Move Surprises The ABPI
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150914T160001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150914T160001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150914T160001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029753
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+UK Government Drug Price Revamp Move Surprises The ABPI
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{C49EE94D-D7C5-4D16-B46B-7AF90741516A}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360346
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+60aba318-d252-41df-974c-8237f72fb24b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042448Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

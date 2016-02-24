@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {6D22441E-6615-438D-BB90-950BBCE74A49}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/15/Life left in CGRP inhibition as Amgens migraine offering heads to Phase III
+parent: {22B77BC9-1D41-4F3C-86FC-19BC331D0A4A}
+name: Life left in CGRP inhibition as Amgens migraine offering heads to Phase III
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 80603d03-315e-4cf8-95ca-98d94288ca8a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 76
+
+Life left in CGRP inhibition as Amgen's migraine offering heads to Phase III
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 75
+
+Life left in CGRP inhibition as Amgens migraine offering heads to Phase III
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2758
+
+<p>Amgen is to take its calcitonin gene-related peptide (CGRP) receptor inhibitor AMG 334 into Phase III later this year on the back on promising Phase II data in preventing episodic migraine.</p><p>The product met its primary endpoint of reducing monthly mean migraine days compared with placebo in a global Phase II study presented this week at the Congress of the International Headache Society in Valencia, Spain.</p><p>AMG 334 is a fully human monoclonal antibody that inhibits the CGRP receptor. CGRP is a potent neuropeptide thought to play a prominent role in the underlying pathophysiology of migraine, and by blocking CGRP, the product is believed to inhibit the transmission of the pain signals that lead to migraine headaches.</p><p>This is a receptor that has been targeted before in migraine prevention &ndash; most notably by Merck & Co's failed telcagepant, which was dropped at the Phase III stage in 2011 because of liver toxicity problems. But this product was a small-molecule antagonist, and newer MAbs may circumvent this particular safety issue, while capitalizing on the therapeutic benefit of this strategy. </p><p>Amgen looks to be in the lead with AMG 334 but Lilly's LY-2951742, a humanized anti-CGRP MAb, is in Phase II for migraine prevention, and other similar products have been tested at Phase II, including TEV-48125 (formerly LBR-101) a recombinant humanized MAb, under development by Teva (formerly Labrys Biologics), and Alder Biopharmaceuticals' humanized MAb ALD-403.</p><p>There is a clear unmet need in migraine prevention. While the increasingly genericized triptans are the mainstay of acute migraine treatment, current prophylactic therapies include older CNS drugs such as the antiepileptics topiramate and valproate. More recently, Allergan's Botox (onabotulinumtoxinA) has been approved for prevention, providing a precedent for an injectable preventative, and a growth catalyst for the migraine market as a whole. </p><h2>study details </h2><p>In the presented trial in 483 patients who had a mean baseline of 8.7 migraines per month, the highest dose of AMG 334 tested (70mg subcutaneous monthly) produced a significant 3.4-day reduction in monthly migraine days compared with 2.28 days observed in the placebo group (p=0.021). </p><p>In the study's secondary endpoints, AMG 334 70mg demonstrated a significant increase in the 50% responder rate compared with placebo (47% vs. 30%, respectively). Furthermore, reductions in monthly headache days (-3.54 vs. -2.39) and monthly migraine-specific medication use days (-1.64 vs. -.69) were also significant in patients taking the 70mg AMG 334 dose compared with placebo, respectively. The product was also well tolerated with a profile similar to placebo. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 196
+
+<p>Amgen is to take its calcitonin gene-related peptide (CGRP) receptor inhibitor AMG 334 into Phase III later this year on the back on promising Phase II data in preventing episodic migraine.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 75
+
+Life left in CGRP inhibition as Amgens migraine offering heads to Phase III
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150515T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150515T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150515T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028730
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 76
+
+Life left in CGRP inhibition as Amgen's migraine offering heads to Phase III
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358354
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+80603d03-315e-4cf8-95ca-98d94288ca8a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

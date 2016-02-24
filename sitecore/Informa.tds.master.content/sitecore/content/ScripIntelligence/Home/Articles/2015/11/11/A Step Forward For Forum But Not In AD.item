@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {10AA0B9C-58A9-4441-82BB-980D506053A6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/11/A Step Forward For Forum But Not In AD
+parent: {5EDD049F-1031-4290-8719-6CA0186009DA}
+name: A Step Forward For Forum But Not In AD
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 68b64315-8046-47b8-a3de-d5a366d626df
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+ A Step Forward For Forum, But Not In AD  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+A Step Forward For Forum But Not In AD
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2635
+
+<p> <p> Forum Pharmaceuticals Inc. has gotten a slight reprieve from FDA regarding its schizophrenia program, but the Alzheimer's disease program is still on hold. While this should be positive news, the incremental nature of the announcement is still incredibly limiting to the company. </p> <p> The Massachusetts biotech revealed Nov. 11 that the regulatory agency has lifted its partial clinical hold on a Phase II trial of encenicline for cognitive impairment in schizophrenia (CIS). The hold applied to a 26-week extension study in CIS, as well as the entire Alzheimer's disease (AD) program the company had been undertaking. </p> <p> A Phase III extension study of the current trial, as well as two other Phase III trials in CIS, will be used as the foundation for a new drug application to FDA. </p> <p> The AD program will remain on clinical hold and Forum intends to discuss the program with FDA further in 2016. </p> <p> Forum, formerly EnVivo, initially <a target="_new" href="http://www.scripintelligence.com/home/Another-AD-Drug-Bites-The-Dust-360465">announced Sept. 15</a> that encenicline had been put on hold by the US regulatory agency due to a number of reported adverse events. Forum would only reveal at the time that there was &quot;a small number of serious gastrointestinal events reported in the AD studies&quot; that prompted the clinical hold. </p> <p> <b>Market Opportunity?</b> </p> <p> There's no doubt that AD is a much bigger opportunity than CIS. There are millions of aging Americans who face an Alzheimer's diagnosis and no treatments that are disease modifying. Yet, development of AD drugs has been notoriously tricky. Plenty of big pharmas have wasted billions of dollars after their potential treatments failed in late stage testing. AD trials are not only extremely risky, but costly, due to the large number of patients that need to be included. Should a viable treatment be approved, it would be a blockbuster. </p> <p> On the other hand, schizophrenia is a market dominated by a slew of older drugs including large franchises from Johnson &amp; Johnson and Bristol-Myers Squibb. Patients in this market are not very responsive to drugs because they often aren't compliant. Many of the competitors in this market have already marketed or are working on treatments that are long-acting and only require monthly administration. Even if Forum can crack into this market, it will likely be for a small piece of the pie. </p> <p> According to BioMedTracker, sales of already marketed schizophrenia drugs brought in $2.8bn in 2014, but those sales are expected to decline to $640m by 2025. </p> <p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 4
+
+<p/>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+A Step Forward For Forum But Not In AD
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151111T210000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151111T210000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151111T210000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030299
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+ A Step Forward For Forum, But Not In AD  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361435
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042522Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+68b64315-8046-47b8-a3de-d5a366d626df
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042522Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {51DCE8FF-D861-46D4-9BB1-219463C3BB95}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/22/Shift to value ahead for Medicare payments
+parent: {A9E02FEC-E9DE-4B22-BE6D-1EC0B8B5CAAD}
+name: Shift to value ahead for Medicare payments
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 86894c30-13d6-48ad-99be-0d7594e2c470
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Shift to value ahead for Medicare payments
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+Shift to value ahead for Medicare payments
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5950
+
+<p>Health and Human Services (HHS) Secretary Sylvia Mathews Burwell on 26 January unveiled explicit goals for how Medicare will move towards a new payment structure that rewards value over volume &ndash; relying more on the use of alternative models, such as accountable care organizations (ACOs) and bundled-payment arrangements, than the traditional fee-for-service.</p><p>By the end of next year, Secretary Sylvia Burwell said she wants 30% of Medicare payments to be tied to the quality or value of care provided, with that figure up to 50% by the end of 2018.</p><p>She acknowledged that ACOs and other alternative payment models, in which healthcare providers are accountable for the quality and cost of care they deliver, already represent about 20% of Medicare payments &ndash; something that did not occur before the enactment of the <i>Accordable Care Act</i> (ACA), which helped drive the creation of such models, like bundled payments. </p><p>But Secretary Burwell said laying down specific goals and timelines was needed to spur greater use of ACOs and other models, which she said already have helped save Medicare about $417m.</p><p>Medicare fee-for-service payments totaled $362bn last year, HHS pointed out.</p><p>HHS also set a goal of tying 85% of all traditional Medicare payments to quality or value by 2016, with that figure expected to be at 90% by 2018, through the use of hospital value-based purchasing and the hospital readmissions-reduction programs. </p><p>During a telebriefing with reporters, a senior HHS official noted it was the first time in Medicare's history that clear goals have been set for moving to payment models that focus on quality of care versus quantity.</p><p>Secretary Burwell also unveiled the so-called "Health Care Payment Learning and Action Network," which she said is aimed at promoting the use of alternative payment models by the private sector and state Medicaid programs.</p><p>"Whether you are a patient, a provider, a business, a health plan or a taxpayer, it is in our common interest to build a healthcare system that delivers better care, spends health care dollars more wisely and results in healthier people," she declared. "We believe these goals can drive transformative change, help us manage and track progress and create accountability for measurable improvement."</p><p>HHS' shift to value-based payments was quickly embraced by the insurance industry, with Karen Ignagni, president and CEO of the trade group America's Health Insurance Plans (AHIP), calling it a "major step forward."</p><p>"Health plans have been on the forefront of implementing payment reforms in Medicare Advantage, Medicaid Managed Care and in the commercial marketplace," she said. "We are excited to bring these experiences and innovations to this new collaboration." </p><p>Ms Ignagni said that over the next week, AHIP will highlight health plans' innovative payment and delivery system reforms happening across the country. </p><p>"By partnering with providers and hospitals in new care coordination models, health plans are transcending the antiquated fee-for-service model and promoting patient-centered care delivery," she said.</p><p>John Castellani, president and CEO of the Pharmaceutical Research and Manufacturers of America (PhRMA), said his group backed HHS' goals, declaring his organization is eager to work with the agency on its new initiative.</p><p>But he also emphasized that as HHS works to evaluate and expand new models of healthcare payment and delivery, it's essential they "incorporate clear mechanisms for recognizing the value of new treatment advances, such as precision medicine and other new tests and treatments."</p><p>He said HHS also must ensure the models are grounded in strong quality measures and incentives, with emphasis on outcomes that matter to patients and support shared decision making between providers and patients, which should be "informed by high-quality evidence about the full range of available treatment options."</p><p>They also must be transparent and enable manufacturers and other stakeholders to work collaboratively in support of high-quality, high-value healthcare," Mr Castellani said.</p><p>He noted PhRMA recently released its own set of <a href="http://www.phrma.org/phrma-principles-for-payment-and-delivery-system-reforms" target="_new">principles</a> for payment and delivery reform.</p><p>In a <i>Perspectives</i><a href="http://www.nejm.org/doi/full/10.1056/NEJMp1500445" target="_new">commentary</a> in the <i>New England Journal of Medicine</i>, Secretary Burwell said increasingly tying payments to value through alternative payment models is just one of three ways her agency is seeking to shape healthcare delivery and improvement now that the ACA has expanded coverage and made it more affordable for many more Americans.</p><p>She said HHS also plans to focus its energies on changing the way care is delivered through greater teamwork and integration, more effective coordination of providers across settings and greater attention by providers to population health, and by harnessing the power of information to improve care for patients.</p><p>Looking ahead, she said HHS plans to develop and test new payment models for specialty care, starting with oncology care, and institute payments to providers for care coordination for patients with chronic conditions. </p><p>Secretary Burwell said HHS also aims to accelerate the availability of information to guide decision making, noting the Obama administration has led a major initiative in health information technology, focusing on the adoption of electronic health records and their meaningful use as a central avenue for transforming care. </p><p>But, she said, while there may be "much to celebrate" about increased access and quality and reduced cost growth, "much of the hard work of improving our healthcare system lies ahead of us."</p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 372
+
+<p>Health and Human Services (HHS) Secretary Sylvia Mathews Burwell on 26 January unveiled explicit goals for how Medicare will move towards a new payment structure that rewards value over volume &ndash; relying more on the use of alternative models, such as accountable care organizations (ACOs) and bundled-payment arrangements, than the traditional fee-for-service.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+Shift to value ahead for Medicare payments
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150122T080000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150122T080000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150122T080000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027630
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Shift to value ahead for Medicare payments
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356293
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+86894c30-13d6-48ad-99be-0d7594e2c470
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042239Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

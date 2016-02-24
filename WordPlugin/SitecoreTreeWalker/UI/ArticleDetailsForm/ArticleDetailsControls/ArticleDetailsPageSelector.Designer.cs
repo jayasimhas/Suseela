@@ -119,7 +119,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			this.FeaturedImagesMenuItem.Selected = false;
 			this.FeaturedImagesMenuItem.Size = new System.Drawing.Size(180, 35);
 			this.FeaturedImagesMenuItem.TabIndex = 6;
-			this.FeaturedImagesMenuItem.Click += new System.EventHandler(this.SubjectsMenuItem_Click);
+			this.FeaturedImagesMenuItem.Click += new System.EventHandler(this.FeaturedImageMenuItem_Click);
 			// 
 			// TaxonomyMenuItem
 			// 

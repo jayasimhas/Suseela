@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {9F9CA67B-16A4-463B-9B86-601367F1533C}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/17/Generics group steals one of PhRMAs guys
+parent: {AAE19934-7ACE-4A8F-A55E-F9C7A894CF94}
+name: Generics group steals one of PhRMAs guys
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 999f2c96-ec9f-44ea-9dfc-1934d838c905
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 41
+
+Generics group steals one of PhRMA's guys
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 40
+
+Generics group steals one of PhRMAs guys
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2746
+
+<p>The Generic Pharmaceutical Association (GPhA) not only tapped a Washington insider to lead the lobbying group on the departure of CEO Ralph Neas, but someone privy to inner-workings of the big pharma organization for which it's often at odds.</p><p>GPhA disclosed it had charmed away Chester Davis, who goes by the nickname "Chip," from the Pharmaceutical Research and Manufacturers of America (PhRMA) to lead the generics group as its new president and CEO.</p><p>At PhRMA, Mr Davis served as the executive vice president for advocacy and member relations, where he led federal, state and international government relations and advocacy efforts. He also was responsible for membership recruitment and retention for the organization, which is one of the biggest lobbyists in Washington &ndash; spending more than $16.6m last year, according to the watchdog the Center for Responsive Politics.</p><p>GPhA's ongoing rivalry with PhRMA was apparent in the statement announcing Ms Davis' new role &ndash; calling his former employer not by name, but a "prominent pharmaceutical trade association."</p><p>Before joining PhRMA, Mr Davis, a lawyer, was vice president of corporate external relations for AstraZeneca, where he oversaw the London drug maker's government relations, strategic alliances, community relations and employee volunteer efforts. </p><p>Mr Davis' leadership skills, policy experience and "deep relationships" on Capitol Hill and across the industry "provide an excellent foundation for his role as our next CEO," said Dr Craig Wheeler, CEO at Momenta Pharmaceuticals and GPhA's chairman.</p><p>Mr Neas, also a lawyer and longtime Washington lobbyist, revealed in <a href="http://www.scripintelligence.com/policyregulation/Generic-drugs-top-lobbyist-to-depart-by-fall-356290" target="_new">January</a> he was moving on from GPhA.</p><p>His announcement came a few months before current PhRMA chief John Castellani disclosed he also would be <a href="http://www.scripintelligence.com/home/Castellani-to-depart-PhRMA-group-elects-Mercks-Frazier-chairman-357923" target="_new">leaving his job</a>.</p><p>An affiliate of GPhA, the Biosimilars Council, which was <a href="http://www.scripintelligence.com/policyregulation/Generics-lobby-group-establishes-biosimilars-arm-357926" target="_new">formed in April</a>, also said Dr Bertrand Liang, CEO of Pfenex, was dubbed be the inaugural chairman of the group.</p><p>The biosimilars council's 2015-16 board also includes John Pakulski, executive director and head of US biopharmaceutical affairs at Sandoz, who will act as the group's vice chairman, and Bruce Lott, vice president of state government affairs at Mylan, who will serve as treasurer. </p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 249
+
+<p>The Generic Pharmaceutical Association (GPhA) not only tapped a Washington insider to lead the lobbying group on the departure of CEO Ralph Neas, but someone privy to inner-workings of the big pharma organization for which it's often at odds.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 40
+
+Generics group steals one of PhRMAs guys
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150717T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150717T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150717T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029317
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 41
+
+Generics group steals one of PhRMA's guys
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 7
+
+webinar
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359506
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+999f2c96-ec9f-44ea-9dfc-1934d838c905
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

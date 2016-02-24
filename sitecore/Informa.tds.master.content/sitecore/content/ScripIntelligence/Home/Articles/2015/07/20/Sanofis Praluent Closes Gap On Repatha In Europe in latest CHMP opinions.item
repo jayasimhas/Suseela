@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {084C7AEE-4DF3-4ECE-B426-39E3993D35D3}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/20/Sanofis Praluent Closes Gap On Repatha In Europe in latest CHMP opinions
+parent: {4A5C71DE-F86E-4022-98D9-F4BD70B5C95D}
+name: Sanofis Praluent Closes Gap On Repatha In Europe in latest CHMP opinions
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2d8464ef-1986-4ab8-bb6d-22df08e65c67
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{5A64215F-6AF5-4F56-A509-95AB911ED052}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 73
+
+Sanofi's Praluent Closes Gap On Repatha In Europe in latest CHMP opinions
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+Sanofis Praluent Closes Gap On Repatha In Europe in latest CHMP opinions
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5269
+
+<p>Sanofi/ Regeneron's PCSK9 inhibitor Praluent (alirocumab) is quickly catching its likely competitor, receiving a positive opinion from Europe's top scientific advisory body, the Committee for Medicinal Products for Human Use, only two months after another PCSK9 inhibitor, Amgen's Repatha (evolocumab) was recommended for approval by the European Medicines Agency panel.</p><p>The CHMP decision on Praluent was announced July 24, and although European Commission approval was given to Repatha just days ago, Praluent is now only two to three months behind, compared with the nearly six months gap previously thought to be between the two competitors in Europe.</p><p>Praluent was recommended by the CHMP for use in adults with primary hypercholesterolemia (heterozygous familial and non-familial) or mixed dyslipidemia, as an adjunct to diet: in combination with a stain or statin with other lipid lowering therapies in patients unable to reach LDL-C goals with the maximum tolerated dose of a statin; or alone or in combination with other lipid lowering therapies in patients who are statin intolerant, or for whom a statin is contraindicated. </p><p>Although the indications have to be confirmed by the European Commission, they are broad and similar to those granted to Repatha in Europe.</p><h2>First Malaria Vaccine Cleared</h2><p>GlaxoSmithKline's non-for-profit malaria vaccine, Mosquirix (RTS,S), was <a href="http://www.scripintelligence.com/home/GSKs-Mosquirix-vaccine-clears-EU-hurdle-but-is-no-complete-answer-to-malaria-359609" target="_new">recommended for approval by the CHMP</a> on July 24 but it still has a series of further hurdles to overcome before it can become available to children in sub-Saharan Africa.</p><h2>Shire's Intuniv Recommended</h2><p>Shire's second-generation "non-stimulant" attention-deficit hyperactivity disorder (ADHD) product Intuniv (guanfacine) was recommended for approval by the CHMP as a once-daily therapy in children and adolescents with ADHD aged between six and 17 years old, for whom stimulants are not suitable, not tolerated or have been shown to be ineffective. </p><p>The product, that has been available in the US for a number of years, should be used as part of a comprehensive ADHD treatment program, the CHMP said. The positive opinion was based on three Phase III pivotal clinical studies that investigated its short and long term safety and efficacy. The prevalence of ADHD in Europe in children and adolescents is around 5%, Shire noted. </p><p>During the CHMP's discussion, a young adult with ADHD and the mother of an ADHD patient shared their experience with the committee as part of a pilot project to bring patient's views to the CHMP's attention.</p><h2>Merck And Basilea's New Anti-Infectives</h2><p>Merck & Co gained a green light from the EU committee for its new antibiotic, Zerbaxa (ceftolozane and tazobactam) for the treatment of complicated intra-abdominal infections, acute pyelonephritis and complicated urinary tract infections. Zerbaxa is administered by intravenous infusion, and was launched by Merck in the U.S. in the first half of this year, after it acquired the product's developer Cubist Pharmaceuticals for $9.5 billion.</p><p>A second anti-infective, Basilea antifungal Cresemba (isavuconazole) was recommended for marketing by the CHMP for the treatment of invasive aspergilliosis and for mucormycosis in patients for whom amphotericin B is inappropriate. </p><p>Both indications have orphan drug status and are life-threatening infections usually seen in patients with cancer or those who are immunocompromised. The CHMP noted the most common side-effects associated with Cresemba are elevated liver chemistry tests, nausea, vomiting, dyspnoea, abdominal pain, diarrhea, injection site reactions, headache, hypokalemia and rash.</p><p>The European recommendation comes four months after Cresemba was approved for marketing in the U.S. with similar indications. It is marketed there by Basilea's development partner Astella, which acquired U.S. and Canadian rights to the drug in a 2010 deal with Basilea.</p><p>Boston, Mass.-based Keryx Biopharmaceuticals. received a green light for use of Fexeric (ferric citrate coordination complex) for the treatment of hyperphosphatemia in chronic kidney disease patients being treated or not treated with dialysis. It's a broader indication than in the U.S., where the product is marketed as Auryxia for the control of serum phosphorus levels in patients on dialysis for chronic kidney disease.</p><p>Patients treated with Fexeric had a significant decrease in serum phosphorus levels compared with patients treated with placebo, and the most common side-effects were gastrointestinal disorders, the CHMP said. If approved then Fexeric will be the only absorbable iron-based phosphate bind to treat elevated serum phosphorus in both non-dialysis and dialysis chronic kidney disease patients in Europe.</p><p>Having separated from its parent company on July 1, the biopharma unit Baxalta has received one of its first approval recommendations, for its recombinant porcine Factor VIII product Obizur (susoctocog alfa) for the treatment of patients with acquired haemophilia due to Factor VIII antibodies, an orphan indication.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 377
+
+<p>Sanofi/ Regeneron's PCSK9 inhibitor Praluent (alirocumab) is quickly catching its likely competitor, receiving a positive opinion from Europe's top scientific advisory body, the Committee for Medicinal Products for Human Use, only two months after another PCSK9 inhibitor, Amgen's Repatha (evolocumab) was recommended for approval by the European Medicines Agency panel.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+Sanofis Praluent Closes Gap On Repatha In Europe in latest CHMP opinions
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150720T160002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150720T160002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150720T160002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029330
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 73
+
+Sanofi's Praluent Closes Gap On Repatha In Europe in latest CHMP opinions
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{64DA3A31-2EAC-451B-9E20-7426CE8C307C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+expert view
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359529
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2d8464ef-1986-4ab8-bb6d-22df08e65c67
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042426Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

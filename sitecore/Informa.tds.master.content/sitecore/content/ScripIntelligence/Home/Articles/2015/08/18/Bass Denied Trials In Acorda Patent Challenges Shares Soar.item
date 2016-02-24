@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {4982290A-7BF1-42B5-A5B5-A89AC41B695B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/18/Bass Denied Trials In Acorda Patent Challenges Shares Soar
+parent: {CB6FF202-8CE5-4A7D-A8CE-6DB1F8FB3621}
+name: Bass Denied Trials In Acorda Patent Challenges Shares Soar
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 09f7d79b-cc12-40b0-8561-396478ffa8bd
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+Bass Denied Trials In Acorda Patent Challenges; Shares Soar
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Bass Denied Trials In Acorda Patent Challenges Shares Soar
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4775
+
+<p>The US Patent & Trademark Office's Patent Trial and Appeal Board (PTAB) on Aug. 24 denied two so-called <i>inter partes</i> review (IPR) petitions filed by Kyle Bass &ndash; the hedge fund manager the drug industry loves to hate &ndash; and his Coalition for Affordable Drugs, which sought to invalidate patents held by Acorda Therapeutics for its FDA-approved multiple sclerosis drug Ampyra (dalfampridine).</p><p>The PTAB's decision not to institute trials on the IPR petitions on Acorda's patents, known as '685 and '826, which are set to expire in 2025 and 2027, respectively, cannot be appealed, although Bass can file litigation through the US court system &ndash; something Wall Street analysts predicted was an unlikely course.</p><p>The news sent shares of Acorda skyrocketing 32%, or $9.25, in after-hours trading on a day in which most companies' stocks had been hit badly in one of the worst days on Wall Street since October 2008 &ndash; a panic driven by the economic slowdown in China. </p><p>The IPR reviews, created in 2011 under the <i>American Invents Act</i>, are trial proceedings intended to be a faster and more affordable way for third parties to challenge patents than going through the American court system.</p><p>The number of IPR petitions involving biopharmaceutical patents has <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Patent-Challenge-Landscape-Shifting-Inter-Partes-Reviews-Climb-360075" target="_new">more than doubled</a> in the past year to 9% from the 4% the two previous years.</p><p>The Acorda IPR petitions were the first of about 20 filed by Bass, chief investment officer at the hedge fund firm Hayman Capital, and his coalition in the past year against firms like Biogen, Bristol-Myers Squibb, Celgene, Horizon, Jazz Pharmaceuticals, Pozen, Shire and Pharmacyclics, now part of AbbVie. </p><p>Some PTAB watchers and Wall Street analysts had speculated the board's decision on the first Bass petitions could predict how the others he has filed may fare at the board.</p><p>But Washington lawyer Eleanor Yost, a partner in the intellectual property litigation group at Goodwin Procter, pointed out the Aug. 24 decisions came from only one PTAB panel.</p><p>"I don't think it will change the course of all of them," she told <i>Scrip</i>. "We have quite a while before we have a really good picture of how the PTAB is going to approach these sorts of entities."</p><p>Yost said it was interesting the Bass' IPR petitions were decided on a "pretty narrow issue that had nothing to do with who the parties are or their intentions." </p><p>"I think this leaves the door open for the coalition's other filings to proceed if they prove their case up," she said.</p><p>In his IPR petitions against Acorda's patents, Bass asserted "unpatentability," insisting information disclosed in poster presentations more than a decade ago constituted prior art.</p><p>But the PTAB panel said it was not persuaded by Bass' arguments &ndash; declaring he failed to establish there was a reasonable likelihood his IPR petitions would prevail on at least one of the claims he was challenging.</p><p>Acorda had contended that, "Even if petitioner claims that the posters were displayed at meetings, this does not establish that the posters are printed publications" that qualify as prior art under the US patent law &ndash; an argument for which the PTAB agreed.</p><p>The PTAB said the submission of the information disclosure statements by the patent owners "does not constitute an admission that a cited reference is material prior art," and that the statements themselves expressly stated identification of the listed references was not meant to be construed as an admission as prior art against the subject application.</p><p>The PTAB panel said it considered the length of time the display was exhibited; the expertise of the target audience; the existence, or lack thereof, of reasonable expectations the material displayed would not be copied; and the simplicity or ease with which the material displayed could have been copied.</p><p>But the three-judge panel said Bass' petitions presented insufficient evidence in addressing those issues.</p><p>"In addition, our review of the posters themselves indicates that they both present relatively dense material in a small space," the PTAB panel said, adding they were unconvinced Bass had made a "threshold showing" the posters were sufficiently publicly accessible to qualify as printed publications.</p><p>While Acorda may have dodged a bullet at the PTAB, J.P. Morgan analyst Cory Kasimov pointed out the firm's patents still face at least nine separate abbreviated new drug application filers, so the company "isn't completely out of the woods just yet."</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 415
+
+<p>The US Patent & Trademark Office's Patent Trial and Appeal Board (PTAB) on Aug. 24 denied two so-called <i>inter partes</i> review (IPR) petitions filed by Kyle Bass &ndash; the hedge fund manager the drug industry loves to hate &ndash; and his Coalition for Affordable Drugs, which sought to invalidate patents held by Acorda Therapeutics for its FDA-approved multiple sclerosis drug Ampyra (dalfampridine).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Bass Denied Trials In Acorda Patent Challenges Shares Soar
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150818T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150818T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150818T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029586
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+Bass Denied Trials In Acorda Patent Challenges; Shares Soar
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360003
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042439Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+09f7d79b-cc12-40b0-8561-396478ffa8bd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042439Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9536B11E-76EB-481D-9D48-3D0B9F69D340}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/29/Cell Therapy Plots European Conditional Approval For Heart Regeneration Product
+parent: {5398E1AD-3008-4257-BE24-65E2DBD2F089}
+name: Cell Therapy Plots European Conditional Approval For Heart Regeneration Product
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7278902c-a014-4fb7-88e1-37c08b986d13
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 80
+
+Cell Therapy Plots European Conditional Approval For Heart Regeneration Product 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 79
+
+Cell Therapy Plots European Conditional Approval For Heart Regeneration Product
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2837
+
+<p>Cell Therapy Ltd says that following a pre-submission meeting with the European Medicines Agency (EMA) in September, it now plans to begin applying for a conditional marketing authorization (CMA) for Heartcel, its lead allogeneic stem cell therapy, which has been designed to regenerate the heart. Filing is planned for mid-2016, and, if successful, approval could be granted as early as 2017.</p><p>Cell Therapy's CEO Ajan Reginald (previously Roche's global head of emerging technologies) spoke to Scrip earlier this year <a href="http://www.scripintelligence.com/researchdevelopment/Tissue-specific-Cell-Therapy-off-the-starting-blocks-with-two-promising-Phase-II-projects-359251" target="_new">in detail about Heartcel</a> and his company's plans for commercialization in Europe.</p><p>In data published in June and September 2015, Heartcel demonstrated average two year major adverse cardiac event (MACE)-free survival for all patients in a Phase II trial studying myocardial regeneration. The trial studied 11 patients at high risk of incomplete vascularization (ICR) undergoing coronary artery bypass graft (CABG).</p><p>The Heartcel trial investigated a new regenerative cell type, the allogeneic iMP cell (immuno-modulatory cell), as an adjuvant to mitigate the mortality and morbidity associated with ICR. iMP cells are mesodermal progenitor cells, an off-the-shelf cardiac specific cell type specifically engineered to regenerate the areas of the heart damaged by heart attack or heart failure.</p><p>All of the patients in the trial, all suffering from advanced heart failure, are still alive after an average of 28.4 months vs. up to an expected 70% annual mortality rate, and none has suffered cardiac events such as heart attack or stroke. If approved for CMA use, Heartcel would be the first cardiac-specific regenerative therapy approved for use in Europe and US.</p><p>Conditional marketing authorization (CMA) in the EU can be granted ahead of a final confirmatory clinical trial for a product for a life threatening or serious debilitating disease with a high unmet medical need and where the benefits outweigh the risks. </p><p>"There are still many steps to complete before submission next year, ahead of formal acceptance by the EMA, and our team is fully focused on this delivery. If approved, the next step would be to conduct a large confirmatory clinical trial which would complete in 2018," said Sir Martin Evans, CSO of the company.</p><p>CEO Reginald added: "While the Heartcel Phase II trial was small, the two-year MACE-free survival and efficacy data is very compelling and may enable rapid access to heart regeneration for critically ill patients."</p><p>The company is also developing Tendoncel, a topical regenerative medicine for tendon repair, and Skincel, a regenerative dermatology therapy.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 400
+
+<p>Cell Therapy Ltd says that following a pre-submission meeting with the European Medicines Agency (EMA) in September, it now plans to begin applying for a conditional marketing authorization (CMA) for Heartcel, its lead allogeneic stem cell therapy, which has been designed to regenerate the heart. Filing is planned for mid-2016, and, if successful, approval could be granted as early as 2017.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 79
+
+Cell Therapy Plots European Conditional Approval For Heart Regeneration Product
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150929T150008
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150929T150008
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150929T150008
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029960
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 80
+
+Cell Therapy Plots European Conditional Approval For Heart Regeneration Product 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360726
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042500Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7278902c-a014-4fb7-88e1-37c08b986d13
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042500Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

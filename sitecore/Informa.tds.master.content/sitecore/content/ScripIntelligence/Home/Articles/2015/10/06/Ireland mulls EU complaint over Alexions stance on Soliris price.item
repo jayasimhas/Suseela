@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {E386E950-EEFF-4C1F-8925-796F717D8CDA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/06/Ireland mulls EU complaint over Alexions stance on Soliris price
+parent: {6551E86B-1E08-433E-B8B3-EB98BADD2314}
+name: Ireland mulls EU complaint over Alexions stance on Soliris price
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 22d1a3e4-0bf5-4652-8c5e-9b2602d843ee
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Ireland mulls EU complaint over Alexion's stance on Soliris price
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+Ireland mulls EU complaint over Alexions stance on Soliris price
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5962
+
+<p>The Irish Health Service Executive (HSE) says it may lodge a complaint with the European Commission over what it says is Alexion's refusal to provide Soliris (eculizumab) at a "reasonable and sustainable price".</p><p>The HSE, which provides public health and social care services in Ireland, did not give detailed grounds for any possible complaint, but it is apparently concerned that Alexion may be abusing its monopoly position in order to keep up the product's price. </p><p>However, it is not clear whether the EU would take up such a case, given that pricing, reimbursement and healthcare spending are member state competences, and this appears to be a straightforward question of a company sticking to its guns on the price of a drug. </p><p>The cost of Soliris, which is used to treat paroxysmal nocturnal hemoglobinuria (PNH) and atypical haemolytic uremic syndrome (aHUS), has been a bone of contention between the HSE and Alexion for some time.</p><p>In February 2010, the Irish National Centre for Pharmacoeconomics completed an evaluation of Soliris on behalf of the HSE, and concluded that Alexion had failed to demonstrate value for money in the treatment of PNH. The HSE subsequently entered into an Access with Evidence Development (AED) agreement with Alexion to allow time for additional evidence to be generated to inform long-term decision making over a period of three years. </p><p>That agreement ended in 2013, and the NCP conducted a re-evaluation, declaring: "At a price of &euro;4,557.50 per 300mg/30ml vial and a total cost of &euro;437,247 per patient per year we do not believe that eculizumab (Soliris) is value for money for the treatment of patients with PNH in the Irish healthcare setting". It noted that Alexion "did not include an economic model as part of their submission and failed to demonstrate the cost-effectiveness of this therapy". </p><p>Nonetheless, in February this year the HSE decided to expand access to more patients with PNH or aHUS. The executive did say, though, that because of the "exorbitant" cost of the drug &ndash; around &euro;430,000 per patient per year &ndash; it would be provided "on the basis of clinical need". Doctors were advised to apply to the HSE's medicines management program to begin the screening process for their patients.</p><p>Despite continued pressure to bring down the price, Alexion is still not budging, according to the HSE. It told <i>Scrip</i> it had "attempted to negotiate a more reasonable cost for this important drug", but "the drug manufacturer concerned refused, and continues to refuse, to provide eculizumab at a reasonable and sustainable price".</p><p>The HSE said it was therefore "considering its legal options as it seeks a better deal on the drug Soliris", and that "one of these options includes lodging a complaint with the EU Commission", although it did not elaborate on the possible grounds for such a complaint.</p><p>It is not clear whether the commission would get involved in a case of this sort, and what violation it might be asked to investigate. An excessive price can be an abuse of market power, and in theory the commission's competition directorate would have the jurisdiction to consider it, but the EU has never pursued an excessive price case relating to a medicine, according to one lawyer working in the area. The national competition authority might therefore be a more appropriate forum for such an issue &ndash; in the UK, for example, a large number of drug pricing claims have been brought before the Competition and Markets Authority (formerly the Office of Fair Trading). </p><p>At the time of publication, Alexion had not responded to a request for comment.</p><h2>Other countries</h2><p>Ireland is not the only country to be exercised by the high price of Soliris. In January, NICE, the HTA agency for England and Wales, issued <a href="http://www.scripintelligence.com/policyregulation/Final-NICE-yes-gives-expensive-Soliris-market-access-356413" target="_new">final guidance</a> recommending Soliris for aHUS, but only if a whole range of arrangements are in place, including co-ordination and monitoring of its use, the setting up of a national protocol for starting and stopping treatment, and a research program into evaluating when stopping treatment or adjusting the dose might occur. Alexion objected to the suggestion that the possibility of stopping treatment should be explored, given that the drug's EU labeling recommends that patients taking Soliris should do so for the rest of their lives.</p><p>In Scotland, the drug has been funded out of the <a href="http://www.scripintelligence.com/policyregulation/New-40m-Scottish-fund-to-improve-access-to-new-drugs-354331" target="_new">Rare Conditions Medicines Fund</a> after the Scottish Medicines Consortium failed to recommend its use, saying the manufacturer had not provided economic information for the medicine and so it was unable to determine whether it was value for money. (The RCMF has now been replaced by the New Medicines Fund.) </p><p>The authorities in Italy have agreed to pay for Soliris for both of its indications on condition that two vials are provided free of charge for each patient, according to an access decision by the regulatory agency AIFA published in January. Treatment centers have to set up a system for collecting data on eligible patients and a follow-up protocol, and to upload information on the prescribing and use of Soliris onto AIFA's web platform. </p><p>On the other side of the globe, the Australian authorities <a href="http://www.scripintelligence.com/policyregulation/Australia-thrashes-out-patient-access-deals-for-SolirisKalydeco-354793" target="_new">began funding</a> Soliris for aHUS last December, although Alexion said that the treatment criteria proposed by the Pharmaceutical Benefits Advisory Committee (PBAC) were not in line with the product information approved by the regulatory body, the TGA. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 218
+
+<p>The Irish Health Service Executive (HSE) says it may lodge a complaint with the European Commission over what it says is Alexion's refusal to provide Soliris (eculizumab) at a "reasonable and sustainable price".</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+Ireland mulls EU complaint over Alexions stance on Soliris price
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151006T094335
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151006T094335
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151006T094335
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028997
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Ireland mulls EU complaint over Alexion's stance on Soliris price
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358875
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+22d1a3e4-0bf5-4652-8c5e-9b2602d843ee
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

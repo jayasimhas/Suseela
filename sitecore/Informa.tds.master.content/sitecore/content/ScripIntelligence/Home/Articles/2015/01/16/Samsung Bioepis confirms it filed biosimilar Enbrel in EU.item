@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {112902E9-7BBC-4FF7-A906-38C66E0E4685}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/16/Samsung Bioepis confirms it filed biosimilar Enbrel in EU
+parent: {5088355F-30B1-475A-AA64-05A47833A5BE}
+name: Samsung Bioepis confirms it filed biosimilar Enbrel in EU
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7014115a-7ca8-4fa9-a248-5f6282c636f6
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Samsung Bioepis confirms it filed biosimilar Enbrel in EU 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+Samsung Bioepis confirms it filed biosimilar Enbrel in EU
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3175
+
+<p>Samsung Bioepis has confirmed that it filed the biosimilar version of Amgen's TNF-inhibitor Enbrel (etanercept) that is now being assessed by the European Medicines Agency's scientific committee, the CHMP.</p><p>The product, SB4, is is the first biosimilar etanercept to enter the regulatory review process in the EU, and the acceptance of the filing "represents a significant milestone for Samsung Bioepis in our work to develop and manufacture world-class biosimilars", the company said. </p><p>Last week the EMA announced that an approval application for a biosimilar etanercept had been received and was under review, and although it did not identify the drug or the company that filed it, Datamonitor Healthcare analyst Giles Somers said it was most likely to be the Samsung Bioepis product (<a href="http://www.scripintelligence.com/home/Biosimilar-Enbrel-filed-with-EMA-356182" target="_new">scripintelligence.com</a>, 16 January). </p><p>The company said the marketing authorization application for SB4 was based on data from a European Phase III controlled, randomized, multicenter study in moderate to severe rheumatoid arthritis showing comparability of SB4 to Enbrel. The primary and secondary endpoints were assessed and met the qualification standard for the submission, and full results will be available later this year, it added.</p><p>If SB4 is given the all clear by the CHMP, it "could be available for use in all of the same indications as Enbrel", the company said. However, this would require the CHMP to allow the extrapolation of Enbrel's other indications &ndash; including include certain forms of juvenile idiopathic arthritis, psoriatic arthritis, ankylosing spondylitis and plaque psoriasis &ndash; to the biosimilar. </p><p>The CHMP is certainly not averse to such an approach. In 2013, it granted Celltrion's Remsima and Hospira's Inflectra all six indications of Janssen's Remicade (infliximab), two of which &ndash; Crohn's disease and ulcerative colitis &ndash; were based on an extrapolation of the Remicade data. </p><p>However, nothing should be taken for granted where biosimilars are concerned. Mr Somers pointed out that if the preclinical characterization of SB4 is not sufficiently robust or if there were mild concerns in clinical trials, "then it's possible they'll see a tighter label". There may also be some structural differences that make SB4 more liable to immunogenicity reactions than Enbrel, he added.</p><p>If approved, SB4 will be commercialized in Europe by Biogen Idec (Samsung's partner in Samsung Bioepis) and produced at the company's Danish manufacturing facility in Hillerød, "one of the largest biologic manufacturing facilities in the world", the company said. </p><p>As well as the EU filing, Samsung Bioepis intends to make additional submissions in other territories worldwide.</p><p>Other firms are pursuing biosimilar etanercept, including Sandoz (whose Phase III study in psoriasis has a primary completion date of April 2015), Coherus BioSciences (which began Phase III last year in psoriasis and RA), and South Korea's Hanwha Chemical (whose HD203 was approved in its home market last November).</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 212
+
+<p>Samsung Bioepis has confirmed that it filed the biosimilar version of Amgen's TNF-inhibitor Enbrel (etanercept) that is now being assessed by the European Medicines Agency's scientific committee, the CHMP.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Samsung Bioepis confirms it filed biosimilar Enbrel in EU
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150116T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150116T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150116T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027576
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Samsung Bioepis confirms it filed biosimilar Enbrel in EU 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356195
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042235Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7014115a-7ca8-4fa9-a248-5f6282c636f6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042235Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {56E05C74-1891-4357-98E3-65B6024495C8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/17/Could Argentina give you bang for your buck
+parent: {07445639-AADB-410F-83DA-5DED6152D73A}
+name: Could Argentina give you bang for your buck
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8b06a26a-8f5a-407c-aa39-3051e7ee3e57
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 44
+
+Could Argentina give you bang for your buck?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Could Argentina give you bang for your buck
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6473
+
+<p>High inflation, a drop in the price of its commodities and restrictions on imports have not made for a good economic environment in Argentina and have proved a turnoff for investors. But a general election is around the corner and there are hopes that a new administration may set things right. So with change blowing in the wind, companies with flagging pipelines should consider what Argentina has to offer, not least a rich R&D community that helped create the world's first ever cancer vaccine against non-small cell lung cancer, and a vibrant local industry open to partnerships .</p><p>Daniel Gomez, professor of the Quilmes University, and international affairs director at Chemo Labs, believes foreign firms &ndash; from small biotechs to the big multinationals - should take a look at Argentina. Despite the country's economic woes, the pharmaceutical industry has managed to do quite well in recent years, he says. "It is one of the few industries that has increased investments, production and sales. Especially local companies, they have increased their share of the market." Home-grown firms now take around 60% of the market in sales, says Gomez, although he adds that new price controls and restrictions on imports cast a shadow on growth. </p><p>Capacity to produce biologics has traditionally been limited in Latin America, but Argentina has led the way. From early on the country embraced the idea of biosimilars while Europe and the US were still ruminating over their safety, Argentina saw them as a way to provide good medicines at an affordable cost. For example, the local firm BioSidus began developing them in the 1980s and launched its own version of EPO in the 1990. Now the country is developing its capacity to develop more complex products, and partnerships are key. </p><p>Sinergium Biotech, a new company set up in 2013 with backing from the ministry of science, is working on developing biosimilar monoclonal antibodies so that the country does not have to buy expensive imports. Together with the local companies Elea, Chemo and pharmADN, Sinergium has formed a public-private consortium with the Roffo Institute (part of the University of Buenos Aires) and the Quilmes University, among other institutions, to produce monoclonal antibodies. Sinergium has also partnered with Novartis and Pfizer on tech transfer for flu and pneumococcal vaccines respectively. The company has garnered attention from countries in Asia, including China, seeking scientific knowhow and support for in setting up similar facilities.</p><p>But as Gomez points out, "local companies want to do more than just produce copy drugs, they also want to produce their own innovations." For example, as part of a new deal Sinergium and pharmNDA will develop new MAbs. </p><p>Argentina also played an important role in the development of the world's first cancer vaccine for non-small cell lung cancer, says Gomez, Vaxira (racotumomab). This therapeutic vaccine is indicated for patients with advanced NSCLC who have already had radiotherapy and chemotherapy, and for patients who have had no response to first-line treatment. Racotumomab is a monoclonal antibody that triggers a powerful immune response against ganglioside antigens, like NGcGM3, which are present only in tumor cells. It generates a cell death mechanism by preventing the formation of new blood vessels that help the tumor develop. Clinical trials showed that 24% of patients treated with the vaccine lived for an extra two years, compared with 8% of patients who received chemotherapy and radiotherapy.</p><p>It was developed, with help from local companies, by a consortium of Argentinean universities, including Quilmes, and Cuba's Molecular Immunology Center. Insud Group stumped up some 60% ($60m) of the vaccine's development costs and the ministry of science awarded the projects grants. It is now approved in Cuba and Argentina and is licensed in 25 countries across Asia and the Americas. Elea, part of the Insud Group has exclusive rights to the drug in Argentina, while Eurofarma has exclusive rights to Brazil. The drug is also available elsewhere, including Europe, for compassionate use.</p><p>Gomez expects the vaccine to do well. Confirmatory studies are underway and the developers are looking for biomarkers to identify the patients with a better chance of a good response. Research into other potential indications, such as neuroblastoma in pediatric patients, is also ongoing.</p><p>Meanwhile, Gomez also points to opportunities offered by academia. Universities are very active in biomedical research. And oncology is the biggest area of research, followed by infectious diseases and cardiovascular disease. Gomez's own research team at Quilmes University is looking for new inhibitors of telomerase, an enzyme present in cancer cells that stops them from dying. </p><p>Traditionally there was a very strong divide between industry and academia. This is largely down to the influence of Argentina's first of three biomedicine Nobel prize winner who did not believe "the purity of science" be sullied by money. However, attitudes are changing thanks to campaigners like Gomez who wanted to drive better collaboration between science and industry. Now universities are keen to share the fruit of their research and most now have a UVT, a unit dedicated to establishing links with industry. They are headed by an individual trained in technology transfer, which in Argentina is an increasingly popular postgraduate course. They see what the universities are researching and look for potential fits within industry at home and abroad. Gomez says his team at Quilmes has received offers from foreign companies to take their research forward. </p><p>Gomez acknowledges that Argentina's economic problems might make companies think twice, but he is hopeful that whoever wins the next election will have to do something to bring about a sustained recovery. The outcome is not a given, but the current front runner is Daniel Scioli, from the current ruling Peronist, center-left, Front for Victory Party, who recently won the primaries. He has campaigned on appeasing US hedge fund debtors, attracting investors and controlling inflation, although investor commentators have expressed concern that he would not go far enough to introduce economic reform. Mauricio Macri, who heads a center-right coalition, came second. He has promised greater change along more orthodox lines. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 592
+
+<p>High inflation, a drop in the price of its commodities and restrictions on imports have not made for a good economic environment in Argentina and have proved a turnoff for investors. But a general election is around the corner and there are hopes that a new administration may set things right. So with change blowing in the wind, companies with flagging pipelines should consider what Argentina has to offer, not least a rich R&D community that helped create the world's first ever cancer vaccine against non-small cell lung cancer, and a vibrant local industry open to partnerships .</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Could Argentina give you bang for your buck
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150817T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150817T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150817T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029569
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 44
+
+Could Argentina give you bang for your buck?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{CB0FF25D-C5DE-4545-8944-A73FC9496B9B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359976
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042438Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8b06a26a-8f5a-407c-aa39-3051e7ee3e57
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042438Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

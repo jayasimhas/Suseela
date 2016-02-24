@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {904A6A44-23AC-48E8-97D5-0D6383AC0B1B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/04/Takeda seeks big data analytics for rare disease drug discovery
+parent: {194ECEF1-FC3A-4493-B5A0-5BE540D1EF34}
+name: Takeda seeks big data analytics for rare disease drug discovery
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1d2cff0d-ed26-43d3-af6a-da6da2c309ea
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{9B75CD57-1CC7-4B0E-8C02-011AB5834AAB}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Takeda seeks 'big data' analytics for rare disease drug discovery
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Takeda seeks big data analytics for rare disease drug discovery
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1800
+
+<p>Takeda Development Center Americas &ndash; a unit of Takeda Pharmaceutical &ndash; is teaming up with big data solutions company BioXcel to research and repurpose assets for use in rare and ultra-rare disease indications.</p><p>Under the partnership Takeda will gain access to Branford, Connecticut-headquartered BioXcel's Big Data Innovation Lab &ndash; an integrated product discovery engine &ndash; and PharmGPS Orphan Disease Suite for drug discovery and repurposing.</p><p>BioXcel's chair and CEO Dr Vimal Mehta said, "Discovering novel applications for existing molecules is an increasingly attractive strategy to address patient needs, while capitalizing on previous investments and de-risking clinical development."</p><p>BioXcel's PharmaGPS suite encompasses more than 9,000 rare and ultra-rare diseases, 4,000-5,000 associated genes, 1,500 disease pathways, and distinct target-indication tiles for antibody, protein, RNA, small-molecule and gene therapy modalities.</p><p>Earlier this year, Alexion Pharmaceuticals also struck a deal with BioXcel to identify its "next blockbuster rare disease drug" to follow up on the success of Soliris (eculizumab). </p><p>BioXcel focuses solely on discovering therapeutics for rare diseases, of which the company says there are more than 9,000 that meet the criteria for orphan designation. It says PharmGPS is unique and combines big data approaches with traditional data mining and processing. The different data sources analyzed include epidemiological, scientific, clinical, genomic, electronic medical records, and patient reported data among others. BioXcel has more than 70 analysts from scientific, medical, commercial and IT/big data backgrounds and its infrastructure is maintained in "the cloud" so that it is accessible universally.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 228
+
+<p>Takeda Development Center Americas &ndash; a unit of Takeda Pharmaceutical &ndash; is teaming up with big data solutions company BioXcel to research and repurpose assets for use in rare and ultra-rare disease indications.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Takeda seeks big data analytics for rare disease drug discovery
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150904T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150904T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150904T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028398
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Takeda seeks 'big data' analytics for rare disease drug discovery
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357741
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1d2cff0d-ed26-43d3-af6a-da6da2c309ea
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042328Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {CDAB47E5-0D28-427B-B99D-EB68D074A908}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/14/Stockwatch an inauspicious start to earnings season
+parent: {A8A43D63-6ACC-4DA4-B2AE-AFEB13F96A43}
+name: Stockwatch an inauspicious start to earnings season
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8e230832-d0a6-4847-bdea-b889b836f387
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{EBE9B072-7313-4B27-B849-CB50CD3B42E6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Stockwatch: an inauspicious start to earnings season
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+Stockwatch an inauspicious start to earnings season
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6617
+
+<p>The first-quarter 2015 earnings season actually started a couple of weeks ago with The Medicines Company's shock preannouncement that sales of its anticoagulant Angiomax (bivalirudin) would be about a share price-whopping third lower than expectations (<a href="http://www.scripintelligence.com/business/Weak-Angiomax-sales-hit-Medicines-Company-Q1-expectations-357837" target="_new">scripintelligence.com, 10 April 2015</a>). Hospital wholesalers had slowed their ordering of Angiomax ahead of an Appeal Court decision that could result in a generic bivalirudin being available in the US in a few months. </p><p><p>This was an inauspicious start to the latest earnings season. Although the Angiomax blow could be framed as a company-specific problem, market access constrictions by big buying groups will be far from a Medicines Company-specific issue as this year goes on. As if to endorse this, last week's impressive first-quarter results from health insurer and pharmacy benefit manager UnitedHealth Group were in part due to the discounts demanded from manufacturers' list prices to enable their drugs to be included in UnitedHealth's formularies.</p><p><p>After this shaky start to earnings season that had nothing to do with the expected earnings recession brought about by foreign exchange translations, the world's largest healthcare company Johnson & Johnson (J&J) reported its first-quarter results. These results were initially described as "decent" and "solid" by sell-side analysts but ultimately served to remind us of the unpleasant undercurrent of foreign currency effects that will also dominate earnings this year (<a href="http://www.scripintelligence.com/home/1Q-preview-AbbVie-Amgen-AstraZeneca-Biogen-Lilly-Novartis-Roche-357944" target="_new">scripintelligence.com, 17 April 2015</a>). Despite a 4.1% drop in sales, both sales and earnings came in ahead of analysts' consensus estimates and resulted in the J&J share price opening slightly up in the face of a general down day in the stock market. As investors came to appreciate the one-off nature of J&J's earnings beat, and the further lowering of its 2015 guidance due to foreign exchange, the J&J share price ticked back to end in negative territory for the day. J&J's earnings were flattered by one-off gains of $500m from the Cordis Corporation interventional cardiology division and Nucynta (tapentadol) divestments, but held back operationally by the usual poor performances of J&J's Medical Device and Diagnostics and Consumer divisions.</p><p><p>Traditionally, the one bright spot in J&J's earnings is the Pharmaceutical division. But while the headline sales were up just over 10%, as investors again delved deeper into the detail of J&J's announcement, the shine started to come off even this part of the conglomerate. Hepatitis C antiviral Olysio (simeprevir) sales were always going to be pressured by more complete and more active combinations from Gilead Sciences and AbbVie. Last quarter was only the first quarter of significant sales retrenchment. Similar dynamics were being felt by the product managers in a different part of J&J's pharmaceutical division where a continuing decline in the market share of Zytiga (abiraterone acetate) in the treatment of metastatic castrate-resistant prostate cancer was due to competition from Medivation's Xtandi (enzalutamide). Mirroring the outlook for Olysio sales, the market share of Zytiga is also likely to decline further as more recent clinical trial data from the TERRAIN and STRIVE studies on Xtandi begin to impact clinical practice (<a href="http://www.scripintelligence.com/researchdevelopment/Xtandi-bests-Casodex-in-second-head-to-head-study-357660" target="_new">scripintelligence.com, 2 April 2015</a>). </p><p><p>J&J's product portfolio is so broad across the healthcare space that competitive pressures causing J&J to sneeze often result in a cold at other companies. Thus J&J's pain caused by competition to Olysio and Zytiga also have financial impacts at J&J's partners Medivir and BTG, respectively. BTG in particular must be hoping for a plague of snakes of biblical proportions to stimulate sales of its anti-venom products in the US this year as its great white hope product Varithena (polidocanol foam) for varicose veins (which was approved way back November 2013) had its sales expectations trimmed to "low single digit $m" in the company's recent full year 2015 closing statement. Even with a strong dollar, unless BTG is going to start reporting in euros, that doesn't sound like much of a hope to me.</p><p><p>All of these dynamics &ndash; a strong US dollar, restricted formularies and loss of market share &ndash; are also about to impact the world's largest generics company Teva Pharmaceutical Industries when it reports its financial results over the rest of the year. The FDA finally approved a substitutable generic version of Teva's branded and most profitable product Copaxone (glatiramer acetate) for multiple sclerosis last week (<a href="http://www.scripintelligence.com/home/SandozMomenta-nab-1st-US-generic-Copaxone-launch-unclear-357920" target="_new">scripintelligence.com, 16 April 2015</a>). While the sell-side analysts who rate Teva a 'Buy' point to the conversion of 67% of the prescriptions of its soon to be generic 20mg subcutaneous injection dosed daily to the 40mg version dosed three times a week, there is almost certainly no efficacy difference between the two. In any event, I stopped believing prescription data since the Salix prescription and inventory debacle of last year (<a href="http://www.scripintelligence.com/business/Salix-to-restate-201314-results-356445" target="_new">scripintelligence.com, 29 January 2015</a>). Teva reports in US dollars and its guidance does not assume an early Copaxone launch. Teva also has never been on the branded side of pricing demands of pharmacy benefit managers armed with an equally efficacious cheap generic. Can you see why we don't own Teva?</p><p><p>The Magna Biopharma Income fund holdings include UnitedHealth and Medivation.</p><p><p><i>Andy Smith is chief investment officer of Mann Bioinvest. Mann Bioinvest is the investment adviser for the Magna BioPharma Income fund which has no position in the stocks mentioned, unless stated above. Dr Smith gives an investment fund manager's view on public life science companies. He has been lead fund manager for four life science</i>&ndash;<i>specific funds, including International Biotechnology Trust and the AXA Framlington Biotech Fund, and was awarded the Technology Fund Manager of the year for 2007.</i></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 485
+
+<p>The first-quarter 2015 earnings season actually started a couple of weeks ago with The Medicines Company's shock preannouncement that sales of its anticoagulant Angiomax (bivalirudin) would be about a share price-whopping third lower than expectations (<a>scripintelligence.com, 10 April 2015</a>). Hospital wholesalers had slowed their ordering of Angiomax ahead of an Appeal Court decision that could result in a generic bivalirudin being available in the US in a few months. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+Stockwatch an inauspicious start to earnings season
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150414T024659
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150414T024659
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150414T024659
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028471
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Stockwatch: an inauspicious start to earnings season
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{1D97FB85-B553-40BD-9378-6E2E6C2368C2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357862
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042331Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8e230832-d0a6-4847-bdea-b889b836f387
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042331Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

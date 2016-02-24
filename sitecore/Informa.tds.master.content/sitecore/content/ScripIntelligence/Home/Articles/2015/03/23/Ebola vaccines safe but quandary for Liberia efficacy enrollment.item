@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {42F1BB93-39B8-4483-9653-5F57AEC06085}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/23/Ebola vaccines safe but quandary for Liberia efficacy enrollment
+parent: {3D2F38E6-2FE2-42E8-AFEB-1B8929C10B00}
+name: Ebola vaccines safe but quandary for Liberia efficacy enrollment
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f75d97ce-8680-4f6b-80e2-9905b4cb75a7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}|{09212D57-26F8-47A3-9592-B0A92A1D55EA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+Ebola vaccines safe; but quandary for Liberia efficacy enrollment 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 64
+
+Ebola vaccines safe but quandary for Liberia efficacy enrollment
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4572
+
+<p>With the initial findings of an ongoing study in Liberia demonstrating that two experimental Ebola vaccines appear to be safe, scientists from the US National Institute of Allergy and Infectious Diseases (NIAID) are ready to move forward with the next phase of the trial to validate efficacy, the agency said on 26 March. </p><p>The problem now, however, is where to conduct that next portion of the study now that new cases of Ebola have dramatically slowed in Liberia.</p><p>The NIAID trial, known as PREVAIL &ndash; the Partnership for Research on Ebola Vaccines in Liberia &ndash; is evaluating cAd3-EBOZ, a vaccine being developed by the agency and GlaxoSmithKline, and VSV-ZEBOV, a product initially developed by the Canadian government, which licensed the vaccine to NewLink Genetics, now partnered with Merck.</p><p>The NIAID-GSK vaccine uses a chimpanzee-derived cold virus to deliver Ebola genetic material from the Zaire strain of virus causing the outbreak in Liberia, while the NewLink-Merck product employs a vesicular stomatitis virus. </p><p>The Phase II portion of the PREVAIL study got underway on <a href="http://www.scripintelligence.com/home/Much-anticipated-Ebola-vaccine-efficacy-trial-starts-356509" target="_new">2 February</a> in Liberia, enrolling more than 600 people.</p><p>Even though the safety goal of the Phase II has been met, the enrollment will continue through late April at the Redemption Hospital in Monrovia, Liberia, to increase the percentage of women &ndash; currently at 16% &ndash; which would provide more robust data overall, NIAID said. Researchers are hoping to enroll up to 1,500 in the Phase II, which will have a follow-up period of one year. </p><p>The Phase III portion of PREVAIL was designed to enroll 27,000 adults 18 years or older &ndash; healthy subjects, healthcare workers and those at high risk of contracting Ebola.</p><p>All along, NIAID, part of the National Institutes of Health, had made no bones about the fact the study may need to be adapted at some point if and when the Ebola virus started to subside in West Africa &ndash; again acknowledging so when it started PREVAIL last month. </p><p>And Dr Cliff Lane, deputy director for clinical research at the NIAID, told <i>Scrip</i><a href="http://www.scripintelligence.com/home/Liberias-drop-in-Ebola-may-mean-NIH-trial-move-357294" target="_new">earlier in March</a> he suspected the Phase III portion would need to be moved to potentially Sierra Leone or Guinea.</p><p>But there already are studies ongoing or planned in both of those countries, which could make enrollment in those trials and an expanded PREVAIL study tricky.</p><p>Indeed, <a href="http://www.scripintelligence.com/researchdevelopment/NewLinkMerck-Ebola-vaccine-ring-study-starts-in-Guinea-357504" target="_new">earlier this week</a>, the World Health Organization initiated its 10,000-volunteer Phase III "ring" trial testing the NewLink-Merck rVSV Ebola vaccine in Coyah prefecture, Guinea, in which contacts of infected patients are identified and vaccinated &ndash; creating a "ring of immunity" around them to stop the virus from spreading.</p><p>The US Centers for Disease Control and Prevention also is testing rVSV in its 6,000-volunteer Phase II/III <a href="http://www.scripintelligence.com/policyregulation/CDC-to-soon-launch-NewLinkMerck-Ebola-vaccine-study-357293" target="_new">STRIVE trial</a>, which is expected to get underway in the next few days.</p><p>Nonetheless, NIAID's Dr Lane said discussions are in the works for expanding PREVAIL to additional sites in Sierra Leone or Guinea or potentially both nations. </p><p>While NIAID's chief, Dr Anthony Fauci, said it would be best to have <a href="http://www.scripintelligence.com/home/GSK-NIH-declare-Ebola-vaccine-safety-test-a-success-355287" target="_new">enough volunteers</a> in PREVAIL to determine the safety and efficacy of cAd3-EBOZ and VSV-ZEBOV, he has acknowledged the development partners may ultimately need to depend on the FDA's animal rule to get the products licensed. </p><p>The animal rule was created in 2002 to permit a medicine's effectiveness to be demonstrated in animals when it is unethical or not feasible to conduct controlled clinical trials in humans.</p><p>Under the rule, a product may be cleared on the basis of adequate and well-controlled animal studies when the results establish the product is reasonably likely to produce clinical benefit in humans.</p><p>The animal rule has only been used a handful of times since it was established.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 329
+
+<p>With the initial findings of an ongoing study in Liberia demonstrating that two experimental Ebola vaccines appear to be safe, scientists from the US National Institute of Allergy and Infectious Diseases (NIAID) are ready to move forward with the next phase of the trial to validate efficacy, the agency said on 26 March. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 64
+
+Ebola vaccines safe but quandary for Liberia efficacy enrollment
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150323T080000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150323T080000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150323T080000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028253
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+Ebola vaccines safe; but quandary for Liberia efficacy enrollment 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357431
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042321Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f75d97ce-8680-4f6b-80e2-9905b4cb75a7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042321Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {3C0D8808-F17D-40F0-BBF5-ED8D849BD2EA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/22/FINANCE ROUNDUP Will VC Be Last Man Standing If Biotech Bubble Bursts
+parent: {DB7AFD0C-FF3A-4A4A-B0E2-6A1121FFD09B}
+name: FINANCE ROUNDUP Will VC Be Last Man Standing If Biotech Bubble Bursts
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 47e4f686-b05c-4474-933f-774ba40e7d8b
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{3B33748A-17E9-4241-8447-989BB3484DFB}|{424A060F-E184-40D6-AC5C-9C52FBDA3B16}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 71
+
+FINANCE ROUNDUP: Will VC Be Last Man Standing If Biotech Bubble Bursts?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 69
+
+FINANCE ROUNDUP Will VC Be Last Man Standing If Biotech Bubble Bursts
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 10916
+
+<p>The bad news about the rapid rise in biotechnology company valuations? It will end eventually. The good news? While initial public offerings may no longer be an option for some pre-commercial companies to fund drug development, several venture capital investors recently raised new funds to back biotech startups and support follow-on financing rounds.</p><p>With huge drug price increases drumming up new plans from presidential candidates to control the cost of medicines, biopharma stock prices have taken a hit that's likely to prevent some biotech companies from executing previously planned IPOs. Fortunately, venture capital firms are waiting in the wings to fund companies that can't take their shares into the stock market at a favorable price. The question will be: If IPOs are no longer an option, will VCs continue to invest money quickly or conserve cash to fund later-stage rounds for companies already in their portfolios?</p><p>VC firms have capitalized on the biotech IPO market as well as the fast pace of biopharma mergers and acquisitions by raising new funds from enthusiastic limited partners who've seen private therapeutics makers go public or be acquired at substantial premiums to the amount of venture cash previously invested in early- and mid-stage companies. </p><p><a href="http://www.scripintelligence.com/business/Deerfield-Foresite-raise-1bn-to-fund-health-care-companies-359732" target="_new">Deerfield Management Co., Foresite Capital</a>, <a href="http://www.scripintelligence.com/home/Biotech-benefits-as-VC-firms-raise-cash-in-Q2-359387" target="_new">Clarus Ventures, MPM Capital and Atlas Venture</a> are among the VC firms that have raised new capital this year and OrbiMed indicated in a recent US Securities and Exchange Commission (SEC) filing that it is raising $950m for its sixth venture capital fund.</p><p>But while VC firms are raising more money for new biotech investments, whether they'll be able to back large funding rounds in partnership with crossover investors looking to back near-term IPO candidates remains to be seen following recent stock market movements.</p><p>The Nasdaq Biotechnology Index (NBI) began a freefall a week ago based on concerns that the US government will look for ways to <a href="http://www.scripintelligence.com/home/Biotech-Walloped-On-Clinton-Drug-Price-Controls-Threat-360599" target="_new">control prescription drug pricing after Turing Pharmaceuticals</a> decided to increase the price of Daraprim (pyrimethamine) for toxoplasmosis by more than 5,000%. </p><p>The NBI reached 4,165.87 at its peak this year on July 20, which was a 31.1% increase from the end of 2014, but the index has fallen 26.8% from its year-to-date high to 3050.83 as of Sept. 28 &ndash; that's a 4% drop below the NBI's Dec. 31 level.</p><p><b>Deciphera, Corvus Snag Big Rounds</b></p><p>But before generalist investors began to cash out of biotech stocks, Deciphera Pharmaceuticals closed a $75m Series B round that could support a future IPO if interest in newly public drug makers does not disappear completely for therapeutics developers with attractive clinical candidates.</p><p>Waltham, Massachusetts-based Deciphera largely has flown under the radar, but the company's pipeline of switch control kinase inhibitors is moving into mid-stage clinical trials with support from New Leaf Venture Partners and its prior backers. </p><p>"We did have a deep-pocketed and very committed investor that supported the company for a long period of time. We were able to stay under the radar and focus on developing this pipeline with no venture money until now," Deciphera president and CEO Michael Taylor said in an interview. "Bringing New Leaf on is great for us. We look forward to expanding our investor base over time and ultimately considering the public markets as well."</p><p>Deciphera has 20 employees working at its administrative headquarters and at a research facility in Lawrence, Kansas, who are testing drug candidates that are designed to shut off the "on" portion of a kinase's "on/off" switch to improve kinase inhibition in the treatment of various cancers. The company's platform is designed to work even against mutations that may get around first-generation kinase inhibitors. </p><p>Deciphera's pipeline includes the Phase I drug candidates altiratinib (DCC-2701), a MET/TIE2/VEGFR2/TRK inhibitor, and rebastinib, a TIE2 kinase inhibitor. Preclinical programs include DCC-2618, a pan-KIT inhibitor, and DCC-3014, a selective inhibitor of CSF1R. A Phase I study for DCC-2618 is expected to begin before the end of 2015.</p><p>Deciphera also has a pan-RAF inhibitor called LY-3009120, which is being developed by Eli Lilly & Co. The companies <a href="http://www.scripintelligence.com/business/Lilly-and-Deciphera-in-oncology-development-deal-3479" target="_new">entered into a partnership</a> worth up to $520m for the development of as many as four kinase inhibitors in 2008, but Lilly narrowed its interest down to LY-3009120. </p><p>Deciphera has earned more than $30m to date in upfront and milestone payments under the alliance, but Taylor said the company is not looking to negotiate any additional research collaborations.</p><p>"We've grown up and evolved," he said. "We have a lot of potential value creation in our current pipeline. It's possible some of those [assets] may be partnered as it makes sense for the company. We would like to continue to do discovery for our own pipeline."</p><p><b>Three More VC Rounds And Two Other Funding Deals</b></p><p>Additional venture capital, private equity and government grant fundraising deals recently were announced by Corvus Pharmaceuticals Inc., Alector LLC, Replimune Ltd, Akari Therapeutics and ImmunoCellular Therapeutics Ltd.</p><table><tbody><tr><td><p><b>Company</b></p>&nbsp;</td><td><p><b>Investors</b></p>&nbsp;</td><td><p><b>Use Of Proceeds</b></p>&nbsp;</td></tr><tr><td><p>Corvus Pharmaceuticals;</p><p>Burlingame, California</p>&nbsp;</td><td><p>In a Form D filed with the SEC on Sept. 25, the company indicated that it's raised nearly $75m with support from Adams Street Partners LLC, Novo A/S and OrbiMed Advisors LLC. Corvus previously raised $33.5m in Series A venture capital from the same three investors.</p>&nbsp;</td><td><p>The former founding CEO of Pharmacyclics Inc., which AbbVie acquired <a href="http://www.scripintelligence.com/home/AbbVie-outdoes-rumored-JandJ-bid-with-21bn-Pharmacyclics-buy-357078" target="_new">for $21bn this year</a>, is leading Corvus's development of immuno-oncology drugs and antibodies. A Phase Ib clinical trial for the company's first checkpoint inhibitor is expected to begin in early 2016.</p>&nbsp;</td></tr><tr><td><p>Alector LLC;</p><p>San Francisco</p>&nbsp;</td><td><p>MRL Ventures led Alector's $32m Series C round with participation from OrbiMed, Polaris Partners, Google Ventures, Topspin Partners, Mission Bay Capital and other investors. The company raised $10m in <a href="http://www.scripintelligence.com/home/BioNotebook-Alector-Dimension-Discovery-Labs-BioMarinClovis-Array-CEL-SCI-Otonomy-GlobeImmune-347766" target="_new">Series A cash in October 2013</a> and entered into an Alzheimer's disease <a href="http://www.scripintelligence.com/home/JandJ-keeps-Alzheimers-focus-with-Alector-collaboration-350472" target="_new">collaboration with Johnson & Johnson</a> in March 2014. </p>&nbsp;</td><td><p>Alector is developing immuno-modulatory antibody therapies for Alzheimer's disease and other neurodegenerative disorders, with the goal of "harnessing the immune system to fight multiple aspects of these disorders," according to co-founder, president and CEO Arnon Rosenthal. The company will use the new funding to broaden its pipeline and advance therapeutic candidates toward clinical trials.</p>&nbsp;</td></tr><tr><td><p>Replimune Ltd.;</p><p>Oxford, UK</p>&nbsp;</td><td><p>Atlas Venture led a $30m Series A round for Replimune with participation from the company's previous investors Forbion Capital Partners and Omega Funds. The UK-based company also operates from a site in Cambridge, Massachusetts.</p>&nbsp;</td><td><p>Replimune is developing next-generation immunotherapies that use oncolytic viruses to selectively replicate and kill tumors while inducing an immune response. The new funding will support clinical trials, including the pursuit of partnerships to test the company's technology in combination with other immuno-oncology drugs.</p>&nbsp;</td></tr><tr><td><p>Akari Therapeutics;</p><p>New York</p>&nbsp;</td><td><p>Deerfield Management Co. led a $75m private placement to finance <a href="http://www.scripintelligence.com/business/Celsus-becomes-Akari-after-trial-failure-359412" target="_new">Akari, a public company that was created through the merger</a> of Celsus Therapeutics Plc and Volution Immuno Pharmaceuticals SA. Venrock, Vivo Capital, Foresite Capital, New Enterprise Associates, QVT Financial, RA Capital Management and other unnamed institutional investors also participated in the financing, which values Akari at $150m.</p>&nbsp;</td><td><p>The capital will fund development of Coversin, a second-generation complement inhibitor that acts on complement component-C5, preventing release of C5a and formation of C5b-9, for the treatment of autoimmune and rare diseases, such as paroxysmal nocturnal hemoglobinuria (PNH), atypical hemolytic uremic syndrome (aHUS) and Guillain Barré syndrome (GBS).</p>&nbsp;</td></tr><tr><td><p>ImmunoCellular Therapeutics Ltd.;</p><p>Los Angeles</p>&nbsp;</td><td><p>The California Institute of Regenerative Medicine (CIRM), which is in the middle of <a href="http://www.scripintelligence.com/home/features/CIRM-CEO-Mills-On-Californias-Last-800m-For-Stem-Cells-360110" target="_new">updating its strategic plan</a> and <a href="http://www.scripintelligence.com/business/CIRM-asks-patients-how-to-spend-last-800m-for-stem-cell-therapies-359450" target="_new">launched CIRM 2.0</a> to improve access to funding for commercial stem cell-based therapies, provided a $19.9m grant to help fund a Phase III clinical trial for ITC-107 in the treatment of newly-diagnosed glioblastoma. </p>&nbsp;</td><td><p>ITC-107 is an immunotherapy that preferentially targets and kills cancer stem cells with the goal of preventing tumor recurrence following treatment with the standard of care. ImmunoCellular plans to initiate a 400-patient Phase III trial in the fourth quarter of 2015. The CIRM grant plus the company's cash on hand will fund the entire study. <a href="http://www.scripintelligence.com/business/ImmunoCellular-plummets-on-ICT-107-Phase-II-miss-348727" target="_new">ITC-107 failed in Phase II</a>, but ImmunoCellular is moving forward with a registrational study in HLA-A2-positive brain cancer patients under a special protocol assessment (SPA) agreed to by the US FDA.</p>&nbsp;</td></tr></tbody></table><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 359
+
+<p>The bad news about the rapid rise in biotechnology company valuations? It will end eventually. The good news? While initial public offerings may no longer be an option for some pre-commercial companies to fund drug development, several venture capital investors recently raised new funds to back biotech startups and support follow-on financing rounds.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 69
+
+FINANCE ROUNDUP Will VC Be Last Man Standing If Biotech Bubble Bursts
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150922T224701
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150922T224701
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150922T224701
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029898
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 71
+
+FINANCE ROUNDUP: Will VC Be Last Man Standing If Biotech Bubble Bursts?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+Expert View
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360626
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+47e4f686-b05c-4474-933f-774ba40e7d8b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042456Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {E7DA1E55-E645-4D99-9D7A-8E0CA05AD06A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/03/EU offers euro1m prize for rapid antibiotic test
+parent: {C10C73BD-F7C3-476F-ABFC-B27344ADF644}
+name: EU offers euro1m prize for rapid antibiotic test
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 2fe1bd60-e9d8-429e-9580-113cd064164c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+EU offers &euro;1m prize for rapid antibiotic test 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+EU offers euro1m prize for rapid antibiotic test
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3141
+
+<p>Got an idea for a test to determine whether a patient should be given antibiotics or not? Fancy winning &euro;1m? Then get cracking, because that's what's on offer from the European Commission for a rapid test that tells doctors whether patients with upper respiratory tract infections require antibiotics or can be treated safely without them.</p><p>The aim of developing such a test is to help stop the overuse of antibiotics and halt the growing resistance among microorganisms that the commission says causes 25,000 deaths each year and more than &euro;1.5bn in healthcare expenses and productivity losses in Europe alone. URT infections are a major reason for the prescribing of antibiotics, even though many of them are due to viruses. </p><p>"Growing resistance to antibiotics is one of the biggest challenges to public health today," said Carlos Moedas, the European Commissioner for research, science and innovation. "We need to find new ways to prevent people from dying from infections that have been treatable for decades, until resistance rendered our drugs ineffective. We need to bring new classes of antibiotics to market and we need to take preventative measures to stop antibiotics being over-prescribed and over-used." </p><p>The &euro;1m innovation prize is one of five such prizes being launched this year under the EU's research and innovation program, Horizon 2020. The prizes offer a cash reward to a person or team that can most effectively meet a defined challenge with a breakthrough solution. </p><p>In this case, the award criteria require the test to be cheap, rapid and easy to use for healthcare providers and non- or minimally invasive for patients. The rules of the contest, which specify the targets that need to be met but do not prescribe the methodology or any technical details of the test, are available at <a href="http://ec.europa.eu/research/participants/data/ref/h2020/other/prizes/contest_rules/h2020-prizes-induc-rules-hoa-2015.pdf" target="_new">http://ec.europa.eu/research/participants/data/ref/h2020/other/prizes/contest_rules/h2020-prizes-induc-rules-hoa-2015.pdf</a>.</p><p>The commission says that "challenge" or "inducement" prizes have become an important driver of innovation in the public, private and philanthropic sectors worldwide. In March 2014, it announced the winner of its first ever challenge prize to encourage inventors to overcome one of the biggest barriers to using vaccines in developing countries: the need to keep them stable at any ambient temperature. The &euro;2m prize was awarded to German biopharmaceutical company CureVac for progress towards a novel technology to bring life-saving vaccines to people across the world safely and at affordable prices.</p><p>In 2014, the UK innovation charity NESTA launched a &pound;10m prize for whomever can come up with a cheap, fast and easy test for bacterial infections so that health professionals can administer the right antibiotic at the right time (<a href="http://www.scripintelligence.com/home/Antimicrobial-resistance-prize-industry-reaction-352844" target="_new">scripintelligence.com, 11 July 2014</a>).</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 351
+
+<p>Got an idea for a test to determine whether a patient should be given antibiotics or not? Fancy winning &euro;1m? Then get cracking, because that's what's on offer from the European Commission for a rapid test that tells doctors whether patients with upper respiratory tract infections require antibiotics or can be treated safely without them.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+EU offers euro1m prize for rapid antibiotic test
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150403T110000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150403T110000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150403T110000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028042
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+EU offers &euro;1m prize for rapid antibiotic test 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357058
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2fe1bd60-e9d8-429e-9580-113cd064164c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

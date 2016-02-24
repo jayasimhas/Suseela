@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {E61CC2A9-2462-49D0-B777-1A33B077F638}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/09/Avastin In AMD French Court Verdict Imminent
+parent: {38487DA6-20C9-4C4C-B736-2808B0CBC09B}
+name: Avastin In AMD French Court Verdict Imminent
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1a471490-e8d4-4551-9423-6aa1a5ab5739
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Avastin In AMD: French Court Verdict Imminent
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+Avastin In AMD French Court Verdict Imminent
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6581
+
+<p>France's top administrative court, the Conseil d'Etat, is expected to decide any day now whether to suspend the government's decision to reimburse the off-label use of Roche's anticancer, <i>Avastin</i> (bevacizumab), in wet AMD. </p><p>The decision to reimburse Avastin for AMD, which took effect on Sep. 1, sets a precedent by encouraging the use of a drug in an unapproved indication for purely financial reasons. Two other licensed products are available for AMD &ndash; Novartis's Lucentis (ranibizumab) and Bayer's Eylea (aflibercept) &ndash; but they are much more expensive. </p><p>Roche is highly displeased by France's action, and has asked the Conseil d'Etat to suspend the "temporary use recommendation" (Recommandation Temporarire d'Utilisation, or RTU) pending a full inquiry into the facts of the case. It has also lodged an action to have the RTU annulled. </p><p>The court's decision is keenly awaited, not just by Roche but by the wider pharmaceutical industry, which is concerned that France's fostering of off-label use in such circumstances has the potential to undermine the EU regulatory system, and if unchallenged could spur other countries to follow suit. </p><p>The RTU system is intended to allow the prescribing of a marketed drug for an unapproved indication where off-label use has been identified, provided there is no other appropriate approved medicine available and the benefit-risk ratio is assumed to be favourable. RTUs are initiated by the French regulator, the Agence Nationale de la Sécurité du Médicament et des produits de santé (ANSM), the aim being to make off-label use safer and ensure the company marketing the drug monitor's the patient's treatment.</p><p>However, recent changes to the legislation mean an RTU can now also be initiated even where an appropriate alternative exists, in order to address a clear public health risk or to "avoid expenses that have a significant impact for the health insurance." Eight RTUs are currently under way, but this is the first to have been implemented without the company's agreement. </p><p>Roche says that the RTU for Avastin poses particular safety risks because bevacizumab has not been developed or manufactured according to the quality standards for drugs to be injected into the eye.</p><p>The company has also refused to agree to implement a patient monitoring program that would include collecting safety and efficacy data and submitting regular reports on this use of its product. ANSM had initially insisted that the company was obliged to run such a program under the Code of Public Health, and outlined the details in a 40-page patient monitoring protocol included in the RTU, which was issued in June. </p><h2>Roche No Longer Responsible</h2><p>However, the agency now seems to have changed its mind. In a new version of the protocol published on its website on Sep. 11, ANSM has removed all references to Roche's responsibility for the RTU. </p><p>Instead the agency says that, "in the absence of the monitoring that according to regulation should be incumbent on Roche," the monitoring program will be run by the Hospices Civils de Lyon (HCL), the second-largest university hospital network in France.</p><p>The HCL will be responsible for monitoring patients as regards the efficacy, adverse effects and actual conditions of use of preparations of Avastin under the RTU. Hospital pharmacies (which will be responsible for titrating Avastin into smaller syringes suitable for injection into the eye) will forward the prescribing and monitoring forms to the HCL, which will collect them and place them into an anonymized database. </p><p>Together with the Lyon pharmacovigilance center, the HCL will analyse all data gathered, including any safety and pharmacovigilance information "that might be transmitted by Roche under its regulatory obligations relating to pharmacovigilance" (Roche has always said it would continue to fulfil its obligations as the marketing authorization holder for Avastin). </p><p>ANSM's action is clearly intended to ensure that the monitoring program, and hence the RTU, can be properly implemented, given Roche's refusal to take responsibility for it. However, this has done nothing to pacify the Swiss company, which told <i>Scrip</i> that despite the changes to the protocol, its "fundamental view towards the RTU for bevacizumab in wAMD remains unchanged. In our opinion, it is not in favor of public health".</p><h2>Hearing </h2><p>It remains to be seen whether the move has any influence on the deliberations at the Conseil d'Etat, which held a hearing on Sep. 15 where the company, ANSM and the French health ministry answered questions on the matter. </p><p>Roche declined to say what was discussed at the hearing, although according to a report in the doctors' daily paper, <i>Le Quotidien du Médecin</i>, issues such as safety and company liability were raised. </p><p>ANSM's director general, Dominique Martin, said that reformulation and administration of Avastin to AMD patients would take place only in the hospital environment, and that ANSM had drawn up "very precise instructions on the way in which reformulation should be carried out by hospital pharmacies," the <i>Quotidien</i> reported. </p><p>According to Martin, the aim of the RTU was not to increase the number of prescriptions for Avastin in AMD but to build a regulatory framework around what was already current practice and "put an end to off-label prescriptions."</p><p>Roche's liability for any adverse events caused by the use of Avastin in AMD under the ATU was also discussed, according to the <i>Quotidien</i>, which cited Roche's representative as telling the hearing that the RTU was "a poor response to a problem that is above all an economic one." </p><p>The French off-label legislation has also come under attack from three European industry associations, which have <a href="http://www.scripintelligence.com/home/Industry-Calls-For-EU-Action-Against-French-Off-Label-Law-360201" target="_new">filed a complaint</a> with the European Commission alleging that it undermines the EU drug regulatory framework and contradicts the jurisprudence of the Court of Justice of the EU. </p><p>The three bodies &ndash; the European Federation of Pharmaceutical Industries and Associations (EFPIA), the European Confederation of Pharmaceutical Entrepreneurs (EUCOPE), and the European biotechnology industry body, EuropaBio &ndash; have taken similar action against an Italian off-label law that was passed in May 2014 and also covers the use of Avastin in AMD.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 237
+
+<p>France's top administrative court, the Conseil d'Etat, is expected to decide any day now whether to suspend the government's decision to reimburse the off-label use of Roche's anticancer, <i>Avastin</i> (bevacizumab), in wet AMD. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Avastin In AMD French Court Verdict Imminent
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151109T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151109T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151109T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029789
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Avastin In AMD: French Court Verdict Imminent
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360409
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1a471490-e8d4-4551-9423-6aa1a5ab5739
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042450Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

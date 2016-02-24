@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D4FBE835-618F-428A-B2C2-048D7E7201B2}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/11/FDAs Califf Tough Enough
+parent: {5EDD049F-1031-4290-8719-6CA0186009DA}
+name: FDAs Califf Tough Enough
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a7d90d9a-8fdf-48cb-a2ca-c7fef80c4b39
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 28
+
+FDA's Califf: Tough Enough? 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 24
+
+FDAs Califf Tough Enough
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9430
+
+<p>If anyone was expecting some real "gotcha" questions during the much-anticipated Nov. 17 Senate Health, Education, Labor and Pensions (HELP) confirmation hearing for Robert Califf as the next permanent head of the FDA, they were sorely disappointed.</p><p>Califf came prepared, for the most part, only making slight stumbles here and there.</p><p>Indeed, the cardiologist and former Duke University professor, who joined the FDA earlier this year as the deputy commissioner for medical products and tobacco, appeared confident throughout the two-hour hearing, where mostly softball questions were asked, although Califf acknowledged later in the day at a conference hosted by the Friends of Cancer Research that the Capitol Hill hearing experience was exhausting &ndash; but nothing like what former Secretary of State and White House seeker Hillary Clinton faced last month during her 11-hour Benghazi grilling. </p><p>The only real contention came from Sens. Bernie Sanders (I-VT) and Elizabeth Warren (D-MA), who mostly asked about Califf's ties to the pharmaceutical industry and what he'd do to control drug prices &ndash; questions that were highly <a href="http://www.scripintelligence.com/home/Benghazi-Like-Hearing-Unlikely-For-Califf-But-Expect-Questions-361480" target="_new">anticipated</a> from those two lawmakers.</p><p>"It's no secret that during your time at Duke University you received significant financial support from the pharmaceutical industry, both for you personally and for your research, and we know it's a common practice for principal investigators on clinical trials," Warren said to Califf. "But it naturally raises questions about your relationship with the drug industry. One particular concern with industry funding with academic work is that is that drug companies may be able to exert influence over the conduct of those studies."</p><p>The Massachusetts senator pressed Califf to explain "exactly what input" pharmaceutical sponsors had in the design of the clinical trials the FDA commissioner contender conducted or oversaw, the analysis of the data and the publication of the results.</p><p>Califf pointed out that trial designs are done jointly and "very publicly, because typically it's done to try to get an indication from the FDA."</p><p>"So it actually involves industry, academia and now patients involved in the design of the trial and the FDA," he said.</p><p>The most critical factor for clinical trial researchers, Califf said, is having access to a biopharmaceutical company's database &ndash; something he said has been "ironclad" in all contracts with industry involving studies of their products.</p><p>But Califf said he's had to walk away from about 70% of the studies he wanted to do "because the company was unwilling to grant" the database access.</p><p>He insisted that while industry has a right to make suggestions about articles being published, it has "no right to censor and no right to change any of the writing that's done unless it's agreed to by the authors" &ndash; something Califf said holds true for public presentations. </p><p>"Keeping that academic independence we think is a critical part of the effort," he declared. "In no case, did we allow the company to do the analysis and we just were recipients of what they said the answer was."</p><p>Warren said she had requested copies of the contracts between pharmaceutical firms signed with the Duke Clinical Research Institute &ndash; Califf's former stomping grounds &ndash; "to get a better understanding of what's happening here."</p><p>"These agreements typically spell out in detail the relationship between the researchers and the funders," Warren said.</p><p>Califf said Duke had "graciously agreed to make the contracts available, and I think they're either in the staff's hands or on their way."</p><p>Warren said Califf's financial relationship with the industry also raised questions about what his priorities would be if confirmed for the commissioner job.</p><p>"Many in the pharmaceutical and device industries spend a lot of time and money arguing that the FDA is just too tough, that we should lower the FDA standards on safety and effectiveness, and unfortunately, they have a lot of friends in Congress," she charged.</p><p>"I think if you look at my records, you'll find I've never been a proponent of lowering standards," Califf said. "If anything, I've argued for raising standards with better studies that show the full gamut of risk and benefit for the time that a treatment might be used."</p><p>But, he said," that doesn't mean we couldn't potentially be quicker or something else."</p><p>Nonetheless, Califf said that "in no case, would we argue to lower the standards. Americans depend on safe drugs and devices that are also effective."</p><p><b>FDA's Role In Controlling Costs?</b></p><p>Sanders pointed out that he'd already said he would <a href="http://www.scripintelligence.com/home/Drug-Prices-Trade-Deal-Hot-For-1st-Democratic-Debate-361005" target="_new">not support</a> Califf's nomination, reiterating at the Nov. 17 hearing he did not believe President Barack Obama's <a href="http://www.scripintelligence.com/home/A-Califf-Regime-The-Disruptor-FDA-Industry-Needs-360491" target="_new">candidate</a> was "strong enough on the most important issue that the American people are concerned about with regard to prescription drugs" &ndash; the high prices of medicine.</p><p>Califf pointed out that it's "not our job" to set drug prices &ndash; noting the FDA holds no powers to do so, although he said he believed the agency could have an impact on costs.</p><p>"About one out of five Americans cannot afford to fill their prescriptions that their doctors are writing for them," Sanders said, noting that by comparison, Canadians and others pay "far, far less" for their drugs than patients in the US.</p><p>He took aim at the $57bn in profits accumulated together last year by four drug makers: Pfizer Inc., Johnson & Johnson Inc., Novartis AG and Roche Holdings AG.</p><p>"They are doing quite well, and yet millions of Americans cannot afford the high costs of prescription drugs," Sanders asserted.</p><p>While all of us agree that clearly we want great new products out on the market to save lives, for millions of people it doesn't matter what the products are. They just cannot afford them," he said. "We need an FDA commissioner who is going to be aggressive and understands that very simple principle."</p><p>But, Sanders told Califf, "I don't think you get that."</p><p>The Vermont senator grilled Califf on whether he would ever permit drugs to be reimported into the US from Canada.</p><p>"We have major concerns about reimportation," Califf responded, adding it would be expensive to put the system in place necessary to carry out the process of regulating medicines coming across the border.</p><p>Sanders said the US government has been "extraordinarily weak at taking on the pharmaceutical industry that has been ripping off the American people."</p><p>"I believe we need a commissioner who is going to stand up to the pharmaceutical industry and protect the American consumers," he said. </p><p>And, Sanders told Califf, "I'm going to have to say to you, with regret, that I think you are not that person."</p><p>But Sanders wasn't the only lawmaker who insisted the FDA may have a role in helping to reduce the costs to Americans of their prescription drugs. </p><p>Sen. Lamar Alexander, chairman of the Senate HELP Committee, argued the FDA could help bring lower drug prices to consumers by improving the agency's processes for approving generics and biosimilars "so there is more choice and competition in the market."</p><p>Alexander and a few other senators on the committee scolded the FDA for continuing to have a backlog of abbreviated new drug applications for generic medicines.</p><p>But Califf pointed out the generic backlog has been <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Clearing-FDAs-Generics-Backlog-Answer-To-Drug-Price-Controversy-361105" target="_new">significantly reduced</a> in the past three years. </p><p><b>Guidances, Rules, New Pathways</b></p><p>Alexander also pressed Califf on why the FDA has been turning more and more to guidances rather than rulemaking, while other lawmakers complained the agency has left several guidances in "<a href="http://www.scripintelligence.com/home/FDA-admits-172-guidance-documents-linger-in-draft-form-357211" target="_new">limbo</a>" by taking too long to finalize or issue them.</p><p>Califf also was questioned about his thoughts about laboratory-developed tests, medical apps and <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Washingtons-Drug-Policy-Game-JnJs-Jay-Siegels-A-Player-359840" target="_new">drug-device combos</a> &ndash; the latter of which he said likely would require a congressionally created regulatory pathway. </p><p>"There is a strong view at the FDA that we need another pathway that will give the FDA the flexibility to require the data that's needed to assure that the proposed treatment is safe and effective," Califf said, declaring regulators were ready to engage with lawmakers on the matter.</p><p>A timeline for the HELP Committee and then the full Senate to vote on Califf's confirmation has not yet been set, but most Capitol Hill watchers expect him to be easily confirmed.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 256
+
+<p>If anyone was expecting some real "gotcha" questions during the much-anticipated Nov. 17 Senate Health, Education, Labor and Pensions (HELP) confirmation hearing for Robert Califf as the next permanent head of the FDA, they were sorely disappointed.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 24
+
+FDAs Califf Tough Enough
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151111T094446
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151111T094446
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151111T094446
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030338
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 28
+
+FDA's Califf: Tough Enough? 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361513
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a7d90d9a-8fdf-48cb-a2ca-c7fef80c4b39
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042524Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

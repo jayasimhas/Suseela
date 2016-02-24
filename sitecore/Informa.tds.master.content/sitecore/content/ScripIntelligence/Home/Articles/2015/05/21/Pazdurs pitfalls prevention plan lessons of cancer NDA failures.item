@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {0FDE927E-D51B-4936-816A-BBC43CA3BB80}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/21/Pazdurs pitfalls prevention plan lessons of cancer NDA failures
+parent: {8F6157F9-9E9D-45D0-9A9C-F51772A3F6A9}
+name: Pazdurs pitfalls prevention plan lessons of cancer NDA failures
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: fcade957-6e22-453d-8145-2eaea396522f
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{F5161CC2-772F-472E-A21C-BF196343462E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Pazdur's pitfalls prevention plan: lessons of cancer NDA failures
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Pazdurs pitfalls prevention plan lessons of cancer NDA failures
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6663
+
+<p>With the speed at which cancer drugs like Bristol-Myers Squibb's PD-1 immune checkpoint inhibitor Opdivo (nivolumab) and Amgen's bispecific T-cell engager (BiTE) antibody Blincyto (blinatumomab) gained the FDA's approval in recent months, one would think winning over the agency's oncology reviewers has become almost effortless &ndash; or at least, a lot easier than it used to be.</p><p>But a lot of factors weigh into the FDA's determinations in permitting oncology drugs to enter &ndash; or not &ndash; the US market.</p><p>Dr Richard Pazdur, director of the FDA's Office of Hematology and Oncology Products, and three of his colleagues have provided a new analysis about cancer medicines that have failed to win US approval &ndash; declaring that by supplying the information, they are hoping to help manufacturers avoid the perilous pitfalls that have befallen others.</p><p>The FDA's "non-approval" decisions outlined in the article, which was published in <i>Nature Reviews Drug Discovery</i>, "highlight important concepts that can tip the scale against a favorable benefit-risk assessment," they said.</p><p>And much like the fictional <i>Star Wars'</i> Obi-Wan Kenobi told Luke Skywalker to "use the Force," Dr Pazdur and his colleagues urged drug makers to "use the mechanisms" at their disposal under the procedures of the <i>Prescription Drug User Fee Act</i> for holding formal meetings with the FDA to gain guidance and clarity for a path forward for the companies&rsquo; oncology medicines. </p><p>"Such meetings can be used to uncover potential deficits in drug development programs and discuss strategies that can streamline the process of bringing new drugs to cancer patients," they said.</p><p><b>What not to do</b></p><p>When mulling over whether to approve a drug for cancer, the FDA considers if the medicine has a favorable benefit-risk profile &ndash; taking into account the magnitude of the treatment effect, the drug's safety data and the seriousness of the disease it's intended to treat in the context of the degree of the unmet medical need. </p><p>In their article, Dr Pazdur and the other FDA researchers provided 15 examples of what not to do.</p><p>Their analysis, which examined 15 new drug applications (NDAs) for oncology medicines that failed to gain approval over the past decade, revealed there were two types of major deficiencies that led to the agency rejecting the products: lack of efficacy of the study medicine, which was the problem for 10 of the NDAs, or 67%, and clinical trial design flaws, which brought down five, or 33%.</p><p>They noted none of the NDAs were snubbed by the FDA solely for safety reasons.</p><p>In looking more closely at the two subsets, Dr Pazdur and his colleagues discovered that in six of the 10 NDAs rejected because of a lack of efficacy, the pivotal trials failed to demonstrate a statistically significant treatment effect on the pre-specified primary endpoint and had sought approval based on subgroup analyses. </p><p>For the other four NDAs in that subset, the studied drugs failed to demonstrate a clinically meaningful treatment effect. </p><p>Two of those four applications included the results from randomized studies, in which the magnitude of improvement on the primary endpoint over the comparator was small, despite demonstration of a statistically significant treatment effect, the researchers said. The other two were supported by single-arm trials, where the applicant sought accelerated approval based on objective response rate but did not provide adequate justification the responses of the magnitude and duration reported were reasonably likely to predict clinical benefit. </p><p>It's more likely than not that if those 10 NDAs that lacked efficacy came before an FDA advisory committee, their sponsors got a public scolding from Dr Pazdur for failing to follow the agency's advice.</p><p>For the second subset of NDAs &ndash; the five not approved due to study design flaws &ndash; two were based on randomized trials that showed statistically significant treatment effects on primary endpoints, but the clinical benefit was uncertain.</p><p>One of those two involved a randomized trial of standard therapy versus the study drug, with change in the measurement of a biomarker over baseline as the primary endpoint. But the applicant failed to provide sufficient evidence the observed treatment effect on the biomarker could predict clinical benefit, Dr Pazdur and his colleagues said. </p><p>The other of the two involved a trial with a primary endpoint that was not recognized as an established efficacy outcome measure in the proposed clinical setting. The trial also failed to demonstrate improvement in overall survival &ndash; the secondary endpoint.</p><p>The third of the five NDAs with study design flaws was based on a multinational randomized trial comparing the first-line treatment with the study drug against standard therapy as an active comparator. While the trial demonstrated a statistically significant salutary treatment effect on the primary endpoint, a "deleterious trend" was seen on the secondary endpoint of overall survival, the FDA researchers said.</p><p>They also noted the trial involving the third drug allowed for one-way crossover from the active comparator to the study drug in a geographic region that had limited availability of other therapies &ndash; potentially resulting in suboptimal subsequent treatment of patients in the study arm. </p><p>For the fourth application in the second subset, which was supported by a single-arm trial in patients whose tumors harbored a specific mutation, Dr Pazdur and his colleagues said there was substantial uncertainty about the method of patient selection because of inadequacies in the process of validating the companion diagnostic assay. </p><p>The fifth failed NDA in the subset also was based on a single-arm trial. But it permitted treatment with chemotherapy after the administration of the study drug and before the assessment of the primary endpoint, therefore, not allowing isolation of the study drug's treatment effect.</p><p><b>Use the Force</b></p><p>Examining the patterns in the 15 failed oncology NDAs may provide an opportunity for other drug manufacturers to anticipate and address the same potential hazards before it&rsquo;s too late, the FDA researchers said.</p><p>But, as Dr Pazdur has expressed at various FDA adcomms, too often companies fail to heed the lessons others have learned the hard way. </p><p>And unlike Obi-Wan, Dr Pazdur can&rsquo;t use &ldquo;Jedi mind tricks&rdquo; to force cancer drug makers to do so. </p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 389
+
+<p>With the speed at which cancer drugs like Bristol-Myers Squibb's PD-1 immune checkpoint inhibitor Opdivo (nivolumab) and Amgen's bispecific T-cell engager (BiTE) antibody Blincyto (blinatumomab) gained the FDA's approval in recent months, one would think winning over the agency's oncology reviewers has become almost effortless &ndash; or at least, a lot easier than it used to be.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Pazdurs pitfalls prevention plan lessons of cancer NDA failures
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150521T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150521T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150521T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028839
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Pazdur's pitfalls prevention plan: lessons of cancer NDA failures
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358532
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042352Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fcade957-6e22-453d-8145-2eaea396522f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042352Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

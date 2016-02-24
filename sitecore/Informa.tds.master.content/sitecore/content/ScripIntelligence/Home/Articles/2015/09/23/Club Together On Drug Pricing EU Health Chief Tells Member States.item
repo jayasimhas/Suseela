@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {DA773C01-BEBC-49E1-838A-F76F04750C83}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/23/Club Together On Drug Pricing EU Health Chief Tells Member States
+parent: {E8CB3B12-58E6-4D8C-926D-C49922785188}
+name: Club Together On Drug Pricing EU Health Chief Tells Member States
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 27e39f70-65a2-4bdd-9f55-a0c0c1ca895a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{6B8CA4CA-B011-4664-BDA8-317A5239A357}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 68
+
+'Club Together On Drug Pricing,' EU Health Chief Tells Member States
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+Club Together On Drug Pricing EU Health Chief Tells Member States
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5441
+
+<p>The European Health Commissioner, Vytenis Andriukaitis, has called for an "open debate" on the question of drug pricing in Europe, and urged member states to club together to procure medicines in order to negotiate more favorable prices.</p><p>The commissioner was speaking at a conference in Brussels on Sep. 28 held to mark the 50th anniversary of the EU pharmaceutical legislation, which was first introduced in 1965 following the thalidomide disaster. He said that event "will always remind us of the tragic consequences that the absence of an appropriate regulatory framework may have. This should never be repeated."</p><p>The developments in the pharmaceutical legislation seen over the past 50 years were, Andriukaitis said, "a great example of what Europe can achieve, if we work together." Member states, the European Medicines Agency and the commission had all brought their expertise and competences to the table, adding value and avoiding duplication of efforts.</p><p>But he said that while a great deal had been achieved, much remained to be done, and "we should continue the work on pharmacovigilance and transparency from clinical trials to data registries."</p><h2>Drug Pricing</h2><p>The issue of drug pricing was on the commissioner's agenda because of the widespread concern that has been expressed about the effect that the arrival of some very high-cost products for diseases like hepatitis C and cancer is having, and will continue to have, on national healthcare systems. It also fits in with his aim of fostering more collaborative working among the EU countries.</p><p>Although drug pricing and reimbursement are member state responsibilities, the commissioner was keen to make clear that he wants countries to take some form of collective action in an attempt to address the cost question and the disparities in access to medicines across the EU.</p><p>"As a medical doctor, I know that patients have very high expectations as regards medical treatments and call for the speedier translation of scientific progress to accessible and affordable therapies. Nevertheless they often do not have time to wait. This makes it even more frustrating when medicinal products that are authorised by the commission for all of Europe are not available to patients in all member states."</p><p>He said there were two principles at stake here: transparency and solidarity. Transparency was very important with regard to drug prices. "Patients seem to mistrust the industry, claiming that prices are too high and somebody takes a huge profit out of it."</p><p>There was a need, he said, to create partnerships between the pharmaceutical industry, member states, healthcare providers and health insurers, and "to create mechanisms so that people understand that the profit does not play the main role in the pharma sector." </p><p>Medicines are different from other goods, he said, "and cannot be created only for profit. Therefore I truly believe that we need an open debate on medicine pricing because when it is covered by commercial secret, it creates mistrust in the society." </p><p>As for solidarity, he said that the question of access to medicine created "a lot of tension" in society, especially as the financing of EU healthcare systems was mostly based on the solidarity principle. "The question is how to find a driving mechanism between solidarity and profit."</p><p>Health technology assessment (HTA) was one approach to addressing questions of both transparency and solidarity, the commissioner suggested. Access to innovation required "solid clinical evidence to justify public coverage," and HTA had "proved to be an efficient tool for improving access to innovative technologies and for providing decision makers with such evidence to support more efficient allocation of funds," he declared. </p><p>He said the commission and the member states were already co-operating to develop joint assessments of technologies and addressing methodological challenges.</p><h2>Joint Procurement</h2><p>Talking to journalists at a press event the following day, Andriukaitis expanded on his themes. While HTA was a valuable for pricing purposes, it was "only one part of the game" because pricing "depends on many, many issues," he said, noting that he wanted to encourage the member states to work together so they could try to negotiate lower drug prices. </p><p>Joint procurement, he said, was one approach the member states could take to seek better deals on price. Belgium, the Netherlands and Luxembourg were working on such agreements, as were Bulgaria and Romania, "and they are ready to work with companies to see how to develop data to analyse the situation regarding pricing issues." </p><p>Industry is interested in fostering discussions about agreements with member states on pricing and reimbursement issues "and the possibilities to open the door to innovative medicines," Andriukaitis said. Long-standing agreements between industry and member states would produce some stability in pricing for both, he continued, adding that this was a good opportunity to raise the matter at the level of the Council of the EU (member state ministers). </p><p>He said it was the commission's "obligation" to encourage member states to co-operate because of the importance of pricing for all EU citizens. Those problems, he declared, were "very difficult to solve on one country level alone &ndash; it's impossible."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 244
+
+<p>The European Health Commissioner, Vytenis Andriukaitis, has called for an "open debate" on the question of drug pricing in Europe, and urged member states to club together to procure medicines in order to negotiate more favorable prices.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+Club Together On Drug Pricing EU Health Chief Tells Member States
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150923T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150923T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150923T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029904
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 68
+
+'Club Together On Drug Pricing,' EU Health Chief Tells Member States
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360638
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+27e39f70-65a2-4bdd-9f55-a0c0c1ca895a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

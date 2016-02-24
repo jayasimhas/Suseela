@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {D2FA9A53-E5EE-4AFF-B43E-B12713716D22}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/20/Advaxis Sells Canadian Rights To Fund Combo Strategy
+parent: {34CAE052-3989-4BC7-BA14-1EF803FF3625}
+name: Advaxis Sells Canadian Rights To Fund Combo Strategy
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0f4f8ba5-3759-4dcc-a87d-58d1a7a4fad0
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Advaxis Sells Canadian Rights To Fund Combo Strategy
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+Advaxis Sells Canadian Rights To Fund Combo Strategy
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4312
+
+<p><p>Determined to get ahead in the immuno-oncology space and make its compounds the go-to for combination therapies, Advaxis has inked its latest licensing and finance deal. </p><p>The Princeton-based biotech announced on Aug. 26 that it has licensed its whole product portfolio &ndash; including ADXS-HPV, ADXS-HER2 and ADXS-PSA to Canada's Knight Therapeutics. </p><p>The Canadian company will have all commercialization rights to the portfolio in Canada &ndash; what Advaxis has dubbed a "non-core market."</p><p>In exchange, Knight is buying 359,454 Advaxis shares at $13.91 per share and Canadian asset manager Sectoral Asset Management is purchasing 1,437,815 Advaxis shares for the same price, resulting in about $25m in funds for the New Jersey biotech. Advaxis is also eligible to receive double-digit royalties on any Canadian sales of the products. </p><p>"We are extremely gratified to, in one transaction, monetize a non-core market with a well-established local partner, while simultaneously increasing our cash balance under very favorable terms," said Dan O'Connor, president and CEO of Advaxis. "The license agreement with Knight is consistent with our strategy of focusing our resources in our core geographies."</p><p><b>On Point</b></p><p>This isn't the first deal like this that Advaxis has inked in its short lifetime. The young biotech has already licensed <a href="http://#http://www.scripintelligence.com/business/Biocon-takes-Advaxis-into-emerging-markets-through-ADXS-HPV-pact-349546" target="_new">co-development and commercialization</a> rights to its lead compound, ADXS-HPV, to India's Biocon for that territory. </p><p>In December 2013, it entered into a similar licensing pact for ADXS-HPV with Global BioPharma, a Taiwan-based biotech company funded by a group of investors led by Taiwan Biotech, for Asia, Africa and the former USSR territory, exclusive of India and certain other countries, for all HPV-associated indications.</p><p>The company has raised funds in other ways as well; it netted $50m from the offering of 2.8m shares at $19 per share from a public offering in April and brought in another $23m in February from a private offering of 3.1m shares at $7.50 per share to a slate of institutional investors &ndash; including Sectoral Asset management. </p><p>The biotech's <a href="http://#https://www.pharmamedtechbi.com/Publications/The-Pink-Sheet-Daily/2014/3/24/Advaxis-Finds-Alternative-Funding-In-Animal-Health-Deal?result=16&total=41&searchquery=%253fq%253dadvaxis%2526start%253d11" target="_new">most unique way</a> to gain funds was through a March 2014 deal with pet therapeutic company Aratana Therapeutics. Advaxis received $1m upfront cash plus $1.5m in an equity investment, as well as up to $52.5m in development, regulatory and sales milestones from Aratana in exchange for the development and commercialization rights of the products for treatment in dogs. </p><p><b>Buying In</b></p><p>All of this cash is being used by the biotech to nurture its pipeline of immunotherapies, including ADXS-HPV, which has completed Phase II studies in human papilloma virus (HPV)-related cervical cancer. The drug is also being studied in HPV-associated head and neck cancer and anal cancers. </p><p>Yet, combination therapies have been deemed the future of oncology and Advaxis doesn't want to miss out on the action. In a slightly different twist, Advaxis is paying for clinical trials that are testing Advaxis drugs in combination with some of the leading compounds in immunotherapy. </p><p>There are currently four big pharmas that hare leading the charge in the space with their programmed cell death-1 (PD-1) inhibitors &ndash; Merck & Co., Bristol-Myers Squibb Co., Roche's Genentech and AstraZeneca's MedImmune. </p><p>Advaxis is already working with two of them. In August 2014, Advaxis signed on to fund a Phase I/II metastatic, castration-resistant prostate cancer clinical trial with ADXS-PSA and Merck's Keytruda (pembrolizumab). Similarly, Advaxis said in July 2014 that it will cover the study costs in <a href="http://#http://www.scripintelligence.com/researchdevelopment/Advaxis-to-fund-combination-trial-with-AstraZenecas-MEDI4736-352980" target="_new">its collaboration</a> to test ADXS-HPV in combination with MedImmune's MEDI4736.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Advaxis Sells Canadian Rights To Fund Combo Strategy
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150820T052249
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150820T052249
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150820T052249
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029605
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Advaxis Sells Canadian Rights To Fund Combo Strategy
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360036
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0f4f8ba5-3759-4dcc-a87d-58d1a7a4fad0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042441Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

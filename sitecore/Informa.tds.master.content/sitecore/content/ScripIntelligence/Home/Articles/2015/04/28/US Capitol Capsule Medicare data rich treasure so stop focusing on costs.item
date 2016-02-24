@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {7294C2C2-A52F-42E6-BC84-0CE47106931A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/28/US Capitol Capsule Medicare data rich treasure so stop focusing on costs
+parent: {71835F1F-D9C2-46F1-8464-CD2033B1460C}
+name: US Capitol Capsule Medicare data rich treasure so stop focusing on costs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9a5f870b-5e07-4e4d-b69b-33817792c98e
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 76
+
+US Capitol Capsule: Medicare data 'rich' treasure; so stop focusing on costs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 72
+
+US Capitol Capsule Medicare data rich treasure so stop focusing on costs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 14973
+
+<p>With the mega dump of prescriber-level data late last week by the US Centers for Medicare & Medicaid Services (CMS), attention quickly focused on the costs of the drugs being prescribed to America's elderly and disabled.</p><p>But the data on more than one million US healthcare providers, who collectively prescribed $103bn in prescription drugs in 2013, provides a treasure chest just waiting to be explored by industry, academicians and others, said Dan Mendelson, CEO of the Washington-based analysis and consulting firm Avalere Health, who said his company is spending the next few weeks diving into the deep of the CMS dataset.</p><p>For instance, he told <i>Scrip</i>, if used appropriately, the data can stimulate conversations between doctors and patients about which drugs are the best choice for them, based on several factors.</p><p>Even though limited to Part D, the data may provide information on geographic variation in prescribing patterns and why doctors tend to prescribe one drug over another &ndash; something Mr Mendelson said bears more exploration, understanding and scrutiny.</p><p>The data also may play a role in helping industry better identify and adjust their resources in marketing and sales efforts.</p><p>About 68% of Medicare beneficiaries, or about 36 million Americans, are enrolled in the Part D prescription drug program, according to CMS. </p><p>And now, drug makers will get a firsthand look at who &ndash; by name and location &ndash; is prescribing the companies' medicines to Medicare patients, although CMS emphasized the volume of prescriptions presented in its public use file (PUF) dataset is unlikely to be fully inclusive of all scripts written by the providers listed, since the data are based only on beneficiaries enrolled in Part D.</p><p>"Clinicians typically treat many other patients who do not have that form of coverage," CMS said. </p><p>CMS stressed its PUF dataset does not indicate the quality of care provided by individual clinicians.</p><p>Unfortunately, Mr Mendelson said, the "top 10" ranking tables of medicines by claims and costs released by CMS late on 30 April quickly overshadowed the richness of the other information the data may ultimately reveal once researchers have a chance to dig into it.</p><p>He noted CMS provided no analysis about the real value those prescribed medicines have provided to beneficiaries' overall health and the possible savings of those benefits to taxpayers &ndash; something he said must first be examined thoroughly before anyone can make any sound judgments about spending on Part D-covered therapies.</p><p>And, Mr Mendelson said, the cost figures included in CMS' tables do not reflect any manufacturer rebates paid to Part D plan sponsors &ndash; something the agency did in fact emphasize in its "fact sheet" and "frequently asked questions" pages on its website, although not in its press release.</p><p>Nonetheless, the Pharmaceutical Research and Manufacturers of America (PhRMA) and the Biotechnology Industry Organization (BIO) each reacted to the immediate focus on costs &ndash; declaring in separate statements the data in the way they were released without the negotiated rebates are misleading.</p><p>"Rebates have been a significant factor in keeping Part D program costs hundreds of billions of dollars below original estimates, while still offering beneficiaries steady premiums and a robust choice of plans, PhRMA said. "As with all data, it is important to look at these numbers in context. As released, these data and analyses may be confusing to beneficiaries, making it difficult for them to better understand how care is delivered under the Part D program."</p><p>Moreover, said BIO, CMS' data "are missing critical context as to how Part D medicines may result in better outcomes and lower costs to the Medicare program, including through fewer hospitalizations, surgical interventions and physician office visits."</p><p>CMS' data contain information on specific drugs prescribed under Part D, statistics on their use and the costs of those medicines.</p><p>To ensure the privacy of the beneficiaries is protected, CMS did not include information in cases where 10 or fewer prescriptions were dispensed, for fear it would be too easy to identify specific patients.</p><p>CMS created the PUF dataset using information from the so-called Prescription Drug Event Standard Analytic File, which has final-action claims submitted by Medicare Advantage Prescription Drug plans and standalone Prescription Drug Plans. </p><p>For each prescriber and drug, the PUF dataset includes the total number of prescriptions that were dispensed, including original prescriptions and any refills and the total drug cost, which includes the actual cost of the medicine, dispensing fees, sales tax and any applicable administration fees. </p><p>The drug cost data are based on the amounts paid by the Part D plan, Medicare beneficiary, other government subsidies, and any other third-party payers, such as employers and liability insurers, CMS said.</p><p>CMS pointed out that since its data are aggregated to the drug name level, the data do not account for varying strengths or dosage levels of the medications.</p><p>Mr Mendelson said it would have been helpful had CMS included Part D plan tier information in the agency's PUF dataset, which could have helped researchers have a better understanding of certain economic aspects about the information on the drugs being prescribed. </p><p>He said he fully expected that as more analyses of the data are completed and publicized, the information will fill many practical purposes.</p><p>On this flip side, however, "it's really important to treat the data with respect," Mr Mendelson warned. "In other words, you can't immediately assume something about provider behavior on the basis of the data. You have to understand why the data are the way they are."</p><p>For instance, he said, if a physician in the PUF dataset is prescribing a lot of opioids, that doctor might be practicing rehabilitative medicine with several patients with certain conditions requiring those medicines.</p><p>"So you can't assume they are doing it for some nefarious purpose," Mr Mendelson said.</p><p>While there's already been a lot of criticism about the way in which CMS released the data &ndash; almost ensuring costs of certain medicines would grab the spotlight &ndash; Mr Mendelson insisted any release of those types of data "is good" because it increases transparency.</p><p>But, he said, "it's still important for all of us to look at it and understand what the limitations are."</p><p><b>In other Washington news:</b></p><p><a href="http://www.scripintelligence.com/home/Patent-reform-its-all-about-the-trolls-no-Bass-358182" target="_new">Patent reform: it's all about the trolls, no 'Bass'</a></p><p>While lawmakers on Capitol Hill have concentrated the latest attempts at patent reform on so-called patent trolls &ndash; entities that acquire patents for the sole purpose of forcing companies to pay licensing fees or settling infringement suits through threats of aggressive litigation &ndash; the biopharmaceutical industry has been pleading for a fix to a problem that sprung up as an unintended consequence from the last time Congress tried to repair the US patent system.</p><p>As part of the <i>America Invents Act of 2011</i>, lawmakers created the <i>inter partes</i> review (IPR) process, which was intended to be a faster and more affordable way to challenge patents than going through the US court system &ndash; a process that can take from one to three years. But PhRMA and BIO have insisted the IPRs are being used in abusive ways for which they were never intended.</p><p><a href="http://www.scripintelligence.com/home/NIH-Thanks-for-the-funds-FDA-Wheres-ours-358162" target="_new">NIH: Thanks for the funds; FDA: Where's ours?</a></p><p>Lawmakers acknowledged at a 30 April Capitol Hill hearing that much more work needs to be done on a revised bill aimed at overhauling the US biomedical research enterprise and the process for assessing and approving new therapies &ndash; the <i>21st Century Cures Ac</i>t &ndash; which was unveiled a day earlier. But while the legislative package included a $10bn funding boost for the NIH, there were no extra dollars for the FDA, which would be tasked with numerous new programs and responsibilities under the bill.</p><p><a href="http://www.scripintelligence.com/home/FDA-OKs-GSKs-Breo-in-asthmatic-adults-not-adolescents-358159" target="_new">FDA OK's GSK's Breo in asthmatic adults, not adolescents</a></p><p>The FDA on 30 April granted approval of GlaxoSmithKline's Breo Ellipta (fluticasone furoate/vilanterol) as a once-daily inhaled treatment for asthma in adults. But the agency rejected the medicine for use in adolescents 12-17 years with the disease, declaring in a complete response letter the data submitted do not show adequate risk-benefit to support US approval in that population.</p><p><a href="http://www.scripintelligence.com/policyregulation/Medicines-wins-2-FDA-nods-Raplixa-Ionsys-358160" target="_new">Medicines wins 2 FDA nods: Raplixa, Ionsys</a></p><p>After the markets closed on 30 April, the FDA granted approvals to The Medicines Company for two of its products &ndash; Raplixa (fibrin sealant [human]), which was the first the spray-dried fibrin sealant ever OK'd in the US to control bleeding during surgery, and for Ionsys (fentanyl iontophoretic transdermal system), the first needle-free, patient-controlled, preprogrammed fentanyl delivery system.</p><p><a href="http://www.scripintelligence.com/home/FDA-panel-backs-Amgens-T-Vec-with-caveats-358133" target="_new">FDA panel backs Amgen's T-Vec, with caveats</a></p><p>An FDA panel on 29 April endorsed Amgen's oncolytic immunotherapy T-Vec (talimogene laherparepvec), although that support from the agency's outside advisers came with several caveats.</p><p><a href="http://www.scripintelligence.com/home/Cures-10bn-NIH-boost-nice-wish-no-granting-power-358130" target="_new">'Cures' $10bn NIH boost: nice wish, no granting power</a></p><p>The lawmakers behind the 21st Century Cures initiative waited until the day before a House Energy & Commerce hearing on the topic to unveil their revised version of a draft legislative package, which quickly grabbed attention by calling for a $10bn funding boost over the next five fiscal years for the National Institutes of Health &ndash; the thought of which could do nothing but have the agency's chief overjoyed.</p><p><a href="http://www.scripintelligence.com/home/Kytheras-chin-fat-drug-OKd-in-US-358128" target="_new">Kythera's chin fat drug OK'd in US</a></p><p>There may soon be fewer double chins in the US, now that the FDA has given the go-ahead to Kythera Biopharmaceuticals to market Kybella (deoxycholic acid), previously known as ATX-101, as a treatment for adults to improve the appearance of moderate-to-severe convexity or fullness associated with submental fat.</p><p><a href="http://www.scripintelligence.com/home/Dont-break-whats-working-FDAs-Woodcock-urges-Congress-358096" target="_new">'Don't break what's working,' FDA's Woodcock urges Congress</a></p><p>As Congress considers actions to better enable the progress of US biomedical innovation, Dr Janet Woodcock, director of the FDA's Center for Drug Evaluation and Research, pleaded "don't break what is working," but instead, "improve on the current system."</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-finalizes-3-biosimilars-guidances-358100" target="_new">FDA finalizes 3 biosimilars guidances</a></p><p>The FDA can knock three biosimilars guidances off its to-do list after finalizing the documents and giving industry more certainty on US regulators' thinking about what's needed to submit so-called 351(k) applications to the agency and gain approval. But companies still are eagerly awaiting guidances on non-proprietary names for biosimilars and interchangability &ndash; documents the agency has been promising for years to release and has said they will be coming "soon."</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-rejects-expanded-use-of-Amarins-Vascepa-358103" target="_new">FDA rejects expanded use of Amarin's Vascepa</a></p><p>Shares of Amarin tumbled about 10% on 28 April after the company disclosed the FDA declined to expand the use of Vascepa (icosapent ethyl) in the US as an adjunct to diet to reduce triglyceride levels in adults on statin therapy with mixed dyslipidemia and TG levels from 200mg/dL to 499mg/dL &ndash; the so-called ANCHOR indication.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-1st-generic-copycats-of-Otsukas-Abilify-358101" target="_new">FDA OK's 1st generic copycats of Otsuka's Abilify</a></p><p>Otsuka was unsuccessful in preventing the FDA from approving generic versions of the company's schizophrenia and bipolar disorder drug Abilify (aripiprazole). The agency gave the go-ahead on 28 April to Alembic Pharmaceuticals, Hetero Labs, Teva and Torrent Pharmaceuticals to market generic aripiprazole in multiple strengths and dosage forms</p><p><a href="http://www.scripintelligence.com/home/Uphill-battle-for-Amgens-T-Vec-FDA-expresses-uncertainty-358082" target="_new">Uphill battle for Amgen's T-Vec? FDA expresses 'uncertainty'</a></p><p>FDA drug reviewers on 27 April questioned the study design and results of Amgen's oncolytic immunotherapy T-Vec (talimogene laherparepvec) &ndash; declaring there is "uncertainty" about the meaningfulness of the observed responses in the firm's single Phase III study of the product in treating injectable regionally or distantly metastatic melanoma.</p><p><a href="http://www.scripintelligence.com/policyregulation/BioMarin-completes-rolling-NDA-for-Duchenne-drug-drisapersen-358083" target="_new">BioMarin completes rolling NDA for Duchenne drug drisapersen</a></p><p>BioMarin Pharmaceutical has completed its rolling new drug application seeking approval from the FDA for drisapersen as a treatment for patients with the rare disease disorder Duchenne muscular dystrophy, the most common fatal genetic disorder diagnosed in childhood &ndash; affecting about 1 in every 3,500 live male births, with about 20,000 new cases diagnosed globally each year.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Lillys-Cyramza-in-colon-cancer-358062" target="_new">FDA OK's Lilly's Cyramza in colon cancer</a></p><p>Lilly's Cyramza (ramucirumab) has won another US indication: metastatic colorectal cancer. The drug already was approved to treat non-small-cell lung cancer and advanced gastric or gastro-esophageal junction adenocarcinoma.</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 227
+
+<p>With the mega dump of prescriber-level data late last week by the US Centers for Medicare & Medicaid Services (CMS), attention quickly focused on the costs of the drugs being prescribed to America's elderly and disabled.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 72
+
+US Capitol Capsule Medicare data rich treasure so stop focusing on costs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150428T164358
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150428T164358
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150428T164358
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028614
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 76
+
+US Capitol Capsule: Medicare data 'rich' treasure; so stop focusing on costs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358093
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9a5f870b-5e07-4e4d-b69b-33817792c98e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042338Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

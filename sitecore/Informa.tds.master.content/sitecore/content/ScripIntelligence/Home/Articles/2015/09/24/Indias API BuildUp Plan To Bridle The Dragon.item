@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {B7D41A7A-E781-4F3D-AC9A-41033EDB3B97}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/24/Indias API BuildUp Plan To Bridle The Dragon
+parent: {D0AAADAC-3A4D-4719-8453-0B9B929C7097}
+name: Indias API BuildUp Plan To Bridle The Dragon
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 608f03ea-6a68-4309-9dbb-cf1a822590d9
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 46
+
+India's API Build-Up Plan To Bridle The Dragon
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+Indias API BuildUp Plan To Bridle The Dragon
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5467
+
+<p>An Indian expert committee has recommended a raft of measures to revive and promote the production of active pharmaceutical ingredients (APIs) in the country, including the "judicious and liberal" use of anti-dumping duties and safeguards, with an eye on the country's huge reliance on Chinese imports.</p><p>While no direct reference is made to China in the salient features of the panel's recommendations, local firms have long emphasized the potentially crippling effect excessive dependence on China could have on India's own essential drugs supplies, should there be any turbulence in Indo-China relations. </p><p>The committee headed by Dr VM Katoch, a former director general of the Indian Council of Medical Research and secretary, department of health research, has recommended, among other things, the establishment of large manufacturing zones or mega parks for APIs with common facilities such as effluent treatment plants maintained by separate special purpose vehicles and that these zones be attached with power plants and solvent yards. </p><p>The other prominent proposals include putting in place a scheme to extend financial assistance to states to acquire land and for setting up common facilities and the revival of public sector units (PSUs) for manufacturing certain "very essential critical" drugs (e.g. penicillins, paracetamol). It also recommends financial incentives for the development of clusters in the form of a "professionally managed, dedicated equity fund" for the promotion of API manufacture. </p><p>The committee believes that six large API intermediate clusters in five to six Indian states could "transform" the nation and three clusters might help "wipe out" dependence in the area of APIs.</p><p>India's ministry of chemicals and fertilisers, which has dubbed 2015 as the "Year of APIs", has sought comments to the panel's recommendation by Oct. 12. </p><p>Among the seemingly more China-targeted recommendations are those that suggest the judicious and liberal use of measures such as "anti-dumping, safeguards/duties, reciprocation and the application of rules of origin." </p><p>The Katoch committee has underscored the need to evolve a long-term strategy to strengthen the API sector involving India's commerce ministry and other regulatory authorities. It also calls for at least one or two inspections each month, based on risk analysis, by Indian regulators for manufacturing sites outside India and the creation of advanced testing lab infrastructure at all Indian ports/airports to subject imports to risk-based testing.</p><p>A <a href="http://www.scripintelligence.com/policyregulation/Chinese-API-imports-eclipse-Indian-plants-354950" target="_new">white paper</a> by the Indian Drug Manufacturers' Association (IDMA) had previously noted how imports of APIs and advanced intermediates had grown at a compound annual growth rate (CAGR) of 18% over the past decade from $800m in 2004 to about $3.4bn, with China estimated to contribute around 58% of these imports by value.</p><h2>Public Sector Units</h2><p>But some industry experts criticized the committee's proposals on certain counts, amid speculation that top government officials were not keen on the envisaged role for PSUs.</p><p>"Neither will the PSUs be revived, nor would the APIs plan take off. It's a complete non-starter if the PSUs are roped in," an industry expert told <i>Scrip</i>.</p><p>He, though, said that the recommendations concerning anti-dumping duty were "incidental" to the range of proposals and should not be construed as the primary thrust.</p><p>"If China drops prices with a view to kill a segment, it's only right to use such duties."</p><p>Others referred to data that suggested that India had 2,389 bulk drug manufacturing units as per a 2007 survey &ndash; sufficient not just for India's requirements but for its exports as well &ndash; and lamented that the government did not seem to even know what these units make or their capacities. </p><p>"Without first estimating that, why would it want to create additional industrial parks? And what explains the love for PSU revival after putting them out in the wild for decades? The math just doesn't add up," an expert with a foreign firm told <i>Scrip</i>.</p><p>As a "mid-path" option, he suggested the partial/selected divestment of PSUs &ndash; selling off the sick PSUs and using the money to re-capitalize the productive ones. </p><p>"Finding investors to take over sick PSUs will probably not be as difficult as it seems. They have capabilities, technology and other assets such as land, which make them attractive. What they need is efficient management to run them."</p><p>He also dismissed the call for liberal use of antidumping measures as legendary "populistic jingoism", and added that India doesn't need to be dependent on any country if it harnesses its already available resources and uses them efficiently. </p><p>"Taking China to the WTO is an option that should be exercised, but more to deter it in the short term rather than hoping for it to stop. The only way it can permanently stop is if demand from India is met by supply from India."</p><p>He underscored that local industry needs to become efficient and competitive and not "hide behind" the government and its assurances. </p><p>"No industry becomes competitive when it is protected by government. Government protection only harbours complacency and corruption and little else," he declared.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 309
+
+<p>An Indian expert committee has recommended a raft of measures to revive and promote the production of active pharmaceutical ingredients (APIs) in the country, including the "judicious and liberal" use of anti-dumping duties and safeguards, with an eye on the country's huge reliance on Chinese imports.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Indias API BuildUp Plan To Bridle The Dragon
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150924T180001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150924T180001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150924T180001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029924
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 46
+
+India's API Build-Up Plan To Bridle The Dragon
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360667
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+608f03ea-6a68-4309-9dbb-cf1a822590d9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042457Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

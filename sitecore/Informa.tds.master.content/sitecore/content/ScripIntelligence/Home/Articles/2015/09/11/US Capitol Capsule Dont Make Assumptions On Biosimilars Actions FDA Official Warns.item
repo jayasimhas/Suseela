@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8621EE8B-7ED2-461E-BC09-8455F8307618}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/11/US Capitol Capsule Dont Make Assumptions On Biosimilars Actions FDA Official Warns
+parent: {62C55766-C278-4043-A2CE-96E19F97E9EA}
+name: US Capitol Capsule Dont Make Assumptions On Biosimilars Actions FDA Official Warns
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 12a0968d-e8cd-4f51-ae88-8da645e3389f
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 85
+
+US Capitol Capsule: Don't Make Assumptions On Biosimilars Actions, FDA Official Warns
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 82
+
+US Capitol Capsule Dont Make Assumptions On Biosimilars Actions FDA Official Warns
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 13704
+
+<p>While FDA action dates may have come and gone on some biosimilar applications, known as 351(k)s, it would be wrong to make an assumption regulators had issued a complete response letter (CRL) due to the lack of biosimilarity, warned Leah Christl, associate director for therapeutic biologics.</p><p>"As a general matter, for any application, there's a number of things that could create a bump in the road," she explained. </p><p>Issues that may arise may have nothing to do with biosimilarity, but could be related to the facility where the product is being made or a current good manufacturing concern, Christl said last week at the 2015 Biopharma Congress conference in Washington, hosted by the analysis firm Prevision Policy and patient advocacy group Friends of Cancer Research.</p><p>There also could have been a major amendment submitted during the course of the review, so the FDA may have needed more time on the application and imposed a three-month delay, Christl told <i>Scrip</i> in an interview.</p><p>Unfortunately, she said, "There's a lot of speculation" when the 351(k) application action date has arrived, based on the information a company has publicly disclosed, and there's been no word from the FDA or the firm about the status of the biosimilar.</p><p>"People should not default" to the idea it is "automatically due to biosimilarity," Christl insisted, adding that by doing so, it can be "disheartening" to the sponsor and patients awaiting the drug.</p><p>There's been at least four companies that have publicly disclosed they've submitted six 351(k) biosimilar applications to the FDA for proposed biosimilars, Christl said, noting the agency has approved only one so far &ndash; Sandoz Inc.'s <a href="http://www.scripintelligence.com/home/NovartisSandoz-make-history-with-1st-US-biosimilar-Zarxio-357116" target="_new">Zarxio</a> (filgrastim-sndz), which is referenced on Amgen Inc.'s human granulocyte colony-stimulating factor Neupogen (filgrastim).</p><p>Sandoz, a subsidiary of Novartis AG, <a href="http://www.scripintelligence.com/home/Sandoz-2nd-Biosimilar-At-FDA-Seeks-Slice-Of-Enbrel-Sales-360805" target="_new">revealed on Oct. 2</a> the FDA had accepted the firm's 351(k) application for its etanercept biosimilar of Amgen's tumor necrosis factor alpha inhibitor Enbrel, which reported $9bn in global sales in 2014, with close to half of that coming from the U.S.</p><p>Pfizer Inc. <a href="http://www.scripintelligence.com/home/PfizerHospira-Epogen-Biosimilar-Rejected-Relief-For-Amgen-361258" target="_new">disclosed during its Oct. 27</a> quarterly earnings call, however, its subsidiary Hospira Inc. had received a CRL from the FDA on Oct. 16 for the firm's 351(k) application for its biosimilar of Amgen's epoetin alfa product Epogen. </p><p>The FDA's outside expert advisers were due in <a href="http://www.scripintelligence.com/home/Will-FDA-adcomm-be-lucky-for-Celltrion-infliximab-biosimilar-356630" target="_new">March</a> to review South Korea-based Celltrion Inc.'s 351(k) application for its <a href="http://www.scripintelligence.com/home/First-US-biosimilar-MAb-on-the-horizon-as-Celltrion-files-Remsima-353328" target="_new">infliximab biosimilar</a> of Johnson & Johnson Inc. unit Janssen Biotech Inc.'s Remicade, but the agency postponed the meeting "due to information requests pending with the sponsor. Celltrion later attributed that meeting delay to the FDA's request for details of the firm's statistical analysis data.</p><p>Also eagerly awaited is the news on the fate of Apotex Inc.'s application for its version of pegfilgrastim, which is referenced on Amgen's Neulasta, a long-acting form of Neupogen.</p><p>The application was accepted by the FDA this past <a href="http://www.scripintelligence.com/policyregulation/Apotex-biosimilar-of-Amgens-Neulasta-under-FDA-review-355732" target="_new">December</a>, meaning the firm should have heard last month.</p><p>In <a href="http://www.scripintelligence.com/home/Amgen-Apotex-Lost-Bet-Biosimilar-Should-Be-Blocked-361147" target="_new">court documents</a> filed last month in an ongoing legal dispute between US biotech giant Amgen and Canadian firm Apotex, the companies said the FDA's decision on the pegfilgrastim 351(k) "could be issued at any time." </p><p>But so far, privately held Apotex has remained mum on the agency's verdict &ndash; not disclosing whether the company has heard from the FDA.</p><p>Apotex also <a href="http://www.scripintelligence.com/policyregulation/Apotex-2nd-biosimilar-under-FDA-review-seeks-filgrastim-OK-356810" target="_new">revealed in February</a> it has an application under review at the FDA for the company's version of filgrastim, which if approved would be the second Neupogen biosimilar on the US market, competing with Zarxio, which <a href="http://www.scripintelligence.com/home/1st-U.S.-Biosimilar-Arrives-Zarxio-Launches-Legal-Saga-Ongoing-360244" target="_new">launched</a> in September &ndash; six months after its approval after getting hung up in a <a href="http://www.scripintelligence.com/home/Zarxio-Rehearing-Denied-Biosimilars-Questions-Await-Next-Case-361104" target="_new">lawsuit</a> filed by Amgen. </p><p>FDA's Christl said that as of Oct. 31, there were 58 "proposed" biosimilars referenced on 17 different innovator biologics enrolled in the agency's Biosimilar Product Development (BPD) program, which was created as a part of <i>Biosimilar User Fee Act</i> (BsUFA) to provide a mechanism and structure for collecting the development-phase user fees.</p><p>She also noted that's "not an absolute number" of all programs, since there are some in early development that have yet to enroll in the BPD program.</p><p>"We have a very active development space for biosimilars," Christl said during the Biopharma Congress conference.</p><p>But she also acknowledged the FDA missed its fiscal year 2014 BsUFA <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Improving-The-Biosimilars-Review-Process-Whats-Needed-360698" target="_new">meeting goals</a> and likely has done the same for 2015 &ndash; attributing that failure to more meetings with biosimilar firms than the agency anticipated.</p><p>"We didn't expect quite as many interactions," Christl said, noting there had been a projection of about seven BPD enrollments for 2014, when in fact there were about 50.</p><p>"We underestimated what's happening in the space," she admitted.</p><p>But Christl also noted that biosimilars has been an "under-resourced program" at the FDA.</p><p>Indeed, earlier in the day at the Nov. 12 Biopharma Congress meeting, Janet Woodcock, director of the FDA's Center for Drug Evaluation and Research, pointed to biosimilars as one of the "many, many" congressional mandates lawmakers have left underfunded. </p><p>"We have a user fee program, but the investment exceeds the revenue we are going to get," Woodcock declared.</p><p>And, Christl added, even when the user fees are paid, "the resources don't just appear the next day" &ndash; meaning it takes time for the FDA to hire more people to review applications and provide other services under BsUFA. </p><p>Even though having the authority to approve biosimilars has been "really great," Woodcock complained "it's a huge amount of work."</p><p>While reviewing applications has expanded the FDA biosimilars role well beyond the implementation processes of establishing policies and regulations, those latter activities remain ongoing, Christl said. </p><p>The agency is working on completing three <a href="http://www.scripintelligence.com/home/Woodcock-FDA-Focused-On-Biosimilars-Science-Before-Policy-360510" target="_new">much-anticipated guidance documents</a>: interchangeability, labeling and statistical approaches to analytical similarity, she said, although she admitted "I can't say with any certainty whether they will be out by the end of the year."</p><p>Nonetheless, Christl explained the FDA put those three guidances on its 2015 agenda so regulators have the ability to discuss their plans publicly.</p><p>"This gives us an opportunity to let stakeholders know we are working on something," she said. "If it's not on the guidance agenda, we typically don't or can't say we are working on it."</p><p>With biosimilars being a new space for industry and the FDA, "there's lessons to be learned all around" &ndash; the most critical of which has been the importance of communication, Christl said.</p><p>One group that required some additional attention in communicating the fact that biosimilars is a different development paradigm was the FDA's outside expert advisers, she said.</p><p>"They are used to looking at Phase III pivotal trials to demonstrate safety and effectiveness," but with biosimilars "we are not doing that," Christl said.</p><p>Even though regulators held a webinar for its panelists ahead of <a href="http://www.scripintelligence.com/home/NovartisSandoz-biosimilar-1st-to-win-FDA-panel-backing-355993" target="_new">Zarxio's advisory committee</a> meeting in January, "a lot of the conversation around the table was about the clinical trial, but that's not what the FDA was looking at for demonstrating biosimilarity," Christl said.</p><p>Therefore, the advisory committee process remains a work in progress, she said, noting the FDA is anticipating that at least one biosimilar application per referenced product will go before a panel.</p><p>But, Christl said, "there may be product-specific issues, so a program may warrant a discussion," so "it's not a one and done type of thing necessarily."</p><p>She pointed out, however, the application that goes before the outside advisers may not necessarily be the first one based on a certain innovator submitted to the agency, since there's always the chance something could go wrong with that 351(k) and therefore, "it's not the right one to take" before the committee.</p><p><b>In other Washington news:</b></p><p><a href="http://www.scripintelligence.com/home/Fast-AZ-Tagrisso-Approval-Springboard-For-Clovis-361562" target="_new">Fast AZ Tagrisso Approval Springboard For Clovis?</a></p><p>Prescription Drug User Fee Act action dates have become meaningless at the FDA's Office of Hematology and Oncology Products, which has almost consistently for the past year or two leaped ahead of those timelines and approved cancer medicines well ahead of schedule &ndash; the most recent being AstraZeneca PLC's lung cancer drug Tagrisso (osimertinib).</p><p><a href="http://www.scripintelligence.com/home/FDA-Pazdurs-Opdivo-Love-Affair-And-Other-Adventures-361541" target="_new">FDA Pazdur's Opdivo Love Affair And Other Adventures</a></p><p>A few days before Christmas last year, FDA's Richard Pazdur, director of the Office of Hematology and Oncology Products, said he sat down at his desk at home late in the afternoon after receiving an email telling him he could access the survival curve data for Bristol-Myers Squibb Co.'s programmed death-1 immune checkpoint inhibitor Opdivo (nivolumab) in patients with advanced squamous non-small cell lung cancer. Pazdur said he put in his password, the file opened, "and I said, 'Holy [expletive]! This is great.'"</p><p><a href="http://www.scripintelligence.com/home/Will-Genentechs-Cotellic-Survive-Alternative-Pricing-Demands-361508" target="_new">Will Genentech's Cotellic Survive Alternative Pricing Demands?</a></p><p>Genentech Inc.'s and Exelixis Inc.'s Cotellic (cobimetinib), a MEK inhibitor, made it across the FDA's finish line on Nov. 10, but now the firms must confront the ultimate test of the drug's success &ndash; selling it, which is increasingly becoming more difficult in a climate where payers are becoming more and more demanding about using alternative pricing arrangements.</p><p><a href="http://www.scripintelligence.com/policyregulation/Supreme-Court-Declines-To-Hear-Benicar-Patent-Suit-361511" target="_new">Supreme Court Declines To Hear Benicar Patent Suit</a></p><p>The US Supreme Court has refused to hear arguments in appeals brought by Mylan Pharmaceuticals Inc. and Daiichi Sankyo Co. Ltd. in lawsuits against Apotex Inc., which is seeking to market a generic version of Benicar (olmesartan) in the US.</p><p><a href="http://www.scripintelligence.com/home/Citron-Tweet-Whacks-Mallinckrodt-361481" target="_new">Citron Tweet Whacks Mallinckrodt</a></p><p>The same short-seller that smacked Valeant Pharmaceuticals International Inc. last month with a report exposing the firm's relationship with specialty pharmacies used only a tweet on Nov. 9 to whack its next victim, hedge-fund favorite Mallinckrodt PLC, whose shares plummeted 26%, before closing at $58.01, down $11.88, or 17% &ndash; demonstrating again the power of social media on stock prices. In its Nov. 9 tweet, Citron Research, run by Andrew Left, called Mallinckrodt a "far worse offender" of the reimbursement system than Valeant.</p><p><a href="http://www.scripintelligence.com/home/Benghazi-Like-Hearing-Unlikely-For-Califf-But-Expect-Questions-361480" target="_new">'Benghazi'-Like Hearing Unlikely For Califf, But Expect Questions</a></p><p>Robert Califf, President Barack Obama's nominee to lead the FDA, is expected to have a fairly easy time of it when he goes before a Senate panel at a confirmation hearing on Nov. 17 &ndash; so much so that he's still planning to speak later that day at the annual Conference on Clinical Cancer Research hosted by the Friends of Cancer Research and the Brookings Institution.</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 299
+
+<p>While FDA action dates may have come and gone on some biosimilar applications, known as 351(k)s, it would be wrong to make an assumption regulators had issued a complete response letter (CRL) due to the lack of biosimilarity, warned Leah Christl, associate director for therapeutic biologics.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 82
+
+US Capitol Capsule Dont Make Assumptions On Biosimilars Actions FDA Official Warns
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150911T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150911T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150911T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030315
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 85
+
+US Capitol Capsule: Don't Make Assumptions On Biosimilars Actions, FDA Official Warns
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200300795
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361473
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+12a0968d-e8cd-4f51-ae88-8da645e3389f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042523Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

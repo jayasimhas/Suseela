@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {1BE96189-E7C4-47F5-8227-B48B0A8AD949}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/19/India Tweaks AudioVisual Norms For Trials
+parent: {7FE23635-8382-43A3-A553-ABD9FDB27BAD}
+name: India Tweaks AudioVisual Norms For Trials
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1bd4df15-30a9-4017-ab1a-219cf73259c2
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{6DDF7877-FDAE-472B-8739-FB4710DF7651}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+India Tweaks Audio-Visual Norms For Trials
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+India Tweaks AudioVisual Norms For Trials
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5714
+
+<p>India has tweaked requirements around audio-visual recording of the informed consent process for clinical trials, relaxing the rules a little for HIV and leprosy drugs, but industry claims that the revised norms lack clarity on certain key aspects.</p><p>Details in a government notification mandate that audio-video recording of the informed consent process in case of "vulnerable" subjects in clinical trials of new chemical entities (NCEs) or new molecular entities (NMEs) including the procedure of providing information to the subject and his understanding on such consent be maintained by the investigator for record.</p><p>The gazetted notification dated July 31, but uploaded only recently, however, stipulates that in the case of trials of anti-HIV and anti-leprosy drugs, "only audio recording of the informed consent process of individual subject" including the procedure of providing information to the subject and his understanding on such consent needs to be maintained.</p><p>Suneela Thatte, president of the Indian Society for Clinical Research (ISCR), whose members include several large multinational firms and clinical research organizations, said that while the decision was based on a recognition that audio-visual recording cannot be mandated across all clinical trials and there must be "special circumstances" where exemptions are provided, the ISCR is seeking "operational guidance" from the regulators so that it has more clarity on the revised guidelines. </p><p>She noted that a term like "vulnerable" for instance, while defined in various guidelines, can be open to "various interpretations."</p><p>"It is important for us to therefore have absolute clarity on its meaning and definition. We are seeking this clarity and only once we have it will we be able to provide an opinion on the revision," Thatte told <i>Scrip</i>.</p><p>Others too voiced similar concerns, especially since vulnerable subjects could also include patients with incurable diseases, persons in nursing homes, unemployed or impoverished persons, patients in emergency situations, ethnic minority groups, homeless persons and those incapable of giving consent, among others. </p><p>"One of the challenges is patients with incurable diseases. This would include practically every patient in clinical trials as most chronic diseases are incurable. Unless, the Central Drugs Standard Control Organization (CDSCO) gives a clear guidance, it would be difficult to exclude patients from audio-visual recording in a trial setting," the head of an Indian CRO told <i>Scrip</i>.</p><p>Vulnerable population as defined as per good clinical practice (GCP), the official noted, essentially refers to individuals whose willingness to volunteer in a clinical trial may be unduly influenced by the expectation, whether justified or not, of benefits associated with participation, or of a retaliatory response from senior members of a hierarchy in case of refusal to participate.</p><p>The official also underscored that the notification is "not clear" on what is meant by NCE or NMEs and hence it is unclear whether trials of new biologicals/ new devices / stem cell therapy etc. are excluded from audio-visual recording. </p><p>While most stakeholders, in general, concur that audio-visual recording of informed consent could go a long way in providing documented proof of informed consent, particularly where contested, and clear the air on a host of issues around the process, there have been concerns around the over-breadth of the requirement.</p><p>Experts have in the past stated how the provision may, in some cases, deter patients who are perfectly willing to enrol in clinical research but not willing to be videotaped, thereby excluding large number of people from trials who would like to participate.</p><p>Patients in India, these experts said, were <a href="http://www.scripintelligence.com/researchdevelopment/Indias-trial-regulations-choking-academic-research-355734" target="_new">very reluctant to be videographed</a>, especially in diseases like cancer, HIV, where there is still a social stigma associated, despite the assurance that such recordings will remain confidential. They even noted how at the prestigious Tata Memorial Hospital in Mumbai almost 30% of patients of counselled for trials, withdraw after consenting to be part of trials primarily because of audio-visual consent requirements. </p><p>Others have suggested that certain <a href="http://www.scripintelligence.com/home/experts-slam-crippling-Indian-trial-regulations-354769" target="_new">flexibilities be permitted</a> in audio-visual recording requirements, with ethics committees being empowered to waive it in certain cases. </p><p>In 2013, India made <a href="http://www.scripintelligence.com/policyregulation/India-mandates-trial-consent-recording-amid-patient-confidentiality-concerns-348276" target="_new">mandatory</a> audio-visual recording of the informed consent process of trial subjects, including the procedure of providing information to the subject and his understanding on such consent while adhering to the principles of confidentiality. </p><p>India's clinical research sector has, over the recent past, witnessed a significant slow-down amid uncertainties and delays caused by still-evolving regulations and ongoing trial-related litigation. A string of recent initiatives by the CDSCO, including those around evaluation of serious adverse events (SAEs) during trials and compensation, have, though, been seen as <a href="http://www.scripintelligence.com/policyregulation/Brick-by-brick-India-is-restoring-clinical-trials-parity-357208" target="_new">restoring some ''parity''</a> in the beleaguered segment. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 255
+
+<p>India has tweaked requirements around audio-visual recording of the informed consent process for clinical trials, relaxing the rules a little for HIV and leprosy drugs, but industry claims that the revised norms lack clarity on certain key aspects.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+India Tweaks AudioVisual Norms For Trials
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150819T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150819T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150819T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029601
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+India Tweaks Audio-Visual Norms For Trials
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200600002
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360031
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1bd4df15-30a9-4017-ab1a-219cf73259c2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

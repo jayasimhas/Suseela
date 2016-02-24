@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E82D001D-F7D4-4CEF-BBFA-AAA3F1529974}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/09/Roche CEO Hopes For Progress As China Tackles Approval Lag
+parent: {AB8BE3D9-6035-4232-8C2F-1B6785B0EB96}
+name: Roche CEO Hopes For Progress As China Tackles Approval Lag
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a459a5e2-6aed-4625-bbf0-aab9829317fc
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Roche CEO Hopes For Progress As China Tackles Approval Lag
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Roche CEO Hopes For Progress As China Tackles Approval Lag
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5332
+
+<p>Recent signs that China is aiming to speed up its lengthy drug review processes are "encouraging" but there is still more to be done towards implementing "good and robust regulatory science" in the country, says Roche CEO Severin Schwan. Speaking at the Swiss firm's headquarters, he said that the delay in approvals in China "is a real issue".</p><p><p>While regulatory agencies in the US and Europe are speeding up their approvals of innovative new drugs, it has been taking longer and longer for such products to gain approval in China, the Roche executive told reporters during the group's Oncology Media Day, held on Sept. 7 in Basel. "The regulatory authorities in China are still in their infancy," he said. </p><p><p>Recent reform moves are positive and encouraging, however, and "China needs to implement good and robust regulatory science," Schwan told <i>Scrip</i>'s sister publication <i>PharmAsia News</i> in an interview on the sidelines of the event. Nevertheless, there is more to be done in order to improve the current situation in the country and to speed up regulatory clearances for innovative drugs, the CEO added.</p><p><p>As one of the world's major oncology companies, Roche sells in many markets a number of therapies for various cancer types that have much improved efficacy over previous products, but many of these are still pending regulatory approvals in China.</p><p><p>For example, breast cancer drugs Perjeta (pertuzumab) and Kadcyla (trastuzumab emtansine) &ndash; already available in the US and countries across Europe &ndash; have yet to gain regulatory nods from the China Food and Drug Administration.</p><p><p>Despite the approval delays, the demand for breast cancer therapies in China remains strong, and Roche's Herceptin (trastuzumab) for patients with HER2 overexpression continues to grow. The Swiss firm hopes to gain the local approvals soon for both Perjeta and Kadcyla in what is its largest emerging pharma market, said O'Day.</p><p><h2>Expanding China Access</h2><p><p>More broadly, accelerated drug approvals in China will be crucial for Roche, which is betting heavily on new product launches to drive growth in this market, against a backdrop of substantially slowing economic growth and the expected impact of the Renminbi (yuan) devaluation.</p><p><p>Additionally, the majority of its oncology products are not reimbursed locally, meaning that it needs to actively and constantly expand patient access via various initiatives.</p><p><p>These include patient assistance programs, in which Roche is working with the China Cancer Foundation to provide cancer therapies free of charge after certain treatment cycles.</p><p><p>It is also negotiating with the provinces of Zhejiang and Jiangsu, and Qingdao city, to offer lower prices in exchange for reimbursement coverage funded by the local governments.</p><p><p>So far, 255 million people in China have been fully reimbursed via partnerships for the use of Herceptin, disclosed Roche's head of global pricing and market access, Jens Grueger, who spoke at the same forum.</p><p><p>Already, Roche has led the way in <a href="http://www.scripintelligence.com/home/Pharma-fashion-Roche-Elan--LEO-and-Alkermes-model-the-austerity-collection-338215" target="_new">collaborating with the global reinsurer Swiss Re</a> and multiple Chinese domestic insurers such as China Pacific Insurance to market insurance coverage for cancer patients. Under the partnership, Swiss Re provides technical support on product design and pricing, and reinsurance support to Chinese insurers, while Roche provides training and expertise on cancer treatment plans.</p><p><p>In the second quarter, Roche grew by just 1% in China, and although in line with overall growth for other pharma multinationals, the figure declined sharply from 10% growth in the first three months.</p><p><p>Globally, O'Day noted that the HER2-positive breast cancer therapies continue to drive overall oncology product growth, which was up 22% for Roche in the second quarter. In particular, demand for Herceptin in combination with Perjeta is increasing, for both pre-surgical use and metastatic disease.</p><p><h2>China Regulatory Reforms</h2><p><p>China's lengthy approval process is frustrating many applicants, in both the multinational and domestic sectors. It now takes on average five to eight years for a new drug to get approved, despite the fact that many of the products have already been approved in the US and Europe and in some cases even studied in Chinese patients via multiregional clinical trials.</p><p><p>Under mounting pressure and amid a growing review backlog, the China FDA recently initiated reforms to crack down on regulatory approval filings containing unreliable clinical data, and to prioritize innovative drug reviews with expanded fast-track review designations.</p><p><p>In addition, the agency is contemplating a pilot program to shorten the investigative new drug (IND) review timeframe, which currently stands at 12-18 months, to 60 days for oncology products.</p><p>A version of this article has also been published in <a href="https://www.pharmamedtechbi.com/publications/pharmasia-news" target="_new">PharmAsia News</a>. Scrip Intelligence brings selected complementary coverage from our sister publications to our subscribers.</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 351
+
+<p>Recent signs that China is aiming to speed up its lengthy drug review processes are "encouraging" but there is still more to be done towards implementing "good and robust regulatory science" in the country, says Roche CEO Severin Schwan. Speaking at the Swiss firm's headquarters, he said that the delay in approvals in China "is a real issue".</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Roche CEO Hopes For Progress As China Tackles Approval Lag
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150709T053711
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150709T053711
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150709T053711
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029713
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Roche CEO Hopes For Progress As China Tackles Approval Lag
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{3F22CD9F-9305-4C62-8F4F-F6212196EC44}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360272
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042447Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a459a5e2-6aed-4625-bbf0-aab9829317fc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042447Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

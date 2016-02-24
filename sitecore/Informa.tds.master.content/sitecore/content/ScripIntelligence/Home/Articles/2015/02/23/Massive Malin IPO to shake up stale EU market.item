@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {77C318C1-BA47-4E53-A46B-068B8B85C5BB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/23/Massive Malin IPO to shake up stale EU market
+parent: {D62A6131-B666-4563-B238-F2BBEBABA42F}
+name: Massive Malin IPO to shake up stale EU market
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 481a1054-5664-4313-b754-3159800f7978
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Massive Malin IPO to shake up stale EU market
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 45
+
+Massive Malin IPO to shake up stale EU market
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 2114
+
+<p><b>Question:</b> What do you get when you match up ex-US FDA commissioner Andrew von Eschbach with Elan chief Kelly Martin, and former GlaxoSmithKline top executive Bob Ingram? </p><p><b>Answer:</b> A record breaking European IPO. </p><p>Irish firm Malin, which has input from all three of the above long-time pharma players, is aiming to raise $308-365m through an initial public offering &ndash; which if successful would represent one of Europe's biggest ever biotech IPOs. </p><p>The public company will be looking to invest in biotechnology companies for whom an IPO or trade sale is premature. Malin claims to have seven companies lined up including a Pan-African distributor and a US disinfection technology platform. Malin will also encourage the firms to move to Ireland where there is a lively pro-business tax environment. It says the company can provide the long term capital and industry experience venture capital and private equity funds cannot guarantee.</p><p>A substantial portion of the funds have already been committed, the company said in a pre-admission notice on 27 February. Malin expects that $135m will be allocated as funds are required, while the rest of the IPO stash will be used to build up a pipeline of 10-12 assets. </p><p>Malin has been formed out of private firm Brandon Point Industries and will see former Elan CEO Mr Martin and chair Mr Ingram join its board. Mr von Eschbach will sit on its advisory board. </p><p>The European markets have not seen a boom in biotech financing through VC capabilities or IPOs on the same level as the US. The biggest success in recent years was Circassia Pharmaceuticals, which in March 2014 became the first significant listing on the London Stock Exchange for some time (<a href="http://www.scripintelligence.com/business/Circassia-puts-money-where-mouth-is-IPO-floats-at-top-price-350624" target="_new">scripintelligence.com, 13 March 2014</a>). Circassia is focused on the development and commercialization of a range of immunotherapy products for the treatment of allergies. The firm raised approximately $309m through its IPO. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 184
+
+<p><b>Question:</b> What do you get when you match up ex-US FDA commissioner Andrew von Eschbach with Elan chief Kelly Martin, and former GlaxoSmithKline top executive Bob Ingram? </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 45
+
+Massive Malin IPO to shake up stale EU market
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150223T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150223T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150223T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027946
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Massive Malin IPO to shake up stale EU market
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200100199
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356891
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042301Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+481a1054-5664-4313-b754-3159800f7978
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042301Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

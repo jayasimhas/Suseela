@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {BB19D4D5-D4A3-4EEE-B53B-4D8E2AB2170F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/06/New EGA group to promote access to valueadded drugs
+parent: {1433669C-C53A-4B22-AB4D-371A05B8BBF0}
+name: New EGA group to promote access to valueadded drugs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 702d3f15-c46a-4d7d-ae74-1138e9b87e30
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{DA44CA46-4196-4BEB-9C53-EC7BF60AB02C}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 59
+
+ New EGA group to promote access to ''value-added'' drugs  
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+New EGA group to promote access to valueadded drugs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3338
+
+<p> The EGA, which represents generics and biosimilars companies in Europe, has set up a new internal group to help increase patient access to value-added off-patent medicines such as those that improve compliance or offer a different delivery route from the originator medicine. </p> <p> The European Value Added medicines (EVA) group will represent companies developing new versions of off-patent products that offer benefits such as better quality of life, improved tolerability, less frequent dosing, and reductions in medical errors, or that address unmet needs in any other way, the EGA said. </p> <p> A group of this kind is needed because while the benefits of such medicines are readily recognized by payers elsewhere, in the US for example, European payers are more difficult to convince because the pathways for demonstrating this kind of benefit don't always exist, according to Adrian van den Hoven, the EGA's director general. </p> <p> Payers tend to see medicines as either new compounds or generics, and don't recognize the advantages of value-added off-patent products, which fall somewhere in between the two, Mr van den Hoven told <i>Scrip</i>. Some hospital managers are receptive, but their hospital procurement practices may not let them use value-added generics. &quot;We need to be able to show the added value&quot;, he said. </p> <p> The EGA's regulator affairs director, Beata Stepniewska, agreed, saying, &quot;When you go to the payers they see it in black and white. The third pathway doesn't exist,&quot; she said, and it is difficult to show the benefits of the medicines even though they can be very significant for both patients and healthcare professionals. &quot;It's different in the US. Some companies say they will launch in the US but not in the EU.&quot; </p> <p> &quot;The industry is no longer black and white &ndash; originator drugs versus those carrying the INN &ndash; and there is now a great deal of activity in this middle space,&quot; Mr van den Hoven said. </p> <p> The association began working on this new initiative about a year ago with a core group of about 10 companies operating in the retail pharmacy or hospital sectors, Mr van den Hoven noted. The new group will now start putting together some proposals, and will be talking with various parties including the European Commission, payers and the European health technology assessment network, EUnetHTA. The matter was discussed with commission representatives on the margins of the EGA's annual conference in Berlin this week. </p> <p> &quot;The group will collect evidence and arguments and try to build a tool for assessing added value and then it will talk to the payers and health authorities, and perhaps work on a methodology with EUnetHTA and national payers,&quot; said Ms Stepniewksa. </p> <p> Some products of the kind envisaged by the group are already on the market in the US, and the group will using these examples to show EU payers their benefits. It may also draw on similar experience in some Nordic markets. </p> <p> The group will be open to both EGA and non-EGA companies, and its chair will be from Teva, Mr van den Hoven said. The members of the group have not been formally named yet, although it is probable that they will include those who have helped develop the initiative over the past year. </p> 
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 284
+
+<p> The EGA, which represents generics and biosimilars companies in Europe, has set up a new internal group to help increase patient access to value-added off-patent medicines such as those that improve compliance or offer a different delivery route from the originator medicine. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+New EGA group to promote access to valueadded drugs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150806T152612
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150806T152612
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150806T152612
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028974
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 59
+
+ New EGA group to promote access to ''value-added'' drugs  
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358838
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042402Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+702d3f15-c46a-4d7d-ae74-1138e9b87e30
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042403Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {357B3527-4F7F-4F36-941E-74771B3DD3E6}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/22/Major acquisition still on the table for Pfizer in 2015
+parent: {2F6B6639-D934-4DFA-9EB8-1D57248EB5BD}
+name: Major acquisition still on the table for Pfizer in 2015
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8de4ff35-5dae-414a-99d1-75d688a50a61
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{EF0B77E2-D8CF-42C6-BA65-48EE8FBEA0EF}|{649253E7-61BB-41CA-ACAF-6CC3C62670AE}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+Major acquisition still on the table for Pfizer in 2015
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+Major acquisition still on the table for Pfizer in 2015
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3751
+
+<p>Pfizer "has the capability of undertaking other deals independent of size," CEO Ian Read stated during the company's first quarter results presentation. The US pharma major, which announced the acquisition of Hospira and its biosimilar portfolio for $17bn in February, still has plenty of cash to spend, having walked away from the $100bn-plus buy-out of an unwilling AstraZeneca last year. It is "agnostic" to the size of any acquisition as long as it "moved the needle" and created value for shareholders, added Mr Read.</p><p>Changes to US treasury rules <a href="http://www.scripintelligence.com/home/Obama-admin-takes-action-to-thwart-tax-inversion-354073" target="_new">last September</a>, which made tax-saving 'inversion' deals less attractive, was one of the reasons cited for Pfizer's about turn. But Pfizer's tax bill is still a concern for its management. "Tax is one of our largest expenses. We, as any management should be, are focused on trying to prudently manage our expenses. The new rules do make it more difficult to immediately realize any benefits from being re-domiciled but it really depends upon the target," said Mr Read.</p><p>Pfizer manages its operations through two business units: Innovative Products and Established Products, and has been evaluating a potential split of the company into two or more independent businesses. Large acquisitions in no way detract from this plan, Mr Read noted. "We have talked about getting bigger to get smaller, because by getting bigger we could add and strengthen the independent businesses and then get smaller, if it made sense."</p><p>The end of the first quarter saw Pfizer cut its guidance for 2015 "solely to reflect changes in foreign exchange rates in relation to the US dollar from mid-January 2015 to mid-April 2015, primarily the weakening of the euro," it stated. </p><p>Pfizer now expects 2015 revenues in the range of $44bn-$46bn compared to a previous estimate of $44.5bn to $46.5bn. It also expects per-share earnings between $1.95 and $2.05, down from its previous guidance of $2 to $2.10.</p><p>Pfizer reported a 4% drop in its first quarter revenues to $10.9bn. It suffered a "significant negative impact" from the loss of exclusivity on several of its products, including its arthritis treatment, Celebrex in the US, and the termination of the Spiriva co-promotion collaboration in the US. First quarter net income was up 2% to $2.4bn. </p><p>Pfizer's Ibrance (palbociclib) launch appears to be going well. "Overall we are very pleased with the results," Albert Bourla, president of Pfizer's Vaccines, Oncology and Consumer Healthcare business. The US FDA approved the drug for the treatment of metastatic breast cancer <a href="http://www.scripintelligence.com/home/Pfizer-wins-early-Ibrance-approval-in-breast-cancer-356525" target="_new">in February</a>, two months ahead of schedule.</p><p>"So far it has been well received by oncologists," said Dr Bourla. "We have over 800 healthcare practitioners prescribing it. We have over 2,000 new patients in one quarter, and approximately 3,000 total scripts written so far. First-line market share is already approaching 10%."</p><p>Prevnar 13, Pfizer's pneumonia vaccine, was also recently launched in adults and the firm has been doing a major DTC push. "[Prevnar] numbers were much better than expected," noted Evercore ISI analyst Dr Mark Schoenebaum. </p><p>"Prevnar 13 had a very strong quarter particularly in the US where revenues increased 80%," said the Pfizer CEO. "This was primarily due to strong uptake among adults [following the positive recommendation from the US CDC last year], as well as the timing of government purchases for the pediatric indication compared to the year ago quarter."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 529
+
+<p>Pfizer "has the capability of undertaking other deals independent of size," CEO Ian Read stated during the company's first quarter results presentation. The US pharma major, which announced the acquisition of Hospira and its biosimilar portfolio for $17bn in February, still has plenty of cash to spend, having walked away from the $100bn-plus buy-out of an unwilling AstraZeneca last year. It is "agnostic" to the size of any acquisition as long as it "moved the needle" and created value for shareholders, added Mr Read.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+Major acquisition still on the table for Pfizer in 2015
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150422T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150422T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150422T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028563
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+Major acquisition still on the table for Pfizer in 2015
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358007
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8de4ff35-5dae-414a-99d1-75d688a50a61
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

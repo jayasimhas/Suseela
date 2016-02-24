@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {C5DD19E2-AF8C-433B-8F0C-9E956492DBFD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/24/US Capitol Capsule Innovative ValueBased Pricing Strategies Biopharmas Savior
+parent: {D37D02A2-D786-4924-A7F9-DF194032F233}
+name: US Capitol Capsule Innovative ValueBased Pricing Strategies Biopharmas Savior
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 52db8253-5c7d-4379-959f-33317ab124e3
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 84
+
+US Capitol Capsule: 'Innovative' Value-Based Pricing Strategies: Biopharma's Savior?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 77
+
+US Capitol Capsule Innovative ValueBased Pricing Strategies Biopharmas Savior
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 14568
+
+<p>With US insurers and pharmacy benefit managers (PBMs) increasingly becoming more and more aggressive about demanding better discounts and rebates from drug manufacturers and imposing more restrictions on what medicines the payers will include on their formularies, to survive, biopharmaceutical firms must bite the bullet and negotiate under value-based pricing schemes, said Dan Mendelson, CEO of the Washington-based analysis and consulting firm Avalere Health.</p><p>And it looks like Amgen is planning to do just that, although details for now are vague.</p><p>"There are a lot of conversations in industry about this, but I think Amgen is a leader in announcing that's where they are going with their pricing," Mendelson told <i>Scrip</i>.</p><p>The Thousand Oaks, Calif.-based biotech giant said it plans to work with payers and other purchasers to provide "innovative pricing programs," linking the net price of its newly approved proprotein convertase subtilisin/kexin 9 (PCSK9) inhibitor Repatha (evolocumab) to the expected low-density lipoprotein cholesterol (LDL-C) reductions and anticipated appropriate patient use.</p><p>"By partnering with payers to implement these programs, we can help ensure that all appropriate patients who could benefit from Repatha will have access to this important new therapy," said Anthony Hooper, executive vice president of Global Commercial Operations at Amgen. </p><p>He said Amgen was "confident" in the ability of Repatha, which was approved by the FDA on <a href="http://www.scripintelligence.com/home/Repatha-OKd-Payers-Eye-PCSK9-RebateDiscount-War-360147" target="_new">Aug. 27</a>, to demonstrate real-world effectiveness and value based on intensive LDL cholesterol reductions.</p><p>Amgen set Repatha's US annual wholesale acquisition cost (WAC) at $14,100, which was slightly below the $14,600 for Sanofi's and Regeneron Pharmaceuticals' PCSK9 inhibitor Praluent's (alirocumab), which gained the FDA's nod on <a href="http://www.scripintelligence.com/home/SanofiRegeneron-win-1st-US-PCSK9-OK-with-Praluent-359621" target="_new">July 24</a>.</p><p>Both drugs are approved in the US for use with diet and "maximally tolerated" statin therapy in adults with heterozygous familial hypercholesterolemia &ndash; a genetic condition that causes unusually high levels of LDL-C, often resulting in heart attacks at a young age &ndash; or patients with clinical atherosclerotic cardiovascular disease, such as heart attacks or strokes, who require additional lowering of LDL-C.</p><p>Amgen also won a second indication, homozygous familial hypercholesterolemia, a more rare form of familial hypercholesterolemia &ndash; a use Sanofi and Regeneron did not seek for Praluent.</p><p>Nonetheless, with the indications being almost identical, Wall Street analysts did not expect Amgen's lower WAC to make any difference &ndash; declaring the formulary winner would be the manufacturer that offers the best discounts and rebates.</p><p>Amgen declined to explain for <i>Scrip</i> what the company has in mind for its "innovative" pricing strategy.</p><p>But Steve Miller, CEO of PBM Express Scripts, said his company plans to "leverage" the competition between the two PCSK9 inhibitors "to achieve the greatest possible discounts for our clients and patients."</p><p>Last month, another big payer, CVS Health, said it would not negotiate with Sanofi and Regeneron on Praluent until the PBM got a look at Repatha's labeling. CVS, nonetheless, said it would expect patients to first try and fail statins before covering either of the PCSK9s.</p><p>Long before Praluent and Repatha were even approved, CVS and Express Scripts said they were worried the PCSK9 inhibitors <a href="http://www.scripintelligence.com/home/CVS-takes-aim-at-PCSK9s-costs-could-dwarf-HCV-meds-356803" target="_new">could break the US health care system's bank</a> if the products demonstrated in their ongoing cardiovascular outcomes trials they could prevent heart attacks and strokes and were then prescribed to much broader populations.</p><p>Last week, Express Scripts' Miller reiterated that point &ndash; insisting the drugs "have the potential to grow over the next several years to become the costliest therapy class our country has seen."</p><p>"While a drug exclusion in this class remains a possibility, our preference would be that both manufacturers provide our clients favorable pricing so that it would make sense for our national formulary to cover both products," he said in an Aug. 27 blog post. </p><p>Miller said Express Scripts' external Pharmacy and Therapeutics Committee would meet in September to review the clinical profiles of both FDA-approved PCSK9 inhibitors. </p><p>Some insurers, like Aetna and UnitedHealthcare, also said they plan to require patients to meet certain "precertification" criteria before the companies would cover the costs of the PCSK9 inhibitors. </p><p>With payers insisting on covering drug costs on the basis of value, biopharmaceutical companies are going to need to prove the worth of their medicines and "need to be ready to contract that way," Avalere's Mendelson advised.</p><p>But to do that, he explained, drug makers will need to be more proactive in using market data to structure their value-based pricing programs to identify exactly which types of patients to target for the firms' medicines, especially if they want to have any chance of justifying premium prices.</p><p>"And that is really the core of this is, which is, there is a very strong link between building quality value-based programs and the ability to sustain a robust price point," Mendelson said.</p><p>Among the types of arrangements firms could make with payers is population-based quality pricing, in which a manufacturer would agree to reduce the price for a certain percentage of patients by covering a population at large, he said, although he noted that type of deal works better for generics than for the more expensive innovator products.</p><p>For innovators of pricier drugs, biopharmaceutical companies could negotiate based on data that identifies target populations with the most to gain from a medicine, Mendelson said.</p><p>"That's the kind of arrangement I think the plans are going to be interested in, particularly if it enables them to keep patients out of the hospital and lower their costs elsewhere," he said. </p><p>If the manufacturer can use data systems to prove its drug is cost-saving, "that's a very powerful set of arguments," Mendelson declared.</p><p>Unfortunately, he said, biopharmaceutical firms have had a poor record of tapping into the "rich existing databases" that will tell them "what happens when the drugs actually are used in the marketplace."</p><p>"You can't just use claims data to figure out who is going to succeed" on certain medicines, Mendelson said. "You also have to have access to lab data and other clinical data."</p><p>By aligning incentives with payers, drug makers have a better chance of structuring strong price agreements, he said.</p><p>And, Mendelson said, by adopting such approaches, there is the potential to finally "kill this negative cycle" between the industry and health plans &ndash; often brought to the spotlight by the back-and-forth <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Innovation-without-high-drug-prices-A-difficult-conversation-351991" target="_new">public clashes</a> involving the heads of the Washington lobbying groups the Pharmaceutical Research and Manufacturers of America and the America's Health Insurance Plans.</p><p><b>In other Washington news:</b></p><p><a href="http://www.scripintelligence.com/home/Repatha-OKd-Payers-Eye-PCSK9-RebateDiscount-War-360147" target="_new">Repatha OK'd; Payers Eye PCSK9 Rebate/Discount War</a></p><p>The FDA on Aug. 27 gave Amgen the go-head to market Repatha as a therapy to bring low-density lipoprotein cholesterol under control in high-risk patients when statins are not enough &ndash; making it only the second PCSK9 inhibitor cleared for the US market.</p><p><a href="http://www.scripintelligence.com/home/4-Letter-Word-FDAs-BiosimilarsBiologics-Distinction-360142" target="_new">4-Letter Word: FDA's Biosimilars/Biologics Distinction</a></p><p>The FDA wants all biologics, including biosimilars, to carry a unique four-letter suffix as part of the nonproprietary names of the active drug substance, the agency revealed on Aug. 27 in a draft guidance document and a proposed rule &ndash; giving a big win to innovator manufacturers, which have insisted on imposing distinguishable names on the copycats. </p><p><a href="http://www.scripintelligence.com/home/50-Shades-Of-Regulatory-Gray-More-Flexible-FDA-360111" target="_new">50 Shades Of Regulatory Gray: More Flexible FDA?</a></p><p>The FDA's high rates of drug approvals in recent years, including Sprout Pharmaceuticals' libido-boosting pill Addyi (flibanserin), have had some Americans questioning whether the agency has gone soft on its standards. But the increased approval rate may be a sign the FDA is getting better at using the tools that science, innovation and Congress have provided, which have allowed for more regulatory flexibility, although there are a lot of gray areas as US regulators try to figure it all out, said Brookings Institution's Greg Daniel. </p><p><a href="http://www.scripintelligence.com/home/No-More-Biomarker-Fumbling-Time-to-Get-Serious-360094" target="_new">No More Biomarker Fumbling; Time to Get Serious</a></p><p>Developing reliable, informative biomarkers has been a messy business over the past two decades, said Janet Woodcock, director of the FDA's Center for Drug Evaluation and Research, who acknowledged there's been a lot of "fumbling" in determining what types of evidence are needed, because of uncertainty by regulators and a lack of research funding.</p><p><a href="http://www.scripintelligence.com/home/Social-MediaMobile-Health-Data-Whats-It-Good-For-360128" target="_new">Social Media/Mobile Health Data: What's It Good For?</a></p><p>Whether its tweets on Twitter, posts on Facebook or vital signs being recorded by wearable fitness trackers and cell phone apps, the data from social media and mobile health devices have been coming fast and furious in recent years &ndash; and abundantly accumulating. But what's it good for? The FDA and the University of Maryland are hoping to answer that question, particularly as it pertains to medical product safety.</p><p><a href="http://www.scripintelligence.com/policyregulation/More-Troubles-For-Merck-AZ-Lilly-Takeda-DPP-4s-360167" target="_new">More Troubles For Merck, AZ, Lilly, Takeda DPP-4s</a></p><p>The FDA on Aug. 28 warned health care providers and patients about new concerns over severe and disabling joint pain linked to dipeptidyl peptidase-4 inhibitors, such as Merck's Januvia (sitagliptin), AstraZeneca's Onglyza (saxagliptin), Lilly's and Boheringer Ingelheim's Tradjenta (linagliptin) and Takeda's Nesina (alogliptin) and their related products.</p><p><a href="http://www.scripintelligence.com/policyregulation/Sunovions-Seizure-Drug-Aptiom-Wins-Monotherapy-Use-360168" target="_new">Sunovion's Seizure Drug Aptiom Wins Monotherapy Use</a></p><p>Marlborough, Massachusetts-based Sunovion Pharmaceuticals won the FDA's approval to market Aptiom (eslicarbazepine acetate) as monotherapy to treat partial-onset seizures.</p><p><a href="http://www.scripintelligence.com/home/Amgen-Files-Emergency-Motion-To-Block-Zarxios-Launch-360146" target="_new">Amgen Files Emergency Motion To Block Zarxio's Launch</a></p><p>Amgen has asked the US Court of Appeals for the Federal Circuit to block next week's launch of a biosimilar of the firm's human granulocyte colony-stimulating factor Neupogen (filgrastim) until the judges have considered the company's motion for a rehearing and, if granted, review of its lawsuit against Novartis unit Sandoz.</p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-Approves-LillyBI-Diabetes-Drug-Synjardy-360148" target="_new">FDA Approves Lilly/BI Diabetes Drug Synjardy</a></p><p>The FDA on Aug. 27 cleared Lilly's and Boehringer Ingelheim's type 2 diabetes medicine Synjardy &ndash; the third empagliflozin-containing drug approved for the US market.</p><p><a href="http://www.scripintelligence.com/researchdevelopment/FujifilmMediVector-Antiviral-Favipiravir-May-Protect-Against-Ebola-360129" target="_new">Fujifilm/MediVector Antiviral Favipiravir May Protect Against Ebola</a></p><p>The antivirval favipiravir (T-705), which is being developed by Fujifilm and its US subsidiary MediVector, may provide post-exposure prophylaxis protection against Ebola, researchers reported in the British medical journal <i>The Lancet Infectious Diseases</i>.</p><p><a href="http://www.scripintelligence.com/policyregulation/US-Patent-Board-To-Review-Mylans-Copaxone-Challenge-360113" target="_new">US Patent Board To Review Mylan's Copaxone Challenge</a></p><p>The U.S. Patent and Trademark Office's Patent Trial and Appeal Board has instituted inter partes review proceedings for petitions filed by Mylan against two patents held by Teva on its moneymaker multiple sclerosis drug Copaxone (glatiramer acetate injection).</p><p><a href="http://www.scripintelligence.com/policyregulation/Sarepta-Wins-Priority-Review-For-Duchenne-Drug-Eteplirsen-360112" target="_new">Sarepta Wins Priority Review For Duchenne Drug Eteplirsen</a></p><p>Shares of Sarepta Therapeutics rose 6% in after-hours trading on Aug. 25 after the company said its new drug application for its experimental Duchenne muscular dystrophy drug eteplirsen gained a priority review, with the FDA setting Feb. 26, 2015, as the <i>Prescription Drug User Fee Act</i> action date.</p><p><a href="http://www.scripintelligence.com/home/Bass-Denied-Trials-In-Acorda-Patent-Challenges-Shares-Soar-360093" target="_new">Bass Denied Trials In Acorda Patent Challenges; Shares Soar</a></p><p>The US Patent & Trademark Office's Patent Trial and Appeal Board on Aug. 24 denied two so-called inter partes review petitions filed by Kyle Bass &ndash; the hedge fund manager the drug industry loves to hate &ndash; and his Coalition for Affordable Drugs, which sought to invalidate patents held by Acorda Therapeutics for its FDA-approved multiple sclerosis drug Ampyra (dalfampridine).</p><p>This and past US Capitol Capsule columns are available at <a href="http://www.scripintelligence.com/capitolcapsule/" target="_new">http://www.scripintelligence.com/capitolcapsule/</a></p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 470
+
+<p>With US insurers and pharmacy benefit managers (PBMs) increasingly becoming more and more aggressive about demanding better discounts and rebates from drug manufacturers and imposing more restrictions on what medicines the payers will include on their formularies, to survive, biopharmaceutical firms must bite the bullet and negotiate under value-based pricing schemes, said Dan Mendelson, CEO of the Washington-based analysis and consulting firm Avalere Health.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 77
+
+US Capitol Capsule Innovative ValueBased Pricing Strategies Biopharmas Savior
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150824T170002
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150824T170002
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150824T170002
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029634
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 84
+
+US Capitol Capsule: 'Innovative' Value-Based Pricing Strategies: Biopharma's Savior?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360083
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042442Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+52db8253-5c7d-4379-959f-33317ab124e3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042442Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

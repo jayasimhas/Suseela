@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {0980F3C0-7ADC-41B8-809A-D893FEA68A3B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/10/Neurocrine Ready To Take On Teva
+parent: {67D3D950-7219-439C-A736-170A4F54C227}
+name: Neurocrine Ready To Take On Teva
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b6dbc356-bcd8-4b6f-ac16-4fec5458fa2c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+Neurocrine Ready To Take On Teva
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 32
+
+Neurocrine Ready To Take On Teva
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3360
+
+<p><p>Neurocrine Biosciences Inc. is readying its Phase III movement drug for a filing with the FDA next year and is prepared to take on its much-larger competitor, Teva Pharmaceuticals &ndash; investors clearly believe they can do it, pushing the stock up on the news. </p><p>Neurocrine jumped more than 10% to trade near $43 on Oct. 8 after the biotech announced positive results from its Phase III trial of NBI-98854 in patients with tardive dyskinesia who have underlying schizophrenia. </p><p>The VMAT2 inhibitor is meant to help with the involuntary muscle movements &ndash; like lip smacking, tongue protrusion, lip puckering and facial spasm &ndash; caused by the prolonged use of older antipsychotic patients who have taken the drug to control conditions like schizophrenia, schizoaffective disorder, bipolar disorder and major depressive disorder. </p><p>The late-stage KINECT-3 trial showed that at six weeks, patients taking the 80mg dose of the drug showed a 3.1 reduction compared with placebo on the Abnormal Involuntary Movement Scale (AIMS). Patients taking the 40mg dose were also assessed and Clinical Global Impression of Change (CGI-TD) for both doses was studied as a secondary endpoint. </p><p>The biotech's Chief Medical Officer Chris O'Brien said during a call with analysts on Oct. 8 that the company began seeing signs of improvement in patients on the drug at two weeks and that doses got better over time. </p><p>Neurocrine intends to publish the full results of the study in a major medical journal and will continue an open-label extension of KINECT-3. NBI-98854 is also being studied in patients with Tourette syndrome. </p><p>The biotech intends to use this data, as well as data from KINECT-2 and earlier studies to file a New Drug Application with FDA in 2016. </p><p><b>How It Stacks Up</b></p><p>Neurocrine's NBI-98854 would compete with Teva's SD-809 (Austedo), which the Israeli company picked up in its $3.2bn acquisition of Auspex Pharmaceuticals. Both drugs inhibit dopamine through the VMAT2 pathway. </p><p>" Our research with our psychiatrists and neurologists, and the market research that our commercial group is embarking on, all tell us people like the idea of a once-a-day drug that doesn't require titration, that doesn't have such a narrow therapeutic window that you have to titrate," said O'Brien. "Again, we will see when -- we look forward to taking our data into the commercial marketplace. I think physicians like what they see when they see this data."</p><p>Analysts also believe that NBI-98854 would hold up well competitively against SD-809. Leerink Swann analyst Paul Matteis admitted in an Oct. 8 note to investors that a comparison of the drug's data is not apples to apples. </p><p>"However, '809 was able to generate a 1.4 point placebo-adjusted benefit on the AIMS score versus 3.1 and 1.8 points for the 80mg and 40mg NBI-98854 doses. Mechanistically, it is unclear to us why the two products would have differentiated safety profiles as they both inhibit dopamine release through VMAT2, and thus the varying effects may be due to patient populations, chance, timing of evaluation, or study design. However, in any case, this could improve perception of '98854 in the marketplace, important for NBIX given the difficulties competing with TEVA's commercial CNS franchise," he wrote.</p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+Neurocrine Ready To Take On Teva
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150210T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150210T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150210T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029990
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+Neurocrine Ready To Take On Teva
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200100809
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 11
+
+expert view
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360786
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042502Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b6dbc356-bcd8-4b6f-ac16-4fec5458fa2c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042502Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

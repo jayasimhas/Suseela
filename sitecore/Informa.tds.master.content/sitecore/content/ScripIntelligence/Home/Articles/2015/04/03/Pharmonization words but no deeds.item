@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {E558265B-D6BE-42E6-BA63-7DD7B6F38003}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/03/Pharmonization words but no deeds
+parent: {C10C73BD-F7C3-476F-ABFC-B27344ADF644}
+name: Pharmonization words but no deeds
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 7a0bb97b-de89-4ca1-b2b9-8c43fd9b7651
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{DBA29625-E20C-4C62-9C26-9028048455F2}|{78485A7A-B73F-43C5-A545-3DC6EC60C23B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 34
+
+Pharmonization: words but no deeds
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 33
+
+Pharmonization words but no deeds
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3450
+
+<p>Pharmaceutical regulators are two-faced, and when they fly in the face of logic, they harm prospects for patients' access to drugs, according to a recent industry panel held in Paris.</p><p>The mood music for pharma is not soothing, according to Sanofi's Robin Kenselaar, European head of its Genzyme business. "We are being told that in five years high-priced innovation will be unsustainable. It is clear that the research agenda is eclipsed by debates over price. And we are being told 'don&rsquo;t ask for a premium price, ask for early access.'" </p><p>Mr Kenselaar also noted that while health technology assessment bodies were involved in discussions to shape a more harmonized European HTA environment, their actions did not reflect a harmonized approach.</p><p>For instance, a 2013-15 European Commission-financed project called the Shaping European Early Dialogues Consortium (SEED) was led by the French Haute Autorité de Santé and involved at least another 10 European HTAs. It explored mechanisms for early discussion between health technology assessors and pharma/medtech companies during their products' development phases. But, said Mr Kenselaar, "Local HTA assessments are already starting to diverge. Whereas in some member states, reimbursement approval follows almost immediately after a go-ahead from the EMA, in others patient access is delayed."</p><p>That is not the only example of health technology assessment bodies that participate in EU-funded harmonization projects without putting harmonization into action. Another panelist in Paris, Miriam Gargesi, Director of Healthcare Biotech at EuropaBIO, expressed frustration that HTAs seemed to be capable even of ignoring recommendations that they had been involved in drawing up. Citing the EUnetHTA program, she said that "There is a lack of national uptake of the findings in the pilot reports [from EUnetHTA]. The National HTA bodies represent the primary customer for the products but they do not seem to be using the reports. The national decisions do not reflect the EU harmonization exercise."</p><p>The precedents for regulatory harmonization are not encouraging. David Talbot, Senior Director of International Government Affairs at Eli Lilly, said that 25% of the cost of bringing a molecule to market could be attributed to the difference between the FDA and the EMA, although he could not produce a source for that figure when challenged by <i>Scrip</i>.</p><p>Mr Talbot is heavily involved in industry's lobbying efforts around the TransAtlantic Trade and Investment Partnership (TTIP), the much vaunted EU-USA dialog that that aims to harmonize regulatory approaches in a variety of trade areas. </p><p>He told delegates at the BioEurope Spring meeting in Paris on 9 March 2015 that TTIP would result in "some cooperative body being created that will have some incentive to make the two regulators come closer together." He said no-one knew what that body would look like, but that it needed "to go beyond the Memoranda of Understanding and mutual recognition agreements that have already been signed, and which have not been particularly effective."</p><p>Even on inspections, where there had been considerable discussion, there is coordination between authorities: "We might have three inspections in a week &ndash; from the FDA, the EMA and a European national body &ndash; none of which increases the safety of the product or the facility at all."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 190
+
+<p>Pharmaceutical regulators are two-faced, and when they fly in the face of logic, they harm prospects for patients' access to drugs, according to a recent industry panel held in Paris.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 33
+
+Pharmonization words but no deeds
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150403T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150403T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150403T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028046
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 34
+
+Pharmonization: words but no deeds
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{092B08D7-150F-4630-9C64-5389604B69D9}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357062
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042305Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7a0bb97b-de89-4ca1-b2b9-8c43fd9b7651
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042306Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

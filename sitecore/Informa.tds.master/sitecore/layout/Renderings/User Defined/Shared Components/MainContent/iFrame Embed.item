@@ -17,6 +17,20 @@ content-length: 55
 
 /Views/Shared/Components/MainContent/iFrameEmbed.cshtml
 ----field----
+field: {FE7C64B6-FCF8-4F00-A5E8-C2D9A8CF3048}
+name: Parameters
+key: parameters
+content-length: 60
+
+contentFolderTemplate={EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 30
+
+./PageAssets|/sitecore/content
+----field----
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
 key: datasource template
@@ -26,7 +40,7 @@ content-length: 68
 ----version----
 language: en
 version: 1
-revision: c8c8949d-df8d-42c1-bb5e-3067c2cd45b2
+revision: 34148d63-0d67-42e2-950a-b07848af4463
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c8c8949d-df8d-42c1-bb5e-3067c2cd45b2
+34148d63-0d67-42e2-950a-b07848af4463
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160203T210033Z
+20160223T204240Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

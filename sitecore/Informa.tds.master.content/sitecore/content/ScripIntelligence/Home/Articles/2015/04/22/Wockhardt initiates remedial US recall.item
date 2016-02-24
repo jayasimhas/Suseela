@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {C0ED7016-2EE2-4D99-B190-D878CE6BC53E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/22/Wockhardt initiates remedial US recall
+parent: {2F6B6639-D934-4DFA-9EB8-1D57248EB5BD}
+name: Wockhardt initiates remedial US recall
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 06c67f32-10ed-4009-945e-39b1b36a9a9c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 38
+
+Wockhardt initiates remedial US recall
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Wockhardt initiates remedial US recall
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4093
+
+<p>Shares of Wockhardt were on a downward spiral on Indian bourses after the company said that it was voluntary recalling, as part of remedial measures, a clutch of products from the US market.</p><p>The recall, being effected as a measure of abundant precaution, concerned "all the remaining batches" in the US market of Wockhardt products that were manufactured prior to the 2013 US FDA import alerts against its Chikalthana and Waluj sites in Aurangabad. It comes in the wake of certain "observations" by the regulator pertaining to the pre-alert batches in a previous inspection. </p><p>However Wockhardt stressed that there was no evidence of risk to patient safety from the products currently on in the US market. Nor is the recall at the behest of the FDA.</p><p>Wockhardt indicated that the last FDA inspection saw the regulator make enquiries on how the firm expected to deal with certain products on the market and given the "workload" involved to deal with such issues and the time it may take, the company felt it "more prudent" to just take a voluntary [recall] decision.</p><p>"This will help us&#8230;overall one of the concerns of the regulator goes away. This will help us get back to normalcy much faster," Wockhardt's chairman Dr Habil Khorakiwala said at a press briefing in Mumbai on 28 April.</p><p>The recall is expected to involve about 12-15 products, but Dr Khorakiwala told <i>Scrip</i> that the company had firmed up third-party manufacturing arrangements for some of the products. No specifics were provided.</p><p>Details on the financial impact of the recall were not immediately available although Wockhardt claimed that it was not likely to be "very significant."</p><p>Investors, though, were unenthused and shares of Wockhardt ended at INR1,243.35 ($19.6), down 6.52%, on the Bombay Stock Exchange on 28 April.</p><p>Wockhardt had earlier said that while its most recent FDA audit at Chikalthana did result in certain Form 483 observations, these were with respect to products manufactured prior to execution and implementation of the good manufacturing practice (GMP) remediation programme. The <a href="http://%5bhttp:/www.scripintelligence.com/business/Wockhardts-compliance-improving-as-FDA-woes-ease-357392%5d" target="_new">inspection</a> did not flag issues concerning ''data security and control measures in the laboratory and manufacturing'', the firm then emphasised. </p><p>A form 483 is a notice of the FDA's inspectional observations that lists deficiencies in the quality system. </p><h2>Regulators collaborate</h2><p>Wockhardt also referred to how regulators such as the US FDA and the EMA collaborate as far as inspections are concerned and added that its current voluntary recall mirrors a prior approach in the UK.</p><p>"Since the FDA and MHRA are working together, we thought we will be consistent with both regulators. We followed the similar line of approach which the UK MHRA followed with us, asking us to withdraw," Dr Habil Khorakiwala added.</p><p>In October 2013, the UK MHRA, in view of certain GMP deviations at the Chikalthana unit, issued an alert to <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/MHRA-recalls-five-Wockhardt-drugs-347433%5d" target="_new">recall</a> five prescription-only drugs - amiloride HCl 5mg, clarithromycin 250mg and 500mg, gliclazide 80mg, quinine sulphate 300mg and tamsulosin pinexel 400mcg. The MHRA, though, then clarified that there was no evidence that the medicines affected by the precautionary recall in the UK were defective, nor was there a risk to patient safety from products currently on the market. Earlier that same year, the MHRA had also implemented a precautionary recall of 16 prescription-only medicines made at the company's Waluj site.</p><p>Wockhardt's boss also sought to underscore the all-round efforts made to improve GMP compliance at the firm's sites globally, including putting in place an "office of global quality" comprising leadership in India, the US and the UK and a shift to a "global approach to quality" rather than a plant-based one.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 197
+
+<p>Shares of Wockhardt were on a downward spiral on Indian bourses after the company said that it was voluntary recalling, as part of remedial measures, a clutch of products from the US market.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Wockhardt initiates remedial US recall
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150422T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150422T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150422T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028561
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 38
+
+Wockhardt initiates remedial US recall
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358002
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+06c67f32-10ed-4009-945e-39b1b36a9a9c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {9126BC49-AD73-4F86-9D5E-AB913C9D4029}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/30/New analyses convince IQWiG that Novartiss MS drug is better than previously thought
+parent: {E67CB7D0-70DE-425B-8565-3BEAD05ACFC4}
+name: New analyses convince IQWiG that Novartiss MS drug is better than previously thought
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 5ea31cf8-163d-4d0e-96d0-f288babfdd5e
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{36C46302-C5FF-4A9F-8947-163E6F7CCA9B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 85
+
+New analyses convince IQWiG that Novartis's MS drug is better than previously thought
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 84
+
+New analyses convince IQWiG that Novartiss MS drug is better than previously thought
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3872
+
+<p>Germany's IQWiG has taken a fresh look at old data from Novartis's Gilenya (fingolimod) and decided that it is better than it previously thought at treating patients with multiple sclerosis. </p><p>IQWiG reanalyzed the earlier TRANSFORMS study after Novartis submitted a fresh dossier "with a more detailed differentiation between subgroups for two patient groups," said IQWiG.</p><p>From this, IQWiG concluded that an "added benefit" was now derived for two instead of only one of a total of three patient groups. </p><p>On the basis of the new analyses, IQWiG found an "indication" of added benefit, rather than just a "hint", in patients with rapidly progressing severe RRMS (relapsing remitting multiple sclerosis). "The extent of this added benefit depends on sex, however: It is considerable in women, and minor in men. While adverse events in the form of influenza-like symptoms are less frequent and certain adverse events (severe adverse events) occur more often in both sexes, only women have fewer relapses under fingolimod," said IQWiG.</p><p><b>extra group</b></p><p>The new analyses of TRANSFORMS also showed that Gilenya had advantages for patients with highly active RRMS that had not been fully treated with interferon beta. In the earlier decision, in 2012, no added benefit had been found.</p><p>"Since both the annualized relapse rate is lower and adverse events in the form of influenza-like symptoms occur less frequently, IQWiG sees an indication of considerable added benefit in comparison with the appropriate comparator therapy," it said.</p><p><b>still no benefit in one group</b></p><p>However, IQWiG continues to believe that there is no evaluable data for patients with highly active RRMS who have already received full previous treatment with interferon beta (IFN-&#946;1a). "The results of an indirect comparison again presented by the manufacturer are still unsuitable because the majority of the patients in the studies on the appropriate comparator therapy had not been fully pre-treated," maintained IQWiG.</p><p>Overall, the latest IQWiG assessment has found an added benefit for around two thirds of all patients for whom Gilenya was originally approved in 2011 in Germany. However, the latest assessment did not include the indication "highly active RRMS with pre-treatments other than interferon beta," which was added to the label in Germany in 2014 and assessed by the AMNOG.</p><p>IQWiG <a href="http://www.scripintelligence.com/policyregulation/Germany-says-Novartiss-Gilenya-has-no-added-benefit-354405" target="_new">said last year</a> that it believed Gilenya had no additional benefit in this indication. </p><p>Novartis noted that the March 2012 decision "was timely restricted until March 2015" prompting Novartis to submit the new dossier earlier this year. "The final decision of the G-BA is expected at the latest in October 2015," the company added.</p><p>"Regarding its recommendation IQWiG refers to the pivotal trial TRANSFORMS with 1,292 patients comparing Gilenya with an active comparator, interferon-beta 1a i.m [intramuscular]. Gilenya demonstrates a 52% higher reduction of relapse rates after 12 months as well as a very favorable tolerability which was additionally confirmed by e.g. the START-trial underlining the favorable benefit-risk profile of Gilenya," added Novartis.</p><p>"About 14,000 patients are currently treated with Gilenya in Germany and 119,000 worldwide," noted the company. </p><p>"The implications of this should be a widening of Gilenya's eligible target population in Germany," Datamonitor Healthcare analyst Daniel Chancellor told Scrip. "However, the subpopulation it failed to get the added benefit recommendation is an important one. These patients, who would not be adequately controlled on first-line interferon beta, constitute a large part of Gilenya's approved label."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 198
+
+<p>Germany's IQWiG has taken a fresh look at old data from Novartis's Gilenya (fingolimod) and decided that it is better than it previously thought at treating patients with multiple sclerosis. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 84
+
+New analyses convince IQWiG that Novartiss MS drug is better than previously thought
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150630T150004
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150630T150004
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150630T150004
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029164
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 85
+
+New analyses convince IQWiG that Novartis's MS drug is better than previously thought
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359184
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042417Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5ea31cf8-163d-4d0e-96d0-f288babfdd5e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042417Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

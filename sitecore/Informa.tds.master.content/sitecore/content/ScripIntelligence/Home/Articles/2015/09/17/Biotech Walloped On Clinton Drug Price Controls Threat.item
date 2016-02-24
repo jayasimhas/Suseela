@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {C48A45C1-FAF3-4A1A-86C0-FD9F5177589A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/17/Biotech Walloped On Clinton Drug Price Controls Threat
+parent: {B53F7F84-6EA4-4D07-B215-728AC98CCD87}
+name: Biotech Walloped On Clinton Drug Price Controls Threat
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0bd09a16-0b8d-43f5-8452-e40c9c5e3f61
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Biotech Walloped On Clinton Drug Price Controls Threat
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+Biotech Walloped On Clinton Drug Price Controls Threat
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8099
+
+<p>It was déj&agrave; vu all over again on Wall Street on Sept. 21 when biotech stocks took a beating after a powerful Washington politician vowed to take action to control prescription drug prices &ndash; a whipping reminiscent of March 2014 after three Democratic lawmakers set off a frenzy by suggesting they may pursue a similar path when they called on Gilead Sciences to explain its $1,000-per-pill price for its hepatitis C virus (HCV) medicine Sovaldi (sofosbuvir).</p><p>Former Secretary of State Hillary Clinton, who is seeking to be the Democratic contender for the White House in 2016, took aim at Turing Pharmaceuticals for its 5,000%+ price hike &ndash; from $13.50 per pill to $750 &ndash; for Daraprim (pyrimethamine), a more than 60-year-old drug used to treat toxoplasmosis, a parasitic infection often seen in HIV-infected patients, and malaria. </p><p>Turing CEO Martin Shkreli, whose firm acquired the drug in August from Impax Laboratories, said he has no plans to lower Daraprim's price &ndash; adamant the $750 was "appropriate."</p><p>"We took it to a place where we can make a comfortable profit," Shkreli unapologetically declared on Sept. 21 on <i>CNBC's Power Lunch</i>.</p><p>In a joint Sept. 8 letter to Turing, the Infectious Diseases Society of America and the HIV Medicine Association insisted the $750 cost for Daraprim was "unjustifiable for the medically vulnerable patient population in need of this medication and unsustainable for the health care system."</p><p>After reading news reports of the sudden Daraprim price increase, Clinton, who also is a former New York senator and the wife of former President Bill Clinton, tweeted "Price gouging like this in the specialty drug market is outrageous. Tomorrow I'll lay out a plan to take it on."</p><p>A day earlier, Clinton had appeared on the <i>CBS'</i> Washington political program <i>Face the Nation</i>, where she said that at the top of her health care plan to-do list was "how we're going to try to control the cost of skyrocketing prescription drugs." </p><p>"It's something that I hear about wherever I go. It's part of the plan I will be rolling out in the next few days," Clinton said on the Sept. 20 program.</p><p>But it was her tweet the next morning that rattled Wall Street and put terror into the hearts of biotech investors.</p><p>Indeed, the iShares Nasdaq Biotechnology Index immediately dropped more than 2.5% right after Clinton's tweet blasting Turing quickly circulated on Twitter &ndash; plunging further to 5.4%, before closing down 4.5%.</p><p>The reaction evoked memories of <a href="http://www.scripintelligence.com/home/Its-the-volume-stupid-350860" target="_new">Wall Street's panic last year</a> to the March 20, 2014 letter from Rep. Henry Waxman (D-CA), who has since left Congress, and two other Democrats demanding to know how Gilead came to its $84,000 per 12-week-course price for Sovaldi.</p><p>The drug's price <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Innovation-without-high-drug-prices-A-difficult-conversation-351991" target="_new">already had been controversial</a>, but it was Capitol Hill's attention to it that grabbed investors by the throat.</p><p>The contention over Sovaldi has kept the drug <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Innovation-without-high-drug-prices-A-difficult-conversation-351991" target="_new">price debate</a> roaring in Washington &ndash; with another presidential candidate, Sen. Bernie Sanders, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Buckle-Up-Drug-Makers-Bumpy-Pricing-Roads-Ahead-360425" target="_new">keeping the flames burning</a> through his ongoing investigation, which he is conducting with Rep. Elijah Cummings (D-MD), and new legislation the pair of lawmakers introduced earlier this month.</p><p>Sanders and Cummings immediately hopped on to the Daraprim bandwagon &ndash; declaring their investigation would now also encompass that drug's "enormous overnight" price jump.</p><p>The lawmakers on Sept. 21 sent a letter to Turing's Shkreli demanding details about Daraprim, including a description and valuation of the specific financial and non-financial factors that contributed to the company's decisions to increase the price and any cost estimates, profit projections or other analyses relating to the firm's current and future sales of the medicine.</p><p>The letter to Turing followed one Sanders and Cummings sent to Valeant Pharmaceuticals in August asking why the Canadian firm <a href="http://www.scripintelligence.com/policyregulation/Valeant-Latest-Congressional-Target-Over-High-Drug-Prices-359973" target="_new">hiked the prices</a> of Isuprel (isoprenaline) from $257.80 to $805.61, or 212.5%, and Nitropress (sodium nitroprusside) from $215.46 to $1,346.62, or about 525%, after acquiring the drugs from Marathon Pharmaceuticals in February.</p><p>Their <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Forget-Sovaldi-generics-new-pricey-drugs-poster-child-355087" target="_new">probe</a> also is looking at other significant price increases &ndash; particularly of older drugs whose costs went up right after being acquired, like in the case of Daraprim.</p><p>Evercore ISI political analyst Terry Haines said he doubted there was any chance a 2017 Democratic president &ndash; whether Clinton, Sanders or someone else &ndash; "could successfully legislate drug pricing regulation." </p><p>"The difference between a candidate of either party talking about any policy initiative during 2015 primaries and his or her ability to make that legislative change happen in 2017 or beyond should be kept well in mind: regardless of what any Democratic candidate says about drug pricing, his or her ability to make that a reality as president is close to zero," Haines said in a research note.</p><p>A simple appeal by any Democratic candidate to core voters to "control" or "gauge" drug pricing should be considered "par for the primary course," he said, adding that the general election race is "far away in political terms and its outcome far from certain."</p><p>Plus, Haines said, even if a Democratic president is assumed, a 2017 Congress "almost certainly would not approve drug pricing regulation legislation," given the House is very likely to remain in Republicans' control. </p><p>Nonetheless, payers are likely to keep pressing the issue.</p><p>While the HCV drugs had been the "poster-child" medicines for high prices, payers recently have gone after the newly approved the proprotein convertase subtilisin kexin type 9 (PCSK9) inhibitors &ndash;Sanofi's and Regeneron Pharmaceuticals' <a href="http://www.scripintelligence.com/home/SanofiRegeneron-win-1st-US-PCSK9-OK-with-Praluent-359621" target="_new">Praluent</a> (alirocumab) and Amgen's <a href="http://www.scripintelligence.com/home/Repatha-OKd-Payers-Eye-PCSK9-RebateDiscount-War-360147" target="_new">Repatha</a> (evolocumab).</p><p>Not all firms have fared well after coming under fire for the high prices of their medicines &ndash; case in point KV Pharmaceutical, which found itself in a predicament after setting the price of its preterm birth drug Makena (hydroxyprogesterone caproate injection) at $1,500 per dose, when compounded versions of the product were being sold for around $20.</p><p>KV had a hard time selling its drug and eventually ended up in <a href="http://www.scripintelligence.com/business/Battered-by-compounders-on-Makena-KV-seeks-bankruptcy-protection-333576" target="_new">bankruptcy protection</a> &ndash; emerging under the name Lumara Health and selling Makena to AMAG Pharmaceuticals.</p><p>KV had <a href="http://www.scripintelligence.com/policyregulation/US-FDA-steps-into-high-price-Makena-preterm-birth-drug-controversy-313371" target="_new">blamed</a> the FDA for its downfall &ndash; claiming Makena's sales were harmed when the agency said it had no intention of stopping the hydroxyprogesterone caproate compounders from making their products, as long as they remained safe.</p><p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 477
+
+<p>It was déj&agrave; vu all over again on Wall Street on Sept. 21 when biotech stocks took a beating after a powerful Washington politician vowed to take action to control prescription drug prices &ndash; a whipping reminiscent of March 2014 after three Democratic lawmakers set off a frenzy by suggesting they may pursue a similar path when they called on Gilead Sciences to explain its $1,000-per-pill price for its hepatitis C virus (HCV) medicine Sovaldi (sofosbuvir).</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+Biotech Walloped On Clinton Drug Price Controls Threat
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150917T200000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150917T200000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150917T200000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029826
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Biotech Walloped On Clinton Drug Price Controls Threat
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360509
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0bd09a16-0b8d-43f5-8452-e40c9c5e3f61
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042452Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

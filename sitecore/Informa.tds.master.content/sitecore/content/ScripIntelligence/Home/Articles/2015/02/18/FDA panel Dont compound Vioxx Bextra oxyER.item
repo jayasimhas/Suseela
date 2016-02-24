@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {00A52ACD-9126-4D6D-BFA7-CB4C2D157B20}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/18/FDA panel Dont compound Vioxx Bextra oxyER
+parent: {7236B4FE-DE6A-42E5-BF9D-A1048727BD42}
+name: FDA panel Dont compound Vioxx Bextra oxyER
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: bde99c77-e6a3-4c05-9795-e617b3dd9f5d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 47
+
+FDA panel: Don't compound Vioxx, Bextra, oxy-ER
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+FDA panel Dont compound Vioxx Bextra oxyER
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6419
+
+<p>A decade after Merck yanked Vioxx and Pfizer withdrew Bextra from the market because of cardiovascular concerns associated with the anti-inflammatory drugs, an FDA panel of outside experts on 23 February said those drugs' active ingredients &ndash; rofecoxib and valdecoxib, respectively &ndash; should not be compounded by US pharmacists.</p><p>At the first meeting of the FDA's reconfigured Pharmacy Compounding Advisory Committee (PCAC), the panelists also recommended against allowing a slew of other drugs to be compounded that have vacated the US market for various reasons, including the gastrointestinal medicines cisapride, which was sold by Johnson & Johnson as Propulsid, and tegaserod maleate, previously marketed by Novartis under the brand name Zelnorm (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/New-FDA-panel-to-review-substances-for-compounding-356353" target="_new">26 January 2015</a>, <a href="http://www.scripintelligence.com/policyregulation/FDA-resurrects-compounding-advisory-panel-355699" target="_new">17 December 2014</a>).</p><p>Propulsid was associated with serious cardiac arrhythmias and death, and in 2000, J&J said it was discontinuing its marketing of the drug &ndash; only making it available through an investigational limited access program.</p><p>Zelnorm was linked to a higher chance of heart attack, stroke and worsening heart chest pain that can become a heart attack, and in March 2007, Novartis decided to stop selling the drug. It agreed, however, to supply it for use in emergency situations. </p><p>This past July, the FDA had proposed adding 25 drugs to its so-called "Withdrawn and Removed List" &ndash; a group of agents regulators do not want pharmacies to compound because the products have been withdrawn or removed from the US market after they or their components were found to be unsafe or ineffective (scripintelligence.com, <a href="http://www.scripintelligence.com/home/So-you-want-to-be-a-compounder-FDA-explains-352613" target="_new">1 July 2014</a>).</p><p>It's taken the FDA more than a decade to add the drugs to its not-to-be-compounded list because of the complicated history involved in determining the agency's authority over pharmacy compounders.</p><p>The agency had started compiling its list in 1998.</p><p>But in 2002, the US Supreme Court struck down the compounding provisions contained in the <i>FDA Modernization Act of 1997</i>, leaving the agency's authority ambiguous.</p><p>Congress, however, in November 2013 passed the <i>Drug Quality and Security Act</i> (DQSA), which removed the provisions from section 503A of the federal <i>Food, Drug & Cosmetic (FD&C) Act</i> that were found to be unconstitutional by the high court, and by so doing, clarified the FDA's authority over compounders. </p><p>So with a clearer path forward, the FDA decided last summer it was finally time to update its list of products not to be compounded. The agency also proposed modifying the description of bromfenac sodium on the list, in which it wants to exempt ophthalmic solutions.</p><p>"It's been a long process but we've arrived at this point," Jane Axelrad, associate director of policy and lead on compounding at the FDA's Center for Drug Evaluation and Research, declared at the 23 February PCAC meeting.</p><p>The FDA brought the list of drugs to its PCAC to seek its advice on whether there was any reason why the agents should not be banned from compounding. </p><p>The committee backed the FDA on putting all of the proposed products on the no-compounding list &ndash; voting unanimous on most counts, including extended-release oxycodone that has no abuse-deterrent properties. </p><p>&ldquo;Only the FDA can decide if a product has abuse-deterrent properties,&rdquo; Ms Axelrad said, noting the agency granted such a determination for Purdue Pharma's reformulated oxycondone, OxyContin, in April 2013 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/OxyContin-wins-abuse-deterrent-label-but-FDA-bans-older-generic-forms-342210" target="_new">17 April 2013</a>).</p><p>But not everyone was convinced that pharmacists and prescribers should be prohibited from compounding all of the drugs on the FDA's proposed list.</p><p>PCAC panelist Dr John DiGiovanna, a staff clinician in the Dermatology Branch at the US National Cancer Institute, insisted dermatologists should still have the option to compound topical forms of etretinate, which Roche previously marketed in the US to treat psoriasis.</p><p>While Roche discontinued marketing the product because of low sales, the FDA later determined the drug posed a greater risk of birth defects than another medicine that replaced it. </p><p>Dr DiGiovanna joined another panelist, Dr Katherine Pham, a neonatal intensive care unit pharmacy specialist at Children's National Medical Center in Washington, in also voting against the FDA's proposal to include all forms of chloramphenicol on the do-not-compound list &ndash; arguing the agency was tying the hands of prescribers. </p><p>But the FDA said the product has been linked to number of serious conditions, including fatal aplastic anemia. </p><p>Ms Axelrad said the FDA has been "trolling" for other products to include on its no-compounding list, but noted it's been a time-consuming process.</p><p>The FDA also is working on identifying drugs with "demonstratable difficulties" for compounding, which would pose safety and efficacy issues, she said.</p><p>Ms Axelrad noted the FDA has not yet published regulations on the difficult-to-compound agents.</p><p>"We will be seeking advice of the committee at a future meeting on what drugs should be placed on that list," she said.</p><p>At the 23 February meeting, the PCAC also voted on two of six drugs that have been nominated for inclusion on the FDA's list of bulk drug substances that can be used in pharmacy compounding under Section 503A of the FD&C Act.</p><p>The panel voted 9-2 that thymol iodide should be placed on the 503A bulk drug substances list, but unanimously declared silver protein mild should be prohibited.</p><p>The PCAC will meet on 24 February to give the FDA advice on whether the agency should permit the other four nominated agents &ndash; squaric acid dibutyl ester, diphenylcyclopropenone, cantharidin and piracetam &ndash; to be included on the bulk substances list. </p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 346
+
+<p>A decade after Merck yanked Vioxx and Pfizer withdrew Bextra from the market because of cardiovascular concerns associated with the anti-inflammatory drugs, an FDA panel of outside experts on 23 February said those drugs' active ingredients &ndash; rofecoxib and valdecoxib, respectively &ndash; should not be compounded by US pharmacists.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+FDA panel Dont compound Vioxx Bextra oxyER
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150218T080000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150218T080000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150218T080000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027904
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 47
+
+FDA panel: Don't compound Vioxx, Bextra, oxy-ER
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356806
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bde99c77-e6a3-4c05-9795-e617b3dd9f5d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

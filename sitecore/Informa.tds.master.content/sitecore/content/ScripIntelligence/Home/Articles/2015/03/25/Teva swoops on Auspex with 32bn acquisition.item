@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {FF46DCBD-90BC-4A56-971B-4D3640C22889}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/25/Teva swoops on Auspex with 32bn acquisition
+parent: {CE0B93D3-20EA-4DFE-BC95-04ADDD6DB633}
+name: Teva swoops on Auspex with 32bn acquisition
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e2a3dea7-30ff-48fd-a897-a2c6692bbbda
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Teva swoops on Auspex with $3.2bn acquisition
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 43
+
+Teva swoops on Auspex with 32bn acquisition
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3682
+
+<p>Teva Pharmaceutical Industries has agreed to acquire Auspex Pharmaceuticals in an all cash deal valuing the CNS-focused firm at $3.2bn. Teva executives underlined that the deal did not preclude other, bigger, deals that it is still hoping to make.</p><p>Auspex develops products for movement disorders, and has a lead product that could launch in 2016. SD-809 (deutetrabenazine) passed Phase III trials in Huntington's chorea last year and a New Drug Application filing with the US FDA is planned by mid-2015. Top-line Phase III results for the drug in tardive dyskinesia are also expected in mid-2015. SD-809 is also in Phase I for Tourette syndrome. Teva boasted that it is already the biggest company in CNS in the US in terms of sales. It is focusing on protecting future growth as its blockbuster multiple sclerosis treatment Copaxone (glatiramer acetate) faces erosion from generics and newer therapies from the likes of Biogen Idec and Novartis.</p><p>Teva CFO Eyal Desheh said on a conference call that sales of SD809 could reach $2bn five years after approval. Teva's President of global R&D and chief scientific officer Michael Hayden noted that tetrabenazine, the only drug indicated for Huntington's in the US, has significant side-effects and inconvenient dosing resulting in only a small proportion of patients taking it (around 5%), but that the deuterated version has a better profile. It sells for around $85,000 a year per patient. There is no approved therapy in the US for tardive dyskinesia, while there is only one, aripiprazole, for Tourette syndrome.</p><p>Auspex focuses on applying deuterium chemistry to known molecules to create novel therapies with improved safety and efficacy profiles. "We believe that the application of Auspex's deuterium platform to known pharmaceuticals holds great promise across a wide spectrum of neurological diseases and associated movement disorders," commented Dr Hayden. The firm intends to explore applying this technology to additional compounds.</p><p>Auspex also has earlier stage pipeline programs: SD-560 (deuterated pirfenidone), for idiopathic pulmonary fibrosis is in Phase I with data due in mid-2015, and SD-1077 (deuterium-containing levodopa) is in preclinical development for Parkinson's disease.</p><p>The $101 per share deal gives Auspex an enterprise value of $3.2bn and an equity value of $3.5bn. The offer represents a 42.4% premium to Auspex's closing share price of $70.91 on 27 March and 37.9% to the company's average closing share price over the past 30 days. The company raised $84m in its February 2014 IPO, and another $70m from a follow-on offering in July 2014, as well as $203m from a further offering in January 2015.</p><p>Teva says the acquisition will enhance its mid to long-term revenue and earnings growth profile, and expects it to be accretive to non-GAAP EPS from 2017, with minimal dilution in the second half of 2015 and 2016. Teva executives said that revenues of $150m from Auspex's portfolio would make the deal accretive. The deal will be financed with cash on hand and is expected to close in Q2 2015.</p><p><b>Related stories:</b></p><p><a href="http://www.scripintelligence.com/business/Teva-realignment-sees-oncology-programs-divested-357388" target="_new">Teva realignment sees oncology programs divested</a></p><p><a href="http://www.scripintelligence.com/business/4Q-EARNINGS-Teva-talks-MandA-after-solid-2014-356606" target="_new">4Q EARNINGS: Teva talks M&A after solid 2014</a></p><p><a href="http://www.scripintelligence.com/home/Auspex-rises-on-Phase-III-Huntingtons-data-success-355704" target="_new">Auspex rises on Phase III Huntington's data success</a></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 254
+
+<p>Teva Pharmaceutical Industries has agreed to acquire Auspex Pharmaceuticals in an all cash deal valuing the CNS-focused firm at $3.2bn. Teva executives underlined that the deal did not preclude other, bigger, deals that it is still hoping to make.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 43
+
+Teva swoops on Auspex with 32bn acquisition
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150325T081405
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150325T081405
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150325T081405
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028276
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Teva swoops on Auspex with $3.2bn acquisition
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357476
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042322Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e2a3dea7-30ff-48fd-a897-a2c6692bbbda
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042322Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

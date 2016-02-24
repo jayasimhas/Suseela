@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {6ABC116C-7020-4A80-82A4-5D36053FACB1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/02/Nora focuses on miscarriage after NT100 fails in IVF study
+parent: {B4009754-6EC4-476C-B8C2-03A5771200E2}
+name: Nora focuses on miscarriage after NT100 fails in IVF study
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 3cdc45c6-fe21-419a-ad36-21d52375b617
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Nora focuses on miscarriage after NT100 fails in IVF study
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Nora focuses on miscarriage after NT100 fails in IVF study
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3046
+
+<p>Fertility drug developer Nora Therapeutics has shifted all of its focus to a Phase II clinical trial in women with unexplained recurrent miscarriages for lead candidate NT100 after the company's first Phase II trial showed no significant efficacy in a Phase II trial looking to improve pregnancy outcomes for women with a history of failed in vitro fertilization (IVF) cycles.</p><p>Palo Alto, California-based Nora was in the middle of its Phase II THRIVE-IVF study when the company raised $18m in Series B venture capital in April to begin the ongoing 150-patient RESPONSE study to improve pregnancy outcomes for women who've suffered at least three miscarriages (scripintelligence.com, <a href="http://www.scripintelligence.com/home/VC-gains-momentum-in-1Q-starts-strong-in-2Q-351379" target="_new">19 April 2014</a>). Nora president and CEO Jeffrey Tong told Scrip that NT100 did not show efficacy in the IVF study, but the company is confident that RESPONSE will have a better outcome.</p><p>NT100 is a proprietary recombinant form of human granulocyte colony stimulating factor (G-CSF) that mimics the biological activity of a protein in the female reproductive tract that optimizes maternal-fetal tolerance. NT100 is designed to enable pregnancy maintenance and prevent miscarriages.</p><p>The biologic's effect on maternal-fetal tolerance is why Nora believes NT100 will perform better in women who've suffered miscarriages. The medicine is dosed in the RESPONSE clinical trial after week four of gestation when a pregnancy is confirmed, but it was administered prior to a confirmed pregnancy in THRIVE-IVF, when immune response to a fetus is not really a concern. </p><p>Also, the IVF study had a higher than expected pregnancy rate among women who received a placebo. Nora plans to publish the THIRVE-IVF clinical trial results and it expects results from the RESPONSE trial before the end of 2015. </p><p>"If successful, this is a very significant unmet need," Dr Tong said. "One in three pregnancies ends in miscarriage, mostly very early due to chromosomal abnormalities." </p><p>Many women are frustrated by the lack of treatments for recurrent miscarriages as are doctors who have little to offer patients who are eager to have a successful pregnancy. </p><p>"For recurrent miscarriage, being able to focus there is a blessing in disguise," Dr Tong said.</p><p>IVF is a an elective procedure, so prescriptions for NT100 likely would not be paid for by private health insurance companies. However, miscarriages are covered health care events under public and private payer systems, so the cost of NT100 is likely to be reimbursed. </p><p>"Payers that we've talked to say this is a 'must cover' population," Dr Tong said. "For an ongoing pregnancy with a history of miscarriage, it's very difficult to think of a drug being denied. It starts to feel a little like an oncology product, because ultimately the endpoint is life risk. It's almost unethical to deny access to a drug that could reduce the risk of loss."</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 383
+
+<p>Fertility drug developer Nora Therapeutics has shifted all of its focus to a Phase II clinical trial in women with unexplained recurrent miscarriages for lead candidate NT100 after the company's first Phase II trial showed no significant efficacy in a Phase II trial looking to improve pregnancy outcomes for women with a history of failed in vitro fertilization (IVF) cycles.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Nora focuses on miscarriage after NT100 fails in IVF study
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150302T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150302T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150302T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027754
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Nora focuses on miscarriage after NT100 fails in IVF study
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356518
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042248Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3cdc45c6-fe21-419a-ad36-21d52375b617
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042248Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {44B7F510-7D70-40B2-A77F-BF81FE45D0FB}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/03/Asklepion secures US OK for Cholbam wins peds voucher
+parent: {D5163453-3907-4B6D-B7B7-B96F1F24A05C}
+name: Asklepion secures US OK for Cholbam wins peds voucher
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: da716c0b-c52c-446e-b254-2c46ef59385f
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 54
+
+Asklepion secures US OK for Cholbam; wins peds voucher
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Asklepion secures US OK for Cholbam wins peds voucher
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3952
+
+<p>The luck of the Irish was with Baltimore, Maryland-based Asklepion Pharmaceuticals, which not only won US approval of Cholbam (cholic acid) on 17 March for two indications, but also was granted a rare pediatric disease priority review voucher, which is good for a priority review on a subsequent application that would not have otherwise qualified for priority review.</p><p>The vouchers also are transferable, with the law permitting the holder to sell it to fund its development programs, allowing the buyer to then have a priority review for a product that may otherwise have been examined under a standard review.</p><p>Indeed, BioMarin Pharmaceuticals, which <a href="http://www.scripintelligence.com/home/FDA-OKs-Vimizim-BioMarin-wins-1st-rare-peds-disease-voucher-350063" target="_new">won</a> the first-ever rare pediatric disease voucher in February 2014, <a href="http://www.scripintelligence.com/home/Golden-ticket-Regeneron-Sanofi-buy-priority-review-voucher-for-alirocumab-353119" target="_new">sold</a> it this past July for $67.5m to Regeneron and Sanofi.</p><p>United Therapeutics <a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Unituxin-United-Therapeutics-wins-pediatric-voucher-357213" target="_new">nabbed</a> one of the vouchers when the FDA approved the firm's drug Unituxin (dinutuximab) on 10 March.</p><p>The FDA gave Asklepion the go-ahead to market Cholbam in the US as a once-daily treatment for bile acid synthesis disorders due to single enzyme defects, a group of highly symptomatic conditions that prevent the liver from properly producing bile acids that help the intestines absorb essential fats, vitamins and nutrients. </p><p>The drug also was approved as an adjunct to standard of care for peroxisomal disorders, including Zellweger spectrum disorders in patients with evidence of liver disease, based on improvements in liver function. </p><p>Zellweger spectrum disorder patients lack peroxisomes &ndash; small membrane-enclosed organelles that contain enzymes involved in a variety of metabolic reactions &ndash; and produce abnormally long fatty acids, leading to numerous problems in many organ systems. </p><p>Asklepion said Cholbam works by down regulating cholesterol 7alpha-hydroxylase, the rate limiting step in bile acid synthesis. In doing so, it inhibits the production and accumulation of hepatotoxic and cholestatic bile acid precursors. It also stimulates bile flow and secretion and facilitates fat absorption at therapeutic doses. </p><p>Patients with single enzyme defects cannot make cholic acid and instead make abnormal toxic intermediate products. Zellweger spectrum patients make cholic acid, but the lipid side chains that are subsequently added are too long, making the product toxic to the liver.</p><p>"The main purpose of providing Cholbam is to prevent the production of toxic products," Asklepion said. </p><p>The drug also restores the main functions of cholic acid &ndash; one of the primary bile acids on which essential physiological functions depend &ndash; including lipid transport in the form of mixed micelles; the activation of co-lipase and fat digestion and absorption; the absorption of fat-soluble vitamins; and the induction of bile flow, thus preventing cholestasis. </p><p><b>Related stories</b></p><p><a href="http://www.scripintelligence.com/policyregulation/FDA-OKs-Unituxin-United-Therapeutics-wins-pediatric-voucher-357213" target="_new">FDA OK's Unituxin; United Therapeutics wins pediatric voucher</a></p><p><a href="http://www.scripintelligence.com/home/FDA-OKs-Vimizim-BioMarin-wins-1st-rare-peds-disease-voucher-350063" target="_new">FDA OK's Vimizim; BioMarin wins 1st rare peds disease voucher</a></p><p><a href="http://www.scripintelligence.com/home/Sanofi-leapfrogs-Amgen-with-US-priority-review-for-alirocumab-356357" target="_new">Sanofi leapfrogs Amgen with US priority review for alirocumab</a></p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 375
+
+<p>The luck of the Irish was with Baltimore, Maryland-based Asklepion Pharmaceuticals, which not only won US approval of Cholbam (cholic acid) on 17 March for two indications, but also was granted a rare pediatric disease priority review voucher, which is good for a priority review on a subsequent application that would not have otherwise qualified for priority review.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Asklepion secures US OK for Cholbam wins peds voucher
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151203T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151203T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151203T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028144
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 54
+
+Asklepion secures US OK for Cholbam; wins peds voucher
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357254
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042312Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+da716c0b-c52c-446e-b254-2c46ef59385f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042312Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

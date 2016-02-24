@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {4B754F17-0F15-494C-82FA-F97541F0922F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/19/Pilgrimage And Pipeline MERS Prospects
+parent: {7FE23635-8382-43A3-A553-ABD9FDB27BAD}
+name: Pilgrimage And Pipeline MERS Prospects
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1a10dd25-c7e1-4dbc-9397-6afd5542efce
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}|{421FEE54-6D5D-4023-BFEE-2BA27E357F5F}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Pilgrimage And Pipeline: MERS Prospects
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Pilgrimage And Pipeline MERS Prospects
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6218
+
+<p>The renewed break-out of a frighteningly deadly virus with no known cure or vaccine in a region that will shortly host a couple of million international pilgrims has prompted a rash of recent headlines linking Middle East Respiratory Syndrome (MERS), the SARS-like coronavirus that first emerged in Saudi Arabia in 2012, and the annual Hajj to Mecca. </p><p>With the apparent complacency that let Ebola get out of hand in West Africa so fresh in the mind, anxiety is understandable; like Ebola, the mortality rate from MERS is high. Of around 1,430 people reported to have been infected since 2012 (predominantly in the Middle East and, thanks to the hospital outbreak earlier this year, South Korea), just over 500 have died. </p><p>MERS is a bit different from Ebola, though: while Ebola spread readily in the community among previously healthy people, the spread of MERS in humans has to date been almost entirely within the hospital setting, and that includes the most recent outbreak in Riyadh. In its current form, it does not look likely that the Hajj would provide the conditions for an epidemic to spread.</p><p>Nevertheless, viruses mutate and the possibility that MERS will eventually become more transmissible in the community represents a real if still theoretical threat to global public health. So what defence can pharma offer the world?</p><p>Unsurprisingly, given the disease has been around for less than four years and it takes a lot longer than that to develop a new drug, the pipeline for treatments is very early stage. Repurposing existing drugs is likely to be the best hope for the short to medium term, and to this end the University of Maryland last year screened a large number of compounds for activity against MERS to create a shortlist for further testing. </p><p>Meanwhile, an analysis of Citeline's Pharmaprojects database shows that there are 11 early-stage programs in company pipelines (work confined to academia and other public institutions is not captured by Pharmaprojects). </p><p>Recent progress has included the development of a cell line for the production of a treatment or prophylaxis based on antibodies isolated from a patient recovering from infection with the MERS coronavirus, by Humabs and its academic/public partners, which it says could be made available for Phase I trials or compassionate use within a few months depending on regulatory clearance. </p><p>Inovio and its public partners are preparing to begin Phase I trials this year of a synthetic DNA vaccine against the disease, following successful trials in monkeys and camels, while Regeneron Pharmaceuticals, which moved fast to develop a monoclonal antibody to treat Ebola, is evaluating a fully human MERS MAb. Others in the space include Hemispherx with an existing interferon product, TamirBio with a ribonuclease derived from frog eggs, Novavax, Nanoviricides, Replikins, Greffex, and SAB Biotherapeutics. </p><table><h2>Candidates In Development For MERS Coronavirus (CoV)</h2><tbody><tr><td><p>Developer</p>&nbsp;</td><td><p>Candidate</p>&nbsp;</td><td><p>Status</p>&nbsp;</td><td><p>Notes</p>&nbsp;</td></tr><tr><td><p>Hemispherx</p>&nbsp;</td><td><p>Natural alpha-interferon (alfa-n3/Alferon N)</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>Has worked with NIAID and University of Texas to show <i>in vitro</i> potential as preventative or early treatment for MERS; application for orphan drug status under review in EU</p>&nbsp;</td></tr><tr><td><p>TamirBio</p>&nbsp;</td><td><p>ranpirnase (ribonuclease derived from frog eggs)</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>Has shown antiviral activity in MERS and offers this as a licensing opportunity</p>&nbsp;</td></tr><tr><td><p>Humabs BioMed</p>&nbsp;</td><td><p>LCA-60 (CD26-targeting human MAb isolated from memory B-cells of a patient recovering from MERS)</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>Has worked with academic/public partners and developed a production cell line that with regulatory clearance could make product available for compassionate use or Phase I trial within a few months. It has shown preventative and therapeutic potential</p>&nbsp;</td></tr><tr><td><p>Novavax</p>&nbsp;</td><td><p>MERS-CoV vaccine (major surface spike protein-based vaccine using nanoparticle vaccine technology)</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>NanoViricides</p>&nbsp;</td><td><p>anti-MERS nanoviricide</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Inovio</p>&nbsp;</td><td><p>INO 4500 synthetic DNA vaccine</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>Following successful tests in monkeys and camels, Phase I trial planned for 4Q 2015 with S Korean partner GeneOne Life Science Inc. Has worked with researchers from the University of Pennsylvania, Public Health Agency of Canada, NIH, University of Washington, and University of South Florida</p>&nbsp;</td></tr><tr><td><p>Greffex</p>&nbsp;</td><td><p>Grevax MERS CoV vaccine</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Regeneron Pharmaceuticals, Inc.</p>&nbsp;</td><td><p>Fully human MERS MAb</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>Working with BARDA and University of Maryland to evaluate MAb</p>&nbsp;</td></tr><tr><td><p>SAB Biotherapeutics</p>&nbsp;</td><td><p>human antibodies produced in genetically modified cows</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Replikins</p>&nbsp;</td><td><p>Synthetic MERS CoV Vaccine-Blocker</p>&nbsp;</td><td><p>preclinical</p>&nbsp;</td><td><p>&nbsp;</td></tr><tr><td><p>Autoimmune Technologies</p>&nbsp;</td><td><p>CSW-1 (entry-inhibiting peptide candidate)</p>&nbsp;</td><td><p>no development reported</p>&nbsp;</td><td><p>Had received SBIR grant funding</p>&nbsp;</td></tr></tbody><p></table><p><p>Source: Pharmaprojects </p><p>With a 35% mortality rate and nothing in late-stage trials, MERS clearly warrants some pharma attention. But what Ebola should have taught us is how much can be achieved in a short time when all stakeholders, including big pharma and the regulators, break down traditional barriers and collaborate. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 358
+
+<p>The renewed break-out of a frighteningly deadly virus with no known cure or vaccine in a region that will shortly host a couple of million international pilgrims has prompted a rash of recent headlines linking Middle East Respiratory Syndrome (MERS), the SARS-like coronavirus that first emerged in Saudi Arabia in 2012, and the annual Hajj to Mecca. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Pilgrimage And Pipeline MERS Prospects
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150819T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150819T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150819T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029600
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Pilgrimage And Pipeline: MERS Prospects
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200600165
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360030
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1a10dd25-c7e1-4dbc-9397-6afd5542efce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

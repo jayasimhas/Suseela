@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {07001924-5D87-4083-960A-5C57CA6A694F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/23/Valeant A company transformed by deals
+parent: {857BC899-3328-4898-A866-876B56579D04}
+name: Valeant A company transformed by deals
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f1b55c6d-a16a-417a-97c6-c37a0edda264
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 39
+
+Valeant: A company transformed by deals
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Valeant A company transformed by deals
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7711
+
+<p><p>Over the last five years Valeant Pharmaceuticals has gone from a small Canadian dermatology company to a large multi-national conglomerate. This transformation was due to CEO Michael Pearson's vision of acquiring growth instead of focusing on in-house R&D. </p><p>Valeant has become the poster child for growth-through-acquisition, and several other companies have modeled themselves after Valeant, trying to replicate its success.</p><p>Since Biovail bought Valeant in a reverse merger in June 2010, the new iteration of Valeant has been one of the most acquisitive companies in the industry, completing 21 full acquisitions in the last five years &ndash; that doesn't take into account Valeant's purchase of single assets or licensing agreements. </p><p>Most of the acquisitions have been small in scale &ndash; only three were larger than $1bn &ndash; but all of the deals have added to Valeant's geographic footprint and increased its scale in a number of product areas. </p><p>Most of the deals that the company conducted in 2011 and 2012 added dermatology, over-the-counter products and generics to the company's portfolio &ndash; all areas that legacy Valeant/Biovail already had a strong position. The $8.7bn acquisition of Bausch+Lomb in 2013 was a game-changer for the company, giving it a huge portfolio of eye care products; many of the acquisitions made since then have added further to its eye care offerings. </p><p>The $15.8bn purchase of Salix Pharmaceuticals earlier this year was another transformational moment, making Valeant more of a specialty pharma. </p><p>Expect further commentary from Valeant on its dealmaking strategy and the integration of Salix during its second quarter earnings call on 23 July. </p><p><table><tbody><tr><td colspan="3">Valeant's Acquisition Spree&nbsp;</td></tr><tr><td><p>Deal Date</p>&nbsp;</td><td><p>Deal Amount</p>&nbsp;</td><td><p>Deal Summary</p>&nbsp;</td></tr><tr><td><p> July 2015</p>&nbsp;</td><td><p>$22.4m in cash + $5m in debt</p>&nbsp;</td><td><p>Valeant acquired contact lens maker Unilens Vision for $12.75 per share plus $5m in debt to complement the Bausch + Lomb business it bought in 2013. </p>&nbsp;</td></tr><tr><td><p> July 2015</p>&nbsp;</td><td><p>$800m</p>&nbsp;</td><td><p>The company bought Egypt's largest pharma company, the privately-held Amoun Pharmaceuticals. The deal gives Valeant a manufacturing facility, as well as a presence in the Middle East. </p>&nbsp;</td></tr><tr><td><p>March 2015</p>&nbsp;</td><td><p>$15.8bn</p>&nbsp;</td><td><p>Valeant battled Endo International for gastrointestinal specialist Salix Pharmaceuticals, ultimately paying $173 per share plus assumption of debt. The appeal of Salix was Xifaxan (rifamixin) for traveler's diarrhea and Relistor (subcutaneous methylnaltrexone bromide) for opioid-induced constipation. </p>&nbsp;</td></tr><tr><td><p>November 2014</p>&nbsp;</td><td><p>$20m</p>&nbsp;</td><td><p>Paying $10m upfront, as well as $10m in milestones, Valeant bought the diagnostic business from Nicox. The deal didn't include Nicox's ophthalmology assets. </p>&nbsp;</td></tr><tr><td><p>June 2014</p>&nbsp;</td><td><p>$41m</p>&nbsp;</td><td><p>Valeant paid $41m in cash for Akorn's ECR Pharmaceuticals business, gaining a branded prescription and generics business to add to its large presence in this space. </p>&nbsp;</td></tr><tr><td><p>February 2014</p>&nbsp;</td><td><p>$500m</p>&nbsp;</td><td><p>Adding to its dermatology offerings, Valeant bought PreCision Dermatology for $475m plus $25m in earn-outs. </p>&nbsp;</td></tr><tr><td><p>December 2013</p>&nbsp;</td><td><p>$237m </p>&nbsp;</td><td><p>For $2.92 per share, Valeant bought Solta Medical, a maker of aesthetic devices that are used for things like skin tightening and body sculpting. </p>&nbsp;</td></tr><tr><td><p><b>May 2013</b></p>&nbsp;</td><td><p><b>$8.7bn</b></p>&nbsp;</td><td><p><b>One of the most transformational acquisitions of the last five years was Valeant's purchase of ophthalmology company Bausch+Lomb. The deal faced a lot of criticism, but so far seems to be a positive for the company. </b></p>&nbsp;</td></tr><tr><td><p>March 2013</p>&nbsp;</td><td><p>$418.4m </p>&nbsp;</td><td><p>Valeant battled Merz Pharma Group to acquire Obagi Medical Products for $24 per share. The deal further enhanced the dermatology offerings with topical aesthetics and therapeutic skin care systems. </p>&nbsp;</td></tr><tr><td><p><b>September 2012 </b></p>&nbsp;</td><td><p><b>$2.6bn</b></p>&nbsp;</td><td><p><b>Further building its dermatology franchise, Valeant paid $44 per share for Medicis Pharmaceuticals, adding wrinkle-reducer and Botox competitor Restylane to its portfolio. </b></p>&nbsp;</td></tr><tr><td><p>June 2012</p>&nbsp;</td><td><p>$426m</p>&nbsp;</td><td><p>The company acquired oral health company OraPharma for $312m in cash upfront, as well as $114m in earn-outs. </p>&nbsp;</td></tr><tr><td><p>April 2012</p>&nbsp;</td><td><p>$27m</p>&nbsp;</td><td><p>Valeant picked up privately-held podiatry company, adding a slew of topical products that treat a range of foot fungi and other feet issues.</p>&nbsp;</td></tr><tr><td><p>April 2012</p>&nbsp;</td><td><p>$71m </p>&nbsp;</td><td><p>The company gained anti-inflammatory, gastrointestinal and pain assets in Mexico, expanding its presence south of the border. </p>&nbsp;</td></tr><tr><td><p>March 2012</p>&nbsp;</td><td><p>$185m</p>&nbsp;</td><td><p>Paying $180m in cash upfront plus $5m in earn-outs to Russia's Natur Produkt, Valeant gained a range of over-the-counter products, including dietary supplements, vitamins, minerals, condoms and sleep aids amongst other things. </p>&nbsp;</td></tr><tr><td><p>February 2012</p>&nbsp;</td><td><p>$26.3m </p>&nbsp;</td><td><p>Valeant paid $22.3m upfront plus $4m in milestones to acquire ophthalmology company Eyetech. The biotech has the first FDA-approved anti-VEGF inhibitor for treating wet age-related macular degeneration (AMD). </p>&nbsp;</td></tr><tr><td><p>November 2011</p>&nbsp;</td><td><p>$625m</p>&nbsp;</td><td><p>Adding further international exposure, the company picked up Australia's iNova Pharmaceutical, which was the former Asia-Pacific operations for 3M. </p>&nbsp;</td></tr><tr><td><p>August 2011</p>&nbsp;</td><td><p>$74.3m</p>&nbsp;</td><td><p>Valeant beat out Paladin Labs with its bid of $74.3m for Canada's natural products company Afexa Life Sciences, diversifying Valeant's Canadian holdings in dermatology products, as well as OTC flue treatments.</p>&nbsp;</td></tr><tr><td><p>July 2011</p>&nbsp;</td><td><p>$345m</p>&nbsp;</td><td><p>The company picked up J&J's Ortho Dermatologics division, which included topical antifungals, acne treatments and aesthetic products. </p>&nbsp;</td></tr><tr><td><p>July 2011</p>&nbsp;</td><td><p>$425m</p>&nbsp;</td><td><p>Picking up Sanofi's dermatology unit Dermik Laboratories for $425m in cash gave Valeant a number of US and Canadian manufacturing sites, as well as a wealth of topical and oral dermatology products. </p>&nbsp;</td></tr><tr><td><p>May 2011</p>&nbsp;</td><td><p>$442m</p>&nbsp;</td><td><p>In an effort to continue its international expansion, Valeant picked up Lithuania's AB Sanitas, giving it more than 360 generic products. </p>&nbsp;</td></tr><tr><td><p>February 2011</p>&nbsp;</td><td><p>$480m</p>&nbsp;</td><td><p>Strengthening its position in Central and Eastern Europe, the company bought generics and OTC drugmaker Pharma Swiss SA. </p>&nbsp;</td></tr><tr><td><p><b>June 2010</b></p>&nbsp;</td><td><p><b>$3.3bn</b></p>&nbsp;</td><td><p><b>Biovail and Valeant conduct a reverse merger, creating the first iteration of the Valeant investors know today. </b></p>&nbsp;</td></tr></tbody></table></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Valeant A company transformed by deals
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150723T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150723T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150723T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029304
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 39
+
+Valeant: A company transformed by deals
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359488
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f1b55c6d-a16a-417a-97c6-c37a0edda264
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

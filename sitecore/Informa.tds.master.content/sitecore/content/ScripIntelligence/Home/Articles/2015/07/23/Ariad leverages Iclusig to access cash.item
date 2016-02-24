@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {51BF93FE-6952-4D82-A125-AE4A9900516E}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/23/Ariad leverages Iclusig to access cash
+parent: {857BC899-3328-4898-A866-876B56579D04}
+name: Ariad leverages Iclusig to access cash
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6b9d9c07-2735-4c59-a2be-333fb8c87d8d
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 38
+
+Ariad leverages Iclusig to access cash
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+Ariad leverages Iclusig to access cash
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3236
+
+<p><p>Instead of hitting up the market to raise money, Ariad Pharmaceuticals has found an alternative to fund its development activities, tapping PDL BioPharma for some quick cash. </p><p>The struggling biotech announced 29 July that it has inked a royalty deal with the royalty management company for its leukemia drug Iclusig (ponatinib) that will give it access to as much as $200m in cash. </p><p>Under the terms of the agreement, Ariad will get $100m in cash -- $50m now and another $50m in one year. The biotech also has the option to access another $100m over the next year. </p><p>In exchange for the much-needed funds, Ariad will pay PDL 2.5% of Iclusig revenues for the first year. The royalty rate will rise to 5% the following year until 2018 and 6.5% after that until PDL receives a 10% return on its investment. </p><p>The agreement is in effect until 2033, unless terminated by either party. </p><p>PDL is a royalty management company that buys royalty streams from already marketed pharmaceutical products in exchange for financing late-stage companies. The firm has made more than $830m investments. Previous financings include agreements with DepoMed, AxoGen, Durata Therapeutics and Merus Labs. </p><p>Ariad is using the funding to support trials of its ALK inhibitor brigatinib. The drug is currently enrolling a pivotal trial of the drug in non-small cell lung cancer patients and is expected to be filed with the US FDA next year for approval. Brigatinib was granted the FDA's Breakthrough Therapy designation, which offers the drug an expedited regulatory pathway. </p><p>"This financing allows us to accelerate initiation of the front-line trial of brigatinib and to ensure launch readiness as early as possible, while retaining strategic flexibility with respect to partnering and long-term commercialization of brigatinib," said Ariad Chairman and CEO Dr Harvey Berger. </p><p>Ariad has been bleeding money over the last few years as it's tried to move its pipeline forward, but problems with Iclusig have kept it from tapping capital markets &ndash; which are wide open at the moment &ndash; and have kept the company from achieving profitability. Ariad reported losses of $220m in 2012, $274m in 2013 and $162m in 2014. </p><p>The company must have high hopes for brigatinib for Ariad to leverage its main revenue-generating product. Analysts have said the drug could be best-in-class.</p><p>Iclusig has not been the blockbuster that the company had hoped. The cancer treatment <a href="http://#http://www.scripintelligence.com/home/Ariad-suspends-Iclusig-sales-temporarily-on-FDA-concerns-shares-plummet-347774" target="_new">hit a snag</a> during development in 2013 when it came to the FDA's attention that Iclusig was causing serious and life-threatening blood clots and severe narrowing of blood arteries and veins in patients taking the medicine. </p><p>Iclusig was approved in 2012, about a year before the reports started cropping up. The drug already included a block box warning for other serious issues and was eventually updated to restrict the patient population even further. Ariad is still working to expand the use of Iclusig into other indications and clinical trials are ongoing. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+Ariad leverages Iclusig to access cash
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150723T180001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150723T180001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150723T180001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029367
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 38
+
+Ariad leverages Iclusig to access cash
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359589
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6b9d9c07-2735-4c59-a2be-333fb8c87d8d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042428Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

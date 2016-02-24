@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {BBB1FA16-CF52-4457-8B22-03ABC5F1FE43}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/01/10/Permanent Bar Against Glenmarks Sitagliptin Copies
+parent: {12A33660-1AE1-4C03-B8A3-D2F6FB93E8A2}
+name: Permanent Bar Against Glenmarks Sitagliptin Copies
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 97bf423d-2a60-46d1-b87c-be332c132bd7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{C547E0DE-05E0-4671-8C7A-37F0D3DF4F0E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Permanent Bar Against Glenmark's Sitagliptin Copies 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 50
+
+Permanent Bar Against Glenmarks Sitagliptin Copies
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5157
+
+<p>The Delhi High Court has permanently enjoined Glenmark Pharmaceuticals Ltd from making and selling its generic version of Merck & Co's diabetes therapies <i>Januvia</i> (sitagliptin) and <i>Janumet</i> (sitagliptin/metformin hydrochloride). The Indian firm has been found to have infringed the sitagliptin patent.</p><p>Justice AK Pathak, in an 133-page order dated Oct.7, restrained Glenmark by a decree of permanent injunction from "making, using, selling, distributing, advertising, exporting, offering for sale or dealing in sitagliptin phosphate monohydrate or any other salt of sitagliptin in any form, alone or in combination with one or more other drugs thereby infringing the suit patent No 209816 of the plaintiffs [Merck]."</p><p>The suit patent is essentially the sitagliptin Indian Patent No 209816 and has 20 claims.</p><p>The court, though, stopped short of quantifying damages, since Justice Pathak "[did] not find it justifiable" to do so based only on the admission by a defence witness of total sales and the percentage of the profits earned by Glenmark. </p><p>"Plaintiffs shall, however, be entitled to actual costs of the proceedings," he ruled.</p><p>The judge held that MSD (as Merck & Co is known outside of the US and Canada) had succeeded in proving that the suit patent discloses sitagliptin phosphate monohydrate "generically."</p><p>"Sitagliptin free base is also disclosed. It is the Sitagliptin free base which is the DPP-IV inhibitor and phosphate salt is used for delivery of sitagliptin in the body. Sitagliptin phosphate monohydrate has enhanced properties in the sense that it has improved chemical and physical characteristics, but the active moiety is sitagliptin."</p><p>The court further noted that therapeutic efficacy is not enhanced by sitagliptin phosphate monohydrate since it is the sitagliptin itself which is the active moiety and is effective for inhibiting DPP-IV enzyme and is useful for treatment of type II diabetes.</p><p>"Sitagliptin is not produced in the human body by a natural process but, in fact, sitagliptin is delivered in the human body which is the bulk compound in the sitagliptin phosphate monohydrate." </p><p>MSD had claimed that Glenmark's Januvia/Janumet copies branded as <i>Zita</i> and <i>Zita-Met</i> contain sitagliptin phosphate which is covered by the claims of the suit patent.</p><p>Glenmark, in its defence, claimed that it does not infringe the suit patent and that the suit patent disclosed the products sitagliptin/sitagliptin hydrochloride; whereas sitagliptin phosphate monohydrate is a different chemical entity having different physical and chemical properties. </p><p>Glenmark <a href="http://www.scripintelligence.com/business/Indian-court-blocks-Glenmarks-Januvia-generic-but-it-aint-over-yet-357431" target="_new">argued</a> in previous hearings that SPM [sitagliptin as a phosphate monohydrate salt] is qualitatively different from the sitagliptin free base, with enhanced pharmaceutical qualities that it argued means that the manufacture of SPM does not violate a patent for the sitagliptin free base "simpliciter".</p><p>MSD said it was pleased that the court had found Glenmark to have infringed the patents of Januvia and Janumet and restrained Glenmark by decree of permanent injunction. </p><p>Glenmark said that it accepted the court's decision but was evaluating its legal options at this point in time. Not many analysts, though, expect Glenmark to pursue the case very vigorously. They point to the fact that Glenmark has <a href="http://www.scripintelligence.com/business/Glenmark-pioneers-Mitsubishis-teneligliptin-in-India-358948" target="_new">launched</a> another DPP-4 inhibitor teneligliptin, a cut-price version of Mitsubishi Tanabe's Tenelia, in India via a dual brand approach and interestingly branded as <i>Ziten</i> and <i>Zita Plus</i>. </p><p>The Indian sitagliptin case has, over the recent past, seen a series of twists and turns including a <a href="http://www.scripintelligence.com/business/Merck-Glenmark-Januvia-mediation-efforts-flop-355571" target="_new">flopped mediation</a> attempt. In May this year, India's <a href="http://www.scripintelligence.com/home/Indian-court-blocks-Glenmarks-cut-price-Januvia-expedites-patent-case-358443" target="_new">Supreme Court</a> blocked any fresh manufacture by Glenmark of its cut-price version of Januvia and Janumet. </p><h2>Process</h2><p>Justice Pathak also dismissed Glenmark's claims suggesting that the process it used was different from that of Merck for manufacturing sitagliptin phosphate monohydrate as contained in Zita and Zita-Met. </p><p>It noted that no such process had been disclosed in the written statement and counter claim, inasmuch as no employee of the defendant had stepped into the witness box to prove such process. </p><p>"Certain documents were introduced in evidence through a defence witness, which cannot be taken as duly proved, as he is neither the author of said documents nor had an occasion to verify the said process having not monitored the manufacturing at any stage or having involved himself in such manufacturing process," said the judge.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 320
+
+<p>The Delhi High Court has permanently enjoined Glenmark Pharmaceuticals Ltd from making and selling its generic version of Merck & Co's diabetes therapies <i>Januvia</i> (sitagliptin) and <i>Janumet</i> (sitagliptin/metformin hydrochloride). The Indian firm has been found to have infringed the sitagliptin patent.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 50
+
+Permanent Bar Against Glenmarks Sitagliptin Copies
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150110T140001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150110T140001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150110T140001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029982
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Permanent Bar Against Glenmark's Sitagliptin Copies 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360768
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+97bf423d-2a60-46d1-b87c-be332c132bd7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042501Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {E4FA6B79-FDA6-4549-87E1-D01B82A528CC}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/17/FDA adcomm may be rough for Avedro drugdevice combo
+parent: {673CAFAF-49B7-437A-9242-01ECA36193FF}
+name: FDA adcomm may be rough for Avedro drugdevice combo
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 097138fa-c364-4f8c-8d25-84daded10919
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{C7EBBDA0-1A1D-4B22-8330-447DC674C2DB}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+FDA adcomm may be rough for Avedro drug-device combo 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 51
+
+FDA adcomm may be rough for Avedro drugdevice combo
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7638
+
+<p>Avedro may have a rough ride ahead of it convincing FDA advisers to back approval of the company's riboflavin ophthalmic solution and UVA light source drug-device combination products for use in a procedure known as corneal collagen cross-linking (CXL) to treat progressive keratoconus and corneal ectasia following refractive surgery.</p><p>The firm's new drug application (NDA) is complicated by the fact that the studies supporting it were initiated before Avedro acquired the rights to the drug-device products, which the company plans to market as Photrexa Viscous, which contains riboflavin plus dextran, and Photrexa, which does not contain dextran.</p><p>After the Boston-based firm obtained the rights, it changed the timing of the primary efficacy analysis from 3 months to 12 months &ndash; something the FDA had earlier advised, but was rejected by the previous sponsor, Swiss company Peschke Meditrade. </p><p>Another complication that may cause trouble for Avedro at the 24 February joint meeting of the FDA's Dermatologic and Ophthalmic Drugs Advisory Committee and Ophthalmic Device Panel of the Medical Devices Advisory Committee is the fact that one of the trials was terminated early after the lead investigator left. </p><p>Avedro also may have a hard time persuading the FDA's advisers to endorse the Photrexa Viscous and Photrexa products because the Phase III studies used a different device, IROC-UV-X, than the one the company wants to market, the KXL System, a UVA irradiation system that uses a light emitting diode to deliver a dose of UVA light to a targeted treatment area for illuminating the cornea during CXL.</p><p><b>Rejected</b></p><p>The FDA initially rejected Avedro's NDA for Photrexa Viscous and Photrexa with the KXL System in March 2014 &ndash; telling the firm it needed to provide additional information on the drug constituent part, the compound's facility inspections, the device constituent part, clinical and statistical information and clinical site inspections before the agency could approve the products (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/FDA-rejects-Avedros-ophthalmic-drug-device-350746" target="_new">18 March 2014</a>).</p><p>Avedro resubmitted its application in September 2014 seeking approval in keratoconus, a rare potentially blinding disease, and corneal ectasia, which sometimes occurs as an outcome of refractive surgery, such as LASIK.</p><p>Both conditions are characterized by progressive thinning and protrusion of the cornea, resulting in corneal optical irregularities.</p><p>With keratoconus, which generally occurs during puberty or early adulthood &ndash; progressing over the next 10 to 20 years &ndash; patients have increasing myopia, irregular astigmatism and consequential loss of best corrected visual acuity (BCVA). With corneal ectasia, patients lose BCVA and uncorrected visual acuity.</p><p>There currently are no FDA-approved drugs to treat keratoconus or corneal ectasia, so Avedro stands to be the first company in the US with a pharmaceutical product, which will be used with the KXL System. </p><p>There is, however, one device labeled for use in the US for patients with keratoconus &ndash; Addition Technology's Intacs, which are prescription inserts intended to reduce or eliminate myopia and astigmatism in patients with the condition who are no longer able to achieve adequate vision with their contact lenses or spectacles. The product is intended to restore functional vision while patients await a corneal transplant procedure. </p><p><b>Phase III trials</b></p><p>Avedro's NDA for Photrexa Viscous/Photrexa is based on the results from three prospective, randomized, parallel-group, open-label, sham-controlled 12-month Phase III trials &ndash; UVX-001, UVX-002 and UVX-003.</p><p>The studies investigated the safety and effectiveness of a single application of riboflavin ophthalmic solution/UVA irradiation for performing CXL in the eyes of patients with progressive keratoconus or post-refractive corneal ectasia.</p><p>UVX-001 examined Photrexa Viscous/Photrexa in keratoconus or corneal ectasia following refractive surgery, while UVX-002 studied the products in keratoconus only, with UVX-003 looking at them in corneal ectasia only. </p><p>In each study, the primary efficacy endpoint was corneal curvature, as measured by maximum keratometry (KMAX). </p><p>Study UVX-001 was an investigator-initiated trial submitted by Emory University researcher Dr Doyle Stulting, who actually had left the study site before it was completed, resulting in the trial being terminated and 13 corneal ectasia patients and 26 with keratoconus administratively withdrawn from the study before completing their participation.</p><p>Studies UVX-002 and UVX-003 were multicenter studies conducted in the US by Peschke Meditrade, which transferred the rights to Avedro under a May 2010 agreement.</p><p>All rights to UVX-001's data also were transferred to Avedro under a September 2010 licensing deal.</p><p>In September 2007, the FDA had advised evaluating the primary endpoint at one year, but that advice was rejected by Peschke Meditrade, although the company agreed to extend the follow-up evaluations through one year, including at months 6 and 12. </p><p>After Avedro gained the rights to Photrexa Viscous/Photrexa, the FDA held a pre-NDA meeting with the firm on 21 September 2011.</p><p>Regulators told the company it was not possible to determine whether the product's clinical program would be sufficient to support approval based on the information previously submitted. The FDA said it would need to review the final study reports for studies UVX001, UVX-002 and UVX-003 to determine if it was appropriate to combine patients from the trials.</p><p>For the progressive keratoconus population, statistical significance was not achieved at month 3, but was achieved at that point for the corneal ectasia population. </p><p>"The lack of statistical significance between groups in the patients treated for keratoconus at month 3 was noted as potentially problematic," regulators told Avedro at the September 2011 meeting.</p><p>So the company changed the timing of the primary endpoint analysis to month 12, explaining that over the years there have been significant advancements in the science of cross-linking since Peschke Meditrade made its initial decision about analyzing the primary endpoint at three months. </p><p>"As more has been learned about the natural history of healing after epithelial debridement and corneal remodeling following cross-linking, it has become evident that evaluating effectiveness at the three-month time period is not clinically appropriate," Avedro said. "A three month timeframe for analysis of cross-linking is too short of a time to evaluate the benefit of this procedure. The benefit of the corneal cross-linking procedure is best measured at later time-points when the epithelial healing and corneal remodeling processes have been completed."</p><p>At the 24 February meeting, the FDA wants its advisers to discuss the strengths and weaknesses of the design of the Phase III trials and analyses supporting Avedro's NDA, including the effect of the potential introduction of bias. </p><p>Among the other questions the FDA wants its panelists to mull over is whether the Phase III data support use of the Photrexa Viscous and Photrexa products in pediatric patients and the applicability of extrapolation from adult data.</p><p>Regulators then will ask the joint committee to vote on approval of the drug-device combo products. </p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 342
+
+<p>Avedro may have a rough ride ahead of it convincing FDA advisers to back approval of the company's riboflavin ophthalmic solution and UVA light source drug-device combination products for use in a procedure known as corneal collagen cross-linking (CXL) to treat progressive keratoconus and corneal ectasia following refractive surgery.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 51
+
+FDA adcomm may be rough for Avedro drugdevice combo
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150217T150000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150217T150000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150217T150000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027892
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+FDA adcomm may be rough for Avedro drug-device combo 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356789
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+097138fa-c364-4f8c-8d25-84daded10919
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

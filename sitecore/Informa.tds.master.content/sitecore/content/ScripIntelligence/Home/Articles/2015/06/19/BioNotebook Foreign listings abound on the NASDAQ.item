@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {D77AB99F-F974-4204-BCC0-472FBA96923A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/19/BioNotebook Foreign listings abound on the NASDAQ
+parent: {0628D1D0-5998-4F18-850A-A10D67539F67}
+name: BioNotebook Foreign listings abound on the NASDAQ
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 04903b32-4596-40eb-94e3-53fdb5885a3a
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+BioNotebook: Foreign listings abound on the NASDAQ
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+BioNotebook Foreign listings abound on the NASDAQ
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4173
+
+<p><p>During the Biotechnology Industry Organization (BIO) conference that took place in Philadelphia this week there was lots of talk about a biotech bubble and the free-flowing cash coming into the sector. Recent industry reports show that 2014 was a record-breaking year for financing and so far 2015 continues to be on track to surpass that. The money continued to flow during the current week as several companies priced initial public offerings and other conducted follow-on financings &ndash; in multiple cases, companies already listed on foreign stock exchanges tried to take advantage of the bull market in the US.</p><p><b>Cynapsus</b></p><p>Toronto-based biotech Cynapsus Therapeutics began its life as a US publicly traded company on the NASDAQ stock exchange, while maintaining its public listing on the Toronto Stock Exchange, on 18 June. </p><p>Cynapsus priced its offering at $14 per share, selling 4.5m common shares for a total offering of $63m. </p><p>The stock opened at $15 per share and has continued to trade between $14 to $15. </p><p>The company intends to use the proceeds to advance and commercialize its Phase III candidate for Parkinson's disease that helps patients flip the switch from the debilitating Off times to the more easily managed On times of the disease. </p><p><b>Celyad</b></p><p>Belgium-based Celyad has made the jump from Europe to trade on the NASDAQ, while maintaining its listings on the Euronext Brussels and Euronext Paris. Previously known as Cardio3 BioSciences before making its shift to immuno-oncology, Celyad priced its 1,168,000 American Depositary Shares at $68.56 and priced 292,000 of its EUR shares at $60.25 for total proceeds of about $100m. </p><p>The company is using the proceeds to advance its lead product for ischemic heart failure, as well as a preclinical stage portfolio of CAR-T immunotherapy products. Celyad jumped on the immuno-oncology bandwagon earlier this year when it brought its first CAR-T candidate in to a Phase I clinical trial in April. </p><p>Celyad is hoping to use the money to advance its other preclinical candidates for blood cancer and solid tumors. </p><p><b>Chiasma</b></p><p>At the start of the week, Chiasma filed paperwork with the US Securities and Exchange Commission to IPO on the NASDAQ for $86m. The IPO comes just three months after the company conducted a private placement for $70m. </p><p>The proceeds of the IPO are expected to support the company's New Drug Application, which it filed with the FDA this month, as well as the commercialization of its drug for acromelagy, a disease where the bones grow too fast. </p><p>The company was initially partnered with Roche on the drug, but the big pharma pulled out after reorganization its internal pipeline. The drug candidate showed that in Phase III trials that it alleviated symptoms of the disease and is more convenient than currently marketed injectable therapies for the disease. Roche paid out $90m in milestones before returning the drug. </p><p><b>Aeglea</b></p><p>Austin-based biotech Aeglea BioTherapeutics is filing a Texas-sized IPO, hoping to rake in $86m in proceeds to support the development of its lead drug candidate AEB1102. The compound is a Phase I/II drug being studied for the treatment of cancer and is meant to inhibit arginine, a key amino acid for tumor growth. </p><p>The IPO comes just three months after Aeglea brought in $44m from the venture arms of two big pharmas, Lilly Ventures and Novartis Venture Fund. </p><p><b>Provectus</b></p><p>Provectus Biopharmaceuticals' shares continue to drop as the company tries to raise money to bring its melanoma therapy forward. The company hit on hard times last year when the FDA denied their application for Breakthrough Therapy Designation. The designation would&rsquo;ve given the company a speedier development pathway and regulatory timeline. </p><p>Provectus' stock dropped another 25% to trade below $1 per share after the company announced it was pricing 17.5m shares at 75 cents apiece to bring in $13.1m in proceeds on 19 June. The stock dropped more than 60% in May 2014 when the company revealed the agency's decision. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+BioNotebook Foreign listings abound on the NASDAQ
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150619T223125
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150619T223125
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150619T223125
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029042
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+BioNotebook: Foreign listings abound on the NASDAQ
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358961
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+04903b32-4596-40eb-94e3-53fdb5885a3a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042410Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

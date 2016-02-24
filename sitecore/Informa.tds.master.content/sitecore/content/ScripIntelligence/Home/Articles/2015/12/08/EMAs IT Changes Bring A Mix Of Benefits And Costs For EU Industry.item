@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {785DC6CE-5D1E-47A7-BDBD-E80AEAC17FF8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/12/08/EMAs IT Changes Bring A Mix Of Benefits And Costs For EU Industry
+parent: {EB98594F-6768-459E-BE38-AA507619EAFF}
+name: EMAs IT Changes Bring A Mix Of Benefits And Costs For EU Industry
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1a1a28cf-202e-4415-b0e8-2fae37ed9875
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 66
+
+EMA's IT Changes Bring A Mix Of Benefits And Costs For EU Industry
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 65
+
+EMAs IT Changes Bring A Mix Of Benefits And Costs For EU Industry
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 14879
+
+<p> The European Medicines Agency and the Heads of Medicines Agencies have published a &quot;road map&quot; describing the implementation plans for the EU's telematics strategy, which is intended to help improve the efficiency of Europe's medicines regulatory network. The strategy includes upgrading IT systems with new submission formats, databases and data standards that will link in with the EU member states' own systems. </p><p> Focusing on key areas such as clinical trials, e-submissions and pharmacovigilance, the telematics strategy is intended to make it easier for regulators to receive, analyse and share data submitted in product approval applications, clinical trial filings, drug safety reports and so on. </p><p> Companies themselves can expect a mix of benefits such as reduced costs in the longer term as a result of more streamlined and efficient data submission and integrated data formats, although in some cases they will need to make significant initial outlays to bring their procedures and practices into line with the new requirements. </p><p> Moreover, industry should also be prepared for its product information to be opened up to greater public scrutiny as the result of a new medicines web portal aimed at offering patients, consumers and healthcare professionals what the document describes as a &quot;free, unbiased, scientifically valid source of medicinal product information.&quot; </p><p> The IT changes are described in the EU Telematics Strategy and Implementation Roadmap 2015-2017, which has just been endorsed by the EMA's management board. The roadmap outlines the implementation plans for the Telematics strategy 2014-16, and will be updated periodically to reflect advances in the strategy and changes in the regulatory environment. Some of the initiatives, such as mandatory use of the electronic application form (eAF), have already been introduced, while the remainder will be rolled out over the next few years. </p><p> The EMA says it needs to build up and provide access to IT systems that promote effective co-operation through the regulatory network so that it can fulfil the requirements of the EU medicines legislation. The agency therefore needs to ensure that IT solutions are feasible, interoperable, cost-effective and integrated where necessary, that they promote efficiency, and that they align where appropriate with regulation in other countries such as the US, Japan and the BRIC economies. </p><h2> Milestones </h2><p> The roadmap includes dates and milestones for introducing the various updates and requirements &ndash; some of which have already been reached &ndash; although it points out that some of these, particularly beyond 2015, are not set in stone and are likely to change over time. </p><p> Among the key milestones are: </p><ul> <li> mandatory use of the eAF for centralized submissions as of July 1 this year, and for all procedures from early 2016; </li><li> a common repository for all centralized eCTD (electronic common technical document) submissions, which has been put in place this year; </li><li> publication of a strategy paper for the new medicines web portal in the fourth quarter of 2015 </li><li> Publication of implementation guides for ISO IDMP (identification of medicinal products) standards at the end of the second quarter of 2016. </li><li> mandatory use of the eCTD for new product submissions under the mutual recognition procedure from mid-2016; and </li><li> obligatory use of the PSUR (periodic safety update report) repository from mid-2016. </li> </ul><p> The 2014 telematics strategy originally listed 10 objectives, which in the roadmap have been whittled down to seven key programs: telematics governance, clinical trials, e-collaboration, data integration, online systems, pharmacovigilance and veterinary products. </p><h2> Telematics governance </h2><p> The telematics governance structure, which aims to foster collaboration in IT development and operations across the network, became fully functional in 2014, but there is a need to keep it under review and put changes in place where necessary. The expected benefits are reduced overlap of governance, better participation by different stakeholders at various levels, and improved communication to stakeholders. In view of the significant impact on the pharmaceutical sector, companies will be invited to take part at strategic and operational levels via specific working groups. </p><h2> Clinical trials </h2><p> A key part of the IT network is the future EU portal and database for submitting and storing data and information relating to clinical trials. These are required to be set up under the provisions of the Clinical Trials Regulation, whose provisions will become applicable around mid-2016. </p><p> The portal will be used as a single entry point for the submission, authorization and supervision of trials in the EU, while all data and information submitted through the portal will be stored in the database, which will contain public information on clinical trial applications and all trials conducted in the EU. </p><p> The database will be publicly accessible unless confidentiality of any data is justified by the legislation, and both the portal and database will coexist with the current trials database, EudraCT, for a transitional period. </p><p> The aim of the clinical trial program in the IT strategy is to develop the systems needed to implement the CTR, while the CT systems will be integrated with other master databases like product and substance dictionaries, with interfaces for member state systems. </p><p> The benefits for industry include improved submission, assessment, monitoring and supervision of clinical trials, and a simplified application procedure. Better safety reporting procedures will facilitate reporting of annual safety reports (ASRs) and SUSARs (suspected unexpected serious adverse reactions). ASRs will be stored in a common repository accessible to all national competent authorities (NCAs), reducing the number of submissions required. But companies will need to make process changes to convert ASR submissions to an electronic format and allow submission to a single repository, while both industry and academia will need to reorganize and centralize their application and surveillance processes. </p><p> The EMA told <i>Scrip </i>that it is still finalizing the timelines for delivery of the system in line with the specifications that have been developed together with the member states, and then it will need to agree these timelines with the member states and the European Commission. An announcement about the portal and database will be made once agreement has been reached and endorsed by the EMA's management board later this year. </p><h2> E-collaboration </h2><p> The idea here is to improve operational effectiveness and efficiencies for the EMA, the national authorities and the pharmaceutical industry, with collaboration expected to lead to better management and processing of human and veterinary approval and other application types. </p><p> Initiatives are centered around the &quot;common repository&quot;, which currently stores eCTD submissions for human medicines via the centralized procedure and can in future be used for other EMA procedures and document types. </p><p> Submissions contained in the repository can be retrieved by the national authorities and placed into their own review systems, so all regulators can have access to the same validated submissions at the same time. </p><p> A key benefit for pharmaceutical companies is that they will no longer need to send copies of centralized procedure submissions to the NCAs. </p><p> The e-collaboration program will also integrate the eAFs and link master data and data sets from previous submissions, reducing the need for industry to resubmit information already held by regulators. However, companies will need to set aside resources to take part in the project, and will have to train applicants and adapt current processes and practices. </p><p> Meanwhile, the PSUR repository, which has been available since January this year for human medicines, streamlines the PSUR submission process for companies via a secure electronic submission point. This repository &ndash; a common storage place for all relevant safety data and documents that can be retrieved by the NCAs &ndash; will be mandatory from 2016. The advantages for companies include the fact that the simplified submission procedure doesn&rsquo;t require PSURs to be submitted to the NCAs, and that process lead times will be reduced. </p><p> In prospect too is the eCTD version 4.0, which will replace the current eCTD format and improve the usability of eCTD human submissions. The new version will have a lighter structure allowing the reuse and sharing of documents across products and procedures, and two-way communication between companies and regulators. This standard is also being developed with other regions of the International Conference on Harmonisation. </p><p> In July this year, the new eAF, which uses more advanced PDF technology to capture and validate information and are expected to reduce the need for separate national submissions, became the only accepted format for centralized applications, and from January 2016 will be the only one allowed for all other EU procedures. </p><p> Harmonizing the use of the eAF across the network is expected to reduce the need for separate national portals for submissions and reduce the number of issues found during submission validation. On the one hand, this means companies will spend less time filling out application forms, and will also be able to generate eAFs automatically with data taken directly from their own systems and databases, thereby saving resources. On the other hand, it could take them longer to prepare the application, at least initially, and additional resources and training may be required in adapting their processes and practices. </p><h2> Data Integration </h2><p> This program should mean more interoperability of systems and data sharing based on the most appropriate data standards, data models and terminologies. It will involve the development of clear definitions and descriptions of medicines and substances, taking account of other EU projects such as eHealth, ePrescription, Horizon 2020 and anti-falsification initiatives. </p><p> The future data standard is ISO IDMP, whose implementation is being co-ordinated by the International Organisation for Standardisation (ISO), with EU implementation guides expected by mid-2016. The initiative has involvement from the pharmaceutical industry as well as the EMA, NCAs and software vendors. </p><p> ISOIDMP can be used across the entire life cycle of a drug, including clinical trials, scientific assessment and inspections. Its introduction means companies will need to put in place new data management processes to allow data exchange based on structured and standardized data. The EMA advises companies to appoint a representative or small user group to liaise on issues like training, communication and general support throughout the transition to the new standard. </p><p> They will also need to develop data strategies and implementation plans for consolidating product data in a format compliant with ISO IDMP, and start planning changes to their IT infrastructure and product/substance database models in order to structure, store and exchange product information electronically. </p><h2> Online Medicines Web Portal </h2><p> Under this program a multi-lingual website giving information on all authorized medicines will be built up. The central plank of this is the EU medicines web portal, which the EMA calls &quot;a free, unbiased, scientifically valid source of medicinal product information on the internet&quot;, and whose primary audience will be patients, consumers and healthcare professionals. </p><p> The portal will replace the current EudraPharm database of human medicines, giving an EU-wide view of a medicinal product&rsquo;s lifecycle, including both centrally and non-centrally approved product information, EU-level adverse drug reaction (ADR) data, searchable EU dictionaries of substances and products, and clinical trial summaries. The web portal will support other high-level EU initiatives, such as the eHealth Action Plan, the EU open-data agenda, and the Digital Agenda for Europe. </p><p> New online information delivery mechanisms will provide appropriate levels of access to information held by the EMA in relation to the central authorization procedure and offer more transparency on the progress of applications through the regulatory procedures, according to the EMA. </p><h2> Pharmacovigilance </h2><p> This part of the telematics program is intended to implement the IT systems needed to support the collection, management and analysis of information and knowledge under the new pharmacovigilance legislation that came into effect in July 2012, and is another area where there will be significant implications for industry. </p><p> Individual projects include medical literature monitoring by the EMA for drug safety reports and the entry of Individual Case Safety Reports (ICSRs) into the EudraVigilance database. EudraVigilance itself is to be enhanced so as to offer simplified and centralized reporting as well as better data quality and analysis. </p><p> EudraVigilance signal management (EV-SM) changes will bring automated signal detection and tracking and management processes, while EudraVigilance &quot;auditable requirements&quot; (EV-ADR) will introduce simplified reporting and compliance with international data standards, with all EU reports of suspected ADRs being delivered to the World Health Organization through EudraVigilance. The upshot is expected to be better detection of new or changing safety issues, and more rapid reactions to protect public health. </p><p> Both NCAs and companies will need to adapt their business processes accordingly, and companies will need to allocate resources to comply with the new requirements, which include maintaining structured information on medicines, notifying the EMA of any variations to terms of marketing authorizations (MAs) within 30 days of the changes being approved, and submitting information on new MAs granted in the EEA within 15 days. </p><h2> Veterinary </h2><p> The goal of this program is to develop an IT and systems based solution that will consolidate existing data systems and allow the network to respond effectively to the revised veterinary legislation in the next three or four years. </p><p> <i>This article has also been published in </i><a href="http://www.rajpharma.com/home/" target="_new">Scrip Regulatory Affairs</a>. <i>Scrip brings selected complementary coverage from our sister publications to our subscribers.</i> </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 432
+
+<p> The European Medicines Agency and the Heads of Medicines Agencies have published a &quot;road map&quot; describing the implementation plans for the EU's telematics strategy, which is intended to help improve the efficiency of Europe's medicines regulatory network. The strategy includes upgrading IT systems with new submission formats, databases and data standards that will link in with the EU member states' own systems. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 65
+
+EMAs IT Changes Bring A Mix Of Benefits And Costs For EU Industry
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151208T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151208T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151208T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029538
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 66
+
+EMA's IT Changes Bring A Mix Of Benefits And Costs For EU Industry
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+headline news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359922
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1a1a28cf-202e-4415-b0e8-2fae37ed9875
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042436Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

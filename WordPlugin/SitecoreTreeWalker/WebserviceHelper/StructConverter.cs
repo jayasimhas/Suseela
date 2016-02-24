@@ -7,7 +7,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 {
 	public class StructConverter
 	{
-		
+
 		public WordPluginModel.ArticleStruct GetServerStruct(WordPluginModel.ArticleStruct articleStruct)
 		{
 			var articleDetails = new WordPluginModel.ArticleStruct();
@@ -30,13 +30,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.FeaturedImage = articleStruct.FeaturedImage;
 			articleDetails.FeaturedImageCaption = articleStruct.FeaturedImageCaption;
 			articleDetails.FeaturedImageSource = articleStruct.FeaturedImageSource;
-
-			//TODO - add article taxonomy to the Struct.
-			//if (articleStruct.Taxonomoy.Any())
-			{
-				//articleDetails.Taxonomoy = articleStruct.Taxonomoy.Select(t => new WordPluginModel.TaxonomyStruct {Name = t.Name, ID = t.ID}).ToList();
-			}
-
+			articleDetails.Taxonomoy = articleStruct.Taxonomoy;
 			articleDetails.RelatedArticles = articleStruct.RelatedArticles;
 			articleDetails.ReferencedDeals = articleStruct.ReferencedDeals;
 			articleDetails.Subtitle = articleStruct.Subtitle;
@@ -45,7 +39,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.WordCount = articleStruct.WordCount;
 			articleDetails.SupportingDocumentPaths = articleStruct.SupportingDocumentPaths;
 			//articleDetails.ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.Select(n => new StaffStruct{Name = n.Name,ID = n.ID,Publications = n.Publications,}).ToArray();
-			
+
 			return articleDetails;
 		}
 	}

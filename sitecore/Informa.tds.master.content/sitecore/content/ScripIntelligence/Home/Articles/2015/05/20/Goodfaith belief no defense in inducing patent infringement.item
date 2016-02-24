@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {63C2198E-D84B-4A83-B8D2-45B5824A87F7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/20/Goodfaith belief no defense in inducing patent infringement
+parent: {9272B77E-1398-4EF1-A77A-17C397C8C6D1}
+name: Goodfaith belief no defense in inducing patent infringement
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 747bc401-390f-47bb-b38c-9c127ed32935
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 62
+
+'Good-faith belief' no defense in inducing patent infringement
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 59
+
+Goodfaith belief no defense in inducing patent infringement
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7077
+
+<p>The US Supreme Court in a 6-2 ruling on 26 May said claiming a "good-faith belief" that a patent is invalid doesn't hold water as a defense for inducing infringement by others.</p><p>While the case, which overturned a decision by the US Court of Appeals for the Federal Circuit, involves wireless network technology, the ruling has broad implications for the biopharmaceutical industry, which weighed in on the matter through several amicus briefs, including those from the Pharmaceutical Research and Manufacturers of America, the Biotechnology Industry Organization, the Generics Pharmaceutical Association, Gilead Sciences and AbbVie.</p><p>The suit was brought by Commil USA, which holds a patent for a method of implementing short-range wireless networks. Specifically, the patent relates to a method of providing faster and more reliable communications between devices and Wi-Fi base stations.</p><p>In a 2007 lawsuit filed in the US District Court for the Eastern District of Texas, Commil accused Cisco Systems, which makes and sells wireless networking equipment, of patent infringement and of inducing others to infringe by selling the infringing equipment.</p><p>A jury concluded Cisco had infringed Commil's patent and awarded the latter firm $3.7m in damages. But the jury also determined Cisco was not liable for inducing infringement.</p><p>Commil, however, filed a motion for a new trial on the induced infringement accusations, which the district court granted because of certain "inappropriate" comments Cisco's counsel had made during the first trial.</p><p>A month before the second trial, Cisco asked the US Patent and Trademark Office (US PTO) to re-examine the validity of Commil's patent, which the agency did &ndash; finding it to be valid.</p><p>Cisco, nonetheless, pleaded at the second trial that it had a good-faith belief Commil's patent was invalid and sought to introduce evidence to support that assertion. </p><p>But the district court declared Cisco's evidence inadmissible. </p><p>At the close of trial, the district court instructed the jury that it could find inducement if Cisco actually intended to cause the acts that constitute direct infringement and knew or should have known that its actions would induce actual infringement.</p><p>The jury returned a verdict in Commil's favor on the induced infringement allegations and awarded the company $63.7m in damages.</p><p>In the meantime, the Supreme Court had issued a decision in another case, known as <i>Global-Tech Appliances v SEB</i>, which held that, in an action for induced infringement, it's necessary for the plaintiff to show that the alleged inducer knew of the patent in question and knew the induced acts were infringing. </p><p>So Cisco claimed the jury instruction had been incorrect because it did not state knowledge as the governing standard for inducement liability. </p><p>But the district court denied Cisco's motion and entered judgment in Commil's favor.</p><p>Cisco then appealed to the Federal Circuit, which affirmed in part, vacated in part and remanded for further proceedings &ndash; concluding the lower court erred by instructing the jury that Cisco could be liable for induced infringement if it knew or should have known that its customers infringed, holding that induced infringement requires knowledge the induced acts constitute patent infringement.</p><p>That part of the Federal Circuit&rsquo;s ruling is not in question and still stands after the Supreme Court's 26 May decision, said Seattle lawyer David Tellekson, a partner at Fenwick & West, who was not representing any parties in the case but observed the oral arguments.</p><p>The question the Supreme Court heard was whether a good-faith belief in invalidity is a defense to induced infringement &ndash; which the justices determined it was not, Mr Tellekson told <i>Scrip</i>. </p><p>In the majority opinion, authored by Justice Anthony Kennedy, the high court said there were practical reasons not to create a defense based on a good-faith belief in invalidity. </p><p>First, accused inducers who believe a patent is invalid have various proper ways to obtain a ruling to that effect, such as by filing a declaratory judgment action asking a federal court to declare the patent invalid or seeking an <i>inter partes</i> review at the US PTO's Patent Trial and Appeal Board, in which a firm could receive a decision within 12 to 18 months &ndash; although drug makers have <a href="http://www.scripintelligence.com/home/BMS-Broken-patent-office-proceedings-killing-innovation-358248" target="_new">raised concerns</a> with the latter process. </p><p>Or, even as Cisco actually did in the Commil case, they could ask the US PTO to for an <i>ex parte</i> re-examination of the patent.</p><p>"If the defendant is successful, he will be immune from liability," Justice Kennedy said.</p><p>The Supreme Court said creating a defense of belief in invalidity has several negative consequences &ndash; notably, that it could make litigation more burdensome "for everyone involved." </p><p>"Every accused inducer would have an incentive to put forth a theory of invalidity and could likely come up with myriad arguments," Justice Kennedy said.</p><p>And the need to respond to defense would increase discovery costs and multiply the issues the jury must resolve, he said.</p><p>Plus, Justice Kennedy said, juries would be put to the difficult task of separating the defendants' beliefs of validity from the actual issue of validity.</p><p>The Supreme Court pointed out that ignorance of the law or a mistake of law is no defense to criminal prosecution &ndash; a general rule that is deeply rooted in the American legal system.</p><p>The "I thought it was legal" is no defense, Justice Kennedy declared.</p><p>Had the Supreme Court ruled against Commil in the case, inducers would have been off the hook and essentially given a "get-out-of-jail-free card," Mr Tellekson said.</p><p>He expected that when the case returns to the Federal Circuit, it likely will draft a short order remanding the case to the district court for proceedings consistent with the Supreme Court's rulings, pointing out that the trial court did not err in excluding evidence of a good-faith-belief of invalidity. </p><p>In his dissent, Justice Antonin Scalia charged the Supreme Court&rsquo;s ruling would increase the &ldquo;in terrorem power of patent trolls&rdquo; &ndash; entities that buy up patents with no intention of actually developing products or transferring the technology but instead with the goal of forcing other companies to pay licensing fees or infringement settlements through aggressive litigation practices.</p><p>But Justice Kennedy, who said the court was well aware of companies that use patents as &ldquo;a sword to go after defendants for money,&rdquo; pointed out that no issue of &ldquo;frivolity&rdquo; had been raised by the parties in the case before the Supreme Court, and that the federal courts had the power to sanction attorneys for bringing such suits.</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 183
+
+<p>The US Supreme Court in a 6-2 ruling on 26 May said claiming a "good-faith belief" that a patent is invalid doesn't hold water as a defense for inducing infringement by others.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 59
+
+Goodfaith belief no defense in inducing patent infringement
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150520T120000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150520T120000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150520T120000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028827
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 62
+
+'Good-faith belief' no defense in inducing patent infringement
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358510
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042351Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+747bc401-390f-47bb-b38c-9c127ed32935
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042351Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

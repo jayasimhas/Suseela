@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D0AB4588-CEBF-4376-95C1-C012E241F639}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/07/Five Prime Inhibrx deal has first breakthrough milestones
+parent: {3BC254C1-F684-481F-AC19-2127127A06F5}
+name: Five Prime Inhibrx deal has first breakthrough milestones
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 9cd53108-cf6d-40c1-b549-a852b9376900
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 61
+
+Five Prime, Inhibrx deal has first 'breakthrough' milestones 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 57
+
+Five Prime Inhibrx deal has first breakthrough milestones
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4219
+
+<p>A collaboration and license agreement between Five Prime Therapeutics and Inhibrx appears to be the first-ever drug development deal that offers extra milestone fees for product candidates that are able to win a coveted breakthrough therapy designation from the US FDA.</p><p>A breakthrough therapy designation can speed a drug candidate through the regulatory review process, saving biopharmaceutical companies a lot of time. Given the value of a relatively speedy FDA approval for new therapies, it's not surprising that a drug developer would reward its partner with additional fees for winning a breakthrough designation. In fact, Five Prime may not be the first to offer such an incentive, but it's the first company to disclose those milestone fees publicly.</p><p><b>Breakthrough and other milestones</b></p><p>South San Francisco-based Five Prime will give Inhibrx a $10m license fee to obtain exclusive, worldwide therapeutic and diagnostic rights to antibodies that bind to glucocorticoid-induced tumor necrosis factor receptor (GITR), an immune checkpoint protein on T cells and T regulatory cells that Five Prime believes to be a potent inhibitor of tumor growth. GITR agonist antibodies caused tumor regression in preclinical studies, showing greater potency when combined with other immunotherapies.</p><p>In its agreement with San Diego-based Inhibrx, Five Prime also gained an option to license multi-specific antibodies that bind to GITR and other targets. Inhibrx could earn up to $342.5m in development, regulatory and commercial milestone fees for each therapeutic product or up to $442.5m in milestone fees for each product candidate that garners a breakthrough therapy designation. </p><p>"We believe this program has the potential to create a differentiated, next-generation GITR agonist that may have broad therapeutic application as a monotherapy or in combination with approved checkpoint inhibitors or other therapies, including products in our pipeline," Five Prime president and CEO Lewis "Rusty" Williams said in a statement.</p><p>All milestone fees may be paid in cash or in Five Prime stock, but Inhibrx also may earn low double-digit tiered royalties on product sales for approved immuno-oncology therapies. </p><p><b>Immuno-oncology adds value</b></p><p>Five Prime <a href="http://www.scripintelligence.com/home/Five-Prime-launches-62.4m-IPO-Aerie-files-to-raise-57.5m-346645" target="_new">went public</a> in 2013 at $13 per share with the intention of developing FPA008 for <a href="http://www.scripintelligence.com/home/Five-Prime-files-for-IPO-Intrexon-sets-terms-345355" target="_new">rheumatoid arthritis</a> (RA). A Phase Ib clinical trial in RA is under way, but FPA008 also is being evaluated in combination with cancer immunotherapies as part of Five Prime's growing focus on immuno-oncology. </p><p>The company signed two different agreements with Bristol-Myers Squibb in 2014, first to develop antibodies against two immune checkpoint targets and second to test <a href="http://www.scripintelligence.com/home/BMS-and-Five-Prime-push-the-immune-oncology-deal-bandwagon-along-350670" target="_new">FPA008</a> in combination with the BMS immune checkpoint inhibitor <a href="http://www.scripintelligence.com/business/BioNotebook-Four-deal-notes-including-Five-Primes-2nd-BMS-oncology-collaboration-355265" target="_new">Opdivo</a> (nivolumab). Five Prime's share price climbed above $20 based on the deals and closed at $26.03 on 16 July, reflecting a 1.2% one-day gain after the 15 July news that the company negotiated an agreement with Inhibrx. </p><p>Inhibrx signed a deal with <a href="http://www.scripintelligence.com/business/Tiny-Inhibrx-signs-500-million-preclinical-antibody-outlicensing-deal-with-Celgene-332297" target="_new">Celgene</a> in 2012 that was worth up to $500m in upfront and milestone payments for an undisclosed preclinical compound. Phase I development for what is now known as INBRX-103 began in early 2015. The antibody targets CD47 on cancer cells.</p><p><p>Amanda Micklus of <i>Scrip</i>'s sister publication <a href="https://www.pharmamedtechbi.com/deals" target="_new">Strategic Transactions</a> contributed to this report.</p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 276
+
+<p>A collaboration and license agreement between Five Prime Therapeutics and Inhibrx appears to be the first-ever drug development deal that offers extra milestone fees for product candidates that are able to win a coveted breakthrough therapy designation from the US FDA.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Five Prime Inhibrx deal has first breakthrough milestones
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151007T171658
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151007T171658
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151007T171658
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029254
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 61
+
+Five Prime, Inhibrx deal has first 'breakthrough' milestones 
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200201011
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{B322F30F-1522-4633-91A4-A2EF3216848C}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+news
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359382
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9cd53108-cf6d-40c1-b549-a852b9376900
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042423Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

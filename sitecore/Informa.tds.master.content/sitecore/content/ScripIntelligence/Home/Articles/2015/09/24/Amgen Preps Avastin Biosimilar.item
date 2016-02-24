@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {42B003D1-A573-4830-88F7-D9399F7BDD7D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/24/Amgen Preps Avastin Biosimilar
+parent: {D0AAADAC-3A4D-4719-8453-0B9B929C7097}
+name: Amgen Preps Avastin Biosimilar
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f0f504b5-e3b3-4e6d-99d6-8f10409ff671
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 30
+
+Amgen Preps Avastin Biosimilar
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 30
+
+Amgen Preps Avastin Biosimilar
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3132
+
+<p><p>Amgen is ready to fight fire with fire, as it gets closer to filing its own slate of biosimilars with FDA just weeks after the approval of a copycat version of its best-selling product. </p><p>The big biotech, and its partner Allergan, announced Sept. 23 that their version of oncology blockbuster <i>Avastin</i> (bevacizumab) has shown comparable efficacy in a late-stage study. </p><p>The biosimilar Avastin, known as ABP 215, met its primary endpoint of having a corresponding objective response rate to its reference product, Roche's Avastin, in 642 patients with non-squamous non-small cell lung cancer. The copycat version finished the trial with a comparable safety profile as well. </p><p>While ABP 215 was only tested in NSCLC, recent guidance from FDA has stated that companies can file for multiple indications for biosimilars if studies show that the mechanism of action is the same. Avastin is Roche's best-selling drug, bringing in upwards of $6.6bn in 2014 &ndash; the compound has indications in NSCLC, as well as colorectal, breast, gastric, renal cancers, amongst others. According to previous disclosures from Roche, treatment of colorectal cancer accounted for about 50% of Avastin sales, while NSCLC had about 20% of marketshare for the drug. The patents on Avastin are expected to expire in 2019. </p><p>The results get Amgen and Allergan one step closer to launching their own line of biosimilars &ndash; although a representative from Amgen would not confirm when the company intends to file, but analysts expect these drugs to be on the market by 2019. </p><p>There are several other companies working on biosimilars of Avastin, including Pfizer and Boehringer Ingelheim (both of which have compound in Phase III), as well as Novartis, AstraZeneca, Oncobiologics and Epirus. </p><p>The two biopharma powerhouses teamed up in 2011 (when Allergan was still Watson Pharmaceuticals) and have agreed to partner on four oncology biosimilars, including copycats of <i>Herceptin</i> (trastuzumab) and <i>Rituxan</i> (rituximab). </p><p>Both companies also have a slate of biosimilars that they are developing on their own. Amgen is in a unique position to develop biosimilars because of its background in the development of complex biologics. It was one of the first companies to enter the field of biologics and has grown to be a force in the biotechnology world through the sale of these large molecule drugs. Unlike some other companies just getting into the field, Amgen has the manufacturing, supply chain and commercial knowledge due to its past experience. Amgen is expected to bring in upwards of $3bn from its biosimilars. </p><p>Biosimilars have the ability to change the drug landscape in a profound way, much like generic drugs changed the market. Drug pricing has been a polarizing issue for the market recently, coming to a head as politicians jockeying for a chance at US president have taken on the issue. </p><p>Novartis got approval for the first biosimilar in the US in mid-August. The company launched the copycat version of one of Amgen's top-selling drugs Neupogen this month. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 30
+
+Amgen Preps Avastin Biosimilar
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150924T050000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150924T050000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150924T050000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029859
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 30
+
+Amgen Preps Avastin Biosimilar
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360562
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f0f504b5-e3b3-4e6d-99d6-8f10409ff671
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042455Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

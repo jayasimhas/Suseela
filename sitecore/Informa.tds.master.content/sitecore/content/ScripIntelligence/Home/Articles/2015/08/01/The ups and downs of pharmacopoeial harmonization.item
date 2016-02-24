@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {A9D00A12-7409-4C15-88E0-16382B7C73C1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/01/The ups and downs of pharmacopoeial harmonization
+parent: {E61C934D-419F-4703-A09B-2A315163F802}
+name: The ups and downs of pharmacopoeial harmonization
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 75ed8c2c-131c-4ea0-b3c4-947a256103d1
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{EBE9B072-7313-4B27-B849-CB50CD3B42E6}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 49
+
+The ups and downs of pharmacopoeial harmonization
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+The ups and downs of pharmacopoeial harmonization
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 17014
+
+<p>As drug regulation becomes more global in nature, international trade continues to expand, and drug substances are increasingly manufactured using biotechnology techniques, the European Pharmacopoeia Commission is taking steps to develop more harmonized international quality standards, and is also extending its reach to encompass the quality of finished products rather than just pharmaceutical substances. </p><p>Among the commission's key initiatives are a bilateral harmonization project for active pharmaceutical ingredients (APIs), encouraging more global collaboration among the pharmacopoeias, and the drafting of the first finished product monograph. It is also working to align pharmacopoeial standards with the new guideline on limiting metal impurities that was adopted by the International Conference on Harmonization (ICH) in December 2014.</p><p>However, progress is not always smooth, and a number of issues tend to crop up to hinder harmonization efforts, such as different expectations and practices in the various regions, and tensions between regulatory requirements and the practical realities of meeting them. </p><p>The European Pharmacopoeia (PhEur), which celebrated its 50th anniversary last year, lies at the heart of drug quality standards in Europe. It contains monographs defining the requirements for the qualitative and quantitative composition of active substances, excipients and other preparations, and includes texts on biologicals, blood derivatives and vaccines. Its requirements are legally binding in the 37 member states of the PhEur and the EU, and are part of the regulatory requirements for obtaining a marketing authorization for medicinal products.</p><p>Its governing body is the European Pharmacopoeia Commission, while administrative and scientific support for the PhEur is provided by the European Directorate for the Quality of Medicines and HealthCare (EDQM), which is part of the Council of Europe. The PhEur and its counterparts in the US and Japan are the world's three major pharmacopoeias, and with increasing globalization and the expansion in international trade, harmonized quality standards among the three are needed to facilitate product registration and monitoring and &ndash; as far as possible &ndash; free movement of, and trade in, medicines. </p><p>To this end the European Pharmacopoeia Commission works closely with the ICH, whose tripartite guidelines on quality and other issues are the gold standard for regulators across the world. The PhEur and the US and Japanese pharmacopoeias form the Pharmacopoeial Discussion Group (PDG), which leads the international talks on closer alignment of standards. </p><p>2014 was a landmark year for the PhEur and its secretariat. To mark its 50th anniversary, on October 6-8 an international conference was held entitled "EDQM: 50 years of leadership in the quality of medicines &ndash; paving the way for the future", at which progress on key topics was discussed and a number of recommendations made. </p><p>The recommendations covered a wide range of topic areas, from pharmacopoeial harmonization through the finished product monograph initiative and biological standards, to certification of APIs and the implementation of "quality by design" (QbD) principles. At its 150th session in November, the commission noted these recommendations and said they would be considered when reviewing its expert group work program on 17-18 March 2015.</p><h2>New impurities guideline adopted</h2><p>Among recent developments discussed at the conference was the new ICH guideline on limiting elemental impurities in drug products and ingredients. The Q3D guideline, which was adopted in December and is now due for implementation in the ICH regions, is intended to provide a global policy for limiting metal impurities qualitatively and quantitatively in drug products and ingredients. It covers the establishment of permitted daily exposures (PDEs) and offers controls to limit impurities, using principles of risk management, and complements earlier guidelines on organic impurities and residual solvents.</p><p>Elemental impurities can arise from numerous sources: for example they may be residual catalysts added in synthesis or be present as impurities through interactions with equipment or as a drug product component. As they provide no therapeutic benefit, their levels in the drug must be contained within acceptable limits. </p><p>EDQM director Susanne Keitel says the adoption of the Q3D guideline is one of the most important recent developments in the drug quality area, and that its standards will now have to be incorporated into the PhEur. Initially it will apply only to new drug products, but after 36 months it will also affect existing products. Harmonization considerations played an important part in the drafting of the guideline, with a special implementation working group being set up to ensure its uniform interpretation and implementation.</p><p>Products containing purified proteins and polypeptides (including proteins and polypeptides of recombinant or non-recombinant origin), their derivatives and products of which they are components (eg conjugates) are also within the scope of this guideline, as are products containing synthetically produced polypeptides, polynucleotides, and oligosaccharides.</p><p>"We need to ensure we reflect the requirements of the guideline in the European Pharmacopoeia too," Dr Keitel said in an interview with <i>Scrip</i>. "The European Pharmacopoeia Commission has developed a strategy for how to implement ICH Q3D in future, and this will be in line with the timelines of the regulators". Q3D, she said, defines the limits of elemental impurities "but it does not talk about the methods. So clearly everyone is looking to the pharmacopoeias and asking them to come up with a harmonized general message on the control of elemental impurities."</p><p>She said bringing European standards in line with those of the ICH was often an uphill task. "We are quite advanced in Europe but if there is an ICH guideline it may not always reflect what is required in Europe so there are always changes to be made. </p><p>Looking at the role of the PhEur in the drafting of the guideline, Dr Keitel said the EDQM took part in its development as an observer, and is also a member of the ICH implementation working group on starting materials. "We have close links with the European regulators at the level of the working parties of the European Medicines Agency. At commission sessions we get reports on what these parties are doing. In addition, representatives of national competent authorities and the EMA take part in the work of the commission and its expert groups." </p><p>"In a way we are in a privileged position, particularly if you compare us with the US Pharmacopeia, which is not embedded in the regulatory network as we are. The USP is a private organization and there is no such close interaction with the FDA."</p><h2>Other areas</h2><p>While Q3D is "the hot topic for the time being", a lot of other standards work is under way, including a new guideline on genotoxic impurities and principles for the justification of starting materials for the manufacture of drug substances (Q11), Dr Keitel noted. </p><p>The ICH Steering Committee has also decided to set up an expert working group on ICH Q12, which covers life cycle management, "so there is continuous development and we need to follow changes in our regulatory environment to ensure we stay up to date".</p><p>Another area where the PhEur must seek alignment with other agencies' guidance is antibiotic impurities. In June 2013 an EMA guideline on setting specifications for related impurities in antibiotics came into effect, which noted that the impurity profiles of antibiotics maybe more complex and less predictable than for purely synthetic products because the manufacturing process involves a fermentation stage. </p><p>This, said Dr Keitel, was another "hot topic" where there are tensions between regulatory requirements and the practical reality. The EMA guideline "basically goes in the same direction as ICH Q3A [on impurities in new drug substances], whereas most monographs on antibiotic active substances have impurity limits that are wider than those described in this guideline," Dr Keitel said. "There has been some debate on this among the regulators. It is easy for the regulators to say, apply this limit, but it might be a practical hurdle for industry to achieve it, which is why we say that there needs to be the right balance between regulatory science and what can reasonably be achieved."</p><h2>Finished product monographs</h2><p>Following a pilot project that was initiated back in 2012, the European Pharmacopoeia Commission decided in March 2014 to begin working on monographs of finished products containing chemically defined active substances and still under patent protection. </p><p>In May that year the first draft finished product monograph (FPM), on sitagliptin phosphate, was published for consultation. The commission said that it would initially focus on single-source finished products that were likely to be manufactured as generics in future, although it did not rule out such monographs on multisource products.</p><p>While this was a new departure that would expand the scope of the PhEur, the commission was at pains to stress that it was "not a change in paradigm": monographs on finished products already exist in the PhEur, but these are limited to specific kinds of product such as vaccines and certain biologicals. </p><p>Dr Keitel said that the PhEur may have existed for 50 years without having finished product monographs of this kind, "but at the international level there is clearly a demand for them and this has been recognized". The decision was mainly triggered by the need to think about the future of the PhEur at global level, as there are many countries that are keenly interested in finished product monographs. </p><p>After the October conference, the commission said that in a globalized world the need for monographs on chemically defined finished products was "undisputed" and that they would facilitate the assessment of marketing authorization applications and make it easier to compare and test products on the market. It cautioned, however, that, as with active substances, the presence of a monograph would not replace the need to submit the quality documentation in Module 3 of the dossier, and that the applicant would need to show the suitability of the monograph to adequately control the quality of the drug.</p><p>Participants at the meeting also said monographs needed to be harmonized among the various pharmacopoeias, and wanted more information on the principles of elaborating and revising monographs. Industry representatives were keen to be more closely involved in discussions on the elaboration and revision of FPMs. </p><p>The commission will discuss comments received on the sitagliptin monograph in March this year. "I'm pretty sure we will adopt the first monograph of a finished product containing a chemically defined active substance sometime in 2015," Dr Keitel said. </p><h2>APIs</h2><p>Another area where harmonization is under way is in active pharmaceutical ingredients (APIs), including the bilateral prospective harmonization pilot with the US Pharmacopeia (USP), which kicked off in 2008. </p><p>While general monographs and excipient harmonization is ongoing at the level of the PDG, the same cannot be said of APIs, where harmonization has been difficult because of different approaches and traditions, and stakeholders' differing needs in the three ICH regions.</p><p>The aim of the pilot was to prospectively develop harmonized API monographs for products still under patent, with sponsors submitting identical data packages to the EDQM and the USP. But while four harmonized monographs have been adopted by the two organizations, experience with their life-cycle management is still lacking, "and the two pharmacopoeias have found the process a bit tedious", Dr Keitel said. "We still need to come to a final conclusion on whether to open the procedure to additional substances," she added. "This will be done, I guess, in January 2015. We need to sit down together but I think we will go for a more informal harmonization process."</p><h2>Quality by Design</h2><p>Quality advances have been made in other regulatory areas too, notably Quality by Design (QbD) and Process Analytical Technology (PAT), and the PhEur has set up a working group to keep up with developments in this field, in close collaboration with the European Medicines Agency, which in 2012 launched a joint pilot program for the parallel assessment of those sections of marketing authorization dossiers that are relevant to QbD &ndash; a program that was last year extended for a further two years.</p><p>It was explained at the October conference that the PhEur already provides a framework for applying QbD principles in its General Notices and some specific chapters, and so it does not represent any kind of disincentive to the implementation of QbD or the use of innovative technologies. Moreover, there are different ways of complying with the PhEur monograph requirements, including both the traditional and the QbD approach, and delegates heard that the use of alternative methods could be facilitated by providing additional tools. </p><p>It was suggested that more information and experience were needed before the PhEur could implement an agreed common practice on the application of analytical QbD principles.</p><p>However, Dr Keitel is not overly impressed by the QbD endeavour in general, telling Scrip that it has been "a bit disappointing" and that it is something of a buzzword. "I used to work in the pharmaceutical industry, in development, we knew what we wanted to develop, but the term 'target product profile' had not been invented yet. What is important is the idea of sound development, and to have a good understanding of the process and the formulation."</p><p>Looking at the number of marketing authorization applications submitted in Europe that include QbB elements, "the number is not that impressive. But you have to be realistic and acknowledge that if you really want to understand the interaction of all the different parameters, you also have to invest a lot. I think this is the point where the pharmaceutical industry has often realised that they cannot apply this approach to every product. They will also not do it from the beginning of development, but only when they know it will be a good product." The term quality by design "implies that you apply the principle right from the beginning but it makes sense to wait until you have the first results of trials to see if the product will fly, whether it is effective or not".</p><h2>Certification issues</h2><p>The Certificate of Suitability (CEP) is a well established system for assessing pharmaceutical substances and for inspections of manufacturers. A CEP certifies that the quality of a given substance cab be suitably controlled by the existing PhEur monograph and therefore with the requirements of the pharmaceutical legislation of the EU and the member states of the PhEur Convention. </p><p>Manufacturers of APIs, excipients or herbal substances used to produce pharmaceutical products covered by a monograph can apply for a CEP. Assessment of the quality documentation submitted for certification purposes is complemented by an inspection program to verify compliance with the CEP application and with GMP at the sites covered by the CEP.</p><p>Delegates at the conference agreed that the CEP system benefits both the authorities and industry, helping to conserve resources, improve harmonization in assessment and inspections, and exchange knowledge among authorities. Appreciation was also expressed of the clear procedures and timelines, as well as overall transparency, of the certification procedures. However, variations were noted in the amount of information exchanged between the API manufacturer (CEP holder) and the marketing authorization applicant or holder, and it was agreed that steps should be taken to ensure that sufficient information is shared to allow the MAA/MAH to fulfil their responsibilities for the quality of the API and the finished product. </p><p>Moreover, the system is facing some new challenges relating to the implementation of the new ICH guidelines on genotoxic and elemental impurities (M7 and Q3D), so the assessment of CEP applications, and probably the content of CEPs, will need to be adapted accordingly. </p><p>Delegates also urged the EDQM to promote the certification procedure further and to encourage more authorities outside the PhEur member states to accept CEPs, and to promote further international collaboration in the field of API inspections in order to reduce the burden on producers caused by duplicate checks of manufacturing plants.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 416
+
+<p>As drug regulation becomes more global in nature, international trade continues to expand, and drug substances are increasingly manufactured using biotechnology techniques, the European Pharmacopoeia Commission is taking steps to develop more harmonized international quality standards, and is also extending its reach to encompass the quality of finished products rather than just pharmaceutical substances. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+The ups and downs of pharmacopoeial harmonization
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150801T160001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150801T160001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150801T160001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027508
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 49
+
+The ups and downs of pharmacopoeial harmonization
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356021
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+75ed8c2c-131c-4ea0-b3c4-947a256103d1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042231Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

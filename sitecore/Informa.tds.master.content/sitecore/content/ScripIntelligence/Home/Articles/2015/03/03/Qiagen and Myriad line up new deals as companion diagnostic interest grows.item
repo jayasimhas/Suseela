@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {1221F41A-0948-4F82-94C1-FA5307D4E3FA}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/03/Qiagen and Myriad line up new deals as companion diagnostic interest grows
+parent: {87D20D5F-7D37-47C8-85FB-AD55F723C452}
+name: Qiagen and Myriad line up new deals as companion diagnostic interest grows
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c24026c8-b367-46a1-91e1-a4054b5648c5
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 74
+
+Qiagen and Myriad line up new deals as companion diagnostic interest grows
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 74
+
+Qiagen and Myriad line up new deals as companion diagnostic interest grows
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5085
+
+<p>Two of the big companion diagnostic players, Qiagen and Myriad Genetics, have signed new deals, reflecting the growing importance of the sector.</p><p>Qiagen's agreement is in the hot area of circulating tumor cells (CTCs): these cells are shed by tumors into the circulation, so collecting and analyzing them from a blood sample could provide a less invasive way of looking at cancer than traditional biopsy.</p><p>The Dutch firm is teaming up with Tokai Pharmaceuticals to co-develop and commercialize a companion diagnostic that will incorporate a CTC enrichment and analysis technology it has just gained through the acquisition of AdnaGen, a subsidiary of Alere. The companion diagnostic is for Tokai's investigational drug galeterone, which is in late-stage clinical trials for treatment of castration-resistant prostate cancer. The test will determine the expression of the AR-V7 biomarker; the drug has US FDA fast-track status and is expected to enter a Phase III trial, ARMOR3-SV, in the first half of 2015, where it will be used with the companion diagnostic.</p><p>Financial details were not disclosed for either the Tokai or AdnaGen deal.</p><p>Qiagen also gained other assets from AdnaGen including AdnaTest BreastCancer and AdnaTest Prostate Cancer, which are already CE marked for sale in Europe for treatment monitoring and earlier detection of tumor relapse.</p><h2>CTCs and ctDNA</h2><p>Until now, Qiagen has been more active in the related area of circulating tumor DNA (ctDNA), which is released from dead cancer cells into the bloodstream. In January, it CE marked what it claims is the first liquid biopsy companion diagnostic, the therascreen EGFR RGQ Plasma PCR kit, which detects ctDNA. It is used in patients with non-small cell lung cancer (NSCLC) to identify which of them could benefit from treatment with AstraZeneca's Iressa (gefitinib), when tumor tissue is not available or evaluable.</p><p>ctDNA is easier to detect than CTCs, but CTCs can provide more information, for example RNA and protein expression.</p><p>However, one problem with CTCs is their scarcity: there is typically just one CTC in one billion blood cells. AdnaGen's technology could help address this, Qiagen believes. "It enriches disease specific tumor cells using magnetic particles in an antibody mixture, an approach called immunomagnetic cell enrichment, then isolates and purifies messenger RNA (mRNA) for analysis using reverse transcription polymerase chain reaction," the company stated.</p><p>Much of AdnaGen's portfolio was already being built on Qiagen's platforms, it added. The AR-V7 test will run on the latter's Rotor-Gene Q MDx detection platform.</p><p>Qiagen is also working in a different area, exosome isolation, in collaboration with Exosome Dx. These microvesicles are shed by cells as part of a biological communication system.</p><h2>Myriad and BioMarin</h2><p>Meanwhile, Myriad Genetics has extended its partnership with BioMarin Pharmaceutical, allowing the latter to use its myChoice HRD companion diagnostic test to prospectively identify patients with metastatic breast, ovarian and potentially other tumor types that may be sensitive to its investigational cancer drug talazoparib, a poly-ADP ribose polymerase (PARP) inhibitor.</p><p>Financial terms were not disclosed.</p><p>The myChoice HRD (homologous recombination deficient) test looks at whether or not the homologous recombination repair pathway is working in the tumor. If the test is positive, it means there's a faulty DNA repair pathway and that the tumor will respond to platinum chemotherapy or other DNA-damaging drugs; while a negative test means the HRD pathway is working and that the tumor is less likely to respond, Myriad has previously told <i>Scrip</i>'s sister publication <i>Clinica</i>.</p><p>The company also said at the time that it was investigating the test alongside PARP inhibitors, which fits with the latest deal.</p><p>myChoice HRD is not currently commercially available, but Myriad has previously said it plans to provide it to "certain US institutions" in June or July, followed by "a full commercial launch sometime soon after that." It could become the first HRD test to go on sale, the firm believes.</p><p>Myriad and BioMarin have worked together since September 2013, when BioMarin began using Myriad's BRACAnalysis CDx companion diagnostic test in its pivotal Phase III EMBRACA and Phase II ABRAZO studies of talazoparib for advanced or metastatic breast cancer patients carrying BRCA mutations.</p><p>BRACAnalysis CDx is already US FDA-approved as a companion diagnostic along with AstraZeneca's ovarian cancer drug Lynparza (olaparib), another PARP inhibitor.</p><p>Companion diagnostics is becoming an increasingly important area for Myriad, which until recently has been more famous for its genetic risk testing offering.</p><p>This article was first published in <a href="http://www.clinica.co.uk/marketsector/ivds/Qiagen-and-Myriad-line-up-new-deals-as-companion-diagnostic-interest-grows-357357" target="_new">Clinica Medtech Intelligence</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 151
+
+<p>Two of the big companion diagnostic players, Qiagen and Myriad Genetics, have signed new deals, reflecting the growing importance of the sector.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 74
+
+Qiagen and Myriad line up new deals as companion diagnostic interest grows
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150303T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150303T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150303T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028171
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 74
+
+Qiagen and Myriad line up new deals as companion diagnostic interest grows
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{6B0DE3A8-39EC-48B6-800A-BA8DAF5799A4}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+pdfNewsLetter
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357301
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042314Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c24026c8-b367-46a1-91e1-a4054b5648c5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042314Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

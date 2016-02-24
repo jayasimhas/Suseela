@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {49F39EBC-3C03-4668-884B-18D0D4C0D0D0}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/06/India shapes plan to revitalize cutprice generics scheme
+parent: {9420E9E4-E588-4E07-B3AA-A88766CBCFBC}
+name: India shapes plan to revitalize cutprice generics scheme
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: b86df1b4-9ba3-4e8e-a7e0-5cdfbe132364
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{9557EF58-727F-4007-9C73-6232F381DFF1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+India shapes plan to revitalize cut-price generics scheme
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+India shapes plan to revitalize cutprice generics scheme
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4263
+
+<p>India has outlined a set of initiatives to revive its thus far "unsatisfactory" "Jan Aushadhi" cut-price generic medicines scheme, including a distribution effort beyond the exclusive stores for these products and potentially even offering online purchases and home delivery.</p><p>"The department of pharmaceuticals [DoP] is revisiting the [Jan Aushadhi] scheme plan and formulating a strategic action plan 2015 with a paradigm shift to make quality medicines accessible through affordability and availability," details in the DoP's annual report for 2014-15 said.</p><p>The blueprint of the action plan lists efforts to implement a new distribution system expanding beyond the exclusive Jan Aushadhi stores in retail markets through retailers and franchisees with "signage exclusivity"; improved supply chain management; value added services in partnership with other service providers &ndash; online/home delivery, post offices, co-operatives, insurance agencies &ndash; and; "recognition" of doctors, distributors and retailers and NGOs actively engaged in generics. </p><p>These initiatives are expected to be backed by "advocacy and perception management" efforts concerning the quality of Jan Aushadhi medicines for brand building and also "team-building" efforts with all stakeholders such as the prescribing physicians, the Medical Council of India, the chemists and druggists association, consumer associations and state governments, by addressing their respective concerns.</p><p>A pilot initiative under the strategic action plan is expected to be launched during 2015-16 and this would be expanded across the country in the following three years covering all therapeutic groups, details in the report suggested.</p><p>Some industry experts, though, claimed that the department's plans are akin to "putting the cart before the horse", given that the Jan Aushadhi scheme in the brick and mortar format has been plagued by inadequate last-mile distribution planning, uncertainty over supplier payments and concerns around trade margins.</p><h2>Poor performance</h2><p>The general poor performance of the Jan Aushadhi scheme is well documented in the department's annual report, which notes that against the target of opening one Jan Aushadhi store in each of the 630 districts, only 157 such stores were opened up till September 2013. Worse still, of these, only 97 such stores were operational. </p><p>As of 19 February 2015, 176 Jan Aushadhi stores had been opened, 14 of these in 2014-15.</p><p>Jan Aushadhi outlets offer unbranded generic medicines and the first store was launched in Amritsar in November 2008. Unbranded versions of medicines such as amlodipine, atorvastatin and tramadol have been available at Jan Aushadhi stores at a fraction of the prices of some of their branded equivalents. The government had earlier <a href="http://%5bhttp:/www.scripintelligence.com/policyregulation/India-unveils-reinvented-cut-price-generic-supply-plan-346976%5d" target="_new">reviewed the list of drugs</a> for sale at Jan Aushadhi stores, expanding its coverage to include more medicines across therapeutic categories. </p><p>The Public Health Foundation of India, which was earlier tasked with studying the scheme and suggesting remedial measures, had referred to a clutch of shortcomings including an over-dependence on support from the state governments, poor supply chain management, non-prescription of generic medicines and the state governments launching their own free supply of generic drugs.</p><p>Subsequently, a new business plan was approved in 2013, which included a host of suggestions including sourcing drugs from the private sector as well. While certain central public sector undertakings have the "first claim" to supply a clutch of products under the Jan Aushadhi scheme, the government has been keen to supplement supplies by direct purchase of medicines from the private sector companies through the open tender process. <a href="http://%5bhttp:/www.scripintelligence.com/business/Why-Indias-generics-program-may-have-few-private-sector-takers-357018%5d" target="_new">Initial private sector interest</a> in such tenders, however, appeared tepid, though the latest position on this could not immediately be ascertained. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 282
+
+<p>India has outlined a set of initiatives to revive its thus far "unsatisfactory" "Jan Aushadhi" cut-price generic medicines scheme, including a distribution effort beyond the exclusive stores for these products and potentially even offering online purchases and home delivery.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+India shapes plan to revitalize cutprice generics scheme
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151106T170004
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151106T170004
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151106T170004
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029016
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+India shapes plan to revitalize cut-price generics scheme
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200700019
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358904
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042409Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b86df1b4-9ba3-4e8e-a7e0-5cdfbe132364
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042409Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {51DFF33B-1DE2-44F9-BC43-671F97287698}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/09/02/GSK bolsters vaccine portfolio ahead of Novartis influx
+parent: {9FFE365E-7EE2-4DAD-9283-04CCF7E1CC74}
+name: GSK bolsters vaccine portfolio ahead of Novartis influx
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: e494c88a-f26a-4a4e-b5d3-e1e9d5c481ff
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{1D288E18-BAFF-4498-B284-EF9BC8D32E30}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 55
+
+GSK bolsters vaccine portfolio ahead of Novartis influx
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 55
+
+GSK bolsters vaccine portfolio ahead of Novartis influx
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3389
+
+<p>GlaxoSmithKline has acquired GlycoVaxyn, a Swiss vaccine developer, in a deal that values the privately-held firm at around $212m. </p><p>The companies have been collaborating since 2012, and GSK has held a minority stake in GlycoVaxyn since then. It paid $190m to purchase the remaining stake in the company.</p><p>GlycoVaxyn has a biological conjugation platform which is being used to develop a new generation of conjugate vaccines against major bacterial infections. The technology makes it possible to produce conjugate vaccines in bacterial cells through recombinant DNA methods, rather than chemical conjugation. Recombinant DNA technology delivers versatility to the vaccine development and manufacturing process, broadening the range of potential indications over traditional chemical conjugation technology. It also simplifies the manufacturing process. </p><p>"The technology has potential to be a game-changer because the platform is very powerful," Gilles Nobecourt, a partner at Edmond de Rothschild Investment Partners (EdRIP) told <i>Scrip</i>. EdRIP led GlycoVaxyn's series B financing in 2009. Mr Nobecourt believes GSK paid "a fair price" for the Swiss firm.</p><p>GlycoVaxyn is in Phase I trials with a vaccine candidate against E. coli infections and is expected to initiate a Phase I for a vaccine against Shigellosis (severe diarrhea) in the US in the first quarter 2015 with the financial support of the Wellcome Trust. </p><p>GSK said it planned to collaborate with the GlycoVaxyn management team to develop ways of working that would "maintain the autonomy and agility of GlycoVaxyn whilst delivering the scale and support that GSK can provide."</p><p>Its investors include the VC firms Sofinnova Partners, Index Ventures and EdRIP. GlycoVaxyn also received funding from the Wellcome Trust and through a collaboration with Janssen Pharmaceuticals (<a href="http://www.scripintelligence.com/business/Janssen-signs-exclusive-deal-for-multivalent-vaccine-development-with-GlycoVaxyn-338934" target="_new">scripintelligence.com, 10 January 2013</a>).</p><p>The company was spun off from the Swiss Federal Institute of Technology in Zurich (ETHZ) in 2004.</p><p>Dr Moncef Slaoui, GSK's vaccines head, said the acquisition was an opportunity "to expand our research efforts to develop a new generation of vaccines for common and severe bacterial infections, for many of which there are currently no effective vaccines." The deal also "complements" its proposed transaction with Novartis "which will strengthen our leading position in vaccines."</p><p>GSK and Novartis announced their mega asset-exchange deal last April (<a href="http://www.scripintelligence.com/home/Novartis-in-28.5bn-mega-deal-with-GSK-Lilly-351395" target="_new">scripintelligence.com, 22 April 2014</a>). </p><p>In the deal, which is set to close in the coming months, Novartis is to divest its vaccines business to GSK, while GSK will transfer its oncology products to Novartis. The two companies will combine their over-the-counter and consumer healthcare businesses in a joint venture. </p><p>Following its close, GSK CEO Sir Andrew Witty has not ruled out a major corporate restructuring of the company (<a href="http://www.scripintelligence.com/home/GSKs-2014-revenues-fall-but-shares-climb-on-upbeat-respiratory-talk-356544" target="_new">scripintelligence.com, 4 February 2015</a>). </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 138
+
+<p>GlaxoSmithKline has acquired GlycoVaxyn, a Swiss vaccine developer, in a deal that values the privately-held firm at around $212m. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 55
+
+GSK bolsters vaccine portfolio ahead of Novartis influx
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150902T043547
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150902T043547
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150902T043547
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027790
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 55
+
+GSK bolsters vaccine portfolio ahead of Novartis influx
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356612
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e494c88a-f26a-4a4e-b5d3-e1e9d5c481ff
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042251Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

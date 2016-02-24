@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {296ED227-38B7-4956-A283-51257C91E8D5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/02/Enter Tata Capital as Sequoia exits Sai Life
+parent: {F07BDF72-8313-4021-A765-C4ED157C5731}
+name: Enter Tata Capital as Sequoia exits Sai Life
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: ba6fcba5-013b-4a3b-b5bf-0be146c4f1ad
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{3B33748A-17E9-4241-8447-989BB3484DFB}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{FBF300D9-7F56-474B-AF10-4F295E1F7FDD}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 45
+
+Enter Tata Capital as Sequoia exits Sai Life?
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 44
+
+Enter Tata Capital as Sequoia exits Sai Life
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3643
+
+<p>Venture capital firm Sequoia, is said to have exited Sai Life Sciences, an Indian contract research organization (CRO) that provides discovery and developmental support services to biotech and pharmaceutical companies.</p><p>Investment banking sources told <i>Scrip</i> that Sequoia had divested its holding, bringing in Tata Capital, though they reckon that the former's returns may not have been very large.</p><p>Sequoia was reported to have invested about $12.5m for about 19% in the Hyderabad-based Sai in 2007 &ndash; right at the peak of such inflows.</p><p>Sequoia did not immediately respond to an e-mail query from <i>Scrip</i> while Tata Capital declined to comment on the transaction. </p><p>Established in 1999, Sai offers a range of integrated drug discovery, development and formulation services, with its core expertise based on synthetic, medicinal and process chemistry. It also offers a suite of preclinical support services including drug metabolism and pharmacokinetics (DMPK), toxicology and formulation. </p><p>The firm has six R&D and manufacturing facilities in and around the Indian cities of Hyderabad and Pune. It has an FDA-approved manufacturing unit and GMP (good manufacturing practice) intermediate facility for contract manufacturing, details on the firm's website suggested. </p><p>In the area of active pharmaceutical ingredients (APIs), Sai is focused on complex products such as prostaglandins and vitamin D analogues. Its API portfolio includes ribavirin, pimozide and milrinone. </p><p>On whether regulatory headwinds had dulled the prospects of the Indian CRO segment in general with firms like Sai perhaps realigning their focus in the short term, an industry expert with knowledge of the deal said that the evolving regulatory scenario in the EU and US had put a greater emphasis on Big Pharma's ''selection criteria'' for CROs and contract manufacturing organizations (CMOs). </p><p>''From an Indian CRO/CMO stand-point, those players who are able to supply APIs/intermediates as per global GMP and compliance standards would be better positioned to capture a higher wallet share of Big Pharma's outsourcing requirement. This would lead to industry consolidation and few concentrated preferred suppliers for each of the large firms,'' the expert told <i>Scrip</i>.</p><p>Speculation has been rife on the shut-down of a clutch of smaller and fringe players in the Indian CRO segment and the recent events around GVK Biosciences, observers say, has only added to business pressures for some, though it has also potentially opened up opportunities for others. GVK is currently in the eye of a storm after the French medicines agency ANSM uncovered data manipulation <a href="http://%5bhttp:/www.scripintelligence.com/home/Hundreds-of-generics-face-European-ban-following-GVK-breaches-356345%5d" target="_new">(scripintelligence.com, 23 January 2015)</a>, though the Indian CRO has claimed the actions of European agencies were overblown.</p><p>Significantly, Sequoia was earlier also reported to be looking at exiting its investment in GVK Biosciences <a href="http://%5bhttp:/www.scripintelligence.com/business/More-PE-action-likely-in-India-as-Sequoia-eyes-exit-from-Sai-Life-350443%5d" target="_new">(scripintelligence.com 7 March 2014)</a>. An update on that could not immediately be got. Sequoia had invested about INR1bn (about $25.1m then) for a 20% stake in GVK Biosciences in 2007 <a href="http://%5bhttp:/www.scripintelligence.com/home/news/Sequoia-invests-in-Indian-Contract-Research-Organisation.-GVK-Biosciences-38184%5d" target="_new">(scripintelligence.com 28 November 2007)</a>. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 225
+
+<p>Venture capital firm Sequoia, is said to have exited Sai Life Sciences, an Indian contract research organization (CRO) that provides discovery and developmental support services to biotech and pharmaceutical companies.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 44
+
+Enter Tata Capital as Sequoia exits Sai Life
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150602T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150602T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150602T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027778
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 45
+
+Enter Tata Capital as Sequoia exits Sai Life?
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 12
+
+Face-to-Face
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356588
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ba6fcba5-013b-4a3b-b5bf-0be146c4f1ad
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

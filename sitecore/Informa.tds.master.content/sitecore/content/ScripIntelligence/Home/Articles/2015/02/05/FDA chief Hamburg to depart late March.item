@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {5EFE21AF-6F04-4266-B43E-66CCB722F8E5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/05/FDA chief Hamburg to depart late March
+parent: {2A166308-1748-463F-A725-121DAA36D4E7}
+name: FDA chief Hamburg to depart late March
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 01c4dbe2-8505-4310-abb3-cd874c991636
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 38
+
+FDA chief Hamburg to depart late March
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 38
+
+FDA chief Hamburg to depart late March
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 9586
+
+<p>Dr Margaret Hamburg, the first African-American woman to serve as US FDA commissioner, is stepping down at the end of March after six years in the job.</p><p>In a memo to her staff on 5 February, Dr Hamburg said that on her departure, the agency's chief scientist, Dr Stephen Ostroff, will serve as the acting commissioner for the time being.</p><p>It has been widely rumored a possible contender for the next commissioner is Duke University's Dr Robert Califf, who is joining the FDA this month as the new deputy commissioner for medical products and tobacco (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Dukes-Califf-takes-deputy-job-at-FDA-next-chief-356386" target="_new">26 January 2015</a>).</p><p>Dr Hamburg&rsquo;s exit comes as the House and the Senate are mulling over new reforms for the FDA and the National Institutes of Health under two initiatives: 21st Century Cures and Healthy Americans, respectively (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Senators-jump-on-accelerating-cures-bandwagon-356448" target="_new">28 January 2015</a>, <a href="http://www.scripintelligence.com/home/21st-Century-Cures-proposals-unveiled-trouble-already-356411" target="_new">29 January 2015</a>).</p><p>Only the second woman to hold the top post at the FDA, the Harvard Medical School-educated Dr Hamburg was easily confirmed by the US Senate on 18 May 2009, being sworn into the job four days later.</p><p>For most of the 1990s, she served as the commissioner for the New York City Department of Health and Mental Hygiene, where she helped to curb the spread of tuberculosis. </p><p>In her New York post, Dr Hamburg was the first health chief in the US to initiate a bioterrorism defense program.</p><p>She also led efforts on needle exchanges to reduce the spread of HIV while in New York.</p><p>In the 1980s, Dr Hamburg pursued AIDS research at the National Institute of Allergy and Infectious Diseases, where she became the assistant director &ndash; working alongside that agency's chief, Dr Anthony Fauci. </p><p>Dr Hamburg said she was stepping down with "mixed emotions."</p><p>"As you can imagine, this decision was not easy," she said, declaring that her time leading the FDA has been the "most rewarding of my career." </p><p>Dr Hamburg has led the FDA's move to be an agency focused on "regulatory science" &ndash; aiming to close critical gaps in the agency's scientific knowledge required to support regulatory decision-making to facilitate translation of new technologies and basic science discoveries into real-world diagnostics, treatments and cures (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/US-FDA-outlines-regulatory-science-strategy-320258" target="_new">22 August 2011</a>, <a href="http://www.scripintelligence.com/policyregulation/FDAs-strategy-Smart-regulating-doing-more-with-less-352638" target="_new">3 July 2014</a>). </p><p>Over her tenure, Dr Hamburg has had to face tight budgets &ndash; something that has impeded efforts to keep talented staff on board, although it has not stood in the way of recent near-record approvals of drugs (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Staffing-woes-hamper-FDA-but-approvals-remain-high-355625" target="_new">12 December 2014</a>).</p><p>President Obama is only seeking a modest increase in the FDA's budget for fiscal year 2016 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/Obama-outlines-spending-wish-lists-for-FDA-NIH-356508" target="_new">3 February 2015</a>).</p><p>But the FDA recently was able to bring about 1,000 new scientists and other staff to the agency thanks to new generic user fees under the <i>Food and Drug Administration Safety and Innovation Act</i>, signed into law by President Obama in July 2012 (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Somethings-rotten-in-Washington-Whatever-347799" target="_new">4 November 2013</a>, <a href="http://www.scripintelligence.com/home/All-too-easy-Obama-signs-US-FDA-user-fee-bill-without-fanfare-332602" target="_new">10 July 2012</a>).</p><p>It was under Dr Hamburg's watch, however, that the US faced a nationwide outbreak of fungal meningitis, in which 751 people were sickened, with 64 dying from contaminated compounded products mixed by a Massachusetts pharmacy, New England Compounding Center (NECC), which is now out of business and its lead owner and pharmacist jailed and awaiting trial under second-degree murder charges (scripintelligence.com, <a href="http://www.scripintelligence.com/home/ARRESTED-Compounders-of-tainted-steroids-face-life-in-prison-355717" target="_new">17 December 2014</a>).</p><p>The FDA and the Centers for Disease Control and Prevention confirmed the presence of Exserohilum rostratum in vials of methylprednisolone compounded by Framingham, Massachusetts-based NECC.</p><p>Regulators discovered what they called "greenish black foreign matter" and "white filamentous material" in vials of NECC's injectable methylprednisolone.</p><p>Also very visible to the naked eye was overgrowth of mold and bacteria in several places throughout NECC's facility, including in the so-called "clean rooms," which normally are supposed to be sterile environments, the FDA reported last year.</p><p>Dr Hamburg was hauled before Congress to explain how tainted products could be shipped to hundreds of doctors' offices and kill so many people in the US (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-FDA-chief-blames-crazy-quilt-of-legal-powers-for-compounding-debacle-337240" target="_new">15 November 2012</a>).</p><p>She insisted the heart of the problem was the patchwork of state and federal laws (scripintelligence.com, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Meningitis-outbreak-spotlights-fuzzy-pharmacy-compounding-oversight-335832" target="_new">12 October 2012</a>, <a href="http://www.scripintelligence.com/home/FDA-official-Regulating-compounding-pharmacies-a-catch-22-for-feds-336094" target="_new">8 October 2012</a>).</p><p>Dr Hamburg later acknowledged, however, that under her rein, the FDA had made no formal attempts to change the compounding situation in the US before the NECC deaths had occurred (scripintelligence.com, <a href="http://www.scripintelligence.com/home/FDA-chief-No-formal-efforts-for-change-before-NECC-deaths-but-time-is-now-338439" target="_new">20 December 2012</a>, <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-No-sign-FDA-chief-sought-stronger-powers-before-meningitis-crisis-336852" target="_new">5 November 2012</a>, <a href="http://www.scripintelligence.com/home/How-vigorously-has-US-FDA-pursued-stronger-compounding-oversight-336655" target="_new">29 October 2012</a>).</p><p>Congress reacted in November 2013 by passing the <i>Drug Quality and Security Act</i>, which established a new category of pharmacies engaged in large-volume compounding without individual prescriptions, known as outsourcing facilities, subject to the FDA's oversight, although its only a voluntary process for those entities to register with the US federal drug agency (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Obama-signs-compoundingtrack-and-trace-bill-348404" target="_new">28 November 2013</a>, <a href="http://www.scripintelligence.com/home/After-decades-of-apathy-blunders-compoundingtrack-and-trace-bill-done-348213" target="_new">19 November 2013</a>, <a href="http://www.scripintelligence.com/home/Voluntary-process-leaves-FDA-in-the-dark-over-compounders-identities-348462" target="_new">03 December 2013</a>).</p><p>While commissioner, Dr Hamburg ran into a conflict with her then-boss, the now former secretary of Health and Human Services, Kathleen Sebelius, who overruled the FDA chief on a decision in December 2011 to permit the move from prescription to nonprescription for Teva's controversial single-pill Plan B One-Step emergency contraception &ndash; although some have speculated whether it was the two agency chiefs playing "good cop, bad cop," and both were really in agreement on the matter to allow the change (scripintelligence.com, <a href="http://www.scripintelligence.com/home/HHS-chief-invokes-authority-to-force-rejection-of-broad-Plan-B-OTC-sales-324513" target="_new">8 December 2011</a>, <a href="http://www.scripintelligence.com/home/US-court-orders-no-age-Rx-restrictions-on-Teva-morning-after-pill-341822" target="_new">5 April 2013</a>, <a href="http://www.scripintelligence.com/home/FDA-to-remove-restrictions-on-Teva-morning-after-pill-but-not-generics-343959" target="_new">11 June 2013</a>, <a href="http://www.scripintelligence.com/home/After-long-battle-FDA-OKs-Teva-Plan-B-One-Step-without-Rx-age-restrictions-344265" target="_new">21 June 2013</a>).</p><p>Dr Hamburg's departure comes as President Obama is seeking to split the food oversight of the FDA from the agency and create a new body to regulate those products &ndash; an action many in Washington have said is unlikely to happen (scripintelligence.com, <a href="http://www.scripintelligence.com/policyregulation/Splitting-food-from-FDA-could-be-painful-for-drugs-356506" target="_new">3 February 2015</a>).</p><p>Dr Hamburg told her staff that as hard as it was to leave the agency, "I am confident that the leadership team that we have in place will enable FDA to capitalize on and improve upon the significant advances we've made over the last few years."</p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 158
+
+<p>Dr Margaret Hamburg, the first African-American woman to serve as US FDA commissioner, is stepping down at the end of March after six years in the job.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 38
+
+FDA chief Hamburg to depart late March
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150205T142444
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150205T142444
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150205T142444
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027732
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 38
+
+FDA chief Hamburg to depart late March
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356472
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+01c4dbe2-8505-4310-abb3-cd874c991636
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042246Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

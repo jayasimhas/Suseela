@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {8451F20A-DC65-492F-ABF9-86E16BE55FCD}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/12/KemPharm seeks $58m via IPO
+parent: {E53F24E6-BD38-493D-8AAE-66E738CC434C}
+name: KemPharm seeks $58m via IPO
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d8ded522-431a-405d-ab51-a2938d8c114f
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 27
+
+KemPharm seeks $58m via IPO
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 27
+
+KemPharm seeks $58m via IPO
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1715
+
+<p>KemPharm, which is developing an abuse-deterrent version of Vicodin, is aiming to rise up to $58m in an initial public offering. The company, founded in 2006, plans to list on Nasdaq under the symbol KMPH. KemPharm has created several compounds with its Ligand Activated Therapy (LAT) prodrug platform. Its lead drug candidate KP201 &ndash; which is made up of hydrocodone chemically bound to a ligand (benzhydrocodone hydrochloride) and acetaminophen &ndash; is currently in Phase III trials for acute pain. The Phase III studies are designed to show a reduced risk of drug abuse and lower incidence of opioid-induced constipation. The prodrug has a different metabolic pathway that releases hydrocodone when the drug comes into contact with enzymes in the small intestine. Patients can't get high from snorting or injecting KP201, as it is only active in the gut. Sagient Research's BioMedTracker estimates that KP201 could gain approval in the US in the second half of 2016.</p><p>In 2014, Deerfield Management invested $10m into KemPharma and committed up to $50m in additional financing through a secured senior term debt facility. KemPharm accessed $15m of the debt facility when it closed the deal with Deerfield.</p><p><b>Related articles: </b></p><p><a href="http://www.scripintelligence.com/business/BioNotebook-Trevi-Complexa-raise-VC-cash-Deerfield-commits-60m-to-KemPharm-Aradigm-Voyager-deal-news-IPO-updates-352181" target="_new">KemPharm raises up to $60m from Deerfield for pain drugs</a></p><p><a href="http://www.scripintelligence.com/home/BIO-2014-Hillary-Clinton-speaks-biotechs-tout-new-approaches-352530" target="_new">BIO 2014: Hillary Clinton speaks, biotechs tout new approaches</a></p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 984
+
+<p>KemPharm, which is developing an abuse-deterrent version of Vicodin, is aiming to rise up to $58m in an initial public offering. The company, founded in 2006, plans to list on Nasdaq under the symbol KMPH. KemPharm has created several compounds with its Ligand Activated Therapy (LAT) prodrug platform. Its lead drug candidate KP201 &ndash; which is made up of hydrocodone chemically bound to a ligand (benzhydrocodone hydrochloride) and acetaminophen &ndash; is currently in Phase III trials for acute pain. The Phase III studies are designed to show a reduced risk of drug abuse and lower incidence of opioid-induced constipation. The prodrug has a different metabolic pathway that releases hydrocodone when the drug comes into contact with enzymes in the small intestine. Patients can't get high from snorting or injecting KP201, as it is only active in the gut. Sagient Research's BioMedTracker estimates that KP201 could gain approval in the US in the second half of 2016.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 27
+
+KemPharm seeks $58m via IPO
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150312T160001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150312T160001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150312T160001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028087
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 27
+
+KemPharm seeks $58m via IPO
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357168
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042309Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d8ded522-431a-405d-ab51-a2938d8c114f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042309Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

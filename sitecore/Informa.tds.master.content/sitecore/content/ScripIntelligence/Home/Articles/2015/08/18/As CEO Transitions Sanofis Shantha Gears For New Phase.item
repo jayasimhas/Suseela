@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {D4DB2CE4-8A32-4555-83EA-5D886D3396E7}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/18/As CEO Transitions Sanofis Shantha Gears For New Phase
+parent: {CB6FF202-8CE5-4A7D-A8CE-6DB1F8FB3621}
+name: As CEO Transitions Sanofis Shantha Gears For New Phase
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8ccc999f-df9f-43dd-bd4e-b2d28924683e
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+As CEO Transitions, Sanofi's Shantha Gears For New Phase
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 54
+
+As CEO Transitions Sanofis Shantha Gears For New Phase
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4913
+
+<p>Dr Harish Iyer's move from the corner office at Shantha Biotechnics, part of the Sanofi Pasteur group, to the Bill and Melinda Gates Foundation appears rather seamless and quite in line with what the young former CEO of the Hyderabad-based firm had envisioned. </p><p>Iyer, who steered Shantha through some difficult times after the firm's pentavalent vaccine, Shan5, was pulled off the World Health Organization's (WHO) prequalification list some years ago, hopes, in his new role as Senior Advisor (scientific programs), to leverage India in a "stronger way" to help global health goals that are important to the Foundation. </p><p>"While we are already engaged in significant delivery work in the India Country Office that I belong to, we want to expand the engagement in upstream development of safe and affordable health solutions which can be accessed [by] many. I hope I can contribute significantly, working closely with colleagues in India and Seattle," Iyer told <i>Scrip</i>. </p><p>Shantha has since put in place a "new organization and governance model" with the transitioning out of Iyer and the successful completion, under his leadership, of "Phase I" that aimed at "coming back to the market" with Shan5, as well as making the firm "healthy and robust." </p><p>Shantha said it now enters a new phase where it will be "further integrated" into the Sanofi group and become an "international industrial asset" of the Sanofi Pasteur network. Sanofi had acquired Shantha in 2009 from Mérieux Alliance. </p><p>Shantha will be headed by Mahesh Bhalgat, executive director (ED) and COO and Rajasekar Narayanasamy, ED and CFO and company secretary. Both officials will sit on Shantha's board and share the responsibilities previously endorsed by Iyer.</p><p>Earlier this year, Shantha announced the laying of the foundation stone in Hyderabad for a <a href="http://www.scripintelligence.com/business/Sanofi-shifting-gears-with-plans-to-make-insulin-in-India-356444" target="_new">new production facility</a> to manufacture Insuman, a leading human insulin product from Sanofi&rsquo;s diabetes range. </p><h2>Inspirational</h2><p>Iyer, who termed the Bill and Melinda Gates Foundation as an "inspirational" organisation, recalled how in his first months as CEO, Shantha&rsquo;s oral cholera vaccine (Shanchol) was prequalified by the WHO in 2011, "using Foundation funding and with external partners." </p><p>In 2015, Shantha obtained regulatory approval for the injectable polio vaccine (ShanIPV) which, he says, will be a critical part of the polio "end-game" and a milestone in global health. </p><p>"So, in some sense, this move [to the Foundation] is a much deeper engagement for me in the field of public health, very much in the direction that I have always wanted to move in."</p><p>On whether he expects to liaise with governments in the region in his new role, Iyer said: "Everything in public health requires significant interactions with the government, which is the dominant stakeholder."</p><p>The Gates Foundation's work in India includes partnerships with the central and state governments, non-profit organizations, community groups, academic institutions, and the private sector. In addition to efforts around curtailing the spread of HIV, the Foundation's activities encompass areas like maternal and child health, health and nutrition services, vaccines and routine immunization &ndash; areas that India has made significant progress but continues to have serious deficiencies.</p><p>Iyer also ranks getting the prequalification of Shan5 back, and the accompanying supply agreement with UNICEF among the key achievements that he can look back at with pride in Shantha. </p><p>"The second would be being a part of creating a work culture that transformed Shantha into a professional organization of global standards while maintaining the mission of serving the needs of the economically undeveloped; and all this while retaining the Indian 'can-do' attitude," he told <i>Scrip</i>.</p><p>The 2010 WHO <a href="http://www.scripintelligence.com/home/WHO-delists-Sanofi-Pasteurs-Indian-multivalent-vaccines-300568" target="_new">delisting</a> of Shan5, though unrelated to any reports of side-effects, was based on the advice of an ad hoc committee of experts, following the detection of a "white sediment" that was difficult or impossible to re-suspend in some batches of the product (scripintelligence.com 3 August 2010). Iyer was <a href="http://www.scripintelligence.com/business/Sanofi-India-shuffles-executive-pack-following-WHO-delisting-316687" target="_new">roped in to lead</a> Shantha as CEO in 2011. </p><p>Last year Sanofi Pasteur announced that Shan5 had received prequalification status from the WHO. In December 2014 Shantha was awarded to supply global health organizations with a total of 37 million doses of Shan5 in 2015 and 2016, in a ten-dose vial presentation.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 268
+
+<p>Dr Harish Iyer's move from the corner office at Shantha Biotechnics, part of the Sanofi Pasteur group, to the Bill and Melinda Gates Foundation appears rather seamless and quite in line with what the young former CEO of the Hyderabad-based firm had envisioned. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 54
+
+As CEO Transitions Sanofis Shantha Gears For New Phase
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150818T213904
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150818T213904
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150818T213904
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029591
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+As CEO Transitions, Sanofi's Shantha Gears For New Phase
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{FD7E3A1B-CD6C-4EA9-909E-043A9042A71F}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360014
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8ccc999f-df9f-43dd-bd4e-b2d28924683e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042440Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

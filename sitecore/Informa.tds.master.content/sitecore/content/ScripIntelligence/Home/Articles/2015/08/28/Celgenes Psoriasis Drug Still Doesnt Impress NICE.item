@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {589C5C69-119A-46A8-9ABF-A7CDAC7D07F4}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/08/28/Celgenes Psoriasis Drug Still Doesnt Impress NICE
+parent: {38A26B6B-2E7A-407F-A326-882B902E1257}
+name: Celgenes Psoriasis Drug Still Doesnt Impress NICE
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 8c817085-9359-43fe-857f-dfd87f6ece4d
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Celgene's Psoriasis Drug Still Doesn't Impress NICE
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+Celgenes Psoriasis Drug Still Doesnt Impress NICE
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4950
+
+<p>NICE, the health technology appraisal body for England and Wales, is sticking to its guns and not recommending Celgene Corporation's <i>Otezela</i> (apremilast) for use on the UK's National Health Service. </p><p>Otezla, an oral small-molecule inhibitor of phosphodiesterase 4, is approved as a second-line treatment for adults with active psoriatic arthritis that have either not responded to disease-modifying antirheumatic drug (DMARD) therapy, or where such therapy is not tolerated. </p><p><a href="http://www.scripintelligence.com/policyregulation/Scottish-nod-for-psoriasis-drug-contradicts-NICE-and-IQWiG-decisions-358890" target="_new">Earlier this summer</a>, the drug was granted approval by NICE's neighbor, the Scottish Medicines Consortium (SMC), for the treatment of plaque psoriasis and psoriatic arthritis. But this most recent decision marks the second draft guidance in which NICE has turned down the product. The UK's HTA did not recommend Otezla in preliminary guidance citing a short follow-up period for one of the trials, high withdrawal rates and a low percentage of patient eligibility for the drug. <a href="http://www.scripintelligence.com/policyregulation/Celgenes-psoriasis-drug-Otezla-gets-thumbs-down-from-IQWiG-358491?refid=RSSLATEST" target="_new">Germany's appraisal body</a>, IQWiG, also said Otezla offered "no additional benefit" over currently available treatments. </p><p>Professor Carole Longson, director of the Health Technology Evaluation Centre at NICE, said that though psoriatic arthritis is a chronic condition in need for a range of treatment options, Celgene's offering isn't up to scratch. "Around 10% of patients stop TNF-alpha [tumor necrosis factor alpha] inhibitor treatment each year, either because it is contraindicated, or because of loss of effectiveness or adverse effects," Longson noted, highlighting that alternative therapies like Otezla are needed.</p><p>But she said: "The committee considered the evidence on the use of apremilast both before and after TNF-alpha inhibitors and for people who aren't able to take TNF-alpha inhibitors&#8230; [and] concluded that apremilast is clinically effective compared with no other treatment. However, compared with TNF-alpha inhibitors, apremilast was the least clinically effective for treating psoriatic arthritis although some costs were saved by its use."</p><p>She added that there was not enough "robust evidence" demonstrating that Celgene's drug slows progression of psoriatic arthritis compared to TNF-alpha inhibitors. </p><p>People with psoriatic arthritis are usually treated initially with non-steroidal anti-inflammatory drugs (NSAIDs) and disease-modifying antirheumatic drugs (DMARDs) such as methotrexate. Most people whose disease doesn't respond to these drugs will be treated with a tumor necrosis factor alpha inhibitor (TNF-alpha inhibitor) starting with the lowest-cost drug as recommended in NICE technology appraisal guidance: etanercept, infliximab and adalimumab. </p><p>Commenting on NICE's verdict for Otezla, Helen McAteer, chief executive of the Psoriasis Association, said: "This decision sends a confusing message to people with psoriatic arthritis in the UK; those residing in Scotland can receive apremilast via the NHS, but those residing in England and Wales cannot."</p><p>Celgene's medical director for inflammation and immunology, Dr Dani Thomas, said in a statement that the company is "disappointed" with NICE's final appraisal determination. He argued that Otezla "has been shown to produce significant improvements in the signs and symptoms of the disease, including clinically relevant improvements in physical function which are sustained to two years."</p><p>Celgene "will continue to explore potential options to facilitate access to Otezla for people with psoriatic arthritis in England, Wales and Northern Ireland," he added.</p><p>Otezla was approved in Europe for the treatment of in psoriasis and psoriatic arthritis <a href="http://www.scripintelligence.com/home/Novartis-and-Celgene-get-EU-approval-for-novel-psoriasis-therapies-356218?refid=RSSLATEST" target="_new">in January this year</a>. A separate NICE appraisal is ongoing for the drug in the treatment of moderate-to-severe chronic plaque psoriasis. The committee is due to announce their decision for this indication later this month.</p><p>Analysts at Datamonitor Healthcare have predicted that uptake of Otezla might be limited, despite its benefit of being an oral formulation, due to the product's high cost as well as the fact that it does not offer any efficacy advantages over marketed biologics.</p><p>Datamonitor is anticipating sales of the drug to reach only around $7m in the UK by 2020, in comparison to forecasted sales of $182m by the same year in the US. It expects total sales of Otezla to reach $270m by 2022 in the US, Japan and the five major EU markets of France, Germany, Italy, Spain and the UK. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 213
+
+<p>NICE, the health technology appraisal body for England and Wales, is sticking to its guns and not recommending Celgene Corporation's <i>Otezela</i> (apremilast) for use on the UK's National Health Service. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+Celgenes Psoriasis Drug Still Doesnt Impress NICE
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150828T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150828T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150828T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029677
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Celgene's Psoriasis Drug Still Doesn't Impress NICE
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+200800539
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+360156
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042445Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8c817085-9359-43fe-857f-dfd87f6ece4d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042445Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

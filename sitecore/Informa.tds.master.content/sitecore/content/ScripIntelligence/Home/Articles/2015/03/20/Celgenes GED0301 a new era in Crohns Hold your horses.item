@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {6F6E1179-9891-42F9-9E5D-81D46159EE7A}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/20/Celgenes GED0301 a new era in Crohns Hold your horses
+parent: {AD42DA69-3D39-4357-AFF7-F14E275A07AC}
+name: Celgenes GED0301 a new era in Crohns Hold your horses
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: f9ad270a-c707-42b5-bc41-dccb41caac11
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 116
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Celgene's GED-0301 a new era in Crohn's? Hold your horses
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 53
+
+Celgenes GED0301 a new era in Crohns Hold your horses
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8665
+
+<p>Publication in the <i>New England Journal of Medicine</i> of the full Phase II results of Celgene's potentially disruptive treatment for Crohn's disease, mongersen (GED-0301), have renewed the excitement surrounding the product, but some experts are reining in their expectations, saying more evidence using biological endpoints of disease activity is needed for the drug. </p><p>The initial study results for the oligonucleotide-based product were <a href="http://www.scripintelligence.com/researchdevelopment/Celgenes-Mongersen-a-game-changer-in-Crohns-354611" target="_new">presented in October</a> at the United European Gastroenterology Week in Vienna, Austria when they were hailed as supporting Celgene's <a href="http://www.scripintelligence.com/home/1Q-EARNINGS-Celgene-boosts-sales-bets-big-on-Crohns-drug-351453" target="_new">April 2014 decision</a> to license it for a high upfront payment of $710m from Nogra Pharma. </p><p>The 160-patient trial tested three doses of GED-0301 (10, 40, or 160mg) against placebo for two weeks, with a primary end point of clinical remission, defined as a Crohn's disease activity index (CDAI) score of less than 150 at day 15 (scores can range from 0 to 600, with higher scores indicating greater disease activity). </p><p>The results showed a strong dose response: 10% of placebo patients achieved clinical remission, rising to 12%, 55%, and 65% for the 10mg group, 40mg group, and 160mg dose groups, respectively. The secondary outcome of clinical response was also highly significant for the two highest doses (defined as a reduction in CDAI score of at least 100 points by day 28).</p><p>GED-0301 is an antisense oligonucleotide that targets the messenger RNA (mRNA) for Smad7, thereby reducing levels of the Smad7 protein. In Crohn's patients, abnormally high levels of Smad7 interfere with TGF-&#946;1 anti-inflammatory pathways in the gut, leading to increased inflammation. Celgene says the product is formulated to release GED-0301 into the terminal ileum and near the end of the colon (right colon), where it is thought to act locally to reduce Smad7 levels. It appears to be the only drug targeting this protein in development. </p><p>Scott Smith, Celgene's president of inflammation and immunology, said: "GED-0301 offers a completely different mechanism of action that has the potential to transform the Crohn's treatment landscape. We are encouraged by the Phase II data and are committed to bringing innovative medicine to patients with Crohn's disease, starting with advancing the Phase III trial for GED-0301." </p><h2>Crohn's market</h2><p>The inflammatory bowel disease (IBD) market, which includes Crohn's and ulcerative colitis, was worth an estimated $7bn in 2014 and analysts at Credit Suisse expect it to grow by 3% CAGR to circa $9bn by 2023, a figure that could be propelled further by novel early products. GED-0301, they say, could represent a "paradigm shift", being potentially more efficacious with a lower adverse event burden than the anti-TNFs. </p><p>But it will need to muscle its way into and perhaps grow the market against more advanced competitors to the anti-TNFs, including Takeda/Millennium Pharmaceuticals' vedolizumab, and Johnson & Johnson's Stelara (ustekinumab), which are expected first to gain a foothold in the TNF-failure population.</p><p>The Credit Suisse analysts note that more than half of moderate to severe Crohn's patients are currently treated with biologics (the anti-TNFs Cimzia, Humira & Remicade representing the bulk), but these have limited efficacy with only 50% of patients responding and half of those in remission within a year. </p><p>As such, they see promising sales potential for GED-0301 in the order of $2bn with an estimated launch in 2018. </p><h2>potential</h2><p>Medical experts also see great promise for the drug. Writing in an editorial accompanying the data, Dr Séverine Vermeire of the department of gastroenterology, University Hospitals, in Leuven, Belgium, says that the remission rates for the two highest doses of 55% and 65% seen in the Phase II trial are "unprecedented" when compared with those reported in the large pivotal induction studies of current maintstay biologicals in moderate-to-severe active disease: infliximab (32.5% glucocorticoid-free clinical remission at week six in the SONIC trial), adalimumab (36% clinical remission at week 4 in the CLASSIC-I trial), and more recently, vedolizumab (14.5% clinical remission at week 6 and 39% at week 54 in the GEMINI 2 trial).</p><p>But she points to uncertainties amid the data that mean it is still too soon to declare a new era in Crohn's disease therapy. </p><p>Firstly, the inclusion criteria for the study were based on CDAI scores, rather than the more objective choice of active disease as determined by endoscopy, "so it is unclear what proportion of patients underwent randomization without actually having mucosal lesions". Here she points to the lessons learned from the SONIC study with infliximab, which too recruited according to CDAI score only for it later to be shown that 18.3% of the participants had normal results on colonoscopic examination.</p><p>In addition, the median level of the inflammatory marker C-reactive protein (CRP) in the study was "surprisingly low" at 4-5mg/L, and that 39% of patients did not have elevated levels at all. "Not all persons with Crohn's disease have elevated C-reactive protein levels, but 39% of trial participants with normal levels seems unusually high."</p><p>Added to this was the choice of end points, which "also warrants discussion". Although Dr Vermeire admits that clinical response and remission, as measured as changes in the CDAI score, are end points recommended by regulatory bodies for randomized, controlled trials in inflammatory bowel disease, she points out that there has been an increasing emphasis on other end points, such as mucosal healing demonstrated by endoscopy or normalization of biomarkers such as fecal calprotectin or CRP. </p><p>Indeed, she points out, the "impressive" data on clinical remission contrast with the relatively modest effect on the normalization of CRP levels: only 18% of the 40 or 60mg dose patients who had elevated CRP at baseline had normalization of levels at the end of treatment, a proportion similar to that of the group who received the 10mg dose that was not associated with clinical remission. "In fact, among the patients with an elevated level of C-reactive protein at baseline, none of the doses of mongersen reduced the median levels. In short, there is a lack of congruence between clinical remission and biologic remission, an issue that will need to be addressed in future studies."</p><p>On the plus side, the clinical remission seen in the study was maintained for nearly three months after only a two week dosing period. "This contrasts with the rapid recurrence of symptoms on withdrawal of existing anti-inflammatory drugs."</p><p>For safety, the study was probably too short to draw firm conclusions, but there was only one case of intestinal obstruction (at the 40mg dose). "One might expect fibrosis and possibly narrowing or stenosis of the bowel, because TGF-&#946;1 induces the synthesis of collagen and fibronectin and promotes fibrosis."</p><p>She concludes: "The impressive clinical effects of mongersen beg for follow-up studies to confirm that we have indeed entered a new phase of Crohn's disease treatment."</p><p>Analysts at BioMedTracker agree. "The fuller details are reassuring following the earlier excitement over the strong efficacy signals in the higher dose groups. However, some issues still remain... Notably, the inclusion criteria for this study are quite narrow and probably excluded a large fraction of the typical Crohn's population, including those with perianal disease.</p><p>"In the end, these results are still just a prelude to the pivotal Phase III study that is anticipated to begin this year. We are raising our likelihood of approval by 1% and look forward to more details on that study."</p><p>Datamonitor Healthcare analyst Dr Joseph Hedden also stressed the need for biological endpoints. "Some trials do have one or two as secondary endpoints but many still don't. Clinical remission is the gold standard endpoint and will probably remain so. That said, I'm not sure they will get away with lax patient selection. To compete with biologics, they need more than the three-month remission data. The clinical trials should need to show that patients can maintain remission for one year plus- all the biologics have this data. Ideally, they need to compare with Remicade in a Phase III."</p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 380
+
+<p>Publication in the <i>New England Journal of Medicine</i> of the full Phase II results of Celgene's potentially disruptive treatment for Crohn's disease, mongersen (GED-0301), have renewed the excitement surrounding the product, but some experts are reining in their expectations, saying more evidence using biological endpoints of disease activity is needed for the drug. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 53
+
+Celgenes GED0301 a new era in Crohns Hold your horses
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150320T140000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150320T140000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150320T140000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028235
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Celgene's GED-0301 a new era in Crohn's? Hold your horses
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199300177
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357406
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042320Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f9ad270a-c707-42b5-bc41-dccb41caac11
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042321Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

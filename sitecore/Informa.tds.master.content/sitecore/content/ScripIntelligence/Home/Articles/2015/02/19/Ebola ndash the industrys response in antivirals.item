@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {02C3A20D-187D-451A-B8B6-A3700CEC6774}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/19/Ebola ndash the industrys response in antivirals
+parent: {97D2E94C-15AA-4D21-BD20-E53C9AA5BAA3}
+name: Ebola ndash the industrys response in antivirals
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 09fa6c50-1167-48e0-b256-518ec203d6ec
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Ebola &ndash; the industry's response in antivirals
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 48
+
+Ebola ndash the industrys response in antivirals
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 21436
+
+<p>The unprecedented scale of the Ebola epidemic in West Africa has prompted a similarly unprecedented interest in the response from the pharma and biotech industries to develop treatments and vaccines against the virus. </p><p>When the first WHO declaration that the outbreak was a public health emergency last August, there were concerns that industry was not interested in developing products because it was "typically a disease of poor people in poor countries where there is no market" (<a href="http://www.scripintelligence.com/home/Ebola-A-market-failure-353355" target="_new">scripintelligence.com, 13 August 2014</a>).</p><p>The good news was that there were products already under investigation, but this was mainly in response to US bioterrorism concerns and none was anywhere near advanced. The sheer number of potential bioterrorism threats means that difficult decisions have had to be made on where to focus resources. </p><p>The size of the latest epidemic has given fresh impetus to their development, while products for other indications have been redeployed against the filovirus, and shelved compounds have been dusted off. </p><p>Experts agree that while it may be too late for these to be of any great use in the current outbreak, the risk of the disease becoming endemic and the inevitability of future outbreaks means that continued development of both treatments for the disease and prophylactic vaccines are vital to avoid future epidemics of this size. </p><p>Here <i>Scrip</i> surveys those antiviral products known to be under investigation for Ebola (vaccines are dealt with in a parallel piece) to see what's known about each. </p><p>It is a fast-moving field, but there appear to be around 25 products being developed for use in Ebola-infected patients. Most act directly again the virus with mechanisms that include polymerase inhibition, or antisense technology, but a sizeable number are antibody-based products. The vast majority are still at the preclinical stage, though a couple have recently advanced into clinical trials. </p><p><table><tbody><tr><td><p><b>Drug</b></p>&nbsp;</td><td><p><b>Mechanism</b></p>&nbsp;</td><td><p><b>Stage and further information</b></p>&nbsp;</td></tr><tr><td><p>Biocryst's BCX4430</p>&nbsp;</td><td><p>nucleoside analog RNA polymerase inhibitor</p>&nbsp;</td><td><p><b>Phase I </b>&ndash; Biocryst recently announced results from a proof-of-concept study of its broad spectrum antiviral BCX4430 for the treatment of experimental Ebola virus infection in rhesus macaques, conducted at the United States Army Medical Research Institute of Infectious Diseases.</p>&nbsp;</td></tr><tr><td><p>Fujifilm/Toyama's favipiravir (Avigan)</p>&nbsp;</td><td><p>nucleoside analog RNA polymerase inhibitor </p>&nbsp;</td><td><p><b>Phase I</b> &ndash; Favipiravir has been approved in Japan since March 2014 for an outbreak of novel or re-emerging influenza virus infections and its use is limited to cases in which other anti-influenza virus agents are either ineffective or insufficiently effective. The company has increased production of the product for use against Ebola and trials have reportedly started in Guinea at two treatment centres. </p>&nbsp;</td></tr><tr><td><p>Alnylam and Tekmira's TKM-Ebola (TKM-100201 / ALN-EBOxx)</p><p>&nbsp;</td><td><p>A broad-spectrum small interfering RNA (siRNA) formulated using Tekmira Pharmaceuticals' lipid nanoparticles (SNALP) for systemic delivery.</p>&nbsp;</td><td><p><b>Phase I</b> &ndash; In January 2014, Tekmira began a Phase I clinical trial evaluating TKM-Ebola in healthy volunteers. In May 2014, Tekmira successfully completed the single ascending dose portion of the TKM-Ebola Phase I Clinical Trial in healthy human volunteers. This study is now subject to a partial clinical hold that requires Tekmira to provide additional data related to the mechanism of cytokine release and a potential protocol modification prior to initiating the multiple dose portion of the Phase I study. The partial hold enables the use of TKM-Ebola in individuals with a suspected or confirmed Ebola virus infection. The FDA granted expanded access use of TKM-Ebola under Tekmira&rsquo;s Investigational New Drug application (IND) and Health Canada established a similar framework. Using emergency protocols, TKM-Ebola has been administered to a small number of patients. </p>&nbsp;</td></tr><tr><td><p>Sarepta's AVI-7537</p>&nbsp;</td><td><p>antisense oligonucleotide that targets the viral matrix proteins VP24 </p>&nbsp;</td><td><p><b>Phase I</b> - The safety of AVI-7537 has so far been evaluated in one clinical single ascending dose study as part of the compound AVI-6002. VI-6002 was generally well tolerated. In general, with regard to current clinical and preclinical experience with oligonucleotide-based therapeutics, kidney toxicity may be considered as a class effect. The company has evaluated the sequence of the Ebola strain circulating in the current outbreak and there do not appear to be any mismatched bases in the VP24 region that AVI-7537 targets</p>&nbsp;</td></tr><tr><td><p>Leafbio (Mapp Biopharmaceutical)/Defyrus's ZMapp</p>&nbsp;</td><td><p>Three mouse/human chimeric IgG1 monoclonal antibodies: c13C6, c2G4 and c4G7, directed against three distinct epitopes in EBOV glycoprotein. It is an optimized cocktail combining the best components of MB--?003 (Mapp) and ZMAb (Defyrus/PHAC).</p>&nbsp;</td><td><p><b>Phase I </b>&ndash; According to the EMA, company-provided documentation describes seven patients treated with ZMapp. Five out of seven patients survived. Preliminary virological data indicate that administration of ZMapp may have decreased the viral load in several patients; however, in the absence of a control group, this cannot presently be ascertained.On 22 January, the NIAID said there was enough Zmapp to start Phase I and II trials and first-time human testing is due to start soon in Liberia and the US (<a href="http://www.scripintelligence.com/home/ZMapp-Ebola-vaccines-set-for-testing-in-Liberia-356313" target="_new">scripintelligence.com, 23 January 2015</a>).</p>&nbsp;</td></tr><tr><td><p>Tekmira's TKM-Ebola-Guinea</p>&nbsp;</td><td><p>A modified RNAi therapeutic to specifically target Ebola-Guinea. The new product, TKM-Ebola-Guinea, is designed to match the genomic sequence exactly, with two RNAi triggers.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Tekmira has entered into a Manufacturing and Clinical Trial Agreement with the University of Oxford to provide the new TKM-Ebola-Guinea therapeutic product for clinical studies in West Africa, due to start early 2015. The University of Oxford is the representative of ISARIC. ISARIC will conduct clinical studies of TKM-Ebola-Guinea in Ebola virus infected patients, with funding provided by the Wellcome Trust. </p><p>&nbsp;</td></tr><tr><td><p>Fab'entech's anti-Ebola F(ab')<subscript>2 </subscript>fragments.</p>&nbsp;</td><td><p>Anti-Ebola F(ab&rsquo;)<subscript>2 </subscript>are specific polyclonal anti-Ebola immunoglobulin F(ab&rsquo;)<subscript>2 </subscript>fragments of equine origin</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; There are currently no clinical or preclinical data with anti-ebola F(ab&rsquo;)<subscript>2 </subscript>fragments as the specific product has not yet been manufactured. The company says it is evaluating with international health authorities and other partners the potential development of a treatment against Ebola virus.</p>&nbsp;</td></tr><tr><td><p>Regeneron's mAb Ebola candidate potential</p>&nbsp;</td><td><p>human monoclonal antibodies against the Ebola virus using its VelocImmune technology</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In November, Regeneron said it could have candidate ready by year end with "robust quantities" available for clinical testing a few months later.</p>&nbsp;</td></tr><tr><td><p>Hemispherx's Ampligen (rintatolimod) and Alferon N injection (interferon alpha-n3 injection)</p>&nbsp;</td><td><p>Ampligen is a mismatched double-stranded RNA toll-like receptor 3 agonist.</p><p>Alferon N is a natural alpha-interferon (Alfa-n3) from human leucocytes</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In December Hemispherx announced that Ampligen strongly inhibited the Ebola minigenome in the human embryonic kidney cell system. The company has formed collaborations with multiple research laboratories around the world to examine Ampligen, and Alferon N as potential preventatives for, and treatments of Ebola. Replenishing an Ebola patient&rsquo;s natural interferon with Alferon and restoring that patient&rsquo;s innate immune response by Ampligen&rsquo;s overcoming the Ebola blocking mechanisms could potentially reduce the morbidity and mortality of Ebola virus disease. (NB Ampligen's NDA for chronic fatigue syndrome was rejected by FDA, and Alferon N is approved by the US FDA for the intralesional treatment of refractory or recurring external condylomata acuminate.)</p>&nbsp;</td></tr><tr><td><p>Kineta's rOAS-1</p>&nbsp;</td><td><p>A novel, recombinant, fully-human truncated optimized derivative of oligoadenylate synthetase</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; under development by Kineta against dengue, Ebola, influenza, Japanese encephalitis, Marburg, RSV and other lethal pathogen infections. The therapy is based on the innate immune pathway and is resistant to viral mutations.</p>&nbsp;</td></tr><tr><td><p>Defyrus' defilovir</p>&nbsp;</td><td><p>Defilovir is a combination of an interferon alpha gene therapy (DEF201) with an Ebola vaccine (Ad5-optZGP developed by the National Microbiology Laboratory of Canada).</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In a primate model of Ebola infection, Defilovir resulted in 67% survival when treated post-challenge. In the cynomolgus primate model, it showed best survival result, with a single administration.</p>&nbsp;</td></tr><tr><td><p>OncoSynergy's OS-2966</p>&nbsp;</td><td><p>Beta1 integrin antagonist MAb designed to inhibit a major cellular adhesion receptor (CD29). </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In December OncoSynergy said it had demonstrated OS2966 blocks the ability of Ebola virus to enter cells in laboratory models. Further studies, including primate models, are ongoing or in development. Proposed West Africa trials will examine safety and dosing and test the effectiveness of OS2966 against Ebola virus disease in humans. Previous studies have suggested CD29 is required for Ebola virus infection; blocking CD29 could halt Ebola's spread in the body.</p>&nbsp;</td></tr><tr><td><p>Marian Medical's MMCatLMC</p>&nbsp;</td><td><p>A broad-spectrum antiviral (BSAV) small-molecule compound, under development by Mariam Medical targeting cathepsin L (CatL) against SARS-CoV (SARS), Ebola, Hendra and Nipah viral infections.</p>&nbsp;</td><td><p><b>preclinical</b> &ndash; Enveloped viruses like Ebola require cathepsin L (CatL) to gain access to the inside of cells. CatL is an important host protease involved in processing and biosynthesis of neuropeptides like proenkephalin, proneuropeptide Y, prodynorphin and proganalin. Directly blocking CatL enzymatic activity is likely to have undesirable side effects on human health, but Marian's novel approach has allowed it to identify lead compounds that can selectively inhibit CatL mediated cleavage of several viral glycoproteins and prevent viral entry into the cell without affecting its ability to process host proteins.</p>&nbsp;</td></tr><tr><td><p>Sihuan Pharmaceutical's JK-05</p>&nbsp;</td><td><p>unknown</p>&nbsp;</td><td><p><b>Preclinical</b> - According to ChinaBio Today, Sihuan Pharmaceutical signed a collaborative development agreement to develop a treatment for Ebola with the Institute of Microbiology and Epidemiology of China's Academy of Military Medical Sciences (AMMS). The Institute discovered JK-05. Although the drug has been approved for military use, no clinical trials of JK-05 have been completed. Sihuan will pay a technology transfer fee of $1.6m for rights to JK-05.</p>&nbsp;</td></tr><tr><td><p>Globavir's GBV-006</p>&nbsp;</td><td><p>GBV-006 is a combination of already approved FDA drugs, that targets human cellular machinery necessary for viral replication. GBV006 targets and inhibits several distinct stages of the viral lifecycle, including entry of the virus into the cell and maturation of new viruses within cells. </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Globavir will seek approval for the use of GBV006 through an established compassionate use regulatory pathway. Globavir has the worldwide exclusive license to develop and market GBV006. The component drugs of GBV006 have demonstrated efficacy against experimental models of Ebola infection at dosages already approved and well-tolerated by patients. GBV006 is effective at low micromolar concentrations against Ebola <i>in vitro</i>. By relying on thousands of patient years of established safety data, Globavir hopes to rapidly introduce GBV006 as an experimental treatment in helping to control the West Africa outbreak.</p>&nbsp;</td></tr><tr><td><p>NanoViricides' anti-Ebola nanoviricides 2<sup>nd</sup>-generation</p>&nbsp;</td><td><p>The nanoviricides are designed to mimic the host cell receptor onto which the Ebola virus binds. The site at which the virus binds, NPC1, does not change. </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In November, NanoViricides executed a CRADA with the United States Army Medical Research Institute of Infectious Diseases (USAMRIID), under which certain novel anti-Ebola nanomedicine drug candidates recently developed by the company will be evaluated by USAMRIID scientists in their BSL-4 facilities for activity against the deadly Ebola virus under this agreement. Some of the candidates are designed to attack another conserved site on the Ebola virus that is thought to be involved in the fusion process of the virus required for it to successfully enter the cell (Press release, NanoViricides, 22 Jan 2015</p>&nbsp;</td></tr><tr><td><p>Inhibikase's lkT-001Pro (imatinib)</p>&nbsp;</td><td><p>IkT-001Pro blocks spread of infection throughout the body for Smallpox and Ebola. </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Inhibikase currently lists Ikt-001Pro in its pipeline as under preclinical development for the treatment of Smallpox and Ebola.</p>&nbsp;</td></tr><tr><td><p>Navigen's anti-Ebola D-peptides</p>&nbsp;</td><td><p>Navigen's lead D-peptide inhibitor of Ebola targets a functionally critical and exposed region of the virus that is 100% identical across all known Ebola strains and prevents Ebola entry into target cells. </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash;Navigen's D-peptide has the potential to treat all strains of Ebola without waiting for subtype identification. Navigen says it has demonstrated the specific binding of its lead anti-Ebola D-peptides to its designed Ebola drug target and solved the crystal structure of one of these complexes. Its lead compound inhibits Ebola in pseudovirion assays. It is currently optimizing its initial hits with the expectation that it will be able to rapidly produce a highly effective and novel anti-Ebola inhibitor.</p><p>&nbsp;</td></tr><tr><td><p>Takeda's Ebola treatments </p>&nbsp;</td><td><p>The IFPMA says Takeda's R&D portfolio contains three molecules (originally developed for non-Ebola applications) that target the host immune system to provide a potential path to fight the infection. </p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; All three molecules are clinical-stage assets that have demonstrated safety and efficacy in inflammatory diseases. Takeda is currently in negotiation with sites in the USA and Europe to assess these molecules&rsquo; efficacy and safety in animal models of Ebola. Upon successful completion of these studies, Takeda plans to provide the molecules as a therapeutic option to patients worldwide. Since the molecules target the host response to Ebola, this therapy could potentially be combined with anti-viral approaches including vaccines.</p>&nbsp;</td></tr><tr><td><p>SAB Biotherapeutics infectious disease antibody therapies</p>&nbsp;</td><td><p>Developed using its proprietary DiversitAb technology for the treatment of infectious diseases.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; In preclinical studies, antibodies produced showed positive results against Ebola, MERS-CoV, influenza and other diseases, the company says</p>&nbsp;</td></tr><tr><td><p>Kymab's Ebola MAbs </p>&nbsp;</td><td><p>Fully-human monoclonal antibodies using its Kymouse human antibody discovery platform</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Kymab will use its Kymouse and antibody development expertise in partnership with academic groups from the Wellcome Trust Sanger Institute, the University of Westminster and Public Health England to rapidly discover and develop therapeutic antibodies. The goal is to discover antibodies that act against different strains of the Ebola virus, which is changing significantly from one outbreak to the next.</p>&nbsp;</td></tr><tr><td><p>ARCA Biopharma's rNAPc2</p>&nbsp;</td><td><p>Recombinant nematode anticoagulation protein c2 is a potent and selective inhibitor of tissue factor, the protein responsible for initiating the extrinsic coagulation pathway, the primary coagulation mechanism in humans.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; The rationale for rNAPc2 as a hemorrhagic fever virus (HFV) therapy arises from the role of tissue factor in HFV mediated disseminated intravascular coagulation, an often fatal complication of the HFV disease syndrome that leads to spontaneous hemorrhage. rNAPc2 has previously demonstrated post-exposure efficacy in non-human primate models of Ebola. It was originally developed to Phase I and II as a cardiovascular therapy. ARCA is currently exploring options for the development of rNAPc2 including seeking development partners, out-licensing the compound and applying for grant or government funding. It has no plans to develop it without securing a partnership, an out-licensing agreement or receiving grant or government funding</p>&nbsp;</td></tr><tr><td><p>Microbiotix's Ebola virus therapies</p>&nbsp;</td><td><p>small-molecule entry inhibitors including NPC1-GP interaction inhibitors</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Microbiotix has several entry inhibitors in the chemical optimization stage. In addition, researchers at Microbiotix in collaboration with Dr Kartik Chandran at the Albert Einstein College of Medicine and Dr. John Dye at USAMRIID have discovered novel inhibitors of the NPC1-GP interaction and are working to optimize them for eventual therapeutic or prophylactic use. NPC1 is a multi-pass membrane protein found in the late endosomes and lysosomes of all cells that has recently been shown to be an essential host factor for filovirus entry and infection. Studies have shown that NPC1 binds specifically and directly to the proposed receptor-binding site in the ebolavirus glycoprotein</p>&nbsp;</td></tr><tr><td><p>Cocrystal Pharma's Ebola therapy</p>&nbsp;</td><td><p>inhibitors of an essential Ebola virus gene product.</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; Cocrystal said in October it had developed what it believes to be the first high-throughput screening technology for inhibitors of a key essential Ebola virus gene product. It has cloned the gene, purified and characterized its product, and integrated the gene product into its high-throughput platform, and believes it is the first group to have developed a novel screening methodology that can accurately identify inhibitors, which are potential drug candidates.</p><p>&nbsp;</td></tr><tr><td><p>AstraZeneca's Ebola mAb therapy </p>&nbsp;</td><td><p>Ebola monoclonal antibodies (mAbs), for the prevention and treatment of Ebola infections</p>&nbsp;</td><td><p><b>Preclinical</b> &ndash; According to the IFPMA, AstraZeneca's efforts include current or planned activity in vaccines, antivirals, diagnostics or immunotherapy. A joint proposal from MedImmune, in collaboration with a biotech company and two US universities is under consideration for funding by an external agency to evaluate both "conventional" and synthetic DNA delivery of monoclonal antibody (mAb) therapies that may support the development of an Ebola mAb for disease prevention and treatment. Furthermore, AstraZeneca's Infection iMed is engaged in a collaboration to screen a number of our compounds to explore their potential for treatment of Ebola. </p>&nbsp;</td></tr><tr><td><p>Chimerix's brincidofovir</p>&nbsp;</td><td><p>orally-available lipid conjugate of the nucleotide analogue cidofovir</p>&nbsp;</td><td><p><b>Discontinued</b> &ndash; Chimerix announced on 30 January that after discussion with the FDA it was ceasing further participation in all current and future clinical studies of brincidofovir for Ebola Virus Disease (EVD), including the study announced in December in Liberia sponsored by the University of Oxford and the supportive Phase II study of brincidofovir for EVD, Study 205 (<a href="http://www.scripintelligence.com/home/Chimerix-abandons-Ebola-trials-of-brincidofovir-356478" target="_new">scripintelligence.com, 1 February 2015</a>). The product is in Phase III testing for other viral infections such as herpes simplex, and cytomegalovirus.</p>&nbsp;</td></tr></tbody></table></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 225
+
+<p>The unprecedented scale of the Ebola epidemic in West Africa has prompted a similarly unprecedented interest in the response from the pharma and biotech industries to develop treatments and vaccines against the virus. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 48
+
+Ebola ndash the industrys response in antivirals
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150219T160000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150219T160000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150219T160000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027918
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Ebola &ndash; the industry's response in antivirals
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+People
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356844
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+09fa6c50-1167-48e0-b256-518ec203d6ec
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042259Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

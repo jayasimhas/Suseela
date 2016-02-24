@@ -1,0 +1,142 @@
+----item----
+version: 1
+id: {712D1CFD-5520-4F5D-8B77-A452C1251CC1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/15/Avalon GSK launch latest slate of biotechs
+parent: {EA2FC27C-B001-4ABE-AA87-724D6FA5D3EE}
+name: Avalon GSK launch latest slate of biotechs
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 77ecef9e-7ddf-4d7a-ab7d-7c76e2d5507c
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 43
+
+Avalon, GSK launch latest slate of biotechs
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 42
+
+Avalon GSK launch latest slate of biotechs
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3142
+
+<p><p>In just about two years, Avalon Ventures and GlaxoSmithKline have launched six new biotechs with the promise of four more in the near future. The latest companies to be launched under the collaboration include Adrenergics, CadheRx Therapeutics and Calporta Therapeutics. </p><p>Like Sitari Pharmaceuticals, Silarus Therapeutics and Thyritope Biosciences before them, the start-ups are all part of a collaboration established between the venture firm and the big pharma in April 2013. </p><p>Avalon and GSK agreed to co-invest up to $495m in 10 new biotech companies with GSK putting as much as $465m into the collaboration. The UK-based big pharma has an option to acquire each startup firm following identification of a lead drug candidate.</p><p>If GSK does not exercise its option for a drug candidate under its partnership with Avalon, the venture capital firm can sell the company's assets to another bidder.</p><p>The pair have promised to provide each biotech with $10m in venture financing, as well as R&D support, experienced leadership and an R&D facility. All of the start-ups are housed in Avalon's incubator in San Diego that's known as COI Pharmaceuticals. </p><p>"This takes a lot of the risk out of early discovery, because those are killer," said Dr Jay Lichter, managing director of Avalon, in an interview. "What this allows is the ability for venture deals in early stages, which is where venture dollars should be spent. It allows for a risk management and a business opportunity that makes sense for both Avalon and GSK."</p><p>Dr Lichter noted that the six biotechs that have been chosen so far were picked from more than 400 opportunities that the firm screened. </p><p>"They're the best science," said the VC, who said the firm looks at the tools the companies have as well as the level of target validation. Meanwhile, GSK has a screening process of its own, looking at developability and regulatory pathways. "It's the best of both worlds in terms of using our combined resources to identify the initial programs," he said.</p><p>Adregenics is focused on treatments for dilated cardiomyopathy and is hoping to develop drugs that halt disease progression. </p><p>CadheRx is developing antibodies targeting soluble E-cadherin (sEcad) for the treatment of solid tumors that are resistant to other treatments, particularly Cetuximab and Herceptin resistant epithelial cancers. CadheRx's intellectual property was in-licensed from the laboratory of Sabine Brouxhon, M.D., Clinical Associate Professor, Department of Emergency Medicine in the School of Medicine at Stony Brook University.</p><p>Calporta is working on selective small molecule agonists of transient receptor potential cation channel, mucolipin subfamily, member 1 for the treatment of Niemann-Pick C Disease (NPC) and other lysosomal storage diseases. The technology is based on research from the University of Michigan. </p><p>The companies chosen aren't necessarily in GSK's areas of expertise and are not meant to be, said Dr Lichter, who added that the biotechs started so far have been across a broad range of therapeutic categories. </p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 42
+
+Avalon GSK launch latest slate of biotechs
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150615T200823
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150615T200823
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150615T200823
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028986
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 43
+
+Avalon, GSK launch latest slate of biotechs
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358862
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+77ecef9e-7ddf-4d7a-ab7d-7c76e2d5507c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042404Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

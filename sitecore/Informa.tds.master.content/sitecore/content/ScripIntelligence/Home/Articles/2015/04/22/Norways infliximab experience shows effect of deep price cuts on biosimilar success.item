@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {843E2C80-FC6E-4AB3-B6DB-585FDACAEC06}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/22/Norways infliximab experience shows effect of deep price cuts on biosimilar success
+parent: {2F6B6639-D934-4DFA-9EB8-1D57248EB5BD}
+name: Norways infliximab experience shows effect of deep price cuts on biosimilar success
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4a349d3e-b929-4bdb-97b2-7491e4f2b2e3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{8B2376D2-D914-41D6-9402-D3CD38CABF23}|{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 84
+
+Norway's infliximab experience shows effect of deep price cuts on biosimilar success
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 83
+
+Norways infliximab experience shows effect of deep price cuts on biosimilar success
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6741
+
+<p>What's the secret to biosimilar success? A two-thirds discount to the price of the reference drug. It's not as simple as that, of course, but recent experience with biosimilar infliximab in Norway suggests that in some cases there is a tipping point beyond which resistance to switching patients to a biosimilar may melt away under strong financial pressure. </p><p>In a case study presented at last week's EGA/EBG biosimilars conference in London, Steinar Madsen, medical director at the Norwegian medicines agency, described how Celltrion's Remsima overtook Janssen's Remicade to become the infliximab market leader as a result of an almost 70% price discount earlier this year. </p><p>This suggests that in some cases at least, the conventional wisdom that discounts on biosimilars should be around 25-30% may have to be rethought if biosimilars are to take significant market shares from their reference products. </p><p>Remsima was approved in the EU in 2013, and was first launched in Norway (which is not an EU country but tends to abide by EU legislation) at the end of 2013. A first national health service tender for infliximab, launched in Norway in February 2014, saw Remsima being offered at a 39% discount to Remicade: the Janssen product was priced at NKr 84,000 (US$14,000) for one year's treatment, and Remsima at NKr51,000. But this, said Mr Madsen, was "not sensational enough", as it gained Remsima just 6-7% of the market. </p><p>A year later though, in February 2015, a second tender was launched. This time the price of Remicade was "slightly reduced", to NKr84,300, but "the shock came with Remsima, because they halved their price", Mr Madsen said. Remsima was offered at just NKr26,000 &ndash; a 69% discount to the originator. </p><p>"This had an immediate effect", Mr Madsen said. When the 69% discount was announced, Remsima's market share jumped by 10% in one month, and last month it "passed Remicade to become the market leader with a 51% market share". The 39% discount was "nice, but nobody said we have to switch. But with 69%, the medical directors of the four health regions all said, 'now we have to switch'. So it comes from the top. If this carries on, there will be an almost wipe-out of Remicade in Norway in 2015 or 2016," Mr Madsen declared.</p><p>The lesson, he told the conference, is that "39% is good but not good enough. At 69%, everybody listens. I just learned that the discount [on biosimilar infliximab] in Demark is 70%. This is a new age for biosimilars, and it is also a new age for originators, because there is severe competition."</p><h2>Barriers </h2><p>Competitive pricing is of course not the sole determinant of biosimilar success, and much still depends on doctor attitudes, the type of product, the patient population, and so on. While physicians are becoming more favourable to biosimilars, many are still wary, which Mr Madsen suggested was at least partly a result of activity by certain parts of the originator industry. "The times are changing. Ten years ago doctors were very sceptical, but now they realize they can treat more patients" [with biosimilars], although they are "still considerably influenced by the anti-biosimilar campaign". </p><p>Doctors are still not very familiar with the biosimiliar principle, and "find it very hard to understand evidence by extrapolation," so education is very important, he said. "They have a very unrealistic understanding of risk, and they still think biosimilars are risky medicines. I say the most risky [products] are the new ones." </p><p>Another issue is that the legal situation regarding switching differs from one EU country to another, Mr Madsen said. "In Norway we have a pragmatic approach: we leave it to the doctor &ndash; they can use any argument they want, medical or economic". </p><p>While switching from an originator drug to a biosimilar is not thought to be that widespread, and member state rules on switching are not clear cut, Mr Madsen suggested that there were already plenty of examples of switching taking place. Denmark was a prime example, he said, where a succession of tenders and price reductions on both biosimilar and originator growth hormone had led to switching back and forth between the two. "Switching is all out there &ndash; you just have to look for it." (The Dutch regulatory agency <a href="http://www.scripintelligence.com/advanceSearchPage.do?pageNumber=1&sectionName=home" target="_new">has just clarified its position</a> in favour of switching.)</p><p>Biosimilars are needed because of the "chilling effect" of biosimilar competition on high biologic drug prices, Mr Madsen stressed. "We have an ageing population and in 2013-14, many countries saw the largest increase in medicines spending for decades. It is vital to keep the biosimilar concept alive."</p><h2>Update on Norswitch study</h2><p>The Norwegian official also gave an update on the ongoing Norswitch study, which is assessing the safety and efficacy of switching from Remicade to Remsima in patients with any of the approved indications (rheumatoid arthritis, spondyloarthritis, psoriatic arthritis, ulcerative colitis, Crohn's disease and chronic plaque psoriasis). </p><p>The randomized, double-blind, parallel-group Phase IV study, which is being sponsored by the Norwegian health ministry and will eventually recruit some 500 patients, began in October last year. One-year results are expected in mid-2016, and the study could be published in the second half of that year.</p><p>Given that the outcome of the study could be either positive or negative for switching, Mr Madsen observed: "I must admit that I am the father of this study, and I will probably go down in history as the man who saved biosimilars, or the man who shot them dead."</p><p>So far, just over 400 patients have been recruited to the study, with half of them being randomized to continue Remicade, and the other half to switch to Remsima. "I think it will be a very good study," Mr Madsen noted. </p><p>He said the study steering committee's view was that there should be no switching outside the study, a position that was "understandable". The originator industry has taken the same stance, and went so far as to ask the Health Department to prohibit switching outside the study, but "the Health Department said no, it can be done at the discretion of the doctor". Mr Madsen noted. For its part, the Norwegian industry association has said the study cannot be applied generally to other biosimilars, he added. </p><p>He noted too that some companies are already carrying out studies on multiple switching. "I think that in a few years we will have so much evidence that [switching] studies after approval will be unnecessary."</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 366
+
+<p>What's the secret to biosimilar success? A two-thirds discount to the price of the reference drug. It's not as simple as that, of course, but recent experience with biosimilar infliximab in Norway suggests that in some cases there is a tipping point beyond which resistance to switching patients to a biosimilar may melt away under strong financial pressure. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 83
+
+Norways infliximab experience shows effect of deep price cuts on biosimilar success
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150422T112901
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150422T112901
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150422T112901
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028560
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 84
+
+Norway's infliximab experience shows effect of deep price cuts on biosimilar success
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{4C026E33-3F48-485F-AC92-A1D98D47E010}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358001
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4a349d3e-b929-4bdb-97b2-7491e4f2b2e3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {16FF2374-88A4-490F-B358-25A73DA1E23F}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/11/05/Orexigen feels the backlash of PR fauxpas
+parent: {AB3D0A5F-5AD9-4FF9-983E-109114074A87}
+name: Orexigen feels the backlash of PR fauxpas
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: d20fd45c-d200-449f-914d-75ac465c93fe
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 42
+
+Orexigen feels the backlash of PR faux-pas
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 41
+
+Orexigen feels the backlash of PR fauxpas
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4571
+
+<p><p>One Orexigen Therapeutics investor called the company "a circus" on Twitter the morning of 12 May. The sentiment was reflected in the 11% drop in the stock after the company failed to reveal the results of its cardiovascular outcomes study &ndash; forcing the lead investigator to do that for them.</p><p>Yet, analysts don't seem to think this is a very big deal and Contrave already has the strongest launch of an obesity drug in recent years. While the LIGHT study announcements may be a public relations faux-pas, it's unlikely to hurt the success of the drug. </p><p>Orexigen and its partner, Takeda Pharmaceuticals, announced that they have terminated the LIGHT study early &ndash; a move that was not unexpected by investors. The 9,000-patient CV study was being conducted to rule out a 40% increased risk of major adverse cardiovascular events (MACE) like heart attack, stroke and death for the obesity drug Contrave (naltrexone/bupropion). One of the main components of the drug is known to increase blood pressure and regulatory authorities were concerned that Contrave could lead to a higher CV risk in obese patients &ndash; many of whom are already at high risk due to other factors like diabetes.</p><p>"The Light Study is not being terminated due to a finding of superiority or harm. The Executive Steering Committee, Takeda and Orexigen expect to report the final Light Study data in a scientific forum after all of the CV events in the Light Study have been collected and properly adjudicated," said the company in a statement on 12 May. </p><p>That data is now publicly available. But Orexigen and Takeda had nothing to do with it. </p><p>The LIGHT study was meant to read out in 2017, but early data from the clinical trial was used by the FDA to approve the drug in September. That data was meant to be closely held by the company &ndash; only certain top executives were supposed to be aware of the 25% interim results, but Orexigen violated that agreement by filing for a new patent on Contrave. The application revealed that not only did Contrave not increase the chances of developing a CV event, but actually seemed to improve patients' chances of not developing one of the life threatening conditions by a very significant percentage. The company was chastised at the time by both the FDA and the lead investigator on the study, Dr Steven Nissen, a cardiologist with the Cleveland Clinic. On the other hand, <a href="http://#http://www.scripintelligence.com/home/Orexigen-soars-on-CV-data-that-FDA-didnt-want-released-357057" target="_new">investors applauded the news</a>, pushing the stock up more than 30% at the time. </p><p>Both the regulatory authority and Nissen criticized the release of the early data, noting that the data could be misleading and that further study of the drug would likely show less of a benefit. </p><p>"As a large number of MACE events are necessary to determine effect in a cardiovascular outcome trial, the 25 percent interim data are not conclusive in establishing either benefit or risk of Contrave on cardiovascular risk," said a statement from the Cleveland Clinic on 12 May. </p><p>Now that has happened. The 50% interim data from the trial &ndash; which Orexigen and Takeda did not disclose &ndash; showed that there were 102 events in the placebo group compared with 90 events in the Contrave group. Forty-three of the placebo events occurred in the second 25% of the study, while 55 of those events were in the Contrave group. The overall data still shows that Contrave decreases the chance of a CV event by 12% -- still a positive, even though it's not statically significant any longer. </p><p>Analysts agree. "Consistent with our previously published expectations, the new hazard ratio (HR) of 0.88 is much closer to 1.0 than the prior HR of 0.59. This still implies a 12% Contrave benefit on cardiovascular events, which we believe represents considerable upside prior to concerns," wrote Leerink Swann analyst Paul Matteis in a same day note. "We continue to believe that a presentation and publication of the data will augment physician comfort with Contrave prescribing and help the launch over time."</p><p>Orexigen did not reply to request for comment. The company still has to conduct a full cardiovascular outcomes study to fulfill post-marketing requirements from the FDA. That trial has yet to begin, but is expected to report out in 2022. </p><p>In the meantime, expect Orexigen to spin the trial results as a win and to continue focusing on the strong launch of Contrave. </p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3
+
+<p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 41
+
+Orexigen feels the backlash of PR fauxpas
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151105T130000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151105T130000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151105T130000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028692
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 42
+
+Orexigen feels the backlash of PR faux-pas
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{2D771726-4AE8-4124-B380-232612225CB7}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+people
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358288
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d20fd45c-d200-449f-914d-75ac465c93fe
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042344Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

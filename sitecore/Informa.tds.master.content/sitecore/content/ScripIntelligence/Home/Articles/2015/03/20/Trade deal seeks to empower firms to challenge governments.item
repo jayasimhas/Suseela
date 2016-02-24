@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {720D96B0-F6BB-4683-96F6-FC099047416D}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/03/20/Trade deal seeks to empower firms to challenge governments
+parent: {AD42DA69-3D39-4357-AFF7-F14E275A07AC}
+name: Trade deal seeks to empower firms to challenge governments
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 1bc8f627-560b-43f5-ae98-a5cb8ad3a826
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 155
+
+{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{B3122C5E-FF3F-438A-9C93-1B54DC1286A5}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Trade deal seeks to empower firms to challenge governments
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 58
+
+Trade deal seeks to empower firms to challenge governments
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5759
+
+<p>A provision in the Trans-Pacific Partnership (TPP) free-trade agreement, whose negotiations are nearing conclusion, would give multinational corporations and investors greater powers in challenging government laws and regulations and court decisions, according to documents posted online on 25 March by the anti-secrecy group WikiLeaks.</p><p>The so-called "Investment Chapter" of the TPP, which is dated 20 January, was intended to be kept classified for four years after the entry into force of the agreement or, if no agreement is reached, for four years from the close of the negotiations, according to the front page of the document.</p><p>But as with other TPP documents, like the "Intellectual Property" chapter, the Investment Chapter was obtained by WikiLeaks and made public. </p><p>The TPP would set up investor-state dispute settlement (ISDS) tribunals that would determine if a nation's laws harmed a firm's or investor's expected future profits and if so, claim damages for actions that have been shown to reduce the value of an investment, or "indirect expropriation." </p><p>The Washington-based consumer advocacy group Public Citizen asserted the TPP's ISDS would allow biopharmaceutical firms to use the tribunals to "demand cash compensation" for claimed violations of rules from the World Trade Organization (WTO) about the creation, limitation or revocation of intellectual property rights. </p><p>"Currently, WTO rules are not privately enforceable by investors. But the leaked TPP investment text could empower individual foreign investors to directly challenge governments over policies to ensure access to affordable medicines, claiming that they constitute TPP-prohibited 'expropriations' of intellectual property rights if ISDS tribunals deem them to violate WTO rules," Public Citizen said in a 25 March statement. </p><p>The group insisted there were no new safeguards that limit the ISDS tribunals' discretion to create &ldquo;ever-expanding interpretations of governments' obligations to foreign investors and order compensation on that basis.&rdquo; </p><p>Public Citizen said the leaked TPP text also abandons a safeguard proposed in a 2012 document that excluded public interest regulations from indirect expropriation claims, stating, "non-discriminatory regulatory actions &#8230; that are designed and applied to achieve legitimate public welfare objectives, such as the protection of public health, safety and the environment do not constitute indirect expropriation." </p><p>"Today's leaked text eviscerates that clause by adding a fatal loophole that has been found in past US pacts," Public Citizen charged. </p><p>Negotiations for the TPP, a pact being formed among 12 nations &ndash; Australia, Brunei, Canada, Chile, Japan, Malaysia, Mexico, Peru, Singapore, Vietnam, New Zealand and the US, which together represent more than 40% of the world's gross domestic product &ndash; were launched in 2009.</p><p>The Obama administration has maintained the TPP is the best vehicle for the US to advance its economic interests in the "critical" Asia-Pacific region. </p><p>The Pharmaceutical Research and Manufacturers of America and the Biotechnology Industry Organization have supported the TPP and have been involved in the negotiation process. </p><p><a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-US-eight-nations-reach-deal-on-Trans-Pacific-Partnership-broad-outlines-323587" target="_new">President Barack Obama</a> has said the agreement would "boost" the economies of the nations involved, while also "lowering barriers to trade and investment, increasing exports and creating more jobs for our people, which is my number-one priority."</p><p>But WikiLeaks editor Julian Assange asserted the TPP's proposed ISDS system would be a "challenge to parliamentary and judicial sovereignty." </p><p>Lawmakers on Capitol Hill already have raised concerns about the creation of an ISDS system under the TPP.</p><p>Indeed, in <a href="http://www.scripintelligence.com/home/US-Capitol-Capsule-Lawmakers-voice-concerns-over-Trans-Pacific-Partnership-332559" target="_new">July 2012</a>, federal and state lawmakers expressed worry that an ISDS would bypass a nation's court system and could chill policymaking processes. </p><p>Last month, Senator Elizabeth Warren (Democrat-Massachusetts) joined several of her colleagues in condemning any attempts to impose an ISDS system on the US under the TPP &ndash; declaring it would "tilt the playing field further in favor of big multinational corporations and undermine US sovereignty."</p><p>"ISDS allows foreign companies to challenge American laws without ever stepping foot in an American court," Senator Warren said, insisting that opposition to such a system is not a partisan issue.</p><p>"Conservatives, libertarians and progressives can agree that giving foreign corporations special rights to challenge our laws outside of our legal system is a bad deal," she said.</p><p>In a 17 December 2014 letter to US Trade Representative Michael Froman, Ms Warren joined two other Democrats in her chamber, Senators Tammy Baldwin (Wisconsin) and Edward Markey (Massachusetts), in warning that ISDS provisions in past trade deals have allowed foreign firms to use the process to challenge government financial policy decisions, "and that the provisions in the TPP could be even broader." </p><p>"Including such provisions in the TPP could expose American taxpayers to billions of dollars in losses and dissuade the government from establishing or enforcing financial rules that impact foreign banks. The consequence would be to strip our regulators of the tools they need to prevent the next crisis," the three lawmakers said.</p><p><p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 343
+
+<p>A provision in the Trans-Pacific Partnership (TPP) free-trade agreement, whose negotiations are nearing conclusion, would give multinational corporations and investors greater powers in challenging government laws and regulations and court decisions, according to documents posted online on 25 March by the anti-secrecy group WikiLeaks.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 58
+
+Trade deal seeks to empower firms to challenge governments
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150320T170000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150320T170000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150320T170000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028244
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Trade deal seeks to empower firms to challenge governments
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+357415
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042321Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1bc8f627-560b-43f5-ae98-a5cb8ad3a826
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042321Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

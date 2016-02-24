@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8EEF8DB2-57B5-4127-8765-FE8EC75EFE60}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/04/22/Merck 1Q Januvia meets CVOT goals Keytruda ready to go in NSCLC
+parent: {2F6B6639-D934-4DFA-9EB8-1D57248EB5BD}
+name: Merck 1Q Januvia meets CVOT goals Keytruda ready to go in NSCLC
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c9c7900e-5dc4-4c68-b4ca-452625ee5952
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{728904A1-7259-48E8-8256-60D002A0BFEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 65
+
+Merck 1Q: Januvia meets CVOT goals; Keytruda ready to go in NSCLC
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 63
+
+Merck 1Q Januvia meets CVOT goals Keytruda ready to go in NSCLC
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6281
+
+<p>Merck & Co saw worldwide sales fall by 8% in the first quarter of 2015 but major products met expectations &ndash; including diabetes therapy Januvia (sitagliptin), which received further positive news on 27 April when Merck reported the drug didn't increase the risk of heart problems in patients. </p><p>Full results of the cardiovascular outcomes (CVOT) trial for the di-peptidyl peptidase-IV (DPP-4) Januvia will be reported at the American Diabetes Association's annual meeting on 8 June, but Merck said the trial met its primary endpoint and showed that type 2 diabetes patients didn't experience a cardiovascular problem &ndash; such as heart attack or stroke &ndash; any sooner with Januvia than with a placebo. </p><p>Merck's TECOS (trial evaluating cardiovascular outcomes with sitagliptin) study, the largest of its kind with data from 14,724 patients, also found there was no increase in hospitalization for heart failure in the sitagliptin cohort versus placebo. Credit Suisse analysts noted that this specific endpoint will potentially give Merck an advantage over competitors in the DPP-4 class. Januvia's close competitors, AstraZeneca with Onglyza (saxagliptin hydrate) and Takeda with Nesina (alogliptin), have both had their respective CVOT data reviewed by the FDA's advisory committee earlier this month; with the committee advising of a warning regarding increased hospitalization due to heart failure on Onglyza's label.</p><p>However, Credit Suisse analysts highlighted that the DPP-4 class is still being pressured by more effective SGLT-2 and GLP-1 inhibitors. "Merck's ability to grow (or at least sustain) the franchise post-TECOS will be important to watch given the sales and earnings growth consensus currently expects for Merck in 2016 and 2017 in the face Remicade biosimilars and patent loss for Vytorin/Zetia," they said. </p><p>Sales of Januvia &ndash; which is approved as an adjunct to diet and exercise to improve glycemic control in patients with type 2 diabetes &ndash; in 1Q 2015 were $1.39bn, up slightly from $1.33bn in the same period the year prior. </p><p>Besides Januvia, Merck's diabetes pipeline is "relatively limited," according to Datamonitor Healthcare analyst Rajan Sharma. "The main late-stage product of note is omarigliptin which is a once-weekly DPP-4 inhibitor. And while omarigliptin will likely be the first of its type to launch in the US and Europe, its commercial potential is quite limited and it will not achieve anything close to Januvia's levels of success," he told <i>Scrip.</i></p><p>The US FDA requires that all type 2 diabetes drugs undergo cardiovascular trials to test for their effects on the heart. </p><h2>Keytruda NSCLC label</h2><p>During Merck's 28 April earnings call analysts also focused strongly on Keytruda's (pembrolizumab) sBLA filing and questioned whether the product would receive a broad label from the FDA for use in advanced non-small cell lung cancer (NSCLC) versus a label specifying a particular sub-group of patients identified using a biomarker. </p><p>Merck said simply, "There is no yes or no answer. The FDA will make its decision on the labelling for the product based on all the data we have submitted." </p><p>Merck is ready to launch the drug, an anti-PD-1 antibody, in advanced NSCLC as soon as it gets a green light from the FDA. The company noted that having overall survival data ready to help promote the product would have been a bonus, but said this data is still "maturing." </p><p>The company is confident though that the drug will secure US approval in this indication without OS data. It said: "We feel good about the data we have and our competitive position at this time."</p><p>Despite the Keytruda progress, Bristol-Myers Squibb, with its anti-PD1 product Opdivo (nivolumab), remains ahead of Merck and other competitor Roche, and fourth runner AstraZeneca, in the NSCLC indication. But Merck said it sees the market as a space that "can handle many competitors." Merck execs see the market as "these companies, including Merck, versus cancer" not each other. </p><p><a href="http://www.scripintelligence.com/home/Keytruda-filing-comes-early-as-data-shine-at-the-AACR-357963" target="_new">Merck filed Keytruda early</a> in the US in mid-April, specifically for patients with advanced NSCLC whose disease has progressed on or after platinum-containing chemotherapy and an FDA-approved therapy for EGFR or ALK genomic tumor aberrations, if present. The submission was based on data from the Phase Ib KEYNOTE-001 study in na&iuml;ve and previously-treated patients with advanced NSCLC. New analyses from this study were presented at the AACR meeting in Philadelphia on Sunday 19 April and simultaneously published in the <i>New England Journal of Medicine</i> that broke down the overall response rates by PD-L1 expression to show better responses in those with higher expression. </p><p>Also, Merck reiterated it is still on track to submit a sBLA for Keytruda for first-line indication in advanced melanoma in mid-2015. Keytruda was approved for use in melanoma patients in September 2014. It is also currently in a number of clinical trials for various other cancers. </p><h2>1Q numbers</h2><p>First quarter 2015 worldwide sales at Merck were $9.4bn, a decrease of 8%, reflecting net unfavorable impact of acquisitions and divestiture and a 5% negative impact from foreign exchange, it said. Merck has divested its consumer care business and select products, but recently acquired antibiotic developer Cubist Pharmaceuticals. </p><p>Merck has narrowed and raised its full-year 2015 non-GAAP EPS range to between $3.35 and $3.48. The company has lowered its full-year 2015 GAAP EPS range to between $1.58 and $1.85. The change in the GAAP EPS range primarily reflects the incorporation of updated estimated Cubist intangible amortization expense. At current exchange rates, the company continues to anticipate full-year 2015 revenues of between $38.3bn and $39.8bn.</p><p>Individually, Merck's pharmaceutical sales declined 2% in 1Q 2015 to $8.3bn, including a 7% negative impact from foreign exchange. Excluding the impact of exchange, growth was driven by the four core therapeutic areas &ndash; diabetes, vaccines, hospital acute care and oncology. </p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 306
+
+<p>Merck & Co saw worldwide sales fall by 8% in the first quarter of 2015 but major products met expectations &ndash; including diabetes therapy Januvia (sitagliptin), which received further positive news on 27 April when Merck reported the drug didn't increase the risk of heart problems in patients. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 63
+
+Merck 1Q Januvia meets CVOT goals Keytruda ready to go in NSCLC
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150422T180000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150422T180000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150422T180000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028564
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 65
+
+Merck 1Q: Januvia meets CVOT goals; Keytruda ready to go in NSCLC
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{090E9A04-9B4B-4986-8BAF-06A6B07B978D}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 14
+
+Market Insight
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358008
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c9c7900e-5dc4-4c68-b4ca-452625ee5952
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042335Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

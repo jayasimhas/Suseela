@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {1BF6AA06-0FD8-462F-ACDC-DD83560EA95B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/26/AbbVie Downplays Impact Of Viekira Pak Safety Issues
+parent: {F421390D-2DF4-4F4B-B67F-38207715C2D7}
+name: AbbVie Downplays Impact Of Viekira Pak Safety Issues
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 4dc3c5e2-121a-4a40-b6ee-cc937d302993
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+AbbVie Downplays Impact Of Viekira Pak Safety Issues
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+AbbVie Downplays Impact Of Viekira Pak Safety Issues
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5614
+
+<p>AbbVie Inc. continued to downplay the potential impact of a labeling change for its hepatitis C combination drug Viekira Pak, saying during its third quarter earnings call on Oct. 30 that the safety-driven update affects a small percentage of patients and won't prove material to the product's sales.</p><p>On a call that focused primarily on the pharma's aggressive sales guidance through 2020, CEO Rick Gonzalez largely glossed over the US FDA's safety warning and the resulting label revision for both <i>Viekira Pak</i> (ombitasvir/paritaprevir/ritonavir/dasabuvir) and AbbVie's other hepatitis C virus (HCV) fixed-dose combo drug <i>Technivie</i>, which includes all the Viekira components except dasabuvir.</p><p>The update came after several post-market reports of <a href="http://www.scripintelligence.com/home/AbbVie-In-Hot-Seat-Over-HCV-Drugs-Serious-Liver-Injury-Risk-361193" target="_new">liver failure and death</a> resulted in new language on the drugs' use in patients with Child-Pugh B cirrhosis, describing Viekira Pak and Technivie as "contraindicated" rather than "not recommended," which is similar to the language already in place for patients with Child-Pugh C cirrhosis.</p><p>AbbVie's stock price took a hit after the safety issue first surfaced Oct. 22, but has recovered some since then. Viekira Pak posted global sales of $469m during the third quarter, with the $242m in US sales up slightly from $227m in the second quarter. International sales were $227m on the quarter, up from $158m.</p><p>For the year, Viekira now has posted worldwide sales of $1.1bn, but Gonzalez conceded during the call that the drug is not on pace to reach the $1.5bn total for 2015 that the company had projected. AbbVie did not break out sales for Technivie, which <a href="http://www.scripintelligence.com/business/Viekira-on-blockbuster-pace-as-AbbVie-adds-2nd-HCV-drug-359623" target="_new">was approved July 24</a> and has not had a full quarter of sales yet.</p><p>During the Q&A portion of the call, Gonzalez was asked how vulnerable Viekira Pak might be to reductions in formulary placement with pharmacy benefit managers, many of which had negotiated pricing with AbbVie in exchange for exclusive or preferred position on their lists. Gonzalez said a majority of those contracts run through 2016, but did not provide specifics.</p><p>Express Scripts Holding Co., which has given Viekira Pak <a href="http://www.scripintelligence.com/home/Express-Scripts-on-deal-for-AbbVies-Viekira-more-to-come-beyond-hepatitis-C-355807" target="_new">preferred status on its national formulary</a>, also downplayed the impact during its Oct. 28 earnings call, noting that it already had programs in place to avoid usage in patients with severe liver disease. The PBM does not expect changes in utilization.</p><p>Gonzalez also said that because the labeling change addresses such a small portion of the US HCV-infected population, AbbVie does not expect it to pose a major threat to product sales.</p><p>"This [labeling change] was obviously moving from not recommended to contraindicated," Gonzalez said. "If you look at the patient population in [Child-Pugh] Bs and [Child-Pugh] Cs, it's a relatively small patient population; it's probably something in the 3% or 4% range of US patients. So, if you look at it purely from the perspective of that, it wouldn't be a big impact."</p><p>"Frankly, the fact that we weren't recommended [for Child-Pugh B patients] and contraindicated in Cs, you wouldn't assume that there was a lot of volume &#8230; of treating those patients anyway," he continued. "Having said that, I will tell you we've gone out and contacted probably now around 80% of the physicians that prescribe the drug to make sure that they understand the changes in the label. I think that's gone well."</p><p>Dialogue with managed care contracts has also proceeded in a positive manner, the exec added. "They understand it and I think agree that in the previous label it was outlined in a way that probably there wasn't a tremendous amount of use there anyway," Gonzalez said.</p><p>"I think we have to wait to see how this plays out for the next maybe 30 days or so to be absolutely sure," he concluded. "But right now we are assuming, based on everything that we know, that it won't have a material impact on the brand."</p><p>A more material impact will come from new options coming to market, with more convenient regimens coming from Gilead Sciences Inc., Merck & Co. Inc. and AbbVie itself. </p><p>On the call, AbbVie reported that it has filed an NDA for a once-daily formulation of Viekira Pak at FDA. Meanwhile, its next-generation HCV combo &ndash; protease inhibitor ABT-493 and NS5A inhibitor ABT-530 &ndash; is moving into Phase III after posting cure rates of 99% in Phase IIb studies in non-cirrhotic genotype 1a and 1b patients. The Phase III protocol will use a dose that produced a 100% sustained virologic response rate in Phase IIb, Gonzalez said.</p><p>AbbVie also is studying an eight-week treatment cohort with the next-generation duo, in which 100% (34/34) of genotype 1 patients achieved SVR after four weeks of treatment, he said. The company plans to share later data from that study at the American Association for the Study of Liver Disease conference in San Francisco in November.</p><p><p><p>This article also was published in <a href="https://www.pharmamedtechbi.com/publications/the-pink-sheet-daily" target="_new">"The Pink Sheet" DAILY</a>. <i>Scrip Intelligence</i> brings selected complementary coverage from sister publications to subscribers.</p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 307
+
+<p>AbbVie Inc. continued to downplay the potential impact of a labeling change for its hepatitis C combination drug Viekira Pak, saying during its third quarter earnings call on Oct. 30 that the safety-driven update affects a small percentage of patients and won't prove material to the product's sales.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+AbbVie Downplays Impact Of Viekira Pak Safety Issues
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151026T170747
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151026T170747
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151026T170747
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030206
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+AbbVie Downplays Impact Of Viekira Pak Safety Issues
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{35998F02-6661-4699-8D32-35450F867D10}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361230
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042515Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4dc3c5e2-121a-4a40-b6ee-cc937d302993
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042515Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

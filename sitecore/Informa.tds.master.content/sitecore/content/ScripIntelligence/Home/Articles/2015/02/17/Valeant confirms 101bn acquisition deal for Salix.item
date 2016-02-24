@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {CB3997D0-031B-4906-AB80-93D16BD599A1}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/02/17/Valeant confirms 101bn acquisition deal for Salix
+parent: {673CAFAF-49B7-437A-9242-01ECA36193FF}
+name: Valeant confirms 101bn acquisition deal for Salix
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 039d887c-e071-4975-90e1-ab5e225d0640
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{7E16F926-C771-439C-A255-2F3555119F6B}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 51
+
+Valeant confirms $10.1bn acquisition deal for Salix
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 49
+
+Valeant confirms 101bn acquisition deal for Salix
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4904
+
+<p>Rumors were confirmed on Sunday 22 February 2015 when Valeant Pharmaceuticals announced it had reached an agreement to acquire gastro-intestinal products specialist Salix Pharmaceuticals for $158.00 per share in cash, or $10.1bn in total. The deal gives Salix a total enterprise value (i.e., factoring in debt/cash and equivalents and preferred stock) of $14.5bn.</p><p>Valeant highlighted "strong, double-digit volume growth" for key Salix products such as the antibacterial Xifaxan (rifamixin) for hepatic encephalopathy (HE) and travelers' diarrhea, Apriso (mesalamine) for ulcerative colitis, Relistor (subcutaneous methylnaltrexone bromide) for opioid-induced constipation and Uceris (budesonide) for ulcerative colitis.</p><p>It sees additional growth potential from the anticipated approval of the diarrhea-predominant (IBS-D) indication of Xifaxan in the US (the product has a PDUFA date of 27 May) and of an oral version of Relistor. </p><p>Salix has previously predicted total peak sales of Xifaxan of about $2.1bn. Sounding a note of caution though, analysts at Credit Suisse highlighted earlier this month a commercial risk to the product from the advent of the new all-oral hepatitis C treatments. They said that around 37-40% of HE cases were driven by HCV, and that HE accounted for around 70% of total Xifaxan sales currently. With the new HCV treatments, specialists expect the risk of developing HE will be reduced, according to Credit Suisse's research. The effect may take some time to show, however: "We do not see appreciable impact from this trend ahead of 2016," said the analysts.</p><h2>synergies</h2><p>Known for its hard-headed integration approach, Valeant is expecting to cut $500m from the combined company's costs within six months. Also true to form (Valeant has no sentimental attachment to R&D) it identified "R&D rationalization" as a key route to achieving these synergies, along with reductions in corporate overheads. </p><p>However, it explicitly said it would retain Raleigh, North Carolina-based Salix's 500-strong "highly rated specialty sales force" or its hospital, key account and field reimbursement teams. It said the "optimal size" of the primary care sales force was "to be determined".</p><h2>inventory overhang</h2><p>Late last year Salix had to admit it was auditing its unusually high inventory levels and it promptly lost its CFO (<a href="http://www.scripintelligence.com/business/Salix-sinks-as-audit-admission-hurts-MandA-potential-354915" target="_new">scripintelligence.com, 7 November 2014</a>). In January 2015 CEO Carolyn Logan retired, with chair Tom D'Alonzo stepping in as acting CEO. Its audit committee then said it would restate financials for 2013 and the first nine months of 2014.</p><p>Valeant has drawn up plans to reduce excess inventory more aggressively than Salix had initially intended, with the aim of bringing down wholesaler inventory levels to two months or less by the end of 2015. In November 2014, Salix reported levels of five to nine months for its top four products. Valeant now expects the net impact of the excess inventory on 2015 revenues to exceed $500m.</p><p>In December Salix projected 2015 net product revenue of $1.25-1.35bn (on the assumption of reducing inventory to three months) and 2016 net product revenue of $1.9-2.0bn.</p><p>Salix's business model has been to in-license late-stage or marketed GI products for commercialization through its specialty sales force. It has a product portfolio of some 23 brands. </p><p>The company pulled out of a planned tax inversion deal with Cosmo Pharmaceuticals in October (<a href="http://www.scripintelligence.com/home/Salix-abandons-Cosmo-acquisition-after-Treasury-crackdown-354278" target="_new">scripintelligence.com, 3 October 2014</a>) after the US Treasury announced planned rule changes to make such transactions less attractive. Meanwhile, its name had been touted as a potential acquisition target for a <a href="http://www.scripintelligence.com/business/Rumor-speculation-and-Salix-356750" target="_new">number of companies</a>, including Actavis and one-time Valeant target Allergan (subsequently acquired by Actavis itself). </p><p>Buying Salix will help keep Valeant competitive with Actavis/Allergan in the GI space. Actavis now owns the approved constipation-predominant IBS drug, Linzess (linaclotide), following its acquisition of Forest, along with eluxadoline, the mu opioid receptor agonist and delta opioid receptor antagonist which was accepted for filing under priority review by the US FDA for IBS-D in September 2014. The latter's developer, Furiex Pharmaceuticals, was acquired by Forest so is now part of Actavis also. The only drug currently approved for IBS-D in the US is Nestle's Lotronex (alosetron), which is indicated to treat women with severe disease only.</p><p>The deal is expected to close in the second quarter.</p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 370
+
+<p>Rumors were confirmed on Sunday 22 February 2015 when Valeant Pharmaceuticals announced it had reached an agreement to acquire gastro-intestinal products specialist Salix Pharmaceuticals for $158.00 per share in cash, or $10.1bn in total. The deal gives Salix a total enterprise value (i.e., factoring in debt/cash and equivalents and preferred stock) of $14.5bn.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+Valeant confirms 101bn acquisition deal for Salix
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150217T210842
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150217T210842
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150217T210842
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC027897
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 51
+
+Valeant confirms $10.1bn acquisition deal for Salix
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+199200264
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{D076E7AE-4BEB-4E57-97DF-8F97A3651301}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+356796
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+039d887c-e071-4975-90e1-ab5e225d0640
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042258Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

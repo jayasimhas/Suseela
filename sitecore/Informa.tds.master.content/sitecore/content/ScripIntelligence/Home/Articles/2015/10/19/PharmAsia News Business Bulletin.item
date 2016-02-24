@@ -1,0 +1,149 @@
+----item----
+version: 1
+id: {962F4120-4857-4CC1-83CC-273E71D1A06B}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/10/19/PharmAsia News Business Bulletin
+parent: {AF4362D4-A9BD-404F-A3A6-C4E03DB3EE32}
+name: PharmAsia News Business Bulletin
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c2301a76-e1f5-459e-b058-51347c686a76
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4641
+
+<p>A new regular roundup of commercial stories appearing in Scrip's sister publication PharmAsia News, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p><p><p>Full stories can be accessed by clicking on the story title (subscription required).</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/19/bms-bolsters-china-compliance-in-wake-of-sec-fine" target="_new">BMS Bolsters China Compliance In Wake Of SEC Fine</a></p><p>Following an investigation under the US Foreign Corrupt Practices Act violations, Bristol-Myers Squibb has been fined for improper business activities in China, which has been strengthening policies on drug price monitoring and to control kickbacks to doctors. The US firm says the matter has been resolved through a number of steps to improve practices and compliance.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/22/waiver-aids-luyes-us-approval-quest-for-risperdal-consta-rival" target="_new">Waiver Aids Luye's US Approval Quest For Risperdal Consta Rival</a></p><p>Luye has obtained a Phase III study waiver from the US FDA for its risperidone microsphere product, in a major step towards expediting the filing and potentially first US approval of a value added China-developed drug, which stands to become a rival to J&J's Risperdal Consta.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/21/japan-aims-to-support-innovation-but-local-pharma-wants-more" target="_new">Japan Aims To Support Innovation But Local Pharma Wants More</a></p><p>While Japan's government is declaring its support for innovation in the life sciences sector, the domestic pharma industry is saying it is being hard hit by other policies encouraging generics and would like to see the implementation of more positive policies.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/22/hanmis-once-weekly-efpeglenatide-bests-liraglutide-in-phase-ii" target="_new">Hanmi's Once Weekly Efpeglenatide Bests Liraglutide In Phase II</a></p><p>In its ongoing push to seek a global partner for its diabetes therapies, South Korea's major pharma firm Hanmi has presented the results of Phase IIb study for a once weekly form of its diabetes therapy efpeglenatide, which showed benefits over Novo Nordisk's rival therapy Victoza.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/21/biocon-profit-triples-as-very-attractive-biosimilar-opportunities-eyed" target="_new">Biocon Profit Triples As 'Very Attractive' Biosimilar Opportunities Eyed</a></p><p>Biocon, India's biggest biotechnology firm, says its quarterly net profit tripled from a year ago, driven by a one-off IPO gain, and that it is on track to make regulatory filings for several biosimilars in the US and European markets during the next fiscal year.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/21/chinese-hackers-target-pharma-trade-secretshttps:/www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/21/chinese-hackers-target-pharma-trade-secrets" target="_new">Chinese Hackers Target Pharma Trade Secrets</a></p><p>Two separate attacks on US pharmaceutical companies have been observed just days after Chinese President Xi and US President Obama signed a bilateral cyber security agreement designed to stop such behavior.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/20/us-korea-join-hands-on-precision-meds-mers-vaccines" target="_new">US, Korea Join Hands On Precision Meds, MERS Vaccines</a></p><p>South Korea is continuing to step up its fight against infectious diseases. Following the Seoul Declaration after the Global Health Security Agenda meeting in the country last month, it has now reached an agreement with the US NIH to cooperate for the development of precision medicines and MERS vaccines and therapies.</p><p><p><a href="https://www.pharmamedtechbi.com/publications/pharmasia-news/2015/10/19/genexine-seeks-china-entry-through-multibiologic-tasly-tieup" target="_new">Genexine Seeks China Entry Through Multi-Biologic Tasly Tie-Up</a></p><p>South Korean biotech firm Genexine is broadening its presence in Asia. Following an agreement earlier this month with Kalbe Farma to set up a joint venture in Indonesia, it has now signed a licensing out deal for protein therapies with a subsidiary of China's Tasly Pharmaceutical.</p><p><p><a href="http://www.pharmasianews.com" target="_new">www.pharmasianews.com</a></p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 229
+
+<p>A new regular roundup of commercial stories appearing in Scrip's sister publication PharmAsia News, whose multilingual team of regional experts provides authoritative business intelligence focused on the Asian marketplace.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20151019T171627
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20151019T171627
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20151019T171627
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC030140
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 32
+
+PharmAsia News Business Bulletin
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{DB39CCA6-EB88-422C-8247-AB4AD01491E2}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 13
+
+Headline News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+361117
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c2301a76-e1f5-459e-b058-51347c686a76
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042512Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

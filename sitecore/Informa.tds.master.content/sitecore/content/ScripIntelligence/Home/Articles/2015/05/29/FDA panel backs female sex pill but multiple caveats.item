@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {79CFC7CB-934D-400D-B1FA-454714E823B5}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/05/29/FDA panel backs female sex pill but multiple caveats
+parent: {9E44CD89-5CEF-43CD-B8D5-C3B05FCA838C}
+name: FDA panel backs female sex pill but multiple caveats
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 0033a37f-8899-47be-a526-034eea61f7e7
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 350
+
+{4405059F-46BF-48C9-BCF4-B14E77639FB3}|{1D288E18-BAFF-4498-B284-EF9BC8D32E30}|{864F8DF2-858F-4FE1-9E65-EFCEEBFA8288}|{07CF1C44-428A-445B-98D8-5EA9905BD7C5}|{CD796374-A60A-4D81-8A05-7B92AD2013C1}|{38CC267C-7BFB-437D-BEA0-27DBA7B77873}|{3FA7743D-5DAB-49A3-B30D-DF5079ADB082}|{29C8E5B9-B01E-4DEE-A123-14D70756095B}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 53
+
+FDA panel backs female sex pill, but multiple caveats
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 52
+
+FDA panel backs female sex pill but multiple caveats
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 8240
+
+<p>A mega FDA advisory panel on 4 June backed approval of a twice-rejected drug aimed at boosting a woman's libido, although the outside advisers want certain restrictions imposed on the product's marketing, including a risk evaluation and mitigation strategy (REMS) plan, to ensure adverse effects, most notably fainting, are properly managed.</p><p>In a vote that drew loud cheers and applause from a jam-packed room of spectators and advocates, 18 members of the FDA's Bone, Reproductive and Urologic Drugs (BRUDAC) and Drug Safety and Risk Management (DSaRM) Advisory Committees said the overall benefit-risk profile of Sprout Pharmaceuticals' flibanserin was acceptable to support its approval as a treatment for hypoactive sexual desire disorder (HSDD) in premenopausal women, but only if certain risk management options beyond labeling were implemented.</p><p>Six of the members of the joint BRUDAC-DSaRM committee recommended against approval altogether.</p><p>Nobody on the panel was willing to put the drug on the market without safety measures in place.</p><p>The FDA is expected to make a decision by 18 August on Sprout&rsquo;s new drug application for flibanserin, a new molecular entity, which the company is seeking to market under the brand name Addyi.</p><p>Sagient Research's <i>BioMedTracker</i>, an affiliate of <i>Scrip</i>, put the likelihood of flibanserin gaining the FDA's blessing at 92%, which was 3% above the average probability of US approval for the same indication based on the historical performance of medicines in the same development phase.</p><p>The vote on flibanserin came after a daylong discussion, which included a nearly two-hour long open public hearing, in which the FDA and its advisers heard from about 40 people &ndash; some for and others against approval.</p><p>Several women who said they had struggled with HSDD pleaded with the FDA committee to endorse flibanserin &ndash; insisting patients with the condition, which affects about 7% of premenopausal women in the US, are desperate for a pharmaceutical therapy, given there are no drugs on the American market for female sexual dysfunction.</p><p>The panelists also heard from several sex therapists and doctors who treat patients with HSDD.</p><p>But a large number of people also testified against the drug.</p><p>Public Citizen's Dr Sydney Wolfe asked the committee specifically to consider what had changed with the drug since a 2010 panel of advisers overwhelmingly rejected flibanserin, which initially was developed by Boehringer Ingelheim, which sold the product to Sprout after a failed attempt to get it on the US market.</p><p>Others at the meeting accused Sprout of engaging in underhanded tactics to get its drug on the market through disseminating misinformation, including insisting there are 26 sexual dysfunction products available for men in the US &ndash; a myth regulators tried to dispel by pointing out that many of the products the company listed are not approved in the US for that indication &ndash; and engaging in anti-FDA campaigns on Capitol Hill and elsewhere declaring the agency was &ldquo;gender biased.&rdquo;</p><p>But Dr Hylton Joffe, director of the FDA&rsquo;s Division of Bone, Reproductive and Urologic Products, said the agency &ldquo;firmly rejects&rdquo; those assertions &ndash; repeating an argument he made in a <a href="http://www.scripintelligence.com/home/FDAs-sex-dilemma-What-to-do-about-the-fainting-358713" target="_new">memo released earlier</a> in the week.</p><p><b>Date-rape drug?</b></p><p>There also appeared to be some tension between panelists when one of the advisers asked the FDA about the potential flibanserin could be used as a "date-rape" drug because it can make some people sleepy.</p><p>Regulators responded that may be a consideration.</p><p>But panelist Dr Marianne Brandon, a clinical psychologist and sex therapist in Annapolis, Maryland, criticized the comparison of flibanserin to a date-rape drug &ndash; calling the idea "disrespectful."</p><p>"I have worked with multiple women who have received date-rape drugs and have been raped," she said. "What these women tell me is they can't move their body, they are confused. I'm hearing nothing on that level today about the side effects&rdquo; of flibanserin.</p><p><b>Fainting, alcohol concerns</b></p><p>Panelist Dr Walid Gellad, an associate professor of medicine at the University of Pittsburgh in Pennsylvania, who had been critical about flibanserin throughout the meeting, nonetheless voted to back the drug's market entrance, although he said its benefits of improving sexual desire in women with HSDD were only "modest," or "maybe less than modest."</p><p>"But I think that puts it in good company with other approved drugs," Dr Gellad said &ndash; a remark that brought an explosion of laughter.</p><p>Still, he said he had "serious, serious, serious safety concerns" about flibanserin, particularly with the adverse syncope effects.</p><p>"It can be serious, it's unexpected and you don't know when it's going to happen and it's potentially accentuated by other things," Dr Gellad said. "It is not just something to ignore."</p><p>He was particularly concerned that someone could be driving when a fainting spell came over them.</p><p>Dr Gellad also noted that Sprout's Phase III trials were done in a "select" population of healthy premenopausal women, so there are no data on how well flibanserin works outside of that group or the potential the drug has for other types of adverse effects beyond those identified in the studies.</p><p>"And when you expand it to the real world, things are going to be worse," Dr Gellad said.</p><p>Therefore, he said, "everything should be done to make sure the drug should only be given to those who were similar to those in the trial."</p><p>As part of a required REMS, Dr Gellad said the FDA should impose a prescriber certification program &ndash; something several others on the committee also supported.</p><p>A big discussion that consumed much of the all-day meeting was the potential for alcohol to exacerbate the fainting and also hypotension seen with flibanserin during clinical testing.</p><p>In the alcohol interaction study the FDA requested to be conducted, 16% of the participants experienced "clinically significant" adverse events of severe hypotension and syncope within 1.5 to 4 hours after the co-administration of alcohol and flibanserin &ndash; events that required medical interventions.</p><p>Most on the committee found it problematic that only two of the 25 participants in the alcohol study were women, so the risk of syncope and hypotension, or low-blood pressure, with concomitant use of flibanserin in that population was not adequately characterized. </p><p>Some on the panel called for a black-box warning to alert prescribers and patients about avoiding alcohol with the use of flibanserin, but others insisted there should be a contraindication in the labeling.</p><p>A consensus of the advisers said Sprout should be required to conduct a new alcohol study.</p><p>Several on the committee said the FDA also needs to require Sprout to have a patient registry to track flibanserin's adverse effects.</p><p>Another concern raised by many panelists was how the drug will be marketed to the general public through television and other advertising campaigns &ndash; with several panelists calling for direct-to-consumer ads to be limited to prevent overuse and misuse of flibanserin if the FDA approves it.</p><p><b>Setting a standard</b></p><p>While panelist Dr Michele Orza, one of the two consumer representatives on the committee, said her "no" vote came with "a "degree of agony," she said the question the advisers were asked to answer was whether flibanserin was the treatment women need "and the treatment they deserve." </p><p>"My feeling is they deserve better," she said. "There was enough noise in the data. The treatment effect was minimal, marginal at best."</p><p>If the FDA approves flibanserin, Dr Orza said she was concerned that as the agency considers subsequent treatments for female sexual dysfunction, it will find it has set the standard too low &ndash; "and that's problematic."</p><p><p><p><p><p><p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 348
+
+<p>A mega FDA advisory panel on 4 June backed approval of a twice-rejected drug aimed at boosting a woman's libido, although the outside advisers want certain restrictions imposed on the product's marketing, including a risk evaluation and mitigation strategy (REMS) plan, to ensure adverse effects, most notably fainting, are properly managed.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+FDA panel backs female sex pill but multiple caveats
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150529T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150529T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150529T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC028910
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{99C1E0C6-E575-4630-A767-F6BBBF6CA843}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 53
+
+FDA panel backs female sex pill, but multiple caveats
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{185C14A2-61E1-460C-96C2-EB0D8AB963B0}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 10
+
+MarketData
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+358659
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0033a37f-8899-47be-a526-034eea61f7e7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

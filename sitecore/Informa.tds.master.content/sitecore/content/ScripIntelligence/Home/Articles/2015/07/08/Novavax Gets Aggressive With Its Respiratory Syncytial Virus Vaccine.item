@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {88FB8301-2343-4E87-A2B6-4E693CB8CAB8}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/07/08/Novavax Gets Aggressive With Its Respiratory Syncytial Virus Vaccine
+parent: {AF97731A-5C70-4542-9DF1-6FA2ED0D8593}
+name: Novavax Gets Aggressive With Its Respiratory Syncytial Virus Vaccine
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: a360bf73-61e2-4edf-855d-cd8cd52104c3
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{F5161CC2-772F-472E-A21C-BF196343462E}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 69
+
+Novavax Gets Aggressive With Its Respiratory Syncytial Virus Vaccine 
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 68
+
+Novavax Gets Aggressive With Its Respiratory Syncytial Virus Vaccine
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5744
+
+<p>The prospect of a prophylactic vaccine against respiratory syncytial virus (RSV) has come a step closer with the lead product candidate, Novovax Inc.'s RSV F Vaccine, meeting its major endpoints in a Phase II trial in older adults. </p><p>The company claims the "groundbreaking" study is the first to demonstrate efficacy of an active RSV immunization in any clinical trial population. It adds that the vaccine's efficacy was at least as good as that seen with other respiratory vaccines tested in older adults, such as pneumococcal and flu vaccines. </p><p>"We are committed to pursuing an aggressive developmental timeline for this program which includes discussions with regulatory authorities and initiation of a pivotal Phase III trial as early as the fourth quarter of this year," said Novovax President and CEO Stanley C Erck.</p><p>Novavax has used its Sf9/baculovirus recombinant technology platform to create the RSV vaccine candidate based on the RSV fusion protein (F-protein), an important surface protein central to the disease process. In the native RSV virus, the F-protein is unstable and does not appear to induce fully protective immune responses, Novavax notes, but its scientists have managed to introduce specific modifications to ensure the recombinant F-protein in the vaccine candidate was more stable. </p><p>While there are no approved vaccines against RSV, current approved treatments include MedImmune LLC. (AstraZeneca PLC.)'s <i>Synagis</i> (palivizumab), a monoclonal antibody that targets the RSV F protein, and is used for prophylaxis against RSV disease in high-risk infants. MedImmune also markets <i>Respigam</i>, an RSV immunoglobulin product, for the prevention of RSV disease in children under 24 months with bronchopulmonary dysplasia or a history of prematurity.</p><p>Novavax is developing its preventative RSV F Vaccine for three susceptible target populations: older adults, infants (receiving protection through antibodies transferred from their mothers who would be immunized during the last trimester of pregnancy) and pediatrics. RSV affects individuals of all ages, but these three groups, along with the immunocompromised, are the most severely affected. Safety and immunogenicity data from another RSV F Vaccine Phase II trial, to protect infants via maternal immunization, are expected later this quarter.</p><h2>Study Details </h2><p>The US observer-blinded, placebo-controlled Phase II trial of 1,600 older adults (60 years and older) was designed to prospectively examine the incidence of all symptomatic respiratory illnesses associated with RSV, in community-living older adults who were treated with placebo. The trial also evaluated safety and immunogenicity of the unadjuvanted, 135 &micro;g dose of the RSV F Vaccine compared with placebo, and estimated the efficacy of the RSV F Vaccine in reducing the incidence of respiratory illness due to RSV.</p><p>It found significant efficacy in preventing all symptomatic RSV disease (44%) and RSV disease with symptoms of lower respiratory tract infection (46%) in older adults. </p><p>Anti-F IgG antibody (PCA) titers peaked rapidly at day 14, plateaued at day 28 and remained at elevated levels through day 56; the last time point currently analyzed. There were greater than four-fold increases in anti-F IgG concentrations at trial days 14, 28 and 56, and serologic responses in over 90% of vaccinated subjects, indicating a robust immune response.</p><p>In addition, statistically significant efficacy against more severe RSV illness, as defined by the presence of multiple lower respiratory tract symptoms associated with difficulty breathing, was 64% in several ad hoc analyses. Kaplan-Meier curves showed continued divergence of active vaccinees from placebo recipients over the nearly six months during which RSV was detected, demonstrating the durability of protection throughout the RSV season, Novavax noted.</p><p>The vaccine's safety profile was nearly identical to that of placebo recipients with regard to both local and systemic events, the company added. The full data will be presented in due course.</p><p>"These efficacy data represent a historic advance for the field," said Senior VP of Research and Development Gregory Glenn. "It is clear that our RSV F Vaccine provided statistically significant efficacy in older adults, a population that historically has been difficult to protect. The reduction in symptomatic RSV, RSV with lower respiratory tract illness and RSV associated with difficulty breathing are breakthrough results."</p><p>The trial also established an attack rate for symptomatic RSV disease of 4.9% in older adults, 95% of which included lower respiratory track symptoms. This, commented analysts at Sagient's BioMedTracker, will be useful to Novavax in designing its registrational Phase III trial. Novavax said in a conference call that the Phase III trial could employ all-disease incidence rates and/or severe disease rates as primary endpoints. </p><p>Between 11,000 to 17,000 older adults and high-risk adults die of RSV infection or its complications annually in the US, and up to 180,000 are hospitalized for serious respiratory symptoms, Novavax says. The company has <a href="http://www.scripintelligence.com/researchdevelopment/Novavax-may-take-nano-RSV-vaccine-forward-without-pharma-341800" target="_new">previously estimated</a> the potential market for the vaccine at $4bn. </p><h2>Other Potential Vaccines</h2><p>Of the other prophylactic vaccines against RSV being developed the most advanced is one from GlaxoSmithKline at Phase II. There are also, at the Phase I stage, several candidates each from GSK, AstraZeneca and Johnson & Johnson, as well as one from Novartis. </p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 239
+
+<p>The prospect of a prophylactic vaccine against respiratory syncytial virus (RSV) has come a step closer with the lead product candidate, Novovax Inc.'s RSV F Vaccine, meeting its major endpoints in a Phase II trial in older adults. </p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 68
+
+Novavax Gets Aggressive With Its Respiratory Syncytial Virus Vaccine
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150708T150001
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150708T150001
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150708T150001
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029479
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 69
+
+Novavax Gets Aggressive With Its Respiratory Syncytial Virus Vaccine 
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{EDF1CA8E-D9CB-49CC-8211-BA71D040812B}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 6
+
+people
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359824
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a360bf73-61e2-4edf-855d-cd8cd52104c3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042434Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

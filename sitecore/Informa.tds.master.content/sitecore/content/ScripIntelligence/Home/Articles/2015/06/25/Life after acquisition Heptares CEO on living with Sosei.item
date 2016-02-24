@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {A374BBC6-ED2B-4175-A965-70A39BED8311}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Articles/2015/06/25/Life after acquisition Heptares CEO on living with Sosei
+parent: {FACCF432-3C0E-4752-A3F4-8CF6BA1DEF18}
+name: Life after acquisition Heptares CEO on living with Sosei
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: dae6315e-5318-41fa-b48e-da4cfb72de7a
+
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{B3CB389F-B9B7-4041-9E3D-C9810F548727}|{649253E7-61BB-41CA-ACAF-6CC3C62670AE}
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 57
+
+Life after acquisition? Heptares CEO on living with Sosei
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 56
+
+Life after acquisition Heptares CEO on living with Sosei
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6547
+
+<p>Heptares, a structure-based drug design specialist, was one of the shinier jewels in the UK biotech crown prior to its $400m acquisition by Sosei earlier this year. CEO and chairman Malcolm Weir, who hung on to his position and even added executive vice president and chief R&D officer at Sosei to his job title, spoke to <i>Scrip</i> about how life has changed after being swallowed up by a Japanese pharma company, and highlights from a recent R&D day in Japan.</p><p><b><i>Scrip</i>: So how is life as Sosei's global R&D engine?</b></p><p><b>Malcolm Weir:</b> Yes I guess that's what we are. However, Sosei does have other stuff in Japan, though nothing quite as extensive as Heptares. Sosei acquired a company called Jitsubo last year that does some interesting peptide chemistry and we can see some synergies with them because a lot of GPCRs bind peptides and there is quite a lot of interest in peptide based therapeutics now. So our structural and GPCR knowledge is potentially synergistic with their knowledge of how to make peptides synthetically.</p><p><b><i>Scrip:</i> Is this why Sosei was interested in Heptares?</b></p><p><b>MW: </b>Not really. Sosei has a growing milestone and revenue stream derived from the COPD products Ultibro Breezhaler and Seebri Breezhaler marketed by its partner Novartis. That's working out very well for Sosei and management started thinking: well, what next? There are various things you can do with a royalty stream. They wanted to secure the strategic future for the company and [chairman and CEO] Shinichi Tamura is quite visionary. His view was slightly contrarian. Everyone else is looking at late-stage assets but he wanted to get a technology platform that will give and give in terms of new therapeutics, and clearly also a pipeline that has scope for partnering. So we really fitted the bill for him. I think they looked globally for some time, a year or two, and then lit upon us. We started talking about a year ago. First we were just talking about a deal or an investment, and then the conversation blossomed from there. Also we had other parties interested in acquisition, so we had some options, which warmed everything up. We weren't looking to be bought but Sosei was looking to buy, so we came to a good understanding at the end.</p><p><b><i>Scrip:</i> How has life changed under Sosei?</b></p><p><b>MW:</b> Life is different in two major ways. One is that we are part of a public company now, with Japanese shareholders, so we have to think about that aspect of things. We did an R&D day in Tokyo last week which was very exciting and seemed to go well; lots of fun and very different from being a VC-backed private company for seven years.</p><p>The other thing is that it is great to have a backer who basically leaves us to get on with our job. We've lost no staff [since the acquisition]; in fact we're hiring people. We are maybe not fully autonomous, we're a wholly owned subsidiary after all, but we have a great deal of freedom in terms of how we go about our business. In that, things are very much how they were before. We're generating new pipeline candidates, progressing existing pipeline candidates, and also looking at potential deals. Sometimes when you get acquired everything gets turned on its head, lots of people leave, others get unhappy. That's just not happening with us and Sosei. Quite the opposite.</p><p><b><i>Scrip:</i> What were the highlights from your R&D day last week?</b></p><p><b>MW:</b> One of the highlights was the progress in muscarinic M1 agonists, which are targeted towards cognitive disorders. We have completed the Phase Ia studies with that compound, HTL9936, which is the first of its mechanism to ever go into humans. M1 selectivity was demonstrated with, unlike earlier muscarinic agonists, no adverse effects seen from stimulation of other muscarinic receptors. So a clean compound, relative to M2 and M3 agonists. </p><p>We also got some exciting early data which suggests that HTL9936 is not only getting in to the brain, which we knew from measurements of CSF, but it is also exciting nerves in the brain as measured by electroencephalography (EEG). That is very encouraging as it is happening at quite low doses and therefore supports the hypothesis that we can generate a therapeutic that works through this mechanism. It's early, Phase Ia, and we have a whole program of follow-up studies now. Next year and the year after we will move into Alzheimer's and schizophrenia. </p><p>We have follow on compounds in M1 alone, because you don't just rely on the first compound that you take into humans, and we also have M4 directed compounds that are directed at psychosis. In Alzheimer's, about half the people have delusions, hallucinations, get aggressive, agitated, so forth. These behavioral symptoms are very distressing and problematic for care givers and the patients and they are a major cause of institutionalization for people with Alzheimer's. Everyone thinks it is all about losing your memory, and it is, but there is also all this, and there are no treatments. It is a huge unmet need, and as with cognition in schizophrenia, there is no treatment at all.</p><p>These are massive unmet needs that M1 and M4 could address, and also a dual of M1 and M4 in a single compound is a very attractive proposition. We are at the preclinical stage, but over the next few years we will move more and more of these compounds into human testing. </p><p><b>Scrip: What else got everyone excited in Tokyo?</b></p><p><b>MW:</b> The muscarinic program is the most advanced, but we also have the adenosine A2A program creating a lot of interest. We have a molecule that is ready to go into humans, it has an open IND. It is targeted to ADHD but it could also be used in immune oncology because there is good evidence that the A2A mechanism on T cells is involved in regulating the immune response to tumors. If you could give an A2A antagonist in combination with checkpoint inhibitors or cancer vaccines there is a good rationale to say that it would improve cancer outcomes. </p><p>We're looking to get into the clinic later this year and we can look then at what direction to go in. Possibly partnering, possibly doing studies on our own in ADHD. And then we have the follow-up compounds in cancer. So lots of options.</p><p><b>Related story:</b></p><p><a href="http://www.scripintelligence.com/home/400m-Heptares-acquisition-to-drive-Soseis-RandD-356884" target="_new">$400m Heptares acquisition to drive Sosei's R&D</a></p><p><p>
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 470
+
+<p>Heptares, a structure-based drug design specialist, was one of the shinier jewels in the UK biotech crown prior to its $400m acquisition by Sosei earlier this year. CEO and chairman Malcolm Weir, who hung on to his position and even added executive vice president and chief R&D officer at Sosei to his job title, spoke to <i>Scrip</i> about how life has changed after being swallowed up by a Japanese pharma company, and highlights from a recent R&D day in Japan.</p>
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Life after acquisition Heptares CEO on living with Sosei
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20150625T170004
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+20150625T170004
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+20150625T170004
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+SC029124
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 57
+
+Life after acquisition? Heptares CEO on living with Sosei
+----field----
+field: {5AD65E47-7554-4CE5-87B0-7FB65051C05A}
+name: Authors
+key: authors
+content-length: 38
+
+{20E0B55E-5592-4DBF-A9D4-58B471A17E67}
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{0F9CCE10-91C1-4F31-832A-266F482A5DAF}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+359121
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160209T042415Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dae6315e-5318-41fa-b48e-da4cfb72de7a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T042415Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
