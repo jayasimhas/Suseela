@@ -24,7 +24,7 @@ namespace Informa.Library.User.Authentication
 			if (authenticated)
 			{
 				var sitecoreUsername = string.Format("{0}\\{1}", Context.Domain.Name, username);
-				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
+				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, persist);
 
 				sitecoreVirtualUser.Profile.Email = username;
 
