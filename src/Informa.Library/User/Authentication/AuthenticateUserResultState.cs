@@ -3,7 +3,6 @@
 	public enum AuthenticateUserResultState
 	{
 		Success,
-		Failure,
-		TemporaryPassword
+		Failure
 	}
 }

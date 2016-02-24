@@ -1,5 +1,4 @@
-﻿using System;
-using Informa.Library.User.Authentication;
+﻿using Informa.Library.User.Authentication;
 
 namespace Informa.Library.Salesforce.User.Authentication
 {
@@ -17,7 +16,22 @@ namespace Informa.Library.Salesforce.User.Authentication
 		{
 			var result = Service.Execute(s => s.login(username, password));
 			
-			throw new NotImplementedException();
+			if (!result.success.HasValue || !result.success.Value)
+			{
+				return new SalesforceAuthenticateUserResult
+				{
+					State = AuthenticateUserResultState.Failure
+				};
+			}
+
+			return new SalesforceAuthenticateUserResult
+			{
+				State = AuthenticateUserResultState.Success,
+				User = new SalesforceUser
+				{
+					Id = result.contactId
+				}
+			};
 		}
 	}
 }

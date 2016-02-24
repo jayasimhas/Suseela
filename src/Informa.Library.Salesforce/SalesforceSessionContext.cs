@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Informa.Library.Threading;
 
 namespace Informa.Library.Salesforce
 {
-	public class SalesforceSessionContext : ISalesforceSessionContext
+	public class SalesforceSessionContext : ThreadSafe<ISalesforceSession>, ISalesforceSessionContext
 	{
 		protected readonly ISalesforceSessionFactory SessionFactory;
 
@@ -12,11 +12,15 @@ namespace Informa.Library.Salesforce
 			SessionFactory = sessionFactory;
 		}
 
-		public ISalesforceSession Session { get; set; }
+		public ISalesforceSession Session => SafeObject;
+
+		protected override ISalesforceSession UnsafeObject => SessionFactory.Create();
 
 		public ISalesforceSession Refresh()
 		{
-			throw new NotImplementedException();
+			Reload();
+
+			return Session;
 		}
 	}
 }
