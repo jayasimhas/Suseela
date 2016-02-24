@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web.Security;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
@@ -35,6 +36,19 @@ namespace Informa.Web.Controllers
 		{
 			string value;
 			return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
+		}
+
+		public static string RemoveSpecialCharacters(string str)
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach (char c in str)
+			{
+				if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+				{
+					sb.Append(c);
+				}
+			}
+			return sb.ToString();
 		}
 
 		public static WordPluginModel.UserStatusStruct GetUserStatus(string username, string password)
