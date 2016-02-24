@@ -86,22 +86,21 @@ namespace Informa.Web.Controllers
 
 		public JsonResult<List<WordPluginModel.TaxonomyStruct>> Get(string searchTerm)
 		{
-			var taxonomyItem = _sitecoreService.GetItem<IFolder>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
+			var taxonomyItem = _sitecoreService.GetItem<Item>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
 			if (taxonomyItem == null)
 			{
 				return null;
 			}
-			List<ITaxonomy_Item> children;
+			List<Item> children;
 			if (!string.IsNullOrEmpty(searchTerm))
 			{
-				children = taxonomyItem?._ChildrenWithInferType.OfType<ITaxonomy_Item>().Where(i => TaxonomyMatch(i.Item_Name, searchTerm)
-					).ToList();
+				children = taxonomyItem.Axes.GetDescendants().Where(i => TaxonomyMatch(i.Name, searchTerm)).ToList();
 			}
 			else
 			{
-				children = taxonomyItem?._ChildrenWithInferType.OfType<ITaxonomy_Item>().ToList();
+				children = taxonomyItem.Axes.GetDescendants().ToList();
 			}
-			var matches = children.Select(child => new WordPluginModel.TaxonomyStruct { ID = child._Id, Name = child.Item_Name, Section = child._Parent._Name }).ToList();
+			var matches = children.Select(child => new WordPluginModel.TaxonomyStruct {ID = child.ID.Guid, Name = child.DisplayName}).ToList();
 
 			return Json(matches);
 
@@ -440,7 +439,7 @@ namespace Informa.Web.Controllers
 			return Json(!string.IsNullOrEmpty(length?.Text) ? Int32.Parse(length.Text) : 1500);
 		}
 	}
-	
+
 	[Route]
 	public class SupportingDocumentsNodeController : ApiController
 	{
@@ -769,7 +768,7 @@ namespace Informa.Web.Controllers
 
 		public JsonResult<WordPluginModel.ArticleStruct> Get(string articleNumber)
 		{
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			return Json(article == null ? new WordPluginModel.ArticleStruct() : _articleUtil.GetArticleStruct(article));
 		}
 	}
@@ -792,7 +791,7 @@ namespace Informa.Web.Controllers
 
 		public JsonResult<WordPluginModel.ArticleStruct> Get(string articleGuid)
 		{
-            ArticleItem article = _sitecoreService.GetItem<ArticleItem>(articleGuid);
+			ArticleItem article = _sitecoreService.GetItem<ArticleItem>(articleGuid);
 			return Json(article == null ? new WordPluginModel.ArticleStruct() : _articleUtil.GetArticleStruct(article));
 		}
 	}
