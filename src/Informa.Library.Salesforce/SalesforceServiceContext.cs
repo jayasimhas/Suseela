@@ -42,7 +42,7 @@ namespace Informa.Library.Salesforce
 			var result = function(Service);
 
 			// TODO-Sforce: Re-factor to abstract away
-			if (result.errors.Any(e => string.Equals(e.statusCode, "INVALID_SESSION_ID", StringComparison.InvariantCultureIgnoreCase)))
+			if (result.errors != null && result.errors.Any(e => e != null && string.Equals(e.statusCode, "INVALID_SESSION_ID", StringComparison.InvariantCultureIgnoreCase)))
 			{
 				RefreshSession();
 
