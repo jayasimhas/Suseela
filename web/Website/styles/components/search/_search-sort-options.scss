@@ -16,9 +16,35 @@
 
   ol {
     display: inline-block;
+
+    li {
+      display: inline-block;
+    }
   }
 
   a {
     @include textMix('Roboto', 15px, 400);
+
+    &.active span {
+      text-decoration: underline;
+    }
+
+    .icon-group {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: 5px;
+    }
+
+    .icon-triangle {
+      display: block;
+      width: 12px;
+      height: 11px;
+
+      @include svg-fill($informa-light-gray-d);
+
+      &.active {
+          @include svg-fill($informa-red);
+      }
+    }
   }
 }

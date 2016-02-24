@@ -26,7 +26,7 @@
                  data-pop-out-type="sign-in"
                  data-pop-out-align="right">
                 <svg class="article-prologue__share-icon">
-                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use> <!-- if an item is bookmarked, change svg link to svg-sprite.svg#bookmarked -->
                 </svg>
             </div>
 
@@ -40,15 +40,21 @@
 
             <p class="result__description">{{ doc.summary }}</p>
 
-             <div class="article-preview__tags bar-separated-link-list">
-                <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
+             <div class="result__tags">
+                 <!-- EXAMPLE USED FOR FRONT-END STYLING -->
+                 <span><a>Tag</a></span>
+                 <span class="result__line-seperator"></span> <!-- only prints if there are multiple tags -->
+                 <span><a>Test</a></span>
+                 <!-- /EXAMPLE -->
+
+                <!-- <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
                     <a href="{{tax.url}}">
                         {{tax.title}}
                     </a>
                 </span>
                 <span ng-if="!$last">
-                    ,
-                </span>
+                    |
+                </span> -->
             </div>
 
         </div>
