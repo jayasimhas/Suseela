@@ -5,8 +5,9 @@
 
     span {
         @include textMix('Roboto Condensed', 0.875rem, 700);
+        color: $color-zeus-black;
         text-transform: uppercase;
-        color: $informa-black;
+        vertical-align: top;
     }
 
     a {
