@@ -55,6 +55,17 @@
     text-transform: uppercase;
   }
 
+  &__media-type {
+    display: inline-block;
+
+    svg {
+      @include svg-fill($informa-mid-gray);
+      width: 26px;
+      height: 24px;
+      vertical-align: bottom;
+    }
+  }
+
   &__line-seperator {
     display: inline-block;
     width: 1px;
