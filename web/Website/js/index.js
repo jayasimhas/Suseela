@@ -4,6 +4,22 @@ import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
 
+/* Anti Forgery */
+function getRequestVerificationToken() {
+	return $('.main__wrapper').data('request-verification-token');
+}
+
+/* Sign In */
+function loginController(triggerElement) {
+	if (triggerElement) {
+		$(triggerElement).on('click', (event) => {
+			var requestVerificationToken = getRequestVerificationToken();
+
+			/* Send AJAX request to login */
+		});
+	}
+}
+
 /* Toggle menu visibility */
 $('.js-toggle-menu').on('click', function toggleMenu() {
 	$('.main-menu').toggleClass('is-active');
@@ -46,8 +62,6 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	dismissedBanners[thisBanner.data('banner-id')] = true;
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
-
-
 
 // Pre-registration username validation
 $('.js-register-submit').on('click', function validateUsername(e) {

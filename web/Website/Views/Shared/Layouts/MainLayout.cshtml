@@ -34,7 +34,7 @@
     @*@Html.Glass().InvokeAction(mvc => Execute());*@
     @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
 
-    <div class="main__wrapper">
+    <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
         @Html.Sitecore().Placeholder("main-wrapper")
 

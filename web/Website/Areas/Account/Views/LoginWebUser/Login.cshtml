@@ -1,28 +1,35 @@
-@model ISignInViewModel
+@model Informa.Web.ViewModels.SignInViewModel
 
-<form action="/api/LoginWebUserApi/Login/" method="post">
+@using (Html.BeginForm("Login", "LoginWebUser", FormMethod.Post, new { area = "Account" }))
+{
+	@*<form action="/api/LoginWebUserApi/Login/" method="post">*@
+	@Html.AntiForgeryToken()
 	<div class="pop-out__form-error">
 		@Model.SignInInvalidText
 	</div>
-	<input class="pop-out__input header__hover-input"
+	@Html.TextBoxFor(m => m.Email, new { @class = "pop-out__input header__hover-input", placeholder = Model.EmailPlaceholderText })
+	@*<input class="pop-out__input header__hover-input"
 		   placeholder="@Model.UsernamePlaceholderText"
-		   type="text">
-	<input class="pop-out__input header__hover-input"
+		   type="text">*@
+	@Html.PasswordFor(m => m.Password, new { @class = "pop-out__input header__hover-input", placeholder = Model.PasswordPlaceholderText })
+	@*<input class="pop-out__input header__hover-input"
 		   placeholder="@Model.PasswordPlaceholderText"
-		   type="password">
+		   type="password">*@
 
 	<div class="pop-out__form-actions-wrapper">
 		<div>
 			<a class="pop-out__form-actions js-show-forgot-password" href="#">@Model.ForgotPasswordLinkText</a>
 			<div class="pop-out__sign-in-remember-me">
-				<input type="checkbox"> @Model.RememberMeText
+				@*<input type="checkbox"> @Model.RememberMeText*@
+				@Html.CheckBoxFor(m => m.RememberMe)@Model.RememberMeText
 			</div>
 		</div>
 		<div class="sign-in__submit-wrapper">
 			<button class="button--filled sign-in__submit js-sign-in-submit">@Model.SignInButtonText</button>
 		</div>
 	</div>
-</form>
+	@*</form>*@
+}
 
 <div class="pop-out__sign-in-forgot-password">
 	<div class="alert-success">
