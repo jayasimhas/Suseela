@@ -13,7 +13,7 @@ namespace Informa.Library.AntiForgery
 
 			AntiForgery.GetTokens(null, out cookieToken, out formToken);
 
-			return string.Format("{0}:{1}");
+			return string.Format("{0}:{1}", cookieToken, formToken);
 		}
 	}
 }
