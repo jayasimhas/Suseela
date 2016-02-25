@@ -76,7 +76,8 @@ var showForgotPassSuccess = function() {
 
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
-	$('.pop-out__form-error').toggleClass('is-active');
+	$('.pop-out__form-error').show();
+	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
 var renderIframeComponents = function() {
@@ -156,7 +157,7 @@ $(document).ready(function() {
 		'.js-sign-in-submit',
 		null,
 		function(triggerElement) {
-			$('.pop-out__form-error').show();
+			toggleSignInError();
 		}
 	);
 
