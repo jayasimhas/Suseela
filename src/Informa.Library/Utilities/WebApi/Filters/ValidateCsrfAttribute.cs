@@ -5,12 +5,13 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Helpers;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
 namespace Informa.Library.Utilities.WebApi.Filters
 {
+	using System.Web.Helpers;
+
 	public class ValidateCsrfAttribute : FilterAttribute, IAuthorizationFilter
 	{
 		private const string HeaderTokenName = "RequestVerificationToken";
