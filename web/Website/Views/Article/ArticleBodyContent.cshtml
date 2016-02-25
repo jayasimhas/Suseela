@@ -86,12 +86,13 @@
     @* END MULTIPLE AUTHORs *@
     }
 
-    @if (!string.IsNullOrEmpty(Model.GlassModel.Summary))
+    @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
+    @if (!string.IsNullOrEmpty(Model.ListableSummary) && !Model.Body.Contains(Model.ListableSummary))
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">
             <h4>Executive Summary</h4>
-            @Html.Raw(Model.GlassModel.Summary)
+            @Html.Raw(Model.ListableSummary)
         </div>
         @* End Executive Summary  *@
     }
