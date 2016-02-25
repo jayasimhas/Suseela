@@ -494,7 +494,7 @@ var SearchBootstrapper = (function () {
 		key: "createFacet",
 		value: function createFacet(key, value) {
 			var group = new _Core.FacetGroup({ id: key });
-			_lodash2["default"].each(value.split(","), function (facetValue) {
+			_lodash2["default"].each(value.split(";"), function (facetValue) {
 				var facet = new _Core.Facet({ id: facetValue, selected: true });
 				group.addFacet(facet);
 			});
@@ -963,7 +963,7 @@ var FacetGroup = (function () {
 
 			return _lodash2["default"].map(this.getSelectedFacets(deep), function (f) {
 				return f.id;
-			}).join(",");
+			}).join(";");
 		}
 	}], [{
 		key: "buildFromJson",
