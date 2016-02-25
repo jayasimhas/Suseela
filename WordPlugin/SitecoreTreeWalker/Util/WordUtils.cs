@@ -384,7 +384,7 @@ namespace SitecoreTreeWalker.Util
 
         private static void saveCopyAs(Word.Document activeDocument, string fileName)
         {
-            var pp = (COM.IPersistFile) activeDocument;
+            var pp = (COM.IPersistFile)activeDocument;
             pp.Save(fileName, false);
             pp.SaveCompleted(fileName);
         }
@@ -431,7 +431,9 @@ namespace SitecoreTreeWalker.Util
             var contiguousBlockquoteElements = new List<Paragraph>();
             List<string> StylesToIgnore = ArticleDocumentMetadataParser.GetInstance().MetadataStyles;
             Paragraph lastParagraph = null;
-            var xData = new XElement("root");
+            //var xData = new XElement("root");
+            var xData = new XElement("div");
+            xData.SetAttributeValue("class", "root");
             Errors = new List<string>();
             int imageTagCount = 0;
             XElement divElement = null;
@@ -441,7 +443,7 @@ namespace SitecoreTreeWalker.Util
                 Paragraph paragraph = paragraphs[i];
                 int tIndex = tableBuilder == null ? -1 : tableBuilder.GetTableIndexFor(paragraph.Range);
 
-                Style style = (Style) paragraph.get_Style();
+                Style style = (Style)paragraph.get_Style();
 
 
                 if (tableBuilder != null && tIndex != -1 && tableBuilder.HasRetrieved(tIndex))
@@ -449,7 +451,7 @@ namespace SitecoreTreeWalker.Util
                     continue;
                 }
 
-                var currentStyle = (Style) paragraph.get_Style();
+                var currentStyle = (Style)paragraph.get_Style();
                 if (StylesToIgnore.Contains(currentStyle.NameLocal))
                 {
                     continue;
@@ -572,9 +574,9 @@ namespace SitecoreTreeWalker.Util
                 if (IFrameEmbedBuilder.IFrameStyles.Contains(style.NameLocal))
                 {
 
-					WordPluginModel.WordStyleStruct w = new WordPluginModel.WordStyleStruct();
+                    WordPluginModel.WordStyleStruct w = new WordPluginModel.WordStyleStruct();
                     //base styles are used becuase the parent level styles only exist in the plugin
-                    var baseStyle = (Style) style.get_BaseStyle();
+                    var baseStyle = (Style)style.get_BaseStyle();
                     if (baseStyle != null)
                     {
                         ParagraphStyles.TryGetValue(baseStyle.NameLocal, out w);
@@ -657,6 +659,11 @@ namespace SitecoreTreeWalker.Util
                         xData.Add(divElement);
                     }
 
+                    //Get the float Value from the image hyperlink (if it is an image) and set it to the article-image element
+                    var hyprlnk = paragraph.Range.Hyperlinks.Cast<Hyperlink>().FirstOrDefault();
+                    if (hyprlnk != null && string.IsNullOrEmpty(hyprlnk.ScreenTip) == false)
+                        divElement.SetAttributeValue("style", "float:" + hyprlnk.ScreenTip.ToLower());
+
                     var imageTag = ImageReferenceBuilder.Parse(paragraph);
                     divElement.Add(imageTag);
                     imageTagCount++;
@@ -665,7 +672,7 @@ namespace SitecoreTreeWalker.Util
 
                 imageTagCount = 0;
 
-				WordPluginModel.WordStyleStruct styleStruct;
+                WordPluginModel.WordStyleStruct styleStruct;
                 if (ParagraphStyles.TryGetValue(currentStyle.NameLocal, out styleStruct))
                 {
                     //if there is a special configuration for the paragraph style, have it configured properly
@@ -726,7 +733,7 @@ namespace SitecoreTreeWalker.Util
             {
                 xData.Add(GetListStyleElement(contiguousListElements));
             }
-            if (lastParagraph != null && ((Style) lastParagraph.get_Style()).NameLocal == BlockquoteName)
+            if (lastParagraph != null && ((Style)lastParagraph.get_Style()).NameLocal == BlockquoteName)
             {
                 xData.Add(BlockquoteTransformer.Generate(contiguousBlockquoteElements, CharacterStyleTransformer));
             }
@@ -752,8 +759,9 @@ namespace SitecoreTreeWalker.Util
                 listType = "ol";
             }
             var currentListElement = new XElement(listType);
+            currentListElement.SetAttributeValue("class", "carrot-list");
             XElement rootListElement = currentListElement;
-			WordPluginModel.WordStyleStruct wstyle;
+            WordPluginModel.WordStyleStruct wstyle;
             Style style = listItems[0].get_Style();
             if (style != null && ParagraphStyles.TryGetValue(style.NameLocal, out wstyle))
             {
