@@ -19,6 +19,7 @@ namespace SitecoreTreeWalker.Util.Document
 		protected string LongSummaryStyle = ApplicationConfig.GetPropertyValue("LongSummaryStyle");
 		protected string ShortSummaryStyle = ApplicationConfig.GetPropertyValue("ShortSummaryStyle");
 		protected string SubtitleStyle = ApplicationConfig.GetPropertyValue("SubtitleStyle");
+	    protected string BodyStyle = ApplicationConfig.GetPropertyValue("StoryTextStyle");
 
 		public string Title = "";
 		public string Deck = "";
@@ -58,10 +59,16 @@ namespace SitecoreTreeWalker.Util.Document
 			int longSummaryLimit = maxLengthLongSummary;
 			int shortSummaryLimit = maxLengthShortSummary;
 
+		    Paragraph firstBodyParagraph = null;
+
 			foreach(Paragraph paragraph in doc.Paragraphs)
 			{
 				Style style = (Style)paragraph.get_Style();
 				string styleName = style.NameLocal;
+			    if (firstBodyParagraph == null && styleName == BodyStyle)
+			    {
+			        firstBodyParagraph = paragraph;
+			    }
 				if (styleName == TitleStyle)
 				{
 					Title += GetInnerRichText(paragraph, transformer).Replace("\a", "").TrimEnd() + " ";
@@ -85,7 +92,10 @@ namespace SitecoreTreeWalker.Util.Document
 					Subtitle += GetInnerRichText(paragraph, transformer).Replace("\a", "").TrimEnd() + " ";
 				}
 			}
-		}
+
+            if(string.IsNullOrWhiteSpace(LongSummary))
+                LongSummary += GetRichText(firstBodyParagraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";                         
+        }
 
 		protected string GetRichText(Paragraph paragraph, OptimizedCharacterStyleTransformer transformer, int limit, out int newLimit)
 		{
