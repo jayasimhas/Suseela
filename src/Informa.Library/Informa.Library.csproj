@@ -270,6 +270,7 @@
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
     <Compile Include="Content\Assets\CreatePageAssetsCommand.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver.cs" />
+    <Compile Include="CustomSitecore\Pipelines\LoginRedirect.cs" />
     <Compile Include="CustomSitecore\Ribbon\DownloadWord.cs" />
     <Compile Include="Publishing\IPublishingStatus.cs" />
     <Compile Include="Publishing\PublishingStatus.cs" />
