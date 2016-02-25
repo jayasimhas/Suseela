@@ -30,8 +30,9 @@ namespace Informa.Web.CustomMvc.Pipelines
 
         public override PipelineProcessorResponseValue ProcessRequest()
         {
-            IEnumerable<SuggestedTestSearchResultItem> suggestedTests = this.contentTestStore.GetSuggestedTests(null, null);
-            return new PipelineProcessorResponseValue { Value = suggestedTests.Count<SuggestedTestSearchResultItem>() };
+            //IEnumerable<SuggestedTestSearchResultItem> suggestedTests = this.contentTestStore.GetSuggestedTests(null, null);
+            //return new PipelineProcessorResponseValue { Value = suggestedTests.Count<SuggestedTestSearchResultItem>() };
+            return new PipelineProcessorResponseValue { Value = 0 };
         }
     }
 }

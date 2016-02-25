@@ -140,96 +140,35 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         }
 
 	    public void ShowHideElements(bool state)
-	    {
-			groupBox2.Visible = state;
+	    {			
 			pictureBox1.Visible = state;
 			filenameLblHeader.Visible = state;
 			filenameLbl.Visible = state;
 			alttextLblHeader.Visible = state;
-			alttextLbl.Visible = state;
-			captionTxtBox.Visible = state;
-			sourceTxtBox.Visible = state;
-			label5.Visible = state;
-			label6.Visible = state;
-			clearBtn.Visible = state;			
+			alttextLbl.Visible = state;			
 		}
-
-        void uxInsertImage_Click(object sender, System.EventArgs e)
-        {
-            var button = sender as Control;
-            if (button == null) return;
-            var path = uxFeaturedImageTreeView.SelectedNode.Tag as SitecorePath;
-            if (path == null) return;
-        }
-
-        static void InsertImage(string header, string title, SitecorePath path, string caption, string source)
-        {
-            var app = Globals.SitecoreAddin.Application;
-            int numParagraph = 2;
-            if (!string.IsNullOrEmpty(header)) numParagraph = numParagraph + 2;
-            if (!string.IsNullOrEmpty(title)) numParagraph = numParagraph + 2;
-            if (!string.IsNullOrEmpty(caption)) numParagraph = numParagraph + 2;
-            if (!string.IsNullOrEmpty(source)) numParagraph = numParagraph + 2;
-            for (int i = 0; i < numParagraph + 1; i++)
-            {
-                app.Selection.TypeParagraph();
-            }
-            Range selection = app.Selection.Previous(WdUnits.wdParagraph, numParagraph);
-
-            if (!string.IsNullOrWhiteSpace(header))
-            {
-                selection.Text = header;
-                selection.set_Style(DocumentAndParagraphStyles.ExhibitNumberStyle);
-                selection = selection.Next(WdUnits.wdParagraph);
-            }
-
-            if (!string.IsNullOrEmpty(title))
-            {
-                selection.Text = title;
-                selection.set_Style(DocumentAndParagraphStyles.ExhibitTitleStyle);
-                selection = selection.Next(WdUnits.wdParagraph);
-            }
-
-            selection.Text = "Image: ";
-            selection.set_Style(DocumentAndParagraphStyles.ImagePreviewStyle);
-            selection.Collapse(WdCollapseDirection.wdCollapseEnd);
-            selection.Text = path.DisplayName;
-            try
-            {
-                app.ActiveDocument.Hyperlinks.Add(selection, SitecoreGetter.MediaPreviewUrl(path.Path), null, path.Path);
-            }
-            catch (WebException)
-            {
-                Globals.SitecoreAddin.AlertConnectionFailure();
-            }
-            finally
-            {
-                selection = selection.Next(WdUnits.wdParagraph);
-            }
-
-            if (!string.IsNullOrEmpty(caption))
-            {
-                selection.Text = caption;
-                selection.set_Style(DocumentAndParagraphStyles.ExhibitCaptionStyle52);
-                selection = selection.Next(WdUnits.wdParagraph);
-            }
-
-            if (!string.IsNullOrWhiteSpace(source))
-            {
-                selection.Text = source;
-                selection.set_Style(DocumentAndParagraphStyles.SourceStyle);
-                selection.Next(WdUnits.wdParagraph).Select();
-            }
-        }
-
+		
         /// <summary>
-        /// Initializes the contents of the "Browse Images" and "Supporting Documents" views.
+        /// Initializes the contents of the "Browse Images".
         /// </summary>
         public void InitializeItems()
         {
             var values = SitecoreGetter.GetGraphicsRootNode();
             AddRootNode(uxFeaturedImageTreeView, values[1], values[0]);
         }
+
+		public void InitializeItems(WordPluginModel.ArticleStruct articleDetails)
+		{
+			if (articleDetails != null)
+			{
+				var featuredImage = articleDetails.FeaturedImageSource;
+				var imageMediaItem = SitecoreGetter.GetMediaLibraryItem(featuredImage);
+			}
+			
+			var values = SitecoreGetter.GetGraphicsRootNode();
+			AddRootNode(uxFeaturedImageTreeView, values[1], values[0]);
+		}
+
 		public void ResetFields()
 		{
 			ClearItems();

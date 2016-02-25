@@ -10,6 +10,13 @@ template: {0A2847E6-9885-450B-B61E-F9E6528480EF}
 templatekey: Dictionary Domain
 
 ----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 20
+
+Apps/32x32/Books.png
+----field----
 field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
 name: __Originator
 key: __originator
@@ -22,11 +29,11 @@ name: __Masters
 key: __masters
 content-length: 77
 
-{FA1A01ED-78AD-4F96-9EDE-877A20B51C08}|{6F5919D3-A642-4853-801F-3FE09419841E}
+{21E73669-E1E7-4DB1-8B6D-A6366366CC29}|{4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}
 ----version----
 language: en
 version: 1
-revision: caf22403-81b1-452a-bdfc-9618eac49869
+revision: d6f13f01-cc69-4074-95c1-262ad379f7f5
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-caf22403-81b1-452a-bdfc-9618eac49869
+d6f13f01-cc69-4074-95c1-262ad379f7f5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160201T133436Z
+20160224T190848Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

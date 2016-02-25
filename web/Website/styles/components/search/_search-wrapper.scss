@@ -9,6 +9,10 @@
     margin-bottom: 35px;
     border-top: 2px solid $informa-light-gray-d;
 
+    @include breakpoint('medium') {
+      border-top: 0;
+    }
+
     &-buttons {
       padding-top: 18px;
       text-align: right;
@@ -26,6 +30,10 @@
         display: inline;
         vertical-align: middle;
         padding-right: 5px;
+
+        @include breakpoint('medium') {
+            display: none;
+        }
       }
 
       .icon {
@@ -58,5 +66,11 @@
     flex-grow: 3;
     order:2;
     margin-left: 15px;
+
+    @include breakpoint('medium') {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0;
+    }
   }
 }

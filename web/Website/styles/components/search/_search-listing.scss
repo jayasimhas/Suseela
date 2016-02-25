@@ -1,6 +1,19 @@
-// .search-results {
-//
-// }
+.search-results {
+  // headlines-only view
+  &.headlines-only {
+    .result__publication,
+    .result__author,
+    .result__description,
+    .result__tags {
+      display: none;
+    }
+  }
+
+  @include breakpoint('medium') {
+    order: 4;
+  }
+}
+
 .result {
   display: block;
   padding: 22px 0;
@@ -42,6 +55,17 @@
     text-transform: uppercase;
   }
 
+  &__media-type {
+    display: inline-block;
+
+    svg {
+      @include svg-fill($informa-mid-gray);
+      width: 26px;
+      height: 24px;
+      vertical-align: bottom;
+    }
+  }
+
   &__line-seperator {
     display: inline-block;
     width: 1px;
@@ -51,11 +75,27 @@
     background-color: $informa-light-gray-d;
   }
 
+  &__bookmark {
+    @extend .article-preview__bookmarker;
+    z-index: -1; // overrides .pop-out__trigger z-index:993
+  }
+
   &__description {
     @include textMix('PTSerif', 15px, 400);
     line-height: 25px;
     color: $informa-dark-gray;
     padding-top: 20px;
+  }
+
+  &__tags {
+    @extend .bar-separated-link-list;
+
+    a {
+      @include textMix('Roboto', 15px, 400);
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+    }
   }
 
   .highlighted-term {

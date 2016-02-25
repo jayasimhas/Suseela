@@ -21,10 +21,7 @@ namespace Informa.Web.Areas.Account.Models
 
 		public class DirectoryStruct
 		{
-			/// <remarks/>
-			public string Name { get; set; }
-
-			/// <remarks/>
+			public string Name { get; set; }			
 			public string[] Children { get; set; }
 			public List<string> ChildrenList { get; set; }
 		}
@@ -32,9 +29,7 @@ namespace Informa.Web.Areas.Account.Models
 		public class TaxonomyStruct : ITaxonomy
 		{
 			public string Name { get; set; }
-			/// <remarks/>
 			public System.Guid ID { get; set; }
-
 			public string Section { get; set; }
 		}
 
@@ -47,193 +42,48 @@ namespace Informa.Web.Areas.Account.Models
 
 		public class HDirectoryStruct
 		{
-
-			private string nameField;
-
-			private HDirectoryStruct[] childrenField;
 			public List<HDirectoryStruct> ChildrenList { get; set; }
 
-			private System.Guid idField;
-
 			/// <remarks/>
-			public string Name
-			{
-				get
-				{
-					return this.nameField;
-				}
-				set
-				{
-					this.nameField = value;
-				}
-			}
+			public string Name { get; set; }
 
 			/// <remarks/>
 			[System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
-			public HDirectoryStruct[] Children
-			{
-				get
-				{
-					return this.childrenField;
-				}
-				set
-				{
-					this.childrenField = value;
-				}
-			}
+			public HDirectoryStruct[] Children { get; set; }
 
 			/// <remarks/>
-			public System.Guid ID
-			{
-				get
-				{
-					return this.idField;
-				}
-				set
-				{
-					this.idField = value;
-				}
-			}
+			public System.Guid ID { get; set; }
 		}
 
 		public class MediaItemStruct
 		{
-
-			private string extensionField;
-
-			private byte[] dataField;
-
-			private string nameField;
-
-			private string urlField;
-
-			private System.DateTime uploadDateField;
-
-			private string uploaderField;
-
-			private string pathField;
-
-			private string widthField;
-
-			private string heightField;
-
 			/// <remarks/>
-			public string Extension
-			{
-				get
-				{
-					return this.extensionField;
-				}
-				set
-				{
-					this.extensionField = value;
-				}
-			}
+			public string Extension { get; set; }
 
 			/// <remarks/>
 			[System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
-			public byte[] Data
-			{
-				get
-				{
-					return this.dataField;
-				}
-				set
-				{
-					this.dataField = value;
-				}
-			}
+			public byte[] Data { get; set; }
 
 			/// <remarks/>
-			public string Name
-			{
-				get
-				{
-					return this.nameField;
-				}
-				set
-				{
-					this.nameField = value;
-				}
-			}
+			public string Name { get; set; }
 
 			/// <remarks/>
-			public string Url
-			{
-				get
-				{
-					return this.urlField;
-				}
-				set
-				{
-					this.urlField = value;
-				}
-			}
+			public string Url { get; set; }
 
 			/// <remarks/>
-			public System.DateTime UploadDate
-			{
-				get
-				{
-					return this.uploadDateField;
-				}
-				set
-				{
-					this.uploadDateField = value;
-				}
-			}
+			public System.DateTime UploadDate { get; set; }
 
 			/// <remarks/>
-			public string Uploader
-			{
-				get
-				{
-					return this.uploaderField;
-				}
-				set
-				{
-					this.uploaderField = value;
-				}
-			}
+			public string Uploader { get; set; }
 
 			/// <remarks/>
-			public string Path
-			{
-				get
-				{
-					return this.pathField;
-				}
-				set
-				{
-					this.pathField = value;
-				}
-			}
+			public string Path { get; set; }
 
 			/// <remarks/>
-			public string Width
-			{
-				get
-				{
-					return this.widthField;
-				}
-				set
-				{
-					this.widthField = value;
-				}
-			}
+			public string Width { get; set; }
 
 			/// <remarks/>
-			public string Height
-			{
-				get
-				{
-					return this.heightField;
-				}
-				set
-				{
-					this.heightField = value;
-				}
-			}
+			public string Height { get; set; }
 		}
 
 		public struct ItemStruct
@@ -258,7 +108,6 @@ namespace Informa.Web.Areas.Account.Models
 			public WorkflowState WorkflowState { get; set; }
 			public Guid CommandID { get; set; }
 			public List<TaxonomyStruct> Taxonomoy { get; set; }
-
 			public List<Guid> RelatedInlineArticles { get; set; }
 			public List<Guid> RelatedArticles { get; set; }
 			public List<Guid> ChildArticles { get; set; }
@@ -289,7 +138,6 @@ namespace Informa.Web.Areas.Account.Models
 
 			public Boolean Embargoed { get; set; }
 			public bool IsPublished { get; set; }
-
 			public Guid Label { get; set; }
 			public Guid MediaType { get; set; }
 			public Guid FeaturedImage { get; set; }

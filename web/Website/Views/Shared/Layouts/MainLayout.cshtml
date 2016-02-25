@@ -36,10 +36,6 @@
 
     <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
-        @Html.Sitecore().Placeholder("main-wrapper")
-
-        @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
-
         @*
         <div class="general-header">
             <div class="general-header__section-title">
@@ -53,6 +49,11 @@
             </div>
         </div>
         *@
+        <div class="general-header">
+            @Html.Sitecore().Placeholder("general-header")
+        </div>
+
+        @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
 
         <div class="main__content">
 
@@ -63,8 +64,8 @@
         @* * *  POP-OUT TEMPLATE MARKUP *@
 
         @{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
-		@{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
-		@{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
+        @{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
+        @{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
 
         @* * *  END POP-OUT TEMPLATE MARKUP *@
 
