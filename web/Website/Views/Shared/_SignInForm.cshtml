@@ -1,14 +1,15 @@
 @model ISignInViewModel
 
-@*<form action="/api/LoginWebUserApi/Login/" method="post">*@
 <div class="js-login-container">
 	<div class="pop-out__form-error">
 		@Model.SignInInvalidText
 	</div>
-	<input class="pop-out__input header__hover-input"
+	<input name="username"
+		   class="pop-out__input header__hover-input"
 		   placeholder="@Model.UsernamePlaceholderText"
 		   type="text">
-	<input class="pop-out__input header__hover-input"
+	<input name="password"
+		   class="pop-out__input header__hover-input"
 		   placeholder="@Model.PasswordPlaceholderText"
 		   type="password">
 
@@ -16,7 +17,7 @@
 		<div>
 			<a class="pop-out__form-actions js-show-forgot-password" href="#">@Model.ForgotPasswordLinkText</a>
 			<div class="pop-out__sign-in-remember-me">
-				<input type="checkbox"> @Model.RememberMeText
+				<input name="persist" type="checkbox"> @Model.RememberMeText
 			</div>
 		</div>
 		<div class="sign-in__submit-wrapper">
@@ -24,7 +25,6 @@
 		</div>
 	</div>
 </div>
-@*</form>*@
 
 <div class="pop-out__sign-in-forgot-password">
 	<div class="alert-success">

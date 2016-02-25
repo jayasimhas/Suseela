@@ -2,32 +2,30 @@ function loginController(requestVerificationToken) {
 	this.addControl = function(triggerElement, successCallback, failureCallback) {
 		if (triggerElement) {
 			$(triggerElement).on('click', (event) => {
-				var inputData = $(triggerElement).parent('.js-login-container').serialize();
+				var inputData = {};
 				var url = $(triggerElement).data('login-url');
 				var redirectUrl = $(triggerElement).data('login-redirect-url');
 
+				$(triggerElement).parents('.js-login-container').find('input').each(function() {
+					inputData[$(this).attr('name')] = $(this).val();
+				})
+
 				console.log(requestVerificationToken);
 
-				// Login
 				$.post(url, inputData, function (response) {
 					if (response.success) {
 						if (successCallback) {
-							successCallback();
+							successCallback(triggerElement);
 						}
 
-						console.log(response.message);
-						console.log(response.username);
-
-						// Redirect
-						//window.location.href = redirectUrl;
+						window.location.href = redirectUrl;
 					}
 					else {
 						if (failureCallback) {
-							failureCallback();
+							failureCallback(triggerElement);
 						}
 
 						console.log(response.message);
-						console.log(response.username);
 					}
 				});
 			});

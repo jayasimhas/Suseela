@@ -15,8 +15,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		}
 
 		[HttpPost]
-		[HttpGet]
-		public IHttpActionResult Login([FromUri]AuthenticateRequest request)
+		public IHttpActionResult Login(AuthenticateRequest request)
 		{
 			var username = request?.Username;
 			var password = request?.Password;

@@ -154,11 +154,9 @@ $(document).ready(function() {
 
 	login.addControl(
 		'.js-sign-in-submit',
-		function() {
-			console.log('Success callback');
-		},
-		function() {
-			console.log('Failure callback');
+		null,
+		function(triggerElement) {
+			$('.pop-out__form-error').show();
 		}
 	);
 
