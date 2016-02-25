@@ -616,7 +616,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
-    <Compile Include="Areas\Account\Controllers\LoginWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\ManageController.cs" />
     <Compile Include="Areas\Account\Controllers\SalesforceConnectorController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
@@ -927,7 +926,6 @@
     </None>
     <Content Include="Areas\Account\Views\Account\SignIn.cshtml" />
     <Content Include="Areas\Account\Views\Account\_SignInForm.cshtml" />
-    <Content Include="Areas\Account\Views\Account\Login.cshtml" />
     <None Include="Areas\Account\Views\Auth\Index.cshtml" />
     <Content Include="Areas\Account\Views\LoginWebUser\Login.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">

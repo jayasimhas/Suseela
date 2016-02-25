@@ -24,8 +24,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			{
 				return Ok(new
 				{
-					success = false,
-					message = "Username or password missing"
+					success = false
 				});
 			}
 
@@ -34,8 +33,6 @@ namespace Informa.Web.Areas.Account.Controllers
 			return Ok(new
 			{
 				success = result.Success,
-				message = result.Message,
-				username = username
 			});
 		}
 	}
