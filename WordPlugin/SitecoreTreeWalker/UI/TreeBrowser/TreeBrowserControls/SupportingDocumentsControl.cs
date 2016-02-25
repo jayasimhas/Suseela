@@ -139,6 +139,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			var path = uxBrowseDocuments.SelectedNode.Tag as SitecorePath;
 			if (path == null) return;
+			SitecoreItemGetter.SitecoreMediaItem mediaItem =_siteCoreItemGetter.DownloadSiteCoreMediaItem(path.Path);
+			if ((mediaItem == null) || !IsValidDocumentType(mediaItem.Extension.ToLower()))
+			{
+				MessageBox.Show(@"Please valid media item.", @"Informa");
+				return;
+			}
 			InsertDocument(path);
 		}
 

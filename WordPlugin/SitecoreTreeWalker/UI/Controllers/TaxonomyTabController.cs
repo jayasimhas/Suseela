@@ -288,7 +288,7 @@ namespace SitecoreTreeWalker.UI.Controllers
                     {
                         var currentIndex = Selected.SelectedItems[0].Index;
                         var item = Selected.Items[currentIndex];
-                        if (currentIndex > 0)
+                        if (currentIndex < Selected.Items.Count - 1)
                         {
                             Selected.Items.RemoveAt(currentIndex);
                             Selected.Items.Insert(currentIndex + 1, item);
