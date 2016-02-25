@@ -106,6 +106,7 @@
 
 }
 
+.media-component,
 .article-inline-image {
     @include textMix('Roboto', 13px, 400);
     color: $informa-mid-gray;
