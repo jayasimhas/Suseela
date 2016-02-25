@@ -24,6 +24,32 @@
       </ul>
     </div>
 
+    <!-- HARDCODED DATE FACET -->
+    <div class="facets__section">
+      <h4 class="facets__section-header">Date</h4>
+      <ul class="facets__section-list">
+          <li><input type="radio" name="date-facet" id="last-24hrs"><label for="last-24hrs">Last 24 hours</label></li>
+          <li><input type="radio" name="date-facet" id="last-3days"><label for="last-3days">Last 3 days</label></li>
+          <li><input type="radio" name="date-facet" id="last-week"><label for="last-week">Last week</label></li>
+          <li><input type="radio" name="date-facet" id="last-month"><label for="last-month">Last month</label></li>
+          <li><input type="radio" name="date-facet" id="last-year"><label for="last-year">Last year</label></li>
+          <li><input type="radio" name="date-facet" id="custom-range"><label for="custom-range">Select date range</label>
+              <div class="facets__field-group facets__field-group--from">
+                <legend>From</legend>
+                <input type="date" placeholder="dd/mm/yyyy">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+              </div>
+              <div class="facets__field-group facets__field-group--to">
+                <legend>To</legend>
+                <input type="date" placeholder="dd/mm/yyyy">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+            </div>
+          </li>
+      </ul>
+    </div>
+
+
+
     <!-- EXAMPLE BELOW -->
     <!-- <div class="facets__section">
       <h4 class="facets__section-header">Therapy Areas</h4>
