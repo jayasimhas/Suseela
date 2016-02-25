@@ -12,8 +12,15 @@ templatekey: Sort Strategy
 ----version----
 language: en
 version: 1
-revision: d58b6ef6-10ac-4f55-a914-f8d463f50744
+revision: 56b09c06-c7ab-437d-9d1c-db95a1c8a4da
 
+----field----
+field: {C57349B0-EAD1-45A7-BE69-A1D53971C900}
+name: Include Selected
+key: include selected
+content-length: 1
+
+1
 ----field----
 field: {32086477-70E7-45B1-A3FE-204B3A73E42D}
 name: Type
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d58b6ef6-10ac-4f55-a914-f8d463f50744
+56b09c06-c7ab-437d-9d1c-db95a1c8a4da
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 35
+content-length: 16
 
-20151207T195904:635851151448565663Z
+20160225T171126Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
