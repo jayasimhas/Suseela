@@ -120,8 +120,6 @@ var renderIframeComponents = function() {
 	});
 };
 
-var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
-
 $(document).ready(function() {
 
 	// Anti Forgery Token
