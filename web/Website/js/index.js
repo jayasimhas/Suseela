@@ -3,11 +3,21 @@ import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
+import SearchScript from './search-page.js';
 
 /* Toggle menu visibility */
+// TODO - Refactor w/ line ~40
 $('.js-toggle-menu').on('click', function toggleMenu() {
 	$('.main-menu').toggleClass('is-active');
 	$('.menu-toggler').toggleClass('is-active');
+	// Make menu toggler sticky if menu is open
+	// Will be hidden on desktop, visible on mobile
+	if($('.main-menu').hasClass('is-active')) {
+		$('.header__wrapper .menu-toggler').addClass('is-sticky');
+		$('body').css('overflow', 'hidden');
+	} else {
+		$('body').css('overflow', 'auto');
+	}
 });
 
 /* Toggle menu categories */
@@ -28,8 +38,9 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 });
 
 /* Attach / detach sticky menu */
+// TODO - Refactor
 $(window).on('scroll', function windowScrolled() {
-	if ($(this).scrollTop() > 100) {
+	if ($(this).scrollTop() > 100 || $('.main-menu').hasClass('is-active')) {
 		$('.header__wrapper .menu-toggler').addClass('is-sticky');
 	} else {
 		$('.header__wrapper .menu-toggler').removeClass('is-sticky');
@@ -170,12 +181,12 @@ $(document).ready(function() {
 	});
 
 	// Topic links
-	var topicContainers = $('.topic-subtopic');
+	var topicAnchors = $('.js-topic-anchor');
 
 	$('.sub-topic-links').forEach(function(e) {
 		var linkList = $(e).find('.bar-separated-link-list');
 
-		topicContainers.forEach(function(tc) {
+		topicAnchors.forEach(function(tc) {
 			var id = tc.id;
 			var text = $(tc).data('topic-link-text');
 

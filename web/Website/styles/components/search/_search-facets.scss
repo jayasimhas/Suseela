@@ -1,6 +1,10 @@
 .search__facets {
   @include textMix('Roboto', 13px, 400);
   border: 1px solid $informa-light-gray-d;
+
+  @include breakpoint('medium') {
+      display: none;
+  }
 }
 
 .facets {
@@ -17,6 +21,7 @@
     a.facets__clear {
       float: right;
       line-height: 29px;
+      cursor: pointer;
     }
   }
 

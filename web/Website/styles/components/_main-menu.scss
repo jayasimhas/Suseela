@@ -27,6 +27,11 @@ $main-menu-handle-width: 70px;
 		margin-right: $main-menu-handle-width;
 		transform: translate3d(0, 0, 0);
 		width: 260px;
+		position: fixed;
+		top: 40px;
+		height: calc(100% - 28px);
+		overflow: scroll;
+		z-index: 998; // 1 below menu toggler
 	}
 
 	&__section {

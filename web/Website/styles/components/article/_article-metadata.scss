@@ -6,12 +6,14 @@
     ul {
         display: inline-flex;
         flex-direction: row;
+        margin-bottom: 0;
     }
     li {
         align-self: center;
         border-right: 1px solid #ccc;
         flex: 0 0 auto;
         margin-right: 0.75rem;
+        margin-left: 0;
         padding-right: 0.75rem;
 
         @include breakpoint('small') {
@@ -27,6 +29,11 @@
 
         &:last-child {
             border: 0;
+        }
+
+        &:before {
+            background: none;
+            margin-left: 0;
         }
     }
 
