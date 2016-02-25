@@ -297,17 +297,16 @@ namespace SitecoreTreeWalker.UI
             _documentCustomProperties.ArticleNumber = articleNumber;
         }
 
-        private string GetPreviewUrl(bool isMobile)
-        {
-            string guid = SitecoreArticle.GetArticleGuidByArticleNumber(GetArticleNumber());
-            string domain = ApplicationConfig.GetPropertyValue("DomainName");
-            string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
-            string redirect = Uri.EscapeDataString(domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);
-            return domain + @"Util/LoginRedirectToPreview.aspx?redirect=" + redirect;
+		private string GetPreviewUrl(bool isMobile)
+		{
+			string guid = SitecoreArticle.GetArticleGuidByArticleNumber(GetArticleNumber());
+			string domain = ApplicationConfig.GetPropertyValue("DomainName");
+			string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
+			string redirect = (domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);
+			return redirect;
+		}
 
-        }
-
-        public void TodoMethod()
+		public void TodoMethod()
         {
             var app = Globals.SitecoreAddin.Application;
             var doc = app.ActiveDocument;
