@@ -43,6 +43,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	[SitecoreType(TemplateId=ISearchConstants.TemplateIdString)]
 	public partial interface ISearch : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Velir.Search.Models.ISearch_Listing, global::Velir.Search.Models.ISearch_Refinements
 	{
+								/// <summary>
+					/// The Search Tips Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: f3c99235-b6ae-4181-aada-199155242ac6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISearchConstants.Search_Tips_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Search_Tips_Text  {get; set;}
+								/// <summary>
+					/// The Search Tips Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 29106a20-f739-465e-bd36-ea83af0935ea</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISearchConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Search_Tips_Title  {get; set;}
 				}
 
 	
@@ -55,6 +73,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		[SitecoreType]
 		public partial interface ISearch__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Velir.Search.Models.ISearch_Listing__Raw, global::Velir.Search.Models.ISearch_Refinements__Raw
 		{
+										/// <summary>
+						/// The Search Tips Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: f3c99235-b6ae-4181-aada-199155242ac6</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISearchConstants.Search_Tips_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Search_Tips_Text  {get; set;}
+										/// <summary>
+						/// The Search Tips Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 29106a20-f739-465e-bd36-ea83af0935ea</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISearchConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Search_Tips_Title  {get; set;}
 						}
 	
 	public static partial class ISearchConstants{
@@ -63,6 +99,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Search";
 
+					
+			public static readonly ID Search_Tips_TextFieldId = new ID("f3c99235-b6ae-4181-aada-199155242ac6");
+			public const string Search_Tips_TextFieldName = "Search Tips Text";
+
+							public static readonly ID Search_Tips_Text__RawFieldId = new ID("f3c99235-b6ae-4181-aada-199155242ac6");
+				public const string Search_Tips_Text__RawFieldName = "Search Tips Text";
+						
+					
+			public static readonly ID Search_Tips_TitleFieldId = new ID("29106a20-f739-465e-bd36-ea83af0935ea");
+			public const string Search_Tips_TitleFieldName = "Search Tips Title";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -7959,8 +8007,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID System_Maintenance_TextFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
 			public const string System_Maintenance_TextFieldName = "System Maintenance Text";
 
-							public static readonly ID System_Maintenance_Text__RawFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
-				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
 						
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
