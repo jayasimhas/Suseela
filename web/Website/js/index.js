@@ -3,22 +3,7 @@ import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
-
-/* Anti Forgery */
-function getRequestVerificationToken() {
-	return $('.main__wrapper').data('request-verification-token');
-}
-
-/* Sign In */
-function loginController(triggerElement) {
-	if (triggerElement) {
-		$(triggerElement).on('click', (event) => {
-			var requestVerificationToken = getRequestVerificationToken();
-
-			/* Send AJAX request to login */
-		});
-	}
-}
+import LoginController from './login-controller';
 
 /* Toggle menu visibility */
 $('.js-toggle-menu').on('click', function toggleMenu() {
@@ -123,8 +108,12 @@ var renderIframeComponents = function() {
 	});
 };
 
+var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
 $(document).ready(function() {
+
+	// Anti Forgery Token
+	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
 	var poc = new PopOutController('.js-pop-out-trigger');
 
@@ -161,6 +150,17 @@ $(document).ready(function() {
 
 	});
 
+	var login = new LoginController(requestVerificationToken);
+
+	login.addControl(
+		'.js-sign-in-submit',
+		function() {
+			console.log('Success callback');
+		},
+		function() {
+			console.log('Failure callback');
+		}
+	);
 
     svg4everybody();
 

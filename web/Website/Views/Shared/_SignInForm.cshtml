@@ -1,6 +1,7 @@
 @model ISignInViewModel
 
-<form action="/api/LoginWebUserApi/Login/" method="post">
+@*<form action="/api/LoginWebUserApi/Login/" method="post">*@
+<div class="js-login-container">
 	<div class="pop-out__form-error">
 		@Model.SignInInvalidText
 	</div>
@@ -19,10 +20,11 @@
 			</div>
 		</div>
 		<div class="sign-in__submit-wrapper">
-			<button class="button--filled sign-in__submit js-sign-in-submit">@Model.SignInButtonText</button>
+			<button class="button--filled sign-in__submit js-sign-in-submit" data-login-url="/api/LoginWebUserApi/Login/" data-login-redirect-url="">@Model.SignInButtonText</button>
 		</div>
 	</div>
-</form>
+</div>
+@*</form>*@
 
 <div class="pop-out__sign-in-forgot-password">
 	<div class="alert-success">
