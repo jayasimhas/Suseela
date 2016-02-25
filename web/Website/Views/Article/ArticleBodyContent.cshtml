@@ -86,12 +86,12 @@
     @* END MULTIPLE AUTHORs *@
     }
 
-    @if (!string.IsNullOrEmpty(Model.ListableSummary))
+    @if (!string.IsNullOrEmpty(Model.GlassModel.Summary))
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">
             <h4>Executive Summary</h4>
-            @Html.Raw(Model.ListableSummary)
+            @Html.Raw(Model.GlassModel.Summary)
         </div>
         @* End Executive Summary  *@
     }
