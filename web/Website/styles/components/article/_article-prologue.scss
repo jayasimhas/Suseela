@@ -26,6 +26,18 @@
         &:hover .article-prologue__share-icon {
             @include svg-fill($color-zeus-black);
         }
+
+        &--social {
+            @extend .article-prologue__share-item;
+
+            &:hover .article-prologue__share-icon {
+                @include svg-fill($informa-mid-gray);
+            }
+
+            & a:hover .article-prologue__share-icon {
+                @include svg-fill($color-zeus-black);
+            }
+        }
     }
     &__share-icon {
         @include svg-fill($informa-mid-gray);
