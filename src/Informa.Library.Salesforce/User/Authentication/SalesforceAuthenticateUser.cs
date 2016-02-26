@@ -15,19 +15,18 @@ namespace Informa.Library.Salesforce.User.Authentication
 
 		public IAuthenticateUserResult Authenticate(string username, string password)
 		{
-			SalesforceAuthenticateUserResult errorResult;
 			var loginResponse = Service.Execute(s => s.login(username, password));
 			
-			if (IsFailure(loginResponse, out errorResult))
+			if (!loginResponse.IsSuccess())
 			{
-				return errorResult;
+				return ErrorResult;
 			}
 
 			var profileResponse = Service.Execute(s => s.queryProfileContactInformation(username));
 
-			if (IsFailure(profileResponse, out errorResult))
+			if (!profileResponse.IsSuccess())
 			{
-				return errorResult;
+				return ErrorResult;
 			}
 
 			var profile = profileResponse.profile;
@@ -44,21 +43,9 @@ namespace Informa.Library.Salesforce.User.Authentication
 			};
 		}
 
-		public bool IsFailure(IEbiResponse response, out SalesforceAuthenticateUserResult errorResult)
+		public SalesforceAuthenticateUserResult ErrorResult => new SalesforceAuthenticateUserResult
 		{
-			if (response.success.HasValue && response.success.Value)
-			{
-				errorResult = null;
-
-				return true;
-			}
-
-			errorResult = new SalesforceAuthenticateUserResult
-			{
-				State = AuthenticateUserResultState.Failure
-			};
-
-			return true;
-		}
+			State = AuthenticateUserResultState.Failure
+		};
 	}
 }
