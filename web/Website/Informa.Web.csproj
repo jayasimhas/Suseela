@@ -706,6 +706,8 @@
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search\controllers\headlineToggleController.js" />
+    <Content Include="js\search\controllers\informaFacetsController.js" />
+    <Content Include="js\search\controllers\informaResultsController.js" />
     <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\zepto.min.js" />
