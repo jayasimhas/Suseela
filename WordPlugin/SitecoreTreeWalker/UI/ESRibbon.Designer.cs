@@ -42,9 +42,7 @@
 			this.SaveToSitecoreBtn = this.Factory.CreateRibbonMenu();
 			this.SaveArticleBtn = this.Factory.CreateRibbonButton();
 			this.SaveMetaDataBtn = this.Factory.CreateRibbonButton();
-			this.ArticlePreviewMenu = this.Factory.CreateRibbonMenu();
-			this.ArticlePreviewBtn = this.Factory.CreateRibbonButton();
-			this.ArticleMobilePreviewBtn = this.Factory.CreateRibbonButton();
+			this.ArticlePreviewMenu = this.Factory.CreateRibbonButton();
 			this.ReferencesGrp = this.Factory.CreateRibbonGroup();
 			this.ArticlesBtn = this.Factory.CreateRibbonButton();
 			this.IntelligenceProductsBtn = this.Factory.CreateRibbonButton();
@@ -121,26 +119,11 @@
 			// 
 			this.ArticlePreviewMenu.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
 			this.ArticlePreviewMenu.Image = ((System.Drawing.Image)(resources.GetObject("ArticlePreviewMenu.Image")));
-			this.ArticlePreviewMenu.Items.Add(this.ArticlePreviewBtn);
-			this.ArticlePreviewMenu.Items.Add(this.ArticleMobilePreviewBtn);
 			this.ArticlePreviewMenu.Label = "Article Preview";
 			this.ArticlePreviewMenu.Name = "ArticlePreviewMenu";
 			this.ArticlePreviewMenu.OfficeImageId = "PropertySheet";
 			this.ArticlePreviewMenu.ShowImage = true;
-			// 
-			// ArticlePreviewBtn
-			// 
-			this.ArticlePreviewBtn.Label = "Preview Article";
-			this.ArticlePreviewBtn.Name = "ArticlePreviewBtn";
-			this.ArticlePreviewBtn.ShowImage = true;
-			this.ArticlePreviewBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.PreviewArticleBtn_Click);
-			// 
-			// ArticleMobilePreviewBtn
-			// 
-			this.ArticleMobilePreviewBtn.Label = "Preview Mobile Article";
-			this.ArticleMobilePreviewBtn.Name = "ArticleMobilePreviewBtn";
-			this.ArticleMobilePreviewBtn.ShowImage = true;
-			this.ArticleMobilePreviewBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.PreviewMobileArticleBtn_Click);
+			this.ArticlePreviewMenu.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ArticlePreviewMenu_Click);
 			// 
 			// ReferencesGrp
 			// 
@@ -256,21 +239,19 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton OpenPluginBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonMenu SaveToSitecoreBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup ReferencesGrp;
-        internal Microsoft.Office.Tools.Ribbon.RibbonMenu ArticlePreviewMenu;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ArticlesBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton IntelligenceProductsBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton Multimedia;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ImagesBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton SupportingDocsBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup LogoutGrp;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton ArticlePreviewBtn;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton ArticleMobilePreviewBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton SaveArticleBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton SaveMetaDataBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton LoginBtn;
-    }
+		internal Microsoft.Office.Tools.Ribbon.RibbonButton ArticlePreviewMenu;
+	}
 
-    partial class ThisRibbonCollection
+	partial class ThisRibbonCollection
     {
         //internal ESRibbon ESRibbon
         //{

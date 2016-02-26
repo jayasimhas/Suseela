@@ -32,58 +32,6 @@ namespace SitecoreTreeWalker.UI
 			LoginBtn.Visible = true;
 		}
 
-		private void uxShowTree_Click(object sender, RibbonControlEventArgs e)
-		{
-			try
-			{
-				if (_user.IsLoggedIn)
-				{
-					Globals.SitecoreAddin.Log("User is logged in, showing the tree...");
-					ShowTree();
-				}
-				else
-				{
-					Globals.SitecoreAddin.Log("User is not logged in, prompting for password...");
-					var login = new LoginWindow();
-					login.loginControl1.uxLoginButton.Click +=
-						delegate
-						{
-							if (_user.IsLoggedIn)
-							{
-								Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
-								login.Close();
-								ShowTree();
-							}
-						};
-					login.ShowDialog();
-				}
-			}
-			catch (Exception ex)
-			{
-				Globals.SitecoreAddin.LogException("Error when showing the tree browser!", ex);
-				MessageBox.Show
-					(@"An error has occurred while attempting to display the Sitecore browser tab. Please restart Word and try again." +
-					 Environment.NewLine + Environment.NewLine +
-					 @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-
-		private void uxArticleDetails_Click(object sender, RibbonControlEventArgs e)
-		{
-			try
-			{
-				ArticleDetail.Open();
-			}
-			catch (Exception ex)
-			{
-				Globals.SitecoreAddin.LogException("ESRibbon.uxArticleDetails_Click: Error loading the article information window!", ex);
-				MessageBox.Show
-					(@"An error has occurred while attempting to display the article information window. Please restart Word and try again." +
-					 Environment.NewLine + Environment.NewLine +
-					 @"If the problem persists, contact your system administrator.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-
 		private void ShowTree()
 		{
 			var app = Globals.SitecoreAddin.Application;
@@ -94,25 +42,6 @@ namespace SitecoreTreeWalker.UI
 		private void OpenPluginBtn_Click(object sender, RibbonControlEventArgs e)
 		{
 			CheckLoginAndPerformAction(OpenArticleInformation);
-		}
-
-		private void PreviewArticleBtn_Click(object sender, RibbonControlEventArgs e)
-		{
-			CheckLoginAndPerformAction(GetPreview);
-		}
-
-		private void PreviewMobileArticleBtn_Click(object sender, RibbonControlEventArgs e)
-		{
-			CheckLoginAndPerformAction(GetMobilePreview);
-		}
-		private void SaveToSitecoreBtn_Click(object sender, RibbonControlEventArgs e)
-		{
-			CheckLoginAndPerformAction(TodoMethod);
-		}
-
-		private void ArticlePreviewBtn_Click(object sender, RibbonControlEventArgs e)
-		{
-			CheckLoginAndPerformAction(TodoMethod);
 		}
 
 		private void ArticlesBtn_Click(object sender, RibbonControlEventArgs e)
@@ -256,17 +185,6 @@ namespace SitecoreTreeWalker.UI
 		}
 
 
-		private void GetMobilePreview()
-		{
-			if (GetArticleNumber() == null)
-			{
-				MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				return;
-			}
-
-			Process.Start(GetPreviewUrl(true));
-		}
-
 		/// <summary>
 		/// 
 		/// </summary>
@@ -376,6 +294,11 @@ namespace SitecoreTreeWalker.UI
 			{
 				CheckLoginAndPerformAction(OpenArticleInformation);
 			}
+		}
+
+		private void ArticlePreviewMenu_Click(object sender, RibbonControlEventArgs e)
+		{
+			CheckLoginAndPerformAction(GetPreview);
 		}
 	}
 }
