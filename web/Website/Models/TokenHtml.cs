@@ -49,7 +49,7 @@ namespace Informa.Web.Models
 
             var sidebarRegex = new Regex(@"\[Sidebar#(.*?)\]");    
 
-            //var citationTokenRegex = new Regex(@"\[A#(.*?)\]");
+            var referenceArticleTokenRegex = new Regex(@"\(\[A#(.*?)\]\)");
              
             var fieldValue = expression.Compile()(this.Model);
 
@@ -73,27 +73,12 @@ namespace Informa.Web.Models
                
             }
 
-            //foreach (Match match in citationTokenRegex.Matches(fieldValue))
-            //{
-            //    string articleNumber = match.Groups[1].Value;
+			foreach (Match match in referenceArticleTokenRegex.Matches(fieldValue))
+			{
+				fieldValue = fieldValue.Replace(match.Value, string.Empty);
+			}
 
-
-            //    IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-            //    filter.ArticleNumber = articleNumber;
-            //    var results = ArticleSearch.Search(filter);
-
-            //    HtmlString replace = new HtmlString("");
-
-            //    if (results.Articles.Any())
-            //    {
-            //        replace = HtmlHelper.Partial(partialName, results.Articles.FirstOrDefault());
-            //    }
-
-            //    fieldValue = fieldValue.Replace(match.Value, replace.ToString());
-
-            //}
-
-            return HtmlHelper.Raw(fieldValue);
+			return HtmlHelper.Raw(fieldValue);
             //return new HtmlString(this.GlassHtml.RenderLink<T>(model, field, attributes, isEditable, contents));
         }
     }

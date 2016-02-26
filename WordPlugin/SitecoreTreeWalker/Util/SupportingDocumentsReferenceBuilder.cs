@@ -25,6 +25,7 @@ namespace SitecoreTreeWalker.Util
 			var path = strings[1];
 
 			var root = new XElement("a");
+			root.SetAttributeValue("class", "plugin-hide");
 			try
 			{
 				if (!SupportingDocuments.Contains(path))

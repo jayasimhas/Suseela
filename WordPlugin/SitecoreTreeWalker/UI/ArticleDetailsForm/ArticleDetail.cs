@@ -82,18 +82,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 		{
 			uxPreview.Text = @"Preview Article";
 			uxPreview.Enabled = true;
-
-			uxMobilePreview.Text = @"Preview Mobile Article";
-			uxMobilePreview.Enabled = true;
 		}
 
 		public void DisablePreview()
 		{
 			uxPreview.Text = @"Article Not Linked";
 			uxPreview.Enabled = false;
-
-			uxMobilePreview.Text = @"Mobile Article Not Linked";
-			uxMobilePreview.Enabled = false;
 		}
 
 		#endregion
@@ -925,7 +919,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 		private string GetPreviewUrl(bool isMobile)
 		{
             string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
-			string domain = ApplicationConfig.GetPropertyValue("DomainName");
+			string domain =  Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
 			string redirect = (domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);
 			return redirect;

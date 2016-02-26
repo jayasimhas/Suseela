@@ -7,6 +7,7 @@ namespace SitecoreTreeWalker.Util
 	{
 		private static UserCredentialReader _reader = new UserCredentialReader();
 		private const string PASSWORD_FILE = "UsernamePassword.txt";
+	    private const string COOKIE_FILE = "session.txt";
         private const string ENVIRONMENT_FILE = "EditorEnvironment.txt";
 		private readonly IsolatedStorageFile _isoStore =
 						IsolatedStorageFile.GetStore(
@@ -87,6 +88,41 @@ namespace SitecoreTreeWalker.Util
 				}
 			}
 		}
+
+        public string GetCookie()
+        {
+            using (var iStream = new IsolatedStorageFileStream(COOKIE_FILE, FileMode.OpenOrCreate, _isoStore))
+            {
+                using (var reader = new StreamReader(iStream))
+                {
+                    reader.ReadLine(); // first line is the username
+                    return reader.ReadLine();
+                }
+            }
+        }
+
+        public bool HasCookie()
+        {
+            using (var iStream = new IsolatedStorageFileStream(COOKIE_FILE, FileMode.OpenOrCreate, _isoStore))
+            {
+                using (var reader = new StreamReader(iStream))
+                {
+                    reader.ReadLine();
+                    return reader.ReadLine() != null;
+                }
+            }
+        }
+
+        public void WriteCookie(string cookie)
+        {
+            using (var oStream = new IsolatedStorageFileStream(COOKIE_FILE, FileMode.Create, _isoStore))
+            {
+                using (var writer = new StreamWriter(oStream))
+                {
+                    writer.WriteAsync(cookie);
+                }
+            }
+        }
 
 
 
