@@ -1,0 +1,17 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+@model SubnavigationViewModel
+
+@if(Model.SubnavigationItems.Count() > 0) { 
+    @* Top Element *@
+    <a href="@Model.GlassModel._Url">
+        @Model.GlassModel.Navigation_Title    
+    </a>
+    @* Subnavigation Items *@
+    foreach (I___BasePage sn in @Model.SubnavigationItems)
+    {
+        <a href="sn._Url">
+            @sn.Navigation_Title
+        </a>
+    }
+}
