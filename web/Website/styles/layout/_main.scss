@@ -17,6 +17,7 @@ main {
 	@include breakpoint('medium') {
 		padding: 0;
 		flex: 0 0 auto;
+		margin-left: 330px; // RH added on 2/26 to fix IIPP-572
 	}
 
 	@include breakpoint('small') {

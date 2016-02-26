@@ -516,7 +516,7 @@ namespace SitecoreTreeWalker.UI.Controllers
                 var item = new ListViewItem();
                 if (!string.IsNullOrEmpty(selected.Section) && selected.Section != "Taxonomy")
                 {
-                    item.Text = selected.Section + "/";
+                    item.Text = selected.Section.Replace("\\", "/") + "/";
                 }
                 item.Text = item.Text + selected.Name;
                 item.ImageIndex = 0;

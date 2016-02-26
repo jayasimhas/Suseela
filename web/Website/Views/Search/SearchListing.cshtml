@@ -45,7 +45,7 @@
                  <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a href="{{tax.url}}">
                     {{tax.title}}
                 </a>
-                     <span ng-if="!$last">  | </span> <!-- only prints if there are multiple tags -->
+                     <span ng-if="!$last"  class="result__line-separator"></span> <!-- only prints if there are multiple tags -->
                  </span>
                 
             </div>
