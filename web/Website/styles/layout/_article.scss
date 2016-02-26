@@ -106,11 +106,10 @@
 
 }
 
-.media-component,
+.media-exhibit,
 .article-inline-image {
     @include textMix('Roboto', 13px, 400);
     color: $informa-mid-gray;
-    margin-top: 2rem;
     margin-bottom: 2rem;
 
     img {
