@@ -340,16 +340,20 @@ h1 {
 }
 
 h2 {
-	font-size: 1.75em;
+	font-family: 'Roboto Condensed';
+	font-size: 3rem;
+	font-weight: 700;
 	line-height: 1.225;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #ddd;
 	margin-bottom: 1rem;
 	margin-top: 1em;
 	padding-bottom: .3em;
 }
 
 h3 {
+	font-family: 'Roboto';
 	font-size: 1.5em;
+	font-weight: 700;
 	line-height: 1.43;
 	margin-bottom: 1rem;
 	margin-top: 1em;
@@ -435,12 +439,13 @@ The navigation remains fixed while you scroll.
 
 @media screen and (min-width: 640px) {
 	main {
-		width: calc(100% - 150px);
+		width: 100%;
+		padding: 0 3rem 0 5rem;
 	}
 }
 
-main > section {
-	margin-bottom: 80px;
+section {
+	margin-bottom: 5rem;
 }
 
 figure,

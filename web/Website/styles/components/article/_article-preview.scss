@@ -1,3 +1,58 @@
+/*---
+title: Article Preview
+section: Home/Topic Page Components
+---
+
+```example:html
+<section class="article-preview article-preview--small">
+
+    <div class="article-metadata">
+        <div class="article-preview__bookmarker pop-out__trigger js-pop-out-trigger" data-pop-out-type="sign-in">
+            <span class="article-preview__bookmarker-label">Bookmark</span>
+            <svg class="article-prologue__share-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#bookmark"></use>
+            </svg>
+        </div>
+        <ul>
+            <li>
+                <time class="article-metadata__date">15 Sep 2015</time>
+            </li>
+            <li>
+                <h6>News</h6>
+            </li>
+            <li>
+                <svg class="article-prologue__share-icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#audio"></use>
+                </svg>
+            </li>
+        </ul>
+    </div>
+
+    <div class="article-preview__inner-wrapper">
+        <h1 class="article-preview__headline">
+            <a href="/articles/2015/09/15/icaac-2015-mercks-bezlotoxumab-a-big-step-in-c-diff">ICAAC 2015: Merck's Bezlotoxumab A 'Big Step' In C Diff</a>
+        </h1>
+
+        <span class="article-preview__byline">
+            by Mandy Jackson
+        </span>
+
+        <div class="article-summary">
+            <p>Merck &amp; Co.'s bezlotoxumab for the treatment of recurrent <i>clostridium difficile</i> (C diff) infections is "a big step" for treatment of the debilitating and potentially deadly gut infection, according to Dale Gerding, a professor at Loyola University Chicago Stritch School of Medicine and a lead investigator for the monoclonal antibody's Phase III clinical trials.</p>
+        </div>
+    </div>
+
+    <div class="article-preview__tags bar-separated-link-list">
+                <a href="/search?tag=1d288e18-baff-4498-b284-ef9bc8d32e30">Metabolic Disorders
+</a>
+                <a href="/search?tag=6ddf7877-fdae-472b-8739-fb4710df7651">Switzerland
+</a>
+                <a href="/search?tag=b3122c5e-ff3f-438a-9c93-1b54dc1286a5">Clinical Trials
+</a>
+    </div>
+</section>
+```
+*/
 .article-preview {
     padding-bottom: 48px;
     position: relative;
