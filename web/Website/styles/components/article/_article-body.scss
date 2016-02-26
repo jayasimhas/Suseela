@@ -28,6 +28,12 @@
         max-width: 100%;
     }
 
+	.plugin-hide{
+		a{
+			display: none !important;
+		}
+	}
+
     /*ul,
     ol,
     .GeneralRTEComponent ul,
