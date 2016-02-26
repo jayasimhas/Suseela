@@ -642,7 +642,6 @@
     <Compile Include="SitecoreAddin.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="SitecoreTreeWalker_1_TemporaryKey.pfx" />
     <None Include="SitecoreTreeWalker_TemporaryKey.pfx" />
     <None Include="SitecoreAddin.Designer.xml">
       <DependentUpon>SitecoreAddin.cs</DependentUpon>
@@ -740,7 +739,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SitecoreTreeWalker_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SitecoreTreeWalker_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>2F81F2D48B4DEDFC436F730F91D784EB1AEE6F34</ManifestCertificateThumbprint>
