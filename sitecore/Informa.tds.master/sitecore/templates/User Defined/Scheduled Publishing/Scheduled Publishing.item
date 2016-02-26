@@ -23,10 +23,17 @@ key: __standard values
 content-length: 38
 
 {D210F20F-0D1B-47AA-9990-EB38415465AE}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 20
+
+Apps/32x32/Clock.png
 ----version----
 language: en
 version: 1
-revision: 863b14f9-4091-4943-89f2-4e09d97a095b
+revision: 91755ffe-e122-4803-87a4-5fab4d13134b
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-863b14f9-4091-4943-89f2-4e09d97a095b
+91755ffe-e122-4803-87a4-5fab4d13134b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160204T144456Z
+20160226T151029Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
