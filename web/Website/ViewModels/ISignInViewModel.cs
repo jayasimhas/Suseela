@@ -16,5 +16,8 @@ namespace Informa.Web.ViewModels
 		IHtmlString ForgotPasswordContactText { get; }
 		string EmailPlaceholderText { get; }
 		string UsernamePlaceholderText { get; }
+        string Email { get; }
+        string Password { get; }
+        bool RememberMe { get; }
 	}
 }

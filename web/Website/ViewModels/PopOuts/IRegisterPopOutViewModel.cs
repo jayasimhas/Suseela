@@ -7,5 +7,6 @@
 		string RegisterUrl { get; }
 		string UsernamePlaceholderText { get; }
 		string UsernameInvalidText { get; }
+        string Username { get; }
 	}
 }

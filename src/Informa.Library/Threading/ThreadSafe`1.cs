@@ -27,5 +27,13 @@
 		}
 
 		protected abstract T UnsafeObject { get; }
+
+		public void Reload()
+		{
+			lock(locker)
+			{
+				safeObject = UnsafeObject;
+			}
+		}
 	}
 }

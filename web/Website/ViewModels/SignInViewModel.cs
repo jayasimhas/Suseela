@@ -1,6 +1,10 @@
-﻿using Informa.Library.Globalization;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Security.AccessControl;
+using Informa.Library.Globalization;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
+using Informa.Web.Areas.Account.Models;
 
 namespace Informa.Web.ViewModels
 {
@@ -8,6 +12,8 @@ namespace Informa.Web.ViewModels
 	public class SignInViewModel : ISignInViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;
+
+        public SignInViewModel() { }
 
 		public SignInViewModel(
 			ITextTranslator textTranslator)
@@ -27,5 +33,17 @@ namespace Informa.Web.ViewModels
 		public IHtmlString ForgotPasswordContactText => new HtmlString("Need help? Contact us at <b>(800) 332-2181</b>, <b>+1 (908) 748-1221</b>, or <a href=\"#\">custcare@informa.com</a>");
 		public string EmailPlaceholderText => TextTranslator.Translate("Header.EmailPlaceholder");
 		public string UsernamePlaceholderText => TextTranslator.Translate("Header.UsernamePlaceholder");
+
+        [Required]
+        [EmailAddress]               
+        public string Email { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+                                               
+        public bool RememberMe { get; set; }
+                                                                    
 	}
+
+    
 }

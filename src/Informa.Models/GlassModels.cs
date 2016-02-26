@@ -186,7 +186,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	[SitecoreType(TemplateId=IGeneral_Content_PageConstants.TemplateIdString)]
 	public partial interface IGeneral_Content_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
-								/// <summary>
 					/// The CSS field.
 					/// <para></para>
 					/// <para>Field Type: Multi-Line Text</para>		
@@ -196,14 +195,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string CSS  {get; set;}
 								/// <summary>
-					/// The Section Title field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: e3a3e51e-a8f0-4ee1-986f-2562f9d279de</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Section_Title  {get; set;}
 				}
 
 	
@@ -216,7 +207,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		[SitecoreType]
 		public partial interface IGeneral_Content_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
-										/// <summary>
 						/// The CSS field.
 						/// <para></para>
 						/// <para>Field Type: Multi-Line Text</para>		
@@ -226,14 +216,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string CSS  {get; set;}
 										/// <summary>
-						/// The Section Title field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: e3a3e51e-a8f0-4ee1-986f-2562f9d279de</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Section_Title  {get; set;}
 						}
 	
 	public static partial class IGeneral_Content_PageConstants{
@@ -245,11 +227,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID CSSFieldId = new ID("2f02ffdb-8082-44c9-b9c6-a034f3c1f9d9");
 			public const string CSSFieldName = "CSS";
-
-						
-					
-			public static readonly ID Section_TitleFieldId = new ID("e3a3e51e-a8f0-4ee1-986f-2562f9d279de");
-			public const string Section_TitleFieldName = "Section Title";
 
 						
 					
@@ -1728,7 +1705,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 								/// <summary>
 					/// The Desktop Embed Code field.
 					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field Type: Multi-Line Text</para>		
 					/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -1737,7 +1714,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 								/// <summary>
 					/// The Mobile Embed Code field.
 					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field Type: Multi-Line Text</para>		
 					/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
@@ -1758,7 +1735,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 										/// <summary>
 						/// The Desktop Embed Code field.
 						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field Type: Multi-Line Text</para>		
 						/// <para>Field ID: 14420b8a-12ee-4715-833e-eda3fc07b7c1</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
@@ -1767,7 +1744,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 										/// <summary>
 						/// The Mobile Embed Code field.
 						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field Type: Multi-Line Text</para>		
 						/// <para>Field ID: b7d4e7c2-5367-4008-960c-cfe1d1a39fa0</para>
 						/// <para>Custom Data: </para>
 						/// </summary>

@@ -38,6 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,6 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AspNet.ScriptManager.jQuery, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -139,6 +141,18 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MiniProfiler">
@@ -426,6 +440,15 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.Cors">
       <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
@@ -583,23 +606,33 @@
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
     <Compile Include="App_Start\Registrations\GlassMapperRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\SalesforceRegistrar.cs" />
     <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
+    <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\ManageController.cs" />
     <Compile Include="Areas\Account\Controllers\SalesforceConnectorController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
     <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
+    <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountController.cs" />
+    <Compile Include="Authenticator\EFAuthStore.cs" />
+    <Compile Include="Authenticator\IdentityHelper.cs" />
+    <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
+    <Compile Include="Areas\Account\Controllers\AuthController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
@@ -611,6 +644,8 @@
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
+    <Compile Include="CustomMvc\Pipelines\HttpRequest\AuthenticationChecker.cs" />
+    <Compile Include="CustomMvc\Pipelines\HttpRequest\LoginHelper.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -622,7 +657,6 @@
     <Compile Include="Models\IPageLinksFactory.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PageLinksFactory.cs" />
-    <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
@@ -682,7 +716,7 @@
     <Content Include="Areas\Account\Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Areas\Account\Views\Account\ForgotPassword.cshtml" />
     <Content Include="Areas\Account\Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Areas\Account\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Account\Views\Auth\Login.cshtml" />
     <Content Include="Areas\Account\Views\Account\Register.cshtml" />
     <Content Include="Areas\Account\Views\Account\ResetPassword.cshtml" />
     <Content Include="Areas\Account\Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -703,6 +737,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search\controllers\headlineToggleController.js" />
@@ -731,7 +766,9 @@
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
     <Content Include="App_Config\Commands.config" />
-    <Content Include="App_Config\ConnectionStrings.config" />
+    <Content Include="App_Config\ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\ConnectionStrings.config.template" />
     <Content Include="App_Config\ConnectionStringsOracle.config" />
     <Content Include="App_Config\FieldTypes.config" />
@@ -747,7 +784,9 @@
     <Content Include="App_Config\Prefetch\Master.config" />
     <Content Include="App_Config\Prefetch\Webdb.config" />
     <Content Include="App_Config\Prototypes.config" />
-    <Content Include="App_Config\Security\Domains.config" />
+    <Content Include="App_Config\Security\Domains.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Security\GlobalRoles.config" />
     <Content Include="App_Config\Sitecore.config">
       <SubType>Designer</SubType>
@@ -827,7 +866,6 @@
     <Content Include="Views\Frontend\Template.cshtml" />
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\Frontend\Listing.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\Global\ContentListItem.cshtml" />
     <Content Include="Views\Article\ArticlePrologue.cshtml" />
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
@@ -846,6 +884,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Account\Views\LogoutWebUser\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="GlassMaps\" />
@@ -877,6 +916,7 @@
     </Content>
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
+    <Content Include="App_Config\Salesforce.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <Content Include="App_Config\Include\UserDefined\Content.config">
       <SubType>Designer</SubType>
@@ -887,6 +927,10 @@
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Areas\Account\Views\Account\SignIn.cshtml" />
+    <Content Include="Areas\Account\Views\Account\_SignInForm.cshtml" />
+    <None Include="Areas\Account\Views\Auth\Index.cshtml" />
+    <Content Include="Areas\Account\Views\LoginWebUser\Login.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -919,6 +963,7 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
+    <None Include="Views\Auth\Index.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
@@ -944,6 +989,10 @@
     <Content Include="Views\Shared\Components\CSSBlock.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
+      <Project>{69ff8121-1969-4032-90fa-b4b9148cd780}</Project>
+      <Name>Informa.Library.Salesforce</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
       <Project>{4fb3b700-30c7-4b1b-b377-59c15a58cb3d}</Project>
       <Name>Informa.Library</Name>
@@ -992,7 +1041,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
