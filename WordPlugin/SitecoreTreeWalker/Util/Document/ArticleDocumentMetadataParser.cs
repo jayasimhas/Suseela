@@ -93,7 +93,7 @@ namespace SitecoreTreeWalker.Util.Document
 				}
 			}
 
-            if(string.IsNullOrWhiteSpace(LongSummary))
+            if(string.IsNullOrWhiteSpace(LongSummary) && firstBodyParagraph != null)
                 LongSummary += GetRichText(firstBodyParagraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";                         
         }
 
