@@ -736,13 +736,13 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>SitecoreTreeWalker_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2F81F2D48B4DEDFC436F730F91D784EB1AEE6F34</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>73446AE1379743B1274DD2D697D66AA8D214CD75</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WordPlugin-Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
