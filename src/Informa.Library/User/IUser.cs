@@ -2,6 +2,8 @@
 {
 	public interface IUser
 	{
-		string Id { get; }
+		string Username { get; }
+		string Name { get; }
+		string Email { get; }
 	}
 }

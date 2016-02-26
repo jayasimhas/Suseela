@@ -19,14 +19,16 @@ namespace Informa.Library.User.Authentication
 		public ILoginWebUserResult Login(string username, string password, bool persist)
 		{
 			var result = AuthenticateUser.Authenticate(username, password);
+			var user = result.User;
 			var authenticated = result.State == AuthenticateUserResultState.Success;
 
 			if (authenticated)
 			{
-				var sitecoreUsername = string.Format("{0}\\{1}", Context.Domain.Name, username);
+				var sitecoreUsername = string.Format("{0}\\{1}", Context.Domain.Name, user.Username);
 				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, persist);
 
-				sitecoreVirtualUser.Profile.Email = username;
+				sitecoreVirtualUser.Profile.Email = user.Email;
+				sitecoreVirtualUser.Profile.Name = user.Name;
 
 				AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
 
@@ -34,14 +36,14 @@ namespace Informa.Library.User.Authentication
 
 				if (tracker != null)
 				{
-					tracker.Session.Identify(sitecoreVirtualUser.Identity.Name);
+					tracker.Session.Identify(user.Username);
 				}
 			}
 
 			return new LoginWebUserResult
 			{
 				Success = authenticated,
-				Message = string.Format("ID = {0}", result.User?.Id ?? "NULL")
+				Message = string.Empty
 			};
 		}
 	}

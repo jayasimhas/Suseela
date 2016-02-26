@@ -23,13 +23,15 @@ namespace Informa.Library.Salesforce.User.Authentication
 					State = AuthenticateUserResultState.Failure
 				};
 			}
-
+			
 			return new SalesforceAuthenticateUserResult
 			{
 				State = AuthenticateUserResultState.Success,
 				User = new SalesforceUser
 				{
-					Id = result.contactId
+					Username = username,
+					Email = username,
+					Name = username
 				}
 			};
 		}
