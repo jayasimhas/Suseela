@@ -46,9 +46,22 @@ ul, li, ol {
 	list-style: none;
 }
 
+// Override list resets for lists in a RTE component
+.GeneralRTEComponent {
+  ul, ol {
+    list-style: initial;
+    padding-left: 20px;
+  }
+
+  li {
+    list-style: initial;
+  }
+}
+
 // Normalize SVG icons
 svg {
   @include svg-fill(black);
   height: 16px;
   width: 16px;
 }
+
