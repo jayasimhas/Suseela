@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using SitecoreTreeWalker.Util.Document;
@@ -98,7 +98,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		/// Retrieve the relevant information from the UI
 		/// </summary>
 		/// <returns></returns>
-		public WordPluginModel.ArticleStruct GetArticleDetails(ArticleDocumentMetadataParser metadataParser = null)
+		public ArticleStruct GetArticleDetails(ArticleDocumentMetadataParser metadataParser = null)
 		{
 			if (metadataParser == null)
 			{
@@ -107,7 +107,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			}
 			string longSummary = metadataParser.LongSummary;
 			string shortSummary = metadataParser.ShortSummary;
-			var articleDetails = new WordPluginModel.ArticleStruct
+			var articleDetails = new ArticleStruct
 			{
 				ArticleNumber = pageArticleInformationControl.GetArticleNumber(),
 				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
@@ -138,9 +138,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			return articleDetails;
 		}
 
-		public WordPluginModel.ArticleStruct GetArticleDetailsWithoutDocumentParsing()
+		public ArticleStruct GetArticleDetailsWithoutDocumentParsing()
 		{
-			var articleDetails = new WordPluginModel.ArticleStruct
+			var articleDetails = new ArticleStruct
 			{
 				ArticleNumber = pageArticleInformationControl.GetArticleNumber(),
 				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
@@ -212,7 +212,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 		    return pageArticleInformationControl.uxNominate.Enabled
 		           && pageArticleInformationControl.uxNominate.Checked;
-		    //&& !SitecoreGetter.HasPrimaryIndustries(pageIndustriesControl.TabController.GetSelected().Select(i => i.ID));
+		    //&& !SitecoreClient.HasPrimaryIndustries(pageIndustriesControl.TabController.GetSelected().Select(i => i.ID));
 		}
          * */
 
@@ -310,12 +310,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		public void UpdateFields()
 		{
-			UpdateFields(SitecoreGetter.ForceReadArticleDetails(_parent.GetArticleNumber()));
+			UpdateFields(SitecoreClient.ForceReadArticleDetails(_parent.GetArticleNumber()));
 		}
 
 		public void UpdateFields(Guid articleGuid)
 		{
-			UpdateFields(SitecoreGetter.ForceReadArticleDetails(articleGuid));
+			UpdateFields(SitecoreClient.ForceReadArticleDetails(articleGuid));
 		}
 
 		public void ResetFields()
@@ -333,7 +333,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		/// Sets the fields in the UI based on the inputted ArticleStruct
 		/// </summary>
 		/// <param name="articleDetails"></param>
-		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
+		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			pageArticleInformationControl.UpdateFields(articleDetails);
 			pageRelatedArticlesControl.UpdateFields(articleDetails);
@@ -364,7 +364,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			string articleNumber = _parent.GetArticleNumber();
 			if (!string.IsNullOrEmpty(articleNumber))
 			{
-				if (!SitecoreArticle.DoesArticleExist(articleNumber))
+				if (!SitecoreClient.DoesArticleExist(articleNumber))
 				{
 					//_parent.SetArticleNumber(null);
 					return false;

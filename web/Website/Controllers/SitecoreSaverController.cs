@@ -12,6 +12,7 @@ using Sitecore.Links;
 using Sitecore.SecurityModel;
 using Sitecore.Web;
 using Informa.Library.Utilities.References;
+using PluginModels;
 
 namespace Informa.Web.Controllers
 {
@@ -30,7 +31,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.ArticleStruct Post([FromBody] WordPluginModel.CreateArticleRequest content)
+		public ArticleStruct Post([FromBody] CreateArticleRequest content)
 		{
 			using (new SecurityDisabler())
 			{
@@ -76,7 +77,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleTextByGuid content)
+		public void Post([FromBody] SaveArticleTextByGuid content)
 		{
 			ArticleItem item = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticleGuid);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(item, content.WordText, content.ArticleData);
@@ -96,7 +97,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleText content)
+		public void Post([FromBody] SaveArticleText content)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);
@@ -114,7 +115,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleDetails content)
+		public void Post([FromBody] SaveArticleDetails content)
 		{
 			_sitecoreSaver.SaveArticleDetails(content.ArticleNumber, content.ArticleData, false, false);
 		}
@@ -131,7 +132,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleDetailsByGuid content)
+		public void Post([FromBody] SaveArticleDetailsByGuid content)
 		{
 			_sitecoreSaver.SaveArticleDetails(content.ArticleGuid, content.ArticleData, false, false);
 		}
@@ -148,7 +149,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.UserStatusStruct Post([FromBody] WordPluginModel.LoginModel content)
+		public UserStatusStruct Post([FromBody] LoginModel content)
 		{
 			return SitecoreUtil.GetUserStatus(content.Username, content.Password);
 		}
@@ -166,7 +167,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.CheckoutStatus Post([FromBody] string articleNumber)
+		public CheckoutStatus Post([FromBody] string articleNumber)
 		{
 			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
 			return _articleUtil.GetLockedStatus(article);
@@ -187,7 +188,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.CheckoutStatus Post([FromBody] Guid articleGuid)
+		public CheckoutStatus Post([FromBody] Guid articleGuid)
 		{
 			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
 			return _articleUtil.GetLockedStatus(article);
@@ -281,9 +282,9 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public List<WordPluginModel.ArticlePreviewInfo> Post([FromBody] List<Guid> guids)
+		public List<ArticlePreviewInfo> Post([FromBody] List<Guid> guids)
 		{
-			var previews = new List<WordPluginModel.ArticlePreviewInfo>();
+			var previews = new List<ArticlePreviewInfo>();
 			foreach (Guid guid in guids)
 			{
 				ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(guid);
@@ -306,10 +307,10 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.ArticlePreviewInfo Post([FromBody] string articleNumber)
+		public ArticlePreviewInfo Post([FromBody] string articleNumber)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
-			var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new WordPluginModel.ArticlePreviewInfo();
+			var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new ArticlePreviewInfo();
 			return preview;
 		}
 	}
@@ -451,7 +452,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public int Post([FromBody] WordPluginModel.SendDocumentToSitecoreByGuid content)
+		public int Post([FromBody] SendDocumentToSitecoreByGuid content)
 		{
 			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticlGuid);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
@@ -471,7 +472,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public int Post([FromBody] WordPluginModel.SendDocumentToSitecore content)
+		public int Post([FromBody] SendDocumentToSitecore content)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);

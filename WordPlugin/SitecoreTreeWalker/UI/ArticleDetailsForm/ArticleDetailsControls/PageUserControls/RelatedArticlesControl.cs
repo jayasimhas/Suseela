@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
+using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
@@ -34,9 +35,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				MessageBox.Show(@"Please enter an article number!", @"Informa");
 				return false;
 			}
-			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(uxArticleNumber.Text)
-										  ? SitecoreArticle.GetArticlePreviewInfo(uxArticleNumber.Text)
-										  : new WordPluginModel.ArticlePreviewInfo();
+			ArticlePreviewInfo info = SitecoreClient.DoesArticleExist(uxArticleNumber.Text)
+										  ? SitecoreClient.GetArticlePreviewInfo(uxArticleNumber.Text)
+										  : new ArticlePreviewInfo();
 			bool retrieved = _uxArticlePreviewTable.UpdatePreview(info);
 			_uxArticlePreviewTable.Tag = info;
 			return retrieved;
@@ -44,7 +45,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void AddToRelated()
 		{
-			var info = _uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
+			var info = _uxArticlePreviewTable.Tag as ArticlePreviewInfo;
 			if (info != null)
 			{
 				uxSelectedLayout.AddToRelated(info);
@@ -90,7 +91,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		}
 
-		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
+		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			_inlineReferenceParser.ParseDocument(SitecoreAddin.ActiveDocument);
 			uxSelectedLayout.MenuItem = MenuItem;
@@ -101,7 +102,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			}
 			uxSelectedLayout.SitecoreReferencedArticles = articleDetails.ReferencedArticlesInfo.ToList();
 			uxSelectedLayout.SitecoreRelatedArticles = articleDetails.RelatedArticlesInfo.ToList();
-			uxSelectedLayout.LocalReferencedArticles = SitecoreArticle.GetArticlePreviewInfo(_inlineReferenceParser.InlineReferenceGuids);
+			uxSelectedLayout.LocalReferencedArticles = SitecoreClient.GetArticlePreviewInfo(_inlineReferenceParser.InlineReferenceGuids);
 			uxSelectedLayout.PopulateTable();
 
 			_isLive = articleDetails.IsPublished;
@@ -120,10 +121,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void ResetFields()
 		{
-			uxSelectedLayout.LocalRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
-			uxSelectedLayout.SitecoreRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
-			uxSelectedLayout.LocalReferencedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
-			uxSelectedLayout.SitecoreReferencedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
+			uxSelectedLayout.LocalRelatedArticles = new List<ArticlePreviewInfo>();
+			uxSelectedLayout.SitecoreRelatedArticles = new List<ArticlePreviewInfo>();
+			uxSelectedLayout.LocalReferencedArticles = new List<ArticlePreviewInfo>();
+			uxSelectedLayout.SitecoreReferencedArticles = new List<ArticlePreviewInfo>();
 			uxSelectedLayout.PopulateTable();
 			uxArticleNumber.Clear();
 			_uxArticlePreviewTable.Clear();
@@ -144,7 +145,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		private void uxViewArticle_Click(object sender, EventArgs e)
 		{
-			var article = _uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
+			var article = _uxArticlePreviewTable.Tag as ArticlePreviewInfo;
 			if (article != null)
 				//Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());
 				Process.Start(article.PreviewUrl);
@@ -159,7 +160,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			uxSelectedLayout.SitecoreReferencedArticles = uxSelectedLayout.LocalReferencedArticles;
 			uxSelectedLayout.SitecoreRelatedArticles =
 				uxSelectedLayout.LocalRelatedArticles.Union(uxSelectedLayout.GetActiveSitecoreRelatedArticles()).ToList();
-			uxSelectedLayout.LocalRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
+			uxSelectedLayout.LocalRelatedArticles = new List<ArticlePreviewInfo>();
 			uxSelectedLayout.PopulateTable();
 		}
 

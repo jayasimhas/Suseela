@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
@@ -18,7 +18,7 @@ using SitecoreTreeWalker.Util;
 using SitecoreTreeWalker.Util.Document;
 using SitecoreTreeWalker.WebserviceHelper;
 using Application = Microsoft.Office.Interop.Word.Application;
-using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
+using ArticleStruct = PluginModels.ArticleStruct;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 {
@@ -30,7 +30,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 		public bool CloseOnSuccessfulLock;
 
 		private DocumentCustomProperties _documentCustomProperties;
-		private readonly SitecoreArticle _sitecoreArticle;
+        private readonly SitecoreClient _sitecoreArticle;
 		private WordUtils _wordUtils;
 		protected StructConverter _structConverter;
 
@@ -105,7 +105,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 		{
 			SitecoreAddin.TagActiveDocument();
 
-			_sitecoreArticle = new SitecoreArticle();
+            _sitecoreArticle = new SitecoreClient();
 			_documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
 			_structConverter = new StructConverter();
 			ArticleDetails.ArticleNumber = _documentCustomProperties.ArticleNumber;
@@ -151,7 +151,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			string articleNumber = GetArticleNumber();
 			if (!articleNumber.IsNullOrEmpty())
 			{
-				SetArticleDetails(SitecoreGetter.LazyReadArticleDetails(GetArticleNumber()));
+                SetArticleDetails(SitecoreClient.LazyReadArticleDetails(GetArticleNumber()));
 				PostLinkEnable();
 			}
 			else
@@ -168,7 +168,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 				loginControl1.ShowLogin();
 
 
-				if (!SitecoreGetter.IsAvailable())
+                if (!SitecoreClient.IsAvailable())
 				{
 					SitecoreUser.GetUser().Logout();
 				}
@@ -344,7 +344,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 					var copy = ArticleDetails.ArticleGuid;
 					ArticleDetails = articleDetailsPageSelector.GetArticleDetails(metadataParser);
 					ArticleDetails.ArticleGuid = copy;
-					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new WordPluginModel.StaffStruct[0], GetArticleNumber(), body);
+					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
 					//TODO - Add workflow commands and Notification List
 					//List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body);
 
@@ -513,7 +513,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
 			string title = articleDetails.Title.TrimEnd();
 
-			if (SitecoreArticle.DoesArticleNameAlreadyExistInIssue(articleDetails))
+            if (SitecoreClient.DoesArticleNameAlreadyExistInIssue(articleDetails))
 			{
 				MessageBox.Show
 					(@"This article title is already taken for this issue. Please choose another title or another issue.",
@@ -541,12 +541,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
 			SuspendLayout();
 
-			WordPluginModel.ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
+			ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
 
 			//articleDetailsPageSelector.UpdateArticleNumber(astruct.ArticleNumber);
 			articleDetails.ArticleNumber = astruct.ArticleNumber;
 			articleDetails.ArticleGuid = astruct.ArticleGuid;
-			SitecoreArticle.SaveArticleDetailsByGuid(astruct.ArticleGuid, _structConverter.GetServerStruct(articleDetails));
+            SitecoreClient.SaveArticleDetailsByGuid(astruct.ArticleGuid, _structConverter.GetServerStruct(articleDetails));
 			ResumeLayout();
 
 			return articleDetails;
@@ -588,8 +588,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			//TODO - Workflow UI Updates
 			/*
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
-                                            ? SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleGuid)
-                                            : SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleNumber));
+                                            ? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
+                                            : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
 											*/
 			articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
 			UpdateFieldsAfterSave();
@@ -635,7 +635,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 					return true;
 				}
 			}
-			int maxLengthLongSummary = SitecoreGetter.GetMaxLengthLongSummary();
+            int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
 			if (metadataParser.LongSummary.Length > maxLengthLongSummary)
 			{
 				if (!AskExceededCharacterLimit("Summary", maxLengthLongSummary))
@@ -724,7 +724,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			}
 		}
 
-		private DialogResult WantsToSetArticleDateToNow(WordPluginModel.WorkflowCommand command)
+        private DialogResult WantsToSetArticleDateToNow(WorkflowCommand command)
 		{
 			if (command != null && command.SendsToFinal)
 			{
@@ -775,7 +775,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 				ArticleDetails.WordCount = SitecoreAddin.ActiveDocument.ComputeStatistics(0);
 				//TODO - Workflow commandId
 				//ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
-				SitecoreArticle.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
+                SitecoreClient.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
 				if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked)
 				{
 					articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
@@ -783,8 +783,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 				//TODO - Update workflow UI
 				/*
                 articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
-                                                ? SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleGuid)
-                                                : SitecoreArticle.GetWorkflowState(ArticleDetails.ArticleNumber));
+                                                ? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
+                                                : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
 												*/
 				articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
 				articleDetailsPageSelector.UpdateFields();
@@ -900,7 +900,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 				MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return;
 			}
-			//string guid = SitecoreArticle.GetArticleGuidByArticleNumber(GetArticleNumber());
+            //string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
 			//string domain = ApplicationConfig.GetPropertyValue("DomainName");
 			//string redirect = Uri.EscapeDataString(domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en");
 			//string url = domain + @"Util/LoginRedirectToPreview.aspx?redirect=" + redirect;
@@ -924,7 +924,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 
 		private string GetPreviewUrl(bool isMobile)
 		{
-			string guid = SitecoreArticle.GetArticleGuidByArticleNumber(GetArticleNumber());
+            string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
 			string domain = ApplicationConfig.GetPropertyValue("DomainName");
 			string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
 			string redirect = (domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);

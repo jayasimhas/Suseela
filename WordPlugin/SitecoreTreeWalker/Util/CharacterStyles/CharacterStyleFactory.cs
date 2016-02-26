@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.Sitecore;
 
 namespace SitecoreTreeWalker.Util.CharacterStyles
@@ -25,7 +25,7 @@ namespace SitecoreTreeWalker.Util.CharacterStyles
 		{
 			if (CharacterStyles == null)
 			{
-				List<WordPluginModel.WordStyleStruct> styles = SitecoreGetter.GetCharacterStyles().ToList();
+				List<WordStyleStruct> styles = SitecoreClient.GetCharacterStyles().ToList();
 				var characterStyles = styles.ToDictionary(style => style.WordStyle, style => style.CssElement);
 				string boldElement;
 				string italicElement;

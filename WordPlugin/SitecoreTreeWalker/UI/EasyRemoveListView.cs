@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using StaffStruct = Informa.Web.Areas.Account.Models.WordPluginModel.StaffStruct;
+using PluginModels;
+using StaffStruct = PluginModels.StaffStruct;
 
 namespace SitecoreTreeWalker.UI
 {
@@ -147,7 +147,7 @@ namespace SitecoreTreeWalker.UI
 			}
 		}
 
-		public void Add(WordPluginModel.StaffStruct selected)
+		public void Add(StaffStruct selected)
 		{
 			if (Selected.Any(r => r.ID == selected.ID) || Unremovable.Any(r => r.ID == selected.ID))
 			{

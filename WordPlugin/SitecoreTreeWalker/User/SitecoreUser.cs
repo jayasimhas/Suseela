@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Web.Services.Protocols;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.Config;
+using SitecoreTreeWalker.Sitecore;
 
 namespace SitecoreTreeWalker.User
 {
@@ -62,13 +63,13 @@ namespace SitecoreTreeWalker.User
 		/// <param name="username">User's username</param>
 		/// <param name="password">User's password</param>
 		/// <returns>True if authentication successful; otherwise, false.</returns>
-		public WordPluginModel.UserStatusStruct Authenticate(string username, string password)
+		public UserStatusStruct Authenticate(string username, string password)
 		{
 			Globals.SitecoreAddin.Log("SitecoreUser.Authenticate: Trying to authenticate user [" + username + "]...");
 			var domainAndUsername = DefaultDomain + @"\" + username;
 			try
 			{
-				var userStatus = SitecoreArticle.AuthenticateUser(domainAndUsername, password);
+				var userStatus = SitecoreClient.AuthenticateUser(domainAndUsername, password);
 				if (userStatus.LoginSuccessful)
 				{
 					Globals.SitecoreAddin.Log("SitecoreUser.Authenticate: Authentication succeeded.");

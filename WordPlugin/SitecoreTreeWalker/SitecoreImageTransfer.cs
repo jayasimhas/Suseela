@@ -39,7 +39,7 @@ namespace SitecoreTreeWalker
 		{
 			try
 			{
-				return SitecoreGetter.GetMediaLibraryItemData(_path);
+				return SitecoreClient.GetMediaLibraryItemData(_path);
 			}
 			catch(WebException e)
 			{
