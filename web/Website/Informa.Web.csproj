@@ -594,7 +594,6 @@
     <Compile Include="Areas\Account\Controllers\SalesforceConnectorController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
     <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
-    <Compile Include="Areas\Account\Models\WordPluginModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
@@ -951,6 +950,10 @@
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\PluginModels\PluginModels.csproj">
+      <Project>{C96F1D6A-3E9B-4ABD-9CD3-2BD89B0809ED}</Project>
+      <Name>PluginModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
       <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>

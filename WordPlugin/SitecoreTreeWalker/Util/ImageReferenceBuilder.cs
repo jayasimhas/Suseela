@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Xml.Linq;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.Util.CharacterStyles;
@@ -14,7 +14,7 @@ namespace SitecoreTreeWalker.Util
     public class ImageReferenceBuilder
     {
 
-        protected Dictionary<string, WordPluginModel.WordStyleStruct> ParagraphStyles = new Dictionary<string, WordPluginModel.WordStyleStruct>();
+		protected Dictionary<string, WordStyleStruct> ParagraphStyles = new Dictionary<string, WordStyleStruct>();
         public static List<string> ImageStyles = new List<string> { DocumentAndParagraphStyles.ExhibitNumberStyle, DocumentAndParagraphStyles.ExhibitTitleStyle, DocumentAndParagraphStyles.ImagePreviewStyle, DocumentAndParagraphStyles.SourceStyle, DocumentAndParagraphStyles.ExhibitCaptionStyle52 };
         protected OptimizedCharacterStyleTransformer Transformer;
 
@@ -25,7 +25,7 @@ namespace SitecoreTreeWalker.Util
             { "none", "article-inline-image"},
         };
 
-        public ImageReferenceBuilder(Dictionary<string, WordPluginModel.WordStyleStruct> styles, OptimizedCharacterStyleTransformer transformer)
+		public ImageReferenceBuilder(Dictionary<string, WordStyleStruct> styles, OptimizedCharacterStyleTransformer transformer)
         {
             ParagraphStyles = styles;
             Transformer = transformer;
@@ -70,7 +70,7 @@ namespace SitecoreTreeWalker.Util
             }
             if (ImageStyles.Contains(style.NameLocal))
             {
-                WordPluginModel.WordStyleStruct w;
+				WordStyleStruct w;
                 if (!ParagraphStyles.TryGetValue(style.NameLocal, out w)) return null;
                 var element = new XElement("p");
                 element.SetAttributeValue("class", w.CssClass);

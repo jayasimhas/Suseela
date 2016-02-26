@@ -28,7 +28,7 @@ namespace SitecoreTreeWalker.Sitecore
 
             Descendents.Clear();
 
-            var children = SitecoreGetter.GetChildrenDirectories(Path);
+            var children = SitecoreClient.GetChildrenDirectories(Path);
             foreach (var child in children)
             {
                 var path = string.Format("{0}/{1}", Path, child.Name);

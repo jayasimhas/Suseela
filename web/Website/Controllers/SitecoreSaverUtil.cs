@@ -17,6 +17,7 @@ using Sitecore.Workflows;
 using static System.String;
 using File = System.IO.File;
 using Informa.Library.Utilities.References;
+using PluginModels;
 
 namespace Informa.Web.Controllers
 {
@@ -53,7 +54,7 @@ namespace Informa.Web.Controllers
 			return (n + 1).ToString(Constants.ArticleNumberLength);
 		}
 
-		public void SaveArticleDetails(Guid articleGuid, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
+		public void SaveArticleDetails(Guid articleGuid, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
 			using (new SecurityDisabler())
 			{
@@ -68,7 +69,7 @@ namespace Informa.Web.Controllers
 			Sitecore.Security.Authentication.AuthenticationManager.Logout();
 		}
 
-		public void SaveArticleDetails(string articleNumber, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
+		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
 			using (new SecurityDisabler())
 			{
@@ -93,7 +94,7 @@ namespace Informa.Web.Controllers
 		/// <param name="shouldNotify">Should notifications be sent for this update</param>
 		/// <returns>The updated Sitecore item representing the article</returns>
 		/// <remarks>This method could stand to be refactored into smaller chunks.</remarks>
-		private ArticleItem SaveArticleDetails(ArticleItem article, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData, bool addVersion, bool shouldNotify = true)
+		private ArticleItem SaveArticleDetails(ArticleItem article, ArticleStruct articleStruct, bool saveDocumentSpecificData, bool addVersion, bool shouldNotify = true)
 		{
 			var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
 
@@ -213,7 +214,7 @@ namespace Informa.Web.Controllers
 			return newVersion;
 		}
 
-		private void SaveArticleFields(ArticleItem newArticle, ArticleItem originalArticle, WordPluginModel.ArticleStruct articleStruct, bool saveDocumentSpecificData)
+		private void SaveArticleFields(ArticleItem newArticle, ArticleItem originalArticle, ArticleStruct articleStruct, bool saveDocumentSpecificData)
 		{
 			using (new SecurityDisabler())
 			{
@@ -272,7 +273,7 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-		protected void RenameArticleItem(ArticleItem article, WordPluginModel.ArticleStruct articleStruct)
+		protected void RenameArticleItem(ArticleItem article, ArticleStruct articleStruct)
 		{
 			string title = articleStruct.Title;
 			if (title == null) return;
@@ -291,7 +292,7 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-		protected void MoveArticleIfNecessary(ArticleItem article, WordPluginModel.ArticleStruct articleStruct)
+		protected void MoveArticleIfNecessary(ArticleItem article, ArticleStruct articleStruct)
 		{
 			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
 			using (new SecurityDisabler())
@@ -313,7 +314,7 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="article"></param>
 		/// <param name="articleText"></param>
-		public void SaveArticleDetailsAndText(ArticleItem article, string articleText, WordPluginModel.ArticleStruct articleStruct)
+		public void SaveArticleDetailsAndText(ArticleItem article, string articleText, ArticleStruct articleStruct)
 		{
 			using (new SecurityDisabler())
 			{

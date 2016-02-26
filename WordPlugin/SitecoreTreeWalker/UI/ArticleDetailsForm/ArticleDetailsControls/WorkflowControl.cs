@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 
@@ -10,8 +10,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	public partial class WorkflowControl : ArticleDetailsPageUserControl
 	{
-		public List<WordPluginModel.WorkflowCommand> Commands;
-		protected List<WordPluginModel.StaffStruct> _staff;
+		public List<WorkflowCommand> Commands;
+		protected List<StaffStruct> _staff;
 		
 
 		public WorkflowControl()
@@ -19,11 +19,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			InitializeComponent();
 		}
 
-		public void UpdateFields(WordPluginModel.WorkflowState state)
+		public void UpdateFields(WorkflowState state)
 		{
 			if (_staff == null)
 			{
-			    _staff = SitecoreGetter.GetStaffAndGroups(); 
+			    _staff = SitecoreClient.GetStaffAndGroups(); 
 			}
 
 			uxNotifyPicker.DataSource = _staff;
@@ -34,8 +34,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 				return;
 			}
 			uxWorkflowLabel.Text = state.DisplayName;
-			Commands = new List<WordPluginModel.WorkflowCommand>();
-			Commands.Insert(0, new WordPluginModel.WorkflowCommand {DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString()});
+			Commands = new List<WorkflowCommand>();
+			Commands.Insert(0, new WorkflowCommand {DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString()});
 			if (state.Commands != null)
 			{
 				Commands.AddRange(state.Commands);
@@ -53,9 +53,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		protected void SetNotificationOptions()
 		{
-			if (uxWorkflowActions.SelectedValue is WordPluginModel.WorkflowCommand)
+			if (uxWorkflowActions.SelectedValue is WorkflowCommand)
 			{
-				if (((WordPluginModel.WorkflowCommand) uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
+				if (((WorkflowCommand) uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
 				{
 					uxNotifyPicker.Enabled = false;
 					uxNotifyList.Enabled = false;
@@ -64,7 +64,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 					return;
 				}
 
-				var command = ((WordPluginModel.WorkflowCommand)uxWorkflowActions.SelectedValue);
+				var command = ((WorkflowCommand)uxWorkflowActions.SelectedValue);
 
 				if (command.GlobalNotifyList != null) { uxNotifyList.ResetUnremovableStaff(command.GlobalNotifyList.ToList()); }
 			}
@@ -105,9 +105,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			ResetNotificationList();
 		}
 
-        public WordPluginModel.WorkflowCommand GetSelectedCommandState()
+        public WorkflowCommand GetSelectedCommandState()
         {
-            return uxWorkflowActions.SelectedItem as WordPluginModel.WorkflowCommand;
+            return uxWorkflowActions.SelectedItem as WorkflowCommand;
         }
 
 		public Guid GetSelectedCommand()
@@ -123,7 +123,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		private void uxNotifyAdd_Click(object sender, EventArgs e)
 		{
-			var selectedStaffMember = uxNotifyPicker.SelectedItem as WordPluginModel.StaffStruct;
+			var selectedStaffMember = uxNotifyPicker.SelectedItem as StaffStruct;
 
 			if (selectedStaffMember != null)
 			{
@@ -131,7 +131,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			}
 		}
 
-		public List<WordPluginModel.StaffStruct> GetNotifyList()
+		public List<StaffStruct> GetNotifyList()
 		{
 			return uxNotifyList.Selected;
 		}

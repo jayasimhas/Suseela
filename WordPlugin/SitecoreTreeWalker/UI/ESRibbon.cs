@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Tools.Ribbon;
 using SitecoreTreeWalker.Config;
@@ -22,7 +22,7 @@ namespace SitecoreTreeWalker.UI
     public partial class ESRibbon
     {
         SitecoreUser _user = SitecoreUser.GetUser();
-        public WordPluginModel.ArticleStruct ArticleDetails = new WordPluginModel.ArticleStruct();
+        public ArticleStruct ArticleDetails = new ArticleStruct();
         private DocumentCustomProperties _documentCustomProperties;
         private Microsoft.Office.Tools.CustomTaskPane myCustomTaskPane;
 
@@ -285,7 +285,7 @@ namespace SitecoreTreeWalker.UI
         /// ArticleStruct articleStruct
         /// </summary>
         /// <param name="articleStruct"></param>
-        public void SetArticleDetails(WordPluginModel.ArticleStruct articleStruct)
+        public void SetArticleDetails(ArticleStruct articleStruct)
         {
             ArticleDetails = articleStruct;
         }
@@ -299,7 +299,7 @@ namespace SitecoreTreeWalker.UI
 
         private string GetPreviewUrl(bool isMobile)
         {
-            string guid = SitecoreArticle.GetArticleGuidByArticleNumber(GetArticleNumber());
+            string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
             string domain = ApplicationConfig.GetPropertyValue("DomainName");
             string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
             string redirect = Uri.EscapeDataString(domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);
