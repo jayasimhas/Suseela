@@ -3,13 +3,14 @@ using Informa.Library.Corporate;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Jabberwocky.Glass.Autofac.Attributes;
-using System.Web;
+using Informa.Library.User;
 
 namespace Informa.Web.ViewModels
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class HeaderViewModel : IHeaderViewModel
 	{
+		protected readonly IUserContext UserContext;
 		protected readonly IUserAuthenticationContext UserAuthenticationContext;
 		protected readonly ICorporateAccountNameContext CorporateAccountNameContext;
 		protected readonly ITextTranslator TextTranslator;
@@ -17,12 +18,14 @@ namespace Informa.Web.ViewModels
 		protected readonly ISiteRootContext SiteRootContext;
 
 		public HeaderViewModel(
+			IUserContext userContext,
 			IUserAuthenticationContext userAuthenticationContext,
 			ICorporateAccountNameContext corporateAccountNameContext,
 			ITextTranslator textTranslator,
 			ISiteHomeContext siteHomeContext,
 			ISiteRootContext siteRootContext)
 		{
+			UserContext = userContext;
 			UserAuthenticationContext = userAuthenticationContext;
 			CorporateAccountNameContext = corporateAccountNameContext;
 			TextTranslator = textTranslator;
@@ -36,7 +39,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				var accountName = UserAuthenticationContext.IsAuthenticated ? HttpContext.Current.User.Identity.Name : CorporateAccountNameContext.Name;
+				var accountName = UserAuthenticationContext.IsAuthenticated ? UserContext.User.Name : CorporateAccountNameContext.Name;
 
 				return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
 			}

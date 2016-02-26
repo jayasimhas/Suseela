@@ -449,8 +449,12 @@
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
     <Compile Include="Subscription\IUserSubscriptionContext.cs" />
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
+    <Compile Include="User\ISitecoreUserContext.cs" />
     <Compile Include="User\IUser.cs" />
     <Compile Include="User\IUserContext.cs" />
+    <Compile Include="User\SitecoreUserContext.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="User\UserContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
