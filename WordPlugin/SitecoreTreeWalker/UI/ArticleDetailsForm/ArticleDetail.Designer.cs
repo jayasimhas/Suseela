@@ -33,12 +33,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArticleDetail));
 			this.uxLoginPanel = new System.Windows.Forms.Panel();
 			this.uxArticlePanel = new System.Windows.Forms.Panel();
-			this.articleStatusBar1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.ArticleStatusBar();
 			this.uxVersionNumber = new System.Windows.Forms.Label();
 			this.uxPreview = new System.Windows.Forms.Button();
 			this.uxCreateArticle = new System.Windows.Forms.Button();
 			this.uxSaveArticle = new System.Windows.Forms.Button();
 			this.uxSaveMetadata = new System.Windows.Forms.Button();
+			this.articleStatusBar1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.ArticleStatusBar();
+			this.articleDetailsPageSelector = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.ArticleDetailsPageSelector();
 			this.loginControl1 = new SitecoreTreeWalker.UI.LoginControl();
 			this.uxLoginPanel.SuspendLayout();
 			this.uxArticlePanel.SuspendLayout();
@@ -60,23 +61,17 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			this.uxArticlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
 			this.uxArticlePanel.Controls.Add(this.articleStatusBar1);
 			this.uxArticlePanel.Controls.Add(this.uxVersionNumber);
-			this.uxArticlePanel.Controls.Add(this.uxPreview);
+			this.uxArticlePanel.Controls.Add(this.uxPreview);			
 			this.uxArticlePanel.Controls.Add(this.uxCreateArticle);
 			this.uxArticlePanel.Controls.Add(this.uxSaveArticle);
 			this.uxArticlePanel.Controls.Add(this.uxSaveMetadata);
+			this.uxArticlePanel.Controls.Add(this.articleDetailsPageSelector);
 			this.uxArticlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.uxArticlePanel.Location = new System.Drawing.Point(0, 0);
 			this.uxArticlePanel.Name = "uxArticlePanel";
 			this.uxArticlePanel.Size = new System.Drawing.Size(897, 636);
 			this.uxArticlePanel.TabIndex = 3;
 			this.uxArticlePanel.Visible = false;
-			// 
-			// articleStatusBar1
-			// 
-			this.articleStatusBar1.Location = new System.Drawing.Point(187, 556);
-			this.articleStatusBar1.Name = "articleStatusBar1";
-			this.articleStatusBar1.Size = new System.Drawing.Size(707, 41);
-			this.articleStatusBar1.TabIndex = 81;
 			// 
 			// uxVersionNumber
 			// 
@@ -137,15 +132,30 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			this.uxSaveMetadata.Visible = false;
 			this.uxSaveMetadata.Click += new System.EventHandler(this.uxSaveMetadata_Click);
 			// 
+			// articleStatusBar1
+			// 
+			this.articleStatusBar1.Location = new System.Drawing.Point(187, 556);
+			this.articleStatusBar1.Name = "articleStatusBar1";
+			this.articleStatusBar1.Size = new System.Drawing.Size(707, 41);
+			this.articleStatusBar1.TabIndex = 81;
+			// 
+			// articleDetailsPageSelector
+			// 
+			this.articleDetailsPageSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.articleDetailsPageSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+			this.articleDetailsPageSelector.Location = new System.Drawing.Point(0, 3);
+			this.articleDetailsPageSelector.Name = "articleDetailsPageSelector";
+			this.articleDetailsPageSelector.Size = new System.Drawing.Size(898, 630);
+			this.articleDetailsPageSelector.TabIndex = 78;
+			// 
 			// loginControl1
 			// 
-			this.loginControl1.AutoSize = true;
-			this.loginControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.loginControl1.BackColor = System.Drawing.Color.White;
 			this.loginControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
 			this.loginControl1.Location = new System.Drawing.Point(200, 0);
 			this.loginControl1.Name = "loginControl1";
-			this.loginControl1.Size = new System.Drawing.Size(455, 440);
+			this.loginControl1.Size = new System.Drawing.Size(399, 648);
 			this.loginControl1.TabIndex = 74;
 			// 
 			// ArticleDetail
@@ -166,7 +176,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			this.Text = "Article Information";
 			this.Load += new System.EventHandler(this.ArticleDetail_Load);
 			this.uxLoginPanel.ResumeLayout(false);
-			this.uxLoginPanel.PerformLayout();
 			this.uxArticlePanel.ResumeLayout(false);
 			this.uxArticlePanel.PerformLayout();
 			this.ResumeLayout(false);
