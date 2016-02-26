@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore;
 using Sitecore.Analytics;
 using Sitecore.Security.Authentication;
 
@@ -9,26 +8,29 @@ namespace Informa.Library.User.Authentication
 	public class LoginWebUser : ILoginWebUser
 	{
 		protected IAuthenticateUser AuthenticateUser;
+		protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
 
 		public LoginWebUser(
-			IAuthenticateUser authenticateUser)
+			IAuthenticateUser authenticateUser,
+			ISitecoreVirtualUsernameFactory virtualUsernameFactory)
 		{
 			AuthenticateUser = authenticateUser;
+			VirtualUsernameFactory = virtualUsernameFactory;
 		}
 
 		public ILoginWebUserResult Login(string username, string password, bool persist)
 		{
 			var result = AuthenticateUser.Authenticate(username, password);
-			var user = result.User;
+			var authenticatedUser = result.User;
 			var authenticated = result.State == AuthenticateUserResultState.Success;
 
 			if (authenticated)
 			{
-				var sitecoreUsername = string.Format("{0}\\{1}", Context.Domain.Name, user.Username);
+				var sitecoreUsername = VirtualUsernameFactory.Create(authenticatedUser);
 				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, persist);
 
-				sitecoreVirtualUser.Profile.Email = user.Email;
-				sitecoreVirtualUser.Profile.Name = user.Name;
+				sitecoreVirtualUser.Profile.Email = authenticatedUser.Email;
+				sitecoreVirtualUser.Profile.Name = authenticatedUser.Name;
 
 				AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
 
@@ -36,7 +38,7 @@ namespace Informa.Library.User.Authentication
 
 				if (tracker != null)
 				{
-					tracker.Session.Identify(user.Username);
+					tracker.Session.Identify(authenticatedUser.Username);
 				}
 			}
 
