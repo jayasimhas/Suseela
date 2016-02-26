@@ -941,6 +941,7 @@
     <Content Include="Views\Search\SearchWrapper.cshtml" />
     <Content Include="Views\Article\_ArticleSidebar.cshtml" />
     <Content Include="Views\Shared\Components\SectionTitle.cshtml" />
+    <Content Include="Views\Shared\Components\CSSBlock.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
