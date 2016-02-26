@@ -15,20 +15,20 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IPageLinksFactory PageLinksFactory;
-		protected readonly IUserAuthenticationContext UserAuthenticationContext;
+		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 		protected readonly IUserSubscriptionContext UserSubscriptionContext;
 		protected readonly ITextTranslator TextTranslator;
 
 		public FooterViewModel(
 			ISiteRootContext siteRootContext,
 			IPageLinksFactory pageLinksFactory,
-			IUserAuthenticationContext userAuthenticationContext,
+			IAuthenticatedUserContext authenticatedUserContext,
 			IUserSubscriptionContext userSubscriptionContext,
 			ITextTranslator textTranslator)
 		{
 			SiteRootContext = siteRootContext;
 			PageLinksFactory = pageLinksFactory;
-			UserAuthenticationContext = userAuthenticationContext;
+			AuthenticatedUserContext = authenticatedUserContext;
 			UserSubscriptionContext = userSubscriptionContext;
 			TextTranslator = textTranslator;
 		}
@@ -51,7 +51,7 @@ namespace Informa.Web.ViewModels
 					return SiteRootContext.Item.Subscribe_Link;
 				}
 
-				if (UserAuthenticationContext.IsAuthenticated)
+				if (AuthenticatedUserContext.IsAuthenticated)
 				{
 					return SiteRootContext.Item.Purchase_Link;
 				}

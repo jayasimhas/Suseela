@@ -3,6 +3,6 @@
 	public interface IAuthenticateUserResult
 	{
 		AuthenticateUserResultState State { get; }
-		IUser User { get; }
+		IAuthenticatedUser User { get; }
 	}
 }

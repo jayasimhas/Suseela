@@ -335,9 +335,7 @@
     <Compile Include="Presentation\GlassRenderingParametersContext.cs" />
     <Compile Include="Presentation\GlassRenderingParametersContext`1.cs" />
     <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
-    <Compile Include="User\Authentication\IUserAuthenticationContext.cs" />
     <Compile Include="User\Authentication\LoginWebUserResult.cs" />
-    <Compile Include="User\Authentication\RequestUserAuthenticationContext.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
     <Compile Include="Corporate\MockCorporateAccountNameContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
@@ -450,11 +448,11 @@
     <Compile Include="Subscription\IUserSubscriptionContext.cs" />
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="User\ISitecoreUserContext.cs" />
-    <Compile Include="User\IUser.cs" />
-    <Compile Include="User\IUserContext.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
-    <Compile Include="User\User.cs" />
-    <Compile Include="User\UserContext.cs" />
+    <Compile Include="User\Authentication\AuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />

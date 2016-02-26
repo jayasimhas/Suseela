@@ -1,7 +1,8 @@
 ﻿namespace Informa.Library.User.Authentication
 {
-	public interface IUserAuthenticationContext
+	public interface IAuthenticatedUserContext
 	{
+		IAuthenticatedUser User { get; }
 		bool IsAuthenticated { get; }
 	}
 }

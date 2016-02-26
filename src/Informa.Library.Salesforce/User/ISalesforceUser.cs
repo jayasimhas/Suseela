@@ -1,8 +1,8 @@
-﻿using Informa.Library.User;
+﻿using Informa.Library.User.Authentication;
 
 namespace Informa.Library.Salesforce.User
 {
-	public interface ISalesforceUser : IUser
+	public interface ISalesforceUser : IAuthenticatedUser
 	{
 	}
 }

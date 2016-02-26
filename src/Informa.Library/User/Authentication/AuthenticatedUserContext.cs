@@ -1,25 +1,25 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Library.User
+namespace Informa.Library.User.Authentication
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
-	public class UserContext : IUserContext
+	public class AuthenticatedUserContext : IAuthenticatedUserContext
 	{
 		protected readonly ISitecoreUserContext SitecoreUserContext;
 
-		public UserContext(
+		public AuthenticatedUserContext(
 			ISitecoreUserContext sitecoreUserContext)
 		{
 			SitecoreUserContext = sitecoreUserContext;
 		}
 
-		public IUser User
+		public IAuthenticatedUser User
 		{
 			get
 			{
 				var sitecoreUser = SitecoreUserContext.User;
 
-				return new User
+				return new AuthenticatedUser
 				{
 					Email = sitecoreUser.Profile.Email,
 					Name = sitecoreUser.Profile.Name,
@@ -27,5 +27,7 @@ namespace Informa.Library.User
 				};
 			}
 		}
+
+		public bool IsAuthenticated => SitecoreUserContext.User.IsAuthenticated;
 	}
 }
