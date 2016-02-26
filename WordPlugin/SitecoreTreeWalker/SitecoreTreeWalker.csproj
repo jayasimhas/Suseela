@@ -727,7 +727,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\PluginModels\PluginModels.csproj">
-      <Project>{C96F1D6A-3E9B-4ABD-9CD3-2BD89B0809ED}</Project>
+      <Project>{be0591fc-dabc-44b0-b267-0e3ab0fd02d4}</Project>
       <Name>PluginModels</Name>
     </ProjectReference>
   </ItemGroup>
