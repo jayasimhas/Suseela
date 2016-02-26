@@ -284,6 +284,7 @@
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
     <Compile Include="Content\Assets\CreatePageAssetsCommand.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver.cs" />
+    <Compile Include="CustomSitecore\Pipelines\LoginRedirect.cs" />
     <Compile Include="CustomSitecore\Ribbon\DownloadWord.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomValidateFormHandlerAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomValidHttpPostAttribute.cs" />
@@ -316,6 +317,7 @@
     <Compile Include="Publishing\Scheduled\ScheduledPublishType.cs" />
     <Compile Include="Publishing\Scheduled\Tasks\ProcessScheduledPublishing.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\ArticleIntegerNumberField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchMediaIconField.cs" />
     <Compile Include="Threading\ThreadSafe`1.cs" />
     <Compile Include="Presentation\DefaultItemRenderingsFactory.cs" />
     <Compile Include="Presentation\DuplicateRenderingsFactory.cs" />

@@ -6,21 +6,6 @@
     </div>
 
     <dl class="search-header__facet-tag-list">
-        <dt ng-repeat-start="facetGroup in meta.selectedFacetGroups">{{facetGroup.label}}:</dt>
-        <dd ng-repeat-start="facet in facetGroup.getSelectedFacets()">
-            <a href=""
-               title="{{facet.label}}"
-               class="btn btn--tag"
-               ng-click="meta.deselectFacet(facet.id)">
-                {{facet.label}}
-                <svg class="icon icon-cancel_circle">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/svgdefs.svg#icon-cancel_circle">
-                    </use>
-                </svg>
-            </a>
-        </dd>
-        <dd ng-repeat-end ng-hide="true"></dd>
-        <dd ng-repeat-end ng-hide="true"></dd>
     </dl>
 
 </section>

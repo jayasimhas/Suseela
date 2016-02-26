@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 
 namespace SitecoreTreeWalker.WebserviceHelper
@@ -8,9 +8,9 @@ namespace SitecoreTreeWalker.WebserviceHelper
 	public class StructConverter
 	{
 
-		public WordPluginModel.ArticleStruct GetServerStruct(WordPluginModel.ArticleStruct articleStruct)
+		public ArticleStruct GetServerStruct(ArticleStruct articleStruct)
 		{
-			var articleDetails = new WordPluginModel.ArticleStruct();
+			var articleDetails = new ArticleStruct();
 			articleDetails.Publication = articleStruct.Publication;
 			articleDetails.ArticleNumber = articleStruct.ArticleNumber;
 			articleDetails.Title = articleStruct.Title;
@@ -20,7 +20,7 @@ namespace SitecoreTreeWalker.WebserviceHelper
 			articleDetails.PrintPublicationDate = articleStruct.PrintPublicationDate;
 			articleDetails.Embargoed = articleStruct.Embargoed;
 			articleDetails.MediaType = articleStruct.MediaType;
-			articleDetails.Authors = articleStruct.Authors.Select(r => new WordPluginModel.StaffStruct { ID = r.ID, Name = r.Name, Publications = r.Publications }).ToList();
+			articleDetails.Authors = articleStruct.Authors.Select(r => new StaffStruct { ID = r.ID, Name = r.Name, Publications = r.Publications }).ToList();
 			articleDetails.NotesToEditorial = articleStruct.NotesToEditorial;
 
 			articleDetails.RelatedInlineArticles = articleStruct.RelatedInlineArticles;

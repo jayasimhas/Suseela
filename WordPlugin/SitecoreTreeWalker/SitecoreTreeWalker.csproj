@@ -30,16 +30,16 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>False</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <ApplicationVersion>1.2.0.5</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <IsWebBootstrapper>False</IsWebBootstrapper>
     <ProductName>InsightPlatformSitecoreTreeWalker</ProductName>
     <PublisherName />
     <SupportUrl />
@@ -48,6 +48,11 @@
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
@@ -127,17 +132,6 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Glass.Mapper.Sc">
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\81\Glass.Mapper.Sc.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
@@ -185,24 +179,6 @@
     <Reference Include="PresentationFramework">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Analytics">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.DataAccess">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.DataAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Model">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Xdb.Configuration">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
-    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -219,6 +195,7 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -248,8 +225,6 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="App_Start\GlassMapperSc.cs" />
-    <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Config\ApplicationConfig.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Custom Exceptions\InsecureIFrameException.cs" />
@@ -270,7 +245,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Sitecore\SitecorePath.cs" />
-    <Compile Include="Sitecore\SitecoreGetter.cs" />
+    <Compile Include="Sitecore\SitecoreClient.cs" />
     <Compile Include="Sitecore\UpdateNode.cs" />
     <Compile Include="UI\AdvancedSettings.cs">
       <SubType>Form</SubType>
@@ -747,13 +722,13 @@
     <Content Include="img\tab headers\tree browser\TabHeaders_sidebars.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\web\Website\Informa.Web.csproj">
-      <Project>{efe15f11-b900-4515-a45e-5b817c483a36}</Project>
-      <Name>Informa.Web</Name>
-    </ProjectReference>
+    <Folder Include="App_Config\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Config\" />
+    <ProjectReference Include="..\..\src\PluginModels\PluginModels.csproj">
+      <Project>{be0591fc-dabc-44b0-b267-0e3ab0fd02d4}</Project>
+      <Name>PluginModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>
@@ -797,7 +772,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\16.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="Word" GeneratedCodeNamespace="SitecoreTreeWalker" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="SitecoreAddin.cs" CanonicalName="AddIn" PublishedHash="C40DCE02A379733463807043040D3D11AAD841D1" CanActivate="false" IconIndex="1" Blueprint="SitecoreAddin.Designer.xml" GeneratedCode="SitecoreAddin.Designer.cs" />
+          <HostItem Name="ThisAddIn" Code="SitecoreAddin.cs" CanonicalName="AddIn" PublishedHash="7928191321A3C1F458FC379DE46DD5D629B61DCE" CanActivate="false" IconIndex="1" Blueprint="SitecoreAddin.Designer.xml" GeneratedCode="SitecoreAddin.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

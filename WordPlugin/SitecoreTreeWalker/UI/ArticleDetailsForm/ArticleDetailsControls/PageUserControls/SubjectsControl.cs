@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using SitecoreTreeWalker.UI.Controllers;
@@ -21,11 +21,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 													  uxArrowUp, uxArrowDown);
 		}
 
-		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
+		public void UpdateFields(ArticleStruct articleDetails)
 		{
-			List<WordPluginModel.TaxonomyStruct> subjects =
-				SitecoreGetter.SearchTaxonomy("").ToList();
-			WordPluginModel.HDirectoryStruct subjectDirectory = SitecoreGetter.GetHierarchyByGuid(new Guid(Constants.SUBJECT_GUID));
+			List<TaxonomyStruct> subjects =
+				SitecoreClient.SearchTaxonomy("").ToList();
+			HDirectoryStruct subjectDirectory = SitecoreClient.GetHierarchyByGuid(new Guid(Constants.SUBJECT_GUID));
 
 			TabController.InitializeSitecoreValues(subjects, subjectDirectory);
 

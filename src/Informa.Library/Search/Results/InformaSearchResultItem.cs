@@ -49,6 +49,10 @@ namespace Informa.Library.Search.Results
         [DataMember]
         public string ContentType { get; set; }
 
+        [IndexField("searchmediaicon_s")]
+        [DataMember]
+        public string MediaType { get; set; }
+
         [IndexField("searchsummary_s")]
         [DataMember]
         public string Summary { get; set; }
