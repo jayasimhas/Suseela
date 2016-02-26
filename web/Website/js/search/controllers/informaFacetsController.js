@@ -63,8 +63,8 @@ var InformaFacetController = function ($scope, $location,$http, searchService, s
         }
 
         _this.scrollTop = function () {
-            var location = jq(".search-facets__header").offset().top;
-            window.scrollTo(0, location - 80);
+            //var location = jq(".search-facets__header").offset().top;
+            //window.scrollTo(0, location - 80);
         }
 
         _this.clearGroup = function (groupId) {
@@ -131,7 +131,7 @@ var InformaFacetController = function ($scope, $location,$http, searchService, s
                 _this.currentDateRange = dateFilter;
 
                 filterDateLabel.setValue(dateFilter);
-                filter.setValue(startDate + "|" + endDate);
+                filter.setValue(startDate + ";" + endDate);
             }
             _this.CustomStartDate.val('');
             _this.CustomEndDate.val('');
