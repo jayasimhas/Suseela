@@ -777,7 +777,7 @@ namespace SitecoreTreeWalker.Sitecore
             return extension;
         }
 
-        protected WordUtils _wordUtils;
+        protected WordUtils _wordUtils = new WordUtils();
         protected static StructConverter _structConverter = new StructConverter();
     }
 }
