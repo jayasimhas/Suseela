@@ -35,7 +35,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			this.uxArticlePanel = new System.Windows.Forms.Panel();
 			this.uxVersionNumber = new System.Windows.Forms.Label();
 			this.uxPreview = new System.Windows.Forms.Button();
-			this.uxMobilePreview = new System.Windows.Forms.Button();
 			this.uxCreateArticle = new System.Windows.Forms.Button();
 			this.uxSaveArticle = new System.Windows.Forms.Button();
 			this.uxSaveMetadata = new System.Windows.Forms.Button();
@@ -62,8 +61,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			this.uxArticlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
 			this.uxArticlePanel.Controls.Add(this.articleStatusBar1);
 			this.uxArticlePanel.Controls.Add(this.uxVersionNumber);
-			this.uxArticlePanel.Controls.Add(this.uxPreview);
-			this.uxArticlePanel.Controls.Add(this.uxMobilePreview);
+			this.uxArticlePanel.Controls.Add(this.uxPreview);			
 			this.uxArticlePanel.Controls.Add(this.uxCreateArticle);
 			this.uxArticlePanel.Controls.Add(this.uxSaveArticle);
 			this.uxArticlePanel.Controls.Add(this.uxSaveMetadata);
@@ -95,17 +93,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			this.uxPreview.Text = "Preview Article";
 			this.uxPreview.UseVisualStyleBackColor = true;
 			this.uxPreview.Click += new System.EventHandler(this.uxPreview_Click);
-			// 
-			// uxMobilePreview
-			// 
-			this.uxMobilePreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.uxMobilePreview.Location = new System.Drawing.Point(3, 409);
-			this.uxMobilePreview.Name = "uxMobilePreview";
-			this.uxMobilePreview.Size = new System.Drawing.Size(178, 23);
-			this.uxMobilePreview.TabIndex = 77;
-			this.uxMobilePreview.Text = "Preview Mobile Article";
-			this.uxMobilePreview.UseVisualStyleBackColor = true;
-			this.uxMobilePreview.Click += new System.EventHandler(this.uxMobilePreview_Click);
 			// 
 			// uxCreateArticle
 			// 
@@ -207,7 +194,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
         public LoginControl loginControl1;
         public System.Windows.Forms.Button uxCreateArticle;
         public System.Windows.Forms.Button uxPreview;
-        public System.Windows.Forms.Button uxMobilePreview;
 		public ArticleDetailsPageSelector articleDetailsPageSelector;
 		//private WorkflowControl workflowControl1;
         public System.Windows.Forms.Label uxVersionNumber;
