@@ -17,6 +17,7 @@
 		<add key="LongSummaryStyle" value="7.0 Long Summary"/>
 		<add key="ShortSummaryStyle" value="7.1 Short Summary"/>
 		<add key="SubtitleStyle" value="1.1 Story Sub-Title"/>
+		<add key="StoryTextStyle" value="2.2 Story Text"/>
 		<add key="hyperlinkStyle" value="Hyperlink"/>
 		<add key="CertificationFolder" value="\\localhost\certMonitoredFolder\"/>
 		<add key="ProductionFolder" value="\\elswshw-172195\monitoredFolder\"/>

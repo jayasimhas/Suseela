@@ -53,8 +53,8 @@ namespace SitecoreTreeWalker.Util.Document
 			MetadataStyles.Add(LongSummaryStyle);
 			MetadataStyles.Add(ShortSummaryStyle);
 			MetadataStyles.Add(SubtitleStyle);
-			int maxLengthLongSummary = SitecoreGetter.GetMaxLengthLongSummary();
-			int maxLengthShortSummary = SitecoreGetter.GetMaxLengthShortSummary();
+			int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
+			int maxLengthShortSummary = SitecoreClient.GetMaxLengthShortSummary();
 
 			int longSummaryLimit = maxLengthLongSummary;
 			int shortSummaryLimit = maxLengthShortSummary;
@@ -93,7 +93,7 @@ namespace SitecoreTreeWalker.Util.Document
 				}
 			}
 
-            if(string.IsNullOrWhiteSpace(LongSummary))
+            if(string.IsNullOrWhiteSpace(LongSummary) && firstBodyParagraph != null)
                 LongSummary += GetRichText(firstBodyParagraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";                         
         }
 

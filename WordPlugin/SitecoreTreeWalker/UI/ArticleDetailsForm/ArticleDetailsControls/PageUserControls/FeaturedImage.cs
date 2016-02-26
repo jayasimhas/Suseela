@@ -9,7 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Sitecore;
@@ -33,12 +33,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
         }
 
-	    public Glass.Mapper.Sc.Fields.Image GetFeaturedImage()
+	    public ImageItem GetFeaturedImage()
 	    {
 			if(imageSelected == null) { return null;}
-		    var image = new Glass.Mapper.Sc.Fields.Image
+		    var image = new ImageItem
 		    {
-			    MediaId = SitecoreGetter.GetItemGuidByPath(imageSelected),
+			    MediaId = SitecoreClient.GetItemGuidByPath(imageSelected),
 			    Alt = alttextLbl.Text
 		    };
 
@@ -153,19 +153,19 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         /// </summary>
         public void InitializeItems()
         {
-            var values = SitecoreGetter.GetGraphicsRootNode();
+            var values = SitecoreClient.GetGraphicsRootNode();
             AddRootNode(uxFeaturedImageTreeView, values[1], values[0]);
         }
 
-		public void InitializeItems(WordPluginModel.ArticleStruct articleDetails)
+		public void InitializeItems(ArticleStruct articleDetails)
 		{
 			if (articleDetails != null)
 			{
 				var featuredImage = articleDetails.FeaturedImageSource;
-				var imageMediaItem = SitecoreGetter.GetMediaLibraryItem(featuredImage);
+				var imageMediaItem = SitecoreClient.GetMediaLibraryItem(featuredImage);
 			}
 			
-			var values = SitecoreGetter.GetGraphicsRootNode();
+			var values = SitecoreClient.GetGraphicsRootNode();
 			AddRootNode(uxFeaturedImageTreeView, values[1], values[0]);
 		}
 
@@ -178,7 +178,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			MenuItem.SetIndicatorIcon(Properties.Resources.redx);
 		}
 
-		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
+		public void UpdateFields(ArticleStruct articleDetails)
 		{			
 			sourceTxtBox.Text = articleDetails.FeaturedImageSource;
 			captionTxtBox.Text = articleDetails.FeaturedImageCaption;
