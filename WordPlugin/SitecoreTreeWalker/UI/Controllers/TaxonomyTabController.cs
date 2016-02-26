@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
-using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
+using ArticleStruct = PluginModels.ArticleStruct;
 
 namespace SitecoreTreeWalker.UI.Controllers
 {
@@ -24,7 +24,7 @@ namespace SitecoreTreeWalker.UI.Controllers
         public ListView Results;
         public TreeView ResultsTree;
         public ListView Selected;
-        public WordPluginModel.HDirectoryStruct Hierarchy;
+		public HDirectoryStruct Hierarchy;
         public Guid TaxonomyGuid;
         public MenuSelectorItem MenuItem;
 
@@ -38,9 +38,9 @@ namespace SitecoreTreeWalker.UI.Controllers
         public static int GrayPlusImageIndex = 1;
         public static int PlusImageIndex; //=0
 
-        public List<WordPluginModel.TaxonomyStruct> CompleteList;
-        public List<WordPluginModel.TaxonomyStruct> ResultsList;
-        public List<WordPluginModel.TaxonomyStruct> SelectedList = new List<WordPluginModel.TaxonomyStruct>();
+		public List<TaxonomyStruct> CompleteList;
+		public List<TaxonomyStruct> ResultsList;
+		public List<TaxonomyStruct> SelectedList = new List<TaxonomyStruct>();
         //use SelectedList to get a list of taxonomies the user has selected
 
         public ImageList SelectedImageList = new ImageList();
@@ -91,7 +91,7 @@ namespace SitecoreTreeWalker.UI.Controllers
             AddEventHandlers();
         }
 
-        public void InitializeSitecoreValues(List<WordPluginModel.TaxonomyStruct> completeList, WordPluginModel.HDirectoryStruct hierarchy)
+		public void InitializeSitecoreValues(List<TaxonomyStruct> completeList, HDirectoryStruct hierarchy)
         {
             CompleteList = completeList;
             Hierarchy = hierarchy;
@@ -115,9 +115,9 @@ namespace SitecoreTreeWalker.UI.Controllers
             MenuItem = menuItem;
         }
 
-        public WordPluginModel.TaxonomyStruct[] GetSelected()
+		public TaxonomyStruct[] GetSelected()
         {
-            return SelectedList.Select(t => new WordPluginModel.TaxonomyStruct { ID = t.ID, Name = t.Name, Section = t.Section }).ToArray();
+			return SelectedList.Select(t => new TaxonomyStruct { ID = t.ID, Name = t.Name, Section = t.Section }).ToArray();
         }
 
         private void AddEventHandlers()
@@ -235,7 +235,7 @@ namespace SitecoreTreeWalker.UI.Controllers
                         {
                             string name = Results.SelectedItems[0].Text;
                             var guid = new Guid(Results.SelectedItems[0].SubItems[2].Text);
-                            var ts = new WordPluginModel.TaxonomyStruct { ID = guid, Name = name };
+							var ts = new TaxonomyStruct { ID = guid, Name = name };
                             if (!AddToSelected(ts))
                             {
                                 RemoveFromSelected(ts);
@@ -292,7 +292,7 @@ namespace SitecoreTreeWalker.UI.Controllers
                         {
                             Selected.Items.RemoveAt(currentIndex);
                             Selected.Items.Insert(currentIndex + 1, item);
-							WordPluginModel.TaxonomyStruct currentItem = SelectedList.FirstOrDefault(i => i.ID.ToString() == Selected.SelectedItems[0].SubItems[1].Text);
+							TaxonomyStruct currentItem = SelectedList.FirstOrDefault(i => i.ID.ToString() == Selected.SelectedItems[0].SubItems[1].Text);
 							SelectedList.Remove(currentItem);
 							SelectedList.Insert(currentIndex + 1, currentItem);
                         }
@@ -307,7 +307,7 @@ namespace SitecoreTreeWalker.UI.Controllers
                         {
                             Selected.Items.RemoveAt(currentIndex);
                             Selected.Items.Insert(currentIndex - 1, item);
-							WordPluginModel.TaxonomyStruct currentItem = SelectedList.FirstOrDefault(i => i.ID.ToString() == Selected.SelectedItems[0].SubItems[1].Text);
+							TaxonomyStruct currentItem = SelectedList.FirstOrDefault(i => i.ID.ToString() == Selected.SelectedItems[0].SubItems[1].Text);
 							SelectedList.Remove(currentItem);
 							SelectedList.Insert(currentIndex - 1, currentItem);
                         }
@@ -333,7 +333,7 @@ namespace SitecoreTreeWalker.UI.Controllers
             string name = node.Text;
             Guid id;
             NodeGuidDictionary.TryGetValue(node, out id);
-            var ts = new WordPluginModel.TaxonomyStruct { Name = name, ID = id };
+			var ts = new TaxonomyStruct { Name = name, ID = id };
             if (ResultsTree.SelectedNode.Parent != null)
             {
                 ts.Section = ResultsTree.SelectedNode.Parent.FullPath;
@@ -347,7 +347,7 @@ namespace SitecoreTreeWalker.UI.Controllers
             {
                 ListViewItem item = Results.SelectedItems[0];
                 var id = new Guid(item.SubItems[2].Text);
-                var taxonomy = new WordPluginModel.TaxonomyStruct { Name = item.Text, ID = id };
+				var taxonomy = new TaxonomyStruct { Name = item.Text, ID = id };
                 AddToSelected(taxonomy);
             }
 
@@ -360,7 +360,7 @@ namespace SitecoreTreeWalker.UI.Controllers
                 ListViewItem item = Selected.SelectedItems[0];
                 string name = item.Text;
                 var id = new Guid(item.SubItems[1].Text);
-                var taxonomy = new WordPluginModel.TaxonomyStruct { Name = name, ID = id };
+				var taxonomy = new TaxonomyStruct { Name = name, ID = id };
                 RemoveFromSelected(taxonomy);
             }
 
@@ -370,7 +370,7 @@ namespace SitecoreTreeWalker.UI.Controllers
         /// Sets the selected taxonomies and populates the field of selected taxonomies.
         /// </summary>
         /// <param name="selected">The selected taxonomies</param>
-        public void SetSelected(List<WordPluginModel.TaxonomyStruct> selected)
+		public void SetSelected(List<TaxonomyStruct> selected)
         {
             SelectedList = selected;
             PopulateSelected();
@@ -414,7 +414,7 @@ namespace SitecoreTreeWalker.UI.Controllers
                 return;
             }
 
-            foreach (WordPluginModel.TaxonomyStruct result in ResultsList)
+			foreach (TaxonomyStruct result in ResultsList)
             {
                 var item = new ListViewItem(result.Name, 0) { UseItemStyleForSubItems = false };
                 item.SubItems.Add("view in tree");
@@ -447,11 +447,11 @@ namespace SitecoreTreeWalker.UI.Controllers
         /// </summary>
         /// <param name="text">Search keyword</param>
         /// <returns>A list of taxonomies which matches the search term</returns>
-        public List<WordPluginModel.TaxonomyStruct> GetResults(String text)
+		public List<TaxonomyStruct> GetResults(String text)
         {
             string lcKey = text.ToLower();
 
-            List<WordPluginModel.TaxonomyStruct> list = CompleteList.Where(t => t.Name.ToLower().Contains(lcKey)).ToList();
+			List<TaxonomyStruct> list = CompleteList.Where(t => t.Name.ToLower().Contains(lcKey)).ToList();
             list.Sort(new TaxonomyComparer(text));
 
             return list;
@@ -511,7 +511,7 @@ namespace SitecoreTreeWalker.UI.Controllers
         public void PopulateSelected()
         {
             Selected.Items.Clear();
-            foreach (WordPluginModel.TaxonomyStruct selected in SelectedList)
+			foreach (TaxonomyStruct selected in SelectedList)
             {
                 var item = new ListViewItem();
                 if (!string.IsNullOrEmpty(selected.Section) && selected.Section != "Taxonomy")
@@ -531,10 +531,10 @@ namespace SitecoreTreeWalker.UI.Controllers
         /// "De-select" particular taxonomy
         /// </summary>
         /// <param name="taxonomy">Taxonomy to "de-select"</param>
-        public void RemoveFromSelected(WordPluginModel.TaxonomyStruct taxonomy)
+		public void RemoveFromSelected(TaxonomyStruct taxonomy)
         {
             HasChanged = true;
-            foreach (WordPluginModel.TaxonomyStruct ts in SelectedList)
+			foreach (TaxonomyStruct ts in SelectedList)
             {
                 if (ts.ID.Equals(taxonomy.ID))
                 {
@@ -552,7 +552,7 @@ namespace SitecoreTreeWalker.UI.Controllers
         /// </summary>
         /// <param name="taxonomy">Taxonomy to "select"</param>
         /// <returns>True if addition successful. Otherwise, false (e.g., taxonomy already selected).</returns>
-        public bool AddToSelected(WordPluginModel.TaxonomyStruct taxonomy)
+		public bool AddToSelected(TaxonomyStruct taxonomy)
         {
             HasChanged = true;
             bool added = false;
@@ -619,7 +619,7 @@ namespace SitecoreTreeWalker.UI.Controllers
         /// </summary>
         /// <param name="ts"></param>
         /// <returns>True if taxonomy ts is selected; otherwise, false</returns>
-        public bool IsSelected(WordPluginModel.TaxonomyStruct ts)
+		public bool IsSelected(TaxonomyStruct ts)
         {
             return IsSelected(ts.ID);
         }
@@ -671,7 +671,7 @@ namespace SitecoreTreeWalker.UI.Controllers
             return null;
         }
 
-        protected TreeNode RecursiveLoadHierarchy(WordPluginModel.HDirectoryStruct hds)
+		protected TreeNode RecursiveLoadHierarchy(HDirectoryStruct hds)
         {
             var node = new TreeNode(hds.Name);
             AllNodes.Add(node);
@@ -699,10 +699,10 @@ namespace SitecoreTreeWalker.UI.Controllers
             return HasChanged;
         }
 
-        public void UpdateFields(List<WordPluginModel.TaxonomyStruct> selected)
+		public void UpdateFields(List<TaxonomyStruct> selected)
         {
-            List<WordPluginModel.TaxonomyStruct> temp = selected.Select(t =>
-                new WordPluginModel.TaxonomyStruct
+			List<TaxonomyStruct> temp = selected.Select(t =>
+				new TaxonomyStruct
                 {
                     ID = t.ID,
                     Name = t.Name,

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Word;
+using SitecoreTreeWalker.Sitecore;
 
 namespace SitecoreTreeWalker.document
 {
@@ -14,7 +15,7 @@ namespace SitecoreTreeWalker.document
 			var dirtyState = wordDoc.Saved;
 			try
 			{
-				var pass = SitecoreArticle.GetDocumentPassword();
+				var pass = SitecoreClient.GetDocumentPassword();
 				if (wordDoc.ProtectionType == WdProtectionType.wdNoProtection)
 				{
 					wordDoc.Protect(WdProtectionType.wdAllowOnlyReading, true, pass, false, true);

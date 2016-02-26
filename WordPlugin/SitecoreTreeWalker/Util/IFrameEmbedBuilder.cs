@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using HtmlAgilityPack;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
 using SitecoreTreeWalker.Util.Document;
@@ -17,7 +17,7 @@ namespace SitecoreTreeWalker.Util
 
 		private static string _newUrlToInsert = String.Empty;
 		public static string IFrameClassName = "iframe";
-		protected Dictionary<string, WordPluginModel.WordStyleStruct> ParagraphStyles = new Dictionary<string, WordPluginModel.WordStyleStruct>();
+		protected Dictionary<string, WordStyleStruct> ParagraphStyles = new Dictionary<string, WordStyleStruct>();
 		public static List<string> IFrameStyles = new List<string> { DocumentAndParagraphStyles.IFrameCodeStyle, DocumentAndParagraphStyles.IFrameMobileCodeStyle, DocumentAndParagraphStyles.IFrameCaptionStyle, DocumentAndParagraphStyles.IFrameTitleStyle, DocumentAndParagraphStyles.IFrameSourceStyle, DocumentAndParagraphStyles.IFrameHeaderStyle };
 		protected OptimizedCharacterStyleTransformer Transformer;
 

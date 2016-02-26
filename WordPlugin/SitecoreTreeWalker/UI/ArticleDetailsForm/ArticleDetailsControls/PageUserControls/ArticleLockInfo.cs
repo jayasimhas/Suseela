@@ -3,7 +3,8 @@ using SitecoreTreeWalker.User;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
+using SitecoreTreeWalker.Sitecore;
 
 namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
@@ -38,15 +39,15 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         private void uxUnlockButton_Click(object sender, System.EventArgs e)
         {
             _articleNumber = _parent.GetArticleNumber();
-            if (!SitecoreArticle.DoesArticleExist(_articleNumber)) return;
-            SitecoreArticle.CheckInArticle(_articleNumber);
+            if (!SitecoreClient.DoesArticleExist(_articleNumber)) return;
+            SitecoreClient.CheckInArticle(_articleNumber);
             SetCheckedOutStatus();
             Close();
         }
 
         private void uxLockButton_Click(object sender, System.EventArgs e)
         {
-            if (!SitecoreArticle.DoesArticleExist(_articleNumber)) return;
+            if (!SitecoreClient.DoesArticleExist(_articleNumber)) return;
 
             var lockPrompt = new ArticleLockConfirmation
             {
@@ -63,7 +64,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         /// </summary>
         public void LockYesActionMethod()
         {
-            if (SitecoreArticle.CheckOutArticle(_articleNumber, SitecoreUser.GetUser().Username))
+            if (SitecoreClient.CheckOutArticle(_articleNumber, SitecoreUser.GetUser().Username))
             {
                 _articleInformationControl.CheckWordDocVersion(_parent.ArticleDetails);
             }
@@ -94,14 +95,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             if (!string.IsNullOrEmpty(_articleNumber))
             { //document is linked to an article
                 SetArticleNumber(articleNum);
-                WordPluginModel.CheckoutStatus checkedOut;
+                CheckoutStatus checkedOut;
                 if (_parent.ArticleDetails.ArticleGuid != Guid.Empty)
                 {
-                    checkedOut = SitecoreArticle.GetLockedStatus(_parent.ArticleDetails.ArticleGuid);
+                    checkedOut = SitecoreClient.GetLockedStatus(_parent.ArticleDetails.ArticleGuid);
                 }
                 else
                 {
-                    checkedOut = SitecoreArticle.GetLockedStatus(articleNum);
+                    checkedOut = SitecoreClient.GetLockedStatus(articleNum);
                 }
                 _articleInformationControl.IsCheckedOut = checkedOut.Locked;
                 if (_articleInformationControl.IsCheckedOut)
@@ -167,7 +168,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
         /// Enables/disables some controls since it's so similar to a PreLinkEnable state
         /// </summary>
         /// <param name="checkedOut"></param>
-        public void IndicateCheckedOutByOther(WordPluginModel.CheckoutStatus checkedOut)
+        public void IndicateCheckedOutByOther(CheckoutStatus checkedOut)
         {
             uxLockUser.Text = _articleInformationControl.FormatUserName(checkedOut.User);
             _articleInformationControl.IsCheckedOutByMe = false;
@@ -179,7 +180,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             DocumentProtection.Protect(DocumentCustomProperties);
         }
 
-        public void IndicateCheckedOutByMe(WordPluginModel.CheckoutStatus checkedOut)
+        public void IndicateCheckedOutByMe(CheckoutStatus checkedOut)
         {
             DocumentProtection.Unprotect(DocumentCustomProperties);
             _articleInformationControl.IsCheckedOutByMe = true;

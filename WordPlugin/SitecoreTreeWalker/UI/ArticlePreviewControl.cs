@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
+using PluginModels;
+using ArticleStruct = PluginModels.ArticleStruct;
 
 namespace SitecoreTreeWalker.UI
 {
@@ -65,7 +65,7 @@ namespace SitecoreTreeWalker.UI
 		/// </summary>
 		/// <param name="articleStruct"></param>
 		/// <returns>True if article is found</returns>
-		public bool UpdatePreview(WordPluginModel.ArticlePreviewInfo articleStruct)
+		public bool UpdatePreview(ArticlePreviewInfo articleStruct)
 		{
 			Controls.Clear();
 			if(string.IsNullOrEmpty(articleStruct.ArticleNumber))

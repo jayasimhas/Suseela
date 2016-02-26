@@ -30,6 +30,11 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
                 return string.Empty;
             }
 
+            if (taxonomyItem.Taxonomies == null)
+            {
+                return string.Empty;
+            }
+
             if (!taxonomyItem.Taxonomies.Any())
             {
                 return string.Empty;
