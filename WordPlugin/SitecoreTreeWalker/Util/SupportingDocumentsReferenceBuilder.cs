@@ -31,7 +31,7 @@ namespace SitecoreTreeWalker.Util
 				{
 					SupportingDocuments.Add(path); 
 				}
-				var url = SitecoreGetter.GetDynamicUrl(path);
+				var url = SitecoreClient.GetDynamicUrl(path);
 				root.SetAttributeValue("href", url);
                 root.Value = hyperlink.Range.Text;
 				//root.Add(GetDocIcon(url));

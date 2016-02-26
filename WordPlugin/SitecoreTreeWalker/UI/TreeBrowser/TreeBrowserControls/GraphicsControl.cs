@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
+using PluginModels;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Sitecore;
 using SitecoreTreeWalker.Util;
@@ -107,7 +108,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
         /// </summary>
         public void InitializeItems()
         {
-            var values = SitecoreGetter.GetGraphicsRootNode();
+            var values = SitecoreClient.GetGraphicsRootNode();
             AddRootNode(uxBrowseImages, values[1], values[0]);
         }
 
@@ -174,14 +175,14 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             string floatValue = "None";
             try
             {
-                //The float dropdown list should have its selecteditem filled as string
+				if (form.uxFloatBox.SelectedValue.GetType() == typeof(PluginModels.ItemStruct))
                 if (form.uxFloatBox.SelectedItem != null && string.IsNullOrEmpty(form.uxFloatBox.SelectedItem.ToString()) == false)
                 {
                     floatValue = form.uxFloatBox.SelectedItem.ToString();
                 }
-                else if (form.uxFloatBox.SelectedValue?.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+                else if (form.uxFloatBox.SelectedValue?.GetType() == typeof(ItemStruct))
                 {
-                    floatValue = ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)form.uxFloatBox.SelectedValue).Name;
+					floatValue = ((PluginModels.ItemStruct)form.uxFloatBox.SelectedValue).Name;
                 }
                 else if (form.uxFloatBox.SelectedValue != null)
 
@@ -233,14 +234,14 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             selection.Text = path.DisplayName;
             try
             {
-                string mediaUrl = SitecoreGetter.MediaPreviewUrl(path.Path);
+                string mediaUrl = SitecoreClient.MediaPreviewUrl(path.Path);
                 if (mediaUrl.StartsWith("\""))
                     mediaUrl = mediaUrl.TrimStart('"');
                 if (mediaUrl.EndsWith("\""))
                     mediaUrl = mediaUrl.TrimEnd('"');
 
                 app.ActiveDocument.Hyperlinks.Add(selection, mediaUrl, null, floatType, path.Path);
-                //app.ActiveDocument.Hyperlinks.Add(selection, SitecoreGetter.MediaPreviewUrl(path.Path), null, floatType, path.Path);
+                //app.ActiveDocument.Hyperlinks.Add(selection, SitecoreClient.MediaPreviewUrl(path.Path), null, floatType, path.Path);
             }
             catch (WebException)
             {

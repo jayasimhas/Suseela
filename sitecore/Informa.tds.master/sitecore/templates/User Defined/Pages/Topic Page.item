@@ -23,10 +23,17 @@ key: __standard values
 content-length: 38
 
 {80FBFFE4-1598-4D5A-A942-8635A15F6DF5}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 28
+
+Apps/32x32/Text-Document.png
 ----version----
 language: en
 version: 1
-revision: 70b9dc9e-f616-466a-9ae8-9d801a32acfc
+revision: ebed6fce-056c-44c9-8bc2-993ae6e1e0b9
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-70b9dc9e-f616-466a-9ae8-9d801a32acfc
+ebed6fce-056c-44c9-8bc2-993ae6e1e0b9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160211T234750Z
+20160226T150547Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
