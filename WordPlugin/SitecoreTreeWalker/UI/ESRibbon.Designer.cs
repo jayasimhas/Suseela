@@ -109,6 +109,7 @@
 			this.SaveArticleBtn.Label = "Save Article";
 			this.SaveArticleBtn.Name = "SaveArticleBtn";
 			this.SaveArticleBtn.ShowImage = true;
+			this.SaveArticleBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.SaveArticleBtn_Click);
 			// 
 			// SaveMetaDataBtn
 			// 
