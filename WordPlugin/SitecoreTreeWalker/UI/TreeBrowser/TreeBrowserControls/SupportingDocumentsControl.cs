@@ -142,7 +142,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			SitecoreItemGetter.SitecoreMediaItem mediaItem =_siteCoreItemGetter.DownloadSiteCoreMediaItem(path.Path);
 			if ((mediaItem == null) || !IsValidDocumentType(mediaItem.Extension.ToLower()))
 			{
-				MessageBox.Show(@"Please valid media item.", @"Informa");
+				MessageBox.Show(@"Please insert valid media item.", @"Informa");
 				return;
 			}
 			InsertDocument(path);
