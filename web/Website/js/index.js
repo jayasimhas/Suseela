@@ -4,6 +4,7 @@ import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
+import LoginController from './login-controller';
 
 
 /* Toggle menu categories */
@@ -34,8 +35,6 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
 
-
-
 // Pre-registration username validation
 $('.js-register-submit').on('click', function validateUsername(e) {
 	var submitButton = $(e.target);
@@ -64,7 +63,8 @@ var showForgotPassSuccess = function() {
 
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
-	$('.pop-out__form-error').toggleClass('is-active');
+	$('.pop-out__form-error').show();
+	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
 var renderIframeComponents = function() {
@@ -96,8 +96,10 @@ var renderIframeComponents = function() {
 	});
 };
 
-
 $(document).ready(function() {
+
+	// Anti Forgery Token
+	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
 	var poc = new PopOutController('.js-pop-out-trigger');
 
@@ -134,6 +136,15 @@ $(document).ready(function() {
 
 	});
 
+	var login = new LoginController(requestVerificationToken);
+
+	login.addControl(
+		'.js-sign-in-submit',
+		null,
+		function(triggerElement) {
+			toggleSignInError();
+		}
+	);
 
     svg4everybody();
 

@@ -1,4 +1,5 @@
 ﻿@model MainLayoutViewModel
+@using Informa.Library.Utilities.References
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +34,7 @@
     @*@Html.Glass().InvokeAction(mvc => Execute());*@
     @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
 
-    <div class="main__wrapper">
+    <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
         @*
         <div class="general-header">
