@@ -174,20 +174,14 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             if (path == null) return;
             string floatValue = "None";
             try
-            {
-				if (form.uxFloatBox.SelectedValue.GetType() == typeof(PluginModels.ItemStruct))
-                if (form.uxFloatBox.SelectedItem != null && string.IsNullOrEmpty(form.uxFloatBox.SelectedItem.ToString()) == false)
+            {   
+                if (form.uxFloatBox.SelectedItem != null && !string.IsNullOrEmpty(form.uxFloatBox.SelectedItem.ToString()))
                 {
                     floatValue = form.uxFloatBox.SelectedItem.ToString();
                 }
-                else if (form.uxFloatBox.SelectedValue?.GetType() == typeof(ItemStruct))
+                else if(!string.IsNullOrEmpty(form.uxFloatBox.SelectedText))
                 {
-					floatValue = ((PluginModels.ItemStruct)form.uxFloatBox.SelectedValue).Name;
-                }
-                else if (form.uxFloatBox.SelectedValue != null)
-
-                {
-                    floatValue = (string)form.uxFloatBox.SelectedValue;
+                    floatValue = form.uxFloatBox.SelectedText;
                 }
                 //else keep the default 'None' value
             }
