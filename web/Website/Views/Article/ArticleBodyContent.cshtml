@@ -36,7 +36,7 @@
         <div class="article-author article-author--solo">
             <ul class="article-author__list">
                 <li>
-                    @if (!string.IsNullOrEmpty(author.Image))
+                    @if (!string.IsNullOrWhiteSpace(author?.Image))
                     {
                         <div class="article-author__photo">
                             <img src="@author.Image">
