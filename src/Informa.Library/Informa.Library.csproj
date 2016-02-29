@@ -474,6 +474,14 @@
     <Compile Include="User\ResetPassword\UserResetPassword.cs" />
     <Compile Include="User\ResetPassword\UserResetPasswordFactory.cs" />
     <Compile Include="User\ResetPassword\UserResetPasswordTokenFactory.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordAction.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordActions.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordActions.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordStatus.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
