@@ -48,13 +48,13 @@ ul, li, ol {
 
 // Override list resets for lists in a RTE component
 .GeneralRTEComponent {
-  ul, ol {
-    list-style: initial;
-    padding-left: 20px;
+  ul > li {
+    margin-left: 20px;
+    list-style: disc;
   }
-
-  li {
-    list-style: initial;
+  ol > li {
+    margin-left: 20px;
+    list-style: decimal;
   }
 }
 
