@@ -20,7 +20,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 	/// </summary>
 	public partial class ArticleInformationControl : ArticleDetailsPageUserControl
 	{
-		private const string RemoteTimezoneId = "Eastern Standard Time";
+        private readonly string RemoteTimezoneId = "Greenwich Standard Time";
 
 		private ArticleDetail _parent;
 		protected DocumentCustomProperties _documentCustomProperties;
@@ -32,7 +32,31 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		public ArticleInformationControl()
 		{
 			InitializeComponent();
+
+            try
+            {//TamerM- 2015-02-24: Instead of using the hard coded 'Easter Standard Time', now it reads from the app.config appSettings section and defaults to GMT if any error occurs
+
+                var remoteTimezoneIDFromAppSettings = SitecoreTreeWalker.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
+
+                //If not appSettings key for RemoteTimezone exists, keep the hard coded default "GMT"
+                if (string.IsNullOrEmpty(remoteTimezoneIDFromAppSettings))
+                    return;
+
+                //Try to parse specified timezoneid. Throws exception if it fails
+                TimeZoneInfo.FindSystemTimeZoneById(remoteTimezoneIDFromAppSettings);
+
+                //set the timezoneid to the global RemoteTimezoneId property
+                RemoteTimezoneId = SitecoreTreeWalker.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
 		}
+            catch (System.TimeZoneNotFoundException tzEx)//If the specified timezone is invalid
+            {
+                Globals.SitecoreAddin.LogException("Error validating appSettings Timezone key 'RemoteTimezoneToConvertTo'", tzEx);
+            }
+            catch (Exception ex)
+            {
+                Globals.SitecoreAddin.LogException("Error reading timezone", ex);
+            }
+        }
 
 		public bool _isCheckedOut;
 		public bool IsCheckedOut
@@ -532,14 +556,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			var localDate = uxWebPublishDate.Value.Date.Add(uxWebPublishTime.Value.TimeOfDay);
 
-			TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById(RemoteTimezoneId);
+            TimeZoneInfo remoteZone = TimeZoneInfo.FindSystemTimeZoneById(RemoteTimezoneId);
 
 			Globals.SitecoreAddin.Log("GetWebPublishDate: Date before DateTime conversion: [" +
 									  localDate.Date.ToString() + "].");
 			Globals.SitecoreAddin.Log("GetWebPublishDate: Time before DateTime conversion:  [" +
 									  localDate.TimeOfDay.ToString() + "].");
 
-			DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, easternZone);
+            DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, remoteZone);
 
 			Globals.SitecoreAddin.Log("GetWebPublishDate: Date after DateTime conversion: [" +
 									  convertedTime.Date.ToString() + "].");
