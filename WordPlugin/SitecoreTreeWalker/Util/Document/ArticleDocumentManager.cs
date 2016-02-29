@@ -137,36 +137,26 @@ namespace SitecoreTreeWalker.Util.Document
 
         public void SaveMetaData()
         {
+            //fill articleDetails
             fillArticleDetails();
 
-            //Guid tempArticleGuid = _articleDetails.ArticleGuid;
-            //string tempArticleNumber = _articleDetails.ArticleNumber;
-
-            //_articleDetails = articleDetailsPageSelector.GetArticleDetailsWithoutDocumentParsing();
-            //_articleDetails.ArticleGuid = tempArticleGuid;
-            //_articleDetails.ArticleNumber = tempArticleNumber;
-            //_articleDetails.ArticleSpecificNotifications = articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToList();
+            //Calculate word count
             _articleDetails.WordCount = SitecoreAddin.ActiveDocument.ComputeStatistics(0);
 
+            //Save meta data to sitecore
             SitecoreClient.SaveMetadataToSitecore(_articleDetails.ArticleNumber, new StructConverter().GetServerStruct(_articleDetails));
-            //if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked)
-            //{
-                //articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
-            //}
 
-            //articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
-            //articleDetailsPageSelector.UpdateFields();
-            //articleDetailsPageSelector.ResetChangedStatus();
-
+            //Get publication name and date
             List<ItemStruct> publications = SitecoreClient.GetPublications();
             ItemStruct selectedPublication = publications.FirstOrDefault(w => w.ID == _articleDetails.Publication);
             var webPublishDate = _articleDetails.WebPublicationDate;
 
+            //Update word properties
             if (selectedPublication.ID != Guid.Empty && webPublishDate != DateTime.MinValue)
                 DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, selectedPublication.Name, webPublishDate.ToString());
 
+            //Save word document
             Microsoft.Office.Interop.Word.Document activeDocument = SitecoreAddin.ActiveDocument;
-
             if (activeDocument.ReadOnly == false && string.IsNullOrWhiteSpace(activeDocument.Path) == false)
             {
                 WordUtils.Save(activeDocument);
@@ -185,24 +175,13 @@ namespace SitecoreTreeWalker.Util.Document
         {
             fillArticleDetails();
 
-            string guid = _articleDetails.ArticleGuid.ToString();// SitecoreArticle.GetArticleGuidByArticleNumber(GetArticleNumber());
+            string guid = _articleDetails.ArticleGuid.ToString();
             string domain = ApplicationConfig.GetPropertyValue("DomainName");
 
             if (domain.StartsWith("http") == false)
                 domain = "http://" + domain;
 
             return domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + (isMobile ? "&mobile=1" : String.Empty);
-
-            string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
-            string redirect = Uri.EscapeDataString(domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);
-            return domain + @"Util/LoginRedirectToPreview.aspx?redirect=" + redirect;
-
-
-            //string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
-            //string domain = ApplicationConfig.GetPropertyValue("DomainName");
-            //string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
-            //string redirect = (domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);
-            //return redirect;
         }
     }
 }
