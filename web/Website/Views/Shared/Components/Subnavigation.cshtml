@@ -4,8 +4,8 @@
 
 <div class="general-header">
 
-    @if(Model.SubnavigationItems.Count() > 0) {
-
+    @if (Model.SubnavigationItems.Count() > 0)
+    {
         @* Top Element *@
         <div class="general-header__section-title">
             <a href="@Model.GlassModel._Url">
@@ -15,14 +15,12 @@
 
         @* Subnavigation Items *@
         <div class="general-header__navigation">
-        foreach (I___BasePage sn in @Model.SubnavigationItems)
-        {
-            <a href="sn._Url">
-                @sn.Navigation_Title
-            </a>
-        }
+            @foreach (I___BasePage sn in @Model.SubnavigationItems)
+            {
+                <a href="sn._Url">
+                    @sn.Navigation_Title
+                </a>
+            }
         </div>
-        
     }
-
 </div>

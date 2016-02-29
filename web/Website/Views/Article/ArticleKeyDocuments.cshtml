@@ -6,9 +6,8 @@
 @if (Model.KeyDocuments.Any())
 {
     <div class="article-key-documents">
-        <h2>Key Documents</h2>
+        <h2>@Model.KeyDocumentHeader</h2>
         <ul>
-
             @foreach (var doc in Model.KeyDocuments)
             {
                 <li class="article-key-document">
@@ -26,16 +25,6 @@
                     <a href="@doc.LinkableUrl">@doc.LinkableText</a>
                 </li>
             }
-
-
-            @*<li class="article-key-document">
-            <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
-            <a href="#">Document Title Goes Here</a>
-        </li>
-        <li class="article-key-document">
-            <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
-            <a href="#">Document Title Goes Here</a>
-        </li>*@
         </ul>
     </div>
 }
