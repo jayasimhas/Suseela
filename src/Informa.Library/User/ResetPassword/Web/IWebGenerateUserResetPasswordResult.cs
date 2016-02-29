@@ -3,5 +3,6 @@
 	public interface IWebGenerateUserResetPasswordResult
 	{
 		WebGenerateUserResetPasswordStatus Status { get; }
+		string Token { get; }
 	}
 }
