@@ -242,7 +242,7 @@ namespace Informa.Web.Controllers
 				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
 				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
 
-				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IGlassBase>(x));
+				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
 				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
 
 				newArticle.Featured_Image_16_9 = new Image { MediaId = articleStruct.FeaturedImage };

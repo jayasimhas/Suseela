@@ -111,7 +111,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Section_Review { get; set; }
 		public string Start_Page { get; set; }
 		public string Word_Count { get; set; }
-		public IEnumerable<IGlassBase> Referenced_Articles { get; set; }
+		public IEnumerable<IArticle> Referenced_Articles { get; set; }
 		public string Referenced_Companies { get; set; }
 		public string Referenced_Deals { get; set; }
 		public IEnumerable<IArticle> Related_Articles { get; set; }

@@ -10,4 +10,9 @@ namespace Informa.Library.Search.Filter
     {
         string ArticleNumber { get; set; }
     }
+
+    public interface IReferencedArticleFilter
+    {
+        Guid ReferencedArticle { get; set; }
+    }
 }

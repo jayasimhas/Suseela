@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
@@ -18,15 +19,17 @@ namespace Informa.Web.ViewModels
         public ISiteRootContext SiterootContext { get; set; }
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly IArticleSearch Searcher;
 
         public GlassArticleModel(
 			ISiteRootContext siterootContext,
 			IArticleListItemModelFactory articleListableFactory, 
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator, IArticleSearch searcher)
         {
             SiterootContext = siterootContext;
 			ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
+            Searcher = searcher;
         }                                                    
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -47,7 +50,26 @@ namespace Informa.Web.ViewModels
 
         public IEnumerable<IPersonModel> Authors => GlassModel.Authors.Select(x => new PersonModel(x));
         public string Category => GlassModel.Article_Category;
-        public IEnumerable<IListable> RelatedArticles => GlassModel.Related_Articles.Select(x => ArticleListableFactory.Create(x)).Cast<IListable>();
+
+        public IEnumerable<IListable> RelatedArticles
+        {
+            get
+            {   
+                var relatedArticles = GlassModel.Related_Articles.Concat(GlassModel.Referenced_Articles)  
+                    .ToList();
+                
+                if (relatedArticles.Count < 10)
+                {
+                    var filter = Searcher.CreateFilter();     
+                    filter.ReferencedArticle = GlassModel._Id;
+
+                    var results = Searcher.Search(filter);
+                    if (results.Articles.Any())
+                        relatedArticles.AddRange(results.Articles.Take(10 - relatedArticles.Count));
+                }
+                return relatedArticles.Select(x => ArticleListableFactory.Create(x)).Cast<IListable>();
+            }
+        }
 
         public IEnumerable<ILinkable> KeyDocuments
             =>

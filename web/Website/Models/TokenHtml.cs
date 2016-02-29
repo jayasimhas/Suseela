@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Glass.Mapper.Sc;
+using Glass.Mapper.Sc.Fields;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
 using Informa.Web.ViewModels;
@@ -66,7 +67,9 @@ namespace Informa.Web.Models
 
                 if (results.Articles.Any())
                 {
-                    replace = HtmlHelper.Partial(partialName, ArticleListableFactory.Create(results.Articles.FirstOrDefault()));
+                    var article = results.Articles.FirstOrDefault();
+                    if(article != null)
+                        replace = HtmlHelper.Partial(partialName, ArticleListableFactory.Create(article));
                 }     
                
                 fieldValue = fieldValue.Replace(match.Value, replace.ToString());
@@ -75,7 +78,23 @@ namespace Informa.Web.Models
 
 			foreach (Match match in referenceArticleTokenRegex.Matches(fieldValue))
 			{
-				fieldValue = fieldValue.Replace(match.Value, string.Empty);
+                string articleNumber = match.Groups[1].Value;
+
+
+                IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+                filter.ArticleNumber = articleNumber;
+                var results = ArticleSearch.Search(filter);
+
+                HtmlString replace = new HtmlString("");
+
+			    if (results.Articles.Any())
+			    {
+			        var article = results.Articles.FirstOrDefault();
+                    if(article != null)
+                        replace = new HtmlString($"<a href='{article._Url}'>{article.Navigation_Title}</a>");
+			    }
+
+			    fieldValue = fieldValue.Replace(match.Value, replace.ToHtmlString());
 			}
 
 			return HtmlHelper.Raw(fieldValue);
