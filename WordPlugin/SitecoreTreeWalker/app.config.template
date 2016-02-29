@@ -30,10 +30,11 @@
 		<add key="ForgotPasswordLink" value="${domain}sitecore/login/passwordrecovery.aspx" />
 	    <add key ="Development"  value="${Development}"/>
 	    <add key ="Stage"  value="${Stage}"/>
-	    <add key ="Production"  value="${Production}"/>	   
+    <add key ="Production"  value="${Production}"/>
 		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
 	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
     	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
+    <add key="RemoteTimezoneToConvertTo" value="Greenwich Standard Time"/>
 	</appSettings>
 	<applicationSettings>
 		<SitecoreTreeWalker.Properties.Settings>
