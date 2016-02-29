@@ -24,6 +24,11 @@
       a {
         display: inline-block;
         color: $informa-black;
+        text-decoration: none;
+
+        &:hover h6 {
+          text-decoration: underline;
+        }
       }
 
       h6 {
