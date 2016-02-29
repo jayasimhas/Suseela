@@ -218,7 +218,7 @@ namespace SitecoreTreeWalker.UI
 		private string GetPreviewUrl(bool isMobile)
 		{
             string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
-			string domain = ApplicationConfig.GetPropertyValue("DomainName");
+			string domain = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 			string mobileUrlParam = isMobile ? "&mobile=1" : String.Empty;
 			string redirect = (domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + mobileUrlParam);
 			return redirect;
