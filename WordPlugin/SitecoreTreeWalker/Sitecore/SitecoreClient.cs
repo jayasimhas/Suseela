@@ -18,353 +18,353 @@ using SitecoreTreeWalker.WebserviceHelper;
 /// <summary>
 namespace SitecoreTreeWalker.Sitecore
 {
-	class SitecoreClient
-	{
-		private static List<StaffStruct> _authors;
-		private static ArticleStruct _articleDetails = new ArticleStruct();
-		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
+    class SitecoreClient
+    {
+        private static List<StaffStruct> _authors;
+        private static ArticleStruct _articleDetails = new ArticleStruct();
+        protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
         private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
 
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
 
 
         public static List<TaxonomyStruct> SearchTaxonomy(string term)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}").Result;
-				var taxonomy = JsonConvert.DeserializeObject<List<TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
-				return taxonomy;
-			}
-		}
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}").Result;
+                var taxonomy = JsonConvert.DeserializeObject<List<TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
+                return taxonomy;
+            }
+        }
 
-		public static HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetHierarchyByGuid?guid={taxonomyGuid}").Result;
-				var directoryList = JsonConvert.DeserializeObject<HDirectoryStruct>(response.Content.ReadAsStringAsync().Result);
-				return directoryList;
-			}
-		}
+        public static HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetHierarchyByGuid?guid={taxonomyGuid}").Result;
+                var directoryList = JsonConvert.DeserializeObject<HDirectoryStruct>(response.Content.ReadAsStringAsync().Result);
+                return directoryList;
+            }
+        }
 
-		public static MediaItemStruct GetMediaStatistics(string path)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaStatistics?path={path}").Result;
-				var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
+        public static MediaItemStruct GetMediaStatistics(string path)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaStatistics?path={path}").Result;
+                var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		/// <summary>
-		/// If list of authors has been set, return that. Otherwise, 
-		/// set and return.
-		/// </summary>
-		/// <returns></returns>
-		public static List<StaffStruct> LazyReadAuthors()
-		{
-			return _authors ?? (_authors = GetAuthors());
-		}
+        /// <summary>
+        /// If list of authors has been set, return that. Otherwise, 
+        /// set and return.
+        /// </summary>
+        /// <returns></returns>
+        public static List<StaffStruct> LazyReadAuthors()
+        {
+            return _authors ?? (_authors = GetAuthors());
+        }
 
-		/// <summary>
-		/// [0] - display name
-		/// [1] - path
-		/// </summary>
-		/// <returns></returns>
-		public static string[] GetSupportingDocumentsRootNode()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SupportingDocumentsNode").Result;
-				var supportingDocumentsNode = response.Content.ReadAsAsync<string[]>().Result;
-				return supportingDocumentsNode;
-			}
-		}
+        /// <summary>
+        /// [0] - display name
+        /// [1] - path
+        /// </summary>
+        /// <returns></returns>
+        public static string[] GetSupportingDocumentsRootNode()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SupportingDocumentsNode").Result;
+                var supportingDocumentsNode = response.Content.ReadAsAsync<string[]>().Result;
+                return supportingDocumentsNode;
+            }
+        }
 
-		/// <summary>
-		/// [0] - display name
-		/// [1] - path
-		/// </summary>
-		/// <returns></returns>
-		public static string[] GetGraphicsRootNode()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GraphicsNode").Result;
-				var mediaLibraryNode = response.Content.ReadAsAsync<string[]>().Result;
-				return mediaLibraryNode;
-			}
-		}
+        /// <summary>
+        /// [0] - display name
+        /// [1] - path
+        /// </summary>
+        /// <returns></returns>
+        public static string[] GetGraphicsRootNode()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GraphicsNode").Result;
+                var mediaLibraryNode = response.Content.ReadAsAsync<string[]>().Result;
+                return mediaLibraryNode;
+            }
+        }
 
-		/// <summary>
-		/// Force the list of authors to be updated and then returned. Otherwise, 
-		/// set and return.
-		/// </summary>
-		/// <returns></returns>
-		public static List<StaffStruct> ForceReadAuthors()
-		{
-			return _authors = GetAuthors();
-		}
+        /// <summary>
+        /// Force the list of authors to be updated and then returned. Otherwise, 
+        /// set and return.
+        /// </summary>
+        /// <returns></returns>
+        public static List<StaffStruct> ForceReadAuthors()
+        {
+            return _authors = GetAuthors();
+        }
 
-		public static ArticleStruct LazyReadArticleDetails(string articleNumber)
-		{
-			if (_articleDetails != null && _articleDetails.ArticleNumber == articleNumber)
-			{
-				return _articleDetails;
-			}
-			return _articleDetails = GetArticleDetails(articleNumber);
-		}
+        public static ArticleStruct LazyReadArticleDetails(string articleNumber)
+        {
+            if (_articleDetails != null && _articleDetails.ArticleNumber == articleNumber)
+            {
+                return _articleDetails;
+            }
+            return _articleDetails = GetArticleDetails(articleNumber);
+        }
 
-		public static ArticleStruct ForceReadArticleDetails(string articleNumber)
-		{
-			return _articleDetails = GetArticleDetails(articleNumber);
-		}
+        public static ArticleStruct ForceReadArticleDetails(string articleNumber)
+        {
+            return _articleDetails = GetArticleDetails(articleNumber);
+        }
 
-		public static ArticleStruct ForceReadArticleDetails(Guid articleGuid)
-		{
-			return _articleDetails = GetArticleDetails(articleGuid);
-		}
+        public static ArticleStruct ForceReadArticleDetails(Guid articleGuid)
+        {
+            return _articleDetails = GetArticleDetails(articleGuid);
+        }
 
-		public static List<ItemStruct> GetPublications()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetPublications").Result;
-				var publicationsList = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
-				return publicationsList;
-			}
-		}
+        public static List<ItemStruct> GetPublications()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetPublications").Result;
+                var publicationsList = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+                return publicationsList;
+            }
+        }
 
-		public static List<ItemStruct> GetMediaTypes()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaTypes").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
+        public static List<ItemStruct> GetMediaTypes()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaTypes").Result;
+                var mediaItem = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		public static List<ItemStruct> GetContentTypes()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetContentTypes").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
+        public static List<ItemStruct> GetContentTypes()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetContentTypes").Result;
+                var mediaItem = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		public static List<ArticleSize> GetArticleSizes(Guid publicationID)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleSizesForPublication?publicationID={publicationID}").Result;
-				var articleSizes = JsonConvert.DeserializeObject<List<ArticleSize>>(response.Content.ReadAsStringAsync().Result);
-				return articleSizes;
-			}
-		}
+        public static List<ArticleSize> GetArticleSizes(Guid publicationID)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleSizesForPublication?publicationID={publicationID}").Result;
+                var articleSizes = JsonConvert.DeserializeObject<List<ArticleSize>>(response.Content.ReadAsStringAsync().Result);
+                return articleSizes;
+            }
+        }
 
-		private static List<StaffStruct> GetAuthors()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
+        private static List<StaffStruct> GetAuthors()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
+                var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		private static ArticleStruct GetArticleDetails(string articleNumber)
-		{
-			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetails?articleNumber={articleNumber}").Result;
-				var articleStruct = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
-				return articleStruct;
-			}
-			/*
+        private static ArticleStruct GetArticleDetails(string articleNumber)
+        {
+            Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetails?articleNumber={articleNumber}").Result;
+                var articleStruct = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+                return articleStruct;
+            }
+            /*
 			var sctree = new SCTree();
 			return sctree.GetArticleDetails(articleNumber, _sitecoreUser.Username, _sitecoreUser.Password);
 			*/
-		}
+        }
 
-		private static ArticleStruct GetArticleDetails(Guid articleGuid)
-		{
-			Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetailsBg?articleGuid={articleGuid}").Result;
-				var articleStruct = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
-				return articleStruct;
-			}
-			/*
+        private static ArticleStruct GetArticleDetails(Guid articleGuid)
+        {
+            Globals.SitecoreAddin.Log("Getting article details from Sitecore...");
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetArticleDetailsBg?articleGuid={articleGuid}").Result;
+                var articleStruct = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+                return articleStruct;
+            }
+            /*
 			var sctree = new SCTree();
 			return sctree.GetArticleDetailsBG(articleGuid, _sitecoreUser.Username, _sitecoreUser.Password);
 			*/
-		}
+        }
 
-		public static string GetDynamicUrl(string path)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDynamicUrl?path={path}").Result;
-				return response.Content.ReadAsStringAsync().Result;
-			}
-		}
+        public static string GetDynamicUrl(string path)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDynamicUrl?path={path}").Result;
+                return response.Content.ReadAsStringAsync().Result;
+            }
+        }
 
-		//TODO - Implement this
-		public static int GetMaxLengthShortSummary()
-		{			
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthShortSummary").Result;
-				var length = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-				return length;
-				/*
+        //TODO - Implement this
+        public static int GetMaxLengthShortSummary()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthShortSummary").Result;
+                var length = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+                return length;
+                /*
 				Int32.TryParse(response.Content.ReadAsStringAsync().Result, out length);
 				return length;
 				*/
-			}
-		}
-		
-		//TODO - Implement this
-		public static int GetMaxLengthLongSummary()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthLongSummary").Result;
-				var length =  JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-				return length;
-			}
-		}
+            }
+        }
+
+        //TODO - Implement this
+        public static int GetMaxLengthLongSummary()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthLongSummary").Result;
+                var length = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+                return length;
+            }
+        }
 
 
-		public static bool IsAvailable()
-		{
-			try
-			{
-				using (var client = new HttpClient(_handler, false))
-				{
-					var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}IsAvailable").Result;
-					var isAvailable = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-					return isAvailable;
-				}
-			}
-			catch (Exception)
-			{
-				return false;
-			}
-		}
+        public static bool IsAvailable()
+        {
+            try
+            {
+                using (var client = new HttpClient(_handler, false))
+                {
+                    var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}IsAvailable").Result;
+                    var isAvailable = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+                    return isAvailable;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
-		public static List<StaffStruct> GetStaffAndGroups()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				//TODO - This might change due to change in Staff and Authors
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
+        public static List<StaffStruct> GetStaffAndGroups()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                //TODO - This might change due to change in Staff and Authors
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
+                var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		//TODO - GetDealInfo
-		public static DealInfo GetDealInfo(string recordNumber)
-		{
-			//return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
-			return new DealInfo();
-	}
+        //TODO - GetDealInfo
+        public static DealInfo GetDealInfo(string recordNumber)
+        {
+            //return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
+            return new DealInfo();
+        }
 
-		public static int[] GetWidthHeightOfMediaItem(string path)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetWidthHeightOfMediaItem?path={path}").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<int>>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem.ToArray();
-			}
+        public static int[] GetWidthHeightOfMediaItem(string path)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetWidthHeightOfMediaItem?path={path}").Result;
+                var mediaItem = JsonConvert.DeserializeObject<List<int>>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem.ToArray();
+            }
 
-		}
-		//TODO - GetAllCompanies
-		public static List<CompanyWrapper> GetAllCompanies()
-		{
-			//return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
-			return new List<CompanyWrapper>();
-		}
-		
-		//TODO - GetAllRelatedCompanies
-		public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
-		{
-			//return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
-			return new List<CompanyWrapper>();
-		}
+        }
+        //TODO - GetAllCompanies
+        public static List<CompanyWrapper> GetAllCompanies()
+        {
+            //return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
+            return new List<CompanyWrapper>();
+        }
 
-		public static List<WordStyleStruct> GetParagraphStyles()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetParagraphStyles").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
+        //TODO - GetAllRelatedCompanies
+        public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
+        {
+            //return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
+            return new List<CompanyWrapper>();
+        }
 
-		public static List<WordStyleStruct> GetCharacterStyles()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetCharacterStyles").Result;
-				var mediaItem = JsonConvert.DeserializeObject<List<WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
+        public static List<WordStyleStruct> GetParagraphStyles()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetParagraphStyles").Result;
+                var mediaItem = JsonConvert.DeserializeObject<List<WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		public static DirectoryStruct[] GetChildrenDirectories(string path)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetChildrenDirectories?path={path}").Result;
-				var directoryList = JsonConvert.DeserializeObject<DirectoryStruct[]>(response.Content.ReadAsStringAsync().Result);
-				return directoryList;
-			}
-		}
+        public static List<WordStyleStruct> GetCharacterStyles()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetCharacterStyles").Result;
+                var mediaItem = JsonConvert.DeserializeObject<List<WordStyleStruct>>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		public static MediaItemStruct GetMediaLibraryItem(string path)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaLibraryItem?path={path}").Result;
-				var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
-				return mediaItem;
-			}
-		}
-		
-		public static Guid GetItemGuidByPath(string path)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetItemGuidByPath?path={path}").Result;
-				var itemGuid = JsonConvert.DeserializeObject<Guid>(response.Content.ReadAsStringAsync().Result);
-				return itemGuid;
-			}
-		}
+        public static DirectoryStruct[] GetChildrenDirectories(string path)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetChildrenDirectories?path={path}").Result;
+                var directoryList = JsonConvert.DeserializeObject<DirectoryStruct[]>(response.Content.ReadAsStringAsync().Result);
+                return directoryList;
+            }
+        }
 
-		public static byte[] GetMediaLibraryItemData(string path)
-		{
-			return GetMediaLibraryItem(path).Data;
-		}
+        public static MediaItemStruct GetMediaLibraryItem(string path)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMediaLibraryItem?path={path}").Result;
+                var mediaItem = JsonConvert.DeserializeObject<MediaItemStruct>(response.Content.ReadAsStringAsync().Result);
+                return mediaItem;
+            }
+        }
 
-		public static string MediaPreviewUrl(string path)
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}MediaPreviewUrl?path={path}").Result;
-				return response.Content.ReadAsStringAsync().Result;
-			}
-		}
+        public static Guid GetItemGuidByPath(string path)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetItemGuidByPath?path={path}").Result;
+                var itemGuid = JsonConvert.DeserializeObject<Guid>(response.Content.ReadAsStringAsync().Result);
+                return itemGuid;
+            }
+        }
+
+        public static byte[] GetMediaLibraryItemData(string path)
+        {
+            return GetMediaLibraryItem(path).Data;
+        }
+
+        public static string MediaPreviewUrl(string path)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}MediaPreviewUrl?path={path}").Result;
+                return response.Content.ReadAsStringAsync().Result;
+            }
+        }
 
         public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
         {
@@ -627,14 +627,14 @@ namespace SitecoreTreeWalker.Sitecore
                 var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
 
                 var cookies = _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL));
-                
-                if(cookies != null && cookies.Count > 0 && string.Equals(".ASPXAUTH", cookies[0].Name))
+
+                if (cookies != null && cookies.Count > 0 && string.Equals(".ASPXAUTH", cookies[0].Name))
                     _reader.WriteCookie(cookies[0].Name);
 
 
                 return userStatus;
             }
-        }   
+        }
 
         //TODO - work flow
         public static WorkflowState GetWorkflowState(string articleNumber)
@@ -696,6 +696,11 @@ namespace SitecoreTreeWalker.Sitecore
                 articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToList();
                 articleDetails.CommandID = workflowCommand;
                 articleDetails.SupportingDocumentPaths = _wordUtils.GetSupportingDocumentPaths().ToList();
+                if (articleDetails.RelatedArticles == null)
+                    articleDetails.RelatedArticles = new List<Guid>();
+                if (articleDetails.RelatedInlineArticles == null)
+                    articleDetails.RelatedInlineArticles = new List<Guid>();
+
                 Globals.SitecoreAddin.Log("Local document version before check: " +
                                           documentCustomProperties.WordSitecoreVersionNumber);
                 var currentVersion = articleDetails.ArticleGuid != Guid.Empty
