@@ -24,7 +24,9 @@ namespace Informa.Library.Article.Publishing.Events
 
 			var item = publishArgs.Context.PublishHelper.GetSourceItem(publishArgs.Context.ItemId);
 
-			if (item.TemplateID != IArticleConstants.TemplateId || ((DateField)item.Fields[IArticleConstants.Actual_Publish_DateFieldName]).DateTime != default(DateTime))
+			if (item == null || 
+				item.TemplateID != IArticleConstants.TemplateId || 
+				((DateField)item.Fields[IArticleConstants.Actual_Publish_DateFieldName]).DateTime != default(DateTime))
 			{
 				return;
 			}

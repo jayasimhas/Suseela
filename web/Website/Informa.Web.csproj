@@ -605,6 +605,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
     <Compile Include="App_Start\Registrations\GlassMapperRegistrar.cs" />
@@ -890,6 +891,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\UserDefined\Article.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\User.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Sitecore.config.velirTemplate">

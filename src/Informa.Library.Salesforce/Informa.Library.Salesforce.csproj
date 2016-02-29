@@ -50,7 +50,9 @@
     <Compile Include="ISalesforceServiceContextExtensions.cs" />
     <Compile Include="ISalesforceSessionFactoryConfiguration.cs" />
     <Compile Include="SalesforceSessionFactoryConfiguration.cs" />
+    <Compile Include="User\Authentication\ISalesforceAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\SalesforceAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\SalesforceAuthenticateUser.cs" />
     <Compile Include="User\Authentication\SalesforceAuthenticateUserResult.cs" />
     <Compile Include="EBIWebServices\IEBI_WebServicesBinding.cs" />
@@ -70,7 +72,9 @@
     <Compile Include="SalesforceSession.cs" />
     <Compile Include="SalesforceSessionContext.cs" />
     <Compile Include="SalesforceSessionFactory.cs" />
+    <Compile Include="User\ISalesforceFindUserByEmail.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
+    <Compile Include="User\SalesforceFindUserByEmail.cs" />
     <Compile Include="User\SalesforceUser.cs" />
     <Compile Include="Web References\EBIWebServices\Reference.cs">
       <AutoGen>True</AutoGen>

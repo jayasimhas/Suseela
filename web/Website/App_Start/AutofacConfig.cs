@@ -53,6 +53,7 @@ namespace Informa.Web.App_Start
             SearchRegistrar.RegisterDependencies(builder);
 			AuthenticationRegistrar.RegisterDependencies(builder);
 			SalesforceRegistrar.RegisterDependencies(builder);
+			UserRegistrar.RegisterDependencies(builder);
 
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));

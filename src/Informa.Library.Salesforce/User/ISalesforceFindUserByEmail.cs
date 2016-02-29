@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Salesforce.User
 {
-	public interface ISalesforceUser : IUser
+	public interface ISalesforceFindUserByEmail : IFindUserByEmail
 	{
 	}
 }

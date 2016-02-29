@@ -1,8 +1,7 @@
 ﻿namespace Informa.Library.User.Authentication
 {
-	public interface IAuthenticatedUser
+	public interface IAuthenticatedUser : IUser
 	{
-		string Username { get; }
 		string Name { get; }
 		string Email { get; }
 	}
