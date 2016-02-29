@@ -99,6 +99,7 @@ namespace SitecoreTreeWalker.UI
 						{
 							Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
 							login.Close();
+							login.Dispose();
 							LoginLogoutButtonChange();
 							myAction();
 						}
