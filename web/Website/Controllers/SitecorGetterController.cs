@@ -22,6 +22,7 @@ using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
+using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 
 namespace Informa.Web.Controllers
 {
@@ -70,6 +71,38 @@ namespace Informa.Web.Controllers
 		}
 	}
 
+	[Route]
+	public class GetWorkflowCommandsController : ApiController
+	{
+
+		private ISitecoreService _sitecoreService;
+		public GetWorkflowCommandsController(Func<string, ISitecoreService> sitecoreFactory)
+		{
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
+		}
+		// GET api/<controller>
+		public JsonResult<List<WorkflowState>> Get()
+		{
+			//TODO : Get command items
+			var selectedPublication = _sitecoreService.GetItem<IWorkflow>(new Guid("{2BAE793F-7392-4790-9E67-9C60B6BF7D7B}"));
+			var workflowCommands = selectedPublication?._ChildrenWithInferType.OfType<IState>()
+				.Select(eachChild => new WorkflowState() { DisplayName = eachChild._Name }).ToList();
+			return Json(workflowCommands);
+		}
+
+		[Route]
+		public JsonResult<WorkflowState> Get(Guid articleGuid)
+		{
+			Guid currentState = _sitecoreService.GetItem<ArticleItem>(articleGuid).State;
+			var state = currentState != Guid.Empty ? _sitecoreService.GetItem<IState>(currentState) : null;
+			if (state != null)
+			{
+				var workflowState = new WorkflowState() { DisplayName = state._Name };
+				return Json(workflowState);
+			}
+			return null;
+		}
+	}
 
 	public class SearchTaxonomyController : ApiController
 	{
@@ -812,4 +845,7 @@ namespace Informa.Web.Controllers
 			return Json(false);
 		}
 	}
+
+
+
 }

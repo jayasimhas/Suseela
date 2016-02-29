@@ -119,9 +119,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public bool Scheduled_Publishing_Enabled { get; set; }
         public bool Include_In_Search { get; set; }
 		public Link Canonical_Link { get; set; }
-    }
+		public Guid Workflow { get; set; }
+		public Guid State { get; set; }
 
-    public interface IPublicationChild
+	}
+
+	public interface IPublicationChild
 	{
 		Guid Publication { get; }
 	}

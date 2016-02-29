@@ -652,6 +652,7 @@ namespace SitecoreTreeWalker.Sitecore
             return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WorkflowCommand>() };
         }
 
+
         public static string GetDocumentPassword()
         {
             using (var client = new HttpClient(_handler, false))
