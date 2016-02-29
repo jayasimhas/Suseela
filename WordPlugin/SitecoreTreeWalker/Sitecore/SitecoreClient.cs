@@ -27,6 +27,16 @@ namespace SitecoreTreeWalker.Sitecore
 
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
 
+	    public SitecoreClient()
+	    {
+	        if (_sitecoreUser.Username != null)
+	        {
+	            var cookie = UserCredentialReader.GetReader().GetCookie(_sitecoreUser.Username);
+	            _handler.CookieContainer.Add(cookie);
+	        }
+
+	    }
+
 
         public static List<TaxonomyStruct> SearchTaxonomy(string term)
 		{
@@ -629,7 +639,7 @@ namespace SitecoreTreeWalker.Sitecore
                 var cookies = _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL));
                 
                 if(cookies != null && cookies.Count > 0 && string.Equals(".ASPXAUTH", cookies[0].Name))
-                    _reader.WriteCookie(cookies[0].Name);
+                    _reader.WriteCookie(cookies, username);
 
 
                 return userStatus;
@@ -788,5 +798,5 @@ namespace SitecoreTreeWalker.Sitecore
 
         protected WordUtils _wordUtils = new WordUtils();
         protected static StructConverter _structConverter = new StructConverter();
-    }
+    }   
 }
