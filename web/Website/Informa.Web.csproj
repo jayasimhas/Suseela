@@ -594,7 +594,6 @@
     <Compile Include="Areas\Account\Controllers\SalesforceConnectorController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
     <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
-    <Compile Include="Areas\Account\Models\WordPluginModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
@@ -627,6 +626,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\SubnavigationViewModel.cs" />
     <Compile Include="ViewModels\ArticleFeaturedImage.cs" />
     <Compile Include="ViewModels\ArticleListItemModel.cs" />
     <Compile Include="ViewModels\ArticleListItemModelFactory.cs" />
@@ -706,6 +706,8 @@
     <Content Include="gulpfile.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search\controllers\headlineToggleController.js" />
+    <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
@@ -802,7 +804,6 @@
     <Content Include="velir\dist\patternlibrary.css" />
     <Content Include="velir\dist\velir.search.angular.js" />
     <Content Include="velir\images\svgdefs.svg" />
-    <Content Include="velir\js\app.js" />
     <Content Include="velir\vendor\bower_components\angular\angular.js" />
     <Content Include="velir\vendor\bower_components\lodash\lodash.js" />
     <Content Include="Web.config">
@@ -849,6 +850,7 @@
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="GlassMaps\" />
+    <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
@@ -940,6 +942,8 @@
     <Content Include="Views\Search\SearchWrapper.cshtml" />
     <Content Include="Views\Article\_ArticleSidebar.cshtml" />
     <Content Include="Views\Shared\Components\SectionTitle.cshtml" />
+    <Content Include="Views\Shared\Components\CSSBlock.cshtml" />
+    <Content Include="Views\Shared\Components\Subnavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
@@ -949,6 +953,10 @@
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\PluginModels\PluginModels.csproj">
+      <Project>{be0591fc-dabc-44b0-b267-0e3ab0fd02d4}</Project>
+      <Name>PluginModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
       <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>

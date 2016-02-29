@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 using SitecoreTreeWalker.Config;
@@ -15,7 +15,7 @@ using SitecoreTreeWalker.UI.TreeBrowser;
 using SitecoreTreeWalker.User;
 using SitecoreTreeWalker.Util;
 using Word = Microsoft.Office.Interop.Word;
-using StaffStruct = Informa.Web.Areas.Account.Models.WordPluginModel.StaffStruct;
+using StaffStruct = PluginModels.StaffStruct;
 
 namespace SitecoreTreeWalker
 {
@@ -145,9 +145,9 @@ namespace SitecoreTreeWalker
                 {
                     case SaveDialog.SaveChoice.SaveToSitecoreAndUnlock:
                         // at this point, there can be no metadata changes, only body text changes.
-                        var sitecoreArticle = new SitecoreArticle();
+                        var _sitecoreClient = new SitecoreClient();
 
-                        var errors = sitecoreArticle.SaveArticle(doc, SitecoreGetter.ForceReadArticleDetails(documentCustomProps.ArticleNumber), Guid.Empty, new StaffStruct[0], documentCustomProps.ArticleNumber);
+                        var errors = _sitecoreClient.SaveArticle(doc, SitecoreClient.ForceReadArticleDetails(documentCustomProps.ArticleNumber), Guid.Empty, new StaffStruct[0], documentCustomProps.ArticleNumber);
 
                         if (errors.Count > 0)
                         {
@@ -162,7 +162,7 @@ namespace SitecoreTreeWalker
                         else
                         {
                             doc.Saved = true;
-                            SitecoreArticle.CheckInArticle(documentCustomProps.ArticleNumber);
+                            SitecoreClient.CheckInArticle(documentCustomProps.ArticleNumber);
                         }
                         break;
                     case SaveDialog.SaveChoice.SaveLocal:
@@ -192,7 +192,7 @@ namespace SitecoreTreeWalker
                 }
                 else
                 {
-					WordPluginModel.CheckoutStatus checkedOut = SitecoreArticle.GetLockedStatus(articleNumber);
+					CheckoutStatus checkedOut = SitecoreClient.GetLockedStatus(articleNumber);
                     if (checkedOut.User == SitecoreUser.GetUser().Username)
                     {
                         DocumentProtection.Unprotect(props);
@@ -200,7 +200,7 @@ namespace SitecoreTreeWalker
                     }
                     if (!checkedOut.Locked)
                     {
-                        if (DialogFactory.PromptAutoLock() == DialogResult.Yes && SitecoreArticle.CheckOutArticle(articleNumber, SitecoreUser.GetUser().Username))
+                        if (DialogFactory.PromptAutoLock() == DialogResult.Yes && SitecoreClient.CheckOutArticle(articleNumber, SitecoreUser.GetUser().Username))
                         {
                             DocumentProtection.Unprotect(props);
                         }

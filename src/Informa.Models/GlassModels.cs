@@ -43,6 +43,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	[SitecoreType(TemplateId=ISearchConstants.TemplateIdString)]
 	public partial interface ISearch : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Velir.Search.Models.ISearch_Listing, global::Velir.Search.Models.ISearch_Refinements
 	{
+								/// <summary>
+					/// The Search Tips Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: f3c99235-b6ae-4181-aada-199155242ac6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISearchConstants.Search_Tips_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Search_Tips_Text  {get; set;}
+								/// <summary>
+					/// The Search Tips Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 29106a20-f739-465e-bd36-ea83af0935ea</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISearchConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Search_Tips_Title  {get; set;}
 				}
 
 	
@@ -55,6 +73,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		[SitecoreType]
 		public partial interface ISearch__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Velir.Search.Models.ISearch_Listing__Raw, global::Velir.Search.Models.ISearch_Refinements__Raw
 		{
+										/// <summary>
+						/// The Search Tips Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: f3c99235-b6ae-4181-aada-199155242ac6</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISearchConstants.Search_Tips_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Search_Tips_Text  {get; set;}
+										/// <summary>
+						/// The Search Tips Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 29106a20-f739-465e-bd36-ea83af0935ea</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISearchConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Search_Tips_Title  {get; set;}
 						}
 	
 	public static partial class ISearchConstants{
@@ -63,6 +99,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Search";
 
+					
+			public static readonly ID Search_Tips_TextFieldId = new ID("f3c99235-b6ae-4181-aada-199155242ac6");
+			public const string Search_Tips_TextFieldName = "Search Tips Text";
+
+							public static readonly ID Search_Tips_Text__RawFieldId = new ID("f3c99235-b6ae-4181-aada-199155242ac6");
+				public const string Search_Tips_Text__RawFieldName = "Search Tips Text";
+						
+					
+			public static readonly ID Search_Tips_TitleFieldId = new ID("29106a20-f739-465e-bd36-ea83af0935ea");
+			public const string Search_Tips_TitleFieldName = "Search Tips Title";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -139,6 +187,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	public partial interface IGeneral_Content_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
 								/// <summary>
+					/// The CSS field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 2f02ffdb-8082-44c9-b9c6-a034f3c1f9d9</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string CSS  {get; set;}
+								/// <summary>
 					/// The Section Title field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -147,6 +204,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Section_Title  {get; set;}
+								/// <summary>
+					/// The Subnavigation Items field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 7d43ad1f-9748-4438-9cb0-74c457376526</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 				}
 
 	
@@ -160,6 +226,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public partial interface IGeneral_Content_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
 										/// <summary>
+						/// The CSS field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 2f02ffdb-8082-44c9-b9c6-a034f3c1f9d9</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string CSS  {get; set;}
+										/// <summary>
 						/// The Section Title field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -168,6 +243,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Section_Title  {get; set;}
+										/// <summary>
+						/// The Subnavigation Items field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 7d43ad1f-9748-4438-9cb0-74c457376526</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 						}
 	
 	public static partial class IGeneral_Content_PageConstants{
@@ -177,8 +261,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TemplateName = "General Content Page";
 
 					
+			public static readonly ID CSSFieldId = new ID("2f02ffdb-8082-44c9-b9c6-a034f3c1f9d9");
+			public const string CSSFieldName = "CSS";
+
+						
+					
 			public static readonly ID Section_TitleFieldId = new ID("e3a3e51e-a8f0-4ee1-986f-2562f9d279de");
 			public const string Section_TitleFieldName = "Section Title";
+
+						
+					
+			public static readonly ID Subnavigation_ItemsFieldId = new ID("7d43ad1f-9748-4438-9cb0-74c457376526");
+			public const string Subnavigation_ItemsFieldName = "Subnavigation Items";
 
 						
 					
@@ -918,10 +1012,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=IArticle</para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+					IEnumerable<IArticle> Referenced_Articles  {get; set;}
 								/// <summary>
 					/// The Referenced Companies field.
 					/// <para></para>
@@ -1200,10 +1294,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=IArticle</para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+						IEnumerable<IArticle> Referenced_Articles  {get; set;}
 										/// <summary>
 						/// The Referenced Companies field.
 						/// <para></para>

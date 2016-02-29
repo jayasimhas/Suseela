@@ -99,7 +99,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			if (!DesignMode)
 			{
 				SetSitecoreItemGetter(new SitecoreItemGetter());
-				var values = SitecoreGetter.GetSupportingDocumentsRootNode();
+				var values = SitecoreClient.GetSupportingDocumentsRootNode();
 				AddRootNode(uxBrowseDocuments, values[1], values[0]); 
 			}
 		}
@@ -127,7 +127,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			if (path == null) return;
 			try
 			{
-				Process.Start(SitecoreGetter.MediaPreviewUrl(path.Path));
+				Process.Start(SitecoreClient.MediaPreviewUrl(path.Path));
 			}
 			catch (WebException)
 			{
@@ -139,6 +139,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			var path = uxBrowseDocuments.SelectedNode.Tag as SitecorePath;
 			if (path == null) return;
+			SitecoreItemGetter.SitecoreMediaItem mediaItem =_siteCoreItemGetter.DownloadSiteCoreMediaItem(path.Path);
+			if ((mediaItem == null) || !IsValidDocumentType(mediaItem.Extension.ToLower()))
+			{
+				MessageBox.Show(@"Please insert valid media item.", @"Informa");
+				return;
+			}
 			InsertDocument(path);
 		}
 
@@ -146,7 +152,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		static void InsertDocument(SitecorePath path) 
 		{
-			var media = SitecoreGetter.GetMediaStatistics(path.Path);
+			var media = SitecoreClient.GetMediaStatistics(path.Path);
 			var app = Globals.SitecoreAddin.Application;
 			var selection = app.Selection.Range;
 			selection.Text = path.DisplayName + "." + media.Extension;
@@ -158,7 +164,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxRefresh_Click(object sender, EventArgs e)
 		{
-			var values = SitecoreGetter.GetSupportingDocumentsRootNode();
+			var values = SitecoreClient.GetSupportingDocumentsRootNode();
 			uxBrowseDocuments.Nodes.Clear();
 			AddRootNode(uxBrowseDocuments, values[1], values[0]);
 		}

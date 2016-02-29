@@ -25,13 +25,14 @@ namespace SitecoreTreeWalker.Util
 			var path = strings[1];
 
 			var root = new XElement("a");
+			root.SetAttributeValue("class", "plugin-hide");
 			try
 			{
 				if (!SupportingDocuments.Contains(path))
 				{
 					SupportingDocuments.Add(path); 
 				}
-				var url = SitecoreGetter.GetDynamicUrl(path);
+				var url = SitecoreClient.GetDynamicUrl(path);
 				root.SetAttributeValue("href", url);
                 root.Value = hyperlink.Range.Text;
 				//root.Add(GetDocIcon(url));

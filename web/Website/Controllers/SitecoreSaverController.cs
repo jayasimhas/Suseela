@@ -12,6 +12,7 @@ using Sitecore.Links;
 using Sitecore.SecurityModel;
 using Sitecore.Web;
 using Informa.Library.Utilities.References;
+using PluginModels;
 
 namespace Informa.Web.Controllers
 {
@@ -20,32 +21,30 @@ namespace Informa.Web.Controllers
 	{
 		private readonly ISitecoreService _sitecoreMasterService;
 		private readonly ArticleUtil _articleUtil;
-	    private readonly IArticleSearch _articleSearch;
+		private readonly IArticleSearch _articleSearch;
 
 		public CreateArticleController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch search)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleUtil = articleUtil;
-		    _articleSearch = search;
+			_articleSearch = search;
 		}
 
 		[HttpPost]
-		public WordPluginModel.ArticleStruct Post([FromBody] WordPluginModel.CreateArticleRequest content)
+		public ArticleStruct Post([FromBody] CreateArticleRequest content)
 		{
 			using (new SecurityDisabler())
 			{
 				var publicationDate = DateTime.Parse(content.PublicationDate);
-				var parent = _articleUtil.GenerateDailyFolder(content.PublicationID, publicationDate);
-				//TODO - Give proper name.  Remove unneeded characters like & etc
-				var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
+				var parent = _articleUtil.GenerateDailyFolder(content.PublicationID, publicationDate);				
+				var rinsedName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(content.Name);
+				//var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
 				var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
-				//var baseItem = new GlassBase {_Name = rinsedName, _TemplateId = new Guid(IArticleConstants.TemplateIdString)};
-				//var articleCreate = _sitecoreMasterService.Create(parent, baseItem);
 				var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
 				article.Title = content.Name;
 				article.Planned_Publish_Date = publicationDate;
 				article.Created_Date = DateTime.Now;
-				article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID),content.PublicationID);
+				article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
 				//article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString().Replace("-", ""), content.PublicationID);
 				_sitecoreMasterService.Save(article);
 				var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
@@ -53,35 +52,19 @@ namespace Informa.Web.Controllers
 				return articleStruct;
 			}
 		}
-	
 
-    [HttpGet]
-    public long Get()
-    {
-        using (new SecurityDisabler())
-        {
-            //var publicationDate = DateTime.Parse(content.PublicationDate);
-            //var parent = _articleUtil.GenerateDailyFolder(content.PublicationID, publicationDate);
-            ////TODO - Give proper name.  Remove unneeded characters like & etc
-            //var rinsedName = Regex.Replace(content.Name, @"<(.|\n)*?>", string.Empty).Trim();
-            //var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
-            ////var baseItem = new GlassBase {_Name = rinsedName, _TemplateId = new Guid(IArticleConstants.TemplateIdString)};
-            ////var articleCreate = _sitecoreMasterService.Create(parent, baseItem);
-            //var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
-            //article.Title = content.Name;
-            //article.Planned_Publish_Date = publicationDate;
-            //article.Created_Date = DateTime.Now;
-            //article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
-            ////article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleCreate._Id.ToString().Replace("-", ""), content.PublicationID);
-            //_sitecoreMasterService.Save(article);
-            //var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
-            //var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
-            return _articleSearch.GetNextArticleNumber(Guid.NewGuid());
-        }
-    }
-}
 
-[Route]
+		[HttpGet]
+		public long Get()
+		{
+			using (new SecurityDisabler())
+			{
+				return _articleSearch.GetNextArticleNumber(Guid.NewGuid());
+			}
+		}
+	}
+
+	[Route]
 	public class SaveArticleTextByGuidController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreMasterService;
@@ -94,9 +77,9 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleTextByGuid content)
+		public void Post([FromBody] SaveArticleTextByGuid content)
 		{
-            ArticleItem item = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticleGuid);
+			ArticleItem item = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticleGuid);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(item, content.WordText, content.ArticleData);
 		}
 	}
@@ -114,7 +97,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleText content)
+		public void Post([FromBody] SaveArticleText content)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);
@@ -132,7 +115,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleDetails content)
+		public void Post([FromBody] SaveArticleDetails content)
 		{
 			_sitecoreSaver.SaveArticleDetails(content.ArticleNumber, content.ArticleData, false, false);
 		}
@@ -149,7 +132,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public void Post([FromBody] WordPluginModel.SaveArticleDetailsByGuid content)
+		public void Post([FromBody] SaveArticleDetailsByGuid content)
 		{
 			_sitecoreSaver.SaveArticleDetails(content.ArticleGuid, content.ArticleData, false, false);
 		}
@@ -166,7 +149,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.UserStatusStruct Post([FromBody] WordPluginModel.LoginModel content)
+		public UserStatusStruct Post([FromBody] LoginModel content)
 		{
 			return SitecoreUtil.GetUserStatus(content.Username, content.Password);
 		}
@@ -184,7 +167,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.CheckoutStatus Post([FromBody] string articleNumber)
+		public CheckoutStatus Post([FromBody] string articleNumber)
 		{
 			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
 			return _articleUtil.GetLockedStatus(article);
@@ -205,7 +188,7 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.CheckoutStatus Post([FromBody] Guid articleGuid)
+		public CheckoutStatus Post([FromBody] Guid articleGuid)
 		{
 			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
 			return _articleUtil.GetLockedStatus(article);
@@ -225,7 +208,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public bool Post([FromBody] string articleNumber)
 		{
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			return _articleUtil.DoesArticleHaveText(article);
 		}
 	}
@@ -245,7 +228,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public bool Post([FromBody] Guid articleGuid)
 		{
-            ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
+			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			return _articleUtil.DoesArticleHaveText(article);
 		}
 	}
@@ -299,12 +282,12 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public List<WordPluginModel.ArticlePreviewInfo> Post([FromBody] List<Guid> guids)
+		public List<ArticlePreviewInfo> Post([FromBody] List<Guid> guids)
 		{
-			var previews = new List<WordPluginModel.ArticlePreviewInfo>();
+			var previews = new List<ArticlePreviewInfo>();
 			foreach (Guid guid in guids)
 			{
-                ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(guid);
+				ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(guid);
 				if (article != null)
 				{
 					previews.Add(_articleUtil.GetPreviewInfo(article));
@@ -324,10 +307,10 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public WordPluginModel.ArticlePreviewInfo Post([FromBody] string articleNumber)
+		public ArticlePreviewInfo Post([FromBody] string articleNumber)
 		{
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
-			var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new WordPluginModel.ArticlePreviewInfo();
+			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+			var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new ArticlePreviewInfo();
 			return preview;
 		}
 	}
@@ -346,7 +329,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public int Post([FromBody] string articleNumber)
 		{
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			if (article == null)
 			{
 				return -1;
@@ -370,7 +353,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public int Post([FromBody] Guid articleGuid)
 		{
-            ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
+			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			if (article == null)
 			{
 				return -1;
@@ -469,9 +452,9 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public int Post([FromBody] WordPluginModel.SendDocumentToSitecoreByGuid content)
+		public int Post([FromBody] SendDocumentToSitecoreByGuid content)
 		{
-            ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticlGuid);
+			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticlGuid);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
 		}
 	}
@@ -489,9 +472,9 @@ namespace Informa.Web.Controllers
 		}
 
 		[HttpPost]
-		public int Post([FromBody] WordPluginModel.SendDocumentToSitecore content)
+		public int Post([FromBody] SendDocumentToSitecore content)
 		{
-            ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
+			ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
 		}
 	}
@@ -509,7 +492,7 @@ namespace Informa.Web.Controllers
 		[HttpPost]
 		public string Post([FromBody] string articleNumber)
 		{
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			return article?._Id.ToString() ?? Guid.Empty.ToString();
 		}
 	}

@@ -36,11 +36,12 @@
         <div class="article-author article-author--solo">
             <ul class="article-author__list">
                 <li>
-                    @* IF AUTHOR PHOTO EXISTS...
-                    <div class="article-author__photo">
-                        <img src=" AUTHOR PHOTO URL HERE ">
-                    </div>
-                    END IF *@
+                    @if (!string.IsNullOrWhiteSpace(author?.Image))
+                    {
+                        <div class="article-author__photo">
+                            <img src="@author.Image">
+                        </div>
+                    }
                     <div class="article-author__solo-wrapper">
                         <span class="article-author__name">@author.Name</span>
                         <span class="article-author__contact">
@@ -86,7 +87,8 @@
     @* END MULTIPLE AUTHORs *@
     }
 
-    @if (!string.IsNullOrEmpty(Model.ListableSummary))
+    @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
+    @if (!string.IsNullOrEmpty(Model.ListableSummary) && !Model.Body.Contains(Model.ListableSummary))
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">

@@ -11,7 +11,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Article.Search
 {
-	public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, IArticleEScenicID
+	public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, IArticleEScenicID, IReferencedArticles
 	{
 		public List<Guid> Taxonomies { get; set; }
 		[IndexField(IArticleConstants.Actual_Publish_DateFieldName)]
@@ -20,6 +20,12 @@ namespace Informa.Library.Article.Search
 	    public string ArticleNumber { get; set; }
 	    public long ArticleIntegerNumber { get; set; }
 	    public string EScenicID { get; set; }
+
+	    #region Implementation of IReferencedArticles
+
+	    public List<Guid> ReferencedArticles { get; set; }
+
+	    #endregion
 	}
 }
 

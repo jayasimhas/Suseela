@@ -28,6 +28,34 @@
         max-width: 100%;
     }
 
+	.plugin-hide {
+			display: none;
+		}	
+
+    /*ul,
+    ol,
+    .GeneralRTEComponent ul,
+    .GeneralRTEComponent ol {
+        margin-bottom: 1rem;
+    }
+    li,
+    .GeneralRTEComponent li {
+        margin-left: 1.25rem;
+
+        &:before {
+        	background: url("/dist/img/icon-right-arrow.png") no-repeat;
+        	background-size: 7px auto;
+        	background-position: center left;
+        	content: "";
+        	height: 18px;
+        	width: 16px;
+        	display: inline-block;
+        	position: absolute;
+        	margin-left: -1.25rem;
+            margin-top: 2px;
+        }
+    }*/
+
     @include breakpoint('medium') {
         font-size: 1rem;
 
@@ -42,4 +70,6 @@
 
         h3 { font-size: 1.5rem; }
     }
+
+
 }

@@ -16,15 +16,25 @@
         margin-bottom: 1rem;
     }
 
+    &__list {
+        margin-bottom: 0 !important;
+    }
     &__list li {
         border-bottom: 1px solid $informa-light-gray-d;
         margin-bottom: 1rem;
+        margin-left: 0 !important;
         padding-bottom: 0.75rem;
 
         &:last-child {
             border: 0;
             margin-bottom: 0;
             padding-bottom: 0;
+        }
+
+        &:before {
+            // TODO - Refactor article and general content styles
+            background: none !important;
+            margin: 0 !important;
         }
     }
 

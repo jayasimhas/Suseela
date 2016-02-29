@@ -107,7 +107,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		/// </summary>
 		public void InitializeItems()
 		{
-			var values = SitecoreGetter.GetGraphicsRootNode();
+			var values = SitecoreClient.GetGraphicsRootNode();
 			AddRootNode(uxBrowseImages, values[1], values[0]);
 		}
 
@@ -190,7 +190,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			selection.Text = path.DisplayName;
 			try
 			{
-				app.ActiveDocument.Hyperlinks.Add(selection, SitecoreGetter.MediaPreviewUrl(path.Path), null, path.Path);
+				app.ActiveDocument.Hyperlinks.Add(selection, SitecoreClient.MediaPreviewUrl(path.Path), null, path.Path);
 			}
 			catch (WebException)
 			{
@@ -222,7 +222,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			if (path == null) return;
 			try
 			{
-				Process.Start(SitecoreGetter.MediaPreviewUrl(path.Path));
+				Process.Start(SitecoreClient.MediaPreviewUrl(path.Path));
 			}
 			catch (WebException)
 			{

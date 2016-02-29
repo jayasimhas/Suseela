@@ -23,10 +23,17 @@ key: __standard values
 content-length: 38
 
 {B5470CC3-5F50-4648-AFA8-6E7406A82BDD}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 25
+
+Apps/32x32/Search (1).png
 ----version----
 language: en
 version: 1
-revision: 58857182-00f8-43b3-bef2-f89c6e327bb7
+revision: 8e94060b-4bfb-42a5-996c-160c918c19a5
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-58857182-00f8-43b3-bef2-f89c6e327bb7
+8e94060b-4bfb-42a5-996c-160c918c19a5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160209T181018Z
+20160226T150440Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

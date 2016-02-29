@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Glass.Mapper.Sc;
+using Glass.Mapper.Sc.Fields;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
 using Informa.Web.ViewModels;
@@ -49,7 +50,7 @@ namespace Informa.Web.Models
 
             var sidebarRegex = new Regex(@"\[Sidebar#(.*?)\]");    
 
-            //var citationTokenRegex = new Regex(@"\[A#(.*?)\]");
+            var referenceArticleTokenRegex = new Regex(@"\(\[A#(.*?)\]\)");
              
             var fieldValue = expression.Compile()(this.Model);
 
@@ -66,34 +67,37 @@ namespace Informa.Web.Models
 
                 if (results.Articles.Any())
                 {
-                    replace = HtmlHelper.Partial(partialName, ArticleListableFactory.Create(results.Articles.FirstOrDefault()));
+                    var article = results.Articles.FirstOrDefault();
+                    if(article != null)
+                        replace = HtmlHelper.Partial(partialName, ArticleListableFactory.Create(article));
                 }     
                
                 fieldValue = fieldValue.Replace(match.Value, replace.ToString());
                
             }
 
-            //foreach (Match match in citationTokenRegex.Matches(fieldValue))
-            //{
-            //    string articleNumber = match.Groups[1].Value;
+			foreach (Match match in referenceArticleTokenRegex.Matches(fieldValue))
+			{
+                string articleNumber = match.Groups[1].Value;
 
 
-            //    IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-            //    filter.ArticleNumber = articleNumber;
-            //    var results = ArticleSearch.Search(filter);
+                IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+                filter.ArticleNumber = articleNumber;
+                var results = ArticleSearch.Search(filter);
 
-            //    HtmlString replace = new HtmlString("");
+                HtmlString replace = new HtmlString("");
 
-            //    if (results.Articles.Any())
-            //    {
-            //        replace = HtmlHelper.Partial(partialName, results.Articles.FirstOrDefault());
-            //    }
+			    if (results.Articles.Any())
+			    {
+			        var article = results.Articles.FirstOrDefault();
+                    if(article != null)
+                        replace = new HtmlString($"<a href='{article._Url}'>{article.Navigation_Title}</a>");
+			    }
 
-            //    fieldValue = fieldValue.Replace(match.Value, replace.ToString());
+			    fieldValue = fieldValue.Replace(match.Value, replace.ToHtmlString());
+			}
 
-            //}
-
-            return HtmlHelper.Raw(fieldValue);
+			return HtmlHelper.Raw(fieldValue);
             //return new HtmlString(this.GlassHtml.RenderLink<T>(model, field, attributes, isEditable, contents));
         }
     }

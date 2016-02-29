@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 
 namespace SitecoreTreeWalker.UI 
 {
@@ -57,7 +57,7 @@ namespace SitecoreTreeWalker.UI
 			};
 		}
 
-		public bool UpdatePreview(WordPluginModel.DealInfo info)
+		public bool UpdatePreview(DealInfo info)
 		{
 			Controls.Clear();			
 			//TODO - Work on this to check if info is null

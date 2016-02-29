@@ -23,10 +23,17 @@ key: __standard values
 content-length: 38
 
 {09B81991-B075-44C0-9DAC-8CED9B1174BD}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 18
+
+Apps/32x32/dna.png
 ----version----
 language: en
 version: 1
-revision: 7e86de8d-3805-4149-a5ca-012584cf134e
+revision: f9a1f0d6-9c71-49e9-a689-2124dddac738
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7e86de8d-3805-4149-a5ca-012584cf134e
+f9a1f0d6-9c71-49e9-a689-2124dddac738
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160102T190128Z
+20160226T150937Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -23,10 +23,17 @@ key: __standard values
 content-length: 38
 
 {9740AC60-0BED-49B3-9CB1-25CBF44B6622}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 24
+
+Apps/32x32/Warehouse.png
 ----version----
 language: en
 version: 1
-revision: 46260a46-0892-4042-89c7-2805f84348ca
+revision: d853fb37-1ba2-48ca-b392-87629c4b5567
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-46260a46-0892-4042-89c7-2805f84348ca
+d853fb37-1ba2-48ca-b392-87629c4b5567
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151230T211903Z
+20160226T150454Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

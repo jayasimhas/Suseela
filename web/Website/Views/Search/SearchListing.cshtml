@@ -1,6 +1,6 @@
 ﻿@model dynamic
 
-<section class="search-results" ng-controller="searchResultsController as results">
+<section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="searchResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
     <div class="result" ng-repeat="doc in results.docs">
@@ -10,19 +10,25 @@
                 <time datetime="2015-01-15">{{doc.searchDate | date: 'd MMM yyyy' }}</time>
             </div>
 
-            <span class="result__line-seperator" ng-if="doc.contentType !== ''"></span>
+            <span class="result__line-separator" ng-if="doc.contentType !== ''"></span>
 
             <div class="result__content-type">
                  {{doc.contentType }}
             </div>
 
-            <!-- <div class="article-preview__bookmarker pop-out__trigger js-pop-out-trigger"
+            <span class="result__line-separator" ng-if="doc.mediaType"></span> <!-- only prints if media type isn't blank -->
+
+            <div class="result__media-type" ng-if="doc.mediaType">
+                <svg><use ng-href="/dist/img/svg-sprite.svg#{{doc.mediaType}}" xlink:href=""></use></svg> <!-- example media type icon, video -->
+            </div>
+
+            <div class="result__bookmark pop-out__trigger js-pop-out-trigger"
                  data-pop-out-type="sign-in"
                  data-pop-out-align="right">
                 <svg class="article-prologue__share-icon">
-                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use> <!-- if an item is bookmarked, change svg link to svg-sprite.svg#bookmarked -->
                 </svg>
-            </div> -->
+            </div>
 
             <div class="result__publication">{{ doc.publicationTitle }} </div>
 
@@ -34,16 +40,15 @@
 
             <p class="result__description">{{ doc.summary }}</p>
 
-            <!-- <div class="article-preview__tags bar-separated-link-list">
-                <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
-                    <a href="{{tax.url}}">
-                        {{tax.title}}
-                    </a>
-                </span>
-                <span ng-if="!$last">
-                    ,
-                </span>
-            </div> -->
+             <div class="result__tags"  >
+
+                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a href="{{tax.url}}">
+                    {{tax.title}}
+                </a>
+                     <span ng-if="!$last">  | </span> <!-- only prints if there are multiple tags -->
+                 </span>
+                
+            </div>
 
         </div>
     </div>
