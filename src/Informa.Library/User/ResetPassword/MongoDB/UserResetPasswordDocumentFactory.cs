@@ -10,7 +10,6 @@ namespace Informa.Library.User.ResetPassword.MongoDB
 			return new UserResetPasswordDocument
 			{
 				Expiration = userResetPassword.Expiration,
-				Name = userResetPassword.Name,
 				Token = userResetPassword.Token,
 				Username = userResetPassword.Username
 			};

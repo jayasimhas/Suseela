@@ -7,6 +7,5 @@ namespace Informa.Library.User.ResetPassword
 		string Token { get; }
 		string Username { get; }
 		DateTime Expiration { get; }
-		string Name { get; }
 	}
 }
