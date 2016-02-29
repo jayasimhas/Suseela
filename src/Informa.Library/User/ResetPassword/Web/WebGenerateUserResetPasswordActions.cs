@@ -1,11 +1,9 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Informa.Library.User.ResetPassword.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class WebGenerateUserResetPasswordActions : IWebGenerateUserResetPasswordActions
 	{
 		protected readonly IEnumerable<IWebGenerateUserResetPasswordAction> Actions;
