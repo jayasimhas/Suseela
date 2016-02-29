@@ -3,7 +3,7 @@
     align-items: flex-start;
 
     a {
-        @include textMix('Roboto', 0.875rem, 400);
+        @include textMix('Roboto', 0.9375rem, 400);
         border-right: 1px solid $informa-light-gray-d;
         display: inline-block;
         padding: 0 0.75rem;
