@@ -21,6 +21,8 @@ var InformaFacetController = function ($scope, $location,$http, searchService, s
         //_this.CustomStartDate = jq("#facet-by-start-date");
         //_this.CustomEndDate = jq("#facet-by-end-date");
 
+        //_this.CustomStartDate = '';
+        //_this.CustomEndDate = '';
 
         //var filter = _this.getFilter('publicationdate');
         //if (filter._value != '') {
@@ -127,15 +129,15 @@ var InformaFacetController = function ($scope, $location,$http, searchService, s
                 filter.setValue("");
             } else {
                 var startDate = datesObject[dateFilter];
-                var endDate = datesObject['today'];
+                var endDate = datesObject['day'];
                 _this.currentDateRange = dateFilter;
 
                 filterDateLabel.setValue(dateFilter);
                 filter.setValue(startDate + ";" + endDate);
             }
-            _this.CustomStartDate.val('');
-            _this.CustomEndDate.val('');
-            _this.checkSelectedDateRange();
+            //_this.CustomStartDate.val('');
+           // _this.CustomEndDate.val('');
+           // _this.checkSelectedDateRange();
             _this.update();
         }
 

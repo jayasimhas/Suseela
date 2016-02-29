@@ -12,7 +12,7 @@ templatekey: Date Range Refinement
 ----version----
 language: en
 version: 1
-revision: 8a2b05c5-ab42-4a93-af31-7a5d15368ddf
+revision: ee7bcfb1-baaa-4d8c-a406-71c513367b08
 
 ----field----
 field: {3162CD52-3D1C-41F1-88A1-E5D7C4E89215}
@@ -32,9 +32,9 @@ date
 field: {605FCDD4-DB1F-43B1-A138-FC22F5C563F8}
 name: Field Name
 key: field name
-content-length: 10
+content-length: 14
 
-SearchDate
+searchdate_tdt
 ----field----
 field: {0C554F2D-ABED-43C5-80BB-3236EDB7884A}
 name: Filter By Label
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-8a2b05c5-ab42-4a93-af31-7a5d15368ddf
+ee7bcfb1-baaa-4d8c-a406-71c513367b08
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160210T161433Z
+20160229T021342Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
