@@ -1,6 +1,9 @@
 @model Informa.Web.ViewModels.IHeaderViewModel
 @*@model Informa.Web.Areas.Account.Models.LoginViewModel*@
 <header>
+    <div>
+        @Html.Raw(Model.CookiePolicyText)
+    </div>
     <div class="header__informa-permabanner">
         informa
     </div>

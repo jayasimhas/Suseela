@@ -40,6 +40,8 @@ namespace Informa.Web.ViewModels
 				return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
 			}
 		}
+
+	    public string CookiePolicyText => TextTranslator.Translate("Global.CookiePolicy");
 		public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
 		public string MyAccountLinkText => TextTranslator.Translate("Header.MyAccount");
 		public string SignOutLinkText => TextTranslator.Translate("Header.SignOut");
