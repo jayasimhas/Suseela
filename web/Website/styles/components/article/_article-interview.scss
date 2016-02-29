@@ -11,15 +11,16 @@
         line-height: 1.75rem;
         margin-bottom: 1.25rem;
     }
+
     &__question:before,
     &__answer:before {
         @include textMix('Roboto Condensed', 0.875rem, 700);
         display: inline-block;
         height: 1.75rem;
-        line-height: 1.125rem;
+        // line-height: 1.125rem;  // RH removed 2/26, this caused a bug (IIPP-574) in IE
         margin-left: -2.5rem;
         margin-right: 0.5rem;
-        padding: 0.25rem;
+        // padding: 0.25rem;  // RH removed 2/26, this caused a bug (IIPP-574) in IE
         text-align: center;
         vertical-align: baseline;
         width: 1.75rem;
@@ -36,6 +37,7 @@
             content: "Q";
         }
     }
+
     &__answer {
         border-left: 1px solid #e9bf91;
         font-size: 0.925rem;
@@ -46,6 +48,8 @@
             background-color: #fae4be;
             border: 1px solid #e9bf91;
             content: "A";
+            position: relative;
+            top: -1px;
         }
     }
 

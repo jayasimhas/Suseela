@@ -25,6 +25,8 @@ namespace SitecoreTreeWalker.Sitecore
 		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
         private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
 
+        private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
+
 
         public static List<TaxonomyStruct> SearchTaxonomy(string term)
 		{
@@ -623,6 +625,13 @@ namespace SitecoreTreeWalker.Sitecore
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}AuthenticateUser", new LoginModel() { Username = username, Password = password }).Result;
                 var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
+
+                var cookies = _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL));
+                
+                if(cookies != null && cookies.Count > 0 && string.Equals(".ASPXAUTH", cookies[0].Name))
+                    _reader.WriteCookie(cookies[0].Name);
+
+
                 return userStatus;
             }
         }   

@@ -626,6 +626,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\SubnavigationViewModel.cs" />
     <Compile Include="ViewModels\ArticleFeaturedImage.cs" />
     <Compile Include="ViewModels\ArticleListItemModel.cs" />
     <Compile Include="ViewModels\ArticleListItemModelFactory.cs" />
@@ -943,6 +944,8 @@
     <Content Include="Views\Search\SearchWrapper.cshtml" />
     <Content Include="Views\Article\_ArticleSidebar.cshtml" />
     <Content Include="Views\Shared\Components\SectionTitle.cshtml" />
+    <Content Include="Views\Shared\Components\CSSBlock.cshtml" />
+    <Content Include="Views\Shared\Components\Subnavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">

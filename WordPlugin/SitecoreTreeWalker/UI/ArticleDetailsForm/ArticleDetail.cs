@@ -82,18 +82,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 		{
 			uxPreview.Text = @"Preview Article";
 			uxPreview.Enabled = true;
-
-			uxMobilePreview.Text = @"Preview Mobile Article";
-			uxMobilePreview.Enabled = true;
 		}
 
 		public void DisablePreview()
 		{
 			uxPreview.Text = @"Article Not Linked";
 			uxPreview.Enabled = false;
-
-			uxMobilePreview.Text = @"Mobile Article Not Linked";
-			uxMobilePreview.Enabled = false;
 		}
 
 		#endregion
