@@ -154,10 +154,7 @@ $(document).ready(function() {
 		if($('.main-menu').hasClass('is-active')) {
 			$('.main-menu').removeClass('is-active');
 			$('.menu-toggler').removeClass('is-active');
-			$('body').css({
-				overflow: 'auto',
-				height: 'auto'
-			});
+			$('body').removeClass('is-frozen');
 			if($(window).scrollTop() <= 100) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
@@ -165,9 +162,7 @@ $(document).ready(function() {
 			$('.main-menu').addClass('is-active');
 			$('.menu-toggler').addClass('is-active');
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
-			$('body').css({
-				'overflow-y': 'hidden'
-			});
+			$('body').addClass('is-frozen');
 		}
 	});
 
@@ -229,6 +224,14 @@ $(document).ready(function() {
 		poc.closePopOut();
 	});
 
+	// Make sure all external links open in a new window/tab
+	$("a[href^=http]").each(function(){
+		if(this.href.indexOf(location.hostname) == -1) {
+           $(this).attr({
+               target: "_blank",
+           });
+	  	}
+	});
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
