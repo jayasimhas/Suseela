@@ -211,16 +211,24 @@
       </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Chunks\Insight Platform.item">
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Chunks\Insight Platform\Download Word.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip\Insight Platform.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip\Insight Platform\Download Word.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Ribbons.item">
