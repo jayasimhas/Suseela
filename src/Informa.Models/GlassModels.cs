@@ -1012,10 +1012,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=IArticle</para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+					IEnumerable<IArticle> Referenced_Articles  {get; set;}
 								/// <summary>
 					/// The Referenced Companies field.
 					/// <para></para>
@@ -1294,10 +1294,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=IArticle</para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+						IEnumerable<IArticle> Referenced_Articles  {get; set;}
 										/// <summary>
 						/// The Referenced Companies field.
 						/// <para></para>
@@ -8053,6 +8053,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID System_Maintenance_TextFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
 			public const string System_Maintenance_TextFieldName = "System Maintenance Text";
 
+							public static readonly ID System_Maintenance_Text__RawFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
+				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
 						
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
