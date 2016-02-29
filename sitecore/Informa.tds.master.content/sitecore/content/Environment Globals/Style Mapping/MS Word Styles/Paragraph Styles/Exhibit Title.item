@@ -19,7 +19,7 @@ content-length: 4
 ----version----
 language: en
 version: 1
-revision: 33291ea8-fe67-490a-a173-562eb759ba07
+revision: 8cc9957e-52f8-4ebc-84fa-177b2a93d198
 
 ----field----
 field: {03CC96C5-7903-41DE-A057-2DDD1D7EA034}
@@ -32,16 +32,16 @@ content-length: 17
 field: {6FA7501F-858E-42B1-BF9A-073E12B9AFB1}
 name: CSS Element
 key: css element
-content-length: 1
+content-length: 2
 
-p
+h4
 ----field----
 field: {D8B1A6CB-7396-4D32-90AD-17EED882404D}
 name: CSS Class
 key: css class
-content-length: 13
+content-length: 22
 
-exhibit-title
+article-exhibit__title
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -53,9 +53,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 15
+content-length: 16
 
-20110526T142300
+20110526T182300Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-33291ea8-fe67-490a-a173-562eb759ba07
+8cc9957e-52f8-4ebc-84fa-177b2a93d198
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 16
 
-20110909T160841:634511813219084933
+20160229T200139Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -18,13 +18,6 @@ namespace SitecoreTreeWalker.Util
         public static List<string> ImageStyles = new List<string> { DocumentAndParagraphStyles.ExhibitNumberStyle, DocumentAndParagraphStyles.ExhibitTitleStyle, DocumentAndParagraphStyles.ImagePreviewStyle, DocumentAndParagraphStyles.SourceStyle, DocumentAndParagraphStyles.ExhibitCaptionStyle52 };
         protected OptimizedCharacterStyleTransformer Transformer;
 
-        public static Dictionary<string, string> imageFloatDictionary = new Dictionary<string, string>
-        {
-            { "left", "article-inline-image--pull-left"},
-            { "right", "article-inline-image--pull-right"},
-            { "none", "article-inline-image"},
-        };
-
 		public ImageReferenceBuilder(Dictionary<string, WordStyleStruct> styles, OptimizedCharacterStyleTransformer transformer)
         {
             ParagraphStyles = styles;
