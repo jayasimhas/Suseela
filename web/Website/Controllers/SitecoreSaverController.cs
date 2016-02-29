@@ -30,7 +30,7 @@ namespace Informa.Web.Controllers
 			_articleSearch = search;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
 		public ArticleStruct Post([FromBody] CreateArticleRequest content)
 		{
 			using (new SecurityDisabler())
@@ -76,7 +76,8 @@ namespace Informa.Web.Controllers
 			_sitecoreSaverUtil = articleUtil;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
+        [Authorize]
 		public void Post([FromBody] SaveArticleTextByGuid content)
 		{
 			ArticleItem item = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticleGuid);
@@ -96,8 +97,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public void Post([FromBody] SaveArticleText content)
+		[HttpPost][Authorize]
+        [Authorize]
+        public void Post([FromBody] SaveArticleText content)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			_sitecoreSaverUtil.SaveArticleDetailsAndText(article, content.WordText, content.ArticleData);
@@ -114,7 +116,8 @@ namespace Informa.Web.Controllers
 			_sitecoreSaver = sitecoreSaver;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
+        [Authorize]
 		public void Post([FromBody] SaveArticleDetails content)
 		{
 			_sitecoreSaver.SaveArticleDetails(content.ArticleNumber, content.ArticleData, false, false);
@@ -131,8 +134,9 @@ namespace Informa.Web.Controllers
 			_sitecoreSaver = sitecoreSaver;
 		}
 
-		[HttpPost]
-		public void Post([FromBody] SaveArticleDetailsByGuid content)
+		[HttpPost][Authorize]
+        [Authorize]
+        public void Post([FromBody] SaveArticleDetailsByGuid content)
 		{
 			_sitecoreSaver.SaveArticleDetails(content.ArticleGuid, content.ArticleData, false, false);
 		}
@@ -166,7 +170,8 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
+        [Authorize]
 		public CheckoutStatus Post([FromBody] string articleNumber)
 		{
 			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
@@ -187,8 +192,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public CheckoutStatus Post([FromBody] Guid articleGuid)
+		[HttpPost][Authorize]
+        [Authorize]
+        public CheckoutStatus Post([FromBody] Guid articleGuid)
 		{
 			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
 			return _articleUtil.GetLockedStatus(article);
@@ -205,8 +211,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] string articleNumber)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] string articleNumber)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			return _articleUtil.DoesArticleHaveText(article);
@@ -225,8 +232,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] Guid articleGuid)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] Guid articleGuid)
 		{
 			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			return _articleUtil.DoesArticleHaveText(article);
@@ -243,8 +251,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] string articleNumber)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] string articleNumber)
 		{
 			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
 			return article != null;
@@ -261,8 +270,9 @@ namespace Informa.Web.Controllers
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] Guid articleGuid)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] Guid articleGuid)
 		{
 			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
 			return article != null;
@@ -281,8 +291,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public List<ArticlePreviewInfo> Post([FromBody] List<Guid> guids)
+		[HttpPost][Authorize]
+        [Authorize]
+        public List<ArticlePreviewInfo> Post([FromBody] List<Guid> guids)
 		{
 			var previews = new List<ArticlePreviewInfo>();
 			foreach (Guid guid in guids)
@@ -306,8 +317,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public ArticlePreviewInfo Post([FromBody] string articleNumber)
+		[HttpPost][Authorize]
+        [Authorize]
+        public ArticlePreviewInfo Post([FromBody] string articleNumber)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new ArticlePreviewInfo();
@@ -326,8 +338,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public int Post([FromBody] string articleNumber)
+		[HttpPost][Authorize]
+        [Authorize]
+        public int Post([FromBody] string articleNumber)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 			if (article == null)
@@ -350,8 +363,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public int Post([FromBody] Guid articleGuid)
+		[HttpPost][Authorize]
+        [Authorize]
+        public int Post([FromBody] Guid articleGuid)
 		{
 			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			if (article == null)
@@ -372,8 +386,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] string articleNumber)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] string articleNumber)
 		{
 			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
 			return _articleUtil.LockArticle(article);
@@ -392,8 +407,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] Guid articleGuid)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] Guid articleGuid)
 		{
 			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
 			return _articleUtil.LockArticle(article);
@@ -410,8 +426,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] string articleNumber)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] string articleNumber)
 		{
 			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
 			return _articleUtil.UnlockArticle(article);
@@ -430,8 +447,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public bool Post([FromBody] Guid articleGuid)
+		[HttpPost][Authorize]
+        [Authorize]
+        public bool Post([FromBody] Guid articleGuid)
 		{
 			Item article = _sitecoreMasterService.GetItem<Item>(articleGuid);
 			return _articleUtil.UnlockArticle(article);
@@ -451,8 +469,9 @@ namespace Informa.Web.Controllers
 			_sitecoreSaverUtil = sitecoreSaverUtil;
 		}
 
-		[HttpPost]
-		public int Post([FromBody] SendDocumentToSitecoreByGuid content)
+		[HttpPost][Authorize]
+        [Authorize]
+        public int Post([FromBody] SendDocumentToSitecoreByGuid content)
 		{
 			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(content.ArticlGuid);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
@@ -471,8 +490,9 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
-		public int Post([FromBody] SendDocumentToSitecore content)
+		[HttpPost][Authorize]
+        [Authorize]
+        public int Post([FromBody] SendDocumentToSitecore content)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(content.ArticleNumber);
 			return _sitecoreSaverUtil.SendDocumentToSitecore(article, content.Data, content.Extension);
@@ -489,7 +509,7 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
 		public string Post([FromBody] string articleNumber)
 		{
 			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
@@ -507,7 +527,7 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
 		public string Post([FromBody] string articleNumber)
 		{
 			return _articleUtil.PreviewArticleURL(articleNumber, WebUtil.GetHostName());
@@ -524,7 +544,7 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
 		public string Post([FromBody] string articleNumber)
 		{
 			var options = new LinkUrlOptions();
@@ -548,7 +568,7 @@ namespace Informa.Web.Controllers
 			_articleUtil = articleUtil;
 		}
 
-		[HttpPost]
+		[HttpPost][Authorize]
 		public string Post([FromBody] string articleNumber)
 		{
 			Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
