@@ -24,8 +24,7 @@ namespace SitecoreTreeWalker.Util
     public class AlertDisabler : IDisposable
     {
         private readonly Word.Application _application;
-
-        public AlertDisabler(Word.Application application)
+		public AlertDisabler(Word.Application application)
         {
             _application = application;
             _application.DisplayAlerts = WdAlertLevel.wdAlertsNone;
@@ -42,10 +41,16 @@ namespace SitecoreTreeWalker.Util
 
         public const string BlockquoteName = "2.4 Quote Box";
         public const string DocxFormatName = "Word12";
+		public Dictionary<string, string> imageFloatDictionary = new Dictionary<string, string>
+		{
+			{ "left", "article-inline-image--pull-left"},
+			{ "right", "article-inline-image--pull-right"},
+			{ "none", "article-inline-image"},
+		};
 
-        //These properties are built so that the accessing of the sitecore webservices is deferred until after 
-        //the user has actually logged on. 
-        protected Dictionary<string, WordStyleStruct> _paragraphStyles;
+		//These properties are built so that the accessing of the sitecore webservices is deferred until after 
+		//the user has actually logged on. 
+		protected Dictionary<string, WordStyleStruct> _paragraphStyles;
 
         protected Dictionary<string, WordStyleStruct> ParagraphStyles
         {
@@ -655,16 +660,20 @@ namespace SitecoreTreeWalker.Util
                     if (imageTagCount == 0)
                     {
                         divElement = new XElement("section");
-                        divElement.SetAttributeValue("class", "article-image");
+                        divElement.SetAttributeValue("class", "article-exhibit");
                         xData.Add(divElement);
                     }
 
                     //Get the float Value from the image hyperlink (if it is an image) and set it to the article-image element
-                    var hyprlnk = paragraph.Range.Hyperlinks.Cast<Hyperlink>().FirstOrDefault();
-                    if (hyprlnk != null && string.IsNullOrEmpty(hyprlnk.ScreenTip) == false)
-                        divElement.SetAttributeValue("style", "float:" + hyprlnk.ScreenTip.ToLower());
+                    var hyprlnk = paragraph.Range.Hyperlinks.Cast<Hyperlink>().FirstOrDefault();					
+	                if (hyprlnk != null && string.IsNullOrEmpty(hyprlnk.ScreenTip) == false)
+	                {
+						string classValue;
+						classValue = imageFloatDictionary.TryGetValue(hyprlnk.ScreenTip.ToLower(), out classValue) ? classValue : string.Empty;
+						divElement.SetAttributeValue("class", classValue);
+	                }
 
-                    var imageTag = ImageReferenceBuilder.Parse(paragraph);
+	                var imageTag = ImageReferenceBuilder.Parse(paragraph);
                     divElement.Add(imageTag);
                     imageTagCount++;
                     continue;

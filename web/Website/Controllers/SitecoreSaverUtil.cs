@@ -241,9 +241,15 @@ namespace Informa.Web.Controllers
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
 				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
 				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
-
-				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
-				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				if (articleStruct.RelatedInlineArticles != null && articleStruct.RelatedInlineArticles.Any())
+				{
+					newArticle.Referenced_Articles =
+						articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				}
+				if (articleStruct.RelatedArticles != null && articleStruct.RelatedArticles.Any())
+				{
+					newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				}
 
 				newArticle.Featured_Image_16_9 = new Image { MediaId = articleStruct.FeaturedImage };
 				newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;
