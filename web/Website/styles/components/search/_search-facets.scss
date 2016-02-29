@@ -4,11 +4,28 @@
   margin-bottom: 20px;
 
   @include breakpoint('medium') {
-      display: none;
+    display: none;
   }
 }
 
 .facets {
+
+  &__mobile-button {
+    display: none;
+
+    @include breakpoint('medium') {
+      display: block;
+      width: 100%;
+      margin-bottom: 30px;
+      border: 0;
+      background-color: $informa-light-orange;
+      text-align: center;
+
+      h6 {
+        padding: 10px;
+      }
+    }
+  }
 
   &__header {
     padding: 20px;
