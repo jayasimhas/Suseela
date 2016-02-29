@@ -490,7 +490,9 @@
     <Compile Include="Util\CharacterStyles\SubscriptStyle.cs" />
     <Compile Include="Util\CharacterStyles\SuperscriptStyle.cs" />
     <Compile Include="Util\CharacterStyles\UnderlineStyle.cs" />
+    <Compile Include="Util\Document\ArticleDocumentManager.cs" />
     <Compile Include="Util\Document\ArticleDocumentMetadataParser.cs" />
+    <Compile Include="Util\Document\ArticleDocumentValidator.cs" />
     <Compile Include="Util\Document\DocumentAndParagraphStyles.cs" />
     <Compile Include="Util\Document\DocumentPropertyEditor.cs" />
     <Compile Include="Util\Document\InlineReferenceParser.cs" />
