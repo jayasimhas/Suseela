@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Informa.Library.Article.Search;
 using Sitecore.ContentSearch.Linq;
 using Informa.Library.Search.Results;
@@ -44,7 +45,20 @@ namespace Informa.Library.Search.Extensions
             //var index = new LinqToSolrIndex<ArticleSearchResultItem>();
         }
 
-        
+        public static IQueryable<T> FilteryByRelatedId<T>(this IQueryable<T> source, IReferencedArticleFilter filter)
+        where T : IReferencedArticles
+        {
+            if (source == null || filter == null || filter.ReferencedArticle.Equals(Guid.Empty))
+            {
+                return source;
+            }
+
+            var predicate = PredicateBuilder.True<T>();
+            predicate = predicate.Or(i => i.ReferencedArticles.Contains(filter.ReferencedArticle));
+
+            return source.Filter(predicate);
+        }
+
 
         public static IQueryable<T> FilteryByEScenicID<T>(this IQueryable<T> source, IArticleEScenicIDFilter filter)
             where T : IArticleEScenicID

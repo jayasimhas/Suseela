@@ -2,8 +2,7 @@
 <div class="pop-out js-pop-out__sign-in">
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
-		<form class="pop-out__sign-in">
-
+		<div class="pop-out__sign-in">
 			<div class="dismiss-button" data-target-element=".js-pop-out__sign-in">
 				<svg class="dismiss-button__icon">
 					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
@@ -14,6 +13,6 @@
 
 			@{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
 
-		</form>
+		</div>
 	</div>
 </div>

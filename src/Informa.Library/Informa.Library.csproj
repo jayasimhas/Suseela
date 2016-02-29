@@ -26,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-NoTds|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -42,7 +44,8 @@
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-NoTds|AnyCPU'">
     <OutputPath>bin\Release-NoTds\</OutputPath>
@@ -51,7 +54,8 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -137,6 +141,10 @@
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Buckets">
       <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
@@ -265,6 +273,15 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="Search\Results\IReferencedArticles.cs" />
+    <Compile Include="User\Authentication\IAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\IAuthenticateUserResult.cs" />
+    <Compile Include="User\Authentication\AuthenticateUserResultState.cs" />
+    <Compile Include="User\Authentication\ILoginWebUser.cs" />
+    <Compile Include="User\Authentication\ILoginWebUserResult.cs" />
+    <Compile Include="User\Authentication\ILogoutWebUser.cs" />
+    <Compile Include="User\Authentication\ISitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\Authentication\LoginWebUser.cs" />
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
@@ -272,6 +289,8 @@
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\LoginRedirect.cs" />
     <Compile Include="CustomSitecore\Ribbon\DownloadWord.cs" />
+    <Compile Include="CustomSitecore\Mvc\CustomValidateFormHandlerAttribute.cs" />
+    <Compile Include="CustomSitecore\Mvc\CustomValidHttpPostAttribute.cs" />
     <Compile Include="Publishing\IPublishingStatus.cs" />
     <Compile Include="Publishing\PublishingStatus.cs" />
     <Compile Include="Publishing\IPublishingStatusCheck.cs" />
@@ -319,8 +338,7 @@
     <Compile Include="Presentation\GlassRenderingParametersContext.cs" />
     <Compile Include="Presentation\GlassRenderingParametersContext`1.cs" />
     <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
-    <Compile Include="Authentication\IUserAuthenticationContext.cs" />
-    <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />
+    <Compile Include="User\Authentication\LoginWebUserResult.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
     <Compile Include="Corporate\MockCorporateAccountNameContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
@@ -432,6 +450,14 @@
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
     <Compile Include="Subscription\IUserSubscriptionContext.cs" />
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
+    <Compile Include="User\Authentication\LogoutWebUser.cs" />
+    <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\ISitecoreUserContext.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
+    <Compile Include="User\SitecoreUserContext.cs" />
+    <Compile Include="User\Authentication\AuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
@@ -446,6 +472,8 @@
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />
+    <Compile Include="AntiForgery\AntiForgeryValidate.cs" />
+    <Compile Include="AntiForgery\HtmlHelperExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

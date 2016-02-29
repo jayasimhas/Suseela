@@ -153,9 +153,7 @@ namespace Informa.Web.TestData
             return _summaries[index];
         }
 
-
-        public static LoginViewModel LoginModel => new LoginViewModel();    
-
+    
         public static IListable Article => new ListableModel
         {
             ListableAuthors = null,
