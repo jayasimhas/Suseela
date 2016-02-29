@@ -176,9 +176,9 @@ namespace SitecoreTreeWalker.Util.Document
             fillArticleDetails();
 
             string guid = _articleDetails.ArticleGuid.ToString();
-            string domain = ApplicationConfig.GetPropertyValue("DomainName");
+			string domain = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 
-            if (domain.StartsWith("http") == false)
+			if (domain.StartsWith("http") == false)
                 domain = "http://" + domain;
 
             return domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + (isMobile ? "&mobile=1" : String.Empty);
