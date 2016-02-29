@@ -29,10 +29,11 @@ namespace SitecoreTreeWalker.Sitecore
 
 	    public SitecoreClient()
 	    {
-	        if (_sitecoreUser.Username != null)
+	        if (_sitecoreUser.Username != null && _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL)) == null)
 	        {
-	            var cookie = UserCredentialReader.GetReader().GetCookie(_sitecoreUser.Username);
-	            _handler.CookieContainer.Add(cookie);
+                _sitecoreUser.Authenticate(_sitecoreUser.Username, _sitecoreUser.Password);
+	            //var cookie = UserCredentialReader.GetReader().GetCookie(_sitecoreUser.Username);
+	            //_handler.CookieContainer.Add(cookie);
 	        }
 
 	    }
