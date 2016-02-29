@@ -452,9 +452,11 @@
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="User\Authentication\LogoutWebUser.cs" />
     <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\IFindUserByEmail.cs" />
     <Compile Include="User\ISitecoreUserContext.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
+    <Compile Include="User\IUser.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />

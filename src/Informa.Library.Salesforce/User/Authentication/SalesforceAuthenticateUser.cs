@@ -34,7 +34,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 			return new SalesforceAuthenticateUserResult
 			{
 				State = AuthenticateUserResultState.Success,
-				User = new SalesforceUser
+				User = new SalesforceAuthenticatedUser
 				{
 					Username = username,
 					Email = username,
