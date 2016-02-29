@@ -204,6 +204,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Section_Title  {get; set;}
+								/// <summary>
+					/// The Subnavigation Items field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 7d43ad1f-9748-4438-9cb0-74c457376526</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 				}
 
 	
@@ -234,6 +243,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Section_Title  {get; set;}
+										/// <summary>
+						/// The Subnavigation Items field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 7d43ad1f-9748-4438-9cb0-74c457376526</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 						}
 	
 	public static partial class IGeneral_Content_PageConstants{
@@ -250,6 +268,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Section_TitleFieldId = new ID("e3a3e51e-a8f0-4ee1-986f-2562f9d279de");
 			public const string Section_TitleFieldName = "Section Title";
+
+						
+					
+			public static readonly ID Subnavigation_ItemsFieldId = new ID("7d43ad1f-9748-4438-9cb0-74c457376526");
+			public const string Subnavigation_ItemsFieldName = "Subnavigation Items";
 
 						
 					
@@ -989,10 +1012,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=IArticle</para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+					IEnumerable<IArticle> Referenced_Articles  {get; set;}
 								/// <summary>
 					/// The Referenced Companies field.
 					/// <para></para>
@@ -1271,10 +1294,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=IArticle</para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
+						IEnumerable<IArticle> Referenced_Articles  {get; set;}
 										/// <summary>
 						/// The Referenced Companies field.
 						/// <para></para>
@@ -1608,6 +1631,113 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Authored Content List Item View";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
+{
+
+
+ 	/// <summary>
+	/// IWorkflow Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/System/Workflow/Workflow</para>	
+	/// <para>ID: 1c0acc50-37be-4742-b43c-96a07a7410a5</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IWorkflowConstants.TemplateIdString)]
+	public partial interface IWorkflow : IGlassBase 
+	{
+								/// <summary>
+					/// The Default Comment Dialog Height field.
+					/// <para></para>
+					/// <para>Field Type: Integer</para>		
+					/// <para>Field ID: 591f16da-4020-4ffd-9560-ef4996fc2a61</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IWorkflowConstants.Default_Comment_Dialog_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+					int Default_Comment_Dialog_Height  {get; set;}
+								/// <summary>
+					/// The Default Comment Template field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 2a59c3dc-e9ab-4108-beb2-1ca9aee56a33</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IWorkflowConstants.Default_Comment_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Default_Comment_Template  {get; set;}
+								/// <summary>
+					/// The Initial state field.
+					/// <para></para>
+					/// <para>Field Type: reference</para>		
+					/// <para>Field ID: b5166b38-e4bf-4410-953c-2037f2bf6a56</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Initial_State  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IWorkflow Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/System/Workflow/Workflow</para>	
+		/// <para>ID: 1c0acc50-37be-4742-b43c-96a07a7410a5</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IWorkflow__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Default Comment Dialog Height field.
+						/// <para></para>
+						/// <para>Field Type: Integer</para>		
+						/// <para>Field ID: 591f16da-4020-4ffd-9560-ef4996fc2a61</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IWorkflowConstants.Default_Comment_Dialog_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+						int Default_Comment_Dialog_Height  {get; set;}
+										/// <summary>
+						/// The Default Comment Template field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 2a59c3dc-e9ab-4108-beb2-1ca9aee56a33</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IWorkflowConstants.Default_Comment_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Default_Comment_Template  {get; set;}
+										/// <summary>
+						/// The Initial state field.
+						/// <para></para>
+						/// <para>Field Type: reference</para>		
+						/// <para>Field ID: b5166b38-e4bf-4410-953c-2037f2bf6a56</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Initial_State  {get; set;}
+						}
+	
+	public static partial class IWorkflowConstants{
+
+			public const string TemplateIdString = "1c0acc50-37be-4742-b43c-96a07a7410a5";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Workflow";
+
+					
+			public static readonly ID Default_Comment_Dialog_HeightFieldId = new ID("591f16da-4020-4ffd-9560-ef4996fc2a61");
+			public const string Default_Comment_Dialog_HeightFieldName = "Default Comment Dialog Height";
+
+						
+					
+			public static readonly ID Default_Comment_TemplateFieldId = new ID("2a59c3dc-e9ab-4108-beb2-1ca9aee56a33");
+			public const string Default_Comment_TemplateFieldName = "Default Comment Template";
+
+						
+					
+			public static readonly ID Initial_StateFieldId = new ID("b5166b38-e4bf-4410-953c-2037f2bf6a56");
+			public const string Initial_StateFieldName = "Initial state";
+
+						
 			
 
 	}
@@ -2528,6 +2658,113 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					
 			public static readonly ID SubjectsFieldId = new ID("bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b");
 			public const string SubjectsFieldName = "Subjects";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
+{
+
+
+ 	/// <summary>
+	/// IState Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/System/Workflow/State</para>	
+	/// <para>ID: 4b7e2da9-de43-4c83-88c3-02f042031d04</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IStateConstants.TemplateIdString)]
+	public partial interface IState : IGlassBase 
+	{
+								/// <summary>
+					/// The Description field.
+					/// <para>このワークフロー状態にあるアイテムを編集する際に表示される説明です。</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 8c980a06-4059-4939-9c6f-a10f751ceb64</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStateConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Description  {get; set;}
+								/// <summary>
+					/// The Final field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: fb8abc73-7acf-45a0-898c-d3ccb889c3ee</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStateConstants.FinalFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Final  {get; set;}
+								/// <summary>
+					/// The Preview publishing targets field.
+					/// <para>このワークフロー状態にあるアイテムは、最終状態ではない場合でも、プレビュー モードのパブリッシュ ターゲットにパブリッシュすることができます</para>
+					/// <para>Field Type: Checklist</para>		
+					/// <para>Field ID: a438dfd1-154e-4584-b7e3-d1e28315e415</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStateConstants.Preview_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Preview_Publishing_Targets  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IState Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/System/Workflow/State</para>	
+		/// <para>ID: 4b7e2da9-de43-4c83-88c3-02f042031d04</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IState__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Description field.
+						/// <para>このワークフロー状態にあるアイテムを編集する際に表示される説明です。</para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 8c980a06-4059-4939-9c6f-a10f751ceb64</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStateConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Description  {get; set;}
+										/// <summary>
+						/// The Final field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: fb8abc73-7acf-45a0-898c-d3ccb889c3ee</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStateConstants.FinalFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Final  {get; set;}
+										/// <summary>
+						/// The Preview publishing targets field.
+						/// <para>このワークフロー状態にあるアイテムは、最終状態ではない場合でも、プレビュー モードのパブリッシュ ターゲットにパブリッシュすることができます</para>
+						/// <para>Field Type: Checklist</para>		
+						/// <para>Field ID: a438dfd1-154e-4584-b7e3-d1e28315e415</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStateConstants.Preview_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Preview_Publishing_Targets  {get; set;}
+						}
+	
+	public static partial class IStateConstants{
+
+			public const string TemplateIdString = "4b7e2da9-de43-4c83-88c3-02f042031d04";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "State";
+
+					
+			public static readonly ID DescriptionFieldId = new ID("8c980a06-4059-4939-9c6f-a10f751ceb64");
+			public const string DescriptionFieldName = "Description";
+
+						
+					
+			public static readonly ID FinalFieldId = new ID("fb8abc73-7acf-45a0-898c-d3ccb889c3ee");
+			public const string FinalFieldName = "Final";
+
+						
+					
+			public static readonly ID Preview_Publishing_TargetsFieldId = new ID("a438dfd1-154e-4584-b7e3-d1e28315e415");
+			public const string Preview_Publishing_TargetsFieldName = "Preview publishing targets";
 
 						
 			
@@ -8030,6 +8267,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID System_Maintenance_TextFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
 			public const string System_Maintenance_TextFieldName = "System Maintenance Text";
 
+							public static readonly ID System_Maintenance_Text__RawFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
+				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
 						
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
