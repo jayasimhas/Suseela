@@ -38,7 +38,11 @@ namespace Informa.Library.User.ResetPassword.Web
 
 			Actions.ToList().ForEach(a => a.Process(userResetPassword));
 
-			return CreateResult(WebGenerateUserResetPasswordStatus.Success);
+			var result = CreateResult(WebGenerateUserResetPasswordStatus.Success);
+
+			result.Token = userResetPassword.Token;
+
+			return result;
 		}
 
 		public WebGenerateUserResetPasswordResult CreateResult(WebGenerateUserResetPasswordStatus status)

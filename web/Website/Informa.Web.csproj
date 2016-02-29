@@ -697,6 +697,7 @@
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
+    <Compile Include="ViewModels\TestUserResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
   </ItemGroup>
@@ -927,7 +928,7 @@
     <Content Include="Views\Shared\PopOuts\SignIn.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailArticle.cshtml" />
     <Content Include="Views\Shared\PopOuts\Register.cshtml" />
-    <Content Include="Views\Shared\ScheduledPublishTest.cshtml" />
+    <Content Include="Views\Shared\Test\ScheduledPublishTest.cshtml" />
     <Content Include="Views\Shared\Components\MainContent\iFrameEmbed.cshtml" />
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
@@ -956,6 +957,7 @@
     <Content Include="Views\Shared\Components\SectionTitle.cshtml" />
     <Content Include="Views\Shared\Components\CSSBlock.cshtml" />
     <Content Include="Views\Shared\Components\Subnavigation.cshtml" />
+    <Content Include="Views\Shared\Test\UserResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
