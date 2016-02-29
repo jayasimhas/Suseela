@@ -12,5 +12,6 @@ namespace Informa.Library.Article.Search
 		public IList<Guid> TaxonomyIds { get; set; }
         public string ArticleNumber { get; set; }
         public string EScenicID { get; set; }
+        public Guid ReferencedArticle { get; set; } 
 	}
 }

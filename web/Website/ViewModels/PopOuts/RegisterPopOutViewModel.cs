@@ -23,5 +23,6 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string RegisterUrl => SiteRootContext.Item?.Register_Link?.Url ?? string.Empty;
 		public string UsernamePlaceholderText => TextTranslator.Translate("Header.UsernamePlaceholder");
 		public string UsernameInvalidText => TextTranslator.Translate("Header.UsernameInvalid");
+	    public string Username { get; set; }
 	}
 }

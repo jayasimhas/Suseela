@@ -17,6 +17,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		public WorkflowControl()
 		{
 			InitializeComponent();
+
 		}
 
 		public void UpdateFields(WorkflowState state)
@@ -33,7 +34,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			{
 				return;
 			}
-			uxWorkflowLabel.Text = state.DisplayName;
+			uxCurrentWorkflowValue.Text = state.DisplayName;
 			Commands = new List<WorkflowCommand>();
 			Commands.Insert(0, new WorkflowCommand {DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString()});
 			if (state.Commands != null)
@@ -60,7 +61,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 					uxNotifyPicker.Enabled = false;
 					uxNotifyList.Enabled = false;
 					uxNotifyAdd.Enabled = false;
-
+					txtNotificationText.Enabled = false;
+					uxUnlockOnSave.Enabled = false;
 					return;
 				}
 

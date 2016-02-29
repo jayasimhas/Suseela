@@ -252,6 +252,10 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Globals\Account Login.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Globals\Login Rendering.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -260,15 +264,15 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Globals\Register.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Highlights.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Highlights\Highlight.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Scheduled Publish Test.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
@@ -363,6 +367,18 @@
     <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Structure\Two Column Content.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Test.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Test\Scheduled Publish Test.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings\User Defined\Test\User Reset Password Test.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Velir.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -880,6 +896,58 @@
     <SitecoreItem Include="sitecore\templates\System\Media\Media folder\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\State.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\State\__Standard Values.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\State\Data.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\State\Data\Description.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\State\Data\Final.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\State\Data\Preview publishing targets.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow\__Standard Values.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow\Data.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow\Data\Default Comment Dialog Height.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow\Data\Default Comment Template.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow\Data\Initial state.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\User Defined.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -2337,6 +2405,7 @@
     <SitecoreItem Include="sitecore\templates\User Defined\Pages\Article\Related Content\Referenced Articles.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>generic=IArticle</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\User Defined\Pages\Article\Related Content\Referenced Companies.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>

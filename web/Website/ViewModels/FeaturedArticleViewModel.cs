@@ -1,4 +1,5 @@
-﻿using Informa.Library.Globalization;
+﻿using Informa.Library.Article.Search;
+using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
@@ -12,8 +13,8 @@ namespace Informa.Web.ViewModels
 		public FeaturedArticleViewModel(
 			IRenderingParametersContext renderingParametersContext,
 			ISiteRootContext siterootContext,
-			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator)
-			: base(siterootContext, articleListableFactory, textTranslator)
+			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator, IArticleSearch searcher)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}
