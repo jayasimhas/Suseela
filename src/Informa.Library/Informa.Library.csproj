@@ -457,6 +457,8 @@
     <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
     <Compile Include="User\IUser.cs" />
+    <Compile Include="User\ResetPassword\GenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IGenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IStoreUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IUserResetPasswordFactory.cs" />
