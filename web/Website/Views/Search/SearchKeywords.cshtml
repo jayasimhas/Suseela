@@ -3,7 +3,7 @@
     <!-- TODO: form wrap? -->
 
     <h3 class="search-bar__label">
-        <label for="js-search-field">Search</label>
+        <label for="js-search-field">@Model.SearchTitleText</label>
     </h3>
 
     <div class="search-bar__content" ng-controller="searchQueryController as query">
@@ -54,14 +54,7 @@
     </div>
 
     <div class="search-bar__footer">
-
-        <!-- <div ng-class="class">Current class is: {{class}}</div>
-        <button ng-click="toggleClass()">Toggle Class</button> -->
-
-        <!-- <div ng-app="classApp" ng-controller="classCtrl">
-            <button class="button" ng-class="{'active': isActive}" ng-click="activeButton()" type="button">Click Me to Toggle Class</button>
-        </div> -->
-
+        
         <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only" ng-controller="HeadlineToggleController as toggle">
             <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
             <label class="onoffswitch-label" for="headline-toggle" ng-click="headlinesOnly.updateValue()">
@@ -71,7 +64,7 @@
         </div>
 
         <div class="search-bar__headline-label">
-            View headlines only
+            @Model.SearchViewHeadlinesOnlyText
         </div>
 
     </div>
