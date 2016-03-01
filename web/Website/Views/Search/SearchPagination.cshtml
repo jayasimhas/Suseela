@@ -12,7 +12,7 @@
             <a href="title=' previous page'" ng-click="paginator.prev()">Previous</a>
         </li> -->
         <li ng-if="!paginator.isFirstPageInBlock()">
-            <a href="" title="Page {{paginator.pageFirst}}" ng-click="paginator.goto(paginator.pageFirst)">{{paginator.pageFirst}}</a>
+            <a href="" title="Page {{paginator.pageFirst}}" ng-click="paginator.goto(paginator.pageFirst)">First</a>
         </li>
         <li ng-if="!paginator.isFirstPageInBlock()">...</li>
         <li ng-repeat="page in paginator.pageBlock" ng-class="{ 'is-active': page.current }">
@@ -20,7 +20,7 @@
         </li>
         <li ng-if="!paginator.isLastPageInBlock()">...</li>
         <li ng-if="!paginator.isLastPageInBlock()">
-            <a href="" title="Page {{paginator.pageLast}}" ng-click="paginator.goto(paginator.pageLast)">{{paginator.pageLast}}</a>
+            <a href="" title="Page {{paginator.pageLast}}" ng-click="paginator.goto(paginator.pageLast)">Last</a>
         </li>
         <!-- <li class="pagination__next" ng-class="{ 'is-disabled': page.num === paginator.pageLast }">
             <a href="" title="Next Page" ng-click="paginator.next()">Next</a>
