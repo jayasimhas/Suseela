@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
-using System;
 
 namespace Informa.Library.User.ResetPassword
 {
@@ -18,7 +17,7 @@ namespace Informa.Library.User.ResetPassword
 		{
 			var userResetPassword = FindUserResetPassword.Find(token);
 
-			if (userResetPassword == null || userResetPassword.Expiration < DateTime.Now)
+			if (userResetPassword == null || !userResetPassword.IsValid())
 			{
 				return null;
 			}
