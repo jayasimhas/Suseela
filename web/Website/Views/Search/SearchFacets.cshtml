@@ -46,8 +46,15 @@
           <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
         </li>
       </ul>
-      <button class="facets__button facets__button--more" ng-click='group.loadMore()' ng-class="{ 'hidediv': ismore }">See All</button>
-      <button class="facets__button facets__button--less" ng-click='loadLess()' ng-class="{ 'hidediv': !ismore }">See Less</button>
+      <button 
+        class="facets__button facets__button--more" 
+        ng-click='group.loadMore()' 
+        ng-class="{ 'hidediv': ismore }"
+        ng-if='group.facets.length > 5'>See All</button>
+      <button 
+        class="facets__button facets__button--less" 
+        ng-click='loadLess()' 
+        ng-class="{ 'hidediv': !ismore }">See Less</button>
     </div>
 
       <!-- HARDCODED DATE FACET -->
