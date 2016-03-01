@@ -23,7 +23,7 @@
 	}
 
 	&--outline {
-		background-color: #fff;
+		background-color: $color-white;
 		border: 1px solid $informa-light-orange;
 
 		&:hover {
@@ -32,88 +32,93 @@
 	}
 
 	&--gilded {
-		background-color: #fff;
+		background-color: $color-white;
 		border: 1px solid $color-goldenrod;
+	}
+
+	&--plain {
+		background: transparent;
+		border: 0;
 	}
 
 }
 
 .onoffswitch {
     position: relative;
-		width: 47px;
+	width: 47px;
     -webkit-user-select:none;
-		-moz-user-select:none;
-		-ms-user-select: none;
+	-moz-user-select:none;
+	-ms-user-select: none;
 
-		&-checkbox {
-			display: none;
-		}
+	&-checkbox {
+		display: none;
+	}
 
     // TODO: ask if colors need to be exact from designs, or should be reused from preexisting
-		&-label {
-			display: block;
-			overflow: hidden;
-			cursor: pointer;
+	&-label {
+		display: block;
+		overflow: hidden;
+		cursor: pointer;
 	    border: 1px solid $color-light-gray-b; // also try $informa-light-gray-d
-			border-radius: 11px;
-			background-color: $color-white;
-		}
+		border-radius: 11px;
+		background-color: $color-white;
+	}
 
-		&-inner {
-			display: block;
-			width: 200%;
-			margin-left: -100%;
+	&-inner {
+		display: block;
+		width: 200%;
+		margin-left: -100%;
 	    transition: margin 0.3s ease-in 0s;
 
-			&:before,
-			&:after {
-				@include textMix('Roboto', 9px, 400);
+		&:before,
+		&:after {
+			@include textMix('Roboto', 9px, 400);
 		    display: block;
-				float: left;
-				width: 50%;
-				height: 22px;
-				padding: 0;
-				line-height: 22px;
-				color: $color-white;
+			float: left;
+			width: 50%;
+			height: 22px;
+			padding: 0;
+			line-height: 22px;
+			color: $color-white;
 		    box-sizing: border-box;
-			}
-
-			&:before {
-				content: "ON";
-		    padding-left: 9px;
-		    background-color: $color-white;
-				color: $color-medium-gray-8; // also try $informa-mid-gray
-			}
-
-			&:after {
-				content: "OFF";
-		    padding-right: 9px;
-		    background-color: $color-white;
-				color: $color-medium-gray-8; // also try $informa-mid-gray
-		    text-align: right;
-			}
 		}
 
-		&-switch {
+		&:before {
+			content: "ON";
+		    padding-left: 9px;
+		    background-color: $color-white;
+			color: $color-medium-gray-8; // also try $informa-mid-gray
+		}
+
+		&:after {
+			content: "OFF";
+		    padding-right: 9px;
+		    background-color: $color-white;
+			color: $color-medium-gray-8; // also try $informa-mid-gray
+		    text-align: right;
+		}
+	}
+
+	&-switch {
 	    display: block;
-			width: 14px;
-			height: 14px;
-			margin: 4px;
+		width: 14px;
+		height: 14px;
+		margin: 4px;
 	    background: $informa-light-gray-d;
 	    position: absolute;
-			top: 1px;
-			bottom: 0;
+		top: 1px;
+		bottom: 0;
 	    right: 24px;
 	    border-radius: 50%;
 	    transition: all 0.3s ease-in 0s;
-		}
+	}
 
-		&-checkbox:checked + &-label &-inner {
-			margin-left: 0;
-		}
+	&-checkbox:checked + &-label &-inner {
+		margin-left: 0;
+	}
 
-		&-checkbox:checked + &-label &-switch {
-			right: 0;
-			background: $informa-light-orange;
-		}
+	&-checkbox:checked + &-label &-switch {
+		right: 0;
+		background: $informa-light-orange;
+	}
 }
