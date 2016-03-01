@@ -26,9 +26,11 @@
 				<hr />
 				<button class="button--filled js-reset-password-submit" data-reset-url="/api/ResetPasswordApi/Reset/">Submit</button>
 			</div>
-			<div class="js-reset-password-error-message" style="display: none;">
-				<p>Error - unable to reset password</p>
-			</div>
+			<ul>
+				<li class="js-reset-password-error js-reset-password-error-requirements" style="display: none;">Your password does not meet the minimum requirements.</li>
+				<li class="js-reset-password-error js-reset-password-error-mismatch" style="display: none;">Your passwords do not match.</li>
+				<li class="js-reset-password-error js-reset-password-error-general" style="display: none;">Sorry we've been unable to reset your password. Please contact support for further assistance.</li>
+			</ul>
 			<div class="js-reset-password-success-message" style="display: none;">
 				<p>Your password has successfully been changed.</p>
 			</div>
