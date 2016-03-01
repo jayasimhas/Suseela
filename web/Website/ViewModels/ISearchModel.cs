@@ -11,6 +11,8 @@ namespace Informa.Web.ViewModels
         string PageFirstText { get; }
         string PageLastText { get; }
         string SearchTipsText { get; }
+        string SearchTitleText { get; }
+        string SearchViewHeadlinesOnlyText { get; }
     }
 
 }

@@ -27,6 +27,8 @@ namespace Informa.Web.ViewModels
         public string PageFirstText => TextTranslator.Translate("Search.Page.First");
         public string PageLastText => TextTranslator.Translate("Search.Page.Last");
         public string SearchTipsText => TextTranslator.Translate("Search.Tips");
-
+        public string SearchTitleText => TextTranslator.Translate("Search.Title");
+        public string SearchViewHeadlinesOnlyText => TextTranslator.Translate("Search.ViewHeadlinesOnly");
+        
     }
 }
