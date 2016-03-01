@@ -74,8 +74,11 @@
     <Compile Include="SalesforceSessionContext.cs" />
     <Compile Include="SalesforceSessionFactory.cs" />
     <Compile Include="User\ISalesforceFindUserByEmail.cs" />
+    <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
+    <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
+    <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />
     <Compile Include="User\SalesforceUser.cs" />
     <Compile Include="Web References\EBIWebServices\Reference.cs">

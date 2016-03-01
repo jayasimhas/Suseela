@@ -3,14 +3,17 @@ using Informa.Library.Salesforce.EBIWebServices;
 
 namespace Informa.Library.Salesforce.User
 {
-	public class SalesforceUpdateUserPassword : IUpdateUserPassword
+	public class SalesforceUpdateUserPassword : ISalesforceUpdateUserPassword, IUpdateUserPassword
 	{
 		protected readonly ISalesforceServiceContext Service;
+		protected readonly ISalesforceSetUserTemporaryPassword SetUserTemporaryPassword;
 
 		public SalesforceUpdateUserPassword(
-			ISalesforceServiceContext service)
+			ISalesforceServiceContext service,
+			ISalesforceSetUserTemporaryPassword setUserTemporaryPassword)
 		{
 			Service = service;
+			SetUserTemporaryPassword = setUserTemporaryPassword;
 		}
 
 		public bool Update(IUser user, string newPassword)
@@ -20,9 +23,16 @@ namespace Informa.Library.Salesforce.User
 				return false;
 			}
 
-			var response = Service.Execute(s => s.updatePassword(user.Username, string.Empty, false, newPassword));
+			var username = user.Username;
 
-			return response.IsSuccess();
+			if (!SetUserTemporaryPassword.Set(username, newPassword))
+			{
+				return false;
+			}
+
+			var updatePasswordResponse = Service.Execute(s => s.updatePassword(username, newPassword, false, newPassword));
+
+			return updatePasswordResponse.IsSuccess();
 		}
 	}
 }
