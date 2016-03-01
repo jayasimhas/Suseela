@@ -86,7 +86,12 @@
     <!-- EXAMPLE FACET WITH SUBCATEGORY MARKUP BELOW -->
     <form class="facets__section">
       <fieldset class="facets__fieldset">
-        <legend class="facets__legend facets__section-header"><h4>Group Label</h4></legend>
+        <legend class="facets__legend facets__section-header">
+          <h4>Group Label</h4>
+        </legend>
+        <button class="facets__button facets__button--toggle-section">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+        </button>
         <ul class="facets__section-list">
           <li>
             <input type="checkbox" class="visuallyhidden">
@@ -99,7 +104,7 @@
           <li>
             <input type="checkbox" class="visuallyhidden">
             <label>Label (##)</label>
-            <button class="facets__button facets__button--toggle-subcats">
+            <button class="facets__button facets__button--toggle-subcat">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use></svg>
             </button>
             <ul class="facets__section-list--sub">

@@ -141,6 +141,10 @@
     legend {
       color: $color-medium-gray-8;
       font-size: 13px;
+
+      h4 {
+        display: inline;
+      }
     }
 
     input {
@@ -167,8 +171,7 @@
   }
 
   &__button {
-    background: transparent;
-    border: 0;
+    @extend .button--plain;
     color: $informa-red;
 
     &--clear {
@@ -188,6 +191,15 @@
         vertical-align: middle;
         margin-left: 5px;
       }
+    }
+
+    &--toggle-section {
+      @include svg-fill($color-medium-gray-8);
+    }
+
+    &--toggle-subcat svg {
+      @include svg-fill($informa-light-gray-d);
+      width: 18px;
     }
   }
 
