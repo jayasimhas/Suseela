@@ -1052,6 +1052,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IArticleConstants.Supporting_DocumentsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Supporting_Documents  {get; set;}
+								/// <summary>
+					/// The Notification Text field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 99c8be36-4215-4c67-88e7-ee066c605bea</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Notification_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Notification_Text  {get; set;}
 				}
 
 	
@@ -1334,6 +1343,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IArticleConstants.Supporting_DocumentsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Supporting_Documents  {get; set;}
+										/// <summary>
+						/// The Notification Text field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 99c8be36-4215-4c67-88e7-ee066c605bea</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Notification_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Notification_Text  {get; set;}
 						}
 	
 	public static partial class IArticleConstants{
@@ -1494,6 +1512,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Supporting_DocumentsFieldId = new ID("14e38723-efb4-40b3-a47e-1f5d6e6a56b4");
 			public const string Supporting_DocumentsFieldName = "Supporting Documents";
+
+						
+					
+			public static readonly ID Notification_TextFieldId = new ID("99c8be36-4215-4c67-88e7-ee066c605bea");
+			public const string Notification_TextFieldName = "Notification Text";
 
 						
 					
@@ -2705,6 +2728,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					/// </summary>
 					[SitecoreField(IStateConstants.Preview_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Preview_Publishing_Targets  {get; set;}
+								/// <summary>
+					/// The Staff field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: ee6bf39b-3d0b-46fd-890a-5de92f1f67fd</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStateConstants.StaffsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Staffs  {get; set;}
 				}
 
 	
@@ -2744,6 +2776,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 						/// </summary>
 						[SitecoreField(IStateConstants.Preview_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Preview_Publishing_Targets  {get; set;}
+										/// <summary>
+						/// The Staff field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: ee6bf39b-3d0b-46fd-890a-5de92f1f67fd</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStateConstants.StaffsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Staffs  {get; set;}
 						}
 	
 	public static partial class IStateConstants{
@@ -2765,6 +2806,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					
 			public static readonly ID Preview_Publishing_TargetsFieldId = new ID("a438dfd1-154e-4584-b7e3-d1e28315e415");
 			public const string Preview_Publishing_TargetsFieldName = "Preview publishing targets";
+
+						
+					
+			public static readonly ID StaffsFieldId = new ID("ee6bf39b-3d0b-46fd-890a-5de92f1f67fd");
+			public const string StaffsFieldName = "Staff";
 
 						
 			
@@ -7584,6 +7630,159 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
+{
+
+
+ 	/// <summary>
+	/// ICommand Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/System/Workflow/Command</para>	
+	/// <para>ID: cb01f9fc-c187-46b3-ab0b-97a8468d8303</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICommandConstants.TemplateIdString)]
+	public partial interface ICommand : IGlassBase 
+	{
+								/// <summary>
+					/// The Appearance Evaluator Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: df36505e-a70a-4414-a9ae-ae26db86fe19</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICommandConstants.Appearance_Evaluator_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Appearance_Evaluator_Type  {get; set;}
+								/// <summary>
+					/// The Comment Dialog Height field.
+					/// <para></para>
+					/// <para>Field Type: Integer</para>		
+					/// <para>Field ID: 9d3d61ef-6f65-4f71-abd4-9172549b15c2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICommandConstants.Comment_Dialog_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+					int Comment_Dialog_Height  {get; set;}
+								/// <summary>
+					/// The Comment Template field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: f1090046-2f13-4f19-bb41-c75df4f89516</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICommandConstants.Comment_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Comment_Template  {get; set;}
+								/// <summary>
+					/// The Next state field.
+					/// <para></para>
+					/// <para>Field Type: reference</para>		
+					/// <para>Field ID: dcbebc58-6124-4100-a248-fc717d6c78d5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICommandConstants.Next_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Next_State  {get; set;}
+								/// <summary>
+					/// The Suppress Comment field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 82a7c02f-9a55-4bfe-b494-d1713d4be9ff</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICommandConstants.Suppress_CommentFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Suppress_Comment  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICommand Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/System/Workflow/Command</para>	
+		/// <para>ID: cb01f9fc-c187-46b3-ab0b-97a8468d8303</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICommand__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Appearance Evaluator Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: df36505e-a70a-4414-a9ae-ae26db86fe19</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICommandConstants.Appearance_Evaluator_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Appearance_Evaluator_Type  {get; set;}
+										/// <summary>
+						/// The Comment Dialog Height field.
+						/// <para></para>
+						/// <para>Field Type: Integer</para>		
+						/// <para>Field ID: 9d3d61ef-6f65-4f71-abd4-9172549b15c2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICommandConstants.Comment_Dialog_HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+						int Comment_Dialog_Height  {get; set;}
+										/// <summary>
+						/// The Comment Template field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: f1090046-2f13-4f19-bb41-c75df4f89516</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICommandConstants.Comment_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Comment_Template  {get; set;}
+										/// <summary>
+						/// The Next state field.
+						/// <para></para>
+						/// <para>Field Type: reference</para>		
+						/// <para>Field ID: dcbebc58-6124-4100-a248-fc717d6c78d5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICommandConstants.Next_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Next_State  {get; set;}
+										/// <summary>
+						/// The Suppress Comment field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 82a7c02f-9a55-4bfe-b494-d1713d4be9ff</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICommandConstants.Suppress_CommentFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Suppress_Comment  {get; set;}
+						}
+	
+	public static partial class ICommandConstants{
+
+			public const string TemplateIdString = "cb01f9fc-c187-46b3-ab0b-97a8468d8303";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Command";
+
+					
+			public static readonly ID Appearance_Evaluator_TypeFieldId = new ID("df36505e-a70a-4414-a9ae-ae26db86fe19");
+			public const string Appearance_Evaluator_TypeFieldName = "Appearance Evaluator Type";
+
+						
+					
+			public static readonly ID Comment_Dialog_HeightFieldId = new ID("9d3d61ef-6f65-4f71-abd4-9172549b15c2");
+			public const string Comment_Dialog_HeightFieldName = "Comment Dialog Height";
+
+						
+					
+			public static readonly ID Comment_TemplateFieldId = new ID("f1090046-2f13-4f19-bb41-c75df4f89516");
+			public const string Comment_TemplateFieldName = "Comment Template";
+
+						
+					
+			public static readonly ID Next_StateFieldId = new ID("dcbebc58-6124-4100-a248-fc717d6c78d5");
+			public const string Next_StateFieldName = "Next state";
+
+						
+					
+			public static readonly ID Suppress_CommentFieldId = new ID("82a7c02f-9a55-4bfe-b494-d1713d4be9ff");
+			public const string Suppress_CommentFieldName = "Suppress Comment";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 {
 
@@ -9360,6 +9559,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID Article_Title_StyleFieldId = new ID("03845b01-8644-4a67-9d45-a4587e739fdc");
 			public const string Article_Title_StyleFieldName = "Article Title Style";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// IWorkflow_From_Email_Address_Configuration Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Workflow From Email Address Configuration</para>	
+	/// <para>ID: fa5b2cfd-a800-4b83-88d9-644dda87e3d2</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IWorkflow_From_Email_Address_ConfigurationConstants.TemplateIdString)]
+	public partial interface IWorkflow_From_Email_Address_Configuration : IGlassBase 
+	{
+								/// <summary>
+					/// The From Email Address field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 2bea4387-4092-40ac-a07b-738a5ff29453</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IWorkflow_From_Email_Address_ConfigurationConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string From_Email_Address  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IWorkflow_From_Email_Address_Configuration Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Workflow From Email Address Configuration</para>	
+		/// <para>ID: fa5b2cfd-a800-4b83-88d9-644dda87e3d2</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IWorkflow_From_Email_Address_Configuration__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The From Email Address field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 2bea4387-4092-40ac-a07b-738a5ff29453</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IWorkflow_From_Email_Address_ConfigurationConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string From_Email_Address  {get; set;}
+						}
+	
+	public static partial class IWorkflow_From_Email_Address_ConfigurationConstants{
+
+			public const string TemplateIdString = "fa5b2cfd-a800-4b83-88d9-644dda87e3d2";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Workflow From Email Address Configuration";
+
+					
+			public static readonly ID From_Email_AddressFieldId = new ID("2bea4387-4092-40ac-a07b-738a5ff29453");
+			public const string From_Email_AddressFieldName = "From Email Address";
 
 						
 			

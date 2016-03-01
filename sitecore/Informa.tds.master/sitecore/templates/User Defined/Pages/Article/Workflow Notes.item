@@ -1,32 +1,18 @@
 ----item----
 version: 1
-id: {BD7B681C-5854-420B-877A-26366EA73EC7}
+id: {289462F0-569F-4D27-BD10-143AB9268287}
 database: master
-path: /sitecore/content/Environment Globals
-parent: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
-name: Environment Globals
+path: /sitecore/templates/User Defined/Pages/Article/Workflow Notes
+parent: {11380B5D-3531-4570-B213-EFC5312266E4}
+name: Workflow Notes
 master: {00000000-0000-0000-0000-000000000000}
-template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
-templatekey: Folder
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
 
-----field----
-field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
-name: __Icon
-key: __icon
-content-length: 21
-
-apps/32x32/folder.png
-----field----
-field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
-name: __Masters
-key: __masters
-content-length: 38
-
-{BC324106-766F-4E09-A82C-328FA7BD55CA}
 ----version----
 language: en
 version: 1
-revision: 0c0be412-48a1-48ef-8e01-cff6621d00f9
+revision: e8ceb059-a6da-4186-902b-800740ade70c
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,7 +20,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151224T192230Z
+20160301T084445Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-0c0be412-48a1-48ef-8e01-cff6621d00f9
+e8ceb059-a6da-4186-902b-800740ade70c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160229T220416Z
+20160301T084445Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

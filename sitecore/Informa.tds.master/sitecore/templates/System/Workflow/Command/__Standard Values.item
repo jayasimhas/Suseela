@@ -1,25 +1,32 @@
 ----item----
 version: 1
-id: {CF48173B-0B5C-417F-952A-E82CDBC4D277}
+id: {9455B378-B97B-4400-AE0E-C90CE5D40B38}
 database: master
-path: /sitecore/content/ScripIntelligence/Home/Logout
-parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
-name: Logout
+path: /sitecore/templates/System/Workflow/Command/__Standard Values
+parent: {CB01F9FC-C187-46B3-AB0B-97A8468D8303}
+name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {BC9061E8-27C6-4DD4-B342-50547E4A25CC}
-templatekey: Authored Content
+template: {CB01F9FC-C187-46B3-AB0B-97A8468D8303}
+templatekey: Command
 
 ----field----
-field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
-name: __Renderings
-key: __renderings
-content-length: 272
+field: {F1090046-2F13-4F19-BB41-C75DF4F89516}
+name: Comment Template
+key: comment template
+content-length: 0
 
-<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r ds="" id="{1460F117-C1C2-45EF-884A-9520FB3A7FDB}" par="" ph="main_content" uid="{D8617254-E50A-4483-A88D-0EA4D467DD77}" /></d></r>
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{66882E97-C8AA-4E37-8901-7A8AA35ED2ED}
 ----version----
 language: en
 version: 1
-revision: bd230aaa-df67-4809-be45-34ffdfef0db6
+revision: 2e5cc5e2-ff4d-476e-80ef-6c16eb9ca3e6
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -32,9 +39,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 15
 
-20151212T002853Z
+20140123T114343
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-bd230aaa-df67-4809-be45-34ffdfef0db6
+2e5cc5e2-ff4d-476e-80ef-6c16eb9ca3e6
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 16
+content-length: 34
 
-20151212T003618Z
+20140212T114840:635278025209650100
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
