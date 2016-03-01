@@ -36,7 +36,7 @@
     <div class="facets__section" ng-repeat="group in allFacets.facetGroups">
       <h4 class="facets__section-header">{{ group.label }}</h4>
       <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit">
-        <li>
+        <li ng-if="f.label.length > 0">
           <input id="{{ group.id }}-{{ $index }}"
           type="checkbox"
           class="visuallyhidden"
@@ -46,7 +46,7 @@
           <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
         </li>
       </ul>
-      <button class="facets__button facets__button--more" ng-click='loadMore()' ng-class="{ 'hidediv': ismore }">See All</button>
+      <button class="facets__button facets__button--more" ng-click='group.loadMore()' ng-class="{ 'hidediv': ismore }">See All</button>
       <button class="facets__button facets__button--less" ng-click='loadLess()' ng-class="{ 'hidediv': !ismore }">See Less</button>
     </div>
 
