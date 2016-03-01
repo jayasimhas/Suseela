@@ -8,23 +8,13 @@
             month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
             week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")',
         }
-        // $scope.limit = 5;
-        // var limit= 5;
-        // $scope.loadMore = function() {
-          // $scope.limit = $scope.items.length;
-          // $scope.ismore = true;
-        // }
-        // $scope.loadless = function() {
-        //   $scope.limit = defaultLimit;
-        //   %scope.ismore = false;
-        // }
 </script>
 
 <button class="facets__mobile-button">
   <h6>Show Filters</h6>
 </button>
 
-<div id="search-facet-01" class="search__facets search__left-sidebar" ng-controller="InformaFacetController as allFacets"><!-- removed classes "search-facet, search-facet--expand-short search-facet--list" -->
+<div id="search-facet-01" class="search__facets search__left-sidebar" ng-controller="InformaFacetController as allFacets">
 
   <div class="facets__header">
     <h3>Filter By</h3>
@@ -41,7 +31,7 @@
         <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit">
           <li 
             ng-if="f.label.length > 0"
-            ng-hide = "$index >= allFacets.MaxFacetShow">
+            ng-hide = "($index >= allFacets.MaxFacetShow) && (!group.ShowMore)">
             <input id="{{ group.id }}-{{ $index }}"
             type="checkbox"
             class="visuallyhidden"
@@ -53,13 +43,14 @@
         </ul>
         <button 
           class="facets__button facets__button--more" 
-          ng-click='group.loadMore()' 
           ng-class="{ 'hidediv': ismore }"
-          ng-if='group.facets.length > allFacets.MaxFacetShow'>See All</button>
+          ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
+          ng-click = 'group.ShowMore = true'>See All</button>
         <button 
           class="facets__button facets__button--less" 
-          ng-click='loadLess()' 
-          ng-class="{ 'hidediv': !ismore }">See Less</button>
+          ng-class="{ 'hidediv': !ismore }"
+          ng-show='group.ShowMore'
+          ng-click='group.ShowMore = false'>See Less</button>
       </fieldset>
     </form>
 
