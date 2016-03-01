@@ -1,6 +1,20 @@
 <!-- SEARCH FILTERS IN LEFT RAIL -->
 
-<div id="search-facet-01" class="search__facets search__left-sidebar"ng-controller="searchFacetsController as allFacets"><!-- removed classes "search-facet, search-facet--expand-short search-facet--list" -->
+<script type="text/javascript">
+        var datesObject = {
+            year: '@DateTime.Now.AddDays(-365).ToString("MM/dd/yyyy")',
+            day: '@DateTime.Now.AddDays(-1).ToString("MM/dd/yyyy")',
+            threedays: '@DateTime.Now.AddDays(-3).ToString("MM/dd/yyyy")',
+            month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
+            week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")',
+        }
+</script>
+
+<button class="facets__mobile-button">
+  <h6>Show Filters</h6>
+</button>
+
+<div id="search-facet-01" class="search__facets search__left-sidebar"ng-controller="InformaFacetController as allFacets"><!-- removed classes "search-facet, search-facet--expand-short search-facet--list" -->
 
   <div class="facets__header">
     <h3>Filter By</h3>
@@ -23,6 +37,33 @@
         </li>
       </ul>
     </div>
+
+      <!-- HARDCODED DATE FACET -->
+    <div class="facets__section">
+      <h4 class="facets__section-header">Date</h4>
+        <ul class="facets__section-list">
+
+            <li ng-repeat="dateFilter in allFacets.DateFilters">
+                <input type="radio" name="date-facet" id="{{dateFilter.key}}" ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
+                <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
+            </li>
+
+            <li><input type="radio" name="date-facet" id="custom-range"><label for="custom-range">Select date range</label>
+                <div class="facets__field-group facets__field-group--from">
+                    <legend>From</legend>
+                    <input type="date" placeholder="dd/mm/yyyy">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+                </div>
+                <div class="facets__field-group facets__field-group--to">
+                    <legend>To</legend>
+                    <input type="date" placeholder="dd/mm/yyyy">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
 
     <!-- EXAMPLE BELOW -->
     <!-- <div class="facets__section">

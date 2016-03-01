@@ -78,6 +78,28 @@
   &__bookmark {
     @extend .article-preview__bookmarker;
     z-index: -1; // overrides .pop-out__trigger z-index:993
+
+    .icon__bookmark {
+      @extend .article-prologue__share-icon;
+    }
+
+    &--not-bookmarked {
+      .icon__bookmark--outlined {
+        display: inline-block;
+      }
+      .icon__bookmark--filled {
+        display: none;
+      }
+    }
+
+    &--bookmarked {
+      .icon__bookmark--outlined {
+        display: none;
+      }
+      .icon__bookmark--filled {
+        display: inline-block;
+      }
+    }
   }
 
   &__description {

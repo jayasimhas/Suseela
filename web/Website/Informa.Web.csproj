@@ -652,6 +652,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\ISearchModel.cs" />
+    <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\SubnavigationViewModel.cs" />
     <Compile Include="ViewModels\ArticleFeaturedImage.cs" />
     <Compile Include="ViewModels\ArticleListItemModel.cs" />
@@ -705,6 +707,7 @@
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="500.html" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
@@ -717,6 +720,8 @@
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search\controllers\headlineToggleController.js" />
+    <Content Include="js\search\controllers\informaFacetsController.js" />
+    <Content Include="js\search\controllers\informaResultsController.js" />
     <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\zepto.min.js" />
@@ -961,6 +966,7 @@
     <Content Include="Views\Shared\Components\CSSBlock.cshtml" />
     <Content Include="Views\Shared\Components\Subnavigation.cshtml" />
     <Content Include="Views\Shared\Test\UserResetPassword.cshtml" />
+    <Content Include="Views\Shared\Components\BodyCopy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
