@@ -57,15 +57,14 @@
     </form>
 
       <!-- HARDCODED DATE FACET -->
-    <div class="facets__section">
-      <h4 class="facets__section-header">Date</h4>
+    <form class="facets__section">
+      <fieldset class="facets__fieldset">
+      <legend class="facets__legend facets__section-header"><h4>Date</h4></legend>
         <ul class="facets__section-list">
-
             <li ng-repeat="dateFilter in allFacets.DateFilters">
                 <input type="radio" name="date-facet" id="{{dateFilter.key}}" ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
                 <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
             </li>
-
             <li><input type="radio" name="date-facet" id="custom-range"><label for="custom-range">Select date range</label>
                 <div class="facets__field-group facets__field-group--from">
                     <legend>From</legend>
@@ -79,19 +78,20 @@
                 </div>
             </li>
         </ul>
-    </div>
+      </fieldset>
+    </form>
 
 
 
     <!-- EXAMPLE FACET WITH SUBCATEGORY MARKUP BELOW -->
     <form class="facets__section">
       <fieldset class="facets__fieldset">
-        <legend class="facets__legend facets__section-header">
+        <legend class="facets__legend">
           <h4>Group Label</h4>
+          <button class="facets__button facets__button--toggle-section">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+          </button>
         </legend>
-        <button class="facets__button facets__button--toggle-section">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
-        </button>
         <ul class="facets__section-list">
           <li>
             <input type="checkbox" class="visuallyhidden">
@@ -126,6 +126,8 @@
       </fieldset>
     </form>
     <!-- / END EXAMPLE FACET -->
+
+
 
   </div> <!-- / facets__content -->
 
