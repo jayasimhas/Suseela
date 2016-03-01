@@ -182,9 +182,11 @@
       margin: 10px auto;
       width: 100%;
 
-      &:after {
-        // content: "v";
-        // margin-left: 5px;
+      svg {
+        @include svg-fill($informa-red);
+        width: 12px;
+        vertical-align: middle;
+        margin-left: 5px;
       }
     }
   }
