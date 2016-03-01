@@ -33,31 +33,33 @@
 
   <div class="facets__content">
 
-    <div class="facets__section" 
+    <form class="facets__section" 
       ng-repeat="group in allFacets.facetGroups"
       ng-if='group.facets.length > 1'>
-      <h4 class="facets__section-header" >{{ group.label }}</h4>
-      <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit">
-        <li ng-if="f.label.length > 0">
-          <input id="{{ group.id }}-{{ $index }}"
-          type="checkbox"
-          class="visuallyhidden"
-          ng-checked="f.selected"
-          ng-model="f.selected"
-          ng-change="allFacets.update()">
-          <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
-        </li>
-      </ul>
-      <button 
-        class="facets__button facets__button--more" 
-        ng-click='group.loadMore()' 
-        ng-class="{ 'hidediv': ismore }"
-        ng-if='group.facets.length > 5'>See All</button>
-      <button 
-        class="facets__button facets__button--less" 
-        ng-click='loadLess()' 
-        ng-class="{ 'hidediv': !ismore }">See Less</button>
-    </div>
+      <fieldset class="facets__fieldset">
+        <legend class="facets__legend facets__section-header"><h4>{{ group.label }}</h4></legend>
+        <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit">
+          <li ng-if="f.label.length > 0">
+            <input id="{{ group.id }}-{{ $index }}"
+            type="checkbox"
+            class="visuallyhidden"
+            ng-checked="f.selected"
+            ng-model="f.selected"
+            ng-change="allFacets.update()">
+            <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
+          </li>
+        </ul>
+        <button 
+          class="facets__button facets__button--more" 
+          ng-click='group.loadMore()' 
+          ng-class="{ 'hidediv': ismore }"
+          ng-if='group.facets.length > 5'>See All</button>
+        <button 
+          class="facets__button facets__button--less" 
+          ng-click='loadLess()' 
+          ng-class="{ 'hidediv': !ismore }">See Less</button>
+      </fieldset>
+    </form>
 
       <!-- HARDCODED DATE FACET -->
     <div class="facets__section">
