@@ -2,7 +2,7 @@ function loginController(requestVerificationToken) {
 	this.addControl = function(triggerElement, successCallback, failureCallback) {
 		if (triggerElement) {
 			$(triggerElement).on('click', (event) => {
-				this.hideErrorMessage(triggerElement);
+				$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-error-message').hide();
 				$(triggerElement).attr('disabled', 'disabled');
 
 				var inputData = {};
@@ -18,7 +18,7 @@ function loginController(requestVerificationToken) {
 					data: inputData,
 					success: function (response) {
 						if (response.success) {
-							//this.showSuccessMessage(triggerElement);
+							$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-success-message').show();
 							
 							if (successCallback) {
 								successCallback(triggerElement);
@@ -26,8 +26,7 @@ function loginController(requestVerificationToken) {
 						}
 						else {
 							$(triggerElement).removeAttr('disabled');
-							
-							//this.showErrorMessage(triggerElement);
+							$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-error-message').show();
 
 							if (failureCallback) {
 								failureCallback(triggerElement);
@@ -37,7 +36,7 @@ function loginController(requestVerificationToken) {
 					error: function(response) {
 						$(triggerElement).removeAttr('disabled');
 						
-						//this.showErrorMessage(triggerElement);
+						$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-error-message').show();
 
 						if (failureCallback) {
 							failureCallback(triggerElement);
@@ -46,19 +45,7 @@ function loginController(requestVerificationToken) {
 				});
 			});
 		}
-	}
-
-	this.showErrorMessage = function(triggerElement) {
-		$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-error-message').show();
-	}
-
-	this.hideErrorMessage = function(triggerElement) {
-		$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-error-message').hide();
-	}
-
-	this.showSuccessMessage = function(triggerElement) {
-		$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-success-message').show();
-	}
-}
+	};
+};
 
 export default loginController;
