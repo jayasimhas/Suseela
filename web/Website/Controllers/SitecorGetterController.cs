@@ -76,31 +76,69 @@ namespace Informa.Web.Controllers
 	{
 
 		private ISitecoreService _sitecoreService;
-		public GetWorkflowCommandsController(Func<string, ISitecoreService> sitecoreFactory)
+		private readonly IArticleSearch _search;
+		private readonly IArticleSearchFilter _articleSearchFilter;
+		public GetWorkflowCommandsController(Func<string, ISitecoreService> sitecoreFactory, IArticleSearch search, IArticleSearchFilter articleSearchFilter)
 		{
 			_sitecoreService = sitecoreFactory(Constants.MasterDb);
+			_search = search;
+			_articleSearchFilter = articleSearchFilter;
 		}
 		// GET api/<controller>
-		public JsonResult<List<WorkflowState>> Get()
+
+		public WorkflowState GetWorkFlowState(Guid articleId)
 		{
-			//TODO : Get command items
-			var selectedPublication = _sitecoreService.GetItem<IWorkflow>(new Guid("{2BAE793F-7392-4790-9E67-9C60B6BF7D7B}"));
-			var workflowCommands = selectedPublication?._ChildrenWithInferType.OfType<IState>()
-				.Select(eachChild => new WorkflowState() { DisplayName = eachChild._Name }).ToList();
-			return Json(workflowCommands);
+			var item = _sitecoreService.GetItem<Item>(articleId);
+			var currentState = item.State.GetWorkflowState();
+			Sitecore.Workflows.IWorkflow workflow = item.State.GetWorkflow();
+			var workFlowState = new WorkflowState();
+			workFlowState.IsFinal = currentState.FinalState;
+			workFlowState.DisplayName = currentState.DisplayName;
+			var commands = new List<WorkflowCommand>();
+			foreach (Sitecore.Workflows.WorkflowCommand command in workflow.GetCommands(item))
+			{
+				var wfCommand = new WorkflowCommand();
+				wfCommand.DisplayName = command.DisplayName;
+				wfCommand.StringID = command.CommandID;
+				ICommand commandItem = _sitecoreService.GetItem<ICommand>(new Guid(command.CommandID));
+				IState nextStateItem = _sitecoreService.GetItem<IState>(commandItem.Next_State);
+
+				if (nextStateItem != null)
+				{
+					wfCommand.SendsToFinal = nextStateItem.Final;
+					wfCommand.GlobalNotifyList = new List<StaffStruct>();
+					foreach (IStaff_Item staff in nextStateItem.Staffs)
+					{
+						if (staff.Inactive) { continue; }
+						var staffMember = new StaffStruct();
+						staffMember.ID = staff._Id;
+						staffMember.Name = staff.Last_Name + " , " + staff.First_Name;
+						//   staffMember.Publications = staff  //TODO :Check if this field if we need this field.
+						wfCommand.GlobalNotifyList.Add(staffMember);
+					}
+					commands.Add(wfCommand);
+				}
+			}
+			workFlowState.Commands = commands;
+
+			return workFlowState;
+
 		}
 
 		[Route]
 		public JsonResult<WorkflowState> Get(Guid articleGuid)
 		{
-			Guid currentState = _sitecoreService.GetItem<ArticleItem>(articleGuid).State;
-			var state = currentState != Guid.Empty ? _sitecoreService.GetItem<IState>(currentState) : null;
-			if (state != null)
-			{
-				var workflowState = new WorkflowState() { DisplayName = state._Name };
-				return Json(workflowState);
-			}
-			return null;
+			var workFlowState = GetWorkFlowState(articleGuid);
+			return Json(workFlowState);
+		}
+
+		public JsonResult<WorkflowState> Get(string articleNumber)
+		{
+			_articleSearchFilter.ArticleNumber = articleNumber;
+			var searchResult = _search.Search(_articleSearchFilter);
+			var article = searchResult.Articles.FirstOrDefault();
+			var workflowState = GetWorkFlowState(article._Id);
+			return Json(workflowState);
 		}
 	}
 
@@ -134,7 +172,7 @@ namespace Informa.Web.Controllers
 			{
 				children = taxonomyItem.Axes.GetDescendants().ToList();
 			}
-			var matches = children.Select(child => new TaxonomyStruct {ID = child.ID.Guid, Name = child.DisplayName}).ToList();
+			var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
 
 			return Json(matches);
 

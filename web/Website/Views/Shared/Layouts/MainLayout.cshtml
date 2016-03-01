@@ -36,19 +36,6 @@
 
     <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
-        @*
-        <div class="general-header">
-            <div class="general-header__section-title">
-                Name of Section
-            </div>
-            <div class="general-header__navigation">
-                <a href="#" class="is-active">General Content Page V1</a>
-                <a href="#">Page Name</a>
-                <a href="#">Page Name</a>
-                <a href="#">Page Name</a>
-            </div>
-        </div>
-        *@
         <div class="general-header">
             @Html.Sitecore().Placeholder("general-header")
         </div>
@@ -56,9 +43,7 @@
         @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
 
         <div class="main__content">
-
             @Html.Sitecore().Placeholder("main-content")
-
         </div>
 
         @* * *  POP-OUT TEMPLATE MARKUP *@

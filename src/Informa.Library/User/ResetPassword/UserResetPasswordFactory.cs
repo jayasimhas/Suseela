@@ -18,7 +18,7 @@ namespace Informa.Library.User.ResetPassword
 		{
 			return new UserResetPassword
 			{
-				Expiration = DateTime.Now.AddDays(1),
+				Expiration = DateTime.Now.AddHours(4),
 				Token = TokenFactory.Create(),
 				Username = user.Username
 			};

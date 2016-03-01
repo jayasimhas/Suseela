@@ -97,7 +97,7 @@ namespace Informa.Web.ViewModels
         public string ListableImage => Image?.ImageUrl;
         //TODO: Get real summary
         public string ListableSummary => GlassModel.Summary;
-
+        public string KeyDocumentHeader => TextTranslator.Translate("Article.KeyDocs");
 	    public string ListableSummaryHeader => TextTranslator.Translate("Article.ExecSummHeader");
         public string ListableTitle => Title;
         public string ListableByline => Publication;
