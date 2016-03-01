@@ -4,6 +4,7 @@ import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
+import LoginController from './login-controller';
 
 
 /* Toggle menu categories */
@@ -34,8 +35,6 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
 
-
-
 // Pre-registration username validation
 $('.js-register-submit').on('click', function validateUsername(e) {
 	var submitButton = $(e.target);
@@ -64,7 +63,8 @@ var showForgotPassSuccess = function() {
 
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
-	$('.pop-out__form-error').toggleClass('is-active');
+	$('.pop-out__form-error').show();
+	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
 var renderIframeComponents = function() {
@@ -96,8 +96,10 @@ var renderIframeComponents = function() {
 	});
 };
 
-
 $(document).ready(function() {
+
+	// Anti Forgery Token
+	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
 	var poc = new PopOutController('.js-pop-out-trigger');
 
@@ -134,6 +136,15 @@ $(document).ready(function() {
 
 	});
 
+	var login = new LoginController(requestVerificationToken);
+
+	login.addControl(
+		'.js-sign-in-submit',
+		null,
+		function(triggerElement) {
+			toggleSignInError();
+		}
+	);
 
     svg4everybody();
 
@@ -143,10 +154,7 @@ $(document).ready(function() {
 		if($('.main-menu').hasClass('is-active')) {
 			$('.main-menu').removeClass('is-active');
 			$('.menu-toggler').removeClass('is-active');
-			$('body').css({
-				overflow: 'auto',
-				height: 'auto'
-			});
+			$('body').removeClass('is-frozen');
 			if($(window).scrollTop() <= 100) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
@@ -154,9 +162,7 @@ $(document).ready(function() {
 			$('.main-menu').addClass('is-active');
 			$('.menu-toggler').addClass('is-active');
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
-			$('body').css({
-				'overflow-y': 'hidden'
-			});
+			$('body').addClass('is-frozen');
 		}
 	});
 
@@ -218,6 +224,14 @@ $(document).ready(function() {
 		poc.closePopOut();
 	});
 
+	// Make sure all external links open in a new window/tab
+	$("a[href^=http]").each(function(){
+		if(this.href.indexOf(location.hostname) == -1) {
+           $(this).attr({
+               target: "_blank",
+           });
+	  	}
+	});
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

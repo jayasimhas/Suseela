@@ -5,7 +5,7 @@
     flex-wrap: wrap;
 
     span {
-        @include textMix('Roboto Condensed', 0.875rem, 700);
+        @include textMix('Roboto Condensed', 0.9375rem, 700);
         color: $color-zeus-black;
         flex: 0 0 auto;
         line-height: 1.5rem;
@@ -21,15 +21,20 @@
     .bar-separated-link-list {
         flex-wrap: wrap;
     }
+
     a {
-        @include textMix('Roboto', 0.875rem, 400);
+        @include textMix('Roboto', 0.9375rem, 400);
         border-right: 1px solid $informa-light-gray-d;
-        color: $informa-dark-gray;
+        color: $color-dove-gray;
         display: inline-block;
         flex: 0 0 auto;
         line-height: 1.5rem;
         padding: 0 0.75rem 0 0;
         margin-right: 0.75rem;
+
+        @include on-event() {
+            color: $color-cardinal-red;
+        }
 
         &:first-child {
             padding-left: 0;

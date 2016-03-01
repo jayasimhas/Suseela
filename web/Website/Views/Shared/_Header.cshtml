@@ -1,6 +1,9 @@
 @model Informa.Web.ViewModels.IHeaderViewModel
 @*@model Informa.Web.Areas.Account.Models.LoginViewModel*@
 <header>
+    <div>
+        @Html.Raw(Model.CookiePolicyText)
+    </div>
     <div class="header__informa-permabanner">
         informa
     </div>
@@ -43,24 +46,21 @@
 
             @if (Model.IsAuthenticated)
             {
-				@* Signed In *@
-                using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "header-account-access__logout-form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="header-account-access__my-account">
-                        <svg class="header__icons icon-my-account">
-                            <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                        </svg>
-                        <span class="header-account-access__label">@Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })</span>
-                    </div>
-                    <div class="header-account-access__sign-in-out">
-                        <svg class="header__icons icon-sign-out">
-                            <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
-                        </svg>
-                        <a href="javascript:document.getElementById('logoutForm').submit()"><span class="header-account-access__label">@Model.SignOutLinkText</span></a>
-                    </div>
-				}
-			} else {
+                <div class="header-account-access__my-account">
+                    <svg class="header__icons icon-my-account">
+                        <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+                    </svg>                        
+                    <span class="header-account-access__label"><a href="#">@Model.MyAccountLinkText</a>@*@Html.ActionLink(Model.MyAccountLinkText, "Manage", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })*@</span>
+                </div>
+                <div class="header-account-access__sign-in-out">
+                    <svg class="header__icons icon-sign-out">
+                        <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                    </svg>
+					<span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = "/" }, new { })</span>
+				</div>
+			}
+			else
+			{
                 <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
                      data-pop-out-id="header-register"
                      data-pop-out-type="register">
