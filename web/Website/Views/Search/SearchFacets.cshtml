@@ -8,24 +8,34 @@
             month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
             week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")',
         }
+        // $scope.limit = 5;
+        // var limit= 5;
+        // $scope.loadMore = function() {
+          // $scope.limit = $scope.items.length;
+          // $scope.ismore = true;
+        // }
+        // $scope.loadless = function() {
+        //   $scope.limit = defaultLimit;
+        //   %scope.ismore = false;
+        // }
 </script>
 
 <button class="facets__mobile-button">
   <h6>Show Filters</h6>
 </button>
 
-<div id="search-facet-01" class="search__facets search__left-sidebar"ng-controller="InformaFacetController as allFacets"><!-- removed classes "search-facet, search-facet--expand-short search-facet--list" -->
+<div id="search-facet-01" class="search__facets search__left-sidebar" ng-controller="InformaFacetController as allFacets"><!-- removed classes "search-facet, search-facet--expand-short search-facet--list" -->
 
   <div class="facets__header">
     <h3>Filter By</h3>
-    <a class="facets__clear js-clear-all-filters">Clear All</a>
+    <button class="facets__button facets__button--clear" ng-click="allFacets.clearAllFacets()">Clear All</a>
   </div>
 
   <div class="facets__content">
 
     <div class="facets__section" ng-repeat="group in allFacets.facetGroups">
       <h4 class="facets__section-header">{{ group.label }}</h4>
-      <ul class="facets__section-list" ng-repeat="f in group.facets">
+      <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit">
         <li>
           <input id="{{ group.id }}-{{ $index }}"
           type="checkbox"
@@ -36,6 +46,8 @@
           <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
         </li>
       </ul>
+      <button class="facets__button facets__button--more" ng-click='loadMore()' ng-class="{ 'hidediv': ismore }">See All</button>
+      <button class="facets__button facets__button--less" ng-click='loadLess()' ng-class="{ 'hidediv': !ismore }">See Less</button>
     </div>
 
       <!-- HARDCODED DATE FACET -->

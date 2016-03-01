@@ -1,5 +1,5 @@
 ﻿
-var InformaFacetController = function ($scope, $location,$http, searchService, searchBootstrapper) {
+var InformaFacetController = function ($scope, $location, $http, searchService, searchBootstrapper) {
     "use strict";
 
     var _this = this;
@@ -82,7 +82,7 @@ var InformaFacetController = function ($scope, $location,$http, searchService, s
         _this.clearAllFacets = function () {
 
 
-            _this.clearPublicationDate();
+            // _this.clearPublicationDate();
             var facetClear = this;
             var facetGroups = facetClear.facetGroups;
             _.each(facetGroups, function (group) {

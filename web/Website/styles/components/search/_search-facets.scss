@@ -35,12 +35,6 @@
       display: inline-block;
       color: $informa-black;
     }
-
-    a.facets__clear {
-      float: right;
-      line-height: 29px;
-      cursor: pointer;
-    }
   }
 
   &__content {
@@ -165,5 +159,34 @@
       vertical-align: middle;
     }
   }
+
+  &__button {
+    background: transparent;
+    border: 0;
+    color: $informa-red;
+
+    &--clear {
+      float: right;
+      line-height: 29px;
+      cursor: pointer;
+    }
+
+    &--more,
+    &--less {
+      margin: 10px auto;
+      width: 100%;
+
+      &:after {
+        // content: "v";
+        // margin-left: 5px;
+      }
+    }
+
+    &--less {
+      display: none;
+    }
+  }
+
+
 }
 
