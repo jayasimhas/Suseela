@@ -484,6 +484,7 @@
     <Compile Include="User\ResetPassword\ProcessUserResetPasswordResult.cs" />
     <Compile Include="User\ResetPassword\ProcessUserResetPasswordStatus.cs" />
     <Compile Include="User\ResetPassword\UserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\UserResetPasswordExtensions.cs" />
     <Compile Include="User\ResetPassword\UserResetPasswordFactory.cs" />
     <Compile Include="User\ResetPassword\UserResetPasswordTokenFactory.cs" />
     <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPassword.cs" />

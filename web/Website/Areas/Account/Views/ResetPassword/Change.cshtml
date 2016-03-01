@@ -1,0 +1,49 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.ResetPassword.ChangeViewModel
+<div class="js-reset-password-container" style="border: 2px dashed red;">
+	<h1>Reset Password</h1>
+	<input name="token"
+		   type="hidden"
+		   value="@Model.Token" />
+	@if (Model.IsValidToken)
+	{
+		<div style="border: 2px dashed blue; margin: 2px;">
+			<div>
+				<h2>Dear #first_name# #last_name#</h2>
+				<p>Please enter a new password for you SCRIP account.</p>
+			</div>
+			<hr />
+			<div>
+				<label for="newPassword">New Password</label>
+				<input name="newPassword"
+					   class=""
+					   placeholder="Minimum 8 characters, case sensitive"
+					   type="password">
+				<label for="newPasswordRepeat">Confirm New Password</label>
+				<input name="newPasswordRepeat"
+					   class=""
+					   placeholder="Must match the above"
+					   type="password">
+				<hr />
+				<button class="button--filled js-reset-password-submit" data-reset-url="/api/ResetPasswordApi/Reset/">Submit</button>
+			</div>
+		</div>
+	}
+	else
+	{
+		if (Model.TokenFound)
+		{
+			<div style="border: 2px dashed green; margin: 2px;">
+				<hr />
+				<p>Unfortunately, your link to set a new password has expired. Please click below to receive a new link.</p>
+				<button class="button--filled js-reset-password-retry-submit" data-reset-url="/api/ResetPasswordApi/Retry/">Submit</button>
+			</div>
+		}
+		else
+		{
+			<div style="border: 2px dashed purple; margin: 2px;">
+				<hr />
+				<p>Unfortunately, your link to set a new password has expired. Please click use the sign in form to receive a new link.</p>
+			</div>
+		}
+	}
+</div>
