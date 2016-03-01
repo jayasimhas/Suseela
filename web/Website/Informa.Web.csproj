@@ -707,6 +707,7 @@
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="500.html" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
@@ -965,6 +966,7 @@
     <Content Include="Views\Shared\Components\CSSBlock.cshtml" />
     <Content Include="Views\Shared\Components\Subnavigation.cshtml" />
     <Content Include="Views\Shared\Test\UserResetPassword.cshtml" />
+    <Content Include="Views\Shared\Components\BodyCopy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
