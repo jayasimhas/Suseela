@@ -725,3 +725,29 @@ body {
 		border-radius: 10px;
 		border:5px solid #f1f2f2;
 	}
+
+
+.theme-dropdown {
+	margin: 0 1rem 2rem;
+}
+.theme-dropdown h6 {
+	margin-bottom: 0;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+}
+.theme-dropdown__select {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	padding: 0.25rem 0.5rem;
+	color: #ccc;
+	font-style: italic;
+	position: relative;
+}
+.theme-dropdown__select:after {
+	content: "▾";
+	display: inline-block;
+	position: absolute;
+	color: #ccc;
+	right: 0.5rem;
+	font-style: normal;
+}

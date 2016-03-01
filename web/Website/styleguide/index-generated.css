@@ -384,9 +384,7 @@ title: Colors
 @color: #ffffff @name: White
 @color: #bbbcbe @name: Light Gray B
 @color: #808285 @name: Medium Gray 8
-*/
-/* @color: #6D6E71 @name: Dove Gray */
-/*
+@color: #6D6E71 @name: Dove Gray
 ```
 */
 /**
@@ -3689,6 +3687,55 @@ section: Home/Topic Page Components
         padding: 12px 0 8px;
         padding: 0.75rem 0 0.5rem; } }
 
+/*---
+title: Global Header
+section: Global Components
+---
+
+```example:html
+<header>
+    <div class="header__wrapper clearfix">
+    
+        <div class="menu-toggler menu-toggler--mini js-toggle-menu">
+            <button class="menu-toggler__button">
+                <span>Toggle Menu</span>
+            </button>
+            Menu
+        </div>
+
+        <div class="header__logo">
+            <a href="/"><img src="/-/media/scriplogo.jpg"></a>
+        </div>
+
+        <div class="header-search__wrapper">
+            <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
+            <svg class="header__icons header__icons--search js-header-search-trigger">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#search"></use>
+            </svg>
+            <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
+            </svg>
+        </div>
+
+        <div class="header-account-access">
+                <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger" data-pop-out-id="header-register" data-pop-out-type="register">
+
+                    <svg class="header__icons icon-register">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#register"></use>
+                    </svg>
+					<span class="header-account-access__label">Register</span>
+                </div>
+                <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger" data-pop-out-id="header-signin" data-pop-out-align="right" data-pop-out-type="sign-in" data-pop-out-tab-height="87">
+                    <svg class="header__icons icon-sign-in">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
+                    </svg>
+					<span class="header-account-access__label">Sign In</span>
+                </div>
+        </div>
+    </div>
+</header>
+```
+*/
 .header__informa-permabanner {
   background-color: #505050;
   color: #fff;

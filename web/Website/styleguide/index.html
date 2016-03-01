@@ -7,6 +7,10 @@
 <header>
 	<nav>
 		<img src="https://pbs.twimg.com/profile_images/537287811724881921/JrtNWIt5.png" alt="Informa Style Guide">
+		<div class="theme-dropdown">
+			<h6>Theme</h6>
+			<div class="theme-dropdown__select">Default</div>
+		</div>
 		
 	<ul>
 		
@@ -119,6 +123,20 @@
 				
 				<li>
 					<a href="#article-sidebar"><span>Article Sidebar</span></a>
+					
+				</li>
+				
+	</ul>
+	
+				</li>
+				
+				<li>
+					<a href="#global-components"><span>Global Components</span></a>
+					
+	<ul>
+		
+				<li>
+					<a href="#global-header"><span>Global Header</span></a>
 					
 				</li>
 				
@@ -565,7 +583,65 @@
 			</div>
 		</section>
 		
-	<footer>Last modified Tuesday, 1 March 2016 12:18
+		<section id="global-components">
+			<h2>Global Components</h2>
+			<div>
+				
+				
+		<section id="global-header">
+			<h3>Global Header</h3>
+			<div>
+				<pre><code class="lang-example:html">&lt;header&gt;
+    &lt;div class=&quot;header__wrapper clearfix&quot;&gt;
+
+        &lt;div class=&quot;menu-toggler menu-toggler--mini js-toggle-menu&quot;&gt;
+            &lt;button class=&quot;menu-toggler__button&quot;&gt;
+                &lt;span&gt;Toggle Menu&lt;/span&gt;
+            &lt;/button&gt;
+            Menu
+        &lt;/div&gt;
+
+        &lt;div class=&quot;header__logo&quot;&gt;
+            &lt;a href=&quot;/&quot;&gt;&lt;img src=&quot;/-/media/scriplogo.jpg&quot;&gt;&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;header-search__wrapper&quot;&gt;
+            &lt;input class=&quot;inf-standard-form-field header-search__field&quot; type=&quot;search&quot; placeholder=&quot;Search the site&quot;&gt;
+            &lt;svg class=&quot;header__icons header__icons--search js-header-search-trigger&quot;&gt;
+                &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#search&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;svg class=&quot;header__icons header__icons--dismiss-search js-header-search-trigger&quot;&gt;
+                &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#x&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;header-account-access&quot;&gt;
+                &lt;div class=&quot;header-account-access__my-account pop-out__trigger js-pop-out-trigger&quot; data-pop-out-id=&quot;header-register&quot; data-pop-out-type=&quot;register&quot;&gt;
+
+                    &lt;svg class=&quot;header__icons icon-register&quot;&gt;
+                        &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#register&quot;&gt;&lt;/use&gt;
+                    &lt;/svg&gt;
+                    &lt;span class=&quot;header-account-access__label&quot;&gt;Register&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger&quot; data-pop-out-id=&quot;header-signin&quot; data-pop-out-align=&quot;right&quot; data-pop-out-type=&quot;sign-in&quot; data-pop-out-tab-height=&quot;87&quot;&gt;
+                    &lt;svg class=&quot;header__icons icon-sign-in&quot;&gt;
+                        &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#sign-in&quot;&gt;&lt;/use&gt;
+                    &lt;/svg&gt;
+                    &lt;span class=&quot;header-account-access__label&quot;&gt;Sign In&lt;/span&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
+	<footer>Last modified Tuesday, 1 March 2016 12:54
 </main>
 <script src="prism.js"></script>
 <script src="examples.js"></script>
