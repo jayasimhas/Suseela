@@ -4942,6 +4942,16 @@
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Site Globals.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Site Globals\Site Config.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Site Globals\Workflow From Email Address Configuration.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Test Article.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
