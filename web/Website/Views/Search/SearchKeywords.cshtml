@@ -1,10 +1,5 @@
-@using Sitecore.Mvc.Presentation
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.ISearch>
-
-
-
-<form class="search-bar">
 @inherits CustomGlassView<SearchViewModel>
+<form class="search-bar">
 
     <h3 class="search-bar__label">
         <label for="js-search-field">@Model.SearchTitleText</label>
@@ -20,7 +15,7 @@
                 </svg>
             </a>
 
-            <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
+            <input ng-keypress="($event.which === 13)?query.update():0" id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
 
                    ng-model="query.keywords"/>
         </div>
