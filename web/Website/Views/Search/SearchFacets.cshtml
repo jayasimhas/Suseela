@@ -24,13 +24,12 @@
   <div class="facets__content">
 
     <form class="facets__section" 
-      ng-repeat="group in allFacets.facetGroups"
-      ng-if='group.facets.length > 1'>
+      ng-repeat="group in allFacets.facetGroups">
+      <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
       <fieldset class="facets__fieldset">
         <legend class="facets__legend facets__section-header"><h4>{{ group.label }}</h4></legend>
         <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit">
           <li 
-            ng-if="f.label.length > 0"
             ng-hide = "($index >= allFacets.MaxFacetShow) && (!group.ShowMore)">
             <input id="{{ group.id }}-{{ $index }}"
             type="checkbox"
@@ -38,17 +37,16 @@
             ng-checked="f.selected"
             ng-model="f.selected"
             ng-change="allFacets.update()">
+            <!-- temporarily removing ng-if="f.label.length > 0" from above -->
             <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
           </li>
         </ul>
         <button 
           class="facets__button facets__button--more" 
-          ng-class="{ 'hidediv': ismore }"
           ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
           ng-click = 'group.ShowMore = true'>See All</button>
         <button 
           class="facets__button facets__button--less" 
-          ng-class="{ 'hidediv': !ismore }"
           ng-show='group.ShowMore'
           ng-click='group.ShowMore = false'>See Less</button>
       </fieldset>
