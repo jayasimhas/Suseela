@@ -4,20 +4,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm;
+using InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls;
+using InformaSitecoreWord.User;
 using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Tools.Ribbon;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm;
-using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.WebserviceHelper;
 
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	public partial class ESRibbon
 	{

@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	partial class SuggestedURL
 	{

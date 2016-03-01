@@ -4,16 +4,16 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
 using ArticleStruct = PluginModels.ArticleStruct;
 using StaffStruct = PluginModels.StaffStruct;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	/// <summary>
 	/// Primary control for the Article Information tab

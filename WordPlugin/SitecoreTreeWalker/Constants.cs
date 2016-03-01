@@ -1,6 +1,7 @@
-﻿using SitecoreTreeWalker.Config;
-using System.Collections.Generic;
-namespace SitecoreTreeWalker
+﻿using System.Collections.Generic;
+using InformaSitecoreWord.Config;
+
+namespace InformaSitecoreWord
 {
     internal class Constants
     {

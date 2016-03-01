@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using InformaSitecoreWord.Sitecore;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.document
+namespace InformaSitecoreWord.document
 {
 	public class DocumentProtection
 	{

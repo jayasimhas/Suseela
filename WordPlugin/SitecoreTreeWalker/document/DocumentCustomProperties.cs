@@ -2,10 +2,10 @@ using System;
 using System.Diagnostics;
 using Microsoft.Office.Core;
 using System.Reflection;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.document
+namespace InformaSitecoreWord.document
 {
 	public class DocumentCustomProperties
 	{

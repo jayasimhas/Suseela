@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class MarketSegmentsControl
 	{
@@ -32,7 +32,7 @@
 			this.uxArrowUp = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.uxMarketSegmentsViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxMarketSegmentsResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxMarketSegmentsResults = new NoFlickerListView();
 			this.uxMarketSegmentsResultsTree = new System.Windows.Forms.TreeView();
 			this.uxMarketSegmentsKeywords = new System.Windows.Forms.TextBox();
 			this.uxMarketSegmentsViewSearch = new System.Windows.Forms.LinkLabel();
@@ -69,7 +69,7 @@
 			// uxArrowUp
 			// 
 			this.uxArrowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowUp.Image = global::SitecoreTreeWalker.Properties.Resources.arrowup;
+			this.uxArrowUp.Image = global::InformaSitecoreWord.Properties.Resources.arrowup;
 			this.uxArrowUp.Location = new System.Drawing.Point(316, 265);
 			this.uxArrowUp.Name = "uxArrowUp";
 			this.uxArrowUp.Padding = new System.Windows.Forms.Padding(2);
@@ -171,7 +171,7 @@
 			// uxArrowDown
 			// 
 			this.uxArrowDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowDown.Image = global::SitecoreTreeWalker.Properties.Resources.arrowdown;
+			this.uxArrowDown.Image = global::InformaSitecoreWord.Properties.Resources.arrowdown;
 			this.uxArrowDown.Location = new System.Drawing.Point(223, 265);
 			this.uxArrowDown.Name = "uxArrowDown";
 			this.uxArrowDown.Padding = new System.Windows.Forms.Padding(2);
@@ -182,7 +182,7 @@
 			// 
 			this.label25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label25.ForeColor = System.Drawing.Color.Gray;
-			this.label25.Image = global::SitecoreTreeWalker.Properties.Resources.marketsegments_tabheader;
+			this.label25.Image = global::InformaSitecoreWord.Properties.Resources.marketsegments_tabheader;
 			this.label25.Location = new System.Drawing.Point(0, 0);
 			this.label25.Name = "label25";
 			this.label25.Size = new System.Drawing.Size(610, 30);

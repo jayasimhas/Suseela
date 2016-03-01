@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	partial class MultimediaControl
 	{
@@ -124,7 +124,7 @@
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Image = global::SitecoreTreeWalker.Properties.Resources.graphics_tabheader;
+			this.label1.Image = global::InformaSitecoreWord.Properties.Resources.graphics_tabheader;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(310, 24);
@@ -173,7 +173,7 @@
 			// 
 			// label2
 			// 
-			this.label2.Image = global::SitecoreTreeWalker.Properties.Resources.multimedia_tabheader;
+			this.label2.Image = global::InformaSitecoreWord.Properties.Resources.multimedia_tabheader;
 			this.label2.Location = new System.Drawing.Point(-1, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(310, 24);

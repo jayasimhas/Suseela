@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	partial class DealsDrugsCompaniesControl
 	{
@@ -37,13 +37,13 @@
 			this.uxInsertIntoArticle = new System.Windows.Forms.Button();
 			this.uxViewDetails = new System.Windows.Forms.Button();
 			this.uxPreviewPanel = new System.Windows.Forms.Panel();
-			this.uxPreviewDeals = new SitecoreTreeWalker.UI.DealPreviewControl();
+			this.uxPreviewDeals = new DealPreviewControl();
 			this.uxRetrieveInformation = new System.Windows.Forms.Button();
 			this.HeaderPanel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label9 = new System.Windows.Forms.Label();
-			this.companyTreeView1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.CompanyTreeView();
+			this.companyTreeView1 = new CompanyTreeView();
 			this.label2 = new System.Windows.Forms.Label();
 			this.uxPreviewPanel.SuspendLayout();
 			this.HeaderPanel1.SuspendLayout();
@@ -190,7 +190,7 @@
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Image = global::SitecoreTreeWalker.Properties.Resources.TabHeaders_deals;
+			this.label1.Image = global::InformaSitecoreWord.Properties.Resources.TabHeaders_deals;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(310, 24);
@@ -210,7 +210,7 @@
 			// 
 			this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label9.ForeColor = System.Drawing.Color.Gray;
-			this.label9.Image = global::SitecoreTreeWalker.Properties.Resources.TabHeaders_companies;
+			this.label9.Image = global::InformaSitecoreWord.Properties.Resources.TabHeaders_companies;
 			this.label9.Location = new System.Drawing.Point(0, 0);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(310, 24);
@@ -224,7 +224,7 @@
 			this.companyTreeView1.Name = "companyTreeView1";
 			this.companyTreeView1.Size = new System.Drawing.Size(189, 134);
 			this.companyTreeView1.TabIndex = 33;
-			this.companyTreeView1.CompanyDoubleClicked += new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.CompanyTreeView.CompanyDoubleClick(this.companyTreeView1_CompanyDoubleClicked);
+			this.companyTreeView1.CompanyDoubleClicked += new CompanyTreeView.CompanyDoubleClick(this.companyTreeView1_CompanyDoubleClicked);
 			// 
 			// label2
 			// 

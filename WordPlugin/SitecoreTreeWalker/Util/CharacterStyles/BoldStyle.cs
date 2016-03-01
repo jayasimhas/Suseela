@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.CharacterStyles
+namespace InformaSitecoreWord.Util.CharacterStyles
 {
 	class BoldStyle : CharacterStyle
 	{

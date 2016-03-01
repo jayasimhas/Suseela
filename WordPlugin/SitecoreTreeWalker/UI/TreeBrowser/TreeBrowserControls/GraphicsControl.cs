@@ -3,14 +3,14 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util.Document;
 using Microsoft.Office.Interop.Word;
 using PluginModels;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
     public partial class GraphicsControl : UserControl
     {

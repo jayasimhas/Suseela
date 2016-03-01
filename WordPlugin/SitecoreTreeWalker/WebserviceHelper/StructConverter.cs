@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using PluginModels;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 
-namespace SitecoreTreeWalker.WebserviceHelper
+namespace InformaSitecoreWord.WebserviceHelper
 {
 	public class StructConverter
 	{

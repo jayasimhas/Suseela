@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.Sitecore
+namespace InformaSitecoreWord.Sitecore
 {
     public class SitecorePath
     {

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.IO.IsolatedStorage;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	class UserCredentialReader
 	{

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using InformaSitecoreWord.Util.CharacterStyles;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Util.CharacterStyles;
 
-namespace SitecoreTreeWalker.Util.Tables
+namespace InformaSitecoreWord.Util.Tables
 {
 	/// <summary>
 	/// 

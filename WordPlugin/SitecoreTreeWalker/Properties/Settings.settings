@@ -1,5 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InformaSitecoreWord.Properties" GeneratedClassName="Settings">
   <Profiles />
-  <Settings />
+  <Settings>
+    <Setting Name="InformaSitecoreWord_SitecoreServer_SCServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://uat.ibi.velir.com</Value>
+    </Setting>
+    <Setting Name="InformaSitecoreWord_SitecoreTree_SCTree" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://uat.ibi.velir.com</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
