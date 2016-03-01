@@ -16,6 +16,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
              { label: 'Last year', key: 'year' }
         ];
 
+        _this.MaxFacetShow = 5;
 
 
         //_this.CustomStartDate = jq("#facet-by-start-date");

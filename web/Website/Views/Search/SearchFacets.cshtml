@@ -39,7 +39,9 @@
       <fieldset class="facets__fieldset">
         <legend class="facets__legend facets__section-header"><h4>{{ group.label }}</h4></legend>
         <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit">
-          <li ng-if="f.label.length > 0">
+          <li 
+            ng-if="f.label.length > 0"
+            ng-hide = "$index >= allFacets.MaxFacetShow">
             <input id="{{ group.id }}-{{ $index }}"
             type="checkbox"
             class="visuallyhidden"
