@@ -712,6 +712,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\reset-password-controller.js" />
     <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />

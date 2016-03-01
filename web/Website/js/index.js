@@ -5,6 +5,7 @@ import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
 import LoginController from './login-controller';
+import ResetPasswordController from './reset-password-controller';
 
 
 /* Toggle menu categories */
@@ -145,6 +146,10 @@ $(document).ready(function() {
 			toggleSignInError();
 		}
 	);
+
+	var resetPassword = new ResetPasswordController();
+
+	resetPassword.addControl('.js-reset-password-submit');
 
     svg4everybody();
 
