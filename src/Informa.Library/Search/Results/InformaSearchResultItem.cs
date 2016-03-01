@@ -21,7 +21,7 @@ namespace Informa.Library.Search.Results
         [IndexField("_latestversion")]
         public bool IsLatestVersion { get; set; }
 
-        [IndexField("searchdate_tdt")]
+        [IndexField("searchdate")]
         [DataMember]
         public DateTime SearchDate { get; set; }
 
