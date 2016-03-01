@@ -5,18 +5,20 @@ using System.Web;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
-    public class SearchModel : ISearchModel
+
+    public class SearchViewModel : GlassViewModel<ISearch>, ISearchViewModel
     {
         protected readonly ITextTranslator TextTranslator;
 
-        public SearchModel() { }
+        public SearchViewModel() { }
 
-        public SearchModel(
+        public SearchViewModel(
           ITextTranslator textTranslator)
         {
             TextTranslator = textTranslator;
@@ -24,6 +26,7 @@ namespace Informa.Web.ViewModels
 
         public string PageFirstText => TextTranslator.Translate("Search.Page.First");
         public string PageLastText => TextTranslator.Translate("Search.Page.Last");
+        public string SearchTipsText => TextTranslator.Translate("Search.Tips");
 
     }
 }
