@@ -27,8 +27,8 @@ namespace Informa.Web.Areas.Account.ViewModels.ResetPassword
 			}
 		}
 
-		public string Title => "";
-		public IHtmlString ResetBody => new MvcHtmlString("");
+		public string Title => GlassModel?.Title;
+		public IHtmlString ResetBody => new MvcHtmlString(GlassModel?.Body ?? string.Empty);
 		public string NewPasswordLabelText => "";
 		public string NewPasswordPlaceholderText => "";
 		public string NewPasswordRepeatLabelText => "";

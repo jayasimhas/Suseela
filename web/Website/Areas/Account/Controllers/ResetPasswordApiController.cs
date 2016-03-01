@@ -15,8 +15,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		}
 
 		[HttpPost]
-		[HttpGet]
-		public IHttpActionResult Reset([FromUri]ResetPasswordRequest request)
+		public IHttpActionResult Reset(ResetPasswordRequest request)
 		{
 			if (!ModelState.IsValid)
 			{
