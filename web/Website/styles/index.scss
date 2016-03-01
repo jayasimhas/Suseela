@@ -34,6 +34,7 @@
 @import 'components/latest-news';
 @import 'components/main-menu';
 @import 'components/manually-curated-content';
+@import 'components/media-exhibit';
 @import 'components/menu-toggler';
 @import 'components/newsletter-signup';
 @import 'components/pop-out';
@@ -56,7 +57,6 @@
 @import 'components/article/article-metadata';
 @import 'components/article/article-preview';
 @import 'components/article/article-prologue';
-@import 'components/article/article-pullquote';
 @import 'components/article/article-quick-facts';
 @import 'components/article/article-related-content';
 @import 'components/article/article-sidebar';
@@ -71,6 +71,9 @@
 @import 'components/search/search-sort-options';
 @import 'components/search/search-listing';
 @import 'components/search/search-pagination';
+
+/* * * * ATOMS * * * */
+@import 'components/atoms/blockquote';
 
 /* * * * MOLECULES * * * */
 @import 'molecules/boxout';

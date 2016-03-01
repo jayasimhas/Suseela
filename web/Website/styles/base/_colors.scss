@@ -1,26 +1,3 @@
-/*---
-title: Colors
----
-```example:color
-@color: #231f20 @name: Zeus Black
-@color: #414042 @name: Ship Gray
-@color: #58595b @name: Abbey Gray
-@color: #979797 @name: Dusty Gray
-@color: #f1f2f2 @name: Concrete Gray
-@color: #e2e4e4 @name: Mercury Gray
-@color: #d1d3d4 @name: Light Gray
-@color: #be1e2d @name: Cardinal Red
-@color: #f7941e @name: Tree Poppy Orange
-@color: #fbb040 @name: Yellow Orange
-@color: #d6ebdc @name: Iceberg Green
-@color: #31be48 @name: Lime Green
-@color: #daa520 @name: Goldenrod
-@color: #ffffff @name: White
-@color: #bbbcbe @name: Light Gray B
-@color: #808285 @name: Medium Gray 8
-```
-
-*/
 $informa-black: #231f20;
 $color-zeus-black: #231f20;
 
@@ -29,6 +6,8 @@ $color-ship-gray: #414042;
 
 $informa-dark-gray: #58595b;
 $color-abbey-gray: #58595b;
+
+$color-dove-gray: #6D6E71;
 
 $informa-mid-gray: #979797;
 $color-dusty-gray: #979797;
@@ -55,6 +34,8 @@ $color-iceberg-green: #d6ebdc;
 $color-lime-green: #31be48;
 $color-goldenrod: #daa520;
 
-$color-white: #ffffff;
+$color-white: #fff;
 $color-light-gray-b: #bbbcbe;
 $color-medium-gray-8: #808285;
+
+$color-antique-white: #ffeedd;

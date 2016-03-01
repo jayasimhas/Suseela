@@ -1,24 +1,3 @@
-/*---
-title: Article Sidebar
-section: Article Components
----
-Styles for a floated sidebar within an article body.
-
-```example:html
-<aside class="article-sidebar">
-
-    <h3>Sidebar? Sidebar.</h3>
-    <span class="article-sidebar__byline">by The Author</span>
-    <time class="article-sidebar__date">26 Feb 2014</time>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-    <a class="article-sidebar__read-more" href="#">Read the full article here</a>
-
-</aside>
-```
-*/
-
 .article-sidebar {
     background-color: $informa-light-gray-f;
     border-top: 4px solid $informa-red;
@@ -60,7 +39,6 @@ Styles for a floated sidebar within an article body.
             font-size: 10px;
             line-height: 1rem;
             vertical-align: middle;
-            margin-left: 0.25rem;
         }
     }
 

@@ -1,28 +1,3 @@
-/*---
-title: Article Interview
-section: Article Components
----
-An interview (questions and answers) added via the Word plugin.
-
-```example:html
-<div class="article-interview">
-    <h2>Interviews and Q&amp;A</h2>
-
-    <div class="article-interview__question">
-        The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
-    </div>
-    <div class="article-interview__answer">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </div>
-    <div class="article-interview__question">
-        The quick brown fox jumped over the lazy dog.
-    </div>
-    <div class="article-interview__answer">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </div>
-</div>
-```
-*/
 .article-interview {
     position: relative;
 
@@ -36,15 +11,16 @@ An interview (questions and answers) added via the Word plugin.
         line-height: 1.75rem;
         margin-bottom: 1.25rem;
     }
+
     &__question:before,
     &__answer:before {
         @include textMix('Roboto Condensed', 0.875rem, 700);
         display: inline-block;
         height: 1.75rem;
-        line-height: 1.125rem;
+        // line-height: 1.125rem;  // RH removed 2/26, this caused a bug (IIPP-574) in IE
         margin-left: -2.5rem;
         margin-right: 0.5rem;
-        padding: 0.25rem;
+        // padding: 0.25rem;  // RH removed 2/26, this caused a bug (IIPP-574) in IE
         text-align: center;
         vertical-align: baseline;
         width: 1.75rem;
@@ -61,6 +37,7 @@ An interview (questions and answers) added via the Word plugin.
             content: "Q";
         }
     }
+
     &__answer {
         border-left: 1px solid #e9bf91;
         font-size: 0.925rem;
@@ -71,6 +48,8 @@ An interview (questions and answers) added via the Word plugin.
             background-color: #fae4be;
             border: 1px solid #e9bf91;
             content: "A";
+            position: relative;
+            top: -1px;
         }
     }
 

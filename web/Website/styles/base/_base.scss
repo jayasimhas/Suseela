@@ -19,6 +19,9 @@ html {
   box-sizing: inherit;
 }
 
+HELLO
+
+
 /**
  * Basic styles for links
  */
@@ -46,9 +49,28 @@ ul, li, ol {
 	list-style: none;
 }
 
+// Override list resets for lists in a RTE component
+.GeneralRTEComponent {
+  ul > li {
+    margin-left: 20px;
+    list-style: disc;
+  }
+  ol > li {
+    margin-left: 20px;
+    list-style: decimal;
+  }
+}
+
 // Normalize SVG icons
 svg {
   @include svg-fill(black);
   height: 16px;
   width: 16px;
+}
+
+// Freeze the page/body to prevent scrolling when menu is open on tablet/phone
+body.is-frozen {
+    @include breakpoint('medium') {
+        overflow-y: hidden;
+    }
 }

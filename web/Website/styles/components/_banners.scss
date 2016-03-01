@@ -1,26 +1,3 @@
-/*---
-title: Banners
-section: UI Elements
----
-Multiple banner styles.
-
-```example:html
-<div class="banner banner--maintenance is-visible">
-	<div class="banner__wrapper">
-		<div class="dismiss-button js-dismiss-banner">
-			<span>Dismiss</span>
-			<svg class="dismiss-button__icon">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
-			</svg>
-		</div>
-		<svg class="banner__lead-icon">
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#tool-maintenance"></use>
-		</svg>
-		Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
-	</div>
-</div>
-```
-*/
 .banner {
 	margin-bottom: 2rem;
 
@@ -43,6 +20,27 @@ Multiple banner styles.
 
 		@include breakpoint('medium') {
 			display: none;
+		}
+
+		.banner__wrapper {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+
+			.dismiss-button {
+				align-self: center;
+				flex: 0 0 auto;
+				order: 3;
+			}
+			.banner__lead-icon {
+				align-self: center;
+				flex: 0 0 auto;
+				order: 1;
+			}
+			span {
+				flex: 1 1 auto;
+				order: 2;
+			}
 		}
 	}
 

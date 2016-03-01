@@ -1,43 +1,52 @@
-/*---
-title: Topic Jump Links
-section: Home/Topic Page Components
----
-Contains a list of links to anchors within the page, allowing visitors to jump directly to a subtopic within the page.
-
-```example:html
-<div class="sub-topic-links">
-	<span>Jump To Section</span>
-	<div class="bar-separated-link-list">
-		<a href="#">Companies</a>
-		<a href="#">Deals</a>
-		<a href="#">Strategy</a>
-		<a href="#">Markets</a>
-	</div>
-</div>
-```
-*/
-
 .sub-topic-links {
     margin-bottom: 1rem;
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 
     span {
-        @include textMix('Roboto Condensed', 0.875rem, 700);
+        @include textMix('Roboto Condensed', 0.9375rem, 700);
+        color: $color-zeus-black;
+        flex: 0 0 auto;
+        line-height: 1.5rem;
+        padding-right: 0.75rem;
         text-transform: uppercase;
-        color: $informa-black;
+        vertical-align: top;
+
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+
+    .bar-separated-link-list {
+        flex-wrap: wrap;
     }
 
     a {
-        @include textMix('Roboto', 0.875rem, 400);
-        color: $informa-dark-gray;
+        @include textMix('Roboto', 0.9375rem, 400);
         border-right: 1px solid $informa-light-gray-d;
+        color: $color-dove-gray;
         display: inline-block;
-        padding: 0 0.75rem;
         flex: 0 0 auto;
+        line-height: 1.5rem;
+        padding: 0 0.75rem 0 0;
+        margin-right: 0.75rem;
 
+        @include on-event() {
+            color: $color-cardinal-red;
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
         &:last-child {
             border: 0;
         }
+    }
+
+    // Offset topic header anchors to create headroom for sticky mobile menu bar
+    &__invisible-topic-header-anchor {
+        position: absolute;
+        margin-top: -3rem;
     }
 }

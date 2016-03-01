@@ -1,51 +1,3 @@
-/*---
-title: Article Author
-section: Article Components
----
-Contains information about an article's author or authors.
-
-```example:html
-<div class="article-author article-author--solo">
-    <ul class="article-author__list">
-        <li>
-            <div class="article-author__solo-wrapper">
-                <span class="article-author__name">Jane Smith</span>
-                <span class="article-author__contact">
-                    <a href="#" target="_blank">&#64;janesmithtweets</a>
-                    <a href="#">jane@janesmith.com</a>
-                </span>
-            </div>
-        </li>
-    </ul>
-</div>
-
-<div class="article-author">
-    <ul class="article-author__list">
-        <li>
-            <span class="article-author__name">Jane Smith</span>
-            <span class="article-author__contact">
-                <a href="#" target="_blank">&#64;janesmithtweets</a>
-                <a href="#">jane@janesmith.com</a>
-            </span>
-        </li>
-        <li>
-            <span class="article-author__name">Jane Smith</span>
-            <span class="article-author__contact">
-                <a href="#" target="_blank">&#64;janesmithtweets</a>
-                <a href="#">jane@janesmith.com</a>
-            </span>
-        </li>
-        <li>
-            <span class="article-author__name">Jane Smith</span>
-            <span class="article-author__contact">
-                <a href="#" target="_blank">&#64;janesmithtweets</a>
-                <a href="#">jane@janesmith.com</a>
-            </span>
-        </li>
-    </ul>
-</div>
-```
-*/
 .article-author {
     @include textMix("Roboto", 18px, 500);
     background-color: $color-concrete-gray;
@@ -64,14 +16,25 @@ Contains information about an article's author or authors.
         margin-bottom: 1rem;
     }
 
+    &__list {
+        margin-bottom: 0 !important;
+    }
     &__list li {
         border-bottom: 1px solid $informa-light-gray-d;
         margin-bottom: 1rem;
+        margin-left: 0 !important;
         padding-bottom: 0.75rem;
 
         &:last-child {
             border: 0;
             margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &:before {
+            // TODO - Refactor article and general content styles
+            background: none !important;
+            margin: 0 !important;
         }
     }
 
@@ -145,6 +108,7 @@ Contains information about an article's author or authors.
         width: 7.5rem;
         vertical-align: middle;
         margin-right: 1.125rem;
+        display: inline-block;
     }
 
     &__solo-wrapper {
