@@ -2,9 +2,9 @@
 version: 1
 id: {58753312-C98B-46E7-A534-F851B4B4A65E}
 database: master
-path: /sitecore/system/Modules/Search/Refinements/zDate
+path: /sitecore/system/Modules/Search/Refinements/zDateRange
 parent: {CB643BB4-F947-48F8-A112-0F80239E64C6}
-name: zDate
+name: zDateRange
 master: {00000000-0000-0000-0000-000000000000}
 template: {89A08D1F-18DC-432A-9CE3-AFCBA7845E4D}
 templatekey: Date Range Refinement
@@ -12,7 +12,7 @@ templatekey: Date Range Refinement
 ----version----
 language: en
 version: 1
-revision: ee7bcfb1-baaa-4d8c-a406-71c513367b08
+revision: 4afc3e3a-677d-44e1-bc12-568285d0f3d0
 
 ----field----
 field: {3162CD52-3D1C-41F1-88A1-E5D7C4E89215}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ee7bcfb1-baaa-4d8c-a406-71c513367b08
+4afc3e3a-677d-44e1-bc12-568285d0f3d0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160229T021342Z
+20160229T023930Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
