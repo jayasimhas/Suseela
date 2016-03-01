@@ -1,3 +1,29 @@
+/*---
+title: Article Interview
+section: Article Components
+---
+An interview (questions and answers) added via the Word plugin.
+
+```example:html
+<div class="article-interview">
+    <h2>Interviews and Q&amp;A</h2>
+
+    <div class="article-interview__question">
+        The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+    </div>
+    <div class="article-interview__answer">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </div>
+    <div class="article-interview__question">
+        The quick brown fox jumped over the lazy dog.
+    </div>
+    <div class="article-interview__answer">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </div>
+</div>
+```
+*/
+
 .article-interview {
     position: relative;
 

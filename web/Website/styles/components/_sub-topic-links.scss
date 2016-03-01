@@ -1,3 +1,22 @@
+/*---
+title: Topic Jump Links
+section: Home/Topic Page Components
+---
+Contains a list of links to anchors within the page, allowing visitors to jump directly to a subtopic within the page.
+
+```example:html
+<div class="sub-topic-links">
+  <span>Jump To Section</span>
+  <div class="bar-separated-link-list">
+      <a href="#">Companies</a>
+      <a href="#">Deals</a>
+      <a href="#">Strategy</a>
+      <a href="#">Markets</a>
+  </div>
+</div>
+```
+*/
+
 .sub-topic-links {
     margin-bottom: 1rem;
     display: flex;

@@ -113,11 +113,6 @@
 				</li>
 				
 				<li>
-					<a href="#article-pullquote"><span>Article Pullquote</span></a>
-					
-				</li>
-				
-				<li>
 					<a href="#quick-facts-box"><span>Quick Facts Box</span></a>
 					
 				</li>
@@ -157,6 +152,7 @@
 @color: #ffffff @name: White
 @color: #bbbcbe @name: Light Gray B
 @color: #808285 @name: Medium Gray 8
+@color: #6D6E71 @name: Dove Gray
 </code></pre>
 
 				
@@ -305,7 +301,7 @@
 
     &lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
         &lt;h1 class=&quot;article-preview__headline&quot;&gt;
-            &lt;a href=&quot;/articles/2015/09/15/icaac-2015-mercks-bezlotoxumab-a-big-step-in-c-diff&quot;&gt;ICAAC 2015: Merck&#39;s Bezlotoxumab A &#39;Big Step&#39; In C Diff&lt;/a&gt;
+            &lt;a href=&quot;/articles/2015/09/15/icaac-2015-mercks-bezlotoxumab-a-big-step-in-c-diff&quot;&gt;ICAAC 2015: Merck&#39;s Bezlotoxumab A &#39;Big Step&#39; In C iff&lt;/a&gt;
         &lt;/h1&gt;
 
         &lt;span class=&quot;article-preview__byline&quot;&gt;
@@ -313,7 +309,7 @@
         &lt;/span&gt;
 
         &lt;div class=&quot;article-summary&quot;&gt;
-            &lt;p&gt;Merck &amp;amp; Co.&#39;s bezlotoxumab for the treatment of recurrent &lt;i&gt;clostridium difficile&lt;/i&gt; (C diff) infections is &quot;a big step&quot; for treatment of the debilitating and potentially deadly gut infection, according to Dale Gerding, a professor at Loyola University Chicago Stritch School of Medicine and a lead investigator for the monoclonal antibody&#39;s Phase III clinical trials.&lt;/p&gt;
+            &lt;p&gt;Merck &amp;amp; Co.&#39;s bezlotoxumab for the treatment of recurrent &lt;i&gt;clostridium difficile&lt;/i&gt; (C diff) infections is &quot;a big step&quot; for reatment of the debilitating and potentially deadly gut infection, according to Dale Gerding, a professor at Loyola University Chicago Stritch chool of Medicine and a lead investigator for the monoclonal antibody&#39;s Phase III clinical trials.&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 
@@ -354,13 +350,13 @@
 			<div>
 				<p>Contains a list of links to anchors within the page, allowing visitors to jump directly to a subtopic within the page.</p>
 <pre><code class="lang-example:html">&lt;div class=&quot;sub-topic-links&quot;&gt;
-    &lt;span&gt;Jump To Section&lt;/span&gt;
-    &lt;div class=&quot;bar-separated-link-list&quot;&gt;
-        &lt;a href=&quot;#&quot;&gt;Companies&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Deals&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Strategy&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Markets&lt;/a&gt;
-    &lt;/div&gt;
+  &lt;span&gt;Jump To Section&lt;/span&gt;
+  &lt;div class=&quot;bar-separated-link-list&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Companies&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Deals&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Strategy&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Markets&lt;/a&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -410,12 +406,9 @@
     &lt;/div&gt;
 
     &lt;div class=&quot;article-preview__tags bar-separated-link-list&quot;&gt;
-                &lt;a href=&quot;/search?tag=1d288e18-baff-4498-b284-ef9bc8d32e30&quot;&gt;Metabolic Disorders
-&lt;/a&gt;
-                &lt;a href=&quot;/search?tag=6ddf7877-fdae-472b-8739-fb4710df7651&quot;&gt;Switzerland
-&lt;/a&gt;
-                &lt;a href=&quot;/search?tag=b3122c5e-ff3f-438a-9c93-1b54dc1286a5&quot;&gt;Clinical Trials
-&lt;/a&gt;
+                &lt;a href=&quot;/search?tag=1d288e18-baff-4498-b284-ef9bc8d32e30&quot;&gt;Metabolic Disorders&lt;/a&gt;
+                &lt;a href=&quot;/search?tag=6ddf7877-fdae-472b-8739-fb4710df7651&quot;&gt;Switzerland&lt;/a&gt;
+                &lt;a href=&quot;/search?tag=b3122c5e-ff3f-438a-9c93-1b54dc1286a5&quot;&gt;Clinical Trials&lt;/a&gt;
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
@@ -527,33 +520,20 @@
 			</div>
 		</section>
 		
-		<section id="article-pullquote">
-			<h3>Article Pullquote</h3>
-			<div>
-				<p>Styles for a pull quote or blockquote.</p>
-<pre><code class="lang-example:html">&lt;blockquote class=&quot;article-pullquote&quot;&gt;
-    &lt;p&gt;Sometimes you just gotta come up with something to say.&lt;/p&gt;
-&lt;/blockquote&gt;
-</code></pre>
-
-				
-			</div>
-		</section>
-		
 		<section id="quick-facts-box">
 			<h3>Quick Facts Box</h3>
 			<div>
 				<pre><code class="lang-example:html">&lt;div class=&quot;sidebox&quot;&gt;
-    &lt;p class=&quot;quickfactstitle&quot;&gt;Quick Facts Title&lt;/p&gt;
-    &lt;p class=&quot;quickfactstext&quot;&gt;Quick Facts Text&lt;/p&gt;
-    &lt;ul class=&quot;quickfactsbulleted&quot;&gt;
-        &lt;li&gt;Quick text bullets&lt;/li&gt;
-    &lt;/ul&gt;
+  &lt;p class=&quot;quickfactstitle&quot;&gt;Quick Facts Title&lt;/p&gt;
+  &lt;p class=&quot;quickfactstext&quot;&gt;Quick Facts Text&lt;/p&gt;
+  &lt;ul class=&quot;quickfactsbulleted&quot;&gt;
+      &lt;li&gt;Quick text bullets&lt;/li&gt;
+  &lt;/ul&gt;
 
-    &lt;ol class=&quot;quickfactsnumbered&quot;&gt;
-        &lt;li&gt;Quic facts numbered&lt;/li&gt;
-    &lt;/ol&gt;
-    &lt;p class=&quot;quickfactssource&quot;&gt;Quick Facts Source&lt;/p&gt;
+  &lt;ol class=&quot;quickfactsnumbered&quot;&gt;
+      &lt;li&gt;Quic facts numbered&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p class=&quot;quickfactssource&quot;&gt;Quick Facts Source&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -585,7 +565,7 @@
 			</div>
 		</section>
 		
-	<footer>Last modified Thursday, 25 February 2016 13:53
+	<footer>Last modified Tuesday, 1 March 2016 12:18
 </main>
 <script src="prism.js"></script>
 <script src="examples.js"></script>

@@ -384,8 +384,10 @@ title: Colors
 @color: #ffffff @name: White
 @color: #bbbcbe @name: Light Gray B
 @color: #808285 @name: Medium Gray 8
+*/
+/* @color: #6D6E71 @name: Dove Gray */
+/*
 ```
-
 */
 /**
  * Set up a decent box model on the root element
@@ -420,12 +422,24 @@ ul, li, ol {
   padding: 0;
   list-style: none; }
 
+.GeneralRTEComponent ul > li {
+  margin-left: 20px;
+  list-style: disc; }
+
+.GeneralRTEComponent ol > li {
+  margin-left: 20px;
+  list-style: decimal; }
+
 svg {
   fill: black;
   height: 16px;
   width: 16px; }
   svg use > svg {
     fill: black; }
+
+@media (max-width: 800px) {
+  body.is-frozen {
+    overflow-y: hidden; } }
 
 /*---
 title: Font Families
@@ -485,8 +499,7 @@ body {
   font-size: 16px;
   font-weight: 400; }
 
-h1, .article-body-content h1, h2, h3, h4, h5, .alert-success p, h6, .article-topics__section-header {
-  color: #231f20;
+h1, .article-body-content h1, h2, h3, h4, .exhibit-title, h5, .alert-success p, h6, .article-topics__section-header {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
@@ -497,7 +510,7 @@ h1, .article-body-content h1, h2, h6, .article-topics__section-header {
   font-size: 47px;
   font-weight: 700; }
 
-h3, h4, h5, .alert-success p {
+h3, h4, .exhibit-title, h5, .alert-success p {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: 700; }
@@ -505,7 +518,7 @@ h3, h4, h5, .alert-success p {
 h2 {
   font-size: 30px; }
 
-h4 {
+h4, .exhibit-title {
   font-size: 20px; }
 
 h5, .alert-success p {
@@ -525,6 +538,24 @@ p {
   margin-bottom: 1rem; }
   p:last-child {
     margin-bottom: 0; }
+
+.carrot-list li {
+  margin-left: 24px;
+  margin-left: 1.5rem; }
+  .carrot-list li :before {
+    fill: #f7941e;
+    background: url(data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22layers%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2260px%22%20height%3D%2260px%22%20viewBox%3D%220%200%2060%2060%22%20style%3D%22enable-background%3Anew%200%200%2060%2060%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%23f7941e%22%20d%3D%22M18.185%2C60c-0.797%2C0-1.591-0.314-2.198-0.942c-1.213-1.258-1.213-3.301%2C0-4.564L38.88%2C30.758L14.524%2C5.505%0A%09c-1.213-1.26-1.213-3.301%2C0-4.562c1.216-1.258%2C3.183-1.258%2C4.398%2C0l26.555%2C27.535c1.213%2C1.258%2C1.213%2C3.301%2C0%2C4.562L20.384%2C59.058%0A%09C19.776%2C59.686%2C18.982%2C60%2C18.185%2C60z%22/%3E%0A%3C/svg%3E) no-repeat;
+    background-size: 11px auto;
+    background-position: center left;
+    content: "";
+    height: 24px;
+    width: 16px;
+    display: inline-block;
+    position: absolute;
+    margin-left: -24px;
+    margin-left: -1.5rem; }
+    .carrot-list li :before use > svg {
+      fill: #f7941e; }
 
 /* * * * COMPONENTS — GLOBAL * * * */
 .advertising--leaderboard {
@@ -596,6 +627,52 @@ Multiple banner styles.
     @media (max-width: 800px) {
       .banner--maintenance {
         display: none; } }
+    .banner--maintenance .banner__wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap; }
+      .banner--maintenance .banner__wrapper .dismiss-button {
+        -webkit-align-self: center;
+            -ms-flex-item-align: center;
+                align-self: center;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+        -webkit-box-ordinal-group: 4;
+        -webkit-order: 3;
+            -ms-flex-order: 3;
+                order: 3; }
+      .banner--maintenance .banner__wrapper .banner__lead-icon {
+        -webkit-align-self: center;
+            -ms-flex-item-align: center;
+                align-self: center;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+        -webkit-box-ordinal-group: 2;
+        -webkit-order: 1;
+            -ms-flex-order: 1;
+                order: 1; }
+      .banner--maintenance .banner__wrapper span {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+        -webkit-box-ordinal-group: 3;
+        -webkit-order: 2;
+            -ms-flex-order: 2;
+                order: 2; }
   .banner--highlights {
     color: #231f20;
     margin: 32px 0;
@@ -637,7 +714,7 @@ Styling for a horizontal list of links, separated by a thin bar.
 </div>
 ```
 */
-.bar-separated-link-list {
+.bar-separated-link-list, .result__tags {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -646,10 +723,10 @@ Styling for a horizontal list of links, separated by a thin bar.
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start; }
-  .bar-separated-link-list a {
+  .bar-separated-link-list a, .result__tags a {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 400;
     border-right: 1px solid #d1d3d4;
     display: inline-block;
@@ -659,7 +736,7 @@ Styling for a horizontal list of links, separated by a thin bar.
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto; }
-    .bar-separated-link-list a:last-child {
+    .bar-separated-link-list a:last-child, .result__tags a:last-child {
       border: 0;
       padding-right: 0; }
 
@@ -675,7 +752,7 @@ This file contains all styles related to the button component.
 <button class="button--gilded">Button</button>
 ```
 */
-.button--filled, .pop-out__register-submit, .pop-out__sign-in-submit, .button--outline, .button--outlined, .button--gilded {
+.button--filled, .pop-out__register-submit, .pop-out__sign-in-submit, .button--outlined, .button--outline, .button--gilded {
   -webkit-transition: all 200ms ease-in-out;
           transition: all 200ms ease-in-out;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -692,19 +769,15 @@ This file contains all styles related to the button component.
   .button--filled:hover, .pop-out__register-submit:hover, .pop-out__sign-in-submit:hover {
     background-color: #f7941e; }
 
-.button--outline, .button--outlined {
+.button--outline {
   background-color: #fff;
   border: 1px solid #fbb040; }
-  .button--outline:hover, .button--outlined:hover {
+  .button--outline:hover {
     border-color: #f7941e; }
 
 .button--gilded {
   background-color: #fff;
-  border: 1px solid #daa520;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto; }
+  border: 1px solid #daa520; }
 
 .onoffswitch {
   position: relative;
@@ -720,7 +793,7 @@ This file contains all styles related to the button component.
     cursor: pointer;
     border: 1px solid #bbbcbe;
     border-radius: 11px;
-    background-color: #ffffff; }
+    background-color: #fff; }
   .onoffswitch-inner {
     display: block;
     width: 200%;
@@ -737,17 +810,17 @@ This file contains all styles related to the button component.
       height: 22px;
       padding: 0;
       line-height: 22px;
-      color: #ffffff;
+      color: #fff;
       box-sizing: border-box; }
     .onoffswitch-inner:before {
       content: "ON";
       padding-left: 9px;
-      background-color: #ffffff;
+      background-color: #fff;
       color: #808285; }
-    .onoffswitch-inner-after {
+    .onoffswitch-inner:after {
       content: "OFF";
       padding-right: 9px;
-      background-color: #ffffff;
+      background-color: #fff;
       color: #808285;
       text-align: right; }
   .onoffswitch-switch {
@@ -757,7 +830,7 @@ This file contains all styles related to the button component.
     margin: 4px;
     background: #d1d3d4;
     position: absolute;
-    top: 0;
+    top: 1px;
     bottom: 0;
     right: 24px;
     border-radius: 50%;
@@ -766,7 +839,8 @@ This file contains all styles related to the button component.
   .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
     margin-left: 0; }
   .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0; }
+    right: 0;
+    background: #fbb040; }
 
 .dismiss-button {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -778,6 +852,7 @@ This file contains all styles related to the button component.
   text-transform: uppercase;
   letter-spacing: 1px; }
   .dismiss-button span {
+    color: #231f20;
     vertical-align: middle; }
   .dismiss-button__icon {
     width: 18px;
@@ -870,7 +945,7 @@ section: Home/Topic Page Components
 
     <div class="article-preview__inner-wrapper">
         <h1 class="article-preview__headline">
-            <a href="/articles/2015/09/15/icaac-2015-mercks-bezlotoxumab-a-big-step-in-c-diff">ICAAC 2015: Merck's Bezlotoxumab A 'Big Step' In C Diff</a>
+            <a href="/articles/2015/09/15/icaac-2015-mercks-bezlotoxumab-a-big-step-in-c-diff">ICAAC 2015: Merck's Bezlotoxumab A 'Big Step' In C iff</a>
         </h1>
 
         <span class="article-preview__byline">
@@ -878,7 +953,7 @@ section: Home/Topic Page Components
         </span>
 
         <div class="article-summary">
-            <p>Merck &amp; Co.'s bezlotoxumab for the treatment of recurrent <i>clostridium difficile</i> (C diff) infections is "a big step" for treatment of the debilitating and potentially deadly gut infection, according to Dale Gerding, a professor at Loyola University Chicago Stritch School of Medicine and a lead investigator for the monoclonal antibody's Phase III clinical trials.</p>
+            <p>Merck &amp; Co.'s bezlotoxumab for the treatment of recurrent <i>clostridium difficile</i> (C diff) infections is "a big step" for reatment of the debilitating and potentially deadly gut infection, according to Dale Gerding, a professor at Loyola University Chicago Stritch chool of Medicine and a lead investigator for the monoclonal antibody's Phase III clinical trials.</p>
         </div>
     </div>
 
@@ -1002,7 +1077,12 @@ section: Home/Topic Page Components
       margin-right: 70px;
       -webkit-transform: translate3d(0, 0, 0);
               transform: translate3d(0, 0, 0);
-      width: 260px; } }
+      width: 260px;
+      position: fixed;
+      top: 40px;
+      height: calc(100% - 28px);
+      overflow: scroll;
+      z-index: 998; } }
   .main-menu__section {
     border-bottom: 1px solid #d1d3d4;
     margin: 0;
@@ -1133,6 +1213,30 @@ section: Home/Topic Page Components
     .manually-curated-content__main-well .article-preview,
     .manually-curated-content__main-well .article-preview--small, .manually-curated-content__right-rail {
       width: 100%; } }
+
+.exhibit-number,
+.exhibit-bottomcaption,
+.exhibit-source {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #979797;
+  margin-bottom: 0 !important;
+  line-height: 24px !important;
+  line-height: 1.5rem !important;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.exhibit-source {
+  float: right;
+  font-style: italic; }
+
+.exhibit-title {
+  margin-bottom: 16px !important;
+  margin-bottom: 1rem !important;
+  line-height: 24px !important;
+  line-height: 1.5rem !important; }
 
 .menu-toggler {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -1356,6 +1460,9 @@ section: Home/Topic Page Components
     padding: 8px 12px;
     padding: 0.5rem 0.75rem;
     width: 100%; }
+  .pop-out__textarea {
+    height: 128px;
+    height: 8rem; }
   .pop-out__run-in {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 18px;
@@ -1479,13 +1586,13 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 ```example:html
 <div class="sub-topic-links">
-	<span>Jump To Section</span>
-	<div class="bar-separated-link-list">
-		<a href="#">Companies</a>
-		<a href="#">Deals</a>
-		<a href="#">Strategy</a>
-		<a href="#">Markets</a>
-	</div>
+  <span>Jump To Section</span>
+  <div class="bar-separated-link-list">
+      <a href="#">Companies</a>
+      <a href="#">Deals</a>
+      <a href="#">Strategy</a>
+      <a href="#">Markets</a>
+  </div>
 </div>
 ```
 */
@@ -1499,30 +1606,61 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
-          align-items: flex-start; }
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
   .sub-topic-links span {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 700;
-    text-transform: uppercase;
-    color: #231f20; }
-  .sub-topic-links a {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: #58595b;
-    border-right: 1px solid #d1d3d4;
-    display: inline-block;
-    padding: 0 12px;
-    padding: 0 0.75rem;
+    color: #231f20;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
-            flex: 0 0 auto; }
+            flex: 0 0 auto;
+    line-height: 24px;
+    line-height: 1.5rem;
+    padding-right: 12px;
+    padding-right: 0.75rem;
+    text-transform: uppercase;
+    vertical-align: top; }
+    @media (max-width: 480px) {
+      .sub-topic-links span {
+        display: block; } }
+  .sub-topic-links .bar-separated-link-list, .sub-topic-links .result__tags {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .sub-topic-links a {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    border-right: 1px solid #d1d3d4;
+    color: #6D6E71;
+    display: inline-block;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    line-height: 24px;
+    line-height: 1.5rem;
+    padding: 0 12px 0 0;
+    padding: 0 0.75rem 0 0;
+    margin-right: 12px;
+    margin-right: 0.75rem; }
+    .sub-topic-links a:hover, .sub-topic-links a:active, .sub-topic-links a:focus {
+      color: #be1e2d; }
+    .sub-topic-links a:first-child {
+      padding-left: 0; }
     .sub-topic-links a:last-child {
       border: 0; }
+  .sub-topic-links__invisible-topic-header-anchor {
+    position: absolute;
+    margin-top: -48px;
+    margin-top: -3rem; }
 
 .topic-featured-article {
   background-color: #f1f2f2;
@@ -1804,15 +1942,22 @@ Contains information about an article's author or authors.
     font-style: italic;
     margin-bottom: 16px;
     margin-bottom: 1rem; }
+  .article-author__list {
+    margin-bottom: 0 !important; }
   .article-author__list li {
     border-bottom: 1px solid #d1d3d4;
     margin-bottom: 16px;
     margin-bottom: 1rem;
+    margin-left: 0 !important;
     padding-bottom: 12px;
     padding-bottom: 0.75rem; }
     .article-author__list li:last-child {
       border: 0;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding-bottom: 0; }
+    .article-author__list li:before {
+      background: none !important;
+      margin: 0 !important; }
   .article-author__name {
     display: inline-block;
     width: 290px; }
@@ -1861,7 +2006,8 @@ Contains information about an article's author or authors.
     width: 7.5rem;
     vertical-align: middle;
     margin-right: 18px;
-    margin-right: 1.125rem; }
+    margin-right: 1.125rem;
+    display: inline-block; }
   .article-author__solo-wrapper {
     display: inline-block;
     vertical-align: middle; }
@@ -1878,7 +2024,30 @@ Contains information about an article's author or authors.
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  /*ul,
+    ol,
+    .GeneralRTEComponent ul,
+    .GeneralRTEComponent ol {
+        margin-bottom: 1rem;
+    }
+    li,
+    .GeneralRTEComponent li {
+        margin-left: 1.25rem;
+
+        &:before {
+        	background: url("/dist/img/icon-right-arrow.png") no-repeat;
+        	background-size: 7px auto;
+        	background-position: center left;
+        	content: "";
+        	height: 18px;
+        	width: 16px;
+        	display: inline-block;
+        	position: absolute;
+        	margin-left: -1.25rem;
+            margin-top: 2px;
+        }
+    }*/ }
   .article-body-content h1 {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
@@ -1901,6 +2070,8 @@ Contains information about an article's author or authors.
     margin: 0 0 1rem; }
   .article-body-content img {
     max-width: 100%; }
+  .article-body-content .plugin-hide {
+    display: none; }
   @media (max-width: 800px) {
     .article-body-content {
       font-size: 16px;
@@ -1922,7 +2093,7 @@ Contains information about an article's author or authors.
 .article-executive-summary {
   margin-bottom: 32px;
   margin-bottom: 2rem; }
-  .article-executive-summary h4 {
+  .article-executive-summary h4, .article-executive-summary .exhibit-title {
     color: #231f20;
     font-size: 24px;
     font-size: 1.5rem;
@@ -1973,14 +2144,10 @@ An interview (questions and answers) added via the Word plugin.
     display: inline-block;
     height: 28px;
     height: 1.75rem;
-    line-height: 18px;
-    line-height: 1.125rem;
     margin-left: -40px;
     margin-left: -2.5rem;
     margin-right: 8px;
     margin-right: 0.5rem;
-    padding: 4px;
-    padding: 0.25rem;
     text-align: center;
     vertical-align: baseline;
     width: 28px;
@@ -2008,7 +2175,9 @@ An interview (questions and answers) added via the Word plugin.
     .article-interview__answer:before {
       background-color: #fae4be;
       border: 1px solid #e9bf91;
-      content: "A"; }
+      content: "A";
+      position: relative;
+      top: -1px; }
   @media (max-width: 480px) {
     .article-interview__answer {
       margin-left: 12px;
@@ -2049,7 +2218,8 @@ An interview (questions and answers) added via the Word plugin.
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
-            flex-direction: row; }
+            flex-direction: row;
+    margin-bottom: 0; }
   .article-metadata li {
     -webkit-align-self: center;
         -ms-flex-item-align: center;
@@ -2061,6 +2231,7 @@ An interview (questions and answers) added via the Word plugin.
             flex: 0 0 auto;
     margin-right: 12px;
     margin-right: 0.75rem;
+    margin-left: 0;
     padding-right: 12px;
     padding-right: 0.75rem; }
     @media (max-width: 480px) {
@@ -2073,6 +2244,9 @@ An interview (questions and answers) added via the Word plugin.
       text-overflow: ellipsis; }
     .article-metadata li:last-child {
       border: 0; }
+    .article-metadata li:before {
+      background: none;
+      margin-left: 0; }
   .article-metadata__media-type {
     fill: #979797;
     height: 24px;
@@ -2126,12 +2300,9 @@ section: Home/Topic Page Components
     </div>
 
     <div class="article-preview__tags bar-separated-link-list">
-                <a href="/search?tag=1d288e18-baff-4498-b284-ef9bc8d32e30">Metabolic Disorders
-</a>
-                <a href="/search?tag=6ddf7877-fdae-472b-8739-fb4710df7651">Switzerland
-</a>
-                <a href="/search?tag=b3122c5e-ff3f-438a-9c93-1b54dc1286a5">Clinical Trials
-</a>
+                <a href="/search?tag=1d288e18-baff-4498-b284-ef9bc8d32e30">Metabolic Disorders</a>
+                <a href="/search?tag=6ddf7877-fdae-472b-8739-fb4710df7651">Switzerland</a>
+                <a href="/search?tag=b3122c5e-ff3f-438a-9c93-1b54dc1286a5">Clinical Trials</a>
     </div>
 </section>
 ```
@@ -2177,7 +2348,7 @@ section: Home/Topic Page Components
     vertical-align: bottom; }
     .article-preview__icon use > svg {
       fill: #979797; }
-  .article-preview__bookmarker {
+  .article-preview__bookmarker, .result__bookmark {
     float: right;
     font-size: 11px;
     font-weight: 500;
@@ -2281,14 +2452,22 @@ section: Home/Topic Page Components
         -ms-flex-order: 2;
             order: 2;
     margin-top: 14px; }
-  .article-prologue__share-item {
+  .article-prologue__share-item, .article-prologue__share-item--social {
     margin-left: 32px;
     margin-left: 2rem; }
-    .article-prologue__share-item:first-child {
+    .article-prologue__share-item:first-child, .article-prologue__share-item--social:first-child {
       margin-left: 0; }
-    .article-prologue__share-item:hover .article-prologue__share-icon {
+    .article-prologue__share-item:hover .article-prologue__share-icon, .article-prologue__share-item--social:hover .article-prologue__share-icon {
       fill: #231f20; }
-      .article-prologue__share-item:hover .article-prologue__share-icon use > svg {
+      .article-prologue__share-item:hover .article-prologue__share-icon use > svg, .article-prologue__share-item--social:hover .article-prologue__share-icon use > svg {
+        fill: #231f20; }
+    .article-prologue__share-item--social:hover .article-prologue__share-icon {
+      fill: #979797; }
+      .article-prologue__share-item--social:hover .article-prologue__share-icon use > svg {
+        fill: #979797; }
+    .article-prologue__share-item--social a:hover .article-prologue__share-icon {
+      fill: #231f20; }
+      .article-prologue__share-item--social a:hover .article-prologue__share-icon use > svg {
         fill: #231f20; }
   .article-prologue__share-icon {
     fill: #979797;
@@ -2338,46 +2517,9 @@ section: Home/Topic Page Components
         -webkit-align-self: flex-end;
             -ms-flex-item-align: end;
                 align-self: flex-end; }
-      .article-prologue__share-item {
+      .article-prologue__share-item, .article-prologue__share-item--social {
         margin: 0 8px;
         margin: 0 0.5rem; } }
-
-/*---
-title: Article Pullquote
-section: Article Components
----
-Styles for a pull quote or blockquote.
-
-```example:html
-<blockquote class="article-pullquote">
-    <p>Sometimes you just gotta come up with something to say.</p>
-</blockquote>
-```
-*/
-.article-pullquote,
-.quote {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  border-bottom: 1px solid #f7941e;
-  border-top: 4px solid #f7941e;
-  clear: both;
-  color: #231f20;
-  line-height: 32px;
-  line-height: 2rem;
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
-  padding: 28px 12px;
-  padding: 1.75rem 0.75rem; }
-  .article-pullquote p,
-  .quote p {
-    color: #231f20; }
-  @media (max-width: 800px) {
-    .article-pullquote,
-    .quote {
-      font-size: 20px;
-      padding: 16px 12px;
-      padding: 1rem 0.75rem; } }
 
 /*---
 title: Quick Facts Box
@@ -2386,67 +2528,55 @@ section: Article Components
 
 ```example:html
 <div class="sidebox">
-	<p class="quickfactstitle">Quick Facts Title</p>
-	<p class="quickfactstext">Quick Facts Text</p>
-	<ul class="quickfactsbulleted">
-		<li>Quick text bullets</li>
-	</ul>
+  <p class="quickfactstitle">Quick Facts Title</p>
+  <p class="quickfactstext">Quick Facts Text</p>
+  <ul class="quickfactsbulleted">
+      <li>Quick text bullets</li>
+  </ul>
 
-	<ol class="quickfactsnumbered">
-		<li>Quic facts numbered</li>
-	</ol>
-	<p class="quickfactssource">Quick Facts Source</p>
+  <ol class="quickfactsnumbered">
+      <li>Quic facts numbered</li>
+  </ol>
+  <p class="quickfactssource">Quick Facts Source</p>
 </div>
 ```
 */
-.sidebox,
-.article-quick-facts {
+.quick-facts {
+  background-color: #ffeedd;
   float: right;
-  padding: 32px 28px 0;
-  padding: 2rem 1.75rem 0;
   margin: 32px 0 32px 32px;
   margin: 2rem 0 2rem 2rem;
-  background-color: #ffeedd;
+  padding: 32px 28px 0;
+  padding: 2rem 1.75rem 0;
   width: 50%; }
-  .sidebox p,
-  .sidebox ul,
-  .sidebox ol,
-  .article-quick-facts p,
-  .article-quick-facts ul,
-  .article-quick-facts ol {
+  .quick-facts p,
+  .quick-facts ul,
+  .quick-facts ol {
     color: #231f20;
     margin-bottom: 32px;
     margin-bottom: 2rem; }
-
-p.quickfactstitle,
-.article-quick-facts__title {
-  font-family: "Roboto Condensed", Arial Narrow, sans-serif;
-  font-size: 26px;
-  font-size: 1.625rem;
-  font-weight: 700;
-  color: #231f20;
-  margin: 0 0 16px;
-  margin: 0 0 1rem; }
-
-ul.quickfactsbulleted li,
-.article-quick-facts ul li {
-  color: #231f20; }
-
-ol.quickfactsnumbered li,
-.article-quick-facts ol li {
-  list-style-position: inside;
-  list-style-type: decimal;
-  color: #231f20; }
-
-p.quickfactssource,
-.article-quick-facts__source {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  font-weight: 400;
-  font-style: italic;
-  float: right;
-  color: #58595b; }
+  .quick-facts h3 {
+    font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+    font-size: 26px;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #231f20;
+    margin: 0 0 16px;
+    margin: 0 0 1rem; }
+  .quick-facts ul li {
+    color: #231f20; }
+  .quick-facts ol li {
+    color: #231f20;
+    list-style-position: inside;
+    list-style-type: decimal; }
+  .quick-facts__source {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: #58595b;
+    float: right;
+    font-style: italic; }
 
 .article-related-content {
   margin-bottom: 56px;
@@ -2554,9 +2684,7 @@ Styles for a floated sidebar within an article body.
       font-size: 10px;
       line-height: 16px;
       line-height: 1rem;
-      vertical-align: middle;
-      margin-left: 4px;
-      margin-left: 0.25rem; }
+      vertical-align: middle; }
   .article-sidebar p {
     color: #231f20;
     font-size: 16px;
@@ -2584,7 +2712,7 @@ Styles for a floated sidebar within an article body.
   @media (max-width: 800px) {
     .article-tags-bar {
       max-width: 100%; }
-      .article-tags-bar .bar-separated-link-list {
+      .article-tags-bar .bar-separated-link-list, .article-tags-bar .result__tags {
         width: calc(100% - 2.5rem); }
       .article-tags-bar__label {
         display: inline-block;
@@ -2633,14 +2761,32 @@ Styles for a floated sidebar within an article body.
   min-height: 60px;
   margin-bottom: 35px;
   border-top: 2px solid #d1d3d4; }
-  .search__header-icons {
+  @media (max-width: 800px) {
+    .search__header {
+      border-top: 0; } }
+  .search__header-buttons {
     padding-top: 18px;
     text-align: right; }
-  .search__header .icon {
-    display: inline-block;
-    padding-left: 20px; }
-    .search__header .icon a {
+    .search__header-buttons--email {
+      margin-right: 30px; }
+    .search__header-buttons a {
+      display: inline-block;
       color: #231f20; }
+    .search__header-buttons h6, .search__header-buttons .article-topics__section-header {
+      display: inline;
+      vertical-align: middle;
+      padding-right: 5px; }
+      @media (max-width: 800px) {
+        .search__header-buttons h6, .search__header-buttons .article-topics__section-header {
+          display: none; } }
+    .search__header-buttons .icon {
+      fill: #979797;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      vertical-align: middle; }
+      .search__header-buttons .icon use > svg {
+        fill: #979797; }
   .search__header-title {
     color: #231f20; }
 
@@ -2667,12 +2813,27 @@ Styles for a floated sidebar within an article body.
       -ms-flex-order: 2;
           order: 2;
   margin-left: 15px; }
+  @media (max-width: 800px) {
+    .search__body {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin-left: 0; } }
 
 .search__facets {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   border: 1px solid #d1d3d4; }
+  @media (max-width: 800px) {
+    .search__facets {
+      display: none; } }
 
 .facets__header {
   padding: 20px;
@@ -2682,7 +2843,8 @@ Styles for a floated sidebar within an article body.
     color: #231f20; }
   .facets__header a.facets__clear {
     float: right;
-    line-height: 29px; }
+    line-height: 29px;
+    cursor: pointer; }
 
 .facets__content {
   padding: 20px; }
@@ -2699,45 +2861,37 @@ Styles for a floated sidebar within an article body.
   padding-bottom: 15px;
   color: #231f20; }
 
-.facets__section-list {
-  /* TODO: below is an example, make a real svg for check, then encode it */
-  /* Base 64 encoded SVG image, source:
-      <?xml version="1.0" standalone="no"?>
-      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-      "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-      <svg width="100%" height="100%" version="1.0"
-      xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="0" x2="100%" y2="100%" stroke="#000000 "/>
-      <line x1="0" y1="100%" x2="100%" y2="0" stroke="#000000"/>
-      </svg>
-      */ }
-  .facets__section-list li {
-    padding-bottom: 10px; }
-  .facets__section-list input[type="checkbox"] {
-    position: absolute;
-    opacity: 0; }
-  .facets__section-list input[type="checkbox"] + label {
-    font-size: 15px;
-    line-height: 23px; }
-  .facets__section-list input[type="checkbox"]:checked + label {
-    font-weight: 700; }
-  .facets__section-list input[type="checkbox"] + label:before {
-    content: " ";
-    display: inline-block;
-    height: 17px;
-    width: 17px;
-    border: 1px solid #d1d3d4;
-    border-radius: 20%;
-    margin-right: 15px;
-    vertical-align: text-bottom; }
-  .facets__section-list input[type="checkbox"]:checked + label:before {
-    content: " "; }
-  .facets__section-list--sub {
-    padding-top: 10px;
-    padding-left: 30px; }
-    .facets__section-list--sub input[type="checkbox"] + label {
-      font-size: 13px;
-      line-height: 20px; }
+.facets__section-list li {
+  padding-bottom: 10px; }
+
+.facets__section-list input[type="checkbox"] {
+  position: absolute;
+  opacity: 0; }
+
+.facets__section-list input[type="checkbox"] + label {
+  font-size: 15px;
+  line-height: 23px;
+  position: relative; }
+
+.facets__section-list input[type="checkbox"]:checked + label {
+  font-weight: 700; }
+
+.facets__section-list input[type="checkbox"] + label:before {
+  content: " ";
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  border: 1px solid #d1d3d4;
+  border-radius: 20%;
+  margin-right: 15px;
+  vertical-align: text-bottom; }
+
+.facets__section-list--sub {
+  padding-top: 10px;
+  padding-left: 30px; }
+  .facets__section-list--sub input[type="checkbox"] + label {
+    font-size: 13px;
+    line-height: 20px; }
 
 .search-bar {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -2747,89 +2901,249 @@ Styles for a floated sidebar within an article body.
   padding: 20px;
   background-color: #f1f2f2;
   margin-bottom: 50px; }
+  @media (max-width: 800px) {
+    .search-bar {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1;
+      min-height: auto; } }
+  .search-bar.tips-open {
+    z-index: -1; }
   .search-bar__label {
     width: 100%;
     padding-bottom: 20px;
     line-height: 34px;
     color: #231f20; }
+    @media (max-width: 800px) {
+      .search-bar__label {
+        display: none; } }
   .search-bar__content {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .search-bar.tips-open .search-bar__content {
+    z-index: 0; }
+  .search-bar__input-wrapper {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    margin-right: 12px; }
   .search-bar__field {
-    display: inline-block;
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
+    display: inline-block;
     width: 100%;
-    max-width: 616px;
     height: 35px;
     padding-right: 30px;
     padding-left: 13px;
     border: 1px solid #d1d3d4; }
     .search-bar__field:placeholder {
       color: #58595b; }
+  .search-bar__clear {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer; }
   .search-bar__submit {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
         -ms-flex-order: 2;
             order: 2;
-    float: right; }
+    width: 38px;
+    padding: 9px;
+    margin-right: 30px;
+    background-color: #fbb040;
+    vertical-align: middle; }
+    @media (max-width: 800px) {
+      .search-bar__submit {
+        margin-right: 0; } }
   .search-bar__tips {
-    display: inline-block;
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
         -ms-flex-order: 3;
             order: 3;
-    float: right; }
+    position: relative;
+    white-space: nowrap; }
+    @media (max-width: 800px) {
+      .search-bar__tips {
+        display: none; } }
+    .search-bar__tips.open {
+      position: relative; }
+    .search-bar__tips-button {
+      cursor: pointer; }
+    .search-bar__tips.open .search-bar__tips-button {
+      cursor: pointer; }
+      .search-bar__tips.open .search-bar__tips-button:before {
+        content: "";
+        display: block;
+        width: 155px;
+        height: 86px;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: #fff;
+        border: 1px solid #d1d3d4;
+        z-index: -1; }
+    .search-bar__tips-panel {
+      display: none; }
+    .search-bar__tips.open .search-bar__tips-panel {
+      display: block;
+      position: absolute;
+      top: 65px;
+      right: -20px;
+      width: 470px;
+      height: auto;
+      background-color: #fff;
+      padding: 30px;
+      border: 1px solid #d1d3d4;
+      white-space: normal;
+      z-index: 1000; }
+      .search-bar__tips.open .search-bar__tips-panel:before {
+        content: "";
+        display: block;
+        width: 153px;
+        height: 10px;
+        position: absolute;
+        top: -5px;
+        right: 0;
+        background-color: #fff; }
+      .search-bar__tips.open .search-bar__tips-panel .search-bar__close-tips {
+        float: right; }
+        .search-bar__tips.open .search-bar__tips-panel .search-bar__close-tips svg {
+          fill: #231f20; }
+      .search-bar__tips.open .search-bar__tips-panel h3 {
+        padding-bottom: 20px; }
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+        font-family: "PT Serif", Georgia, serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 25px; }
   .search-bar__footer {
     display: block;
     width: 100%;
     padding-top: 20px; }
   .search-bar__headline-toggle {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: middle; }
   .search-bar__headline-label {
     display: inline-block;
-    padding-left: 10px; }
-  .search-bar__icon--search {
-    fill: #231f20;
-    height: 20px;
-    width: 20px;
-    vertical-align: middle;
-    margin-left: 10px; }
-    .search-bar__icon--search use > svg {
-      fill: #231f20; }
-  .search-bar__icon--info {
-    fill: #231f20;
-    height: 24px;
-    width: 24px; }
-    .search-bar__icon--info use > svg {
-      fill: #231f20; }
+    padding-left: 10px;
+    vertical-align: middle; }
+  .search-bar__icon {
+    cursor: pointer; }
+    .search-bar__icon--search {
+      fill: #231f20;
+      height: 20px;
+      width: 20px; }
+      .search-bar__icon--search use > svg {
+        fill: #231f20; }
+    .search-bar__icon--clear {
+      fill: #979797;
+      width: 19px;
+      height: 19px; }
+      .search-bar__icon--clear use > svg {
+        fill: #979797; }
+    .search-bar__icon--info {
+      fill: #979797;
+      height: 24px;
+      width: 24px;
+      vertical-align: middle;
+      margin-right: 10px; }
+      .search-bar__icon--info use > svg {
+        fill: #979797; }
 
 .search-metadata {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   display: inline-block;
-  padding-bottom: 30px;
   color: #231f20; }
+  @media (max-width: 800px) {
+    .search-metadata {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; } }
 
 .search-sort {
   display: inline-block;
   float: right; }
-  .search-sort h6, .search-sort .article-topics__section-header {
+  @media (max-width: 800px) {
+    .search-sort {
+      display: block;
+      float: left;
+      -webkit-box-ordinal-group: 4;
+      -webkit-order: 3;
+          -ms-flex-order: 3;
+              order: 3; } }
+  .search-sort__title {
+    display: inline-block;
     text-transform: uppercase;
-    display: inline;
     margin-right: 5px; }
-  .search-sort ol {
+  .search-sort__control-list {
     display: inline-block; }
-  .search-sort a {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 400; }
+  .search-sort__control-type {
+    display: inline-block; }
+    .search-sort__control-type a {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      display: inline-block; }
+    .search-sort__control-type.is-selected span {
+      text-decoration: underline; }
+    .search-sort__control-type.is-sorted-up .icon-triangle--up {
+      fill: #be1e2d; }
+      .search-sort__control-type.is-sorted-up .icon-triangle--up use > svg {
+        fill: #be1e2d; }
+    .search-sort__control-type.is-sorted-down .icon-triangle--down {
+      fill: #be1e2d; }
+      .search-sort__control-type.is-sorted-down .icon-triangle--down use > svg {
+        fill: #be1e2d; }
+    .search-sort__control-type.is-sorted-up a,
+    .search-sort__control-type.is-sorted-up a:hover,
+    .search-sort__control-type.is-sorted-down a,
+    .search-sort__control-type.is-sorted-down a:hover {
+      text-decoration: none; }
+  .search-sort__icon-group {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 5px; }
+  .search-sort .icon-triangle {
+    fill: #d1d3d4;
+    display: block;
+    width: 12px;
+    height: 11px; }
+    .search-sort .icon-triangle use > svg {
+      fill: #d1d3d4; }
+
+.search-results.headlines-only .result__publication,
+.search-results.headlines-only .result__author,
+.search-results.headlines-only .result__description,
+.search-results.headlines-only .result__tags {
+  display: none; }
+
+@media (max-width: 800px) {
+  .search-results {
+    -webkit-box-ordinal-group: 5;
+    -webkit-order: 4;
+        -ms-flex-order: 4;
+            order: 4; } }
 
 .result {
   display: block;
@@ -2871,19 +3185,38 @@ Styles for a floated sidebar within an article body.
     display: inline;
     color: #231f20;
     text-transform: uppercase; }
-  .result__line-seperator {
+  .result__media-type {
+    display: inline-block; }
+    .result__media-type svg {
+      fill: #979797;
+      width: 26px;
+      height: 24px;
+      vertical-align: bottom; }
+      .result__media-type svg use > svg {
+        fill: #979797; }
+  .result__line-separator, .search-sort__line-separator {
     display: inline-block;
     width: 1px;
     height: 20px;
     margin: 0 15px;
     vertical-align: sub;
     background-color: #d1d3d4; }
+  .result__bookmark {
+    z-index: -1; }
   .result__description {
     font-size: 15px;
     font-weight: 400;
     line-height: 25px;
     color: #58595b;
     padding-top: 20px; }
+  .result__tags a {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border-right: 0; }
   .result .highlighted-term {
     font-weight: 700;
     background-color: rgba(251, 176, 64, 0.3); }
@@ -2891,6 +3224,12 @@ Styles for a floated sidebar within an article body.
 .search-pagination__wrapper {
   padding: 10px 0 50px;
   border-top: 2px solid #d1d3d4; }
+  @media (max-width: 800px) {
+    .search-pagination__wrapper {
+      -webkit-box-ordinal-group: 6;
+      -webkit-order: 5;
+          -ms-flex-order: 5;
+              order: 5; } }
 
 .search-pagination__pagination-list {
   text-align: right; }
@@ -2912,6 +3251,36 @@ Styles for a floated sidebar within an article body.
           height: 20px;
           background: #f1f2f2;
           position: absolute; }
+
+/* * * * ATOMS * * * */
+.article-pullquote,
+.quote {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  border-bottom: 1px solid #f7941e;
+  border-top: 4px solid #f7941e;
+  clear: both;
+  color: #231f20;
+  line-height: 32px;
+  line-height: 2rem;
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  margin-top: 32px;
+  margin-top: 2rem;
+  padding: 28px 12px;
+  padding: 1.75rem 0.75rem; }
+  .article-pullquote p,
+  .quote p {
+    color: #231f20; }
+  @media (max-width: 800px) {
+    .article-pullquote,
+    .quote {
+      font-size: 20px;
+      margin: 32px 0px;
+      margin: 2rem 0px;
+      padding: 16px 12px;
+      padding: 1rem 0.75rem; } }
 
 /* * * * MOLECULES * * * */
 .boxout-print-info {
@@ -3028,36 +3397,43 @@ Styles for a floated sidebar within an article body.
       .article-body-content table__expand-table use > svg {
         fill: #979797; } }
 
+.media-exhibit,
 .article-inline-image {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: #979797;
-  margin-top: 32px;
-  margin-top: 2rem;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
+  .media-exhibit img,
   .article-inline-image img {
     width: 100%;
     margin-bottom: 16px;
     margin-bottom: 1rem; }
+  .media-exhibit__source,
   .article-inline-image__source {
     float: right;
     font-style: italic; }
+  .media-exhibit__caption,
   .article-inline-image__caption {
     display: block;
     text-transform: uppercase;
     letter-spacing: 1px; }
-  .article-inline-image--pull-left, .article-inline-image--pull-right {
+  .media-exhibit--pull-left, .media-exhibit--pull-right,
+  .article-inline-image--pull-left,
+  .article-inline-image--pull-right {
     float: left;
     margin-right: 32px;
     margin-right: 2rem;
     width: 50%; }
-    .article-inline-image--pull-left .article-inline-image__source, .article-inline-image--pull-right .article-inline-image__source {
+    .media-exhibit--pull-left .article-inline-image__source, .media-exhibit--pull-right .article-inline-image__source,
+    .article-inline-image--pull-left .article-inline-image__source,
+    .article-inline-image--pull-right .article-inline-image__source {
       float: none;
       display: block;
       margin-bottom: 12px;
       margin-bottom: 0.75rem; }
+  .media-exhibit--pull-right,
   .article-inline-image--pull-right {
     float: right;
     margin-left: 0;
@@ -3065,6 +3441,7 @@ Styles for a floated sidebar within an article body.
     margin-left: 2rem;
     text-align: right; }
   @media (max-width: 800px) {
+    .media-exhibit__source,
     .article-inline-image__source {
       display: block;
       float: none;
@@ -3190,6 +3567,10 @@ footer li {
   width: 24px; }
   .footer__share-icons use > svg {
     fill: #979797; }
+  .footer__share-icons:hover {
+    fill: #231f20; }
+    .footer__share-icons:hover use > svg {
+      fill: #231f20; }
 
 @media (max-width: 800px) {
   .footer__section--social {
@@ -3241,6 +3622,25 @@ footer li {
     margin: 0 auto;
     height: 47px; } }
 
+/*---
+title: Account Access - Headers
+section: Home/Topic Page Components
+---
+
+```example:html
+<div class="general-header">
+    <div class="general-header__section-title">
+        Name of Section
+    </div>
+    <div class="general-header__navigation">
+        <a href="#" class="is-active">General Content Page V1</a>
+        <a href="#">Page Name</a>
+        <a href="#">Page Name</a>
+        <a href="#">Page Name</a>
+    </div>
+</div>
+```
+*/
 .general-header__section-title {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -3355,7 +3755,11 @@ footer li {
       -webkit-align-self: auto;
           -ms-flex-item-align: auto;
               align-self: auto;
-      height: calc(100% - 1.25rem); } }
+      height: calc(100% - 1.25rem);
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 0 auto;
+          -ms-flex: 1 0 auto;
+              flex: 1 0 auto; } }
 
 .header__icons {
   fill: #979797;
@@ -3414,9 +3818,13 @@ footer li {
         display: none; } }
   @media (max-width: 480px) {
     .header-search__wrapper {
-      margin-top: 0;
+      height: auto;
+      left: 70px;
       margin-right: 12px;
-      padding: 0; } }
+      margin-top: 0;
+      padding: 0;
+      position: absolute;
+      right: 0; } }
 
 .header-search__field {
   max-width: 310px;
@@ -3427,7 +3835,7 @@ footer li {
       display: none;
       font-size: 18px;
       left: 0;
-      line-height: 48px;
+      line-height: calc(3rem - 1px);
       margin: 9px 0;
       margin: 0.5625rem 0;
       position: absolute;
@@ -3458,10 +3866,12 @@ main {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
-              flex: 0 0 auto; } }
+              flex: 0 0 auto;
+      margin-left: 330px; } }
   @media (max-width: 480px) {
     .main__wrapper {
-      width: 100%; } }
+      width: 100%;
+      margin-left: 330px; } }
 
 .main__content {
   max-width: 1240px;
@@ -3592,5 +4002,18 @@ main {
   margin-left: 1.125rem; }
   .quickfactsbulleted li:before {
     margin-top: 3px; }
+
+.facets__section-list input[type="checkbox"]:checked + label:after {
+  fill: #231f20;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 2px;
+  left: 0;
+  background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
+  .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
+    fill: #231f20; }
 
 /*# sourceMappingURL=index-generated.css.map */
