@@ -44,11 +44,15 @@
         <button 
           class="facets__button facets__button--more" 
           ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
-          ng-click = 'group.ShowMore = true'>See All</button>
+          ng-click = 'group.ShowMore = true'>See All
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+        </button>
         <button 
           class="facets__button facets__button--less" 
           ng-show='group.ShowMore'
-          ng-click='group.ShowMore = false'>See Less</button>
+          ng-click='group.ShowMore = false'>See Less
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use></svg>
+          </button>
       </fieldset>
     </form>
 
