@@ -585,7 +585,7 @@ namespace SitecoreTreeWalker.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNum", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNumByNumber", articleNumber).Result;
                 var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
                 return versionNumber;
             }
