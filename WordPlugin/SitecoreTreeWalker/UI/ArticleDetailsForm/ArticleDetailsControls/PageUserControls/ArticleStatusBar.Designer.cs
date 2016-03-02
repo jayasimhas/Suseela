@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class ArticleStatusBar
 	{
@@ -74,7 +74,7 @@
             // 
             // uxLinkUnlinkButton
             // 
-            this.uxLinkUnlinkButton.Image = global::SitecoreTreeWalker.Properties.Resources.link_32;
+            this.uxLinkUnlinkButton.Image = global::InformaSitecoreWord.Properties.Resources.link_32;
             this.uxLinkUnlinkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.uxLinkUnlinkButton.Margin = new System.Windows.Forms.Padding(10);
             this.uxLinkUnlinkButton.Name = "uxLinkUnlinkButton";
@@ -84,7 +84,7 @@
             // 
             // uxLockStateButton
             // 
-            this.uxLockStateButton.Image = global::SitecoreTreeWalker.Properties.Resources._53_Lock_unlocked;
+            this.uxLockStateButton.Image = global::InformaSitecoreWord.Properties.Resources._53_Lock_unlocked;
             this.uxLockStateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.uxLockStateButton.Margin = new System.Windows.Forms.Padding(6, 1, 0, 2);
             this.uxLockStateButton.Name = "uxLockStateButton";

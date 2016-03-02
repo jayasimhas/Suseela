@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls;
 using PluginModels;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
 using ArticleStruct = PluginModels.ArticleStruct;
 
-namespace SitecoreTreeWalker.UI.Controllers
+namespace InformaSitecoreWord.UI.Controllers
 {
     public class TaxonomyTabController : ITabController
     {

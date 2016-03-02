@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	partial class MenuSelectorItem
 	{

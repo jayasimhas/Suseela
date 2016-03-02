@@ -149,7 +149,14 @@ $(document).ready(function() {
 
 	var resetPassword = new ResetPasswordController();
 
-	resetPassword.addControl('.js-reset-password-submit');
+	resetPassword.addRequestControl(
+		'.js-reset-password-request-submit',
+		function(triggerElement) {
+			$(triggerElement).parents('.js-reset-password-request-form').hide();
+		}
+	);
+	resetPassword.addChangeControl('.js-reset-password-change-submit');
+	resetPassword.addRetryControl('.js-reset-password-retry-submit');
 
     svg4everybody();
 

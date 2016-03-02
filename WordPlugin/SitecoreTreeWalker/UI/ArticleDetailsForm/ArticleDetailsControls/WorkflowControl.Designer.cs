@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	partial class WorkflowControl
 	{
@@ -35,7 +35,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.uxNotifyPicker = new System.Windows.Forms.ComboBox();
 			this.uxNotifyAdd = new System.Windows.Forms.Button();
-			this.uxNotifyList = new SitecoreTreeWalker.UI.EasyRemoveListView();
+			this.uxNotifyList = new EasyRemoveListView();
 			this.uxCurrentWorkflowValue = new System.Windows.Forms.Label();
 			this.blMoveToWorkflowStateLabel = new System.Windows.Forms.Label();
 			this.txtNotificationText = new System.Windows.Forms.TextBox();

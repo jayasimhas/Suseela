@@ -1,6 +1,5 @@
 @inherits CustomGlassView<SearchViewModel>
-<div class="search-bar">
-    <!-- TODO: form wrap? -->
+<form class="search-bar">
 
     <h3 class="search-bar__label">
         <label for="js-search-field">@Model.SearchTitleText</label>
@@ -16,7 +15,7 @@
                 </svg>
             </a>
 
-            <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
+            <input ng-keypress="($event.which === 13)?query.update():0" id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
 
                    ng-model="query.keywords"/>
         </div>
@@ -68,4 +67,4 @@
         </div>
 
     </div>
-</div>
+</form>

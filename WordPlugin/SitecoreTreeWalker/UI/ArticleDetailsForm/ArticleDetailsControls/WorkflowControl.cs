@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	public partial class WorkflowControl : ArticleDetailsPageUserControl
 	{
@@ -52,6 +52,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			uxUnlockOnSave.Checked = false;
 		}
 
+		public string GetNotificationText()
+		{
+			return txtNotificationText.Text;
+		}
 		protected void SetNotificationOptions()
 		{
 			if (uxWorkflowActions.SelectedValue is WorkflowCommand)

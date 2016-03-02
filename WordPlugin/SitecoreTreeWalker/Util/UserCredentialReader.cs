@@ -1,7 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.IO.IsolatedStorage;
+using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	class UserCredentialReader
 	{
@@ -28,6 +31,7 @@ namespace SitecoreTreeWalker.Util
 		{
 			var truncate = new IsolatedStorageFileStream(PASSWORD_FILE, FileMode.Truncate, _isoStore);
 			truncate.Close();
+            
 		}
 
 		public void Write(string username, string password)
@@ -89,38 +93,33 @@ namespace SitecoreTreeWalker.Util
 			}
 		}
 
-        public string GetCookie()
+        public CookieCollection GetCookie(string username)
         {
-            using (var iStream = new IsolatedStorageFileStream(COOKIE_FILE, FileMode.OpenOrCreate, _isoStore))
+            var uName = username.Split('\\').Length > 1 ? username.Split('\\')[1] : username;
+            using (var iStream = new IsolatedStorageFileStream(uName + "-" + Constants.EDITOR_ENVIRONMENT + "-" + COOKIE_FILE, FileMode.OpenOrCreate, _isoStore))
             {
-                using (var reader = new StreamReader(iStream))
-                {
-                    reader.ReadLine(); // first line is the username
-                    return reader.ReadLine();
-                }
+                var formatter = new BinaryFormatter();   
+                CookieCollection retrievedCookies = null;
+                    retrievedCookies = (CookieCollection)formatter.Deserialize(iStream);
+
+                return retrievedCookies;
             }
+
         }
 
-        public bool HasCookie()
-        {
-            using (var iStream = new IsolatedStorageFileStream(COOKIE_FILE, FileMode.OpenOrCreate, _isoStore))
-            {
-                using (var reader = new StreamReader(iStream))
-                {
-                    reader.ReadLine();
-                    return reader.ReadLine() != null;
-                }
-            }
+        public bool HasCookie(string username)
+        {                 
+            return GetCookie(username) != null;  //TODO: And check if cookie is valid.
         }
 
-        public void WriteCookie(string cookie)
+        public void WriteCookie(CookieCollection cookie, string username)
         {
-            using (var oStream = new IsolatedStorageFileStream(COOKIE_FILE, FileMode.Create, _isoStore))
-            {
-                using (var writer = new StreamWriter(oStream))
-                {
-                    writer.WriteAsync(cookie);
-                }
+            var uName = username.Split('\\').Length > 1 ? username.Split('\\')[1] : username;
+            using (var oStream = new IsolatedStorageFileStream(uName + "-" + Constants.EDITOR_ENVIRONMENT + "-" + COOKIE_FILE, FileMode.Create, _isoStore))
+            {                   
+                    var formatter = new BinaryFormatter();
+                    formatter.Serialize(oStream, cookie);      
+               
             }
         }
 

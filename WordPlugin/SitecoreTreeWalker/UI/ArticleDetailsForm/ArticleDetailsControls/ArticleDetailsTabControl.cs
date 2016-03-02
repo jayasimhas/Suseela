@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
-using SitecoreTreeWalker.UI.Controllers;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.SitecoreTree;
+using InformaSitecoreWord.UI.Controllers;
+using InformaSitecoreWord.Util.Document;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	public partial class ArticleDetailsTabControl : UserControl
 	{

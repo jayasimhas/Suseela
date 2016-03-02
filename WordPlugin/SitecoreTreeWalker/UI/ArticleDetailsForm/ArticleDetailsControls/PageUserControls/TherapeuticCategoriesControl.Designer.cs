@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class TherapeuticCategoriesControl
 	{
@@ -30,7 +30,7 @@
 		{
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.uxTherapeuticCategoriesViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxTherapeuticCategoriesResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxTherapeuticCategoriesResults = new NoFlickerListView();
 			this.uxTherapeuticCategoriesResultsTree = new System.Windows.Forms.TreeView();
 			this.uxTherapeuticCategoriesKeywords = new System.Windows.Forms.TextBox();
 			this.uxTherapeuticCategoriesViewSearch = new System.Windows.Forms.LinkLabel();
@@ -175,7 +175,7 @@
 			// 
 			this.label28.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label28.ForeColor = System.Drawing.Color.Gray;
-			this.label28.Image = global::SitecoreTreeWalker.Properties.Resources.therapeutic_tabheader;
+			this.label28.Image = global::InformaSitecoreWord.Properties.Resources.therapeutic_tabheader;
 			this.label28.Location = new System.Drawing.Point(0, 0);
 			this.label28.Name = "label28";
 			this.label28.Size = new System.Drawing.Size(610, 30);
@@ -185,7 +185,7 @@
 			// uxArrowUp
 			// 
 			this.uxArrowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowUp.Image = global::SitecoreTreeWalker.Properties.Resources.arrowup;
+			this.uxArrowUp.Image = global::InformaSitecoreWord.Properties.Resources.arrowup;
 			this.uxArrowUp.Location = new System.Drawing.Point(316, 265);
 			this.uxArrowUp.Name = "uxArrowUp";
 			this.uxArrowUp.Padding = new System.Windows.Forms.Padding(2);
@@ -195,7 +195,7 @@
 			// uxArrowDown
 			// 
 			this.uxArrowDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowDown.Image = global::SitecoreTreeWalker.Properties.Resources.arrowdown;
+			this.uxArrowDown.Image = global::InformaSitecoreWord.Properties.Resources.arrowdown;
 			this.uxArrowDown.Location = new System.Drawing.Point(223, 265);
 			this.uxArrowDown.Name = "uxArrowDown";
 			this.uxArrowDown.Padding = new System.Windows.Forms.Padding(2);

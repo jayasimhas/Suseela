@@ -4,13 +4,13 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.Util.Document;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	public partial class RelatedArticlesControl : ArticleDetailsPageUserControl
 	{

@@ -1,5 +1,5 @@
 ﻿
-namespace SitecoreTreeWalker.UI.Controllers
+namespace InformaSitecoreWord.UI.Controllers
 {
     /// <summary>
     /// Interface for all tab controllers to implement

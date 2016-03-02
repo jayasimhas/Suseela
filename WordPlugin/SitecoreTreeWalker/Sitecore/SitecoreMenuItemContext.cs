@@ -5,9 +5,9 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using SitecoreTreeWalker.Config;
+using InformaSitecoreWord.Config;
 
-namespace SitecoreTreeWalker.Sitecore
+namespace InformaSitecoreWord.Sitecore
 {
 	public class SitecoreMenuItemContext : ContextMenu
 	{
