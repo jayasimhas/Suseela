@@ -20,7 +20,6 @@
 //{
 //	public class SitecoreArticle
 //	{
-//        //TODO - Add env variable
 //        //public  string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}"+"/api/";
 
        

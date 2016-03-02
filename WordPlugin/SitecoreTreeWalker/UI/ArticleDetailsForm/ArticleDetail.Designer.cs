@@ -189,8 +189,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
         public System.Windows.Forms.Panel uxArticlePanel;
         public System.Windows.Forms.Button uxSaveArticle;
         public System.Windows.Forms.Button uxSaveMetadata;
-        //TODO:Remove these once logout fully implemented
-        //private System.Windows.Forms.Button uxLogout;
         public LoginControl loginControl1;
         public System.Windows.Forms.Button uxCreateArticle;
         public System.Windows.Forms.Button uxPreview;

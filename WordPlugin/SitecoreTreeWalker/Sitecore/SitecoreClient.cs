@@ -216,7 +216,6 @@ namespace SitecoreTreeWalker.Sitecore
             }
         }
 
-        //TODO - Implement this
         public static int GetMaxLengthShortSummary()
         {
             using (var client = new HttpClient(_handler, false))
@@ -230,8 +229,7 @@ namespace SitecoreTreeWalker.Sitecore
 				*/
             }
         }
-
-        //TODO - Implement this
+		
         public static int GetMaxLengthLongSummary()
         {
             using (var client = new HttpClient(_handler, false))
