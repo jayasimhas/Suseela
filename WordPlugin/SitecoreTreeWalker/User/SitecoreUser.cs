@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Net;
 using System.Web.Services.Protocols;
 using PluginModels;
 using SitecoreTreeWalker.Config;
 using SitecoreTreeWalker.Sitecore;
+using SitecoreTreeWalker.Util;
 
 namespace SitecoreTreeWalker.User
 {
@@ -76,6 +78,7 @@ namespace SitecoreTreeWalker.User
 					IsLoggedIn = true;
 					Username = domainAndUsername;
 					Password = password;
+				    UserCookie = UserCredentialReader.GetReader().GetCookie(username);
 					InvokeAuthenticated(EventArgs.Empty);
 				}
 				return userStatus;
@@ -87,7 +90,9 @@ namespace SitecoreTreeWalker.User
 			}
 		}
 
-		/// <summary>
+	    public CookieCollection UserCookie { get; set; }
+
+	    /// <summary>
 		/// Logs user out
 		/// </summary>
 		/// <returns>True if logout successful; otherwise, false (eg, no logged in user to logout)</returns>

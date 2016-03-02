@@ -24,6 +24,7 @@ using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
 using Sitecore.Links;
 using Sitecore.Mvc.Controllers;
+using Velir.Core.Utilities.Strings;
 using Velir.Search.Core.Managers;
 using Velir.Search.Core.Page;
 using Velir.Search.Core.Queries;
@@ -232,14 +233,12 @@ namespace Informa.Web.Controllers
 			}
 			*/
 
-			using (new Sitecore.SecurityModel.SecurityDisabler())
-			{
+	
 				using (new EditContext(article))
 				{
 					article.Locking.Lock();
-				}
-			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+				}                                                                
+
 			return true;
 		}
 
@@ -257,24 +256,19 @@ namespace Informa.Web.Controllers
 			string userID = article.Locking.GetOwner();
 			if (string.IsNullOrEmpty(userID)) return false;
 			//TODO: assuming domain is specified here.
-			bool loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
-			if (!loggedIn)
+		    bool loggedIn = Sitecore.Context.User.IsAuthenticated;
+			if (!loggedIn || !Sitecore.Context.GetUserName().EqualsIgnoreCase(userID) || !Sitecore.Context.IsAdministrator)
 			{
 				return false;
 			}
 
-			//TODO: use real security
-			using (new Sitecore.SecurityModel.SecurityDisabler())
-			{
+			//TODO: use real security                             
 				using (new EditContext(article))
 				{
 					article.Locking.Unlock();
 					//there is already a new version created before saving an article
 					//var item = article.Versions.AddVersion();
-				}
-			}
-
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+				}                                                 
 
 			return true;
 		}
