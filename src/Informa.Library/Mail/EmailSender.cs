@@ -11,6 +11,8 @@ namespace Informa.Library.Mail
 		{
 			var sitecoreEmail = new MailMessage(email.From, email.To, email.Subject, email.Body);
 
+			sitecoreEmail.IsBodyHtml = email.IsBodyHtml;
+
 			try
 			{
 				MainUtil.SendMail(sitecoreEmail);

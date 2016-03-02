@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.User.Profile;
 using Informa.Library.User.ResetPassword;
+using Informa.Library.User.ResetPassword.Web;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Web;
@@ -13,15 +14,18 @@ namespace Informa.Web.Areas.Account.ViewModels.ResetPassword
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IFindUserProfileByUsername FindUserProfile;
 		protected readonly IFindUserResetPassword FindUserResetPassword;
+		protected readonly IWebUserResetPasswordTokenContext TokenContext;
 
 		public ChangeViewModel(
 			ITextTranslator textTranslator,
 			IFindUserProfileByUsername findUserProfile,
-			IFindUserResetPassword findUserResetPassword)
+			IFindUserResetPassword findUserResetPassword,
+			IWebUserResetPasswordTokenContext tokenContext)
 		{
 			TextTranslator = textTranslator;
 			FindUserProfile = findUserProfile;
 			FindUserResetPassword = findUserResetPassword;
+			TokenContext = tokenContext;
 		}
 
 		protected IUserResetPassword UserResetPassword
@@ -63,6 +67,6 @@ namespace Informa.Web.Areas.Account.ViewModels.ResetPassword
 		public string TokenNotFoundBody => TextTranslator.Translate("Authentication.ResetPassword.Change.TokenNotFound");
 		public bool IsValidToken => UserResetPassword.IsValid();
 		public bool TokenFound => UserResetPassword != null;
-		public string Token => HttpContext.Current.Request["rpToken"]; // TODO: Replace with centralised configuration for parameter (email uses it too)
+		public string Token => TokenContext.Token;
 	}
 }

@@ -21,7 +21,7 @@ namespace Informa.Library.User.ResetPassword.Web
 		{
 			var email = EmailFactory.Create(userResetPassword);
 
-			//EmailSender.Send(email);
+			EmailSender.Send(email);
 		}
 	}
 }
