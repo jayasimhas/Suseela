@@ -1,40 +1,32 @@
 ﻿using Informa.Library.User.ResetPassword;
 using Informa.Web.Areas.Account.Models.User.ResetPassword;
-using System.Collections.Generic;
 using System.Web.Http;
-using System.Web.Http.ModelBinding;
-using System.Linq;
 using Informa.Library.User.ResetPassword.Web;
+using Informa.Library.Utilities.WebApi.Filters;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
 	public class ResetPasswordApiController : ApiController
 	{
 		protected readonly IProcessUserResetPassword ProcessUserResetPassword;
+		protected readonly IWebGenerateUserResetPassword GenerateUserResetPassword;
 		protected readonly IWebRegenerateUserResetPassword RegenerateUserResetPassword;
 
 		public ResetPasswordApiController(
 			IProcessUserResetPassword processUserResetPassword,
+			IWebGenerateUserResetPassword generateUserResetPassword,
 			IWebRegenerateUserResetPassword regenerateUserResetPassword)
 		{
 			ProcessUserResetPassword = processUserResetPassword;
+			GenerateUserResetPassword = generateUserResetPassword;
 			RegenerateUserResetPassword = regenerateUserResetPassword;
 		}
 
 		[HttpPost]
+		[ValidateReasons]
+		[ArgumentsRequired]
 		public IHttpActionResult Change(ChangeRequest request)
 		{
-			if (!ModelState.IsValid)
-			{
-				var response = new
-				{
-					success = false,
-					reasons = GetChangeInvalidReasons(ModelState)
-				};
-
-				return Ok(response);
-			}
-
 			var token = request.Token;
 			var newPassword = request.NewPassword;
 			var result = ProcessUserResetPassword.Process(token, newPassword);
@@ -46,6 +38,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		}
 
 		[HttpPost]
+		[ArgumentsRequired]
 		public IHttpActionResult Retry(RetryRequest request)
 		{
 			var result = RegenerateUserResetPassword.Regenerate(request?.Token ?? string.Empty);
@@ -56,21 +49,18 @@ namespace Informa.Web.Areas.Account.Controllers
 			});
 		}
 
-		public List<string> GetChangeInvalidReasons(ModelStateDictionary modelState)
+		[HttpPost]
+		[ValidateReasons]
+		[ArgumentsRequired]
+		public IHttpActionResult Generate(GenerateRequest request)
 		{
-			var reasons = new List<string>();
+			var email = request.Email;
+			var result = GenerateUserResetPassword.Generate(email);
 
-			if (modelState != null)
+			return Ok(new
 			{
-				reasons.AddRange(modelState.SelectMany(ms => ms.Value.Errors.Select(e => e.ErrorMessage)).Distinct().ToList());
-			}
-
-			if (!reasons.Any())
-			{
-				reasons.Add("Unknown");
-			}
-
-			return reasons;
+				success = result.Status == WebGenerateUserResetPasswordStatus.Success
+			});
 		}
 	}
 }
