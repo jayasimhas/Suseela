@@ -646,20 +646,33 @@ namespace InformaSitecoreWord.Sitecore
         }
 
         //TODO - work flow
-        public static WorkflowState GetWorkflowState(string articleNumber)
+        public static ArticleWorkflowState GetWorkflowState(string articleNumber)
         {
-            //return sctree.GetWorkflowState(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-            return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WorkflowCommand>() };
-        }
+	        using (var client = new HttpClient(_handler, false))
+	        {
+		        var response =
+			        client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleNumber=" + articleNumber).Result;
+		        var workflowState =
+			        JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
+				
+				return workflowState;
+			}
+	        //return new ArticleWorkflowState { DisplayName = "", IsFinal = true, Commands = new List<ArticleWorkflowCommand>() };
+			}
 
         //TODO - work flow
-        public static WorkflowState GetWorkflowState(Guid articleGuid)
+        public static ArticleWorkflowState GetWorkflowState(Guid articleGuid)
         {
-            //var sctree = new SitecoreTree.SCTree();
-            //sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-            //return sctree.GetWorkflowStateByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-            return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WorkflowCommand>() };
-        }
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response =
+					client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleGuid=" + articleGuid).Result;
+				var workflowState =
+					JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
+
+				return workflowState;
+			}
+		}
 
 
         public static string GetDocumentPassword()

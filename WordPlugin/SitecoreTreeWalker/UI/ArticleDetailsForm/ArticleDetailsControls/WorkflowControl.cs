@@ -10,7 +10,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	public partial class WorkflowControl : ArticleDetailsPageUserControl
 	{
-		public List<WorkflowCommand> Commands;
+		public List<ArticleWorkflowCommand> Commands;
 		protected List<StaffStruct> _staff;
 		
 
@@ -20,7 +20,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		}
 
-		public void UpdateFields(WorkflowState state)
+		public void UpdateFields(ArticleWorkflowState state)
 		{
 			if (_staff == null)
 			{
@@ -35,8 +35,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 				return;
 			}
 			uxCurrentWorkflowValue.Text = state.DisplayName;
-			Commands = new List<WorkflowCommand>();
-			Commands.Insert(0, new WorkflowCommand {DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString()});
+			Commands = new List<ArticleWorkflowCommand>();
+			Commands.Insert(0, new ArticleWorkflowCommand {DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString()});
 			if (state.Commands != null)
 			{
 				Commands.AddRange(state.Commands);
@@ -58,9 +58,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 		}
 		protected void SetNotificationOptions()
 		{
-			if (uxWorkflowActions.SelectedValue is WorkflowCommand)
+			if (uxWorkflowActions.SelectedValue is ArticleWorkflowCommand)
 			{
-				if (((WorkflowCommand) uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
+				if (((ArticleWorkflowCommand) uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
 				{
 					uxNotifyPicker.Enabled = false;
 					uxNotifyList.Enabled = false;
@@ -70,7 +70,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 					return;
 				}
 
-				var command = ((WorkflowCommand)uxWorkflowActions.SelectedValue);
+				var command = ((ArticleWorkflowCommand)uxWorkflowActions.SelectedValue);
 
 				if (command.GlobalNotifyList != null) { uxNotifyList.ResetUnremovableStaff(command.GlobalNotifyList.ToList()); }
 			}
@@ -111,9 +111,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			ResetNotificationList();
 		}
 
-        public WorkflowCommand GetSelectedCommandState()
+        public ArticleWorkflowCommand GetSelectedCommandState()
         {
-            return uxWorkflowActions.SelectedItem as WorkflowCommand;
+            return uxWorkflowActions.SelectedItem as ArticleWorkflowCommand;
         }
 
 		public Guid GetSelectedCommand()
