@@ -8,14 +8,14 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using SitecoreTreeWalker.SitecoreTree;
+using InformaSitecoreWord.SitecoreTree;
 using Word = Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Word;
-using SitecoreTreeWalker.Sitecore;
+using InformaSitecoreWord.Sitecore;
 using System.Threading;
 
-namespace SitecoreTreeWalker
+namespace InformaSitecoreWord
 {
 	public partial class TreeBrowser : UserControl
 	{
@@ -77,7 +77,7 @@ namespace SitecoreTreeWalker
 		private void SitecoreTreeView_AfterSelect(object sender, TreeViewEventArgs e)
 		{
 			uxPreview.Visible = true;
-			uxPreview.Image = SitecoreTreeWalker.Properties.Resources.loading;
+			uxPreview.Image = InformaSitecoreWord.Properties.Resources.loading;
 			TreeNode node = e.Node;
 			var sitecorePath = node.Tag as SitecorePath;
 

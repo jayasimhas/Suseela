@@ -3,21 +3,21 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI;
+using InformaSitecoreWord.UI.ArticleDetailsForm;
+using InformaSitecoreWord.UI.TreeBrowser;
+using InformaSitecoreWord.User;
 using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI;
-using SitecoreTreeWalker.UI.ArticleDetailsForm;
-using SitecoreTreeWalker.UI.TreeBrowser;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
 using Word = Microsoft.Office.Interop.Word;
 using StaffStruct = PluginModels.StaffStruct;
 
-namespace SitecoreTreeWalker
+namespace InformaSitecoreWord
 {
     public partial class SitecoreAddin
     {

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Xml.Linq;
+using InformaSitecoreWord.Util.CharacterStyles;
+using InformaSitecoreWord.Util.Document;
 using PluginModels;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util.CharacterStyles;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.Sitecore;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
     public class ImageReferenceBuilder
     {

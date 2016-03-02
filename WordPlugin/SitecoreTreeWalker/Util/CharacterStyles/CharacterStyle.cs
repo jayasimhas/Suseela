@@ -2,7 +2,7 @@
 using System.Xml.Linq;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.CharacterStyles
+namespace InformaSitecoreWord.Util.CharacterStyles
 {
 	public abstract class CharacterStyle
 	{

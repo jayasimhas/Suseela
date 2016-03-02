@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.document;
+using InformaSitecoreWord.document;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
+using InformaSitecoreWord.Sitecore;
 using System.Windows.Forms;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
-using SitecoreTreeWalker.Config;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls;
+using InformaSitecoreWord.Config;
 using System.Diagnostics;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.WebserviceHelper;
 using System.Net;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
     /// <summary>
     /// This class is responsible for actions when creating and saving article documents

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	public partial class LoginWindow : Form
 	{

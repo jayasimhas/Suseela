@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SitecoreTreeWalker.UI.Controllers
+namespace InformaSitecoreWord.UI.Controllers
 {
     public class SummaryController
     {

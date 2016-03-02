@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using InformaSitecoreWord.Sitecore;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
 	public class SidebarArticleParser
 	{

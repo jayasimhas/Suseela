@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using HtmlAgilityPack;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Custom_Exceptions;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util.CharacterStyles;
+using InformaSitecoreWord.Util.Document;
+using InformaSitecoreWord.Util.Tables;
 using PluginModels;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Custom_Exceptions;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util.CharacterStyles;
-using SitecoreTreeWalker.Util.Document;
-using SitecoreTreeWalker.Util.Tables;
 using Word = Microsoft.Office.Interop.Word;
 using COM = System.Runtime.InteropServices.ComTypes;
-using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
+using InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
     public class AlertDisabler : IDisposable
     {

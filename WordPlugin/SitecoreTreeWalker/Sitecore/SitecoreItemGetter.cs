@@ -2,9 +2,9 @@
 using System.IO;
 using System.Net;
 using PluginModels;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.Sitecore
+namespace InformaSitecoreWord.Sitecore
 {
     public class SitecoreItemGetter
     {

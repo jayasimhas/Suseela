@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class TaxonomyControl
 	{
@@ -34,7 +34,7 @@
 			this.uxArrowDown = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.uxGeographyViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxGeographyResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxGeographyResults = new NoFlickerListView();
 			this.uxGeographyResultsTree = new System.Windows.Forms.TreeView();
 			this.uxGeographyKeywords = new System.Windows.Forms.TextBox();
 			this.uxGeographyViewSearch = new System.Windows.Forms.LinkLabel();
@@ -80,7 +80,7 @@
 			// uxArrowUp
 			// 
 			this.uxArrowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowUp.Image = global::SitecoreTreeWalker.Properties.Resources.arrowup;
+			this.uxArrowUp.Image = global::InformaSitecoreWord.Properties.Resources.arrowup;
 			this.uxArrowUp.Location = new System.Drawing.Point(587, 327);
 			this.uxArrowUp.Name = "uxArrowUp";
 			this.uxArrowUp.Padding = new System.Windows.Forms.Padding(2);
@@ -90,7 +90,7 @@
 			// uxArrowDown
 			// 
 			this.uxArrowDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowDown.Image = global::SitecoreTreeWalker.Properties.Resources.arrowdown;
+			this.uxArrowDown.Image = global::InformaSitecoreWord.Properties.Resources.arrowdown;
 			this.uxArrowDown.Location = new System.Drawing.Point(587, 372);
 			this.uxArrowDown.Name = "uxArrowDown";
 			this.uxArrowDown.Padding = new System.Windows.Forms.Padding(2);
@@ -193,7 +193,7 @@
 			// 
 			this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label4.ForeColor = System.Drawing.Color.Gray;
-			this.label4.Image = global::SitecoreTreeWalker.Properties.Resources.geography_tabheader;
+			this.label4.Image = global::InformaSitecoreWord.Properties.Resources.geography_tabheader;
 			this.label4.Location = new System.Drawing.Point(0, 0);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(610, 30);

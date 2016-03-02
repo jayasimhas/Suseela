@@ -4,11 +4,12 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Windows.Shapes;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.WebserviceHelper;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
     public partial class ArticleStatusBar : UserControl
     {
@@ -97,12 +98,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             if (displayStatus)
             {
                 uxLinkUnlinkButton.Text = "UnLink";
-                uxLinkUnlinkButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources.broken_link);
+                uxLinkUnlinkButton.Image = new Bitmap(Resources.broken_link);
             }
             else
             {
                 uxLinkUnlinkButton.Text = "Link";
-                uxLinkUnlinkButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources.link_32);
+                uxLinkUnlinkButton.Image = new Bitmap(Resources.link_32);
             }
             var articleLockInfo = new ArticleLockInfo();
             articleLockInfo.SetCheckedOutStatus();
@@ -113,12 +114,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             if (displayStatus)
             {
                 uxLockStateButton.Text = "Unlock";
-                uxLockStateButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources._53_Lock_unlocked);
+                uxLockStateButton.Image = new Bitmap(Resources._53_Lock_unlocked);
             }
             else
             {
                 uxLockStateButton.Text = "Lock";
-                uxLockStateButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources._1445989402_lock_24);
+                uxLockStateButton.Image = new Bitmap(Resources._1445989402_lock_24);
             }
         }
 

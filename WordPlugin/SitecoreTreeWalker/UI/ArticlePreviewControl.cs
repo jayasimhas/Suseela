@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using PluginModels;
 using ArticleStruct = PluginModels.ArticleStruct;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	sealed class ArticlePreviewControl : TableLayoutPanel
 	{

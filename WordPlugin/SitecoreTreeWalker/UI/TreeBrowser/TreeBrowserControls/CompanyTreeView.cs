@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
     public partial class CompanyTreeView : UserControl
     {

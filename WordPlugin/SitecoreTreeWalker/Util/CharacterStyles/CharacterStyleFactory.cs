@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using InformaSitecoreWord.Sitecore;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.Util.CharacterStyles
+namespace InformaSitecoreWord.Util.CharacterStyles
 {
 	/// <summary>
 	/// Fields are null until GetCharacterStyles() has been called to initialize values

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using HtmlAgilityPack;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	public class HTMLTools
 	{

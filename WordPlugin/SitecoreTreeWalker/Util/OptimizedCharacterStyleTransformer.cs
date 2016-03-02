@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls;
+using InformaSitecoreWord.Util.CharacterStyles;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
-using SitecoreTreeWalker.Util.CharacterStyles;
+using InformaSitecoreWord.Config;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	public class OptimizedCharacterStyleTransformer
 	{

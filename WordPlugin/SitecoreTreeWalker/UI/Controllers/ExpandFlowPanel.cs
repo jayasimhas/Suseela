@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.UI.Controllers
+namespace InformaSitecoreWord.UI.Controllers
 {
     /// <summary>
     /// This class is in charge of tying together a Control with a FlowLayoutPanel so that the Control toggles

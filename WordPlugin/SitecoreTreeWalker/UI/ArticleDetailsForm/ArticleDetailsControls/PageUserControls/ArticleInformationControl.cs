@@ -4,16 +4,16 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
 using ArticleStruct = PluginModels.ArticleStruct;
 using StaffStruct = PluginModels.StaffStruct;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	/// <summary>
 	/// Primary control for the Article Information tab
@@ -36,7 +36,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             try
             {//TamerM- 2015-02-24: Instead of using the hard coded 'Easter Standard Time', now it reads from the app.config appSettings section and defaults to GMT if any error occurs
 
-                var remoteTimezoneIDFromAppSettings = SitecoreTreeWalker.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
+                var remoteTimezoneIDFromAppSettings = InformaSitecoreWord.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
 
                 //If not appSettings key for RemoteTimezone exists, keep the hard coded default "GMT"
                 if (string.IsNullOrEmpty(remoteTimezoneIDFromAppSettings))
@@ -46,7 +46,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
                 TimeZoneInfo.FindSystemTimeZoneById(remoteTimezoneIDFromAppSettings);
 
                 //set the timezoneid to the global RemoteTimezoneId property
-                RemoteTimezoneId = SitecoreTreeWalker.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
+                RemoteTimezoneId = InformaSitecoreWord.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
 		}
             catch (System.TimeZoneNotFoundException tzEx)//If the specified timezone is invalid
             {
