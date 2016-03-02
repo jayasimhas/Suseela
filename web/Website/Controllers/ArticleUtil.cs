@@ -37,7 +37,6 @@ namespace Informa.Web.Controllers
 	{
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
-
 		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
 		{
 			ArticleSearcher = searcher;
@@ -219,20 +218,16 @@ namespace Informa.Web.Controllers
 			if (article.Locking.IsLocked())
 			{
 				throw new ApplicationException("Trying to lock an already locked article!");
-			}
-			//TODO - Might need to work on the user and login
-			/*
-			if (userID.IsNullOrEmpty())
+			}						
+			if (string.IsNullOrEmpty(Sitecore.Context.User.DisplayName))
 			{
 				return false;
 			}
-			bool loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
 			if (!loggedIn)
 			{
 				{ return false; }
 			}
-			*/
-
 
 			using (new EditContext(article))
 			{
@@ -257,7 +252,7 @@ namespace Informa.Web.Controllers
 			if (string.IsNullOrEmpty(userID)) return false;
 			//TODO: assuming domain is specified here.
 			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
-			if (!loggedIn || !Sitecore.Context.GetUserName().EqualsIgnoreCase(userID) || !Sitecore.Context.IsAdministrator)
+			if (!loggedIn)
 			{
 				return false;
 			}
