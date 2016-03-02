@@ -316,18 +316,6 @@
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\FeaturedImage.Designer.cs">
       <DependentUpon>FeaturedImage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.Designer.cs">
-      <DependentUpon>IndustriesControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.Designer.cs">
-      <DependentUpon>MarketSegmentsControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -346,23 +334,11 @@
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.Designer.cs">
       <DependentUpon>SubjectsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.Designer.cs">
-      <DependentUpon>NotesControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.Designer.cs">
       <DependentUpon>TaxonomyControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.Designer.cs">
-      <DependentUpon>TherapeuticCategoriesControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.cs">
       <SubType>UserControl</SubType>
@@ -442,12 +418,6 @@
     </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.Designer.cs">
       <DependentUpon>CompanyTreeView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.Designer.cs">
-      <DependentUpon>MultimediaControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.cs">
       <SubType>UserControl</SubType>
@@ -548,17 +518,11 @@
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TaxonomyControl.resx">
       <DependentUpon>TaxonomyControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\IndustriesControl.resx">
-      <DependentUpon>IndustriesControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetail.resx">
       <DependentUpon>ArticleDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\MarketSegmentsControl.resx">
-      <DependentUpon>MarketSegmentsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\MenuSelectorItem.resx">
       <DependentUpon>MenuSelectorItem.cs</DependentUpon>
@@ -568,12 +532,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\SubjectsControl.resx">
       <DependentUpon>SubjectsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\NotesControl.resx">
-      <DependentUpon>NotesControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\TherapeuticCategoriesControl.resx">
-      <DependentUpon>TherapeuticCategoriesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\WorkflowControl.resx">
       <DependentUpon>WorkflowControl.cs</DependentUpon>
@@ -592,9 +550,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\CompanyTreeView.resx">
       <DependentUpon>CompanyTreeView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\MultimediaControl.resx">
-      <DependentUpon>MultimediaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\IFrameControl.resx">
       <DependentUpon>IFrameControl.cs</DependentUpon>
