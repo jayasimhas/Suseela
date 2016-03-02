@@ -115,19 +115,17 @@ namespace Informa.Web.Controllers
 		private readonly ISitecoreService _sitecoreMasterService;
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
-		private readonly IArticleSearch _articleSearcher;
-		protected readonly WorkflowController _workflowController;
+		private readonly IArticleSearch _articleSearcher;               
 
 		/// <summary>
 		/// Constructor
 		/// </summary
 		/// <param name="searcher"></param>
 		/// <param name="sitecoreFactory"></param>
-		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory, WorkflowController workflowController)
+		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
-			_articleSearcher = searcher;
-			_workflowController = workflowController;
+			_articleSearcher = searcher;                     
 		}
 
 		/// <summary>

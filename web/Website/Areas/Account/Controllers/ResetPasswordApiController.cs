@@ -59,7 +59,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
 			return Ok(new
 			{
-				success = result.Status == WebGenerateUserResetPasswordStatus.Success
+				success = result.Status == WebGenerateUserResetPasswordStatus.Success || result.Status == WebGenerateUserResetPasswordStatus.UserNotFound
 			});
 		}
 	}
