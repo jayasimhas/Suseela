@@ -635,6 +635,7 @@
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
+    <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
@@ -972,6 +973,7 @@
     <Content Include="Views\Shared\Components\Subnavigation.cshtml" />
     <Content Include="Views\Shared\Test\UserResetPassword.cshtml" />
     <Content Include="Views\Shared\Components\BodyCopy.cshtml" />
+    <Content Include="Views\Search\HeaderSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
