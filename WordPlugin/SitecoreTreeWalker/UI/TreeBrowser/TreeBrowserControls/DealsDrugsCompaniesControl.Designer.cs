@@ -1,4 +1,8 @@
-﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
+﻿
+
+using SitecoreTreeWalker.UI;
+
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	partial class DealsDrugsCompaniesControl
 	{
