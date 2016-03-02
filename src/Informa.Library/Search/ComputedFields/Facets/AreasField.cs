@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Glass.Mapper.Sc;
+using Informa.Library.Search.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Sitecore.Data.Items;
 using Velir.Search.Core.ComputedFields;
@@ -20,9 +21,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
             {
                 var subjectTaxonomyItems =
                     taxonomItem.Taxonomies.Where(
-                        x =>
-                            x._Path.ToLower()
-                                .StartsWith("/sitecore/content/scripintelligence/globals/taxonomy/therapy areas"));
+                        x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path));
 
                 return subjectTaxonomyItems.Select(x => x.Item_Name.Trim()).ToList();
             }
