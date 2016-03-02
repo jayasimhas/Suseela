@@ -56,8 +56,9 @@ namespace Informa.Web.Controllers
 
 		public void SaveArticleDetails(Guid articleGuid, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new SecurityDisabler())
-			{
+
+            //TODO:  Add Roles
+			
 				ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 				if (article == null)
 				{
@@ -65,14 +66,13 @@ namespace Informa.Web.Controllers
 				}
 
 				SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
-			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+			
+			
 		}
 
 		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new SecurityDisabler())
-			{
+			
 				ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 				if (article == null)
 				{
@@ -80,8 +80,6 @@ namespace Informa.Web.Controllers
 				}
 
 				SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion);
-			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
 		}
 
 		/// <summary>
@@ -107,7 +105,7 @@ namespace Informa.Web.Controllers
 			bool loggedIn = false;
 			if (!IsNullOrEmpty(userID))
 			{
-				loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+			    loggedIn = Sitecore.Context.User.IsAuthenticated;
 			}
 
 			var newVersion = article;
@@ -196,14 +194,11 @@ namespace Informa.Web.Controllers
 						}
 					}
 				}
-				*/
-				using (new SecurityDisabler())
-				{
+				*/                           
 					if (loggedIn)
 					{
 						_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
-					}
-				}
+					}                        
 			}
 
 			catch (Exception ex)

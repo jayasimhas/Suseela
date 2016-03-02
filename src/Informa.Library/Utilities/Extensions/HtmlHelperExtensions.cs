@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using Informa.Library.CustomSitecore.Mvc;
 using Sitecore.Diagnostics;
@@ -9,6 +8,8 @@ using Sitecore.Mvc.Helpers;
 
 namespace Informa.Library.Utilities.Extensions
 {
+	using System.Web.Helpers;
+
 	public static class HtmlHelperExtensions
 	{
 		public static IHtmlString ServerSideInclude(this HtmlHelper helper, string serverPath)

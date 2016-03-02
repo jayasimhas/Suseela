@@ -13,13 +13,13 @@ templatekey: Home Page
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
 name: __Renderings
 key: __renderings
-content-length: 259
+content-length: 605
 
-<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" /></d></r>
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><p uid="{AA1682A6-FEC2-4898-9878-612915FA0029}" key="left-curated-content" md="/sitecore/layout/Placeholder Settings/User Defined/Editor Components/Left Curated Content" /><p uid="{BD45DB9D-04DA-49BF-88CF-DA06F36E99B8}" key="right-curated-content" md="/sitecore/layout/Placeholder Settings/User Defined/Editor Components/Right Curated Content" /><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" /></d></r>
 ----version----
 language: en
 version: 1
-revision: e1aa542c-bfde-48f1-9857-784296a73ce3
+revision: 054b2a63-d660-4bb4-8b99-ae746c8e6ceb
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e1aa542c-bfde-48f1-9857-784296a73ce3
+054b2a63-d660-4bb4-8b99-ae746c8e6ceb
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151230T194527Z
+20160229T174338Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

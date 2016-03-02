@@ -39,9 +39,7 @@
 			this.InsightTab = this.Factory.CreateRibbonTab();
 			this.PluginGrp = this.Factory.CreateRibbonGroup();
 			this.OpenPluginBtn = this.Factory.CreateRibbonButton();
-			this.SaveToSitecoreBtn = this.Factory.CreateRibbonMenu();
-			this.SaveArticleBtn = this.Factory.CreateRibbonButton();
-			this.SaveMetaDataBtn = this.Factory.CreateRibbonButton();
+			this.SaveToSitecoreBtn = this.Factory.CreateRibbonButton();
 			this.ArticlePreviewMenu = this.Factory.CreateRibbonButton();
 			this.ReferencesGrp = this.Factory.CreateRibbonGroup();
 			this.ArticlesBtn = this.Factory.CreateRibbonButton();
@@ -95,24 +93,11 @@
 			// 
 			this.SaveToSitecoreBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
 			this.SaveToSitecoreBtn.Image = ((System.Drawing.Image)(resources.GetObject("SaveToSitecoreBtn.Image")));
-			this.SaveToSitecoreBtn.Items.Add(this.SaveArticleBtn);
-			this.SaveToSitecoreBtn.Items.Add(this.SaveMetaDataBtn);
 			this.SaveToSitecoreBtn.Label = "Save to Sitecore";
 			this.SaveToSitecoreBtn.Name = "SaveToSitecoreBtn";
 			this.SaveToSitecoreBtn.OfficeImageId = "PropertySheet";
 			this.SaveToSitecoreBtn.ShowImage = true;
-			// 
-			// SaveArticleBtn
-			// 
-			this.SaveArticleBtn.Label = "Save Article";
-			this.SaveArticleBtn.Name = "SaveArticleBtn";
-			this.SaveArticleBtn.ShowImage = true;
-			// 
-			// SaveMetaDataBtn
-			// 
-			this.SaveMetaDataBtn.Label = "Save Metadata";
-			this.SaveMetaDataBtn.Name = "SaveMetaDataBtn";
-			this.SaveMetaDataBtn.ShowImage = true;
+			this.SaveToSitecoreBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.SaveToSitecoreBtn_Click);
 			// 
 			// ArticlePreviewMenu
 			// 
@@ -236,7 +221,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup PluginGrp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton LogoutBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton OpenPluginBtn;
-        internal Microsoft.Office.Tools.Ribbon.RibbonMenu SaveToSitecoreBtn;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton SaveToSitecoreBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup ReferencesGrp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ArticlesBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton IntelligenceProductsBtn;
@@ -244,8 +229,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ImagesBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton SupportingDocsBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup LogoutGrp;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton SaveArticleBtn;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton SaveMetaDataBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton LoginBtn;
 		internal Microsoft.Office.Tools.Ribbon.RibbonButton ArticlePreviewMenu;
 	}

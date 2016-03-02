@@ -200,3 +200,4 @@ logs/*
 web/Website/local.js
 nant.send.bat
 web/Data
+WordPlugin/SitecoreTreeWalker/publish
