@@ -29,13 +29,14 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkflowControl));
 			this.uxWorkflowLabel = new System.Windows.Forms.Label();
 			this.uxWorkflowActions = new System.Windows.Forms.ComboBox();
 			this.uxUnlockOnSave = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.uxNotifyPicker = new System.Windows.Forms.ComboBox();
 			this.uxNotifyAdd = new System.Windows.Forms.Button();
-			this.uxNotifyList = new EasyRemoveListView();
+			this.uxNotifyList = new InformaSitecoreWord.UI.EasyRemoveListView();
 			this.uxCurrentWorkflowValue = new System.Windows.Forms.Label();
 			this.blMoveToWorkflowStateLabel = new System.Windows.Forms.Label();
 			this.txtNotificationText = new System.Windows.Forms.TextBox();
@@ -43,6 +44,7 @@
 			this.lblNotificationText = new System.Windows.Forms.Label();
 			this.uxWorkflowPanel = new System.Windows.Forms.Panel();
 			this.lblWorkflow = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			this.uxWorkflowPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -200,10 +202,22 @@
 			this.lblWorkflow.TabIndex = 16;
 			this.lblWorkflow.Text = "Workflow";
 			// 
+			// label2
+			// 
+			this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+			this.label2.ForeColor = System.Drawing.Color.Gray;
+			this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+			this.label2.Location = new System.Drawing.Point(0, 6);
+			this.label2.Margin = new System.Windows.Forms.Padding(0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(610, 30);
+			this.label2.TabIndex = 17;
+			// 
 			// WorkflowControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.lblWorkflow);
 			this.Controls.Add(this.uxWorkflowPanel);
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -232,5 +246,6 @@
 		private System.Windows.Forms.Label lblNotificationText;
 		private System.Windows.Forms.Panel uxWorkflowPanel;
 		private System.Windows.Forms.Label lblWorkflow;
+		private System.Windows.Forms.Label label2;
 	}
 }
