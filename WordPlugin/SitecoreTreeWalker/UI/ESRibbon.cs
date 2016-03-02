@@ -320,12 +320,19 @@ namespace SitecoreTreeWalker.UI
                 //This refills ActiveDocument data with the actually active word document
                 SitecoreAddin.TagActiveDocument();
 
-                Action previewAction = () =>
+                if (SitecoreAddin.ActiveDocument == null || string.IsNullOrEmpty(new DocumentCustomProperties(SitecoreAddin.ActiveDocument).ArticleNumber))
+                {
+                    CheckLoginAndPerformAction(OpenArticleInformation);
+                }
+                else
+                {
+                    Action previewAction = () =>
                 {
                     new ArticleDocumentManager().PreviewArticle();
                 };
 
-                CheckLoginAndPerformAction(previewAction);
+                    CheckLoginAndPerformAction(previewAction);
+                }
             }
             catch (WebException wex)
             {
