@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using PluginModels;
 
-namespace SitecoreTreeWalker.UI 
+namespace InformaSitecoreWord.UI 
 {
 	class DealPreviewControl : TableLayoutPanel
 	{

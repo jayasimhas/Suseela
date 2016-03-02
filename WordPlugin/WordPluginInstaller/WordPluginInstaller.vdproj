@@ -325,8 +325,8 @@
         {
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0F80B5FDF7B943C0969951E1BF40CFCC"
             {
-            "SourcePath" = "8:..\\SitecoreTreeWalker\\bin\\Release\\SitecoreTreeWalker.dll.manifest"
-            "TargetName" = "8:SitecoreTreeWalker.dll.manifest"
+            "SourcePath" = "8:..\\InformaSitecoreWord\\bin\\Release\\InformaSitecoreWord.dll.manifest"
+            "TargetName" = "8:InformaSitecoreWord.dll.manifest"
             "Tag" = "8:"
             "Folder" = "8:_7A89E58E0F9844A385DE980052D5AE63"
             "Condition" = "8:"
@@ -438,8 +438,8 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4EB5BE8220C34F6485C49FD60BD5782F"
             {
-            "SourcePath" = "8:..\\SitecoreTreeWalker\\bin\\Release\\SitecoreTreeWalker.vsto"
-            "TargetName" = "8:SitecoreTreeWalker.vsto"
+            "SourcePath" = "8:..\\InformaSitecoreWord\\bin\\Release\\InformaSitecoreWord.vsto"
+            "TargetName" = "8:InformaSitecoreWord.vsto"
             "Tag" = "8:"
             "Folder" = "8:_7A89E58E0F9844A385DE980052D5AE63"
             "Condition" = "8:"
@@ -930,7 +930,7 @@
                                                                                                                             "Condition" = "8:"
                                                                                                                             "Transitive" = "11:FALSE"
                                                                                                                             "ValueTypes" = "3:1"
-                                                                                                                            "Value" = "8:[TARGETDIR]SitecoreTreeWalker.vsto|vstolocal"
+                                                                                                                            "Value" = "8:[TARGETDIR]InformaSitecoreWord.vsto|vstolocal"
                                                                                                                             }
                                                                                                                         }
                                                                                                                     }
@@ -1325,7 +1325,7 @@
                                                                     "Condition" = "8:"
                                                                     "Transitive" = "11:FALSE"
                                                                     "ValueTypes" = "3:1"
-                                                                    "Value" = "8:[TARGETDIR]SitecoreTreeWalker.vsto|vstolocal"
+                                                                    "Value" = "8:[TARGETDIR]InformaSitecoreWord.vsto|vstolocal"
                                                                     }
                                                                     "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_9197D76FF78F44719074C9BC2094C83F"
                                                                     {
@@ -1771,7 +1771,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0187A1301B3A4A34B73C00ABD30E7387"
             {
-            "SourcePath" = "8:..\\SitecoreTreeWalker\\obj\\Debug\\InsightPlatformSitecoreTreeWalker.dll"
+            "SourcePath" = "8:..\\InformaSitecoreWord\\obj\\Debug\\InsightPlatformInformaSitecoreWord.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7A89E58E0F9844A385DE980052D5AE63"
@@ -1791,7 +1791,7 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{3ED1F49B-D9FE-40EE-A4D4-672250632A8F}"
+            "OutputProjectGuid" = "8:{2E8DB4F0-C109-4D7B-81BD-273A60645337}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
@@ -1799,7 +1799,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_956705C293114E9ABC268DA0D41C9D6F"
             {
-            "SourcePath" = "8:..\\SitecoreTreeWalker\\obj\\Release\\SitecoreTreeWalker.dll"
+            "SourcePath" = "8:..\\InformaSitecoreWord\\obj\\Release\\InformaSitecoreWord.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7A89E58E0F9844A385DE980052D5AE63"

@@ -461,6 +461,9 @@
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
     <Compile Include="User\IUpdateUserPassword.cs" />
     <Compile Include="User\IUser.cs" />
+    <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
+    <Compile Include="User\Profile\IUserProfile.cs" />
+    <Compile Include="User\Profile\IUserProfileFactory.cs" />
     <Compile Include="User\ResetPassword\FindValidUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\GenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IFindUserResetPassword.cs" />
@@ -492,10 +495,12 @@
     <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordAction.cs" />
     <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordActions.cs" />
     <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebRegenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordActions.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordResult.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordStatus.cs" />
+    <Compile Include="User\ResetPassword\Web\WebRegenerateUserResetPassword.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
@@ -512,9 +517,11 @@
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
+    <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />
     <Compile Include="AntiForgery\AntiForgeryValidate.cs" />
     <Compile Include="AntiForgery\HtmlHelperExtensions.cs" />
+    <Compile Include="Utilities\WebApi\Filters\ValidateReasonsAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

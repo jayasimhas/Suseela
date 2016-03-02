@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class RelatedArticlesControl
 	{
@@ -33,14 +33,14 @@
 			this.uxRetrieveArticle = new System.Windows.Forms.Button();
 			this.uxAddToRelated = new System.Windows.Forms.Button();
 			this.uxPreviewPanel = new System.Windows.Forms.Panel();
-			this._uxArticlePreviewTable = new SitecoreTreeWalker.UI.ArticlePreviewControl();
+			this._uxArticlePreviewTable = new ArticlePreviewControl();
 			this.uxViewArticle = new System.Windows.Forms.Button();
 			this.uxArticleNumber = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.uxArticleInformationHeaderLabel = new System.Windows.Forms.Label();
 			this.uxSelectedPanel = new System.Windows.Forms.Panel();
-			this.uxSelectedLayout = new SitecoreTreeWalker.UI.SelectedRelatedArticles();
+			this.uxSelectedLayout = new SelectedRelatedArticles();
 			this.label5 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.uxPreviewPanel.SuspendLayout();
@@ -171,7 +171,7 @@
 			// 
 			this.uxArticleInformationHeaderLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.uxArticleInformationHeaderLabel.ForeColor = System.Drawing.Color.Gray;
-			this.uxArticleInformationHeaderLabel.Image = global::SitecoreTreeWalker.Properties.Resources.relatedarticles_tabheader;
+			this.uxArticleInformationHeaderLabel.Image = global::InformaSitecoreWord.Properties.Resources.relatedarticles_tabheader;
 			this.uxArticleInformationHeaderLabel.Location = new System.Drawing.Point(0, 0);
 			this.uxArticleInformationHeaderLabel.Name = "uxArticleInformationHeaderLabel";
 			this.uxArticleInformationHeaderLabel.Size = new System.Drawing.Size(610, 30);

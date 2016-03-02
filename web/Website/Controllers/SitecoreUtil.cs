@@ -14,7 +14,6 @@ namespace Informa.Web.Controllers
 {
 	public static class SitecoreUtil
 	{
-		//TODO: Business logic for Article Number Generation
 		/// <summary>
 		/// This method Generates the Article Number
 		/// </summary>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	public class Utils
 	{ 

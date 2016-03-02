@@ -6,7 +6,7 @@ using System.Text;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	class DocumentPropertyEditor
 	{

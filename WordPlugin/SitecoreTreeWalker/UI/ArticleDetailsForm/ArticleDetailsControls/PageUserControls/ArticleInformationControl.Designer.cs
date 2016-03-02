@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class ArticleInformationControl
 	{
@@ -41,7 +41,7 @@
 			this.uxSelectAuthor = new System.Windows.Forms.ComboBox();
 			this.uxAddAuthor = new System.Windows.Forms.Button();
 			this.label15 = new System.Windows.Forms.Label();
-			this.uxSelectedAuthors = new SitecoreTreeWalker.UI.EasyRemoveListView();
+			this.uxSelectedAuthors = new EasyRemoveListView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.uxMediaTypes = new System.Windows.Forms.ComboBox();
@@ -58,7 +58,7 @@
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Image = global::SitecoreTreeWalker.Properties.Resources.articleinfo_tabheader;
+			this.label1.Image = global::InformaSitecoreWord.Properties.Resources.articleinfo_tabheader;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Margin = new System.Windows.Forms.Padding(0);
 			this.label1.Name = "label1";

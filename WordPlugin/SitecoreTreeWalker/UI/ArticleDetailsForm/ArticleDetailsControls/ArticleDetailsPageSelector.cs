@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.Util.Document;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
-using SitecoreTreeWalker.Util.Document;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
     public partial class ArticleDetailsPageSelector : UserControl
     {
@@ -127,7 +127,11 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
                 ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
-                FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource()
+                FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
+				NotificationText = pageWorkflowControl.GetNotificationText(),
+				CommandID = pageWorkflowControl.GetSelectedCommand()
+				
+				
             };
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)

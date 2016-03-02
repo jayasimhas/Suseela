@@ -10,19 +10,19 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Properties;
-using SitecoreTreeWalker.SitecoreServer;
-using SitecoreTreeWalker.SitecoreTree;
-using SitecoreTreeWalker.UI.Controllers;
-using SitecoreTreeWalker.User;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.SitecoreServer;
+using InformaSitecoreWord.SitecoreTree;
+using InformaSitecoreWord.UI.Controllers;
+using InformaSitecoreWord.User;
 using Word = Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Util;
-using ArticleStruct = SitecoreTreeWalker.SitecoreTree.ArticleStruct;
-using StaffStruct = SitecoreTreeWalker.SitecoreServer.StaffStruct;
-using TaxonomyStruct = SitecoreTreeWalker.SitecoreServer.TaxonomyStruct;
+using InformaSitecoreWord.Util;
+using ArticleStruct = InformaSitecoreWord.SitecoreTree.ArticleStruct;
+using StaffStruct = InformaSitecoreWord.SitecoreServer.StaffStruct;
+using TaxonomyStruct = InformaSitecoreWord.SitecoreServer.TaxonomyStruct;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	public partial class ArticleDetails : Form
 	{

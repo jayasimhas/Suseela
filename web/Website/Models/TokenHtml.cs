@@ -50,7 +50,7 @@ namespace Informa.Web.Models
 
             var sidebarRegex = new Regex(@"\[Sidebar#(.*?)\]");    
 
-            var referenceArticleTokenRegex = new Regex(@"\[A#(.*?)\]");
+            var referenceArticleTokenRegex = new Regex(@"\(<a>\[A#(.*?)\]</a>\)");
              
             var fieldValue = expression.Compile()(this.Model);
 

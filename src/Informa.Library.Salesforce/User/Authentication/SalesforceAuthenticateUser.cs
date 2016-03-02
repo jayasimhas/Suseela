@@ -1,4 +1,5 @@
 ﻿using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 
 namespace Informa.Library.Salesforce.User.Authentication
@@ -6,11 +7,14 @@ namespace Informa.Library.Salesforce.User.Authentication
 	public class SalesforceAuthenticateUser : ISalesforceAuthenticateUser
 	{
 		protected readonly ISalesforceServiceContext Service;
+		protected readonly ISalesforceFindUserProfile FindUserProfile;
 
 		public SalesforceAuthenticateUser(
-			ISalesforceServiceContext service)
+			ISalesforceServiceContext service,
+			ISalesforceFindUserProfile findUserProfile)
 		{
 			Service = service;
+			FindUserProfile = findUserProfile;
 		}
 
 		public IAuthenticateUserResult Authenticate(string username, string password)
@@ -22,14 +26,12 @@ namespace Informa.Library.Salesforce.User.Authentication
 				return ErrorResult;
 			}
 
-			var profileResponse = Service.Execute(s => s.queryProfileContactInformation(username));
+			var profile = FindUserProfile.Find(username);
 
-			if (!profileResponse.IsSuccess())
+			if (profile == null)
 			{
 				return ErrorResult;
 			}
-
-			var profile = profileResponse.profile;
 
 			return new SalesforceAuthenticateUserResult
 			{
@@ -38,7 +40,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 				{
 					Username = username,
 					Email = username,
-					Name = string.Format("{0} {1}", profile.name.firstName, profile.name.lastName)
+					Name = string.Format("{0} {1}", profile.FirstName, profile.LastName)
 				}
 			};
 		}

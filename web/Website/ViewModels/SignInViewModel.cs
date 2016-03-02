@@ -1,10 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Security.AccessControl;
-using Informa.Library.Globalization;
+﻿using Informa.Library.Globalization;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
-using Informa.Web.Areas.Account.Models;
 
 namespace Informa.Web.ViewModels
 {
@@ -21,28 +17,20 @@ namespace Informa.Web.ViewModels
 			TextTranslator = textTranslator;
 		}
 
-		public string SignInButtonText => TextTranslator.Translate("Header.SignInLink");
-		public string SignInInvalidText => TextTranslator.Translate("Header.SignInInvalid");
-		public string PasswordPlaceholderText => TextTranslator.Translate("Header.PasswordPlaceholder");
-		public string RememberMeText => TextTranslator.Translate("Header.RememberMe");
-		public string ForgotPasswordText => TextTranslator.Translate("Header.ForgotPassword");
-		public string ForgotPasswordLinkText => TextTranslator.Translate("Header.ForgotPasswordLink");
-		public string ForgotPasswordHelpText => TextTranslator.Translate("Header.ForgotPasswordHelp");
-		public string ForgotPasswordButtonText => TextTranslator.Translate("Header.ForgotPasswordButton");
-		public string ForgotPasswordConfirmationText => TextTranslator.Translate("Header.ForgotPasswordConfirmation");
-		public IHtmlString ForgotPasswordContactText => new HtmlString("Need help? Contact us at <b>(800) 332-2181</b>, <b>+1 (908) 748-1221</b>, or <a href=\"#\">custcare@informa.com</a>");
-		public string EmailPlaceholderText => TextTranslator.Translate("Header.EmailPlaceholder");
-		public string UsernamePlaceholderText => TextTranslator.Translate("Header.UsernamePlaceholder");
-
-        [Required]
-        [EmailAddress]               
-        public string Email { get; set; }
-        [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-                                               
-        public bool RememberMe { get; set; }
-                                                                    
+		public string SignInButtonText => TextTranslator.Translate("Authentication.SignIn.Submit");
+		public string SignInInvalidText => TextTranslator.Translate("Authentication.SignIn.ErrorInvalid");
+		public string SignInPasswordPlaceholderText => TextTranslator.Translate("Authentication.SignIn.PasswordPlaceholder");
+		public string SignInRememberMeText => TextTranslator.Translate("Authentication.SignIn.RememberMe");
+		public string SignInUsernamePlaceholderText => TextTranslator.Translate("Authentication.SignIn.UsernamePlaceholder");
+		public string SignInResetPasswordLinkText => TextTranslator.Translate("Authentication.SignIn.ResetPasswordLink");
+		public string ResetPasswordEmailPlaceholderText => TextTranslator.Translate("Authentication.ResetPassword.Request.EmailPlaceholder");
+		public string ResetPasswordSuccessText => TextTranslator.Translate("Authentication.ResetPassword.Request.Success");
+		public string ResetPasswordErrorEmailText => TextTranslator.Translate("Authentication.ResetPassword.Request.ErrorEmail");
+		public string ResetPasswordErrorGeneralText => TextTranslator.Translate("Authentication.ResetPassword.Request.ErrorGeneral");
+		public string ResetPasswordText => TextTranslator.Translate("Authentication.ResetPassword.Request.Header");
+		public string ResetPasswordHelpText => TextTranslator.Translate("Authentication.ResetPassword.Request.Help");
+		public string ResetPasswordSubmitText => TextTranslator.Translate("Authentication.ResetPassword.Request.Submit");
+		public IHtmlString ResetPasswordContactText => new HtmlString(TextTranslator.Translate("Authentication.ResetPassword.Request.Contact"));
 	}
 
     
