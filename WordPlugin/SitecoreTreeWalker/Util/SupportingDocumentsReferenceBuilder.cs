@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Xml.Linq;
+using InformaSitecoreWord.Sitecore;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	public class SupportingDocumentsReferenceBuilder
 	{

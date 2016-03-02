@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Net;
 using System.Web.Services.Protocols;
+using InformaSitecoreWord.Sitecore;
 using PluginModels;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.User
+namespace InformaSitecoreWord.User
 {
 	public class SitecoreUser
 	{

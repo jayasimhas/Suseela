@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SitecoreTreeWalker.User;
+using InformaSitecoreWord.User;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
     public partial class Login : Form
     {

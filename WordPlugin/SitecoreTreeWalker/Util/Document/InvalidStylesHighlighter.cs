@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using InformaSitecoreWord.Sitecore;
 using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.VisualBasic;
-using SitecoreTreeWalker.Sitecore;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
 	public class InvalidStylesHighlighter
 	{

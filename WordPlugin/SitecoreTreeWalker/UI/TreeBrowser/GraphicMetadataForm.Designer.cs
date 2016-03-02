@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser
+namespace InformaSitecoreWord.UI.TreeBrowser
 {
 	partial class GraphicsMetadataForm
 	{

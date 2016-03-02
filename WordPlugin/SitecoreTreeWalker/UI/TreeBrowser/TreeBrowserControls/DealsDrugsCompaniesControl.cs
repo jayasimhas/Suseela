@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util;
 using PluginModels;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	public partial class DealsDrugsCompaniesControl : UserControl
 	{

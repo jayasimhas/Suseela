@@ -2,15 +2,15 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Config;
 using System.Deployment ;
 using System.Reflection;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
 using PluginModels;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	public partial class LoginControl : UserControl
 	{

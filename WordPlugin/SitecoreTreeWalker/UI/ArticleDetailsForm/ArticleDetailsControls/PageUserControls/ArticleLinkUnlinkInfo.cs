@@ -1,7 +1,5 @@
-﻿using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util.Document;
+﻿using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,8 +9,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Util.Document;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	public partial class ArticleLinkUnlinkInfo : Form
 	{

@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI
+﻿namespace InformaSitecoreWord.UI
 {
 	partial class LoginWindow
 	{
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginWindow));
-			this.loginControl1 = new SitecoreTreeWalker.UI.LoginControl();
+			this.loginControl1 = new LoginControl();
 			this.SuspendLayout();
 			// 
 			// loginControl1

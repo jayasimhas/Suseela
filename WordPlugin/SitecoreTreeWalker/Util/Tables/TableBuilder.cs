@@ -5,7 +5,7 @@ using System.Linq;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.Tables
+namespace InformaSitecoreWord.Util.Tables
 {
 	public class TableBuilder
 	{

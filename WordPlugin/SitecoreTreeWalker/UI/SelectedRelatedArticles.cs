@@ -5,12 +5,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls;
 using PluginModels;
-using SitecoreTreeWalker.Properties;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	class SelectedRelatedArticles : TableLayoutPanel
 	{

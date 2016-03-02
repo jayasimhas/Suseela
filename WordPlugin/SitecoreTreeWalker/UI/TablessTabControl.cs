@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
     public class TablessTabControl : TabControl
     {

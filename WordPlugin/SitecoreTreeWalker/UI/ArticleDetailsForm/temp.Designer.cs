@@ -1,6 +1,6 @@
-﻿using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
+﻿using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm
+namespace InformaSitecoreWord.UI.ArticleDetailsForm
 {
 	partial class temp
 	{

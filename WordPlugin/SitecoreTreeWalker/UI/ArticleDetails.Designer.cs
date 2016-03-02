@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI
+﻿namespace InformaSitecoreWord.UI
 {
     partial class ArticleDetails
     {
@@ -62,8 +62,8 @@
 			this.uxArticleInformation = new System.Windows.Forms.TabPage();
 			this.uxLinkArticle = new System.Windows.Forms.Button();
 			this.uxArticleNumberToLink = new System.Windows.Forms.TextBox();
-			this.uxSelectedEditors = new SitecoreTreeWalker.UI.StaffListView();
-			this.uxSelectedAuthors = new SitecoreTreeWalker.UI.StaffListView();
+			this.uxSelectedEditors = new InformaSitecoreWord.UI.StaffListView();
+			this.uxSelectedAuthors = new InformaSitecoreWord.UI.StaffListView();
 			this.uxArticleInformationSummary = new System.Windows.Forms.TextBox();
 			this.label99 = new System.Windows.Forms.Label();
 			this.uxArticleType = new System.Windows.Forms.ComboBox();
@@ -156,7 +156,7 @@
 			this.label50 = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.uxIndustriesViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxIndustriesResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxIndustriesResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxIndustriesResultsTree = new System.Windows.Forms.TreeView();
 			this.uxIndustriesViewSearch = new System.Windows.Forms.LinkLabel();
 			this.uxIndustriesKeywords = new System.Windows.Forms.TextBox();
@@ -169,7 +169,7 @@
 			this.label54 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.uxSubjectsViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxSubjectsResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxSubjectsResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxSubjectsResultsTree = new System.Windows.Forms.TreeView();
 			this.uxSubjectsViewSearch = new System.Windows.Forms.LinkLabel();
 			this.uxSubjectsKeywords = new System.Windows.Forms.TextBox();
@@ -182,7 +182,7 @@
 			this.label58 = new System.Windows.Forms.Label();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.uxGeographyViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxGeographyResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxGeographyResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxGeographyResultsTree = new System.Windows.Forms.TreeView();
 			this.uxGeographyViewSearch = new System.Windows.Forms.LinkLabel();
 			this.uxGeographyKeywords = new System.Windows.Forms.TextBox();
@@ -197,7 +197,7 @@
 			this.uxTherapeuticCategoriesViewTree = new System.Windows.Forms.LinkLabel();
 			this.uxTherapeuticCategoriesViewSearch = new System.Windows.Forms.LinkLabel();
 			this.uxTherapeuticCategoriesResultsTree = new System.Windows.Forms.TreeView();
-			this.uxTherapeuticCategoriesResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxTherapeuticCategoriesResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxTherapeuticCategoriesKeywords = new System.Windows.Forms.TextBox();
 			this.label63 = new System.Windows.Forms.Label();
 			this.label64 = new System.Windows.Forms.Label();
@@ -210,7 +210,7 @@
 			this.uxMarketSegmentsViewTree = new System.Windows.Forms.LinkLabel();
 			this.uxMarketSegmentsViewSearch = new System.Windows.Forms.LinkLabel();
 			this.uxMarketSegmentsResultsTree = new System.Windows.Forms.TreeView();
-			this.uxMarketSegmentsResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxMarketSegmentsResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxMarketSegmentsKeywords = new System.Windows.Forms.TextBox();
 			this.label67 = new System.Windows.Forms.Label();
 			this.label68 = new System.Windows.Forms.Label();
@@ -288,7 +288,7 @@
 			this.label26 = new System.Windows.Forms.Label();
 			this.uxEditorNotes = new System.Windows.Forms.RichTextBox();
 			this.label84 = new System.Windows.Forms.Label();
-			this.loginControl1 = new SitecoreTreeWalker.UI.LoginControl();
+			this.loginControl1 = new InformaSitecoreWord.UI.LoginControl();
 			this.uxLoginPanel.SuspendLayout();
 			this.uxArticlePanel.SuspendLayout();
 			this.uxLockStatus.SuspendLayout();
@@ -462,7 +462,7 @@
 			this.uxGeneralTagsIcon.BackColor = System.Drawing.Color.Transparent;
 			this.uxGeneralTagsIcon.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
 			this.uxGeneralTagsIcon.ForeColor = System.Drawing.Color.White;
-			this.uxGeneralTagsIcon.Image = global::SitecoreTreeWalker.Properties.Resources.red_icon;
+			this.uxGeneralTagsIcon.Image = global::InformaSitecoreWord.Properties.Resources.red_icon;
 			this.uxGeneralTagsIcon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.uxGeneralTagsIcon.Location = new System.Drawing.Point(18, 503);
 			this.uxGeneralTagsIcon.Name = "uxGeneralTagsIcon";
@@ -542,7 +542,7 @@
 			this.uxCompaniesIcon.BackColor = System.Drawing.Color.Transparent;
 			this.uxCompaniesIcon.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
 			this.uxCompaniesIcon.ForeColor = System.Drawing.Color.White;
-			this.uxCompaniesIcon.Image = global::SitecoreTreeWalker.Properties.Resources.red_icon;
+			this.uxCompaniesIcon.Image = global::InformaSitecoreWord.Properties.Resources.red_icon;
 			this.uxCompaniesIcon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.uxCompaniesIcon.Location = new System.Drawing.Point(18, 203);
 			this.uxCompaniesIcon.Name = "uxCompaniesIcon";
@@ -572,7 +572,7 @@
 			this.uxRelatedArticlesIcon.BackColor = System.Drawing.Color.Transparent;
 			this.uxRelatedArticlesIcon.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
 			this.uxRelatedArticlesIcon.ForeColor = System.Drawing.Color.White;
-			this.uxRelatedArticlesIcon.Image = global::SitecoreTreeWalker.Properties.Resources.red_icon;
+			this.uxRelatedArticlesIcon.Image = global::InformaSitecoreWord.Properties.Resources.red_icon;
 			this.uxRelatedArticlesIcon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.uxRelatedArticlesIcon.Location = new System.Drawing.Point(18, 103);
 			this.uxRelatedArticlesIcon.Margin = new System.Windows.Forms.Padding(0);
@@ -588,7 +588,7 @@
 			this.uxArticleInformationIcon.BackColor = System.Drawing.Color.Transparent;
 			this.uxArticleInformationIcon.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
 			this.uxArticleInformationIcon.ForeColor = System.Drawing.Color.White;
-			this.uxArticleInformationIcon.Image = global::SitecoreTreeWalker.Properties.Resources.red_x;
+			this.uxArticleInformationIcon.Image = global::InformaSitecoreWord.Properties.Resources.red_x;
 			this.uxArticleInformationIcon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.uxArticleInformationIcon.Location = new System.Drawing.Point(18, 53);
 			this.uxArticleInformationIcon.Margin = new System.Windows.Forms.Padding(0);
@@ -2519,7 +2519,7 @@
 			// 
 			// uxSummaryArticleInformationExpand
 			// 
-			this.uxSummaryArticleInformationExpand.Image = global::SitecoreTreeWalker.Properties.Resources.right_icon;
+			this.uxSummaryArticleInformationExpand.Image = global::InformaSitecoreWord.Properties.Resources.right_icon;
 			this.uxSummaryArticleInformationExpand.Location = new System.Drawing.Point(169, 0);
 			this.uxSummaryArticleInformationExpand.Name = "uxSummaryArticleInformationExpand";
 			this.uxSummaryArticleInformationExpand.Size = new System.Drawing.Size(16, 16);
@@ -2579,7 +2579,7 @@
 			// 
 			// uxSummaryExecutiveSummaryExpand
 			// 
-			this.uxSummaryExecutiveSummaryExpand.Image = global::SitecoreTreeWalker.Properties.Resources.right_icon;
+			this.uxSummaryExecutiveSummaryExpand.Image = global::InformaSitecoreWord.Properties.Resources.right_icon;
 			this.uxSummaryExecutiveSummaryExpand.Location = new System.Drawing.Point(177, 0);
 			this.uxSummaryExecutiveSummaryExpand.Name = "uxSummaryExecutiveSummaryExpand";
 			this.uxSummaryExecutiveSummaryExpand.Size = new System.Drawing.Size(16, 16);
@@ -2639,7 +2639,7 @@
 			// 
 			// uxSummaryRelatedArticlesExpand
 			// 
-			this.uxSummaryRelatedArticlesExpand.Image = global::SitecoreTreeWalker.Properties.Resources.right_icon;
+			this.uxSummaryRelatedArticlesExpand.Image = global::InformaSitecoreWord.Properties.Resources.right_icon;
 			this.uxSummaryRelatedArticlesExpand.Location = new System.Drawing.Point(150, 0);
 			this.uxSummaryRelatedArticlesExpand.Name = "uxSummaryRelatedArticlesExpand";
 			this.uxSummaryRelatedArticlesExpand.Size = new System.Drawing.Size(16, 16);
@@ -2692,7 +2692,7 @@
 			// 
 			// uxSummarySidebarsParentsExpand
 			// 
-			this.uxSummarySidebarsParentsExpand.Image = global::SitecoreTreeWalker.Properties.Resources.right_icon;
+			this.uxSummarySidebarsParentsExpand.Image = global::InformaSitecoreWord.Properties.Resources.right_icon;
 			this.uxSummarySidebarsParentsExpand.Location = new System.Drawing.Point(168, 0);
 			this.uxSummarySidebarsParentsExpand.Name = "uxSummarySidebarsParentsExpand";
 			this.uxSummarySidebarsParentsExpand.Size = new System.Drawing.Size(16, 16);
@@ -2743,7 +2743,7 @@
 			// 
 			// uxSummaryCompaniesExpand
 			// 
-			this.uxSummaryCompaniesExpand.Image = global::SitecoreTreeWalker.Properties.Resources.right_icon;
+			this.uxSummaryCompaniesExpand.Image = global::InformaSitecoreWord.Properties.Resources.right_icon;
 			this.uxSummaryCompaniesExpand.Location = new System.Drawing.Point(118, 0);
 			this.uxSummaryCompaniesExpand.Name = "uxSummaryCompaniesExpand";
 			this.uxSummaryCompaniesExpand.Size = new System.Drawing.Size(16, 16);
@@ -3046,7 +3046,7 @@
 			// 
 			// uxSummaryGeneralTagsExpand
 			// 
-			this.uxSummaryGeneralTagsExpand.Image = global::SitecoreTreeWalker.Properties.Resources.right_icon;
+			this.uxSummaryGeneralTagsExpand.Image = global::InformaSitecoreWord.Properties.Resources.right_icon;
 			this.uxSummaryGeneralTagsExpand.Location = new System.Drawing.Point(132, 0);
 			this.uxSummaryGeneralTagsExpand.Name = "uxSummaryGeneralTagsExpand";
 			this.uxSummaryGeneralTagsExpand.Size = new System.Drawing.Size(16, 16);
