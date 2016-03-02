@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeaturedImage));
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.captionTxtBox = new System.Windows.Forms.TextBox();
@@ -40,6 +41,7 @@
 			this.alttextLbl = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.clearBtn = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -48,7 +50,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(23, 343);
+			this.label5.Location = new System.Drawing.Point(5, 343);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(58, 13);
 			this.label5.TabIndex = 5;
@@ -58,7 +60,7 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(23, 366);
+			this.label6.Location = new System.Drawing.Point(8, 366);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(55, 13);
 			this.label6.TabIndex = 6;
@@ -66,24 +68,24 @@
 			// 
 			// captionTxtBox
 			// 
-			this.captionTxtBox.Location = new System.Drawing.Point(92, 340);
+			this.captionTxtBox.Location = new System.Drawing.Point(69, 340);
 			this.captionTxtBox.Name = "captionTxtBox";
-			this.captionTxtBox.Size = new System.Drawing.Size(479, 20);
+			this.captionTxtBox.Size = new System.Drawing.Size(517, 20);
 			this.captionTxtBox.TabIndex = 7;
 			// 
 			// sourceTxtBox
 			// 
-			this.sourceTxtBox.Location = new System.Drawing.Point(92, 366);
+			this.sourceTxtBox.Location = new System.Drawing.Point(69, 366);
 			this.sourceTxtBox.Name = "sourceTxtBox";
-			this.sourceTxtBox.Size = new System.Drawing.Size(479, 20);
+			this.sourceTxtBox.Size = new System.Drawing.Size(517, 20);
 			this.sourceTxtBox.TabIndex = 8;
 			// 
 			// uxFeaturedImageTreeView
 			// 
 			this.uxFeaturedImageTreeView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-			this.uxFeaturedImageTreeView.Location = new System.Drawing.Point(20, 26);
+			this.uxFeaturedImageTreeView.Location = new System.Drawing.Point(0, 33);
 			this.uxFeaturedImageTreeView.Name = "uxFeaturedImageTreeView";
-			this.uxFeaturedImageTreeView.Size = new System.Drawing.Size(551, 155);
+			this.uxFeaturedImageTreeView.Size = new System.Drawing.Size(586, 148);
 			this.uxFeaturedImageTreeView.TabIndex = 10;
 			this.uxFeaturedImageTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.NodeExpanded);
 			this.uxFeaturedImageTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.uxBrowseImages_AfterSelect);
@@ -95,9 +97,9 @@
 			this.groupBox2.Controls.Add(this.alttextLblHeader);
 			this.groupBox2.Controls.Add(this.alttextLbl);
 			this.groupBox2.Controls.Add(this.pictureBox1);
-			this.groupBox2.Location = new System.Drawing.Point(20, 187);
+			this.groupBox2.Location = new System.Drawing.Point(2, 187);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(551, 147);
+			this.groupBox2.Size = new System.Drawing.Size(584, 147);
 			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Preview";
@@ -150,7 +152,7 @@
 			// 
 			// clearBtn
 			// 
-			this.clearBtn.Location = new System.Drawing.Point(472, 392);
+			this.clearBtn.Location = new System.Drawing.Point(485, 392);
 			this.clearBtn.Name = "clearBtn";
 			this.clearBtn.Size = new System.Drawing.Size(99, 23);
 			this.clearBtn.TabIndex = 2;
@@ -158,11 +160,23 @@
 			this.clearBtn.UseVisualStyleBackColor = true;
 			this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
 			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+			this.label1.ForeColor = System.Drawing.Color.Gray;
+			this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+			this.label1.Location = new System.Drawing.Point(-4, 0);
+			this.label1.Margin = new System.Windows.Forms.Padding(0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(610, 30);
+			this.label1.TabIndex = 11;
+			// 
 			// FeaturedImage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.uxFeaturedImageTreeView);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.clearBtn);
@@ -194,5 +208,6 @@
 		private System.Windows.Forms.Label alttextLbl;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button clearBtn;
+		private System.Windows.Forms.Label label1;
 	}
 }

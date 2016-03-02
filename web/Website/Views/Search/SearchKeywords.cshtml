@@ -1,4 +1,4 @@
-@inherits CustomGlassView<SearchViewModel>
+@inherits CustomGlassView <SearchViewModel>
 <form class="search-bar">
 
     <h3 class="search-bar__label">
@@ -15,9 +15,7 @@
                 </svg>
             </a>
 
-            <input ng-keypress="($event.which === 13)?query.update():0" id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
-
-                   ng-model="query.keywords"/>
+            <input ng-keypress="($event.which === 13)?query.update():0" id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site" ng-model="query.keywords"/>
         </div>
 
         <!--TODO: get correct svg icon and update classes (extend from header) -->
@@ -42,9 +40,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                     </svg>
                 </a>
-                <h3>
-                    @Editable(Model.GlassModel, m => m.Search_Tips_Title)
-                </h3>
+                <h3>@Editable(Model.GlassModel, m => m.Search_Tips_Title)</h3>
                 @Editable(Model.GlassModel, m => m.Search_Tips_Text)
             </div>
 

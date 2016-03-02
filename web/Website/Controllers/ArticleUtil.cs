@@ -115,7 +115,7 @@ namespace Informa.Web.Controllers
 		private readonly ISitecoreService _sitecoreMasterService;
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
-		private readonly IArticleSearch _articleSearcher;
+		private readonly IArticleSearch _articleSearcher;               
 
 		/// <summary>
 		/// Constructor
@@ -125,7 +125,7 @@ namespace Informa.Web.Controllers
 		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
-			_articleSearcher = searcher;
+			_articleSearcher = searcher;                     
 		}
 
 		/// <summary>
@@ -136,7 +136,7 @@ namespace Informa.Web.Controllers
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
 
-            ArticleItem articleItem = GetArticleByNumber(articleNumber);
+			ArticleItem articleItem = GetArticleByNumber(articleNumber);
 			if (articleItem != null)
 			{
 				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
@@ -183,7 +183,7 @@ namespace Informa.Web.Controllers
 			return new ArticlePreviewInfo
 			{
 				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,				
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
 				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				Date = article.Actual_Publish_Date,
@@ -192,13 +192,13 @@ namespace Informa.Web.Controllers
 			};
 		}
 
-        public ArticlePreviewInfo GetPreviewInfo(IArticle article)
-        {
-            return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
-        }
+		public ArticlePreviewInfo GetPreviewInfo(IArticle article)
+		{
+			return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
+		}
 
 
-        public string PreviewArticleURL(string articleNumber, string siteHost)
+		public string PreviewArticleURL(string articleNumber, string siteHost)
 		{
 			Guid guid = GetArticleByNumber(articleNumber)._Id;
 			if (guid.Equals(Guid.Empty))
@@ -233,11 +233,11 @@ namespace Informa.Web.Controllers
 			}
 			*/
 
-	
-				using (new EditContext(article))
-				{
-					article.Locking.Lock();
-				}                                                                
+
+			using (new EditContext(article))
+			{
+				article.Locking.Lock();
+			}
 
 			return true;
 		}
@@ -256,19 +256,19 @@ namespace Informa.Web.Controllers
 			string userID = article.Locking.GetOwner();
 			if (string.IsNullOrEmpty(userID)) return false;
 			//TODO: assuming domain is specified here.
-		    bool loggedIn = Sitecore.Context.User.IsAuthenticated;
+			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
 			if (!loggedIn || !Sitecore.Context.GetUserName().EqualsIgnoreCase(userID) || !Sitecore.Context.IsAdministrator)
 			{
 				return false;
 			}
 
 			//TODO: use real security                             
-				using (new EditContext(article))
-				{
-					article.Locking.Unlock();
-					//there is already a new version created before saving an article
-					//var item = article.Versions.AddVersion();
-				}                                                 
+			using (new EditContext(article))
+			{
+				article.Locking.Unlock();
+				//there is already a new version created before saving an article
+				//var item = article.Versions.AddVersion();
+			}
 
 			return true;
 		}
@@ -394,8 +394,7 @@ namespace Informa.Web.Controllers
 			return dayFolder;
 		}
 
-		public ArticleStruct
-			GetArticleStruct(ArticleItem articleItem)
+		public ArticleStruct GetArticleStruct(ArticleItem articleItem)
 		{
 			var article = _sitecoreMasterService.GetItem<ArticleItem>(articleItem._Id);
 			var articleStruct = new ArticleStruct
@@ -425,19 +424,17 @@ namespace Informa.Web.Controllers
 
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
 
-			//TODO - Workflow - 
-			// In order to read the available commands for a given workflow state, we need to be in a secured environment.
-			//try
-			//{
-			//	articleStruct.WorkflowState = _workflowController.GetWorkflowState(this.ID.ToGuid());
-			//}
+			//TODO - Workflow -
+			//Uncomment this once workflow is tested properly
+		//	articleStruct.WorkflowState = _workflowController.GetWorkFlowState(articleItem._Id);
+
 
 			articleStruct.FeaturedImageSource = articleItem.Featured_Image_Source;
 			articleStruct.FeaturedImageCaption = articleItem.Featured_Image_Caption;
 			if (articleItem.Featured_Image_16_9 != null)
 			{ articleStruct.FeaturedImage = articleItem.Featured_Image_16_9.MediaId; }
 
-			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new TaxonomyStruct() { Name = r._Name, ID = r._Id , Section = r._Parent._Name}).ToList();
+			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new TaxonomyStruct() { Name = r._Name, ID = r._Id, Section = r._Parent._Name }).ToList();
 
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo((IArticle)a)).ToList();
 

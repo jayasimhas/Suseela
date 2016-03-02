@@ -680,7 +680,7 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, StaffStruct[] notifications, string articleNumber, string body = null)
+        public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, StaffStruct[] notifications, string articleNumber, string body = null, string notificationText = null)
         {
 
             string text;
@@ -711,6 +711,7 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var documentCustomProperties = new DocumentCustomProperties(activeDocument);
                 articleDetails.ArticleSpecificNotifications = notifications.ToList();
+				articleDetails.NotificationText = notificationText;
                 articleDetails.WordCount = activeDocument.ComputeStatistics(0);
                 articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToList();
                 articleDetails.CommandID = workflowCommand;

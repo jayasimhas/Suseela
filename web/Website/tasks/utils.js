@@ -184,7 +184,9 @@ module.exports.build = function build() {
 
                 // using gulp-watch instead of gulp.watch because gulp-watch will
                 // recognize when new files are added/deleted.
-                watch(watcher.files, function(){
+                watch(watcher.files, {
+                    readDelay: 250
+                }, function(){
                     gulp.start([watcher.task]);
                 });
             }

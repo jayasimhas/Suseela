@@ -11,22 +11,24 @@
         color: $informa-black;
         margin-bottom: 2rem;
     }
-    h3 {
+
+    &__header {
         @include textMix('Roboto Condensed', 1.625rem, 700);
         color: $informa-black;
         margin: 0 0 1rem;
     }
 
-    ul li {
+    &__list {
+        @extend .article-list;
         color: $color-zeus-black;
 
-        &:before { } // See shame.scss
-    }
+        &--ul {
+            @extend .article-list--ul;
+        }
 
-    ol li {
-        color: $color-zeus-black;
-        list-style-position: inside;
-        list-style-type: decimal;
+        &--ol {
+            @extend .article-list--ol;
+        }
     }
 
     &__source {

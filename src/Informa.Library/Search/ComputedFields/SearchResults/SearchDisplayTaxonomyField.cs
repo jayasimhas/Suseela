@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using Glass.Mapper.Sc;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.Search.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -43,7 +44,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
             int count = 0;
             foreach (ITaxonomy_Item taxonomy in taxonomyItem.Taxonomies)
             {
-                displayTaxonomies.Add(new HtmlLink() {Title = taxonomy.Item_Name.Trim(), Url = taxonomy._Url});
+                displayTaxonomies.Add(new HtmlLink() {Title = taxonomy.Item_Name.Trim(), Url = SearchTaxonomyUtil.GetSearchUrl(taxonomy)});
                 count++;
 
                 if (count == 2)

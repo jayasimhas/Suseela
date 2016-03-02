@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Informa.Library.Salesforce;
 using Informa.Library.Salesforce.User;
+using Informa.Library.Salesforce.User.Profile;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -14,6 +15,7 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceSessionFactory>().As<ISalesforceSessionFactory>();
 			builder.RegisterType<SalesforceSessionFactoryConfiguration>().As<ISalesforceSessionFactoryConfiguration>();
 			builder.RegisterType<SalesforceSetUserTemporaryPassword>().As<ISalesforceSetUserTemporaryPassword>();
+			builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
 		}
 	}
 }
