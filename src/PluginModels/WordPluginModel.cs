@@ -271,6 +271,10 @@ namespace PluginModels
         public string WordDocLastUpdateDate { get; set; }
         public string WordDocLastUpdatedBy { get; set; }
 
+		public string NotificationText { get; set; }
+
+
+
         public Guid Publication
         {
             get

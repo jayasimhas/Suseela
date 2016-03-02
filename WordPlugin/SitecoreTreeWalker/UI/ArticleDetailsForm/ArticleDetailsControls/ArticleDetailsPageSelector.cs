@@ -127,7 +127,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
-                FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource()
+                FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
+				NotificationText = pageWorkflowControl.GetNotificationText(),
+				CommandID = pageWorkflowControl.GetSelectedCommand()
+				
+				
             };
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)

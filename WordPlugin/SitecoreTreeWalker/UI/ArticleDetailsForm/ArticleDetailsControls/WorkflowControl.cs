@@ -52,6 +52,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			uxUnlockOnSave.Checked = false;
 		}
 
+		public string GetNotificationText()
+		{
+			return txtNotificationText.Text;
+		}
 		protected void SetNotificationOptions()
 		{
 			if (uxWorkflowActions.SelectedValue is WorkflowCommand)

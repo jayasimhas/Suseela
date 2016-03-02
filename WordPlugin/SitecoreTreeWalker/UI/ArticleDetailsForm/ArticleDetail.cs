@@ -336,9 +336,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = articleDetailsPageSelector.GetArticleDetails(metadataParser);
                     ArticleDetails.ArticleGuid = copy;
-                    List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
-                    //TODO - Add workflow commands and Notification List
-                    //List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body);
+                   List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
+                    //Uncomment this after workflow is tested properly.
+                   // List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body, articleDetailsPageSelector.pageWorkflowControl.GetNotificationText());
 
                     if (errors != null && errors.Any())
                     {
@@ -764,8 +764,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 ArticleDetails.WordCount = SitecoreAddin.ActiveDocument.ComputeStatistics(0);
                 //TODO - Workflow commandId
-                //ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
-                SitecoreClient.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
+                ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
+				ArticleDetails.NotificationText = articleDetailsPageSelector.pageWorkflowControl.GetNotificationText();
+
+				SitecoreClient.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked)
                 {
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
