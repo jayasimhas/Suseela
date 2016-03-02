@@ -104,6 +104,7 @@
     <Compile Include="GlassModels\ITaxonomyHierarchy.cs" />
     <Compile Include="GlassModels\IAuthor.cs" />
     <Compile Include="GlassModels\IArticle.cs" />
+    <Compile Include="GlassModels\I___BasePage.cs" />
     <Compile Include="GlassModels\I___BaseTaxonomy.cs" />
     <Compile Include="GlassModels\TaxonomyMap.cs" />
     <Compile Include="ISearch_Listing__Raw.cs" />
