@@ -13,6 +13,8 @@ namespace Informa.Library.Utilities.References
 
 	    public Guid HomePage => new Guid("{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}");
 
+        public Guid DCDConfigurationItem => new Guid("{}");
+
 	    #region Templates
 
 		public Guid FolderTemplate => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}");

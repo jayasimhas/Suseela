@@ -280,11 +280,14 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        //TODO - GetDealInfo
         public static DealInfo GetDealInfo(string recordNumber)
         {
-            //return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
-            return new DealInfo();
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDealInfo?recordNumber={recordNumber}").Result;
+                var dealInfo = JsonConvert.DeserializeObject<DealInfo>(response.Content.ReadAsStringAsync().Result);
+                return dealInfo;
+            }
         }
 
         public static int[] GetWidthHeightOfMediaItem(string path)
@@ -297,18 +300,24 @@ namespace InformaSitecoreWord.Sitecore
             }
 
         }
-        //TODO - GetAllCompanies
         public static List<CompanyWrapper> GetAllCompanies()
         {
-            //return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
-            return new List<CompanyWrapper>();
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompanies").Result;
+                var lstComp = JsonConvert.DeserializeObject<List<CompanyWrapper>>(response.Content.ReadAsStringAsync().Result);
+                return lstComp;
+            }
         }
 
-        //TODO - GetAllRelatedCompanies
         public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
         {
-            //return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
-            return new List<CompanyWrapper>();
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompaniesWithRelated").Result;
+                var lstComp = JsonConvert.DeserializeObject<List<CompanyWrapper>>(response.Content.ReadAsStringAsync().Result);
+                return lstComp;
+            }
         }
 
         public static List<WordStyleStruct> GetParagraphStyles()
