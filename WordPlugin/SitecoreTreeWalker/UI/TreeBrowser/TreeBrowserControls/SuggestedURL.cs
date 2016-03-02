@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	public partial class SuggestedURL : Form
 	{

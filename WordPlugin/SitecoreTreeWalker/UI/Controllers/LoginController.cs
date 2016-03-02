@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SitecoreTreeWalker.User;
+using InformaSitecoreWord.User;
 
-namespace SitecoreTreeWalker.UI.Controllers
+namespace InformaSitecoreWord.UI.Controllers
 {
     public class LoginController
     {

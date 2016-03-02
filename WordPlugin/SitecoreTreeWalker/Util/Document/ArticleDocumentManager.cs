@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.document;
+using InformaSitecoreWord.document;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
+using InformaSitecoreWord.Sitecore;
 using System.Windows.Forms;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
-using SitecoreTreeWalker.Config;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls;
+using InformaSitecoreWord.Config;
 using System.Diagnostics;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.WebserviceHelper;
 using System.Net;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
     /// <summary>
     /// This class is responsible for actions when creating and saving article documents
@@ -176,9 +176,9 @@ namespace SitecoreTreeWalker.Util.Document
             fillArticleDetails();
 
             string guid = _articleDetails.ArticleGuid.ToString();
-            string domain = ApplicationConfig.GetPropertyValue("DomainName");
+			string domain = Constants.EDITOR_ENVIRONMENT_SERVERURL;
 
-            if (domain.StartsWith("http") == false)
+			if (domain.StartsWith("http") == false)
                 domain = "http://" + domain;
 
             return domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en" + (isMobile ? "&mobile=1" : String.Empty);

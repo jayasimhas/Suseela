@@ -1,13 +1,8 @@
-@using Sitecore.Mvc.Presentation
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.ISearch>
-
-
-
-<div class="search-bar">
-    <!-- TODO: form wrap? -->
+@inherits CustomGlassView<SearchViewModel>
+<form class="search-bar">
 
     <h3 class="search-bar__label">
-        <label for="js-search-field">Search</label>
+        <label for="js-search-field">@Model.SearchTitleText</label>
     </h3>
 
     <div class="search-bar__content" ng-controller="searchQueryController as query">
@@ -20,7 +15,7 @@
                 </svg>
             </a>
 
-            <input id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
+            <input ng-keypress="($event.which === 13)?query.update():0" id="js-search-field" class="search-bar__field" type="search" placeholder="Search the site"
 
                    ng-model="query.keywords"/>
         </div>
@@ -38,18 +33,19 @@
                 <svg class="search-bar__icon search-bar__icon--info">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
                 </svg>
-                <span>Search Tips</span>
+                <span>@Model.SearchTipsText</span>
             </a>
 
-            <!-- TODO: replace with sitecore field data (rich text?) -->
             <div class="search-bar__tips-panel">
                 <a class="js-toggle-search-tips search-bar__close-tips">
                     <svg class="search-bar__icon search-bar__icon--clear">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                     </svg>
                 </a>
-                <h3>@Html.Raw(Model.Search_Tips_Title)</h3>
-                @Html.Raw(Model.Search_Tips_Text)
+                <h3>
+                    @Editable(Model.GlassModel, m => m.Search_Tips_Title)
+                </h3>
+                @Editable(Model.GlassModel, m => m.Search_Tips_Text)
             </div>
 
         </div>
@@ -57,14 +53,7 @@
     </div>
 
     <div class="search-bar__footer">
-
-        <!-- <div ng-class="class">Current class is: {{class}}</div>
-        <button ng-click="toggleClass()">Toggle Class</button> -->
-
-        <!-- <div ng-app="classApp" ng-controller="classCtrl">
-            <button class="button" ng-class="{'active': isActive}" ng-click="activeButton()" type="button">Click Me to Toggle Class</button>
-        </div> -->
-
+        
         <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only" ng-controller="HeadlineToggleController as toggle">
             <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
             <label class="onoffswitch-label" for="headline-toggle" ng-click="headlinesOnly.updateValue()">
@@ -74,8 +63,8 @@
         </div>
 
         <div class="search-bar__headline-label">
-            View headlines only
+            @Model.SearchViewHeadlinesOnlyText
         </div>
 
     </div>
-</div>
+</form>

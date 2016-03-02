@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	partial class DealsDrugsCompaniesControl
 	{
@@ -37,13 +37,13 @@
             this.uxInsertIntoArticle = new System.Windows.Forms.Button();
             this.uxViewDetails = new System.Windows.Forms.Button();
             this.uxPreviewPanel = new System.Windows.Forms.Panel();
-            this.uxPreviewDeals = new SitecoreTreeWalker.UI.DealPreviewControl();
+			this.uxPreviewDeals = new DealPreviewControl();
             this.uxRetrieveInformation = new System.Windows.Forms.Button();
             this.HeaderPanel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.companyTreeView1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.CompanyTreeView();
+			this.companyTreeView1 = new CompanyTreeView();
             this.label2 = new System.Windows.Forms.Label();
             this.uxPreviewPanel.SuspendLayout();
             this.HeaderPanel1.SuspendLayout();
@@ -229,7 +229,7 @@
             this.companyTreeView1.Name = "companyTreeView1";
             this.companyTreeView1.Size = new System.Drawing.Size(322, 161);
             this.companyTreeView1.TabIndex = 33;
-            this.companyTreeView1.CompanyDoubleClicked += new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.CompanyTreeView.CompanyDoubleClick(this.companyTreeView1_CompanyDoubleClicked);
+			this.companyTreeView1.CompanyDoubleClicked += new CompanyTreeView.CompanyDoubleClick(this.companyTreeView1_CompanyDoubleClicked);
             // 
             // label2
             // 

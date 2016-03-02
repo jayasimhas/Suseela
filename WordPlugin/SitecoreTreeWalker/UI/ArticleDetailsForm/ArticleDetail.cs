@@ -5,22 +5,22 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Custom_Exceptions;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
+using InformaSitecoreWord.WebserviceHelper;
 using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Custom_Exceptions;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
-using SitecoreTreeWalker.WebserviceHelper;
 using Application = Microsoft.Office.Interop.Word.Application;
 using ArticleStruct = PluginModels.ArticleStruct;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm
+namespace InformaSitecoreWord.UI.ArticleDetailsForm
 {
     public partial class ArticleDetail : Form
     {

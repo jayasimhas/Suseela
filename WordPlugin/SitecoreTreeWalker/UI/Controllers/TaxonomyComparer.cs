@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using PluginModels;
 
-namespace SitecoreTreeWalker.UI.Controllers
+namespace InformaSitecoreWord.UI.Controllers
 {
     /// <summary>
     /// Comparer used to sort the list of results on a search for a taxonomy. 

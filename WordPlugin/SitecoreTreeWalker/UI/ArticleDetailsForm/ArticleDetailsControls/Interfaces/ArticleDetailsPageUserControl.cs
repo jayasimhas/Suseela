@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces
 {
 	public class ArticleDetailsPageUserControl : UserControl
 	{

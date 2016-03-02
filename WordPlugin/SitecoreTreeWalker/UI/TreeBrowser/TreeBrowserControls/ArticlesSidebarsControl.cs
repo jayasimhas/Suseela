@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
 using PluginModels;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
 using Word = Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	public partial class ArticlesSidebarsControl : UserControl
 	{

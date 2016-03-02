@@ -24,12 +24,24 @@
       a {
         display: inline-block;
         color: $informa-black;
+
+        // RH: for some reason, removing text-decoration to fix the underline
+        // appearing in the space between the link title and the svg icon
+        // breaks the icon altogether (makes it not appear)
+
+        // &:hover {
+        //   text-decoration: initial;
+        // }
+
+        // &:hover h6 {
+        //   text-decoration: underline;
+        // }
       }
 
       h6 {
         display: inline;
         vertical-align: middle;
-        padding-right: 5px;
+        // padding-right: 5px;
 
         @include breakpoint('medium') {
             display: none;
@@ -47,12 +59,20 @@
 
     &-title {
       color: $informa-black;
+
+      @include breakpoint('medium') {
+        margin-top: 30px;
+      }
     }
   }
 
 // Includes filters, search bar, and search results
   &__content {
     display: flex;
+
+    @include breakpoint('medium') {
+      display: block;
+    }
   }
 
   // 2 sections are nested inside search__content:

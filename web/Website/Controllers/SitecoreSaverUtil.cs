@@ -56,8 +56,9 @@ namespace Informa.Web.Controllers
 
 		public void SaveArticleDetails(Guid articleGuid, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new SecurityDisabler())
-			{
+
+            //TODO:  Add Roles
+			
 				ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 				if (article == null)
 				{
@@ -65,14 +66,13 @@ namespace Informa.Web.Controllers
 				}
 
 				SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
-			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+			
+			
 		}
 
 		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new SecurityDisabler())
-			{
+			
 				ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
 				if (article == null)
 				{
@@ -80,8 +80,6 @@ namespace Informa.Web.Controllers
 				}
 
 				SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion);
-			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
 		}
 
 		/// <summary>
@@ -107,7 +105,7 @@ namespace Informa.Web.Controllers
 			bool loggedIn = false;
 			if (!IsNullOrEmpty(userID))
 			{
-				loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+			    loggedIn = Sitecore.Context.User.IsAuthenticated;
 			}
 
 			var newVersion = article;
@@ -196,14 +194,11 @@ namespace Informa.Web.Controllers
 						}
 					}
 				}
-				*/
-				using (new SecurityDisabler())
-				{
+				*/                           
 					if (loggedIn)
 					{
 						_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
-					}
-				}
+					}                        
 			}
 
 			catch (Exception ex)
@@ -241,9 +236,15 @@ namespace Informa.Web.Controllers
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
 				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
 				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
-
-				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
-				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				if (articleStruct.RelatedInlineArticles != null && articleStruct.RelatedInlineArticles.Any())
+				{
+					newArticle.Referenced_Articles =
+						articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				}
+				if (articleStruct.RelatedArticles != null && articleStruct.RelatedArticles.Any())
+				{
+					newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				}
 
 				newArticle.Featured_Image_16_9 = new Image { MediaId = articleStruct.FeaturedImage };
 				newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;

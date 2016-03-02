@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using PluginModels;
 using StaffStruct = PluginModels.StaffStruct;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	/// <summary>
 	/// ListBox for selected staff members to allow the "remove"

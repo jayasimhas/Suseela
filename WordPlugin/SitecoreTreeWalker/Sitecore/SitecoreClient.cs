@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using SitecoreTreeWalker.User;
 using System.Web.Script.Serialization;
+using InformaSitecoreWord.Custom_Exceptions;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
+using InformaSitecoreWord.WebserviceHelper;
 using Microsoft.Office.Interop.Word;
 using Newtonsoft.Json;
 using PluginModels;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Custom_Exceptions;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.Config;
 
 /// <summary>
-namespace SitecoreTreeWalker.Sitecore
+namespace InformaSitecoreWord.Sitecore
 {
     class SitecoreClient
     {
@@ -26,6 +26,17 @@ namespace SitecoreTreeWalker.Sitecore
         private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
 
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
+
+	    public SitecoreClient()
+	    {
+	        if (_sitecoreUser.Username != null && _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL)) == null)
+	        {
+                _sitecoreUser.Authenticate(_sitecoreUser.Username, _sitecoreUser.Password);
+	            //var cookie = UserCredentialReader.GetReader().GetCookie(_sitecoreUser.Username);
+	            //_handler.CookieContainer.Add(cookie);
+	        }
+
+	    }
 
 
         public static List<TaxonomyStruct> SearchTaxonomy(string term)
@@ -216,7 +227,6 @@ namespace SitecoreTreeWalker.Sitecore
             }
         }
 
-        //TODO - Implement this
         public static int GetMaxLengthShortSummary()
         {
             using (var client = new HttpClient(_handler, false))
@@ -230,8 +240,7 @@ namespace SitecoreTreeWalker.Sitecore
 				*/
             }
         }
-
-        //TODO - Implement this
+		
         public static int GetMaxLengthLongSummary()
         {
             using (var client = new HttpClient(_handler, false))
@@ -594,7 +603,7 @@ namespace SitecoreTreeWalker.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNum", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNumByNumber", articleNumber).Result;
                 var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
                 return versionNumber;
             }
@@ -638,7 +647,7 @@ namespace SitecoreTreeWalker.Sitecore
                 var cookies = _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL));
 
                 if (cookies != null && cookies.Count > 0 && string.Equals(".ASPXAUTH", cookies[0].Name))
-                    _reader.WriteCookie(cookies[0].Name);
+                    _reader.WriteCookie(cookies, username);
 
 
                 return userStatus;
@@ -803,5 +812,5 @@ namespace SitecoreTreeWalker.Sitecore
 
         protected WordUtils _wordUtils = new WordUtils();
         protected static StructConverter _structConverter = new StructConverter();
-    }
+    }   
 }

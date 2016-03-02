@@ -6,21 +6,20 @@
 //using PluginModels;
 //using Microsoft.Office.Interop.Word;
 //using Newtonsoft.Json;
-//using SitecoreTreeWalker.Custom_Exceptions;
-//using SitecoreTreeWalker.document;
-//using SitecoreTreeWalker.User;
-//using SitecoreTreeWalker.Util;
-//using SitecoreTreeWalker.Util.Document;
-//using SitecoreTreeWalker.WebserviceHelper;
+//using InformaSitecoreWord.Custom_Exceptions;
+//using InformaSitecoreWord.document;
+//using InformaSitecoreWord.User;
+//using InformaSitecoreWord.Util;
+//using InformaSitecoreWord.Util.Document;
+//using InformaSitecoreWord.WebserviceHelper;
 //using ArticlePreviewInfo = PluginModels.ArticlePreviewInfo;
 //using ArticleStruct = PluginModels.ArticleStruct;
 //using WorkflowState = PluginModels.WorkflowState;
 
-//namespace SitecoreTreeWalker
+//namespace InformaSitecoreWord
 //{
 //	public class SitecoreArticle
 //	{
-//        //TODO - Add env variable
 //        //public  string webApiURL = $"{Constants.EDITOR_ENVIRONMENT_SERVERURL}"+"/api/";
 
        

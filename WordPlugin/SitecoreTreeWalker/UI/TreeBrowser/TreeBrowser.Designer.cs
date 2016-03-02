@@ -1,6 +1,7 @@
 ﻿using System;
+using InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser
+namespace InformaSitecoreWord.UI.TreeBrowser
 {
 	partial class TreeBrowser
 	{
@@ -31,16 +32,16 @@ namespace SitecoreTreeWalker.UI.TreeBrowser
 		private void InitializeComponent()
 		{
             this.GraphicsTabPage = new System.Windows.Forms.TabPage();
-            this.graphicsControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.GraphicsControl();
+            this.graphicsControl1 = new GraphicsControl();
             this.DealsDrugsCompaniesTabPage = new System.Windows.Forms.TabPage();
-            this.dealsDrugsCompaniesControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.DealsDrugsCompaniesControl();
+            this.dealsDrugsCompaniesControl1 = new DealsDrugsCompaniesControl();
             this.ArticlesSidebarsTabPage = new System.Windows.Forms.TabPage();
-            this.articlesSidebarsControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.ArticlesSidebarsControl();
+            this.articlesSidebarsControl1 = new ArticlesSidebarsControl();
             this.SupportingDocumentsTabPage = new System.Windows.Forms.TabControl();
             this.ImagesTabPage = new System.Windows.Forms.TabPage();
-            this.multimediaControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.IFrameControl();
+            this.multimediaControl1 = new IFrameControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.supportingDocumentsControl1 = new SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls.SupportingDocumentsControl();
+            this.supportingDocumentsControl1 = new SupportingDocumentsControl();
             this.GraphicsTabPage.SuspendLayout();
             this.DealsDrugsCompaniesTabPage.SuspendLayout();
             this.ArticlesSidebarsTabPage.SuspendLayout();

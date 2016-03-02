@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker
+﻿namespace InformaSitecoreWord
 {
 	partial class TreeBrowser
 	{

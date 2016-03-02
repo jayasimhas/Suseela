@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm
+namespace InformaSitecoreWord.UI.ArticleDetailsForm
 {
 	public partial class temp : Form
 	{

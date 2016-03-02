@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using SitecoreTreeWalker.SitecoreTree;
+using InformaSitecoreWord.SitecoreTree;
 using System.Drawing;
 
-namespace SitecoreTreeWalker.UI.TabController
+namespace InformaSitecoreWord.UI.TabController
 {
 
     class IndustryTab : TaxonomyTab

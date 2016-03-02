@@ -89,40 +89,9 @@
     }
 
     .article-left-rail {
-        width: 100%;
-
-        p {
-            font-size: 1rem;
-            line-height: 1.75rem;
-        }
+        width: calc(65% - 1rem);
     }
     .article-right-rail {
         width: calc(30% - 1rem);
-    }
-
-    .article-sidebar {
-        background: transparent;
-        border-right: 1px solid $color-light-gray;
-        border-left: 1px solid $color-light-gray;
-        border-bottom: 1px solid $color-light-gray;
-        padding: 1rem 1.25rem;
-
-        h3 {
-            font-size: 1.375rem;
-            line-height: 1.75rem;
-        }
-
-        p {
-            line-height: 1.5rem;
-        }
-    }
-
-    .article-pullquote {
-        padding: 1rem 0.5rem;
-
-        &,
-        & p {
-            font-size: 1.25rem;
-        }
     }
 }
