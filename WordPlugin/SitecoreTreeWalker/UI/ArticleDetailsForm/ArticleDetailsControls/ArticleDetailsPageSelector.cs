@@ -120,8 +120,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
                 NotesToEditorial = pageArticleInformationControl.GetNotes(),
                 Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
-                //Subjects = pageSubjectsControl.TabController.GetSelected(),
-                //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
                 RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
                 RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),
                 ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
@@ -129,9 +127,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
 				NotificationText = pageWorkflowControl.GetNotificationText(),
-				CommandID = pageWorkflowControl.GetSelectedCommand()
-				
-				
+				//CommandID = pageWorkflowControl.GetSelectedCommand()								
             };
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)

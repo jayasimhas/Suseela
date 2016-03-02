@@ -717,6 +717,7 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
