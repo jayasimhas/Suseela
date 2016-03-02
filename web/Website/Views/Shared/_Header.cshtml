@@ -35,16 +35,7 @@
             <a href="@Model.LogoUrl"><img src="@Model.LogoImageUrl"></a>
         </div>
 
-        <div class="header-search__wrapper">
-            <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
-            <svg class="header__icons header__icons--search js-header-search-trigger">
-                <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
-            </svg>
-            <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
-                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-            </svg>
-        </div>
-
+        @Html.Sitecore().Rendering("{ACBBD086-F6F2-4327-B3FF-2D36716E3AFC}")
 
         <div class="header-account-access">
 
