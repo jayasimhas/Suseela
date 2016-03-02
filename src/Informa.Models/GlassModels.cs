@@ -5731,6 +5731,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Publication_Name  {get; set;}
 								/// <summary>
+					/// The Reset Password Page field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 073e357f-68a0-422f-b188-eb9cc874536a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Reset_Password_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Reset_Password_Page  {get; set;}
+								/// <summary>
 					/// The Search Tips Text field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -6058,6 +6067,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Publication_Name  {get; set;}
 										/// <summary>
+						/// The Reset Password Page field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 073e357f-68a0-422f-b188-eb9cc874536a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Reset_Password_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Reset_Password_Page  {get; set;}
+										/// <summary>
 						/// The Search Tips Text field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -6278,6 +6296,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Publication_NameFieldId = new ID("9aee6c51-8392-4461-b24c-bf22acf5b07f");
 			public const string Publication_NameFieldName = "Publication Name";
+
+						
+					
+			public static readonly ID Reset_Password_PageFieldId = new ID("073e357f-68a0-422f-b188-eb9cc874536a");
+			public const string Reset_Password_PageFieldName = "Reset Password Page";
 
 						
 					
@@ -8523,6 +8546,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Publication_NameFieldId = new ID("9aee6c51-8392-4461-b24c-bf22acf5b07f");
 			public const string Publication_NameFieldName = "Publication Name";
+
+						
+					
+			public static readonly ID Reset_Password_PageFieldId = new ID("073e357f-68a0-422f-b188-eb9cc874536a");
+			public const string Reset_Password_PageFieldName = "Reset Password Page";
 
 						
 					
