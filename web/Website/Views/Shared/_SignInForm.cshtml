@@ -26,26 +26,34 @@
 	</div>
 </div>
 
-<div class="pop-out__sign-in-forgot-password">
-	<div class="alert-success">
+<div class="pop-out__sign-in-forgot-password js-reset-password-container">
+	<div class="alert-success js-reset-password-success">
 		<svg class="alert__icon">
 			<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
 		</svg>
 		<p>Thanks, we've sent a link to reset your password.</p>
 	</div>
+	<div class="alert-success js-reset-password-error-container">
+		<svg class="alert__icon">
+			<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+		</svg>
+		<p class="js-reset-password-error js-reset-password-error-email">Please enter a valid email address.</p>
+		<p class="js-reset-password-error js-reset-password-error-general">Unfortunately we've not been able to process this request.</p>
+	</div>
 
-	<div class="pop-out__sign-in-forgot-password-nested">
+	<div class="pop-out__sign-in-forgot-password-nested js-reset-password-request-form">
 		<h4 class="pop-out__sign-in-forgot-password-header">Forgot your password?</h4>
 		<p class="pop-out__details">
 			@Model.ForgotPasswordHelpText
 		</p>
-		<input class="pop-out__input"
+		<input name="email"
+			   class="pop-out__input"
 			   type="text"
 			   placeholder="@Model.EmailPlaceholderText">
 		<div class="pop-out__form-actions-wrapper">
 			<div></div>
 			<div class="sign-in__submit-wrapper">
-				<button class="button--filled sign-in__submit">@Model.ForgotPasswordButtonText</button>
+				<button class="button--filled sign-in__submit js-reset-password-request-submit" data-reset-url="/Account/api/ResetPasswordApi/Generate/">@Model.ForgotPasswordButtonText</button>
 			</div>
 		</div>
 	</div>
