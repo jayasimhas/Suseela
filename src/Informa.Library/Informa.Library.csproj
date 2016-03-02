@@ -492,10 +492,12 @@
     <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordAction.cs" />
     <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordActions.cs" />
     <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebRegenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordActions.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordResult.cs" />
     <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordStatus.cs" />
+    <Compile Include="User\ResetPassword\Web\WebRegenerateUserResetPassword.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />

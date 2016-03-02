@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using System.Linq;
+using Informa.Library.User.ResetPassword.Web;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
 	public class ResetPasswordApiController : ApiController
 	{
 		protected readonly IProcessUserResetPassword ProcessUserResetPassword;
+		protected readonly IWebRegenerateUserResetPassword RegenerateUserResetPassword;
 
 		public ResetPasswordApiController(
-			IProcessUserResetPassword processUserResetPassword)
+			IProcessUserResetPassword processUserResetPassword,
+			IWebRegenerateUserResetPassword regenerateUserResetPassword)
 		{
 			ProcessUserResetPassword = processUserResetPassword;
+			RegenerateUserResetPassword = regenerateUserResetPassword;
 		}
 
 		[HttpPost]
-		public IHttpActionResult Reset(ResetPasswordRequest request)
+		public IHttpActionResult Change(ChangeRequest request)
 		{
 			if (!ModelState.IsValid)
 			{
 				var response = new
 				{
 					success = false,
-					reasons = GetInvalidReasons(ModelState)
+					reasons = GetChangeInvalidReasons(ModelState)
 				};
 
 				return Ok(response);
@@ -41,9 +45,25 @@ namespace Informa.Web.Areas.Account.Controllers
 			});
 		}
 
-		public List<string> GetInvalidReasons(ModelStateDictionary modelState)
+		[HttpPost]
+		public IHttpActionResult Retry(RetryRequest request)
 		{
-			var reasons = modelState.SelectMany(ms => ms.Value.Errors.Select(e => e.ErrorMessage)).Distinct().ToList();
+			var result = RegenerateUserResetPassword.Regenerate(request?.Token ?? string.Empty);
+
+			return Ok(new
+			{
+				success = result.Status == WebGenerateUserResetPasswordStatus.Success
+			});
+		}
+
+		public List<string> GetChangeInvalidReasons(ModelStateDictionary modelState)
+		{
+			var reasons = new List<string>();
+
+			if (modelState != null)
+			{
+				reasons.AddRange(modelState.SelectMany(ms => ms.Value.Errors.Select(e => e.ErrorMessage)).Distinct().ToList());
+			}
 
 			if (!reasons.Any())
 			{

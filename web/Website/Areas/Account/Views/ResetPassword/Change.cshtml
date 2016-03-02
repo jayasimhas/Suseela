@@ -24,14 +24,14 @@
 					   placeholder="Must match the above"
 					   type="password">
 				<hr />
-				<button class="button--filled js-reset-password-submit" data-reset-url="/api/ResetPasswordApi/Reset/">Submit</button>
+				<button class="button--filled js-reset-password-submit" data-reset-url="/Account/api/ResetPasswordApi/Change/">Submit</button>
 			</div>
 			<ul>
 				<li class="js-reset-password-error js-reset-password-error-requirements" style="display: none;">Your password does not meet the minimum requirements.</li>
 				<li class="js-reset-password-error js-reset-password-error-mismatch" style="display: none;">Your passwords do not match.</li>
 				<li class="js-reset-password-error js-reset-password-error-general" style="display: none;">Sorry we've been unable to reset your password. Please contact support for further assistance.</li>
 			</ul>
-			<div class="js-reset-password-success-message" style="display: none;">
+			<div class="js-reset-password-success" style="display: none;">
 				<p>Your password has successfully been changed.</p>
 			</div>
 		</div>
@@ -43,7 +43,13 @@
 			<div style="border: 2px dashed green; margin: 2px;">
 				<hr />
 				<p>Unfortunately, your link to set a new password has expired. Please click below to receive a new link.</p>
-				<button class="button--filled js-reset-password-retry-submit" data-reset-url="/api/ResetPasswordApi/Retry/">Submit</button>
+				<button class="button--filled js-reset-password-retry-submit" data-retry-url="/Account/api/ResetPasswordApi/Retry/">Submit</button>
+				<div class="js-reset-password-error-general" style="display: none;">
+					<p>An error has occurred with resending the reset password email. Try using the login form to reset the password.</p>
+				</div>
+				<div class="js-reset-password-success" style="display: none;">
+					<p>An email has been sent to the email address previously used.</p>
+				</div>
 			</div>
 		}
 		else
