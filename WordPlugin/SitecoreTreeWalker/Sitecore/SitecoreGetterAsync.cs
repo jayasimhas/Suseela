@@ -1,9 +1,9 @@
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;
-//using SitecoreTreeWalker.SitecoreTree;
+//using InformaSitecoreWord.SitecoreTree;
 
-//namespace SitecoreTreeWalker.Sitecore
+//namespace InformaSitecoreWord.Sitecore
 //{
 //    class SitecoreClient
 //    {

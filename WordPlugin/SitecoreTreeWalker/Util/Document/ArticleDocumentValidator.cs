@@ -1,8 +1,8 @@
 ﻿using PluginModels;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
     /// <summary>
     /// This class is responsible for actions when validating article documents before saving or creating

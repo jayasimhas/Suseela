@@ -1,15 +1,15 @@
 ﻿using System.Drawing;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.SitecoreTree;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using System.Collections.Generic;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using SitecoreTreeWalker.UI.Controllers;
-using SitecoreTreeWalker.SitecoreTree;
+using InformaSitecoreWord.UI.Controllers;
+using InformaSitecoreWord.SitecoreTree;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	public partial class GeneralTagsControl : ArticleDetailsPageUserControl
 	{
@@ -521,7 +521,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			if (_isLive)
 			{
-				e.Graphics.DrawImage(SitecoreTreeWalker.Properties.Resources.live, 570, 1, 28, 28);
+				e.Graphics.DrawImage(InformaSitecoreWord.Properties.Resources.live, 570, 1, 28, 28);
 				e.Graphics.DrawString("Live!", new Font("SegoeUI", 18), Brushes.Green, 510, 1);
 			}
 		}

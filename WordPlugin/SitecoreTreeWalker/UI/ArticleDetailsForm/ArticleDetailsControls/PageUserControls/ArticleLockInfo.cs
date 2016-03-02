@@ -1,12 +1,12 @@
-﻿using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.User;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.User;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
     public partial class ArticleLockInfo : Form
     {

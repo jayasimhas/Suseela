@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util.CharacterStyles;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util.CharacterStyles;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
 	public class ArticleDocumentMetadataParser
 	{

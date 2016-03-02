@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI
+﻿namespace InformaSitecoreWord.UI
 {
     partial class ESRibbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
@@ -178,7 +178,7 @@
 			// LogoutBtn
 			// 
 			this.LogoutBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-			this.LogoutBtn.Image = global::SitecoreTreeWalker.Properties.Resources.sidearrow;
+			this.LogoutBtn.Image = global::InformaSitecoreWord.Properties.Resources.sidearrow;
 			this.LogoutBtn.Label = "Logout";
 			this.LogoutBtn.Name = "LogoutBtn";
 			this.LogoutBtn.ShowImage = true;

@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using SitecoreTreeWalker.User;
 using System.Web.Script.Serialization;
+using InformaSitecoreWord.Custom_Exceptions;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
+using InformaSitecoreWord.WebserviceHelper;
 using Microsoft.Office.Interop.Word;
 using Newtonsoft.Json;
 using PluginModels;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Custom_Exceptions;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.Config;
 
 /// <summary>
-namespace SitecoreTreeWalker.Sitecore
+namespace InformaSitecoreWord.Sitecore
 {
     class SitecoreClient
     {

@@ -4,7 +4,7 @@ using System.IO.IsolatedStorage;
 using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	class UserCredentialReader
 	{

@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.Tables
+namespace InformaSitecoreWord.Util.Tables
 {
 	class TableAnalyzer
 	{
