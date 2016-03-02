@@ -30,22 +30,22 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <TargetFrameworkProfile />
-    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
-    <InstallUrl />
+    <InstallUrl>https://scripauth.pharmamedtechbi.com/wordplugin/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.2.0.9</ApplicationVersion>
-    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <ApplicationVersion>2.2.0.10</ApplicationVersion>
+    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>InsightPlatformInformaSitecoreWord</ProductName>
-    <PublisherName />
+    <ProductName>InsightPlatformPlugin</ProductName>
+    <PublisherName>PharmamedtechBI</PublisherName>
     <SupportUrl />
     <FriendlyName>InsightPlatformInformaSitecoreWord</FriendlyName>
     <OfficeApplicationDescription />
-    <LoadBehavior>3</LoadBehavior>
+    <LoadBehavior>16</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -627,6 +627,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="InformaSitecoreWord.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -740,10 +741,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>InformaSitecoreWord_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>InformaSitecoreWord.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2F81F2D48B4DEDFC436F730F91D784EB1AEE6F34</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CFC5BCAEC13BF796C3415129D1A848F660070DE0</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WordPlugin-Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -762,6 +763,12 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>InformaSitecoreWord.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -22,23 +22,5 @@ namespace InformaSitecoreWord.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uat.ibi.velir.com")]
-        public string InformaSitecoreWord_SitecoreServer_SCServer {
-            get {
-                return ((string)(this["InformaSitecoreWord_SitecoreServer_SCServer"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://uat.ibi.velir.com")]
-        public string InformaSitecoreWord_SitecoreTree_SCTree {
-            get {
-                return ((string)(this["InformaSitecoreWord_SitecoreTree_SCTree"]));
-            }
-        }
     }
 }
