@@ -7,32 +7,29 @@
 	@if (Model.IsValidToken)
 	{
 		<div style="border: 2px dashed blue; margin: 2px;">
-			<div>
-				<h2>Dear #first_name# #last_name#</h2>
-				<p>Please enter a new password for you SCRIP account.</p>
-			</div>
+			<div>@Model.ResetBody</div>
 			<hr />
 			<div>
-				<label for="newPassword">New Password</label>
+				<label for="newPassword">@Model.NewPasswordLabelText</label>
 				<input name="newPassword"
 					   class=""
-					   placeholder="Minimum 8 characters, case sensitive"
+					   placeholder="@Model.NewPasswordPlaceholderText"
 					   type="password">
-				<label for="newPasswordRepeat">Confirm New Password</label>
+				<label for="newPasswordRepeat">@Model.NewPasswordRepeatLabelText</label>
 				<input name="newPasswordRepeat"
 					   class=""
-					   placeholder="Must match the above"
+					   placeholder="@Model.NewPasswordRepeatPlaceholderText"
 					   type="password">
 				<hr />
-				<button class="button--filled js-reset-password-submit" data-reset-url="/Account/api/ResetPasswordApi/Change/">Submit</button>
+				<button class="button--filled js-reset-password-submit" data-reset-url="/Account/api/ResetPasswordApi/Change/">@Model.SubmitButtonText</button>
 			</div>
 			<ul>
-				<li class="js-reset-password-error js-reset-password-error-requirements" style="display: none;">Your password does not meet the minimum requirements.</li>
-				<li class="js-reset-password-error js-reset-password-error-mismatch" style="display: none;">Your passwords do not match.</li>
-				<li class="js-reset-password-error js-reset-password-error-general" style="display: none;">Sorry we've been unable to reset your password. Please contact support for further assistance.</li>
+				<li class="js-reset-password-error js-reset-password-error-requirements" style="display: none;">@Model.ResetErrorRequirementsText</li>
+				<li class="js-reset-password-error js-reset-password-error-mismatch" style="display: none;">@Model.ResetErrorMismatchText</li>
+				<li class="js-reset-password-error js-reset-password-error-general" style="display: none;">@Model.ResetErrorGeneralText</li>
 			</ul>
 			<div class="js-reset-password-success" style="display: none;">
-				<p>Your password has successfully been changed.</p>
+				<p>@Model.ResetSuccessText</p>
 			</div>
 		</div>
 	}
@@ -42,13 +39,13 @@
 		{
 			<div style="border: 2px dashed green; margin: 2px;">
 				<hr />
-				<p>Unfortunately, your link to set a new password has expired. Please click below to receive a new link.</p>
-				<button class="button--filled js-reset-password-retry-submit" data-retry-url="/Account/api/ResetPasswordApi/Retry/">Submit</button>
+				<p>@Model.RetryBody</p>
+				<button class="button--filled js-reset-password-retry-submit" data-retry-url="/Account/api/ResetPasswordApi/Retry/">@Model.SubmitButtonText</button>
 				<div class="js-reset-password-error-general" style="display: none;">
-					<p>An error has occurred with resending the reset password email. Try using the login form to reset the password.</p>
+					<p>@Model.RetryErrorGeneralText</p>
 				</div>
 				<div class="js-reset-password-success" style="display: none;">
-					<p>An email has been sent to the email address previously used.</p>
+					<p>@Model.RetrySuccessText</p>
 				</div>
 			</div>
 		}
@@ -56,7 +53,7 @@
 		{
 			<div style="border: 2px dashed purple; margin: 2px;">
 				<hr />
-				<p>Unfortunately, your link to set a new password has expired. Please click use the sign in form to receive a new link.</p>
+				<p>@Model.TokenNotFoundBody</p>
 			</div>
 		}
 	}

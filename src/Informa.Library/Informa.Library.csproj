@@ -461,6 +461,9 @@
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
     <Compile Include="User\IUpdateUserPassword.cs" />
     <Compile Include="User\IUser.cs" />
+    <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
+    <Compile Include="User\Profile\IUserProfile.cs" />
+    <Compile Include="User\Profile\IUserProfileFactory.cs" />
     <Compile Include="User\ResetPassword\FindValidUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\GenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IFindUserResetPassword.cs" />
