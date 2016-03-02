@@ -1,9 +1,18 @@
 @model Informa.Web.ViewModels.IHeaderViewModel
 @*@model Informa.Web.Areas.Account.Models.LoginViewModel*@
 <header>
-    <div>
-        @Html.Raw(Model.CookiePolicyText)
+
+    <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001">
+        <div class="banner__wrapper">
+            <div class="dismiss-button js-dismiss-banner">
+				<svg class="dismiss-button__icon">
+					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+				</svg>
+			</div>
+            <span>@Html.Raw(Model.CookiePolicyText)</span>
+        </div>
     </div>
+
     <div class="header__informa-permabanner">
         informa
     </div>
@@ -49,7 +58,7 @@
                 <div class="header-account-access__my-account">
                     <svg class="header__icons icon-my-account">
                         <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                    </svg>                        
+                    </svg>
                     <span class="header-account-access__label"><a href="#">@Model.MyAccountLinkText</a>@*@Html.ActionLink(Model.MyAccountLinkText, "Manage", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })*@</span>
                 </div>
                 <div class="header-account-access__sign-in-out">
