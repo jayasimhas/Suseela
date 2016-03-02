@@ -33,10 +33,8 @@
 		</svg>
 		<p>@Model.ResetPasswordSuccessText</p>
 	</div>
-	<div class="alert-success js-reset-password-error-container">
-		<svg class="alert__icon">
-			<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-		</svg>
+	<div class="pop-out__form-error js-reset-password-error-container">
+		@Model.SignInInvalidText
 		<p class="js-reset-password-error js-reset-password-error-email">@Model.ResetPasswordErrorEmailText</p>
 		<p class="js-reset-password-error js-reset-password-error-general">@Model.ResetPasswordErrorGeneralText</p>
 	</div>
