@@ -60,31 +60,28 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         }
 
         _this.facetChange = function (facet) {
-
             _this.searchService.getFacet(facet.id).selected = facet.selected;
             _this.update();
         }
 
-        _this.scrollTop = function () {
-            //var location = jq(".search-facets__header").offset().top;
-            //window.scrollTo(0, location - 80);
-        }
+        // _this.scrollTop = function () {
+        //     //var location = jq(".search-facets__header").offset().top;
+        //     //window.scrollTo(0, location - 80);
+        // }
 
-        _this.clearGroup = function (groupId) {
-            var facets = _this.searchService.getFacetGroup(groupId).getSelectedFacets();
-            _.each(facets, function (facet) {
-                facet.selected = false;
-            });
-            this.update();
-        }
+        // _this.clearGroup = function (groupId) {
+        //     var facets = _this.searchService.getFacetGroup(groupId).getSelectedFacets();
+        //     _.each(facets, function (facet) {
+        //         facet.selected = false;
+        //     });
+        //     this.update();
+        // }
 
         _this.hasSelected = function (values) {
             return _.find(values, { selected: true }) ? true : false;
         };
 
         _this.clearAllFacets = function () {
-
-
             // _this.clearPublicationDate();
             var facetClear = this;
             var facetGroups = facetClear.facetGroups;
@@ -110,7 +107,6 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         }
 
         _this.clearFilter = function (filterKey) {
-
             var filter = _this.getFilter(filterKey);
             filter.setValue("");
         }
@@ -119,6 +115,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
             var filterDateLabel = _this.getFilter('dateFilterLabel');
             return filterDateLabel._value;
         }
+        
         _this.dateRangeSearch = function (filterKey, dateFilter) {
             var filter = _this.getFilter(filterKey);
             var filterDateLabel = _this.getFilter('dateFilterLabel');

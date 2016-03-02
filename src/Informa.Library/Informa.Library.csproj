@@ -273,6 +273,7 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="Mail\Email.cs" />
     <Compile Include="Mail\EmailFactory.cs" />
@@ -281,6 +282,7 @@
     <Compile Include="Mail\IEmailFactory.cs" />
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
+    <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="User\Authentication\IAuthenticateUser.cs" />
     <Compile Include="User\Authentication\IAuthenticateUserResult.cs" />
     <Compile Include="User\Authentication\AuthenticateUserResultState.cs" />
