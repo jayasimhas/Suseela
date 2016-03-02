@@ -48,19 +48,19 @@ namespace Informa.Web.Areas.Account.ViewModels.ResetPassword
 				return new MvcHtmlString(body);
 			}
 		}
-		public string NewPasswordLabelText => TextTranslator.Translate("Authentication.ResetPassword.NewPasswordLabel");
-		public string NewPasswordPlaceholderText => TextTranslator.Translate("Authentication.ResetPassword.NewPasswordPlaceholder");
-		public string NewPasswordRepeatLabelText => TextTranslator.Translate("Authentication.ResetPassword.NewPasswordRepeatLabel");
-		public string NewPasswordRepeatPlaceholderText => TextTranslator.Translate("Authentication.ResetPassword.NewPasswordRepeatPlaceholder");
-		public string SubmitButtonText => TextTranslator.Translate("Authentication.ResetPassword.SubmitButton");
-		public string ResetErrorRequirementsText => TextTranslator.Translate("Authentication.ResetPassword.ResetErrorRequirements");
-		public string ResetErrorMismatchText => TextTranslator.Translate("Authentication.ResetPassword.ResetErrorMismatch");
-		public string ResetErrorGeneralText => TextTranslator.Translate("Authentication.ResetPassword.ResetErrorGeneral");
-		public string ResetSuccessText => TextTranslator.Translate("Authentication.ResetPassword.ResetSuccess");
-		public string RetryBody => TextTranslator.Translate("Authentication.ResetPassword.RetryBody");
-		public string RetryErrorGeneralText => TextTranslator.Translate("Authentication.ResetPassword.RetryErrorGeneral");
-		public string RetrySuccessText => TextTranslator.Translate("Authentication.ResetPassword.RetrySuccess");
-		public string TokenNotFoundBody => TextTranslator.Translate("Authentication.ResetPassword.TokenNotFound");
+		public string NewPasswordLabelText => TextTranslator.Translate("Authentication.ResetPassword.Change.NewPasswordLabel");
+		public string NewPasswordPlaceholderText => TextTranslator.Translate("Authentication.ResetPassword.Change.NewPasswordPlaceholder");
+		public string NewPasswordRepeatLabelText => TextTranslator.Translate("Authentication.ResetPassword.Change.NewPasswordRepeatLabel");
+		public string NewPasswordRepeatPlaceholderText => TextTranslator.Translate("Authentication.ResetPassword.Change.NewPasswordRepeatPlaceholder");
+		public string SubmitButtonText => TextTranslator.Translate("Authentication.ResetPassword.Change.Submit");
+		public string ResetErrorRequirementsText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetErrorRequirements");
+		public string ResetErrorMismatchText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetErrorMismatch");
+		public string ResetErrorGeneralText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetErrorGeneral");
+		public string ResetSuccessText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetSuccess");
+		public string RetryBody => TextTranslator.Translate("Authentication.ResetPassword.Change.RetryBody");
+		public string RetryErrorGeneralText => TextTranslator.Translate("Authentication.ResetPassword.Change.RetryErrorGeneral");
+		public string RetrySuccessText => TextTranslator.Translate("Authentication.ResetPassword.Change.RetrySuccess");
+		public string TokenNotFoundBody => TextTranslator.Translate("Authentication.ResetPassword.Change.TokenNotFound");
 		public bool IsValidToken => UserResetPassword.IsValid();
 		public bool TokenFound => UserResetPassword != null;
 		public string Token => HttpContext.Current.Request["rpToken"]; // TODO: Replace with centralised configuration for parameter (email uses it too)
