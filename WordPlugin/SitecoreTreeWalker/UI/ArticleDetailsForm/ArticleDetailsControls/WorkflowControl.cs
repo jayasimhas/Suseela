@@ -102,7 +102,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		public void PreLinkEnable()
 		{
-			//TODO - Disable this
 			//Visible = false;
 		}
 
