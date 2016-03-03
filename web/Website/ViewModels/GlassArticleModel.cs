@@ -55,8 +55,7 @@ namespace Informa.Web.ViewModels
         {
             get
             {   
-                var relatedArticles = GlassModel.Related_Articles.Concat(GlassModel.Referenced_Articles)  
-                    .ToList();
+                var relatedArticles = GlassModel.Related_Articles.Concat(GlassModel.Referenced_Articles).Take(10).ToList();
                 
                 if (relatedArticles.Count < 10)
                 {
@@ -67,7 +66,7 @@ namespace Informa.Web.ViewModels
                     if (results.Articles.Any())
                         relatedArticles.AddRange(results.Articles.Take(10 - relatedArticles.Count));
                 }
-                return relatedArticles.Select(x => ArticleListableFactory.Create(x)).Cast<IListable>();
+                return relatedArticles.Select(x => ArticleListableFactory.Create(x)).Cast<IListable>().OrderByDescending(x => x.ListableDate);
             }
         }
 
