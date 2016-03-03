@@ -5076,6 +5076,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\sitemap news.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Test Article.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
