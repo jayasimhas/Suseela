@@ -30,6 +30,7 @@ using Velir.Search.Core.Managers;
 using Velir.Search.Core.Page;
 using Velir.Search.Core.Queries;
 using Constants = Informa.Library.Utilities.References.Constants;
+using IWorkflow = Sitecore.Workflows.IWorkflow;
 
 namespace Informa.Web.Controllers
 {
@@ -421,10 +422,8 @@ namespace Informa.Web.Controllers
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
-
-			//TODO - Workflow -
-			//Uncomment this once workflow is tested properly
-			//articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
+			
+			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
 
 
 			articleStruct.FeaturedImageSource = articleItem.Featured_Image_Source;
@@ -502,5 +501,81 @@ namespace Informa.Web.Controllers
 			return workFlowState;
 
 		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="i"></param>
+		/// <param name="commandID">Optional: if included, the command will be executed</param>
+		/// <returns>The workflow state of the item (after workflow command has executed, if given one)</returns>
+		public ArticleWorkflowState ExecuteCommandAndGetWorkflowState(Item i, string commandID)
+		{
+			using (new Sitecore.SecurityModel.SecurityDisabler())
+			{
+				IWorkflow workflow = i.State.GetWorkflow();
+
+				if (workflow == null)
+				{
+					//uh oh
+					return new ArticleWorkflowState();
+				}
+
+				if (commandID != null)
+				{
+					//var oldWorkflow = workflow.WorkflowID;
+					// This line will cause the workflow field to be set to null... sometimes
+					workflow.Execute(commandID, i, "comments", false);
+					//var info = new WorkflowInfo(oldWorkflow, i.Fields[Sitecore.FieldIDs.WorkflowState].Value);
+					//i.Database.DataManager.SetWorkflowInfo(i, info);
+					//i.Fields[Sitecore.FieldIDs.Workflow].Value = oldWorkflow;
+
+				}
+				var state = new ArticleWorkflowState();
+
+				var currentState = workflow.GetState(i);
+				state.DisplayName = currentState.DisplayName;
+				state.IsFinal = currentState.FinalState;
+
+				var commands = new List<ArticleWorkflowCommand>();
+				foreach (Sitecore.Workflows.WorkflowCommand command in workflow.GetCommands(i))
+				{
+					var wfCommand = new PluginModels.ArticleWorkflowCommand();
+					wfCommand.DisplayName = command.DisplayName;
+					wfCommand.StringID = command.CommandID;
+
+					ICommand commandItem = _sitecoreMasterService.GetItem<ICommand>(new Guid(command.CommandID));
+
+					IState stateItem = _sitecoreMasterService.GetItem<IState>(commandItem.Next_State);
+
+					if (stateItem == null)
+					{
+						//_logger.Warn("WorkflowController.ExecuteCommandAndGetWorkflowState: Next state for command [" + command.CommandID + "] is null!");
+					}
+					else
+					{
+						wfCommand.SendsToFinal = stateItem.Final;
+						wfCommand.GlobalNotifyList = new List<StaffStruct>();
+
+						//foreach (IStaff_Item x in stateItem.Staff.ListItems)
+						//{
+						//	if (x.Inactive.Checked) { continue; }
+
+						//	var staffMember = new SitecoreUtil.StaffStruct();
+						//	staffMember.ID = x.ID.ToGuid();
+						//	staffMember.Name = x.GetFullName();
+						//	staffMember.Publications = x.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
+						//	wfCommand.GlobalNotifyList.Add(staffMember);
+						//}
+
+						commands.Add(wfCommand);
+					}
+				}
+
+				state.Commands = commands;
+
+				return state;
+			}
+		}
+
 	}
 }
