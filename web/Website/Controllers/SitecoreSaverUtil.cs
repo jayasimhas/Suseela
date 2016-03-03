@@ -309,12 +309,13 @@ namespace Informa.Web.Controllers
             }
         }
 
-        /// <summary>
-        /// Saves article text and fields that are dependent on the article text
-        /// </summary>
-        /// <param name="article"></param>
-        /// <param name="articleText"></param>
-        public void SaveArticleDetailsAndText(ArticleItem article, string articleText, ArticleStruct articleStruct)
+	    /// <summary>
+	    /// Saves article text and fields that are dependent on the article text
+	    /// </summary>
+	    /// <param name="article"></param>
+	    /// <param name="articleText"></param>
+	    /// <param name="articleStruct"></param>
+	    public void SaveArticleDetailsAndText(ArticleItem article, string articleText, ArticleStruct articleStruct)
         {
             using (new SecurityDisabler())
             {

@@ -400,7 +400,9 @@ namespace InformaSitecoreWord.UI
 					ArticleDetails = GetArticleDetails(articleNumber,metadataParser);
 					ArticleDetails.ArticleGuid = copy;
 					_sitecoreArticle = new SitecoreClient();
-					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
+					//TODO - Add workflow stuff here
+					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, 
+						new Guid(), new List<StaffStruct>(), GetArticleNumber(), body);
 					if (errors != null && errors.Any())
 					{
 						foreach (string error in errors)

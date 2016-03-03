@@ -151,7 +151,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
 				NotificationText = pageWorkflowControl.GetNotificationText(),
-				//CommandID = pageWorkflowControl.GetSelectedCommand()		
+				CommandID = pageWorkflowControl.GetSelectedCommand()		
 			};
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)
@@ -330,7 +330,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             pageArticleInformationControl.UpdateFields(articleDetails);
             pageRelatedArticlesControl.UpdateFields(articleDetails);
             pageFeaturedImageControl.UpdateFields(articleDetails);
-            //pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState);
+            pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState);
             pageTaxonomyControl.UpdateFields(articleDetails);
 
             if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
