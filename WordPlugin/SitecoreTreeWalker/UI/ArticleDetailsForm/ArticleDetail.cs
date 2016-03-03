@@ -336,9 +336,13 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = articleDetailsPageSelector.GetArticleDetails(metadataParser);
                     ArticleDetails.ArticleGuid = copy;
-                   List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
+                   //List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
                     //Uncomment this after workflow is tested properly.
-                   // List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body, articleDetailsPageSelector.pageWorkflowControl.GetNotificationText());
+                   List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,
+					   articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),
+					   articleDetailsPageSelector.pageWorkflowControl.GetNotifyList(),
+					   GetArticleNumber(), body, 
+					   articleDetailsPageSelector.pageWorkflowControl.GetNotificationText());
 
                     if (errors != null && errors.Any())
                     {
@@ -737,7 +741,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 Guid guidCopy = ArticleDetails.ArticleGuid;
                 ArticleDetails = articleDetailsPageSelector.GetArticleDetailsWithoutDocumentParsing();
                 ArticleDetails.ArticleGuid = guidCopy;
-                ArticleDetails.ArticleSpecificNotifications = articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToList();
+                ArticleDetails.ArticleSpecificNotifications = articleDetailsPageSelector.pageWorkflowControl.GetNotifyList();
 
                 ArticleDetails.WordCount = SitecoreAddin.ActiveDocument.ComputeStatistics(0);
                 //TODO - Workflow commandId
@@ -750,11 +754,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
                 }
                 //TODO - Update workflow UI
-                /*
                 articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                                 ? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
-                                                : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
-												*/
+                                                : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));												
                 articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
                 articleDetailsPageSelector.UpdateFields();
                 articleDetailsPageSelector.ResetChangedStatus();

@@ -703,7 +703,7 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, StaffStruct[] notifications, string articleNumber, string body = null, string notificationText = null)
+        public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, List<StaffStruct> notifications, string articleNumber, string body = null, string notificationText = null)
         {
 
             string text;
