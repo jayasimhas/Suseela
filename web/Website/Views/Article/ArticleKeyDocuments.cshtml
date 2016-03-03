@@ -21,8 +21,10 @@
                         Supported" field on the Sitecore item"
                     This img `src` is a placeholder, please replace with images
                     sourced from Sitecore. *@
-                    <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
-                    <a href="@doc.LinkableUrl">@doc.LinkableText</a>
+                    <svg class="article-table__expand-table">
+                        <use xlink:href="/dist/img/svg-sprite.svg#@Model.GetDocumentIcon(doc)"></use>
+                    </svg>
+                    <a href="@doc._MediaUrl">@Model.GetTitle(doc)</a>
                 </li>
             }
         </ul>
