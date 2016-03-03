@@ -1,3 +1,24 @@
+/*---
+title: Quick Facts Box
+section: Article Components
+---
+
+```example:html
+<div class="sidebox">
+  <p class="quickfactstitle">Quick Facts Title</p>
+  <p class="quickfactstext">Quick Facts Text</p>
+  <ul class="quickfactsbulleted">
+      <li>Quick text bullets</li>
+  </ul>
+
+  <ol class="quickfactsnumbered">
+      <li>Quic facts numbered</li>
+  </ol>
+  <p class="quickfactssource">Quick Facts Source</p>
+</div>
+```
+*/
+
 .quick-facts {
     background-color: $color-antique-white;
     float: right;
