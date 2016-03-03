@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
+using Informa.Library.Search.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -51,7 +52,7 @@ namespace Informa.Web.ViewModels
                         taxonomyItems.Add(item._Parent._Id, new HierarchyLinks
                         {
                             Text = item.Item_Name,
-                            Url = "/search?tag=" + item._Id,
+                            Url = SearchTaxonomyUtil.GetSearchUrl(item),
                             Children = new List<HierarchyLinks>()
                         });
                     }
@@ -59,14 +60,16 @@ namespace Informa.Web.ViewModels
                     var lItem = new HierarchyLinks
                     {
                         Text = item.Item_Name,
-                        Url = "/search?tag=" + item._Id,
+                        Url = SearchTaxonomyUtil.GetSearchUrl(item),
                         Children = new List<HierarchyLinks>()
                     };
 
-                    taxonomyItems.Add(item._Id, lItem);   
+                    if(!taxonomyItems.ContainsKey(item._Id))
+                        taxonomyItems.Add(item._Id, lItem);   
                     var parent = taxonomyItems[item._Parent._Id];
                     var pList = parent.Children.ToList();
-                    pList.Add(lItem);
+                    if(!pList.Any(a => a.Text.Equals(lItem.Text)))
+                        pList.Add(lItem);
 
                     parent.Children = pList; 
                 }

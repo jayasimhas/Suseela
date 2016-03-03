@@ -14,7 +14,7 @@
 //using InformaSitecoreWord.WebserviceHelper;
 //using ArticlePreviewInfo = PluginModels.ArticlePreviewInfo;
 //using ArticleStruct = PluginModels.ArticleStruct;
-//using WorkflowState = PluginModels.WorkflowState;
+//using ArticleWorkflowState = PluginModels.ArticleWorkflowState;
 
 //namespace InformaSitecoreWord
 //{

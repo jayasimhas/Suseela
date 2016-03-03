@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
@@ -81,6 +82,8 @@
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
+    <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
+    <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />

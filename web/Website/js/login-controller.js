@@ -21,11 +21,14 @@ function loginController(requestVerificationToken) {
 						window.location.href = redirectUrl;
 					}
 					else {
-						if (failureCallback) {
-							failureCallback(triggerElement);
+						if (response.redirectUrl) {
+							window.location.href = response.redirectUrl;
 						}
-
-						console.log(response.message);
+						else {
+							if (failureCallback) {
+								failureCallback(triggerElement);
+							}
+						}
 					}
 				});
 			});

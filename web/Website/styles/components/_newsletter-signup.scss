@@ -1,3 +1,20 @@
+/*---
+title: Newsletter Signup
+section: Home/Topic Page Components
+---
+
+```example:html
+<div class="newsletter-signup">
+	<h3>Be informed first</h3>
+	Receive the SCRIP Intelligence newsletters.
+	<div class="form--single-row">
+		<input class="inf-standard-form-field">
+		<button class="button--filled">Sign Up</button>
+	</div>
+</div>
+```
+*/
+
 .newsletter-signup {
     @include textMix('PT Serif', 16px, 400);
     background-color: $informa-light-gray-f;

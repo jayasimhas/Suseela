@@ -342,17 +342,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 		{
 			_parent.PreLinkEnable();
 			IndicatedUnfavoredLink();
-
-			//uxLockStatus.BackColor = DefaultBackColor;
-			//uxLockUser.Text = @"N\A";
-			//uxLockStatusLabel.Text = @"Unlocked";
-
 			IsCheckedOutByMe = false;
 			IsCheckedOut = false;
-
-			//uxUnlockButton.Visible = false;
-			//uxLockButton.Visible = true;
-			//uxLockButton.Enabled = true;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
@@ -360,6 +351,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 		{
 			//uxLinkToDocumentPanel.Visible = false;
 			//uxLockStatus.Visible = true;
+			_parent.articleStatusBar1.ChangeLockButtonStatus(false);
 			//uxVersionStatus.Visible = true;
 			uxPublication.Enabled = false;
 			//_parent.EnablePreview();
@@ -386,9 +378,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 			_parent.PreLinkEnable();
 
 			IndicatedUnfavoredLink();
-			//uxUnlockButton.Visible = true;
-			//uxUnlockButton.Enabled = false;
-			//uxLockButton.Visible = false;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 

@@ -33,9 +33,11 @@ namespace Informa.Library.Salesforce.User.Authentication
 				return ErrorResult;
 			}
 
+			var state = loginResponse.isTempPasswordSpecified && loginResponse.isTempPassword.Value ? AuthenticateUserResultState.TemporaryPassword : AuthenticateUserResultState.Success;
+
 			return new SalesforceAuthenticateUserResult
 			{
-				State = AuthenticateUserResultState.Success,
+				State = state,
 				User = new SalesforceAuthenticatedUser
 				{
 					Username = username,
