@@ -284,6 +284,7 @@
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\Sitemap\SitemapService.cs" />
     <Compile Include="User\Authentication\IAuthenticateUser.cs" />
     <Compile Include="User\Authentication\IAuthenticateUserResult.cs" />
     <Compile Include="User\Authentication\AuthenticateUserResultState.cs" />
