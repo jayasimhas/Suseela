@@ -9,5 +9,8 @@ namespace Informa.Models.DCD
     public class DCDConstants
     {
         public const string CompanyTokenFormat = "[C#{0}:{1}]";
+
+        public const string DealTokenRegex = @"\[W#(.*?)\]";
+        public const string CompanyTokenRegex = @"\[C#(.*?)\]";
     }
 }

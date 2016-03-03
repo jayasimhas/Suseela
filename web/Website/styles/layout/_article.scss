@@ -127,6 +127,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
     }
+    
     &--pull-left,
     &--pull-right {
         float: left;
@@ -142,7 +143,7 @@
 
     &--pull-right {
         float: right;
-        margin-left: 0;
+        margin-right: 0;
         margin-left: 2rem;
         text-align: right;
     }
