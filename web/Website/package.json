@@ -21,6 +21,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-pixrem": "^0.2.3",
     "gulp-plumber": "^1.0.0",
+    "gulp-postcss": "^6.1.0",
     "gulp-preprocess": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
