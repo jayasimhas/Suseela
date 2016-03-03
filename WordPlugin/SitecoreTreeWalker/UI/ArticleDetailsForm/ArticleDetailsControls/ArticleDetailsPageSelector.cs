@@ -298,7 +298,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             {
                 if (!SitecoreClient.DoesArticleExist(articleNumber))
                 {
-                    _parent.SetArticleNumber(null);
+                    //_parent.SetArticleNumber(null);
                     return false;
                 }
                 Globals.SitecoreAddin.Log("Article guid not found.");

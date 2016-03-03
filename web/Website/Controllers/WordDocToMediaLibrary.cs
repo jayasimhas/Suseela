@@ -170,8 +170,8 @@ namespace Informa.Web.Controllers
 			try
 			{
 				//Create the full media library item path including the path and the media item name
-				itemName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(itemName);
-				//itemName = Regex.Replace(itemName, @"<(.|\n)*?>", string.Empty).Trim();
+				//itemName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(itemName);
+				itemName = Regex.Replace(itemName, @"<(.|\n)*?>", string.Empty).Trim();
 				string fullMediaPath = mediaLibraryPath + @"/" + itemName;
 				mediaCreatorOptions = new MediaCreatorOptions
 				{
