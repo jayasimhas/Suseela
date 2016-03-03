@@ -8,6 +8,12 @@
         @include breakpoint('medium') {
             padding: 0.5rem;
         }
+
+        a {
+            @include on-event(true) {
+                color: inherit;
+            }
+        }
     }
 
     &__navigation {

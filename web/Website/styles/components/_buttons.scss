@@ -2,6 +2,10 @@
 // This file contains all styles related to the button component.
 ----------------------------------------------------------------------------- */
 
+button:focus {
+	outline: 0;
+}
+
 .button {
 	&--filled,
 	&--outlined {
@@ -36,11 +40,11 @@
 		border: 1px solid $color-goldenrod;
 	}
 
+	// used for "unstyling" buttons
 	&--plain {
 		background: transparent;
 		border: 0;
 	}
-
 }
 
 .onoffswitch {

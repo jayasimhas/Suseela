@@ -12,6 +12,11 @@
         _this.docs = searchService.getResults();
     });
 
+    $scope.filterResult = function (url) {
+        window.location = url;
+        window.location.reload();
+    };
+
 };
 var informaSearchApp = angular.module('informaSearchApp');
 informaSearchApp.controller("InformaResultsController", ['$scope', 'searchService', 'viewHeadlinesStateService', InformaResultsController]);

@@ -57,10 +57,19 @@
     padding: 0;
   }
 
-  &__section-header {
+  &__legend {
     display: inline-block;
+    width: 100%;
     padding-bottom: 15px;
     color: $informa-black;
+
+    h4 {
+      display: inline;
+    }
+
+    button {
+      float: right;
+    }
   }
 
   &__section-list {
@@ -197,9 +206,13 @@
       @include svg-fill($color-medium-gray-8);
     }
 
-    &--toggle-subcat svg {
-      @include svg-fill($informa-light-gray-d);
-      width: 18px;
+    &--toggle-subcat {
+      float: right;
+
+      svg {
+        @include svg-fill($informa-light-gray-d);
+        width: 18px;
+      }
     }
   }
 

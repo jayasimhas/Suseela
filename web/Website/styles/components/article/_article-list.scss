@@ -1,0 +1,19 @@
+.article-list {
+    margin-bottom: 1.5rem;
+
+    li {
+        margin-left: 1.25rem;
+        padding-left: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &--ul {
+        @extend .carrot-list;
+    }
+
+    &--ol {
+        li {
+            list-style-type: decimal;
+        }
+    }
+}
