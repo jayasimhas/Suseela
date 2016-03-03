@@ -466,6 +466,7 @@ namespace Informa.Web.Controllers
 		public ArticleWorkflowState GetWorkFlowState(Guid articleId)
 		{
 			var item = _sitecoreMasterService.GetItem<Item>(articleId);
+			if (item?.State?.GetWorkflowState() == null) return null;
 			var currentState = item.State.GetWorkflowState();
 			Sitecore.Workflows.IWorkflow workflow = item.State.GetWorkflow();
 			var workFlowState = new ArticleWorkflowState();
@@ -486,7 +487,10 @@ namespace Informa.Web.Controllers
 					wfCommand.GlobalNotifyList = new List<StaffStruct>();
 					foreach (IStaff_Item staff in nextStateItem.Staffs)
 					{
-						if (staff.Inactive) { continue; }
+						if (staff.Inactive)
+						{
+							continue;
+						}
 						var staffMember = new StaffStruct();
 						staffMember.ID = staff._Id;
 						staffMember.Name = staff.Last_Name + " , " + staff.First_Name;
@@ -499,7 +503,6 @@ namespace Informa.Web.Controllers
 			workFlowState.Commands = commands;
 
 			return workFlowState;
-
 		}
 
 		/// <summary>
