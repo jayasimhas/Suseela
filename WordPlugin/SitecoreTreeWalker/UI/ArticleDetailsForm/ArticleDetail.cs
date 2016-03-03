@@ -733,11 +733,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             Cursor = Cursors.WaitCursor;
             try
             {
-                /*
-                if (PromptAddIndustryToNominate())
-                {
-                    return;
-                }*/
                 Guid guidCopy = ArticleDetails.ArticleGuid;
                 ArticleDetails = articleDetailsPageSelector.GetArticleDetailsWithoutDocumentParsing();
                 ArticleDetails.ArticleGuid = guidCopy;
@@ -847,22 +842,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
         }
 
-        //TODO:Remove these once logout fully implemented
-        /*
-        private void uxLogout_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                loginControl1.Logout();
-                Globals.SitecoreAddin.CloseSitecoreTreeBrowser(Globals.SitecoreAddin.Application.ActiveDocument);
-            }
-            catch (Exception ex)
-            {
-                Globals.SitecoreAddin.LogException("Error while logging out!", ex);
-                throw;
-            }
-        }
-         * */
 
         private void uxPreview_Click(object sender, EventArgs e)
         {
@@ -871,12 +850,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            //string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
-            //string domain = ApplicationConfig.GetPropertyValue("DomainName");
-            //string redirect = Uri.EscapeDataString(domain + @"?sc_itemid={" + guid + @"}&sc_mode=preview&sc_lang=en");
-            //string url = domain + @"Util/LoginRedirectToPreview.aspx?redirect=" + redirect;
-
-            //var p = new Process {StartInfo = {FileName = url}};
             Process.Start(GetPreviewUrl(false));
         }
 
@@ -888,8 +861,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 MessageBox.Show(@"There is no article linked!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
-            //var p = new Process {StartInfo = {FileName = url}};
+			
             Process.Start(GetPreviewUrl(true));
         }
 

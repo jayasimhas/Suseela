@@ -26,6 +26,7 @@ namespace InformaSitecoreWord.WebserviceHelper
 			articleDetails.RelatedInlineArticles = articleStruct.RelatedInlineArticles;
 
 			//TODO - Workflow
+			articleDetails.ArticleWorkflowState = articleStruct.ArticleWorkflowState;
 
 			articleDetails.FeaturedImage = articleStruct.FeaturedImage;
 			articleDetails.FeaturedImageCaption = articleStruct.FeaturedImageCaption;
@@ -38,7 +39,8 @@ namespace InformaSitecoreWord.WebserviceHelper
 			articleDetails.CommandID = articleStruct.CommandID;
 			articleDetails.WordCount = articleStruct.WordCount;
 			articleDetails.SupportingDocumentPaths = articleStruct.SupportingDocumentPaths;
-			//articleDetails.ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.Select(n => new StaffStruct{Name = n.Name,ID = n.ID,Publications = n.Publications,}).ToArray();
+			articleDetails.ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.
+				Select(n => new StaffStruct{Name = n.Name,ID = n.ID,}).ToList();
 
 			return articleDetails;
 		}
