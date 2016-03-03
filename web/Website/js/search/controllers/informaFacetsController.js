@@ -64,10 +64,10 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
             _this.update();
         }
 
-        // _this.scrollTop = function () {
-        //     //var location = jq(".search-facets__header").offset().top;
-        //     //window.scrollTo(0, location - 80);
-        // }
+        _this.scrollTop = function () {
+            // var location = jq(".search-facets__header").offset().top;
+            //window.scrollTo(0, location - 80);
+        }
 
         // _this.clearGroup = function (groupId) {
         //     var facets = _this.searchService.getFacetGroup(groupId).getSelectedFacets();
