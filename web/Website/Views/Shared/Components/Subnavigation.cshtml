@@ -6,21 +6,19 @@
 
     @if (Model.SubnavigationItems.Count() > 0)
     {
-        @* Top Element *@
-        <div class="general-header__section-title">
-            <a href="@Model.GlassModel._Url">
-                @Model.GlassModel.Navigation_Title
-            </a>
-        </div>
-
         @* Subnavigation Items *@
         <div class="general-header__navigation">
+            <a class="is-active" href="@Model.GlassModel._Url">
+                @Model.GlassModel.Navigation_Title
+            </a>
             @foreach (I___BasePage sn in @Model.SubnavigationItems)
             {
-                <a href="sn._Url">
+                <a href="@sn._Url">
                     @sn.Navigation_Title
                 </a>
             }
         </div>
+        <div class="general-header__navigation-scroller--right"></div>
+        <div class="general-header__navigation-scroller--left"></div>
     }
 </div>

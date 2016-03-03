@@ -5390,6 +5390,343 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned
+{
+
+
+ 	/// <summary>
+	/// IFile Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/System/Media/Unversioned/File</para>	
+	/// <para>ID: 962b53c4-f93b-4df9-9821-415c867b8903</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IFileConstants.TemplateIdString)]
+	public partial interface IFile : IGlassBase 
+	{
+								/// <summary>
+					/// The Description field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: ba8341a1-ff30-47b8-ae6a-f4947e4113f0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Description  {get; set;}
+								/// <summary>
+					/// The Extension field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: c06867fe-9a43-4c7d-b739-48780492d06f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.ExtensionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Extension  {get; set;}
+								/// <summary>
+					/// The Keywords field.
+					/// <para></para>
+					/// <para>Field Type: memo</para>		
+					/// <para>Field ID: 2fafe7cb-2691-4800-8848-255efa1d31aa</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.KeywordsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Keywords  {get; set;}
+								/// <summary>
+					/// The Mime Type field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: 6f47a0a5-9c94-4b48-abeb-42d38def6054</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.Mime_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Mime_Type  {get; set;}
+								/// <summary>
+					/// The Size field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: 6954b7c7-2487-423f-8600-436cb3b6dc0e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.SizeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Size  {get; set;}
+								/// <summary>
+					/// The Title field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: 3f4b20e9-36e6-4d45-a423-c86567373f82</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Title  {get; set;}
+								/// <summary>
+					/// The CountryCode field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ff01bc1a-ef22-407c-9115-7dbee11451a5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.CountryCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string CountryCode  {get; set;}
+								/// <summary>
+					/// The Latitude field.
+					/// <para></para>
+					/// <para>Field Type: Number</para>		
+					/// <para>Field ID: 5d589ec4-4842-4630-a860-540357a196f3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.LatitudeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					float Latitude  {get; set;}
+								/// <summary>
+					/// The LocationDescription field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e8fa62d2-13fc-4c5c-91e5-71d615591420</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.LocationDescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string LocationDescription  {get; set;}
+								/// <summary>
+					/// The Longitude field.
+					/// <para></para>
+					/// <para>Field Type: Number</para>		
+					/// <para>Field ID: 11cb6358-8f71-4f80-ab30-04d745d99d56</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.LongitudeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					float Longitude  {get; set;}
+								/// <summary>
+					/// The ZipCode field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: fb540bf1-b2eb-47c9-a55f-f01b2fca5851</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.ZipCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string ZipCode  {get; set;}
+								/// <summary>
+					/// The File Path field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: 2134867a-ac67-4dac-836c-a9264fd9d6d6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.File_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string File_Path  {get; set;}
+								/// <summary>
+					/// The Format field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: fbd90442-db0c-48f1-a0f4-0427cd9afcce</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFileConstants.FormatFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Format  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IFile Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/System/Media/Unversioned/File</para>	
+		/// <para>ID: 962b53c4-f93b-4df9-9821-415c867b8903</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IFile__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Description field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: ba8341a1-ff30-47b8-ae6a-f4947e4113f0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Description  {get; set;}
+										/// <summary>
+						/// The Extension field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: c06867fe-9a43-4c7d-b739-48780492d06f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.ExtensionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Extension  {get; set;}
+										/// <summary>
+						/// The Keywords field.
+						/// <para></para>
+						/// <para>Field Type: memo</para>		
+						/// <para>Field ID: 2fafe7cb-2691-4800-8848-255efa1d31aa</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.KeywordsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Keywords  {get; set;}
+										/// <summary>
+						/// The Mime Type field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: 6f47a0a5-9c94-4b48-abeb-42d38def6054</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.Mime_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Mime_Type  {get; set;}
+										/// <summary>
+						/// The Size field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: 6954b7c7-2487-423f-8600-436cb3b6dc0e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.SizeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Size  {get; set;}
+										/// <summary>
+						/// The Title field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: 3f4b20e9-36e6-4d45-a423-c86567373f82</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Title  {get; set;}
+										/// <summary>
+						/// The CountryCode field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ff01bc1a-ef22-407c-9115-7dbee11451a5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.CountryCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string CountryCode  {get; set;}
+										/// <summary>
+						/// The Latitude field.
+						/// <para></para>
+						/// <para>Field Type: Number</para>		
+						/// <para>Field ID: 5d589ec4-4842-4630-a860-540357a196f3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.LatitudeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						float Latitude  {get; set;}
+										/// <summary>
+						/// The LocationDescription field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e8fa62d2-13fc-4c5c-91e5-71d615591420</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.LocationDescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string LocationDescription  {get; set;}
+										/// <summary>
+						/// The Longitude field.
+						/// <para></para>
+						/// <para>Field Type: Number</para>		
+						/// <para>Field ID: 11cb6358-8f71-4f80-ab30-04d745d99d56</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.LongitudeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						float Longitude  {get; set;}
+										/// <summary>
+						/// The ZipCode field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: fb540bf1-b2eb-47c9-a55f-f01b2fca5851</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.ZipCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string ZipCode  {get; set;}
+										/// <summary>
+						/// The File Path field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: 2134867a-ac67-4dac-836c-a9264fd9d6d6</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.File_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string File_Path  {get; set;}
+										/// <summary>
+						/// The Format field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: fbd90442-db0c-48f1-a0f4-0427cd9afcce</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFileConstants.FormatFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Format  {get; set;}
+						}
+	
+	public static partial class IFileConstants{
+
+			public const string TemplateIdString = "962b53c4-f93b-4df9-9821-415c867b8903";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "File";
+
+					
+			public static readonly ID DescriptionFieldId = new ID("ba8341a1-ff30-47b8-ae6a-f4947e4113f0");
+			public const string DescriptionFieldName = "Description";
+
+						
+					
+			public static readonly ID ExtensionFieldId = new ID("c06867fe-9a43-4c7d-b739-48780492d06f");
+			public const string ExtensionFieldName = "Extension";
+
+						
+					
+			public static readonly ID KeywordsFieldId = new ID("2fafe7cb-2691-4800-8848-255efa1d31aa");
+			public const string KeywordsFieldName = "Keywords";
+
+						
+					
+			public static readonly ID Mime_TypeFieldId = new ID("6f47a0a5-9c94-4b48-abeb-42d38def6054");
+			public const string Mime_TypeFieldName = "Mime Type";
+
+						
+					
+			public static readonly ID SizeFieldId = new ID("6954b7c7-2487-423f-8600-436cb3b6dc0e");
+			public const string SizeFieldName = "Size";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("3f4b20e9-36e6-4d45-a423-c86567373f82");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID CountryCodeFieldId = new ID("ff01bc1a-ef22-407c-9115-7dbee11451a5");
+			public const string CountryCodeFieldName = "CountryCode";
+
+						
+					
+			public static readonly ID LatitudeFieldId = new ID("5d589ec4-4842-4630-a860-540357a196f3");
+			public const string LatitudeFieldName = "Latitude";
+
+						
+					
+			public static readonly ID LocationDescriptionFieldId = new ID("e8fa62d2-13fc-4c5c-91e5-71d615591420");
+			public const string LocationDescriptionFieldName = "LocationDescription";
+
+						
+					
+			public static readonly ID LongitudeFieldId = new ID("11cb6358-8f71-4f80-ab30-04d745d99d56");
+			public const string LongitudeFieldName = "Longitude";
+
+						
+					
+			public static readonly ID ZipCodeFieldId = new ID("fb540bf1-b2eb-47c9-a55f-f01b2fca5851");
+			public const string ZipCodeFieldName = "ZipCode";
+
+						
+					
+			public static readonly ID File_PathFieldId = new ID("2134867a-ac67-4dac-836c-a9264fd9d6d6");
+			public const string File_PathFieldName = "File Path";
+
+						
+					
+			public static readonly ID FormatFieldId = new ID("fbd90442-db0c-48f1-a0f4-0427cd9afcce");
+			public const string FormatFieldName = "Format";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 

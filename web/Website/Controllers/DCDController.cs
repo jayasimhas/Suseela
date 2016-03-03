@@ -30,7 +30,7 @@ namespace Informa.Web.Controllers
             }
             catch (Exception ex)
             {
-                Sitecore.Diagnostics.Log.Error("GetDealInfo API error:", ex);
+                Sitecore.Diagnostics.Log.Error("GetDealInfo API error:", ex, "LogFileAppender");
             }
 
             return dealInfo;
@@ -52,7 +52,7 @@ namespace Informa.Web.Controllers
             }
             catch (Exception ex)
             {
-                Sitecore.Diagnostics.Log.Error("GetAllCompanies API error:", ex);
+                Sitecore.Diagnostics.Log.Error("GetAllCompanies API error:", ex, "LogFileAppender");
             }
 
             return lstDbCompanies;
@@ -72,7 +72,7 @@ namespace Informa.Web.Controllers
             }
             catch (Exception ex)
             {
-                Sitecore.Diagnostics.Log.Error("GetAllCompaniesWithRelated API error:", ex);
+                Sitecore.Diagnostics.Log.Error("GetAllCompaniesWithRelated API error:", ex, "LogFileAppender");
             }
 
             return lstDbCompanies;

@@ -39,6 +39,9 @@
       .icon-triangle--up {
         @include svg-fill($informa-red);
       }
+
+    &.is-selected span {
+      text-decoration: underline;
     }
 
     &.is-sorted-down {
@@ -64,6 +67,12 @@
   .icon-triangle {
     @include svg-fill($informa-light-gray-d);
     display: block;
+    width: 12px;
+    height: 11px;
+  }
+
+}
+
     width: 12px;
     height: 11px;
   }
