@@ -147,7 +147,6 @@ namespace InformaSitecoreWord
                     case SaveDialog.SaveChoice.SaveToSitecoreAndUnlock:
                         // at this point, there can be no metadata changes, only body text changes.
                         var _sitecoreClient = new SitecoreClient();
-						//TODO - Add workflow stuff - not sure if its needed or not. Please refer old code
                         var errors = _sitecoreClient.SaveArticle(doc, SitecoreClient.ForceReadArticleDetails(documentCustomProps.ArticleNumber), 
 							Guid.Empty, new List<StaffStruct>(), documentCustomProps.ArticleNumber);
 
@@ -177,9 +176,8 @@ namespace InformaSitecoreWord
                         doc.Saved = true;
                         break;
                 }
-
-            }
-        }
+            }			
+		}
 
         void OpenArticleInformationWindowIfNeeded(Word.Document doc)
         {

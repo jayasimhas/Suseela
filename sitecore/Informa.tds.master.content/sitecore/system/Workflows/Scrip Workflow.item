@@ -9,10 +9,17 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {1C0ACC50-37BE-4742-B43C-96A07A7410A5}
 templatekey: Workflow
 
+----field----
+field: {B5166B38-E4BF-4410-953C-2037F2BF6A56}
+name: Initial state
+key: initial state
+content-length: 38
+
+{A5CCF3CC-05E9-431A-A2FC-D21ED60A9F34}
 ----version----
 language: en
 version: 1
-revision: 92e2928b-3447-45f0-8290-1a422bb4e741
+revision: d7b13d00-637e-4b9e-8848-a96eebd8dbc2
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-92e2928b-3447-45f0-8290-1a422bb4e741
+d7b13d00-637e-4b9e-8848-a96eebd8dbc2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160302T122011Z
+20160303T190312Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

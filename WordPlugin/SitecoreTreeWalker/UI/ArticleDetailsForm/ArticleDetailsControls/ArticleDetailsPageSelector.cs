@@ -24,7 +24,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             InitializeMenuItems();
 
             ArticleInformationMenuItem.Selected = true;
-            //pageArticleInformationControl.Visible = true;
+            pageArticleInformationControl.Visible = true;
             ArticleInformationMenuItem.UpdateBackground();
         }
 
@@ -52,7 +52,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             Pages.Add(pageWorkflowControl);
             Pages.Add(pageFeaturedImageControl);
             Pages.Add(pageTaxonomyControl);
-            //Pages.Add(PageNotesControl);
 
             LinkMenuItems();
 
@@ -115,9 +114,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
-			//	NotificationText = pageWorkflowControl.GetNotificationText(),
-			//	CommandID = pageWorkflowControl.GetSelectedCommand()								
-            };
+				NotificationText = pageWorkflowControl.GetNotificationText(),
+				CommandID = pageWorkflowControl.GetSelectedCommand()
+			};
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)
             {
@@ -138,20 +137,14 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 Label = pageArticleInformationControl.GetLabelGuid(),
                 MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
                 NotesToEditorial = pageArticleInformationControl.GetNotes(),
-                //Industries = pageIndustriesControl.TabController.GetSelected(),
                 Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
-                //Subjects = pageSubjectsControl.TabController.GetSelected(),			
-                //TODO - Editorial Notes
-                //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-                //although this technically requires document parsing, we want to retrieve it 
-                //as though it didn't
                 RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
                 RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
-			//	NotificationText = pageWorkflowControl.GetNotificationText(),
-			//	CommandID = pageWorkflowControl.GetSelectedCommand()		
+				NotificationText = pageWorkflowControl.GetNotificationText(),
+				CommandID = pageWorkflowControl.GetSelectedCommand()
 			};
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)
@@ -191,22 +184,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             pageArticleInformationControl.SetPublicationTime(time, true);
         }
 
-        /*
-		public bool TryingToNominateWithNoIndustries()
-		{
-		    return pageArticleInformationControl.uxNominate.Enabled
-		           && pageArticleInformationControl.uxNominate.Checked;
-		    //&& pageIndustriesControl.TabController.GetSelected().Count() == 0;
-		}
-
-		public bool TryingToNominateWithNoPrimaryIndustries()
-		{
-		    return pageArticleInformationControl.uxNominate.Enabled
-		           && pageArticleInformationControl.uxNominate.Checked;
-		    //&& !SitecoreClient.HasPrimaryIndustries(pageIndustriesControl.TabController.GetSelected().Select(i => i.ID));
-		}
-         * */
-
         #endregion
 
         #region Minor UI Manipulation
@@ -226,43 +203,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             foreach (MenuSelectorItem m in MenuItems)
             {
                 m.UpdateBackground();
-            }
-        }
-
-        public void SwitchToNextPage()
-        {
-            MenuSelectorItem selected = MenuItems.Where(m => m.Selected).Single();
-            int index = MenuItems.IndexOf(selected);
-
-            if (index < MenuItems.Count - 1)
-            {
-                selected.Selected = false;
-                selected.UpdateBackground();
-
-                selected = MenuItems[index + 1];
-                selected.Selected = true;
-                selected.UpdateBackground();
-
-                Pages[index].Visible = false;
-                Pages[index + 1].Visible = true;
-            }
-        }
-
-        public void SwitchToPreviousPage()
-        {
-            MenuSelectorItem selected = MenuItems.Where(m => m.Selected).Single();
-            int index = MenuItems.IndexOf(selected);
-            if (index > 0)
-            {
-                selected.Selected = false;
-                selected.UpdateBackground();
-
-                selected = MenuItems[index - 1];
-                selected.Selected = true;
-                selected.UpdateBackground();
-
-                Pages[index].Visible = false;
-                Pages[index - 1].Visible = true;
             }
         }
 
@@ -358,7 +298,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             {
                 if (!SitecoreClient.DoesArticleExist(articleNumber))
                 {
-                    //_parent.SetArticleNumber(null);
+                    _parent.SetArticleNumber(null);
                     return false;
                 }
                 Globals.SitecoreAddin.Log("Article guid not found.");

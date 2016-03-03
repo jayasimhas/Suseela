@@ -9,10 +9,17 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {CB01F9FC-C187-46B3-AB0B-97A8468D8303}
 templatekey: Command
 
+----field----
+field: {DCBEBC58-6124-4100-A248-FC717D6C78D5}
+name: Next state
+key: next state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}
 ----version----
 language: en
 version: 1
-revision: f46e0211-8479-4f6a-8dcb-df3a61f8e3b0
+revision: 9de70a6f-aff9-42e1-a6d2-4618d4cc3b2e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f46e0211-8479-4f6a-8dcb-df3a61f8e3b0
+9de70a6f-aff9-42e1-a6d2-4618d4cc3b2e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160302T122615Z
+20160303T192438Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

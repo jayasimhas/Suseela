@@ -249,8 +249,7 @@ namespace Informa.Web.Controllers
                 newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;
                 newArticle.Featured_Image_Source = articleStruct.FeaturedImageSource;
 				newArticle.Notification_Text = articleStruct.NotificationText; 
-                //TODO - Add Taxonomy items
-
+                
                 var taxonomyItems = new List<ITaxonomy_Item>();
                 if (articleStruct.Taxonomoy.Any())
                 {
