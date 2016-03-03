@@ -38,6 +38,16 @@ namespace InformaSitecoreWord.Sitecore
 
 	    }
 
+	    public bool IsUserAuthorized()
+	    {
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}CreateArticle").Result;
+
+				return response.IsSuccessStatusCode;
+			}
+		}
+
 
         public static List<TaxonomyStruct> SearchTaxonomy(string term)
         {

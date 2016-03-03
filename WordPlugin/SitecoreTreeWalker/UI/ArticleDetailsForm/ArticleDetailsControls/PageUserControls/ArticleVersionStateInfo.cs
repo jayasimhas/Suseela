@@ -28,6 +28,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             {
                 return;
             }
+
+
             var updatedArticleDetail = new ArticleDetail();
             if (Convert.ToDateTime(_parent.ArticleDetails.WordDocLastUpdateDate) >=
                 Convert.ToDateTime(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate)) return;

@@ -102,7 +102,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		public void PreLinkEnable()
 		{
-			Visible = false;
+			//TODO - Disable this
+			//Visible = false;
 		}
 
 		public void PostLinkEnable()
@@ -118,7 +119,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		public Guid GetSelectedCommand()
 		{
-			return (new Guid(uxWorkflowActions.SelectedValue.ToString()));
+			var commandId = uxWorkflowActions?.SelectedValue?.ToString();
+			return string.IsNullOrEmpty(commandId) ? Guid.Empty : Guid.Parse(commandId);
 		}
 
 		private void uxWorkflowActions_SelectedIndexChanged(object sender, EventArgs e)

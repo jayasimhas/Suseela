@@ -368,7 +368,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
         protected void UpdateFieldsUsingSitecore()
         {
-            if (!articleDetailsPageSelector.CheckOut(false))
+            if (!articleDetailsPageSelector.CheckOut())
             {
                 if (!string.IsNullOrEmpty(ArticleDetails.ArticleNumber))
                 {

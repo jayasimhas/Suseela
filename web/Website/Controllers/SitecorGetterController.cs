@@ -79,11 +79,9 @@ namespace Informa.Web.Controllers
 		private readonly IArticleSearch _search;
 		private readonly IArticleSearchFilter _articleSearchFilter;
 		private readonly ArticleUtil _articleUtil;
-		public WorkflowController(Func<string, ISitecoreService> sitecoreFactory, IArticleSearch search, IArticleSearchFilter articleSearchFilter, ArticleUtil articleUtil)
+		public WorkflowController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
 		{
 			_sitecoreService = sitecoreFactory(Constants.MasterDb);
-			_search = search;
-			_articleSearchFilter = articleSearchFilter;
 			_articleUtil = articleUtil;
 		}
 		// GET api/<controller>
@@ -99,12 +97,13 @@ namespace Informa.Web.Controllers
 
 		public JsonResult<ArticleWorkflowState> Get(string articleNumber)
 		{
-			_articleSearchFilter.ArticleNumber = articleNumber;
-			var searchResult = _search.Search(_articleSearchFilter);
-			var article = searchResult.Articles.FirstOrDefault();
-			//TODO - check if null
-			var workflowState = _articleUtil.GetWorkFlowState(article._Id);
-			return Json(workflowState);
+			var article = _articleUtil.GetArticleByNumber(articleNumber);
+			if (article != null)
+			{
+				var workflowState = _articleUtil.GetWorkFlowState(article._Id);
+				return Json(workflowState);
+			}
+			return Json(new ArticleWorkflowState());
 		}
 	}
 

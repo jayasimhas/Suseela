@@ -424,7 +424,7 @@ namespace Informa.Web.Controllers
 
 			//TODO - Workflow -
 			//Uncomment this once workflow is tested properly
-			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
+			//articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
 
 
 			articleStruct.FeaturedImageSource = articleItem.Featured_Image_Source;

@@ -55,6 +55,7 @@ namespace Informa.Web.Controllers
 
 
 		[HttpGet]
+		[Authorize]
 		public long Get()
 		{
 			using (new SecurityDisabler())
