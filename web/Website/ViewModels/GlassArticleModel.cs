@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
+using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
@@ -33,7 +34,7 @@ namespace Informa.Web.ViewModels
         }                                                    
 
         public IEnumerable<ILinkable> TaxonomyItems
-            => GlassModel.Taxonomies.Select(x => new LinkableModel {LinkableText = x.Item_Name, LinkableUrl = "/search?tag=" + x._Id});
+            => GlassModel.Taxonomies.Select(x => new LinkableModel {LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) });
 
         #region Implementation of IArticleModel
 
@@ -104,7 +105,7 @@ namespace Informa.Web.ViewModels
         public IEnumerable<ILinkable> ListableTopics
             =>
                 GlassModel.Taxonomies?.Take(3)
-                    .Select(x => new LinkableModel {LinkableText = x.Item_Name, LinkableUrl = "/search?tag=" + x._Id});
+                    .Select(x => new LinkableModel {LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) });
 
         public string ListableType => Media_Type;
         public string Publication => SiterootContext.Item.Publication_Name.StripHtml();
