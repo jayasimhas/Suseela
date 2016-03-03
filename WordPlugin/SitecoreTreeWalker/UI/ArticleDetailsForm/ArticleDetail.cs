@@ -243,7 +243,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         {
             Globals.SitecoreAddin.Log("Updating fields...");
             articleDetailsPageSelector.UpdateFields(ArticleDetails);
-            articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.WorkflowState);
+            articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState);
         }
 
         /// <summary>
@@ -458,29 +458,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             return false;
         }
 
-        /*
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>True if the user is trying to nominate without any primary industries associated</returns>
-        protected bool PromptAddIndustryToNominate()
-        {
-            if (articleDetailsPageSelector.TryingToNominateWithNoIndustries())
-            {
-                MessageBox.Show(this, @"Please add at least 1 industry in order to nominate this article for the homepage.",
-                                @"Informa");
-                return true;
-            }
-            if (articleDetailsPageSelector.TryingToNominateWithNoPrimaryIndustries())
-            {
-                MessageBox.Show(this, @"The industries you have added do not have an associated primary industry. You must have an " +
-                                      @"industry taxonomy that has a primary industry.",
-                                @"Informa");
-                return true;
-            }
-            return false;
-        }*/
-
         public DialogResult AlertConnectionFailure()
         {
             return MessageBox.Show
@@ -576,11 +553,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
             DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
             //TODO - Workflow UI Updates
-            /*
+            
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                             ? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
                                             : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
-											*/
+											
             articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
             UpdateFieldsAfterSave();
             articleDetailsPageSelector.ResetChangedStatus(true);
@@ -714,7 +691,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
         }
 
-        private DialogResult WantsToSetArticleDateToNow(WorkflowCommand command)
+        private DialogResult WantsToSetArticleDateToNow(ArticleWorkflowCommand command)
         {
             if (command != null && command.SendsToFinal)
             {

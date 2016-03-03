@@ -18,6 +18,7 @@ using Sitecore.Web;
 using Informa.Library.Article.Search;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using PluginModels;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Utilities;
@@ -114,8 +115,8 @@ namespace Informa.Web.Controllers
 		private readonly ISitecoreService _sitecoreMasterService;
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
-		private readonly IArticleSearch _articleSearcher;               
-
+		private readonly IArticleSearch _articleSearcher;
+		//protected readonly IWorkFlowUtil WorkflowUtil;
 		/// <summary>
 		/// Constructor
 		/// </summary
@@ -124,7 +125,8 @@ namespace Informa.Web.Controllers
 		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
-			_articleSearcher = searcher;                     
+			_articleSearcher = searcher;
+			
 		}
 
 		/// <summary>
@@ -290,6 +292,7 @@ namespace Informa.Web.Controllers
 			return checkoutStatus;
 		}
 
+
 		public bool DoesArticleHaveText(ArticleItem article)
 		{
 			if (string.IsNullOrEmpty(article.Body))
@@ -421,7 +424,7 @@ namespace Informa.Web.Controllers
 
 			//TODO - Workflow -
 			//Uncomment this once workflow is tested properly
-		//	articleStruct.WorkflowState = _workflowController.GetWorkFlowState(articleItem._Id);
+			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
 
 
 			articleStruct.FeaturedImageSource = articleItem.Featured_Image_Source;
@@ -459,6 +462,45 @@ namespace Informa.Web.Controllers
 			}
 
 			return articleStruct;
+		}
+
+		public ArticleWorkflowState GetWorkFlowState(Guid articleId)
+		{
+			var item = _sitecoreMasterService.GetItem<Item>(articleId);
+			var currentState = item.State.GetWorkflowState();
+			Sitecore.Workflows.IWorkflow workflow = item.State.GetWorkflow();
+			var workFlowState = new ArticleWorkflowState();
+			workFlowState.IsFinal = currentState.FinalState;
+			workFlowState.DisplayName = currentState.DisplayName;
+			var commands = new List<ArticleWorkflowCommand>();
+			foreach (Sitecore.Workflows.WorkflowCommand command in workflow.GetCommands(item))
+			{
+				var wfCommand = new ArticleWorkflowCommand();
+				wfCommand.DisplayName = command.DisplayName;
+				wfCommand.StringID = command.CommandID;
+				ICommand commandItem = _sitecoreMasterService.GetItem<ICommand>(new Guid(command.CommandID));
+				IState nextStateItem = _sitecoreMasterService.GetItem<IState>(commandItem.Next_State);
+
+				if (nextStateItem != null)
+				{
+					wfCommand.SendsToFinal = nextStateItem.Final;
+					wfCommand.GlobalNotifyList = new List<StaffStruct>();
+					foreach (IStaff_Item staff in nextStateItem.Staffs)
+					{
+						if (staff.Inactive) { continue; }
+						var staffMember = new StaffStruct();
+						staffMember.ID = staff._Id;
+						staffMember.Name = staff.Last_Name + " , " + staff.First_Name;
+						//   staffMember.Publications = staff  //TODO :Check if this field if we need this field.
+						wfCommand.GlobalNotifyList.Add(staffMember);
+					}
+					commands.Add(wfCommand);
+				}
+			}
+			workFlowState.Commands = commands;
+
+			return workFlowState;
+
 		}
 	}
 }

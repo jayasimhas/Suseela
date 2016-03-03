@@ -248,7 +248,7 @@ namespace PluginModels
         public string Subtitle { get; set; }
         public string Summary { get; set; }
         public int WordCount { get; set; }
-        public WorkflowState WorkflowState { get; set; }
+        public ArticleWorkflowState ArticleWorkflowState { get; set; }
         public Guid CommandID { get; set; }
         public List<TaxonomyStruct> Taxonomoy { get; set; }
 
@@ -335,7 +335,7 @@ namespace PluginModels
 
     }
 
-    public class WorkflowCommand
+    public class ArticleWorkflowCommand
     {
         public string DisplayName { get; set; }
         public string StringID { get; set; }
@@ -343,10 +343,10 @@ namespace PluginModels
         public bool SendsToFinal { get; set; }
     }
 
-    public class WorkflowState
+    public class ArticleWorkflowState
     {
         public string DisplayName { get; set; }
-        public List<WorkflowCommand> Commands { get; set; }
+        public List<ArticleWorkflowCommand> Commands { get; set; }
         public bool IsFinal { get; set; }
     }
 
