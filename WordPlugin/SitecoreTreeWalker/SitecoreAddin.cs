@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -146,8 +147,9 @@ namespace InformaSitecoreWord
                     case SaveDialog.SaveChoice.SaveToSitecoreAndUnlock:
                         // at this point, there can be no metadata changes, only body text changes.
                         var _sitecoreClient = new SitecoreClient();
-
-                        var errors = _sitecoreClient.SaveArticle(doc, SitecoreClient.ForceReadArticleDetails(documentCustomProps.ArticleNumber), Guid.Empty, new StaffStruct[0], documentCustomProps.ArticleNumber);
+						//TODO - Add workflow stuff - not sure if its needed or not. Please refer old code
+                        var errors = _sitecoreClient.SaveArticle(doc, SitecoreClient.ForceReadArticleDetails(documentCustomProps.ArticleNumber), 
+							Guid.Empty, new List<StaffStruct>(), documentCustomProps.ArticleNumber);
 
                         if (errors.Count > 0)
                         {
