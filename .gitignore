@@ -77,7 +77,7 @@ _ReSharper*
 *.ncrunch*
 .*crunch*.local.xml
 
-# Installshield output folder 
+# Installshield output folder
 [Ee]xpress
 
 # DocProject is a documentation generator add-in
@@ -201,3 +201,6 @@ web/Website/local.js
 nant.send.bat
 web/Data
 web/Website/sitecore modules/Web/ExperienceExplorer
+
+!web/Website/node_modules/mdcss/**/*
+!web/Website/node_modules/runway-theme-velir/**/*
