@@ -139,6 +139,10 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
             _this.update();
         }
 
+        // _this.addCompany = function () {
+            
+        // }
+
 
 
 

@@ -63,13 +63,15 @@
     width: 100%;
     padding-bottom: 15px;
     color: $informa-black;
+    position: relative;
 
     h4 {
       display: inline;
     }
 
     button {
-      float: right;
+      position: absolute;
+      right: 5px;
     }
   }
 
@@ -96,26 +98,20 @@
       font-weight: 700;
     }
 
-    input[type="checkbox"] + label:before {
-      content: " ";
-      display: inline-block;
-      height: 17px;
-      width: 17px;
-      border: 1px solid $informa-light-gray-d;
-      border-radius: 20%;
-      margin-right: 10px;
-      vertical-align: text-bottom;
-    }
-
+    input[type="checkbox"] + label:before,
     input[type="radio"] + label:before {
       content: " ";
       display: inline-block;
       height: 17px;
       width: 17px;
       border: 1px solid $informa-light-gray-d;
-      border-radius: 50%;
+      border-radius: 20%;
       margin-right: 15px;
       vertical-align: text-bottom;
+    }
+
+    input[type="radio"] + label:before {
+      border-radius: 50%; // override above border-radius from style shared with checkbox
     }
 
     input[type="checkbox"]:checked + label:after {
@@ -146,6 +142,10 @@
 
     &--from {
       margin-top: 10px;
+    }
+
+    &--companies {
+      padding-left: 0;
     }
 
     legend {
@@ -190,21 +190,52 @@
       cursor: pointer;
     }
 
+    &--clear-company {
+      padding: 0;
+      margin-right: 11px;
+      
+      svg {
+        @include svg-fill($informa-red);
+        margin: 0;
+        width: 17px;
+        height: 17px;
+      }
+    }
+
     &--more,
-    &--less {
+    &--less, 
+    &--add {
       margin: 10px auto;
       width: 100%;
 
+      &.collapsed {
+      display: none;
+      }
+
       svg {
         @include svg-fill($informa-red);
-        width: 12px;
+        width: 10px;
         vertical-align: middle;
-        margin-left: 5px;
+        margin-left: 3px;
+      }
+    }
+
+    &--add {
+      svg {
+        vertical-align: text-top;
       }
     }
 
     &--toggle-section {
       @include svg-fill($color-medium-gray-8);
+      transition: all 300ms ease-in 0s;
+      transform-origin: 50%;
+      width: 16px;
+      height: 23px;
+
+      &.collapsed {
+        transform: rotate(180deg);
+      }
     }
 
     &--toggle-subcat {
