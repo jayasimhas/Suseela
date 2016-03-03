@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.Analytics;
 using Sitecore.Security.Authentication;
 
 namespace Informa.Library.User.Authentication
@@ -21,8 +20,9 @@ namespace Informa.Library.User.Authentication
 		public ILoginWebUserResult Login(string username, string password, bool persist)
 		{
 			var result = AuthenticateUser.Authenticate(username, password);
+			var state = result.State;
 			var authenticatedUser = result.User;
-			var authenticated = result.State == AuthenticateUserResultState.Success;
+			var authenticated = state == AuthenticateUserResultState.Success;
 
 			if (authenticated)
 			{
@@ -33,19 +33,13 @@ namespace Informa.Library.User.Authentication
 				sitecoreVirtualUser.Profile.Name = authenticatedUser.Name;
 
 				AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
-
-				var tracker = Tracker.Current;
-
-				if (tracker != null)
-				{
-					tracker.Session.Identify(authenticatedUser.Username);
-				}
 			}
 
 			return new LoginWebUserResult
 			{
+				State = state,
 				Success = authenticated,
-				Message = string.Empty
+				User = authenticatedUser
 			};
 		}
 	}
