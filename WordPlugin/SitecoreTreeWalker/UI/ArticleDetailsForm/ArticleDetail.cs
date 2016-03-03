@@ -243,7 +243,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         {
             Globals.SitecoreAddin.Log("Updating fields...");
             articleDetailsPageSelector.UpdateFields(ArticleDetails);
-            articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.WorkflowState);
+            articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState);
         }
 
         /// <summary>
@@ -336,9 +336,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = articleDetailsPageSelector.GetArticleDetails(metadataParser);
                     ArticleDetails.ArticleGuid = copy;
-                    List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
-                    //TODO - Add workflow commands and Notification List
-                    //List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body);
+                   List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
+                    //Uncomment this after workflow is tested properly.
+                   // List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument,ArticleDetails,articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand(),articleDetailsPageSelector.pageWorkflowControl.GetNotifyList().ToArray(),GetArticleNumber(), body, articleDetailsPageSelector.pageWorkflowControl.GetNotificationText());
 
                     if (errors != null && errors.Any())
                     {
@@ -368,7 +368,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
         protected void UpdateFieldsUsingSitecore()
         {
-            if (!articleDetailsPageSelector.CheckOut(false))
+            if (!articleDetailsPageSelector.CheckOut())
             {
                 if (!string.IsNullOrEmpty(ArticleDetails.ArticleNumber))
                 {
@@ -457,29 +457,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
             return false;
         }
-
-        /*
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>True if the user is trying to nominate without any primary industries associated</returns>
-        protected bool PromptAddIndustryToNominate()
-        {
-            if (articleDetailsPageSelector.TryingToNominateWithNoIndustries())
-            {
-                MessageBox.Show(this, @"Please add at least 1 industry in order to nominate this article for the homepage.",
-                                @"Informa");
-                return true;
-            }
-            if (articleDetailsPageSelector.TryingToNominateWithNoPrimaryIndustries())
-            {
-                MessageBox.Show(this, @"The industries you have added do not have an associated primary industry. You must have an " +
-                                      @"industry taxonomy that has a primary industry.",
-                                @"Informa");
-                return true;
-            }
-            return false;
-        }*/
 
         public DialogResult AlertConnectionFailure()
         {
@@ -576,11 +553,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
             DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
             //TODO - Workflow UI Updates
-            /*
+            
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                             ? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
                                             : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
-											*/
+											
             articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
             UpdateFieldsAfterSave();
             articleDetailsPageSelector.ResetChangedStatus(true);
@@ -714,7 +691,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
         }
 
-        private DialogResult WantsToSetArticleDateToNow(WorkflowCommand command)
+        private DialogResult WantsToSetArticleDateToNow(ArticleWorkflowCommand command)
         {
             if (command != null && command.SendsToFinal)
             {
@@ -764,8 +741,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 ArticleDetails.WordCount = SitecoreAddin.ActiveDocument.ComputeStatistics(0);
                 //TODO - Workflow commandId
-                //ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
-                SitecoreClient.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
+                ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
+				ArticleDetails.NotificationText = articleDetailsPageSelector.pageWorkflowControl.GetNotificationText();
+
+				SitecoreClient.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked)
                 {
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);

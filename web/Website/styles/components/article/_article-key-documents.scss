@@ -3,12 +3,16 @@
 }
 
 .article-key-document {
+    display: flex;
     padding: 0.33rem 0 0.66rem;
 
     &__icon {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 0.5rem;
+        margin-right: 0.75rem;
         height: 1.25rem;
+        flex: 0 0 auto;
+    }
+
+    a {
+        line-height: 1.375rem;
     }
 }

@@ -72,73 +72,38 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
-	public class GetWorkflowCommandsController : ApiController
+	public class WorkflowController : ApiController
 	{
 
 		private ISitecoreService _sitecoreService;
 		private readonly IArticleSearch _search;
 		private readonly IArticleSearchFilter _articleSearchFilter;
-		public GetWorkflowCommandsController(Func<string, ISitecoreService> sitecoreFactory, IArticleSearch search, IArticleSearchFilter articleSearchFilter)
+		private readonly ArticleUtil _articleUtil;
+		public WorkflowController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
 		{
 			_sitecoreService = sitecoreFactory(Constants.MasterDb);
-			_search = search;
-			_articleSearchFilter = articleSearchFilter;
+			_articleUtil = articleUtil;
 		}
 		// GET api/<controller>
 
-		public WorkflowState GetWorkFlowState(Guid articleId)
-		{
-			var item = _sitecoreService.GetItem<Item>(articleId);
-			var currentState = item.State.GetWorkflowState();
-			Sitecore.Workflows.IWorkflow workflow = item.State.GetWorkflow();
-			var workFlowState = new WorkflowState();
-			workFlowState.IsFinal = currentState.FinalState;
-			workFlowState.DisplayName = currentState.DisplayName;
-			var commands = new List<WorkflowCommand>();
-			foreach (Sitecore.Workflows.WorkflowCommand command in workflow.GetCommands(item))
-			{
-				var wfCommand = new WorkflowCommand();
-				wfCommand.DisplayName = command.DisplayName;
-				wfCommand.StringID = command.CommandID;
-				ICommand commandItem = _sitecoreService.GetItem<ICommand>(new Guid(command.CommandID));
-				IState nextStateItem = _sitecoreService.GetItem<IState>(commandItem.Next_State);
-
-				if (nextStateItem != null)
-				{
-					wfCommand.SendsToFinal = nextStateItem.Final;
-					wfCommand.GlobalNotifyList = new List<StaffStruct>();
-					foreach (IStaff_Item staff in nextStateItem.Staffs)
-					{
-						if (staff.Inactive) { continue; }
-						var staffMember = new StaffStruct();
-						staffMember.ID = staff._Id;
-						staffMember.Name = staff.Last_Name + " , " + staff.First_Name;
-						//   staffMember.Publications = staff  //TODO :Check if this field if we need this field.
-						wfCommand.GlobalNotifyList.Add(staffMember);
-					}
-					commands.Add(wfCommand);
-				}
-			}
-			workFlowState.Commands = commands;
-
-			return workFlowState;
-
-		}
+	
 
 		[Route]
-		public JsonResult<WorkflowState> Get(Guid articleGuid)
+		public JsonResult<ArticleWorkflowState> Get(Guid articleGuid)
 		{
-			var workFlowState = GetWorkFlowState(articleGuid);
+			var workFlowState = _articleUtil.GetWorkFlowState(articleGuid);
 			return Json(workFlowState);
 		}
 
-		public JsonResult<WorkflowState> Get(string articleNumber)
+		public JsonResult<ArticleWorkflowState> Get(string articleNumber)
 		{
-			_articleSearchFilter.ArticleNumber = articleNumber;
-			var searchResult = _search.Search(_articleSearchFilter);
-			var article = searchResult.Articles.FirstOrDefault();
-			var workflowState = GetWorkFlowState(article._Id);
-			return Json(workflowState);
+			var article = _articleUtil.GetArticleByNumber(articleNumber);
+			if (article != null)
+			{
+				var workflowState = _articleUtil.GetWorkFlowState(article._Id);
+				return Json(workflowState);
+			}
+			return Json(new ArticleWorkflowState());
 		}
 	}
 

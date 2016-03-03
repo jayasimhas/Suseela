@@ -621,7 +621,11 @@
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
     <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
-    <Compile Include="Areas\Account\Models\User\ResetPassword\ResetPasswordRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateValidationReason.cs" />
+    <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeValidationReason.cs" />
+    <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
@@ -630,7 +634,9 @@
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
+    <Compile Include="Controllers\DCDController.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
+    <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
@@ -638,6 +644,7 @@
     <Compile Include="Controllers\SitecorGetterController.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
+    <Compile Include="Controllers\WorkFlowUtil.cs" />
     <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
@@ -712,6 +719,7 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
@@ -967,6 +975,7 @@
     <Content Include="Views\Shared\Components\Subnavigation.cshtml" />
     <Content Include="Views\Shared\Test\UserResetPassword.cshtml" />
     <Content Include="Views\Shared\Components\BodyCopy.cshtml" />
+    <Content Include="Views\Search\HeaderSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

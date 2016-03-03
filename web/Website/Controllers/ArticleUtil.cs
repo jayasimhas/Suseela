@@ -18,6 +18,7 @@ using Sitecore.Web;
 using Informa.Library.Article.Search;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using PluginModels;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Utilities;
@@ -37,7 +38,6 @@ namespace Informa.Web.Controllers
 	{
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
-
 		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
 		{
 			ArticleSearcher = searcher;
@@ -116,7 +116,7 @@ namespace Informa.Web.Controllers
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 		private readonly IArticleSearch _articleSearcher;
-
+		//protected readonly IWorkFlowUtil WorkflowUtil;
 		/// <summary>
 		/// Constructor
 		/// </summary
@@ -126,6 +126,7 @@ namespace Informa.Web.Controllers
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleSearcher = searcher;
+			
 		}
 
 		/// <summary>
@@ -136,7 +137,7 @@ namespace Informa.Web.Controllers
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
 
-            ArticleItem articleItem = GetArticleByNumber(articleNumber);
+			ArticleItem articleItem = GetArticleByNumber(articleNumber);
 			if (articleItem != null)
 			{
 				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
@@ -183,7 +184,7 @@ namespace Informa.Web.Controllers
 			return new ArticlePreviewInfo
 			{
 				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,				
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
 				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				Date = article.Actual_Publish_Date,
@@ -192,13 +193,13 @@ namespace Informa.Web.Controllers
 			};
 		}
 
-        public ArticlePreviewInfo GetPreviewInfo(IArticle article)
-        {
-            return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
-        }
+		public ArticlePreviewInfo GetPreviewInfo(IArticle article)
+		{
+			return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
+		}
 
 
-        public string PreviewArticleURL(string articleNumber, string siteHost)
+		public string PreviewArticleURL(string articleNumber, string siteHost)
 		{
 			Guid guid = GetArticleByNumber(articleNumber)._Id;
 			if (guid.Equals(Guid.Empty))
@@ -219,25 +220,21 @@ namespace Informa.Web.Controllers
 			if (article.Locking.IsLocked())
 			{
 				throw new ApplicationException("Trying to lock an already locked article!");
-			}
-			//TODO - Might need to work on the user and login
-			/*
-			if (userID.IsNullOrEmpty())
+			}						
+			if (string.IsNullOrEmpty(Sitecore.Context.User.DisplayName))
 			{
 				return false;
 			}
-			bool loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
 			if (!loggedIn)
 			{
 				{ return false; }
 			}
-			*/
 
-	
-				using (new EditContext(article))
-				{
-					article.Locking.Lock();
-				}                                                                
+			using (new EditContext(article))
+			{
+				article.Locking.Lock();
+			}
 
 			return true;
 		}
@@ -256,19 +253,19 @@ namespace Informa.Web.Controllers
 			string userID = article.Locking.GetOwner();
 			if (string.IsNullOrEmpty(userID)) return false;
 			//TODO: assuming domain is specified here.
-		    bool loggedIn = Sitecore.Context.User.IsAuthenticated;
-			if (!loggedIn || !Sitecore.Context.GetUserName().EqualsIgnoreCase(userID) || !Sitecore.Context.IsAdministrator)
+			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
+			if (!loggedIn)
 			{
 				return false;
 			}
 
 			//TODO: use real security                             
-				using (new EditContext(article))
-				{
-					article.Locking.Unlock();
-					//there is already a new version created before saving an article
-					//var item = article.Versions.AddVersion();
-				}                                                 
+			using (new EditContext(article))
+			{
+				article.Locking.Unlock();
+				//there is already a new version created before saving an article
+				//var item = article.Versions.AddVersion();
+			}
 
 			return true;
 		}
@@ -294,6 +291,7 @@ namespace Informa.Web.Controllers
 
 			return checkoutStatus;
 		}
+
 
 		public bool DoesArticleHaveText(ArticleItem article)
 		{
@@ -394,8 +392,7 @@ namespace Informa.Web.Controllers
 			return dayFolder;
 		}
 
-		public ArticleStruct
-			GetArticleStruct(ArticleItem articleItem)
+		public ArticleStruct GetArticleStruct(ArticleItem articleItem)
 		{
 			var article = _sitecoreMasterService.GetItem<ArticleItem>(articleItem._Id);
 			var articleStruct = new ArticleStruct
@@ -425,19 +422,17 @@ namespace Informa.Web.Controllers
 
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
 
-			//TODO - Workflow - 
-			// In order to read the available commands for a given workflow state, we need to be in a secured environment.
-			//try
-			//{
-			//	articleStruct.WorkflowState = _workflowController.GetWorkflowState(this.ID.ToGuid());
-			//}
+			//TODO - Workflow -
+			//Uncomment this once workflow is tested properly
+			//articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
+
 
 			articleStruct.FeaturedImageSource = articleItem.Featured_Image_Source;
 			articleStruct.FeaturedImageCaption = articleItem.Featured_Image_Caption;
 			if (articleItem.Featured_Image_16_9 != null)
 			{ articleStruct.FeaturedImage = articleItem.Featured_Image_16_9.MediaId; }
 
-			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new TaxonomyStruct() { Name = r._Name, ID = r._Id , Section = r._Parent._Name}).ToList();
+			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new TaxonomyStruct() { Name = r._Name, ID = r._Id, Section = r._Parent._Name }).ToList();
 
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo((IArticle)a)).ToList();
 
@@ -467,6 +462,45 @@ namespace Informa.Web.Controllers
 			}
 
 			return articleStruct;
+		}
+
+		public ArticleWorkflowState GetWorkFlowState(Guid articleId)
+		{
+			var item = _sitecoreMasterService.GetItem<Item>(articleId);
+			var currentState = item.State.GetWorkflowState();
+			Sitecore.Workflows.IWorkflow workflow = item.State.GetWorkflow();
+			var workFlowState = new ArticleWorkflowState();
+			workFlowState.IsFinal = currentState.FinalState;
+			workFlowState.DisplayName = currentState.DisplayName;
+			var commands = new List<ArticleWorkflowCommand>();
+			foreach (Sitecore.Workflows.WorkflowCommand command in workflow.GetCommands(item))
+			{
+				var wfCommand = new ArticleWorkflowCommand();
+				wfCommand.DisplayName = command.DisplayName;
+				wfCommand.StringID = command.CommandID;
+				ICommand commandItem = _sitecoreMasterService.GetItem<ICommand>(new Guid(command.CommandID));
+				IState nextStateItem = _sitecoreMasterService.GetItem<IState>(commandItem.Next_State);
+
+				if (nextStateItem != null)
+				{
+					wfCommand.SendsToFinal = nextStateItem.Final;
+					wfCommand.GlobalNotifyList = new List<StaffStruct>();
+					foreach (IStaff_Item staff in nextStateItem.Staffs)
+					{
+						if (staff.Inactive) { continue; }
+						var staffMember = new StaffStruct();
+						staffMember.ID = staff._Id;
+						staffMember.Name = staff.Last_Name + " , " + staff.First_Name;
+						//   staffMember.Publications = staff  //TODO :Check if this field if we need this field.
+						wfCommand.GlobalNotifyList.Add(staffMember);
+					}
+					commands.Add(wfCommand);
+				}
+			}
+			workFlowState.Commands = commands;
+
+			return workFlowState;
+
 		}
 	}
 }

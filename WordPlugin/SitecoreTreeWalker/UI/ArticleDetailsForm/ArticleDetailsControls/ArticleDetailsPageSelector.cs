@@ -37,23 +37,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             MenuItems.Add(WorkflowMenuItem);
             MenuItems.Add(FeaturedImagesMenuItem);
             MenuItems.Add(TaxonomyMenuItem);
-            //MenuItems.Add(NotesMenuItem);
 
             ArticleInformationMenuItem.SetMenuTitle("Article Information");
-            //RelatedDealsMenuItem.SetMenuTitle("Related Deals");
-            //RelatedDealsMenuItem.SetIndicatorIcon(Properties.Resources.blankred);
-            //RelatedDealsMenuItem.SetIndicatorNumber("0");
             RelatedArticlesMenuItem.SetMenuTitle("Related Articles");
-            //SupportingDocumentsMenuItem.SetMenuTitle("Supporting Documents");
-            //SupportingDocumentsMenuItem.SetIndicatorNumber("0");
-            //SupportingDocumentsMenuItem.SetIndicatorIcon(Properties.Resources.blankred);
-            //CompaniesMenuItem.SetMenuTitle("Companies");
-            //CompaniesMenuItem.SetIndicatorNumber("0");
-            //CompaniesMenuItem.SetIndicatorIcon(Properties.Resources.blankred);
             WorkflowMenuItem.SetMenuTitle("Workflow");
             FeaturedImagesMenuItem.SetMenuTitle("Featured Image");
-            TaxonomyMenuItem.SetMenuTitle("Taxonomy");
-            //NotesMenuItem.SetMenuTitle("Notes");			       
+            TaxonomyMenuItem.SetMenuTitle("Taxonomy");		       
         }
 
         public void InitializePages()
@@ -120,14 +109,14 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
                 NotesToEditorial = pageArticleInformationControl.GetNotes(),
                 Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
-                //Subjects = pageSubjectsControl.TabController.GetSelected(),
-                //NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
                 RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
                 RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),
                 ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
-                FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource()
+                FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
+				NotificationText = pageWorkflowControl.GetNotificationText(),
+				CommandID = pageWorkflowControl.GetSelectedCommand()								
             };
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)
@@ -161,7 +150,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
-            };
+				NotificationText = pageWorkflowControl.GetNotificationText(),
+				//CommandID = pageWorkflowControl.GetSelectedCommand()		
+			};
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)
             {
@@ -339,7 +330,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             pageArticleInformationControl.UpdateFields(articleDetails);
             pageRelatedArticlesControl.UpdateFields(articleDetails);
             pageFeaturedImageControl.UpdateFields(articleDetails);
-            //pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
+            //pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState);
             pageTaxonomyControl.UpdateFields(articleDetails);
 
             if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
@@ -348,7 +339,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             }
             //pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());	
             pageTaxonomyControl.TabController.UpdateFields(articleDetails.Taxonomoy.ToList());
-            pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
+            pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState);
         }
 
         /// <summary>

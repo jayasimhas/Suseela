@@ -77,6 +77,10 @@
     <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
+    <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
+    <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />
