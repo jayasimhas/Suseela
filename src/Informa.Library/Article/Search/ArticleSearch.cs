@@ -111,7 +111,23 @@ namespace Informa.Library.Article.Search
 				};
 			}
 		}
-		public long GetNextArticleNumber(Guid publicationGuid)
+        
+        public IEnumerable<IArticle> NewsSitemapSearch(string path)
+        {
+            using (var context = SearchContextFactory.Create())
+            {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                    .Where(j => j.Path.StartsWith(path.ToLower()) && j.ActualPublishDate > DateTime.Now.AddDays(-3));
+                
+                query = query.OrderByDescending(i => i.ActualPublishDate); 
+                var results = query.GetResults();
+
+                return results.Hits.Select(h => SitecoreContext.GetItem<IArticle>(h.Document.ItemId.Guid)).Where(a => a != null);
+            }
+        }
+
+        public long GetNextArticleNumber(Guid publicationGuid)
 		{
 		    using (var context = SearchContextFactory.Create("master"))
 		    {
