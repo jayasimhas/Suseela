@@ -439,7 +439,7 @@ namespace Informa.Web.Controllers
 			{
 				var wordDocURL = articleItem.Word_Document.Url;
 				wordDocURL = wordDocURL.Replace("-", " ");
-				var wordDoc = Sitecore.Context.Database.GetItem(wordDocURL);
+				var wordDoc = _sitecoreMasterService.GetItem<Item>(wordDocURL);
 
 				if (wordDoc != null)
 				{
