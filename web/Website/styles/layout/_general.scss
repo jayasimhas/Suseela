@@ -1,3 +1,23 @@
+/*---
+title: Account Access - Headers
+section: Home/Topic Page Components
+---
+
+```example:html
+<div class="general-header">
+    <div class="general-header__section-title">
+        Name of Section
+    </div>
+    <div class="general-header__navigation">
+        <a href="#" class="is-active">General Content Page V1</a>
+        <a href="#">Page Name</a>
+        <a href="#">Page Name</a>
+        <a href="#">Page Name</a>
+    </div>
+</div>
+```
+*/
+
 .general-header {
     &__section-title {
         @include textMix('Roboto', 1.25rem, 500);
