@@ -5,19 +5,25 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
     var _this = this;
 
     var init = function () {
-        _this.currentDateRange = _this.getDateFilterLabel();
-        _this.ValidDates = true;
 
-        _this.DateFilters = [
-             { label: 'Last 24 hours', key: 'day' },
-             { label: 'Last 3 days', key: 'threedays' },
-             { label: 'Last week', key: 'week' },
-             { label: 'Last month', key: 'month' },
-             { label: 'Last year', key: 'year' }
-        ];
-
+        // General Facets stuff
+        _this.facetGroups = searchService.getFacetGroups();
+        _this.searchService = searchService;
+        _this.location = $location;
+        _this.searchBootstrapper = searchBootstrapper;
         _this.MaxFacetShow = 5;
 
+        // Date Facet stuff
+        _this.currentDateRange = _this.getDateFilterLabel();
+        _this.ValidDates = true;
+        _this.DateFilters = [
+             { label: 'Last 24 hours', key: 'day', selected: false },
+             { label: 'Last 3 days', key: 'threedays', selected: false },
+             { label: 'Last week', key: 'week', selected: false },
+             { label: 'Last month', key: 'month', selected: false },
+             { label: 'Last year', key: 'year', selected: false },
+             { label: 'Select date range', key: 'custom', selected: false}
+        ];
 
         //_this.CustomStartDate = jq("#facet-by-start-date");
         //_this.CustomEndDate = jq("#facet-by-end-date");
@@ -38,111 +44,116 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         //}
     };
 
+    $scope.$watch(function () {
+        return searchService.getPager();
+    }, function () {
         _this.facetGroups = searchService.getFacetGroups();
-        _this.searchService = searchService;
-        _this.location = $location;
-        _this.searchBootstrapper = searchBootstrapper;
+    }, true);
 
+    _this.update = function () {
+        _this.searchService.getFilter('page').setValue('1');
+        var routeBuilder = this.searchService.getRouteBuilder();
+        _this.location.search(routeBuilder.getRoute());
+        _this.searchService.query();
+        // _this.scrollTop();
+    }
 
-        $scope.$watch(function () {
-            return searchService.getPager();
-        }, function () {
-            _this.facetGroups = searchService.getFacetGroups();
+    _this.facetChange = function (facet) {
+        _this.searchService.getFacet(facet.id).selected = facet.selected;
+        _this.update();
+    }
 
-        }, true);
+    _this.scrollTop = function () {
+        // var location = jq(".search-facets__header").offset().top;
+        //window.scrollTo(0, location - 80);
+    }
 
-        _this.update = function () {
-            _this.searchService.getFilter('page').setValue('1');
-            var routeBuilder = this.searchService.getRouteBuilder();
-            _this.location.search(routeBuilder.getRoute());
-            _this.searchService.query();
-            _this.scrollTop();
+    // _this.clearGroup = function (groupId) {
+    //     var facets = _this.searchService.getFacetGroup(groupId).getSelectedFacets();
+    //     _.each(facets, function (facet) {
+    //         facet.selected = false;
+    //     });
+    //     this.update();
+    // }
+
+    _this.hasSelected = function (values) {
+        return _.find(values, { selected: true }) ? true : false;
+    };
+
+    _this.getFilter = function (filterKey) {
+        var filter = _this.searchService.getFilter(filterKey);
+        if (!filter) {
+            _this.searchBootstrapper.createFilter(filterKey, "");
+            filter = _this.searchService.getFilter(filterKey);
         }
+        return filter;
+    }
 
-        _this.facetChange = function (facet) {
-            _this.searchService.getFacet(facet.id).selected = facet.selected;
-            _this.update();
-        }
 
-        _this.scrollTop = function () {
-            // var location = jq(".search-facets__header").offset().top;
-            //window.scrollTo(0, location - 80);
-        }
-
-        // _this.clearGroup = function (groupId) {
-        //     var facets = _this.searchService.getFacetGroup(groupId).getSelectedFacets();
-        //     _.each(facets, function (facet) {
-        //         facet.selected = false;
-        //     });
-        //     this.update();
-        // }
-
-        _this.hasSelected = function (values) {
-            return _.find(values, { selected: true }) ? true : false;
-        };
-
-        _this.clearAllFacets = function () {
-            // _this.clearPublicationDate();
-            var facetClear = this;
-            var facetGroups = facetClear.facetGroups;
-            _.each(facetGroups, function (group) {
-                //_this.clearGroup(group.id)
-                var facets = _this.searchService.getFacetGroup(group.id).getSelectedFacets();
-                _.each(facets, function (facet) {
-                    facet.selected = false;
-                });
+    _this.clearAllFacets = function () {
+        // _this.clearPublicationDate();
+        var facetClear = this;
+        var facetGroups = facetClear.facetGroups;
+        _.each(facetGroups, function (group) {
+            // _this.clearGroup(group.id)
+            var facets = _this.searchService.getFacetGroup(group.id).getSelectedFacets();
+            _.each(facets, function (facet) {
+                facet.selected = false;
             });
-            this.update();
-            _this.currentDateRange = "";
-            _this.checkSelectedDateRange();
-        };
+        });
+        _this.clearDateRange();
+        this.update();
+    };
 
-        _this.getFilter = function (filterKey) {
-            var filter = _this.searchService.getFilter(filterKey);
-            if (!filter) {
-                _this.searchBootstrapper.createFilter(filterKey, "");
-                filter = _this.searchService.getFilter(filterKey);
-            }
-            return filter;
-        }
+    _this.clearFilter = function (filterKey) {
+        var filter = _this.getFilter(filterKey);
+        filter.setValue("");
+    }
 
-        _this.clearFilter = function (filterKey) {
-            var filter = _this.getFilter(filterKey);
-            filter.setValue("");
-        }
+    _this.clearDateRange = function () {
+        var filter = _this.getFilter('date');
+        console.log(filter);
+        filter.setValue("");
+        filter.selected = false;
+        var filterDateLabel = _this.getFilter('dateFilterLabel');
+        console.log(filterDateLabel);
+        filterDateLabel.setValue("");
+        _this.currentDateRange = "";
+        _this.update();
+        console.log("ran date clear");
+    }    
 
-        _this.getDateFilterLabel = function () {
-            var filterDateLabel = _this.getFilter('dateFilterLabel');
-            return filterDateLabel._value;
-        }
-        
-        _this.dateRangeSearch = function (filterKey, dateFilter) {
-            var filter = _this.getFilter(filterKey);
-            var filterDateLabel = _this.getFilter('dateFilterLabel');
+    _this.getDateFilterLabel = function () {
+        var filterDateLabel = _this.getFilter('dateFilterLabel');
+        return filterDateLabel._value;
+    }
 
-            if (dateFilter == _this.currentDateRange) {
 
-                _this.currentDateRange = "";
-                filterDateLabel.setValue("");
-                filter.setValue("");
-            } else {
-                var startDate = datesObject[dateFilter];
-                var endDate = datesObject['day'];
-                _this.currentDateRange = dateFilter;
+    _this.dateRangeSearch = function (filterKey, dateFilter) {
+        var filter = _this.getFilter(filterKey);
+        var filterDateLabel = _this.getFilter('dateFilterLabel');
+        console.log("date range: ", dateFilter);
 
-                filterDateLabel.setValue(dateFilter);
-                filter.setValue(startDate + ";" + endDate);
-            }
-            //_this.CustomStartDate.val('');
-           // _this.CustomEndDate.val('');
-           // _this.checkSelectedDateRange();
-            _this.update();
-        }
+        // if (dateFilter == _this.currentDateRange) {
+            // _this.clearDateRange(filterKey);
+            // _this.currentDateRange = "";
+            // filterDateLabel.setValue("");
+            // filter.setValue("");
+        // } else {
+        var startDate = datesObject[dateFilter];
+        var endDate = datesObject['day'];
+        _this.currentDateRange = dateFilter;
 
-        // _this.addCompany = function () {
-            
+        filterDateLabel.setValue(dateFilter);
+        filter.setValue(startDate + ";" + endDate);
         // }
+        //_this.CustomStartDate.val('');
+       // _this.CustomEndDate.val('');
+       // _this.checkSelectedDateRange();
+        _this.update();
+    }
 
+    
 
 
 

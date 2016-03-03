@@ -130,22 +130,42 @@
           </button>
         </legend>
         <ul class="facets__section-list" ng-hide="collapsedate">
-            <li ng-repeat="dateFilter in allFacets.DateFilters">
-                <input type="radio" name="date-facet" id="{{dateFilter.key}}" ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
-                <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
-            </li>
-            <li><input type="radio" name="date-facet" id="custom-range"><label for="custom-range">Select date range</label>
-                <div class="facets__field-group facets__field-group--from">
-                    <legend>From</legend>
-                    <input type="date" placeholder="dd/mm/yyyy">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
-                </div>
-                <div class="facets__field-group facets__field-group--to">
-                    <legend>To</legend>
-                    <input type="date" placeholder="dd/mm/yyyy">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
-                </div>
-            </li>
+          <li ng-repeat="dateFilter in allFacets.DateFilters">
+              <input 
+                type="radio" 
+                name="date-facet" 
+                id="{{dateFilter.key}}"
+                ng-model="dateFilter.selected"
+                ng-value=true
+                ng-checked="{{dateFilter.selected}}"
+                ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
+              <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
+              
+              <div class="facets__field-group facets__field-group--from" ng-show="$last">
+                <label>From</label>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+              </div>
+              <div class="facets__field-group facets__field-group--to" ng-show="$last">
+                <label>To</label>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeTo">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+              </div>
+          </li>
+          <!-- <li>
+            <input type="radio" name="date-facet" id="custom-range">
+            <label for="custom-range">Select date range</label>
+            <div class="facets__field-group facets__field-group--from">
+                <legend>From</legend>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+            </div>
+            <div class="facets__field-group facets__field-group--to">
+                <legend>To</legend>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeTo">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+            </div>
+          </li> -->
         </ul>
       </fieldset>
     </form>

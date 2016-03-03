@@ -136,9 +136,6 @@
       font-size: 30px;
     }
 
-    .facets__company-input {
-
-    }
   }
 
   &__field-group {
@@ -152,9 +149,10 @@
       padding: 0;
     }
 
-    legend {
+    label {
       color: $color-medium-gray-8;
       font-size: 13px;
+      display: block;
 
       h4 {
         display: inline;
