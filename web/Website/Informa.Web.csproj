@@ -618,9 +618,12 @@
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
+    <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
     <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeValidationReason.cs" />
@@ -872,6 +875,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Account\Views\Register\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
