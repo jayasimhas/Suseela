@@ -12,7 +12,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public ArticleWorkflowInfo(ArticleDetail parent)
         {                        
             InitializeComponent();
-            uxWorkflowState.Text = parent.ArticleDetails.WorkflowState.DisplayName;
+            uxWorkflowState.Text = parent.ArticleDetails.ArticleWorkflowState.DisplayName;
             uxPublishedOn.Text = parent.ArticleDetails.WebPublicationDate.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
         }
 	}
