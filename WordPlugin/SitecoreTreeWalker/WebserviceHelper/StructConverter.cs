@@ -1,7 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using PluginModels;
-using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 
 namespace InformaSitecoreWord.WebserviceHelper
 {
@@ -10,35 +8,36 @@ namespace InformaSitecoreWord.WebserviceHelper
 
 		public ArticleStruct GetServerStruct(ArticleStruct articleStruct)
 		{
-			var articleDetails = new ArticleStruct();
-			articleDetails.Publication = articleStruct.Publication;
-			articleDetails.ArticleNumber = articleStruct.ArticleNumber;
-			articleDetails.Title = articleStruct.Title;
-
-			articleDetails.Label = articleStruct.Label;
-			articleDetails.WebPublicationDate = articleStruct.WebPublicationDate;
-			articleDetails.PrintPublicationDate = articleStruct.PrintPublicationDate;
-			articleDetails.Embargoed = articleStruct.Embargoed;
-			articleDetails.MediaType = articleStruct.MediaType;
-			articleDetails.Authors = articleStruct.Authors.Select(r => new StaffStruct { ID = r.ID, Name = r.Name, Publications = r.Publications }).ToList();
-			articleDetails.NotesToEditorial = articleStruct.NotesToEditorial;
-
-			articleDetails.RelatedInlineArticles = articleStruct.RelatedInlineArticles;
-
-			//TODO - Workflow
-
-			articleDetails.FeaturedImage = articleStruct.FeaturedImage;
-			articleDetails.FeaturedImageCaption = articleStruct.FeaturedImageCaption;
-			articleDetails.FeaturedImageSource = articleStruct.FeaturedImageSource;
-			articleDetails.Taxonomoy = articleStruct.Taxonomoy;
-			articleDetails.RelatedArticles = articleStruct.RelatedArticles;
-			articleDetails.ReferencedDeals = articleStruct.ReferencedDeals;
-			articleDetails.Subtitle = articleStruct.Subtitle;
-			articleDetails.Summary = articleStruct.Summary;
-			articleDetails.CommandID = articleStruct.CommandID;
-			articleDetails.WordCount = articleStruct.WordCount;
-			articleDetails.SupportingDocumentPaths = articleStruct.SupportingDocumentPaths;
-			//articleDetails.ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.Select(n => new StaffStruct{Name = n.Name,ID = n.ID,Publications = n.Publications,}).ToArray();
+			var articleDetails = new ArticleStruct
+			{
+				Publication = articleStruct.Publication,
+				ArticleNumber = articleStruct.ArticleNumber,
+				Title = articleStruct.Title,
+				Label = articleStruct.Label,
+				WebPublicationDate = articleStruct.WebPublicationDate,
+				PrintPublicationDate = articleStruct.PrintPublicationDate,
+				Embargoed = articleStruct.Embargoed,
+				MediaType = articleStruct.MediaType,
+				Authors =
+					articleStruct.Authors.Select(r => new StaffStruct { ID = r.ID, Name = r.Name, Publications = r.Publications })
+						.ToList(),
+				NotesToEditorial = articleStruct.NotesToEditorial,
+				RelatedInlineArticles = articleStruct.RelatedInlineArticles,
+				ArticleWorkflowState = articleStruct.ArticleWorkflowState,
+				FeaturedImage = articleStruct.FeaturedImage,
+				FeaturedImageCaption = articleStruct.FeaturedImageCaption,
+				FeaturedImageSource = articleStruct.FeaturedImageSource,
+				Taxonomoy = articleStruct.Taxonomoy,
+				RelatedArticles = articleStruct.RelatedArticles,
+				ReferencedDeals = articleStruct.ReferencedDeals,
+				Subtitle = articleStruct.Subtitle,
+				Summary = articleStruct.Summary,
+				CommandID = articleStruct.CommandID,
+				WordCount = articleStruct.WordCount,
+				SupportingDocumentPaths = articleStruct.SupportingDocumentPaths,
+				ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.
+					Select(n => new StaffStruct { Name = n.Name, ID = n.ID, }).ToList()
+			};
 
 			return articleDetails;
 		}

@@ -382,8 +382,7 @@ namespace Informa.Web.Controllers
 			return Json(_search.GetNextArticleNumber(new Guid(publicationGuid)));
 		}
 	}
-
-	//TODO: This might have bugs, and would need to fix it.
+	
 	[Route]
 	public class GetWidthHeightOfMediaItemController : ApiController
 	{

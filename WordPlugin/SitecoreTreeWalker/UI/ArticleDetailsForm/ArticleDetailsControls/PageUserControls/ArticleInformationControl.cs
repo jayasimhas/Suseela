@@ -311,7 +311,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 				if (IsCheckedOut)
 				{
 					//TODO - This is a hack. Security might be at risk
-					if (SitecoreUser.GetUser().Username == checkedOut.User || checkedOut.User == "extranet\\Anonymous")
+					if (SitecoreUser.GetUser().Username == checkedOut.User)
 					{ //locked by me
 
 						IndicateCheckedOutByMe(checkedOut);
