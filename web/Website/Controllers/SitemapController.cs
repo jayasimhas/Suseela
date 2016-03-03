@@ -58,7 +58,8 @@ namespace Informa.Web.Controllers
             else
             {
                 //get it fresh
-                string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/sitemap-news";
+                string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "");
+                string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/{path}";
                 using (WebClient client = new WebClient())
                 {
                     client.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
