@@ -14,18 +14,25 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public DealInfo GetDealInfo(string recordNumber)
         {
-            DealInfo dealInfo;
-
-            Deal deal = new DCDManager().GetDealByRecordNumber(recordNumber);
-
-            dealInfo = new DealInfo
+            DealInfo dealInfo = new DealInfo();
+            try
             {
-                DealDate = deal.Created,
-                ID = deal.RecordId.ToString(),
-                LastUpdated = deal.LastModified,
-                Name = deal.Title,
-                Url = string.Format(System.Configuration.ConfigurationManager.AppSettings["DCD.OldDealsURL"], recordNumber)
-            };
+                Deal deal = new DCDManager().GetDealByRecordNumber(recordNumber);
+
+                dealInfo = new DealInfo
+                {
+                    DealDate = deal.Created,
+                    ID = deal.RecordId.ToString(),
+                    LastUpdated = deal.LastModified,
+                    Name = deal.Title,
+                    Url = string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL"), recordNumber)
+                };
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("GetDealInfo API error:", ex);
+            }
+
             return dealInfo;
         }
     }
@@ -36,10 +43,18 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public List<CompanyWrapper> GetAllCompanies()
         {
-            List<CompanyWrapper> lstDbCompanies;
-            List<Company> tempLstComp = new DCDManager().GetAllCompanies();
+            List<CompanyWrapper> lstDbCompanies = null;
+            try
+            {
+                List<Company> tempLstComp = new DCDManager().GetAllCompanies();
 
-            lstDbCompanies = tempLstComp.Select(comp => new CompanyWrapper { Parent = null, RecordID = comp.RecordId, RecordNumber = comp.RecordNumber, RelatedCompanies = new List<CompanyWrapper>(), Title = comp.Title, }).ToList();
+                lstDbCompanies = tempLstComp.Select(comp => new CompanyWrapper { Parent = null, RecordID = comp.RecordId, RecordNumber = comp.RecordNumber, RelatedCompanies = new List<CompanyWrapper>(), Title = comp.Title, }).ToList();
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("GetAllCompanies API error:", ex);
+            }
+
             return lstDbCompanies;
         }
     }
@@ -50,9 +65,17 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public List<CompanyWrapper> GetAllCompaniesWithRelated()
         {
-            List<CompanyWrapper> lstDbCompanies;
+            List<CompanyWrapper> lstDbCompanies = null;
+            try
+            {
+                lstDbCompanies = GetWithRelated().ToList();
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("GetAllCompaniesWithRelated API error:", ex);
+            }
 
-            return GetWithRelated().ToList();
+            return lstDbCompanies;
         }
 
         private IEnumerable<CompanyWrapper> GetWithRelated()
