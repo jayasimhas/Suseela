@@ -64,10 +64,12 @@ namespace Informa.Web.ViewModels
                         Children = new List<HierarchyLinks>()
                     };
 
-                    taxonomyItems.Add(item._Id, lItem);   
+                    if(!taxonomyItems.ContainsKey(item._Id))
+                        taxonomyItems.Add(item._Id, lItem);   
                     var parent = taxonomyItems[item._Parent._Id];
                     var pList = parent.Children.ToList();
-                    pList.Add(lItem);
+                    if(!pList.Any(a => a.Text.Equals(lItem.Text)))
+                        pList.Add(lItem);
 
                     parent.Children = pList; 
                 }
