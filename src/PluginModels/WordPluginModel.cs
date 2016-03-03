@@ -248,7 +248,7 @@ namespace PluginModels
         public string Subtitle { get; set; }
         public string Summary { get; set; }
         public int WordCount { get; set; }
-        public WorkflowState WorkflowState { get; set; }
+        public ArticleWorkflowState ArticleWorkflowState { get; set; }
         public Guid CommandID { get; set; }
         public List<TaxonomyStruct> Taxonomoy { get; set; }
 
@@ -319,6 +319,12 @@ namespace PluginModels
         public DateTime LastUpdated { get; set; }
         public List<string> Companies { get; set; }
         public string Url { get; set; }
+
+        public bool IsEmpty()
+        {
+            int outId;
+            return string.IsNullOrEmpty(ID) || int.TryParse(ID, out outId) == false || int.Parse(ID) < 1 || string.IsNullOrEmpty(Name);
+        }
     }
 
     public class WordStyleStruct
@@ -335,7 +341,7 @@ namespace PluginModels
 
     }
 
-    public class WorkflowCommand
+    public class ArticleWorkflowCommand
     {
         public string DisplayName { get; set; }
         public string StringID { get; set; }
@@ -343,10 +349,10 @@ namespace PluginModels
         public bool SendsToFinal { get; set; }
     }
 
-    public class WorkflowState
+    public class ArticleWorkflowState
     {
         public string DisplayName { get; set; }
-        public List<WorkflowCommand> Commands { get; set; }
+        public List<ArticleWorkflowCommand> Commands { get; set; }
         public bool IsFinal { get; set; }
     }
 
@@ -417,7 +423,7 @@ namespace PluginModels
 
         public string Title { get; set; }
 
-        public CompanyWrapper[] RelatedCompanies { get; set; }
+        public List<CompanyWrapper> RelatedCompanies { get; set; }
 
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public System.Nullable<int> Parent { get; set; }

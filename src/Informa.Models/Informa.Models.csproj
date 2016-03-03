@@ -84,7 +84,9 @@
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,6 +100,17 @@
   <ItemGroup>
     <Compile Include="AncestorDataMapper.cs" />
     <Compile Include="CoreGlassModels.cs" />
+    <Compile Include="DCD\CompanyTokenizer.cs" />
+    <Compile Include="DCD\DCDConstants.cs" />
+    <Compile Include="DCD\DCDContext.cs">
+      <DependentUpon>DCDContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DCD\DCDContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCDContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DCD\DCDManager.cs" />
     <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
     <Compile Include="GlassModels\IPage_Assets.cs" />
@@ -116,9 +129,21 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="App_Config\Include\Jabberwocky.Glass.config" />
+    <None Include="DCD\DCDContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DCDContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DCD\DCDContext.dbml.layout">
+      <DependentUpon>DCDContext.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

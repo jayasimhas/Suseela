@@ -1,0 +1,21 @@
+.article-exhibit {
+	&__title {
+		@extend h4;
+		margin-bottom: 1rem !important;
+		line-height: 1.5rem !important;
+	}
+	&__caption,
+	&__source {
+		@include textMix('Roboto', 13px, 400);
+	    color: $informa-mid-gray;
+	    margin-bottom: 0 !important;
+	    line-height: 1.5rem !important;
+	    display: block;
+	    text-transform: uppercase;
+	    letter-spacing: 1px;
+	}
+	&__source {
+    	float: right;
+		font-style: italic;
+	}
+}

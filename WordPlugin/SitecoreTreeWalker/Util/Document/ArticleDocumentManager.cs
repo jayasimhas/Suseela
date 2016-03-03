@@ -103,7 +103,7 @@ namespace InformaSitecoreWord.Util.Document
                     var sitecoreClient = new SitecoreClient();
 
                     //Save to sitecore and get back a list of errors if occur
-                    List<string> errors = sitecoreClient.SaveArticle(SitecoreAddin.ActiveDocument, _articleDetails, new Guid(), new StaffStruct[0], articleNumber, null);
+                    List<string> errors = sitecoreClient.SaveArticle(SitecoreAddin.ActiveDocument, _articleDetails, new Guid(), new List<StaffStruct>(), articleNumber, null);
 
                     if (errors != null && errors.Any())
                     {

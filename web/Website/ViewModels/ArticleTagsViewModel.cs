@@ -4,6 +4,8 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.Search.Utilities;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Web.ViewModels
 {
@@ -18,7 +20,11 @@ namespace Informa.Web.ViewModels
 			ArticleRenderingContext = articleRenderingContext;
 		}
 
-		public IEnumerable<ILinkable> Tags
-			=> ArticleRenderingContext.Get<IArticle>().Taxonomies.Take(3).Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = "/search?tag=" + x._Id });
+	    public IEnumerable<ILinkable> Tags
+	        => ArticleRenderingContext.Get<IArticle>().Taxonomies.Take(3).Select(x => new LinkableModel
+	        {
+	            LinkableText = x.Item_Name,
+	            LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
+	        });
 	}
 }

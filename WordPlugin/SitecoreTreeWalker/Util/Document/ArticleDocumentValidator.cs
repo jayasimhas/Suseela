@@ -70,7 +70,7 @@ namespace InformaSitecoreWord.Util.Document
             return true;
         }
 
-        public bool IsValidArticleDate(ArticleStruct articleDetails, WorkflowCommand command)
+        public bool IsValidArticleDate(ArticleStruct articleDetails, ArticleWorkflowCommand command)
         {
             var articleDate = articleDetails.WebPublicationDate;
             if (articleDate < DateTime.Now)
@@ -139,7 +139,7 @@ namespace InformaSitecoreWord.Util.Document
             return false;
         }
 
-        private DialogResult WantsToSetArticleDateToNow(WorkflowCommand command)
+        private DialogResult WantsToSetArticleDateToNow(ArticleWorkflowCommand command)
         {
             if (command != null && command.SendsToFinal)
             {

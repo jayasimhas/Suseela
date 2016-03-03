@@ -4648,6 +4648,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+ 	/// <summary>
+	/// ISitemap_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Sitemap Page</para>	
+	/// <para>ID: 8b36b852-c8e2-49fd-8df4-7a09a546bf8e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISitemap_PageConstants.TemplateIdString)]
+	public partial interface ISitemap_Page : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ISitemap_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Sitemap Page</para>	
+		/// <para>ID: 8b36b852-c8e2-49fd-8df4-7a09a546bf8e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISitemap_Page__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ISitemap_PageConstants{
+
+			public const string TemplateIdString = "8b36b852-c8e2-49fd-8df4-7a09a546bf8e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Sitemap Page";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -5488,6 +5526,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	public partial interface ISite_Config : IGlassBase 
 	{
 								/// <summary>
+					/// The Email From Address field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6f5117bc-2706-48da-b5d3-0fd785fd9979</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_From_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_From_Address  {get; set;}
+								/// <summary>
+					/// The Email Logo field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 223891e7-0345-450b-a858-a10fda0f718d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Email_Logo  {get; set;}
+								/// <summary>
+					/// The RSS Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: e7da68a3-d817-487f-99d9-8a27aba050ed</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.RSS_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link RSS_Link  {get; set;}
+								/// <summary>
 					/// The Copyright Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -5514,15 +5579,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Footer_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Footer_Logo  {get; set;}
-								/// <summary>
-					/// The LinkedIn Link field.
-					/// <para></para>
-					/// <para>Field Type: General Link</para>		
-					/// <para>Field ID: 31f9f75c-54a7-43a5-a248-66e1f19a5469</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Link LinkedIn_Link  {get; set;}
 								/// <summary>
 					/// The Local Footer Links field.
 					/// <para></para>
@@ -5595,15 +5651,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Subscribe_Link  {get; set;}
-								/// <summary>
-					/// The Twitter Link field.
-					/// <para></para>
-					/// <para>Field Type: General Link</para>		
-					/// <para>Field ID: 7d78565c-ec7d-4d58-9e24-76ffc1505335</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Link Twitter_Link  {get; set;}
 								/// <summary>
 					/// The Left Column Text field.
 					/// <para></para>
@@ -5704,15 +5751,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Main_Navigation  {get; set;}
 								/// <summary>
-					/// The Email Logo field.
-					/// <para></para>
-					/// <para>Field Type: Image</para>		
-					/// <para>Field ID: 223891e7-0345-450b-a858-a10fda0f718d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Email_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Image Email_Logo  {get; set;}
-								/// <summary>
 					/// The Site Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -5730,6 +5768,51 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Publication_Name  {get; set;}
+								/// <summary>
+					/// The Reset Password Email Body field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: a9fec917-3234-4782-b449-a8dda61126a8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Reset_Password_Email_Body  {get; set;}
+								/// <summary>
+					/// The Reset Password Email Footer field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Reset_Password_Email_Footer  {get; set;}
+								/// <summary>
+					/// The Reset Password Email Link Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_Link_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Reset_Password_Email_Link_Text  {get; set;}
+								/// <summary>
+					/// The Reset Password Email Subject field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: be0aa45c-7a7b-435f-9e68-77903413d6fc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Reset_Password_Email_Subject  {get; set;}
+								/// <summary>
+					/// The Reset Password Email Support field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: f0c09d25-7d73-448b-a2d3-0a8a46ce532c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_SupportFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Reset_Password_Email_Support  {get; set;}
 								/// <summary>
 					/// The Reset Password Page field.
 					/// <para></para>
@@ -5758,23 +5841,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Search_Tips_Title  {get; set;}
 								/// <summary>
-					/// The LinkedIn Profile field.
+					/// The LinkedIn Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
-					/// <para>Field ID: 539462bc-7297-4113-b33c-36111b5e8adc</para>
+					/// <para>Field ID: 31f9f75c-54a7-43a5-a248-66e1f19a5469</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.LinkedIn_ProfileFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Link LinkedIn_Profile  {get; set;}
+					[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link LinkedIn_Link  {get; set;}
 								/// <summary>
-					/// The Twitter Handle field.
+					/// The Twitter Link field.
 					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 457159c1-4590-4940-b6de-a3bd1a1faeb0</para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 7d78565c-ec7d-4d58-9e24-76ffc1505335</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Twitter_HandleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Twitter_Handle  {get; set;}
+					[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Twitter_Link  {get; set;}
 								/// <summary>
 					/// The System Maintenance End Date field.
 					/// <para></para>
@@ -5824,6 +5907,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		public partial interface ISite_Config__Raw : IGlassBase 
 		{
 										/// <summary>
+						/// The Email From Address field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 6f5117bc-2706-48da-b5d3-0fd785fd9979</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_From_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Email_From_Address  {get; set;}
+										/// <summary>
+						/// The Email Logo field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: 223891e7-0345-450b-a858-a10fda0f718d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Email_Logo  {get; set;}
+										/// <summary>
+						/// The RSS Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: e7da68a3-d817-487f-99d9-8a27aba050ed</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.RSS_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link RSS_Link  {get; set;}
+										/// <summary>
 						/// The Copyright Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -5850,15 +5960,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Footer_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Footer_Logo  {get; set;}
-										/// <summary>
-						/// The LinkedIn Link field.
-						/// <para></para>
-						/// <para>Field Type: General Link</para>		
-						/// <para>Field ID: 31f9f75c-54a7-43a5-a248-66e1f19a5469</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Link LinkedIn_Link  {get; set;}
 										/// <summary>
 						/// The Local Footer Links field.
 						/// <para></para>
@@ -5931,15 +6032,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Subscribe_Link  {get; set;}
-										/// <summary>
-						/// The Twitter Link field.
-						/// <para></para>
-						/// <para>Field Type: General Link</para>		
-						/// <para>Field ID: 7d78565c-ec7d-4d58-9e24-76ffc1505335</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Link Twitter_Link  {get; set;}
 										/// <summary>
 						/// The Left Column Text field.
 						/// <para></para>
@@ -6040,15 +6132,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Main_Navigation  {get; set;}
 										/// <summary>
-						/// The Email Logo field.
-						/// <para></para>
-						/// <para>Field Type: Image</para>		
-						/// <para>Field ID: 223891e7-0345-450b-a858-a10fda0f718d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Email_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Image Email_Logo  {get; set;}
-										/// <summary>
 						/// The Site Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -6066,6 +6149,51 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Publication_Name  {get; set;}
+										/// <summary>
+						/// The Reset Password Email Body field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: a9fec917-3234-4782-b449-a8dda61126a8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Reset_Password_Email_Body  {get; set;}
+										/// <summary>
+						/// The Reset Password Email Footer field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_FooterFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Reset_Password_Email_Footer  {get; set;}
+										/// <summary>
+						/// The Reset Password Email Link Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_Link_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Reset_Password_Email_Link_Text  {get; set;}
+										/// <summary>
+						/// The Reset Password Email Subject field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: be0aa45c-7a7b-435f-9e68-77903413d6fc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Reset_Password_Email_Subject  {get; set;}
+										/// <summary>
+						/// The Reset Password Email Support field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: f0c09d25-7d73-448b-a2d3-0a8a46ce532c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_SupportFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Reset_Password_Email_Support  {get; set;}
 										/// <summary>
 						/// The Reset Password Page field.
 						/// <para></para>
@@ -6094,23 +6222,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Search_Tips_Title  {get; set;}
 										/// <summary>
-						/// The LinkedIn Profile field.
+						/// The LinkedIn Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
-						/// <para>Field ID: 539462bc-7297-4113-b33c-36111b5e8adc</para>
+						/// <para>Field ID: 31f9f75c-54a7-43a5-a248-66e1f19a5469</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.LinkedIn_ProfileFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Link LinkedIn_Profile  {get; set;}
+						[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link LinkedIn_Link  {get; set;}
 										/// <summary>
-						/// The Twitter Handle field.
+						/// The Twitter Link field.
 						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 457159c1-4590-4940-b6de-a3bd1a1faeb0</para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 7d78565c-ec7d-4d58-9e24-76ffc1505335</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Twitter_HandleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Twitter_Handle  {get; set;}
+						[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Twitter_Link  {get; set;}
 										/// <summary>
 						/// The System Maintenance End Date field.
 						/// <para></para>
@@ -6156,6 +6284,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public const string TemplateName = "Site Config";
 
 					
+			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
+			public const string Email_From_AddressFieldName = "Email From Address";
+
+						
+					
+			public static readonly ID Email_LogoFieldId = new ID("223891e7-0345-450b-a858-a10fda0f718d");
+			public const string Email_LogoFieldName = "Email Logo";
+
+						
+					
+			public static readonly ID RSS_LinkFieldId = new ID("e7da68a3-d817-487f-99d9-8a27aba050ed");
+			public const string RSS_LinkFieldName = "RSS Link";
+
+						
+					
 			public static readonly ID Copyright_TextFieldId = new ID("a9aeef7b-7865-48a8-a024-d79ebc7c2c79");
 			public const string Copyright_TextFieldName = "Copyright Text";
 
@@ -6168,11 +6311,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Footer_LogoFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
 			public const string Footer_LogoFieldName = "Footer Logo";
-
-						
-					
-			public static readonly ID LinkedIn_LinkFieldId = new ID("31f9f75c-54a7-43a5-a248-66e1f19a5469");
-			public const string LinkedIn_LinkFieldName = "LinkedIn Link";
 
 						
 					
@@ -6213,11 +6351,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
-
-						
-					
-			public static readonly ID Twitter_LinkFieldId = new ID("7d78565c-ec7d-4d58-9e24-76ffc1505335");
-			public const string Twitter_LinkFieldName = "Twitter Link";
 
 						
 					
@@ -6284,11 +6417,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Email_LogoFieldId = new ID("223891e7-0345-450b-a858-a10fda0f718d");
-			public const string Email_LogoFieldName = "Email Logo";
-
-						
-					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
 			public const string Site_LogoFieldName = "Site Logo";
 
@@ -6297,6 +6425,37 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Publication_NameFieldId = new ID("9aee6c51-8392-4461-b24c-bf22acf5b07f");
 			public const string Publication_NameFieldName = "Publication Name";
 
+						
+					
+			public static readonly ID Reset_Password_Email_BodyFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
+			public const string Reset_Password_Email_BodyFieldName = "Reset Password Email Body";
+
+							public static readonly ID Reset_Password_Email_Body__RawFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
+				public const string Reset_Password_Email_Body__RawFieldName = "Reset Password Email Body";
+						
+					
+			public static readonly ID Reset_Password_Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+			public const string Reset_Password_Email_FooterFieldName = "Reset Password Email Footer";
+
+							public static readonly ID Reset_Password_Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+				public const string Reset_Password_Email_Footer__RawFieldName = "Reset Password Email Footer";
+						
+					
+			public static readonly ID Reset_Password_Email_Link_TextFieldId = new ID("5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19");
+			public const string Reset_Password_Email_Link_TextFieldName = "Reset Password Email Link Text";
+
+						
+					
+			public static readonly ID Reset_Password_Email_SubjectFieldId = new ID("be0aa45c-7a7b-435f-9e68-77903413d6fc");
+			public const string Reset_Password_Email_SubjectFieldName = "Reset Password Email Subject";
+
+						
+					
+			public static readonly ID Reset_Password_Email_SupportFieldId = new ID("f0c09d25-7d73-448b-a2d3-0a8a46ce532c");
+			public const string Reset_Password_Email_SupportFieldName = "Reset Password Email Support";
+
+							public static readonly ID Reset_Password_Email_Support__RawFieldId = new ID("f0c09d25-7d73-448b-a2d3-0a8a46ce532c");
+				public const string Reset_Password_Email_Support__RawFieldName = "Reset Password Email Support";
 						
 					
 			public static readonly ID Reset_Password_PageFieldId = new ID("073e357f-68a0-422f-b188-eb9cc874536a");
@@ -6316,13 +6475,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID LinkedIn_ProfileFieldId = new ID("539462bc-7297-4113-b33c-36111b5e8adc");
-			public const string LinkedIn_ProfileFieldName = "LinkedIn Profile";
+			public static readonly ID LinkedIn_LinkFieldId = new ID("31f9f75c-54a7-43a5-a248-66e1f19a5469");
+			public const string LinkedIn_LinkFieldName = "LinkedIn Link";
 
 						
 					
-			public static readonly ID Twitter_HandleFieldId = new ID("457159c1-4590-4940-b6de-a3bd1a1faeb0");
-			public const string Twitter_HandleFieldName = "Twitter Handle";
+			public static readonly ID Twitter_LinkFieldId = new ID("7d78565c-ec7d-4d58-9e24-76ffc1505335");
+			public const string Twitter_LinkFieldName = "Twitter Link";
 
 						
 					
@@ -8406,6 +8565,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public const string TemplateName = "Site Root";
 
 					
+			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
+			public const string Email_From_AddressFieldName = "Email From Address";
+
+						
+					
+			public static readonly ID Email_LogoFieldId = new ID("223891e7-0345-450b-a858-a10fda0f718d");
+			public const string Email_LogoFieldName = "Email Logo";
+
+						
+					
+			public static readonly ID RSS_LinkFieldId = new ID("e7da68a3-d817-487f-99d9-8a27aba050ed");
+			public const string RSS_LinkFieldName = "RSS Link";
+
+						
+					
 			public static readonly ID Copyright_TextFieldId = new ID("a9aeef7b-7865-48a8-a024-d79ebc7c2c79");
 			public const string Copyright_TextFieldName = "Copyright Text";
 
@@ -8418,11 +8592,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Footer_LogoFieldId = new ID("ebe9a930-123d-4fd8-9a28-4662c389893b");
 			public const string Footer_LogoFieldName = "Footer Logo";
-
-						
-					
-			public static readonly ID LinkedIn_LinkFieldId = new ID("31f9f75c-54a7-43a5-a248-66e1f19a5469");
-			public const string LinkedIn_LinkFieldName = "LinkedIn Link";
 
 						
 					
@@ -8463,11 +8632,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
-
-						
-					
-			public static readonly ID Twitter_LinkFieldId = new ID("7d78565c-ec7d-4d58-9e24-76ffc1505335");
-			public const string Twitter_LinkFieldName = "Twitter Link";
 
 						
 					
@@ -8534,11 +8698,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Email_LogoFieldId = new ID("223891e7-0345-450b-a858-a10fda0f718d");
-			public const string Email_LogoFieldName = "Email Logo";
-
-						
-					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
 			public const string Site_LogoFieldName = "Site Logo";
 
@@ -8547,6 +8706,37 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Publication_NameFieldId = new ID("9aee6c51-8392-4461-b24c-bf22acf5b07f");
 			public const string Publication_NameFieldName = "Publication Name";
 
+						
+					
+			public static readonly ID Reset_Password_Email_BodyFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
+			public const string Reset_Password_Email_BodyFieldName = "Reset Password Email Body";
+
+							public static readonly ID Reset_Password_Email_Body__RawFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
+				public const string Reset_Password_Email_Body__RawFieldName = "Reset Password Email Body";
+						
+					
+			public static readonly ID Reset_Password_Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+			public const string Reset_Password_Email_FooterFieldName = "Reset Password Email Footer";
+
+							public static readonly ID Reset_Password_Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+				public const string Reset_Password_Email_Footer__RawFieldName = "Reset Password Email Footer";
+						
+					
+			public static readonly ID Reset_Password_Email_Link_TextFieldId = new ID("5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19");
+			public const string Reset_Password_Email_Link_TextFieldName = "Reset Password Email Link Text";
+
+						
+					
+			public static readonly ID Reset_Password_Email_SubjectFieldId = new ID("be0aa45c-7a7b-435f-9e68-77903413d6fc");
+			public const string Reset_Password_Email_SubjectFieldName = "Reset Password Email Subject";
+
+						
+					
+			public static readonly ID Reset_Password_Email_SupportFieldId = new ID("f0c09d25-7d73-448b-a2d3-0a8a46ce532c");
+			public const string Reset_Password_Email_SupportFieldName = "Reset Password Email Support";
+
+							public static readonly ID Reset_Password_Email_Support__RawFieldId = new ID("f0c09d25-7d73-448b-a2d3-0a8a46ce532c");
+				public const string Reset_Password_Email_Support__RawFieldName = "Reset Password Email Support";
 						
 					
 			public static readonly ID Reset_Password_PageFieldId = new ID("073e357f-68a0-422f-b188-eb9cc874536a");
@@ -8566,13 +8756,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID LinkedIn_ProfileFieldId = new ID("539462bc-7297-4113-b33c-36111b5e8adc");
-			public const string LinkedIn_ProfileFieldName = "LinkedIn Profile";
+			public static readonly ID LinkedIn_LinkFieldId = new ID("31f9f75c-54a7-43a5-a248-66e1f19a5469");
+			public const string LinkedIn_LinkFieldName = "LinkedIn Link";
 
 						
 					
-			public static readonly ID Twitter_HandleFieldId = new ID("457159c1-4590-4940-b6de-a3bd1a1faeb0");
-			public const string Twitter_HandleFieldName = "Twitter Handle";
+			public static readonly ID Twitter_LinkFieldId = new ID("7d78565c-ec7d-4d58-9e24-76ffc1505335");
+			public const string Twitter_LinkFieldName = "Twitter Link";
 
 						
 					
