@@ -193,8 +193,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         public LoginControl loginControl1;
         public System.Windows.Forms.Button uxCreateArticle;
         public System.Windows.Forms.Button uxPreview;
-		public ArticleDetailsPageSelector articleDetailsPageSelector;
-		//private WorkflowControl workflowControl1;
+		public ArticleDetailsPageSelector articleDetailsPageSelector;		
         public System.Windows.Forms.Label uxVersionNumber;
         public ArticleDetailsControls.PageUserControls.ArticleStatusBar articleStatusBar1;
     }

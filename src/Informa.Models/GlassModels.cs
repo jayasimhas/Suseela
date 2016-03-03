@@ -4648,6 +4648,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+ 	/// <summary>
+	/// ISitemap_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Sitemap Page</para>	
+	/// <para>ID: 8b36b852-c8e2-49fd-8df4-7a09a546bf8e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISitemap_PageConstants.TemplateIdString)]
+	public partial interface ISitemap_Page : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ISitemap_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Sitemap Page</para>	
+		/// <para>ID: 8b36b852-c8e2-49fd-8df4-7a09a546bf8e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISitemap_Page__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ISitemap_PageConstants{
+
+			public const string TemplateIdString = "8b36b852-c8e2-49fd-8df4-7a09a546bf8e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Sitemap Page";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
