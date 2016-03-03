@@ -115,8 +115,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
-				NotificationText = pageWorkflowControl.GetNotificationText(),
-				CommandID = pageWorkflowControl.GetSelectedCommand()								
+			//	NotificationText = pageWorkflowControl.GetNotificationText(),
+			//	CommandID = pageWorkflowControl.GetSelectedCommand()								
             };
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)
@@ -150,8 +150,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
-				NotificationText = pageWorkflowControl.GetNotificationText(),
-				CommandID = pageWorkflowControl.GetSelectedCommand()		
+			//	NotificationText = pageWorkflowControl.GetNotificationText(),
+			//	CommandID = pageWorkflowControl.GetSelectedCommand()		
 			};
 
             if (pageFeaturedImageControl.GetFeaturedImage() != null)
