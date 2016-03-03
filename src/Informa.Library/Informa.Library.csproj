@@ -282,6 +282,7 @@
     <Compile Include="Mail\IEmail.cs" />
     <Compile Include="Mail\IEmailFactory.cs" />
     <Compile Include="Mail\IEmailSender.cs" />
+    <Compile Include="Rss\SearchRssFeed.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="User\Authentication\IAuthenticateUser.cs" />
