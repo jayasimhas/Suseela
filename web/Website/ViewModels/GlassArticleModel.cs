@@ -108,7 +108,18 @@ namespace Informa.Web.ViewModels
         public DateTime ListableDate => Date;
         public string ListableImage => Image?.ImageUrl;
         //TODO: Get real summary
-        public string ListableSummary => GlassModel.Summary;
+        public string ListableSummary
+        {
+            get
+            {
+                string summ = GlassModel.Summary;
+
+                //Replace any DCD related tokens with proper names
+                summ = DCDTokenMatchers.ProcessDCDTokens(summ);
+
+                return summ;
+            }
+        }
         public string KeyDocumentHeader => TextTranslator.Translate("Article.KeyDocs");
         public string ListableSummaryHeader => TextTranslator.Translate("Article.ExecSummHeader");
         public string ListableTitle => Title;
