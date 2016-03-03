@@ -41,5 +41,16 @@ namespace Informa.Model.DCD
 
             return lstRelatedComp;
         }
+
+        public Company GetCompanyByRecordNumber(string recordNumber)
+        {
+            Company company = null;
+            using (DCDContext dContext = new DCDContext())
+            {
+                company = dContext.Companies.Where(deal => deal.RecordNumber.Trim() == recordNumber.Trim()).FirstOrDefault();
+            }
+
+            return company;
+        }
     }
 }
