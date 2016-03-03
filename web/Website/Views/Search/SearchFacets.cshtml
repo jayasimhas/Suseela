@@ -93,8 +93,22 @@
             <input type="checkbox" class="visuallyhidden">
             <label>Sandoz International GMBH (125)</label>
           </li>
+          <li>
+            <div class="facets__field-group facets__field-group--companies">
+            <button 
+              class="facets__button facets__button--clear-company" 
+              ng-class="{'collapsed': isCollapsedCompanies}"
+              ng-click=""> 
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use></svg>
+            </button>
+              <input type="text" placeholder="Company Name">
+            </div>
+          </li>
         </ul>
-        <button class="facets__button facets__button--add" ng-class="{'collapsed': isCollapsedCompanies}">Add 
+        <button 
+          class="facets__button facets__button--add" 
+          ng-class="{'collapsed': isCollapsedCompanies}"
+          ng-click="">Add 
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use></svg>
         </button>
       </fieldset>

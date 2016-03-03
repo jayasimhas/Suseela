@@ -71,10 +71,6 @@
     button {
       position: absolute;
       right: 5px;
-
-      &.collapsed {
-
-      }
     }
   }
 
@@ -101,26 +97,20 @@
       font-weight: 700;
     }
 
-    input[type="checkbox"] + label:before {
-      content: " ";
-      display: inline-block;
-      height: 17px;
-      width: 17px;
-      border: 1px solid $informa-light-gray-d;
-      border-radius: 20%;
-      margin-right: 10px;
-      vertical-align: text-bottom;
-    }
-
+    input[type="checkbox"] + label:before,
     input[type="radio"] + label:before {
       content: " ";
       display: inline-block;
       height: 17px;
       width: 17px;
       border: 1px solid $informa-light-gray-d;
-      border-radius: 50%;
+      border-radius: 20%;
       margin-right: 15px;
       vertical-align: text-bottom;
+    }
+
+    input[type="radio"] + label:before {
+      border-radius: 50%; // override above border-radius from style shared with checkbox
     }
 
     input[type="checkbox"]:checked + label:after {
@@ -151,6 +141,10 @@
 
     &--from {
       margin-top: 10px;
+    }
+
+    &--companies {
+      padding-left: 0;
     }
 
     legend {
@@ -193,6 +187,18 @@
       float: right;
       line-height: 29px;
       cursor: pointer;
+    }
+
+    &--clear-company {
+      padding: 0;
+      margin-right: 11px;
+      
+      svg {
+        @include svg-fill($informa-red);
+        margin: 0;
+        width: 17px;
+        height: 17px;
+      }
     }
 
     &--more,
