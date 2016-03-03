@@ -70,10 +70,8 @@ namespace Informa.Library.Utilities.TokenMatcher
         {
             try
             {
-                Deal deal = new DCDManager().GetDealByRecordNumber(match.Groups[1].Value);
-
-                //return a strong company name (from the token itself) to replace the token
-                return string.Format("[<a href=\"{0}\">See Deal</a>]", string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL"), deal.RecordNumber));
+                //return a see deal (deal reference) (from the token itself) to replace the token
+                return string.Format("[<a href=\"{0}\">See Deal</a>]", string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL"), match.Groups[1].Value));
             }
             catch (Exception ex)
             {
