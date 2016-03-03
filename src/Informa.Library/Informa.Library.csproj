@@ -279,9 +279,13 @@
     <Compile Include="Mail\Email.cs" />
     <Compile Include="Mail\EmailFactory.cs" />
     <Compile Include="Mail\EmailSender.cs" />
+    <Compile Include="Mail\HtmlEmailTemplate.cs" />
+    <Compile Include="Mail\HtmlEmailTemplateFactory.cs" />
     <Compile Include="Mail\IEmail.cs" />
     <Compile Include="Mail\IEmailFactory.cs" />
     <Compile Include="Mail\IEmailSender.cs" />
+    <Compile Include="Mail\IHtmlEmailTemplate.cs" />
+    <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
