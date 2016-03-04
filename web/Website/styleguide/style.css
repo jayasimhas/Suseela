@@ -271,7 +271,11 @@ pre code {
 .color {
 	margin-bottom: 20px;
 	vertical-align: top;
-	padding: 0 1rem;
+	width: 160px;
+}
+
+.color:not(:last-child) {
+	margin-right: 40px;
 }
 
 .color-swatch {
@@ -340,20 +344,16 @@ h1 {
 }
 
 h2 {
-	font-family: 'Roboto Condensed';
-	font-size: 3rem;
-	font-weight: 700;
+	font-size: 1.75em;
 	line-height: 1.225;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
 	margin-bottom: 1rem;
 	margin-top: 1em;
 	padding-bottom: .3em;
 }
 
 h3 {
-	font-family: 'Roboto';
 	font-size: 1.5em;
-	font-weight: 700;
 	line-height: 1.43;
 	margin-bottom: 1rem;
 	margin-top: 1em;
@@ -404,7 +404,7 @@ button {
 	padding: 6px 12px;
 	vertical-align: middle;
 	white-space: nowrap;
-} 
+}
 
 button:focus, button:hover {
 	background-color: #dddddd;
@@ -439,13 +439,13 @@ The navigation remains fixed while you scroll.
 
 @media screen and (min-width: 640px) {
 	main {
-		width: 100%;
-		padding: 0 3rem 0 5rem;
+		max-width: 50em;
+		width: calc(100% - 250px);
 	}
 }
 
-section {
-	margin-bottom: 5rem;
+main > section {
+	margin-bottom: 80px;
 }
 
 figure,
@@ -648,106 +648,4 @@ perferendis quam! Ullam, debitis ab maiores.
 
 :root {
 	background-color: #ffffff;
-}
-
-body {
-    color: #58595b;
-    font-family: "PT Serif", Georgia, serif;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-	body {
-	    padding: 0;
-	}
-
-	nav {
-	    font-family: "Roboto", Helvetica, Arial, sans-serif;
-	    background-color: #f1f2f2;
-	   	border-right: 1px solid #ccc;
-		min-height: 100%;
-	}
-
-	nav > img {
-	    height: auto;
-	    margin: 20px auto;
-	    width: 120px;
-	    display: block;
-	}
-
-	nav > ul {
-	    max-height: calc(100vh - 190px - 20px);
-	}
-
-	nav > ul > li {
-	    border-bottom: 1px solid #d1d3d4;
-	    padding-bottom: 20px;
-	}
-
-
-	nav > ul > li:last-child {
-	    border-bottom: 0;
-	}
-
-
-	nav > ul > li > a {
-	    color: #231f20;
-	    font-size: 1rem;
-	    font-weight: 600;
-	    letter-spacing: 1.2px;
-	    padding: 15px 25px 15px 20px;
-	}
-
-	nav > ul > li > a > span {
-	    box-shadow: 0;
-	}
-
-	nav a {
-	    color: #58595b;
-	    font-size: 1rem;
-	    border-left: 6px solid #f1f2f2;
-	    padding: 10px 25px 10px 40px;
-	}
-
-	nav a:hover, nav a:focus {
-	    background-color: transparent;
-	    border-left: 6px solid #f7941e;
-	}
-
-
-	nav ::-webkit-scrollbar {
-	    background-color: #f1f2f2;
-	    width:20px;
-	}
-
-	nav ::-webkit-scrollbar-thumb {
-		background-color: #ccc;
-		border-radius: 10px;
-		border:5px solid #f1f2f2;
-	}
-
-
-.theme-dropdown {
-	margin: 0 1rem 2rem;
-}
-.theme-dropdown h6 {
-	margin-bottom: 0;
-	font-size: 0.75rem;
-	text-transform: uppercase;
-}
-.theme-dropdown__select {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	padding: 0.25rem 0.5rem;
-	color: #ccc;
-	font-style: italic;
-	position: relative;
-}
-.theme-dropdown__select:after {
-	content: "▾";
-	display: inline-block;
-	position: absolute;
-	color: #ccc;
-	right: 0.5rem;
-	font-style: normal;
 }
