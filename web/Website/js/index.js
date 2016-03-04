@@ -245,6 +245,40 @@ $(document).ready(function() {
 	  	}
 	});
 
+	$('.general-header__navigation').each(function() {
+
+		$(this).on('scroll', function() {
+			var scrollLeft = $(this).scrollLeft();
+			var scrollWidth = $(this)[0].scrollWidth;
+			var winWidth = $(window).width();
+
+			if(scrollLeft > 32) {
+				$('.general-header__navigation-scroller--left').addClass('is-visible');
+			} else {
+				$('.general-header__navigation-scroller--left').removeClass('is-visible');
+			}
+
+			if(scrollLeft + winWidth < scrollWidth - 32) {
+				$('.general-header__navigation-scroller--right').addClass('is-visible');
+			} else {
+				$('.general-header__navigation-scroller--right').removeClass('is-visible');
+			}
+
+		});
+
+		var scrollLeft = $(this).scrollLeft();
+		var scrollWidth = $(this)[0].scrollWidth;
+		var winWidth = $(window).width();
+
+		if(scrollLeft + winWidth < scrollWidth - 32) {
+			$('.general-header__navigation-scroller--right').addClass('is-visible');
+		} else {
+			$('.general-header__navigation-scroller--right').removeClass('is-visible');
+		}
+	});
+
+
+
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
 
