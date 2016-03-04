@@ -16,10 +16,17 @@ key: next state
 content-length: 38
 
 {72E03EDB-66B0-477B-AFDD-1AA63DBC789F}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 29
+
+Applications/32x32/check2.png
 ----version----
 language: en
 version: 1
-revision: 16afdffc-6fc1-4c3d-88ee-b32171b12b66
+revision: 32551481-7dea-4c20-b623-e46905b96ba7
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-16afdffc-6fc1-4c3d-88ee-b32171b12b66
+32551481-7dea-4c20-b623-e46905b96ba7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160303T192256Z
+20160304T092028Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
