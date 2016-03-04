@@ -1,0 +1,50 @@
+.image-cutline-block {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+    overflow: auto;
+
+    &__image {
+        width: 25%;
+        padding-right: 1.5rem;
+        flex: 0 0 auto;
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    &__cutline {
+        flex: 1 1 auto;
+
+        &-header {
+            margin-bottom: 1rem;
+        }
+
+        &-text {
+            margin-bottom: 2rem;
+        }
+
+        &-link {
+            text-align: right;
+        }
+    }
+
+    @include breakpoint('small') {
+        flex-direction: column;
+
+        &__image {
+            padding: 0 0 1.5rem;
+            width: 100%;
+
+            img {
+                display: block;
+                margin: 0px auto;
+                max-width: 100%;
+                width: auto;
+            }
+        }
+    }
+}
