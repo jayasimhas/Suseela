@@ -76,6 +76,17 @@
   }
 
   &__section-list {
+
+    &--sub {
+      padding-top: 10px;
+      padding-left: 30px;
+
+      input[type="checkbox"] + label {
+        font-size: 13px;
+        line-height: 20px;
+      }
+    }
+
     li {
       padding-bottom: 10px;
     }
@@ -126,15 +137,6 @@
       font-size: 30px;
     }
 
-    &--sub {
-      padding-top: 10px;
-      padding-left: 30px;
-
-      input[type="checkbox"] + label {
-        font-size: 13px;
-        line-height: 20px;
-      }
-    }
   }
 
   &__field-group {
@@ -145,12 +147,13 @@
     }
 
     &--companies {
-      padding-left: 0;
+      padding: 0;
     }
 
-    legend {
+    label {
       color: $color-medium-gray-8;
       font-size: 13px;
+      display: block;
 
       h4 {
         display: inline;
@@ -197,8 +200,8 @@
       svg {
         @include svg-fill($informa-red);
         margin: 0;
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
       }
     }
 
@@ -228,8 +231,8 @@
 
     &--toggle-section {
       @include svg-fill($color-medium-gray-8);
-      transition: all 300ms ease-in 0s;
-      transform-origin: 50%;
+      // transition: all 300ms ease-in 0s;
+      // transform-origin: 50%;
       width: 16px;
       height: 23px;
 
