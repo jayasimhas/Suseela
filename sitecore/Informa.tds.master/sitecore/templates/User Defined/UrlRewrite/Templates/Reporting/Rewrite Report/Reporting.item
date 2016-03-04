@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {5BD9E61D-9B3F-40FB-B0CD-83760F6D5511}
+database: master
+path: /sitecore/templates/User Defined/UrlRewrite/Templates/Reporting/Rewrite Report/Reporting
+parent: {F5CEB67D-1CE8-48EF-8D2E-39F44A21B52E}
+name: Reporting
+master: {00000000-0000-0000-0000-000000000000}
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
+
+----version----
+language: en
+version: 1
+revision: 2431ca87-bb5f-4d80-90bc-27f9de0dc056
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20150113T111037
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2431ca87-bb5f-4d80-90bc-27f9de0dc056
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20150113T142854:635567561342931270
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

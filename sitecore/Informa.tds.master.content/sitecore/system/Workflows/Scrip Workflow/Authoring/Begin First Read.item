@@ -16,10 +16,17 @@ key: next state
 content-length: 38
 
 {F422F1AA-B0DF-4F95-B2B3-E6E41A3DE25E}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 27
+
+People/32x32/user1_find.png
 ----version----
 language: en
 version: 1
-revision: 3f0e0e77-1237-4c24-9d37-c210afd3ccfc
+revision: dee8d018-e2f8-4d05-adab-961c478e8b10
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3f0e0e77-1237-4c24-9d37-c210afd3ccfc
+dee8d018-e2f8-4d05-adab-961c478e8b10
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160303T190959Z
+20160304T091100Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
