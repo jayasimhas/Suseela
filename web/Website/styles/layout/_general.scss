@@ -49,7 +49,7 @@ section: Home/Topic Page Components
 
         a {
             @include textMix('Roboto', 0.875rem, 600);
-            color: $informa-dark-gray;
+            color: $color-abbey-gray;
             display: inline-block;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -73,17 +73,142 @@ section: Home/Topic Page Components
 
         &-scroller--right,
         &-scroller--left {
-           background: -moz-linear-gradient(left, rgba(241,242,242,0) 0%, rgba(241,242,242,1) 66%, rgba(241,242,242,1) 100%);
-           background: -webkit-linear-gradient(left, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 66%,rgba(241,242,242,1) 100%);
-           background: linear-gradient(to right, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 66%,rgba(241,242,242,1) 100%);
-           font-size: 1.5rem;
-           margin-top: -2.5rem;
-           padding-right: 0.5rem;
-           position: absolute;
-           right: 0;
-           text-align: right;
-           width: 2rem;
-           height: 2.5rem;
+            background: -moz-linear-gradient(left, rgba(241,242,242,0) 0%, rgba(241,242,242,1) 66%, rgba(241,242,242,1) 100%);
+            background: -webkit-linear-gradient(left, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 66%,rgba(241,242,242,1) 100%);
+            background: linear-gradient(to right, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 66%,rgba(241,242,242,1) 100%);
+            font-size: 1.5rem;
+            margin-top: -2.5rem;
+            padding-right: 0.5rem;
+            position: absolute;
+            right: 0;
+            text-align: right;
+            width: 4rem;
+            height: 2.5rem;
+            -webkit-animation: fadeOutFromIn 200ms ease-out;
+            -moz-animation: fadeOutFromIn 200ms ease-out;
+            -o-animation: fadeOutFromIn 200ms ease-out;
+            animation: fadeOutFromIn 200ms ease-out;
+            animation-fill-mode: forwards;
+
+            &.is-visible {
+                -webkit-animation: fadeInFromNone 200ms ease-out;
+                -moz-animation: fadeInFromNone 200ms ease-out;
+                -o-animation: fadeInFromNone 200ms ease-out;
+                animation: fadeInFromNone 200ms ease-out;
+                animation-fill-mode: forwards;
+            }
+
+            svg {
+                @include svg-fill($color-zeus-black);
+                vertical-align: middle;
+                height: 14px;
+                width: 14px;
+
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+
+            @-webkit-keyframes fadeInFromNone {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+
+                1% {
+                    display: block;
+                    opacity: 0;
+                }
+
+                100% {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+            @-webkit-keyframes fadeOutFromIn {
+                0% {
+                    display: block;
+                    opacity: 1;
+                }
+
+                99% {
+                    display: block;
+                    opacity: 0;
+                }
+
+                100% {
+                    display: none;
+                    opacity: 0;
+                }
+            }
+
+            @-moz-keyframes fadeInFromNone {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+
+                1% {
+                    display: block;
+                    opacity: 0;
+                }
+
+                100% {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+
+            @-o-keyframes fadeInFromNone {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+
+                1% {
+                    display: block;
+                    opacity: 0;
+                }
+
+                100% {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadeInFromNone {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+
+                1% {
+                    display: block;
+                    opacity: 0;
+                }
+
+                100% {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+            @keyframes fadeOutFromIn {
+                0% {
+                    display: block;
+                    opacity: 1;
+                }
+
+                99% {
+                    display: block;
+                    opacity: 0;
+                }
+
+                100% {
+                    display: none;
+                    opacity: 0;
+                }
+            }
         }
         &-scroller--left {
             background: -moz-linear-gradient(left, rgba(241,242,242,0) 100%, rgba(241,242,242,1) 33%, rgba(241,242,242,1) 0%);
@@ -91,6 +216,15 @@ section: Home/Topic Page Components
             background: linear-gradient(to left, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 66%,rgba(241,242,242,1) 100%);
             left: 0;
             right: auto;
+            text-align: left;
+            padding-left: 0.5rem;
+
+            svg {
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+            }
         }
     }
 }
