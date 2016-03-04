@@ -136,10 +136,6 @@ namespace Informa.Web.Controllers
                     continue;
                 }
 
-                logAccum += "parentCompany.Id: " + parentCompany.Id + ";";
-                logAccum += "parentCompany.CompanyRecordId: " + parentCompany.CompanyRecordId + ";";
-                logAccum += "results: " + results?.Count + ";";
-
                 // get the parent from the "results" dictionary
                 CompanyWrapper parentWrapper = Get(results, pointers, parentCompany.CompanyRecordId, false);
 
@@ -148,9 +144,6 @@ namespace Informa.Web.Controllers
                 {
                     continue;
                 }
-
-                logAccum += "relatedCompany.Id: " + relatedCompany.Id + ";";
-                logAccum += "relatedCompany.CompanyRecordId: " + relatedCompany.CompanyRecordId + ";";
 
                 // get the current item from the results collection and delete it from wherever it is.
                 CompanyWrapper current = Get(results, pointers, relatedCompany.CompanyRecordId, true);
@@ -209,7 +202,7 @@ namespace Informa.Web.Controllers
             if (wrapper == null)
             {
                 List<CompanyWrapper> parent;
-                if (pointers.TryGetValue(recordId, out parent))
+                if (pointers.TryGetValue(recordId, out parent) && parent != null)
                 {
                     wrapper = Get(parent, recordId, delete);
                 }
