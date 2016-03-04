@@ -827,7 +827,6 @@ namespace InformaSitecoreWord.Sitecore
                 if (!(extension == ".docx" || extension == ".doc"))
                 {
                     // if we get a weird extension, this is probably a problem. 
-                    //TODO: what do we do if we get a weird extension?
                     extension = ".docx";
                 }
             }

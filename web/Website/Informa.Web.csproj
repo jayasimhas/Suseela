@@ -102,6 +102,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Hi.UrlRewrite, Version=1.7.2.24693, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\URLRewrite\Hi.UrlRewrite.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
@@ -645,6 +649,7 @@
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
     <Compile Include="Controllers\SitecoreUtil.cs" />
     <Compile Include="Controllers\SitecorGetterController.cs" />
+    <Compile Include="Controllers\RobotsTextController.cs" />
     <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
@@ -664,6 +669,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
+    <Compile Include="ViewModels\RobotsTextViewModel.cs" />
     <Compile Include="ViewModels\SitemapViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\SubnavigationViewModel.cs" />
@@ -985,6 +991,7 @@
     <Content Include="Views\Search\HeaderSearch.cshtml" />
     <Content Include="Views\Shared\Layouts\BlankLayout.cshtml" />
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
+    <Content Include="Views\Shared\Global\RobotsText.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
