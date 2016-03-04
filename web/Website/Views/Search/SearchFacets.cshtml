@@ -142,17 +142,18 @@
               <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
               
               <div class="facets__field-group facets__field-group--from" ng-show="$last">
-                <label>From</label>
-                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom">
+                <label for="dateRangeFrom">From</label>
+                <input type="date" name="dateRangeFrom" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom" ng-value="dateRangeFrom">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
               </div>
               <div class="facets__field-group facets__field-group--to" ng-show="$last">
-                <label>To</label>
-                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeTo">
+                <label for="dateRangeTo">To</label>
+                <input type="date" name="dateRangeTo" placeholder="dd/mm/yyyy" ng-model="dateRangeTo">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
               </div>
           </li>
         </ul>
+        <div>From: {{allFacets.dateRangeFrom}}</div>
       </fieldset>
     </form>
 
