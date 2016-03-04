@@ -3,7 +3,7 @@
 
     $scope.currentLocation = $location.url();
     $scope.$watch(function () { return $location.search() }, function (params) {
-        console.log(params);
+        $scope.currentLocation = $location.url();
     });
 
 };
