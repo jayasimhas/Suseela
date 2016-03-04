@@ -113,23 +113,23 @@ examples.lang = {
 		idoc.documentElement.setAttribute('style', examples.htmlcss);
 		idoc.body.setAttribute('style', examples.bodycss);
 
-		idoc.body.innerHTML = '<div class="iframe-wrapper">' + idoc.body.innerHTML + '</div>';
-
 		if (conf.width) style.width = String(conf.width);
 
 		// set iframe height based on content
 		var documentElement = idoc.documentElement;
 		var scrollHeight;
-		var resizeTimeout = 0;
 
-		var resize = function() {
-			var currentScrollHeight = documentElement.getElementsByClassName('iframe-wrapper')[0].offsetHeight;
+		function resize() {
+			var currentScrollHeight = documentElement.scrollHeight;
+
 			if (scrollHeight !== currentScrollHeight) {
 				scrollHeight = currentScrollHeight;
+
 				style.height = 0;
-				style.height = parseInt(documentElement.scrollHeight) + (iframe.offsetHeight - iwin.innerHeight) + 'px';
+
+				style.height = documentElement.scrollHeight + (iframe.offsetHeight - iwin.innerHeight) + 'px';
 			}
-		};
+		}
 
 		iwin.addEventListener('load', resize);
 
