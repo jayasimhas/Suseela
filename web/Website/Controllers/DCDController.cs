@@ -73,6 +73,7 @@ namespace Informa.Web.Controllers
             catch (Exception ex)
             {
                 Sitecore.Diagnostics.Log.Error("GetAllCompaniesWithRelated API error:", ex, "LogFileAppender");
+                return new List<CompanyWrapper> { new CompanyWrapper { Title = ex.ToString() } };
             }
 
             return lstDbCompanies;
