@@ -103,7 +103,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			uxNotifyList.Enabled = true;
 			uxNotifyAdd.Enabled = true;
 			txtNotificationText.Enabled = true;
-			lblUnlockOnSave.Enabled = true;
+			uxUnlockOnSave.Enabled = true;
 		}
 
 		public void PreLinkEnable()
