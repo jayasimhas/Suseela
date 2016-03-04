@@ -213,6 +213,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
+								/// <summary>
+					/// The Exclude From Google Search field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: de73b0ac-1de7-4c74-8dc3-515a939f567b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.Exclude_From_Google_SearchFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Exclude_From_Google_Search  {get; set;}
 				}
 
 	
@@ -252,6 +261,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
+										/// <summary>
+						/// The Exclude From Google Search field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: de73b0ac-1de7-4c74-8dc3-515a939f567b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.Exclude_From_Google_SearchFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Exclude_From_Google_Search  {get; set;}
 						}
 	
 	public static partial class IGeneral_Content_PageConstants{
@@ -273,6 +291,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Subnavigation_ItemsFieldId = new ID("7d43ad1f-9748-4438-9cb0-74c457376526");
 			public const string Subnavigation_ItemsFieldName = "Subnavigation Items";
+
+						
+					
+			public static readonly ID Exclude_From_Google_SearchFieldId = new ID("de73b0ac-1de7-4c74-8dc3-515a939f567b");
+			public const string Exclude_From_Google_SearchFieldName = "Exclude From Google Search";
 
 						
 					
@@ -4259,6 +4282,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 					
 			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
 			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+ 	/// <summary>
+	/// IRobots_Text_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Robots Text Page</para>	
+	/// <para>ID: 80965242-c533-4034-9fb0-95b903bcef35</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRobots_Text_PageConstants.TemplateIdString)]
+	public partial interface IRobots_Text_Page : IGlassBase 
+	{
+								/// <summary>
+					/// The Text field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 962bd0de-8d0c-4a2d-a243-7b83222de074</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRobots_Text_PageConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IRobots_Text_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Robots Text Page</para>	
+		/// <para>ID: 80965242-c533-4034-9fb0-95b903bcef35</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRobots_Text_Page__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Text field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 962bd0de-8d0c-4a2d-a243-7b83222de074</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRobots_Text_PageConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Text  {get; set;}
+						}
+	
+	public static partial class IRobots_Text_PageConstants{
+
+			public const string TemplateIdString = "80965242-c533-4034-9fb0-95b903bcef35";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Robots Text Page";
+
+					
+			public static readonly ID TextFieldId = new ID("962bd0de-8d0c-4a2d-a243-7b83222de074");
+			public const string TextFieldName = "Text";
 
 						
 			
