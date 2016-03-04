@@ -22,7 +22,6 @@ namespace Informa.Web.ViewModels
 
         public string GetXML()
         {
-            //check cache
             return SitemapService.GetNewsSitemapXML();
         }
     }
