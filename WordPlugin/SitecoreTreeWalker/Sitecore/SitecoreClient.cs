@@ -268,8 +268,17 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
+		public static string GetContactEmail()
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetContactEmail").Result;
+				var email = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+				return email;
+			}
+		}
 
-        public static bool IsAvailable()
+		public static bool IsAvailable()
         {
             try
             {
