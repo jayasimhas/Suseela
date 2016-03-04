@@ -23,7 +23,14 @@ namespace InformaSitecoreWord.Sitecore
         private static List<StaffStruct> _authors;
         private static ArticleStruct _articleDetails = new ArticleStruct();
         protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
-        private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
+        //private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
+        private static WebRequestHandler _handler = new WebRequestHandler
+        {
+            CookieContainer = new CookieContainer(),
+            UseCookies = true,
+            Credentials = new NetworkCredential(@"dev\tanasuk", "DjnznZZ21!")
+        };
+
 
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
 
@@ -294,7 +301,7 @@ namespace InformaSitecoreWord.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDealInfo?recordNumber={recordNumber}").Result;
+                var response = client.GetAsync($"http://dev.ibi.velir.com/api/GetDealInfo?recordNumber={recordNumber}").Result;
                 var dealInfo = JsonConvert.DeserializeObject<DealInfo>(response.Content.ReadAsStringAsync().Result);
                 return dealInfo;
             }
@@ -324,7 +331,8 @@ namespace InformaSitecoreWord.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompaniesWithRelated").Result;
+                var response = client.GetAsync("http://dev.ibi.velir.com/api/GetAllCompaniesWithRelated").Result;
+                //var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompaniesWithRelated").Result;
                 var lstComp = JsonConvert.DeserializeObject<List<CompanyWrapper>>(response.Content.ReadAsStringAsync().Result);
                 return lstComp;
             }
