@@ -286,6 +286,7 @@
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Mail\IHtmlEmailTemplate.cs" />
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
+    <Compile Include="Rss\SearchRssFeed.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
