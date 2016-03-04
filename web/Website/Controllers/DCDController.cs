@@ -62,6 +62,7 @@ namespace Informa.Web.Controllers
     [Route]
     public class GetAllCompaniesWithRelatedController : ApiController
     {
+        private static string logAccum = string.Empty;
         [HttpGet]
         public List<CompanyWrapper> GetAllCompaniesWithRelated()
         {
@@ -73,7 +74,7 @@ namespace Informa.Web.Controllers
             catch (Exception ex)
             {
                 Sitecore.Diagnostics.Log.Error("GetAllCompaniesWithRelated API error:", ex, "LogFileAppender");
-                return new List<CompanyWrapper> { new CompanyWrapper { Title = ex.ToString() } };
+                return new List<CompanyWrapper> { new CompanyWrapper { Title = ex.ToString() + "|||" + logAccum } };
             }
 
             return lstDbCompanies;
@@ -135,6 +136,10 @@ namespace Informa.Web.Controllers
                     continue;
                 }
 
+                logAccum += "parentCompany.Id: " + parentCompany.Id + ";";
+                logAccum += "parentCompany.CompanyRecordId: " + parentCompany.CompanyRecordId + ";";
+                logAccum += "results: " + results?.Count + ";";
+
                 // get the parent from the "results" dictionary
                 CompanyWrapper parentWrapper = Get(results, pointers, parentCompany.CompanyRecordId, false);
 
@@ -143,6 +148,9 @@ namespace Informa.Web.Controllers
                 {
                     continue;
                 }
+
+                logAccum += "relatedCompany.Id: " + relatedCompany.Id + ";";
+                logAccum += "relatedCompany.CompanyRecordId: " + relatedCompany.CompanyRecordId + ";";
 
                 // get the current item from the results collection and delete it from wherever it is.
                 CompanyWrapper current = Get(results, pointers, relatedCompany.CompanyRecordId, true);
