@@ -15,26 +15,28 @@ namespace Informa.Library.Search.ComputedFields.Facets
     {
         public override object GetFieldValue(Item indexItem)
         {
-            if (indexItem.TemplateID != IArticleConstants.TemplateId)
-            {
-                return string.Empty;
-            }
+            return string.Empty;
 
-            IArticle article = indexItem.GlassCast<IArticle>(inferType: true);
+            //if (indexItem.TemplateID != IArticleConstants.TemplateId)
+            //{
+            //    return string.Empty;
+            //}
 
-            if (string.IsNullOrEmpty(article.Referenced_Companies))
-            {
-                return string.Empty;
-            }
+            //IArticle article = indexItem.GlassCast<IArticle>(inferType: true);
 
-            var company = new DCDManager().GetCompanyByRecordNumber(article.Referenced_Companies);
+            //if (string.IsNullOrEmpty(article.Referenced_Companies))
+            //{
+            //    return string.Empty;
+            //}
 
-            if (company == null)
-            {
-                return string.Empty;
-            }
+            //var company = new DCDManager().GetCompanyByRecordNumber(article.Referenced_Companies);
 
-            return company.Title;
+            //if (company == null)
+            //{
+            //    return string.Empty;
+            //}
+
+            //return company.Title;
         }
     }
 }
