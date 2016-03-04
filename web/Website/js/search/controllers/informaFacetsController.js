@@ -6,7 +6,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
     var init = function () {
 
-        // General Facets stuff
+        // General Facet stuff
         _this.facetGroups = searchService.getFacetGroups();
         _this.searchService = searchService;
         _this.location = $location;
@@ -91,7 +91,6 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
 
     _this.clearAllFacets = function () {
-        // _this.clearPublicationDate();
         var facetClear = this;
         var facetGroups = facetClear.facetGroups;
         _.each(facetGroups, function (group) {
@@ -112,22 +111,24 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
     _this.clearDateRange = function () {
         var filter = _this.getFilter('date');
-        console.log(filter);
+        console.log("removing: ", filter);
         filter.setValue("");
         filter.selected = false;
         var filterDateLabel = _this.getFilter('dateFilterLabel');
-        console.log(filterDateLabel);
+        console.log("removing: ", filterDateLabel);
         filterDateLabel.setValue("");
+        var dates = _this.DateFilters;
+         _.each(dates, function(date) {
+            date.selected = false;
+        });
         _this.currentDateRange = "";
         _this.update();
-        console.log("ran date clear");
     }    
 
     _this.getDateFilterLabel = function () {
         var filterDateLabel = _this.getFilter('dateFilterLabel');
         return filterDateLabel._value;
     }
-
 
     _this.dateRangeSearch = function (filterKey, dateFilter) {
         var filter = _this.getFilter(filterKey);
