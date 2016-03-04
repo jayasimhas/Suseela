@@ -34,26 +34,26 @@ namespace InformaSitecoreWord.Sitecore
 
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
 
-	    public SitecoreClient()
-	    {
-	        if (_sitecoreUser.Username != null && _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL)) == null)
-	        {
+        public SitecoreClient()
+        {
+            if (_sitecoreUser.Username != null && _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL)) == null)
+            {
                 _sitecoreUser.Authenticate(_sitecoreUser.Username, _sitecoreUser.Password);
-	            //var cookie = UserCredentialReader.GetReader().GetCookie(_sitecoreUser.Username);
-	            //_handler.CookieContainer.Add(cookie);
-	        }
+                //var cookie = UserCredentialReader.GetReader().GetCookie(_sitecoreUser.Username);
+                //_handler.CookieContainer.Add(cookie);
+            }
 
-	    }
+        }
 
-	    public bool IsUserAuthorized()
-	    {
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}CreateArticle").Result;
+        public bool IsUserAuthorized()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}CreateArticle").Result;
 
-				return response.IsSuccessStatusCode;
-			}
-		}
+                return response.IsSuccessStatusCode;
+            }
+        }
 
 
         public static List<TaxonomyStruct> SearchTaxonomy(string term)
@@ -257,7 +257,7 @@ namespace InformaSitecoreWord.Sitecore
 				*/
             }
         }
-		
+
         public static int GetMaxLengthLongSummary()
         {
             using (var client = new HttpClient(_handler, false))
@@ -268,17 +268,17 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-		public static string GetContactEmail()
-		{
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetContactEmail").Result;
-				var email = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
-				return email;
-			}
-		}
+        public static string GetContactEmail()
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetContactEmail").Result;
+                var email = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+                return email;
+            }
+        }
 
-		public static bool IsAvailable()
+        public static bool IsAvailable()
         {
             try
             {
@@ -310,7 +310,8 @@ namespace InformaSitecoreWord.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"http://dev.ibi.velir.com/api/GetDealInfo?recordNumber={recordNumber}").Result;
+                //var response = client.GetAsync($"http://dev.ibi.velir.com/api/GetDealInfo?recordNumber={recordNumber}").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDealInfo?recordNumber={recordNumber}").Result;
                 var dealInfo = JsonConvert.DeserializeObject<DealInfo>(response.Content.ReadAsStringAsync().Result);
                 return dealInfo;
             }
@@ -330,6 +331,7 @@ namespace InformaSitecoreWord.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
+                //var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompanies").Result;
                 var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompanies").Result;
                 var lstComp = JsonConvert.DeserializeObject<List<CompanyWrapper>>(response.Content.ReadAsStringAsync().Result);
                 return lstComp;
@@ -340,8 +342,8 @@ namespace InformaSitecoreWord.Sitecore
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync("http://dev.ibi.velir.com/api/GetAllCompaniesWithRelated").Result;
-                //var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompaniesWithRelated").Result;
+                //var response = client.GetAsync("http://dev.ibi.velir.com/api/GetAllCompaniesWithRelated").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompaniesWithRelated").Result;
                 var lstComp = JsonConvert.DeserializeObject<List<CompanyWrapper>>(response.Content.ReadAsStringAsync().Result);
                 return lstComp;
             }
@@ -684,31 +686,31 @@ namespace InformaSitecoreWord.Sitecore
         //TODO - work flow
         public static ArticleWorkflowState GetWorkflowState(string articleNumber)
         {
-	        using (var client = new HttpClient(_handler, false))
-	        {
-		        var response =
-			        client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleNumber=" + articleNumber).Result;
-		        var workflowState =
-			        JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
-				
-				return workflowState;
-			}
-	        //return new ArticleWorkflowState { DisplayName = "", IsFinal = true, Commands = new List<ArticleWorkflowCommand>() };
-			}
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response =
+                    client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleNumber=" + articleNumber).Result;
+                var workflowState =
+                    JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
+
+                return workflowState;
+            }
+            //return new ArticleWorkflowState { DisplayName = "", IsFinal = true, Commands = new List<ArticleWorkflowCommand>() };
+        }
 
         //TODO - work flow
         public static ArticleWorkflowState GetWorkflowState(Guid articleGuid)
         {
-			using (var client = new HttpClient(_handler, false))
-			{
-				var response =
-					client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleGuid=" + articleGuid).Result;
-				var workflowState =
-					JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response =
+                    client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleGuid=" + articleGuid).Result;
+                var workflowState =
+                    JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
 
-				return workflowState;
-			}
-		}
+                return workflowState;
+            }
+        }
 
 
         public static string GetDocumentPassword()
@@ -751,7 +753,7 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var documentCustomProperties = new DocumentCustomProperties(activeDocument);
                 articleDetails.ArticleSpecificNotifications = notifications.ToList();
-				articleDetails.NotificationText = notificationText;
+                articleDetails.NotificationText = notificationText;
                 articleDetails.WordCount = activeDocument.ComputeStatistics(0);
                 articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToList();
                 articleDetails.CommandID = workflowCommand;
@@ -852,5 +854,5 @@ namespace InformaSitecoreWord.Sitecore
 
         protected WordUtils _wordUtils = new WordUtils();
         protected static StructConverter _structConverter = new StructConverter();
-    }   
+    }
 }
