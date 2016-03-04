@@ -62,6 +62,7 @@ namespace Informa.Web.Controllers
     [Route]
     public class GetAllCompaniesWithRelatedController : ApiController
     {
+        private static string logAccum = string.Empty;
         [HttpGet]
         public List<CompanyWrapper> GetAllCompaniesWithRelated()
         {
@@ -73,6 +74,7 @@ namespace Informa.Web.Controllers
             catch (Exception ex)
             {
                 Sitecore.Diagnostics.Log.Error("GetAllCompaniesWithRelated API error:", ex, "LogFileAppender");
+                return new List<CompanyWrapper> { new CompanyWrapper { Title = ex.ToString() + "|||" + logAccum } };
             }
 
             return lstDbCompanies;
@@ -200,7 +202,7 @@ namespace Informa.Web.Controllers
             if (wrapper == null)
             {
                 List<CompanyWrapper> parent;
-                if (pointers.TryGetValue(recordId, out parent))
+                if (pointers.TryGetValue(recordId, out parent) && parent != null)
                 {
                     wrapper = Get(parent, recordId, delete);
                 }
