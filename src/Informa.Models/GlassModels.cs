@@ -7939,6 +7939,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	public partial interface ISite_Config : IGlassBase 
 	{
 								/// <summary>
+					/// The Global Article Filmstrip Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 7f493d5a-9fc5-407b-9b05-609f5be5d07d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Filmstrip_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Filmstrip_Slot_ID  {get; set;}
+								/// <summary>
+					/// The Global Article Medium Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: dff8072a-6d80-408f-a3fb-2175e3b3dd72</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Medium_Slot_ID  {get; set;}
+								/// <summary>
 					/// The Email From Address field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -8329,6 +8347,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		public partial interface ISite_Config__Raw : IGlassBase 
 		{
 										/// <summary>
+						/// The Global Article Filmstrip Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 7f493d5a-9fc5-407b-9b05-609f5be5d07d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Filmstrip_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Filmstrip_Slot_ID  {get; set;}
+										/// <summary>
+						/// The Global Article Medium Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: dff8072a-6d80-408f-a3fb-2175e3b3dd72</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Medium_Slot_ID  {get; set;}
+										/// <summary>
 						/// The Email From Address field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -8714,6 +8750,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Config";
 
+					
+			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
+			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
+
+						
+					
+			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
+			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
+
+						
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
@@ -12055,6 +12101,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Root";
 
+					
+			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
+			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
+
+						
+					
+			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
+			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
+
+						
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
