@@ -38,7 +38,7 @@ namespace Informa.Library.Services.Sitemap
             string publisherName = TextTranslator.Translate("Article.PubName");
             string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
 
-            IEnumerable<IArticle> items = GetPages(home._Url);
+            IEnumerable<IArticle> items = GetPages(home._Path);
 
             //start xml doc
             XmlDocument doc = new XmlDocument();

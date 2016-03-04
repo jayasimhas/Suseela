@@ -49,6 +49,12 @@ namespace Informa.Library.CustomSitecore.Pipelines
                 new { controller = "Sitemap", action = "NewsSitemapXml" }
             );
 
+            routes.MapHttpRoute(
+                "robotsText",
+                "robots.txt",
+                new { controller = "RobotsText", action = "RobotsText" }
+            );
+
             var jsonFormatter = new JsonMediaTypeFormatter
 			{
 				SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver()},

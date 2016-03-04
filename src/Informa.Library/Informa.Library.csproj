@@ -286,8 +286,10 @@
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Mail\IHtmlEmailTemplate.cs" />
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
+    <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
     <Compile Include="User\Authentication\IAuthenticateUser.cs" />
     <Compile Include="User\Authentication\IAuthenticateUserResult.cs" />

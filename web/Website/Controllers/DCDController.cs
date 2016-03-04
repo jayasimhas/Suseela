@@ -62,6 +62,7 @@ namespace Informa.Web.Controllers
     [Route]
     public class GetAllCompaniesWithRelatedController : ApiController
     {
+        private static string logAccum = string.Empty;
         [HttpGet]
         public List<CompanyWrapper> GetAllCompaniesWithRelated()
         {
@@ -200,7 +201,7 @@ namespace Informa.Web.Controllers
             if (wrapper == null)
             {
                 List<CompanyWrapper> parent;
-                if (pointers.TryGetValue(recordId, out parent))
+                if (pointers.TryGetValue(recordId, out parent) && parent != null)
                 {
                     wrapper = Get(parent, recordId, delete);
                 }
