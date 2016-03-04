@@ -668,6 +668,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
     <Compile Include="ViewModels\SitemapViewModel.cs" />
@@ -734,6 +735,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\openadstream.js" />
     <Content Include="js\reset-password-controller.js" />
     <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
@@ -888,6 +890,7 @@
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
+    <Folder Include="Scripts\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
@@ -961,7 +964,7 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
-    <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
+    <Content Include="Views\Article\ArticleMediumAd.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
@@ -991,6 +994,7 @@
     <Content Include="Views\Shared\Layouts\BlankLayout.cshtml" />
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
+    <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

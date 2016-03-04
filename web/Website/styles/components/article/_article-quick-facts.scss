@@ -65,4 +65,11 @@ section: Article Components
         float: right;
         font-style: italic;
     }
+
+    hr {
+        border: 0;
+        background-color: $color-yellow-orange;
+        height: 1px;
+        margin-bottom: 1.75rem;
+    }
 }
