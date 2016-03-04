@@ -174,6 +174,25 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
+	public class GetContactEmailController : ApiController
+	{
+		private ISitecoreService _sitecoreService;
+		public GetContactEmailController(Func<string, ISitecoreService> sitecoreFactory)
+		{
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
+		}
+		// GET api/<controller>
+		public JsonResult<string> Get()
+		{
+			var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
+			if (siteConfigItem == null) return Json(string.Empty);
+			var supportingEmailFieldValue = siteConfigItem.Contact_Email;
+			if (string.IsNullOrEmpty(supportingEmailFieldValue)) return Json(string.Empty);			
+			return Json(supportingEmailFieldValue);
+		}
+	}
+
+	[Route]
 	public class GetParagraphStylesController : ApiController
 	{
 		private ISitecoreService _sitecoreService;

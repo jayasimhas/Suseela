@@ -8299,6 +8299,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string System_Maintenance_Text  {get; set;}
 								/// <summary>
+					/// The Contact Email field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 89db27d7-1fb5-4260-a219-3daf504d76c5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Contact_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Contact_Email  {get; set;}
+								/// <summary>
 					/// The Supporting Documents Folder field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
@@ -8680,6 +8689,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string System_Maintenance_Text  {get; set;}
 										/// <summary>
+						/// The Contact Email field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 89db27d7-1fb5-4260-a219-3daf504d76c5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Contact_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Contact_Email  {get; set;}
+										/// <summary>
 						/// The Supporting Documents Folder field.
 						/// <para></para>
 						/// <para>Field Type: Droplink</para>		
@@ -8913,6 +8931,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 							public static readonly ID System_Maintenance_Text__RawFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
 				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
+						
+					
+			public static readonly ID Contact_EmailFieldId = new ID("89db27d7-1fb5-4260-a219-3daf504d76c5");
+			public const string Contact_EmailFieldName = "Contact Email";
+
 						
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
@@ -12249,6 +12272,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 							public static readonly ID System_Maintenance_Text__RawFieldId = new ID("b1e96fe0-25a3-49a5-8941-927c708a93cf");
 				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
+						
+					
+			public static readonly ID Contact_EmailFieldId = new ID("89db27d7-1fb5-4260-a219-3daf504d76c5");
+			public const string Contact_EmailFieldName = "Contact Email";
+
 						
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
