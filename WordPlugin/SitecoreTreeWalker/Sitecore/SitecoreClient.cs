@@ -23,13 +23,8 @@ namespace InformaSitecoreWord.Sitecore
         private static List<StaffStruct> _authors;
         private static ArticleStruct _articleDetails = new ArticleStruct();
         protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
-        //private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
-        private static WebRequestHandler _handler = new WebRequestHandler
-        {
-            CookieContainer = new CookieContainer(),
-            UseCookies = true,
-            Credentials = new NetworkCredential(@"dev\tanasuk", "DjnznZZ21!")
-        };
+        private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
+        //private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true, Credentials = new NetworkCredential(@"dev\tanasuk", "DjnznZZ21!") };
 
 
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
