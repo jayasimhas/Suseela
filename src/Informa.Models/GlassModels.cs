@@ -30,6 +30,143 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 
 
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
+{
+
+
+ 	/// <summary>
+	/// ICondition___Advanced Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Condition - Advanced</para>	
+	/// <para>ID: 0035b824-507b-4f69-9a1e-ffc2dd738d2d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICondition___AdvancedConstants.TemplateIdString)]
+	public partial interface ICondition___Advanced : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.IBase_Condition
+	{
+								/// <summary>
+					/// The Condition Input String field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1dd20c5f-51d0-42a5-80d2-a2db50bfc7c8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICondition___AdvancedConstants.Condition_Input_StringFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Condition_Input_String  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICondition___Advanced Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Condition - Advanced</para>	
+		/// <para>ID: 0035b824-507b-4f69-9a1e-ffc2dd738d2d</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICondition___Advanced__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.IBase_Condition__Raw
+		{
+										/// <summary>
+						/// The Condition Input String field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1dd20c5f-51d0-42a5-80d2-a2db50bfc7c8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICondition___AdvancedConstants.Condition_Input_StringFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Condition_Input_String  {get; set;}
+						}
+	
+	public static partial class ICondition___AdvancedConstants{
+
+			public const string TemplateIdString = "0035b824-507b-4f69-9a1e-ffc2dd738d2d";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Condition - Advanced";
+
+					
+			public static readonly ID Condition_Input_StringFieldId = new ID("1dd20c5f-51d0-42a5-80d2-a2db50bfc7c8");
+			public const string Condition_Input_StringFieldName = "Condition Input String";
+
+						
+					
+			public static readonly ID Check_If_Input_StringFieldId = new ID("ea0734dc-a77b-400b-a966-44c759956608");
+			public const string Check_If_Input_StringFieldName = "Check if input string";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("94dcddb8-3889-45c3-9619-052dc39b7979");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("0ec5f268-4555-4842-869a-b2f6bdda0b0f");
+			public const string PatternFieldName = "Pattern";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBase_Cache Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Cache</para>	
+	/// <para>ID: 00c9ec91-5a01-4b46-aee9-a040fcba7777</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_CacheConstants.TemplateIdString)]
+	public partial interface IBase_Cache : IGlassBase 
+	{
+								/// <summary>
+					/// The HttpCacheability field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 8b11c099-83a4-487c-b070-9e1ad6b56013</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_CacheConstants.HttpCacheabilityFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid HttpCacheability  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Cache Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Cache</para>	
+		/// <para>ID: 00c9ec91-5a01-4b46-aee9-a040fcba7777</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Cache__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The HttpCacheability field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 8b11c099-83a4-487c-b070-9e1ad6b56013</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_CacheConstants.HttpCacheabilityFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid HttpCacheability  {get; set;}
+						}
+	
+	public static partial class IBase_CacheConstants{
+
+			public const string TemplateIdString = "00c9ec91-5a01-4b46-aee9-a040fcba7777";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Cache";
+
+					
+			public static readonly ID HttpCacheabilityFieldId = new ID("8b11c099-83a4-487c-b070-9e1ad6b56013");
+			public const string HttpCacheabilityFieldName = "HttpCacheability";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
@@ -166,6 +303,265 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
 			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.Types
+{
+
+
+ 	/// <summary>
+	/// ICondition_Input_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Condition Input Type</para>	
+	/// <para>ID: 01a28131-5cc9-4419-bd14-351922ce9416</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICondition_Input_TypeConstants.TemplateIdString)]
+	public partial interface ICondition_Input_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ICondition_Input_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Condition Input Type</para>	
+		/// <para>ID: 01a28131-5cc9-4419-bd14-351922ce9416</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICondition_Input_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ICondition_Input_TypeConstants{
+
+			public const string TemplateIdString = "01a28131-5cc9-4419-bd14-351922ce9416";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Condition Input Type";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBase_Stop_Processing Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Stop Processing</para>	
+	/// <para>ID: 05bb43ca-f36d-46cf-bbab-d46c8e3fef16</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_Stop_ProcessingConstants.TemplateIdString)]
+	public partial interface IBase_Stop_Processing : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Action
+	{
+								/// <summary>
+					/// The Stop processing of subsequent rules field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 7a01214d-b622-4676-bbd0-d939483fd553</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Stop_ProcessingConstants.Stop_Processing_Of_Subsequent_RulesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Stop_Processing_Of_Subsequent_Rules  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Stop_Processing Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Stop Processing</para>	
+		/// <para>ID: 05bb43ca-f36d-46cf-bbab-d46c8e3fef16</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Stop_Processing__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Action__Raw
+		{
+										/// <summary>
+						/// The Stop processing of subsequent rules field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 7a01214d-b622-4676-bbd0-d939483fd553</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Stop_ProcessingConstants.Stop_Processing_Of_Subsequent_RulesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Stop_Processing_Of_Subsequent_Rules  {get; set;}
+						}
+	
+	public static partial class IBase_Stop_ProcessingConstants{
+
+			public const string TemplateIdString = "05bb43ca-f36d-46cf-bbab-d46c8e3fef16";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Stop Processing";
+
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Match_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Match Type</para>	
+	/// <para>ID: 07597712-cc43-4ae3-bd01-01b9eb284261</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_Match_TypeConstants.TemplateIdString)]
+	public partial interface IMatch_Match_Type : IGlassBase 
+	{
+								/// <summary>
+					/// The Match Type field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 232472ff-de28-43a3-875c-b4051badc3a2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_Match_TypeConstants.Match_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Match_Type  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Match_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Match Type</para>	
+		/// <para>ID: 07597712-cc43-4ae3-bd01-01b9eb284261</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Match_Type__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Match Type field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 232472ff-de28-43a3-875c-b4051badc3a2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_Match_TypeConstants.Match_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Match_Type  {get; set;}
+						}
+	
+	public static partial class IMatch_Match_TypeConstants{
+
+			public const string TemplateIdString = "07597712-cc43-4ae3-bd01-01b9eb284261";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Match Type";
+
+					
+			public static readonly ID Match_TypeFieldId = new ID("232472ff-de28-43a3-875c-b4051badc3a2");
+			public const string Match_TypeFieldName = "Match Type";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.Types
+{
+
+
+ 	/// <summary>
+	/// ILogical_Grouping_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Logical Grouping Type</para>	
+	/// <para>ID: 075e8f5e-04a4-404d-a780-939148e7fb45</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ILogical_Grouping_TypeConstants.TemplateIdString)]
+	public partial interface ILogical_Grouping_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ILogical_Grouping_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Logical Grouping Type</para>	
+		/// <para>ID: 075e8f5e-04a4-404d-a780-939148e7fb45</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ILogical_Grouping_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ILogical_Grouping_TypeConstants{
+
+			public const string TemplateIdString = "075e8f5e-04a4-404d-a780-939148e7fb45";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Logical Grouping Type";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBase_Rewrite_URL Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Rewrite URL</para>	
+	/// <para>ID: 078d5677-484f-4998-85a6-542ce788d840</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_Rewrite_URLConstants.TemplateIdString)]
+	public partial interface IBase_Rewrite_URL : IGlassBase 
+	{
+								/// <summary>
+					/// The Rewrite URL field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 7bddf3f6-438f-4256-b47a-efdec89e9c8b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Rewrite_URLConstants.Rewrite_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Rewrite_URL  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Rewrite_URL Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Rewrite URL</para>	
+		/// <para>ID: 078d5677-484f-4998-85a6-542ce788d840</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Rewrite_URL__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Rewrite URL field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 7bddf3f6-438f-4256-b47a-efdec89e9c8b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Rewrite_URLConstants.Rewrite_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Rewrite_URL  {get; set;}
+						}
+	
+	public static partial class IBase_Rewrite_URLConstants{
+
+			public const string TemplateIdString = "078d5677-484f-4998-85a6-542ce788d840";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Rewrite URL";
+
+					
+			public static readonly ID Rewrite_URLFieldId = new ID("7bddf3f6-438f-4256-b47a-efdec89e9c8b");
+			public const string Rewrite_URLFieldName = "Rewrite URL";
 
 						
 			
@@ -1644,6 +2040,148 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IBase_Match_Scope Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Base Match Scope</para>	
+	/// <para>ID: 12982164-f54d-4da8-842e-d4f46e79da77</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_Match_ScopeConstants.TemplateIdString)]
+	public partial interface IBase_Match_Scope : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IBase_Match_Scope Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Base Match Scope</para>	
+		/// <para>ID: 12982164-f54d-4da8-842e-d4f46e79da77</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Match_Scope__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IBase_Match_ScopeConstants{
+
+			public const string TemplateIdString = "12982164-f54d-4da8-842e-d4f46e79da77";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Match Scope";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
+{
+
+
+ 	/// <summary>
+	/// INone Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/None</para>	
+	/// <para>ID: 12fa1a86-77cc-4097-86db-a66849af157a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INoneConstants.TemplateIdString)]
+	public partial interface INone : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing
+	{
+				}
+
+	
+		/// <summary>
+		/// INone Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/None</para>	
+		/// <para>ID: 12fa1a86-77cc-4097-86db-a66849af157a</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INone__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing__Raw
+		{
+						}
+	
+	public static partial class INoneConstants{
+
+			public const string TemplateIdString = "12fa1a86-77cc-4097-86db-a66849af157a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "None";
+
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
+{
+
+
+ 	/// <summary>
+	/// ICondition_Logical_Grouping Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Condition Logical Grouping</para>	
+	/// <para>ID: 1652dcc0-6319-43d4-853f-b5a441866f86</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICondition_Logical_GroupingConstants.TemplateIdString)]
+	public partial interface ICondition_Logical_Grouping : IGlassBase 
+	{
+								/// <summary>
+					/// The Logical grouping field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 9bcc4ca4-3b9c-4284-b32f-280433f09c01</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICondition_Logical_GroupingConstants.Logical_GroupingFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Logical_Grouping  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICondition_Logical_Grouping Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Condition Logical Grouping</para>	
+		/// <para>ID: 1652dcc0-6319-43d4-853f-b5a441866f86</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICondition_Logical_Grouping__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Logical grouping field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 9bcc4ca4-3b9c-4284-b32f-280433f09c01</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICondition_Logical_GroupingConstants.Logical_GroupingFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Logical_Grouping  {get; set;}
+						}
+	
+	public static partial class ICondition_Logical_GroupingConstants{
+
+			public const string TemplateIdString = "1652dcc0-6319-43d4-853f-b5a441866f86";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Condition Logical Grouping";
+
+					
+			public static readonly ID Logical_GroupingFieldId = new ID("9bcc4ca4-3b9c-4284-b32f-280433f09c01");
+			public const string Logical_GroupingFieldName = "Logical grouping";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
 {
 
@@ -1789,6 +2327,250 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
+{
+
+
+ 	/// <summary>
+	/// IBase_Condition Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Base Condition</para>	
+	/// <para>ID: 1cdf3bdd-0a44-42cd-9d40-fba83b981f48</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_ConditionConstants.TemplateIdString)]
+	public partial interface IBase_Condition : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+								/// <summary>
+					/// The Check if input string field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: ea0734dc-a77b-400b-a966-44c759956608</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_ConditionConstants.Check_If_Input_StringFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Check_If_Input_String  {get; set;}
+								/// <summary>
+					/// The Ignore case field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 94dcddb8-3889-45c3-9619-052dc39b7979</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_ConditionConstants.Ignore_CaseFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Ignore_Case  {get; set;}
+								/// <summary>
+					/// The Pattern field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 0ec5f268-4555-4842-869a-b2f6bdda0b0f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_ConditionConstants.PatternFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Pattern  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Condition Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Base Condition</para>	
+		/// <para>ID: 1cdf3bdd-0a44-42cd-9d40-fba83b981f48</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Condition__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+										/// <summary>
+						/// The Check if input string field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: ea0734dc-a77b-400b-a966-44c759956608</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_ConditionConstants.Check_If_Input_StringFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Check_If_Input_String  {get; set;}
+										/// <summary>
+						/// The Ignore case field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 94dcddb8-3889-45c3-9619-052dc39b7979</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_ConditionConstants.Ignore_CaseFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Ignore_Case  {get; set;}
+										/// <summary>
+						/// The Pattern field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 0ec5f268-4555-4842-869a-b2f6bdda0b0f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_ConditionConstants.PatternFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Pattern  {get; set;}
+						}
+	
+	public static partial class IBase_ConditionConstants{
+
+			public const string TemplateIdString = "1cdf3bdd-0a44-42cd-9d40-fba83b981f48";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Condition";
+
+					
+			public static readonly ID Check_If_Input_StringFieldId = new ID("ea0734dc-a77b-400b-a966-44c759956608");
+			public const string Check_If_Input_StringFieldName = "Check if input string";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("94dcddb8-3889-45c3-9619-052dc39b7979");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("0ec5f268-4555-4842-869a-b2f6bdda0b0f");
+			public const string PatternFieldName = "Pattern";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
+{
+
+
+ 	/// <summary>
+	/// ICondition Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Condition</para>	
+	/// <para>ID: 2083f66b-0a94-4f9c-9833-ef53fad05d70</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IConditionConstants.TemplateIdString)]
+	public partial interface ICondition : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.IBase_Condition
+	{
+								/// <summary>
+					/// The Condition Input Type field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 2f99346d-e5bb-421d-afdb-dadb3163e440</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IConditionConstants.Condition_Input_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Condition_Input_Type  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICondition Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Condition</para>	
+		/// <para>ID: 2083f66b-0a94-4f9c-9833-ef53fad05d70</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICondition__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.IBase_Condition__Raw
+		{
+										/// <summary>
+						/// The Condition Input Type field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 2f99346d-e5bb-421d-afdb-dadb3163e440</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IConditionConstants.Condition_Input_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Condition_Input_Type  {get; set;}
+						}
+	
+	public static partial class IConditionConstants{
+
+			public const string TemplateIdString = "2083f66b-0a94-4f9c-9833-ef53fad05d70";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Condition";
+
+					
+			public static readonly ID Condition_Input_TypeFieldId = new ID("2f99346d-e5bb-421d-afdb-dadb3163e440");
+			public const string Condition_Input_TypeFieldName = "Condition Input Type";
+
+						
+					
+			public static readonly ID Check_If_Input_StringFieldId = new ID("ea0734dc-a77b-400b-a966-44c759956608");
+			public const string Check_If_Input_StringFieldName = "Check if input string";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("94dcddb8-3889-45c3-9619-052dc39b7979");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("0ec5f268-4555-4842-869a-b2f6bdda0b0f");
+			public const string PatternFieldName = "Pattern";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
+{
+
+
+ 	/// <summary>
+	/// IPrecondition_Using Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Precondition Using</para>	
+	/// <para>ID: 20c923ef-dad7-433e-b51c-a5b634c3a27b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPrecondition_UsingConstants.TemplateIdString)]
+	public partial interface IPrecondition_Using : IGlassBase 
+	{
+								/// <summary>
+					/// The Using field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 1f3489d4-828a-4b83-a3d2-c980c4f6fb7e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IPrecondition_UsingConstants.UsingFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Using  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IPrecondition_Using Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Precondition Using</para>	
+		/// <para>ID: 20c923ef-dad7-433e-b51c-a5b634c3a27b</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IPrecondition_Using__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Using field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 1f3489d4-828a-4b83-a3d2-c980c4f6fb7e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IPrecondition_UsingConstants.UsingFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Using  {get; set;}
+						}
+	
+	public static partial class IPrecondition_UsingConstants{
+
+			public const string TemplateIdString = "20c923ef-dad7-433e-b51c-a5b634c3a27b";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Precondition Using";
+
+					
+			public static readonly ID UsingFieldId = new ID("1f3489d4-828a-4b83-a3d2-c980c4f6fb7e");
+			public const string UsingFieldName = "Using";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content
 {
 
@@ -1843,6 +2625,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_
 					
 			public static readonly ID TitleFieldId = new ID("5c986baf-5370-43d6-89c6-be1e0595609b");
 			public const string TitleFieldName = "Title";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBase_Redirect_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Redirect Type</para>	
+	/// <para>ID: 2372e073-6219-4f31-a7b0-dda295636a6a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_Redirect_TypeConstants.TemplateIdString)]
+	public partial interface IBase_Redirect_Type : IGlassBase 
+	{
+								/// <summary>
+					/// The Redirect type field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 8d4633fd-139d-443f-be40-e2918d49c63e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Redirect_TypeConstants.Redirect_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Redirect_Type  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Redirect_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Redirect Type</para>	
+		/// <para>ID: 2372e073-6219-4f31-a7b0-dda295636a6a</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Redirect_Type__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Redirect type field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 8d4633fd-139d-443f-be40-e2918d49c63e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Redirect_TypeConstants.Redirect_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Redirect_Type  {get; set;}
+						}
+	
+	public static partial class IBase_Redirect_TypeConstants{
+
+			public const string TemplateIdString = "2372e073-6219-4f31-a7b0-dda295636a6a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Redirect Type";
+
+					
+			public static readonly ID Redirect_TypeFieldId = new ID("8d4633fd-139d-443f-be40-e2918d49c63e");
+			public const string Redirect_TypeFieldName = "Redirect type";
 
 						
 			
@@ -2211,6 +3054,105 @@ namespace Informa.Models.Velir.Search.Models.Sort_Strategies
 			public const string TypeFieldName = "Type";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Server_Variable Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Server Variable</para>	
+	/// <para>ID: 31cba307-be81-4e55-96e4-62f70b2cbf47</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_Server_VariableConstants.TemplateIdString)]
+	public partial interface IMatch_Server_Variable : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match_Scope
+	{
+								/// <summary>
+					/// The Server Variable Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 90c0087e-39fd-4926-98dc-5f6aabeaff87</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_Server_VariableConstants.Server_Variable_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Server_Variable_Name  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Server_Variable Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Server Variable</para>	
+		/// <para>ID: 31cba307-be81-4e55-96e4-62f70b2cbf47</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Server_Variable__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match_Scope__Raw
+		{
+										/// <summary>
+						/// The Server Variable Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 90c0087e-39fd-4926-98dc-5f6aabeaff87</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_Server_VariableConstants.Server_Variable_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Server_Variable_Name  {get; set;}
+						}
+	
+	public static partial class IMatch_Server_VariableConstants{
+
+			public const string TemplateIdString = "31cba307-be81-4e55-96e4-62f70b2cbf47";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Server Variable";
+
+					
+			public static readonly ID Server_Variable_NameFieldId = new ID("90c0087e-39fd-4926-98dc-5f6aabeaff87");
+			public const string Server_Variable_NameFieldName = "Server Variable Name";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.Types
+{
+
+
+ 	/// <summary>
+	/// ICheck_If_Input_String_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Check If Input String Type</para>	
+	/// <para>ID: 33b5817b-9be3-4a97-8344-9096fef5b8bc</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICheck_If_Input_String_TypeConstants.TemplateIdString)]
+	public partial interface ICheck_If_Input_String_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ICheck_If_Input_String_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Check If Input String Type</para>	
+		/// <para>ID: 33b5817b-9be3-4a97-8344-9096fef5b8bc</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICheck_If_Input_String_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ICheck_If_Input_String_TypeConstants{
+
+			public const string TemplateIdString = "33b5817b-9be3-4a97-8344-9096fef5b8bc";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Check If Input String Type";
+
 			
 
 	}
@@ -2711,6 +3653,82 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Types
+{
+
+
+ 	/// <summary>
+	/// IHttpCacheability_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Types/HttpCacheability Type</para>	
+	/// <para>ID: 482f740a-fef3-4c88-ae89-3d5859fd0d6d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IHttpCacheability_TypeConstants.TemplateIdString)]
+	public partial interface IHttpCacheability_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IHttpCacheability_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Types/HttpCacheability Type</para>	
+		/// <para>ID: 482f740a-fef3-4c88-ae89-3d5859fd0d6d</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IHttpCacheability_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IHttpCacheability_TypeConstants{
+
+			public const string TemplateIdString = "482f740a-fef3-4c88-ae89-3d5859fd0d6d";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "HttpCacheability Type";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.Types
+{
+
+
+ 	/// <summary>
+	/// IScope_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Types/Scope Type</para>	
+	/// <para>ID: 49bd2cd1-05e0-4903-aeba-97c0409e9594</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IScope_TypeConstants.TemplateIdString)]
+	public partial interface IScope_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IScope_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Types/Scope Type</para>	
+		/// <para>ID: 49bd2cd1-05e0-4903-aeba-97c0409e9594</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IScope_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IScope_TypeConstants{
+
+			public const string TemplateIdString = "49bd2cd1-05e0-4903-aeba-97c0409e9594";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Scope Type";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 {
 
@@ -2966,6 +3984,231 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 					
 			public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
 			public const string Navigation_TextFieldName = "Navigation Text";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound
+{
+
+
+ 	/// <summary>
+	/// IOutbound_Preconditions Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Outbound/Outbound Preconditions</para>	
+	/// <para>ID: 542b92ee-1a9c-48fc-a81b-b034cb6ae368</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IOutbound_PreconditionsConstants.TemplateIdString)]
+	public partial interface IOutbound_Preconditions : IGlassBase 
+	{
+								/// <summary>
+					/// The Precondition field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 731a1a11-3d5f-4d84-8152-52f1b4d04e2a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IOutbound_PreconditionsConstants.PreconditionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Precondition  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IOutbound_Preconditions Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Outbound/Outbound Preconditions</para>	
+		/// <para>ID: 542b92ee-1a9c-48fc-a81b-b034cb6ae368</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IOutbound_Preconditions__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Precondition field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 731a1a11-3d5f-4d84-8152-52f1b4d04e2a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IOutbound_PreconditionsConstants.PreconditionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Precondition  {get; set;}
+						}
+	
+	public static partial class IOutbound_PreconditionsConstants{
+
+			public const string TemplateIdString = "542b92ee-1a9c-48fc-a81b-b034cb6ae368";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Outbound Preconditions";
+
+					
+			public static readonly ID PreconditionFieldId = new ID("731a1a11-3d5f-4d84-8152-52f1b4d04e2a");
+			public const string PreconditionFieldName = "Precondition";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.Types
+{
+
+
+ 	/// <summary>
+	/// IMatch_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Types/Match Type</para>	
+	/// <para>ID: 54fb682d-57da-401f-853a-7556f0213c4c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_TypeConstants.TemplateIdString)]
+	public partial interface IMatch_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IMatch_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Types/Match Type</para>	
+		/// <para>ID: 54fb682d-57da-401f-853a-7556f0213c4c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IMatch_TypeConstants{
+
+			public const string TemplateIdString = "54fb682d-57da-401f-853a-7556f0213c4c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Type";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IOutbound_Match Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Outbound Match</para>	
+	/// <para>ID: 55e021f5-e48a-4340-ac93-8861bbe3c104</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IOutbound_MatchConstants.TemplateIdString)]
+	public partial interface IOutbound_Match : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound.IOutbound_Match_Scope
+	{
+				}
+
+	
+		/// <summary>
+		/// IOutbound_Match Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Outbound Match</para>	
+		/// <para>ID: 55e021f5-e48a-4340-ac93-8861bbe3c104</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IOutbound_Match__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound.IOutbound_Match_Scope__Raw
+		{
+						}
+	
+	public static partial class IOutbound_MatchConstants{
+
+			public const string TemplateIdString = "55e021f5-e48a-4340-ac93-8861bbe3c104";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Outbound Match";
+
+					
+			public static readonly ID Match_TypeFieldId = new ID("232472ff-de28-43a3-875c-b4051badc3a2");
+			public const string Match_TypeFieldName = "Match Type";
+
+						
+					
+			public static readonly ID UsingFieldId = new ID("644b4909-598f-4fb9-8a6c-455e93ae4d17");
+			public const string UsingFieldName = "Using";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("d938cd93-3517-4509-9a68-9da430d8ec68");
+			public const string PatternFieldName = "Pattern";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("ceeeb260-ec81-40b6-b2a6-9e56525c599f");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+					
+			public static readonly ID Match_Scope_TypeFieldId = new ID("d7e99e56-654a-47a0-a228-5a61f3f7fe69");
+			public const string Match_Scope_TypeFieldName = "Match Scope Type";
+
+						
+					
+			public static readonly ID Match_ScopeFieldId = new ID("f7dfa171-b3a6-47c2-b4be-c0ccfa5302bf");
+			public const string Match_ScopeFieldName = "Match Scope";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IBase_Match Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Base Match</para>	
+	/// <para>ID: 57516483-a64c-4036-895b-b55d9267a8e6</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_MatchConstants.TemplateIdString)]
+	public partial interface IBase_Match : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Match_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Using, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Pattern, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Ignore_Case
+	{
+				}
+
+	
+		/// <summary>
+		/// IBase_Match Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Base Match</para>	
+		/// <para>ID: 57516483-a64c-4036-895b-b55d9267a8e6</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Match__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Match_Type__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Using__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Pattern__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Ignore_Case__Raw
+		{
+						}
+	
+	public static partial class IBase_MatchConstants{
+
+			public const string TemplateIdString = "57516483-a64c-4036-895b-b55d9267a8e6";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Match";
+
+					
+			public static readonly ID Match_TypeFieldId = new ID("232472ff-de28-43a3-875c-b4051badc3a2");
+			public const string Match_TypeFieldName = "Match Type";
+
+						
+					
+			public static readonly ID UsingFieldId = new ID("644b4909-598f-4fb9-8a6c-455e93ae4d17");
+			public const string UsingFieldName = "Using";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("d938cd93-3517-4509-9a68-9da430d8ec68");
+			public const string PatternFieldName = "Pattern";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("ceeeb260-ec81-40b6-b2a6-9e56525c599f");
+			public const string Ignore_CaseFieldName = "Ignore case";
 
 						
 			
@@ -3325,6 +4568,87 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
+{
+
+
+ 	/// <summary>
+	/// IItemQueryRedirect Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/ItemQueryRedirect</para>	
+	/// <para>ID: 5b7fb661-cb6c-449c-9c84-2672538ac77c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IItemQueryRedirectConstants.TemplateIdString)]
+	public partial interface IItemQueryRedirect : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Append_Querystring, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Cache, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Redirect_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing
+	{
+								/// <summary>
+					/// The Item Query field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6cdc6831-9172-4927-90f7-1592b68d6b25</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IItemQueryRedirectConstants.Item_QueryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Item_Query  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IItemQueryRedirect Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/ItemQueryRedirect</para>	
+		/// <para>ID: 5b7fb661-cb6c-449c-9c84-2672538ac77c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IItemQueryRedirect__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Append_Querystring__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Cache__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Redirect_Type__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing__Raw
+		{
+										/// <summary>
+						/// The Item Query field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 6cdc6831-9172-4927-90f7-1592b68d6b25</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IItemQueryRedirectConstants.Item_QueryFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Item_Query  {get; set;}
+						}
+	
+	public static partial class IItemQueryRedirectConstants{
+
+			public const string TemplateIdString = "5b7fb661-cb6c-449c-9c84-2672538ac77c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ItemQueryRedirect";
+
+					
+			public static readonly ID Item_QueryFieldId = new ID("6cdc6831-9172-4927-90f7-1592b68d6b25");
+			public const string Item_QueryFieldName = "Item Query";
+
+						
+					
+			public static readonly ID Append_Query_StringFieldId = new ID("34c2b6bc-2c36-46b6-9216-4e77c59ae1d0");
+			public const string Append_Query_StringFieldName = "Append query string";
+
+						
+					
+			public static readonly ID HttpCacheabilityFieldId = new ID("8b11c099-83a4-487c-b070-9e1ad6b56013");
+			public const string HttpCacheabilityFieldName = "HttpCacheability";
+
+						
+					
+			public static readonly ID Redirect_TypeFieldId = new ID("8d4633fd-139d-443f-be40-e2918d49c63e");
+			public const string Redirect_TypeFieldName = "Redirect type";
+
+						
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -3447,6 +4771,82 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBase_Action Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Action</para>	
+	/// <para>ID: 5c9153f1-6cdd-40c7-9670-1d1dca23e784</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_ActionConstants.TemplateIdString)]
+	public partial interface IBase_Action : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+				}
+
+	
+		/// <summary>
+		/// IBase_Action Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Action</para>	
+		/// <para>ID: 5c9153f1-6cdd-40c7-9670-1d1dca23e784</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Action__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+						}
+	
+	public static partial class IBase_ActionConstants{
+
+			public const string TemplateIdString = "5c9153f1-6cdd-40c7-9670-1d1dca23e784";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Action";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Types
+{
+
+
+ 	/// <summary>
+	/// IRedirect_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Types/Redirect Type</para>	
+	/// <para>ID: 5e020836-c778-4283-b199-82147c4c122f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRedirect_TypeConstants.TemplateIdString)]
+	public partial interface IRedirect_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IRedirect_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Types/Redirect Type</para>	
+		/// <para>ID: 5e020836-c778-4283-b199-82147c4c122f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRedirect_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IRedirect_TypeConstants{
+
+			public const string TemplateIdString = "5e020836-c778-4283-b199-82147c4c122f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Redirect Type";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -3485,6 +4885,150 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables
+{
+
+
+ 	/// <summary>
+	/// IRequest_Header Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Request Header</para>	
+	/// <para>ID: 698ffcc4-0d22-4b97-acfe-3d04994b4b65</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRequest_HeaderConstants.TemplateIdString)]
+	public partial interface IRequest_Header : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables.IBase_Server_Variable
+	{
+				}
+
+	
+		/// <summary>
+		/// IRequest_Header Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Request Header</para>	
+		/// <para>ID: 698ffcc4-0d22-4b97-acfe-3d04994b4b65</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRequest_Header__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables.IBase_Server_Variable__Raw
+		{
+						}
+	
+	public static partial class IRequest_HeaderConstants{
+
+			public const string TemplateIdString = "698ffcc4-0d22-4b97-acfe-3d04994b4b65";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Request Header";
+
+					
+			public static readonly ID Replace_Existing_ValueFieldId = new ID("38af1182-9ca6-4136-a92a-5538c0e9b877");
+			public const string Replace_Existing_ValueFieldName = "Replace existing value";
+
+						
+					
+			public static readonly ID ValueFieldId = new ID("2c6474ba-5d72-4874-aead-ae40e93410f1");
+			public const string ValueFieldName = "Value";
+
+						
+					
+			public static readonly ID Variable_NameFieldId = new ID("16032853-2874-4634-b733-d5d4cca11d38");
+			public const string Variable_NameFieldName = "Variable Name";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Inbound
+{
+
+
+ 	/// <summary>
+	/// IInbound_Rule Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Inbound/Inbound Rule</para>	
+	/// <para>ID: 69dce9a6-d8c1-463d-af95-b7feb326013f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IInbound_RuleConstants.TemplateIdString)]
+	public partial interface IInbound_Rule : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Rule
+	{
+								/// <summary>
+					/// The Action field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 2c3bbda8-1b48-4352-b5bf-3478104e1c5f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInbound_RuleConstants.ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Action  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IInbound_Rule Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Inbound/Inbound Rule</para>	
+		/// <para>ID: 69dce9a6-d8c1-463d-af95-b7feb326013f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IInbound_Rule__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Rule__Raw
+		{
+										/// <summary>
+						/// The Action field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 2c3bbda8-1b48-4352-b5bf-3478104e1c5f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInbound_RuleConstants.ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Action  {get; set;}
+						}
+	
+	public static partial class IInbound_RuleConstants{
+
+			public const string TemplateIdString = "69dce9a6-d8c1-463d-af95-b7feb326013f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Inbound Rule";
+
+					
+			public static readonly ID ActionFieldId = new ID("2c3bbda8-1b48-4352-b5bf-3478104e1c5f");
+			public const string ActionFieldName = "Action";
+
+						
+					
+			public static readonly ID Match_TypeFieldId = new ID("232472ff-de28-43a3-875c-b4051badc3a2");
+			public const string Match_TypeFieldName = "Match Type";
+
+						
+					
+			public static readonly ID UsingFieldId = new ID("644b4909-598f-4fb9-8a6c-455e93ae4d17");
+			public const string UsingFieldName = "Using";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("d938cd93-3517-4509-9a68-9da430d8ec68");
+			public const string PatternFieldName = "Pattern";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("ceeeb260-ec81-40b6-b2a6-9e56525c599f");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+					
+			public static readonly ID Logical_GroupingFieldId = new ID("9bcc4ca4-3b9c-4284-b32f-280433f09c01");
+			public const string Logical_GroupingFieldName = "Logical grouping";
+
+						
+					
+			public static readonly ID EnabledFieldId = new ID("14c30096-c351-4ab4-9e08-2de9b61c8d4f");
+			public const string EnabledFieldName = "Enabled";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics
 {
 
@@ -3518,6 +5062,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Topic Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Ignore_Case Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Ignore Case</para>	
+	/// <para>ID: 6c12fd0e-95e9-4e3e-9da0-94fff15c67c0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_Ignore_CaseConstants.TemplateIdString)]
+	public partial interface IMatch_Ignore_Case : IGlassBase 
+	{
+								/// <summary>
+					/// The Ignore case field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: ceeeb260-ec81-40b6-b2a6-9e56525c599f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_Ignore_CaseConstants.Ignore_CaseFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Ignore_Case  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Ignore_Case Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Ignore Case</para>	
+		/// <para>ID: 6c12fd0e-95e9-4e3e-9da0-94fff15c67c0</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Ignore_Case__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Ignore case field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: ceeeb260-ec81-40b6-b2a6-9e56525c599f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_Ignore_CaseConstants.Ignore_CaseFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Ignore_Case  {get; set;}
+						}
+	
+	public static partial class IMatch_Ignore_CaseConstants{
+
+			public const string TemplateIdString = "6c12fd0e-95e9-4e3e-9da0-94fff15c67c0";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Ignore Case";
+
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("ceeeb260-ec81-40b6-b2a6-9e56525c599f");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
 			
 
 	}
@@ -4005,6 +5610,59 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.T
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
+{
+
+
+ 	/// <summary>
+	/// IRewrite Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Rewrite</para>	
+	/// <para>ID: 7acb0905-11d7-47bd-94b3-a903d264135f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRewriteConstants.TemplateIdString)]
+	public partial interface IRewrite : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBaseRewrite
+	{
+				}
+
+	
+		/// <summary>
+		/// IRewrite Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Rewrite</para>	
+		/// <para>ID: 7acb0905-11d7-47bd-94b3-a903d264135f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRewrite__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBaseRewrite__Raw
+		{
+						}
+	
+	public static partial class IRewriteConstants{
+
+			public const string TemplateIdString = "7acb0905-11d7-47bd-94b3-a903d264135f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Rewrite";
+
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+					
+			public static readonly ID Rewrite_URLFieldId = new ID("7bddf3f6-438f-4256-b47a-efdec89e9c8b");
+			public const string Rewrite_URLFieldName = "Rewrite URL";
+
+						
+					
+			public static readonly ID Append_Query_StringFieldId = new ID("34c2b6bc-2c36-46b6-9216-4e77c59ae1d0");
+			public const string Append_Query_StringFieldName = "Append query string";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content
 {
 
@@ -4062,6 +5720,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_
 
 							public static readonly ID Text__RawFieldId = new ID("789adc78-20ba-4599-8c29-ed74bc4c7122");
 				public const string Text__RawFieldName = "Text";
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Scope_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Scope Type</para>	
+	/// <para>ID: 7b5b7c00-4708-485b-809e-1064b689b2de</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_Scope_TypeConstants.TemplateIdString)]
+	public partial interface IMatch_Scope_Type : IGlassBase 
+	{
+								/// <summary>
+					/// The Match Scope Type field.
+					/// <para></para>
+					/// <para>Field Type: Droplist</para>		
+					/// <para>Field ID: d7e99e56-654a-47a0-a228-5a61f3f7fe69</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_Scope_TypeConstants.Match_Scope_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Match_Scope_Type  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Scope_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Scope Type</para>	
+		/// <para>ID: 7b5b7c00-4708-485b-809e-1064b689b2de</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Scope_Type__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Match Scope Type field.
+						/// <para></para>
+						/// <para>Field Type: Droplist</para>		
+						/// <para>Field ID: d7e99e56-654a-47a0-a228-5a61f3f7fe69</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_Scope_TypeConstants.Match_Scope_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Match_Scope_Type  {get; set;}
+						}
+	
+	public static partial class IMatch_Scope_TypeConstants{
+
+			public const string TemplateIdString = "7b5b7c00-4708-485b-809e-1064b689b2de";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Scope Type";
+
+					
+			public static readonly ID Match_Scope_TypeFieldId = new ID("d7e99e56-654a-47a0-a228-5a61f3f7fe69");
+			public const string Match_Scope_TypeFieldName = "Match Scope Type";
+
 						
 			
 
@@ -4183,6 +5902,97 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID Article_CategoryFieldId = new ID("9a474805-f518-4349-9e26-4ae1de4b41cc");
 			public const string Article_CategoryFieldName = "Article Category";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.Types
+{
+
+
+ 	/// <summary>
+	/// IUsing_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Types/Using Type</para>	
+	/// <para>ID: 7cbecfae-2e9e-4e79-a6ed-02536eafa383</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IUsing_TypeConstants.TemplateIdString)]
+	public partial interface IUsing_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IUsing_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Types/Using Type</para>	
+		/// <para>ID: 7cbecfae-2e9e-4e79-a6ed-02536eafa383</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IUsing_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IUsing_TypeConstants{
+
+			public const string TemplateIdString = "7cbecfae-2e9e-4e79-a6ed-02536eafa383";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Using Type";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBaseRewrite Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/BaseRewrite</para>	
+	/// <para>ID: 7e95e23f-437c-46dc-97aa-f2f6c79b78c1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBaseRewriteConstants.TemplateIdString)]
+	public partial interface IBaseRewrite : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Rewrite_URL, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Append_Querystring
+	{
+				}
+
+	
+		/// <summary>
+		/// IBaseRewrite Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/BaseRewrite</para>	
+		/// <para>ID: 7e95e23f-437c-46dc-97aa-f2f6c79b78c1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBaseRewrite__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Rewrite_URL__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Append_Querystring__Raw
+		{
+						}
+	
+	public static partial class IBaseRewriteConstants{
+
+			public const string TemplateIdString = "7e95e23f-437c-46dc-97aa-f2f6c79b78c1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "BaseRewrite";
+
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+					
+			public static readonly ID Rewrite_URLFieldId = new ID("7bddf3f6-438f-4256-b47a-efdec89e9c8b");
+			public const string Rewrite_URLFieldName = "Rewrite URL";
+
+						
+					
+			public static readonly ID Append_Query_StringFieldId = new ID("34c2b6bc-2c36-46b6-9216-4e77c59ae1d0");
+			public const string Append_Query_StringFieldName = "Append query string";
 
 						
 			
@@ -4345,6 +6155,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TextFieldName = "Text";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates
+{
+
+
+ 	/// <summary>
+	/// IBase_UrlRewrite_Item Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Base UrlRewrite Item</para>	
+	/// <para>ID: 83aff04d-c0da-44d4-8a7e-4bc0a89903e8</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_UrlRewrite_ItemConstants.TemplateIdString)]
+	public partial interface IBase_UrlRewrite_Item : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IBase_UrlRewrite_Item Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Base UrlRewrite Item</para>	
+		/// <para>ID: 83aff04d-c0da-44d4-8a7e-4bc0a89903e8</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_UrlRewrite_Item__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IBase_UrlRewrite_ItemConstants{
+
+			public const string TemplateIdString = "83aff04d-c0da-44d4-8a7e-4bc0a89903e8";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base UrlRewrite Item";
+
 			
 
 	}
@@ -5263,6 +7111,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Folders
+{
+
+
+ 	/// <summary>
+	/// IRedirect_Sub_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Redirect Sub Folder</para>	
+	/// <para>ID: 9461e537-8e89-4b91-896a-1f2c3af4a3d5</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRedirect_Sub_FolderConstants.TemplateIdString)]
+	public partial interface IRedirect_Sub_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+				}
+
+	
+		/// <summary>
+		/// IRedirect_Sub_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Redirect Sub Folder</para>	
+		/// <para>ID: 9461e537-8e89-4b91-896a-1f2c3af4a3d5</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRedirect_Sub_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+						}
+	
+	public static partial class IRedirect_Sub_FolderConstants{
+
+			public const string TemplateIdString = "9461e537-8e89-4b91-896a-1f2c3af4a3d5";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Redirect Sub Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 {
 
@@ -5811,6 +7697,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversio
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Folders
+{
+
+
+ 	/// <summary>
+	/// IPreconditions_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Preconditions Folder</para>	
+	/// <para>ID: 9675d02e-d173-4760-8f13-3432b920d771</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPreconditions_FolderConstants.TemplateIdString)]
+	public partial interface IPreconditions_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+				}
+
+	
+		/// <summary>
+		/// IPreconditions_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Preconditions Folder</para>	
+		/// <para>ID: 9675d02e-d173-4760-8f13-3432b920d771</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IPreconditions_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+						}
+	
+	public static partial class IPreconditions_FolderConstants{
+
+			public const string TemplateIdString = "9675d02e-d173-4760-8f13-3432b920d771";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Preconditions Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -5926,6 +7850,74 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
 			public const string WidthFieldName = "Width";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates
+{
+
+
+ 	/// <summary>
+	/// IBase_Rule Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Base Rule</para>	
+	/// <para>ID: 995478b6-29fb-4cf8-b5fb-5c1c5b21bf5a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_RuleConstants.TemplateIdString)]
+	public partial interface IBase_Rule : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.ICondition_Logical_Grouping, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Enabled
+	{
+				}
+
+	
+		/// <summary>
+		/// IBase_Rule Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Base Rule</para>	
+		/// <para>ID: 995478b6-29fb-4cf8-b5fb-5c1c5b21bf5a</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Rule__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.ICondition_Logical_Grouping__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Enabled__Raw
+		{
+						}
+	
+	public static partial class IBase_RuleConstants{
+
+			public const string TemplateIdString = "995478b6-29fb-4cf8-b5fb-5c1c5b21bf5a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Rule";
+
+					
+			public static readonly ID Match_TypeFieldId = new ID("232472ff-de28-43a3-875c-b4051badc3a2");
+			public const string Match_TypeFieldName = "Match Type";
+
+						
+					
+			public static readonly ID UsingFieldId = new ID("644b4909-598f-4fb9-8a6c-455e93ae4d17");
+			public const string UsingFieldName = "Using";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("d938cd93-3517-4509-9a68-9da430d8ec68");
+			public const string PatternFieldName = "Pattern";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("ceeeb260-ec81-40b6-b2a6-9e56525c599f");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+					
+			public static readonly ID Logical_GroupingFieldId = new ID("9bcc4ca4-3b9c-4284-b32f-280433f09c01");
+			public const string Logical_GroupingFieldName = "Logical grouping";
+
+						
+					
+			public static readonly ID EnabledFieldId = new ID("14c30096-c351-4ab4-9e08-2de9b61c8d4f");
+			public const string EnabledFieldName = "Enabled";
 
 						
 			
@@ -6932,6 +8924,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates
+{
+
+
+ 	/// <summary>
+	/// IBase_Enabled Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Base Enabled</para>	
+	/// <para>ID: 9ce37445-8572-4244-87e7-b0aafbf87a35</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_EnabledConstants.TemplateIdString)]
+	public partial interface IBase_Enabled : IGlassBase 
+	{
+								/// <summary>
+					/// The Enabled field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 14c30096-c351-4ab4-9e08-2de9b61c8d4f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_EnabledConstants.EnabledFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Enabled  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Enabled Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Base Enabled</para>	
+		/// <para>ID: 9ce37445-8572-4244-87e7-b0aafbf87a35</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Enabled__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Enabled field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 14c30096-c351-4ab4-9e08-2de9b61c8d4f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_EnabledConstants.EnabledFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Enabled  {get; set;}
+						}
+	
+	public static partial class IBase_EnabledConstants{
+
+			public const string TemplateIdString = "9ce37445-8572-4244-87e7-b0aafbf87a35";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Enabled";
+
+					
+			public static readonly ID EnabledFieldId = new ID("14c30096-c351-4ab4-9e08-2de9b61c8d4f");
+			public const string EnabledFieldName = "Enabled";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -7570,6 +9623,72 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
+{
+
+
+ 	/// <summary>
+	/// IOutbound_Rewrite Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Outbound Rewrite</para>	
+	/// <para>ID: a5e7b43a-4387-4109-950e-6181452f4976</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IOutbound_RewriteConstants.TemplateIdString)]
+	public partial interface IOutbound_Rewrite : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing
+	{
+								/// <summary>
+					/// The Value field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 2d396efc-6ba9-47a1-9af5-2530beda636b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IOutbound_RewriteConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Value  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IOutbound_Rewrite Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Outbound Rewrite</para>	
+		/// <para>ID: a5e7b43a-4387-4109-950e-6181452f4976</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IOutbound_Rewrite__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing__Raw
+		{
+										/// <summary>
+						/// The Value field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 2d396efc-6ba9-47a1-9af5-2530beda636b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IOutbound_RewriteConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Value  {get; set;}
+						}
+	
+	public static partial class IOutbound_RewriteConstants{
+
+			public const string TemplateIdString = "a5e7b43a-4387-4109-950e-6181452f4976";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Outbound Rewrite";
+
+					
+			public static readonly ID ValueFieldId = new ID("2d396efc-6ba9-47a1-9af5-2530beda636b");
+			public const string ValueFieldName = "Value";
+
+						
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
 {
 
@@ -7613,6 +9732,54 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions
+{
+
+
+ 	/// <summary>
+	/// IPrecondition Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Precondition</para>	
+	/// <para>ID: a83e69ae-b93f-45c1-a20b-e6879bd04598</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPreconditionConstants.TemplateIdString)]
+	public partial interface IPrecondition : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.IPrecondition_Using, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.ICondition_Logical_Grouping
+	{
+				}
+
+	
+		/// <summary>
+		/// IPrecondition Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Precondition</para>	
+		/// <para>ID: a83e69ae-b93f-45c1-a20b-e6879bd04598</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IPrecondition__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.IPrecondition_Using__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.ICondition_Logical_Grouping__Raw
+		{
+						}
+	
+	public static partial class IPreconditionConstants{
+
+			public const string TemplateIdString = "a83e69ae-b93f-45c1-a20b-e6879bd04598";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Precondition";
+
+					
+			public static readonly ID UsingFieldId = new ID("1f3489d4-828a-4b83-a3d2-c980c4f6fb7e");
+			public const string UsingFieldName = "Using";
+
+						
+					
+			public static readonly ID Logical_GroupingFieldId = new ID("9bcc4ca4-3b9c-4284-b32f-280433f09c01");
+			public const string Logical_GroupingFieldName = "Logical grouping";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.Common
 {
 
@@ -7646,6 +9813,136 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Common
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
+{
+
+
+ 	/// <summary>
+	/// ICustom_Response Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Custom Response</para>	
+	/// <para>ID: a96d8e98-38b7-4d99-be55-d5225f6d8279</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICustom_ResponseConstants.TemplateIdString)]
+	public partial interface ICustom_Response : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Action
+	{
+								/// <summary>
+					/// The Error description field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 67cda392-1d88-46df-9245-30eb9b46d05e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICustom_ResponseConstants.Error_DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Error_Description  {get; set;}
+								/// <summary>
+					/// The Reason field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b054829d-577f-4eca-9a4f-e76010f4b7ea</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICustom_ResponseConstants.ReasonFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Reason  {get; set;}
+								/// <summary>
+					/// The Status code field.
+					/// <para></para>
+					/// <para>Field Type: Integer</para>		
+					/// <para>Field ID: 6a605986-0706-472a-b0e7-7cca019d11a3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICustom_ResponseConstants.Status_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					int Status_Code  {get; set;}
+								/// <summary>
+					/// The Substatus code field.
+					/// <para></para>
+					/// <para>Field Type: Integer</para>		
+					/// <para>Field ID: 503ecb1c-c7a9-4dff-a756-3786e24a730c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICustom_ResponseConstants.Substatus_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					int Substatus_Code  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICustom_Response Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Custom Response</para>	
+		/// <para>ID: a96d8e98-38b7-4d99-be55-d5225f6d8279</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICustom_Response__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Action__Raw
+		{
+										/// <summary>
+						/// The Error description field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 67cda392-1d88-46df-9245-30eb9b46d05e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICustom_ResponseConstants.Error_DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Error_Description  {get; set;}
+										/// <summary>
+						/// The Reason field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b054829d-577f-4eca-9a4f-e76010f4b7ea</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICustom_ResponseConstants.ReasonFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Reason  {get; set;}
+										/// <summary>
+						/// The Status code field.
+						/// <para></para>
+						/// <para>Field Type: Integer</para>		
+						/// <para>Field ID: 6a605986-0706-472a-b0e7-7cca019d11a3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICustom_ResponseConstants.Status_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						int Status_Code  {get; set;}
+										/// <summary>
+						/// The Substatus code field.
+						/// <para></para>
+						/// <para>Field Type: Integer</para>		
+						/// <para>Field ID: 503ecb1c-c7a9-4dff-a756-3786e24a730c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICustom_ResponseConstants.Substatus_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						int Substatus_Code  {get; set;}
+						}
+	
+	public static partial class ICustom_ResponseConstants{
+
+			public const string TemplateIdString = "a96d8e98-38b7-4d99-be55-d5225f6d8279";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Custom Response";
+
+					
+			public static readonly ID Error_DescriptionFieldId = new ID("67cda392-1d88-46df-9245-30eb9b46d05e");
+			public const string Error_DescriptionFieldName = "Error description";
+
+						
+					
+			public static readonly ID ReasonFieldId = new ID("b054829d-577f-4eca-9a4f-e76010f4b7ea");
+			public const string ReasonFieldName = "Reason";
+
+						
+					
+			public static readonly ID Status_CodeFieldId = new ID("6a605986-0706-472a-b0e7-7cca019d11a3");
+			public const string Status_CodeFieldName = "Status code";
+
+						
+					
+			public static readonly ID Substatus_CodeFieldId = new ID("503ecb1c-c7a9-4dff-a756-3786e24a730c");
+			public const string Substatus_CodeFieldName = "Substatus code";
+
+						
 			
 
 	}
@@ -7821,6 +10118,151 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Settings
+{
+
+
+ 	/// <summary>
+	/// ISettings Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Settings/Settings</para>	
+	/// <para>ID: b3a4b170-59de-4438-b4e8-fe74a3c24c00</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISettingsConstants.TemplateIdString)]
+	public partial interface ISettings : IGlassBase 
+	{
+								/// <summary>
+					/// The Installation Publishing Targets field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 64727107-1326-48b7-a428-6e469cb99b47</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISettingsConstants.Installation_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Installation_Publishing_Targets  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ISettings Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Settings/Settings</para>	
+		/// <para>ID: b3a4b170-59de-4438-b4e8-fe74a3c24c00</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISettings__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Installation Publishing Targets field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 64727107-1326-48b7-a428-6e469cb99b47</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISettingsConstants.Installation_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Installation_Publishing_Targets  {get; set;}
+						}
+	
+	public static partial class ISettingsConstants{
+
+			public const string TemplateIdString = "b3a4b170-59de-4438-b4e8-fe74a3c24c00";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Settings";
+
+					
+			public static readonly ID Installation_Publishing_TargetsFieldId = new ID("64727107-1326-48b7-a428-6e469cb99b47");
+			public const string Installation_Publishing_TargetsFieldName = "Installation Publishing Targets";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Tag Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Tag</para>	
+	/// <para>ID: b88d1713-7511-40d0-b71d-51a5e14c7c7e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_TagConstants.TemplateIdString)]
+	public partial interface IMatch_Tag : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+								/// <summary>
+					/// The Attribute field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ecabbc94-510c-4df1-accb-7bd3c5664cb2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_TagConstants.AttributeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Attribute  {get; set;}
+								/// <summary>
+					/// The Tag field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a118fa40-19f9-4e70-8d93-634a1b41a4c3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_TagConstants.TagFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Tag  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Tag Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Tag</para>	
+		/// <para>ID: b88d1713-7511-40d0-b71d-51a5e14c7c7e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Tag__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+										/// <summary>
+						/// The Attribute field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ecabbc94-510c-4df1-accb-7bd3c5664cb2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_TagConstants.AttributeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Attribute  {get; set;}
+										/// <summary>
+						/// The Tag field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a118fa40-19f9-4e70-8d93-634a1b41a4c3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_TagConstants.TagFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Tag  {get; set;}
+						}
+	
+	public static partial class IMatch_TagConstants{
+
+			public const string TemplateIdString = "b88d1713-7511-40d0-b71d-51a5e14c7c7e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Tag";
+
+					
+			public static readonly ID AttributeFieldId = new ID("ecabbc94-510c-4df1-accb-7bd3c5664cb2");
+			public const string AttributeFieldName = "Attribute";
+
+						
+					
+			public static readonly ID TagFieldId = new ID("a118fa40-19f9-4e70-8d93-634a1b41a4c3");
+			public const string TagFieldName = "Tag";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
 
@@ -7915,6 +10357,59 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Default Article Category Style Mapping";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables
+{
+
+
+ 	/// <summary>
+	/// IResponse_Header Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Response Header</para>	
+	/// <para>ID: ba67d115-9a49-4eab-8cdf-596cb6f0cbf1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IResponse_HeaderConstants.TemplateIdString)]
+	public partial interface IResponse_Header : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables.IBase_Server_Variable
+	{
+				}
+
+	
+		/// <summary>
+		/// IResponse_Header Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Response Header</para>	
+		/// <para>ID: ba67d115-9a49-4eab-8cdf-596cb6f0cbf1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IResponse_Header__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables.IBase_Server_Variable__Raw
+		{
+						}
+	
+	public static partial class IResponse_HeaderConstants{
+
+			public const string TemplateIdString = "ba67d115-9a49-4eab-8cdf-596cb6f0cbf1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Response Header";
+
+					
+			public static readonly ID Replace_Existing_ValueFieldId = new ID("38af1182-9ca6-4136-a92a-5538c0e9b877");
+			public const string Replace_Existing_ValueFieldName = "Replace existing value";
+
+						
+					
+			public static readonly ID ValueFieldId = new ID("2c6474ba-5d72-4874-aead-ae40e93410f1");
+			public const string ValueFieldName = "Value";
+
+						
+					
+			public static readonly ID Variable_NameFieldId = new ID("16032853-2874-4634-b733-d5d4cca11d38");
+			public const string Variable_NameFieldName = "Variable Name";
+
+						
 			
 
 	}
@@ -8079,6 +10574,105 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Using Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Using</para>	
+	/// <para>ID: bd62f334-3eab-483d-a88b-d1d36ee51c9e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_UsingConstants.TemplateIdString)]
+	public partial interface IMatch_Using : IGlassBase 
+	{
+								/// <summary>
+					/// The Using field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 644b4909-598f-4fb9-8a6c-455e93ae4d17</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_UsingConstants.UsingFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Using  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Using Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Using</para>	
+		/// <para>ID: bd62f334-3eab-483d-a88b-d1d36ee51c9e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Using__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Using field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 644b4909-598f-4fb9-8a6c-455e93ae4d17</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_UsingConstants.UsingFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Using  {get; set;}
+						}
+	
+	public static partial class IMatch_UsingConstants{
+
+			public const string TemplateIdString = "bd62f334-3eab-483d-a88b-d1d36ee51c9e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Using";
+
+					
+			public static readonly ID UsingFieldId = new ID("644b4909-598f-4fb9-8a6c-455e93ae4d17");
+			public const string UsingFieldName = "Using";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
+{
+
+
+ 	/// <summary>
+	/// IAbort_Request Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Abort Request</para>	
+	/// <para>ID: bd8e6e5e-62f8-4397-99ca-b0502afd14b9</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IAbort_RequestConstants.TemplateIdString)]
+	public partial interface IAbort_Request : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Action
+	{
+				}
+
+	
+		/// <summary>
+		/// IAbort_Request Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Abort Request</para>	
+		/// <para>ID: bd8e6e5e-62f8-4397-99ca-b0502afd14b9</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IAbort_Request__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Action__Raw
+		{
+						}
+	
+	public static partial class IAbort_RequestConstants{
+
+			public const string TemplateIdString = "bd8e6e5e-62f8-4397-99ca-b0502afd14b9";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Abort Request";
+
 			
 
 	}
@@ -8481,6 +11075,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Folders
+{
+
+
+ 	/// <summary>
+	/// IRedirect_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Redirect Folder</para>	
+	/// <para>ID: cbe995d0-fce0-4061-b807-b4bbc89962a7</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRedirect_FolderConstants.TemplateIdString)]
+	public partial interface IRedirect_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+								/// <summary>
+					/// The Site Name Restriction field.
+					/// <para></para>
+					/// <para>Field Type: SiteDroplist</para>		
+					/// <para>Field ID: fe9cf20a-2285-4627-b171-81cf2d532a41</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRedirect_FolderConstants.Site_Name_RestrictionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					object /* UNKNOWN */ Site_Name_Restriction  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IRedirect_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Redirect Folder</para>	
+		/// <para>ID: cbe995d0-fce0-4061-b807-b4bbc89962a7</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRedirect_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+										/// <summary>
+						/// The Site Name Restriction field.
+						/// <para></para>
+						/// <para>Field Type: SiteDroplist</para>		
+						/// <para>Field ID: fe9cf20a-2285-4627-b171-81cf2d532a41</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRedirect_FolderConstants.Site_Name_RestrictionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						object /* UNKNOWN */ Site_Name_Restriction  {get; set;}
+						}
+	
+	public static partial class IRedirect_FolderConstants{
+
+			public const string TemplateIdString = "cbe995d0-fce0-4061-b807-b4bbc89962a7";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Redirect Folder";
+
+					
+			public static readonly ID Site_Name_RestrictionFieldId = new ID("fe9cf20a-2285-4627-b171-81cf2d532a41");
+			public const string Site_Name_RestrictionFieldName = "Site Name Restriction";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 {
 
@@ -8519,6 +11174,130 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound
+{
+
+
+ 	/// <summary>
+	/// IOutbound_Match_Scope Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Outbound/Outbound Match Scope</para>	
+	/// <para>ID: d14e8e19-04c6-4c98-b9fe-6830f6a957af</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IOutbound_Match_ScopeConstants.TemplateIdString)]
+	public partial interface IOutbound_Match_Scope : IGlassBase 
+	{
+								/// <summary>
+					/// The Match Scope field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: f7dfa171-b3a6-47c2-b4be-c0ccfa5302bf</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IOutbound_Match_ScopeConstants.Match_ScopeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Match_Scope  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IOutbound_Match_Scope Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Outbound/Outbound Match Scope</para>	
+		/// <para>ID: d14e8e19-04c6-4c98-b9fe-6830f6a957af</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IOutbound_Match_Scope__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Match Scope field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: f7dfa171-b3a6-47c2-b4be-c0ccfa5302bf</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IOutbound_Match_ScopeConstants.Match_ScopeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Match_Scope  {get; set;}
+						}
+	
+	public static partial class IOutbound_Match_ScopeConstants{
+
+			public const string TemplateIdString = "d14e8e19-04c6-4c98-b9fe-6830f6a957af";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Outbound Match Scope";
+
+					
+			public static readonly ID Match_ScopeFieldId = new ID("f7dfa171-b3a6-47c2-b4be-c0ccfa5302bf");
+			public const string Match_ScopeFieldName = "Match Scope";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
+{
+
+
+ 	/// <summary>
+	/// IRedirect Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Redirect</para>	
+	/// <para>ID: d199ef8b-9d4d-420f-a283-e16d7b575625</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRedirectConstants.TemplateIdString)]
+	public partial interface IRedirect : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Redirect
+	{
+				}
+
+	
+		/// <summary>
+		/// IRedirect Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Redirect</para>	
+		/// <para>ID: d199ef8b-9d4d-420f-a283-e16d7b575625</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRedirect__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Redirect__Raw
+		{
+						}
+	
+	public static partial class IRedirectConstants{
+
+			public const string TemplateIdString = "d199ef8b-9d4d-420f-a283-e16d7b575625";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Redirect";
+
+					
+			public static readonly ID Append_Query_StringFieldId = new ID("34c2b6bc-2c36-46b6-9216-4e77c59ae1d0");
+			public const string Append_Query_StringFieldName = "Append query string";
+
+						
+					
+			public static readonly ID Rewrite_URLFieldId = new ID("7bddf3f6-438f-4256-b47a-efdec89e9c8b");
+			public const string Rewrite_URLFieldName = "Rewrite URL";
+
+						
+					
+			public static readonly ID HttpCacheabilityFieldId = new ID("8b11c099-83a4-487c-b070-9e1ad6b56013");
+			public const string HttpCacheabilityFieldName = "HttpCacheability";
+
+						
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+					
+			public static readonly ID Redirect_TypeFieldId = new ID("8d4633fd-139d-443f-be40-e2918d49c63e");
+			public const string Redirect_TypeFieldName = "Redirect type";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Highlights
 {
 
@@ -8552,6 +11331,69 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Highlights Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBase_Redirect Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Redirect</para>	
+	/// <para>ID: d28318b2-5793-4aba-bfb3-3c3fbc00aa92</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_RedirectConstants.TemplateIdString)]
+	public partial interface IBase_Redirect : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Append_Querystring, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Rewrite_URL, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Cache, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Redirect_Type
+	{
+				}
+
+	
+		/// <summary>
+		/// IBase_Redirect Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Redirect</para>	
+		/// <para>ID: d28318b2-5793-4aba-bfb3-3c3fbc00aa92</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Redirect__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Append_Querystring__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Rewrite_URL__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Cache__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Stop_Processing__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base.IBase_Redirect_Type__Raw
+		{
+						}
+	
+	public static partial class IBase_RedirectConstants{
+
+			public const string TemplateIdString = "d28318b2-5793-4aba-bfb3-3c3fbc00aa92";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Redirect";
+
+					
+			public static readonly ID Append_Query_StringFieldId = new ID("34c2b6bc-2c36-46b6-9216-4e77c59ae1d0");
+			public const string Append_Query_StringFieldName = "Append query string";
+
+						
+					
+			public static readonly ID Rewrite_URLFieldId = new ID("7bddf3f6-438f-4256-b47a-efdec89e9c8b");
+			public const string Rewrite_URLFieldName = "Rewrite URL";
+
+						
+					
+			public static readonly ID HttpCacheabilityFieldId = new ID("8b11c099-83a4-487c-b070-9e1ad6b56013");
+			public const string HttpCacheabilityFieldName = "HttpCacheability";
+
+						
+					
+			public static readonly ID Stop_Processing_Of_Subsequent_RulesFieldId = new ID("7a01214d-b622-4676-bbd0-d939483fd553");
+			public const string Stop_Processing_Of_Subsequent_RulesFieldName = "Stop processing of subsequent rules";
+
+						
+					
+			public static readonly ID Redirect_TypeFieldId = new ID("8d4633fd-139d-443f-be40-e2918d49c63e");
+			public const string Redirect_TypeFieldName = "Redirect type";
+
+						
 			
 
 	}
@@ -8778,6 +11620,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
+{
+
+
+ 	/// <summary>
+	/// IBase_Append_Querystring Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Append Querystring</para>	
+	/// <para>ID: da9b513d-d4fa-4fc3-a49d-eb6754c37dd1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_Append_QuerystringConstants.TemplateIdString)]
+	public partial interface IBase_Append_Querystring : IGlassBase 
+	{
+								/// <summary>
+					/// The Append query string field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 34c2b6bc-2c36-46b6-9216-4e77c59ae1d0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Append_QuerystringConstants.Append_Query_StringFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Append_Query_String  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Append_Querystring Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Action/Base/Base Append Querystring</para>	
+		/// <para>ID: da9b513d-d4fa-4fc3-a49d-eb6754c37dd1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Append_Querystring__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Append query string field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 34c2b6bc-2c36-46b6-9216-4e77c59ae1d0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Append_QuerystringConstants.Append_Query_StringFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Append_Query_String  {get; set;}
+						}
+	
+	public static partial class IBase_Append_QuerystringConstants{
+
+			public const string TemplateIdString = "da9b513d-d4fa-4fc3-a49d-eb6754c37dd1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Append Querystring";
+
+					
+			public static readonly ID Append_Query_StringFieldId = new ID("34c2b6bc-2c36-46b6-9216-4e77c59ae1d0");
+			public const string Append_Query_StringFieldName = "Append query string";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 {
 
@@ -8891,6 +11794,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Reporting
+{
+
+
+ 	/// <summary>
+	/// IReport_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Reporting/Report Folder</para>	
+	/// <para>ID: db614787-a609-4098-bb32-8e862db40ed0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IReport_FolderConstants.TemplateIdString)]
+	public partial interface IReport_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	{
+				}
+
+	
+		/// <summary>
+		/// IReport_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Reporting/Report Folder</para>	
+		/// <para>ID: db614787-a609-4098-bb32-8e862db40ed0</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IReport_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		{
+						}
+	
+	public static partial class IReport_FolderConstants{
+
+			public const string TemplateIdString = "db614787-a609-4098-bb32-8e862db40ed0";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Report Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -8945,6 +11886,112 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID TitleFieldId = new ID("515a1f09-3150-4e5d-9cf8-bddfd6b8b30d");
 			public const string TitleFieldName = "Title";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound
+{
+
+
+ 	/// <summary>
+	/// IOutbound_Rule Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Outbound/Outbound Rule</para>	
+	/// <para>ID: dc4d631d-e17d-4f18-a19f-3554cd4eb756</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IOutbound_RuleConstants.TemplateIdString)]
+	public partial interface IOutbound_Rule : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Rule, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound.IOutbound_Preconditions, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IOutbound_Match
+	{
+								/// <summary>
+					/// The Action field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: b150d114-c7a2-4dfe-be65-74be48d3c3b9</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IOutbound_RuleConstants.ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Action  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IOutbound_Rule Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Outbound/Outbound Rule</para>	
+		/// <para>ID: dc4d631d-e17d-4f18-a19f-3554cd4eb756</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IOutbound_Rule__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Rule__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound.IOutbound_Preconditions__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IOutbound_Match__Raw
+		{
+										/// <summary>
+						/// The Action field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: b150d114-c7a2-4dfe-be65-74be48d3c3b9</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IOutbound_RuleConstants.ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Action  {get; set;}
+						}
+	
+	public static partial class IOutbound_RuleConstants{
+
+			public const string TemplateIdString = "dc4d631d-e17d-4f18-a19f-3554cd4eb756";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Outbound Rule";
+
+					
+			public static readonly ID ActionFieldId = new ID("b150d114-c7a2-4dfe-be65-74be48d3c3b9");
+			public const string ActionFieldName = "Action";
+
+						
+					
+			public static readonly ID Match_TypeFieldId = new ID("232472ff-de28-43a3-875c-b4051badc3a2");
+			public const string Match_TypeFieldName = "Match Type";
+
+						
+					
+			public static readonly ID UsingFieldId = new ID("644b4909-598f-4fb9-8a6c-455e93ae4d17");
+			public const string UsingFieldName = "Using";
+
+						
+					
+			public static readonly ID PatternFieldId = new ID("d938cd93-3517-4509-9a68-9da430d8ec68");
+			public const string PatternFieldName = "Pattern";
+
+						
+					
+			public static readonly ID Ignore_CaseFieldId = new ID("ceeeb260-ec81-40b6-b2a6-9e56525c599f");
+			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+					
+			public static readonly ID Logical_GroupingFieldId = new ID("9bcc4ca4-3b9c-4284-b32f-280433f09c01");
+			public const string Logical_GroupingFieldName = "Logical grouping";
+
+						
+					
+			public static readonly ID EnabledFieldId = new ID("14c30096-c351-4ab4-9e08-2de9b61c8d4f");
+			public const string EnabledFieldName = "Enabled";
+
+						
+					
+			public static readonly ID PreconditionFieldId = new ID("731a1a11-3d5f-4d84-8152-52f1b4d04e2a");
+			public const string PreconditionFieldName = "Precondition";
+
+						
+					
+			public static readonly ID Match_Scope_TypeFieldId = new ID("d7e99e56-654a-47a0-a228-5a61f3f7fe69");
+			public const string Match_Scope_TypeFieldName = "Match Scope Type";
+
+						
+					
+			public static readonly ID Match_ScopeFieldId = new ID("f7dfa171-b3a6-47c2-b4be-c0ccfa5302bf");
+			public const string Match_ScopeFieldName = "Match Scope";
 
 						
 			
@@ -9274,6 +12321,120 @@ namespace Informa.Models.Velir.Search.Models.Example
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables
+{
+
+
+ 	/// <summary>
+	/// IServer_Variable Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Server Variable</para>	
+	/// <para>ID: e073cd4c-2747-433d-b6c0-3c52ba953c97</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IServer_VariableConstants.TemplateIdString)]
+	public partial interface IServer_Variable : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables.IBase_Server_Variable
+	{
+				}
+
+	
+		/// <summary>
+		/// IServer_Variable Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Server Variable</para>	
+		/// <para>ID: e073cd4c-2747-433d-b6c0-3c52ba953c97</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IServer_Variable__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables.IBase_Server_Variable__Raw
+		{
+						}
+	
+	public static partial class IServer_VariableConstants{
+
+			public const string TemplateIdString = "e073cd4c-2747-433d-b6c0-3c52ba953c97";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Server Variable";
+
+					
+			public static readonly ID Replace_Existing_ValueFieldId = new ID("38af1182-9ca6-4136-a92a-5538c0e9b877");
+			public const string Replace_Existing_ValueFieldName = "Replace existing value";
+
+						
+					
+			public static readonly ID ValueFieldId = new ID("2c6474ba-5d72-4874-aead-ae40e93410f1");
+			public const string ValueFieldName = "Value";
+
+						
+					
+			public static readonly ID Variable_NameFieldId = new ID("16032853-2874-4634-b733-d5d4cca11d38");
+			public const string Variable_NameFieldName = "Variable Name";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Response_Tags Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Response Tags</para>	
+	/// <para>ID: e07f2dba-75e2-4621-91b4-a1a756289d20</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_Response_TagsConstants.TemplateIdString)]
+	public partial interface IMatch_Response_Tags : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match_Scope
+	{
+								/// <summary>
+					/// The Match the content within field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: e34615dd-1764-462f-a863-46bbbbf81e66</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_Response_TagsConstants.Match_The_Content_WithinsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Match_The_Content_Withins  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Response_Tags Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Response Tags</para>	
+		/// <para>ID: e07f2dba-75e2-4621-91b4-a1a756289d20</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Response_Tags__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match_Scope__Raw
+		{
+										/// <summary>
+						/// The Match the content within field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: e34615dd-1764-462f-a863-46bbbbf81e66</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_Response_TagsConstants.Match_The_Content_WithinsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Match_The_Content_Withins  {get; set;}
+						}
+	
+	public static partial class IMatch_Response_TagsConstants{
+
+			public const string TemplateIdString = "e07f2dba-75e2-4621-91b4-a1a756289d20";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Response Tags";
+
+					
+			public static readonly ID Match_The_Content_WithinsFieldId = new ID("e34615dd-1764-462f-a863-46bbbbf81e66");
+			public const string Match_The_Content_WithinsFieldName = "Match the content within";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Velir.Search.Models.Sort_Strategies
 {
 
@@ -9368,6 +12529,95 @@ namespace Informa.Models.Velir.Search.Models.Sort_Strategies
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Inbound
+{
+
+
+ 	/// <summary>
+	/// ISimple_Redirect Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Inbound/Simple Redirect</para>	
+	/// <para>ID: e30b15b9-34cd-419c-8671-60feaaad5a46</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISimple_RedirectConstants.TemplateIdString)]
+	public partial interface ISimple_Redirect : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Enabled
+	{
+								/// <summary>
+					/// The Path field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: f16b9161-e263-4c81-b160-23d6ee6ade93</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISimple_RedirectConstants.PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Path  {get; set;}
+								/// <summary>
+					/// The Target field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: cb2db64e-cae6-4854-b0d4-17865b3a3c61</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISimple_RedirectConstants.TargetFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Target  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ISimple_Redirect Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Inbound/Simple Redirect</para>	
+		/// <para>ID: e30b15b9-34cd-419c-8671-60feaaad5a46</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISimple_Redirect__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_Enabled__Raw
+		{
+										/// <summary>
+						/// The Path field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: f16b9161-e263-4c81-b160-23d6ee6ade93</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISimple_RedirectConstants.PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Path  {get; set;}
+										/// <summary>
+						/// The Target field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: cb2db64e-cae6-4854-b0d4-17865b3a3c61</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISimple_RedirectConstants.TargetFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Target  {get; set;}
+						}
+	
+	public static partial class ISimple_RedirectConstants{
+
+			public const string TemplateIdString = "e30b15b9-34cd-419c-8671-60feaaad5a46";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Simple Redirect";
+
+					
+			public static readonly ID PathFieldId = new ID("f16b9161-e263-4c81-b160-23d6ee6ade93");
+			public const string PathFieldName = "Path";
+
+						
+					
+			public static readonly ID TargetFieldId = new ID("cb2db64e-cae6-4854-b0d4-17865b3a3c61");
+			public const string TargetFieldName = "Target";
+
+						
+					
+			public static readonly ID EnabledFieldId = new ID("14c30096-c351-4ab4-9e08-2de9b61c8d4f");
+			public const string EnabledFieldName = "Enabled";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.System
 {
 
@@ -9400,6 +12650,105 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System
 			public const string TemplateIdString = "e3e2d58c-df95-4230-adc9-279924cece84";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Main section";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
+{
+
+
+ 	/// <summary>
+	/// IMatch_Pattern Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Pattern</para>	
+	/// <para>ID: e4ab5966-0e72-431b-abb3-8cb9274cc074</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_PatternConstants.TemplateIdString)]
+	public partial interface IMatch_Pattern : IGlassBase 
+	{
+								/// <summary>
+					/// The Pattern field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: d938cd93-3517-4509-9a68-9da430d8ec68</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IMatch_PatternConstants.PatternFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Pattern  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IMatch_Pattern Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Match/Match Pattern</para>	
+		/// <para>ID: e4ab5966-0e72-431b-abb3-8cb9274cc074</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Pattern__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Pattern field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: d938cd93-3517-4509-9a68-9da430d8ec68</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IMatch_PatternConstants.PatternFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Pattern  {get; set;}
+						}
+	
+	public static partial class IMatch_PatternConstants{
+
+			public const string TemplateIdString = "e4ab5966-0e72-431b-abb3-8cb9274cc074";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Pattern";
+
+					
+			public static readonly ID PatternFieldId = new ID("d938cd93-3517-4509-9a68-9da430d8ec68");
+			public const string PatternFieldName = "Pattern";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Folders
+{
+
+
+ 	/// <summary>
+	/// IMatch_Tags_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Match Tags Folder</para>	
+	/// <para>ID: e71957df-229d-40f0-a84f-1fba5c5af5de</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMatch_Tags_FolderConstants.TemplateIdString)]
+	public partial interface IMatch_Tags_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+				}
+
+	
+		/// <summary>
+		/// IMatch_Tags_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Folders/Match Tags Folder</para>	
+		/// <para>ID: e71957df-229d-40f0-a84f-1fba5c5af5de</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMatch_Tags_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+						}
+	
+	public static partial class IMatch_Tags_FolderConstants{
+
+			public const string TemplateIdString = "e71957df-229d-40f0-a84f-1fba5c5af5de";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Match Tags Folder";
 
 			
 
@@ -10033,6 +13382,113 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables
+{
+
+
+ 	/// <summary>
+	/// IBase_Server_Variable Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Base Server Variable</para>	
+	/// <para>ID: ed218f0c-2af5-4d0a-aa45-e089f9862e0c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_Server_VariableConstants.TemplateIdString)]
+	public partial interface IBase_Server_Variable : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item
+	{
+								/// <summary>
+					/// The Replace existing value field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 38af1182-9ca6-4136-a92a-5538c0e9b877</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Server_VariableConstants.Replace_Existing_ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Replace_Existing_Value  {get; set;}
+								/// <summary>
+					/// The Value field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 2c6474ba-5d72-4874-aead-ae40e93410f1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Server_VariableConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Value  {get; set;}
+								/// <summary>
+					/// The Variable Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 16032853-2874-4634-b733-d5d4cca11d38</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Server_VariableConstants.Variable_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Variable_Name  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Server_Variable Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Server Variables/Base Server Variable</para>	
+		/// <para>ID: ed218f0c-2af5-4d0a-aa45-e089f9862e0c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Server_Variable__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.IBase_UrlRewrite_Item__Raw
+		{
+										/// <summary>
+						/// The Replace existing value field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 38af1182-9ca6-4136-a92a-5538c0e9b877</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Server_VariableConstants.Replace_Existing_ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Replace_Existing_Value  {get; set;}
+										/// <summary>
+						/// The Value field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 2c6474ba-5d72-4874-aead-ae40e93410f1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Server_VariableConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Value  {get; set;}
+										/// <summary>
+						/// The Variable Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 16032853-2874-4634-b733-d5d4cca11d38</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Server_VariableConstants.Variable_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Variable_Name  {get; set;}
+						}
+	
+	public static partial class IBase_Server_VariableConstants{
+
+			public const string TemplateIdString = "ed218f0c-2af5-4d0a-aa45-e089f9862e0c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Server Variable";
+
+					
+			public static readonly ID Replace_Existing_ValueFieldId = new ID("38af1182-9ca6-4136-a92a-5538c0e9b877");
+			public const string Replace_Existing_ValueFieldName = "Replace existing value";
+
+						
+					
+			public static readonly ID ValueFieldId = new ID("2c6474ba-5d72-4874-aead-ae40e93410f1");
+			public const string ValueFieldName = "Value";
+
+						
+					
+			public static readonly ID Variable_NameFieldId = new ID("16032853-2874-4634-b733-d5d4cca11d38");
+			public const string Variable_NameFieldName = "Variable Name";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -10188,6 +13644,159 @@ namespace Informa.Models.Velir.Search.Models.FactoryInterface
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "InterfaceTemplate";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Reporting
+{
+
+
+ 	/// <summary>
+	/// IRewrite_Report Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Reporting/Rewrite Report</para>	
+	/// <para>ID: f5ceb67d-1ce8-48ef-8d2e-39f44a21b52e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRewrite_ReportConstants.TemplateIdString)]
+	public partial interface IRewrite_Report : IGlassBase 
+	{
+								/// <summary>
+					/// The Database Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 5980d0e8-1f56-4556-8767-74f0d56f7cc8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRewrite_ReportConstants.Database_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Database_Name  {get; set;}
+								/// <summary>
+					/// The Original Url field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 04e25d7c-79d6-4ebc-98e0-bb52704aeafb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRewrite_ReportConstants.Original_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Original_Url  {get; set;}
+								/// <summary>
+					/// The Rewrite Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: 559f07dc-ee31-41c3-8a25-6a487c029752</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRewrite_ReportConstants.Rewrite_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime Rewrite_Date  {get; set;}
+								/// <summary>
+					/// The Rewritten Url field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 7ea8aaf6-7661-4c90-bdf2-57f5893e2d36</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRewrite_ReportConstants.Rewritten_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Rewritten_Url  {get; set;}
+								/// <summary>
+					/// The Rule field.
+					/// <para></para>
+					/// <para>Field Type: Internal Link</para>		
+					/// <para>Field ID: 06d39c80-e72c-466f-9cec-24d32cb90d2a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRewrite_ReportConstants.RuleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					object /* UNKNOWN */ Rule  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IRewrite_Report Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Reporting/Rewrite Report</para>	
+		/// <para>ID: f5ceb67d-1ce8-48ef-8d2e-39f44a21b52e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRewrite_Report__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Database Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 5980d0e8-1f56-4556-8767-74f0d56f7cc8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRewrite_ReportConstants.Database_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Database_Name  {get; set;}
+										/// <summary>
+						/// The Original Url field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 04e25d7c-79d6-4ebc-98e0-bb52704aeafb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRewrite_ReportConstants.Original_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Original_Url  {get; set;}
+										/// <summary>
+						/// The Rewrite Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: 559f07dc-ee31-41c3-8a25-6a487c029752</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRewrite_ReportConstants.Rewrite_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime Rewrite_Date  {get; set;}
+										/// <summary>
+						/// The Rewritten Url field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 7ea8aaf6-7661-4c90-bdf2-57f5893e2d36</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRewrite_ReportConstants.Rewritten_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Rewritten_Url  {get; set;}
+										/// <summary>
+						/// The Rule field.
+						/// <para></para>
+						/// <para>Field Type: Internal Link</para>		
+						/// <para>Field ID: 06d39c80-e72c-466f-9cec-24d32cb90d2a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRewrite_ReportConstants.RuleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						object /* UNKNOWN */ Rule  {get; set;}
+						}
+	
+	public static partial class IRewrite_ReportConstants{
+
+			public const string TemplateIdString = "f5ceb67d-1ce8-48ef-8d2e-39f44a21b52e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Rewrite Report";
+
+					
+			public static readonly ID Database_NameFieldId = new ID("5980d0e8-1f56-4556-8767-74f0d56f7cc8");
+			public const string Database_NameFieldName = "Database Name";
+
+						
+					
+			public static readonly ID Original_UrlFieldId = new ID("04e25d7c-79d6-4ebc-98e0-bb52704aeafb");
+			public const string Original_UrlFieldName = "Original Url";
+
+						
+					
+			public static readonly ID Rewrite_DateFieldId = new ID("559f07dc-ee31-41c3-8a25-6a487c029752");
+			public const string Rewrite_DateFieldName = "Rewrite Date";
+
+						
+					
+			public static readonly ID Rewritten_UrlFieldId = new ID("7ea8aaf6-7661-4c90-bdf2-57f5893e2d36");
+			public const string Rewritten_UrlFieldName = "Rewritten Url";
+
+						
+					
+			public static readonly ID RuleFieldId = new ID("06d39c80-e72c-466f-9cec-24d32cb90d2a");
+			public const string RuleFieldName = "Rule";
+
+						
 			
 
 	}
