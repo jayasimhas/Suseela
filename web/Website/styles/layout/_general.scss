@@ -38,7 +38,6 @@ section: Home/Topic Page Components
 
     &__navigation {
         background-color: $color-concrete-gray;
-        height: 2.5rem;
         overflow-x: auto;
         overflow-y: hidden;
         padding: 0 2rem;
@@ -63,6 +62,7 @@ section: Home/Topic Page Components
 
         @include breakpoint('medium') {
             padding: 0 1rem;
+            height: 2.375rem;
 
             a {
                 font-size: 0.75rem;
@@ -77,24 +77,18 @@ section: Home/Topic Page Components
             background: -webkit-linear-gradient(left, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 66%,rgba(241,242,242,1) 100%);
             background: linear-gradient(to right, rgba(241,242,242,0) 0%,rgba(241,242,242,1) 66%,rgba(241,242,242,1) 100%);
             font-size: 1.5rem;
-            margin-top: -2.5rem;
+            height: 2.375rem;
+            margin-top: -2.375rem;
             padding-right: 0.5rem;
             position: absolute;
             right: 0;
             text-align: right;
             width: 4rem;
-            height: 2.5rem;
-            -webkit-animation: fadeOutFromIn 200ms ease-out;
-            -moz-animation: fadeOutFromIn 200ms ease-out;
-            -o-animation: fadeOutFromIn 200ms ease-out;
-            animation: fadeOutFromIn 200ms ease-out;
+            @include prefix(animation, fadeOutFromIn 200ms ease-out);
             animation-fill-mode: forwards;
 
             &.is-visible {
-                -webkit-animation: fadeInFromNone 200ms ease-out;
-                -moz-animation: fadeInFromNone 200ms ease-out;
-                -o-animation: fadeInFromNone 200ms ease-out;
-                animation: fadeInFromNone 200ms ease-out;
+                @include prefix(animation, fadeInFromNone 200ms ease-out);
                 animation-fill-mode: forwards;
             }
 
@@ -104,10 +98,7 @@ section: Home/Topic Page Components
                 height: 14px;
                 width: 14px;
 
-                -webkit-transform: rotate(90deg);
-                -moz-transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-                transform: rotate(90deg);
+                @include prefix(transform, rotate(90deg));
             }
 
             @-webkit-keyframes fadeInFromNone {
@@ -220,10 +211,7 @@ section: Home/Topic Page Components
             padding-left: 0.5rem;
 
             svg {
-                -webkit-transform: rotate(-90deg);
-                -moz-transform: rotate(-90deg);
-                -ms-transform: rotate(-90deg);
-                transform: rotate(-90deg);
+                @include prefix(transform, rotate(-90deg));
             }
         }
     }
