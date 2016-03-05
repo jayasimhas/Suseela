@@ -172,30 +172,20 @@ namespace Informa.Web.Controllers
 					var newVersionItem = _sitecoreMasterService.GetItem<Item>(newVersion._Id);
 					newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
 					newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
+
+					if (articleStruct.CommandID != Guid.Empty)
+					{
+						//newVersion.NotificationTransientField.ShouldSend.Checked = true;
+						_articleUtil.ExecuteCommandAndGetWorkflowState(newVersionItem, articleStruct.CommandID.ToString());
+
+						//		if (shouldNotify)
+						//		{
+						//			//_notificationsManager.SendArticleSpecificNotifications(newVersion, articleStruct);
+
+						//		}
+					}					
 				}
-
-
-				//an editcontext just for workflow
-				using (new SecurityDisabler())
-				{
-					//using (new EditContext(newVersion))
-					//{
-					//	if (articleStruct.CommandID != Guid.Empty)
-					//	{
-					//	//	newVersion.NotificationTransientField.ShouldSend.Checked = true;
-					//		//_workflowController.ExecuteCommandAndGetWorkflowState(newVersion.InnerItem, articleStruct.CommandID.ToString());
-
-					//		//TODO: explain thyself, heathen
-					//		// I'm guessing we only should send notifications if the flag is set? Not sure why the need to explain this.
-					//		if (shouldNotify)
-					//		{
-					//			//_notificationsManager.SendArticleSpecificNotifications(newVersion, articleStruct);
-
-					//		}
-					//	}
-					//}
-				}
-
+				
 				if (loggedIn)
 				{
 					_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
