@@ -8334,6 +8334,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Supporting_Documents_FolderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Supporting_Documents_Folder  {get; set;}
+								/// <summary>
+					/// The Email Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e90ad04d-b62b-4118-b3fc-8c535dfed2eb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_Title  {get; set;}
+								/// <summary>
+					/// The From Email Address field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string From_Email_Address  {get; set;}
 				}
 
 	
@@ -8742,6 +8760,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Supporting_Documents_FolderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Supporting_Documents_Folder  {get; set;}
+										/// <summary>
+						/// The Email Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e90ad04d-b62b-4118-b3fc-8c535dfed2eb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Email_Title  {get; set;}
+										/// <summary>
+						/// The From Email Address field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string From_Email_Address  {get; set;}
 						}
 	
 	public static partial class ISite_ConfigConstants{
@@ -8986,6 +9022,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
+			public static readonly ID Email_TitleFieldId = new ID("e90ad04d-b62b-4118-b3fc-8c535dfed2eb");
+			public const string Email_TitleFieldName = "Email Title";
+
+						
+					
+			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
+			public const string From_Email_AddressFieldName = "From Email Address";
 
 						
 			
@@ -12337,6 +12383,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
+			public static readonly ID Email_TitleFieldId = new ID("e90ad04d-b62b-4118-b3fc-8c535dfed2eb");
+			public const string Email_TitleFieldName = "Email Title";
+
+						
+					
+			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
+			public const string From_Email_AddressFieldName = "From Email Address";
 
 						
 			

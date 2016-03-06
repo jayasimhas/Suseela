@@ -35,6 +35,7 @@ namespace InformaSitecoreWord.WebserviceHelper
 				CommandID = articleStruct.CommandID,
 				WordCount = articleStruct.WordCount,
 				SupportingDocumentPaths = articleStruct.SupportingDocumentPaths,
+				NotificationText = articleStruct.NotificationText,
 				ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.
 					Select(n => new StaffStruct { Name = n.Name, ID = n.ID, }).ToList()
 			};
