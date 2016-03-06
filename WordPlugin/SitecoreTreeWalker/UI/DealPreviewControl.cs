@@ -60,7 +60,7 @@ namespace SitecoreTreeWalker.UI
         public bool UpdatePreview(DealInfo info)
         {
             Controls.Clear();
-            //TODO - Work on this to check if info is null
+
             if (info.IsEmpty())
             {
                 Title.Text = @"No Deal with that ID exists";

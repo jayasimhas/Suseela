@@ -253,14 +253,12 @@ namespace Informa.Web.Controllers
 			}
 			string userID = article.Locking.GetOwner();
 			if (string.IsNullOrEmpty(userID)) return false;
-			//TODO: assuming domain is specified here.
+
 			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
 			if (!loggedIn)
 			{
 				return false;
-			}
-
-			//TODO: use real security                             
+			}                          
 			using (new EditContext(article))
 			{
 				article.Locking.Unlock();
@@ -400,7 +398,6 @@ namespace Informa.Web.Controllers
 				ArticleGuid = articleItem._Id,
 				Title = articleItem.Title,
 				ArticleNumber = articleItem.Article_Number,
-				//TODO - Get article Publication
 				Publication = article.Publication
 			};
 

@@ -57,18 +57,13 @@ namespace Informa.Web.Controllers
 
 		public void SaveArticleDetails(Guid articleGuid, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-
 			//TODO:  Add Roles
-
 			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			if (article == null)
 			{
 				throw new ApplicationException("Could not find article with Guid " + articleGuid);
 			}
-
 			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
-
-
 		}
 
 		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
@@ -111,7 +106,7 @@ namespace Informa.Web.Controllers
 
 			var newVersion = article;
 			var info = new WorkflowInfo(Guid.Empty.ToString(), Guid.Empty.ToString());
-			//TODO - Add version adn workflow informatiomn
+
 			try
 			{
 				Item updatedVersion;
