@@ -431,6 +431,9 @@ namespace InformaSitecoreWord.Util
             bool containsInvalidNodes = false;
 
             string iframeGroupId = String.Empty;
+            XElement iframeGroupElement = new XElement("div");
+            iframeGroupElement.SetAttributeValue("class", "iframe-component");
+
             bool previousWasBlockquote = false;
             var contiguousListElements = new List<Paragraph>();
             var contiguousBlockquoteElements = new List<Paragraph>();
@@ -543,10 +546,13 @@ namespace InformaSitecoreWord.Util
                 if (style.NameLocal == DocumentAndParagraphStyles.IFrameCodeStyle ||
                     style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
                 {
+                    var iframeElement = new XElement("div");
+
                     if (!previousWasIFrame)
                     {
                         iframeGroupId = Guid.NewGuid().ToString("N");
                         previousWasIFrame = true;
+                        iframeGroupElement.SetAttributeValue("class", "iframe-component");
                     }
                     string cssStyle = string.Empty;
 
@@ -554,11 +560,13 @@ namespace InformaSitecoreWord.Util
                     {
                         desktopCodeFound = true;
                         cssStyle = String.Format("ewf-desktop-iframe_{0}", iframeGroupId);
+                        iframeElement.SetAttributeValue("class", $"iframe-component__desktop {cssStyle}");
                     }
 
                     if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
                     {
                         cssStyle = String.Format("ewf-mobile-iframe_{0}", iframeGroupId);
+                        iframeElement.SetAttributeValue("class", $"iframe-component__mobile {cssStyle}");
                     }
 
                     var insecureIFramesInParagraph = HTMLTools.CheckForInsecureIFrames(paragraph.Range.Text);
@@ -567,19 +575,22 @@ namespace InformaSitecoreWord.Util
 
                     currentContainsInvalidNodes = HTMLTools.ContainsForExternalNodes(paragraph.Range.Text);
                     containsInvalidNodes = containsInvalidNodes || currentContainsInvalidNodes;
-                    XElement embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle);
+                    string embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle);
                     if (embedElement != null)
                     {
-                        xData.Add(embedElement);
+                        iframeElement.SetAttributeValue("data-embed-link", embedElement);    
+                        iframeGroupElement.Add(iframeElement);
                     }
+                    if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
+                        xData.Add(iframeGroupElement);
+
                     previousIFrameStyle = style.NameLocal;
                     continue;
                 }
 
                 if (IFrameEmbedBuilder.IFrameStyles.Contains(style.NameLocal))
-                {
-
-					WordStyleStruct w = new WordStyleStruct();
+                { 
+                    WordStyleStruct w = new WordStyleStruct();
                     //base styles are used becuase the parent level styles only exist in the plugin
                     var baseStyle = (Style)style.get_BaseStyle();
                     if (baseStyle != null)

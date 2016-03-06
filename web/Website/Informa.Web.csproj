@@ -827,8 +827,12 @@
     <Content Include="App_Config\Web\nwebsec.config.template" />
     <Content Include="App_Config\Web\system.webServer.handlers.config" />
     <Content Include="App_Config\Web\system.webServer.handlers.config.template" />
-    <Content Include="App_Config\Web\system.webServer.modules.config" />
-    <Content Include="App_Config\Web\system.webServer.modules.config.template" />
+    <Content Include="App_Config\Web\system.webServer.modules.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Web\system.webServer.modules.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Web\system.webServer.staticContent.config" />
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
@@ -923,7 +927,6 @@
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
-    <Folder Include="Scripts\" />
     <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
