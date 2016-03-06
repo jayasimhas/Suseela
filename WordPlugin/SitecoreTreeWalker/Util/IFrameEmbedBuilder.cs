@@ -63,7 +63,6 @@ namespace InformaSitecoreWord.Util
 
 		private static XElement HtmlNodeToXElement(HtmlNode root)
 		{
-			//TODO Load xml from output as xml option
 			if (root != null)
 			{
 				if (!IsAllowed(root)) return null;

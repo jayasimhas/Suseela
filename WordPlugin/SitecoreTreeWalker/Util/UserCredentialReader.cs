@@ -107,11 +107,6 @@ namespace InformaSitecoreWord.Util
 
         }
 
-        public bool HasCookie(string username)
-        {                 
-            return GetCookie(username) != null;  //TODO: And check if cookie is valid.
-        }
-
         public void WriteCookie(CookieCollection cookie, string username)
         {
             var uName = username.Split('\\').Length > 1 ? username.Split('\\')[1] : username;
@@ -123,10 +118,7 @@ namespace InformaSitecoreWord.Util
             }
         }
 
-
-
-
-        public string GetEditorEnvironment()
+		public string GetEditorEnvironment()
         {
             using (var iStream = new IsolatedStorageFileStream(ENVIRONMENT_FILE, FileMode.OpenOrCreate, _isoStore))
             {

@@ -677,8 +677,7 @@ namespace InformaSitecoreWord.Sitecore
                 return userStatus;
             }
         }
-
-        //TODO - work flow
+        
         public static ArticleWorkflowState GetWorkflowState(string articleNumber)
         {
             using (var client = new HttpClient(_handler, false))
@@ -690,10 +689,8 @@ namespace InformaSitecoreWord.Sitecore
 
                 return workflowState;
             }
-            //return new ArticleWorkflowState { DisplayName = "", IsFinal = true, Commands = new List<ArticleWorkflowCommand>() };
         }
-
-        //TODO - work flow
+		
         public static ArticleWorkflowState GetWorkflowState(Guid articleGuid)
         {
             using (var client = new HttpClient(_handler, false))
