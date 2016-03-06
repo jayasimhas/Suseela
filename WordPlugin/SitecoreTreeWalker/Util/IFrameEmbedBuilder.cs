@@ -22,16 +22,16 @@ namespace InformaSitecoreWord.Util
 		protected OptimizedCharacterStyleTransformer Transformer;
 
 
-		public static string Parse(Paragraph paragraph, string cssClass)
+		public static XElement Parse(Paragraph paragraph, string cssClass)
 		{
 
-			return GetIFrameElement(paragraph.Range.Text, cssClass).Replace("/>", "></iframe>");
+			return GetIFrameElement(paragraph.Range.Text, cssClass);
 
 		}
 
 
 
-		private static string GetIFrameElement(string embed,string cssClass)
+		private static XElement GetIFrameElement(string embed,string cssClass)
 		{
 			//use html agilty pack to fill in all empty attributes and correct broken html
 				string html = string.Format("<html><head></head><body>{0}</body></html>", embed);
@@ -42,21 +42,23 @@ namespace InformaSitecoreWord.Util
 			var embedNode = embedNodeParent.ChildNodes[0];
 
 			if (embedNode != null)
-			{                                 
+			{
+				
+
 				if (embedNode.Attributes["src"] !=null 
 					&& (embedNode.Attributes["src"].Value.StartsWith("https:") || embedNode.Attributes["src"].Value.StartsWith("//")))
 				{
-					//embedNode.SetAttributeValue("class", String.Format(cssClass));
+					embedNode.SetAttributeValue("class", String.Format(cssClass));
 					var xElement = HtmlNodeToXElement(embedNode);
 					if (xElement != null)
 					{
-						return xElement.ToString();
+						return xElement;
 					}
 				}
 			}
-			var removedInsecure = new XElement("iframe");
+			var removedInsecure = new XElement("div");
 			removedInsecure.Add(new XAttribute("data-ewf-note", "iframe-removed-insecure"));
-			return removedInsecure.ToString();
+			return removedInsecure;
 		}
 
 		private static XElement HtmlNodeToXElement(HtmlNode root)
@@ -72,10 +74,10 @@ namespace InformaSitecoreWord.Util
 				}else
 				{
 					//add hidden div so that i frame/embed doesn't get dropped
-					//var hiddendiv = new XElement("div");
-					//hiddendiv.Add(new XAttribute("style","display:none;"));
-					//hiddendiv.Value = "&nbsp";
-					//rootXEl.Add(hiddendiv);
+					var hiddendiv = new XElement("div");
+					hiddendiv.Add(new XAttribute("style","display:none;"));
+					hiddendiv.Value = "&nbsp";
+					rootXEl.Add(hiddendiv);
 				}
 				
 				foreach (var attribute in root.Attributes)

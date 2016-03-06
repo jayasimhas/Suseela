@@ -575,10 +575,11 @@ namespace InformaSitecoreWord.Util
 
                     currentContainsInvalidNodes = HTMLTools.ContainsForExternalNodes(paragraph.Range.Text);
                     containsInvalidNodes = containsInvalidNodes || currentContainsInvalidNodes;
-                    string embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle);
+                    XElement embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle);
                     if (embedElement != null)
                     {
-                        iframeElement.SetAttributeValue("data-embed-link", embedElement);    
+                        iframeElement.SetAttributeValue("data-embed-link", "enabled");
+                        iframeElement.Add(embedElement); 
                         iframeGroupElement.Add(iframeElement);
                     }
                     if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
