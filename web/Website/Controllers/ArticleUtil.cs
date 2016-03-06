@@ -293,7 +293,6 @@ namespace Informa.Web.Controllers
 			return checkoutStatus;
 		}
 
-
 		public bool DoesArticleHaveText(ArticleItem article)
 		{
 			if (string.IsNullOrEmpty(article.Body))
