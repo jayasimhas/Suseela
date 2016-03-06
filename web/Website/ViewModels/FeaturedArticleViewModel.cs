@@ -15,8 +15,9 @@ namespace Informa.Web.ViewModels
 			IRenderingParametersContext renderingParametersContext,
 			ISiteRootContext siterootContext,
 			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator, IArticleSearch searcher,
-            ISitecoreContext context)
-			: base(siterootContext, articleListableFactory, textTranslator, searcher, context)
+            ISitecoreContext context,
+            IArticleComponentFactory articleComponentFactory)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}

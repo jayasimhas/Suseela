@@ -698,6 +698,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
     <Compile Include="ViewModels\SitemapViewModel.cs" />
@@ -910,7 +911,6 @@
     <Content Include="Views\Structure\SingleColumnContent.cshtml" />
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
     <Content Include="Views\Article\FeaturedArticle.cshtml" />
@@ -1036,6 +1036,8 @@
     <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
     <Content Include="Scripts\vendor.js.map" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
+    <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
