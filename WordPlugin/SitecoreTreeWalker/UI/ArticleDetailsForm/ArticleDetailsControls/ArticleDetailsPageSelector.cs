@@ -110,7 +110,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
                 RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
                 RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),
-                ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
+                ArticleSpecificNotifications = pageWorkflowControl.GetNotifyList().ToList(),
                 Embargoed = pageArticleInformationControl.GetEmbargoedState(),
                 FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
                 FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),

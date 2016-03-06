@@ -556,8 +556,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
 
             DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
-            //TODO - Workflow UI Updates
-            
+
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                             ? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
                                             : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
@@ -747,7 +746,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 {
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
                 }
-                //TODO - Update workflow UI
                 articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
                                                 ? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
                                                 : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));												

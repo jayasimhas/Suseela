@@ -64,7 +64,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             _parent.SetArticleNumber(null);
             _parent.UnlinkWordFileFromSitecoreItem();
             _parent.ResetFields();
-            _parent.ResetChangedStatus(true); //hack-ish to reset all fields
+            _parent.ResetChangedStatus(true);
              this.Close();
         }
 
