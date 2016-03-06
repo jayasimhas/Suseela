@@ -29,13 +29,15 @@ namespace Informa.Web.Controllers
 		protected string TempFileLocation;
 		private readonly ArticleUtil _articleUtil;
 		private readonly IArticleSearch _articleSearcher;
-		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher)
+		private readonly EmailUtil _emailUtil;
+		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher, EmailUtil emailUtil)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)) ?
 				TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\temp.";
 			_articleUtil = articleUtil;
 			_articleSearcher = searcher;
+			_emailUtil = emailUtil;
 
 		}
 
@@ -113,7 +115,7 @@ namespace Informa.Web.Controllers
 			try
 			{
 				Item updatedVersion;
-			
+
 				if (addVersion)
 				{
 					using (new EditContext(articleItem))
@@ -147,7 +149,7 @@ namespace Informa.Web.Controllers
 				{
 					newVersion = article;
 				}
-			
+
 			}
 			catch (Exception ex)
 			{
@@ -172,28 +174,18 @@ namespace Informa.Web.Controllers
 					var newVersionItem = _sitecoreMasterService.GetItem<Item>(newVersion._Id);
 					newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
 					newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
-				}
 
+					if (articleStruct.CommandID != Guid.Empty)
+					{
+						//newVersion.NotificationTransientField.ShouldSend.Checked = true;
+						_articleUtil.ExecuteCommandAndGetWorkflowState(newVersionItem, articleStruct.CommandID.ToString());
 
-				//an editcontext just for workflow
-				using (new SecurityDisabler())
-				{
-					//using (new EditContext(newVersion))
-					//{
-					//	if (articleStruct.CommandID != Guid.Empty)
-					//	{
-					//	//	newVersion.NotificationTransientField.ShouldSend.Checked = true;
-					//		//_workflowController.ExecuteCommandAndGetWorkflowState(newVersion.InnerItem, articleStruct.CommandID.ToString());
+						if (shouldNotify)
+						{
+							_emailUtil.SendNotification(articleStruct,info);
 
-					//		//TODO: explain thyself, heathen
-					//		// I'm guessing we only should send notifications if the flag is set? Not sure why the need to explain this.
-					//		if (shouldNotify)
-					//		{
-					//			//_notificationsManager.SendArticleSpecificNotifications(newVersion, articleStruct);
-
-					//		}
-					//	}
-					//}
+						}
+					}
 				}
 
 				if (loggedIn)

@@ -24,5 +24,21 @@ namespace Informa.Library.Mail
 
 			return true;
 		}
+
+		public bool SendWorkflowNotification(IEmail email, string replyEmail)
+		{
+			var sitecoreEmail = new MailMessage(email.From, email.To, email.Subject, email.Body) { IsBodyHtml = email.IsBodyHtml };		
+			sitecoreEmail.ReplyToList.Add(replyEmail);
+			try
+			{
+				MainUtil.SendMail(sitecoreEmail);
+			}
+			catch
+			{
+				return false;
+			}
+
+			return true;
+		}
 	}
 }
