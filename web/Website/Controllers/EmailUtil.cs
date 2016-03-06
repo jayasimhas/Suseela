@@ -91,6 +91,8 @@ namespace Informa.Web.Controllers
 				return null;
 			}
 
+			var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
+
 			var authorString = string.Empty;
 			foreach (var eachAuthor in articleStruct.Authors)
 			{
@@ -102,27 +104,37 @@ namespace Informa.Web.Controllers
 			replacements["#Article_Title#"] = articleStruct.Title;
 			replacements["#Publish_Date#"] = articleStruct.WebPublicationDate.ToString();
 			replacements["#word_url#"] = GetWordURL(articleStruct);
+
+			ArticleItem articleItem = _service.GetItem<ArticleItem>(article.ID.ToString());
+			if (articleItem != null)
+			{
+				var preview = _articleUtil.GetPreviewInfo(articleItem);
+				if (preview != null)
+				{
+					replacements["#preview_url#"] = preview.PreviewUrl;
+				}
+			}
+
 			replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
 			replacements["#Publication#"] = publication;
 			replacements["#Body_Content#"] = articleStruct.NotificationText;
 			replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
 			replacements["#current_time#"] = DateTime.Now.ToString();
-			//old_state_image
-			//	old_state_image
+
 			var oldState = _service.Database.WorkflowProvider.GetWorkflow(oldWorkflow.StateID);
 			if (oldState != null)
 			{
-				replacements["#old_state_image#"] = "https://" + siteRoot + oldState.Appearance.Icon;
+				//replacements["#old_state_image#"] = "https://" + siteRoot + oldState.Appearance.Icon;
 				replacements["#old_state#"] = oldState.Appearance.DisplayName;
 			}
 			var newState = _service.Database.WorkflowProvider.GetWorkflow(articleStruct.CommandID.ToString());
 			if (newState != null)
 			{
-				replacements["#new_state_image#"] = "https://" + siteRoot + newState.Appearance.Icon;
+				//replacements["#new_state_image#"] = "https://" + siteRoot + newState.Appearance.Icon;
 				replacements["#new_state#"] = newState.Appearance.DisplayName;
 			}
 
-			var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
+
 			List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
 			replacements["#history#"] = HistoryTableCreation(workflowHistory);
 
