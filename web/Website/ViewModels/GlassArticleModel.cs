@@ -16,6 +16,7 @@ using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Glass.Models;
+using Sitecore.Web;
 
 namespace Informa.Web.ViewModels
 {
@@ -26,23 +27,28 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
+        protected readonly IArticleComponentFactory ArticleComponentFactory;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
             IArticleListItemModelFactory articleListableFactory,
             ITextTranslator textTranslator, 
             IArticleSearch searcher,
-            ISitecoreContext context)
+            ISitecoreContext context,
+            IArticleComponentFactory articleComponentFactory)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             Searcher = searcher;
             SitecoreContext = context;
+            ArticleComponentFactory = articleComponentFactory;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
             => GlassModel.Taxonomies.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) });
+
+        public string SelectedMobileMedia => Sitecore.Context.Device.QueryString == "mobilemedia=true" ? ArticleComponentFactory.Component(WebUtil.GetQueryString("selectedid"), GlassModel) : null;
 
         #region Implementation of IArticleModel
 
