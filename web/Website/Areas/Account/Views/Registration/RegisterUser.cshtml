@@ -2,7 +2,8 @@
 
 <div class="page-registration js-register-user-container">
 	<h1 class="page-registration__header">@Model.Title</h1>
-	@Model.Body
+	<h2 class="page-registration__subheader">@Model.SubTitle</h2>
+	<p>@Model.Body</p>
 	<hr />
 	<div style="display: none;" class="js-register-user-error-container">
 		<p style="display: none;" class="js-register-user-error js-register-user-error-Required">@Model.RequiredErrorText</p>

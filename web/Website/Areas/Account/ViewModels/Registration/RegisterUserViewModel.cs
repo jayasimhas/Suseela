@@ -17,6 +17,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		}
 
 		public string Title => GlassModel?.Title;
+		public string SubTitle => GlassModel?.Sub_Title;
 		public IHtmlString Body => new MvcHtmlString(GlassModel?.Body);
         public string RequiedFieldsText => TextTranslator.Translate("Registration.RequiredFields");
 		public string UsernameLabelText => TextTranslator.Translate("Registration.UsernameLabel");
