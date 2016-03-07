@@ -291,6 +291,7 @@
     <Compile Include="Rss\SearchRssFeed.cs" />
     <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
+    <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
