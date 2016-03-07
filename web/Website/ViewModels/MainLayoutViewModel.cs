@@ -18,7 +18,8 @@ namespace Informa.Web.ViewModels
 			IFooterViewModel footerViewModel,
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
-			IRegisterPopOutViewModel registerPopOutViewModel)
+			IRegisterPopOutViewModel registerPopOutViewModel,
+            IAppInsightsConfig appInsightsConfig)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -28,6 +29,7 @@ namespace Informa.Web.ViewModels
 			SignInPopOutViewModel = signInPopOutViewModel;
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
 			RegisterPopOutViewModel = registerPopOutViewModel;
+		    AppInsightsConfig = appInsightsConfig;
 		}
 
 		public IMaintenanceViewModel MaintenanceMessage;
@@ -37,6 +39,7 @@ namespace Informa.Web.ViewModels
 		public ISignInPopOutViewModel SignInPopOutViewModel;
 		public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
 		public IRegisterPopOutViewModel RegisterPopOutViewModel;
+	    public IAppInsightsConfig AppInsightsConfig;
 
 		public string Title
 		{

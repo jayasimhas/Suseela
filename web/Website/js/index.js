@@ -197,7 +197,20 @@ $(document).ready(function() {
 
 	// For each article table, clone and append "view full table" markup
 	$('.article-body-content table').forEach(function(e) {
-		$(e).after($('.js-mobile-table-template .article-table').clone());
+	    var mediaId = $(e).data("mediaid");
+	    var tableLink = $('.js-mobile-table-template .article-table').clone();
+
+	    var url = window.location.href;
+	    url.replace("#", "");
+	    if (url.indexOf("?") < 0)
+	        url += "?";
+	    else
+	        url += "&";
+
+	    url+= "mobilemedia=true&selectedid=" + mediaId;
+
+	    $(tableLink).find('a').attr("href", url);
+		$(e).after(tableLink);
 	});
 
 	// When DOM loads, render the appropriate iFrame components
