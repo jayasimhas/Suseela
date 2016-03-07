@@ -2260,6 +2260,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					/// </summary>
 					[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Initial_State  {get; set;}
+								/// <summary>
+					/// The Notified After Publish field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Notified_After_Publishes  {get; set;}
 				}
 
 	
@@ -2299,6 +2308,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 						/// </summary>
 						[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Initial_State  {get; set;}
+										/// <summary>
+						/// The Notified After Publish field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Notified_After_Publishes  {get; set;}
 						}
 	
 	public static partial class IWorkflowConstants{
@@ -2320,6 +2338,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					
 			public static readonly ID Initial_StateFieldId = new ID("b5166b38-e4bf-4410-953c-2037f2bf6a56");
 			public const string Initial_StateFieldName = "Initial state";
+
+						
+					
+			public static readonly ID Notified_After_PublishesFieldId = new ID("0e222fc9-35a4-40c9-afc9-d4f681c7aed4");
+			public const string Notified_After_PublishesFieldName = "Notified After Publish";
 
 						
 			
