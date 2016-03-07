@@ -201,3 +201,7 @@ web/Website/local.js
 nant.send.bat
 web/Data
 WordPlugin/SitecoreTreeWalker/publish
+web/Website/ApplicationInsights.config
+web/Website/App_Config/Include/UserDefined/AppInsights.config
+web/Website/App_Config/Include/UserDefined/AppInsights.config
+web/Website/ApplicationInsights.config
