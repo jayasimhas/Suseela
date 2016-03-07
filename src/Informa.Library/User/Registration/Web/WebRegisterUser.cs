@@ -1,5 +1,8 @@
-﻿namespace Informa.Library.User.Registration.Web
+﻿using Jabberwocky.Glass.Autofac.Attributes;
+
+namespace Informa.Library.User.Registration.Web
 {
+	[AutowireService(LifetimeScope.SingleInstance)]
 	public class WebRegisterUser : IWebRegisterUser
 	{
 		protected readonly IRegisterUser RegisterUser;

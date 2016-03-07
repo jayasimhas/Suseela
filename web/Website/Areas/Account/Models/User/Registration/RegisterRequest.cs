@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Informa.Library.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Informa.Web.Areas.Account.Models.User.Registration
 {
@@ -17,7 +18,7 @@ namespace Informa.Web.Areas.Account.Models.User.Registration
 		public string FirstName { get; set; }
 		[Required(ErrorMessage = RegisterValidationReason.Required)]
 		public string LastName { get; set; }
-		[Required(ErrorMessage = RegisterValidationReason.TermsNotAccepted)]
+		[MustBeTrue(ErrorMessage = RegisterValidationReason.TermsNotAccepted)]
 		public bool TermsAccepted { get; set; }
 	}
 }
