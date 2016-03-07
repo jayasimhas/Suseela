@@ -177,7 +177,7 @@ namespace Informa.Web.Controllers
 
 						if (shouldNotify)
 						{
-							_emailUtil.SendNotification(articleStruct,info);
+							_emailUtil.SendNotification(articleStruct, info);
 
 						}
 					}
@@ -193,6 +193,12 @@ namespace Informa.Web.Controllers
 			{
 				var ax = new ApplicationException("Workflow: Error with saving details while saving article [" + article.Article_Number + "]!", ex);
 				throw ax;
+			}
+
+			//  Notifying the Editors when stories are edited after pushlished 
+			if (articleStruct.IsPublished)
+			{
+				_emailUtil.EditAfterPublishSendNotification(articleStruct);
 			}
 			return newVersion;
 		}

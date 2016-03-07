@@ -82,6 +82,39 @@ namespace Informa.Web.Controllers
 			EmailSender.SendWorkflowNotification(contentAuthorEmail, replyToEmail);
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public void EditAfterPublishSendNotification(ArticleStruct articleStruct)
+		{
+			var siteConfigItem = _service.GetItem<ISite_Config>(Constants.ScripRootNode);
+			if (siteConfigItem == null) return;
+			var fromEmail = siteConfigItem.From_Email_Address;
+			var title = siteConfigItem.Email_Title;
+			var replyToEmail = Sitecore.Context.User.Profile.Email;
+			if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
+
+			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(Constants.ScripWorkflow);
+			if (workflowItem == null) return;
+			var notificationList = workflowItem.Notified_After_Publishes;
+			var staffItems = notificationList as IStaff_Item[] ?? notificationList.ToArray();
+			if (notificationList == null || !staffItems.Any()) return;
+			var emailBody = CreateEditAfterPublishBody(articleStruct, title, siteConfigItem.Publication_Name);
+
+			foreach (var eachEmail in staffItems)
+			{
+				if (string.IsNullOrEmpty(eachEmail.Email_Address)) continue;
+				var email = new Email
+				{
+					To = eachEmail.Email_Address,
+					Subject = title,
+					From = fromEmail,
+					Body = emailBody,
+					IsBodyHtml = true
+				};
+				EmailSender.SendWorkflowNotification(email, replyToEmail);
+			}
+		}
 		public string CreateBody(ArticleStruct articleStruct, string emailTitle, string publication, WorkflowInfo oldWorkflow)
 		{
 			var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("Workflow");
@@ -134,6 +167,50 @@ namespace Informa.Web.Controllers
 				replacements["#new_state#"] = newState.Appearance.DisplayName;
 			}
 
+
+			List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
+			replacements["#history#"] = HistoryTableCreation(workflowHistory);
+
+			return emailHtml.ReplaceCaseInsensitive(replacements);
+		}
+
+		public string CreateEditAfterPublishBody(ArticleStruct articleStruct, string emailTitle, string publication)
+		{
+			var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("EditAfterPublishEmail");
+			if (htmlEmailTemplate == null)
+			{
+				return null;
+			}
+
+			var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
+
+			var authorString = string.Empty;
+			foreach (var eachAuthor in articleStruct.Authors)
+			{
+				authorString = eachAuthor.Name + ",";
+			}
+			var emailHtml = htmlEmailTemplate.Html;
+			var replacements = new Dictionary<string, string>();
+			replacements["#Email_Title#"] = emailTitle;
+			replacements["#Article_Title#"] = articleStruct.Title;
+			replacements["#Publish_Date#"] = articleStruct.WebPublicationDate.ToString();
+			replacements["#word_url#"] = GetWordURL(articleStruct);
+
+			ArticleItem articleItem = _service.GetItem<ArticleItem>(article.ID.ToString());
+			if (articleItem != null)
+			{
+				var preview = _articleUtil.GetPreviewInfo(articleItem);
+				if (preview != null)
+				{
+					replacements["#preview_url#"] = preview.PreviewUrl;
+				}
+			}
+
+			replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
+			replacements["#Publication#"] = publication;
+			replacements["#Body_Content#"] = articleStruct.NotificationText;
+			replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
+			replacements["#current_time#"] = DateTime.Now.ToString();
 
 			List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
 			replacements["#history#"] = HistoryTableCreation(workflowHistory);
