@@ -8,7 +8,7 @@ namespace Informa.Web.Areas.Account.Models.User.ResetPassword
 		public string Token { get; set; }
 		[Required(ErrorMessage = ChangeValidationReason.PasswordRequirements)]
 		[MinLength(8, ErrorMessage = ChangeValidationReason.PasswordRequirements)]
-		[RegularExpression(@"[^\s]+", ErrorMessage = ChangeValidationReason.PasswordRequirements)]
+		[RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = ChangeValidationReason.PasswordRequirements)]
 		public string NewPassword { get; set; }
 		[Compare("NewPassword", ErrorMessage = ChangeValidationReason.PasswordMismatch)]
 		public string NewPasswordRepeat { get; set; }
