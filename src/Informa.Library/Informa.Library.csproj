@@ -192,6 +192,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -276,6 +277,15 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
+    <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
+    <Compile Include="DCD\XMLImporting\DCDContextExtensions.cs" />
+    <Compile Include="DCD\XMLImporting\DCDImportEndRemoteEvent.cs" />
+    <Compile Include="DCD\XMLImporting\DCDImporter.cs" />
+    <Compile Include="DCD\XMLImporting\DCDImportingLogger.cs" />
+    <Compile Include="DCD\XMLImporting\Enumerations.cs" />
+    <Compile Include="DCD\XMLImporting\FileImportingManager.cs" />
+    <Compile Include="DCD\XMLImporting\IBIContent.cs" />
+    <Compile Include="DCD\XMLImporting\XMLFileUtilities.cs" />
     <Compile Include="Mail\Email.cs" />
     <Compile Include="Mail\EmailFactory.cs" />
     <Compile Include="Mail\EmailSender.cs" />

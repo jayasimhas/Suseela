@@ -72,4 +72,10 @@ and running. There are additional default properties from dev.properties that yo
 	<!-- For web deployments, the URL end-users visit for the application -->
 	<property name="installpath" value="http://informa8.ashah.velir.com/wordinstaller/" />
 	<property name="updatepath" value="http://informa8.ashah.velir.com/wordinstaller/" />
+	
+	<!-- DCD Modules Related Configuration-->
+	<property name="DCD.ImportFolder" value="C:\Projects\Velir\DCDXML"/>
+    <!-- Folder where DCD XML importing files will be located -->    
+    <property name="DCD.EnableWatcher" value="true"/>
+    <!--Whether to enable DCD XML files changes watching in the DCD.ImportFolder folder-->
 </project>
