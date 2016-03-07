@@ -22,7 +22,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string UsernameLabelText => TextTranslator.Translate("Registration.UsernameLabel");
 		public string UsernamePlaceholderText => TextTranslator.Translate("Registration.UsernamePlaceholder");
 		public string FirstNameLabelText => TextTranslator.Translate("Registration.FirstNameLabel");
-		public string FirstNamePlaceholderText => TextTranslator.Translate("Registration.FirstNamePlaceholder");//TODO: 2 char validation
+		public string FirstNamePlaceholderText => TextTranslator.Translate("Registration.FirstNamePlaceholder");
 		public string LastNameLabelText => TextTranslator.Translate("Registration.LastNamePlaceholder");
 		public string PasswordLabelText => TextTranslator.Translate("Registration.PasswordLabel");
 		public string PasswordPlaceholderText => TextTranslator.Translate("Registration.PasswordPlaceholder");
