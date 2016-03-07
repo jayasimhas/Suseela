@@ -776,6 +776,7 @@
     <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search\controllers\emailRssController.js" />
     <Content Include="js\search\controllers\headlineToggleController.js" />
     <Content Include="js\search\controllers\informaFacetsController.js" />
     <Content Include="js\search\controllers\informaResultsController.js" />

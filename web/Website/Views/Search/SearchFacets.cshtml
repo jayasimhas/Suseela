@@ -29,7 +29,11 @@
       <fieldset class="facets__fieldset">
         <legend class="facets__legend facets__section-header">
           <h4>{{ group.label }}</h4>
-          <button class="facets__button facets__button--toggle-section" ng-model="collapsefacet" ng-click="collapsefacet=!collapsefacet">
+          <button 
+            class="facets__button facets__button--toggle-section" 
+            ng-model="collapsefacet" 
+            ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed" 
+            ng-class="{'collapsed': isCollapsed}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
           </button>
         </legend>
@@ -49,49 +53,125 @@
         <button 
           class="facets__button facets__button--more" 
           ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
-          ng-click = 'group.ShowMore = true'>See All
+          ng-click = 'group.ShowMore = true'
+          ng-class="{'collapsed': isCollapsed}">See All
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
         </button>
         <button 
           class="facets__button facets__button--less" 
           ng-show='group.ShowMore'
-          ng-click='group.ShowMore = false'>See Less
+          ng-click='group.ShowMore = false'
+          ng-class="{'collapsed': isCollapsed}">See Less
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use></svg>
           </button>
       </fieldset>
     </form>
 
-      <!-- HARDCODED DATE FACET -->
+    <!-- HARDCODED COMPANIES FACET -->
+    <form class="facets__section">
+      <fieldset class="facets__fieldset">
+        <legend class="facets__legend facets__section-header">
+          <h4>Companies</h4>
+          <button 
+            class="facets__button facets__button--toggle-section" 
+            ng-model="collapsecompanies" 
+            ng-click="collapsecompanies=!collapsecompanies; isCollapsedCompanies=!isCollapsedCompanies" 
+            ng-class="{'collapsed': isCollapsedCompanies}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+          </button>
+        </legend>
+        <ul class="facets__section-list" ng-hide="collapsecompanies">
+          <li>
+            <input type="checkbox" class="visuallyhidden">
+            <label>Amgen (537)</label>
+          </li>
+          <li>
+            <input type="checkbox" class="visuallyhidden">
+            <label>Novartis (221)</label>
+          </li>
+          <li>
+            <input type="checkbox" class="visuallyhidden">
+            <label>Sandoz International GMBH (125)</label>
+          </li>
+          <li class="facets__company-input" ng-show="isAddingCompany">
+            <div class="facets__field-group facets__field-group--companies">
+            <button 
+              class="facets__button facets__button--clear-company" 
+              ng-class="{'collapsed': isCollapsedCompanies}"
+              ng-click=""> 
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use></svg>
+            </button>
+              <input type="text" name="company-facet" placeholder="Company Name">
+            </div>
+          </li>
+        </ul>
+        <button 
+          class="facets__button facets__button--add" 
+          ng-model="isAddingCompany"
+          ng-class="{'collapsed': isCollapsedCompanies, 'adding-company': isAddingCompany}"
+          ng-hide="isAddingCompany"
+          ng-click="isAddingCompany = true">Add 
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use></svg>
+        </button>
+      </fieldset>
+    </form>
+
+    <!-- HARDCODED DATE FACET -->
     <form class="facets__section">
       <fieldset class="facets__fieldset">
         <legend class="facets__legend facets__section-header">
           <h4>Date</h4>
-          <button class="facets__button facets__button--toggle-section" ng-model="collapsedate" ng-click="collapsedate=!collapsedate">
+          <button 
+            class="facets__button facets__button--toggle-section" 
+            ng-model="collapsedate" 
+            ng-click="collapsedate=!collapsedate; isCollapsedDate=!isCollapsedDate"
+            ng-class="{'collapsed': isCollapsedDate}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
           </button>
         </legend>
         <ul class="facets__section-list" ng-hide="collapsedate">
-            <li ng-repeat="dateFilter in allFacets.DateFilters">
-                <input type="radio" name="date-facet" id="{{dateFilter.key}}" ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
-                <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
-            </li>
-            <li><input type="radio" name="date-facet" id="custom-range"><label for="custom-range">Select date range</label>
-                <div class="facets__field-group facets__field-group--from">
-                    <legend>From</legend>
-                    <input type="date" placeholder="dd/mm/yyyy">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
-                </div>
-                <div class="facets__field-group facets__field-group--to">
-                    <legend>To</legend>
-                    <input type="date" placeholder="dd/mm/yyyy">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
-                </div>
-            </li>
+          <li ng-repeat="dateFilter in allFacets.DateFilters">
+              <input 
+                type="radio" 
+                name="date-facet" 
+                id="{{dateFilter.key}}"
+                ng-model="dateFilter.selected"
+                ng-value=true
+                ng-checked="{{dateFilter.selected}}"
+                ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
+              <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
+              
+              <div class="facets__field-group facets__field-group--from" ng-show="$last">
+                <label>From</label>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+              </div>
+              <div class="facets__field-group facets__field-group--to" ng-show="$last">
+                <label>To</label>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeTo">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+              </div>
+          </li>
         </ul>
       </fieldset>
     </form>
 
+              <!-- <li>
+            <input type="radio" name="date-facet" id="custom-range">
+            <label for="custom-range">Select date range</label>
+            <div class="facets__field-group facets__field-group--from">
+                <legend>From</legend>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+            </div>
+            <div class="facets__field-group facets__field-group--to">
+                <legend>To</legend>
+                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeTo">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+            </div>
+          </li> -->
 
+    
 
     <!-- EXAMPLE FACET WITH SUBCATEGORY MARKUP BELOW 
     <form class="facets__section">
@@ -136,8 +216,6 @@
       </fieldset>
     </form>-->
     <!-- / END EXAMPLE FACET -->
-
-
 
   </div> <!-- / facets__content -->
 
