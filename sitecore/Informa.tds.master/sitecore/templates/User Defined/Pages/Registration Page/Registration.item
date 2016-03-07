@@ -1,33 +1,26 @@
 ----item----
 version: 1
-id: {622E0A7E-1D68-4B06-9340-5D2A8DC5F37D}
+id: {69AB1B4B-1C1C-4F4B-A592-A9354CE8894B}
 database: master
-path: /sitecore/templates/Velir/Search/Components/Search Listing/__Standard Values
-parent: {9C7E6D73-F5AB-4C81-8FEB-AE3377612AF2}
-name: __Standard Values
+path: /sitecore/templates/User Defined/Pages/Registration Page/Registration
+parent: {0520D52B-52A8-4052-A07F-9F35F8CA274C}
+name: Registration
 master: {00000000-0000-0000-0000-000000000000}
-template: {9C7E6D73-F5AB-4C81-8FEB-AE3377612AF2}
-templatekey: Search Listing
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
 
 ----version----
 language: en
 version: 1
-revision: 50c77d53-efeb-4c70-82a7-89f239e5fb36
+revision: 903f8541-ed70-49e2-bc7f-d7647af4b02a
 
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20150409T162604Z
+20160307T153739Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -41,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-50c77d53-efeb-4c70-82a7-89f239e5fb36
+903f8541-ed70-49e2-bc7f-d7647af4b02a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 35
+content-length: 16
 
-20150409T162604:635641935643301547Z
+20160307T153759Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
