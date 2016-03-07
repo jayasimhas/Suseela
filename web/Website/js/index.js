@@ -6,6 +6,7 @@ import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
 import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
+import RegisterController from './register-controller';
 
 
 /* Toggle menu categories */
@@ -157,6 +158,10 @@ $(document).ready(function() {
 	);
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
+
+	var registerController = new RegisterController();
+
+	registerController.addRegisterUserControl('.js-register-user-submit');
 
     svg4everybody();
 

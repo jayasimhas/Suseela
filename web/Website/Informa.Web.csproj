@@ -637,6 +637,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
@@ -769,6 +770,7 @@
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\openadstream.js" />
+    <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
     <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
@@ -923,7 +925,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Register\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
@@ -980,6 +981,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -70,7 +70,7 @@ namespace SitecoreTreeWalker.UI
                 return false;
             }
             Title.Text = info.Name;
-            ID.Text = info.ID;
+            ID.Text = info.RecordNumber;
             DealDate.Text = String.Format("{0:M-d-yyyy}", info.DealDate);
             LastUpdated.Text = String.Format("{0:M-d-yyyy}", info.LastUpdated);
 
