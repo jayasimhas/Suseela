@@ -447,11 +447,11 @@ namespace Informa.Web.Controllers
 
 			try
 			{
-				ISitecoreService service = new SitecoreContext(WebDb);
+				ISitecoreService service = new SitecoreContentContext();
 				var webItem = service.GetItem<Item>(articleItem._Id);
 				articleStruct.IsPublished = webItem != null;
 			}
-			catch
+			catch(Exception ex)
 			{
 				articleStruct.IsPublished = false;
 			}

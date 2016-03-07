@@ -2265,10 +2265,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=IStaff_Item</para>
 					/// </summary>
 					[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Notified_After_Publishes  {get; set;}
+					IEnumerable<IStaff_Item> Notified_After_Publishes  {get; set;}
 				}
 
 	
@@ -2313,10 +2313,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=IStaff_Item</para>
 						/// </summary>
 						[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Notified_After_Publishes  {get; set;}
+						IEnumerable<IStaff_Item> Notified_After_Publishes  {get; set;}
 						}
 	
 	public static partial class IWorkflowConstants{

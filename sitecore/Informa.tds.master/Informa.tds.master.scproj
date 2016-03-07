@@ -1294,6 +1294,7 @@
     <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow\Informa\Notified After Publish.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>generic=IStaff_Item</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\User Defined.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
