@@ -669,6 +669,8 @@
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
@@ -765,6 +767,7 @@
     <Content Include="default.css" />
     <Content Include="default.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
+    <Content Include="email\EmailFriend.html" />
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
