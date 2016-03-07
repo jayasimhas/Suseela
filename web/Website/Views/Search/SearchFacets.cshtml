@@ -117,7 +117,7 @@
   </ul>
 
   <!-- HARDCODED DATE FACET -->
-  <ul class="facets__section">
+  <ul class="facets__section"> <!-- removed ng-controller="DatepickerDemoCtrl" -->
     <li class="facets__section-title">
         <h4>Date</h4>
         <button 
@@ -144,47 +144,7 @@
             <li class="facets__field-group facets__field-group--from input-group" ng-show="$last">
               <label for="dateRangeFrom">From</label>
               <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom" ng-value="dateRangeFrom" name="dateRangeFrom">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
-            </li>
-            <li class="facets__field-group facets__field-group--to input-group" ng-show="$last">
-              <label for="dateRangeTo">To</label>
-              <input type="date" placeholder="dd/mm/yyyy" name="dateRangeTo" ng-value="dateRangeTo" ng-model="dateRangeTo">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>      
-  </ul>
-
-</div>
-        
-
-
-
-
-
-
-
-    <!-- <ul class="facets__section"> --> <!-- removed ng-controller="DatepickerDemoCtrl" -->
-      <!-- <fieldset class="facets__fieldset">
-        
-        <ul class="facets__section-list" >
-          <li ng-repeat="dateFilter in allFacets.DateFilters">
-              <input 
-                type="radio" 
-                name="date-facet" 
-                id="{{dateFilter.key}}"
-                ng-model="dateFilter.selected"
-                ng-value=true
-                ng-checked="{{dateFilter.selected}}"
-                ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
-              <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
-              
-              <div class="facets__field-group facets__field-group--from input-group" ng-show="$last">
-                <label for="dateRangeFrom">From</label>
-                <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom" ng-value="dateRangeFrom" name="dateRangeFrom"> -->
-                <!-- <input 
+              <!-- <input 
                   name="dateRangeFrom" 
                   placeholder="dd/mm/yyyy" 
                   ng-value="dateRangeFrom" 
@@ -196,16 +156,12 @@
                   ng-required="false" 
                   close-text="Close" 
                   alt-input-formats="altInputFormats" > -->
-                <!-- <span class="input-group-btn">
-                  <button type="button" class="btn btn-default" ng-click="open1()"> -->
-                    <!-- <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg> -->
-                  <!-- </button>
-                </span> -->
-             <!--  </div>
-              <div class="facets__field-group facets__field-group--to input-group" ng-show="$last">
-                <label for="dateRangeTo">To</label>
-                <input type="date" placeholder="dd/mm/yyyy" name="dateRangeTo" ng-value="dateRangeTo" ng-model="dateRangeTo"> -->
-                <!-- <input 
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+            </li>
+            <li class="facets__field-group facets__field-group--to input-group" ng-show="$last">
+              <label for="dateRangeTo">To</label>
+              <input type="date" placeholder="dd/mm/yyyy" name="dateRangeTo" ng-value="dateRangeTo" ng-model="dateRangeTo">
+              <!-- <input 
                   name="dateRangeTo" 
                   placeholder="dd/mm/yyyy" 
                   class="form-control" 
@@ -216,19 +172,17 @@
                   ng-required="false" 
                   close-text="Close" 
                   alt-input-formats="altInputFormats"> -->
-                <!-- <span class="input-group-btn">
-                  <button type="button" class="btn btn-default" ng-click="open2()"> -->
-                    <!-- <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg> -->
-                  <!-- </button>
+              <!-- <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open2()"> -->
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+              <!-- </button>
                 </span> -->
-              <!-- </div>
-          </li>
-        </ul> -->
-        <!-- <div>From: {{allFacets.dateRangeFrom}}</div> -->
-      <!-- </fieldset>
-    </ul>
- -->
-
-
-
-
+            </li>
+          </ul>
+          <!-- <div>From: {{allFacets.dateRangeFrom}}</div> -->
+        </li>
+      </ul>
+    </li>      
+  </ul>
+</div>
+        
