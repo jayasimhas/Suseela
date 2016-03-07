@@ -923,7 +923,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Register\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
@@ -980,6 +979,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
