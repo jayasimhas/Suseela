@@ -12,31 +12,34 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 	{
 		public List<ArticleWorkflowCommand> Commands;
 		protected List<StaffStruct> _staff;
-		
+
 
 		public WorkflowControl()
 		{
 			InitializeComponent();
-
+			uxNotifyPicker.Enabled = false;
+			uxNotifyList.Enabled = false;
+			uxNotifyAdd.Enabled = false;
+			txtNotificationText.Enabled = false;
 		}
 
 		public void UpdateFields(ArticleWorkflowState state)
 		{
 			if (_staff == null)
 			{
-			    _staff = SitecoreClient.GetStaffAndGroups(); 
+				_staff = SitecoreClient.GetStaffAndGroups();
 			}
 
 			uxNotifyPicker.DataSource = _staff;
 			uxNotifyPicker.DisplayMember = "Name";
 			uxNotifyPicker.ValueMember = "ID";
-			if(state == null)
+			if (state == null)
 			{
 				return;
 			}
 			uxCurrentWorkflowValue.Text = state.DisplayName;
 			Commands = new List<ArticleWorkflowCommand>();
-			Commands.Insert(0, new ArticleWorkflowCommand {DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString()});
+			Commands.Insert(0, new ArticleWorkflowCommand { DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString() });
 			if (state.Commands != null)
 			{
 				Commands.AddRange(state.Commands);
@@ -60,7 +63,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 			if (uxWorkflowActions.SelectedValue is ArticleWorkflowCommand)
 			{
-				if (((ArticleWorkflowCommand) uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
+				if (((ArticleWorkflowCommand)uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
 				{
 					uxNotifyPicker.Enabled = false;
 					uxNotifyList.Enabled = false;
@@ -69,7 +72,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 					uxUnlockOnSave.Enabled = false;
 					return;
 				}
-
+				EnableControls();
 				var command = ((ArticleWorkflowCommand)uxWorkflowActions.SelectedValue);
 
 				if (command.GlobalNotifyList != null) { uxNotifyList.ResetUnremovableStaff(command.GlobalNotifyList.ToList()); }
@@ -81,28 +84,30 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 					uxNotifyPicker.Enabled = false;
 					uxNotifyList.Enabled = false;
 					uxNotifyAdd.Enabled = false;
-
+					txtNotificationText.Enabled = false;
+					uxUnlockOnSave.Enabled = false;
 					return;
 				}
-
+				EnableControls();
 				var command = Commands.Where(c => c.StringID == uxWorkflowActions.SelectedValue.ToString()).FirstOrDefault();
 
 				if (command != null && command.GlobalNotifyList != null) { uxNotifyList.ResetUnremovableStaff(command.GlobalNotifyList.ToList()); }
 			}
 
+
+		}
+
+		private void EnableControls()
+		{
 			uxNotifyPicker.Enabled = true;
 			uxNotifyList.Enabled = true;
 			uxNotifyAdd.Enabled = true;
-
-			
-
-			//update globals
-
+			txtNotificationText.Enabled = true;
+			uxUnlockOnSave.Enabled = true;
 		}
 
 		public void PreLinkEnable()
 		{
-			//TODO - Disable this
 			//Visible = false;
 		}
 
@@ -112,10 +117,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			ResetNotificationList();
 		}
 
-        public ArticleWorkflowCommand GetSelectedCommandState()
-        {
-            return uxWorkflowActions.SelectedItem as ArticleWorkflowCommand;
-        }
+		public ArticleWorkflowCommand GetSelectedCommandState()
+		{
+			return uxWorkflowActions.SelectedItem as ArticleWorkflowCommand;
+		}
 
 		public Guid GetSelectedCommand()
 		{

@@ -1,9 +1,37 @@
+/*---
+title: Quick Facts Box
+section: Article Components
+---
+
+```example:html
+<div class="sidebox">
+  <p class="quickfactstitle">Quick Facts Title</p>
+  <p class="quickfactstext">Quick Facts Text</p>
+  <ul class="quickfactsbulleted">
+      <li>Quick text bullets</li>
+  </ul>
+
+  <ol class="quickfactsnumbered">
+      <li>Quic facts numbered</li>
+  </ol>
+  <p class="quickfactssource">Quick Facts Source</p>
+</div>
+```
+*/
+
 .quick-facts {
     background-color: $color-antique-white;
     float: right;
     margin: 2rem 0 2rem 2rem;
+    overflow: auto;
     padding: 2rem 1.75rem 0;
     width: 50%;
+
+    @include breakpoint('small') {
+        width: calc(100% - 2rem);
+        float: none;
+        margin: 0 1rem 2rem;
+    }
 
     p,
     ul,
@@ -36,5 +64,12 @@
         color: $informa-dark-gray;
         float: right;
         font-style: italic;
+    }
+
+    hr {
+        border: 0;
+        background-color: $color-yellow-orange;
+        height: 1px;
+        margin-bottom: 1.75rem;
     }
 }

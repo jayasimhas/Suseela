@@ -269,12 +269,6 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-
-		/*
-			 * TODO : There is no way to check if a style exists so we have to try to create it and 
-			 then ignore the "Style alredy exists" error with the empty catch 
-			 my apologies
-			 * */
 		private static void CreateCustomStyleFromBase(Microsoft.Office.Interop.Word.Application app, string baseStyle,
 													   string newStyleName)
 		{

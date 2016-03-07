@@ -9,10 +9,24 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {4B7E2DA9-DE43-4C83-88C3-02F042031D04}
 templatekey: State
 
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 35
+
+Applications/32x32/document_new.png
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+900
 ----version----
 language: en
 version: 1
-revision: 347815b1-2459-4e3e-81ae-6f39f00964be
+revision: d2f3873a-d5b0-4a85-b40d-78207aac16af
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-347815b1-2459-4e3e-81ae-6f39f00964be
+d2f3873a-d5b0-4a85-b40d-78207aac16af
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160302T122633Z
+20160304T092259Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

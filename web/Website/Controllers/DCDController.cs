@@ -19,12 +19,13 @@ namespace Informa.Web.Controllers
             {
                 Deal deal = new DCDManager().GetDealByRecordNumber(recordNumber);
 
-                dealInfo = new DealInfo
-                {
-                    DealDate = deal.Created,
-                    ID = deal.RecordId.ToString(),
-                    LastUpdated = deal.LastModified,
-                    Name = deal.Title,
+				dealInfo = new DealInfo
+				{
+					DealDate = deal.Created,
+					ID = deal.RecordId.ToString(),
+					LastUpdated = deal.LastModified,
+					Name = deal.Title,
+					RecordNumber = deal.RecordNumber,
                     Url = string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL"), recordNumber)
                 };
             }
@@ -62,6 +63,7 @@ namespace Informa.Web.Controllers
     [Route]
     public class GetAllCompaniesWithRelatedController : ApiController
     {
+        private static string logAccum = string.Empty;
         [HttpGet]
         public List<CompanyWrapper> GetAllCompaniesWithRelated()
         {
@@ -200,7 +202,7 @@ namespace Informa.Web.Controllers
             if (wrapper == null)
             {
                 List<CompanyWrapper> parent;
-                if (pointers.TryGetValue(recordId, out parent))
+                if (pointers.TryGetValue(recordId, out parent) && parent != null)
                 {
                     wrapper = Get(parent, recordId, delete);
                 }

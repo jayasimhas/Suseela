@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
@@ -13,6 +14,9 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
+using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
+using Jabberwocky.Glass.Models;
+using Sitecore.Web;
 
 namespace Informa.Web.ViewModels
 {
@@ -22,20 +26,29 @@ namespace Informa.Web.ViewModels
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IArticleSearch Searcher;
+        protected readonly ISitecoreContext SitecoreContext;
+        protected readonly IArticleComponentFactory ArticleComponentFactory;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
             IArticleListItemModelFactory articleListableFactory,
-            ITextTranslator textTranslator, IArticleSearch searcher)
+            ITextTranslator textTranslator, 
+            IArticleSearch searcher,
+            ISitecoreContext context,
+            IArticleComponentFactory articleComponentFactory)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             Searcher = searcher;
+            SitecoreContext = context;
+            ArticleComponentFactory = articleComponentFactory;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
             => GlassModel.Taxonomies.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) });
+
+        public string SelectedMobileMedia => Sitecore.Context.Device.QueryString == "mobilemedia=true" ? ArticleComponentFactory.Component(WebUtil.GetQueryString("selectedid"), GlassModel) : null;
 
         #region Implementation of IArticleModel
 
@@ -56,7 +69,7 @@ namespace Informa.Web.ViewModels
 
 
         public IHierarchyLinks TaxonomyHierarchy => new HierarchyLinksViewModel(GlassModel, TextTranslator);
-        public DateTime Date => GlassModel.Actual_Publish_Date;
+        public DateTime Date => (Sitecore.Context.PageMode.IsPreview) ? GlassModel.Planned_Publish_Date : GlassModel.Actual_Publish_Date;
         //TODO: Extract to a dictionary.
         public string Content_Type => GlassModel.Content_Type?.Item_Name;
         public string Media_Type => GlassModel.Media_Type?.Item_Name == "Data" ? "chart" : GlassModel.Media_Type?.Item_Name?.ToLower() ?? "";
@@ -83,11 +96,28 @@ namespace Informa.Web.ViewModels
             }
         }
 
-        public IEnumerable<ILinkable> KeyDocuments
-            =>
-                GlassModel.Supporting_Documents.Select(
-                    x => new LinkableModel { LinkableText = x._Name, LinkableUrl = x._MediaUrl });
+        public IEnumerable<IGlassBase> KeyDocuments => GlassModel.Supporting_Documents;
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
+
+        public string GetTitle(IGlassBase g)
+        {
+            IFile f = SitecoreContext.GetItem<IFile>(g._Id);
+            return (f != null && !string.IsNullOrEmpty(f.Title))
+                ? f.Title
+                : g._Name;
+        }
+
+        public string GetDocumentIcon(IGlassBase g)
+        {
+            IFile f = SitecoreContext.GetItem<IFile>(g._Id);
+            if (f == null || string.IsNullOrEmpty(f.Extension) || f.Extension.Equals("pdf"))
+                return "pdf";
+            if (f.Extension.Equals(".doc") || f.Extension.Equals(".docx"))
+                return "doc";
+            if (f.Extension.Equals(".xls") || f.Extension.Equals(".xlsx"))
+                return "xls";
+            return "pdf";
+        }
 
         #endregion
 

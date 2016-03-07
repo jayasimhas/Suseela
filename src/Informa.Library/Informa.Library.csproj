@@ -190,6 +190,7 @@
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
@@ -274,6 +275,7 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="Mail\Email.cs" />
@@ -286,8 +288,10 @@
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Mail\IHtmlEmailTemplate.cs" />
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
+    <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
     <Compile Include="User\Authentication\IAuthenticateUser.cs" />
     <Compile Include="User\Authentication\IAuthenticateUserResult.cs" />
@@ -478,6 +482,14 @@
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
     <Compile Include="User\Profile\IUserProfile.cs" />
     <Compile Include="User\Profile\IUserProfileFactory.cs" />
+    <Compile Include="User\Registration\INewUser.cs" />
+    <Compile Include="User\Registration\INewUserFactory.cs" />
+    <Compile Include="User\Registration\IRegisterUser.cs" />
+    <Compile Include="User\Registration\IRegisterUserResult.cs" />
+    <Compile Include="User\Registration\NewUser.cs" />
+    <Compile Include="User\Registration\NewUserFactory.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUser.cs" />
+    <Compile Include="User\Registration\Web\WebRegisterUser.cs" />
     <Compile Include="User\ResetPassword\FindValidUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\GenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IFindUserResetPassword.cs" />

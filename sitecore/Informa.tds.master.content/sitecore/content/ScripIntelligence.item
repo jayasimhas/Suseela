@@ -29,6 +29,20 @@ version: 1
 revision: 42390f95-7ab4-4e50-85ef-cfbd8139f44c
 
 ----field----
+field: {DFF8072A-6D80-408F-A3FB-2175E3B3DD72}
+name: Global Article Medium Slot ID
+key: global article medium slot id
+content-length: 5
+
+Right
+----field----
+field: {7F493D5A-9FC5-407B-9B05-609F5BE5D07D}
+name: Global Article Filmstrip Slot ID
+key: global article filmstrip slot id
+content-length: 4
+
+Top3
+----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
 name: Supporting Documents Folder
 key: supporting documents folder

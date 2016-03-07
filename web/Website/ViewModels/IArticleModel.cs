@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Informa.Models.FactoryInterface;
+using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
@@ -17,7 +18,7 @@ namespace Informa.Web.ViewModels
         IEnumerable<IPersonModel> Authors { get; }
         string Category { get; }     
         IEnumerable<IListable> RelatedArticles { get; }  
-        IEnumerable<ILinkable> KeyDocuments { get; }
+        IEnumerable<IGlassBase> KeyDocuments { get; }
         
     }
 }

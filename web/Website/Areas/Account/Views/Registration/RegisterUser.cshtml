@@ -1,0 +1,46 @@
+﻿<div class="js-register-user-container">
+	<h1>Register for an Account</h1>
+	<h3>Creating an account has many benefits</h3>
+	<p>Please fill out the form below to receive free email newsletters, set custom email alerts, save articles, topics and searches.</p>
+	<hr />
+	<div style="display: none;" class="js-register-user-error-container">
+		<p style="display: none;" class="js-register-user-error js-register-user-error-Required">Please enter all required fields.</p>
+		<p style="display: none;" class="js-register-user-error js-register-user-error-UsernameRequirements">Your username does not meet the requirements.</p>
+		<p style="display: none;" class="js-register-user-error js-register-user-error-PasswordMismatch">Your passwords do not match.</p>
+		<p style="display: none;" class="js-register-user-error js-register-user-error-PasswordRequirements">Your password does not meet the minimum requirements.</p>
+		<p style="display: none;" class="js-register-user-error js-register-user-error-TermsNotAccepted">Please accept the terms and conditions.</p>
+	</div>
+	<div>
+		<p>* required field</p>
+		<div>
+			<label for="username">Email Address (User Name) *</label>
+			<input name="username" type="email" placeholder="Enter your work email address" />
+		</div>
+		<div>
+			<div>
+				<label for="firstName">First Name *</label>
+				<input name="firstName" type="text" placeholder="Must be at least two characters" />
+			</div>
+			<div>
+				<label for="lastName">Last Name *</label>
+				<input name="lastName" type="text" />
+			</div>
+		</div>
+		<div>
+			<div>
+				<label for="password">Password *</label>
+				<input name="password" type="password" placeholder="Minimum 8 characters, case sensitive" />
+			</div>
+			<div>
+				<label for="passwordRepeat">Confirm Password *</label>
+				<input name="passwordRepeat" type="password" />
+			</div>
+		</div>
+		<div>
+			<input name="termsAccepted" type="checkbox" data-checkbox-type="boolean" /><label for="termsAccepted">I have read and understand the <a href="#">Registered User Agreement</a> and agree to be bound by all of its terms.</label>
+		</div>
+		<button class="button--filled js-register-user-submit" data-register-user-url="/Account/api/RegistrationApi/Register/">Register</button>
+		<p style="display: none;" class="js-register-user-success">Account successfull registered (-> redirect to thank you).</p>
+		<p>You will be able to sign up for free newsletters on the next page</p>
+	</div>
+</div>
