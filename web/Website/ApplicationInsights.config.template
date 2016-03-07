@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings">
+  #if($ApplicationInsights.Enabled == "true")
   <TelemetryModules>
     <Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector" />
     <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule, Microsoft.AI.PerfCounterCollector">
@@ -57,6 +58,7 @@
     Note: If not present, please add <InstrumentationKey>Your Key</InstrumentationKey> to the top of this file.
   -->
   <!-- This key is for Application Insights resource 'Informa.Web' in resource group 'Default-ApplicationInsights-CentralUS' -->
-  <InstrumentationKey>4894873a-8bb5-4959-8750-d0a477d8e601</InstrumentationKey>
-  <ResourceID>subscriptions/e4a477b7-3147-4ead-9c41-9330392937fa/resourceGroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/Informa.Web</ResourceID>
+  <InstrumentationKey>${ApplicationInsights.InstrumentationKey}</InstrumentationKey>
+  <ResourceID>${ApplicationInsights.ResourceID}</ResourceID>
+  #end
 </ApplicationInsights>
