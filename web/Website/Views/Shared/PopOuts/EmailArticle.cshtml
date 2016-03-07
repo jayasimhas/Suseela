@@ -16,29 +16,36 @@
 		<p class="pop-out__details u-italic">
 			@Model.EmailFormInstructionsText
 		</p>
-		<input class="pop-out__input"
+		<input name="RecipientEmail"
+			   class="pop-out__input"
 			   type="text"
-		       placeholder="@Model.RecipientEmailPlaceholderText"
-               error="@Model.InvalidEmailText">
-		<input class="pop-out__input"
+			   placeholder="@Model.RecipientEmailPlaceholderText"
+			   error="@Model.InvalidEmailText">
+		<input name="SenderName"
+			   class="pop-out__input"
 			   type="text"
-		       placeholder="@Model.YourNamePlaceholderText"
-               error="@Model.EmptyFieldText">
-		<input class="pop-out__input"
+			   placeholder="@Model.YourNamePlaceholderText"
+			   error="@Model.EmptyFieldText">
+		<input name="SenderEmail"
+			   class="pop-out__input"
 			   type="text"
-		       placeholder="@Model.YourEmailPlaceholderText"
-               error="@Model.EmptyFieldText">
+			   placeholder="@Model.YourEmailPlaceholderText"
+			   error="@Model.EmptyFieldText">
 		<p>
 			<span class="pop-out__run-in">@Model.SubjectText</span> @Model.ArticleTitle
+			<input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
 		</p>
 		<p><span class="pop-out__run-in">@Model.AddMessageText</span></p>
-		<textarea class="pop-out__input pop-out__textarea"></textarea>
+		<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
+
+		<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
+
 		<div class="pop-out__form-actions-wrapper">
 			<div>
 				<a href="#">@Model.CancelText</a>
 			</div>
 			<div class="sign-in__submit-wrapper">
-				<button class="button--filled sign-in__submit">@Model.SendText</button>
+				<button class="button--filled sign-in__submit" data-login-url="/Account/api/EmailFriend/Email/">@Model.SendText</button>
 			</div>
 		</div>
 		<p class="pop-out__details u-italic">
