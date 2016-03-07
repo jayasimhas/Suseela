@@ -10,7 +10,10 @@ namespace Informa.Library.Services.NlmExport.Models
     public class NlmArticleModel
     {
         [XmlAttribute("dtd-version")]
-        public string DtdVersion  => "3.0";
+        public string DtdVersion { get; set; } = "3.0";
+
+        [XmlAttribute("xml:lang", DataType = "language")]
+        public string Language { get; set; } = "en";
 
         [XmlAttribute("article-type")]
         public string ArticleType { get; set; }

@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace Informa.Library.Services.NlmExport.Models.Front.Article
 {
-    [XmlRoot("article-id")]
+    //[XmlRoot("article-id")]
     [Serializable]
     public class NlmArticleIdModel
     {

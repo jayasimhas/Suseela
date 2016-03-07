@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 using Informa.Library.Services.NlmExport.Models.Common;
 using Informa.Library.Services.NlmExport.Models.Front.Article;
@@ -11,10 +12,7 @@ namespace Informa.Library.Services.NlmExport.Models.Front
     public class NlmArticleMetaModel
     {
         [XmlElement("article-id")]
-        public NlmArticleIdModel PublisherId { get; set; }
-
-        [XmlElement("article-id")]
-        public NlmArticleIdModel PublisherId2 { get; set; }
+        public List<NlmArticleIdModel> PublisherId { get; set; }
 
         [XmlArray("article-categories")]
         [XmlArrayItem("subj-group", typeof(NlmCategoryModel))]
@@ -40,13 +38,13 @@ namespace Informa.Library.Services.NlmExport.Models.Front
         public NlmArticlePermissionsModel Permissions { get; set; }
 
         [XmlElement("abstract")]
-        public NlmArticleAbstractModel ShortAbstract { get; set; }
+        public List<NlmArticleAbstractModel> Abstracts { get; set; }
 
-        [XmlElement("abstract")]
-        public NlmArticleAbstractModel LongAbstract { get; set; }
+        //[XmlElement("abstract")]
+        //public NlmArticleAbstractModel LongAbstract { get; set; }
 
-        [XmlElement("abstract")]
-        public NlmArticleAbstractModel DeckAbstract { get; set; }
+        //[XmlElement("abstract")]
+        //public NlmArticleAbstractModel DeckAbstract { get; set; }
 
         [XmlArray("counts")]
         [XmlArrayItem("word-count", typeof(NlmArticleWordCountModel))]
