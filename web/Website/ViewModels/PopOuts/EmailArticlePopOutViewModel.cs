@@ -31,6 +31,7 @@ namespace Informa.Web.ViewModels.PopOuts
         public string InvalidEmailText => TextTranslator.Translate("Article.EmailPopout.InvalidEmail"); 
         public string EmptyFieldText => TextTranslator.Translate("Article.EmailPopout.EmptyField");
         public string NoticeText => TextTranslator.Translate("Article.EmailPopout.Notice");
-        public string ArticleTitle => ArticleRenderingContext.Get<IArticle>().Title;
-    }
+        public string ArticleTitle => ArticleRenderingContext.Get<IArticle>().Title;	
+		public string ArticleNumber => ArticleRenderingContext.Get<IArticle>().Article_Number;
+	}
 }
