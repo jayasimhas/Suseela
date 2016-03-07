@@ -14,10 +14,20 @@ namespace Informa.Library.DCD.XMLImporting
         {
             try
             {
-                _logger = LogManager.GetLogger("DCDImportAppender");// Sitecore.Diagnostics.LoggerFactory.GetLogger("DCDImportAppender");
-                dcdConfig = Sitecore.Data.Database.GetDatabase("web").GetItem(DCDConstants.DCDConfigurationItemID);
+                _logger = LogManager.GetLogger("DCDImportAppender");
+                try
+                {
+                    dcdConfig = Sitecore.Data.Database.GetDatabase("web").GetItem(DCDConstants.DCDConfigurationItemID);
+                }
+                catch (Exception ex)
+                {
+                    Error("Error getting DCDConfig item", ex);
+                }
             }
-            catch (Exception ex) { }
+            catch
+            {
+                _logger = LogManager.GetLogger("LogFileAppender");
+            }
         }
 
         public static void Debug(string message)
