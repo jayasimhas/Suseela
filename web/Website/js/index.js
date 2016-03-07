@@ -195,9 +195,14 @@ $(document).ready(function() {
 		}
 	});
 
+	var tableURL = window.location.href.indexOf("?") > -1 ? window.location.href + '&' : window.location.href + '?';
 	// For each article table, clone and append "view full table" markup
-	$('.article-body-content table').forEach(function(e) {
-		$(e).after($('.js-mobile-table-template .article-table').clone());
+	$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
+		var placeholderTable = $('.js-mobile-table-template').html();
+		$(placeholderTable).find('.js-mobile-table-link').each(function(ind, item) {
+			this.href = tableURL + '1234';
+		});
+		$(e).after($(placeholderTable));
 	});
 
 	// When DOM loads, render the appropriate iFrame components
