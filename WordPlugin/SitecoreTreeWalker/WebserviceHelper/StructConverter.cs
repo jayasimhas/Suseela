@@ -10,6 +10,7 @@ namespace InformaSitecoreWord.WebserviceHelper
 		{
 			var articleDetails = new ArticleStruct
 			{
+				IsPublished = articleStruct.IsPublished,
 				Publication = articleStruct.Publication,
 				ArticleNumber = articleStruct.ArticleNumber,
 				Title = articleStruct.Title,
@@ -35,6 +36,7 @@ namespace InformaSitecoreWord.WebserviceHelper
 				CommandID = articleStruct.CommandID,
 				WordCount = articleStruct.WordCount,
 				SupportingDocumentPaths = articleStruct.SupportingDocumentPaths,
+				NotificationText = articleStruct.NotificationText,
 				ArticleSpecificNotifications = articleStruct.ArticleSpecificNotifications.
 					Select(n => new StaffStruct { Name = n.Name, ID = n.ID, }).ToList()
 			};

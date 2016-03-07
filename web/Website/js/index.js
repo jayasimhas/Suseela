@@ -6,6 +6,7 @@ import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
 import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
+import RegisterController from './register-controller';
 
 
 /* Toggle menu categories */
@@ -158,6 +159,10 @@ $(document).ready(function() {
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
 
+	var registerController = new RegisterController();
+
+	registerController.addRegisterUserControl('.js-register-user-submit');
+
     svg4everybody();
 
 
@@ -195,9 +200,23 @@ $(document).ready(function() {
 		}
 	});
 
+	var tableURL = window.location.href.indexOf("?") > -1 ? window.location.href + '&' : window.location.href + '?';
 	// For each article table, clone and append "view full table" markup
-	$('.article-body-content table').forEach(function(e) {
-		$(e).after($('.js-mobile-table-template .article-table').clone());
+	$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
+	    var mediaId = $(e).data("mediaid");
+	    var tableLink = $('.js-mobile-table-template .article-table').clone();
+
+	    var url = window.location.href;
+	    url.replace("#", "");
+	    if (url.indexOf("?") < 0)
+	        url += "?";
+	    else
+	        url += "&";
+
+	    url+= "mobilemedia=true&selectedid=" + mediaId;
+
+	    $(tableLink).find('a').attr("href", url);
+		$(e).after(tableLink);
 	});
 
 	// When DOM loads, render the appropriate iFrame components
@@ -244,6 +263,40 @@ $(document).ready(function() {
            });
 	  	}
 	});
+
+	$('.general-header__navigation').each(function() {
+
+		$(this).on('scroll', function() {
+			var scrollLeft = $(this).scrollLeft();
+			var scrollWidth = $(this)[0].scrollWidth;
+			var winWidth = $(window).width();
+
+			if(scrollLeft > 32) {
+				$('.general-header__navigation-scroller--left').addClass('is-visible');
+			} else {
+				$('.general-header__navigation-scroller--left').removeClass('is-visible');
+			}
+
+			if(scrollLeft + winWidth < scrollWidth - 32) {
+				$('.general-header__navigation-scroller--right').addClass('is-visible');
+			} else {
+				$('.general-header__navigation-scroller--right').removeClass('is-visible');
+			}
+
+		});
+
+		var scrollLeft = $(this).scrollLeft();
+		var scrollWidth = $(this)[0].scrollWidth;
+		var winWidth = $(window).width();
+
+		if(scrollLeft + winWidth < scrollWidth - 32) {
+			$('.general-header__navigation-scroller--right').addClass('is-visible');
+		} else {
+			$('.general-header__navigation-scroller--right').removeClass('is-visible');
+		}
+	});
+
+
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

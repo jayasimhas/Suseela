@@ -29,13 +29,15 @@ namespace Informa.Web.Controllers
 		protected string TempFileLocation;
 		private readonly ArticleUtil _articleUtil;
 		private readonly IArticleSearch _articleSearcher;
-		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher)
+		private readonly EmailUtil _emailUtil;
+		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher, EmailUtil emailUtil)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)) ?
 				TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\temp.";
 			_articleUtil = articleUtil;
 			_articleSearcher = searcher;
+			_emailUtil = emailUtil;
 
 		}
 
@@ -55,18 +57,13 @@ namespace Informa.Web.Controllers
 
 		public void SaveArticleDetails(Guid articleGuid, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-
 			//TODO:  Add Roles
-
 			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
 			if (article == null)
 			{
 				throw new ApplicationException("Could not find article with Guid " + articleGuid);
 			}
-
 			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
-
-
 		}
 
 		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
@@ -109,11 +106,11 @@ namespace Informa.Web.Controllers
 
 			var newVersion = article;
 			var info = new WorkflowInfo(Guid.Empty.ToString(), Guid.Empty.ToString());
-			//TODO - Add version adn workflow informatiomn
+
 			try
 			{
 				Item updatedVersion;
-			
+
 				if (addVersion)
 				{
 					using (new EditContext(articleItem))
@@ -147,7 +144,7 @@ namespace Informa.Web.Controllers
 				{
 					newVersion = article;
 				}
-			
+
 			}
 			catch (Exception ex)
 			{
@@ -157,43 +154,38 @@ namespace Informa.Web.Controllers
 
 			try
 			{
-				SaveArticleFields(newVersion, article, articleStruct, saveDocumentSpecificData);
-				if (saveDocumentSpecificData)
+				var newVersionItem = _sitecoreMasterService.GetItem<Item>(newVersion._Id);
+				using (new EditContext(newVersionItem))
 				{
-					RenameArticleItem(newVersion, articleStruct);
-				}
+
+					SaveArticleFields(newVersion, article, articleStruct, saveDocumentSpecificData);
+					if (saveDocumentSpecificData)
+					{
+						RenameArticleItem(newVersion, articleStruct);
+					}
 
 
-				if (info.StateID != Guid.Empty.ToString() && info.WorkflowID != Guid.Empty.ToString())
-				{
-					// Doing this twice is intentional: when we do it once, the workflow field gets set to the empty string.
-					//  I don't know why, but it does. Doing this twice sets it properly. Doing it not at all causes the 
-					//  workflow field to be set to the empty string when leaving the edit context.
-					var newVersionItem = _sitecoreMasterService.GetItem<Item>(newVersion._Id);
-					newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
-					newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
-				}
+					if (info.StateID != Guid.Empty.ToString() && info.WorkflowID != Guid.Empty.ToString())
+					{
+						// Doing this twice is intentional: when we do it once, the workflow field gets set to the empty string.
+						//  I don't know why, but it does. Doing this twice sets it properly. Doing it not at all causes the 
+						//  workflow field to be set to the empty string when leaving the edit context.
+						
+						newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
+						newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
 
+						if (articleStruct.CommandID != Guid.Empty)
+						{
+							//newVersion.NotificationTransientField.ShouldSend.Checked = true;
+							_articleUtil.ExecuteCommandAndGetWorkflowState(newVersionItem, articleStruct.CommandID.ToString());
 
-				//an editcontext just for workflow
-				using (new SecurityDisabler())
-				{
-					//using (new EditContext(newVersion))
-					//{
-					//	if (articleStruct.CommandID != Guid.Empty)
-					//	{
-					//	//	newVersion.NotificationTransientField.ShouldSend.Checked = true;
-					//		//_workflowController.ExecuteCommandAndGetWorkflowState(newVersion.InnerItem, articleStruct.CommandID.ToString());
+							if (shouldNotify)
+							{
+								_emailUtil.SendNotification(articleStruct, info);
 
-					//		//TODO: explain thyself, heathen
-					//		// I'm guessing we only should send notifications if the flag is set? Not sure why the need to explain this.
-					//		if (shouldNotify)
-					//		{
-					//			//_notificationsManager.SendArticleSpecificNotifications(newVersion, articleStruct);
-
-					//		}
-					//	}
-					//}
+							}
+						}
+					}
 				}
 
 				if (loggedIn)
@@ -206,6 +198,12 @@ namespace Informa.Web.Controllers
 			{
 				var ax = new ApplicationException("Workflow: Error with saving details while saving article [" + article.Article_Number + "]!", ex);
 				throw ax;
+			}
+
+			//  Notifying the Editors when stories are edited after pushlished 
+			if (articleStruct.IsPublished)
+			{
+				_emailUtil.EditAfterPublishSendNotification(articleStruct);
 			}
 			return newVersion;
 		}

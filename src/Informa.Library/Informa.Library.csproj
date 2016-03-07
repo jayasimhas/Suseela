@@ -190,6 +190,7 @@
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
@@ -274,6 +275,7 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="Mail\Email.cs" />

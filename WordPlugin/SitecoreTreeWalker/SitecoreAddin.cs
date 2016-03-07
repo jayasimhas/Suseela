@@ -92,10 +92,7 @@ namespace InformaSitecoreWord
 
             try
             {
-				//TODO - Work on this service to get the support email.
-                //SupportEmailAddress = sctree.GetSupportEmail();
-				SupportEmailAddress = "aakash.shah@velir.com";
-
+                SupportEmailAddress = SitecoreClient.GetContactEmail();				
 			}
             catch (Exception ex)
             {
