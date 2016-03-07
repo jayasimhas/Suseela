@@ -348,6 +348,149 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+ 	/// <summary>
+	/// IRegistration_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+	/// <para>ID: 0520d52b-52a8-4052-a07f-9f35f8ca274c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRegistration_PageConstants.TemplateIdString)]
+	public partial interface IRegistration_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	{
+								/// <summary>
+					/// The Newsletter Sign Up Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 761d17cf-74db-4658-ad8b-3c3b119d5851</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRegistration_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Sign_Up_Text  {get; set;}
+								/// <summary>
+					/// The User Agreement Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRegistration_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string User_Agreement_Text  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IRegistration_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+		/// <para>ID: 0520d52b-52a8-4052-a07f-9f35f8ca274c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRegistration_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		{
+										/// <summary>
+						/// The Newsletter Sign Up Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 761d17cf-74db-4658-ad8b-3c3b119d5851</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRegistration_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Sign_Up_Text  {get; set;}
+										/// <summary>
+						/// The User Agreement Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRegistration_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string User_Agreement_Text  {get; set;}
+						}
+	
+	public static partial class IRegistration_PageConstants{
+
+			public const string TemplateIdString = "0520d52b-52a8-4052-a07f-9f35f8ca274c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Registration Page";
+
+					
+			public static readonly ID Newsletter_Sign_Up_TextFieldId = new ID("761d17cf-74db-4658-ad8b-3c3b119d5851");
+			public const string Newsletter_Sign_Up_TextFieldName = "Newsletter Sign Up Text";
+
+						
+					
+			public static readonly ID User_Agreement_TextFieldId = new ID("cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391");
+			public const string User_Agreement_TextFieldName = "User Agreement Text";
+
+							public static readonly ID User_Agreement_Text__RawFieldId = new ID("cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391");
+				public const string User_Agreement_Text__RawFieldName = "User Agreement Text";
+						
+					
+			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+						
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+
+						
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+						
+					
+			public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+			public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+						
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+
+						
+					
+			public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+			public const string Sub_TitleFieldName = "Sub Title";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+			public const string Include_In_SearchFieldName = "Include In Search";
+
+						
+					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action.Base
 {
 
@@ -2260,6 +2403,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					/// </summary>
 					[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Initial_State  {get; set;}
+								/// <summary>
+					/// The Notified After Publish field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
+					/// <para>Custom Data: generic=IStaff_Item</para>
+					/// </summary>
+					[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IStaff_Item> Notified_After_Publishes  {get; set;}
 				}
 
 	
@@ -2299,6 +2451,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 						/// </summary>
 						[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Initial_State  {get; set;}
+										/// <summary>
+						/// The Notified After Publish field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
+						/// <para>Custom Data: generic=IStaff_Item</para>
+						/// </summary>
+						[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IStaff_Item> Notified_After_Publishes  {get; set;}
 						}
 	
 	public static partial class IWorkflowConstants{
@@ -2320,6 +2481,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					
 			public static readonly ID Initial_StateFieldId = new ID("b5166b38-e4bf-4410-953c-2037f2bf6a56");
 			public const string Initial_StateFieldName = "Initial state";
+
+						
+					
+			public static readonly ID Notified_After_PublishesFieldId = new ID("0e222fc9-35a4-40c9-afc9-d4f681c7aed4");
+			public const string Notified_After_PublishesFieldName = "Notified After Publish";
 
 						
 			

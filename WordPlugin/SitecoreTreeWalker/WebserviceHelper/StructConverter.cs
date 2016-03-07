@@ -10,6 +10,7 @@ namespace InformaSitecoreWord.WebserviceHelper
 		{
 			var articleDetails = new ArticleStruct
 			{
+				IsPublished = articleStruct.IsPublished,
 				Publication = articleStruct.Publication,
 				ArticleNumber = articleStruct.ArticleNumber,
 				Title = articleStruct.Title,
