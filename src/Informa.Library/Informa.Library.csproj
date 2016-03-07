@@ -472,6 +472,9 @@
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="User\Authentication\LogoutWebUser.cs" />
     <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\Entitlement\Entitlement.cs" />
+    <Compile Include="User\Entitlement\IEntitlement.cs" />
+    <Compile Include="User\Entitlement\IUserEntitlements.cs" />
     <Compile Include="User\FindUserByUsername.cs" />
     <Compile Include="User\IFindUserByEmail.cs" />
     <Compile Include="User\IFindUserByUsername.cs" />

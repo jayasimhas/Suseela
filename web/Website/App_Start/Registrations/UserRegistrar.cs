@@ -6,6 +6,7 @@ using Informa.Library.User.ResetPassword.MongoDB;
 using Informa.Library.User.ResetPassword;
 using Informa.Library.User.Profile;
 using Informa.Library.Salesforce.User.Profile;
+using Informa.Library.User.Entitlement;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -21,6 +22,8 @@ namespace Informa.Web.App_Start.Registrations
 
 			builder.RegisterType<SalesforceFindUserProfile>().As<IUserProfileFactory>();
 			builder.RegisterType<SalesforceFindUserProfile>().As<IFindUserProfileByUsername>();
+
+		    builder.RegisterType<SalesforceGetUserEntitlements>().As<IUserEntitlements>();
 		}
 	}
 }
