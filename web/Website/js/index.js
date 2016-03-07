@@ -200,23 +200,22 @@ $(document).ready(function() {
 		}
 	});
 
-	var tableURL = window.location.href.indexOf("?") > -1 ? window.location.href + '&' : window.location.href + '?';
 	// For each article table, clone and append "view full table" markup
 	$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
-	    var mediaId = $(e).data("mediaid");
-	    var tableLink = $('.js-mobile-table-template .article-table').clone();
+ 	    var mediaId = $(e).data("mediaid");
+ 	    var tableLink = $('.js-mobile-table-template .article-table').clone();
 
 	    var url = window.location.href;
-	    url.replace("#", "");
+    	url.replace("#", "");
 	    if (url.indexOf("?") < 0)
 	        url += "?";
-	    else
-	        url += "&";
+ 	    else
+ 	        url += "&";
 
-	    url+= "mobilemedia=true&selectedid=" + mediaId;
+ 	    url+= "mobilemedia=true&selectedid=" + mediaId;
 
-	    $(tableLink).find('a').attr("href", url);
-		$(e).after(tableLink);
+ 	    $(tableLink).find('a').attr("href", url);
+ 		$(e).after(tableLink);
 	});
 
 	// When DOM loads, render the appropriate iFrame components
