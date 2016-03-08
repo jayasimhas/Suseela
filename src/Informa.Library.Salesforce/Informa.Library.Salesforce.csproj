@@ -81,6 +81,8 @@
     <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceUpdateNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\SalesforceUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />

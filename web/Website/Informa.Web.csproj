@@ -658,12 +658,14 @@
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -932,7 +934,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Account\Views\Shared\" />
-    <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
@@ -993,6 +994,7 @@
     <Content Include="Areas\Account\Views\Management\ContactInformation.cshtml" />
     <Content Include="Areas\Account\Views\Management\EmailPreferences.cshtml" />
     <Content Include="Areas\Account\Views\Management\AccountNavigation.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
