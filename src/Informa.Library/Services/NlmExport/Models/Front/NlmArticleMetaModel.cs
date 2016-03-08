@@ -21,6 +21,10 @@ namespace Informa.Library.Services.NlmExport.Models.Front
         [XmlElement("title-group")]
         public NlmArticleTitleModel TitleGroup { get; set; }
 
+        [XmlArray("contrib-group")]
+        [XmlArrayItem("contrib", typeof(NlmArticleAuthorModel))]
+        public NlmArticleAuthorModel[] Contributors { get; set; }
+
         [XmlElement("pub-date")]
         public NlmArticlePubDateModel PubDate { get; set; }
 

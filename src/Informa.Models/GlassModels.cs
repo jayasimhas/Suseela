@@ -5663,6 +5663,136 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// INLM_Config Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/NLM Config</para>	
+	/// <para>ID: 7b3edd89-8c4a-476c-986e-478f6a96f8e1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INLM_ConfigConstants.TemplateIdString)]
+	public partial interface INLM_Config : IGlassBase 
+	{
+								/// <summary>
+					/// The ISSN field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 682ae914-30b8-4e0f-acfe-6646d3570258</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INLM_ConfigConstants.ISSNFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string ISSN  {get; set;}
+								/// <summary>
+					/// The Journal ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 8a71abbb-053c-48f8-9739-e4b33f449a63</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INLM_ConfigConstants.Journal_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Journal_ID  {get; set;}
+								/// <summary>
+					/// The Journal Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: f4cb9f66-d388-4f28-8e7c-52cfa65b0bea</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INLM_ConfigConstants.Journal_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Journal_Title  {get; set;}
+								/// <summary>
+					/// The Publisher Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 562e59ad-0de3-462f-998a-c6ac042e48ab</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INLM_ConfigConstants.Publisher_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Publisher_Name  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// INLM_Config Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/NLM Config</para>	
+		/// <para>ID: 7b3edd89-8c4a-476c-986e-478f6a96f8e1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INLM_Config__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The ISSN field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 682ae914-30b8-4e0f-acfe-6646d3570258</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INLM_ConfigConstants.ISSNFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string ISSN  {get; set;}
+										/// <summary>
+						/// The Journal ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 8a71abbb-053c-48f8-9739-e4b33f449a63</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INLM_ConfigConstants.Journal_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Journal_ID  {get; set;}
+										/// <summary>
+						/// The Journal Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: f4cb9f66-d388-4f28-8e7c-52cfa65b0bea</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INLM_ConfigConstants.Journal_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Journal_Title  {get; set;}
+										/// <summary>
+						/// The Publisher Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 562e59ad-0de3-462f-998a-c6ac042e48ab</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INLM_ConfigConstants.Publisher_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Publisher_Name  {get; set;}
+						}
+	
+	public static partial class INLM_ConfigConstants{
+
+			public const string TemplateIdString = "7b3edd89-8c4a-476c-986e-478f6a96f8e1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "NLM Config";
+
+					
+			public static readonly ID ISSNFieldId = new ID("682ae914-30b8-4e0f-acfe-6646d3570258");
+			public const string ISSNFieldName = "ISSN";
+
+						
+					
+			public static readonly ID Journal_IDFieldId = new ID("8a71abbb-053c-48f8-9739-e4b33f449a63");
+			public const string Journal_IDFieldName = "Journal ID";
+
+						
+					
+			public static readonly ID Journal_TitleFieldId = new ID("f4cb9f66-d388-4f28-8e7c-52cfa65b0bea");
+			public const string Journal_TitleFieldName = "Journal Title";
+
+						
+					
+			public static readonly ID Publisher_NameFieldId = new ID("562e59ad-0de3-462f-998a-c6ac042e48ab");
+			public const string Publisher_NameFieldName = "Publisher Name";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content
 {
 

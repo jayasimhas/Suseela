@@ -4,6 +4,7 @@ using System.Reflection;
 using Autofac;
 using Autofac.Features.OwnedInstances;
 using AutoMapper;
+using Informa.Library.Utilities.AutoMapper.Resolvers;
 using Jabberwocky.Glass.Autofac.Util;
 using Module = Autofac.Module;
 
@@ -32,6 +33,7 @@ namespace Informa.Library.Utilities.Autofac.Modules
             // Register custom ValueResolvers
             builder.RegisterAssemblyTypes(_assemblies).AssignableTo<IValueResolver>()
                 .AsSelf();
+            builder.RegisterGeneric(typeof (AutoMapResolver<,>));
 
             // Register AutoMapper configuration
             builder.Register(c => new MapperConfiguration(config =>

@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using Autofac;
 using AutoMapper;
+using Glass.Mapper.Sc;
 using Informa.Library.Services.NlmExport;
 using Informa.Library.Services.NlmExport.Serialization;
 using Informa.Library.Utilities.Autofac.Modules;
@@ -19,15 +20,21 @@ namespace Informa.Tests.Library.Services.NlmExport
     public class NlmExportServiceTests
     {
         private NlmExportService _exportService;
+        private ISitecoreService _mockService;
+        private IItemReferences _mockReferences;
 
         [SetUp]
         public void Setup()
         {
             var dependencies = Substitute.For<NlmExportService.IDependencies>();
-            
+            _mockService = Substitute.For<ISitecoreService>();
+            _mockReferences = Substitute.For<IItemReferences>();
+
             // May as well use real dependencies for testing; more of a system test
             var builder = new ContainerBuilder();
             builder.RegisterModule(new AutomapperModule("Informa.Library"));
+            builder.Register(c => _mockService).As<ISitecoreService>();
+            builder.Register(c => _mockReferences).As<IItemReferences>();
             var container = builder.Build();
             AutofacConfig.ServiceLocator = container;
 

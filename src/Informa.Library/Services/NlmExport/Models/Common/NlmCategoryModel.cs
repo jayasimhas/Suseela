@@ -10,6 +10,6 @@ namespace Informa.Library.Services.NlmExport.Models.Common
         public string GroupType { get; set; }
 
         [XmlElement("subject")]
-        public string Subject { get; set; }
+        public string[] Subjects { get; set; }
     }
 }
