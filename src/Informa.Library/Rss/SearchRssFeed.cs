@@ -2,113 +2,101 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.ServiceModel.Syndication;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
 using Glass.Mapper.Sc;
-using Informa.Library.Search.Results;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Newtonsoft.Json;
-using Sitecore.Configuration;
+using Sitecore;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.Links;
-using Sitecore.Pipelines;
-using Sitecore.Pipelines.RenderField;
-using Sitecore.Rules;
+using Sitecore.Syndication;
 using Sitecore.Web;
 
 namespace Informa.Library.Rss
 {
-
-    public class SearchResultsRequest
+    public class SearchRssFeed : PublicFeed
     {
-        //   "pageId":"0ff66777-7ec7-40be-abc4-6a20c8ed1ef0",
-        //"page":1,
-        //"perPage":10,
-        //"sortBy":"relevance",
-        //"sortOrder":"asc",
-        //"queryParameters":{      
-
-        public string page { get; set; }
-        public string pageId { get; set; }
-        public string perPage { get; set; }
-        public string sortBy { get; set; }
-        public string sortOrder { get; set; }
-        //  public List<string> queryParameters { get; set; }
-
-    }
-
-    public class SearchResults
-    {
-        public SearchResultsRequest request { get; set; }
-        public string totalResults { get; set; }
-        public List<InformaSearchResultItem> results { get; set; }
-    }
-
-    public class SearchRssFeed : Sitecore.Syndication.PublicFeed
-    {
+        private readonly XNamespace _atomNameSpace = "http://www.w3.org/2005/Atom";
         protected ISitecoreContext _sitecoreContext;
-
-        readonly XNamespace _atomNameSpace = "http://www.w3.org/2005/Atom";
+        protected string _hostName;
+        protected ItemReferences _itemReferences;
 
         protected override void SetupFeed(SyndicationFeed feed)
         {
             _sitecoreContext = new SitecoreContext();
+            _hostName = WebUtil.GetHostName();
+            _itemReferences = new ItemReferences();
 
             //Set some basic feed attributes
             feed.Title = new TextSyndicationContent(GetFeedTitle());
             feed.Language = "en-US";
 
             //Add atom namespace to the feed 
-            feed.AttributeExtensions.Add(new XmlQualifiedName("atom", XNamespace.Xmlns.NamespaceName), _atomNameSpace.NamespaceName);
+            feed.AttributeExtensions.Add(new XmlQualifiedName("atom", XNamespace.Xmlns.NamespaceName),
+                _atomNameSpace.NamespaceName);
 
             feed = AddFeedLinks(feed);
             feed = AddCopyrightText(feed);
         }
 
+        /// <summary>
+        /// Get the RSS channel title that displays any search terms that were used in the search
+        /// </summary>
+        /// <returns></returns>
         private string GetFeedTitle()
         {
-            string title = "Search Feed";
+            var title = "Search Feed";
 
-            if (Sitecore.Context.Request.QueryString["q"] != null)
+            if (Context.Request.QueryString["q"] != null)
             {
-                title += ": " + Sitecore.Context.Request.QueryString["q"];
+                title += ": " + Context.Request.QueryString["q"];
             }
 
             return title;
         }
 
+        /// <summary>
+        /// Add the copyright text to the rss channel, this is pulled from Sitecore
+        /// </summary>
+        /// <param name="feed"></param>
+        /// <returns></returns>
         private SyndicationFeed AddCopyrightText(SyndicationFeed feed)
         {
-            ItemReferences itemReferences = new ItemReferences();
+            
 
-            var siteConfig = _sitecoreContext.GetItem<ISite_Config>(itemReferences.SiteConfig);
+            var siteConfig = _sitecoreContext.GetItem<ISite_Config>(_itemReferences.SiteConfig);
             feed.Copyright = new TextSyndicationContent(siteConfig.Copyright_Text);
 
             return feed;
         }
 
+        /// <summary>
+        /// Add the channel links
+        /// </summary>
+        /// <param name="feed"></param>
+        /// <returns></returns>
         protected SyndicationFeed AddFeedLinks(SyndicationFeed feed)
         {
             feed.Links.Add(SyndicationLink.CreateAlternateLink(new Uri(GetSearchUrl())));
-            feed.ElementExtensions.Add(new XElement(_atomNameSpace + "link", new XAttribute("href", GetSearchUrl()), new XAttribute("rel", "self"), new XAttribute("type", "application/rss+xml")));
+            feed.ElementExtensions.Add(new XElement(_atomNameSpace + "link", new XAttribute("href", GetSearchUrl()),
+                new XAttribute("rel", "self"), new XAttribute("type", "application/rss+xml")));
 
             return feed;
         }
 
+        /// <summary>
+        /// Render each RSS item, there are custom fields being added above and beyond the normal atom fields
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         protected override SyndicationItem RenderItem(Item item)
         {
-            SyndicationItem syndicationItem = base.RenderItem(item);
+            var syndicationItem = base.RenderItem(item);
 
             var article = _sitecoreContext.GetItem<IArticle>(item.ID.ToString());
 
@@ -120,7 +108,7 @@ namespace Informa.Library.Rss
                 syndicationItem = AddTaxonomyToFeedItem(syndicationItem, article);
                 syndicationItem = AddMediaTypeToFeedItem(syndicationItem, article);
 
-                string titleText = HttpUtility.HtmlEncode(syndicationItem.Title.Text);
+                var titleText = HttpUtility.HtmlEncode(syndicationItem.Title.Text);
 
                 if (article.Media_Type != null)
                 {
@@ -129,16 +117,21 @@ namespace Informa.Library.Rss
 
                 syndicationItem.Title = new TextSyndicationContent(StripHtmlTags(titleText));
 
-                TextSyndicationContent content = syndicationItem.Content as TextSyndicationContent;
+                var content = syndicationItem.Content as TextSyndicationContent;
                 var descriptonText = HttpUtility.HtmlEncode(content.Text);
                 syndicationItem.Content = new TextSyndicationContent(descriptonText);
             }
 
 
-
             return syndicationItem;
         }
 
+        /// <summary>
+        /// Add the custom media type field to a rendered item
+        /// </summary>
+        /// <param name="syndicationItem"></param>
+        /// <param name="article"></param>
+        /// <returns></returns>
         private SyndicationItem AddMediaTypeToFeedItem(SyndicationItem syndicationItem, IArticle article)
         {
             if (article.Media_Type != null)
@@ -151,6 +144,12 @@ namespace Informa.Library.Rss
             return syndicationItem;
         }
 
+        /// <summary>
+        /// Add the custom taxonomy items to a rendered item
+        /// </summary>
+        /// <param name="syndicationItem"></param>
+        /// <param name="article"></param>
+        /// <returns></returns>
         private SyndicationItem AddTaxonomyToFeedItem(SyndicationItem syndicationItem, IArticle article)
         {
             if (article.Taxonomies != null)
@@ -170,19 +169,24 @@ namespace Informa.Library.Rss
 
                     syndicationItem.ElementExtensions.Add(taxonomyElement.CreateReader());
                 }
-
             }
 
             return syndicationItem;
         }
 
+        /// <summary>
+        /// Add any authors to the rendered item
+        /// </summary>
+        /// <param name="syndicationItem"></param>
+        /// <param name="article"></param>
+        /// <returns></returns>
         private SyndicationItem AddAuthorsToFeedItem(SyndicationItem syndicationItem, IArticle article)
         {
             if (article.Authors != null)
             {
-                foreach (IAuthor author in article.Authors)
+                foreach (var author in article.Authors)
                 {
-                    string authorName = author.First_Name + " " + author.Last_Name;
+                    var authorName = author.First_Name + " " + author.Last_Name;
                     if (string.IsNullOrEmpty(authorName))
                     {
                         authorName = author._Name;
@@ -194,6 +198,12 @@ namespace Informa.Library.Rss
             return syndicationItem;
         }
 
+        /// <summary>
+        /// Add the content type to the rendered item
+        /// </summary>
+        /// <param name="syndicationItem"></param>
+        /// <param name="article"></param>
+        /// <returns></returns>
         private SyndicationItem AddCatgoryToFeedItem(SyndicationItem syndicationItem, IArticle article)
         {
             if (article.Content_Type != null)
@@ -204,6 +214,12 @@ namespace Informa.Library.Rss
             return syndicationItem;
         }
 
+        /// <summary>
+        /// ADd the ariticle number to the rendered item
+        /// </summary>
+        /// <param name="syndicationItem"></param>
+        /// <param name="article"></param>
+        /// <returns></returns>
         private SyndicationItem AddIdToFeedItem(SyndicationItem syndicationItem, IArticle article)
         {
             if (!string.IsNullOrEmpty(article.Article_Number))
@@ -216,31 +232,30 @@ namespace Informa.Library.Rss
             return syndicationItem;
         }
 
-           public static string StripHtmlTags(string html)
+        public static string StripHtmlTags(string html)
         {
-            if(String.IsNullOrEmpty(html)) return "";
+            if (string.IsNullOrEmpty(html)) return "";
 
-               string decodedHtml = HttpUtility.HtmlDecode(html);
+            var decodedHtml = HttpUtility.HtmlDecode(html);
 
             return Regex.Replace(decodedHtml, "<.*?>", string.Empty);
         }
 
         /// <summary>
-        /// Get the url for the original search page
+        ///     Get the url for the original search page
         /// </summary>
         /// <returns></returns>
         private string GetSearchUrl()
         {
-            string hostName = WebUtil.GetHostName();
 
-            string searchUrlBase = string.Format("http://{0}/search#?", hostName);
+            var searchUrlBase = string.Format("http://{0}/search#?", _hostName);
 
-            if (!Sitecore.Context.RawUrl.Contains("?"))
+            if (!Context.RawUrl.Contains("?"))
             {
                 return searchUrlBase;
             }
 
-            string[] urlParts = Sitecore.Context.RawUrl.Split('?');
+            var urlParts = Context.RawUrl.Split('?');
 
             if (urlParts.Length != 2)
             {
@@ -252,31 +267,33 @@ namespace Informa.Library.Rss
 
         public override IEnumerable<Item> GetSourceItems()
         {
-            if (!Sitecore.Context.RawUrl.Contains("?"))
+            string searchPageId = _itemReferences.SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+            string url = string.Format("http://{0}/api/informasearch?pId={1}", _hostName, searchPageId);
+
+            if (Context.RawUrl.Contains("?"))
             {
-                return new List<Item>();
+                var urlParts = Context.RawUrl.Split('?');
+
+                if (urlParts.Length == 2)
+                {
+                    url = string.Format("{0}&{1}", url, urlParts[1]);
+                }
             }
-
-            string[] urlParts = Sitecore.Context.RawUrl.Split('?');
-
-            if (urlParts.Length != 2)
+            else
             {
-                return new List<Item>();
+                url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
             }
-
-            string url =
-                "http://informa.gabe.dev/api/informasearch?pId=0ff66777-7ec7-40be-abc4-6a20c8ed1ef0&" + urlParts[1];
 
             var client = new WebClient();
             var content = client.DownloadString(url);
 
-            SearchResults results = JsonConvert.DeserializeObject<SearchResults>(content);
+            var results = JsonConvert.DeserializeObject<SearchResults>(content);
 
-            List<Item> resultItems = new List<Item>();
+            var resultItems = new List<Item>();
 
             foreach (var searchResult in results.results)
             {
-                Item theItem = Sitecore.Context.Database.GetItem(searchResult.ItemId);
+                var theItem = Context.Database.GetItem(searchResult.ItemId);
 
                 if (theItem == null)
                 {
@@ -289,24 +306,5 @@ namespace Informa.Library.Rss
             return resultItems;
         }
 
-        //private async Task<string> GetResults()
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri("http://localhost:9000/");
-        //        client.DefaultRequestHeaders.Accept.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-        //        // New code:
-        //        HttpResponseMessage response = await client.GetAsync("api/products/1");
-        //        //if (response.IsSuccessStatusCode)
-        //        //{
-        //        //    Product product = await response.Content.ReadAsAsync > Product > ();
-        //        //    Console.WriteLine("{0}\t${1}\t{2}", product.Name, product.Price, product.Category);
-        //        //}
-        //    }
-
-        //    return string.Empty;
-        //}
     }
 }
