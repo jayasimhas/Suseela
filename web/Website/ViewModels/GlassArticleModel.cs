@@ -8,13 +8,14 @@ using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Web;
 
@@ -28,6 +29,7 @@ namespace Informa.Web.ViewModels
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IArticleComponentFactory ArticleComponentFactory;
+        protected readonly IEntitledProductContext EntitledProductContext;  
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -35,7 +37,8 @@ namespace Informa.Web.ViewModels
             ITextTranslator textTranslator, 
             IArticleSearch searcher,
             ISitecoreContext context,
-            IArticleComponentFactory articleComponentFactory)
+            IArticleComponentFactory articleComponentFactory,
+            IEntitledProductContext entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
@@ -43,6 +46,7 @@ namespace Informa.Web.ViewModels
             Searcher = searcher;
             SitecoreContext = context;
             ArticleComponentFactory = articleComponentFactory;
+            EntitledProductContext = entitledProductContext;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -168,6 +172,12 @@ namespace Informa.Web.ViewModels
             get { return !string.IsNullOrWhiteSpace(ListableImage); }
             set { }
         }
+
+        #endregion
+
+        #region Overrides of EntitledViewModel<IArticle>
+
+        public EntitledAccessLevel AccessLevel => GlassModel is IEntitledProductItem ? EntitledProductContext.GetAccessLevel((IEntitledProductItem)GlassModel) : EntitledAccessLevel.Free;
 
         #endregion
     }

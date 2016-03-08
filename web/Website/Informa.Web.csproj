@@ -703,6 +703,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
@@ -931,7 +932,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Account\Views\Shared\" />
-    <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />

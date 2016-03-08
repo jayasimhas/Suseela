@@ -31,39 +31,6 @@ namespace Informa.Library.User.Authentication
 			}
 		}
 
-		public bool IsAuthenticated => SitecoreUserContext.User.IsAuthenticated;
-
-	    public IList<IEntitlement> Entitlements
-	        =>
-	            new List<IEntitlement>(SitecoreUserContext.User.Profile.GetCustomProperty(nameof(Entitlement.Entitlement))
-	                .Split(',')
-	                .Select(x => new Entitlement.Entitlement {ProductCode = x}));
-	}
-
-    //public class EntitledUserContext : IEntitledUserContext
-    //{
-    //    protected readonly IAuthenticatedUserContext
-    //    public EntitledUserContext(IAuthenticatedUserContext authenticatedUserContext)
-    //    {
-            
-    //    }
-
-    //    #region Implementation of IAuthenticatedUserContext
-
-    //    public IAuthenticatedUser User { get; }
-    //    public bool IsAuthenticated { get; }
-
-    //    #endregion
-
-    //    #region Implementation of IEntitledUserContext
-
-    //    public IEntitlement Entitlement { get; }
-
-    //    #endregion
-    //}
-
-    //public interface IEntitledUserContext : IAuthenticatedUserContext
-    //{
-    //    IEntitlement Entitlement { get; }
-    //}
+		public bool IsAuthenticated => SitecoreUserContext.User.IsAuthenticated;             
+	}                                      
 }

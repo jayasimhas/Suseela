@@ -19,6 +19,7 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
 			builder.RegisterType<SalesforceRegisterUser>().As<ISalesforceRegisterUser>();
 		    builder.RegisterType<SalesforceGetUserEntitlements>().As<ISalesforceGetUserEntitlements>();
-		}
+            builder.RegisterType<SalesforceGetIPEntitlements>().As<ISalesforceGetIPEntitlements>();
+        }
 	}
 }

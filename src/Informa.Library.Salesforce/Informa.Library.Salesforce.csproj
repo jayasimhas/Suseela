@@ -76,6 +76,7 @@
     <Compile Include="SalesforceSessionContext.cs" />
     <Compile Include="SalesforceSessionFactory.cs" />
     <Compile Include="User\ISalesforceFindUserByEmail.cs" />
+    <Compile Include="User\ISalesforceGetIPEntitlements.cs" />
     <Compile Include="User\ISalesforceGetUserEntitlements.cs" />
     <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
+    <Compile Include="User\SalesforceGetIPEntitlements.cs" />
     <Compile Include="User\SalesforceGetUserEntitlements.cs" />
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />

@@ -5,7 +5,7 @@ using Informa.Library.User.Entitlement;
 
 namespace Informa.Library.Salesforce.User
 {
-    public class SalesforceGetUserEntitlements : ISalesforceGetUserEntitlements, IUserEntitlements
+    public class SalesforceGetUserEntitlements : ISalesforceGetUserEntitlements, IGetUserEntitlements
     {
         protected readonly ISalesforceServiceContext Service;
 

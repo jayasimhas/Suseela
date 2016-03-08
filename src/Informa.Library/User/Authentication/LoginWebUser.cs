@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using Informa.Library.User.Entitlement;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Security.Authentication;
@@ -11,16 +13,16 @@ namespace Informa.Library.User.Authentication
 	{
 		protected IAuthenticateUser AuthenticateUser;
 		protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
-	    protected readonly IUserEntitlements UserEntitlements;
+	    protected readonly IGetUserEntitlements GetUserEntitlements;
 
 		public LoginWebUser(
 			IAuthenticateUser authenticateUser,
 			ISitecoreVirtualUsernameFactory virtualUsernameFactory,
-            IUserEntitlements userEntitlements)
+            IGetUserEntitlements getUserEntitlements)
 		{
 			AuthenticateUser = authenticateUser;
 			VirtualUsernameFactory = virtualUsernameFactory;
-		    UserEntitlements = userEntitlements;
+		    GetUserEntitlements = getUserEntitlements;
 		}
 
 		public ILoginWebUserResult Login(string username, string password, bool persist)
@@ -38,7 +40,8 @@ namespace Informa.Library.User.Authentication
 				sitecoreVirtualUser.Profile.Email = authenticatedUser.Email;
 				sitecoreVirtualUser.Profile.Name = authenticatedUser.Name;
 
-			    var entitlements = UserEntitlements.GetEntitlements(username, "") ?? new List<IEntitlement>();                                           
+
+			    var entitlements = GetUserEntitlements.GetEntitlements(username, GetIPAddress()) ?? new List<IEntitlement>();                                           
 			    sitecoreVirtualUser.Profile.SetCustomProperty(nameof(Entitlement.Entitlement), string.Join(",", entitlements.Select(x => x.ProductCode)));
 
                 sitecoreVirtualUser.Profile.Save();
@@ -53,5 +56,16 @@ namespace Informa.Library.User.Authentication
 				User = authenticatedUser
 			};
 		}
-	}
+
+        public static String GetIPAddress()
+        {
+            String ip =
+                HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if (string.IsNullOrEmpty(ip))
+                return HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+            
+            return ip.Split(',').FirstOrDefault();
+        }                                          
+    }
 }
