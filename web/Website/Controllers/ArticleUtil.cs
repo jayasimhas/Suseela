@@ -20,7 +20,6 @@ using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using PluginModels;
-using Sitecore;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
@@ -500,11 +499,6 @@ namespace Informa.Web.Controllers
 			workFlowState.Commands = commands;
 
 			return workFlowState;
-		}
-
-		public void SetWorkflowState(Item i, string commandID)
-		{
-			i[FieldIDs.WorkflowState] = commandID;
 		}
 
 		/// <summary>

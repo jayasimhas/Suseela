@@ -36,10 +36,3 @@
 		content: "";
 	}
 }
-
-.asterisk-required:before {
-	color: $color-tree-poppy-orange;
-	content: "*";
-	display: inline-block;
-	font-size: 1rem;
-}

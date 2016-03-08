@@ -107,32 +107,6 @@ namespace Informa.Web.Controllers
 		}
 	}
 
-	[Route]
-	public class GetUserInfoController : ApiController
-	{
-		// GET api/<controller>
-		public JsonResult<List<string>> Get(string username)
-		{
-			List<string> lockUserInformation = new List<string>();
-			try
-			{
-				Sitecore.Security.Accounts.User editor = Sitecore.Security.Accounts.User.FromName(username, false);
-				if (editor != null && !string.IsNullOrEmpty(editor.Profile.FullName))
-				{
-					lockUserInformation.Add(editor.Profile.FullName);
-					lockUserInformation.Add(editor.Profile.Email);
-				}
-			}
-			catch (Exception ex)
-			{
-				// ignored
-			}
-			return Json(lockUserInformation);
-		}
-	}
-
-
-
 	public class SearchTaxonomyController : ApiController
 	{
 		private ISitecoreService _sitecoreService;

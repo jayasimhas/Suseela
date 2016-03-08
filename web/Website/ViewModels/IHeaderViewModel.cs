@@ -10,8 +10,7 @@
         string CookiePolicyText { get; }
         bool IsAuthenticated { get; }
 		string MyAccountLinkText { get; }
-        string MyAccountLink { get; }
-        string SignOutLinkText { get; }
+		string SignOutLinkText { get; }
 		string RegisterLinkText { get; }
 		string SignInLinkText { get; }
 	}
