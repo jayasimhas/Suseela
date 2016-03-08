@@ -1,0 +1,23 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserOptInsViewModel
+
+<div class="page-registration js-register-user-container">
+	<h1 class="page-registration__header">@Model.Title</h1>
+	<h2 class="page-registration__subheader">@Model.SubTitle</h2>
+	<p>@Model.Body</p>
+	<hr />
+	<div style="display: none;" class="js-register-user-error-container">
+		<p style="display: none;" class="js-register-user-error js-register-user-error-general">@Model.GeneralErrorText</p>
+	</div>
+	<div>
+	    <div class="page-registration__tos-confirm">
+	        <input name="newsletters" type="checkbox" data-checkbox-type="boolean" checked="checked"> <label for="termsAccepted">@Model.NewslettersLabelText</label>
+	    </div>
+		<div class="page-registration__tos-confirm">
+			<input name="offers" type="checkbox" data-checkbox-type="boolean" data-checkbox-boolean-type="reverse"> <label for="termsAccepted">@Model.OffersLabelText</label>
+		</div>
+
+	    <div class="page-registration__submit-wrapper">
+	        <button type="submit" class="button--filled js-register-user-optins-submit" data-register-user-url="/Account/api/RegistrationApi/SetOptIns/" data-next-step-url="/">@Model.SubmitText</button>
+	    </div>
+	</div>
+</div>
