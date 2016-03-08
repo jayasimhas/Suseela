@@ -24,12 +24,13 @@ namespace Informa.Library.Rss
         private readonly XNamespace _atomNameSpace = "http://www.w3.org/2005/Atom";
         protected ISitecoreContext _sitecoreContext;
         protected string _hostName;
+        protected ItemReferences _itemReferences;
 
         protected override void SetupFeed(SyndicationFeed feed)
         {
             _sitecoreContext = new SitecoreContext();
             _hostName = WebUtil.GetHostName();
-
+            _itemReferences = new ItemReferences();
 
             //Set some basic feed attributes
             feed.Title = new TextSyndicationContent(GetFeedTitle());
@@ -66,9 +67,9 @@ namespace Informa.Library.Rss
         /// <returns></returns>
         private SyndicationFeed AddCopyrightText(SyndicationFeed feed)
         {
-            var itemReferences = new ItemReferences();
+            
 
-            var siteConfig = _sitecoreContext.GetItem<ISite_Config>(itemReferences.SiteConfig);
+            var siteConfig = _sitecoreContext.GetItem<ISite_Config>(_itemReferences.SiteConfig);
             feed.Copyright = new TextSyndicationContent(siteConfig.Copyright_Text);
 
             return feed;
@@ -266,19 +267,22 @@ namespace Informa.Library.Rss
 
         public override IEnumerable<Item> GetSourceItems()
         {
-            if (!Context.RawUrl.Contains("?"))
+            string searchPageId = _itemReferences.SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+            string url = string.Format("http://{0}/api/informasearch?pId={1}", _hostName, searchPageId);
+
+            if (Context.RawUrl.Contains("?"))
             {
-                return new List<Item>();
+                var urlParts = Context.RawUrl.Split('?');
+
+                if (urlParts.Length == 2)
+                {
+                    url = string.Format("{0}&{1}", url, urlParts[1]);
+                }
             }
-
-            var urlParts = Context.RawUrl.Split('?');
-
-            if (urlParts.Length != 2)
+            else
             {
-                return new List<Item>();
+                url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
             }
-
-            var url = string.Format("http://{0}/api/informasearch?pId=0ff66777-7ec7-40be-abc4-6a20c8ed1ef0&{1}",_hostName, urlParts[1]);
 
             var client = new WebClient();
             var content = client.DownloadString(url);
