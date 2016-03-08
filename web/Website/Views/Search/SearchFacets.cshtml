@@ -52,7 +52,13 @@
                   ng-checked="subFacet.selected" 
                   ng-model="subFacet.selected" 
                   ng-change="allFacets.update()">
-                <label ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">{{ subFacet.name }} ({{ subFacet.count }})</label>
+                <label ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
+                  {{ subFacet.name }} ({{ subFacet.count }})
+                  <button class="facets__button">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use></svg>
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use></svg>
+                  </button>
+                </label>
               </li>
             </ul>
           </li>
