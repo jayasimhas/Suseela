@@ -124,7 +124,7 @@ namespace Informa.Web.Controllers
 		[Authorize]
 		public void Post([FromBody] SaveArticleDetails content)
 		{
-			_sitecoreSaver.SaveArticleDetails(content.ArticleNumber, content.ArticleData, false, false);
+			_sitecoreSaver.SaveArticleDetails(content.ArticleNumber, content.ArticleData, false);
 		}
 	}
 

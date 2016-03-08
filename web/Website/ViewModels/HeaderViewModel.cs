@@ -46,10 +46,10 @@ namespace Informa.Web.ViewModels
 			}
 		}
 
-	    public string CookiePolicyText => TextTranslator.Translate("Global.CookiePolicy");
-		public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        public string CookiePolicyText => SiteRootContext.Item.Cookie_Policy;
+        public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
 		public string MyAccountLinkText => TextTranslator.Translate("Header.MyAccount");
-	    public string MyAccountLink => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.My_Account_Page)._Url;
+	    public string MyAccountLink => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.My_Account_Page)?._Url ?? "#";
         public string SignOutLinkText => TextTranslator.Translate("Header.SignOut");
 		public string RegisterLinkText => TextTranslator.Translate("Header.RegisterLink");
 		public string SignInText => TextTranslator.Translate("Header.SignIn");

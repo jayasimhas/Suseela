@@ -39,7 +39,7 @@
                 {{ doc.title }}
             </a>
 
-            <div class="result__author">by {{ doc.byline }}</div>
+            <div class="result__author" ng-if="doc.byline !== ''">by {{ doc.byline }}</div>
 
             <p class="result__description">{{ doc.summary }}</p>
 

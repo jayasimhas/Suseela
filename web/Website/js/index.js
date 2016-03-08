@@ -7,6 +7,7 @@ import SearchScript from './search-page.js';
 import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
+import FormController from './form-controller';
 
 
 /* Toggle menu categories */
@@ -32,7 +33,7 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	thisBanner.removeClass('is-visible');
 	console.log(thisBanner);
 
-	var dismissedBanners = Cookies.get('dismissedBanners') || {};
+	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
@@ -159,9 +160,12 @@ $(document).ready(function() {
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
 
-	var registerController = new RegisterController();
 
-	registerController.addRegisterUserControl('.js-register-user-submit');
+	var userRegistrationController = new FormController();
+	userRegistrationController.watchForm('.form-registration');
+
+	var emailArticleController = new FormController();
+	emailArticleController.watchForm('.form-email-article');
 
     svg4everybody();
 
@@ -294,7 +298,6 @@ $(document).ready(function() {
 			$('.general-header__navigation-scroller--right').removeClass('is-visible');
 		}
 	});
-
 
 
 	// Twitter sharing JS

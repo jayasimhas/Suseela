@@ -96,11 +96,11 @@ namespace Informa.Web.Areas.Article.Controllers
 				replacements["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink();
 				replacements["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text);
 
-				replacements["#Body_Content#"] = GetValue(siteRoot?.Email_A_Friend_Body_Content)
-					.ReplaceCaseInsensitive("#reciever_name#", friendName)
-					.ReplaceCaseInsensitive("#sender_name#", senderEmail)
-					.ReplaceCaseInsensitive("#sender_email#", senderName)
-					.ReplaceCaseInsensitive("#personal_message#", message);
+				//replacements["#Body_Content#"] = GetValue(siteRoot?.Email_A_Friend_Body_Content)
+				//	.ReplaceCaseInsensitive("#reciever_name#", friendName)
+				//	.ReplaceCaseInsensitive("#sender_name#", senderEmail)
+				//	.ReplaceCaseInsensitive("#sender_email#", senderName)
+				//	.ReplaceCaseInsensitive("#personal_message#", message);
 
 				// Article Body
 				var article = _articleUtil.GetArticleByNumber(articleNumber);

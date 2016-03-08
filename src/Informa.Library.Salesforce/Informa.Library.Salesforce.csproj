@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryEmailNewsletterOptInsResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
@@ -78,9 +80,16 @@
     <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
+    <Compile Include="User\Profile\ISalesforceQueryNewsletterUserOptInResult.cs" />
     <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceQueryOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptInResult.cs" />
+    <Compile Include="User\Profile\SalesforceQueryOfferUserOptInResult.cs" />
+    <Compile Include="User\Profile\SalesforceUpdateNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\SalesforceUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />

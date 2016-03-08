@@ -6,18 +6,28 @@ namespace Informa.Library.User.Registration.Web
 	public class WebRegisterUser : IWebRegisterUser
 	{
 		protected readonly IRegisterUser RegisterUser;
+		protected readonly IWebSetRegisterUserSession RegisterUserSession;
 
 		public WebRegisterUser(
-			IRegisterUser registerUser)
+			IRegisterUser registerUser,
+			IWebSetRegisterUserSession registerUserSession)
 		{
 			RegisterUser = registerUser;
+			RegisterUserSession = registerUserSession;
 		}
 
 		public bool Register(INewUser newUser)
 		{
-			// TODO: Add actions for sending email etc.
+			var registered = RegisterUser.Register(newUser);
 
-			return RegisterUser.Register(newUser);
+			if (registered)
+			{
+				RegisterUserSession.NewUser = newUser;
+
+				// TODO: Add actions for sending email etc.
+			}
+
+			return registered;
 		}
 	}
 }
