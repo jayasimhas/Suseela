@@ -25,12 +25,14 @@
 			   class="pop-out__input"
 			   type="text"
 			   placeholder="@Model.YourNamePlaceholderText"
-			   error="@Model.EmptyFieldText">
+		       error="@Model.EmptyFieldText"
+               value="@Model.AuthUserName">
 		<input name="SenderEmail"
 			   class="pop-out__input"
 			   type="text"
 			   placeholder="@Model.YourEmailPlaceholderText"
-			   error="@Model.EmptyFieldText">
+		       error="@Model.EmptyFieldText"
+               value="@Model.AuthUserEmail">
 		<p>
 			<span class="pop-out__run-in">@Model.SubjectText</span> @Model.ArticleTitle
 			<input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
