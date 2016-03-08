@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
-    public interface IArticleModel : IListableViewModel
+    public interface IArticleModel : IListableViewModel, IEntitledProductItem
     {
         string Title { get; }
         string Sub_Title { get; }
@@ -19,6 +20,5 @@ namespace Informa.Web.ViewModels
         string Category { get; }     
         IEnumerable<IListable> RelatedArticles { get; }  
         IEnumerable<IGlassBase> KeyDocuments { get; }
-        
     }
 }
