@@ -19,12 +19,13 @@ namespace Informa.Web.Controllers
             {
                 Deal deal = new DCDManager().GetDealByRecordNumber(recordNumber);
 
-                dealInfo = new DealInfo
-                {
-                    DealDate = deal.Created,
-                    ID = deal.RecordId.ToString(),
-                    LastUpdated = deal.LastModified,
-                    Name = deal.Title,
+				dealInfo = new DealInfo
+				{
+					DealDate = deal.Created,
+					ID = deal.RecordId.ToString(),
+					LastUpdated = deal.LastModified,
+					Name = deal.Title,
+					RecordNumber = deal.RecordNumber,
                     Url = string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL"), recordNumber)
                 };
             }

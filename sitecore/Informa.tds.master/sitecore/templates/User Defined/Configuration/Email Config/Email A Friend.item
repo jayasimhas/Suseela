@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {D208A966-1B36-4A11-B15F-A346C5529CEE}
+id: {81781454-B977-434A-838E-98E125715C32}
 database: master
-path: /sitecore/templates/Velir/Search/Example/Example Search Page/Test
-parent: {DD15A131-7035-4180-A316-78D3F2B90C90}
-name: Test
+path: /sitecore/templates/User Defined/Configuration/Email Config/Email A Friend
+parent: {36068AEE-C4D0-4A61-9ACB-755EFCD2DE40}
+name: Email A Friend
 master: {00000000-0000-0000-0000-000000000000}
 template: {E269FBB5-3750-427A-9149-7AA950B49301}
 templatekey: Template section
@@ -12,7 +12,7 @@ templatekey: Template section
 ----version----
 language: en
 version: 1
-revision: cb1c689d-858e-4685-b259-8eef9a456c0b
+revision: 65778fd7-0178-410e-a5de-dda55c236a5f
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -20,7 +20,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151026T172638Z
+20160307T180555Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-cb1c689d-858e-4685-b259-8eef9a456c0b
+65778fd7-0178-410e-a5de-dda55c236a5f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 35
+content-length: 16
 
-20151026T172809:635814772894229815Z
+20160307T180656Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

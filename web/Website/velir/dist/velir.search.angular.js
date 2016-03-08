@@ -775,6 +775,8 @@
                     var count = _ref$count === undefined ? 0 : _ref$count;
                     var _ref$selected = _ref.selected;
                     var selected = _ref$selected === undefined ? false : _ref$selected;
+                    var _ref$sublist = _ref.sublist;
+                    var sublist = _ref$sublist === undefined ? [] : _ref$sublist;
 
                     _classCallCheck(this, Facet);
 
@@ -784,6 +786,7 @@
                     this.label = label;
                     this.selected = selected;
                     this.count = count;
+                    this.sublist = sublist;
                 }
 
                 _createClass(Facet, null, [{
@@ -796,7 +799,8 @@
                             parentId: parentId,
                             label: rawFacet.name,
                             selected: rawFacet.selected,
-                            count: rawFacet.count
+                            count: rawFacet.count,
+                            sublist: rawFacet.sublist
                         });
                     }
                 }]);
@@ -892,6 +896,14 @@
                             var deep = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
 
                             var facet = _lodash2["default"].find(this.facets, { id: id });
+
+                            if (!facet) {
+                                _lodash2["defaultgetSelectedFacets"].each(this.facets, function (f) {
+                                    facet = _lodash2["default"].find(f.sublist, { id: id });
+                                    return !facet;
+                                });
+                            }
+
                             if (!facet && deep) {
                                 _lodash2["default"].some(this.subgroups, function (g) {
                                     facet = g.getFacet(id, true);
@@ -907,6 +919,9 @@
                             var deep = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
                             var selectedFacets = _lodash2["default"].where(this.facets, { selected: true });
+                            _lodash2["default"].each(this.facets, function (facet) {
+                                selectedFacets = selectedFacets.concat(_lodash2["default"].where(facet.sublist, { selected: true }));
+                            });
                             if (deep) {
                                 _lodash2["default"].each(this.subgroups, function (group) {
                                     selectedFacets = selectedFacets.concat(group.getSelectedFacets(true));

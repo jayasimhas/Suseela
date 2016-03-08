@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Informa.Library.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Informa.Web.Areas.Account.Models.User.Registration
 {
@@ -9,15 +10,16 @@ namespace Informa.Web.Areas.Account.Models.User.Registration
 		public string Username { get; set; }
 		[Required(ErrorMessage = RegisterValidationReason.PasswordRequirements)]
 		[MinLength(8, ErrorMessage = RegisterValidationReason.PasswordRequirements)]
-		[RegularExpression(@"[^\s]+", ErrorMessage = RegisterValidationReason.PasswordRequirements)]
+		[RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = RegisterValidationReason.PasswordRequirements)]
 		public string Password { get; set; }
 		[Compare("Password", ErrorMessage = RegisterValidationReason.PasswordMismatch)]
 		public string PasswordRepeat { get; set; }
 		[Required(ErrorMessage = RegisterValidationReason.Required)]
+		[MinLength(2, ErrorMessage = RegisterValidationReason.Required)]
 		public string FirstName { get; set; }
 		[Required(ErrorMessage = RegisterValidationReason.Required)]
 		public string LastName { get; set; }
-		[Required(ErrorMessage = RegisterValidationReason.TermsNotAccepted)]
+		[MustBeTrue(ErrorMessage = RegisterValidationReason.TermsNotAccepted)]
 		public bool TermsAccepted { get; set; }
 	}
 }

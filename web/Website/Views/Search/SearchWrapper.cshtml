@@ -2,7 +2,7 @@
 
     <header class="search__header">
 
-        <div class="search__header-buttons">
+        <div class="search__header-buttons" ng-controller="EmailRssController as emailRss">
 
             <!--TODO: replace with correct email and subject-->
             <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="search__header-buttons--email">
@@ -13,7 +13,7 @@
             </a>
 
             <!--TODO: replace with correct RSS feed link-->
-            <a target="_top" class="search__header-buttons--rss">
+            <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
                 <h6>rss</h6>
                 <svg class="icon icon--rss">
               	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>

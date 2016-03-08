@@ -637,6 +637,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
@@ -662,11 +663,15 @@
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
@@ -763,16 +768,19 @@
     <Content Include="default.css" />
     <Content Include="default.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
+    <Content Include="email\EmailFriend.html" />
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\openadstream.js" />
+    <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
     <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search\controllers\emailRssController.js" />
     <Content Include="js\search\controllers\headlineToggleController.js" />
     <Content Include="js\search\controllers\informaFacetsController.js" />
     <Content Include="js\search\controllers\informaResultsController.js" />
@@ -923,7 +931,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Register\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
@@ -980,6 +987,12 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
+    <Content Include="Areas\Account\Views\Management\SavedArticles.cshtml" />
+    <Content Include="Areas\Account\Views\Management\Subscriptions.cshtml" />
+    <Content Include="Areas\Account\Views\Management\ContactInformation.cshtml" />
+    <Content Include="Areas\Account\Views\Management\EmailPreferences.cshtml" />
+    <Content Include="Areas\Account\Views\Management\AccountNavigation.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

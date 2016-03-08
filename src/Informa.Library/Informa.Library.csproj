@@ -190,6 +190,7 @@
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -275,6 +276,7 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
@@ -296,8 +298,12 @@
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Mail\IHtmlEmailTemplate.cs" />
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
+    <Compile Include="Rss\SearchResults.cs" />
+    <Compile Include="Rss\SearchResultsRequest.cs" />
+    <Compile Include="Rss\SearchRssFeed.cs" />
     <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
+    <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />

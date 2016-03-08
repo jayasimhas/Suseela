@@ -15,9 +15,13 @@ namespace Informa.Library.Utilities.References
 
         public Guid DCDConfigurationItem => new Guid("{}");
 
-	    #region Templates
+        public Guid SiteConfig  => new Guid("{BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}");
 
-		public Guid FolderTemplate => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}");
+        public Guid SearchPage  => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
+
+        #region Templates
+
+        public Guid FolderTemplate => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}");
 
 	    public Guid TaxonomyRoot => new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
 

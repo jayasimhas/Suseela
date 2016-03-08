@@ -320,6 +320,8 @@ namespace PluginModels
         public List<string> Companies { get; set; }
         public string Url { get; set; }
 
+		public string RecordNumber { get; set; }
+
         public bool IsEmpty()
         {
             int outId;
