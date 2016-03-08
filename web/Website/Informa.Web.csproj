@@ -652,10 +652,12 @@
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
+    <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
     <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
@@ -665,6 +667,7 @@
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />

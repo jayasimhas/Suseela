@@ -24,6 +24,9 @@ namespace Informa.Web.App_Start.Registrations
 
 			builder.RegisterType<SalesforceUpdateOfferUserOptIn>().As<IUpdateOfferUserOptIn>();
 			builder.RegisterType<SalesforceUpdateNewsletterUserOptIn>().As<IUpdateNewsletterUserOptIn>();
-		}
+
+		    builder.RegisterType<SalesforceQueryNewsletterUserOptIn>().As<IQueryNewsletterUserOptIn>();
+            builder.RegisterType<SalesforceQueryOfferUserOptIn>().As<IQueryOfferUserOptIn>();
+        }
 	}
 }
