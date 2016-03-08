@@ -12,8 +12,15 @@ templatekey: Search
 ----version----
 language: en
 version: 1
-revision: 87567ec7-ce94-4831-bf97-4c676ffec48e
+revision: f787cc7d-84fd-4823-b854-cfea7ff5b612
 
+----field----
+field: {9F76D8DF-EF1C-4B6D-AF33-B2655FD0CC74}
+name: Items Per Page
+key: items per page
+content-length: 2
+
+10
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
 name: Navigation Title
@@ -21,6 +28,13 @@ key: navigation title
 content-length: 6
 
 Search
+----field----
+field: {3DD8AA26-2B10-4305-831C-7FCC78A674BE}
+name: Refinements
+key: refinements
+content-length: 194
+
+{6D23375A-C440-42E3-A6BC-1F5EB1675A0F}|{AA02780C-8AE4-468E-AF15-92C5A8FB9201}|{748ECD8F-3161-4449-8736-028D37BB4F63}|{F0379076-A880-47B3-B72A-D23930320046}|{F22AEF2E-12A2-4F54-A79C-F92D64675FB9}
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -34,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-87567ec7-ce94-4831-bf97-4c676ffec48e
+f787cc7d-84fd-4823-b854-cfea7ff5b612
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160209T180639Z
+20160307T202149Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -49,3 +63,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />
