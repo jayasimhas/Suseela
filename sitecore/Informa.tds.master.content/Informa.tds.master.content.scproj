@@ -5154,6 +5154,18 @@
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Articles.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Local Components.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Marketing.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\My Account.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -5174,18 +5186,6 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Articles.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Local Components.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Marketing.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\New Example Search Page.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -5205,6 +5205,9 @@
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Search.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Search\vwb.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Site Globals.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
