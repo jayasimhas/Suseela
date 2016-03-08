@@ -12,15 +12,15 @@ templatekey: Taxonomy Item
 ----version----
 language: en
 version: 1
-revision: 104e8feb-d5bb-42a8-8983-5468da85bb16
+revision: c6cf3f90-b682-49fe-9c6a-ec9f2916203f
 
 ----field----
 field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
 name: Item Name
 key: item name
-content-length: 15
+content-length: 14
 
-Czech Republic
+Czech Republic
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-104e8feb-d5bb-42a8-8983-5468da85bb16
+c6cf3f90-b682-49fe-9c6a-ec9f2916203f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160107T214018Z
+20160307T200419Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -13,13 +13,13 @@ templatekey: Refinements Folder
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
-content-length: 272
+content-length: 233
 
-{2463DE7D-4C6E-4E02-AB46-45833E0408C3}|{981413B1-9651-4B49-B356-D7B7FB9DD8F6}|{2CBB661F-2029-456E-9AE8-25194C3F425A}|{3E39F45D-DE43-410E-8E7E-F2F2B2BE07DB}|{EC9F61D5-4B55-4E71-8DFA-20A38D7499C2}|{89A08D1F-18DC-432A-9CE3-AFCBA7845E4D}|{F6A701CF-E7F6-4384-9F5C-9ED39F1224B6}
+{2463DE7D-4C6E-4E02-AB46-45833E0408C3}|{981413B1-9651-4B49-B356-D7B7FB9DD8F6}|{2CBB661F-2029-456E-9AE8-25194C3F425A}|{3E39F45D-DE43-410E-8E7E-F2F2B2BE07DB}|{EC9F61D5-4B55-4E71-8DFA-20A38D7499C2}|{89A08D1F-18DC-432A-9CE3-AFCBA7845E4D}
 ----version----
 language: en
 version: 1
-revision: c01e4867-970c-4f8a-964c-8c81efae37ff
+revision: aa7c5f3f-d904-4429-97b6-c739e80bd1d2
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -32,9 +32,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 15
 
-20140814T210550Z
+20140814T140550
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,18 +48,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c01e4867-970c-4f8a-964c-8c81efae37ff
+aa7c5f3f-d904-4429-97b6-c739e80bd1d2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 35
+content-length: 34
 
-20150504T194252:635663653725999189Z
+20140904T165801:635454466819135255
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 15
+content-length: 14
 
-sitecore\csmith
+sitecore\admin
