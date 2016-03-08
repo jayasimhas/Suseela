@@ -1,7 +1,9 @@
-﻿using Informa.Library.User.Authentication;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.User.Authentication;
 using Informa.Library.Corporate;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
@@ -14,19 +16,22 @@ namespace Informa.Web.ViewModels
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteHomeContext SiteHomeContext;
 		protected readonly ISiteRootContext SiteRootContext;
+	    protected readonly ISitecoreService SitecoreService;
 
 		public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
 			ICorporateAccountNameContext corporateAccountNameContext,
 			ITextTranslator textTranslator,
 			ISiteHomeContext siteHomeContext,
-			ISiteRootContext siteRootContext)
+			ISiteRootContext siteRootContext,
+            ISitecoreService sitecoreService)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CorporateAccountNameContext = corporateAccountNameContext;
 			TextTranslator = textTranslator;
 			SiteHomeContext = siteHomeContext;
 			SiteRootContext = siteRootContext;
+		    SitecoreService = sitecoreService;
 		}
 
 		public string LogoImageUrl => SiteRootContext.Item?.Site_Logo?.Src ?? string.Empty;
@@ -41,10 +46,11 @@ namespace Informa.Web.ViewModels
 			}
 		}
 
-	    public string CookiePolicyText => TextTranslator.Translate("Global.CookiePolicy");
-		public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        public string CookiePolicyText => SiteRootContext.Item.Cookie_Policy;
+        public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
 		public string MyAccountLinkText => TextTranslator.Translate("Header.MyAccount");
-		public string SignOutLinkText => TextTranslator.Translate("Header.SignOut");
+	    public string MyAccountLink => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.My_Account_Page)?._Url ?? "#";
+        public string SignOutLinkText => TextTranslator.Translate("Header.SignOut");
 		public string RegisterLinkText => TextTranslator.Translate("Header.RegisterLink");
 		public string SignInText => TextTranslator.Translate("Header.SignIn");
 		public string SignInLinkText => TextTranslator.Translate("Header.SignInLink");
