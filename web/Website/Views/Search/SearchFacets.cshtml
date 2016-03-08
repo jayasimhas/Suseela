@@ -149,11 +149,11 @@
                id="date-picker-from" 
                datepicker-popup="{{format}}" 
                is-open="datepickers.dtFrom" 
-               min-date="minDate" 
-               max-date="'2015-06-22'"
                datepicker-options="{showWeeks:false, formatDayHeader:'EEE', formatDay:'d'}" 
+               popup-placement="top-left" 
+               uib-datepicker-popup="dd/mm/yyyy" 
                date-disabled="disabled(date, mode)" 
-               ng-required="true" 
+               ng-required="false" 
                close-text="Close" 
                show-button-bar="false"
                readonly
@@ -177,7 +177,7 @@
                max-date="'2015-06-22'"
                datepicker-options="dateOptions" 
                date-disabled="disabled(date, mode)" 
-               ng-required="true" 
+               ng-required="false" 
                close-text="Close" 
                readonly
                ng-click="open($event,'dtTo')"

@@ -1,3 +1,6 @@
+// Combo of custom styles and Bootstrap styles for ui-bootstrap datepicker
+// HTML structure comes from ui-datepicker, is mapped out (with all of its crazy nesting) below
+
 .datepicker {
 
     .dropdown-menu {
@@ -25,6 +28,12 @@
             div {
                 table {
                     width: 100%;
+                    text-align: center;
+
+                    &:focus {
+                        outline: 0;
+                    }
+
                     thead {
                         // Top bar (month)
                         tr:first-child {
@@ -34,9 +43,15 @@
 
                             // wraps previous button
                             th:first-child {
+                                text-align: left;
+                                vertical-align: top;
+
                                 button {
-                                    height: 12px;
-                                    background-color:  #d1d3d4;
+                                    width: 0px;
+                                    height: 0px;
+                                    border-top: 5px solid transparent;
+                                    border-bottom: 5px solid transparent;
+                                    border-right: 5px solid #d1d3d4;
 
                                     i {
 
@@ -55,9 +70,15 @@
                             }
                             // wraps next button
                             th:last-child {
+                                text-align: right;
+                                vertical-align: top;
+
                                 button {
-                                    height: 12px;
-                                    background-color:  #d1d3d4;
+                                    width: 0px;
+                                    height: 0px;
+                                    border-top: 5px solid transparent;
+                                    border-bottom: 5px solid transparent;
+                                    border-left: 5px solid #d1d3d4;
 
                                     i {
 
@@ -73,6 +94,7 @@
                             border-color:  #b4b7b8;
                             box-sizing: border-box;
                             height: 29px; 
+                            text-align: center;
 
                             th {
                                 small {
@@ -90,8 +112,18 @@
                         tr {
                             // each date cell
                             td {
-                                // each date number
-                                em {
+                                button {
+                                    border: 1px solid #d1d3d4;
+                                    box-sizing: border-box;
+
+                                    &.active {
+                                        border: 1px solid #808285;
+                                        background-color:  #ffffff;
+                                    }
+                                    // each date number
+                                    span.text-muted {
+                                        color: #878a8b;
+                                    }
 
                                 }
 
