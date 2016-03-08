@@ -48,11 +48,12 @@ namespace Informa.Library.Utilities.Autofac.Modules
                     return owned.GetProperty("Value").GetValue(AutofacConfig.ServiceLocator.Resolve(owned));
                 });
             }))
+                .AsSelf()
                 .AsImplementedInterfaces()
                 .SingleInstance();
 
             // Register AutoMapper Mapper
-            builder.RegisterType<Mapper>().As<IMapper>().SingleInstance();
+            builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper()).As<IMapper>().SingleInstance();
         }
 
         private static IEnumerable<Assembly> LoadAssemblies(IEnumerable<string> assemblies)

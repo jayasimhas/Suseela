@@ -293,6 +293,7 @@
     <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\NlmExport\INlmExportService.cs" />
     <Compile Include="Services\NlmExport\Models\Body\NlmArticleBodyModel.cs" />
     <Compile Include="Services\NlmExport\Models\Common\NlmCategoryModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Article\History\NlmHistoryDateModel.cs" />
@@ -311,6 +312,7 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmArticleMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
+    <Compile Include="Services\NlmExport\NlmExportService.cs" />
     <Compile Include="Services\NlmExport\Serialization\INlmSerializer.cs" />
     <Compile Include="Services\NlmExport\Serialization\NlmSerializer.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
@@ -564,6 +566,8 @@
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
     <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleProfile.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\ArticleBodyResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\ArticleTypeResolver.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
