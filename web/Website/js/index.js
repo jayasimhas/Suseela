@@ -5,10 +5,9 @@ import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
 import LoginController from './login-controller';
-import EmailFriendController from './email-friend-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
-import FormValidation from './form-validation';
+import FormController from './form-controller';
 
 
 /* Toggle menu categories */
@@ -67,12 +66,6 @@ var showForgotPassSuccess = function() {
 
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
-	$('.pop-out__form-error').show();
-	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
-};
-
-// Toggle the sign-in error message displayed to a user
-var toggleEmailFriendError = function() {
 	$('.pop-out__form-error').show();
 	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
@@ -156,15 +149,6 @@ $(document).ready(function() {
 		}
 	);
 
-	var emailFriend = new EmailFriendController();
-
-	emailFriend.addControl(
-		'.email-friend__submit',
-		null,
-		function(triggerElement) {
-			toggleEmailFriendError();
-		}
-	);
 	var resetPassword = new ResetPasswordController();
 
 	resetPassword.addRequestControl(
@@ -176,10 +160,12 @@ $(document).ready(function() {
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
 
-	var registerController = new RegisterController();
 
-	registerController.addRegisterUserControl('.js-register-user-submit');
-	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+	var userRegistrationController = new FormController();
+	userRegistrationController.watchForm('.form-registration');
+
+	var emailArticleController = new FormController();
+	emailArticleController.watchForm('.form-email-article');
 
     svg4everybody();
 
@@ -312,8 +298,6 @@ $(document).ready(function() {
 			$('.general-header__navigation-scroller--right').removeClass('is-visible');
 		}
 	});
-
-	//var validateRegistrationForm = FormValidation('.registration-form');
 
 
 	// Twitter sharing JS
