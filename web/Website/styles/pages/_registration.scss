@@ -72,7 +72,13 @@
             color: $color-dusty-gray;
             line-height: 1.25rem;
             width: 250px;
+            margin-bottom: 1rem;
         }
+    }
+
+    &__error {
+        @extend .error-text;
+        display: none;
     }
 
 }
