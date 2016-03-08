@@ -10,13 +10,16 @@ namespace Informa.Web.Areas.Account.Controllers
 	{
 		protected readonly INewUserFactory NewUserFactory;
 		protected readonly IWebRegisterUser RegisterUser;
+		protected readonly IWebSetOptInsRegisterUser SetOptInsRegisterUser;
 
 		public RegistrationApiController(
 			INewUserFactory newUserFactory,
-			IWebRegisterUser registerUser)
+			IWebRegisterUser registerUser,
+			IWebSetOptInsRegisterUser setOptInsRegisterUser)
 		{
 			NewUserFactory = newUserFactory;
 			RegisterUser = registerUser;
+			SetOptInsRegisterUser = setOptInsRegisterUser;
 		}
 
 		[HttpPost]
@@ -32,6 +35,18 @@ namespace Informa.Web.Areas.Account.Controllers
 			newUser.Username = request.Username;
 
 			var success = RegisterUser.Register(newUser);
+
+			return Ok(new
+			{
+				success = success
+			});
+		}
+
+		[HttpPost]
+		[ArgumentsRequired]
+		public IHttpActionResult SetOptIns(SetOptInsRequest request)
+		{
+			var success = SetOptInsRegisterUser.Set(request.Offers, request.Newsletters);
 
 			return Ok(new
 			{
