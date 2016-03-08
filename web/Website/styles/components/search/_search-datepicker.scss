@@ -1,0 +1,305 @@
+.datepicker {
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 254px;
+        // padding: 5px 0;
+        // margin: 2px 0 0;
+        list-style: none;
+        font-size: 14px;
+        background-color: #EFF0F0;
+        border: 1px solid #CFD1D2;
+        // border: 1px solid rgba(0,0,0,.15);
+        // border-radius: 4px;
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        background-clip: padding-box;
+
+        // wraps calendar
+        li:first-child {
+            div {
+                table {
+                    width: 100%;
+                    thead {
+                        // Top bar (month)
+                        tr:first-child {
+                            width: 100%;
+                            background-color: #231f20;
+                            height: 32px;
+
+                            // wraps previous button
+                            th:first-child {
+                                button {
+                                    height: 12px;
+                                    background-color:  #d1d3d4;
+
+                                    i {
+
+                                    }
+                                }
+                            }
+                            // wraps month and year text
+                            th:nth-child(2) {
+                                button {
+                                    strong {
+                                        @include textMix('RobotoCondensed', 13px, 700); // design says 15px but doesn't look right
+                                        color: #fff;
+                                        text-transform: uppercase;
+                                    }
+                                }
+                            }
+                            // wraps next button
+                            th:last-child {
+                                button {
+                                    height: 12px;
+                                    background-color:  #d1d3d4;
+
+                                    i {
+
+                                    }
+                                }
+                            }
+                        }
+                        // 2nd bar (weekdays)
+                        tr:nth-child(2) {
+                            background-color: #d1d3d4;
+                            border-style: solid;
+                            border-width: 1px;
+                            border-color:  #b4b7b8;
+                            box-sizing: border-box;
+                            height: 29px; 
+
+                            th {
+                                small {
+                                    @include textMix('Roboto', 12px, 500);
+                                    text-transform: uppercase;
+                                    color:  #808285;
+                                    line-height: 16.998px;
+                                }
+                            }
+
+                        }
+                    }
+                    tbody {
+                        // each row of dates
+                        tr {
+                            // each date cell
+                            td {
+                                // each date number
+                                em {
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        // wraps buttons
+        li:nth-child(2) {
+            // wraps today & clear buttons
+            span.btn-group {
+                // today button
+                button:first-child {
+
+                }
+                // clear button
+                button: nth-child(2) {
+
+                }
+            }
+            // close button
+            button {
+
+            }
+
+        }
+
+
+    }
+
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+
+//     label {
+//         display: inline-block;
+//         margin-bottom: 5px;
+//         font-weight: 700;
+//     }
+
+//     p {
+//         margin: 0 0 10px;
+//     }
+
+//     .input-group {
+//         position: relative;
+//         display: table;
+//         border-collapse: separate;
+//     }
+
+//     .input-group .form-control:not(:first-child):not(:last-child) {
+//         border-radius: 0;
+//     }
+
+//     .input-group .form-control {
+//         display: table-cell;
+//     }
+
+//     .input-group .form-control {
+//     position: relative;
+//     z-index: 2;
+//     float: left;
+//     width: 100%;
+//     margin-bottom: 0;
+// }
+
+// .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+//     cursor: not-allowed;
+//     background-color: #eee;
+//     opacity: 1;
+// }
+
+
+// input, button, select, textarea {
+//     font-family: inherit;
+//     font-size: inherit;
+//     line-height: inherit;
+// }
+// input {
+//     line-height: normal;
+// }
+// button, input, optgroup, select, textarea {
+//     color: inherit;
+//     font: inherit;
+//     margin: 0;
+// }
+// * {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+
+
+// ul, ol {
+//     margin-top: 0;
+//     margin-bottom: 10px;
+// }
+
+// .btn-group, .btn-group-vertical {
+//     position: relative;
+//     display: inline-block;
+//     vertical-align: middle;
+// }
+
+// .pull-right {
+//     float: right!important;
+// }
+
+// .btn-sm, .btn-group-sm>.btn {
+//     padding: 5px 10px;
+//     font-size: 12px;
+//     line-height: 1.5;
+//     border-radius: 3px;
+// }
+// .btn-success {
+//     color: #fff;
+//     background-color: #5cb85c;
+//     border-color: #4cae4c;
+// }
+// .btn {
+//     display: inline-block;
+//     margin-bottom: 0;
+//     font-weight: 400;
+//     text-align: center;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     background-image: none;
+//     border: 1px solid transparent;
+//     white-space: nowrap;
+//     padding: 6px 12px;
+//     font-size: 14px;
+//     line-height: 1.42857143;
+//     border-radius: 4px;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+// }
+// input, button, select, textarea {
+//     font-family: inherit;
+//     font-size: inherit;
+//     line-height: inherit;
+// }
+// button, html input[type=button], input[type=reset], input[type=submit] {
+//     -webkit-appearance: button;
+//     cursor: pointer;
+// }
+// button, select {
+//     text-transform: none;
+// }
+// button {
+//     overflow: visible;
+// }
+// button, input, optgroup, select, textarea {
+//     color: inherit;
+//     font: inherit;
+//     margin: 0;
+// }
+
+// .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+//     border-bottom-right-radius: 0;
+//     border-top-right-radius: 0;
+// }
+// .btn-group>.btn:first-child {
+//     margin-left: 0;
+// }
+
+// .input-group-btn {
+//     width: 1%;
+//     white-space: nowrap;
+//     vertical-align: middle;
+// }
+
+// table {
+//     max-width: 100%;
+//     background-color: transparent;
+// }
+// table {
+//     border-collapse: collapse;
+//     border-spacing: 0;
+// }
+
+// th {
+//     text-align: left;
+// }
+// td, th {
+//     padding: 0;
+// }
+
+}
+

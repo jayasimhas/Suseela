@@ -117,7 +117,7 @@
   </ul>
 
   <!-- HARDCODED DATE FACET -->
-  <ul class="facets__section"> <!-- removed ng-controller="DatepickerDemoCtrl" -->
+  <ul class="facets__section datepicker" ng-controller="InformaDatesController">
     <li class="facets__section-title">
         <h4>Date</h4>
         <button 
@@ -142,47 +142,58 @@
           <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
           <ul class="facets__section-footer">
             <li class="facets__field-group facets__field-group--from input-group" ng-show="$last">
-              <label for="dateRangeFrom">From</label>
-              <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom" ng-value="dateRangeFrom" name="dateRangeFrom">
-              <!-- <input 
-                  name="dateRangeFrom" 
-                  placeholder="dd/mm/yyyy" 
-                  ng-value="dateRangeFrom" 
-                  class="form-control" 
-                  uib-datepicker-popup="dd/mm/yyyy" 
-                  ng-model="dt" 
-                  is-open="popup1.opened" 
-                  datepicker-options="dateOptions" 
-                  ng-required="false" 
-                  close-text="Close" 
-                  alt-input-formats="altInputFormats" > -->
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+              <label for="date-picker-from" ng-click="open($event)">From</label>
+              <input type="text" 
+               name="dtFrom" 
+               ng-model="dtFrom"  
+               id="date-picker-from" 
+               datepicker-popup="{{format}}" 
+               is-open="datepickers.dtFrom" 
+               min-date="minDate" 
+               max-date="'2015-06-22'"
+               datepicker-options="{showWeeks:false, formatDayHeader:'EEE', formatDay:'d'}" 
+               date-disabled="disabled(date, mode)" 
+               ng-required="true" 
+               close-text="Close" 
+               show-button-bar="false"
+               readonly
+               ng-click="open($event,'dtFrom')"
+               />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default">
+                  <svg ng-click="open($event,'dtFrom')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+                </button>
+              </span>
             </li>
             <li class="facets__field-group facets__field-group--to input-group" ng-show="$last">
-              <label for="dateRangeTo">To</label>
-              <input type="date" placeholder="dd/mm/yyyy" name="dateRangeTo" ng-value="dateRangeTo" ng-model="dateRangeTo">
-              <!-- <input 
-                  name="dateRangeTo" 
-                  placeholder="dd/mm/yyyy" 
-                  class="form-control" 
-                  uib-datepicker-popup="dd/mm/yyyy" 
-                  ng-model="dt" 
-                  is-open="popup2.opened" 
-                  datepicker-options="dateOptions" 
-                  ng-required="false" 
-                  close-text="Close" 
-                  alt-input-formats="altInputFormats"> -->
-              <!-- <span class="input-group-btn">
-              <button type="button" class="btn btn-default" ng-click="open2()"> -->
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
-              <!-- </button>
-                </span> -->
+              <label for="date-picker-to" ng-click="open($event)">To</label>
+              <input type="text" 
+               name="dtTo"
+               ng-model="dtTo" 
+               id="date-picker-from" 
+               datepicker-popup="{{format}}" 
+               is-open="datepickers.dtTo" 
+               min-date="minDate" 
+               max-date="'2015-06-22'"
+               datepicker-options="dateOptions" 
+               date-disabled="disabled(date, mode)" 
+               ng-required="true" 
+               close-text="Close" 
+               readonly
+               ng-click="open($event,'dtTo')"
+               />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default">
+                  <svg ng-click="open($event,'dtTo')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+                </button>
+              </span>
             </li>
           </ul>
-          <!-- <div>From: {{allFacets.dateRangeFrom}}</div> -->
         </li>
       </ul>
     </li>      
   </ul>
+
+
 </div>
         
