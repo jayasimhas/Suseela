@@ -3078,6 +3078,7 @@
     <SitecoreItem Include="sitecore\templates\User Defined\Pages\Search.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\User Defined\Pages\Search\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4438,6 +4439,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Listing Configuration\Admin Configuration.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4474,6 +4476,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Base\_Refinement\Base Configuration.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4506,6 +4509,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Listing.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Listing\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4522,6 +4526,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Components\Search Refinements\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4550,6 +4555,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Example\Example Search Page.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Example\Example Search Page\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4562,6 +4568,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Boolean Refinement.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Boolean Refinement\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4582,10 +4589,12 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Date Range Refinement.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Facet.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Facet\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4614,6 +4623,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Hierarchical Facet.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Hierarchical Facet\Sort Configuration.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4626,6 +4636,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Refinements Folder.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Refinements Folder\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4638,6 +4649,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Sort Strategies\Hierarchical Sort Strategy.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Sort Strategies\Hierarchical Sort Strategy\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4662,6 +4674,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Sort Strategies\Sort Strategies Folder.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Sort Strategies\Sort Strategies Folder\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4670,6 +4683,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Sort Strategies\Sort Strategy.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Sort Strategies\Sort Strategy\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4690,6 +4704,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Text Refinement.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Text Refinement\Text Configuration.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4702,6 +4717,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Refinements\Year Refinement.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4710,6 +4726,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sort\Sort.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -4738,6 +4755,7 @@
     <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sorts Folder.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>ignore=true</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Velir\Search\Sorts\Sorts Folder\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
