@@ -238,54 +238,6 @@ namespace Elsevier.Web.VWB
 							  query.GetQueryString());
 		}
 
-		protected IEnumerable<ItemStruct> GetIssues(ID pubId)
-		{
-			var issues = new List<ItemStruct>();
-			//var isearch = new IssueSearchParam();
-			//isearch.Sort.SetSort(IssueIndex.SortDateField, true);
-			//isearch.PublicationId = new ID(ddPublication.SelectedValue);
-			//using (new Sitecore.SecurityModel.SecurityDisabler())
-			//{
-			//	var sis = IssueSearcher.GetIndex().GetItems(isearch);
-			//	var db = SitecoreDatabases.Context;
-			//	foreach (var i in sis)
-			//	{
-			//		var istruct = new ItemStruct();
-			//		var ii = (IssueItem)db.GetItem(i.ItemID);
-			//		if (ii != null)
-			//		{
-			//			istruct.Name = GetIssueDowndownDisplayName(ii);
-			//			istruct.ID = ii.ID.ToGuid();
-			//			issues.Add(istruct);
-			//		}
-			//	}
-			//}
-
-			//PublicationItem pub = SitecoreDatabases.Master.GetItem(pubId);
-
-			//if (!pub.IsDaily())
-			//{
-			//	issues.Insert(0, new ItemStruct
-			//						 {
-			//							 Name = "Next issue",
-			//						 ID = new Guid(VwbQuery.NextIssueValue)
-			//						 });
-			//}
-
-			return issues;
-		}
-
-		private static string GetIssueDowndownDisplayName(IssueItem ii)
-		{
-			string formatDateTime = "Unspecified";
-			DateTime dateTime = ii.IssueDate.DateTime;
-			if (dateTime != DateTime.MinValue)
-			{
-				formatDateTime = GeneralUtil.FormatDateTimeWithDashes(dateTime);
-			}
-			return ii.GetVolume().GetVolumeNumberLabel() + ": Iss. " + ii.Name + " (" + formatDateTime + ")";
-		}
-
 		protected void PublicationSelected(object sender, EventArgs e)
 		{
 			RunQuery(false);

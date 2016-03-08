@@ -811,6 +811,10 @@
     <Compile Include="VWB\Report\MacroVwbArticleItemCollection.cs" />
     <Compile Include="VWB\Report\ReportBuilder.cs" />
     <Compile Include="VWB\Report\VwbArticleItemCollection.cs" />
+    <Compile Include="VWB\services\VirtualWhiteBoard.asmx.cs">
+      <DependentUpon>VirtualWhiteBoard.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VWB\Util\VWBUtil.cs" />
     <Compile Include="VWB\VwbQuery.cs" />
     <Compile Include="VWB\VwbSessionInfo.cs" />
@@ -951,6 +955,7 @@
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
     <Content Include="VWB\Scripts\jquery.js" />
+    <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
     <Content Include="VWB\Styles\vwb.css" />
     <Content Include="webedit.css" />
     <Content Include="App_Browsers\Form.browser" />
