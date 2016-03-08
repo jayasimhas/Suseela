@@ -663,6 +663,7 @@
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -987,6 +988,11 @@
     </None>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
+    <Content Include="Areas\Account\Views\Management\SavedArticles.cshtml" />
+    <Content Include="Areas\Account\Views\Management\Subscriptions.cshtml" />
+    <Content Include="Areas\Account\Views\Management\ContactInformation.cshtml" />
+    <Content Include="Areas\Account\Views\Management\EmailPreferences.cshtml" />
+    <Content Include="Areas\Account\Views\Management\AccountNavigation.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

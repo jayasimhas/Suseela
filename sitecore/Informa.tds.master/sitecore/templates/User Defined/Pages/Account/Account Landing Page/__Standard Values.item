@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {60DF6BC9-91D2-4421-A3A2-2E1C124750E6}
+database: master
+path: /sitecore/templates/User Defined/Pages/Account/Account Landing Page/__Standard Values
+parent: {FCB415D5-4852-4E86-B54C-0F8ED7A6852E}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {FCB415D5-4852-4E86-B54C-0F8ED7A6852E}
+templatekey: Account Landing Page
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 155
+
+{AD6C16AC-05CE-45E4-A56B-9FCA24CBAF57}|{78EF0A1B-A2D5-42B3-8A81-27D676F32FD7}|{0807607F-2431-41BB-B56A-19AB73B0928C}|{A5C1FC0C-F7EA-4164-B546-291D23943036}
+----version----
+language: en
+version: 1
+revision: 6a6a64c5-02de-4b80-82d0-3b108e687367
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160308T012740Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6a6a64c5-02de-4b80-82d0-3b108e687367
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160308T012942Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
