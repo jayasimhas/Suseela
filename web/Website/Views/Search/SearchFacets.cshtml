@@ -21,6 +21,7 @@
     <button class="facets__button facets__button--clear" ng-click="allFacets.clearAllFacets()">Clear All</a>
   </div>
 
+<<<<<<< HEAD
   <ul class="facets__section" ng-repeat="group in allFacets.facetGroups">
     <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
     <li class="facets__section-title">
@@ -47,6 +48,73 @@
           </li>
         </ul> <!-- / .facets__section-list -->
         <div class="facets__section-footer">
+=======
+  <div class="facets__content">
+
+      <form class="facets__section"
+            ng-repeat="group in allFacets.facetGroups">
+
+          <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
+          <fieldset class="facets__fieldset">
+              <legend class="facets__legend facets__section-header">
+                  <h4>{{ group.label }}</h4>
+                  <button
+                      class="facets__button facets__button--toggle-section"
+                      ng-model="collapsefacet"
+                      ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
+                      ng-class="{'collapsed': isCollapsed}">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+                  </button>
+              </legend>
+              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-hide="collapsefacet">
+
+                  <li ng-hide="($index >= allFacets.MaxFacetShow) && (!group.ShowMore)">
+                      <input id="{{ group.id }}-{{ $index }}"
+                             type="checkbox"
+                             class="visuallyhidden"
+                             ng-checked="f.selected"
+                             ng-model="f.selected"
+                             ng-change="allFacets.update()">
+                      <!-- temporarily removing ng-if="f.label.length > 0" from above -->
+                      <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
+
+                      <ul ng-show="f.sublist.length > 0" class="facets__section-list--sub">
+                          <li ng-repeat="subFacet in f.sublist">
+                              <input id="{{ subFacet.id }}-{{ $index }}"
+                                     type="checkbox"
+                                     class="visuallyhidden"
+                                     ng-checked="subFacet.selected"
+                                     ng-model="subFacet.selected"
+                                     ng-change="allFacets.update()">
+                              <label ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">{{ subFacet.name }} ({{subFacet.count}})</label>
+                          </li>
+                      </ul>
+
+</li>
+              </ul>
+              <button
+                  class="facets__button facets__button--more"
+                  ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
+                  ng-click='group.ShowMore = true'
+                  ng-class="{'collapsed': isCollapsed}">See All
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+              </button>
+              <button
+                  class="facets__button facets__button--less"
+                  ng-show='group.ShowMore'
+                  ng-click='group.ShowMore = false'
+                  ng-class="{'collapsed': isCollapsed}">See Less
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use></svg>
+              </button>
+          </fieldset>
+      </form>
+
+    <!-- HARDCODED COMPANIES FACET -->
+    <form class="facets__section">
+      <fieldset class="facets__fieldset">
+        <legend class="facets__legend facets__section-header">
+          <h4>Companies</h4>
+>>>>>>> master-new
           <button 
             class="facets__button facets__button--more" 
             ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'

@@ -21,6 +21,9 @@ namespace Informa.Web.App_Start.Registrations
 
 			builder.RegisterType<SalesforceFindUserProfile>().As<IUserProfileFactory>();
 			builder.RegisterType<SalesforceFindUserProfile>().As<IFindUserProfileByUsername>();
+
+			builder.RegisterType<SalesforceUpdateOfferUserOptIn>().As<IUpdateOfferUserOptIn>();
+			builder.RegisterType<SalesforceUpdateNewsletterUserOptIn>().As<IUpdateNewsletterUserOptIn>();
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
+using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 
@@ -10,14 +11,20 @@ namespace Informa.Web.ViewModels.PopOuts
 	{
         protected readonly ITextTranslator TextTranslator;
         protected readonly IRenderingItemContext ArticleRenderingContext;
+	    protected readonly IAuthenticatedUserContext UserContext;
 
         public EmailArticlePopOutViewModel(
             ITextTranslator textTranslator,
-            IRenderingItemContext articleRenderingContext)
+            IRenderingItemContext articleRenderingContext,
+            IAuthenticatedUserContext userContext)
         {
             TextTranslator = textTranslator;
             ArticleRenderingContext = articleRenderingContext;
+            UserContext = userContext;
         }
+
+	    public string AuthUserEmail => UserContext.User.Email;
+	    public string AuthUserName => UserContext.User.Name;
 
         public string EmailArticleText => TextTranslator.Translate("Article.EmailPopout.EmailArticle");
         public string EmailFormInstructionsText => TextTranslator.Translate("Article.EmailPopout.EmailFormInstructions");
@@ -31,6 +38,7 @@ namespace Informa.Web.ViewModels.PopOuts
         public string InvalidEmailText => TextTranslator.Translate("Article.EmailPopout.InvalidEmail"); 
         public string EmptyFieldText => TextTranslator.Translate("Article.EmailPopout.EmptyField");
         public string NoticeText => TextTranslator.Translate("Article.EmailPopout.Notice");
-        public string ArticleTitle => ArticleRenderingContext.Get<IArticle>().Title;
-    }
+        public string ArticleTitle => ArticleRenderingContext.Get<IArticle>().Title;	
+		public string ArticleNumber => ArticleRenderingContext.Get<IArticle>().Article_Number;
+	}
 }
