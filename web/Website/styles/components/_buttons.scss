@@ -22,22 +22,27 @@ button:focus {
 	&--gilded {
 		@include smooth-transition;
 		@include textMix('Roboto', 12px, 700);
-		padding: 12px 16px;
-		letter-spacing: 1px;
+		border: 0;
 		color: $informa-black;
+		letter-spacing: 1px;
+		padding: 12px 16px;
 		text-transform: uppercase;
 	}
 
 	&--filled {
 		background-color: $informa-light-orange;
-		border: 0;
 
 		&:hover {
 			background-color: $informa-dark-orange;
 		}
+
+		&:disabled {
+			background-color: $color-concrete-gray;
+			color: $color-dove-gray;
+		}
 	}
 
-	&--outline {
+	&--outline:enabled {
 		background-color: $color-white;
 		border: 1px solid $informa-light-orange;
 
@@ -46,16 +51,17 @@ button:focus {
 		}
 	}
 
-	&--gilded {
+	&--gilded:enabled {
 		background-color: $color-white;
 		border: 1px solid $color-goldenrod;
 	}
 
 	// used for "unstyling" buttons
-	&--plain {
+	&--plain:enabled {
 		background: transparent;
 		border: 0;
 	}
+
 }
 
 .onoffswitch {

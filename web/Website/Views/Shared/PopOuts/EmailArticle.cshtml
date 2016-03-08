@@ -1,5 +1,9 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.IEmailArticlePopOutViewModel
 <div class="pop-out js-pop-out__email-article">
+	<div class="pop-out__form-error">
+		<!--TODO Add error message-->
+		@Model.ArticleNumber
+	</div>
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
 
@@ -16,40 +20,72 @@
 		<p class="pop-out__details u-italic">
 			@Model.EmailFormInstructionsText
 		</p>
-		<input name="RecipientEmail"
-			   class="pop-out__input"
-			   type="text"
-			   placeholder="@Model.RecipientEmailPlaceholderText"
-			   error="@Model.InvalidEmailText">
-		<input name="SenderName"
-			   class="pop-out__input"
-			   type="text"
-			   placeholder="@Model.YourNamePlaceholderText"
-		       error="@Model.EmptyFieldText"
-               value="@Model.AuthUserName">
-		<input name="SenderEmail"
-			   class="pop-out__input"
-			   type="text"
-			   placeholder="@Model.YourEmailPlaceholderText"
-		       error="@Model.EmptyFieldText"
-               value="@Model.AuthUserEmail">
-		<p>
-			<span class="pop-out__run-in">@Model.SubjectText</span> @Model.ArticleTitle
-			<input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
-		</p>
-		<p><span class="pop-out__run-in">@Model.AddMessageText</span></p>
-		<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
 
-		<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
+		<form 	class="form-email-article"
+				data-on-submit="/Account/api/EmailFriend/Email/">
 
-		<div class="pop-out__form-actions-wrapper">
-			<div>
-				<a href="#">@Model.CancelText</a>
+			<p class="	pop-out__error
+						js-form-error
+						js-form-error-general">
+				Please make sure all fields are completed.
+			</p>
+
+			<p class="	pop-out__error
+						js-form-error
+						js-form-error-failType">
+				@Model.InvalidEmailText
+			</p>
+			<input	name="RecipientEmail"
+				   	class="pop-out__input"
+				   	type="text"
+				   	placeholder="@Model.RecipientEmailPlaceholderText">
+
+			<p class="	pop-out__error
+						js-form-error
+						js-form-error-failType">
+				@Model.EmptyFieldText
+			</p>
+			<input 	name="SenderName"
+				   	class="pop-out__input"
+				   	type="text"
+				   	placeholder="@Model.YourNamePlaceholderText"
+	               	value="@Model.AuthUserName">
+
+
+			<p class="	pop-out__error
+						js-form-error
+						js-form-error-failType">
+				@Model.EmptyFieldText
+			</p>
+			<input 	name="SenderEmail"
+				   	class="pop-out__input"
+				   	type="text"
+				   	placeholder="@Model.YourEmailPlaceholderText"
+	               	value="@Model.AuthUserEmail">
+
+			<p>
+				<span class="pop-out__run-in">@Model.SubjectText</span> @Model.ArticleTitle
+				<input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
+			</p>
+
+			<p>
+				<span class="pop-out__run-in">@Model.AddMessageText</span>
+			</p>
+
+			<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
+
+			<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
+
+			<div class="pop-out__form-actions-wrapper">
+				<div>
+					<a href="#">@Model.CancelText</a>
+				</div>
+				<div class="sign-in__submit-wrapper">
+					<button type="submit" class="button--filled">@Model.SendText</button>
+				</div>
 			</div>
-			<div class="sign-in__submit-wrapper">
-				<button class="button--filled sign-in__submit" data-email-friend="/Account/api/EmailFriend/Email/">@Model.SendText</button>
-			</div>
-		</div>
+		</form>
+
 		<p class="pop-out__details u-italic">
 			@Html.Raw(Model.NoticeText)
 		</p>
