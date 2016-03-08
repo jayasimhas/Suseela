@@ -163,6 +163,7 @@ $(document).ready(function() {
 	var registerController = new RegisterController();
 
 	registerController.addRegisterUserControl('.js-register-user-submit');
+	registerController.addRegisterUserControl('.js-register-user-optins-submit');
 
     svg4everybody();
 

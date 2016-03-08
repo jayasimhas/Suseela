@@ -70,13 +70,10 @@
 	    </div>
 
 	    <div class="page-registration__submit-wrapper">
-	        <button type="submit" class="button--filled js-register-user-submit" data-register-user-url="/Account/api/RegistrationApi/Register/">@Model.SubmitText</button>
+	        <button type="submit" class="button--filled js-register-user-submit" data-register-user-url="/Account/api/RegistrationApi/Register/" data-next-step-url="@Model.NextStepUrl">@Model.SubmitText</button>
 	        <p><em>@Model.NewsletterSignUpText</em></p>
 	    </div>
 
 		</form>
-
-		<p style="display: none;" class="js-register-user-success">Account successfull registered (-> redirect to thank you).</p>
-
 	</div>
 </div>

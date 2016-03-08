@@ -26,7 +26,7 @@ content-length: 16
 ----version----
 language: en
 version: 1
-revision: d7c4e007-8f60-44a1-ba5b-7cf6788302fe
+revision: eed991d8-98a0-4aef-bc5c-d724ee48ffca
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -169,6 +169,13 @@ content-length: 38
 
 {39611772-CD97-4610-BB55-F96BE4C1F540}
 ----field----
+field: {D40EB7E0-99EF-468F-8491-4F0C5BCAC75E}
+name: Cookie Policy
+key: cookie policy
+content-length: 432
+
+In order to deliver a personalized, responsive service and to improve the site, we remember and store information about how you use it. This is done using simple text files called cookies which site on your computer. By continuing to use this site and access its features, you are consenting to our use of cookies. To find out more about the way Informa uses cookies please go to our <a href="/cookie-policy">Cookie Policy</a> page.
+----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
@@ -188,14 +195,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d7c4e007-8f60-44a1-ba5b-7cf6788302fe
+eed991d8-98a0-4aef-bc5c-d724ee48ffca
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T034451Z
+20160308T155909Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
