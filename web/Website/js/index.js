@@ -296,6 +296,7 @@ $(document).ready(function() {
 		}
 	});
 
+	//var validateRegistrationForm = FormValidation('.registration-form');
 
 
 	// Twitter sharing JS
