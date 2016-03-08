@@ -5,6 +5,7 @@ import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
 import LoginController from './login-controller';
+import EmailFriendController from './email-friend-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
@@ -66,6 +67,12 @@ var showForgotPassSuccess = function() {
 
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
+	$('.pop-out__form-error').show();
+	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
+};
+
+// Toggle the sign-in error message displayed to a user
+var toggleEmailFriendError = function() {
 	$('.pop-out__form-error').show();
 	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
@@ -149,6 +156,15 @@ $(document).ready(function() {
 		}
 	);
 
+	var emailFriend = new EmailFriendController();
+
+	emailFriend.addControl(
+		'.email-friend__submit',
+		null,
+		function(triggerElement) {
+			toggleEmailFriendError();
+		}
+	);
 	var resetPassword = new ResetPasswordController();
 
 	resetPassword.addRequestControl(

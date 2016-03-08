@@ -1,5 +1,9 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.IEmailArticlePopOutViewModel
 <div class="pop-out js-pop-out__email-article">
+	<div class="pop-out__form-error">
+		<!--TODO Add error message-->
+		@Model.ArticleNumber
+	</div>
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
 
@@ -17,22 +21,22 @@
 			@Model.EmailFormInstructionsText
 		</p>
 		<input name="RecipientEmail"
-			   class="pop-out__input"
-			   type="text"
-			   placeholder="@Model.RecipientEmailPlaceholderText"
-			   error="@Model.InvalidEmailText">
+		       class="pop-out__input"
+		       type="text"
+		       placeholder="@Model.RecipientEmailPlaceholderText"
+		       error="@Model.InvalidEmailText">
 		<input name="SenderName"
-			   class="pop-out__input"
-			   type="text"
-			   placeholder="@Model.YourNamePlaceholderText"
+		       class="pop-out__input"
+		       type="text"
+		       placeholder="@Model.YourNamePlaceholderText"
 		       error="@Model.EmptyFieldText"
-               value="@Model.AuthUserName">
+		       value="@Model.AuthUserName">
 		<input name="SenderEmail"
-			   class="pop-out__input"
-			   type="text"
-			   placeholder="@Model.YourEmailPlaceholderText"
+		       class="pop-out__input"
+		       type="text"
+		       placeholder="@Model.YourEmailPlaceholderText"
 		       error="@Model.EmptyFieldText"
-               value="@Model.AuthUserEmail">
+		       value="@Model.AuthUserEmail">
 		<p>
 			<span class="pop-out__run-in">@Model.SubjectText</span> @Model.ArticleTitle
 			<input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
@@ -47,7 +51,7 @@
 				<a href="#">@Model.CancelText</a>
 			</div>
 			<div class="sign-in__submit-wrapper">
-				<button class="button--filled sign-in__submit" data-email-friend="/Account/api/EmailFriend/Email/">@Model.SendText</button>
+				<button class="button--filled email-friend__submit" data-email-friend="/Account/api/EmailFriend/Email/">@Model.SendText</button>
 			</div>
 		</div>
 		<p class="pop-out__details u-italic">
