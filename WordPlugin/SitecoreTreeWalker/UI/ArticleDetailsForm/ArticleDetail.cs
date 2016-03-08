@@ -709,10 +709,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
 		private void uxSaveMetadata_Click(object sender, EventArgs e)
 		{
-			var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
-
-			// Checking for Taxonomy is the workflow state is final
-			if (command.SendsToFinal && articleDetailsPageSelector.GetTaxonomyCount() < 1)
+			if (articleDetailsPageSelector.GetTaxonomyCount() < 1)
 			{
 				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return;
@@ -720,7 +717,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			var articleDate = articleDetailsPageSelector.GetDate();
 			if (articleDate < DateTime.Now)
 			{
-
+				var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
 				var result = WantsToSetArticleDateToNow(command);
 				if (result == DialogResult.Yes)
 				{
@@ -790,10 +787,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
 		private void uxSaveAndTransfer_Click(object sender, EventArgs e)
 		{
-			var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
-
-			// Checking for Taxonomy is the workflow state is final
-			if (command.SendsToFinal && articleDetailsPageSelector.GetTaxonomyCount() < 1)
+			if (articleDetailsPageSelector.GetTaxonomyCount() < 1)
 			{
 				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return;
@@ -801,6 +795,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			var articleDate = articleDetailsPageSelector.GetDate();
 			if (articleDate < DateTime.Now)
 			{
+				var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
 				var result = WantsToSetArticleDateToNow(command);
 				if (result == DialogResult.Yes)
 				{

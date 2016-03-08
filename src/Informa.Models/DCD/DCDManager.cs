@@ -19,17 +19,6 @@ namespace Informa.Model.DCD
 
             return dbDeal;
         }
-        public Company GetCompanyByRecordNumber(string recordNumber)
-        {
-            Company company = null;
-            using (DCDContext dContext = new DCDContext())
-            {
-                company = dContext.Companies.Where(deal => deal.RecordNumber.Trim() == recordNumber.Trim()).FirstOrDefault();
-            }
-
-            return company;
-        }
-
 
         public List<Company> GetAllCompanies()
         {
@@ -53,5 +42,15 @@ namespace Informa.Model.DCD
             return lstRelatedComp;
         }
 
+        public Company GetCompanyByRecordNumber(string recordNumber)
+        {
+            Company company = null;
+            using (DCDContext dContext = new DCDContext())
+            {
+                company = dContext.Companies.Where(deal => deal.RecordNumber.Trim() == recordNumber.Trim()).FirstOrDefault();
+            }
+
+            return company;
+        }
     }
 }

@@ -19,18 +19,15 @@ namespace Informa.Library.Utilities.References
 
 		public static string ScripRootNode = "{3818C47E-4B75-4305-8F01-AB994150A1B0}";
 		public static string MSWordDocumentRootNode = "{ FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}";
-
-		public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
-
 		public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
 		public static Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
 		{
 			{ new Guid(ScripRootNode), "SC"},
 		};
 
-		public static Dictionary<string, string> PublicationPrefixByName = new Dictionary<string, string>
-		{
-			{ScripPublicationName, "SC" }
-		};
+        public static Dictionary<string, string> PublicationPrefixByName = new Dictionary<string, string>
+        {
+            {ScripPublicationName, "SC" }
+        };
 	}
 }

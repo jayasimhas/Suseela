@@ -12,8 +12,15 @@ templatekey: Search Listing
 ----version----
 language: en
 version: 1
-revision: 50c77d53-efeb-4c70-82a7-89f239e5fb36
+revision: fa73d6c6-f93a-4e52-b926-d84bb0b9652f
 
+----field----
+field: {040C0194-6C6E-43FD-AC5C-0AA3DAA35A87}
+name: Default Sort Order
+key: default sort order
+content-length: 38
+
+{8972FF22-2E0A-49C5-8698-4FEAE66AAB11}
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -41,18 +48,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-50c77d53-efeb-4c70-82a7-89f239e5fb36
+fa73d6c6-f93a-4e52-b926-d84bb0b9652f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 35
 
-20150409T162604:635641935643301547Z
+20150501T145742:635660890622298054Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\csmith

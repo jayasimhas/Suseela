@@ -8,8 +8,6 @@ namespace Informa.Library.Utilities.References
 
         Guid DCDConfigurationItem { get; }
 
-        Guid SiteConfig { get; }
-
         // Templates
         Guid FolderTemplate { get; }
 
