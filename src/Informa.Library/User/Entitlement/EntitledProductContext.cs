@@ -7,19 +7,19 @@ namespace Informa.Library.User.Entitlement
 {
     [AutowireService(LifetimeScope.Default)]
     public class EntitledProductContext : IEntitledProductContext
-    {   
-        //private readonly IUserSubscriptionContext UserSubscriptionContext;
-        //private readonly IAuthenticatedIPContext AuthenticatedIPContext;
-        //private readonly IEntitlementContext EntitlementContext;
-        public EntitledProductContext()
-            //IUserSubscriptionContext userSubscriptionContext,
-            //IAuthenticatedIPContext authenticatedIpContext,
-            //IEntitlementContext entitlementContext)
+    {
+        private readonly IUserSubscriptionContext UserSubscriptionContext;
+        private readonly IAuthenticatedIPContext AuthenticatedIPContext;
+        private readonly IEntitlementContext EntitlementContext;
+        public EntitledProductContext(
+            IUserSubscriptionContext userSubscriptionContext,
+            IAuthenticatedIPContext authenticatedIpContext,
+            IEntitlementContext entitlementContext)
         {                                                         
-            //UserSubscriptionContext = userSubscriptionContext;
-            //AuthenticatedIPContext = authenticatedIpContext;
-            //EntitlementContext = entitlementContext;
-        }
+            UserSubscriptionContext = userSubscriptionContext;
+            AuthenticatedIPContext = authenticatedIpContext;
+            EntitlementContext = entitlementContext;
+    }
 
         #region Implementation of IEntitledProductContext
 
@@ -31,17 +31,17 @@ namespace Informa.Library.User.Entitlement
             if (productItem == null)
                 return EntitledAccessLevel.UnEntitled;
 
-            //if( UserSubscriptionContext.IsSubscribed && EntitlementContext.IsEntitled(entitlement))
-            //    return EntitledAccessLevel.Individual;
+            if (UserSubscriptionContext.IsSubscribed && EntitlementContext.IsEntitled(entitlement))
+                return EntitledAccessLevel.Individual;
 
-            //if(EntitlementContext.IsEntitled(entitlement))
-            //    return EntitledAccessLevel.Individual;
-            //    return EntitledAccessLevel.Corporate;
+            if (EntitlementContext.IsEntitled(entitlement))
+                return EntitledAccessLevel.Individual;
+            //return EntitledAccessLevel.Corporate;
 
 
 
-            //if (AuthenticatedIPContext.IsEntitled(entitlement))
-            //    return EntitledAccessLevel.TransparentIP;
+            if (AuthenticatedIPContext.IsEntitled(entitlement))
+                return EntitledAccessLevel.TransparentIP;
 
             //TODO: Free Trial?
 

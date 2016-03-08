@@ -6,7 +6,7 @@ namespace Informa.Library.User.Entitlement
     {
         public ScripEntitlement(IEntitledProductItem entitledItem)
         {
-            ProductCode = "Scrip";
+            ProductCode = "SCRIP";
         }
     }
 

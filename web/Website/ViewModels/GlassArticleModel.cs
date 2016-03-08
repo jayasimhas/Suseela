@@ -21,15 +21,14 @@ using Sitecore.Web;
 
 namespace Informa.Web.ViewModels
 {
-    public class GlassArticleModel : GlassViewModel<IArticle>, IArticleModel
+    public class GlassArticleModel : EntitledViewModel<IArticle>, IArticleModel
     {
         public ISiteRootContext SiterootContext { get; set; }
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
-        protected readonly IArticleComponentFactory ArticleComponentFactory;
-        protected readonly IEntitledProductContext EntitledProductContext;  
+        protected readonly IArticleComponentFactory ArticleComponentFactory;    
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -38,15 +37,14 @@ namespace Informa.Web.ViewModels
             IArticleSearch searcher,
             ISitecoreContext context,
             IArticleComponentFactory articleComponentFactory,
-            IEntitledProductContext entitledProductContext)
+            IEntitledProductContext entitledProductContext) : base(entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             Searcher = searcher;
             SitecoreContext = context;
-            ArticleComponentFactory = articleComponentFactory;
-            EntitledProductContext = entitledProductContext;
+            ArticleComponentFactory = articleComponentFactory;      
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -62,7 +60,7 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                string body = GlassModel.Body;
+                string body = (GlassModel.Free_Article || AccessLevel != EntitledAccessLevel.UnEntitled) ? GlassModel.Body : "TEMPORARY UNENTITLED\n\n" + GlassModel.Summary;
 
                 //Replace any DCD related tokens with proper names
                 body = DCDTokenMatchers.ProcessDCDTokens(body);
@@ -177,7 +175,7 @@ namespace Informa.Web.ViewModels
 
         #region Overrides of EntitledViewModel<IArticle>
 
-        public EntitledAccessLevel AccessLevel => GlassModel is IEntitledProductItem ? EntitledProductContext.GetAccessLevel((IEntitledProductItem)GlassModel) : EntitledAccessLevel.Free;
+        //public EntitledAccessLevel AccessLevel => GlassModel is IEntitledProductItem ? EntitledProductContext.GetAccessLevel((IEntitledProductItem)GlassModel) : EntitledAccessLevel.Free;
 
         #endregion
     }

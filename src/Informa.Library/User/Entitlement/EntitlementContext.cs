@@ -24,12 +24,20 @@ namespace Informa.Library.User.Entitlement
         {
             get
             {
+                //var spoofed = Sitecore.Context.User.Profile.GetCustomProperty("spoof" + nameof(Entitlement));
+                //if (!string.IsNullOrEmpty(spoofed))
+                //    return
+                //        new List<IEntitlement>(SitecoreUserContext.User.Profile.GetCustomProperty("spoof" + nameof(Entitlement))
+                //            .Split(',')
+                //            .Select(x => new Entitlement {ProductCode = x}));
+
+
                 var entitlements =
                     new List<IEntitlement>(SitecoreUserContext.User.Profile.GetCustomProperty(nameof(Entitlement))
                         .Split(',')
                         .Select(x => new Entitlement {ProductCode = x}));
 
-                if(Entitlements.Any())
+                if(entitlements.Any())
                     return entitlements;
 
                 return AuthenticatedIPContext.Entitlements.ToList();
@@ -38,7 +46,7 @@ namespace Informa.Library.User.Entitlement
 
         public bool IsEntitled(IEntitlement entitlement)
         {
-            return Entitlements.Any(x => x.ProductCode == entitlement.ProductCode);
+            return SitecoreUserContext.User.IsAdministrator || Entitlements.Any(x => x.ProductCode == entitlement.ProductCode);
         }
 
         #endregion

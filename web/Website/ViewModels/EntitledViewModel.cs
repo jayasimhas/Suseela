@@ -9,10 +9,9 @@ namespace Informa.Web.ViewModels
     {   
         protected readonly IEntitledProductContext EntitledProductContext;
 
-        public virtual EntitledAccessLevel AccessLevel
-            => EntitledProductContext.GetAccessLevel(GlassModel);
+        public EntitledAccessLevel AccessLevel => EntitledProductContext.GetAccessLevel(GlassModel);
 
-        public EntitledViewModel(IEntitledProductContext entitledProductContext)
+        protected EntitledViewModel(IEntitledProductContext entitledProductContext)
         {
             EntitledProductContext = entitledProductContext;
         } 
