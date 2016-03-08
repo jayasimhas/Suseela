@@ -1,4 +1,6 @@
-﻿using Informa.Library.Globalization;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.Globalization;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Web;
@@ -8,16 +10,39 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 {
 	public class RegisterUserViewModel : GlassViewModel<IRegistration_Page>
 	{
+		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly ITextTranslator TextTranslator;
 
 		public RegisterUserViewModel(
+			ISitecoreContext sitecoreContext,
 			ITextTranslator textTranslator)
 		{
+			SitecoreContext = sitecoreContext;
 			TextTranslator = textTranslator;
 		}
 
 		public string Title => GlassModel?.Title;
+		public string SubTitle => GlassModel?.Sub_Title;
 		public IHtmlString Body => new MvcHtmlString(GlassModel?.Body);
+		public string NextStepUrl
+		{
+			get
+			{
+				if (GlassModel == null)
+				{
+					return string.Empty;
+				}
+
+				var nextStepItem = SitecoreContext.GetItem<I___BasePage>(GlassModel.Next_Step_Page);
+
+				if (nextStepItem == null)
+				{
+					return string.Empty;
+				}
+
+				return nextStepItem == null ? string.Empty : nextStepItem._Url;
+			}
+		}
         public string RequiedFieldsText => TextTranslator.Translate("Registration.RequiredFields");
 		public string UsernameLabelText => TextTranslator.Translate("Registration.UsernameLabel");
 		public string UsernamePlaceholderText => TextTranslator.Translate("Registration.UsernamePlaceholder");
