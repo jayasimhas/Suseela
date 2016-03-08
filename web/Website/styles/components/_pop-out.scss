@@ -89,6 +89,12 @@
         }
     }
 
+    &__error {
+        @extend .error-text;
+        display: none;
+        margin-bottom: 0.5rem;
+    }
+
     // Bottom section of pop-out form, below input fields
     // Organizes common actions like "Forgot Password", "Remember Me", etc.
     &__form-actions {

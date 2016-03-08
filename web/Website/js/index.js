@@ -160,10 +160,12 @@ $(document).ready(function() {
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
 
+
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
 
-
+	var emailArticleController = new FormController();
+	emailArticleController.watchForm('.form-email-article');
 
     svg4everybody();
 

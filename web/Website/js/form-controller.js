@@ -7,8 +7,9 @@ function formController(requestVerificationToken) {
 
 		$(formSubmit).on('click', (event) => {
 
-            // Reset any visible errors
-            this.hideErrors(form);
+			event.preventDefault(); // Prevent form submitting
+
+            this.hideErrors(form); // Reset any visible errors
 
             // Prevent user from re-submitting form
 			$(formSubmit).attr('disabled', 'disabled');
@@ -77,6 +78,7 @@ function formController(requestVerificationToken) {
                 complete: function() {
                     $(formSubmit).removeAttr('disabled');
                 }
+
 			});
 		});
 	};
