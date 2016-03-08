@@ -16,9 +16,12 @@ using Sitecore.SecurityModel;
 using Sitecore.Workflows;
 using static System.String;
 using File = System.IO.File;
-using Informa.Library.Utilities.References;
 using PluginModels;
 using Informa.Models.DCD;
+using Sitecore;
+using Sitecore.Mvc.Extensions;
+using Sitecore.Shell.Applications.WebEdit.Commands;
+using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Web.Controllers
 {
@@ -170,7 +173,7 @@ namespace Informa.Web.Controllers
 						// Doing this twice is intentional: when we do it once, the workflow field gets set to the empty string.
 						//  I don't know why, but it does. Doing this twice sets it properly. Doing it not at all causes the 
 						//  workflow field to be set to the empty string when leaving the edit context.
-						
+
 						newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
 						newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
 
@@ -203,6 +206,30 @@ namespace Informa.Web.Controllers
 			//  Notifying the Editors when stories are edited after pushlished 
 			if (articleStruct.IsPublished)
 			{
+				// Setting the workflow to "Edit After Publish".
+				try
+				{
+					var newVersionItem = _sitecoreMasterService.GetItem<Item>(newVersion._Id);
+					newVersionItem.Locking.Unlock();
+					using (new EditContext(newVersionItem))
+					{
+						newVersionItem[FieldIDs.WorkflowState] = Constants.EditAfterPublishWorkflowCommand;
+					}
+
+					if (loggedIn)
+					{
+						_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
+					}
+				}
+				catch (Exception ex)
+				{
+					var ax =
+						new ApplicationException(
+							"Workflow: Error with changing the workflow to Edit After Publish [" + article.Article_Number + "]!", ex);
+					throw ax;
+				}
+
+
 				_emailUtil.EditAfterPublishSendNotification(articleStruct);
 			}
 			return newVersion;
