@@ -1,4 +1,5 @@
-﻿using Glass.Mapper.Sc;
+﻿using System;
+using Glass.Mapper.Sc;
 using Informa.Library.User.Authentication;
 using Informa.Library.Corporate;
 using Informa.Library.Globalization;
@@ -49,7 +50,7 @@ namespace Informa.Web.ViewModels
 	    public string CookiePolicyText => TextTranslator.Translate("Global.CookiePolicy");
 		public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
 		public string MyAccountLinkText => TextTranslator.Translate("Header.MyAccount");
-	    public string MyAccountLink => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.My_Account_Page)._Url;
+	    public string MyAccountLink => (!Guid.Empty.Equals(SiteRootContext.Item.My_Account_Page)) ? SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.My_Account_Page)._Url : string.Empty;
         public string SignOutLinkText => TextTranslator.Translate("Header.SignOut");
 		public string RegisterLinkText => TextTranslator.Translate("Header.RegisterLink");
 		public string SignInText => TextTranslator.Translate("Header.SignIn");
