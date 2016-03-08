@@ -57,20 +57,19 @@
                 text-decoration: none;
             }
         }
+    }
 
-        &__icon-group {
-            display: inline-block;
-            vertical-align: bottom;
-            margin-left: 5px;
-        }
+    &__icon-group {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-left: 5px;
+    }
 
-        .icon-triangle {
-            @include svg-fill($informa-light-gray-d);
-            display: block;
-            width: 12px;
-            height: 11px;
-        }
-
+    .icon-triangle {
+        @include svg-fill($informa-light-gray-d);
+        display: block;
+        width: 12px;
+        height: 11px;
     }
 
 }
