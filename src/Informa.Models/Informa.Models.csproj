@@ -120,6 +120,7 @@
     <Compile Include="GlassModels\I___BasePage.cs" />
     <Compile Include="GlassModels\I___BaseTaxonomy.cs" />
     <Compile Include="GlassModels\TaxonomyMap.cs" />
+    <Compile Include="ISearch.cs" />
     <Compile Include="ISearch_Listing__Raw.cs" />
     <Compile Include="ISearch_Refinements__Raw.cs" />
     <Compile Include="I___BaseItem.cs" />
