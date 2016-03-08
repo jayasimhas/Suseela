@@ -16,7 +16,7 @@ namespace Informa.Library.DCD.XMLImporting
     {
         private string _documentPath { get; set; }
         private string _fileName { get; set; }
-        private ImportLog _importingLogRecord { get; set; }
+        private ImportLog _importingLogRecord;
         private StringBuilder _importLogNotes;
         private bool _hasSomeFailures;
 
@@ -49,7 +49,7 @@ namespace Informa.Library.DCD.XMLImporting
         public bool ProcessFile()
         {
             //Initialize the database log entry for this import
-            _importingLogRecord = dcContext.CreateImportLogEntry(DateTime.Now, _fileName);
+            dcContext.CreateImportLogEntry(DateTime.Now, _fileName, out _importingLogRecord);
 
             if (_importingLogRecord == null)
             {
@@ -271,6 +271,7 @@ namespace Informa.Library.DCD.XMLImporting
             _importingLogRecord.ImportEnd = DateTime.Now;
             _importingLogRecord.Result = (_hasSomeFailures) ? ImportResult.PartialSuccess.ToString() : ImportResult.Success.ToString();
             _importingLogRecord.Notes = _importLogNotes.ToString();
+
             dcContext.UpdateImportLogEntry(_importingLogRecord);
 
             return true;

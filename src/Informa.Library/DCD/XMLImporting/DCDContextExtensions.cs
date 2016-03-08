@@ -123,11 +123,11 @@ namespace Informa.Library.DCD.XMLImporting
             return null;
         }
 
-        public static ImportLog CreateImportLogEntry(this DCDContext dc, DateTime start, string fileName)
+        public static void CreateImportLogEntry(this DCDContext dc, DateTime start, string fileName, out ImportLog log)
         {
             try
             {
-                ImportLog log = new ImportLog();
+                log = new ImportLog();
                 log.ImportStart = start;
                 log.ImportEnd = start;
                 log.Result = ImportResult.InProgress.ToString();
@@ -135,23 +135,32 @@ namespace Informa.Library.DCD.XMLImporting
 
                 dc.ImportLogs.InsertOnSubmit(log);
                 dc.SubmitChanges();
-                return log;
+                //return log;
             }
             catch (Exception ex)
             {
                 DCDImportLogger.Error("Error writing log message to database", ex);
+                log = null;
             }
-            return null;
+            //return null;
         }
 
         public static void UpdateImportLogEntry(this DCDContext dc, ImportLog log)
         {
             try
             {
-                if (!dc.ImportLogs.Any(l => l.Id == log.Id))
-                {
+                var existingLog = dc.ImportLogs.FirstOrDefault(l => l.Id == log.Id);
+                if (existingLog == null)
                     dc.ImportLogs.InsertOnSubmit(log);
+                else
+                {
+                    existingLog.FileName = log.FileName;
+                    existingLog.ImportEnd = log.ImportEnd;
+                    existingLog.ImportStart = log.ImportStart;
+                    existingLog.Notes = log.Notes;
+                    existingLog.Result = log.Result;
                 }
+
                 dc.SubmitChanges();
             }
             catch (Exception ex)
