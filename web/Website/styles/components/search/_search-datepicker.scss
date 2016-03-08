@@ -121,8 +121,15 @@
                                         background-color:  #ffffff;
                                     }
                                     // each date number
-                                    span.text-muted {
-                                        color: #878a8b;
+                                    span {
+                                        @include textMix('Roboto', 15px, 400);
+                                        line-height: 31.8px;
+                                        color:  #37373d;
+                                        text-align: center;
+
+                                        &.text-muted {
+                                            color: #878a8b;
+                                        }
                                     }
 
                                 }
