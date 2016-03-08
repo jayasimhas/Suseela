@@ -142,16 +142,16 @@
           <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
           <ul class="facets__section-footer">
             <li class="facets__field-group facets__field-group--from input-group" ng-show="$last">
-              <label for="date-picker-from" ng-click="open($event)">From</label>
+              <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
               <input type="text" 
                name="dtFrom" 
                ng-model="dtFrom"  
                id="date-picker-from" 
-               datepicker-popup="{{format}}" 
+               datepicker-popup="shortDate" 
                is-open="datepickers.dtFrom" 
-               datepicker-options="{showWeeks:false, formatDayHeader:'EEE', formatDay:'d'}" 
-               popup-placement="top-left" 
-               uib-datepicker-popup="dd/mm/yyyy" 
+               datepicker-options="dateOptions" 
+               popup-placement="auto right-top" 
+               uib-datepicker-popup="shortDay" 
                date-disabled="disabled(date, mode)" 
                ng-required="false" 
                close-text="Close" 
@@ -166,21 +166,19 @@
               </span>
             </li>
             <li class="facets__field-group facets__field-group--to input-group" ng-show="$last">
-              <label for="date-picker-to" ng-click="open($event)">To</label>
+              <label for="date-picker-to" ng-click="open($event,'dtTo')">To</label>
               <input type="text" 
                name="dtTo"
                ng-model="dtTo" 
                id="date-picker-from" 
-               datepicker-popup="{{format}}" 
+               datepicker-popup="shortDate" 
                is-open="datepickers.dtTo" 
-               min-date="minDate" 
-               max-date="'2015-06-22'"
-               datepicker-options="{showWeeks:false, formatDayHeader:'EEE', formatDay:'d'}" 
-               popup-placement="top-left" 
-               uib-datepicker-popup="dd/mm/yyyy" 
+               datepicker-options="dateOptions" 
+               popup-placement="auto right-top" 
                date-disabled="disabled(date, mode)" 
                ng-required="false" 
                close-text="Close" 
+               show-button-bar="true"
                readonly
                ng-click="open($event,'dtTo')"
                />

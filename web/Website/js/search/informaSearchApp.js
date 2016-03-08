@@ -61,6 +61,14 @@
         // $scope.dtTo = null;
       };
 
+      $scope.dateOptions = {
+        // dateDisabled: disabled,
+        showWeeks: false, 
+        formatDayHeader: 'EEE', 
+        formatDay: 'd',
+        startingDay: 1
+      };
+
       // open min-cal
       $scope.open = function($event, which) {
         $event.preventDefault();
@@ -68,12 +76,7 @@
 
         $scope.datepickers[which] = true;
       };
-      
-      // handle formats
-      $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-      
-      // assign custom format
-      $scope.format = $scope.formats[0];
+
       
     }]);
 
