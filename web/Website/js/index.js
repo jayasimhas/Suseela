@@ -7,7 +7,6 @@ import SearchScript from './search-page.js';
 import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
-import FormController from './form-controller';
 
 
 /* Toggle menu categories */
@@ -33,7 +32,7 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	thisBanner.removeClass('is-visible');
 	console.log(thisBanner);
 
-	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
+	var dismissedBanners = Cookies.get('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
@@ -160,10 +159,9 @@ $(document).ready(function() {
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
 
-	var userRegistrationController = new FormController();
-	userRegistrationController.watchForm('.form-registration');
+	var registerController = new RegisterController();
 
-
+	registerController.addRegisterUserControl('.js-register-user-submit');
 
     svg4everybody();
 
@@ -203,21 +201,21 @@ $(document).ready(function() {
 	});
 
 	// For each article table, clone and append "view full table" markup
-	$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
- 	    var mediaId = $(e).data("mediaid");
- 	    var tableLink = $('.js-mobile-table-template .article-table').clone();
+	$('.article-body-content table').forEach(function(e) {
+	    var mediaId = $(e).data("mediaid");
+	    var tableLink = $('.js-mobile-table-template .article-table').clone();
 
 	    var url = window.location.href;
-    	url.replace("#", "");
+	    url.replace("#", "");
 	    if (url.indexOf("?") < 0)
 	        url += "?";
- 	    else
- 	        url += "&";
+	    else
+	        url += "&";
 
- 	    url+= "mobilemedia=true&selectedid=" + mediaId;
+	    url+= "mobilemedia=true&selectedid=" + mediaId;
 
- 	    $(tableLink).find('a').attr("href", url);
- 		$(e).after(tableLink);
+	    $(tableLink).find('a').attr("href", url);
+		$(e).after(tableLink);
 	});
 
 	// When DOM loads, render the appropriate iFrame components
@@ -296,6 +294,7 @@ $(document).ready(function() {
 			$('.general-header__navigation-scroller--right').removeClass('is-visible');
 		}
 	});
+
 
 
 	// Twitter sharing JS

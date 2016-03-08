@@ -50,7 +50,7 @@
                     <svg class="header__icons icon-my-account">
                         <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
                     </svg>
-                    <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
+                    <span class="header-account-access__label"><a href="#">@Model.MyAccountLinkText</a>@*@Html.ActionLink(Model.MyAccountLinkText, "Manage", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })*@</span>
                 </div>
                 <div class="header-account-access__sign-in-out">
                     <svg class="header__icons icon-sign-out">

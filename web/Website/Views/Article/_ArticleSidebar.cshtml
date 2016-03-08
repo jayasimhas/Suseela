@@ -5,7 +5,7 @@
     <span class="article-sidebar__byline">by @string.Join(", ", Model.ListableAuthors.Select(x => x.LinkableText))</span>
     <time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 
-    @Html.Raw(Model.TruncateArticle(Model.ListableSummary, 60))
+    <p>@Html.Raw(Model.ListableSummary)</p>
     
     <a class="article-sidebar__read-more" href="@Model.LinkableUrl">Read the full article here </a>
 </aside>
