@@ -1,4 +1,9 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Informa.Library.User.Entitlement;
+using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Security.Authentication;
 
 namespace Informa.Library.User.Authentication
@@ -8,13 +13,16 @@ namespace Informa.Library.User.Authentication
 	{
 		protected IAuthenticateUser AuthenticateUser;
 		protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
+	    protected readonly IGetUserEntitlements GetUserEntitlements;
 
 		public LoginWebUser(
 			IAuthenticateUser authenticateUser,
-			ISitecoreVirtualUsernameFactory virtualUsernameFactory)
+			ISitecoreVirtualUsernameFactory virtualUsernameFactory,
+            IGetUserEntitlements getUserEntitlements)
 		{
 			AuthenticateUser = authenticateUser;
 			VirtualUsernameFactory = virtualUsernameFactory;
+		    GetUserEntitlements = getUserEntitlements;
 		}
 
 		public ILoginWebUserResult Login(string username, string password, bool persist)
@@ -32,6 +40,12 @@ namespace Informa.Library.User.Authentication
 				sitecoreVirtualUser.Profile.Email = authenticatedUser.Email;
 				sitecoreVirtualUser.Profile.Name = authenticatedUser.Name;
 
+
+			    var entitlements = GetUserEntitlements.GetEntitlements(username, GetIPAddress()) ?? new List<IEntitlement>();                                           
+			    sitecoreVirtualUser.Profile.SetCustomProperty(nameof(Entitlement.Entitlement), string.Join(",", entitlements.Select(x => x.ProductCode)));
+
+                sitecoreVirtualUser.Profile.Save();
+
 				AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
 			}
 
@@ -42,5 +56,16 @@ namespace Informa.Library.User.Authentication
 				User = authenticatedUser
 			};
 		}
-	}
+
+        public static String GetIPAddress()
+        {
+            String ip =
+                HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if (string.IsNullOrEmpty(ip))
+                return HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+            
+            return ip.Split(',').FirstOrDefault();
+        }                                          
+    }
 }

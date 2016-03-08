@@ -20,12 +20,12 @@ using Sitecore.Globalization;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
-	public partial interface IArticle : IPublicationChild
+	public partial interface IArticle : IPublicationChild, IEntitledProductItem
 	{
 		bool IsPublished { get; set; }
 	}
 
-	public class ArticleMap : SitecoreGlassMap<IPublicationChild>
+    public class ArticleMap : SitecoreGlassMap<IPublicationChild>
 	{
 		public override void Configure()
 		{
