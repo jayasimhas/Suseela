@@ -31,7 +31,11 @@ function loginController(requestVerificationToken) {
 					data: inputData,
 					context: this,
 					success: function (response) {
-						if (response.success) {
+						if (response.success) {							
+							if (successCallback) {
+								successCallback(triggerElement);
+							}
+
 							var nextStepUrl = $(triggerElement).data('next-step-url');
 
 							if (nextStepUrl) {
@@ -39,10 +43,6 @@ function loginController(requestVerificationToken) {
 							}
 
 							this.showSuccessMessage(triggerElement);
-							
-							if (successCallback) {
-								successCallback(triggerElement);
-							}
 						}
 						else {
 							$(triggerElement).removeAttr('disabled');

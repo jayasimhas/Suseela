@@ -22,7 +22,7 @@ function formController(requestVerificationToken) {
                 var field = $(this);
 
 				if (field.data('checkbox-type') === 'boolean') {
-					value = field.attr('checked');
+					value = field.attr('checked') === 'checked';
 
 					if (field.data('checkbox-boolean-type') === 'reverse') {
 						value = !value;

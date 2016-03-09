@@ -660,14 +660,13 @@
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
     <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
-    <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
@@ -836,6 +835,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\form-controller.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
