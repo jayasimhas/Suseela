@@ -5,6 +5,7 @@ using Informa.Library.Services.NlmExport.Models.Front.Article;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Velir.Core.Extensions.System;
 
 namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
 {
@@ -28,7 +29,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
             var year = DateTime.UtcNow.Year.ToString();
 
             var copyright = _service.GetItem<INLM_Copyright_Statement>(_itemReferences.NlmCopyrightStatement)?.Copyright_Statement ?? string.Empty;
-            copyright = copyright.Replace(YearToken, year);
+            copyright = copyright.Replace(YearToken, year, StringComparison.InvariantCultureIgnoreCase);
 
             return new NlmArticlePermissionsModel
             {

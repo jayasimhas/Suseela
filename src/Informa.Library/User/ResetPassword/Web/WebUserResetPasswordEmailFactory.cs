@@ -60,7 +60,7 @@ namespace Informa.Library.User.ResetPassword.Web
 			resetPasswordReplacements["#Reset_Link_Text#"] = GetValue(siteRoot?.Reset_Password_Email_Link_Text, TextTranslator.Translate("Authentication.ResetPassword.Email.ResetLink"));
 			resetPasswordReplacements["#Body_Content#"] = GetValue(siteRoot?.Reset_Password_Email_Body);
 
-			resetPasswordHtml = resetPasswordHtml.ReplaceCaseInsensitive(resetPasswordReplacements);
+			resetPasswordHtml = resetPasswordHtml.ReplacePatternCaseInsensitive(resetPasswordReplacements);
 
 			var baseReplacements = new Dictionary<string, string>();
 
@@ -73,7 +73,7 @@ namespace Informa.Library.User.ResetPassword.Web
 				baseReplacements["#Last_Name#"] = userProfile.LastName;
 			}
 
-			email.Body = email.Body.ReplaceCaseInsensitive(baseReplacements);
+			email.Body = email.Body.ReplacePatternCaseInsensitive(baseReplacements);
 			email.To = emailTo;
 			email.Subject = GetValue(siteRoot?.Reset_Password_Email_Subject);
 
