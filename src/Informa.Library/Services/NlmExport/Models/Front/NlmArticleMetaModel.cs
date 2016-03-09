@@ -41,6 +41,9 @@ namespace Informa.Library.Services.NlmExport.Models.Front
         [XmlElement("permissions")]
         public NlmArticlePermissionsModel Permissions { get; set; }
 
+        [XmlElement("related-article")]
+        public List<NlmRelatedArticleModel> RelatedArticles { get; set; }
+
         [XmlElement("abstract")]
         public List<NlmArticleAbstractModel> Abstracts { get; set; }
 

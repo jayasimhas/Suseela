@@ -20,6 +20,8 @@ namespace Informa.Library.Utilities.AutoMapper.Profiles.Nlm
 
             // Article Meta
             CreateMap<ArticleItem, NlmArticleMetaModel>()
+                .ForMember(m => m.Volume, opt => opt.Ignore())
+                .ForMember(m => m.Issue, opt => opt.Ignore())
                 .ForMember(m => m.PublisherId, opt => opt.ResolveUsing<ArticlePublisherIdResolver>())
                 .ForMember(m => m.Categories, opt => opt.ResolveUsing<ArticleCategoriesResolver>())
                 .ForMember(m => m.TitleGroup, opt => opt.ResolveUsing<ArticleTitleResolver>())
@@ -27,8 +29,7 @@ namespace Informa.Library.Utilities.AutoMapper.Profiles.Nlm
                 .ForMember(m => m.PubDate, opt => opt.ResolveUsing<ArticlePubDateResolver>())
                 .ForMember(m => m.History, opt => opt.ResolveUsing<ArticleHistoryResolver>())
                 .ForMember(m => m.Permissions, opt => opt.ResolveUsing<ArticlePermissionsResolver>())
-                .ForMember(m => m.Volume, opt => opt.Ignore())
-                .ForMember(m => m.Issue, opt => opt.Ignore())
+                .ForMember(m => m.RelatedArticles, opt => opt.ResolveUsing<ArticleRelatedArticlesResolver>())
                 ;
 
             // Journal Meta

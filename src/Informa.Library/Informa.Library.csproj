@@ -316,6 +316,7 @@
     <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticlePubDateModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleTitleModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleWordCountModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmRelatedArticleModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Journal\NlmIssueNumberModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Journal\NlmJournalIdModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Journal\NlmJournalTitleModel.cs" />
@@ -627,6 +628,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePermissionsResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePubDateResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePublisherIdResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleRelatedArticlesResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\IssueNumberResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
