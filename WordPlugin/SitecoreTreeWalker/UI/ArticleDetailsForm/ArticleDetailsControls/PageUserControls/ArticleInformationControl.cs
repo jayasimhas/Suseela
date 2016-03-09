@@ -27,7 +27,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
 		private string ArticleNumber;
 
-		protected bool _isLive;
+		public bool _isLive;
 
 		public ArticleInformationControl()
 		{
