@@ -830,6 +830,7 @@
     <Content Include="default.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
     <Content Include="email\EmailFriend.html" />
+    <Content Include="email\_BaseEmail.html" />
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />

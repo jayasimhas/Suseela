@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {ABDD8A75-DCA3-4B79-9922-916DFDB77A4F}
+id: {A2F0A1FF-1D99-4D0D-AD42-1A55F9285554}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Reset Password/Reset Password Email Footer
-parent: {B80A88A1-A41A-4F3D-8677-F8801A75B8C5}
-name: Reset Password Email Footer
+path: /sitecore/templates/User Defined/Configuration/Site Config/Registration/Registration Email Body
+parent: {D1374E4A-1FB2-48AD-9D0D-5DD03D633C3C}
+name: Registration Email Body
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-400
+200
 ----version----
 language: en
 version: 1
-revision: 3d8d8d22-55b8-4ac1-a33f-a42ea1b4021f
+revision: d12046ab-66bf-4507-81b8-19e36b5b6fcc
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160303T092908Z
+20160309T131739Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-3d8d8d22-55b8-4ac1-a33f-a42ea1b4021f
+d12046ab-66bf-4507-81b8-19e36b5b6fcc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160303T094251Z
+20160309T131739Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
