@@ -1,1 +1,29 @@
-﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserViewModel
+﻿@model Informa.Web.Areas.Account.ViewModels.Management.EmailPreferencesViewModel
+
+@if (Model.IsAuthenticated)
+{
+    <div class="page-preferences js-preferences-user-container">
+        <div style="display: none;" class="js-preferences-user-error-container">
+            <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
+        </div>
+        <div>
+            <div class="page-preferences__newsletteroptin-confirm">
+                <input name="newsletterOptIn" type="checkbox" data-checkbox-type="boolean" @(@Model.ReceivesNewsletterEmails ? "checked='checked'" : "")> <label for="newsletterOptIn">@Model.NewsletterLabel</label>
+            </div>
+
+            <div class="page-preferences__offersoptin-confirm">
+                <input name="doNotSendOffersOptIn" type="checkbox" data-checkbox-type="boolean" @(@Model.DoNotSendOfferEmails ? "checked='checked'" : "")> <label for="doNotSendOffersOptIn">@Model.EmailsLabel</label>
+            </div>
+
+            <div class="page-preferences__submit-wrapper">
+                <button type="submit" class="button--filled js-preferences-user-submit" data-register-user-url="/Account/api/PreferencesApi/Update/">@Model.SubmitText</button>
+            </div>
+
+            <p style="display: none;" class="js-preferences-user-success">@Model.PreferencesSavedMessage</p>
+        </div>
+    </div>
+}
+else
+{
+    Html.RenderPartial("_SignInForm", Model.SignInViewModel);
+}

@@ -113,6 +113,7 @@
     <Compile Include="DCD\DCDManager.cs" />
     <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
+    <Compile Include="GlassModels\IEntitledProductItem.cs" />
     <Compile Include="GlassModels\IPage_Assets.cs" />
     <Compile Include="GlassModels\ITaxonomyHierarchy.cs" />
     <Compile Include="GlassModels\IAuthor.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="GlassModels\I___BasePage.cs" />
     <Compile Include="GlassModels\I___BaseTaxonomy.cs" />
     <Compile Include="GlassModels\TaxonomyMap.cs" />
+    <Compile Include="ISearch.cs" />
     <Compile Include="ISearch_Listing__Raw.cs" />
     <Compile Include="ISearch_Refinements__Raw.cs" />
     <Compile Include="I___BaseItem.cs" />

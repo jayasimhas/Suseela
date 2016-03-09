@@ -20,7 +20,12 @@ namespace Informa.Web.ViewModels
             SitemapService = sitemapService;
         }
 
-        public string GetXML()
+        public string GetSitemapXML()
+        {
+            return SitemapService.GetSitemapXML();
+        }
+
+        public string GetNewsSitemapXML()
         {
             return SitemapService.GetNewsSitemapXML();
         }

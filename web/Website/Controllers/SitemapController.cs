@@ -23,9 +23,10 @@ namespace Informa.Web.Controllers
         }
 
         [HttpGet]
-        public void NewsSitemapXml()
+        public void SitemapXml()
         {
-            string cacheKey = $"{HttpContext.Current.Request.Url.Host}.Sitemap";
+            string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "");
+            string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.Sitemap";
             string xml = string.Empty;
             if (Cache.Contains(cacheKey))
             {
@@ -35,7 +36,6 @@ namespace Informa.Web.Controllers
             else
             {
                 //get it fresh
-                string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "");
                 string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/{path}";
                 using (WebClient client = new WebClient())
                 {
