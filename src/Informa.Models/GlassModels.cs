@@ -8942,6 +8942,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid My_Account_Page  {get; set;}
 								/// <summary>
+					/// The Global Article Ad Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Ad_Zone  {get; set;}
+								/// <summary>
 					/// The Global Article Filmstrip Slot ID field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -9094,15 +9103,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Subscribe_Link  {get; set;}
-								/// <summary>
-					/// The Cookie Policy field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: d40eb7e0-99ef-468f-8491-4f0c5bcac75e</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Cookie_PolicyFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Cookie_Policy  {get; set;}
 								/// <summary>
 					/// The Left Column Text field.
 					/// <para></para>
@@ -9404,6 +9404,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid My_Account_Page  {get; set;}
 										/// <summary>
+						/// The Global Article Ad Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Ad_Zone  {get; set;}
+										/// <summary>
 						/// The Global Article Filmstrip Slot ID field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -9556,15 +9565,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Subscribe_Link  {get; set;}
-										/// <summary>
-						/// The Cookie Policy field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: d40eb7e0-99ef-468f-8491-4f0c5bcac75e</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Cookie_PolicyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Cookie_Policy  {get; set;}
 										/// <summary>
 						/// The Left Column Text field.
 						/// <para></para>
@@ -9858,6 +9858,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
 			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
 			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
 
@@ -9943,13 +9948,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
-						
-					
-			public static readonly ID Cookie_PolicyFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-			public const string Cookie_PolicyFieldName = "Cookie Policy";
-
-							public static readonly ID Cookie_Policy__RawFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-				public const string Cookie_Policy__RawFieldName = "Cookie Policy";
 						
 					
 			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
@@ -13706,6 +13704,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
 			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
 			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
 
@@ -13791,13 +13794,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
-						
-					
-			public static readonly ID Cookie_PolicyFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-			public const string Cookie_PolicyFieldName = "Cookie Policy";
-
-							public static readonly ID Cookie_Policy__RawFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-				public const string Cookie_Policy__RawFieldName = "Cookie Policy";
 						
 					
 			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
