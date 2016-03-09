@@ -43,3 +43,11 @@
 	display: inline-block;
 	font-size: 1rem;
 }
+
+.checkbox-label {
+	@include textMix('Roboto', 0.9375rem, 400);
+	color: $color-abbey-gray;
+	margin-bottom: 2rem;
+	margin-left: 0.25rem;
+	vertical-align: middle;
+}
