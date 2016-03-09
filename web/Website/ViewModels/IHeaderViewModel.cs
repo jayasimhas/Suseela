@@ -14,5 +14,8 @@
         string SignOutLinkText { get; }
 		string RegisterLinkText { get; }
 		string SignInLinkText { get; }
-	}
+        string AdvertisementText { get; }
+        string LeaderboardSlotID { get; }
+        string LeaderboardAdZone { get; }
+    }
 }
