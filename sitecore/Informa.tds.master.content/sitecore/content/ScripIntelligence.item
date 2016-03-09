@@ -26,7 +26,7 @@ content-length: 16
 ----version----
 language: en
 version: 1
-revision: b35116ca-5d5d-4bce-b83a-96a1249f7fbe
+revision: c5e0df3c-25ee-4d8d-9ce3-ead1c529d132
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -60,6 +60,20 @@ Right
 field: {58330274-E29E-4FB9-802B-B7A508D15075}
 name: Global Article Ad Zone
 key: global article ad zone
+content-length: 4
+
+home
+----field----
+field: {6C312B88-B709-4EB1-A483-0222A8D7E401}
+name: Global Leaderboard Slot ID
+key: global leaderboard slot id
+content-length: 4
+
+Top1
+----field----
+field: {016B3E1C-33EF-4029-9CBD-9CF36657F5FE}
+name: Global Leaderboard Ad Zone
+key: global leaderboard ad zone
 content-length: 4
 
 home
@@ -195,14 +209,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b35116ca-5d5d-4bce-b83a-96a1249f7fbe
+c5e0df3c-25ee-4d8d-9ce3-ead1c529d132
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160309T145749Z
+20160309T165131Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
