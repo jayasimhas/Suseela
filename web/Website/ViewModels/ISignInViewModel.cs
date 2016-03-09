@@ -10,12 +10,11 @@ namespace Informa.Web.ViewModels
 		string SignInRememberMeText { get; }
 		string SignInUsernamePlaceholderText { get; }
 		string SignInResetPasswordLinkText { get; }
+		IHtmlString ResetPasswordBody { get; }
 		string ResetPasswordEmailPlaceholderText { get; }
 		string ResetPasswordSuccessText { get; }
 		string ResetPasswordErrorEmailText { get; }
 		string ResetPasswordErrorGeneralText { get; }
-		string ResetPasswordText { get; }
-		string ResetPasswordHelpText { get; }
 		string ResetPasswordSubmitText { get; }
 		IHtmlString ResetPasswordContactText { get; }
 	}
