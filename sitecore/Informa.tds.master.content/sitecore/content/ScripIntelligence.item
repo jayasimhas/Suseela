@@ -169,13 +169,6 @@ content-length: 38
 
 {39611772-CD97-4610-BB55-F96BE4C1F540}
 ----field----
-field: {D40EB7E0-99EF-468F-8491-4F0C5BCAC75E}
-name: Cookie Policy
-key: cookie policy
-content-length: 432
-
-In order to deliver a personalized, responsive service and to improve the site, we remember and store information about how you use it. This is done using simple text files called cookies which site on your computer. By continuing to use this site and access its features, you are consenting to our use of cookies. To find out more about the way Informa uses cookies please go to our <a href="/cookie-policy">Cookie Policy</a> page.
-----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name

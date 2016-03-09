@@ -9086,15 +9086,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Subscribe_Link  {get; set;}
 								/// <summary>
-					/// The Cookie Policy field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: d40eb7e0-99ef-468f-8491-4f0c5bcac75e</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Cookie_PolicyFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Cookie_Policy  {get; set;}
-								/// <summary>
 					/// The Left Column Text field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -9530,15 +9521,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Subscribe_Link  {get; set;}
 										/// <summary>
-						/// The Cookie Policy field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: d40eb7e0-99ef-468f-8491-4f0c5bcac75e</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Cookie_PolicyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Cookie_Policy  {get; set;}
-										/// <summary>
 						/// The Left Column Text field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -9900,13 +9882,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
-						
-					
-			public static readonly ID Cookie_PolicyFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-			public const string Cookie_PolicyFieldName = "Cookie Policy";
-
-							public static readonly ID Cookie_Policy__RawFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-				public const string Cookie_Policy__RawFieldName = "Cookie Policy";
 						
 					
 			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
@@ -13736,13 +13711,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
-						
-					
-			public static readonly ID Cookie_PolicyFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-			public const string Cookie_PolicyFieldName = "Cookie Policy";
-
-							public static readonly ID Cookie_Policy__RawFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-				public const string Cookie_Policy__RawFieldName = "Cookie Policy";
 						
 					
 			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");

@@ -7,7 +7,7 @@
 
 		// Account/Sign In/Registration
 		string WelcomeText { get; }
-        string CookiePolicyText { get; }
+        string PolicyText { get; }
         bool IsAuthenticated { get; }
 		string MyAccountLinkText { get; }
         string MyAccountLink { get; }
