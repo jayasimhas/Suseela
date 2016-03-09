@@ -198,7 +198,7 @@ But you can also use "patch:attribute" for clarity:
       
       <setting name="DCD.OldDealsURL" value="http://supportinforma.velir.com/deals/{0}" />
 
-      <setting name="OAS.Hostname" value="stage.scripnews.com" />
+      <setting name="OAS.Hostname" value="${OAS.Hostname}" />
     </settings>
   </sitecore>
 </configuration>

@@ -7320,6 +7320,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+ 	/// <summary>
+	/// IAdvertisement Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Components/Advertisement</para>	
+	/// <para>ID: 8b3e1556-4c33-46bd-be35-eeb3d62196e1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IAdvertisementConstants.TemplateIdString)]
+	public partial interface IAdvertisement : IGlassBase 
+	{
+								/// <summary>
+					/// The Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 136a0d73-06a9-42b3-9d21-f9bd6b877a89</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IAdvertisementConstants.Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Slot_ID  {get; set;}
+								/// <summary>
+					/// The Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 3505dd34-d65e-4969-9bc3-690cccc919db</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IAdvertisementConstants.ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Zone  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IAdvertisement Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Components/Advertisement</para>	
+		/// <para>ID: 8b3e1556-4c33-46bd-be35-eeb3d62196e1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IAdvertisement__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 136a0d73-06a9-42b3-9d21-f9bd6b877a89</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IAdvertisementConstants.Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Slot_ID  {get; set;}
+										/// <summary>
+						/// The Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 3505dd34-d65e-4969-9bc3-690cccc919db</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IAdvertisementConstants.ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Zone  {get; set;}
+						}
+	
+	public static partial class IAdvertisementConstants{
+
+			public const string TemplateIdString = "8b3e1556-4c33-46bd-be35-eeb3d62196e1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Advertisement";
+
+					
+			public static readonly ID Slot_IDFieldId = new ID("136a0d73-06a9-42b3-9d21-f9bd6b877a89");
+			public const string Slot_IDFieldName = "Slot ID";
+
+						
+					
+			public static readonly ID ZoneFieldId = new ID("3505dd34-d65e-4969-9bc3-690cccc919db");
+			public const string ZoneFieldName = "Zone";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
