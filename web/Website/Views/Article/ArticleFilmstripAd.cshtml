@@ -1,7 +1,7 @@
 @model ArticleAdViewModel
 <section class="article-preview article-preview--small">
     <div class="article-preview__ad">
-        Advertisement
-        <script language="JavaScript">OAS_AD('@Model.FilmstripAdID', 'article');</script>
+        @Model.AdvertisementText
+        <script language="JavaScript">OAS_AD('@Model.FilmstripAdID', '@Model.AdZone');</script>
     </div>
 </section>
