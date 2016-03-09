@@ -575,6 +575,10 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\BaseValueResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\ArticleTypeResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleCategoriesResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleContributorResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleHistoryResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePermissionsResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePubDateResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePublisherIdResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\IssueNumberResolver.cs" />

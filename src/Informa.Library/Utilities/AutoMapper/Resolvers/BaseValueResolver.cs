@@ -6,7 +6,11 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers
     {
         public virtual ResolutionResult Resolve(ResolutionResult source)
         {
-            return source.New(Resolve((TIn) source.Value, source.Context));
+            var result = Resolve((TIn) source.Value, source.Context);
+
+            return result == null
+                ? source.Ignore()
+                : source.New(result);
         }
 
         protected abstract TOut Resolve(TIn source, ResolutionContext context);

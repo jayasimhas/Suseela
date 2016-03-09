@@ -7,7 +7,7 @@ namespace Informa.Library.Services.NlmExport.Models.Front.Article
     [Serializable]
     public class NlmArticlePubDateModel
     {
-        [XmlAttribute("date-type")]
+        [XmlAttribute("pub-type")]
         public string DateType { get; set; }
 
         [XmlElement("day")]
