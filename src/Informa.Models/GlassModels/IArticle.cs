@@ -119,8 +119,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public Guid State { get; set; }
 
 		public string Notification_Text { get; set; }
-		
-	}
+        public string Leaderboard_Slot_ID { get; set; }
+    }
 
 	public interface IPublicationChild
 	{

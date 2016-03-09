@@ -1,11 +1,13 @@
 ﻿@using Glass.Mapper.Sc.Mvc
 @model ArticleListItemModel
 <aside class="article-sidebar">
-    <h3>@Model.ListableTitle</h3>
-    <span class="article-sidebar__byline">by @string.Join(", ", Model.ListableAuthors.Select(x => x.LinkableText))</span>
-    <time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
+	<h3>@Model.ListableTitle</h3>
+	if(@Model.ListableAuthors.Any()){
+	<span class="article-sidebar__byline">by @string.Join(", ", Model.ListableAuthors.Select(x => x.LinkableText))</span>
+	}
+	<time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 
-    @Html.Raw(Model.TruncateArticle(Model.ListableSummary, 60))
-    
-    <a class="article-sidebar__read-more" href="@Model.LinkableUrl">Read the full article here </a>
+	@Html.Raw(Model.TruncateArticle(Model.ListableSummary, 60))
+
+	<a class="article-sidebar__read-more" href="@Model.LinkableUrl">Read the full article here </a>
 </aside>

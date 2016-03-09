@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
@@ -43,8 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Company\ISalesforceRetrieveActiveIpRanges.cs" />
+    <Compile Include="Company\SalesforceRetrieveActiveIpRanges.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryEntitlementsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryEmailNewsletterOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
@@ -52,8 +59,10 @@
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
+    <Compile Include="ISalesforceServiceConfiguration.cs" />
     <Compile Include="ISalesforceServiceContextExtensions.cs" />
     <Compile Include="ISalesforceSessionFactoryConfiguration.cs" />
+    <Compile Include="SalesforceServiceConfiguration.cs" />
     <Compile Include="SalesforceSessionFactoryConfiguration.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticateUser.cs" />

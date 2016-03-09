@@ -12,9 +12,19 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 		public ArticleWorkflowInfo(ArticleDetail parent)
 		{
 			InitializeComponent();
-			uxWorkflowState.Text = parent?.ArticleDetails?.ArticleWorkflowState != null ? parent.ArticleDetails.ArticleWorkflowState.DisplayName : "N/A";
-			uxPublishedOn.Text =
+			uxWorkflowState.Text = parent?.ArticleDetails?.ArticleWorkflowState != null ?
+				parent.ArticleDetails.ArticleWorkflowState.DisplayName : "N/A";
+			if (parent != null && parent._Live)
+			{
+				label3.Visible = true;
+				uxPublishedOn.Text =
 					parent.ArticleDetails.WebPublicationDate.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+			}
+			else
+			{
+				label3.Visible = false;
+				uxPublishedOn.Visible = false;
+			}
 		}
 	}
 }
