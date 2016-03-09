@@ -165,6 +165,9 @@ $(document).ready(function() {
 	var emailArticleController = new FormController();
 	emailArticleController.watchForm('.form-email-article');
 
+	var accountEmailPreferencesController = new FormController();
+	accountEmailPreferencesController.watchForm('.form-email-preferences');
+
     svg4everybody();
 
 
