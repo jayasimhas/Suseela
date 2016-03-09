@@ -2,6 +2,8 @@
 {
 	public interface IEmailArticlePopOutViewModel
 	{
+        string AuthUserEmail { get; }
+        string AuthUserName { get; }
         string EmailArticleText { get; }
         string EmailFormInstructionsText { get; } 
         string RecipientEmailPlaceholderText { get; }
@@ -15,5 +17,6 @@
         string EmptyFieldText { get; }
         string NoticeText { get; }
         string ArticleTitle { get; }
-    }
+		string ArticleNumber { get; }
+	}
 }

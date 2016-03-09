@@ -12,7 +12,7 @@ templatekey: Facet
 ----version----
 language: en
 version: 1
-revision: 479ffde0-f721-4cba-94f7-94c1414ac087
+revision: 4eb44793-2a55-471b-85be-e52907a05b10
 
 ----field----
 field: {3162CD52-3D1C-41F1-88A1-E5D7C4E89215}
@@ -50,6 +50,13 @@ content-length: 1
 
 1
 ----field----
+field: {C009EFA3-5B61-4AF2-9180-538D9D4A6918}
+name: Sort By
+key: sort by
+content-length: 38
+
+{DFB8E598-17D1-401E-B77D-98573F54D7A0}
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-479ffde0-f721-4cba-94f7-94c1414ac087
+4eb44793-2a55-471b-85be-e52907a05b10
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160225T180520Z
+20160307T202234Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

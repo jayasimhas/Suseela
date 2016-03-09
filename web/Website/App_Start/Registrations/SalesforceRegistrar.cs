@@ -2,6 +2,7 @@
 using Informa.Library.Salesforce;
 using Informa.Library.Salesforce.User;
 using Informa.Library.Salesforce.User.Profile;
+using Informa.Library.Salesforce.User.Registration;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -16,6 +17,9 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceSessionFactoryConfiguration>().As<ISalesforceSessionFactoryConfiguration>();
 			builder.RegisterType<SalesforceSetUserTemporaryPassword>().As<ISalesforceSetUserTemporaryPassword>();
 			builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
-		}
+			builder.RegisterType<SalesforceRegisterUser>().As<ISalesforceRegisterUser>();
+		    builder.RegisterType<SalesforceGetUserEntitlements>().As<ISalesforceGetUserEntitlements>();
+            builder.RegisterType<SalesforceGetIPEntitlements>().As<ISalesforceGetIPEntitlements>();
+        }
 	}
 }

@@ -20,16 +20,12 @@ using Sitecore.Globalization;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
-	public partial interface IArticle : IPublicationChild
+	public partial interface IArticle : IPublicationChild, IEntitledProductItem
 	{
-		//TODO
 		bool IsPublished { get; set; }
-
-		/*[SitecoreField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
-		IEnumerable<Guid> TaxonomyIDs { get; set; } */
 	}
 
-	public class ArticleMap : SitecoreGlassMap<IPublicationChild>
+    public class ArticleMap : SitecoreGlassMap<IPublicationChild>
 	{
 		public override void Configure()
 		{

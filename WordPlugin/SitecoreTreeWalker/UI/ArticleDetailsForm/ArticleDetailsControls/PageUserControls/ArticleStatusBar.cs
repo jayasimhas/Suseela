@@ -31,15 +31,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             articleLinkUnlinkInfo.ShowDialog();
         }
 
-        private void uxRefreshButton_Click(object sender, EventArgs e)
-        {
-            //TODO: refresh button yet to be done
-            var updatedArticleDetail = new ArticleDetail();
-            _parent = updatedArticleDetail;
-            _parent.Repaint();
-
-        }
-
         private void uxLockStateButton_Click(object sender, EventArgs e)
         {
             var articleLockInfo = new ArticleLockInfo { StartPosition = FormStartPosition.CenterParent };

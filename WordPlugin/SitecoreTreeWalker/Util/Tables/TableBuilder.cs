@@ -69,6 +69,7 @@ namespace InformaSitecoreWord.Util.Tables
 			const int fullTableWidth = 514;
 			decimal curSetWidth = Math.Truncate(tableAnalyzer.TableCellWidthSums.Last());
 			root.SetAttributeValue("width", (curSetWidth/fullTableWidth*100) + "%");
+            root.SetAttributeValue("data-mediaid", Guid.NewGuid().ToString("N"));
 			ParseRows(tbody, table, tableAnalyzer);
 			return root;
 		}

@@ -1,0 +1,358 @@
+body {
+	font: 0.75em/1.5em arial,helvetica,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.wrapper {
+	background: #fff;
+	padding:20px;
+	margin:0 auto;
+}
+
+a {
+    color: #487394;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+#tblResults > tbody > tr > td img {
+	border:none;
+	text-decoration:none;
+	margin-right:5px;
+}
+
+p {
+	line-height: 1.85em;
+	margin:0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+    font: bold 108%/1.2 arial,helvetica,sans-serif;
+    margin: 0 0 0.9em;
+    padding: 0;
+}
+
+h1 {
+	color: #FFFFFF;
+    margin: 15px auto 30px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 125%;
+}
+
+table.box
+{	
+    padding: 15px;
+	height: 200px;
+	margin:5px auto;
+	background-color: #F8F8F8;
+    border: 1px solid #E4E4E4;
+}
+
+table.box td {
+	text-align:left;
+	padding:0 4px 6px 0;
+}
+
+.enableissue input, .enabledate input {
+	margin:0 8px 0 0;
+}
+
+
+div.top 
+{
+	width: 500px;
+}
+
+div.top p strong, strong.uncentered {
+	font-size: 120%;
+	color: #333333;
+}
+
+div.top {
+	float: left;
+}
+
+img.banner {
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 30px;
+}
+
+table.box td.centertext
+{
+	text-align: center;
+	padding-top:10px;
+}
+
+table.box td table {
+	margin:0;
+}
+
+.left 
+{
+	float:left;
+}
+
+.right
+{
+	float: right;
+}
+
+.space
+{
+	margin-left: 10px;
+}
+
+.report table tr.tableheader td .space {
+	background: url("/VWB/images/vwb/close.png") no-repeat scroll 0 0;
+	display:block;
+	width:12px;
+	height:12px;
+	margin:4px 0 0 10px;
+}
+
+.report table tr.tableheader td a.space  {
+	display:block;
+	width:12px;
+	height:12px;
+}
+
+
+#tblResults > tbody > tr.tableheader > td {
+	border-bottom:1px solid #fff7e8;
+	padding:10px 8px 6px;
+}
+
+
+#tblResults > tbody > tr.sort-move > td  {
+	border-bottom:2px solid #FFD6AD;
+	border-top: 0px;
+	background:#fff7e8;
+	padding: 0 8px 10px;
+}
+
+.report table tr.sort-move td .space {
+	background: url("/VWB/images/vwb/sortascending.png") no-repeat scroll 0 0;
+	display:block;
+	width:10px;
+	height:10px;
+	margin:5px 0 0 10px;
+}
+
+.report table tr.sort-move td a.space  {
+	display:block;
+	width:10px;
+	height:10px;
+}
+
+.report table tr.sort-move td .descending {
+	background: url("/VWB/images/vwb/sortdescending.png") no-repeat scroll 0 0;
+}
+
+.report table tr.sort-move td .descending-active {
+	background: url("/VWB/images/vwb/sortdescending.png") no-repeat scroll -10px 0;
+}
+
+.report table tr.sort-move td .ascending {
+	background: url("/VWB/images/vwb/sortascending.png") no-repeat scroll 0 0;
+}
+
+.report table tr.sort-move td .ascending-active {
+	background: url("/VWB/images/vwb/sortascending.png") no-repeat scroll -10px 0;
+}
+
+table#tblResults > tbody > tr.double {
+	border-top-style: double;
+	border-top-color: #FFD6AD
+}
+
+.report table tr.sort-move td .moveleft {
+	background: url("/VWB/images/vwb/moveleft.png") no-repeat scroll 0 0;
+	display:block;
+	width:16px;
+	height:16px;
+	margin:2px 10px 0 0;
+	float:left
+}
+
+.report table tr.sort-move td a.moveleft  {
+	display:block;
+	width:16px;
+	height:16px;
+	cursor: pointer;
+}
+
+.report table tr.sort-move td .moveright {
+	background: url("/VWB/images/vwb/moveright.png") no-repeat scroll 0 0;
+	display:block;
+	width:16px;
+	height:16px;
+	margin:2px 10px 0 0;
+	float:left
+}
+
+.report table tr.sort-move td a.moveright  {
+	display:block;
+	width:16px;
+	height:16px;
+	cursor: pointer;
+}
+
+.uncentered
+{
+	text-align: left;
+	display: block;
+}
+
+.first
+{
+    text-align: left;
+}
+
+select.left
+{
+	margin-left:30px;
+}
+
+.block
+{
+	display:block;
+	background-color: #F8F8F8;
+    border: 1px solid #E4E4E4;
+	margin-bottom: 5px;
+    padding: 3px;
+}
+
+textarea, input {
+	font-family: arial,helvetica,sans-serif;    
+}
+
+.block:active {
+	color: red;
+}
+
+div.appbuttons
+{
+    clear: both;
+    padding-top: 5px;
+}
+
+#btnRunReport, #btnReset, #btnLogout, #tblResults > tbody > tr > td input
+{
+	margin: auto;
+	border-radius: 4px 4px 4px 4px;
+    background: -moz-linear-gradient(0% 10% 270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
+    border: medium none;
+    color: #FFFFFF;
+    display: inline-block;
+    font: bold 91.7%/1.1 arial,helvetica,sans-serif;
+    letter-spacing: 0.03em;
+    padding: 3px 7px !important;
+    text-decoration: none;
+    -moz-text-shadow: 0 -0.1em 0.2em #D06D1A, 0 0.1em 0.2em #FFFFFF;
+    text-transform: uppercase;
+    white-space: nowrap;
+	cursor:pointer;
+    background-color: #D06D1A;
+}
+
+#tblResults > tbody > tr > td input
+{
+	float:right;
+}
+
+.report {
+	margin:0 auto;
+    clear: both;
+}
+
+#tblResults
+{
+	border-collapse:collapse;
+	border:none;
+	border-spacing: 0;
+    float: left;
+}
+
+#tblResults > tbody > tr > td
+{
+	padding: 10px 8px;
+	border-left:1px solid #ffd6ad; 
+	border-right:1px solid #ffd6ad; 
+	border-bottom:2px solid #ffd6ad; 
+	border-top:1px solid #ffd6ad; 
+	text-align:left;
+}
+
+.report table tr.tableheader td {
+	padding:15px 9px 5px; 
+	background:url("/VWB/images/vwb/back_right_tabbox.gif") repeat-x;
+	padding:10px;
+	font: 125%/1.2 Helvetica Neue,Helvetica,"HelveticaNeueW01-57Cn",arial,sans-serif;
+    margin-bottom: 0.7em;
+	color: #C76700;
+	font-weight:bold;
+}
+
+#ddColumns
+{
+	position:absolute;
+	margin-left:15px;
+}
+
+.moveto
+{
+	width: 100px;
+}
+
+tr.doubletop > td
+{
+	border-top: thick double;
+}
+
+.time {
+    width: 75px;
+}
+
+.date {
+    width: 80px;
+}
+
+#ddIssue {
+    width: 206px;
+}
+
+#issueWrapper {
+    clear: both;
+    width: 500px;
+}
+
+.radioButtonWrapper {
+    padding-top: 4px; 
+    width: 100px;
+}
+
+.inputWrapper {
+    padding-top: 2px; 
+    padding-left: 5px; 
+    width: 215px;
+}
+
+#dateRangeWrapper {
+    clear: both; 
+}
+
+.dateRangeLabel {
+    width: 40px; 
+    padding-top: 2px;
+}

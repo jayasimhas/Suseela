@@ -27,6 +27,7 @@ using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
 using Sitecore.Data;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Velir.Search.Models;
 
 
 
@@ -167,86 +168,200 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.Types
+{
+
+
+ 	/// <summary>
+	/// ICondition_Input_Type Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Condition Input Type</para>	
+	/// <para>ID: 01a28131-5cc9-4419-bd14-351922ce9416</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICondition_Input_TypeConstants.TemplateIdString)]
+	public partial interface ICondition_Input_Type : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ICondition_Input_Type Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Condition Input Type</para>	
+		/// <para>ID: 01a28131-5cc9-4419-bd14-351922ce9416</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICondition_Input_Type__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ICondition_Input_TypeConstants{
+
+			public const string TemplateIdString = "01a28131-5cc9-4419-bd14-351922ce9416";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Condition Input Type";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Properties
+{
+
+
+ 	/// <summary>
+	/// IUrlToText Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Properties/UrlToText</para>	
+	/// <para>ID: 0348e554-4e39-4cde-a1b7-5a7e6e80e712</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IUrlToTextConstants.TemplateIdString)]
+	public partial interface IUrlToText : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping
+	{
+				}
+
+	
+		/// <summary>
+		/// IUrlToText Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Properties/UrlToText</para>	
+		/// <para>ID: 0348e554-4e39-4cde-a1b7-5a7e6e80e712</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IUrlToText__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping__Raw
+		{
+						}
+	
+	public static partial class IUrlToTextConstants{
+
+			public const string TemplateIdString = "0348e554-4e39-4cde-a1b7-5a7e6e80e712";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "UrlToText";
+
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
 
  	/// <summary>
-	/// ISearch Interface
+	/// IRegistration_Page Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Pages/Search</para>	
-	/// <para>ID: 0175c257-55f5-47d3-b34d-45022f16f1b0</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+	/// <para>ID: 0520d52b-52a8-4052-a07f-9f35f8ca274c</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ISearchConstants.TemplateIdString)]
-	public partial interface ISearch : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Velir.Search.Models.ISearch_Listing, global::Velir.Search.Models.ISearch_Refinements
+	[SitecoreType(TemplateId=IRegistration_PageConstants.TemplateIdString)]
+	public partial interface IRegistration_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
 								/// <summary>
-					/// The Search Tips Text field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: f3c99235-b6ae-4181-aada-199155242ac6</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISearchConstants.Search_Tips_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Search_Tips_Text  {get; set;}
-								/// <summary>
-					/// The Search Tips Title field.
+					/// The Newsletter Sign Up Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 29106a20-f739-465e-bd36-ea83af0935ea</para>
+					/// <para>Field ID: 761d17cf-74db-4658-ad8b-3c3b119d5851</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ISearchConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Search_Tips_Title  {get; set;}
+					[SitecoreField(IRegistration_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Sign_Up_Text  {get; set;}
+								/// <summary>
+					/// The Next Step Page field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 1ef03c3c-b490-43d8-88ff-ba0669a63adb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRegistration_PageConstants.Next_Step_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Next_Step_Page  {get; set;}
+								/// <summary>
+					/// The User Agreement Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRegistration_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string User_Agreement_Text  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// ISearch Interface
+		/// IRegistration_Page Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Pages/Search</para>	
-		/// <para>ID: 0175c257-55f5-47d3-b34d-45022f16f1b0</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+		/// <para>ID: 0520d52b-52a8-4052-a07f-9f35f8ca274c</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ISearch__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Velir.Search.Models.ISearch_Listing__Raw, global::Velir.Search.Models.ISearch_Refinements__Raw
+		public partial interface IRegistration_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
 										/// <summary>
-						/// The Search Tips Text field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: f3c99235-b6ae-4181-aada-199155242ac6</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISearchConstants.Search_Tips_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Search_Tips_Text  {get; set;}
-										/// <summary>
-						/// The Search Tips Title field.
+						/// The Newsletter Sign Up Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 29106a20-f739-465e-bd36-ea83af0935ea</para>
+						/// <para>Field ID: 761d17cf-74db-4658-ad8b-3c3b119d5851</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISearchConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Search_Tips_Title  {get; set;}
+						[SitecoreField(IRegistration_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Sign_Up_Text  {get; set;}
+										/// <summary>
+						/// The Next Step Page field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 1ef03c3c-b490-43d8-88ff-ba0669a63adb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRegistration_PageConstants.Next_Step_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Next_Step_Page  {get; set;}
+										/// <summary>
+						/// The User Agreement Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRegistration_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string User_Agreement_Text  {get; set;}
 						}
 	
-	public static partial class ISearchConstants{
+	public static partial class IRegistration_PageConstants{
 
-			public const string TemplateIdString = "0175c257-55f5-47d3-b34d-45022f16f1b0";
+			public const string TemplateIdString = "0520d52b-52a8-4052-a07f-9f35f8ca274c";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Search";
+			public const string TemplateName = "Registration Page";
 
 					
-			public static readonly ID Search_Tips_TextFieldId = new ID("f3c99235-b6ae-4181-aada-199155242ac6");
-			public const string Search_Tips_TextFieldName = "Search Tips Text";
+			public static readonly ID Newsletter_Sign_Up_TextFieldId = new ID("761d17cf-74db-4658-ad8b-3c3b119d5851");
+			public const string Newsletter_Sign_Up_TextFieldName = "Newsletter Sign Up Text";
 
-							public static readonly ID Search_Tips_Text__RawFieldId = new ID("f3c99235-b6ae-4181-aada-199155242ac6");
-				public const string Search_Tips_Text__RawFieldName = "Search Tips Text";
 						
 					
-			public static readonly ID Search_Tips_TitleFieldId = new ID("29106a20-f739-465e-bd36-ea83af0935ea");
-			public const string Search_Tips_TitleFieldName = "Search Tips Title";
+			public static readonly ID Next_Step_PageFieldId = new ID("1ef03c3c-b490-43d8-88ff-ba0669a63adb");
+			public const string Next_Step_PageFieldName = "Next Step Page";
 
+						
+					
+			public static readonly ID User_Agreement_TextFieldId = new ID("cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391");
+			public const string User_Agreement_TextFieldName = "User Agreement Text";
+
+							public static readonly ID User_Agreement_Text__RawFieldId = new ID("cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391");
+				public const string User_Agreement_Text__RawFieldName = "User Agreement Text";
 						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
@@ -305,44 +420,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string Canonical_LinkFieldName = "Canonical Link";
 
 						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Conditions.Types
-{
-
-
- 	/// <summary>
-	/// ICondition_Input_Type Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Condition Input Type</para>	
-	/// <para>ID: 01a28131-5cc9-4419-bd14-351922ce9416</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ICondition_Input_TypeConstants.TemplateIdString)]
-	public partial interface ICondition_Input_Type : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// ICondition_Input_Type Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/UrlRewrite/Templates/Conditions/Types/Condition Input Type</para>	
-		/// <para>ID: 01a28131-5cc9-4419-bd14-351922ce9416</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ICondition_Input_Type__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class ICondition_Input_TypeConstants{
-
-			public const string TemplateIdString = "01a28131-5cc9-4419-bd14-351922ce9416";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Condition Input Type";
-
 			
 
 	}
@@ -562,6 +639,101 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 					
 			public static readonly ID Rewrite_URLFieldId = new ID("7bddf3f6-438f-4256-b47a-efdec89e9c8b");
 			public const string Rewrite_URLFieldName = "Rewrite URL";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
+{
+
+
+ 	/// <summary>
+	/// ISaved_Articles_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Saved Articles Page</para>	
+	/// <para>ID: 0807607f-2431-41bb-b56a-19ab73b0928c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISaved_Articles_PageConstants.TemplateIdString)]
+	public partial interface ISaved_Articles_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	{
+				}
+
+	
+		/// <summary>
+		/// ISaved_Articles_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Saved Articles Page</para>	
+		/// <para>ID: 0807607f-2431-41bb-b56a-19ab73b0928c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISaved_Articles_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		{
+						}
+	
+	public static partial class ISaved_Articles_PageConstants{
+
+			public const string TemplateIdString = "0807607f-2431-41bb-b56a-19ab73b0928c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Saved Articles Page";
+
+					
+			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+						
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+
+						
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+						
+					
+			public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+			public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+						
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+
+						
+					
+			public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+			public const string Sub_TitleFieldName = "Sub Title";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+			public const string Include_In_SearchFieldName = "Include In Search";
+
+						
+					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
 
 						
 			
@@ -1085,6 +1257,92 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
+{
+
+
+ 	/// <summary>
+	/// IUrlToReference Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/UrlToReference</para>	
+	/// <para>ID: 0f528c70-e771-4f2f-8d80-103a57104519</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IUrlToReferenceConstants.TemplateIdString)]
+	public partial interface IUrlToReference : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText
+	{
+								/// <summary>
+					/// The SiteHomeItem field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: c521a3fc-e04f-4dc8-9ad5-8ac2c4e365ff</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IUrlToReferenceConstants.SiteHomeItemFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid SiteHomeItem  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IUrlToReference Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/UrlToReference</para>	
+		/// <para>ID: 0f528c70-e771-4f2f-8d80-103a57104519</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IUrlToReference__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText__Raw
+		{
+										/// <summary>
+						/// The SiteHomeItem field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: c521a3fc-e04f-4dc8-9ad5-8ac2c4e365ff</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IUrlToReferenceConstants.SiteHomeItemFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid SiteHomeItem  {get; set;}
+						}
+	
+	public static partial class IUrlToReferenceConstants{
+
+			public const string TemplateIdString = "0f528c70-e771-4f2f-8d80-103a57104519";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "UrlToReference";
+
+					
+			public static readonly ID SiteHomeItemFieldId = new ID("c521a3fc-e04f-4dc8-9ad5-8ac2c4e365ff");
+			public const string SiteHomeItemFieldName = "SiteHomeItem";
+
+						
+					
+			public static readonly ID DelimiterFieldId = new ID("ebb47640-52e2-4bc3-8231-af6fc5113da3");
+			public const string DelimiterFieldName = "Delimiter";
+
+						
+					
+			public static readonly ID From_What_FieldsFieldId = new ID("a534b62b-9c6b-449f-8b88-93753efe6aec");
+			public const string From_What_FieldsFieldName = "From What Fields";
+
+						
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 {
 
@@ -1199,7 +1457,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing
 	{
 								/// <summary>
 					/// The Sort Order field.
@@ -1490,7 +1748,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing__Raw
 		{
 										/// <summary>
 						/// The Sort Order field.
@@ -2260,6 +2518,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					/// </summary>
 					[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Initial_State  {get; set;}
+								/// <summary>
+					/// The Notified After Publish field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
+					/// <para>Custom Data: generic=IStaff_Item</para>
+					/// </summary>
+					[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IStaff_Item> Notified_After_Publishes  {get; set;}
 				}
 
 	
@@ -2299,6 +2566,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 						/// </summary>
 						[SitecoreField(IWorkflowConstants.Initial_StateFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Initial_State  {get; set;}
+										/// <summary>
+						/// The Notified After Publish field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
+						/// <para>Custom Data: generic=IStaff_Item</para>
+						/// </summary>
+						[SitecoreField(IWorkflowConstants.Notified_After_PublishesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IStaff_Item> Notified_After_Publishes  {get; set;}
 						}
 	
 	public static partial class IWorkflowConstants{
@@ -2320,6 +2596,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					
 			public static readonly ID Initial_StateFieldId = new ID("b5166b38-e4bf-4410-953c-2037f2bf6a56");
 			public const string Initial_StateFieldName = "Initial state";
+
+						
+					
+			public static readonly ID Notified_After_PublishesFieldId = new ID("0e222fc9-35a4-40c9-afc9-d4f681c7aed4");
+			public const string Notified_After_PublishesFieldName = "Notified After Publish";
 
 						
 			
@@ -2914,6 +3195,104 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers
+{
+
+
+ 	/// <summary>
+	/// ISQL_Import_Map Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/SQL Import Map</para>	
+	/// <para>ID: 2bba4065-aa42-4509-a750-4ac2879d06ea</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISQL_Import_MapConstants.TemplateIdString)]
+	public partial interface ISQL_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
+	{
+				}
+
+	
+		/// <summary>
+		/// ISQL_Import_Map Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/SQL Import Map</para>	
+		/// <para>ID: 2bba4065-aa42-4509-a750-4ac2879d06ea</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISQL_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
+		{
+						}
+	
+	public static partial class ISQL_Import_MapConstants{
+
+			public const string TemplateIdString = "2bba4065-aa42-4509-a750-4ac2879d06ea";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "SQL Import Map";
+
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("0639f8e7-44ab-41ce-ae67-9987baf47e96");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("0790a745-13e8-44f1-aa17-469e8fc7d20e");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+					
+			public static readonly ID Import_To_LanguageFieldId = new ID("56c326ef-f5da-4818-ae74-e85130b60b84");
+			public const string Import_To_LanguageFieldName = "Import To Language";
+
+						
+					
+			public static readonly ID Import_To_What_TemplateFieldId = new ID("8954b459-083b-446f-b8c0-40b90ce2e210");
+			public const string Import_To_What_TemplateFieldName = "Import To What Template";
+
+						
+					
+			public static readonly ID Import_To_WhereFieldId = new ID("d01499f0-1e31-4cd6-a2f4-ee17bd095ab1");
+			public const string Import_To_WhereFieldName = "Import To Where";
+
+						
+					
+			public static readonly ID Item_Name_Max_LengthFieldId = new ID("02bab16b-d351-4502-a579-f3d6e0edb4f8");
+			public const string Item_Name_Max_LengthFieldName = "Item Name Max Length";
+
+						
+					
+			public static readonly ID Pull_Item_Name_From_What_FieldsFieldId = new ID("a7c05d14-ebc8-4f08-a8c7-183fab7061cc");
+			public const string Pull_Item_Name_From_What_FieldsFieldName = "Pull Item Name from What Fields";
+
+						
+					
+			public static readonly ID QueryFieldId = new ID("1f03f44c-dd3a-4148-bee7-0724310827b8");
+			public const string QueryFieldName = "Query";
+
+						
+					
+			public static readonly ID Date_FieldFieldId = new ID("b40c055b-3a62-4dd6-8cbd-88045e42f80d");
+			public const string Date_FieldFieldName = "Date Field";
+
+						
+					
+			public static readonly ID Folder_By_DateFieldId = new ID("2d49a4e9-c26d-435b-9207-4a8d1e3cf044");
+			public const string Folder_By_DateFieldName = "Folder By Date";
+
+						
+					
+			public static readonly ID Folder_By_NameFieldId = new ID("1cb87007-972b-4d25-abd1-f85107d29637");
+			public const string Folder_By_NameFieldName = "Folder By Name";
+
+						
+					
+			public static readonly ID Folder_TemplateFieldId = new ID("346d949c-b439-40bf-aeca-d43b7d7639c1");
+			public const string Folder_TemplateFieldName = "Folder Template";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
 
@@ -2968,90 +3347,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID ValueFieldId = new ID("701f3013-9e04-427a-b841-db4f62e8d7e3");
 			public const string ValueFieldName = "Value";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Velir.Search.Models.Sort_Strategies
-{
-
-
- 	/// <summary>
-	/// ISort_Strategy Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Sort Strategies/Sort Strategy</para>	
-	/// <para>ID: 2e317d2b-24ed-4633-87f8-6ccfadb06d93</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ISort_StrategyConstants.TemplateIdString)]
-	public partial interface ISort_Strategy : IGlassBase 
-	{
-								/// <summary>
-					/// The Include Selected field.
-					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
-					/// <para>Field ID: c57349b0-ead1-45a7-be69-a1d53971c900</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISort_StrategyConstants.Include_SelectedFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Include_Selected  {get; set;}
-								/// <summary>
-					/// The Type field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 32086477-70e7-45b1-a3fe-204b3a73e42d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISort_StrategyConstants.TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Type  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// ISort_Strategy Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Sort Strategies/Sort Strategy</para>	
-		/// <para>ID: 2e317d2b-24ed-4633-87f8-6ccfadb06d93</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ISort_Strategy__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Include Selected field.
-						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
-						/// <para>Field ID: c57349b0-ead1-45a7-be69-a1d53971c900</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISort_StrategyConstants.Include_SelectedFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Include_Selected  {get; set;}
-										/// <summary>
-						/// The Type field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 32086477-70e7-45b1-a3fe-204b3a73e42d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISort_StrategyConstants.TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Type  {get; set;}
-						}
-	
-	public static partial class ISort_StrategyConstants{
-
-			public const string TemplateIdString = "2e317d2b-24ed-4633-87f8-6ccfadb06d93";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Sort Strategy";
-
-					
-			public static readonly ID Include_SelectedFieldId = new ID("c57349b0-ead1-45a7-be69-a1d53971c900");
-			public const string Include_SelectedFieldName = "Include Selected";
-
-						
-					
-			public static readonly ID TypeFieldId = new ID("32086477-70e7-45b1-a3fe-204b3a73e42d");
-			public const string TypeFieldName = "Type";
 
 						
 			
@@ -3242,6 +3537,94 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// IEmail_Config Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Email Config</para>	
+	/// <para>ID: 36068aee-c4d0-4a61-9acb-755efcd2de40</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IEmail_ConfigConstants.TemplateIdString)]
+	public partial interface IEmail_Config : IGlassBase 
+	{
+								/// <summary>
+					/// The Email A Friend Body Content field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 184010d1-69d3-4148-9848-d6072a002bf1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Body_ContentFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_A_Friend_Body_Content  {get; set;}
+								/// <summary>
+					/// The Email A Friend Footer Content field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 23b4e9bc-9d9c-44f8-80ac-93230012f320</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Footer_ContentFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_A_Friend_Footer_Content  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IEmail_Config Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Email Config</para>	
+		/// <para>ID: 36068aee-c4d0-4a61-9acb-755efcd2de40</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IEmail_Config__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Email A Friend Body Content field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 184010d1-69d3-4148-9848-d6072a002bf1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Body_ContentFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Email_A_Friend_Body_Content  {get; set;}
+										/// <summary>
+						/// The Email A Friend Footer Content field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 23b4e9bc-9d9c-44f8-80ac-93230012f320</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Footer_ContentFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Email_A_Friend_Footer_Content  {get; set;}
+						}
+	
+	public static partial class IEmail_ConfigConstants{
+
+			public const string TemplateIdString = "36068aee-c4d0-4a61-9acb-755efcd2de40";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Email Config";
+
+					
+			public static readonly ID Email_A_Friend_Body_ContentFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
+			public const string Email_A_Friend_Body_ContentFieldName = "Email A Friend Body Content";
+
+							public static readonly ID Email_A_Friend_Body_Content__RawFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
+				public const string Email_A_Friend_Body_Content__RawFieldName = "Email A Friend Body Content";
+						
+					
+			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
+			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
+
+							public static readonly ID Email_A_Friend_Footer_Content__RawFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
+				public const string Email_A_Friend_Footer_Content__RawFieldName = "Email A Friend Footer Content";
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Highlights
 {
 
@@ -3305,7 +3688,98 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 	}
 
 }
-namespace Informa.Models.Velir.Search.Models.FactoryInterface
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Properties
+{
+
+
+ 	/// <summary>
+	/// IPathToText Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Properties/PathToText</para>	
+	/// <para>ID: 3c255ada-989b-4b8c-bdd8-42c0e74749b7</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPathToTextConstants.TemplateIdString)]
+	public partial interface IPathToText : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping
+	{
+				}
+
+	
+		/// <summary>
+		/// IPathToText Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Properties/PathToText</para>	
+		/// <para>ID: 3c255ada-989b-4b8c-bdd8-42c0e74749b7</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IPathToText__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping__Raw
+		{
+						}
+	
+	public static partial class IPathToTextConstants{
+
+			public const string TemplateIdString = "3c255ada-989b-4b8c-bdd8-42c0e74749b7";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "PathToText";
+
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
+{
+
+
+ 	/// <summary>
+	/// ITemplate_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Template Folder</para>	
+	/// <para>ID: 3d915406-97f6-4e94-ac50-b7caf468a50f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITemplate_FolderConstants.TemplateIdString)]
+	public partial interface ITemplate_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// ITemplate_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Template Folder</para>	
+		/// <para>ID: 3d915406-97f6-4e94-ac50-b7caf468a50f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ITemplate_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class ITemplate_FolderConstants{
+
+			public const string TemplateIdString = "3d915406-97f6-4e94-ac50-b7caf468a50f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Template Folder";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface
 {
 
 
@@ -3316,7 +3790,7 @@ namespace Informa.Models.Velir.Search.Models.FactoryInterface
 	/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IFactoryLinkableConstants.TemplateIdString)]
-	public partial interface IFactoryLinkable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
+	public partial interface IFactoryLinkable : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IInterfaceTemplate
 	{
 								/// <summary>
 					/// The FactoryLinkableText field.
@@ -3346,7 +3820,7 @@ namespace Informa.Models.Velir.Search.Models.FactoryInterface
 		/// <para>ID: 3efeaf26-8572-417d-a8a8-6cb3a28eaf82</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IFactoryLinkable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
+		public partial interface IFactoryLinkable__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IInterfaceTemplate__Raw
 		{
 										/// <summary>
 						/// The FactoryLinkableText field.
@@ -5139,7 +5613,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ITaxonomy_ItemConstants.TemplateIdString)]
-	public partial interface ITaxonomy_Item : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable
+	public partial interface ITaxonomy_Item : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable
 	{
 								/// <summary>
 					/// The Item Name field.
@@ -5160,7 +5634,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ITaxonomy_Item__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable__Raw
+		public partial interface ITaxonomy_Item__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw
 		{
 										/// <summary>
 						/// The Item Name field.
@@ -5381,44 +5855,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_
 	}
 
 }
-namespace Informa.Models.Velir.Search.Models.Sort_Strategies
-{
-
-
- 	/// <summary>
-	/// ISort_Strategies_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Sort Strategies/Sort Strategies Folder</para>	
-	/// <para>ID: 76b2fe32-c1f6-446d-af66-4c04e2981a94</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=ISort_Strategies_FolderConstants.TemplateIdString)]
-	public partial interface ISort_Strategies_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
-	{
-				}
-
-	
-		/// <summary>
-		/// ISort_Strategies_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Sort Strategies/Sort Strategies Folder</para>	
-		/// <para>ID: 76b2fe32-c1f6-446d-af66-4c04e2981a94</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface ISort_Strategies_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
-		{
-						}
-	
-	public static partial class ISort_Strategies_FolderConstants{
-
-			public const string TemplateIdString = "76b2fe32-c1f6-446d-af66-4c04e2981a94";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Sort Strategies Folder";
-
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
@@ -5430,7 +5866,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 77604558-3056-497b-93d8-e53bc5619ddb</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ITopic_PageConstants.TemplateIdString)]
-	public partial interface ITopic_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
+	public partial interface ITopic_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable
 	{
 				}
 
@@ -5442,7 +5878,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 77604558-3056-497b-93d8-e53bc5619ddb</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ITopic_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
+		public partial interface ITopic_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw
 		{
 						}
 	
@@ -5603,6 +6039,101 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.T
 					
 			public static readonly ID TextFieldId = new ID("056e7b2c-28dc-441d-bf93-bd74d8b6763a");
 			public const string TextFieldName = "Text";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
+{
+
+
+ 	/// <summary>
+	/// IEmail_Preferences_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Email Preferences Page</para>	
+	/// <para>ID: 78ef0a1b-a2d5-42b3-8a81-27d676f32fd7</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IEmail_Preferences_PageConstants.TemplateIdString)]
+	public partial interface IEmail_Preferences_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	{
+				}
+
+	
+		/// <summary>
+		/// IEmail_Preferences_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Email Preferences Page</para>	
+		/// <para>ID: 78ef0a1b-a2d5-42b3-8a81-27d676f32fd7</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IEmail_Preferences_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		{
+						}
+	
+	public static partial class IEmail_Preferences_PageConstants{
+
+			public const string TemplateIdString = "78ef0a1b-a2d5-42b3-8a81-27d676f32fd7";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Email Preferences Page";
+
+					
+			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+						
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+
+						
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+						
+					
+			public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+			public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+						
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+
+						
+					
+			public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+			public const string Sub_TitleFieldName = "Sub Title";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+			public const string Include_In_SearchFieldName = "Include In Search";
+
+						
+					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
 
 						
 			
@@ -6435,6 +6966,142 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
+{
+
+
+ 	/// <summary>
+	/// IProperty_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Property Folder</para>	
+	/// <para>ID: 8452785d-ffe7-47f3-911e-f219f5bdea3a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProperty_FolderConstants.TemplateIdString)]
+	public partial interface IProperty_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IProperty_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Property Folder</para>	
+		/// <para>ID: 8452785d-ffe7-47f3-911e-f219f5bdea3a</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IProperty_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IProperty_FolderConstants{
+
+			public const string TemplateIdString = "8452785d-ffe7-47f3-911e-f219f5bdea3a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Property Folder";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers
+{
+
+
+ 	/// <summary>
+	/// IMySQL_Import_Map Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/MySQL Import Map</para>	
+	/// <para>ID: 84fbb783-2320-481b-876a-256e58c43fad</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMySQL_Import_MapConstants.TemplateIdString)]
+	public partial interface IMySQL_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
+	{
+				}
+
+	
+		/// <summary>
+		/// IMySQL_Import_Map Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/MySQL Import Map</para>	
+		/// <para>ID: 84fbb783-2320-481b-876a-256e58c43fad</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IMySQL_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
+		{
+						}
+	
+	public static partial class IMySQL_Import_MapConstants{
+
+			public const string TemplateIdString = "84fbb783-2320-481b-876a-256e58c43fad";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "MySQL Import Map";
+
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("0639f8e7-44ab-41ce-ae67-9987baf47e96");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("0790a745-13e8-44f1-aa17-469e8fc7d20e");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+					
+			public static readonly ID Import_To_LanguageFieldId = new ID("56c326ef-f5da-4818-ae74-e85130b60b84");
+			public const string Import_To_LanguageFieldName = "Import To Language";
+
+						
+					
+			public static readonly ID Import_To_What_TemplateFieldId = new ID("8954b459-083b-446f-b8c0-40b90ce2e210");
+			public const string Import_To_What_TemplateFieldName = "Import To What Template";
+
+						
+					
+			public static readonly ID Import_To_WhereFieldId = new ID("d01499f0-1e31-4cd6-a2f4-ee17bd095ab1");
+			public const string Import_To_WhereFieldName = "Import To Where";
+
+						
+					
+			public static readonly ID Item_Name_Max_LengthFieldId = new ID("02bab16b-d351-4502-a579-f3d6e0edb4f8");
+			public const string Item_Name_Max_LengthFieldName = "Item Name Max Length";
+
+						
+					
+			public static readonly ID Pull_Item_Name_From_What_FieldsFieldId = new ID("a7c05d14-ebc8-4f08-a8c7-183fab7061cc");
+			public const string Pull_Item_Name_From_What_FieldsFieldName = "Pull Item Name from What Fields";
+
+						
+					
+			public static readonly ID QueryFieldId = new ID("1f03f44c-dd3a-4148-bee7-0724310827b8");
+			public const string QueryFieldName = "Query";
+
+						
+					
+			public static readonly ID Date_FieldFieldId = new ID("b40c055b-3a62-4dd6-8cbd-88045e42f80d");
+			public const string Date_FieldFieldName = "Date Field";
+
+						
+					
+			public static readonly ID Folder_By_DateFieldId = new ID("2d49a4e9-c26d-435b-9207-4a8d1e3cf044");
+			public const string Folder_By_DateFieldName = "Folder By Date";
+
+						
+					
+			public static readonly ID Folder_By_NameFieldId = new ID("1cb87007-972b-4d25-abd1-f85107d29637");
+			public const string Folder_By_NameFieldName = "Folder By Name";
+
+						
+					
+			public static readonly ID Folder_TemplateFieldId = new ID("346d949c-b439-40bf-aeca-d43b7d7639c1");
+			public const string Folder_TemplateFieldName = "Folder Template";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -6553,7 +7220,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IHome_PageConstants.TemplateIdString)]
-	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
+	public partial interface IHome_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable
 	{
 				}
 
@@ -6565,7 +7232,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 88caca5d-2ae1-4739-8145-399f3486c2de</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
+		public partial interface IHome_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw
 		{
 						}
 	
@@ -7104,6 +7771,151 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
+{
+
+
+ 	/// <summary>
+	/// IImport_Map_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Import Map Folder</para>	
+	/// <para>ID: 8d3bc5bd-3f77-4eff-98ab-31b5de84f31e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IImport_Map_FolderConstants.TemplateIdString)]
+	public partial interface IImport_Map_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	{
+				}
+
+	
+		/// <summary>
+		/// IImport_Map_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Import Map Folder</para>	
+		/// <para>ID: 8d3bc5bd-3f77-4eff-98ab-31b5de84f31e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IImport_Map_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		{
+						}
+	
+	public static partial class IImport_Map_FolderConstants{
+
+			public const string TemplateIdString = "8d3bc5bd-3f77-4eff-98ab-31b5de84f31e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Import Map Folder";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings
+{
+
+
+ 	/// <summary>
+	/// IBase_Mapping Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Base Mapping</para>	
+	/// <para>ID: 91d02640-32d5-45ff-a3d2-a5b3402a36e4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_MappingConstants.TemplateIdString)]
+	public partial interface IBase_Mapping : IGlassBase 
+	{
+								/// <summary>
+					/// The To What Field field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 093d915a-4306-4a68-b64a-07cc2a7e4ee5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_MappingConstants.To_What_FieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string To_What_Field  {get; set;}
+								/// <summary>
+					/// The Handler Assembly field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: bdf8732c-c239-4762-a3e0-ada23ef44775</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_MappingConstants.Handler_AssemblyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Handler_Assembly  {get; set;}
+								/// <summary>
+					/// The Handler Class field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_MappingConstants.Handler_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Handler_Class  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Mapping Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Base Mapping</para>	
+		/// <para>ID: 91d02640-32d5-45ff-a3d2-a5b3402a36e4</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Mapping__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The To What Field field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 093d915a-4306-4a68-b64a-07cc2a7e4ee5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_MappingConstants.To_What_FieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string To_What_Field  {get; set;}
+										/// <summary>
+						/// The Handler Assembly field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: bdf8732c-c239-4762-a3e0-ada23ef44775</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_MappingConstants.Handler_AssemblyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Handler_Assembly  {get; set;}
+										/// <summary>
+						/// The Handler Class field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_MappingConstants.Handler_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Handler_Class  {get; set;}
+						}
+	
+	public static partial class IBase_MappingConstants{
+
+			public const string TemplateIdString = "91d02640-32d5-45ff-a3d2-a5b3402a36e4";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Mapping";
+
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content
 {
 
@@ -7290,7 +8102,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	/// <para>ID: 947b2243-b316-46b5-9de1-2814f000a037</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=I___PersonConstants.TemplateIdString)]
-	public partial interface I___Person : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
+	public partial interface I___Person : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable
 	{
 								/// <summary>
 					/// The Email Address field.
@@ -7356,7 +8168,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 		/// <para>ID: 947b2243-b316-46b5-9de1-2814f000a037</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface I___Person__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
+		public partial interface I___Person__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw
 		{
 										/// <summary>
 						/// The Email Address field.
@@ -7987,6 +8799,188 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers
+{
+
+
+ 	/// <summary>
+	/// ISitecore_Import_Map Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/Sitecore Import Map</para>	
+	/// <para>ID: 96aac80c-ce36-43c5-93eb-eda101794aac</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISitecore_Import_MapConstants.TemplateIdString)]
+	public partial interface ISitecore_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
+	{
+								/// <summary>
+					/// The Import From Language field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: f8b6f833-d85a-48e7-a17f-c926e39d9e65</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Import_From_LanguageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Import_From_Language  {get; set;}
+								/// <summary>
+					/// The Recursively Fetch Children field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 690ae01b-8b70-4597-bdcd-6134c4f810b4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Recursively_Fetch_ChildrenFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Recursively_Fetch_Children  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ISitecore_Import_Map Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/Sitecore Import Map</para>	
+		/// <para>ID: 96aac80c-ce36-43c5-93eb-eda101794aac</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISitecore_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
+		{
+										/// <summary>
+						/// The Import From Language field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: f8b6f833-d85a-48e7-a17f-c926e39d9e65</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Import_From_LanguageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Import_From_Language  {get; set;}
+										/// <summary>
+						/// The Recursively Fetch Children field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 690ae01b-8b70-4597-bdcd-6134c4f810b4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Recursively_Fetch_ChildrenFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Recursively_Fetch_Children  {get; set;}
+						}
+	
+	public static partial class ISitecore_Import_MapConstants{
+
+			public const string TemplateIdString = "96aac80c-ce36-43c5-93eb-eda101794aac";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Sitecore Import Map";
+
+					
+			public static readonly ID Import_From_LanguageFieldId = new ID("f8b6f833-d85a-48e7-a17f-c926e39d9e65");
+			public const string Import_From_LanguageFieldName = "Import From Language";
+
+						
+					
+			public static readonly ID Recursively_Fetch_ChildrenFieldId = new ID("690ae01b-8b70-4597-bdcd-6134c4f810b4");
+			public const string Recursively_Fetch_ChildrenFieldName = "Recursively Fetch Children";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("0639f8e7-44ab-41ce-ae67-9987baf47e96");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("0790a745-13e8-44f1-aa17-469e8fc7d20e");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+					
+			public static readonly ID Import_To_LanguageFieldId = new ID("56c326ef-f5da-4818-ae74-e85130b60b84");
+			public const string Import_To_LanguageFieldName = "Import To Language";
+
+						
+					
+			public static readonly ID Import_To_What_TemplateFieldId = new ID("8954b459-083b-446f-b8c0-40b90ce2e210");
+			public const string Import_To_What_TemplateFieldName = "Import To What Template";
+
+						
+					
+			public static readonly ID Import_To_WhereFieldId = new ID("d01499f0-1e31-4cd6-a2f4-ee17bd095ab1");
+			public const string Import_To_WhereFieldName = "Import To Where";
+
+						
+					
+			public static readonly ID Item_Name_Max_LengthFieldId = new ID("02bab16b-d351-4502-a579-f3d6e0edb4f8");
+			public const string Item_Name_Max_LengthFieldName = "Item Name Max Length";
+
+						
+					
+			public static readonly ID Pull_Item_Name_From_What_FieldsFieldId = new ID("a7c05d14-ebc8-4f08-a8c7-183fab7061cc");
+			public const string Pull_Item_Name_From_What_FieldsFieldName = "Pull Item Name from What Fields";
+
+						
+					
+			public static readonly ID QueryFieldId = new ID("1f03f44c-dd3a-4148-bee7-0724310827b8");
+			public const string QueryFieldName = "Query";
+
+						
+					
+			public static readonly ID Date_FieldFieldId = new ID("b40c055b-3a62-4dd6-8cbd-88045e42f80d");
+			public const string Date_FieldFieldName = "Date Field";
+
+						
+					
+			public static readonly ID Folder_By_DateFieldId = new ID("2d49a4e9-c26d-435b-9207-4a8d1e3cf044");
+			public const string Folder_By_DateFieldName = "Folder By Date";
+
+						
+					
+			public static readonly ID Folder_By_NameFieldId = new ID("1cb87007-972b-4d25-abd1-f85107d29637");
+			public const string Folder_By_NameFieldName = "Folder By Name";
+
+						
+					
+			public static readonly ID Folder_TemplateFieldId = new ID("346d949c-b439-40bf-aeca-d43b7d7639c1");
+			public const string Folder_TemplateFieldName = "Folder Template";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
+{
+
+
+ 	/// <summary>
+	/// IField_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Field Folder</para>	
+	/// <para>ID: 98ef4356-8bfe-4f6a-a697-adfd0aad0b65</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IField_FolderConstants.TemplateIdString)]
+	public partial interface IField_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IField_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Field Folder</para>	
+		/// <para>ID: 98ef4356-8bfe-4f6a-a697-adfd0aad0b65</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IField_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IField_FolderConstants{
+
+			public const string TemplateIdString = "98ef4356-8bfe-4f6a-a697-adfd0aad0b65";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Field Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates
 {
 
@@ -8066,8 +9060,53 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	/// <para>ID: 997a3064-65f5-45cd-b32f-9ec61e90a610</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ISite_ConfigConstants.TemplateIdString)]
-	public partial interface ISite_Config : IGlassBase 
+	public partial interface ISite_Config : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IEmail_Config
 	{
+								/// <summary>
+					/// The My Account Page field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 6b8b6c6d-013a-4ba0-a166-f57747668b0f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid My_Account_Page  {get; set;}
+								/// <summary>
+					/// The Global Article Ad Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Ad_Zone  {get; set;}
+								/// <summary>
+					/// The Global Article Filmstrip Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 7f493d5a-9fc5-407b-9b05-609f5be5d07d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Filmstrip_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Filmstrip_Slot_ID  {get; set;}
+								/// <summary>
+					/// The Global Article Medium Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: dff8072a-6d80-408f-a3fb-2175e3b3dd72</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Medium_Slot_ID  {get; set;}
+								/// <summary>
+					/// The Email Footer field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_Footer  {get; set;}
 								/// <summary>
 					/// The Email From Address field.
 					/// <para></para>
@@ -8312,6 +9351,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Publication_Name  {get; set;}
 								/// <summary>
+					/// The Registration Email Body field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: a2f0a1ff-1d99-4d0d-ad42-1a55f9285554</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Registration_Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Registration_Email_Body  {get; set;}
+								/// <summary>
+					/// The Registration Email Subject field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 281273cb-8a6a-4637-b88e-1f278448ca11</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Registration_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Registration_Email_Subject  {get; set;}
+								/// <summary>
 					/// The Reset Password Email Body field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -8320,15 +9377,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Reset_Password_Email_Body  {get; set;}
-								/// <summary>
-					/// The Reset Password Email Footer field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Reset_Password_Email_Footer  {get; set;}
 								/// <summary>
 					/// The Reset Password Email Link Text field.
 					/// <para></para>
@@ -8446,6 +9494,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Supporting_Documents_FolderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Supporting_Documents_Folder  {get; set;}
+								/// <summary>
+					/// The Email Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e90ad04d-b62b-4118-b3fc-8c535dfed2eb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_Title  {get; set;}
+								/// <summary>
+					/// The From Email Address field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string From_Email_Address  {get; set;}
 				}
 
 	
@@ -8456,8 +9522,53 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		/// <para>ID: 997a3064-65f5-45cd-b32f-9ec61e90a610</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ISite_Config__Raw : IGlassBase 
+		public partial interface ISite_Config__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IEmail_Config__Raw
 		{
+										/// <summary>
+						/// The My Account Page field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 6b8b6c6d-013a-4ba0-a166-f57747668b0f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid My_Account_Page  {get; set;}
+										/// <summary>
+						/// The Global Article Ad Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Ad_Zone  {get; set;}
+										/// <summary>
+						/// The Global Article Filmstrip Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 7f493d5a-9fc5-407b-9b05-609f5be5d07d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Filmstrip_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Filmstrip_Slot_ID  {get; set;}
+										/// <summary>
+						/// The Global Article Medium Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: dff8072a-6d80-408f-a3fb-2175e3b3dd72</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Medium_Slot_ID  {get; set;}
+										/// <summary>
+						/// The Email Footer field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_FooterFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Email_Footer  {get; set;}
 										/// <summary>
 						/// The Email From Address field.
 						/// <para></para>
@@ -8702,6 +9813,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Publication_Name  {get; set;}
 										/// <summary>
+						/// The Registration Email Body field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: a2f0a1ff-1d99-4d0d-ad42-1a55f9285554</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Registration_Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Registration_Email_Body  {get; set;}
+										/// <summary>
+						/// The Registration Email Subject field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 281273cb-8a6a-4637-b88e-1f278448ca11</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Registration_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Registration_Email_Subject  {get; set;}
+										/// <summary>
 						/// The Reset Password Email Body field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -8710,15 +9839,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string Reset_Password_Email_Body  {get; set;}
-										/// <summary>
-						/// The Reset Password Email Footer field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_FooterFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Reset_Password_Email_Footer  {get; set;}
 										/// <summary>
 						/// The Reset Password Email Link Text field.
 						/// <para></para>
@@ -8836,6 +9956,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Supporting_Documents_FolderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Supporting_Documents_Folder  {get; set;}
+										/// <summary>
+						/// The Email Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e90ad04d-b62b-4118-b3fc-8c535dfed2eb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Email_Title  {get; set;}
+										/// <summary>
+						/// The From Email Address field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string From_Email_Address  {get; set;}
 						}
 	
 	public static partial class ISite_ConfigConstants{
@@ -8844,6 +9982,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Config";
 
+					
+			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
+			public const string My_Account_PageFieldName = "My Account Page";
+
+						
+					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
+			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
+			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
+
+						
+					
+			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
+			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
+
+						
+					
+			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+			public const string Email_FooterFieldName = "Email Footer";
+
+							public static readonly ID Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+				public const string Email_Footer__RawFieldName = "Email Footer";
+						
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
@@ -8988,18 +10153,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Registration_Email_BodyFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+			public const string Registration_Email_BodyFieldName = "Registration Email Body";
+
+							public static readonly ID Registration_Email_Body__RawFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+				public const string Registration_Email_Body__RawFieldName = "Registration Email Body";
+						
+					
+			public static readonly ID Registration_Email_SubjectFieldId = new ID("281273cb-8a6a-4637-b88e-1f278448ca11");
+			public const string Registration_Email_SubjectFieldName = "Registration Email Subject";
+
+						
+					
 			public static readonly ID Reset_Password_Email_BodyFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 			public const string Reset_Password_Email_BodyFieldName = "Reset Password Email Body";
 
 							public static readonly ID Reset_Password_Email_Body__RawFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 				public const string Reset_Password_Email_Body__RawFieldName = "Reset Password Email Body";
-						
-					
-			public static readonly ID Reset_Password_Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-			public const string Reset_Password_Email_FooterFieldName = "Reset Password Email Footer";
-
-							public static readonly ID Reset_Password_Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-				public const string Reset_Password_Email_Footer__RawFieldName = "Reset Password Email Footer";
 						
 					
 			public static readonly ID Reset_Password_Email_Link_TextFieldId = new ID("5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19");
@@ -9071,6 +10241,30 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
 
+						
+					
+			public static readonly ID Email_TitleFieldId = new ID("e90ad04d-b62b-4118-b3fc-8c535dfed2eb");
+			public const string Email_TitleFieldName = "Email Title";
+
+						
+					
+			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
+			public const string From_Email_AddressFieldName = "From Email Address";
+
+						
+					
+			public static readonly ID Email_A_Friend_Body_ContentFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
+			public const string Email_A_Friend_Body_ContentFieldName = "Email A Friend Body Content";
+
+							public static readonly ID Email_A_Friend_Body_Content__RawFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
+				public const string Email_A_Friend_Body_Content__RawFieldName = "Email A Friend Body Content";
+						
+					
+			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
+			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
+
+							public static readonly ID Email_A_Friend_Footer_Content__RawFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
+				public const string Email_A_Friend_Footer_Content__RawFieldName = "Email A Friend Footer Content";
 						
 			
 
@@ -9317,7 +10511,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	}
 
 }
-namespace Informa.Models.Velir.Search.Models.FactoryInterface
+namespace Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface
 {
 
 
@@ -9328,7 +10522,7 @@ namespace Informa.Models.Velir.Search.Models.FactoryInterface
 	/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IFactoryListableConstants.TemplateIdString)]
-	public partial interface IFactoryListable : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate
+	public partial interface IFactoryListable : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IInterfaceTemplate
 	{
 								/// <summary>
 					/// The FactoryListableAuthors field.
@@ -9403,7 +10597,7 @@ namespace Informa.Models.Velir.Search.Models.FactoryInterface
 		/// <para>ID: a3ec5da5-c37c-44a5-83f3-96d45b53389f</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IFactoryListable__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IInterfaceTemplate__Raw
+		public partial interface IFactoryListable__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IInterfaceTemplate__Raw
 		{
 										/// <summary>
 						/// The FactoryListableAuthors field.
@@ -9769,6 +10963,101 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID WidthFieldId = new ID("383f9e17-d40a-4756-9d59-cf2b1357dc89");
 			public const string WidthFieldName = "Width";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
+{
+
+
+ 	/// <summary>
+	/// ISubscriptions_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Subscriptions Page</para>	
+	/// <para>ID: a5c1fc0c-f7ea-4164-b546-291d23943036</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISubscriptions_PageConstants.TemplateIdString)]
+	public partial interface ISubscriptions_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	{
+				}
+
+	
+		/// <summary>
+		/// ISubscriptions_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Subscriptions Page</para>	
+		/// <para>ID: a5c1fc0c-f7ea-4164-b546-291d23943036</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISubscriptions_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		{
+						}
+	
+	public static partial class ISubscriptions_PageConstants{
+
+			public const string TemplateIdString = "a5c1fc0c-f7ea-4164-b546-291d23943036";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Subscriptions Page";
+
+					
+			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+						
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+
+						
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+						
+					
+			public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+			public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+						
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+
+						
+					
+			public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+			public const string Sub_TitleFieldName = "Sub Title";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+			public const string Include_In_SearchFieldName = "Include In Search";
+
+						
+					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
 
 						
 			
@@ -10165,6 +11454,101 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 					
 			public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
 			public const string Navigation_TextFieldName = "Navigation Text";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
+{
+
+
+ 	/// <summary>
+	/// IContact_Information_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Contact Information Page</para>	
+	/// <para>ID: ad6c16ac-05ce-45e4-a56b-9fca24cbaf57</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IContact_Information_PageConstants.TemplateIdString)]
+	public partial interface IContact_Information_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	{
+				}
+
+	
+		/// <summary>
+		/// IContact_Information_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Contact Information Page</para>	
+		/// <para>ID: ad6c16ac-05ce-45e4-a56b-9fca24cbaf57</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IContact_Information_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		{
+						}
+	
+	public static partial class IContact_Information_PageConstants{
+
+			public const string TemplateIdString = "ad6c16ac-05ce-45e4-a56b-9fca24cbaf57";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Contact Information Page";
+
+					
+			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+						
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+
+						
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+						
+					
+			public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+			public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+						
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+
+						
+					
+			public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+			public const string Sub_TitleFieldName = "Sub Title";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+			public const string Include_In_SearchFieldName = "Include In Search";
+
+						
+					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
 
 						
 			
@@ -10622,7 +12006,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 	/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IAuthored_ContentConstants.TemplateIdString)]
-	public partial interface IAuthored_Content : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
+	public partial interface IAuthored_Content : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable
 	{
 								/// <summary>
 					/// The Body field.
@@ -10652,7 +12036,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 		/// <para>ID: bc9061e8-27c6-4dd4-b342-50547e4a25cc</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IAuthored_Content__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
+		public partial interface IAuthored_Content__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw
 		{
 										/// <summary>
 						/// The Body field.
@@ -10725,6 +12109,82 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined
 					
 			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
 			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
+{
+
+
+ 	/// <summary>
+	/// IToStaticValue Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ToStaticValue</para>	
+	/// <para>ID: bd069a3b-1c64-4644-9d1a-f1f12cc00186</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IToStaticValueConstants.TemplateIdString)]
+	public partial interface IToStaticValue : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping
+	{
+								/// <summary>
+					/// The Value field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 97e16f71-04ec-4940-b73c-ebaa2bdfaedc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IToStaticValueConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Value  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IToStaticValue Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ToStaticValue</para>	
+		/// <para>ID: bd069a3b-1c64-4644-9d1a-f1f12cc00186</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IToStaticValue__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping__Raw
+		{
+										/// <summary>
+						/// The Value field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 97e16f71-04ec-4940-b73c-ebaa2bdfaedc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IToStaticValueConstants.ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Value  {get; set;}
+						}
+	
+	public static partial class IToStaticValueConstants{
+
+			public const string TemplateIdString = "bd069a3b-1c64-4644-9d1a-f1f12cc00186";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ToStaticValue";
+
+					
+			public static readonly ID ValueFieldId = new ID("97e16f71-04ec-4940-b73c-ebaa2bdfaedc");
+			public const string ValueFieldName = "Value";
+
+						
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
 
 						
 			
@@ -10831,6 +12291,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Templates
+{
+
+
+ 	/// <summary>
+	/// ITemplateMapping Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Templates/TemplateMapping</para>	
+	/// <para>ID: bf0ccc61-c4bf-4d26-a0e8-8f71bfe66012</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITemplateMappingConstants.TemplateIdString)]
+	public partial interface ITemplateMapping : IGlassBase 
+	{
+								/// <summary>
+					/// The From What Template field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: f897d6ab-3399-4aec-b7c0-0057f14f34ad</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITemplateMappingConstants.From_What_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid From_What_Template  {get; set;}
+								/// <summary>
+					/// The To What Template field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: a49dd11f-990f-41ac-9e6d-deb92e197be2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITemplateMappingConstants.To_What_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid To_What_Template  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ITemplateMapping Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Templates/TemplateMapping</para>	
+		/// <para>ID: bf0ccc61-c4bf-4d26-a0e8-8f71bfe66012</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ITemplateMapping__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The From What Template field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: f897d6ab-3399-4aec-b7c0-0057f14f34ad</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITemplateMappingConstants.From_What_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid From_What_Template  {get; set;}
+										/// <summary>
+						/// The To What Template field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: a49dd11f-990f-41ac-9e6d-deb92e197be2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITemplateMappingConstants.To_What_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid To_What_Template  {get; set;}
+						}
+	
+	public static partial class ITemplateMappingConstants{
+
+			public const string TemplateIdString = "bf0ccc61-c4bf-4d26-a0e8-8f71bfe66012";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "TemplateMapping";
+
+					
+			public static readonly ID From_What_TemplateFieldId = new ID("f897d6ab-3399-4aec-b7c0-0057f14f34ad");
+			public const string From_What_TemplateFieldName = "From What Template";
+
+						
+					
+			public static readonly ID To_What_TemplateFieldId = new ID("a49dd11f-990f-41ac-9e6d-deb92e197be2");
+			public const string To_What_TemplateFieldName = "To What Template";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
 
@@ -10885,6 +12429,105 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Item_PointerFieldId = new ID("8186e642-401b-403e-bb14-adf556bbcef5");
 			public const string Item_PointerFieldName = "Item Pointer";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
+{
+
+
+ 	/// <summary>
+	/// IToText Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ToText</para>	
+	/// <para>ID: c1017482-5549-4245-91f6-d960de3b00e2</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IToTextConstants.TemplateIdString)]
+	public partial interface IToText : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping
+	{
+								/// <summary>
+					/// The Delimiter field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ebb47640-52e2-4bc3-8231-af6fc5113da3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IToTextConstants.DelimiterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Delimiter  {get; set;}
+								/// <summary>
+					/// The From What Fields field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a534b62b-9c6b-449f-8b88-93753efe6aec</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IToTextConstants.From_What_FieldsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string From_What_Fields  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IToText Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ToText</para>	
+		/// <para>ID: c1017482-5549-4245-91f6-d960de3b00e2</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IToText__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.IBase_Mapping__Raw
+		{
+										/// <summary>
+						/// The Delimiter field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ebb47640-52e2-4bc3-8231-af6fc5113da3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IToTextConstants.DelimiterFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Delimiter  {get; set;}
+										/// <summary>
+						/// The From What Fields field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a534b62b-9c6b-449f-8b88-93753efe6aec</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IToTextConstants.From_What_FieldsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string From_What_Fields  {get; set;}
+						}
+	
+	public static partial class IToTextConstants{
+
+			public const string TemplateIdString = "c1017482-5549-4245-91f6-d960de3b00e2";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ToText";
+
+					
+			public static readonly ID DelimiterFieldId = new ID("ebb47640-52e2-4bc3-8231-af6fc5113da3");
+			public const string DelimiterFieldName = "Delimiter";
+
+						
+					
+			public static readonly ID From_What_FieldsFieldId = new ID("a534b62b-9c6b-449f-8b88-93753efe6aec");
+			public const string From_What_FieldsFieldName = "From What Fields";
+
+						
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
 
 						
 			
@@ -11845,7 +13488,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IStaff_ItemConstants.TemplateIdString)]
-	public partial interface IStaff_Item : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable
+	public partial interface IStaff_Item : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable
 	{
 				}
 
@@ -11857,7 +13500,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		/// <para>ID: daf954e3-bcc7-4353-996f-1caf9d35b44c</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IStaff_Item__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryLinkable__Raw, global::Informa.Models.Velir.Search.Models.FactoryInterface.IFactoryListable__Raw
+		public partial interface IStaff_Item__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw
 		{
 						}
 	
@@ -12186,6 +13829,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public const string TemplateName = "Site Root";
 
 					
+			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
+			public const string My_Account_PageFieldName = "My Account Page";
+
+						
+					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
+			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
+			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
+
+						
+					
+			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
+			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
+
+						
+					
+			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+			public const string Email_FooterFieldName = "Email Footer";
+
+							public static readonly ID Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+				public const string Email_Footer__RawFieldName = "Email Footer";
+						
+					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
 
@@ -12329,18 +13999,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Registration_Email_BodyFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+			public const string Registration_Email_BodyFieldName = "Registration Email Body";
+
+							public static readonly ID Registration_Email_Body__RawFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+				public const string Registration_Email_Body__RawFieldName = "Registration Email Body";
+						
+					
+			public static readonly ID Registration_Email_SubjectFieldId = new ID("281273cb-8a6a-4637-b88e-1f278448ca11");
+			public const string Registration_Email_SubjectFieldName = "Registration Email Subject";
+
+						
+					
 			public static readonly ID Reset_Password_Email_BodyFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 			public const string Reset_Password_Email_BodyFieldName = "Reset Password Email Body";
 
 							public static readonly ID Reset_Password_Email_Body__RawFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 				public const string Reset_Password_Email_Body__RawFieldName = "Reset Password Email Body";
-						
-					
-			public static readonly ID Reset_Password_Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-			public const string Reset_Password_Email_FooterFieldName = "Reset Password Email Footer";
-
-							public static readonly ID Reset_Password_Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-				public const string Reset_Password_Email_Footer__RawFieldName = "Reset Password Email Footer";
 						
 					
 			public static readonly ID Reset_Password_Email_Link_TextFieldId = new ID("5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19");
@@ -12413,66 +14088,29 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
 
 						
-			
-
-	}
-
-}
-namespace Informa.Models.Velir.Search.Models.Example
-{
-
-
- 	/// <summary>
-	/// IExample_Search_Page Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Example/Example Search Page</para>	
-	/// <para>ID: dd15a131-7035-4180-a316-78d3f2b90c90</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IExample_Search_PageConstants.TemplateIdString)]
-	public partial interface IExample_Search_Page : IGlassBase , global::Velir.Search.Models.ISearch_Listing, global::Velir.Search.Models.ISearch_Refinements
-	{
-								/// <summary>
-					/// The Boost field.
-					/// <para></para>
-					/// <para>Field Type: Rules</para>		
-					/// <para>Field ID: 776e4fd4-c086-4d81-9530-dc5ee878e132</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IExample_Search_PageConstants.BoostFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Boost  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IExample_Search_Page Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Example/Example Search Page</para>	
-		/// <para>ID: dd15a131-7035-4180-a316-78d3f2b90c90</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IExample_Search_Page__Raw : IGlassBase , global::Velir.Search.Models.ISearch_Listing__Raw, global::Velir.Search.Models.ISearch_Refinements__Raw
-		{
-										/// <summary>
-						/// The Boost field.
-						/// <para></para>
-						/// <para>Field Type: Rules</para>		
-						/// <para>Field ID: 776e4fd4-c086-4d81-9530-dc5ee878e132</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IExample_Search_PageConstants.BoostFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Boost  {get; set;}
-						}
-	
-	public static partial class IExample_Search_PageConstants{
-
-			public const string TemplateIdString = "dd15a131-7035-4180-a316-78d3f2b90c90";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Example Search Page";
-
 					
-			public static readonly ID BoostFieldId = new ID("776e4fd4-c086-4d81-9530-dc5ee878e132");
-			public const string BoostFieldName = "Boost";
+			public static readonly ID Email_TitleFieldId = new ID("e90ad04d-b62b-4118-b3fc-8c535dfed2eb");
+			public const string Email_TitleFieldName = "Email Title";
 
+						
+					
+			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
+			public const string From_Email_AddressFieldName = "From Email Address";
+
+						
+					
+			public static readonly ID Email_A_Friend_Body_ContentFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
+			public const string Email_A_Friend_Body_ContentFieldName = "Email A Friend Body Content";
+
+							public static readonly ID Email_A_Friend_Body_Content__RawFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
+				public const string Email_A_Friend_Body_Content__RawFieldName = "Email A Friend Body Content";
+						
+					
+			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
+			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
+
+							public static readonly ID Email_A_Friend_Footer_Content__RawFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
+				public const string Email_A_Friend_Footer_Content__RawFieldName = "Email A Friend Footer Content";
 						
 			
 
@@ -12586,100 +14224,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 					
 			public static readonly ID Match_The_Content_WithinsFieldId = new ID("e34615dd-1764-462f-a863-46bbbbf81e66");
 			public const string Match_The_Content_WithinsFieldName = "Match the content within";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Velir.Search.Models.Sort_Strategies
-{
-
-
- 	/// <summary>
-	/// IHierarchical_Sort_Strategy Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Sort Strategies/Hierarchical Sort Strategy</para>	
-	/// <para>ID: e147c7ab-c755-4e9c-b51c-6ac9b3443153</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IHierarchical_Sort_StrategyConstants.TemplateIdString)]
-	public partial interface IHierarchical_Sort_Strategy : IGlassBase , global::Informa.Models.Velir.Search.Models.Sort_Strategies.ISort_Strategy
-	{
-								/// <summary>
-					/// The Field Name field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 5ffbf7f4-42dc-4cfc-91c8-da0f30824547</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IHierarchical_Sort_StrategyConstants.Field_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Field_Name  {get; set;}
-								/// <summary>
-					/// The Root Item field.
-					/// <para></para>
-					/// <para>Field Type: Droptree</para>		
-					/// <para>Field ID: 8079311b-a258-4630-afb1-9b449378c87c</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IHierarchical_Sort_StrategyConstants.Root_ItemFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Root_Item  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IHierarchical_Sort_Strategy Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Sort Strategies/Hierarchical Sort Strategy</para>	
-		/// <para>ID: e147c7ab-c755-4e9c-b51c-6ac9b3443153</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IHierarchical_Sort_Strategy__Raw : IGlassBase , global::Informa.Models.Velir.Search.Models.Sort_Strategies.ISort_Strategy__Raw
-		{
-										/// <summary>
-						/// The Field Name field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 5ffbf7f4-42dc-4cfc-91c8-da0f30824547</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IHierarchical_Sort_StrategyConstants.Field_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Field_Name  {get; set;}
-										/// <summary>
-						/// The Root Item field.
-						/// <para></para>
-						/// <para>Field Type: Droptree</para>		
-						/// <para>Field ID: 8079311b-a258-4630-afb1-9b449378c87c</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IHierarchical_Sort_StrategyConstants.Root_ItemFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Root_Item  {get; set;}
-						}
-	
-	public static partial class IHierarchical_Sort_StrategyConstants{
-
-			public const string TemplateIdString = "e147c7ab-c755-4e9c-b51c-6ac9b3443153";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Hierarchical Sort Strategy";
-
-					
-			public static readonly ID Field_NameFieldId = new ID("5ffbf7f4-42dc-4cfc-91c8-da0f30824547");
-			public const string Field_NameFieldName = "Field Name";
-
-						
-					
-			public static readonly ID Root_ItemFieldId = new ID("8079311b-a258-4630-afb1-9b449378c87c");
-			public const string Root_ItemFieldName = "Root Item";
-
-						
-					
-			public static readonly ID Include_SelectedFieldId = new ID("c57349b0-ead1-45a7-be69-a1d53971c900");
-			public const string Include_SelectedFieldName = "Include Selected";
-
-						
-					
-			public static readonly ID TypeFieldId = new ID("32086477-70e7-45b1-a3fe-204b3a73e42d");
-			public const string TypeFieldName = "Type";
 
 						
 			
@@ -12868,6 +14412,213 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 					
 			public static readonly ID PatternFieldId = new ID("d938cd93-3517-4509-9a68-9da430d8ec68");
 			public const string PatternFieldName = "Pattern";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
+{
+
+
+ 	/// <summary>
+	/// IToDate Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ToDate</para>	
+	/// <para>ID: e5ac18c6-cfde-4e63-8ae6-aed5f10eaeb2</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IToDateConstants.TemplateIdString)]
+	public partial interface IToDate : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText
+	{
+				}
+
+	
+		/// <summary>
+		/// IToDate Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ToDate</para>	
+		/// <para>ID: e5ac18c6-cfde-4e63-8ae6-aed5f10eaeb2</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IToDate__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText__Raw
+		{
+						}
+	
+	public static partial class IToDateConstants{
+
+			public const string TemplateIdString = "e5ac18c6-cfde-4e63-8ae6-aed5f10eaeb2";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ToDate";
+
+					
+			public static readonly ID DelimiterFieldId = new ID("ebb47640-52e2-4bc3-8231-af6fc5113da3");
+			public const string DelimiterFieldName = "Delimiter";
+
+						
+					
+			public static readonly ID From_What_FieldsFieldId = new ID("a534b62b-9c6b-449f-8b88-93753efe6aec");
+			public const string From_What_FieldsFieldName = "From What Fields";
+
+						
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers
+{
+
+
+ 	/// <summary>
+	/// ICSV_Import_Map Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/CSV Import Map</para>	
+	/// <para>ID: e70adef9-b551-4648-9fca-3efb17b491b1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICSV_Import_MapConstants.TemplateIdString)]
+	public partial interface ICSV_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
+	{
+								/// <summary>
+					/// The Encoding Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 67362e7c-1030-4e5c-b13f-1312e761f7fc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICSV_Import_MapConstants.Encoding_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Encoding_Type  {get; set;}
+								/// <summary>
+					/// The Field Delimiter field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a8e914be-49fd-4325-a1ce-daa3148091ed</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICSV_Import_MapConstants.Field_DelimiterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Field_Delimiter  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICSV_Import_Map Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/CSV Import Map</para>	
+		/// <para>ID: e70adef9-b551-4648-9fca-3efb17b491b1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICSV_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
+		{
+										/// <summary>
+						/// The Encoding Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 67362e7c-1030-4e5c-b13f-1312e761f7fc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICSV_Import_MapConstants.Encoding_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Encoding_Type  {get; set;}
+										/// <summary>
+						/// The Field Delimiter field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a8e914be-49fd-4325-a1ce-daa3148091ed</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICSV_Import_MapConstants.Field_DelimiterFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Field_Delimiter  {get; set;}
+						}
+	
+	public static partial class ICSV_Import_MapConstants{
+
+			public const string TemplateIdString = "e70adef9-b551-4648-9fca-3efb17b491b1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "CSV Import Map";
+
+					
+			public static readonly ID Encoding_TypeFieldId = new ID("67362e7c-1030-4e5c-b13f-1312e761f7fc");
+			public const string Encoding_TypeFieldName = "Encoding Type";
+
+						
+					
+			public static readonly ID Field_DelimiterFieldId = new ID("a8e914be-49fd-4325-a1ce-daa3148091ed");
+			public const string Field_DelimiterFieldName = "Field Delimiter";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("0639f8e7-44ab-41ce-ae67-9987baf47e96");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("0790a745-13e8-44f1-aa17-469e8fc7d20e");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+					
+			public static readonly ID Import_To_LanguageFieldId = new ID("56c326ef-f5da-4818-ae74-e85130b60b84");
+			public const string Import_To_LanguageFieldName = "Import To Language";
+
+						
+					
+			public static readonly ID Import_To_What_TemplateFieldId = new ID("8954b459-083b-446f-b8c0-40b90ce2e210");
+			public const string Import_To_What_TemplateFieldName = "Import To What Template";
+
+						
+					
+			public static readonly ID Import_To_WhereFieldId = new ID("d01499f0-1e31-4cd6-a2f4-ee17bd095ab1");
+			public const string Import_To_WhereFieldName = "Import To Where";
+
+						
+					
+			public static readonly ID Item_Name_Max_LengthFieldId = new ID("02bab16b-d351-4502-a579-f3d6e0edb4f8");
+			public const string Item_Name_Max_LengthFieldName = "Item Name Max Length";
+
+						
+					
+			public static readonly ID Pull_Item_Name_From_What_FieldsFieldId = new ID("a7c05d14-ebc8-4f08-a8c7-183fab7061cc");
+			public const string Pull_Item_Name_From_What_FieldsFieldName = "Pull Item Name from What Fields";
+
+						
+					
+			public static readonly ID QueryFieldId = new ID("1f03f44c-dd3a-4148-bee7-0724310827b8");
+			public const string QueryFieldName = "Query";
+
+						
+					
+			public static readonly ID Date_FieldFieldId = new ID("b40c055b-3a62-4dd6-8cbd-88045e42f80d");
+			public const string Date_FieldFieldName = "Date Field";
+
+						
+					
+			public static readonly ID Folder_By_DateFieldId = new ID("2d49a4e9-c26d-435b-9207-4a8d1e3cf044");
+			public const string Folder_By_DateFieldName = "Folder By Date";
+
+						
+					
+			public static readonly ID Folder_By_NameFieldId = new ID("1cb87007-972b-4d25-abd1-f85107d29637");
+			public const string Folder_By_NameFieldName = "Folder By Name";
+
+						
+					
+			public static readonly ID Folder_TemplateFieldId = new ID("346d949c-b439-40bf-aeca-d43b7d7639c1");
+			public const string Folder_TemplateFieldName = "Folder Template";
 
 						
 			
@@ -13265,6 +15016,69 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Layout.Section
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
+{
+
+
+ 	/// <summary>
+	/// IUrlToLink Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/UrlToLink</para>	
+	/// <para>ID: e929a1d8-de99-44ca-a5fb-a87db718a316</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IUrlToLinkConstants.TemplateIdString)]
+	public partial interface IUrlToLink : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText
+	{
+				}
+
+	
+		/// <summary>
+		/// IUrlToLink Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/UrlToLink</para>	
+		/// <para>ID: e929a1d8-de99-44ca-a5fb-a87db718a316</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IUrlToLink__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText__Raw
+		{
+						}
+	
+	public static partial class IUrlToLinkConstants{
+
+			public const string TemplateIdString = "e929a1d8-de99-44ca-a5fb-a87db718a316";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "UrlToLink";
+
+					
+			public static readonly ID DelimiterFieldId = new ID("ebb47640-52e2-4bc3-8231-af6fc5113da3");
+			public const string DelimiterFieldName = "Delimiter";
+
+						
+					
+			public static readonly ID From_What_FieldsFieldId = new ID("a534b62b-9c6b-449f-8b88-93753efe6aec");
+			public const string From_What_FieldsFieldName = "From What Fields";
+
+						
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -13540,6 +15354,92 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
+{
+
+
+ 	/// <summary>
+	/// IListToGuid Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ListToGuid</para>	
+	/// <para>ID: ec4e9590-f027-4c6f-ac08-dcabd8877f1b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IListToGuidConstants.TemplateIdString)]
+	public partial interface IListToGuid : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText
+	{
+								/// <summary>
+					/// The Source List field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 76f71014-cc36-4507-b623-9bbd2851e8ce</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListToGuidConstants.Source_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Source_List  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IListToGuid Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Mappings/Fields/ListToGuid</para>	
+		/// <para>ID: ec4e9590-f027-4c6f-ac08-dcabd8877f1b</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IListToGuid__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields.IToText__Raw
+		{
+										/// <summary>
+						/// The Source List field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 76f71014-cc36-4507-b623-9bbd2851e8ce</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListToGuidConstants.Source_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Source_List  {get; set;}
+						}
+	
+	public static partial class IListToGuidConstants{
+
+			public const string TemplateIdString = "ec4e9590-f027-4c6f-ac08-dcabd8877f1b";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ListToGuid";
+
+					
+			public static readonly ID Source_ListFieldId = new ID("76f71014-cc36-4507-b623-9bbd2851e8ce");
+			public const string Source_ListFieldName = "Source List";
+
+						
+					
+			public static readonly ID DelimiterFieldId = new ID("ebb47640-52e2-4bc3-8231-af6fc5113da3");
+			public const string DelimiterFieldName = "Delimiter";
+
+						
+					
+			public static readonly ID From_What_FieldsFieldId = new ID("a534b62b-9c6b-449f-8b88-93753efe6aec");
+			public const string From_What_FieldsFieldName = "From What Fields";
+
+						
+					
+			public static readonly ID To_What_FieldFieldId = new ID("093d915a-4306-4a68-b64a-07cc2a7e4ee5");
+			public const string To_What_FieldFieldName = "To What Field";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("bdf8732c-c239-4762-a3e0-ada23ef44775");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Server_Variables
 {
 
@@ -13769,7 +15669,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	}
 
 }
-namespace Informa.Models.Velir.Search.Models.FactoryInterface
+namespace Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface
 {
 
 
@@ -14128,6 +16028,139 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
+{
+
+
+ 	/// <summary>
+	/// IData_Import_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Data Import Folder</para>	
+	/// <para>ID: fae089b9-d8b8-438f-b66f-b8e6d9c1a8b1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IData_Import_FolderConstants.TemplateIdString)]
+	public partial interface IData_Import_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IData_Import_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Folders/Data Import Folder</para>	
+		/// <para>ID: fae089b9-d8b8-438f-b66f-b8e6d9c1a8b1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IData_Import_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IData_Import_FolderConstants{
+
+			public const string TemplateIdString = "fae089b9-d8b8-438f-b66f-b8e6d9c1a8b1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Data Import Folder";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
+{
+
+
+ 	/// <summary>
+	/// IAccount_Landing_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Account Landing Page</para>	
+	/// <para>ID: fcb415d5-4852-4e86-b54c-0f8ed7a6852e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IAccount_Landing_PageConstants.TemplateIdString)]
+	public partial interface IAccount_Landing_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	{
+				}
+
+	
+		/// <summary>
+		/// IAccount_Landing_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Account/Account Landing Page</para>	
+		/// <para>ID: fcb415d5-4852-4e86-b54c-0f8ed7a6852e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IAccount_Landing_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		{
+						}
+	
+	public static partial class IAccount_Landing_PageConstants{
+
+			public const string TemplateIdString = "fcb415d5-4852-4e86-b54c-0f8ed7a6852e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Account Landing Page";
+
+					
+			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+						
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+
+						
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+						
+					
+			public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+			public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+						
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+
+						
+					
+			public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+			public const string Sub_TitleFieldName = "Sub Title";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+			public const string Include_In_SearchFieldName = "Include In Search";
+
+						
+					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.System.Media
 {
 
@@ -14161,6 +16194,320 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Media
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Media folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers
+{
+
+
+ 	/// <summary>
+	/// IBase_Import_Map Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/Base Import Map</para>	
+	/// <para>ID: ffb11c18-4ec6-434b-ba51-c81b640539b4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_Import_MapConstants.TemplateIdString)]
+	public partial interface IBase_Import_Map : IGlassBase 
+	{
+								/// <summary>
+					/// The Handler Assembly field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 0639f8e7-44ab-41ce-ae67-9987baf47e96</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Handler_AssemblyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Handler_Assembly  {get; set;}
+								/// <summary>
+					/// The Handler Class field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 0790a745-13e8-44f1-aa17-469e8fc7d20e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Handler_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Handler_Class  {get; set;}
+								/// <summary>
+					/// The Import To Language field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 56c326ef-f5da-4818-ae74-e85130b60b84</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Import_To_LanguageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Import_To_Language  {get; set;}
+								/// <summary>
+					/// The Import To What Template field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 8954b459-083b-446f-b8c0-40b90ce2e210</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Import_To_What_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Import_To_What_Template  {get; set;}
+								/// <summary>
+					/// The Import To Where field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: d01499f0-1e31-4cd6-a2f4-ee17bd095ab1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Import_To_WhereFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Import_To_Where  {get; set;}
+								/// <summary>
+					/// The Item Name Max Length field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 02bab16b-d351-4502-a579-f3d6e0edb4f8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Item_Name_Max_LengthFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Item_Name_Max_Length  {get; set;}
+								/// <summary>
+					/// The Pull Item Name from What Fields field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a7c05d14-ebc8-4f08-a8c7-183fab7061cc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Pull_Item_Name_From_What_FieldsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Pull_Item_Name_From_What_Fields  {get; set;}
+								/// <summary>
+					/// The Query field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 1f03f44c-dd3a-4148-bee7-0724310827b8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.QueryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Query  {get; set;}
+								/// <summary>
+					/// The Date Field field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b40c055b-3a62-4dd6-8cbd-88045e42f80d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Date_FieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Date_Field  {get; set;}
+								/// <summary>
+					/// The Folder By Date field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 2d49a4e9-c26d-435b-9207-4a8d1e3cf044</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Folder_By_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Folder_By_Date  {get; set;}
+								/// <summary>
+					/// The Folder By Name field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 1cb87007-972b-4d25-abd1-f85107d29637</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Folder_By_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Folder_By_Name  {get; set;}
+								/// <summary>
+					/// The Folder Template field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 346d949c-b439-40bf-aeca-d43b7d7639c1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_Import_MapConstants.Folder_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Folder_Template  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IBase_Import_Map Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/Base Import Map</para>	
+		/// <para>ID: ffb11c18-4ec6-434b-ba51-c81b640539b4</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IBase_Import_Map__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Handler Assembly field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 0639f8e7-44ab-41ce-ae67-9987baf47e96</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Handler_AssemblyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Handler_Assembly  {get; set;}
+										/// <summary>
+						/// The Handler Class field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 0790a745-13e8-44f1-aa17-469e8fc7d20e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Handler_ClassFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Handler_Class  {get; set;}
+										/// <summary>
+						/// The Import To Language field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 56c326ef-f5da-4818-ae74-e85130b60b84</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Import_To_LanguageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Import_To_Language  {get; set;}
+										/// <summary>
+						/// The Import To What Template field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 8954b459-083b-446f-b8c0-40b90ce2e210</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Import_To_What_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Import_To_What_Template  {get; set;}
+										/// <summary>
+						/// The Import To Where field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: d01499f0-1e31-4cd6-a2f4-ee17bd095ab1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Import_To_WhereFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Import_To_Where  {get; set;}
+										/// <summary>
+						/// The Item Name Max Length field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 02bab16b-d351-4502-a579-f3d6e0edb4f8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Item_Name_Max_LengthFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Item_Name_Max_Length  {get; set;}
+										/// <summary>
+						/// The Pull Item Name from What Fields field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a7c05d14-ebc8-4f08-a8c7-183fab7061cc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Pull_Item_Name_From_What_FieldsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Pull_Item_Name_From_What_Fields  {get; set;}
+										/// <summary>
+						/// The Query field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 1f03f44c-dd3a-4148-bee7-0724310827b8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.QueryFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Query  {get; set;}
+										/// <summary>
+						/// The Date Field field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b40c055b-3a62-4dd6-8cbd-88045e42f80d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Date_FieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Date_Field  {get; set;}
+										/// <summary>
+						/// The Folder By Date field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 2d49a4e9-c26d-435b-9207-4a8d1e3cf044</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Folder_By_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Folder_By_Date  {get; set;}
+										/// <summary>
+						/// The Folder By Name field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 1cb87007-972b-4d25-abd1-f85107d29637</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Folder_By_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Folder_By_Name  {get; set;}
+										/// <summary>
+						/// The Folder Template field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 346d949c-b439-40bf-aeca-d43b7d7639c1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IBase_Import_MapConstants.Folder_TemplateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Folder_Template  {get; set;}
+						}
+	
+	public static partial class IBase_Import_MapConstants{
+
+			public const string TemplateIdString = "ffb11c18-4ec6-434b-ba51-c81b640539b4";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Import Map";
+
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("0639f8e7-44ab-41ce-ae67-9987baf47e96");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("0790a745-13e8-44f1-aa17-469e8fc7d20e");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+					
+			public static readonly ID Import_To_LanguageFieldId = new ID("56c326ef-f5da-4818-ae74-e85130b60b84");
+			public const string Import_To_LanguageFieldName = "Import To Language";
+
+						
+					
+			public static readonly ID Import_To_What_TemplateFieldId = new ID("8954b459-083b-446f-b8c0-40b90ce2e210");
+			public const string Import_To_What_TemplateFieldName = "Import To What Template";
+
+						
+					
+			public static readonly ID Import_To_WhereFieldId = new ID("d01499f0-1e31-4cd6-a2f4-ee17bd095ab1");
+			public const string Import_To_WhereFieldName = "Import To Where";
+
+						
+					
+			public static readonly ID Item_Name_Max_LengthFieldId = new ID("02bab16b-d351-4502-a579-f3d6e0edb4f8");
+			public const string Item_Name_Max_LengthFieldName = "Item Name Max Length";
+
+						
+					
+			public static readonly ID Pull_Item_Name_From_What_FieldsFieldId = new ID("a7c05d14-ebc8-4f08-a8c7-183fab7061cc");
+			public const string Pull_Item_Name_From_What_FieldsFieldName = "Pull Item Name from What Fields";
+
+						
+					
+			public static readonly ID QueryFieldId = new ID("1f03f44c-dd3a-4148-bee7-0724310827b8");
+			public const string QueryFieldName = "Query";
+
+						
+					
+			public static readonly ID Date_FieldFieldId = new ID("b40c055b-3a62-4dd6-8cbd-88045e42f80d");
+			public const string Date_FieldFieldName = "Date Field";
+
+						
+					
+			public static readonly ID Folder_By_DateFieldId = new ID("2d49a4e9-c26d-435b-9207-4a8d1e3cf044");
+			public const string Folder_By_DateFieldName = "Folder By Date";
+
+						
+					
+			public static readonly ID Folder_By_NameFieldId = new ID("1cb87007-972b-4d25-abd1-f85107d29637");
+			public const string Folder_By_NameFieldName = "Folder By Name";
+
+						
+					
+			public static readonly ID Folder_TemplateFieldId = new ID("346d949c-b439-40bf-aeca-d43b7d7639c1");
+			public const string Folder_TemplateFieldName = "Folder Template";
+
+						
 			
 
 	}

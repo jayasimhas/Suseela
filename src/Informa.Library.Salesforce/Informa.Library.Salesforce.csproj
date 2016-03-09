@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryEntitlementsResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryEmailNewsletterOptInsResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
@@ -75,16 +78,27 @@
     <Compile Include="SalesforceSessionContext.cs" />
     <Compile Include="SalesforceSessionFactory.cs" />
     <Compile Include="User\ISalesforceFindUserByEmail.cs" />
+    <Compile Include="User\ISalesforceGetIPEntitlements.cs" />
+    <Compile Include="User\ISalesforceGetUserEntitlements.cs" />
     <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
+    <Compile Include="User\Profile\ISalesforceQueryNewsletterUserOptInResult.cs" />
     <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceQueryOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptInResult.cs" />
+    <Compile Include="User\Profile\SalesforceQueryOfferUserOptInResult.cs" />
+    <Compile Include="User\Profile\SalesforceUpdateNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\SalesforceUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
+    <Compile Include="User\SalesforceGetIPEntitlements.cs" />
+    <Compile Include="User\SalesforceGetUserEntitlements.cs" />
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />
     <Compile Include="User\SalesforceUser.cs" />
@@ -299,7 +313,9 @@
       <Name>Informa.Library</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="User\Entitlement\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

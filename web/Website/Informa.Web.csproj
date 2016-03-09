@@ -92,6 +92,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\AutofacContrib.SolrNet.dll</HintPath>
     </Reference>
+    <Reference Include="CustomItemGenerator">
+      <HintPath>..\..\lib\Velir\CustomItemGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Elsevier.Library">
+      <HintPath>..\..\lib\Velir\Elsevier.Library.dll</HintPath>
+    </Reference>
     <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
@@ -138,6 +144,34 @@
     </Reference>
     <Reference Include="Jabberwocky.WebApi, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Jabberwocky.WebApi.1.0.1.0\lib\net45\Jabberwocky.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -515,6 +549,9 @@
       <HintPath>..\..\packages\Velir.Library.Core.1.0.4\lib\net45\Velir.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Velir.Library">
+      <HintPath>..\..\lib\Velir\Velir.Library.dll</HintPath>
+    </Reference>
     <Reference Include="Velir.Search.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Search.Autofac.1.1.2\lib\net45\Velir.Search.Autofac.dll</HintPath>
       <Private>True</Private>
@@ -611,6 +648,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
@@ -619,33 +657,46 @@
     <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\TelemetryConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
+    <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
-    <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
+    <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\ChangeValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Subscription\SubscriptionModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
+    <Compile Include="Areas\Account\Controllers\SpoofController.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
     <Compile Include="Controllers\DCDController.cs" />
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
+    <Compile Include="Controllers\EmailUtil.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
@@ -670,6 +721,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\EntitledViewModel.cs" />
+    <Compile Include="ViewModels\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
     <Compile Include="ViewModels\SitemapViewModel.cs" />
@@ -725,6 +779,50 @@
     <Compile Include="ViewModels\TestUserResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
+    <Compile Include="VWB\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VWB\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VWB\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VWB\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VWB\Report\ArticleItemWrapper.cs" />
+    <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleNumberColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleSizeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleTypeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\AuthorsColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ColumnFactory.cs" />
+    <Compile Include="VWB\Report\Columns\IssuePublishDateColumn.cs" />
+    <Compile Include="VWB\Report\Columns\IVwbColumn.cs" />
+    <Compile Include="VWB\Report\Columns\LockStatusColumn.cs" />
+    <Compile Include="VWB\Report\Columns\NotesToEditorialColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ProofreadingStatusColumn.cs" />
+    <Compile Include="VWB\Report\Columns\PublishableAfterColumn.cs" />
+    <Compile Include="VWB\Report\Columns\PlannedPublishDateTimeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\SidebarColumn.cs" />
+    <Compile Include="VWB\Report\Columns\TitleColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ActualPublishDateTimeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\WorkflowStateColumn.cs" />
+    <Compile Include="VWB\Report\IVwbArticleItemCollection.cs" />
+    <Compile Include="VWB\Report\MacroVwbArticleItemCollection.cs" />
+    <Compile Include="VWB\Report\ReportBuilder.cs" />
+    <Compile Include="VWB\Report\VwbArticleItemCollection.cs" />
+    <Compile Include="VWB\services\VirtualWhiteBoard.asmx.cs">
+      <DependentUpon>VirtualWhiteBoard.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VWB\Util\VWBUtil.cs" />
+    <Compile Include="VWB\VwbQuery.cs" />
+    <Compile Include="VWB\VwbSessionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="500.html" />
@@ -732,14 +830,22 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="email\EditAfterPublishEmail.html" />
+    <Content Include="email\EmailFriend.html" />
+    <Content Include="email\_BaseEmail.html" />
+    <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\form-controller.js" />
+    <Content Include="js\openadstream.js" />
+    <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
     <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search\controllers\emailRssController.js" />
     <Content Include="js\search\controllers\headlineToggleController.js" />
     <Content Include="js\search\controllers\informaFacetsController.js" />
     <Content Include="js\search\controllers\informaResultsController.js" />
@@ -798,8 +904,12 @@
     <Content Include="App_Config\Web\nwebsec.config.template" />
     <Content Include="App_Config\Web\system.webServer.handlers.config" />
     <Content Include="App_Config\Web\system.webServer.handlers.config.template" />
-    <Content Include="App_Config\Web\system.webServer.modules.config" />
-    <Content Include="App_Config\Web\system.webServer.modules.config.template" />
+    <Content Include="App_Config\Web\system.webServer.modules.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Web\system.webServer.modules.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Web\system.webServer.staticContent.config" />
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
@@ -817,6 +927,10 @@
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\search\InformaFacetsController.js" />
+    <Content Include="Scripts\vendor.js" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
@@ -827,6 +941,29 @@
     <Content Include="tasks\js.js" />
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
+    <Content Include="VWB\default.aspx" />
+    <Content Include="VWB\login.aspx" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_gloss-wave_35_ffffff_500x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_highlight-soft_100_ffffff_1x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.8.11.custom.css" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui.js" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
+    <Content Include="VWB\Scripts\jquery.js" />
+    <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
+    <Content Include="VWB\Styles\vwb.css" />
     <Content Include="webedit.css" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\XamlPage.browser" />
@@ -873,7 +1010,6 @@
     <Content Include="Views\Structure\SingleColumnContent.cshtml" />
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
     <Content Include="Views\Article\FeaturedArticle.cshtml" />
@@ -883,9 +1019,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Register\" />
     <Folder Include="Areas\Account\Views\Shared\" />
-    <Folder Include="Areas\Article\Models\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
@@ -907,9 +1041,6 @@
     </Content>
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
-    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config">
       <SubType>Designer</SubType>
@@ -927,10 +1058,26 @@
     <Content Include="App_Config\Include\UserDefined\User.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\AppInsights.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Config\Include\UserDefined\AppInsights.config.template">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
+    <Content Include="Areas\Account\Views\Management\SavedArticles.cshtml" />
+    <Content Include="Areas\Account\Views\Management\Subscriptions.cshtml" />
+    <Content Include="Areas\Account\Views\Management\ContactInformation.cshtml" />
+    <Content Include="Areas\Account\Views\Management\EmailPreferences.cshtml" />
+    <Content Include="Areas\Account\Views\Management\AccountNavigation.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -963,7 +1110,7 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
-    <Content Include="Views\Shared\Components\_ManuallyCuratedAdvert.cshtml" />
+    <Content Include="Views\Article\ArticleMediumAd.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
@@ -993,6 +1140,12 @@
     <Content Include="Views\Shared\Layouts\BlankLayout.cshtml" />
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
+    <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
+    <Content Include="Scripts\vendor.js.map" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
+    <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
+    <Content Include="Views\Shared\Global\Sitemap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
@@ -1021,6 +1174,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>

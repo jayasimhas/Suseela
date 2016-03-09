@@ -8,41 +8,49 @@ using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using Sitecore.Web;
 
 namespace Informa.Web.ViewModels
 {
-    public class GlassArticleModel : GlassViewModel<IArticle>, IArticleModel
+    public class GlassArticleModel : EntitledViewModel<IArticle>, IArticleModel
     {
         public ISiteRootContext SiterootContext { get; set; }
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
+        protected readonly IArticleComponentFactory ArticleComponentFactory;    
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
             IArticleListItemModelFactory articleListableFactory,
             ITextTranslator textTranslator, 
             IArticleSearch searcher,
-            ISitecoreContext context)
+            ISitecoreContext context,
+            IArticleComponentFactory articleComponentFactory,
+            IEntitledProductContext entitledProductContext) : base(entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             Searcher = searcher;
             SitecoreContext = context;
+            ArticleComponentFactory = articleComponentFactory;      
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
             => GlassModel.Taxonomies.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) });
+
+        public string SelectedMobileMedia => Sitecore.Context.Device.QueryString == "mobilemedia=true" ? ArticleComponentFactory.Component(WebUtil.GetQueryString("selectedid"), GlassModel) : null;
 
         #region Implementation of IArticleModel
 
@@ -52,7 +60,7 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                string body = GlassModel.Body;
+                string body = (GlassModel.Free_Article || AccessLevel != EntitledAccessLevel.UnEntitled) ? GlassModel.Body : "TEMPORARY UNENTITLED\n\n" + GlassModel.Summary;
 
                 //Replace any DCD related tokens with proper names
                 body = DCDTokenMatchers.ProcessDCDTokens(body);
@@ -162,6 +170,12 @@ namespace Informa.Web.ViewModels
             get { return !string.IsNullOrWhiteSpace(ListableImage); }
             set { }
         }
+
+        #endregion
+
+        #region Overrides of EntitledViewModel<IArticle>
+
+        //public EntitledAccessLevel AccessLevel => GlassModel is IEntitledProductItem ? EntitledProductContext.GetAccessLevel((IEntitledProductItem)GlassModel) : EntitledAccessLevel.Free;
 
         #endregion
     }
