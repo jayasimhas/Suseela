@@ -2,9 +2,9 @@
 version: 1
 id: {ABDD8A75-DCA3-4B79-9922-916DFDB77A4F}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Reset Password/Reset Password Email Footer
-parent: {B80A88A1-A41A-4F3D-8677-F8801A75B8C5}
-name: Reset Password Email Footer
+path: /sitecore/templates/User Defined/Configuration/Site Config/Emails/Email Footer
+parent: {40ABF21C-ED06-4B23-9352-5F817158F469}
+name: Email Footer
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 3d8d8d22-55b8-4ac1-a33f-a42ea1b4021f
+revision: 04454b1e-ff95-4a32-b7b2-14c9491c491e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3d8d8d22-55b8-4ac1-a33f-a42ea1b4021f
+04454b1e-ff95-4a32-b7b2-14c9491c491e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160303T094251Z
+20160309T131739Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

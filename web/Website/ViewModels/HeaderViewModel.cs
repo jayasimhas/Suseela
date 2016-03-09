@@ -46,7 +46,7 @@ namespace Informa.Web.ViewModels
 			}
 		}
 
-        public string CookiePolicyText => SiteRootContext.Item.Cookie_Policy;
+	    public string PolicyText => TextTranslator.Translate("Global.PolicyText");
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
 		public string MyAccountLinkText => TextTranslator.Translate("Header.MyAccount");
 	    public string MyAccountLink => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.My_Account_Page)?._Url ?? "#";

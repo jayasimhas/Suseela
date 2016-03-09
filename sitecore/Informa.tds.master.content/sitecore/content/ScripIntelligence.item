@@ -26,7 +26,7 @@ content-length: 16
 ----version----
 language: en
 version: 1
-revision: eed991d8-98a0-4aef-bc5c-d724ee48ffca
+revision: b35116ca-5d5d-4bce-b83a-96a1249f7fbe
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -46,16 +46,23 @@ Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apol
 field: {DFF8072A-6D80-408F-A3FB-2175E3B3DD72}
 name: Global Article Medium Slot ID
 key: global article medium slot id
-content-length: 5
+content-length: 9
 
-Right
+Position2
 ----field----
 field: {7F493D5A-9FC5-407B-9B05-609F5BE5D07D}
 name: Global Article Filmstrip Slot ID
 key: global article filmstrip slot id
+content-length: 5
+
+Right
+----field----
+field: {58330274-E29E-4FB9-802B-B7A508D15075}
+name: Global Article Ad Zone
+key: global article ad zone
 content-length: 4
 
-Top3
+home
 ----field----
 field: {D0EA1C84-68E4-4811-87C2-14FF280C8FC2}
 name: Site Logo
@@ -169,13 +176,6 @@ content-length: 38
 
 {39611772-CD97-4610-BB55-F96BE4C1F540}
 ----field----
-field: {D40EB7E0-99EF-468F-8491-4F0C5BCAC75E}
-name: Cookie Policy
-key: cookie policy
-content-length: 432
-
-In order to deliver a personalized, responsive service and to improve the site, we remember and store information about how you use it. This is done using simple text files called cookies which site on your computer. By continuing to use this site and access its features, you are consenting to our use of cookies. To find out more about the way Informa uses cookies please go to our <a href="/cookie-policy">Cookie Policy</a> page.
-----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
@@ -195,14 +195,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-eed991d8-98a0-4aef-bc5c-d724ee48ffca
+b35116ca-5d5d-4bce-b83a-96a1249f7fbe
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T155909Z
+20160309T145749Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

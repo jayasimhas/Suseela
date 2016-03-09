@@ -7,6 +7,7 @@ using Informa.Library.User.ResetPassword;
 using Informa.Library.User.Profile;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Entitlement;
+using Informa.Library.User.Registration.Web;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -23,10 +24,12 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceFindUserProfile>().As<IUserProfileFactory>();
 			builder.RegisterType<SalesforceFindUserProfile>().As<IFindUserProfileByUsername>();
 
+			builder.RegisterType<WebRegisterUserActions>().As<IWebRegisterUserActions>();
+
 			builder.RegisterType<SalesforceUpdateOfferUserOptIn>().As<IUpdateOfferUserOptIn>();
 			builder.RegisterType<SalesforceUpdateNewsletterUserOptIn>().As<IUpdateNewsletterUserOptIn>();
 
-		    builder.RegisterType<SalesforceQueryNewsletterUserOptIn>().As<IQueryNewsletterUserOptIn>();
+			builder.RegisterType<SalesforceQueryNewsletterUserOptIn>().As<IQueryNewsletterUserOptIn>();
             builder.RegisterType<SalesforceQueryOfferUserOptIn>().As<IQueryOfferUserOptIn>();
 		    builder.RegisterType<SalesforceGetUserEntitlements>().As<IGetUserEntitlements>();
 

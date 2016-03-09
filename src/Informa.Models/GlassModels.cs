@@ -8942,6 +8942,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid My_Account_Page  {get; set;}
 								/// <summary>
+					/// The Global Article Ad Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Ad_Zone  {get; set;}
+								/// <summary>
 					/// The Global Article Filmstrip Slot ID field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -8959,6 +8968,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Global_Article_Medium_Slot_ID  {get; set;}
+								/// <summary>
+					/// The Email Footer field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_Footer  {get; set;}
 								/// <summary>
 					/// The Email From Address field.
 					/// <para></para>
@@ -9086,15 +9104,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Subscribe_Link  {get; set;}
 								/// <summary>
-					/// The Cookie Policy field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: d40eb7e0-99ef-468f-8491-4f0c5bcac75e</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Cookie_PolicyFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Cookie_Policy  {get; set;}
-								/// <summary>
 					/// The Left Column Text field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -9212,6 +9221,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Publication_Name  {get; set;}
 								/// <summary>
+					/// The Registration Email Body field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: a2f0a1ff-1d99-4d0d-ad42-1a55f9285554</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Registration_Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Registration_Email_Body  {get; set;}
+								/// <summary>
+					/// The Registration Email Subject field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 281273cb-8a6a-4637-b88e-1f278448ca11</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Registration_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Registration_Email_Subject  {get; set;}
+								/// <summary>
 					/// The Reset Password Email Body field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -9220,15 +9247,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Reset_Password_Email_Body  {get; set;}
-								/// <summary>
-					/// The Reset Password Email Footer field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_FooterFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Reset_Password_Email_Footer  {get; set;}
 								/// <summary>
 					/// The Reset Password Email Link Text field.
 					/// <para></para>
@@ -9386,6 +9404,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid My_Account_Page  {get; set;}
 										/// <summary>
+						/// The Global Article Ad Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Ad_Zone  {get; set;}
+										/// <summary>
 						/// The Global Article Filmstrip Slot ID field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -9403,6 +9430,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Global_Article_Medium_Slot_ID  {get; set;}
+										/// <summary>
+						/// The Email Footer field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_FooterFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Email_Footer  {get; set;}
 										/// <summary>
 						/// The Email From Address field.
 						/// <para></para>
@@ -9530,15 +9566,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Subscribe_Link  {get; set;}
 										/// <summary>
-						/// The Cookie Policy field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: d40eb7e0-99ef-468f-8491-4f0c5bcac75e</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Cookie_PolicyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Cookie_Policy  {get; set;}
-										/// <summary>
 						/// The Left Column Text field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -9656,6 +9683,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Publication_Name  {get; set;}
 										/// <summary>
+						/// The Registration Email Body field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: a2f0a1ff-1d99-4d0d-ad42-1a55f9285554</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Registration_Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Registration_Email_Body  {get; set;}
+										/// <summary>
+						/// The Registration Email Subject field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 281273cb-8a6a-4637-b88e-1f278448ca11</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Registration_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Registration_Email_Subject  {get; set;}
+										/// <summary>
 						/// The Reset Password Email Body field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -9664,15 +9709,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string Reset_Password_Email_Body  {get; set;}
-										/// <summary>
-						/// The Reset Password Email Footer field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: abdd8a75-dca3-4b79-9922-916dfdb77a4f</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Reset_Password_Email_FooterFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Reset_Password_Email_Footer  {get; set;}
 										/// <summary>
 						/// The Reset Password Email Link Text field.
 						/// <para></para>
@@ -9822,6 +9858,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
 			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
 			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
 
@@ -9830,6 +9871,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
 			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
 
+						
+					
+			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+			public const string Email_FooterFieldName = "Email Footer";
+
+							public static readonly ID Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+				public const string Email_Footer__RawFieldName = "Email Footer";
 						
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
@@ -9900,13 +9948,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
-						
-					
-			public static readonly ID Cookie_PolicyFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-			public const string Cookie_PolicyFieldName = "Cookie Policy";
-
-							public static readonly ID Cookie_Policy__RawFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-				public const string Cookie_Policy__RawFieldName = "Cookie Policy";
 						
 					
 			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
@@ -9982,18 +10023,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Registration_Email_BodyFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+			public const string Registration_Email_BodyFieldName = "Registration Email Body";
+
+							public static readonly ID Registration_Email_Body__RawFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+				public const string Registration_Email_Body__RawFieldName = "Registration Email Body";
+						
+					
+			public static readonly ID Registration_Email_SubjectFieldId = new ID("281273cb-8a6a-4637-b88e-1f278448ca11");
+			public const string Registration_Email_SubjectFieldName = "Registration Email Subject";
+
+						
+					
 			public static readonly ID Reset_Password_Email_BodyFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 			public const string Reset_Password_Email_BodyFieldName = "Reset Password Email Body";
 
 							public static readonly ID Reset_Password_Email_Body__RawFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 				public const string Reset_Password_Email_Body__RawFieldName = "Reset Password Email Body";
-						
-					
-			public static readonly ID Reset_Password_Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-			public const string Reset_Password_Email_FooterFieldName = "Reset Password Email Footer";
-
-							public static readonly ID Reset_Password_Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-				public const string Reset_Password_Email_Footer__RawFieldName = "Reset Password Email Footer";
 						
 					
 			public static readonly ID Reset_Password_Email_Link_TextFieldId = new ID("5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19");
@@ -13658,6 +13704,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
 			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
 			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
 
@@ -13666,6 +13717,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
 			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
 
+						
+					
+			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+			public const string Email_FooterFieldName = "Email Footer";
+
+							public static readonly ID Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
+				public const string Email_Footer__RawFieldName = "Email Footer";
 						
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
@@ -13736,13 +13794,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
-						
-					
-			public static readonly ID Cookie_PolicyFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-			public const string Cookie_PolicyFieldName = "Cookie Policy";
-
-							public static readonly ID Cookie_Policy__RawFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
-				public const string Cookie_Policy__RawFieldName = "Cookie Policy";
 						
 					
 			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
@@ -13818,18 +13869,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Registration_Email_BodyFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+			public const string Registration_Email_BodyFieldName = "Registration Email Body";
+
+							public static readonly ID Registration_Email_Body__RawFieldId = new ID("a2f0a1ff-1d99-4d0d-ad42-1a55f9285554");
+				public const string Registration_Email_Body__RawFieldName = "Registration Email Body";
+						
+					
+			public static readonly ID Registration_Email_SubjectFieldId = new ID("281273cb-8a6a-4637-b88e-1f278448ca11");
+			public const string Registration_Email_SubjectFieldName = "Registration Email Subject";
+
+						
+					
 			public static readonly ID Reset_Password_Email_BodyFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 			public const string Reset_Password_Email_BodyFieldName = "Reset Password Email Body";
 
 							public static readonly ID Reset_Password_Email_Body__RawFieldId = new ID("a9fec917-3234-4782-b449-a8dda61126a8");
 				public const string Reset_Password_Email_Body__RawFieldName = "Reset Password Email Body";
-						
-					
-			public static readonly ID Reset_Password_Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-			public const string Reset_Password_Email_FooterFieldName = "Reset Password Email Footer";
-
-							public static readonly ID Reset_Password_Email_Footer__RawFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
-				public const string Reset_Password_Email_Footer__RawFieldName = "Reset Password Email Footer";
 						
 					
 			public static readonly ID Reset_Password_Email_Link_TextFieldId = new ID("5630b7a0-4f8c-4bc8-bebb-8aa1092e1c19");
