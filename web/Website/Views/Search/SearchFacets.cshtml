@@ -83,7 +83,7 @@
   </ul> <!-- / .facets__section -->
 
   <!-- HARDCODED COMPANIES FACET -->
-  <ul class="facets__section">
+  <ul class="facets__section" ng-controller="InformaTypeaheadController">
     <li class="facets__section-title">
         <h4>Companies</h4>
         <button 
@@ -112,11 +112,11 @@
             <div class="facets__field-group facets__field-group--companies">
               <button 
                 class="facets__button facets__button--clear-company" 
-                ng-class="{'collapsed': isCollapsedCompanies}"
-                ng-click=""> 
+                ng-class="{'collapsed': isCollapsedCompanies}"> 
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use></svg>
               </button>
-              <input type="text" name="company-facet" placeholder="Company Name">
+              <input type="text" name="company-facet" placeholder="Company Name" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+              <!-- <pre>Model: {{selected | json}}</pre> -->
             </div>
           </li>
         </ul>
