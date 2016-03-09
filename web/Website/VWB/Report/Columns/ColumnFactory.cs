@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Informa.Web.VWB.Report.Columns;
 
 namespace Elsevier.Web.VWB.Report.Columns
 {
@@ -27,8 +28,13 @@ namespace Elsevier.Web.VWB.Report.Columns
 							new NotesToEditorialColumn(),
 							new ArticleLengthEstimateColumn(),
 							new PublishableAfterColumn(),
-							new WorkflowStateColumn()
-			          	};
+							new WorkflowStateColumn(),
+                            new TaxonomyColumn(),
+                            new ContentTypeColumn(),
+                            new MediaTypeColumn(),
+                            new EmailPriorityColumn()
+
+                          };
 			_articleNumberColumn = new ArticleNumberColumn();
 			_titleColumn = new TitleColumn();
 			ImmutableColumns = new List<IVwbColumn>

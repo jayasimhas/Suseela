@@ -1,0 +1,10 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<settings>
+			<setting name="SalesforceSessionFactoryConfiguration.Username" value="${CRMManager.SalesforceUserName}" />
+			<setting name="SalesforceSessionFactoryConfiguration.Password" value="${CRMManager.SalesforcePassword}" />
+			<setting name="SalesforceSessionFactoryConfiguration.Token" value="${CRMManager.SalesforceToken}" />
+			<setting name="SalesforceSessionFactoryConfiguration.Timeout" value="${CRMManager.SalesforceTimeout}" />
+		</settings>
+	</sitecore>
+</configuration>

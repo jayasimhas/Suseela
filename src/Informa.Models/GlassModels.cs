@@ -364,6 +364,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 				public const string User_Agreement_Text__RawFieldName = "User Agreement Text";
 						
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -680,6 +685,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public const string TemplateName = "Saved Articles Page";
 
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -864,6 +874,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Exclude_From_Google_SearchFieldId = new ID("de73b0ac-1de7-4c74-8dc3-515a939f567b");
 			public const string Exclude_From_Google_SearchFieldName = "Exclude From Google Search";
+
+						
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
 						
 					
@@ -2194,6 +2209,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Notification_TextFieldId = new ID("99c8be36-4215-4c67-88e7-ee066c605bea");
 			public const string Notification_TextFieldName = "Notification Text";
+
+						
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
 						
 					
@@ -5889,6 +5909,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TemplateName = "Topic Page";
 
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -6079,6 +6104,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Email Preferences Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -7113,6 +7143,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TemplateName = "Home Page";
 
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -7398,6 +7433,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	public partial interface I___BasePage : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage
 	{
 								/// <summary>
+					/// The Leaderboard Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 82af6295-2b81-4ce0-8674-f6f72f38bff6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I___BasePageConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Leaderboard_Slot_ID  {get; set;}
+								/// <summary>
 					/// The Custom Meta Tags field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -7491,6 +7535,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 		public partial interface I___BasePage__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseTaxonomy__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage__Raw
 		{
 										/// <summary>
+						/// The Leaderboard Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 82af6295-2b81-4ce0-8674-f6f72f38bff6</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I___BasePageConstants.Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Leaderboard_Slot_ID  {get; set;}
+										/// <summary>
 						/// The Custom Meta Tags field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -7579,6 +7632,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "__BasePage";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -8942,6 +9000,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid My_Account_Page  {get; set;}
 								/// <summary>
+					/// The Global Article Ad Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Article_Ad_Zone  {get; set;}
+								/// <summary>
 					/// The Global Article Filmstrip Slot ID field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -8959,6 +9026,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Global_Article_Medium_Slot_ID  {get; set;}
+								/// <summary>
+					/// The Global Leaderboard Ad Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 016b3e1c-33ef-4029-9cbd-9cf36657f5fe</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Leaderboard_Ad_Zone  {get; set;}
+								/// <summary>
+					/// The Global Leaderboard Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6c312b88-b709-4eb1-a483-0222a8d7e401</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Global_Leaderboard_Slot_ID  {get; set;}
 								/// <summary>
 					/// The Email Footer field.
 					/// <para></para>
@@ -9395,6 +9480,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid My_Account_Page  {get; set;}
 										/// <summary>
+						/// The Global Article Ad Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 58330274-e29e-4fb9-802b-b7a508d15075</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Article_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Article_Ad_Zone  {get; set;}
+										/// <summary>
 						/// The Global Article Filmstrip Slot ID field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -9412,6 +9506,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Global_Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Global_Article_Medium_Slot_ID  {get; set;}
+										/// <summary>
+						/// The Global Leaderboard Ad Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 016b3e1c-33ef-4029-9cbd-9cf36657f5fe</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Leaderboard_Ad_Zone  {get; set;}
+										/// <summary>
+						/// The Global Leaderboard Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 6c312b88-b709-4eb1-a483-0222a8d7e401</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Global_Leaderboard_Slot_ID  {get; set;}
 										/// <summary>
 						/// The Email Footer field.
 						/// <para></para>
@@ -9840,6 +9952,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
 			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
 			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
 
@@ -9847,6 +9964,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
 			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
+
+						
+					
+			public static readonly ID Global_Leaderboard_Ad_ZoneFieldId = new ID("016b3e1c-33ef-4029-9cbd-9cf36657f5fe");
+			public const string Global_Leaderboard_Ad_ZoneFieldName = "Global Leaderboard Ad Zone";
+
+						
+					
+			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
+			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
 
 						
 					
@@ -10296,6 +10423,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Error Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -10851,6 +10983,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public const string TemplateName = "Subscriptions Page";
 
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -11341,6 +11478,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Contact Information Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -13681,6 +13823,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
+			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
+
+						
+					
 			public static readonly ID Global_Article_Filmstrip_Slot_IDFieldId = new ID("7f493d5a-9fc5-407b-9b05-609f5be5d07d");
 			public const string Global_Article_Filmstrip_Slot_IDFieldName = "Global Article Filmstrip Slot ID";
 
@@ -13688,6 +13835,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Global_Article_Medium_Slot_IDFieldId = new ID("dff8072a-6d80-408f-a3fb-2175e3b3dd72");
 			public const string Global_Article_Medium_Slot_IDFieldName = "Global Article Medium Slot ID";
+
+						
+					
+			public static readonly ID Global_Leaderboard_Ad_ZoneFieldId = new ID("016b3e1c-33ef-4029-9cbd-9cf36657f5fe");
+			public const string Global_Leaderboard_Ad_ZoneFieldName = "Global Leaderboard Ad Zone";
+
+						
+					
+			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
+			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
 
 						
 					
@@ -15941,6 +16098,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Account Landing Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
