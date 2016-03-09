@@ -3293,92 +3293,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Refinements
-{
-
-
- 	/// <summary>
-	/// IText_Refinement Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Text Refinement</para>	
-	/// <para>ID: 2cbb661f-2029-456e-9ae8-25194c3f425a</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IText_RefinementConstants.TemplateIdString)]
-	public partial interface IText_Refinement : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Base.I_Refinement
-	{
-								/// <summary>
-					/// The Exact Match field.
-					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
-					/// <para>Field ID: 0c131541-0d60-46f4-9248-138ef257a026</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IText_RefinementConstants.Exact_MatchFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Exact_Match  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IText_Refinement Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Text Refinement</para>	
-		/// <para>ID: 2cbb661f-2029-456e-9ae8-25194c3f425a</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IText_Refinement__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Base.I_Refinement__Raw
-		{
-										/// <summary>
-						/// The Exact Match field.
-						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
-						/// <para>Field ID: 0c131541-0d60-46f4-9248-138ef257a026</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IText_RefinementConstants.Exact_MatchFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Exact_Match  {get; set;}
-						}
-	
-	public static partial class IText_RefinementConstants{
-
-			public const string TemplateIdString = "2cbb661f-2029-456e-9ae8-25194c3f425a";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Text Refinement";
-
-					
-			public static readonly ID Exact_MatchFieldId = new ID("0c131541-0d60-46f4-9248-138ef257a026");
-			public const string Exact_MatchFieldName = "Exact Match";
-
-						
-					
-			public static readonly ID Facet_TitleFieldId = new ID("3162cd52-3d1c-41f1-88a1-e5d7c4e89215");
-			public const string Facet_TitleFieldName = "Facet Title";
-
-						
-					
-			public static readonly ID Field_NameFieldId = new ID("605fcdd4-db1f-43b1-a138-fc22f5c563f8");
-			public const string Field_NameFieldName = "Field Name";
-
-						
-					
-			public static readonly ID Filter_By_LabelFieldId = new ID("0c554f2d-abed-43c5-80bb-3236edb7884a");
-			public const string Filter_By_LabelFieldName = "Filter By Label";
-
-						
-					
-			public static readonly ID Is_HiddenFieldId = new ID("002cefb3-c0f2-444a-8422-30854bdaca08");
-			public const string Is_HiddenFieldName = "Is Hidden";
-
-						
-					
-			public static readonly ID KeyFieldId = new ID("d1c9128f-881b-4951-a9a3-96f7d60cf743");
-			public const string KeyFieldName = "Key";
-
-						
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
 
@@ -3860,69 +3774,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.F
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Template Folder";
 
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Refinements
-{
-
-
- 	/// <summary>
-	/// IYear_Refinement Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Year Refinement</para>	
-	/// <para>ID: 3e39f45d-de43-410e-8e7e-f2f2b2be07db</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IYear_RefinementConstants.TemplateIdString)]
-	public partial interface IYear_Refinement : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Base.I_Refinement
-	{
-				}
-
-	
-		/// <summary>
-		/// IYear_Refinement Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Year Refinement</para>	
-		/// <para>ID: 3e39f45d-de43-410e-8e7e-f2f2b2be07db</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IYear_Refinement__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Base.I_Refinement__Raw
-		{
-						}
-	
-	public static partial class IYear_RefinementConstants{
-
-			public const string TemplateIdString = "3e39f45d-de43-410e-8e7e-f2f2b2be07db";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Year Refinement";
-
-					
-			public static readonly ID Facet_TitleFieldId = new ID("3162cd52-3d1c-41f1-88a1-e5d7c4e89215");
-			public const string Facet_TitleFieldName = "Facet Title";
-
-						
-					
-			public static readonly ID Field_NameFieldId = new ID("605fcdd4-db1f-43b1-a138-fc22f5c563f8");
-			public const string Field_NameFieldName = "Field Name";
-
-						
-					
-			public static readonly ID Filter_By_LabelFieldId = new ID("0c554f2d-abed-43c5-80bb-3236edb7884a");
-			public const string Filter_By_LabelFieldName = "Filter By Label";
-
-						
-					
-			public static readonly ID Is_HiddenFieldId = new ID("002cefb3-c0f2-444a-8422-30854bdaca08");
-			public const string Is_HiddenFieldName = "Is Hidden";
-
-						
-					
-			public static readonly ID KeyFieldId = new ID("d1c9128f-881b-4951-a9a3-96f7d60cf743");
-			public const string KeyFieldName = "Key";
-
-						
 			
 
 	}
@@ -8962,107 +8813,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Refinements
-{
-
-
- 	/// <summary>
-	/// IHierarchical_Facet Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Hierarchical Facet</para>	
-	/// <para>ID: 981413b1-9651-4b49-b356-d7b7fb9dd8f6</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IHierarchical_FacetConstants.TemplateIdString)]
-	public partial interface IHierarchical_Facet : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Refinements.IFacet
-	{
-								/// <summary>
-					/// The Root Item field.
-					/// <para></para>
-					/// <para>Field Type: Droptree</para>		
-					/// <para>Field ID: 733222cf-b934-4dcc-a3b9-b608fffbdabd</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IHierarchical_FacetConstants.Root_ItemFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Root_Item  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IHierarchical_Facet Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Hierarchical Facet</para>	
-		/// <para>ID: 981413b1-9651-4b49-b356-d7b7fb9dd8f6</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IHierarchical_Facet__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Refinements.IFacet__Raw
-		{
-										/// <summary>
-						/// The Root Item field.
-						/// <para></para>
-						/// <para>Field Type: Droptree</para>		
-						/// <para>Field ID: 733222cf-b934-4dcc-a3b9-b608fffbdabd</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IHierarchical_FacetConstants.Root_ItemFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Root_Item  {get; set;}
-						}
-	
-	public static partial class IHierarchical_FacetConstants{
-
-			public const string TemplateIdString = "981413b1-9651-4b49-b356-d7b7fb9dd8f6";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Hierarchical Facet";
-
-					
-			public static readonly ID Root_ItemFieldId = new ID("733222cf-b934-4dcc-a3b9-b608fffbdabd");
-			public const string Root_ItemFieldName = "Root Item";
-
-						
-					
-			public static readonly ID And_FilterFieldId = new ID("f0b316e1-2d87-4433-9634-40685172dd3c");
-			public const string And_FilterFieldName = "And Filter";
-
-						
-					
-			public static readonly ID Is_Multi_ValueFieldId = new ID("524cf7f5-8ed0-4cd5-9aac-ff92e5bd6fbd");
-			public const string Is_Multi_ValueFieldName = "Is Multi Value";
-
-						
-					
-			public static readonly ID Sort_ByFieldId = new ID("c009efa3-5b61-4af2-9180-538d9d4a6918");
-			public const string Sort_ByFieldName = "Sort By";
-
-						
-					
-			public static readonly ID Facet_TitleFieldId = new ID("3162cd52-3d1c-41f1-88a1-e5d7c4e89215");
-			public const string Facet_TitleFieldName = "Facet Title";
-
-						
-					
-			public static readonly ID Field_NameFieldId = new ID("605fcdd4-db1f-43b1-a138-fc22f5c563f8");
-			public const string Field_NameFieldName = "Field Name";
-
-						
-					
-			public static readonly ID Filter_By_LabelFieldId = new ID("0c554f2d-abed-43c5-80bb-3236edb7884a");
-			public const string Filter_By_LabelFieldName = "Filter By Label";
-
-						
-					
-			public static readonly ID Is_HiddenFieldId = new ID("002cefb3-c0f2-444a-8422-30854bdaca08");
-			public const string Is_HiddenFieldName = "Is Hidden";
-
-						
-					
-			public static readonly ID KeyFieldId = new ID("d1c9128f-881b-4951-a9a3-96f7d60cf743");
-			public const string KeyFieldName = "Key";
-
-						
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
 {
 
@@ -13988,6 +13738,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Cookie_PolicyFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
+			public const string Cookie_PolicyFieldName = "Cookie Policy";
+
+							public static readonly ID Cookie_Policy__RawFieldId = new ID("d40eb7e0-99ef-468f-8491-4f0c5bcac75e");
+				public const string Cookie_Policy__RawFieldName = "Cookie Policy";
+						
+					
 			public static readonly ID Left_Column_TextFieldId = new ID("a86b682b-acc0-435b-a5fe-5e609ed761ab");
 			public const string Left_Column_TextFieldName = "Left Column Text";
 
@@ -15490,115 +15247,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 					
 			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
 			public const string Handler_ClassFieldName = "Handler Class";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Refinements
-{
-
-
- 	/// <summary>
-	/// IBoolean_Refinement Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Boolean Refinement</para>	
-	/// <para>ID: ec9f61d5-4b55-4e71-8dfa-20a38d7499c2</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IBoolean_RefinementConstants.TemplateIdString)]
-	public partial interface IBoolean_Refinement : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Base.I_Refinement
-	{
-								/// <summary>
-					/// The Apply When False field.
-					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
-					/// <para>Field ID: a6bc148a-b466-4c37-baa4-581d96d5d06f</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IBoolean_RefinementConstants.Apply_When_FalseFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Apply_When_False  {get; set;}
-								/// <summary>
-					/// The Apply When True field.
-					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
-					/// <para>Field ID: c1c73ebe-0e2b-470c-ab9b-9da77182e7c5</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IBoolean_RefinementConstants.Apply_When_TrueFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Apply_When_True  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IBoolean_Refinement Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/Velir/Search/Refinements/Boolean Refinement</para>	
-		/// <para>ID: ec9f61d5-4b55-4e71-8dfa-20a38d7499c2</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IBoolean_Refinement__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.Search.Base.I_Refinement__Raw
-		{
-										/// <summary>
-						/// The Apply When False field.
-						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
-						/// <para>Field ID: a6bc148a-b466-4c37-baa4-581d96d5d06f</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IBoolean_RefinementConstants.Apply_When_FalseFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Apply_When_False  {get; set;}
-										/// <summary>
-						/// The Apply When True field.
-						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
-						/// <para>Field ID: c1c73ebe-0e2b-470c-ab9b-9da77182e7c5</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IBoolean_RefinementConstants.Apply_When_TrueFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Apply_When_True  {get; set;}
-						}
-	
-	public static partial class IBoolean_RefinementConstants{
-
-			public const string TemplateIdString = "ec9f61d5-4b55-4e71-8dfa-20a38d7499c2";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Boolean Refinement";
-
-					
-			public static readonly ID Apply_When_FalseFieldId = new ID("a6bc148a-b466-4c37-baa4-581d96d5d06f");
-			public const string Apply_When_FalseFieldName = "Apply When False";
-
-						
-					
-			public static readonly ID Apply_When_TrueFieldId = new ID("c1c73ebe-0e2b-470c-ab9b-9da77182e7c5");
-			public const string Apply_When_TrueFieldName = "Apply When True";
-
-						
-					
-			public static readonly ID Facet_TitleFieldId = new ID("3162cd52-3d1c-41f1-88a1-e5d7c4e89215");
-			public const string Facet_TitleFieldName = "Facet Title";
-
-						
-					
-			public static readonly ID Field_NameFieldId = new ID("605fcdd4-db1f-43b1-a138-fc22f5c563f8");
-			public const string Field_NameFieldName = "Field Name";
-
-						
-					
-			public static readonly ID Filter_By_LabelFieldId = new ID("0c554f2d-abed-43c5-80bb-3236edb7884a");
-			public const string Filter_By_LabelFieldName = "Filter By Label";
-
-						
-					
-			public static readonly ID Is_HiddenFieldId = new ID("002cefb3-c0f2-444a-8422-30854bdaca08");
-			public const string Is_HiddenFieldName = "Is Hidden";
-
-						
-					
-			public static readonly ID KeyFieldId = new ID("d1c9128f-881b-4951-a9a3-96f7d60cf743");
-			public const string KeyFieldName = "Key";
 
 						
 			
