@@ -660,13 +660,13 @@
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
-    <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
+    <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
@@ -680,12 +680,14 @@
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Subscription\SubscriptionModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
+    <Compile Include="Areas\Account\Controllers\SpoofController.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
@@ -718,6 +720,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
@@ -831,11 +834,13 @@
     <Content Include="default.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
     <Content Include="email\EmailFriend.html" />
+    <Content Include="email\_BaseEmail.html" />
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\form-controller.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
@@ -1142,6 +1147,7 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
+    <Content Include="Views\Shared\Global\Sitemap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

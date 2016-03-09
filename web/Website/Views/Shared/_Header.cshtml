@@ -9,7 +9,7 @@
 					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
 				</svg>
 			</div>
-            <span>@Html.Raw(Model.CookiePolicyText)</span>
+            <span>@Html.Raw(Model.PolicyText)</span>
         </div>
     </div>
 
@@ -40,12 +40,17 @@
         <div class="header-account-access">
 
 			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
-			{
+            {
+                if (Model.IsAuthenticated && !Sitecore.Context.User.IsAdministrator)
+                {
+                    <div class="header-account-access__friendly-greeting">@Html.ActionLink("TEMPORARILY SPOOF ENTITLEMENT", "SpoofEntitlement", "Spoof", new { area = "Account", returnUrl = "/" }, new { })</div>
+                }
 				<div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
 			}
 
             @if (Model.IsAuthenticated)
             {
+                @* TODO: UNTIL WE GET ENTITLED USERS *@
                 <div class="header-account-access__my-account">
                     <svg class="header__icons icon-my-account">
                         <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
@@ -56,7 +61,7 @@
                     <svg class="header__icons icon-sign-out">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>
-					<span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = "/" }, new { })</span>
+					<span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
 				</div>
 			}
 			else

@@ -12,7 +12,7 @@
             </div>
 
             <div class="page-preferences__offersoptin-confirm">
-                <input name="offersOptIn" type="checkbox" data-checkbox-type="boolean" @(@Model.DoNotSendOfferEmails ? "checked='checked'" : "")> <label for="offersOptIn">@Model.EmailsLabel</label>
+                <input name="doNotSendOffersOptIn" type="checkbox" data-checkbox-type="boolean" @(@Model.DoNotSendOfferEmails ? "checked='checked'" : "")> <label for="doNotSendOffersOptIn">@Model.EmailsLabel</label>
             </div>
 
             <div class="page-preferences__submit-wrapper">

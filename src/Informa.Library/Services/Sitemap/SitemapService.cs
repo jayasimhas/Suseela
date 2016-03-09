@@ -2,43 +2,55 @@
 using System.Linq;
 using System.Web;
 using System.Xml;
+using Glass.Mapper;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
+using Informa.Library.Search;
+using Informa.Library.Search.Results;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Sitecore.ContentSearch.Linq;
+using System;
 
 namespace Informa.Library.Services.Sitemap
 {
     public interface ISitemapService
     {
+        string GetSitemapXML();
         string GetNewsSitemapXML();
     }
 
     [AutowireService(LifetimeScope.SingleInstance)]
     public class SitemapService : ISitemapService
     {
+        protected readonly IProviderSearchContextFactory SearchContextFactory;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ITextTranslator TextTranslator;
 
+        protected readonly string Xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
+        protected readonly string DateFormat = "yyyy-MM-ddTHH:mm:ss%K";
+
         public SitemapService(
+            IProviderSearchContextFactory searchContextFactory,
             ISitecoreContext context,
             IArticleSearch searcher,
             ITextTranslator translator)
         {
+            SearchContextFactory = searchContextFactory;
             SitecoreContext = context;
             ArticleSearcher = searcher;
             TextTranslator = translator;
         }
 
-        public string GetNewsSitemapXML()
+        public string GetSitemapXML()
         {
             var home = SitecoreContext.GetHomeItem<IHome_Page>();
-            string publisherName = TextTranslator.Translate("Article.PubName");
             string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
 
-            IEnumerable<IArticle> items = GetPages(home._Path);
+            IEnumerable<I___BasePage> items = GetAllPages(home._Path);
 
             //start xml doc
             XmlDocument doc = new XmlDocument();
@@ -49,7 +61,48 @@ namespace Informa.Library.Services.Sitemap
             XmlNode urlsetNode = doc.CreateElement("urlset");
             //xmlnls
             XmlAttribute xmlnsAttr = doc.CreateAttribute("xmlns");
-            xmlnsAttr.Value = "http://www.sitemaps.org/schemas/sitemap/0.9";
+            xmlnsAttr.Value = Xmlns;
+            urlsetNode.Attributes.Append(xmlnsAttr);
+            doc.AppendChild(urlsetNode);
+
+            //append an xml node for each item
+            foreach (I___BasePage itm in items)
+            {
+                //set pointer
+                XmlNode lastNode = doc.LastChild;
+
+                //create new node
+                XmlNode urlNode = MakeNode(doc, "url");
+                lastNode.AppendChild(urlNode);
+                
+                //create location
+                string pageUrl = itm.Canonical_Link?.Url ?? itm._Url;
+                if (pageUrl.StartsWith("/"))
+                    pageUrl = $"{domain}{pageUrl}";
+                urlNode.AppendChild(MakeNode(doc, "loc", pageUrl));
+            }
+
+            return doc.OuterXml;
+        }
+
+        public string GetNewsSitemapXML()
+        {
+            var home = SitecoreContext.GetHomeItem<IHome_Page>();
+            string publisherName = TextTranslator.Translate("Article.PubName");
+            string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
+
+            IEnumerable<IArticle> items = GetNewsPages(home._Path);
+
+            //start xml doc
+            XmlDocument doc = new XmlDocument();
+            //xml declaration
+            XmlNode declarationNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(declarationNode);
+            //urlset
+            XmlNode urlsetNode = doc.CreateElement("urlset");
+            //xmlnls
+            XmlAttribute xmlnsAttr = doc.CreateAttribute("xmlns");
+            xmlnsAttr.Value = Xmlns;
             urlsetNode.Attributes.Append(xmlnsAttr);
             //xmnls:news
             XmlAttribute xmlnsNewsAttr = doc.CreateAttribute("xmlns:news");
@@ -85,7 +138,7 @@ namespace Informa.Library.Services.Sitemap
 
                 //create access, pub date, title and keywords
                 newsNode.AppendChild(MakeNode(doc, "news:access", "Subscription"));
-                newsNode.AppendChild(MakeNode(doc, "news:publication_date", itm.Actual_Publish_Date.ToString("yyyy-MM-ddTHH:mm:ss%K")));
+                newsNode.AppendChild(MakeNode(doc, "news:publication_date", itm.Actual_Publish_Date.ToString(DateFormat)));
                 newsNode.AppendChild(MakeNode(doc, "news:title", itm.Title));
                 newsNode.AppendChild(MakeNode(doc, "news:keywords", itm.Meta_Keywords));
             }
@@ -120,15 +173,43 @@ namespace Informa.Library.Services.Sitemap
                 newNode.AppendChild(doc.CreateTextNode(nodeValue));
             return newNode;
         }
-
-        private IEnumerable<IArticle> GetPages(string startPath)
+        
+        private IEnumerable<I___BasePage> GetAllPages(string startPath)
         {
-            //query for all items
-            var articles = ArticleSearcher.NewsSitemapSearch(startPath);
+            using (var context = SearchContextFactory.Create())
+            {
+                var query = context.GetQueryable<GeneralContentResult>()
+                    .Filter(j 
+                    => (j.TemplateId == IGeneral_Content_PageConstants.TemplateId || j.TemplateId == IArticleConstants.TemplateId || j.TemplateId == ITopic_PageConstants.TemplateId)
+                    && j.Path.StartsWith(startPath.ToLower()) 
+                    && !j.ExcludeFromGoogleSearch);
 
-            return (!articles.Any())
+                var results = query.GetResults();
+
+                var pages = results.Hits.Select(h => SitecoreContext.GetItem<I___BasePage>(h.Document.ItemId.Guid)).Where(a => a != null);
+                return (!pages.Any())
+                ? Enumerable.Empty<I___BasePage>()
+                : pages;
+            }
+        }
+
+        private IEnumerable<IArticle> GetNewsPages(string startPath)
+        {
+            using (var context = SearchContextFactory.Create())
+            {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                    .Where(j => j.Path.StartsWith(startPath.ToLower()) && j.ActualPublishDate > DateTime.Now.AddDays(-3));
+
+                query = query.OrderByDescending(i => i.ActualPublishDate);
+                var results = query.GetResults();
+
+                var articles = results.Hits.Select(h => SitecoreContext.GetItem<IArticle>(h.Document.ItemId.Guid)).Where(a => a != null);
+
+                return (!articles.Any())
                 ? Enumerable.Empty<IArticle>()
                 : articles;
+            }
         }
     }
 }

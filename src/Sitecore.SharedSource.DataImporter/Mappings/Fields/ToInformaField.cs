@@ -76,7 +76,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         public string CleanHtml(string html)
         {
-            List<string> unwantedTags = new List<string>() { "embed", "iframe", "script", "table", "font", "img" };
+            List<string> unwantedTags = new List<string>() { "embed", "iframe", "script", "table", "font", "img", "preform" };
             
             if (String.IsNullOrEmpty(html))
                 return html;
@@ -138,7 +138,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             importValue = importValue.Replace("h1", "h2").Replace("62.73.128.229", "www.scripintelligence.com");
 
             //strip out the tags, attributes and remap images
-            List<string> removeTags = new List<string>() {"font"};
+            List<string> removeTags = new List<string>() { "font", "preform" };
             List<string> removeAttrs = new List<string>() { "style", "align", "height", "width", "class" };
             DateTime dt = new DateTime(1800, 1, 1);
             DateField df = newItem.Fields["Created Date"];
@@ -202,8 +202,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                     //replace images
                     if (nodeName.Equals("img")) {
+
                         // see if it exists
-                        string imgSrc = node.Attributes["src"].Value;
+                        string imgWidthStr = node.Attributes["width"]?.Value ?? string.Empty;
+                        string imgSrc = node.Attributes["src"]?.Value ?? string.Empty;
                         MediaItem newImg = HandleImage(map, articlePath, articleDate, imgSrc);
                         if (newImg != null)
                         {
@@ -211,13 +213,21 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                             // replace the node with sitecore tag
                             node.SetAttributeValue("src", newSrc);
 
-                            // log if imgs is wider then 787px
-                            Field f = newImg.InnerItem.Fields["Width"];
-                            string imgWidthValue = (f != null) ? f.Value : string.Empty;
-                            int imgWidth = 0;
-                            if (int.TryParse(imgWidthValue, out imgWidth) && imgWidth > 787)
-                                map.Logger.Log(articlePath, $"image too wide: '{imgWidth}'", ProcessStatus.Warning, NewItemField, node.OuterHtml);
+                            //If no width was found, use the sitecore width field on the med lib image 
+                            if (string.IsNullOrEmpty(imgWidthStr)) { 
+                                Field f = newImg.InnerItem.Fields["Width"];
+                                imgWidthStr = (f != null) ? f.Value : string.Empty;
+                            }
                         }
+
+                        //if a 'width' attribute is available, that attribute will be read.
+                        int imgWidth = 0;
+                        if (!int.TryParse(imgWidthStr, out imgWidth))
+                            imgWidth = 0;
+
+                        //If the width read in either case is greater than 787, a warning will be logged.
+                        if (imgWidth > 787)
+                            map.Logger.Log(articlePath, $"image too wide: '{imgWidth}'", ProcessStatus.Warning, NewItemField, node.OuterHtml);
                     }
                 }
 
@@ -229,6 +239,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url)
         {
+            if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
+                url = $"http://scripintelligence.com{url}";
+
             // see if the url is badly formed
             if (!Uri.IsWellFormedUriString(url, UriKind.Absolute)) {
                 map.Logger.Log(articlePath, "malformed image URL", ProcessStatus.FieldError, NewItemField, url);
@@ -372,11 +385,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 //the name should be the importValue and not the value from the database
                 Field sf = newItem.Fields["Summary"];
                 if (sf != null)
-                    sf.Value = Regex.Replace(sf.Value, $"({cName})", delegate (Match match) { return $"[C#{businessID}:{match.Value}]"; }, RegexOptions.IgnoreCase);
+                    sf.Value = Regex.Replace(sf.Value, $"({cName})", delegate (Match match) { return $"<strong>[C#{businessID}:{match.Value}]</strong>"; }, RegexOptions.IgnoreCase);
 
                 Field bf = newItem.Fields["Body"];
                 if (bf != null)
-                    bf.Value = Regex.Replace(bf.Value, $"({cName})", delegate (Match match) { return $"[C#{businessID}:{match.Value}]"; }, RegexOptions.IgnoreCase);
+                    bf.Value = Regex.Replace(bf.Value, $"({cName})", delegate (Match match) { return $"<strong>[C#{businessID}:{match.Value}]</strong>"; }, RegexOptions.IgnoreCase);
 
                 cIDs.Add(businessID);
             }

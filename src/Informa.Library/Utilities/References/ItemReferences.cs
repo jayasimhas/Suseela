@@ -20,11 +20,17 @@ namespace Informa.Library.Utilities.References
         public Guid SearchPage  => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
         public Guid VwbSearchPage  => new Guid("{5B5DCF96-98F2-4CDC-9A5F-75F3E0CE6F52}");
 
+		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
+
+		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
+
         #region Templates
 
         public Guid FolderTemplate => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}");
 
 	    public Guid TaxonomyRoot => new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
+
+		
 
 	    #endregion
 	}
