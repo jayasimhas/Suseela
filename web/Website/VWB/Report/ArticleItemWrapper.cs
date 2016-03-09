@@ -59,7 +59,15 @@ namespace Elsevier.Web.VWB.Report
 	        }
 	    }
 
-		public List<string> SidebarArticleNumbers = new List<string>();
+	    public string EmailPriority;
+
+	    public string MediaType;
+
+	    public string ContentType;
+
+	    public string TaxonomyString;
+
+	    public List<string> SidebarArticleNumbers = new List<string>();
 		public string NotesToEditorial;
 		public string NotesToProduction;
 		public DateTime EmbargoDate;
@@ -104,19 +112,7 @@ namespace Elsevier.Web.VWB.Report
 				ArticleCreation = articleBaseItem.Statistics.Created;
 			}
 
-			PublicationItem publication = articleItem.GetPublication();
-
             IssueDate = article.Actual_Publish_Date;
-
-   //         if (publication.IsDaily())
-			//{
-			//	IssueDate = article.Actual_Publish_Date;
-			//}
-			//else
-			//{
-   //             //TODO
-			//	IssueDate = articleBaseItem.Statistics.Created;
-   //         }
 
 			IssueDateValue = IssueDate.ToString(Constants.VwbDateTimeFormatWithDashes);
 			
@@ -126,7 +122,30 @@ namespace Elsevier.Web.VWB.Report
 			//lArticleItem.ChildArticles.ListItems.Select(i => (ArticleItem)i).ForEach(a => SidebarArticleNumbers.Add(a.ArticleNumber.Text));
 			SidebarArticleNumbers.Sort();
 
+		    TaxonomyString = "";
+		    string sep = "";
+            foreach (var taxonomy in article.Taxonomies)
+            {
+                TaxonomyString += sep + taxonomy.Item_Name;
+                sep = ",";
+            }
 
+		    ContentType = "";
+
+            if (article.Content_Type != null)
+		    {
+		        ContentType = article.Content_Type.Item_Name;
+		    }
+
+		    MediaType = "";
+		    if (article.Media_Type != null)
+		    {
+                MediaType = article.Media_Type.Item_Name;
+		    }
+
+		    EmailPriority = "";
+            EmailPriority = article.Sort_Order.ToString();
+		    
             NotesToEditorial = article.Editorial_Notes;
 
 
