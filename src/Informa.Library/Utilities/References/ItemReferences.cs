@@ -16,9 +16,15 @@ namespace Informa.Library.Utilities.References
         public Guid DCDConfigurationItem => new Guid("{}");
 	    public Guid NlmConfiguration => new Guid("{B0C03A57-0C1E-4BC9-BE7A-5871695FD79B}");
 
-		#region Taxonomy Folders
+        #region Pharma Globals
 
-	    public Guid SubjectsTaxonomyFolder => new Guid("{46D8B99F-4A19-4D67-A083-0EFE313154AC}");
+	    public Guid NlmCopyrightStatement => new Guid("{EE38E489-23F7-4637-A152-3FDC696FAACF}");
+
+        #endregion
+
+        #region Taxonomy Folders
+
+        public Guid SubjectsTaxonomyFolder => new Guid("{46D8B99F-4A19-4D67-A083-0EFE313154AC}");
 	    public Guid RegionsTaxonomyFolder => new Guid("{5728D226-839C-44E3-B044-C88321A53421}");
         public Guid TherapyAreasTaxonomyFolder => new Guid("{49A93890-E459-44F1-9453-A6F3FF0AF4C1}");
 

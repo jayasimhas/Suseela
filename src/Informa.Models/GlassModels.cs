@@ -16066,6 +16066,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.F
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// INLM_Copyright_Statement Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/NLM Copyright Statement</para>	
+	/// <para>ID: fcac1c62-c004-463f-89e4-940d248895ff</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INLM_Copyright_StatementConstants.TemplateIdString)]
+	public partial interface INLM_Copyright_Statement : IGlassBase 
+	{
+								/// <summary>
+					/// The Copyright Statement field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 8d3fc20e-d4e7-48fe-aa64-461340ef7225</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INLM_Copyright_StatementConstants.Copyright_StatementFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Copyright_Statement  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// INLM_Copyright_Statement Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/NLM Copyright Statement</para>	
+		/// <para>ID: fcac1c62-c004-463f-89e4-940d248895ff</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INLM_Copyright_Statement__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Copyright Statement field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 8d3fc20e-d4e7-48fe-aa64-461340ef7225</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INLM_Copyright_StatementConstants.Copyright_StatementFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Copyright_Statement  {get; set;}
+						}
+	
+	public static partial class INLM_Copyright_StatementConstants{
+
+			public const string TemplateIdString = "fcac1c62-c004-463f-89e4-940d248895ff";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "NLM Copyright Statement";
+
+					
+			public static readonly ID Copyright_StatementFieldId = new ID("8d3fc20e-d4e7-48fe-aa64-461340ef7225");
+			public const string Copyright_StatementFieldName = "Copyright Statement";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
 {
 
