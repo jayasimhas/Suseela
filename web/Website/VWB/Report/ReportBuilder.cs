@@ -16,6 +16,7 @@ using Informa.Library.Utilities.References;
 using Newtonsoft.Json;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Web;
 
 namespace Elsevier.Web.VWB.Report
 {
@@ -215,7 +216,7 @@ namespace Elsevier.Web.VWB.Report
             using (new Sitecore.SecurityModel.SecurityDisabler())
             {
                 string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=date&sortOrder=desc&perPage=60", "informa.gabe.dev", searchPageId);
+                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=date&sortOrder=desc&perPage=60", WebUtil.GetHostName(), searchPageId);
 
 
                 var client = new WebClient();

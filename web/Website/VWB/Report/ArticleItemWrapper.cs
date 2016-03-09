@@ -90,7 +90,8 @@ namespace Elsevier.Web.VWB.Report
 		        ArticleNumber = "";
 
 		    }
-			Title = article.Title+":"+ article._Path;
+			//Title = article.Title+":"+ article._Path;
+			Title = article.Title;
 
 		    if (article.Authors != null)
 		    {
