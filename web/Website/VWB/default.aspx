@@ -89,7 +89,7 @@
 			var text = $("body").find('textarea[itemID=' + itemID + ']').val();
 			$.ajax({
 				type: "POST",
-				url: "/services/virtualwhiteboard.asmx/UpdateEditorialNotes",
+				url: "/VWB/services/virtualwhiteboard.asmx/UpdateEditorialNotes",
 				data: "{'itemID':'" + itemID + "', 'text':'" + text + "'}",
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",

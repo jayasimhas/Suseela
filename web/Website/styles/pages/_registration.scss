@@ -53,10 +53,9 @@
     }
 
     &__tos-confirm {
-        @include textMix('Roboto', 0.9375rem, 500);
-        color: $color-abbey-gray;
-        margin-bottom: 2rem;
-        vertical-align: middle;
+        label {
+            @extend .checkbox-label;
+        }
     }
 
     &__submit-wrapper {

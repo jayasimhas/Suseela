@@ -8,9 +8,7 @@ namespace Informa.Web.Areas.Account.Models.User.Registration
 		[Required(ErrorMessage = RegisterValidationReason.UsernameRequirements)]
 		[EmailAddress(ErrorMessage = RegisterValidationReason.UsernameRequirements)]
 		public string Username { get; set; }
-		[Required(ErrorMessage = RegisterValidationReason.PasswordRequirements)]
-		[MinLength(8, ErrorMessage = RegisterValidationReason.PasswordRequirements)]
-		[RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = RegisterValidationReason.PasswordRequirements)]
+		[Password(ErrorMessage = RegisterValidationReason.PasswordRequirements)]
 		public string Password { get; set; }
 		[Compare("Password", ErrorMessage = RegisterValidationReason.PasswordMismatch)]
 		public string PasswordRepeat { get; set; }

@@ -9,7 +9,7 @@
 					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
 				</svg>
 			</div>
-            <span>@Html.Raw(Model.CookiePolicyText)</span>
+            <span>@Html.Raw(Model.PolicyText)</span>
         </div>
     </div>
 
@@ -18,7 +18,7 @@
     </div>
 
     <div class="advertising--leaderboard">
-        <img src="http://placehold.it/728x90">
+        <script language="JavaScript">OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');</script>
     </div>
 
     <div class="header__wrapper clearfix">

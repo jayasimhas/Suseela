@@ -25,7 +25,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly ISignInViewModel SignInViewModel;
 
         public EmailPreferencesViewModel(
-            ITextTranslator translator, 
+            ITextTranslator translator,
             ISitecoreContext sitecoreContext,
             IQueryNewsletterUserOptIn newsletterOptIn,
             IQueryOfferUserOptIn offersOptIn,
@@ -51,6 +51,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public bool ReceivesNewsletterEmails { get; set; }
         public bool DoNotSendOfferEmails { get; set; }
+        public string Title => GlassModel?.Title;
         public string GeneralErrorText => TextTranslator.Translate("Preferences.GeneralError");
         public string NewsletterLabel => TextTranslator.Translate("Preferences.NewsletterLabel");
         public string EmailsLabel => TextTranslator.Translate("Preferences.EmailsLabel");

@@ -37,7 +37,7 @@ namespace Informa.Web.Areas.Account.Controllers
         {
             var userNewsletterOptIns = NewsletterTypesContext.NewsletterTypes.Select(nt => NewsletterUserOptInFactory.Create(nt, request.NewsletterOptIn));
             var nResp = NewsletterOptIn.Update(UserContext.User, userNewsletterOptIns);
-            var oResp = OffersOptIn.Update(UserContext.User, request.OffersOptIn);
+            var oResp = OffersOptIn.Update(UserContext.User, !request.DoNotSendOffersOptIn);
             
             var success = nResp && oResp;
 

@@ -660,13 +660,13 @@
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
-    <Compile Include="Areas\Account\Controllers\AccountValidationController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
-    <Compile Include="Areas\Account\Models\AccountValidationModels.cs" />
+    <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
@@ -680,6 +680,7 @@
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Subscription\SubscriptionModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
@@ -813,6 +814,10 @@
     <Compile Include="VWB\Report\MacroVwbArticleItemCollection.cs" />
     <Compile Include="VWB\Report\ReportBuilder.cs" />
     <Compile Include="VWB\Report\VwbArticleItemCollection.cs" />
+    <Compile Include="VWB\services\VirtualWhiteBoard.asmx.cs">
+      <DependentUpon>VirtualWhiteBoard.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VWB\Util\VWBUtil.cs" />
     <Compile Include="VWB\VwbQuery.cs" />
     <Compile Include="VWB\VwbSessionInfo.cs" />
@@ -825,11 +830,13 @@
     <Content Include="default.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
     <Content Include="email\EmailFriend.html" />
+    <Content Include="email\_BaseEmail.html" />
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\form-controller.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
@@ -953,6 +960,7 @@
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
     <Content Include="VWB\Scripts\jquery.js" />
+    <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
     <Content Include="VWB\Styles\vwb.css" />
     <Content Include="webedit.css" />
     <Content Include="App_Browsers\Form.browser" />
@@ -1057,6 +1065,8 @@
     <None Include="App_Config\Include\UserDefined\AppInsights.config.template">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
+    <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -1135,6 +1145,7 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
+    <Content Include="Views\Shared\Global\Sitemap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
