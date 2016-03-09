@@ -1,9 +1,11 @@
 @model Informa.Web.ViewModels.PopOuts.IRegisterPopOutViewModel
-<div class="pop-out js-pop-out__register">
+<div class="pop-out js-pop-out__register js-register-user-container">
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
 
-		<form class="pop-out__register">
+		<form	class="pop-out__register form-pre-registration"
+				data-on-submit="/Account/api/RegistrationApi/PreRegister/"
+				data-on-success="@Model.RegisterUrl">
 
 			<div class="dismiss-button" data-target-element=".js-pop-out__register">
 				<svg class="dismiss-button__icon">
@@ -13,15 +15,19 @@
 
 			<h3 class="pop-out__register-header">@Model.RegisterText</h3>
 
-			<input class="pop-out__register-input header__hover-input js-register-username"
+			<input name="username"
+				   class="pop-out__register-input header__hover-input js-register-username"
 				   type="text"
 				   placeholder="@Model.UsernamePlaceholderText">
 
-			<p class="js-register-invalid"
-			   style="display: none;">@Model.UsernameInvalidText</p>
+			<p class="js-form-error js-form-error-UsernameRequirements"
+			   style="display: none;">@Model.UsernameRequirementsErrorText</p>
+			<p class="js-form-error js-form-error-UsernameExists"
+			   style="display: none;">@Model.UsernameExistsErrorText</p>
+			<p class="js-form-error js-form-error-error-general"
+			   style="display: none;">@Model.GeneralErrorText</p>
 
-			<button class="pop-out__register-submit js-register-submit"
-					data-register-redirect="@Model.RegisterUrl">
+			<button type="submit" class="pop-out__register-submit js-pre-register-user-submit">
 				@Model.RegisterButtonText
 			</button>
 
