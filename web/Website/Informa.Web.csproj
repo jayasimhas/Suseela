@@ -792,6 +792,7 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Report\ArticleItemWrapper.cs" />
+    <Compile Include="VWB\Report\Columns\ContentTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleNumberColumn.cs" />
@@ -799,14 +800,17 @@
     <Compile Include="VWB\Report\Columns\ArticleTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\AuthorsColumn.cs" />
     <Compile Include="VWB\Report\Columns\ColumnFactory.cs" />
+    <Compile Include="VWB\Report\Columns\EmailPriorityColumn.cs" />
     <Compile Include="VWB\Report\Columns\IssuePublishDateColumn.cs" />
     <Compile Include="VWB\Report\Columns\IVwbColumn.cs" />
     <Compile Include="VWB\Report\Columns\LockStatusColumn.cs" />
+    <Compile Include="VWB\Report\Columns\MediaTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\NotesToEditorialColumn.cs" />
     <Compile Include="VWB\Report\Columns\ProofreadingStatusColumn.cs" />
     <Compile Include="VWB\Report\Columns\PublishableAfterColumn.cs" />
     <Compile Include="VWB\Report\Columns\PlannedPublishDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\SidebarColumn.cs" />
+    <Compile Include="VWB\Report\Columns\TaxonomyColumn.cs" />
     <Compile Include="VWB\Report\Columns\TitleColumn.cs" />
     <Compile Include="VWB\Report\Columns\ActualPublishDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\WorkflowStateColumn.cs" />
@@ -1065,6 +1069,8 @@
     <None Include="App_Config\Include\UserDefined\AppInsights.config.template">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
+    <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
