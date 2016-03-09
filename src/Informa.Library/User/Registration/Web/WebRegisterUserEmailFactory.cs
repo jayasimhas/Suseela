@@ -40,10 +40,10 @@ namespace Informa.Library.User.Registration.Web
 
 			replacements["#Email#"] = emailTo;
 			replacements["#Body_Content#"] = GetValue(siteRoot?.Registration_Email_Body)
-				.ReplaceCaseInsensitive("#First_Name#", newUser.FirstName)
-				.ReplaceCaseInsensitive("#Last_Name#", newUser.LastName);
+				.ReplacePatternCaseInsensitive("#First_Name#", newUser.FirstName)
+				.ReplacePatternCaseInsensitive("#Last_Name#", newUser.LastName);
 
-			email.Body = email.Body.ReplaceCaseInsensitive(replacements);
+			email.Body = email.Body.ReplacePatternCaseInsensitive(replacements);
 
 			var emailSubject = GetValue(siteRoot?.Registration_Email_Subject);
 
